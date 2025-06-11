@@ -3,10 +3,10 @@ title: 'Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID'
 description: This article describes the prerequisites and hardware requirements you need for cloud sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -22,14 +22,18 @@ You need the following to use Microsoft Entra Cloud Sync:
 
 - Domain Administrator or Enterprise Administrator credentials to create the Microsoft Entra Connect cloud sync gMSA (group managed service account) to run the agent service.
 - A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
-- An on-premises server for the provisioning agent with Windows 2016 or later. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
-    - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
+- An on-premises server for the provisioning agent with Windows 2016 or later. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
+
+  - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId
+    
+- The Windows Credential Manager service (VaultSvc) cannot be disabled as that prevents the provisioning agent from installing.
+
 - High availability refers to the Microsoft Entra Cloud Sync's ability to operate continuously without failure for a long time. By having multiple active agents installed and running, Microsoft Entra Cloud Sync can continue to function even if one agent should fail. Microsoft recommends having 3 active agents installed for high availability.
 - On-premises firewall configurations.
 
 
 ## Harden your Microsoft Entra provisioning agent server
-We recommend that you harden your Microsoft Entra provisioning agent server to decrease the security attack surface for this critical component of your IT environment. Following these recommendations will help to mitigate some security risks to your organization.
+We recommend that you harden your Microsoft Entra provisioning agent server to decrease the security attack surface for this critical component of your IT environment. Following these recommendations helps mitigate some security risks to your organization.
 
 - We recommend hardening the Microsoft Entra provisioning agent server as a Control Plane (formerly Tier 0) asset by following the guidance provided in [Secure Privileged Access](/security/privileged-access-workstations/overview) and [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model).
 - Restrict administrative access to the Microsoft Entra provisioning agent server to only domain administrators or other tightly controlled security groups.
@@ -40,12 +44,12 @@ We recommend that you harden your Microsoft Entra provisioning agent server to d
 - Implement dedicated [privileged access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) for all personnel with privileged access to your organization's information systems. 
 - Follow these [additional guidelines](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) to reduce the attack surface of your Active Directory environment.
 - Follow the [Monitor changes to federation configuration](../connect/how-to-connect-monitor-federation-changes.md) to set up alerts to monitor changes to the trust established between your Idp and Microsoft Entra ID. 
-- Enable Multi Factor Authentication (MFA) for all users that have privileged access in Microsoft Entra ID or in AD. One security issue with using Microsoft Entra provisioning agent is that if an attacker can get control over the Microsoft Entra provisioning agent server they can manipulate users in Microsoft Entra ID. To prevent an attacker from using these capabilities to take over Microsoft Entra accounts, MFA offers protections so that even if an attacker manages to, such as reset a user's password using Microsoft Entra provisioning agent they still cannot bypass the second factor.
+- Enable multifactor authentication (MFA) for all users that have privileged access in Microsoft Entra ID or in AD. One security issue with using Microsoft Entra provisioning agent is that if an attacker can get control over the Microsoft Entra provisioning agent server they can manipulate users in Microsoft Entra ID. To prevent an attacker from using these capabilities to take over Microsoft Entra accounts, MFA offers protections. For example, even if an attacker manages to reset a user's password using the Microsoft Entra provisioning agent, they still can't bypass the second factor.
 
 
 ## Group Managed Service Accounts
 
-A group Managed Service Account is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, the ability to delegate the management to other administrators, and also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You'll be prompted for administrative credentials during setup, in order to create this account. The account appears as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
+A group Managed Service Account is a managed domain account that provides automatic password management and simplified service principal name (SPN) management. It also offers the ability to delegate the management to other administrators and extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and uses a gMSA for running the agent. You'll be prompted for administrative credentials during setup, in order to create this account. The account appears as `domain\provAgentgMSA$`. For more information on a gMSA, see [group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview).
 
 ### Prerequisites for gMSA
 
@@ -106,7 +110,7 @@ The Windows server that hosts the Microsoft Entra Connect cloud provisioning age
 
 To enable TLS 1.2, follow these steps.
 
-1. Set the following registry keys by copying the content into a *.reg* file and then run the file (right click and choose **Merge**):
+1. Set the following registry keys by copying the content into a *.reg* file and then run the file (right select and choose **Merge**):
 
    ```dos
    Windows Registry Editor Version 5.00
@@ -179,23 +183,23 @@ The following are known limitations:
 
 - Group scope filtering for delta sync doesn't support more than 50,000 members.
 - When you delete a group that's used as part of a group scoping filter, users who are members of the group, don't get deleted.
-- When you rename the OU or group that's in scope, delta sync won't remove the users.
+- When you rename the OU or group that's in scope, delta sync doesn't remove the users.
 
 ### Provisioning Logs
 
-- Provisioning logs don't clearly differentiate between create and update operations. You may see a create operation for an update and an update operation for a create.
+- Provisioning logs don't clearly differentiate between create and update operations. You could see a create operation for an update and an update operation for a create.
 
 ### Group renaming or OU renaming
 
-- If you rename a group or OU in AD that's in scope for a given configuration, the cloud sync job won't be able to recognize the name change in AD. The job won't go into quarantine and remains healthy.
+- If you rename a group or OU in AD that's in scope for a given configuration, the cloud sync job isn't able to recognize the name change in AD. The job doesn't go into quarantine and remains healthy.
 
 ### Scoping filter
 
 When using OU scoping filter
 
-- The scoping configuration has a limitation of 4MB in character length. In a standard tested environment, this translates to approximately 50 separate Organizational Units (OUs) or Security Groups, including its required metadata, for a given configuration.
+- The scoping configuration has a limitation of 4 MB in character length. In a standard tested environment, this translates to approximately 50 separate Organizational Units (OUs) or Security Groups, including its required metadata, for a given configuration.
 
-- Nested OUs are supported (that is, you **can** sync an OU that has 130 nested OUs, but you **cannot** sync 60 separate OUs in the same configuration).
+- Nested OUs are supported (that is, you **can** sync an OU that has 130 nested OUs, but you **can't** sync 60 separate OUs in the same configuration).
 
 ### Password Hash Sync
 

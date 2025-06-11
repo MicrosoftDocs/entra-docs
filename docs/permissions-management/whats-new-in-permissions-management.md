@@ -2,15 +2,18 @@
 title: What's new in Microsoft Entra Permissions Management
 description: View the latest public preview and general availability of features in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: whats-new
-ms.date: 05/16/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # What's new in Microsoft Entra Permissions Management
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article provides the latest Public Preview and General Availability information of features in Microsoft Entra Permissions Management. 
 

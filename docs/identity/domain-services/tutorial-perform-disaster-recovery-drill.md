@@ -2,26 +2,26 @@
 title: Tutorial - Perform a disaster recovery drill in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to perform a disaster recovery drill using replica sets in Microsoft Entra Domain Services
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 09/21/2023
+ms.date: 02/19/2025
 ms.author: justinha
 #Customer intent: As an identity administrator, I want to perform a disaster recovery drill by using replica sets in Microsoft Entra Domain Services to demonstrate resiliency for geographically distributed domain data.
 ---
 
 # Tutorial: Perform a disaster recovery drill using replica sets in Microsoft Entra Domain Services
 
-This topic shows how to perform a disaster recovery (DR) drill for Microsoft Entra Domain Services using replica sets.  This exercise simulates one of the replica sets going offline by making changes to the network virtual network properties to block client access to it. It's not a true DR drill in that the replica set isn't taken offline. 
+This article shows how to perform a disaster recovery (DR) drill for Microsoft Entra Domain Services using replica sets.  This exercise simulates one of the replica sets going offline by making changes to the network virtual network properties to block client access to it. It's not a true DR drill in that the replica set isn't taken offline. 
 
 The DR drill covers: 
 
 1. A client machine is connected to a given replica set. It can authenticate to the domain and perform LDAP queries.
-1. The client's connection to the replica set will be terminated. This will happen by restricting network access.
+1. The client's connection to the replica set is terminated. This happens by restricting network access.
 1. The client then establishes a new connection with the other replica set. Once that happens, the client is able to authenticate to the domain and perform LDAP queries. 
-1. The domain member will be rebooted, and a domain user can sign in after reboot.
+1. The domain member is rebooted, and a domain user can sign in after reboot.
 1. The network restrictions are removed, and the client can connect to original replica set. 
 
 ## Prerequisites 
@@ -33,7 +33,7 @@ The following requirements must be in place to complete the DR drill:
 
 ## Environment validation 
 
-1. Log in to the client machine with a domain account. 
+1. Sign-in to the client machine with a domain account. 
 1. Install the Active Directory Domain Services RSAT tools. 
 1. Start an elevated PowerShell window.
 1. Perform basic domain validation checks: 
@@ -54,17 +54,17 @@ You need to perform these operations for each replica set in the Domain Services
    1. Select the peered network that you want to update. 
    1. Select to block all network traffic that enters or leaves the virtual network. 
       ![Screenshot of how to block traffic in the Azure portal](./media/tutorial-perform-disaster-recovery-drill/block-traffic.png)
-1. On the client machine, attempt to reestablish a secure connection with both domain controllers from step 2 using the same nltest command. These operations should fail as network connectivity has been blocked. 
-1. Run `Get-AdDomain` and `Get-AdForest` to get basic directory properties. These calls will succeed because they are automatically going to one of the domain controllers in the other replica set. 
-1. Reboot the client and login with the same domain account. This shows that authentication is still working as expected and logins are not blocked. 
+1. On the client machine, attempt to reestablish a secure connection with both domain controllers from step 2 using the same nltest command. These operations should fail as network connectivity is blocked. 
+1. Run `Get-AdDomain` and `Get-AdForest` to get basic directory properties. These calls succeed because they're automatically going to one of the domain controllers in the other replica set. 
+1. Reboot the client and sign-in with the same domain account. This shows that authentication is still working as expected and logins aren't blocked. 
 1. In the Azure portal, go to the client virtual network peering and update the properties so that all traffic is unblocked. This reverts the changes that were made in step 3. 
-1. On the client machine, attempt to reestablish a secure connection with the domain controllers from step 2 using the same nltest command. These operations should succeed as network connectivity has been unblocked. 
+1. On the client machine, attempt to reestablish a secure connection with the domain controllers from step 2 using the same nltest command. These operations should succeed as network connectivity is unblocked. 
 
 These operations demonstrate that the domain is still available even though one of the replica sets is unreachable by the client. Perform this set of steps for each replica set in the Domain Services instance. 
 
 ## Summary 
 
-After you complete these steps, you see domain members continue to access the directory if one of the replica sets in the Domain Services isn't reachable. You can simulate the same behavior by blocking all network access for a replica set instead of a client machine, but we don't recommend it. It won't change the behavior from a client perspective, but it impacts the health of your Domain Services instance until the network access is restored. 
+After you complete these steps, you see domain members continue to access the directory if one of the replica sets in the Domain Services isn't reachable. You can simulate the same behavior by blocking all network access for a replica set instead of a client machine, but we don't recommend it. It doesn't change the behavior from a client perspective, but it impacts the health of your Domain Services instance until the network access is restored. 
 
 ## Next steps
 

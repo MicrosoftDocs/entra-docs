@@ -5,17 +5,17 @@ description: Learn about Microsoft Entra certificate-based authentication on And
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/28/2023
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
 # Microsoft Entra certificate-based authentication on Android devices
 
-Microsoft Entra Certificate-based authentication is supported with certificates provisioned on the device as well as with external security keys like YubiKeys. 
+Microsoft Entra Certificate-based authentication is supported with certificates provisioned on the device and with external security keys like YubiKeys. 
 
 ## Prerequisites
 
@@ -34,9 +34,9 @@ Steps to test YubiKey on Microsoft apps on Android:
 1. Click **Continue**.  
 1. Select **Use Certificate or smart card**. 
 1. Select **Certificate on the device** in the dialog**.**
-1. The certificate picker will appear. 
+1. The certificate picker appears. 
 1. Select the certificate associated with the user’s account. Click **Continue**. 
-1. User will be allowed to access the Outlook resource if the authentication is successful.
+1. User is allowed to access the Outlook resource if the authentication is successful.
 
 ## CBA with certificates on hardware security key
 
@@ -126,14 +126,14 @@ Certain Exchange ActiveSync applications on Android 5.0 (Lollipop) or later are 
 #### What will happen if the user has certificates both on the Android device and YubiKey? 
 
 - If the user has certificates both on the android device and YubiKey, then if the YubiKey is plugged in before user clicks **Use Certificate or smart card**, the user will be shown the certificates in the YubiKey.  
-- If the YubiKey is not plugged in before user clicks **Use Certificate or smart card**, the user will be asked to select between certificates on device or physical smart card. If the user chooses **Certificate on device**, the user will be shown the certificates on the device. If the user chooses **Certificates on physical smart card**, plug in or hold the YubiKey to the back, and the user will be shown the certificates in the YubiKey. 
+- If the YubiKey isn't plugged in before user clicks **Use Certificate or smart card**, the user will be asked to select between certificates on device or physical smart card. If the user chooses **Certificate on device**, the user will be shown the certificates on the device. If the user chooses **Certificates on physical smart card**, plug in or hold the YubiKey to the back, and the user will be shown the certificates in the YubiKey. 
 
 #### My YubiKey is locked after incorrectly typing PIN three times. How do I fix it? 
 
 - Users should see a dialog informing you that too many PIN attempts have been made. This dialog also pops up during subsequent attempts to select **Use Certificate or smart card**.
 - Users should contact the admin to reset a YubiKey PIN. 
 
-#### I have installed Microsoft authenticator but still do not see an option to do Certificate based authentication with YubiKey.
+#### I have installed Microsoft authenticator but still don't see an option to do Certificate based authentication with YubiKey.
 
 Before installing Microsoft Authenticator, uninstall Company Portal and install it after Microsoft Authenticator installation. 
 
@@ -141,7 +141,7 @@ Before installing Microsoft Authenticator, uninstall Company Portal and install 
 
 Microsoft Entra CBA supports using YubiKey with USB and NFC.
 
-#### Once CBA fails, clicking on the CBA option again in the ‘Other ways to signin’ link on the error page fails. 
+#### Once CBA fails, clicking on the CBA option again in the ‘Other ways to sign in’ link on the error page fails. 
 
 This issue happens because of certificate caching. As a workaround, clicking cancel and restarting the login flow will let the user choose a new certificate and successfully login. 
 

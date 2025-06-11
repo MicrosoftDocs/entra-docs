@@ -2,33 +2,33 @@
 title: Archive & report with Azure Monitor - entitlement management
 description: Learn how to archive logs and create reports with Azure Monitor in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
-ms.custom: devx-track-azurepowershell
+ms.custom: devx-track-azurepowershell, sfi-ga-nochange
 #Customer intent: As an administrator, I want to extend data retention in entitlement management past the default period by using Azure Monitor.
 ---
 # Archive logs and reporting on entitlement management in Azure Monitor
 
-Microsoft Entra ID stores audit events for up to 30 days in the audit log. However, you can keep the audit data for longer than the default retention period, outlined in [How long does Microsoft Entra ID store reporting data?](~/identity/monitoring-health/reference-reports-data-retention.md), by routing it to an Azure Storage account or using Azure Monitor. You can then use workbooks and custom queries and reports on this data.
+Microsoft Entra ID stores audit events for up for entitlement management and other Microsoft Entra ID Governance features to 30 days in the audit log. However, you can keep the audit data for longer than the default retention period, outlined in [How long does Microsoft Entra ID store reporting data?](~/identity/monitoring-health/reference-reports-data-retention.md), by routing it to an Azure Storage account or using Azure Monitor. You can then use workbooks and custom queries and reports on this data.
 
+This article outlines how to use Azure Monitor for audit log retention. To retain or report on Microsoft Entra objects, such as users or application role assignments, see [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md).
 
 <a name='configure-azure-ad-to-use-azure-monitor'></a>
 
 ## Configure Microsoft Entra ID to use Azure Monitor
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you use the Azure Monitor workbooks, you must configure Microsoft Entra ID to send a copy of its audit logs to Azure Monitor.
 
 Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Azure subscription. You can read more about the prerequisites and estimated costs of using Azure Monitor in [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator). Make sure you have access to the resource group containing the Azure Monitor workspace.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator). Make sure you have access to the resource group containing the Azure Monitor workspace.
  
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Check if there's already a setting to send the audit logs to that workspace.
 
@@ -44,7 +44,7 @@ Archiving Microsoft Entra audit logs requires you to have Azure Monitor in an Az
 
 1. Later, to see the range of dates held in your workspace, you can use the *Archived Log Date Range* workbook:  
     
-    1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+    1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
     
     1. Expand the section **Microsoft Entra Troubleshooting**, and select on **Archived Log Date Range**. 
 
@@ -58,13 +58,16 @@ To view events for an access package, you must have access to the underlying Azu
 - Reports Reader  
 - Application Administrator  
 
+
 Use the following procedure to view events: 
 
-1. In the Microsoft Entra admin center, select **Identity** then select **Workbooks**. If you only have one subscription, move on to step 3. 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader). Make sure you have access to the resource group containing the Azure Monitor workspace.
+
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. If you have multiple subscriptions, select the subscription that contains the workspace.  
 
-1. Select the workbook named *Access Package Activity*. 
+1. Once you have selected the subscription, or if you only have one subscription, select the workbook named *Access Package Activity*. 
 
 1. In that workbook, select a time range (change to **All** if not sure), and select an access package ID from the drop-down list of all access packages that had activity during that time range. The events related to the access package that occurred during the selected time range is displayed.
 
@@ -205,3 +208,4 @@ order by ActivityDateTime desc
 ## Next steps
 - [Create interactive reports with Azure Monitor workbooks](/azure/azure-monitor/visualize/workbooks-overview)
 - [Create custom alerts for Microsoft Entra ID Governance](governance-custom-alerts.md)
+- [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md)

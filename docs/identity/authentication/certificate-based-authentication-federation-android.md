@@ -1,16 +1,14 @@
 ---
 title: Android certificate-based authentication with federation
 description: Learn about the supported scenarios and the requirements for configuring certificate-based authentication in solutions with Android devices
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ropc-nochange
 ms.topic: how-to
-ms.date: 08/14/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: annaba
 ---
 # Microsoft Entra certificate-based authentication with federation on Android

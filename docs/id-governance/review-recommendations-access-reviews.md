@@ -2,7 +2,7 @@
 title: Review recommendations for Access reviews
 description: Learn how to review access of group members with review recommendations in Microsoft Entra access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews

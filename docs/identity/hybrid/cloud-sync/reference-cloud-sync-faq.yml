@@ -3,10 +3,10 @@ metadata:
   title: Microsoft Entra Cloud Sync FAQ
   description: This document describes frequently asked questions for cloud sync.
   author: billmath
-  manager: amycolannino
+  manager: femila
   ms.service: entra-id
   ms.topic: faq
-  ms.date: 06/21/2023
+  ms.date: 12/17/2024
   ms.subservice: hybrid-cloud-sync
   ms.author: billmath
   
@@ -26,11 +26,6 @@ sections:
           Seeing password hash sync failures on the first run. Why?
         answer: |
           This behavior is expected. The failures are due to the user object not present in Microsoft Entra ID. Once the user is provisioned, wait for a couple of runs and confirm that password hash sync no longer has the errors.
-
-      - question: |
-          What happens if the Active Directory instance has attributes that aren't supported by cloud sync (for instance, directory extensions)?
-        answer: |
-          Cloud provisioning runs and provision  the supported attributes. The unsupported attributes won't be provisioned to Microsoft Entra ID. Review the directory extensions in Active Directory and ensure that you don't need those attributes to flow to Microsoft Entra ID. If one or more attributes are required, consider using Microsoft Entra Connect Sync or moving the required information to one of the supported attributes (for instance, extension attributes 1-15).
 
       - question: |
           What's the difference between Microsoft Entra Connect Sync and cloud sync?
@@ -128,6 +123,10 @@ sections:
           Does the cloud provisioning agent require a preferred domain controller list be set?
         answer: |
           No. The preferred domain controller list is specified during [agent installation](how-to-install.md) but it's optional.  If no preferred DCs are configured, then the agent uses any available DC in the domain.
+      - question: |
+          I have a multi-forest environment and the network between the two forests is using NAT (Network Address Translation). Is using Microsoft Entra Cloud Sync between these two forests supported?
+        answer: |
+          No, using Microsoft Entra Cloud Sync over NAT isn't supported because it's dependent on Active Directory which does not support NAT. See [support boundaries for Active Directory over NAT](https://learn.microsoft.com/troubleshoot/windows-server/active-directory/support-for-active-directory-over-nat).
 
 
 

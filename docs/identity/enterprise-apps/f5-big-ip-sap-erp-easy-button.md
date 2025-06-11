@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to configure F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID, so that I can secure the application and enable single sign-on for users, improving overall application security posture.
 ---
 
@@ -83,7 +82,6 @@ This tutorial uses Guided Configuration 16.1 with an Easy Button template. With 
 
 ## Register Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it. 
 
@@ -92,7 +90,7 @@ See, [Quickstart: Register an application with the Microsoft identity platform](
 Register the Easy Button client in Microsoft Entra ID, then establishes a trust between SAML SP instances of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations** > **New registration**.
+2. Browse to **Entra ID** > **App registrations** > **New registration**.
 3. Enter a **Name** for the new application. 
 4. In **Accounts in this organizational directory only**, specify who can use the application.
 5. Select **Register**.
@@ -140,9 +138,7 @@ The **Configuration Properties** tab has service account properties and creates 
 3. For **Tenant ID, Client ID,** and **Client Secret**, enter the Tenant ID, Client ID, and Client Secret you noted during tenant registration.
 4. Select **Test Connection**. This action confirms the BIG-IP connects to your tenant.
 5. Select **Next**.
-
-   ![Screenshot of options and selections for Configuration Properties.](./media/f5-big-ip-easy-button-sap-erp/configuration-general-and-service-account-properties.png)
-   
+  
 ### Service Provider
 
 Use the Service Provider settings to define SAML SP instance properties of the application secured by SHA.
@@ -333,7 +329,7 @@ If you're unable to access the SHA-secured application, see the following troubl
 
 To validate an Internet Information Services (IIS) application KCD configuration, see [Troubleshoot KCD configurations for Application Proxy](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) 
 
-Go to techdocs.f5.com for [Kerberos single sign-on method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html)
+Go to techdocs.f5.com for [Kerberos single sign-on method](https://techdocs.f5.com/en-us/bigip-17-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html)
 
 ### Log analysis
 
@@ -377,4 +373,4 @@ If no BIG-IP error message appeared, the issue might be related to the back-end 
 Learn more:
 
 * Go to devcentral.f5.com for [APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107)
-* Go to techdocs.f5.com for [Session variables](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html)
+* Go to techdocs.f5.com for [Session variables](https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html)

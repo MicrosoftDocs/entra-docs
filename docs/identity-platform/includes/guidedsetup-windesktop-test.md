@@ -1,20 +1,16 @@
 ---
 title: include file
 description: include file
-
 author: OwenRichards1
 manager: CelesteDG
 editor: ''
-
 ms.service: identity-platform
-
 ms.topic: include
 ms.tgt_pltfrm: na
-
 ms.date: 04/10/2019
 ms.author: owenrichards
 ms.reviewer: jmprieur
-ms.custom: include file
+ms.custom: include file, sfi-image-nochange
 ---
 
 ## Test your code

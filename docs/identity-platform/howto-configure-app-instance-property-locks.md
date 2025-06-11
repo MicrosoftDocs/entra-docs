@@ -5,10 +5,10 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 10/26/2023
-ms.reviewer:
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to protect properties of my application instance of being modified.
 ---
 
@@ -30,13 +30,12 @@ The following property usage scenarios are considered as sensitive:
 
 ## Configure an app instance lock
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To configure an app instance lock:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the application you want to configure.
 1. Select **Authentication**, and then select **Configure** under the *App instance property lock* section.
 

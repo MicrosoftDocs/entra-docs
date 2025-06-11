@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: overview
-ms.date: 10/30/2023
+ms.date: 09/30/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps-article

@@ -3,11 +3,11 @@ title: 'Get started integrating with Microsoft Entra ID'
 description: This article describes the steps required to integrate with Active Directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid
 ms.author: billmath
 
@@ -15,11 +15,11 @@ ms.author: billmath
 
 # Steps to start integrating with Microsoft Entra ID
 
-If you're new to hybrid identity, then this documentation is the place that you want to start.  If you haven't done so, it's recommended that you familiarize yourself with the [What is hybrid identity?](whatis-hybrid-identity.md) documentation before jumping in.  
+If you're new to hybrid identity, then this documentation is the place that you want to start. If you haven't done so, familiarize yourself with the [What is hybrid identity?](whatis-hybrid-identity.md) documentation before jumping in.  
 
-This document provides the steps that are required to integrate your on-premises Active Directory with Microsoft Entra ID.  Integrating with Active Directory is the process of setting up synchronization for users and groups with Microsoft Entra ID.  These steps differ slightly depending on which tool you use.
+This document provides the steps that are required to integrate your on-premises Active Directory with Microsoft Entra ID. Integrating with Active Directory is the process of setting up synchronization for users and groups with Microsoft Entra ID.  These steps differ slightly depending on which tool you use.
 
-Use the [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad) first, to determine which one is right for you.  Use the next section, for the tool that was recommended for you.
+Use the [Choosing the right sync tool](https://setup.microsoft.com/azure/add-or-sync-users-to-azure-ad) first, to determine which one is right for you. Use the next section, for the tool that was recommended for you.
 
 ## Cloud sync
 Use these tasks if you're deploying cloud sync to integrate with Active Directory.

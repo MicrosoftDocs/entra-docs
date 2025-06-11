@@ -2,14 +2,14 @@
 title: Non-interactive sign-in logs
 description: Learn about the type of activity captured in the non-interactive sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/10/2024
+ms.date: 06/02/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is captured in the non-interactive sign-in logs so I can better monitor the health of my tenant.
 ---
 # What are non-interactive user sign-ins in Microsoft Entra?
@@ -24,8 +24,7 @@ Non-interactive sign-ins are done *on behalf of a* user. These delegated sign-in
 
 ## Log details
 
-**Report size:** Large </br>
-**Examples:**
+The following examples show the type of information captured in the non-interactive user sign-in logs:
 
 - A client app uses an OAuth 2.0 refresh token to get an access token.
 - A client uses an OAuth 2.0 authorization code to get an access token and refresh token.
@@ -58,5 +57,7 @@ Sign-ins are aggregated in the non-interactive users when the following data mat
 - Status
 - Resource ID
 
-> [!NOTE]
-> The IP address of non-interactive sign-ins performed by [confidential clients](../../identity-platform/msal-client-applications.md) doesn't match the actual source IP of where the refresh token request is coming from. Instead, it shows the original IP used for the original token issuance.
+## Special considerations
+
+- The IP address of non-interactive sign-ins performed by [confidential clients](../../identity-platform/msal-client-applications.md) doesn't match the actual source IP of where the refresh token request is coming from. Instead, it shows the original IP used for the original token issuance.
+- As of April 11, 2025, all new sign-ins that obtain a refresh token with FIDO2 keys are now logged in the non-interactive sign-in logs.

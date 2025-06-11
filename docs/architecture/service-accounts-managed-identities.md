@@ -8,8 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/07/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Securing managed identities in Microsoft Entra ID
@@ -81,7 +80,7 @@ To find managed identities, you can use:
 2. In the left navigation, select **Enterprise applications**.
 3. In the **Application type** column, under **Value**, select the down-arrow to select **Managed Identities**.
 
-   ![Screenshot of the Managed Identies option under Values, in the Application type column.](./media/govern-service-accounts/service-accounts-managed-identities.png)
+   ![Screenshot of the Managed Identities option under Values, in the Application type column.](./media/govern-service-accounts/service-accounts-managed-identities.png)
 
 ### Microsoft Graph
 

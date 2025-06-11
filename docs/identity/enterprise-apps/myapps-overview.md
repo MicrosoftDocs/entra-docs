@@ -8,17 +8,19 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 10/18/2023
+ms.date: 10/31/2024
 ms.author: jomondi
 ms.reviewer: saibandaru
 ms.custom: enterprise-apps
 
-#Customer intent: As an IT admin managing and launching applications in Microsoft Entra ID, I want to learn how I can equip end users to request new applications and create collectiona for applications in their My Apps portal, so that they can easily find and use the applications they need for their work.
+#Customer intent: As an IT admin managing and launching applications in Microsoft Entra ID, I want to learn how I can equip end users to request new applications and create collections for applications in their My Apps portal, so that they can easily find and use the applications they need for their work.
 ---
 
 # My Apps portal overview
 
-My Apps is a web-based portal that is used for managing and launching applications in Microsoft Entra ID. To work with applications in My Apps, use an organizational account in Microsoft Entra ID and obtain access granted by the Microsoft Entra administrator. My Apps is separate from the Microsoft Entra admin center and doesn't require users to have an Azure subscription or Microsoft 365 subscription.
+My Apps is a web-based portal that is used for managing and launching applications in Microsoft Entra ID. To work with applications in My Apps, use an organizational account in Microsoft Entra ID and obtain access granted by the Microsoft Entra administrator.
+
+My Apps is separate from the Microsoft Entra admin center and doesn't require users to have an Azure subscription or Microsoft 365 subscription.
 
 Users access the My Apps portal to:
 
@@ -56,7 +58,7 @@ For more information, see [Properties of an enterprise application](application-
 
 ### Discover applications
 
-When signed in to the [My Apps](https://myapps.microsoft.com) portal, the applications that have been made visible are shown. For an application to be visible in the My Apps portal, set the appropriate properties in the [Microsoft Entra admin center](https://entra.microsoft.com). Also in the Microsoft Entra admin center, assign a user or group with the appropriate members.
+When signed in to the [My Apps](https://myapps.microsoft.com) portal, the applications that are made visible are shown. For an application to be visible in the My Apps portal, set the appropriate properties in the [Microsoft Entra admin center](https://entra.microsoft.com). Also in the Microsoft Entra admin center, assign a user or group with the appropriate members.
 
 In the My Apps portal, to search for an application, enter an application name in the search box at the top of the page to find an application. The applications that are listed can be formatted in **List view** or a **Grid view**.
 
@@ -80,7 +82,7 @@ For more information, see [Add branding to your organization's sign-in page](~/f
 
 ## Manage access to applications
 
-Multiple factors affect how and whether an application can be accessed by users. Permissions that are assigned to the application can affect what can be done with it. Applications can be configured to allow self-service access, or access can be only granted by an administrator of the tenant.
+Multiple factors affect how and whether an application is accessed by users. Permissions that are assigned to the application can affect what can be done with it. Applications can be configured to allow self-service access, or access can be only granted by an administrator of the tenant.
 
 ### My Apps Secure Sign-in Extension
 
@@ -105,9 +107,9 @@ An icon is added to the right of the address bar, which enables sign in and cust
 
 ### Permissions
 
-Permissions that have been granted to an application can be reviewed by selecting the upper right corner of the tile that represents the application and then selecting **Manage your application**.
+Permissions that are granted to an application can be reviewed by selecting the upper right corner of the tile that represents the application and then selecting **Manage your application**.
 
-The permissions that are shown have been consented to by an administrator or have been consented to by the user. Permissions consented to by the user can be revoked by the user.
+The permissions that are shown are consented to by an administrator or are consented to by the user. Permissions consented to by the user can be revoked by the user.
 
 ### Self-service access
 

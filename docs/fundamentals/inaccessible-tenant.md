@@ -1,14 +1,15 @@
 ---
-title: Troubleshoot inaccessible tenants 
+title: Troubleshoot inaccessible tenants
 description: Instructions about how to unblock a tenant.
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra
 ms.topic: troubleshooting
 ms.subservice: fundamentals
-ms.date: 09/03/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: Sunayana
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -17,13 +18,13 @@ ms.reviewer: Sunayana
 
 Configured tenants no longer in use may still generate costs for your organization. Making a tenant inaccessible due to inactivity helps reduce unnecessary expenses. This article discusses how to handle an inaccessible tenant, reactivation, and guidance for both administrators and application developers. 
 
-When you try to access the tenant you receive a message similar to the example shown below. 
+If you try to access the tenant, you receive a message similar to the example shown. 
 
 Error message ```Error message: AADSTS5000225: This tenant has been blocked due to inactivity. To learn more about ...``` is expected for tenants' inaccessible due to inactivity. 
 
 :::image type="content" source="media/tenant-inaccessible/tenant-block.png" alt-text="Screenshot showing an error when tenant access blocked due to inactivity." lightbox="media/tenant-inaccessible/tenant-block.png":::
 
-Administrators can request a tenant to be reactivated within 20 days of the tenant entering an inactive state. Tenants that remain in this state for longer than 20 days will be deleted.
+Administrators can request a tenant to be reactivated within 20 days of the tenant entering an inactive state. Tenants that remain in this state for longer than 20 days are deleted.
 
 Take the appropriate steps depending on your goals for the tenant and your role in the environment.
 
@@ -36,13 +37,13 @@ If you need to reactivate your tenant:
 
 If you don't plan to reactivate your tenant:
 
-- The tenant will be deleted after 20 days of being inaccessible due to inactivity and won't be recoverable.
+- The tenant is deleted after 20 days of being inaccessible due to inactivity and it isn't recoverable.
 - Review Microsoft's data protection policies, [here](https://www.microsoft.com/trust-center/privacy/data-management#leave).  
 
 ## Application owners/developers
 
 - Minimize the number of authentication requests sent to this deactivated tenant until the tenant is reactivated.
-- Refrain from submitting another assistance request. You will be contacted once that a decision is made.
+- Refrain from submitting another assistance request. You are contacted once that a decision is made.
 - Review Microsoft's [data protection policies](https://www.microsoft.com/trust-center/privacy/data-management#leave).  
 
 ## Related content

@@ -1,18 +1,14 @@
 ---
-
 title: Add Facebook as an identity provider
 description: Federate with Facebook to enable external users (guests) to sign in to your Microsoft Entra apps with their own Facebook accounts.
-
- 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 06/19/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 #customer intent: As a B2B collaboration administrator, I want to add Facebook as an identity provider for self-service sign-up user flows, so that users can sign in to applications using their Facebook accounts.
 ---
 
@@ -78,10 +74,9 @@ Now you set the Facebook client ID and client secret, either by entering it in t
 
 ### To configure Facebook federation in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers**, then on the **Facebook** line, select **Configure**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**, then on the **Facebook** line, select **Configure**.
 1. For the **Client ID**, enter the **App ID** of the Facebook application that you created earlier.
 1. For the **Client secret**, enter the **App secret** that you recorded.
 
@@ -125,7 +120,7 @@ You can delete your Facebook federation setup. If you do so, any users who have 
 ### To delete Facebook federation in the Microsoft Entra admin center: 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Facebook** line. Select **Configured**, and then select **Delete**.
 1. Select **Yes** to confirm deletion.
 

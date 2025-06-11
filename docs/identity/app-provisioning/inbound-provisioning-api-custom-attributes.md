@@ -1,15 +1,15 @@
 ---
 title: Extend API-driven provisioning to sync custom attributes
 description: Learn how to extend API-driven inbound provisioning to sync custom attributes.
-
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 07/29/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Extend API-driven provisioning to sync custom attributes
@@ -28,7 +28,7 @@ You have configured API-driven provisioning app. You're provisioning app is succ
 In this step, we'll add the two attributes "HireDate" and "JobCode" that are not part of the standard SCIM schema to the provisioning app and use them in the provisioning data flow.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Open your API-driven provisioning app. 
 1. Open the **Provisioning** blade. 
 1. Click on the **Edit Provisioning** button. 

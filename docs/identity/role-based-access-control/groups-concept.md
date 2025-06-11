@@ -2,13 +2,13 @@
 title: Use Microsoft Entra groups to manage role assignments
 description: Use Microsoft Entra groups to simplify role assignment management in Microsoft Entra ID.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: conceptual
-ms.date: 04/10/2023
-ms.author: rolyon
+ms.date: 01/03/2025
+ms.author: barclayn
 ms.reviewer: vincesm
 ms.custom: it-pro
 
@@ -50,7 +50,7 @@ Role-assignable groups are designed to help prevent potential breaches by having
 - The membership type for role-assignable groups must be Assigned and can't be a Microsoft Entra dynamic group. Automated population of dynamic membership groups could lead to an unwanted account being added to the group and thus assigned to the role.
 - By default, Privileged Role Administrators can manage the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
 - For Microsoft Graph, the *RoleManagement.ReadWrite.Directory* permission is required to be able to manage the membership of role-assignable groups. The *Group.ReadWrite.All* permission won't work.
-- To prevent elevation of privilege, you must be assigned at least the Privileged Authentication Administrator role to change the credentials or reset MFA or modify sensitive attributes for members and owners of a role-assignable group.
+- To prevent elevation of privilege, you must be assigned at least the Privileged Authentication Administrator role to change the credentials, reset MFA, or modify sensitive attributes for members and owners of a role-assignable group.
 - Group nesting isn't supported. A group can't be added as a member of a role-assignable group.
 
 ## Use PIM to make a group eligible for a role assignment
@@ -69,9 +69,9 @@ The following scenarios aren't supported:
 
 The following are known issues with role-assignable groups:
 
-- *Microsoft Entra ID P2 licensed customers only*: Even after deleting the group, it is still shown an eligible member of the role in PIM UI. Functionally there's no problem; it's just a cache issue in the Microsoft Entra admin center.  
+- *Microsoft Entra ID P2 licensed customers only*: Even after deleting the group, it's still shown as an eligible member of the role in PIM UI. Functionally there's no problem; it's just a cache issue in the Microsoft Entra admin center.  
 - Use the new [Exchange admin center](/exchange/exchange-admin-center) for role assignments via dynamic membership groups. The old Exchange admin center doesn't support this feature. If accessing the old Exchange admin center is required, assign the eligible role directly to the user (not via role-assignable groups). Exchange PowerShell cmdlets work as expected.
-- If an administrator role is assigned to a role-assignable group instead of individual users, members of the group will not be able to access Rules, Organization, or Public Folders in the new [Exchange admin center](/exchange/exchange-admin-center). The workaround is to assign the role directly to users instead of the group.
+- If an administrator role is assigned to a role-assignable group instead of individual users, members of the group won't be able to access Rules, Organization, or Public Folders in the new [Exchange admin center](/exchange/exchange-admin-center). The workaround is to assign the role directly to users instead of the group.
 - Azure Information Protection Portal (the classic portal) doesn't recognize role membership via group yet. You can [migrate to the unified sensitivity labeling platform](/azure/information-protection/configure-policy-migrate-labels) and then use the Microsoft Purview compliance portal to use group assignments to manage roles.
 
 ## License requirements
@@ -81,4 +81,5 @@ Using this feature requires a Microsoft Entra ID P1 license. The Privileged Iden
 ## Next steps
 
 - [Create a role-assignable group](groups-create-eligible.md)
-- [Assign Microsoft Entra roles to groups](groups-assign-role.md)
+- [Assign Microsoft Entra roles](manage-roles-portal.md)
+- [Manage Microsoft Entra groups and group membership](../../fundamentals/how-to-manage-groups.yml)

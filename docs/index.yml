@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Microsoft Entra documentation
-summary: Learn more about the Microsoft Entra family of multicloud identity and access solutions.
+summary: Learn more about the Microsoft Entra family of multicloud identity and network access solutions.
 brand: azure
 
 metadata:
@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: CelesteDG
   ms.author: celested
-  ms.date: 07/10/2024
+  ms.date: 05/07/2025
 
 ## BAND 1 - HIGHLIGHTED CONTENT ##############################################
 highlightedContent:
@@ -24,9 +24,9 @@ highlightedContent:
     - title: Identity fundamentals
       url: /entra/fundamentals/identity-fundamental-concepts
       itemType: concept
-    - title: What is Microsoft Entra External ID?
-      url: /entra/external-id/external-identities-overview
-      itemType: overview
+    - title: Secure Generative AI with Microsoft Entra
+      url: /entra/architecture/secure-generative-ai
+      itemType: concept
 
 ## BAND 1 - HIGHLIGHTED CONTENT END ##########################################
 
@@ -57,10 +57,6 @@ productDirectory:
       imageSrc: ./media/index/private-access-color.png
       summary: "Secure access to all private apps and resources with identity-centric Zero Trust Network Access (ZTNA)."
       url: /entra/global-secure-access/
-    - title: Microsoft Entra Permissions Management
-      imageSrc: ./media/index/permissions-management-color.png
-      summary: "One unified model to manage permissions of any identity across any cloud."
-      url: /entra/permissions-management/
     - title: Microsoft Entra Verified ID
       imageSrc: ./media/index/verified-id-color.png
       summary: "Enable more secure interactions while respecting privacy with an industry-leading global platform."
@@ -86,9 +82,9 @@ conceptualContent:
         - text: Access the admin center and create a tenant
           url: /entra/fundamentals/create-new-tenant
           itemType: quickstart
-        - text: Create a group and add members 
-          url: /entra/fundamentals/groups-view-azure-portal
-          itemType: quickstart
+        - text: Copilot in Microsoft Entra 
+          url: /entra/fundamentals/copilot-security-entra
+          itemType: concept
     ## CARD 2 ######################
     - title: Architecture
       links:

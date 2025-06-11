@@ -1,24 +1,22 @@
 ---
 title: Renew Azure resource role assignments in PIM
 description: Learn how to extend or renew Azure resource role assignments in Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim
-
+ms.custom: pim, sfi-image-nochange
 ---
 
 
 
 # Extend or renew Azure resource role assignments in Privileged Identity Management
 
-Microsoft Entra Privileged Identity Management (PIM), provides controls to manage the access and assignment lifecycle for Azure resources. Administrators can assign roles using start and end date-time properties. When the assignment end approaches, Privileged Identity Management sends email notifications to the affected users or groups. It also sends email notifications to administrators of the resource to ensure that appropriate access is maintained. Assignments might be renewed and remain visible in an expired state for up to 30 days, even if access is not extended.
+Microsoft Entra Privileged Identity Management (PIM), provides controls to manage the access and assignment lifecycle for Azure resources. Administrators can assign roles using start and end date-time properties. When the assignment end approaches, Privileged Identity Management sends email notifications to the affected users or groups. It also sends email notifications to administrators of the resource to ensure that appropriate access is maintained. Assignments might be renewed and remain visible in an expired state for up to 30 days, even if access isn't extended.
 
 ## Who can extend and renew?
 
@@ -100,11 +98,11 @@ Users who can no longer access resources can access up to 30 days of expired ass
 
 The list of roles shown defaults to **Eligible roles**. Use the drop-down menu to toggle between Eligible and Active assigned roles.
 
-To request renewal for any of the role assignments in the list, select the **Renew** action. Then provide a reason for the request. It's helpful to provide a duration in addition to any additional context or a business justification that can help the resource administrator decide to approve or deny.
+To request renewal for any of the role assignments in the list, select the **Renew** action. Then provide a reason for the request. It's helpful to provide a duration in addition to any other context or a business justification that can help the resource administrator decide to approve or deny.
 
 :::image type="content" source="media/pim-resource-roles-renew-extend/aadpim-rbac-renew-request-form.png" alt-text="Screenshot of Renew role assignment pane showing Reason box.":::
 
-After the request has been submitted, resource administrators are notified of a pending request to renew a role assignment.
+After the request is submitted, resource administrators are notified of a pending request to renew a role assignment.
 
 ### Admin approves
 

@@ -1,32 +1,31 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Keeper Password Manager'
+title: Configure Keeper Password Manager for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Keeper Password Manager.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Keeper Password Manager so that I can control who has access to Keeper Password Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Keeper Password Manager
+# Configure Keeper Password Manager for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Keeper Password Manager with Microsoft Entra ID. When you integrate Keeper Password Manager with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Keeper Password Manager with Microsoft Entra ID. When you integrate Keeper Password Manager with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Keeper Password Manager.
 * Enable your users to be automatically signed-in to Keeper Password Manager with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Keeper Password Manager single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -34,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Keeper Password Manager supports SP-initiated SSO.
 * Keeper Password Manager supports [**Automated** user provisioning and deprovisioning](keeper-password-manager-digitalvault-provisioning-tutorial.md) (recommended).
@@ -45,11 +44,11 @@ In this tutorial, you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Keeper Password Manager into Microsoft Entra ID, add the application from the gallery to your list of managed software as a service (SaaS) apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In **Add from the gallery**, type **Keeper Password Manager** in the search box.
 1. Select **Keeper Password Manager** from results panel, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-keeper-password-manager'></a>
 
@@ -61,8 +60,8 @@ To configure and test Microsoft Entra SSO with Keeper Password Manager:
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) to enable your users to use this feature.
 
-    1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra single sign-on with Britta Simon.
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) to enable Britta Simon to use Microsoft Entra single sign-on.
+    1. Create a Microsoft Entra test user to test Microsoft Entra single sign-on with Britta Simon.
+    1. Assign the Microsoft Entra test user to enable Britta Simon to use Microsoft Entra single sign-on.
 
 1. [Configure Keeper Password Manager SSO](#configure-keeper-password-manager-sso) to configure the SSO settings on the application side.
     1. [Create a Keeper Password Manager test user](#create-a-keeper-password-manager-test-user) to have a counterpart of Britta Simon in Keeper Password Manager linked to the Microsoft Entra representation of the user.
@@ -75,7 +74,7 @@ To configure and test Microsoft Entra SSO with Keeper Password Manager:
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Keeper Password Manager** application integration page, find the **Manage** section. Select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Keeper Password Manager** application integration page, find the **Manage** section. Select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -97,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     d. For **Sign out URL**, type a URL using one of the following patterns:
     * For cloud SSO: `https://keepersecurity.com/api/rest/sso/saml/slo/<CLOUD_INSTANCE_ID>`
-    * There is no configuration for on-premises SSO.
+    * There's no configuration for on-premises SSO.
 
 	> [!NOTE]
 	> These values aren't real. Update these values with the actual Identifier,Reply URL and Sign on URL. To get these values, contact the [Keeper Password Manager Client support team](https://keepersecurity.com/contact.html). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
@@ -124,33 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user 
-
-In this section, you create a test user in the Azure portal called `B.Simon`.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable B.Simon to use Azure single sign-on by granting access to Keeper Password Manager.
-
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. In the applications list, select **Keeper Password Manager**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-1. Select **Add user**. In **Add Assignment**, select **Users and groups**.
-1. In **Users and groups**, select **B.Simon** from the list of users. Then choose **Select** at the bottom of the screen.
-1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** list. If no role has been set up for this app, the **Default Access** role is selected.
-1. In **Add Assignment**, select **Assign**.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Keeper Password Manager SSO
 
@@ -167,12 +140,12 @@ To enable Microsoft Entra users to sign in to Keeper Password Manager, you must 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Keeper Password Manager Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Keeper Password Manager Sign-on URL where you can initiate the login flow. 
 
 * Go to Keeper Password Manager Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Keeper Password Manager tile in the My Apps, this will redirect to Keeper Password Manager Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Keeper Password Manager tile in the My Apps, this option redirects to Keeper Password Manager Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 After you configure Keeper Password Manager, you can enforce session control. This protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. For more information, see [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

@@ -85,14 +85,13 @@ There are two ways to capture sign-in fields for your custom apps:
 
 In general, if automatic sign-in field capture doesn't work, try the manual option.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### Automatically capture sign-in fields for an app
 
 To configure password-based SSO by using automatic sign-in field capture, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the app that you want to configure for SSO.
 1. After the app loads, select **Single sign-on** in the navigation pane on the left side.
 1. Select **Password-based Sign-on** mode.
@@ -107,7 +106,7 @@ To manually capture sign-in fields, you must have the My Apps browser extension 
 To configure password-based SSO for an app by using manual sign-in field capture, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the app that you want to configure for SSO.
 1. After the app loads, select **Single sign-on** in the navigation pane on the left side.
 1. Select **Password-based Sign-on** mode.
@@ -248,7 +247,7 @@ The following information explains what each notification item means and provide
 
     Example:
     
-    `{"errorCode":"InternalUrl\_Duplicate","localizedErrorDetails":{"errorDetail":"Internal url 'https://google.com/' is invalid since it is already in use"},"operationResults":\[{"objectId":null,"displayName":null,"status":0,"details":"Internal url 'https://bing.com/' is invalid since it is already in use"}\],"timeStampUtc":"2017-03-23T19:50:26.465743Z","clientRequestId":"00aa00aa-bb11-cc22-dd33-44ee44ee44ee","internalTransactionId":"ea5b5475-03b9-4f08-8e95-bbb11289ab65","upn":"tperkins@f128.info","tenantId":"aaaabbbb-0000-cccc-1111-dddd2222eeee","userObjectId":"aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"}`
+    `{"errorCode":"InternalUrl\_Duplicate","localizedErrorDetails":{"errorDetail":"Internal url 'https://google.com/' is invalid since it is already in use"},"operationResults":\[{"objectId":null,"displayName":null,"status":0,"details":"Internal url 'https://bing.com/' is invalid since it is already in use"}\],"timeStampUtc":"2017-03-23T19:50:26.465743Z","clientRequestId":"00aa00aa-bb11-cc22-dd33-44ee44ee44ee","internalTransactionId":"aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb","upn":"tperkins@f128.info","tenantId":"aaaabbbb-0000-cccc-1111-dddd2222eeee","userObjectId":"aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"}`
 
 ## Next steps
 

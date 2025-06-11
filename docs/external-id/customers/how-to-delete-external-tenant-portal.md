@@ -1,17 +1,14 @@
 ---
 title: Delete an external tenant
-description: Learn how to delete an external tenant in the  Microsoft Entra admin center. 
- 
+description: Learn how to delete an external tenant in the  Microsoft Entra admin center.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 04/30/2024
+ms.date: 02/06/2025
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to delete an external tenant in the  Microsoft Entra admin center. 
 ---
 # Delete an external tenant
@@ -30,7 +27,7 @@ You can't delete an external tenant until it passes several checks. These checks
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Overview** > **Manage tenants**.
+1. Browse to **Entra ID** > **Overview** > **Manage tenants**.
 1. Select the tenant you want to delete, and then select **Delete**.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/delete-tenant.png" alt-text="Screenshot that shows how to delete the tenant.":::

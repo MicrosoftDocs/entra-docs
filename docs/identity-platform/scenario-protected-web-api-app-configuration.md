@@ -4,15 +4,17 @@ description: Learn how to build a protected web API and configure your applicati
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 05/08/2023
+ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a protected web API using the Microsoft identity platform for developers.
 ---
 
 # Protected web API: Code configuration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 To configure the code for your protected web API, understand:
 

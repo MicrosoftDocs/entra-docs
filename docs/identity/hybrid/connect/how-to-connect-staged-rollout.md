@@ -2,13 +2,13 @@
 title: 'Microsoft Entra Connect: Cloud authentication via Staged Rollout'
 description: This article explains how to migrate from federated authentication, to cloud authentication, by using a Staged Rollout.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -27,7 +27,7 @@ Before you try this feature, we suggest that you review our guide on choosing th
 
 For an overview of the feature, view this "What is Staged Rollout?" video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3inQJ]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=252dc370-5709-4dfb-b346-2cbf76f1640f]
 
 
 
@@ -46,7 +46,7 @@ For an overview of the feature, view this "What is Staged Rollout?" video:
 
 -   You have configured all the appropriate tenant-branding and Conditional Access policies you need for users who are being migrated to cloud authentication.
 
--   If you have moved from federated to cloud authentication, you must verify that the DirSync setting `SynchronizeUpnForManagedUsers` is enabled, otherwise Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
+-   If you have moved from federated to cloud authentication, you must verify that the DirSync setting `synchronizeUpnForManagedUsersEnabled` is set to `true`, otherwise Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
 
 -   If you plan to use Microsoft Entra multifactor authentication, we recommend that you use [combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md) to have your users register their authentication methods once. Note- when using SSPR to reset password or change password using MyProfile page while in Staged Rollout, Microsoft Entra Connect needs to sync the new password hash that can take up to 2 minutes after reset.
 
@@ -63,7 +63,7 @@ The following scenarios are supported for Staged Rollout. The feature works only
 
 - Users who are provisioned to Microsoft Entra ID by using Microsoft Entra Connect. It doesn't apply to cloud-only users.
 
-- User sign-in traffic on browsers and *modern authentication* clients. Applications or cloud services that use [legacy authentication](~/identity/conditional-access/block-legacy-authentication.md) fall back to federated authentication flows. An example of legacy authentication might be Exchange online with modern authentication turned off, or Outlook 2010, which doesn't support modern authentication.
+- User sign-in traffic on browsers and *modern authentication* clients. Applications or cloud services that use legacy authentication fall back to federated authentication flows. An example of legacy authentication might be Exchange online with modern authentication turned off, or Outlook 2010, which doesn't support modern authentication.
 
 - Group size is currently limited to 50,000 users.  If you have groups that are larger than 50,000 users, it's recommended to split this group over multiple groups for Staged Rollout.
 
@@ -169,7 +169,6 @@ To roll out a specific feature (*pass-through authentication*, *password hash sy
 
 ### Enable a Staged Rollout of a specific feature on your tenant
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can roll out these options:
 
@@ -183,7 +182,7 @@ To configure Staged Rollout, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect sync**.
+1. Browse to **Entra ID** > **Entra Connect** > **Connect sync**.
 
 1. On the *Microsoft Entra Connect* page, under the *Staged rollout of cloud authentication*, select the **Enable staged rollout for managed user sign-in** link. 
 
@@ -258,7 +257,8 @@ You can monitor the users and groups added or removed from Staged Rollout and us
 ## Remove a user from Staged Rollout
 
 Removing a user from the group disables Staged Rollout for that user. To disable the Staged Rollout feature, slide the control back to **Off**.
-
+>[!Important]
+> When removing a user from a group in staged rollout for certificate-based authentication, where the user has signed-into Windows devices with a certificate, it is recommended to keep the user enabled for the certificate based authentication method in Entra ID. The user should remain enabled for certificate based authentication after removal from staged rollout for long enough that the user can sign-in to Windows and refresh their primary refresh token using the federated identity provider. 
 ## Frequently asked questions
 
 **Q: Can I use this capability in production?**

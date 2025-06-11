@@ -16,16 +16,16 @@ ms.collection:
 
 # Microsoft Entra ID and data residency
 
-Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and manages identity and access data in the cloud. You can use the data to enable and manage access to cloud services, achieve mobility scenarios, and secure your organization. An instance of the Microsoft Entra service, called a [tenant](~/identity-platform/developer-glossary.md#tenant), is an isolated set of directory object data that the customer provisions and owns.
+Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and manages identity and access data in the cloud. You can use the data to enable and manage access to cloud services, achieve mobility scenarios, and secure your organization. An instance of the Microsoft Entra ID service, called a [tenant](~/identity-platform/developer-glossary.md#tenant), is an isolated set of directory object data that the customer provisions and owns.
 
 > [!NOTE]
 > Microsoft Entra External ID is a customer identity and access management (CIAM) solution that stores and manages data in a separate tenant created for your customer-facing apps and customer directory data. This tenant is called the external tenant. When you create an external tenant, you have the option to select the geographic location for data storage. It’s important to note that the data locations and region availability may differ from those of Microsoft Entra ID, as indicated in this article.
 
 ## Core Store
 
-The Core Store is made up of tenants stored in scale units, each of which contains multiple tenants. Update or retrieval data operations in the Microsoft Entra Core Store relate to a single tenant, based on the user's security token, which achieves tenant isolation. Scale units are assigned to a geo-location. Each geo-location uses two or more Azure regions to store the data. In each Azure region, a scale unit data is replicated in the physical datacenters for resiliency and performance.
+The Core Store is made up of tenants stored in scale units, each of which contains multiple tenants. Update or retrieval data operations in the Microsoft Entra Core Store relate to a single tenant, based on the user's security token, which achieves tenant isolation. Scale units are assigned to a geo-location. Each geo-location uses two or more Azure regions to store the data. In each Azure region, a scale unit data is replicated in the physical datacenters for resiliency and performance, as described in [the Microsoft Entra architecture](/entra/architecture/architecture).
 
-Learn more: [Microsoft Entra Core Store Scale Units](https://www.youtube.com/watch?v=OcKO44GtHh8)
+For more information on the Core Store, see [Microsoft Entra Core Store Scale Units](https://www.youtube.com/watch?v=OcKO44GtHh8). For more information on Azure regions, see [Azure geographies](https://azure.microsoft.com/overview/datacenters/how-to-choose/).
 
 Microsoft Entra ID is available in the following clouds:
 
@@ -62,22 +62,21 @@ Use the following table to see Microsoft Entra cloud solution models based on in
 
 |Model|Locations|Data location|Operations personnel|Put a tenant in this model|
 |---|---|---|---|---|
-|Public geo located|Australia*, North America, EMEA, Japan*, Asia/Pacific|At rest, in the target location. Exceptions by service or feature|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Create the tenant in the sign-up experience. Choose the location for data residency.|
+|Public geo located|Australia (1), North America, EMEA, Japan (1), Asia/Pacific|At rest, in the target location. Exceptions by component service or feature, listed in the next section|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Create the tenant in the sign-up experience. Choose the location for data residency.|
 |Public worldwide|Worldwide|All locations|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Tenant creation available via official support channel and subject to Microsoft discretion.|
-|Sovereign or national clouds|US government*, China*|At rest, in the target location. No exceptions.|Operated by a data custodian (1). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
-
-*\* Not currently available for external tenants.*
+|Sovereign or national clouds|US government (1), China (1)|At rest, in the target location. No exceptions.|Operated by a data custodian (2). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
 
 **Table references**:
 
-(1) **Data custodians**: datacenters in the US government cloud are operated by Microsoft. In China, Microsoft Entra ID is operated through a partnership with [21Vianet](/microsoft-365/admin/services-in-china/services-in-china?redirectSourcePath=%252fen-us%252farticle%252fLearn-about-Office-365-operated-by-21Vianet-a8ab5061-3346-4da0-bb7c-5260822b53ae&view=o365-21vianet&viewFallbackFrom=o365-worldwide&preserve-view=true).
+(1) These locations aren't currently available for external tenants.
+(2) **Data custodians**: datacenters in the US government cloud are operated by Microsoft. In China, Microsoft Entra ID is operated through a partnership with [21Vianet](/microsoft-365/admin/services-in-china/services-in-china?redirectSourcePath=%252fen-us%252farticle%252fLearn-about-Office-365-operated-by-21Vianet-a8ab5061-3346-4da0-bb7c-5260822b53ae&view=o365-21vianet&viewFallbackFrom=o365-worldwide&preserve-view=true).
 
 Learn more:
 
 - [Customer data storage and processing for European customers in Microsoft Entra ID](./data-storage-eu.md)
-- [What is the Microsoft Entra architecture?](https://aka.ms/aadarch)
-- [Find the Azure geography that meets your needs](https://azure.microsoft.com/overview/datacenters/how-to-choose/)
-- [Microsoft Trust Center](https://www.microsoft.com/trustcenter/cloudservices/nationalcloud)
+- [Customer data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia-newzealand.md) and [Identity data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia.md)
+- [Customer data storage for Japan customers in Microsoft Entra ID](./data-storage-japan.md)
+- [Microsoft Trust Center - Where your data is located](https://www.microsoft.com/en-us/trust-center/privacy/data-location)
 
 <a name='data-residency-across-azure-ad-components'></a>
 
@@ -86,7 +85,7 @@ Learn more:
 Learn more: [Microsoft Entra product overview](https://www.microsoft.com/cloud-platform/azure-active-directory-features)
 
 > [!NOTE]
-> To understand service data location, such as Exchange Online, or Skype for Business, refer to the corresponding service documentation.
+> To understand service data location for other services beyond Microsoft Entra ID, such as Exchange Online, or Skype for Business, refer to the corresponding service documentation and the [Trust Center](https://www.microsoft.com/trust-center/privacy/data-location).
 
 <a name='azure-ad-components-and-data-storage-location'></a>
 
@@ -96,7 +95,7 @@ Learn more: [Microsoft Entra product overview](https://www.microsoft.com/cloud-p
 |---|---|---|
 |Microsoft Entra authentication Service|This service is stateless. The data for authentication is in the Microsoft Entra Core Store. It has no directory data. Microsoft Entra authentication Service generates log data in Azure Storage, and in the datacenter where the service instance runs. When users attempt to authenticate using Microsoft Entra ID, they're routed to an instance in the geographically nearest datacenter that is part of its Microsoft Entra logical region. |In geo location|
 |Microsoft Entra identity and Access Management (IAM) Services|**User and management experiences**: The Microsoft Entra management experience is stateless and has no directory data. It generates log and usage data stored in Azure Tables storage. The user experience is like the Azure portal. <br>**Identity management business logic and reporting services**: These services have locally cached data storage for groups and users. The services generate log and usage data that goes to Azure Tables storage, Azure SQL, and in Microsoft Elastic Search reporting services. |In geo location|
-|Microsoft Entra multifactor authentication|For details about multifactor authentication-operations data storage and retention, see [Data residency and customer data for Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-data-residency.md). Microsoft Entra multifactor authentication logs the User Principal Name (UPN), voice-call telephone numbers, and SMS challenges. For challenges to mobile app modes, the service logs the UPN and a unique device token. Datacenters in the North America region store Microsoft Entra multifactor authentication, and the logs it creates.|North America|
+|Microsoft Entra multifactor authentication|For details about multifactor authentication-operations data storage and retention, see [Data residency and customer data for Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-data-residency.md). Microsoft Entra multifactor authentication logs the User Principal Name (UPN), voice-call telephone numbers, and SMS challenges. For challenges to mobile app modes, the service logs the UPN and a unique device token.|North America and/or in geo location|
 |Microsoft Entra Domain Services|See regions where Microsoft Entra Domain Services is published on [Products available by region](https://azure.microsoft.com/regions/services/). The service holds system metadata globally in Azure Tables, and it contains no personal data.|In geo location|
 |Microsoft Entra Connect Health|Microsoft Entra Connect Health generates alerts and reports in Azure Tables storage and blob storage.|In geo location|
 |Microsoft Entra dynamic membership groups, Microsoft Entra self-service group management|Azure Tables storage holds rule definitions for dynamic membership groups.|In geo location|

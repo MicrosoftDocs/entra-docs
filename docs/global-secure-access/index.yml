@@ -8,10 +8,11 @@ metadata:
    description: Explore documentation for Microsoft's Security Service Edge solution, Global Secure Access, which is composed of Microsoft Entra Internet Access and Microsoft Entra Private Access.
    ms.service: global-secure-access
    ms.topic: landing-page
-   ms.date: 02/27/2024
+   ms.date: 02/28/2025
    author: kenwith
    ms.author: kenwith
-   manager: amycolannino
+   manager: dougeby
+   ai-usage: ai-assisted
 
 landingContent:
   - title: About Global Secure Access

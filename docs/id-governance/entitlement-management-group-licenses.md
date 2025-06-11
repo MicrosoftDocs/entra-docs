@@ -11,7 +11,6 @@ ms.author: owinfrey
 ---
 # Tutorial: Manage the lifecycle of your group-based licenses in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
  
 With Microsoft Entra ID, you can use groups to manage the [licenses for your applications](~/identity/users/licensing-groups-assign.md). You can make the management of these groups even easier by using entitlement management: 
 
@@ -32,7 +31,7 @@ For more information, see [License requirements](entitlement-management-overview
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, User Administrator, and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page Select **New access package**.
 
@@ -111,7 +110,7 @@ In this step, you delete the Office Licenses access package.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. Open the **Office Licenses** access package. 
 

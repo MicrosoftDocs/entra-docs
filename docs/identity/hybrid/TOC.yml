@@ -105,7 +105,7 @@
       href: cloud-sync/tutorial-pilot-aadc-aadccp.md
     - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
       href: cloud-sync/migrate-group-writeback.md
-  - name: Additional migration scenarios
+  - name: More migration scenarios
     items:
     - name: Multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect
       href: connect/parallel-hybrid-migration.md
@@ -150,7 +150,7 @@
           href: cloud-sync/how-to-sso.md
         - name: Exchange hybrid
           href: cloud-sync/exchange-hybrid.md
-      - name: Provision Entra ID to Active Directory
+      - name: Provision Microsoft Entra ID to Active Directory
         items:  
         - name: Provision Microsoft Entra ID to AD - Configuration
           href: cloud-sync/how-to-configure-entra-to-active-directory.md
@@ -329,8 +329,10 @@
         href: connect/how-to-connect-health-agent-install.md
       - name: Automatic upgrade
         href: connect/how-to-connect-install-automatic-upgrade.md
-      - name: Security update to the auto-upgrade process 
+      - name: Security update to the autoupgrade process 
         href: connect/security-updates-pks.md
+      - name: Hardening update to Microsoft Entra Connect Sync AD FS and PingFederate
+        href: connect/harden-update-ad-fs-pingfederate.md
       - name: Running the installation wizard a second time
         href: connect/how-to-connect-installation-wizard.md
       - name: Upgrade to a new version of Microsoft Entra Connect
@@ -378,14 +380,12 @@
      
     - name: Manage Microsoft Entra Connect
       items:
+      - name: Administrator audit logging
+        href: connect/admin-audit-logging.md
       - name: Enable device writeback
         href: connect/how-to-connect-device-writeback.md
-      - name: Enable group writeback
+      - name: Group writeback for Microsoft 365 groups
         href: connect/how-to-connect-group-writeback-enable.md
-      - name: Modify group writeback
-        href: connect/how-to-connect-modify-group-writeback.md
-      - name: Disable group writeback
-        href: connect/how-to-connect-group-writeback-disable.md
       - name: Device options
         href: connect/how-to-connect-device-options.md
       - name: Additional features in Microsoft Entra Connect
@@ -408,7 +408,7 @@
         href: connect/how-to-connect-pta-quick-start.md
       - name: Pass-through authentication FAQ
         href: connect/how-to-connect-pta-faq.yml
-      - name: Disable PTA with Microsoft Entra Connect "Do not configure"
+      - name: Disable PTA with Microsoft Entra Connect "Don't configure"
         href: connect/how-to-connect-pta-disable-do-not-configure.md
     - name: Manage Federation Services
       items:
@@ -418,7 +418,7 @@
         href: connect/how-to-connect-install-multiple-domains.md
       - name: Federate multiple instances of Microsoft Entra ID with single instance of AD FS
         href: connect/how-to-connect-fed-single-adfs-multitenant-federation.md
-      - name: Renew federation certificates for O365 and Microsoft Entra ID 
+      - name: Renew federation certificates for M365 and Microsoft Entra ID 
         href: connect/how-to-connect-fed-o365-certs.md
       - name: Update the SSL certificate for AD FS
         href: connect/how-to-connect-fed-ssl-update.md
@@ -426,7 +426,7 @@
         href: connect/how-to-connect-azure-ad-trust.md
       - name: Configure group claims for applications
         href: connect/how-to-connect-fed-group-claims.md
-      - name: Change hash algorithm for O365 RP
+      - name: Change hash algorithm for M365 RP
         href: connect/how-to-connect-fed-sha256-guidance.md
       - name: Use a SAML 2.0 server as your Idp
         href: connect/how-to-connect-fed-saml-idp.md
@@ -510,7 +510,7 @@
       href: connect/tshoot-connect-connectivity.md
     - name: Errors during synchronization
       href: connect/tshoot-connect-sync-errors.md
-    - name: Object is not synchronized
+    - name: Object isn't synchronized
       href: connect/tshoot-connect-object-not-syncing.md
     - name: Source anchor during installation
       href: connect/tshoot-connect-source-anchor.md
@@ -536,6 +536,8 @@
       href: connect/howto-troubleshoot-upn-changes.md
     - name: End-to-end troubleshooting of objects and attributes
       href: /troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes
+    - name: Clear on-premises attributes from migrated Microsoft Entra ID users and groups
+      href: connect/tshoot-clear-on-premises-attributes.md
   - name: Reference
     items:
     - name: Hybrid Identity Required Ports and Protocols

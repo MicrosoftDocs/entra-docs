@@ -2,7 +2,7 @@
 title: Common scenarios in entitlement management
 description: Learn the high-level steps you should follow for common scenarios in Microsoft Entra entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -20,7 +20,7 @@ There are several ways that you can configure entitlement management for your or
 
 ### Administrator: Delegate management of resources
 
-1. [Watch video: Delegation from IT to department manager](https://www.microsoft.com/videoplayer/embed/RE3Lq00)
+1. [Watch video: Delegation from IT to department manager](https://learn-video.azurefd.net/vod/player?id=0915072b-63ec-4c78-b2ca-aa5f54a54219)
 1. [Delegate users to catalog creator role](entitlement-management-delegate-catalog.md)
 
 ### Catalog creator: Delegate management of resources
@@ -34,7 +34,7 @@ There are several ways that you can configure entitlement management for your or
 
 ### Catalog owner: Delegate management of access packages
 
-1. [Watch video: Delegation from catalog owner to access package manager](https://www.microsoft.com/videoplayer/embed/RE3Lq08)
+1. [Watch video: Delegation from catalog owner to access package manager](https://learn-video.azurefd.net/vod/player?id=b999927c-7cfd-4029-8b3a-a59efa9f5e8c)
 1. [Delegate users to access package manager role](entitlement-management-delegate-managers.md)
 
 ## Govern access for users in your organization
@@ -117,26 +117,26 @@ There are several ways that you can configure entitlement management for your or
 
 ### Access package manager: Update the resources for a project
 
-1. [Watch video: Day-to-day management: Things have changed](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. Open the access package
 1. [Add or remove groups, Teams, applications, or SharePoint sites](entitlement-management-access-package-resources.md#add-resource-roles)
 
 ### Access package manager: Update the duration for a project
 
-1. [Watch video: Day-to-day management: Things have changed](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. Open the access package
 1. [Open the lifecycle settings](entitlement-management-access-package-lifecycle-policy.md#open-lifecycle-settings)
 1. [Update the expiration settings](entitlement-management-access-package-lifecycle-policy.md#specify-a-lifecycle) 
 
 ### Access package manager: Update how access is approved for a project
 
-1. [Watch video: Day-to-day management: Things have changed](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. [Open an existing policy's request settings](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings)
 1. [Update the approval settings](entitlement-management-access-package-approval-policy.md#change-approval-settings-of-an-existing-access-package-assignment-policy)
 
 ### Access package manager: Update the people for a project
 
-1. [Watch video: Day-to-day management: Things have changed](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. [Remove users that no longer need access](entitlement-management-access-package-assignments.md)
 1. [Open an existing policy's request settings](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings)
 1. [Add users that need access](entitlement-management-access-package-request-policy.md#for-users-in-your-directory)

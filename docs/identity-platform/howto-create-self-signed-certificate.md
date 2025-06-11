@@ -4,12 +4,12 @@ description: Create a self-signed public certificate to authenticate your applic
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, 
-ms.date: 11/10/2023
-ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
+ms.custom:
+ms.date: 01/14/2025
+ms.reviewer: jmprieur, sureshja, ludwignick
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to understand the basic concepts of authentication and authorization in the Microsoft identity platform.
 ---
 
@@ -17,10 +17,10 @@ ms.topic: concept-article
 
 Microsoft Entra ID supports two types of authentication for service principals: **password-based authentication** (app secret) and **certificate-based authentication**. While app secrets can easily be created in the Azure portal or using a Microsoft API like Microsoft Graph, they're long-lived, and not as secure as certificates. It's therefore recommended that your application uses a certificate rather than a secret.
 
-For testing, you can use a self-signed public certificate instead of a Certificate Authority (CA)-signed certificate. In this how-to, you'll use PowerShell to create and export a self-signed certificate.
+For testing, you can use a self-signed public certificate instead of a Certificate Authority (CA)-signed certificate. In this how-to, you use PowerShell to create and export a self-signed certificate.
 
 > [!CAUTION]
-> Self-signed certificates are digital certificates that are not signed by a trusted third-party CA. Self-signed certificates are created, issued, and signed by the company or developer who is responsible for the website or software being signed. This is why self-signed certificates are considered unsafe for public-facing websites and applications.
+> Self-signed certificates are digital certificates that aren't signed by a trusted third-party CA. Self-signed certificates are created, issued, and signed by the company or developer who is responsible for the website or software being signed. This is why self-signed certificates are considered unsafe for public-facing websites and applications.
 
 While creating the certificate using PowerShell, you can specify parameters like cryptographic and hash algorithms, certificate validity period, and domain name. The certificate can then be exported with or without its private key depending on your application needs.
 

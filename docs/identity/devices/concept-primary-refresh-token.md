@@ -1,23 +1,21 @@
 ---
-title: Primary Refresh Token (PRT) and Microsoft Entra ID
-description:  What is the role of and how do we manage the Primary Refresh Token (PRT) in Microsoft Entra ID?
-
+title: Understanding Primary Refresh Token (PRT) in Microsoft Entra ID
+description: Learn the role and management of Primary Refresh Token (PRT) in Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 01/31/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
-ms.reviewer: ravenn
+ms.date: 03/03/2025
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
+ms.reviewer: 
+ms.custom: sfi-image-nochange
 ---
+# Understanding Primary Refresh Token (PRT)
 
-# What is a Primary Refresh Token?
+A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication in supported versions of Windows, iOS, and Android. This article explains how a PRT is issued, used, and protected on Windows 10 or newer devices, enhancing your security and enabling single sign-on (SSO) across applications.
 
-A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication on Windows 10 or newer, Windows Server 2016 and later versions, iOS, and Android devices. It's a JSON Web Token (JWT) specially issued to Microsoft first party token brokers to enable single sign-on (SSO) across the applications used on those devices. In this article, provide details on how a PRT is issued, used, and protected on Windows 10 or newer devices. We recommend using the latest versions of Windows 10, Windows 11 and Windows Server 2019+ to get the best SSO experience.
-
-This article assumes that you already understand the different device states available in Microsoft Entra ID and how single sign-on works in Windows 10 or newer. For more information about devices in Microsoft Entra ID, see the article [What is device management in Microsoft Entra ID?](overview.md)
+This article assumes that you already understand the different device states available in Microsoft Entra ID and how single sign-on works in Windows. For more information about devices in Microsoft Entra ID, see [What is device management in Microsoft Entra ID?](overview.md).
 
 ## Key terminology and components
 
@@ -39,7 +37,7 @@ A PRT contains claims found in most Microsoft Entra ID refresh tokens. In additi
 
 ### Can I see what's in a PRT?
 
-A PRT is an opaque blob sent from Microsoft Entra whose contents aren't known to any client components. You can't see what's inside a PRT.
+A PRT is an opaque blob sent from Microsoft Entra whose contents aren't known to any client components. You can't see inside a PRT.
 
 ## How is a PRT issued?
 
@@ -60,13 +58,13 @@ The PRT is issued during user authentication on a Windows 10 or newer device in 
 In Microsoft Entra registered device scenarios, the Microsoft Entra WAM plugin is the primary authority for the PRT since Windows logon isn't happening with this Microsoft Entra account.
 
 > [!NOTE]
-> Third party identity providers need to support the WS-Trust protocol to enable PRT issuance on Windows 10 or newer devices. Without WS-Trust, PRT cannot be issued to users on Microsoft Entra hybrid joined or Microsoft Entra joined devices. On AD FS only usernamemixed endpoints are required. On AD FS if `smartcard/certificate` is used during Windows sign-in `certificatemixed` endpoints are required. Both `adfs/services/trust/2005/windowstransport` and `adfs/services/trust/13/windowstransport` should be enabled as intranet facing endpoints only and **must NOT be exposed** as extranet facing endpoints through the Web Application Proxy.
+> Non-Microsoft identity providers need to support the WS-Trust protocol to enable PRT issuance on Windows 10 or newer devices. Without WS-Trust, a PRT can't be issued to users on Microsoft Entra hybrid joined or Microsoft Entra joined devices. On AD FS only usernamemixed endpoints are required. On AD FS if `smartcard/certificate` is used during Windows sign-in `certificatemixed` endpoints are required. Both `adfs/services/trust/2005/windowstransport` and `adfs/services/trust/13/windowstransport` should be enabled as intranet facing endpoints only and **must NOT be exposed** as extranet facing endpoints through the Web Application Proxy.
 
 > [!NOTE]
-> Microsoft Entra Conditional Access policies are not evaluated when PRTs are issued.
+> Microsoft Entra Conditional Access policies aren't evaluated when PRTs are issued.
 
 > [!NOTE]
-> We do not support third party credential providers for issuance and renewal of Microsoft Entra PRTs.
+> We don't support non-Microsoft credential providers for issuance and renewal of Microsoft Entra PRTs.
 
 ## What is the lifetime of a PRT?
 
@@ -83,9 +81,9 @@ A PRT is used by two key components in Windows:
 
 ## How is a PRT renewed?
 
-A PRT is renewed in two different methods:
+A PRT is renewed in two different ways:
 
-- **Microsoft Entra CloudAP plugin every 4 hours:** The CloudAP plugin renews the PRT every 4 hours during Windows sign in. If the user doesn't have internet connection during that time, CloudAP plugin will renew the PRT after the device is connected to the internet.
+- **Microsoft Entra CloudAP plugin every 4 hours:** The CloudAP plugin renews the PRT every 4 hours during Windows sign in. If the user doesn't have internet connection during that time, CloudAP plugin will renew the PRT after the device is connected to the internet and a new Windows sign in is done.
 - **Microsoft Entra WAM plugin during app token requests:** The WAM plugin enables SSO on Windows 10 or newer devices by enabling silent token requests for applications. The WAM plugin can renew the PRT during these token requests in two different ways:
    - An app requests WAM for an access token silently but there's no refresh token available for that app. In this case, WAM uses the PRT to request a token for the app and gets back a new PRT in the response.
    - An app requests WAM for an access token but the PRT is invalid or Microsoft Entra ID requires extra authorization (for example, Microsoft Entra multifactor authentication). In this scenario, WAM initiates an interactive logon requiring the user to reauthenticate or provide extra verification and a new PRT is issued on successful authentication.
@@ -96,7 +94,7 @@ In an AD FS environment, direct line of sight to the domain controller isn't req
 Windows transport endpoints are required for password authentication only when a password is changed, not for PRT renewal.
 
 > [!NOTE]
-> Microsoft Entra Conditional Access policies are not evaluated when PRTs are renewed.
+> Microsoft Entra Conditional Access policies aren't evaluated when PRTs are renewed.
 
 ### Key considerations
 
@@ -116,7 +114,7 @@ A PRT is protected by binding it to the device the user has signed in to. Micros
 - **During first sign in:** During first sign in, a PRT is issued by signing requests using the device key cryptographically generated during device registration. On a device with a valid and functioning TPM, the device key is secured by the TPM preventing any malicious access. A PRT isn't issued if the corresponding device key signature can't be validated.
 - **During token requests and renewal:** When a PRT is issued, Microsoft Entra ID also issues an encrypted session key to the device. It's encrypted with the public transport key (tkpub) generated and sent to Microsoft Entra ID as part of device registration. This session key can only be decrypted by the private transport key (tkpriv) secured by the TPM. The session key is the Proof-of-Possession (POP) key for any requests sent to Microsoft Entra ID. The session key is also protected by the TPM and no other OS component can access it. Token requests or PRT renewal requests are securely signed by this session key through the TPM and hence, can't be tampered with. Microsoft Entra invalidates any requests from the device that aren't signed by the corresponding session key.
 
-By securing these keys with the TPM, we enhance the security for PRT from malicious actors trying to steal the keys or replay the PRT. So, using a TPM greatly enhances the security of Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered devices against credential theft. For performance and reliability, TPM 2.0 is the recommended version for all Microsoft Entra device registration scenarios on Windows 10 or newer. Starting with the Windows 10, 1903 update, Microsoft Entra ID doesn't use TPM 1.2 for any of the above keys due to reliability issues.
+By securing these keys with the TPM, we enhance the security for PRT from malicious actors trying to steal the keys or replay the PRT. So, using a TPM greatly enhances the security of Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered devices against credential theft. For performance and reliability, TPM 2.0 is the recommended version for all Microsoft Entra device registration scenarios on Windows 10 or newer. After the Windows 10, 1903 update, Microsoft Entra ID doesn't use TPM 1.2 for any of the above keys due to reliability issues.
 
 ### How are app tokens and browser cookies protected?
 
@@ -154,17 +152,17 @@ A PRT is invalidated in the following scenarios:
 
 ## Detailed flows
 
-The following diagrams illustrate the underlying details in issuing, renewing, and using a PRT to request an access token for an application. In addition, these steps also describe how the aforementioned security mechanisms are applied during these interactions.
+The following diagrams illustrate the underlying details in issuing, renewing, and using a PRT to request an access token for an application. In addition, these steps also describe how the previously mentioned security mechanisms are applied during these interactions.
 
 ### PRT issuance during first sign in
 
 ![PRT issuance during first sign in detailed flow](./media/concept-primary-refresh-token/prt-initial-sign-in.png)
 
 > [!NOTE]
-> In Microsoft Entra joined devices, Microsoft Entra PRT issuance (steps A-F) happens synchronously before the user can sign in to Windows. In Microsoft Entra hybrid joined devices, on-premises Active Directory is the primary authority. So, the user is able to login Microsoft Entra hybrid joined Windows after they can acquire a TGT to login, while the PRT issuance happens asynchronously. This scenario does not apply to Microsoft Entra registered devices as logon does not use Microsoft Entra credentials.
+> In Microsoft Entra joined devices, Microsoft Entra PRT issuance (steps A-F) happens synchronously before the user can sign in to Windows. In Microsoft Entra hybrid joined devices, on-premises Active Directory is the primary authority. So, the user is able to login Microsoft Entra hybrid joined Windows after they can acquire a TGT to login, while the PRT issuance happens asynchronously. This scenario doesn't apply to Microsoft Entra registered devices as logon doesn't use Microsoft Entra credentials.
 
 > [!NOTE]
-> In a Microsoft Entra hybrid joined Windows environment, the issuance of the PRT occurs asynchronously. The issuance of the PRT might fail due to issues with the federation provider. This failure can result in sign on issues when users try to access cloud resources. It is important to troubleshoot this scenario with the federation provider.
+> In a Microsoft Entra hybrid joined Windows environment, the issuance of the PRT occurs asynchronously. The issuance of the PRT might fail due to issues with the federation provider. This failure can result in sign on issues when users try to access cloud resources. It's important to troubleshoot this scenario with the federation provider.
 
 | Step | Description |
 | :---: | --- |
@@ -198,7 +196,7 @@ The following diagrams illustrate the underlying details in issuing, renewing, a
 
 | Step | Description |
 | :---: | --- |
-| A | An application (for example, Outlook, OneNote and so on.) initiates a token request to WAM. WAM, in turn, asks the Microsoft Entra WAM plugin to service the token request. |
+| A | An application, like Microsoft Outlook, initiates a token request to WAM. WAM, in turn, asks the Microsoft Entra WAM plugin to service the token request. |
 | B | If a Refresh token for the application is already available, Microsoft Entra WAM plugin uses it to request an access token. To provide proof of device binding, WAM plugin signs the request with the Session key. Microsoft Entra ID validates the Session key and issues an access token and a new refresh token for the app, encrypted by the Session key. WAM plugin requests CloudAP plugin to decrypt the tokens, which, in turn, requests the TPM to decrypt using the Session key, resulting in WAM plugin getting both the tokens. Next, WAM plugin provides only the access token to the application, while it reencrypts the refresh token with DPAPI and stores it in its own cache  |
 | C |  If a Refresh token for the application isn't available, Microsoft Entra WAM plugin uses the PRT to request an access token. To provide proof of possession, WAM plugin signs the request containing the PRT with the Session key. Microsoft Entra ID validates the Session key signature by comparing it against the Session key embedded in the PRT, verifies that the device is valid and issues an access token and a refresh token for the application. in addition, Microsoft Entra ID can issue a new PRT (based on refresh cycle), all of them encrypted by the Session key. |
 | D | WAM plugin requests CloudAP plugin to decrypt the tokens, which, in turn, requests the TPM to decrypt using the Session key, resulting in WAM plugin getting both the tokens. Next, WAM plugin provides only the access token to the application, while it reencrypts the refresh token with DPAPI and stores it in its own cache. WAM plugin uses the refresh token going forward for this application. WAM plugin also gives back the new PRT to CloudAP plugin, which validates the PRT with Microsoft Entra ID before updating it in its own cache. CloudAP plugin uses the new PRT going forward. |

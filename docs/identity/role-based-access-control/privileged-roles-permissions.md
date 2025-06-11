@@ -1,15 +1,14 @@
 ---
 title: Privileged roles and permissions in Microsoft Entra ID (preview) - Microsoft Entra ID
 description: Privileged roles and permissions in Microsoft Entra ID.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: conceptual
-ms.date: 07/30/2024
-ms.author: rolyon
-ms.custom: it-pro
+ms.date: 10/15/2024
+ms.author: barclayn
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Privileged roles and permissions in Microsoft Entra ID (preview)
@@ -54,36 +53,49 @@ Get-MgBetaRoleManagementDirectoryRoleDefinition -Filter "isPrivileged eq true" |
 
 ```Output
 AllowedPrincipalTypes   :
-Description             : Can manage all aspects of Azure AD and Microsoft services that use Azure AD identities.
-DisplayName             : Global Administrator
-Id                      : 62e90394-69f5-4237-9190-012177145e10
+Description             : Can create and manage all aspects of app registrations and enterprise apps.
+DisplayName             : Application Administrator
+Id                      : 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3
 InheritsPermissionsFrom : {88d8e3e3-8f55-4a1e-953a-9b9898b8876b}
 IsBuiltIn               : True
 IsEnabled               : True
 IsPrivileged            : True
 ResourceScopes          : {/}
 RolePermissions         : {Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphUnifiedRolePermission}
-TemplateId              : 62e90394-69f5-4237-9190-012177145e10
+TemplateId              : 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3
 Version                 : 1
-AdditionalProperties    : {[inheritsPermissionsFrom@odata.context, https://graph.microsoft.com/beta/$metadata#roleManag
-                          ement/directory/roleDefinitions('62e90394-69f5-4237-9190-012177145e10')/inheritsPermissionsFr
-                          om]}
+AdditionalProperties    : {[assignmentMode, allowed], [categories, identity], [richDescription, Users in this role can
+                          add, manage, and configureenterprise applications, app registrations and manage on-premises
+                          like app proxy.], [inheritsPermissionsFrom@odata.context, https://graph.microsoft.com/beta/$m
+                          etadata#roleManagement/directory/roleDefinitions('9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3')/inhe
+                          ritsPermissionsFrom]}
+
 
 AllowedPrincipalTypes   :
-Description             : Can manage all aspects of users and groups, including resetting passwords for limited admins.
-DisplayName             : User Administrator
-Id                      : fe930be7-5e62-47db-91af-98c3a49a38b1
+Description             : Can reset passwords for non-administrators and Helpdesk Administrators.
+DisplayName             : Helpdesk Administrator
+Id                      : 729827e3-9c14-49f7-bb1b-9608f156bbb8
 InheritsPermissionsFrom : {88d8e3e3-8f55-4a1e-953a-9b9898b8876b}
 IsBuiltIn               : True
 IsEnabled               : True
 IsPrivileged            : True
 ResourceScopes          : {/}
 RolePermissions         : {Microsoft.Graph.Beta.PowerShell.Models.MicrosoftGraphUnifiedRolePermission}
-TemplateId              : fe930be7-5e62-47db-91af-98c3a49a38b1
+TemplateId              : 729827e3-9c14-49f7-bb1b-9608f156bbb8
 Version                 : 1
-AdditionalProperties    : {[inheritsPermissionsFrom@odata.context, https://graph.microsoft.com/beta/$metadata#roleManag
-                          ement/directory/roleDefinitions('fe930be7-5e62-47db-91af-98c3a49a38b1')/inheritsPermissionsFr
-                          om]}
+AdditionalProperties    : {[assignmentMode, allowed], [categories, identity], [richDescription, Users with this role
+                          can change passwords, invalidate refresh tokens, manage service requests, and monitor
+                          service health. Invalidating a refresh token forces the user to sign in again. Helpdesk
+                          administrators can reset passwords and invalidate refresh tokens of other users who are
+                          non-administrators or assigned the following roles only:
+                          * Directory Readers
+                          * Guest Inviter
+                          * Helpdesk Administrator
+                          * Message Center Reader
+                          * Password Administrator
+                          * Reports Reader], [inheritsPermissionsFrom@odata.context, https://graph.microsoft.com/beta/$
+                          metadata#roleManagement/directory/roleDefinitions('729827e3-9c14-49f7-bb1b-9608f156bbb8')/inh
+                          eritsPermissionsFrom]}
 
 ...
 ```
@@ -442,7 +454,7 @@ For example:
 
 In the following table, the columns list the roles that can reset passwords and invalidate refresh tokens. The rows list the roles for which their password can be reset. For example, a Password Administrator can reset the password for Directory Readers, Guest Inviter, Password Administrator, and users with no administrator role. If a user is assigned any other role, the Password Administrator cannot reset their password.
 
-The following table is for roles assigned at the scope of a tenant. For roles assigned at the scope of an administrative unit, [further restrictions apply](admin-units-assign-roles.md#roles-that-can-be-assigned-with-administrative-unit-scope).
+The following table is for roles assigned at the scope of a tenant. For roles assigned at the scope of an administrative unit, [further restrictions apply](manage-roles-portal.md#roles-that-can-be-assigned-with-administrative-unit-scope).
 
 | Role that password can be reset | Password Admin | Helpdesk Admin | Auth Admin | User Admin | Privileged Auth Admin | Global Admin |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
@@ -490,7 +502,7 @@ Some administrators can perform the following sensitive actions for some users. 
 
 In the following table, the columns list the roles that can perform sensitive actions. The rows list the roles for which the sensitive action can be performed upon.
 
-The following table is for roles assigned at the scope of a tenant. For roles assigned at the scope of an administrative unit, [further restrictions apply](admin-units-assign-roles.md#roles-that-can-be-assigned-with-administrative-unit-scope).
+The following table is for roles assigned at the scope of a tenant. For roles assigned at the scope of an administrative unit, [further restrictions apply](manage-roles-portal.md#roles-that-can-be-assigned-with-administrative-unit-scope).
 
 | Role that sensitive action can be performed upon | Auth Admin | User Admin | Privileged Auth Admin | Global Admin |
 | ------ | ------ | ------ | ------ | ------ |

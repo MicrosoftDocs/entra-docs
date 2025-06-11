@@ -1,15 +1,14 @@
 ---
 title: Simulate remote network connectivity using Azure vWAN
-description: Use Global Secure Access to configure Azure and Entra resources to create a virtual wide area network to connect to your resources in Azure.
+description: Use Global Secure Access to configure Azure and Microsoft Entra resources to create a virtual wide area network to connect to your resources in Azure.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/01/2024
+ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: dougeby
 ms.reviewer: absinh
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to simulate a virtual wide area network to connect resources in Azure so I can better understand how Global Secure Access can be implemented in my organization.
 ---
 # Simulate remote network connectivity using Azure vWAN
@@ -31,7 +30,7 @@ This document uses the following example values, along with the values in the im
 - Region: South Central US
 
 ## High-level steps
-The steps to create a remote network using Azure vWAN require access to both the Azure portal and the Microsoft Entra admin center. To switch between them easily, keep Azure and Entra open in separate tabs. Because certain resources can take more than 30 minutes to deploy, set aside at least two hours to complete this process. Reminder: Resources left running can cost you money. When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need.
+The steps to create a remote network using Azure vWAN require access to both the Azure portal and the Microsoft Entra admin center. To switch between them easily, keep Azure and Microsoft Entra open in separate tabs. Because certain resources can take more than 30 minutes to deploy, set aside at least two hours to complete this process. Reminder: Resources left running can cost you money. When done testing, or at the end of a project, it's a good idea to remove the resources that you no longer need.
 
 1. [Set up a vWAN in the Azure portal](#set-up-a-vwan-in-the-azure-portal)
     1. [Create a vWAN](#create-a-vwan)
@@ -154,15 +153,17 @@ In this step, use the network information from the VPN gateway to create a remot
     1. Complete the fields on the **General** tab in the **Add a link** form, using the VPN gateway's *Instance0* configuration from the JSON view:
         - **Link name**: Name of your Customer Premises Equipment (CPE). For this example, **Instance0**.
         - **Device type**: Choose a device option from the dropdown list. Set to **Other**.
-        - **IP address**: Public IP address of your device. For this example, use **203.0.113.250**.
-        - **Local BGP address**: Use a BGP IP address that *isn't* part of your on-premises network where your CPE resides, such as **192.168.10.10**.
-        - **Peer BGP address**: Enter the BGP IP address of your CPE. For this example, **10.101.0.4**.
-        - **Link ASN**: Provide the autonomous system number (ASN) of the CPE. For this example, the ASN is **65515**.
+        - **Device IP address**: Public IP address of your device. For this example, use **203.0.113.250**.
+        - **Device BGP address**: Enter the Border Gateway Protocol (BGP) IP address of your CPE. For this example, use **10.101.0.4**.
+        - **Device ASN**: Provide the autonomous system number (ASN) of the CPE. For this example, the ASN is **65515**.
         - **Redundancy**: Set to **No redundancy**.
         - **Zone redundant local BGP address**: This optional field shows up only when you select **Zone redundancy**.
             - Enter a BGP IP address that *isn't* part of your on-premises network where your CPE resides and is different from the **Local BGP address**.
         - **Bandwidth capacity (Mbps)**: Specify tunnel bandwidth. For this example, set to **250 Mbps**.
-        :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-json-add-a-link-general-crop.png" alt-text="Screenshot of the Add a link form with arrows showing the relationship between the JSON code and the link information." lightbox="media/how-to-create-remote-network-vwan/vwan-json-add-a-link-general-crop-expanded.png":::
+        - **Local BGP address**: Use a BGP IP address that *isn't* part of your on-premises network where your CPE resides, such as **192.168.10.10**.
+            - Refer to the [valid BGP addresses](reference-remote-network-configurations.md#valid-bgp-addresses) list for reserved values that can't be used.    
+    
+            :::image type="content" source="media/how-to-create-remote-network-vwan/vwan-json-add-a-link-general-crop.png" alt-text="Screenshot of the Add a link form with arrows showing the relationship between the JSON code and the link information.":::
     1. Select the **Next** button to view the **Details** tab. Keep the default settings.
     1. Select the **Next** button to view the **Security** tab. 
     1. Enter the **Preshared key (PSK)**. The same secret key must be used on your CPE.
@@ -175,12 +176,12 @@ For more information about links, see the article, [How to manage remote network
     1. Complete the fields on the **General** tab in the **Add a link** form, using the VPN gateway's *Instance1* configuration from the JSON view:
         - **Link name**: Instance1
         - **Device type**: Other
-        - **IP address**: 203.0.113.251
-        - **Local BGP address**: 192.168.10.11
-        - **Peer BGP address**: 10.101.0.5
-        - **Link ASN**: 65515
+        - **Device IP address**: 203.0.113.251
+        - **Device BGP address**: 10.101.0.5
+        - **Device ASN**: 65515
         - **Redundancy**: No redundancy
         - **Bandwidth capacity (Mbps)**: 250 Mbps
+        - **Local BGP address**: 192.168.10.11
     1. Select the **Next** button to view the **Details** tab. Keep the default settings.
     1. Select the **Next** button to view the **Security** tab. 
     1. Enter the **Preshared key (PSK)**. The same secret key must be used on your CPE.
@@ -207,7 +208,7 @@ Navigate to the Remote network page to view the details of the new remote networ
         }
       ],
       "peerConfiguration": {
-        "endpoint": "203.0.113.33",
+        "endpoint": "203.0.113.250",
         "asn": 65515,
         "bgpAddress": "10.101.0.4"
       }
@@ -224,7 +225,7 @@ Navigate to the Remote network page to view the details of the new remote networ
         }
       ],
       "peerConfiguration": {
-        "endpoint": "203.0.113.35",
+        "endpoint": "203.0.113.251",
         "asn": 65515,
         "bgpAddress": "10.101.0.5"
       }
@@ -364,17 +365,17 @@ Before testing, enable tenant restrictions on the virtual network.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Settings** > **Session management**.
 1. Set the **Enable tagging to enforce tenant restrictions on your network** toggle to on.
 1. Select **Save**.
-1. You can modify the cross-tenant access policy by navigating to **Identity** > **External identities** > **Cross-tenant access settings**. For more information, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
+1. You can modify the cross-tenant access policy by navigating to **Entra ID** > **External Identities** > **Cross-tenant access settings**. For more information, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
 1. Keep the default settings, which prevent users from logging in with external accounts on managed devices.
 
 To test:
 1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
-1. Repeat the above step, but with an *external account*. This test should fail due to blocked access.
+1. Repeat the previous step, but with an *external account*. This test should fail due to blocked access.   
 :::image type="content" source="media/how-to-create-remote-network-vwan/access-blocked-troubleshooting-details-without-highlight.png" alt-text="Screenshot of the 'Access is blocked' message.":::
 
 ### Test source IP restoration
-Before testing, enable conditional access.
+Before testing, enable Conditional Access.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Settings** > **Session management**.
 1. Select the **Adaptive Access** tab.
 1. Set the **Enable Global Secure Access signaling in Conditional Access** toggle to on.
@@ -384,7 +385,7 @@ To test (option 1):
 Repeat the tenant restriction test from the previous section: 
 1. Sign in to the Azure Virtual Desktop virtual machine created in the previous steps.
 1. Go to www.office.com and sign in with an internal organization ID. This test should pass successfully.
-1. Repeat the above step, but with an *external account*. This test should fail because the source **IP address** in the error message is coming from the VPN gateway public IP address instead of the Microsoft SSE proxying the request to Entra.
+1. Repeat the previous step, but with an *external account*. This test should fail because the source **IP address** in the error message is coming from the VPN gateway public IP address instead of the Microsoft SSE proxying the request to Microsoft Entra.   
 :::image type="content" source="media/how-to-create-remote-network-vwan/access-blocked-troubleshooting-details-with-highlight.png" alt-text="Screenshot of the 'Access is blocked' message with the IP address highlighted.":::
 
 To test (option 2):

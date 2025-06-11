@@ -1,16 +1,14 @@
 ---
 title: Groups and app roles support in external tenants
 description: Find out which core Microsoft Entra features related to the user and group management model and application assignment are available in external tenants.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: reference
 ms.date: 05/01/2023
-ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, sfi-ga-nochange
 ---
 
 # Groups and application roles support
@@ -36,5 +34,3 @@ An external tenant follows the Microsoft Entra user and group management model a
 | Create/update/delete a security group via the Microsoft Graph API | Yes |
 | Change security group members using the Microsoft Entra admin center | Yes |
 | Change security group members using the Microsoft Graph API | Yes |
-| Scale up to 50,000 users and 50,000 groups | Not currently available |
-| Add 50,000 users to at least two groups | Not currently available |

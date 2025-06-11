@@ -4,12 +4,11 @@ description: Build web applications by using the Microsoft identity platform imp
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
-ms.date: 04/08/2024
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.reviewer: jmprieur, ludwignick
+ms.topic: reference
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer building a web service, I want to understand how to implement the OAuth 2.0 client credentials flow, so that I can authenticate my web service when calling another web service without impersonating a user.
 ---
 
@@ -163,7 +162,7 @@ curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=
 | --------------- | --------- | ----------- |
 |     `tenant`    |  Required | The directory tenant the application plans to operate against, in GUID or domain-name format. |
 |    `client_id`  |  Required | The application ID that's assigned to your app. You can find this information in the portal where you registered your app. |
-|     `scope`     |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, affixed with the `.default` suffix. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
+|     `scope`     |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, suffixed with `.default`. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
 | `client_secret` |  Required | The client secret that you generated for your app in the app registration portal. The client secret must be URL-encoded before being sent. The Basic auth pattern of instead providing credentials in the Authorization header, per [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1) is also supported. |
 |  `grant_type`   |  Required | Must be set to `client_credentials`. |
 
@@ -185,7 +184,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 | ----------------------- | --------- | ----------- |
 |         `tenant`        |  Required | The directory tenant the application plans to operate against, in GUID or domain-name format. |
 |       `client_id`       |  Required | The application (client) ID that's assigned to your app. |
-|         `scope`         |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, affixed with the `.default` suffix. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
+|         `scope`         |  Required | The value passed for the `scope` parameter in this request should be the resource identifier (application ID URI) of the resource you want, suffixed with `.default`. All scopes included must be for a single resource. Including scopes for multiple resources will result in an error. <br/>For the Microsoft Graph example, the value is `https://graph.microsoft.com/.default`. This value tells the Microsoft identity platform that of all the direct application permissions you have configured for your app, the endpoint should issue a token for the ones associated with the resource you want to use. To learn more about the `/.default` scope, see the [consent documentation](./scopes-oidc.md#the-default-scope). |
 | `client_assertion_type` |  Required | The value must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
 |    `client_assertion`   |  Required | An assertion (a JSON web token) that you need to create and sign with the certificate you registered as credentials for your application. Read about [certificate credentials](./certificate-credentials.md) to learn how to register your certificate and the format of the assertion.|
 |      `grant_type`       |  Required | Must be set to `client_credentials`. |
@@ -200,7 +199,8 @@ Host: login.microsoftonline.com:443
 Content-Type: application/x-www-form-urlencoded
 
 scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_id=11112222-bbbb-3333-cccc-4444dddd5555&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+&client_id=11112222-bbbb-3333-cccc-4444dddd5555
+&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}M8U3bSUKKJDEg
 &grant_type=client_credentials
 ```

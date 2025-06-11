@@ -1,16 +1,15 @@
 ---
 title: What is Privileged Identity Management?
 description: Provides an overview of Microsoft Entra Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: overview
-ms.date: 10/26/2023
+ms.date: 01/07/2025
 ms.author: barclayn
 ms.reviewer: ilyal
-ms.custom: pim, azuread-video-2020, content-engagement
+ms.custom: pim, azuread-video-2020, content-engagement, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # What is Microsoft Entra Privileged Identity Management?
@@ -66,7 +65,7 @@ To better understand Privileged Identity Management and its documentation, you s
 
 | Term or concept | Role assignment category | Description |
 | --- | --- | --- |
-| eligible | Type | A role assignment that requires a user to perform one or more actions to use the role. If a user has been made eligible for a role, that means they can activate the role when they need to perform privileged tasks. There's no difference in the access given to someone with a permanent versus an eligible role assignment. The only difference is that some people don't need that access all the time. |
+| eligible | Type | A role assignment that requires a user to perform one or more actions to use the role. If a user is eligible for a role, they can activate the role when they need to perform privileged tasks. There's no difference in the access given to someone with a permanent versus an eligible role assignment. The only difference is that some people don't need that access all the time. |
 | active | Type | A role assignment that doesn't require a user to perform any action to use the role. Users assigned as active have the privileges assigned to the role. |
 | activate |  | The process of performing one or more actions to use a role that a user is eligible for. Actions might include performing a multifactor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers. |
 | assigned | State | A user that has an active role assignment. |
@@ -75,7 +74,7 @@ To better understand Privileged Identity Management and its documentation, you s
 | permanent active | Duration | A role assignment where a user can always use the role without performing any actions. |
 | time-bound eligible | Duration | A role assignment where a user is eligible to activate the role only within start and end dates. |
 | time-bound active | Duration | A role assignment where a user can use the role only within start and end dates. |
-| just-in-time (JIT) access |  | A model in which users receive temporary permissions to perform privileged tasks, which prevents malicious or unauthorized users from gaining access after the permissions have expired. Access is granted only when users need it. |
+| just-in-time (JIT) access |  | A model in which users receive temporary permissions to perform privileged tasks, which prevents malicious or unauthorized users from gaining access after the permissions expire. Access is granted only when users need it. |
 | principle of least privilege access |  | A recommended security practice in which every user is provided with only the minimum privileges needed to accomplish the tasks they're authorized to perform. This practice minimizes the number of Global Administrators and instead uses specific administrator roles for certain scenarios. |
 
 ## Role assignment overview
@@ -97,7 +96,7 @@ The assignment process starts by assigning roles to members. To grant access to 
 - The type of the assignment
   - **Eligible** assignments require the member of the role to perform an action to use the role. Actions might include  activation, or requesting approval from designated approvers.
   - **Active** assignments don't require the member to perform any action to use the role. Members assigned as active have the privileges assigned to the role.
-- The duration of the assignment, using start and end dates or permanent. For eligible assignments, the members can activate or requesting approval during the start and end dates. For active assignments, the members can use the assign role during this period of time.
+- The duration of the assignment, using start and end dates or permanent. For eligible assignments, the members can activate or requesting approval during the start and end dates. For active assignments, the members can use the assigned role during this period of time.
 
 The following screenshot shows how administrator assigns a role to members.
 
@@ -108,7 +107,7 @@ For more information, check out the following articles: [Assign Microsoft Entra 
 
 ### Activate
 
-If users have been made eligible for a role, then they must activate the role assignment before using the role. To activate the role, users select specific activation duration within the maximum (configured by administrators), and the reason for the activation request.
+If users are eligible for a role, then they must activate the role assignment before using the role. To activate the role, users select specific activation duration within the maximum (configured by administrators), and the reason for the activation request.
 
 The following screenshot shows how members activate their role to a limited time.
 
@@ -120,7 +119,7 @@ For more information, check out the following articles: [Activate Microsoft Entr
 
 ### Approve or deny
 
-Delegated approvers receive email notifications when a role request is pending their approval. Approvers can view, approve or deny these pending requests in PIM. After the request has been approved, the member can start using the role. For example, if a user or a group was assigned with Contribution role to a resource group, they are able to manage that particular resource group.
+Delegated approvers receive email notifications when a role request is pending their approval. Approvers can view, approve, or deny these pending requests in PIM. After the request is approved, the member can start using the role. For example, if a user or a group was assigned with Contribution role to a resource group, they are able to manage that particular resource group.
 
 For more information, check out the following articles: [Approve or deny requests for Microsoft Entra roles](./pim-approval-workflow.md), [Approve or deny requests for Azure resource roles](pim-resource-roles-approval-workflow.md), and [Approve activation requests for PIM for Groups](groups-approval-workflow.md)
 
@@ -129,7 +128,7 @@ For more information, check out the following articles: [Approve or deny request
 After administrators set up time-bound owner or member assignments, the first question you might ask is what happens if an assignment expires? In this new version, we provide two options for this scenario:
 
 - **Extend** – When a role assignment nears expiration, the user can use Privileged Identity Management to request an extension for the role assignment
-- **Renew** – When a role assignment has already expired, the user can use Privileged Identity Management to request a renewal for the role assignment
+- **Renew** – When a role assignment expires, the user can use Privileged Identity Management to request a renewal for the role assignment
 
 Both user-initiated actions require an approval from a Global Administrator or Privileged Role Administrator. Admins don't need to be in the business of managing assignment expirations. You can just wait for the extension or renewal requests to arrive for simple approval or denial.
 

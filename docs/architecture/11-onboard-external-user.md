@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/25/2024
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Onboard external users to line of business applications using Microsoft Entra B2B

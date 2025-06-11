@@ -1,16 +1,15 @@
 ---
 title: Troubleshoot Conditional Access policy changes
 description: Diagnose changes to Conditional Access policy with the Microsoft Entra audit logs.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 08/13/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: calebb, martinco
+ms.custom: sfi-image-nochange
 ---
 # Use audit logs to troubleshoot Conditional Access policy changes
 
@@ -23,12 +22,12 @@ Audit log data is only kept for 30 days by default, which might not be long enou
 - Stream data to Event Hubs
 - Send data to a partner solution
 
-Find these options under **Identity** > **Monitoring & health** > **Diagnostic settings** > **Edit setting**. If you don't have a diagnostic setting, follow the instructions in the article [Create diagnostic settings to send platform logs and metrics to different destinations](/azure/azure-monitor/essentials/diagnostic-settings) to create one.
+Find these options under **Entra ID** > **Monitoring & health** > **Diagnostic settings** > **Edit setting**. If you don't have a diagnostic setting, follow the instructions in the article [Create diagnostic settings to send platform logs and metrics to different destinations](/azure/azure-monitor/essentials/diagnostic-settings) to create one.
 
 ## Use the audit log
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
 1. Select the **Date** range you want to query.
 1. From the **Service** filter, select **Conditional Access** and select the **Apply** button.
 
@@ -44,7 +43,7 @@ Log Analytics allows organizations to query data using built in queries or custo
 
 :::image type="content" source="media/troubleshoot-policy-changes-audit-log/log-analytics-new-old-value.png" alt-text="Log Analytics query for updates to Conditional Access policies showing new and old value location" lightbox="media/troubleshoot-policy-changes-audit-log/log-analytics-new-old-value.png":::
 
-Once enabled find access to Log Analytics in the **Identity** > **Monitoring & health** > **Log Analytics**. The table of most interest to Conditional Access administrators is **AuditLogs**.
+Once enabled find access to Log Analytics in the **Entra ID** > **Monitoring & health** > **Log Analytics**. The table of most interest to Conditional Access Administrators is **AuditLogs**.
 
 ```kusto
 AuditLogs 

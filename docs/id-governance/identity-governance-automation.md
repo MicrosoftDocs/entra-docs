@@ -2,16 +2,18 @@
 title: Automate Microsoft Entra ID Governance tasks with Azure Automation
 description: Learn how to write PowerShell scripts in Azure Automation to interact with Microsoft Entra entitlement management and other features.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 9/20/2022
+ms.date: 11/25/2024
 ms.author: owinfrey
 ms.custom:
 ---
 # Automate Microsoft Entra ID Governance tasks via Azure Automation and Microsoft Graph
 
-[Azure Automation](/azure/automation/overview) is an Azure cloud service that allows you to automate common or repetitive systems management and processes. Microsoft Graph is the Microsoft unified API endpoint for Microsoft Entra features that manage users, groups, access packages, access reviews, and other resources in the directory. You can manage Microsoft Entra ID at scale from the PowerShell command line, using the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started). You can also include the Microsoft Graph PowerShell cmdlets from a [PowerShell-based runbook in Azure Automation](/azure/automation/automation-intro), so that you can automate Microsoft Entra tasks from a simple script.
+[Azure Automation](/azure/automation/overview) is an Azure cloud service that allows you to automate common or repetitive systems management and processes. Microsoft Graph is the Microsoft unified API endpoint for Microsoft Entra features that manage users, groups, access packages, access reviews, and other resources in the directory. 
+
+You can manage Microsoft Entra ID at scale from the PowerShell command line, using the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started). You can also include the Microsoft Graph PowerShell cmdlets from a [PowerShell-based runbook in Azure Automation](/azure/automation/automation-intro), so that you can automate Microsoft Entra tasks from a simple script.
 
 Azure Automation and the PowerShell Graph SDK supports certificate-based authentication and application permissions, so you can have Azure Automation runbooks authenticate to Microsoft Entra ID without needing a user context.
 
@@ -19,7 +21,6 @@ This article shows you how to get started using Azure Automation for Microsoft E
 
 ## Create an Azure Automation account
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Azure Automation provides a cloud-hosted environment for [runbook execution](/azure/automation/automation-runbook-execution). Those runbooks can start automatically based on a schedule, or be triggered by webhooks or by Logic Apps.
 
@@ -83,7 +84,7 @@ By default, Azure Automation doesn't have any PowerShell modules preloaded for M
 Next, you create an app registration in Microsoft Entra ID, so that Microsoft Entra ID recognizes your Azure Automation runbook's certificate for authentication.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](../identity/role-based-access-control/permissions-reference.md#application-administrator). 
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Type a name for the application and select **Register**.
    1. Once the application registration is created, take note of the **Application (client) ID** and **Directory (tenant) ID** as you need these items later.
@@ -103,7 +104,7 @@ Next, you create an app registration in Microsoft Entra ID, so that Microsoft En
 The application created in the previous section has permissions that require someone with at least the Privileged Role Administrator role to approve before it works as intended.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator). 
-1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
+1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. Select the app that was created in the previous section.
 1. Select **API permissions** and review the permissions required.
 1. If appropriate, select **Grant admin consent for "Your Tenant Name"** to give the application those permissions.

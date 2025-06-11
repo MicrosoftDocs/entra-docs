@@ -4,13 +4,13 @@ metadata:
   description: Read and understand some of the frequently asked questions around configuration, administration, and availability for Microsoft Entra Domain Services
   services: active-directory-ds
   author: justinha
-  manager: amycolannino
+  manager: dougeby
   
   ms.assetid: 48731820-9e8c-4ec2-95e8-83dba1e58775
   ms.service: entra-id
   ms.subservice: domain-services
   ms.topic: faq
-  ms.date: 09/16/2024
+  ms.date: 01/21/2025
   ms.author: justinha
 title: Frequently asked questions (FAQs) about Microsoft Entra Domain Services
 summary: This page answers frequently asked questions about Microsoft Entra Domain Services.
@@ -210,10 +210,8 @@ sections:
       - question: | 
           Should I remove the AzureUpdateDelivery and AzureFrontDoor.FirstParty tags in the outbound network security group (NSG)?
         answer: |
-          With the deprecation of AzureUpdateDelivery and AzureFrontDoor.FirstParty tags, Microsoft Entra Domain Services no longer recommends adding these tags to outbound internet traffic.
-          If you use the default AllowInternetOutBound rule (priority 65001), no change is needed (with or without AzureUpdateDelivery and AzureFrontDoor.FirstParty tags). 
-          If you remove the default AllowInternetOutBound rule (priority 65001) or precede it with a denied InternetOutBound rule, use a firewall to filter outbound Windows Update traffic by using the WindowsUpdate FQDN instead of restricting InternetOutBound. 
-          This step is crucial for Microsoft Entra Domain Services to continue receiving Windows updates. For more information, see [Changes coming to the AzureUpdateDelivery service tag](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/changes-coming-to-the-azure-update-delivery-service-tag/ba-p/4156552).
+          With the deprecation of AzureUpdateDelivery and AzureFrontDoor.FirstParty tags, Microsoft Entra Domain Services manages WindowsUpdate independently, which removes the need for these tags. 
+          NSG adjustments aren't needed, with or without deprecated tags.
       - question: | 
           Where does Microsoft Entra Domain Services store customer data?
         answer: |

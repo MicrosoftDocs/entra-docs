@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra integration with Fuse
+title: Configure Fuse for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fuse.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
@@ -10,13 +10,13 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 3/10/2023
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fuse so that I can control who has access to Fuse, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Fuse
+# Configure Fuse for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Fuse with Microsoft Entra ID. Fuse is a learning platform that enables learners within an organization to access the necessary knowledge and expertise they need to improve their skills at work. When you integrate Fuse with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Fuse with Microsoft Entra ID. Fuse is a learning platform that enables learners within an organization to access the necessary knowledge and expertise they need to improve their skills at work. When you integrate Fuse with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to Fuse.
 - Enable your users to be automatically signed-in to Fuse with their Microsoft Entra accounts.
@@ -62,7 +62,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Fuse** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Fuse** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -72,7 +72,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://{tenantname}.fuseuniversal.com/`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [Fuse Client support team](mailto:support@fusion-universal.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. Contact [Fuse Client support team](mailto:support@fusion-universal.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
@@ -96,12 +96,12 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 - In the **Test single sign-on with Fuse** section on the **SAML-based Sign-on** pane, select **Test this application** in Azure portal. You'll be redirected to Fuse Sign-on URL where you can initiate the sign-in flow.
 - Go to Fuse Sign-on URL directly and initiate the sign-in flow from application's side.
-- You can use Microsoft My Apps. When you select the Fuse tile in the My Apps, you'll be redirected to Fuse Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+- You can use Microsoft My Apps. When you select the Fuse tile in the My Apps, you be redirected to Fuse Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional resources
 
 - [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 - [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md)
-## Next steps
+## Related content
 
 Once you configure Fuse you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

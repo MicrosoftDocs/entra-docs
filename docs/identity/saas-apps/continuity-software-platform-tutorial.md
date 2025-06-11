@@ -1,21 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Continuity Software Platform'
+title: Configure Continuity Software Platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and Continuity Software Platform.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/07/2024
-ms.author: jeedes
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Continuity Software Platform
+# Configure Continuity Software Platform for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Continuity Software Platform with Microsoft Entra ID. When you integrate Continuity Software Platform with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Continuity Software Platform with Microsoft Entra ID. When you integrate Continuity Software Platform with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Continuity Software Platform.
 Enable your users to be automatically signed in to Continuity Software Platform with their Microsoft Entra accounts.
@@ -34,7 +35,7 @@ To configure the integration of Continuity Software Platform into Microsoft Entr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **Continuity Software Platform** in the search box.
 
@@ -46,17 +47,15 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Continuity Software Platform** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Continuity Software Platform** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
-    1. Click **Go to application**.
+    1. Select **Go to application**.
 
         ![Screenshot of showing the identity configuration.](common/go-to-application.png)
 
-    1. Copy **Application (client) ID** and **Directory (tenant) ID** and use it later in the Continuity Software Platform side configuration.
-
-        ![Screenshot of application client values.](./media/continuity-software-platform-tutorial/application-id.png)
+    1. Under **Endpoints**, copy **Application (client) ID** and **Directory (tenant) ID**. Use them later in the Continuity Software Platform side configuration.
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
@@ -64,28 +63,28 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot of showing the redirect values.](./media/continuity-software-platform-tutorial/authentication.png)
        
-    1. Click **Configure**.
+    1. Select **Configure**.
 
     > [!NOTE]
-    > The Redirect URI value is not real. Replace <Tenant_ID>  with actual tenant id value in the Redirect URI pattern.
+    > The Redirect URI value isn't real. Replace <Tenant_ID>  with actual tenant id value in the Redirect URI pattern.
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
-    1. Go to **Client secrets** tab and click **+New client secret**.
-    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
+    1. Go to **Client secrets** tab and select **+New client secret**.
+    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
 
         ![Screenshot of showing the client secrets value.](common/client-secret.png)
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the Continuity Software Platform side configuration.
+    1. Once you add a client secret, **Value** is generated. Copy the value and use it later in the Continuity Software Platform side configuration.
 
         ![Screenshot of showing how to add a client secret.](common/client.png)
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -96,15 +95,15 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Continuity Software Platform.
+In this section, you enable B.Simon to use single sign-on by granting access to Continuity Software Platform.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Continuity Software Platform**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Continuity Software Platform**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Add Assignment** dialog, select the **Assign** button.
 
 ## Configure Continuity Software Platform SSO
 
@@ -112,14 +111,11 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 
 1. Sign into the Continuity Software Platform with admin account.
 
-2. Click on **Admin** on the left bar of the **Settings** tab. Then select **Identity Providers** under **Access**.
+2. Select **Admin** on the left bar of the **Settings** tab. Then select **Identity Providers** under **Access**.
 
-3. Click **+**.
+3. Select **+**.
 
 4. The **Add Identity provider** window is displayed.
-
-
-    ![Screenshot of showing oidc setup at new auth method.](./media/continuity-software-platform-tutorial/configuration.png)
 
     a. In the **Name** field, enter the name for identification.
 

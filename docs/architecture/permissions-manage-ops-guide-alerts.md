@@ -85,7 +85,7 @@ Permissions analytics alerts play a key role in the recommended Discover-Remedia
 
 Learn more in the article, [create and view a permission analytics trigger](~/permissions-management/product-permission-analytics.md).
 
-The following list of recommended permissions analytics alerts is for supported cloud environments. Add more permissions analytics alerts as needed. The recommendations for Microsoft Azure, Amazone Web Services (AWS), and Google Cloud Platform (GCP) don’t reflect a particular environment.
+The following list of recommended permissions analytics alerts is for supported cloud environments. Add more permissions analytics alerts as needed. The recommendations for Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP) don’t reflect a particular environment.
 
 **Azure: Permissions analytics alerts recommendations**
 

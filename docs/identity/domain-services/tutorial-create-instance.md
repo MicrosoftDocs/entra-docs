@@ -2,14 +2,13 @@
 title: Tutorial - Create a Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, you learn how to create and configure a Microsoft Entra Domain Services managed domain using the Microsoft Entra admin center.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: has-azure-ad-ps-ref
 ms.topic: tutorial
-ms.date: 02/02/2024
+ms.date: 02/19/2025
 ms.author: justinha
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services managed domain so that I can synchronize identity information with my Microsoft Entra tenant and provide Domain Services connectivity to virtual machines and applications in Azure.
 ---
 
@@ -128,7 +127,7 @@ On the **Summary** page of the wizard, review the configuration settings for you
 
 1. The process of provisioning your managed domain can take up to an hour. A notification is displayed in the portal that shows the progress of your Domain Services deployment. 
 
-1. When the managed domain is fully provisioned, the **Overview** tab shows the domain status as *Running*. Expans **Deployment details** for links to resources such as the virtual network and network resource group. 
+1. When the managed domain is fully provisioned, the **Overview** tab shows the domain status as *Running*. Expand **Deployment details** for links to resources such as the virtual network and network resource group. 
 
    :::image type="content" source="./media/tutorial-create-instance/deployment-details.png" alt-text="Screenshot of deployment details for a managed domain.":::
 

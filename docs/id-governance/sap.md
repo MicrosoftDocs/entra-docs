@@ -2,7 +2,7 @@
 title: Manage access to your SAP applications
 description: Learn how to bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP ERP Central Component (ECC), SAP S/4HANA, and other SAP applications.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: conceptual
@@ -68,8 +68,10 @@ For more information on how to configure single sign-on from Microsoft Entra ID,
 - [SAP Cloud for Customer](../identity/saas-apps/sap-customer-cloud-tutorial.md)
 - [SAP Fieldglass](../identity/saas-apps/fieldglass-tutorial.md)
 
-Also see the following SAP resources:
+Also see the following blog posts and SAP resources:
 
+- SAP GUI MFA with Microsoft Entra [integration with SAP Secure Login Service](https://community.sap.com/t5/technology-blogs-by-members/sap-gui-mfa-with-microsoft-entra-part-i-integration-with-sap-secure-login/ba-p/13605383) and [integration with Microsoft Entra Private Access](https://community.sap.com/t5/technology-blogs-by-members/sap-gui-mfa-with-microsoft-entra-part-ii-integration-with-microsoft-entra/ba-p/13691141)
+- [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276)
 - [Azure Application Gateway setup of SAML Single Sign On for Public and Internal SAP URLs](https://blogs.sap.com/2020/12/10/sap-on-azure-single-sign-on-configuration-using-saml-and-azure-active-directory-for-public-and-internal-urls/)
 - [Single sign on using Microsoft Entra Domain Services and Kerberos](https://blogs.sap.com/2018/08/03/your-sap-on-azure-part-8-single-sign-on-using-azure-ad-domain-services/)
 
@@ -101,7 +103,7 @@ With separation-of-duties checks in Microsoft Entra [entitlement management](htt
 
 * Admins and access managers can prevent users from requesting extra access packages if they're already assigned to other access packages or are a member of other groups that are incompatible with the requested access.
 * Enterprises with critical regulatory requirements for SAP apps have a single consistent view of access controls. They can then enforce separation-of-duties checks across their financial and other business-critical applications, along with Microsoft Entra integrated applications.
-* With integration with [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and other partner products, customers can take advantage of fine-grained separation-of-duties checks with access packages in Microsoft Entra ID Governance.
+* With Microsoft Entra integrations to [SAP access governance](https://learning.sap.com/learning-journeys/exploring-the-fundamentals-of-sap-system-security/discussing-access-governance-integration-scenarios-ac-iag-), to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance.
 
 ## Additional guidance
 

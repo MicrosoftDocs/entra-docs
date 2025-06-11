@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: troubleshooting
 
-ms.date: 1/18/2022
+ms.date: 04/29/2025
 ms.author: jomondi
 ms.reviewer: jeedes
 ms.custom: enterprise-apps
@@ -32,7 +32,7 @@ The guest user is federated to a home tenant that is also a Microsoft Entra tena
 
 ## Solutions
 
-- MFA registered guest users remediate their own user risk. The guest user [resets or changes a secured password](https://aka.ms/sspr) at their home tenant (this needs MFA and SSPR at the home tenant). The secured password change or reset must be initiated on Microsoft Entra ID and not on-premises.
+- MFA registered guest users remediate their own user risk. The guest user [resets or changes a secured password](https://aka.ms/sspr) at their home tenant (this needs MFA and self service password reset (SSPR) at the home tenant). The secured password change or reset must be initiated on Microsoft Entra ID and not on-premises.
 
 - Guest users have their administrators remediate their risk. In this case, the administrator resets a password (temporary password generation). The guest user's administrator can go to https://aka.ms/RiskyUsers and select **Reset password**.
 

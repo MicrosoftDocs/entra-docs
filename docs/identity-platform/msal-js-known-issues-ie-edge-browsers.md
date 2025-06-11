@@ -4,9 +4,9 @@ description: Learn about know issues when using the Microsoft Authentication Lib
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 05/18/2020
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: troubleshooting

@@ -1,19 +1,19 @@
 ---
 title: Sign up your organization
-description: Learn about the options to sign up your organization to use Azure and Microsoft Entra ID.
+description: Learn about the options to sign up your organization to use Azure and
+  Microsoft Entra ID.
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 05/31/2024
+ms.date: 03/05/2025
 ms.author: barclayn
 ms.reviewer: jeffsta
-
 ---
 
-# Sign up your organization to use Microsoft Entra ID
+# Sign up for Microsoft Entra ID
+
 Sign up for Microsoft Entra ID or a new Microsoft Azure subscription, using either:
 
 - **Microsoft account.** Use your personal Microsoft account to get access to Azure and all consumer-oriented Microsoft products and cloud services, such as Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE, or Microsoft 365. Signing up for an Outlook.com mailbox automatically creates a Microsoft account. For more information, see [Microsoft account overview](https://account.microsoft.com/account).

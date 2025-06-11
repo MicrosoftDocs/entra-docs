@@ -3,11 +3,10 @@ title: "Include file - Register a daemon in the Microsoft identity platform"
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 01/18/2024
-ms.reviewer:
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: include
 ---
 
@@ -15,7 +14,7 @@ To complete registration, provide the application a name and specify the support
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="../../../media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
+1. Browse to **Entra ID** > **App registrations**, select **New registration**.
 1. Enter a **Name** for the application, such as *identity-client-daemon-app*.
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option.
 1. Select **Register**.

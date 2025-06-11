@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 05/31/2024
+ms.date: 03/13/2025
 ms.author: ryanwi
 ms.reviewer: 
 ---

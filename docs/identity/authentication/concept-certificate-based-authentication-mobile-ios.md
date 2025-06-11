@@ -5,11 +5,11 @@ description: Learn about Microsoft Entra certificate-based authentication on App
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 02/09/2023
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
@@ -124,9 +124,9 @@ Even though the native Smartcard/CCID driver is available on iOS/iPadOS for Ligh
 1. Install the latest Microsoft Authenticator app.
 1. Open Outlook and plug in your YubiKey. 
 1. Select **Add account** and enter your user principal name (UPN).
-1. Click **Continue** and the iOS certificate picker appears. 
+1. Select **Continue** and the iOS certificate picker appears. 
 1. Select the public certificate copied from YubiKey that is associated with the user’s account.  
-1. Click **YubiKey required** to open the YubiKey authenticator app. 
+1. Select **YubiKey required** to open the YubiKey authenticator app. 
 1. Enter the PIN to access YubiKey and select the back button at the top left corner. 
 
 The user should be successfully logged in and redirected to the Outlook homepage. 
@@ -144,17 +144,17 @@ The iOS certificate picker shows all the certificates on both iOS device and the
 
 #### After CBA fails, the CBA option in the ‘Other ways to sign in’ link also fails. Is there a workaround? 
 
-This issue happens because of certificate caching. We're working on an update to clear the cache. As a workaround, click **Cancel**, retry sign-in, and choose a new certificate. 
+This issue happens because of certificate caching. We're working on an update to clear the cache. As a workaround, select **Cancel**, retry sign-in, and choose a new certificate. 
 
 <a name='azure-ad-cba-with-yubikey-is-failing-what-information-would-help-debug-the-issue-'></a>
 
 #### Microsoft Entra CBA with YubiKey is failing. What information would help debug the issue? 
 
-1. Open Microsoft Authenticator app, click the three dots icon in the top right corner and select **Send Feedback**.
-1. Click **Having Trouble?**.
+1. Open Microsoft Authenticator app, select the three dots icon in the top right corner and select **Send Feedback**.
+1. Select **Having Trouble?**.
 1. For **Select an option**, select **Add or sign into an account**. 
 1. Describe any details you want to add. 
-1. Click the send arrow in the top right corner. Note the code provided in the dialog that appears. 
+1. Select the send arrow in the top right corner. Note the code provided in the dialog that appears. 
 
 #### How can I enforce phishing-resistant MFA using a hardware security key on browser-based applications on mobile? 
 
@@ -182,9 +182,9 @@ CBA support for YubiKey is available in the latest Microsoft Authentication Libr
 
 ## Known issues
 
-- On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice.
+- On iOS, users with certificate-based authentication will see a "double prompt", where they must select the option to use certificate-based authentication twice.
 - On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor.
-- On iOS, an auth strength policy requiring CBA and an MAM app protection policy will end up in a loop between device registration and MFA satisfaction. Due to the bug on iOS, when a user uses CBA to satisfy MFA requirement, the MAM policy is not satisfied with error being thrown by server saying device registration is required, even though the device is registered. This incorrect error causes re-registeration and the request is stuck in loop of using CBA to sign in and device need registration.
+- On iOS, an auth strength policy requiring CBA and an MAM app protection policy will end up in a loop between device registration and MFA satisfaction. Due to the bug on iOS, when a user uses CBA to satisfy MFA requirement, the MAM policy is not satisfied with error being thrown by server saying device registration is required, even though the device is registered. This incorrect error causes re-registration and the request is stuck in loop of using CBA to sign in and device need registration. Due to the above issues, CBA as a second factor is blocked on iOS and will be unblocked as soon as the fixes are fixed. 
 
 ## Next steps
 

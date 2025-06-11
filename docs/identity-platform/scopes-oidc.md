@@ -4,12 +4,11 @@ description: Learn about openID connect scopes and permissions in the Microsoft 
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.date: 11/17/2023
+ms.date: 01/03/2025
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
-
 ms.topic: concept-article
-
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how to request scopes and permissions, so that I can access web-hosted resources on behalf of a user and ensure fine-grained control over data access and API functionality.
 ---
 
@@ -17,7 +16,7 @@ ms.topic: concept-article
 
 The Microsoft identity platform implements the [OAuth 2.0](./v2-protocols.md) authorization protocol. OAuth 2.0 is a method through which a third-party app can access web-hosted resources on behalf of a user. Any web-hosted resource that integrates with the Microsoft identity platform has a resource identifier, or *application ID URI*.
 
-In this article, you'll learn about scopes and permissions in the identity platform.
+In this article, you learn about scopes and permissions in the identity platform.
 
 The following list shows some examples of Microsoft web-hosted resources:
 
@@ -25,7 +24,7 @@ The following list shows some examples of Microsoft web-hosted resources:
 - Microsoft 365 Mail API: `https://outlook.office.com`
 - Azure Key Vault: `https://vault.azure.net`
 
-The same is true for any third-party resources that have integrated with the Microsoft identity platform. Any of these resources can also define a set of permissions that can be used to divide the functionality of that resource into smaller chunks. As an example, [Microsoft Graph](https://graph.microsoft.com) has defined permissions to do the following tasks, among others:
+The same is true for any third-party resources that integrate with the Microsoft identity platform. Any of these resources can also define a set of permissions that divide the functionality of that resource into smaller chunks. As an example, [Microsoft Graph](https://graph.microsoft.com) defines permissions to do the following tasks, among others:
 
 - Read a user's calendar
 - Write to a user's calendar
@@ -36,8 +35,6 @@ Because of these types of permission definitions, the resource has fine-grained 
 When a resource's functionality is chunked into small permission sets, third-party apps can be built to request only the permissions that they need to perform their function. Users and administrators can know what data the app can access. And they can be more confident that the app isn't behaving with malicious intent. Developers should always abide by the principle of least privilege, asking for only the permissions they need for their applications to function.
 
 In OAuth 2.0, these types of permission sets are called *scopes*. They're also often referred to as *permissions*. In the Microsoft identity platform, a permission is represented as a string value. An app requests the permissions it needs by specifying the permission in the `scope` query parameter. Identity platform supports several well-defined [OpenID Connect scopes](#openid-connect-scopes) and resource-based permissions (each permission is indicated by appending the permission value to the resource's identifier or application ID URI). For example, the permission string `https://graph.microsoft.com/Calendars.Read` is used to request permission to read users calendars in Microsoft Graph.
-
-In requests to the authorization server, for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `scope=User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
 
 ## Admin-restricted permissions
 
@@ -58,15 +55,15 @@ For a step by step guide on how to expose scopes in a web API, see [Configure an
 
 ## OpenID Connect scopes
 
-The Microsoft identity platform implementation of OpenID Connect has a few well-defined scopes that are also hosted on Microsoft Graph: `openid`, `email`, `profile`, and `offline_access`. The `address` and `phone` OpenID Connect scopes aren't supported.
+The Microsoft identity platform implementation of OpenID Connect has a few well-defined scopes that are also hosted on Microsoft Graph: `openid`, `email`, `profile`, and `offline_access`. The `address` and `phone` OpenID Connect scopes aren't supported. These scopes are sometimes optional and considered for ID token enrichment. These scopes will not always appear in separate lines in a consent prompt to a user.
 
-If you request the OpenID Connect scopes and a token, you'll get a token to call the [UserInfo endpoint](userinfo.md).
+If you request the OpenID Connect scopes and a token, you get a token to call the [UserInfo endpoint](userinfo.md).
 
 ### The `openid` scope
 
 If an app signs in by using [OpenID Connect](./v2-protocols.md), it must request the `openid` scope. The `openid` scope appears on the work account consent page as the **Sign you in** permission.
 
-By using this permission, an app can receive a unique identifier for the user in the form of the `sub` claim. The permission also gives the app access to the UserInfo endpoint. The `openid` scope can be used at the Microsoft identity platform token endpoint to acquire ID tokens. The app can use these tokens for authentication.
+An app uses this permission to receive a unique identifier for the user in the form of the `sub` claim. The permission also gives the app access to the UserInfo endpoint. The `openid` scope can be used at the Microsoft identity platform token endpoint to acquire ID tokens. The app can use these tokens for authentication.
 
 ### The `email` scope
 
@@ -84,16 +81,22 @@ For a complete list of the `profile` claims available in the `id_tokens` paramet
 
 The [`offline_access` scope](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess) gives your app access to resources on behalf of the user for an extended time. On the consent page, this scope appears as the **Maintain access to data you have given it access to** permission.
 
-When a user approves the `offline_access` scope, your app can receive refresh tokens from the Microsoft identity platform token endpoint. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
+If any of the requested delegated permissions from the `scope` parameter (excluding `openid`, `profile`, `email`) are granted, this is sufficient for the app to request a refresh token using `offline_access`. For example, if `User.Read` for Microsoft is granted, the app will only receive an access token. That said, if the app were to subsequently request a refresh token, the fact that `User.Read` had been granted is sufficient for a refresh token to be provided. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
 
 > [!NOTE]
 > This permission currently appears on all consent pages, even for flows that don't provide a refresh token (such as the [implicit flow](v2-oauth2-implicit-grant-flow.md)). This setup addresses scenarios where a client can begin within the implicit flow and then move to the code flow where a refresh token is expected.
 
-On the Microsoft identity platform (requests made to the v2.0 endpoint), your app must explicitly request the `offline_access` scope, to receive refresh tokens. So when you redeem an authorization code in the [OAuth 2.0 authorization code flow](./v2-protocols.md), you'll only receive an access token from the `/token` endpoint.
+On the Microsoft identity platform (requests made to the v2.0 endpoint), your app must explicitly request the `offline_access` scope, to receive refresh tokens. So when you redeem an authorization code in the [OAuth 2.0 authorization code flow](./v2-protocols.md), you receive an access token from the `/token` endpoint.
 
-The access token is usually valid for around one hour. At that point, your app needs to redirect the user back to the `/authorize` endpoint to request a new authorization code. During this redirect and depending on app type, the user may need to enter their credentials again or consent to permissions again.
+The access token is valid for around one hour. At that point, your app needs to redirect the user back to the `/authorize` endpoint to request a new authorization code. During this redirect and depending on app type, the user may need to enter their credentials again or consent to permissions again.
 
-The refresh token has a longer expiry than the access token, and is usually valid for a day. For more information about how to get and use refresh tokens, see the [Microsoft identity platform protocol reference](./v2-protocols.md).
+The refresh token has a longer expiry than the access token and is typically valid for 90 days. For more information about how to get and use refresh tokens, see the [Microsoft identity platform protocol reference](./v2-protocols.md).
+
+The inclusion of the refresh token in the response can depend on several factors, including the specific configuration of your application and the scopes requested during the authorization process. If you expect to receive a refresh token in the response but fail to, consider the following factors:
+
+- **Scope requirements**: Ensure that you're requesting the `offline_access` scopes along with any other necessary scopes.
+- **Authorization grant type**: The refresh token is provided when using the authorization code grant type. If your flow differs, the response can be affected.
+- **Client configuration**: Check your application's settings in the identity platform. Certain configurations may restrict the issuance of refresh_tokens.
 
 ## The `.default` scope
 
@@ -107,13 +110,13 @@ The `.default` scope can be used in any OAuth 2.0 flow and to initiate [admin co
 
 Clients can't combine static (`.default`) consent and dynamic consent in a single request. So `scope=https://graph.microsoft.com/.default Mail.Read` results in an error because it combines scope types.
 
-### `.default` when the user has already given consent
+### `.default` when the user gives consent
 
-The `.default` scope parameter only triggers a consent prompt if consent hasn't been granted for any delegated permission between the client and the resource, on behalf of the signed-in user.
+The `.default` scope parameter only triggers a consent prompt if consent wasn't granted for any delegated permission between the client and the resource, on behalf of the signed-in user.
 
-If consent exists, the returned token contains all scopes granted for that resource for the signed-in user. However, if no permission has been granted for the requested resource (or if the `prompt=consent` parameter has been provided), a consent prompt is shown for all required permissions configured on the client application registration, for all APIs in the list.
+If consent exists, the returned token contains all scopes granted for that resource for the signed-in user. However, if no permission was granted for the requested resource (or if the `prompt=consent` parameter is provided), a consent prompt is shown for all required permissions configured on the client application registration, for all APIs in the list.
 
-For example, if the scope `https://graph.microsoft.com/.default` is requested, your application is requesting an access token for the Microsoft Graph API. If at least one delegated permission has been granted for Microsoft Graph on behalf of the signed-in user, the sign-in will continue and all Microsoft Graph delegated permissions that have been granted for that user will be included in the access token. If no permissions have been granted for the requested resource (Microsoft Graph, in this example), then a consent prompt will be presented for all required permissions configured on the application, for all APIs in the list.
+For example, if the scope `https://graph.microsoft.com/.default` is requested, your application is requesting an access token for the Microsoft Graph API. If at least one delegated permission was granted for Microsoft Graph on behalf of the signed-in user, the sign-in continues. All Microsoft Graph delegated permissions that have been granted for that user will be included in the access token. If no permissions were granted for the requested resource (Microsoft Graph, in this example), then a consent prompt is presented for all required permissions configured on the application, for all APIs in the list.
 
 #### Example 1: The user, or tenant admin, has granted permissions
 
@@ -123,7 +126,7 @@ If the client requests `scope=https://graph.microsoft.com/.default`, no consent 
 
 #### Example 2: The user hasn't granted permissions between the client and the resource
 
-In this example, the user hasn't granted consent between the client and Microsoft Graph, nor has an administrator. The client has registered for the permissions `User.Read` and `Contacts.Read`. It has also registered for the Azure Key Vault scope `https://vault.azure.net/user_impersonation`.
+In this example, the user hasn't granted consent between the client and Microsoft Graph, nor has an administrator. The client registered for the `User.Read` and `Contacts.Read` permissions and registered for the Azure Key Vault scope `https://vault.azure.net/user_impersonation`.
 
 When the client requests a token for `scope=https://graph.microsoft.com/.default`, the user sees a consent page for the Microsoft Graph `User.Read` and `Contacts.Read` scopes, and for the Azure Key Vault `user_impersonation` scope. The returned token contains only the `User.Read` and `Contacts.Read` scopes, and it can be used only against Microsoft Graph.
 
@@ -131,7 +134,7 @@ When the client requests a token for `scope=https://graph.microsoft.com/.default
 
 In this example, the user has already consented to `Mail.Read` for the client. The client has registered for the `Contacts.Read` scope.
 
-The client first performs a sign-in with `scope=https://graph.microsoft.com/.default`. Based on the `scopes` parameter of the response, the application's code detects that only `Mail.Read` has been granted. The client then initiates a second sign-in using `scope=https://graph.microsoft.com/.default`, and this time forces consent using `prompt=consent`. If the user is allowed to consent for all the permissions that the application registered, they'll be shown the consent prompt. (If not, they'll be shown an error message or the [admin consent request](~/identity/enterprise-apps/configure-admin-consent-workflow.md) form.) Both `Contacts.Read` and `Mail.Read` will be in the consent prompt. If consent is granted and the sign-in continues, the token returned is for Microsoft Graph, and contains `Mail.Read` and `Contacts.Read`.
+The client first performs a sign-in with `scope=https://graph.microsoft.com/.default`. Based on the `scopes` parameter of the response, the application's code detects that only `Mail.Read` has been granted. The client then initiates a second sign-in using `scope=https://graph.microsoft.com/.default`, and this time forces consent using `prompt=consent`. If the user is allowed to consent for all the permissions that the application registered, they're shown the consent prompt. (If not, they're shown an error message or the [admin consent request](~/identity/enterprise-apps/configure-admin-consent-workflow.md) form.) Both `Contacts.Read` and `Mail.Read` are in the consent prompt. If consent is granted and the sign-in continues, the token returned is for Microsoft Graph, and contains `Mail.Read` and `Contacts.Read`.
 
 ### Using the `.default` scope with the client
 
@@ -150,7 +153,7 @@ GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize
 
 This code example produces a consent page for all registered permissions if the preceding descriptions of consent and `.default` apply to the scenario. Then the code returns an `id_token`, rather than an access token.  
 
-This setup *shouldn't* be used by new clients that target the Microsoft identity platform. Be sure to [Migrate to the Microsoft Authentication Library (MSAL)](./msal-migration.md) from Azure AD Authentication Library (ADAL).
+New clients targeting the Microsoft identity platform shouldn't use this setup. Make sure to [Migrate to the Microsoft Authentication Library (MSAL)](./msal-migration.md) from Azure AD Authentication Library (ADAL).
 
 ### Client credentials grant flow and `.default`  
 

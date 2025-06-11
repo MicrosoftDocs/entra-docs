@@ -2,10 +2,10 @@
 title: 'Identity Governance custom alerts'
 description: This article shows how to create custom alerts with Microsoft Entra ID Governance
 author: billmath
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 09/23/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.custom:
 ---
@@ -14,13 +14,13 @@ ms.custom:
 
 Microsoft Entra ID Governance makes it easy to alert people in your organization when they need to take action (ex: approve a request for access to a resource) or when a business process isn't functioning properly (ex: new hires aren't getting provisioned).
 
-The following table outlines some of the standard notifications that Microsoft Entra ID Governance provides, the target persona in an organization, where they would expect to be alerted, and how quickly they would be alerted.
+The following table outlines some of the standard notifications that Microsoft Entra ID Governance provides. This includes the target persona in an organization, how they're alerted, and when they're alerted.
 
 **Sample of existing standard notifications**
 
 | Persona | Alert method | Timeliness | Example alert |
 | --- | --- | --- | --- |
-| End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested has been approved, go use your new app.<br><br>[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
+| End user | Teams | Minutes | You need to approve or deny this request for access;  <br>The access you requested is approved, go use your new app.<br><br>[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Teams | Days | The access you requested is going to expire next week, please renew.[Learn more](/entra/id-governance/entitlement-management-process#email-notifications-table) |
 | End user | Email | Days | Welcome to Woodgrove, here is your temporary access pass. [Learn more.](/entra/id-governance/lifecycle-workflow-tasks#generate-temporary-access-pass-and-send-via-email-to-users-manager) |
 | Help desk | ServiceNow | Minutes | A user needs to be manually provisioned into a legacy application. [Learn more](entitlement-management-ticketed-provisioning.md) |
@@ -30,9 +30,9 @@ The following table outlines some of the standard notifications that Microsoft E
 
 In addition to the standard notifications provided by Microsoft Entra ID Governance, organizations can create custom alerts to meet their needs. 
 
-All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
+All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to an Azure Monitor [Log Analytics workspace](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
 
-The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor. By using Azure Monitor, organizations can customize what alerts are generated, who receives the alerts, and how they receive the alert (email, SMS, [help desk ticket](https://learn.microsoft.com/azure/azure-monitor/alerts/itsm-connector-secure-webhook-connections-azure-configuration), etc.). 
+The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor. By using Azure Monitor, organizations can customize what alerts are generated, who receives the alerts, and how they receive the alert (email, SMS, [help desk ticket](/azure/azure-monitor/alerts/itsm-connector-secure-webhook-connections-azure-configuration), etc.). 
 
 | Feature | Example alert |
 | --- | --- |
@@ -46,7 +46,7 @@ The following section provides examples of custom alerts that customers can crea
 | Multitenant collaboration | Alert an IT admin when a cross-tenant access policy is enabled |
 | Privileged Identity Management | Alert an IT admin when PIM alerts are disabled. |
 | Privileged Identity Management | Alert an IT admin when a role is granted outside of PIM.|
-| Provisioning | Alert an IT admin when there is a spike in provisioning failures over the past day. |
+| Provisioning | Alert an IT admin when there's a spike in provisioning failures over the past day. |
 | Provisioning| Alert an IT admin when someone starts, stops, disables, restarts, or deletes a provisioning configuration.|
 | Provisioning| Alert an IT admin when a provisioning job goes into quarantine.|
 
@@ -102,7 +102,7 @@ AuditLogs
 | where Result == "success"
 | mvexpand TargetResources 
 | extend  CustomExtensionName=TargetResources.displayName
-| where CustomExtensionName in ('<input custom exteionsion name>', '<input custom extension name>')
+| where CustomExtensionName in ('<input custom extension name>', '<input custom extension name>')
 ```
 
 ### Alert an IT admin when an entitlement management access package assignment policy is created or updated without requiring [approval.](/entra/id-governance/entitlement-management-access-package-approval-policy)
@@ -193,7 +193,7 @@ AuditLogs
 
 ### Alert an IT admin when a user is added to a role outside of PIM
 
-The query below is based on a templateId. You can find a list of template IDs [here](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference).
+The following query is based on a templateId. You can find a list of template IDs [here](/entra/identity/role-based-access-control/permissions-reference).
 
 *Query*
 
@@ -205,8 +205,8 @@ AuditLogs
 
 ## Provisioning
 
-**Alert an IT administrator when there is a spike in provisioning failures over the past day.**
-When configuring your alert in log analytics, set the aggregration granularity to 1-day.
+**Alert an IT administrator when there's a spike in provisioning failures over the past day.**
+When configuring your alert in log analytics, set the aggregation granularity to 1-day.
 
 *Query*
 
@@ -243,7 +243,7 @@ AuditLogs
 
 **Next steps**
 
-- [Log analytics](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
+- [Analyze Microsoft Entra activity logs with Azure Monitor log analytics](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
 - [Get started with queries in Azure Monitor logs](/azure/azure-monitor/logs/get-started-queries)
 - [Create and manage alert groups in the Azure portal](/azure/azure-monitor/alerts/action-groups)
 - [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)

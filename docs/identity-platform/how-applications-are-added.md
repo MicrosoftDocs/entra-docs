@@ -4,7 +4,7 @@ description: What does it mean for an application to be added to Microsoft Entra
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom:
 ms.date: 10/26/2022
 ms.reviewer: sureshja
 ms.service: identity-platform
@@ -64,9 +64,9 @@ Like application objects, service principals can also be created through multipl
 
 - When users sign in to a third-party application integrated with Microsoft Entra ID
   - During sign-in, users are asked to give permission to the application to access their profile and other permissions. The first person to give consent causes a service principal that represents the application to be added to the directory.
-- When users sign in to Microsoft online services like Microsoft 365.
-  - When you subscribe to Microsoft 365 or begin a trial, one or more service principals are created in the directory representing the various services that are used to deliver all of the functionality associated with Microsoft 365.
-  - Some Microsoft 365 services like SharePoint create service principals on an ongoing basis to allow secure communication between components including workflows.
+- When users use or sign in to Microsoft online services like Microsoft 365, Microsoft Entra ID, or Microsoft Azure.
+  - When you first use a Microsoft service, one or more service principals may be created in the directory representing the various Microsoft service identities that are used to deliver the service. This "just-in-time" provisioning may happen at any time, often as part of a background process. On rare occasions, the Microsoft service principal that gets created may also be assigned a directory role, such as "Directory Readers". 
+  - Some Microsoft services like SharePoint Online create service principals on an ongoing basis to allow secure communication between components including workflows.
 - When an admin adds an application from the app gallery (this will also create an underlying app object)
 - Add an application to use the [Microsoft Entra application proxy](/entra/identity/app-proxy)
 - Connect an application for SSO using SAML or password SSO
@@ -136,7 +136,7 @@ If you still want to prevent users in your directory from registering applicatio
 - To change the user consent settings in your organization, see [Configure how users consent to applications](~/identity/enterprise-apps/configure-user-consent.md).
 
 - To prevent users from registering their own applications:
-  1. In the Microsoft Entra admin center, browse to **Identity** > **Users** > **User settings**.
+  1. In the Microsoft Entra admin center, browse to **Entra ID** > **Users** > **User settings**.
   2. Change **Users can register applications** to **No**.
 
 <!--Image references-->

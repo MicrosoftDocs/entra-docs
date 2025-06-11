@@ -5,16 +5,16 @@ description: Automation to detect, remediate, investigate, and analyze risk data
 ms.service: entra-id-protection
 
 ms.topic: overview
-ms.date: 02/06/2024
+ms.date: 05/20/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: chuqiaoshi
 ---
 # What is Microsoft Entra ID Protection?
 
-Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These identity-based risks can be further fed into tools like Conditional Access to make access decisions or fed back to a security information and event management (SIEM) tool for further investigation and correlation. 
+Microsoft Entra ID Protection helps organizations detect, investigate, and remediate identity-based risks. These risks can be fed into tools like Conditional Access to make access decisions or sent to a security information and event management (SIEM) tool for further investigation and correlation.
 
 :::image type="content" source="media/overview-identity-protection/identity-protection-overview.png" alt-text="Diagram showing how ID Protection works at a high level.":::
 
@@ -27,7 +27,7 @@ Microsoft continually adds and updates detections in our catalog to protect orga
 - Leaked credentials 
 - and more... 
 
-During each sign-in, ID Protection runs all real-time sign-in detections generating a sign-in session risk level, indicating how likely the sign-in is compromised. Based on this risk level, policies are then applied to protect the user and the organization.
+During each sign-in, ID Protection runs all real-time sign-in detections, generating a sign-in session risk level that indicates how likely the sign-in is compromised. Based on this risk level, policies are applied to protect the user and the organization.
 
 For a full listing of risks and how they're detected, see the article [What is risk](concept-identity-protection-risks.md).
 
@@ -45,15 +45,17 @@ For more information about how to use the reports, see the article [How To: Inve
 
 ## Remediate risks 
 
-Why automation is critical in security? 
+Automation is critical in security because the scale of signals and attacks requires automation to keep up.
 
-In the blog post *[Cyber Signals: Defending against cyber threats with the latest research, insights, and trends](https://www.microsoft.com/security/blog/2022/02/03/cyber-signals-defending-against-cyber-threats-with-the-latest-research-insights-and-trends/)* dated February 3, 2022 Microsoft shared a threat intelligence brief including the following statistics: 
+The [Microsoft Digital Defense Report 2024](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft%20Digital%20Defense%20Report%202024%20%281%29.pdf) provides the following statistics:
 
-> Analyzed ...24 trillion security signals combined with intelligence we track by monitoring more than 40 nation-state groups and over 140 threat groups... 
-> 
-> ...From January 2021 through December 2021, we’ve blocked more than 25.6 billion Microsoft Entra brute force authentication attacks... 
+> 78 trillion security signals analyzed per day, an increase of 13 trillion from the previous year
+>
+> 600 million attacks on Microsoft customers per day
+>
+> 2.75x increase year over year in human-operated ransomware attacks
 
-The sheer scale of signals and attacks requires some level of automation just to keep up. 
+These statistics continue to trend upwards, with no sign of slowing down. In this environment, automation is the key to identifying and remediating risk so IT organizations can focus on the right priorities.
 
 ### Automatic remediation
 
@@ -61,7 +63,7 @@ The sheer scale of signals and attacks requires some level of automation just to
 
 ### Manual remediation 
 
-When user remediation isn't enabled, an administrator must manually review them in the reports in the portal, through the API, or in Microsoft 365 Defender. Administrators can perform manual actions to dismiss, confirm safe, or confirm compromise on the risks.
+When user remediation isn't enabled, an admin must manually review them in the reports in the portal, through the API, or in Microsoft Defender XDR. Admins can perform manual actions to dismiss, confirm safe, or confirm compromise on the risks.
 
 ## Making use of the data
 
@@ -73,25 +75,22 @@ Organizations might store data for longer periods by changing the diagnostic set
 
 ## Required roles
 
-ID Protection requires users be assigned one or more of the following roles in order to access.
+ID Protection requires users to be assigned one or more of the following roles.
 
 | Role | Can do | Can't do |
-| --- | --- | --- |
-| [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) | Full access to ID Protection | Reset password for a user |
-| [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) | View all ID Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
-| [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) | View all ID Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
-| [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) | Read-only access to ID Protection |   |
-| [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator) | Reset user passwords |   |
-
-Currently, the Security Operator role can't access the Risky sign-ins report.
-
-Conditional Access administrators can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
+| ---  | ---    | ---      |
+| [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) | Read-only access to ID Protection | Write access to ID Protection |
+| [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) | Reset user passwords | Read or write to ID Protection |
+| [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) | Create policies that factor in user or sign-in risk as a condition | Read or write to legacy ID Protection policies |
+| [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) | View all ID Protection reports and Overview | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts <br><br> Give feedback on detections |
+| [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) | View all ID Protection reports and Overview <br><br> Dismiss user risk, confirm safe sign-in, confirm compromise | Configure or change policies <br><br> Reset password for a user <br><br> Configure alerts |
+| [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) | Full access to ID Protection | Reset password for a user |
 
 ## License requirements
 
-[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
+[!INCLUDE [Active Directory P2 license](../includes/entra-p2-license.md)] The following table describes the key capabilities of Microsoft Entra ID Protection and the licensing requirements for each capability. Refer to the Microsoft Entra plans and pricing page for pricing details.
 
-| Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 |
+| Capability | Details | Microsoft Entra ID Free / Microsoft 365 Apps | Microsoft Entra ID P1 | Microsoft Entra ID P2 / Microsoft Entra Suite |
 | --- | --- | --- | --- | --- |
 | Risk policies | Sign-in and user risk policies (via ID Protection or Conditional Access) | No | No | Yes |
 | Security reports | Overview | No | No | Yes |
@@ -100,11 +99,28 @@ Conditional Access administrators can create policies that factor in user or sig
 | Security reports | Risk detections | No | Limited Information. No details drawer.| Full access |
 | Notifications | Users at risk detected alerts | No | No | Yes |
 | Notifications | Weekly digest | No | No | Yes | 
-| MFA registration policy |   | No | No | Yes |
+| MFA registration policy | Require MFA (via Conditional Access) | No | No | Yes |
+| Microsoft Graph | All risk reports | No | No | Yes |
 
-More information on these rich reports can be found in the article, [How To: Investigate risk](howto-identity-protection-investigate-risk.md#navigating-the-reports).
+To view the **Risky workload identities** report and the **Workload identity detections** tab in the **Risk detections** report, you need Workload Identities Premium licensing. For more information, see [Securing workload identities](concept-workload-identity-risk.md).
 
-To make use of workload identity risk, including the **Risky workload identities** and **Workload identity detections** tab in the **Risk detections** panes in the admin center, you must have Workload Identities Premium licensing. For more information, see the article [Securing workload identities](concept-workload-identity-risk.md).
+### Microsoft Defender
+
+Microsoft Entra ID Protection receives signals from Microsoft Defender products for several risk detections, so you also need the appropriate license for the Microsoft Defender product that owns the signal you're interested in.
+
+**Microsoft 365 E5** covers all of the following signals:
+
+- **Microsoft Defender for Cloud Apps**
+  - Activity from anonymous IP address
+  - Impossible travel
+  - Mass access to sensitive files
+  - New country
+
+- **Microsoft Defender for Office 365**
+  - Suspicious inbox rules
+
+- **Microsoft Defender for Endpoint**
+   - Possible attempt to access Primary Refresh Token
 
 ## Next steps
 

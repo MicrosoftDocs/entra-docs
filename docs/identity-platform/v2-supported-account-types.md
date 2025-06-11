@@ -4,12 +4,11 @@ description: Conceptual documentation about audiences and supported account type
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:
 ms.date: 04/24/2024
-ms.reviewer: saeeda, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer building a multi-tenant web application, I want to understand the supported account types in the Microsoft identity platform, so that I can ensure my application can sign in users from any organization and with their work, school, or personal Microsoft accounts.
 ---
 
@@ -30,7 +29,8 @@ In the Microsoft Azure public cloud, most types of apps can sign in users with a
   - With their work or school or personal Microsoft accounts.
   - With only personal Microsoft accounts.
 
-- If you're writing a business-to-consumer application, you can also sign in users with their social identities, by using Azure Active Directory B2C (Azure AD B2C).
+- If you're writing a business-to-consumer application, you can also sign in users with their social identities, by using Azure Active Directory B2C (Azure AD B2C). 
+Effective May 1, 2025, Azure AD B2C will no longer be available to purchase for new customers. To learn more, please see [Is Azure AD B2C still available to purchase?](/azure/active-directory-b2c/faq?tabs=app-reg-ga#azure-ad-b2c-end-of-sale) in our FAQ.
 
 ## Account type support in authentication flows
 

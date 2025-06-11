@@ -2,14 +2,14 @@
 title: Service principal sign-in logs
 description: Learn about the activity captured in the service principal sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/10/2024
+ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is captured in the service principal sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
 ---
 # What are service principal sign-ins in Microsoft Entra?
@@ -20,8 +20,7 @@ Unlike interactive and non-interactive user sign-ins, service principal sign-ins
 
 ## Log details
 
-**Report size:** Large </br>
-**Examples:**
+The following examples show the type of information captured in the service principal sign-in logs:
 
 - A service principal uses a certificate to authenticate and access the Microsoft Graph.
 - An application uses a client secret to authenticate in the OAuth Client Credentials flow.

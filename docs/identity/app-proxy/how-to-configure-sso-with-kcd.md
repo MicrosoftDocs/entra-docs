@@ -1,15 +1,16 @@
 ---
 title: Kerberos-based single sign-on (SSO) in Microsoft Entra ID with application proxy
 description: Covers how to provide single sign-on using Microsoft Entra application proxy.
-
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/01/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Kerberos Constrained Delegation for single sign-on (SSO) to your apps with application proxy
@@ -21,7 +22,7 @@ To learn more about single sign-on (SSO), see [What is single sign-on?](~/identi
 You can enable single sign-on to your applications using integrated Windows authentication (IWA) by giving private network connectors permission in Active Directory to impersonate users. The connectors use this permission to send and receive tokens on their behalf.
 
 ## How single sign-on with KCD works
-This diagram explains the flow when a user attempts to access an on-premises application that uses IWA.
+The diagram explains the flow when a user attempts to access an on-premises application that uses IWA.
 
 ![Microsoft Entra authentication flow diagram](./media/application-proxy-configure-single-sign-on-with-kcd/authdiagram.png)
 
@@ -40,7 +41,7 @@ Before you get started with single sign-on for IWA applications, make sure your 
 * Your apps, like SharePoint Web apps, are set to use integrated Windows authentication. For more information, see [Enable Support for Kerberos Authentication](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759186(v=ws.11)), or for SharePoint see [Plan for Kerberos authentication in SharePoint 2013](/SharePoint/security-for-sharepoint-server/kerberos-authentication-planning).
 * All your apps have [Service Principal Names](/windows/win32/ad/service-principal-names).
 * The server running the Connector and the server running the app are domain joined and part of the same domain or trusting domains. For more information on domain join, see [Join a Computer to a Domain](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807102(v=ws.11)).
-* The server running the Connector has access to read the TokenGroupsGlobalAndUniversal attribute for users. This default setting might have been impacted by security hardening the environment. Adding the Connector servers to the "Windows Authorization Access Group" will normally do this.
+* Ensure the Connector server can read the `TokenGroupsGlobalAndUniversal` attribute for users. Security hardening might restrict this access. Enable the connector servers by adding them to the *Windows Authorization Access* group.
 
 ### Configure Active Directory
 The Active Directory configuration varies, depending on whether your private network connector and the application server are in the same domain or not.
@@ -51,13 +52,13 @@ The Active Directory configuration varies, depending on whether your private net
 3. Right-click and select **Properties** > **Delegation**.
 4. Select **Trust this computer for delegation to specified services only**. 
 5. Select **Use any authentication protocol**.
-6. Under **Services to which this account can present delegated credentials** add the value for the SPN identity of the application server. This enables the private network connector to impersonate users in AD against the applications defined in the list.
+6. Under **Services to which this account can present delegated credentials** add the value for the SPN identity of the application server. The setting enables the private network connector to impersonate users in AD against the applications defined in the list.
 
    ![Connector-SVR Properties window screenshot](./media/application-proxy-configure-single-sign-on-with-kcd/properties.jpg)
 
 #### Connector and application server in different domains
 1. For a list of prerequisites for working with KCD across domains, see [Kerberos Constrained Delegation across domains](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11)).
-2. Use the `principalsallowedtodelegateto` property of the service account (computer or dedicated domain user account) of the web application to enable Kerberos authentication delegation from the application proxy (connector). The application server is running in the context of `webserviceaccount` and the delegating server is `connectorcomputeraccount`. Run the commands below on a Domain Controller (running Windows Server 2012 R2 or later) in the domain of `webserviceaccount`. Use flat names (non UPN) for both accounts.
+2. To enable Kerberos authentication delegation from the application proxy (connector), use the `PrincipalsAllowedToDelegateTo` property of the web application's service account (`webserviceaccount`). The application server runs under `webserviceaccount`, and the delegating server is `connectorcomputeraccount`. Run the following commands on a Domain Controller (Windows Server 2012 R2 or later) in the same domain as `webserviceaccount`. Use flat names (non-UPN) for both accounts.
 
    If the `webserviceaccount` is a computer account, use these commands:
 
@@ -81,56 +82,56 @@ The Active Directory configuration varies, depending on whether your private net
 
 ## Configure single sign-on 
 1. Publish your application according to the instructions described in [Publish applications with application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Make sure to select **Microsoft Entra ID** as the **Preauthentication Method**.
-2. After your application appears in the list of enterprise applications, select it and click **Single sign-on**.
+2. After your application appears in the list of enterprise applications, select it and select **Single sign-on**.
 3. Set the single sign-on mode to **Integrated Windows authentication**.  
-4. Enter the **Internal Application SPN** of the application server. In this example, the SPN for our published application is `http/www.contoso.com`. This SPN needs to be in the list of services to which the connector can present delegated credentials.
+4. Enter the **Internal Application SPN** of the application server. In this example, the SPN for our published application is `http/www.contoso.com`. The SPN needs to be in the list of services to which the connector can present delegated credentials.
 5. Choose the **Delegated Login Identity** for the connector to use on behalf of your users. For more information, see [Working with different on-premises and cloud identities](#working-with-different-on-premises-and-cloud-identities).
 
    ![Advanced Application Configuration](./media/application-proxy-configure-single-sign-on-with-kcd/cwap_auth2.png)  
 
 ## SSO for non-Windows apps
 
-The Kerberos delegation flow in Microsoft Entra application proxy starts when Microsoft Entra authenticates the user in the cloud. Once the request arrives on-premises, the Microsoft Entra private network connector issues a Kerberos ticket on behalf of the user by interacting with the local Active Directory. This process is referred to as Kerberos Constrained Delegation (KCD). 
+The Kerberos delegation flow in Microsoft Entra application proxy starts when Microsoft Entra authenticates the user in the cloud. Once the request arrives on-premises, the Microsoft Entra private network connector issues a Kerberos ticket on behalf of the user by interacting with the local Active Directory. The process is referred to as Kerberos Constrained Delegation (KCD). 
 
 In the next phase, a request is sent to the backend application with this Kerberos ticket. 
 
-There are several mechanisms that define how to send the Kerberos ticket in such requests. Most non-Windows servers expect to receive it in form of SPNEGO token. This mechanism is supported on Microsoft Entra application proxy, but is disabled by default. A connector can be configured for SPNEGO or standard Kerberos token, but not both.
+There are several mechanisms that define how to send the Kerberos ticket in such requests. Most non-Windows servers expect to receive it in form of SPNEGO token. The mechanism is supported on Microsoft Entra application proxy, but is disabled by default. A connector can be configured for SPNEGO or standard Kerberos token, but not both.
 
-If you configure a connector machine for SPNEGO, make sure that all other connectors in that Connector group are also configured with SPNEGO. Applications expecting standard Kerberos token should be routed through other connectors that are not configured for SPNEGO. Some web applications accept both formats without requiring any change in configuration. 
+If you configure a connector machine for SPNEGO, make sure that all other connectors in that Connector group are also configured with SPNEGO. Applications expecting standard Kerberos token should be routed through other connectors that aren't configured for SPNEGO. Some web applications accept both formats without requiring any change in configuration. 
  
 
 To enable SPNEGO:
 
 1. Open a command prompt that runs as administrator.
-2. From the command prompt, run the following commands on the connector servers that need SPNEGO.
+2. Run the following commands on the connector servers that need SPNEGO.
 
     ```
     REG ADD "HKLM\SOFTWARE\Microsoft\Microsoft Entra private network connector" /v UseSpnegoAuthentication /t REG_DWORD /d 1
     net stop WAPCSvc & net start WAPCSvc
     ```
 
-Non-Windows apps typically user usernames or SAM account names instead of domain email addresses. If that situation applies to your applications, you need to configure the delegated login identity field to connect your cloud identities to your application identities. 
+Non-Windows apps typically user usernames or SAM account names instead of domain email addresses. If that situation applies to your applications, you need to configure the delegated sign-in identity field to connect your cloud identities to your application identities. 
 
 ## Working with different on-premises and cloud identities
-Application proxy assumes that users have exactly the same identity in the cloud and on-premises. But in some environments, due to corporate policies or application dependencies, organizations might have to use alternate IDs for sign-in. In such cases, you can still use KCD for single sign-on. Configure a **Delegated login identity** for each application to specify which identity should be used when performing single sign-on.  
+Application proxy assumes users have the same identity in the cloud and on-premises. However, some organizations need to use alternate IDs for sign-in due to corporate policies or application requirements. You can still enable KCD for single sign-on by configuring a **Delegated login identity** for each application. This setting specifies which identity to use for single sign-on.
 
-This capability allows many organizations that have different on-premises and cloud identities to have SSO from the cloud to on-premises apps without requiring the users to enter different usernames and passwords. This includes organizations that:
+This feature allows organizations to enable SSO from the cloud to on-premises apps without requiring users to manage different usernames and passwords. Common scenarios include:
 
-* Have multiple domains internally (joe@us.contoso.com, joe@eu.contoso.com) and a single domain in the cloud (joe@contoso.com).
-* Have non-routable domain name internally (joe@contoso.usa) and a legal one in the cloud.
-* Do not use domain names internally (joe)
-* Use different aliases on premises and in the cloud. For example, joe-johns@contoso.com vs. joej@contoso.com  
+* Using multiple internal domains (for example, joe@us.contoso.com, joe@eu.contoso.com) with a single cloud domain (for example, joe@contoso.com).
+* Having nonroutable internal domain names (for example, joe@contoso.usa) while using valid domain names in the cloud.
+* Operating without internal domain names (for example, joe).
+* Assigning different aliases for users on-premises and in the cloud (for example, joe-johns@contoso.com vs. joej@contoso.com).
 
-With application proxy, you can select which identity to use to obtain the Kerberos ticket. This setting is per application. Some of these options are suitable for systems that do not accept email address format, others are designed for alternative login.
+With application proxy, you can choose the identity used to obtain the Kerberos ticket. This setting is configured per application and supports systems that require nonemail formats or alternative sign-in methods.
 
 ![Delegated login identity parameter screenshot](./media/application-proxy-configure-single-sign-on-with-kcd/app_proxy_sso_diff_id_upn.png)
 
-If delegated login identity is used, the value might not be unique across all the domains or forests in your organization. You can avoid this issue by publishing these applications twice using two different Connector groups. Since each application has a different user audience, you can join its Connectors to a different domain.
+If delegated sign-in identity is used, the value might not be unique across all the domains or forests in your organization. You can avoid this issue by publishing these applications twice using two different Connector groups. Since each application has a different user audience, you can join its Connectors to a different domain.
 
-If **On-premises SAM account name** is used for the logon identity, the computer hosting the connector must be added to the domain in which the user account is located.
+If **On-premises SAM account name** is used for the sign-in identity, the computer hosting the connector must be added to the domain in which the user account is located.
 
 ### Configure SSO for different identities
-1. Configure Microsoft Entra Connect settings so the main identity is the email address (mail). This is done as part of the customize process, by changing the **User Principal Name** field in the sync settings. These settings also determine how users sign in to Microsoft 365, Windows computers, and other applications that use Microsoft Entra ID as their identity store.  
+1. Configure Microsoft Entra Connect settings so the main identity is the email address (mail). The configuration is done as part of the customize process, by changing the **User Principal Name** field in the sync settings. These settings also determine how users sign in to Microsoft 365, Windows computers, and other applications that use Microsoft Entra ID as their identity store.  
    ![Identifying users screenshot - User Principal Name dropdown](./media/application-proxy-configure-single-sign-on-with-kcd/app_proxy_sso_diff_id_connect_settings.png)  
 2. In the Application Configuration settings for the application you would like to modify, select the **Delegated Login Identity** to be used:
 
@@ -141,8 +142,7 @@ If **On-premises SAM account name** is used for the logon identity, the computer
    * On-premises SAM account name (depends on the domain controller configuration)
 
 ### Troubleshooting SSO for different identities
-If there is an error in the SSO process, it appears in the connector machine event log as explained in [Troubleshooting](application-proxy-back-end-kerberos-constrained-delegation-how-to.md).
-But, in some cases, the request is successfully sent to the backend application while this application replies in various other HTTP responses. Troubleshooting these cases should start by examining event number 24029 on the connector machine in the application proxy session event log. The user identity that was used for delegation appears in the “user” field within the event details. To turn on session log, select **Show analytic and debug logs** in the event viewer view menu.
+If the backend application responds with unexpected HTTP replies, start troubleshooting by checking event 24029 in the application proxy session event sign-in the connector machine. The "user" field in the event details shows the identity used for delegation. To enable session logs, go to the Event Viewer, open the **View** menu, and select **Show analytic and debug logs**.
 
 ## Next steps
 

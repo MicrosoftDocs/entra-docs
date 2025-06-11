@@ -4,9 +4,9 @@ description: Learn about the process of registering your application so it can i
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom: scenarios:getting-started
+ms.custom:
 ms.date: 04/26/2024
-ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
+ms.reviewer: jmprieur, sureshja, ludwignick
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -47,6 +47,10 @@ The Microsoft identity platform:
 * Administrators to ultimately decide what apps are allowed to do and which users can use specific apps, and how the directory resources are accessed.
 
 ## Multitenant apps
+
+> [!IMPORTANT]
+>
+> Multitenant applications (MTAs) don't function across cloud boundaries due to the segregation of service principal authorities within each cloud. For instance, if the application object is hosted in the commercial cloud, the associated service principal is created locally during customer onboarding. This process fails when crossing cloud boundaries because the authority URLs differ (e.g., `.com` vs. `.us`), causing an incompatibility.
 
 In the Microsoft identity platform, an [application object](developer-glossary.md#application-object) describes an application. At deployment time, the Microsoft identity platform uses the application object as a blueprint to create a [service principal](developer-glossary.md#service-principal-object), which represents a concrete instance of an application within a directory or tenant. The service principal defines what the app can actually do in a specific target directory, who can use it, what resources it has access to, and so on. The Microsoft identity platform creates a service principal from an application object through consent.
 

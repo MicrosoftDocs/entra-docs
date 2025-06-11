@@ -4,7 +4,7 @@ description: The Microsoft Authentication Library for JavaScript (MSAL.js) enabl
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 03/07/2023
 ms.reviewer: negoe
 ms.service: identity-platform
@@ -14,6 +14,8 @@ ms.topic: concept-article
 ---
 
 # Use the Microsoft Authentication Library for JavaScript to work with Azure AD B2C
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 The [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) enables JavaScript developers to authenticate users with social and local identities using [Azure Active Directory B2C](/azure/active-directory-b2c/overview) (Azure AD B2C).
 

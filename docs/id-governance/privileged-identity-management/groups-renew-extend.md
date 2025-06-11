@@ -1,17 +1,15 @@
 ---
 title: Extend or renew PIM for groups assignments
 description: Learn how to extend or renew PIM for groups assignments.
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.reviewer: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 6/7/2023
+ms.date: 12/16/2024
 ms.author: barclayn
-ms.custom: pim
-
+ms.custom: pim, sfi-image-nochange
 ---
 
 # Extend or renew PIM for groups assignments 
@@ -66,7 +64,7 @@ When a user or group submits a request to extend a group assignment, administrat
 
 In addition to using following the link from email, administrators can approve or deny requests by going to the Privileged Identity Management administration portal and selecting **Approve requests** in the left pane.
 
-:::image type="content" source="media/pim-for-groups/pim-group-14.png" alt-text="Screenshot of the approve requests page listing requests and links to approve or deny." lightbox="media/pim-for-groups/pim-group-14.png":::
+:::image type="content" source="media/pim-for-groups/pim-group-14.png" alt-text="Screenshot of the **Approve requests** page listing requests and links to approve or deny." lightbox="media/pim-for-groups/pim-group-14.png":::
 
 When an Administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
 
@@ -76,7 +74,7 @@ When approving a request to extend a group assignment, resource administrators c
 
 ### Admin initiated extension
 
-If a user assigned to a group doesn't request an extension for the group assignment, an administrator can extend an assignment on behalf of the user. Administrative extensions of group assignment do not require approval, but notifications are sent to all other administrators after the assignment has been extended.
+If a user assigned to a group doesn't request an extension for the group assignment, an administrator can extend an assignment on behalf of the user. Administrative extensions of group assignment don't require approval, but notifications are sent to all other administrators after the assignment has been extended.
 
 To extend a group assignment, browse to the assignment view in Privileged Identity Management. Find the assignment that requires an extension. Then select **Extend** in the action column.
 
@@ -92,9 +90,9 @@ Users who can no longer access resources can access up to 30 days of expired ass
 
 The list of assignments shown defaults to **Eligible assignments**. Use the drop-down menu to toggle between Eligible and Active assignments.
 
-To request renewal for any of the group assignments in the list, select the **Renew** action. Then provide a reason for the request. It's helpful to provide a duration in addition to any additional context or a business justification that can help the resource administrator decide to approve or deny.
+To request renewal for any of the group assignments in the list, select the **Renew** action. Then provide a reason for the request. It's helpful to provide a duration in addition to any other context or a business justification that can help the resource administrator decide to approve or deny.
 
-After the request has been submitted, resource administrators are notified of a pending request to renew a group assignment.
+After the request is submitted, resource administrators are notified of a pending request to renew a group assignment.
 
 ### Admin approves
 

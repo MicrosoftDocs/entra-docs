@@ -1,25 +1,22 @@
 ---
 title: Secure hybrid access with F5 deployment guide
 description: Tutorial to deploy F5 BIG-IP Virtual Edition (VE) VM in Azure IaaS for Secure hybrid access
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 12/13/2022
+ms.date: 11/07/2024
 ms.author: gasinh
-ms.collection: M365-identity-device-management 
+ms.collection: M365-identity-device-management
 ms.reviewer: miccohen
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-ropc-nochange, sfi-image-nochange
 #customer intent: As an IT admin deploying F5 BIG-IP Virtual Edition (VE) in Azure, I want to follow a step-by-step tutorial to ensure a successful deployment, so that I can model a secure hybrid access (SHA) proof-of-concept and test new system updates and hotfixes.
 ---
 
 # Deploy F5 BIG-IP Virtual Edition VM in Azure
 
-In this tutorial, learn to deploy BIG-IP Vitural Edition (VE) in Azure infrastructure as a service (IaaS). At the end of the tutorial you'll have:
+In this tutorial, learn to deploy BIG-IP Virtual Edition (VE) in Azure infrastructure as a service (IaaS). At the end of the tutorial you'll have:
 
 - A prepared BIG-IP virtual machine (VM) to model a secure hybrid access (SHA) proof-of-concept
 - A staging instance to test new BIG-IP system updates and hotfixes
@@ -61,7 +58,6 @@ If you don't have the previous items for testing, you can deploy an AD domain en
 
 ## Azure deployment
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can deploy a BIG-IP in different topologies. This guide focuses on a network interface card (NIC) deployment. However, if your BIG-IP deployment requires multiple network interfaces for high availability, network segregation, or more than 1-GB throughput, consider using F5 pre-compiled [Azure Resource Manager (ARM) templates](https://clouddocs.f5.com/cloud/public/v1/azure/Azure_multiNIC.html).
 
@@ -205,7 +201,7 @@ To resolve your published SHA services to your BIG-IP-VM public IP(s), configure
 4. In the BIG-IP-VMs networking view, from the drop-down IP configuration list, select the first secondary IP.
 5. Select the **NIC Public IP** link.
 
-    ![Scrrenshot of NIC public IP.](./media/f5ve-deployment-plan/networking.png)
+    ![Screenshot of NIC public IP.](./media/f5ve-deployment-plan/networking.png)
 
 4. In the left-hand pane, below the **Settings** section, select **Configuration**. 
 5. The public IP and DNS properties menu appears.
@@ -215,7 +211,7 @@ To resolve your published SHA services to your BIG-IP-VM public IP(s), configure
 
     * **Subscription**: Same subscription as the BIG-IP-VM
     * **DNS zone**: DNS zone authoritative for the verified domain suffix your published websites use, for example, www.contoso.com
-    * **Name**: The hostname you specify resolves to the public IP associated with the selected secondary IP. Define DNS-to IP-mappings. For example, intranet.contoso.com to 13.77.148.215
+    * **Name**: The hostname you specify resolves to the public IP associated with the selected secondary IP. Define DNS-to IP-mappings. For example, intranet.contoso.com to 11.22.333.444
     * **TTL**: 1
     * **TTL units**: Hours
 

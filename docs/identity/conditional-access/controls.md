@@ -1,16 +1,15 @@
 ---
 title: Custom controls in Microsoft Entra Conditional Access
 description: Learn how custom controls in Microsoft Entra Conditional Access work.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 05/06/2024
-
+ms.date: 12/05/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: gkinasewitz
+ms.custom: sfi-image-nochange
 ---
 # Custom controls (preview)
 
@@ -29,8 +28,17 @@ For more information, see the article [Manage an external authentication method 
 
 ## Creating custom controls
 
-> [!IMPORTANT]
-> Custom controls can't be used with Microsoft Entra ID Protection's automation requiring Microsoft Entra multifactor authentication, Microsoft Entra self-service password reset (SSPR), satisfying multifactor authentication claim requirements, with sign-in frequency controls, to elevate roles in Privileged Identity Manager (PIM), as part of Intune device enrollment, for cross-tenant trusts, or when joining devices to Microsoft Entra ID.
+> [!CAUTION]
+> Custom controls **can't** be used with: 
+> 
+> - Microsoft Entra ID Protection's automation requiring multifactor authentication
+> - Microsoft Entra self-service password reset (SSPR)
+> - Satisfying multifactor authentication claim requirements
+> - Sign-in frequency controls
+> - Privileged Identity Manager (PIM)
+> - Intune device enrollment
+> - Cross-tenant trusts
+> - Joining devices to Microsoft Entra ID.
 
 Custom Controls works with a limited set of approved authentication providers. To create a custom control, you should first contact the provider that you wish to utilize. Each non-Microsoft provider has its own process and requirements to sign up, subscribe, or otherwise become a part of the service, and to indicate that you wish to integrate with Conditional Access. At that point, the provider gives you a block of data in JSON format. This data allows the provider and Conditional Access to work together for your tenant, creates the new control and defines how Conditional Access can tell if your users have successfully performed verification with the provider.
 

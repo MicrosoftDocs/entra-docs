@@ -1,15 +1,16 @@
 ---
 title: Security Assertion Markup Language (SAML) single sign-on (SSO) for on-premises apps with Microsoft Entra application proxy
 description: Learn how to provide single sign-on (SSO) for on-premises applications that are secured with Security Assertion Markup Language (SAML) authentication. Provide remote access to on-premises apps with application proxy.
-
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/06/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Security Assertion Markup Language (SAML) single sign-on (SSO) for on-premises applications with application proxy
@@ -31,7 +32,7 @@ The protocol diagrams describe the single sign-on sequence for both a service pr
 
 1. In the Microsoft Entra admin center, select **Microsoft Entra ID > Enterprise applications** and select **New application**.
 
-2. Enter the display name for your new application, select **Integrate any other application you don't find in the gallery**, then select **Create**.
+2. Enter the display name for your new application. Select **Integrate any other application you don't find in the gallery**, then select **Create**.
 
 3. On the app's **Overview** page, select **Single sign-on**.
 
@@ -48,7 +49,7 @@ The protocol diagrams describe the single sign-on sequence for both a service pr
 
 Before you provide SSO for on-premises applications, enable application proxy and install a connector. Learn more about [how to prepare your on-premises environment, install and register a connector, and test the connector](application-proxy-add-on-premises-application.md). Once you have the connector set up, follow these steps to publish your new application with application proxy.
 
-1. With the application still open in the Microsoft Entra admin center, select **application proxy**. Provide the **Internal URL** for the application. If you're using a custom domain, you also need to upload the TLS/SSL certificate for your application. 
+1. With the application still open in the Microsoft Entra admin center, select **application proxy**. Provide the **Internal URL** for the application. If you're using a custom domain, you also need to upload the Transport Layer Security (TLS) certificate for your application. 
    > [!NOTE]
    > As a best practice, use custom domains whenever possible for an optimized user experience. Learn more about [Working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
 
@@ -65,9 +66,6 @@ Before you provide SSO for on-premises applications, enable application proxy an
 2. In the **Set up Single Sign-On with SAML** page, go to the **Basic SAML Configuration** heading, and select its **Edit** icon (a pencil). Make sure the **External URL** you configured in application proxy is populated in the **Identifier**, **Reply URL**, and **Logout URL** fields. These URLs are required for application proxy to work correctly. 
 
 3. Edit the **Reply URL** configured earlier so that its domain reachable on the internet via application proxy. For example, if your **External URL** is `https://contosotravel-f128.msappproxy.net` and the original **Reply URL** was `https://contosotravel.com/acs`, you need to update the original **Reply URL** to `https://contosotravel-f128.msappproxy.net/acs`.
-
-    ![Enter basic SAML configuration data](./media/application-proxy-configure-single-sign-on-on-premises-apps/basic-saml-configuration.png)
-
 
 4. Select the checkbox next to the updated **Reply URL** to mark it as the default.
 

@@ -1,19 +1,14 @@
 ---
-
-title: Add Google as an identity provider for B2B
-description: Federate with Google to enable guest users to sign in to your Microsoft Entra apps with their own Gmail accounts.
-
- 
+title: Google identity provider
+description: Learn how to add Google as an identity provider in Microsoft Entra External ID. Enable customers to sign in with their Google accounts and configure Google federation for seamless access.
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 06/19/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.date: 10/21/2024
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As a B2B collaboration administrator, I want to add Google as an identity provider, so that invited users can sign in to shared apps and resources using their Gmail accounts.
 ---
 
@@ -181,7 +176,7 @@ First, create a new project in the Google Developers Console to obtain a client 
     - `https://login.microsoftonline.com/te/<tenant name>.onmicrosoft.com/oauth2/authresp` <br>(where `<tenant name>` is your tenant name)
    
     > [!NOTE]
-    > To find your tenant ID, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). Under **Identity**, select **Overview** and copy the **Tenant ID**.
+    > To find your tenant ID, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). Under **Entra ID**, select **Overview** and copy the **Tenant ID**.
 
 1. Select **Create**. Copy your client ID and client secret. You use them when you add the identity provider in the Microsoft Entra admin center.
 
@@ -199,8 +194,8 @@ First, create a new project in the Google Developers Console to obtain a client 
 You'll now set the Google client ID and client secret. You can use the Microsoft Entra admin center or PowerShell to do so. Be sure to test your Google federation configuration by inviting yourself. Use a Gmail address and try to redeem the invitation with your invited Google account. 
 
 **To configure Google federation in the Microsoft Entra admin center** 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers** and then on the **Google** line, select **Configure**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Browse to **Entra ID** > **External Identities** > **All identity providers** and then on the **Google** line, select **Configure**.
 1. Enter the client ID and client secret you obtained earlier. Select **Save**:
 
    ![Screenshot that shows the Add Google identity provider page.](media/google-federation/google-identity-provider.png)
@@ -231,7 +226,7 @@ You'll now set the Google client ID and client secret. You can use the Microsoft
 
 At this point, the Google identity provider is set up in your Microsoft Entra tenant. Users who redeem invitations from you can use Google to sign in. However, if you've created self-service sign-up user flows, you also need to add Google to your user flow sign-in pages. To add the Google identity provider to a user flow:
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select the user flow where you want to add the Google identity provider.
 
@@ -246,8 +241,8 @@ At this point, the Google identity provider is set up in your Microsoft Entra te
 You can delete your Google federation setup. If you do so, Google guest users who already redeemed their invitation can't sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
  
 **To delete Google federation in the Microsoft Entra admin center**
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. On the **Google** line, select (**Configured**), and then select **Delete**.
    
 1. Select **Yes** to confirm the deletion. 

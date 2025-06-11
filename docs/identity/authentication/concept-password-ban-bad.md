@@ -1,20 +1,19 @@
 ---
 title: Password protection in Microsoft Entra ID
 description: Learn how to dynamically ban weak passwords from your environment with Microsoft Entra Password Protection
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/03/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: miminans
+ms.custom: sfi-image-nochange
 ---
 # Eliminate bad passwords using Microsoft Entra Password Protection
 
-A lot of security guidance recommends that you don't use the same password in multiple places, to make it complex, and to avoid simple passwords like *Password123*. You can provide your users with [guidance on how to choose passwords](https://www.microsoft.com/research/publication/password-guidance), but weak or insecure passwords are often still used. Microsoft Entra Password Protection detects and blocks known weak passwords and their variants, and can also block other weak terms that are specific to your organization.
+As a general rule, security guidance recommends that you don't use the same password in multiple places, to make it complex, and to avoid simple passwords like *Password123*. You can provide your users with [guidance on how to choose passwords](https://www.microsoft.com/research/publication/password-guidance), but weak or insecure passwords are often still used. Microsoft Entra Password Protection detects and blocks known weak passwords and their variants, and can also block other weak terms that are specific to your organization.
 
 With Microsoft Entra Password Protection, default global banned password lists are automatically applied to all users in a Microsoft Entra tenant. To support your own business and security needs, you can define entries in a custom banned password list. When users change or reset their passwords, these banned password lists are checked to enforce the use of strong passwords.
 
@@ -49,9 +48,9 @@ Some organizations want to improve security and add their own customizations on 
 When terms are added to the custom banned password list, they're combined with the terms in the global banned password list. Password change or reset events are then validated against the combined set of these banned password lists.
 
 > [!NOTE]
-> The custom banned password list is limited to a maximum of 1000 terms. It's not designed for blocking extremely large lists of passwords.
+> The custom banned password list is limited to a maximum of 1,000 terms. It isn't designed for blocking extremely large lists of passwords.
 >
-> To fully leverage the benefits of the custom banned password list, first understand [how are passwords evaluated](#how-are-passwords-evaluated) before you add terms to the custom banned list. This approach lets you efficiently detect and block large numbers of weak passwords and their variants.
+> To fully apply the benefits of the custom banned password list, first understand [how are passwords evaluated](#how-are-passwords-evaluated) before you add terms to the custom banned list. This approach lets you efficiently detect and block large numbers of weak passwords and their variants.
 
 ![Modify the custom banned password list under Authentication Methods](./media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords-cropped.png)
 
@@ -153,7 +152,7 @@ Consider the following example:
 
 #### Substring matching (on specific terms)
 
-Substring matching is used on the normalized password to check for the user's first and last name as well as the tenant name. Tenant name matching isn't done when validating passwords on an AD DS domain controller for on-premises hybrid scenarios.
+Substring matching is used on the normalized password to check for the user's first and last name, and the tenant name. Tenant name matching isn't done when validating passwords on an AD DS domain controller for on-premises hybrid scenarios.
 
 > [!IMPORTANT]
 > Substring matching is only enforced for names, and other terms, that are at least four characters long.
@@ -170,7 +169,7 @@ Consider the following example:
 
 The next step is to identify all instances of banned passwords in the user's normalized new password. Points are assigned based on the following criteria:
 
-1. Each banned password that's found in a user's password is given one point.
+1. Each banned password found in a user's password is given one point.
 1. Each remaining character that isn't part of a banned password is given one point.
 1. A password must be at least five (5) points to be accepted.
 

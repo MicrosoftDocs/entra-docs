@@ -7,10 +7,12 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 06/28/2024
+ms.date: 05/20/2025
 ---
 
 # Build resilience in customer identity and access management with Azure AD B2C
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 [Azure AD B2C](/azure/active-directory-b2c/overview) is a customer identity and access management (CIAM) platform that is designed to help you launch your critical customer facing applications. We have built-in features for [resilience](https://azure.microsoft.com/blog/advancing-azure-active-directory-availability/) to help our service scale to your needs and improve resilience in the face of potential outage situations. In addition, when launching a mission critical application, it's important to consider various design and configuration elements in your application. Consider how the application is configured in Azure AD B2C to ensure you see resilient behavior in response to outage or failure scenarios. In this article, we discuss some of the best practices to help you increase resilience.
 

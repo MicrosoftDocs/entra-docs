@@ -1,17 +1,16 @@
 ---
 title: API concepts in Privileged Identity management
-description: Information for understanding the APIs in Microsoft Entra Privileged Identity Management (PIM).
-
+description: Information for understanding the APIs in Microsoft Entra Privileged
+  Identity Management (PIM).
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-
 ---
 # Privileged Identity Management APIs
 
@@ -48,14 +47,17 @@ Under the `/beta/privilegedAccess` endpoint, Microsoft supported both `/aadRoles
 
 <a name='iteration-3-current--pim-for-azure-ad-roles-groups-in-microsoft-graph-api-and-for-azure-resources-in-arm-api-'></a>
 
-### Iteration 3 (Current) – PIM for Microsoft Entra roles, groups in Microsoft Graph API, and for Azure resources in ARM API 
+### Iteration 3 (Current) – PIM for Microsoft Entra roles, groups in Microsoft Graph API, and for Azure resources in Azure Resource Manager API 
 
 This is the final iteration of the PIM API. It includes:
   - PIM for Microsoft Entra roles in Microsoft Graph API - Generally available. 
-  - PIM for Azure resources in ARM API - Generally available. 
+  - PIM for Azure resources in Azure Resource Manager API - Generally available. 
   - PIM for groups in Microsoft Graph API - Generally available. 
   - PIM alerts for Microsoft Entra roles in Microsoft Graph API - Preview.
   - PIM alerts for Azure Resources in ARM API - Preview.
+
+> [!NOTE]
+> The roleAssignmentApprovals APIs are only available in /beta.
 
 Having PIM for Microsoft Entra roles in Microsoft Graph API and PIM for Azure Resources in ARM API provide a few benefits including:
   - Alignment of the PIM APIs for regular role assignment for both Microsoft Entra roles and Azure Resource roles. 
@@ -66,7 +68,7 @@ Having PIM for Microsoft Entra roles in Microsoft Graph API and PIM for Azure Re
 
 ### Overview of PIM API iteration 3 
 
-PIM APIs across providers (both Microsoft Graph APIs and ARM APIs) follow the same principles. 
+PIM APIs across providers (both Microsoft Graph APIs and Azure Resource Manager APIs) follow the same principles. 
 
 #### Assignments management 
 To create assignment (active or eligible), renew, extend, of update assignment (active or eligible), activate eligible assignment, deactivate eligible assignment, use resources **\*AssignmentScheduleRequest** and **\*EligibilityScheduleRequest**: 

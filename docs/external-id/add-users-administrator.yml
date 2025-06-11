@@ -1,22 +1,23 @@
 ### YamlMime:HowTo
 ---
 metadata:
-  title: Add B2B collaboration users in the Microsoft Entra admin center
-  description: Shows how an admin can add guest users to their directory from a partner organization using Microsoft Entra B2B collaboration.
+  title: Add B2B collaboration users
+  description: Learn how to add B2B collaboration users in the Microsoft Entra admin center. Invite guest users to the directory, groups, or applications, and manage their access to resources.
   author: csmulligan
   ms.author: cmulligan
-  manager: celestedg
-  ms.date: 08/25/2024
+  manager: dougeby
+  ms.date: 10/21/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-image-nochange
 
   # Customer intent: As a user with limited administrator directory roles, I want to add B2B collaboration users in the Microsoft Entra admin center, so that I can invite guest users to the directory, group, or application and manage their access to resources.
 
 title: |
-  Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center
+  Add and manage B2B collaboration users in the Microsoft Entra admin center
 introduction: |
   [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
   
@@ -37,13 +38,11 @@ procedureSection:
   - title: |
       Add guest users to the directory
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
       To add B2B collaboration users to the directory, follow these steps:
 
       1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-      2. Browse to **Identity** > **Users** > **All users**.
+      2. Browse to **Entra ID** > **Users**.
 
         :::image type="content" source="media/add-users-administrator/all-users-page.png" alt-text="Screenshot of the All users page.":::
 
@@ -67,7 +66,7 @@ procedureSection:
 
       ### Properties
 
-      There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Identity** > **Users** > **All users** and select a user to update.
+      There are six categories of user properties you can provide. These properties can be added or updated after the user is created. To manage these details, go to **Entra ID** > **Users** and select a user to update.
 
       - **Identity:** Enter the user's first and last name. Set the User type as either Member or Guest. For more information about the difference between external guests and members, see [B2B collaboration user properties](user-properties.md)
 
@@ -111,10 +110,10 @@ procedureSection:
       When you invite an external guest user by sending an email invitation, you can check the status of the invitation from the user's details. If they haven't redeemed their invitation, you can resend the invitation email.
     steps:
       - |
-        Go to **Identity** > **Users** > **All users** and select the invited guest user.
+        Go to **Entra ID** > **Users** and select the invited guest user.
       - |
         In the **My Feed** section, locate the **B2B collaboration** tile. 
-         - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email and follow the prompts.
+         - If the invitation state is **Pending acceptance**, select the **Resend invitation** link to send another email and follow the prompts.
          - You can also select the **Properties** for the user and view the **Invitation state**.
 
         :::image type="content" source="media/add-users-administrator/external-user-invitation-state.png" alt-text="Screenshot of the My Feed section of the user overview page.":::
@@ -132,7 +131,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator). 
       - |
-        Browse to **Identity** > **Groups** > **All groups**.
+        Browse to **Entra ID** > **Groups** > **All groups**.
       - |
         Select a group (or select **New group** to create a new one). It's a good idea to include in the group description that the group contains B2B guest users.
       - |
@@ -158,7 +157,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |
-        Browse to **Identity** > **Applications** > **Enterprise applications**.
+        Browse to **Entra ID** > **Enterprise apps**.
       - |
         On the **All applications** page, select the application to which you want to add guest users.
       - |

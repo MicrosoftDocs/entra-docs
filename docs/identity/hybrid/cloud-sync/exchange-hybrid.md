@@ -1,16 +1,15 @@
 ---
 title: 'Exchange hybrid writeback with cloud sync'
 description: This article describes how to enable exchange hybrid writeback scenarios.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -22,12 +21,12 @@ An Exchange hybrid deployment offers organizations the ability to extend the fea
 
  :::image type="content" source="media/exchange-hybrid/exchange-hybrid.png" alt-text="Conceptual image of exchange hybrid scenario." lightbox="media/exchange-hybrid/exchange-hybrid.png":::
 
-This scenario is now supported in cloud sync.  Cloud sync detects the Exchange on-premises schema attributes and then "writes back" the exchange on-line attributes to your on-premises AD environment.
+This scenario is now supported in cloud sync. Cloud sync detects the Exchange on-premises schema attributes and then "writes back" the exchange on-line attributes to your on-premises AD environment.
 
 For more information on Exchange Hybrid deployments, see [Exchange Hybrid](/exchange/exchange-hybrid).
 
 ## Prerequisites
-Before deploying Exchange Hybrid with cloud sync you must meet the following prerequisites.
+Before deploying Exchange Hybrid with cloud sync, you must meet the following prerequisites.
 
  - The [provisioning agent](what-is-provisioning-agent.md) must be version 1.1.1107.0 or later.
  - Your on-premises Active Directory must be extended to contain the Exchange schema.
@@ -39,12 +38,12 @@ Before deploying Exchange Hybrid with cloud sync you must meet the following pre
 Exchange Hybrid Writeback is disabled by default.  
 
  [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
- 3.  Click on an existing configuration.
- 4.  At the top, select **Properties**.  You should see Exchange hybrid writeback disabled.
- 5.  Select the pencil next to **Basic**. 
+ 3. Select on an existing configuration.
+ 4. At the top, select **Properties**.  You should see Exchange hybrid writeback disabled.
+ 5. Select the pencil next to **Basic**. 
    :::image type="content" source="media/exchange-hybrid/exchange-hybrid-1.png" alt-text="Screenshot of the basic properties." lightbox="media/exchange-hybrid/exchange-hybrid-1.png":::
  
- 6. On the right, place a check in **Exchange hybrid writeback** and click **Apply**. 
+ 6. On the right, place a check in **Exchange hybrid writeback** and select **Apply**. 
    :::image type="content" source="media/exchange-hybrid/exchange-hybrid-2.png" alt-text="Screenshot of enabling Exchange writeback." lightbox="media/exchange-hybrid/exchange-hybrid-2.png":::
  
  >[!NOTE]
@@ -79,7 +78,7 @@ Provisioning on-demand with Exchange hybrid use the following steps:
  4. On the left, select **Provision on demand**.
  5. Enter the distinguished name of a user and select the **Provision** button.
  6. A success screen appears with four green check marks.  
- 7. Click **Next**.  On the **Writeback exchange attributes to Active Directory** tab, the synchronization starts.  
+ 7. Select **Next**.  On the **Writeback exchange attributes to Active Directory** tab, the synchronization starts.  
  8. You should see the success details.
     :::image type="content" source="media/exchange-hybrid/exchange-hybrid-4.png" alt-text="Screenshot of Exchange attributes being written back." lightbox="media/exchange-hybrid/exchange-hybrid-4.png":::
    

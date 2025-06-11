@@ -3,11 +3,11 @@ title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
 author: jenniferf-skc
 ms.author: jfields
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 07/17/2024
+ms.date: 03/25/2025
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -30,11 +30,13 @@ This article discusses known issues to be aware of when you work with app provis
 - Synchronizing contacts and converting contacts to B2B users
 - Synchronizing meeting rooms across tenants
 
-### Updating proxyAddresses
+### Updating exchange attributes such as proxyAddresses and HiddenFromAddressListEnabled 
+Cross-tenant synchronization can manage user properties in Entra. It does not directly manage exchange attributes. For example: 
+* ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
+* Cross-tenant synchronization can update the ShowInAddressList attribute in Entra, but it cannot directly update HiddenFromAddressListEnabled in Exchange.
+* TargetAddress, which maps to the ExternalEmailAddress property in Microsoft Exchange Online, isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.
 
-ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
-
-### Provisioning users
+### SMS sign-in enabled users are skipped
 
 An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
@@ -49,9 +51,12 @@ For existing B2B collaboration users, the showInAddressList attribute is updated
 
 Where [GuestUserUPN] is the calculated UserPrincipalName. Example:  
 
-`Set-MailUser guestuser1_contoso.com#EXT#@fabricam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
+`Set-MailUser guestuser1_contoso.com#EXT#@fabrikam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
 
 For more information, see [About the Exchange Online PowerShell module](/powershell/exchange/exchange-online-powershell-v2).
+
+### Mail attribute is not updated
+If the user in the target tenant is assigned an exchange license, cross-tenant synchronization will not be able to update the mail attribute. To work around this, remove the exchange license for the user, update the mail attribute, and assign the license to the user again. 
 
 ### Configuring synchronization from target tenant
 
@@ -111,10 +116,6 @@ The otherMails property is automatically computed in the target tenant. Changes 
 #### Multivalue directory extensions
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
-
-#### Attribute targetAddress not available to select
-
-Attribute **targetAddress** (which maps to the ExternalEmailAddress property in Microsoft Exchange Online) isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.  
 
 
 ## Service issues 

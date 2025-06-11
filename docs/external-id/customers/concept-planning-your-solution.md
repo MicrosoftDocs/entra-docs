@@ -1,15 +1,16 @@
 ---
 title: Plan a CIAM Deployment
 description: Discover the steps for setting up a customer identity and access management (CIAM) solution in an external tenant, including creating a tenant, registering apps, and setting up user flows for sign-in.
- 
-author: msmimart
-manager: celestedg
+
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+
+ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/09/2024
-ms.author: mimart
+ms.date: 04/03/2025
+
 ms.custom: it-pro, seo-july-2024
 
 ---
@@ -31,7 +32,7 @@ This article describes each of these steps and outlines important planning consi
 | Step  |  How-to guides |
 |---------|---------|
 |**[Step 1: Create an external tenant](#step-1-create-an-external-tenant)**   | &#8226; [Create an external tenant](how-to-create-external-tenant-portal.md)</br>&#8226; <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">Or start a free trial</a>  |
-|**[Step 2: Register your application](#step-2-register-your-application)**   | &#8226; [Register your application](how-to-register-ciam-app.md)  |
+|**[Step 2: Register your application](#step-2-register-your-application)**   | &#8226; [Register your application](/entra/identity-platform/quickstart-register-app)  |
 |**[Step 3: Integrate a sign-in flow with your app](#step-3-integrate-a-sign-in-flow-with-your-app)**     | &#8226; [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) </br>&#8226; [Add your app to the user flow](how-to-user-flow-add-application.md)   |
 |**[Step 4: Customize and secure your sign-in](#step-4-customize-and-secure-your-sign-in)**     |  &#8226; [Customize branding](concept-branding-customers.md) </br>&#8226; [Add identity providers](concept-authentication-methods-customers.md)  </br>&#8226; [Collect attributes during sign-up](how-to-define-custom-attributes.md)</br>&#8226; [Add attributes to the token](how-to-add-attributes-to-token.md) </br>&#8226; [Add multifactor authentication (MFA)](concept-security-customers.md)    |
 
@@ -42,6 +43,8 @@ This article describes each of these steps and outlines important planning consi
 An external tenant is the first resource you need to create to get started with Microsoft Entra External ID. Your external tenant is where you register your application. It also contains a directory where you manage customer identities and access, separate from your workforce tenant.
 
 When you create an external tenant, you can set your correct geographic location and your domain name. If you currently use Azure AD B2C, the new workforce and external tenant model doesn't affect your existing Azure AD B2C tenants.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ### User accounts in an external tenant
 
@@ -61,7 +64,7 @@ Customer accounts have a [default set of permissions](reference-user-permissions
 
 :::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 2 in the setup flow.":::
 
-Before your applications can interact with External ID, you need to register them in your external tenant. Microsoft Entra ID performs identity and access management only for registered applications. [Registering your app](how-to-register-ciam-app.md) establishes a trust relationship and allows you to integrate your app with External ID.
+Before your applications can interact with External ID, you need to register them in your external tenant. Microsoft Entra ID performs identity and access management only for registered applications. [Registering your app](/entra/identity-platform/quickstart-register-app) establishes a trust relationship and allows you to integrate your app with External ID.
 
 Then, to complete the trust relationship between Microsoft Entra ID and your app, you update your application source code with the values assigned during app registration, such as the application (client) ID, directory (tenant) subdomain, and client secret.
 
@@ -71,7 +74,7 @@ We provide code sample guides and in-depth integration guides for several app ty
 
 - Find guidance specific to the application you want to register on our [Samples by app type and language page](samples-ciam-all.md).
 
-- If we don't have a guide specific to your platform or language, refer to the general instructions for [registering an application](how-to-register-ciam-app.md) in an external tenant.
+- If we don't have a guide specific to your platform or language, refer to the general instructions for [registering an application](/entra/identity-platform/quickstart-register-app) in an external tenant.
 
 ## Step 3: Integrate a sign-in flow with your app
 
@@ -103,7 +106,7 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 - **Requirements for token claims**. If your application requires specific user attributes, you can include them in the token sent to your application.
 
-- **Social identity providers**. You can set up social identity providers [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) and then add them to your user flow as sign-in options.
+- **Identity providers**. You can set up social identity providers like [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or a [custom-configured OpenID Connect (OIDC)](how-to-custom-oidc-federation-customers.md) identity provider. Then, you can add them to your user flow as sign-in options
 
 ### How to integrate a user flow with your app
 
@@ -127,7 +130,7 @@ When planning for configuring company branding, language customizations, and cus
 
 - **Native authentication**. Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers. Learn more about [native authentication](concept-native-authentication.md) in External ID.
 
-- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Microsoft Entra ID Protection.
+- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant.
 
 ### How to customize and secure your sign-in
 
@@ -141,4 +144,5 @@ When planning for configuring company branding, language customizations, and cus
 ## Next steps
 - [Start a free trial](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl) or [create your external tenant](how-to-create-external-tenant-portal.md).
 - [Find samples and guidance for integrating your app](samples-ciam-all.md).
+- [Learn how to migrate users from your current identity provider](how-to-migrate-users.md).
 - See also the [Microsoft Entra External ID Developer Center](https://aka.ms/ciam/dev) for the latest developer content and resources.

@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with HowNow WebApp SSO'
+title: Configure HowNow WebApp SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HowNow WebApp SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HowNow WebApp SSO so that I can control who has access to HowNow WebApp SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with HowNow WebApp SSO
+# Configure HowNow WebApp SSO for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate HowNow WebApp SSO with Microsoft Entra ID. When you integrate HowNow WebApp SSO with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate HowNow WebApp SSO with Microsoft Entra ID. When you integrate HowNow WebApp SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HowNow WebApp SSO.
 * Enable your users to be automatically signed-in to HowNow WebApp SSO with their Microsoft Entra accounts.
@@ -26,14 +26,14 @@ In this tutorial, you'll learn how to integrate HowNow WebApp SSO with Microsoft
 
 ## Prerequisites
 
-To get started, you need the following items:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HowNow WebApp SSO single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * HowNow WebApp SSO supports **SP** initiated SSO
 
@@ -44,11 +44,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of HowNow WebApp SSO into Microsoft Entra ID, you need to add HowNow WebApp SSO from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **HowNow WebApp SSO** in the search box.
 1. Select **HowNow WebApp SSO** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 
 <a name='configure-and-test-azure-ad-sso-for-hownow-webapp-sso'></a>
@@ -60,10 +60,10 @@ Configure and test Microsoft Entra SSO with HowNow WebApp SSO using a test user 
 To configure and test Microsoft Entra SSO with HowNow WebApp SSO, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure HowNow WebApp SSO SSO](#configure-hownow-webapp-sso-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create HowNow WebApp SSO test user](#create-hownow-webapp-sso-test-user)** - to have a counterpart of B.Simon in HowNow WebApp SSO that is linked to the Microsoft Entra representation of user.
+    1. **[Create HowNow WebApp SSO test user](#create-hownow-webapp-sso-test-user)** - to have a counterpart of B.Simon in HowNow WebApp SSO that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -73,9 +73,9 @@ To configure and test Microsoft Entra SSO with HowNow WebApp SSO, perform the fo
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HowNow WebApp SSO** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **HowNow WebApp SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -91,9 +91,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<CUSTOMER_NAME>.hownow.app/users/saml/auth`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL, Identifier and Reply URL. Contact [HowNow WebApp SSO Client support team](mailto:support@gethownow.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign on URL, Identifier and Reply URL. Contact [HowNow WebApp SSO Client support team](mailto:support@gethownow.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
+1. In the **SAML Signing Certificate** section, select **Edit** button to open **SAML Signing Certificate** dialog.
 
 	![Edit SAML Signing Certificate](common/edit-certificate.png)
 
@@ -108,10 +108,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -124,15 +124,15 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to HowNow WebApp SSO.
+In this section, you enable B.Simon to use single sign-on by granting access to HowNow WebApp SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **HowNow WebApp SSO**.
+1. Browse to **Entra ID** > **Enterprise apps** > **HowNow WebApp SSO**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Add Assignment** dialog, select the **Assign** button.
 
 ## Configure HowNow WebApp SSO SSO
 
@@ -140,18 +140,18 @@ To configure single sign-on on **HowNow WebApp SSO** side, you need to send the 
 
 ### Create HowNow WebApp SSO test user
 
-In this section, a user called Britta Simon is created in HowNow WebApp SSO. HowNow WebApp SSO supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in HowNow WebApp SSO, a new one is created after authentication.
+In this section, a user called Britta Simon is created in HowNow WebApp SSO. HowNow WebApp SSO supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in HowNow WebApp SSO, a new one is created after authentication.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to HowNow WebApp SSO Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to HowNow WebApp SSO Sign-on URL where you can initiate the login flow. 
 
 * Go to HowNow WebApp SSO Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft Access Panel. When you click the HowNow WebApp SSO tile in the Access Panel, this will redirect to HowNow WebApp SSO Sign-on URL. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft Access Panel. When you select the HowNow WebApp SSO tile in the Access Panel, this option redirects to HowNow WebApp SSO Sign-on URL. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure HowNow WebApp SSO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

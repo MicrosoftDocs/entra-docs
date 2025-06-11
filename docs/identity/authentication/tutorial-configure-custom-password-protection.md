@@ -1,21 +1,19 @@
 ---
 title: Configure custom Microsoft Entra password protection lists
 description: In this tutorial, you learn how to configure custom banned password protection lists for Microsoft Entra ID to restrict common words in your environment.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 09/14/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: rogoya
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to configure custom banned passwords to prevent users in my organization from using common insecure passwords.
 ---
 # Tutorial: Configure custom banned passwords for Microsoft Entra password protection
 
-Users often create passwords that use common local words such as a school, sports team, or famous person. These passwords are easy to guess, and weak against dictionary-based attacks. To enforce strong passwords in your organization, the Microsoft Entra custom banned password list let you add specific strings to evaluate and block. A password change request fails if there's a match in the custom banned password list.
+Users often create passwords that use common local words such as a school, sports team, or famous person. These passwords are easy to guess, and weak against dictionary-based attacks. To enforce strong passwords in your organization, the Microsoft Entra custom banned password list lets you add specific strings to evaluate and block. A password change request fails if there's a match in the custom banned password list.
 
 In this tutorial you learn how to:
 
@@ -57,14 +55,13 @@ The custom banned password list is limited to a maximum of 1000 terms. It's not 
 
 ## Configure custom banned passwords
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Let's enable the custom banned password list and add some entries. You can add additional entries to the custom banned password list at any time.
 
 To enable the custom banned password list and add entries to it, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods**, then **Password protection**.
+1. Browse to **Entra ID** > **Authentication methods**, then **Password protection**.
 1. Set the option for **Enforce custom list** to *Yes*.
 1. Add strings to the **Custom banned password list**, one string per line. The following considerations and limitations apply to the custom banned password list:
 
@@ -75,14 +72,14 @@ To enable the custom banned password list and add entries to it, complete the fo
 
     Specify your own custom passwords to ban, as shown in the following example
 
-    [ ![Modify the custom banned password list under Authentication methods](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords-cropped.png) ](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords.png#lightbox)
+    [![Modify the custom banned password list under Authentication methods](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords-cropped.png)](media/tutorial-configure-custom-password-protection/enable-configure-custom-banned-passwords.png#lightbox)
 
 1. Leave the option for **Enable password protection on Windows Server Active Directory** to *No*.
 1. To enable the custom banned passwords and your entries, select **Save**.
 
 It may take several hours for updates to the custom banned password list to be applied.
 
-For a hybrid environment, you can also [deploy Microsoft Entra password protection to an on-premises environment](howto-password-ban-bad-on-premises-deploy.md). The same global and custom banned password lists are used for both cloud and on-prem password change requests.
+For a hybrid environment, you can also [deploy Microsoft Entra password protection to an on-premises environment](howto-password-ban-bad-on-premises-deploy.md). The same global and custom banned password lists are used for both cloud and on-premises password change requests.
 
 ## Test custom banned password list
 
@@ -107,7 +104,7 @@ To see the custom banned password list in action, try to change the password to 
 If you no longer want to use the custom banned password list you have configured as part of this tutorial, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods**, then **Password protection**.
+1. Browse to **Entra ID** > **Authentication methods**, then **Password protection**.
 1. Set the option for **Enforce custom list** to *No*.
 1. To update the custom banned password configuration, select **Save**.
 

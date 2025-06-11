@@ -1,23 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Jamf Pro'
+title: Configure Jamf Pro for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jamf Pro.
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jamf Pro so that I can control who has access to Jamf Pro, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Jamf Pro
+# Configure Jamf Pro for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Jamf Pro with Microsoft Entra ID. When you integrate Jamf Pro with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Jamf Pro with Microsoft Entra ID. When you integrate Jamf Pro with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who has access to Jamf Pro.
 * Automatically sign in your users to Jamf Pro with their Microsoft Entra accounts.
@@ -25,15 +23,14 @@ In this tutorial, you'll learn how to integrate Jamf Pro with Microsoft Entra ID
 
 
 ## Prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Jamf Pro subscription that's single sign-on (SSO) enabled.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 * Jamf Pro supports **SP-initiated** and **IdP-initiated** SSO.
 
@@ -42,11 +39,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Jamf Pro into Microsoft Entra ID, you need to add Jamf Pro from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, enter *Jamf Pro* in the search box.
 1. Select **Jamf Pro** from results panel, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-sso-in-azure-ad-for-jamf-pro'></a>
 
@@ -57,8 +54,8 @@ Configure and test Microsoft Entra SSO with Jamf Pro by using a test user called
 In this section, you configure and test Microsoft Entra SSO with Jamf Pro.
 
 1. [Configure SSO in Microsoft Entra ID](#configure-sso-in-azure-ad) so that your users can use this feature.
-    1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) to test Microsoft Entra SSO with the B.Simon account.
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) so that B.Simon can use SSO in Microsoft Entra ID.
+    1. Create a Microsoft Entra test user to test Microsoft Entra SSO with the B.Simon account.
+    1. Assign the Microsoft Entra test user so that B.Simon can use SSO in Microsoft Entra ID.
 1. [Configure SSO in Jamf Pro](#configure-sso-in-jamf-pro) to configure the SSO settings on the application side.
     1. [Create a Jamf Pro test user](#create-a-jamf-pro-test-user) to have a counterpart of B.Simon in Jamf Pro that's linked to the Microsoft Entra representation of the user.
 1. [Test the SSO configuration](#test-the-sso-configuration) to verify that the configuration works.
@@ -70,7 +67,7 @@ In this section, you configure and test Microsoft Entra SSO with Jamf Pro.
 In this section, you enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Jamf Pro** application integration page, find the **Manage** section and select **Single Sign-On**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Jamf Pro** application integration page, find the **Manage** section and select **Single Sign-On**.
 1. On the **Select a Single Sign-On Method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -88,7 +85,7 @@ In this section, you enable Microsoft Entra SSO.
     `https://<subdomain>.jamfcloud.com`
 
 	> [!NOTE]
-	> These values aren't real. Update these values with the actual identifier, reply URL, and sign-on URL. You'll get the actual identifier value from the **Single Sign-On** section in Jamf Pro portal, which is explained later in the tutorial. You can extract the actual subdomain value from the identifier value and use that subdomain information as your sign-on URL and reply URL. You can also refer to the formulas shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual identifier, reply URL, and sign-on URL. You'll get the actual identifier value from the **Single Sign-On** section in Jamf Pro portal, which is explained later in the article. You can extract the actual subdomain value from the identifier value and use that subdomain information as your sign-on URL and reply URL. You can also refer to the formulas shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, go to the **SAML Signing Certificate** section, select the **copy** button to copy **App Federation Metadata URL**, and then save it to your computer.
 
@@ -96,32 +93,7 @@ In this section, you enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Name** field, enter `B.Simon`.
-   1. In the **User name** field, enter [name]@[companydomain].[extension]. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you grant B.Simon access to Jamf Pro.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Jamf Pro**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog box.
-1. In the **Users and groups** dialog box, select **B.Simon** from the Users list, and then select the **Select** button at the bottom of the screen.
-1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-1. In the **Add Assignment** dialog box, select the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure SSO in Jamf Pro
 
@@ -224,17 +196,17 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Jamf Pro Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Jamf Pro Sign on URL where you can initiate the login flow.  
 
 * Go to Jamf Pro Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Jamf Pro for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the Jamf Pro for which you set up the SSO 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Jamf Pro tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Jamf Pro for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Jamf Pro tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Jamf Pro for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 Once you configure Jamf Pro you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

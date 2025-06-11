@@ -1,26 +1,21 @@
 ---
 title: Troubleshoot Microsoft Entra hybrid joined devices
 description: This article helps you troubleshoot Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 02/26/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.date: 11/25/2024
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: mozmaili
-
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-ropc-nochange, sfi-image-nochange
 ---
 # Troubleshoot Microsoft Entra hybrid joined devices
 
 This article provides troubleshooting guidance to help you resolve potential issues with devices that are running Windows 10 or newer and Windows Server 2016 or newer.
 
 Microsoft Entra hybrid join supports the Windows 10 November 2015 update and later.
-
-To troubleshoot other Windows clients, see [Troubleshoot Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md).
 
 This article assumes that you have [Microsoft Entra hybrid joined devices](hybrid-join-plan.md) to support the following scenarios:
 
@@ -305,7 +300,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 
 | Error code | Reason | Resolution |
 | --- | --- | --- |
-| **NTE_BAD_KEYSET** (0x80090016/-2146893802) | The Trusted Platform Module (TPM) operation failed or was invalid. | The failure likely results from a bad sysprep image. Ensure that the machine from which the sysprep image was created isn't Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. |
+| **NTE_BAD_KEYSET** (0x80090016/-2146893802) | The Trusted Platform Module (TPM) operation failed or was invalid. | This error indicates that the keyset doesn't exist. This error happens when the TPM is cleared on the systems, or when there's a bad sysprep image. <br><br> Avoid clearing the TPM in BIOS or Windows settings. If the TPM is cleared, users might need to recover by removing and readding accounts to fix the problem, especially when they have multiple WAM accounts. Ensure that the machine from which the sysprep image was created isn't Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. |
 | **TPM_E_PCP_INTERNAL_ERROR** (0x80290407/-2144795641) | Generic TPM error. | Disable TPM on devices with this error. Windows 10 versions 1809 and later automatically detect TPM failures and complete Microsoft Entra hybrid join without using the TPM. |
 | **TPM_E_NOTFIPS** (0x80280036/-2144862154) | TPM in FIPS mode isn't currently supported. | Disable TPM on devices with this error. Windows 10 version 1809 automatically detects TPM failures and completes the Microsoft Entra hybrid join without using the TPM. |
 | **NTE_AUTHENTICATION_IGNORED** (0x80090031/-2146893775) | TPM is locked out. | Transient error. Wait for the cool-down period. The join attempt should succeed after a while. For more information, see [TPM fundamentals](/windows/security/hardware-security/tpm/tpm-fundamentals#anti-hammering). |
@@ -340,10 +335,10 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 
 ### Step 5: Collect logs and contact Microsoft Support
 
-1. [Download the *Auth.zip* file](https://cesdiagtools.blob.core.windows.net/windows/Auth.zip).
+1. [Download the *Auth.zip* file](https://aka.ms/authscripts).
 
 1. Extract the files to a folder, such as *c:\temp*, and then go to the folder.
-1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -v -accepteula`.
+1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -vAuth -accepteula`.
 1. Select **Switch Account** to toggle to another session with the problem user.
 1. Reproduce the issue.
 1. Select **Switch Account** to toggle back to the admin session that's running the tracing.
@@ -438,7 +433,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 | **STATUS_REQUEST_NOT_ACCEPTED** (-1073741616/ 0xc00000d0) | Received an error response (HTTP 400) from the Microsoft Entra authentication service or WS-Trust endpoint.<br>**Note**: WS-Trust is required for federated authentication. | Events 1081 and 1088 (Microsoft Entra operational logs) would contain the server error code and error description for errors originating from Microsoft Entra authentication service and WS-Trust endpoint, respectively. Common server error codes and their resolutions are listed in the next section. The first instance of event 1022 (Microsoft Entra analytics logs), preceding events 1081 or 1088, contain the URL that's being accessed. |
 | **STATUS_NETWORK_UNREACHABLE** (-1073741252/ 0xc000023c)<br>**STATUS_BAD_NETWORK_PATH** (-1073741634/ 0xc00000be)<br>**STATUS_UNEXPECTED_NETWORK_ERROR** (-1073741628/ 0xc00000c4) | <li>Received an error response (HTTP > 400) from the Microsoft Entra authentication service or WS-Trust endpoint.<br>**Note**: WS-Trust is required for federated authentication.<li>Network connectivity issue to a required endpoint. | <li>For server errors, events 1081 and 1088 (Microsoft Entra operational logs) would contain the error code from the Microsoft Entra authentication service and the error description from the WS-Trust endpoint. Common server error codes and their resolutions are listed in the next section.<li>For connectivity issues, event 1022 (Microsoft Entra analytics logs) contains the URL that's being accessed, and event 1084 (Microsoft Entra operational logs) contains the suberror code from the network stack. |
 | **STATUS_NO_SUCH_LOGON_SESSION**    (-1073741729/ 0xc000005f) | User realm discovery failed because the Microsoft Entra authentication service was unable to find the user's domain. | <li>The domain of the user's UPN must be added as a custom domain in Microsoft Entra ID. Event 1144 (Microsoft Entra analytics logs) will contain the UPN provided.<li>If the on-premises domain name is nonroutable (jdoe@contoso.local), configure an Alternate Login ID (AltID). References: [Prerequisites](hybrid-join-plan.md); [Configure Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id). |
-| **AAD_CLOUDAP_E_OAUTH_USERNAME_IS_MALFORMED**   (-1073445812/ 0xc004844c) | The user's UPN isn't in the expected format.<br>**Notes**:<li>For Microsoft Entra joined devices, the UPN is the text that's entered by the user in the LoginUI. <li>For Microsoft Entra hybrid joined devices, the UPN is returned from the domain controller during the login process. | <li>User's UPN should be in the internet-style login name, based on the internet standard [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). Event 1144 (Microsoft Entra analytics logs) contains the UPN provided.<li>For hybrid-joined devices, ensure that the domain controller is configured to return the UPN in the correct format. In the domain controller, `whoami /upn` should display the configured UPN.<li>If the on-premises domain name is nonroutable (jdoe@contoso.local), configure Alternate Login ID (AltID). References: [Prerequisites](hybrid-join-plan.md); [Configure Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id). |
+| **AAD_CLOUDAP_E_OAUTH_USERNAME_IS_MALFORMED**   (-1073445812/ 0xc004844c) | The user's UPN isn't in the expected format.<br>**Notes**:<li>For Microsoft Entra joined devices, the UPN is the text that's entered by the user in the LoginUI. <li>For Microsoft Entra hybrid joined devices, the UPN is returned from the domain controller during the login process. | <li>User's UPN should be in the internet-style login name, based on the internet standard RFC 822. Event 1144 (Microsoft Entra analytics logs) contains the UPN provided.<li>For hybrid-joined devices, ensure that the domain controller is configured to return the UPN in the correct format. In the domain controller, `whoami /upn` should display the configured UPN.<li>If the on-premises domain name is nonroutable (jdoe@contoso.local), configure Alternate Login ID (AltID). References: [Prerequisites](hybrid-join-plan.md); [Configure Alternate Login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id). |
 | **AAD_CLOUDAP_E_OAUTH_USER_SID_IS_EMPTY** (-1073445822/ 0xc0048442) | The user SID is missing in the ID token that's returned by the Microsoft Entra authentication service. | Ensure that the network proxy isn't interfering with and modifying the server response. |
 | **AAD_CLOUDAP_E_WSTRUST_SAML_TOKENS_ARE_EMPTY** (--1073445695/ 0xc00484c1) | Received an error from the WS-Trust endpoint.<br>**Note**: WS-Trust is required for federated authentication. | <li>Ensure that the network proxy isn't interfering with and modifying the WS-Trust response.<li>Event 1088 (Microsoft Entra operational logs) would contain the server error code and error description from the WS-Trust endpoint. Common server error codes and their resolutions are listed in the next section. |
 | **AAD_CLOUDAP_E_HTTP_PASSWORD_URI_IS_EMPTY** (-1073445749/ 0xc004848b) | The MEX endpoint is incorrectly configured. The MEX response doesn't contain any password URLs. | <li>Ensure that the network proxy isn't interfering with and modifying the server response.<li>Fix the MEX configuration to return valid URLs in response. |
@@ -449,7 +444,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 
 | Error code | Reason | Resolution |
 | --- | --- | --- |
-| **AADSTS50155: Device authentication failed** | <li>Microsoft Entra ID is unable to authenticate the device to issue a PRT.<li>Confirm that the device isn't deleted or disabled. For more information about this issue, see [Microsoft Entra device management FAQ](faq.yml#why-do-my-users-see-an-error-message-saying--your-organization-has-deleted-the-device--or--your-organization-has-disabled-the-device--on-their-windows-10-11-devices). | Follow the instructions for this issue in [Microsoft Entra device management FAQ](faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-still-registered--what-should-i-do) to re-register the device based on the device join type. |
+| **AADSTS50155: Device authentication failed** | <li>Microsoft Entra ID is unable to authenticate the device to issue a PRT.<li>Confirm that the device isn't deleted or disabled. For more information about this issue, see [Microsoft Entra device management FAQ](faq.yml#why-do-my-users-see-an-error-message-saying--your-organization-has-deleted-the-device--or--your-organization-has-disabled-the-device--on-their-windows-10-11-devices). | Follow the instructions for this issue in [Microsoft Entra device management FAQ](faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-registered--what-should-i-do) to re-register the device based on the device join type. |
 | **AADSTS50034: The user account `Account` does not exist in the `tenant id` directory** | Microsoft Entra ID is unable to find the user account in the tenant. | <li>Ensure that the user is typing the correct UPN.<li>Ensure that the on-premises user account is being synced with Microsoft Entra ID.<li>Event 1144 (Microsoft Entra analytics logs) contains the UPN provided. |
 | **AADSTS50126: Error validating credentials due to invalid username or password.** | <li>The username and password entered by the user in the Windows LoginUI are incorrect.<li>If the tenant has password hash sync enabled, the device is hybrid-joined, and the user just changed the password, it's likely that the new password hasn't synced with Microsoft Entra ID. | To acquire a fresh PRT with the new credentials, wait for the Microsoft Entra password sync to finish. |
 

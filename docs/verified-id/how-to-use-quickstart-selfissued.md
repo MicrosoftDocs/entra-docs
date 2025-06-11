@@ -1,15 +1,14 @@
 ---
 title: Create verifiable credentials for self-asserted claims
-description: Learn how to use a quickstart to create custom credentials for self-issued claims
+description: Learn how to use a quickstart to create custom credentials for self-issued claims.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 07/06/2022
+ms.date: 01/17/2025
 ms.author: barclayn
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for self-asserted claims scenario. 
 ---
 
@@ -27,7 +26,7 @@ In the Azure portal, when you select **Add credential**, you get the option to l
 
 On the **Create a new credential** page, enter the JSON code for the display and the rules definitions. In the **Credential name** box, give the credential a type name. To create the credential, select **Create**.
 
-:::image type="content" source="media/how-to-use-quickstart/quickstart-create-new.png" alt-text="Screenshot of the create a new credential page displaying JSON samples for the display and rules files.":::
+:::image type="content" source="media/how-to-use-quickstart/quickstart-create-new.png" alt-text="Screenshot of the Create a new credential page displaying JSON samples for the display and rules files.":::
 
 ## Sample JSON display definitions
 
@@ -42,7 +41,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
       "backgroundColor": "#000000",
       "textColor": "#ffffff",
       "logo": {
-        "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png",
+        "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png",
         "description": "Verified Credential Expert Logo"
       },
       "description": "Use your verified credential to prove to anyone that you know all about verifiable credentials."

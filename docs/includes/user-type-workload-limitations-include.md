@@ -2,7 +2,7 @@
 title: include file
 description: include file
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 08/02/2023

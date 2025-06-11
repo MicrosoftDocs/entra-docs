@@ -1,15 +1,15 @@
 ---
 title: Grant access to inbound provisioning API
 description: Learn how to grant access to the inbound provisioning API.
-
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 07/29/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Grant access to the inbound provisioning API
@@ -27,7 +27,7 @@ Depending on how your API client authenticates with Microsoft Entra ID, you can 
 This configuration registers an app in Microsoft Entra ID that represents the external API client and grants it permission to invoke the inbound provisioning API. The service principal client ID and client secret can be used in the OAuth client credentials grant flow. 
 
 1. Log in to Microsoft Entra admin center (https://entra.microsoft.com) with at least [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823) login credentials. 
-1. Browse to **Microsoft Entra ID** -> **Applications** -> **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Click on the option **New registration**.
 1. Provide an app name, select the default options, and click on **Register**.
       [![Screenshot of app registration.](media/inbound-provisioning-api-grant-access/register-app.png)](media/inbound-provisioning-api-grant-access/register-app.png#lightbox)

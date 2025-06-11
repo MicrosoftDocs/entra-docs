@@ -1,16 +1,15 @@
 ---
 title: Enable security notifications for audit log events
 description: Create an Azure Logic App that monitors Microsoft Entra audit logs and sends a security email notification to users based on different audit log events.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 12/06/2023
-
+ms.date: 03/04/2025
 author: camilasinelli
 ms.author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: jupetter
+ms.custom: sfi-image-nochange
 ---
 # Tutorial: Enable security notifications for audit log events
 
@@ -32,7 +31,7 @@ To use this feature, you need:
 
 ## Create a logic app
 
-1. Sign in to the Microsoft Entra admin center.
+1. Sign in to the Azure portal.
 1. In the home page, under **Azure services**, select **Logic Apps**. 
 1. Select **Add**.
 1. In **Create Logic App**, configure your logic app: 
@@ -447,4 +446,4 @@ This workflow can be customized to filter other logs and activities, or send not
 
 ## Next steps
 
-- [How Entra ID multifactor authentication works](concept-mfa-howitworks.md)
+- [How Microsoft Entra ID multifactor authentication works](concept-mfa-howitworks.md)

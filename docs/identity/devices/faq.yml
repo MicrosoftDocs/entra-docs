@@ -6,10 +6,10 @@ metadata:
   ms.subservice: devices
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 03/01/2024
-  ms.author: joflore
-  author: MicrosoftGuyJFlo
-  manager: amycolannino
+  ms.date: 11/25/2024
+  ms.author: owinfrey
+  author: owinfreyATL
+  manager: dougeby
   ms.reviewer: sandeo
   
 title: Microsoft Entra device management FAQ
@@ -34,16 +34,14 @@ sections:
           Go to **All devices**. Search for the device by using the device ID. Check the value under the join type column. Sometimes, the device might be reset or reimaged. So it's essential to also check the device registration state on the device:
           
           - For Windows 10 or newer and Windows Server 2016 or later devices, run `dsregcmd.exe /status`.
-          - For down-level OS versions, run `%programFiles%\Microsoft Workplace Join\autoworkplace.exe`.
           
           For troubleshooting information, see these articles:
           - [Troubleshooting devices using dsregcmd command](troubleshoot-device-dsregcmd.md)
           - [Troubleshooting Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md)
-          - [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
           
       - question: My org on-premises AD users are split into two or more different tenants in Microsoft Entra ID. Do I get Windows PRT for each tenant on client machine?
         answer: |
-          Windows clients fetch the PRT from Microsoft Entra ID if the user and the device belong to the same tenant. Users won't get a PRT for another tenant if the device isn't registered or the user isn't a member there. If the two tenants trust each other via B2B, you can always create cross tenant B2B access and trust device claims from your home tenant.
+          Windows clients fetch the PRT from Microsoft Entra ID if the user and the device belong to the same tenant. Users don't get a PRT for another tenant if the device isn't registered or the user isn't a member there. If the two tenants trust each other via B2B, you can always create cross tenant B2B access and trust device claims from your home tenant.
           
       - question: I see the device record under the USER info and I see the state as registered. Am I set up correctly to use Conditional Access?
         answer: |
@@ -58,15 +56,14 @@ sections:
           - An administrator (or user) deletes or disables the device.
           - Microsoft Entra hybrid joined only: An administrator removes the devices OU out of sync scope resulting in the devices being deleted from Microsoft Entra ID.
           - Microsoft Entra hybrid joined only: An administrator disables the computer account on premises, resulting in the device being disabled in Microsoft Entra ID.
-          - Upgrading Microsoft Entra Connect to the version 1.4.xx.x. [Understanding Microsoft Entra Connect 1.4.xx.x and device disappearance](/troubleshoot/azure/active-directory/reference-connect-device-disappearance).
           
-      - question: I disabled or deleted my device, but the local state on the device says it's still registered. What should I do?
+      - question: I disabled or deleted my device, but the local state on the device says it's registered. What should I do?
         answer: |
           This operation is by design. In this case, the device doesn't have access to resources in the cloud. Administrators can perform this action for stale, lost, or stolen devices to prevent unauthorized access. If this action was performed unintentionally, you need to re-enable or re-register the device using the steps that follow:
           
           - If the device was disabled in Microsoft Entra ID, an administrator with sufficient privileges can enable it in the Microsoft Entra admin center.
             > [!NOTE]
-            > If you're syncing devices using Microsoft Entra Connect, Microsoft Entra hybrid joined devices will be automatically re-enabled during the next  sync cycle. So, if you need to disable a Microsoft Entra hybrid joined device, you need to disable it from your on-premises AD.
+            > If you're syncing devices using Microsoft Entra Connect, Microsoft Entra hybrid joined devices will be automatically re-enabled during the next sync cycle. So, if you need to disable a Microsoft Entra hybrid joined device, you need to disable it from your on-premises AD.
           
            - If the device is deleted in Microsoft Entra ID, you need to re-register the device. To re-register, you must take a manual action on the device. See the following steps for instructions to re-register based on the device state. 
           
@@ -76,18 +73,12 @@ sections:
                 1. Enter `dsregcmd.exe /debug /leave`.
                 1. Sign out and sign in to trigger the scheduled task that registers the device again with Microsoft Entra ID. 
           
-                For down-level Windows OS versions that are Microsoft Entra hybrid joined, take the following steps:
-          
-                1. Open the command prompt as an administrator.
-                1. Enter `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /l"`.
-                1. Enter `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /j"`.
-          
                 For Microsoft Entra joined devices Windows 10/11 devices, take the following steps:
           
                 1. Open the command prompt as an administrator
                 1. Enter `dsregcmd /forcerecovery` (You need to be an administrator to perform this action).
                 1. Click "Sign in" in the dialog that opens up and continue with the sign in process.
-                1. Sign out and sign back in on the device to complete the recovery.
+                1. To complete the recovery, sign out and sign back in on the device.
           
                 For Microsoft Entra registered Windows 10/11 devices, take the following steps:
           
@@ -99,7 +90,6 @@ sections:
         answer: |
           - For Windows 10 or newer and Windows Server 2016 or later, repeated tries to unjoin and rejoin the same device might cause duplicate entries. 
           - Each Windows user who uses **Add Work or School Account** creates a new device record with the same device name.
-          - For down-level Windows OS versions that are on-premises Azure Directory domain joined, automatic registration creates a new device record with the same device name for each domain user who signs in to the device. 
           - A Microsoft Entra joined machine that's wiped, reinstalled, and rejoined with the same name shows up as another record with the same device name.
           
       - question: Does Windows 10/11 device registration in Microsoft Entra support TPMs in FIPS mode?
@@ -112,13 +102,13 @@ sections:
           >[!NOTE] 
           >For enrolled devices, we recommend that you wipe the device to make sure users can't access the resources. For more information, see [What is device enrollment?](/mem/intune/user-help/use-managed-devices-to-get-work-done). 
           
-      - question: I can't add more than 3 Microsoft Entra user accounts under the same user session on a Windows 10/11 device, why?
+      - question: I can't add more than three Microsoft Entra user accounts under the same user session on a Windows 10/11 device, why?
         answer: |
-          Microsoft Entra ID added support for multiple Microsoft Entra accounts starting in Windows 10 1803 release. However, Windows 10/11 restricts the number of Microsoft Entra accounts on a device to 3 to limit the size of token requests and enable reliable single sign-on (SSO). Once 3 accounts are added, users see an error for subsequent accounts. The additional problem information on the error screen provides the following message indicating the reason - "Add account operation is blocked because account limit is reached". 
+          Microsoft Entra ID added support for multiple Microsoft Entra accounts starting in Windows 10 1803 release. However, Windows 10/11 restricts the number of Microsoft Entra accounts on a device to 3 to limit the size of token requests and enable reliable single sign-on (SSO). Once three accounts are added, users see an error for subsequent accounts. The additional problem information on the error screen provides the following message indicating the reason - "Add account operation is blocked because account limit is reached". 
           
       - question: What are the MS-Organization-Access certificates present on our Windows 10/11 devices? 
         answer: |
-          The MS-Organization-Access certificates are issued by the Microsoft Entra Device Registration Service during the device registration process. These certificates are issued to all join types supported on Windows - Microsoft Entra joined, Microsoft Entra hybrid joined and Microsoft Entra registered devices. Once issued, they're used as part of the authentication process from the device to request a Primary Refresh Token (PRT). For Microsoft Entra joined and Microsoft Entra hybrid joined devices, this certificate is present in Local Computer\Personal\Certificates whereas for Microsoft Entra registered devices, certificate is present in Current User\Personal\Certificates. All MS-Organization-Access certificates have a default lifetime of 10 years. These certificates are deleted from the corresponding certificate store when the device is unregistered from Microsoft Entra ID. Any inadvertent deletion of this certificate leads to authentication failures for the user, and requiring re-registration of the device in such cases. 
+          The Microsoft Entra Device Registration Service issues the MS-Organization-Access certificates during the device registration process. These certificates are issued to all join types supported on Windows - Microsoft Entra joined, Microsoft Entra hybrid joined and Microsoft Entra registered devices. Once issued, they're used as part of the authentication process from the device to request a Primary Refresh Token (PRT). For Microsoft Entra joined and Microsoft Entra hybrid joined devices, this certificate is present in Local Computer\Personal\Certificates whereas for Microsoft Entra registered devices, certificate is present in Current User\Personal\Certificates. All MS-Organization-Access certificates have a default lifetime of 10 years. These certificates are deleted from the corresponding certificate store when the device is unregistered from Microsoft Entra ID. Any inadvertent deletion of this certificate leads to authentication failures for the user, and requiring re-registration of the device in such cases. 
           
   - name: Microsoft Entra join FAQ
     questions:
@@ -156,8 +146,8 @@ sections:
           
       - question: Why do my users see 'You can't get there from here'?
         answer: |
-          Did you configure certain Conditional Access rules to require a specific device state? If the device doesn't meet the criteria, users are blocked, and they see that message. 
-          Evaluate the Conditional Access policy rules. Make sure the device meets the criteria to avoid the message.
+          Did you configure Conditional Access policies to require a specific device state? If the device doesn't meet the criteria, users are blocked, and they see that message. 
+          Evaluate your Conditional Access policies. Make sure the device meets the criteria to avoid the message.
           
       - question: Why do I get a 'username or password is incorrect' message for a device I just joined to Microsoft Entra ID?
         answer: |
@@ -187,7 +177,7 @@ sections:
           
       - question: What are the MS-Organization-P2P-Access certificates present on our Windows 10/11 devices?
         answer: |
-          The MS-Organization-P2P-Access certificates are issued by Microsoft Entra ID to both, Microsoft Entra joined and Microsoft Entra hybrid joined devices. These certificates are used to enable trust between devices in the same tenant for remote desktop scenarios. One certificate is issued to the device and another is issued to the user. The device certificate is present in `Local Computer\Personal\Certificates` and is valid for one day. This certificate is renewed (by issuing a new certificate) if the device is still active in Microsoft Entra ID. The user certificate isn't persistent and is valid for one hour, but it's issued on-demand when a user attempts a remote desktop session to another Microsoft Entra joined device. It isn't renewed on expiry. Both these certificates are issued using the MS-Organization-P2P-Access certificate present in the `Local Computer\AAD Token Issuer\Certificates`. This certificate is issued by Microsoft Entra ID during device registration. 
+          Microsoft Entra ID issues the MS-Organization-P2P-Access certificates to Microsoft Entra joined and Microsoft Entra hybrid joined devices. These certificates are used to enable trust between devices in the same tenant for remote desktop scenarios. One certificate is issued to the device and another is issued to the user. The device certificate is present in `Local Computer\Personal\Certificates` and is valid for one day. This certificate is renewed (by issuing a new certificate) if the device is still active in Microsoft Entra ID. The user certificate isn't persistent and is valid for one hour, it's issued on-demand when a user attempts a remote desktop session to another Microsoft Entra joined device. It isn't renewed on expiry. Both these certificates are issued using the MS-Organization-P2P-Access certificate present in the `Local Computer\AAD Token Issuer\Certificates`. Microsoft Entra ID issues this certificate during device registration. 
           
       - question: How can we disable cached logon/expire the cache logon of the user on Microsoft Entra joined devices?
         answer: |
@@ -197,14 +187,13 @@ sections:
   - name: Microsoft Entra hybrid join FAQ
     questions:
       - question: How do I unjoin a Microsoft Entra hybrid joined device locally on the device?
-        answer: For Microsoft Entra hybrid joined devices, make sure to turn off automatic registration in AD using the [Controlled validation](hybrid-join-control.md) article. Then the scheduled task won't register the device again. Next, open a command prompt as an administrator and enter `dsregcmd.exe /debug /leave`. Or run this command as a script across several devices to unjoin in bulk.
+        answer: For Microsoft Entra hybrid joined devices, make sure to turn off automatic registration in AD using the [Controlled validation](hybrid-join-control.md) article. Then the scheduled task doesn't register the device again. Next, open a command prompt as an administrator and enter `dsregcmd.exe /debug /leave`. Or run this command as a script across several devices to unjoin in bulk.
 
       - question: Where can I find troubleshooting information to diagnose Microsoft Entra hybrid join failures?
         answer: |
           For troubleshooting information, see these articles:
           
           - [Troubleshooting Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md)
-          - [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
            
       - question: Why do I see a duplicate Microsoft Entra registered record for my Windows 10/11 Microsoft Entra hybrid joined device in the Microsoft Entra devices list?
         answer: |
@@ -220,11 +209,11 @@ sections:
           
       - question: Do Windows 10/11 Microsoft Entra hybrid joined devices require line of sight to the domain controller to get access to cloud resources?
         answer: |
-          No, except when the user's password is changed. After Windows 10/11 Microsoft Entra hybrid join is complete, and the user has signed in at least once, the device doesn't require line of sight to the domain controller to access cloud resources. Windows 10/11 can get single sign-on to Microsoft Entra applications from anywhere with an internet connection, except when a password is changed. Users who sign in with Windows Hello for Business continue to get single sign-on to Microsoft Entra applications even after a password change, even if they don't have line of sight to their domain controller. 
+          No, except when the user's password is changed. After Windows 10/11 Microsoft Entra hybrid join is complete, and the user signs in at least once, the device doesn't require line of sight to the domain controller to access cloud resources. Windows 10/11 can get single sign-on to Microsoft Entra applications from anywhere with an internet connection, except when a password is changed. Users who sign in with Windows Hello for Business continue to get single sign-on to Microsoft Entra applications even after a password change, even if they don't have line of sight to their domain controller. 
           
       - question: What happens if a user changes their password and tries to sign in to their Windows 10/11 Microsoft Entra hybrid joined device outside the corporate network?
         answer: |
-          If a password is changed outside the corporate network (for example, by using Microsoft Entra SSPR), then the user sign-in with the new password fails. For Microsoft Entra hybrid joined devices, on-premises Active Directory is the primary authority. When a device doesn't have line of sight to a domain controller, it's unable to validate the new password. The user needs to establish a connection with the domain controller (either via VPN or being in the corporate network) before they're able to sign in to the device with their new password. Otherwise, they can only sign in with their old password because of cached sign-in capability in Windows. However, the old password is invalidated by Microsoft Entra ID during token requests and hence, prevents single sign-on and fails any device-based Conditional Access policies until the user authenticates with their new password in an app or browser. This issue doesn't occur if you use Microsoft Entra joined devices.
+          If a password is changed outside the corporate network (for example, by using Microsoft Entra SSPR), then the user sign-in with the new password fails. For Microsoft Entra hybrid joined devices, on-premises Active Directory is the primary authority. When a device doesn't have line of sight to a domain controller, it's unable to validate the new password. The user needs to establish a connection with the domain controller (either via VPN or being in the corporate network) before they're able to sign in to the device with their new password. Otherwise, they can only sign in with their old password because of cached sign-in capability in Windows. Microsoft Entra invalidates the old password during token requests. This invalidation process prevents single sign-on and fails any device-based Conditional Access policies until the user authenticates with their new password in an app or browser. This issue doesn't occur if you use Microsoft Entra joined devices.
           
           
   - name: Microsoft Entra register FAQ

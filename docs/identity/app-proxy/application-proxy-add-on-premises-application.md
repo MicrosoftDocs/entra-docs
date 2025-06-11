@@ -2,13 +2,14 @@
 title:  Add an on-premises application for remote access through application proxy in Microsoft Entra ID.
 description:  Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account. This tutorial shows you how to prepare your environment for use with application proxy. Then, it uses the Microsoft Entra admin center to add an on-premises application to your Microsoft Entra tenant.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: tutorial
-ms.date: 04/22/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Add an on-premises application for remote access through application proxy in Microsoft Entra ID
@@ -27,7 +28,7 @@ In this tutorial, you:
 
 To add an on-premises application to Microsoft Entra ID, you need:
 - An [Microsoft Entra ID P1 or P2 subscription](https://azure.microsoft.com/pricing/details/active-directory).
-- An application administrator account.
+- An Application Administrator account.
 - A synchronized set of user identities with an on-premises directory. Or create them directly in your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to preauthenticate users before granting them access to application proxy published applications. Synchronization also provides the necessary user identifier information to perform single sign-on (SSO).
 - An understanding of application management in Microsoft Entra, see [View enterprise applications in Microsoft Entra](~/identity/enterprise-apps/view-applications-portal.md).
 - An understanding of single sign-on (SSO), see [Understand single sign-on](~/identity/enterprise-apps/what-is-single-sign-on.md).
@@ -37,7 +38,7 @@ Application proxy uses the same connector as Microsoft Entra Private Access. The
 
 ## General remarks
 
-Public DNS records for Microsoft Entra application proxy endpoints are chained CNAME records pointing to an A record. Setting up the records this way ensures fault tolerance and flexibility. The Microsoft Entra private network connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`. However, during the name resolution the CNAME records might contain DNS records with different host names and suffixes. Due to the difference, you must ensure that the device (depending on your setup - connector server, firewall, outbound proxy) can resolve all the records in the chain and allows connection to the resolved IP addresses. Since the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
+Public Domain Name System (DNS) records for Microsoft Entra application proxy endpoints are chained CNAME records pointing to an A record. Setting up the records this way ensures fault tolerance and flexibility. The Microsoft Entra private network connector always accesses host names with the domain suffixes `*.msappproxy.net` or `*.servicebus.windows.net`. However, during the name resolution the CNAME records might contain DNS records with different host names and suffixes. Due to the difference, you must ensure that the device (depending on your setup - connector server, firewall, outbound proxy) can resolve all the records in the chain and allows connection to the resolved IP addresses. Since the DNS records in the chain might be changed from time to time, we can't provide you with any list DNS records.
 
 If you install connectors in different regions, you should optimize traffic by selecting the closest application proxy cloud service region with each connector group. To learn more, see [Optimize traffic flow with Microsoft Entra application proxy](application-proxy-network-topology.md).
 
@@ -48,7 +49,7 @@ If your organization uses proxy servers to connect to the internet, you need to 
 
 Add on-premises applications to Microsoft Entra ID.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **New application**.
 1. Select **Add an on-premises application** button, which appears about halfway down the page in the **On-premises applications** section. Alternatively, you can select **Create your own application** at the top of the page and then select **Configure application proxy for secure remote access to an on-premises application**.
 1. In the **Add your own on-premises application** section, provide the following information about your application:
@@ -66,12 +67,12 @@ Add on-premises applications to Microsoft Entra ID.
 
     | Field | Description |
     | :------------------------------ | :----------------------------------------------------------- |
-    | **Backend Application Timeout** | Set this value to **Long** only if your application is slow to authenticate and connect. At default, the backend application timeout has a length of 85 seconds. When set too long, the backend timeout is increased to 180 seconds. |
+    | **Backend Application Timeout** | Set this value to **Long** only if your application is slow to authenticate and connect. At default, the backend application time-out has a length of 85 seconds. When set too long, the backend time out is increased to 180 seconds. |
     | **Use HTTP-Only Cookie** | Select to have application proxy cookies include the HTTPOnly flag in the HTTP response header. If using Remote Desktop Services, keep the option unselected. |
-    | **Use Persistent Cookie**| Keep the option unselected. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see [Cookie settings for accessing on-premises applications in Microsoft Entra ID](./application-proxy-configure-cookie-settings.md).
+    | **Use Persistent Cookie**| Keep the option unselected. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see [Cookie settings for accessing on-premises applications in Microsoft Entra ID](./application-proxy-configure-cookie-settings.md). |
     | **Translate URLs in Headers** | Keep the option selected unless your application required the original host header in the authentication request. |
     | **Translate URLs in Application Body** | Keep the option unselected unless HTML links are hardcoded to other on-premises applications and don't use custom domains. For more information, see [Link translation with application proxy](./application-proxy-configure-hard-coded-link-translation.md).<br><br>Select if you plan to monitor this application with Microsoft Defender for Cloud Apps. For more information, see [Configure real-time application access monitoring with Microsoft Defender for Cloud Apps and Microsoft Entra ID](./application-proxy-integrate-with-microsoft-cloud-application-security.md). |
-    | **Validate Backend TLS/SSL Certificate** | Select to enable backend TLS/SSL certificate validation for the application. |
+    | **Validate Backend TLS Certificate** | Select to enable backend Transport Layer Security (TLS) certificate validation for the application. |
 
 1. Select **Add**.
 

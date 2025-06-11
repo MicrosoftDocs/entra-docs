@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Conditional Access: Users, groups, and workload identities
@@ -50,7 +50,7 @@ The following options are available to include when creating a Conditional Acces
 > If users or groups are a member of over 2048 groups their access may be blocked. This limit applies to both direct and nested group membership.
 
 > [!WARNING]
-> Conditional Access policies do not support users assigned a directory role [scoped to an administrative unit](~/identity/role-based-access-control/admin-units-assign-roles.md) or directory roles scoped directly to an object, like through [custom roles](~/identity/role-based-access-control/custom-create.yml).
+> Conditional Access policies do not support users assigned a directory role [scoped to an administrative unit](../role-based-access-control/manage-roles-portal.md) or directory roles scoped directly to an object, like through [custom roles](../role-based-access-control/custom-create.md).
 
 > [!NOTE]
 > When targeting policies to B2B direct connect external users, these policies will also be applied to B2B collaboration users accessing Teams or SharePoint Online who are also eligible for B2B direct connect. The same applies for policies targeted to B2B collaboration external users, meaning users accessing Teams shared channels will have B2B collaboration policies apply if they also have a guest user presence in the tenant.

@@ -3,11 +3,11 @@ title: 'Verify your version of cloud sync or connect sync'
 description: This article describes the steps to verify the version of the provisioning agent or connect sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid
 ms.author: billmath
 

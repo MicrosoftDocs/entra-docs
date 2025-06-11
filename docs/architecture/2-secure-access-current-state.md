@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Discover the current state of external collaboration in your organization

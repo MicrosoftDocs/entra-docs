@@ -1,20 +1,18 @@
 ---
 title: Add Google as an identity provider
 description: Learn how to add Google as an identity provider for your external tenant.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 06/13/2024
-ms.author: mimart
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.date: 03/06/2025
+ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Add Google as an identity provider (preview)
+# Add Google as an identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -73,7 +71,7 @@ To enable sign-in for customers with a Google account, you need to create an app
 After you create the Google application, in this step you set the Google client ID and client secret in Microsoft Entra ID. You can use the Microsoft Entra admin center or PowerShell to do so. To configure Google federation in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. On the **Built-in** tab, next to **Google**, select **Configure**.
 
    <!-- ![Screenshot that shows how to add Google identity provider in Microsoft Entra ID.](./media/sign-in-with-google/configure-google-idp.png)-->
@@ -109,7 +107,7 @@ Use the client ID and client secret from the app you created in [Create a Google
 
 At this point, the Google identity provider has been set up in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the Google identity provider to a user flow:
 
-1. In your external tenant, browse to **Identity** > **External Identities** > **User flows**.
+1. In your external tenant, browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the Google identity provider.
 
 1. Under Settings, select **Identity providers.**
@@ -120,7 +118,8 @@ At this point, the Google identity provider has been set up in your Microsoft En
 
 1. Select **Save**.
 
-## Next steps
+## Related content
 
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
-- [Customize the branding for customer sign-in experiences](how-to-customize-branding-customers.md)
+- [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

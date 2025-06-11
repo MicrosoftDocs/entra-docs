@@ -2,11 +2,11 @@
 title: How to configure Microsoft Entra diagnostic settings
 description: Learn how to configure Microsoft Entra diagnostic settings to integrate activity logs with SIEM tools.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 02/26/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -24,8 +24,8 @@ This article provides the steps to configure Microsoft Entra diagnostic settings
 To configure diagnostic settings, you need:
 
 - An Azure subscription. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
-- **Security Administrator** access to create general diagnostic settings for the Microsoft Entra tenant.
-- **Attribute Log Administrator** access to create diagnostic settings for [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) logs.
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) access to create general diagnostic settings for the Microsoft Entra tenant.
+- [Attribute Log Administrator](../role-based-access-control/permissions-reference.md#attribute-log-administrator) access to create diagnostic settings for [custom security attribute](../../fundamentals/custom-security-attributes-overview.md) logs.
 - A destination that is already set up. For example, if you want to stream logs to an event hub, you need to create the event hub before you can configure the diagnostic settings.
 
 ## How to access diagnostic settings
@@ -33,7 +33,7 @@ To configure diagnostic settings, you need:
 This article provides the steps to access diagnostic settings for the Microsoft Entra logs. If you need to configure diagnostic settings for Azure Monitor or Azure resources outside of Microsoft Entra ID, see [Diagnostic settings in Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. The **General** settings appear by default.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**. The **General** settings appear by default.
 1. Any existing diagnostic settings appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
 
     ![Screenshot of the Microsoft Entra diagnostic settings page.](media/howto-configure-diagnostic-settings/diagnostic-settings-start.png)
@@ -61,9 +61,9 @@ You can select one, some, or all of the available logs. Some logs might be part 
 
 ### Destination details
 
-You can send logs to a Log Analytics workspace, stream logs to an event hub, or archive logs to a storage account. At this time, the only supported partner solution is Azure Native ISV services. For more information, see [Azure Native ISV services overview](/azure/partner-solutions/overview).
+You can send logs to a Log Analytics workspace, stream logs to an event hub, or archive logs to a storage account. Through Azure Native ISV services, you can send logs to services through the Azure Marketplace. For more information, see [Azure Native ISV services overview](/azure/partner-solutions/overview).
 
-To send your logs to one of the destinations, you must have configured that destination. 
+You must have a destination set up prior to configuring diagnostic settings.
 
 - [Configure a Log Analytics workspace](tutorial-configure-log-analytics-workspace.md)
 - [Create an event hub](/azure/event-hubs/event-hubs-create)
@@ -86,8 +86,7 @@ The basic steps for configuring diagnostics settings are as follows:
 1. To create a new diagnostic setting, select **Add diagnostic setting**.
 1. Provide a name.
 1. Select the logs you want to include.
-1. Select the destinations you want to send the logs to.
-1. Select the subscription and the destination from the dropdown menus that appear.
+1. Select the destination and subscription from the dropdown menus that appear.
 1. Select the **Save** button.
 
     ![Screenshot of the create diagnostic settings page, with several logs selected to go to a Log Analytics workspace.](media/howto-configure-diagnostic-settings/diagnostic-settings-save.png)

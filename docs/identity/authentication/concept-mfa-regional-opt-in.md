@@ -1,27 +1,32 @@
 ---
 title: Regional telecom restrictions
-description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Micorsoft Azure B2C
+description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Microsoft Azure B2C
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/12/2023
+ms.date: 05/20/2025
 
-author: aloom3
+author: justinha
 ms.author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: aloom3
 ms.custom: references_regions
 ---
 # Regions that need to opt in for MFA telephony verification  
 
-As a protection for our customers, Microsoft doesn't automatically support telephony verification for certain region codes. If you want to receive traffic from phone numbers with these region codes, your administrator must submit a support ticket and request to opt in.  
+
+
+As a protection for our customers, Microsoft doesn't automatically support telephony verification for certain region codes. If you want to receive traffic from phone numbers with these region codes, a Microsoft Entra administrator must submit a support ticket and request to opt in.  
+
+B2C tenants can follow the guidelines in [B2C service limits](/azure/active-directory-b2c/service-limits).
+Microsoft Entra External ID tenants can follow the guidelines in [How to region code opt-in](/entra/external-id/customers/how-to-region-code-opt-in).
 
 ## Why this protection is needed  
 
-In today's digital world, telecommunication services have become ingrained into our lives. But advancements come with a risk of fraudulent activities. International Revenue Share Fraud (IRSF) is a threat with severe financial implications that also makes using services more difficult. Let's look at IRSF fraud more in-depth.  
+In today's digital world, telecommunication services have become ingrained into our lives. But, advancements come with a risk of fraudulent activities. International Revenue Share Fraud (IRSF) is a threat with severe financial implications that also makes using services more difficult. Let's look at IRSF fraud more in-depth.  
 
-IRSF is a type of telephony fraud where criminals exploit the billing system of telecommunication services providers to make profit for themselves. Bad actors gain unauthorized access to a telecommunication network and divert traffic to those networks to skim profit for every transaction that is sent to that network. To divert traffic, bad actors steal existing usernames and passwords, create new usernames and passwords, or try a host of other things to send text message messages and voice calls through their telecommunication network. Bad actors take advantage of multifactor authentication screens, which require a text message or voice call before a user can access their account. This activity causes exorbitant charges and makes services unreliable for our customers, causing downtime, and system errors.  
+IRSF is a type of telephony fraud where criminals exploit the billing system of telecommunication services providers to make profit for themselves. Bad actors gain unauthorized access to a telecommunication network and divert traffic to those networks to skim profit for every transaction that is sent to that network. To divert traffic, bad actors steal existing usernames and passwords, create new usernames and passwords, or try a host of other things to send text messages and voice calls through their telecommunication network. Bad actors take advantage of multifactor authentication screens, which require a text message or voice call before a user can access their account. This activity causes exorbitant charges and makes services unreliable for our customers, causing downtime, and system errors.  
 
 Here's how an IRSF attack may happen:  
 
@@ -33,177 +38,244 @@ The most common way to conduct IRSF is through an end-user experience that requi
 
 IRSF poses a significant threat to online businesses and can cause reputational damage. By understanding IRSF, you can be more aware of the problem and can engage in implementing preventive measures such as regional restrictions, rate limiting, and phone number verification.  
 
-## SMS verification
+## SMS and Voice verification
+ 
+For SMS and Voice verification, the following region codes require an opt-in. This means that if you'd like to use telecom in these regions, you'll have to reach out to support.
 
-For SMS verification, the following region codes require an opt-in.
+Region Code | Region Name 
+------------|------------
+Afghanistan|93
+Albania|355
+Algeria|213
+American Samoa|1684
+Andorra|376
+Angola|244
+Anguilla|1264
+Antarctica|672
+Antigua and Barbuda|268
+Antigua and Barbuda|1268
+Argentina|54
+Armenia|374
+Aruba|297
+Ascension Island|247
+Austria|43
+Azerbaijan|994
+Bahamas|1242
+Bahrain|973
+Bangladesh|880
+Barbados|1246
+Belarus|375
+Belgium|32
+Belize|501
+Benin|229
+Bermuda|1441
+Bhutan|975
+Bolivia|591
+Bosnia and Herzegovina|387
+Botswana|267
+Brazil|55
+British Indian Ocean Territory|246
+British Virgin Islands|1284
+Brunei|673
+Bulgaria|359
+Burkina Faso|226
+Burundi|257
+Cabo Verde|238
+Cambodia|855
+Cameroon|237
+Cayman Islands|1345
+Central African Republic|236
+Chad|235
+Chile|56
+China|86
+Colombia|57
+Comoros|269
+Congo|242
+Congo|243
+Cook Islands|682
+Costa Rica|506
+Cote d'Ivoire|225
+Croatia|385
+Cuba|53
+Curacao|599
+Cyprus|357
+Czech Republic|420
+Denmark|45
+Djibouti|253
+Dominica|1767
+Dominica|1809
+Dominican Republic|1849
+Ecuador|593
+Egypt|20
+El Salvador|503
+Equatorial Guinea|240
+Eritrea|291
+Estonia|372
+Ethiopia|251
+Falkland Islands|500
+Faroe Islands|298
+Federated States of Micronesia|691
+Fiji|679
+Finland|358
+French Guiana|594
+French Polynesia|689
+Gabon|241
+Gambia|220
+Georgia|995
+Germany|49
+Ghana|233
+Gibraltar|350
+Greece|30
+Greenland|299
+Grenada|1473
+Guam|1671
+Guatemala|502
+Guinea|224
+Guinea-Bissau|245
+Guyana|592
+Haiti|509
+Honduras|504
+Hong Kong SAR|852
+Hungary|36
+Iceland|354
+India|91
+Indonesia|62
+Iran|98
+Iraq|964
+Israel|972
+Italy|39
+Jamaica|1658
+Jamaica|1876
+Japan|81
+Jordan|962
+Kenya|254
+Kiribati|686
+Kosovo|383
+Kuwait|965
+Kyrgyzstan|996
+Laos|856
+Latvia|371
+Lebanon|961
+Lesotho|266
+Liberia|231
+Libya|218
+Liechtenstein|423
+Lithuania|370
+Luxembourg|352
+Macao SAR|853
+Madagascar|261
+Malawi|265
+Malaysia|60
+Maldives|960
+Mali|223
+Malta|356
+Marshall Islands|692
+Martinique|596
+Mauritania|222
+Mauritius|230
+Mayotte|262
+Mexico|52
+Micronesia|691
+Moldova|373
+Monaco|377
+Mongolia|976
+Montenegro|382
+Montserrat|1664
+Morocco|212
+Mozambique|258
+Myanmar|95
+Namibia|264
+Nauru|674
+Nepal|977
+Netherlands|31
+New Caledonia|687
+New Zealand|64
+Nicaragua|505
+Niger|227
+Nigeria|234
+Niue|683
+North Korea|850
+North Macedonia|389
+Northern Mariana Islands|1670
+Norway|47
+Oman|968
+Pakistan|92
+Palau|680
+Palestinian Authority|970
+Panama|507
+Papua New Guinea|675
+Paraguay|595
+Peru|51
+Philippines|63
+Poland|48
+Portugal|351
+Puerto Rico|1787
+Puerto Rico|1939
+Qatar|974
+Republic of Ireland|353
+Romania|40
+Russia|7
+Rwanda|250
+Saint Barthelemy, Saint Martin, Guadeloupe|590
+Saint Helena, Ascension, and Tristan da Cunha|290
+Saint Kitts and Nevis|1869
+Saint Lucia|1758
+Saint Pierre and Miquelon|508
+Saint Vincent and the Grenadines|1784
+Samoa|685
+San Marino|378
+São Tomé and Príncipe|239
+Saudi Arabia|966
+Senegal|221
+Serbia|381
+Seychelles|248
+Seychelles Republic|248
+Sierra Leone|232
+Singapore|65
+Sint Maarten|1721
+Slovakia|421
+Slovenia|386
+Solomon Islands|677
+Somalia|252
+South Africa|27
+South Korea|82
+South Sudan|211
+Sri Lanka|94
+Sudan|249
+Suriname|597
+Sweden|46
+Switzerland|41
+Syria|963
+Taiwan|886
+Tajikistan|992
+Tanzania|255
+Thailand|66
+Timor-Leste|670
+Togo|228
+Tokelau|690
+Tonga|676
+Trinidad and Tobago|1868
+Tunisia|216
+Türkiye|90
+Turkmenistan|993
+Turks and Caicos Islands|1649
+Tuvalu|688
+Uganda|256
+Ukraine|380
+United Arab Emirates|971
+United Kingdom|44
+United States Virgin Islands|1340
+Uruguay|598
+Uzbekistan|998
+Vanuatu|678
+Venezuela|58
+Vietnam|84
+Wallis and Futuna|681
+Yemen|967
+Zambia|260
+Zimbabwe|263
 
-| Region Code | Region Name                                    |
-|:----------- |:---------------------------------------------- |
-| 222         |  Mauritania                                    |
-| 998         |  Uzbek                                         |
 
-## Voice verification
-For voice verification, the following region codes require an opt-in.
-
-| Region Code | Region Name                                    |
-|:----------- |:---------------------------------------------- |
-| 53          |  Cuba                                          |
-| 58          |  Venezuela                                     |
-| 93          |  Afghanistan                                   |
-| 94          |  Sri Lanka                                     |
-| 95          |  Myanmar (Burma)                               |
-| 98          |  Iran                                          |
-| 211         |  South Sudan                                   |
-| 212         |  Morocco                                       |
-| 213         |  Algeria                                       |
-| 216         |  Tunisia                                       |
-| 218         |  Libya                                         |
-| 220         |  Gambia                                        |
-| 221         |  Senegal                                       |
-| 222         |  Mauritania                                    |
-| 223         |  Mali                                          |
-| 224         |  Guinea                                        |
-| 225         |  Cote d'Ivoire                                 |
-| 226         |  Burkina Faso                                  |
-| 227         |  Niger                                         |
-| 228         |  Togo                                          |
-| 229         |  Benin                                         |
-| 231         |  Liberia                                       |
-| 232         |  Sierra Leone                                  |
-| 233         |  Ghana                                         |
-| 235         |  Chad                                          |
-| 236         |  Central African Republic                      |
-| 237         |  Cameroon                                      |
-| 238         | Cabo Verde                                     |
-| 239         |  São Tomé and Príncipe                         |
-| 240         |  Equatorial Guinea                             |
-| 241         |  Gabon                                         |
-| 242         | Congo                                          |
-| 243         | Congo                                          |
-| 244         |  Angola                                        |
-| 245         |  Guinea-Bissau                                 |
-| 246         |  British Indian Ocean Territory                |
-| 247         |  Ascension Island                              |
-| 248         |  Seychelles                                    |
-| 249         |  Sudan                                         |
-| 250         |  Rwanda                                        |
-| 251         |  Ethiopia                                      |
-| 252         |  Somalia                                       |
-| 253         |  Djibouti                                      |
-| 254         |  Kenya                                         |
-| 255         |  Tanzania                                      |
-| 256         |  Uganda                                        |
-| 257         |  Burundi                                       |
-| 258         |  Mozambique                                    |
-| 260         |  Zambia                                        |
-| 261         |  Madagascar                                    |
-| 262         |  Mayotte                                       |
-| 263         |  Zimbabwe                                      |
-| 265         |  Malawi                                        |
-| 266         |  Lesotho                                       |
-| 267         |  Botswana                                      |
-| 268         |  Antigua and Barbuda                           |
-| 269         |  Comoros                                       |
-| 290         |  Saint Helena, Ascension, and Tristan da Cunha |
-| 291         |  Eritrea                                       |
-| 297         |  Aruba                                         |
-| 299         |  Greenland                                     |
-| 350         |  Gibraltar                                     |
-| 355         |  Albania                                       |
-| 356         |  Malta                                         |
-| 359         |  Bulgaria                                      |
-| 370         |  Lithuania                                     |
-| 371         |  Latvia                                        |
-| 372         |  Estonia                                       |
-| 373         |  Moldova                                       |
-| 374         |  Armenia                                       |
-| 375         |  Belarus                                       |
-| 376         |  Andorra                                       |
-| 377         |  Monaco                                        |
-| 381         |  Serbia                                        |
-| 382         |  Montenegro                                    |
-| 383         |  Kosovo                                        |
-| 385         |  Croatia                                       |
-| 386         |  Slovenia                                      |
-| 387         |  Bosnia and Herzegovina                        |
-| 389         |  North Macedonia                               |
-| 500         |  Falkland Islands                              |
-| 501         |  Belize                                        |
-| 502         |  Guatemala                                     |
-| 503         |  El Salvador                                   |
-| 504         |  Honduras                                      |
-| 505         |  Nicaragua                                     |
-| 507         |  Panama                                        |
-| 508         |  Saint Pierre and Miquelon                     |
-| 509         |  Haiti                                         |
-| 591         |  Bolivia                                       |
-| 592         |  Guyana                                        |
-| 593         |  Ecuador                                       |
-| 594         |  French Guiana                                 |
-| 597         |  Suriname                                      |
-| 598         |  Uruguay                                       |
-| 670         | Timor-Leste                                    |
-| 672         | Antarctica                                     |
-| 674         |  Nauru                                         |
-| 675         |  Papua New Guinea                              |
-| 676         |  Tonga                                         |
-| 677         |  Solomon Islands                               |
-| 678         |  Vanuatu                                       |
-| 681         |  Wallis and Futuna                             |
-| 682         |  Cook Islands                                  |
-| 683         |  Niue                                          |
-| 685         |  Samoa                                         |
-| 686         |  Kiribati                                      |
-| 687         |  New Caledonia                                 |
-| 689         |  French Polynesia                              |
-| 690         |  Tokelau                                       |
-| 691         |  Micronesia                                    |
-| 692         |  Marshall Islands                              |
-| 856         |  Laos                                          |
-| 960         |  Maldives                                      |
-| 961         |  Lebanon                                       |
-| 962         |  Jordan                                        |
-| 963         |  Syria                                         |
-| 964         |  Iraq                                          |
-| 967         |  Yemen                                         |
-| 968         |  Oman                                          |
-| 973         |  Bahrain                                       |
-| 974         |  Qatar                                         |
-| 975         |  Bhutan                                        |
-| 976         |  Mongolia                                      |
-| 977         |  Nepal                                         |
-| 992         |  Tajikistan                                    |
-| 993         |  Turkmenistan                                  |
-| 994         |  Azerbaijan                                    |
-| 995         |  Georgia                                       |
-| 996         |  Kyrgyzstan                                    |
-| 998         |  Uzbekistan                                    |
-| 1242        |  Bahamas                                       |
-| 1264        |  Anguilla                                      |
-| 1268        |  Antigua and Barbuda                           |
-| 1284        |  British Virgin Islands                        |
-| 1345        |  Cayman Islands                                |
-| 1473        |  Grenada                                       |
-| 1649        |  Turks and Caicos Islands                      |
-| 1664        |  Montserrat                                    |
-| 1721        |  Sint Maarten                                  |
-| 1758        |  Saint Lucia                                   |
-| 1809        |  Dominica                                      |
-| 1829        |  Dominican Republic                            |
-| 1849        |  Dominican Republic                            |
-| 1869        |  Saint Kitts and Nevis                         |
-| 1876        |  Jamaica                                       |
-
-## Region specific service limits 
-| Region Code | Region Name                                    | Limit per tenant per 60 minutes | Limit per tenant per 24 hours            |                         
-|:----------- |:---------------------------------------------- |:------------------------------- | :----------------------------------------|
-| 228         |  Togo                                          | 10                              |  30                                      |
-| 257         |  Uzbek                                         | 10                              |  30                                      |
-| 970         |  State of Plaestine                            | 10                              |  30                                      |
-| 249         |  Sudan                                         | 10                              |  30                                      |
-| 226         |  Burina Faso                                   | 10                              |  30                                      |
-| 252         |  Somalia                                       | 10                              |  30                                      |  
-| 501         |  Belize                                        | 10                              |  30                                      |
 
 ## Next steps
 

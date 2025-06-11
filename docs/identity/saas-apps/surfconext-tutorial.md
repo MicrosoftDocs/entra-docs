@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with SURFconext
+title: Configure SURFconext for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SURFconext.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SURFconext so that I can control who has access to SURFconext, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SURFconext
+# Configure SURFconext for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate SURFconext with Microsoft Entra ID. SURF connected institutions can use SURFconext to log in to many cloud applications with their institution credentials. When you integrate SURFconext with Microsoft Entra ID, you can:
+In this article, you learn how to integrate SURFconext with Microsoft Entra ID. SURF connected institutions can use SURFconext to log in to many cloud applications with their institution credentials. When you integrate SURFconext with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SURFconext.
 * Enable your users to be automatically signed-in to SURFconext with their Microsoft Entra accounts.
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SURFconext** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SURFconext** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -97,7 +97,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
 	> [!Note]
-	> You can remove or delete these default attributes manually under Additional claims section, if it is not required.
+	> You can remove or delete these default attributes manually under Additional claims section, if it isn't required.
 
 1. In addition to above, SURFconext application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 
@@ -119,7 +119,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	![Screenshot shows the Azure portal attributes.](media/surfconext-tutorial/transform.png "Admin")
 
-	1. Select **Extract()** from the dropdown in **Transformation** field and click **After matching** button.
+	1. Select **Extract()** from the dropdown in **Transformation** field and select **After matching** button.
 
 	1. Select **Attribute** as a **Parameter 1 (Input)**.
 
@@ -127,9 +127,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	1. Select **@** value from the dropdown.
 
-	1. Click **Add**.
+	1. Select **Add**.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -145,17 +145,17 @@ In this section, a user called B.Simon is created in SURFconext. SURFconext supp
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to SURFconext Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to SURFconext Sign-on URL where you can initiate the login flow. 
 
 * Go to SURFconext Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the SURFconext tile in the My Apps, this will redirect to SURFconext Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the SURFconext tile in the My Apps, this option redirects to SURFconext Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure SURFconext you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

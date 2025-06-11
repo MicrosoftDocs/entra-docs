@@ -1,17 +1,17 @@
 ---
 title: Users, groups, licensing, and roles in Microsoft Entra ID
 description: The relationship between users and licenses assigned, administrator roles, dynamic membership groups in Microsoft Entra ID
-keywords:
+keywords: 
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.author: barclayn
 ms.reviewer: krbain
-ms.date: 09/24/2024
+ms.date: 01/31/2025
 ms.topic: overview
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ---
 # What is enterprise user management?
@@ -53,7 +53,7 @@ New Microsoft Entra administrator roles are being added. Check the Azure portal 
 
 ## Assign app access
 
-You can use Microsoft Entra ID to assign group access to [enterprise apps deployed in your Microsoft Entra organization](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context). If you combine dynamic membership groups with group assignment to apps, you can automate user app access assignments as your organization grows. You'll need a Microsoft Entra ID P1 or Premium P2 license to assign access to enterprise apps.
+You can use Microsoft Entra ID to assign group access to [enterprise apps deployed in your Microsoft Entra organization](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context). If you combine dynamic membership groups with group assignment to apps, you can automate user app access assignments as your organization grows. You need a Microsoft Entra ID P1 or Premium P2 license to assign access to enterprise apps.
 
 Microsoft Entra ID also gives you specific control of the data that flows between the app and the groups to whom you assign access. In [Enterprise Applications](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps), open an app and select **Provisioning** to:
 
@@ -67,5 +67,5 @@ Microsoft Entra ID also gives you specific control of the data that flows betwee
 
 If you're a beginning Microsoft Entra administrator, get the basics down in [Microsoft Entra Fundamentals](~/fundamentals/index.yml).
 
-Or you can start [creating groups](~/fundamentals/how-to-manage-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](~/fundamentals/license-users-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).
+Or you can start [creating groups](/entra/fundamentals/how-to-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning licenses](~/fundamentals/license-users-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context), [assigning app access](~/identity/enterprise-apps/assign-user-or-group-access-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context) or [assigning administrator roles](~/identity/role-based-access-control/permissions-reference.md).
 

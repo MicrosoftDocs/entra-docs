@@ -4,9 +4,9 @@ description: Learn about considerations for using system browsers on Xamarin And
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: devx-track-csharp,  devx-track-dotnet
+ms.custom:
 ms.date: 06/05/2024
-ms.reviewer: saeeda, dmwendia, negoe
+ms.reviewer: negoe
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -69,4 +69,5 @@ If authentication fails (for example, if authentication launches with DuckDuckGo
   - **Mitigation**: Ask the user to enable a browser on their device. Recommend a browser that supports custom tabs.
 
 ## Next steps
+
 For more information and code examples, see [Choosing between an embedded web browser and a system browser on Xamarin Android](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid) and [Embedded versus system web UI](/entra/msal/dotnet/acquiring-tokens/using-web-browsers#embedded-vs-system-web-ui).

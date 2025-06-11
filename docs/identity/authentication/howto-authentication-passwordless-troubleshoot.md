@@ -1,25 +1,24 @@
 ---
 title: Known issues and troubleshooting for hybrid FIDO2 security keys
-description: Learn about some known issues and ways to troubleshoot passwordless hybrid FIDO2 security key sign-in using Microsoft Entra ID 
-
+description: Learn about some known issues and ways to troubleshoot passwordless hybrid FIDO2 security key sign-in using Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 01/29/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: aakapo
+ms.custom: sfi-ga-nochange
 ---
 # Troubleshooting for hybrid deployments of FIDO2 security keys in Microsoft Entra ID 
 
-This article covers frequently asked questions for Microsoft Entra hybrid joined devices and passwordless sign-in to on-prem resources. With this passwordless feature, you can enable Microsoft Entra authentication on Windows 10 devices for Microsoft Entra hybrid joined devices using FIDO2 security keys. Users can sign into Windows on their devices with modern credentials like FIDO2 keys and access traditional Active Directory Domain Services (AD DS) based resources with a seamless single sign-on (SSO) experience to their on-prem resources.
+This article covers frequently asked questions for Microsoft Entra hybrid joined devices and passwordless sign-in to on-premises resources. With this passwordless feature, you can enable Microsoft Entra authentication on Windows 10 devices for Microsoft Entra hybrid joined devices using FIDO2 security keys. Users can sign into Windows on their devices with modern credentials like FIDO2 keys and access traditional Active Directory Domain Services (AD DS) based resources with a seamless single sign-on (SSO) experience to their on-premises resources.
 
 The following scenarios for users in a hybrid environment are supported:
 
-* Sign in to Microsoft Entra hybrid joined devices using FIDO2 security keys and get SSO access to on-prem resources.
-* Sign in to Microsoft Entra joined devices using FIDO2 security keys and get SSO access to on-prem resources.
+* Sign in to Microsoft Entra hybrid joined devices using FIDO2 security keys and get SSO access to on-premises resources.
+* Sign in to Microsoft Entra joined devices using FIDO2 security keys and get SSO access to on-premises resources.
 
 To get started with FIDO2 security keys and hybrid access to on-premises resources, see the following articles:
 
@@ -80,8 +79,8 @@ The following events logs and registry key info is collected:
 **Registry keys**
 
 * *HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\FIDO [\*]*
-* *HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PasswordForWork\* [\*]*
-* *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Policies\PasswordForWork\* [\*]*
+* *HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PassportForWork\* [\*]*
+* *HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Policies\PassportForWork\* [\*]*
 
 **Diagnostic information**
 

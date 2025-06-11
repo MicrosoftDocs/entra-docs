@@ -1,16 +1,14 @@
 ---
 title: Security questions authentication method
 description: Learn about using security questions in Microsoft Entra ID to help improve and secure sign-in events
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/13/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
-
+manager: dougeby
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use security questions in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 # Authentication methods in Microsoft Entra ID - security questions
@@ -24,7 +22,7 @@ When users register for SSPR, they're prompted to choose the authentication meth
 > [!NOTE]
 > Security questions are stored privately and securely on a user object in the directory and can only be answered by users during registration. There's no way for an administrator to read or modify a user's questions or answers.
 
-Security questions can be less secure than other methods because some people might know the answers to another user's questions. If you use security questions with SSPR, it's recommended to use them in conjunction with another method. A user can be prompted to use the Microsoft Authenticator App or phone authentication to verify their identity during the SSPR process, and choose security questions only if they don't have their phone or registered device with them.
+Security questions can be less secure than other methods because some people might know the answers to another user's questions. If you use security questions with SSPR, it's recommended to use them in along with another method. A user can be prompted to use the Microsoft Authenticator App or phone authentication to verify their identity during the SSPR process, and choose security questions only if they don't have their phone or registered device with them.
 
 ## Predefined questions
 

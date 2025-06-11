@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/22/2023
+ms.date: 12/10/2024
 ms.custom: template-how-to
 ---
 
@@ -223,7 +223,7 @@ If the security token type is **Proof of Possession (POP)** for your custom task
 
 1. Create an authorization policy based on the following table:
 
-    Policy name: `POP-Policy` 
+    Policy name: `AzureADLifecycleWorkflowsAuthPOPAuthPolicy` 
 
     Policy type: `AADPOP`
     

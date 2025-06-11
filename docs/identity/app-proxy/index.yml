@@ -9,10 +9,11 @@ metadata:
   ms.service: entra-id
   ms.subservice: app-proxy
   ms.topic: landing-page
-  ms.date: 02/23/2024
+  ms.date: 02/21/2025
   author: kenwith
   ms.author: kenwith
-  manager: amycolannino
+  manager: dougeby 
+  ai-usage: ai-assisted
 landingContent:
   - title: About application proxy
     linkLists:

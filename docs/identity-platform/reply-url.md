@@ -4,21 +4,23 @@ description: A description of the best practices and limitations of redirect URI
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 06/25/2024
-ms.reviewer:
+ms.date: 05/14/2025
+ms.reviewer: jmprieur
 ms.service: identity-platform
-
-ms.topic: reference
+ms.topic: concept-article
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent:As a developer registering an application with the Microsoft identity platform, I want to understand the restrictions and limitations of redirect URIs, so that I can correctly configure the redirect URI for successful authorization and token retrieval.
 ---
 
 # Redirect URI (reply URL) outline and restrictions
 
-To sign in a user, your application must send a login request to the Microsoft Entra authorization endpoint, with a redirect URI specified as a parameter. The redirect URI is a critical security feature that ensures the Microsoft Entra authentication server only sends authorization codes and access tokens to the intended recipient. This article outlines the features and restrictions of redirect URIs in the Microsoft identity platform.
+When building applications that integrate with the Microsoft identity platform, understanding how to configure redirect URIs is essential. This article provides a comprehensive guide to redirect URI best practices, supported configurations, and limitations. Whether you're developing a web, mobile, or desktop application, this article will help you correctly configure redirect URIs to meet security requirements.
 
 ## What is a redirect URI?
 
 A redirect URI, or reply URL, is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. To sign in a user, your application must send a login request with a redirect URI specified as a parameter, so after the user has successfully signed in, the authentication server will redirect the user and issue an access token to the redirect URI specified in the login request.
+
+In a production web application, for example, the redirect URI is often a public endpoint where your app is running, like `https://contoso.com/auth-response`. During development, it's common to also add the endpoint where you run your app locally, like `https://127.0.0.1/auth-response` or `http://localhost/auth-response`. Be sure that any unnecessary development environments/redirect URIs are not exposed in the production app. This can be done by having separate app registrations for development and production.
 
 ## Why do redirect URI(s) need to be added to an app registration?
 
@@ -43,7 +45,7 @@ You don’t need to add redirect URIs to your app registration if your applicati
 -	[OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md)
 -	[OAuth 2.0 Resource owner password credential flow](v2-oauth-ropc.md)
 -	[Windows Integrated Auth Flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/integrated-windows-authentication)
--	[SAML 2.0 Identity Provider (IdP) for Single Sign On ](../identity/hybrid/connect/how-to-connect-fed-saml-idp.md)
+-	[SAML 2.0 Identity Provider (IdP) for Single Sign On](../identity/hybrid/connect/how-to-connect-fed-saml-idp.md)
 
 ### What platform should I add my redirect URI(s) to?
 
@@ -60,13 +62,12 @@ If the application you're building contains one or multiple redirect URIs in you
 
 | Type of your application | Typical languages/Frameworks | Platform to add redirect URI in App Registration |
 |--------------------------|------------------------------|--------------------------------------------------|
-| An iOS or macOS app excluding the scenarios listed below this table | Swift, Objective-C, Xamarin | IOS/macOS |
-| An Android app | Java, Kotlin, Xamarin | Android |
-| An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Xamarin, Android, iOS/macOS | Mobile and desktop applications |
+| An iOS or macOS app excluding the scenarios listed below this table | Swift, Objective-C | IOS/macOS |
+| An Android app | Java or Kotlin | Android |
+| An app that runs natively on a mobile device or desktop machine | Node.js electron, Windows desktop, UWP, React Native, Android, iOS/macOS | Mobile and desktop applications |
 
 If you're building an iOS app using one of the following methods, use the **Mobile and desktop applications** platform to add a redirect URI:
-
- - iOS apps using legacy SDKs (ADAL) 
+ 
  - iOS apps using open source SDKs (AppAuth) 
  - iOS apps using cross-plat tech we don't support (Flutter) 
  - iOS apps implementing our OAuth protocols directly 

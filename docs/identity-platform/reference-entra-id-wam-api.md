@@ -37,7 +37,7 @@ The Microsoft Entra ID Windows Account Manager (WAM) is a set of APIs that enabl
 | `LoginHint` | User name hint (upn) | Provides a hint for the user name during the sign-in process. |
 | `msafed` | Either `0` or `1`. | Determines whether to allow users with Microsoft accounts to sign in as federated identities within an Entra tenant. A value of `1` enables federation, while `0` disables it. |
 | `discover` | `Home` | The `discover` parameter indicates that the token request is executed in the context of the user’s home cloud, not the cloud to which the device is joined. |
-| `domain_hint` | The relevant Domain. For example, `contoso.com` | Microsoft Entra ID uses the hint to locate the domain in directory  <br/> **Note**: domain hint is being given priority over fallback domain in case both are passed as parameters by ADAL |
+| `domain_hint` | The relevant Domain. For example, `contoso.com` | Microsoft Entra ID uses the hint to locate the domain in directory  <br/> **Note**: domain hint is being given priority over fallback domain in case both are passed as parameters |
 | `fallback_domain` | A domain, such as `contoso.com` | The `fallback_domain` parameter is a hint that Microsoft Entra ID uses to locate the domain in the directory. It’s primarily used for nonroutable user domains that are part of the user’s UPN. |
 | `client_TokenType` | `DeviceAuth` | The `client_TokenType` parameter is used exclusively for requesting device-only tokens. The caller needs to have Medium integrity level permissions. |
 | `IsFeatureSupported` | `CrossCloudB2B`, <br/> `redirect_uri`, <br/> `TokenBinding`. | Used to check if a feature is supported in the current flow. |

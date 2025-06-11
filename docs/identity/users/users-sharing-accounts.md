@@ -3,11 +3,11 @@ title: Sharing accounts and credentials
 description: Describes how Microsoft Entra ID enables organizations to securely share accounts for on-premises apps and consumer cloud services.
 
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 06/24/2022
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -42,7 +42,7 @@ The Microsoft Entra administrator configures which applications a user can acces
 
 Users sign in once with their organizational account. This account is the same one they regularly use to access their desktop or email. They can discover and access only those applications that they're assigned to. With shared accounts, this list of applications can include any number of shared credentials. The end-user doesn't need to remember or write down the various accounts they might be using.
 
-Shared accounts not only increase oversight and improve usability, they also enhance your security. Users with permissions to use the credentials don't see the shared password, but rather get permissions to use the password as part of an orchestrated authentication flow. Further, some password SSO applications give you the option of using Microsoft Entra ID to periodically rollover (update) passwords. The system uses large, complex passwords, which increase account security. The administrator can easily grant or revoke access to an application, knows who has access to the account, and who accessed it in the past.
+Shared accounts increase oversight, improve usability, and enhance your security. Users with permissions to use the credentials don't see the shared password, but rather get permissions to use the password as part of an orchestrated authentication flow. Further, some password SSO applications give you the option of using Microsoft Entra ID to periodically rollover (update) passwords. The system uses large, complex passwords, which increase account security. The administrator can easily grant or revoke access to an application, knows who has access to the account, and who accessed it in the past.
 
 Microsoft Entra ID supports shared accounts for any Enterprise Mobility Suite (EMS) or Microsoft Entra ID P1 or P2 license plan, across all types of password single sign-on applications. You can share accounts for any of thousands of preintegrated applications in the application gallery and can add your own password-authenticating application with [custom SSO apps](~/identity/enterprise-apps/what-is-single-sign-on.md).
 

@@ -3,10 +3,10 @@ title: 'Microsoft Entra Connect Single Object Sync '
 description: Learn how to synchronize one object from Active Directory to Microsoft Entra ID for troubleshooting.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -43,14 +43,14 @@ The HTML report has the following:
 
 |Tab|Description|
 |-----|-----|
-|Steps|Outlines the steps taken to synchronize an object. Each step contains details for troubleshooting. The Import, Sync and Export steps contains additional attribute info such as name, is multi-valued, type, value, value add, value delete, operation, sync rule, mapping type and data source.| 
+|Steps|Outlines the steps taken to synchronize an object. Each step contains details for troubleshooting. The Import, Sync, and Export steps contain additional attribute info such as name, is multi-valued, type, value, value add, value delete, operation, sync rule, mapping type and data source.| 
 |Troubleshooting & Recommendation|Provides the error code and reason. The error information is available only if a failure happens.| 
-|Modified Properties|Shows the old value and the new value. If there is no old value or if the new value is deleted, that cell is blank. For multivalued attributes it shows the count. The attribute name is a link to Steps tab: Export Object from Microsoft Entra Connector Space to Microsoft Entra ID: Attribute Info that contains additional details of the attribute such as name, is multi-valued, type, value, value add, value delete, operation, sync rule, mapping type and data source.| 
+|Modified Properties|Shows the old value and the new value. If there's no old value or if the new value is deleted, that cell is blank. For multivalued attributes, it shows the count. The attribute name is a link to Steps tab: Export Object from Microsoft Entra Connector Space to Microsoft Entra ID: Attribute Info that contains additional details of the attribute such as name, is multi-valued, type, value, value add, value delete, operation, sync rule, mapping type and data source.| 
 |Summary|Provides an overview of what happened and identifiers for the object in the source and target systems.| 
 
 ## Prerequisites 
 
-In order to use the Single Object Sync tool, you will need to use the following:  
+In order to use the Single Object Sync tool, you need to use the following:  
  - 2021 March release ([1.6.4.0](reference-connect-version-history.md#1640)) of Microsoft Entra Connect or later.
  -  [PowerShell 5.0](/powershell/scripting/windows-powershell/whats-new/what-s-new-in-windows-powershell-50)
 
@@ -81,8 +81,8 @@ To run the Single Object Sync tool, perform the following steps:
 |Single Object Sync Input Parameters|Description| 
 |-----|----|
 |DistinguishedName|This is a required string parameter. </br></br>This is the Active Directory object’s distinguished name that needs synchronization and troubleshooting.| 
-|StagingMode|This is an optional switch parameter.</br></br>This parameter can be used to prevent exporting the changes to Microsoft Entra ID.</br></br>**Note**: The cmdlet will commit the sync operation. </br></br>**Note**: Microsoft Entra Connect Staging server will not export the changes to Microsoft Entra ID.|
-|NoHtmlReport|This is an optional switch parameter.</br></br>This parameter can be used to prevent generating the HTML report. 
+|StagingMode|This is an optional switch parameter. </br></br>This parameter can be used to prevent exporting the changes to Microsoft Entra ID.</br></br>**Note**: The cmdlet commits the sync operation. </br></br>**Note**: Microsoft Entra Connect Staging server won't export the changes to Microsoft Entra ID.|
+|NoHtmlReport|This is an optional switch parameter. </br></br>This parameter can be used to prevent generating the HTML report. 
 
 ## Single Object Sync throttling 
 

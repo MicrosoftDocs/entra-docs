@@ -5,9 +5,9 @@ metadata:
   ms.service: entra-external-id
   ms.topic: faq
   ms.date: 04/24/2024
-  ms.author: mimart
-  author: msmimart
-  manager: celestedg
+  ms.author: cmulligan
+  author: csmulligan
+  manager: dougeby
   ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
   ms.collection: M365-identity-device-management
 title: Microsoft Entra B2B collaboration FAQs
@@ -62,7 +62,7 @@ sections:
       - question: |
           What if a partner organization already has multifactor authentication set up? Can we trust their multifactor authentication?
         answer: |
-          [Cross-tenant access settings](cross-tenant-access-overview.md) let you trust multifactor authentication and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)) from other Microsoft Entra organizations.
+          [Cross-tenant access settings](cross-tenant-access-overview.md) let you trust multifactor authentication and device claims ([compliant claims and Microsoft Entra hybrid joined claims](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)) from other Microsoft Entra organizations.
 
       - question: |
           How many organizations can I add in cross-tenant access settings?
@@ -153,6 +153,8 @@ sections:
           Can an Azure AD B2C local account be invited to a Microsoft Entra tenant for B2B collaboration?
         answer: |
           No. An Azure AD B2C local account can only be used to sign in to the Azure AD B2C tenant. The account can't be used to sign into a Microsoft Entra tenant. Inviting an Azure AD B2C local account to a Microsoft Entra tenant for B2B collaboration isn't supported.
+          
+          [!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
       - question: |
           What applications and services support Azure B2B guest users?

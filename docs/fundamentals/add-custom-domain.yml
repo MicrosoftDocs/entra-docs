@@ -1,24 +1,22 @@
 ### YamlMime:HowTo
-
 metadata:
   title: Add your custom domain
   description: Instructions about how to add your custom domain name to your tenant.
   author: barclayn
   ms.author: barclayn
-  manager: amycolannino
+  manager: pmwongera
   ms.reviewer: elkuzmen
-  ms.date: 11/28/2023
+  ms.date: 03/05/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
-
+    - sfi-ga-nochange
 title: |
   Add your custom domain name to your tenant
 introduction: |
-  Microsoft Entra tenants come with an initial domain name like, `domainname.onmicrosoft.com`. You can't change or delete the initial domain name, but you can add your organization's name to the initial domain. By adding your custom domain name, you can then add user names that are familiar to your users, such as `alain@contoso.com`.
-
+  Microsoft Entra tenants come with an initial domain name like `domainname.onmicrosoft.com`. You can't change or delete the initial domain name, but you can add your organization's DNS name as a custom domain name and set it as primary. By adding your domain name, you can add user names that are familiar to your users, such as `alain@contoso.com`.
 prerequisites:
   summary: |
     Before you can add a custom domain name, create your domain name with a domain registrar. For an accredited domain registrar, see [ICANN-Accredited Registrars](https://www.icann.org/registrar-reports/accredited-list.html).
@@ -27,18 +25,13 @@ procedureSection:
   - title: |
       Create your directory
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
       After you get your domain name, you can create your first directory. Sign in to the [Azure portal](https://portal.azure.com) for your directory, using an account with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role for the subscription.
     steps: 
       - |
-        Create your new directory by following the steps in [Create a new tenant for your organization](./create-new-tenant.md#create-a-new-tenant-for-your-organization).
-
-        > [!IMPORTANT]
-        > The person who creates the tenant is automatically granted [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) privileges. This role is highly privileged and can add additional administrators to the tenant.
+        Create your new directory by following the steps in [Create a new tenant for your organization](./create-new-tenant.md#create-a-new-tenant-for-your-organization). 
       
       - |
-        For more information about subscription roles, see [Azure roles](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-roles).
+        [!INCLUDE [tenant-installation-account](../includes/definitions/tenant-installation-account.md)]
 
         > [!TIP]
         > If you plan to federate on-premises Windows Server Active Directory with Microsoft Entra ID, then you need to select **I plan to configure this domain for single sign-on with my local Active Directory** when you run the Microsoft Entra Connect tool to synchronize your directories.
@@ -51,12 +44,12 @@ procedureSection:
       After you create your directory, you can add your custom domain name.
 
       > [!IMPORTANT]
-      > When updating domain information, you may be unable to complete the process and encounter an HTTP 500 Internal Server Error message. Under some conditions, this error may be expected. This message may appear if you try to use a protected DNS suffix. Protected DNS suffixes may only be used by Microsoft. If you believe that this operation should have been completed successfully, please contact your Microsoft representative for assistance. 
+      > When updating domain information, you may be unable to complete the process and encounter an HTTP 500 Internal Server Error message. Under some conditions, this error may be expected. This message may appear if you try to use a protected DNS suffix. Protected DNS suffixes may only be used by Microsoft. If you believe that this operation should have been completed successfully, contact your Microsoft representative for assistance. 
     steps: 
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
       - |
-        Browse to **Identity** > **Settings** > **Domain names** > **Add custom domain**.
+        Browse to **Entra ID** > **Domain names** > **Add custom domain**.
 
           :::image type="content" source="media/add-custom-domain/add-custom-domain.png" alt-text="Screenshot of Custom domain names page, with Add custom domain shown.":::
       - |
@@ -94,7 +87,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
       - |
-        Browse to **Identity** > **Settings** > **Domain names**.
+        Browse to **Entra ID** > **Domain names**.
       - |
         In **Custom domain names**, select the custom domain name. In this example, select **contoso.com**.
 

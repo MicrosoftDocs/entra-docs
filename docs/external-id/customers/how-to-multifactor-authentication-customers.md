@@ -1,17 +1,14 @@
 ---
 title: Add multifactor authentication (MFA) to a customer app
 description: Learn how to add multifactor authentication (MFA) to your consumer and business customer (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 08/08/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.date: 11/20/2024
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
 ---
 
@@ -19,10 +16,10 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
+Multifactor authentication (MFA) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
 - **Email one-time passcode**: After the user signs in with their email and password, they are prompted for a passcode that is sent to their email. To allow the use of email one-time passcodes for MFA, set your local account authentication method to *Email with password*. If you choose *Email with one-time passcode*, customers who use this method for primary sign-in won't be able to use it for MFA secondary verification.
-- **SMS-based authentication**: While SMS isn't an option for first factor authentication, it's available as a second factor for MFA. Users who sign in with email and password, email and one-time passcode, or social identities like Google or Facebook, are prompted for second verification using SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA to confirm they're not a robot before sending the SMS code for verification.
+- **SMS-based authentication**: While SMS isn't an option for first factor authentication, it's available as a second factor for MFA. Users who sign in with email and password, email and one-time passcode, or social identities like Google, Facebook or Apple, are prompted for second verification using SMS. Our SMS MFA includes automatic fraud checks. If we suspect fraud, we'll ask the user to complete a CAPTCHA to confirm they're not a robot before sending the SMS code for verification. It also provides safeguards against [telephony fraud](how-to-region-code-opt-in.md). SMS is an add-on feature. Your tenant must be [linked](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription) to an active, valid subscription. [Learn more](concept-multifactor-authentication-customers.md#sms-based-authentication)
 
 This article describes how to enforce MFA for your customers by creating a Microsoft Entra Conditional Access policy and adding MFA to your sign-up and sign-in user flow.
 
@@ -37,16 +34,17 @@ This article describes how to enforce MFA for your customers by creating a Micro
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - An app that's registered in your external tenant and added to the sign-up and sign-in user flow.
 - An account with at least the Security Administrator role to configure Conditional Access policies and MFA.
+- SMS is an add-on feature and requires a [linked subscription](../external-identities-pricing.md#link-an-external-tenant-to-a-subscription). If your subscription expires or is canceled, end users will no longer be able to authenticate using SMS, which could block them from signing in depending on your MFA policy.
 
 ## Create a Conditional Access policy
 
-Create a Conditional Access policy in your external tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)).
+Create a Conditional Access policy in your external tenant that prompts users for MFA when they sign up or sign in to your app. (For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/policy-all-users-mfa-strength.md)).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Protection** > **Conditional Access** > **Policies**, and then select **New policy**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**, and then select **New policy**.
 
    :::image type="content" source="media/how-to-multifactor-authentication-customers/new-policy.png" alt-text="Screenshot of the new policy button." lightbox="media/how-to-multifactor-authentication-customers/new-policy.png":::
 
@@ -64,9 +62,9 @@ Create a Conditional Access policy in your external tenant that prompts users fo
 
    a. On the **Include** tab, choose one of the following options:
 
-      - Choose **All cloud apps**.
+      - Choose **All resources (formerly 'All cloud apps')**.
 
-      - Choose **Select apps** and select the link under **Select**. Find your app, select it, and then choose **Select**.
+      - Choose **Select resources** and select the link under **Select**. Find your app, select it, and then choose **Select**.
 
    b. On the **Exclude** tab, select any applications that don't require multifactor authentication.
 
@@ -86,7 +84,7 @@ Enable the email one-time passcode authentication method in your external tenant
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
-1. Browse to **Protection** > **Authentication methods**.
+1. Browse to **Entra ID** > **Authentication methods**.
 
 1. In the **Method** list, select **Email OTP**.
 
@@ -100,13 +98,13 @@ Enable the email one-time passcode authentication method in your external tenant
 
 1. Select **Save**.
 
-## Enable SMS as an MFA method (preview)
+## Enable SMS as an MFA method
 
 Enable the SMS authentication method in your external tenant for all users.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
-1. Browse to **Protection** > **Authentication methods**.
+1. Browse to **Entra ID** > **Authentication methods**.
 
 1. In the **Method** list, select **SMS**.
 
@@ -116,11 +114,13 @@ Enable the SMS authentication method in your external tenant for all users.
 
 1. Under **Include**, next to **Target**, select **All users**.
 
-1. Disable the **Use for sign-in** check box. SMS is not supported in external tenants for first-factor authentication.
-
    :::image type="content" source="media/how-to-multifactor-authentication-customers/enable-sms.png" alt-text="Screenshot of enabling SMS." lightbox="media/how-to-multifactor-authentication-customers/enable-sms.png":::
 
 1. Select **Save**.
+
+### Activate telecom for opt-in regions
+
+Starting January 2025, certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them for your application using the Microsoft Graph `onPhoneMethodLoadStartevent` policy. See [Regions requiring opt-in for SMS verification](how-to-region-code-opt-in.md).
 
 ## Test the sign-in
 

@@ -1,24 +1,28 @@
 ---
-title: How to configure per-app access using Global Secure Access applications
+title: How to Configure Per-app Access Using Global Secure Access Applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 07/22/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # How to configure per-app access using Global Secure Access applications
 
-Microsoft Entra Private Access provides secure access to your organization's internal resources. You create a Global Secure Access application and specify the internal, private resources that you want to secure. By configuring a Global Secure Access application, you're creating per-app access to your internal resources. Global Secure Access application provides a more detailed ability to manage how the resources are accessed on a per-app basis.
+Microsoft Entra Private Access provides secure access to your organization's internal resources by enabling you to control and secure access to specific network destinations on your private network. This allows you to provide granular network access based on user needs. To do this, create an Enterprise application and add the application segment that is used by the internal, private resource that you want to secure. Network requests sent from devices running the Global Secure Access client to the application segment you added to your Enterprise application will be acquired and routed to your internal application by the Global Secure Access cloud service without any ability to connect to other resources on your network. By configuring an Enterprise application, you create per-app access to your internal resources. Enterprise applications provide you a segmented, granular ability to manage how your resources are accessed on a per-app basis.
 
-This article describes how to configure per-app access using Global Secure Access applications.
+
+
+This article describes how to configure per-app access using Enterprise applications.
 
 ## Prerequisites
 
-To configure a Global Secure Access app, you must have:
+To configure a Global Secure Access Enterprise app, you must have:
 
 - The **Global Secure Access Administrator** and **Application Administrator** roles in Microsoft Entra ID
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
@@ -30,9 +34,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 ### Known limitations
 
-- Avoid overlapping app segments between Quick Access and Global Secure Access apps.
-- Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## High level steps
 
@@ -45,7 +47,7 @@ To summarize, the overall process is as follows:
 1. [Create a connector group with at least one active private network connector](#create-a-private-network-connector-group).
     - If you already have a connector group, make sure you're on the latest version.
 
-1. [Create a Global Secure Access app](#create-a-global-secure-access-application).
+1. [Create a Global Secure Access app](#create-a-global-secure-access-enterprise-application).
 
 1. [Assign users and groups to the app](#assign-users-and-groups).
 
@@ -64,7 +66,7 @@ If you don't already have a connector set up, see [Configure connectors](how-to-
 >
 > The minimum version of connector required for Private Access is **1.5.3417.0**.
 
-## Create a Global Secure Access application
+## Create a Global Secure Access Enterprise application
 
 To create a new app, you provide a name, select a connector group, and then add application segments. App segments include the fully qualified domain names (FQDNs) and IP addresses you want to tunnel through the service. You can complete all three steps at the same time, or you can add them after the initial setup is complete.
 
@@ -84,7 +86,7 @@ To create a new app, you provide a name, select a connector group, and then add 
 
 ### Add application segment
 
-The **Add application segment** process is where you define the FQDNs and IP addresses that you want to include in the traffic for the Global Secure Access app. You can add sites when you create the app and return to add more or edit them later.
+An application segment is defined by 3 fields - destination, port, and protocol. If two or more application segments include the same destination, port, and protocol, they are considered to be overlapping. The **Add application segment** process is where you define the FQDNs and IP addresses that you want the Global Secure Access client to route to your target private application. You can add application segments when you create the app and later you can return to add more or edit them.
 
 You can add fully qualified domain names (FQDN), IP addresses, and IP address ranges. Within each application segment, you can add multiple ports and port ranges.
 
@@ -130,9 +132,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 1. Select **Save**.
 
 > [!NOTE]
-> You can add up to 500 application segments to your app.
->
-> Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
+> You can add up to 500 application segments to your app however none of these application segments can have overlapping FQDNs, IP addresses, or IP ranges within or between any Private Access apps. A special exception is allowed for overlapping segments between Private Access apps and Quick Access to allow for VPN replacement. If a segment defined on an Enterprise App (for example 10.1.1.1:3389) overlaps with a segment defined on Quick Access (for example 10.1.1.0/24:3389), then the segment defined on the Enterprise App will be given priority by the GSA service. No traffic from any user to an application segment defined as an Enterprise App will be processed by Quick Access. This means that any user that attempts to RDP to 10.1.1.1 will be evaluated and routed per the Enterprise App configuration, including user assignments and conditional access policies. As a best practice, remove application segments that you define in Enterprise Apps from Quick Access, breaking IP subnets into smaller ranges so that the exclusion is possible.
 
 ## Assign users and groups
 
@@ -145,7 +145,7 @@ You need to grant access to the app you created by assigning users and/or groups
 1. Add users and groups as needed.
 
 > [!NOTE]
-> Users must be directly assigned to the app or to the group assigned to the app. Nested groups are not supported.
+> You must assign users directly assigned to the app or to the group assigned to the app. Nested groups are not supported. Also note that access assignments are not automatically transferred to a newly created Enterprise App even when there is an existing (overlapping) application segment defined in Quick Access. This is important because you can encounter an issue where users that had successfully accessed an app segment through Quick Access will be blocked from access when the app segment is moved to Enterprise Apps until you assign them access specifically to the Enterprise App. Allow 15 minutes for your configuration change to be synchronized with your Global Secure Access clients.
 
 ## Update application segments
 
@@ -169,7 +169,7 @@ You can enable or disable access to the Global Secure Access app using the Globa
 Conditional Access policies for per-app access are configured at the application level for each app. Conditional Access policies can be created and applied to the application from two places:
 
 - Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select an application and then select **Conditional Access** from the side menu.
-- Go to **Protection** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
+- Go to **Entra ID** > **Conditional Access** > **Policies**. Select **+ Create new policy**.
 
 For more information, see [Apply Conditional Access policies to Private Access apps](how-to-target-resource-private-access-apps.md).
 
@@ -180,6 +180,23 @@ Once you have your app configured, your private resources added, users assigned 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Global Secure Access** > **Connect** > **Traffic forwarding**.
 1. Select the toggle for **Private access profile**.
+
+This diagram demonstrates how Microsoft Entra Private Access works when attempting to use Remote Desktop Protocol to connect to a server on a private network.
+
+:::image type="content" source="media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png" alt-text="Diagram of Microsoft Entra Private Access working with Remote Desktop Protocol." lightbox="media/how-to-configure-per-app-access/private-access-remote-desktop-protocol-network-diagram.png":::
+
+| Step | Description |
+| --- | --- |
+| 1 | User initiates RDP session to an FQDN which maps to the target server. The GSA Client intercepts the traffic and tunnels it to the SSE Edge.  |
+| 2 | The SSE Edge evaluates policies stored in Microsoft Entra ID such as whether the user is assigned to the application and Conditional Access policies.  |
+| 3 | Once the user has been authorized, Microsoft Entra ID issues a token for the Private Access application.  |
+| 4 | The traffic is released to continue to the Private Access service along with the application’s access token.  |
+| 5 | The Private Access service validates the access token and the connection is brokered to the Private Access backend service.  |
+| 6 | The connection is brokered to the Private Network Connector.  |
+| 7 | The Private Network Connector performs a DNS query to identify the IP address of the target server. |
+| 8 | The DNS service on the private network sends the response. |
+| 9 | The Private Network Connector forwards the traffic to the target server. The RDP session is negotiated (including RDP authentication) and is then established.  |
+
 
 ## Next steps
 

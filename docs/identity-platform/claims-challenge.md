@@ -8,7 +8,7 @@ ms.date: 04/10/2024
 ms.reviewer: kylemar
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to handle claims challenges returned from APIs protected by the Microsoft identity platform.
 ---
 
@@ -18,7 +18,7 @@ A *claims challenge* is a response sent from an API indicating that an access to
 
 A *claims request* is made by the client application to redirect the user back to the identity provider to retrieve a new token with claims that satisfy the other requirements that weren't met.
 
-Applications that use enhanced security features like [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) and [Conditional Access authentication context](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/granular-conditional-access-for-sensitive-data-and-actions/ba-p/1751775) must be prepared to handle claims challenges.
+Applications that use enhanced security features like [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) and [Conditional Access authentication context](https://techcommunity.microsoft.com/blog/identity/granular-conditional-access-for-sensitive-data-and-actions/1751775) must be prepared to handle claims challenges.
 
 Your application receives claims challenges from popular services like [Microsoft Graph](/graph/overview) only if it declares its [client capabilities](#client-capabilities) in its calls to the service.
 
@@ -244,4 +244,4 @@ const checkIsClientCapableOfClaimsChallenge = (req, res, next) => {
 
 - [Microsoft identity platform and OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md#request-an-authorization-code)
 - [How to use Continuous Access Evaluation enabled APIs in your applications](app-resilience-continuous-access-evaluation.md)
-- [Granular Conditional Access for sensitive data and actions](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/granular-conditional-access-for-sensitive-data-and-actions/ba-p/1751775)
+- [Granular Conditional Access for sensitive data and actions](https://techcommunity.microsoft.com/blog/identity/granular-conditional-access-for-sensitive-data-and-actions/1751775)

@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Proactis Rego Source-to-Pay
+title: Configure Proactis Rego Source-to-Pay for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Proactis Rego Source-to-Pay.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Proactis Rego Source-to-Pay so that I can control who has access to Proactis Rego Source-to-Pay, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Proactis Rego Source-to-Pay
+# Configure Proactis Rego Source-to-Pay for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Proactis Rego Source-to-Pay with Microsoft Entra ID. Proactis Rego is a powerful Source-to-Pay software platform designed for mid-market organizations. It's easy to use and integrate, giving you control over your spend and supply-chain risks. When you integrate Proactis Rego Source-to-Pay with Microsoft Entra ID, you can:
 
@@ -24,7 +24,7 @@ In this article, you learn how to integrate Proactis Rego Source-to-Pay with Mic
 * Enable your users to be automatically signed-in to Proactis Rego Source-to-Pay with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You are able to configure and test Microsoft Entra single sign-on for Proactis Rego Source-to-Pay in a test environment. Proactis Rego Source-to-Pay supports **SP** initiated single sign-on.
+You're able to configure and test Microsoft Entra single sign-on for Proactis Rego Source-to-Pay in a test environment. Proactis Rego Source-to-Pay supports **SP** initiated single sign-on.
 
 ## Prerequisites
 
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Proactis Rego Source-to-Pay** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Proactis Rego Source-to-Pay** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -102,7 +102,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| `https://bsmus.proactiscloud.com/saml/domain/<domainId>` |
 
 	> [!Note]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Proactis Rego Source-to-Pay support team](mailto:itcrowd@proactis.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration section**.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Proactis Rego Source-to-Pay support team](mailto:itcrowd@proactis.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration section**.
 
  1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **Download** to download the certificate and save it on your computer.
 
@@ -124,12 +124,12 @@ In this section, you create a user called Britta Simon at Proactis Rego Source-t
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Proactis Rego Source-to-Pay Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Proactis Rego Source-to-Pay Sign-on URL where you can initiate the login flow. 
 
 * Go to Proactis Rego Source-to-Pay Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Proactis Rego Source-to-Pay tile in the My Apps, this will redirect to Proactis Rego Source-to-Pay Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Proactis Rego Source-to-Pay tile in the My Apps, this option redirects to Proactis Rego Source-to-Pay Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Proactis Rego Source-to-Pay you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

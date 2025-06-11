@@ -4,10 +4,10 @@ title: Microsoft Entra Workload ID documentation
 summary: Microsoft Entra Workload ID helps you manage and secure identities for digital workloads, such as apps and services.
 
 metadata: 
-  author: rwike77
+  author: SHERMANOUKO
   description: "Learn how to manage and help secure identities for digital workloads, such as apps and services."
   manager: celested
-  ms.author: ryanwi
+  ms.author: shermanouko
   ms.date: 03/22/2023
   ms.service: entra-workload-id  
   ms.topic: landing-page
@@ -46,7 +46,7 @@ landingContent:
       - linkListType: video
         links:
           - text: Learn why you would use workload identity federation
-            url: https://www.microsoft.com/en-us/videoplayer/embed/RWXamJ
+            url: https://learn-video.azurefd.net/vod/player?id=4b15d772-e6de-4347-b8f6-d943c200667a
       - linkListType: how-to-guide
         links:
           - text: Configure an app to trust an external identity provider
@@ -67,6 +67,15 @@ landingContent:
         links:
           - text: Secure workload identities
             url: ~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json
+
+  # Card
+  - title: Configuring applications to trust managed identities
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Configure an application to trust a managed identity (preview)
+            url: workload-identity-federation-config-app-trust-managed-identity.md
+  
     # Card
   - title: Apply Conditional Access policies to service principals
     linkLists:

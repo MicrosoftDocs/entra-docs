@@ -2,12 +2,12 @@
 title: What is entitlement management?
 description: Get an overview of entitlement management and how you can use it to manage access to groups, applications, and SharePoint Online sites for internal and external users.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
-ms.topic: overview
-ms.date: 08/27/2024
+ms.topic: reference
+ms.date: 11/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 #Customer intent: As an administrator, I want learn about entitlement management so that see how I can use it to manage access to resources in my organization.
@@ -69,7 +69,7 @@ You can also control access to other resources that rely upon Microsoft Entra se
 
 - You can give users licenses for Microsoft 365 by using a Microsoft Entra security group in an access package and configuring [group-based licensing](~/identity/users/licensing-groups-assign.md) for that group.
 - You can give users access to manage Azure resources by using a Microsoft Entra security group in an access package and creating an [Azure role assignment](/azure/role-based-access-control/role-assignments-portal) for that group.
-- You can give users access to manage Microsoft Entra roles by using groups assignable to Microsoft Entra roles in an access package and [assigning a Microsoft Entra role to that group](~/identity/role-based-access-control/groups-assign-role.md).
+- You can give users access to manage Microsoft Entra roles by using groups assignable to Microsoft Entra roles in an access package and [assigning a Microsoft Entra role to that group](../identity/role-based-access-control/manage-roles-portal.md).
 
 ## How do I control who gets access?
 

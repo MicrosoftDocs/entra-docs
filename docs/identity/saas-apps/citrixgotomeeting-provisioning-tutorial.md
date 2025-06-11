@@ -1,28 +1,28 @@
 ---
-title: 'Tutorial: Configure GoToMeeting for automatic user provisioning with Microsoft Entra ID'
+title: Configure GoToMeeting for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GoToMeeting.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GoToMeeting so that I can streamline the user management process and ensure that users have the appropriate access to GoToMeeting.
 ---
-# Tutorial: Configure GoToMeeting for automatic user provisioning
+# Configure GoToMeeting for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to show you the steps you need to perform in GoToMeeting and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to GoToMeeting.
+The objective of this article is to show you the steps you need to perform in GoToMeeting and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to GoToMeeting.
 
 > [!WARNING]
-> This provisioning integration is no longer supported. As a result of this, the provisioning functionality of the GoToMeeting application in the Microsoft Entra Enterprise App Gallery will be removed soon. The application's SSO functionality will remain intact. Microsoft is working with GoToMeeting to build a new modernized provisioning integration, but there are no timelines on when this will be completed. 
+> This provisioning integration is no longer supported. As a result of this, the provisioning functionality of the GoToMeeting application in the Microsoft Entra Enterprise App Gallery is removed soon. The application's SSO functionality will remain intact. Microsoft is working with GoToMeeting to build a new modernized provisioning integration, but there are no timelines on when it's completed. 
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 *   A Microsoft Entra tenant.
 *   A GoToMeeting single  sign-on enabled subscription.
@@ -38,9 +38,9 @@ Before configuring and enabling the provisioning service, you need to decide wha
 
 ### Important tips for assigning users to GoToMeeting
 
-*   It is recommended that a single Microsoft Entra user is assigned to GoToMeeting to test the provisioning configuration. Additional users and/or groups may be assigned later.
+*   It's recommended that a single Microsoft Entra user is assigned to GoToMeeting to test the provisioning configuration. Additional users and/or groups may be assigned later.
 
-*   When assigning a user to GoToMeeting, you must select a valid user role. The "Default Access" role does not work for provisioning.
+*   When assigning a user to GoToMeeting, you must select a valid user role. The "Default Access" role doesn't work for provisioning.
 
 ## Enable Automated User Provisioning
 
@@ -52,7 +52,7 @@ This section guides you through connecting your Microsoft Entra ID to GoToMeetin
 ### To configure automatic user account provisioning:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. If you have already configured GoToMeeting for single sign-on, search for your instance of GoToMeeting using the search field. Otherwise, select **Add** and search for **GoToMeeting** in the application gallery. Select GoToMeeting from the search results, and add it to your list of applications.
 
@@ -63,13 +63,13 @@ This section guides you through connecting your Microsoft Entra ID to GoToMeetin
     ![Screenshot of the Provisioning tab for GoToMeeting in Azure portal. Provisioning Mode is set to Automatic and Admin Username, Password and Test Connection are highlighted.](https://user-images.githubusercontent.com/49566142/135871050-9d63861d-7963-47e0-bbdf-0e7c947e0b41.png)
 
 
-1. Under the Admin Credentials section, click **Authorize** and log into GoToMeeting in pop-up windows that appears
+1. Under the Admin Credentials section, select **Authorize** and log into GoToMeeting in pop-up windows that appears
    
 
 1. Select **Test Connection** to ensure Microsoft Entra ID can connect to your GoToMeeting app. If the connection fails, ensure your GoToMeeting account has Team Admin permissions and try the **"Admin Credentials"** step again.
 
 
-1. Click **Save.**
+1. Select **Save.**
 
 1. Under the Mappings section, select **Synchronize Microsoft Entra users to GoToMeeting.**
 
@@ -77,7 +77,7 @@ This section guides you through connecting your Microsoft Entra ID to GoToMeetin
 
 1. To enable the Microsoft Entra provisioning service for GoToMeeting, change the **Provisioning Status** to **On** in the Settings section
 
-1. Click **Save.**
+1. Select **Save.**
 
 It starts the initial synchronization of any users and/or groups assigned to GoToMeeting in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your GoToMeeting app.
 

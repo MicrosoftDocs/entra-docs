@@ -3,11 +3,10 @@ title: Use the Microsoft Entra Verified ID Network
 description: In this article, you learn how to use the Microsoft Entra Verified ID Network to verify credentials.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 12/06/2023
+ms.date: 04/30/2025
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to configure verifying credentials from another party.

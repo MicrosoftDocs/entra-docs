@@ -1,24 +1,21 @@
 ---
-title: Microsoft Entra SSO integration with Descartes
+title: Configure Descartes for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Descartes.
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
-
-
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Descartes so that I can control who has access to Descartes, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Descartes
+# Configure Descartes for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Descartes with Microsoft Entra ID. The Descartes application provides logistics information services to delivery sensitive companies around the world. As an integrated suite it provides modules for various logistics business roles. When you integrate Descartes with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Descartes with Microsoft Entra ID. The Descartes application provides logistics information services to delivery sensitive companies around the world. As an integrated suite it provides modules for various logistics business roles. When you integrate Descartes with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Descartes.
 * Enable your users to be automatically signed-in to Descartes with their Microsoft Entra accounts.
@@ -63,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Descartes** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Descartes** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -90,13 +87,11 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | assignedRoles | user.assignedroles |
     | Group | user.groups |
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
-1. Compose a list of the Microsoft Entra groups you want the Descartes Application use for the Role-based configuration. A list of User Roles Descartes application modules can be found at https://www.gln.com/docs/Descartes_Application_User_Roles.pdf. You can find the Azure Active Direction Group GUIDs please download the Groups from your Azure portal Groups.
-
-    ![Screenshot shows the Microsoft Entra admin center Groups.](media/descartes-tutorial/copy-groups.png "Groups")
+1. Compose a list of the Microsoft Entra groups you want the Descartes Application use for the Role-based configuration. A list of User Roles Descartes application modules can be found at https://www.gln.com/docs/Descartes_Application_User_Roles.pdf. You can find the Azure group GUIDs. Select **Download groups** from **Groups** in the Microsoft Entra admin center.
 
 You can load this CSV file in Excel. Please select the groups that you want map to the Descartes application roles by list the ID in the first column and associating it with the Descartes Application User Role.
 
@@ -126,21 +121,21 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Descartes Sign-on URL where you can initiate the login flow. Alternatively you can use a 'deep link' URL into a specific module of the Descartes application, and you will be redirected to a page to provide your domain qualified username which will lead you to your Microsoft Entra login dialog.
+* Select **Test this application**, this option redirects to Descartes Sign-on URL where you can initiate the login flow. Alternatively you can use a 'deep link' URL into a specific module of the Descartes application, and you be redirected to a page to provide your domain qualified username which will lead you to your Microsoft Entra login dialog.
 
-* Go to Descartes application direct access URL provided and initiate the login flow by specifying your domain qualified username (B.Simon@contoso.com) in the application login window. This will redirect the user automatically to Microsoft Entra ID.
+* Go to Descartes application direct access URL provided and initiate the login flow by specifying your domain qualified username (B.Simon@contoso.com) in the application login window. This redirects the user automatically to Microsoft Entra ID.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Descartes application menu for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Descartes application menu for which you set up the SSO. 
 
-* You can also use Microsoft My Apps to test the application in any mode. When you click the Descartes tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Descartes for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can also use Microsoft My Apps to test the application in any mode. When you select the Descartes tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Descartes for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Descartes you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

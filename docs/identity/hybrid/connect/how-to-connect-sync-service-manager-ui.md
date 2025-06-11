@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect Sync: Synchronization Service Manager UI'
 description: Understand Synchronization Service Manager for Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 5847c33f-aaa2-48f9-abe6-78c4a87a3b7c
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: H1Hack27Feb2017

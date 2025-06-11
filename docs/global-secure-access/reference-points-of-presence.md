@@ -3,11 +3,12 @@ title: Global Secure Access points of presence and IP addresses
 description: Global Secure Access points of presence and IP addresses for Microsoft Entra Internet Access and Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: reference
-ms.date: 07/22/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.custom: references_regions
+ai-usage: ai-assisted
 ---
 # Global Secure Access points of presence and IP addresses
 

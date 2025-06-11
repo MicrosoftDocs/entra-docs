@@ -7,9 +7,9 @@ summary: >
 
 metadata:
   author: Dickson-Mwendia
-  manager: CelesteDG
+  manager: dougeby
   ms.author: dmwendia
-  ms.date: 02/02/2024
+  ms.date: 02/11/2025
   ms.service: identity-platform  
   ms.topic: landing-page
 
@@ -22,8 +22,6 @@ landingContent:
         links:
           - text: Node.js - Electron
             url: quickstart-desktop-app-nodejs-electron-sign-in.md
-          - text: Universal Windows Platform (UWP)
-            url: quickstart-desktop-app-uwp-sign-in.md
           - text: Windows Presentation Foundation (WPF)
             url: quickstart-desktop-app-wpf-sign-in.md
   - title: "Learn by building"
@@ -32,8 +30,6 @@ landingContent:
         links:
           - text: Node.js - Electron
             url: tutorial-v2-nodejs-desktop.md
-          - text: Universal Windows Platform (UWP)
-            url: tutorial-v2-windows-uwp.md
           - text: Windows Presentation Foundation (WPF)
             url: tutorial-v2-windows-desktop.md
   - title: "Scenario in depth"

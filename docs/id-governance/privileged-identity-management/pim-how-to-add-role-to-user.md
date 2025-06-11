@@ -1,17 +1,15 @@
 ---
 title: Assign Microsoft Entra roles in PIM
 description: Learn how to assign Microsoft Entra roles in Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 03/04/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-
-ms.custom: subject-rbac-steps
+ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Assign Microsoft Entra roles in Privileged Identity Management
@@ -33,7 +31,7 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles**.
 
 1. Select **Roles** to see the list of roles for Microsoft Entra permissions.
 
@@ -53,13 +51,13 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
     - **Eligible** assignments require the member of the role to perform an action to use the role. Actions might include performing a multifactor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers.
 
-    - **Active** assignments don't require the member to perform any action to use the role. Members assigned as active have the privileges assigned to the role at all times.
+    - **Active** assignments don't require the member to perform any action to use the role. Members assigned as active always have the privileges assigned to the role.
 
 1. To specify a specific assignment duration, add a start and end date and time boxes. When finished, select **Assign** to create the new role assignment.
 
     - **Permanent** assignments have no expiration date. Use this option for permanent workers who frequently need the role permissions.
 
-    - **Time-bound** assignments will expire at the end of a specified period. Use this option with temporary or contract workers, for example, whose project end date and time are known.
+    - **Time-bound** assignments expire at the end of a specified period. Use this option with temporary or contract workers, for example, whose project end date and time are known.
 
     :::image type="content" source="./media/pim-how-to-add-role-to-user/start-and-end-dates.png" alt-text="Screenshot showing Memberships settings - date and time.":::
 
@@ -69,11 +67,11 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
 ## Assign a role with restricted scope
 
-For certain roles, the scope of the granted permissions can be restricted to a single admin unit, service principal, or application. This procedure is an example if assigning a role that has the scope of an administrative unit. For a list of roles that support scope via administrative unit, see [Assign scoped roles to an administrative unit](~/identity/role-based-access-control/admin-units-assign-roles.md). This feature is currently being rolled out to Microsoft Entra organizations.
+For certain roles, the scope of the granted permissions can be restricted to a single admin unit, service principal, or application. This procedure is an example if assigning a role that has the scope of an administrative unit. For a list of roles that support scope via administrative unit, see [Assign roles with administrative unit scope](../../identity/role-based-access-control/manage-roles-portal.md). This feature is currently being rolled out to Microsoft Entra organizations.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select the **User Administrator**.
 
@@ -99,7 +97,7 @@ For permissions required to use the PIM API, see [Understand the Privileged Iden
 
 ### Eligible with no end date
 
-The following is a sample HTTP request to create an eligible assignment with no end date. For details on the API commands including request samples in languages such as C# and JavaScript, see [Create roleEligibilityScheduleRequests](/graph/api/rbacapplication-post-roleeligibilityschedulerequests).
+This example shows an HTTP request to create an eligible assignment with no end date. For details on the API commands including request samples in languages such as C# and JavaScript, see [Create roleEligibilityScheduleRequests](/graph/api/rbacapplication-post-roleeligibilityschedulerequests).
 
 #### HTTP request
 
@@ -124,7 +122,7 @@ Content-Type: application/json
 
 #### HTTP response
 
-The following is an example of the response. The response object shown here might be shortened for readability.
+This example shows a response. The response object shown here might be shortened for readability.
 
 ````HTTP
 HTTP/1.1 201 Created
@@ -172,7 +170,7 @@ Content-Type: application/json
 
 ### Active and time-bound
 
-The following is a sample HTTP request to create an active assignment that's time-bound. For details on the API commands including request samples in languages such as C# and JavaScript, see [Create roleAssignmentScheduleRequests](/graph/api/rbacapplication-post-roleassignmentschedulerequests).
+The example shows an HTTP request to create a time bound active assignment. For details on the API commands including request samples in languages such as C# and JavaScript, see [Create roleAssignmentScheduleRequests](/graph/api/rbacapplication-post-roleassignmentschedulerequests).
 
 #### HTTP request
 
@@ -197,7 +195,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
 
 #### HTTP response
 
-The following is an example of the response. The response object shown here might be shortened for readability.
+This example shows the response. The response object shown here might be shortened for readability.
 
 ````HTTP
 {
@@ -246,7 +244,7 @@ Follow these steps to update or remove an existing role assignment. **Microsoft 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles**. 
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles**. 
 
 1. Select **Roles** to see the list of roles for Microsoft Entra ID.
 
@@ -260,7 +258,7 @@ Follow these steps to update or remove an existing role assignment. **Microsoft 
 
 ## Remove eligible assignment via Microsoft Graph API
 
-The following is a sample HTTP request to revoke an eligible assignment to a role from a principal. For details on the API commands including request samples in languages such as C# and JavaScript, see [Create roleEligibilityScheduleRequests](/graph/api/rbacapplication-post-roleeligibilityschedulerequests).
+This example shows an HTTP request to revoke an eligible assignment to a role from a principal. For details on the API commands including request samples in languages such as C# and JavaScript, see [Create roleEligibilityScheduleRequests](/graph/api/rbacapplication-post-roleeligibilityschedulerequests).
 
 ### Request
 

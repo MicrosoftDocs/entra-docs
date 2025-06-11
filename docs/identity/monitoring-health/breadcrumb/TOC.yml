@@ -9,3 +9,9 @@
     - name: Monitoring and health
       tocHref: /graph/
       topicHref: /entra/identity/monitoring-health/
+    - name: Monitoring and health
+      tocHref: /entra/identity/conditional-access/
+      topicHref: /entra/identity/monitoring-health/
+    - name: Monitoring and health
+      tocHref: /entra/identity/app-provisioning/
+      topicHref: /entra/identity/monitoring-health/

@@ -2,12 +2,12 @@
 title: include file
 description: include file
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: include
-ms.date: 08/28/2023
+ms.date: 01/31/2025
 ms.author: barclayn
-ms.custom: include file,licensing
+ms.custom: include file,licensing, sfi-ga-nochange
 ---
 
 The following table lists features that are available for authentication in the various versions of Microsoft Entra ID. Plan out your needs for securing user sign-in, then determine which approach meets those requirements. For example, although Microsoft Entra ID Free provides security defaults with multifactor authentication, only Microsoft Authenticator can be used for the authentication prompt, including text and voice calls. This approach might be a limitation if you can't make sure that Authenticator is installed on a user's personal device.

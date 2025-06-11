@@ -2,12 +2,13 @@
 title: Reprocess assignments for an access package in entitlement management
 description: Learn how to reprocess assignments for an access package in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator or access package manager, I want detailed information about how I can reprocess assignments for an access package in the event of a partial delivery, so that requestors have all of the resources they need to perform their job.
 ---
 # Reprocess assignments for an access package in entitlement management
@@ -29,14 +30,13 @@ To use entitlement management and assign users to access packages, you must have
 
 ## Open an existing access package and reprocess user assignments
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If you have users who are in the "Delivered" state but don't have access to resources that are a part of the access package, you'll likely need to reprocess the assignments to reassign those users to the access package's resources. Follow these steps to reprocess assignments for an existing access package:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, Access package manager, and Access package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open the access package with the user assignment you want to reprocess.
 

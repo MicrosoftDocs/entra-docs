@@ -8,9 +8,9 @@ ms.subservice: devices
 ms.topic: reference
 ms.date: 07/10/2020
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: spunukol
 
 ---

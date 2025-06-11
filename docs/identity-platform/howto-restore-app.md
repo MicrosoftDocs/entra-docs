@@ -6,7 +6,7 @@ manager: dastrock
 ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
-ms.reviewer: arcrowe
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -17,7 +17,7 @@ ms.topic: how-to
 
 After you delete an app registration, the app remains in a suspended state for 30 days. During that 30-day window, the app registration can be restored, along with all its properties. After that 30-day window passes, app registrations can't be restored, and the permanent deletion process may be automatically started. This functionality only applies to applications associated to a directory. It isn't available for applications from a personal Microsoft account, which can't be restored.
 
-You can view your deleted applications, restore a deleted application, or permanently delete an application using the **Identity** > **Applications** > **App registrations** in the Microsoft Entra admin center.
+You can view your deleted applications, restore a deleted application, or permanently delete an application using the **Entra ID** > **App registrations** in the Microsoft Entra admin center.
 
 Neither you nor Microsoft customer support can restore a permanently deleted application or an application deleted more than 30 days ago.
 
@@ -36,14 +36,13 @@ You must have one of the following roles to restore applications.
 
 ## View your deleted applications
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can see all the applications in a soft deleted state.  Only applications deleted less than 30 days ago can be restored.
 
 To view your restorable applications:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using one of the roles listed in the prerequisites.
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select the **Deleted applications** tab.
+1. Browse to **Entra ID** > **App registrations**, and then select the **Deleted applications** tab.
 
 Review the list of applications. Only applications that have been deleted in the past 30 days are available to restore. If using the App registrations search preview, you can filter by the 'Deleted date' column to see only these applications.
 

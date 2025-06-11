@@ -1,34 +1,33 @@
 ---
-title: Tutorial - Create a forest trust in Microsoft Entra Domain Services | Microsoft Docs
+title: Tutorial - Create a forest trust in Microsoft Entra Domain Services (Preview) | Microsoft Learn
 description: Learn how to create a one-way outbound forest to an on-premises AD DS domain in the Microsoft Entra admin center for Microsoft Entra Domain Services
 services: active-directory-ds
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/25/2024
+ms.date: 02/19/2025
 ms.author: justinha
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create a one-way outbound forest from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest to provide authentication and resource access between forests.
 ---
 
-# Tutorial: Create a two-way forest trust in Microsoft Entra Domain Services with an on-premises domain 
+# Tutorial: Create a two-way forest trust in Microsoft Entra Domain Services with an on-premises domain (Preview)
 
-You can create a forest trust between Microsoft Entra Domain Services and on-premises AD DS environments. The forest trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. A forest trust can help users access resources in scenarios such as:
+You can create a forest trust between Microsoft Entra Domain Services and on-premises AD DS environments. The forest trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain, or vice versa. A forest trust can help users access resources in scenarios such as:
 
 - Environments where you can't synchronize password hashes, or where users exclusively sign in using smart cards and don't know their password.
 - Hybrid scenarios that require access to on-premises domains.
 
-You can choose from three possible directions when you create a forest trust, depending on how users need to access resources. Domain Services only supports forest trusts. An external trust to a child domian on-premises isn't supported. 
+You can choose from three possible directions when you create a forest trust, depending on how users need to access resources. Domain Services only supports forest trusts. An external trust to a child domain on-premises isn't supported. 
 
 Trust direction | User access
 ----------------|------------
-Two-way | Allows users in both the managed domain and the on-premises domain to access resources in either domain. 
+Two-way (preview) | Allows users in both the managed domain and the on-premises domain to access resources in either domain. 
 One-way outgoing | Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. 
-One-way incoming | Allows users in the managed domain to access resources in the on-premises domain. 
+One-way incoming (preview) | Allows users in the managed domain to access resources in the on-premises domain. 
 
 ![Diagram of forest trust between Domain Services and an on-premises domain.](./media/tutorial-create-forest-trust/forest-trust-relationship.png)
 

@@ -5,7 +5,7 @@ description: Guidance to move from MFA Server on-premises to Microsoft Entra mul
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 03/04/2025
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -243,7 +243,7 @@ We recommend having your users register for combined security information, which
 Microsoft provides communication templates that you can provide to your users to guide them through the combined registration process. 
 These include templates for email, posters, table tents, and various other assets. Users register their information at `https://aka.ms/mysecurityinfo`, which takes them to the combined security registration screen. 
 
-We recommend that you [secure the security registration process with Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
+We recommend that you [secure the security registration process with Conditional Access](~/identity/conditional-access/policy-all-users-security-info-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
 > [!NOTE]
 > Users who MUST register their combined security information from a non-trusted location or device can be issued a Temporary Access Pass or alternatively, temporarily excluded from the policy.
 
@@ -265,7 +265,7 @@ We don't recommend that you reuse groups that are used for security. If you're u
 
 ## Monitoring
 
-Many [Azure Monitor workbooks](~/identity/monitoring-health/howto-use-workbooks.md) and **Usage & Insights** reports are available to monitor your deployment. 
+Many [Azure Monitor workbooks](~/identity/monitoring-health/howto-use-workbooks.md) and **Usage & insights** reports are available to monitor your deployment. 
 These reports can be found in Microsoft Entra ID in the navigation pane under **Monitoring**. 
 
 ### Monitoring Staged Rollout
@@ -282,7 +282,7 @@ This workbook can be used to monitor the following activities:
 ### Monitoring Microsoft Entra multifactor authentication registration
 Microsoft Entra multifactor authentication registration can be monitored using the [Authentication methods usage & insights report](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/AuthMethodsActivity/menuId/AuthMethodsActivity). This report can be found in Microsoft Entra ID. Select **Monitoring**, then select **Usage & insights**. 
 
-![Screenshot of how to find the Usage and Insights report.](media/how-to-migrate-mfa-server-to-mfa-user-authentication/usage-report.png)
+![Screenshot of how to find the Usage and insights report.](media/how-to-migrate-mfa-server-to-mfa-user-authentication/usage-report.png)
 
 In Usage & insights, select **Authentication methods**. 
 

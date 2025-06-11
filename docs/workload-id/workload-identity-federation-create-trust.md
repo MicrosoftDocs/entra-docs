@@ -1,32 +1,31 @@
 ---
 title: Create a trust relationship between an app and an external identity provider
-description: Set up a trust relationship between an app in Microsoft Entra ID and an external identity provider.  This allows a software workload outside of Azure to access Microsoft Entra protected resources without using secrets or certificates.
-
-author: rwike77
+description: Set up a trust relationship between an app in Microsoft Entra ID and an external identity provider. This allows a software workload outside of Azure to access Microsoft Entra protected resources without using secrets or certificates.
+author: SHERMANOUKO
 manager: CelesteDG
-
 ms.service: entra-workload-id
-
 ms.topic: how-to
-ms.date: 09/15/2023
-ms.author: ryanwi
-ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell
+ms.date: 12/13/2024
+ms.author: shermanouko
 ms.reviewer: shkhalid, udayh, vakarand
 zone_pivot_groups: identity-wif-apps-methods
+ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell, sfi-image-nochange
 #Customer intent: As an application developer, I want to configure a federated credential on an app registration so I can create a trust relationship with an external identity provider and use workload identity federation to access Microsoft Entra protected resources without managing secrets.
 ---
 
 # Configure an app to trust an external identity provider
 
-This article describes how to manage a federated identity credential on an application in Microsoft Entra ID.  The federated identity credential creates a trust relationship between an application and an external identity provider (IdP).
+This article describes how to manage a federated identity credential on an application in Microsoft Entra ID. The federated identity credential creates a trust relationship between an application and an external identity provider (IdP).
 
-You can then configure an external software workload to exchange a token from the external IdP for an access token from Microsoft identity platform. The external workload can access Microsoft Entra protected resources without needing to manage secrets (in supported scenarios).  To learn more about the token exchange workflow, read about [workload identity federation](workload-identity-federation.md).
+You can then configure an external software workload to exchange a token from the external IdP for an access token from Microsoft identity platform. The external workload can access Microsoft Entra protected resources without needing to manage secrets (in supported scenarios). To learn more about the token exchange workflow, read about [workload identity federation](workload-identity-federation.md).
 
 In this article, you learn how to create, list, and delete federated identity credentials on an application in Microsoft Entra ID.
 
 ## Important considerations and restrictions
 
-To create, update, or delete a federated identity credential, the account performing the action must have the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or Application Owner role.  The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
+
+To create, update, or delete a federated identity credential, the account performing the action must be the owner of the application, or have one of these Entra roles: [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator), or [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). The [microsoft.directory/applications/credentials/update permission](~/identity/role-based-access-control/custom-available-permissions.md#microsoftdirectoryapplicationscredentialsupdate) is required to update a federated identity credential.
+
 
 [!INCLUDE [federated credential configuration](./includes/federated-credential-configuration-considerations.md)]
 
@@ -35,11 +34,10 @@ To learn more about supported regions, time to propagate federated credential up
 ::: zone pivot="identity-wif-apps-methods-azp"
 
 ## Prerequisites
-[Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
 
-Find the object ID of the app (not the application (client) ID), which you need in the following steps.  You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of app registrations and select your app registration.  In **Overview**->**Essentials**, find the **Object ID**.
-
-Get the *subject* and *issuer* information for your external IdP and software workload, which you need in the following steps.
+- [Create an app registration](~/identity-platform/quickstart-register-app.md) or [managed identity](/entra/identity/managed-identities-azure-resources/overview) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your external software workload.
+- Find the object ID of the app (not the application (client) ID), which you need in the following steps. You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com). Go to the list of app registrations and select your app registration. In **Overview**, you can find the **Object ID**.
+- Get the *subject* and *issuer* information for your external IdP and software workload, which you need in the following steps.
 
 ## Configure a federated identity credential on an app
 
@@ -47,7 +45,7 @@ Get the *subject* and *issuer* information for your external IdP and software wo
 
 To add a federated identity for GitHub actions, follow these steps:
 
-1. Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com).  Select **Certificates & secrets** in the left nav pane, select the **Federated credentials** tab, and select **Add credential**.
+1. Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com). Select **Certificates & secrets** in the left nav pane, select the **Federated credentials** tab, and select **Add credential**.
 
 1. In the **Federated credential scenario** drop-down box, select **GitHub actions deploying Azure resources**.
 
@@ -72,8 +70,6 @@ Use the following values from your Microsoft Entra application registration for 
     The following screenshot demonstrates how to copy the application ID and tenant ID.
 
     ![Screenshot that demonstrates how to copy the application ID and tenant ID from Microsoft Entra admin center.](./media/workload-identity-federation-create-trust/copy-client-id.png)
-
-- `AZURE_SUBSCRIPTION_ID` your subscription ID. To get the subscription ID, open **Subscriptions** in [Azure portal](https://portal.azure.com) and find your subscription. Then, copy the **Subscription ID**.
 
 #### Entity type examples
 
@@ -138,7 +134,7 @@ For a workflow triggered by a pull request event, specify an **Entity type** of 
 
 ### Kubernetes
 
-Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com).  Select **Certificates & secrets** in the left nav pane, select the **Federated credentials** tab, and select **Add credential**.
+Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com). Select **Certificates & secrets** in the left nav pane, select the **Federated credentials** tab, and select **Add credential**.
 
 Select the **Kubernetes accessing Azure resources** scenario from the dropdown menu.
 
@@ -151,25 +147,33 @@ Fill in the **Cluster issuer URL**, **Namespace**, **Service account name**, and
 
 ### Other identity providers
 
-Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com).  Select **Certificates & secrets** in the left nav pane, select the **Federated credentials** tab, and select **Add credential**.
+Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com). Select **Certificates & secrets** in the left nav pane, select the **Federated credentials** tab, and select **Add credential**.
 
 Select the **Other issuer** scenario from the dropdown menu.
 
 Specify the following fields (using a software workload running in Google Cloud as an example):
 
 - **Name** is the name of the federated credential, which can't be changed later.
-- **Subject identifier**: must match the `sub` claim in the token issued by the external identity provider.  In this example using Google Cloud, *subject* is the Unique ID of the service account you plan to use.
-- **Issuer**: must match the `iss` claim in the token issued by the external identity provider. A URL that complies with the OIDC Discovery spec. Microsoft Entra ID uses this issuer URL to fetch the keys that are necessary to validate the token. For Google Cloud, the *issuer* is "https://accounts.google.com".
+- **Subject identifier**: must match the `sub` claim in the token issued by the external identity provider. In this example using Google Cloud, *subject* is the Unique ID of the service account you plan to use.
+- **Issuer**: must match the `iss` claim in the token issued by the external identity provider. A URL that complies with the OIDC Discovery spec. Microsoft Entra ID uses this issuer URL to fetch the keys that are necessary to validate the token. For Google Cloud, the *issuer* is `https://accounts.google.com`.
 
 ## List federated identity credentials on an app
 
-Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com).  Select **Certificates & secrets** in the left nav pane and select the **Federated credentials** tab.  The federated credentials that are configured on your app are listed.
+Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com). Select **Certificates & secrets** in the left nav pane and select the **Federated credentials** tab. The federated credentials that are configured on your app are listed.
 
 ## Delete a federated identity credential from an app
 
-Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com).  Select **Certificates & secrets** in the left nav pane and select the **Federated credentials** tab.  The federated credentials that are configured on your app are listed.
+Find your app registration in the app registrations experience of the [Microsoft Entra admin center](https://entra.microsoft.com). Select **Certificates & secrets** in the left nav pane and select the **Federated credentials** tab. The federated credentials that are configured on your app are listed.
 
 To delete a federated identity credential, select the **Delete** icon for the credential.
+
+## Set up a Flexible Federated identity credential (preview)
+
+1. Navigate to Microsoft Entra ID and select the application where you want to configure the federated identity credential.
+1. In the left-hand navigation pane, select **Certificates & secrets**.
+1. Under the **Federated credentials** tab, select **+ Add credential**.
+1. In the **Add a credential** window that appears, from the dropdown menu next to **Federated credential scenario**, select **Other issuer**.
+1. In **Value** enter the claim matching expression you want to use.
 
 ::: zone-end
 
@@ -181,8 +185,8 @@ To delete a federated identity credential, select the **Delete** icon for the cr
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
 
-- [Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
-- Find the object ID, app (client) ID, or identifier URI of the app, which you need in the following steps.  You can find these values in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of registered applications and select your app registration.  In **Overview**->**Essentials**, get the **Object ID**, **Application (client) ID**, or **Application ID URI** value, which you need in the following steps.
+- [Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your external software workload.
+- Find the object ID, app (client) ID, or identifier URI of the app, which you need in the following steps. You can find these values in the [Microsoft Entra admin center](https://entra.microsoft.com). Go to the list of registered applications and select your app registration. In **Overview**->**Essentials**, get the **Object ID**, **Application (client) ID**, or **Application ID URI** value, which you need in the following steps.
 - Get the *subject* and *issuer* information for your external IdP and software workload, which you need in the following steps.
 
 ## Configure a federated identity credential on an app
@@ -195,11 +199,11 @@ The `id` parameter specifies the identifier URI, application ID, or object ID of
 
 The *name* specifies the name of your federated identity credential.
 
-The *issuer* identifies the path to the GitHub OIDC provider: `https://token.actions.githubusercontent.com/`. This issuer will become trusted by your Azure application.
+The *issuer* identifies the path to the GitHub OIDC provider: `https://token.actions.githubusercontent.com/`. This issuer becomes trusted by your Azure application.
 
-*subject* identifies the GitHub organization, repo, and environment for your GitHub Actions workflow.  When the GitHub Actions workflow requests Microsoft identity platform to exchange a GitHub token for an access token, the values in the federated identity credential are checked against the provided GitHub token. Before Azure will grant an access token, the request must match the conditions defined here.
+The *subject* identifies the GitHub organization, repo, and environment for your GitHub Actions workflow. When the GitHub Actions workflow requests Microsoft identity platform to exchange a GitHub token for an access token, the values in the federated identity credential are checked against the provided GitHub token. Before Azure grants an access token, the request must match the conditions defined here.
 - For Jobs tied to an environment: `repo:< Organization/Repository >:environment:< Name >`
-- For Jobs not tied to an environment, include the ref path for branch/tag based on the ref path used for triggering the workflow: `repo:< Organization/Repository >:ref:< ref path>`.  For example, `repo:n-username/ node_express:ref:refs/heads/my-branch` or `repo:n-username/ node_express:ref:refs/tags/my-tag`.
+- For Jobs not tied to an environment, include the ref path for branch/tag based on the ref path used for triggering the workflow: `repo:< Organization/Repository >:ref:< ref path>`. For example, `repo:n-username/ node_express:ref:refs/heads/my-branch` or `repo:n-username/ node_express:ref:refs/tags/my-tag`.
 - For workflows triggered by a pull request event: `repo:< Organization/Repository >:pull-request`.
 
 ```azurecli-interactive
@@ -218,13 +222,13 @@ az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 
 
 ### Kubernetes example
 
-*issuer* is your service account issuer URL (the [OIDC issuer URL](/azure/aks/use-oidc-issuer) for the managed cluster or the [OIDC Issuer URL](https://azure.github.io/azure-workload-identity/docs/installation/self-managed-clusters/oidc-issuer.html) for a self-managed cluster).
+The *issuer* is your service account issuer URL (the [OIDC issuer URL](/azure/aks/use-oidc-issuer) for the managed cluster or the [OIDC Issuer URL](https://azure.github.io/azure-workload-identity/docs/installation/self-managed-clusters/oidc-issuer.html) for a self-managed cluster).
 
-*subject* is the subject name in the tokens issued to the service account. Kubernetes uses the following format for subject names: `system:serviceaccount:<SERVICE_ACCOUNT_NAMESPACE>:<SERVICE_ACCOUNT_NAME>`.
+The *subject* is the subject name in the tokens issued to the service account. Kubernetes uses the following format for subject names: `system:serviceaccount:<SERVICE_ACCOUNT_NAMESPACE>:<SERVICE_ACCOUNT_NAME>`.
 
-*name* is the name of the federated credential, which can't be changed later.
+The *name* is the name of the federated credential, which can't be changed later.
 
-*audiences* lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
+The *audiences* lists the audiences that can appear in the external token. This field is mandatory. The recommended value is `api://AzureADTokenExchange`.
 
 ```azurecli-interactive
 az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 --parameters credential.json
@@ -242,17 +246,13 @@ az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 
 
 ### Other identity providers example
 
-You can configure a federated identity credential on an app and create a trust relationship with other external identity providers.  The following example uses a software workload running in Google Cloud as an example:
+You can configure a federated identity credential on an app and create a trust relationship with other external identity providers. The following example uses a software workload running in Google Cloud as an example:
 
-*name* is the name of the federated credential, which can't be changed later.
-
-*id*: the object ID, application (client) ID, or identifier URI of the app.
-
-*subject*: must match the `sub` claim in the token issued by the external identity provider.  In this example using Google Cloud, *subject* is the Unique ID of the service account you plan to use.
-
-*issuer*: must match the `iss` claim in the token issued by the external identity provider. A URL that complies with the OIDC Discovery spec. Microsoft Entra ID uses this issuer URL to fetch the keys that are necessary to validate the token. For Google Cloud, the *issuer* is "https://accounts.google.com".
-
-*audiences*: lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
+- `name` is the name of the federated credential, which can't be changed later.
+- `id`: the object ID, application (client) ID, or identifier URI of the app.
+- `subject`: must match the `sub` claim in the token issued by the external identity provider. In this example using Google Cloud, *subject* is the Unique ID of the service account you plan to use.
+- `issuer`: must match the `iss` claim in the token issued by the external identity provider. A URL that complies with the OIDC Discovery spec. Microsoft Entra ID uses this issuer URL to fetch the keys that are necessary to validate the token. For Google Cloud, the *issuer* is `https://accounts.google.com`.
+- `audiences`: lists the audiences that can appear in the external token. This field is mandatory. The recommended value is "api://AzureADTokenExchange".
 
 ```azurecli-interactive
 az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 --parameters credential.json
@@ -272,7 +272,7 @@ az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 
 
 Run the [az ad app federated-credential list](/cli/azure/ad/app/federated-credential) command to list the federated identity credentials on your app.
 
-The *id* parameter specifies the identifier URI, application ID, or object ID of the application.
+The `id` parameter specifies the identifier URI, application ID, or object ID of the application.
 
 ```azurecli-interactive
 az ad app federated-credential list --id 00001111-aaaa-2222-bbbb-3333cccc4444
@@ -282,9 +282,9 @@ az ad app federated-credential list --id 00001111-aaaa-2222-bbbb-3333cccc4444
 
 Run the [az ad app federated-credential show](/cli/azure/ad/app/federated-credential) command to get a federated identity credential on your app.
 
-The *id* parameter specifies the identifier URI, application ID, or object ID of the application.
+The `id` parameter specifies the identifier URI, application ID, or object ID of the application.
 
-The *federated-credential-id* specifies the ID or name of the federated identity credential.
+The `federated-credential-id` specifies the ID or name of the federated identity credential.
 
 ```azurecli-interactive
 az ad app federated-credential show --id 00001111-aaaa-2222-bbbb-3333cccc4444 --federated-credential-id c79f8feb-a9db-4090-85f9-90d820caa0eb
@@ -294,9 +294,9 @@ az ad app federated-credential show --id 00001111-aaaa-2222-bbbb-3333cccc4444 --
 
 Run the [az ad app federated-credential delete](/cli/azure/ad/app/federated-credential) command to remove a federated identity credential from your app.
 
-The *id* parameter specifies the identifier URI, application ID, or object ID of the application.
+The `id` parameter specifies the identifier URI, application ID, or object ID of the application.
 
-The *federated-credential-id* specifies the ID or name of the federated identity credential.
+The `federated-credential-id` specifies the ID or name of the federated identity credential.
 
 ```azurecli-interactive
 az ad app federated-credential delete --id 00001111-aaaa-2222-bbbb-3333cccc4444 --federated-credential-id c79f8feb-a9db-4090-85f9-90d820caa0eb
@@ -311,8 +311,8 @@ az ad app federated-credential delete --id 00001111-aaaa-2222-bbbb-3333cccc4444 
 - To run the example scripts, you have two options:
   - Use [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open by using the **Try It** button in the upper-right corner of code blocks.
   - Run scripts locally with Azure PowerShell, as described in the next section.
-- [Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
-- Find the object ID of the app (not the application (client) ID), which you need in the following steps.  You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of registered applications and select your app registration.  In **Overview**->**Essentials**, find the **Object ID**.
+- [Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your external software workload.
+- Find the object ID of the app (not the application (client) ID), which you need in the following steps. You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com). Go to the list of registered applications and select your app registration. In **Overview**->**Essentials**, find the **Object ID**.
 - Get the *subject* and *issuer* information for your external IdP and software workload, which you need in the following steps.
 
 ### Configure Azure PowerShell locally
@@ -349,12 +349,12 @@ Run the [New-AzADAppFederatedCredential](/powershell/module/az.resources/new-aza
 
 - *ApplicationObjectId*: the object ID of the app (not the application (client) ID) you previously registered in Microsoft Entra ID.
 - *Issuer* identifies GitHub as the external token issuer.
-- *Subject* identifies the GitHub organization, repo, and environment for your GitHub Actions workflow.  When the GitHub Actions workflow requests Microsoft identity platform to exchange a GitHub token for an access token, the values in the federated identity credential are checked against the provided GitHub token.
+- *Subject* identifies the GitHub organization, repo, and environment for your GitHub Actions workflow. When the GitHub Actions workflow requests Microsoft identity platform to exchange a GitHub token for an access token, the values in the federated identity credential are checked against the provided GitHub token.
     - For Jobs tied to an environment: `repo:< Organization/Repository >:environment:< Name >`
-    - For Jobs not tied to an environment, include the ref path for branch/tag based on the ref path used for triggering the workflow: `repo:< Organization/Repository >:ref:< ref path>`.  For example, `repo:n-username/ node_express:ref:refs/heads/my-branch` or `repo:n-username/ node_express:ref:refs/tags/my-tag`.
+    - For Jobs not tied to an environment, include the ref path for branch/tag based on the ref path used for triggering the workflow: `repo:< Organization/Repository >:ref:< ref path>`. For example, `repo:n-username/ node_express:ref:refs/heads/my-branch` or `repo:n-username/ node_express:ref:refs/tags/my-tag`.
     - For workflows triggered by a pull request event: `repo:< Organization/Repository >:pull-request`.
 - *Name* is the name of the federated credential, which can't be changed later.
-- *Audience* lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
+- *Audience* lists the audiences that can appear in the external token. This field is mandatory. The recommended value is `api://AzureADTokenExchange`.
 
 ```azurepowershell-interactive
 New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api://AzureADTokenExchange -Issuer 'https://token.actions.githubusercontent.com/' -Name 'GitHub-Actions-Test' -Subject 'repo:octo-org/octo-repo:environment:Production'
@@ -378,8 +378,8 @@ Specify the following parameters (using a software workload running in Google Cl
 
 - *ObjectID*: the object ID of the app (not the application (client) ID) you previously registered in Microsoft Entra ID.
 - *Name* is the name of the federated credential, which can't be changed later.
-- *Subject*: must match the `sub` claim in the token issued by the external identity provider.  In this example using Google Cloud, *subject* is the Unique ID of the service account you plan to use.
-- *Issuer*: must match the `iss` claim in the token issued by the external identity provider. A URL that complies with the OIDC Discovery spec. Microsoft Entra ID uses this issuer URL to fetch the keys that are necessary to validate the token. For Google Cloud, the *issuer* is "https://accounts.google.com".
+- *Subject*: must match the `sub` claim in the token issued by the external identity provider. In this example using Google Cloud, *subject* is the Unique ID of the service account you plan to use.
+- *Issuer*: must match the `iss` claim in the token issued by the external identity provider. A URL that complies with the OIDC Discovery spec. Microsoft Entra ID uses this issuer URL to fetch the keys that are necessary to validate the token. For Google Cloud, the *issuer* is `https://accounts.google.com`.
 - *Audiences*: must match the `aud` claim in the external token. For security reasons, you should pick a value that is unique for tokens meant for Microsoft Entra ID. The recommended value is "api://AzureADTokenExchange".
 
 ```azurepowershell-interactive
@@ -415,19 +415,19 @@ Remove-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -FederatedCr
 ::: zone pivot="identity-wif-apps-methods-rest"
 
 ## Prerequisites
-[Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
+[Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID. Grant your app access to the Azure resources targeted by your external software workload.
 
-Find the object ID of the app (not the application (client) ID), which you need in the following steps.  You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of registered applications and select your app registration.  In **Overview**->**Essentials**, find the **Object ID**.
+Find the object ID of the app (not the application (client) ID), which you need in the following steps. You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com). Go to the list of registered applications and select your app registration. In **Overview**->**Essentials**, find the **Object ID**.
 
 Get the *subject* and *issuer* information for your external IdP and software workload, which you need in the following steps.
 
-The Microsoft Graph endpoint (`https://graph.microsoft.com`) exposes REST APIs to create, update, delete [federatedIdentityCredentials](/graph/api/resources/federatedidentitycredential) on applications. Launch [Azure Cloud Shell](https://portal.azure.com/#cloudshell/) and sign in to your tenant in order to run Microsoft Graph commands from AZ CLI.
+The Microsoft Graph endpoint (`https://graph.microsoft.com`) exposes REST APIs to create, update, delete [federatedIdentityCredentials](/graph/api/resources/federatedidentitycredential) on applications. Launch [Azure Cloud Shell](https://portal.azure.com/#cloudshell/) and sign in to your tenant to run Microsoft Graph commands from AZ CLI.
 
 ## Configure a federated identity credential on an app
 
 ### GitHub Actions
 
-Run the following method to [create a new federated identity credential](/graph/api/application-post-federatedidentitycredentials) on your app (specified by the object ID of the app).  The *issuer* identifies GitHub as the external token issuer.  *subject* identifies the GitHub organization, repo, and environment for your GitHub Actions workflow.  When the GitHub Actions workflow requests Microsoft identity platform to exchange a GitHub token for an access token, the values in the federated identity credential are checked against the provided GitHub token.
+Run the following method to [create a new federated identity credential](/graph/api/application-post-federatedidentitycredentials) on your app (specified by the object ID of the app). The `issuer` identifies GitHub as the external token issuer. `subject` identifies the GitHub organization, repo, and environment for your GitHub Actions workflow. When the GitHub Actions workflow requests Microsoft identity platform to exchange a GitHub token for an access token, the values in the federated identity credential are checked against the provided GitHub token.
 
 ```azurecli
 az rest --method POST --uri 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials' --body '{"name":"Testing","issuer":"https://token.actions.githubusercontent.com","subject":"repo:octo-org/octo-repo:environment:Production","description":"Testing","audiences":["api://AzureADTokenExchange"]}'
@@ -448,25 +448,23 @@ And you get the response:
 }
 ```
 
-*name*: The name of your Azure application.
-
-*issuer*: The path to the GitHub OIDC provider: `https://token.actions.githubusercontent.com`. This issuer will become trusted by your Azure application.
-
-*subject*: Before Azure will grant an access token, the request must match the conditions defined here.
-- For Jobs tied to an environment: `repo:< Organization/Repository >:environment:< Name >`
-- For Jobs not tied to an environment, include the ref path for branch/tag based on the ref path used for triggering the workflow: `repo:< Organization/Repository >:ref:< ref path>`.  For example, `repo:n-username/ node_express:ref:refs/heads/my-branch` or `repo:n-username/ node_express:ref:refs/tags/my-tag`.
-- For workflows triggered by a pull request event: `repo:< Organization/Repository >:pull-request`.
-
-*audiences* lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
+In the snippet, the parameters are as follows:
+- `name`: The name of your Azure application.
+- `issuer`: The path to the GitHub OIDC provider: `https://token.actions.githubusercontent.com`. This issuer becomes trusted by your Azure application.
+- `subject`: Before Azure grants an access token, the request must match the conditions defined here.
+    - For Jobs tied to an environment: `repo:< Organization/Repository >:environment:< Name >`
+    - For Jobs not tied to an environment, include the ref path for branch/tag based on the ref path used for triggering the workflow: `repo:< Organization/Repository >:ref:< ref path>`. For example, `repo:n-username/ node_express:ref:refs/heads/my-branch` or `repo:n-username/ node_express:ref:refs/tags/my-tag`.
+    - For workflows triggered by a pull request event: `repo:< Organization/Repository >:pull-request`.
+- `audiences` lists the audiences that can appear in the external token. This field is mandatory. The recommended value is "api://AzureADTokenExchange".
 
 ### Kubernetes example
 
-Run the following method to configure a federated identity credential on an app and create a trust relationship with a Kubernetes service account.  Specify the following parameters:
+Run the following method to configure a federated identity credential on an app and create a trust relationship with a Kubernetes service account. Specify the following parameters:
 
-- *issuer* is your service account issuer URL (the [OIDC issuer URL](/azure/aks/use-oidc-issuer) for the managed cluster or the [OIDC Issuer URL](https://azure.github.io/azure-workload-identity/docs/installation/self-managed-clusters/oidc-issuer.html) for a self-managed cluster).
-- *subject* is the subject name in the tokens issued to the service account. Kubernetes uses the following format for subject names: `system:serviceaccount:<SERVICE_ACCOUNT_NAMESPACE>:<SERVICE_ACCOUNT_NAME>`.
-- *name* is the name of the federated credential, which can't be changed later.
-- *audiences* lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
+- `issuer` is your service account issuer URL (the [OIDC issuer URL](/azure/aks/use-oidc-issuer) for the managed cluster or the [OIDC Issuer URL](https://azure.github.io/azure-workload-identity/docs/installation/self-managed-clusters/oidc-issuer.html) for a self-managed cluster).
+- `subject` is the subject name in the tokens issued to the service account. Kubernetes uses the following format for subject names: `system:serviceaccount:<SERVICE_ACCOUNT_NAMESPACE>:<SERVICE_ACCOUNT_NAME>`.
+- `name` is the name of the federated credential, which can't be changed later.
+- `audiences` lists the audiences that can appear in the external token. This field is mandatory. The recommended value is "api://AzureADTokenExchange".
 
 ```azurecli
 az rest --method POST --uri 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials' --body '{"name":"Kubernetes-federated-credential","issuer":"https://aksoicwesteurope.blob.core.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/","subject":"system:serviceaccount:erp8asle:pod-identity-sa","description":"Kubernetes service account federated credential","audiences":["api://AzureADTokenExchange"]}'
@@ -489,13 +487,13 @@ And you get the response:
 
 ### Other identity providers example
 
-Run the following method to configure a federated identity credential on an app and create a trust relationship with an external identity provider.  Specify the following parameters (using a software workload running in Google Cloud as an example):
+Run the following method to configure a federated identity credential on an app and create a trust relationship with an external identity provider. Specify the following parameters (using a software workload running in Google Cloud as an example):
 
 - *name* is the name of the federated credential, which can't be changed later.
 - *ObjectID*: the object ID of the app (not the application (client) ID) you previously registered in Microsoft Entra ID.
-- *subject*: must match the `sub` claim in the token issued by the external identity provider.  In this example using Google Cloud, *subject* is the Unique ID of the service account you plan to use.
+- *subject*: must match the `sub` claim in the token issued by the external identity provider. In this example using Google Cloud, *subject* is the Unique ID of the service account you plan to use.
 - *issuer*: must match the `iss` claim in the token issued by the external identity provider. A URL that complies with the OIDC Discovery spec. Microsoft Entra ID uses this issuer URL to fetch the keys that are necessary to validate the token. For Google Cloud, the *issuer* is "https://accounts.google.com".
-- *audiences* lists the audiences that can appear in the external token.  This field is mandatory.  The recommended value is "api://AzureADTokenExchange".
+- *audiences* lists the audiences that can appear in the external token. This field is mandatory. The recommended value is "api://AzureADTokenExchange".
 
 ```azurecli
 az rest --method POST --uri 'https://graph.microsoft.com/applications/<ObjectID>/federatedIdentityCredentials' --body '{"name":"GcpFederation","issuer":"https://accounts.google.com","subject":"112633961854638529490","description":"Testing","audiences":["api://AzureADTokenExchange"]}'
@@ -518,7 +516,7 @@ And you get the response:
 
 ## List federated identity credentials on an app
 
-Run the following method to [list the federated identity credential(s)](/graph/api/application-list-federatedidentitycredentials) for an app (specified by the object ID of the app):
+Run the following method to [list the federated identity credentials](/graph/api/application-list-federatedidentitycredentials) for an app (specified by the object ID of the app):
 
 ```azurecli
 az rest -m GET -u 'https://graph.microsoft.com/applications/00001111-aaaa-2222-bbbb-3333cccc4444/federatedIdentityCredentials'
@@ -582,7 +580,8 @@ az rest -m DELETE  -u 'https://graph.microsoft.com/applications/00001111-aaaa-22
 
 ::: zone-end
 
-## Next steps
+## See also
+
 - To learn how to use workload identity federation for Kubernetes, see [Microsoft Entra Workload ID for Kubernetes](https://azure.github.io/azure-workload-identity/docs/quick-start.html) open source project.
 - To learn how to use workload identity federation for GitHub Actions, see [Configure a GitHub Actions workflow to get an access token](/azure/developer/github/connect-from-azure).
 - Read the [GitHub Actions documentation](https://docs.github.com/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure) to learn more about configuring your GitHub Actions workflow to get an access token from Microsoft identity provider and access Azure resources.

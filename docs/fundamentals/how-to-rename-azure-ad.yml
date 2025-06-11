@@ -7,7 +7,7 @@ metadata:
   ms.author: celested
   manager: CelesteDG
   ms.reviewer: nicholepet
-  ms.date: 05/31/2024
+  ms.date: 05/07/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -229,6 +229,7 @@ procedureSection:
           @{ Key = 'Azure AD group'; Value = 'Microsoft Entra group' },
           @{ Key = 'Azure AD login'; Value = 'Microsoft Entra login' },
           @{ Key = 'Azure AD managed'; Value = 'Microsoft Entra managed' },
+          @{ Key = 'Azure AD managed identities'; Value = 'Managed identities for Azure resources' },
           @{ Key = 'Azure AD entitlement'; Value = 'Microsoft Entra entitlement' },
           @{ Key = 'Azure AD access review'; Value = 'Microsoft Entra access review' },
           @{ Key = 'Azure AD Identity Protection'; Value = 'Microsoft Entra ID Protection' },
@@ -239,7 +240,6 @@ procedureSection:
           @{ Key = 'Azure AD reporting and monitoring'; Value = 'Microsoft Entra reporting and monitoring' },
           @{ Key = 'Azure AD enterprise app'; Value = 'Microsoft Entra enterprise app' },
           @{ Key = 'Azure AD cloud-only identities'; Value = 'Microsoft Entra cloud-only identities' },
-          @{ Key = 'Cloud Knox'; Value = 'Microsoft Entra Permissions Management' },
           @{ Key = 'Azure AD Premium P1'; Value = 'Microsoft Entra ID P1' },
           @{ Key = 'AD Premium P1'; Value = 'Microsoft Entra ID P1' },
           @{ Key = 'Azure AD Premium P2'; Value = 'Microsoft Entra ID P2' },

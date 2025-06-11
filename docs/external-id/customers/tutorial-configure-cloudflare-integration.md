@@ -4,16 +4,17 @@ description: Learn how to configure Cloudflare Web Application Firewall (WAF) to
 author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 08/05/2024
 ms.author: gasinh
 ms.custom: it-pro
+
+#CustomerIntent: As an IT administrator, I want to learn how to enable the Cloudflare Web Application Firewall (WAF) service for a Microsoft Entra External ID tenant with a Cloudflare WAF so that I can protect web applications from common exploits and vulnerabilities.
 ---
+# Configure Cloudflare Web Application Firewall with Microsoft Entra External ID
 
-# Tutorial: Configure Cloudflare Web Application Firewall with Microsoft Entra External ID
-
-In this tutorial, learn how to configure Cloudflare Web Applcation Firewall ([Cloudflare WAF](https://www.cloudflare.com/application-services/products/waf/)) to protect your organization from attacks, such as distributed denial of service (DDoS), malicious bots, Open Worldwide Application Security Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks, and others. 
+In this article, you learn how to configure Cloudflare Web Application Firewall ([Cloudflare WAF](https://www.cloudflare.com/application-services/products/waf/)) to protect your organization from attacks, such as distributed denial of service (DDoS), malicious bots, Open Worldwide Application Security Project [(OWASP) Top-10](https://owasp.org/www-project-top-ten/) security risks, and others. 
 
 ## Prerequisites
 
@@ -33,7 +34,7 @@ Learn about tenants and securing apps for consumers and customers with [Microsof
 
 ## Enable custom URL domains
 
-The first step is to enable custom domains with AFD. Use the instructions in, [Enable custom URL domains for apps in external tenants (Preview)](../customers/how-to-custom-url-domain.md). 
+The first step is to enable custom domains with AFD. Use the instructions in, [Enable custom URL domains for apps in external tenants](../customers/how-to-custom-url-domain.md). 
 
 ## Create a Cloudflare account
 
@@ -46,12 +47,12 @@ Enable WAF for a domain.
 
 1. In the DNS console, for CNAME, enable the proxy setting.
 
-   [ ![Screenshot of CNAME options.](media/tutorial-configure-cloudflare-integration/proxy-settings.png)](media/tutorial-configure-cloudflare-integration/proxy-settings-expanded.png#lightbox)
+   [![Screenshot of CNAME options.](media/tutorial-configure-cloudflare-integration/proxy-settings.png)](media/tutorial-configure-cloudflare-integration/proxy-settings-expanded.png#lightbox)
 
 2. Under DNS, for **Proxy status**, select **Proxied**.
 3. The status turns orange.
 
-   [ ![Screenshot of proxied status.](media/tutorial-configure-cloudflare-integration/proxied-status.png)](media/tutorial-configure-cloudflare-integration/proxied-status-expanded.png#lightbox)
+   [![Screenshot of proxied status.](media/tutorial-configure-cloudflare-integration/proxied-status.png)](media/tutorial-configure-cloudflare-integration/proxied-status-expanded.png#lightbox)
 
 ## Cloudflare security controls
 
@@ -64,7 +65,7 @@ For optimal protection, we recommend you enable Cloudflare security controls.
 3. Select **DDoS**.
 4. A message appears. 
 
-    [ ![Screenshot of DDoS protection message.](media/tutorial-configure-cloudflare-integration/ddos-message.png)](media/tutorial-configure-cloudflare-integration/ddos-message-expanded.png#lightbox)
+    [![Screenshot of DDoS protection message.](media/tutorial-configure-cloudflare-integration/ddos-message.png)](media/tutorial-configure-cloudflare-integration/ddos-message-expanded.png#lightbox)
 
 ### Bot protection
 
@@ -104,7 +105,7 @@ We recommend you block traffic that originates from the Tor proxy network, unles
 
 ## Firewall rules: Traffic from countries or regions
 
-We recommended strict security controls on traffic from countries or regions where business is unlikely to occur, unless your organization has a business reason to support traffic from al countries or regions.  
+We recommended strict security controls on traffic from countries or regions where business is unlikely to occur, unless your organization has a business reason to support traffic from all countries or regions.  
 
    > [!NOTE]
    > If you can't block traffic from a country or region, select **Interactive Challenge**, not **Block**.
@@ -133,12 +134,12 @@ For the following instructions, you can add custom HTML pages for visitors.
 2. For **Cloudflare Managed Ruleset**, select **Enabled**.
 3. For **Cloudflare OWASP Core Ruleset**, select **Enabled**.
 
-   [ ![Screenshot of rule sets.](media/tutorial-configure-cloudflare-integration/rulesets.png)](media/tutorial-configure-cloudflare-integration/ruleset-expanded.png#lightbox)
+   [![Screenshot of rule sets.](media/tutorial-configure-cloudflare-integration/rulesets.png)](media/tutorial-configure-cloudflare-integration/ruleset-expanded.png#lightbox)
 
 ## Next steps
 
 * [What is Azure Web Application Firewall on Azure Application Gateway?](/azure/web-application-firewall/ag/ag-overview)
-* Cloudflare Docs: [Cloudflare Zero Trust: Azure AD](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/azuread/)
+* Cloudflare Docs: [Cloudflare Zero Trust: Microsoft Entra ID](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/entra-id/)
 * [Tutorial: Configure Cloudflare WAF with Azure AD B2C](/azure/active-directory-b2c/partner-cloudflare)
    
 

@@ -2,11 +2,11 @@
 title: Logs available for streaming from Microsoft Entra ID
 description: Learn about the Microsoft Entra logs available for streaming to an endpoint for storage, analysis, or monitoring.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/01/2024
+ms.date: 04/16/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -17,7 +17,7 @@ ms.reviewer: egreenberg14
 
 Using Microsoft Entra diagnostic settings, you can route activity logs to several endpoints for long term retention and data insights. You select the logs you want to route, then select the endpoint.
 
-This article describes the logs that you can route to an endpoint with Microsoft Entra diagnostic settings.
+This article describes the logs that you can route to an endpoint with Microsoft Entra diagnostic settings. The logs are categorized into tiers based on their importance for security investigations. 
 
 ## Log streaming requirements and options
 
@@ -93,6 +93,10 @@ The `MicrosoftGraphActivityLogs` provide administrators full visibility into all
 ### Remote network health logs
 
 The `RemoteNetworkHealthLogs` provide insights into the health of your remote network configured through Global Secure Access. Selecting this option doesn't add new logs to your workspace unless your organization is using Microsoft Entra Internet Access and Microsoft Entra Private Access to secure access to your corporate resources. For more information, see [Remote network health logs](../../global-secure-access/how-to-remote-network-health-logs.md).
+
+### Microsoft service principal sign-in logs (preview)
+
+The `MicrosoftServicePrincipalSignInLogs` provides visibility into scenarios where Microsoft-owned (first-party) services authenticate to other Microsoft services within a tenant, such as when a user opens a Word document inside Microsoft Teams. These logs were released to provide greater transparency around service-to-service authentication but are not necessary for most customers as they are complex and generate a high volume of data. These applications are monitored by Microsoft security to ensure the security of the applications and follows principles of least privilege. We want to emphasize that this data is not essential for security investigations and we strongly advise against taking actions such as disabling applications based on this data, as doing so could cause misconfigurations and potential adverse effects such as tenant lock-out. This data is offered as an opt-in through diagnostic settings only and is currently in preview. For more information and commonly asked questions, please visit our [FAQ page](reports-faq.yml). 
 
 ### Custom security attribute audit logs
 

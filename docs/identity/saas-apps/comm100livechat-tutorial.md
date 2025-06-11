@@ -1,23 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Comm100 Live Chat'
+title: Configure Comm100 Live Chat for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Comm100 Live Chat.
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Comm100 Live Chat so that I can control who has access to Comm100 Live Chat, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Comm100 Live Chat
+# Configure Comm100 Live Chat for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Comm100 Live Chat with Microsoft Entra ID. When you integrate Comm100 Live Chat with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Comm100 Live Chat with Microsoft Entra ID. When you integrate Comm100 Live Chat with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Comm100 Live Chat.
 * Enable your users to be automatically signed-in to Comm100 Live Chat with their Microsoft Entra accounts.
@@ -25,14 +23,14 @@ In this tutorial, you'll learn how to integrate Comm100 Live Chat with Microsoft
 
 ## Prerequisites
 
-To get started, you need the following items:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Comm100 Live Chat single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Comm100 Live Chat supports **SP** initiated SSO.
 
@@ -44,11 +42,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Comm100 Live Chat into Microsoft Entra ID, you need to add Comm100 Live Chat from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Comm100 Live Chat** in the search box.
 1. Select **Comm100 Live Chat** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-comm100-live-chat'></a>
 
@@ -59,10 +57,10 @@ Configure and test Microsoft Entra SSO with Comm100 Live Chat using a test user 
 To configure and test Microsoft Entra SSO with Comm100 Live Chat, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-   1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-   1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+   1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+   1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Comm100 Live Chat SSO](#configure-comm100-live-chat-sso)** - to configure the single sign-on settings on application side.
-   1. **[Create Comm100 Live Chat test user](#create-comm100-live-chat-test-user)** - to have a counterpart of B.Simon in Comm100 Live Chat that is linked to the Microsoft Entra representation of user.
+   1. **[Create Comm100 Live Chat test user](#create-comm100-live-chat-test-user)** - to have a counterpart of B.Simon in Comm100 Live Chat that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -72,9 +70,9 @@ To configure and test Microsoft Entra SSO with Comm100 Live Chat, perform the fo
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Comm100 Live Chat** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Comm100 Live Chat** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -84,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.comm100.com/AdminManage/LoginSSO.aspx?siteId=<SITEID>`
 
 	> [!NOTE] 
-	> The Sign-on URL value is not real. You will update the Sign-on URL value with the actual Sign-on URL, which is explained later in the tutorial.
+	> The Sign-on URL value isn't real. You update the Sign-on URL value with the actual Sign-on URL, which is explained later in the article.
 
 1. Comm100 Live Chat application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -106,43 +104,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to Comm100 Live Chat.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Comm100 Live Chat**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
-1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Comm100 Live Chat SSO
 
 1. In a different web browser window, sign in to Comm100 Live Chat as a Security Administrator.
 
-1. On the top right side of the page, click **My Account**.
+1. On the top right side of the page, select **My Account**.
 
    ![Comm100 Live Chat my account.](./media/comm100livechat-tutorial/account.png)
 
-1. From the left side of menu, click **Security** and then click **Agent Single Sign-On**.
+1. From the left side of menu, select **Security** and then select **Agent Single Sign-On**.
 
    ![Screenshot that shows the left-side account menu with "Security" and "Agent Single Sign-On" highlighted.](./media/comm100livechat-tutorial/security.png)
 
@@ -156,9 +128,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
    c. In the **Remote Logout URL** textbox, paste the value of **Logout URL**, which you copied previously.
 
-   d. Click **Choose a File** to upload the base-64 encoded certificate that you have downloaded, into the **Certificate**.
+   d. Select **Choose a File** to upload the base-64 encoded certificate that you have downloaded, into the **Certificate**.
 
-   e. Click **Save Changes**.
+   e. Select **Save Changes**.
 
 ### Create Comm100 Live Chat test user
 
@@ -168,11 +140,11 @@ To enable Microsoft Entra users to sign in to Comm100 Live Chat, they must be pr
 
 1. Sign in to Comm100 Live Chat as a Security Administrator.
 
-2. On the top right side of the page, click **My Account**.
+2. On the top right side of the page, select **My Account**.
 
 	![Comm100 Live Chat my account.](./media/comm100livechat-tutorial/account.png)
 
-3. From the left side of menu, click **Agents** and then click **New Agent**.
+3. From the left side of menu, select **Agents** and then select **New Agent**.
 
 	![Comm100 Live Chat agent.](./media/comm100livechat-tutorial/agent.png)
 
@@ -190,18 +162,18 @@ To enable Microsoft Entra users to sign in to Comm100 Live Chat, they must be pr
 
 	e. In the **Password** textbox, type your password.
 
-	f. Click **Save**.
+	f. Select **Save**.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Comm100 Live Chat Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Comm100 Live Chat Sign-on URL where you can initiate the login flow. 
 
 * Go to Comm100 Live Chat Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Comm100 Live Chat tile in the My Apps, this will redirect to Comm100 Live Chat Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Comm100 Live Chat tile in the My Apps, this option redirects to Comm100 Live Chat Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Comm100 Live Chat you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

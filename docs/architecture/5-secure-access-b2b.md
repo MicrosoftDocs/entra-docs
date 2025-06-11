@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/22/2023
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Transition to governed collaboration with Microsoft Entra B2B collaboration

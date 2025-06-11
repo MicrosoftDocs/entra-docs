@@ -1,13 +1,13 @@
 ---
 title: Configure cross-tenant synchronization using PowerShell or Microsoft Graph API
 description: Learn how to configure cross-tenant synchronization in Microsoft Entra ID using Microsoft Graph PowerShell or Microsoft Graph API.
-author: rolyon
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 07/19/2024
-ms.author: rolyon
+ms.date: 10/15/2024
+ms.author: kenwith
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -27,13 +27,13 @@ This article describes the key steps to configure cross-tenant synchronization u
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 - [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role to configure cross-tenant synchronization.
 - [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to consent to required permissions.
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
 - Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to consent to required permissions.
 
 ## Step 1: Sign in to the target tenant
 
@@ -300,7 +300,7 @@ These steps describe how to use Microsoft Graph Explorer, but you can also use a
     - `Directory.ReadWrite.All`
     - `AuditLog.Read.All`
 
-    If you see a **Need admin approval** page, you'll need to sign in with a user that has been assigned the Global Administrator role to consent.
+    If you see a **Need admin approval** page, you'll need to sign in with a user that has been assigned at least the Privileged Role Administrator role to consent.
 
 ---
 

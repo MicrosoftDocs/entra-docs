@@ -1,14 +1,13 @@
 ---
-title: "Tutorial: Sign in users in a Node.js & Express web app"
+title: "Sign in users in a Node.js/Express web app"
 description: In this tutorial, you add support for signing-in users in a web app.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: devx-track-js
 ms.date: 11/09/2022
 ms.service: identity-platform
-
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer building a Node.js and Express web app, I want to learn how to sign in users and acquire access tokens, so that I can implement secure authentication and access Microsoft Graph data in my application.
 ---
 
@@ -25,7 +24,6 @@ Follow the steps in this tutorial to:
 > - Add app registration details
 > - Add code for user login
 > - Test the app
-
 For more information, see the [sample code](https://github.com/Azure-Samples/ms-identity-node) that shows how to use MSAL Node to sign in, sign out and acquire an access token for a protected resource such as Microsoft Graph.
 
 ## Prerequisites
@@ -56,7 +54,7 @@ Use the [Express application generator tool](https://expressjs.com/en/starter/ge
 ```
 
 2. Then, create an application skeleton as follows: 
- 
+
 ```console
     express --view=hbs /ExpressWebApp && cd /ExpressWebApp
     npm install
@@ -121,7 +119,6 @@ Fill in these details with the values you obtain from Azure app registration por
 
 > [!WARNING]
 > Any plaintext secret in source code poses an increased security risk. This article uses a plaintext client secret for simplicity only. Use [certificate credentials](./certificate-credentials.md) instead of client secrets in your confidential client applications, especially those apps you intend to deploy to production.
-
 - `Enter_the_Graph_Endpoint_Here`: The Microsoft Graph API cloud instance that your app will call. For the main (global) Microsoft Graph API service, enter `https://graph.microsoft.com/` (include the trailing forward-slash).
 - `Enter_the_Express_Session_Secret_Here` the secret used to sign the Express session cookie. Choose a random string of characters to replace this string with, such as your client secret.
 

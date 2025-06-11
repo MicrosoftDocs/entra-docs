@@ -6,11 +6,11 @@ description: Learn how admins can use authentication strength requirements for e
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/12/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckms
-manager: amycolannino
+manager: dougeby
 ms.reviewer: namkedia
 ---
 # How Conditional Access authentication strength works for external users
@@ -33,7 +33,7 @@ In external user scenarios, the authentication methods that can satisfy authenti
 |Windows Hello for Business                   | &#x2705;        |          |
 |Certificate-based Authentication             | &#x2705;        |          |
 
-For more information about how to set authentication strengths for external users, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
+For more information about how to set authentication strengths for external users, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/policy-guests-mfa-strength.md).
 
 ## User experience for external users
 

@@ -1,17 +1,16 @@
 ---
 title: Try Microsoft Entra Suite for free
-description: Make the most of your Microsoft Entra Suite trial. Try out some of the key productivity and security capabilities.
+description: Make the most of your Microsoft Entra Suite trial. Try out some of the
+  key productivity and security capabilities.
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 08/22/2024
+ms.date: 04/02/2025
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-# Customer intent: As a new administrator, I want to try the Microsoft Entra Suite, to determine which license is right for me and what products are relevant to my organization's needs.
 ---
 
 # Trial user guide: Microsoft Entra Suite
@@ -23,7 +22,7 @@ Welcome to the Microsoft Entra Suite trial user guide. Make the most of your fre
 
 ## What is the Microsoft Entra Suite? 
 
-[Microsoft Entra Suite](licensing.md) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access cloud and on-premises applications. The suite does this by providing least privilege access across public and private networks, inside and outside of your corporate perimeter. By combining network access, ID Protection, governance, and identity verification solutions, the Microsoft Entra Suite extends Conditional Access across identities and network controls, filtering out malicious content, and ensuring least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
+[Microsoft Entra Suite](licensing.md) is the solution to deliver unified Zero Trust user access, enabling your employees to securely access cloud and on-premises applications. The suite allows you to provide least privilege access across public and private networks, inside and outside of your corporate perimeter. By combining network access, ID Protection, governance, and identity verification solutions, the Microsoft Entra Suite extends Conditional Access across identities and network controls, filtering out malicious content, and ensuring least privilege access for a simple and consistent user experience, whether employees are in the office or remote.
 
 ## Trial licensing prerequisites
 
@@ -58,7 +57,7 @@ The following how-to guides are expanded upon in this section:
 - [Step 4: Enable private access gateways](#step-4-enable-private-access-gateways): Depreciate costly VPN systems with Quick Access.
 - [Step 5: Onboard customers with a workflow portal](#step-5-onboard-customers-with-a-workflow-portal): Automate employee onboarding with lifecycle workflows. 
 
-:::image type="content" border="true" source="./media/entra-suite-trial/entra-suite-trial.png" alt-text="Screenshot of the Microsoft Entra Suite zero trust strategy steps.":::
+:::image type="content" border="true" source="./media/entra-suite-trial/entra-suite-trial.png" alt-text="Screenshot of the Microsoft Entra Suite Zero Trust strategy steps.":::
 
 The following sections include process steps to walk you through each product. Each of these steps is fully documented in a separate how-to guide that you can access by clicking the link at the end of each step.  
 
@@ -75,7 +74,7 @@ To view the complete how-to guide, see [Plan a Microsoft Entra ID Protection dep
 
 ### Step 2: Enact access reviews
 
-Microsoft Entra access reviews are a Microsoft Entra ID Governance capability that help your organization keep the enterprise more secure by managing its resource access lifecycle. The other capabilities are entitlement management, Privileged Identity Management (PIM), lifecycle workflows, provisioning, and terms of use.
+Microsoft Entra access reviews are a Microsoft Entra ID Governance capability that helps your organization keep the enterprise more secure by managing its resource access lifecycle. The other capabilities are entitlement management, Privileged Identity Management (PIM), lifecycle workflows, provisioning, and terms of use.
 
 1. Plan access reviews for access packages, groups, and applications 
 1. Plan review of Microsoft Entra ID and Azure resource roles 
@@ -95,7 +94,7 @@ Microsoft Entra Internet Access protects enterprise users and managed devices fr
 1. Block a group from accessing websites based on FQDN 
 1. Allow a user to access a blocked website 
 
-To view the complete how-to guide, see [Deployment guide for Microsoft Entra Internet Access](~/architecture/sse-deployment-guide-internet-access.md).
+To view the complete how-to guide, see [Deployment guide for Microsoft Entra Internet Access](~/architecture/gsa-deployment-guide-internet-access.md).
 
 ### Step 4: Enable private access gateways 
 
@@ -105,7 +104,7 @@ Microsoft Entra Private Access converges network and identity access controls so
 1. Apply Microsoft Entra Conditional Access 
 1. Control access by multiple users to multiple apps 
 
-To view the complete how-to guide, see [Deployment guide for Microsoft Entra Private Access](~/architecture/sse-deployment-guide-private-access.md).
+To view the complete how-to guide, see [Deployment guide for Microsoft Entra Private Access](~/architecture/gsa-deployment-guide-private-access.md).
 
 ### Step 5: Onboard customers with a workflow portal 
 
@@ -128,7 +127,7 @@ To get the most out of your trial, get started by walking through the following 
 - [Scenario 2: Modernize remote access to on-premises apps with MFA per app](#scenario-2-modernize-remote-access-to-on-premises-apps-with-mfa-per-app) 
 - [Scenario 3: Secure internet access based on business needs](#scenario-3-secure-internet-access-based-on-business-needs) 
 
-During your Microsoft Entra Suite’s trial period, be sure you take advantage of the better together security strategy by implementing automated user onboarding and lifecycle management, modernizing from traditional VPN to on-premises resources with multifactor authentication (MFA) all the way down to the app level, and securing internet access based on the rules of your business.  
+Take advantage of the better together security strategy during your Microsoft Entra Suite’s trial period. Implement automated user onboarding and lifecycle management, modernize from traditional VPN to on-premises resources with multifactor authentication (MFA) down to the app level, and secure internet access based on your business rules.
 
 The following table shows which of the five Microsoft Entra Suite products are covered in each scenario.
 

@@ -4,18 +4,17 @@ description: Single-page app (SPA) authentication when third-party cookies are n
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
 ms.date: 03/14/2022
 ms.reviewer: ludwignick; emilylauber
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-image-nochange
 #Customer intent: As a web application developer, I want to understand how to handle third-party cookie blocking in browsers, so that I can implement the appropriate authentication patterns and ensure that users can sign in successfully even when third-party cookies are blocked.
 ---
 
 # How to handle third-party cookie blocking in browsers
 
-Many browsers block _third-party cookies_, cookies on requests to domains other than the domain shown in the browser's address bar. These cookies are also known as _cross-domain cookies_. This block breaks the implicit flow and requires new authentication patterns to successfully sign in users. In the Microsoft identity platform, we use the authorization flow with Proof Key for Code Exchange (PKCE) and refresh tokens to keep users signed in when third-party cookies are blocked. This authorization code flow with Proof Key for Code Exchange approach is recommended over the implicit flow.
+Many browsers block _third-party cookies_, cookies on requests to domains other than the domain shown in the browser's address bar. These cookies are also known as _cross-domain cookies_. This block breaks the implicit flow and requires new authentication patterns to successfully sign in users. In the Microsoft identity platform, we use the authorization code flow with Proof Key for Code Exchange (PKCE) and refresh tokens to keep users signed in when third-party cookies are blocked. This authorization code flow with Proof Key for Code Exchange approach is recommended over the implicit flow.
 
 ## What is Intelligent Tracking Protection (ITP) and Privacy Sandbox?
 

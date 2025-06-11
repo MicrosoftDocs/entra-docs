@@ -1,21 +1,23 @@
 ---
-title: How to enable and manage the Microsoft profile
+title: How to Enable and Manage the Microsoft Profile
 description: Learn how to enable and manage the Microsoft traffic forwarding profile for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 05/02/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
-ms.subservie: entra-internet-access
+ms.subservice: entra-internet-access
+ai-usage: ai-assisted
 ---
 # How to enable and manage the Microsoft traffic forwarding profile
 
 With the Microsoft profile enabled, Microsoft Entra Internet Access acquires the traffic going to Microsoft services. The **Microsoft** profile manages the following policy groups:
 
 - Exchange Online
-- SharePoint Online and Microsoft OneDrive. 
-- Microsoft 365 Common and Office Online (only Microsoft Entra ID and Microsoft Graph)
+- SharePoint Online and Microsoft OneDrive
+- Microsoft Teams
+- Microsoft 365 Common and Office Online
 
 ## Prerequisites
 
@@ -24,12 +26,10 @@ To enable the Microsoft traffic forwarding profile for your tenant, you must hav
 - A [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) role in Microsoft Entra ID to enable traffic profiles.
 - A [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)  role to create and interact with Conditional Access policies.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
-- Individual services are added to the Microsoft traffic profile on an ongoing basis. Currently, Microsoft Entra ID, Microsoft Graph, Exchange Online and SharePoint Online are supported as part of the Microsoft traffic profile
-- For additional limitations of the Microsoft traffic profile, see [Windows Client known limitations](how-to-install-windows-client.md#known-limitations)
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Enable the Microsoft traffic profile
 
@@ -58,7 +58,10 @@ The policy groups include the following details:
 - **Protocol**: TCP (Transmission Control Protocol) or UDP (User Datagram Protocol)
 - **Action**: Forward or Bypass
 
-You can configure the traffic acquisition rules to bypass traffic acquisition. If you do, the users will still be able to access resources; however, the Global Secure Access service will not process the traffic. You can bypass traffic to a specific FQDN or IP address, an entire policy group within the profile, or the entire Microsoft profile itself. If you only need to forward some of the Microsoft resources within a policy group, enable the group then change the **Action** in the details accordingly.
+You can configure the traffic acquisition rules to bypass traffic acquisition. If you do, the users are still able to access resources; however, the Global Secure Access service doesn't process the traffic. You can bypass traffic to a specific FQDN or IP address, an entire policy group within the profile, or the entire Microsoft profile itself. If you only need to forward some of the Microsoft resources within a policy group, enable the group then change the **Action** in the details accordingly.
+
+> [!IMPORTANT]
+> When a rule is set to Bypass in the Microsoft traffic profile, the Internet Access traffic profile will not acquire this traffic. Even with the Internet Access profile enabled, the bypassed traffic will skip Global Secure Access acquisition and use that client's network routing path to egress to the Internet. Traffic available for acquisition in the Microsoft traffic profile can be only acquired in the Microsoft traffic profile.
 
 The following example shows setting the `*.sharepoint.com` FQDN to **Bypass** so the traffic isn't forwarded to the service.
 
@@ -86,7 +89,7 @@ If the traffic forwarding profile has a linked Conditional Access policy, you ca
 
 ## Microsoft traffic profile remote network assignments
 
-Traffic profiles can be assigned to remote networks, so that the network traffic is forwarded to Global Secure Access without having to install the client on end user devices. As long as the device is behind the customer premises equipment (CPE), the client isn't required.  You must create a remote network before you can add it to the profile. For more information, see [How to create remote networks](how-to-create-remote-networks.md).
+Traffic profiles can be assigned to remote networks, so that the network traffic is forwarded to Global Secure Access without having to install the client on end user devices. As long as the device is behind the customer premises equipment (CPE), the client isn't required. You must create a remote network before you can add it to the profile. For more information, see [How to create remote networks](how-to-create-remote-networks.md).
 
 **To assign a remote network to the Microsoft profile**:
 
@@ -99,11 +102,11 @@ Traffic profiles can be assigned to remote networks, so that the network traffic
 You can scope the Microsoft profile to specific users and groups instead of applying the traffic profile to all users. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 
-
 ## Next steps
 
-The next step for getting started with Microsoft Entra Internet Access is to [install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md)
+The next step for getting started with Microsoft traffic profile is to [install and configure the Global Secure Access Client on end-user devices](how-to-install-windows-client.md)
 
 For more information about traffic forwarding, see the following article:
 
 - [Learn about traffic forwarding profiles](concept-traffic-forwarding.md)
+- [Learn about the Microsoft traffic forwarding profile](concept-traffic-forwarding.md)

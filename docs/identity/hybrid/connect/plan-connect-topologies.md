@@ -1,17 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Supported topologies'
 description: This topic details supported and unsupported topologies for Microsoft Entra Connect
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 1034c000-59f2-4fc8-8137-2416fa5e4bfe
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 # Topologies for Microsoft Entra Connect
 This article describes various on-premises and Microsoft Entra topologies that use Microsoft Entra Connect Sync as the key integration solution. This article includes both supported and unsupported configurations.
@@ -47,7 +46,7 @@ The most common topology is a single on-premises forest, with one or multiple do
 ### Single forest, multiple sync servers to one Microsoft Entra tenant
 ![Unsupported, filtered topology for a single forest](./media/plan-connect-topologies/singleforestfilteredunsupported.png)
 
-Having multiple Microsoft Entra Connect Sync servers connected to the same Microsoft Entra tenant is not supported, except for a [staging server](#staging-server). It's unsupported even if these servers are configured to synchronize with a mutually exclusive set of objects. You might have considered this topology if you can't reach all domains in the forest from a single server, or if you want to distribute load across several servers. (No errors occur when a new Azure AD Sync Server is configured for a new Microsoft Entra forest and a new verified child domain.) 
+Having multiple Microsoft Entra Connect Sync servers connected to the same Microsoft Entra tenant isn't supported, except for a [staging server](#staging-server). It's unsupported even if these servers are configured to synchronize with a mutually exclusive set of objects. You might have considered this topology if you can't reach all domains in the forest from a single server, or if you want to distribute load across several servers. (No errors occur when a new Azure AD Sync Server is configured for a new Microsoft Entra forest and a new verified child domain.) 
 
 <a name='multiple-forests-single-azure-ad-tenant'></a>
 
@@ -58,7 +57,7 @@ Many organizations have environments with multiple on-premises Active Directory 
 
 When you have multiple forests, all forests must be reachable by a single Microsoft Entra Connect Sync server. The server must be joined to a domain. If necessary to reach all forests, you can place the server in a perimeter network (also known as DMZ, demilitarized zone, and screened subnet).
 
-The Microsoft Entra Connect installation wizard offers several options to consolidate users who are represented in multiple forests. The goal is that a user is represented only once in Microsoft Entra ID. There are some common topologies that you can configure in the custom installation path in the installation wizard. On the **Uniquely identifying your users** page, select the corresponding option that represents your topology. The consolidation is configured only for users. Duplicated groups are not consolidated with the default configuration.
+The Microsoft Entra Connect installation wizard offers several options to consolidate users who are represented in multiple forests. The goal is that a user is represented only once in Microsoft Entra ID. There are some common topologies that you can configure in the custom installation path in the installation wizard. On the **Uniquely identifying your users** page, select the corresponding option that represents your topology. The consolidation is configured only for users. Duplicated groups aren't consolidated with the default configuration.
 
 Common topologies are discussed in the sections about separate topologies, [full mesh](#multiple-forests-full-mesh-with-optional-galsync), and [the account-resource topology](#multiple-forests-account-resource-forest).
 
@@ -69,10 +68,10 @@ The default configuration in Microsoft Entra Connect Sync assumes:
 * The forest that hosts the mailbox for a user has the best data quality for attributes visible in the Exchange Global Address List (GAL). If there's no mailbox for the user, any forest can be used to contribute these attribute values.
 * If you have a linked mailbox, there's also an account in a different forest used for sign-in.
 
-If your environment does not match these assumptions, the following things happen:
+If your environment doesn't match these assumptions, the following things happen:
 
 * If you have more than one active account or more than one mailbox, the sync engine picks one and ignores the other.
-* A linked mailbox with no other active account is not exported to Microsoft Entra ID. The user account is not represented as a member in any group. A linked mailbox in DirSync is always represented as a normal mailbox. This change is intentionally a different behavior to better support multiple-forest scenarios.
+* A linked mailbox with no other active account isn't exported to Microsoft Entra ID. The user account isn't represented as a member in any group. A linked mailbox in DirSync is always represented as a normal mailbox. This change is intentionally a different behavior to better support multiple-forest scenarios.
 
 You can find more details in [Understanding the default configuration](concept-azure-ad-connect-sync-default-configuration.md).
 
@@ -81,9 +80,9 @@ You can find more details in [Understanding the default configuration](concept-a
 ### Multiple forests, multiple sync servers to one Microsoft Entra tenant
 ![Unsupported topology for multiple forests and multiple sync servers](./media/plan-connect-topologies/multiforestmultisyncunsupported.png)
 
-Having more than one Microsoft Entra Connect Sync server connected to a single Microsoft Entra tenant is not supported. The exception is the use of a [staging server](#staging-server).
+Having more than one Microsoft Entra Connect Sync server connected to a single Microsoft Entra tenant isn't supported. The exception is the use of a [staging server](#staging-server).
 
-This topology differs from the one below in that **multiple sync servers** connected to a single Microsoft Entra tenant is not supported. (While not supported, this still works.)
+This topology differs from the one that follows in that **multiple sync servers** connected to a single Microsoft Entra tenant isn't supported. (While not supported, this still works.)
 
 ### Multiple forests, single sync server, users are represented in only one directory
 ![Option for representing users only once across all directories](./media/plan-connect-topologies/multiforestusersonce.png)
@@ -102,7 +101,7 @@ Common to all these scenarios is that distribution and security groups can conta
 
 A full mesh topology allows users and resources to be located in any forest. Commonly, there are two-way trusts between the forests.
 
-If Exchange is present in more than one forest, there might be (optionally) an on-premises GALSync solution. Every user is then represented as a contact in all other forests. GALSync is commonly implemented through Microsoft Identity Manager. Microsoft Entra Connect cannot be used for on-premises GALSync.
+If Exchange is present in more than one forest, there might be (optionally) an on-premises GALSync solution. Every user is then represented as a contact in all other forests. GALSync is commonly implemented through Microsoft Identity Manager. Microsoft Entra Connect can't be used for on-premises GALSync.
 
 In this scenario, identity objects are joined via the mail attribute. A user who has a mailbox in one forest is joined with the contacts in the other forests.
 
@@ -128,7 +127,7 @@ If you are a larger organization, then you should consider to use the [Microsoft
 ## Staging server
 ![Staging server in a topology](./media/plan-connect-topologies/multiforeststaging.png)
 
-Microsoft Entra Connect supports installing a second server in *staging mode*. A server in this mode reads data from all connected directories but does not write anything to connected directories. It uses the normal synchronization cycle and therefore has an updated copy of the identity data.
+Microsoft Entra Connect supports installing a second server in *staging mode*. A server in this mode reads data from all connected directories but doesn't write anything to connected directories. It uses the normal synchronization cycle and therefore has an updated copy of the identity data.
 
 In a disaster where the primary server fails, you can fail over to the staging server. You do this in the Microsoft Entra Connect wizard. This second server can be located in a different datacenter because no infrastructure is shared with the primary server. You must manually copy any configuration change made on the primary server to the second server.
 
@@ -153,17 +152,17 @@ This topology implements the following use cases:
 
 * Microsoft Entra Connect can synchronize the users, groups, and contacts from a single Active Directory to multiple Microsoft Entra tenants. These tenants can be in different Azure environments, such as the Microsoft Azure operated by 21Vianet environment or the Azure Government environment, but they could also be in the same Azure environment, such as two tenants that are both in Azure Commercial. For more information on options, see [Planning identity for Azure Government applications](/azure/azure-government/documentation-government-plan-identity).
 *	The same Source Anchor can be used for a single object in separate tenants (but not for multiple objects in the same tenant). (The verified domain can't be the same in two tenants. More details are needed to enable the same object to have two UPNs.)
-*	You will need to deploy a Microsoft Entra Connect server for every Microsoft Entra tenant you want to synchronize to - one Microsoft Entra Connect server cannot synchronize to more than one Microsoft Entra tenant.
-*	It is supported to have different sync scopes and different sync rules for different tenants.
-*	Only one Microsoft Entra tenant sync can be configured to write back to Active Directory for the same object. This includes device and group writeback as well as Hybrid Exchange configurations – these features can only be configured in one tenant. The only exception here is Password Writeback – see below.
-*	It is supported to configure Password Hash Sync from Active Directory to multiple Microsoft Entra tenants for the same user object. If Password Hash Sync is enabled for a tenant, then Password Writeback may be enabled as well, and this can be done on multiple tenants: if the password is changed on one tenant, then password writeback will update it in Active Directory, and Password Hash Sync will update the password in the other tenants.
-*	It is not supported to add and verify the same custom domain name in more than one Microsoft Entra tenant, even if these tenants are in different Azure environments.
-*	It is not supported to configure hybrid experiences that utilize forest level configuration in AD, such as Seamless SSO and Microsoft Entra hybrid join (non-targeted approach), with more than one tenant.  Doing so would overwrite the configuration of the other tenant, making it no longer usable.  You can find additional information in [Plan your Microsoft Entra hybrid join deployment](~/identity/devices/hybrid-join-plan.md#hybrid-azure-ad-join-for-single-forest-multiple-azure-ad-tenants). 
+*	You need to deploy a Microsoft Entra Connect server for every Microsoft Entra tenant you want to synchronize to - one Microsoft Entra Connect server can't synchronize to more than one Microsoft Entra tenant.
+*	It's supported to have different sync scopes and different sync rules for different tenants.
+*	Only one Microsoft Entra tenant sync can be configured to write back to Active Directory for the same object. This includes device and group writeback along with Hybrid Exchange configurations – these features can only be configured in one tenant. The only exception here is Password Writeback – see below.
+*	It's supported to configure Password Hash Sync from Active Directory to multiple Microsoft Entra tenants for the same user object. If Password Hash Sync is enabled for a tenant, then Password Writeback may be enabled as well, and this can be done on multiple tenants: if the password is changed on one tenant, then password writeback will update it in Active Directory, and Password Hash Sync will update the password in the other tenants.
+*	It's not supported to add and verify the same custom domain name in more than one Microsoft Entra tenant, even if these tenants are in different Azure environments.
+*	It's not supported to configure hybrid experiences that utilize forest level configuration in AD, such as Seamless SSO and Microsoft Entra hybrid join (non-targeted approach), with more than one tenant.  Doing so would overwrite the configuration of the other tenant, making it no longer usable.  You can find additional information in [Plan your Microsoft Entra hybrid join deployment](~/identity/devices/hybrid-join-plan.md#hybrid-azure-ad-join-for-single-forest-multiple-azure-ad-tenants). 
 *	You can synchronize device objects to more than one tenant but a device can be Microsoft Entra hybrid joined to only one tenant.
 * Each Microsoft Entra Connect instance should be running on a domain-joined machine.
 
 >[!NOTE]
->Global Address List Synchronization (GalSync) is not done automatically in this topology and requires an additional custom MIM implementation to ensure each tenant has a complete Global Address List (GAL) in Exchange Online and Skype for Business Online.
+>Global Address List Synchronization (GalSync) isn't done automatically in this topology and requires an additional custom MIM implementation to ensure each tenant has a complete Global Address List (GAL) in Exchange Online and Skype for Business Online.
 
 ### GALSync by using writeback
 ![Unsupported topology for multiple forests and multiple directories, with GALSync focusing on Microsoft Entra ID](./media/plan-connect-topologies/multiforestmultidirectorygalsync1unsupported.png) ![Unsupported topology for multiple forests and multiple directories, with GALSync focusing on on-premises Active Directory](./media/plan-connect-topologies/multiforestmultidirectorygalsync2unsupported.png)
@@ -178,7 +177,7 @@ You can use Microsoft Identity Manager on-premises to sync users (via GALSync) b
 ### Using unauthorized clients to access the Microsoft Entra Connect backend
 ![Using unauthorized clients to access the Microsoft Entra Connect backend](./media/plan-connect-topologies/other-client-unsupported.png)
 
-The Microsoft Entra Connect server communicates with Microsoft Entra ID through the Microsoft Entra Connect backend. The only software that can be used to communicate with this backend is Microsoft Entra Connect. It is not supported to communicate with the Microsoft Entra Connect backend using any other software or method. 
+The Microsoft Entra Connect server communicates with Microsoft Entra ID through the Microsoft Entra Connect backend. The only software that can be used to communicate with this backend is Microsoft Entra Connect. It's not supported to communicate with the Microsoft Entra Connect backend using any other software or method. 
 
 ## Next steps
 To learn how to install Microsoft Entra Connect for these scenarios, see [Custom installation of Microsoft Entra Connect](how-to-connect-install-custom.md).

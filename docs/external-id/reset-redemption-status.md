@@ -1,22 +1,18 @@
 ---
-
-title: Reset redemption status for a guest user
-description: Learn how to reset the invitation redemption status for a Microsoft Entra B2B guest users in Microsoft Entra External ID.
-
- 
+title: Reset guest redemption status
+description: Learn how to reset the redemption status for a guest user in Microsoft Entra External ID. This guide covers using the admin center, PowerShell, and Microsoft Graph API.
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 03/26/2024
-
+ms.date: 02/05/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
-
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 # Customer intent: As an admin managing guest users in B2B collaboration, I want to reset the redemption status for a guest user, so that I can update their sign-in information and reinvite them without deleting their account.
 ---
 
-# Reset redemption status for a guest user
+# Reset the redemption status for a guest user in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
@@ -27,29 +23,26 @@ In this article, you'll learn how to update the [guest user's](user-properties.m
 - The user has moved to a different company, but they still need the same access to your resources
 - The user’s responsibilities have been passed along to another user
 
-To manage these scenarios previously, you had to manually delete the guest user’s account from your directory and reinvite the user. Now you can use the Microsoft Entra admin center, PowerShell or the Microsoft Graph invitation API to reset the user's redemption status and reinvite the user while keeping the user's object ID, group memberships, and app assignments. When the user redeems the new invitation, the UserPrincipalName (UPN) of the user doesn't change, but the user's sign-in name changes to the new email. Then the user can sign in using the new email or an email you've added to the `otherMails` property of the user object.
+To manage these scenarios previously, you had to manually delete the guest user’s account from your directory and reinvite the user. Now you can use the Microsoft Entra admin center, PowerShell, or the Microsoft Graph invitation API to reset the user's redemption status and reinvite the user while keeping the user's object ID, group memberships, and app assignments. When the user redeems the new invitation, the UserPrincipalName (UPN) of the user doesn't change, but the user's sign-in name changes to the new email. Then the user can sign in using the new email or an email you've added to the `otherMails` property of the user object.
 
 <a name='required-azure-ad-roles'></a>
 
 ## Required Microsoft Entra roles
 
-To reset a user's redemption status, you'll need one of the following roles:
+To reset a user's redemption status, you'll need one of the following roles assigned at the directory scope:
 
 - [Helpdesk Administrator](~/identity/role-based-access-control/permissions-reference.md#helpdesk-administrator) (least privileged)
 - [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator)
 
 ## Use the Microsoft Entra admin center to reset redemption status
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. In the list, select the user's name to open their user profile.
 1. (Optional) If the user wants to sign in using a different email:
    1. Select the **Edit properties** icon.
-   1. Scroll to **Email** and type the new email.
-   1. Next to **Other emails**, select **Add email**. Select **Add**, type the new email, and select **Save**.
+   1. On the **All** tab or on the **Contact Information** tab, scroll to **Email** and type the new email.
+   1. Next to **Other emails**, select **Add or edit other emails**. Select **Add**, type the new email, and select **Save**.
    1. Select the **Save** button at the bottom of the page to save all changes.
 
 1. On the **Overview** tab, under **My Feed**, select the **Reset redemption status** link in the **B2B collaboration** tile.

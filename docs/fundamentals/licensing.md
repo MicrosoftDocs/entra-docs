@@ -1,24 +1,25 @@
 ---
-title: 'Microsoft Entra licensing'
+title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra
 ms.topic: conceptual
-ms.date: 06/03/2024
+ms.date: 03/05/2025
 ms.subservice: fundamentals
 ms.author: barclayn
 ---
 
 # Microsoft Entra licensing
 
-This article discusses licensing options for the Microsoft Entra product family. It is intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
+This article discusses licensing options for the Microsoft Entra product family. It's intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
 
 
-## Entra licensing options
+## Microsoft Entra licensing options
 
 [!INCLUDE [Entra offerings](../includes/definitions/entra-offerings.md)]
 
+[!INCLUDE [Entra offerings](../includes/licensing-microsoft-365.md)]
 
 ## App provisioning
 
@@ -46,7 +47,7 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 ## Microsoft Entra Conditional Access
 
-[!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
+[!INCLUDE [Microsoft Entra Conditional Access](../includes/licensing-conditional-access.md)]
 
 ## Microsoft Entra Domain services
 
@@ -104,7 +105,6 @@ Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) su
 
 [!INCLUDE [features-preview](../includes/licensing-features-preview.md)]
 
-## Next steps
+## Related content
 
 - [Microsoft Entra pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
-- [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)

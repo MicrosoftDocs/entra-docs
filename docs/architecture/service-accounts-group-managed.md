@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/09/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Secure group managed service accounts
@@ -42,7 +42,7 @@ gMSAs are more secure than standard user accounts, which require ongoing passwor
 
 | Security issue| Mitigation |
 | - | - |
-| gMSA is a member of privileged groups | - Review your group memberships. Create a PowerShell script to enumerate group memberships. Filter the resultant CSV file by gMSA file names</br> - Remove the gMSA from privileged groups</br> - Grant the gMSA rights and permissions it requires to run its service. See your service vendor. 
+| gMSA is a member of privileged groups | - Review your group memberships. Create a PowerShell script to enumerate group memberships. Filter the resultant CSV file by gMSA file names</br> - Remove the gMSA from privileged groups</br> - Grant the gMSA rights and permissions it requires to run its service. See your service vendor. |
 | gMSA has read/write access to sensitive resources | - Audit access to sensitive resources</br> - Archive audit logs to a SIEM, such as Azure Log Analytics or Microsoft Sentinel</br> - Remove unnecessary resource permissions if there's an unnecessary access level |
 
 

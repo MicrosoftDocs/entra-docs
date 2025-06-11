@@ -38,7 +38,7 @@ This section describes the end-to-end user provisioning solution architecture fo
 * **Authoritative HR data flow – from Workday to Microsoft Entra ID:** In this flow worker events (such as New Hires, Transfers, Terminations) first occur in Workday and then the event data flows into Microsoft Entra ID. Depending on the event, it may lead to create/update/enable/disable operations in Microsoft Entra ID.
 * **Writeback flow – from on-premises Active Directory to Workday:** Once the account creation is complete in Active Directory, it's synced with Microsoft Entra ID through Microsoft Entra Connect and information such as email, username and phone number  can be written back to Workday.
 
-  ![Conceputal diagram of workday provisioning](~/includes/governance/media/workday-inbound-tutorial/workday-cloud-only-provisioning.png)
+  ![Conceptual diagram of workday provisioning](~/includes/governance/media/workday-inbound-tutorial/workday-cloud-only-provisioning.png)
 
 ### End-to-end user data flow
 
@@ -80,7 +80,7 @@ The following sections describe steps for configuring user provisioning from Wor
 **To configure Workday to Microsoft Entra provisioning for cloud-only users:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Search for **Workday to Microsoft Entra user provisioning**, and add that app from the gallery.
 1. After the app is added and the app details screen is shown, select **Provisioning**.
 1. Change the **Provisioning** **Mode** to **Automatic**.

@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 08/25/2023
+ms.date: 05/16/2025
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.custom: 
@@ -37,7 +37,6 @@ Group owner consent policies where the ID begins with "microsoft-" are built-in 
   - [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator)
   - A custom role with the necessary [permissions to manage group owner consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
   - The Microsoft Graph app role (application permission) Policy.ReadWrite.PermissionGrant (when connecting as an app or a service)
-- To allow group owner consent subject to app consent policies, the group owner consent setting must be disabled. Once disabled, your current policy is read from the app consent policy. To learn how to disable group owner consent, see [Disable group owner consent setting](configure-user-consent-groups.md)
 
 :::zone pivot="ms-powershell"
 

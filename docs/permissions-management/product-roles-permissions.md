@@ -1,18 +1,21 @@
 ---
 title: Microsoft Entra Permissions Management roles and permissions
 description: Review roles and the level of permissions assigned in Microsoft Entra Permissions Management.
-# customerintent: As a cloud administrator, I want to understand Permissions Management role assignments, so that I can effectively assign the correct permissions to users.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
-
 ms.topic: how-to
-ms.date: 05/13/2024
+ms.date: 04/01/2025
 ms.author: jfields
+ms.custom: sfi-ga-nochange
+# customerintent: As a cloud administrator, I want to understand Permissions Management role assignments, so that I can effectively assign the correct permissions to users.
 ---
 
 
 # Microsoft Entra Permissions Management roles and permissions levels
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 In Microsoft Azure and Microsoft Entra Permissions Management role assignments grant users permissions to monitor and take action in multicloud environments.
 
@@ -28,8 +31,8 @@ See [Microsoft Entra built-in roles to learn more.](https://go.microsoft.com/fwl
 
 ## Onboarding your Amazon Web Service (AWS), Microsoft Entra, or Google Cloud Platform (GCP) environments
 
-- To configure data collection, you must be a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management). 
-- A user with the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) role is required for AWS and GCP onboarding.
+- To configure data collection, you must be a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator). 
+- A user with the [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) role is required for AWS and GCP onboarding.
 
 ## Notes on permissions and roles in Permissions Management
 

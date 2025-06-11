@@ -1,17 +1,15 @@
 ---
 title: 'Represent AD FS security policies in Microsoft Entra ID: Mappings and examples'
 description: Learn how to map AD FS security policies to Microsoft Entra ID when migrating app authentication, including authorization and multifactor authentication rules.
-
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
-
 ms.date: 05/31/2023
 ms.author: jomondi
 ms.reviewer: gasinh
-
+ms.custom: sfi-image-nochange
 #customer intent: As an IT admin migrating app authentication to Microsoft Entra ID, I want to map authorization and multifactor authentication rules from AD FS to Microsoft Entra ID, so that I can meet security requirements and make the app migration process easier.
 ---
 
@@ -37,8 +35,6 @@ This maps to Microsoft Entra ID in one of the following ways:
 
 1. Set **Assignment required** to **No**.
 
-   :::image type="content" source="media/migrate-adfs-represent-security-policies/permit-access-to-all-users-2.png" alt-text="Screenshot shows how to edit access control policy for SaaS apps.":::
-
     > [!Note]
     > Setting **Assignment required** to **Yes** requires that users are assigned to the application to gain access. When set to **No**, all users have access. This switch doesn't control what users see in the **My Apps** experience.
 
@@ -54,7 +50,7 @@ Explicit group authorization in AD FS:
 
 To map this rule to Microsoft Entra ID:
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](~/fundamentals/how-to-manage-groups.yml) that corresponds to the group of users from AD FS.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/#home), [create a user group](/entra/fundamentals/how-to-manage-groups) that corresponds to the group of users from AD FS.
 1. Assign app permissions to the group:
 
    :::image type="content" source="media/migrate-adfs-represent-security-policies/allow-a-group-explicitly-2.png" alt-text="Screenshot shows how to add an assignment to the app.":::
@@ -85,13 +81,13 @@ MFA rule settings in AD FS:
 
 The users/groups selector is a rule that allows you to enforce MFA on a per-group (Group SID) or per-user (Primary SID) basis. Apart from the users/groups assignments, all other checkboxes in the AD FS MFA configuration UI function as extra rules that are evaluated after the users/groups rule is enforced.
 
-[Common Conditional Access policy: Require MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
+[Common Conditional Access policy: Require MFA for all users](../conditional-access/policy-all-users-mfa-strength.md)
 
 ### Example 2: Enforce MFA for unregistered devices
 
 Specify MFA rules for unregistered devices in Microsoft Entra:
 
-[Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+[Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](../conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 
 ## Map Emit attributes as Claims rule
 

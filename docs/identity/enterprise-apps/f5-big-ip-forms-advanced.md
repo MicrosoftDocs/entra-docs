@@ -8,8 +8,7 @@ ms.topic: how-to
 ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin responsible for securing hybrid access to form-based applications. I need to learn how to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure access. My goal is to improve Zero Trust governance and implement SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
@@ -93,12 +92,11 @@ The configuration in this article is a flexible SHA implementation: manual creat
 
 ## Register F5 BIG-IP in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 BIG-IP registration is the first step for SSO between entities. The app you create from the F5 BIG-IP gallery template is the relying party, representing the SAML SP for the BIG-IP published application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 3. In the **All applications** pane, select **New application**.
 4. The **Browse Microsoft Entra Gallery** pane opens.
 5. Tiles appear for cloud platforms, on-premises applications, and featured applications. **Featured applications** icons indicate support of federated SSO and provisioning. 
@@ -410,8 +408,6 @@ For increased security, block direct access to the application, enforcing a path
 6. The information is submitted.
 7. The user is signed in to the application.
 
-   ![Screenshot of Welcome page.](./media/f5-big-ip-forms-advanced/welcome-message.png)
-
 ## Troubleshoot
 
 When troubleshooting, consider the following information:
@@ -467,11 +463,11 @@ If no BIG-IP error message appears, the issue might relate to the back-end reque
 
 Use the **View Variables** link in this location to help determine root cause, particularly if the APM fails to obtain correct user identifier and password.
 
-To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html).
+To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html).
 
 ## Resources
 
-* Go to techdocs.f5.com for [Manual Chapter: Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+* Go to techdocs.f5.com for [Manual Chapter: Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
 * [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)

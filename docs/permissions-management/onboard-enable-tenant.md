@@ -1,16 +1,19 @@
 ---
-title:  Enable Microsoft Entra Permissions Management in your organization
+title: Enable Microsoft Entra Permissions Management in your organization
 description: How to enable Microsoft Entra Permissions Management in your organization.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
-
 ms.topic: how-to
-ms.date: 10/04/2023
+ms.date: 05/02/2025
 ms.author: jfields
+ms.custom: sfi-ga-nochange
 ---
 
 # Enable Microsoft Entra Permissions Management in your organization
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how to enable Microsoft Entra Permissions Management in your organization. Once you've enabled Permissions Management, you can connect it to your Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) platforms.
 
@@ -31,9 +34,10 @@ To enable Permissions Management in your organization:
 ## How to enable Permissions Management on your Microsoft Entra tenant
 
 1. In your browser:
-    1. Browse to the [Microsoft Entra admin center](https://entra.microsoft.com) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) as at least a [Billing Administrator](https://go.microsoft.com/fwlink/?linkid=2248574).
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#home) as at least a [Billing Administrator](https://go.microsoft.com/fwlink/?linkid=2254515).
     1. If needed, activate the *Permissions Management Administrator* role in your Microsoft Entra tenant.
-    1. In the Azure portal, select **Microsoft Entra Permissions Management**, then select the link to purchase a license or begin a trial.
+    1. Browse to **Entra ID**, then select **Go to Microsoft Entra ID**.
+    1. In the Entra ID portal, select **Microsoft Entra Permissions Management**, then select the link to purchase a license or begin a trial.
 
 
 ## Activate a free trial or paid license 

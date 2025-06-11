@@ -3,11 +3,12 @@ title: Microsoft Entra Cloud Sync troubleshooting
 description: This article describes how to troubleshoot problems that might arise with the cloud provisioning agent.
 author: billmath
 ms.author: billmath
-manager: amycolannino
-ms.date: 04/26/2024
+manager: femila
+ms.date: 04/09/2025
 ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Cloud sync troubleshooting
@@ -27,7 +28,6 @@ You can verify these items in the portal and on the local server that's running 
 
 ### Microsoft Entra admin center agent verification
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To verify that Azure detects the agent, and that the agent is healthy, follow these steps:
 

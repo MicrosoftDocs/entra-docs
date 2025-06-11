@@ -9,7 +9,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/26/2024
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # SAML authentication with Microsoft Entra ID

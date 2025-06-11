@@ -1,15 +1,15 @@
 ---
 title: Configure API-driven inbound provisioning app
 description: Learn how to configure API-driven inbound provisioning app.
-
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Configure API-driven inbound provisioning app
@@ -33,7 +33,7 @@ If you're configuring inbound user provisioning to on-premises Active Directory,
 ## Create your API-driven provisioning app
 
 1. Log in to the [Microsoft Entra admin center](<https://entra.microsoft.com>) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
-2. Browse to **Identity** > **Applications** > **Enterprise applications**.
+2. Browse to **Entra ID** > **Enterprise apps**.
 3. Click on **New application** to create a new provisioning application. 
      [![Screenshot of Microsoft Entra admin center.](media/inbound-provisioning-api-configure-app/provisioning-entra-admin-center.png)](media/inbound-provisioning-api-configure-app/provisioning-entra-admin-center.png#lightbox)
 4. Enter **API-driven** in the search field, then select the application for your setup:

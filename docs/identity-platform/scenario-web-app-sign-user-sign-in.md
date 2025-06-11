@@ -5,15 +5,17 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 07/14/2020
+ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 
-# Web app that signs in users: Sign-in and sign-out
+# Web app that signs in users: Sign-in and sign out
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 Learn how to add sign-in to the code for your web app that signs in users. Then, learn how to let them sign out.
 
@@ -28,7 +30,7 @@ Sign-in consists of two parts:
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-In ASP.NET Core, for Microsoft identity platform applications, the **Sign in** button is exposed in `Views\Shared\_LoginPartial.cshtml` (for an MVC app) or `Pages\Shared\_LoginPartial.cshtm` (for a Razor app). It's displayed only when the user isn't authenticated. That is, it's displayed when the user hasn't yet signed in or has signed out. On the contrary, The **Sign out** button is displayed when the user is already signed-in. Note that the Account controller is defined in the **Microsoft.Identity.Web.UI** NuGet package, in the Area named **MicrosoftIdentity**
+In ASP.NET Core, for Microsoft identity platform applications, the **Sign in** button is exposed in `Views\Shared\_LoginPartial.cshtml` (for an MVC app) or `Pages\Shared\_LoginPartial.cshtm` (for a Razor app). It's displayed only when the user isn't authenticated. That is, it's displayed when the user hasn't yet signed in or has signed out. On the contrary, The **Sign out** button is displayed when the user is already signed-in. The Account controller is defined in the **Microsoft.Identity.Web.UI** NuGet package, in the Area named **MicrosoftIdentity**
 
 ```html
 <ul class="navbar-nav">
@@ -140,7 +142,7 @@ public void SignIn()
 
 # [Java](#tab/java)
 
-In Java, sign-out is handled by calling the Microsoft identity platform `logout` endpoint directly and providing the `post_logout_redirect_uri` value. For details, see [AuthPageController.java#L30-L48](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L30-L48).
+In Java, sign out is handled by calling the Microsoft identity platform `logout` endpoint directly and providing the `post_logout_redirect_uri` value. For details, see [AuthPageController.java#L30-L48](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L30-L48).
 
 ```Java
 @Controller
@@ -184,14 +186,14 @@ A successful sign-in redirects the user to the `auth_response` route, which comp
 
 After the user has signed in to your app, you'll want to enable them to sign out.
 
-## Sign-out
+## Sign out
 
 Signing out from a web app involves more than removing the information about the signed-in account from the web app's state.
 The web app must also redirect the user to the Microsoft identity platform `logout` endpoint to sign out.
 
-When your web app redirects the user to the `logout` endpoint, this endpoint clears the user's session from the browser. If your app didn't go to the `logout` endpoint, the user will reauthenticate to your app without entering their credentials again. The reason is that they'll have a valid single sign-in session with the Microsoft identity platform.
+When your web app redirects the user to the `logout` endpoint, this endpoint clears the user's session from the browser. If your app didn't go to the `logout` endpoint, the user can reauthenticate to your app without entering their credentials again. The reason is that they'll have a valid single sign-in session with the Microsoft identity platform.
 
-To learn more, see the [Send a sign-out request](v2-protocols-oidc.md#send-a-sign-out-request) section in the [Microsoft identity platform and the OpenID Connect protocol](v2-protocols-oidc.md) documentation.
+To learn more, see the [Send a sign out request](v2-protocols-oidc.md#send-a-sign-out-request) section in the [Microsoft identity platform and the OpenID Connect protocol](v2-protocols-oidc.md) documentation.
 
 ### Application registration
 
@@ -201,7 +203,7 @@ During the application registration, you register a front-channel logout URL. In
 
 # [ASP.NET](#tab/aspnet)
 
-During the application registration, you don't need to register an extra front-channel logout URL. The app will be called back on its main URL. 
+During the application registration, you don't need to register an extra front-channel logout URL. The app is called back on its main URL. 
 
 # [Java](#tab/java)
 
@@ -213,11 +215,11 @@ No front-channel logout URL is required in the application registration.
 
 # [Python](#tab/python)
 
-During the application registration, you don't need to register an extra front-channel logout URL. The app will be called back on its main URL.
+During the application registration, you don't need to register an extra front-channel logout URL. The app is called back on its main URL.
 
 ---
 
-### Sign-out button
+### Sign out button
 
 # [ASP.NET Core](#tab/aspnetcore)
 
@@ -245,7 +247,7 @@ In ASP.NET, selecting the **Sign out** button in the web app triggers the `SignO
 
 # [ASP.NET](#tab/aspnet)
 
-In ASP.NET MVC, the sign-out button is exposed in `Views\Shared\_LoginPartial.cshtml`. It's displayed only when there's an authenticated account. That is, it's displayed when the user has previously signed in.
+In ASP.NET MVC, the sign out button is exposed in `Views\Shared\_LoginPartial.cshtml`. It's displayed only when there's an authenticated account. That is, it's displayed when the user has previously signed in.
 
 ```html
 @if (Request.IsAuthenticated)
@@ -271,7 +273,7 @@ else
 
 # [Java](#tab/java)
 
-In our Java quickstart, the sign-out button is located in the main/resources/templates/auth_page.html file.
+In our Java quickstart, the sign out button is located in the main/resources/templates/auth_page.html file.
 
 ```html
 <!DOCTYPE html>
@@ -290,7 +292,7 @@ In our Java quickstart, the sign-out button is located in the main/resources/tem
 
 # [Python](#tab/python)
 
-In the Python quickstart, the sign-out button is located in the *templates/index.html* file.
+In the Python quickstart, the sign out button is located in the *templates/index.html* file.
 
 :::code language="html" source="~/../ms-identity-python-webapp-tutorial/templates/index.html" range="20":::
 
@@ -303,7 +305,7 @@ In the Python quickstart, the sign-out button is located in the *templates/index
 
 In previous versions of the ASP.NET Core templates, the `Account` controller was embedded with the web app. That's no longer the case because the controller is now part of the **Microsoft.Identity.Web.UI** NuGet package. See [AccountController.cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) for details.
 
-- Sets an OpenID redirect URI to `/Account/SignedOut` so that the controller is called back when Microsoft Entra ID has completed the sign-out.
+- Sets an OpenID redirect URI to `/Account/SignedOut` so that the controller is called back when Microsoft Entra ID has completed the sign out.
 - Calls `Signout()`, which lets the OpenID Connect middleware contact the Microsoft identity platform `logout` endpoint. The endpoint then:
 
   - Clears the session cookie from the browser.
@@ -313,7 +315,7 @@ In previous versions of the ASP.NET Core templates, the `Account` controller was
 
 In ASP.NET, signing out is triggered from the `SignOut()` method on a controller (for instance, [AccountController.cs#L25-L31](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Controllers/AccountController.cs#L25-L31)). This method isn't part of the .NET Framework, contrary to what happens in ASP.NET Core. It:
 
-- Sends an OpenID sign-out challenge.
+- Sends an OpenID sign out challenge.
 - Clears the cache.
 - Redirects to the page that it wants.
 
@@ -332,7 +334,7 @@ public void SignOut()
 
 # [Java](#tab/java)
 
-In Java, sign-out is handled by calling the Microsoft identity platform `logout` endpoint directly and providing the `post_logout_redirect_uri` value. For details, see [AuthPageController.java#L50-L60](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L50-L60).
+In Java, sign out is handled by calling the Microsoft identity platform `logout` endpoint directly and providing the `post_logout_redirect_uri` value. For details, see [AuthPageController.java#L50-L60](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L50-L60).
 
 ```Java
 @RequestMapping("/msal4jsample/sign_out")
@@ -350,13 +352,13 @@ In Java, sign-out is handled by calling the Microsoft identity platform `logout`
 
 # [Node.js](#tab/nodejs)
 
-When the user selects the **Sign out** button, the app triggers the `/auth/signout` route, which destroys the session and redirects the browser to Microsoft identity platform sign-out endpoint.
+When the user selects the **Sign out** button, the app triggers the `/auth/signout` route, which destroys the session and redirects the browser to Microsoft identity platform sign out endpoint.
 
 :::code language="js" source="~/../ms-identity-node/App/auth/AuthProvider.js" range="157-175":::
 
 # [Python](#tab/python)
 
-When the user selects **Logout**, the app triggers the `logout` route, which redirects the browser to the Microsoft identity platform sign-out endpoint.
+When the user selects **Logout**, the app triggers the `logout` route, which redirects the browser to the Microsoft identity platform sign out endpoint.
 
 :::code language="python" source="~/../ms-identity-python-webapp-tutorial/app.py" range="44-46":::
 
@@ -365,15 +367,15 @@ When the user selects **Logout**, the app triggers the `logout` route, which red
 
 ### Intercepting the call to the `logout` endpoint
 
-The post-logout URI enables applications to participate in the global sign-out.
+The post-logout URI enables applications to participate in the global sign out.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-The ASP.NET Core OpenID Connect middleware enables your app to intercept the call to the Microsoft identity platform `logout` endpoint by providing an OpenID Connect event named `OnRedirectToIdentityProviderForSignOut`. This is handled automatically by Microsoft.Identity.Web (which clears accounts in the case where your web app calls web apis)
+The ASP.NET Core OpenID Connect middleware enables your app to intercept the call to the Microsoft identity platform `logout` endpoint by providing an OpenID Connect event named `OnRedirectToIdentityProviderForSignOut`. This is handled automatically by Microsoft.Identity.Web (which clears accounts in the case where your web app calls web APIs).
 
 # [ASP.NET](#tab/aspnet)
 
-In ASP.NET, you delegate to the middleware to execute the sign-out, clearing the session cookie:
+In ASP.NET, you delegate to the middleware to execute the sign out, clearing the session cookie:
 
 ```csharp
 public class AccountController : Controller
@@ -394,7 +396,7 @@ In the Java quickstart, the post-logout redirect URI just displays the index.htm
 
 # [Node.js](#tab/nodejs)
 
-In the Node quickstart, the post-logout redirect URI is used to redirect the browser back to sample home page after the user completes the logout process with the Microsoft identity platform.
+In the Node quickstart, the post-logout redirect URI is used to redirect the browser back to sample home page after the user completes the sign out process with the Microsoft identity platform.
 
 # [Python](#tab/python)
 
@@ -404,10 +406,10 @@ In the Python quickstart, the post-logout redirect URI just displays the *index.
 
 ## Protocol
 
-If you want to learn more about sign-out, read the protocol documentation that's available from [OpenID Connect](./v2-protocols-oidc.md).
+If you want to learn more about sign out, read the protocol documentation that's available from [OpenID Connect](./v2-protocols-oidc.md).
 
 ## Next steps
 
-- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-prepare-app.md)
 
 - Explore Microsoft identity platform [web app samples](sample-v2-code.md#web-applications)

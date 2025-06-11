@@ -1,27 +1,27 @@
 ---
-title: Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
+title: Configure Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
 description: This article describes how to use the Microsoft Entra provisioning service to provision users into Azure Databricks with Private Link Workspace.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.topic: tutorial
+ms.topic: how-to
 
-ms.date: 03/25/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ms.reviewer: owinoakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Azure Databricks with Private Link Workspace so that I can streamline the user management process and ensure that users have the appropriate access to Azure Databricks with Private Link Workspace.
 ---
 
-# Microsoft Entra Application Provisioning to Azure Databricks with Private Link Workspace
+# Configure Microsoft Entra on-premises app provisioning to Azure Databricks with Private Link Workspace
 
 The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommunity.microsoft.com/t5/identity-standards-blog/provisioning-with-scim-getting-started/ba-p/880010) client that can be used to automatically provision users into cloud or on-premises applications. This article outlines how you can use the Microsoft Entra provisioning service to provision users into Azure Databricks workspaces with no public access.
 
-[ ![Diagram that shows SCIM architecture.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png#lightbox)
+[![Diagram that shows SCIM architecture.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/scim-architecture.png#lightbox)
 
 ## Prerequisites
-* A Microsoft Entra tenant with Microsoft Entra ID Governance and Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)] with Microsoft Entra ID Governance and Microsoft Entra ID P1 or Premium P2 (or EMS E3 or E5). To find the right license for your requirements, see [Compare generally available features of Microsoft Entra ID](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 * Administrator role for installing the agent. This task is a one-time effort and should be an account with at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role. 
 * Administrator role for configuring the application in the cloud [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A computer with at least 3 GB of RAM, to host a provisioning agent. The computer should have Windows Server 2016 or a later version of Windows Server, with connectivity to the target application, and with outbound connectivity to login.microsoftonline.com, other Microsoft Online Services and Azure domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy.
@@ -33,7 +33,7 @@ The Microsoft Entra provisioning service supports a [SCIM 2.0](https://techcommu
 If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
+1. Browse to **Entra ID** > **Entra Connect** > **Cloud sync**.
 
    [![Screenshot of new UX screen.](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-entra-connect-new-ux.png)](media/azure-databricks-with-private-link-workspace-provisioning-tutorial/azure-entra-connect-new-ux.png#lightbox)
 
@@ -41,7 +41,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 1.  Select **Download on-premises agent**, and select **Accept terms & download**.  
 
    > [!NOTE]
-   > Please use different provisioning agents for on-premises application provisioning and Microsoft Entra Connect cloud sync / HR-driven provisioning. All three scenarios should not be managed on the same agent.
+   > Please use different provisioning agents for on-premises application provisioning and Microsoft Entra Connect cloud sync / HR-driven provisioning. All three scenarios shouldn't be managed on the same agent.
   
 1.  Open the provisioning agent installer, agree to the terms of service, and select **next**.
 1.  When the provisioning agent wizard opens, continue to the **Select Extension** tab and select **On-premises application provisioning** when prompted for the extension you want to enable.
@@ -53,7 +53,7 @@ If you have already downloaded the provisioning agent and configured it for anot
 Once the agent is installed, no further configuration is necessary on-premises, and all provisioning configurations are then managed. 
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Add the **On-premises SCIM app** from the [gallery](~/identity/enterprise-apps/add-application-portal.md).
 1. From the left hand menu, navigate to the **Provisioning** option and select **Get started**.
 1. Select **Automatic** from the dropdown list and expand the **On-Premises Connectivity** option.
@@ -67,7 +67,7 @@ Once the agent is installed, no further configuration is necessary on-premises, 
 1.  Select **Test Connection**, and save the credentials. The application SCIM endpoint must be actively listening for inbound provisioning requests, otherwise the test fails. Use the steps [here](~/identity/app-provisioning/on-premises-ecma-troubleshoot.md#troubleshoot-test-connection-issues) if you run into connectivity issues. 
 
    >[!NOTE]
-   > If the test connection fails, you will see the request made. Please note that while the URL in the test connection error message is truncated, the actual request sent to the application contains the entire URL provided above. 
+   > If the test connection fails, you see the request made. Please note that while the URL in the test connection error message is truncated, the actual request sent to the application contains the entire URL provided above. 
 
 1.  Configure any [attribute mappings](~/identity/app-provisioning/customize-application-attributes.md) or [scoping](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) rules required for your application.
 1.  Add users to scope by [assigning users and groups](~/identity/enterprise-apps/add-application-portal-assign-users.md) to the application.
@@ -84,7 +84,7 @@ The following video provides an overview of on-premises provisioning.
   Microsoft Entra ID offers open-source [reference code](https://github.com/AzureAD/SCIMReferenceCode/wiki) that developers can use to bootstrap their SCIM implementation.
 * Support the /schemas endpoint to reduce configuration required. 
 
-## Next steps
+## Related content
 
 * [App provisioning](~/identity/app-provisioning/user-provisioning.md)
 * [Generic SQL connector](~/identity/app-provisioning/on-premises-sql-connector-configure.md)

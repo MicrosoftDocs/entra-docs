@@ -1,15 +1,15 @@
 ---
-title: Tenant configurations and External ID
-description: Learn about the different ways you can configure a Microsoft Entra tenant based on your External ID scenarios. Compare the workforce and external tenant configurations.
+title: Tenant configurations
+description: Learn about tenant configurations in Microsoft Entra External ID. Understand the differences between workforce and external tenants, and how to configure them for your organization's needs.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: conceptual
-ms.date: 08/26/2024
-ms.author: mimart
+ms.date: 05/20/2025
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
@@ -49,10 +49,9 @@ You can create external tenants in a couple of ways:
 
 - If you don't already have a Microsoft Entra tenant and want to try out External ID features in an external tenant, we recommend using the get started experience to start a free trial.
 
-When you create a tenant, you can set your correct geographic location and your domain name.
+When you create a tenant,  you can set your correct geographic location and domain name. If you currently use Azure AD B2C, the new workforce and customer tenant model doesn't affect your existing Azure AD B2C tenants.
 
-> [!NOTE]
-> If you currently use Azure AD B2C, the new workforce and customer tenant model doesn't affect your existing Azure AD B2C tenants.
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](./includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ## How workforce and external tenants compare
 

@@ -1,13 +1,15 @@
 ---
-title: The Global Secure Access client for Android
-description: Install the Global Secure Access Android client.
+title: The Global Secure Access Client for Android
+description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 09/09/2024
+ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: dougeby
 ms.reviewer: dhruvinrshah
+ms.custom: sfi-image-nochange
+# Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
 ---
 # Global Secure Access client for Android
 
@@ -28,12 +30,7 @@ This article explains the prerequisites and how to deploy the client onto Androi
 
 ### Known limitations
 
-- Mobile devices running *Android (Go edition)* aren't currently supported.
-- Microsoft Defender for Endpoint on Android *on shared devices* isn't currently supported.
-- Tunneling IPv6 traffic isn't currently supported.
-- Private Domain Name System (DNS) must be disabled on the device. This setting is often found in the System > Network and Internet options.
-- Running non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance problems and unpredictable system errors.
-- Global Secure Access (GSA) coexistence with Microsoft Tunnel is not currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Supported scenarios
 
@@ -156,7 +153,9 @@ The Global Secure Access tile doesn't appear after onboarding the tenant to the 
 When attempting to access a Private Access application, the connection might time out after a successful interactive sign-in. Reloading the application through a web browser refresh should resolve the issue.
 
 ## Related content
-
 - [About Microsoft Defender for Endpoint on Android](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-android)
 - [Deploy Microsoft Defender for Endpoint on Android with Microsoft Intune](/microsoft-365/security/defender-endpoint/android-intune)
 - [Learn about managed Google Play apps and Android Enterprise devices with Intune](/mem/intune/apps/apps-add-android-for-work)
+- [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md)
+- [Global Secure Access client for macOS](how-to-install-macos-client.md)
+- [Global Secure Access client for iOS](how-to-install-ios-client.md)

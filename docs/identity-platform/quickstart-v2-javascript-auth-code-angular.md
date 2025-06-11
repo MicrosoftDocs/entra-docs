@@ -5,9 +5,9 @@ ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom:
 ms.date: 02/27/2024
-ms.reviewer: jamesmantu
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: quickstart
@@ -98,4 +98,4 @@ ms.topic: quickstart
 > For a detailed step-by-step guide on building the auth code flow application using React,see the following tutorial:
 > 
 > > [!div class="nextstepaction"]
-> > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-register-app.md)
+> > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-prepare-app.md)

@@ -35,7 +35,7 @@ The sign-in method that was most recently used by a user will be presented to th
 
 ## Platform-specific best practices
 
-### Desktop
+### Windows
 
 The recommended options for implementing authentication are, in order:
 
@@ -43,15 +43,19 @@ The recommended options for implementing authentication are, in order:
 - Use [WebView2](/microsoft-edge/webview2/) to support FIDO2 in an embedded browser.
 - Use the system browser. The MSAL libraries for desktop platforms use this method by default. You can consult our page on FIDO2 browser compatibility to ensure the browser you use supports FIDO2 authentication.
 
-### Mobile
+### Android
 
-FIDO2 is supported for native iOS apps that use MSAL with either ASWebAuthenticationSession or broker integration. Broker is shipped in Microsoft Authenticator on iOS, and Microsoft Intune Company Portal on macOS.
+FIDO2 is supported for Android apps that use MSAL with [BROWSER as the authorization user agent](/entra/msal/android/msal-configuration#authorization_user_agent) or broker integration. Broker is shipped in Microsoft Authenticator, Company Portal, or Link to Windows app on Android. 
+
+If you aren't using MSAL, you should still use the system web browser for authentication. Features such as SSO and Conditional Access rely on a shared web surface provided by the system web browser. 
+
+### iOS and macOS
+
+FIDO2 is supported for iOS apps that use MSAL with either ASWebAuthenticationSession or broker integration. Broker is shipped in Microsoft Authenticator on iOS, and Microsoft Intune Company Portal on macOS. 
 
 Make sure that your network proxy doesn't block the associated domain validation by Apple. FIDO2 authentication requires Apple's associated domain validation to succeed, which requires certain Apple domains to be excluded from network proxies. For more information, see [Use Apple products on enterprise networks](https://support.apple.com/HT210060).
 
-FIDO2 support for native Android apps is currently in development.
-
-If you aren't using MSAL, you should still use the system web browser for authentication. Features such as single sign-on and Conditional Access rely on a shared web surface provided by the system web browser. This means using [Chrome Custom Tabs](https://developer.chrome.com/docs/multidevice/android/customtabs/) (Android) or [Authenticating a User Through a Web Service | Apple Developer Documentation](https://developer.apple.com/documentation/authenticationservices/authenticating_a_user_through_a_web_service) (iOS).
+If you aren't using MSAL, you should still use the system web browser for authentication. Features such as SSO and Conditional Access rely on a shared web surface provided by the system web browser. For more information, see [Authenticating a User Through a Web Service | Apple Developer Documentation](https://developer.apple.com/documentation/authenticationservices/authenticating_a_user_through_a_web_service).
 
 ### Web and single-page apps
 

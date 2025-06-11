@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-api
+ms.custom:
 ms.date: 09/24/2024
 ms.service: identity-platform
 

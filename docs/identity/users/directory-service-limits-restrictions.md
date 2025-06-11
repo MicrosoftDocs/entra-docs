@@ -3,12 +3,12 @@ title: Service limits and restrictions
 description: Usage constraints and other service limits for the Microsoft Entra service
 
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: users
 ms.topic: reference
-ms.date: 03/19/2024
+ms.date: 01/31/2025
 ms.author: barclayn
 ms.custom: aaddev;it-pro
 ms.reviewer: vincesm
@@ -22,6 +22,6 @@ This article contains the usage constraints and other service limits for the Mic
 
 ## Related content
 
-* [Configure group claims for applications by using Microsoft EntraID](../hybrid/connect/how-to-connect-fed-group-claims.md)
+* [Configure group claims for applications by using Microsoft Entra ID](../hybrid/connect/how-to-connect-fed-group-claims.md)
 * [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md)
 * [How Azure subscriptions are associated with Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)

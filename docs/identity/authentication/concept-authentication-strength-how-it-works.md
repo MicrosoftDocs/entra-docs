@@ -1,17 +1,15 @@
 ---
 title: Overview of how Microsoft Entra authentication strength works in a Conditional Access policy
 description: Learn how admins can use a Conditional Access Policy to require specific authentication combinations to access a resource.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 05/13/2024
-
+ms.date: 03/17/2025
 ms.author: justinha
-author: inbarckms
-manager: amycolannino
+author: justinha
+manager: dougeby
 ms.reviewer: inbarc
+ms.custom: sfi-image-nochange
 ---
 #  How Conditional Access authentication strength works 
 
@@ -46,13 +44,13 @@ In general, when multiple Conditional Access policies apply for a sign-in, all c
 
 ### How multiple Conditional Access authentication strength policies are evaluated for registering security info 
 
-For security info registration [Interrupt mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#interrupt-mode), the authentication strength evaluation is treated differently – authentication strengths that target the user action of **Registering security info** are preferred over other authentication strength policies that target **All cloud apps**. All other grant controls (such as **Require device to be marked as compliant**) from other Conditional Access policies in scope for the sign-in will apply as usual.  
+For security info registration [Interrupt mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#interrupt-mode), the authentication strength evaluation is treated differently – authentication strengths that target the user action of **Registering security info** are preferred over other authentication strength policies that target **All resources (formerly 'All cloud apps')**. All other grant controls (such as **Require device to be marked as compliant**) from other Conditional Access policies in scope for the sign-in will apply as usual.  
 
 For example, let’s assume Contoso would like to require their users to always sign in with a multifactor authentication method and from a compliant device. Contoso also wants to allow new employees to register these MFA methods using a Temporary Access Pass (TAP). TAP can’t be used on any other resource. To achieve this goal, the admin can take the following steps: 
 
 1. Create a custom authentication strength named **Bootstrap and recovery** that includes the Temporary Access Pass authentication combination, it can also include any of the MFA methods.  
 1. Create a custom authentication strength named **MFA for sign-in** that includes all allowed MFA methods, without Temporary Access Pass.
-1. Create a Conditional Access policy that targets **All cloud apps** and requires **MFA for sign-in** authentication strength AND **Require compliant device** grant controls. 
+1. Create a Conditional Access policy that targets **All resources (formerly 'All cloud apps')** and requires **MFA for sign-in** authentication strength AND **Require compliant device** grant controls. 
 1. Create a Conditional Access policy that targets the **Register security information** user action and requires the **Bootstrap and recovery** authentication strength. 
 
 As a result, users on a compliant device would be able to use a Temporary Access Pass to register any MFA method, and then use the newly registered method to authenticate to other resources like Outlook. 
@@ -88,7 +86,7 @@ The following authentication methods can't be registered as part of combined reg
 | Method | Registration requirements |
 |--------|---------------------------|
 |[Microsoft Authenticator (phone sign-in)](https://support.microsoft.com/account-billing/add-your-work-or-school-account-to-the-microsoft-authenticator-app-43a73ab5-b4e8-446d-9e54-2a4cb8e4e93c) | Can be registered from the Authenticator app.|
-|[Passkey(FIDO2)](howto-authentication-passwordless-security-key.md) | Can be registered using [combined registration managed mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#manage-mode) and enforced by Authentication strengths using [combined registration wizard mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#interrupt-mode) |
+|[Passkey(FIDO2)](howto-authentication-passwordless-security-key.md) | Can be registered using [combined registration managed mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#manage-mode) and enforced by Authentication strengths using [combined registration interrupt mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#interrupt-mode) |
 |[Certificate-based authentication](concept-certificate-based-authentication.md) | Requires administrator setup; can't be registered by the user. |
 |[Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-prepare-people-to-use) | Can be registered in the Windows Out of Box Experience (OOBE) or the Windows Settings menu.|
 

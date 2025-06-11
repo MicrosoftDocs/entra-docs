@@ -2,14 +2,14 @@
 title: Resolve service principal alerts in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to troubleshoot service principal configuration alerts for Microsoft Entra Domain Services
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.assetid: f168870c-b43a-4dd6-a13f-5cfadc5edf2c
 ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: troubleshooting
-ms.date: 09/15/2023
+ms.date: 01/21/2025
 ms.author: justinha
 ---
 # Known issues: Service principal alerts in Microsoft Entra Domain Services
@@ -62,11 +62,11 @@ The managed domain's health automatically updates itself within two hours and re
 
 ### Re-register the Microsoft Entra namespace
 
-If application ID `443155a6-77f3-45e3-882b-22b3a8d431fb`, `abba844e-bc0e-44b0-947a-dc74e5d09022`, or `d87dcbc6-a371-462e-88e3-28ad15ec4e64` is missing from your Microsoft Entra directory, complete the following steps to re-register the `Microsoft.AAD` resource provider:
+If application ID `443155a6-77f3-45e3-882b-22b3a8d431fb`, `abba844e-bc0e-44b0-947a-dc74e5d09022`, or `d87dcbc6-a371-462e-88e3-28ad15ec4e64` is missing from your Microsoft Entra directory, complete the following steps to re-register the `Microsoft.AAD` resource provider for your Azure subscription:
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com), search for and select **Subscriptions**.
+1. In the [Azure portal](https://portal.azure.com), search for and select **Subscriptions**.
 1. Choose the subscription associated with your managed domain.
-1. From the left-hand navigation, choose **Resource Providers**.
+1. From the left-hand navigation expand **Settings**, then select **Resource Providers**.
 1. Search for `Microsoft.AAD`, then select **Re-register**.
 
 The managed domain's health automatically updates itself within two hours and removes the alert.

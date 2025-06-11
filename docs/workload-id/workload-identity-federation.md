@@ -1,31 +1,29 @@
 ---
-title: Workload identity federation
-description: Use workload identity federation to grant workloads running outside of Azure access to Microsoft Entra protected resources without using secrets or certificates. This eliminates the need for developers to store and maintain long-lived secrets or certificates outside of Azure.
+title: Workload Identity Federation
+description: Learn how workload identify federation enables secre access to Microsoft Entra protected resources from external software workloads without managing secrets.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
-
 ms.service: entra-workload-id
-
 ms.topic: concept-article
-ms.date: 04/26/2024
-ms.author: ryanwi
-ms.reviewer: ludwicknick
+ms.date: 04/09/2025
+ms.author: shermanouko
+ms.reviewer: hosamsh
 ms.custom: aaddev
 #Customer intent: As a developer, I want to learn about workload identity federation so that I can securely access Microsoft Entra protected resources from external apps and services without needing to manage secrets.
 ---
 
-# Workload identity federation
-This article provides an overview of workload identity federation for software workloads. Using workload identity federation allows you to access Microsoft Entra protected resources without needing to manage secrets (for supported scenarios).
+# Workload identity federation concepts
+Learn how workload identity federation enables secure access to Microsoft Entra protected resources without managing secrets. This article provides an overview of its benefits and supported scenarios.
 
 You can use workload identity federation in scenarios such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure.
 
 ## Why use workload identity federation?
 
 Watch this video to learn why you would use workload identity federation.
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWXamJ]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=4b15d772-e6de-4347-b8f6-d943c200667a]
 
-Typically, a software workload (such as an application, service, script, or container-based application) needs an identity in order to authenticate and access resources or communicate with other services.  When these workloads run on Azure, you can use [managed identities](~/identity/managed-identities-azure-resources/overview.md) and the Azure platform manages the credentials for you.  You can only use managed identities, however, for software workloads running in Azure.  For a software workload running outside of Azure, you need to use application credentials (a secret or certificate) to access Microsoft Entra protected resources (such as Azure, Microsoft Graph, Microsoft 365, or third-party resources).  These credentials pose a security risk and have to be stored securely and rotated regularly. You also run the risk of service downtime if the credentials expire.
+Typically, a software workload (such as an application, service, script, or container-based application) needs an identity in order to authenticate and access resources or communicate with other services.  When these workloads run on Azure, you can use [managed identities](~/identity/managed-identities-azure-resources/overview.md) and the Azure platform manages the credentials for you. For a software workload running outside of Azure, or those running in Azure but use app registrations for their identities, you need to use application credentials (a secret or certificate) to access Microsoft Entra protected resources (such as Azure, Microsoft Graph, Microsoft 365, or third-party resources).  These credentials pose a security risk and have to be stored securely and rotated regularly. You also run the risk of service downtime if the credentials expire.
 
 You use workload identity federation to configure a [user-assigned managed identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md) or [app registration](~/identity-platform/app-objects-and-service-principals.md) in Microsoft Entra ID to trust tokens from an external identity provider (IdP), such as GitHub or Google. The user-assigned managed identity or app registration in Microsoft Entra ID becomes an identity for software workloads running, for example, in on-premises Kubernetes or GitHub Actions workflows. Once that trust relationship is created, your external software workload exchanges trusted tokens from the external IdP for access tokens from Microsoft identity platform.  Your software workload uses that access token to access the Microsoft Entra protected resources to which the workload has been granted access. You eliminate the maintenance burden of manually managing credentials and eliminates the risk of leaking secrets or having certificates expire.
 
@@ -35,11 +33,12 @@ The following scenarios are supported for accessing Microsoft Entra protected re
 
 - Workloads running on any Kubernetes cluster (Azure Kubernetes Service (AKS), Amazon Web Services EKS, Google Kubernetes Engine (GKE), or on-premises). Establish a trust relationship between your user-assigned managed identity or app in Microsoft Entra ID and a Kubernetes workload (described in the [workload identity overview](/azure/aks/workload-identity-overview)).
 - GitHub Actions. First, configure a trust relationship between your [user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [application](workload-identity-federation-create-trust.md) in Microsoft Entra ID and a GitHub repo in the [Microsoft Entra admin center](https://entra.microsoft.com) or using Microsoft Graph. Then [configure a GitHub Actions workflow](/azure/developer/github/connect-from-azure) to get an access token from Microsoft identity provider and access Azure resources.
+- Workloads running on Azure compute platforms using app identities. First assign a user-assigned managed identity to your Azure VM or App Service. Then, [configure a trust relationship between your app and the user-assigned identity](./workload-identity-federation-config-app-trust-managed-identity.md). 
 - Google Cloud.  First, configure a trust relationship between your user-assigned managed identity or app in Microsoft Entra ID and an identity in Google Cloud. Then configure your software workload running in Google Cloud to get an access token from Microsoft identity provider and access Microsoft Entra protected resources. See [Access Microsoft Entra protected resources from an app in Google Cloud](https://blog.identitydigest.com/azuread-federate-gcp/).
 - Workloads running in Amazon Web Services (AWS). First, configure a trust relationship between your user-assigned managed identity or app in Microsoft Entra ID and an identity in Amazon Cognito. Then configure your software workload running in AWS to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.  See [Workload identity federation with AWS](https://blog.identitydigest.com/azuread-federate-aws/).
 - Other workloads running in compute platforms outside of Azure. Configure a trust relationship between your [user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [application](workload-identity-federation-create-trust.md) in Microsoft Entra ID and the external IdP for your compute platform. You can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Use the [client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) to get an access token from Microsoft identity platform, passing in the identity provider's JWT instead of creating one yourself using a stored certificate.
 - SPIFFE and SPIRE are a set of platform agnostic, open-source standards for providing identities to your software workloads deployed across platforms and cloud vendors. First, configure a trust relationship between your user-assigned managed identity or app in Microsoft Entra ID and a SPIFFE ID for an external workload. Then configure your external software workload to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.  See [Workload identity federation with SPIFFE and SPIRE](https://blog.identitydigest.com/azuread-federate-spiffe/).
-- Create a new service connection in Azure Pipelines (preview).  [Create an Azure Resource Manager service connection](/azure/devops/pipelines/library/connect-to-azure#create-an-azure-resource-manager-service-connection-using-workload-identity-federation) using workload identity federation.
+- Create a service connection in Azure Pipelines.  [Create an Azure Resource Manager service connection](/azure/devops/pipelines/library/connect-to-azure#create-an-azure-resource-manager-service-connection-using-workload-identity-federation) using workload identity federation.
 
 > [!NOTE]
 > Microsoft Entra ID issued tokens may not be used for federated identity flows. The federated identity credentials flow does not support tokens issued by Microsoft Entra ID.
@@ -49,7 +48,10 @@ The following scenarios are supported for accessing Microsoft Entra protected re
 Create a trust relationship between the external IdP and a [user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [application](workload-identity-federation-create-trust.md) in Microsoft Entra ID. The federated identity credential is used to indicate which token from the external IdP should be trusted by your application or managed identity. You configure a federated identity either:
 
 - On a user-assigned managed identity through the [Microsoft Entra admin center](https://entra.microsoft.com), Azure CLI, Azure PowerShell, Azure SDK, and Azure Resource Manager (ARM) templates. The external workload uses the access token to access Microsoft Entra protected resources without needing to manage secrets (in supported scenarios). The [steps for configuring the trust relationship](workload-identity-federation-create-trust-user-assigned-managed-identity.md) differs, depending on the scenario and external IdP.
-- On an app registration in the [Microsoft Entra admin center](https://entra.microsoft.com) or through Microsoft Graph. This configuration allows you to get an access token for your application without needing to manage secrets outside Azure. For more information, learn how to [configure an app to trust an external identity provider](workload-identity-federation-create-trust.md).
+- On an app registration in the [Microsoft Entra admin center](https://entra.microsoft.com) or through Microsoft Graph. This configuration allows you to get an access token for your application without needing to manage secrets outside Azure. For more information, learn how to [configure an app to trust an external identity provider](workload-identity-federation-create-trust.md) and how to configure trust between an app and a [user-assigned managed identity](./workload-identity-federation-config-app-trust-managed-identity.md).
+
+> [!NOTE]
+> The Federated Identity Credential `issuer`, `subject`, and `audience` values must case-sensitively match the corresponding `issuer`, `subject` and `audience` values contained in the token being sent to Microsoft Entra ID by the external IdP in order for the scenario to be authorized. For more information surrounding this change, please visit [What's new for Authentication](../identity-platform/reference-breaking-changes.md).
 
 The workflow for exchanging an external token for an access token is the same, however, for all scenarios. The following diagram shows the general workflow of a workload exchanging an external token for an access token and then accessing Microsoft Entra protected resources.
 
@@ -64,12 +66,11 @@ The workflow for exchanging an external token for an access token is the same, h
 
 The Microsoft identity platform stores only the first 100 signing keys when they're downloaded from the external IdP's OIDC endpoint. If the external IdP exposes more than 100 signing keys, you may experience errors when using workload identity federation.
 
-## Next steps
-Learn more about how workload identity federation works:
+## See also
 
-- How to create, delete, get, or update [federated identity credentials](workload-identity-federation-create-trust-user-assigned-managed-identity.md) on a user-assigned managed identity.
-- How to create, delete, get, or update [federated identity credentials](workload-identity-federation-create-trust.md) on an app registration.
--  Read the [workload identity overview](/azure/aks/workload-identity-overview) to learn how to configure a Kubernetes workload to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
+- How to create, delete, get, or update [federated identity credentials on a user-assigned managed identity](workload-identity-federation-create-trust-user-assigned-managed-identity.md) or [federated identity credentials on an app registration](workload-identity-federation-create-trust.md).
+- Set up a [user-assigned managed identity as a federated identity credential on an app registration](./workload-identity-federation-config-app-trust-managed-identity.md).
+- Read the [workload identity overview](/azure/aks/workload-identity-overview) to learn how to configure a Kubernetes workload to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
 - Read the [GitHub Actions documentation](https://docs.github.com/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure) to learn more about configuring your GitHub Actions workflow to get an access token from Microsoft identity provider and access Microsoft Entra protected resources.
 - How Microsoft Entra ID uses the [OAuth 2.0 client credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) and a client assertion issued by another IdP to get a token.
-- For information about the required format of JWTs created by external identity providers, read about the [assertion format](/azure/active-directory/develop/active-directory-certificate-credentials#assertion-format).
+- For information about the required format of JWTs created by external identity providers, read about the [assertion format](/entra/identity-platform/certificate-credentials#assertion-format).

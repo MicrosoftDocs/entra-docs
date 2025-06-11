@@ -4,16 +4,17 @@ description: Learn how to build a desktop app that calls web APIs (app registrat
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: 
 ms.date: 09/09/2019
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # Desktop app that calls web APIs: App registration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 This article covers the app registration specifics for a desktop application.
 
@@ -34,7 +35,7 @@ If your desktop application uses interactive authentication, you can sign in use
 
 The redirect URIs to use in a desktop application depend on the flow you want to use.
 
-Specify the redirect URI for your app by [configuring the platform settings](quickstart-register-app.md#add-a-redirect-uri) for the app in **App registrations** in the Microsoft Entra admin center.
+Specify the redirect URI for your app by [configuring the platform settings](./how-to-add-redirect-uri.md) for the app in **App registrations** in the Microsoft Entra admin center.
 
 - For apps that use [Web Authentication Manager (WAM)](scenario-desktop-acquire-token-wam.md), redirect URIs need not be configured in MSAL, but they must be configured in the [app registration](scenario-desktop-acquire-token-wam.md#redirect-uri).
 

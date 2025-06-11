@@ -6,11 +6,11 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/05/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: calui
 
 ms.collection: M365-identity-device-management
@@ -23,8 +23,8 @@ This article shows how to register a passkey as an authentication method.
 
 ## First-time registration
 
-1. First-time users need to register a passkey (FIDO2) as an authentication method by navigating and completing the process from a browser at [My Security info](https://aka.ms/mysecurityinfo).
-1. Tap **Add sign-in method** > **Choose a method** > **Passkey (preview)** > **Add**.
+1. First-time users need to register a passkey (FIDO2) as an authentication method by navigating and completing the process from a browser at [Security info](https://mysignins.microsoft.com/security-info).
+1. Tap **Add sign-in method** > **Choose a method** > **Passkey** > **Add**.
 1. Sign in with multifactor authentication (MFA) before adding a passkey (FIDO2), then tap **Next**.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/add-passkey.png" alt-text="Screenshot of the Add a passkey (FIDO2) option in My Security info.":::
@@ -49,7 +49,7 @@ This article shows how to register a passkey as an authentication method.
 
    :::image type="content" border="true" source="media/how-to-register-passkey-with-security-key/inline-registration.png" alt-text="Screenshot of the Add a passkey (FIDO2) option for a more secure sign-in in My Security info.":::
 
-1. Tap **Next**, then you're directed to `login.microsoft.com`. 
+1. Tap **Next**, then you're directed to `login.microsoftonline.com`. 
 1. Select where you would like to save your passkey (FIDO2).
 
    > [!NOTE]

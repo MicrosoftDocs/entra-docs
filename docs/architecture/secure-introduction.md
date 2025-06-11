@@ -6,9 +6,9 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 06/28/2024
+ms.date: 10/08/2024
 ms.author: gasinh
-ms.reviewer: ajburnle
+ms.custom: sfi-image-nochange
 ---
 
 # Introduction to delegated administration and isolated environments
@@ -36,7 +36,7 @@ An identity is a directory object authenticated and authorized for access to a r
 
 For more information, [learn about workload identities](~/workload-id/workload-identities-overview.md).
 
-The Microsoft Entra tenant is an identity security boundary controlled be administrators. In this security boundary, administration of subscriptions, management groups, and resource groups can be delegated to segmented administrative control of Azure resources. These groups depend on tenant-wide configurations of policies and settings, under Microsoft Entra Global Administrators control.
+The Microsoft Entra tenant is an identity security boundary controlled be administrators. In this security boundary, administration of subscriptions, management groups, and resource groups can be delegated to segmented administrative control of Azure resources. These groups depend on tenant-wide configurations of policies and settings.
 
 Microsoft Entra ID grants objects access to applications and Azure resources. Azure resources and applications that trust Microsoft Entra ID can be managed with Microsoft Entra ID. Following best practices, set up the environment with a test environment.
 
@@ -188,7 +188,7 @@ Who should administer the environment and its resources? Sometimes, administrato
 
 Given the interdependence between a Microsoft Entra tenant and its resources, it's important to understand the security and operational risks of compromise or error. If you operate in a federated environment with synchronized accounts, an on-premises compromise can lead to a Microsoft Entra ID compromise.
 
-* **Identity compromise**: In the tenant boundary, identities are assigned any role, if the administrator providing access has sufficient privileges. While the effect of compromised nonprivileged identities is largely contained, compromised administrators can cause broad problems. For example, if a Microsoft Entra Global Administrator account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and follow principles of least privilege for [Microsoft Entra administrator roles](../identity/role-based-access-control/delegate-by-task.md). Create Conditional Access policies that exclude test accounts and test Service Principals from accessing resources outside the test applications. For more information on privileged access strategy, see [privileged access: strategy](/security/privileged-access-workstations/privileged-access-strategy).
+* **Identity compromise**: In the tenant boundary, identities are assigned any role, if the administrator providing access has sufficient privileges. While the effect of compromised nonprivileged identities is largely contained, compromised administrators can cause broad problems. For example, if a highly privileged account is compromised, Azure resources can become compromised. To mitigate risk of identity compromise, or bad actors, implement [tiered administration](/security/privileged-access-workstations/privileged-access-access-model) and follow principles of least privilege for [Microsoft Entra administrator roles](../identity/role-based-access-control/delegate-by-task.md). Create Conditional Access policies that exclude test accounts and test Service Principals from accessing resources outside the test applications. For more information on privileged access strategy, see [privileged access: strategy](/security/privileged-access-workstations/privileged-access-strategy).
 * **Federated environment compromise**
 * **Trusting resource compromise**: Any compromised component of a Microsoft Entra tenant affects trusting resources, based on permissions at the tenant and resource level. A resource's privileges determine the effect of a compromised component. Resources integrated to perform write operations can affect the entire tenant. Following [Zero Trust guidance](/azure/architecture/guide/security/conditional-access-zero-trust) can help limit the effects of compromise.
 * **Application development**: There's risk in the early stages of application development lifecycle with writing privileges to Microsoft Entra ID. Bugs can write changes unintentionally to Microsoft Entra objects. To learn more, see [Microsoft identity platform best practices](~/identity-platform/identity-platform-integration-checklist.md).

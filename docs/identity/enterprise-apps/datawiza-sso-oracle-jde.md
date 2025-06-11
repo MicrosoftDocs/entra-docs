@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 01/30/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure Datawiza to enable Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) to Oracle JD Edwards. My goal is to enhance security and access control for the application.
 ---
 
@@ -26,7 +25,7 @@ Benefits of integrating applications with Microsoft Entra ID using DAP:
 * [Microsoft Entra single sign-on](https://azure.microsoft.com/solutions/active-directory-sso/#overview) - secure and seamless access for users and apps, from any location, using a device
 * [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) - users are prompted during sign-in for forms of identification, such as a code on their cellphone or a fingerprint scan
 * [What is Conditional Access?](~/identity/conditional-access/overview.md) - policies are if-then statements, if a user wants to access a resource, then they must complete an action
-* [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) - use web applications such as: Oracle JDE, Oracle E-Business Suite, Oracle Sibel, and home-grown apps
+* [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) - use web applications such as: Oracle JDE, Oracle E-Business Suite, Oracle Siebel, and home-grown apps
 * Use the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com) - manage access to applications in public clouds and on-premises
 
 ## Scenario description
@@ -150,14 +149,13 @@ The Oracle JDE application needs to recognize the user: using a name, the applic
 
 ## Enable Microsoft Entra multifactor authentication 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enforce MFA for user sign-in. 
 
 See,  [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-2. Browse to **Identity** > **Overview** > **Properties** tab.
+2. Browse to **Entra ID** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.
 5. Select **Save**.
@@ -190,5 +188,4 @@ To confirm Oracle JDE application access occurs, a prompt appears to use a Micro
 
 * Video [Enable SSO and MFA for Oracle JDE) with Microsoft Entra ID via Datawiza](https://www.youtube.com/watch?v=_gUGWHT5m90)
 * [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-* [Tutorial: Configure Azure AD B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 * Go to docs.datawiza.com for Datawiza [User Guides](https://docs.datawiza.com/)

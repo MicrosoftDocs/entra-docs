@@ -1,26 +1,25 @@
 ---
-title: Microsoft Entra Connect Health - Health service data is not up to date alert
-description: This document describes the cause of "Health service data is not up to date" alert and how to troubleshoot it.
-
+title: Microsoft Entra Connect Health - Health service data isn't up to date alert
+description: This document describes the cause of "Health service data isn't up to date" alert and how to troubleshoot it.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
-# Health service data is not up to date alert
+# Health service data isn't up to date alert
 
 ## Overview
 
-The agents on the on-premises machines that Microsoft Entra Connect Health monitors periodically upload data to the Microsoft Entra Connect Health Service. If the service does not receive data from an agent, the information the portal presents will be stale. To highlight the issue, the service will raise the **Health service data is not up to date** alert. This alert is generated when the service has not received complete data in the past two hours.  
+The agents on the on-premises machines that Microsoft Entra Connect Health monitors periodically upload data to the Microsoft Entra Connect Health Service. If the service doesn't receive data from an agent, the information the portal presents will be stale. To highlight the issue, the service raises the **Health service data isn't up to date** alert. This alert is generated when the service hasn't received complete data in the past two hours.  
 
-- The **Warning** status alert fires if the Health Service has received only **partial** data types sent from the server in the past two hours. The warning status alert does not trigger email notifications to configured recipients. 
-- The **Error** status alert fires if the Health Service has not received any data types from the server in the past two hours. The error status alert triggers email notifications to configured recipients.
+- The **Warning** status alert fires if the Health Service received only **partial** data types sent from the server in the past two hours. The warning status alert doesn't trigger email notifications to configured recipients. 
+- The **Error** status alert fires if the Health Service hasn't received any data types from the server in the past two hours. The error status alert triggers email notifications to configured recipients.
 
 The service gets the data from agents that are running on the on-premises machines, depending on the service type. The following table lists the agents that run on the machine, what they do, and the data types that the service generates. In some cases, there are multiple services involved in the process, so any of them could be the culprit. 
 
@@ -59,7 +58,7 @@ The steps required to diagnose the issue is given below. The first is a set of b
 
 
 ## Next steps
-If any of the above steps identified an issue, fix it and wait for the alert to resolve. The alert background process runs every 2 hours, so it will take up to 2 hours to resolve the alert. 
+If any of the above steps identified an issue, fix it and wait for the alert to resolve. The alert background process runs every 2 hours, so it can take up to 2 hours to resolve the alert. 
 
 * [Microsoft Entra Connect Health data retention policy](reference-connect-health-user-privacy.md#data-retention-policy)
 * [Microsoft Entra Connect Health FAQ](reference-connect-health-faq.yml)

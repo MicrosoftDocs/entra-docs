@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with SpedTrack
+title: Configure SpedTrack for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SpedTrack.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SpedTrack so that I can control who has access to SpedTrack, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SpedTrack
+# Configure SpedTrack for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate SpedTrack with Microsoft Entra ID. SpedTrack provides a comprehensive web-based solution for school districts to manage their Special Services departments. When you integrate SpedTrack with Microsoft Entra ID, you can:
+In this article, you learn how to integrate SpedTrack with Microsoft Entra ID. SpedTrack provides a comprehensive web-based solution for school districts to manage their Special Services departments. When you integrate SpedTrack with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SpedTrack.
 * Enable your users to be automatically signed-in to SpedTrack with their Microsoft Entra accounts.
@@ -57,16 +57,16 @@ Follow the guidelines in the [create and assign a user account](~/identity/enter
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SpedTrack** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SpedTrack** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file** then perform the following steps:
 
-	a. Click **Upload metadata file**.
+	a. Select **Upload metadata file**.
 
     ![Screenshot shows how to upload metadata file.](common/upload-metadata.png "File")
 
-	b. Click on **folder logo** to select the metadata file and click **Upload**.
+	b. Select **folder logo** to select the metadata file and select **Upload**.
 
 	![Screenshot shows how to choose and browse metadata file.](common/browse-upload-metadata.png "Folder")
 
@@ -75,7 +75,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	d. In the **Sign on URL** textbox, type a URL using the following pattern:
     `https://<SUBDOMAIN>.spedtrack.com/Login.aspx`
 
-1. If needed, fill the values manually that copied from the SpedTrack in the **Basic SAML Configuration** section by clicking pencil icon.
+1. If needed, fill the values manually that copied from the SpedTrack in the **Basic SAML Configuration** section by selecting pencil icon.
 
     a. In the **Identifier** textbox, type a URL using the following pattern:
     `https://<SUBDOMAIN>.spedtrack.com`
@@ -98,7 +98,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Navigate to **Admin > District Setup > Single Sign-On**.
 
-1. Click **Edit Config** and select **Azure** as your **IdP Provider**.
+1. Select **Edit Config** and select **Azure** as your **IdP Provider**.
 
 1. Download the SP Metadata file or copy the values of Identifier, Reply URL, Sign on URL and Logout URL. 
 
@@ -117,19 +117,19 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 #### SP initiated:
 
 * Ensure the user being tested was allowed access to the application and exists within SpedTrack.
-* Within SpedTrack navigate to **Admin > District Setup > Single Sign-On**. Click on **Test Config**. 
+* Within SpedTrack navigate to **Admin > District Setup > Single Sign-On**. Select **Test Config**. 
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the SpedTrack for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the SpedTrack for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the SpedTrack tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SpedTrack for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the SpedTrack tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SpedTrack for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure SpedTrack you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

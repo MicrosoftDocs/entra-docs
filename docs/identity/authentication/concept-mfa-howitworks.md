@@ -6,11 +6,11 @@ description: Learn how Microsoft Entra multifactor authentication helps safeguar
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/28/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: michmcla
 ---
 # How it works: Microsoft Entra multifactor authentication
@@ -65,9 +65,7 @@ For more granular controls, you can use [Conditional Access](~/identity/conditio
 
 ![Diagram that shows how Conditional Access works to secure the sign-in process.](media/tutorial-enable-azure-mfa/conditional-access-overview.png)
 
-## Next steps
-
-To learn about licensing, see [Features and licenses for Microsoft Entra multifactor authentication](concept-mfa-licensing.md).
+## Related content
 
 To learn more about different authentication and validation methods, see [Authentication methods in Microsoft Entra ID](concept-authentication-methods.md).
 

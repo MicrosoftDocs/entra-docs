@@ -1,16 +1,15 @@
 ---
 title: Create or delete administrative units
 description: Create administrative units to restrict the scope of role permissions in Microsoft Entra ID.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
-ms.date: 06/09/2023
-ms.author: rolyon
+ms.date: 01/03/2025
+ms.author: barclayn
 ms.reviewer: anandy
-ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
+ms.custom: oldportal, it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Create or delete administrative units
@@ -28,26 +27,23 @@ This article describes how to create or delete administrative units to restrict 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
 - Privileged Role Administrator role
-- Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
-- Azure AD PowerShell module when using PowerShell
-- AzureADPreview module when using PowerShell and restricted management administrative units
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
 ## Create an administrative unit
 
-You can create a new administrative unit by using either the Microsoft Entra admin center, PowerShell or Microsoft Graph.
+You can create a new administrative unit by using either the Microsoft Entra admin center, Microsoft Entra PowerShell, or Microsoft Graph.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
-    ![Screenshot of the Administrative units page.](./media/admin-units-manage/nav-to-admin-units.png)
+    :::image type="content" source="./media/admin-units-manage/nav-to-admin-units.png" alt-text="Screenshot of the Administrative units page." lightbox="./media/admin-units-manage/nav-to-admin-units.png":::
 
 1. Select **Add**.
 
@@ -55,19 +51,17 @@ You can create a new administrative unit by using either the Microsoft Entra adm
 
 1. If you don't want tenant-level administrators to be able to access this administrative unit, set the **Restricted management administrative unit** toggle to **Yes**. For more information, see [Restricted management administrative units](admin-units-restricted-management.md).
 
-    ![Screenshot showing the Add administrative unit page and the Name box for entering the name of the administrative unit.](./media/admin-units-manage/add-new-admin-unit.png)
+    :::image type="content" source="./media/admin-units-manage/add-new-admin-unit.png" alt-text="Screenshot showing the Add administrative unit page and the Name box for entering the name of the administrative unit." lightbox="./media/admin-units-manage/add-new-admin-unit.png":::
 
 1. Optionally, on the **Assign roles** tab, select a role and then select the users to assign the role to with this administrative unit scope.
 
-    ![Screenshot showing the Add assignments pane to add role assignments with this administrative unit scope.](./media/admin-units-manage/assign-roles-admin-unit.png)
+    :::image type="content" source="./media/admin-units-manage/assign-roles-admin-unit.png" alt-text="Screenshot showing the Add assignments pane to add role assignments with this administrative unit scope." lightbox="./media/admin-units-manage/assign-roles-admin-unit.png":::
 
 1. On the **Review + create** tab, review the administrative unit and any role assignments.
 
 1. Select the **Create** button.
 
-### PowerShell
-
-# [Microsoft Graph PowerShell](#tab/ms-powershell)
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?branch=main#using-connect-mggraph) command to sign in to your tenant and consent to the required permissions.
 
@@ -98,25 +92,7 @@ $params = @{
 $restrictedAU = New-MgBetaDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-Use the [New-AzureADMSAdministrativeUnit](/powershell/module/azuread/new-azureadmsadministrativeunit?branch=main) command to create a new administrative unit.
-
-```powershell
-$adminUnitObj = New-AzureADMSAdministrativeUnit -Description "West Coast region" -DisplayName "West Coast"
-```
-
-Use the [New-AzureADMSAdministrativeUnit (preview)](/powershell/module/azuread/new-azureadmsadministrativeunit?view=azureadps-2.0-preview&preserve-view=true&branch=main) command to create a new restricted management administrative unit. Set the `IsMemberManagementRestricted` parameter to `$true`.
-
-```powershell
-$restrictedAU = New-AzureADMSAdministrativeUnit -DisplayName "Contoso Executive Division" -IsMemberManagementRestricted $true
-```
-
----
-
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?branch=main) API to create a new administrative unit.
 
@@ -153,15 +129,17 @@ Body
 }
 ```
 
+---
+
 ## Delete an administrative unit
 
 In Microsoft Entra ID, you can delete an administrative unit that you no longer need as a unit of scope for administrative roles. Before you delete the administrative unit, you should remove any role assignments with that administrative unit scope.
 
-### Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit you want to delete.
 
@@ -169,19 +147,17 @@ In Microsoft Entra ID, you can delete an administrative unit that you no longer 
 
 1. Remove all the role assignments with the administrative unit scope.
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Add a check mark next to the administrative unit you want to delete.
 
 1. Select **Delete**.
 
-    ![Screenshot of the administrative unit Delete button and confirmation window.](./media/admin-units-manage/select-admin-unit-to-delete.png)
+    :::image type="content" source="./media/admin-units-manage/select-admin-unit-to-delete.png" alt-text="Screenshot of the administrative unit Delete button and confirmation window." lightbox="./media/admin-units-manage/select-admin-unit-to-delete.png":::
 
 1. To confirm that you want to delete the administrative unit, select **Yes**.
 
-### PowerShell
-
-# [Microsoft Graph PowerShell](#tab/ms-powershell)
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Remove-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryadministrativeunit?branch=main) command to delete an administrative unit.
 
@@ -190,20 +166,7 @@ $adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Seatt
 Remove-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnitObj.Id
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-Use the [Remove-AzureADMSAdministrativeUnit](/powershell/module/azuread/remove-azureadmsadministrativeunit?branch=main) command to delete an administrative unit.
-
-```powershell
-$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "DisplayName eq 'Seattle District Technical Schools'"
-Remove-AzureADMSAdministrativeUnit -Id $adminUnitObj.Id
-```
-
----
-
-### Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Delete administrativeUnit](/graph/api/administrativeunit-delete) API to delete an administrative unit.
 
@@ -211,8 +174,10 @@ Use the [Delete administrativeUnit](/graph/api/administrativeunit-delete) API to
 DELETE https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-unit-id}
 ```
 
+---
+
 ## Next steps
 
 - [Add users, groups, or devices to an administrative unit](admin-units-members-add.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)
 - [Microsoft Entra administrative units: Troubleshooting and FAQ](admin-units-faq-troubleshoot.yml)

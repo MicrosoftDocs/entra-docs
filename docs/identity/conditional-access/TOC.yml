@@ -31,8 +31,10 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
-  - name: Report-only mode
+  - name: Analyze impact
     href: concept-conditional-access-report-only.md
+  - name: Optimization agent
+    href: agent-optimization.md
   - name: Service dependencies
     href: service-dependencies.md
   - name: Filter for applications
@@ -59,71 +61,81 @@
     href: concept-condition-filters-for-devices.md
   - name: What if tool
     href: what-if-tool.md
+  - name: Protected actions
+    href: ..\role-based-access-control\protected-actions-add.md?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
 - name: How-to guides
   expanded: true
   items:
   - name: Plan your Conditional Access deployment
     href: plan-conditional-access.md
-  - name: Common Conditional Access policies
+  - name: Recommended policies
     items: 
-    - name: Require MFA for administrators
-      href: howto-conditional-access-policy-admin-mfa.md
-    - name: Require phishing-resistant MFA for administrators
-      href: how-to-policy-phish-resistant-admin-mfa.md
-    - name: Secure security info registration
-      href: howto-conditional-access-policy-registration.md
     - name: Block legacy authentication
-      href: howto-conditional-access-policy-block-legacy.md
-    - name: Require MFA for guest users
-      href: howto-policy-guest-mfa.md
-    - name: Require MFA for all users
-      href: howto-conditional-access-policy-all-users-mfa.md
-    - name: Require MFA for Microsoft admin portals
-      href: how-to-policy-mfa-admin-portals.md
-    - name: Require MFA for Azure management
-      href: howto-conditional-access-policy-azure-management.md
+      href: policy-block-legacy-authentication.md
+    - name: Require phishing-resistant MFA for administrators
+      href: policy-admin-phish-resistant-mfa.md
+    - name: Require MFA authentication strength for all users
+      href: policy-all-users-mfa-strength.md
+    - name: Require MFA authentication strength for guests
+      href: policy-guests-mfa-strength.md
+    - name: Secure security info registration
+      href: policy-all-users-security-info-registration.md
     - name: Require MFA for risky sign-in
-      href: howto-conditional-access-policy-risk.md
+      href: policy-risk-based-sign-in.md
     - name: Require password change for risky users
-      href: howto-conditional-access-policy-risk-user.md
+      href: policy-risk-based-user.md
+    - name: Require authentication strength for device registration
+      href: policy-all-users-device-registration.md
+    - name: Require device compliance
+      href: policy-all-users-device-compliance.md
+    - name: Restrict device code flow and authentication transfer
+      href: policy-block-authentication-flows.md
+  - name: Other policy examples
+    items: 
+    - name: Applications
+      items:
+      - name: Require approved app or app protection policy
+        href: policy-all-users-approved-app-or-app-protection.md
+      - name: Require app protection policy for Windows
+        href: policy-all-users-windows-app-protection.md
+      - name: Use application enforced restrictions
+        href: policy-all-users-app-enforced-restrictions.md
+    - name: Devices
+      items:
+      - name: Block access for unknown or unsupported devices
+        href: policy-all-users-device-unknown-unsupported.md
+      - name: Require compliant or hybrid join for admins
+        href: policy-alt-admin-device-compliand-hybrid.md
+      - name: Require compliant device, hybrid joined, or MFA
+        href: policy-alt-all-users-compliant-hybrid-or-mfa.md
+      - name: No persistent browser session
+        href: policy-all-users-persistent-browser.md
+      - name: Require MFA for Intune enrollment
+        href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
+    - name: Multifactor authentication
+      items:
+      - name: Require MFA for administrators
+        href: policy-old-require-mfa-admin.md
+      - name: Require MFA for guest users
+        href: policy-old-require-mfa-guest.md
+      - name: Require MFA for Microsoft admin portals
+        href: policy-old-require-mfa-admin-portals.md
+      - name: Require MFA for Azure management
+        href: policy-old-require-mfa-azure-mgmt.md
+    - name: Conditional Access for Generative AI
+      href: policy-all-users-copilot-ai-security.md
     - name: Block users with elevated insider risk
-      href: how-to-policy-insider-risk.md
-    - name: Require compliant devices
-      href: how-to-policy-require-device-compliance.md
-    - name: Require compliant or hybrid joined devices for admins
-      href: howto-conditional-access-policy-compliant-device-admin.md
-    - name: Block access for unknown or unsupported device platform
-      href: howto-policy-unknown-unsupported-device.md
-    - name: Require approved app or app protection policy
-      href: howto-policy-approved-app-or-app-protection.yml
-    - name: Require app protection policy for Windows
-      href: how-to-app-protection-policy-windows.md
-    - name: No persistent browser session
-      href: howto-policy-persistent-browser-session.md
-    - name: Require compliant device, hybrid joined, or MFA for users
-      href: howto-conditional-access-policy-compliant-device.md
-    - name: Use application enforced restrictions
-      href: howto-policy-app-enforced-restriction.md
-    - name: Require auth strength for device registration
-      href: how-to-policy-mfa-device-register-join.md
-    - name: Require MFA for Intune enrollment
-      href: /mem/intune/enrollment/multi-factor-authentication?toc=/entra/identity/conditional-access/toc.json&bc=/entra/identity/conditional-access/breadcrumb/toc.json
-    - name: Block access by location
-      href: howto-conditional-access-policy-location.yml
-    - name: Block access
-      href: howto-conditional-access-policy-block-access.md
-    - name: Require authentication strength for external users
-      href: howto-conditional-access-policy-authentication-strength-external.md
+      href: policy-risk-based-insider-block.md
     - name: Require terms of use to be accepted
-      href: require-tou.md
+      href: policy-all-users-require-terms-of-use.md
+    - name: Block access by location
+      href: policy-block-by-location.md
+    - name: Block access
+      href: policy-block-example.md
   - name: Microsoft-managed policies
     href: managed-policies.md
-  - name: Configure authentication flows
-    href: how-to-policy-authentication-flows.md
-  - name: Configure report only mode
+  - name: Policy insights and reporting
     href: howto-conditional-access-insights-reporting.md
-  - name: Block legacy authentication
-    href: block-legacy-authentication.md
   - name: Require terms of use
     href: terms-of-use.md
   - name: Sign-in frequency and browser persistence control
@@ -134,6 +146,8 @@
       href: troubleshoot-policy-changes-audit-log.md
     - name: Troubleshoot sign-in problems
       href: troubleshoot-conditional-access.md
+    - name: Troubleshoot Security Copilot
+      href: troubleshoot-security-copilot-policies.md
     - name: Troubleshoot using the What If tool 
       href: troubleshoot-conditional-access-what-if.md
     - name: Troubleshoot continuous access evaluation
@@ -142,8 +156,6 @@
     href: migrate-approved-client-app.md
 - name: Reference
   items:
-  - name: Upcoming changes
-    href: reference-resources-change.md
   - name: Office 365 application
     href: reference-office-365-application-contents.md
   - name: Microsoft Graph APIs

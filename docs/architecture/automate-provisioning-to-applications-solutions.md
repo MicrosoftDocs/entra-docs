@@ -8,9 +8,7 @@ ms.subservice: architecture
 ms.topic: overview
 ms.date: 09/29/2022
 ms.author: jricketts
-ms.custom:
-  - it-pro
-  - kr2b-contr-experiment
+ms.custom: it-pro, kr2b-contr-experiment, sfi-image-nochange
 ---
 
 # Solutions

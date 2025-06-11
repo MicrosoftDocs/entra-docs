@@ -70,7 +70,7 @@ You can use one of the following SAML approaches:
   *  [Making your application multi-tenant](~/identity-platform/howto-convert-app-to-be-multi-tenant.md)
 * **Alternate SAML approach**: Customers can create an OIDC application registration in their Microsoft Entra tenant and set the URIs, endpoints, and permissions
 
-Use the client credentials grant type, which requires the solution to allow customers to enter a client ID and secret. The solution also requires you store this information. Get a JWT from Microsoft Entra ID, and then use it to interact with Microsoft Graph. See, [Get a token](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#get-a-token). We recommend you repare customer documentation about how to create application registration in their Microsoft Entra tenant. Include endpoints, URIs, and permissions.
+Use the client credentials grant type, which requires the solution to allow customers to enter a client ID and secret. The solution also requires you store this information. Get a JWT from Microsoft Entra ID, and then use it to interact with Microsoft Graph. See, [Get a token](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#get-a-token). We recommend you prepare customer documentation about how to create application registration in their Microsoft Entra tenant. Include endpoints, URIs, and permissions.
 
 > [!NOTE]
 > Before applications are used for IT administrator or user SSO, the customer IT administrator must consent to the application in their tenant. See, [Grant tenant-wide admin consent to an application](./grant-admin-consent.md).
@@ -113,7 +113,7 @@ The following diagram illustrates the user authentication flow:
 
 ### Users sign in to the applications
 
-When users sign in to applications, they use OIDC or SAML. If the applications need to interact with Microsoft Graph or Microsoft Entra protected API, we recommend you configure them to use OICD. This configuration ensures the JWT is applied to interact with Microsoft Graph. If there's no need for applications to interact with Microsoft Graph, or Microsoft Entra protected APIs, then use SAML.
+When users sign in to applications, they use OIDC or SAML. If the applications need to interact with Microsoft Graph or Microsoft Entra protected API, we recommend you configure them to use OIDC. This configuration ensures the JWT is applied to interact with Microsoft Graph. If there's no need for applications to interact with Microsoft Graph, or Microsoft Entra protected APIs, then use SAML.
 
 The following diagram shows user authentication flow:
 

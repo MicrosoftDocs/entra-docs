@@ -1,17 +1,15 @@
 ---
 title: Secure resources with Microsoft Entra multifactor authentication and ADFS
 description: This is the Microsoft Entra multifactor authentication page that describes how to get started with Microsoft Entra multifactor authentication and AD FS in the cloud.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/13/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: michmcla
+ms.custom: sfi-image-nochange
 ---
 # Securing cloud resources with Microsoft Entra multifactor authentication and AD FS
 
@@ -28,15 +26,15 @@ To secure your cloud resource, set up a claims rule so that Active Directory Fed
 
 1. Open AD FS Management.
 2. On the left, select **Relying Party Trusts**.
-3. Right-click on **Microsoft Office 365 Identity Platform** and select **Edit Claim Rules**.
+3. Right-select on **Microsoft Office 365 Identity Platform** and select **Edit Claim Rules**.
 
    ![ADFS Console - Relying Party Trusts](./media/howto-mfa-adfs/trustedip1.png)
 
-4. On Issuance Transform Rules, click **Add Rule**.
+4. On Issuance Transform Rules, select **Add Rule**.
 
    ![Editing Issuance Transform Rules](./media/howto-mfa-adfs/trustedip2.png)
 
-5. On the Add Transform Claim Rule Wizard, select **Pass Through or Filter an Incoming Claim** from the drop-down and click **Next**.
+5. On the Add Transform Claim Rule Wizard, select **Pass Through or Filter an Incoming Claim** from the drop-down and select **Next**.
 
    ![Screenshot shows Add Transform Claim Rule Wizard where you select a Claim rule template.](./media/howto-mfa-adfs/trustedip3.png)
 
@@ -46,7 +44,7 @@ To secure your cloud resource, set up a claims rule so that Active Directory Fed
 
     ![Screenshot shows Add Transform Claim Rule Wizard where you select Pass through all claim values.](./media/howto-mfa-adfs/configurewizard.png)
 
-9. Click **Finish**. Close the AD FS Management console.
+9. Select **Finish**. Close the AD FS Management console.
 
 ## Trusted IPs for federated users
 
@@ -60,15 +58,15 @@ The first thing we need to do is to configure the AD FS claims. Create two claim
 
 1. Open AD FS Management.
 2. On the left, select **Relying Party Trusts**.
-3. Right-click on **Microsoft Office 365 Identity Platform** and select **Edit Claim Rules…**
+3. Right-select on **Microsoft Office 365 Identity Platform** and select **Edit Claim Rules…**
 
    ![ADFS Console - Edit Claim Rules](./media/howto-mfa-adfs/trustedip1.png)
 
-4. On Issuance Transform Rules, click **Add Rule.**
+4. On Issuance Transform Rules, select **Add Rule.**
 
    ![Adding a Claim Rule](./media/howto-mfa-adfs/trustedip2.png)
 
-5. On the Add Transform Claim Rule Wizard, select **Pass Through or Filter an Incoming Claim** from the drop-down and click **Next**.
+5. On the Add Transform Claim Rule Wizard, select **Pass Through or Filter an Incoming Claim** from the drop-down and select **Next**.
 
    ![Screenshot shows Add Transform Claim Rule Wizard where you select Pass Through or Filter an Incoming Claim.](./media/howto-mfa-adfs/trustedip3.png)
 
@@ -77,9 +75,9 @@ The first thing we need to do is to configure the AD FS claims. Create two claim
 
    ![Adding Inside Corporate Network claim](./media/howto-mfa-adfs/trustedip4.png)
 
-8. Click **Finish**.
-9. On Issuance Transform Rules, click **Add Rule**.
-10. On the Add Transform Claim Rule Wizard, select **Send Claims Using a Custom Rule** from the drop-down and click **Next**.
+8. Select **Finish**.
+9. On Issuance Transform Rules, select **Add Rule**.
+10. On the Add Transform Claim Rule Wizard, select **Send Claims Using a Custom Rule** from the drop-down and select **Next**.
 11. In the box under Claim rule name: enter *Keep Users Signed In*.
 12. In the Custom rule box, enter:
 
@@ -90,16 +88,15 @@ The first thing we need to do is to configure the AD FS claims. Create two claim
 
     ![Create custom claim to keep users signed in](./media/howto-mfa-adfs/trustedip5.png)
 
-13. Click **Finish**.
-14. Click **Apply**.
-15. Click **Ok**.
+13. Select **Finish**.
+14. Select **Apply**.
+15. Select **Ok**.
 16. Close AD FS Management.
 
 <a name='configure-azure-ad-multi-factor-authentication-trusted-ips-with-federated-users'></a>
 
 ### Configure Microsoft Entra multifactor authentication Trusted IPs with federated users
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Now that the claims are in place, we can configure trusted IPs.
 
@@ -110,6 +107,6 @@ Now that the claims are in place, we can configure trusted IPs.
    ![Microsoft Entra Conditional Access named locations Configure MFA trusted IPs](./media/howto-mfa-adfs/trustedip6.png)
 
 4. On the Service Settings page, under **trusted IPs**, select **Skip multifactor-authentication for requests from federated users on my intranet**.  
-5. Click **save**.
+5. Select **save**.
 
 That's it! At this point, federated Microsoft 365 users should only have to use MFA when a claim originates from outside the corporate intranet.

@@ -100,6 +100,8 @@ Document the state of your tenant and its objects regularly. Then if a hard dele
 - [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings.
 - [Conditional Access APIs](https://github.com/Azure-Samples/azure-ad-conditional-access-apis) can be used to manage your Conditional Access policies as code.
 
+In the rare case that an API is not available for a certain configuration setting, screenshot(s) can be taken to enable manual recovery.
+
 ### Commonly used Microsoft Graph APIs
 
 You can use Microsoft Graph APIs to export the current state of many Microsoft Entra configurations. The APIs cover most scenarios where reference material about the prior state, or the ability to apply that state from an exported copy, could become vital to keeping your business running.

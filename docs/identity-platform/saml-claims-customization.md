@@ -5,8 +5,8 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 05/30/2024
-ms.reviewer: rahulnagraj, alamaral, jeedes
+ms.date: 05/14/2025
+ms.reviewer: alamaral
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -25,7 +25,7 @@ By default, the Microsoft identity platform issues a SAML token to an applicatio
 
 To view or edit the claims issued in the SAML token to the application:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application, select **Single sign-on** in the left-hand menu, and then select **Edit** in the **Attributes & Claims** section.
 
 You might need to edit the claims issued in the SAML token for the following reasons:
@@ -60,7 +60,6 @@ Transient `nameID` is also supported, but isn't available in the dropdown and ca
 
 ### Attributes
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Select the desired source for the `NameIdentifier` (or `nameID`) claim. You can select from the options in the following table.
 

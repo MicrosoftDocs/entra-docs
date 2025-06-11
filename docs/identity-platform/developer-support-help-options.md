@@ -4,7 +4,6 @@ description: Learn where to get help and find answers to your questions as you b
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref
 ms.date: 05/31/2023
 ms.service: identity-platform
 

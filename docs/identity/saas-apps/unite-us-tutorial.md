@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with Unite Us
+title: Configure Unite Us for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Unite Us.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Unite Us so that I can control who has access to Unite Us, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Unite Us
+# Configure Unite Us for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Unite Us with Microsoft Entra ID. Unite Us provides a default implementation for SCIM user provisioning and SAML SSO /JIT. When you integrate Unite Us with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Unite Us with Microsoft Entra ID. Unite Us provides a default implementation for SCIM user provisioning and SAML SSO /JIT. When you integrate Unite Us with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Unite Us.
 * Enable your users to be automatically signed-in to Unite Us with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Unite Us** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Unite Us** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -92,7 +92,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | `https://app.auth.uniteustraining.com/` |
 
     > [!Note]
-    > These values are not the real. Update these values with the actual Identifier and Reply URL. Contact [Unite Us Client support team](mailto:isd.support@uniteus.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't the real. Update these values with the actual Identifier and Reply URL. Contact [Unite Us Client support team](mailto:isd.support@uniteus.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -108,7 +108,7 @@ To configure single sign-on on **Unite Us** side, you need to send the downloade
 
 ### Create Unite Us test user
 
-In this section, a user called B.Simon is created in Unite Us. Unite Us supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Unite Us, a new one is created after authentication.
+In this section, a user called B.Simon is created in Unite Us. Unite Us supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Unite Us, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -116,21 +116,21 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Unite Us Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Unite Us Sign on URL where you can initiate the login flow.  
 
 * Go to Unite Us Sign on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Unite Us for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Unite Us for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Unite Us tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Unite Us for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Unite Us tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Unite Us for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Unite Us you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

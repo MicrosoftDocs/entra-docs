@@ -1,15 +1,15 @@
 ---
 title: SMS-based user sign-in for Microsoft Entra ID
 description: Learn how to configure and enable users to sign-in to Microsoft Entra ID using SMS
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: anjusingh
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
@@ -42,6 +42,7 @@ Here are some known issues:
 * SMS-based authentication isn't supported for B2B accounts.
 * Federated users won't authenticate in the home tenant. They only authenticate in the cloud.
 * If a user's default sign-in method is a text or call to your phone number, then the SMS code or voice call is sent automatically during multifactor authentication. As of June 2021, some apps will ask users to choose **Text** or **Call** first. This option prevents sending too many security codes for different apps. If the default sign-in method is the Microsoft Authenticator app ([which we highly recommend](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752)), then the app notification is sent automatically.
+* [Cross-tenant synchronization](/entra/identity/app-provisioning/known-issues?pivots=cross-tenant-synchronization) does not support users with SMS sign-in enabled. 
 
 
 ## Enable the SMS-based authentication method
@@ -56,13 +57,13 @@ There are three main steps to enable and use SMS-based authentication in your or
 First, let's enable SMS-based authentication for your Microsoft Entra tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** >  **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. From the list of available authentication methods, select **SMS**.
 
     ![Screenshot that shows how to select the SMS authentication method.](./media/howto-authentication-sms-signin/authentication-methods-policy.png)
 
 
-1. Click **Enable** and select **Target users**. You can choose to enable SMS-based authentication for *All users* or *Select users* and groups. 
+1. Select **Enable** and select **Target users**. You can choose to enable SMS-based authentication for *All users* or *Select users* and groups. 
    > [!NOTE]
    > To configure SMS-based authentication for first-factor (that is, to allow users to sign in with this method), check the **Use for sign-in** checkbox. Leaving this unchecked makes SMS-based authentication available for multifactor authentication and Self-Service Password Reset only.
 
@@ -120,7 +121,7 @@ To test the user account that's now enabled for SMS-based sign-in, complete the 
 
 ## Troubleshoot SMS-based sign-in
 
-The following scenarios and troubleshooting steps can used if you have problems with enabling and using SMS-based sign-in. 
+You can use the following scenarios and troubleshooting steps if you have problems with enabling and using SMS-based sign-in. 
 For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
 
 

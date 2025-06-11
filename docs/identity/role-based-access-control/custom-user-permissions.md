@@ -2,13 +2,13 @@
 title: User management permissions for Microsoft Entra custom roles
 description: User management permissions for Microsoft Entra custom roles in the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 06/09/2023
-ms.author: rolyon
+ms.author: barclayn
 ms.custom: it-pro
 ---
 
@@ -29,7 +29,7 @@ User management permissions can be used in custom role definitions in Microsoft 
 - Update password policies of users
 - Read assignments and memberships of users
 
-This article lists the permissions you can use in your custom roles for different user management scenarios. For information about how to create custom roles, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml).
+This article lists the permissions you can use in your custom roles for different user management scenarios. For information about how to create custom roles, see [Create a custom role in Microsoft Entra ID](custom-create.md).
 
 ## License requirements
 
@@ -181,5 +181,5 @@ The following permissions are available to read assignments and memberships of u
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
 - [List Microsoft Entra role assignments](view-assignments.md)

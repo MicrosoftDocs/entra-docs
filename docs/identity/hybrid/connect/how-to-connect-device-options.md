@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect: Device options'
 description: This document details device options available in Microsoft Entra Connect
 
 author: billmath
-manager: amycolannino
+manager: femila
 editor: billmath
 ms.assetid: c0ff679c-7ed5-4d6e-ac6c-b2b6392e7892
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

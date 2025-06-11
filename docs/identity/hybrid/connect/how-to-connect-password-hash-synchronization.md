@@ -1,20 +1,17 @@
 ---
 title: Implement password hash synchronization with Microsoft Entra Connect Sync
 description: Provides information about how password hash synchronization works and how to set up.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-search.appverid:
+search.appverid:  
 - MET150
-
-
 ---
 # Implement password hash synchronization with Microsoft Entra Connect Sync
 This article provides information that you need to synchronize your user passwords from an on-premises Active Directory instance to a cloud-based Microsoft Entra instance.
@@ -123,7 +120,7 @@ After the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature is enabled,
 >[!TIP]
 >It's recommended to enable *CloudPasswordPolicyForPasswordSyncedUsersEnabled* prior to enabling password hash sync, so that the initial sync of password hashes doesn't add the `DisablePasswordExpiration` value to the PasswordPolicies attribute for the users.
 
-The default Microsoft Entra password policy requires users to change their passwords every 90 days. If your policy in AD is also 90 days, the two policies should match. However, if the AD policy isn't 90 days, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
+The default Microsoft Entra password policy doesn't require users to change their passwords. If the policy in your on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
 
 Microsoft Entra ID supports a separate password expiration policy per registered domain.
 
@@ -170,6 +167,25 @@ Update-MgDirectoryOnPremiseSynchronization `
 #### Account expiration
 
 If your organization uses the accountExpires attribute as part of user account management, this attribute isn't synchronized to Microsoft Entra ID. As a result, an expired Active Directory account in an environment configured for password hash synchronization will still be active in Microsoft Entra ID. We recommend using a scheduled PowerShell script that disables users' AD accounts, once they expire (use the [Set-ADUser](/powershell/module/activedirectory/set-aduser) cmdlet). Conversely, during the process of removing the expiration from an AD account, the account should be re-enabled.
+
+### Password hash synchronization and smart card authentication 
+
+Customers can require that their users log in to Windows domains with a CAC/PIV physical smart card. They do this by configuring the  **Smart Card Required for Interactive Logon** (SCRIL) user property setting in Active Directory. 
+
+When SCRIL is enabled on a user object, the user’s AD password is randomized by the domain controller to a value no one knows, and the user has to enroll and subsequently authenticate to the Windows domain via smart card. 
+
+With password hash synchronization enabled, this AD password hash is synced with Microsoft Entra ID so that it can be used for cloud authentication as well. 
+
+> [!NOTE]
+> With the release of [version 2.4.18.0](reference-connect-version-history.md#24180) of Microsoft Entra Connect Sync, we fixed an issue that occurred when SCRIL is re-enabled on a user object. Re-enabling SCRIL is common in scenarios when a user loses their smart card, necessitating that SCRIL is disabled and the user is provided with a temporary password until they are issued a new smart card
+>
+> Previously, when SCRIL was re-enabled and a new randomized AD password was generated, the user was still able to use their old password to authenticate to Microsoft Entra ID. Now, Connect Sync has been updated so that new randomized AD password is synced to Microsoft Entra ID and the old password cannot be used once smart card login is enabled. 
+>
+> We recommend that admins person any of the below actions if they have users with a SCRIL bit in their AD Domain
+> 1.	Perform a full PHS sync as per [this guide](tshoot-connect-password-hash-synchronization.md) to ensure the passwords of all SCRIL users are scrambled
+> 2.	Scramble the password of an individual user by toggling SCRIL settings off then back on or directly changing the user's password
+> 3.	Periodically rotate the passwords for SCRIL users. Eventually all such users will have their passwords scrambled
+
 
 ### Overwrite synchronized passwords
 

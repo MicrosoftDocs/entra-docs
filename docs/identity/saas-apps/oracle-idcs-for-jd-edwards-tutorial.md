@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with Oracle IDCS for JD Edwards
+title: Configure Oracle IDCS for JD Edwards for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oracle IDCS for JD Edwards.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Oracle IDCS for JD Edwards so that I can control who has access to Oracle IDCS for JD Edwards, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Oracle IDCS for JD Edwards
+# Configure Oracle IDCS for JD Edwards for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Oracle IDCS for JD Edwards with Microsoft Entra ID. When you integrate Oracle IDCS for JD Edwards with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Oracle IDCS for JD Edwards with Microsoft Entra ID. When you integrate Oracle IDCS for JD Edwards with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Oracle IDCS for JD Edwards.
 * Enable your users to be automatically signed-in to Oracle IDCS for JD Edwards with their Microsoft Entra accounts.
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Oracle IDCS for JD Edwards** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Oracle IDCS for JD Edwards** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -79,7 +79,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     ` https://<SUBDOMAIN>.oraclecloud.com/`
 
     >[!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Oracle IDCS for JD Edwards support team](https://www.oracle.com/support/advanced-customer-services/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Oracle IDCS for JD Edwards support team](https://www.oracle.com/support/advanced-customer-services/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Your Oracle IDCS for JD Edwards application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Oracle IDCS for JD Edwards expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -101,17 +101,17 @@ In this section, you create a user called Britta Simon at Oracle IDCS for JD Edw
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Oracle IDCS for JD Edwards Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Oracle IDCS for JD Edwards Sign-on URL where you can initiate the login flow. 
 
 * Go to Oracle IDCS for JD Edwards Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Oracle IDCS for JD Edwards tile in the My Apps, this will redirect to Oracle IDCS for JD Edwards Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Oracle IDCS for JD Edwards tile in the My Apps, this option redirects to Oracle IDCS for JD Edwards Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Oracle IDCS for JD Edwards you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

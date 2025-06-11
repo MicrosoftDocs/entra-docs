@@ -6,14 +6,16 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: 
 ms.date: 05/07/2019
-ms.reviewer: brianmel, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # Get a token for a mobile app that calls web APIs
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 Before your app can call protected web APIs, it needs an access token. This article walks you through the process to get a token by using the Microsoft Authentication Library (MSAL).
 
@@ -265,6 +267,6 @@ client_id=<CLIENT_ID>
 
 ## Next steps
 
-- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
 
 - Explore Microsoft identity platform [mobile code samples](sample-v2-code.md#mobile) 

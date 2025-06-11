@@ -4,16 +4,17 @@ description: Learn how to build a mobile app that calls web APIs (app's registra
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: 
-ms.date: 08/18/2021
-ms.reviewer: brianmel, jmprieur
+ms.date: 11/14/2024
+ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform for developers.
 ---
 
 # Register mobile apps that call web APIs
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 This article contains instructions to help you register a mobile application that you're creating.
 
@@ -36,7 +37,7 @@ If you have a Universal Windows Platform (UWP) app, you can use integrated Windo
 When you build a mobile app that uses interactive authentication, the most critical registration step is the redirect URI. This experience enables your app to get single sign-on (SSO) through Microsoft Authenticator (and Intune Company Portal on Android). It also supports device management policies.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application.
 1. For **Supported account types**, select **Accounts in this organizational directory only**.
@@ -66,7 +67,6 @@ If you prefer to manually configure the redirect URI, you can do so through the 
 
 ### Username-password authentication
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If your app uses only username-password authentication, you don't need to register a redirect URI for your application. This flow does a round trip to the Microsoft identity platform. Your application won't be called back on any specific URI.
 

@@ -1,17 +1,15 @@
 ---
 title: Email notifications in Privileged Identity Management (PIM)
 description: Describes email notifications in Microsoft Entra Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 07/10/2024
+ms.date: 01/07/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim
-
+ms.custom: pim, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Email notifications in PIM
@@ -19,7 +17,7 @@ ms.custom: pim
 Privileged Identity Management (PIM) lets you know when important events occur in your Microsoft Entra organization, such as when a role is assigned or activated. Privileged Identity Management keeps you informed by sending you and other participants email notifications. These emails might also include links to relevant tasks, such activating or renewing a role. This article describes what these emails look like, when they are sent, and who receives them.
 
 >[!NOTE]
->One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This does not prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
+>One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1,000 recipients receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
 ## Sender email address and subject line
 
@@ -46,9 +44,9 @@ Also, Global Administrators and Privileged Role Administrators receive an email 
 
 - The user's role is activated (sent by Privileged Identity Management)
 
-The first two emails sent by the request approval engine can be delayed. Currently, 90% of emails take three to ten minutes, but for 1% customers it can be longer, up to fifteen minutes.
+The first two emails sent by the request approval engine can be delayed. Currently, 90% of emails take three to 10 minutes, but for 1% customers it can be longer, up to 15 minutes.
 
-If an approval request is approved in the Azure portal before the first email is sent, the first email will no longer be triggered and other approvers won't be notified by email of the approval request. It might appear as if they didn't get an email but it's the expected behavior.
+If an approval request is approved in the Azure portal before the first email is sent, the first email isn't triggered and other approvers don't receive email notifications of the approval request. It might appear as if they didn't get an email but it's the expected behavior.
 
 <a name='notifications-for-azure-ad-roles'></a>
 
@@ -78,7 +76,7 @@ The following shows an example email that is sent when a user activates a Micros
 
 ### Weekly Privileged Identity Management digest email for Microsoft Entra roles
 
-A weekly Privileged Identity Management summary email for Microsoft Entra roles is sent to Privileged Role Administrators, Security Administrators, and Global Administrators that have enabled Privileged Identity Management. This weekly email provides a snapshot of Privileged Identity Management activities for the week as well as privileged role assignments. It is only available for Microsoft Entra organizations on the public cloud. Here's an example email:
+A weekly Privileged Identity Management summary email for Microsoft Entra roles is sent to Privileged Role Administrators, Security Administrators, and Global Administrators that have enabled Privileged Identity Management. This weekly email provides a snapshot of Privileged Identity Management activities for the week and privileged role assignments. It's only available for Microsoft Entra organizations on the public cloud. Here's an example email:
 
 :::image type="content" source="./media/pim-email-notifications/email-directory-weekly.png" alt-text="Screenshot showing the weekly Privileged Identity Management digest email for Microsoft Entra roles.":::
 
@@ -96,15 +94,15 @@ The **Overview of your top roles** section lists the top five roles in your orga
 ## Notifications for Azure resource roles
 
 > [!NOTE]
-> In PIM, an *eligible* Owner is someone who has been granted just-in-time (JIT) privileged access to perform certain tasks for managing groups, which can be activated when needed. This is different from a *permanent* Owner, who has ongoing access to manage groups. For more information about JIT ownership of a group, see [Assign eligibility for a group in Privileged Identity Management](groups-assign-member-owner.md).
+> In PIM, an *eligible* Owner is someone who has just-in-time (JIT) privileged access to perform certain tasks for managing groups, which can be activated when needed. This is different from a *permanent* Owner, who has ongoing access to manage groups. For more information about JIT ownership of a group, see [Assign eligibility for a group in Privileged Identity Management](groups-assign-member-owner.md).
 
-For maintaining groups, the owner has the ability to manage the group, including adding or removing members, renewing groups that are about to expire, and approving requests to join the group. PIM sends emails to *permanent* Owners, *eligible* Owners, and User Access Administrators when the following events occur for Azure resource roles:
+Group owners can manage the group, including adding or removing members, renewing groups that are about to expire, and approving requests to join the group. PIM sends emails to *permanent* Owners, *eligible* Owners, and User Access Administrators when the following events occur for Azure resource roles:
 
 - When a role assignment is pending approval
 - When a role is assigned
 - When a role is soon to expire
 - When a role is eligible to extend
-- When a role is being renewed by an end user
+- When a role is renewed by an end user
 - When a role activation request is completed
 
 Privileged Identity Management sends emails to end users when the following events occur for Azure resource roles:

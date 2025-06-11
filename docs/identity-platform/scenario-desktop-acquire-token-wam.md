@@ -2,17 +2,19 @@
 title: Acquire a token to call a web API by using Web Account Manager (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app by using Web Account Manager.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.custom: 
 ms.date: 01/15/2024
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform for developers.
 ---
 
 # Desktop app that calls web APIs: Acquire a token by using WAM
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 The Microsoft Authentication Library (MSAL) calls Web Account Manager (WAM), a Windows 10+ component that acts as an authentication broker. The broker allows users of your app to benefit from integration with accounts known to Windows, such as the account you signed into your Windows session.
 

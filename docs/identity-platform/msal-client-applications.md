@@ -4,12 +4,11 @@ description: Learn about public client and confidential client applications in t
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref
-ms.date: 07/24/2024
-ms.reviewer: iambmelt
+ms.date: 05/14/2025
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ga-nochange, sfi-ropc-nochange
 #Customer intent: As an application developer, I want to learn about the types of client apps so I can decide if this platform meets my app development requirements.
 ---
 
@@ -31,7 +30,7 @@ When examining the public or confidential nature of a given client, we're evalua
 
 - **Confidential client applications** run on servers, such as web apps, web API apps, or service/daemon apps. They're considered difficult to access by users or attackers, and therefore can adequately hold configuration-time secrets to assert proof of its identity. The client ID is exposed through the web browser, but the secret is passed only in the back channel and never directly exposed.
 
-## When should you enable allow a public client flow in your app registration?
+## When should you enable a public client flow in your app registration?
 
 After determining the type of client application you're building, you can decide whether to enable the public client flow in your app registration. By default, allow public client flow in your app registration should be disabled unless you or your developer are building a public client application and using the following OAuth authorization protocol or features:
 

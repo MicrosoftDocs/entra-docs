@@ -2,26 +2,25 @@
 title: PowerShell V2 examples for managing groups
 description: This page provides PowerShell examples to help you manage your groups in Microsoft Entra ID
 keywords: Azure AD, Azure Active Directory, PowerShell, Groups, Group management
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
 ---
 # Microsoft Entra version 2 cmdlets for group management
 
 > [!div class="op_single_selector"]
-> - [Azure portal](~/fundamentals/how-to-manage-groups.yml?context=azure/active-directory/users-groups-roles/context/ugr-context)
+> - [Azure portal](/entra/fundamentals/how-to-manage-groups?context=azure/active-directory/users-groups-roles/context/ugr-context)
 > - [PowerShell](~/identity/users/groups-settings-v2-cmdlets.md)
 >
 >
 
-This article contains examples of how to use PowerShell to manage your groups in Microsoft Entra ID, part of Microsoft Entra.  It also tells you how to get set up with the Microsoft Graph PowerShell module. First, you must [download the Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
+This article contains examples of how to use PowerShell to manage your groups in Microsoft Entra ID, part of Microsoft Entra. It also tells you how to get set up with the Microsoft Graph PowerShell module. First, you must [download the Microsoft Graph PowerShell module](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
 
 ## Install the Microsoft Graph PowerShell module
 
@@ -174,7 +173,7 @@ New-MgGroup @param
 
 ## Update groups
 
-To update an existing group, use the Update-MgGroup cmdlet. In this example, we’re changing the DisplayName property of the group “Intune Administrators.” First, we’re finding the group using the Get-MgGroup cmdlet and filter using the DisplayName attribute:
+To update an existing group, use the Update-MgGroup cmdlet. In this example, we’re changing the DisplayName property of the group "Intune Administrators." First, we’re finding the group using the Get-MgGroup cmdlet and filter using the DisplayName attribute:
 
 ```powershell
     PS C:\Windows\system32> Get-MgGroup -Filter "DisplayName eq 'Intune Administrators'"
@@ -196,7 +195,7 @@ To update an existing group, use the Update-MgGroup cmdlet. In this example, we�
     SecurityEnabled              : True
 ```
 
-Next, we’re changing the Description property to the new value “Intune Device Administrators”:
+Next, we’re changing the Description property to the new value "Intune Device Administrators":
 
 ```powershell
     PS C:\Windows\system32> Update-MgGroup -GroupId 958d212c-14b0-43d0-a052-d0c2bb555b8b -Description "Demo Group Updated"
@@ -230,7 +229,7 @@ To add new members to a group, use the New-MgGroupMember cmdlet. This command ad
     PS C:\Windows\system32> New-MgGroupMember -GroupId f76cbbb8-0581-4e01-a0d4-133d3ce9197f -DirectoryObjectId a88762b7-ce17-40e9-b417-0add1848eb68
 ```
 
-The -GroupId parameter is the ObjectID of the group to which we want to add a member, and the -DirectoryObjectId is the ObjectID of the user we want to add as a member to the group.
+The -GroupId parameter is the group ObjectID. We need to specify the ObjectID of the group we are using. The -DirectoryObjectId is the ObjectID of the user we want to add as a group member.
 
 ### Get members
 
@@ -265,15 +264,15 @@ Id                                   DisplayName Description GroupTypes AccessTy
 5dc16449-3420-4ad5-9634-49cd04eceba0 demogroup   demogroup    {Unified}
 ```
 
-The value returned is a list of groups of which this user is a member. You can also apply this method to check Contacts, Groups or Service Principals membership for a given list of groups, using Select-MgGroupIdsContactIsMemberOf, Select-MgGroupIdsGroupIsMemberOf or Select-MgGroupIdsServicePrincipalIsMemberOf
+The value returned is a list of groups of which this user is a member. You can also apply this method to check Contacts, Groups, or Service Principals membership for a given list of groups, using Select-MgGroupIdsContactIsMemberOf, Select-MgGroupIdsGroupIsMemberOf, or Select-MgGroupIdsServicePrincipalIsMemberOf
 
 ## Disable group creation by your users
 
-You can prevent non-admin users from creating security groups. The default behavior in Microsoft Online Directory Services (MSODS) is to allow non-admin users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting  controls behavior only in the My Groups portal.
+You can prevent standard users from creating security groups. The default behavior in Microsoft Online Directory Services (MSODS) is to allow standard users to create groups, whether or not self-service group management (SSGM) is also enabled. The SSGM setting  controls behavior only in the My Groups portal.
 
-To disable group creation for non-admin users:
+To disable group creation for standard users:
 
-1. Verify that non-admin users are allowed to create groups:
+1. Verify that standard users are allowed to create groups:
    
    ```powershell
    PS C:\> Get-MgBetaDirectorySetting | select -ExpandProperty values
@@ -297,7 +296,7 @@ To disable group creation for non-admin users:
     EnableGroupCreation             true
    ```
   
-2. If it returns `EnableGroupCreation : True`, then non-admin users can create groups. To disable this feature:
+2. If it returns `EnableGroupCreation : True`, then standard users can create groups. To disable this feature:
   
    ```powershell
     Install-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
@@ -324,7 +323,7 @@ To add owners to a group, use the New-MgGroupOwner cmdlet:
     PS C:\Windows\system32> New-MgGroupOwner -GroupId 0e48dc96-3bff-4fe1-8939-4cd680163497 -DirectoryObjectId 92a0dad0-7c9e-472f-b2a3-0fe2c9a02867
 ```
 
-The -GroupId parameter is the ObjectID of the group to which we want to add an owner, and the -DirectoryObjectId is the ObjectID of the user or service principal we want to add as an owner.
+The -GroupId parameter is the ObjectID of the group to which we want to add an owner.  The -DirectoryObjectId is the ObjectID of the user or service principal we want to add as an owner.
 
 To retrieve the owners of a group, use the Get-MgGroupOwner cmdlet:
 
@@ -350,7 +349,7 @@ If you want to remove an owner from a group, use the Remove-MgGroupOwnerByRef  c
 
 ## Reserved aliases
 
-When a group is created, certain endpoints allow the end user to specify a mailNickname or alias to be used as part of the email address of the group. Groups with the following highly privileged email aliases can only be created by a Microsoft Entra Global Administrator. 
+When you create a group, users specify a mailNickname or alias that the system uses as part of the email address of the group. The creation of groups with any of the highly privileged email aliases listed is limited to Microsoft Entra Global Administrators. 
   
 * abuse
 * admin
@@ -376,7 +375,7 @@ Today, many groups are still managed in on-premises Active Directory. To answer 
 
 ## Next steps
 
-You can find more Azure Active Directory PowerShell documentation at [Microsoft Entra Cmdlets](/powershell/azure/active-directory/install-adv2).
+You can find more Microsoft Entra ID PowerShell documentation at [Microsoft Entra Cmdlets](/powershell/azure/active-directory/install-adv2).
 
 * [Managing access to resources with Microsoft Entra groups](~/fundamentals/concept-learn-about-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
 * [Integrating your on-premises identities with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md?context=azure/active-directory/users-groups-roles/context/ugr-context)

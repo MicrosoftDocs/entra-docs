@@ -5,14 +5,16 @@ metadata:
   description: Learn how the 'Stay signed in' prompt for Microsoft Entra users works and how to configure it in Microsoft Entra ID.
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: amycolannino
+  manager: femila
   ms.reviewer: almars
-  ms.date: 01/16/2024
+  ms.date: 01/30/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-ga-nochange
+    - sfi-image-nochange
 
   # Customer intent: As an IT admin, I want to know how to configure the 'Stay signed in' prompt for Microsoft Entra users, so their sign-in experience is not interrupted unnecessarily.
 
@@ -27,7 +29,7 @@ prerequisites:
   summary: |
     Configuring the 'keep me signed in' (KMSI) option requires one of the following licenses:
 
-      - Microsoft Entra ID P1 or P2
+      - Microsoft Entra ID Free
       - Office 365 (for Office apps)
       - Microsoft 365
 
@@ -35,26 +37,30 @@ prerequisites:
 
     ## How does it work?
 
-    If a user answers **Yes** to the **'Stay signed in?'** prompt, a persistent authentication cookie is issued. The cookie must be stored in session for KMSI to work. KMSI doesn't work with locally stored cookies. If KMSI isn't enabled, a non-persistent cookie is issued and lasts for 24 hours or until the browser is closed. 
+    If a user answers **Yes** to the **'Stay signed in?'** prompt, a persistent authentication cookie is set. The cookie must be stored in session for KMSI to work. KMSI doesn't work with locally stored cookies. If KMSI isn't enabled, a non-persistent cookie is issued and lasts for 24 hours or until the browser is closed. 
 
-    The following diagram shows the user sign-in flow for a managed tenant and federated tenant using the KMSI in prompt. This flow contains smart logic so that the **Stay signed in?** option isn't displayed if the machine learning system detects a high-risk sign-in or a sign-in from a shared device. For federated tenants, the prompt will show after the user successfully authenticates with the federated identity service.
-
-    Some features of SharePoint Online and Office 2010 depend on users being able to choose to remain signed in. If you uncheck the **Show option to remain signed in** option, your users might see other unexpected prompts during the sign-in process.
-
+    The following diagram shows the user sign-in flow for a managed tenant and federated tenant using the KMSI prompt. If the user is presented with the **Stay signed in?** prompt and they select 'Yes', the persistent cookie is set.
+    
     :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/kmsi-workflow.png" alt-text="Diagram showing the user sign-in flow for a managed vs. federated tenant.":::
+
+    ## Special considerations
+    
+    - The 'Don't show this again' checkbox functions separately from the 'Stay signed in?' flow. 
+    - This experience might not be applicable depending on the authentication requirements configured for your tenant. Some Conditional Access policies and authentication configurations prevent the 'Keep me signed in' flow from being displayed.
+    - The flow contains smart logic so that the **Stay signed in?** option isn't displayed if the machine learning system detects a high-risk sign-in or a sign-in from a shared device. This scenario is reflected in the diagram, where the 'Keep me signed in' option is removed. 
+    - For federated tenants, the prompt shows after the user successfully authenticates with the federated identity service.
+    - Some features of SharePoint Online and Office 2010 depend on users being able to choose to remain signed in. If you uncheck the **Show option to remain signed in** option, your users might see other unexpected prompts during the sign-in process.
 
 procedureSection:
   - title: |
       Enable the 'Stay signed in?' prompt
     summary: |
-      [!INCLUDE [portal update](../includes/portal-update.md)]
-
       The KMSI setting is managed in **User settings**.
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
       - |
-        Browse to **Identity** > **Users** > **User settings**.
+        Browse to **Entra ID** > **Users** > **User settings**.
 
         :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/user-settings-page.png" alt-text="Screenshot of the User settings page in Microsoft Entra ID.":::
       - |

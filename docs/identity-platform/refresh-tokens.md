@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/10/2024
+ms.date: 05/14/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -28,17 +28,7 @@ Refresh tokens have a longer lifetime than access tokens. The default lifetime f
 
 ## Token expiration
 
-Refresh tokens can be revoked at any time, because of timeouts and revocations. Your app must handle revocations by the sign-in service gracefully by sending the user to an interactive sign-in prompt to sign in again.
-
-### Token timeouts
-
-You can't configure the lifetime of a refresh token. You can't reduce or lengthen their lifetime. Therefore, it's important to ensure that you secure refresh tokens, as they can be extracted from public locations by bad actors, or indeed from the device itself if the device is compromised. There are a few things you can do:
-
-- Configure sign-in frequency in Conditional Access to define the time periods before a user is required to sign in again. For more information, see [Configuring authentication session management with Conditional Access](~/identity/conditional-access/howto-conditional-access-session-lifetime.md).
-- Use [Microsoft Intune app management](/mem/intune/apps/app-management) services such as mobile application management (MAM) and mobile device management (MDM) to protect your organization's data
-- Implement [Conditional Access token protection policy](~/identity/conditional-access/concept-token-protection.md)
-
-Not all refresh tokens follow the rules set in the token lifetime policy. Specifically, refresh tokens used in single page apps are always fixed to 24 hours of activity, as if they have a `MaxAgeSessionSingleFactor` policy of 24 hours applied to them.
+Refresh tokens will automatically expire once the lifetime period elapses. Additionally, they can be revoked by the sign-in service at any time before their expiration. Your app should handle such revocations gracefully by redirecting the user to an interactive sign-in prompt to reauthenticate and obtain a new token.
 
 ### Token revocation
 

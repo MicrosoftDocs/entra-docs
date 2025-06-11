@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 01/31/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT administrator responsible for securing access to Oracle EBS. I want to configure Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) with Datawiza. My goal is to provide secure and seamless access for device users and to apps from any location.
 ---
 
@@ -118,8 +117,6 @@ Use the DCMC one-click integration to help you complete Microsoft Entra configur
 
 Configuration on the management console is complete. You're prompted to deploy DAP with your application. Make a note of the deployment Docker Compose file. The file includes the DAP image, `PROVISIONING_KEY`, and `PROVISIONING_SECRET`. DAP uses this information to pull the latest configuration and policies from DCMC.
 
-   ![Screenshot of Docker information.](./media/datawiza-sso-mfa-oracle-ebs/docker-information.png)
-
 ### SSL configuration
 
 1. For certificate configuration, select the **Advanced** tab on your application page. Then select **SSL** > **Edit**.
@@ -145,12 +142,11 @@ Configuration on the management console is complete. You're prompted to deploy D
 
 ### Optional: Enable multifactor authentication on Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enable multifactor authentication in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-2. Browse to **Identity** > **Overview** > **Properties** tab.
+2. Browse to **Entra ID** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.
 5. Select **Save**.
@@ -159,5 +155,4 @@ To provide more security for sign-ins, you can enable multifactor authentication
 
 - [Video: Enable SSO and MFA for Oracle JD Edwards with Microsoft Entra ID via Datawiza](https://www.youtube.com/watch?v=_gUGWHT5m90)
 - [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-- [Tutorial: Configure Azure AD B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 - [Datawiza user guides](https://docs.datawiza.com/)

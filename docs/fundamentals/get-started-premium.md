@@ -2,31 +2,30 @@
 title: Sign up for premium editions
 description: Instructions about how to sign up for Microsoft Entra ID P1 or P2 editions.
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 07/09/2024
+ms.date: 03/05/2025
 ms.author: barclayn
 ms.reviewer: piotrci
-ms.custom: it-pro
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ms.collection: M365-identity-device-management
 ---
 
 # Sign up for Microsoft Entra ID P1 or P2 editions
 
-You can purchase and associate Microsoft Entra ID P1 or P2 editions with your Azure subscription. If you need to create a new Azure subscription, you'll also need to [activate your licensing plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access). For information about obtaining a free trial, see [Microsoft Entra ID P2 Trial](https://signup.microsoft.com/get-started/signup?products=FAF849AB-BD30-42B2-856C-8F1EDC230CE9).
+You can purchase and associate Microsoft Entra ID P1 or P2 editions with your Azure subscription. If you need to create a new Azure subscription, you also need to [activate your licensing plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access). For information about obtaining a free trial, see [Microsoft Entra ID P2 Trial](https://signup.microsoft.com/get-started/signup?products=FAF849AB-BD30-42B2-856C-8F1EDC230CE9).
 
 Before you sign up for Active Directory Premium 1 or Premium 2, you must first determine which of your existing subscription or plan to use:
 
-- Through your existing Azure or Microsoft 365 subscription
-- Through your Enterprise Mobility + Security licensing plan
-- Through a Microsoft Volume Licensing plan
+- Through your existing Azure or Microsoft 365 subscription.
+- Through your Enterprise Mobility + Security licensing plan.
+- Through a Microsoft Volume Licensing plan.
 
 ## Sign up options
 
-Signing up using your Azure subscription with previously purchased and activated Microsoft Entra ID licenses, automatically activates the licenses in the same directory. If that's not the case, you must still [activate your license plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access).
+When you sign up using your Azure subscription with previously purchased and activated Microsoft Entra ID licenses, automatically activates the licenses in the same directory. If that's not the case, you must still [activate your license plan](#activate-your-new-license-plan) and your [Microsoft Entra ID service access](#activate-your-microsoft-entra-id-access).
 
 ### Sign up using your existing Azure or Microsoft 365 subscription
 

@@ -2,7 +2,7 @@
 title: Delegate access governance to access package managers in entitlement management
 description: Learn how to delegate access governance from IT administrators to access package managers and project managers so that they can manage access themselves.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -26,20 +26,19 @@ They can create access packages and policies, including policies referencing exi
 
 This video provides an overview of how to delegate access governance from catalog owner to access package manager.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3Lq08]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=b999927c-7cfd-4029-8b3a-a59efa9f5e8c]
 
 In addition to the catalog owner and access package manager roles, you can also add users to the catalog reader role, which provides view-only access to the catalog, or to the access package assignment manager role, which enables the users to change assignments but not access packages or policies.
 
 ## As a catalog owner, delegate to an access package manager
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to assign a user to the access package manager role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner.    
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to add administrators to.
 
@@ -58,7 +57,7 @@ Follow these steps to remove a user from the access package manager role:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner.
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 
 1. On the Catalogs page, open the catalog you want to add administrators to.
 

@@ -1,16 +1,14 @@
 ---
 title: User profile attributes
-description: User profile attributes that you can collect from the user during sign-up, and how to extend user profile attributes by using custom user attributes. 
+description: User profile attributes that you can collect from the user during sign-up, and how to extend user profile attributes by using custom user attributes.
 author: kengaderdus
-manager: mwongerapk
+ms.author: kengaderdus
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
-ms.date: 03/08/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.date: 04/28/2025
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a developer, devops, IT admin, I want to learn about the built-in user profile attributes that I can collect from the user during sign-up, and how Microsoft Entra External ID extends user profile attributes by using custom user attributes. 
 ---
 
@@ -42,7 +40,7 @@ This table summarizes the built-in user attributes you can collect during the si
 |City|city|String|Maximum length is 128 characters.|
 |Country/Region|country|String|Maximum length is 128 characters.|
 |Display Name|displayName|String|Maximum length is 256 characters.|
-|Email Address| mail| String | This property can't contain accent characters. In the [native authentication API](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), this attribute is referenced as *username*.|
+|Email Address| email| String | This property can't contain accent characters. In the [native authentication API](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json), this attribute is referenced as *username*.|
 |Given Name|givenName|String|Maximum length is 64 characters.|
 |Job Title|jobTitle|String|Maximum length is 128 characters.|
 |Postal Code|postalCode	|String|Maximum length is 40 characters.|

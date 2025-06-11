@@ -3,12 +3,12 @@ title: 'Microsoft Entra Connect: Declarative Provisioning Expressions'
 description: Explains the declarative provisioning expressions.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: e3ea53c8-3801-4acf-a297-0fb9bb1bf11d
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -17,11 +17,11 @@ ms.author: billmath
 # Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions
 Microsoft Entra Connect Sync builds on declarative provisioning first introduced in Forefront Identity Manager 2010. It allows you to implement your complete identity integration business logic without the need to write compiled code.
 
-An essential part of declarative provisioning is the expression language used in attribute flows. The language used is a subset of Microsoft® Visual Basic® for Applications (VBA). This language is used in Microsoft Office and users with experience of VBScript will also recognize it. The Declarative Provisioning Expression Language is only using functions and is not a structured language. There are no methods or statements. Functions are instead nested to express program flow.
+An essential part of declarative provisioning is the expression language used in attribute flows. The language used is a subset of Microsoft® Visual Basic® for Applications (VBA). This language is used in Microsoft Office and users with experience of VBScript will also recognize it. The Declarative Provisioning Expression Language is only using functions and isn't a structured language. There are no methods or statements. Functions are instead nested to express program flow.
 
-For more details, see [Welcome to the Visual Basic for Applications language reference for Office 2013](/office/vba/api/overview/language-reference).
+For more information, see [Welcome to the Visual Basic for Applications language reference for Office 2013](/office/vba/api/overview/language-reference).
 
-The attributes are strongly typed. A function only accepts attributes of the correct type. It is also case-sensitive. Both function names and attribute names must have proper casing or an error is thrown.
+The attributes are strongly typed. A function only accepts attributes of the correct type. It's also case-sensitive. Both function names and attribute names must have proper casing or an error is thrown.
 
 ## Language definitions and Identifiers
 * Functions have a name followed by arguments in brackets: FunctionName(argument 1, argument N).
@@ -40,7 +40,7 @@ Declarative provisioning uses many functions to enable the possibility to transf
 The complete list of functions can be found in the [function reference](reference-connect-sync-functions-reference.md).
 
 ### Parameters
-A parameter is defined either by a Connector or by an administrator using PowerShell. Parameters usually contain values that are different from system to system, for example the name of the domain the user is located in. These parameters can be used in attribute flows.
+A parameter is defined either by a Connector or by an administrator using PowerShell. Parameters usually contain values that are different from system to system, for example, the name of the domain the user is located in. These parameters can be used in attribute flows.
 
 The Active Directory Connector provided the following parameters for inbound Synchronization Rules:
 
@@ -56,7 +56,7 @@ The Active Directory Connector provided the following parameters for inbound Syn
 The system provides the following parameter, which is used to get the identifier of the Connector currently running:  
 `Connector.ID`
 
-Here is an example that populates the metaverse attribute domain with the netbios name of the domain where the user is located:  
+Here's an example that populates the metaverse attribute domain with the netbios name of the domain where the user is located:  
 `domain` <- `%Domain.Netbios%`
 
 ### Operators
@@ -68,7 +68,7 @@ The following operators can be used:
 * **Logical**: && (and), || (or)
 * **Evaluation order**: ( )
 
-Operators are evaluated left to right and have the same evaluation priority. That is, the \* (multiplier) is not evaluated before - (subtraction). 2\*(5+3) is not the same as 2\*5+3. The brackets ( ) are used to change the evaluation order when left to right evaluation order isn't appropriate.
+Operators are evaluated left to right and have the same evaluation priority. That is, the \* (multiplier) isn't evaluated before - (subtraction). 2\*(5+3) isn't the same as 2\*5+3. The brackets ( ) are used to change the evaluation order when left to right evaluation order isn't appropriate.
 
 ## Multi-valued attributes
 The functions can operate on both single-valued and multi-valued attributes. For multi-valued attributes, the function operates over every value and applies the same function to every value.

@@ -4,18 +4,21 @@ description: Learn how to configure a custom claims provider for a token issuanc
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
-ms.date: 04/10/2024
+ms.date: 05/04/2025
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I want to configure a custom claims provider token issuance event in the Azure portal, so that I can add custom claims to a token before it is issued.
 ---
 
 # Configure a custom claim provider for a token issuance event
 
 This article describes how to configure a custom claims provider for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using an existing Azure Functions REST API, you'll register a custom authentication extension and add attributes that you expect it to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
+
+This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+
+> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
 
 ## Prerequisites
 
@@ -50,10 +53,10 @@ You'll now configure a custom authentication extension, which will be used by Mi
 1. Give the app a name, for example **Azure Functions authentication events API**.
 1. Select **Next**.
 1. In **Claims**, enter the attributes that you expect your custom authentication extension to parse from your REST API and will be merged into the token. Add the following claims:
-    - dateOfBirth
-    - customRoles
-    - apiVersion
-    - correlationId
+    - DateOfBirth
+    - CustomRoles
+    - ApiVersion
+    - CorrelationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
 1. Note the **App ID** under **API Authentication**, which is needed to [configure authentication for your Azure Function](./custom-extension-tokenissuancestart-setup.md#configure-authentication-for-your-azure-function) in your Azure Function app.
 
@@ -199,6 +202,9 @@ Follow these steps to register the **jwt.ms** web application:
 
 The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration:
 
+> [!IMPORTANT]
+> Microsoft recommends using the most secure authentication flow available. The authentication flow used for testing in this procedure requires a very high degree of trust in the application, and carries risks that are not present in other flows. This approach shouldn't be used for authenticating users to your production apps ([learn more](v2-oauth2-implicit-grant-flow.md)).
+
 1. Under **Manage**, select **Authentication**.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
 1. Select **Save**.
@@ -209,7 +215,7 @@ A claims mapping policy is used to select which attributes returned from the cus
 
 1. In your *My Test application* registration, under **Manage**, select **Manifest**.
 1. In the manifest, locate the `acceptMappedClaims` attribute, and set the value to `true`.
-1. Set the `accessTokenAcceptedVersion` to `2`.
+1. Set the `requestedAccessTokenVersion` to `2`.
 1. Select **Save** to save the changes.
 
 The following JSON snippet demonstrates how to configure these properties.
@@ -218,13 +224,13 @@ The following JSON snippet demonstrates how to configure these properties.
 {
 	"id": "22222222-0000-0000-0000-000000000000",
 	"acceptMappedClaims": true,
-	"accessTokenAcceptedVersion": 2,  
+	"requestedAccessTokenVersion": 2,  
     ...
 }
 ```
 
 > [!WARNING]
-> Do not set `acceptMappedClaims` property to `true` for multi-tenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
+> Do not set `acceptMappedClaims` property to `true` for multitenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
 
 # [Workforce tenant](#tab/workforce-tenant)
 
@@ -265,8 +271,8 @@ To assign the custom authentication extension as a custom claims provider source
 
 Next, assign the attributes from the custom claims provider, which should be issued into the token as claims:
 
-1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example *dateOfBirth*.
-1. Under **Source**, select **Attribute**, and choose *customClaimsProvider.dateOfBirth* from the **Source attribute** drop-down box.
+1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example *DateOfBirth*.
+1. Under **Source**, select **Attribute**, and choose *customClaimsProvider.DateOfBirth* from the **Source attribute** drop-down box.
 
     :::image type="content" border="false"  source="media/custom-extension-tokenissuancestart-configuration/manage-claim.png" alt-text="Screenshot that shows how to add a claim mapping to your app." lightbox="media/custom-extension-tokenissuancestart-configuration/manage-claim.png":::
 
@@ -447,7 +453,7 @@ To test your custom claims provider, follow these steps:
 
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID.  
-1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
+1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `DateOfBirth`.
 
 # [External tenant](#tab/external-tenant)
 
@@ -460,12 +466,11 @@ To test your custom claims provider, follow these steps:
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID. 
 1. Go through the sign in user flow that you've configured, and accept the requested permissions.
-1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
+1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `DateOfBirth`.
 
 ---
 
 ## See also
 
-- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md)
 - [Troubleshoot your custom authentication extensions API](custom-extension-troubleshoot.md)

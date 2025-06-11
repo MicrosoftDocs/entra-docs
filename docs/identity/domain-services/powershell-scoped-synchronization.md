@@ -2,12 +2,12 @@
 title: Scoped synchronization using PowerShell for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to use Microsoft Graph PowerShell to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 03/13/2024
+ms.date: 05/22/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell, azure-ad-ref-level-one-done
@@ -94,7 +94,7 @@ foreach ($assignment in $currentAssignments)
 {
     Write-Output "Assignment-ObjectId: $($assignment.PrincipalId)"
 
-    if ($newGroupIds.Contains($assignment.PrincipalId) -eq $true)
+    if ($newGroupIds.Contains($assignment.PrincipalId) -eq $false)
     {
         Write-Output "This assignment is not needed anymore. Removing it! Assignment-ObjectId: $($assignment.PrincipalId)"
         Remove-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -AppRoleAssignmentId $assignment.Id
@@ -116,7 +116,7 @@ foreach ($id in $newGroupIds)
         {
             Write-Output "Adding new group-assignment. Role-Id: $($role.Id), Group-Object-Id: $id, ResourceId: $($sp.Id)"
             $appRoleAssignment = @{
-                "principalId"= $group.Id
+                "principalId"= $Id
                 "resourceId"= $sp.Id
                 "appRoleId"= $role.Id
             }
@@ -141,7 +141,10 @@ Write-Output "******************************************************************
 To enable group-based scoped synchronization for a managed domain, complete the following steps:
 
 1. First set *"filteredSync" = "Enabled"* on the Domain Services resource, then update the managed domain.
- When prompted, specify the credentials for a Global Administrator to sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0&preserve-view=true) cmdlet:
+
+   [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+
+   Sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands) cmdlet:
 
     ```powershell
     # Connect to your Entra ID tenant
@@ -179,7 +182,9 @@ In the following example, the groups to synchronize no longer includes *GroupNam
 > [!WARNING]
 > You must include the *AAD DC Administrators* group in the list of groups for scoped synchronization. If you don't include this group, the managed domain is unusable.
 
-When prompted, specify the credentials for a Global Administrator to sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0&preserve-view=true) cmdlet:
+[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+
+Sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands) cmdlet.
 
 ```powershell
 .\Select-GroupsToSync.ps1 -groupsToAdd @("AAD DC Administrators", "GroupName1", "GroupName3")
@@ -191,7 +196,9 @@ Changing the scope of synchronization causes the managed domain to resynchronize
 
 To disable group-based scoped synchronization for a managed domain, set *"filteredSync" = "Disabled"* on the Domain Services resource, then update the managed domain. When complete, all users and groups are set to synchronize from Microsoft Entra ID.
 
-When prompted, specify the credentials for a Global Administrator to sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0&preserve-view=true) cmdlet:
+[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+
+Sign in to your Microsoft Entra tenant using the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands) cmdlet:
 
 ```powershell
 # Connect to your Entra ID tenant

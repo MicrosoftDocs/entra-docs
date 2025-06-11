@@ -3,11 +3,11 @@ title: 'How to programmatically configure cloud sync using MS Graph API'
 description: This topic describes how to enable inbound synchronization using just the Graph API
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -146,7 +146,7 @@ Make sure the domain name you use is the same URL you set for your on-premises d
 PUT – https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/secrets
 ```
 
-Add the following key/value pair in the below value array based on what you're trying to do:
+Add the following key/value pair in the following value array based on what you're trying to do:
 
 - Enable both PHS and sync tenant flags
   { key: "AppKey", value: "{"appKeyScenario":"AD2AADPasswordHash"}" }
@@ -223,7 +223,7 @@ Here, the highlighted "Domain" value is the name of the on-premises Active Direc
 
    Copy/paste the mapping from the **Create AD2AADProvisioning and AD2AADPasswordHash jobs** step into the attributeMappings array.
 
-   Order of elements in this array doesn't matter (the backend sorts for you). Be careful about adding this attribute mapping if the name exists already in the array (for example, if there's already an item in attributeMappings that has the targetAttributeName CredentialData) - you may get conflict errors, or the pre-existing and new mappings might be combined together, usually not the desired outcome. Backend doesn't dedupe for you.
+   Order of elements in this array doesn't matter (the backend sorts for you). Be careful about adding this attribute mapping if the name already exists in the array. For example, if there's already an item in attributeMappings that has the targetAttributeName CredentialData, you may get conflict errors, or the preexisting and new mappings might be combined together. Usually, this isn't the desired outcome. Backend doesn't dedupe for you.
 
    Remember to do this action for both Users and inetOrgpersons.
 
@@ -246,7 +246,7 @@ Enabling Exchange hybrid writeback programmatically requires two steps.
 	2.  Create the Exchange hybrid writeback job
 
 ### Schema verification
-Before you enable and using Exchange hybrid writeback, cloud sync needs to determine whether or not the on-premises Active Directory has been extended to include the Exchange schema.  
+Before you enable and using Exchange hybrid writeback, cloud sync needs to determine if the on-premises Active Directory was extended to include the Exchange schema.  
 
 You can use the [directoryDefinition:discover](/graph/api/synchronization-directorydefinition-discover?tabs=http&preserve-view=true&view=graph-rest-beta) to initiate schema discovery. 
 
@@ -314,7 +314,7 @@ We're going to need to update the SyncNotificationSettings this configuration is
 PUT – https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/secrets
 ```
 
-Add the following Key/value pair in the below value array based on what you're trying to do:
+Add the following Key/value pair in the following value array based on what you're trying to do:
 
 ```
 Request body -
@@ -330,7 +330,7 @@ Request body -
 
 The "Enabled" setting in the example is for enabling/disabling notification emails when the job is quarantined.
 
-Currently, we don't support PATCH requests for secrets, so you need to add all the values in the body of the PUT request(like in the example) in order to preserve the other values.
+Currently, PATCH requests for secrets aren't supported. So, you need to add all the values in the body of the PUT request, like in the example, to preserve the other values.
 
 The existing values for all the secrets can be retrieved by using:
 

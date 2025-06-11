@@ -3,10 +3,10 @@ title: 'Attribute mapping - Microsoft Entra ID to Active Directory'
 description: This article describes how the attribute mapping and how to configure attributes when provisioning from Microsoft Entra ID to Active Directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -20,7 +20,7 @@ You can customize the default attribute-mappings according to your business need
 
 :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
 
-The following document will guide you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you are looking for information on attribute mapping from AD to Microsoft Entra ID, see [ Attribute mapping - Active Directory to Microsoft Entra ID](how-to-attribute-mapping.md).
+The following document will guide you through attribute scoping with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you're looking for information on attribute mapping from AD to Microsoft Entra ID, see [ Attribute mapping - Active Directory to Microsoft Entra ID](how-to-attribute-mapping.md).
 
 ## Schema for Microsoft Entra ID to Active Directory configurations
 Currently, the AD Schema isn't discoverable and there's fixed set of mappings. The following table provides the default mappings and schema for the Microsoft Entra ID to Active Directory configurations.
@@ -39,6 +39,22 @@ Currently, the AD Schema isn't discoverable and there's fixed set of mappings. T
 |UniversalScope|True|Constant|CANNOT UPDATE IN UI - DO NOT UPDATE</br></br>Not visible in UI|
 
 Be aware that not all of the above mappings are visible in the portal. For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview).
+
+### sAmAccountName custom mapping
+The sAMAccount attribute isn't, by default, synchronized from Microsoft Entra ID to Active Directory.  Because of this, when the new group is created in Active Directory, it's given a randomly generated name.
+
+:::image type="content" source="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-1.png" alt-text="Screenshot sAMAccountName using ADSI Edit." lightbox="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-1.png":::
+
+If you want your own unique value for sAMAccountName, you can create a custom mapping to sAMAccountName using an expression.  For example, you could do something like:  `Join("_", [displayName], "Contoso_Group")`
+
+:::image type="content" source="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-2.png" alt-text="Screenshot of an expression for sAMAccountName in the portal." lightbox="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-2.png":::
+
+This will take the displayName value and add "Contoso_Group" to it.  So the new sAMAccountName would be something like, Marketing_Contoso_Group
+
+:::image type="content" source="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-3.png" alt-text="Screenshot of the sAMAccountName value after expression." lightbox="media/how-to-attribute-mapping-entra-to-active-directory/sam-account-3.png":::
+
+>[!IMPORTANT]
+>If you decide create a custom attribute mapping for sAMAccountName, you must ensure that it's unique within Active Directory.
 
 ## Scoping filter target container
 The default target container is OU=User,DC=&lt;domain selected at configuration start&gt,DC=com. You can change this to be your own custom container.
@@ -107,7 +123,7 @@ The following operators are supported:
 |INCLUDES||
 |IS FALSE| Clause returns "true" if the evaluated attribute contains a Boolean value of false.|
 |IS_MEMBER_OF||
-|IS NOT NULL|Clause returns "true" if the evaluated attribute isn't empty.|
+|isn't NULL|Clause returns "true" if the evaluated attribute isn't empty.|
 |IS NULL|Clause returns "true" if the evaluated attribute is empty.|
 |IS TRUE|Clause returns "true" if the evaluated attribute contains a Boolean value of true.|
 |!&L||

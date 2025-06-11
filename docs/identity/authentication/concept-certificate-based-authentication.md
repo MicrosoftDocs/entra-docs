@@ -5,11 +5,11 @@ description: Learn about Microsoft Entra certificate-based authentication withou
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vranganathan
 ms.custom: has-adal-ref
 ---
@@ -71,11 +71,11 @@ The following scenarios aren't supported:
 - Certificate Authority hints aren't supported, so the list of certificates that appears for users in the certificate picker UI isn't scoped.
 - Only one CRL Distribution Point (CDP) for a trusted CA is supported.
 - The CDP can be only HTTP URLs. We don't support Online Certificate Status Protocol (OCSP), or Lightweight Directory Access Protocol (LDAP) URLs.
-- Password as an authentication method cannot be disabled and the option to sign in using a password is displayed even with Microsoft Entra CBA method available to the user.
+- Password as an authentication method can't be disabled and the option to sign in using a password is displayed even with Microsoft Entra CBA method available to the user.
 
 ## Known Limitation with Windows Hello For Business certificates
 
-- While Windows Hello For Business (WHFB) can be used for multi-factor authentication in Microsoft Entra ID, WHFB is not supported for fresh MFA. Customers may choose to enroll certificates for your users using the WHFB key pair.  When properly configured, these WHFB certificates can be used for multi-factor authentication in Microsoft Entra ID. WHFB certificates are compatible with Microsoft Entra certificate-based authentication (CBA) in Edge and Chrome browsers; however, at this time WHFB certificates are not compatible with Microsoft Entra CBA in non-browser scenarios (such as Office 365 applications). The workaround is to use the "Sign in Windows Hello or security key" option to sign in (when available) as this option does not use certificates for authentication and avoids the issue with Microsoft Entra CBA; however, this option may not be available in some older applications.
+- While Windows Hello For Business (WHFB) can be used for multifactor authentication in Microsoft Entra ID, WHFB isn't supported for fresh MFA. Customers can choose to enroll certificates for your users using the WHFB key pair.  When properly configured, these WHFB certificates can be used for multifactor authentication in Microsoft Entra ID. WHFB certificates are compatible with Microsoft Entra certificate-based authentication (CBA) in Microsoft Edge and Chrome browsers; however, at this time WHFB certificates aren't compatible with Microsoft Entra CBA in non-browser scenarios (such as Office 365 applications). The workaround is to use the "Sign in Windows Hello or security key" option to sign in (when available) as this option doesn't use certificates for authentication and avoids the issue with Microsoft Entra CBA; however, this option may not be available in some older applications.
 
 ## Out of Scope
 
@@ -89,7 +89,7 @@ The following scenarios are out of scope for Microsoft Entra CBA:
 - [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
 - [Microsoft Entra CBA on iOS devices](concept-certificate-based-authentication-mobile-ios.md)
 - [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
-- [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
+- [Windows smart card sign in using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
 - [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)
 - [How to migrate federated users](concept-certificate-based-authentication-migration.md)
 - [FAQ](certificate-based-authentication-faq.yml)

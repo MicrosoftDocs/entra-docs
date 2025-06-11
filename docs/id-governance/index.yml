@@ -6,11 +6,11 @@ summary: Microsoft Entra ID Governance helps you to protect, monitor, and audit 
 metadata: 
   author: owinfreyatl
   description: "Learn how to protect, monitor, and audit access to critical assets while ensuring employee productivity."
-  manager: amycolannino
+  manager: dougebyy
   ms.author: owinfrey
-  ms.date: 03/07/2023
+  ms.date: 11/25/2024
   ms.service: entra-id-governance
-  ms.subservice: compliance
+  ms.subservice: entitlement-management
   ms.topic: landing-page
   services: active-directory
 
@@ -28,8 +28,8 @@ landingContent:
             url: my-access-portal-overview.md      
       - linkListType: video
         links:
-          - text: Govern access to your resources
-            url: https://www.youtube.com/watch?v=bFfowdpApu4&list=PLQXpv_NQsPIBg3op2xONM9KgwlayFDue6
+          - text: Microsoft Entra ID Governance Overview
+            url: https://youtu.be/NxSu3JEsxmY?si=fuY8nV4Fg5DbMArd
       - linkListType: reference
         links:
           - text: Microsoft Entra ID Governance licensing fundamentals
@@ -47,6 +47,8 @@ landingContent:
             url:  scenarios/identity-governance-use-cases.md  
           - text: Govern the employee and guest lifecycle
             url:  scenarios/govern-the-employee-lifecycle.md  
+          - text: Planning new governance scenarios for business partners and external users
+            url:  scenarios/govern-guest-lifecycle-new-project.md  
           - text: Govern access for applications in your environment
             url:  identity-governance-applications-prepare.md  
   

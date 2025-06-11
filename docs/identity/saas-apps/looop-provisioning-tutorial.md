@@ -1,32 +1,30 @@
 ---
-title: 'Tutorial: Configure Looop for automatic user provisioning with Microsoft Entra ID'
+title: Configure Looop for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Looop.
-
 author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Looop so that I can streamline the user management process and ensure that users have the appropriate access to Looop.
 ---
 
-# Tutorial: Configure Looop for automatic user provisioning
+# Configure Looop for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in Looop and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Looop.
+The objective of this article is to demonstrate the steps to be performed in Looop and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Looop.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Looop tenant](https://www.looop.co/pricing/)
 * A user account on a Looop with Administrator permissions.
 
@@ -40,23 +38,23 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ### Important tips for assigning users to Looop
 
-* It is recommended that a single Microsoft Entra user is assigned to Looop to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Looop to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to Looop, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up Looop for provisioning
 
-Before configuring Looop for automatic user provisioning with Microsoft Entra ID, you will need to retrieve some provisioning information from Looop.
+Before configuring Looop for automatic user provisioning with Microsoft Entra ID, you need to retrieve some provisioning information from Looop.
 
 1. Sign in to your [Looop Admin Console](https://app.looop.co/#/login) and select **Account**. Under **Account Settings**,  select **Authentication**.
 
 	![Looop Admin](media/looop-provisioning-tutorial/admin.png)
 
-2. Generate a new token by clicking **Reset Token** under **SCIM Integration**.
+2. Generate a new token by selecting **Reset Token** under **SCIM Integration**.
 
 	![Looop Token](media/looop-provisioning-tutorial/resettoken.png)
 
-3. Copy the **SCIM Endpoint** and the **Token**. These values will be entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your Looop application. 
+3. Copy the **SCIM Endpoint** and the **Token**. These values are entered in the **Tenant URL** and **Secret Token** fields in the Provisioning tab of your Looop application. 
 
 	![Looop Create Token](media/looop-provisioning-tutorial/token.png)
 
@@ -65,7 +63,7 @@ Before configuring Looop for automatic user provisioning with Microsoft Entra ID
 To configure Looop for automatic user provisioning with Microsoft Entra ID, you need to add Looop from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Looop**, select **Looop** in the results panel. 
 
 	![Looop in the results list](common/search-new-app.png)
@@ -78,9 +76,7 @@ To configure Looop for automatic user provisioning with Microsoft Entra ID, you 
 
 	![Looop OIDC login](media/looop-provisioning-tutorial/msftlogin.png)
 
-7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Looop account.
-
-	![Looop OIDc Consent](media/looop-provisioning-tutorial/accept.png)
+7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Looop account.
 
 ## Configure automatic user provisioning to Looop 
 
@@ -91,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Looop in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -107,7 +103,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://<organisation_domain>.looop.co/scim/v2` in **Tenant URL**. For example, `https://demo.looop.co/scim/v2`. Input the value that you retrieved and saved earlier from Looop in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Looop. If the connection fails, ensure your Looop account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://<organisation_domain>.looop.co/scim/v2` in **Tenant URL**. For example, `https://demo.looop.co/scim/v2`. Input the value that you retrieved and saved earlier from Looop in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Looop. If the connection fails, ensure your Looop account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -115,11 +111,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Looop**.
-
-	![Looop User Mappings](media/looop-provisioning-tutorial/usermappings.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Looop in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Looop for update operations. Select the **Save** button to commit any changes.
 
@@ -144,8 +138,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Meta Networks Connector**.
 
-	![Looop Group Mappings](media/looop-provisioning-tutorial/groupmappings.png)
-
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Meta Networks Connector in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Meta Networks Connector for update operations. Select the **Save** button to commit any changes.
 
 	|Attribute|Type|Supported for filtering|
@@ -155,7 +147,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |externalId|String|
 
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Looop, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -165,7 +157,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -183,6 +175,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

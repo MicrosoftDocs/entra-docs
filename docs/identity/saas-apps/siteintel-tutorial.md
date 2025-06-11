@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SiteIntel'
+title: Configure SiteIntel for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SiteIntel.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SiteIntel so that I can control who has access to SiteIntel, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SiteIntel
+# Configure SiteIntel for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate SiteIntel with Microsoft Entra ID. When you integrate SiteIntel with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SiteIntel with Microsoft Entra ID. When you integrate SiteIntel with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SiteIntel.
 * Enable your users to be automatically signed in to SiteIntel with their Microsoft Entra accounts.
@@ -26,15 +26,14 @@ In this tutorial, you'll learn how to integrate SiteIntel with Microsoft Entra I
 To learn more about software as a service (SaaS) app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SiteIntel single sign-on (SSO)-enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SiteIntel supports SP-initiated and IdP-initiated SSO.
 * After you configure SiteIntel, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
@@ -44,11 +43,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of SiteIntel into Microsoft Entra ID, you need to add SiteIntel from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** box, enter **SiteIntel**.
 1. In the results list, select **SiteIntel**, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-siteintel'></a>
 
@@ -60,9 +59,9 @@ To configure and test Microsoft Entra SSO with SiteIntel, complete the following
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.  
 
-    a. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with user B.Simon.  
+    a. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with user B.Simon.  
 
-    b. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable user B.Simon to use Microsoft Entra single sign-on.
+    b. **Assign the Microsoft Entra test user** to enable user B.Simon to use Microsoft Entra single sign-on.
 
 1. **[Configure SiteIntel SSO](#configure-siteintel-sso)** to configure the single sign-on settings on the application side.
 
@@ -77,7 +76,7 @@ To configure and test Microsoft Entra SSO with SiteIntel, complete the following
 To enable Microsoft Entra SSO in the Azure portal, do the following:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **SiteIntel** application integration page, go to the **Manage** section, and then select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **SiteIntel** application integration page, go to the **Manage** section, and then select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, next to **Basic SAML Configuration**, select **Edit** (pen icon).
 
@@ -100,7 +99,7 @@ To enable Microsoft Entra SSO in the Azure portal, do the following:
     `https://<CLIENT>.siteintel.com`
 
     > [!NOTE]
-    > These values are not real. Update them with the actual Identifier, Reply URL, Sign-on URL, and Relay State. To get these values, contact [SiteIntel Client support team](mailto:support@intalytics.com). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update them with the actual Identifier, Reply URL, Sign-on URL, and Relay State. To get these values, contact [SiteIntel Client support team](mailto:support@intalytics.com). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select the **Copy** button to copy the URL in the **App Federation Metadata Url** box.
 
@@ -108,39 +107,7 @@ To enable Microsoft Entra SSO in the Azure portal, do the following:
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable user B.Simon to use Azure single sign-on by granting access to SiteIntel.
-
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. In the **Applications** list, select **SiteIntel**.
-1. On the app overview page, in the **Manage** section, select **Users and groups**.
-
-   ![Screenshot of the "Users and groups" link](common/users-groups-blade.png)
-
-1. Select **Add user** and then, on the **Add Assignment** pane, select **Users and groups**.
-
-	![Screenshot of the "Add user" button](common/add-assign-user.png)
-
-1. On the **Users and groups** pane, select **B.Simon**, and then select the **Select** button at the lower part of the screen.
-1. If you're expecting any role value in the SAML assertion, on the **Select Role** pane, select the appropriate role for the user from the list, and then select the **Select** button.
-1. On the **Add Assignment** pane, select the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure SiteIntel SSO
 
@@ -158,7 +125,7 @@ When you select the **SiteIntel** tile in the Access Panel, you should be automa
 
 ## Additional resources
 
-- [List of tutorials about how to integrate SaaS apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles about how to integrate SaaS apps with Microsoft Entra ID](./tutorial-list.md)
 - [What are application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 - [What is Conditional Access in Microsoft Entra ID?](~/identity/conditional-access/overview.md)
 - [What is session control in Microsoft Defender for Cloud Apps?](/cloud-app-security/proxy-intro-aad)

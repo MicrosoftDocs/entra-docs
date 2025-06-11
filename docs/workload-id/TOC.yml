@@ -23,16 +23,24 @@
         href: ~/identity/conditional-access/concept-continuous-access-evaluation-workload.md?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
       - name: App health recommendations
         href: ~/identity/monitoring-health/howto-use-recommendations.md?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
+      - name: Federated identity credentials
+        href: /graph/api/resources/federatedidentitycredentials-overview?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
+      - name: Flexible federated identity credentials
+        href: workload-identities-flexible-federated-identity-credentials.md      
 - name: How-to guides
   items:
   - name: Connect workloads without managing secrets
     items:
       - name: Configure an app to trust an external identity provider
         href: workload-identity-federation-create-trust.md
+      - name: Configure an application to trust a managed identity
+        href: workload-identity-federation-config-app-trust-managed-identity.md
       - name: Configure a managed identity to trust an external identity provider
         href: workload-identity-federation-create-trust-user-assigned-managed-identity.md
       - name: Block creation of federated credentials
         href: workload-identity-federation-block-using-azure-policy.md
+      - name: Set up a Flexible Federated identity credential
+        href: workload-identities-set-up-flexible-federated-identity-credential.md
   - name: Create an access review
     href: ~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
   - name: Manage custom security attributes for an app

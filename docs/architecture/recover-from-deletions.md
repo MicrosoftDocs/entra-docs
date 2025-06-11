@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.date: 11/14/2022
 ms.author: jricketts
 ms.reviewer: jricketts
+ms.custom: sfi-image-nochange
 ---
 
 # Recover from deletions
@@ -109,7 +110,6 @@ You can restore soft-deleted items in the administrative portal, or by using Mic
 
 You can see soft-deleted users in the Azure portal on the **Users | Deleted users** page.
 
-![Screenshot that shows restoring users in the Azure portal.](media/recoverability/deletion-restore-user.png)
 
 For more information on how to restore users, see the following documentation:
 
@@ -132,8 +132,6 @@ For more information on how to restore soft-deleted Microsoft 365 Groups, see th
 Applications have two objects: the application registration and the service principal. For more information on the differences between the registration and the service principal, see [Apps and service principals in Microsoft Entra ID](~/identity-platform/app-objects-and-service-principals.md).
 
 To restore an application from the Azure portal, select **App registrations** > **Deleted applications**. Select the application registration to restore, and then select **Restore app registration**.
-
-[![Screenshot that shows the app registration restore process in the azure portal.](./media/recoverability/deletion-restore-application.png)](./media/recoverability/deletion-restore-application.png#lightbox)
 
 Currently, service principals can be listed, viewed, hard deleted, or restored via the deletedItems Microsoft Graph API. To restore applications using Microsoft Graph, see [Restore deleted item - Microsoft Graph v1.0.](/graph/api/directory-deleteditems-restore?tabs=http).
 
