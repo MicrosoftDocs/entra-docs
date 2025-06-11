@@ -316,7 +316,7 @@ items:
       - name: Add a sign-up and sign-in flow
         href: how-to-user-flow-sign-up-sign-in-customers.md
       - name: Disable sign-up in a user flow
-        href: disable-sign-up-in-user-flow.md
+        href: how-to-disable-sign-up-user-flow.md
         displayName: disable sign up 
       - name: Add an application to the user flow
         href: how-to-user-flow-add-application.md
