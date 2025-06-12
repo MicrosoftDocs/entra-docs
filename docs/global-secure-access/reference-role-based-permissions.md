@@ -13,16 +13,12 @@ ms.custom: sfi-ga-nochange
 
 # Microsoft Global Secure Access built-in roles
 
-Global Secure Access (GSA) uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, Microsoft Entra ID requires specific administrator roles for accessing Global Secure Access.
+Global Secure Access uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, Microsoft Entra ID requires specific administrator roles for accessing Global Secure Access.
 
 This article details the built-in Microsoft Entra roles you can assign for managing Global Secure Access.
 
-### Global Administrator 
-
-**Full access**: This role grants administrators full permissions within Global Secure Access. They can manage policies, configure settings, and view logs; including Conditional Access scenarios, configurations for Private Access, write operations on application segments, and management of user assignments for traffic profiles.
-
 > [!IMPORTANT]
-> It's highly recommended to use a least privilege approach for security reasons. The Global Administrator role is only required to configure enriched Microsoft 365 logs as outlined in the table. For all other scenarios, use the least privileged role required to administer the service. To learn more about least privileged, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
+> It's highly recommended to use the least privileged role required to administer the service. To learn more about least privileged, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
 
 ### Security Administrator 
 
