@@ -28,7 +28,7 @@ Microsoft has introduced a security setting that protects against insecure confi
 
 When this setting is enabled, the secure patterns are strictly enforced.   When enabled, if anyone in your organization tries to add an identifier URI that doesn't comply with the [secure patterns](#secure-patterns), they'll receive an error like:
 
-```Failed to add identifier URI {uri}. All newly added URIs must contain a tenant verified domain, tenant ID, or app ID, as per the default tenant policy of your organization. See https://aka.ms/identifier-uri-addition-error for more information on this error.```
+```Failed to add identifier URI {uri}. All newly added URIs must contain a tenant verified domain, tenant ID, or app ID, as per the default tenant policy of your organization. See https://aka.ms/identifier-uri-formatting-error for more information on this error.```
 
 Existing identifier URIs already configured on the app won't be affected, and all apps will continue to function as normal. This will only affect new updates to Microsoft Entra app configurations.
 
