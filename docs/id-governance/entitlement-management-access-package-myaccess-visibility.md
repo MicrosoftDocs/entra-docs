@@ -16,32 +16,12 @@ ms.author: owinfrey
 
 # Understanding Access Package Visibility in the My Access Portal
 
-## Microsoft Learn article (DRAFT)
-
-**Title: Understanding Access Package Visibility in the My Access
-Portal**
-
-*Audience: Identity Governance Administrators, Catalog Owners, Access
-Package Managers*
-
 **Introduction**
 
-This article explains the concepts determining which Microsoft Entra
-Entitlement Management access packages are visible to end-users when
-discovering packages in the My Access portal. Understanding this helps
-you configure access effectively and troubleshoot visibility issues.
 
-The My Access portal (myaccess.microsoft.com) is the central place for
-users to request, approve, and review their access to resources. When
-dealing with access packages, a question for administrators may be: "Why
-does (or doesn't) a user see a specific access package?" Visibility
-isn't controlled by a single switch; it depends on how the access
-package and its policies are configured. Let's break down how visibility
-works for package discovery!
+The [My Access portal](https://myaccess.microsoft.com) is the central place for users to request, approve, and review their access to resources within Microsoft Entra. For administrators, the portal provides additional functionalities through the Microsoft Entra admin center, enabling them to configure access packages and conduct access reviews.
 
-**Scope of this Article**
-
-This article specifically explains how visibility works when users discover access packages via the 'Available' tab, the 'View all' option, or when using the search bar within these sections to find requestable packages. It *does not* detail the visibility logic for other tabs like 'Suggested', 'Active', or 'Expired' (even when using search within those tabs), nor does it cover other portal sections such as 'Request history' or 'Approvals', which operate under different rules.
+When managing access to resources in Microsoft Entra, understanding how access packages appear to users in the [My Access portal](https://myaccess.microsoft.com) is essential for administrators, catalog owners, and access package managers. Access package visibility determines which packages users can discover and request, and is influenced by several configuration settings and upcoming changes. This article provides a detailed overview of the factors that control access package visibility in the My Access portal, outlines the current logic, and highlights important updates effective September 30, 2025. 
 
 **Deep Dive: Discovering Requestable Access Packages**
 
@@ -49,12 +29,7 @@ When a user lands on the "Available" tab, searches for requestable packages, or 
 
 The following flow diagram illustrates the logic used to determine if an access package appears in the browse/search view for a specific user (valid until September 30, 2025 - see Upcoming Changes section below):
 
-<img src="media/entitlement-management-access-package-myaccess-visibility/image1.png" style="width:2.22917in;height:6.5in"
-alt="A screenshot of a diagram AI-generated content may be incorrect." />
-
-[AP visibility
-today.png](https://microsoft-my.sharepoint-df.com/:i:/p/alfilipi/EbN0_nzC_rlAgp7OaEd9d8QBhx4uv8U-NcCPJEEy7I_5eg?e=9Loz6q)
-(mermaid also in appendix)
+:::image type="content" source="media/entitlement-management-access-package-myaccess-visibility/image1.png" alt-text="Screenshot of visibility diagram for access package.":::
 
 Explaining the Visibility Flow
 
@@ -76,16 +51,16 @@ Let's walk through the decision points in the diagram:
 
     1.  Policies set to "None (Administrator direct assignments only)" do not make a package visible for Browse or searching.
 
-If *all* these checks pass, then the access package is Visible in the user's browse/search view. Otherwise, it's Not Visible.
+If **all** these checks pass, then the access package is Visible in the user's browse/search view. Otherwise, it's not visible.
 
 
 > [!IMPORTANT]
 > Effective September 30, 2025: The visibility behavior described above for policies scoped to "Specific users and groups" is
-> changing. Please see the "Upcoming Changes to Visibility" section below for crucial details and required actions.
+> changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-myaccess-visibility.md) section for crucial details and required actions.
 
-**Upcoming Changes to Visibility (Effective September 30, 2025)**
+## Upcoming Changes to visibility
 
-Effective September 30, 2025, the visibility on the My Access portal (myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you do not want these access packages visible to all members, you must hide the access package by this date.
+Effective September 30 2025, the visibility on the [My Access portal](myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you do not want these access packages visible to all members, you must hide the access package by this date.
 
 The visibility change will only impact how end-users can discover access packages via the 'Available' tab, the 'View all' option, or when using the search bar within these sections to find requestable access packages. The change will not impact the visibility logic for other tabs like 'Suggested', 'Active', or 'Expired' (even when using search within those tabs), nor does it impact other My Access portal sections such as 'Request history' or 'Approvals'.
 
