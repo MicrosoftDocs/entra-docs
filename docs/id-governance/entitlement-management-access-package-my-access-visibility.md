@@ -29,7 +29,7 @@ When a user lands on the "Available" tab, searches for requestable packages, or 
 
 The following flow diagram illustrates the logic used to determine if an access package appears in the browse/search view for a specific user (valid until September 30, 2025 - see Upcoming Changes section below):
 
-:::image type="content" source="media/entitlement-management-access-package-myaccess-visibility/my-access-visibility-diagram.png" alt-text="Screenshot of visibility diagram for access package.":::
+:::image type="content" source="media/entitlement-management-access-package-my-access-visibility/my-access-visibility-diagram.png" alt-text="Screenshot of visibility diagram for access package.":::
 
 Explaining the Visibility Flow
 
@@ -56,18 +56,17 @@ If **all** these checks pass, then the access package is Visible in the user's b
 
 > [!IMPORTANT]
 > Effective September 30, 2025: The visibility behavior described above for policies scoped to "Specific users and groups" is
-> changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-myaccess-visibility.md) section for crucial details and required actions.
+> changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-my-access-visibility.md) section for crucial details and required actions.
 
 ## Upcoming Changes to visibility
 
-Effective September 30 2025, the visibility on the [My Access portal](myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you do not want these access packages visible to all members, you must hide the access package by this date.
+Effective September 30 2025, the visibility on the [My Access portal](https://myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you do not want these access packages visible to all members, you must hide the access package by this date.
 
 The visibility change will only impact how end-users can discover access packages via the 'Available' tab, the 'View all' option, or when using the search bar within these sections to find requestable access packages. The change will not impact the visibility logic for other tabs like 'Suggested', 'Active', or 'Expired' (even when using search within those tabs), nor does it impact other My Access portal sections such as 'Request history' or 'Approvals'.
 
 Updated diagram
 
-<img src="media/entitlement-management-access-package-myaccess-visibility/image2.png" style="width:2.3125in;height:6.5in"
-alt="A diagram of a diagram AI-generated content may be incorrect." />
+:::image type="content" source="media/entitlement-management-access-package-my-access-visibility/image2.png" alt-text="Screenshot of updated my access visibility access package diagram.":::
 
 [AP visibility
 post-change.png](https://microsoft-my.sharepoint-df.com/:i:/p/alfilipi/EVxarE4n0CtOg7MI8a7MkagBRiT6AKKBCkwCYTIePU1sKQ?e=K43gxu)
