@@ -24,7 +24,9 @@ In this article, you learn how to integrate my.sdworx.com with Microsoft Entra I
 * Enable your users to be automatically signed-in to my.sdworx.com with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-You configure and test Microsoft Entra single sign-on for my.sdworx.com in a test environment. my.sdworx.com supports **IDP** initiated single sign-on.
+You configure and test Microsoft Entra single sign-on for my.sdworx.com in a test environment (my.acc.sdworx.com) but not by using this gallery app (import SP metadata, to be provided by your my.sdworx.com contact). my.sdworx.com supports **IDP** and **SP** initiated single sign-on.
+ 
+When using **SP** initiated single sign-on, only “email domain” realm discovery is supported, which means only company/enterprise email addresses are allowed.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
