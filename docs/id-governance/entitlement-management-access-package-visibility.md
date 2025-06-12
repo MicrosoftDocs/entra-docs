@@ -56,7 +56,7 @@ If **all** these checks pass, then the access package is Visible in the user's b
 
 > [!IMPORTANT]
 > Effective September 30, 2025: The visibility behavior described above for policies scoped to "Specific users and groups" is
-> changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-my-access-visibility.md) section for crucial details and required actions.
+> changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-visibility.md) section for crucial details and required actions.
 
 ## Upcoming Changes to visibility
 
