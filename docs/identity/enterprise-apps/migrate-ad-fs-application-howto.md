@@ -1,18 +1,15 @@
 ---
 title: Use the AD FS application migration to move AD FS apps to Microsoft Entra ID
 description: Learn how to use the AD FS application migration to migrate AD FS relying party applications from ADFS to Microsoft Entra ID. This guided experience provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
-
 author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
 ms.date: 06/10/2024
 ms.author: jomondi
 ms.reviewer: smriti3
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using AD FS to access applications, I want to migrate my AD FS applications to Microsoft Entra ID using the AD FS application migration wizard, so that I can have a unified experience to discover, evaluate, and configure new Microsoft Entra applications.
 ---
 
@@ -57,13 +54,13 @@ The AD FS application migration dashboard is available in the Microsoft Entra ad
 From **Enterprise applications** section:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Under **Usage & Insights**, select **AD FS application migration** to access the AD FS applications migration dashboard.
 
 From **Monitoring & health** section:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage & insights**.
 1. Under **Manage**, select **Usage & Insights**, and then select **AD FS application migration** to access the AD FS applications migration dashboard.
 
 The AD FS application migration dashboard shows the list of all your AD FS relying party applications that have actively had sign-in traffic in the last 30 days period.
@@ -191,7 +188,7 @@ These are the users and groups you can view on the configuration wizard. This is
 
 This tab shows the basic SAML properties that are used for the Single sign-on settings of the Microsoft Entra application. Currently, only required properties are mapped which are Identifier and Reply URL only.
 
-These settings are directly implemented from your AD FS relying party application and can't be modified from this tab. However, after configuring application, you can modify these from the Microsoft Entra admin center's Single sing-on pane of your enterprise application.
+These settings are directly implemented from your AD FS relying party application and can't be modified from this tab. However, after configuring application, you can modify these from the Microsoft Entra admin center's Single sign-on pane of your enterprise application.
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/saml-configurations-on-premises.png" alt-text="Screenshot of the AD FS SAML configurations pane.":::
 

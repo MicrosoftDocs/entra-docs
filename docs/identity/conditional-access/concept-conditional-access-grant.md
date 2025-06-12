@@ -1,16 +1,15 @@
 ---
 title: Grant controls in Conditional Access policy
 description: Grant controls in a Microsoft Entra Conditional Access policy.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 03/12/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, jogro
+ms.custom: sfi-image-nochange
 ---
 # Conditional Access: Grant
 
@@ -51,7 +50,7 @@ Selecting this checkbox requires users to perform Microsoft Entra multifactor au
 
 ### Require authentication strength
 
-Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Protection** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
+Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Entra ID** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
 
 ### Require device to be marked as compliant
 
@@ -140,7 +139,7 @@ See [Require approved client apps for cloud app access with Conditional Access](
 
 In Conditional Access policy, you can require that an [Intune app protection policy](/mem/intune/apps/app-protection-policy) is present on the client app before access is available to the selected applications. These mobile application management (MAM) app protection policies allow you to manage and protect your organization's data within specific applications.
 
-To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. The Microsoft Authenticator app can be used as the broker app but doesn't support being targeted as an approved client app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than three Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-3-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](policy-all-users-windows-app-protection.md).
+To apply this grant control, Conditional Access requires that the device is registered in Microsoft Entra ID, which requires using a broker app. The broker app can be either Microsoft Authenticator for iOS or Microsoft Company Portal for Android devices. If a broker app isn't installed on the device when the user attempts to authenticate, the user is redirected to the app store to install the broker app. The Microsoft Authenticator app can be used as the broker app but doesn't support being targeted as an approved client app. App protection policies are generally available for iOS and Android, and in public preview for Microsoft Edge on Windows. [Windows devices support no more than three Microsoft Entra user accounts in the same session](~/identity/devices/faq.yml#i-can-t-add-more-than-three-microsoft-entra-user-accounts-under-the-same-user-session-on-a-windows-10-11-device--why). For more information about how to apply policy to Windows devices, see the article [Require an app protection policy on Windows devices (preview)](policy-all-users-windows-app-protection.md).
 
 Applications must meet certain requirements to support app protection policies. Developers can find more information about these requirements in the section [Apps you can manage with app protection policies](/mem/intune/apps/app-protection-policy#apps-you-can-manage-with-app-protection-policies). 
 
@@ -200,6 +199,16 @@ The following restrictions apply when you configure a policy by using the passwo
 ### Terms of use
 
 If your organization created terms of use, other options might be visible under grant controls. These options allow administrators to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
+
+## Multiple grant controls
+
+When multiple grant controls are applied to a user, it's important to understand that Conditional Access policies follow a specific validation order by design. For example, if a user has two policies requiring multifactor authentication (MFA) and Terms of Use (ToU), Conditional Access first validates the user's MFA claim and then the ToU.
+ 
+- If a valid MFA claim isn't present in the token, you see an "interrupt" (pending MFA) and a failure for ToU in the logs, even if the ToU was already accepted in a previous sign-in.
+- Once multifactor authentication is completed, a second log entry appears, validating the ToU. If the user already accepted the ToU, you see success for both MFA and ToU. 
+- If a valid MFA claim is present in the token, a single log shows success for both MFA and ToU.
+ 
+If multiple policies are applied to a user requiring MFA, Device State, and ToU, the process is similar. The validation order is MFA, Device State, and then ToU.
 
 ### Custom controls (preview)
 

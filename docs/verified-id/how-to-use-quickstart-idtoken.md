@@ -3,11 +3,10 @@ title: Create verifiable credentials for ID tokens
 description: Learn how to use a quickstart to create custom credentials for ID tokens
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 11/11/2024
+ms.date: 01/17/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am looking for information to help me create verifiable credentials for ID tokens. 
@@ -76,7 +75,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
 
 ## Sample JSON rules definitions
 
-The JSON attestation definition should contain the **idTokens** name, the [OIDC configuration details](rules-and-display-definitions-model.md#idtokenattestation-type) (clientId, configuration, redirectUri and scope) and the claims mapping section. The expected JSON for the rules definitions is the inner content of the rules attribute, which starts with the attestation attribute. 
+The JSON attestation definition should contain the **idTokens** name, the [OIDC configuration details](rules-and-display-definitions-model.md#idtokenattestation-type) (clientId, configuration, redirectUri, and scope) and the claims mapping section. The expected JSON for the rules definitions is the inner content of the rules attribute, which starts with the attestation attribute. 
 
 The claims mapping in the following example requires that you configure the token as explained in the [Claims in the ID token from the identity provider](#claims-in-the-id-token-from-the-identity-provider) section.
 
@@ -151,9 +150,9 @@ If you want to check the claims included in the Microsoft Entra ID token, take t
 
 1. Select **Configure**.
 
-After you've finished testing your ID token, consider removing **https://jwt.ms** and the support for **implicit and hybrid flows**.
+After you finish testing your ID token, consider removing **https://jwt.ms** and the support for **implicit and hybrid flows**.
 
-**For Microsoft Entra ID**: You can test your app registration and, if you've enabled support for redirecting to **https://jwt.ms**, you can get an ID token by running the following in your browser: 
+**For Microsoft Entra ID**: You can test your app registration and, if you enable support for redirecting to **https://jwt.ms**, you can get an ID token by running the following in your browser: 
 
 ```http
 https://login.microsoftonline.com/<your-tenantId>/oauth2/v2.0/authorize?client_id=<your-appId>&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid%20profile&response_type=id_token&prompt=login
@@ -163,11 +162,13 @@ In the code, replace \<your-tenantId> with your tenant ID. To get the extra clai
 
 **For Azure Active Directory B2C**: The app registration process is the same, but B2C has built-in support in the Azure portal for testing your B2C policies via the **Run user flow** functionality.
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 ## Claims in the ID token from the identity provider
 
 Claims must exist in the returned identity provider so that they can successfully populate your verifiable credential.
 
-If the claims don't exist, there's no value in the issued verifiable credential. Most OIDC identity providers don't issue a claim in an ID token if the claim has a null value in your profile. Be sure to include the claim in the ID token definition, and ensure that you've entered a value for the claim in your user profile.
+If the claims don't exist, there's no value in the issued verifiable credential. Most OIDC identity providers don't issue a claim in an ID token if the claim has a null value in your profile. Be sure to include the claim in the ID token definition, and ensure that you enter a value for the claim in your user profile.
 
 **For Microsoft Entra ID**: To configure the claims to include in your token, see [Provide optional claims to your app](~/identity-platform/optional-claims.md). The configuration is per application, so this configuration should be for the app that has the application ID specified in the client ID in the rules definition.
 

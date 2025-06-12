@@ -6,11 +6,11 @@ description: Learn how admins can use authentication strength requirements for e
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/12/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckms
-manager: amycolannino
+manager: dougeby
 ms.reviewer: namkedia
 ---
 # How Conditional Access authentication strength works for external users

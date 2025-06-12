@@ -1,15 +1,14 @@
 ---
 title: 'Microsoft Entra Cloud Sync new agent configuration'
 description: This article describes how to install cloud sync.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Provision Active Directory to Microsoft Entra ID - Configuration
@@ -21,7 +20,7 @@ The following documentation demonstrates the new guided user experience for Micr
 For additional information and an example of how to configure cloud sync, see the video below.
 
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWKact]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=f88ca6c8-8308-4a63-a1b1-53de75214298]
 
 
 ## Configure provisioning

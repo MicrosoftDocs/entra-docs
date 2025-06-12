@@ -2,11 +2,11 @@
 title: Microsoft Entra activity log integration options
 description: Introduction to the options and considerations for integrating Microsoft Entra activity logs with storage and analysis tools.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 10/02/2024
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -25,9 +25,9 @@ The following logs can be integrated with one of many endpoints:
 
 * The [**audit logs activity report**](concept-audit-logs.md) gives you access to the history of every task performed in your tenant.
 * With the [**sign-in activity report**](concept-sign-ins.md), you can see when users attempt to sign in to your applications or troubleshoot sign-in errors.
-* With the [**provisioning logs**](~/identity/app-provisioning/application-provisioning-log-analytics.md), you can monitor which users were, updated, and deleted in all your non-Mirosoft applications.
-* The [**risky users logs**](~/id-protection/howto-identity-protection-investigate-risk.md#risky-users-report) helps you monitor changes in user risk level and remediation activity.
-* With the [**risk detections logs**](~/id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report), you can monitor user's risk detections and analyze trends in risk activity detected in your organization.
+* With the [**provisioning logs**](../../identity/app-provisioning/application-provisioning-log-analytics.md), you can monitor which users were, updated, and deleted in all your non-Microsoft applications.
+* The [**risky users logs**](../../id-protection/howto-identity-protection-investigate-risk.md#risky-users-report) helps you monitor changes in user risk level and remediation activity.
+* With the [**risk detections logs**](../../id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report), you can monitor user's risk detections and analyze trends in risk activity detected in your organization.
 
 ## Integration options
 
@@ -45,7 +45,7 @@ If you're performing troubleshooting tasks *and* you need to retain the logs for
 
 ### Long-term storage
 
-If you're performing troubleshooting tasks *and* you need to retain the logs for more than 30 days, you should export your logs to an Azure storage account. This option is ideal of you don't plan on querying that data often.
+If you're performing troubleshooting tasks *and* you need to retain the logs for more than 30 days, you should export your logs to an Azure storage account. This option is ideal of you don't plan on querying that data often or you need to store the logs for compliance purposes.
 
 If you need to query the data that you're retaining for more than 30 days, take a look at the analysis and monitoring options.
 
@@ -53,9 +53,11 @@ If you need to query the data that you're retaining for more than 30 days, take 
 
 If your scenario requires that you retain data for more than 30 days *and* you plan on querying that data regularly, you've got a few options to integrate your data with SIEM tools for analysis and monitoring.
 
-If you have a non-Microsoft SIEM tool, we recommend setting up an Event Hubs namespace and event hub that you can stream your data through. With an event hub, you can stream logs to one of the supported SIEM tools.
+If you use a non-Microsoft SIEM tool, we recommend setting up an Event Hubs namespace and event hub where you can stream your data. With an event hub, you can stream logs to one of the supported SIEM tools.
 
-If you don't plan on using a third-party SIEM tool, we recommend sending your Microsoft Entra activity logs to [Azure Monitor logs](/azure/azure-monitor/logs/data-platform-logs). With this integration, you can query your activity logs in a [Log Analytics workspace](/azure/azure-monitor/logs/log-analytics-workspace-overview). In Addition to Azure Monitor logs, [Microsoft Sentinel](/azure/sentinel/overview?tabs=azure-portal) provides near real-time security detection and threat hunting. If you decide to integrate with SIEM tools later, you can stream your Microsoft Entra activity logs along with your other Azure data through an event hub.
+If you don't plan on using a third-party SIEM tool, we recommend sending your Microsoft Entra activity logs to [Azure Monitor logs](/azure/azure-monitor/logs/data-platform-logs). With this integration, you can query your activity logs in a [Log Analytics workspace](/azure/azure-monitor/logs/log-analytics-workspace-overview). Once your logs are integrated with Azure Monitor logs, you can query with Log Analytics and set up Workbooks for further analysis and alerting. We recommend setting up a workspace for storage of logs and a different workspace to integrate with Log Analytics and Workbooks.
+
+In Addition to Azure Monitor logs, [Microsoft Sentinel](/azure/sentinel/overview?tabs=azure-portal) provides near real-time security detection and threat hunting. If you decide to integrate with SIEM tools later, you can stream your Microsoft Entra activity logs along with your other Azure data through an event hub.
 
 ## Cost considerations
 

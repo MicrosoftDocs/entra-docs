@@ -1,10 +1,11 @@
 ---
 author: barclayn
 ms.author: barclayn
-ms.date: 09/06/2024
-manager: amycolannino
+ms.date: 01/31/2025
+manager: femila
 ms.service: entra-id
 ms.topic: include
+ms.custom: sfi-ga-nochange
 ---
 
 
@@ -67,7 +68,7 @@ Microsoft Entra ID roles: Global Administrator, User Administrator, and License 
 
 ### How can I view license consumption and utilization now?
 
-License consumption and utilization can still be viewed in the Microsoft 365 Admin Center under **Billing -> Licenses**.
+License consumption and utilization can still be viewed in the Microsoft 365 Admin Center under **Billing** > **Licenses**.
 
 ### Who should I contact if I need help with these changes?
 
@@ -77,7 +78,7 @@ For detailed instructions on assigning licenses, visit the [Microsoft 365 Admin 
 
 ## Known Issues:
 
-- Users with the Group Administrator role won't be able to assign licenses in the Microsoft 365 Admins Center.
+- Users with the Group Administrator role can't assign licenses in the Microsoft 365 Admins Center.
   - This functionality was fully supported in both the Azure portal and Microsoft Entra admin center. 
   - PowerShell continues to support the use of the Group Administrator role for license assignment.
   - Alternatively Group Administrators can be given the Licenses Administrator role in order to assign group based Licenses from the Microsoft 365 Admin Portal.  

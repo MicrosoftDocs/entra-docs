@@ -1,28 +1,28 @@
 ---
-title: How trusts work for Microsoft Entra Domain Services | Microsoft Docs
+title: How trusts work for Microsoft Entra Domain Services (Preview) | Microsoft Learn
 description: Learn more about how forest trust work with Microsoft Entra Domain Services
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 11/27/2023
+ms.date: 01/27/2025
 ms.author: justinha
 ---
 
-# How trust relationships work for forests in Active Directory 
+# How trust relationships work for forests in Active Directory (Preview)
 
 Active Directory Domain Services (AD DS) provides security across multiple domains or forests through domain and forest trust relationships. Before authentication can occur across trusts, Windows must first check if the domain being requested by a user, computer, or service has a trust relationship with the domain of the requesting account.
 
 To check for this trust relationship, the Windows security system computes a trust path between the domain controller (DC) for the server that receives the request and a DC in the domain of the requesting account.
 
-The access control mechanisms provided by AD DS and the Windows distributed security model provide an environment for the operation of domain and forest trusts. For these trusts to work properly, every resource or computer must have a direct trust path to a DC in the domain in which it is located.
+The access control mechanisms provided by AD DS and the Windows distributed security model provide an environment for the operation of domain and forest trusts. For these trusts to work properly, every resource or computer must have a direct trust path to a DC in the domain in which it's located.
 
-The trust path is implemented by the Net Logon service using an authenticated remote procedure call (RPC) connection to the trusted domain authority. A secured channel also extends to other AD DS domains through interdomain trust relationships. This secured channel is used to obtain and verify security information, including security identifiers (SIDs) for users and groups.
+The Net Logon service implements the trust path using an authenticated remote procedure call (RPC) connection to the trusted domain authority. A secured channel also extends to other AD DS domains through interdomain trust relationships. This secured channel is used to obtain and verify security information, including security identifiers (SIDs) for users and groups.
 
 >[!NOTE]
->Domain Services supports multiple forest trust directions, including two-way trusts and one-way trusts that can be either incoming or outgoing. 
+>Domain Services supports multiple forest trust directions, including a current preview of two-way trusts and one-way trusts that can be either incoming or outgoing. 
 
 For an overview of how trusts apply to Domain Services, see [Forest concepts and features][create-forest-trust].
 
@@ -32,7 +32,7 @@ To get started using trusts in Domain Services, [create a managed domain that us
 
 The flow of secured communications over trusts determines the elasticity of a trust. How you create or configure a trust determines how far the communication extends within or across forests.
 
-The flow of communication over trusts is determined by the direction of the trust. Trusts can be one-way or two-way, and can be transitive or non-transitive.
+The direction of the trust determines the flow of communication over trusts. Trusts can be one-way or two-way, and can be transitive or non-transitive.
 
 The following diagram shows that all domains in *Tree 1* and *Tree 2* have transitive trust relationships by default. As a result, users in *Tree 1* can access resources in domains in *Tree 2* and users in *Tree 2* can access resources in *Tree 1*, when the proper permissions are assigned at the resource.
 
@@ -40,7 +40,7 @@ The following diagram shows that all domains in *Tree 1* and *Tree 2* have trans
 
 ### One-way and two-way trusts
 
-Trust relationships enable access to resources can be either one-way or two-way.
+Trust relationships enable access to resources can be either one-way or two-way. 
 
 A one-way trust is a unidirectional authentication path created between two domains. In a one-way trust between *Domain A* and *Domain B*, users in *Domain A* can access resources in *Domain B*. However, users in *Domain B* can't access resources in *Domain A*.
 
@@ -57,7 +57,7 @@ Transitivity determines whether a trust can be extended outside of the two domai
 * A transitive trust can be used to extend trust relationships with other domains.
 * A non-transitive trust can be used to deny trust relationships with other domains.
 
-Each time you create a new domain in a forest, a two-way, transitive trust relationship is automatically created between the new domain and its parent domain. If child domains are added to the new domain, the trust path flows upward through the domain hierarchy extending the initial trust path created between the new domain and its parent domain. Transitive trust relationships flow upward through a domain tree as it is formed, creating transitive trusts between all domains in the domain tree.
+Each time you create a new domain in a forest, a two-way, transitive trust relationship is automatically created between the new domain and its parent domain. If child domains are added to the new domain, the trust path flows upward through the domain hierarchy extending the initial trust path created between the new domain and its parent domain. Transitive trust relationships flow upward through a domain tree as it's formed, creating transitive trusts between all domains in the domain tree.
 
 Authentication requests follow these trust paths, so accounts from any domain in the forest can be authenticated by any other domain in the forest. With a single sign in process, accounts with the proper permissions can access resources in any domain in the forest.
 
@@ -96,16 +96,16 @@ For example, when a one-way, forest trust is created between *Forest 1* (the tru
 Before you can create a forest trust, you need to verify you have the correct Domain Name System (DNS) infrastructure in place. Forest trusts can only be created when one of the following DNS configurations is available:
 
 * A single root DNS server is the root DNS server for both forest DNS namespaces - the root zone contains delegations for each of the DNS namespaces and the root hints of all DNS servers include the root DNS server.
-* When there is no shared root DNS server and the root DNS servers in each forest DNS namespace use DNS conditional forwarders for each DNS namespace to route queries for names in the other namespace.
+* When there's no shared root DNS server and the root DNS servers in each forest DNS namespace use DNS conditional forwarders for each DNS namespace to route queries for names in the other namespace.
 
     > [!IMPORTANT]
-    > Any Microsoft Entra Domain Services forest with a trust must use this DNS configuration. Hosting a DNS namespace other than the forest DNS namespace is not a feature of Microsoft Entra Domain Services. Conditional forwarders is the proper configuration.
+    > Any Microsoft Entra Domain Services forest with a trust must use this DNS configuration. Hosting a DNS namespace other than the forest DNS namespace isn't a feature of Microsoft Entra Domain Services. Conditional forwarders is the proper configuration.
 
-* When there is no shared root DNS server and the root DNS servers in each forest DNS namespace are use DNS secondary zones are configured in each DNS namespace to route queries for names in the other namespace.
+* When there's no shared root DNS server and the root DNS servers in each forest DNS namespace are use DNS secondary zones are configured in each DNS namespace to route queries for names in the other namespace.
 
 To create a forest trust in AD DS, you must be a member of the Domain Admins group (in the forest root domain) or the Enterprise Admins group in Active Directory. Each trust is assigned a password that the administrators in both forests must know. Members of Enterprise Admins in both forests can create the trusts in both forests at once and, in this scenario, a password that is cryptographically random is automatically generated and written for both forests.
 
-A managed domain forest supports up to five one-way outbound forest trusts to on-premises forests. The outbound forest trust for Microsoft Entra Domain Services is created in the Microsoft Entra admin center. The incoming forest trust must be configured by a user with the privileges previously noted in the on-premises Active Directory. 
+A managed domain forest supports up to five one-way outbound forest trusts to on-premises forests. The outbound forest trust for Microsoft Entra Domain Services is created in the Microsoft Entra admin center. A user with the privileges previously noted in the on-premises Active Directory must configure the incoming forest trust. 
 
 ## Trust processes and interactions
 
@@ -119,7 +119,7 @@ When a request for authentication is referred to a domain, the domain controller
 
 The Kerberos V5 authentication protocol is dependent on the Net Logon service on domain controllers for client authentication and authorization information. The Kerberos protocol connects to an online Key Distribution Center (KDC) and the Active Directory account store for session tickets.
 
-The Kerberos protocol also uses trusts for cross-realm ticket-granting services (TGS) and to validate Privilege Attribute Certificates (PACs) across a secured channel. The Kerberos protocol performs cross-realm authentication only with non-Windows-brand operating system Kerberos realms such as an MIT Kerberos realm and does not need to interact with the Net Logon service.
+The Kerberos protocol also uses trusts for cross-realm ticket-granting services (TGS) and to validate Privilege Attribute Certificates (PACs) across a secured channel. The Kerberos protocol performs cross-realm authentication only with non-Windows-brand operating system Kerberos realms such as an MIT Kerberos realm and doesn't need to interact with the Net Logon service.
 
 If the client uses Kerberos V5 for authentication, it requests a ticket to the server in the target domain from a domain controller in its account domain. The Kerberos KDC acts as a trusted intermediary between the client and server and provides a session key that enables the two parties to authenticate each other. If the target domain is different from the current domain, the KDC follows a logical process to determine whether an authentication request can be referred:
 
@@ -137,7 +137,7 @@ The NTLM authentication protocol is dependent on the Net Logon service on domain
 
 If the client uses NTLM for authentication, the initial request for authentication goes directly from the client to the resource server in the target domain. This server creates a challenge to which the client responds. The server then sends the user's response to a domain controller in its computer account domain. This domain controller checks the user account against its security accounts database.
 
-If the account does not exist in the database, the domain controller determines whether to perform pass-through authentication, forward the request, or deny the request by using the following logic:
+If the account doesn't exist in the database, the domain controller determines whether to perform pass-through authentication, forward the request, or deny the request by using the following logic:
 
 1. Does the current domain have a direct trust relationship with the user's domain?
     * If yes, the domain controller sends the credentials of the client to a domain controller in the user's domain for pass-through authentication.
@@ -154,7 +154,7 @@ When two forests are connected by a forest trust, authentication requests made u
 When a forest trust is first established, each forest collects all of the trusted namespaces in its partner forest and stores the information in a [trusted domain object](#trusted-domain-object). Trusted namespaces include domain tree names, user principal name (UPN) suffixes, service principal name (SPN) suffixes, and security ID (SID) namespaces used in the other forest. TDO objects are replicated to the global catalog.
 
 >[!NOTE]
->Alternate UPN suffixes on trusts are not supported. If an on-premises domain uses the same UPN suffix as Domain Services, sign in must use **sAMAccountName**.  
+>Alternate UPN suffixes on trusts aren't supported. If an on-premises domain uses the same UPN suffix as Domain Services, sign in must use **sAMAccountName**.  
 
 Before authentication protocols can follow the forest trust path, the service principal name (SPN) of the resource computer must be resolved to a location in the other forest. An SPN can be one of the following names:
 
@@ -162,9 +162,9 @@ Before authentication protocols can follow the forest trust path, the service pr
 * The DNS name of a domain.
 * The distinguished name of a service connection point object.
 
-When a workstation in one forest attempts to access data on a resource computer in another forest, the Kerberos authentication process contacts the domain controller for a service ticket to the SPN of the resource computer. Once the domain controller queries the global catalog and determines that the SPN is not in the same forest as the domain controller, the domain controller sends a referral for its parent domain back to the workstation. At that point, the workstation queries the parent domain for the service ticket and continues to follow the referral chain until it reaches the domain where the resource is located.
+When a workstation in one forest attempts to access data on a resource computer in another forest, the Kerberos authentication process contacts the domain controller for a service ticket to the SPN of the resource computer. Once the domain controller queries the global catalog and determines that the SPN isn't in the same forest as the domain controller, the domain controller sends a referral for its parent domain back to the workstation. At that point, the workstation queries the parent domain for the service ticket and continues to follow the referral chain until it reaches the domain where the resource is located.
 
-The following diagram and steps provide a detailed description of the Kerberos authentication process that's used when computers running Windows attempt to access resources from a computer located in another forest.
+The following diagram and steps provide a detailed description of the Kerberos authentication process used when computers running Windows attempt to access resources from a computer located in another forest.
 
 ![Diagram of the Kerberos process over a forest trust](media/concepts-forest-trust/kerberos-over-forest-trust-process-diagram.png)
 
@@ -172,7 +172,7 @@ The following diagram and steps provide a detailed description of the Kerberos a
 
 2. *Workstation1* contacts the Kerberos KDC on a domain controller in its domain, *ChildDC1*, and requests a service ticket for the *FileServer1* SPN.
 
-3. *ChildDC1* does not find the SPN in its domain database and queries the global catalog to see if any domains in the *tailspintoys.com* forest contain this SPN. Because a global catalog is limited to its own forest, the SPN is not found.
+3. *ChildDC1* doesn't find the SPN in its domain database and queries the global catalog to see if any domains in the *tailspintoys.com* forest contain this SPN. Because a global catalog is limited to its own forest, the SPN isn't found.
 
     The global catalog then checks its database for information about any forest trusts that are established with its forest. If found, it compares the name suffixes listed in the forest trust trusted domain object (TDO) to the suffix of the target SPN to find a match. Once a match is found, the global catalog provides a routing hint back to *ChildDC1*.
 
@@ -194,7 +194,7 @@ The following diagram and steps provide a detailed description of the Kerberos a
 
 ## Trusted domain object
 
-Each domain or forest trust within an organization is represented by a Trusted Domain Object (TDO) stored in the *System* container within its domain.
+A Trusted Domain Object (TDO) stored in the *System* container within its domain represents each domain or forest trust within an organization.
 
 ### TDO contents
 
@@ -216,7 +216,7 @@ To change a password, the domain controllers complete the following process:
 
 2. The PDC emulator in the trusting domain sets the *OldPassword* field of the TDO object to the current *NewPassword* field.
 
-3. The PDC emulator in the trusting domain sets the *NewPassword* field of the TDO object to the new password. Keeping a copy of the previous password makes it possible to revert to the old password if the domain controller in the trusted domain fails to receive the change, or if the change is not replicated before a request is made that uses the new trust password.
+3. The PDC emulator in the trusting domain sets the *NewPassword* field of the TDO object to the new password. Keeping a copy of the previous password makes it possible to revert to the old password if the domain controller in the trusted domain fails to receive the change, or if the change isn't replicated before a request is made that uses the new trust password.
 
 4. The PDC emulator in the trusting domain makes a remote call to a domain controller in the trusted domain asking it to set the password on the trust account to the new password.
 
@@ -232,14 +232,14 @@ A password change isn't finalized until authentication using the password succee
 
 If authentication using the new password fails because the password is invalid, the trusting domain controller tries to authenticate using the old password. If it authenticates successfully with the old password, it resumes the password change process within 15 minutes.
 
-Trust password updates need to replicate to the domain controllers of both sides of the trust within 30 days. If the trust password is changed after 30 days and a domain controller only has the N-2 password, it cannot use the trust from the trusting side and cannot create a secure channel on the trusted side.
+Trust password updates need to replicate to the domain controllers of both sides of the trust within 30 days. If the trust password is changed after 30 days and a domain controller only has the N-2 password, it can't use the trust from the trusting side and can't create a secure channel on the trusted side.
 
 ## Network ports used by trusts
 
 Because trusts must be deployed across various network boundaries, they might have to span one or more firewalls. When this is the case, you can either tunnel trust traffic across a firewall or open specific ports in the firewall to allow the traffic to pass through.
 
 > [!IMPORTANT]
-> Active Directory Domain Services does not support restricting Active Directory RPC traffic to specific ports.
+> Active Directory Domain Services doesn't support restricting Active Directory RPC traffic to specific ports.
 
 Read the **Windows Server 2008 and later versions** section of the Microsoft Support Article [How to configure a firewall for Active Directory domains and trusts](https://support.microsoft.com/help/179442/how-to-configure-a-firewall-for-domains-and-trusts) to learn about the ports needed for a forest trust.
 

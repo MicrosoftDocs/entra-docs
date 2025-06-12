@@ -2,14 +2,13 @@
 title: Tutorial - Issue Microsoft Entra Verified ID credentials from an application
 description: In this tutorial, you learn how to issue verifiable credentials by using a sample app.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 09/15/2023
+ms.date: 04/30/2025
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 
@@ -44,14 +43,13 @@ The following diagram illustrates the Microsoft Entra Verified ID architecture a
 
 ## Create the verified credential expert card in Azure
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In this step, you create the verified credential expert card by using Microsoft Entra Verified ID. After you create the credential, your Microsoft Entra tenant can issue it to users who initiate the process.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 1. Select **Verifiable credentials**.
 1. After you [set up your tenant](verifiable-credentials-configure-tenant.md), the **Create credential** should appear. Alternatively, you can select **Credentials** in the left hand menu and select **+ Add a credential**.
-1. In **Create credential**, select **Custom Credential** and click **Next**:
+1. In **Create credential**, select **Custom Credential** and select **Next**:
 
     1. For **Credential name**, enter **VerifiedCredentialExpert**. This name is used in the portal to identify your verifiable credentials. It's included as part of the verifiable credentials contract.
 
@@ -157,7 +155,7 @@ git clone https://github.com/Azure-Samples/active-directory-verifiable-credentia
 
 Create a client secret for the registered application that you created. The sample application uses the client secret to prove its identity when it requests tokens.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with appropriate administrator permissions.
 1. Select Microsoft Entra ID.
 1. Go to **Applications** > **App registrations** page.
 
@@ -183,7 +181,7 @@ At this point, you should have all the required information that you need to set
 
 ## Update the sample application
 
-Now you'll make modifications to the sample app's issuer code to update it with your verifiable credential URL. This step allows you to issue verifiable credentials by using your own tenant.
+Now you make modifications to the sample app's issuer code to update it with your verifiable credential URL. This step allows you to issue verifiable credentials by using your own tenant.
 
 1. Under the *active-directory-verifiable-credentials-dotnet-main* folder, open Visual Studio Code, and select the project inside the *1-asp-net-core-api-idtokenhint* folder.
 
@@ -247,11 +245,11 @@ Now you're ready to issue your first verified credential expert card by running 
 
      :::image type="content" source="media/verifiable-credentials-configure-issuer/get-credentials.png" alt-text="Screenshot that shows how to choose to get the credential from the sample app.":::
 
-1. Using your mobile device, scan the QR code with the Authenticator app. For more info on scanning the QR code, please see the [FAQ section](verifiable-credentials-faq.md#scanning-the-qr-code).
+1. Using your mobile device, scan the QR code with the Authenticator app. For more info on scanning the QR code, see the [FAQ section](verifiable-credentials-faq.md#scanning-the-qr-code).
 
      :::image type="content" source="media/verifiable-credentials-configure-issuer/scan-issuer-qr-code.png" alt-text="Screenshot that shows how to scan the QR code.":::
 
-1. At this time, you'll see a message warning that this app or website might be risky. Select **Advanced**.
+1. At this time, you see a message warning that this app or website might be risky. Select **Advanced**.
 
      :::image type="content" source="media/verifiable-credentials-configure-issuer/at-risk.png" alt-text="Screenshot that shows how to respond to the warning message.":::
 
@@ -259,7 +257,7 @@ Now you're ready to issue your first verified credential expert card by running 
 
      :::image type="content" source="media/verifiable-credentials-configure-issuer/proceed-anyway.png" alt-text="Screenshot that shows how to proceed with the risky warning.":::
 
-1. You'll be prompted to enter a PIN code that is displayed in the screen where you scanned the QR code. The PIN adds an extra layer of protection to the issuance. The PIN code is randomly generated every time an issuance QR code is displayed.
+1. You are prompted to enter a PIN code that is displayed in the screen where you scanned the QR code. The PIN adds an extra layer of protection to the issuance. The PIN code is randomly generated every time an issuance QR code is displayed.
 
      :::image type="content" source="media/verifiable-credentials-configure-issuer/enter-verification-code.png" alt-text="Screenshot that shows how to type the pin code.":::
 

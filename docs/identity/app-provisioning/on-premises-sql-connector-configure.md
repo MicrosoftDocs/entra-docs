@@ -2,13 +2,13 @@
 title: Provisioning users into SQL based applications using the ECMA Connector host
 description: Provisioning users into SQL based applications using the ECMA Connector host
 
-author: billmath
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/13/2024
-ms.author: billmath
+ms.date: 04/09/2025
+ms.author: kenwith
 ms.reviewer: arvinh
 ---
 

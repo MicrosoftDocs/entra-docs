@@ -2,14 +2,13 @@
 title: Grant B2B users access to your on-premises apps
 description: Shows how to give cloud B2B users access to on premises apps with Microsoft Entra B2B collaboration.
 
- 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 12/10/2024
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 
@@ -84,7 +83,7 @@ You can use MIM and the MIM connector for Microsoft Graph to create the guest us
 
 Make sure that you have the correct Client Access Licenses (CALs) or External Connectors for external guest users who access on-premises apps or whose identities are managed on-premises. For more information, see the "External Connectors" section of [Client Access Licenses and Management Licenses](https://www.microsoft.com/licensing/product-licensing/client-access-license.aspx). Consult your Microsoft representative or local reseller regarding your specific licensing needs.
 
-## Next steps
+## Related content
 
 - [Grant local users access to cloud apps](hybrid-on-premises-to-cloud.md)
 - [Microsoft Entra B2B collaboration for hybrid organizations](hybrid-organizations.md)

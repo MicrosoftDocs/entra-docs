@@ -1,16 +1,15 @@
 ---
 title: List users, groups, or devices in an administrative unit
 description: List users, groups, or devices in an administrative unit in Microsoft Entra ID.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
-ms.date: 06/09/2023
-ms.author: rolyon
+ms.date: 01/03/2025
+ms.author: barclayn
 ms.reviewer: anandy
-ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: oldportal, it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # List users, groups, or devices in an administrative unit
@@ -21,22 +20,21 @@ In Microsoft Entra ID, you can list the users, groups, or devices in administrat
 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
-- Microsoft Graph PowerShell SDK installed when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 You can list the users, groups, or devices in administrative units using the Microsoft Entra admin center.
 
 ### List the administrative units for a single user, group, or device
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity**.
+1. Browse to **Entra ID**.
 
 1. Browse to one of the following:
 
@@ -48,13 +46,13 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 1. Select **Administrative units** to list all the administrative units where the user, group, or device is a member.
 
-    ![Screenshot of the Administrative units page, displaying a list administrative units that a group is assigned to.](./media/admin-units-members-list/list-group-au.png)
+    :::image type="content" source="./media/admin-units-members-list/list-group-au.png" alt-text="Screenshot of the Administrative units page, displaying a list administrative units that a group is assigned to." lightbox="./media/admin-units-members-list/list-group-au.png":::
 
 ### List the users, groups, or devices for a single administrative unit
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit that you want to list the users, groups, or devices for.
 
@@ -64,25 +62,25 @@ You can list the users, groups, or devices in administrative units using the Mic
     - **Groups**
     - **Devices**
 
-   ![Screenshot of the Groups page displaying a list of groups in an administrative unit.](./media/admin-units-members-list/list-groups-in-admin-units.png)
+    :::image type="content" source="./media/admin-units-members-list/list-groups-in-admin-units.png" alt-text="Screenshot of the Groups page displaying a list of groups in an administrative unit." lightbox="./media/admin-units-members-list/list-groups-in-admin-units.png":::
 
 ### List the devices for an administrative unit by using the All devices page
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Devices** > **All devices**.
+1. Browse to **Entra ID** > **Devices** > **All devices**.
 
 1. Select the filter for administrative unit.
 
 1. Select the administrative unit whose devices you want to list.
 
-    ![Screenshot of All devices page with an administrative unit filter.](./media/admin-units-members-list/device-admin-unit-filter.png)
+    :::image type="content" source="./media/admin-units-members-list/device-admin-unit-filter.png" alt-text="Screenshot of All devices page with an administrative unit filter." lightbox="./media/admin-units-members-list/device-admin-unit-filter.png":::
 
 ### List the restricted management administrative units for a single user or group
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity**.
+1. Browse to **Entra ID**.
 
 1. Browse to one of the following:
 
@@ -95,9 +93,9 @@ You can list the users, groups, or devices in administrative units using the Mic
 
 1. In the **Restricted management** column, look for administrative units that are set to **Yes**.
 
-    ![Screenshot of the Administrative units page with the Restricted management column.](./media/admin-units-members-list/list-restricted-management-admin-unit.png)
+    :::image type="content" source="./media/admin-units-members-list/list-restricted-management-admin-unit.png" alt-text="Screenshot of the Administrative units page with the Restricted management column." lightbox="./media/admin-units-members-list/list-restricted-management-admin-unit.png":::
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 Use the [Get-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunit) and [Get-MgDirectoryAdministrativeUnitMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryadministrativeunitmember) commands to list users, groups, or devices for an administrative unit.
 
@@ -164,7 +162,7 @@ foreach ($member in (Get-MgDirectoryAdministrativeUnitMember -AdministrativeUnit
 }
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 ### List the administrative units for a user
 
@@ -216,7 +214,9 @@ Response
 }
 ```
 
+---
+
 ## Next steps
 
 - [Add users, groups, or devices to an administrative unit](admin-units-members-add.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)

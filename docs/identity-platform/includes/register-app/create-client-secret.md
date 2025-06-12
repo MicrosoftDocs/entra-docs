@@ -11,7 +11,7 @@ ms.service: identity-platform
 ms.topic: include
 ---
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Identity** > **Applications** > **App registrations**.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Entra ID** > **App registrations**.
 1. Select the application that you registered earlier.
 1. In the application's **Overview** pane, select **Certificates & secrets** > **New client secret**.
 1. Enter a description for the secret in the **Description** field.

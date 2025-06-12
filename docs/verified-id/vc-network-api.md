@@ -4,11 +4,10 @@ titleSuffix: Microsoft Entra Verified ID
 description: Learn how to use the Microsoft Entra Verified ID Network API
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
-ms.date: 07/29/2022
+ms.date: 01/30/2025
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials developer, I want to configure verifying credentials from another party 
@@ -32,7 +31,7 @@ The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. T
 
 ## Searching for issuers
 
-This API is used to search for issuers available in the Microsoft Entra Verified ID Network. You can search for issuers by their **linked domain** name. The value supplied for the `filter` parameter will be used to find issuers that have onboarded to Microsoft Entra Verified ID and have a verified linked domain. Currently you can only filter by `linkeddomainurls` and with operator `like`. There will be a maximum of 15 issuers in the response.
+This API is used to search for issuers available in the Microsoft Entra Verified ID Network. You can search for issuers by their **linked domain** name. The value supplied for the `filter` parameter is used to find issuers that onboarded to Microsoft Entra Verified ID and have a verified linked domain. Currently you can only filter by `linkeddomainurls` and with operator `like`. There's a maximum of 15 issuers in the response.
 
 #### HTTP request
 
@@ -82,7 +81,7 @@ Content-type: application/json
 
 ## Searching for published credential types by an issuer
 
-This API is used search for published credential types for a specific issuer. You need to know the issuers `tenantId` and `issuerId`. The return message is a collection of published credential types and their respective claims. There will be a maximum of 100 credential types in the response.
+This API is used to search for published credential types for a specific issuer. You need to know the issuers `tenantId` and `issuerId`. The return message is a collection of published credential types and their respective claims. There  a maximum of 100 credential types in the response.
 
 #### HTTP request
 

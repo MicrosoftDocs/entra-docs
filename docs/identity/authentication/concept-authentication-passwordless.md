@@ -1,16 +1,15 @@
 ---
 title: Microsoft Entra passwordless sign-in
 description: Learn about options for passwordless sign-in to Microsoft Entra ID using FIDO2 security keys or Microsoft Authenticator.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/05/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: calui
+ms.custom: sfi-image-nochange
 ---
 
 # Passwordless authentication options for Microsoft Entra ID
@@ -190,7 +189,7 @@ The following considerations apply:
 - Users can sign in with these passwordless authentication methods:
    - Authenticator app: Works in scenarios where Microsoft Entra authentication is used, including across all browsers, during Windows 10 setup, and with integrated mobile apps on any operating system.
    - Security keys: Work on lock screen for Windows 10 and the web in supported browsers like Microsoft Edge (both legacy and new Edge).
-- Users can use passwordless credentials to access resources in tenants where they're a guest, but they could still be required to perform MFA in that resource tenant. For more information, see [Possible double multifactor authentication](~/external-id/current-limitations.md#possible-double-multi-factor-authentication).  
+- Users can use passwordless credentials to access resources in tenants where they're a guest, but they could still be required to perform MFA in that resource tenant. For more information, see [Possible double multifactor authentication](~/external-id/current-limitations.md#possible-double-multifactor-authentication).  
 - Users can't register passwordless credentials within a tenant where they're a guest, the same way that they don't have a password managed in that tenant.  
 
 ## Unsupported scenarios

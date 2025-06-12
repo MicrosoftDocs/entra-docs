@@ -2,13 +2,13 @@
 title: 'Microsoft Entra on-premises application provisioning architecture'
 description: Presents an overview of on-premises application provisioning architecture.
 
-author: billmath
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.topic: overview
-ms.date: 02/13/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: kenwith
 ms.collection: M365-identity-device-management
 ---
 
@@ -39,7 +39,7 @@ You don't need to open inbound connections to the corporate network. The provisi
 The required outbound endpoints for the provisioning agents are detailed [here](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#firewall-and-proxy-requirements).
 
 ## ECMA Connector Host architecture
-The ECMA Connector Host has several areas it uses to achieve on-premises provisioning. The diagram below is a conceptual drawing that presents these individual areas. The table below describes the areas in more detail.
+The ECMA Connector Host has several areas it uses to achieve on-premises provisioning. The following diagram is a conceptual drawing that presents these individual areas. The table below describes the areas in more detail.
 
 [![ECMA connector host](./media/on-premises-application-provisioning-architecture/ecma-2.png)](./media/on-premises-application-provisioning-architecture/ecma-2.png#lightbox)
 
@@ -53,7 +53,7 @@ The ECMA Connector Host has several areas it uses to achieve on-premises provisi
 |Business logic|Used to coordinate all of the ECMA Connector Host activities. The Autosync time is configurable in the ECMA host. This is in the properties page.|
 
 ### About anchor attributes and distinguished names
-The following information is provided to better explain the anchor attributes and the distinguished names, particularly used by the genericSQL connector.
+The following information is provided to better explain the anchor attributes and the distinguished names used by the genericSQL connector.
 
 The anchor attribute is a unique attribute of an object type that doesn't change and represents that object in the ECMA Connector Host in-memory cache.
 
@@ -78,8 +78,8 @@ Since ECMA Connector Host currently only supports the USER object type, the OBJE
 
 ### User creation workflow
 
-1. The Microsoft Entra provisioning service queries the ECMA Connector Host to see if the user exists. It uses the **matching attribute** as the filter. This attribute is defined in the Azure portal under Enterprise applications -> On-premises provisioning -> provisioning -> attribute matching. It's denoted by the 1 for matching precedence.
-You can define one or more matching attribute(s) and prioritize them based on the precedence. Should you want to change the matching attribute you can also do so.
+1. The Microsoft Entra provisioning service queries the ECMA Connector Host to see if the user exists. It uses the **matching attribute** as the filter. This attribute is defined in the Microsoft Entra admin center under Enterprise applications -> On-premises provisioning -> provisioning -> attribute matching. It's denoted by the 1 for matching precedence.
+You can define one or more matching attributes and prioritize them based on the precedence. Should you want to change the matching attribute you can also do so.
  [![Matching attribute](./media/on-premises-application-provisioning-architecture/match-1.png)](./media/on-premises-application-provisioning-architecture/match-1.png#lightbox)
 
 2. ECMA Connector Host receives the GET request and queries its internal cache to see if the user exists and has based imported. This is done using the matching attribute(s) above. If you define multiple matching attributes, the Microsoft Entra provisioning service sends a GET request for each attribute and the ECMA host checks its cache for a match until it finds one. 
@@ -91,7 +91,7 @@ You can define one or more matching attribute(s) and prioritize them based on th
 ## Agent best practices
 - Using the same agent for the on-premises provisioning feature along with Workday / SuccessFactors / Microsoft Entra Connect cloud sync is currently unsupported. We're actively working to support on-premises provisioning on the same agent as the other provisioning scenarios.
 - - Avoid all forms of inline inspection on outbound TLS communications between agents and Azure. This type of inline inspection causes degradation to the communication flow.
-- The agent must communicate with both Azure and your application, so the placement of the agent affects the latency of those two connections. You can minimize the latency of the end-to-end traffic by optimizing each network connection. Each connection can be optimized by:
+- The agent must communicate with both Azure and your application, so the placement of the agent affects the latency of those two connections. You can minimize the latency of the end-to-end traffic by optimizing each network connection. Ways you can optimize each connection include:
  - Reducing the distance between the two ends of the hop.
  - Choosing the right network to traverse. For example, traversing a private network rather than the public internet might be faster because of dedicated links.
 - The agent and ECMA Host rely on a certificate for communication. The self-signed certificate generated by the ECMA host should only be used for testing purposes. The self-signed certificate expires in two years by default and can't be revoked. Microsoft recommends using a certificate from a trusted CA for production use cases. 
@@ -100,7 +100,7 @@ You can define one or more matching attribute(s) and prioritize them based on th
 ## High availability
 The following information is provided for high availability / failover scenarios.
 
-For on-premises apps using the ECMA connector: The recommendation is having 1 active agent and 1 passive agent (configured, but stopped, not assigned to the enterprise app in Entra) per data center. 
+For on-premises apps using the ECMA connector: The recommendation is having one active agent and one passive agent (configured, but stopped, not assigned to the enterprise app in Microsoft Entra) per data center. 
 
 When doing a failover, it's recommended to do the following:
  1. Stop the active agent (A).
@@ -110,7 +110,7 @@ When doing a failover, it's recommended to do the following:
 
  :::image type="content" source="media/on-premises-application-provisioning-architecture/high-availability-1.png" alt-text="Diagram of high availability with ECMA connector." lightbox="media/on-premises-application-provisioning-architecture/high-availability-1.png":::
 
-For on-premises apps using the SCIM connector: The recommendation is having 2 active agents per application.
+For on-premises apps using the SCIM connector: The recommendation is having two active agents per application.
 
  :::image type="content" source="media/on-premises-application-provisioning-architecture/high-availability-2.png" alt-text="Diagram of high availability with SCIM connector." lightbox="media/on-premises-application-provisioning-architecture/high-availability-2.png":::
 
@@ -169,7 +169,7 @@ On-premises app provisioning has been rolled into the provisioning agent and is 
 
 ### 1.1.892.0 
 
-May 20th, 2022 - released for download
+May 20, 2022 - released for download
 
 #### Fixed issues
 
@@ -177,7 +177,7 @@ May 20th, 2022 - released for download
 
 ### 1.1.846.0
 
-April 11th, 2022 - released for download
+April 11, 2022 - released for download
 
 #### Fixed issues
 

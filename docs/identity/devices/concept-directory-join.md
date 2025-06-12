@@ -5,11 +5,11 @@ description: Microsoft Entra joined devices can help you to manage devices acces
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 02/26/2024
+ms.date: 11/25/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
 ---
 
@@ -24,7 +24,7 @@ Any organization can deploy Microsoft Entra joined devices no matter the size or
 |   | Applicable to all users in an organization |
 | **Device ownership** | Organization |
 | **Operating Systems** | All Windows 11 and Windows 10 devices except Home editions |
-|   | [Windows Server 2019 and newer Virtual Machines running in Azure](howto-vm-sign-in-azure-ad-windows.md) (Server core isn't supported) |
+|   | [Windows Enterprise multi-session Virtual Machines running in Azure](/azure/virtual-desktop/windows-multisession-faq#can-windows-enterprise-multi-session-be-microsoft-entra-joined) and [Windows Server 2019 and newer Virtual Machines running in Azure](howto-vm-sign-in-azure-ad-windows.md) (Server core isn't supported) |
 |   | (Public preview) Apple devices running macOS 13 or newer |
 | **Provisioning** | Self-service: Windows Out of Box Experience (OOBE) or Settings |
 |   | Bulk enrollment |

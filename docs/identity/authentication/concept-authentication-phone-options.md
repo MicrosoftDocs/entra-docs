@@ -1,16 +1,14 @@
 ---
 title: Phone authentication methods
 description: Learn about using phone authentication methods in Microsoft Entra ID to help improve and secure sign-in events
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/06/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
-
+manager: dougeby
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use phone authentication methods in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -66,6 +64,9 @@ The phone number associated with Microsoft's WhatsApp Business Agent is: *+1 (21
 With phone call verification during SSPR or Microsoft Entra multifactor authentication, an automated voice call is made to the phone number registered by the user. To complete the sign-in process, the user is prompted to press # on their keypad.
 
 The calling number that a user receives the voice call from differs for each country. See [phone call settings](howto-mfa-mfasettings.md#phone-call-settings) to view all possible voice call numbers.
+
+> [!NOTE]
+> SSPR can only be completed with a primary phone method or an office phone method. Alternate phone methods are only available for MFA.
 
 ## Office phone verification
 

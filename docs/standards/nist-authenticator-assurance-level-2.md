@@ -27,24 +27,24 @@ Before starting authenticator assurance level 2 (AAL2), you can see the followin
 
 The following table has authenticator types permitted for AAL2:
 
-| Microsoft Entra authentication method| NIST authenticator type |
-| - | - |
-| **Recommended methods** |   |
-| Multi-factor Software Certificate (PIN Protected) <br> Windows Hello for Business with software Trusted Platform Module (TPM)| Multi-factor crypto software |
-| Hardware protected certificate (smartcard/security key/TPM) <br> FIDO 2 security key <br> Windows Hello for Business with hardware TPM | Multi-factor crypto hardware |
-|Microsoft Authenticator app (Passwordless)  | Multi-factor out-of-band
-| **Additional methods** |  |
-| Password <br> **AND** <br>- Microsoft Authenticator app (Push Notification) <br>- **OR** <br>- Microsoft Authenticator Lite (Push Notification) <br>- **OR** <br>- Phone (SMS) | Memorized secret <br>**AND**<br> Single-factor out-of-band |
-| Password <br> **AND** <br>- OATH hardware tokens (preview) <br>- **OR**<br>- Microsoft Authenticator app (OTP)<br>- **OR**<br>- Microsoft Authenticator Lite (OTP)<br>- **OR** <br>- OATH software tokens | Memorized secret <br>**AND** <br>Single-factor OTP|
-| Password <br>**AND** <br>- Single-factor software certificate <br>- **OR**<br>- Microsoft Entra joined  with software TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with software TPM  <br>- **OR**<br>- Compliant mobile device | Memorized secret <br>**AND**<br> Single-factor crypto software |
-| Password <br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM| Memorized secret <br>**AND**<br>Single-factor crypto hardware |
+| Microsoft Entra authentication method| Phishing Resistant | NIST authenticator type |
+| - | - | - |
+| **Recommended methods** |   |   |
+| Multi-factor software certificate <br> Windows Hello for Business with software Trusted Platform Module (TPM)| Yes | Multi-factor crypto software |
+| Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator | Yes |  Multi-factor crypto hardware |
+| **Additional methods** |  
+| Microsoft Authenticator app (Phone Sign-in)  | No | Multi-factor out-of-band|
+| Password **OR** QR Code (PIN) <br> **AND** <br>- Microsoft Authenticator app (Push Notification) <br>- **OR** <br>- Microsoft Authenticator Lite (Push Notification) <br>- **OR** <br>- Phone (SMS) | No | Memorized secret <br>**AND**<br> Single-factor out-of-band |
+| Password **OR** QR Code (PIN) <br>**AND** <br>- OATH hardware tokens (preview) <br>- **OR**<br>- Microsoft Authenticator app (OTP)<br>- **OR**<br>- Microsoft Authenticator Lite (OTP)<br>- **OR** <br>- OATH software tokens | No | Memorized secret <br>**AND** <br>Single-factor OTP|
+| Password **OR** QR Code (PIN) <br>**AND** <br>- Single-factor software certificate <br>- **OR**<br>- Microsoft Entra joined  with software TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with software TPM  <br>- **OR**<br>- Compliant mobile device | Yes<sup>1</sup> | Memorized secret <br>**AND**<br> Single-factor crypto software |
+| Password **OR** QR Code (PIN) <br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM| Yes<sup>1</sup> |  Memorized secret <br>**AND**<br>Single-factor crypto hardware |
 
-> [!NOTE]
-> Today, Microsoft Authenticator by itself is not phishing resistant. To gain protection from external phishing threats when using Microsoft Authenticator you must additionally configure Conditional Access policy requiring a managed device.
+<sup>1</sup> [Protection from external phishing](../standards/memo-22-09-multi-factor-authentication.md#protection-from-external-phishing)
+
 
 ### AAL2 recommendations
 
-For AAL2, use multi-factor cryptographic hardware or software authenticators. Passwordless authentication eliminates the greatest attack surface (the password), and offers users a streamlined method to authenticate.
+For AAL2, use multi-factor cryptographic authenticator. This is phishing resistant, eliminates the greatest attack surface (the password), and offers users a streamlined method to authenticate.
 
 For guidance on selecting a passwordless authentication method, see [Plan a passwordless authentication deployment in Microsoft Entra ID](~/identity/authentication/howto-authentication-passwordless-deployment.md). See also, [Windows Hello for Business deployment guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
 
@@ -70,11 +70,13 @@ Government agency cryptographic authenticators are validated for FIPS 140 Level 
 
 * Certificate stored in software or hardware (smartcard/security key/TPM)
 
-Microsoft Authenticator app is FIPS 140 compliant on iOS and Android. For more information on the FIPS validated cryptographic modules used by Microsoft Authenticator. See [Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
+For Microsoft Authenticator app (iOS/Android) FIPS 140 compliance information, See [FIPS 140 compliant for Microsoft Entra authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 
 For OATH hardware tokens and smartcards we recommend you consult with your provider for current FIPS validation status.
 
 FIDO 2 security key providers are in various stages of FIPS certification. We recommend you review the list of [supported FIDO 2 key vendors](~/identity/authentication/concept-authentication-passwordless.md). Consult with your provider for current FIPS validation status.
+
+Platform SSO for macOS is FIPS 140 compliant. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). 
 
 ## Reauthentication
 

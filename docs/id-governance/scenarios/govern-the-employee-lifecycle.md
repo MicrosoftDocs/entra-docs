@@ -2,10 +2,10 @@
 title: 'Govern the employee lifecycle with Microsoft Entra ID Governance'
 description: Describes overview of identity lifecycle management and what is meant by governing the employee lifecycle.
 author: billmath
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/20/2023
+ms.date: 04/09/2025
 ms.author: billmath
 ---
 
@@ -47,7 +47,7 @@ When planning identity lifecycle management for employees, or other individuals 
 - Move - when an individual moves between boundaries that require additional access authorizations to be added or removed to their digital identity
 - Leave - when an individual leaves the scope of needing access, access may need to be removed, and subsequently the identity may no longer be required by applications other than for audit or forensics purposes
 
-So for example, if a new employee joins your organization and that employee has never been affiliated with your organization before, that employee will require a new digital identity, represented as a user account in Microsoft Entra ID. The creation of this account would fall into a "Joiner" process, which could be automated if there was a system of record such as Workday that could indicate when the new employee starts work. Later, if your organization has an employee move from say, Sales to Marketing, they would fall into a "Mover" process. This move would require removing the access rights they had in the Sales organization, which they no longer require, and granting them rights in the Marketing organization that they new require.
+So for example, if a new employee joins your organization and that employee has never been affiliated with your organization before, that employee requires a new digital identity, represented as a user account in Microsoft Entra ID. The creation of this account would fall into a "Joiner" process, which could be automated if there was a system of record such as Workday that could indicate when the new employee starts work. Later, if your organization has an employee move from say, Sales to Marketing, they would fall into a "Mover" process. This move would require removing the access rights they had in the Sales organization, which they no longer require, and granting them rights in the Marketing organization that they new require.
 
 ## Identity lifecycle management for guests
 

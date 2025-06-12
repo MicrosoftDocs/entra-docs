@@ -1,19 +1,17 @@
 ---
-title: Remove limits on creating app registrations
-description: Assign a custom role to grant unrestricted app registrations in the Microsoft Entra Active Directory.
-
-author: rolyon
-manager: amycolannino
+title: Create a custom role with permissions to create unlimited app registrations
+description: Assign a custom role to grant unrestricted app registrations in Microsoft Entra ID.
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.topic: quickstart
-ms.date: 06/16/2024
-ms.author: rolyon
+ms.topic: how-to
+ms.date: 01/03/2025
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
-# Quickstart: Grant permission to create unlimited app registrations
+# Create a custom role with permissions to create unlimited app registrations
 
 In this quick start guide, you create a custom role with permission to create an unlimited number of app registrations, and then assign that role to a user. The assigned user can then use the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API to create application registrations. Unlike the built-in Application Developer role, this custom role grants the ability to create an unlimited number of application registrations. The Application Developer role grants the ability, but the total number of created objects is limited to 250 to prevent hitting [the directory-wide object quota](~/identity/users/directory-service-limits-restrictions.md). The least privileged role required to create and assign Microsoft Entra custom roles is the Privileged Role Administrator.
 
@@ -23,40 +21,39 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 - Microsoft Entra ID P1 or P2 license
 - Privileged Role Administrator
-- Microsoft Graph PowerShell module when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 ### Create a custom role
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select **New custom role**.
 
-    ![Create or edit roles from the Roles and administrators page](./media/quickstart-app-registration-limits/new-custom-role.png)
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
 1. On the **Basics** tab, enter "Application Registration Creator" for the name of the role and "Can create an unlimited number of application registrations" for the role description, and then select **Next**.
 
-    ![provide a name and description for a custom role on the Basics tab](./media/quickstart-app-registration-limits/basics-tab.png)
+    :::image type="content" source="./media/quickstart-app-registration-limits/basics-tab.png" alt-text="Screenshot of Basics tab to provide a name and description for a custom role." lightbox="./media/quickstart-app-registration-limits/basics-tab.png":::
 
 1. On the **Permissions** tab, enter "microsoft.directory/applications/create" in the search box, and then select the checkboxes next to the desired permissions, and then select **Next**.
 
-    ![Select the permissions for a custom role on the Permissions tab](./media/quickstart-app-registration-limits/permissions-tab.png)
+    :::image type="content" source="./media/quickstart-app-registration-limits/permissions-tab.png" alt-text="Screenshot of Permissions tab to select the permissions for a custom role." lightbox="./media/quickstart-app-registration-limits/permissions-tab.png":::
 
 1. On the **Review + create** tab, review the permissions and select **Create**.
 
 ### Assign the role
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select the Application Registration Creator role and select **Add assignment**.
 
@@ -65,7 +62,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 Done! In this quickstart, you successfully created a custom role with permission to create an unlimited number of app registrations, and then assign that role to a user.
 
 > [!TIP]
-> To assign the role to an application using the Microsoft Entra admin center, enter the name of the application into the search box of the assignment page. Applications are not shown in the list by default, but are returned in search results.
+> To assign the role to an application using the Microsoft Entra admin center, enter the name of the application into the search box of the assignment page. Applications aren't shown in the list by default, but are returned in search results.
 
 ### App registration permissions
 
@@ -74,7 +71,7 @@ There are two permissions available for granting the ability to create applicati
 - microsoft.directory/applications/createAsOwner: Assigning this permission results in the creator being added as the first owner of the created app registration, and the created app registration counts against the creator's 250 created objects quota.
 - microsoft.directory/applications/create: Assigning this permission results in the creator not being added as the first owner of the created app registration, and the created app registration won't count against the creator's 250 created objects quota. Use this permission carefully, because there's nothing preventing the assignee from creating app registrations until the directory-level quota is hit. If both permissions are assigned, this permission takes precedence.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
 ### Create a custom role
 
@@ -114,7 +111,7 @@ $resourceScope = '/'
 $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.Id
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 ### Create a custom role
 
@@ -164,6 +161,8 @@ Body
     "directoryScopeId": "/"
 }
 ```
+
+---
 
 ## Next steps
 

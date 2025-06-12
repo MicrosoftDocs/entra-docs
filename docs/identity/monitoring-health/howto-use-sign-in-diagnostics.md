@@ -2,16 +2,15 @@
 title: How to use Microsoft Entra Sign-in diagnostics
 description: How to use the Sign-in diagnostic in tool Microsoft Entra ID to troubleshoot sign-in related scenarios.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/02/2024
+ms.date: 02/26/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
-
 ---
 
 # What is the Sign-in diagnostic in Microsoft Entra ID?
@@ -22,10 +21,9 @@ This article gives you an overview of what the Sign-in diagnostic is and how you
 
 ## Prerequisites
 
-To use the Sign-in diagnostic:
-
-- You must be signed as at least a **Global Reader**.
-- Some sign-in log information might require other roles, such as **Conditional Access Administrator**.
+- The least privileged role to use the sign-in diagnostic *from a support request* or *Diagnose and solve problems* is [Billing Administrator](../role-based-access-control/permissions-reference.md#billing-administrator).
+- To use the sign-in diagnostic *from the sign-in logs*, you ALSO need [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---sign-in-diagnostic-tool).
 - Flagged sign-in events can also be reviewed from the Sign-in diagnostic.
   - Flagged sign-in events are captured *after* a user enabled flagging during their sign-in experience.
   - For more information, see [flagged sign-ins](overview-flagged-sign-ins.md).
@@ -48,8 +46,6 @@ Due to the greater flexibility of the system to respond to a sign-in attempt, yo
 ## How to access the Sign-in diagnostic
 
 There are a three ways to access the Sign-in diagnostic in Microsoft Entra ID. Select a tab to learn about each method.
-
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 ### [From Diagnose and Solve Problems](#tab/from-diagnose-and-solve-problems)
 
@@ -84,7 +80,9 @@ You can start the Sign-in diagnostic from the **Diagnose and Solve Problems** ar
 
 You can start the Sign-in diagnostic from a specific sign-in event in the Sign-in logs. When you start the process from a specific sign-in event, the diagnostics start right away. You aren't prompted to enter details first.
 
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs** and select a sign-in event.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs** and select a sign-in event.
     - You can filter your list to make it easier to find specific sign-in events.
 
 1. From the Activity Details window that opens, select the **Launch the Sign-in diagnostic** link.
@@ -185,7 +183,7 @@ This scenario involves a sign-in event that was blocked or interrupted because t
 
 Preventing legacy authentication sign-in is recommended as the best practice for security. Legacy authentication protocols like POP, SMTP, IMAP, and MAPI can't enforce MFA, which makes them preferred entry points for adversaries to attack your organization.
 
-For more information, see [How to block legacy authentication to Microsoft Entra ID with Conditional Access](../conditional-access/block-legacy-authentication.md).
+For more information, see [How to block legacy authentication to Microsoft Entra ID with Conditional Access](../conditional-access/policy-block-legacy-authentication.md).
 
 ### B2B blocked sign-in due to Conditional Access
 

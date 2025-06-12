@@ -1,18 +1,15 @@
 ---
 title: Microsoft Entra roles Discovery and insights (preview) in Privileged Identity Management former Security Wizard
 description: Discovery and insights (formerly Security Wizard) help you convert permanent Microsoft Entra role assignments to just-in-time assignments with Privileged Identity Management.
-
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim ; H1Hack27Feb2017
-
+ms.custom: pim, H1Hack27Feb2017, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Discovery and Insights (preview) for Microsoft Entra roles (formerly Security Wizard)
@@ -25,13 +22,13 @@ Before your organization starts using Privileged Identity Management, all role a
 
 :heavy_check_mark: [!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
-Also, keep role assignments permanent if a user has a Microsoft account (in other words, an account they use to sign in to Microsoft services like Skype, or Outlook.com). If you require multi-factor authentication for a user with a Microsoft account to activate a role assignment, the user will be locked out.
+Also, keep role assignments permanent if a user has a Microsoft account (in other words, an account they use to sign in to Microsoft services like Skype, or Outlook.com). If you require multifactor authentication for a user with a Microsoft account to activate a role assignment, the user is locked out.
 
 ## Open Discovery and insights (preview)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** >**Discovery and insights (Preview)**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles** >**Discovery and insights (Preview)**.
 
 1. Opening the page begins the discovery process to find relevant role assignments.
 

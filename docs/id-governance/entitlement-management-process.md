@@ -2,7 +2,7 @@
 title: Request process & notifications - Microsoft Entra entitlement management
 description: Learn about the request process for an access package and when email notifications are sent in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -91,9 +91,10 @@ The following table provides more detail about each of these email notifications
 | 15 | Action required: Approve or deny forwarded request by *[date]* | This email is sent to stage-2 alternate approvers, if escalation is enabled, to take action. | Stage-2 alternate approvers |
 | 16 | Request approved for *[requestor]* to *[access_package]* | This email is sent to the second approver and stage-2 alternate approvers upon approving the request. | Second approver, Stage-2 alternate approvers |
 | 17 | A request has expired for *[access_package]* | This email will be sent to the second approver or alternate approvers, after the request expires. | Second approver, stage-2 alternate approvers |
-| 18 | You now have access to *[access_package]* | This email is sent to the end users to start using their access. | Requestor |
-| 19 | Extend access for *[access_package]* by *[date]* | This email is sent to the end users before their access expires. | Requestor |
-| 20 | Access has ended for *[access_package]* | This email will be sent to the end users after their access expires. | Requestor |
+| 18 | You now have access to *[access_package]* | This email is sent to the end users to start using their access. This is disabled by default using the entitlement management disable email feature. | Requestor |
+| 19 | Extend access for *[access_package]* by *[date]* | This email is sent to the end users before their access expires. This is disabled by default using the entitlement management disable email feature. | Requestor |
+| 20 | Access has ended for *[access_package]* | This email will be sent to the end users after their access expires. This is disabled by default using the entitlement management disable email feature. | Requestor |
+
 
 ### Access request emails
 

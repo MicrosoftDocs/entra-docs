@@ -1,21 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with iLOGON_MHA'
+title: Configure iLOGON_MHA for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra and iLOGON_MHA.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/22/2024
-ms.author: jeedes
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with iLOGON_MHA
+# Configure iLOGON_MHA for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate iLOGON_MHA with Microsoft Entra ID. When you integrate iLOGON_MHA with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate iLOGON_MHA with Microsoft Entra ID. When you integrate iLOGON_MHA with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access iLOGON_MHA.
 Enable your users to be automatically signed in to iLOGON_MHA with their Microsoft Entra accounts.
@@ -34,7 +35,7 @@ To configure the integration of iLOGON_MHA into Microsoft Entra ID, you need to 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity > Applications > Enterprise applications > New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **iLOGON_MHA** in the search box.
 
@@ -46,11 +47,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **iLOGON_MHA** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **iLOGON_MHA** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
-    a. Click **Go to application**.
+    a. Select **Go to application**.
 
     [![Screenshot showing the identity configuration.](common/go-to-application.png)](common/go-to-application.png#lightbox)
 
@@ -60,12 +61,12 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 
-    1. Go to **Client secrets** tab and click **+New client secret**.
-    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and click **Add**.
+    1. Go to **Client secrets** tab and select **+New client secret**.
+    1. Enter a valid **Description** in the textbox and select **Expires** days from the drop-down as per your requirement and select **Add**.
 
         [![Screenshot showing the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the iLOGON_MHA side configuration.
+    1. Once you add a client secret, **Value** is generated. Copy the value and use it later in the iLOGON_MHA side configuration.
 
         [![Screenshot showing how to add a client secret.](common/client.png)](common/client.png#lightbox)
 
@@ -74,10 +75,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -88,15 +89,15 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to iLOGON_MHA.
+In this section, you enable B.Simon to use single sign-on by granting access to iLOGON_MHA.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **iLOGON_MHA**.
+1. Browse to **Entra ID** > **Enterprise apps** > **iLOGON_MHA**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Add Assignment** dialog, select the **Assign** button.
 
 ## Configure iLOGON_MHA SSO
 

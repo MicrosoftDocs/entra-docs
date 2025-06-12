@@ -1,15 +1,14 @@
 ---
 title: How to run a registration campaign to set up Microsoft Authenticator
 description: Learn how to move your organization away from less secure authentication methods to Microsoft Authenticator
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/05/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: mjsantani
-manager: amycolannino
+manager: dougeby
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -75,7 +74,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 To enable a registration campaign in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Registration campaign** and click **Edit**.
+1. Browse to **Entra ID** > **Authentication methods** > **Registration campaign** and click **Edit**.
 1. For **State**:
 
    - Select **Enabled** to enable the registration campaign for all users.

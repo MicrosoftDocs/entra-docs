@@ -6,7 +6,7 @@ description: Choose the Microsoft Entra device integration strategies that meet 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 09/30/2022
+ms.date: 11/25/2024
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -19,11 +19,11 @@ ms.reviewer: sandeo
 
 This article helps you evaluate the methods to integrate your device with Microsoft Entra ID, choose the implementation plan, and provides key links to supported device management tools.
 
-The landscape of your user's devices is constantly expanding. Organizations may provide desktops, laptops, phones, tablets, and other devices. Your users may bring their own array of devices, and access information from varied locations. In this environment, your job as an administrator is to keep your organizational resources secure across all devices.
+The landscape of your user's devices is constantly expanding. Organizations might provide desktops, laptops, phones, tablets, and other devices. Your users might bring their own array of devices, and access information from varied locations. In this environment, your job as an administrator is to keep your organizational resources secure across all devices.
 
 Microsoft Entra ID enables your organization to meet these goals with device identity management. You can now get your devices in Microsoft Entra ID and control them from a central location in the [Microsoft Entra admin center](https://entra.microsoft.com). This process gives you a unified experience, enhanced security, and reduces the time needed to configure a new device.
 
-There are multiple methods to integrate your devices into Microsoft Entra ID, they can work separately or together based on the operating system and your requirements:
+There are multiple methods to integrate your devices into Microsoft Entra ID. These methods can work separately or together based on the operating system and your requirements:
 
 * You can [register devices](concept-device-registration.md) with Microsoft Entra ID.
 * [Join devices](concept-directory-join.md) to Microsoft Entra ID (cloud-only).
@@ -59,27 +59,27 @@ For this plan, add the following stakeholders to your list:
 
 | Role| Description |
 | - | - |
-| Device administrator| A representative from the device team that can verify that the plan will meet the device requirements of your organization. |
+| Device administrator| A representative from the device team that can verify that the plan meets the device requirements of your organization. |
 | Network administrator| A representative from the network team that can make sure to meet network requirements. |
 | Device management team| Team that manages inventory of devices. |
-| OS-specific admin teams| Teams that support and manage specific OS versions. For example, there may be a Mac or iOS focused team. |
+| OS-specific admin teams| Teams that support and manage specific OS versions. For example, there might be a Mac or iOS focused team. |
 
 ### Plan communications
 
-Communication is critical to the success of any new service. Proactively communicate with your users how their experience will change, when it will change, and how to gain support if they experience issues.
+Communication is critical to the success of any new service. Proactively communicate with your users how their experience changes, when it changes, and how to gain support if they experience issues.
 
 ### Plan a pilot
 
 We recommend that the initial configuration of your integration method is in a test environment, or with a small group of test devices. See [Best practices for a pilot](~/architecture/deployment-plans.md).
 
-You may want to do a [targeted deployment of Microsoft Entra hybrid join](hybrid-join-control.md) before enabling it across the entire organization.
+You might want to do a [targeted deployment of Microsoft Entra hybrid join](hybrid-join-control.md) before enabling it across the entire organization.
 
 > [!WARNING]
 > Organizations should include a sample of users from varying roles and profiles in their pilot group. A targeted rollout will help identify any issues your plan may not have addressed before you enable for the entire organization.
 
 ## Choose your integration methods
 
-Your organization can use multiple device integration methods in a single Microsoft Entra tenant. The goal is to choose the method(s) suitable to get your devices securely managed in Microsoft Entra ID. There are many parameters that drive this decision including ownership, device types, primary audience, and your organization’s infrastructure.
+Your organization can use multiple device integration methods in a single Microsoft Entra tenant. The goal is to choose one or more methods suitable to get your devices securely managed in Microsoft Entra ID. There are many parameters that drive this decision including ownership, device types, primary audience, and your organization’s infrastructure.
 
 The following information can help you decide which integration methods to use.
 
@@ -94,14 +94,13 @@ Use this tree to determine options for organization-owned devices.
 
 ### Comparison matrix
 
-iOS and Android devices may only be Microsoft Entra registered. The following table presents high-level considerations for Windows client devices. Use it as an overview, then explore the different integration methods in detail.
+iOS and Android devices are only Microsoft Entra registered. The following table presents high-level considerations for Windows client devices. Use it as an overview, then explore the different integration methods in detail.
 
 | Consideration | Microsoft Entra registered | Microsoft Entra joined | Microsoft Entra hybrid joined |
 | --- | :---: | :---: | :---: |
 | **Client operating systems** | | |  |
 | Windows 11 or Windows 10 devices | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
-| Windows down-level devices (Windows 8.1 or Windows 7) | | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
-| Linux Desktop - Ubuntu 20.04/22.04 | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | | | 
+| Linux Desktop - Ubuntu 20.04/22.04/24.04, RHEL 8/9 | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | | |
 |**Sign in options** | | |  |
 | End-user local credentials | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | |  |
 | Password | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
@@ -114,7 +113,7 @@ iOS and Android devices may only be Microsoft Entra registered. The following ta
 | SSO to cloud resources | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | SSO to on-premises resources | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | Conditional Access <br> (Require devices be marked as compliant) <br> (Must be managed by MDM) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |![Checkmark for these values.](./media/plan-device-deployment/check.png) |
-Conditional Access <br>(Require Microsoft Entra hybrid joined devices) | | | ![Checkmark for these values.](./media/plan-device-deployment/check.png)
+| Conditional Access <br>(Require Microsoft Entra hybrid joined devices) | | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | Self-service password reset from the Windows login screen | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | Windows Hello PIN reset | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 
@@ -130,13 +129,13 @@ Microsoft Entra registered devices provide support for Bring Your Own Devices (B
 
 Registered devices are often managed with [Microsoft Intune](/mem/intune/fundamentals/deployment-guide-enrollment). Devices are enrolled in Intune in several ways, depending on the operating system. 
 
-BYOD and corporate owned mobile device are registered by users installing the Company portal app.
+Users install the Company portal app to register BYOD and corporate owned mobile devices.
 
 * [iOS](/mem/intune/user-help/sign-in-to-the-company-portal)
 * [Android](/mem/intune/user-help/enroll-device-android-company-portal)
 * [Windows 10 or newer](/mem/intune/user-help/enroll-windows-10-device)
 * [macOS](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp)
-* [Linux Desktop - Ubuntu 20.04/22.04](/mem/intune/user-help/enroll-device-linux)
+* [Linux Desktop](/mem/intune/user-help/enroll-device-linux)
 
 If registering your devices is the best option for your organization, see the following resources:
 
@@ -172,7 +171,7 @@ If you have either Windows 10 Professional or Windows 10 Enterprise installed on
 
 Choose your deployment procedure after careful [comparison of these approaches](device-join-plan.md).
 
-You may determine that Microsoft Entra join is the best solution for a device in a different state. The following table shows how to change the state of a device.
+You might determine that Microsoft Entra join is the best solution for a device in a different state. The following table shows how to change the state of a device.
 
 | Current device state | Desired device state | How-to |
 | --- | --- | --- |
@@ -184,7 +183,7 @@ You may determine that Microsoft Entra join is the best solution for a device in
 
 ## Microsoft Entra hybrid join
 
-If you have an on-premises Active Directory environment and want to join your existing domain-joined computers to Microsoft Entra ID, you can accomplish this task with Microsoft Entra hybrid join. It supports a [broad range of Windows devices](hybrid-join-plan.md), including both Windows current and Windows down-level devices.
+If you have an on-premises Active Directory environment and want to join your existing domain-joined computers to Microsoft Entra ID, you can accomplish this task with Microsoft Entra hybrid join. It supports a [broad range of Windows devices](hybrid-join-plan.md).
 
 Most organizations already have domain joined devices and manage them via Group Policy or System Center Configuration Manager (SCCM). In that case, we recommend configuring Microsoft Entra hybrid join to start getting benefits while using existing investments.
 
@@ -207,7 +206,7 @@ If installing the required version of Microsoft Entra Connect isn't an option fo
 > [!NOTE] 
 > The on-premises domain-joined Windows 10 or newer device attempts to auto-join to Microsoft Entra ID to become Microsoft Entra hybrid joined by default. This will only succeed if you have set up the right environment. 
 
-You may determine that Microsoft Entra hybrid join is the best solution for a device in a different state. The following table shows how to change the state of a device.
+You might determine that Microsoft Entra hybrid join is the best solution for a device in a different state. The following table shows how to change the state of a device.
 
 | Current device state | Desired device state | How-to |
 | --- | --- | --- |
@@ -229,15 +228,15 @@ Make sure that you keep the environment clean by [managing stale devices](manage
 
 ### Supported device management tools
 
-Administrators can secure and further control registered and joined devices using other device management tools. These tools provide you a way to enforce configurations like requiring storage to be encrypted, password complexity, software installations, and software updates. 
+Administrators can secure and further control registered and joined devices using other device management tools. These tools provide you with a way to enforce configurations like requiring storage to be encrypted, password complexity, software installations, and software updates. 
 
 Review supported and unsupported platforms for integrated devices:
 
 | Device management tools | Microsoft Entra registered | Microsoft Entra joined | Microsoft Entra hybrid joined |
 | --- | :---: | :---: | :---: |
-| [Mobile Device Management (MDM)](/windows/client-management/azure-active-directory-integration-with-mdm) <br>Example: Microsoft Intune | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | 
-| [Co-management with Microsoft Intune and Microsoft Configuration Manager](/mem/configmgr/comanage/overview) <br>(Windows 10 or newer) | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | 
-| [Group policy](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Windows only) | | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | 
+| [Mobile Device Management (MDM)](/windows/client-management/azure-active-directory-integration-with-mdm) <br>Example: Microsoft Intune | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
+| [Co-management with Microsoft Intune and Microsoft Configuration Manager](/mem/configmgr/comanage/overview) <br>(Windows 10 or newer) | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
+| [Group policy](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Windows only) | | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 
 We recommend that you consider [Microsoft Intune Mobile Application management (MAM)](/mem/intune/apps/app-management) with or without device management for registered iOS or Android devices.
 

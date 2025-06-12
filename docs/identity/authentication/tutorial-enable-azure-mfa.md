@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra multifact
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 05/31/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
@@ -44,11 +44,10 @@ To complete this tutorial, you need the following resources and privileges:
     * If you need information about creating a user account, see [Add or delete users using Microsoft Entra ID](~/fundamentals/add-users.md).
 
 * A group that the non-administrator user is a member of. For this tutorial, we created such a group, named *MFA-Test-Group*. In this tutorial, you enable Microsoft Entra multifactor authentication for this group.
-    * If you need more information about creating a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
+    * If you need more information about creating a group, see [Create a basic group and add members using Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
 ## Create a Conditional Access policy
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The recommended way to enable and use Microsoft Entra multifactor authentication is with Conditional Access policies. Conditional Access lets you create and define policies that react to sign-in events and that request additional actions before a user is granted access to an application or service.
 
@@ -61,7 +60,7 @@ In this tutorial, we create a basic Conditional Access policy to prompt for MFA 
 First, create a Conditional Access policy and assign your test group of users as follows:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**, select **+ New policy**, and then select **Create new policy**.
+ 1. Browse to **Entra ID** > **Conditional Access** > Overview , select **+ Create new policy**.
  
    :::image type="content" alt-text="A screenshot of the Conditional Access page, where you select 'New policy' and then select 'Create new policy'." source="media/tutorial-enable-azure-mfa/tutorial-enable-azure-mfa-conditional-access-menu-new-policy.png":::
 
@@ -187,7 +186,7 @@ You configured the Conditional Access policy to require additional authenticatio
 If you no longer want to use the Conditional Access policy that you configured as part of this tutorial, delete the policy by using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**, and then select the policy that you created, such as **MFA Pilot**.
+1. Browse to **Policies** > **Conditional Access**, and then select the policy that you created, such as **MFA Pilot**.
 
 1. select **Delete**, and then confirm that you want to delete the policy.
 

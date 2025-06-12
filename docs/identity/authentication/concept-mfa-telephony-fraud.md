@@ -5,18 +5,18 @@ description: Understanding International Revenue Share Fraud (IRSF) is crucial f
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/11/2023
+ms.date: 03/04/2025
 
 author: aloom3
 ms.author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: aloom3
 ms.custom: references_regions
 ---
 
 # Understanding telephony fraud  
 
-In today's digital landscape, telecommunication services have seamlessly integrated into our daily lives. But technological progress also brings the risk of fraudulent activities like International Revenue Share Fraud (IRSF), which poses financial consequences and service disruptions. IRSF involves exploiting telecommunication billing systems by unauthorized actors. They divert telephony traffic and generate profits through a technique called *traffic pumping*. Traffic pumping targets multifactor authentication systems, and causes inflated charges, service unreliability, and system errors. 
+In today's digital landscape, telecommunication services seamlessly integrate into our daily lives. But technological progress also brings the risk of fraudulent activities like International Revenue Share Fraud (IRSF), which poses financial consequences and service disruptions. IRSF involves exploiting telecommunication billing systems by unauthorized actors. They divert telephony traffic and generate profits through a technique called *traffic pumping*. Traffic pumping targets multifactor authentication systems, and causes inflated charges, service unreliability, and system errors. 
 
 To counter this risk, a thorough understanding of IRSF is crucial for implementing preventive measures like regional restrictions and phone number verification, while our system aims to minimize disruptions and safeguard both our business, users, and your business we prioritize your security and as such we may sometimes take proactive measures.  
 

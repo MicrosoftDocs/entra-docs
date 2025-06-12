@@ -1,17 +1,14 @@
 ---
 title: Quickstart - Get started
 description: Learn how to get started with Microsoft Entra External ID. Customize your apps' look and feel, set up a user to test the sign-up flow, and configure a sample app in just a few minutes.
- 
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: quickstart
-ms.date: 10/21/2024
+ms.date: 11/28/2024
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or IT admin, I want to personalize the external tenant.
 ---
 # Quickstart: Get started with our guide to run a sample app and sign in your users 
@@ -27,7 +24,6 @@ In this quickstart, we'll guide you through customizing the look and feel of you
 > [!NOTE]
 > You can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to create your external tenant, customize your sign-in experience, and set up a sample app directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
 
-
 ## Customize your sign-in experience
 
 When you set up an external tenant free trial, the guide will start automatically as part of the configuration of your new external tenant. If you created your external tenant with an Azure subscription, you can start the guide manually by following the steps below.
@@ -39,7 +35,7 @@ When you set up an external tenant free trial, the guide will start automaticall
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/guide-link.png" alt-text="Screenshot that shows how to start the guide.":::
 
-You can customize your customer's sign-in and sign-up experience in the external tenant. Follow the guide that will help you set up the tenant in three easy steps. First you must specify how would you like your customer to sign in. At this step you can choose between two options: **Email and password** or **Email and one-time passcode**. You can configure social accounts later, which would allow your customers to sign in using their [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) account. You can also [define custom attributes](how-to-define-custom-attributes.md) to collect from the user during sign-up.
+You can customize your customer's sign-in and sign-up experience in the external tenant. Follow the guide that will help you set up the tenant in three easy steps. First you must specify how would you like your customer to sign in. At this step you can choose between two options: **Email and password** or **Email and one-time passcode**. You can configure external accounts later, which would allow your customers to sign in using their [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or [custom OIDC](how-to-custom-oidc-federation-customers.md) account. You can also [define custom attributes](how-to-define-custom-attributes.md) to collect from the user during sign-up.
 
 If you prefer, you can add your company logo, change the background color or adjust the sign-in layout. These optional changes will apply to the look and feel of all your apps in this tenant with external configurations. After you have the created tenant, other branding options are available. You can [customize the default branding](how-to-customize-branding-customers.md) and [add languages](how-to-customize-languages-customers.md). Once you're finished with the customization, select **Continue**.
 
@@ -86,7 +82,7 @@ Explore the features set up by the get started guide in the detailed article on 
 For the latest developer content and resources, see the [External ID developer center](https://aka.ms/ciam/dev).
 
 ## Related content
- - [Register an app in CIAM](how-to-register-ciam-app.md) 
+ - [Register an app in CIAM](/entra/identity-platform/quickstart-register-app) 
  - [Customize user experience for your customers](how-to-customize-branding-customers.md)
  - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
-
+ - [Migrate users to External ID](how-to-migrate-users.md)

@@ -3,11 +3,10 @@ title: Create verifiable credentials for an ID token hint
 description: In this article, you learn how to use a quickstart to create a custom verifiable credential for an ID token hint.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 11/13/2024
+ms.date: 01/31/2025
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for the ID token hint scenario. 
@@ -15,7 +14,7 @@ ms.author: barclayn
 
 # Create verifiable credentials for ID token hint
 
-A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokenHint attestation](rules-and-display-definitions-model.md#idtokenhintattestation-type) produces an issuance flow where the relying party application passes claim values in the [issuance request payload](issuance-request-api.md#issuance-request-payload). It is the relying party application's responsibility to ensure that required claim values are passed in the request. How the claim values are gathered is up to the application. 
+A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokenHint attestation](rules-and-display-definitions-model.md#idtokenhintattestation-type) produces an issuance flow where the relying party application passes claim values in the [issuance request payload](issuance-request-api.md#issuance-request-payload). It's the relying party application's responsibility to ensure that required claim values are passed in the request. How the claim values are gathered is up to the application. 
 
 ## Create a custom credential
 

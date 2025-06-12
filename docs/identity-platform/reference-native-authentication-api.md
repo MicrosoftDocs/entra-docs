@@ -2,13 +2,13 @@
 title: Native authentication API reference documentation
 description: Find out how to use native authentication APIs to authenticate users into your customer-facing apps with the external tenant.
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: customers
+ms.service: entra-external-id
+ms.subservice: external
 ms.topic: reference
-ms.date:  09/30/2024
-
+ms.date: 09/30/2024
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
 
@@ -32,13 +32,13 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 1. A Microsoft Entra external tenant. If you don't already have one, [create an external tenant](../external-id/customers/how-to-create-external-tenant-portal.md).
 
-1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](../external-id/customers/how-to-register-ciam-app.md?tabs=nativeauthentication#choose-your-app-type). Make sure you grant delegated permissions, and enable public client and native authentication flows.
+1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](/entra/identity-platform/quickstart-register-app). Make sure you grant delegated permissions, and enable public client and native authentication flows.
 
 1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). When you create the user flow, take note of the user attributes you configure as required as these attributes are the ones that Microsoft Entra expects your app to submit.
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use for test the sign-in APIs. Alternatively, you can get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the API signIn. Alternatively, you can get this test user after you run the sign-up flow.
 
 1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method.  
 
@@ -63,13 +63,13 @@ To complete a user sign-up flow for either authentication method, your app inter
 
 The API allows the client app to advertise the authentication methods it supports, when it makes a call to Microsoft Entra. To do so, the app uses the `challenge_type` parameter in the app's request. This parameter holds predefined values, which represent different authentication methods.
 
-Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md). This article explains the challenge type values you should for an authentication method.
+Learn more about challenge types in the [native authentication challenge types](../external-id/customers/concept-native-authentication-challenge-types.md). This article explains the challenge type values you should use for an authentication method.
 
 ### Sign-up flow protocol details
 
 The sequence diagram demonstrates the flow of the sign-up process.
 
-:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native authentication sign-up flow."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native authentication a sign-up flow."::: 
 
 This diagram indicates that the app collects username (email), password (for email with password authentication methods), and attributes from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email), password and all the required, and optional attribute values in the same screen, then submit all of them via the `/signup/v1.0/start` endpoint. In this case, the app doesn't need to make calls and handle responses for the optional steps.
 
@@ -856,13 +856,13 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/user-attribute-format.md)]
 
-## Sign-in API reference
+## API signIn reference
 
-Users need to sign in with the authentication method that they use sign up. For example, users who sign up using email with password authentication method must sign in email and password.
+Users need to sign in with the authentication method that they use to sign up. For example, users who sign up using email with password authentication method must sign in email and password.
 
 To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
-### Sign-in API endpoints
+### API signIn endpoints
 
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|

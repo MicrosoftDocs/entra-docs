@@ -1,21 +1,21 @@
 ---
-title: Regions requiring opt-in for SMS verification
+title: Regional opt-in for MFA telephony verification with external tenants (preview)
 description: To protect customers, some regions require you to enable the country codes to receive SMS telephony verification for Microsoft Entra External ID external tenants.
 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/12/2024
-ms.author: mimart
 ms.reviewer: aloom3
 ms.custom: it-pro, references_regions
 
 #Customer intent: As a dev, devops, or it admin, I want to prevent telephony fraud by choosing which countries and regions to accept telecom traffic from.
 ---
 
-# Regions requiring opt-in for SMS verification (preview)
+# Regional opt-in for MFA telephony verification with external tenants (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -50,9 +50,9 @@ Starting January 2025, the following country codes will be deactivated by defaul
 | 359 | Bulgaria |
 | 226 | Burkina Faso |
 | 257 | Burundi |
+| 238 | Cabo Verde |
 | 855 | Cambodia |
 | 237 | Cameroon |
-| 238 | Cape Verde |
 | 235 | Central African Republic |
 | 269 | Comoros |
 | 243 | Congo (Democratic Republic of the) |
@@ -111,7 +111,7 @@ Starting January 2025, the following country codes will be deactivated by defaul
 | 234 | Nigeria |
 | 968 | Oman |
 | 92 | Pakistan |
-| 970 | Palestine |
+| 970 | Palestinian Authority |
 | 675 | Papua New Guinea |
 | 63 | Philippines |
 | 974 | Qatar |
@@ -164,7 +164,7 @@ Use the `OnPhoneMethodLoadStartExternalUsersAuthHandler` event policy to activat
 
 ### How to activate telecom for regions
 
-To enable telephony traffic from currently deactivated country codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric country codes for the five countries within that region.
+To enable telephony traffic from currently deactivated country codes, use the Microsoft Graph API to set the `includeAdditionalRegions` property in the `onPhoneMethodLoadStart` event policy for one or more applications. Include the relevant country codes in the `includeAdditionalRegions` property of the API request body for the regions you want to activate. For example, to send SMS requests in South Asia, activate the numeric country codes for the specific countries within that region.
 
 #### Example REST APIs
 

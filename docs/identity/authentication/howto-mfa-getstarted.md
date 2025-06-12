@@ -3,12 +3,12 @@ title: Deployment considerations for Microsoft Entra multifactor authentication
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/15/2024
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: jpettere
 ---
 # Plan a Microsoft Entra multifactor authentication deployment 
@@ -54,8 +54,6 @@ To learn more about the strength and security of these methods and how they work
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
 - [Video: Choose the right authentication methods to keep your organization safe](https://youtu.be/LB2yj4HSptc)
 
-You can use this [PowerShell script](https://github.com/Azure-Samples/azure-mfa-authentication-method-analysis) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
-
 For the best flexibility and usability, use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes. The Microsoft Authenticator app also meets the National Institute of Standards and Technology (NIST) [Authenticator Assurance Level 2 requirements](~/standards/nist-authenticator-assurance-level-2.md).
 
 You can control the authentication methods available in your tenant. For example, you may want to block some of the least secure methods, such as SMS.
@@ -75,7 +73,7 @@ Microsoft Entra multifactor authentication is enforced with Conditional Access p
 
 ![Conceptual Conditional Access process flow](media/howto-mfa-getstarted/conditional-access-overview-how-it-works.png)
 
-In the Microsoft Entra admin center, you configure Conditional Access policies under **Protection** > **Conditional Access**.
+In the Microsoft Entra admin center, you configure Conditional Access policies under **Entra ID** > **Conditional Access**.
 
 To learn more about creating Conditional Access policies, see [Conditional Access policy to prompt for Microsoft Entra multifactor authentication when a user signs in](tutorial-enable-azure-mfa.md). This helps you to:
 
@@ -156,7 +154,7 @@ As mentioned before, ensure users are registered for more than one MFA method, s
 If the user doesn't have a backup method available, you can: 
 
 - Provide them a Temporary Access Pass so that they can manage their own authentication methods. You can also provide a Temporary Access Pass to enable temporary access to resources. 
-- Update their methods as an administrator. To do so, select the user in the Microsoft Entra admin center, then select **Protection** > **Authentication methods** and update their methods.
+- Update their methods as an administrator. To do so, select the user in the Microsoft Entra admin center, then select **Entra ID** > **Authentication methods** and update their methods.
 
 
 ## Plan integration with on-premises systems
@@ -218,11 +216,11 @@ Microsoft Entra ID has reports that provide technical and business insights, fol
 
 You can monitor authentication method registration and usage across your organization using the [Authentication Methods Activity dashboard](howto-authentication-methods-activity.md). This helps you understand what methods are being registered and how they're being used.
 
-#### Sign-in report to review MFA events
+#### Use sign-in logs to review MFA events
 
-The Microsoft Entra sign-in reports include authentication details for events when a user is prompted for MFA, and if any Conditional Access policies were in use. You can also use PowerShell for reporting on users registered for Microsoft Entra multifactor authentication. 
+The Microsoft Entra sign-in logs include authentication details for events when a user is prompted for MFA, and if any Conditional Access policies were in use. 
 
-NPS extension and AD FS logs for cloud MFA activity are now included in the [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), and no longer published to the **Activity report**.
+NPS extension and AD FS logs for cloud MFA activity are now included in the [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), and no longer published to the **Activity report**.
 
 For more information, and additional Microsoft Entra multifactor authentication reports, see [Review Microsoft Entra multifactor authentication events](howto-mfa-reporting.md#view-the-azure-ad-sign-ins-report).
 

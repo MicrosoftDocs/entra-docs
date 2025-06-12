@@ -1,13 +1,13 @@
 ---
 title: Workload identity federation for app considerations
 description: Important considerations and restrictions for creating a federated identity credential on an app.
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: identity-platform
 ms.topic: include
 ms.date: 09/26/2022
-ms.author: ryanwi
+ms.author: shermanouko
 ms.reviewer: shkhalid, udayh, vakarand
 ms.custom: aaddev
 ---
@@ -30,7 +30,7 @@ When you configure a federated identity credential, there are several important 
 
 - *audiences* lists the audiences that can appear in the external token.  Required. You must add a single audience value, which has a limit of 600 characters. The recommended value is "api://AzureADTokenExchange". It says what Microsoft identity platform must accept in the `aud` claim in the incoming token.  
 
-- *name* is the unique identifier for the federated identity credential. Required.  This field has a character limit of 3-120 characters and must be URL friendly. Alphanumeric, dash, or underscore characters are supported, the first character must be alphanumeric only.  It's immutable once created.
+- *name* is the unique identifier for the federated identity credential. Required.  This field has a character limit of 3-120 characters and must be URL friendly. Alphanumeric, dash, or underscore characters are supported, the first character must be alphanumeric only.  It's immutable once created.
 
 - *description* is the user-provided description of the federated identity credential.  Optional. The description isn't validated or checked by Microsoft Entra ID. This field has a limit of 600 characters.
 

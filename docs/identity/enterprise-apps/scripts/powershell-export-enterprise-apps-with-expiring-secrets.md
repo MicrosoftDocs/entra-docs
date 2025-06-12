@@ -1,5 +1,5 @@
 ---
-title: PowerShell sample - Export enterprise apps with expiring secrets and certificates in Microsoft Entra tenant.
+title: 'PowerShell sample: Export enterprise apps with expiring secrets and certificates'
 description: PowerShell example that exports all enterprise apps with expiring secrets and certificates for the specified enterprise apps in your Microsoft Entra tenant.
 
 author: omondiatieno
@@ -8,14 +8,14 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: sample
-ms.date: 01/15/2024
+ms.date: 01/23/2025
 ms.author: jomondi
 ms.reviewer: mifarca
 ---
 
-# Export enterprise apps with expiring secrets and certificates
+# PowerShell sample: Export enterprise apps with expiring secrets and certificates
 
-This PowerShell script example exports all enterprise applications with secrets and certificates expiring in the next X days (and already expired if you choose so), with their owners for the specified enterprise apps from your directory in a CSV file.
+This PowerShell script example exports all enterprise applications with secrets and certificates expiring in the next X days. It also includes the ones that are expired, if you choose so. The script exports the enterprise applications along with their owners. It performs this action for the specified enterprise apps from your directory. The output is saved in a CSV file.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
@@ -186,11 +186,14 @@ foreach ($App in $Applications) {
                 $Logs += [pscustomobject]@{
                     'ApplicationName'        = $AppName
                     'ApplicationID'          = $ApplID
+                    'Secret Name'            = $Null
                     'Certificate Name'       = $CertName
                     'Certificate Start Date' = $StartDate
                     'Certificate End Date'   = $EndDate
                     'Owner'                  = $Username
                     'Owner_ObjectID'         = $OwnerID
+                    'Secret Start Date'      = $Null
+                    'Secret End Date'        = $Null
                 }
             }
         } elseif ($IncludeAlreadyExpired -eq 'Yes') {
@@ -203,6 +206,8 @@ foreach ($App in $Applications) {
                     'Certificate End Date'   = $EndDate
                     'Owner'                  = $Username
                     'Owner_ObjectID'         = $OwnerID
+                    'Secret Start Date'      = $Null
+                    'Secret End Date'        = $Null
                 }
             }
         }
@@ -216,7 +221,7 @@ $Logs | Export-Csv $Path -NoTypeInformation -Encoding UTF8
 
 ## Script explanation
 
-The script can be used directly without any modifications. The admin will be asked about the expiration date and whether they would like to see already expired secrets or certificates or not.
+The script can be used directly without any modifications. The admin is asked about the expiration date and whether they would like to see already expired secrets or certificates or not.
 
 The "Add-Member" command is responsible for creating the columns in the CSV file.
 The "New-Object" command creates an object to be used for the columns in the CSV file export.

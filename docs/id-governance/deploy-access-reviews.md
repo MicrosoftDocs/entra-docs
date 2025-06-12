@@ -2,13 +2,14 @@
 title: Plan a Microsoft Entra access reviews deployment
 description: Planning guide for a successful access reviews deployment.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
 ms.date: 08/25/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
+ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to ensure access to resources is appropriate and governed.
 ---
 
@@ -445,7 +446,7 @@ Access reviews activities are recorded and available from the [Microsoft Entra a
 | | Apply decision |
 | Date range| Seven days |
 
-For more advanced queries and analysis of access reviews, and to track changes and completion of reviews, export your Microsoft Entra audit logs to [Azure Log Analytics](../identity/monitoring-health/howto-archive-logs-to-storage-account.md) or Azure Event Hubs. When audit logs are stored in Log Analytics, you can use the [powerful analytics language](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md) and build your own dashboards.
+For more advanced queries and analysis of access reviews, and to track changes and completion of reviews, export your Microsoft Entra audit logs to [Azure Monitor Log Analytics](../identity/monitoring-health/howto-archive-logs-to-storage-account.md) or Azure Event Hubs. When audit logs are stored in Log Analytics, you can use the [powerful analytics language](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md) and build your own dashboards. For more information, see [Archive logs and reporting on entitlement management in Azure Monitor](entitlement-management-logs-and-reporting.md).
 
 ## Next steps
 

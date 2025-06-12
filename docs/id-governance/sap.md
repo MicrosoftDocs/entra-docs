@@ -2,7 +2,7 @@
 title: Manage access to your SAP applications
 description: Learn how to bring identities from SAP SuccessFactors into Microsoft Entra ID and provision access to SAP ERP Central Component (ECC), SAP S/4HANA, and other SAP applications.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: conceptual
@@ -68,8 +68,10 @@ For more information on how to configure single sign-on from Microsoft Entra ID,
 - [SAP Cloud for Customer](../identity/saas-apps/sap-customer-cloud-tutorial.md)
 - [SAP Fieldglass](../identity/saas-apps/fieldglass-tutorial.md)
 
-Also see the following SAP resources:
+Also see the following blog posts and SAP resources:
 
+- SAP GUI MFA with Microsoft Entra [integration with SAP Secure Login Service](https://community.sap.com/t5/technology-blogs-by-members/sap-gui-mfa-with-microsoft-entra-part-i-integration-with-sap-secure-login/ba-p/13605383) and [integration with Microsoft Entra Private Access](https://community.sap.com/t5/technology-blogs-by-members/sap-gui-mfa-with-microsoft-entra-part-ii-integration-with-microsoft-entra/ba-p/13691141)
+- [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276)
 - [Azure Application Gateway setup of SAML Single Sign On for Public and Internal SAP URLs](https://blogs.sap.com/2020/12/10/sap-on-azure-single-sign-on-configuration-using-saml-and-azure-active-directory-for-public-and-internal-urls/)
 - [Single sign on using Microsoft Entra Domain Services and Kerberos](https://blogs.sap.com/2018/08/03/your-sap-on-azure-part-8-single-sign-on-using-azure-ad-domain-services/)
 

@@ -4,12 +4,12 @@ description: How to assign licenses to groups using the Microsoft 365 admin cent
 
 keywords: Azure AD licensing
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 09/06/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ---
 
@@ -18,9 +18,9 @@ ms.author: barclayn
 This article shows you how to use the Microsoft 365 license center to assign licenses to security groups. 
 
 > [!NOTE]
-> Some Microsoft services are not available in all locations. Before a license can be assigned to a user, the administrator has to specify the Usage location property on the user.
+> Some Microsoft services aren't available in all locations. Before a license can be assigned to a user, the administrator has to specify the Usage location property on the user.
 >
-> For group license assignment, any users without a usage location specified inherit the location of the directory. If you have users in multiple locations, we recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID. For example, configure Microsoft Entra Connect configuration to set usage location. This recommendation makes sure the result of license assignment is always correct and users do not receive services in locations that are not allowed.
+> For group license assignment, any users without a usage location specified inherit the location of the directory. If you have users in multiple locations, we recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID. For example, configure Microsoft Entra Connect configuration to set usage location. This recommendation makes sure the result of license assignment is always correct and users don't receive services in locations that aren't allowed.
 
 ## Assign a license
 

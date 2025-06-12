@@ -3,11 +3,10 @@ title: Rules and Display Definition Reference
 description: Rules and Display Definition Reference
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 11/13/2024
+ms.date: 01/31/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am looking for information to help me disable 
@@ -22,7 +21,7 @@ Rules and Display definitions are used to define a credential. You can read more
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
-| `attestations`| [idTokenAttestation](#idtokenattestation-type) and/or [idTokenHintAttestation](#idtokenhintattestation-type) and/or [verifiablePresentationAttestation](#verifiablepresentationattestation-type) and/or [selfIssuedAttestation](#selfissuedattestation-type) | defines the attestation flow(s) to be used for gathering claims to issue in the verifiable credential. |
+| `attestations`| [idTokenAttestation](#idtokenattestation-type) and/or [idTokenHintAttestation](#idtokenhintattestation-type) and/or [verifiablePresentationAttestation](#verifiablepresentationattestation-type) and/or [selfIssuedAttestation](#selfissuedattestation-type) | defines the attestation flows to be used for gathering claims to issue in the verifiable credential. |
 | `validityInterval` | number | represents the lifespan of the credential in seconds |
 | `vc`| [vcType](#vctype-type) | verifiable credential types for this contract |
 
@@ -58,7 +57,7 @@ This flow uses the ID Token Hint, which is provided as payload through the Reque
 | Property | Type | Description |
 | -------- | -------- | -------- |
 | `mapping` | [claimMapping](#claimmapping-type) (optional) | rules to map input claims into output claims in the verifiable credential |
-| `required` | boolean (default false) | indicating whether this attestation is required or not. [Request Service API](presentation-request-api.md#http-request) will fail the call if required claims are not set in the createPresentationRequest payload. |
+| `required` | boolean (default false) | indicating whether this attestation is required or not. [Request Service API](presentation-request-api.md#http-request) fails the call if required claims aren't set in the createPresentationRequest payload. |
 | `trustedIssuers` | optional string (array) | a list of DIDs allowed to issue the verifiable credential for this contract. This property is only used for specific scenarios where the `id_token_hint` can come from another issuer |
 
 ### verifiablePresentationAttestation type

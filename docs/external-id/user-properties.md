@@ -1,15 +1,14 @@
 ---
-title: B2B guest user properties 
+title: B2B guest user properties
 description: Learn about the properties of a B2B guest user in Microsoft Entra External ID. Understand user types, authentication methods, and how to manage guest user access and permissions.
-
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done 
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing external collaboration in Microsoft Entra, I want to understand the properties and management options for B2B collaboration users, so that I can effectively invite and manage external users accessing apps and resources in my organization.
 ---
 
@@ -17,7 +16,7 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-B2B collaboration is a capability of Microsoft Entra External ID that lets you collaborate with users and partners outside of your organization. With B2B collaboration, an external user is invited to sign in to your Microsoft Entra organization using their own credentials. This B2B collaboration user can then access the apps and resources you want to share with them. A user object is created for the B2B collaboration user in the same directory as your employees. B2B collaboration user objects have limited privileges in your directory by default, and they can be managed like employees, added to groups, and so on. This article discusses the properties of this user object and ways to manage it.
+B2B collaboration is a capability of Microsoft Entra External ID that lets you collaborate with users and partners outside of your organization. With B2B collaboration, an external user is invited to sign in to your Microsoft Entra workforce tenant using their own credentials. This B2B collaboration user can then access the apps and resources you want to share with them. A user object is created for the B2B collaboration user in the same directory as your employees. B2B collaboration user objects have limited privileges in your directory by default, and they can be managed like employees, added to groups, and so on. This article discusses the properties of this user object and ways to manage it.
 
 The following table describes B2B collaboration users based on how they authenticate (internally or externally) and their relationship to your organization (guest or member).
 

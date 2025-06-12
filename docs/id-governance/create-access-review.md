@@ -2,14 +2,15 @@
 title: Create an access review of groups and applications
 description: Learn how to create an access review of group members or application access in Microsoft Entra ID.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/23/2024
+ms.date: 12/13/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-image-nochange
 ---
  
 # Create an access review of groups and applications in Microsoft Entra ID 
@@ -28,18 +29,11 @@ This article describes how to create one or more access reviews for group member
 - To review Azure resource or Microsoft Entra roles, see [Create an access review of Azure resource and Microsoft Entra roles in Privileged Identity Management](privileged-identity-management/pim-create-roles-and-resource-roles-review.md). 
 - For reviews of PIM for Groups, see [create an access review of PIM for Groups](create-access-review-pim-for-groups.md).
 
+
+
 ## Prerequisites
 
-- Microsoft Entra ID P2 or Microsoft Entra ID Governance licenses.  
-- Creating a review on inactive users, or with [user-to-group affiliation](review-recommendations-access-reviews.md#user-to-group-affiliation) recommendations, requires a Microsoft Entra ID Governance license.
-- Global Administrator or Identity Governance Administrator to create reviews on groups or applications.
-- Users must be at least a Privileged Role Administrator to create reviews on role-assignable groups. For more information, see [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md).
-- Microsoft 365 and Security group owner.
-
-For more information, see [License requirements](access-reviews-overview.md#license-requirements).
-
-> [!NOTE]
-> Following least privilege access, we recommend using the Identity Governance Administrator role.
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 If you're reviewing access to an application, then before you create the review, see the article on how to [prepare for an access review of users' access to an application](access-reviews-application-preparation.md) to ensure the application is integrated with Microsoft Entra ID in your tenant.
 
@@ -55,7 +49,7 @@ If you're reviewing access to an application, then before you create the review,
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews**.
+1. Browse to **ID Governance** > **Access Reviews**.
 
 3. Select **New access review** to create a new access review.
 
@@ -247,7 +241,7 @@ Use the following instructions to create an access review on a team with shared 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews**.
+1. Browse to **ID Governance** > **Access Reviews**.
 
 1. Select **+ New access review**.
 
@@ -276,11 +270,10 @@ Use the following instructions to create an access review on a team with shared 
 
 ## Allow group owners to create and manage access reviews of their groups
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews** > **Settings**.
+1. Browse to **ID Governance** > **Access Reviews** > **Settings**.
 
 1. On the **Delegate who can create and manage access reviews** page, set **Group owners can create and manage access reviews for groups they own** to **Yes**.
 
@@ -326,6 +319,9 @@ After one or more access reviews have started, you might want to modify or updat
 
 > [!NOTE]
 > Once the access review is initiated, you can use the [contactedReviewers](/graph/api/accessreviewinstance-list-contactedreviewers) API call to see the list of all reviewers notified, or who would be if notifications are turned off, via email for an access review. Time stamps for when these users were notified are also provided.
+
+> [!NOTE]
+> Groups and users in a restricted management administrative unit can't be managed with Microsoft Entra ID Governance features such as [Access reviews](access-reviews-overview.md).
 
 ## Next steps
 

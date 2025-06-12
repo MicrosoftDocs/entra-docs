@@ -2,14 +2,14 @@
 title: Customize and filter activity logs in Microsoft Entra ID
 description: Learn how to customize the columns and filter of the Microsoft Entra activity logs so you can analyze the results.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to customize my view of the logs so I can more effectively filter the results.
 ---
 
@@ -24,16 +24,15 @@ This article shows you how to customize the columns and then filter the logs to 
 - A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it.
     - For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
-    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 ## How to access the activity logs in the Microsoft Entra admin center
 
 You can always access your own sign-in history at [https://mysignins.microsoft.com](https://mysignins.microsoft.com). You can also access the sign-in logs from **Users** and **Enterprise applications** in Microsoft Entra ID.
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
 
 ## [Audit logs](#tab/audit-logs)
 

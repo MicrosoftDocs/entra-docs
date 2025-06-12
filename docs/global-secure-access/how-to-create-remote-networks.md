@@ -1,16 +1,15 @@
 ---
-title: How to create remote networks
-description: Learn how to create remote networks, such as branch office locations, for Global Secure Access.
+title: How to Create Remote Networks
+description: Learn how to create remote networks, for remote locations such as branch offices, for Global Secure Access.
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 02/25/2025
 ms.service: global-secure-access
 ms.reviewer: absinh
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to be able to create a remote network for a remote office so that my organization can connect to the Global Secure Access service.
-
 ---
 # How to create a remote network with Global Secure Access
 
@@ -26,7 +25,6 @@ To configure remote networks, you must have:
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 - Customer premises equipment (CPE) must support the following protocols:
     - Internet Protocol Security (IPSec)
     - GCMEAES128, GCMAES 192, or GCMAES256 algorithms for Internet Key Exchange (IKE) phase 2 negotiation
@@ -38,9 +36,7 @@ To configure remote networks, you must have:
 
 ### Known limitations
 
-- The number of remote networks per tenant is limited to 10. The number of device links per remote network is limited to four.
-- Microsoft traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access client.
-- You must use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity only supports Microsoft Entra Internet Access.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## High-level steps
 

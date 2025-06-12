@@ -3,9 +3,9 @@ author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: include
-ms.date: 08/29/2024
+ms.date: 03/10/2025
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 
 An API needs to publish a minimum of one scope, also called [Delegated Permission](~/identity-platform/permissions-consent-overview.md), for the client apps to obtain an access token for a user successfully. To publish a scope, follow these steps:
@@ -37,9 +37,5 @@ An API needs to publish a minimum of one scope, also called [Delegated Permissio
     | Admin consent display name | *Read and write users ToDo list using the 'ToDoListApi'* |
     | Admin consent description | *Allow the app to read and write the user's ToDo list using the 'ToDoListApi'* |
     | State | **Enabled** |
-    
-1. Under **Manage**, select **Manifest** to open the API manifest editor.
-1. Set `accessTokenAcceptedVersion` property to `2`.
-1. Select **Save**.
 
 Learn more about [the principle of least privilege when publishing permissions](/security/zero-trust/develop/protected-api-example) for a web API. 

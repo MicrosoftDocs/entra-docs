@@ -4,24 +4,26 @@ description: Reporting on Microsoft Entra self-service password reset events
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: tilarso
+ms.custom: sfi-ga-nochange
 ---
 # Reporting options for Microsoft Entra password management
 
 After deployment, many organizations want to know how or if self-service password reset (SSPR) is really being used. The reporting feature that Microsoft Entra ID provides helps you answer questions by using prebuilt reports. If you're appropriately licensed, you can also create custom queries.
 
-![Reporting on SSPR using the audit logs in Microsoft Entra ID][Reporting]
+:::image type="content" border="true" source="media/howto-sspr-reporting/sspr-reporting.png" alt-text="Screenshot of audit log for SSPR reporting.":::
 
 The following questions can be answered by the reports that exist in the [Microsoft Entra admin center](https://entra.microsoft.com):
 
 > [!NOTE]
-> You must opt-in for this data to be gathered on behalf of your organization. To opt in, you must visit the **Reporting** tab or the audit logs at least once. Until then, data is not collected for your organization.
+> You must opt in for this data to be gathered on behalf of your organization. To opt in, you must visit the **Reporting** tab or the audit logs at least once. Until then, data isn't collected for your organization.
 >
 
+* What changes were made to the SSPR policy?
 * How many people have registered for password reset?
 * Who has registered for password reset?
 * What data are people registering?
@@ -33,12 +35,11 @@ The following questions can be answered by the reports that exist in the [Micros
 
 ## How to view password management reports
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following the steps to find the password reset and password reset registration events:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Users**.
+1. Browse to **Entra ID** > **Users**.
 5. Select **Audit Logs** from the **Users** blade. This shows you all of the audit events that occurred against all the users in your directory. You can filter this view to see all the password-related events.
 6. From the **Filter** menu at the top of the pane, select the **Service** drop-down list, and change it to the **Self-service Password Management** service type.
 7. Optionally, further filter the list by choosing the specific **Activity** you're interested in.
@@ -68,13 +69,27 @@ The following table describes the different values that are you can set for each
 
 The following activity types appear in the **Self-Service Password Management** audit event category:
 
+* [Self-service password reset policy changes](#activity-type-self-service-password-reset-policy-changes): Indicates any changes to the SSPR policy, including old value and new value. 
 * [Blocked from self-service password reset](#activity-type-blocked-from-self-service-password-reset): Indicates that a user tried to reset a password, use a specific gate, or validate a phone number more than five total times in 24 hours.
 * [Change password (self-service)](#activity-type-change-password-self-service): Indicates that a user performed a voluntary, or forced (due to expiry) password change.
 * [Reset password (by admin)](#activity-type-reset-password-by-admin): Indicates that an administrator performed a password reset on behalf of a user.
 * [Reset password (self-service)](#activity-type-reset-password-self-service): Indicates that a user successfully reset their password from [Microsoft Entra password reset](https://passwordreset.microsoftonline.com).
-* [Self-service password reset flow activity progress](#activity-type-self-serve-password-reset-flow-activity-progress): Indicates each specific step a user proceeds through, such as passing a specific password reset authentication gate, as part of the password reset process.
+* [Self-service password reset flow activity progress](#activity-type-self-service-password-reset-flow-activity-progress): Indicates each specific step a user proceeds through, such as passing a specific password reset authentication gate, as part of the password reset process.
 * [Unlock user account (self-service)](#activity-type-unlock-a-user-account-self-service): Indicates that a user successfully unlocked their Active Directory account without resetting their password from [Microsoft Entra password reset](https://passwordreset.microsoftonline.com) by using the Active Directory feature of account unlock without reset.
 * [User registered for self-service password reset](#activity-type-user-registered-for-self-service-password-reset): Indicates that a user has registered all the required information to be able to reset their password in accordance with the currently specified tenant password reset policy.
+
+### Activity type: Self-service password reset policy changes
+
+The following list explains this activity in detail:
+
+* **Activity description**: Indicates that an administrator updated settings in the SSPR policy.
+* **Activity actor**: The display name and user principal name (UPN) of the administrator who made the changes.
+* **Activity target**: Updated properties in the SSPR policy. 
+* **Activity statuses**:
+  - *Success*: Indicates that a user successfully changed a setting in the SSPR policy.
+  - *Failure*: Indicates that a user failed to change a setting in the SSPR policy. 
+* **Activity status failure reason**:
+  - Permission failure? 
 
 ### Activity type: Blocked from self-service password reset
 
@@ -128,7 +143,7 @@ The following list explains this activity in detail:
 * **Activity status failure reason**:
   - *FuzzyPolicyViolationInvalidPassword*: The admin selected a password that was automatically banned because the Microsoft Banned Password Detection capabilities found it to be too common or especially weak.
 
-### Activity type: Self serve password reset flow activity progress
+### Activity type: Self-service password reset flow activity progress
 
 The following list explains this activity in detail:
 
@@ -164,7 +179,7 @@ The following list explains this activity in detail:
   - *Failure*: Indicates that a user failed to register for password reset. You can select the row to see the **Activity status reason** category to learn more about why the failure occurred.
 
      >[!NOTE]
-     >Failure doesn't mean a user is unable to reset their own password. It means that they didn't finish the registration process. If there is unverified data on their account that's correct, such as a phone number that's not validated, even though they have not verified this phone number, they can still use it to reset their password.
+     >Failure doesn't mean a user is unable to reset their own password. It means that they didn't finish the registration process. If there's unverified data on their account that's correct, such as a phone number that's not validated, even though they haven't verified this phone number, they can still use it to reset their password.
 
 ## Next steps
 
@@ -180,5 +195,3 @@ The following list explains this activity in detail:
 * [What are all of the options in SSPR and what do they mean?](concept-sspr-howitworks.md)
 * [I think something is broken. How do I troubleshoot SSPR?](./troubleshoot-sspr.md)
 * [I have a question that was not covered somewhere else](passwords-faq.yml)
-
-[Reporting]: ./media/howto-sspr-reporting/sspr-reporting.png "Example of SSPR activity audit logs in Azure AD"

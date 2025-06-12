@@ -2,14 +2,14 @@
 title: Network planning and connections for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about some of the virtual network design considerations and resources used for connectivity when you run Microsoft Entra Domain Services.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 11/11/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: xyuan
+ms.custom: sfi-image-nochange
 ---
 # Virtual network design considerations and configuration options for Microsoft Entra Domain Services
 
@@ -160,10 +160,10 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 | 443 | TCP	  | Any    | AzureActiveDirectoryDomainServices| Allow  | Yes      | Communication with the Microsoft Entra Domain Services management service. |
 | 443 | TCP   | Any    | AzureMonitor                      | Allow  | Yes      | Monitoring of the virtual machines. |
 | 443 | TCP	  | Any	   | Storage                           | Allow  | Yes      | Communication with Azure Storage.   | 
-| 443 | TCP	  | Any	   | Microsoft Entra ID              | Allow  | Yes      | Communication with Microsoft Entra ID.  |
+| 443 | TCP	  | Any	   | AzureActiveDirectory              | Allow  | Yes      | Communication with Microsoft Entra ID.  |
 | 443 | TCP	  | Any	   | GuestAndHybridManagement          | Allow  | Yes      | Automated management of security patches.   |
 
->[!NOTE]
+> [!NOTE]
 > The AzureUpdateDelivery and AzureFrontDoor.FirstParty tags are deprecated as of July 1, 2024. Microsoft Entra Domain Services manages WindowsUpdate independently, which removes the need for these tags. NSG adjustments aren't needed, with or without deprecated tags.
 
 

@@ -1,19 +1,25 @@
 ---
-title: How to configure Quick Access for Global Secure Access
+title: How to Configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 09/03/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
-
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # How to configure Quick Access for Global Secure Access
 
 With Global Secure Access, you can define specific fully qualified domain names (FQDNs) or IP addresses of private resources to include in the traffic for Microsoft Entra Private Access. Your organization's employees can then access the apps and sites that you specify. This article describes how to configure Quick Access for Microsoft Entra Private Access.
+
+> [!NOTE]
+> Use Quick Access as a transition state in your Zero Trust journey. After Quick Access has enabled you to replace your VPN, [configure per-app access](quickstart-per-app-access.md) to achieve application segmentation and per-app granular controls.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/MfcZ3zQhF-4]
 
 ## Prerequisites
 
@@ -28,13 +34,8 @@ To manage Microsoft Entra private network connector groups, which is required fo
 - Microsoft Entra ID P1 or P2 licenses
 
 ### Known limitations
-Avoid overlapping app segments between Quick Access and per-app access.
 
-Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-
-At this time, Private access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private Access traffic forwarding profile.
-
-The GSA client creates NRPT policies to route DNS queries for Private DNS suffixes through the tunnel. In some cases, the NRPT policies fail to be created. Check using Get-DNSClientNRPTPolicy. This happens because of a malformed GPO that applies NRPT settings. Use this script to identify the offending policy and delete it after moving the relevant settings to other policies. Please edit the script and modify the variables as per your environment. https://github.com/microsoft/GlobalSecureAccess/blob/main/website/content/FindDNSNRPTGPO.ps1
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## High level steps
 
@@ -90,7 +91,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
         - Provide the ports to include.
-        - NetBIOS isn't supported. For example, use `contoso.local/app1` instead of `contoso/app1`.
+        - Wildcard FQDNs must be specified in the format `*.contoso.com`.
     - **IP address range (CIDR)**:
         - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses. An IP address is followed by a suffix indicating the number of network bits in the subnet mask.
         - For example, 192.168.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
@@ -121,8 +122,6 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 
 > [!NOTE]
 > You can add up to 500 application segments to your Quick Access app.
->
-> Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
 
 ### Add private DNS suffixes
 Private DNS support for Microsoft Entra Private Access lets you query your own internal DNS servers to resolve IP addresses for internal domain names. Let’s look at an example. Let’s say you have an internal IP range of `10.8.0.0` to `10.8.255.255`. You configure this range in your Quick Access application definition. You want users to access a web application responding on IP `10.8.0.5` when they type

@@ -6,8 +6,7 @@ author: barclayn
 manager: martinco
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 07/28/2022
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.custom: references_regions
 ---
@@ -43,14 +42,14 @@ In the context of a verifier solution, the Microsoft Entra Verified ID service i
 
 ### Microsoft Entra tenant 
 
-The service requires a Microsoft Entra tenant that provides an Identity and Access Management (IAM) control plane for the Azure resources that are part of the solution. Each Microsoft Entra tenant uses the multi-tenant Microsoft Entra Verified ID service, and it issues a single DID document representing the verifier. If you have multiple relying parties using your verification service, they all use the same verifier DID. The verifier DID provides pointers to the public key that allows subjects and issuers to validate messages that come from the relying party.
+The service requires a Microsoft Entra tenant that provides an Identity and Access Management (IAM) control plane for the Azure resources that are part of the solution. Each Microsoft Entra tenant uses the multitenant Microsoft Entra Verified ID service, and it issues a single DID document representing the verifier. If you have multiple relying parties using your verification service, they all use the same verifier DID. The verifier DID provides pointers to the public key that allows subjects and issuers to validate messages that come from the relying party.
 
 
 ### Azure Key Vault
 
 :::image type="content" source="./media/plan-verification-solution/plan-verification-solution-key-vault.png" alt-text="Diagram of the components of a verification solution with Azure Key Vault highlighted.":::
 
-The Azure Key Vault service stores your verifier keys, which are generated when you enable the Microsoft Entra Verified ID issuance service. The keys are used to provide message security. Each verifier has a single key set used for signing, updating, and recovering VCs. This key set is used each time you service a verification request. Microsoft key set currently uses Elliptic Curve Cryptography (ECC) [SECP256k1](https://en.bitcoin.it/wiki/Secp256k1). We're exploring other cryptographic signature schemas that are adopted by the broader DID community.
+The Azure Key Vault service stores your verifier keys, which are generated when you enable the Microsoft Entra Verified ID issuance service. The keys are used to provide message security. Each verifier has a single key set used for signing, updating, and recovering VCs. Verified ID uses this key set each time you service a verification request. Microsoft key set currently uses Elliptic Curve Cryptography (ECC) [SECP256k1](https://en.bitcoin.it/wiki/Secp256k1). We're exploring other cryptographic signature schemas that are adopted by the broader DID community.
 
 ### Request Service API
 
@@ -68,7 +67,7 @@ Microsoft Entra Verified ID currently supports [DID Web](https://w3c-ccg.github.
 
 :::image type="content" source="media/plan-verification-solution/plan-verification-solution-authenticator.png" alt-text="Diagram of the components of a verification solution with Microsoft Authenticator application highlighted.":::
 
-Microsoft Authenticator is the mobile application. The Authenticator orchestrates the interactions between the user, the Microsoft Entra Verified ID service and the contract used to issue VCs. It acts as a digital wallet in which the holder of the VC stores the VC, including the private key of the subject of the VC. Authenticator is also the mechanism used to present VCs for verification.
+Microsoft Authenticator is the mobile application. Authenticator orchestrates the interactions between the user, the Microsoft Entra VC service and the contract used to issue VCs. It acts as a digital wallet in which the holder of the VC stores the VC, including the private key of the subject of the VC. Authenticator is also the mechanism used to present VCs for verification.
 
 
 ### Relying party (RP) 
@@ -135,9 +134,9 @@ Verifiable credentials can be used as other proof to access to sensitive applica
 
 #### Other elements 
 
-**Relying party web frontend**: This is the web frontend of the application that is enhanced through Request Service API calls for VC presentation and validation, based on your business requirements.
+**Relying party web frontend** is the web frontend of the application that is enhanced through Request Service API calls for VC presentation and validation, based on your business requirements.
 
-**User access authorization logic**: Logic layer in the application that authorizes user access and is enhanced to consume the user attributes inside the VC to make authorization decisions. 
+**User access authorization logic** is application's logic layer that authorizes user access. It is enhanced to consume the user attributes inside the VC to make authorization decisions. 
 
 **Other backend services and dependencies**: Represents the rest of the logic of the application, which typically is unchanged by the inclusion of identity proofing through VCs.
 
@@ -177,7 +176,7 @@ The decentralized nature of verifiable credentials enables this scenario without
 
 * **Goal**: The goal of the scenario determines what kind of credential and issuer is needed. Typical scenarios include:
 
-   * **Authentication**: In this scenario, a user must have possession of VC to prove employment or relationship to a particular organization(s). In this case, the RP should be configured to accept VCs issued by the target organizations. 
+   * **Authentication**: In this scenario, a user must have possession of a VC to prove employment or their relationship to a particular organization(s). In this case, the RP should be configured to accept VCs issued by the target organizations. 
 
    * **Authorization**: Based on the application requirements, the applications might consume the VC attributes for fine-grained authorization decisions and auditing. For example, if an e-commerce website offers discounts to employees of the organizations in a particular location, they can validate discount eligibility based on the country/region claim in the VC (if present).
 
@@ -209,7 +208,7 @@ Verifiable credentials can be used as an approach to account recovery. For examp
 
 **VC Attribute correlation with Microsoft Entra ID**: When defining the attributes of the VC in collaboration with the issuer, make sure you agree on claims that identify the user. For example, if identity verification provider (IDV) verifies the identity prior to onboarding employees, ensure that the issued VC includes claims that can be matched against internal systems. Such claims might be a phone number, address, or date of birth. The RP can ask for information not found in the VC as part of this process, such as the last four digits of their social security number (SSN).
 
-**Role of VCs with Existing Microsoft Entra Credential Reset Capabilities**: Microsoft Entra ID has a built-in self-service password reset (SSPR) capability. Verifiable Credentials can be used to provide another way to recover in cases where users don't have access to or lost control of the SSPR method. In scenarios where the user have lost both computer and mobile, the user can reobtain a VC from an identity proof issuer and present it to recover their account remotely. 
+**Role of VCs with Existing Microsoft Entra Credential Reset Capabilities**: Microsoft Entra ID has a built-in self-service password reset (SSPR) capability. Verifiable Credentials can be used to provide another way to recover in cases where users don't have access to or lost control of the SSPR method. In scenarios where the user has lost both computer and mobile, the user can reobtain a VC from an identity proof issuer and present it to recover their account remotely. 
 
 Similarly, you can use a VC to generate a temporary access pass that allows users to reset their MFA authentication methods without a password. 
 

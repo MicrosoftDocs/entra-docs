@@ -3,14 +3,13 @@ title: How to configure Global Secure Access web content filtering
 description: Learn how to configure web content filtering in Microsoft Entra Internet Access.
 author: kenwith    
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 11/05/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
-
-
+ai-usage: ai-assisted
 ---
 
 # How to configure Global Secure Access web content filtering
@@ -83,18 +82,16 @@ In this step, you create a security profile to group filtering policies. Then yo
 
 Create a Conditional Access policy for end users or groups and deliver your security profile through Conditional Access Session controls. Conditional Access is the delivery mechanism for user and context awareness for Internet Access policies. To learn more about session controls, see [Conditional Access: Session](/azure/active-directory/conditional-access/concept-conditional-access-session).
 
-1. Browse to **Identity** > **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
-1. Select **Target resources** and **Global Secure Access** from the drop-down menu to set what the policy applies to.
-1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
+1. Select **Target resources** and **All internet resources with Global Secure Access**.
 1. Select **Session** > **Use Global Secure Access security profile** and choose a security profile.
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
-## Internet Access – web content filtering
-
+## Internet Access flow diagram
 This example demonstrates the flow of Microsoft Entra Internet Access traffic when you apply web content filtering policies.
 
 The following flow diagram illustrates web content filtering policies blocking or allowing access to internet resources.
@@ -106,7 +103,7 @@ The following flow diagram illustrates web content filtering policies blocking o
 |1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
 |2|The client redirects to Microsoft Entra ID for authentication and authorization.|
 |3|The user and device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
-|4|After the user and device authenticate, Conditional Access matches on Internet Access CA rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
+|4|After the user and device authenticate, Conditional Access matches on Internet Access Conditional Access rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
 |5|Microsoft Entra ID presents the token to Microsoft Security Service Edge for validation.|
 |6|The tunnel establishes between the Global Secure Access client and Microsoft Security Service Edge.|
 |7|Traffic starts being acquired and tunnels through the Internet Access tunnel.|

@@ -2,14 +2,14 @@
 title: Block workload identity federation using Azure Policy
 description: Learn how to use a built-in Azure Policy to block workload identity federation on user-assigned managed identities. Govern the use of federated identity credentials on managed identities so that no one can access Microsoft Entra protected resources from external workloads.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: entra-workload-id
 
 ms.topic: how-to
 ms.date: 03/09/2023
-ms.author: ryanwi
+ms.author: shermanouko
 ms.custom: aaddev
 ms.reviewer: cbrooks, udayh, vakarand
 #Customer intent: As an application developer or administrator, I want to block the creation of a federated credential on a managed identity so I can block everyone from using workload identity federation.
@@ -23,7 +23,6 @@ The Not allowed resource types built-in policy can be used to block the creation
 
 ## Create a policy assignment
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To create a policy assignment for the Not allowed resource types that blocks the creation of federated identity credentials in a subscription or resource group:
 

@@ -4,20 +4,20 @@ metadata:
   description: Frequently asked questions around Microsoft Entra monitoring and health, including logs and reports.
   
   author: shlipsey3
-  manager: amycolannino
+  manager: femila
   ms.service: entra-id
   ms.topic: faq
   ms.subservice: monitoring-health
-  ms.date: 02/21/2024
+  ms.date: 05/06/2025
   ms.author: sarahlipsey
   ms.reviewer: egreenberg14
+
 title: Frequently asked questions around Microsoft Entra monitoring and health
 summary: |
   This article includes answers to frequently asked questions about Microsoft Entra monitoring and health. For more information, see [Microsoft Entra monitoring and health overview](overview-monitoring-health.md). 
-  
 
 sections:
-  - name: Getting started
+  - name: Licensing
     questions:
       - question: |
           How do I get a premium license?
@@ -27,7 +27,7 @@ sections:
       - question: |
           How soon should I see activity log data after getting a premium license?
         answer: |
-          If you already have activity log data as a free license, then you can see it immediately. If you don't have any data, then it takes up to three days for the data to show up in the reports.
+          If you already have activity log data with a free license, you can see it immediately. If you don't have any data, it can take up to three days for the data to show up in the reports.
 
       - question: |
           Can I see last month's data after getting a Microsoft Entra ID P1 or P2 license?
@@ -35,17 +35,17 @@ sections:
           If you recently switched to a Premium version (including a trial version), you can see data up to seven days initially. When data accumulates, you can see data for the past 30 days.
 
 
-  - name: Activity logs
+  - name: Activity logs and reports
     questions:
       - question: |
           What role do I need to see the activity logs in the Microsoft Entra admin center?
         answer: |
-          The [least privilege role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
+          The [least privileged role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
 
       - question: |
           What logs can I integrate with Azure Monitor?
         answer: |
-          Sign-in and audit logs are both available for routing through Azure Monitor. B2C-related audit events are currently not included. For more information, see [Microsoft Entra activity log integrations](concept-log-monitoring-integration-options-considerations.md) and the [Graph API activity log overview](/graph/api/resources/azure-ad-auditlog-overview).
+          Sign-in, audit, provisioning, ID Protection, network access, and many other logs can be integrated with Azure Monitor and other monitoring and alerting tools. B2C-related audit events are currently not included. For a complete list of the Microsoft Entra logs that can be integrated with other endpoints, see [Log options for streaming to endpoints](concept-diagnostic-settings-logs-options.md). 
 
       - question: |
           Can I get Microsoft 365 activity log information through the Microsoft Entra admin center or the Azure portal?
@@ -62,13 +62,12 @@ sections:
       - question: |
           How long does Microsoft Entra ID store activity logs? What is the data retention?
         answer: |
-          Depending on your license, Microsoft Entra ID stores activity logs for between 7 and 30 days. For more information, see [Microsoft Entra report retention policies](reference-reports-data-retention.md).  
-
+          Depending on your license, Microsoft Entra ID stores activity logs for between 7 and 30 days. For more information, see [Microsoft Entra report retention policies](reference-reports-data-retention.md).
+  
       - question: |
-          What happens if an administrator changes the retention period of a diagnostic setting?
+          Why do I see "Not found" when I select an app from the **Usage and Insights** report?
         answer: |
-          The Diagnostic settings storage retention feature is being deprecated. For details on this change, see [**Migrate from diagnostic settings storage retention to Azure Storage lifecycle management**](/azure/azure-monitor/essentials/migrate-to-azure-storage-lifecycle-policy).
-
+          The **Usage and Insights** report now includes service-to-service authentication for Microsoft Cloud Services applications. If an application appears in this list, it likely means that it authenticated to or from an application that is homed in your tenant. But the application in the list is not homed in your tenant, only an instance of it appears in the report to show the authentication.
 
   - name: Audit logs
     questions:
@@ -93,16 +92,12 @@ sections:
           It's also important to note the columns included in the downloaded logs don't change, even if you customized the columns in the Microsoft Entra admin center. 
 
       - question: |
-          I see .XXX in part of the IP address from a user in my sign-in logs. Why is that happening?
+          I see .XXX in part of the IP address or "PII Removed" in the Device Details of a user in my sign-in logs. Why is that happening?
         answer: |
-          Microsoft Entra ID might redact part of an IP address in the sign-in logs to protect user privacy when a user might not belong to the tenant viewing the logs. This action happens in two cases:
-          - During cross tenant sign ins, such as when a CSP technician signs into a tenant that CSP manages.
+          Microsoft Entra ID might redact part of a sign-in log to protect user privacy in the following scenarios:
+          - During cross-tenant sign ins, such as when a CSP technician signs into a tenant that CSP manages.
           - When our service wasn't able to determine the user's identity with sufficient confidence to be sure the user belongs to the tenant viewing the logs.
-
-      - question: |
-          I see "PII Removed" in the Device Details of a user in my sign-in logs. Why is that happening?
-        answer: |
-          Microsoft Entra ID redacts Personally Identifiable Information (PII) generated by devices that don't belong to your tenant to ensure customer data. PII doesn't spread beyond tenant boundaries without user and data owner consent.
+          - Microsoft Entra ID redacts Personally Identifiable Information (PII) generated by devices that don't belong to your tenant to ensure customer data. PII doesn't spread beyond tenant boundaries without user and data owner consent.
 
       - question: |
           I see duplicate sign-in entries / multiple sign-in events per requestID. Why is that happening?
@@ -118,7 +113,9 @@ sections:
         answer: |
           The TimeGenerated field in Log Analytics is the time the entry was received and published by Log Analytics. Remember, in order for your logs to appear in Log Analytics, you have to configure diagnostics settings to *send* the logs to the Log Analytics workspace. That process takes time, so the TimeGenerated field might not match the actual time of the sign-in.
 
-          To confirm the date and time match the sign-in, look for the `CreatedDateTime` field a little further down in the Log Analytics results. The `AuthenticationDetails` fields can also be expanded to see the exact time of the sign-in. The time in Log Analytics appear in UTC, but the time in the sign-in logs in the Microsoft Entra admin center appear in local time, so you might need to adjust.
+          To confirm the date and time match the sign-in, look for the `CreatedDateTime` field a little further down in the Log Analytics results. The `AuthenticationDetails` fields can also be expanded to see the exact time of the sign-in. The time in Log Analytics appears in UTC, but the time in the sign-in logs in the Microsoft Entra admin center appears in local time, so you might need to adjust.
+
+          Risky sign-in events also have a different TimeGenerated time than the actual sign-in time. The TimeGenerated time for risky sign-ins is the time the risk was detected, not the time of the sign-in. Check the risky sign-in event itself for the activity time, which is the actual time of the sign-in.
 
       - question: |
           Why do my non-interactive sign-ins appear to have the same time stamp?
@@ -163,7 +160,7 @@ sections:
           You can also find these sign-in logs in Microsoft Entra admin center.
 
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-          - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+          - Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
           - Select **Service Principal Sign-ins**. 
           - Select an appropriate time frame in the Date field (last 24 hours, 7 days, and so on).
           - Add a filter and select **Service Principal ID** and provide the value '00000000-0000-0000-0000-000000000000' to get instances of authentication with no client Service Principal.
@@ -198,7 +195,7 @@ sections:
           To get started:
           
           - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
-          - Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+          - Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
           - Select the sign-in that you want to troubleshoot.
           - Select the **Conditional Access** tab to view all the policies that impacted the sign-in and the result for each policy. 
               
@@ -265,3 +262,29 @@ sections:
           Why did a recommendation that was "completed" change back to "active"?
         answer: |
           If the service detects activity related to that recommendation for something marked as "completed" it changes automatically back to "active."
+
+  - name: Microsoft service principal sign-in logs (preview)
+    questions:
+      - question: |
+          I've enabled the `MicrosoftServicePrincipalSignInLogs` through diagnostic settings, but I'm unsure what to do with this data.
+        answer: |
+          This log is in preview and might not be available for all customers. These logs provide visibility into service-to-service authentication, specifically for Microsoft-owned applications to keep token issuance authentications to customer-owned resources transparent.
+          
+          In the unlikely scenario where an application is used to gain access into other resources, these logs could provide the information needed to pinpoint the source of the compromise.
+
+      - question: |
+          Where can I learn more about why these calls are happening?
+        answer: |
+          The specific reasons behind Microsoft-owned applications requesting or issuing tokens are part of our system's design and can't be shared publicly. The logs are shared to maintain transparency and provide visibility into authentications that are occurring within the boundaries of our customers' tenants. 
+
+      - question: |
+          Is this data essential for security investigations?
+        answer: |
+          We have categorized datasets from our Microsoft Entra log streams based on their importance for security investigations. This particular dataset is considered a much lower priority compared to others. While having this data is beneficial, not enabling it should not negatively impact your security posture.  
+
+      - question: |
+          What actions can I take on this data?
+        answer: |
+          We recommend being very cautious before making any changes to Microsoft-owned applications. These applications often have essential settings, like token issuance for billing applications. Disabling them could result in losing access to your account. Our internal security teams have implemented extensive security controls and access policies to keep these applications secure. We are confident in their security, and we strongly advise against making any additional changes to them.
+
+          If you choose to block or control these applications, it might lead to unexpected issues, and unfortunately, we won't be able to support or take responsibility for those problems.

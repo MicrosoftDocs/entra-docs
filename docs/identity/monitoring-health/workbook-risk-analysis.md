@@ -3,7 +3,7 @@ title: Identity protection risk analysis workbook
 description: Learn how to use the identity protection risk analysis workbook in Microsoft Entra ID to explore trends and gaps in your risk policies.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -39,7 +39,7 @@ As an IT administrator, you need to understand trends in identity risks and gaps
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Identity Protection Risk Analysis** workbook from the **Usage** section.
 

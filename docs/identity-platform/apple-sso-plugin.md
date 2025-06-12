@@ -5,8 +5,8 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 03/22/2024
-ms.reviewer: brianmel
+ms.date: 01/28/2025
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -30,7 +30,7 @@ The Microsoft Enterprise SSO plug-in for Apple devices offers the following bene
 - It can be enabled by any mobile device management (MDM) solution and is supported in both device and user enrollment. 
 - It extends SSO to applications that don't yet use the Microsoft Authentication Library (MSAL).
 - It extends SSO to applications that use OAuth 2, OpenID Connect, and SAML.
-- It is natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
+- It's natively integrated with the MSAL, which provides a smooth native experience to the end user when the Microsoft Enterprise SSO plug-in is enabled. 
 
 >[!NOTE]
 > On May 2024, [Microsoft announced that Platform SSO for macOS devices is available in public preview for Microsoft Entra ID.](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/platform-sso-for-macos-now-in-public-preview/ba-p/4051574).
@@ -48,31 +48,35 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
   - macOS 10.15 and later: [Intune Company Portal app](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp)
 - The device must be *enrolled in MDM*, for example, through Microsoft Intune.
 - Configuration must be *pushed to the device* to enable the Enterprise SSO plug-in. Apple requires this security constraint.
-- Apple devices must be allowed to reach to both identity provider URLs and its own URLs without additional interception. This means that those URLs need to be excluded from network proxies, interception and other enterprise systems. 
+- Apple devices must be allowed to reach to both identity provider URLs and its own URLs without additional interception. This means that those URLs need to be excluded from network proxies, interception, and other enterprise systems. 
 
-  Here is the minimum set of URLs that need to be allowed for the SSO plug-in to function:
-
+  The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 and not targeted with Platform SSO are as follows: (On the latest operating system versions, Apple relies fully on its CDN):
   - `app-site-association.cdn-apple.com`
   - `app-site-association.networking.apple`
-  - `login.microsoftonline.com`(*)
-  - `login.microsoft.com`(*)
-  - `sts.windows.net`(*)
-  - `login.partner.microsoftonline.cn`(*)(**)
-  - `login.chinacloudapi.cn`(*)(**)
-  - `login.microsoftonline.us`(*)(**)
-  - `login-us.microsoftonline.com`(*)(**)
+  - `config.edge.skype.com` - Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
+
+The minimum set of URLs that need to be allowed for the SSO plug-in to function on Platform SSO targeted devices or on operating system versions released before 2022:
+  - `app-site-association.cdn-apple.com`
+  - `app-site-association.networking.apple`
+  - `login.microsoftonline.com`
+  - `login.microsoft.com`
+  - `sts.windows.net`
+  - `login.partner.microsoftonline.cn`(**)
+  - `login.chinacloudapi.cn`(**)
+  - `login.microsoftonline.us`(**)
+  - `login-us.microsoftonline.com`(**)
   - `config.edge.skype.com`(***)
 
   (*) Allowing Microsoft domains is only required on operating system versions released before 2022. On the latest operating system versions, Apple relies fully on its CDN. 
-
   (**) You only need to allow sovereign cloud domains if you rely on those in your environment.
-
   (***) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
 
-  The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device will send a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
+  The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device sends a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
 
   > [!WARNING]
-  > If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs will cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. SSO plugin will not work reliably without fully excluding Apple CDN domains from interception, and you will experience intermittent issues until you do so.
+  > If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. SSO plugin won't work reliably without fully excluding Apple CDN domains from interception, and you'll experience intermittent issues until you do so. If your organization use OS versions released after 2022, there is no need to exclude Microsoft login URLs from TLS interspection. Customers using Tenant Restriction feature can do TLS inspection on Microsoft login URLs and add the necessary headers on the request.
+  > [!NOTE]
+  > Platform SSO is incompatible with the Microsoft Entra ID Tenant Restriction v2 feature when Tenant Restrictions are deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
 
   If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error`, `1000 com.apple.AuthenticationServices.AuthorizationError` or `1001 Unexpected`.
 
@@ -160,7 +164,7 @@ Your organization likely uses the Authenticator app for scenarios like multifact
 Use the following parameters to configure the Microsoft Enterprise SSO plug-in for apps that don't use MSAL.
 
 >[!IMPORTANT]
-> You don't need to add apps that use a Microsoft Authentication Library to this allow-list. Those apps will participate in SSO by default. Most of the Microsoft-built apps use a Microsoft Authentication Library. 
+> You don't need to add apps that use a Microsoft Authentication Library to this allow-list. Those apps participate in SSO by default. Most of the Microsoft-built apps use a Microsoft Authentication Library. 
 
 #### Enable SSO for all managed apps
 
@@ -179,8 +183,8 @@ When this flag is on (its value is set to `1`), all MDM-managed apps not in the 
 
 >[!NOTE]
 > Safari and Safari View Service are allowed to participate in SSO by default. Can be configured *not* to participate in SSO by adding the bundle IDs of Safari and Safari View Service in AppBlockList. 
-> iOS Bundle IDs : [com.apple.mobilesafari, com.apple.SafariViewService]
-> macOS BundleID : [com.apple.Safari]
+> iOS Bundle IDs: [com.apple.mobilesafari, com.apple.SafariViewService]
+> macOS BundleID: [com.apple.Safari]
 
 #### Enable SSO for all apps with a specific bundle ID prefix
 - **Key**: `AppPrefixAllowList`
@@ -200,6 +204,9 @@ To *disable* SSO for Safari or Safari View Service, you must explicitly do so by
 - iOS: `com.apple.mobilesafari`, `com.apple.SafariViewService`
 - macOS: `com.apple.Safari`
 
+>[!NOTE]
+> SSO cannot be disabled for apps that use a Microsoft Authentication Library using this setting.
+
 #### Enable SSO through cookies for a specific application
 
 Some iOS apps that have advanced network settings might experience unexpected issues when they're enabled for SSO. For example, you might see an error indicating that a network request was canceled or interrupted.
@@ -207,7 +214,7 @@ Some iOS apps that have advanced network settings might experience unexpected is
 If your users have problems signing in to an application even after you've enabled it through the other settings, try adding it to the `AppCookieSSOAllowList` to resolve the issues.
 
 >[!NOTE]
-> Using SSO through the cookie mechanism has severe limitations. For example, it's not compatible with Microsoft Entra ID conditional access policies and it only supports a single account. You should not use this feature, unless explicitly recommended by the Microsoft engineering or support teams for a limited set of applications that are determined to be incompatible with the regular SSO. 
+> Using SSO through the cookie mechanism has severe limitations. For example, it's not compatible with Microsoft Entra ID Conditional Access policies and it only supports a single account. You shouldn't use this feature, unless explicitly recommended by the Microsoft engineering or support teams for a limited set of applications that are determined to be incompatible with the regular SSO. 
 
 - **Key**: `AppCookieSSOAllowList`
 - **Type**: `String`
@@ -219,6 +226,9 @@ If your users have problems signing in to an application even after you've enabl
 Try this configuration only for applications that have unexpected sign-in failures. This key is to be used only for iOS apps and not for macOS apps.
 
 #### Summary of keys
+
+>[!NOTE]
+> Keys described in this section only apply to apps that are not using a Microsoft Authentication Library.
 
 | Key | Type | Value |
 |--|--|--|
@@ -270,11 +280,11 @@ Use the bundle IDs to configure SSO for the apps. Disable admin mode once done.
 
 #### Allow users to sign in from applications that don't use MSAL and the Safari browser
 
-By default, the Microsoft Enterprise SSO plug-in will acquire a shared credential when it's called by another app that uses MSAL during a new token acquisition. Depending on the configuration, Microsoft Enterprise SSO plug-in can also acquire a shared credential when it is called by apps that don't use MSAL. 
+By default, the Microsoft Enterprise SSO plug-in acquires a shared credential when it's called by another app that uses MSAL during a new token acquisition. Depending on the configuration, Microsoft Enterprise SSO plug-in can also acquire a shared credential when it's called by apps that don't use MSAL. 
 
 When you enable the `browser_sso_interaction_enabled` flag, apps that don't use MSAL can do the initial bootstrapping and get a shared credential. The Safari browser can also do the initial bootstrapping and get a shared credential. 
 
-If the Microsoft Enterprise SSO plug-in doesn't have a shared credential yet, it will try to get one whenever a sign-in is requested from a Microsoft Entra URL inside the Safari browser, ASWebAuthenticationSession, SafariViewController, or another permitted native application. 
+If the Microsoft Enterprise SSO plug-in doesn't have a shared credential yet, it tries to get one whenever a sign-in is requested from a Microsoft Entra URL inside the Safari browser, ASWebAuthenticationSession, SafariViewController, or another permitted native application. 
 
 Use these parameters to enable the flag: 
 
@@ -307,7 +317,7 @@ Disable app prompt and select an account from the list of matching SSO accounts 
 
 ##### Apps that use a Microsoft Authentication Library:
 
-Following settings are not recommended if [App protection policies](/mem/intune/apps/app-protection-policy) are in use. 
+Following settings aren't recommended if [App protection policies](/mem/intune/apps/app-protection-policy) are in use. 
 
 Disable the app prompt and display the account picker:
 
@@ -428,27 +438,46 @@ If you would like to enable Secure Enclave based storage of device identity keys
 
 The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
-:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin centre showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
+:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin center showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
 
 ### Recognize app incompatibilities with Secure Enclave based device identity
 After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
 
 :::image type="content" source="./media/apple-sso-plugin/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/apple-sso-plugin/device-mgmt-reqd.png":::
 
-This error will appear in Microsoft Entra ID sign-in logs with the following details: 
+This error appears in Microsoft Entra ID sign-in logs with the following details: 
 - **Sign-in error code:** `530003`
 - **Failure reason:** `Device is required to be managed to access this resource.`
 
-If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, it is recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
+If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, it's recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
 
 ### Scenarios impacted
 The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
 
-This is not an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
+This isn't an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
 
 #### Registered/Enrolled Device Conditional Access Policy Support in Chrome
-To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you will need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
+To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you'll need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
 
+## Important update on macOS 15.3 and iOS 18.1.1 impacting Enterprise SSO
+
+### Overview
+A recent update to macOS 15.3 and iOS 18.1.1 prevents the Enterprise SSO extension framework from functioning correctly, leading to unexpected authentication failures across all apps integrated with Entra ID. Impacted users may also encounter an error tagged as '4s8qh'.
+
+### Root cause
+The root cause of this issue is a potential regression in the underlying PluginKit layer, which prevents the Microsoft Enterprise SSO Extension from being launched by the operating system. Apple is investigating the issue and working with us on a resolution.
+
+### Identifying impacted users
+To determine if your users are affected, you can collect a sysdiagnose and look for the following error information:
+
+'Error Domain=PlugInKit Code=16 other version in use'
+
+Here's a sample how this error would look like:
+
+`Request for extension <EXConcreteExtension: 0x60000112d080> {id = com.microsoft.CompanyPortalMac.ssoextension} failed with error Error Domain=PlugInKit Code=16 "other version in use: <id<PKPlugIn>: 0x1526066c0; core = <[...] [com.microsoft.CompanyPortalMac.ssoextension(5.2412.0)],[...] [/Applications/Company Portal.app/Contents/PlugIns/Mac SSO Extension.appex]>, instance = [(null)], state = 1, useCount = 1>" UserInfo={NSLocalizedDescription=other version in use: <id<PKPlugIn>: 0x1526066c0; core = <[...] [com.microsoft.CompanyPortalMac.ssoextension(5.2412.0)],[...] [/Applications/Company Portal.app/Contents/PlugIns/Mac SSO Extension.appex]>, instance = [(null)], state = 1, useCount = 1>}`
+
+### Recovery Steps
+If your users are impacted by this issue, they can reboot their device to recover. 
 
 ## See also
 

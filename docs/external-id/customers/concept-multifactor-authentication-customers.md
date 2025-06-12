@@ -2,15 +2,15 @@
 title: MFA in external tenants
 description: Learn about using MFA to secure apps in your external tenant and enabling email one-time passcodes (EOTP) or SMS as a second verification method for sign-up and sign-in.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
 
 ms.subservice: external
 
 ms.topic: concept-article
-ms.date: 11/01/2024
-ms.author: mimart
+ms.date: 11/20/2024
 ms.custom: it-pro, references_regions
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about ways to secure apps in my external tenant by adding multifactor authentication and enabling SMS and email one-time passcodes.
@@ -20,7 +20,7 @@ ms.custom: it-pro, references_regions
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-[Multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
+Multifactor authentication (MFA) adds a layer of security to your applications by requiring users to provide a second method for verifying their identity during sign-up or sign-in. External tenants support two methods for authentication as a second factor:
 
 - Email one-time passcode
 - SMS-based authentication, available as an add-on ([see details](#sms-based-authentication)).
@@ -37,11 +37,11 @@ For details, see [how to create a Conditional Access policy in an external tenan
 
 ## Enabling MFA methods
 
-When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in a separate section of the Microsoft Entra admin center, under **Authentication methods** in the **Protection** section.
+When you select identity provider options in your user flows, you define the first-factor authentication methods for sign-up and sign-in. Second-factor verification methods for MFA are configured in the Microsoft Entra admin center under **Entra ID** > **Authentication methods**.
 
 Depending on which option you choose as the first factor, different second-factor verification methods are available for [multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md).
 
-- **Email with password and social identity providers**: For any of these first-factor methods, you can enable email one-time passcode, SMS, or both as second-factor verification methods for MFA.
+- **Email with password and external identity providers**: For any of these first-factor methods, you can enable email one-time passcode, SMS, or both as second-factor verification methods for MFA.
 - **Email one-time passcode**: When email with one-time passcode is selected as the first-factor authentication method, it can't be used for second-factor verification. Therefore, only SMS-based verification can be enabled for MFA.
 
 For details, see [how to enable MFA methods in an external tenant](how-to-multifactor-authentication-customers.md#enable-email-one-time-passcode-as-an-mfa-method).
@@ -73,10 +73,14 @@ SMS is an add-on feature and requires a [linked subscription](../external-identi
 
 |Tier                               |Countries/Regions  |
 |-----------------------------------|-------------------|
-|Phone Authentication Low Cost      |Australia, Brazil, Brunei, Canada, Chile, China, Colombia, Cyprus, North Macedonia, Poland, Portugal, South Korea, Thailand, Turkey, United States         |
-|Phone Authentication Mid Low Cost  |Greenland, Albania, American Samoa, Austria, Bahamas, Bahrain, Bosnia & Herzegovina, Botswana, Costa Rica, Czech Republic, Denmark, Estonia, Faroe Islands, Finland, France, Greece, Hong Kong, Hungary, Iceland, Ireland, Italy, Japan, Latvia, Lithuania, Luxembourg, Macao, Malta, Mexico, Micronesia, Moldova, Namibia, New Zealand, Nicaragua, Norway, Romania, São Tomé and Príncipe, Seychelles Republic, Singapore, Slovakia, Solomon Islands, Spain, Sweden, Switzerland, Taiwan, United Kingdom, United States Virgin Islands, Uruguay         |
-|Phone Authentication Mid High Cost |Andorra, Angola, Anguilla, Antarctica, Antigua and Barbuda, Argentina, Armenia, Aruba, Ascension, Barbados, Belgium, Benin, Bolivia, British Virgin Islands, Bulgaria, Burkina Faso, Cameroon, Cayman Islands, Central African Republic, Cook Islands, Croatia, Diego Garcia, Djibouti, Dominican Republic, Dominican Republic, Dominican Republic, East Timor, Ecuador, El Salvador, Eritrea, Falkland Islands, Fiji, French Guiana, French Polynesia, Gambia, Georgia, Germany, Gibraltar, Grenada, Guadeloupe, Guam, Guinea, Guyana, Honduras, India, Ivory Coast, Kenya, Kiribati, Laos, Liberia, Malaysia, Marshall Islands, Martinique, Mauritius, Monaco, Montenegro, Montserrat, Netherlands, Netherlands Antilles, New Caledonia, Niue, Oman, Palau, Panama, Paraguay, Peru, Puerto Rico, Puerto Rico, Réunion, Rwanda, Saint Helena, Saint Kitts & Nevis, Saint Lucia, Saint Pierre & Miquelon, Saint Vincent and the Grenadines, Saipan, Samoa, San Marino, Saudi Arabia, Sint Maarten, Slovenia, South Africa, South Sudan, Suriname, Swaziland (New Name is Kingdom of Eswatini), Tokelau, Tonga, Turks & Caicos, Tuvalu, United Arab Emirates, Vanuatu, Venezuela, Vietnam, Wallis and Futuna         |
-|Phone Authentication High Cost     |Liechtenstein, Bermuda, Cambodia, Cape Verde, Democratic Republic of Congo, Dominica, Egypt, Equatorial Guinea, Ghana, Guatemala, Guinea-Bissau, Israel, Jamaica, Jamaica, Kosovo, Lesotho, Maldives, Mali, Mauritania, Morocco, Mozambique, Papua New Guinea, Philippines, Qatar, Sierra Leone, Trinidad & Tobago, Ukraine, Zimbabwe, Afghanistan, Algeria, Azerbaijan, Bangladesh, Belarus, Belize, Bhutan, Burundi, Chad, Comoros, Congo, Ethiopia, Gabonese Republic, Haiti, Indonesia, Iraq, Jordan, Kuwait, Kyrgyzstan, Lebanon, Libya, Madagascar, Malawi, Mongolia, Myanmar, Nauru, Nepal, Niger, Nigeria, Pakistan, Palestinian National Authority, Russia, Senegal, Serbia, Somalia, Sri Lanka, Sudan, Tajikistan, Tanzania, Togolese Republic, Tunisia, Turkmenistan, Uganda, Uzbekistan, Yemen, Zambia         |
+|Phone Authentication Low Cost      |Australia, Brazil, Brunei, Canada, Chile, China, Colombia, Cyprus, North Macedonia, Poland, Portugal, South Korea, Thailand, Türkiye, United States         |
+|Phone Authentication Mid Low Cost  |Greenland, Albania, American Samoa, Austria, Bahamas, Bahrain, Bosnia & Herzegovina, Botswana, Costa Rica, Czech Republic, Denmark, Estonia, Faroe Islands, Finland, France, Greece, Hong Kong SAR, Hungary, Iceland, Ireland, Italy, Japan, Latvia, Lithuania, Luxembourg, Macao SAR, Malta, Mexico, Micronesia, Moldova, Namibia, New Zealand, Nicaragua, Norway, Romania, São Tomé and Príncipe, Seychelles Republic, Singapore, Slovakia, Solomon Islands, Spain, Sweden, Switzerland, Taiwan, United Kingdom, United States Virgin Islands, Uruguay         |
+|Phone Authentication Mid High Cost |Andorra, Angola, Anguilla, Antarctica, Antigua and Barbuda, Argentina, Armenia, Aruba, Barbados, Belgium, Benin, Bolivia, Bonaire, Curaçao, Saba, Sint Eustatius and Sint Maarten, British Virgin Islands, Bulgaria, Burkina Faso, Cameroon, Cayman Islands, Central African Republic, Cook Islands, Côte d’Ivoire, Croatia, Diego Garcia, Djibouti, Dominican Republic, Dominican Republic, Dominican Republic, Ecuador, El Salvador, Eritrea, Falkland Islands, Fiji, French Guiana, French Polynesia, Gambia, Georgia, Germany, Gibraltar, Grenada, Guadeloupe, Guam, Guinea, Guyana, Honduras, India, Kenya, Kiribati, Laos, Liberia, Malaysia, Marshall Islands, Martinique, Mauritius, Monaco, Montenegro, Montserrat, Netherlands, New Caledonia, Niue, Oman, Palau, Panama, Paraguay, Peru, Puerto Rico, Puerto Rico, Réunion, Rwanda, Saint Helena, Ascension and Tristan de Cunha, Saint Kitts & Nevis, Saint Lucia, Saint Pierre & Miquelon, Saint Vincent and the Grenadines, Saipan, Samoa, San Marino, Saudi Arabia, Sint Maarten, Slovenia, South Africa, South Sudan, Suriname, Swaziland (New Name is Kingdom of Eswatini), Timor-Leste, Tokelau, Tonga, Turks & Caicos, Tuvalu, United Arab Emirates, Vanuatu, Venezuela, Vietnam, Wallis and Futuna         |
+|Phone Authentication High Cost     |Liechtenstein, Bermuda, Cabo Verde, Cambodia, Democratic Republic of Congo, Dominica, Egypt, Equatorial Guinea, Ghana, Guatemala, Guinea-Bissau, Israel, Jamaica, Jamaica, Kosovo, Lesotho, Maldives, Mali, Mauritania, Morocco, Mozambique, Papua New Guinea, Philippines, Qatar, Sierra Leone, Trinidad & Tobago, Ukraine, Zimbabwe, Afghanistan, Algeria, Azerbaijan, Bangladesh, Belarus, Belize, Bhutan, Burundi, Chad, Comoros, Congo, Ethiopia, Gabonese Republic, Haiti, Indonesia, Iraq, Jordan, Kuwait, Kyrgyzstan, Lebanon, Libya, Madagascar, Malawi, Mongolia, Myanmar, Nauru, Nepal, Niger, Nigeria, Pakistan, Palestinian National Authority, Russia, Senegal, Serbia, Somalia, Sri Lanka, Sudan, Tajikistan, Tanzania, Togolese Republic, Tunisia, Turkmenistan, Uganda, Uzbekistan, Yemen, Zambia         |
+
+### Opt-in regions for SMS
+
+Starting January 2025, certain country codes will be deactivated by default for SMS verification. If you want to allow traffic from deactivated regions, you need to activate them for your application using the Microsoft Graph `onPhoneMethodLoadStartevent` policy. See [Regions requiring opt-in for SMS verification](how-to-region-code-opt-in.md).
 
 ## Next steps
 

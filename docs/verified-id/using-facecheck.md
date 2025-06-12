@@ -1,15 +1,14 @@
 ---
 title: Tutorial - Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
-description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID
+description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 10/06/2023
+ms.date: 04/30/2025
+ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
@@ -28,7 +27,7 @@ Face Check is a premium feature within Verified ID. You need to enable the Face 
 
 ## Setting up Face Check with Microsoft Entra Verified ID
 
-The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you're going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level, and the configuration applies to all authorities within that tenant. For any other licenses you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
+The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you're going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level, and the configuration applies to all authorities within that tenant. For any other licenses, you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
 
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
@@ -53,7 +52,7 @@ Now you can start using Face Check in your enterprise applications.
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
 
-To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. The below mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly
+To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. This mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly
 
 1. Run the following command in PowerShell
 ```http
@@ -65,7 +64,7 @@ To set up the Face Check Add-on on a given authority, you must have the [Azure P
 ```http
   az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
 ```
-- replace `<subscription-id>` with your subscription id
+- replace `<subscription-id>` with your subscription ID
 - replace `<resource-group-name>` with your resource group name
 - replace `<authority-id>` with your authority ID. You can obtain the `authority-id` using the [GET Authorities](admin-api.md#get-authority) call from the Admin API. 
 - replace `<rp-location>` using one of the following two values:
@@ -83,6 +82,9 @@ You can easily get started using Face Check by using [MyAccount](https://myaccou
 1. Use the [public test app](https://aka.ms/vcempver) to present your `VerifiedEmployee` credential using Face Check.
 
 When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user selects on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You could review the results on the Test app.
+
+>[!NOTE]
+> MyAccount uses the Entra ID user profile photo when issuing the VerifiedEmployee credential. You can retrieve your photo via Microsoft Graph API `https://graph.microsoft.com/v1.0/me/photos/240x240/$value`
 
 ## Get started with Face Check using Request Service API
 
@@ -113,6 +115,9 @@ When setting the actual claim value of the photo, it should be in format `UrlEnc
 } 
 ```
 
+>[!NOTE]
+> When issuing a custom credential with a photo, it is the apps responsibility to provide the JPEG to be used and encode it. 
+
 ### Presentation requests including Face Check
 
 The JSON payload to the [Request Service API](get-started-request-api.md?tabs=http%2Cissuancerequest%2Cfacecheck#presentation-request-example) for creating a presentation request needs to specify that a Face Check should be performed.
@@ -138,7 +143,7 @@ The claim containing the photo must be named and you might optionally specify yo
 
 #### Successful Face Check presentation_verified callback event
 
-The JSON payload for the `presentation_verified` has more data when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
+The JSON payload for the `presentation_verified` has more data in the response when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
 
 ```json
   "verifiedCredentialsData": [ 
@@ -157,6 +162,42 @@ The JSON payload for the `presentation_verified` has more data when a Face Check
   ], 
 ```
  
+#### Face Check presentation_verified callback event receipt
+
+If the presentation request was created with asking for a [receipt](presentation-request-api.md#presentation-request-payload), 
+then the `presentation_verified` callback will contain an attribute named `faceCheck`.
+
+```JSON
+{
+  "requestId": "11111111-2222-3333-4444-55555555",
+  "requestStatus": "presentation_verified",
+  "receipt": {
+    ...
+    "faceCheck": "eyJhbGc...svw"
+  },
+  ...
+}
+```
+
+The value of the `faceCheck` attribute is a signed JWT token that is source data for the liveness check. Base64-decoding the JWT token gives a verifiable credential of type `MicrosoftFaceCheckReceipt`. The `sourceVcJti` is the identity of the credential used to match the liveness check.
+
+```JSON
+... 
+    "type": [
+      "VerifiableCredential",
+      "MicrosoftFaceCheckReceipt"
+    ],
+    "credentialSubject": {
+      "faceCheckResults": [
+        {
+          "sourceVcJti": "urn:pic:4f741111222233334444000000000000",
+          "matchConfidenceThreshold": 70,
+          "matchConfidenceScore": 86.314159,
+          "sourcePhotoQuality": "HIGH"
+        }
+      ]
+```
+
 #### Failed Face Check callback event
 
 When the confidence score is lower than the threshold, the presentation request is failed and a `presentation_error` is returned. The verifying application doesn't get the score returned.
@@ -260,7 +301,7 @@ The Verified ID service executes the verification process in the cloud, not on t
 
 ### What are the requirements for the photo in the Verified ID?
 
-The photo should be clear and sharp in quality and no smaller than 200 pixels x 200 pixels. The face should be centered within the image and unobstructed from view. The maximum size of the photo in the credential is  1 MB.
+The photo should be clear and sharp in quality and no smaller than 200 pixels x 200 pixels. The face should be centered within the image and unobstructed from view. The maximum size of the photo in the credential is 1 MB. Note that having a larger image doesn't guarantee a better result. A good smaller photo is better than a large bad one.
 
 More information on how to improve the photo processing accuracy can be found [here](/legal/cognitive-services/face/characteristics-and-limitations?#best-practices-for-improving-accuracy)
 

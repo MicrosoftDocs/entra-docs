@@ -5,17 +5,17 @@ description: Learn supported and unsupported scenarios for Microsoft Entra certi
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vimrang
 ms.custom: has-adal-ref
 ---
 # Limitations with Microsoft Entra certificate-based authentication 
 
-This topic covers supported and unsupported scenarios for Microsoft Entra certificate-based authentication.
+This article covers supported and unsupported scenarios for Microsoft Entra certificate-based authentication.
 
 ## Supported scenarios
 
@@ -56,7 +56,7 @@ The following scenarios aren't supported:
 
 ## Supported browsers
 
-| Operating system |  Chrome certificate on-device   |  Chrome smart card   |   Safari certificate on-device  |   Safari  smart card |    Edge certificate on-device    |    Edge smart card    |
+| Operating system |  Chrome certificate on-device   |  Chrome smart card   |   Safari certificate on-device  |   Safari  smart card |    Microsoft Edge certificate on-device    |    Microsoft Edge smart card    |
 |:-----------------|:----------:|:----------:|:----------:|:----------:|:-----------------|:----------:|
 | Windows          |  &#x2705;  |  &#x2705;  |  &#x2705;  |  &#x2705;  |     &#x2705;     |  &#x2705;  |  
 | macOS            |  &#x2705;  |  &#x2705;  |  &#x2705;  |  &#x2705;  |     &#x2705;     |  &#x2705;  | 
@@ -64,11 +64,11 @@ The following scenarios aren't supported:
 | Android          | &#x2705;  | &#10060;    |  N/A       | N/A        |    &#10060;     | &#10060;  |
 
 >[!NOTE]
-> On iOS and Android mobile, Edge browser users can sign into Edge to set up a profile by using the Microsoft Authentication Library (MSAL), like the Add account flow. When logged in to Edge with a profile, CBA is supported with on-device certificates and smart cards.
+> On iOS and Android mobile, Microsoft Edge browser users can sign into Microsoft Edge to set up a profile by using the Microsoft Authentication Library (MSAL), like the Add account flow. When logged in to Microsoft Edge with a profile, CBA is supported with on-device certificates and smart cards.
 
 ## Smart card providers
 
-|Provider  |  Windows   |   Mac OS   |    iOS     |   Android  |
+|Provider  |  Windows   |   macOS   |    iOS     |   Android  |
 |:---------|:----------:|:----------:|:----------:|:----------:|
 |YubiKey   |  &#x2705;  |  &#x2705;  |  &#x2705;  |  &#x2705;  |
 

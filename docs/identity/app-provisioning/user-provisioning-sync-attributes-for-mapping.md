@@ -3,14 +3,15 @@ title: Synchronize attributes to Microsoft Entra ID for mapping
 description: When configuring user provisioning with Microsoft Entra ID and SaaS apps, use the directory extension feature to add source attributes that aren't synchronized by default.
 
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: troubleshooting
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Syncing extension attributes for Microsoft Entra Application Provisioning
@@ -92,35 +93,33 @@ GET https://graph.microsoft.com/v1.0/users/{id}?$select=displayName,extension_in
 ### Create an extension attribute for cloud only users using PowerShell
 You can create a custom extension using PowerShell.
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
 ```PowerShell
-#Connect to your Azure AD tenant
-Connect-AzureAD
+#Connect to your Entra tenant
+Connect-Entra -Scopes 'Application.ReadWrite.All'
 
 #Create an application (you can instead use an existing application if you would like)
-$App = New-AzureADApplication -DisplayName “test app name” -IdentifierUris https://testapp
+$App = New-EntraApplication -DisplayName "test app name" -IdentifierUris https://testapp
 
 #Create a service principal
-New-AzureADServicePrincipal -AppId $App.AppId
+New-EntraServicePrincipal -AppId $App.AppId
 
 #Create an extension property
-New-AzureADApplicationExtensionProperty -ObjectId $App.ObjectId -Name “TestAttributeName” -DataType “String” -TargetObjects “User”
+New-EntraApplicationExtensionProperty -ApplicationId $App.ObjectId -Name "TestAttributeName" -DataType "String" -TargetObjects "User"
 ```
 
 Optionally, you can test that you can set the extension property on a cloud only user.
 
 ```PowerShell
 #List users in your tenant to determine the objectid for your user
-Get-AzureADUser
+Get-EntraUser
 
 #Set a value for the extension property on the user. Replace the objectid with the ID of the user and the extension name with the value from the previous step
-Set-AzureADUserExtension -objectid aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb -ExtensionName “extension_6552753978624005a48638a778921fan3_TestAttributeName”
+Set-EntraUserExtension -ObjectId aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb -ExtensionName "extension_6552753978624005a48638a778921fan3_TestAttributeName"
 
 #Verify that the attribute was added correctly.
-Get-AzureADUser -ObjectId bbbbbbbb-1111-2222-3333-cccccccccccc | Select -ExpandProperty ExtensionProperty
-
+Get-EntraUser -ObjectId aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb | Select -ExpandProperty ExtensionProperty
 ```
+
 ## Create an extension attribute using cloud sync
 
 If you have users in Active Directory and are using Microsoft Entra Connect cloud sync, cloud sync automatically discovers your extensions in on-premises Active Directory when you go to add a new mapping. If you are using Microsoft Entra Connect sync, then continue reading at the next section [create an extension attribute using Microsoft Entra Connect](#create-an-extension-attribute-using-microsoft-entra-connect).
@@ -128,7 +127,7 @@ If you have users in Active Directory and are using Microsoft Entra Connect clou
 Use the steps below to autodiscover these attributes and set up a corresponding mapping to Microsoft Entra ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync**.
+1. Browse to **Entra ID** > **Entra Connect** > **Cloud sync**.
 1. Select the configuration you wish to add the extension attribute and mapping.
 1. Under **Manage attributes** select **click to edit mappings**.
 1. Select **Add attribute mapping**. The attributes are automatically be discovered.

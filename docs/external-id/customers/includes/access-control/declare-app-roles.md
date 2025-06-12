@@ -5,12 +5,12 @@ ms.subservice: external
 ms.topic: include
 ms.date: 09/06/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Privileged Role Administrator](../../../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="~/external-id/customers/media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu. 
-1. Browse to **Identity** >**Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select the application you want to define app roles in.
 1. Select **App roles**, and then select **Create app role**.
 1. In the **Create app role** pane, enter the settings for the role. The following table describes each setting and its parameters.

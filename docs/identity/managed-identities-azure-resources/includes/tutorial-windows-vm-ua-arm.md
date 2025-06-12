@@ -1,6 +1,6 @@
 ---
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 06/06/2024
 ms.topic: include
 ms.service: entra-id
@@ -124,7 +124,6 @@ CanDelegate: False
 
 ## Access data
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### Get an access token
 

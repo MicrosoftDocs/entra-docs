@@ -1,14 +1,14 @@
 ---
 title: Factors influencing the performance of Microsoft Entra Connect
-description: This document explains the how various factors influence the Microsoft Entra Connect provisioning engine. These factors will help organizations to plan their Microsoft Entra Connect deployment to make sure it meets their sync requirements.
+description: This document explains how various factors influence the Microsoft Entra Connect provisioning engine. These factors help organizations to plan their Microsoft Entra Connect deployment to make sure it meets their sync requirements.
 
 author: billmath
-manager: amycolannino
+manager: femila
 tags: azuread
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 04/09/2025
 ms.reviewer: martincoetzer
 ms.author: billmath
 
@@ -20,7 +20,7 @@ Microsoft Entra Connect syncs your Active Directory to Microsoft Entra ID. This 
 | **Design factor**| **Definition** |
 |:-|-|
 | Topology| The distribution of the endpoints and components Microsoft Entra Connect must manage on the network. |
-| Scale| The number of objects like the users, groups, and OUs, to be managed by Microsoft Entra Connect. |
+| Scale| The number of objects like the users, groups, and OUs, managed by Microsoft Entra Connect. |
 | Hardware| The hardware (physical or virtual) for the Microsoft Entra Connect and dependent performance capacity of each hardware component including CPU, memory, network, and hard drive configuration. |
 | Configuration| How Microsoft Entra Connect processes the directories and information. |
 | Load| Frequency of object changes. The loads may vary during an hour, day, or week. Depending on the component, you may have to design for peak load or average load. |
@@ -38,20 +38,20 @@ The following diagram shows a high-level architecture of provisioning engine con
 
 ![Diagram shows how the Connected Directories and Microsoft Entra Connect provisioning engine interact, including Connector Space and Metaverse components in an SQL Database.](media/plan-connect-performance-factors/AzureADConnentInternal.png)
 
-The provisioning engine connects to each Active Directory forest and to Microsoft Entra ID. The process of reading information from each directory is called Import. Export refers to updating the directories from the provisioning engine. Sync evaluates the rules of how the objects will flow inside the provisioning engine. For a deeper dive you can refer to [Microsoft Entra Connect Sync: Understanding the architecture](./concept-azure-ad-connect-sync-architecture.md).
+The provisioning engine connects to each Active Directory forest and to Microsoft Entra ID. The process of reading information from each directory is called Import. Export refers to updating the directories from the provisioning engine. Sync evaluates the rules of how the objects flow inside the provisioning engine. For a deeper dive, can refer to [Microsoft Entra Connect Sync: Understanding the architecture](./concept-azure-ad-connect-sync-architecture.md).
 
 Microsoft Entra Connect uses the following staging areas, rules, and processes to allow the sync from Active Directory to Microsoft Entra ID:
 
 * **Connector Space (CS)** - Objects from each connected directory (CD), the actual directories, are staged here first before they can be processed by the provisioning engine. Microsoft Entra ID has its own CS and each forest you connect to has its own CS.
 * **Metaverse (MV)** - Objects that need to be synced are create here based on the sync rules. Objects must exist in the MV before they can populate objects and attributes to the other connected directories. There's only one MV.
-* **Sync rules** - They decide which objects will be created (projected) or connected (joined) to objects in the MV. The sync rules also decide which attribute values will be copied or transformed to and from the directories.
+* **Sync rules** - They decide which objects are created (projected) or connected (joined) to objects in the MV. The sync rules also decide which attribute values are copied or transformed to and from the directories.
 * **Run profiles** - Bundles the process steps of copying objects and their attribute values according to the sync rules between the staging areas and connected directories.
 
-Different run profiles exist to optimize the performance of the provisioning engine. Most organizations will use the default schedules and run profiles for normal operations, but some organizations may have to [change the schedule](./how-to-connect-sync-feature-scheduler.md) or trigger other run profiles to cater for uncommon situations. The following run profiles are available:
+Different run profiles exist to optimize the performance of the provisioning engine. Most organizations use the default schedules and run profiles for normal operations, but some organizations may have to [change the schedule](./how-to-connect-sync-feature-scheduler.md) or trigger other run profiles to cater for uncommon situations. The following run profiles are available:
 
 ### Initial sync profile
 
-The Initial sync profile is the process of reading the connected directories, like an Active Directory forest, for the first time. It then does an analysis on all entries in the sync engine database. The initial cycle will create new objects in Microsoft Entra ID and will take extra time to complete if your Active Directory forests are large. The initial sync includes the following steps:
+The Initial sync profile is the process of reading the connected directories, like an Active Directory forest, for the first time. It then does an analysis on all entries in the sync engine database. The initial cycle creates new objects in Microsoft Entra ID and takes extra time to complete if your Active Directory forests are large. The initial sync includes the following steps:
 
 1. Full import on all connectors
 2. Full sync on all connectors
@@ -75,7 +75,7 @@ Your rate of change may vary depending on how often your organization updates us
 
 ### Full sync profile
 
-A full sync cycle is required if you have made any of the following configuration changes:
+A full sync cycle is required if you made any of the following configuration changes:
 
 
 
@@ -89,23 +89,23 @@ The following operations are included in a full sync cycle:
 3. Export on all connectors
 
 > [!NOTE]
-> Careful planning is required when doing bulk updates to many objects in your Active Directory or Microsoft Entra ID. Bulk updates will cause the delta sync process to take longer when importing, since a lot of objects have changed. Long imports can happen even if the bulk update doesn't influence the sync process. For example, assigning licenses to many users in Microsoft Entra ID will cause a long import cycle from Microsoft Entra ID, but will not result in any attribute changes in Active Directory.
+> Careful planning is required when doing bulk updates to many objects in your Active Directory or Microsoft Entra ID. Bulk updates cause the delta sync process to take longer when importing, since a lot of objects have changed. Long imports can happen even if the bulk update doesn't influence the sync process. For example, assigning licenses to many users in Microsoft Entra ID causes a long import cycle from Microsoft Entra ID, but won't result in any attribute changes in Active Directory.
 
 ### Synchronization
 
 The sync process runtime has the following performance characteristics:
 
 * Sync is single threaded, meaning the provisioning engine doesn't do any parallel processing of run profiles of connected directories, objects, or attributes.
-* Import time grows linearly with the number of objects being synced. For example, if 10,000 objects take 10 minutes to import, then 20,000 objects will take approximately 20 minutes on the same server.
+* Import time grows linearly with the number of objects being synced. For example, if 10,000 objects take 10 minutes to import, then 20,000 objects take approximately 20 minutes on the same server.
 * Export is also linear.
-* The sync will grow exponentially based on the number of objects with references to other objects. Group memberships and nested groups have the main performance impact, because their members refer to user objects or other groups. These references must be found and referenced to actual objects in the MV to complete the sync cycle.
-* Changing a group member will lead to a re-evaluation of all group members. For example, if you have a group with 50K members and you only update 1 member, this will trigger a synchronization of all 50K members.
+* The sync grows exponentially based on the number of objects with references to other objects. Group memberships and nested groups have the main performance impact, because their members refer to user objects or other groups. These references must be found and referenced to actual objects in the MV to complete the sync cycle.
+* Changing a group member leads to a re-evaluation of all group members. For example, if you have a group with 50-K members and you only update 1 member, this triggers a synchronization of all 50-K members.
 
 ### Filtering
 
-The size of the Active Directory topology you want to import is the number one factor influencing the performance and overall time the internal components of the provisioning engine will take.
+The size of the Active Directory topology you want to import is the number one factor influencing the performance and overall time the provisioning engine internal components take to complete.
 
-[Filtering](./how-to-connect-sync-configure-filtering.md) should be used to reduce the objects to the synced. It will prevent unnecessary objects from being processed and exported to Microsoft Entra ID. In order of preference, the following techniques of filtering are available:
+[Filtering](./how-to-connect-sync-configure-filtering.md) should be used to reduce the objects to the synced. It prevents unnecessary objects from being processed and exported to Microsoft Entra ID. In order of preference, the following techniques of filtering are available:
 
 
 
@@ -122,11 +122,11 @@ Many persistent [disconnector objects](concept-azure-ad-connect-sync-architectur
 - Project/join the objects to the MV and set the [cloudFiltered](how-to-connect-sync-configure-filtering.md#negative-filtering-do-not-sync-these) attribute equal to True, to prevent provisioning of these objects in the Microsoft Entra CS.
 
 > [!NOTE]
-> Users can get confused or application permissions issues can occur, when too many objects are filtered. For example, in a hybrid Exchange online implementation, users with on-premises mailboxes will see more users in their global address list than users with mailboxes in Exchange online. In other cases, a user may want to grant access in a cloud app to another user which is not part of the scope of the filtered set of objects.
+> Users can get confused or application permissions issues can occur, when too many objects are filtered. For example, in a hybrid Exchange online implementation, users with on-premises mailboxes see more users in their global address list than users with mailboxes in Exchange online. In other cases, a user may want to grant access in a cloud app to another user which isn't part of the scope of the filtered set of objects.
 
 ### Attribute flows
 
-Attribute flows is the process for copying or transforming the attribute values of objects from one connected directory to another connected directory. They're defined as part of the sync rules. For example, when the telephone number of a user is changed in your Active Directory, the telephone number in Microsoft Entra ID will be updated. Organizations can [modify the attribute flows](./how-to-connect-sync-change-the-configuration.md) to suite various requirements. It's recommended you copy the existing attribute flows before changing them.
+Attribute flows is the process for copying or transforming the attribute values of objects from one connected directory to another connected directory. They're defined as part of the sync rules. For example, when the telephone number of a user is changed in your Active Directory, the telephone number in Microsoft Entra ID is updated. Organizations can [modify the attribute flows](./how-to-connect-sync-change-the-configuration.md) to suite various requirements. It's recommended you copy the existing attribute flows before changing them.
 
 Simple redirects, like flowing an attribute value to a different attribute doesn't have material performance impact. An example of a redirect is flowing a mobile number in Active Directory to the office phone number in Microsoft Entra ID.
 
@@ -162,16 +162,16 @@ Microsoft Entra ID uses throttling to protect the cloud service from denial-of-s
 - Users updating their own identity records such as registering for MFA or SSPR (self-service password reset).
 - Operations within the graphical user interface.
 
-Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle is not impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic membership groups, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
+Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle isn't impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic membership groups, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
 
 ### SQL database factors
 
-The size of your source Active Directory topology will influence your SQL database performance. Follow the [hardware requirements](how-to-connect-install-prerequisites.md) for the SQL server database and consider the following recommendations:
+The size of your source Active Directory topology influences your SQL database performance. Follow the [hardware requirements](how-to-connect-install-prerequisites.md) for the SQL server database and consider the following recommendations:
 
 
 
 - Organizations with more than 100,000 users can reduce network latencies by colocating SQL database and the provisioning engine on the same server.
-- SQL Named Pipes protocol is not supported as it introduces significant delays in the sync cycle and should be disabled in the SQL Server Configuration Manager under SQL Native Clients and SQL Server Network. Please note that changing Named Pipes configuration only takes effect after restarting database and ADSync services.
+- SQL Named Pipes protocol isn't supported as it introduces significant delays in the sync cycle and should be disabled in the SQL Server Configuration Manager under SQL Native Clients and SQL Server Network. Please note that changing Named Pipes configuration only takes effect after restarting database and ADSync services.
 - Due to the high disk input and output (I/O) requirements of the sync process, use Solid State Drives (SSD) for the SQL database of the provisioning engine for optimal results, if not possible, consider RAID 0 or RAID 1 configurations.
 - Don’t do a full sync preemptively; it causes unnecessary churn and slower response times.
 
@@ -184,7 +184,7 @@ To optimize the performance of your Microsoft Entra Connect implementation, cons
 - Use the [recommended hardware configuration](how-to-connect-install-prerequisites.md) based on your implementation size for the Microsoft Entra Connect server.
 - When upgrading Microsoft Entra Connect in large-scale deployments, consider using [swing migration method](./how-to-upgrade-previous-version.md#swing-migration), to make sure you have the least downtime and best reliability. 
 - Use SSD for the SQL database for best writing performance.
-- Back-up of ADSync Database using Azure Backup is not recommended.
+- Back-up of ADSync Database using Azure Backup isn't recommended.
 - Filter the Active Directory scope to only include objects that need to be provisioned in Microsoft Entra ID, using domain, OU, or attribute filtering.
 - If you require to change the default attribute flow rules, first copy the rule, then change the copy and disable the original rule. Remember to rerun a full sync.
 - Plan adequate time for the initial full sync run profile.

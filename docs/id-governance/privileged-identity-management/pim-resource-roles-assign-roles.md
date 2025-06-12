@@ -3,12 +3,12 @@ title: Assign Azure resource roles in Privileged Identity Management
 description: Learn how to assign Azure resource roles in Privileged Identity Management (PIM).
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 01/22/2024
+ms.date: 12/19/2024
 ms.subservice: privileged-identity-management
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Assign Azure resource roles in Privileged Identity Management
@@ -47,11 +47,11 @@ For more information, see [What is Azure attribute-based access control (Azure A
 
 Follow these steps to make a user eligible for an Azure resource role.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Access Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a User Access Administrator.
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Azure resources**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Azure resources**.
 
-1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Click the Select button for the resource you want to manage to open its overview page.
+1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Select the Select button for the resource you want to manage to open its overview page.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-list.png" alt-text="Screenshot that shows how to select Azure resources.":::
 
@@ -76,7 +76,7 @@ Follow these steps to make a user eligible for an Azure resource role.
 
     Microsoft Entra PIM for Azure resources provides two distinct assignment types:
 
-    - **Eligible** assignments require the member to activate the role before using it. Administrator may require role member to perform certain actions before role activation, which might include performing a multi-factor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers.
+    - **Eligible** assignments require the member to activate the role before using it. Administrator may require role member to perform certain actions before role activation, which might include performing a multifactor authentication (MFA) check, providing a business justification, or requesting approval from designated approvers.
 
     - **Active** assignments don't require the member to activate the role before usage. Members assigned as active have the privileges assigned ready to use. This type of assignment is also available to customers that don't use Microsoft Entra PIM.
 
@@ -96,9 +96,9 @@ Follow these steps to make a user eligible for an Azure resource role.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-new-assignment-notification.png" alt-text="Screenshot of a new assignment notification.":::
 
-## Assign a role using ARM API
+## Assign a role using Azure Resource Manager API
 
-Privileged Identity Management supports Azure Resource Manager (ARM) API commands to manage Azure resource roles, as documented in the [PIM ARM API reference](/rest/api/authorization/role-eligibility-schedule-requests). For the permissions required to use the PIM API, see [Understand the Privileged Identity Management APIs](pim-apis.md).
+Privileged Identity Management supports Azure Resource Manager (ARM) API commands to manage Azure resource roles, as documented in the [PIM Azure Resource Manager API reference](/rest/api/authorization/role-eligibility-schedule-requests). For the permissions required to use the PIM API, see [Understand the Privileged Identity Management APIs](pim-apis.md).
 
 The following example is a sample HTTP request to create an eligible assignment for an Azure role.
 
@@ -196,7 +196,7 @@ Follow these steps to update or remove an existing role assignment.
 
 1. Select **Azure resources**.
 
-1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Click the Select button for the resource you want to manage to open its overview page.
+1. Select the **resource type** you want to manage. Start at either the **Management group** dropdown or the **Subscriptions** dropdown, and then further select **Resource groups** or **Resources** as needed. Select the Select button for the resource you want to manage to open its overview page.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-list.png" alt-text="Screenshot that shows how to select Azure resources to update.":::
 
@@ -208,7 +208,7 @@ Follow these steps to update or remove an existing role assignment.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-update-remove.png" alt-text="Screenshot demonstrates how to update or remove role assignment." lightbox="./media/pim-resource-roles-assign-roles/resources-update-remove.png":::
 
-1. To add or update a condition to refine Azure resource access, select **Add** or **View/Edit** in the **Condition** column for the role assignment. Currently, the Storage Blob Data Owner, Storage Blob Data Reader, and Storage Blob Data Contributor roles in Microsoft Entra PIM are the only roles that can have conditions added.
+1. To add or update a condition to refine Azure resource access, select **Add** or **View/Edit** in the **Condition** column for the role assignment.
 
 1. Select **Add expression** or **Delete** to update the expression. You can also select **Add condition** to add a new condition to your role.
 

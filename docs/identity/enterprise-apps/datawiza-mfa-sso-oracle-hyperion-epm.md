@@ -1,18 +1,15 @@
 ---
 title: Tutorial to configure Datawiza to enable Microsoft Entra multifactor authentication  and single sign-on to Oracle Hyperion EPM
 description: Enable Microsoft Entra multifactor authentication and single sign-on for an Oracle Hyperion EPM using Datawiza Access Proxy (DAP)
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: tutorial
-
 ms.date: 11/01/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM, so that I can enhance the security of user sign-ins and provide seamless access to the application.
 ---
 
@@ -96,8 +93,6 @@ To integrate Oracle Hyperion EMP with Microsoft Entra ID:
 16. Select **Create**.
 17. The DAP deployment page appears.
 18. Make a note of the deployment Docker Compose file. The file includes the DAP image, also the Provisioning Key and Provisioning Secret, which pull the latest configuration and policies from DCMC.
-
-    [![Screenshot shows the DAP deployment page.](./media/datawiza-mfa-sso-oracle-hyperion-epm/datawiza-access-proxy-deployment-page.png)](./media/datawiza-mfa-sso-oracle-hyperion-epm/datawiza-access-proxy-deployment-page.png#lightbox)
 
 19. Select **Done**.
 
@@ -203,6 +198,5 @@ To confirm Oracle Hyperion application access, a prompt appears to use a Microso
 ## Next steps
 
 * [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-* [Tutorial: Configure Azure AD B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 * Go to Datawiza for [Add SSO and MFA to Oracle Hyperion EPM in minutes](https://www.datawiza.com/sso-and-mfa-for-oracle-hyperion-epm/)
 * Go to docs.datawiza.com for Datawiza [User Guides](https://docs.datawiza.com/)

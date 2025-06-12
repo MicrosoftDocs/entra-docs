@@ -2,16 +2,15 @@
 title: Learn about the sign-in log activity details
 description: Learn about the information available on each of the tabs on the Microsoft Entra sign-in log activity details.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 03/21/2024
+ms.date: 02/25/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand the parts of a sign-in log so I can troubleshoot sign-in issues.
-
 ---
 
 # Learn about the sign-in log activity details
@@ -110,17 +109,18 @@ This information allows you to troubleshoot each step in a user’s sign-in. Use
 
 ### Conditional Access
 
-If Conditional Access (CA) policies are in use in your tenant, you can see if those policies were applied to the sign-in attempt. All policies that could be applied to the sign-in are listed. The end result of the policy appears so you can quickly see if the policy impacted the sign-in attempt.
+If Conditional Access policies are in use in your tenant, you can see if those policies were applied to the sign-in attempt. All policies that could be applied to the sign-in are listed. The end result of the policy appears so you can quickly see if the policy impacted the sign-in attempt.
 
-- **Success:** The CA policy was applied successfully to the sign-in attempt.
-- **Failure:** The CA policy was applied to the sign-in attempt, but the sign-in attempt failed.
+- **Success:** The Conditional Access policy was applied successfully to the sign-in attempt.
+- **Failure:** The Conditional Access policy was applied to the sign-in attempt, but the sign-in attempt failed.
 - **Not Applied:** The sign-in didn't match the criteria for the policy to be applied.
-   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that would not be possible to complete. These are considered "bootstrap scenarios" and might include sign ins associated with device registration, device compliance, or Network Policy Server connectors.
+   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that would not be possible to complete. These are considered "bootstrap scenarios" and might include sign-ins associated with device registration, device compliance, or Network Policy Server connectors.
+   - Windows Hello for Business sign-ins show as "Not Applied" because Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process.
 - **Disabled:** The policy was disabled at the time of the sign-in attempt.
 
 ### Report-only
 
-Because Conditional Access (CA) policies can change the sign-in experience for your users and potentially disrupt their processes, it's a good idea to be sure your policy is configured correctly. With **Report-only** mode, you can configure a policy and evaluate its potential effect before enabling the policy.
+Conditional Access policies can change the sign-in experience for your users and potentially disrupt their processes. We recommend configuring Conditional Access policies in **Report-only** mode for a period of time to make sure your policy is configured correctly. With **Report-only** mode, you can configure a policy and evaluate its potential effect before enabling the policy.
 
 This tab of the sign-in logs displays the results of sign-in attempts that were in scope for the policy. For more information, see the [What is Conditional Access report-only mode?](~/identity/conditional-access/concept-conditional-access-report-only.md) article.
 
@@ -133,7 +133,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
 - **Date and time:** The date and time of a sign-in attempt is localized to the time zone for the person signed into the Microsoft Entra admin center, not the user who attempted the sign-in.
  
 - **Conditional Access:**
-  - `Not applied`: No policy applied to the user and application during sign-in.
+  - `Not applied`: No policy applied to the user and application during sign-in. Windows Hello for Business shows up as "Not Applied" because Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process. Other sign-ins might get interrupted so a policy isn't applied.
   - `Success`: One or more Conditional Access policies applied to or were evaluated for the user and application (but not necessarily the other conditions) during sign-in. Even though a Conditional Access policy might not apply, if it was evaluated, the Conditional Access status shows *Success*.
   - `Failure`: The sign-in satisfied the user and application condition of at least one Conditional Access policy and grant controls are either not satisfied or set to block access.
   - Conditional Access does not apply to Windows sign-in, such as Windows Hello for Business. Conditional Access protects sign-in attempts to cloud resources, not the device sign-in process.

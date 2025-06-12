@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/26/2022
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 # Securing on-premises service accounts
 
@@ -60,7 +60,7 @@ A local user account (name format: *.\UserName*) exists only in the Security Acc
 | App runs on Windows Server 2008 R2| No| Yes| Yes. Use an MSA if possible.| Yes. Use an MSA if possible. |
 | App runs on Windows Server 2012| Yes| Yes. Use a gMSA if possible.| Yes. Use an MSA if possible.| Yes. Use an MSA if possible. |
 | Requirement to restrict service account to single server| No| Yes| Yes. Use an sMSA if possible.| No |
-| | |
+
 
 ### Use server logs and PowerShell to investigate
 

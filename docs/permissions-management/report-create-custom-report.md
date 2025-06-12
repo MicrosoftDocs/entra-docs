@@ -2,15 +2,18 @@
 title: Create, view, and share a custom report a custom report in Permissions Management
 description: How to create, view, and share a custom report in the Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 02/23/2022
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Create, view, and share a custom report
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how to create, view, and share a custom report in Permissions Management.
 

@@ -1,15 +1,14 @@
 ---
 title: Authentication methods and features
 description: Learn about the different authentication methods and features available in Microsoft Entra ID that help improve and secure sign-in events
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/11/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how or why I can use them to improve and secure user sign-in events.
 ---
 # What authentication and verification methods are available in Microsoft Entra ID?
@@ -30,24 +29,27 @@ The following table outlines when an authentication method can be used during a 
 
 | Method                         | Primary authentication | Secondary authentication  |
 |--------------------------------|:----------------------:|:-------------------------:|
-| Windows Hello for Business     | Yes                    | MFA\*                     |
+| Windows Hello for Business     | Yes                    | MFA<sup>1</sup>           |
 | Microsoft Authenticator push   | No                     | MFA and SSPR              |
-| Microsoft Authenticator passwordless | Yes              | No\*                      |
+| Microsoft Authenticator passwordless | Yes              | No<sup>2</sup>            |
 | Microsoft Authenticator passkey| Yes                    | MFA                       |
 | Authenticator Lite             | No                     | MFA                       |
 | Passkey (FIDO2)                | Yes                    | MFA                       |
-| Certificate-based authentication | Yes                  | MFA                       |
+| Certificate-based authentication (CBA) | Yes            | MFA                       |
 | Hardware OATH tokens (preview) | No                     | MFA and SSPR              |
 | Software OATH tokens           | No                     | MFA and SSPR              |
 | External authentication methods (preview)| No           | MFA                       |
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
 | Text                           | Yes                    | MFA and SSPR              |
 | Voice call                     | No                     | MFA and SSPR              |
+| QR code (preview)              | Yes                    | No                        |
 | Password                       | Yes                    | No                        |
 
-> \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
+<sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if it's used in FIDO2 authentication. Users need to be registered for passkey (FIDO2).
 
-> \* Passwordless sign-in can be used for secondary authentication only if certificate-based authentication (CBA) is used for primary authentication. For more information, see [Microsoft Entra certificate-based authentication technical deep dive](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication-preview).
+<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-certificate-based-authentication).
+
+<sup>3</sup>Alternate phone methods can only be used for MFA.
 
 All of these authentication methods can be configured in the Microsoft Entra admin center, and increasingly using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
 
@@ -62,8 +64,10 @@ To learn more about how each authentication method works, see the following sepa
 * [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
 * [External authentication methods (preview)](/entra/identity/authentication/how-to-authentication-external-method-manage)
 * [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md)
-* [SMS sign-in](howto-authentication-sms-signin.md) and [verification](concept-authentication-phone-options.md#mobile-phone-verification)
+* [Short Message Service (SMS) sign-in](howto-authentication-sms-signin.md) and [verification](concept-authentication-phone-options.md#mobile-phone-verification)
 * [Voice call verification](concept-authentication-phone-options.md)
+* [QR code (preview)](concept-authentication-qr-code.md)
+
 * Password
 
 > [!NOTE]
@@ -84,7 +88,7 @@ Each authentication method can become nonusable for different reasons. For examp
 
 Authentication methods that are no longer available due to **Require re-register multifactor authentication** also appear here.
 
-:::image type="content" border="true" source="media/concept-authentication-methods/non-usable.png" alt-text="Screenshot of non-usable authentication methods." :::
+:::image type="content" border="true" source="media/concept-authentication-methods/non-usable.png" alt-text="Screenshot of nonusable authentication methods." :::
 
 
 ## Related content

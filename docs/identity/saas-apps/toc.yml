@@ -1,7 +1,7 @@
   items:
-  - name: Application tutorials
+  - name: Application articles
     href: tutorial-list.md
-  - name: Single sign-on tutorials
+  - name: Single sign-on articles
     expanded: true
     items:
     - name: 0 - 9
@@ -66,8 +66,6 @@
         href: adem-tutorial.md
       - name: Adobe Captivate Prime
         href: adobecaptivateprime-tutorial.md
-      - name: Adobe Creative Cloud
-        href: adobe-creative-cloud-tutorial.md
       - name: Adobe Experience Manager
         href: adobeexperiencemanager-tutorial.md
       - name: Adobe Identity Management (SAML)
@@ -290,8 +288,8 @@
         href: aws-clientvpn-tutorial.md
       - name: AWS IAM Identity Center
         href: aws-single-sign-on-tutorial.md
-      - name: Axiad Cloud Connector
-        href: axiad-cloud-connector-tutorial.md
+      - name: Axiad Conductor
+        href: axiad-conductor-tutorial.md
       - name: Axway CSOS
         href: axway-csos-tutorial.md  
     - name: B
@@ -328,8 +326,6 @@
         href: benq-iam-tutorial.md  
       - name: BenSelect
         href: benselect-tutorial.md
-      - name: Bersin
-        href: bersin-tutorial.md
       - name: BetterWorks
         href: betterworks-tutorial.md
       - name: Beyond Identity Admin Console
@@ -570,7 +566,7 @@
         href: clickup-productivity-platform-tutorial.md
       - name: Clockwork Recruiting
         href: clockwork-recruiting-tutorial.md  
-      - name: Cloud Academy
+      - name: Cloud Academy(renamed QA)
         href: cloud-academy-sso-tutorial.md
       - name: Cloud Management Portal for Microsoft Azure
         href: newsignature-tutorial.md
@@ -1045,8 +1041,6 @@
         href: fexa-tutorial.md  
       - name: Field iD
         href: field-id-tutorial.md
-      - name: Fidelity NetBenefits
-        href: fidelitynetbenefits-tutorial.md
       - name: Fidelity PlanViewer
         href: fidelity-planviewer-tutorial.md
       - name: Fieldglass
@@ -1385,8 +1379,6 @@
         href: ihasco-training-tutorial.md
       - name: Illusive Networks
         href: illusive-networks-tutorial.md
-      - name: Illumio SSO
-        href: illumio-sso-tutorial.md
       - name: iLMS
         href: ilms-tutorial.md
       - name: iLOGON_MHA
@@ -1553,8 +1545,6 @@
         href: justlogin-tutorial.md
       - name: Kairos Business
         href: kairos-business-tutorial.md
-      - name: Kallidus
-        href: kallidus-tutorial.md
       - name: KanbanBOX
         href: kanbanbox-tutorial.md
       - name: Kanbanize
@@ -1569,8 +1559,6 @@
         href: kantegassoforfisheyecrucible-tutorial.md
       - name: Kantega SSO for JIRA
         href: kantegassoforjira-tutorial.md
-      - name: Kao Navi
-        href: kao-navi-tutorial.md
       - name: Karlsgate Identity Exchange (KIE) SSO Add-on
         href: karlsgate-identity-exchange-kie-sso-add-on-tutorial.md
       - name: Keepabl
@@ -1611,8 +1599,6 @@
         href: knowledge-work-tutorial.md
       - name: Kofax TotalAgility
         href: kofax-totalagility-tutorial.md
-      - name: Kontiki
-        href: kontiki-tutorial.md
       - name: Korn Ferry 360
         href: korn-ferry-360-tutorial.md
       - name: Korn Ferry ALP
@@ -1695,8 +1681,6 @@
         href: litmus-tutorial.md
       - name: Learnster
         href: learnster-tutorial.md
-      - name: Lines eLibrary Advance
-        href: lines-elibrary-advance-tutorial.md
       - name: LinkedIn Elevate
         href: linkedinelevate-tutorial.md
       - name: LinkedIn Learning
@@ -1952,9 +1936,7 @@
       - name: Nimblex
         href: nimblex-tutorial.md
       - name: Nimbus
-        href: nimbus-tutorial.md 
-      - name: Nintex Promapp
-        href: promapp-tutorial.md
+        href: nimbus-tutorial.md
       - name: Nitro Productivity Suite
         href: nitro-productivity-suite-tutorial.md
       - name: Nodetrax Project
@@ -2439,24 +2421,24 @@
         href: samsung-knox-and-business-services-tutorial.md
       - name: Sansan
         href: sansan-tutorial.md
-      - name: SAP Business ByDesign
-        href: sapbusinessbydesign-tutorial.md
       - name: SAP Analytics Cloud
         href: sapboc-tutorial.md
-      - name: SAP Cloud for Customer
-        href: sap-customer-cloud-tutorial.md
+      - name: SAP Business ByDesign
+        href: sapbusinessbydesign-tutorial.md
       - name: SAP Business Technology Platform
         href: sap-hana-cloud-platform-tutorial.md
+      - name: SAP Cloud for Customer
+        href: sap-customer-cloud-tutorial.md
       - name: SAP Cloud Identity Services
         href: sap-hana-cloud-platform-identity-authentication-tutorial.md
       - name: SAP Fiori
         href: sap-fiori-tutorial.md
       - name: SAP HANA
         href: saphana-tutorial.md
-      - name: Sapient
-        href: sapient-tutorial.md
       - name: SAP NetWeaver
         href: sap-netweaver-tutorial.md
+      - name: Sapient
+        href: sapient-tutorial.md
       - name: SAS Viya SSO
         href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
@@ -2671,8 +2653,6 @@
         href: soloinsight-cloudgate-sso-tutorial.md
       - name: Sonarqube
         href: sonarqube-tutorial.md
-      - name: Soonr Workplace
-        href: soonr-tutorial.md
       - name: SpaceIQ
         href: spaceiq-tutorial.md
       - name: Spacio
@@ -3037,8 +3017,6 @@
         href: vera-suite-tutorial.md
       - name: VergeSense
         href: vergesense-tutorial.md  
-      - name: Veritas Enterprise Vault.cloud SSO
-        href: veritas-tutorial.md
       - name: Verity
         href: verity-tutorial.md
       - name: Verkada Command
@@ -3113,8 +3091,6 @@
         href: web-cargo-air-tutorial.md    
       - name: WebCE
         href: webce-tutorial.md
-      - name: webMethods Integration Suite
-        href: webmethods-integration-cloud-tutorial.md
       - name: WebSphere Liberty
         href: websphere-liberty-tutorial.md
       - name: WebTMA
@@ -3153,8 +3129,6 @@
         href: wiz-sso-tutorial.md
       - name: Wootric
         href: wootric-tutorial.md
-      - name: Work.com
-        href: work-com-tutorial.md
       - name: Workable
         href: workable-tutorial.md
       - name: WorkBoard
@@ -3285,7 +3259,7 @@
         href: zwayam-tutorial.md
       - name: Zylo
         href: zylo-tutorial.md  
-  - name: User provisioning tutorials
+  - name: User provisioning articles
     expanded: true
     items:
     - name: 0 - 9
@@ -3422,7 +3396,7 @@
         href: clearview-trade-provisioning-tutorial.md
       - name: Clebex
         href: clebex-provisioning-tutorial.md
-      - name: Cloud Academy - SSO
+      - name: Cloud Academy(renamed QA)
         href: cloud-academy-sso-provisioning-tutorial.md
       - name: Coda
         href: coda-provisioning-tutorial.md
@@ -3706,6 +3680,8 @@
         href: open-text-directory-services-provisioning-tutorial.md
       - name: Oracle Cloud Infrastructure Console
         href: oracle-cloud-infrastructure-console-provisioning-tutorial.md
+      - name: Oracle E-Business Suite
+        href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Oracle Fusion ERP
         href: oracle-fusion-erp-provisioning-tutorial.md
       - name: Oracle HCM
@@ -3808,6 +3784,8 @@
         href: sas-viya-sso-provisioning-tutorial.md
       - name: SchoolStream ASA
         href: schoolstream-asa-provisioning-tutorial.md
+      - name: SCIM (cloud)
+        href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SCIM (on-premises)
         href: ~/identity/app-provisioning/on-premises-scim-provisioning.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: ScreenSteps
@@ -3842,6 +3820,8 @@
         href: smallstep-ssh-provisioning-tutorial.md
       - name: Snowflake
         href: snowflake-provisioning-tutorial.md
+      - name: SOAP and REST
+        href: ~/identity/app-provisioning/on-premises-web-services-connector.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: Soloinsight-CloudGate SSO
         href: soloinsight-cloudgate-sso-provisioning-tutorial.md
       - name: SoSafe
@@ -3914,7 +3894,7 @@
         href: uber-provisioning-tutorial.md
       - name: UNIFI
         href: unifi-provisioning-tutorial.md
-      - name: uniFlow Online
+      - name: uniFLOW Online
         href: uniflow-online-provisioning-tutorial.md
       - name: Uni-tel A/S
         href: uni-tel-as-provisioning-tutorial.md
@@ -3926,14 +3906,10 @@
         href: v-client-provisioning-tutorial.md
       - name: Velpic
         href: velpic-provisioning-tutorial.md
-      - name: Veritas Enterprise Vault.cloud SSO-SCIM
-        href: veritas-provisioning-tutorial.md
       - name: Visibly
         href: visibly-provisioning-tutorial.md
       - name: Visitly
         href: visitly-provisioning-tutorial.md
-      - name: VMware Identity Service
-        href: vmware-identity-service-provisioning-tutorial.md
       - name: Vonage
         href: vonage-provisioning-tutorial.md
       - name: Web Cargo Air
@@ -3970,6 +3946,8 @@
         href: yardione-provisioning-tutorial.md
       - name: Yellowbox
         href: yellowbox-provisioning-tutorial.md
+      - name: Yokoy SSO
+        href: yokoy-sso-tutorial.md
       - name: Zapier
         href: zapier-provisioning-tutorial.md 
       - name: Zello

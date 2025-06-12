@@ -1,31 +1,30 @@
 ---
-title: Tutorial - Web app accesses storage with managed identities
-description: In this tutorial, you learn how to access Azure Storage from a web app in Azure App Service by using managed identities.
+title: Tutorial - Access Storage from a Web App with managed identities
+description: Learn how to access Azure Storage from a web app in Azure App Service using managed identities. Simplify security and avoid managing secrets.
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom: azureday1, devx-track-azurecli, devx-track-azurepowershell, subject-rbac-steps
-ms.date: 02/07/2024
+ms.date: 05/12/2025
 ms.devlang: csharp
 ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
-services: storage, app-service-web
+ms.custom: azureday1, devx-track-azurecli, devx-track-azurepowershell, subject-rbac-steps, sfi-image-nochange
 #Customer intent: As an application developer, I want to learn how to access Azure Storage for an app by using managed identities.
 ---
 
 # Access Azure Storage from a web app using managed identities
 
-Learn how to access Azure Storage for a web app (not a signed-in user) running on Azure App Service by using managed identities.
+Learn how to access Azure Storage from a web app (not a signed-in user) running on Azure App Service by using managed identities. Simplify security and avoid managing secrets.
 
-:::image type="content" alt-text="Diagram that shows how to access storage." source="./media/multi-service-web-app-access-storage/web-app-access-storage.svg" border="false":::
+:::image type="content" alt-text="Screenshot of a diagram showing how a web app accesses Azure Storage using managed identities." source="./media/multi-service-web-app-access-storage/web-app-access-storage.svg" border="false":::
 
 You want to add access to the Azure data plane (Azure Storage, Azure SQL Database, Azure Key Vault, or other services) from your web app. You could use a shared key, but then you have to worry about operational security of who can create, deploy, and manage the secret. It's also possible that the key could be checked into GitHub, which hackers know how to scan for. A safer way to give your web app access to data is to use [managed identities](~/identity/managed-identities-azure-resources/overview.md).
 
 A managed identity from Microsoft Entra ID allows App Service to access resources through role-based access control (RBAC), without requiring app credentials. After assigning a managed identity to your web app, Azure takes care of the creation and distribution of a certificate. People don't have to worry about managing secrets or app credentials.
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -172,7 +171,7 @@ In the [Azure portal](https://portal.azure.com), go into your storage account to
 
 1. In the **Role** tab, select **Storage Blob Data Contributor** role from the dropdown and then select **Next**.  
 
-1. In the **Members** tab, select **Assign access to** -> **Managed identity** and then select **Members** -> **Select members**.  In the **Select managed identities** window, find and select the managed identity created for your App Service in the **Managed identity** dropdown.  Select the **Select** button.  
+1. In the **Members** tab, select **Assign access to** > **Managed identity** and then select **Members** > **Select members**.  In the **Select managed identities** window, find and select the managed identity created for your App Service in the **Managed identity** dropdown.  Select the **Select** button.  
 
 1. Select **Review and assign** and then select **Review and assign** once more.  
  

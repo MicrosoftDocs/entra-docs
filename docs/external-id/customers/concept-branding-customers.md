@@ -1,17 +1,14 @@
 ---
 title: Customize the company branding
 description: Learn how to customize the sign-in and sign-up experiences for your customers.
- 
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: concept-article
-ms.date:  04/10/2024
+ms.date: 01/07/2025
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As an it admin, I want to know how can I customize my customers' sign-in experiences, including company branding and languages customizations.
 ---
 
@@ -44,7 +41,7 @@ You might have different requirements for the information you want to collect du
 ## Language customization
 
 You can create a personalized sign-in experience for users who sign in using a specific browser language by customizing the branding elements. If you don't make any changes to the elements, the default elements will be displayed.
-In the tenant you can add a custom language to the sign-in experience under **Company Branding** or to a specific user flow under **User flows**. The language customization is available for a list of languages. For more information, see [Customize the language of the authentication experience](how-to-customize-languages-customers.md).
+In the tenant, you can add a custom language to the sign-in experience under **Company Branding** or to a specific user flow under **User flows**. The language customization is available for a list of languages. For more information, see [Customize the language of the authentication experience](how-to-customize-languages-customers.md).
 
 ## Microsoft Graph APIs
 

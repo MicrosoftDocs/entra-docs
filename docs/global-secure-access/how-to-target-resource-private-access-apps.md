@@ -1,14 +1,16 @@
 ---
-title: How to apply Conditional Access policies to Microsoft Entra Private Access apps
+title: How to Apply Conditional Access Policies to Microsoft Entra Private Access Apps
 description: How to apply Conditional Access policies to Microsoft Entra Private Access apps.
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 10/31/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.reviewer: katabish
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Apply Conditional Access policies to Private Access apps
@@ -27,7 +29,7 @@ This article describes how to apply Conditional Access policies to your Quick Ac
 
 ### Known limitations
 
-- At this time, connecting through the Global Secure Access Client is required to acquire Private Access traffic.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Conditional Access and Global Secure Access
 

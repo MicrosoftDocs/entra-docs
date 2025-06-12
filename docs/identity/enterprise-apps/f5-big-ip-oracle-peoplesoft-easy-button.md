@@ -1,18 +1,15 @@
 ---
 title: Tutorial to configure F5 BIG-IP Easy Button for SSO to Oracle PeopleSoft
 description: Implement secure hybrid access with header-based SSO to PeopleSoft using F5 BIG-IP Easy Button Guided Configuration 16.1.
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: tutorial
-
 ms.date: 05/03/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin responsible for securing Oracle PeopleSoft using Microsoft Entra ID, I want to configure F5 BIG-IP Easy Button for SSO to Oracle PeopleSoft, so that I can integrate BIG-IP with Microsoft Entra ID and improve the application's security posture.
 ---
 
@@ -93,7 +90,6 @@ With the Easy Button, admins don't go between Microsoft Entra ID and a BIG-IP to
 
 ## Register the Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it.
 
@@ -102,7 +98,7 @@ Learn more: [Quickstart: Register an application with the Microsoft identity pla
 The following instructions help you create a tenant app registration to authorize Easy Button access to Graph. With these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations > New registration**.
+2. Browse to **Entra ID** > **App registrations** > **New registration**.
 3. Enter an application **Name**.
 4. For **Accounts in this organizational directory only**, specify who uses the application.
 5. Select **Register**. 
@@ -139,7 +135,7 @@ The following instructions help you create a tenant app registration to authoriz
    
 ### Configuration Properties
 
-Use the **Configuration Properties** tab to creat new application configurations and SSO objects. The **Azure Service Account Details** section represents the client you registered in the Microsoft Entra tenant, as an application. Use the settings for BIG-IP OAuth client to register a SAML SP in the tenant, with SSO properties. Easy Button does this action for BIG-IP services published and enabled for SHA.
+Use the **Configuration Properties** tab to create new application configurations and SSO objects. The **Azure Service Account Details** section represents the client you registered in the Microsoft Entra tenant, as an application. Use the settings for BIG-IP OAuth client to register a SAML SP in the tenant, with SSO properties. Easy Button does this action for BIG-IP services published and enabled for SHA.
 
    > [!NOTE]
    > Some of the following settings are global. You can reuse them to publish more applications.
@@ -371,7 +367,7 @@ Assign the iRule to the BIG-IP Virtual Server.
 3.    From the top navigation bar, select **Virtual Server**.
 4.    For **Advanced Settings**, select **On*.
 
-![Screenshot of the Advanced Aettings option on Virtual Server Properties.](./media/f5-big-ip-easy-button-oracle-peoplesoft/enable-advanced-settings.png)
+![Screenshot of the Advanced Settings option on Virtual Server Properties.](./media/f5-big-ip-easy-button-oracle-peoplesoft/enable-advanced-settings.png)
 
 4.    Scroll to the bottom.
 5.    Under **Common**, add the iRule you created.
@@ -469,4 +465,4 @@ Use the **View Variables** link to determine SSO issues, particularly if BIG-IP 
 Learn more:
 
 * Go to devcentral.f5.com for [APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107)
-* Go to techdocs.f5.com for [Session Variables](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html)
+* Go to techdocs.f5.com for [Session Variables](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html)

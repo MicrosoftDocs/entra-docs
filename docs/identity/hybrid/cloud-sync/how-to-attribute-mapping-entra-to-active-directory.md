@@ -3,10 +3,10 @@ title: 'Attribute mapping - Microsoft Entra ID to Active Directory'
 description: This article describes how the attribute mapping and how to configure attributes when provisioning from Microsoft Entra ID to Active Directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

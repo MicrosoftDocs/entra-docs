@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 05/29/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: 
 
 #Customer intent: As an IT admin, I want to fix issues with my Microsoft Entra hybrid joined devices so that I can my users can use this feature.
@@ -24,6 +24,8 @@ This article is applicable only to the following devices:
 - Windows Server 2012 
 - Windows Server 2012 R2 
 
+For important information about the support of older OS versions, see [Supported versions of Windows client](/windows/release-health/supported-versions-windows-client) and [Known issues and notifications for Windows 8.1 and Windows Server 2012 R2](/windows/release-health/status-windows-8.1-and-windows-server-2012-r2).
+
 For Windows 10 or newer and Windows Server 2016, see [Troubleshooting Microsoft Entra hybrid joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md).
 
 This article assumes that you [configured Microsoft Entra hybrid joined devices](hybrid-join-plan.md) to support the following scenarios:
@@ -37,7 +39,7 @@ This article provides you with troubleshooting guidance on how to resolve potent
 - Microsoft Entra hybrid join for downlevel Windows devices works differently than it does in Windows 10 or newer. Many customers don't realize that they need AD FS (for federated domains) or Seamless SSO configured (for managed domains).
 - Seamless SSO doesn't work in private browsing mode on Firefox and Microsoft Edge browsers. It also doesn't work on Internet Explorer if the browser is running in Enhanced Protected mode or if Enhanced Security Configuration is enabled.
 - For customers with federated domains, if the Service Connection Point (SCP) was configured such that it points to the managed domain name (for example, contoso.onmicrosoft.com, instead of contoso.com), then Microsoft Entra hybrid join for downlevel Windows devices doesn't work.
-- The same physical device appears multiple times in Microsoft Entra ID when multiple domain users sign-in the downlevel Microsoft Entra hybrid joined devices. For example, if *jdoe* and *jharnett* sign-in to a device, a separate registration (DeviceID) is created for each of them in the **USER** info tab. 
+- The same physical device appears multiple times in Microsoft Entra ID when multiple domain users sign-in the downlevel Microsoft Entra hybrid joined devices. For example, if *Person1* and *Person2* sign-in to a device, a separate registration (DeviceID) is created for each of them in the **USER** info tab. 
 - You can also get multiple entries for a device on the user info tab because of a reinstallation of the operating system or a manual re-registration.
 - The initial registration / join of devices is configured to perform an attempt at either sign-in or lock / unlock. There could be 5-minute delay triggered by a task scheduler task. 
 - Make sure [KB4284842](https://support.microsoft.com/help/4284842) is installed on Windows 7 SP1 or Windows Server 2008 R2 SP1. This update prevents future authentication failures due to customer's access loss to protected keys after changing password.

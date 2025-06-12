@@ -10,8 +10,7 @@ ms.date: 04/19/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
 ms.reviewer: v-nisba
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to integrate F5 BIG-IP SSL-VPN with Microsoft Entra SSO. I want to provide improved Zero Trust governance, passwordless authentication. My goal is to manage identities and access from a single control plane.
 ---
 
@@ -64,12 +63,11 @@ To improve the tutorial experience, you can learn industry-standard terminology 
 
 ## Add F5 BIG-IP from the Microsoft Entra gallery
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Set up a SAML federation trust between the BIG-IP to allow the Microsoft Entra BIG-IP to hand off the preauthentication and [Conditional Access](~/identity/conditional-access/overview.md) to Microsoft Entra ID, before it grants access to the published VPN service.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**, then select **New application**.
 3. In the gallery, search for *F5* and select **F5 BIG-IP APM Microsoft Entra ID integration**.
 4. Enter a name for the application.
 5. Select **Add** then **Create**. 
@@ -215,8 +213,6 @@ A Network access list provisions the service with IP and DNS settings from the V
 9. Go to the **DNS/Hosts** tab.
 10. For **IPV4 Primary Name Server**: Your environment DNS IP
 11. For **DNS Default Domain Suffix**: The domain suffix for this VPN connection. For example, contoso.com
-
-    ![Screenshot of entries for IPV4 Primary Server Name and DNS Default Domain Suffix.](media/f5-passwordless-vpn/domain-suffix.png)
 
    >[!NOTE]
    >See the F5 article, [Configuring Network Access Resources](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-network-access-11-5-0/2.html) for other settings.

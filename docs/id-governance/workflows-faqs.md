@@ -2,7 +2,7 @@
 title: 'Lifecycle workflows FAQs'
 description: Frequently asked questions about Lifecycle workflows.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: faq

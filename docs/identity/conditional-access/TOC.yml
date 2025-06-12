@@ -31,8 +31,10 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
-  - name: Report-only mode
+  - name: Analyze impact
     href: concept-conditional-access-report-only.md
+  - name: Optimization agent
+    href: agent-optimization.md
   - name: Service dependencies
     href: service-dependencies.md
   - name: Filter for applications
@@ -132,10 +134,8 @@
       href: policy-block-example.md
   - name: Microsoft-managed policies
     href: managed-policies.md
-  - name: Configure report only mode
+  - name: Policy insights and reporting
     href: howto-conditional-access-insights-reporting.md
-  - name: Block legacy authentication
-    href: block-legacy-authentication.md
   - name: Require terms of use
     href: terms-of-use.md
   - name: Sign-in frequency and browser persistence control
@@ -146,6 +146,8 @@
       href: troubleshoot-policy-changes-audit-log.md
     - name: Troubleshoot sign-in problems
       href: troubleshoot-conditional-access.md
+    - name: Troubleshoot Security Copilot
+      href: troubleshoot-security-copilot-policies.md
     - name: Troubleshoot using the What If tool 
       href: troubleshoot-conditional-access-what-if.md
     - name: Troubleshoot continuous access evaluation

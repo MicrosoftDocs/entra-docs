@@ -39,51 +39,52 @@ landingContent:
            url: concept-provisioning-logs.md
 
   # Card
-  - title: Common scenarios for using reports and monitoring
+  - title: Identity logs and reports
     linkLists:
       - linkListType: concept
         links:
-          - text: Manage inactive user accounts in Microsoft Entra ID
-            url: howto-manage-inactive-user-accounts.md
-          - text: Troubleshoot sign-in errors
-            url: howto-troubleshoot-sign-in-errors.md
-          - text: View applied Conditional Access policies
-            url: how-to-view-applied-conditional-access-policies.md
-
-  # Card
-  - title: Identity logs
-    linkLists:
+          - text: Microsoft Entra Health
+            url: concept-microsoft-entra-health.md
+          - text: Usage and Insights report
+            url: concept-usage-insights-report.md
+          - text: Activity log schemas
+            url: concept-activity-log-schemas.md
       - linkListType: how-to-guide
         links:
-          - text: How to access activity logs
+          - text: Access activity logs in the Microsoft Entra admin center
             url: howto-access-activity-logs.md
           - text: Access logs with Microsoft Graph
             url: quickstart-access-log-with-graph-api.md
-          - text: How to download logs
+          - text: Customize and filter logs
+            url: howto-customize-filter-logs.md
+          - text: Download logs
             url: howto-download-logs.md
 
-  # Card
-  - title: Identity reports
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Usage and Insights report
-            url: concept-usage-insights-report.md
-          - text: Conditional Access gap analyzer workbook
-            url: workbook-conditional-access-gap-analyzer.md
-          - text: Risk analysis workbook
-            url: workbook-risk-analysis.md
 
   # Card
-  - title: Identity monitoring
+  - title: Identity logs and Azure Monitor logs
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Microsoft Entra health alerts
-            url: overview-monitoring-health.md
+          - text: Configure diagnostic settings
+            url: howto-configure-diagnostic-settings.md
           - text: Integrate activity logs with Azure Monitor logs
             url: howto-integrate-activity-logs-with-azure-monitor-logs.yml        
           - text: Analyze activity logs in Azure Monitor logs
             url: howto-analyze-activity-logs-log-analytics.md 
           - text: Stream logs to an event hub
             url: howto-stream-logs-to-event-hub.md           
+
+  # Card
+  - title: Common troubleshooting scenarios
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Common user sign-in errors
+            url: howto-troubleshoot-sign-in-errors.md
+          - text: Manage inactive user accounts in Microsoft Entra ID
+            url: howto-manage-inactive-user-accounts.md
+          - text: Troubleshoot sign-in errors
+            url: howto-troubleshoot-sign-in-errors.md
+          - text: View Conditional Access details in the sign-in logs
+            url: how-to-view-applied-conditional-access-policies.md

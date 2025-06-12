@@ -2,12 +2,13 @@
 title: View, add, and remove assignments for an access package in entitlement management - Microsoft Entra
 description: Learn how to view, add, and remove assignments for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
 # View, add, and remove assignments for an access package in entitlement management
@@ -25,12 +26,11 @@ To use entitlement management and assign users to access packages, you must have
 
 ## View who has an assignment
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, Access Package manager, and the Access Package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open an access package.
 
@@ -92,7 +92,7 @@ In some cases, you might want to directly assign specific users to an access pac
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, Access Package manager, and the Access Package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open an access package.
 
@@ -133,7 +133,7 @@ Entitlement management also allows you to directly assign external users to an a
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner, Access Package manager, and the Access Package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open an access package.
 
@@ -220,7 +220,7 @@ In the Microsoft Entra Lifecycle Workflows feature, you can add a [Request user 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) roles.
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. Select an employee onboarding or move workflow.
 
@@ -242,7 +242,7 @@ You can remove an assignment that a user or an administrator had previously requ
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open an access package.
 
@@ -285,7 +285,7 @@ In the Microsoft Entra Lifecycle Workflows feature, you can add a [Remove access
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) roles.
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. Select an employee offboarding workflow.
 

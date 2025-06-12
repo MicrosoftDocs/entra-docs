@@ -1,32 +1,30 @@
 ---
-title: 'Tutorial: Configure Miro for automatic user provisioning with Microsoft Entra ID'
+title: Configure Miro for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Miro.
-
 author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Miro so that I can streamline the user management process and ensure that users have the appropriate access to Miro.
 ---
 
-# Tutorial: Configure Miro for automatic user provisioning
+# Configure Miro for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in Miro and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Miro.
+The objective of this article is to demonstrate the steps to be performed in Miro and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Miro.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Miro tenant](https://miro.com/pricing/)
 * A user account in Miro with Admin permissions.
 
@@ -39,13 +37,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Miro
 
-* It is recommended that a single Microsoft Entra user is assigned to Miro to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Miro to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Miro, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up Miro for provisioning
 
-To retrieve the needed **Secret Token** contact [Miro Support Team](mailto:support@miro.com). This value will be entered in the Secret Token field in the Provisioning tab of your Miro application.
+To retrieve the needed **Secret Token** contact [Miro Support Team](mailto:support@miro.com). This value is entered in the Secret Token field in the Provisioning tab of your Miro application.
 
 ## Add Miro from the gallery
 
@@ -54,7 +52,7 @@ Before configuring Miro for automatic user provisioning with Microsoft Entra ID,
 **To add Miro from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Miro** in the search box.
 1. Select **Miro** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -63,7 +61,7 @@ Before configuring Miro for automatic user provisioning with Microsoft Entra ID,
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Miro based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Miro, following the instructions provided in the [Miro Single sign-on tutorial](./miro-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for Miro, following the instructions provided in the [Miro Single sign-on  article](./miro-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 > [!NOTE]
 > To learn more about Miro's SCIM endpoint, refer [this](https://help.miro.com/hc/en-us/articles/360036777814).
@@ -73,7 +71,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Miro in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -89,7 +87,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input `https://miro.com/api/v1/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Miro. If the connection fails, ensure your Miro account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input `https://miro.com/api/v1/scim` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Miro. If the connection fails, ensure your Miro account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -97,7 +95,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-1. Click **Save**.
+1. Select **Save**.
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Miro**.
 
@@ -107,11 +105,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Miro**.
 
-1. Review the group attributes that are synchronized from Microsoft Entra ID to Miro in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Miro for update operations. Select the **Save** button to commit any changes. Uncheck **Create** and **Delete** under **Target Object Actions** as Miro SCIM API does not support creating and deleting groups.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Miro in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Miro for update operations. Select the **Save** button to commit any changes. Uncheck **Create** and **Delete** under **Target Object Actions** as Miro SCIM API doesn't support creating and deleting groups.
 
 	![Miro Group Attributes](media/miro-provisioning-tutorial/groupattributes.png)
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Miro, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -121,7 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-1. When you are ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -131,11 +129,11 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 
 ## Connector limitations
 
-* Miro's SCIM endpoint does not allow **Create** and **Delete** operations on groups. It only supports group **Update** operation.
+* Miro's SCIM endpoint doesn't allow **Create** and **Delete** operations on groups. It only supports group **Update** operation.
 
 ## Troubleshooting Tips
 
-* If experiencing errors with group creation, then it is required to  disable it by unchecking **Create** and **Delete** under **Target Object Actions** as Miro SCIM API does not support creating and deleting groups.
+* If experiencing errors with group creation, then it's required to  disable it by unchecking **Create** and **Delete** under **Target Object Actions** as Miro SCIM API doesn't support creating and deleting groups.
 
 	![Miro Group Tips](media/miro-provisioning-tutorial/groupattributes.png)
 
@@ -144,6 +142,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

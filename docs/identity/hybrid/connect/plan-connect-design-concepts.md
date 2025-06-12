@@ -1,20 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Design concepts'
 description: This topic details certain implementation design areas
-
 author: billmath
-manager: amycolannino
-
+manager: femila
 ms.assetid: 4114a6c0-f96a-493c-be74-1153666ce6c9
 ms.service: entra-id
-ms.custom: azure-ad-connect
+ms.custom: azure-ad-connect, sfi-image-nochange
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
 ---
 # Microsoft Entra Connect: Design concepts
 The purpose of this document is to describe areas that must be considered while configuring Microsoft Entra Connect. This document is a deep dive on certain areas and these concepts are briefly described in other documents as well.
@@ -22,7 +18,7 @@ The purpose of this document is to describe areas that must be considered while 
 ## sourceAnchor
 The sourceAnchor attribute is defined as *an attribute immutable during the lifetime of an object*. It uniquely identifies an object as being the same object on-premises and in Microsoft Entra ID. The attribute is also called **immutableId** and the two names are used interchangeably.
 
-The word immutable, that is "can't be changed", is important to this document. Since this attribute’s value can't be changed after it has been set, it's important to pick a design that supports your scenario.
+The word immutable, that is "can't be changed", is important to this document. Since this attribute’s value can't be changed after it's set, it's important to pick a design that supports your scenario.
 
 The attribute is used for the following scenarios:
 
@@ -57,13 +53,13 @@ If you move users between forests and domains, then you must find an attribute t
 Another solution is to pick an existing attribute you know doesn't change. Commonly used attributes include **employeeID**. If you consider an attribute that contains letters, make sure there's no chance that the case (upper case vs. lower case) can change for the attribute's value. Bad attributes that shouldn't be used include those attributes with the name of the user. In a marriage or divorce, the name is expected to change, which isn't allowed for this attribute. This is also one reason why attributes such as **userPrincipalName**, **mail**, and **targetAddress** aren't even possible to select in the Microsoft Entra Connect installation wizard. Those attributes also contain the "\@" character, which isn't allowed in the sourceAnchor.
 
 ### Changing the sourceAnchor attribute
-The sourceAnchor attribute value can't be changed after the object has been created in Microsoft Entra ID and the identity is synchronized.
+The sourceAnchor attribute value can't be changed after the object is created in Microsoft Entra ID and the identity is synchronized.
 
 For this reason, the following restrictions apply to Microsoft Entra Connect:
 
 * The sourceAnchor attribute can only be set during initial installation. If you rerun the installation wizard, this option is read-only. If you need to change this setting, then you must uninstall and reinstall.
 * If you install another Microsoft Entra Connect server, then you must select the same sourceAnchor attribute as previously used. If you've earlier been using DirSync and move to Microsoft Entra Connect, then you must use **objectGUID** since that is the attribute used by DirSync.
-* If the value for sourceAnchor is changed after the object has been exported to Microsoft Entra ID, then Microsoft Entra Connect Sync throws an error and doesn't allow any more changes on that object before the issue has been fixed and the sourceAnchor is changed back in the source directory.
+* If the value for sourceAnchor is changed after the object is exported to Microsoft Entra ID, then Microsoft Entra Connect Sync throws an error and doesn't allow any more changes on that object before the issue is fixed and the sourceAnchor is changed back in the source directory.
 
 ## Using ms-DS-ConsistencyGuid as sourceAnchor
 By default, Microsoft Entra Connect (version 1.1.486.0 and older) uses objectGUID as the sourceAnchor attribute. ObjectGUID is system-generated. You can't specify its value when creating on-premises AD objects. As explained in section [sourceAnchor](#sourceanchor), there are scenarios where you need to specify the sourceAnchor value. If the scenarios are applicable to you, you must use a configurable AD attribute (for example, ms-DS-ConsistencyGuid) as the sourceAnchor attribute.
@@ -100,9 +96,9 @@ When installing Microsoft Entra Connect with Express mode, the Microsoft Entra C
 
 * In which case, the wizard falls back to using objectGUID as the sourceAnchor attribute.
 
-* Once the sourceAnchor attribute is decided, the wizard stores the information in your Microsoft Entra tenant. The information will be used by future installation of Microsoft Entra Connect.
+* Once the sourceAnchor attribute is decided, the wizard stores the information in your Microsoft Entra tenant. The information is used by future installation of Microsoft Entra Connect.
 
-Once Express installation completes, the wizard informs you which attribute has been picked as the Source Anchor attribute.
+Once Express installation completes, the wizard informs you which attribute is picked as the Source Anchor attribute.
 
 ![Wizard informs AD attribute picked for sourceAnchor](./media/plan-connect-design-concepts/consistencyGuid-01.png)
 
@@ -113,7 +109,7 @@ When installing Microsoft Entra Connect with Custom mode, the Microsoft Entra Co
 
 | Setting | Description |
 | --- | --- |
-| Let Microsoft Entra ID manage the source anchor for me | Select this option if you want Microsoft Entra ID to pick the attribute for you. If you select this option, Microsoft Entra Connect wizard applies the same [sourceAnchor attribute selection logic used during Express installation](#express-installation). Similar to Express installation, the wizard informs you which attribute has been picked as the Source Anchor attribute after Custom installation completes. |
+| Let Microsoft Entra ID manage the source anchor for me | Select this option if you want Microsoft Entra ID to pick the attribute for you. If you select this option, Microsoft Entra Connect wizard applies the same [sourceAnchor attribute selection logic used during Express installation](#express-installation). Similar to Express installation, the wizard informs you which attribute is chosen as the Source Anchor attribute after Custom installation completes. |
 | A specific attribute | Select this option if you wish to specify an existing AD attribute as the sourceAnchor attribute. |
 
 ### How to enable the ConsistencyGuid feature - Existing deployment
@@ -124,19 +120,19 @@ If you've an existing Microsoft Entra Connect deployment which is using objectGU
 
 To switch from objectGUID to ConsistencyGuid as the Source Anchor attribute:
 
-1. Start the Microsoft Entra Connect wizard and click **Configure** to go to the Tasks screen.
+1. Start the Microsoft Entra Connect wizard and select **Configure** to go to the Tasks screen.
 
-2. Select the **Configure Source Anchor** task option and click **Next**.
+2. Select the **Configure Source Anchor** task option and select **Next**.
 
    ![Enable ConsistencyGuid for existing deployment - step 2](./media/plan-connect-design-concepts/consistencyguidexistingdeployment01.png)
 
-3. Enter your Microsoft Entra Administrator credentials and click **Next**.
+3. Enter your Microsoft Entra Administrator credentials and select **Next**.
 
-4. Microsoft Entra Connect wizard analyzes the state of the ms-DS-ConsistencyGuid attribute in your on-premises Active Directory. If the attribute isn't configured on any object in the directory, Microsoft Entra Connect concludes that no other application is currently using the attribute and is safe to use it as the Source Anchor attribute. Click **Next** to continue.
+4. Microsoft Entra Connect wizard analyzes the state of the ms-DS-ConsistencyGuid attribute in your on-premises Active Directory. If the attribute isn't configured on any object in the directory, Microsoft Entra Connect concludes that no other application is currently using the attribute and is safe to use it as the Source Anchor attribute. Select **Next** to continue.
 
    ![Enable ConsistencyGuid for existing deployment - step 4](./media/plan-connect-design-concepts/consistencyguidexistingdeployment02.png)
 
-5. In the **Ready to Configure** screen, click **Configure** to make the configuration change.
+5. In the **Ready to Configure** screen, select **Configure** to make the configuration change.
 
    ![Enable ConsistencyGuid for existing deployment - step 5](./media/plan-connect-design-concepts/consistencyguidexistingdeployment03.png)
 
@@ -144,7 +140,7 @@ To switch from objectGUID to ConsistencyGuid as the Source Anchor attribute:
 
    ![Enable ConsistencyGuid for existing deployment - step 6](./media/plan-connect-design-concepts/consistencyguidexistingdeployment04.png)
 
-During the analysis (step 4), if the attribute is configured on one or more objects in the directory, the wizard concludes the attribute is being used by another application and returns an error as illustrated in the diagram below. This error can also occur if you've previously enabled the ConsistencyGuid feature on your primary Microsoft Entra Connect server and you're trying to do the same on your staging server.
+During the analysis (step 4), if the attribute is configured on one or more objects in the directory, the wizard concludes the attribute is being used by another application and returns an error as illustrated in the following diagram. This error can also occur if you've enabled the ConsistencyGuid feature on your primary Microsoft Entra Connect server and you're trying to do the same on your staging server.
 
 ![Enable ConsistencyGuid for existing deployment - error](./media/plan-connect-design-concepts/consistencyguidexistingdeploymenterror.png)
 
@@ -162,7 +158,7 @@ If you're managing AD FS outside of Microsoft Entra Connect or you're using thir
 ![Third-party federation configuration](./media/plan-connect-design-concepts/consistencyGuid-03.png)
 
 ### Adding new directories to existing deployment
-Suppose you've deployed Microsoft Entra Connect with the ConsistencyGuid feature enabled, and now you would like to add another directory to the deployment. When you try to add the directory, Microsoft Entra Connect wizard checks the state of the ms-DS-ConsistencyGuid attribute in the directory. If the attribute is configured on one or more objects in the directory, the wizard concludes the attribute is being used by other applications and returns an error as illustrated in the diagram below. If you're certain that the attribute isn't used by existing applications, you can suppress the error by restarting the Microsoft Entra Connect wizard with the **/SkipLdapSearch** switch specified as described above or you need to contact Support for more information.
+Suppose you've deployed Microsoft Entra Connect with the ConsistencyGuid feature enabled, and now you would like to add another directory to the deployment. When you try to add the directory, Microsoft Entra Connect wizard checks the state of the ms-DS-ConsistencyGuid attribute in the directory. If the attribute is configured on one or more objects in the directory, the wizard concludes the attribute is being used by other applications and returns an error as illustrated in the diagram below. If you're certain that the attribute isn't used by existing applications, you can suppress the error by restarting the Microsoft Entra Connect wizard with the **/SkipLdapSearch** switch specified as previously described or you need to contact Support for more information.
 
 ![Adding new directories to existing deployment](./media/plan-connect-design-concepts/consistencyGuid-04.png)
 
@@ -183,18 +179,18 @@ In express settings, the assumed choice for the attribute is userPrincipalName. 
 >It's recommended as a best practice that the UPN prefix contains more than one character.
 
 ### Custom domain state and UPN
-It is important to ensure that there's a verified domain for the UPN suffix.
+It's important to ensure that there's a verified domain for the UPN suffix.
 
 John is a user in contoso.com. You want John to use the on-premises UPN john\@contoso.com to sign in to Microsoft Entra ID after you've synced users to your Microsoft Entra directory contoso.onmicrosoft.com. To do so, you need to add and verify contoso.com as a custom domain in Microsoft Entra ID before you can start syncing the users. If the UPN suffix of John, for example contoso.com, doesn't match a verified domain in Microsoft Entra ID, then Microsoft Entra ID replaces the UPN suffix with contoso.onmicrosoft.com.
 
 <a name='non-routable-on-premises-domains-and-upn-for-azure-ad'></a>
 
-### Non-routable on-premises domains and UPN for Microsoft Entra ID
-Some organizations have non-routable domains, like contoso.local, or simple single label domains like contoso. You aren't able to verify a non-routable domain in Microsoft Entra ID. Microsoft Entra Connect can sync to only a verified domain in Microsoft Entra ID. When you create a Microsoft Entra directory, it creates a routable domain that becomes default domain for your Microsoft Entra ID for example, contoso.onmicrosoft.com. Therefore, it becomes necessary to verify any other routable domain in such a scenario in case you don't want to sync to the default onmicrosoft.com domain.
+### Nonroutable on-premises domains and UPN for Microsoft Entra ID
+Some organizations have nonroutable domains, like contoso.local, or simple single label domains like contoso. You aren't able to verify a nonroutable domain in Microsoft Entra ID. Microsoft Entra Connect can sync to only a verified domain in Microsoft Entra ID. When you create a Microsoft Entra directory, it creates a routable domain that becomes default domain for your Microsoft Entra ID for example, contoso.onmicrosoft.com. Therefore, it becomes necessary to verify any other routable domain in such a scenario in case you don't want to sync to the default onmicrosoft.com domain.
 
 Read [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml) for more info on adding and verifying domains.
 
-Microsoft Entra Connect detects if you're running in a non-routable domain environment and would appropriately warn you from going ahead with express settings. If you're operating in a non-routable domain, then it's likely that the UPN, of the users, have non-routable suffixes too. For example, if you're running under contoso.local, Microsoft Entra Connect suggests you to use custom settings rather than using express settings. Using custom settings, you're able to specify the attribute that should be used as UPN to sign in to Microsoft Entra ID after the users are synced to Microsoft Entra ID.
+Microsoft Entra Connect detects if you're running in a nonroutable domain environment and would appropriately warn you from going ahead with express settings. If you're operating in a nonroutable domain, then it's likely that the UPN, of the users, have nonroutable suffixes too. For example, if you're running under contoso.local, Microsoft Entra Connect suggests custom settings rather than using express settings. Using custom settings, you're able to specify the attribute that should be used as UPN to sign in to Microsoft Entra ID after the users are synced to Microsoft Entra ID.
 
 ## Next steps
 Learn more about [Integrating your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).

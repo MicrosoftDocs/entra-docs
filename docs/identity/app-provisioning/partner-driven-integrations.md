@@ -2,13 +2,13 @@
 title: 'Use partner driven integrations to provision accounts into all your applications'
 description: Use partner driven integrations to provision accounts into all your applications.
 
-author: billmath
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.topic: overview
-ms.date: 02/13/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: kenwith
 ms.collection: M365-identity-device-management
 ---
 # Partner-driven provisioning integrations
@@ -24,7 +24,7 @@ If your line-of-business application supports the [SCIM](https://aka.ms/scimover
    [![Diagram showing implementation of a SCIM compliant API for your application.](media/partner-driven-integrations/scim-compliant-api-1.png)](media/partner-driven-integrations/scim-compliant-api-1.png#lightbox)
 
 **Option 3 - Use Microsoft Graph:**
-Many new applications use Microsoft Graph to retrieve users, groups and other resources from Microsoft Entra ID. You can learn more about what scenarios to use [SCIM and Graph](scim-graph-scenarios.md) in. 
+Many new applications use Microsoft Graph to retrieve users, groups, and other resources from Microsoft Entra ID. You can learn more about what scenarios to use [SCIM and Graph](scim-graph-scenarios.md) in. 
 
 **Option 4 - Use partner-driven connectors:**
 In cases where an application doesn't support SCIM, partners have built [custom ECMA connectors](on-premises-custom-connector.md) and SCIM gateways to integrate Microsoft Entra ID with numerous applications. **This document serves as a place for partners to attest to integrations that are compatible with Microsoft Entra ID, and for customers to discover these partner-driven integrations.** Custom ECMA connectors and SCIM gateways are built, maintained, and owned by the third-party vendor. 
@@ -36,14 +36,15 @@ In cases where an application doesn't support SCIM, partners have built [custom 
 [!INCLUDE [Microsoft Entra ID application integration partners](../../includes/application-integration-partners.md)]
 
 ## How-to add partner-driven integrations to this document
-If you have built a SCIM Gateway and would like to add it to this list, follow the steps below. 
+If you've built a SCIM Gateway and would like to add it to this list, follow these steps: 
 
 1. Review the Microsoft Entra SCIM [documentation](use-scim-to-provision-users-and-groups.md) to understand the Microsoft Entra SCIM implementation.
 1. Test compatibility between the Microsoft Entra SCIM client and your SCIM gateway.
-1. Click the pencil at the top of this document to edit the article
-1. Once you're redirected to GitHub, click the pencil at the top of the article to start making changes
+1. Navigate to the following [github repository](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/includes/application-integration-partners.md).
+1. Select the pencil at the top of the article to start making changes
 1. Make changes in the article using the Markdown language and create a pull request. Make sure to provide a description for the pull request.  
-1. An admin of the repository will review and merge your changes so that others can view them.
+1. An admin of the repository reviews and merges your changes so that others can view them.
+
 
 ## Guidelines
 * Add any new partners in alphabetical order.

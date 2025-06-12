@@ -1,14 +1,11 @@
 ---
 title: Migrate from MFA Server to Microsoft Entra multifactor authentication
 description: Step-by-step guidance to migrate from MFA Server on-premises to Microsoft Entra multifactor authentication
-
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, sfi-ga-nochange
 ms.topic: how-to
-ms.date: 11/15/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: Gargi-Sinha
 manager: martinco
@@ -44,7 +41,7 @@ If you can't move your user authentication, see the step-by-step guidance for [M
   - Upgrade to AD FS for Windows Server 2019, Farm behavior level (FBL) 4. This upgrade enables you to select authentication provider based on group membership for a more seamless user transition. While it's possible to migrate while on AD FS for Windows Server 2016 FBL 3, it isn't as seamless for users. During the migration, users are prompted to select an authentication provider (MFA Server or Microsoft Entra multifactor authentication) until the migration is complete. 
 - Permissions
   - Enterprise Administrator role in Active Directory to configure AD FS farm for Microsoft Entra multifactor authentication
-  - [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+  - A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature. 
 
 
 ## Considerations for all migration paths

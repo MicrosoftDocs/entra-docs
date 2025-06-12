@@ -4,11 +4,10 @@ description: How to update your existing Node.js application to use the Microsof
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-adal-ref, devx-track-js
 ms.date: 04/26/2021
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to learn how to change the code in my Node.js application from using ADAL as its authentication library to MSAL.
 ---
 
@@ -52,7 +51,7 @@ In ADAL Node, you initialize an `AuthenticationContext` object, which then expos
 var adal = require('adal-node');
 
 var authorityURI = "https://login.microsoftonline.com/common";
-var authenticationContex = new adal.AuthenticationContext(authorityURI);
+var authenticationContext = new adal.AuthenticationContext(authorityURI);
 ```
 
 In MSAL Node, you have two alternatives instead: If you're building a mobile app or a desktop app, you instantiate a `PublicClientApplication` object. The constructor expects a [configuration object](#configure-msal) that contains the `clientId` parameter at the very least. MSAL defaults the authority URI to `https://login.microsoftonline.com/common` if you don't specify it.

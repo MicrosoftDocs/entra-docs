@@ -455,7 +455,7 @@ To check and update signing keys with PowerShell, you need the [`MSIdentityTools
 1. Get the latest signing key (get the tenant ID from the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview)):
 
     ```powershell
-    Get-MsIdSigningKeyThumbprint -Tenant <tenandId> -Latest
+    Get-MsIdSigningKeyThumbprint -Tenant <tenantId> -Latest
     ```
 
 1. Compare this key against the key your application is currently hardcoded or configured to use.

@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 12/19/2023
+ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: vranganathan
 ms.collection: M365-identity-device-management
@@ -26,7 +26,7 @@ With tenant restrictions, organizations can specify the list of tenants that use
 
 This article focuses on tenant restrictions for Microsoft 365, but the feature protects all apps that send the user to Microsoft Entra ID for single sign-on. If you use SaaS apps with a different Microsoft Entra tenant from the tenant used by your Microsoft 365, make sure that all required tenants are permitted. (For example, in B2B collaboration scenarios). For more information about SaaS cloud apps, see the [Active Directory Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps).
 
-The tenant restrictions feature also supports [blocking the use of all Microsoft consumer applications](#blocking-consumer-applications) (MSA apps) such as OneDrive, Hotmail, and Xbox.com.  This functionality uses a separate header to the `login.live.com` endpoint, and is detailed at the end of this article.
+The tenant restrictions feature also supports [blocking the use of all Microsoft consumer applications](#blocking-consumer-applications) (MSA apps) such as OneDrive, Hotmail, and Xbox.com. This functionality uses a separate header to the `login.live.com` endpoint, and is detailed at the end of this article.
 
 ## How it works
 
@@ -86,10 +86,10 @@ The headers should include the following elements:
 To find your directory ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Identity** > **Overview** > **Overview**.
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 1. Copy the **Tenant ID** value.
 
-To validate that a directory ID or domain name refer to the same tenant, use that ID or domain in place of \<tenant\> in this URL: `https://login.microsoftonline.com/<tenant>/v2.0/.well-known/openid-configuration`.  If the results with the domain and the ID are the same, they refer to the same tenant.
+To validate that a directory ID or domain name refer to the same tenant, use that ID or domain in place of \<tenant\> in this URL: `https://login.microsoftonline.com/<tenant>/v2.0/.well-known/openid-configuration`. If the results with the domain and the ID are the same, they refer to the same tenant.
 
 To prevent users from inserting their own HTTP header with nonapproved tenants, the proxy needs to replace the *Restrict-Access-To-Tenants* header if it's already present in the incoming request.
 
@@ -110,7 +110,7 @@ An example user is on the Contoso network, but is trying to access the Fabrikam 
 While configuration of tenant restrictions is done on the corporate proxy infrastructure, admins can access the tenant restrictions reports in the Microsoft Entra admin center directly. To view the reports:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Reader](~/identity/role-based-access-control/permissions-reference.md#global-reader).
-1. Browse to **Identity** > **Overview** > **Tenant restrictions**.
+1. Browse to **Entra ID** > **Overview** > **Tenant restrictions**.
 
 The admin for the tenant specified as the Restricted-Access-Context tenant can use this report to see sign-ins blocked because of the tenant restrictions policy, including the identity used and the target directory ID. Sign-ins are included if the tenant setting the restriction is either the user tenant or resource tenant for the sign-in.
 

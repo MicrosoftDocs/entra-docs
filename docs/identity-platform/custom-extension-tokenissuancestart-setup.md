@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 03/14/2024
+ms.date: 05/04/2025
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
@@ -19,6 +19,11 @@ zone_pivot_groups: custom-auth-extension
 ::: zone pivot="azure-portal"
 
 This article describes how to create a REST API with a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener) using Azure Functions in the Azure portal. You create an Azure Function app and an HTTP trigger function which can return extra claims for your token. 
+
+
+This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+
+> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
 
 ## Prerequisites
 
@@ -56,19 +61,22 @@ In the Azure portal, create an Azure Function app and its associated resource, b
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. From the Azure portal menu or the **Home** page, select **Create a resource**.
 1. Search for and select **Function App** and select **Create**.
-1. On the **Basics** page, create a function app using the settings as specified in the following table:
+1. On the **Create Function App** page, select **Consumption**, then **Select**.
+1. On the **Create Function App (Consumption)** page, in the **Basics** tab, create a function app using the settings as specified in the following table:
 
     | Setting      | Suggested value  | Description |
     | ------------ | ---------------- | ----------- |
     | **Subscription** | Your subscription | The subscription under which the new function app will be created. |
     | **[Resource Group](/azure/azure-resource-manager/management/overview)** |  *myResourceGroup* | Select and existing resource group, or name for the new one in which you'll create your function app. |
     | **Function App name** | Globally unique name | A name that identifies the new function app. Valid characters are `a-z` (case insensitive), `0-9`, and `-`.  |
-    |**Deploy code or container image**| Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
+    | **Deploy code or container image** | Code | Option to publish code files or a Docker container. For this tutorial, select **Code**. |
     | **Runtime stack** | .NET | Your preferred programming language. For this tutorial, select **.NET**.  |
-    |**Version**| 6 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal, which is recommended for this guide |
-    |**Region**| Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
+    | **Version** | 8 (LTS) In-process | Version of the .NET runtime. In-process signifies that you can create and modify functions in the portal, which is recommended for this guide |
+    | **Region** | Preferred region | Select a [region](https://azure.microsoft.com/regions/) that's near you or near other services that your functions can access. |
     | **Operating System** | Windows | The operating system is preselected for you based on your runtime stack selection. |
-    | **Plan type** | Consumption (Serverless) | Hosting plan that defines how resources are allocated to your function app.  |
+
+
+    :::image type="content" border="false"source="media/custom-extension-tokenissuancestart-setup/create-azure-function.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-tokenissuancestart-setup/create-azure-function.png":::
 
 1. Select **Review + create** to review the app configuration selections and then select **Create**. Deployment takes a few minutes.
 1. Once deployed, select **Go to resource** to view your new function app.
@@ -78,11 +86,9 @@ In the Azure portal, create an Azure Function app and its associated resource, b
 After the Azure Function app is created, create an HTTP trigger function within the app. The HTTP trigger lets you invoke a function with an HTTP request and is referenced by your Microsoft Entra custom authentication extension.
 
 1. Within the **Overview** page of your function app, select the **Functions** pane and select **Create function** under **Create in Azure portal**.
-1. In the **Create Function** window, leave the **Development environment** property as **Develop in portal**. Under **Template**, select **HTTP trigger**.
-1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **New Function** property.
-1. For the **Authorization level**, select **Function**.
+1. In the **Create Function** window, select the **HTTP trigger** function type, and select **Next**. 
+1. Under **Template details**, enter *CustomAuthenticationExtensionsAPI* for the **Function name Function** property, and select **Function** as the **Authorization level**.
 1. Select **Create**.
-    :::image type="content" border="false"source="media/custom-extension-tokenissuancestart-configuration/create-http-trigger-function.png" alt-text="Screenshot that shows how to choose the development environment, and template." lightbox="media/custom-extension-tokenissuancestart-configuration/create-http-trigger-function.png":::
 
 ## Edit the function
 
@@ -178,7 +184,7 @@ To create an Azure Function app, follow these steps:
 1. Search for and select **Azure Functions**, then select **Next**.
 1. Give the project a name, such as *AuthEventsTrigger*. It's a good idea to match the solution name with the project name.
 1. Select a location for the project. Select **Next**.
-1. Select **.NET 6.0 (Long Term Support)** as the target framework. 
+1. Select **.NET 8.0 (Long Term Support)** as the target framework. 
 1. Select *Http trigger* as the **Function** type, and that **Authorization level** is set to *Function*. Select **Create**.
 1. In the **Solution Explorer**, rename the *Function1.cs* file to *AuthEventsTrigger.cs*, and accept the rename change suggestion.
 

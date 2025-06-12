@@ -1,16 +1,14 @@
 ---
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 03/15/2024
+ms.date: 12/19/2024
 ms.author: barclayn
-ms.custom: pim
-
+ms.custom: pim, sfi-ga-nochange
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
 
@@ -26,9 +24,9 @@ To open the settings for a Microsoft Entra role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Roles**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Roles**.
 
-1. On this page you see a list of Microsoft Entra roles available in the tenant, including built-in and custom roles.
+1. On this page, you see a list of Microsoft Entra roles available in the tenant, including built-in and custom roles.
         :::image type="content" source="media/pim-how-to-change-default-settings/role-settings.png" alt-text="Screenshot that shows the list of Microsoft Entra roles available in the tenant, including built-in and custom roles." lightbox="media/pim-how-to-change-default-settings/role-settings.png":::
 
 1. Select the role whose settings you want to configure.
@@ -112,7 +110,7 @@ You can require users to enter a support ticket number when they activate the el
 
 ### Require approval to activate
 
-You can require approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, you must select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, Privileged Role Administrator/Global Administrators will become the default approvers.
+You can require approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, you must select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, Privileged Role Administrator/Global Administrators become the default approvers.
 
 To learn more about approvals, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](./pim-approval-workflow.md).
 
@@ -134,7 +132,7 @@ You can also choose one of these active assignment duration options.
 | Allow permanent active assignment | Resource administrators can assign permanent active assignments. |
 | Expire active assignment after | Resource administrators can require that all active assignments have a specified start and end date. |
 
-All assignments that have a specified end date can be renewed by Global Administrators and Privileged Role Administrators. Also, users can initiate self-service requests to [extend or renew role assignments](pim-resource-roles-renew-extend.md).
+Global Administrators and Privileged Role Administrators can renew all assignments that have a specified end date. Also, users can initiate self-service requests to [extend or renew role assignments](pim-resource-roles-renew-extend.md).
 
 ### Require multifactor authentication on active assignment
 

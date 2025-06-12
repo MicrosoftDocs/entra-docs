@@ -2,13 +2,15 @@
 title: Work with existing on-premises proxy servers and Microsoft Entra ID
 description: Covers how to work with existing on-premises proxy servers with Microsoft Entra ID.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/23/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Work with existing on-premises proxy servers
@@ -63,7 +65,7 @@ You can configure the connector traffic to go through the outbound proxy, as sho
 As a result of having only outbound traffic, there's no need to configure inbound access through your firewalls.
 
 > [!NOTE]
-> Application proxy does not support authentication to other proxies. The connector/updater network service accounts should be able to connect to the proxy without being challenged for authentication.
+> Application proxy doesn't support authentication to other proxies. The connector/updater network service accounts should be able to connect to the proxy without being challenged for authentication.
 
 ### Step 1: Configure the connector and related services to go through the outbound proxy
 
@@ -165,7 +167,7 @@ The best way to identify and troubleshoot connector connectivity issues is to ta
 You can use the monitoring tool of your choice. For the purposes of this article, we used Microsoft Message Analyzer.
 
 > [!NOTE]
-> [Microsoft Message Analyzer (MMA) was retired](/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) and its download packages removed from microsoft.com sites on November 25 2019.  There is currently no Microsoft replacement for Microsoft Message Analyzer in development at this time.  For similar functionality, please consider using a 3rd party network protocol analyzer tool such as Wireshark.
+> [Microsoft Message Analyzer (MMA) was retired](/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) and its download packages removed from microsoft.com sites on November 25 2019. There's currently no Microsoft replacement for Microsoft Message Analyzer in development at this time. For similar functionality, consider using a non-Microsoft partner network protocol analyzer tool such as Wireshark.
 
 The following examples are specific to Message Analyzer, but the principles can be applied to any analysis tool.
 
@@ -204,4 +206,4 @@ If you see other response codes, such as 407 or 502, that means that the proxy i
 ## Next steps
 
 - [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
-- [Visit the Microsoft Question and Answer (Q&A) page for Microsoft Entra ID](/answers/tags/455/entra-id)
+- [Visit the Microsoft Question and Answer page for Microsoft Entra ID](/answers/tags/455/entra-id)

@@ -1,6 +1,6 @@
 ---
-title: 'Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID'
-description: This article provides the stages of the migration process and what types of applications to migrate.
+title: Understand the stages of migrating application authentication from AD FS to Microsoft Entra ID
+description: Migrating application authentication from AD FS to Microsoft Entra ID in four stages. Plan your move, test configurations, and secure apps.
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 12/19/2023
+ms.date: 04/29/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: not-enterprise-apps
@@ -24,7 +24,7 @@ Microsoft Entra ID offers a universal identity platform that provides your peopl
 
 Your applications might use modern or legacy protocols for authentication. When you plan your migration to Microsoft Entra ID, consider migrating the apps that use modern authentication protocols (such as SAML and OpenID Connect) first.
 
-These apps can be reconfigured to authenticate with Microsoft Entra ID either via a built-in connector from the Azure App Gallery, or by registering the custom application in Microsoft Entra ID.
+These apps can be reconfigured to authenticate with Microsoft Entra ID either via a built-in connector from the Azure App Gallery. They can also be reconfigured by registering the custom application in Microsoft Entra ID.
 
 Apps that use older protocols can be integrated using [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md) or any of our [Secure Hybrid Access (SHA) partners](secure-hybrid-access-integrations.md).
 
@@ -75,6 +75,6 @@ Your line-of-business apps are apps that your organization developed or apps tha
 
 Line-of-business apps that use OAuth 2.0, OpenID Connect, or WS-Federation can be integrated with Microsoft Entra ID as [app registrations](~/identity-platform/quickstart-register-app.md). Integrate custom apps that use SAML 2.0 or WS-Federation as [non-gallery applications](add-application-portal.md) on the enterprise applications page in the [Microsoft Entra admin center](https://entra.microsoft.com/#home).
 
-## Next steps
+## Related content
 
-- [Configure SAML-based single sign-on](migrate-adfs-saml-based-sso.md).
+[Configure SAML-based single sign-on](migrate-adfs-saml-based-sso.md).

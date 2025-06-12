@@ -1,15 +1,14 @@
 ---
 title: Microsoft identity platform and OAuth 2.0 authorization code flow
-description: Protocol reference for the Microsoft identity platform's implementation of the OAuth 2.0 authorization code grant 
+description: Protocol reference for the Microsoft identity platform's implementation of the OAuth 2.0 authorization code grant
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
-ms.date: 04/08/2024
-ms.reviewer: ludwignick
+ms.date: 05/12/2025
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.reviewer: jmprieur, ludwignick
+ms.topic: reference
+ms.custom: sfi-ga-nochange, sfi-ropc-nochange
 #Customer intent: As a developer building a web application, I want to implement the OAuth 2.0 authorization code flow with PKCE and OpenID Connect, so that I can obtain authorized access to protected resources like web APIs and authenticate users in my application.
 ---
 
@@ -39,7 +38,7 @@ This diagram shows a high-level view of the authentication flow:
 
 Redirect URIs for SPAs that use the auth code flow require special configuration.
 
-- **Add a redirect URI** that supports auth code flow with PKCE and cross-origin resource sharing (CORS): Follow the steps in [Redirect URI: MSAL.js 2.0 with auth code flow](scenario-spa-app-registration.md#redirect-uri-msaljs-20-with-auth-code-flow).
+- **Add a redirect URI** that supports auth code flow with PKCE and cross-origin resource sharing (CORS): Follow the steps in [How to add a redirect URI to your application](how-to-add-redirect-uri.md).
 - **Update a redirect URI**: Set the redirect URI's `type` to `spa` by using the [application manifest editor](reference-app-manifest.md) in the Microsoft Entra admin center.
 
 The `spa` redirect type is backward-compatible with the implicit flow. Apps currently using the implicit flow to get tokens can move to the `spa` redirect URI type without issues and continue using the implicit flow. Despite this backward compatibility, we recommend that you use the auth code flow with PKCE for SPAs.
@@ -47,7 +46,7 @@ The `spa` redirect type is backward-compatible with the implicit flow. Apps curr
 If you attempt to use the authorization code flow without setting up CORS for your redirect URI, you'll see this error in the console:
 
 ```http
-access to XMLHttpRequest at 'https://login.microsoftonline.com/common/v2.0/oauth2/token' from origin 'yourApp.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+access to XMLHttpRequest at 'https://login.microsoftonline.com/common/oauth2/v2.0/token' from origin 'yourApp.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
 
 If so, visit your app registration and update the redirect URI for your app to use the `spa` type.

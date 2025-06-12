@@ -2,17 +2,18 @@
 title: Troubleshoot problems installing the Microsoft Entra private network connector
 description: Troubleshoot problems installing the Microsoft Entra private network connector.
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 04/15/2024
+ms.date: 05/07/2025
 ms.author: kenwith
-ms.reviewer: ashishj
+ms.reviewer: ashishj,dhruvinshah
+ai-usage: ai-assisted
 ---
 
 # Troubleshoot problems installing the private network connector
 
-Microsoft Entra private network connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain. The connector is used by both Microsoft Entra Private Access and Microsoft Entra application proxy.
+Microsoft Entra private network connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain. The connector is used by both Microsoft Entra Private Access and Microsoft Entra application proxy. This article describes how to troubleshoot issues with connector installation and subsequent functionality.
 
 ## General problem areas with connector installation
 
@@ -24,6 +25,29 @@ When the installation of a connector fails, the root cause is usually one of the
 
 > [!NOTE]
 > The connector installation logs can be found in the `%TEMP%` folder and can help provide additional information on what is causing an installation failure.
+
+## Use the Connector Diagnostics tool to identity connector installation and network problems
+
+The connector diagnostics tool is an exe command-line application that is included in the connector package. This tool is designed to diagnose common connector setup and runtime errors to identify installation or network problems. Currently, the tool supports the following checks:
+
+- Certificate validity
+- Ports 80/443 accessibility
+- Outbound proxy configuration
+- CRL accessibility
+- Connector service running
+- Backend service endpoint accessibility
+
+The tool also provides additional information, such as certificate details (if the cert is valid), tenant and connector ID, and TLS versions. To ensure that no checks are missed due to network or intermittent issues, the tool contains retries and prints out exception messages for any connectivity failures.
+
+**How to get the tool:** The connector diagnostics tool is available in the connector installation package starting version 1.5.4287.0. Previous versions don't contain the tool. A new connector installation is needed to get the tool if you are using the previous version. 
+
+**How to use the tool:** After verifying successful installation, the tool can be found in the connector installation folder, located by default in C:/Program Files/Microsoft Entra Private Network Connector. Double click the application "ConnectorDiagnosticsTool" to launch the tool. 
+
+![Screenshot showing the "ConnectorDiagnosticsTool" application selected in file explorer.](https://github.com/user-attachments/assets/76feaf98-9f2c-492c-bb66-7d65fa4dc576)
+
+Sample Output:
+
+![Screenshot showing the "ConnectorDiagnosticsTool" application output.](https://github.com/user-attachments/assets/93cec4e8-58bd-4656-8ff6-c4299e7d5b82)
 
 ## Verify connectivity to the cloud application proxy service and Microsoft sign in page
 
@@ -37,10 +61,10 @@ When the installation of a connector fails, the root cause is usually one of the
 
 ## Verify machine and backend component certificate support
 
-**Objective:** Verify that the connector machine, backend proxy, and firewall can support the certificate created by the connector. Also, verify the certificate is valid.
+**Objective:** Verify that the connector machine, backend proxy, and firewall support the certificate the connector created. Also, verify the certificate is valid.
 
 >[!NOTE]
->The connector tries to create a `SHA512` cert that is supported by Transport Layer Security (TLS) 1.2. If the machine or the backend firewall and proxy does not support TLS 1.2, the installation fails.
+>The connector tries to create a `SHA512` cert that supports Transport Layer Security (TLS) 1.2. If the machine or the backend firewall and proxy does not support TLS 1.2, the installation fails.
 
 **Review the prerequisites required:**
 
@@ -62,19 +86,19 @@ Verify the thumbprint of the current client certificate. The certificate store c
 </ConnectorTrustSettingsFile>
 ```
 
-The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration initiated by `Register-MicrosoftEntraPrivateNetworkConnector`. The certificate is stored in the personal container in the certificate store of the local machine.
+The possible **IsInUserStore** values are **true** and **false**. A value of **true** means the certificate is automatically renewed and stored in the personal container in the user certificate store of the Network Service. A value of **false** means the client certificate is created during the installation or registration `Register-MicrosoftEntraPrivateNetworkConnector` initiates. The certificate is stored in the personal container in the certificate store of the local machine.
 
 If the value is **true**, follow these steps to verify the certificate:
 1. Download [PsTools.zip](/sysinternals/downloads/pstools).
 2. Extract [PsExec](/sysinternals/downloads/psexec) from the package and run **psexec -i -u "nt authority\network service" cmd.exe** from an elevated command prompt.
 3. Run **certmgr.msc** in the newly appeared command prompt.
 4. In the management console, expand the Personal container and select on Certificates.
-5. Locate the certificate issued by **connectorregistrationca.msappproxy.net**.
+5. Locate the certificate issued for **connectorregistrationca.msappproxy.net**.
 
 If the value is **false**, follow these steps to verify the certificate:
 1. Run **certlm.msc**.
 2. In the management console, expand the Personal container and select on Certificates.
-3. Locate the certificate issued by **connectorregistrationca.msappproxy.net**.    
+3. Locate the certificate issued for **connectorregistrationca.msappproxy.net**.    
 
 **To renew the client certificate:**
 
@@ -93,13 +117,16 @@ To learn more about the `Register-MicrosoftEntraPrivateNetworkConnector` command
 
 ## Verify admin is used to install the connector
 
-**Objective:** Verify that the user who tries to install the connector is an administrator with correct credentials. Currently, the user must be at least an application administrator for the installation to succeed.
+**Objective:** Verify that the user who tries to install the connector is an administrator with correct credentials. Currently, the user must be at least an Application Administrator for the installation to succeed.
 
 **To verify the credentials are correct:**
 
-Connect to `https://login.microsoftonline.com` and use the same credentials. Make sure the sign in is successful. You can check the user role by going to **Microsoft Entra ID** -&gt; **Users and Groups** -&gt; **All Users**. 
+Connect to `https://login.microsoftonline.com` and use the same credentials. Make sure the sign in is successful. Check the user role, go to **Microsoft Entra ID** -&gt; **Users and Groups** -&gt; **All Users**. 
 
 Select your user account, then **Directory Role** in the resulting menu. Verify that the selected role is **Application Administrator**. If you're unable to access any of the pages along these steps, you don't have the required role.
+
+>[!NOTE]
+>You should be prompted for your administrator credentials during connector installation via a pop-up. If you don't receive a pop-up, ensure that your browser settings enable pop-ups and JavaScript is enabled. During the next installation attempt, you'll be prompted to add sites to Trusted sites. After the sites are added to Trusted sites, re-run installation.
 
 ## Connector errors
 
@@ -118,7 +145,7 @@ Once you find the connector error from the event log, use this table of common e
 | `Connector registration failed: Make sure you enabled application proxy in the Azure Management Portal and that you entered your Active Directory user name and password correctly. Error: 'AADSTS50059: No tenant-identifying information found in either the request or implied by any provided credentials and search by service principal URI has failed.` | You're trying to sign in using a Microsoft Account and not a domain that is part of the organization ID of the directory you're trying to access. The admin must be part of the same domain name as the tenant domain. For example, if the Microsoft Entra domain is `contoso.com`, the admin should be `admin@contoso.com`. |
 | `Failed to retrieve the current execution policy for running PowerShell scripts.` | If the connector installation fails, check to make sure that PowerShell execution policy isn't disabled. <br><br>1. Open the Group Policy Editor.<br>2. Go to **Computer Configuration** > **Administrative Templates** > **Windows Components** > **Windows PowerShell** and double-click **Turn on Script Execution**.<br>3. The execution policy can be set to either **Not Configured** or **Enabled**. If set to **Enabled**, make sure that under Options, the Execution Policy is set to either **Allow local scripts and remote signed scripts** or to **Allow all scripts**. |
 | `Connector failed to download the configuration.` | The connector’s client certificate, which is used for authentication, expired. The issue occurs if you have the connector installed behind a proxy. In this case, the connector can't access the internet and isn't able to provide applications to remote users. Renew trust manually using the `Register-MicrosoftEntraPrivateNetworkConnector` cmdlet in Windows PowerShell. If your connector is behind a proxy, it's necessary to grant internet access to the connector accounts `network services` and `local system`. Granting access is accomplished by granting access to the proxy or bypassing the proxy. |
-| `Connector registration failed: Make sure you are an Application Administrator of your Active Directory to register the connector. Error: 'The registration request was denied.'` | The alias you're trying to sign in with isn't an admin on this domain. Your connector is always installed for the directory that owns the user’s domain. Make sure that the admin account you're trying to sign in with has at least application administrator permissions to the Microsoft Entra tenant. |
+| `Connector registration failed: Make sure you are an Application Administrator of your Active Directory to register the connector. Error: 'The registration request was denied.'` | The alias you're trying to sign in with isn't an admin on this domain. Your connector is always installed for the directory that owns the user’s domain. Make sure that the admin account you're trying to sign in with has at least Application Administrator permissions to the Microsoft Entra tenant. |
 | `The connector was unable to connect to the service due to networking issues. The connector tried to access the following URL.` | The connector is unable to connect to the application proxy cloud service. The issue happens if you have a firewall rule blocking the connection. Allow access to the correct ports and URLs listed in [configure connectors](how-to-configure-connectors.md). |
 
 
@@ -140,6 +167,27 @@ This flowchart walks you through the steps for debugging some of the more common
 |8 | Check internal network connectivity | There's a connectivity issue in your internal network that this debugging flow is unable to diagnose. The application must be accessible internally for the connectors to work. You can enable and view connector event logs as described in [private network connectors](concept-connectors.md#under-the-hood). |
 |9 | Lengthen the time-out value on the back end | In the **Additional Settings** for your application, change the **Backend Application Timeout** setting to **Long**. See [Add an on-premises app to Microsoft Entra ID](../identity/app-proxy/application-proxy-add-on-premises-application.md). |
 |10 | If issues persist, debug applications. | [Debug application proxy application issues](../identity/app-proxy/application-proxy-debug-apps.md). |
+
+## Troubleshooting connector functionality
+If connector installation and registration are successful but you are unable to access private resources, check the following.
+
+- **Cloud Service connectivity failures**: Your connector might be having problems connecting to the Entra Private Access cloud service. While the connector's status on the Microsoft Entra admin center might show as Active, the connector might still have problems connecting to the cloud service endpoints. Check with your networking team to see if there are failed connectivity attempts from the connector IP.
+- **Failed to validate chain of certificate error**: This error appears in the connector advanced logging when the certificate chain for a Global Secure Access service certificate such as *.msappproxy.net fails to be validated. Often this occurs when there is a proxy server configured on MicrosoftEntraPrivateNetworkConnectorService.exe.config but there is not also a system proxy server configured. You can set the system proxy using netsh winhttp set proxy address:port.
+- **TLS inspection is configured**: TLS inspection is not supported on Private Network connector traffic. Attempting to perform TLS inspection on this traffic interferes with the connector's ability to connect to the Global Secure Access service and therefore interferes with its ability to service Private Access requests. Ensure the network devices allowing Internet access to your private network connector don't perform TLS inspection.
+- **Proxy server exists between connector and resource**: The connector requires line of sight connectivity to the resource and cannot function if there is a proxy server between the connector and the resource. To confirm, test connectivity from the connector to the resource you've defined in your Global Secure Access application, such as file share or RDP server, to ensure the connector can access the resource. If you cannot connect to the resource from the connector server, you will need to resolve the network connectivity issue between the connector and the resource which may include relocating the connector to a network location with line of sight access to the resource.
+
+### Enable advanced connector logging
+If you can connect to the resource from the server but not from the Global Secure Access client, there may be other issues with the connector. To investigate, enable advanced connector logging. To do this, edit the file MicrosoftEntraPrivateNetworkConnectorService.exe.config located in the connector installation folder (by default, C:\Program Files\Microsoft Entra private network connector). Locate the below section in the file, remove the comment line indicators that lead and trail this section, and confirm that the referenced folder exists. 
+
+![Screenshot showing the configuration file before required edits.](media/troubleshoot-connectors/connector-logging-config.png)
+
+The file contents should look as follows:
+
+![Screenshot showing an example of the expected final configuration file.](media/troubleshoot-connectors/connector-logging-config-final-example.png)
+
+After you have enabled logging, attempt to access the resource from the Global Secure Access client in order to reproduce the error. Then, review the log file for errors.
+
+
 
 ## Frequently asked questions
 **Why is my connector still using an older version and not auto-upgraded to latest version?**
@@ -181,7 +229,7 @@ Yes. To provide the best-in-class encryption to our customers, the application p
     
 **Can I place a forward proxy device between the connector server(s) and the back-end application server?**
 
-Yes, this scenario is supported starting from the connector version 1.5.1526.0. See [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
+This scenario is supported starting from the connector version 1.5.1526.0 for Microsoft Entra application proxy, but is not supported for Microsoft Entra Private Access. See [Work with existing on-premises proxy servers](../identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md) for information about this support for App Proxy.
     
 **Should I create a dedicated account to register the connector with Microsoft Entra application proxy?**
 
@@ -201,7 +249,7 @@ The connector isn't required to be on the same subnet. However, it needs name re
     
 **Why is the connector still showing in Microsoft Entra admin center after I uninstalled the connector from the Server?**
 
-When a connector is running, it remains active as it connects to the service. Uninstalled or unused connectors are tagged as inactive and are removed after 10 days of inactivity from the portal. There is no way to remove the Inactive connector manually from the Microsoft Entra admin center.
+When a connector is running, it remains active as it connects to the service. Uninstalled or unused connectors are tagged as inactive and are removed after 10 days of inactivity from the Microsoft Entra admin center. There is no way to remove the Inactive connector manually from the Microsoft Entra admin center.
 
 ## Next steps
 - [Understand Microsoft Entra private network connectors](concept-connectors.md)

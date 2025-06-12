@@ -1,17 +1,14 @@
 ---
 title: Tutorial to migrate Okta sign-on policies to Microsoft Entra Conditional Access
 description: Learn how to migrate Okta sign-on policies to Microsoft Entra Conditional Access.
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
-
 ms.topic: tutorial
 ms.date: 01/13/2023
 ms.author: gasinh
 ms.subservice: enterprise-apps
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using Okta sign-on policies, I want to migrate to Microsoft Entra Conditional Access, so that I can secure user access in Microsoft Entra ID and connected applications.
 ---
 
@@ -124,12 +121,11 @@ If you deployed Microsoft Entra hybrid join, you can deploy another group policy
 
 ## Configure Microsoft Entra multifactor authentication tenant settings
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you convert to Conditional Access, confirm the base MFA tenant settings for your organization.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator). 
-2. Browse to **Identity** > **Users** > **All users**.
+2. Browse to **Entra ID** > **Users**.
 3. Select **Per-user MFA** on the top menu of the **Users** pane.
 4. The legacy Microsoft Entra multifactor authentication portal appears. Or select [Microsoft Entra multifactor authentication portal](https://aka.ms/mfaportal).
 
@@ -166,7 +162,7 @@ Before you get started:
 * [Building a Conditional Access policy](~/identity/conditional-access/concept-conditional-access-policies.md)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
-1. Browse to **Identity**.
+1. Browse to **Entra ID** > **Conditional Access**.
 3. To learn how to create a policy in Microsoft Entra ID. See, [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/policy-all-users-mfa-strength.md).
 4. Create a device trust-based Conditional Access rule.
 
@@ -174,7 +170,7 @@ Before you get started:
 
    ![Screenshot of the Keep you account secure dialog with the success message.](media/migrate-okta-sign-on-policies-conditional-access/success-test-user.png)
 
-5. After you configure the location-based policy and device trust policy, [Block legacy authentication with Microsoft Entra ID with Conditional Access](~/identity/conditional-access/block-legacy-authentication.md).
+5. After you configure the location-based policy and device trust policy, [Block legacy authentication with Microsoft Entra ID with Conditional Access](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 With these three Conditional Access policies, the original Okta sign-on policies experience is replicated in Microsoft Entra ID. 
 

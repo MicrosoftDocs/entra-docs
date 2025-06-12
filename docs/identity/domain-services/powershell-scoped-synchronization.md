@@ -2,12 +2,12 @@
 title: Scoped synchronization using PowerShell for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to use Microsoft Graph PowerShell to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 05/22/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell, azure-ad-ref-level-one-done
@@ -94,7 +94,7 @@ foreach ($assignment in $currentAssignments)
 {
     Write-Output "Assignment-ObjectId: $($assignment.PrincipalId)"
 
-    if ($newGroupIds.Contains($assignment.PrincipalId) -eq $true)
+    if ($newGroupIds.Contains($assignment.PrincipalId) -eq $false)
     {
         Write-Output "This assignment is not needed anymore. Removing it! Assignment-ObjectId: $($assignment.PrincipalId)"
         Remove-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -AppRoleAssignmentId $assignment.Id
@@ -116,7 +116,7 @@ foreach ($id in $newGroupIds)
         {
             Write-Output "Adding new group-assignment. Role-Id: $($role.Id), Group-Object-Id: $id, ResourceId: $($sp.Id)"
             $appRoleAssignment = @{
-                "principalId"= $group.Id
+                "principalId"= $Id
                 "resourceId"= $sp.Id
                 "appRoleId"= $role.Id
             }

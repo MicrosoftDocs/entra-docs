@@ -2,18 +2,18 @@
 title: Protect your tenant with Insider Risk in Conditional Access
 description: Learn how you can protect your tenant by enabling the Insider Risk condition in Conditional Access integrated with Microsoft Purview Adaptive Protection.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 07/12/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: poulomib
 
 # Customer intent: As an IT admin, I need to make sure that high risk users are blocked from certain activities.
 ---
 
-# Microsoft Entra recommendation: Enable Microsoft Purview Adaptive Protection and the Insider Risk condition in Conditional Access
+# Microsoft Entra recommendation: Protect your tenant with Insider Risk condition in Conditional Access policy
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 

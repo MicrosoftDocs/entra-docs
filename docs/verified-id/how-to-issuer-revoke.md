@@ -3,11 +3,10 @@ title: Revoke a verifiable credential as an issuer - Microsoft Entra Verified ID
 description: Learn how to revoke an issued verifiable credential.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
-ms.date: 11/15/2024
+ms.date: 01/31/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm trying to learn the process of revoking verifiable credentials that I've issued.
@@ -35,7 +34,7 @@ Microsoft Entra Verified ID implements the [W3C StatusList2021](https://github.c
 In every Microsoft-issued verifiable credential, there's a claim called `credentialStatus`. This data is a navigational map to where in a block of data this verifiable credential has its revocation flag.
 
 > [!NOTE]
-> If the verifiable credential is old and was issued during the preview period, this claim doesn't exist. Revocation won't work for this credential and you have to reissue it.
+> If the verifiable credential is old and was issued during the preview period, this claim doesn't exist. Revocation doesn't work for this credential and you have to reissue it.
 
 ```json
 
@@ -136,7 +135,7 @@ Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer
 ```
 
 > [!IMPORTANT]
-> You can only index one claim from a rules claims mapping. If you accidentally have no indexed claim in your rules definition, and you later correct this oversight, all verifiable credentials issued prior to the change won't be searchable because they were issued when no index existed.
+> You can only index one claim from a rules claims mapping. If you accidentally have no indexed claim in your rules definition, and you later correct this oversight, all verifiable credentials issued before the change aren't searchable because they were issued when no index existed.
 
 ## How do I revoke a verifiable credential?
 

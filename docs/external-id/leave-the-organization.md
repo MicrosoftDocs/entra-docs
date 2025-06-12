@@ -6,11 +6,11 @@ description: As a B2B collaboration user, learn how to leave an organization if 
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 12/16/2024
 
 ms.author: cmulligan 
 author: csmulligan 
-manager: celestedg
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 adobe-target: true
@@ -38,7 +38,6 @@ If you're a user looking for information about how to manage and leave an organi
 
    - If you're using a work or school account, go to https://myaccount.microsoft.com and sign in.
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
-   
    For example:
 
    `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
@@ -87,16 +86,15 @@ In these cases, you can select **Leave**, but then you'll see a message saying y
 
 ## More information for administrators
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Administrators can use the **External user leave settings** to control whether external users can remove themselves from their organization. If you disallow the ability for external users to remove themselves from your organization, external users will need to contact your admin, or privacy contact to be removed.
 
 > [!IMPORTANT]
 > You can configure **External user leave settings** only if you have [added your privacy information](~/fundamentals/properties-area.yml) to your Microsoft Entra tenant. Otherwise, this setting will be unavailable. We recommend adding your privacy information to allow external users to review your policies and email your privacy contact when necessary.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 
-1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. Browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **External user leave** settings, choose whether to allow external users to leave your organization themselves:
 
@@ -111,9 +109,9 @@ When a B2B collaboration user leaves an organization, the user's account is "sof
 
 If desired, a tenant administrator can permanently delete the account at any time during the soft-deleted period with the following steps. This action is irrevocable.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 
-1. Browse to **Identity** > **Users** > **All users**
+1. Browse to **Entra ID** > **Users**
 
 1. Select **Deleted users**.
 
@@ -122,6 +120,10 @@ If desired, a tenant administrator can permanently delete the account at any tim
 Permanent deletion can be initiated by the admin, or it happens at the end of the soft deletion period. Permanent deletion can take up to an extra 30 days for data removal.
 
 For B2B direct connect users, data removal begins as soon as the user selects **Leave** in the confirmation message and can take up to 30 days to complete.
+
+## Need help?
+
+If you need additional assistance not covered in our content, you have several options. [Learn how to get help and support](/entra/fundamentals/how-to-get-support) from the Microsoft community, or submit a support request directly to Microsoft.
 
 ## Related content
 

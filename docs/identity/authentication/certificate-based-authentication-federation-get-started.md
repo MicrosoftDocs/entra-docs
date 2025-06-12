@@ -1,21 +1,19 @@
 ---
 title: Certificate-based authentication with federation
 description: Learn how to configure certificate-based authentication with federation in your environment
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 11/02/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vraganathan
 ---
 # Get started with certificate-based authentication in Microsoft Entra ID with federation
 
-Certificate-based authentication (CBA) with federation enables you to be authenticated by Microsoft Entra ID with a client certificate on a Windows, Android, or iOS device when connecting your Exchange online account to:
+Certificate-based authentication (CBA) with federation enables Microsoft Entra ID to authenticate you with a client certificate on a Windows, Android, or iOS device when connecting your Exchange online account to:
 
 - Microsoft mobile applications such as Microsoft Outlook and Microsoft Word
 - Exchange ActiveSync (EAS) clients
@@ -27,7 +25,7 @@ Configuring this feature eliminates the need to enter a username and password co
 
 This topic:
 
-- Provides you with the steps to configure and utilize CBA for users of tenants in Office 365 Enterprise, Business, Education, and US Government plans. 
+- Provides steps to configure and utilize CBA for users of tenants in Office 365 Enterprise, Business, Education, and US Government plans. 
 - Assumes that you already have a [public key infrastructure (PKI)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)) and [AD FS](/entra/identity/hybrid/connect/how-to-connect-fed-whatis) configured.
 
 ## Requirements
@@ -70,11 +68,12 @@ The related information exists for the following device platforms:
 
 [!INCLUDE [Get-AzureAD](~/includes/entra-authentication-get-trusted.md)]
 
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 To add, modify, or remove a CA, use the Microsoft Entra admin center:
 
-1. [!INCLUDE [Privileged role](../../includes/privileged-role-include.md)]
-1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Browse to **Entra ID** > **Identity Secure Score** > **Certificate authorities**.
 1. To upload a CA, select **Upload**: 
    1. Select the CA file.
    1. Select **Yes** if the CA is a root certificate, otherwise select **No**.

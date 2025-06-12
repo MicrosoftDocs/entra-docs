@@ -1,20 +1,20 @@
 ---
-title: What's new (preview)
+title: What's new
 description: Overview of the What's new experience in the Microsoft Entra admin center.
-author: jason-nydegger
-manager: CelesteDG
+author: barclayn
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 11/13/2024
-ms.author: janydegger
+ms.author: barclayn
 
 # Customer intent: As a customer, I want an overview of the What's new experience in the Microsoft Entra admin center.
 ---
 
-# What's new (preview)
+# What's new
 
-Microsoft Entra is updated regularly to deliver new features, enhance existing functionality, fix defects, and address customer feedback. The best way to stay current with these developments is to visit **What's new** (preview) in the [Microsoft Entra admin center](./entra-admin-center.md). 
+Microsoft Entra is updated regularly to deliver new features, enhance existing functionality, fix defects, and address customer feedback. The best way to stay current with these developments is to visit **What's new** in the [Microsoft Entra admin center](./entra-admin-center.md). 
 
 **What's new** is an information hub that provides a consolidated view of the Microsoft Entra roadmap and change announcements. It gives administrators a centralized location to track, learn, and plan for the releases and changes across the Microsoft Entra family of products. 
 
@@ -82,7 +82,7 @@ The following are the descriptions for the sortable columns in the roadmap table
 |**Target Date**| The release date of the change. |
 |**Action Required**| Indicates whether the change requires a user to take action. |
 
-## What's new (preview) FAQ
+## What's new FAQ
 
 ### Why do we need a What's new feature when we already have the Microsoft 365 and Azure roadmaps?
 

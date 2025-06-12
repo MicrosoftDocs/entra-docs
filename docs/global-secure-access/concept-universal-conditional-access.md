@@ -1,13 +1,15 @@
 ---
-title: Learn about Universal Conditional Access through Global Secure Access
+title: Learn about Universal Conditional Access Through Global Secure Access
 description: Learn about how Microsoft Entra Internet Access and Microsoft Entra Private Access secures access to your resources through Conditional Access.
 ms.service: global-secure-access
 ms.topic: conceptual
-ms.date: 11/05/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.reviewer: smistry
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # Universal Conditional Access through Global Secure Access
 
@@ -23,7 +25,6 @@ This functionality allows administrators to consistently enforce Conditional Acc
    * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    * The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 * The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known tunnel authorization limitations
 
@@ -33,10 +34,7 @@ One example is if you block access to the Internet access target resource on non
 
 ### Other known limitations
 
-- Continuous access evaluation isn't currently supported for Universal Conditional Access for Microsoft traffic.
-- Applying Conditional Access policies to Private Access traffic isn't currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
-- Microsoft traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access Client.
-
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Conditional Access policies
 
@@ -44,9 +42,9 @@ With Conditional Access, you can enable access controls and security policies fo
 
 - Create a policy that targets all [Microsoft traffic](how-to-target-resource-microsoft-profile.md).
 - Apply Conditional Access policies to your [Private Access apps](how-to-target-resource-private-access-apps.md), such as Quick Access.
-- Enable [Global Secure Access signaling in Conditional Access](how-to-source-ip-restoration.md) so the source IP address is visible in the appropriate logs and reports.
+- Enable [Global Secure Access source IP restoration](how-to-source-ip-restoration.md) so the source IP address is visible in the appropriate logs and reports.
 
-## Internet Access – Universal Conditional Access
+## Internet Access flow diagram
 
 The following example demonstrates how Microsoft Entra Internet Access works when you apply Universal Conditional Access policies to network traffic.
 

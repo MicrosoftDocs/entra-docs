@@ -1,27 +1,25 @@
 ---
 title: Configure F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID
 description: Learn to secure SAP ERP using Microsoft Entra ID, through F5’s BIG-IP Easy Button guided configuration.
-
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Configure F5’s BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID
+# Configure F5’s BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID
 
 In this article, learn to secure SAP ERP using Microsoft Entra ID, through F5’s BIG-IP Easy Button guided configuration.
 
 Integrating a BIG-IP with Microsoft Entra ID provides many benefits, including:
 
-* [Improved Zero Trust governance](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) through Microsoft Entra pre-authentication   and [Conditional Access](~/identity/conditional-access/overview.md)
+* [Improved Zero Trust governance](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) through Microsoft Entra preauthentication   and [Conditional Access](~/identity/conditional-access/overview.md)
 
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 
@@ -33,7 +31,7 @@ To learn about all the benefits, see the article on [F5 BIG-IP and Microsoft Ent
 
 This scenario looks at the classic **SAP ERP application using Kerberos authentication** to manage access to protected content.
 
-Being legacy, the application lacks modern protocols to support a direct integration with Microsoft Entra ID. The application can be modernized, but it is costly, requires careful planning, and introduces risk of potential downtime. Instead, an F5 BIG-IP Application Delivery Controller (ADC) is used to bridge the gap between the legacy application and the modern ID control plane, through protocol transitioning. 
+Being legacy, the application lacks modern protocols to support a direct integration with Microsoft Entra ID. The application can be modernized, but it's costly, requires careful planning, and introduces risk of potential downtime. Instead, an F5 BIG-IP Application Delivery Controller (ADC) is used to bridge the gap between the legacy application and the modern ID control plane, through protocol transitioning. 
 
 Having a BIG-IP in front of the application enables us to overlay the service with Microsoft Entra pre-authentication and headers-based SSO, significantly improving the overall security posture of the application.
 
@@ -55,14 +53,14 @@ SHA for this scenario supports both SP and IdP initiated flows. The following im
 | -------- |-------|
 | 1| User connects to application endpoint (BIG-IP) |
 | 2| BIG-IP APM access policy redirects user to Microsoft Entra ID (SAML IdP) |
-| 3| Microsoft Entra ID pre-authenticates user and applies any enforced Conditional Access policies |
+| 3| Microsoft Entra ID preauthenticates user and applies any enforced Conditional Access policies |
 | 4| User is redirected to BIG-IP (SAML SP) and SSO is performed using issued SAML token |
 | 5| BIG-IP requests Kerberos ticket from KDC |
 | 6| BIG-IP sends request to backend application, along with Kerberos ticket for SSO |
 | 7| Application authorizes request and returns payload |
 
 ## Prerequisites
-Prior BIG-IP experience isn’t necessary, but you will need:
+Prior BIG-IP experience isn’t necessary, but you need:
 
 * A Microsoft Entra ID Free subscription or above
 
@@ -88,7 +86,7 @@ Prior BIG-IP experience isn’t necessary, but you will need:
 
 ## BIG-IP configuration methods
 
-There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This tutorial covers the latest Guided Configuration 16.1 offering an Easy button template. 
+There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This article covers the latest Guided Configuration 16.1 offering an Easy button template. 
 
 With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM’s Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
 
@@ -99,7 +97,7 @@ With the Easy Button, admins no longer go back and forth between Microsoft Entra
 
 Before a client or service can access Microsoft Graph, it must be trusted by the [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md)
 
-The Easy Button client must also be registered in Microsoft Entra ID, before it is allowed to establish a trust between each SAML SP instance of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
+The Easy Button client must also be registered in Microsoft Entra ID, before it's allowed to establish a trust between each SAML SP instance of a BIG-IP published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) using an account with Application Administrative rights.
 
@@ -166,7 +164,7 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 1. Enter **Host**. This is the public FQDN of the application being secured
 
-2. Enter **Entity ID.** This is the identifier Microsoft Entra ID will use to identify the SAML SP requesting a token
+2. Enter **Entity ID.** This is the identifier Microsoft Entra ID uses to identify the SAML SP requesting a token
 
     ![Screenshot for Service Provider settings](./media/f5-big-ip-easy-button-sap-erp/service-provider-settings.png)
 
@@ -184,7 +182,7 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 6.	Check **Enable Encrypted Assertion**
 
-7.	If you have enabled encryption, select your certificate from the **Assertion Decryption Private Key** list. This is the private key for the certificate that BIG-IP APM will use to decrypt Microsoft Entra assertions
+7.	If you have enabled encryption, select your certificate from the **Assertion Decryption Private Key** list. This is the private key for the certificate that BIG-IP APM uses to decrypt Microsoft Entra assertions
 
 8.	If you have enabled encryption, select your certificate from the **Assertion Decryption Certificate** list. This is the certificate that BIG-IP will upload to Microsoft Entra ID for encrypting the issued SAML assertions
 
@@ -196,13 +194,13 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. 
 
-Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. 
+Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP and generic SHA template for any other apps. 
 
 For this scenario, in the **Azure Configuration** page, select **SAP ERP Central Component** > **Add** to start the Azure configurations.
 
 #### Azure Configuration
 
-1. Enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users will see in [MyApps portal](https://myapplications.microsoft.com/)
+1. Enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users see in [MyApps portal](https://myapplications.microsoft.com/)
 
 2. Leave the **Sign On URL (optional)** blank to enable IdP initiated sign-on
 
@@ -216,7 +214,7 @@ For this scenario, in the **Azure Configuration** page, select **SAP ERP Central
 
    ![Screenshot for Azure configuration - Add signing certificates info](./media/f5-big-ip-easy-button-sap-erp/azure-configuration-sign-certificates.png)
 
-7. **User and User Groups** are dynamically queried from your Microsoft Entra tenant and used to authorize access to the application. Add a user or group that you can use later for testing, otherwise all access will be denied
+7. **User and User Groups** are dynamically queried from your Microsoft Entra tenant and used to authorize access to the application. Add a user or group that you can use later for testing, otherwise all access is denied
 
    ![Screenshot for Azure configuration - Add users and groups](./media/f5-big-ip-easy-button-sap-erp/azure-configuration-add-user-groups.png)
 
@@ -224,7 +222,7 @@ For this scenario, in the **Azure Configuration** page, select **SAP ERP Central
 
 When a user successfully authenticates to Microsoft Entra ID, it issues a SAML token with a default set of claims and attributes uniquely identifying the user. The **User Attributes & Claims tab** shows the default claims to issue for the new application. It also lets you configure more claims.
 
-As our example AD infrastructure is based on a .com domain suffix used both, internally and externally, we don’t require any additional attributes to achieve a functional KCD SSO implementation. See the [advanced tutorial](~/identity/enterprise-apps/f5-big-ip-kerberos-advanced.md) for cases where you have multiple domains or user’s log-in using an alternate suffix. 
+As our example AD infrastructure is based on a .com domain suffix used both, internally and externally, we don’t require any additional attributes to achieve a functional KCD SSO implementation. See the [advanced  article](~/identity/enterprise-apps/f5-big-ip-kerberos-advanced.md) for cases where you have multiple domains or user’s log-in using an alternate suffix. 
 
    ![Screenshot for user attributes and claims](./media/f5-big-ip-easy-button-sap-erp/user-attributes-claims.png)
    
@@ -243,16 +241,16 @@ The **Additional User Attributes** tab can support a variety of distributed syst
 
 Conditional Access policies are enforced post Microsoft Entra pre-authentication, to control access based on device, application, location, and risk signals.
 
-The **Available Policies** view, by default, will list all Conditional Access policies that do not include user based actions.
+The **Available Policies** view, by default, will list all Conditional Access policies that don't include user based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All resources. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies can't be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 
 1.	Select the desired policy in the **Available Policies** list
 2.	Select the right arrow and move it to the **Selected Policies** list
 
-Selected policies should either have an **Include** or **Exclude** option checked. If both options are checked, the selected policy is not enforced.
+Selected policies should either have an **Include** or **Exclude** option checked. If both options are checked, the selected policy isn't enforced.
 
 ![Screenshot for Conditional Access policies](./media/f5-big-ip-easy-button-sap-erp/conditional-access-policy.png)
 
@@ -269,7 +267,7 @@ A virtual server is a BIG-IP data plane object represented by a virtual IP addre
 
 3. Check **Enable Redirect Port** and then enter **Redirect Port**. It redirects incoming HTTP client traffic to HTTPS
 
-4. The Client SSL Profile enables the virtual server for HTTPS, so that client connections are encrypted over TLS. Select the **Client SSL Profile** you created as part of the prerequisites or leave the default whilst testing
+4. The Client SSL Profile enables the virtual server for HTTPS, so that client connections are encrypted over TLS. Select the **Client SSL Profile** you created as part of the prerequisites or leave the default while testing
 
   ![Screenshot for Virtual server](./media/f5-big-ip-easy-button-sap-erp/virtual-server.png)
 
@@ -287,7 +285,7 @@ The **Application Pool tab** details the services behind a BIG-IP, represented a
 
 #### Single Sign-On & HTTP Headers
 
-Enabling SSO allows users to access BIG-IP published services without having to enter credentials. The **Easy Button wizard** supports Kerberos, OAuth Bearer, and HTTP authorization headers for SSO. You will need the Kerberos delegation account created earlier to complete this step. 
+Enabling SSO allows users to access BIG-IP published services without having to enter credentials. The **Easy Button wizard** supports Kerberos, OAuth Bearer, and HTTP authorization headers for SSO. You need the Kerberos delegation account created earlier to complete this step. 
 
 Enable **Kerberos** and **Show Advanced Setting** to enter the following:
 
@@ -301,7 +299,7 @@ Enable **Kerberos** and **Show Advanced Setting** to enter the following:
 
 * **UPN Support:** Enable for the APM to use the UPN for kerberos ticketing 
 
-* **SPN Pattern:** Use HTTP/%h to inform the APM to use the host header of the client request and build the SPN that it is requesting a kerberos token for.
+* **SPN Pattern:** Use HTTP/%h to inform the APM to use the host header of the client request and build the SPN that it's requesting a kerberos token for.
 
 * **Send Authorization:** Disable for applications that prefer negotiating authentication instead of receiving the kerberos token in the first request. For example, *Tomcat.*
 
@@ -320,7 +318,7 @@ During deployment, the SAML federation metadata for the published application is
 
 This last step provides a breakdown of your configurations. Select **Deploy** to commit all settings and verify that the application now exists in your tenants list of Enterprise applications.
 
-## Next steps
+## Related content
 
 From a browser, **connect** to the application’s external URL or select the **application’s icon** in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, you’ll be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
 
@@ -328,7 +326,7 @@ For increased security, organizations using this pattern could also consider blo
 
 ## Advanced deployment
 
-There may be cases where the Guided Configuration templates lack the flexibility to achieve more specific requirements. For those scenarios, see [Advanced Configuration for kerberos-based SSO](~/identity/enterprise-apps/f5-big-ip-kerberos-advanced.md).
+There might be cases where the Guided Configuration templates lack the flexibility to achieve more specific requirements. For those scenarios, see [Advanced Configuration for kerberos-based SSO](~/identity/enterprise-apps/f5-big-ip-kerberos-advanced.md).
 
 Alternatively, the BIG-IP gives you the option to disable **Guided Configuration’s strict management mode**. This allows you to manually tweak your configurations, even though bulk of your configurations are automated through the wizard-based templates.
 
@@ -336,10 +334,10 @@ You can navigate to **Access > Guided Configuration** and select the **small pad
  
    ![Screenshot for Configure Easy Button - Strict Management](./media/f5-big-ip-easy-button-sap-erp/strict-mode-padlock.png)
 
-At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application will be unlocked for direct management.
+At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application is unlocked for direct management.
 
 >[!NOTE]
->Re-enabling strict mode and deploying a configuration will overwrite any settings performed outside of the Guided Configuration UI, therefore we recommend the advanced configuration method for production services.
+>Re-enabling strict mode and deploying a configuration overwrites any settings performed outside of the Guided Configuration UI, therefore we recommend the advanced configuration method for production services.
 
 ## Troubleshooting
 
@@ -351,7 +349,7 @@ You can fail to access the SHA protected application due to any number of factor
 
 * Ensure there are no duplicate SPNs in your AD environment by executing the following query at the command line on a domain PC: setspn -q HTTP/my_target_SPN
 
-You can refer to our [application proxy guidance](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured appropriately for KCD. F5’s article on [how the APM handles Kerberos SSO](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html) is also a valuable resource.
+You can refer to our [application proxy guidance](~/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to.md) to validate an IIS application is configured appropriately for KCD. F5’s article on [how the APM handles Kerberos SSO](https://techdocs.f5.com/en-us/bigip-17-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html) is also a valuable resource.
 
 ### Log analysis
 
@@ -369,12 +367,12 @@ If you see a BIG-IP branded error immediately after successful Microsoft Entra p
 
 1. Navigate to **Access > Overview > Access reports**
 
-2. Run the report for the last hour to see logs provide any clues. The **View session variables** link for your session will also help understand if the APM is receiving the expected claims from Microsoft Entra ID.
+2. Run the report for the last hour to see logs provide any clues. The **View session variables** link for your session also helps understand if the APM is receiving the expected claims from Microsoft Entra ID.
 
 If you don’t see a BIG-IP error page, then the issue is probably more related to the backend request or SSO from the BIG-IP to the application. 
 
 1. Navigate to **Access Policy > Overview > Active Sessions**
 
-2. Select the link for your active session. The **View Variables** link in this location may also help determine root cause KCD issues, particularly if the BIG-IP APM fails to obtain the right user and domain identifiers from session variables
+2. Select the link for your active session. The **View Variables** link in this location might also help determine root cause KCD issues, particularly if the BIG-IP APM fails to obtain the right user and domain identifiers from session variables
 
-See [BIG-IP APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107) and [F5 BIG-IP session variables reference](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html) for more info.
+See [BIG-IP APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107) and [F5 BIG-IP session variables reference](https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html) for more info.

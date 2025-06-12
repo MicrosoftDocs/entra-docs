@@ -2,7 +2,7 @@
 title: Create an access package in entitlement management
 description: Learn how to create an access package of resources that you want to share in Microsoft Entra entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -42,12 +42,11 @@ Then once the access package is created, you can [change the hidden setting](ent
 
 ## Start the creation process
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner or Access Package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. Select **New access package**.
 
@@ -95,7 +94,8 @@ If you're not sure which resource roles to include, you can skip adding them whi
 1. In the **Role** list, select the role that you want users to be assigned for the resource. For more information on selecting the appropriate roles for a resource, see [how to determine which resource roles to include in an access package](entitlement-management-access-package-resources.md#determine-which-resource-roles-to-include-in-an-access-package).
 
     ![Screenshot that shows resource role selection for a new access package.](./media/entitlement-management-access-package-create/resource-roles-role.png)
-
+1. For [groups managed by Privileged Identity Management](./privileged-identity-management/groups-discover-groups.md), both active and eligible roles are available as options.
+    :::image type="content" source="media/entitlement-management-access-package-create/pim-for-groups-roles.png" alt-text="Screenshot of available roles to be assigned to PIM for groups resource in an access package.":::
 1. Select **Next: Requests**.
 
 
@@ -174,7 +174,7 @@ $ap = New-MgEntitlementManagementAccessPackage -BodyParameter $params
 
 ```
 
-After you create the access package, assign the resource roles to it. For example, if you want to include the first resource role of the resource returned earlier as a resource role of the new access package, you can use a script similar to this one:
+After you create the access package, assign the resource roles to it. For example, if you want to include the first resource role of the resource returned earlier as a resource role of the new access package, and the role has an ID, you can use a script similar to this one:
 
 ```powershell
 
@@ -200,6 +200,8 @@ $rparams = @{
 
 New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $ap.Id -BodyParameter $rparams
 ```
+
+If the role doesn't have an ID, then don't include the `id` parameter of the `role` structure in the request payload.
 
 Finally, create the policies. In this policy, only the administrators or access package assignment managers can assign access, and there are no access reviews. For more examples, see [Create an assignment policy through PowerShell](entitlement-management-access-package-request-policy.md#create-an-access-package-assignment-policy-through-powershell) and [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true).
 
