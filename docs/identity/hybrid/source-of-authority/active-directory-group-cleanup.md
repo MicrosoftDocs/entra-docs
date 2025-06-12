@@ -41,46 +41,37 @@ managed in a cloud service such as Microsoft Entra.
   Groups which contain computers, contacts or other objects as members
   are outside the scope of this article.
 
-- This article focuses on groups created in AD through ADU&C, MIM or
-  other identity management tools. Built-in groups and those created by
-  Microsoft or other third party products for their own administration
-  are outside the scope of this article.
+- This article focuses on groups created in Active Directory by using Active Directory Users and Computers, Microsoft Identity Manager (MIM), or other identity management tools. This article doesn't cover Built-in groups, or groups that get created by other products.
 
 ## Prerequisites
 
-- The user performing this task will need to be a Domain Admin or
-  similar highly-privileged user to be able to update, move and delete
-  groups
+Complete this list of prerequisites before you begin to remove groups. 
 
-- Ability to change Microsoft Entra Connect Sync or Cloud Sync to change
-  scoping to include/exclude groups from scope
+- You need membership in the Domain Admins group, or similar permission to update, move, and delete groups. 
 
-- Turned on change logging via GPO for all writable domain controllers
-  and central repository for logs of changes
+- You need to be able to change the scope of Microsoft Entra Connect Sync or Cloud Sync to include or exclude groups.
 
-- Turned on AD recycle bin
+- You need to create a Group Policy Object (GPO) for all writable domain controllers to enable change logging and a central repository for logs.
 
-- Created two OUs in the domain – one for temporary Kerberos app scream
-  test groups, and for temporary LDAP app scream test groups
+- You need to enable the Active Directory Recycle Bin.
 
-## Performing group analysis for a domain
+- You need to creat two organizational units (OUs) in the domain – one for temporary Kerberos app scream
+  test groups, and another for temporary Lightweight Directory Access Protocol (LDAP) app scream test groups.
 
-The goal for this activity is to be able to triage groups so that all
-groups are identified as either:
+## Perform group analysis for a domain
 
-- Necessary for one or more AD-integrated applications and managed in an
-  AD-integrated tool
+The goal for group analysis is to review and confirm that groups are:
 
-- Necessary for one or more AD-integrated applications and managed in
+- Needed for an AD-integrated application and managed by using an
+  AD-integrated tool.
+
+- Needed for an AD-integrated application and managed by using
   Microsoft Entra or Exchange Online, with the membership written back
-  to Microsoft Entra
+  to Microsoft Entra.
 
-- Potentially no longer needing to be in AD, but is needed in Microsoft
-  Entra connected services and could be maintained solely in Microsoft
-  Entra
+- Potentially no longer needed in the AD domain, but is needed in services that are connected to Microsoft Entra, and could be maintained solely in Microsoft Entra.
 
-- Groups are not needed by any AD or Microsoft Entra integrated
-  applications
+- Not needed by any applications that are integrated with AD or Microsoft Entra.
 
 The first step is to identify and categorize the groups in your domains
 which have not yet been triaged. For large organizations with many
@@ -122,25 +113,25 @@ for a DL or MESG’ or ‘Analysis for a security group’ section below.
    converted to a M365 group or Exchange Online DL. Perform a Kerberos
    scream test and successor test, and when complete, the options are:
 
-   1. if the group is still needed, maintain in AD with Exchange
+   1. If the group is still needed, maintain in AD with Exchange
       on-premises.
 
-   1. if the group is still needed, change the sync rules to have the
+   1. If the group is still needed, change the sync rules to have the
       members be present in Entra and then replace with an Exchange Online
       DL or M365 group.
 
-   1. if the group was not needed, remove the group from AD.
+   1. If the group was not needed, remove the group from AD.
 
 1. If the group is a DL, then even if the members of the group are in
    Entra, the group will not be able to have its membership SOA converted
    to Entra. You should perform cloud scream test and successor tests, and
    when complete, the options are:
 
-   1. if the group was still needed, replace with an Exchange Online DL
+   1. If the group was still needed, replace with an Exchange Online DL
 
-   1. if the group was still needed, replace with a M365 group
+   1. If the group was still needed, replace with a M365 group
 
-   1. if the group was not needed, remove the group from AD and do not
+   1. If the group was not needed, remove the group from AD and do not
       replace
 
    Contact your Exchange administrator to determine which option to proceed
@@ -206,7 +197,7 @@ for a DL or MESG’ or ‘Analysis for a security group’ section below.
 
 ## Scream test for cloud usage
 
-This test determines if there are users in groups that are used for cloud resources, including privileged roles in an Azure subscription:
+This test determines if there are users in groups that are used for cloud resources, including privileged roles in an Azure subscription.
 
 1. First, check in Entra if there is a reference to the group
 
