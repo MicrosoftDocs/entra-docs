@@ -29,7 +29,7 @@ When a user lands on the "Available" tab, searches for requestable packages, or 
 
 The following flow diagram illustrates the logic used to determine if an access package appears in the browse/search view for a specific user (valid until September 30, 2025 - see Upcoming Changes section below):
 
-:::image type="content" source="media/entitlement-management-access-package-myaccess-visibility/image1.png" alt-text="Screenshot of visibility diagram for access package.":::
+:::image type="content" source="media/entitlement-management-access-package-myaccess-visibility/my-access-visibility-diagram.png" alt-text="Screenshot of visibility diagram for access package.":::
 
 Explaining the Visibility Flow
 
