@@ -1,12 +1,12 @@
 ---
 title: 'Microsoft Entra ID Governance licensing fundamentals'
 description: This article describes shows the licensing requirements for Microsoft Entra ID Governance features.
-author: billmath
+author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 04/09/2025
-ms.author: billmath
+ms.date: 06/11/2025
+ms.author: owinfrey
 ---
 
 # Microsoft Entra ID Governance licensing fundamentals
@@ -23,7 +23,7 @@ The following licenses are available for use with Microsoft Entra ID Governance 
 - **Microsoft Entra Suite** - Microsoft Entra Suite is a complete cloud-based solution for workforce access, available for Microsoft Entra ID P1 and P2 customers. Microsoft Entra Suite brings together **Microsoft Entra Private Access**, **Microsoft Entra Internet Access**, **Microsoft Entra ID Governance**, **Microsoft Entra ID Protection**, and **Microsoft Entra Verified ID**. The Microsoft Entra ID Governance portion provides the same identity governance capabilities as the **Microsoft Entra ID Governance** product. The difference is that they have different prerequisites.
 
 >[!NOTE]
->Some Microsoft Entra ID Governance scenarios can be configured to depend upon other features that aren't covered by Microsoft Entra ID Governance.  These features might have additional licensing requirements.  See the [Identity Governance overview](identity-governance-overview.md) for more information on governance scenarios that rely on additional features.
+>Some Microsoft Entra ID Governance scenarios can be configured to depend upon other features that aren't covered by Microsoft Entra ID Governance. These features might have additional licensing requirements. For more information on governance scenarios using other features, see the [Identity Governance overview](identity-governance-overview.md) page.
 
 The Microsoft Entra ID Governance for Government and Microsoft Entra ID Governance Add-on for Microsoft Entra ID P2 for Government products are available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments.
 
@@ -41,7 +41,7 @@ Microsoft Entra ID Governance capabilities are also included in the Microsoft En
 The [product names and service plan identifiers for licensing](../identity/users/licensing-service-plan-reference.md) lists additional products that include the prerequisite service plans.
 
 >[!NOTE]
->A subscription to a prerequisite for a Microsoft Entra ID Governance product must be active in the tenant. If a prerequisite is not present, or the subscription expires, then Microsoft Entra ID Governance scenarios might not function as expected.  
+>A subscription to a prerequisite for a Microsoft Entra ID Governance product must be active in the tenant. If a prerequisite isn't present, or the subscription expires, then Microsoft Entra ID Governance scenarios might not function as expected.  
 
 To check if the prerequisite products for a Microsoft Entra ID Governance product are present in a tenant, you can use the Microsoft Entra admin center or the Microsoft 365 admin center to view the list of products.
 
@@ -49,7 +49,7 @@ To check if the prerequisite products for a Microsoft Entra ID Governance produc
 
 1. Browse to **Billing** > **Licenses**.
 
-1. In the **Manage** menu, select **Licensed features**.  The information bar indicates the current Microsoft Entra ID license plan.
+1. In the **Manage** menu, select **Licensed features**. The information bar indicates the current Microsoft Entra ID license plan.
 
 1. To view the existing products in the tenant, in the **Manage** menu, select **All products**.
 
@@ -63,7 +63,7 @@ A Global Administrator in a commercial tenant that has an appropriate prerequisi
 
 1. In the **Search all product categories** box, type `"Microsoft Entra ID Governance"`.
 
-1. Select **Details** below **Microsoft Entra ID Governance** to view the trial and purchase information for the product.  If your tenant has Microsoft Entra ID P2, then select  **Details** below **Microsoft Entra ID Governance Step-Up for Microsoft Entra ID P2**.
+1. Select **Details** below **Microsoft Entra ID Governance** to view the trial and purchase information for the product. If your tenant has Microsoft Entra ID P2, then select  **Details** below **Microsoft Entra ID Governance Step-Up for Microsoft Entra ID P2**.
 
 1. In the product details page, select **Start free trial**.
 
@@ -91,11 +91,11 @@ This feature is available with Microsoft Entra ID P1, P2, and Microsoft Entra ID
 
 ### Do licenses need to be assigned to users to use Identity Governance features?
 
-Users don't need to be assigned a Microsoft Entra ID Governance license, but there needs to be as many license seats to include all users in scope of, or who configures, the Identity Governance features.
+Users don't need to be assigned a Microsoft Entra ID Governance license, but there needs to be as many licenses to include all users in scope of, or who configures, the Identity Governance features.
 
 ### How can I license usage of Microsoft Entra ID Governance features for business guests?
 
-All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license.  We're creating a new Microsoft Entra ID Governance license for business guests. This license operates on a monthly active usage (MAU) model. Customers are able to acquire licenses matching their anticipated business guest MAU.
+All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license. We're creating a new Microsoft Entra ID Governance license for business guests. This license operates on a monthly active usage (MAU) model. Customers are able to acquire licenses matching their anticipated business guest MAU.
 
 We anticipate making these licenses available in the second quarter (Q2) of 2025. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
 
@@ -103,7 +103,7 @@ For more information, see: [Microsoft Entra ID Governance licensing for business
 
 ### What happens to PIM when a license expires?
 
-If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory. The changes discussed below are applicable to PIM for Microsoft Entra roles, PIM for Azure resources, and PIM for Groups.
+If a Microsoft Entra ID P2 or Microsoft Entra ID Governance license expires or trial ends, Privileged Identity Management features will no longer be available in your directory. The following changes listed are applicable to PIM for Microsoft Entra roles, PIM for Azure resources, and PIM for Groups.
 
 - Active permanent assignments aren't affected.
 - Active time-bound assignments become active permanent, which means they'll no longer expire at a designated time.
