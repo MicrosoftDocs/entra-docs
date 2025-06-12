@@ -14,7 +14,7 @@ ms.reviewer: brianmel, miepping
 #Customer intent: As a customer, I want to understand how to troubleshoot macOS Platform single sign-on (PSSO) issues, have some frequently asked questions answered, and understand different scenarios to validate.
 ---
 
-# macOS Platform single sign-on known issues and troubleshooting (preview)
+# macOS Platform single sign-on known issues and troubleshooting
 
 This article outlines the current known issues and common questions with macOS Platform single sign-on (PSSO). It provides issue solutions and information on how to report an issue that isn't covered. This article also includes troubleshooting guidance.
 
