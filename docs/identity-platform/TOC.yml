@@ -153,12 +153,12 @@
             items:
               - name: Use native authentication API
                 items:
-                  - name: Sign in users
+                  - name: Sign in users in a React SPA
                     href: quickstart-native-authentication-single-page-app-react-sign-in.md
-              - name: Use native authentication API SDK
+              - name: Use native authentication SDK
                 items:
-                - name: Sign in users
-                  href: quickstart-native-authentication-single-page-app-react-sign-in.md
+                - name: Sign in users in a React SPA
+                  href: quickstart-native-authentication-single-page-app-react-sdk-sign-in.md
     - name: Tutorials
       items:
         - name: JavaScript
