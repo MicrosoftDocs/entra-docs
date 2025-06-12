@@ -693,7 +693,7 @@
       - name: Couchbase Capella - SSO
         href: couchbase-capella-sso-tutorial.md
       - name: Coupa
-        href: coupa-tutorial.md
+        href: coupa-sso-tutorial.md
       - name: Coupa Risk Assess
         href: coupa-risk-assess-tutorial.md
       - name: courses.work
