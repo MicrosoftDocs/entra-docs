@@ -28,7 +28,7 @@ Microsoft has introduced a security setting that protects against insecure confi
 
 When this setting is enabled, the secure patterns are strictly enforced.   When enabled, if anyone in your organization tries to add an identifier URI that doesn't comply with the [secure patterns](#secure-patterns), they'll receive an error like:
 
-```Failed to add identifier URI {uri}. All newly added URIs must contain a tenant verified domain, tenant ID, or app ID, as per the default tenant policy of your organization. See https://aka.ms/identifier-uri-formatting-error for more information on this error.```
+```Failed to add identifier URI {uri}. All newly added URIs must contain a tenant verified domain, tenant ID, or app ID, as per the default tenant policy of your organization. See https://aka.ms/identifier-uri-addition-error for more information on this error.```
 
 Existing identifier URIs already configured on the app won't be affected, and all apps will continue to function as normal. This will only affect new updates to Microsoft Entra app configurations.
 
@@ -58,16 +58,20 @@ There are three possible ways that you can add an identifier URI to your app. We
 
 ## Additional security settings
 
-Microsoft also offers a more restrictive security policy on the `identifierUris` property. 
+Microsoft also offers a more restrictive security policy on the `identifierUris` property. This more restrictive policy is called `nonDefaultUriAddition`.
 
 When this protection is enabled, new custom identifier URIs can't be added to any application in that organization, except for in known secure scenarios. Specifically, if any of the following conditions are met, an identifier URI can still be added:
 
 - The identifier URI being added to the app is one of the 'default' URIs, meaning it is in the format of `api://{appId}` or `api://{tenantId}/{appId}`
 - The app accepts `v2.0` Entra tokens. This is true if the app's `api.requestedAccessTokenVersion` property is set to `2`.
 - The app uses the SAML protocol for single sign-on (SSO). This is true if the service principal for the app has its `preferredSingleSignOnMode` property set to `SAML`.
-- An [exemption](https://aka.ms/identifier-uri-protection-grant-exemptions) has been granted by an administrator to the app the URI is being added to, or to the user or service performing the addition.
+- An [exemption](https://aka.ms/exempt-identifier-uri-additional-restriction) has been granted by an administrator to the app the URI is being added to, or to the user or service performing the addition.
 
-This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim. We recommend enabling it if possible.
+Once this protection is enabled, if anyone in your organization attempts to add a custom identifier URI to a v1 application, they'll receive an error like:
+
+```The newly added URI {uri} must comply with the format 'api://{appId}' or 'api://{tenantId}/{appId}' as per the default app management policy of your organization. If the requestedAccessTokenVersion is set to 2, this restriction may not apply. See https://aka.ms/identifier-uri-addition-error for more information on this error. ```
+
+This more restrictive policy can help protect your organization from common token validation errors in the `audience` claim. We recommend enabling it if possible, but Microsoft won't enable it on your behalf.
 
 To enable this more restrictive policy in your organization, you can run [this script](https://aka.ms/enable-identifier-uri-additional-restriction).
 
