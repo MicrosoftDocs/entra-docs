@@ -121,6 +121,4 @@ Coinciding with this change, we are also introducing a **new tenant-wide setting
 
 
 > [!NOTE]
-> If the access package is not visible for the end-user according to the
-> **Deep Dive: Discovering Requestable Access Packages**, then the ‘resource’ tab won’t be available either. To configure this setting, go to the Microsoft Entra Admin Center with at least the Identity Governance role, and navigate to Entitlement Lifecycle
-Management > Control Configurations > My Access settings to see the resource role visibility control setting.
+> If the access package is not visible for the end-user according to the **Deep Dive: Discovering Requestable Access Packages**, then the ‘resource’ tab won’t be available either. To configure this setting, go to the Microsoft Entra Admin Center with at least the Identity Governance role, and navigate to Entitlement Lifecycle Management > Control Configurations > My Access settings to see the resource role visibility control setting.
