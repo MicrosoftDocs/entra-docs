@@ -1,5 +1,5 @@
 ---
-title: Conditional Access service dependencies
+title: Conditional Access service dependencies 
 description: Learn how conditions are used in Microsoft Entra Conditional Access to trigger a policy.
 
 ms.service: entra-id
@@ -12,14 +12,14 @@ author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: calebb
 ---
-# Service dependencies in Microsoft Entra Conditional Access
+# What are service dependencies in Microsoft Entra Conditional Access? 
 
-With Conditional Access policies, you specify requirements to use websites and services. For example, your requirements can include requiring multifactor authentication (MFA) or [managed devices](./concept-conditional-access-grant.md).
+With Conditional Access policies, you can specify access requirements to websites and services. For example, your access requirements can include requiring multifactor authentication (MFA) or [managed devices](./concept-conditional-access-grant.md).
 
-When you use a site or service directly, it's usually easy to see how a related policy affects you. For example, if you set a policy that requires multifactor authentication (MFA) for SharePoint Online, MFA is required for each sign-in to the SharePoint web portal. But sometimes it's hard to know how a policy affects you because some cloud apps depend on other cloud apps. For example, Microsoft Teams lets you use resources in SharePoint Online. So, when you use Microsoft Teams in this scenario, you're also subject to the SharePoint MFA policy.
+When you access a site or service directly, the impact of a related policy is typically easy to assess. For example, if you have a policy that requires multifactor authentication (MFA) for SharePoint Online configured, MFA is enforced for each sign-in to the SharePoint web portal. However, it isn't always straight-forward to assess the impact of a policy because there are cloud apps with dependencies to other cloud apps. For example, Microsoft Teams can provide access to resources in SharePoint Online. So, when you access Microsoft Teams in our current scenario, you're also subject to the SharePoint MFA policy.
 
 > [!TIP]
-> Use the [Office 365](concept-conditional-access-cloud-apps.md#office-365) app to target all Office apps and avoid issues with service dependencies in the Office stack.
+> Using the [Office 365](concept-conditional-access-cloud-apps.md#office-365) app will target all Office apps to avoid issues with service dependencies in the Office stack.
 
 <!-- docutune:ignore "Windows Azure Active Directory" -->
 
@@ -27,18 +27,18 @@ When you use a site or service directly, it's usually easy to see how a related 
 
 If you have a service dependency configured, the policy can apply using early-bound or late-bound enforcement.
 
-- **Early-bound policy enforcement** means a user must meet the dependent service policy before using the calling app. For example, a user must meet the SharePoint policy before signing in to Microsoft Teams.
-- **Late-bound policy enforcement** happens after the user signs in to the calling app. Enforcement is deferred until the calling app requests a token for the downstream service. Examples include Microsoft Teams accessing Planner, and Office.com accessing SharePoint.
+- **Early-bound policy enforcement** means a user must satisfy the dependent service policy before accessing the calling app. For example, a user must satisfy SharePoint policy before signing into Microsoft Teams.
+- **Late-bound policy enforcement** occurs after the user signs into the calling app. Enforcement is deferred to when calling app requests, a token for the downstream service. Examples include Microsoft Teams accessing Planner and Office.com accessing SharePoint.
 
-The following diagram shows Microsoft Teams service dependencies. Solid arrows indicate early-bound enforcement, and the dashed arrow for Planner indicates late-bound enforcement.
+The following diagram illustrates Microsoft Teams service dependencies. Solid arrows indicate early-bound enforcement the dashed arrow for Planner indicates late-bound enforcement.
 
 ![A diagram showing Microsoft Teams service dependencies.](./media/service-dependencies/01.png)
 
-Set common policies across related apps and services whenever possible. A consistent security posture gives you the best user experience. For example, setting a common policy across Exchange Online, SharePoint Online, and Microsoft Teams reduces prompts that can come from different policies applied to downstream services.
+As a best practice, you should set common policies across related apps and services whenever possible. Having a consistent security posture provides you with the best user experience. For example, setting a common policy across Exchange Online, SharePoint Online, and Microsoft Teams reduces prompts that might arise from different policies being applied to downstream services.
 
-To set a common policy for Microsoft 365 apps, use the [Office 365 app](concept-conditional-access-cloud-apps.md#office-365) instead of targeting individual applications.
+A great way to accomplish a common policy with applications in Microsoft 365 is to use the [Office 365 app](concept-conditional-access-cloud-apps.md#office-365) instead of targeting individual applications.
 
-The following table lists some more service dependencies, where the client apps must satisfy. This list isn't exhaustive.
+The below table lists some more service dependencies, where the client apps must satisfy. This list isn't exhaustive.
 
 | Client apps         | Downstream service                          | Enforcement |
 | :--                 | :--                                         | ---         |
@@ -72,8 +72,8 @@ The following table lists some more service dependencies, where the client apps 
 
 ## Troubleshooting service dependencies
 
-The Microsoft Entra sign-in log is a valuable source of information when you troubleshoot why and how a Conditional Access policy applies in your environment. The sign-in logs include helpful information like applications, resources, and audiences. For more information about troubleshooting unexpected sign-in outcomes related to Conditional Access, see the article [Troubleshooting sign-in problems with Conditional Access](troubleshoot-conditional-access.md#service-dependencies).
+The Microsoft Entra sign-in log is a valuable source of information when troubleshooting why and how a Conditional Access policy applied in your environment. For more information about troubleshooting unexpected sign-in outcomes related to Conditional Access, see the article [Troubleshooting sign-in problems with Conditional Access](troubleshoot-conditional-access.md#service-dependencies).
 
 ## Next steps
 
-Learn how to implement Conditional Access in your environment in [Plan your Conditional Access deployment in Microsoft Entra ID](plan-conditional-access.md).
+To learn how to implement Conditional Access in your environment, see [Plan your Conditional Access deployment in Microsoft Entra ID](plan-conditional-access.md).
