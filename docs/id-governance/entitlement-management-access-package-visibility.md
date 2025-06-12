@@ -29,7 +29,7 @@ When a user lands on the "Available" tab, searches for requestable packages, or 
 
 The following flow diagram illustrates the logic used to determine if an access package appears in the browse/search view for a specific user (valid until September 30, 2025 - see Upcoming Changes section below):
 
-:::image type="content" source="media/entitlement-management-access-package-visibility/my-access-visibility-diagram.png" alt-text="Screenshot of visibility diagram for access package.":::
+:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram.png" alt-text="Screenshot of visibility diagram for access package.":::
 
 Explaining the Visibility Flow
 
@@ -66,7 +66,7 @@ The visibility change will only impact how end-users can discover access package
 
 Updated diagram
 
-:::image type="content" source="media/entitlement-management-access-package-visibility/image2.png" alt-text="Screenshot of updated my access visibility access package diagram.":::
+:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram-2.png" alt-text="Screenshot of updated my access visibility access package diagram.":::
 
 [AP visibility
 post-change.png](https://microsoft-my.sharepoint-df.com/:i:/p/alfilipi/EVxarE4n0CtOg7MI8a7MkagBRiT6AKKBCkwCYTIePU1sKQ?e=K43gxu)
