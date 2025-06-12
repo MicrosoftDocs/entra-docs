@@ -45,7 +45,7 @@ managed in a cloud service such as Microsoft Entra.
 
 ## Prerequisites
 
-Complete this list of prerequisites before you begin to remove groups. 
+These prerequisites must be completed before you start to remove unused groups:
 
 - You need membership in the Domain Admins group, or similar permission to update, move, and delete groups. 
 
@@ -58,7 +58,7 @@ Complete this list of prerequisites before you begin to remove groups.
 - You need to creat two organizational units (OUs) in the domain – one for temporary Kerberos app scream
   test groups, and another for temporary Lightweight Directory Access Protocol (LDAP) app scream test groups.
 
-## Perform group analysis for a domain
+## Perform a group analysis for the domain
 
 The goal for group analysis is to review and confirm that groups are:
 
@@ -76,51 +76,45 @@ The goal for group analysis is to review and confirm that groups are:
 The first step is to identify and categorize the groups in your domains
 which have not yet been triaged. For large organizations with many
 thousands of groups, you will need to select which order to evaluate the
-groups. This can include factors of:
+groups. This can include factors like:
 
 - Group type
-
 - Built-in group vs group created in domain
-
 - OU
-
 - Group size – number of memberships
-
 - Whether the group is a member of another group in AD
 
-Select a reasonable size batch of untriaged groups for analysis,
-depending upon the availability of your team to coordinate and follow
-up. Then, for each group in that batch, based on whether the group type
-is a DL or MESG, or a security group, continue reading at the ‘analysis
-for a DL or MESG’ or ‘Analysis for a security group’ section below.
+Select a reasonable size batch of untriaged groups for analysis. Based upon the type of each group, see the next sections for steps to analyze it for potential cleanup:
+
+- [Analysis for a DL or MESG](#analysis-for-a-dl-or-mesg)
+- [Analysis for a security group](#analysis-for-a-security-group)
 
 ### Analysis for a DL or MESG
 
 1. Check if an owner is set for the group in Exchange or Exchange
-   Online. If so, contact the owner of the group to determine if the
+   Online. Contact the owner of the group to determine if the
    group is still needed.
 
-1. Check if the group has members. If no members, proceed to cloud
+1. Check if the group has members. If there are no members, proceed to the cloud
    scream test.
 
-1. Check the Exchange or Exchange Online logs to see if mail has been
-   sent to the group. If it has, then it is likely the group is still
-   being used. Contact the senders of those mails to determine the
+1. Check the Exchange or Exchange Online logs to see if mail was
+   sent to the group. If mail was sent, then the group is likely still
+   in use. Contact the senders of those mails to determine the
    purpose of the group.
 
-1. Check if the group has as members any users, contacts or groups not
-   synched to Entra. If so, then the group will not be able to be
-   converted to a M365 group or Exchange Online DL. Perform a Kerberos
-   scream test and successor test, and when complete, the options are:
+1. Check if the group members include any users, contacts, or groups that aren't
+   synced to Microsoft Entra. If the group includes members that aren't synced, it won't be
+   converted to a Microsoft 365 group or Exchange Online DL. Perform a Kerberos
+   scream test and successor test. After you finish:
 
-   1. If the group is still needed, maintain in AD with Exchange
-      on-premises.
+   - If the group is still needed, maintain it in the domain by using Exchange on-premises.
 
-   1. If the group is still needed, change the sync rules to have the
-      members be present in Entra and then replace with an Exchange Online
+   - If the group is still needed, change the sync rules to have the
+      members be present in Microsoft Entra and then replace with an Exchange Online
       DL or M365 group.
 
-   1. If the group was not needed, remove the group from AD.
+   - If the group was not needed, remove the group from the domain.
 
 1. If the group is a DL, then even if the members of the group are in
    Entra, the group will not be able to have its membership SOA converted
