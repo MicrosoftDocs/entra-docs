@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 06/05/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---

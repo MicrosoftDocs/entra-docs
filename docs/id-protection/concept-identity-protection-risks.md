@@ -5,7 +5,7 @@ description: Learn about risk detections, risk levels, and how they map to risk 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 06/03/2025
+ms.date: 06/12/2025
 
 author: shlipsey3
 ms.author: sarahlipsey

@@ -3,7 +3,7 @@ title: Remediate risks and unblock users
 description: Learn how to configure user self-remediation and manually remediate risky users in Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 06/02/2025
+ms.date: 06/12/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
