@@ -1,6 +1,6 @@
 ---
-title: TODO
-description: Learn how to configure a sample React single-page app (SPA) that uses native authentication API to sign up users.
+title: Sign in users in a React single-page app by using native authentication SDK
+description: Configure a React single-page app with native authentication SDK to let users sign up, sign in, sign out, and reset passwords. Start with this quickstart.
 author: kengaderdus
 manager: dougeby
 ms.author: kengaderdus
@@ -11,7 +11,7 @@ ms.date: 06/30/2025
 #Customer intent: As a developer, I want to configure a sample React single-page application using native authentication react SDK so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
 ---
 
-# Quickstart: Sign in users in a React single-page app by using native authentication SDK (preview)
+# Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -114,4 +114,4 @@ You've now configured the sample app and it's ready to run.
 
 ## Related content
 
-- [Build a React single-page app that uses native authentication API from scratch](tutorial-native-authentication-single-page-app-react-sign-up.md).
+- [Build a React single-page app that uses native authentication SDK to authenticate users](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md).
