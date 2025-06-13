@@ -17,7 +17,7 @@ search bar.
 
 Select activity as "**Change Source of Authority from AD to cloud**.”
 
-<img src="media/how-to-group-source-of-authority/image10.png" style="width:6.5in;height:1.05208in" />
+<img src="media/how-to-group-source-of-authority-configure/image10.png" style="width:6.5in;height:1.05208in" />
 
 Talk about how to integrate with Azure Monitoring and talk about which events Admins should pull
 
@@ -37,6 +37,6 @@ We can continue to use the Audit logs to determine the status for last 30 days.
 
 ## Related content
 
-- For more information about how to configure Group SOA, see How to configure Group SOA. 
-- For more information about how Group SOA works, see How Group SOA works.
+- For more information about how to configure Group SOA, see [How to configure Group SOA](how-to-group-source-of-authority-configure.md). 
+- For more information about how Group SOA works, see [How Group SOA works](concept-group-source-of-authority-how-it-works.md).
 
