@@ -15,6 +15,22 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## May 2025
+
+### New articles
+
+- [Email OTP send event reference](custom-extension-email-otp-send-data.md)
+
+### Updated articles
+
+- [Custom claims provider reference](custom-claims-provider-reference.md) - The update improved content clarity.
+- [Application configuration options](msal-client-application-configuration.md) - The update improved content clarity.
+- [Custom authentication extensions overview](custom-extension-overview.md) - The update improved content clarity.
+- [Single-page application: Acquire a token to call an API](scenario-spa-acquire-token.md) - The update improved content clarity.
+- [Single-page application: Code configuration](scenario-spa-app-configuration.md) - The update improved content clarity.
+- [Single-page application: Add sign-in and sign-out code](scenario-spa-sign-in.md) - The update improved content clarity.
+- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Partially update error code.
+
 ## April 2025
 
 ### New articles
@@ -49,14 +65,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Tutorial: Prepare a JavaScript single-page application for authentication](tutorial-single-page-app-javascript-prepare-app.md) - The tutorial was updated with the latest code sample.
 - [Understand the app manifest (Microsoft Graph format)](reference-microsoft-graph-app-manifest.md) - The update improved content clarity.
 - [Web app that signs in users: Sign-in and sign out](scenario-web-app-sign-user-sign-in.md) - The update improved content clarity.
-
-
-## February 2025
-
-### New articles
-
-- [Best practices to protect frontline workers](security-best-practices-for-frontline-workers.md) - Best Practices to Protect Frontline Workers
-
-### Updated articles
-
-- [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](v2-oauth-ropc.md) - Added clarity to the content

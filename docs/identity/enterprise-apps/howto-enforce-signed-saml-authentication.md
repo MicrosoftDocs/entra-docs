@@ -2,7 +2,7 @@
 title: Enforce signed SAML authentication requests
 description: Learn how to enforce signed SAML authentication requests.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article

@@ -3,7 +3,7 @@ title: Configure RingCentral for automatic user provisioning with Microsoft Entr
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to RingCentral.
 
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
