@@ -480,8 +480,7 @@ In the Netskope portal:
 
 1. Set **Status** to **Disabled** and select **Save**.
 
-1. Select the `MSFTSSEPrivate` configuration > **Exceptions** > **New Exception** > **Destination Locations**.
-1. Select `MSFT SSE Service` and `MSFT SSE M365` (Instructions for creating this object are listed in the Netskope profiles section).
+1. Select the `MSFTSSEPrivate` configuration > **Exceptions** > **New Exception** > **Destination Locations** > Select `MSFT SSE Service` and `MSFT SSE M365` (Instructions for creating this object are listed in the Netskope profiles section).
 
 1. Select **Bypass** and **Treat it like local IP address** options.
 
