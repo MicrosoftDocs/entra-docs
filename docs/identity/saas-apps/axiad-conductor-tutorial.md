@@ -3,7 +3,7 @@ title: Configure Axiad Conductor for Entra ID for Single sign-on with Microsoft 
 description: Learn how to configure single sign-on between Microsoft Entra ID and Axiad Conductor for Entra ID.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -3,7 +3,7 @@ title: Configure Tangoe Command Premium Mobile for Single sign-on with Microsoft
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tangoe Command Premium Mobile.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -3,7 +3,7 @@ title: Assign enterprise application owners
 description: Learn how to assign an owner to an enterprise application in Microsoft Entra ID, manage configurations, and streamline user access efficiently.
 
 author: omondiatieno
-manager: celesteDG
+manager: mwongerapk
 ms.service: entra-id
 
 ms.subservice: enterprise-apps
