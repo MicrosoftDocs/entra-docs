@@ -9,7 +9,7 @@ ms.author: justinha
 ms.reviewer: dhanyak
 ---
 
-## How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID
+# How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID
 
 Audit logs can be accessed from Azure Portal -\> Manage Microsoft Entra
 ID -\> Monitoring -\> Audit Logs or by searching for “audit logs” in the
@@ -37,6 +37,6 @@ We can continue to use the Audit logs to determine the status for last 30 days.
 
 ## Related content
 
-- For more information about how to configure Group SOA, see [How to configure Group SOA](how-to-group-source-of-authority-configure.md). 
-- For more information about how Group SOA works, see [How Group SOA works](concept-group-source-of-authority-how-it-works.md).
+- For more information about how to configure Group SOA, see How to configure Group SOA. 
+- For more information about how Group SOA works, see How Group SOA works.
 
