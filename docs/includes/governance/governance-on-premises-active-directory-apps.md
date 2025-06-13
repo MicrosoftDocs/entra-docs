@@ -74,8 +74,7 @@ or OUs.
 ensuring they are placed in the same OU or OUs as the original groups
 
 For more information on configuring the target location for group that
-are provisioned to Active Directory, see [Scope filter target
-container](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
+are provisioned to Active Directory, see [Scope filter target container](/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
 
 ## Govern on-prem AD based apps using Group SOA
 
@@ -88,8 +87,9 @@ entitlement management or access reviews, back to AD using Group
 Provision to AD. In this model, you don’t need to change the app or
 create new groups.
 
-<img src="./e2bd822e029aa83306f1fc76eaca2f3fded0d1ab.png"
-style="width:6.5in;height:3.78125in" />
+
+<img src="media/governance-on-premises-active-directory-apps/source-of-authority-switch.png"
+style="width:6.5in;height:3.78125in" alt="A conceptual diagram of the switch to Group Source of Authority."/>
 
 Use the following steps for applications to use the Group Source of
 Authority option.
@@ -125,8 +125,7 @@ Authority option.
     resources in the access package. Configure a direct assignment
     policy in the access package.
 
-2.  In [<u>Entitlement
-    Management</u>](https://review.learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview),
+2.  In [Entitlement Management](/entra/id-governance/entitlement-management-overview),
     assign the synced users who need access to the AD based app to the
     access package.
 
@@ -134,15 +133,11 @@ Authority option.
     synchronization. Using Active Directory Users and Computers, confirm
     that the correct users are present as members of the group.
 
-4.  In your AD domain monitoring, allow only the [<u>gMSA
-    account</u>](https://review.learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites#group-managed-service-accounts) that
-    runs the provisioning agent, [<u>authorization to change the
-    membership</u>](https://review.learn.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-security-group-management) in
+4.  In your AD domain monitoring, allow only the [gMSA account](/entra/identity/hybrid/cloud-sync/how-to-prerequisites#group-managed-service-accounts) that
+    runs the provisioning agent, [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in
     the new AD group.
 
-For more information, see [Embracing Cloud-first posture: Transitioning
-AD Group Source of Authority to the
-Cloud](https://microsoft.sharepoint.com/:w:/t/APEXIdentityContent/EQ_Ki1k05l5LqgetVmzYRJYB8E2jU6pewJGIsh4CueBI0Q?e=xQw6OF)
+For more information, see Embracing cloud-first posture: Transitioning AD Group Source of Authority to the cloud.
 
 ## Govern on-prem AD with new cloud security groups provisioned to AD
 
