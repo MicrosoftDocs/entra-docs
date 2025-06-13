@@ -181,7 +181,7 @@
                 href: tutorial-single-page-app-react-sign-in-sign-out.md
             - name: Native authentication
               items:
-                - name: Use native authentication API
+                - name: Use API
                   items:
                   - name: Sign up
                     href: tutorial-native-authentication-single-page-app-react-sign-up.md
@@ -191,7 +191,7 @@
                     href: tutorial-native-authentication-single-page-app-react-sign-in.md
                   - name: Reset password
                     href: tutorial-native-authentication-single-page-app-react-reset-password.md
-                - name: Use native authentication SDK
+                - name: Use SDK
                   items:
                   - name: Sign up
                     href: tutorial-native-authentication-single-page-app-react-sdk-sign-up.md
