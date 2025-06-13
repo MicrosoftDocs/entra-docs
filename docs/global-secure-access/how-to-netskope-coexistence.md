@@ -539,7 +539,7 @@ Go to the system tray to check that Global Secure Access and Netskope clients ar
 
 #### Verify configurations for clients
 
-1. Right-click on **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile** and verify that Private access and Private DNS rules are applied to this client.
+1. Right-click on **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile** and verify that Microsoft Access and Internet Access rules are applied to this client.
 
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 
