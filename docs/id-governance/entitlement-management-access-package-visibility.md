@@ -60,7 +60,7 @@ If **all** these checks pass, then the access package is Visible in the user's b
 
 ## Upcoming Changes to visibility
 
-Effective September 30 2025, the visibility on the [My Access portal](https://myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you don't want those access packages visible to all members, you must hide the access package by this date.
+Effective September 30 2025, the visibility on the [My Access portal](https://myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you don't want the access packages visible to all members, you must hide the access package by this date.
 
 The visibility change will only impact how end-users can discover access packages via the "Available" tab, the "View all" option, or when using the search bar within these sections to find requestable access packages. The change won't impact the visibility logic for other tabs like "Suggested", "Active", or "Expired" (even when using search within those tabs), nor does it impact other My Access portal sections such as "Request history" or "Approvals".
 
