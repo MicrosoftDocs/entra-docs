@@ -451,7 +451,7 @@ In the Netskope portal:
 
 In this scenario Netskope only capture private application traffic. Global Secure Access handles all other traffic.
 
-### Microsoft Entra Private Access configuration
+### Microsoft Entra Internet Access and Microsoft Access configuration
 
 For this scenario:
 
