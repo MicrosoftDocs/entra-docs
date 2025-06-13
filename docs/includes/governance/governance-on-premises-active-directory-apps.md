@@ -36,34 +36,115 @@ The following prerequisites are required to implement this scenario.
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect.
      - Required to synchronize AD:user:objectGUID to Microsoft Entra ID:user:onPremisesObjectIdentifier.
 
+For more information, see [cloud sync supported groups and scale limits](/entra/identity/hybrid/cloud-sync/how-to-prerequisites?tabs=public-cloud#supported-groups-and-scale-limits).
+
 ## Supported groups
 For this scenario, only the following groups are supported:
-  - Only cloud created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported
-  - These groups must have assigned or dynamic membership
-  - These groups can only contain on-premises synchronized users and / or cloud created security groups
-  - The on-premises user accounts that are synchronized and are members of this cloud created security group can be from the same domain or cross-domain, but they all must be from the same forest
-  - These groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope). Your on-premises environment must support the universal group scope
-  - Groups that are larger than 50,000 members aren't supported
+  - Only cloud-created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported.
+  - Assigned or dynamic membership groups.
+  - Contain on-premises synchronized users or cloud-created security groups.
+  - On-premises synchronized users that are members of the cloud-created security group can be from the same domain or other domains from the same forest
+  - The forest must support universal groups because the cloud-created security group is written back to AD with [universal group scope ](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope)
+  - No more than 50,000 members
   - Each direct child nested group counts as one member in the referencing group
 
+## Considerations when provisioning groups back to AD
 
-## Supported scenarios
-The following sections discuss the scenarios that are supported with cloud sync group provisioning.
+When you make the SOA switch, if you are going to provision groups back
+to Active Directory (AD), it's important to provision those groups back
+to the same Organizational Unit (OU) in AD where they were originally
+located. This ensures that Microsoft Entra Cloud Sync recognizes the
+transferred group as the same one already in AD.
 
-## Configuring supported scenarios
+This recognition is possible because both groups share the same security
+identifier (SID). If the group is provisioned to a different OU, it will
+maintain the same SID, and Microsoft Entra Cloud Sync will update the
+existing group, but you may experience Access Control List (ACL) issues.
+The reason for this, is because AD permissions don't always travel
+cleanly across containers and only explicit permissions will follow the
+group. Inherited permissions from the old OU or Group Policy Object
+permissions applied to the OU will not.
 
-If you want to control whether a user is able to connect to an Active Directory application that uses Windows authentication, you can use the application proxy and a Microsoft Entra security group.
-If an application checks a user's AD group memberships via Kerberos or LDAP, then you can use cloud sync group provisioning to ensure an AD user has those group memberships before the user accesses the applications. 
+Before making the SOA switch, consider the following recommended steps:
 
+1. Move all the groups you plan to change the SOA for to a specific OU
+or OUs.  
+1. Make the SOA change.  
+1. Provision the groups to Active Directory using Group provisioning,
+ensuring they are placed in the same OU or OUs as the original groups
 
-The following sections discuss two scenario options that are supported with cloud sync group provisioning. The scenario options are meant to ensure users assigned to the application have group memberships when they authenticate to the application.
- - Create a new group and update the application, if it already exists, to check for the new group, or
- - Create a new group and update the existing groups the application was checking for to include the new group as a member
+For more information on configuring the target location for group that
+are provisioned to Active Directory, see [Scope filter target
+container](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
 
-Before you begin, ensure that you're a domain administrator in the domain where the application is installed. Ensure you can sign into a domain controller or have the [Remote Server Administration tools](/troubleshoot/windows-server/system-management-components/remote-server-administration-tools) for Active Directory Domain Services (AD DS) administration installed on your Windows PC.
+## Govern on-prem AD based apps using Group SOA
 
+In this scenario option, when you have a group already present in AD
+used by the application, you can use the new capability **Group Source
+of Authority (SOA) switch** to change the Source of Authority of the
+group to Microsoft Entra. The, you can configure to provision the
+membership changes to the group made in Microsoft Entra, such as through
+entitlement management or access reviews, back to AD using Group
+Provision to AD. In this model, you don’t need to change the app or
+create new groups.
 
-### Configuring the new groups option
+<img src="./e2bd822e029aa83306f1fc76eaca2f3fded0d1ab.png"
+style="width:6.5in;height:3.78125in" />
+
+Use the following steps for applications to use the Group Source of
+Authority option.
+
+### Create an application and transfer source of authority
+
+1.  Using the Microsoft Entra admin center, create an application in
+    Microsoft Entra ID representing the AD-based application, and
+    configure the application to require user assignment.
+
+2.  Ensure that the AD group you plan to convert is already synchronized
+    to Microsoft Entra, and that the membership of the AD group is only
+    users and optionally other groups which are themselves also
+    synchronized to Microsoft Entra. If the group or any members of the
+    group are not represented in Microsoft Entra, you will not be able
+    to transfer the source of authority of the group.
+
+3.  Transfer the source of authority to your existing synchronized cloud
+    group.
+
+4.  Once the source of authority has been transferred, use [Group Provisioning to AD](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory) to
+    provision subsequent changes to this group back to AD. Once group
+    provisioning is enabled, Microsoft Entra Cloud Sync will recognize
+    that a transferred group is the same group as the one already in AD,
+    because both groups have the same security identifier (SID).
+    Provisioning the transferred cloud group to AD will then update the
+    existing AD group instead of creating a new one.
+
+### Configure Microsoft Entra features to manage the membership of the transferred group
+
+1.  Create an [access package](/entra/id-governance/entitlement-management-access-package-create).
+    Add the application and the security group from the previous steps as
+    resources in the access package. Configure a direct assignment
+    policy in the access package.
+
+2.  In [<u>Entitlement
+    Management</u>](https://review.learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview),
+    assign the synced users who need access to the AD based app to the
+    access package.
+
+3.  Wait for the Microsoft Entra Cloud Sync to complete its next
+    synchronization. Using Active Directory Users and Computers, confirm
+    that the correct users are present as members of the group.
+
+4.  In your AD domain monitoring, allow only the [<u>gMSA
+    account</u>](https://review.learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/how-to-prerequisites#group-managed-service-accounts) that
+    runs the provisioning agent, [<u>authorization to change the
+    membership</u>](https://review.learn.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-security-group-management) in
+    the new AD group.
+
+For more information, see [Embracing Cloud-first posture: Transitioning
+AD Group Source of Authority to the
+Cloud](https://microsoft.sharepoint.com/:w:/t/APEXIdentityContent/EQ_Ki1k05l5LqgetVmzYRJYB8E2jU6pewJGIsh4CueBI0Q?e=xQw6OF)
+
+## Govern on-prem AD with new cloud security groups provisioned to AD
 
 In this scenario option, you update the application to check for the SID, name, or distinguished name of new groups created by cloud sync group provisioning. This scenario is applicable to:
  - Deployments for new applications being connected to AD DS for the first time.
@@ -73,23 +154,23 @@ Applications which currently check for membership of the `Domain Admins` group n
 
 Use the following steps for applications to use new groups.
 
-#### Create application and group
+### Create an application and group
  1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application and configure the application to require user assignment.
- 2. If you're using application proxy to enable users to connect to the application, then configure the application proxy.
- 3.	Create a new security group in Microsoft Entra ID.
- 4.	Use [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
- 5. Launch Active Directory Users and Computers and wait for the resulting new AD group to be created in the AD domain. When it's present, record the distinguished name, domain, account name, and SID of the new AD group.
+ 1.	Create a new security group in Microsoft Entra ID.
+ 1.	Use [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
+ 1. Launch Active Directory Users and Computers and wait for the resulting new AD group to be created in the AD domain. When it's present, record the distinguished name, domain, account name, and SID of the new AD group.
 
- #### Configure application to use new group
+ ### Configure application to use new group
  1. If the application uses AD via LDAP, configure the application with the distinguished name of the new AD group. If the application uses AD via Kerberos, configure the application with the SID or the domain and account name of the new AD group.
- 2.	Create an [access package](~/id-governance/entitlement-management-access-package-create.md). Add the application from step #1 and the security group from step #3 as described in the **Create application and group** section above as resources in the Access Package. Configure a direct assignment policy in the access package.
+ 2.	Create an [access package](~/id-governance/entitlement-management-access-package-create.md). Add the application and the security group from the previous steps as
+    resources in the access package. Configure a direct assignment policy in the access package.
  3.	In [Entitlement Management](~/id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package.
  4. Wait for the new AD group to be updated with the new members. Using Active Directory Users and Computers, confirm that the correct users are present as members of the group.
  5. In your AD domain monitoring, allow only the [gMSA account](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
 You can now govern access to the AD application through this new access package.
 
-### Configuring the existing groups option
+## Configuring the existing groups option
 
 In this scenario option, you add a new AD security group as a nested group member of an existing group. This scenario is applicable to deployments for applications that have a hardcoded dependency on a particular group account name, SID, or distinguished name.
 
@@ -98,19 +179,18 @@ Nesting that group into the application's existing AD group will allow:
 
  If the app uses LDAP and follows nested group membership, the app will see the Microsoft Entra users as having the existing group as one of their memberships.
 
-#### Determine eligibility of existing group
+### Determine eligibility of existing group
  1. Launch Active Directory Users and Computers and record the distinguished name, type, and scope of the existing AD group used by the application. 
  2. If the existing group is `Domain Admins`, `Domain Guests`, `Domain Users`, `Enterprise Admins`, `Enterprise Key Admins`, `Group Policy Creation Owners`, `Key Admins`, `Protected Users`, or `Schema Admins`, then you'll need to change the application to use a new group as described above, as these groups can't be used by cloud sync.
  3. If the group has Global scope, change the group to have Universal scope. A global group can't have universal groups as members.
 
-#### Create application and group
+### Create application and group
  1. In the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application and configure the application to require user assignment.
- 2. If application proxy is used to enable users to connect to the application, then configure the application proxy.
- 3.	Create a new security group in Microsoft Entra ID.
- 4.	Use [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
- 5. Launch Active Directory Users and Computers and wait for the resulting new AD group to be created in the AD domain. When it's present, record the distinguished name, domain, account name, and SID of the new AD group.
+ 1.	Create a new security group in Microsoft Entra ID.
+ 1.	Use [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD. 
+ 1. Launch Active Directory Users and Computers and wait for the resulting new AD group to be created in the AD domain. When it's present, record the distinguished name, domain, account name, and SID of the new AD group.
 
-#### Configure application to use new group
+### Configure application to use new group
  1. Using Active Directory Users and Computers, add the new AD group as a member of the existing AD group.
  2.	Create an [access package](~/id-governance/entitlement-management-access-package-create.md). Add the application from step #1 and the security group from step #3 as described in the **Create application and group** section above as resources in the Access Package. Configure a direct assignment policy in the access package.
  3.	In [Entitlement Management](~/id-governance/entitlement-management-overview.md), assign the synced users who need access to the AD based app to the access package including any user members of the existing AD group who still need access.
