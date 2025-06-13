@@ -614,23 +614,9 @@
       href: connect/how-to-bypassdirsyncoverrides.md
 - name: Source of Authority reference
   items:
-  - name: Concepts
-    items:
-    - name: SOA overview
-      href: source-of-authority/concept-source-of-authority-overview.md
-    - name: How Group SOA works
-      href: source-of-authority/concept-group-source-of-authority-how-it-works.md
-    - name: Group SOA FAQ
-      href: source-of-authority/group-source-of-authority-faq.md
   - name: How to guides
     items:
-    - name: Configure Group SOA
-      href: source-of-authority/how-to-group-source-of-authority-configure.md
     - name: Audit and monitor Group SOA
-      href: source-of-authority/how-to-group-source-of-authority-audit-monitor.md
-  - name: Reference
-    items:
-    - name: Group type reference
-      href: source-of-authority/reference-group-types.md
+      href: source-of-authority/how-to-source-of-authority-auditing-monitoring.md
 
 

@@ -9,26 +9,29 @@ ms.author: justinha
 ms.reviewer: dhanyak
 ---
 
-## How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID
+# How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID
 
-Audit logs can be accessed from Azure Portal -\> Manage Microsoft Entra
-ID -\> Monitoring -\> Audit Logs or by searching for “audit logs” in the
-search bar.
+Audit logs can be accessed from Azure portal > Manage Microsoft Entra ID > Monitoring > Audit Logs or by searching for **audit logs** in the search bar.
 
-Select activity as "**Change Source of Authority from AD to cloud**.”
+Select activity as **Change Source of Authority from AD to cloud**.
 
-<img src="media/how-to-group-source-of-authority-configure/image10.png" style="width:6.5in;height:1.05208in" />
+
+
+:::image type="content" source="media/how-to-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD to cloud activity selection.":::
+
+
 
 Talk about how to integrate with Azure Monitoring and talk about which events Admins should pull
 
 We need to include 2 additional reporting instructions on how to use MS Graph API $count and $filter to get the count of SOA converted groups as well as filter on SOA Converted groups.
 
-Add another troubleshooting scenario for rollback... We can use immutable ID to determine if an object is a cloud native object or a SOA converted object (in combination with isCloudManaged attribute). If the Immutable ID is set to null, then, it will be treated as a cloud native object. If anyone uses MSGraph to set the Immutable ID, then, sync client can take over if there's a hard match. 
+Add another troubleshooting scenario for rollback... We can use immutable ID to determine if an object is a cloud native object or a SOA converted object (in combination with isCloudManaged attribute). If the Immutable ID is set to null, then, it will be treated as a cloud native object. If anyone uses MSGraph to set the Immutable ID, then, sync client can take over if there's a hard match.
 
-How it works
-Query for OnPremisesImmutableID != null and DirSyncEnabled != true
+How it works:
 
-https://graph.microsoft.com/v1.0/users?$count=true&$filter=OnPremisesSyncEnabled ne true and OnPremisesImmutableId ne null
+Query for **OnPremisesImmutableID** != null and **DirSyncEnabled** != true
+
+`https://graph.microsoft.com/v1.0/users?$count=true&$filter=OnPremisesSyncEnabled ne true and OnPremisesImmutableId ne null`
 
 Note that ConsistencyLevel:eventual header must be used.
 
@@ -37,6 +40,7 @@ We can continue to use the Audit logs to determine the status for last 30 days.
 
 ## Related content
 
-- For more information about how to configure Group SOA, see [How to configure Group SOA](how-to-group-source-of-authority-configure.md). 
-- For more information about how Group SOA works, see [How Group SOA works](concept-group-source-of-authority-how-it-works.md).
+- For more information about how to configure Group SOA, see How to configure Group SOA.
+
+- For more information about how Group SOA works, see How Group SOA works.
 
