@@ -17,7 +17,7 @@ Select activity as **Change Source of Authority from AD to cloud**.
 
 
 
-:::image type="content" source="media/how-to-group-source-of-authority-configure/image10.png" alt-text="Screenshot of the Azure Portal showing the Change Source of Authority from AD to cloud activity selection.":::
+:::image type="content" source="media/how-to-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD to cloud activity selection.":::
 
 
 
