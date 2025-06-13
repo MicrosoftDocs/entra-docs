@@ -333,7 +333,7 @@ In the Netskope portal:
 
 1. Add a **Configuration Name** such as `MSFTSSEWebAndPrivate-NoM365`.
 
-1. Choose a User Group or OU to apply the configuration to.
+1. Choose a **User Group** or **OU** to apply the configuration to.
 
 1. Under **Cloud, Web and Firewall** > **Web Traffic.**
 
