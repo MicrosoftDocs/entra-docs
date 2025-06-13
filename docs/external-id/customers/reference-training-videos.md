@@ -74,7 +74,7 @@ The video covers how to integrate social identity providers like Facebook, Googl
 
 > [!VIDEO https://www.youtube.com/embed/lIdGt9rDM-E?si=8n1_G_AqFbYDP22y]
 
-### Enable sign-in OpenID Connect identity providers
+### Enable sign-in with OpenID Connect identity providers
 
 This video explains how to configure a custom OpenID Connect identity provider in Microsoft Entra External ID. It will guide you through the steps to set up a new federation, including entering the necessary details such as the well-known endpoint, issuer URI, claims mapping and more. 
 
