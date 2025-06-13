@@ -17,7 +17,7 @@ ms.collection: null
 
 Microsoft Security Copilot is a powerful tool that can help you manage and secure your Microsoft Entra identity environment. This article describes how to use Microsoft Security Copilot with Microsoft Entra in identity related scenarios to enhance your identity protection efforts. Using this feature requires a tenant with Microsoft Security Copilot enabled.
 
-## Create Security Copilot prompts in the Microsoft Entra admin center (preview)
+## Create Security Copilot prompts in the Microsoft Entra admin center
 
 Security Copilot is a part of the Microsoft Entra admin center, and you can use it to create your own prompts. Security Copilot is launched from a globally available button in the menu bar. Choose from a set of starter prompts that appear at the top of the Security Copilot window or enter your own in the prompt bar to get started. Suggested prompts can appear after a response, which are predefined prompts that Security Copilot selects based on the prior response. 
 
