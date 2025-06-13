@@ -2,7 +2,7 @@
 title: Configure F5’s BIG-IP Easy Button for header-based SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

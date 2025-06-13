@@ -1,7 +1,63 @@
 items:
-  - name: Global Secure Access documentation
-    href: index.yml
-  - name: Overview
+- name: Global Secure Access documentation
+  href: index.yml
+- name: Overview
+  expanded: true
+  items:
+  - name: What is Global Secure Access?
+    href: overview-what-is-global-secure-access.md
+  - name: Global Secure Access dashboard
+    href: concept-traffic-dashboard.md
+  - name: Role-based administrator roles
+    href: reference-role-based-permissions.md
+- name: Quickstarts
+  expanded: true
+  items:
+  - name: Access Global Secure Access in the admin center
+    href: quickstart-access-admin-center.md
+  - name: Install the Windows client to acquire Microsoft traffic
+    href: quickstart-install-client.md
+  - name: Create a remote network
+    href: quickstart-remote-network.md
+  - name: Configure Quick Access to private resources
+    href: quickstart-quick-access.md
+  - name: Configure per-app access to private resources
+    href: quickstart-per-app-access.md
+- name: Samples
+  expanded: false
+  items: 
+  - name: Overview of Global Secure Access samples
+    href: powershell-samples.md
+  - name: Get token for connector
+    href: ./scripts/powershell-get-token.md
+  - name: Restore productivity in a break glass scenario
+    href: ./scripts/powershell-break-glass.md
+  - name: Restore traffic forwarding and compliant network requirement after a break glass operation
+    href: ./scripts/powershell-break-glass-recovery.md
+  - name: Bypass internet destinations from the internet access profile
+    href: ./scripts/powershell-bypass-script.md
+  - name: Bypass Intune endpoints from the Internet Access profile
+    href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
+- name: Concepts
+  expanded: true
+  items: 
+  - name: Global Secure Access clients
+    href: concept-clients.md
+  - name: Private network connector
+    href: concept-connectors.md
+  - name: Private network connector groups
+    href: concept-connector-groups.md
+  - name: Understand Private DNS
+    href: concept-private-name-resolution.md
+  - name: Understand remote network connectivity
+    href: concept-remote-network-connectivity.md
+  - name: Universal Continuous Access Evaluation
+    href: concept-universal-continuous-access-evaluation.md
+- name: How-to guides
+  expanded: true
+  items:
+  - name: Global Secure Access client
+    expanded: true
     items:
       - name: What is Global Secure Access?
         href: overview-what-is-global-secure-access.md

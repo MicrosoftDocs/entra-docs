@@ -2,7 +2,7 @@
 title: 'Quickstart: View enterprise applications'
 description: Access Microsoft Entra admin center to effortlessly view and filter enterprise apps. Streamline tenant oversight and take charge now.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: quickstart
