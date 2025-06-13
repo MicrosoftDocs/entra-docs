@@ -214,14 +214,14 @@ applications tied to the security group continue to function).
 ## cloud Sync client
 
 Download the Provisioning agent with build version
-[1.1.1373.0](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/reference-version-history#1113730)
+[1.1.1373.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113730)
 or later.
 
 1.  [Instructions for
-    download](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/reference-version-history#download-link)
+    download](entra/identity/hybrid/cloud-sync/reference-version-history#download-link)
 
 2.  Learn how to [identify the agent's current
-    version](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
+    version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
 
 ## Pre-requisites to calling Graph API
 
