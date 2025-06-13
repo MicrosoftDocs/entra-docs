@@ -9,7 +9,7 @@ ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 05/14/2025
+ms.date: 06/13/2025
 ms.custom: it-pro
 
 
@@ -73,6 +73,12 @@ This tutorial guides you through creating a new Microsoft Entra External ID tena
 The video covers how to integrate social identity providers like Facebook, Google and Apple into application sign-up and sign-in flows. It focuses on how you can enhance and personalize the registration experience. It also describes ways to ensure robust security and manage users efficiently using Microsoft Entra External ID.
 
 > [!VIDEO https://www.youtube.com/embed/lIdGt9rDM-E?si=8n1_G_AqFbYDP22y]
+
+### Enable sign-in OpenID Connect identity providers
+
+This video explains how to configure a custom OpenID Connect identity provider in Microsoft Entra External ID. It will guide you through the steps to set up a new federation, including entering the necessary details such as the well-known endpoint, issuer URI, claims mapping and more. 
+
+> [!VIDEO https://www.youtube.com/embed/L0QmRs-x-1c?si=p8A-dGOg48IxvgzL]
 
 ## Protect access to applications
 
