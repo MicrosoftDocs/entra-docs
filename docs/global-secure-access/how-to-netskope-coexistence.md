@@ -258,7 +258,8 @@ In the Netskope portal:
 1. Give the policy a name such as `Private Apps` and put it in the **Default** group.
 
 1. Set **Status** to Enabled.
-1. Go to the system tray to check that Global Secure Access and Netskope clients are enabled.
+
+Go to the system tray to check that Global Secure Access and Netskope clients are enabled.
 
 #### Verify configurations for clients
 
