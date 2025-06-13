@@ -140,32 +140,6 @@ Netskope portal configuration
 
 1. Go to the system tray to check that Global Secure Access and Netskope clients are enabled.
 
-1. Add a Configuration Name such as `MSFTSSEWebTraffic`.
-
-1. Choose a **User Group** or **OU** to apply the configuration to.
-
-1. Under **Cloud, Web and Firewall** > **Web Traffic**
-
-1. **Bypass exception traffic at** > **Client**
-
-1. Under **Private Apps** > **None**.
-
-1. Under **Borderless SD-WAN Apps** > **None**.
-
-1. Set **Status** to **Disabled** and select **Save**.
-
-1. Select the `MSFTSSEWebTraffic` configuration > **Exceptions** > **New Exception** > **Destination Locations**.
-
-1. Select `MSFT SSE Service` (Instructions for creating this object are listed in the Netskope profiles section).
-
-1. The action is **Bypass** > check the box for **Treat it like local IP address** > **Add**.
-
-1. Select **New Exception** > **Domains** and add the Global Secure Access domain exception: \*.globalsecureaccess.microsoft.com > **Save**
-
-1. Ensure that the `MSFTSSEWebTraffic` configuration is at the top of the list of steering configurations in your tenant. Then enable the configuration.
-
-1. Go to the system tray to check that Global Secure Access and Netskope clients are enabled.
-
 #### Verify configurations for clients
 
 1. Right-click on **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile** and verify that Private access and Private DNS rules are applied to this client.
