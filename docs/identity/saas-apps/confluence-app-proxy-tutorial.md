@@ -3,7 +3,7 @@ title: Configure on-premises Confluence for Single sign-on in application proxy 
 description: Learn application proxy configuration for Microsoft Entra SAML SSO for Confluence.
 
 author: dhivyagana
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

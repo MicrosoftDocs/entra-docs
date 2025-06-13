@@ -3,7 +3,7 @@ title: Configure GoToMeeting for automatic user provisioning with Microsoft Entr
 description: Learn how to configure single sign-on between Microsoft Entra ID and GoToMeeting.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
