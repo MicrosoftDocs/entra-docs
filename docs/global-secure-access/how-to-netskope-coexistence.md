@@ -438,6 +438,7 @@ For this scenario:
 #### Add a custom bypass for Netskope in Global Secure Access
 
 1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Internet access profile**.
+
 1. Under **Internet access policies** > Select **View**.
 
 1. Expand **Custom Bypass** > Select **Add rule**
