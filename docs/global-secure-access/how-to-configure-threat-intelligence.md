@@ -42,7 +42,7 @@ There are several steps to configuring threat intelligence. Take note of where y
 1. [Enable internet traffic forwarding.](#enable-internet-traffic-forwarding)
 1. [Create a threat intelligence policy.](#create-a-threat-intelligence-policy)
 1. [Configure your allow list (optional).](#configure-your-allow-list-optional)
-1. [Create a security profile.](#create-a-security-profile)
+1. [Create a security profile.](#create-a-security-profile-or-configure-the-baseline-profile)
 1. [Link the security profile to a Conditional Access policy.](#create-and-link-conditional-access-policy)
 
 ## Enable internet traffic forwarding
