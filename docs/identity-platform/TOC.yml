@@ -151,11 +151,11 @@
               href: quickstart-single-page-app-sign-in.md?pivots=workforce
           - name: Native authentication
             items:
-              - name: Use native authentication API
+              - name: Use API
                 items:
                   - name: Sign in users in a React SPA
                     href: quickstart-native-authentication-single-page-app-react-sign-in.md
-              - name: Use native authentication SDK
+              - name: Use SDK
                 items:
                 - name: Sign in users in a React SPA
                   href: quickstart-native-authentication-single-page-app-react-sdk-sign-in.md

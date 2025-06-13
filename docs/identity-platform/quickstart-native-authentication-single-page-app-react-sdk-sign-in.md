@@ -70,14 +70,14 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the sample React app
 
-1. Open *src\config\auth-config.ts* and replace the following with the values obtained from the Microsoft Entra admin center:
+1. Open *src\config\auth-config.ts* and replace the following placeholders with the values obtained from the Microsoft Entra admin center:
 
-    * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-    * `Enter_the_Tenant_Subdomain_Here` and replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
+    * Find the placeholder `Enter_the_Application_Id_Here` then  replace it with the Application (client) ID of the app you registered earlier.
+    * Find the placeholder `Enter_the_Tenant_Subdomain_Here` then replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
 
 1. Save the chanes.
-1. 
-1. ## Configure CORS proxy server
+
+## Configure CORS proxy server
 
 The native authentication APIs don't support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) so you must set up a proxy server between your SPA app and the APIs.
 

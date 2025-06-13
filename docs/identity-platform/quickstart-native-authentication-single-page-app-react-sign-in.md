@@ -70,9 +70,9 @@ Alternatively, [Download the sample](https://github.com/Azure-Samples/ms-identit
 
 1. In your code editor, open *src\config.ts* file.
 
-1. Find the placeholder `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
+1. Find the placeholder `Enter_the_Application_Id_Here` then  replace it with the Application (client) ID of the app you registered earlier.
 
-1. Save the changes.
+1. Save the chanes.
 
 ## Configure CORS proxy server
 
