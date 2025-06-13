@@ -20,7 +20,7 @@ This guide outlines how to configure and deploy Microsoft Entra solutions alongs
 
 **[Configuration 1: Microsoft Entra Private Access with Netskope Internet Access](#configuration-1-microsoft-entra-private-access-with-netskope-internet-access)**
 
-In the first scenario, Global Secure Access handles private application traffic. Netskope only capture Internet traffic.
+In the first scenario, Global Secure Access handles private application traffic. Netskope only captures Internet traffic.
 
 **[Configuration 2: Microsoft Entra Private Access with Netskope Private Access and Netskope Internet Access](#configuration-2-microsoft-entra-private-access-with-netskope-private-access-and-netskope-internet-access)**
 
