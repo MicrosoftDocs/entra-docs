@@ -423,7 +423,7 @@ In the Netskope portal:
 
 ## Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access and with Netskope Private Access
 
-In this scenario Netskope only capture private application traffic. Global Secure Access handles all other traffic.
+In this scenario Netskope only captures private application traffic. Global Secure Access handles all other traffic.
 
 ### Microsoft Entra Internet Access and Microsoft Access configuration
 
