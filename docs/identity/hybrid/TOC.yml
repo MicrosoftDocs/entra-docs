@@ -625,7 +625,7 @@
   - name: How to guides
     items:
     - name: Configure Group SOA
-      href: source-of-authority/how-to-group-source-of-authority.md
+      href: source-of-authority/how-to-group-source-of-authority-configure.md
     - name: Audit and monitor Group SOA
       href: source-of-authority/how-to-group-source-of-authority-audit-monitor.md
   - name: Reference
