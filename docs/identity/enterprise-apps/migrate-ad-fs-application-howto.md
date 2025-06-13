@@ -2,7 +2,7 @@
 title: Use the AD FS application migration to move AD FS apps to Microsoft Entra ID
 description: Learn how to use the AD FS application migration to migrate AD FS relying party applications from ADFS to Microsoft Entra ID. This guided experience provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to

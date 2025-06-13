@@ -103,7 +103,7 @@
       - name: Using Entra Private Access with Entitlement Management  
         href: scenarios/entitlement-management-private-access.md
       - name: Restrict employee access to cloud apps using Microsoft Entra Suite
-        href: entra-suite-scenario.md      
+        href: entitlement-management-global-secure-access-restrict-employee-access.md      
   - name: Migrations
     items:
     - name: Transform your cloud posture
@@ -404,6 +404,8 @@
     href: governance-service-limits.md  
   - name: Licensing fundamentals
     href: licensing-fundamentals.md
+  - name: Licensing for guest users
+    href: microsoft-entra-id-governance-licensing-for-guest-users.md  
   - name: Services and integration partners
     href: services-and-integration-partners.md
   - name: Best practices for securing ID Governance
