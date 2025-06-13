@@ -311,7 +311,7 @@ In this scenario, Global Secure Access handles all Microsoft 365 traffic. Netsko
 
 For this scenario:
 
-- [Enable Microsoft Entra Private Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-private-access-profile.md#enable-the-private-access-traffic-forwarding-profile).
+- [Enable Microsoft Entra Microsoft Access forwarding profile](https://github.com/MicrosoftDocs/entra-docs/blob/main/docs/global-secure-access/how-to-manage-microsoft-access-profile.md#enable-the-microsoft-access-traffic-forwarding-profile).
 
 - Install and configure the [Global Secure Access client for Windows](/entra/global-secure-access/how-to-install-windows-client).
 
