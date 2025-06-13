@@ -3,7 +3,7 @@ title: Configure Maverics Identity Orchestrator SAML Connector for Single sign-o
 description: Learn how to configure single sign-on between Microsoft Entra ID and Maverics Identity Orchestrator SAML Connector.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
