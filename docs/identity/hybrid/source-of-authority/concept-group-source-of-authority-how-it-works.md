@@ -32,4 +32,4 @@ Administrators can revert changes to Group SOA operations. In this scenario, the
 
 ## Related content
 
-For step-by-step details and instructions on how to use this feature, see How to use Group Source of Authority.
+For step-by-step details and instructions on how to use this feature, see [How to use Group Source of Authority](how-to-group-source-of-authority.md).
