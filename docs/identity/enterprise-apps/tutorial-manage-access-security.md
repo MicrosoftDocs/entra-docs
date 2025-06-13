@@ -2,7 +2,7 @@
 title: "Tutorial: Manage application access and security"
 description: In this tutorial, you learn how to manage access to an application in Microsoft Entra ID and make sure it's secure.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.service: entra-id

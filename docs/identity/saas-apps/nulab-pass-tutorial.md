@@ -3,7 +3,7 @@ title: Configure Nulab Pass (Backlog, Cacoo, and Typetalk) for Single sign-on wi
 description: Learn how to configure single sign-on between Microsoft Entra ID and Nulab Pass (Backlog, Cacoo, and Typetalk).
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
