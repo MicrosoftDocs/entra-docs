@@ -67,7 +67,7 @@ To set up Global Secure Access and test all scenarios in this documentation:
 
 - Setup and configure Netskope Real-time Protection Policies to allow access to Private Apps. For more information, see [Netskope Real-time Protection Policy for Private Apps](https://docs.netskope.com/en/create-a-real-time-protection-policy-for-private-apps/).
 
-- Invite users to Netskope and send them an email containing links to the Netskope client install package. To invite users, navigate to the **Netskope portal** >**Settings** > **Security** **Cloud** **Platform** > **Users**.
+- Invite users to Netskope and send them an email containing links to the Netskope client install package. To invite users, navigate to the **Netskope portal** > **Settings** > **Security** **Cloud** **Platform** > **Users**.
 
 ## Netskope Location Profiles
 
