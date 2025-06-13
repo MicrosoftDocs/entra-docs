@@ -27,7 +27,12 @@ You can configure a threat intelligence policy to block users from high-severity
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
 - IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
-- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
+- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: 
+
+```powershell 
+@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443
+``` 
+
 - (Optional) [Configure Transport Layer Security (TLS) inspection](how-to-transport-layer-security.md) in order for URL indicators to be evaluated against HTTPS traffic.
 
 ## High level steps
@@ -56,7 +61,7 @@ You can scope the Internet Access profile to specific users and groups. To learn
 1. Select **Create**
 
 > [!IMPORTANT]
-> This policy is created with a rule blocking access to destinations where high severity threats are detected.
+> This policy is created with a rule blocking access to destinations where high severity threats are detected. Microsoft defines high severity threats as domains or URLs associated with active malware distribution, phishing campaigns, command-and-control (C2) infrastructure, and other threads, identified by Microsoft and third-party threat intelligence feeds with high confidence.
 
 ## Configure your allow list (optional)
 
@@ -69,11 +74,13 @@ If you're aware of sites that may be business-critical or are labeled as false p
 1. Edit **Destination FQDNs** and select the list of domains for your allow list. You can enter these FQDNs as comma-separated domains.
 1. Select **Add**. 
 
-## Create a security profile
+## Create a security profile or configure the baseline profile
 
-Security profiles are a grouping of security controls like web content filtering and threat intelligence policies. You can assign, or link, security profiles with Microsoft Entra Conditional Access policies. One security profile can contain multiple policies.
+Security profiles are a grouping of security controls like web content filtering and threat intelligence policies. You can assign, or link, security profiles with Microsoft Entra Conditional Access policies. One security profile can contain a policy of each type.
 
-In this step, you create a security profile to group filtering policies. Then you assign, or link, the security profiles with a Conditional Access policy to make them user or context aware.
+In this step, you create a security profile to group filtering policies like web content filtering and/or threat intelligence. Then you assign, or link, the security profiles with a Conditional Access policy to make them user or context aware.
+
+Since threat intelligence is critical for users' basic security posture, you can alternatively link your threat intelligence policy to the baseline security profile, which applies policy to all users' traffic in your tenant.
 
 > [!NOTE]
 > You can only configure threat intelligence policy per security profile. Rule priorities within each security control handle exceptions, and security controls follow the ordering, (1) TLS inspection > (2) Web content filtering > (3) Threat intelligence > (4) File type > (6) Data loss prevention > (7) Third-party
@@ -104,17 +111,13 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 > Applying a new security profile can take up to 60-90 minutes because security profiles are enforced via access tokens.
 
 
-## User and group assignments
-
-You can scope the Internet Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
-
 ## Verify end user policy enforcement
 
 Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to malicious websites is blocked as expected.
 
 1. Right-click on the Global Secure Access client icon in the task manager tray and open **Advanced Diagnostics** > **Forwarding profile**. Ensure that the Internet access acquisition rules are present.
 1. Navigate to a known malicious site (for example, `entratestthreat.com` or `smartscreentestratings2.net`). Ensure that you're blocked and that the Threat Type field is nonempty in the traffic logs. Traffic logs may take up to 5 minutes to appear in the portal.
-1. If blocked by Windows Defender or Smart screen, override and access the site to test the Global Secure Access block message.
+1. If blocked by Windows Defender or Smart screen, override and access the site to test the Global Secure Access block message. You can do this by choosing "Continue to the unsafe site (not recommended)" under "More information."
 1. To test allow-listing, create a rule in the Threat Intelligence policy to allow access to the site. Within 2 minutes, you should be able to access it. (You may need to clear your browser cache.)
 1. Evaluate the rest of the threat feed against your known threat indicators.
 
