@@ -105,7 +105,7 @@ With the Azure Logic App given the access package assignment manager role for th
 1. On the Add an Action pane, select **HTTP**.
 
 1. On the **HTTP** pane under Parameters, enter the following parameters:
-    - URI: https://graph.microsoft.com/v1.0@{triggerBody()?['CallbackUriPath']}
+    - URI: `https://graph.microsoft.com/v1.0@{triggerBody()?['CallbackUriPath']}`
     - Method: POST
     - Authentication Type: Managed identity
     - Managed Identity: System-assigned managed identity
