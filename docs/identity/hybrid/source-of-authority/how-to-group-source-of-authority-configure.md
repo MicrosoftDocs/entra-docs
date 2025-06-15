@@ -264,14 +264,14 @@ or later.
 
 *Note: Consenting on behalf of the entire organization is not required.*
 
-<img src="media/how-to-group-source-of-authority/image1.png" style="width:2.56095in;height:3.03223in"
+<img src="media/how-to-group-source-of-authority-configure/image1.png" style="width:2.56095in;height:3.03223in"
 alt="A screenshot of a computer Description automatically generated" />
 
 <span class="mark">Note: Ignore the \`AADSTS9002325: Proof Key for Code
 Exchange is required for cross-origin authorization code redemption.\`
 error if you see it after clicking Accept.</span>
 
-> <img src="media/how-to-group-source-of-authority/image2.png" style="width:4.41667in;height:1.81197in"
+> <img src="media/how-to-group-source-of-authority-configure/image2.png" style="width:4.41667in;height:1.81197in"
 > alt="A white background with black text Description automatically generated" />
 
 5.  Verify the permission is granted by navigating to: ‘Enterprise
@@ -279,7 +279,7 @@ error if you see it after clicking Accept.</span>
     consent’ in Microsoft Entra portal. Note that it may take a minute
     or two for permission to show up.
 
-> <img src="media/how-to-group-source-of-authority/image3.png" style="width:6.5in;height:2.35417in"
+> <img src="media/how-to-group-source-of-authority-configure/image3.png" style="width:6.5in;height:2.35417in"
 > alt="A screenshot of a computer Description automatically generated" />
 
 # Switch the SOA of the group
@@ -311,7 +311,7 @@ error if you see it after clicking Accept.</span>
 | *https://graph.microsoft.com/beta/groups/**\<**groupId**\>**/onPremisesSyncBehavior?\$select=isCloudManaged* |
 |--------------------------------------------------------------------------------------------------------------|
 
-> <img src="media/how-to-group-source-of-authority/image4.png" style="width:6.5in;height:1.5625in" />
+> <img src="media/how-to-group-source-of-authority-configure/image4.png" style="width:6.5in;height:1.5625in" />
 >
 > Since we haven’t updated the SoA yet, isCloudManaged should be false.
 
@@ -329,7 +329,7 @@ error if you see it after clicking Accept.</span>
 > Since the Group is on-prem mastered as of now, any writes to the Group
 > in the cloud will fail.
 >
-> <img src="media/how-to-group-source-of-authority/image5.png" style="width:6.5in;height:2.57292in" />
+> <img src="media/how-to-group-source-of-authority-configure/image5.png" style="width:6.5in;height:2.57292in" />
 >
 > If the group is mail enabled, the error message will be slightly
 > different, but updates will not be allowed.
@@ -342,10 +342,10 @@ error if you see it after clicking Accept.</span>
 > Check Microsoft Entra portal for the group to verify that all the
 > fields for the group are greyed out and that source is Windows Server
 > AD:  
-> <img src="media/how-to-group-source-of-authority/image6.png" style="width:5.3125in;height:2.82652in"
+> <img src="media/how-to-group-source-of-authority-configure/image6.png" style="width:5.3125in;height:2.82652in"
 > alt="A screenshot of a computer Description automatically generated" />
 >
-> <img src="media/how-to-group-source-of-authority/image7.png" style="width:6.5in;height:3.875in"
+> <img src="media/how-to-group-source-of-authority-configure/image7.png" style="width:6.5in;height:3.875in"
 > alt="A screenshot of a computer Description automatically generated" />
 
 # Update SOA of group to be cloud managed
@@ -362,7 +362,7 @@ want to switch to the cloud:
 >
 > <span class="mark">}</span>
 >
-> <img src="media/how-to-group-source-of-authority/image8.png" style="width:6.5in;height:1.70833in"
+> <img src="media/how-to-group-source-of-authority-configure/image8.png" style="width:6.5in;height:1.70833in"
 > alt="A screenshot of a computer Description automatically generated" />
 
 # Validation Steps
@@ -373,7 +373,7 @@ want to switch to the cloud:
 |--------------------------------------------------------------------------------------------------------------|
 |                                                                                                              |
 
-<img src="media/how-to-group-source-of-authority/image9.png" style="width:6.5in;height:1.53125in" />
+<img src="media/how-to-group-source-of-authority-configure/image9.png" style="width:6.5in;height:1.53125in" />
 
 ## Check Audit logs
 
@@ -383,7 +383,7 @@ search bar.
 
 Select activity as "**Change Source of Authority from AD to cloud**.”
 
-<img src="media/how-to-group-source-of-authority/image10.png" style="width:6.5in;height:1.05208in" />
+<img src="media/how-to-group-source-of-authority-configure/image10.png" style="width:6.5in;height:1.05208in" />
 
 ## Validate that properties on the group can be updated
 
@@ -396,10 +396,10 @@ Select activity as "**Change Source of Authority from AD to cloud**.”
 >
 > <span class="mark">}</span>
 
-<img src="media/how-to-group-source-of-authority/image11.png" style="width:6.5in;height:2.625in" />
+<img src="media/how-to-group-source-of-authority-configure/image11.png" style="width:6.5in;height:2.625in" />
 
 **Check Microsoft Entra portal to confirm source as cloud**  
-<img src="media/how-to-group-source-of-authority/image12.png" style="width:6.5in;height:3.4375in"
+<img src="media/how-to-group-source-of-authority-configure/image12.png" style="width:6.5in;height:3.4375in"
 alt="A screenshot of a computer Description automatically generated" />
 
 ## Connect Sync Client
@@ -410,20 +410,20 @@ alt="A screenshot of a computer Description automatically generated" />
 2.  To look at the group object you switched SOA of, in the
     “Synchronization Service Manager,” go to "Connectors":
 
-<img src="media/how-to-group-source-of-authority/image13.png" style="width:6.5in;height:2.38542in"
+<img src="media/how-to-group-source-of-authority-configure/image13.png" style="width:6.5in;height:2.38542in"
 alt="A screenshot of a computer Description automatically generated" />
 
 3.  Right click on the “Active Directory Domain Services Connector”:
 
 Search the group by RDN setting CN=\<GroupName\>
 
-> <img src="media/how-to-group-source-of-authority/image14.png" style="width:6.5in;height:4.72917in"
+> <img src="media/how-to-group-source-of-authority-configure/image14.png" style="width:6.5in;height:4.72917in"
 > alt="A screenshot of a computer Description automatically generated" />
 
 4.  Double click on the searched entry and click on “Lineage-\>Metaverse
     Object Properties”
 
-<img src="media/how-to-group-source-of-authority/image15.png" style="width:6.02083in;height:4.71825in"
+<img src="media/how-to-group-source-of-authority-configure/image15.png" style="width:6.02083in;height:4.71825in"
 alt="A screenshot of a computer Description automatically generated" />
 
 5.  Click on “Connectors” and double click on the **Entra ID object**
@@ -433,13 +433,13 @@ alt="A screenshot of a computer Description automatically generated" />
     Entra ID object, which means any changes made in the corresponding
     Active Directory object will not flow to the Entra ID object:
 
-> <img src="media/how-to-group-source-of-authority/image16.png" style="width:6.5in;height:5.09375in"
+> <img src="media/how-to-group-source-of-authority-configure/image16.png" style="width:6.5in;height:5.09375in"
 > alt="A screenshot of a computer Description automatically generated" />
 
 7.  Let’s update the on-premises group object, change the group name
     from SecGroup1 to SecGroup1.1:
 
-> <img src="media/how-to-group-source-of-authority/image17.png" style="width:4.16667in;height:4.92708in"
+> <img src="media/how-to-group-source-of-authority-configure/image17.png" style="width:4.16667in;height:4.92708in"
 > alt="A screenshot of a computer Description automatically generated" />
 
 8.  Run sync in connect sync by running “Start-ADSyncSyncCycle” in
@@ -450,7 +450,7 @@ alt="A screenshot of a computer Description automatically generated" />
     the object has not been synced to the cloud because the source of
     authority of object is in the cloud.
 
-<img src="media/how-to-group-source-of-authority/image18.png" style="width:6.47917in;height:1.70286in"
+<img src="media/how-to-group-source-of-authority-configure/image18.png" style="width:6.47917in;height:1.70286in"
 alt="A screenshot of a computer Description automatically generated" />
 
 # Rollback SOA update
@@ -464,7 +464,7 @@ alt="A screenshot of a computer Description automatically generated" />
 
 }
 
-<img src="media/how-to-group-source-of-authority/image19.png" style="width:6.5in;height:2.42708in" />
+<img src="media/how-to-group-source-of-authority-configure/image19.png" style="width:6.5in;height:2.42708in" />
 
 ***Note:*** This change to “isCloudManaged: false” simply allows the
 object to be taken over by Connect Sync the next time it runs (assuming
@@ -478,7 +478,7 @@ API call and the next run of Connect Sync (scheduled or forced).
 Select activity as "**Undo changes to Source of Authority from AD to
 cloud**"
 
-<img src="media/how-to-group-source-of-authority/image20.png" style="width:6.5in;height:1.0625in" />
+<img src="media/how-to-group-source-of-authority-configure/image20.png" style="width:6.5in;height:1.0625in" />
 
 ## VALIDATE IN CONNECT SYNC CLIENT
 
@@ -491,7 +491,7 @@ cloud**"
     object as “Awaiting Export Confirmation” and blockOnPremisesSync =
     false, means the object is taken over by the on-premises again.
 
-> <img src="media/how-to-group-source-of-authority/image21.png" style="width:6.5in;height:5.09375in" />
+> <img src="media/how-to-group-source-of-authority-configure/image21.png" style="width:6.5in;height:5.09375in" />
 
 ## Cloud sync - provisioning logs 
 
@@ -503,13 +503,13 @@ the cloud**, the **Cloud sync will skip this object**.
 Let's say we have a group **SOAGroup3**, and we update its group name to
 **SOA Group3.1**.
 
-> <img src="media/how-to-group-source-of-authority/image22.png" style="width:4.4375in;height:4.11458in"
+> <img src="media/how-to-group-source-of-authority-configure/image22.png" style="width:4.4375in;height:4.11458in"
 > alt="Inserting image..." />
 
 - In the **Provisioning Logs** of the **AD2AAD job**, you will see that
   **SOAGroup3 was skipped**.
 
-> <img src="media/how-to-group-source-of-authority/image23.png" style="width:6.5in;height:1.10417in"
+> <img src="media/how-to-group-source-of-authority-configure/image23.png" style="width:6.5in;height:1.10417in"
 > alt="Inserting image..." />
 
 - The details will confirm:
@@ -517,7 +517,7 @@ Let's say we have a group **SOAGroup3**, and we update its group name to
   - *"As the SOA of this group is in the cloud, this object will not
     sync."*
 
-<img src="media/how-to-group-source-of-authority/image24.png" style="width:6.03125in;height:4.26042in"
+<img src="media/how-to-group-source-of-authority-configure/image24.png" style="width:6.03125in;height:4.26042in"
 alt="Inserting image..." />
 
 # How GPAD behaves with SOA converted groups
@@ -548,7 +548,7 @@ Directory (GPAD)**.
   Entry level error.
 
 - Make Sure your group is universal.  
-  <img src="media/how-to-group-source-of-authority/image25.png" style="width:3.37517in;height:3.46546in"
+  <img src="media/how-to-group-source-of-authority-configure/image25.png" style="width:3.37517in;height:3.46546in"
   alt="A screenshot of a computer AI-generated content may be incorrect." />
 
 ## Use GPAD to provision groups to AD
@@ -558,7 +558,7 @@ Directory (GPAD)**.
 In the diagram below, **SOATestGroup1** has been flipped to the cloud.
 As a result, it has become available for the **GPAD job scope**.
 
-<img src="media/how-to-group-source-of-authority/image26.jpg" style="width:5in;height:5.30208in"
+<img src="media/how-to-group-source-of-authority-configure/image26.jpg" style="width:5in;height:5.30208in"
 alt="A screenshot of a group AI-generated content may be incorrect." />
 
 - When a **GPAD job** runs, the SOA-converted group is provisioned
@@ -567,28 +567,28 @@ alt="A screenshot of a group AI-generated content may be incorrect." />
 - In the **Provisioning Logs**, you can search for the group name and
   verify that the group was provisioned.
 
-<img src="media/how-to-group-source-of-authority/image27.jpg" style="width:6.5in;height:1.16667in"
+<img src="media/how-to-group-source-of-authority-configure/image27.jpg" style="width:6.5in;height:1.16667in"
 alt="A screenshot of a chat AI-generated content may be incorrect." />
 
 - The details will show that the group was matched with an existing
   target group.
 
-<img src="media/how-to-group-source-of-authority/image28.jpg" style="width:6.5in;height:5.47917in"
+<img src="media/how-to-group-source-of-authority-configure/image28.jpg" style="width:6.5in;height:5.47917in"
 alt="A screenshot of a computer AI-generated content may be incorrect." />
 
 - Additionally, you can confirm that the **Admin Description** and **CN
   (Common Name)** of the target group have been updated.
 
-<img src="media/how-to-group-source-of-authority/image29.jpg" style="width:6.5in;height:3.52083in"
+<img src="media/how-to-group-source-of-authority-configure/image29.jpg" style="width:6.5in;height:3.52083in"
 alt="A screenshot of a computer AI-generated content may be incorrect." />
 
 - When you look at AD, you can find that the Original AD group has been
   updated.
 
-> <img src="media/how-to-group-source-of-authority/image30.jpg" style="width:3.54167in;height:3.75in"
+> <img src="media/how-to-group-source-of-authority-configure/image30.jpg" style="width:3.54167in;height:3.75in"
 > alt="A screenshot of a computer AI-generated content may be incorrect." />
 
-<img src="media/how-to-group-source-of-authority/image31.png" style="width:5.45381in;height:4.00035in"
+<img src="media/how-to-group-source-of-authority-configure/image31.png" style="width:5.45381in;height:4.00035in"
 alt="A screenshot of a computer AI-generated content may be incorrect." />
 
 ## rollback of group soa and group provision to ad
@@ -607,8 +607,8 @@ alt="A screenshot of a computer AI-generated content may be incorrect." />
 - You can verify in audit logs that sync will not happen for this object
   as it is managed on premises. Further you can go and check in AD that
   the group is still intact and is not deleted.  
-  <img src="media/how-to-group-source-of-authority/image32.png" style="width:4.4375in;height:2.84375in"
+  <img src="media/how-to-group-source-of-authority-configure/image32.png" style="width:4.4375in;height:2.84375in"
   alt="A screenshot of a computer AI-generated content may be incorrect." />  
     
-  <img src="media/how-to-group-source-of-authority/image33.png" style="width:5.40625in;height:4.81711in"
+  <img src="media/how-to-group-source-of-authority-configure/image33.png" style="width:5.40625in;height:4.81711in"
   alt="A screenshot of a computer AI-generated content may be incorrect." />
