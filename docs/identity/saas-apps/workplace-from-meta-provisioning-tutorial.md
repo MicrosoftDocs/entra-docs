@@ -2,7 +2,7 @@
 title: Configure Workplace from Meta for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps you need to do in both Workplace from Meta and Microsoft Entra ID to configure automatic user provisioning.
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

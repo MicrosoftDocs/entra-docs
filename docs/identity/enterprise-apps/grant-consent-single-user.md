@@ -3,7 +3,7 @@ title: Grant consent on behalf of a single user
 description: Learn how to grant consent on behalf of a single user when the user consent is disabled or restricted.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

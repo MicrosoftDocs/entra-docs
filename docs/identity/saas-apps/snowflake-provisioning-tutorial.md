@@ -3,7 +3,7 @@ title: Configure Snowflake for automatic user provisioning with Microsoft Entra 
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Snowflake.
 
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 

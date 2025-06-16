@@ -3,7 +3,7 @@ title: Configure Oracle Access Manager for Oracle Retail Merchandising for Singl
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oracle Access Manager for Oracle Retail Merchandising.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
