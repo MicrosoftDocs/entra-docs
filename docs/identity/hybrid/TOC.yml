@@ -621,7 +621,7 @@
     - name: How Group SOA works
       href: source-of-authority/concept-group-source-of-authority-how-it-works.md
     - name: Group SOA FAQ
-      href: source-of-authority/group-source-of-authority-faq.md
+      href: source-of-authority/group-source-of-authority-faq.yml
   - name: How to guides
     items:
     - name: Configure Group SOA
