@@ -93,6 +93,8 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
 1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**.
 
+![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center](media/how-to-configure-domain-controllers/connectors-and-sensors.png)
+
 ### 7. Configure Private Access Sensor policy files
 
 Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path.
