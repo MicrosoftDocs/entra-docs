@@ -537,7 +537,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/saas-apps/cloudknox-permissions-management-platform-tutorial.md",
-      "redirect_url": "/entra/permissions-management-overview",
+      "redirect_url": "/entra/permissions-management/overview",
       "redirect_document_id": false
     },
     {
