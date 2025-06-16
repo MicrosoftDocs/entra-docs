@@ -25,7 +25,7 @@ When you manage access to resources in Microsoft Entra, understanding how access
 
 ## Discovering Requestable Access Packages
 
-When a user lands on the "*Available*" tab, searches for requestable packages, or selects "*View all*", Microsoft Entra evaluates which access packages they should be able to see and potentially request. This visibility is determined by a specific sequence of checks.
+When a user lands on the "*Available*" tab, searches for requestable packages, or selects "*View all*," Microsoft Entra evaluates which access packages they should be able to see and potentially request. This visibility is determined by a specific sequence of checks.
 
 The following flow diagram illustrates the current logic used to determine if an access package appears in the browse/search view for a specific user:
 
@@ -41,7 +41,7 @@ Let's walk through the decision points in the diagram:
 
     1.  (If external user) Is the catalog enabled for external users? For external users, the catalog must *also* be enabled for external users in its settings. If not, external users don't see packages from this catalog. Internal users skip this check.
 
-1.  **Is the access package hidden?** This checks the specific "hidden" setting directly on the Access Package's properties (under "Edit"). If set to "Yes", the package is hidden from the browse/search view, regardless of policies.
+1.  **Is the access package hidden?** This checks the specific "hidden" setting directly on the Access Package's properties (under "Edit"). If set to "Yes," the package is hidden from the browse/search view, regardless of policies.
 
 1.  **Does at least one enabled policy exist for the access package where 'Who can request' matches the end-user?** This is the final, crucial policy check. The system looks for *at least one policy* associated with the access package that meets ALL these criteria:
     1.  The policy itself is enabled (the 'Enable new requests' setting in the policy UI is toggled on).
@@ -62,7 +62,7 @@ If **all** these checks pass, then the access package is Visible in the user's b
 
 Effective September 30 2025, the visibility on the [My Access portal](https://myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you don't want the access packages visible to all members, you must hide the access package by this date.
 
-The visibility change will only impact how end-users can discover access packages via the "Available" tab, the "View all" option, or when using the search bar within these sections to find requestable access packages. The change won't impact the visibility logic for other tabs like "Suggested", "Active", or "Expired" (even when using search within those tabs), nor does it impact other My Access portal sections such as "Request history" or "Approvals".
+The visibility change will only impact how end-users can discover access packages via the "Available" tab, the "View all" option, or when using the search bar within these sections to find requestable access packages. The change won't impact the visibility logic for other tabs like "Suggested," "Active," or "Expired" (even when using search within those tabs), nor does it impact other My Access portal sections such as "Request history" or "Approvals."
 
 The following flow diagram illustrates the logic, effective September 30 2025, used to determine if an access package appears in the browse/search view for a specific user:
 
