@@ -29,7 +29,7 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 > The SPNs are *case insensitive* and should be an *exact match* or a *wildcard* in this format <service class e.g. cifs>/*.
 - Understand that one Private Access Sensor can be installed on a DC. To test this functionality, you don’t need to install sensors on all DCs. A sensor is installed in `Audit` mode by default and you will need change it to `enforce` mode.
 - As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.
-- Recommended but optional: Restrict NT Lan Manager (NTLM) v1/v2 and use Kerberos auth in the domain.
+- If you use NT LAN Manager (NTLM) v1/v2 in your environment, you may need to restrict NTLM and use Kerberos auth in the domain.
 
 > [!Note]
 > Setting the policy Restrict NTLM: NTLM authentication in this domain without performing an impact assessment first might cause service outage for those applications and users still using NTLM authentication.
