@@ -6,7 +6,7 @@ ms.topic: tutorial
 ms.date: 10/21/2024
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra admin, I want to learn how to bulk invite external users to my organization using the Microsoft Entra admin center, so that I can efficiently manage user invitations and onboarding.

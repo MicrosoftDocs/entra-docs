@@ -1,13 +1,13 @@
 ---
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 05/25/2025
-ms.author: rolyon
+ms.date: 06/12/2025
+ms.author: barclayn
 ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
 ---
@@ -240,7 +240,8 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | View scenario monitoring signals | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br>[Security Operator](permissions-reference.md#security-operator)<br>[Security Administrator](permissions-reference.md#security-administrator)<br>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br>[Global Reader](permissions-reference.md#global-reader)<br>|
+> | View scenario monitoring signals and alert configurations | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br>[Security Operator](permissions-reference.md#security-operator)<br>[Security Administrator](permissions-reference.md#security-administrator)<br>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br>[Global Reader](permissions-reference.md#global-reader)<br>|
+> | Update alerts and alert email configurations | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) |  |
 
 <a name='identity-protection'></a>
 
@@ -289,6 +290,8 @@ Here are the least privileged roles you should use when performing tasks for [Mi
 > | ---- | --------------------- | ---------------- |
 > | Read recommendations | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Global Reader](permissions-reference.md#global-reader)<br/>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Service Support Administrator](permissions-reference.md#service-support-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 > | Update recommendations | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Authentication Administrator](permissions-reference.md#authentication-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Conditional Access Administrator](permissions-reference.md#conditional-access-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Identity Governance Administrator](permissions-reference.md#identity-governance-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator) |
+> | Read Identity Secure Score improvement action | [Service Support Administrator](../role-based-access-control/permissions-reference.md#service-support-administrator) | [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator)<br/>[Exchange Administrator](../role-based-access-control/permissions-reference.md#exchange-administrator) |
+> | Update Identity Secure Score improvement action | [SharePoint Administrator](../role-based-access-control/permissions-reference.md#sharepoint-administrator) | [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator)<br/>[User Administrator](../role-based-access-control/permissions-reference.md#user-administrator)<br/>[Security Reader](../role-based-access-control/permissions-reference.md#security-reader)<br/>[Security Operator](../role-based-access-control/permissions-reference.md#security-operator)<br/>[Global Reader](../role-based-access-control/permissions-reference.md#global-reader) |
 
 ## Monitoring and health - Sign-in diagnostic tool
 

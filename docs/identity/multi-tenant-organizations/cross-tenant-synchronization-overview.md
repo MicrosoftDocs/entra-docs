@@ -2,11 +2,11 @@
 title: What is a cross-tenant synchronization in Microsoft Entra ID?
 description: Learn about cross-tenant synchronization in Microsoft Entra ID.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 05/02/2025
+ms.date: 06/13/2025
 ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -34,7 +34,7 @@ The following diagram shows how you can use cross-tenant synchronization to enab
 
 ## Who should use?
 - Organizations that own multiple Microsoft Entra tenants and want to streamline intra-organization cross-tenant application access.
-- Cross-tenant synchronization is **not** currently suitable for use across organizational boundaries.
+- Cross-tenant synchronization is **not** currently supported for use across organizational boundaries.
 
 ## Benefits
 

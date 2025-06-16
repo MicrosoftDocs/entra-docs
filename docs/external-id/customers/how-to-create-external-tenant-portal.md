@@ -2,7 +2,7 @@
 title: Create an External Tenant
 description: Create an external tenant to get started with Microsoft Entra External ID as your customer identity and access management (CIAM) service.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

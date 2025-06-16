@@ -3,7 +3,7 @@ title: Configure Banyan Security Zero Trust Remote Access Platform for Single si
 description: Learn how to configure single sign-on between Microsoft Entra ID and Banyan Security Zero Trust Remote Access Platform.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -4,7 +4,7 @@ description: Monitor and troubleshoot configuration changes in Global Secure Acc
 #customer intent: As a Global Secure Access administrator, I want to monitor deployment logs so that I can track and troubleshoot configuration changes.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: how-to
 ms.date: 04/30/2025
 ms.service: global-secure-access

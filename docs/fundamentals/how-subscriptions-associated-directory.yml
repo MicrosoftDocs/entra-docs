@@ -4,7 +4,7 @@ metadata:
   description: Instructions about how to add an existing Azure subscription to your Microsoft Entra tenant.
   author: barclayn
   ms.author: barclayn
-  manager: femila
+  manager: pmwongera
   ms.reviewer: jeffsta
   ms.date: 04/02/2025
   ms.service: entra

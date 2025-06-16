@@ -2,11 +2,11 @@
 title: Conditional Access block policy health scenario
 description: Learn about the Microsoft Entra Health signals and alerts for Conditional Access block policy health scenarios
 author: shlipsey3
-manager: femila
+manager: pmwongera 
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 04/25/2025
+ms.date: 06/06/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 

@@ -3,7 +3,7 @@ title: Configure Cisco Webex for automatic user provisioning with Microsoft Entr
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Cisco Webex.
 
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 

@@ -6,7 +6,7 @@ ms.topic: tutorial
 ms.date: 04/28/2025
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing external B2B guest users, I want to enforce multifactor authentication for access to cloud or on-premises applications, so that I can ensure the security of our resources and protect against unauthorized access.

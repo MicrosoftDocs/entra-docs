@@ -7,11 +7,12 @@ ms.subservice: authentication
 ms.topic: conceptual  
 ms.date: 05/20/2025
 
-author: justinha  
-ms.author: justinha  
-manager: femila  
-ms.reviewer: aloom3  
-ms.custom: references_regions  
+author: justinha
+ms.author: justinha
+manager: dougeby
+ms.reviewer: aloom3
+ms.custom: references_regions
+
 ---
 
 # Overview

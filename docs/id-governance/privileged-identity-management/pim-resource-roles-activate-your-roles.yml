@@ -4,7 +4,7 @@ metadata:
   description: Learn how to activate your Azure resource roles in Microsoft Entra Privileged Identity Management (PIM).
   author: barclayn
   ms.author: barclayn
-  manager: femila
+  manager: pmwongera
   ms.reviewer: rianakarim
   ms.date: 12/19/2024
   ms.service: entra-id-governance

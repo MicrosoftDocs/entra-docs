@@ -1,13 +1,13 @@
 ---
 title: Create or delete administrative units
 description: Create administrative units to restrict the scope of role permissions in Microsoft Entra ID.
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
 ms.date: 01/03/2025
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: anandy
 ms.custom: oldportal, it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---

@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra Suite Scenario - Use entitlement management and Global Secure Access to restrict employee access to cloud apps 
+title: Use entitlement management and Global Secure Access to restrict employee access to cloud apps 
 description: Learn how you can use entitlement management and Global Secure Access to restrict employee access to cloud apps.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -12,7 +12,7 @@ ms.reviewer: jercon
 ---
 
 
-# Microsoft Entra Suite Scenario: Use entitlement management and Global Secure Access to restrict employee access to cloud apps 
+# Use entitlement management and Global Secure Access to restrict employee access to cloud apps 
 
 The Microsoft Entra Suite provides capabilities to govern who can access restricted websites. Microsoft Entra Internet Access protects access to SaaS apps and entitlement management enables organizations to manage identity and access lifecycle at scale, by automating access request workflows, access assignments, reviews, and expiration.
 
