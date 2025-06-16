@@ -24,7 +24,7 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 - The client machine is at least Windows 10 and is Microsoft Entra joined or hybrid joined device. The client machine must also have line of sight to the private resources and DC (user is in a corporate network and accessing on-premises resources). User identity used for joining the device and accessing these resources was created in Active Directory (AD) and synced to Microsoft Entra ID using Microsoft Entra Connect.
 - The latest Microsoft Entra Private network connector is installed and has a line of sight to the DC.
 - Open inbound Transmission Control Protocol (TCP) port `1337` in the Windows Firewall on the DCs.
-- Identify the Service Principal Names (SPNs) of the private apps you want to protect. You add the SPNs in the policy for Private Access Sensors that are installed on the DCs.
+- Identify the Service Principal Names (SPNs) of the private apps you want to protect. You will later add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
 > The SPNs are *case insensitive* and should be an *exact match*.
 - Understand that only one Private Access Sensor is required on a DC in your environment. To test functionality, you don’t need to install sensors on all DCs. To test functionality, install one sensor in `Audit` (report-only) mode. A sensor is installed in `Audit` mode by default.
