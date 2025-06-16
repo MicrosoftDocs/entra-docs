@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/26/2025
+ms.date: 06/16/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -83,6 +83,9 @@ For details on configuring diagnostic settings for a specific destination, see t
 
 The basic steps for configuring diagnostics settings are as follows:
 
+> [!NOTE]
+> It might take up to three days for the logs to start appearing in the destination.
+
 1. To create a new diagnostic setting, select **Add diagnostic setting**.
 1. Provide a name.
 1. Select the logs you want to include.
@@ -90,6 +93,3 @@ The basic steps for configuring diagnostics settings are as follows:
 1. Select the **Save** button.
 
     ![Screenshot of the create diagnostic settings page, with several logs selected to go to a Log Analytics workspace.](media/howto-configure-diagnostic-settings/diagnostic-settings-save.png)
-
-> [!NOTE]
-> It might take up to three days for the logs to start appearing in the destination.
