@@ -99,7 +99,7 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 
 1. Confirm that the SPNs configured earlier are present in the `cloudpolicy` file.
 1. In the `localpolicy` file, add the private connector IPs to the `SourceIPAllowList` and save. Only Kerberos requests from these connector IPs are allowed; others are blocked.
-1. Ensure the **Private Access Sensor** and **PaSensorPolicyRetreiverService** services are running.
+1. If you add or update SPNs and/or Connector IPs, it can take a few minutes for changes to take effect. You don't need to restart the sensors.
 
 > [!IMPORTANT]
 > The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `AuditMode` registry key for `PrivateAccessSensor` from `1` to `0`.
