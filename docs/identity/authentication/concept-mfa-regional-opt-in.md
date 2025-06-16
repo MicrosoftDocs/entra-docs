@@ -13,7 +13,7 @@ manager: femila
 ms.reviewer: aloom3
 ms.custom: references_regions
 ---
-## Overview
+# Overview
 To protect customers from telephony-based abuse and fraud, Microsoft Entra ID applies intelligent detection and throttling mechanisms to all telecom based authentication requests. 
 
 These protections use a combination of heuristics, machine learning models, and risk-based signals to detect and block potentially abusive or fraudulent telephony activity in real time. 
