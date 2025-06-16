@@ -116,7 +116,7 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to malicious websites is blocked as expected.
 
 > [!NOTE]
-> After configuring a threat intelligence policy, you may need to [clear your browser's cache](www.microsoft.com/edge/learning-center/how-to-manage-and-clear-your-cache-and-cookies) to validate policy enforcement.
+> After configuring a threat intelligence policy, you may need to [clear your browser's cache](https://www.microsoft.com/edge/learning-center/how-to-manage-and-clear-your-cache-and-cookies) to validate policy enforcement.
 
 1. Right-click on the Global Secure Access client icon in the task manager tray and open **Advanced Diagnostics** > **Forwarding profile**. Ensure that the Internet access acquisition rules are present.
 1. Navigate to a known malicious site (for example, `entratestthreat.com` or `smartscreentestratings2.net`). Ensure that you're blocked and that the Threat Type field is nonempty in the traffic logs. Traffic logs may take up to 5 minutes to appear in the portal.
