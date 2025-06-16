@@ -3,7 +3,7 @@ title: Configure CloudKnox Permissions Management Platform for Single sign-on wi
 description: Learn how to configure single sign-on between Microsoft Entra ID and CloudKnox Permissions Management Platform.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

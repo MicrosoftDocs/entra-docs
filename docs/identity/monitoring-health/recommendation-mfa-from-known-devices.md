@@ -6,9 +6,9 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 04/09/2025
+ms.date: 06/12/2025
 ms.author: sarahlipsey
-ms.reviewer: deawari
+ms.reviewer: jadedsouza
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to minimize the number of multifactor authentication prompts my users receive from known devices so that they can access resources more easily and securely.
 ---
