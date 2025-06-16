@@ -3,7 +3,7 @@ title: Configure Euromonitor International for Single sign-on with Microsoft Ent
 description: Learn how to configure single sign-on between Microsoft Entra ID and Euromonitor International.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
