@@ -34,7 +34,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
   MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!NOTE]
-> After you enable this capability, your Windows VMs in Azure will be Microsoft Entra joined. You cannot join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the VM from Microsoft Entra ID by uninstalling the extension. In addition, if you deploy a supported golden image, be aware that you can enable Entra ID authentication installing after the deployment the dedicated extension.
+> After you enable this capability, your Windows VMs in Azure will be Microsoft Entra joined. You cannot join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the VM from Microsoft Entra ID by uninstalling the extension. In addition, if you deploy a supported golden image, you can still enable Entra ID authentication by installing the required extension after the VM has been deployed.
 
 ## Requirements
 
