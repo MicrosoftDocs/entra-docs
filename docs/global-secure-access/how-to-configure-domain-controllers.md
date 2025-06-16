@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 06/05/2025
+ms.date: 06/16/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
@@ -24,12 +24,12 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 - The client machine is at least Windows 10 and is Microsoft Entra joined or hybrid joined device. The client machine must also have line of sight to the private resources and DC (user is in a corporate network and accessing on-premises resources). User identity used for joining the device and accessing these resources was created in Active Directory (AD) and synced to Microsoft Entra ID using Microsoft Entra Connect.
 - The latest Microsoft Entra Private network connector is installed and has a line of sight to the DC.
 - Open inbound Transmission Control Protocol (TCP) port `1337` in the Windows Firewall on the DCs.
-- Identify the Service Principal Names (SPNs) of the private apps you want to protect. You will later add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
+- Identify the Service Principal Names (SPNs) of the private apps you want to protect. You add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
 > The SPNs are *case insensitive* and should be an *exact match* or a *wildcard* in this format <service class e.g. cifs>/*.
-- Understand that one Private Access Sensor can be installed on a DC. To test this functionality, you don’t need to install sensors on all DCs. A sensor is installed in `Audit` mode by default and you will need change it to `enforce` mode.
+- Understand that one Private Access Sensor can be installed on a DC. To test this functionality, you don’t need to install sensors on all DCs. A sensor is installed in `Audit` mode by default and you need to change it to `enforce` mode.
 - As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.
-- If you use NT LAN Manager (NTLM) v1/v2 in your environment, you may need to restrict NTLM and use Kerberos auth in the domain.
+- If you use NT LAN Manager (NTLM) v1/v2 in your environment, you might need to restrict NTLM and use Kerberos auth in the domain.
 
 > [!Note]
 > Setting the policy Restrict NTLM: NTLM authentication in this domain without performing an impact assessment first might cause service outage for those applications and users still using NTLM authentication.
@@ -87,7 +87,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 ### 6. Install the Private Access Sensor on the domain controller
 
-1. Download the Private Access Sensor for DC from Entra Portal (Entra portal > Global Secure Access > Connect > Connectors and sensors > Private access sensors > Download private access sensor
+1. Download the Private Access Sensor for DC from Microsoft Entra admin center at **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** > **Download private access sensor**.
 1. Extract the zip file.
 1. Install the sensor by running the `PrivateAccessSensorInstaller` batch file, or install the `PrivateAccessSensor` package followed by the `PrivateAccessSensorPolicyRetreiverInstaller` package.
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
