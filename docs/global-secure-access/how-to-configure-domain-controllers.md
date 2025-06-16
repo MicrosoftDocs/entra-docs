@@ -27,7 +27,7 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 - Identify the Service Principal Names (SPNs) of the private apps you want to protect. You will later add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
 > The SPNs are *case insensitive* and should be an *exact match* or a *wildcard* in this format <service class e.g. cifs>/*.
-- Understand that only one Private Access Sensor is required on a DC in your environment. To test functionality, you don’t need to install sensors on all DCs. To test functionality, install one sensor in `Audit` (report-only) mode. A sensor is installed in `Audit` mode by default.
+- Understand that one Private Access Sensor can be installed on a DC. To test this functionality, you don’t need to install sensors on all DCs. A sensor is installed in `Audit` mode by default and you will need change it to `enforce` mode.
 - As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.
 - If you have multiple DCs in the sites/domain and would only like to test on one, we recommend setting a preferred DC using the `klist add_bind` command. In addition, create a firewall rule on Windows Defender to block connections to all other DCs in the site except the test DC.
 - Recommended but optional: Restrict NT Lan Manager (NTLM) v1/v2 and use Kerberos auth in the domain.
