@@ -2,7 +2,7 @@
 title: Sign-in logs in Microsoft Entra ID
 description: Learn about the different types of sign-in logs that are available in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
