@@ -91,7 +91,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Extract the zip file.
 1. Install the sensor by running the `PrivateAccessSensorInstaller` batch file, or install the `PrivateAccessSensor` package followed by the `PrivateAccessSensorPolicyRetreiverInstaller` package.
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
-1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors** > **Private access sensor** and verify the sensor status is **Active**.
+1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**.
 
 ### 7. Configure Private Access Sensor policy files
 
