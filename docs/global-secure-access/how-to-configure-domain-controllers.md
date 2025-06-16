@@ -51,7 +51,7 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 1. After installation, verify the connector status is **Active** in the Microsoft Entra admin center.
 
 > [!TIP]
-> Note the private IP addresses of your connectors (for example, `10.5.0.8`). You need the IPs when configuring the Private Access Sensor policy.
+> Note the private IP addresses of your connectors (for example, `10.5.0.7`). You need the IPs when configuring the Private Access Sensor policy.
 
 ### 2. Create a Global Secure Access application
 
