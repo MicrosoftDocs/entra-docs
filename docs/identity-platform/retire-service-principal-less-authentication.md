@@ -23,9 +23,7 @@ Additionally, by enforcing the requirement that applications must be registered 
 
 You must act **before March 31, 2026**, to avoid authentication failure of applications. 
 
-In February-March 2025, we froze most resource apps accessed by service principal-less client apps. We allowed traffic where the client app home tenant and resource tenant matched if it was observed between **February 11th and March 11th, 2025**, which will continue to work until March 2026. However, any traffic that wasn't identified during this period or new traffic after March 11 was blocked starting April 2025. 
-
-We're now addressing the remaining client apps. Starting late June/July 2025, service principal-less traffic observed between **June 16th and 27th, 2025** will be allowed until March 2026. Low-volume traffic is excluded. This change only applies to a small set of first-party and third-party resource apps, including first-party apps such as EXO, AADGraph, and ARM. 
+In February-March 2025, we froze most resource apps accessed by service principal-less client apps. We allowed traffic where the client app home tenant and resource tenant matched if it was observed between **February 11th and March 11th, 2025**, which will continue to work until March 2026. However, any traffic that wasn't identified during this period or new traffic after March 11 was blocked starting April 2025.
 
 ## Use sign-in logs to find service principal-less applications
 

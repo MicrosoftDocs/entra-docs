@@ -2,7 +2,7 @@
 title: How to call a downstream web API from a daemon app
 description: Learn how to build a daemon app that calls a web API.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 03/25/2025
 ms.reviewer: jmprieur

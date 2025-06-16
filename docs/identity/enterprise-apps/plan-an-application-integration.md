@@ -3,7 +3,7 @@ title: Get started integrating Microsoft Entra ID with apps
 description: This article is a getting started guide for integrating Microsoft Entra ID with on-premises applications, and cloud applications.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article

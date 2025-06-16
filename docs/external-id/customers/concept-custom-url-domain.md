@@ -3,7 +3,7 @@ title: Overview of custom URL domains for External ID
 description: Learn about setting up custom URL domains to personalize the authentication sign-in endpoints for the external customers and consumers of your app.
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article

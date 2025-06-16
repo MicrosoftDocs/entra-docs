@@ -1,7 +1,7 @@
 ---
 title: Configure an app's publisher domain
 description: Learn how to configure an app's publisher domain to let users know where their information is being sent.
-manager: CelesteDG
+manager: dougeby
 author: garrodonnell
 ms.author: godonnell
 ms.custom:

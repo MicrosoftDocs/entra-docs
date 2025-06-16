@@ -3,7 +3,7 @@ title: Configure Delivery Scheduling Tool for Single sign-on with Microsoft Entr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Delivery Scheduling Tool.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

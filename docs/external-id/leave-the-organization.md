@@ -10,7 +10,7 @@ ms.date: 12/16/2024
 
 ms.author: cmulligan 
 author: csmulligan 
-manager: celestedg
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 adobe-target: true

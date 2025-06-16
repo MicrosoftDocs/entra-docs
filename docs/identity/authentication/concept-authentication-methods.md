@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how or why I can use them to improve and secure user sign-in events.
 ---
