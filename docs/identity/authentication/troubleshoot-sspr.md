@@ -5,11 +5,11 @@ description: Learn how to troubleshoot common problems and resolution steps for 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 03/04/2025
+ms.date: 06/06/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: tilarso
 ---
 # Troubleshoot self-service password reset in Microsoft Entra ID
@@ -97,6 +97,7 @@ To help resolve problems with SSPR, review these steps.
 | The directory is enabled for password reset, but the authentication information for the user is missing or malformed. | Make sure that user account is properly formed contact data on file in the directory. For more information, see [Data used by Microsoft Entra self-service password reset](howto-sspr-authenticationdata.md). |
 | The directory is enabled for password reset, but the user has only one piece of contact data on file when the policy is set to require two verification methods. | Make sure that the user has at least two properly configured contact methods. An example is having both a mobile phone number *and* an office phone number. |
 | The directory is enabled for password reset and the user is properly configured, but the user is unable to be contacted. | A temporary service error, or there's incorrect contact data that we can't properly detect. <br> If the user waits 10 seconds, a link is displayed to "Try again" and "Contact your administrator". If the user selects "Try again," it retries the call. If the user selects "Contact your administrator," it sends a form email to the administrators requesting a password reset to be performed for that user account. |
+| On a slow computer, you might need to retry password reset. | If you click **Reset Password** on a slow computer and don't see the password reset dialog, retry until it appears. |
 | The user never receives the password reset SMS or phone call. | The phone number in the directory may be malformed. Make sure the phone number is in the format "+1 4251234567". <br> <br>Password reset doesn't support extensions, even if you specify one in the directory. The extensions are stripped before the call is made. Use a number without an extension, or integrate the extension into the phone number in your private branch exchange (PBX). |
 | The user never receives the password reset email. | The most common cause for this problem is that the message is rejected by a spam filter. Check your spam, junk, or deleted items folder for the email. <br> <br> Also, make sure the user checks the correct email account as registered with SSPR. |
 | I set a password reset policy, but when an admin account uses password reset, that policy isn't applied. | Microsoft manages and controls the administrator password reset policy to ensure the highest level of security. |

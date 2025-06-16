@@ -66,8 +66,6 @@
         href: adem-tutorial.md
       - name: Adobe Captivate Prime
         href: adobecaptivateprime-tutorial.md
-      - name: Adobe Creative Cloud
-        href: adobe-creative-cloud-tutorial.md
       - name: Adobe Experience Manager
         href: adobeexperiencemanager-tutorial.md
       - name: Adobe Identity Management (SAML)
@@ -1381,8 +1379,6 @@
         href: ihasco-training-tutorial.md
       - name: Illusive Networks
         href: illusive-networks-tutorial.md
-      - name: Illumio SSO
-        href: illumio-sso-tutorial.md
       - name: iLMS
         href: ilms-tutorial.md
       - name: iLOGON_MHA
@@ -1563,8 +1559,6 @@
         href: kantegassoforfisheyecrucible-tutorial.md
       - name: Kantega SSO for JIRA
         href: kantegassoforjira-tutorial.md
-      - name: Kao Navi
-        href: kao-navi-tutorial.md
       - name: Karlsgate Identity Exchange (KIE) SSO Add-on
         href: karlsgate-identity-exchange-kie-sso-add-on-tutorial.md
       - name: Keepabl
@@ -1605,8 +1599,6 @@
         href: knowledge-work-tutorial.md
       - name: Kofax TotalAgility
         href: kofax-totalagility-tutorial.md
-      - name: Kontiki
-        href: kontiki-tutorial.md
       - name: Korn Ferry 360
         href: korn-ferry-360-tutorial.md
       - name: Korn Ferry ALP
@@ -1944,9 +1936,7 @@
       - name: Nimblex
         href: nimblex-tutorial.md
       - name: Nimbus
-        href: nimbus-tutorial.md 
-      - name: Nintex Promapp
-        href: promapp-tutorial.md
+        href: nimbus-tutorial.md
       - name: Nitro Productivity Suite
         href: nitro-productivity-suite-tutorial.md
       - name: Nodetrax Project
@@ -3101,8 +3091,6 @@
         href: web-cargo-air-tutorial.md    
       - name: WebCE
         href: webce-tutorial.md
-      - name: webMethods Integration Suite
-        href: webmethods-integration-cloud-tutorial.md
       - name: WebSphere Liberty
         href: websphere-liberty-tutorial.md
       - name: WebTMA
@@ -3918,8 +3906,6 @@
         href: v-client-provisioning-tutorial.md
       - name: Velpic
         href: velpic-provisioning-tutorial.md
-      - name: Veritas Enterprise Vault.cloud SSO-SCIM
-        href: veritas-provisioning-tutorial.md
       - name: Visibly
         href: visibly-provisioning-tutorial.md
       - name: Visitly

@@ -1,16 +1,15 @@
 ---
 title: Change Static Groups to Dynamic Membership Groups
 description: Learn how to convert existing membership groups from static to dynamic by using either the Azure portal or PowerShell cmdlets.
-
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 01/14/2025
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Change static groups to dynamic membership groups in Microsoft Entra ID

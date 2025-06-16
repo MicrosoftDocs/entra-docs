@@ -2,13 +2,13 @@
 title: Native authentication API reference documentation
 description: Find out how to use native authentication APIs to authenticate users into your customer-facing apps with the external tenant.
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
-ms.service: entra-external-id 
+ms.service: entra-external-id
 ms.subservice: external
 ms.topic: reference
-ms.date:  09/30/2024
-
+ms.date: 09/30/2024
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
 

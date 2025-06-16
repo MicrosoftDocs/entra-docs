@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with BrainStorm Platform
+title: Configure BrainStorm Platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and BrainStorm Platform.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BrainStorm Platform so that I can control who has access to BrainStorm Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with BrainStorm Platform
+# Configure BrainStorm Platform for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate BrainStorm Platform with Microsoft Entra ID. The BrainStorm Platform empowers end users to personalize their experience, empowering them to embrace long-term behavioral change. When you integrate BrainStorm Platform with Microsoft Entra ID, you can:
 

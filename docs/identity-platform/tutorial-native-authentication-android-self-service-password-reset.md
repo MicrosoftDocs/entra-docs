@@ -57,7 +57,7 @@ To handle the request when the user selects the **Forget Password** button or li
 
             when (resetPasswordResult) { 
                 is ResetPasswordStartResult.CodeRequired -> { 
-                    // The implementation of submiteCode() please see below. 
+                    // The implementation of submitCode() please see below. 
                     submitCode(resetPasswordResult.nextState) 
                 } 
                 is ResetPasswordError -> {

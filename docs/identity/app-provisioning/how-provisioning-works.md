@@ -3,7 +3,7 @@ title: Understand how Application Provisioning in Microsoft Entra ID
 description: Understand how Application Provisioning works in Microsoft Entra ID.
 
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
@@ -246,4 +246,4 @@ When developing an application, always support both soft-deletes and hard-delete
 
 [Build a SCIM endpoint and configure provisioning when creating your own app](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)
 
-[Troubleshoot problems with configuring and provisioning users to an application](./application-provisioning-config-problem.md).
+[Troubleshoot problems with configuring and provisioning users to an application](troubleshoot.md).

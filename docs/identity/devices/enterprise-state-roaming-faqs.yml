@@ -8,7 +8,7 @@ metadata:
   ms.date: 08/01/2024
   ms.author: owinfrey
   author: owinfreyATL
-  manager: femila
+  manager: dougeby
   ms.reviewer: sempofu, micrider
 title: Settings and data roaming FAQ for administrators
 summary: This article answers some questions IT administrators might have about settings and app data sync.
@@ -72,7 +72,7 @@ sections:
         answer: |
           Prior to Nov 2022 all user data was secured using [Azure Rights Management](/azure/information-protection/what-is-information-protection).
 
-          Starting in November 2022, Microsoft no longer uses Azure Rights Management for all data encryption. Microsoft is committed to safeguarding customer data. Certain sensitive data such as passwords are encrypted client side with keys derived from the Microsoft Entra tenant to ensure an extra layer of security. All user data (including nonsensitive data) is encrypted in transit and at rest in the cloud. For a list of sensitive and nonsensitive data items roamed, see [Windows roaming settings reference](enterprise-state-roaming-windows-settings-reference.md).
+          Starting in November 2022, Microsoft no longer uses Azure Rights Management for all data encryption. Microsoft is committed to safeguarding customer data. Certain sensitive data such as passwords are encrypted client side with keys derived from the Microsoft Entra tenant to ensure an extra layer of security. All user data (including nonsensitive data) is encrypted in transit and at rest in the cloud. For a list of sensitive and nonsensitive data items roamed, see [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr).
           
       - question: |
           Can I manage sync for a specific app or setting?

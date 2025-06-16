@@ -2,7 +2,7 @@
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.topic: conceptual
 ms.date: 03/05/2025
@@ -105,7 +105,6 @@ Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) su
 
 [!INCLUDE [features-preview](../includes/licensing-features-preview.md)]
 
-## Next steps
+## Related content
 
 - [Microsoft Entra pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
-- [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)

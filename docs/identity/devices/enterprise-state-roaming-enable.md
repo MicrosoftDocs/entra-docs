@@ -1,17 +1,15 @@
 ---
 title: Enable Enterprise State Roaming in Microsoft Entra ID
 description: Frequently asked questions about Enterprise State Roaming settings in Windows devices.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
 ms.date: 08/01/2024
-
 ms.author: owinfrey
 author: MicrosoftGuyJFlo
 manager: owinfreyATL
 ms.reviewer: sempofu, micrider
-ms.custom: references_regions
+ms.custom: references_regions, sfi-ga-blocked
 ---
 # Enable Enterprise State Roaming in Microsoft Entra ID
 
@@ -69,5 +67,5 @@ The data retention policy isn't configurable. Once the data is permanently delet
 
 * [Settings and data roaming FAQ](enterprise-state-roaming-faqs.yml)
 * [Group Policy and MDM settings for settings sync](enterprise-state-roaming-group-policy-settings.md)
-* [Windows 10 roaming settings reference](enterprise-state-roaming-windows-settings-reference.md)
+* [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr)
 * [Troubleshooting](enterprise-state-roaming-troubleshooting.md)

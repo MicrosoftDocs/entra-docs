@@ -1,7 +1,6 @@
 ---
 title: 'Exchange hybrid writeback with sync'
 description: This article describes the Exchange hybrid writeback feature with sync clients.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Exchange hybrid writeback 

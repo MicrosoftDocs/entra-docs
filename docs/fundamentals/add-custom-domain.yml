@@ -4,7 +4,7 @@ metadata:
   description: Instructions about how to add your custom domain name to your tenant.
   author: barclayn
   ms.author: barclayn
-  manager: femila
+  manager: pmwongera
   ms.reviewer: elkuzmen
   ms.date: 03/05/2025
   ms.service: entra
@@ -12,6 +12,7 @@ metadata:
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-ga-nochange
 title: |
   Add your custom domain name to your tenant
 introduction: |

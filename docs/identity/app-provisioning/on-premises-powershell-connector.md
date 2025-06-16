@@ -1,15 +1,15 @@
 ---
 title: Microsoft Entra provisioning to applications via PowerShell
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer Windows PowerShell based APIs.
-
-author: billmath
-manager: femila
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: kenwith
 ms.reviewer: arvinh
+ms.custom: sfi-image-nochange
 ---
 # Provisioning users into applications using PowerShell
 The following documentation provides configuration and tutorial information. It demonstrates how the generic PowerShell connector and the Extensible Connectivity (ECMA) Connector host are used to integrate Microsoft Entra ID with external systems that offer Windows PowerShell-based APIs.

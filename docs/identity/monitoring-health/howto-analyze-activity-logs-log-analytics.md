@@ -9,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to integrate Microsoft Entra activity logs with Azure Monitor logs so that I can analyze the logs with Log Analytics.
 ---
 

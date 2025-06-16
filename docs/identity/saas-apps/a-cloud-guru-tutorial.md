@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with A Cloud Guru
+title: Configure A Cloud Guru for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and A Cloud Guru.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and A Cloud Guru so that I can control who has access to A Cloud Guru, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with A Cloud Guru
+# Configure A Cloud Guru for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate A Cloud Guru with Microsoft Entra ID. When you integrate A Cloud Guru with Microsoft Entra ID, you can:
 
@@ -25,7 +25,9 @@ In this article,  you learn how to integrate A Cloud Guru with Microsoft Entra I
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Cloud Guru single sign-on (SSO) enabled subscription.
 
@@ -45,7 +47,7 @@ To configure the integration of A Cloud Guru into Microsoft Entra ID, you need t
 1. In the **Add from the gallery** section, type **A Cloud Guru** in the search box.
 1. Select **A Cloud Guru** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 
 <a name='configure-and-test-azure-ad-sso-for-a-cloud-guru'></a>

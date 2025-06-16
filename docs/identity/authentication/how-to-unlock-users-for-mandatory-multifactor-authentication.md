@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 04/19/2025
 ms.author: justinha
 author: najshahid
-manager: femila
+manager: dougeby
 ms.reviewer: nashahid
 
 # Customer intent: As an identity administrator, I want to unlock users who are locked out by mandatory MFA.

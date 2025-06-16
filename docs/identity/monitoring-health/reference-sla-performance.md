@@ -45,7 +45,7 @@ The numbers in the table are a global total of Microsoft Entra authentications a
 | February  | 99.999% | 99.999% | 99.999% | 99.999% | 99.998% |
 | March     | 99.568% | 99.998% | 99.999% | 99.999% | 99.996% |
 | April     | 99.999% | 99.999% | 99.999% | 99.999% | 99.999%*|
-| May       | 99.999% | 99.999% | 99.999% | 99.999% |         |
+| May       | 99.999% | 99.999% | 99.999% | 99.999% | 99.999% |
 | June      | 99.999% | 99.999% | 99.999% | 99.999% |         |
 | July      | 99.999% | 99.999% | 99.999% | 99.999% |         |
 | August    | 99.999% | 99.999% | 99.999% | 99.999% |         |
@@ -56,7 +56,7 @@ The numbers in the table are a global total of Microsoft Entra authentications a
 
 <a name='how-is-azure-ad-sla-measured-'></a>
 
-*Starting in April 2025, we updated our SLA performance calculations to provide a more complete view of the user experience with authentication availability. The new calculation includes authentication successes from Microsoft Entra's resilient infrastructure, such as when the backup authentication service succeeds on retry. Prior to April 2025, these successful sign-ins were not included in the SLA calculation. With the addition of this new calculation, the SLA performance percentages will increase.
+*Starting in April 2025, we updated our SLA performance calculations to provide a more complete view of the user experience with authentication availability. The new calculation includes authentication successes from Microsoft Entra's resilient infrastructure, such as when the [backup authentication system](../../architecture/backup-authentication-system.md) succeeds on retry. Prior to April 2025, these successful sign-ins were not included in the SLA calculation. With the addition of this new calculation, the SLA performance percentages will increase. For example, the April 2025 number using the previous calculation logic would have been 99.998%. With new logic, it's 99.999%.
 
 ## Incident history
 

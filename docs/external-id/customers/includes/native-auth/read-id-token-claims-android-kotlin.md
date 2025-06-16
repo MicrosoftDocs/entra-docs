@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 04/28/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 Once your app acquires an ID token, you can retrieve the claims associated with the current account. To do so, use the following code snippet.
 

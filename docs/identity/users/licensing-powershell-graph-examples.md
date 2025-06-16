@@ -4,7 +4,7 @@ description: Learn how to manage group-based licensing in Microsoft Entra ID usi
 #customer intent: As an IT admin, I want to access PowerShell examples for common group-based licensing tasks so that I can simplify license magement in my organization.
 keywords: Entra ID licensing
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to

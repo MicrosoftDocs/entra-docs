@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra integration with Learning at Work
+title: Configure Learning at Work for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Learning at Work.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Learning at Work so that I can control who has access to Learning at Work, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Learning at Work with Microsoft Entra ID
+# Configure Learning at Work for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Learning at Work with Microsoft Entra ID. When you integrate Learning at Work with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Learning at Work with Microsoft Ent
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Learning at Work single sign-on (SSO) enabled subscription.
 
