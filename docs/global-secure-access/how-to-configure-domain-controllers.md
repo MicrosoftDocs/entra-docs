@@ -45,7 +45,7 @@ Follow these steps to configure Microsoft Entra Private Access for Active Direct
 ### 1. Download and install the Microsoft Entra private network connector
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Go to **Global Secure Access** > **Connect** > **Connectors** > **Private Network Connectors**.
+1. Go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private Network Connectors**.
 1. Download the latest version of the private network connector.
 1. Install the connector on a Windows Server that has line of sight to your domain controller.
 1. After installation, verify the connector status is **Active** in the Microsoft Entra admin center.
