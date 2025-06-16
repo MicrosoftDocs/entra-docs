@@ -67,9 +67,11 @@ IRSF poses a significant threat to online services and can cause reputational ha
 
 For SMS and voice verification, the following region codes require opt-in. If you want to enable telephony in these regions, you must submit a support request.
 
-**Note:** We strongly recommend configuring more than one authentication method, with at least one being non-telecom-based.
+> [!NOTE]
+> We strongly recommend configuring more than one authentication method, with at least one being non-telecom-based.
 
-**Note:** If a user previously received SMS or voice calls in a country but has stopped receiving them, throttling may be in effect. Retry after some time. If users in a tenant cannot receive SMS or voice calls in a specific country and that country is listed below, it may mean the tenant is not enabled for telecom authentication in that region. In such cases, we recommend using an alternative method to unblock the user. If telecom authentication is required and alternatives are unavailable, please open a support ticket.
+> [!NOTE]
+> If a user previously received SMS or voice calls in a country but has stopped receiving them, throttling may be in effect. Retry after some time. If users in a tenant cannot receive SMS or voice calls in a specific country and that country is listed below, it may mean the tenant is not enabled for telecom authentication in that region. In such cases, we recommend using an alternative method to unblock the user. If telecom authentication is required and alternatives are unavailable, please open a support ticket.
 
 Region Code | Region Name  
 ------------|-------------  
