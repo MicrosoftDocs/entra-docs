@@ -842,8 +842,6 @@
         href: dozuki-tutorial.md
       - name: Darwinbox
         href: darwinbox-tutorial.md
-      - name: Darwinbox HR Integration 
-        href: darwinbox-hr-integration-tutorial.md
       - name: Draup, Inc
         href: draup-inc-tutorial.md  
       - name: Drawboard Projects
@@ -3438,6 +3436,8 @@
         href: cybsafe-provisioning-tutorial.md
       - name: Dagster Cloud
         href: dagster-cloud-provisioning-tutorial.md
+      - name: Darwinbox HR Integration 
+        href: darwinbox-hr-integration-tutorial.md
       - name: Datadog
         href: datadog-provisioning-tutorial.md
       - name: Documo
