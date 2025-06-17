@@ -63,7 +63,7 @@ The following flow diagram illustrates the logic, effective September 30 2025, u
 :::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram-2.png" alt-text="Screenshot of updated my access visibility access package diagram.":::
 
 
-**Next Steps:**
+### Next Steps
 
 We recommend you review the access packages currently configured with policies scoped to "Specific users and groups" in your tenant. If the access package contains sensitive information that you wouldn't want all members, excluding guests, to see, hide the access package by **September 30, 2025** to ensure the desired end-user experience on the My Access portal.
 
