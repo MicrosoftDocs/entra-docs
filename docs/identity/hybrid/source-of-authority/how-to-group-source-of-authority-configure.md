@@ -4,7 +4,7 @@ description: Learn how to transition group management from Active Directory to M
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 06/10/2025
+ms.date: 06/17/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -99,9 +99,9 @@ security group when provisioning from the cloud. Provisioning is supported by th
 group that SOA was applied for (retaining the SID so existing
 applications tied to the security group continue to function).
 
-## Supported and unsupported features for Group SOA 
 
-### Supported features
+
+## Supported features for Group SOA
 
 - Entra Connect Sync customers can apply SOA groups at the object
     level (sync client will understand the SOA switch and will stop
@@ -139,7 +139,7 @@ applications tied to the security group continue to function).
     to the same AD group that SOA had applied for (retaining the same
     SID) and will not create a new on-prem group.
 
-### Unsupported features
+## Limitations
 
 - **No reconciliation support for local AD groups:** An AD admin (or
     other application with sufficient permissions) can directly modify
