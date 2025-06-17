@@ -99,26 +99,26 @@ security group when provisioning from the cloud. Provisioning is supported by th
 group that SOA was applied for (retaining the SID so existing
 applications tied to the security group continue to function).
 
-# Group SOA features: Supported vs Unsupported
+## Supported and unsupported features for Group SOA 
 
-## **Currently supported in preview** 
+### Supported features
 
-1.  Entra Connect Sync customers can apply SOA groups at the object
+- Entra Connect Sync customers can apply SOA groups at the object
     level (sync client will understand the SOA switch and will stop
     syncing the object from AD to Entra ID).
 
-2.  Transfer the source of authority of **any** group from AD to Entra
+- Transfer the source of authority of **any** group from AD to Entra
     ID. This means, once the group is transferred, it becomes a cloud
     group and will be mapped to the corresponding group type in the
     cloud.
 
-3.  Once the group is a cloud group, it will no longer be in scope for
+- Once the group is a cloud group, it will no longer be in scope for
     the AD to Entra ID sync flow. This means, the group will not be
     synced from AD to Entra ID using Connect Sync. We recommend you
     delete the group instead of removing it as out of scope in your
     scoping filters if you no longer need the group in AD.
 
-4.  You can “roll back” the SOA switch at an object level the same way
+- You can roll back the SOA switch at an object level the same way
     you set it up (by toggling the appropriate attribute value).
     However, rolling back the change is not instantaneous – the cloud
     object instantly becomes eligible again to be “taken over” by
@@ -126,22 +126,22 @@ applications tied to the security group continue to function).
     runs.** The Connect Sync client will again take over the cloud
     object, assuming the AD object remains in scope for sync.
 
-5.  **Cloud sync** customers can use SOA switch for groups at object
+- **Cloud sync** customers can use SOA switch for groups at object
     level (Cloud sync client will understand the SOA switch and will
     stop syncing the object from AD to Entra ID)
 
-6.  If the cloud security group needs to be provisioned back to AD,
+- If the cloud security group needs to be provisioned back to AD,
     Admins can add the group to the Group Provision to AD scoping
     configuration. They can use "Selected Groups" or "All groups with
     attribute value scoping. Dynamic groups can also be used.
 
-7.  When provisioning security groups back to AD, Cloud Sync provisions
+- When provisioning security groups back to AD, Cloud Sync provisions
     to the same AD group that SOA had applied for (retaining the same
     SID) and will not create a new on-prem group.
 
-## NOT supported (INCLUDING AT GA)
+### Unsupported features
 
-1.  **No reconciliation support for local AD groups:** An AD admin (or
+- **No reconciliation support for local AD groups:** An AD admin (or
     other application with sufficient permissions) can directly modify
     an AD group. If SOA had been applied to the object and/or if cloud
     security group provisioning to AD is enabled, those local AD changes
@@ -149,7 +149,7 @@ applications tied to the security group continue to function).
     security group is made, any local AD changes will be overwritten if
     group provisioning to AD is enabled.
 
-2.  **No Dual write allowed:** Once you start managing a group’s
+- **No Dual write allowed:** Once you start managing a group’s
     memberships from Entra ID for the transferred group (say cloud
     group A) and you provision this group to AD using Group Provision to
     AD as a nested group under another AD group (OnPremGroupB) in scope
@@ -158,7 +158,7 @@ applications tied to the security group continue to function).
     because the sync client will not know the cloud group membership
     references. This is by Design.
 
-3.  **SOA transfer of nested groups:** If you have nested groups in AD
+- **SOA transfer of nested groups:** If you have nested groups in AD
     and want to transfer the SOA of the parent or top group from AD to
     Entra ID, only the parent group’s SOA will be switched. All the
     groups underneath the parent group will continue to be AD groups.
@@ -166,7 +166,7 @@ applications tied to the security group continue to function).
     recommend you start with the group in the lowest hierarchy and move
     up the tree.
 
-4.  **Extension Attributes (1-**1**5):** Extension attributes 1 – 15 are
+- **Extension Attributes (1-**1**5):** Extension attributes 1 – 15 are
     not supported on cloud security groups and will not be supported
     once SOA is converted.** **
 
@@ -405,7 +405,7 @@ alt="A screenshot of a computer Description automatically generated" />
 <img src="media/how-to-group-source-of-authority-configure/image18.png" style="width:6.47917in;height:1.70286in"
 alt="A screenshot of a computer Description automatically generated" />
 
-# Rollback SOA update
+## Roll back SOA update
 
 **PATCH**
 *https://graph.microsoft.com/beta/groups/\<groupId\>/onPremisesSyncBehavior*
@@ -425,7 +425,7 @@ object remains cloud editable. So, the full “rollback of SOA” when the
 object becomes synched from on-prem again only happens after *both* the
 API call and the next run of Connect Sync (scheduled or forced).
 
-## CHECK AUDIT LOGs to VALIDATE THE REVERT Operation
+### Check audit logs to validate the revert operation
 
 Select activity as "**Undo changes to Source of Authority from AD to
 cloud**"
@@ -472,7 +472,7 @@ Let's say we have a group **SOAGroup3**, and we update its group name to
 <img src="media/how-to-group-source-of-authority-configure/image24.png" style="width:6.03125in;height:4.26042in"
 alt="Inserting image..." />
 
-# How GPAD behaves with SOA converted groups
+## How GPAD behaves with SOA converted groups
 
 ## Cloud sync
 
@@ -491,7 +491,7 @@ Directory (GPAD)**.
 - If you sync a group which is not universal, i.e global group and then
   try to flip SOA and then run a GPAD job on that, then it will give an
   Entry level error. Make sure the group has universal scope.  
-  
+
   <img src="media/how-to-group-source-of-authority-configure/image25.png" style="width:3.37517in;height:3.46546in"
   alt="A screenshot of a computer AI-generated content may be incorrect." />
 
@@ -535,7 +535,18 @@ alt="A screenshot of a computer AI-generated content may be incorrect." />
 <img src="media/how-to-group-source-of-authority-configure/image31.png" style="width:5.45381in;height:4.00035in"
 alt="A screenshot of a computer AI-generated content may be incorrect." />
 
-## rollback of group soa and group provision to ad
+
+## Status of attributes after SOA switch
+
+The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes when an admin acts to switch the source of authority (SOA) of an object.
+
+Admin step | isCloudManaged value | dirSyncEnabled value | Description  
+-----|----------------------|----------------------|------------
+Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **dirSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
+Admin switches the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin switches the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin switches the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
+
+## Roll back group soa and group provision to AD
 
 - Flip back the SOA of the group SOATestGroup1.
 
