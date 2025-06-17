@@ -1,5 +1,5 @@
 ---
-title: How to Configure Microsoft Entra Private Access for Active Directory Domain Controllers
+title: Configure Microsoft Entra Private Access for Active Directory Domain Controllers
 description: Learn how to configure Microsoft Entra Private Access for Active Directory Domain Controllers.
 author: kenwith
 ms.author: kenwith
@@ -11,7 +11,7 @@ ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
-# Learn how to configure Microsoft Entra Private Access for Active Directory Domain Controllers (preview)
+# Configure Microsoft Entra Private Access for Active Directory Domain Controllers (preview)
 
 This guide describes how to configure Microsoft Entra Private Access for Active Directory Domain Controllers (DCs). This capability helps strengthen secure access for on-premises users by enforcing conditional access/MFA to on-premises applications that use Kerberos authentication with the DCs.
 
