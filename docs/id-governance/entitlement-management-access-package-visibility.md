@@ -1,5 +1,5 @@
 ---
-title: Understanding Access Package Visibility in the My Access portal
+title: Understanding access package visibility in the My Access portal
 description: A conceptual article describing access package visibility in the My Access portal.
 author: owinfreyATL
 manager: dougeby
@@ -14,10 +14,7 @@ ms.author: owinfrey
 ---
 
 
-# Understanding Access Package Visibility in the My Access Portal
-
-**Introduction**
-
+# Understanding access package visibility in the My Access portal
 
 The [My Access portal](https://myaccess.microsoft.com) is the central place for users to request, approve, and review their access to resources within Microsoft Entra. For administrators, the portal provides extra functionalities through the Microsoft Entra admin center, enabling configuration of access packages and the ability to conduct access reviews.
 
@@ -38,19 +35,18 @@ The following flow diagram illustrates the current logic used to determine if an
 
 The logic of this diagram is as follows:
 
-1.  **Is the catalog enabled?** The system first checks if the Catalog containing the access package is enabled. If the entire Catalog is disabled, none of its packages are visible for discovery.
+1.  **Is the catalog enabled?** The system first checks if the catalog containing the access package is enabled. If the entire catalog is disabled, none of its packages are visible for discovery.
 
 1.  **Is the end-user an external user?** The system checks if the user is an external user or an internal user. This affects the next step.
 
-    1.  (If external user) Is the catalog enabled for external users? For external users, the catalog must *also* be enabled for external users in its settings. If not, external users don't see packages from this catalog. Internal users skip this check.
+    1.  **(If external user) Is the catalog enabled for external users?** For external users, the catalog must **also** be enabled for external users in its settings. If not, external users don't see packages from this catalog. Internal users skip this check.
 
-1.  **Is the access package hidden?** This checks the specific "hidden" setting directly on the Access Package's properties (under "Edit"). If set to "Yes," the package is hidden from the browse/search view, regardless of policies.
+1.  **Is the access package hidden?** This checks the specific "hidden" setting directly on the access package's properties (under "Edit"). If set to "Yes," the package is hidden from the browse/search view, regardless of policies.
 
 1.  **Does at least one enabled policy exist for the access package where 'Who can request' matches the end-user?** This is the final, crucial policy check. The system looks for *at least one policy* associated with the access package that meets ALL these criteria:
     1.  The policy itself is enabled (the 'Enable new requests' setting in the policy UI is toggled on).
 
-    1.  The policy's "Who can request" setting logically includes the current user based on their identity, group memberships, or
-        connected organization affiliation.
+    1.  The policy's "*Who can request*" setting logically includes the current user based on their identity, group memberships, or connected organization affiliation.
 
     1.  Policies set to "None (Administrator direct assignments only)" don't make a package visible for Browse or searching.
 
