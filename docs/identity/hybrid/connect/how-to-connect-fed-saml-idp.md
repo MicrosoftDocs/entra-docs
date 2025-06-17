@@ -204,7 +204,7 @@ The following procedure walks you through converting an existing standard domain
 1. Connect to your Microsoft Entra Directory as a tenant administrator:
 
    ```powershell
-   Connect-MgGraph -Scopes "Domain.ReadWrite.All"
+   Connect-MgGraph -Scopes "Domain.ReadWrite.All", "Directory.AccessAsUser.All"
    ```
   
 2. Configure your desired Microsoft 365 domain to use federation with SAML 2.0:
@@ -218,6 +218,7 @@ The following procedure walks you through converting an existing standard domain
    $idptokensigningcert = [System.Security.Cryptography.X509Certificates.X509Certificate2]("C:\temp\contosoidptokensign.cer")  
    $MySigningCert = [system.convert]::tobase64string($idptokensigningcert.rawdata) 
    $Protocol = "saml"
+   $MyFedMFA = "rejectMfaByFederatedIdp"
 
    New-MgDomainFederationConfiguration `
      -DomainId $Domain `
@@ -227,6 +228,7 @@ The following procedure walks you through converting an existing standard domain
      -PreferredAuthenticationProtocol $Protocol `
      -SignOutUri $LogOffUrl `
      -SigningCertificate $MySigningCert
+     -FederatedIdpMfaBehavior $MyFedMFA
    ```
 
 3. You can obtain the signing certificate base64 encoded string from your IDP metadata file. An example of this location is provided below but can differ slightly based on your implementation.
@@ -243,7 +245,8 @@ The following procedure walks you through converting an existing standard domain
    </IDPSSODescriptor>
    ```
 
-For more information, see [New-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration).
+For more information, see [New-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration), for MFA configuration options see [internalDomainFederation](https://learn.microsoft.com/en-us/graph/api/resources/internaldomainfederation?view=graph-rest-1.0#federatedidpmfabehavior-values).
+
 
 >[!NOTE]
 >You must use `$ecpUrl = "https://WS2012R2-0.contoso.com/PAOS"` only if you set up an ECP extension for your identity provider. Exchange Online clients, excluding Outlook Web Application (OWA), rely on a POST based active end point. If your SAML 2.0 STS implements an active end point similar to Shibboleth’s ECP implementation of an active end point it may be possible for these rich clients to interact with the Exchange Online service.
