@@ -28,7 +28,7 @@ organizations secure their identities using capabilities in Entra ID and
 Entra ID Governance. There are important caveats and implications, so be
 sure to thoroughly understand and test prior to using this capability.
 
-# When can you use SOA?
+## When can you use SOA?
 
 Group Source of Authority (SOA) at object level allows you to convert an
 on-prem AD group into a cloud group and manage the group from the cloud.
@@ -63,7 +63,7 @@ Group SOA:
     you to manage app access using Microsoft Entra features that update
     group membership.
 
-# When should you not use SOA?
+## When should you not use SOA?
 
 If you are a customer who has any of the following scenarios, we
 recommend that you review your group management strategy and determine
@@ -77,14 +77,14 @@ modernize apps tied to these groups so you can remove them eventually.
 | You have on-prem groups tied to Exchange, such as Distribution Lists or Mail-Enabled security groups.      | You can apply SOA to these objects, but you must maintain membership through Exchange Online and not through Entra ID. As such, Entra ID Governance cannot be applied to them. They are also not able to be provisioned back to Active Directory. If you want to govern them from the cloud, we recommend you modernize the underlying apps and remove the groups from AD after you shift their SOA to the cloud.                |
 | Support for managing and governing AD based apps tied to M365 groups (Universal groups).                   | Currently, there are no plans to enable selective provisioning of M365 groups to Active Directory. Our goal is to help customers clean up their groups in AD and remove any groups tied to apps that have exchange features rather than continue to keep these apps, thereby keeping these groups in AD.                                                                                                                         |
 
-# Scenario in Scope for this preview
+## Scenarios in scope for preview
 
-This private preview supports the ability to switch the SOA of ***any
+This preview supports the ability to switch the SOA of ***any
 synced group*** in Active Directory to a cloud group (assuming the sync
 is via Connect Sync). We are targeting this as the first scenario
-enabled by Group SOA’s private preview:
+enabled by Group SOA’s preview:
 
-**Minimize on-premises groups in AD:** Migrate on-premises groups to the
+- **Minimize on-premises groups in AD:** Migrate on-premises groups to the
 cloud and manage them from the cloud without having to re-create these
 groups in Entra ID. By leveraging Group SOA at object level feature, you
 can switch the SOA of an on-premises AD group to be a cloud group. If
@@ -93,17 +93,15 @@ can just remove these groups in AD once you have shifted your SOA. If
 you are using Entra Connect Sync, you can do this without having to make
 any configuration changes to your sync.
 
-**Seamless switching of AD Security Group to the Cloud (via SOA) and
-enabling provisioning back to the same AD Security Group:** Currently,
+- **Seamless switching of AD Security Group to the Cloud (via SOA) and enabling provisioning back to the same AD Security Group:** Currently,
 Cloud Security Group Provisioning to AD creates a *new* on-prem AD
-security group when provisioning from the cloud. In Private Preview
-Release 2, provisioning will be supported by the *existing* AD security
+security group when provisioning from the cloud. Provisioning is supported by the *existing* AD security
 group that SOA was applied for (retaining the SID so existing
 applications tied to the security group continue to function).
 
 # Group SOA features: Supported vs Unsupported
 
-## **Currently supported IN PRIVATE PREVIEW** 
+## **Currently supported in preview** 
 
 1.  Entra Connect Sync customers can apply SOA groups at the object
     level (sync client will understand the SOA switch and will stop
@@ -172,117 +170,71 @@ applications tied to the security group continue to function).
     not supported on cloud security groups and will not be supported
     once SOA is converted.** **
 
-# Prerequisites
+## Prerequisites
 
-1. **Roles**:
+| Requirement | Description |
+|-------------|-------------|
+| **Roles** | - Groups Administrator role is allowed to call the OnPremisesSyncBehavior Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Graph API for Groups. |
+| **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. See [below](#granting-permission-to-apps) on how to grant this permission to Graph Explorer or an existing app in your tenant. |
+| **License needed** | Microsoft Entra Free or Basic license. |
+| **Connect Sync client** | Minimum version is 255.0.4.0 (see below on how to install the latest version of Connect Sync) |
 
-   - Groups Administrator role is allowed to call the OnPremisesSyncBehavior Graph API for Groups.
+## Setup
 
-   - Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Graph API for Groups.
+### [**Connect Sync client**](#tab/connect)
 
-1. **Permissions:** For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. See [below](#granting-permission-to-apps) on how to grant this permission to Graph Explorer or an existing app in your tenant.
+1. Download the latest version of the Connect Sync build.
 
-1. **License needed:** Microsoft Entra Free or Basic license.
+1. Verify the Connect Sync build has been successfully installed. Go to “Add remove programs” in the control panel and check version of “Microsoft Entra Connect Sync,” minimum version is **255.0.4.0.**
 
-1. **Connect Sync client**: Minimum version is 255.0.4.0 (see below on
-    how to install the latest version of Connect Sync)
+> [!NOTE]
+> There will be no upgrade path from this private build of the Connect Sync client to the ultimate public version. So, plan to uninstall this private build in the future before installing the eventual public build.
 
-5.  **On-Premises Exchange clean up:** Please make sure that the data
-    for your on-prem Exchange related groups is up to date and in sync
-    with the data in EXO. This is just needed for Private Preview. In
-    Public Preview, this will automatically be managed by our system.
+### [**Cloud Sync client**](#tab/cloud-sync)
 
-# Setup
+Download the Provisioning agent with build version [1.1.1373.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113730) or later.
 
-## Connect Sync client
+1. [Instructions for download](/entra/identity/hybrid/cloud-sync/reference-version-history#download-link)
 
-1.  Install the Private Preview [Connect Sync build
-    (MSI)](https://microsoft.sharepoint-df.com/:f:/t/SourceofAuthorityFeaturePrivatePreviewExternal/Ek4N29r6E4pKv7dUw3iexecB0TgOqhqNKI_Jb8FVzQq02Q?e=F4Q8Bu)
-    in either “Express” or “Customize” mode in your test environment.
-    (*Note: Microsoft’s own test teams/tenants can use the internal
-    build link instead of this one.)*
+1. Learn how to [identify the agent's current version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
 
-2.  Verify the Connect Sync build has been successfully installed. Go to
-    “Add remove programs” in the control panel and check version of
-    “Microsoft Entra Connect Sync,” minimum version is **255.0.4.0.**
+---
 
-> **Note:** <u>There will be no upgrade path from this private build of
-> the Connect Sync client to the ultimate public version</u>. So, plan
-> to uninstall this private build in the future before installing the
-> eventual public build.
+### Prerequisites to call Microsoft Graph API
 
-## cloud Sync client
+- A Microsoft Entra ID tenant with on-premises sync enabled at the tenant level.
 
-Download the Provisioning agent with build version
-[1.1.1373.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113730)
-or later.
+- A user account in the tenant with the following roles assigned:
 
-1.  [Instructions for
-    download](entra/identity/hybrid/cloud-sync/reference-version-history#download-link)
+   - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator): To grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Graph APIs.
 
-2.  Learn how to [identify the agent's current
-    version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
-
-## Pre-requisites to calling Graph API
-
-1.  An Entra ID tenant with on-premises sync enabled at the tenant
-    level.
-
-2.  A user account for the above tenant with the following roles
-    assigned:
-
-    1.  Cloud Application Administrator: To grant user consent to the
-        required permissions to Graph Explorer or the app used to call
-        the Graph APIs.
-
-    2.  Groups Administrator: To call the Graph APIs to read and update
-        SOA of groups.
+   - [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator): To call the Microsoft Graph APIs to read and update SOA of groups.
 
 ## Granting Permission to Apps
 
-1.  Login to Microsoft Entra portal using the **Cloud Application
-    Administrator account** of an on-premises sync enabled tenant.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
 
-2.  Find the application Id of the app that the permission needs to be
-    granted to via the Enterprise Applications blade in Microsoft Entra
-    portal, such as Graph Explorer.
+1. In the **Enterprise Applications** blade in the Microsoft Entra portal, find the appId of the app that needs permission to be granted, such as Graph Explorer. For Graph Explorer, the AppId is *de8bc8b5-d9f9-48b1-a8ad-b748da725064*.
 
-> **For Graph Explorer, AppId is:**
->
-> de8bc8b5-d9f9-48b1-a8ad-b748da725064
+1. In the same browser where you signed in, open the following URL to consent to the **Group-OnPremisesSyncBehavior.ReadWrite.All** permission. Replace *appId* in URL below with the appId of the app that needs permission to be granted. For Graph Explorer, the URL is:
 
-3.  In the same browser where admin user is logged in, navigate to the
-    following URL to consent to
-    **Group-OnPremisesSyncBehavior.ReadWrite.All** permission
-    (<span class="mark">replace **\<appId\>**</span> in URL below with
-    AppId from step 2):
+   `https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=de8bc8b5-d9f9-48b1-a8ad-b748da725064&response_type=code&scope=https://graph.microsoft.com/Group-OnPremisesSyncBehavior.ReadWrite.All`
 
-| https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id<span class="mark">=**\<appId\>**</span>&response_type=code&scope=https://graph.microsoft.com/Group-OnPremisesSyncBehavior.ReadWrite.All |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+1. Click **Accept** to grant consent.
 
-4.  Click \`Accept\` to grant consent.
+   > [!NOTE]
+   > Consenting on behalf of the entire organization isn't required.
 
-*Note: Consenting on behalf of the entire organization is not required.*
+   :::image type="content" source="media/how-to-use-source-of-authority/image1.png" alt-text="Screenshot of the consent screen for granting permissions in Microsoft Entra portal.":::
 
-<img src="media/how-to-group-source-of-authority-configure/image1.png" style="width:2.56095in;height:3.03223in"
-alt="A screenshot of a computer Description automatically generated" />
+   > [!NOTE]
+   > Ignore this error if see it after you click **Accept**: `AADSTS9002325: Proof Key for Code Exchange is required for cross-origin authorization code redemption.`
 
-<span class="mark">Note: Ignore the \`AADSTS9002325: Proof Key for Code
-Exchange is required for cross-origin authorization code redemption.\`
-error if you see it after clicking Accept.</span>
+1. To verify the permission is granted, open **Enterprise Applications** > **AppName** > **Security** > **Permissions** > **User consent in Microsoft Entra portal**. It may take a minute or two for the permission to appear.
 
-> <img src="media/how-to-group-source-of-authority-configure/image2.png" style="width:4.41667in;height:1.81197in"
-> alt="A white background with black text Description automatically generated" />
+   :::image type="content" source="media/how-to-use-source-of-authority/image2.png" alt-text="Screenshot of the permissions page in Microsoft Entra portal showing granted permissions.":::
 
-5.  Verify the permission is granted by navigating to: ‘Enterprise
-    Applications -\> AppName -\> Security -\> Permissions -\> User
-    consent’ in Microsoft Entra portal. Note that it may take a minute
-    or two for permission to show up.
-
-> <img src="media/how-to-group-source-of-authority-configure/image3.png" style="width:6.5in;height:2.35417in"
-> alt="A screenshot of a computer Description automatically generated" />
-
-# Switch the SOA of the group
+## Switch the SOA of the group
 
 1.  You can either create a security group or mail-enabled distribution
     group for your testing purposes in Active Directory and add some
@@ -299,7 +251,7 @@ error if you see it after clicking Accept.</span>
 4.  Now change the SOA (CloudManaged=true) on the group object using
     graph API.
 
-## Calling the Graph API
+### Calling the Graph API
 
 > Open Graph explorer and login with an appropriate user role (Groups
 > admin): <https://developer.microsoft.com/en-us/graph/graph-explorer>
@@ -534,20 +486,12 @@ Directory (GPAD)**.
 - If you are running **Sync Selected**, then you must manually select
   the SOA-flipped group.
 
-## known issue
-
-***Note: we will fix this issue before Public Preview***
-
-- Currently, Group Provision to AD fails if the SOA converted group was
-  originally a Domain Local or Global group in AD. Team is investigating
-  this issue. Until we resolve, when you test the Group Provision to AD
-  feature, please only provision groups of type = **“Universal”**
+## Known issue
 
 - If you sync a group which is not universal, i.e global group and then
   try to flip SOA and then run a GPAD job on that, then it will give an
-  Entry level error.
-
-- Make Sure your group is universal.  
+  Entry level error. Make sure the group has universal scope.  
+  
   <img src="media/how-to-group-source-of-authority-configure/image25.png" style="width:3.37517in;height:3.46546in"
   alt="A screenshot of a computer AI-generated content may be incorrect." />
 
