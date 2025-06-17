@@ -3740,6 +3740,8 @@
         href: rhombus-systems-provisioning-tutorial.md
       - name: RingCentral
         href: ringcentral-provisioning-tutorial.md
+      - name: Rippling HCM Provisioning Integration with Entra ID
+        href: rippling-hcm-microsoft-entra-id-integration-tutorial.md
       - name: Robin
         href: robin-provisioning-tutorial.md
       - name: Rollbar
