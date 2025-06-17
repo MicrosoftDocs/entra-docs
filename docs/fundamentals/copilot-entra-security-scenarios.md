@@ -57,7 +57,7 @@ The following example prompts can be used to investigate recommendations in Micr
 
 - *List all Microsoft Entra recommendations*
 - *List secure score recommendations*
-- *List recommendations for conditional access policies*
+- *List recommendations for Conditional Access policies*
 - *Show Microsoft Entra recommendations for a specific feature area*
 - *List recommendations with high priority*
 - *List recommendations to improve app portfolio health*

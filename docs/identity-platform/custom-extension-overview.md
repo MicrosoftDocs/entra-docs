@@ -17,7 +17,7 @@ titleSuffix: Microsoft identity platform
 
 # Custom authentication extensions overview
 
-The Microsoft Entra ID authentication pipeline consists of several built-in authentication events, like the validation of user credentials, conditional access policies, multifactor authentication, self-service password reset, and more.
+The Microsoft Entra ID authentication pipeline consists of several built-in authentication events, like the validation of user credentials, Conditional Access policies, multifactor authentication, self-service password reset, and more.
 
 Microsoft Entra custom authentication extensions allow you to extend authentication flows with your own business logic at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. 
 

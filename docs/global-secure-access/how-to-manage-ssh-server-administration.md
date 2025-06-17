@@ -40,7 +40,7 @@ Ensure you meet the following prerequisites.
 * **[Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference)** for administrators
   * Learn about [built-in roles](reference-role-based-permissions.md)
 
-## Configure SSH traffic acquisition and secure with conditional access policies
+## Configure SSH traffic acquisition and secure with Conditional Access policies
 
 To create the Enterprise Application:
 
