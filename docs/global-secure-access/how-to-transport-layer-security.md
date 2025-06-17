@@ -85,8 +85,8 @@ With this method, the baseline profile policy is evaluated last and applies to a
 :::image type="content" source="media/how-to-transport-layer-security/security-profile-baseline.png" alt-text="Screenshot of the Edit Baseline profile screen showing a list of policy names and their priorities.":::   
 
 #### Option 2: Link the TLS policy to a security profile for specific users or groups
-Alternatively, add a TLS policy to a security profile and link it to a [conditional access policy](how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) for a specific user or group.
-:::image type="content" source="media/how-to-transport-layer-security/conditional-access-group-assignment.png" alt-text="Screenshot of the new conditional access policy form with all fields completed with sample information.":::   
+Alternatively, add a TLS policy to a security profile and link it to a [Conditional Access policy](how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) for a specific user or group.
+:::image type="content" source="media/how-to-transport-layer-security/conditional-access-group-assignment.png" alt-text="Screenshot of the new Conditional Access policy form with all fields completed with sample information.":::   
 
 ### Step 4: Test the configuration
 To test the configuration:
