@@ -6,7 +6,7 @@ ms.author: gasinh
 manager: martinco
 ms.service: entra
 ms.topic: conceptual
-ms.date: 05/20/2025
+ms.date: 06/17/2025
 ms.reviewer: cammart
 
 #CustomerIntent: I want to get help from partner with expertise in planning and deploying Microsoft Entra scenarios. 
