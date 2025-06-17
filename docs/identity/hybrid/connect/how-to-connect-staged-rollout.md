@@ -14,7 +14,7 @@ ms.custom: sfi-image-nochange
 
 # Migrate to cloud authentication using Staged Rollout
 
-Staged Rollout allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. This article discusses how to make the switch. 
+Staged Rollout lets you gradually test cloud authentication features with selected user groups. These features include Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and more. This approach allows you to validate functionality and user experience before fully transitioning your domains. 
 
 Before you begin the Staged Rollout, you should consider the implications if one or more of the following conditions is true:
     
@@ -42,13 +42,13 @@ For an overview of the feature, view this "What is Staged Rollout?" video:
     
     For both options, we recommend enabling single sign-on (SSO) to achieve a silent sign-in experience. 
     For Windows 7 or 8.1 domain-joined devices, we recommend using seamless SSO. For more information, see [What is seamless SSO](how-to-connect-sso.md). 
-    For Windows 10, Windows Server 2016 and later versions, it's recommended to use SSO via [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md) with [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) or [personal registered devices](~/identity/devices/concept-device-registration.md) via Add Work or School Account.
+    For Windows 10, Windows Server 2016 and later versions, use SSO through [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md). For [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) or [personal registered devices](~/identity/devices/concept-device-registration.md) use Add Work or School Account.
 
--   You have configured all the appropriate tenant-branding and Conditional Access policies you need for users who are being migrated to cloud authentication.
+-   You need to configure all the appropriate tenant-branding and Conditional Access policies you need for users who are being migrated to cloud authentication.
 
--   If you have moved from federated to cloud authentication, you must verify that the DirSync setting `synchronizeUpnForManagedUsersEnabled` is set to `true`, otherwise Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
+-   If you moved from federated to cloud authentication, you must verify that the DirSync setting `synchronizeUpnForManagedUsersEnabled` is set to `true`, otherwise Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
 
--   If you plan to use Microsoft Entra multifactor authentication, we recommend that you use [combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md) to have your users register their authentication methods once. Note- when using SSPR to reset password or change password using MyProfile page while in Staged Rollout, Microsoft Entra Connect needs to sync the new password hash that can take up to 2 minutes after reset.
+-   If you plan to use Microsoft Entra multifactor authentication, we recommend enabling [combined registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md). This allows users to register their authentication methods once for both self-service password reset (SSPR) and multifactor authentication. Note- when using SSPR to reset password or change password using MyProfile page while in Staged Rollout, Microsoft Entra Connect needs to sync the new password hash that can take up to 2 minutes after reset.
 
 -   To use the Staged Rollout feature, you need to be a Hybrid Identity Administrator on your tenant.
 
