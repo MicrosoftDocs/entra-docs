@@ -113,7 +113,7 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 
 - Private Access Sensor supports a break glass mode to allow all traffic in emergencies.
 - Enable break glass mode by setting `"IsBreakGlass": true` in the policy file or changing the `TmpBreakglass` registry key from `0` to `1`.
-- Changes take a few minutes to propagate; restarting the sensor isn't required.
+- Changes can take a few minutes to propagate. Restarting the sensors is required if updates made to the registry key. 
 
 ### 8. Test Microsoft Entra Private Access for Domain Controllers
 
