@@ -7,7 +7,7 @@ ms.reviewer: cmmdesai
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 06/09/2025
+ms.date: 06/18/2025
 ms.author: jfields
 ms.custom: ai-gen-description
 ai-usage: ai-assisted
