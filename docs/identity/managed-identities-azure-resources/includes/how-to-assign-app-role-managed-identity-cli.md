@@ -1,6 +1,6 @@
 ---
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 03/14/2025
 ms.topic: include
 ms.service: entra-id
@@ -40,7 +40,7 @@ ms.custom:
    -  If the API or service that exposes the app role grant to the managed identity already has a service principal in your Microsoft Entra tenant, skip this step.
 
 1. Find the object ID of the service application's service principal. You can find this using the [Microsoft Entra admin center](https://entra.microsoft.com/). 
-   - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). In the left nav blade, select **Identity**, then **Applications**, and then select **Enterprise applications**. Then find the application and look for the **Object ID**.  
+   - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). In the left nav blade, select **Entra ID** > **Enterprise apps**. Then find the application and look for the **Object ID**.  
    - You can also find the service principal's object ID by its display name using the following script:
 
     ```azurecli

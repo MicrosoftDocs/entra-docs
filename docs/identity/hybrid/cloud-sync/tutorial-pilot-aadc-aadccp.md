@@ -1,15 +1,14 @@
 ---
 title: Tutorial - Migrate to Microsoft Entra Cloud Sync for a Synced Active Directory Forest
 description: Learn how to migrate to Microsoft Entra Cloud Sync for a synced Active Directory forest.
-
 author: billmath
 manager: femila
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Tutorial: Migrate to Microsoft Entra Cloud Sync for a synced Active Directory forest
@@ -51,10 +50,13 @@ Before you try this tutorial, consider the following items:
 
 ## Prerequisites
 
-- A test environment with Microsoft Entra Connect Sync version 1.4.32.0 or later.
-- An OU or group that's in scope of sync and can be used in the pilot. We recommend that you start with a small set of objects.
-- A server running Windows Server 2016 or later to host the provisioning agent.
-- The source anchor for Microsoft Entra Connect Sync should be either `objectGuid` or `ms-ds-consistencyGUID`.
+The following are prerequisites required for completing this tutorial
+
+- A test environment with Microsoft Entra Connect Sync version 1.4.32.0 or later
+- An OU or group that is in scope of sync and can be used during the pilot. We recommend starting with a small set of objects.
+- A server running Windows Server 2016 or later that will host the provisioning agent.
+- Source anchor for Microsoft Entra Connect Sync should be either *objectGuid* or *ms-ds-consistencyGUID*
+
 
 <a name='update-azure-ad-connect'></a>
 
@@ -70,7 +72,8 @@ Before you make any changes, back up your Microsoft Entra Connect configuration.
 
 ## Stop the scheduler
 
-Microsoft Entra Connect Sync synchronizes changes that occur in your on-premises directory by using a scheduler. To modify and add custom rules, disable the scheduler so that synchronizations don't run while you're making changes. To stop the scheduler, follow these steps:
+Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises directory using a scheduler. In order to modify and add custom rules, you want to disable the scheduler so that synchronizations won't run while you're working and making the changes. To stop the scheduler, use the following steps:
+
 
 1. On the server that's running Microsoft Entra Connect Sync, open PowerShell with administrative privileges.
 1. Run `Stop-ADSyncSyncCycle`. Select Enter.
@@ -113,9 +116,9 @@ In the Microsoft Entra Connect Synchronization Rules Editor, you need to create 
 
     ![Screenshot that shows the sync rule scoping filters.](media/tutorial-migrate-aadc-aadccp/user-3.png)
 
-1. On the **Join rules** page, select **Next**.
+ 5. On the **Join** rules page, select **Next**.
+ 6. On the **Transformations** page, add a Constant transformation: Source value of True for the cloudNoFlow attribute. Select **Add**.
 
-1. On the **Add transformations** page, for **FlowType**, select **Constant**. For **Target Attribute**, select **cloudNoFlow**, and for **Source**, select **True**. Then select **Add**.
 
     ![Screenshot that shows the sync rule transformations.](media/tutorial-migrate-aadc-aadccp/user-4.png)
 
@@ -173,6 +176,7 @@ To configure provisioning, follow these steps:
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
 
 3. Select **New configuration**.
+
 
     :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot that shows adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
 

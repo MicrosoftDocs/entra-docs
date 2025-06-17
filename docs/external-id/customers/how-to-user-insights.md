@@ -1,18 +1,14 @@
 ---
 title: Analyze user activity in Microsoft Entra External ID
 description: Learn about how to analyze user activity and engagement for your registered application in the external tenant.
- 
 author: csmulligan
 ms.author: cmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/07/2024
-
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about data analytics into user activity and engagement for  registered applications.
 ---
 # Gain insights into your app users’ activity
@@ -47,7 +43,7 @@ The Application user activity dashboards provide insights into how users interac
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage & insights**
 1. Select **Application user activity** to view the dashboards.
 
     :::image type="content" source="media/how-to-user-insights/app-user-activity-dashboard.png" alt-text="Screenshot of the Application user activity dashboards under the Usage & insights menu." lightbox="media/how-to-user-insights/app-user-activity-dashboard.png":::

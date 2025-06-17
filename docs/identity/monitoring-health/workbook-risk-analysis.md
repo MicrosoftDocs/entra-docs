@@ -39,7 +39,7 @@ As an IT administrator, you need to understand trends in identity risks and gaps
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Identity Protection Risk Analysis** workbook from the **Usage** section.
 

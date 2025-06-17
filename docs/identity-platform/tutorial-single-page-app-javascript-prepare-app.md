@@ -1,23 +1,23 @@
 ---
-title: "Tutorial: Prepare a JavaScript single-page application for authentication"
+title: "Tutorial: Prepare a JavaScript single-page app (SPA) for authentication"
 description: Learn how to prepare a JavaScript single-page app (SPA) for authentication using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.service: identity-platform
-ms.custom: devx-track-js
+ms.custom:
 ms.topic: tutorial
-ms.date: 02/11/2024
+ms.date: 05/12/2025
 #Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Prepare a JavaScript single-page application for authentication
+# Tutorial: Prepare a JavaScript single-page app for authentication
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 In this tutorial you'll build a JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a JavaScript SPA using `npm`, create files needed for authentication and authorization and add your tenant details to the source code. The application can be used for employees in a workforce tenant or for customers using an external tenant.
 
-In this tutorial, you'll:
+In this tutorial, you
 
 > [!div class="checklist"]
 > * Create a new JavaScript project
@@ -30,10 +30,10 @@ In this tutorial, you'll:
 ### [Workforce tenant](#tab/workforce-tenant)
 
 * A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: identity-client-spa
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-    * **Platform configuration**: Single-page application (SPA).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`.
 
 ### [External tenant](#tab/external-tenant)
@@ -41,12 +41,12 @@ In this tutorial, you'll:
 * An external tenant. To create one, choose from the following methods:
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: identity-client-spa
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-    * **Platform configuration**: Single-page application (SPA).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`.
-* Associate your app with a user flow in the Microsoft Entra admin center. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ---
 
@@ -55,6 +55,7 @@ In this tutorial, you'll:
 
 ## Create a JavaScript project and install dependencies
 
+1. Sign into the Microsoft Entra admin center as a Global Administrator.
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
 1. Run the following command to create a new JavaScript project:
@@ -149,8 +150,9 @@ The **authConfig.js** file contains the configuration settings for the authentic
     */
     const msalConfig = {
         auth: {
+            clientId: "Enter_the_Application_Id_Here",
             // WORKFORCE TENANT
-            authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", //  Replace the placeholder with your tenant info
+            authority: 'https://login.microsoftonline.com/Enter_the_Tenant_Info_Here', //  Replace the placeholder with your tenant info
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
             navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
         },
@@ -209,10 +211,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
             msalConfig: msalConfig,
             loginRequest: loginRequest,
         };
-        module.exports = {
-            msalConfig: msalConfig,
-            loginRequest: loginRequest,
-        };
     }
     ```
 
@@ -233,6 +231,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     */
     const msalConfig = {
         auth: {
+            clientId: "Enter_the_Application_Id_Here",
             // EXTERNAL TENANT
             authority: "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/", // Replace the placeholder with your tenant subdomain
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
@@ -293,10 +292,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
             msalConfig: msalConfig,
             loginRequest: loginRequest,
         };
-        module.exports = {
-            msalConfig: msalConfig,
-            loginRequest: loginRequest,
-        };
     }
      ```
 
@@ -304,9 +299,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID in the Microsoft Entra admin center.
      * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 1. Save the file.
-
-[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
-
 ---
 
 ## Next step

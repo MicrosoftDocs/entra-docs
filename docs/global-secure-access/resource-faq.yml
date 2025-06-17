@@ -4,11 +4,12 @@ metadata:
   description: Frequently asked questions for Global Secure Access.
   author: kenwith
   ms.author: kenwith
-  manager: femila
+  manager: dougeby
   ms.service: global-secure-access
   ms.topic: faq
   ms.date: 08/03/2024
   ms.custom: references_regions
+  ai-usage: ai-assisted
 title: Global Secure Access Frequently asked questions
 summary: |
   Frequently asked questions related to Microsoft Entra Internet Access and Microsoft Entra Private Access, which are part of Global Secure Access.

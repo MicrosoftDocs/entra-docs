@@ -7,11 +7,9 @@ ms.author: jomondi
 ms.date: 10/01/2024
 ms.reviewer: yuhko, ergreenl
 ms.service: identity-platform
-
 ms.topic: how-to
-services: active-directory
 zone_pivot_groups: enterprise-apps-with-ms-graph
-
+ms.custom: sfi-image-nochange
 #customer-intent: As a developer, I want to update an app's requested permissions in Microsoft Entra ID so that I can enhance security, improve user experience, and ensure compliance with privacy standards.
 ---
 # Update an app's requested permissions in Microsoft Entra ID
@@ -65,7 +63,7 @@ You can add permissions to static consent in two different ways in the Microsoft
 ### Option 1: Add permissions in the **API permissions** pane
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or application owner.
-1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
+1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. Find the app registration that you want to add permissions to and select it. You can add permissions in two different ways:
 1. Add permissions in **API permissions** pane.
    1. Locate the **API permissions** pane and select **Add a permission**.
@@ -178,7 +176,7 @@ You can remove permissions from static consent in two different ways in the Micr
 ### Option 1: From the **API permissions** pane
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) or application owner.
-1. Browse to **Identity** > **Applications** > **App registrations** > **All applications**.
+1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. Find the app registration that you want to remove permissions from and select it.
 1. Remove the permissions from the **API permissions** pane:
    1. Locate the **API permissions** pane and find the permissions you want to remove.

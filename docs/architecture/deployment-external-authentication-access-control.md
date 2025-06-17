@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/10/2025
+ms.date: 05/22/2025
 ms.author: gasinh
 
 #customer intent: I need to understand authentication protocol endpoints, custom authentication extension design, also API and event handler details in Microsoft Entra External ID.
@@ -60,7 +60,7 @@ Learn more about the [authenticationEventListener resource type](/graph/api/reso
 
 Microsoft provides a [NuGet package for .NET developers]() building [Azure Functions](/azure/azure-functions/) apps. This solution handles the back-end processing for incoming HTTP requests for Microsoft Entra authentication events. Find token validation to secure the API call, object model, type with IDE IntelliSense. Also find inbound and outbound validation of the API request and response schemas. 
 
-Authentication extensions are executed in-line with sign-in and sign-up flows. Ensure the scenario is highly performant, robust, and secure. Azure Functions offers secure infrastructure, including libraries, [Azure Key Vault](/azure/key-vault/general/basic-concepts) for secret storage, caching, autoscaling, and monitoring. There are more recommendations in [Auditing and monitoring](deployment-external-audit-monitor.md).  
+Authentication extensions are executed in-line with sign-in and sign-up flows. Ensure the scenario is highly performant, robust, and secure. Azure Functions offers secure infrastructure, including libraries, [Azure Key Vault](/azure/key-vault/general/basic-concepts) for secret storage, caching, autoscaling, and monitoring. There are more recommendations in [Security operations](deployment-external-operations.md).  
 
 ## Next steps
 
@@ -69,6 +69,5 @@ Use the following articles to help you get started with a Microsoft Entra Extern
 * [Introduction to Microsoft Entra External ID deployment guide](deployment-external-intro.md)
 * [Tenant design](deployment-external-tenant-design.md)
 * [Customer authentication experience](deployment-external-customer-authentication.md)
-* [Operations](deployment-external-operations.md)
+* [Security operations](deployment-external-operations.md)
 * Authentication and access control architecture
-* [Auditing and monitoring](deployment-external-audit-monitor.md)

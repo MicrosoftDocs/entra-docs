@@ -3,7 +3,7 @@ title: Application Proxy Cookie Settings
 description: Microsoft Entra ID uses access and session cookies to access on-premises applications through application proxy. This article explains how to use and configure the cookie settings. 
 
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: no-azure-ad-ps-ref
@@ -25,7 +25,7 @@ Microsoft Entra ID uses access and session cookies to access on-premises applica
 
 | Cookie setting | Default | Description | Recommendations |
 | -------------- | ------- | ----------- | --------------- |
-| Use HTTP-Only Cookie | **No** | **Yes** lets application proxy include the HTTPOnly flag in HTTP response headers. This flag provides extra security benefits, for example, it prevents client-side scripting (CSS) from copying or modifying the cookies.<br></br><br></br>Before we supported the HTTP-Only setting, application proxy encrypted and transmitted cookies over a secured Transport Layer Security (TLS) channel to protect against modification. | Use **Yes** because of the extra security benefits.<br></br><br></br>Use **No** for clients or user agents that do require access to the session cookie. For example, use **No** for Remote Desktop Protocol (RDP) or Microsoft Terminal Services Client (MTSC) that connects to a Remote Desktop Gateway server through application proxy.|
+| Use HTTP-Only Cookie | **No** | **Yes** lets application proxy include the HTTPOnly flag in HTTP response headers. This flag provides extra security benefits, for example, it prevents client-side scripting (CSS) from copying or modifying the cookies.<br></br><br></br>Before we supported the HTTP-Only setting, application proxy encrypted and transmitted cookies over a secured Transport Layer Security (TLS) channel to protect against modification. | Use **Yes** because of the extra security benefits.<br></br><br></br>Use **No** for clients or user agents that do require access to the session cookie. For example, use **No** for Remote Desktop Protocol (RDP) or Microsoft Terminal Services Client (MSTSC) that connects to a Remote Desktop Gateway server through application proxy.|
 | Use Secure Cookie | **Yes** | **Yes** allows application proxy to include the Secure flag in HTTP response headers. Secure Cookies enhances security by transmitting cookies over a TLS secured channel such as HTTPS. TLS prevents cookie transmission in clear text. | Use **Yes** because of the extra security benefits.|
 | Use Persistent Cookie | **No** | **Yes** allows application proxy to set its access cookies to not expire when the web browser is closed. The persistence lasts until the access token expires, or until the user manually deletes the persistent cookies. | Use **No** because of the security risk associated with keeping users authenticated.<br></br><br></br>Use **Yes** only for older applications that can't share cookies between processes. It's better to update your application to handle sharing cookies between processes instead of using persistent cookies. For example, you might need persistent cookies to allow a user to open Office documents in explorer view from a SharePoint site. Without persistent cookies, this operation might fail if the access cookies aren't shared between the browser, the explorer process, and the Office process. |
 
@@ -43,7 +43,7 @@ Additionally, if your back-end application has cookies that need third-party con
 To set the cookie settings using the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Application proxy**.
 5. Under **Additional Settings**, set the cookie setting to **Yes** or **No**.
 6. Select **Save** to apply your changes. 
 

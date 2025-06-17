@@ -1,16 +1,15 @@
 ---
 title: Analyze Conditional Access policy impact
 description: Analyze Conditional Access policy impact using report-only mode and other tools.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 03/12/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: kvenkit
+ms.custom: sfi-image-nochange
 ---
 # Analyze Conditional Access Policy Impact
 
@@ -52,7 +51,8 @@ Administrators can use several options to review the potential results of polici
 - Sign-in logs
 - Policy impact (Preview)
 
-### Policy impact (Preview)
+<a name='policy-impact-preview'></a>
+### Policy impact
 
 The policy impact view of Conditional Access lets admins with at least the Security Reader role see a snapshot of information about the potential or existing impacts of policies on interactive sign-ins in your organization. This functionality lets you explore impact over a period of the past 24 hours, 7 days, or 1 month. Additionally, you can see and link to a sampling of sign-in events for further detail.
 
@@ -73,7 +73,7 @@ For deeper evaluation of Conditional Access policies and their application at a 
 ## Using these options
 
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ## Related content
 

@@ -6,11 +6,14 @@ manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/19/2025
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # View analytic information with the Analytics dashboard
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article provides a brief overview of the Analytics dashboard in Permissions Management, and the type of analytic information it provides for Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP).
 

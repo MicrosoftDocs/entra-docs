@@ -1,19 +1,17 @@
 ---
 title: Hide an enterprise application
 description: How to hide an Enterprise application from user's experience in Microsoft Entra ID access portals or Microsoft 365 launchers.
-
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
-
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: jomondi
 ms.reviewer: ergreenl, lenalepa
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-all
-ms.custom: enterprise-apps, no-azure-ad-ps-ref
+ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-ga-blocked
 #customer intent: As an administrator, I want to hide an application from the My Apps portal and Microsoft 365 launcher, so that users do not have visibility or access to the application.
 ---
 
@@ -38,7 +36,7 @@ To hide an application from the My Apps portal and Microsoft 365 launcher, you n
 Use the following steps to hide an application from My Apps portal and Microsoft 365 application launcher.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Search for the application you want to hide, and select the application.
 1. In the left navigation pane, select **Properties**.
 1. Select **No** for the **Visible to users?** question.
@@ -121,7 +119,7 @@ Use the following steps to hide all Microsoft 365 applications from the My Apps 
 [!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **App launchers** under **Manage** menu items.
 1. Select **Settings**.
 1. Enable the option of **Users can only see Microsoft 365 apps in the Microsoft 365 portal**.

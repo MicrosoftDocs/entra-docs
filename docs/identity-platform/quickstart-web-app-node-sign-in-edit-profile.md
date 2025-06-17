@@ -3,12 +3,12 @@ title: Quickstart - Edit profile in a sample Node.js web app
 description: Learn how to configure a sample web app to edit user's profile. The edit profile operation requires a customer user to complete multifactor authentication (MFA)
  
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/28/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web app so that customer users edit profile after completing a multifactor authentication (MFA) in their external tenant
 ---
 
@@ -20,15 +20,15 @@ In this Quickstart, you use a sample Node.js web app to learn how to add sign in
 
 ## Prerequisites
 
-- Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This Quickstart shows you how to sign in users by using a sample Node.js web app. 
+* Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This Quickstart shows you how to sign in users by using a sample Node.js web app. 
+* Register a new app for your web API in the [Microsoft Entra admin center](https://entra.microsoft.com), with the name *edit-profile-service*, configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add a client secret to your app registration. **Do not** use client secrets in production apps. Use certificates or federated credentials instead. For more information, see [add credentials to your application](./how-to-add-credentials.md?tabs=client-secret).
 
-## Register API app
+## Configure API scopes and roles
 
-In this step, you register and configure an API app (EditProfileService app), which provides a mechanism to protect the edit profile operation by requiring MFA. 
-
-### Register EditProfileService app
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/register-mfa-api-app.md)]
+By registering the web API, you must configure API scopes to define the permissions that a client application can request to access the web API. Additionally, you need to set up app roles to specify the roles available for users or applications, and grant the necessary API permissions to the web app to enable it to call the web API.
 
 ### Configure EditProfileService app API scopes
 
@@ -36,23 +36,11 @@ The EditProfileService app needs to expose permissions that a client app acquire
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/add-api-mfa-scopes.md)]
 
-### Add app client secret
-
-[!INCLUDE [active-directory-b2c-add-client-secret](../external-id/customers//includes/register-app/add-mfa-api-app-client-secret.md)]
-
 ### Grant User.ReadWrite permission to the EditProfileService app
 
 *User.ReadWrite* is a Microsoft Graph API permission that enables a user to update their profile. To grant the *User.ReadWrite* permission to the EditProfileService app, use the following steps: 
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/grant-api-permission-edit-profile.md)]
-
-### Grant admin consent in the EditProfileService app
-
-You've assigned the *User.ReadWrite* permissions correctly to your EditProfileService app. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
-    
-1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
-
-1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
 
 ## Grant API permissions to the client web app
 
@@ -61,14 +49,6 @@ In this section, you grant API permissions to the client web app that you regist
 Grant your client web app the *EditProfileService.ReadWrite* permission. This permission is exposed by the EditProfileService app, and it protects the update profile operation with MFA. To grant the *EditProfileService.ReadWrite* permission to client web app, use the following steps:
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/grant-api-permissions-mfa-api-app.md)]
-
-### Grant admin consent in the client web app
-
-You've assigned the **EditProfileService.ReadWrite* permissions correctly to your client web app. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
-    
-1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
-
-1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
 
 ## Create Conditional Access MFA policy
 
@@ -98,14 +78,14 @@ This code sample contains two apps, the client web app and the API app (EditProf
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](/entra/external-id/customers/how-to-create-customer-tenant-portal#get-the-customer-tenant-details).
     - `Enter_the_Client_Secret_Here` and replace it with the app secret value of the client web app you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
-    - `Add_your_protected_scope_here` and replace it with the API app (EditProfileService app) scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the [EditProfileService you registered earlier](#register-editprofileservice-app).
+    - `Add_your_protected_scope_here` and replace it with the API app (EditProfileService app) scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the *EditProfileService* you registered earlier.
 
 1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\Api\authConfig.js` file, then find the placeholder:
     
     - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
     - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
-    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](#register-editprofileservice-app).
-    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](#add-app-client-secret) value you copied earlier.
+    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the *EditProfileService* application.
+    - `Enter_the_Client_Secret_Here` and replace it with the client secret value created as part of the prerequisites.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
 
 ## Install project dependencies and run app

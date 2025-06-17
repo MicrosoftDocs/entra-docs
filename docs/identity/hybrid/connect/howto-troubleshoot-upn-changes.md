@@ -163,23 +163,6 @@ To unjoin a device from Microsoft Entra ID, run the following command at a comma
    >[!TIP]
    >Windows 7 and 8.1 devices aren't affected by this issue.
 
-## Mobile Application Management app protection policies
-
-### Known issues: Broken connections
-
-If your organization uses Mobile Application Management (MAM) to protect corporate data, MAM app protection policies aren't resilient during UPN changes. This issue can break the connection between MAM enrollments and active users in MAM integrated applications. This scenario can leave data unprotected.
-
-Learn more: 
-
-* [App protection policies overview](/mem/intune/apps/app-protection-policy)
-* [FAQs about MAM and app protection](/mem/intune/apps/mam-faq)
-
-**Workaround**
-
-After UPN changes, the Administrator wipes data from affected devices to force users to reauthenticate and reenroll with new UPNs.
-
-Learn [how to wipe only corporate data from Intune-managed apps](/mem/intune/apps/apps-selective-wipe).
-
 ## Microsoft Authenticator issues
 
 If your organization requires Authenticator to sign in and access applications and data, a username might appear in the app. However, the account isn't a verification method until users complete registration. 
@@ -269,6 +252,21 @@ Users can't use phone sign-in because they didn't receive notification. If the u
 **Workaround**
 
 On the account enabled for phone sign-in, on the drop-down menu, the user selects **Disable phone sign-in**. 
+
+## Mobile Device Management
+ 
+### Known issues: Device re-registration required
+ 
+If your organization uses Mobile Device Management and the Intune App or the Company Portal app to manage your devices, device registration isn’t resilient during UPN changes. Upon changing the UPN, the device will be detected as unregistered with Entra, and users will be required to sign in and register the device again for management and Conditional Access to continue to work. Until registration is complete, the user may not be able to access any corporate resources on this device.  
+ 
+Learn more:
+ 
+* [Device enrollment guide for Microsoft Intune](/mem/intune/fundamentals/deployment-guide-enrollment)
+* [Use Conditional Access with Microsoft Intune compliance policies](/mem/intune/protect/conditional-access)
+ 
+**Workaround**
+ 
+After UPN changes, the end users are required to sign in and follow the in-app prompts to register again.
 
 ## Security key (FIDO2) issues
 

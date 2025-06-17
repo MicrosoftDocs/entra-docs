@@ -6,10 +6,10 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/04/2024
+ms.date: 06/12/2025
 ms.author: sarahlipsey
-ms.reviewer: deawari
-
+ms.reviewer: jadedsouza
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra recommendations to monitor and improve the health of my tenant.
 ---
 
@@ -32,7 +32,7 @@ This article covers how to work with Microsoft Entra recommendations. Each Micro
 Most recommendations follow the same pattern. You're provided information about how the recommendation works, its value, and some action steps to address the recommendation. This section provides an overview of the details provided in a recommendation, but aren't specific to one recommendation.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Overview** > **Recommendations**.
+1. Browse to **Entra ID** > **Overview** > **Recommendations**.
 1. Select a recommendation from the list.
 
     ![Screenshot of the list of recommendations.](media/howto-use-recommendations/recommendations-list.png)
@@ -90,7 +90,7 @@ You can update the status of a recommendation and any related resource in the Mi
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Overview** > **Recommendations**.
+1. Browse to **Entra ID** > **Overview** > **Recommendations**.
 1. Select a recommendation from the list.
 1. Follow the guidance in the **Action plan**.
 1. If you need to manually change the status of a recommendation, select **Mark as** from the top of the page and select a status.

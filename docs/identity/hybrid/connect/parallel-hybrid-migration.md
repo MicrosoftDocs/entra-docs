@@ -5,7 +5,7 @@ author: billmath
 manager: femila
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ---
 

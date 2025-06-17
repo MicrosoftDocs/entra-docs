@@ -3,12 +3,12 @@ title: Add Azure AD B2C for customer sign-in
 description: Learn how to configure an Azure AD B2C tenant as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
  
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 03/12/2025
+ms.date: 05/20/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
@@ -18,6 +18,8 @@ ms.custom: it-pro
 # Add Azure AD B2C tenant as an OpenID Connect identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](../includes/active-directory-b2c-end-of-sale-notice.md)]
 
 To configure your Azure AD B2C tenant as an identity provider, you need to create an Azure AD B2C custom policy, and then an application.
 
@@ -41,7 +43,7 @@ After provisioning the custom policy starter pack, download the `B2C_1A_signup_s
 Open the `B2C_1A_signup_signin.xml` file in a text editor. Under the `<OutputClaims>` node, add the following output claim:
 
 ```xml
-<OutputClaim ClaimTypeReferenceId="signInName" PartnerClaimType="email">
+<OutputClaim ClaimTypeReferenceId="signInName" PartnerClaimType="email"/>
 ```
 
 Save the file as `B2C_1A_signup_signin.xml` and upload it through the **Identity Experience Framework** blade within your Azure AD B2C tenant. Select to **Overwrite existing policy**. This step will ensure that the email address is issued as a claim to Microsoft Entra ID after authentication at Azure AD B2C.
@@ -56,7 +58,7 @@ To create an application:
 1. Select **App registrations**, and then select **New registration**.
 1. Under **Name**, enter "Federation with Microsoft Entra ID".
 1. Under **Supported account types**, select **Accounts in any identity provider or organizational directory (for authenticating users with user flows)**.
-1. Under **Redirect URI**, select **Web**, and then enter the following URL in all lowercase letters, where `your-B2C-tenant-name` is replaced with the name of your Entra tenant (for example, Contoso):
+1. Under **Redirect URI**, select **Web**, and then enter the following URL in all lowercase letters, where `tenant-subdomain` is replaced with the name of your Entra tenant (for example, Contoso):
   
     `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
     
@@ -84,7 +86,7 @@ To create an application:
 13. Record the secret's **Value**. You need this value when you configure the identity provider in the next section.
 
 
-## Configure your Azure AD B2C tenant as an identity provider.
+## Configure your Azure AD B2C tenant as an identity provider in your external tenant
 
 Construct your OpenID Connect `well-known` endpoint: replace `<your-B2C-tenant-name>` with the name of your Azure AD B2C tenant. 
 

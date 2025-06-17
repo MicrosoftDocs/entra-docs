@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy for security info registr
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 09/27/2024
+ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -25,13 +25,13 @@ Some organizations in the past might have used trusted network location or devic
 
 ## Create a policy to secure registration
 
-The following policy applies to the selected users, who attempt to register using the combined registration experience. The policy requires users to be in a trusted network location and do multifactor authentication, or use Temporary Access Pass credentials.
+The following policy applies to the selected users, who attempt to register using the combined registration experience. The policy requires users who are not on a trusted network to do multifactor authentication. Users from trusted networks are excluded from this policy.
 
 > [!WARNING]
 > If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatible with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. In Name, Enter a Name for this policy. For example, **Combined Security Info Registration with TAP**.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -58,7 +58,7 @@ The following policy applies to the selected users, who attempt to register usin
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 Administrators have to issue Temporary Access Pass credentials to new users so they can satisfy the requirements for multifactor authentication to register. Steps to accomplish this task, are found in the section [Create a Temporary Access Pass in the Microsoft Entra admin center](~/identity/authentication/howto-authentication-temporary-access-pass.md#create-a-temporary-access-pass).
 
@@ -69,7 +69,7 @@ Organizations might choose to require other grant controls with or in place of *
 For [guest users](~/external-id/what-is-b2b.md) who need to register for multifactor authentication in your directory you might choose to block registration from outside of [trusted network locations](concept-conditional-access-conditions.md#locations) using the following guide.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. In Name, Enter a Name for this policy. For example, **Combined Security Info Registration on Trusted Networks**.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -85,7 +85,7 @@ For [guest users](~/external-id/what-is-b2b.md) who need to register for multifa
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 ## Related content
 

@@ -5,10 +5,10 @@ author: billmath
 manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/20/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -182,7 +182,7 @@ To configure Staged Rollout, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect sync**.
+1. Browse to **Entra ID** > **Entra Connect** > **Connect sync**.
 
 1. On the *Microsoft Entra Connect* page, under the *Staged rollout of cloud authentication*, select the **Enable staged rollout for managed user sign-in** link. 
 

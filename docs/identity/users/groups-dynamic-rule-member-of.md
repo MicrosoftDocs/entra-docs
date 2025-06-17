@@ -29,8 +29,8 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 
 ## Preview limitations
 
-- MemberOf is only available in Azure Public cloud.
-- Each Microsoft Entra tenant is limited to 500 dynamic membership groups using the `memberOf` attribute. The `memberOf` groups count toward the total dynamic group member quota of 15,000.
+
+- Each Microsoft Entra tenant is limited to 500 dynamic groups using the `memberOf` attribute. The `memberOf` groups count toward the total dynamic group quota of 15,000.
 - Each dynamic group can have up to 50 member groups.
 - When you add members of security groups to `memberOf` dynamic membership groups, only direct members of the security group become members of the dynamic group.
 - You can't use one `memberOf` dynamic group to define the membership of another `memberOf` dynamic group. For example, Dynamic Group A, with members of group B and C in it, can't be a member of Dynamic Group D.
@@ -50,8 +50,8 @@ This feature can be used in the Azure portal, Microsoft Graph, and PowerShell. B
 1. Select **New group**.
 1. Fill in group details. The group type can be **Security** or **Microsoft 365**, and the membership type can be set to **Dynamic User** or **Dynamic Device**.
 1. Select **Add dynamic query**.
-1. MemberOf isn't yet supported in the rule builder. Select **Edit** to write the rule in the **Rule syntax** box.
-    1. Example user rule: `user.memberof -any (group.objectId -in ['groupId', 'groupId'])`
-    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId', 'groupId'])`
+1. MemberOf isn't yet supported in the rule builder UI. Select **Edit** to write the rule in the **Rule syntax** box.
+    1. Example user rule: `user.memberof -any (group.objectId -in ['groupId'])`
+    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`
 1. Select **OK**.
 1. Select **Create group**.

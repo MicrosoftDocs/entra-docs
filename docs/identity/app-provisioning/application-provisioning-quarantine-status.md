@@ -3,13 +3,14 @@ title: Quarantine status in Microsoft Entra Application Provisioning
 description: When you've configured an application for automatic user provisioning, learn what a provisioning status of Quarantine means and how to clear it.
 
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Application provisioning in quarantine status
@@ -25,11 +26,11 @@ While in quarantine:
 
 There are three ways to check whether an application is in quarantine:
 
-- In the Microsoft Entra admin center, navigate to **Identity** > **Applications** > **Enterprise applications** > &lt;*application name*&gt; > **Provisioning** and review the progress bar for a quarantine message.   
+- In the Microsoft Entra admin center, navigate to **Entra ID** > **Enterprise apps** > &lt;*application name*&gt; > **Provisioning** and review the progress bar for a quarantine message.   
 
   ![Provisioning status bar showing quarantine status](./media/application-provisioning-quarantine-status/progress-bar-quarantined.png)
 
-- In the Microsoft Entra admin center, navigate to **Identity** > **Monitoring & health** > **Audit Logs** > filter on **Activity: Quarantine** and review the quarantine history. The view in the progress bar as described above shows whether provisioning is currently in quarantine. The audit logs show the quarantine history for an application. 
+- In the Microsoft Entra admin center, navigate to **Entra ID** > **Monitoring & health** > **Audit Logs** > filter on **Activity: Quarantine** and review the quarantine history. The view in the progress bar as described above shows whether provisioning is currently in quarantine. The audit logs show the quarantine history for an application. 
 
 - Use the Microsoft Graph request [Get synchronizationJob](/graph/api/synchronization-synchronizationjob-get?tabs=http&view=graph-rest-beta&preserve-view=true) to programmatically get the status of the provisioning job:
 

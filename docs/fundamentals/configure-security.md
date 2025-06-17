@@ -39,6 +39,10 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
 
+### Permissions to create new tenants are limited to the Tenant Creator role
+
+[!INCLUDE [21787](../includes/secure-recommendations/21787.md)]
+
 ## Credential management
 
 ### Users have strong authentication methods configured
@@ -97,9 +101,17 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
 
-### App registrations must not have reply URLs containing *.azurewebsites.net, URL shorteners, or localhost, wildcard domains
+### App registrations use safe redirect URIs
 
 [!INCLUDE [21885](../includes/secure-recommendations/21885.md)]
+
+### Service principals use safe redirect URIs
+
+[!INCLUDE [23183](../includes/secure-recommendations/23183.md)]
+
+### Admin consent workflow is enabled
+
+[!INCLUDE [21809](../includes/secure-recommendations/21809.md)]
 
 ## External collaboration
 

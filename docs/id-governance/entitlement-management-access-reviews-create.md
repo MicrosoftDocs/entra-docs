@@ -2,12 +2,13 @@
 title: Create an access review of an access package in entitlement management
 description: Learn how to set up an access review in a policy for entitlement management access packages in Microsoft Entra ID part of Microsoft Entra.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 03/10/2025
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
 ---
 # Create an access review of an access package in entitlement management
@@ -26,7 +27,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 
-1. Browse to **Identity governance** > **Access reviews** > **Access package**.
+1. Browse to **ID Governance** > **Access reviews** > **Access package**.
 
 1. To create a new access policy, select **New access** package.
 

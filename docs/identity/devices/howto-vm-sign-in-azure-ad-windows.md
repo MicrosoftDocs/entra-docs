@@ -1,17 +1,15 @@
 ---
 title: Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID
 description: Learn how to sign in to an Azure VM that's running Windows by using Microsoft Entra authentication.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 10/21/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.date: 06/11/2025
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
-ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref
+ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID including passwordless
@@ -36,7 +34,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
   MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!NOTE]
-> After you enable this capability, your Windows VMs in Azure will be Microsoft Entra joined. You cannot join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the VM from Microsoft Entra ID by uninstalling the extension. In addition, if you deploy a supported golden image, be aware that you can enable Entra ID authentication installing after the deployment the dedicated extension.
+> After you enable this capability, your Windows VMs in Azure will be Microsoft Entra joined. You cannot join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the VM from Microsoft Entra ID by uninstalling the extension. In addition, if you deploy a supported golden image, you can still enable Entra ID authentication by installing the required extension after the VM has been deployed.
 
 ## Requirements
 
@@ -53,6 +51,9 @@ This feature is now available in the following Azure clouds:
 - Azure Global
 - Azure Government
 - Microsoft Azure operated by 21Vianet
+
+> [!NOTE]
+> CIS hardened images support Microsoft Entra ID authentication for Microsoft Windows Enterprise and Microsoft Windows Server offerings. For more information, see: [CIS Hardened Images on Microsoft Windows Enterprise](https://azuremarketplace.microsoft.com/marketplace/apps/center-for-internet-security-inc.cis-windows-server).
 
 ### Network requirements
 
@@ -376,7 +377,7 @@ Exit code -2145648607 translates to `DSREG_AUTOJOIN_DISC_FAILED`. The extension 
    - `curl https://pas.windows.net/ -D -`
 
    > [!NOTE]
-   > Replace `<TenantID>` with the Microsoft Entra tenant ID that's associated with the Azure subscription. If you need to find the tenant ID, you can hover over your account name or select **Identity** > **Overview** > **Properties** > **Tenant ID**.
+   > Replace `<TenantID>` with the Microsoft Entra tenant ID that's associated with the Azure subscription. If you need to find the tenant ID, you can hover over your account name or select **Entra ID** > **Overview** > **Properties** > **Tenant ID**.
    >
    > Attempts to connect to `enterpriseregistration.windows.net` might return 404 Not Found, which is expected behavior. Attempts to connect to `pas.windows.net` might prompt for PIN credentials or might return 404 Not Found. (You don't need to enter the PIN.) Either one is sufficient to verify that the URL is reachable.
 
@@ -465,7 +466,7 @@ Share your feedback about this feature or report problems with using it on the [
 If the Microsoft Azure Windows Virtual Machine Sign-in application is missing from Conditional Access, make sure that the application is in the tenant:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Remove the filters to see all applications, and search for **VM**. If you don't see **Microsoft Azure Windows Virtual Machine Sign-in** as a result, the service principal is missing from the tenant.
 
 

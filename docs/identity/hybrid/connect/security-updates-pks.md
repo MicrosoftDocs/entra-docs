@@ -5,7 +5,7 @@ author: billmath
 manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ---
@@ -39,10 +39,9 @@ To upgrade to the latest version.
 > [Install Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 
 >[!IMPORTANT]
->The autoupgrade service of Microsoft Entra Connect Sync and some alerts of Microsoft Entra Connect Health won't work after **September 23, 2024**. To avoid impact you should be at the minimum recommended versions. 
+>The autoupgrade service of Microsoft Entra Connect Sync and some alerts of Microsoft Entra Connect Health will stop working on **September 23, 2024** if you're not on at least the minimum versions. If needed, upgrade before this deadline to avoid any impact.
 >
->If you're unable to upgrade before the deadline, you can restore the impacted functionalities by upgrading to the latest versions. However, you lose the alerts during the time period between **September 23, 2024** and when you upgrade.
-
+>If you're unable to upgrade before the deadline, you'll lose certain functionality. You can restore the impacted functionality by upgrading to the latest versions, even after the deadline.
 
 ## Consider moving to Microsoft Entra Cloud Sync
 

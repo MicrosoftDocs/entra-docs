@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: troubleshooting
 ms.date: 05/29/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: 
 
 #Customer intent: As an IT admin, I want to fix issues with my Microsoft Entra hybrid joined devices so that I can my users can use this feature.

@@ -6,7 +6,7 @@ author: barclayn
 manager: femila
 ms.author: barclayn
 ms.topic: concept-article
-ms.date: 12/19/2024
+ms.date: 04/30/2025
 # Customer intent: As a Microsoft Entra tenant administrator, I want to enable the Face Check add-on in my tenant, so that I can enable the developers in my organization to use Face Check with Entra Verified ID.
 
 ---

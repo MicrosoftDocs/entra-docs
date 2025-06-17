@@ -5,8 +5,8 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 12/17/2024
-ms.reviewer: JasSuri
+ms.date: 05/04/2025
+ms.reviewer: jasuri
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -17,7 +17,27 @@ titleSuffix: Microsoft identity platform
 
 # Custom authentication extensions overview
 
-This article provides a high-level, technical overview of [custom authentication extensions](~/external-id/customers/concept-custom-extensions.md) for Microsoft Entra ID. Custom authentication extensions allow you to customize the Microsoft Entra authentication experience by integrating with external systems.
+The Microsoft Entra ID authentication pipeline consists of several built-in authentication events, like the validation of user credentials, conditional access policies, multifactor authentication, self-service password reset, and more.
+
+Microsoft Entra custom authentication extensions allow you to extend authentication flows with your own business logic at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. 
+
+For example, you could use a custom claims provider to add external user data to the security token before the token is issued. You could add an attribute collection workflow to validate the attributes a user enters during sign-up. This article provides a high-level, technical overview of Microsoft Entra ID custom authentication extensions.
+
+
+The [Microsoft Entra Custom Authentication Extension Overview](https://youtu.be/ZU90avf0Qyc?si=Gf77u4HS_5uw6Qjp) video provides a comprehensive outline of the key features and capabilities of the custom authentication extensions.
+
+> [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=N-kzaOC7KgeZmpKk]
+
+## Components overview
+
+There are two components you need to configure: a custom authentication extension in Microsoft Entra and a REST API. The custom authentication extension specifies your REST API endpoint, when the REST API should be called, and the credentials to call the REST API. 
+
+This video provides detailed instructions on configuring Microsoft Entra custom authentication extensions and offers best practices and valuable tips for optimal implementation.
+
+> [!VIDEO https://www.youtube.com/embed/EamkX9aFTYw?si=k0ziK2thbJ6V4BtZ]
+
+
+## Sign-in flow
 
 The following diagram depicts the sign-in flow integrated with a custom authentication extension.
 
@@ -31,21 +51,35 @@ The following diagram depicts the sign-in flow integrated with a custom authenti
 1. The Microsoft Entra **custom authentication extension** processes the response and customizes the authentication based on the event type and the HTTP response payload.
 1. A **token** is returned to the **app**.
 
-## Custom authentication extension REST API endpoint
+## REST API endpoints
 
-When an event fires, Microsoft Entra ID calls a REST API endpoint that you own. The request to the REST API contains information about the event, the user profile, authentication request data, and other context information.
-
-You can use any programming language, framework, and hosting environment to create and host your custom authentication extensions REST API. For a quick way to get started, use a C# Azure Function. Azure Functions lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
+When an event is triggered, Microsoft Entra ID invokes a REST API endpoint that you own. The REST API must be publicly accessible. It can be hosted using Azure Functions, Azure App Service, Azure Logic Apps, or another publicly available API endpoint.
+ 
+You have the flexibility to use any programming language, framework, or  low-code-no-code solution, such as Azure Logic Apps to develop and deploy your REST API. For a quick way to get started, consider employing Azure Function. It lets you run your code in a serverless environment without having to first create a virtual machine (VM) or publish a web application.
 
 Your REST API must handle:
 
-- Token validation for securing the REST API calls.
+- [Token validation for securing the REST API calls](#protect-your-rest-api).
 - Business logic
+- [Return data and action type](#return-data-and-action-type) 
 - Incoming and outgoing validation of HTTP request and response schemas.
 - Auditing and logging.
 - Availability, performance, and security controls.
 
-For developers running the REST API on Azure Functions, consider using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library, which helps with token validation implementation using Microsoft Azure's built-in authentication capabilities. It provides a data model for different event types, initiates incoming and outgoing request and response processing, so more focus can be put on the business logic.  
+### Request payload
+
+The request to the REST API includes a JSON payload containing details about the event, user profile, authentication request data, and other context information. The attributes within the JSON payload can be used to perform logic by your API.
+
+For example, in the [Token issuance start](#token-issuance-start) event, the request payload may include the user's unique identifier, allowing you to retrieve the user profile from your own database. The request payload data must follow the schema as specified in the event  document.
+
+
+### Return data and action type
+
+After your web API performs the workflow with your business logic, it must return an **action type** that directs Microsoft Entra on how to proceed with the authentication process.
+
+For example, in the case of the [attribute collection start](#attribute-collection-start) and [attribute collection submit](#attribute-collection-submit) events, the **action type** returned by your web API indicates whether the account can be created in the directory, show a validation error, or completely block the sign-up flow.
+
+The REST API response may include data. For example, the [on token issuance start](#token-issuance-start) event may provide a set of attributes that can be mapped to the security token.
 
 ### Protect your REST API
 
@@ -56,42 +90,59 @@ To ensure the communications between the custom authentication extension and you
     1. For **V1** Applications, validate the `appid` claim.
     1. For **V2** Applications, validate the `azp` claim.
 1. The bearer token `aud` audience claim contains the ID of the associated application registration. Your REST API endpoint needs to validate that the bearer token is issued for that specific audience.
-1. The bearer token `iss` issuer claim contains the Microsoft Entra issuer URL. Depending on your tenant configuration, the issuer URL will be one of the following;
+1. The bearer token `iss` issuer claim contains the Microsoft Entra issuer URL. Depending on your tenant configuration, the issuer URL is one of the following;
     - Workforce: `https://login.microsoftonline.com/{tenantId}/v2.0`.
     - Customer: `https://{domainName}.ciamlogin.com/{tenantId}/v2.0`.
 
 ## Custom authentication event types
 
-Within a sign-up and sign-in user flow, there are built-in authentication events. You can also add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. This section lists the custom authentication events available in Microsoft Entra ID.
+This section lists the custom authentication extensions events available in Microsoft Entra ID workforce and external tenants. For detailed information about the events, refer to the respective documentation.
 
-### Token issuance start event
+|Event  |Workforce tenant|External tenant|
+|---------|---------|---------|
+| [Token issuance start](#token-issuance-start)  | :::image type="icon" source="./media/common/yes.png" border="false"::: | :::image type="icon" source="./media/common/yes.png" border="false"::: |
+| [Attribute collection start](#attribute-collection-start)||:::image type="icon" source="./media/common/yes.png" border="false":::|
+| [Attribute collection submit](#attribute-collection-submit)||:::image type="icon" source="./media/common/yes.png" border="false":::|
+| [One time passcode send](#one-time-passcode-send)||:::image type="icon" source="./media/common/yes.png" border="false":::|
 
-The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a custom claims provider. The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
+### Token issuance start
 
-For details, see [custom claims providers](custom-claims-provider-overview.md).
+The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a [custom claims provider](custom-claims-provider-overview.md). The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=TokenAugmentation)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Add claims to security tokens from a REST API” use case.
 
 ### Attribute collection start 
 
-Attribute collection start events can be used with custom authentication extensions to add logic before attributes are collected from a user. The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. 
+[Attribute collection start](./custom-extension-attribute-collection.md) events can be used with custom authentication extensions to add logic before attributes are collected from a user. The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. 
 
-> [!NOTE]
-> The attribute collection start event is available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PreAttributeCollection)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “[Prepopulate sign-up attributes](https://woodgrovedemo.com/#usecase=PreAttributeCollection)” use case.
 
 ### Attribute collection submit
 
-Attribute collection submit events can be used with custom authentication extensions to add logic after attributes are collected from a user. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
+[Attribute collection submit](./custom-extension-attribute-collection.md) events can be used with custom authentication extensions to add logic after attributes are collected from a user. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
 
-> [!NOTE]
-> The attribute collection submit event is available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=PostAttributeCollection)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “[Validate sign-up attributes](https://woodgrovedemo.com/#usecase=PostAttributeCollection)” use case, or the “[Block a user from continuing the sign-up process](https://woodgrovedemo.com/#usecase=BlockSignUp)” use case.
 
-### One time passcode send event
+### One time passcode send
  
-The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, sign-in with email and one-time passcode, or email multifactor authentication (MFA).
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up with email address, sign in with email one-time passcode (Email OTP), reset their password using Email OTP, or use Email OTP for multifactor authentication (MFA).
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
- 
-> [!NOTE]
-> The one-time passcode send event is currently available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Configure a custom email provider for one time passcode send events](./custom-extension-email-otp-get-started.md)
+
+> [!TIP]
+> [![Try it now](media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CustomEmail)
+>
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Use a custom Email Provider for One Time code” use case.
+
 
 ## Related content
 

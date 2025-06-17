@@ -2,13 +2,13 @@
 title: Manage app consent policies
 description: Learn how to manage built-in and custom app consent policies to control when consent can be granted.
 
-manager: CelesteDG
+manager: mwongerapk
 author: omondiatieno
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 03/21/2024
+ms.date: 03/31/2025
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.custom: enterprise-apps
@@ -29,7 +29,7 @@ An app consent policy consists of one or more "include" condition sets and zero 
 
 Each condition set consists of several conditions. For an event to match a condition set, *all* conditions in the condition set must be met.
 
-App consent policies where the ID begins with "microsoft-" are built-in policies. Some of these built-in policies are used in existing built-in directory roles. For example, the `microsoft-application-admin` app consent policy describes the conditions under which the Application Administrator and Cloud Application Administrator roles are allowed to grant tenant-wide admin consent. Built-in policies can be used in custom directory roles and to configure user consent settings, but can't be edited or deleted.
+App consent policies where the ID begins with "microsoft-" are built-in policies. Some of these built-in policies are used in existing built-in directory roles. For example, the `microsoft-application-admin` app consent policy describes the conditions under which the Application Administrator and Cloud Application Administrator roles are allowed to grant tenant-wide admin consent. Built-in policies can be used in custom directory roles. They can also be used to configure user consent settings, but can't be edited or deleted.
 
 ## Prerequisites
 
@@ -211,7 +211,7 @@ After creating the app consent policy, you need to assign it to a custom role in
 :::zone-end
 
 > [!WARNING]
-> Deleted app consent policies cannot be restored. If you accidentally delete a custom app consent policy, you will need to re-create the policy.
+> Deleted app consent policies can't be restored. If you accidentally delete a custom app consent policy, you need to re-create the policy.
 
 ### Supported conditions
 

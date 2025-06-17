@@ -2,12 +2,12 @@
 title: Quickstart - Sign in users in a sample Node.js CLI app
 description: Learn how to authenticate users in a sample Node.js Command Line Interface (CLI) application in your external tenant 
 author: Dickson-Mwendia
-manager: mwongerapk
+manager: dougeby
 ms.author: dmwendia
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/20/2024
-ms.custom: developer, devx-track-js
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn how to authenticate users in a sample Node.js Command Line Interface (CLI) application in your external tenant
 ---
 
@@ -22,33 +22,19 @@ In this quickstart, you use a sample Node Command Line Interface (CLI) applicati
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
 * An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Mobile and desktop applications** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Custom redirect URIs**: `http://localhost` 
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-## Register the Node.js CLI app
 
-[!INCLUDE [active-directory-b2c-register-app](../external-id/customers/includes/register-app/register-client-app-common.md)] 
-
-## Add platform configurations
-
-[!INCLUDE [active-directory-b2c-app-integration-add-platform-configurations](../external-id/customers/includes/register-app/add-platform-redirect-url-node-cli.md)]
+## Enable public client flows
 
 [!INCLUDE [active-directory-b2c-enable-public-client-flow](../external-id/customers/includes/register-app/enable-public-client-flow.md)]  
-
-## Grant admin consent
-
-Since this app signs in users, add delegated permissions. These permissions allow the app to act on behalf of a signed-in user and access resources that the user has permissions to access. 
-
-[!INCLUDE [active-directory-b2c-grant-delegated-permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)] 
-
-## Create a user flow 
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)] 
-
-## Associate the Node.js CLI application with the user flow
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
-
 
 ## Clone or download the sample Node.js CLI application
 
@@ -98,6 +84,6 @@ You can now test the sample Node.js CLI application.
 
 ## Related content
 
-- [Sign in users in your own Node.js CLI application](../external-id/customers/tutorial-cli-app-node-sign-in-prepare-tenant.md).
+- [Sign in users in your own Node.js CLI application](./tutorial-cli-app-node-sign-in-prepare-app.md).
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).

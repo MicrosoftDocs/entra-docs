@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 manager: femila
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -47,9 +47,8 @@ If you matched your objects with a soft-match, then the **sourceAnchor** is adde
 ### Hard-match vs soft-match
 By default, the SourceAnchor value of an object, for example "abcdefghijklmnopqrstuv==", is the Base64 string representation of the mS-Ds-ConsistencyGUID attribute (or ObjectGUID depending on the configuration) from the on-premises Active Directory object. This value is set as the corresponding ImmutableId in Microsoft Entra ID.
 
-
 When Microsoft Entra Connect or Cloud Sync adds new objects, the Microsoft Entra ID service tries to match the incoming object by using the sourceAnchor value corresponding to the ImmutableId attribute of existent objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect takes over the source or authority (SoA) of that object and updates it with the properties of the incoming on-premises Active Directory object in what is known as *"hard-match."*
-When Microsoft Entra ID can't find any object with an ImmutableId that matches the SouceAnchor value, it tries to use the incoming object's userPrincipalName or primary SMTP address to find a match in what it's known as a "*soft-match*." 
+When Microsoft Entra ID can't find any object with an ImmutableId that matches the SourceAnchor value, it tries to use the incoming object's userPrincipalName or primary SMTP address to find a match in what it's known as a "*soft-match*." 
 
 Both, the hard-match and soft-match, tries to match objects already present and managed in Microsoft Entra ID with the new incoming objects being added that represent the same on-premises entity. If Microsoft Entra ID isn't able to find a *hard-match* or *soft-match* for the incoming object, it provisions a new object in Microsoft Entra ID directory.
 

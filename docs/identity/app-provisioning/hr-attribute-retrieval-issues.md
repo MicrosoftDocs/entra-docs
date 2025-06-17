@@ -35,7 +35,7 @@ ms.reviewer: chmutali
 | **Issue Description** | 
 | You configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You have an integration system configured in Workday and you have configured XPATHs that point to attributes in the Workday Integration System. However, the Microsoft Entra provisioning app isn't fetching values associated with these integration system attributes or calculated fields. |
 | **Cause** | 
-| This is a known limitation. The Workday provisioning app currently doesn't support fetching calculated fields/integration system attributes using the *Field_And_Parameter_Criteria_Data* Get_Workers request filter.  |
+| This is a known limitation. The Workday provisioning app currently doesn't support fetching calculated fields/integration system attributes using the *Field_And_Parameter_Criteria_Data* Get_Workers request filter. This capability is also known as an Integration Field Override. |
 | **Resolution Options** | 
 | Consider a workaround of either using Workday Provisioning groups or the Workday Custom ID field. |
 

@@ -5,10 +5,10 @@ author: billmath
 manager: femila
 ms.service: entra-id
 ms.topic: overview
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # What is password hash synchronization with Microsoft Entra ID?

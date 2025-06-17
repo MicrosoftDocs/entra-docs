@@ -100,7 +100,7 @@ For a subset of entitlement management custom extensions, you can use the ‘*Up
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**. 
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**. 
 
 1. Select the catalog with the custom extension you want to update.
 

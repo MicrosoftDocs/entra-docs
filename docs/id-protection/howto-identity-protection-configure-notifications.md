@@ -1,16 +1,14 @@
 ---
 title: Microsoft Entra ID Protection notifications
 description: Learn how notifications support your investigation activities.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 02/28/2025
-
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-ga-nochange
 ---
 # Microsoft Entra ID Protection notifications
 
@@ -47,7 +45,7 @@ As an administrator, you can set:
 - **The recipients of this email**
    - Optionally you can **Add custom email here** users defined must have the appropriate permissions to view the linked reports.
 
-Configure the users at risk email in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Identity Protection** > **Users at risk detected alerts**.
+Configure the users at risk email in the [Microsoft Entra admin center](https://entra.microsoft.com) under **ID Protection** > **Dashboard** > **Users at risk detected alerts**.
 
 ## Weekly digest email
 
@@ -64,7 +62,7 @@ It includes:
 
 As an administrator, you can switch sending a weekly digest email on or off and choose the users assigned to receive the email.
 
-Configure the weekly digest email in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Protection** > **Identity Protection** > **Weekly digest**.
+Configure the weekly digest email in the [Microsoft Entra admin center](https://entra.microsoft.com) > **ID Protection** > **Dashboard** > **Weekly digest**.
 
 ## See also
 

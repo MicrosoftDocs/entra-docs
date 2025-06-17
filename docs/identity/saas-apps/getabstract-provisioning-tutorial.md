@@ -17,7 +17,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to getAbstract so that I can streamline the user management process and ensure that users have the appropriate access to getAbstract.
 ---
 
-# Configure getAbstract for automatic user provisioning
+# Configure getAbstract for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both getAbstract and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [getAbstract](https://www.getabstract.com) by using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software as a service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -94,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### Configure automatic user provisioning for getAbstract in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![Screenshot that shows the Enterprise applications pane.](common/enterprise-applications.png)
 
@@ -127,12 +127,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |active|Boolean|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |externalId|String|
-   |preferredLanguage|String|
+   |active|Boolean||
+   |emails[type eq "work"].value|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |externalId|String||
+   |preferredLanguage|String||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to getAbstract**.
 
@@ -141,10 +141,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |Attribute|Type|Supported for filtering|
     |---|---|---|
     |displayName|String|&check;|
-    |externalId|String|
-    |members|Reference|
+    |externalId|String||
+    |members|Reference||
 
-1. To configure scoping filters, see the instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, see the instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for getAbstract, change **Provisioning Status** to **On** in the **Settings** section.
 

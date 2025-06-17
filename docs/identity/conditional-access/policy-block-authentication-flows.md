@@ -4,7 +4,7 @@ description: Use Conditional Access policy to restrict how device code flow and 
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/05/2024
+ms.date: 04/01/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
@@ -41,7 +41,7 @@ For organizations that have no established use of device code flow, blocking can
 1. Confirm your settings and set **Enable policy** to **Report-only**. 
 1. Select **Create** to create to enable your policy. 
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**. 
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)] 
 
 ## Authentication transfer policies 
 

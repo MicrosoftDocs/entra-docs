@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.date: 08/26/2022
 ms.author: jricketts
 ms.reviewer: jricketts
+ms.custom: sfi-image-nochange
 ---
 
 # Recover from misconfiguration

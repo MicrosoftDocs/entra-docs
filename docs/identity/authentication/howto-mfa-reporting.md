@@ -1,20 +1,15 @@
 ---
 title: Sign-in event details for Microsoft Entra multifactor authentication
 description: Learn how to view sign-in activity for Microsoft Entra multifactor authentication events and status messages.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: michmcla
-
-
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 # Use the sign-in logs to review Microsoft Entra multifactor authentication events
 
@@ -38,14 +33,14 @@ The sign-in logs provides you with information about the usage of managed applic
 To view the sign-in activity report in the [Microsoft Entra admin center](https://entra.microsoft.com), complete the following steps. You can also query data using the [reporting API](~/identity/monitoring-health/howto-configure-prerequisites-for-reporting-api.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > then choose **Users** > **All users** from the menu on the left-hand side.
+1. Browse to **Entra ID** > **Users** from the menu on the left-hand side.
 1. From the menu on the left-hand side, select **Sign-in logs**.
 1. A list of sign-in events is shown, including the status. You can select an event to view more details.
 
     The **Conditional Access** tab of the event details shows you which policy triggered the MFA prompt.
 
     [![Screenshot of example Microsoft Entra sign-in logs](media/howto-mfa-reporting/sign-in-report-cropped.png)](media/howto-mfa-reporting/sign-in-report.png#lightbox)
-
+   
 If available, the authentication is shown, such as text message, Microsoft Authenticator app notification, or phone call.
 
 The **Authentication Details** tab provides the following information, for each authentication attempt:
@@ -136,17 +131,8 @@ Identify users and output methods registered:
 Get-MgUser -All | Select-Object @{N='UserPrincipalName';E={$_.UserPrincipalName}},@{N='MFA Status';E={if ($_.StrongAuthenticationRequirements.State){$_.StrongAuthenticationRequirements.State} else {"Disabled"}}},@{N='MFA Methods';E={$_.StrongAuthenticationMethods.methodtype}} | Export-Csv -Path c:\MFA_Report.csv -NoTypeInformation
 ```
 
-
 ## Additional MFA reports
-
-The following additional information and reports are available for MFA events, including those for MFA Server:
-
-| Report | Location | Description |
-|:--- |:--- |:--- |
-| Blocked User History | Microsoft Entra ID > Security > MFA > Block/unblock users | Shows the history of requests to block or unblock users. |
-| Usage for on-premises components | Microsoft Entra ID > Security > MFA > Activity Report | Provides information on overall usage for MFA Server. NPS extension and AD FS logs for cloud MFA activity are now included in the [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), and no longer published on this report. |
-| Bypassed User History | Microsoft Entra ID > Security > MFA > One-time bypass | Provides a history of MFA Server requests to bypass MFA for a user. |
-| Server status | Microsoft Entra ID > Security > MFA > Server status | Displays the status of MFA Servers associated with your account. |
+NPS extension and AD FS adapter for cloud MFA activity are now included in the Sign-in logs and not with a specific activity report.
 
 Cloud MFA sign-in events from an on-premises AD FS adapter or NPS extension won't have all fields in the sign-in logs populated due to limited data returned by the on-premises component. You can identify these events by the resourceID *adfs* or *radius* in the event properties. They include:
 - resultSignature

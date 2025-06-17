@@ -7,9 +7,9 @@ ms.subservice: devices
 ms.topic: how-to
 ms.date: 02/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # Configure Microsoft Entra hybrid join

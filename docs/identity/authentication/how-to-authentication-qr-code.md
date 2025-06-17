@@ -11,7 +11,7 @@ ms.author: justinha
 author: aanjusingh
 contributors: minatoruan
 ms.reviewer: anjusingh
-manager: femila
+manager: dougeby
 
 # Customer intent: As an identity administrator, I want to understand how to enable QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -46,7 +46,7 @@ You can enable the QR code authentication method by using the Microsoft Entra ad
 ### Enable QR code authentication method in the Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Go to **Protection** > **Authentication methods** > **Policies**.
+1. Go to **Entra ID** > **Authentication methods** > **Policies**.
 1. Click **QR code** > **Enable and target** > **Add target** > select a group of users who need to sign in with a QR code. 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/enable-qr-code.png" alt-text="Screenshot that shows how to enable QR code for an organization.":::
@@ -497,10 +497,10 @@ When configuring with Intune, assign Microsoft Authenticator as a required app f
 
 Users need to [download Teams](https://aka.ms/teamsmobiledownload). The following table lists the minimum Teams version for mobile operating systems. For more information about Teams versions, see [Version update history for the new and classic Microsoft Teams app](/officeupdates/teams-app-versioning).
 
-Mobile OS | Release date | Teams version 
-----------|--------------|--------------
-iOS and iPadOS | July 21, 2024 | 6.13.1 (1.0.0.77.2024132501)	
-Android | August 08, 2024 | 1416/1.0.0.2024143204 (2024143204)	
+|   Mobile OS    |  Release date   |           Teams version            |
+|----------------|-----------------|------------------------------------|
+| iOS and iPadOS | July 21, 2024   | 6.13.1 (1.0.0.77.2024132501)       |
+| Android        | August 08, 2024 | 1416/1.0.0.2024143204 (2024143204) |
 
 Users can follow these steps to sign in with a QR code in Teams:
 
@@ -530,7 +530,7 @@ Restrict the QR code authentication method to only frontline workers, compliant,
 ### Restrict QR code authentication to frontline workers  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **QR code** > **Enable and target**.
+1. Browse to **Entra ID** > **Authentication methods** > **QR code** > **Enable and target**.
 1. Click **Add target** > select a group that only includes frontline workers, such as **Frontline workers** in the following screenshot. This group selection restricts enablement of the QR code authentication method only to frontline workers added to the **Frontline workers** group. 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-groups-and-roles.png" alt-text="Screenshot that shows the Microsoft Entra admin center that shows how to add groups to the QR code settings.":::

@@ -1,16 +1,14 @@
 ---
 title: Configure SuccessFactors inbound provisioning in Microsoft Entra ID
 description: Learn how to configure inbound provisioning from SuccessFactors to Microsoft Entra ID
-
 author: cmmdesai
 manager: femila
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-
 ms.date: 05/06/2024
 ms.author: chmutali
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors to Microsoft Entra ID so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors to Microsoft Entra ID.
 ---
 # Configure SAP SuccessFactors to Microsoft Entra user provisioning
@@ -157,7 +155,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 **To configure SuccessFactors to Microsoft Entra provisioning:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 5. Search for **SuccessFactors to Microsoft Entra user provisioning**, and add that app from the gallery.
 

@@ -1,15 +1,15 @@
 ---
 title: SMS-based user sign-in for Microsoft Entra ID
 description: Learn how to configure and enable users to sign-in to Microsoft Entra ID using SMS
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: anjusingh
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
@@ -57,7 +57,7 @@ There are three main steps to enable and use SMS-based authentication in your or
 First, let's enable SMS-based authentication for your Microsoft Entra tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** >  **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. From the list of available authentication methods, select **SMS**.
 
     ![Screenshot that shows how to select the SMS authentication method.](./media/howto-authentication-sms-signin/authentication-methods-policy.png)

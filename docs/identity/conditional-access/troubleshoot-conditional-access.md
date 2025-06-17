@@ -1,16 +1,16 @@
 ---
 title: Troubleshooting sign-in problems with Conditional Access
 description: This article describes what to do when your Conditional Access policies result in unexpected outcomes.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 03/04/2025
+ms.date: 06/06/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: kvenkit
+ms.custom: sfi-image-nochange
 ---
 # Troubleshooting sign-in problems with Conditional Access
 
@@ -54,13 +54,14 @@ More information can be found about the problem by clicking **More Details** in 
 To find out which Conditional Access policy or policies applied and why, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Find the event for the sign-in to review. Add or remove filters and columns to filter out unnecessary information.
    1. Narrow the scope by adding filters like:
       1. **Correlation ID** when you have a specific event to investigate.
       1. **Conditional Access** to see policy failure and success. Scope your filter to show only failures to limit results.
       1. **Username** to see information related to specific users.
       1. **Date** scoped to the time frame in question.
+      1. **Resource** to see information related to the resource called.
 
    ![Screenshot showing selecting the Conditional Access filter in the sign-in log.](./media/troubleshoot-conditional-access/image3.png)
 

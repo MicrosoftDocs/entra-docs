@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with NetMotion Mobility
+title: Configure NetMotion Mobility for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and NetMotion Mobility.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and NetMotion Mobility so that I can control who has access to NetMotion Mobility, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with NetMotion Mobility
+# Configure NetMotion Mobility for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate NetMotion Mobility with Microsoft Entra ID. When you integrate NetMotion Mobility with Microsoft Entra ID, you can:
 
@@ -45,7 +42,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of NetMotion Mobility into Microsoft Entra ID, you need to add NetMotion Mobility from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **NetMotion Mobility** in the search box.
 1. Select **NetMotion Mobility** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -80,7 +77,7 @@ On the Mobility console, follow the procedures in the [Mobility Administrator Gu
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **NetMotion Mobility** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **NetMotion Mobility** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select **Upload Metadata file** just above the **Basic SAML Configuration** section to import your mobilitySPMetadata.xml file into Microsoft Entra ID.
     

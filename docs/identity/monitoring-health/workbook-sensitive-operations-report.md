@@ -36,7 +36,7 @@ If your organization is new to Azure monitor workbooks, you need to integrate yo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Sensitive Operations Report** workbook from the **Troubleshoot** section.
 

@@ -4,7 +4,7 @@ description: Learn how to prepare a React single-page app (SPA) for authenticati
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 02/25/2025
+ms.date: 05/25/2025
 ms.service: identity-platform
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a new React project in an IDE and add authentication.
@@ -16,7 +16,7 @@ ms.topic: tutorial
 
 In this tutorial you'll build a React single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a React SPA using `npm`, create files needed for authentication and authorization and add your tenant details to the source code. The application can be used for employees in a workforce tenant or for customers using an external tenant.
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 > * Create a new React project
@@ -29,10 +29,10 @@ In this tutorial, you'll:
 ### [Workforce tenant](#tab/workforce-tenant)
 
 * A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: identity-client-spa
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-    * **Platform configuration**: Single-page application (SPA).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`.
 
 ### [External tenant](#tab/external-tenant)
@@ -40,12 +40,12 @@ In this tutorial, you'll:
 * An external tenant. To create one, choose from the following methods:
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: identity-client-spa
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-    * **Platform configuration**: Single-page application (SPA).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`.
-* Associate your app with a user flow in the Microsoft Entra admin center. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ---
 

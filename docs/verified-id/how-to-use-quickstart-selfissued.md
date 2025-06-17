@@ -8,7 +8,7 @@ ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/17/2025
 ms.author: barclayn
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for self-asserted claims scenario. 
 ---
 

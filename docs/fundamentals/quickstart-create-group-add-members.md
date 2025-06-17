@@ -3,7 +3,7 @@ title: Create a group with members and view all groups and members
 description: Instructions about how to search for and view your organization's groups
   and their assigned members.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
@@ -30,7 +30,7 @@ Before you begin, you need:
 Create a new group, named *MDM policy - West*. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.yml).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 
    :::image type="content" source="media/groups-view-azure-portal/create-new-group.png" alt-text="Screenshot of the All Groups page in the admin center." lightbox="media/groups-view-azure-portal/create-new-group.png":::
 
@@ -47,7 +47,7 @@ Create a new group, named *MDM policy - West*. For more information about creati
 
 A user must exist before being added as a group member, so you need to create a new user. For this quickstart, we added a user named *Alain Charon*. Check the "Custom domain names" tab first to get the verified domain name in which to create users. For more information about creating a user, see [How to add or delete users](./add-users.md).
 
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**.
 
    :::image type="content" source="media/groups-view-azure-portal/create-new-user-menu.png" alt-text="Screenshot of the New user page in the admin center.":::
@@ -63,7 +63,7 @@ A user must exist before being added as a group member, so you need to create a 
 
 Now that you have a group and a user, you can add *Alain Charon* as a member to the *MDM policy - West* group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.yml) article.
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. Select the **MDM policy - West** group created earlier.
 1. From the **MDM policy - West Overview** page, select **Members**.
 1. Select **Add members**, and then search and select **Alain Charon**.
@@ -73,7 +73,7 @@ Now that you have a group and a user, you can add *Alain Charon* as a member to 
 
 You can see all the groups for your organization in the **Groups - All groups** page.
 
-- Browse to **Identity** > **Groups** > **All groups**.
+- Browse to **Entra ID** > **Groups** > **All groups**.
 
     The **All groups** page appears, showing all your active groups.
 
@@ -83,7 +83,7 @@ You can see all the groups for your organization in the **Groups - All groups** 
 
 Search the **All groups** page to find the **MDM policy – West** group.
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. From the **All groups** page, type *MDM* into the **Search** box.
 
     The search results appear under the **Search** box, including the *MDM policy - West* group.
@@ -107,7 +107,7 @@ Select **Members** from the **Manage** area, and then review the complete list o
 
 The group you just created is used in other articles in this documentation. If you'd rather not use this group, you can delete it and its assigned members using the following steps:
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. On the **All groups** page, search for the **MDM policy - West** group.
 1. Select the **MDM policy - West** group.
 
@@ -122,7 +122,7 @@ The group you just created is used in other articles in this documentation. If y
    > [!IMPORTANT]
    > This doesn't delete the user Alain Charon, just his membership in the deleted group.
    >
-   > To delete your test user: Browse to **Identity** > **Users** > **All users** select your test user and choose **Delete**.
+   > To delete your test user: Browse to **Entra ID** > **Users** select your test user and choose **Delete**.
 
 ## Next steps
 

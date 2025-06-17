@@ -2,7 +2,7 @@
 title: Complete an access review of groups & applications
 description: Learn how to complete an access review of group members or application access in Microsoft Entra access reviews.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 12/10/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
  
 # Complete an access review of groups and applications in access reviews
@@ -34,7 +35,7 @@ Do the following steps to track the progress of access reviews as they're comple
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews**.
+1. Browse to **ID Governance** > **Access Reviews**.
  
 1. In the list, select an access review.
  
@@ -44,7 +45,7 @@ Do the following steps to track the progress of access reviews as they're comple
  
     All blades under **Current** are only viewable during the duration of each review instance. 
     > [!NOTE]
-    > While the **Current** access review only shows information about the active review instance, you can get information about reviews yet to take place in the **Series** under the **Scheduled review** section.
+    > While the **Current** access review only shows information about the active review instance, you can get information about reviews yet to take place in the **Series** under the **View status of multi-stage review (preview)** section.
  
     The Results page provides more information on each user under review in the instance, including the ability to Stop, Reset, and Download results.
  
@@ -61,7 +62,9 @@ Do the following steps to track the progress of access reviews as they're comple
 1. If you want to stop an access review before it reaches the scheduled end date, select the **Stop** button.
  
     When you stop a review, reviewers will no longer be able to give responses. You can't restart a review after it's stopped.
- 
+    > [!NOTE]
+    > The Stop option is only available for a specific review instance, not for the entire recurring review series.
+    To stop a recurring review series, you can edit the series and update the **End** option to the desired date when you want the series to stop. This change prevents any future review instances from being created beyond the updated end date.
 1. If you're no longer interested in the access review, you can delete it by clicking the **Delete** button.
  
 ### View status of multi-stage review (preview)
