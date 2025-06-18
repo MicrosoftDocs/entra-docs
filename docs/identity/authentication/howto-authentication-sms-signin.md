@@ -4,7 +4,7 @@ description: Learn how to configure and enable users to sign-in to Microsoft Ent
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 06/18/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -14,11 +14,27 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
 
-To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. SMS-based authentication lets users sign-in without providing, or even knowing, their user name and password. After their account is created by an identity administrator, they can enter their phone number at the sign-in prompt. They receive an SMS authentication code that they can provide to complete the sign-in. This authentication method simplifies access to applications and services, especially for Frontline workers.
+To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. SMS-based authentication lets frontlone workers enter an SMS code as a first factor for sign in. Users don't need to provide, or even know, their user name and password. 
 
-This article shows you how to enable SMS-based authentication for select users or groups in Microsoft Entra ID. For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
+After their account is created by an identity administrator, they can enter their phone number at the sign-in prompt. They receive an SMS authentication code that they can provide to complete the sign-in. This authentication method simplifies fronline worker access to applications and services.
+
+The rest of this article shows you how to enable SMS-based authentication as a first factor for select users or groups in Microsoft Entra ID. For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
 
 ## Before you begin
+
+Here are some important points before you start:
+
+- You should enable SMS authentication *only* for frontline workers. 
+- If you enable SMS authentication, make sure you follow best practices for using security controls for work or home access for frontline workers. For more information, see [Best practices to protect frontline workers](/entra/identity-platform/security-best-practices-for-frontline-workers).
+- If you enable SMS authentication for frontline workers, we suggest you to move to using QR code authentication (preview), which isn't phishable. For more information, see [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](/entra/identity/authentication/concept-authentication-qr-code).
+
+
+To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. SMS-based authentication lets users such as frontlone workers enter an SMS code as a first factor for sign in. Users don't need to provide, or even know, their user name and password. 
+
+After their account is created by an identity administrator, they can enter their phone number at the sign-in prompt. They receive an SMS authentication code that they can provide to complete the sign-in. This authentication method simplifies access to applications and services, especially for Frontline workers.
+
+
+## Prerequisites
 
 To complete this article, you need the following resources and privileges:
 
