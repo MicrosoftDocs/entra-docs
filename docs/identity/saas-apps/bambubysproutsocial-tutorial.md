@@ -3,7 +3,7 @@ title: Configure Employee Advocacy by Sprout Social for Single sign-on with Micr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Employee Advocacy by Sprout Social.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

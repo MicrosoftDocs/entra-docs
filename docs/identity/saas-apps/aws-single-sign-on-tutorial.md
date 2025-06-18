@@ -2,7 +2,7 @@
 title: Configure AWS IAM Identity Center (successor to AWS Single Sign-On) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AWS IAM Identity Center (successor to AWS Single Sign-On).
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -3,7 +3,7 @@ title: Configure enterprise application properties
 description: Learn how to configure the properties of an enterprise to how users access and interact with the application.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -127,7 +127,7 @@ Content-type: application/json
 ```
 :::zone-end
 
-Enterprise applications (service principals) inherit specific properties from their associated app registrations when both exist in the same tenant. These properties are synchronized from the app registration, but the synchronization isn't immediate or continuous. Sometimes, updating an enterprise application might prompt the directory to refresh properties from the app registration, causing updates that weren't part of the original request.
+Enterprise applications (service principals) inherit specific properties from their associated app registrations. These properties are synchronized from the app registration, but the synchronization isn't immediate or continuous. Sometimes, updating an enterprise application might prompt the directory to refresh properties from the app registration, causing updates that weren't part of the original request.
 
 > [!NOTE]
 > Managed identities are distinct from Microsoft Entra App Registrations. Managed identities only have a service principal object and don't possess an application object, which is typically used for granting app permissions. As a result, global admins can't change the settings of a managed identity, as the security boundary is the resource itself.

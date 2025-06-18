@@ -3,7 +3,7 @@ title: Manage consent to applications and evaluate consent requests
 description: Learn how to manage consent requests when user consent is restricted, and evaluate a request for tenant-wide admin consent to an app in Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

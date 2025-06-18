@@ -7,7 +7,7 @@ ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 
-ms.date: 10/28/2024
+ms.date: 06/16/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -60,7 +60,6 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 - Azure CLI
 - Azure Data Factory portal
-- Azure DevOps
 - Azure Event Hubs
 - Azure PowerShell
 - Azure Service Bus

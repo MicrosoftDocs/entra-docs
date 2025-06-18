@@ -32,10 +32,8 @@ Setup and registration between a connector and the application proxy service is 
 
 It's recommended that you always deploy multiple connectors for redundancy and scale. The connectors, in conjunction with the service, take care of all the high availability tasks and can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is available. When a connector is running, it remains active as it connects to the service. If a connector is temporarily unavailable, it doesn't respond to this traffic. Unused connectors are tagged as inactive and removed after 10 days of inactivity.
 
-Connectors also poll the server to find out if there's a newer version of the connector. Although you can do a manual update, connectors will update automatically as long as the private network connector Updater service is running. For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
-
 > [!NOTE]
-> You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates.
+> You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates so that you can schedule appropriate connector upgrades.
 
 Each private network connector is assigned to a [connector group](concept-connector-groups.md). Connectors in the same connector group act as a single unit for high availability and load balancing. You can create new groups, assign connectors to them in the Microsoft Entra admin center, then assign specific connectors to serve specific applications. It's recommended to have at least two connectors in each connector group for high availability.
 
