@@ -28,18 +28,18 @@ Follow these high-level steps for configuring the app integration with Microsoft
 ## Install connectors in Darwinbox Studio
 Open Darwinbox studio and navigate to **Connector Library**. Search for and install the **Microsoft** and **Microsoft Entra** connectors 
 
-:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of the Darwinbox Studio.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of the Darwinbox Studio.":::
 
 ## Create single-tenant app registration
 Next, create a single-tenant app registration and provide the credentials to Darwinbox so they can perform actions such as creating the provisioning job and sending user data to your Entra tenant.
 
 Go to the Entra portal, select **App Registrations**, and then select **New registration**. Create a single-tenant app as shown below.
 
-:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/entra-id-darwinbox-register.png" alt-text="Screenshot of Microsoft Entra ID Register an application page.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-id-darwinbox-register.png" alt-text="Screenshot of Microsoft Entra ID Register an application page.":::
 
 Add the following three Microsoft Graph application permissions to let Darwinbox create the provisioning job: `Application.ReadWrite.OwnedBy`, send user data `SyncrhonizationData-User.Upload.OwnedBy`, and review the provisioning logs `ProvisioningLog.Read.All`.
 
-:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/entra-id-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-id-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox.":::
 
 Create a client secret and provide the credentials to Darwinbox as specified in their guide.
 
@@ -51,11 +51,11 @@ Follow the Darwinbox guidance to set up the necessary app connections in Darwinb
 
 To sync custom attributes from Darwinbox to Entra, update the attribute mapping for the provisioning job in the Entra portal. 
 
-:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/entra-id-attribute-mapping.png" alt-text="Screenshot of Microsoft Entra ID mapping page.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-id-attribute-mapping.png" alt-text="Screenshot of Microsoft Entra ID mapping page.":::
 
 Upload a CSV file with these mappings to Darwinbox.
 
-:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/darwinbox-key-entra-key.png" alt-text="Image of CSV file showing key mapping from Entra ID to Darwinbox.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png" alt-text="Image of CSV file showing key mapping from Entra ID to Darwinbox.":::
 
 The Darwinbox connector documentation provides guidance and templates on how to update attribute mappings.
 
@@ -63,7 +63,7 @@ The Darwinbox connector documentation provides guidance and templates on how to 
 
 Once you’ve configured the connector, Darwinbox has multiple recipes in place to manage the Joiner, Mover, Leaver lifecycle of your employees. 
 
-:::image type="content" border="true" source="./media/darwinbox-hr-integration-tutorial/darwinbox-connector-library-recipes.png" alt-text="Microsoft Entra ID registering with Darwinbox.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-connector-library-recipes.png" alt-text="Microsoft Entra ID registering with Darwinbox.":::
 
 Configure the recipes based on your needs to enable the creation, updating, and deletion of user accounts in your Microsoft Entra ID tenant. 
 
