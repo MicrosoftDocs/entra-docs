@@ -18,19 +18,17 @@ The following prerequisites are required to implement this scenario.
 
 - Provisioning agent with build version [1.1.1367.0](~/identity/hybrid/cloud-sync/reference-version-history.md#1113700) or later.
 
-> [!NOTE]
-> The permissions to the service account are assigned during clean install only. In case you're upgrading from the previous version then permissions need to be assigned manually using PowerShell cmdlet:
->
-> ```
-> $credential = Get-Credential
->
-> Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -TargetDomainCredential $credential
-> ```
-> If the permissions are set manually, you need to ensure that Read, Write, Create, and Delete all properties for all descendent Groups and User objects.
->
-> These permissions aren't applied to AdminSDHolder objects by default
-
-[Microsoft Entra provisioning agent gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain)
+  > [!NOTE]
+  > The permissions to the service account are assigned during clean install only. If you're upgrading from a previous version, then you need to assign permissions manually by using PowerShell:
+  >
+  > ```powershell
+  > $credential = Get-Credential
+  >
+  > Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -TargetDomainCredential $credential
+  > ```
+  > Make you sure you allow Read, Write, Create, and Delete all properties for all descendent Groups and User objects.
+  >
+  > These permissions aren't applied to AdminSDHolder objects by default by the [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain).
 
 - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
   - Required for global catalog lookup to filter out invalid membership references.
