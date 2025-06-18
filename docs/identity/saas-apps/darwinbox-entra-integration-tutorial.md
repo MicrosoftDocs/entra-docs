@@ -35,11 +35,11 @@ Next, create a single-tenant app registration and provide the credentials to Dar
 
 Go to the Entra portal, select **App Registrations**, and then select **New registration**. Create a single-tenant app as shown below.
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-id-darwinbox-register.png" alt-text="Screenshot of Microsoft Entra ID Register an application page.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-darwinbox-register.png" alt-text="Screenshot of Microsoft Entra ID Register an application page.":::
 
 Add the following three Microsoft Graph application permissions to let Darwinbox create the provisioning job: `Application.ReadWrite.OwnedBy`, send user data `SyncrhonizationData-User.Upload.OwnedBy`, and review the provisioning logs `ProvisioningLog.Read.All`.
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-id-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox.":::
 
 Create a client secret and provide the credentials to Darwinbox as specified in their guide.
 
@@ -51,7 +51,7 @@ Follow the Darwinbox guidance to set up the necessary app connections in Darwinb
 
 To sync custom attributes from Darwinbox to Entra, update the attribute mapping for the provisioning job in the Entra portal. 
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-id-attribute-mapping.png" alt-text="Screenshot of Microsoft Entra ID mapping page.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-attribute-mapping.png" alt-text="Screenshot of Microsoft Entra ID mapping page.":::
 
 Upload a CSV file with these mappings to Darwinbox.
 
