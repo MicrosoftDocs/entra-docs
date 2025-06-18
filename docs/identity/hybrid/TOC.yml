@@ -100,6 +100,7 @@
       href: connect/parallel-hybrid-migration.md
 
 - name: Cloud sync reference
+  items:
     - name: What is hybrid identity and AD integration?
       href: whatis-hybrid-identity.md
     - name: What is identity provisioning?
@@ -191,6 +192,8 @@
           href: cloud-sync/tutorial-group-provisioning.md
         - name: Using directory extensions with provisioning groups to AD
           href: cloud-sync/tutorial-directory-extension-group-provisioning.md
+        - name: Preserve and use the original OU for group provisioning
+          href: cloud-sync/how-to-preserve-original-organizational-unit.md
         - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
           href: cloud-sync/govern-on-premises-groups.md
     - name: Cloud-first approach with Group Source of Authority (SOA) 
