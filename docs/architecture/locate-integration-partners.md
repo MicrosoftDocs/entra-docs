@@ -8,6 +8,7 @@ ms.service: entra
 ms.topic: conceptual
 ms.date: 06/18/2025
 ms.reviewer: cammart
+ms.custom: references_regions
 
 #CustomerIntent: I want to get help from partner with expertise in planning and deploying Microsoft Entra scenarios. 
 ---
