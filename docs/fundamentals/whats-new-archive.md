@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 01/27/2025
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
