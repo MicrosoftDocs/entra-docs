@@ -3740,7 +3740,7 @@
         href: rhombus-systems-provisioning-tutorial.md
       - name: RingCentral
         href: ringcentral-provisioning-tutorial.md
-      - name: Rippling HCM Provisioning Integration with Entra ID
+      - name: Rippling HCM to Active Directory
         href: rippling-hcm-microsoft-entra-id-integration-tutorial.md
       - name: Robin
         href: robin-provisioning-tutorial.md
