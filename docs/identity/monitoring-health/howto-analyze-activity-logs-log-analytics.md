@@ -2,7 +2,7 @@
 title: Analyze activity logs using Log Analytics
 description: Learn how to analyze audit, sign-in, and provisioning logs Microsoft Entra ID using Log Analytics queries.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
