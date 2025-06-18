@@ -14,9 +14,7 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
 
-To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. SMS-based authentication lets frontlone workers enter an SMS code as a first factor for sign in. Users don't need to provide, or even know, their user name and password. 
-
-After their account is created by an identity administrator, they can enter their phone number at the sign-in prompt. They receive an SMS authentication code that they can provide to complete the sign-in. This authentication method simplifies fronline worker access to applications and services.
+To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. Entra SMS-based authentication allows users to sign in using only a registered phone number and a one-time passcode (OTP) sent via SMS, no username or password required. This is different from Entra SMS multi-factor authentication, which typically requires a username, password, and SMS as MFA method. This authentication method is primarily designed to simplify sign-in experience of fronline workers and not recommended for Information workers (IW).
 
 The rest of this article shows you how to enable SMS-based authentication as a first factor for select users or groups in Microsoft Entra ID. For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
 
