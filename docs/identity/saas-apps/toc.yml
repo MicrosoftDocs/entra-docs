@@ -3436,7 +3436,7 @@
         href: cybsafe-provisioning-tutorial.md
       - name: Dagster Cloud
         href: dagster-cloud-provisioning-tutorial.md
-      - name: Darwinbox HR Integration 
+      - name: Darwinbox to Microsoft Entra ID
         href: darwinbox-hr-integration-tutorial.md
       - name: Datadog
         href: datadog-provisioning-tutorial.md

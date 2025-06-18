@@ -20,7 +20,7 @@ ai-usage: ai-assisted
 
 The document provides a step-by-step guide for integrating Darwinbox with Microsoft Entra ID. The steps include establishing a connection, configuring attribute mapping, testing account provisioning, configuring account access rules, and monitoring provisioning. Use this integration to configure cloud-native users directly in Microsoft Entra ID. This integration allows IT admins to automate business processes using Microsoft Entra ID Governance Lifecycle Workflows.
 
-For detailed guidance on how to integrate your Darwinbox environment, reference the Dawinbox guide here. Select the Help docs link next to the application name.
+For detailed guidance on how to integrate your Darwinbox environment, reference the Darwinbox guide [here](https://help.darwinbox.com/r/Integration-Templates/Darwinbox-Microsoft-Entra-ID-Connector). 
 
 Follow these high-level steps for configuring the app integration with Microsoft Entra ID in the Darwinbox Portal.
 
