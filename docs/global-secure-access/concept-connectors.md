@@ -57,11 +57,11 @@ You can monitor your connectors from the machine they're running on, using eithe
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as `_inactive_` and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart the computer to fully remove the service.
 
-## Automatic updates
+## Connector updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
+Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors may update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
 
-If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
+If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector. Note that not all updates are scheduled for automatic update. It is recommended that you monitor the [version history page](reference-version-history.md) for information about whether an update is deployed automatically or manually via the Microsoft Entra portal.
 
 For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
 
