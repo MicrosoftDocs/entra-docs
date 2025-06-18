@@ -11,14 +11,10 @@ ms.reviewer: dhanyak
 
 # How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID
 
-
 Give an overview for the section and calls out what the article covers. 
 
 
 
-
-
- 
 
 
 
@@ -62,6 +58,7 @@ Note that ConsistencyLevel:eventual header must be used.
 
 We can continue to use the Audit logs to determine the status for last 30 days.
 
+
 ## How to use Azure Monitor to create workbooks and reports using Log Analytics 
 
 For more information about how to create custom queries, see [Understand how provisioning integrates with Azure Monitor logs](/entra/identity/app-provisioning/application-provisioning-log-analytics).
@@ -75,4 +72,3 @@ Talk about how to integrate with Azure Monitoring and talk about which events Ad
 - For more information about how to configure Group SOA, see How to configure Group SOA.
 
 - For more information about how Group SOA works, see How Group SOA works.
-
