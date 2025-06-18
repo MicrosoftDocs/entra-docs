@@ -97,6 +97,8 @@
       href:  cloud-sync/tutorial-group-provisioning.md
     - name:  Using directory extensions with provisioning groups to AD
       href:  cloud-sync/tutorial-directory-extension-group-provisioning.md
+    - name:  Preserve the original OU
+      href:  cloud-sync/how-to-preserve-original-organizational-unit.md
     - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
       href:  cloud-sync/govern-on-premises-groups.md
   - name: Migration scenarios for cloud sync
