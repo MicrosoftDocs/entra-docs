@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to 
-ms.date: 09/11/2024
+ms.date: 06/18/2025
 
 #CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
 ---
@@ -61,7 +61,7 @@ As a manager, you can request an access package for a direct report by doing the
 
 1. On the Access packages page, locate the access package you want to request for a direct report and select **Request**.
     
-1. On the Request pane under **Request details** select requesting for **Someone else**.
+1. On the Request pane under **Request details**, select requesting for **Someone else**.
     :::image type="content" source="media/entitlement-management-request-behalf/manager-request-package.png" alt-text="Screenshot of manager requesting access package for direct employee.":::
 1. Fill in additional information needed to request an access package for the direct report.
     :::image type="content" source="media/entitlement-management-request-behalf/manager-request-questions.png" alt-text="Screenshot of justification questions for requesting an access package for a direct report.":::
