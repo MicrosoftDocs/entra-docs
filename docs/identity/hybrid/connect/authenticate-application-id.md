@@ -269,7 +269,7 @@ When you get a warning from Entra Connect Sync when you use the BYOC option, we 
      Set-ADSyncScheduler -SyncCycleEnabled $true
      ```
 
-1. Verify that the synchronization cycle is successful.
+1. Verify that the sync cycle is successful.
 1. Remove the old certificate from the `LOCAL_MACHINE` store for BYOC and BYOA options.
 
 You can rotate the certificate at any point in time, even if the current certificate is still not due for rotation or the current certificate expired.
@@ -392,5 +392,5 @@ As part of the rollback, you need to re-create the DSA account. This new account
 ## Related content
 
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
-- [Microsoft Entra Connect cloud sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
+- [Microsoft Entra Cloud Sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
 - [Microsoft Entra Connect version history](reference-connect-version-history.md)
