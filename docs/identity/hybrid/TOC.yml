@@ -94,7 +94,7 @@
           href: cloud-sync/tutorial-directory-extension-group-provisioning.md
         - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
           href: cloud-sync/govern-on-premises-groups.md
-    - name: Source of Authority 
+    - name: Cloud-first approach with Group Source of Authority (SOA) 
       items:
       - name: Concepts
         items:
