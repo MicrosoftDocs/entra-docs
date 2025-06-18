@@ -26,7 +26,7 @@ To configure Microsoft Entra Private Access for Active Directory Domain Controll
 - Open inbound Transmission Control Protocol (TCP) port `1337` in the Windows Firewall on the DCs.
 - Identify the Service Principal Names (SPNs) of the private apps you want to protect. You add these SPNs in the policy for Private Access Sensors that are installed on the DCs.
 > [!NOTE]
-> The SPNs are *case insensitive* and should be an *exact match* or a *wildcard* in the format `<service class e.g. cifs>*`.
+> The SPNs are *case insensitive* and should be an *exact match* or a wildcard in the format `<serviceclass>/*` such as `cifs/*`.
 - Understand that one Private Access Sensor can be installed on a DC. To test this functionality, you don’t need to install sensors on all DCs. A sensor is installed in `Audit` mode by default and you need to change it to `enforce` mode.
 - As a best practice, we recommend testing this functionality with the private apps first. You can enforce MFA to the DC itself by using its SPN, however, we recommend that you test that at a later stage to avoid any issues of admin lockout.
 - If you use NT LAN Manager (NTLM) v1/v2 in your environment, you might need to restrict NTLM and use Kerberos auth in the domain.
