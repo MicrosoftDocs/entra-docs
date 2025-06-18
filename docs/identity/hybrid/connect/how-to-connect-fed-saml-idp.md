@@ -245,7 +245,7 @@ The following procedure walks you through converting an existing standard domain
    </IDPSSODescriptor>
    ```
 
-For more information, see [New-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration), for MFA configuration options see [internalDomainFederation](https://learn.microsoft.com/en-us/graph/api/resources/internaldomainfederation?view=graph-rest-1.0#federatedidpmfabehavior-values).
+For more information, see [New-MgDomainFederationConfiguration](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration), for MFA configuration options see [internalDomainFederation](https://learn.microsoft.com/graph/api/resources/internaldomainfederation?view=graph-rest-1.0#federatedidpmfabehavior-values).
 
 
 >[!NOTE]
