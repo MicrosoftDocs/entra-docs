@@ -29,7 +29,7 @@ This stores each group’s original OU path in a writable attribute before SOA (
 
 ## Step 2: Enable Sync for extensionAttribute13 in Azure AD Cloud Sync or Connect Sync 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Hybrid Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Provisioning** > **Cloud Sync**. 
 2. Select your Cloud Sync configuration. 
 3. Under **Attribute Mapping**, for Group objects: 
