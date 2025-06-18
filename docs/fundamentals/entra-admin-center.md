@@ -40,7 +40,7 @@ For more information about configuring and managing Microsoft Entra ID solutions
 * [App registrations](~/identity-platform/application-model.md)
 * [Roles and admins](~/identity/role-based-access-control/custom-overview.md)
 * [External identities](~/external-id/external-identities-overview.md)
-* [Conditional access](~/identity/conditional-access/overview.md)
+* [Conditional Access](~/identity/conditional-access/overview.md)
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 * [Identity secure score](~/identity/monitoring-health/concept-identity-secure-score.md)
 * [Authentication methods](~/identity/authentication/concept-authentication-methods.md)
