@@ -612,11 +612,5 @@
       href: connect/reference-connect-version-history-archive.md
     - name: How to use BypassDirSyncOverrides
       href: connect/how-to-bypassdirsyncoverrides.md
-- name: Source of Authority reference
-  items:
-  - name: How to guides
-    items:
-    - name: Audit and monitor Group SOA
-      href: source-of-authority/how-to-source-of-authority-auditing-monitoring.md
 
 

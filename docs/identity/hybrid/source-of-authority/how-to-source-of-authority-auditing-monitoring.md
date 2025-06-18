@@ -36,25 +36,23 @@ You can access Audit logs in the Azure portal.
 
    :::image type="content" source="media/how-to-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD to cloud activity selection.":::
 
-## How to use MS Graph API to create reports for SOA 
+## How to use Microsoft Graph API to create reports for SOA 
 
-ADO: https://identitydivision.visualstudio.com/Engineering/_workitems/edit/3127457 (for count and filter) 
+You can use Microsoft Graph to report data such as how many objects are converted to SOA, filter data for converted groups, or identify objects that were converted to SOA and rolled back. 
 
-### Report 1: How to get count of all SOA converted objects: how to use MS Graph API $count to get the count of SOA converted groups
+### Get a count of all SOA converted objects
 
-add details from https://identitydivision.visualstudio.com/Engineering/_workitems/edit/3127457
+how to use MS Graph API $count to get the count of SOA converted groups, add details from https://identitydivision.visualstudio.com/Engineering/_workitems/edit/3127457
 
-### Report 2: How to filter SOA converted objects: how to use MS Graph API $filter to filter on SOA Converted groups
+### Filter reports for SOA converted objects
 
-add details from https://identitydivision.visualstudio.com/Engineering/_workitems/edit/3127457
+how to use MS Graph API $filter to filter on SOA Converted groups, add details from https://identitydivision.visualstudio.com/Engineering/_workitems/edit/3127457
 
-### Report 3: How to identify SOA objects that were rolled back 
-
-(https://identitydivision.visualstudio.com/Engineering/_workitems/edit/3157505)  
+### Identify SOA objects that are rolled back 
 
 To help troubleshoot during rollback, you can use an immutable ID in combination with **isCloudManaged** attribute to determine if an object is a cloud native or converted for SOA. If the Immutable ID is set to null, then, it will be treated as a cloud native object. If anyone uses MSGraph to set the Immutable ID, then, sync client can take over if there's a hard match.
 
-How it works:
+Here is how it works:
 
 Query for **OnPremisesImmutableID** != null and **DirSyncEnabled** != true
 
