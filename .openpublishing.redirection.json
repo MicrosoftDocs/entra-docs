@@ -536,6 +536,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/cloudknox-permissions-management-platform-tutorial.md",
+      "redirect_url": "/entra/permissions-management/overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-release-version-history.md",
       "redirect_url": "/entra/global-secure-access/reference-version-history",
       "redirect_document_id": false

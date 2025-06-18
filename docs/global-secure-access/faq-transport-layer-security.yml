@@ -23,7 +23,7 @@ sections:
           - Before you enable TLS inspection in a live environment, work with your organization's legal and privacy teams to draft a Terms of Use (ToU) policy for users.  
           - Select a root certificate authority or intermediate certificate authority to sign the Certificate Signing Request (CSR) for Global Secure Access.  
           - Set up a TLS policy that fits your organization's needs.   
-          - Create a conditional access policy and associate it with the Global Secure Access security profile that's linked to the TLS policy.   
+          - Create a Conditional Access policy and associate it with the Global Secure Access security profile that's linked to the TLS policy.   
           - Make sure the root certificate authority or intermediate certificate authority is installed on all client devices to establish trust for TLS inspection.   
   
       - question: What is certificate pinning, and how does it affect TLS inspection? 
