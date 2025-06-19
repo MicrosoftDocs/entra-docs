@@ -66,7 +66,7 @@ Refer to the Darwinbox integration guide and create the following three CSV file
 
 ### Add Darwinbox custom attributes to Entra provisioning job
 
-Refer to the steps documented [here](../app-provisioning/inbound-provisioning-api-custom-attributes#step-1---extend-the-provisioning-app-schema~) to introduce the following custom Darwinbox SCIM attributes in the Entra provisioning job. 
+Refer to the steps documented [here](../inbound-provisioning-api-custom-attributes#step-1---extend-the-provisioning-app-schema~) to introduce the following custom Darwinbox SCIM attributes in the Entra provisioning job. 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:UsageLocation 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:EmployeeType 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:HireDate 
