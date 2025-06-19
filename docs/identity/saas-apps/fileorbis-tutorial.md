@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<ApplicationURL>/portal`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<ApplicationURL>/portal/tr/Account/LoginSAMLConsume`
+    `https://<ApplicationURL>/portal/Account/LoginSAMLConsume`
 
     c. In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<ApplicationURL>/portal`
