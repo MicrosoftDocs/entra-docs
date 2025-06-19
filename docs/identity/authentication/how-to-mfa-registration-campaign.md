@@ -285,7 +285,7 @@ Yes, we support embedded browser views in certain applications. We don't nudge u
 
 **Can users be nudged within a single sign-on (SSO) session?**
  
-Nudge doesn't trigger if the user is already signed in with SSO. In an SSO session, the user is already authenticated. The registration campaign works only after the user completes MFA.
+Nudge doesn't trigger if the user is already signed in with SSO. 
 
 **Can users be nudged on a mobile device?** 
 
