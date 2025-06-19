@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
    | Email     | user.userprincipalname |
    | Groups    | user.assignedroles     |
 
-1. In order to properly pass along your ”Groups” SAML assertions, you need to configure App roles and set the value to match the role mappings that are set within AppNeta Performance Manager. Under **Entra ID** > **App registrations**, select **Appneta Performance Manager**.
+1. In order to properly pass along your "Groups" SAML assertions, you need to configure App roles and set the value to match the role mappings that are set within AppNeta Performance Manager. Under **Entra ID** > **App registrations**, select **AppNeta Performance Manager**.
 
    ![Screenshot that shows the App Registrations with Appneta Performance Manager at the bottom.](./media/appneta-tutorial/app-registrations.png)
 
