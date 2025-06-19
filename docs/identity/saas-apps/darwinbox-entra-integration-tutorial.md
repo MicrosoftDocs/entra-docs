@@ -35,7 +35,7 @@ Go to the Microsoft Entra admin center, select **App Registrations**, and then s
 
 Add the following three Microsoft Graph application permissions to let Darwinbox create the provisioning job: `Application.ReadWrite.OwnedBy`, send user data `SyncrhonizationData-User.Upload.OwnedBy`, and review the provisioning logs `ProvisioningLog.Read.All`.
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox." lightbox="media/darwinbox-entra-integration-tutorial/entra-darwinbox-sync.png":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID Darwinbox Sync page for API permissions." lightbox="media/darwinbox-entra-integration-tutorial/entra-darwinbox-sync.png":::
 
 Create a client secret and provide the credentials to Darwinbox as specified in their guide.
 
@@ -66,7 +66,7 @@ Refer to the Darwinbox integration guide and create the following three CSV file
 
 ### Add Darwinbox custom attributes to Entra provisioning job
 
-Refer to the steps documented [here](~/app-provisioning/inbound-provisioning-api-custom-attributes.md#step-1---extend-the-provisioning-app-schema) to introduce the following custom Darwinbox SCIM attributes in the Entra provisioning job. 
+Refer to the steps documented [here](/docs/identity/app-provisioning/inbound-provisioning-api-custom-attributes.md#step-1---extend-the-provisioning-app-schema#) to introduce the following custom Darwinbox SCIM attributes in the Entra provisioning job. 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:UsageLocation 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:EmployeeType 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:HireDate 
@@ -79,7 +79,7 @@ Review and update the Microsoft Entra ID API-driven provisioning job attribute m
 
 Once you’ve configured the connector, Darwinbox has multiple recipes in place to manage the Joiner, Mover, Leaver lifecycle of your employees. 
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-connector-library-recipes.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox." lightbox="media/darwinbox-entra-integration-tutorial/darwinbo-connector-library-recipes.png":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-connector-library-recipes.png" alt-text="Screenshot of Darwinbox's featured recipes for Microsoft Entra." lightbox="media/darwinbox-entra-integration-tutorial/darwinbox-connector-library-recipes.png":::
 
 Configure the recipes based on your needs to enable the creation, updating, and deletion of user accounts in your Microsoft Entra ID tenant. 
 
