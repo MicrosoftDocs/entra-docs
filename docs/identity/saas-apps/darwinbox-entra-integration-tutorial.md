@@ -46,11 +46,14 @@ Create a client secret and provide the credentials to Darwinbox as specified in 
 
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of the Darwinbox Studio." lightbox="media/darwinbox-entra-integration-tutorial/darwinbox-studio.png":::
 
-1. Open the **Microsoft** app and configure connection parameters obtained from step 1. Provide **Client ID**,  **Client Secret** and **OAuth Token endpoint** details. The connectivity information specified here will be used by Darwinbox to create a provisioning app in your Microsoft Entra ID tenant.  
+1. Open the **Microsoft** app and configure connection parameters obtained from step 1. Provide **Client ID**,  **Client Secret** and **OAuth Token endpoint** details. The connectivity information specified here is used by Darwinbox to create a provisioning app in your Microsoft Entra ID tenant.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png" alt-text="Screenshot of Creating a connection for Microsoft." lightbox="media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png":::
 1. Manually trigger the recipe task **Configure application and Job in Microsoft Entra SCIM**. This creates the API-driven provisioning job that Darwinbox uses to send user information.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/configure-app-and-job-entra.png" alt-text="Screenshot of configuring the application and job in Entra." lightbox="media/darwinbox-entra-integration-tutorial/configure-app-and-job-entra.png":::
-1. In Microsoft Entra admin center, browse to **Enterprise Applications** and open the provisioning app created by Darwinbox. Copy the **Service Principal Id/Object ID** from the Overview blade. Open the Provisioning blade of this app, go to the Overview section’s **View technical information** and copy the **Provisioning Job ID**.
+1. In Microsoft Entra admin center, browse to **Enterprise Applications** and open the provisioning app created by Darwinbox. 
+    1. Copy the **Service Principal Id/Object ID** from the Overview blade. 
+    1. Open the Provisioning blade of this app, and go to the Overview section’s **View technical information**.
+    1. Copy the **Provisioning Job ID**.
 1. In Darwinbox Studio, open the **Microsoft Entra** app and configure connection details, specifically entering the **ServicePrincipalID** and **Provisioning Job ID**.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png" alt-text="Screenshot of editing a connection for Microsoft Entra." lightbox="media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png":::
 
@@ -59,25 +62,26 @@ Create a client secret and provide the credentials to Darwinbox as specified in 
 ### Map Darwinbox attributes to Entra ID SCIM attributes
 
 Refer to the Darwinbox integration guide and create the following three CSV files that will be used as input in the Darwinbox recipes.
-- CSV file that maps Darwinbox attributes to Entra ID SCIM attributes. This file is used as input in the Darwinbox recipes. 
+- CSV file that maps Darwinbox attributes to Entra ID SCIM attributes. This file is used as input in the Darwinbox recipes.   
+
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png" alt-text="Screenshot of example CSV file for Darwinbox to Entra keys." lightbox="media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png":::
 - CSV file that instructs which domain should be used for email ID creation based on either group company name or department.
 - CSV file that instructs how groups and licenses should be assigned (Optional).
 
 ### Add Darwinbox custom attributes to Entra provisioning job
 
-Refer to the steps documented [here](~/identity/app-provisioning/inbound-provisioning-api-custom-attributes.md#step-1---extend-the-provisioning-app-schema~) to introduce the following custom Darwinbox SCIM attributes in the Entra provisioning job. 
+Refer to the steps documented [here](~/identity/app-provisioning/inbound-provisioning-api-custom-attributes.md#step-1---extend-the-provisioning-app-schema) to introduce the following custom Darwinbox SCIM attributes in the Entra provisioning job. 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:UsageLocation 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:EmployeeType 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:HireDate 
 - urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:TerminationDate 
 
-Review and update the Microsoft Entra ID API-driven provisioning job attribute mapping. Ensure that you’re mapping includes ```employeeHireDate``` and ```employeeLeaveDateTime``` attributes so you can configure Joiner-Mover-Leaver Lifecycle Workflows.  
+Review and update the Microsoft Entra ID API-driven provisioning job attribute mapping. Ensure that your mapping includes ```employeeHireDate``` and ```employeeLeaveDateTime``` attributes so you can configure Joiner-Mover-Leaver Lifecycle Workflows.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-attribute-mapping.png" alt-text="Screenshot of the Attribute Mapping screen." lightbox="media/darwinbox-entra-integration-tutorial/entra-attribute-mapping.png":::
 
 ### Set up Darwinbox automations for user provisioning
 
-Once you’ve configured the connector, Darwinbox has multiple recipes in place to manage the Joiner, Mover, Leaver lifecycle of your employees. 
+Once you’ve configured the connector, Darwinbox has multiple recipes in place to manage the Joiner-Mover-Leaver lifecycle of your employees. 
 
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-connector-library-recipes.png" alt-text="Screenshot of Darwinbox's featured recipes for Microsoft Entra." lightbox="media/darwinbox-entra-integration-tutorial/darwinbox-connector-library-recipes.png":::
 
