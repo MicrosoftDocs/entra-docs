@@ -339,3 +339,7 @@ items:
     items: 
     - name: Secure Generative AI 
       href: secure-generative-ai.md
+  - name: Resources
+    items:
+    - name: Microsoft Entra Suite services and integration partners
+      href: locate-integration-partners.md
