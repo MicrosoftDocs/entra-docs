@@ -64,7 +64,7 @@ Create a client secret and provide the credentials to Darwinbox as specified in 
 Refer to the Darwinbox integration guide and create the following three CSV files that will be used as input in the Darwinbox recipes.
 - CSV file that maps Darwinbox attributes to Entra ID SCIM attributes. This file is used as input in the Darwinbox recipes.   
 
-    :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png" alt-text="Screenshot of example CSV file for Darwinbox to Entra keys." lightbox="media/darwinbox-entra-integration-  tutorial/darwinbox-key-entra-key.png":::
+    :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png" alt-text="Screenshot of example CSV file for Darwinbox to Entra keys." lightbox="media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png":::
 - CSV file that instructs which domain should be used for email ID creation based on either group company name or department.
 - CSV file that instructs how groups and licenses should be assigned (Optional).
 
