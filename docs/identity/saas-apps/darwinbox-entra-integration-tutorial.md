@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 ---
 
 
-# Darwinbox HR integration with Microsoft Entra ID
+# Integrate Darwinbox HR with Microsoft Entra ID
 
 The document provides a step-by-step guide for integrating Darwinbox with Microsoft Entra ID. The steps include establishing a connection, configuring attribute mapping, testing account provisioning, configuring account access rules, and monitoring provisioning. Use this integration to configure cloud-native users directly in Microsoft Entra ID. This integration allows IT admins to automate business processes using Microsoft Entra ID Governance Lifecycle Workflows.
 
@@ -25,49 +25,64 @@ For detailed guidance on how to integrate your Darwinbox environment, reference 
 Follow these high-level steps for configuring the app integration with Microsoft Entra ID in the Darwinbox Portal.
 
 
-## Install connectors in Darwinbox Studio
-Open Darwinbox studio and navigate to **Connector Library**. Search for and install the **Microsoft** and **Microsoft Entra** connectors 
-
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of the Darwinbox Studio.":::
-
 ## Create single-tenant app registration
-Next, create a single-tenant app registration and provide the credentials to Darwinbox so they can perform actions such as creating the provisioning job and sending user data to your Entra tenant.
+In this step, we'll create a single-tenant app registration in Microsoft Entra ID and grant it the necessary permissions so that Darwinbox can use the client credentials of this application to create a provisioning job and send user data to your Microsoft Entra ID tenant.  
 
-Go to the Entra portal, select **App Registrations**, and then select **New registration**. Create a single-tenant app as shown below.
+Go to the Microsoft Entra admin center, select **App Registrations**, and then select **New registration**. Create a single-tenant app as shown below.
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-darwinbox-register.png" alt-text="Screenshot of Microsoft Entra ID Register an application page.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-darwinbox-register.png" alt-text="Screenshot of Microsoft Entra ID Register an application page." lightbox="media/darwinbox-entra-integration-tutorial/entra-darwinbox-register.png":::
 
 Add the following three Microsoft Graph application permissions to let Darwinbox create the provisioning job: `Application.ReadWrite.OwnedBy`, send user data `SyncrhonizationData-User.Upload.OwnedBy`, and review the provisioning logs `ProvisioningLog.Read.All`.
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-darwinbox-sync.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox." lightbox="media/darwinbox-entra-integration-tutorial/entra-darwinbox-sync.png":::
 
 Create a client secret and provide the credentials to Darwinbox as specified in their guide.
 
-## Create  provisioning job and set up app connections in Darwinbox
+## Configure connectors in Darwinbox Studio
+1. Open Darwinbox studio and navigate to **Connector Library**. 
+1. Search for **Microsoft**. Install the **Microsoft** parent app connector and the **Microsoft Entra** child app connector.
 
-Follow the Darwinbox guidance to set up the necessary app connections in Darwinbox studio. These connections let Darwinbox authenticate with your tenant and grant the permissions needed to create a provisioning job and provision users into your tenant.
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of the Darwinbox Studio." lightbox="media/darwinbox-entra-integration-tutorial/darwinbox-studio.png":::
 
-### Configure attribute mapping in Entra and upload mapping to Darwinbox
+1. Open the **Microsoft** app and configure connection parameters obtained from step 1. Provide **Client ID**,  **Client Secret** and **OAuth Token endpoint** details. The connectivity information specified here will be used by Darwinbox to create a provisioning app in your Microsoft Entra ID tenant.  
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png" alt-text="Screenshot of Creating a connection for Microsoft." lightbox="media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png":::
+1. Manually trigger the recipe task **Configure application and Job in Microsoft Entra SCIM**. This creates the API-driven provisioning job that Darwinbox can use to send user information.  
 
-To sync custom attributes from Darwinbox to Entra, update the attribute mapping for the provisioning job in the Entra portal. 
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/configure-app-and-job-entra.png" alt-text="Screenshot of configuring the application and job in Entra." lightbox="media/darwinbox-entra-integration-tutorial/configure-app-and-job-entra.png":::
+1. In Microsoft Entra admin center, browse to **Enterprise Applications** and open the provisioning app created by Darwinbox. Copy the **Service Principal Id/Object ID** from the Overview blade. Open the Provisioning blade of this app, and go to the Overview section’s **View technical information** and copy the **Provisioning Job ID**.
+1. In Darwinbox Studio, open the **Microsoft Entra** app and configure connection details, specifically entering the **ServicePrincipalID** and **Provisioning Job ID**.  
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png" alt-text="Screenshot of editing a connection for Microsoft Entra." lightbox="media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png":::
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-attribute-mapping.png" alt-text="Screenshot of Microsoft Entra ID mapping page.":::
+## Configure attribute mapping in Entra and upload mapping to Darwinbox
 
-Upload a CSV file with these mappings to Darwinbox.
+### Map Darwinbox attributes to Entra ID SCIM attributes
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png" alt-text="Image of CSV file showing key mapping from Entra ID to Darwinbox.":::
+Refer to the Darwinbox integration guide and create the following three CSV files that will be used as input in the Darwinbox recipes.
+- CSV file that maps Darwinbox attributes to Entra ID SCIM attributes. This file is used as input in the Darwinbox recipes. 
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png" alt-text="Screenshot of example CSV file for Darwinbox to Entra keys." lightbox="media/darwinbox-entra-integration-tutorial/darwinbox-key-entra-key.png":::
+- CSV file that instructs which domain should be used for email ID creation based on either group company name or department.
+- CSV file that instructs how groups and licenses should be assigned (Optional).
 
-The Darwinbox connector documentation provides guidance and templates on how to update attribute mappings.
+### Add Darwinbox custom attributes to Entra provisioning job
 
-### Setup Darwinbox automations for user provisioning
+Refer to the steps documented [here](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-custom-attributes#step-1---extend-the-provisioning-app-schema ) to introduce the following custom Darwinbox SCIM attributes in the Entra provisioning job. 
+- urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:UsageLocation 
+- urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:EmployeeType 
+- urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:HireDate 
+- urn:ietf:params:scim:schemas:extension:Darwinbox:1.0:User:TerminationDate 
+
+Review and update the Microsoft Entra ID API-driven provisioning job attribute mapping. Ensure that you’re mapping includes ```employeeHireDate``` and ```employeeLeaveDateTime``` attributes so you can configure Joiner-Mover-Leaver Lifecycle Workflows.  
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/entra-attribute-mapping.png" alt-text="Screenshot of the Attribute Mapping screen." lightbox="media/darwinbox-entra-integration-tutorial/entra-attribute-mapping.png":::
+
+### Set up Darwinbox automations for user provisioning
 
 Once you’ve configured the connector, Darwinbox has multiple recipes in place to manage the Joiner, Mover, Leaver lifecycle of your employees. 
 
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-connector-library-recipes.png" alt-text="Microsoft Entra ID registering with Darwinbox.":::
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-connector-library-recipes.png" alt-text="Screenshot of Microsoft Entra ID registering with Darwinbox." lightbox="media/darwinbox-entra-integration-tutorial/darwinbo-connector-library-recipes.png":::
 
 Configure the recipes based on your needs to enable the creation, updating, and deletion of user accounts in your Microsoft Entra ID tenant. 
 
-### Monitoring provisioning
+### Monitor provisioning
 
 To monitor the status of your provisioning events, go to the provisioning logs or use the provisioning workbook.
 
@@ -87,4 +102,4 @@ Extend your HR-driven provisioning process to automate business processes and se
 
 ## Related content
 
-> To learn how to monitor the status of your provisioning events, see [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md).
+To learn how to monitor the status of your provisioning events, see [User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md).
