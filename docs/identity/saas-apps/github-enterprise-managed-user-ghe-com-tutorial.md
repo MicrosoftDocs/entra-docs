@@ -98,7 +98,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 ## Configure GitHub Enterprise Managed User SSO
 
-To configure single sign-on on **GitHub Enterprise Managed User** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [GitHub Enterprise Managed User support team](https://support.github.com/early-access/data-residency). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **GitHub Enterprise Managed User** side, you can follow the documentation for [configuring your Identity Provider in the GitHub documentation](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/configuring-authentication-for-enterprise-managed-users/configuring-saml-single-sign-on-for-enterprise-managed-users#configure-your-enterprise).
 
 ### Create GitHub Enterprise Managed User test user
 
