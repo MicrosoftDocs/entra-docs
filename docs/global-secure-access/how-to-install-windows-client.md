@@ -3,19 +3,20 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/13/2025
+ms.date: 06/18/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
+
 # Customer intent: Windows users, I want to download and install the Global Secure Access client.
 ---
-# Global Secure Access client for Microsoft Windows
+# Install the Global Secure Access client for Microsoft Windows
 The Global Secure Access client is an essential part of Global Secure Access. It helps you manage and secure network traffic on end-user devices. The client routes traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md) you set up in the portal decide which traffic the Global Secure Access client routes to the cloud service.
 
->[!NOTE]
->The Global Secure Access Client is also available for macOS, Android, and iOS. To learn how to install the Global Secure Access client on these platforms, see [Global Secure Access client for macOS](how-to-install-macos-client.md), [Global Secure Access client for Android](how-to-install-android-client.md), and [Global Secure Access client for iOS](how-to-install-ios-client.md).
+> [!NOTE]
+> The Global Secure Access Client is also available for macOS, Android, and iOS. To learn how to install the Global Secure Access client on these platforms, see [Global Secure Access client for macOS](how-to-install-macos-client.md), [Global Secure Access client for Android](how-to-install-android-client.md), and [Global Secure Access client for iOS](how-to-install-ios-client.md).   
 
 This article describes how to download and install the Global Secure Access client for Windows.
 
@@ -173,12 +174,24 @@ To manually install the Global Secure Access client:
 1. Hover over the connection icon to open the client status notification, which should show as **Connected**.   
 :::image type="content" source="media/how-to-install-windows-client/global-secure-access-client-installed-connected.png" alt-text="Screenshot showing the client is connected.":::
 
+## Client interface
+To open the Global Secure Access client interface, select the Global Secure Access icon in the system tray. The client interface provides a view of the current connection status, the channels configured for the client, and access to diagnostics tools.       
+
+### Connections view
+From the **Connections** view, you can see the client **Status** and the **Channels** configured for the client. If you wish to disable the client, select the **Disable** button. You can use the information in the **Additional details** section to help troubleshoot the client connection. Select **Show more details** to expand the section and view additional information.
+
+### Troubleshooting view
+From the **Troubleshooting** view, you can perform various diagnostics tasks. You can export and share logs with your IT admin. You can also access the **Advanced diagnostics** tool, which provides an assortment of troubleshooting tools. The **Advanced diagnostics** utility is also accessible from the client system tray icon menu.
+
+### Settings view
+Switch to the **Settings** view to check the installed **Version** or access the **Microsoft Privacy Statement**.
+
 ## Client actions
-To view the available client menu actions, right-click the Global Secure Access system tray icon.
+To view the available client menu actions, right-click the Global Secure Access system tray icon.   
 :::image type="content" source="media/how-to-install-windows-client/client-install-all-actions.png" alt-text="Screenshot showing the complete list of Global Secure Access client actions.":::
 
 > [!TIP]
-> The Global Secure Access client menu actions will vary according to your [Client registry keys](#client-registry-keys) configuration.
+> The Global Secure Access client menu actions vary according to your [Client registry keys](#client-registry-keys) configuration.
 
 |Action   |Description  |
 |---------|---------|
