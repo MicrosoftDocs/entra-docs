@@ -28,9 +28,9 @@ You configure and test Microsoft Entra single sign-on for my.sdworx.com in a tes
 
 
 
-You configure and test Microsoft Entra single sign-on for my.sdworx.com in a test environment (my.acc.sdworx.com) but not by using this gallery app (import SP metadata, to be provided by your  my.sdworx.com contact). my.sdworx.com supports **IDP** and **SP** initiated single sign-on.
+You can configure and test Microsoft Entra single sign-on for my.sdworx.com in a test environment (my.acc.sdworx.com) but not by using the gallery app (import SP metadata, to be provided by your my.sdworx.com contact). My.sdworx.com supports **IDP** and **SP** initiated single sign-on.
  
-When using **SP** initiated initiated single sign-on, only “email domain” realm discovery is supported, which means only company/enterprise email addresses are allowed (no private email addresses like hotmail.com, gmail.com, …)
+When using **SP** initiated single sign-on, only “email domain” realm discovery is supported, which means only company/enterprise email addresses are allowed.
 
 <!-- Changes done by Rhythm -->
 
