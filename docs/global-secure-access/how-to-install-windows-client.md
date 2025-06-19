@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/18/2025
+ms.date: 06/19/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -22,8 +22,8 @@ This article describes how to download and install the Global Secure Access clie
 
 ## Prerequisites
 
-- A Microsoft Entra tenant that's onboarded to Global Secure Access.
-- A managed device that's joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
+- A Microsoft Entra tenant onboarded to Global Secure Access.
+- A managed device joined to the onboarded tenant. The device must be either Microsoft Entra joined or Microsoft Entra hybrid joined. 
    - Microsoft Entra registered devices aren't supported.
 - The Global Secure Access client needs a 64-bit version of Windows 10 or Windows 11, or an Arm64 version of Windows 11.
    - Azure Virtual Desktop single-session is supported.
@@ -175,16 +175,19 @@ To manually install the Global Secure Access client:
 :::image type="content" source="media/how-to-install-windows-client/global-secure-access-client-installed-connected.png" alt-text="Screenshot showing the client is connected.":::
 
 ## Client interface
-To open the Global Secure Access client interface, select the Global Secure Access icon in the system tray. The client interface provides a view of the current connection status, the channels configured for the client, and access to diagnostics tools.       
+To open the Global Secure Access client interface, select the Global Secure Access icon in the system tray. The client interface provides a view of the current connection status, the channels configured for the client, and access to diagnostics tools.    
 
 ### Connections view
-From the **Connections** view, you can see the client **Status** and the **Channels** configured for the client. If you wish to disable the client, select the **Disable** button. You can use the information in the **Additional details** section to help troubleshoot the client connection. Select **Show more details** to expand the section and view additional information.
+From the **Connections** view, you can see the client **Status** and the **Channels** configured for the client. If you wish to disable the client, select the **Disable** button. You can use the information in the **Additional details** section to help troubleshoot the client connection. Select **Show more details** to expand the section and view additional information.   
+:::image type="content" source="media/how-to-install-windows-client/client-interface-connections.png" alt-text="Screenshot of the Connections view of the Global Secure Access client interface.":::   
 
 ### Troubleshooting view
-From the **Troubleshooting** view, you can perform various diagnostics tasks. You can export and share logs with your IT admin. You can also access the **Advanced diagnostics** tool, which provides an assortment of troubleshooting tools. The **Advanced diagnostics** utility is also accessible from the client system tray icon menu.
+From the **Troubleshooting** view, you can perform various diagnostics tasks. You can export and share logs with your IT admin. You can also access the **Advanced diagnostics** tool, which provides an assortment of troubleshooting tools. Note: you can also launch the **Advanced diagnostics** tool from the client system tray icon menu.   
+:::image type="content" source="media/how-to-install-windows-client/client-interface-troubleshooting.png" alt-text="Screenshot of the Troubleshooting view of the Global Secure Access client interface.":::   
 
 ### Settings view
-Switch to the **Settings** view to check the installed **Version** or access the **Microsoft Privacy Statement**.
+Switch to the **Settings** view to check the installed **Version** or access the **Microsoft Privacy Statement**.   
+:::image type="content" source="media/how-to-install-windows-client/client-interface-settings.png" alt-text="Screenshot of the Settings view of the Global Secure Access client interface.":::   
 
 ## Client actions
 To view the available client menu actions, right-click the Global Secure Access system tray icon.   

@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access Client for Windows: Advanced Diagn
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 06/18/2025
+ms.date: 06/19/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -26,6 +26,8 @@ Or
 1. Select the **Global Secure Access client** icon in the system tray.
 1. Switch to the **Troubleshooting** view.
 1. Under **Advanced diagnostics tool**, select **Run tool**.
+
+:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/client-interface-troubleshooting-run-tool.png" alt-text="Screenshot of the Troubleshooting view of the Global Secure Access client interface with the Run tool button highlighted.":::
 
 ## Overview tab
 The advanced diagnostics **Overview** tab shows general configuration details for the Global Secure Access client:
@@ -131,13 +133,12 @@ The following files are collected:
 |DeviceInformation.log |Environment variables including OS version and Global Secure Access client version.|
 |dsregcmd.txt|Output of dsregcmd /status showing device state including Microsoft Entra Joined, Hybrid Joined, PRT details, and Windows Hello for Business details. |
 |filterDriver.txt |Windows Filtering Platform filters |
-|ForwardingProfile.json |The json policy that was delivered to the Global Secure Access client and includes the Global Secure Access service edge IP address your Global Secure Access client is connecting to (*.globalsecureaccess.microsoft.com) and forwarding profile rules. |
-|GlobalSecureAccess-Boot-Trace.etl |Global Secure Access client debug logging |
+|ForwardingProfile.json |The json policy delivered to the Global Secure Access client. The policy includes the Global Secure Access service edge IP address your client connects to (*.globalsecureaccess.microsoft.com) and forwarding profile rules. |
 |GlobalSecureAccess-Boot-Trace.etl |Global Secure Access client debug logging |
 |Multiple .reg files |Global Secure Access client registry exports |
 |hosts |Host file |
 |installedPrograms.txt |Windows installed apps, which can be useful to understand what might be causing issues. |
-|ipconfig.txt |Ipconfig /all output including IP address and DNS servers that have been assigned to the device. |
+|ipconfig.txt |Ipconfig /all output including IP address and DNS servers assigned to the device. |
 |Kerberos_info.txt |Output of klist, klist tgt, and klist cloud_debug. This output is useful for troubleshooting kerberos issues, and SSO with Windows Hello for Business. |
 |LogsCollectorLog.log and LogsCollectorLog.log.x |Logs for the log collector process itself. These logs are useful if you're having issues with Global Secure Access log collection. |
 |Multiple .evtx |Exports of multiple Windows event logs. |
