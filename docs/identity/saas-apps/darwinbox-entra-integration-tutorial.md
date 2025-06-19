@@ -7,7 +7,7 @@ ms.reviewer: cmmdesai
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 06/18/2025
+ms.date: 06/19/2025
 ms.author: jfields
 ms.custom: ai-gen-description
 ai-usage: ai-assisted
@@ -26,7 +26,8 @@ Follow these high-level steps for configuring the app integration with Microsoft
 
 
 ## Create single-tenant app registration
-In this step, we'll create a single-tenant app registration in Microsoft Entra ID and grant it the necessary permissions so that Darwinbox can use the client credentials of this application to create a provisioning job and send user data to your Microsoft Entra ID tenant.  
+
+In this step, you'll create a single-tenant application in Microsoft Entra ID and assign it the required permissions. This allows Darwinbox to use the application's client credentials to create a provisioning job and securely send user data to your Microsoft Entra ID tenant.
 
 Go to the Microsoft Entra admin center, select **App Registrations**, and then select **New registration**. Create a single-tenant app as shown below.
 
@@ -39,6 +40,7 @@ Add the following three Microsoft Graph application permissions to let Darwinbox
 Create a client secret and provide the credentials to Darwinbox as specified in their guide.
 
 ## Configure connectors in Darwinbox Studio
+
 1. Open Darwinbox studio and navigate to **Connector Library**. 
 1. Search for **Microsoft**. Install the **Microsoft** parent app connector and the **Microsoft Entra** child app connector.
 
@@ -46,10 +48,9 @@ Create a client secret and provide the credentials to Darwinbox as specified in 
 
 1. Open the **Microsoft** app and configure connection parameters obtained from step 1. Provide **Client ID**,  **Client Secret** and **OAuth Token endpoint** details. The connectivity information specified here will be used by Darwinbox to create a provisioning app in your Microsoft Entra ID tenant.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png" alt-text="Screenshot of Creating a connection for Microsoft." lightbox="media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png":::
-1. Manually trigger the recipe task **Configure application and Job in Microsoft Entra SCIM**. This creates the API-driven provisioning job that Darwinbox can use to send user information.  
-
+1. Manually trigger the recipe task **Configure application and Job in Microsoft Entra SCIM**. This creates the API-driven provisioning job that Darwinbox uses to send user information.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/configure-app-and-job-entra.png" alt-text="Screenshot of configuring the application and job in Entra." lightbox="media/darwinbox-entra-integration-tutorial/configure-app-and-job-entra.png":::
-1. In Microsoft Entra admin center, browse to **Enterprise Applications** and open the provisioning app created by Darwinbox. Copy the **Service Principal Id/Object ID** from the Overview blade. Open the Provisioning blade of this app, and go to the Overview section’s **View technical information** and copy the **Provisioning Job ID**.
+1. In Microsoft Entra admin center, browse to **Enterprise Applications** and open the provisioning app created by Darwinbox. Copy the **Service Principal Id/Object ID** from the Overview blade. Open the Provisioning blade of this app, go to the Overview section’s **View technical information** and copy the **Provisioning Job ID**.
 1. In Darwinbox Studio, open the **Microsoft Entra** app and configure connection details, specifically entering the **ServicePrincipalID** and **Provisioning Job ID**.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png" alt-text="Screenshot of editing a connection for Microsoft Entra." lightbox="media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png":::
 
