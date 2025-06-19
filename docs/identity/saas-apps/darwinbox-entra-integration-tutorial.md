@@ -42,22 +42,22 @@ Create a client secret and provide the credentials to Darwinbox as specified in 
 ## Configure connectors in Darwinbox Studio
 
 1. Open Darwinbox studio and navigate to **Connector Library**. 
-1. Search for **Microsoft**. Install the **Microsoft** parent app connector and the **Microsoft Entra** child app connector.
+2. Search for **Microsoft**. Install the **Microsoft** parent app connector and the **Microsoft Entra** child app connector.
 
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/darwinbox-studio.png" alt-text="Screenshot of the Darwinbox Studio." lightbox="media/darwinbox-entra-integration-tutorial/darwinbox-studio.png":::
 
-1. Open the **Microsoft** app and configure connection parameters obtained from step 1. Provide **Client ID**,  **Client Secret** and **OAuth Token endpoint** details. The connectivity information specified here is used by Darwinbox to create a provisioning app in your Microsoft Entra ID tenant.  
+3. Open the **Microsoft** app and configure connection parameters obtained from step 1. Provide **Client ID**,  **Client Secret** and **OAuth Token endpoint** details. The connectivity information specified here is used by Darwinbox to create a provisioning app in your Microsoft Entra ID tenant.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png" alt-text="Screenshot of Creating a connection for Microsoft." lightbox="media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png":::
-1. Manually trigger the recipe task **Configure application and Job in Microsoft Entra SCIM**. This creates the API-driven provisioning job that Darwinbox uses to send user information.  
+4. Manually trigger the recipe task **Configure application and Job in Microsoft Entra SCIM**. This creates the API-driven provisioning job that Darwinbox uses to send user information.  
 :::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/configure-app-and-job-entra.png" alt-text="Screenshot of configuring the application and job in Entra." lightbox="media/darwinbox-entra-integration-tutorial/configure-app-and-job-entra.png":::
-1. In Microsoft Entra admin center, browse to **Enterprise Applications** and open the provisioning app created by Darwinbox. 
+5. In Microsoft Entra admin center, browse to **Enterprise Applications** and open the provisioning app created by Darwinbox. 
     1. Copy the **Service Principal Id/Object ID** from the Overview blade. 
     1. Open the Provisioning blade of this app, and go to the Overview section’s **View technical information**.
     1. Copy the **Provisioning Job ID**.
-1. In Darwinbox Studio, open the **Microsoft Entra** app and configure connection details, specifically entering the **ServicePrincipalID** and **Provisioning Job ID**.  
-:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png" alt-text="Screenshot of editing a connection for Microsoft Entra." lightbox="media/darwinbox-entra-integration-tutorial/microsoft-app-connectivity.png":::
+6. In Darwinbox Studio, open the **Microsoft Entra** app and configure connection details, specifically entering the **ServicePrincipalID** and **Provisioning Job ID**.  
+:::image type="content" border="true" source="./media/darwinbox-entra-integration-tutorial/edit-microsoft-entra-app-connectivity.png" alt-text="Screenshot of editing a connection for Microsoft Entra." lightbox="media/darwinbox-entra-integration-tutorial/edit-microsoft-entra-app-connectivity.png":::
 
-## Configure attribute mapping in Entra and upload mapping to Darwinbox
+## Configure attribute mapping in Darwinbox and Entra ID
 
 ### Map Darwinbox attributes to Entra ID SCIM attributes
 
@@ -93,7 +93,6 @@ To monitor the status of your provisioning events, go to the provisioning logs o
 
 -	[User provisioning logs in Microsoft Entra ID](~/identity/monitoring-health/concept-provisioning-logs.md)
 -	[How to analyze the Microsoft Entra provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md)
--	[Quickstart for API-driven inbound provisioning with cURL](~/identity/app-provisioning/inbound-provisioning-api-curl-tutorial.md#verify-processing-of-the-bulk-request-payload)
 
 ### Manage Joiner-Mover-Leaver lifecycle workflows
 
