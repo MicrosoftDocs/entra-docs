@@ -217,6 +217,8 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 >
 >By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
 
+If you never previously signed in to the Azure portal with MFA, this screen appears when you sign in. You can either confirm enforcement, or complete the steps to postpone the start date of enforcement for the tenant. 
+
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone.png" alt-text="Screenshot of how to postpone mandatory MFA."
 
 ## FAQs
