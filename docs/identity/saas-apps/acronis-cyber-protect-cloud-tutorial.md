@@ -70,7 +70,7 @@ To configure the integration of Acronis Cyber Protect Cloud into Microsoft Entra
 1. Click **Edit** in the **Basic SAML Configuration** section.
 1. Switch back to the Acronis Cyber Protect Cloud browser tab and click the copy icon in the **Identifier (Entity ID)** field to copy the value.
 1. Switch to the Microsoft Entra admin center browser tab and paste the copied value into the **Identifier (Entity ID)** field.
-1. Switch backto the Acronis Cyber Protect Cloud browser tab again and click the copy icon in the **Reply URL (Assertion Consumer Service URL)** field to copy the value.
+1. Switch back to the Acronis Cyber Protect Cloud browser tab again and click the copy icon in the **Reply URL (Assertion Consumer Service URL)** field to copy the value.
 1. Switch to the Microsoft Entra admin center browser tab and paste the copied value into the **Reply URL (Assertion Consumer Service URL)** field.
 1. Click Save.
 1. In the Microsoft Entra admin center browser tab, scroll down to the SAML Certificates and click **Download** to download the **Federation Metadata XML** file.
