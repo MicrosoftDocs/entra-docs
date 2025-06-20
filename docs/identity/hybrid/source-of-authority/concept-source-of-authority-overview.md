@@ -1,6 +1,6 @@
 ---
-title: Source of Authority (SOA) Migration Best Practices for Microsoft Entra ID
-description: Learn best practices for migrating Source of Authority (SOA) from Active Directory to Microsoft Entra ID, including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
+title: Source of Authority (SOA) Overviews for Microsoft Entra ID
+description: Learn about Source of Authority (SOA), including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
 author: Justinha
 ms.topic: conceptual
 ms.date: 05/27/2025
@@ -77,11 +77,7 @@ SOA allows organizations to advance their [journey to the cloud](/entra/architec
 
 - Manage users object properties with Entra cloud-native capabilities such as Microsoft Graph and Microsoft Entra admin center.
 
-<!-- -->
-
 - Manage access lifecycle based on group membership for the migrated groups, using cloud-native capabilities such as Entitlement Management, Lifecycle Workflows, and Access Reviews
-
-<!-- -->
 
 - Cloud-native authentication for on-premises AD Kerberos Applications, which in turn enables controls such as Conditional Access policies
 
@@ -106,7 +102,7 @@ The change of SOA from AD DS to Microsoft Entra has implications on how organiza
 
 Let's suppose your organization uses Microsoft Entra HR inbound from an HR source such as Workday or SuccessFactors to populate users in AD DS. You want to change the source of authority for one or more of those users. 
 
-You’ll need to update your Microsoft Entra HR inbound configuration to send any subsequent changes for those users to Microsoft Entra ID. For more information, see [Shift your HR integration to the cloud](#shift-your-hr-integration-to-the-cloud-only-for-user-soa)
+You’ll need to update your Microsoft Entra HR inbound configuration to send any subsequent changes for those users to Microsoft Entra ID. 
 
 :::image type="content" source="media/concept-source-of-authority-overview/image3.png" alt-text="Screenshot of Microsoft Entra HR inbound configuration.":::
 
@@ -123,9 +119,9 @@ If your organization is using Microsoft Identity Manager with the AD MA to manag
 
 ### Microsoft Exchange
 
-All Customers who have migrated all their mailboxes to EXO and have a strategy around managing DLs and mail enabled security groups from the cloud can switch the corresponding users and groups from AD to Entra ID.
+All customers who have migrated all their mailboxes to EXO and have a strategy around managing DLs and mail enabled security groups from the cloud can switch the corresponding users and groups from AD to Entra ID.
 
-Security groups with no mail enabled features don’t have any pre-requisites related to Exchange and can be switched.
+Security groups with no mail enabled features don’t have any prerequisites related to Exchange, and they can be switched.
 
 
 ## Prepare your IT Environment for SOA
