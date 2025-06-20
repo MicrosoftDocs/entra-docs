@@ -161,7 +161,7 @@ What are the differences between cross-tenant synchronization and cross-cloud sy
 
 Are there limitations for cross-cloud synchronization?
 
-- Synchronization of the manager attributue isn't yet supported in cross-cloud synchronization.
+- Synchronization of the manager attribute isn't yet supported in cross-cloud synchronization.
 - For multitenant organization limitations, see [Multitenant org FAQ](/microsoft-365/enterprise/multitenant-org-faq#can-an-mto-be-created-across-worldwide-geographies).
 - For Microsoft 365 limitations with external members, see [Collaborate with guests from other Microsoft 365 cloud environments](/microsoft-365/solutions/collaborate-guests-cross-cloud).
 
