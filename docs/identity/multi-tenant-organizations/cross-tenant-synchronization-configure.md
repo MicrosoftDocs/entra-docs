@@ -30,7 +30,7 @@ For important details on what this service does, how it works, and frequently as
 
 This article describes the steps to configure cross-tenant synchronization between Microsoft clouds, such as Microsoft Azure commercial and Microsoft Azure Government, using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant.
 
-For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). For differences between cross-tenant sychronization and cross-cloud synchronization, see [Cross-cloud synchronization in Frequently asked questions](./cross-tenant-synchronization-overview.md#cross-cloud-synchronization).
+For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). For differences between cross-tenant synchronization and cross-cloud synchronization, see [Cross-cloud synchronization in Frequently asked questions](./cross-tenant-synchronization-overview.md#cross-cloud-synchronization).
 
 :::image type="content" source="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png" alt-text="Diagram that shows cross-cloud synchronization between source tenant and target tenant." lightbox="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png":::
 ::: zone-end
@@ -385,7 +385,7 @@ Attribute mappings allow you to define how data should flow between the source t
     | **Guest** | Users will be created as external guests (B2B collaboration users) in the target tenant. |
 
     > [!NOTE]
-    > If the B2B user already exists in the target tenant, then **Member (userType)** won't changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
+    > If the B2B user already exists in the target tenant, then **Member (userType)** won't be changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
 
     The user type you choose has the following limitations for apps or services (but aren't limited to):
 
