@@ -31,27 +31,27 @@ Applying Group SOA to a group that synchronizes from AD converts the group to a 
 
 **Scenario:** There are applications in your portfolio that you can’t modernize or that connect to AD DS. These applications use Kerberos or LDAP to query non-mail-enabled security groups in AD DS to determine access permissions. Your goal is to regulate access to these applications with Microsoft Entra ID and Microsoft Entra ID Governance. This goal necessitates that the group membership information that Microsoft Entra manages be accessible to the applications.
 
-:::image type="content" source="media/group-source-of-authority-guidance/image1.png" alt-text="Screenshot of a scenario where applications use Kerberos or LDAP to query non-mail-enabled security groups in AD DS.":::
+:::image type="content" source="media/concept-source-of-authority-overview/image1.png" alt-text="Screenshot of a scenario where applications use Kerberos or LDAP to query non-mail-enabled security groups in AD DS.":::
 
 **Solution:** You can achieve your goal in one of two ways:
 
 - Use the Groups SOA Preview instructions document from the Private Preview channel to change the source of authority of the existing AD. Provision the groups back to AD with Group Provision to AD. In this model, you don’t need to change the app or create new groups. For more information, see [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](/entra/id-governance/scenarios/provision-entra-to-active-directory-groups).
 
-  :::image type="content" source="media/group-source-of-authority-guidance/image2.png" alt-text="Screenshot of provisioning groups back to AD with Group Provision to AD.":::
+  :::image type="content" source="media/concept-source-of-authority-overview/image2.png" alt-text="Screenshot of provisioning groups back to AD with Group Provision to AD.":::
 
 - To replicate the groups in AD, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD as Universal groups with Group Provision to AD. In this model, you can change the app to use the new group security identifiers (SID). If you use the account, global, domain local, permission model, nest the newly provisioned group under the existing group. For more information, see [Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning).
 
-  :::image type="content" source="media/group-source-of-authority-guidance/image3.png" alt-text="Screenshot of replicating groups in AD by creating new cloud security groups in Microsoft Entra ID.":::
+  :::image type="content" source="media/concept-source-of-authority-overview/image3.png" alt-text="Screenshot of replicating groups in AD by creating new cloud security groups in Microsoft Entra ID.":::
 
 ### AD Minimization
 
 **Scenario:** You modernized some or all your applications and removed the need to use AD groups for access. For example, these applications now use group claims with Security Assertion Markup Language (SAML) or OpenID Connect from Microsoft Entra ID instead of federation systems such as AD FS. However, these apps still rely on the existing synched security group to manage access. Using Group SOA, you can make the security group membership editable in the cloud, remove the AD security group completely, and govern the cloud security group through Microsoft Entra ID Governance capabilities if desired.
 
-:::image type="content" source="media/group-source-of-authority-guidance/image4.png" alt-text="Screenshot of a scenario where applications use group claims with SAML or OpenID Connect from Microsoft Entra ID.":::
+:::image type="content" source="media/concept-source-of-authority-overview/image4.png" alt-text="Screenshot of a scenario where applications use group claims with SAML or OpenID Connect from Microsoft Entra ID.":::
 
 **Solution:** You can use Group SOA to make them cloud managed groups and remove them from AD. You can continue to create new groups directly in the cloud. For more information, see [Best practices for managing groups in the cloud](/entra/fundamentals/concept-learn-about-groups#best-practices-for-managing-groups-in-the-cloud).
 
-:::image type="content" source="media/group-source-of-authority-guidance/image5.png" alt-text="Screenshot of cloud managed groups and best practices for managing groups in the cloud.":::
+:::image type="content" source="media/concept-source-of-authority-overview/image5.png" alt-text="Screenshot of cloud managed groups and best practices for managing groups in the cloud.":::
 
 ### Remove on-premises Exchange dependencies
 
@@ -59,6 +59,6 @@ Applying Group SOA to a group that synchronizes from AD converts the group to a 
 
 **Solution:** You can achieve this goal with Group SOA to make them cloud managed groups and remove them from AD. You can continue to edit these groups directly in EXO or via Exchange PowerShell modules. These mail objects cannot be managed directly in Microsoft Entra ID or using the MS Graph APIs.
 
-:::image type="content" source="media/group-source-of-authority-guidance/exchange-before-conversion.png" alt-text="Conceptual diagram that shows Exchange groups before SOA conversion.":::
+:::image type="content" source="media/concept-source-of-authority-overview/exchange-before-conversion.png" alt-text="Conceptual diagram that shows Exchange groups before SOA conversion.":::
 
 ## Related content
