@@ -1,17 +1,17 @@
 ---
-title: Configure Rippling Human Capital Management (HCM) for Single sign-on
+title: Configure Rippling Human Capital Management (HCM) for user provisioning in Active Directory
 description: Integrating Rippling Human Capital Management (HCM) with Microsoft Entra ID/Active Directory.
 author: jenniferf-skc
-manager: femila
-ms.reviewer: rahuln3223
+manager: pmwongera
+ms.reviewer: cmmdesai
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 06/18/2025
 ms.author: jfields
 ---
 
-# Configure Rippling Human Capital Management (HCM) for Single sign-on
+# Configure Rippling Human Capital Management (HCM) for user provisioning
 
 The document provides a step-by-step guide for integrating Rippling HCM with Microsoft Entra ID/Active Directory. The steps include establishing a connection, configuring attribute mapping, testing account provisioning, configuring account access rules, and monitoring provisioning. This integration allows IT admins to automate business processes using Microsoft Entra ID Governance Lifecycle Workflows. 
 
