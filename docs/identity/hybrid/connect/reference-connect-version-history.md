@@ -57,8 +57,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 > 
 > For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version before the retirement of your current version.
 
-|Version|End of support date|
-|-----|-----|
+|Version |End of support date |
+|--------|--------------------|
 |[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
