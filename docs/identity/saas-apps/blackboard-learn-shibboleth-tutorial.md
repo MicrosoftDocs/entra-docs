@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra integration with Blackboard Learn - Shibboleth
+title: Configure Blackboard Learn - Shibboleth for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Blackboard Learn - Shibboleth.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Blackboard Learn - Shibboleth so that I can control who has access to Blackboard Learn - Shibboleth, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Blackboard Learn - Shibboleth
+# Configure Blackboard Learn - Shibboleth for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Blackboard Learn - Shibboleth with Microsoft Entra ID. When you integrate Blackboard Learn - Shibboleth with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Blackboard Learn - Shibboleth with 
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Blackboard Learn - Shibboleth single sign-on (SSO)-enabled subscription.
 

@@ -3,7 +3,7 @@ title: End-user experiences for applications
 description: Learn about the customizable ways to deploy applications to end users in your organization with Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

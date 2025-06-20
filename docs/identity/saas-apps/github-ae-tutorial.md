@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with GitHub Enterprise Server
+title: Configure GitHub Enterprise Server for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Server.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Server so that I can control who has access to GitHub Enterprise Server, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with GitHub Enterprise Server
+# Configure GitHub Enterprise Server for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate GitHub Enterprise Server with Microsoft Entra ID. When you integrate GitHub Enterprise Server with Microsoft Entra ID, you can:
 

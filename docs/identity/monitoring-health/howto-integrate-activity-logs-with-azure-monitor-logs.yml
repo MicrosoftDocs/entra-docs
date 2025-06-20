@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: femila
   ms.reviewer: egreenberg
-  ms.date: 11/08/2024
+  ms.date: 05/27/2025
   ms.service: entra-id
   ms.subservice: monitoring-health
   ms.topic: how-to
@@ -82,7 +82,7 @@ procedureSection:
 
         ![Screenshot of the diagnostics settings with some destination details shown.](./media/howto-integrate-activity-logs-with-azure-monitor-logs/diagnostic-settings-log-analytics-workspace.png)
 
-        If you don't see logs appearing in the selected destination after 15 minutes, sign out and back into the Microsoft Entra admin center to refresh the logs.
+        For more information about when logs start appearing in your Log Analytics workspace, see [Diagnostic settings in Azure Monitor](/azure/azure-monitor/platform/diagnostic-settings#time-before-telemetry-gets-to-destination).
 
 relatedContent:
   - text: Analyze Microsoft Entra activity logs with Azure Monitor logs

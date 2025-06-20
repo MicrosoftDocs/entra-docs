@@ -1,7 +1,6 @@
 ---
 title: Configure API-driven inbound provisioning app
 description: Learn how to configure API-driven inbound provisioning app.
-
 author: jenniferf-skc
 manager: femila
 ms.service: entra-id
@@ -10,6 +9,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Configure API-driven inbound provisioning app

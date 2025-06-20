@@ -1,20 +1,13 @@
 ---
 title: "Quickstart: Register an app in the Microsoft identity platform"
 description: In this quickstart, you learn how to register an application with the Microsoft identity platform.
-
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.date: 06/29/2023
 ms.topic: include
-ms.service: identity-platform
-
-
-
-# This include file is currently referenced in the following documentation:
-
-# https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
-# https://learn.microsoft.com/graph/auth-register-app-v2
+ms.service: identity-platform # This include file is currently referenced in the following documentation: # https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app # https://learn.microsoft.com/graph/auth-register-app-v2
+ms.custom: sfi-image-nochange
 ---
 
 Get started with the Microsoft identity platform by registering an application in the Microsoft Entra admin center.

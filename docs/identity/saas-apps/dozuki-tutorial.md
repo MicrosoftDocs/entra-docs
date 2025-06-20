@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Dozuki
+title: Configure Dozuki for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Dozuki.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Dozuki so that I can control who has access to Dozuki, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Dozuki
+# Configure Dozuki for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Dozuki with Microsoft Entra ID. Dozuki is standard work instruction software that empowers manufacturers to implement standardized procedures in support of continuous improvement and training efforts. When you integrate Dozuki with Microsoft Entra ID, you can:
 

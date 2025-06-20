@@ -1,20 +1,20 @@
 ---
-title: Microsoft Entra SSO integration with VivoPoint
+title: Configure VivoPoint for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and VivoPoint.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 ---
 
-# Microsoft Entra SSO integration with VivoPoint
+# Configure VivoPoint for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate VivoPoint with Microsoft Entra ID. When you integrate VivoPoint with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate VivoPoint with Microsoft Entra ID. 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * VivoPoint single sign-on (SSO) enabled subscription.
 

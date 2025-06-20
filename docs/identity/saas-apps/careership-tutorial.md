@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with CAREERSHIP
+title: Configure CAREERSHIP for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and CAREERSHIP.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CAREERSHIP so that I can control who has access to CAREERSHIP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with CAREERSHIP
+# Configure CAREERSHIP for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate CAREERSHIP with Microsoft Entra ID. CAREERSHIP is the NO.1 LMS (LEARNING MANAGEMENT SYSTEM) for Enterprises. It's an LMS that has continued to evolve while responding to the demands of Japan companies, and while it's high performance and multi-functional, it's also easy to use at the same time. When you integrate CAREERSHIP with Microsoft Entra ID, you can:
 

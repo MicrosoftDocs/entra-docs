@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: ryanwi
 ms.custom: scenarios:getting-started, has-adal-ref
 ms.date: 11/22/2023
-ms.reviewer: sureshja, jesakowi
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: concept-article

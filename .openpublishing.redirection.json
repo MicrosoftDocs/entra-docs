@@ -106,6 +106,16 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/docs/identity/devices/enterprise-state-roaming-windows-settings-reference.md",
+      "redirect_url": "/windows/configuration/windows-backup/catalog-esr",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/id-governance/entra-suite-scenario.md",
+      "redirect_url": "/entra/id-governance/entitlement-management-global-secure-access-restrict-employee-access",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
       "redirect_url": "/entra/id-protection/overview-identity-protection",
       "redirect_document_id": false
@@ -526,6 +536,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/cloudknox-permissions-management-platform-tutorial.md",
+      "redirect_url": "/entra/permissions-management/overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-release-version-history.md",
       "redirect_url": "/entra/global-secure-access/reference-version-history",
       "redirect_document_id": false
@@ -558,6 +573,11 @@
     {
       "source_path_from_root": "/docs/global-secure-access/concept-zscaler-coexistence.md",
       "redirect_url": "/entra/global-secure-access/how-to-zscaler-coexistence",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/global-secure-access/concept-palo-alto-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-palo-alto-coexistence",
       "redirect_document_id": false
     },
     {
@@ -1801,6 +1821,46 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/msal-android-single-sign-on.md",
+      "redirect_url": "/entra/msal/android/single-sign-on",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/single-multi-account.md",
+      "redirect_url": "/entra/msal/android/single-multi-account",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-logging-android.md",
+      "redirect_url": "/entra/msal/android/logging",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity-platform/migrate-android-adal-msal.md",
+      "redirect_url": "/entra/msal/android/migrate-android-adal-msal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-shared-devices.md",
+      "redirect_url": "/entra/msal/android/shared-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-b2c.md",
+      "redirect_url": "/azure/active-directory-b2c/configure-authentication-sample-android-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-configuration.md",
+      "redirect_url": "/entra/msal/android/msal-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/msal-android-handling-exceptions.md",
+      "redirect_url": "/entra/msal/android/handling-exceptions",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?tabs=external-tenant",
       "redirect_document_id": false
@@ -2321,9 +2381,40 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "docs/architecture/deployment-external-audit-monitor.md",
+      "redirect_url": "/entra/architecture/deployment-external-operations",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs/identity-platform/scenario-spa-app-registration.md",
       "redirect_url": "/entra/identity-platform/scenario-spa-app-configuration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/webmethods-integration-cloud-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/veritas-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/promapp-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/illumio-sso-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+        {
+      "source_path_from_root": "/docs/identity/saas-apps/kontiki-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     }
   ]
 }
+

@@ -1,15 +1,15 @@
 ---
-title: Plan for mandatory Microsoft Entra multifactor authentication (MFA) 
+title: Plan for mandatory Microsoft Entra multifactor authentication (MFA)
 description: Plan for mandatory multifactor authentication for users who sign in to Azure and other management portals.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/25/2025
+ms.date: 06/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: nashahid, gkinasewitz
-
+ms.custom: sfi-ga-nochange
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
 ---
 # Planning for mandatory multifactor authentication for Azure and other admin portals 
@@ -30,7 +30,7 @@ The scope of enforcement includes which applications plan to enforce MFA, applic
 ### Applications
 
 > [!NOTE]
-> The date of enforcement for Phase 2 has changed to July 1, 2025.
+> The date of enforcement for Phase 2 has changed to September 1, 2025.
 
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
@@ -39,10 +39,12 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
-| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | July 1, 2025 |
-| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | July 1, 2025 |
-| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | July 1, 2025 |
-| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | July 1, 2025 | 
+| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | September 1, 2025 |
+| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | September 1, 2025 |
+| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | September 1, 2025 |
+| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | September 1, 2025 | 
+| [REST API (Control Plane)](/azure/azure-resource-manager/management/control-plane-and-data-plane#control-plane) | N/A | September 1, 2025 | 
+| [Azure SDK](/azure/developer/intro/azure-developer-create-resources#azure-sdk-and-rest-apis) | N/A | September 1, 2025 | 
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
@@ -175,13 +177,13 @@ For example, if your organization chose to retain Microsoft's [security defaults
 ## Enforcement phases 
 
 > [!NOTE]
-> The date of enforcement for Phase 2 has changed to July 1, 2025.
+> The date of enforcement for Phase 2 has changed to September 1, 2025.
 
 The enforcement of MFA rolls out in two phases: 
 
 - **Phase 1**: Starting in October 2024, MFA is required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-- **Phase 2**: Starting July 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+- **Phase 2**: Starting September 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 ## Notification channels 
 

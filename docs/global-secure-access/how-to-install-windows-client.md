@@ -6,9 +6,9 @@ ms.topic: how-to
 ms.date: 03/17/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.reviewer: lirazbarak
-
+ms.custom: sfi-image-nochange
 # Customer intent: Windows users, I want to download and install the Global Secure Access client.
 ---
 # Global Secure Access client for Microsoft Windows

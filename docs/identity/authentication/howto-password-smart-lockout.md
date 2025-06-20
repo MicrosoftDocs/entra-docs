@@ -1,16 +1,15 @@
 ---
 title: Prevent attacks using smart lockout
 description: Learn how Microsoft Entra smart lockout helps protect your organization from brute-force attacks that try to guess user passwords.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 04/29/2025
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: rogoya
+ms.custom: sfi-image-nochange
 ---
 # Protect user accounts from attacks with Microsoft Entra smart lockout
 

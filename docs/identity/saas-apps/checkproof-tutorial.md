@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with CheckProof
+title: Configure CheckProof for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and CheckProof.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CheckProof so that I can control who has access to CheckProof, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with CheckProof
+# Configure CheckProof for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate CheckProof with Microsoft Entra ID. When you integrate CheckProof with Microsoft Entra ID, you can:
 
@@ -27,6 +24,7 @@ In this article,  you learn how to integrate CheckProof with Microsoft Entra ID.
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * CheckProof single sign-on (SSO) enabled subscription.
 

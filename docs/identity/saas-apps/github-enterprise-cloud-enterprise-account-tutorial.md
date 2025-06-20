@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with GitHub Enterprise Cloud - Enterprise Account
+title: Configure GitHub Enterprise Cloud - Enterprise Account for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Cloud - Enterprise Account.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Cloud - Enterprise Account so that I can control who has access to GitHub Enterprise Cloud - Enterprise Account, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with GitHub Enterprise Cloud - Enterprise Account
+# Configure GitHub Enterprise Cloud - Enterprise Account for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to setup a Microsoft Entra SAML integration with a GitHub Enterprise Cloud - Enterprise Account. When you integrate GitHub Enterprise Cloud - Enterprise Account with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to setup a Microsoft Entra SAML integration with
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A [GitHub Enterprise Account](https://docs.github.com/en/enterprise-cloud@latest/admin/overview/about-enterprise-accounts).
 * A GitHub user account that's an Enterprise Account owner. 

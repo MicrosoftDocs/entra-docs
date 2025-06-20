@@ -1,13 +1,13 @@
 ---
 title: What's new
 description: Overview of the What's new experience in the Microsoft Entra admin center.
-author: jason-nydegger
-manager: CelesteDG
+author: barclayn
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
 ms.date: 11/13/2024
-ms.author: janydegger
+ms.author: barclayn
 
 # Customer intent: As a customer, I want an overview of the What's new experience in the Microsoft Entra admin center.
 ---

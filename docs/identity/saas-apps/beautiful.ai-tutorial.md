@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Beautiful.ai
+title: Configure Beautiful.ai for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Beautiful.ai.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Beautiful.ai
+# Configure Beautiful.ai for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Beautiful.ai with Microsoft Entra ID. When you integrate Beautiful.ai with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Beautiful.ai with Microsoft Entra I
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Beautiful.ai single sign-on (SSO) enabled subscription.
 

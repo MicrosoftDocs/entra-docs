@@ -1,17 +1,15 @@
 ---
 title: Configure F5 BIG-IP Easy Button for SSO to Oracle Enterprise Business Suite
 description: Learn to implement SHA with header-based SSO to Oracle Enterprise Business Suite using F5's BIG-IP Easy Button guided configuration
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to Oracle EBS so that I can control who has access to F5 BIG-IP Easy Button for SSO to Oracle EBS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
@@ -387,7 +385,7 @@ If you don't see a BIG-IP error page, then the issue is probably more related to
 
 2. The **View Variables** link in this location may also help root cause SSO issues, particularly if the BIG-IP APM fails to obtain the right attributes from Microsoft Entra ID or another source
 
-See [BIG-IP APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107) and [F5 BIG-IP session variables reference](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html) for more info.
+See [BIG-IP APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107) and [F5 BIG-IP session variables reference](https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html) for more info.
 
 The following command from a bash shell validates the APM service account used for LDAP queries and can successfully authenticate and query a user object:
 

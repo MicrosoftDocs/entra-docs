@@ -1,7 +1,6 @@
 ---
 title: 'Change the Microsoft Entra Connector account password'
 description: This topic documents how to restore the Microsoft Entra Connector account.
-
 author: billmath
 manager: femila
 ms.assetid: 6077043a-27f1-4304-a44b-81dc46620f24
@@ -11,9 +10,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-ga-nochange
 ---
 # Change the Microsoft Entra Connector account password
 The Microsoft Entra Connector account is supposed to be service free. If you need to reset its credentials, then this topic is for you. 

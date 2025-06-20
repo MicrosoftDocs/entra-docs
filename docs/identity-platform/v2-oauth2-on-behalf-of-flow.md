@@ -4,12 +4,11 @@ description: This article describes how to use HTTP messages to implement servic
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
 ms.date: 01/04/2025
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
-
 ms.topic: reference
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As a developer building a web API, I want to understand how to implement the OAuth 2.0 On-Behalf-Of flow, so that I can securely pass a user's identity and permissions to another web API.
 ---
 
@@ -251,6 +250,12 @@ When triggering a consent screen using known client applications and `.default`,
 The resource service (API) identified in the request should be the API for which the client application is requesting an access token as a result of the user's sign-in. For example, `scope=openid https://middle-tier-api.example.com/.default` (to request an access token for the middle tier API), or `scope=openid offline_access .default` (when a resource isn't identified, it defaults to Microsoft Graph).
 
 Regardless of which API is identified in the authorization request, the consent prompt is combined with all required permissions configured for the client app. All required permissions configured for each middle tier API listed in the client's required permissions list, which identified the client as a known client application, are also included. 
+
+> [!IMPORTANT]
+> While it's valid to use `scope=openid https://resource/.default` in combined consent flows involving [known client applications](reference-app-manifest.md#knownclientapplications-attribute), you must **not** combine `.default` with other delegated scopes like `User.Read`, `Mail.Read`, `profile`, or `User.ReadWrite.All` in the same request. This will result in `AADSTS70011` errors because `.default` represents pre-consented static permissions, while the others require dynamic user consent at runtime.
+>
+> `offline_access` is sometimes accepted with `.default` to enable refresh tokens, but should not be combined with any additional delegated scopes. When in doubt, split the token requests to avoid scope-type conflicts.
+
 
 ### Preauthorized applications
 

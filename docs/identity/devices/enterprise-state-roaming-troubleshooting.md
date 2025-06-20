@@ -9,7 +9,7 @@ ms.date: 08/01/2024
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sempofu, micrider
 ---
 # Troubleshooting Enterprise State Roaming settings in Microsoft Entra ID
@@ -38,7 +38,7 @@ This section gives suggestions on how to troubleshoot and diagnose problems rela
 ## Verify sync, and the "Sync your settings" settings page
 
 1. After joining your Windows 10 or newer PC to a domain that is configured to allow Enterprise State Roaming, sign on with your work account. Go to **Settings** > **Accounts** > **Sync Your Settings** and confirm that sync and the individual settings are on, and that the top of the settings page indicates that you're syncing with your work account. Confirm the same account is also used as your account in **Settings** > **Accounts** > **Your Info**.
-1. Verify that sync works across multiple machines by making some changes on the original machine, such as changing the "Country or Region" or using other supported settings see [Windows roaming settings reference](enterprise-state-roaming-windows-settings-reference.md). Watch the change propagate to the second machine within five minutes.
+1. Verify that sync works across multiple machines by making some changes on the original machine, such as changing the "Country or Region" or using other supported settings see [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr). Watch the change propagate to the second machine within five minutes.
 
    * Locking and unlocking the screen (Win + L) can help trigger a sync.
    * You must be signing in with the same account on both PCs for sync to work – as Enterprise State Roaming is tied to the user account and not the machine account.

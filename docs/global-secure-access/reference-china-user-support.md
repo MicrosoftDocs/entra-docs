@@ -1,22 +1,22 @@
 ---
-title: Global Secure Access Support for Microsoft Azure in China (Preview)
-description: Learn about how Microsoft is dedicated to supporting Global Secure Access capabilities for Microsoft Azure in China.
+title: Global Secure Access Support in China (Preview)
+description: Learn about how Microsoft is dedicated to supporting Global Secure Access capabilities in China.
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.topic: reference
-ms.date: 05/14/2025
+ms.date: 05/20/2025
 ms.service: global-secure-access
 ms.reviewer: sumeetmittal
 
 # Customer intent: As an IT admin, I want to evaluate the regulatory constraints of using Global Secure Access in China so that I can ensure compliance and plan connectivity strategies effectively.   
 ---
 
-# Global Secure Access Support for Microsoft Azure in China (Preview)
+# Global Secure Access support in China (Preview)
 Microsoft supports Global Secure Access capabilities in China, offering secure and compliant connectivity solutions tailored to the needs of organizations operating in China. 
 
 > [!IMPORTANT]
-> Global Secure Access support for Microsoft Azure in China is currently in PREVIEW.
+> Global Secure Access support in China is currently in PREVIEW.
 > This information relates to a prerelease functionality that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided in this article.
 
 There are two scenarios that are applicable to Global Secure Access in China:      

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Fulcrum
+title: Configure Fulcrum for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fulcrum.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fulcrum so that I can control who has access to Fulcrum, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Fulcrum
+# Configure Fulcrum for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Fulcrum with Microsoft Entra ID. When you integrate Fulcrum with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Fulcrum with Microsoft Entra ID. Wh
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Fulcrum single sign-on (SSO) enabled subscription.
 

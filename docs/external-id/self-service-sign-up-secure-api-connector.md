@@ -1,17 +1,14 @@
 ---
 title: Secure APIs used as API connectors in Microsoft Entra External ID self-service sign-up user flows
 description: Secure your custom RESTful APIs used as API connectors in self-service sign-up user flows.
- 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/15/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: "it-pro"
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As a developer integrating a REST API within a Microsoft Entra External ID self-service sign-up user flow, I want to secure my API endpoint with authentication, so that only authorized services, such as Microsoft Entra ID, can make calls to my endpoint.
 ---
 

@@ -5,9 +5,9 @@ description: Set up direct federation with SAML 2.0 or WS-Fed identity providers
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 05/07/2025
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.custom: it-pro, 
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin setting up federation with an external organization's SAML/WS-Fed identity provider, I want to invite users from that organization to sign in to my Microsoft Entra tenant with their work account.

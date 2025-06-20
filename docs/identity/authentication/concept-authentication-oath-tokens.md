@@ -1,20 +1,17 @@
 ---
 title: OATH tokens authentication method
 description: Learn about using OATH tokens in Microsoft Entra ID to help improve and secure sign-in events.
-
 services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 ms.reviewer: lvandenende
-manager: femila
-
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use OATH tokens in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 

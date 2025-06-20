@@ -1,5 +1,5 @@
 ---
-title: Configure the F5 BIG-IP Easy Button for Header-based and LDAP SSO 
+title: Configure the F5 BIG-IP Easy Button for Header-based and LDAP SSO
 description: Learn to configure the F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure hybrid access to header-based applications that also require session augmentation through Lightweight Directory Access Protocol (LDAP) sourced attributes.
 author: gargi-sinha
 manager: martinco
@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 04/19/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure F5 BIG-IP Easy Button for header-based and LDAP single sign-on (SSO). My goal is to secure header and LDAP-based applications using Microsoft Entra ID and improve the overall application security posture.
 ---
 

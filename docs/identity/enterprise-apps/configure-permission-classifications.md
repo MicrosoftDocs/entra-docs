@@ -3,7 +3,7 @@ title: Configure permission classifications
 description: Learn how to manage delegated permission classifications.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

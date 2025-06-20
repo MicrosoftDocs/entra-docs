@@ -2,7 +2,7 @@
 title: Acquire a token to call a web API interactively (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app interactively.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 01/15/2024
 ms.service: identity-platform
@@ -154,7 +154,7 @@ To use `WithCustomWebUI`, follow these steps:
 1. Implement the `ICustomWebUi` interface. For more information, see [this GitHub page](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/blob/053a98d16596be7e9ca1ab916924e5736e341fe8/src/Microsoft.Identity.Client/Extensibility/ICustomWebUI.cs#L32-L70).
 1. Implement one `AcquireAuthorizationCodeAsync`method and accept the authorization code URL that MSAL.NET computes.
 1. Let the user go through the interaction with the identity provider and return the URL that the identity provider used to call back your implementation, along with the authorization code. If you have problems, your implementation should throw an `MsalExtensionException` exception to cooperate with MSAL.
-1. In your `AcquireTokenInteractive` call, use the `.WithCustomUI()` modifier by passing the instance of your custom web UI:
+1. In your `AcquireTokenInteractive` call, use the `.WithCustomWebUi()` modifier by passing the instance of your custom web UI:
 
     ```csharp
     result = await app.AcquireTokenInteractive(scopes)

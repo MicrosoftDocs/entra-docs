@@ -2,7 +2,7 @@
 title: View reports & logs in entitlement management
 description: Learn how to view the user assignments report and audit logs in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 editor: jocastel-MSFT
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 03/10/2025
 ms.author: owinfrey
 ms.reviewer: jocastel
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an administrator, I want view resources a user has access to and view request logs for auditing purposes.
 ---
 

@@ -6,7 +6,7 @@ ms.topic: reference
 ms.date: 04/29/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.reviewer: lirazbarak
 ai-usage: ai-assisted
 

@@ -4,11 +4,10 @@ description: In this tutorial, you add support for signing-in users in a web app
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom:
 ms.date: 11/09/2022
 ms.service: identity-platform
-
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer building a Node.js and Express web app, I want to learn how to sign in users and acquire access tokens, so that I can implement secure authentication and access Microsoft Graph data in my application.
 ---
 

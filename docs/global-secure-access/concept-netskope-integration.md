@@ -3,7 +3,7 @@ title: Learn about integrations between Microsoft and Netskope.
 description: A comprehensive guide for configuring and testing the integration between Microsoft's and Netskope's Secure Access Service Edge (SASE) solutions.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: concept-article
 ms.date: 02/21/2025
 ms.service: global-secure-access
@@ -46,7 +46,7 @@ The general steps that you follow as you onboard to the program are:
 
 - **Configuring TLS Termination**:
     - Create a Key Vault
-    - Upload a Conditional Access certificate
+    - Upload a Certificate Authority(CA) certificate
     - Enable TLS termination in the Microsoft Entra admin center
 
 - **Creating and Linking ATP Policies**:

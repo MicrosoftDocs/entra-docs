@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Excelity HCM
+title: Configure Excelity HCM for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Excelity HCM.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Excelity HCM so that I can control who has access to Excelity HCM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Excelity HCM
+# Configure Excelity HCM for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Excelity HCM with Microsoft Entra ID. When you integrate Excelity HCM with Microsoft Entra ID, you can:
 
@@ -27,6 +27,7 @@ In this article,  you learn how to integrate Excelity HCM with Microsoft Entra I
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Excelity HCM single sign-on (SSO) enabled subscription.
 

@@ -1,20 +1,20 @@
 ---
-title: Microsoft Entra integration with Powerschool Performance Matters
+title: Configure Powerschool Performance Matters for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Powerschool Performance Matters.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Powerschool Performance Matters so that I can control who has access to Powerschool Performance Matters, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Powerschool Performance Matters
+# Configure Powerschool Performance Matters for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Powerschool Performance Matters with Microsoft Entra ID. When you integrate Powerschool Performance Matters with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Powerschool Performance Matters wit
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Powerschool Performance Matters single sign-on (SSO) enabled subscription.
 

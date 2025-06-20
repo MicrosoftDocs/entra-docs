@@ -1,17 +1,15 @@
 ---
 title: How to configure Microsoft Entra certificate-based authentication
 description: Topic that shows how to configure Microsoft Entra certificate-based authentication in Microsoft Entra ID.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: vimrang
-manager: femila
+manager: dougeby
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
 # How to configure Microsoft Entra certificate-based authentication
 

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra integration with Heroku
+title: Configure Heroku for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Heroku.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Heroku so that I can control who has access to Heroku, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Heroku
+# Configure Heroku for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Heroku with Microsoft Entra ID. When you integrate Heroku with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate Heroku with Microsoft Entra ID. Whe
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Heroku single sign-on (SSO) enabled subscription.
 

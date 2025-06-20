@@ -1,16 +1,16 @@
 ---
 title: Troubleshooting sign-in problems with Conditional Access
 description: This article describes what to do when your Conditional Access policies result in unexpected outcomes.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 03/04/2025
+ms.date: 06/06/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: kvenkit
+ms.custom: sfi-image-nochange
 ---
 # Troubleshooting sign-in problems with Conditional Access
 
@@ -61,6 +61,7 @@ To find out which Conditional Access policy or policies applied and why, follow 
       1. **Conditional Access** to see policy failure and success. Scope your filter to show only failures to limit results.
       1. **Username** to see information related to specific users.
       1. **Date** scoped to the time frame in question.
+      1. **Resource** to see information related to the resource called.
 
    ![Screenshot showing selecting the Conditional Access filter in the sign-in log.](./media/troubleshoot-conditional-access/image3.png)
 

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with GitHub Enterprise Managed User - GHE.com
+title: Configure GitHub Enterprise Managed User - GHE.com for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User - GHE.com.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User so that I can control who has access to GitHub Enterprise Managed User, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with GitHub Enterprise Managed User
+# Configure GitHub Enterprise Managed User - GHE.com for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate GitHub Enterprise Managed User with Microsoft Entra ID. When you integrate GitHub Enterprise Managed User with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate GitHub Enterprise Managed User with
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * GitHub Enterprise Managed User single sign-on (SSO) enabled subscription.
 
@@ -97,7 +98,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 ## Configure GitHub Enterprise Managed User SSO
 
-To configure single sign-on on **GitHub Enterprise Managed User** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [GitHub Enterprise Managed User support team](https://support.github.com/early-access/data-residency). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **GitHub Enterprise Managed User** side, you can follow the documentation for [configuring your Identity Provider in the GitHub documentation](https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/configuring-authentication-for-enterprise-managed-users/configuring-saml-single-sign-on-for-enterprise-managed-users#configure-your-enterprise).
 
 ### Create GitHub Enterprise Managed User test user
 

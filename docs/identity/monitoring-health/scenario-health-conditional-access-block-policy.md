@@ -2,11 +2,11 @@
 title: Conditional Access block policy health scenario
 description: Learn about the Microsoft Entra Health signals and alerts for Conditional Access block policy health scenarios
 author: shlipsey3
-manager: femila
+manager: pmwongera 
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 04/25/2025
+ms.date: 06/06/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -98,9 +98,9 @@ To remediate issues affecting a large number of users:
 
 1. Review the audit logs to see what changes were made to your Conditional Access policies.
     - Filter to **Category: Policy** and look for the following events:
-        - **Add conditional access policy**
-        - **Delete conditional access policy**
-        - **Update conditional access policy**
+        - **Add Conditional Access policy**
+        - **Delete Conditional Access policy**
+        - **Update Conditional Access policy**
 
     ![Screenshot of the audit logs with the Conditional Access policies highlighted.](media/scenario-health-conditional-access-block-policy/conditional-access-audit-logs-filter.png)
 

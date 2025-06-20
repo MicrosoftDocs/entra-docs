@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Bynder.
+title: Configure Bynder. for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Bynder.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Bynder so that I can control who has access to Bynder, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Bynder with Microsoft Entra ID
+# Configure Bynder. for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Bynder with Microsoft Entra ID. When you integrate Bynder with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Bynder with Microsoft Entra ID. Whe
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Bynder single sign-on (SSO) enabled subscription.
 

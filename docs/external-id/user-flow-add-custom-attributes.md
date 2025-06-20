@@ -2,13 +2,13 @@
 title: Add custom attributes
 description: Learn how to add custom attributes to self-service sign-up flows in Microsoft Entra External ID. Extend the set of attributes stored on a guest account and customize the user experience.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
-ms.author: mimart
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 

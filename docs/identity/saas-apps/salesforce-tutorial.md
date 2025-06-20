@@ -1,21 +1,19 @@
 ---
-title: Configure Salesforce for Single sign-on
+title: Configure Salesforce for Single sign-on in Microsoft Entra ID
 description: Learn how to configure the single sign-on between Microsoft Entra ID and Salesforce.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce so that I can control who has access to Salesforce, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Configure Salesforce for Single sign-on
+# Configure Salesforce for Single sign-on in Microsoft Entra ID
 
 In this article, you learn how to integrate Salesforce with Microsoft Entra ID. When you integrate Salesforce with Microsoft Entra ID, you can:
 

@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with Check Point Infinity Portal
+title: Configure Check Point Infinity Portal for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Check Point Infinity Portal.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Check Point Infinity Portal so that I can control who has access to Check Point Infinity Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Check Point Infinity Portal
+# Configure Check Point Infinity Portal for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Check Point Infinity Portal with Microsoft Entra ID. When you integrate Check Point Infinity Portal with Microsoft Entra ID, you can:
 
@@ -27,6 +24,7 @@ In this article,  you learn how to integrate Check Point Infinity Portal with Mi
 ## Prerequisites
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Check Point Infinity Portal single sign-on (SSO) enabled subscription.
 
