@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/19/2025
+ms.date: 06/20/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -217,7 +217,11 @@ For each tenant where they want to postpone the start date of enforcement, a Glo
 >
 >By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
 
-If you never previously signed in to the Azure portal with MFA, this screen appears when you sign in. You can either confirm enforcement, or complete the steps to postpone the start date of enforcement for the tenant. 
+If you never previously signed in to the Azure portal with MFA, this screen appears when you sign in. You can either complete MFA to sign in, or postpone MFA enforcement. 
+
+:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/mandatory.png" alt-text="Screenshot of how to postpone mandatory MFA."
+
+If you select **Confirm enforcement**, you'll be guided through the steps to elevate access and set the start date of enforcement for the tenant. If you select **Continue without postponement**, you return to the portal sign-in page.  
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone.png" alt-text="Screenshot of how to postpone mandatory MFA."
 
