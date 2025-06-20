@@ -48,6 +48,7 @@ The following table shows what features associated with identity governance are 
 |[LCW + Custom Extensions (Logic Apps)](~/id-governance/lifecycle-workflow-extensibility.md)|||| :white_check_mark: | :white_check_mark: |
 |[Identity governance dashboard](~/id-governance/governance-dashboard.md)| | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Insights and reporting - Inactive guest accounts](~/identity/users/clean-up-stale-guest-accounts.md)|||| :white_check_mark: | :white_check_mark: |
+|[Cross-cloud synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization)|||| :white_check_mark: | :white_check_mark: |
 
 ### Entitlement Management
 
