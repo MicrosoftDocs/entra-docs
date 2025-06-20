@@ -389,7 +389,7 @@ SharePoint Online operations including file access, creation, modification, or d
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-sharepoint-log-item.png" alt-text="Screenshot of Microsoft Purview portal showing search for log item for Teams and SPO.":::
 
-1. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for specific activities. The image below shows all different operations that has been performed by the attacker.
+1. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for specific activities. The image below shows all different operations that have been performed by the attacker.
 
    :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-exported-file.png" alt-text="Screenshot of Microsoft Purview portal showing search for logs exported.":::
 
