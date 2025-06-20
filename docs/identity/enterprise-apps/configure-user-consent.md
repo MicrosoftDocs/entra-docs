@@ -195,7 +195,7 @@ PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
 
 :::zone-end
 
-Any updates to user consent settings only affect future consent operations for applications. Existing consent grants remain unchanged, and users continue to have access based on the permissions previously granted. To revoke existing consent grants, see [Review permissions granted to enterprise applications](manage-application-permissions.md).
+Any updates to user consent settings only affect future consent operations for applications. Existing consent grants remain unchanged, and users continue to have access based on the permissions previously granted. To learn how to revoke existing consent grants, see [Review permissions granted to enterprise applications](manage-application-permissions.md).
 
 > [!TIP]
 > To allow users to request an administrator's review and approval of an application that the user isn't allowed to consent to, [enable the admin consent workflow](configure-admin-consent-workflow.md). For example, you might do this when user consent has been disabled or when an application is requesting permissions that the user isn't allowed to grant.
