@@ -221,7 +221,7 @@ If you never previously signed in to the Azure portal with MFA, you're prompted 
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/mandatory.png" alt-text="Screenshot of how to postpone mandatory MFA."
 
-If you select **Postpone enforcement**, you'll be guided through the steps to elevate access and set the start date of enforcement for the tenant. To confirm that you want to proceed with the postponement request, click **Confirm postponement**. 
+If you select **Postpone MFA**, you're guided through the steps to elevate access and set the start date of enforcement for the tenant. To confirm that you want to proceed with the postponement request, click **Confirm postponement**. 
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone.png" alt-text="Screenshot of how to postpone mandatory MFA."
 
