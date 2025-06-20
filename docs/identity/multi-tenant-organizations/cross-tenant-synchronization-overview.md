@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 06/13/2025
+ms.date: 06/20/2025
 ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
