@@ -9,6 +9,7 @@ ms.topic: how-to
 ms.date: 06/20/2025
 ms.author: kenwith
 ms.custom: it-pro, sfi-image-nochange
+zone_pivot_groups: same-cloud-cross-cloud-synchronization
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
