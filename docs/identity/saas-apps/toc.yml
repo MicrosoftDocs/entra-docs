@@ -3424,6 +3424,8 @@
         href: cybsafe-provisioning-tutorial.md
       - name: Dagster Cloud
         href: dagster-cloud-provisioning-tutorial.md
+      - name: Darwinbox to Microsoft Entra ID
+        href: darwinbox-entra-integration-tutorial.md
       - name: Datadog
         href: datadog-provisioning-tutorial.md
       - name: Documo
