@@ -20,12 +20,9 @@ This article helps you keep track of the versions that have released and the cha
 
 ### Breaking Change on Entra Connect Sync
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > New Microsoft Entra Connect Sync Versions are only available via the Microsoft Entra admin center 
->
-> Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
-
-
+> > Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer be released to the Microsoft Download Center.
 
 > [!WARNING]
 > The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) will impact the Microsoft Entra Connect Sync wizard in April 2025. You must upgrade your Connect Sync version **by 30 April 2025** to maintain Connect Sync wizard capabilities such as schema refresh, configuration of staging mode, and user-sign in changes. The minimum supported versions are [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or any newer version. No action is required if your Microsoft Entra Connect Sync server is within the recommended version range. [Learn More](harden-update-ad-fs-pingfederate.md)
@@ -589,8 +586,6 @@ We fixed a bug that occurred when you synced a large number of Password Hash Syn
 > This release is a security update release of Microsoft Entra Connect. This release requires Windows Server 2016 or newer. If you're using an older version of Windows Server, use [version 1.6.11.3](#16113).
 
 This release addresses a vulnerability as documented in [this CVE](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36949). For more information about this vulnerability, see the CVE.
-
-To download the latest version of Microsoft Entra Connect 2.0, see the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594).
 
 ### Release status
 
