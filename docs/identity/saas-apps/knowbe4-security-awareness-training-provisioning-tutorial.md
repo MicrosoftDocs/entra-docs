@@ -139,6 +139,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String||
    |externalId|String||
    |displayName|String||
+   |addresses.work|String||
+   |phoneNumbers.work|String||
+   |phoneNumbers.mobile|String||
+   |userType|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
@@ -149,6 +153,18 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:customField2|String||
    |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:customField3|String||
    |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:customField4|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:outOfOfficeEnd|DateTime||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:phishingLanguage|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:trainingLanguage|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:userRole|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:hostname|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:companyName|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:country|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:mailNickName|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:onPremisesSamAccountName|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:onPremisesSecurityIdentifier|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:userPrincipalName|String||
+   |urn:ietf:params:scim:schemas:extension:knowbe4:kmsat:2.0:User:lastPasswordChangeDateTime|DateTime||
 |
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to KnowBe4 Security Awareness Training**.
