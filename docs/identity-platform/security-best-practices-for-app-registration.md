@@ -31,18 +31,18 @@ This article describes security best practices for the following application pro
 
 ## Identity type
 
-You are likely here to learn about security best practices for [Entra applications](./how-applications-are-added.md) - also referred to as app registrations or app objects.  However, there is another identity type that can be used to access Entra-protected resources, called [managed identities for Azure resources](../identity/managed-identities-azure-resources/overview.md).
+You're likely here to learn about security best practices for [Microsoft Entra applications](./how-applications-are-added.md) - also referred to as app registrations or app objects. However, there's another identity type that can be used to access Entra-protected resources, called [managed identities for Azure resources](../identity/managed-identities-azure-resources/overview.md).
 
-Azure managed identities are secure by default and require little to no ongoing maintenance or overhead.  Consider using a managed identity instead of an Entra application for your app identity if all of the following are true:
+Azure managed identities are secure by default and require little to no ongoing maintenance or overhead. Consider using a managed identity instead of a Microsoft Entra application for your app identity if all of the following are true:
 
 - The service runs in the Azure cloud
 - The app doesn't need to sign in users
-- The app doesn't need to act as the resource in a token flow (is not a web API)
+- The app doesn't need to act as the resource in a token flow (isn't a web API)
 - The app doesn't need to operate in multiple tenants
 
 Note that managed identities **can** be used to access resources outside of Azure - including [Microsoft Graph](https://learn.microsoft.com/graph/overview).
 
-The rest of this article will cover security best practices for properties of Entra app registrations.
+The rest of this article covers security best practices for properties of Entra app registrations.
 
 ## Credentials (including certificates and secrets)
 
@@ -53,7 +53,7 @@ Credentials are a vital part of an application when it's used as a confidential 
 Consider the following guidance related to certificates and secrets:
 
 - Use a [managed identity](../identity/managed-identities-azure-resources/overview.md) as a credential whenever possible. This is strongly recommended, as managed identities are both the most secure option and don't require any ongoing credential management. Follow [this guidance](../workload-id/workload-identity-federation-config-app-trust-managed-identity.md) to configure a managed identity as a credential. However, this option may only be possible if the service the app is used in runs on Azure.
-- If the service the app is used in doesn't run on Azure, but does run on another platform that offers automated credential management, consider [using an identity from that platform as a credential](../workload-id/workload-identity-federation-create-trust.md).  For example, a [Github actions workflow can be configured as a credential](../workload-id/workload-identity-federation-create-trust.md#github-actions), eliminating the need to manage and secure credentials for the Github actions pipeline.  Use caution with this approach and only configure federated credentials from platforms you trust.  An app is only as secure as the identity platform it has configured as a credential.
+- If the service the app is used in doesn't run on Azure, but does run on another platform that offers automated credential management, consider [using an identity from that platform as a credential](../workload-id/workload-identity-federation-create-trust.md). For example, a [GitHub actions workflow can be configured as a credential](../workload-id/workload-identity-federation-create-trust.md#github-actions), eliminating the need to manage and secure credentials for the GitHub actions pipeline. Use caution with this approach and only configure federated credentials from platforms you trust. An app is only as secure as the identity platform it has configured as a credential.
 - If using a managed identity or other secure external identity provider isn't possible, use [certificate credentials](./certificate-credentials.md). **Don't use password credentials, also known as *secrets***. While it's convenient to use password secrets as a credential, password credentials are often mismanaged and can be easily compromised.
 - If a certificate must be used instead of a managed identity, store that certificate in a secure key vault, like [Azure Key Vault](https://azure.microsoft.com/products/key-vault).
 - If a certificate must be used instead of a managed identity, use a certificate from a trusted certificate authority (CA) instead of a self-signed certificate. [Configure a policy](https://devblogs.microsoft.com/identity/app-management-policy/) to enforce that certificates come from trusted issuers. However, if using a trusted CA isn't possible, self-signed certificates are still preferred over passwords.
@@ -122,15 +122,15 @@ After the application configuration has been updated to use v2.0 tokens, ensure 
 
 ## Application instance property lock
 
-When an application has a service principal provisioned into a tenant,  that service principal can be customized by a tenant admin. This is true regardless of whether that tenant is the application's home tenant or a foreign tenant.  Those customization abilities can allow for modifications that the app owner didn't expect, leading to security risks. For example, credentials can be added to the service principal, even though credentials should typically be owned and controlled by the app developer and owner.
+When an application has a service principal provisioned into a tenant,  that service principal can be customized by a tenant admin. This is true regardless of whether that tenant is the application's home tenant or a foreign tenant. Those customization abilities can allow for modifications that the app owner didn't expect, leading to security risks. For example, credentials can be added to the service principal, even though credentials should typically be owned and controlled by the app developer and owner.
 
-To reduce this risk, applications should [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md). When configuring app instance lock, always lock every sensitive property available.  Configuring this property is especially critical for multitenant applications - meaning applications used in multiple tenants or organizations - but can and should be set by all applications.
+To reduce this risk, applications should [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md). When configuring app instance lock, always lock every sensitive property available. Configuring this property is especially critical for multitenant applications - meaning applications used in multiple tenants or organizations - but can and should be set by all applications.
 
 ## Permissions
 
-Your application may need to be granted permissions to access protected resources or APIs.  When requesting permissions, always ensure the following:
+Your application may need to be granted permissions to access protected resources or APIs. When requesting permissions, always ensure the following:
 
-- Follow [least privilege](../identity-platform/secure-least-privileged-access.md) principles.  Only request the permission that grants the least permissive access required to perform the action the app needs to take.   If calling Microsoft Graph, use the [API documentation](https://learn.microsoft.com/graph/api/overview) to identify the least permissive permission for a given API call.  Periodically review your app's permissions to check if a less privileged option is avaialable.  If an app no longer needs a permission, remove it.
+- Follow [least privilege](../identity-platform/secure-least-privileged-access.md) principles. Only request the permission that grants the least permissive access required to perform the action the app needs to take.   If calling Microsoft Graph, use the [API documentation](https://learn.microsoft.com/graph/api/overview) to identify the least permissive permission for a given API call. Periodically review your app's permissions to check if a less privileged option is available. If an app no longer needs a permission, remove it.
 - Whenever possible, use [delegated access](../identity-platform/delegated-access-primer.md) instead of [app-only access](../identity-platform/app-only-access-primer.md). 
 - Review the [permissions and consent](../identity-platform/permissions-consent-overview.md) documentation to ensure you understand permission fundamentals.
 
@@ -148,5 +148,5 @@ Consider the following guidance related to specifying application owners:
 
 ## Check Entra recommendations
 
-The [Microsoft Entra recommendations](../identity/monitoring-health/overview-recommendations.md) feature helps monitor the status of your tenant so you don't have to. These recommendations help ensure your tenant is in a secure and healthy state while also helping you maximize the value of the features available in Microsoft Entra ID.  Periocially review any active Entra recommendations that pertain to app properties or app configuration to keep your app ecosystem in a healthy state.
+The [Microsoft Entra recommendations](../identity/monitoring-health/overview-recommendations.md) feature helps monitor the status of your tenant so you don't have to. These recommendations help ensure your tenant is in a secure and healthy state while also helping you maximize the value of the features available in Microsoft Entra ID. Periodically review any active Microsoft Entra recommendations that pertain to app properties or app configuration to keep your app ecosystem in a healthy state.
 
