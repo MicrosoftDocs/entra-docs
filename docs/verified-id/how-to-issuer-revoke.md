@@ -37,7 +37,6 @@ In every Microsoft-issued verifiable credential, there's a claim called `credent
 > If the verifiable credential is old and was issued during the preview period, this claim doesn't exist. Revocation doesn't work for this credential and you have to reissue it.
 
 ```json
-
 ...
 "credentialStatus": { 
     "id": "urn:uuid:00aa00aa-bb11-cc22-dd33-44ee44ee44ee?bit-index=31", 
@@ -52,7 +51,7 @@ In every Microsoft-issued verifiable credential, there's a claim called `credent
 In the issuing party's decentralized identifier document, the Identity Hub's endpoint is available in the `service` section.
 
 ```json
-didDocument": {
+"didDocument": {
     "id": "did:web:verifiedid.contoso.com",
     "@context": [
         "https://www.w3.org/ns/did/v1",
@@ -141,7 +140,7 @@ Microsoft Entra Verified ID doesn't store verifiable credential data. The issuer
 
 You can use indexed claims in verifiable credentials to search for issued verifiable credentials and revoke them.
 
-1. Go to the **Verified ID** pane in the Azure portal as an admin user with **sign** key permission for Azure Key Vault.
+1. Go to the **Verified ID** pane in the **Azure portal** as an admin user with **sign** key permission for **Azure Key Vault**.
 1. Select the verifiable credential type.
 1. On the leftmost menu, select **Revoke a credential**.
 

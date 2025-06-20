@@ -39,8 +39,8 @@ Identity Verification (IDV) partners are Independent Software vendors (ISVs) who
     Header: Algorithm and Token type 
     ```json
     { 
-        “alg”: “RS256”, 
-        “typ”: “JWT” 
+        "alg": "RS256", 
+        "typ": "JWT" 
     } 
     ```
     PAYLOAD: DATA 
@@ -49,7 +49,7 @@ Identity Verification (IDV) partners are Independent Software vendors (ISVs) who
         "OrgId": "", 
         "RequestId": "", 
         "exp": 1684986555,
-        "redirectUrl": https://customerRPurl
+        "redirectUrl": "https://customerRPurl"
     }
     ```
 
@@ -93,7 +93,7 @@ To test the user flow, you could always deploy one of the sample applications in
 
 The following table showcases the list of Verified ID  IDV partners. If you're an IDV partner seeking to get listed in this gallery, submit your solution details using the self-submission form: [https://aka.ms/VIDCertifiedPartnerForm](https://aka.ms/VIDCertifiedPartnerForm).
 
-| IDV partner | Description | Integration walkthroughs |
+| **IDV partner** | **Description** | **Integration walkthroughs** |
 |:-------------------------|:--------------|:--------------|
 |:::image type="content" source="media/partner-gallery/au10tix.png" alt-text="Screenshot of au10tix logo."::: | [AU10TIX](https://www.au10tix.com/solutions/verifiable-credentials/) improves Verifiability While Protecting Privacy For Businesses, Employees, Contractors, Vendors, And Customers. | [Configure Verified ID by AU10TIX as your Identity Verification Partner](https://aka.ms/au10tixvc). |
 | :::image type="content" source="media/partner-gallery/lexisnexis.png" alt-text="Screenshot of a LexisNexis logo."::: | [LexisNexis](https://solutions.risk.lexisnexis.com/did-microsoft) risk solutions Verifiable credentials enable faster onboarding for employees, students, citizens, or others to access services. | [Configure Verified ID by LexisNexis Risk Solutions as your Identity Verification Partner](https://aka.ms/lexisnexisvc). |
@@ -113,4 +113,3 @@ Select a partner in the tables mentioned to learn how to integrate their solutio
 * GitHub samples: [https://aka.ms/vcsample](https://aka.ms/vcsample)
 * Identity Challenge Demo with FaceCheck: [https://aka.ms/facecheckdemo](https://aka.ms/facecheckdemo) 
 * Specification for the Microsoft correlation vector [mscv](https://github.com/microsoft/CorrelationVector): this is a protocol for tracing and correlation of events through a distributed system based on a lightweight vector clock.
-

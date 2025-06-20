@@ -66,7 +66,7 @@ IDs users create, own, and control independently of any organization or governme
 In order to be able to resolve DID documents, DIDs are typically recorded on an underlying network of some kind that represents a trust system. Microsoft currently supports DID:Web trust system. DID:Web is a permission based model that allows trust using a web domain’s existing reputation. DID:Web is in support status General Available.
 
 **3. DID User Agent/Wallet: Microsoft Authenticator App**.
-Enables real people to use decentralized identities and Verifiable Credentials. Microsoft Authenticator creates DIDs, facilitates issuance and presentation requests for verifiable credentials and manages the backup of your DID's seed through an encrypted wallet file.
+Enables real people to use decentralized identities and Verifiable Credentials. **Microsoft Authenticator** creates DIDs, facilitates issuance and presentation requests for verifiable credentials and manages the backup of your DID's seed through an encrypted wallet file.
 
 **4. Microsoft Resolver**.
 An API that looks up and resolves DIDs using the ```did:web```method and returns the DID Document Object (DDO). The DDO includes DPKI metadata associated with the DID such as public keys and service endpoints. 
