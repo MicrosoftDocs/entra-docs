@@ -18,8 +18,9 @@ Security is an important concept when registering an application in Microsoft En
 
 Because secure applications are essential to the organization, any downtime to them because of security issues can affect the business or some critical service that the business depends upon. So, it's important to allocate time and resources to ensure applications always stay in a healthy and secure state. Conduct a periodic security and health assessment of applications, much like a Security Threat Model assessment for code. For a broader perspective on security for organizations, see the [security development lifecycle (SDL)](https://www.microsoft.com/securityengineering/sdl).
 
-This article describes security best practices for the following application properties:
+This article describes security best practices for the following application properties and scenarios:
 
+- Identity type
 - Credentials
 - Redirect URIs
 - Implicit flow configuration
@@ -27,6 +28,21 @@ This article describes security best practices for the following application pro
 - Access token version
 - Application instance lock
 - Application ownership
+
+## Identity type
+
+You are likely here to learn about security best practices for [Entra applications](../identity-platform/how-applications-are-added) - also referred to as app registrations or app objects.  However, there is another identity type that can be used to access Entra-protected resources, called [managed identities for Azure resources](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
+
+Azure managed identities are secure by default and require little to no ongoing maintenance or overhead.  Consider using a managed identity instead of an Entra application for your app identity if all of the following are true:
+
+- The service runs in the Azure cloud
+- The app doesn't need to sign in users
+- The app doesn't need to act as the resource in a token flow (is not a web API)
+- The app doesn't need to operate in multiple tenants
+
+Note that managed identities **can** be used to access resources outside of Azure - including [Microsoft Graph](https://learn.microsoft.com/graph/overview).
+
+The rest of this article will cover security best practices for properties of Entra app registrations.
 
 ## Credentials (including certificates and secrets)
 
@@ -40,11 +56,11 @@ Consider the following guidance related to certificates and secrets:
 - If the service the app is used in doesn't run on Azure, but does run on another platform that offers automated credential management, consider [using an identity from that platform as a credential](../workload-id/workload-identity-federation-create-trust).  For example, a [Github actions workflow can be configured as a credential](../workload-id/workload-identity-federation-create-trust#github-actions), eliminating the need to manage and secure credentials for the Github actions pipeline.  Use caution with this approach and only configure federated credentials from platforms you trust.  An app is only as secure as the identity platform it has configured as a credential.
 - If using a managed identity or other secure external identity provider isn't possible, use [certificate credentials](./certificate-credentials.md). **Don't use password credentials, also known as *secrets***. While it's convenient to use password secrets as a credential, password credentials are often mismanaged and can be easily compromised.
 - If a certificate must be used instead of a managed identity, store that certificate in a secure key vault, like [Azure Key Vault](https://azure.microsoft.com/products/key-vault).
+- If a certificate must be used instead of a managed identity, use a certificate from a trusted certificate authority (CA) instead of a self-signed certificate. [Configure a policy](https://devblogs.microsoft.com/identity/app-management-policy/) to enforce that certificates come from trusted issuers. However, if using a trusted CA isn't possible, self-signed certificates are still preferred over passwords.
 - Configure [application management policies](/graph/api/resources/applicationauthenticationmethodpolicy) to govern the use of secrets by limiting their lifetimes or blocking their use altogether.
 - If an application is used only as a public or installed client (for example, mobile or desktop apps that are installed on the end user machine), make sure that there are no credentials specified on the application object.
 - Review the credentials used in applications for freshness of use and their expiration. An unused credential on an application can result in a security breach. Rollover credentials frequently and don't share credentials across applications. Don't have many credentials on one application.
 - Monitor your production pipelines to prevent credentials of any kind from being committed into code repositories. [Credential Scanner](/previous-versions/azure/security/develop/security-code-analysis-overview#credential-scanner) is a static analysis tool that can be used to detect credentials (and other sensitive content) in source code and build output.
-
 
 ## Redirect URIs
 
@@ -79,7 +95,7 @@ The **Application ID URI** property of the application specifies the globally un
 
 Best practices for defining the Application ID URI change depending on if the app is issued v1.0 or v2.0 access tokens. If you're unsure whether an app is issued v1.0 access tokens, check the `requestedAccessTokenVersion` of the [app manifest](reference-microsoft-graph-app-manifest.md). A value of `null` or `1` indicates that the app receives v1.0 access tokens. A value of `2` indicates that the app receives v2.0 access tokens.
 
-For applications that are issued v1.0 access tokens, only the default URIs should be used. The default URIs are `api://<appId>` and `api://<tenantId>/<appId>`. 
+For applications that are issued v1.0 access tokens, only the default URIs should be used. The default URIs are `api://<appId>` and `api://<tenantId>/<appId>`.   - Configure the `nonDefaultUriAddition` restriction in [application management policies](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta) to enforce this best practice for future updates to applications in your organization.
 
 For applications that are issued v2.0 access tokens, use the following guidelines when defining the App ID URI: 
 - The `api` or `https` URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
@@ -106,9 +122,17 @@ After the application configuration has been updated to use v2.0 tokens, ensure 
 
 ## Application instance property lock
 
-When a multitenant application has a service principal provisioned in a different tenant, that service principal can be customized by a tenant admin. Those customization abilities can allow for modifications that the app owner didn't expect, leading to security risks. For example, credentials can be added to the service principal, even though credentials should typically be owned and controlled by the app developer and owner.
+When an application has a service principal provisioned into a tenant,  that service principal can be customized by a tenant admin. This is true regardless of whether that tenant is the application's home tenant or a foreign tenant.  Those customization abilities can allow for modifications that the app owner didn't expect, leading to security risks. For example, credentials can be added to the service principal, even though credentials should typically be owned and controlled by the app developer and owner.
 
-To reduce this risk, multitenant applications - meaning applications that are used in more than one tenant - should [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md). When configuring app instance lock, always lock every sensitive property available.
+To reduce this risk, applications should [configure app instance lock](../identity-platform/howto-configure-app-instance-property-locks.md). When configuring app instance lock, always lock every sensitive property available.  Configuring this property is especially critical for multitenant applications - meaning applications used in multiple tenants or organizations - but can and should be set by all applications.
+
+## Permissions
+
+Your application may need to be granted permissions to access protected resources or APIs.  When requesting permissions, always ensure the following:
+
+- Follow [least privilege](../identity-platform/secure-least-privileged-access) principles.  Only request the permission that grants the least permissive access required to perform the action the app needs to take.   If calling Microsoft Graph, use the [API documentation](https://learn.microsoft.com/en-us/graph/api/overview) to identify the least permissive permission for a given API call.  Periodically review your app's permissions to check if a less privileged option is avaialable.  If an app no longer needs a permission, remove it.
+- Whenever possible, use [delegated access](../identity-platform/delegated-access-primer) instead of [app-only access](entra/identity-platform/app-only-access-primer). 
+- Review the [permissions and consent](../identity-platform/permissions-consent-overview) documentation to ensure you understand permission fundamentals.
 
 ## App ownership configuration
 
@@ -121,6 +145,8 @@ Consider the following guidance related to specifying application owners:
 - Application ownership should be kept to a minimal set of people within the organization.
 - An administrator should review the owners list once every few months to make sure that owners are still part of the organization and should still own an application.
 
-## Next steps
 
-- For more information about the Auth code flow, see the [OAuth 2.0 authorization code flow](./v2-oauth2-auth-code-flow.md).
+## Check Entra recommendations
+
+The [Microsoft Entra recommendations](https://learn.microsoft.com/en-us/entra/identity/monitoring-health/overview-recommendations) feature helps monitor the status of your tenant so you don't have to. These recommendations help ensure your tenant is in a secure and healthy state while also helping you maximize the value of the features available in Microsoft Entra ID.  Periocially review any active Entra recommendations that pertain to app properties or app configuration to keep your app ecosystem in a healthy state.
+
