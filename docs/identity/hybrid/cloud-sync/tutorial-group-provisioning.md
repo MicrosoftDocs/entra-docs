@@ -1,19 +1,22 @@
 ---
 title: 'Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync'
 description: This tutorial shows how to setup and configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
-author: billmath
-manager: femila
+author: justinha
+manager: dougeby
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 06/19/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: justinha
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync
 
-This tutorial walks you through creating and configuring cloud sync to synchronize groups to on-premises Active Directory. 
+This tutorial walks you through creating and configuring cloud sync to synchronize groups to on-premises Active Directory (AD). 
+
+> [!IMPORTANT]
+> We recommend using **Selected security groups** as the default scoping filter when you configure Group Provisioning to AD (GPAD). This default scoping filter helps prevent any performance issues when you provision groups.  
 
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
 
@@ -21,16 +24,19 @@ This tutorial walks you through creating and configuring cloud sync to synchroni
 This tutorial assumes the following:
 - You have an Active Directory on-premises environment
 - You have cloud sync setup to synchronize users to Microsoft Entra ID.
-- You have two users that are synchronized.  Britta Simon and Lola Jacobson.  These users exist on-premises and in Microsoft Entra ID.
-- Three Organizational Units have been created in Active Directory - Groups, Sales, and Marketing.  They have the following distinguishedNames:  
- - OU=Marketing,DC=contoso,DC=com
- - OU=Sales,DC=contoso,DC=com
- - OU=Groups,DC=contoso,DC=com
+- You have two users that are synchronized: Britta Simon and Lola Jacobson. These users exist on-premises and in Microsoft Entra ID.
+- An organizational unit (OU) is created in Active Directory for each of the following departments:
 
-## Create two groups in Microsoft Entra ID.
-To begin, we create two groups in Microsoft Entra ID.  One group is Sales and the other is Marketing.
+  Display name | Distinguished name
+  -------------|-------------------
+  Groups       | OU=Marketing,DC=contoso,DC=com
+  Sales        | OU=Sales,DC=contoso,DC=com
+  Marketing    | OU=Groups,DC=contoso,DC=com
 
-To create two groups, follow these steps.
+## Create two groups in Microsoft Entra ID
+To begin, we create two groups in Microsoft Entra ID. One group is Sales and the other is Marketing.
+
+To create two groups, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Entra ID** > **Groups** > **All groups**.
@@ -42,7 +48,10 @@ To create two groups, follow these steps.
 1. Repeat this process using **Marketing** as the **Group Name.**
 
 
-## Add users to the newly created groups
+## Add users to the newly created or SOA converted groups
+
+To add users to the groups, follow these steps:
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Entra ID** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
@@ -54,25 +63,35 @@ To create two groups, follow these steps.
 9. It should successfully add her to the group.
 10. On the far left, click **All groups** and repeat this process using the **Sales** group and adding **Lola Jacobson** to that group.
 
-
 ## Configure provisioning
-To configure provisioning, follow these steps.
+
+To configure provisioning, follow these steps:
 
    [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
    3. Select **New configuration**.
    4. Select **Microsoft Entra ID to AD sync**.
-   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
+
+      :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
    5. On the configuration screen, select your domain and whether to enable password hash sync. Click **Create**. 
-    :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
-   6. The **Get started** screen opens. From here, you can continue configuring cloud sync
+      :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
+
+   6. The **Get started** screen opens. From here, you can continue configuring cloud sync.
    7. On the left, click **Scoping filters**.
-   8. Under **Group scope** set it to **All Security groups**
-   9.  Under **Target container** click **Edit attribute mapping**.
-     :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
+   8. For **Groups scope**, select **Selected security groups**.
 
-   10. Change **Mapping type** to **Expression**
+      :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
+
+   9. There are two possible approaches to set the OU:
+
+      - You can preserve the original OU path from on-premises. With this approach, you to set the attribute mapping based on extensionAttribute value. For more information, see Preserve the original OU path.  
+   
+      or
+
+      - Under **Target container** click **Edit attribute mapping**.
+
+   10. Change **Mapping type** to **Expression**.
    11. In the expression box, enter the following:
 
        ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
@@ -82,10 +101,10 @@ To configure provisioning, follow these steps.
        :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
 
    13. Click **Apply** - This changes the target container depending on the group displayName attribute.
-   14. Click **Save**
-   15. On the left, click **Overview**
-   16. At the top, click **Review and enable**
-   17. On the right, click **Enable configuration**
+   14. Click **Save**.
+   15. On the left, click **Overview**.
+   16. At the top, click **Review and enable**.
+   17. On the right, click **Enable configuration**.
 
 
 ## Test configuration 
@@ -175,6 +194,8 @@ Admin rolls back the SOA operation | `false` | `null` | If an admin switches t
 
 ### Roll back Group SOA and Group Provisioning to AD
 
+To roll back Group SOA, follow these steps:
+
 - Flip back the SOA of the group SOATestGroup1.
 
 - When SOA transfer is rolled back to on-premises, **Group Provisioning to AD (GPAD)** stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle.
@@ -184,8 +205,6 @@ Admin rolls back the SOA operation | `false` | `null` | If an admin switches t
   :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
   
   :::image type="content" border="true" source="media/tutorial-group-provision/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/tutorial-group-provision/audit-log-details.png":::
-
-
 
 ## Next steps 
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
