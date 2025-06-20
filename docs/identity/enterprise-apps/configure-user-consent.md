@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 06/04/2025
+ms.date: 06/15/2025
 ms.author: jomondi
 ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
@@ -194,6 +194,8 @@ PATCH https://graph.microsoft.com/v1.0/policies/authorizationPolicy
 ```
 
 :::zone-end
+
+Any changes made to user consent settings only affect future consent operations for applications. Existing consents remain unchanged, and users continue to have access based on the permissions previously granted.
 
 > [!TIP]
 > To allow users to request an administrator's review and approval of an application that the user isn't allowed to consent to, [enable the admin consent workflow](configure-admin-consent-workflow.md). For example, you might do this when user consent has been disabled or when an application is requesting permissions that the user isn't allowed to grant.
