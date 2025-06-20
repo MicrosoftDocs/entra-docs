@@ -315,7 +315,7 @@ The table below shows the mapping between linkable identifier claims and Microso
 
 1. To filter by Record Types, the supported record types can be found by items starting with SharePoint.
  
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/sharepoint-purview-recordtypes-search.png" alt-text="Screenshot of Microsoft Purview portal showing supported Record Types for SharePoint Online.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/sharepoint-purview-record-types-search.png" alt-text="Screenshot of Microsoft Purview portal showing supported Record Types for SharePoint Online.":::
 
 1. You can further filter for a specific user, or a UTI value from Microsoft Entra sign-in logs. You can filter all the activity logs within a session with `AADSessionId`.
 1. The audit search results will show all the log lines from the SharePoint Online activities.
@@ -367,7 +367,7 @@ SharePoint Online operations including file access, creation, modification, or d
 
 1. Start with Microsoft Entra sign-in logs to find the session id of this access token by filtering around the time the token was phished and the user objectId.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/linkable-signinlog-entries.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers for Teams scenario.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/linkable-sign-in-log-entries.png" alt-text="Screenshot of Microsoft Purview portal showing log item with linkable identifiers for Teams scenario.":::
 
 1. Determine the linkable identifiers from Microsoft Entra sign-in logs, such as SID or UTI, to use as a filter on Teams and SharePoint Online audit logs.
 
@@ -383,11 +383,11 @@ SharePoint Online operations including file access, creation, modification, or d
 
 1. Each log item can be opened to get detailed information on linkable identifiers. Below is an example of user posting a message.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-logitem.png" alt-text="Screenshot of Microsoft Purview portal showing log item for Teams and SPO.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-teams-sharepoint-log-item.png" alt-text="Screenshot of Microsoft Purview portal showing log item for Teams and SPO.":::
 
 1. Below is an example of user downloading a file from SharePoint Online.
 
-   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-sharepoint-logitem.png" alt-text="Screenshot of Microsoft Purview portal showing search for log item for Teams and SPO.":::
+   :::image type="content" border="true" source="media/how-to-authentication-track-linkable-identifiers/purview-search-sharepoint-log-item.png" alt-text="Screenshot of Microsoft Purview portal showing search for log item for Teams and SPO.":::
 
 1. Export the audit log and investigate for a specific `SessionId` or `UniqueTokenId` for specific activities. The image below shows all different operations that has been performed by the attacker.
 
