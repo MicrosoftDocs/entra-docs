@@ -72,11 +72,14 @@ To configure provisioning, follow these steps.
    9.  Under **Target container** click **Edit attribute mapping**.
      :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
 
-   10.  Change **Mapping type** to **Expression**
+   10. Change **Mapping type** to **Expression**
    11. In the expression box, enter the following:
-     ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
-   12. Change the **Default value** to be OU=Groups,DC=contoso,DC=com.
-     :::image type="content" source="media/tutorial-group-provision/group-provision-2.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/tutorial-group-provision/group-provision-2.png":::
+
+       ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+
+   12. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+
+       :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
 
    13. Click **Apply** - This changes the target container depending on the group displayName attribute.
    14. Click **Save**
@@ -95,12 +98,13 @@ To configure provisioning, follow these steps.
  4. On the left, select **Provision on demand**.
  5. Enter **Sales** in the **Selected group** box
  6. From the **Selected users** section, select some users to test.
-   :::image type="content" source="media/tutorial-group-provision/group-provision-1.png" alt-text="Screenshot of adding members." lightbox="media/tutorial-group-provision/group-provision-1.png":::
+    
+    :::image type="content" source="media/tutorial-group-provision/select-user.png" alt-text="Screenshot of adding members." lightbox="media/tutorial-group-provision/select-user.png":::
 
  7. Click **Provision**.
  8. You should see the group provisioned.
  
-   :::image type="content" source="media/tutorial-group-provision/group-provision-3.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/tutorial-group-provision/group-provision-3.png":::
+   :::image type="content" source="media/tutorial-group-provision/success.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/tutorial-group-provision/success.png":::
 
 ## Verify in Active Directory
 Now you can make sure the group is provisioned to Active Directory.
@@ -110,10 +114,8 @@ Do the following:
 1.  Sign-in to your on-premises environment.
 2.  Launch **Active Directory Users and Computers**
 3.  Verify the new group is provisioned.
-   :::image type="content" source="media/tutorial-group-provision/group-provision-4.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/group-provision-4.png":::
 
-
-
+    :::image type="content" source="media/tutorial-group-provision/verify.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/verify.png":::
 
 ## How Group Provisioning to Active Directory (GPAD) behaves with SOA converted groups
 
@@ -128,7 +130,7 @@ group, that group becomes eligible for **Group Provisioning to Active Directory 
 
 If you sync a group that isn't universal, such as a global group, and then try to switch SOA and run a GPAD job on that group, an Entry level error is returned. Make sure the group has universal scope.  
 
-:::image type="content" source="media/tutorial-group-provision/image25.png" alt-text="Screenshot of an Entry level error." lightbox="media/tutorial-group-provision/image25.png":::
+:::image type="content" border="true" source="media/tutorial-group-provision/entry-level-error.png" alt-text="Screenshot of a universal group setting." lightbox="media/tutorial-group-provision/entry-level-error.png":::
 
 ### Use GPAD to provision groups to AD
 
@@ -137,38 +139,28 @@ If you sync a group that isn't universal, such as a global group, and then try t
 In the diagram below, **SOATestGroup1** has been flipped to the cloud.
 As a result, it has become available for the **GPAD job scope**.
 
-<img src="media/tutorial-group-provisioning/image26.jpg" style="width:5in;height:5.30208in"
-alt="A screenshot of a group AI-generated content may be incorrect." />
+:::image type="content" border="true" source="media/tutorial-group-provision/in-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/entry-level-error.png":::
 
 - When a **GPAD job** runs, the SOA-converted group is provisioned
   successfully.
 
-- In the **Provisioning Logs**, you can search for the group name and
-  verify that the group was provisioned.
+- In the **Provisioning Logs**, you can search for the group name and verify that the group was provisioned.
 
-  <img src="media/tutorial-group-provisioning/image27.jpg" style="width:6.5in;height:1.16667in"
-alt="A screenshot of a chat AI-generated content may be incorrect." />
+  :::image type="content" border="true" source="media/tutorial-group-provision/provisioning-logs.png" alt-text="Screenshot of the Provisioning logs." lightbox="media/tutorial-group-provision/provisioning-logs.png":::
 
-- The details will show that the group was matched with an existing
-  target group.
+- The details will show that the group was matched with an existing target group.
 
-<img src="media/tutorial-group-provisioning/image28.jpg" style="width:6.5in;height:5.47917in"
-alt="A screenshot of a computer AI-generated content may be incorrect." />
+  :::image type="content" border="true" source="media/tutorial-group-provision/matched.png" alt-text="Screenshot of matched attributes." lightbox="media/tutorial-group-provision/matched.png":::
 
-- Additionally, you can confirm that the **Admin Description** and **CN
-  (Common Name)** of the target group have been updated.
+- Additionally, you can confirm that the **Admin Description** and **CN (Common Name)** of the target group are updated.
 
-<img src="media/tutorial-group-provisioning/image29.jpg" style="width:6.5in;height:3.52083in"
-alt="A screenshot of a computer AI-generated content may be incorrect." />
+  :::image type="content" border="true" source="media/tutorial-group-provision/confirm-updates.png" alt-text="Screenshot of updated attributes." lightbox="media/tutorial-group-provision/confirm-updates.png":::
 
-- When you look at AD, you can find that the Original AD group has been
-  updated.
+- When you look at AD, you can find that the Original AD group is updated.
 
-> <img src="media/tutorial-group-provisioning/image30.jpg" style="width:3.54167in;height:3.75in"
-> alt="A screenshot of a computer AI-generated content may be incorrect." />
+  :::image type="content" border="true" source="media/tutorial-group-provision/updated-group.png" alt-text="Screenshot of the updated group." lightbox="media/tutorial-group-provision/updated-group.png":::
 
-<img src="media/tutorial-group-provisioning/image31.png" style="width:5.45381in;height:4.00035in"
-alt="A screenshot of a computer AI-generated content may be incorrect." />
+  :::image type="content" border="true" source="media/tutorial-group-provision/group-properties.png" alt-text="Screenshot of group properties." lightbox="media/tutorial-group-provision/group-properties.png":::
 
 
 ### Status of attributes after SOA switch
@@ -187,15 +179,12 @@ Admin rolls back the SOA operation | `false` | `null` | If an admin switches t
 
 - When SOA transfer is rolled back to on-premises, **Group Provisioning to AD (GPAD)** stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle.
 
-- You can verify in audit logs that sync will not happen for this object
-  as it is managed on premises. Further you can go and check in AD that
-  the group is still intact and is not deleted.  
+- You can verify in the audit logs that sync won't happen for this object because it's managed on-premises. You can also check in AD that the group is still intact and not deleted.  
 
-  <img src="media/tutorial-group-provisioning/image32.png" style="width:4.4375in;height:2.84375in"
-  alt="A screenshot of a computer AI-generated content may be incorrect." />  
-    
-  <img src="media/tutorial-group-provisioning/image33.png" style="width:5.40625in;height:4.81711in"
-  alt="A screenshot of a computer AI-generated content may be incorrect." />
+  :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
+  
+  :::image type="content" border="true" source="media/tutorial-group-provision/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/tutorial-group-provision/audit-log-details.png":::
+
 
 
 ## Next steps 
