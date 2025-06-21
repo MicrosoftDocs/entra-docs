@@ -3,30 +3,31 @@ title: The Global Secure Access Client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 06/20/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
 ms.reviewer: lirazbarak
 ms.custom: sfi-image-nochange
 # Customer intent: macOS users, I want to download and install the Global Secure Access client.
+
 ---
-# Global Secure Access client for macOS (Preview)
+# Install the Global Secure Access client for macOS (Preview)
+The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
+
 > [!IMPORTANT]
 > The Global Secure Access client for macOS is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
-
-The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
 
 This article describes how to download and install the Global Secure Access client for macOS.
 
 ## Prerequisites
 
-- A Mac device with an Intel, M1, M2, M3, or M4 processor, running macOS version 13 or newer.
+- A Mac device with an Intel, M1, M2, M3, or M4 processor running macOS version 13 or newer.
 - A device registered to Microsoft Entra tenant using Company Portal.
 - A Microsoft Entra tenant onboarded to Global Secure Access.
-- Deployment of the [Microsoft Enterprise single sign-on (SSO) plug-in for Apple devices](../identity-platform/apple-sso-plugin.md) is recommended for SSO experience based on the user who is signed in to the company portal.   
 - An internet connection.
+- For an SSO experience based on the user signed in to the company portal, deploy the [Microsoft Enterprise single sign-on (SSO) plug-in for Apple devices](../identity-platform/apple-sso-plugin.md).
 
 ## Download the client
 
@@ -63,8 +64,8 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 
 |Bundle identifier   |Team identifier   |
 |---------|---------|
-|com.microsoft.naas.globalsecure.tunnel-df   |UBF8T346G9   |
-|com.microsoft.naas.globalsecure-df   |UBF8T346G9   |
+|com.microsoft.globalsecureaccess.tunnel   |UBF8T346G9   |
+|com.microsoft.globalsecureaccess   |UBF8T346G9   |
 
 10. Select **Save** and **Next**.   
 1. On the **Scope tags** tab, add tags as appropriate.
@@ -94,7 +95,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 		<key>PayloadOrganization</key>
 		<string>Microsoft Corporation</string>
 		<key>PayloadIdentifier</key>
-		<string>com.microsoft.naas.globalsecure-df</string>
+		<string>com.microsoft.globalsecureaccess</string>
 		<key>PayloadDisplayName</key>
 		<string>Global Secure Access Proxy Configuration</string>
 		<key>PayloadDescription</key>
@@ -117,7 +118,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 				<key>PayloadOrganization</key>
 				<string>Microsoft Corporation</string>
 				<key>PayloadIdentifier</key>
-				<string>com.microsoft.naas.globalsecure-df</string>
+				<string>com.microsoft.globalsecureaccess</string>
 				<key>PayloadDisplayName</key>
 				<string>Global Secure Access Proxy Configuration</string>
 				<key>PayloadDescription</key>
@@ -131,9 +132,9 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 					<key>Order</key>
 					<integer>1</integer>
 					<key>ProviderBundleIdentifier</key>
-					<string>com.microsoft.naas.globalsecure.tunnel-df</string>
+					<string>com.microsoft.globalsecureaccess.tunnel</string>
 					<key>ProviderDesignatedRequirement</key>
-					<string>identifier "com.microsoft.naas.globalsecure.tunnel-df" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
+					<string>identifier "com.microsoft.globalsecureaccess.tunnel" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
 					<key>ProviderType</key>
 					<string>app-proxy</string>
 					<key>RemoteAddress</key>
@@ -142,7 +143,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 				<key>UserDefinedName</key>
 				<string>Global Secure Access Proxy Configuration</string>
 				<key>VPNSubType</key>
-				<string>com.microsoft.naas.globalsecure-df</string>
+				<string>com.microsoft.globalsecureaccess</string>
 				<key>VPNType</key>
 				<string>TransparentProxy</string>
 			</dict>
@@ -182,15 +183,20 @@ To manually install the Global Secure Access client:
 :::image type="content" source="media/how-to-install-macos-client/macos-client-system-tray-icon-connected.png" alt-text="Screenshot of the system tray with the Global Secure Access - Connected icon highlighted.":::
    
 ## Upgrade the Global Secure Access client
-The client installer supports upgrades. You can use the installation wizard to install a new version on a device that is currently running a previous client version.
+The client installer supports upgrades. You can use the installation wizard to install a new version on a device that's currently running a previous client version.
 
-For a silent upgrade, use the following command.    
+For a silent upgrade, run the following command.    
 *Substitute your file path according to the download location of the .pkg file.*
 
 `sudo installer -pkg ~/Downloads/GlobalSecureAccessClient.pkg -target / -verboseR`
 
 ## Uninstall the Global Secure Access client
-To manually uninstall the Global Secure Access client, use the following command.
+To manually uninstall the Global Secure Access client, use either of the following methods: 
+-	Run the **Uninstall Global Secure Access Client** application.
+
+Or
+
+-	Run the following command:
 
 `sudo /Applications/Global\ Secure\ Access\ Client.app/Contents/Resources/install_scripts/uninstall`
 
@@ -226,8 +232,8 @@ To view the available client menu actions, right-click the Global Secure Access 
 |:::image type="icon" source="media/how-to-install-macos-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
 ## Settings and troubleshooting
-The Settings window allows you to set different configurations and do some advanced actions.
-The settings window contains two tabs:
+From the Settings window, you can set different configurations and perform some advanced actions.
+The Settings window has two tabs:
 
 ### Settings
 
@@ -247,7 +253,35 @@ The settings window contains two tabs:
 |**Export Logs**     |Exports logs and configuration files related to the client to a zip file.         |
 |**Advanced Diagnostics Tool**     |An advanced tool to monitor and troubleshoot the client's behavior.         |
 
-:::image type="content" source="media/how-to-install-macos-client/macos-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Troubleshooting tab selected.":::	
+:::image type="content" source="media/how-to-install-macos-client/macos-client-troubleshooting-toggles.png" alt-text="Screenshot of the macOS Settings and Troubleshooting view, with the Troubleshooting tab selected.":::   
+
+### Hide or unhide system tray menu buttons
+The administrator can show or hide specific buttons in the client system tray icon menu by deploying the values in the following table.
+
+|Value |Type |Data |Default behavior |Description |
+|------|------|------|------|------|
+|HideDisablePrivateAccessButton |Boolean |false = shown   true = hidden |hidden |Set this value to show or hide the **Disable Private Access** button. This option is for a scenario when the device is directly connected to the corporate network and the user prefers to access private applications directly through the network instead of through Global Secure Access. |
+|HideDisableButton |Boolean |false = shown   true = hidden |shown |Set this value to show or hide the **Disable** action. When visible, the user can disable the Global Secure Access client. The client stays disabled until the user enables it again or restarts the device. |
+|HidePauseButton |Boolean |false = shown   true = hidden |shown |Set this value to show or hide the **Pause** action. When visible, the user can pause the Global Secure Access client. The client pauses for 10 minutes or until the user enables it again. |
+|HideQuitButton |Boolean |false = shown   true = hidden |hidden |Set this value to show or hide the **Quit** action. When visible, the user can quit the Global Secure Access client, which closes the client application. To open it again, run the Global Secure Access application from Finder. |
+
+You can also configure the client system tray icon menu with Microsoft Intune: 
+1. Follow the instructions to [Create the profile](../intune/intune-service/configuration/preference-file-settings-macos#create-the-profile).
+1. For **Preference domain name**, enter `com.microsoft.globalsecureaccess`.
+1. For **Property list file**, upload an XML file similar to the following sample. Revise the XML to match your preferences.
+
+```xml
+<key>HidePauseButton</key>
+<false/>
+<key>HideDisableButton</key>
+<false/>
+<key>HideQuitButton</key>
+<true/>
+<key>HideDisablePrivateAccessButton</key>
+<true/>
+```
+
+:::image type="content" source="media/how-to-install-macos-client/intune-xml-sample.png" alt-text="Screenshot of the Microsoft Intune admin center, on the Configurations step, showing sample XML code.":::
 
 ## Known limitations
 
