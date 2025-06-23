@@ -527,19 +527,18 @@ This setting also applies to B2B collaboration and B2B direct connect, so if you
 
 When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with one of the following error messages:
 
+*Automatic redemption is not setup in the source tenant* 
 ```
 You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
 Error code: AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
 Details: The source tenant has not enabled automatic user consent with the target tenant. Please enable the outbound cross-tenant access policy for automatic user consent in the source tenant. aka.ms/TroubleshootingCrossTenantSyncPolicyCheck
 ```
-
+*Automatic redemption is not setup in the target tenant* 
 ```
 You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
 Error code: AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
 Details: The target tenant has not enabled inbound synchronization with this tenant. Please request the target tenant admin to enable the inbound synchronization on their cross-tenant access policy. Learn more: aka.ms/TroubleshootingCrossTenantSyncPolicyCheck
 ```
-
-:::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png" alt-text="Screenshot that shows the error when test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png":::
 
 **Cause**
 
