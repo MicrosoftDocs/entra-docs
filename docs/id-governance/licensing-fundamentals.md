@@ -95,11 +95,11 @@ Users don't need to be assigned a Microsoft Entra ID Governance license, but the
 
 ### How can I license usage of Microsoft Entra ID Governance features for business guests?
 
-All users who are in scope of Microsoft Entra ID Governance features, including business guests such as contractors, partners, and external collaborators, need a license. We're creating a new Microsoft Entra ID Governance license for business guests. This license operates on a monthly active usage (MAU) model. Customers are able to acquire licenses matching their anticipated business guest MAU.
+Microsoft Entra ID Governance utilizes Monthly Active User (MAU) licensing for guest users which is different than licensing for employees and requires an Azure subscription.
+ 
+Under the guest billing model, guests are identified by a *userType* of Guest regardless of where the user authenticates. A *userType* of Guest is the default userType for all B2B invitation methods and can also be set by an Identity administrator. The bill for each month includes a record for each guest user with one or more governance actions in that month. See the Azure pricing page for pricing details.
 
-We anticipate making these licenses available in the second quarter (Q2) of 2025. In the interim, organizations that govern the identities of their employees with Microsoft Entra ID Governance can govern the identities of their business guests for no additional cost. At this time, existing customers of Microsoft Entra ID P1 or P2 with Microsoft Entra External ID can continue using the subset of features that are included in P1 or P2 with their business guests through their Microsoft Entra External ID license.
-
-For more information, see: [Microsoft Entra ID Governance licensing for business guests](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-licensing-for-business-guests/ba-p/3575579).
+For more information, see: [Microsoft Entra ID Governance licensing for guest users](microsoft-entra-id-governance-licensing-for-guest-users.md).
 
 ### What happens to PIM when a license expires?
 
