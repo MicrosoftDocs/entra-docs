@@ -75,9 +75,9 @@ The following prerequisites are required to implement authentication by using ap
 The following extra requirements are needed for the BYOC certificate management option:
 
 - A certificate is created in an HSM or TPM by using a Cryptography API: Next Generation provider. The private key is marked as nonexportable. A warning event 1014 is emitted if TPM isn't used. The following certificate configurations are supported:
- - `KeyLength`: 2048
- - `KeyAlgorithm`: RSA
- - `KeyHashAlgorithm`: SHA256
+   - `KeyLength`: 2048
+   - `KeyAlgorithm`: RSA
+   - `KeyHashAlgorithm`: SHA256
 - The created certificate is stored in the `LOCAL_MACHINE` store.
 - Grant the ADSync account permission to perform signing by using the private key.
 

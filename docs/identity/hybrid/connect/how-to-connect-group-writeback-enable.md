@@ -58,10 +58,9 @@ To enable group writeback, follow these steps:
 
     When you configure group writeback, a checkbox appears at the bottom of the configuration window. Select it to enable this feature.
 
-    > [!NOTE]
-    > Groups that are written back from Microsoft Entra ID to Active Directory have a source of authority in the cloud. Any changes made on-premises to groups that are written back from Microsoft Entra ID are overwritten in the next sync cycle.
+     Groups that are written back from Microsoft Entra ID to Active Directory have a source of authority in the cloud. Any changes made on-premises to groups that are written back from Microsoft Entra ID are overwritten in the next sync cycle.
 
-    :::image type="content" source="media/how-to-connect-group-writeback/optional-group-writeback-1.png" alt-text="Screenshot that shows selecting the Writeback group Distinguished Name with cloud Display Name option." lightbox="media/how-to-connect-group-writeback/optional-group-writeback-1.png":::
+     :::image type="content" source="media/how-to-connect-group-writeback/optional-group-writeback-1.png" alt-text="Screenshot that shows selecting the Writeback group Distinguished Name with cloud Display Name option." lightbox="media/how-to-connect-group-writeback/optional-group-writeback-1.png":::
 
 1. On the **Ready to configure** page, select **Configure**.
 1. When the wizard is complete, on the **Configuration complete** page, select **Exit**.
@@ -88,16 +87,14 @@ To disable group writeback, follow these steps:
 1. Open the Azure Active Directory Connect wizard and go to the **Additional tasks** page. Select the **Customize synchronization options** task and select **Next**.
 1. On the **Optional features** page, clear the **Group writeback** checkbox. A warning states that you are about to delete groups. Select **Yes**.
 
-     > [!IMPORTANT]
-     > Disabling group writeback causes any groups that this feature created previously to be deleted from your local Active Directory on the next sync cycle.
+   Disabling group writeback causes any groups that this feature created previously to be deleted from your local Active Directory on the next sync cycle.
 
-     ![Screenshot that shows the Group writeback checkbox to clear.](media/how-to-connect-group-writeback/group-1.png)
+   ![Screenshot that shows the Group writeback checkbox to clear.](media/how-to-connect-group-writeback/group-1.png)
 
 1. Select **Next**.
 1. Select **Configure**.
 
- > [!NOTE]
- > Disabling group writeback sets the `Full Import` and `Full Synchronization` flags to `true` on the Azure Active Directory Connector. The rule changes propagate through on the next sync cycle and delete the groups that were previously written back to your Active Directory.
+Disabling group writeback sets the `Full Import` and `Full Synchronization` flags to `true` on the Azure Active Directory Connector. The rule changes propagate through on the next sync cycle and delete the groups that were previously written back to your Active Directory.
 
 ## Modify default behavior for Microsoft 365 groups
 
@@ -123,8 +120,7 @@ Because the default synchronization rule that limits the group size is created w
      Set-ADSyncScheduler -SyncCycleEnabled $true 
      ``` 
 
-> [!NOTE]
-> Disabling the synchronization rule sets the flag for full synchronization to `true` on the Microsoft Entra Connector. This change causes the rule changes to propagate through on the next sync cycle.
+Disabling the synchronization rule sets the flag for full synchronization to `true` on the Microsoft Entra Connector. This change causes the rule changes to propagate through on the next sync cycle.
 
 ## Related content
 
