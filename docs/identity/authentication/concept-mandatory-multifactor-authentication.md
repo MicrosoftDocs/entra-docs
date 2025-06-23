@@ -221,7 +221,7 @@ If you never previously signed in to the Azure portal with MFA, you're prompted 
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/mandatory.png" alt-text="Screenshot of prompt to confirm mandatory MFA."
 
-If you select **Postpone MFA**, the date of NFA enforcement will be one month in the future, or Sept 30, 2025, whichever is earlier. After you sign in, you can change the date at [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure). To confirm that you want to proceed with the postponement request, click **Confirm postponement**. 
+If you select **Postpone MFA**, the date of MFA enforcement will be one month in the future, or Sept 30, 2025, whichever is earlier. After you sign in, you can change the date at [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure). To confirm that you want to proceed with the postponement request, click **Confirm postponement**. 
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone.png" alt-text="Screenshot of how to postpone mandatory MFA."
 
