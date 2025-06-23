@@ -2,13 +2,13 @@
 title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 05/27/2025
+ms.date: 06/23/2025
 ms.author: sarahlipsey
-ms.reviewer: almars
+ms.reviewer: mkokkalera
 ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
 ---
@@ -195,6 +195,12 @@ Microsoft Entra ID supports right-to-left functionality for languages such as Ar
 ## User experience
 
 There are some scenarios for you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
+
+### Default background image
+
+The default background image behind the sign-in box is changing later this year. The change is only to the image and requires no action and doesn't change any functionality. We know that the default background image is often used for training and documentation to demonstrate the sign-in experience. Providing the updated image allows you to update your documentation so you can demonstrate the exact sign-in experience that your users will see. For details on the upcoming change, see [Microsoft Entra releases and announcements](../fundamentals/whats-new.md).
+
+:::image type="content" source="media/how-to-customize-branding/updated-background-image.png" alt-text="Screenshot of the new default background image.":::
 
 ### Software as a Service (SaaS) and multitenant applications
 
