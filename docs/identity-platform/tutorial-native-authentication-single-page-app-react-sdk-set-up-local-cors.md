@@ -143,6 +143,7 @@ In this tutorial, you:
 
     ```console
     cd reactspa
+    npm install
     ```
 
 1. To start the CORS proxy server, run the following command in your terminal:
@@ -155,7 +156,7 @@ In this tutorial, you:
 
     ```console
     cd reactspa
-    npm start
+    npm run dev
     ```
 
 1. Open a web browser and navigate to `http://localhost:3000/`. A sign-up form appears.
@@ -172,5 +173,5 @@ In a production environment, you can use the steps in [Set up a reverse proxy fo
 
 ## Related content
 
-- [Tutorial: Sign in users into a React single-page app app by using native authentication](tutorial-native-authentication-single-page-app-react-sign-in.md).
-- [Tutorial: Reset password in a React single-page app app by using native authentication](tutorial-native-authentication-single-page-app-react-reset-password.md).
+- [Tutorial: Sign in users into a React single-page app app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md).
+- [Tutorial: Reset password in a React single-page app app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-reset-password.md).
