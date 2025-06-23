@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 02/07/2025
+ms.date: 06/30/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication's JavaScript SDK so that I can sign up users with a username (email) and password.
 ---
 
@@ -31,7 +31,6 @@ In this tutorial, you:
 - Complete the steps in [Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK ](quickstart-native-authentication-single-page-app-react-sdk-sign-in.md). This quickstart shows you run a sample React code sample.
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
-
 
 
 ## Create a React project and install dependencies
@@ -114,3 +113,137 @@ In the code, find the placeholder:
 
 ## Create UI components
 
+This app collects user details such as given name, username (email), and password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
+
+1. Create a folder called *src/app/sign-up* in the src folder.
+
+1. Create *sign-up/components/InitialFormWithPassword.tsx* file, then paste the code from [sign-up/components/InitialFormWithPassword.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/InitialFormWithPassword.tsx). This component displays a form that collects user sign-up details. 
+
+1. Create a *sign-up/components/CodeForm.tsx* file, then paste the code from [sign-up/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/CodeForm.tsx). This component displays a form that collects a one-time passcode sent to the user.
+
+1. Create a *sign-up/components/SignUpResult.tsx* file, then paste the code from [sign-up/components/SignUpResult.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/SignUpResult.tsx). This component displays sing-up result. 
+
+## Handle form interaction
+
+In this section, you add code that handles sign-up form interactions such as submitting user sign-up details or submitting a one-time passcode.
+
+Create *sign-up/page.tsx* file, then paste the code in [sign-up/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx). In this file:
+
+- Import the necessary components and display the proper form based on the state:
+
+    ```typescript
+    export default function SignUpPassword() {
+        const router = useRouter();
+        const [firstName, setFirstName] = useState("");
+        const [lastName, setLastName] = useState("");
+        const [email, setEmail] = useState("");
+        const [password, setPassword] = useState("");
+        const [code, setCode] = useState("");
+        const [error, setError] = useState("");
+        const [loading, setLoading] = useState(false);
+        const [signUpState, setSignUpState] = useState<any>(null);
+    
+        return (
+            <div style={styles.container}>
+                <h2>Sign Up with Password</h2>
+                {signUpState instanceof SignUpCodeRequiredState ? (
+                    <CodeForm onSubmit={handleCodeSubmit} code={code} setCode={setCode} loading={loading} />
+                ) : (
+                    <InitialFormWithPassword
+                        onSubmit={handleInitialSubmit}
+                        firstName={firstName}
+                        setFirstName={setFirstName}
+                        lastName={lastName}
+                        setLastName={setLastName}
+                        email={email}
+                        setEmail={setEmail}
+                        password={password}
+                        setPassword={setPassword}
+                        loading={loading}
+                    />
+                )}
+                {error && <div style={styles.error}>{error}</div>}
+            </div>
+        );
+    }
+    ```
+
+- Handle the initial form submission:
+
+    ```typescript
+    const handleInitialSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError("");
+        setLoading(true);
+    
+        try {
+            const app = await CustomAuthPublicClientApplication.create(customAuthConfig);
+            const account = app.getCurrentAccount();
+            account.data?.signOut();
+    
+            const attributes = new UserAccountAttributes();
+            attributes.setDisplayName(`${firstName} ${lastName}`);
+    
+            const result = await app.signUp({
+                username: email,
+                password: password,
+                attributes,
+            });
+    
+            if (result.error) {
+                if (result.error.isUserAlreadyExists()) {
+                    setError("An account with this email already exists");
+                } else {
+                    setError(result.error.errorData.errorDescription || "An error occurred while signing up");
+                }
+                return;
+            }
+    
+            setSignUpState(result.state);
+        } catch (err) {
+            setError("An unexpected error occurred");
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    };
+    ```
+
+- Handle the one-time passcode submission:
+
+    ```typescript
+    const handleCodeSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setError("");
+        setLoading(true);
+    
+        try {
+            if (signUpState instanceof SignUpCodeRequiredState) {
+                const result = await signUpState.submitCode(code);
+                if (result.error) {
+                    if (result.error.isInvalidCode()) {
+                        setError("Invalid verification code");
+                    } else {
+                        setError("An error occurred while verifying the code");
+                    }
+                    return;
+                }
+                if (result.state instanceof SignUpCompletedState) {
+                    setSignUpState(result.state);
+                }
+            }
+        } catch (err) {
+            setError("An unexpected error occurred");
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    };
+    ```
+
+At this point, you can run your app, then view your sign-up UI at *http://localhost:3000/sign-up*. However, since native authentication APIs don't support CORS, you need to set up the CORS proxy server to manage the CORS headers.
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Set up CORS proxy server to manage CORS headers for native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-set-up-local-cors.md)

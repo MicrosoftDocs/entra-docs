@@ -239,7 +239,7 @@ The `challenge_type` property shows the authentication methods that the client a
 
 ### Create UI components
 
-This app collects user details such as given name, surname (email), and  password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
+This app collects user details such as given name, username (email), and  password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
 
 1. Create a folder called */pages/SignUp* in the *src* folder.
 
