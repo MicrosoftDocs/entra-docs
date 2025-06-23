@@ -27,8 +27,13 @@ items:
     href: how-subscriptions-associated-directory.yml
   - name: Add your privacy info
     href: properties-area.yml
-  - name: Add company branding
-    href: how-to-customize-branding.md
+  - name: Customize branding
+    expanded: false
+    items:
+    - name: Add company branding
+      href: how-to-customize-branding.md
+    - name: Company branding CSS template reference guide
+      href: reference-company-branding-css-template.md
 - name: Add users and groups
   expanded: false
   items:
@@ -127,8 +132,6 @@ items:
       href: whats-new-archive.md
   - name: Frequently asked questions
     href: faq.yml
-  - name: Company branding CSS template reference guide
-    href: reference-company-branding-css-template.md
   - name: Bulk operations
     href: bulk-operations-service-limitations.md
   - name: New name for Azure AD
