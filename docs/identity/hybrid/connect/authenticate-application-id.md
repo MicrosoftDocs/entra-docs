@@ -21,8 +21,8 @@ To enhance the security of the service, we're rolling out an application identit
 Entra Connect provides three options for application and certificate management:
 
 - [Managed by Microsoft Entra Connect (recommended)](#managed-by-microsoft-entra-connect-recommended)
-- [Bring Your Own Application (BYOA)](#bring-your-own-application-byoa)
-- [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate-byoc)
+- [Bring Your Own Application (BYOA)](#bring-your-own-application)
+- [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate)
 
 ## Managed by Microsoft Entra Connect (recommended)
 
@@ -75,7 +75,6 @@ The following prerequisites are required to implement authentication by using ap
 The following extra requirements are needed for the BYOC certificate management option:
 
 - A certificate is created in an HSM or TPM by using a Cryptography API: Next Generation provider. The private key is marked as nonexportable. A warning event 1014 is emitted if TPM isn't used. The following certificate configurations are supported:
-
  - `KeyLength`: 2048
  - `KeyAlgorithm`: RSA
  - `KeyHashAlgorithm`: SHA256
@@ -187,7 +186,7 @@ Entra Connect versions lower than 2.5.3.0 use a username and password by default
      Set-ADSyncScheduler -SyncCycleEnabled $true
      ```
 
-1. [Remove the Directory Synchronization Account (DSA) from Entra ID (recommended)](#remove-legacy-service-account-using-powershell).
+1. [Remove the Directory Synchronization Account (DSA) from Entra ID (recommended)](#remove-a-legacy-service-account-by-using-powershell).
 
 ## View the certificate
 
@@ -243,13 +242,13 @@ When you get a warning from Entra Connect Sync when you use the BYOC option, we 
      Invoke-ADSyncApplicationCredentialRotation
      ```
     
-    In BYOC mode, the new certificate `SHA256Hash` must be provided.
+    In BYOC mode, the new certificate `SHA256Hash` must be provided:
     
      ``` powershell
      Invoke-ADSyncApplicationCredentialRotation -CertificateSHA256Hash <CertificateSHA256Hash>
      ```
     
-    In BYOA mode, the new certificate `SHA256Hash` must be provided.
+    In BYOA mode, the new certificate `SHA256Hash` must be provided:
     
     ``` powershell
      Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash>
@@ -257,13 +256,13 @@ When you get a warning from Entra Connect Sync when you use the BYOC option, we 
     
     Replace `&lt;CertificateSHA256Hash&gt;` with the `CertificateSHA256Hash`.
     
-1. Get the current authentication and confirm that it has the `ConnectorIdentityType` value as `Application`. Use the following PowerShell cmdlet to verify the current authentication.
+1. Get the current authentication and confirm that it has the `ConnectorIdentityType` value as `Application`. Use the following PowerShell cmdlet to verify the current authentication:
 
      ``` powershell
      Get-ADSyncEntraConnectorCredential
      ```
     
-1. Reenable the scheduler to begin synchronization service.
+1. Reenable the scheduler to begin synchronization service:
     
      ``` powershell
      Set-ADSyncScheduler -SyncCycleEnabled $true

@@ -36,7 +36,7 @@ To enable group writeback, you must have:
 Consider the following information when you use group writeback V1 with Microsoft Entra Connect Sync:
 
 - Microsoft 365 groups with up to 250,000 members can be written back to on-premises.
-- If you don't want to write back all existing Microsoft 365 groups to Active Directory, make changes to group writeback default behavior before you perform the steps in this article to enable the feature. For more information, see [Modify Microsoft 365 groups](#modifying-default-behavior-for-microsoft-365-groups).
+- If you don't want to write back all existing Microsoft 365 groups to Active Directory, make changes to group writeback default behavior before you perform the steps in this article to enable the feature. For more information, see [Modify Microsoft 365 groups](#modify-default-behavior-for-microsoft-365-groups).
 
 ## Enable group writeback
 

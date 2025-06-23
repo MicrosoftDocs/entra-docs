@@ -52,30 +52,30 @@ The following table is a list of events that are logged with the new auditing fe
 
 |Event ID|Event name|Description|
 |-----|-----|-----|
-|2503|Add/Update/Delete directories|Provides the name of the affected directory.|
-|2504|Enable Express settings mode| This event is logged after the administrator selects **Express Setup**.|
-|2505|Enable/Disable domains and organizational units (OUs) for sync| Shows a list of all domains connected to Microsoft Entra Connect Sync.|
-|2506|Enable/Disable password hash synchronization (PHS) sync| Shows that PHS is enabled or disabled.|
-|2507|Enable/Disable sync start after installation| Event is logged when sync is enabled or disabled after the installation is finished.|
-|2508|Create Active Directory Domain Services (AD DS) account| Shows the created account needed to connect to the new directory added.|
-|2509|Use existing ADDS account| Shows the name of the account used to connect to the directory.|
-|2510|Create/Update/Delete custom sync rule| Shows the name of the sync rule that changed along with information on what changed.|
-|2511|Enable/Disable domain-based filtering|Shows that domain filtering is selected and lists selected domains.|
-|2512|Enable/Disable OU-based filtering| Shows that OU-based filtering is selected and lists selected OUs. |
-|2513|User sign-in method changed|Shows the old sign-in method and the new one. |
-|2514|Configure new Active Directory Federation Services (AD FS) farm| Shows the federation services name.|
-|2515|Enable/Disable single sign-on| Shows single sign-on change. |
-|2516|Install web application proxy server|Shows selected ADFS servers and the domain admin username.|
-|2517|Set permissions| Shows the specific AD Sync permission that changed.|
-|2518|Change ADDS Connector credential| Shows the ADDS Connector credential that changed.|
-|2519|Reinitialize Entra ID Connector account password| Shows that the AD Sync account password was reset.|
-|2520|Install ADFS server| Shows the selected server.|
-|2521|Set ADFS service account| Specifies if group managed or a domain user. Includes the administrator username.|
-|2522|`ConfigureEntraApplicationAuthentication`|Specifies that configuring application authentication to Microsoft Entra ID was attempted. It provides the status of the operation along with relevant details like application (Client) ID.|
+|2503|Add/Update/Delete directories.|Provides the name of the affected directory.|
+|2504|Enable Express settings mode.| This event is logged after the administrator selects **Express Setup**.|
+|2505|Enable/Disable domains and organizational units (OUs) for sync.| Shows a list of all domains connected to Microsoft Entra Connect Sync.|
+|2506|Enable/Disable password hash synchronization (PHS) sync.| Shows that PHS is enabled or disabled.|
+|2507|Enable/Disable sync start after installation.| Event is logged when sync is enabled or disabled after the installation is finished.|
+|2508|Create Active Directory Domain Services (AD DS) account.| Shows the created account needed to connect to the new directory added.|
+|2509|Use existing AD DS account.| Shows the name of the account used to connect to the directory.|
+|2510|Create/Update/Delete custom sync rule.| Shows the name of the sync rule that changed along with information on what changed.|
+|2511|Enable/Disable domain-based filtering.|Shows that domain filtering is selected and lists selected domains.|
+|2512|Enable/Disable OU-based filtering.| Shows that OU-based filtering is selected and lists selected OUs. |
+|2513|User sign-in method changed.|Shows the old sign-in method and the new one. |
+|2514|Configure new Active Directory Federation Services (AD FS) farm.| Shows the federation services name.|
+|2515|Enable/Disable single sign-on.| Shows single sign-on change. |
+|2516|Install web application proxy server.|Shows selected AD FS servers and the domain admin username.|
+|2517|Set permissions.| Shows the specific ADSync permission that changed.|
+|2518|Change AD DS Connector credential.| Shows the AD DS Connector credential that changed.|
+|2519|Reinitialize Entra ID Connector account password.| Shows that the ADSync account password was reset.|
+|2520|Install AD FS server.| Shows the selected server.|
+|2521|Set AD FS service account.| Specifies if group managed or a domain user. Includes the administrator username.|
+|2522|`ConfigureEntraApplicationAuthentication`|Specifies that configuring application authentication to Microsoft Entra ID was attempted. It provides the status of the operation along with relevant details like application (client) ID.|
 |2523|`RotateEntraApplicationCertificate`|Specifies that rotation of the application certificate used for authentication to Microsoft Entra ID was attempted along with the status of the operation.|
 |2524|`DeleteEntraConnectorAccount`|Specifies that deletion of the Microsoft Entra ID synchronization account was attempted. It provides the status of the operation along with the name of the account.|
-|2525|`DeleteEntraApplication`|Specifies that deletion of the Entra Connect Sync application used for synchronizing with Microsoft Entra ID was attempted. It provides the application (Client) ID along with the status of the operation.|
-|2526|`DeleteApplicationCertificate`|Specifies that deletion of the Entra Connect Sync application certificate was attempted. It provides the application (Client) ID and the Certificate ID along with the status of the operation.|
+|2525|`DeleteEntraApplication`|Specifies that deletion of the Entra Connect Sync application used for synchronizing with Microsoft Entra ID was attempted. It provides the application (client) ID along with the status of the operation.|
+|2526|`DeleteApplicationCertificate`|Specifies that deletion of the Entra Connect Sync application certificate was attempted. It provides the application (client) ID and the certificate ID along with the status of the operation.|
 
 ## Related content
 
