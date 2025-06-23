@@ -42,7 +42,7 @@ We use the maintenance task to check if the certificate is due for rotation and 
 
 In the Bring Your Own Application (BYOA) setup, the customer administrator manages the application that Entra Connect Sync uses to authenticate to Entra, the application permissions, and the certificate credential that the application uses.
 
-The administrator [registers a Microsoft Entra app and creates a service principal.](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application needs the required [permissions](#microsoft-graph-permissions-for-byoa) assigned.
+The administrator [registers an Entra app and creates a service principal](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application needs the required [permissions](#microsoft-graph-permissions-for-byoa) assigned.
 
 The administrator is responsible for creating the certificate, rotation, and deletion of unused or expired certificates. The certificate must be stored in the `LOCAL_MACHINE` store.
 
@@ -56,7 +56,7 @@ The administrator is responsible for securing the private key of the certificate
 
 We recommend that you use a TPM or a Hardware Security Module (HSM) to provide a hardware-based security boundary, as opposed to the default. To check the status of your TPM, use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm?view=windowsserver2025-ps) PowerShell cmdlet.
 
-If you use Hyper-V VMs, you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs (VMs). Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable Trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
+If you use Hyper-V VMs, you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs (VMs). Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
 
 ## Prerequisites
 
@@ -191,7 +191,7 @@ Entra Connect versions lower than 2.5.3.0 use a username and password by default
 
 ## View the certificate
 
- You can view the certificate information by going to **Tasks** and then selecting **View or export current configuration**. Scroll down to the certificate details. The following table provides information about the certificate.
+ To view the certificate information, go to **Tasks** and then select **View or export current configuration**. Scroll down to the certificate details. The following table provides information about the certificate.
 
 |Property|Description|
 |-----|-----|
