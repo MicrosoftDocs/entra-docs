@@ -124,7 +124,7 @@ The following table lists the required licenses depending on your scenario.
 
 **Source tenant**: Each user who is synchronized with cross-tenant synchronization must have a Microsoft Entra ID P1 license in their home/source tenant. Each user who is synchronized with cross-cloud synchronization must have a Microsoft Entra ID Governance or Microsoft Entra Suite license in their home/source tenant. For more information, see [Microsoft Entra plans and pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) and [Microsoft Entra ID Governance licensing fundamentals](../../id-governance/licensing-fundamentals.md).
 
-**Target tenant**: Licenses aren't required for cross-tenant synchronization or cross-cloud synchronization in the target tenant. However, depending on the features you are using in the target tenant, you might need additional licensing. For example, if you have Microsoft Entra External ID billing enabled, you might get charged for external guests. To understand the external identities licensing model, see [Pricing structure and billing model for Microsoft Entra External ID](../../external-id/external-identities-pricing.md).
+**Target tenant**: Licenses aren't required for cross-tenant synchronization or cross-cloud synchronization in the target tenant. However, depending on the features you are using in the target tenant, you might need additional licensing for those features used in the target tenant. For example, customers that have enabled External ID billing, and are provisioning external guests, may be charged according to [the billing model for Microsoft Entra External ID](../../external-id/external-identities-pricing.md).
 
 ## Frequently asked questions
 
@@ -134,11 +134,11 @@ Within the same cloud, which clouds can cross-tenant synchronization be used in?
 
 - Cross-tenant synchronization is supported within the commercial cloud and Azure Government.
 - Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud.
-- For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). Synchronization between commercial and GCC is supported. 
 
 Is [cross-cloud synchronization](cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization) supported?
 
 - Cross-cloud synchronization (such as public cloud to Azure Government) is currently in public preview.
+- For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). 
 
 What cloud pairs are supported for cross-cloud synchronization?
 
