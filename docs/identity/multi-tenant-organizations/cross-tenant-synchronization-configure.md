@@ -28,9 +28,9 @@ For important details on what this service does, how it works, and frequently as
 > Cross-cloud synchronization is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-This article describes the steps to configure cross-tenant synchronization between Microsoft clouds, such as Microsoft Azure commercial and Microsoft Azure Government, using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant.
+This article describes the steps to configure cross-tenant synchronization between Microsoft clouds. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. While this tutorial focuses on synchronizing identities from the commercial cloud --> US Government, the same steps apply for Government --> Commercial and China --> Commercial.
 
-For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). For differences between cross-tenant synchronization and cross-cloud synchronization, see [Cross-cloud synchronization in Frequently asked questions](./cross-tenant-synchronization-overview.md#cross-cloud-synchronization).
+For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). For differences between cross-tenant synchronization and cross-cloud synchronization, see [Cross-cloud synchronization in Frequently asked questions](./cross-tenant-synchronization-overview.md#clouds).
 
 :::image type="content" source="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png" alt-text="Diagram that shows cross-cloud synchronization between source tenant and target tenant." lightbox="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png":::
 ::: zone-end
@@ -523,21 +523,26 @@ This setting also applies to B2B collaboration and B2B direct connect, so if you
 
 ## Common scenarios and solutions
 
-#### Symptom - Test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure
+#### Symptom - Test connection fails with AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
 
-When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with the following error message:
+When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with one of the following error messages:
 
+*Automatic redemption is not setup in the source tenant* 
 ```
 You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
-Error code: AzureDirectoryB2BManagementPolicyCheckFailure
-Details: Policy permitting auto-redemption of invitations not configured.
+Error code: AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
+Details: The source tenant has not enabled automatic user consent with the target tenant. Please enable the outbound cross-tenant access policy for automatic user consent in the source tenant. aka.ms/TroubleshootingCrossTenantSyncPolicyCheck
 ```
-
-:::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png" alt-text="Screenshot that shows the error when test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png":::
+*Automatic redemption is not setup in the target tenant* 
+```
+You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
+Error code: AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
+Details: The target tenant has not enabled inbound synchronization with this tenant. Please request the target tenant admin to enable the inbound synchronization on their cross-tenant access policy. Learn more: aka.ms/TroubleshootingCrossTenantSyncPolicyCheck
+```
 
 **Cause**
 
-This error indicates the policy to automatically redeem invitations in both the source and target tenants wasn't set up.
+This error indicates the policy to automatically redeem invitations in the source and / or target tenants wasn't set up.
 
 **Solution**
 
