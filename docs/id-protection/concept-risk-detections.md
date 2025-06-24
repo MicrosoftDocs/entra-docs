@@ -1,5 +1,5 @@
 ---
-title: Risks detections and risk levels
+title: What are risk detections?
 description: Learn about risk detections and risk levels, including the difference between real-time and offline detections. 
 
 ms.service: entra-id-protection
@@ -36,7 +36,7 @@ Risk levels also play a key role in [configuring risk-based Conditional Access p
 > [!IMPORTANT] 
 > **Low** level risk detections and users persist in the product for six months, after which they're automatically aged out to provide a cleaner investigation experience. **Medium** and **high** risk levels persist until remediated or dismissed.
 
-A risk detecion with risk level of:
+A risk detection with risk level of:
 
 - **High** signifies that Microsoft is highly confident that the account is compromised. Signals such as threat intelligence and known attack patterns factor into the confidence level of the risk detection.
 - **Medium** indicates that one or more moderate-severity anomalies were detected, but there's less confidence that the account is compromised. Sign-in patterns, behaviors, and other signals factor into the confidence level of the risk detection.

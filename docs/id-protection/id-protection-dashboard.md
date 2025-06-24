@@ -144,5 +144,5 @@ Depending on the configuration of your tenant, there might not be recommendation
 ## Related content
 
 - [Plan a deployment](how-to-deploy-identity-protection.md)
-- [What are risks?](concept-identity-protection-risks.md)
+- [What are risks?](concept-risk-detections.md)
 - [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#risk-based-policy)

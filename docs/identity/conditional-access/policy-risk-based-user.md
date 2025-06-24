@@ -28,7 +28,7 @@ Microsoft works with researchers, law enforcement, various security teams at Mic
 ## Related content
 
 - [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
-- [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md)
+- [Remediate risks and unblock users](../../id-protection/howto-identity-protection-remediate-unblock.md)
 - [Conditional Access common policies](concept-conditional-access-policy-common.md)
 - [Sign-in risk-based Conditional Access](policy-risk-based-sign-in.md)
 - [Determine effect using Conditional Access report-only mode](howto-conditional-access-insights-reporting.md)
