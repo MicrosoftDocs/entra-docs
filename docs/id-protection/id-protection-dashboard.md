@@ -145,4 +145,4 @@ Depending on the configuration of your tenant, there might not be recommendation
 
 - [Plan a deployment](how-to-deploy-identity-protection.md)
 - [What are risks?](concept-risk-detections.md)
-- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#risk-based-policy)
+- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#user-self-remediation)
