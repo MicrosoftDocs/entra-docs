@@ -3,7 +3,7 @@ title: The Global Secure Access Client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/23/2025
+ms.date: 06/24/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -266,7 +266,7 @@ The administrator can show or hide specific buttons in the client system tray ic
 |HideQuitButton |Boolean |false = shown   true = hidden |hidden |Set this value to show or hide the **Quit** action. When visible, the user can quit the Global Secure Access client, which closes the client application. To open it again, run the Global Secure Access application from Finder. |
 
 You can also configure the client system tray icon menu with Microsoft Intune: 
-1. Follow the instructions to [Create the profile](../../mem/intune-service/configuration/preference-file-settings-macos#create-the-profile).
+1. Follow the instructions to [Create the profile](../../intune/intune-service/configuration/preference-file-settings-macos#create-the-profile).
 1. For **Preference domain name**, enter `com.microsoft.globalsecureaccess`.
 1. For **Property list file**, upload an XML file similar to the following sample. Revise the XML to match your preferences.
 
