@@ -28,10 +28,10 @@ This article provides information and walks you through how to enable group writ
 
 To enable group writeback, you must have:
 
-- Azure Active Directory Premium licenses for your tenant.
+- Microsoft Entra Premium licenses for your tenant.
 - A hybrid deployment configured between your Exchange on-premises organization and Microsoft 365 and verify that it's functioning correctly.
 - A supported version of Exchange installed on-premises.
-- Single sign-on configured by using Azure Active Directory Connect.
+- Single sign-on configured by using Microsoft Entra Connect.
 
 Consider the following information when you use group writeback V1 with Microsoft Entra Connect Sync:
 
@@ -42,12 +42,12 @@ Consider the following information when you use group writeback V1 with Microsof
 
 To enable group writeback, follow these steps:
 
-1. Open the Azure Active Directory Connect wizard, select **Configure**, and then select **Next**.
+1. Open the **Azure Active Directory Connect** wizard , select **Configure**, and then select **Next**.
 1. Select **Customize synchronization options** and then select **Next**.
 1. On the **Connect to Azure AD** page, enter your credentials. Select **Next**.
 1. On the **Optional features** page, verify that the options you previously configured are still selected.
 1. Select **Group writeback** and then select **Next**.
-1. On the **Group Writeback** page, select an Active Directory organizational unit to store objects that are synchronized from Microsoft 365 to your on-premises organization. Then select **Next**.
+1. On the **Group Writeback** page, select an Active Directory organizational unit to store objects that are synced from Microsoft 365 to your on-premises organization. Then select **Next**.
 1. To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, select the **Writeback group Distinguished Name with cloud Display Name** option:
 
     - Default format:
@@ -84,7 +84,7 @@ For more information on how to configure Microsoft 365 groups, see [Configure Mi
 
 To disable group writeback, follow these steps:
 
-1. Open the Azure Active Directory Connect wizard and go to the **Additional tasks** page. Select the **Customize synchronization options** task and select **Next**.
+1. Open the **Azure Active Directory Connect** wizard and go to the **Additional tasks** page. Select the **Customize synchronization options** task and select **Next**.
 1. On the **Optional features** page, clear the **Group writeback** checkbox. A warning states that you are about to delete groups. Select **Yes**.
 
    Disabling group writeback causes any groups that this feature created previously to be deleted from your local Active Directory on the next sync cycle.
@@ -94,7 +94,7 @@ To disable group writeback, follow these steps:
 1. Select **Next**.
 1. Select **Configure**.
 
-Disabling group writeback sets the `Full Import` and `Full Synchronization` flags to `true` on the Azure Active Directory Connector. The rule changes propagate through on the next sync cycle and delete the groups that were previously written back to your Active Directory.
+Disabling group writeback sets the `Full Import` and `Full Synchronization` flags to `true` on the Microsoft Entra Connector. The rule changes propagate through on the next sync cycle and delete the groups that were previously written back to your Active Directory.
 
 ## Modify default behavior for Microsoft 365 groups
 
