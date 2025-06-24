@@ -85,7 +85,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21802](../includes/secure-recommendations/21802.md)]
 
-### Turn off Seamless SSO if there are is no usage
+### Turn off Seamless SSO if there is no usage
 
 [!INCLUDE [21985](../includes/secure-recommendations/21985.md)]
 
