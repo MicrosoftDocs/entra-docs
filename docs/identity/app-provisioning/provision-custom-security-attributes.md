@@ -50,10 +50,12 @@ In the [Microsoft Entra admin center](https://entra.microsoft.com), access the o
 
 This example includes custom security attributes that you could add to your tenant. Use the attribute set `HRConfidentialData` and then add the following attributes to:
 
-- EEOStatus
-- FLSAStatus
-- PayGrade
-- PayScaleType
+- EEOStatus (String)
+- FLSAStatus (String)
+- PayGrade (String)
+- PayScaleType (String)
+- IsRehire (Boolean)
+- EmployeeLevel (Integer)
 
 :::image type="content" source="media/provision-custom-security-attributes/active-attributes.png" alt-text="Screenshot of custom security active attributes." lightbox="media/provision-custom-security-attributes/active-attributes-expanded.png":::
 
@@ -86,6 +88,8 @@ This example includes custom security attributes that you could add to your tena
       - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:FLSAStatus`
       - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayGrade`
       - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayScaleType`
+      - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:isRehire`
+      - `urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:EmployeeLevel`
 
     :::image type="content" source="media/provision-custom-security-attributes/attributes-to-test.png" alt-text="Screenshot of the SCIM schema namespace option.":::
 
@@ -116,6 +120,8 @@ This example includes custom security attributes that you could add to your tena
     | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:FLSAStatus       | CustomSecurityAttributes.HRConfidentialData_FLSAStatus |
     | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayGrade         | CustomSecurityAttributes.HRConfidentialData_PayGrade |
     | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayScaleType     | CustomSecurityAttributes.HRConfidentialData_PayScaleType |
+    | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:isRehire         | CustomSecurityAttributes.HRConfidentialData_IsRehire |
+    | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:EmployeeLevel    | CustomSecurityAttributes.HRConfidentialData_EmployeeLevel |   
 
 ## Test custom security attributes provisioning
 
@@ -231,7 +237,6 @@ This sample SCIM bulk request includes custom fields under the extension `urn:ie
                 "locale": "en-US",
                 "timezone": "America/Los_Angeles",
                 "active": true,
-                "password": "t1meMa$heen",
                 "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
                     "employeeNumber": "701984",
                     "costCenter": "4130",
@@ -248,7 +253,9 @@ This sample SCIM bulk request includes custom fields under the extension `urn:ie
                     "EEOStatus":"Semi-skilled",
                     "FLSAStatus":"Non-exempt",
                     "PayGrade":"IC-Level5",
-                    "PayScaleType":"Revenue-based"
+                    "PayScaleType":"Revenue-based",
+					"IsRehire": false,
+					"EmployeeLevel": 64					
                 }
             }
         }, {
@@ -316,7 +323,9 @@ This sample SCIM bulk request includes custom fields under the extension `urn:ie
                     "EEOStatus":"Skilled",
                     "FLSAStatus":"Exempt",
                     "PayGrade":"Manager-Level2",
-                    "PayScaleType":"Profit-based"
+                    "PayScaleType":"Profit-based",
+					"IsRehire": true,
+					"EmployeeLevel": 63
                 }
                 
             }
