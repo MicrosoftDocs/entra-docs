@@ -25,11 +25,6 @@ Microsoft works with researchers, law enforcement, various security teams at Mic
 
 [!INCLUDE [conditional-access-policy-user-risk](../../includes/conditional-access-policy-user-risk.md)]
 
-### Considerations for cloud and hybrid users
-
-- Both cloud and hybrid users can complete a secure password change with SSPR only if they can perform MFA. For users that aren't registered, this option isn't available.
-- Hybrid users can complete a password change from an on-premises or hybrid joined Windows device, when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting is enabled.
-
 ## Related content
 
 - [Require reauthentication every time](~/identity/conditional-access/concept-session-lifetime.md#require-reauthentication-every-time)
