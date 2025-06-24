@@ -42,7 +42,7 @@ Consider the following information when you use group writeback V1 with Microsof
 
 To enable group writeback, follow these steps:
 
-1. Open the **Microsoft Entra Connect** wizard , select **Configure**, and then select **Next**.
+1. Open the **Microsoft Entra Connect** wizard, select **Configure**, and then select **Next**.
 1. Select **Customize synchronization options** and then select **Next**.
 1. On the **Connect to Azure AD** page, enter your credentials. Select **Next**.
 1. On the **Optional features** page, verify that the options you previously configured are still selected.
