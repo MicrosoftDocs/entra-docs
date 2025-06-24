@@ -5,12 +5,12 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 03/13/2025
+ms.date: 06/24/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
-ms.reviewer: 
+ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for increased security (Preview)
 
@@ -84,6 +84,10 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Authenticator app shows sign-in context
 
 [!INCLUDE [21802](../includes/secure-recommendations/21802.md)]
+
+### Turn off Seamless SSO if there are is no usage
+
+[!INCLUDE [21985](../includes/secure-recommendations/21985.md)]
 
 ## Access control
 
