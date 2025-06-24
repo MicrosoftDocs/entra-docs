@@ -9,7 +9,7 @@ ms.date: 05/29/2024
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: 
 ---
 # How SSO to on-premises resources works on Microsoft Entra joined devices

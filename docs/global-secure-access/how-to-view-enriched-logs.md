@@ -3,11 +3,12 @@ title: How to use enriched Microsoft 365 logs
 description: Learn how to use enriched Microsoft 365 logs for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: how-to
 ms.date: 03/19/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # How to use the Global Secure Access enriched Microsoft 365 logs
@@ -22,12 +23,11 @@ To use the enriched logs, you need the following roles, configurations, and subs
 
 ### Roles and Permissions
 
-- A **Global Administrator** or **Security Administrator** role is required to enable the export of Global Secure Access Network Traffic Logs in Diagnostic Settings.
+- A **Security Administrator** role is required to export Global Secure Access Network Traffic Logs in Diagnostic Settings.
 
 ### Configurations
 
 - **Microsoft Profile** - Ensure the Microsoft traffic profile is enabled. Microsoft traffic forwarding profile is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
-- **Microsoft 365 Common and Office Online Traffic Policy** - Required for log enrichment. Ensure it's enabled. 
 - **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service.
 - **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace or Sentinel workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article.
 - **Export the OfficeActivity log table** - The OfficeActivity table must be exported to the same LogAnalytics or Microsoft Sentinel workspace as the GSA traffic logs, or another third-party SIEM or Log system.
@@ -59,30 +59,6 @@ Viewing enriched Microsoft 365 audit logs is a one-time, two-step process. First
 > [!NOTE]
 > MS365 audit logs have undergone a feature change. Instead of creating a separate new stream of logs, you can now leverage the two existing log tables &mdash; Microsoft  365 OfficeActivity and Global Secure Access NetworkAccessTraffic tables &mdash; then combine the data using a Unique Token Id. 
 
-### Enable log data
-
-To enable the Enriched Microsoft 365 logs:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
-1. Browse to **Global Secure Access** > **Settings** > **Logging**.
-1. Select the **NetworkAccessTraffic** table.
-1. Use the same endpoint to collect Microsoft 365 Activity Logs (Table: OfficeActivity) as explained [here](/azure/sentinel/data-connectors/microsoft-365).
-1. Create a join of these two tables using the Unique Token Id.
-
-   Example query:
-
-  ```kusto
-  NetworkAccessTraffic 
-  | where TrafficType == 'microsoft365' | where UniqueTokenId != "" //filter on M365 traffic with available UTI
-  | project UniqueTokenId, SourceIp, DeviceId, DeviceOperatingSystem, DeviceOperatingSystemVersion, InitiatingProcessName, AgentVersion, UserId  //Extract the device enrichment fields, add more as    
-  needed
-  | join kind=inner (
-    OfficeActivity 
-    | extend AppAccessContext.UniqueTokenId
-    | where AppAccessContext.UniqueTokenId != "")
-    on UniqueTokenId 
-  ```
-
 ### Configure Diagnostic settings
 
 To view the enriched Microsoft 365 logs, you must export or stream the logs to an endpoint, such as a Log Analytics workspace or a SIEM tool. The endpoint must be configured before you can configure Diagnostic settings.
@@ -107,7 +83,7 @@ With your endpoint created, you can configure Diagnostic settings.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/azure/active-directory/roles/permissions-reference#security-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**.
 
 1. Select **Add Diagnostic setting**.
 

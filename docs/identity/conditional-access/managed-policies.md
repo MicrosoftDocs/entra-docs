@@ -1,16 +1,15 @@
 ---
 title: Microsoft-Managed Conditional Access Policies for Enhanced Security
 description: Secure your resources with Microsoft-managed Conditional Access policies. Require multifactor authentication to reduce compromise risks.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 04/21/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: swethar
+ms.custom: sfi-image-nochange
 ---
 # Microsoft-managed Conditional Access policies
 
@@ -160,7 +159,7 @@ Review the **Policy impact** tab of the managed policy to see a summary of how t
 Analyze the **Microsoft Entra sign-in logs** to see details about how the policies affect sign-in activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Use some or all of the following filters:
    - **Correlation ID** when you have a specific event to investigate.
    - **Conditional Access** to see policy failure and success.

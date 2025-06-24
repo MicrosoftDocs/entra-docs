@@ -3,7 +3,7 @@ title: Enable single sign-on for an enterprise application with a relying party 
 description: Enable single sign-on for an enterprise application that has a relying party security token service in Microsoft Entra ID.
 
 author: markwahl-msft
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -44,7 +44,7 @@ To configure SSO, you need:
 First, create an enterprise application in Microsoft Entra, which enables Microsoft Entra to generate SAML tokens for the relying party STS to provide to the application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. If you have already configured an application representing the relying party STS, then enter the name of the existing application in the search box, select the application from the search results, and continue at the next section.
 1. Select **New application**.
 1. Select **Create your own application**.

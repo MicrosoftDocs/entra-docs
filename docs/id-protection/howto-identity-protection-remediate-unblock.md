@@ -1,17 +1,14 @@
 ---
 title: Remediate risks and unblock users
 description: Learn how to configure user self-remediation and manually remediate risky users in Microsoft Entra ID Protection.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 04/10/2025
-
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: chuqiaoshi
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to remediate risks and unblock users in Microsoft Entra ID Protection.
 ---
 # Remediate risks and unblock users
@@ -102,7 +99,7 @@ If your organization has a hybrid environment, you can allow on-premises passwor
 To configure this setting:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator).
-1. Browse to **Protection** > **Identity Protection** > **Settings**.
+1. Browse to **ID Protection** > **Dashboard** > **Settings**.
 1. Check the box to **Allow on-premises password change to reset user risk** and select **Save**.
 
 > [!NOTE]
@@ -117,7 +114,7 @@ In some situations, you might need to manually remediate or confirm a user's ris
 If after investigation you confirm the user account isn't at risk of being compromised, you can dismiss the risky user.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator).
-1. Browse to **Protection** > **Identity Protection** > **Risky users**, and select the affected user.
+1. Browse to **ID Protection** > **Risky users**, and select the affected user.
 1. Select **Dismiss user(s) risk**. When you select **Dismiss user risk**, the user is no longer at risk, and all the risky sign-ins and corresponding risk detections are dismissed.
 
 Because this method doesn't affect the user's existing password, it doesn't bring their identity back into a safe state.

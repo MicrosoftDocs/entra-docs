@@ -5,7 +5,7 @@ description: This article shows how to migrate a classic Conditional Access poli
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 06/11/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -17,6 +17,8 @@ ms.reviewer: nigu
 This article shows an example of how to migrate a classic policy that requires **Multifactor authentication** for a cloud app.
 
 > [!TIP]
+> The Outlook Web App doesn't enforce Classic Conditional Access policies. Microsoft recommends migrating to [Modern Conditional Access](concept-conditional-access-policy-common.md).
+>
 > As of the August 2023 Intune service release (2308), classic Conditional Access policies are no longer created for the [Microsoft Defender for Endpoint connector](/mem/intune/protect/advanced-threat-protection-configure#connect-microsoft-defender-for-endpoint-to-intune). If your tenant has a classic Conditional Access policy that was previously created for integration with Microsoft Defender for Endpoint, it can be deleted. 
 
 ![Classic policy details requiring MFA for Salesforce app](./media/policy-migration/33.png)
@@ -27,7 +29,7 @@ This article shows an example of how to migrate a classic policy that requires *
 ## Open a classic policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Classic policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Classic policies**.
 
    ![Classic policies view](./media/policy-migration-mfa/12.png)
 

@@ -1,19 +1,16 @@
 --- 
-title: Enforce signed SAML authentication requests 
-description: Learn how to enforce signed SAML authentication requests. 
- 
+title: Enforce signed SAML authentication requests
+description: Learn how to enforce signed SAML authentication requests.
 author: omondiatieno
-manager: CelesteDG 
-ms.service: entra-id 
-ms.subservice: enterprise-apps 
- 
-ms.topic: concept-article 
+manager: mwongerapk
+ms.service: entra-id
+ms.subservice: enterprise-apps
+ms.topic: concept-article
 ms.date: 07/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT Admin, I want to enable and disable the enforcement of signed authentication requests and upload public keys for validation, so that I can ensure the security and integrity of the requests made to Microsoft Entra ID.
 --- 
 
@@ -51,7 +48,7 @@ To configure SAML request signature verification, you need:
 ## Configure SAML Request Signature Verification
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Navigate to **Single sign-on**.
 1. In the **Single sign-on** screen, scroll to the subsection called **Verification certificates** under **SAML Certificates.** 

@@ -32,7 +32,7 @@ This article is for customers using Microsoft Entra pass-through authentication 
 Follow these steps to check where your Authentication Agents are installed:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect sync**.
+2. Browse to **Entra ID** > **Entra Connect** > **Connect sync**.
 4. Select **Pass-through Authentication**. This blade lists the servers where your Authentication Agents are installed.
 
 ![[Microsoft Entra admin center](https://entra.microsoft.com) - Pass-through Authentication blade](./media/how-to-connect-pta-upgrade-preview-authentication-agents/pta8.png)
@@ -62,7 +62,7 @@ You need upgrade Microsoft Entra Connect before upgrading the Authentication Age
 
 1. **Upgrade Microsoft Entra Connect**: Follow this [article](how-to-upgrade-previous-version.md) and upgrade to the latest Microsoft Entra Connect version.
 2. **Uninstall the preview version of the Authentication Agent**: Download [this PowerShell script](https://aka.ms/rmpreviewagent) and run it as an Administrator on the server.
-3. **Download the latest version of the Authentication Agent (versions 1.5.2482.0 or later)**: Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).  Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect sync**.
+3. **Download the latest version of the Authentication Agent (versions 1.5.2482.0 or later)**: Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).  Browse to **Entra ID** > **Entra Connect** > **Connect sync**.
 
  Select **Pass-through Authentication -> Download agent**. Accept the [terms of service](https://aka.ms/authagenteula) and download the latest version of the Authentication Agent. You can also download the Authentication Agent from [here](https://aka.ms/getauthagent).
 4. **Install the latest version of the Authentication Agent**: Run the executable downloaded in Step 3. Provide your tenant's Hybrid Identity Administrator credentials when prompted.

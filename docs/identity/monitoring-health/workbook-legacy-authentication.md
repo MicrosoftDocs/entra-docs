@@ -1,7 +1,6 @@
 ---
 title: Sign-ins using legacy authentication workbook
 description: Learn how to use the sign-ins using legacy authentication workbook in Microsoft Entra ID to identify apps using legacy methods.
-
 author: shlipsey3
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: besiler
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I need to use the sign-ins using legacy authentication workbook to determine whether it's safe to turn off legacy authentication in my tenant so I can improve the security of my Microsoft Entra tenant and experience of my users.
 ---
 
@@ -52,7 +51,7 @@ The **Sign-ins using legacy authentication** workbook lets you see all legacy au
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Sign-ins using legacy authentication** workbook from the **Usage** section.
 

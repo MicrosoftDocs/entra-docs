@@ -1,16 +1,14 @@
 ---
 title: Cross Cloud Settings
 description: Enable secure cross-cloud B2B collaboration between organizations in different sovereign (national) Microsoft Azure clouds by configuring Microsoft cloud settings.
- 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 04/14/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: it-pro, seo-july-2024
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #customer intent: As an admin configuring B2B collaboration between partner organizations in different Microsoft Azure clouds, I want to enable collaboration with the partner's cloud, add the partner to my organizational settings, and configure inbound and outbound settings, so that Microsoft Entra B2B collaboration between the organizations is enabled.
 ---
 
@@ -54,11 +52,12 @@ After each organization completes these steps, Microsoft Entra B2B collaboration
 In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to collaborate with.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Microsoft cloud settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**, then select **Microsoft cloud settings**.
 1. Select the checkboxes next to the external Microsoft Azure clouds you want to enable.
 
    :::image type="content" source="media/cross-cloud-settings/cross-cloud-settings.png" alt-text="Screenshot showing Microsoft cloud settings." border="true":::
 
+    The **Cross-cloud synchronization settings** check box applies to synchronization across clouds. For more information, see [Configure cross-cloud synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization).
 
 > [!NOTE]
 > Selecting a cloud doesn't automatically enable B2B collaboration with organizations in that cloud. You'll need to add the organization you want to collaborate with, as described in the next section.
@@ -68,7 +67,7 @@ In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to c
 Follow these steps to add the tenant you want to collaborate with to your Organizational settings.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**, then select **Organizational settings**.
 1. Select **Add organization**.
 1. On the **Add organization** pane, type the tenant ID for the organization (cross-cloud lookup by domain name isn't currently available).
 

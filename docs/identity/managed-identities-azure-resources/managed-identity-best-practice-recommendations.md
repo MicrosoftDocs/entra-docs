@@ -2,13 +2,13 @@
 title: Best practice recommendations for managed system identities
 description: Recommendations on when to use user-assigned versus system-assigned managed identities
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: conceptual
 ms.date: 03/14/2025
-ms.author: ryanwi
+ms.author: shermanouko
 ---
 
 # Managed identity best practice recommendations
@@ -29,14 +29,14 @@ If your infrastructure requires that multiple resources require access to the sa
 
 If you require that each resource has its own identity, or have resources that require a unique set of permissions and want the identity to be deleted as the resource is deleted, then you should use a system-assigned identity.
 
-| Scenario| Recommendation|Notes|
+| Scenario | Recommendation | Notes |
 |---|---|---|
-| Rapid creation of resources (for example, ephemeral computing) with managed identities |  User-assigned identity | If you attempt to create multiple managed identities in a short space of time – for example, deploying multiple virtual machines each with their own system-assigned identity - you may exceed the rate limit for Microsoft Entra object creations, and the request fails with an HTTP 429 error. <br/><br/>If resources are being created or deleted rapidly, you may also exceed the limit on the number of resources in Microsoft Entra ID if using system-assigned identities. While a deleted  system-assigned identity is no longer accessible by any resource, it counts towards your limit until fully purged after 30 days.<br/><br/>Deploying the resources associated with a single user-assigned identity require the creation of only one Service Principal in Microsoft Entra ID, avoiding the rate limit. Using a single identity that is created in advance reduces the risk of replication delays that could occur if multiple resources are created each with their own identity.<br/><br/>Read more about the [Azure subscription service limits](/azure/azure-resource-manager/management/azure-subscription-service-limits#managed-identity-limits). |
-| Replicated resources/applications | User-assigned identity  |  Resources that carry out the same task – for example, duplicated web servers or identical functionality running in an app service and in an application on a virtual machine – typically require the same permissions. <br/><br/>By using the same user-assigned identity, fewer role assignments are required which reduces the management overhead. The resources don't have to be of the same type. 
-|Compliance| User-assigned identity  | If your organization requires that all identity creation must go through an approval process, using a single user-assigned identity across multiple resources requires fewer approvals than system-assigned Identities, which are created as new resources are created. |
-Access required before a resource is deployed |User-assigned identity| Some resources may require access to certain Azure resources as part of their deployment.<br/><br/>In this case, a system-assigned identity may not be created in time so a preexisting user-assigned identity should be used.|
-Audit Logging|System-assigned identity|If you need to log which specific resource carried out an action, rather than which identity, use a system-assigned identity.|
-Permissions Lifecycle Management|System-assigned identity|If you require that the permissions for a resource be removed along with the resource, use a system-assigned identity.
+| Rapid creation of resources (for example, ephemeral computing) with managed identities | User-assigned identity | If you attempt to create multiple managed identities in a short space of time – for example, deploying multiple virtual machines each with their own system-assigned identity - you may exceed the rate limit for Microsoft Entra object creations, and the request fails with an HTTP 429 error. <br/><br/>If resources are being created or deleted rapidly, you may also exceed the limit on the number of resources in Microsoft Entra ID if using system-assigned identities. While a deleted  system-assigned identity is no longer accessible by any resource, it counts towards your limit until fully purged after 30 days.<br/><br/>Deploying the resources associated with a single user-assigned identity require the creation of only one Service Principal in Microsoft Entra ID, avoiding the rate limit. Using a single identity that is created in advance reduces the risk of replication delays that could occur if multiple resources are created each with their own identity.<br/><br/>Read more about the [Azure subscription service limits](/azure/azure-resource-manager/management/azure-subscription-service-limits#managed-identity-limits). |
+| Replicated resources/applications | User-assigned identity | Resources that carry out the same task – for example, duplicated web servers or identical functionality running in an app service and in an application on a virtual machine – typically require the same permissions. <br/><br/>By using the same user-assigned identity, fewer role assignments are required which reduces the management overhead. The resources don't have to be of the same type. |
+| Compliance | User-assigned identity | If your organization requires that all identity creation must go through an approval process, using a single user-assigned identity across multiple resources requires fewer approvals than system-assigned Identities, which are created as new resources are created. |
+| Access required before a resource is deployed |User-assigned identity | Some resources may require access to certain Azure resources as part of their deployment.<br/><br/>In this case, a system-assigned identity may not be created in time so a preexisting user-assigned identity should be used. |
+| Audit Logging|System-assigned identity | If you need to log which specific resource carried out an action, rather than which identity, use a system-assigned identity. |
+| Permissions Lifecycle Management | System-assigned identity|If you require that the permissions for a resource be removed along with the resource, use a system-assigned identity. |
 
 ### Using user-assigned identities to reduce administration
 

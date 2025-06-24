@@ -97,6 +97,8 @@ items:
       href: howto-configure-health-alert-emails.md
     - name: How to investigate Microsoft Entra Health alerts
       href: howto-investigate-health-scenario-alerts.md
+    - name: Conditional Access block policy
+      href: scenario-health-conditional-access-block-policy.md
     - name: Sign-ins requiring a compliant or managed device
       href: scenario-health-sign-ins-compliant-managed-device.md
     - name: Sign-ins requiring MFA
@@ -108,6 +110,8 @@ items:
     items:
     - name: How to use Microsoft Entra Recommendations
       href: howto-use-recommendations.md
+    - name: How to configure recommendation email notifications
+      href: howto-configure-recommendation-email-notifications.md
     - name: Enable insider risk Conditional Access condition
       href: recommendation-insider-risk-condition.md
     - name: Migrate ADAL to MSAL

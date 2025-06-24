@@ -2,7 +2,7 @@
 title: Tutorial - Customize Microsoft Entra attribute mappings in Application Provisioning
 description: Learn about attribute mappings for Software as a Service (SaaS) apps in Microsoft Entra Application Provisioning. Learn what attributes are and how you can modify them to address your business needs.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
@@ -33,7 +33,7 @@ You can customize the default attribute-mappings according to your business need
 Follow these steps to access the **Mappings** feature of user provisioning:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select any app to load its app management pane, where you can view reports and manage app settings.
 1. Select **Provisioning** to manage user account provisioning settings for the selected app.
@@ -147,7 +147,7 @@ When you're editing the list of supported attributes, the following properties a
 
 The SCIM Request for Comments (RFC) defines a core user and group schema, while also allowing for extensions to the schema to meet your application's needs. To add a custom attribute to a SCIM application:
   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-  1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+  1. Browse to **Entra ID** > **Enterprise apps**.
   1. Select your application, and then select **Provisioning**.
   1. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.
   1. At the bottom of the page, select **Show advanced options**.

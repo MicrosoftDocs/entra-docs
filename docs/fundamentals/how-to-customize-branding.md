@@ -3,14 +3,13 @@ title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
 author: shlipsey3
 manager: femila
-
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: almars
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
 ---
 
@@ -42,6 +41,8 @@ The **Organizational Branding Administrator** role is the minimum role required 
 
 **The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding.md) in the Azure AD B2C documentation.
 
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
+
 **Use Microsoft Graph with Microsoft Entra company branding.** Company branding can be viewed and managed using Microsoft Graph on the `/beta` endpoint and the `organizationalBranding` resource type. For more information, see the [organizational branding API documentation](/graph/api/resources/organizationalbranding?view=graph-rest-beta&preserve-view=true).
 
 The branding elements are called out in the following example. Text descriptions are provided following the image.
@@ -68,7 +69,7 @@ The branding elements are called out in the following example. Text descriptions
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
-1. Browse to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Entra ID** > **Custom Branding**.
     - If you currently have a customized sign-in experience, the **Edit** button is available.
 
    :::image type="content" source="media/how-to-customize-branding/customize-branding-getting-started.png" alt-text="Screenshot of Custom branding landing page with Company branding highlighted in the side menu and Configure button." lightbox="media/how-to-customize-branding/customize-branding-getting-started.png":::
@@ -173,7 +174,7 @@ All of the available options appear in one list so you can review everything you
 
 Once your default sign-in experience is created, select the **Edit** button to make any changes. You can't delete a default sign-in experience after it's created, but you can remove all custom settings.
 
-The time it takes for changes to appear in the sign-in experience can vary based on the tenant's geographical location. Updates can take a few minutes or up to 2 hours. This time range is a target, not a guarantee. 
+The time it takes for changes to appear in the sign-in experience vary based on the tenant's geographical location.
 
 ## Customize the sign-in experience by browser language
 
@@ -181,7 +182,7 @@ You can create a personalized sign-in experience for users who sign in using a s
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
-1. Browse to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Entra ID** > **Custom Branding**.
 
 1. Select **Add browser language**.
 

@@ -4,12 +4,12 @@ description: In this tutorial, you learn how to enable authentication for a web 
 author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
-ms.custom: azureday1, app-service-web
 ms.date: 02/17/2024
 ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
+ms.custom: azureday1, app-service-web, sfi-image-nochange
 #Customer intent: As an application developer, enable authentication and authorization for a web app running on Azure App Service.
 ---
 
@@ -79,7 +79,7 @@ You now have an app that's secured by the App Service authentication.
 
 ## Verify limited access to the web app
 
-When you enabled the App Service authentication module, an app registration was created in your Microsoft Entra tenant. The app registration has the same display name as your web app. To check the settings, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer) and browse to **Identity** > **Applications** > **App registrations**. Select the app registration that was created. In the overview, verify that **Supported account types** is set to **My organization only**.
+When you enabled the App Service authentication module, an app registration was created in your Microsoft Entra tenant. The app registration has the same display name as your web app. To check the settings, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer) and browse to **Entra ID** > **App registrations**. Select the app registration that was created. In the overview, verify that **Supported account types** is set to **My organization only**.
 
 :::image type="content" alt-text="Screenshot that shows verifying access." source="./media/multi-service-web-app-authentication-app-service/verify-access.png":::
 

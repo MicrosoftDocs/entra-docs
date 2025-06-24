@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Maxient Conduct Manager Software
+title: Configure Maxient Conduct Manager Software for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Maxient Conduct Manager Software.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Maxient Conduct Manager Software so that I can control who has access to Maxient Conduct Manager Software, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Maxient Conduct Manager Software
+# Configure Maxient Conduct Manager Software for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Maxient Conduct Manager Software with Microsoft Entra ID. When you integrate Maxient Conduct Manager Software with Microsoft Entra ID, you can:
 
@@ -24,6 +24,7 @@ In this article,  you learn how to integrate Maxient Conduct Manager Software wi
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Maxient Conduct Manager Software single sign-on (SSO) enabled subscription.
 
@@ -41,7 +42,7 @@ In this article,  you configure your Microsoft Entra ID for use with Maxient Con
 To configure the integration of Maxient Conduct Manager Software into Microsoft Entra ID, you need to add Maxient Conduct Manager Software from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Maxient Conduct Manager Software** in the search box.
 1. Select **Maxient Conduct Manager Software** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -66,7 +67,7 @@ To configure and test Microsoft Entra SSO with Maxient Conduct Manager Software,
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Maxient Conduct Manager Software** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Maxient Conduct Manager Software** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -93,7 +94,7 @@ Follow these steps to enable Microsoft Entra SSO.
 It's important to note that this step is **REQUIRED** for Maxient to function properly.  Maxient leverages your Microsoft Entra system to *authenticate* users. The *authorization* of users is performed within the Maxient system for the particular function they’re trying to perform. Maxient doesn't use attributes from your directory to make those decisions.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Maxient Conduct Manager Software**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Maxient Conduct Manager Software**.
 1. In the app's overview page, toggle the "User Assignment Required" setting to No.
 
 ## Test with Maxient 

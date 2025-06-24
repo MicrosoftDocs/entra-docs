@@ -1,20 +1,17 @@
 ---
 title: How to manage OATH tokens in Microsoft Entra ID (Preview)
 description: Learn about how to manage OATH tokens in Microsoft Entra ID to help improve and secure sign-in events.
-
 services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/26/2025
-
 ms.author: justinha
 author: justinha
 ms.reviewer: lvandenende
-manager: femila
-
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to manage OATH tokens in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 # How to manage hardware OATH tokens in Microsoft Entra ID (Preview)
@@ -48,12 +45,12 @@ You can view and enable hardware OATH tokens in the Authentication methods polic
 To enable hardware OATH tokens in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
+1. Browse to **Entra ID** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
 1. Select **Enable**, choose which groups of users to include in the policy, and select **Save**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/enable.png" alt-text="Screenshot of how to enable hardware OATH tokens in the Microsoft Entra admin center.":::
 
-We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
+We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Entra ID** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
 
 
 ## Scenario: Admin creates, assigns, and activates a hardware OATH token 

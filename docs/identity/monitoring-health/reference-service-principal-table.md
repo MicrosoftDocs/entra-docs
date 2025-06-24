@@ -3,13 +3,13 @@ title: First party app service principal reference table
 description: Reference table that maps application IDs to applications and their service principal usage from the sign-in logs.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health
-ms.date: 04/11/2025
+ms.date: 05/06/2025
 ms.author: sarahlipsey
-ms.reviewer: dhanyahk
+ms.reviewer: egreenberg
 ---
 # Microsoft service principal sign-in logs table
 
@@ -20,7 +20,7 @@ The Microsoft service principal sign-in logs capture service-to-service authenti
 These logs are only available by configuring diagnostic settings in Microsoft Entra to route the logs to an endpoint of your choice. For full guidance on this process, see [Configure diagnostic settings](howto-configure-diagnostic-settings.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostics**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostics**.
 1. Adjust the filters accordingly.
 1. Select **+ Add diagnostic setting**.
 1. Select the **MicrosoftServicePrincipalSignInLogs**. 
@@ -29,7 +29,7 @@ These logs are only available by configuring diagnostic settings in Microsoft En
 
 ## Microsoft service principal sign-in logs
 
-This table maps the application IDs from the logs to the application name and a brief description of the application. This table is not exhaustive and will grow over time.
+This table maps application IDs from the logs to the application name and a brief description of the application. This table is not exhaustive and will grow over time. Applications currently listed here illustrate the variety of applications that can be found in the logs. 
 
 Some application display names might include acronyms or abbreviations from previous application names. For example, some services still retain "AAD" (Azure Active Directory) in their display name, even though the service was rebranded to Microsoft Entra ID. 
 

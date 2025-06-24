@@ -8,13 +8,13 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Proware so that I can streamline the user management process and ensure that users have the appropriate access to Proware.
 ---
 
-# Configure Proware for automatic user provisioning
+# Configure Proware for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Proware and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to Proware using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -45,7 +45,7 @@ The scenario outlined in this article assumes that you already have the followin
 
 ## Step 2: Configure Proware to support provisioning with Microsoft Entra ID
 1. Sign in to the Proware application by navigating to `https://www.metaware.nl/Proware`. 
-2. Navigate to **Control panel** -> **Admin**.
+2. Navigate to **Control panel** > **Admin**.
 3. Select **Control panel settings**, scroll down to **User Provisioning** and then **enable** User Provisioning. 
 4. Select the **Create bearer token** button and copy the **Token**. This value is entered in the Secret Token field in the Provisioning tab of your Proware application.
 5. Copy the **Tenant URL**. This value is entered in the Tenant URL field in the Provisioning tab of your Proware application.
@@ -69,7 +69,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Proware in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 

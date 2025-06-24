@@ -2,9 +2,9 @@
 title: Add, test, or remove protected actions in Microsoft Entra ID
 description: Learn how to add, test, or remove protected actions in Microsoft Entra ID.
 
-author: rolyon
-manager: femila
-ms.author: rolyon
+author: barclayn
+manager: pmwongera
+ms.author: barclayn
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
@@ -31,7 +31,7 @@ Protected actions use a Conditional Access authentication context, so you must c
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Select **Protection** > **Conditional Access** > **Authentication context** > **Authentication context**.
+1. Select **Entra ID** > **Conditional Access** > **Authentication context** > **Authentication context**.
 
 1. Select **New authentication context** to open the **Add authentication context** pane.
 
@@ -51,11 +51,11 @@ Protected actions use a Conditional Access authentication context, so you must c
 
 To add protection actions, assign a Conditional Access policy to one or more permissions using a Conditional Access authentication context.
 
-1. Select **Protection** > **Conditional Access** > **Policies**.
+1. Select **Entra ID** > **Conditional Access** > **Policies**.
 
 1. Make sure the state of the Conditional Access policy that you plan to use with your protected action is set to **On** and not **Off** or **Report-only**.
 
-1. Select **Identity** > **Roles & admins** > **Protected actions**.
+1. Select **Entra ID** > **Roles & admins** > **Protected actions**.
 
     :::image type="content" source="media/protected-actions-add/protected-actions-start.png" alt-text="Screenshot of Add protected actions page in Roles and administrators." lightbox="media/protected-actions-add/protected-actions-start.png":::
 
@@ -81,7 +81,7 @@ When a user performs a protected action, they'll need to satisfy Conditional Acc
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that must satisfy the policy.
 
-1. Select **Protection** > **Conditional Access**.
+1. Select **Entra ID** > **Conditional Access**.
 
 1. Select a Conditional Access policy to view it.
 
@@ -107,7 +107,7 @@ When a user performs a protected action, they'll need to satisfy Conditional Acc
 
 To remove protection actions, unassign Conditional Access policy requirements from a permission.
 
-1. Select **Identity** > **Roles & admins** > **Protected actions**.
+1. Select **Entra ID** > **Roles & admins** > **Protected actions**.
 
 1. Find and select the permission Conditional Access policy to unassign.
 

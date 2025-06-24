@@ -1,18 +1,15 @@
 ---
 title: Microsoft Entra certificate-based authentication technical deep dive
 description: Learn how Microsoft Entra certificate-based authentication works
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
-
 ms.author: justinha
 author: vimrang
-manager: femila
+manager: dougeby
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
 ---
 
@@ -145,7 +142,7 @@ For passwordless sign-in to work, users should disable legacy notification throu
    >[!IMPORTANT]
    >In the preceding configuration, make sure you chose **Passwordless** option. You need to change the **Authentication mode** for any groups added for PSI to **Passwordless**. If you choose **Any**, CBA and PSI don't work.
 
-1. Select **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
+1. Select **Entra ID** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/configure.png" alt-text="Screenshot of how to configure multifactor authentication settings.":::
 
@@ -221,7 +218,7 @@ Because multiple custom authentication binding policy rules can be created with 
 >- Windows Passwordless Phone Sign-in
 >  
 >Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios aren't impacted. CBA authentication policy rules using either Issuer OR Policy OID aren't impacted.
->To mitigate, Authentication Policy Administrators should :
+>To mitigate, Authentication Policy Administrators should:
 >- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
 >- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
 >  
@@ -241,13 +238,16 @@ Mapping types based on user names and email addresses are considered low-affinit
 |:--------------------------|:----------------------------------------:|:----------------------:|:----:|
 |PrincipalName | `X509:<PN>bob@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
 |RFC822Name	| `X509:<RFC822>user@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
-|IssuerAndSubject (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
-|Subject (preview)| `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
+|IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
+|Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
 |SKI | `X509:<SKI>aB1cD2eF3gH4iJ5kL6-mN7oP8qR=` | certificateUserIds | high-affinity |
-|SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` | certificateUserIds | high-affinity |
-|IssuerAndSerialNumber (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+|SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` <br> The SHA1PublicKey value (SHA1 hash of the entire certificate content including the public key) is found in the Thumbprint property of certificate.| certificateUserIds | high-affinity |
+|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
 
-### Define Affinity binding at the tenant level and override with custom rules (Preview)
+>[!IMPORTANT]
+> You can use the [CertificateBasedAuthentication PowerShell module](concept-certificate-based-authentication-certificateuserids.md#how-to-find-the-correct-certificateuserids-values-for-a-user-from-the-end-user-certificate-using-powershell-module) to find the correct CertificateUserIds values for a user from the end user certificate.
+
+### Define Affinity binding at the tenant level and override with custom rules
 
 With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based on Issuer and Policy OID, or Policy OID, or Issuer.
 
@@ -424,7 +424,7 @@ The following steps are a typical flow of the CRL check:
 
 >[!NOTE]
 >Microsoft Entra ID checks the CRL of the issuing CA and other CAs in the PKI trust chain up to the root CA. We have a limit of up to 10 CAs from the leaf client certificate for CRL validation in the PKI chain. The limitation is to make sure a bad actor doesn't bring down the service by uploading a PKI chain with a huge number of CAs with a bigger CRL size.
-If the tenant's PKI chain has more than 5 CAs, andif there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration.
+If the tenant's PKI chain has more than 5 CAs, and if there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration.
  
 
 >[!IMPORTANT]
@@ -436,7 +436,7 @@ As of now, there's no way to manually force or retrigger the download of the CRL
 
 [!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
-## Understanding CRL validation (Preview)
+## Understanding CRL validation
 
 A CRL is a record of digital certificates that have been revoked before the end of their validity period by a certificate authority (CA).
 When CAs are uploaded to the Microsoft Entra trust store, a CRL, or more specifically the CrlDistributionPoint attribute, isn't required. A CA can be uploaded without a CRL endpoint, and certificate-based authentication won't fail if an issuing CA doesn't have a CRL specified. 
@@ -457,8 +457,7 @@ An Authentication Policy Administrator can exempt a CA if its CRL has issues tha
 
 The CAs in the exempted list aren't required to have CRL configured and the end-user certificates that they issue don't fail authentication.
 
->[!NOTE]
->There's a known issue with the object picker where the selected items aren't displayed correctly. Use the **Certificate Authorities** tab to select or remove CAs.
+Select CAs and select **Add**. The **Search** text box can be used to filter the CA lists to select specific CAs.
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." :::  
 
@@ -559,6 +558,9 @@ Certificate-based authentication can fail for reasons such as the certificate be
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." :::  
 
 If CBA fails on a browser, even if the failure is because you cancel the certificate picker, you need to close the browser session and open a new session to try CBA again. A new session is required because browsers cache the certificate. When CBA is retried, the browser sends the cached certificate during the TLS challenge, which causes sign-in failure and the validation error.
+
+>[!NOTE]
+>However, Edge browser has added a new feature to [reset the certificate selection without restarting the browser](concept-certificate-based-authentication-technical-deep-dive.md#reset-the-certificate-choice-on-edge-browser).
  
 Select **More details** to get logging information that can be sent to an Authentication Policy Administrator, who in turn can get more information from the Sign-in logs.
 
@@ -566,10 +568,33 @@ Select **More details** to get logging information that can be sent to an Authen
 
 Select **Other ways to sign in** to try other methods available to the user to sign in. 
  
->[!NOTE]
->If you retry CBA in a browser, it'll keep failing due to the browser caching issue. Users need to open a new browser session and sign in again.
-
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/new-sign-in.png" alt-text="Screenshot of a new sign-in attempt." :::  
+
+## Reset the certificate choice on edge browser
+
+If CBA fails on a browser, even if the failure is because you cancel the certificate picker, you need to close the browser session and open a new session to try CBA again as the browsers cache the certificate. However, Edge browser had added a new enhancement to reset the certificate choice on the browser.
+
+- When CBA fails, the user will be sent to error page
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." :::  
+
+- Select the lock icon to the left of the address URL and select **Your certificate choices**.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice.png" alt-text="Screenshot of edge browser certificate choice." :::  
+
+- Select **Reset certificate choices**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice-reset.png" alt-text="Screenshot of edge browser certificate choice reset." :::
+
+- Select **Reset choices** in the dialog
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice-reset-accept.png" alt-text="Screenshot of edge browser certificate choice reset acceptance." :::
+
+- Click on **Other ways to sign in** in the error page
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." ::: 
+
+- Select **Use a certificate or smart card** in the picker and continue with CBA authentication. 
 
 ## Certificate-based authentication in MostRecentlyUsed (MRU) methods
  
@@ -577,9 +602,11 @@ Once a user authenticates successfully using CBA, the user's MostRecentlyUsed (M
 
 To reset the MRU method, the user needs to cancel the certificate picker, select **Other ways to sign in**, and select another method available to the user and authenticate successfully.
 
+The MRU auth method is set at user level so if a user successfully signins on a different device using a different auth method the MRU will be reset on the user to the currently logged in method.
+
 ## External identity support
 
-An external identity B2B guest user can use CBA on the home tenant and if the cross tenant settings for the resource tenant is set up to trust MFA from the home tenant, user's CBA auth on home tenant is honored. For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
+An external identity B2B guest user can use CBA on the home tenant and if the cross tenant settings for the resource tenant are set up to trust MFA from the home tenant, user's CBA auth on home tenant is honored. For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
 CBA on resource tenant isn't supported yet. 
 
 

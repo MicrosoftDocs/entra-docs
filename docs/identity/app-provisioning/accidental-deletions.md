@@ -2,7 +2,7 @@
 title: Enable accidental deletions prevention in the Microsoft Entra provisioning service
 description: Enable accidental deletions prevention in the Microsoft Entra provisioning service for applications and cross-tenant synchronization.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
@@ -31,14 +31,14 @@ To enable accidental deletion prevention:
 
 ::: zone pivot="app-provisioning"
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select your application.
 1. Select **Provisioning** and then on the provisioning page select **Edit provisioning**.
 ::: zone-end
 
 ::: zone pivot="cross-tenant-synchronization"
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **External Identities** > **Cross-tenant synchronization** > **Configurations** and then select your configuration.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization** > **Configurations** and then select your configuration.
 1. Select **Provisioning**.
 ::: zone-end
 

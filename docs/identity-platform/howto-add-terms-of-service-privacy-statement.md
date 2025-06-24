@@ -55,7 +55,7 @@ When the terms of service and privacy statement are ready, you can add links to 
 Follow these steps to add links:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Entra ID** > **Custom Branding**.
 1. Select **Getting started**, and then select **Edit** for the **Default sign-in experience**.
 1. Select **Footer** and fill out the URL for **Terms of Use** and **Privacy & Cookies**.
 1. Select **Review + save**.

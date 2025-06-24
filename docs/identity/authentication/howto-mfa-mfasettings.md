@@ -1,51 +1,29 @@
 ---
 title: Configure Microsoft Entra multifactor authentication
 description: Learn how to configure settings for Microsoft Entra multifactor authentication
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/24/2025
-
+ms.date: 06/19/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: jupetter
+ms.custom: sfi-image-nochange
 ---
 # Configure Microsoft Entra multifactor authentication settings
 
 To customize the end-user experience for Microsoft Entra multifactor authentication (MFA), you can configure options for reporting suspicious activities. The following table describes Microsoft Entra MFA settings, and subsections cover each setting in more detail.
 
+>[!NOTE]
+>[Report suspicious activity](#report-suspicious-activity) replaces the Block/unblock users, Fraud alert, and Notifications legacy features. On March 1, 2025, the legacy features were removed. 
+
 | Feature | Description |
 | ------- | ----------- |
-| [Account lockout (MFA Server only)](#account-lockout-mfa-server-only) | Temporarily lock accounts from using Microsoft Entra MFA if there are too many denied authentication attempts in a row. This feature applies only to users who use MFA Server to enter a PIN to authenticate. |
 | [Report suspicious activity](#report-suspicious-activity) | Configure settings that allow users to report fraudulent verification requests. |
 | [OATH tokens](concept-authentication-oath-tokens.md) | Used in cloud-based Microsoft Entra MFA environments to manage OATH tokens for users. |
 | [Phone call settings](#phone-call-settings) | Configure settings related to phone calls and greetings for cloud and on-premises environments. |
 | Providers | This will show any existing authentication providers that you've associated with your account. Adding new providers is disabled as of September 1, 2018. |
-
-## Account lockout (MFA Server only)
-
-
->[!NOTE]
->Account lockout only affects users who sign in by using MFA Server on-premises. 
-
-To prevent repeated MFA attempts as part of an attack, the account lockout settings let you specify how many failed attempts to allow before the account becomes locked out for a period of time. The account lockout settings are applied only when a PIN code is entered for the MFA prompt by using MFA Server on-premises.
-
-The following settings are available:
-
-* Number of MFA denials that trigger account lockout
-* Minutes until account lockout counter is reset
-* Minutes until account is automatically unblocked
-
-To configure account lockout settings, complete these steps:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Multifactor authentication** > **Account lockout**. You might need to click **Show more** to see **Multifactor authentication**.
-1. Enter the values for your environment, and then select **Save**.
-
-    ![Screenshot that shows the account lockout settings.](./media/howto-mfa-mfasettings/account-lockout-settings.png)
 
 ## Report suspicious activity
 
@@ -61,7 +39,7 @@ If you don't have a Microsoft Entra ID P2 license for risk-based policies, you c
 To enable **Report suspicious activity** from the Authentication methods policy **Settings**:   
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Settings**. 
+1. Browse to **Entra ID** > **Authentication methods** > **Settings**. 
 1. Set **Report suspicious activity** to **Enabled**. The feature remains disabled if you choose **Microsoft managed**. For more information about Microsoft managed values, see [Protecting authentication methods in Microsoft Entra ID](concept-authentication-default-enablement.md).
    :::image type="content" border="true" source="media/howto-mfa-mfasettings/report-suspicious-activity.png" alt-text="Screenshot of how to enable Report suspicious activity.":::
 1. Select **All users** or a specific group. 
@@ -74,9 +52,9 @@ When a user reports an MFA prompt as suspicious, the event shows up in the sign-
 
 | Report | Admin center | Details |
 |--------------|--------|---------|
-| Risk detections report | **Protection** > **Identity Protection** > **Risk detection** | Detection type: **User Reported Suspicious Activity**<br>Risk level: **High**<br>Source **End user reported** |
-| Sign-in logs | **Identity** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied** |
-| Audit logs   | **Identity** > **Monitoring & health** > **Audit logs** | The suspecious activity appears under **Activity type** |
+| Risk detections report | **ID Protection** > **Dashboard** > **Risk detection** | Detection type: **User Reported Suspicious Activity**<br>Risk level: **High**<br>Source **End user reported** |
+| Sign-in logs | **Entra ID** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied** |
+| Audit logs   | **Entra ID** > **Monitoring & health** > **Audit logs** | The suspicious activity appears under **Activity type** |
 
 >[!NOTE]
 >A user isn't reported as High Risk if they perform passwordless authentication.
@@ -123,7 +101,7 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 > Be sure to include the header row in your CSV file.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Go to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
+1. Go to **Entra ID** > **Multifactor authentication** > **OATH tokens**, and upload the CSV file.
 
 Depending on the size of the CSV file, it might take a few minutes to process. Select **Refresh** to get the status. If there are any errors in the file, you can download a CSV file that lists them. The field names in the downloaded CSV file are different from those in the uploaded version.
 
@@ -141,7 +119,7 @@ If users receive phone calls for MFA prompts, you can configure their experience
 
 In the United States, if you haven't configured MFA caller ID, voice calls from Microsoft come from the following numbers. Users with spam filters should exclude these numbers.
 
-Default number: *+1 (855) 330-8653*
+Default numbers: *+1 (855) 330-8653*, *+1 (855) 336-2194*, *+1 (855) 341-5605*
 
 The following table lists more numbers for different countries/regions.
 
@@ -149,7 +127,7 @@ The following table lists more numbers for different countries/regions.
 |:---------------------|:----------------|
 | Austria              | +43 6703062076  |
 | Bangladesh           | +880 9604606026 |
-| China                | +44 1235619418, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 1235619535, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930|
+| China                | +44 1235619418, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 1235619535, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930, +86 1052026902, +86 1052026905, +86 1052026907|
 | Croatia              | +385 15507766   |
 | Ecuador              | +593 964256042  |
 | Estonia              | +372 6712726    |
@@ -181,7 +159,7 @@ The following table lists more numbers for different countries/regions.
 
 To configure your own caller ID number, complete the following steps:
 
-1. Go to **Protection** > **Multifactor authentication** > **Phone call settings**.
+1. Go to **Entra ID** > **Multifactor authentication** > **Phone call settings**.
 1. Set the **MFA caller ID number** to the number you want users to see on their phones. Only US-based numbers are allowed.
 1. Select **Save**.
 
@@ -215,30 +193,30 @@ For example, if there's only one custom message, and it's in German:
 
 ### Custom voice message defaults
 
-You can use the following sample scripts to create your own custom messages. These phrases are the defaults if you don't configure your own custom messages.
+You can use the following sample scripts to create your own custom messages. These phrases are used by default if you don't configure your own custom messages.
 
-| Message name | Script |
-| --- | --- |
-| Authentication successful | Your sign-in was successfully verified. Goodbye. |
-| Extension prompt | Thank you for using Microsoft's sign-in verification system. Please press the pound key to continue. |
-| Activation | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Authentication denied retry | Verification denied. |
-| Retry (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Greeting (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Retry (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Extension prompt after digits | If already at this extension, press the pound key to continue. |
-| Authentication denied | I'm sorry, we cannot sign you in at this time. Please try again later. |
-| Activation greeting (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Activation retry (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Activation greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Extension prompt before digits | Thank you for using Microsoft's sign-in verification system. Please transfer this call to extension \<extension>. |
+Message name | Script
+-------------|--------
+OTP extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue. 
+OTP fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to continue. If you are not trying to sign in, press 0 and #.
+OTP fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+OTP fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+OTP goodbye | Goodbye.
+OTP greeting | This is Microsoft. If you are trying to sign in, press the # key to continue.
+OTP last verification code | Again, your code is
+Greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
+Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
+Fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+Fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
+Authentication successful | Your sign-in was successful.
+Authentication failed | I'm sorry we can't sign you in at this time. Please try again later.
 
 ### Set up a custom message
 
 To use your own custom messages, complete the following steps:
 
-1. Go to **Protection** > **Multifactor authentication** > **Phone call settings**.
+1. Go to **Entra ID** > **Multifactor authentication** > **Phone call settings**.
 1. Select **Add greeting**.
 1. Choose the **Type** of greeting, such as **Greeting (standard)** or  **Authentication successful**.
 1. Select the **Language**. See the previous section on [custom message language behavior](#custom-message-language-behavior).
@@ -249,7 +227,7 @@ To use your own custom messages, complete the following steps:
 
 Settings for app passwords, trusted IPs, verification options, and remembering multifactor authentication on trusted devices are available in the service settings. This is a legacy portal.
 
-You can access service settings from the [Microsoft Entra admin center](https://entra.microsoft.com) by going to **Protection** > **Multifactor authentication** > **Getting started** > **Configure** > **Additional cloud-based MFA settings**. A window or tab opens with additional service settings options.
+You can access service settings from the [Microsoft Entra admin center](https://entra.microsoft.com) by going to **Entra ID** > **Multifactor authentication** > **Getting started** > **Configure** > **Additional cloud-based MFA settings**. A window or tab opens with additional service settings options.
 
 ### Trusted IPs
 
@@ -289,7 +267,7 @@ Regardless of whether trusted IPs are defined, multifactor authentication is req
 You can use Conditional Access rules to define named locations by using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
 1. Select **New location**.
 1. Enter a name for the location.
 1. Select **Mark as trusted location**.
@@ -301,7 +279,7 @@ You can use Conditional Access rules to define named locations by using the foll
 To enable trusted IPs by using Conditional Access policies, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** >  **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
 1. Select **Configure multifactor authentication trusted IPs**.
 1. On the **Service Settings** page, under **Trusted IPs**, choose one of these options:
 
@@ -324,7 +302,7 @@ To enable trusted IPs by using Conditional Access policies, complete the followi
 If you don't want to use Conditional Access policies to enable trusted IPs, you can configure the service settings for Microsoft Entra multifactor authentication by using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Multifactor authentication** > **Additional cloud-based MFA settings**. 
+1. Browse to **Entra ID** > **Multifactor authentication** > **Additional cloud-based MFA settings**. 
 1. On the **Service settings** page, under **Trusted IPs**, choose one or both of the following options:
 
    * **For requests from federated users on my intranet**: To choose this option, select the checkbox. All federated users who sign in from the corporate network bypass multifactor authentication by using a claim that's issued by AD FS. Ensure that AD FS has a rule to add the intranet claim to the appropriate traffic. If the rule doesn't exist, create the following rule in AD FS:
@@ -361,7 +339,7 @@ For more information, see [What authentication and verification methods are avai
 To enable or disable verification methods, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **Per-user MFA**.
 1. Under **Multifactor authentication** at the top of the page, select **Service settings**.
 1. On the **Service settings** page, under **Verification options**, select or clear the appropriate checkboxes.
@@ -402,7 +380,7 @@ The feature reduces the number of authentications on web apps, which normally pr
 To enable and configure the option to allow users to remember their MFA status and bypass prompts, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **Per-user MFA**.
 1. Under **Multifactor authentication** at the top of the page, select **service settings**.
 1. On the **service settings** page, under **remember multifactor authentication**, select **Allow users to remember multifactor authentication on devices they trust**.

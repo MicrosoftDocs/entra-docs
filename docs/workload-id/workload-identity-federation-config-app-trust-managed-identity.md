@@ -5,9 +5,10 @@ author: cilwerner
 manager: CelesteDG
 ms.service: entra-workload-id
 ms.topic: how-to
-ms.date: 12/3/2024
+ms.date: 06/06/2025
 ms.author: cwerner
 ms.reviewer: hosamsh
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to configure my application to trust a managed identity so that I can access Microsoft Entra protected resources without needing to use or manage application secrets or certificates.
 ---
 
@@ -67,7 +68,7 @@ In this section, you'll configure a federated identity credential on an existing
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). Check that you are in the tenant where your application is registered.
-1. Browse to **Identity** > **Applications** > **App registrations**, and select your application in the main window.
+1. Browse to **Entra ID** > **App registrations**, and select your application in the main window.
 1. Under **Manage**, select **Certificates & secrets**.
 1. Select the Federated credentials tab and select **Add credential**.
 
@@ -167,63 +168,218 @@ resource myApp 'Microsoft.Graph/applications@v1.0' = {
 
 The following code snippets demonstrate how to acquire a managed identity token and use it as a credential for your Entra application. The samples are valid in both cases where the target resource in the same tenant as the Entra application, or in a different tenant.
 
-### Azure.Identity
+### Azure Identity client libraries
 
-This example demonstrates accessing an Azure storage container, but can be adapted to access any resource protected by Microsoft Entra.
+The following code samples demonstrate accessing an Azure Key Vault secret, but can be adapted to access any resource protected by Microsoft Entra.
+
+### [.NET](#tab/dotnet)
 
 ```csharp
+using Azure.Core;
 using Azure.Identity;
-using Azure.Storage.Blobs;
+using Azure.Security.KeyVault.Secrets;
 
-internal class Program
-{
-  // This example demonstrates how to access an Azure blob storage account by utilizing the manage identity credential.
-  static void Main(string[] args)
-  {
-    string storageAccountName = "YOUR_STORAGE_ACCOUNT_NAME";
-    string containerName = "CONTAINER_NAME";
-        
-    // The application must be granted access on the target resource
-    string appClientId = "YOUR_APP_CLIENT_ID";
+// Audience value must be one of the below values depending on the target cloud:
+// - Entra ID Global cloud: api://AzureADTokenExchange
+// - Entra ID US Government: api://AzureADTokenExchangeUSGov
+// - Entra ID China operated by 21Vianet: api://AzureADTokenExchangeChina
+string miAudience = "api://AzureADTokenExchange";
 
-    // The tenant where the target resource is created, in this example, the storage account tenant
-    // If the resource tenant different from the app tenant, your app needs to be 
-    string resourceTenantId = "YOUR_RESOURCE_TENANT_ID";
+// Create an assertion with the managed identity access token, so that it can be
+// exchanged for an app token. Client ID is passed here. Alternatively, either
+// object ID or resource ID can be passed.
+ManagedIdentityCredential miCredential = new(
+    ManagedIdentityId.FromUserAssignedClientId("<YOUR_MI_CLIENT_ID>"));
+TokenRequestContext tokenRequestContext = new([$"{miAudience}/.default"]);
+ClientAssertionCredential clientAssertionCredential = new(
+    "<YOUR_RESOURCE_TENANT_ID>",
+    "<YOUR_APP_CLIENT_ID>",
+    async _ =>
+        (await miCredential
+            .GetTokenAsync(tokenRequestContext)
+            .ConfigureAwait(false)).Token
+);
 
-    // The managed identity which you configured as a Federated Identity Credential (FIC)
-    string miClientId = "YOUR_MANAGED_IDENTITY_CLIENT_ID"; 
+// Create a new SecretClient using the assertion
+SecretClient client = new(
+    new Uri("https://testfickv.vault.azure.net/"), 
+    clientAssertionCredential);
 
-    // Audience value must be one of the below values depending on the target cloud.
-    // Entra ID Global cloud: api://AzureADTokenExchange
-    // Entra ID US Government: api://AzureADTokenExchangeUSGov
-    // Entra ID China operated by 21Vianet: api://AzureADTokenExchangeChina
-    string audience = "api://AzureADTokenExchange";
+// Retrieve the secret
+KeyVaultSecret secret = client.GetSecret("<SECRET_NAME>");
+```
 
-    // 1. Create an assertion with the managed identity access token, so that it can be exchanged an app token
-    var miCredential = new ManagedIdentityCredential(managedIdentityClientId);
-    ClientAssertionCredential assertion = new(
-        tenantId,
-        appClientId,
-        async (token) =>
-        {
-            // fetch Managed Identity token for the specified audience
-            var tokenRequestContext = new Azure.Core.TokenRequestContext(new[] { $"{audience}/.default" });
-            var accessToken = await miCredential.GetTokenAsync(tokenRequestContext).ConfigureAwait(false);
-            return accessToken.Token;
-        });
+### [Go](#tab/go)
 
-        // 2. The assertion can be used to obtain an App token (taken care of by the SDK)
-        var containerClient  = new BlobContainerClient(new Uri($"https://{storageAccountName}.blob.core.windows.net/{containerName}"), assertion);
+```go
+package main
 
-        await foreach (BlobItem blob in containerClient.GetBlobsAsync())
-        {
-            // TODO: perform operations with the blobs
-            BlobClient blobClient = containerClient.GetBlobClient(blob.Name);
-            Console.WriteLine($"Blob name: {blobClient.Name}, uri: {blobClient.Uri}");            
-        }
-    }
+import (
+  "context"
+  "log"
+
+  "github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
+  "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+  "github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets"
+)
+
+func main() {
+  // Audience value must be one of the below values depending on the target cloud:
+  // - Entra ID Global cloud: api://AzureADTokenExchange
+  // - Entra ID US Government: api://AzureADTokenExchangeUSGov
+  // - Entra ID China operated by 21Vianet: api://AzureADTokenExchangeChina
+  azScopes := []string{"api://AzureADTokenExchange/.default"}
+
+  // Client ID is passed here. Alternatively, either object ID or resource ID can be passed.
+  mic, err := azidentity.NewManagedIdentityCredential(
+    &azidentity.ManagedIdentityCredentialOptions{
+      ID: azidentity.ClientID("<YOUR_MI_CLIENT_ID>"),
+    },
+  )
+  if err != nil {
+    log.Fatal("error constructing managed identity credential: ", err)
+  }
+
+  getAssertion := func(ctx context.Context) (string, error) {
+    tk, err := mic.GetToken(ctx, policy.TokenRequestOptions{Scopes: azScopes})
+    return tk.Token, err
+  }
+  cred, err := azidentity.NewClientAssertionCredential("<YOUR_TENANT_ID>", "<YOUR_APP_CLIENT_ID>", getAssertion, nil)
+  if err != nil {
+    log.Fatal("error constructing client assertion credential: ", err)
+  }
+
+  client := azsecrets.NewClient("https://testfickv.vault.azure.net", cred, nil)
+	resp, err := client.GetSecret(context.TODO(), "<SECRET_NAME>", "", nil)
+	if err != nil {
+		// TODO: handle error
+	}
 }
 ```
+
+### [Java](#tab/java)
+
+```java
+import com.azure.core.credential.TokenRequestContext;
+import com.azure.core.credential.*;
+import com.azure.identity.*;
+import com.azure.security.keyvault.secrets.SecretClient;
+import com.azure.security.keyvault.secrets.SecretClientBuilder;
+import com.azure.security.keyvault.secrets.models.KeyVaultSecret;
+
+import reactor.core.publisher.Mono;
+
+public class KeyVaultFIC {
+  // Audience value must be one of the below values depending on the target cloud:
+  // - Entra ID Global cloud: api://AzureADTokenExchange
+  // - Entra ID US Government: api://AzureADTokenExchangeUSGov
+  // - Entra ID China operated by 21Vianet: api://AzureADTokenExchangeChina
+  private static final String MI_AUDIENCE = "api://AzureADTokenExchange";
+
+  public static void main(String[] args) throws Exception {
+    ClientAssertionCredential clientAssertionCredential = new ClientAssertionCredentialBuilder()
+        .tenantId("<YOUR_TENANT_ID>")
+        .clientId("<YOUR_APP_CLIENT_ID>")
+        .clientAssertion(() -> getTokenUsingManagedIdentity(MI_AUDIENCE).block())
+        .build();
+
+    SecretClient secretClient = new SecretClientBuilder()
+        .vaultUrl("https://testfickv.vault.azure.net")
+        .credential(clientAssertionCredential)
+        .buildClient();
+
+    KeyVaultSecret secret = secretClient.getSecret("<SECRET_NAME>");
+  }
+
+  private static Mono<String> getTokenUsingManagedIdentity(String audience) {
+    // Client ID is passed here. Alternatively, either object ID or resource ID can be passed.
+    ManagedIdentityCredential managedIdentityCredential = new ManagedIdentityCredentialBuilder()
+        .clientId("<YOUR_MI_CLIENT_ID>")
+        .build();
+    TokenRequestContext requestContext = new TokenRequestContext()
+        .addScopes(audience + "/.default");
+
+    return managedIdentityCredential
+        .getToken(requestContext)
+        .map(accessToken -> accessToken.getToken());
+  }
+}
+```
+
+### [Node.js](#tab/js)
+
+```typescript
+import { ManagedIdentityCredential, ClientAssertionCredential, TokenCredential } from "@azure/identity";
+import { SecretClient } from "@azure/keyvault-secrets";
+
+// Audience value must be one of the below values depending on the target cloud:
+// - Entra ID Global cloud: api://AzureADTokenExchange
+// - Entra ID US Government: api://AzureADTokenExchangeUSGov
+// - Entra ID China operated by 21Vianet: api://AzureADTokenExchangeChina
+const MI_AUDIENCE: string = "api://AzureADTokenExchange";
+
+async function getAccessToken(credential: TokenCredential, audience: string[]): Promise<string> {
+    const accessToken = await credential.getToken(audience);
+    const token = accessToken?.token;
+    if (!token)
+        throw new Error(`Failed to obtain valid access token, received ${token}`);
+    return token;
+}
+
+const main = async () => {
+    // Client ID is passed here. Alternatively, either object ID or resource ID can be passed.
+    const managedIdentityCredential = new ManagedIdentityCredential(
+    {
+        clientId: "<YOUR_MI_CLIENT_ID>"
+    });
+    const clientAssertionCredential = new ClientAssertionCredential(
+        "<YOUR_TENANT_ID>",
+        "<YOUR_APP_CLIENT_ID>",
+        () => getAccessToken(managedIdentityCredential, [`${MI_AUDIENCE}/.default`]));
+    const client = new SecretClient("https://testfickv.vault.azure.net", clientAssertionCredential);
+
+    try {
+        const secret = await client.getSecret("<SECRET_NAME>");
+        console.log("Found the secret from Key Vault");
+    } catch (error) {
+        console.error("Failed to retrieve secret:", error);
+        throw error;
+    }
+};
+
+main();
+```
+
+### [Python](#tab/python)
+
+```python
+from azure.identity import ManagedIdentityCredential, ClientAssertionCredential
+from azure.keyvault.secrets import SecretClient
+
+# Audience value must be one of the below values depending on the target cloud:
+# - Entra ID Global cloud: api://AzureADTokenExchange
+# - Entra ID US Government: api://AzureADTokenExchangeUSGov
+# - Entra ID China operated by 21Vianet: api://AzureADTokenExchangeChina
+MI_AUDIENCE = "api://AzureADTokenExchange"
+
+def get_managed_identity_token(credential, audience):
+    return credential.get_token(audience).token
+
+# Client ID is passed here. Alternatively, either object ID or resource ID can be passed.
+managed_identity_credential = ManagedIdentityCredential(client_id="<YOUR_MI_CLIENT_ID>")
+
+client_assertion_credential = ClientAssertionCredential(
+    "<YOUR_RESOURCE_TENANT_ID>",
+    "<YOUR_APP_CLIENT_ID>",
+    lambda: get_managed_identity_token(managed_identity_credential, f"{MI_AUDIENCE}/.default"))
+
+client = SecretClient(
+    vault_url="https://testfickv.vault.azure.net",
+    credential=client_assertion_credential)
+retrieved_secret = client.get_secret("<SECRET_NAME>")
+```
+
+---
 
 ### Microsoft.Identity.Web
 
@@ -240,7 +396,7 @@ In **Microsoft.Identity.Web**, you can set the `ClientCredentials` section in yo
       {
         "SourceType": "SignedAssertionFromManagedIdentity",
         "ManagedIdentityClientId": "YOUR_USER_ASSIGNED_MANAGED_IDENTITY_CLIENT_ID",
-        "TokenExchangeUrl": "api://AzureADTokenExchange"
+        "TokenExchangeUrl": "api://AzureADTokenExchange/.default"
       }
     ]
   }
@@ -253,8 +409,10 @@ In **MSAL**, you can use the [ManagedClientApplication](/entra/msal/dotnet/advan
 
 ``` csharp
 using Microsoft.Identity.Client;
+using Microsoft.Identity.Client.AppConfig;
 using Azure.Storage.Blobs;
 using Azure.Core;
+using Azure.Storage.Blobs.Models;
 
 internal class Program
 {
@@ -267,7 +425,7 @@ internal class Program
       string resourceTenantId = "YOUR_RESOURCE_TENANT_ID";
       Uri authorityUri = new($"https://login.microsoftonline.com/{resourceTenantId}");
       string miClientId = "YOUR_MI_CLIENT_ID";
-      string audience = "api://AzureADTokenExchange";
+      string audience = "api://AzureADTokenExchange/.default";
 
       // Get mi token to use as assertion
       var miAssertionProvider = async (AssertionRequestOptions _) =>
@@ -294,7 +452,7 @@ internal class Program
         AuthenticationResult result = await app.AcquireTokenForClient(scopes).ExecuteAsync().ConfigureAwait(false);
 
         TokenCredential tokenCredential = new AccessTokenCredential(result.AccessToken);
-        var client = new BlobContainerClient(
+        var containerClient = new BlobContainerClient(
             new Uri($"https://{storageAccountName}.blob.core.windows.net/{containerName}"),
             tokenCredential);
 

@@ -1,7 +1,6 @@
 ---
 title: Scenario - Using directory extensions with group provisioning to Active Directory
 description: This topic describes how to extend the schema of a group with a new attribute. Then use the new attribute to filter groups for provisioning to Active Directory.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -9,7 +8,7 @@ ms.topic: tutorial
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Scenario - Using directory extensions with group provisioning to Active Directory
@@ -38,7 +37,7 @@ To begin, create two groups in Microsoft Entra ID. One group is Sales and the Ot
 To create two groups, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Groups** > **All groups**.
+2. Browse to **Entra ID** > **Groups** > **All groups**.
 3. At the top, click **New group**.
 4. Make sure the **Group type** is set to **security**.
 5. For the **Group Name** enter **Sales**
@@ -49,7 +48,7 @@ To create two groups, follow these steps.
 
 ## Add users to the newly created groups
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Groups** > **All groups**.
+2. Browse to **Entra ID** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
 4. Click on the new **Sales** group.
 5. On the left, click **Members**
@@ -92,7 +91,7 @@ To create two groups, follow these steps.
    ```
 
 > [!NOTE] 
-> This will output our current Tenant ID. You can confirm this Tenant ID by navigating to [Microsoft Entra admin center](https://entra.microsoft.com/) > Identity > Overview.
+> This will output our current Tenant ID. You can confirm this Tenant ID by navigating to [Microsoft Entra admin center](https://entra.microsoft.com/) > **Entra ID** > **Overview**.
 
 1. Using the `$tenantId` variable from the previous step, check to see if the CloudSyncCustomExtensionApp exists.
 
@@ -149,7 +148,7 @@ To create two groups, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 
-2. Browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync**.
+2. Browse to **Entra ID** > **Entra Connect** > **Cloud sync**.
 
 3. Select **New configuration**.
 
@@ -269,7 +268,7 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png" alt-text="Screenshot of provisioning being blocked." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-6.png":::
 9. In Active Directory, you should see the newly created Marketing group.
   :::image type="content" source="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png" alt-text="Screenshot of new group in active directory users and computers." lightbox="media/tutorial-directory-extension-group-provision/directory-extension-group-provision-7.png":::
-1. You can now browse to **Identity** > **Hybrid Management** > **Microsoft Entra Connect** > **Cloud sync > Overview** page to Review and Enable our configuration to start synchronizing.
+1. You can now browse to **Entra ID** > **Entra Connect** > **Cloud sync > Overview** page to Review and Enable our configuration to start synchronizing.
 
 ## Next steps 
 - [Use Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)

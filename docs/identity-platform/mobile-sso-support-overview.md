@@ -4,7 +4,6 @@ description: Explanation and overview of building mobile applications that suppo
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-adal-ref
 ms.date: 10/14/2020
 ms.reviewer: janicericketts
 ms.service: identity-platform

@@ -1,7 +1,6 @@
 ---
 title: 'Quickstart: Microsoft Entra seamless single sign-on'
 description: Learn how to get started with Microsoft Entra seamless single sign-on by using Microsoft Entra Connect.
-
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
 author: billmath
 manager: femila
@@ -11,7 +10,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Quickstart: Microsoft Entra seamless single sign-on
@@ -83,7 +82,7 @@ When you complete the wizard, Seamless SSO is enabled on your tenant.
 To verify that you have enabled Seamless SSO correctly:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect sync**.
+2. Browse to **Entra ID** > **Entra Connect** > **Connect sync**.
 1. Verify that **Seamless single sign-on** is set to **Enabled**.
 
 :::image type="content" source="media/how-to-connect-sso-quick-start/sso10.png" alt-text="Screenshot that shows the Microsoft Entra Connect pane in the admin portal.":::

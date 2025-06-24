@@ -1,16 +1,15 @@
 ---
 title: Conditional Access insights and reporting workbook
 description: Using the Microsoft Entra Conditional Access insights and reporting workbook to troubleshoot policies.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
 ms.date: 04/14/2025
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: kvenkit
+ms.custom: sfi-image-nochange
 ---
 # Conditional Access insights and reporting
 
@@ -39,7 +38,7 @@ If you haven't integrated Microsoft Entra logs with Azure Monitor logs, you need
 To access the insights and reporting workbook:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Protection** > **Conditional Access** > **Insights and reporting**.
+1. Browse to **Entra ID** > **Conditional Access** > **Insights and reporting**.
 
 ### Get started: Select parameters 
 
@@ -122,7 +121,7 @@ Keep in mind that if you exclude certain policy results from the transformation,
 To configure a Conditional Access policy in report-only mode:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select an existing policy or create a new policy.
 1. Under **Enable policy** set the toggle to **Report-only** mode.
 1. Select **Save**
@@ -137,7 +136,7 @@ To configure a Conditional Access policy in report-only mode:
 In order to access the workbook, you need the proper permissions in Microsoft Entra ID and Log Analytics. To test whether you have the proper workspace permissions by running a sample log analytics query:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Log Analytics**.
 1. Type `SigninLogs` into the query box and select **Run**.
 1. If the query doesn't return any results, your workspace might not be configured correctly. 
 
@@ -159,7 +158,7 @@ Depending on the time range selected and the size of your tenant, the workbook m
 
 ### Can I save my parameter selections or customize the workbook?  
 
-You can save your parameter selections and customize the workbook at the top of the workbook. Browse to **Identity** > **Monitoring & health** > **Workbooks** > **Conditional Access Insights and reporting**. Here you find the workbook template, where you can edit the workbook and save a copy to your workspace, including the parameter selections, in **My reports** or **Shared reports**. To start editing the queries, select **Edit** at the top of the workbook.  
+You can save your parameter selections and customize the workbook at the top of the workbook. Browse to **Entra ID** > **Monitoring & health** > **Workbooks** > **Conditional Access Insights and reporting**. Here you find the workbook template, where you can edit the workbook and save a copy to your workspace, including the parameter selections, in **My reports** or **Shared reports**. To start editing the queries, select **Edit** at the top of the workbook.  
  
 ## Related content
 

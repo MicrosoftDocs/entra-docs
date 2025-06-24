@@ -125,7 +125,7 @@ items:
                   - name: Configure app for authentication
                     href: /entra/identity-platform/tutorial-single-page-app-react-configure-authentication
                   - name: Sign in and sign out
-                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-iign-out
+                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out
         - name: Native authentication
           items:
             - name: React
@@ -272,6 +272,8 @@ items:
       href: concept-planning-your-solution.md
     - name: Woodgrove demo overview
       href: overview-solutions-customers.md
+    - name: Security settings
+      href: concept-security-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
     - name: Identity providers
@@ -298,8 +300,6 @@ items:
       href: concept-guide-explained.md
     - name: Adding your own business logic
       href: concept-custom-extensions.md
-    - name: Security and governance
-      href: concept-security-customers.md
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
 - name: How-to guides
@@ -311,6 +311,8 @@ items:
         href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+      - name: Register a SAML app
+        href: how-to-register-saml-app.md
       - name: Add a sign-up and sign-in flow
         href: how-to-user-flow-sign-up-sign-in-customers.md
         displayName: disable sign-up, disable sign up 
@@ -417,8 +419,12 @@ items:
                   href: ~/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionSubmit event reference
                   href: ~/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-            - name: Configure a custom email provider for one time code send events
-              href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Custom email provider
+              items:             
+                - name: Configure a custom email provider for one time code send events
+                  href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: On email OTP send event reference
+                  href: ~/identity-platform/custom-extension-email-otp-send-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json                  
             - name: Troubleshoot your custom authentication extension
               href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure

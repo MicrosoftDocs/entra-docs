@@ -1,7 +1,6 @@
 ---
 title: Recommendation to remove unused apps
 description: Learn how the Microsoft Entra recommendation to remove unused apps works and why you should follow the guidance.
-
 author: shlipsey3
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT Admin I need to know what applications haven't been used so I can remove them to improve security.
 ---
 # Microsoft Entra recommendation: Remove unused applications (preview)
@@ -61,11 +60,11 @@ Applications identified by the recommendation appear in the list of **Impacted r
 ### Review the applications
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 1. Select the **Recommendations** tab and select the **Remove unused applications** recommendation.
 1. From the **Impacted resources** table, select **More details** to view more details.
 1. Select the **Resource** link to go directly to the app registration for the app.
-    - Alternatively, you can browse to **Identity** > **Applications** > **App registrations** and locate the application that was surfaced as part of this recommendation.
+    - Alternatively, you can browse to **Entra ID** > **App registrations** and locate the application that was surfaced as part of this recommendation.
 
     :::image type="content" source="media/recommendation-remove-unused-apps/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-remove-unused-apps/app-registrations-list-expanded.png":::
 

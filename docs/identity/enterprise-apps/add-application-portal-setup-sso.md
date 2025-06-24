@@ -1,17 +1,15 @@
 ---
 title: Enable SAML single sign-on for an enterprise application
 description: Enable single sign-on for an enterprise application in Microsoft Entra ID.
-
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 07/02/2024
 ms.author: jomondi
 ms.reviewer: ergleenl
-ms.custom: mode-other, enterprise-apps
-
+ms.custom: mode-other, enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to enable single sign-on for an enterprise application in Microsoft Entra, so that my users can sign in using their Microsoft Entra credentials and have a seamless authentication experience.
 ---
 
@@ -39,7 +37,7 @@ To configure SSO, you need:
 To enable SSO for an application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results. For example, **Microsoft Entra SAML Toolkit 1**.
 1. In the **Manage** section of the left menu, select **Single sign-on** to open the **Single sign-on** pane for editing.
 1. Select **SAML** to open the SSO configuration page. After the application is configured, users can sign in to it by using their credentials from the Microsoft Entra tenant.

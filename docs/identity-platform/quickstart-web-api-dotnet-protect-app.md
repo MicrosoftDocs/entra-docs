@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
 ms.date: 04/03/2025
-ms.reviewer: jmprieur, dmwendia
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: quickstart
@@ -121,7 +121,7 @@ Register your TodoListClient app in **App registrations** in the Microsoft Entra
 To register the TodoListClient app, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
+1. Browse to **Entra ID** > **App registrations** and select **New registration**.
 1. Select **New registration**.
 1. When the **Register an application page** opens, enter your application's registration information:
 

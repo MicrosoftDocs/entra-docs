@@ -6,10 +6,9 @@ ms.topic: how-to
 ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: femila
+manager: dougeby
 ms.reviewer: absinh
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to simulate a virtual wide area network to connect resources in Azure so I can better understand how Global Secure Access can be implemented in my organization.
 ---
 # Simulate remote network connectivity using Azure vWAN
@@ -366,7 +365,7 @@ Before testing, enable tenant restrictions on the virtual network.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Settings** > **Session management**.
 1. Set the **Enable tagging to enforce tenant restrictions on your network** toggle to on.
 1. Select **Save**.
-1. You can modify the cross-tenant access policy by navigating to **Identity** > **External identities** > **Cross-tenant access settings**. For more information, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
+1. You can modify the cross-tenant access policy by navigating to **Entra ID** > **External Identities** > **Cross-tenant access settings**. For more information, see the article, [Cross-tenant access overview](../external-id/cross-tenant-access-overview.md).
 1. Keep the default settings, which prevent users from logging in with external accounts on managed devices.
 
 To test:

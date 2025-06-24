@@ -1,9 +1,8 @@
 ---
 title: Known issues with System for Cross-Domain Identity Management (SCIM) 2.0 protocol compliance
 description: How to solve common protocol compatibility issues faced when adding a non-gallery application that supports SCIM 2.0 to Microsoft Entra ID
-#customer intent: As an IT admin, I want to understand SCIM 2.0 compliance issues so that I can troubleshoot provisioning problems with non-gallery applications.  
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -11,6 +10,8 @@ ms.date: 04/15/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
+#customer intent: As an IT admin, I want to understand SCIM 2.0 compliance issues so that I can troubleshoot provisioning problems with non-gallery applications.  
 ---
 
 # Known issues and resolutions with SCIM 2.0 protocol compliance of the Microsoft Entra user provisioning service
@@ -237,7 +238,7 @@ Sample requests to help outline what the sync engine currently sends versus the 
 Delete your existing `customappsso` job and create a new SCIM job.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Locate and select your existing SCIM application.
 1. In the **Properties** section of your existing SCIM app, copy the **Object ID**.
 1. In a new web browser window, go to https://developer.microsoft.com/graph/graph-explorer and sign in as the administrator for the Microsoft Entra tenant where your app is added.
@@ -275,7 +276,7 @@ Delete your existing `customappsso` job and create a new SCIM job.
  We allow you to downgrade back to the old behavior but don't recommend it as the customappsso doesn't benefit from some of the updates we make, and may not be supported forever. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. In the **Create application** section, create a new **Non-gallery** application.
 1. In the **Properties** section of your new custom app, copy the **Object ID**.

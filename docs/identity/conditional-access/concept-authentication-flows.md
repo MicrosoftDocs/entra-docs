@@ -4,7 +4,7 @@ description: Learn how authentication flows provide a seamless experience across
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/27/2024
+ms.date: 05/05/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
@@ -12,17 +12,17 @@ ms.reviewer: anjusingh, ludwignick
 ---
 # Conditional Access: Authentication flows
 
-Microsoft Entra ID supports a wide variety of authentication and authorization flows to provide a seamless experience across all application and device types. Some of these authentication flows, are higher risk than others. To provide more control over your security posture, we’re adding the ability to control certain authentication flows to Conditional Access. This control starts with the ability to explicitly target [device code flow](../../identity-platform/v2-oauth2-device-code.md).
+Microsoft Entra ID supports various authentication and authorization flows to provide a seamless experience across all application and device types. Some authentication flows are higher risk than others. To give you more control over your security posture, Conditional Access lets you control certain authentication flows. This control begins with explicitly targeting [device code flow](../../identity-platform/v2-oauth2-device-code.md).
 
 ## Device code flow
 
-Device code flow is used when signing into devices that might lack local input devices like shared devices or digital signage. Device code flow is a high-risk authentication flow that might be used as part of a phishing attack or to access corporate resources on unmanaged devices. You can configure the device code flow control along with other controls in your Conditional Access policies. For example, if device code flow is used for android based conference room devices, you might choose to block device code flow everywhere except for android devices in a specific network location. 
+Device code flow lets you sign into devices that lack local input devices, like shared devices or digital signage. Device code flow is a high-risk authentication method that can be part of a phishing attack or used to access corporate resources on unmanaged devices. Configure device code flow control along with other controls in Conditional Access policies. For example, if device code flow is used for Android-based conference room devices, block device code flow everywhere except for Android devices in a specific network location. 
 
-You should only allow device code flow where necessary. Microsoft recommends blocking device code flow wherever possible.
+Allow device code flow only where necessary. Microsoft recommends blocking device code flow wherever possible.
 
 ## Authentication transfer
 
-Authentication transfer is a new flow that offers a seamless way to transfer authenticated state from one device to another. For example, users could be presented with a QR code within the desktop version of Outlook that, when scanned on their mobile device, transfers their authenticated state to the mobile device. This capability provides a simple and intuitive user experience that reduces the overall friction level for users.  
+Authentication transfer is a flow that lets users seamlessly transfer authenticated state from one device to another. For example, users might see a QR code in the desktop version of Outlook that, when scanned on their mobile device, transfers their authenticated state to the mobile device. This capability provides a simple, intuitive experience that reduces friction for users.  
 
 ## Protocol tracking 
 
@@ -42,18 +42,19 @@ When configuring a policy to restrict or block device code flow, it’s importan
 To aid in troubleshooting protocol tracking related errors, we’ve added a new property called **original transfer method** to the **activity details** section of the Conditional Access **sign-in logs**. This property displays the protocol tracking state of the request in question. For example, for a session in which device code flow was performed previously the **original transfer method** is set to **Device code flow**.
 
 ## Enforcement of Authentication Flows policies on Device Registration Service resource
-Starting early September, 2024, Microsoft will begin enforcing authentication flows policies on Device Registration Service. This will apply only to policies which target **all resources** in the resource picker. If your organization currently uses Device Code Flow for device registration purposes, and you have an authentication flows policy targeting **all resources**, you will need to exempt the Device Registration Resource from the scope of your Conditional Access policy to avoid impact. You can find the Device Registration Service resource in the [Target Resources](concept-conditional-access-cloud-apps.md) option present within the Conditional Access policy configuration experience. To exempt Device Registration Service via Conditional Access UX, you will need to go to **Target Resources** -> **Exclude** -> **Select excluded cloud apps** -> **Device Registration Service**. For API, you will need to update your policy by excluding the Client ID for Device Registration Service: 01cb2876-7ebd-4aa4-9cc9-d28bd4d359a9. 
 
-If you are unsure whether your organization uses Device Code Flow against Device Registration Service, you can utilize the Microsoft Entra [Sign-in logs](../monitoring-health/concept-sign-ins.md) to determine this. There, you can filter for the Device Registration Service client ID in the **Resource ID** filter, and narrow it down to Device Code Flow usage by utilizing the **Device code** option within the **Authentication Protocol** filter.
+Starting early September 2024, Microsoft began enforcing authentication flows policies on Device Registration Service. This applies only to policies which target **all resources** in the resource picker. If your organization currently uses Device Code Flow for device registration purposes, and you have an authentication flows policy targeting **all resources**, you need to exempt the Device Registration Resource from the scope of your Conditional Access policy to avoid impact. You can find the Device Registration Service resource in the [Target Resources](concept-conditional-access-cloud-apps.md) option present within the Conditional Access policy configuration experience. To exempt Device Registration Service via Conditional Access UX, you need to go to **Target Resources** > **Exclude** > **Select excluded cloud apps** > **Device Registration Service**. For API, you need to update your policy by excluding the Client ID for Device Registration Service: 01cb2876-7ebd-4aa4-9cc9-d28bd4d359a9. 
+
+If you're unsure whether your organization uses Device Code Flow against Device Registration Service, you can utilize the Microsoft Entra [Sign-in logs](../monitoring-health/concept-sign-ins.md) to check. There, you can filter for the Device Registration Service client ID in the **Resource ID** filter, and narrow it down to Device Code Flow usage by utilizing the **Device code** option within the **Authentication Protocol** filter.
 
 ## Troubleshooting unexpected blocks 
 
 If you have a sign-in unexpectedly blocked by a Conditional Access policy, you should confirm whether the policy was an authentication flows policy. You can do this confirmation by going to **sign-in logs**, clicking on the blocked sign-in, and then navigating to the **Conditional Access** tab in the **Activity details: sign-ins** pane. If the policy enforced was an authentication flows policy, select the policy to determine which authentication flow was matched.
 
-If device code flow was matched but device code flow wasn't the flow performed for that sign-in, that means the refresh token was protocol tracked. You can verify this case by clicking on the blocked sign-in and searching for the **Original transfer method** property in the **Basic info** portion of the **Activity details: sign-ins** pane.
+If device code flow was matched but device code flow wasn't the flow performed for that sign-in, the refresh token was protocol tracked. You can verify this case by clicking on the blocked sign-in and searching for the **Original transfer method** property in the **Basic info** portion of the **Activity details: sign-ins** pane.
 
 > [!NOTE]
-> Blocks due to protocol tracked sessions are expected behavior for this policy. There is no recommended remediation.  
+> Blocks due to protocol tracked sessions are expected behavior for this policy. There's no recommended remediation.  
 
 ## Related content
 

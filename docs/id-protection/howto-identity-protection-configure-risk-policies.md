@@ -83,7 +83,7 @@ If you have legacy risk policies enabled in Microsoft Entra ID Protection, you s
 1. **Create equivalent** [user risk-based](#user-risk-policy-in-conditional-access) and [sign-in risk-based](#sign-in-risk-policy-in-conditional-access) policies in Conditional Access in report-only mode. You can create a policy with the previous steps or using [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md) based on Microsoft's recommendations and your organizational requirements.
    1. After administrators confirm the settings using [report-only mode](../identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 1. **Disable** the old risk policies in ID Protection.
-   1. Browse to **Protection** > **Identity Protection** > Select the **User risk** or **Sign-in risk** policy.
+   1. Browse to **ID Protection** > **Dashboard** > Select the **User risk** or **Sign-in risk** policy.
    1. Set **Enforce policy** to **Disabled**.
 1. Create other risk policies if needed in [Conditional Access](~/identity/conditional-access/concept-conditional-access-policy-common.md).
 

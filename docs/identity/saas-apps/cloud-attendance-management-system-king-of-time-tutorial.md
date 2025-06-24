@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME
+title: Configure CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME so that I can control who has access to CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME
+# Configure CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME with Microsoft Entra ID. CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME is No.1 in the attendance management system market share "KING OF TIME" reached 2.77 million active users as of April 2023. It's a cloud attendance management system with high satisfaction, recognition, and the No. 1 market share.  From offices and stores to teleworking and telecommuting in an emergency. Efficient attendance management that has become complicated by paper time cards and Excel is automatically aggregated. When you integrate CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME with Microsoft Entra ID, you can:
 
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **CLOUD ATTENDANCE MANAGEMENT SYSTEM KING OF TIME** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

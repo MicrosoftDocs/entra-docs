@@ -2,14 +2,14 @@
 title: Known issues in external tenants
 description: Learn about known issues in external tenants.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/19/2024
-ms.author: mimart
 ms.custom: it-pro
 
 ---

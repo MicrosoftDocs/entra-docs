@@ -1,7 +1,6 @@
 ---
 title: 'Microsoft Entra Connect Sync: Operational tasks and considerations'
 description: This topic describes operational tasks for Microsoft Entra Connect Sync and how to prepare for operating this component.
-
 author: billmath
 manager: femila
 ms.assetid: b29c1790-37a3-470f-ab69-3cee824d220d
@@ -11,8 +10,7 @@ ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Connect: Staging server and disaster recovery

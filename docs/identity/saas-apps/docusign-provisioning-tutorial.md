@@ -1,9 +1,9 @@
 ---
-title: Configure DocuSign for automatic user provisioning with Microsoft Entra ID| Microsoft Docs
+title: Configure DocuSign for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DocuSign.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -13,7 +13,7 @@ ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to DocuSign so that I can streamline the user management process and ensure that users have the appropriate access to DocuSign.
 ---
-# Configure DocuSign for automatic user provisioning
+# Configure DocuSign for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to show you the steps you need to perform in DocuSign and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to DocuSign.
 
@@ -54,7 +54,7 @@ This section guides you through connecting your Microsoft Entra ID to DocuSign's
 The objective of this section is to outline how to enable user provisioning of Active Directory user accounts to DocuSign.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. If you have already configured DocuSign for single sign-on, search for your instance of DocuSign using the search field. Otherwise, select **Add** and search for **DocuSign** in the application gallery. Select DocuSign from the search results, and add it to your list of applications.
 

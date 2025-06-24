@@ -1,15 +1,14 @@
 ---
 title: Manage user-assigned managed identities
 description: Create user-assigned managed identities.
-
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 01/15/2025
-ms.author: ryanwi
-ms.custom: devx-track-azurecli, devx-track-linux
+ms.author: shermanouko
+ms.custom: devx-track-azurecli, devx-track-linux, sfi-image-nochange
 zone_pivot_groups: identity-mi-methods
 ---
 
@@ -345,8 +344,7 @@ To create a user-assigned managed identity, your account needs the [Managed Iden
 
 ```bash
 curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
-s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview' -X PUT -d '{"loc
-ation": "<LOCATION>"}' -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS TOKEN>"
+s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview' -X PUT -d '{"location": "<LOCATION>"}' -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS TOKEN>"
 ```
 
 ```HTTP
@@ -399,6 +397,7 @@ s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<U
 ```HTTP
 DELETE https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/TestRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview HTTP/1.1
 ```
+
 |Request header  |Description  |
 |---------|---------|
 |*Content-Type*     | Required. Set to `application/json`.        |

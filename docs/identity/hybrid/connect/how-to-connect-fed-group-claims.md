@@ -1,7 +1,6 @@
 ---
 title: Configure group claims for applications by using Microsoft Entra ID
 description: Get information on how to configure group claims for use with Microsoft Entra ID.
-
 ms.reviewer: paulgarn
 manager: femila
 ms.subservice: hybrid-connect
@@ -10,6 +9,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
 author: billmath
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 ---
 
 # Configure group claims for applications by using Microsoft Entra ID
@@ -202,7 +202,7 @@ After you add a group claim configuration to the **User Attributes & Claims** co
 
 You can also configure group claims in the [optional claims](~/identity-platform/optional-claims.md) section of the [application manifest](~/identity-platform/reference-app-manifest.md).
 
-1. In the portal, select **Identity** > **Applications** > **App registrations** > **Select Application** > **Manifest**.
+1. In the portal, select **Entra ID** > **App registrations** > **Select Application** > **Manifest**.
 
 2. Enable group membership claims by changing `groupMembershipClaims`.
 

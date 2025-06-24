@@ -39,7 +39,7 @@ ms.topic: quickstart
 > First, register the web API in your Microsoft Entra tenant and add a scope by following these steps:
 > 
 > 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-> 1. Browse to **Identity** > **Applications** > **App registrations**.
+> 1. Browse to **Entra ID** > **App registrations**.
 > 1. Select **New registration**.
 > 1. For **Name**, enter a name for the application. For example, enter **AspNetCoreWebApi-Quickstart**. Users of the app will see this name, and can be changed later.
 > 1. Select **Register**.

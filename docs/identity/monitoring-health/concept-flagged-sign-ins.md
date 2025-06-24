@@ -1,7 +1,6 @@
 ---
 title: Learn about flagged sign-ins in Microsoft Entra ID
 description: Learn about how flagged the sign-ins feature can be used for troubleshooting sign-in issues in Microsoft Entra ID.
-
 author: shlipsey3
 manager: femila
 ms.service: entra-id
@@ -10,7 +9,7 @@ ms.subservice: monitoring-health
 ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
 ---
 
@@ -65,7 +64,7 @@ If the sign-in error is reproduced, the flagged diagnostics are sent to the sign
 The sign-in logs might take several minutes for the flagged sign-in events to appear.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Open the **Add filters** menu and select **Flagged for review**. All flagged events are shown.
 
     ![Screenshot of the Microsoft Entra ID sign-in logs with the Flagged for review filter selected.](./media/concept-flagged-sign-ins/flagged-sign-in-admins.png)

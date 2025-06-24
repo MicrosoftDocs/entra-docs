@@ -36,7 +36,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity governance** > **Dashboard**
+1. Browse to **ID Governance** > **Dashboard**
 1. Access the inactive guest account report by navigating to the **Guest access governance** card then select **View inactive guests**.
 1. You will see the inactive guest report which will provide insights about inactive guest users based on 90 days of inactivity. The threshold is set to 90 days by default but can be configured using "Edit inactivity threshold" based on your organization's needs.
 1. The following insights are provided as part of this report:

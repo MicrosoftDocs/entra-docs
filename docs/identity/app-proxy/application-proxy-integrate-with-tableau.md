@@ -2,11 +2,11 @@
 title: Microsoft Entra application proxy and Tableau
 description: Learn how to use Microsoft Entra application proxy to provide remote access for your Tableau deployment.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
@@ -31,7 +31,7 @@ To publish Tableau, you need to publish an application in the Microsoft Entra ad
 
 **To publish your app**: 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select **New application** at the top of the page. 
 1. Select **On-premises application**. 
 1. Fill out the required fields with information about the new app. 

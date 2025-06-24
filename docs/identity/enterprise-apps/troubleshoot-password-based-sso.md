@@ -2,7 +2,7 @@
 title: Troubleshoot password-based single sign-on
 description: Troubleshoot issues with a Microsoft Entra app that's configured for password-based single sign-on.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
@@ -91,7 +91,7 @@ In general, if automatic sign-in field capture doesn't work, try the manual opti
 To configure password-based SSO by using automatic sign-in field capture, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the app that you want to configure for SSO.
 1. After the app loads, select **Single sign-on** in the navigation pane on the left side.
 1. Select **Password-based Sign-on** mode.
@@ -106,7 +106,7 @@ To manually capture sign-in fields, you must have the My Apps browser extension 
 To configure password-based SSO for an app by using manual sign-in field capture, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the app that you want to configure for SSO.
 1. After the app loads, select **Single sign-on** in the navigation pane on the left side.
 1. Select **Password-based Sign-on** mode.

@@ -1,9 +1,9 @@
 ---
 title: Register a SAML app
 description: Learn how to create and register a SAML app with External ID for customer identity and access management (CIAM). Choose your app type and get detailed steps. 
-author: msmimart
-ms.author: mimart
-manager: CelesteDG
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: how-to
@@ -42,7 +42,7 @@ This article describes how to register your own SAML application in your externa
 
 1. Sign in to the Microsoft Entra admin center as at least an Application Administrator.
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories** menu.
-1. Go to **Identity** > **Applications** > **Enterprise Applications (Preview)**.
+1. Go to **Entra ID** > **Enterprise apps**.
 1. Select **New application**.
 
 1. Select **Create your own application**.
