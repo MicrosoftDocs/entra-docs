@@ -105,7 +105,7 @@ Administrators can add any Microsoft Entra registered application to Conditional
 > [!NOTE]
 > Since Conditional Access policy sets the requirements for accessing a service, you aren't able to apply it to a client (public/native) application. In other words, the policy isn't set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications aren't available for selection in the app picker and Conditional Access option isn't available in the application settings for the client (public/native) application registered in your tenant.
 
-Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')** or add the missing service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) PowerShell cmdlet.
+Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')** or add the missing service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) PowerShell cmdlet or by using the [Microsoft Graph API](/graph/api/serviceprincipal-post-serviceprincipals).
 
 #### Understanding Conditional Access for different client types
 
@@ -125,7 +125,7 @@ To view [sign-in logs](/entra/identity/monitoring-health/concept-sign-ins) for t
 1. Add a filter for **Client credential type**.
 1. Adjust the filter to view a specific set of logs based on the client credential used in the sign-in.
 
-For more information see the article [Public client and confidential client applications](/entra/identity-platform/msal-client-applications).
+For more information, see the article [Public client and confidential client applications](/entra/identity-platform/msal-client-applications).
 
 <a name='all-cloud-apps'></a>
 
@@ -185,7 +185,7 @@ User actions are tasks that a user performs. Currently, Conditional Access suppo
 - **Register security information**: This user action allows Conditional Access policy to enforce when users who are enabled for combined registration attempt to register their security information. More information can be found in the article, [Combined security information registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md).
 
 > [!NOTE]
-> When administrators apply a policy targeting user actions for register security information, if the user account is a guest from [Microsoft personal account (MSA)](~/external-id/microsoft-account.md), using the control 'Require multifactor authentication', will require the MSA user to register security information with the organization. If the guest user is from another provider such as [Google](~/external-id/google-federation.md), access is blocked.
+> When administrators apply a policy targeting user actions for register security information, if the user account is a guest from [Microsoft personal account (MSA)](~/external-id/microsoft-account.md), using the control 'Require multifactor authentication', requires the MSA user to register security information with the organization. If the guest user is from another provider such as [Google](~/external-id/google-federation.md), access is blocked.
 
 - **Register or join devices**: This user action enables administrators to enforce Conditional Access policy when users [register](~/identity/devices/concept-device-registration.md) or [join](~/identity/devices/concept-directory-join.md) devices to Microsoft Entra ID. It provides granularity in configuring multifactor authentication for registering or joining devices instead of a tenant-wide policy that currently exists. There are three key considerations with this user action:
    - `Require multifactor authentication` is the only access control available with this user action and all others are disabled. This restriction prevents conflicts with access controls that are either dependent on Microsoft Entra device registration or not applicable to Microsoft Entra device registration. 
