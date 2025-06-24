@@ -87,14 +87,14 @@ To disable group writeback, follow these steps:
 1. Open the **Microsoft Entra Connect** wizard and go to the **Additional tasks** page. Select the **Customize synchronization options** task and select **Next**.
 1. On the **Optional features** page, clear the **Group writeback** checkbox. A warning states that you are about to delete groups. Select **Yes**.
 
-   When you disable group writeback, any groups that were previously created with this feature are deleted from your local Active Directory on the next sync cycle.
+   When you disable group writeback, any groups that were previously created with this feature are deleted from your local Active Directory instance on the next sync cycle.
 
    ![Screenshot that shows the Group writeback checkbox to clear.](media/how-to-connect-group-writeback/group-1.png)
 
 1. Select **Next**.
 1. Select **Configure**.
 
-Disabling group writeback sets the `Full Import` and `Full Synchronization` flags to `true` on the Microsoft Entra Connector. The rule changes propagate through on the next sync cycle and delete the groups that were previously written back to your Active Directory.
+Disabling group writeback sets the `Full Import` and `Full Synchronization` flags to `true` on the Microsoft Entra Connector. The rule changes propagate through on the next sync cycle and delete the groups that were previously written back to Active Directory.
 
 ## Modify default behavior for Microsoft 365 groups
 
