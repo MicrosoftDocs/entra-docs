@@ -42,7 +42,7 @@ The following table outlines when an authentication method can be used during a 
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
 | Text                           | Yes                    | MFA and SSPR              |
 | Voice call                     | No                     | MFA and SSPR              |
-| QR code (preview)              | Yes                    | No                        |
+| QR code                        | Yes                    | No                        |
 | Password                       | Yes                    | No                        |
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if it's used in FIDO2 authentication. Users need to be registered for passkey (FIDO2).

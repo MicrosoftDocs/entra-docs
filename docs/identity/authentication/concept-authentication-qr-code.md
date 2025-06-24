@@ -1,11 +1,11 @@
 ---
-title: QR code authentication method in Microsoft Entra ID (preview)
+title: QR code authentication method in Microsoft Entra ID 
 description: Learn about using QR code authentication method in Microsoft Entra ID to help improve and secure sign-in events for frontline workers.
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/18/2025
+ms.date: 06/24/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -16,7 +16,7 @@ manager: dougeby
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
 
-# Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)
+# Authentication methods in Microsoft Entra ID - QR code authentication method
 
 QR code authentication method enables frontline workers to sign in efficiently in apps on shared devices. Users can use a unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords. Currently, QR code authentication is supported only on mobile devices that run iOS/iPadOS or Android.
 
@@ -106,7 +106,7 @@ Deleted          | Doesn't exist     | Temporary, or user updated
 Expired          | Active            | Temporary, or user updated
 Expired          | Expired           | Temporary, or user updated
 
-For more information about how to manage QR codes, see [How to enable the QR code authentication method in Microsoft Entra ID (Preview)](how-to-authentication-qr-code.md).
+For more information about how to manage QR codes, see [How to enable the QR code authentication method in Microsoft Entra ID](how-to-authentication-qr-code.md).
 
 
 ## User sign-in experience with QR code authentication
@@ -157,7 +157,7 @@ The user needs to sign in with another method because the cached user authentica
 
 ## Related content
 
-- [How to enable the QR code authentication method in Microsoft Entra ID (Preview)](how-to-authentication-qr-code.md)
+- [How to enable the QR code authentication method in Microsoft Entra ID](how-to-authentication-qr-code.md)
 - [Best practices to protect frontline workers](~/identity-platform/security-best-practices-for-frontline-workers.md)
 - [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
