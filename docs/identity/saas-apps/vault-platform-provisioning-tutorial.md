@@ -133,6 +133,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||&check;
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
+   |userType|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
