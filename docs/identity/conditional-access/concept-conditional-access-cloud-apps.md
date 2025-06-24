@@ -7,7 +7,7 @@ ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 
-ms.date: 06/03/2025
+ms.date: 06/24/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -27,7 +27,7 @@ Target resources (formerly Cloud apps, actions, and authentication context) are 
 
 ## Microsoft cloud applications
 
-Administrators can assign a Conditional Access policy to cloud apps from Microsoft as long as the service principal appears in their tenant. Some apps like [Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new supported Microsoft cloud applications are created, they appear in the app picker list.
+Administrators can assign a Conditional Access policy to cloud apps from Microsoft as long as the service principal appears in their tenant, except for Microsoft Graph. Microsoft Graph functions as an umbrella resource. Use [Audience Reporting](troubleshoot-conditional-access.md#audience-reporting) to see the underlying services and target those services in your policies. Some apps like [Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new Microsoft cloud applications are created, they appear in the app picker list as soon as the service principal for that is created in the tenant. 
 
 ### Office 365
 
