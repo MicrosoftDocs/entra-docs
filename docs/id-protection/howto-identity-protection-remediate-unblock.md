@@ -7,7 +7,7 @@ ms.date: 06/12/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: pmwongera
-ms.reviewer: chuqiaoshi
+ms.reviewer: ebasseri
 
 # Customer intent: As an IT admin, I want to learn how to remediate risks and unblock users in Microsoft Entra ID Protection.
 ---
@@ -54,8 +54,6 @@ If a user is prompted to use self-service password reset (SSPR) to remediate use
 
 - Risk state: "At risk" -> "Remediated"
 - Risk detail: "-" -> "User performed secured password reset"
-
-After the user completes the password change, the user risk is remediated and the user can sign in.
 
 ### Considerations for cloud and hybrid users
 
