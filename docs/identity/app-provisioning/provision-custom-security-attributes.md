@@ -6,14 +6,14 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 06/09/2025
+ms.date: 06/24/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
 
 # Provision custom security attributes from HR sources
 
-Custom security attribute provisioning enables customers to set custom security attributes automatically using Microsoft Entra inbound provisioning capabilities. With this public feature, you can source values for custom security attributes from authoritative sources, such as those from HR systems. Custom security attribute provisioning supports the following sources: Workday, SAP SuccessFactors, and other integrated HR systems that use API-driven provisioning. The provisioning target is your Microsoft Entra ID tenant.
+Custom security attribute provisioning enables customers to set custom security attributes automatically using Microsoft Entra inbound provisioning capabilities. With this feature, you can source values for custom security attributes from authoritative sources, such as those from HR systems. Custom security attribute provisioning supports the following sources: Workday, SAP SuccessFactors, and other integrated HR systems that use API-driven provisioning. The provisioning target is your Microsoft Entra ID tenant.
 
 :::image type="content" source="media/provision-custom-security-attributes/about-custom-security-attributes.png" alt-text="Diagram of custom security attributes architecture.":::
 
@@ -29,14 +29,13 @@ To provision custom security attributes, you must meet the following prerequisit
    - [Workday to Microsoft Entra ID user provisioning](~/identity/saas-apps/workday-inbound-cloud-only-tutorial.md)
    - [SAP SuccessFactors to Microsoft Entra ID user provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
    - [API-driven provisioning to Microsoft Entra ID](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)
-- Active custom security attributes in your tenant for discovery during the attribute mapping process. Before using this feature, you must [create custom security attribute sets](~/fundamentals/custom-security-attributes-add.md) in your Microsoft Entra ID tenant.
+- Active custom security attributes in your tenant for discovery during the attribute mapping process. Before using this feature, you must [create custom security attribute sets](~/fundamentals/custom-security-attributes-add.md) in your Microsoft Entra ID tenant. The provisioning service supports setting free-form and predefined values for custom security attributes of type `String`, `Integer`, and `Boolean`.
 - To configure custom security attributes in the attribute mapping of your inbound provisioning app, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who is assigned the Microsoft Entra roles of [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) and [Attribute Provisioning Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-provisioning-administrator):
    - **Application Administrator** is required to create and update the provisioning app.
    - **Attribute Provisioning Administrator** is required to add or remove custom security attributes in the attribute mapping section of the provisioning app.
 
 ## Known limitations
 
-- The provisioning service supports setting custom security attributes of type `String`, `Integer`, and `Boolean`.
 - Provisioning multi-valued custom security attributes isn't supported.
 - Provisioning deactivated custom security attributes isn't supported.
 - With the [Attribute Log Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-log-reader) role, you can't view the custom security attribute value in the provisioning logs.
