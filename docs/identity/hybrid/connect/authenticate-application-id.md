@@ -56,7 +56,7 @@ The administrator is responsible for securing the private key of the certificate
 
 We recommend that you use a TPM or a Hardware Security Module (HSM) to provide a hardware-based security boundary, as opposed to the default. To check the status of your TPM, use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm) PowerShell cmdlet.
 
-If you use Hyper-V VMs, you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs (VMs). Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
+If you use Hyper-V virtual machines (VMs), you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs. Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
 
 ## Prerequisites
 
@@ -97,7 +97,7 @@ For upgrades, select **Configure application based authentication to Microsoft E
 
  :::image type="content" source="media/authenticate-application-id/auth-3.png" alt-text="Screenshot that shows configuring application-based authentication." lightbox="media/authenticate-application-id/auth-3.png":::
 
- If you didn't select the box during upgrade, the following recommendation appears after installation completes.
+ If you didn't select the box during upgrade, the following recommendation appears after installation finishes.
 
  :::image type="content" source="media/authenticate-application-id/auth-5.png" alt-text="Screenshot that shows recommendation." lightbox="media/authenticate-application-id/auth-5.png":::
 
@@ -150,7 +150,7 @@ Microsoft Entra Connect versions lower than 2.5.3.0 use a username and password 
 
     - Use BYOA:
 
-       [Register a Microsoft Entra app and create a service principal.](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id) . Note the application ID because you need it in the next section.
+       [Register a Microsoft Entra app and create a service principal](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). Note the application ID because you need it in the next section.
 
 1. Link Microsoft Entra Application with Microsoft Entra Connect Sync by using administrator credentials.
 
