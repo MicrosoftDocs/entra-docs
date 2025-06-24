@@ -201,7 +201,7 @@ This session key acts as a Proof-of-Possession (POP) key for all subsequent requ
 
 ## How are App Tokens protected?
 
-For an overview of how tokens are protected in general, refer to [Protecting tokens in Microsoft Entra ID](./protecting-tokens-microsoft-entra-id.md)
+For an overview of how tokens are protected in general, refer to [Protecting tokens in Microsoft Entra ID](protecting-tokens-microsoft-entra-id.md)
 
 ### [Windows](#tab/windows-apptokens)
 
@@ -230,6 +230,8 @@ For an overview of how tokens are protected in general, refer to [Protecting tok
 ### [Windows](#tab/windows-browsercookies)
 
 - In Windows 10 or newer, Microsoft Entra ID supports browser SSO in Microsoft Edge natively, in Google Chrome via [native support](https://chromeenterprise.google/policies/#CloudAPAuthEnabled) and in Mozilla Firefox v91+ via a browser setting. The security is built not only to protect the cookies but also the endpoints to which the cookies are sent.
+
+- When a user initiates a browser interaction, the browser (or extension) invokes the extension "native messaging host", a browser COM interface. The native client host ensures that the page is from one of the allowed domains. The browser sends full query string, other parameters to the native client host, including a nonce, however the native client host guarantees validation of the hostname. The native client host requests a PRT-cookie from the OS, which creates and signs it with the TPM-protected session key. As the PRT-cookie is signed by the session key, it's difficult to tamper with. This PRT-cookie is included in the request header for Microsoft Entra ID to validate the device it's originating from. Once Microsoft Entra ID validates the PRT cookie, it issues a session cookie to the browser. This session cookie also contains the same session key issued with a PRT. During subsequent requests, the session key is validated effectively binding the cookie to the device and preventing replays from elsewhere.
 
 ### [iOS and Mac](#tab/iOS-browsercookies)
 
