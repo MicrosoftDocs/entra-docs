@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/19/2025
+ms.date: 06/24/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: Windows users, I want to download and install the Global Secure Access client.
 ---
 # Install the Global Secure Access client for Microsoft Windows
-The Global Secure Access client is an essential part of Global Secure Access. It helps you manage and secure network traffic on end-user devices. The client routes traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md) you set up in the portal decide which traffic the Global Secure Access client routes to the cloud service.
+The Global Secure Access client is an essential part of Global Secure Access. It helps organizations manage and secure network traffic on end-user devices. The client routes traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md) you set up in the portal decide which traffic the Global Secure Access client routes to the cloud service.
 
 > [!NOTE]
 > The Global Secure Access Client is also available for macOS, Android, and iOS. To learn how to install the Global Secure Access client on these platforms, see [Global Secure Access client for macOS](how-to-install-macos-client.md), [Global Secure Access client for Android](how-to-install-android-client.md), and [Global Secure Access client for iOS](how-to-install-ios-client.md).   
