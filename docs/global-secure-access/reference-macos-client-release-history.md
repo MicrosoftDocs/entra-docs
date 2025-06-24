@@ -3,7 +3,7 @@ title: Global Secure Access Client for macOS Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for macOS.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 06/20/2025
+ms.date: 06/23/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
