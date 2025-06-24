@@ -3,7 +3,7 @@ title: Service limits and restrictions
 description: Learn about the service limits and restrictions in an external tenant.
  
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

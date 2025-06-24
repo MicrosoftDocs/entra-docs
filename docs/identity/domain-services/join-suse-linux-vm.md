@@ -2,7 +2,7 @@
 title: Join a SLE VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a SUSE Linux Enterprise virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-linux, linux-related-content, sfi-image-nochange

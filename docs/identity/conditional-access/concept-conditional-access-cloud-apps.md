@@ -55,7 +55,6 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 - Azure CLI
 - Azure Data Factory portal
-- Azure DevOps
 - Azure Event Hubs
 - Azure PowerShell
 - Azure Service Bus

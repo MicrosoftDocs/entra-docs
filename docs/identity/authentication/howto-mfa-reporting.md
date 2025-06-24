@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: michmcla
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
@@ -16,6 +16,9 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 To review and understand Microsoft Entra multifactor authentication events, you can use the Microsoft Entra sign-in logs. This report shows authentication details for events when a user is prompted for multifactor authentication, and if any Conditional Access policies were in use. For detailed information on the sign-in logs, see the [overview of sign-in activity reports in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
 
 <a name='view-the-azure-ad-sign-ins-report'></a>
+
+## Note about interpreting MFA 
+When a user signs in interactively to Entra for the first time, they are able to use any supported authentication method (including strong auth), even if it isn’t strictly required. If a user chooses to authenticate via passwordless or another strong auth method, the user will receive an MFA claim. To reduce latency and unnecessary redirects between our applications and the authentication service, resource providers generally review any existing claims already given to a user authenticating instead of requesting a new set of claims each time. As a result, it is possible that certain sign-ins may appear as "single factor" despite having an MFA requirement on the application, simply because the user’s previous MFA claim was accepted, therefore no MFA requirement was requested nor logged in that particular authentication. For accurate understanding of the authentication context, it’s important to always check both the MFA details and the root authentication method associated with each event, and not rely solely on the authenticationRequirement field as it does take into account previously satisfied MFA claims due to not explicitely required strong authentication usage. 
 
 ## View the Microsoft Entra sign-in logs
 

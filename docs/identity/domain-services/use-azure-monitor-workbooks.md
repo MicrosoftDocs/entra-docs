@@ -2,7 +2,7 @@
 title: Use Azure Monitor Workbooks with Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to use Azure Monitor Workbooks to review security audits and understand issues in a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to

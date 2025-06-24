@@ -3,7 +3,7 @@ title: Configure Proofpoint Security Awareness Training for Single sign-on with 
 description: Learn how to configure single sign-on between Microsoft Entra ID and Proofpoint Security Awareness Training.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -1,7 +1,7 @@
 ---
 ms.author: cmulligan
 author: csmulligan
-ms.manager: celested
+ms.manager: dougeby
 ms.service: entra-external-id
 ms.topic: include
 ms.date: 05/24/2024

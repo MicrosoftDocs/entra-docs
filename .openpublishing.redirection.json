@@ -111,6 +111,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/id-governance/entra-suite-scenario.md",
+      "redirect_url": "/entra/id-governance/entitlement-management-global-secure-access-restrict-employee-access",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/id-protection/reference-identity-protection-glossary.md",
       "redirect_url": "/entra/id-protection/overview-identity-protection",
       "redirect_document_id": false
@@ -528,6 +533,11 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/workplace-by-facebook-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/workplace-from-meta-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/cloudknox-permissions-management-platform-tutorial.md",
+      "redirect_url": "/entra/permissions-management/overview",
       "redirect_document_id": false
     },
     {
@@ -2379,6 +2389,57 @@
       "source_path": "docs/identity-platform/scenario-spa-app-registration.md",
       "redirect_url": "/entra/identity-platform/scenario-spa-app-configuration",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/webmethods-integration-cloud-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/veritas-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/promapp-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/illumio-sso-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/kontiki-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-alerts.md",
+      "redirect_url": "/entra/permissions-management/how-to-create-alert-trigger",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-intro.md",
+      "redirect_url": "/entra/permissions-management/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-one.md",
+      "redirect_url": "/entra/permissions-management/onboard-enable-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-two.md",
+      "redirect_url": "/entra/permissions-management/define-permission-levels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-three.md",
+      "redirect_url": "/entra/permissions-management/ui-triggers",
+      "redirect_document_id": false
+    },
   ]
 }
+

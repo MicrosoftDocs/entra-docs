@@ -3,7 +3,7 @@ title: Set up CORS proxy server to manage headers for SPA with native authentica
 description: Learn how to set up a CORS proxy server for single-page application that uses native authentication API.
 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external

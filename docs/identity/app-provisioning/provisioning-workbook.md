@@ -1,13 +1,13 @@
 ---
 title: Provisioning insights workbook
 description: This article describes the Azure Monitor workbook for provisioning.
-author: billmath
-manager: femila
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.topic: conceptual
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: kenwith
 ms.custom: sfi-image-nochange
 ---
 
