@@ -20,12 +20,18 @@ Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1 as communi
 Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they're disabled by default.
 Domain Services will use the following retirement path for TLS versions 1.0 and 1.1:
 
-1. Domain Services will remove the ability to disable the TLS 1.2 only mode. Customers who disable TLS 1.2 only mode can enable it. 
-1. After Domain Services removes the ability to disable the TLS 1.2 only mode, customers can't enable or disable TLS 1.2 only mode. 
+1. Domain Services has removed the ability to disable the TLS 1.2 only mode. Customers who disable TLS 1.2 only mode can enable it. 
+1. Customers can not disable TLS 1.2 only mode once they have enabled it. 
 
 ## How to migrate to TLS 1.2 only mode in Domain Services
 
-Use the Azure portal:
+### Identify Applications Using Deprecated TLS Versions
+
+Before enabling TLS 1.2 only mode, it's important to identify applications still using TLS 1.0 or 1.1 and update them or replace them with alternatives that support TLS 1.2. You can:
+
+1. Use network monitoring tools (e.g., Wireshark, Microsoft Message Analyzer) to inspect TLS handshake versions.
+
+### Use the Azure portal:
 
 1.	In the Azure portal, go to the Domain Services instance. 
 2.	Go to the Security settings.
@@ -35,7 +41,7 @@ Use the Azure portal:
 This may take about 10 minutes to complete as domain security updates are enforced.
 
 
-Use PowerShell:
+### Use PowerShell:
 
 1. Install the Az.ADDomainServices module:
 
@@ -49,35 +55,25 @@ Use PowerShell:
    Connect-AzAccount -Subscription aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e
    ```
 
-1. Check the value of TLS 1.2 only mode:
+1. Update the value of TLS 1.2 only mode by executing the two commands below:
 
    ```powershell
-   Get-AzADDomainService -DomainSecuritySettingTlsV1
+   $domainService = Get-AzADDomainService
    ```
-
-   If the value is **Disabled**, then the instance is compliant. If the value is **Enabled**, proceed to the next step.
-
-1. To change the value from **Enabled** to **Disabled**, get the name of the Domain Services instance:
-
-   ```powershell 
-   Get-AzADDomainService -Name
-   ```
-
-1. Get the resource group name where the domain instance is located:
-
    ```powershell
-   Get-AzADDomainService -ResourceGroupName
-   ```
-
-1. Update the value of TLS 1.2 only mode: 
-
-   ```powershell
-   Update-AzADDomainService -Name "name" -ResourceGroupName "resourceGroupName" -DomainSecuritySettingTlsV1 Disabled
+   Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Disabled
    ```
 
    This command may take about 10 minutes to complete as domain security updates are enforced.
 
-Troubleshooting
+### Troubleshooting
+1. Diagnostic events
+Applications that start failing after migrating to TLS 1.2 only mode can be identified by Event 36871 in the Windows Event Log.
+eg:
+```A fatal error occurred while creating a TLS <client/server> credential. The internal error state is 10013. The SSPI client process is <process ID>.```
+
+1. Use application-level diagnostics: Some apps provide logs or error messages when TLS handshakes fail. Look for errors related to unsupported protocols.
+
 If the steps above fail, open an [Azure support request](/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
 
 ## Related content
