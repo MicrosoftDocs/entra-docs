@@ -10,11 +10,11 @@ ms.custom: include file
 
 [![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
-This is a [privileged role](../privileged-roles-permissions.md). Users with this role can change passwords, invalidate refresh tokens, create and manage support requests with Microsoft for Azure and Microsoft 365 services, and monitor service health. Invalidating a refresh token forces the user to sign in again. Whether a Helpdesk Administrator can reset a user's password and invalidate refresh tokens depends on the role the user is assigned. For a list of the roles that a Helpdesk Administrator can reset passwords for and invalidate refresh tokens, see [Who can reset passwords](privileged-roles-permissions.md#who-can-reset-passwords).
+This is a [privileged role](../privileged-roles-permissions.md). Users with this role can change passwords, invalidate refresh tokens, create and manage support requests with Microsoft for Azure and Microsoft 365 services, and monitor service health. Invalidating a refresh token forces the user to sign in again. Whether a Helpdesk Administrator can reset a user's password and invalidate refresh tokens depends on the role the user is assigned. For a list of the roles that a Helpdesk Administrator can reset passwords for and invalidate refresh tokens, see [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords).
 
 Users with this role **cannot** do the following:
 
-- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](groups-concept.md).
+- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](../groups-concept.md).
 
 > [!IMPORTANT]
 > Users with this role can change passwords for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the password of a user may mean the ability to assume that user's identity and permissions. For example:
@@ -25,7 +25,7 @@ Users with this role **cannot** do the following:
 >- Administrators in other services outside of Microsoft Entra ID like Exchange Online, Microsoft 365 Defender portal, Microsoft Purview compliance portal, and human resources systems.
 >- Non-administrators like executives, legal counsel, and human resources employees who may have access to sensitive or private information.
 
-Delegating administrative permissions over subsets of users and applying policies to a subset of users is possible with [Administrative Units](administrative-units.md).
+Delegating administrative permissions over subsets of users and applying policies to a subset of users is possible with [Administrative Units](../administrative-units.md).
 
 This role was previously named Password Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview). It was renamed to Helpdesk Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.
 

@@ -15,10 +15,10 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the User
 | Permission | More information |
 | --- | --- |
 | Create users |  |
-| Update most user properties for all users, including all administrators | [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions) |
-| Update sensitive properties (including user principal name) for some users | [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions) |
-| Disable or enable some users | [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions) |
-| Delete or restore some users | [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions) |
+| Update most user properties for all users, including all administrators | [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions) |
+| Update sensitive properties (including user principal name) for some users | [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions) |
+| Disable or enable some users | [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions) |
+| Delete or restore some users | [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions) |
 | Create and manage user views |  |
 | Create and manage all groups |  |
 | Assign and read licenses for all users, including all administrators |  |
