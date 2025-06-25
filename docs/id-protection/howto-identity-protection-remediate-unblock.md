@@ -59,7 +59,7 @@ If a user is prompted to use self-service password reset (SSPR) to remediate use
 - Risk state: "At risk" -> "Remediated"
 - Risk detail: "-" -> "User performed secured password reset"
 
-### Considerations for cloud and hybrid users
+#### Considerations for cloud and hybrid users
 
 - Both cloud and hybrid users can complete a secure password change with SSPR only if they can perform MFA. For users that aren't registered, this option isn't available.
 - Hybrid users can complete a password change from an on-premises or hybrid joined Windows device, when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting is enabled.
