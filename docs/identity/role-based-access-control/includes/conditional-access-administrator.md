@@ -29,5 +29,5 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/namedLocations/create | Create custom rules that define network locations |
 > | microsoft.directory/namedLocations/delete | Delete custom rules that define network locations |
 > | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
-> | microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update | Update Conditional Access authentication context of Microsoft 365 role-based access control (RBAC) resource actions<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update | Update Conditional Access authentication context of Microsoft 365 role-based access control (RBAC) resource actions<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 

@@ -8,8 +8,6 @@ ms.date: 06/25/2025
 ms.custom: include file
 ---
 
-## Introduction
-
 Assign the IoT Device Administrator role to users who need to do the following tasks:
 
 - Provision new IoT devices using device templates

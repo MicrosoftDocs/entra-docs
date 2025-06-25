@@ -26,7 +26,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Do not use. Thi
 > | microsoft.directory/applications/audience/update | Update the audience property for applications |
 > | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
 > | microsoft.directory/applications/basic/update | Update basic properties for applications |
-> | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/applications/notes/update | Update notes of applications |
 > | microsoft.directory/applications/owners/update | Update owners of applications |
 > | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
@@ -37,14 +37,14 @@ This is a [privileged role](../privileged-roles-permissions.md). Do not use. Thi
 > | microsoft.directory/contacts/delete | Delete contacts |
 > | microsoft.directory/deletedItems.groups/restore | Restore soft deleted groups to original state |
 > | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
-> | microsoft.directory/domains/allProperties/allTasks | Create and delete domains, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/domains/allProperties/allTasks | Create and delete domains, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/groups.unified/assignedLabels/update | Update the assigned labels property on Microsoft 365 groups of assigned membership type, excluding role-assignable groups |
 > | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/delete | Delete Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/owners/update | Update owners of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
-> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/organization/basic/update | Update basic properties on organization |
 > | microsoft.directory/roleAssignments/allProperties/allTasks | Create and delete role assignments, and read and update all role assignment properties |
 > | microsoft.directory/roleDefinitions/allProperties/allTasks | Create and delete role definitions, and read and update all properties |
@@ -53,16 +53,16 @@ This is a [privileged role](../privileged-roles-permissions.md). Do not use. Thi
 > | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
 > | microsoft.directory/users/basic/update | Update basic properties on users |
-> | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/users/manager/update | Update manager for users |
-> | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/users/photo/update | Update photo of users |
 > | microsoft.directory/users/restore | Restore deleted users |
-> | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |

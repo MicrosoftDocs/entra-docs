@@ -47,7 +47,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
-> | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/bulkJobs/standard/read | Read all bulk jobs in a directory |
 > | microsoft.directory/cloudAppSecurity/allProperties/read | Read all properties for Cloud app security |
 > | microsoft.directory/conditionalAccessPolicies/allProperties/read | Read all properties of Conditional Access policies |
@@ -99,7 +99,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
 > | microsoft.directory/subscribedSkus/allProperties/read | Read all properties of product subscriptions |
-> | microsoft.directory/users/allProperties/read | Read all properties of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/allProperties/read | Read all properties of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/users/authenticationMethods/standard/restrictedRead | Read standard properties of authentication methods that do not include personally identifiable information for users |
 > | microsoft.directory/verifiableCredentials/configuration/allProperties/read | Read configuration required to create and manage verifiable credentials |
 > | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read | Read a verifiable credential contract |

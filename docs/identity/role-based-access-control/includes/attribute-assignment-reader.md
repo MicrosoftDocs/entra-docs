@@ -10,7 +10,7 @@ ms.custom: include file
 
 Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.
 
-[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
+[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).
 

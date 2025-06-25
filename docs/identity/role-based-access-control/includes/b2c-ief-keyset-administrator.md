@@ -21,5 +21,5 @@ This is a [privileged role](../privileged-roles-permissions.md). User can create
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks | Read and configure key sets in Azure Active Directory B2C<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks | Read and configure key sets in Azure Active Directory B2C<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 

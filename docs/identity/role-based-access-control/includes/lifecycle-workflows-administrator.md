@@ -24,5 +24,5 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the Life
 > | --- | --- |
 > | microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks | Manage all aspects of lifecycle workflows and tasks in Microsoft Entra ID |
 > | microsoft.directory/organization/strongAuthentication/read | Read strong authentication properties of an organization |
-> | microsoft.directory/users/lifeCycleInfo/read | Read lifecycle information of users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/lifeCycleInfo/read | Read lifecycle information of users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 

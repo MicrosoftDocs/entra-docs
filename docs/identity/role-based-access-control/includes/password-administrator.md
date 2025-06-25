@@ -21,6 +21,6 @@ Users with this role **cannot** do the following:
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 

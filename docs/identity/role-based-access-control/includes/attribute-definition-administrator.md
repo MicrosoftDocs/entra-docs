@@ -10,7 +10,7 @@ ms.custom: include file
 
 Users with this role can define a valid set of custom security attributes that can be assigned to supported Microsoft Entra objects. This role can also activate and deactivate custom security attributes.
 
-[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
+[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).
 
