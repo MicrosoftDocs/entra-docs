@@ -95,7 +95,7 @@ The [second part](https://youtu.be/Sc1y4WBHP2k?si=kDCv0Cts5UUHyM-b) guides you t
 
 ### Step-up authentication
 
-The video explains step-up authentication and tenant configuration. In step-up authentication, users sign in with minimal authentication steps, like a username and password, or a social identity. However, upon risky actions, like high-value transactions or accessing sensitive data, the application requires more verification.
+The video explains step-up authentication and tenant configuration. In step-up authentication, users sign in with minimal authentication steps, like a username and password, or a social identity. However, upon risky actions, like high-value transactions or accessing sensitive data, the application requires more verifications.
 
 > [!VIDEO https://www.youtube.com/embed/869Opl4TQT0?si=pNYU5zrrpP1r9PTz]
 
