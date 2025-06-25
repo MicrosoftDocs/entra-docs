@@ -10,7 +10,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Users with this role can manage alerts and have global read-only access on security-related features, including all information in Microsoft 365 Defender portal, Microsoft Entra ID Protection, Privileged Identity Management and Microsoft Purview compliance portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).
+This is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage alerts and have global read-only access on security-related features, including all information in Microsoft 365 Defender portal, Microsoft Entra ID Protection, Privileged Identity Management and Microsoft Purview compliance portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).
 
 | In | Can do |
 | --- | --- |
@@ -34,7 +34,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bulkJobs/standard/read | Read all bulk jobs in a directory |
 > | microsoft.directory/cloudAppSecurity/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps |
-> | microsoft.directory/identityProtection/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Entra ID Protection<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/identityProtection/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Entra ID Protection<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/privilegedIdentityManagement/allProperties/read | Read all resources in Privileged Identity Management |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |

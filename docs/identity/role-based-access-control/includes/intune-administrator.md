@@ -12,7 +12,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups. For more information, see [Role-based administration control (RBAC) with Microsoft Intune](/mem/intune/fundamentals/role-based-access-control).
+This is a [privileged role](../privileged-roles-permissions.md). Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups. For more information, see [Role-based administration control (RBAC) with Microsoft Intune](/mem/intune/fundamentals/role-based-access-control).
 
 This role can create and manage all security groups. However, Intune Administrator does not have admin rights over Microsoft 365 groups. That means the admin cannot update owners or memberships of all Microsoft 365 groups in the organization. However, he/she can manage the Microsoft 365 group that he creates which comes as a part of his/her end-user privileges. So, any Microsoft 365 group (not security group) that he/she creates should be counted against his/her quota of 250.
 
@@ -27,7 +27,7 @@ This role can create and manage all security groups. However, Intune Administrat
 > | --- | --- |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
-> | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/contacts/create | Create contacts |
 > | microsoft.directory/contacts/delete | Delete contacts |

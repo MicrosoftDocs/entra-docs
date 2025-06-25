@@ -10,7 +10,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Users with this role can manage role assignments in Microsoft Entra ID, as well as within Microsoft Entra Privileged Identity Management. They can create and manage groups that can be assigned to Microsoft Entra roles. In addition, this role allows management of all aspects of Privileged Identity Management and administrative units.
+This is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage role assignments in Microsoft Entra ID, as well as within Microsoft Entra Privileged Identity Management. They can create and manage groups that can be assigned to Microsoft Entra roles. In addition, this role allows management of all aspects of Privileged Identity Management and administrative units.
 
 > [!IMPORTANT]
 > This role grants the ability to manage assignments for all Microsoft Entra roles including the Global Administrator role. This role does not include any other privileged abilities in Microsoft Entra ID like creating or updating users. However, users assigned to this role can grant themselves or others additional privilege by assigning additional roles.
@@ -27,7 +27,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/create | Create access reviews for membership in groups that are assignable to Microsoft Entra roles |
 > | microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/delete | Delete access reviews for membership in groups that are assignable to Microsoft Entra roles |
 > | microsoft.directory/administrativeUnits/allProperties/allTasks | Create and manage administrative units (including members) |
-> | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/directoryRoles/allProperties/allTasks | Create and delete directory roles, and read and update all properties |
 > | microsoft.directory/groupsAssignableToRoles/allProperties/update | Update role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/assignLicense | Assign a license to role-assignable groups |
@@ -35,7 +35,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/groupsAssignableToRoles/delete | Delete role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment | Reprocess license assignments to role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/restore | Restore role-assignable groups |
-> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/permissionGrantPolicies/allProperties/read | Read all properties of permission grant policies |
 > | microsoft.directory/permissionGrantPolicies/allProperties/update | Update all properties of permission grant policies |
 > | microsoft.directory/permissionGrantPolicies/create | Create permission grant policies |

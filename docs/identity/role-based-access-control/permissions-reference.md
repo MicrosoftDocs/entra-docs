@@ -146,181 +146,121 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [ai-administrator](includes/ai-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Application Administrator
 
 [!INCLUDE [application-administrator](includes/application-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Application Developer
 
 [!INCLUDE [application-developer](includes/application-developer.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Attack Payload Author
 
 [!INCLUDE [attack-payload-author](includes/attack-payload-author.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Attack Simulation Administrator
 
 [!INCLUDE [attack-simulation-administrator](includes/attack-simulation-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Attribute Assignment Administrator
 
 [!INCLUDE [attribute-assignment-administrator](includes/attribute-assignment-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Attribute Assignment Reader
 
 [!INCLUDE [attribute-assignment-reader](includes/attribute-assignment-reader.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Attribute Definition Administrator
 
 [!INCLUDE [attribute-definition-administrator](includes/attribute-definition-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Attribute Definition Reader
 
 [!INCLUDE [attribute-definition-reader](includes/attribute-definition-reader.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Attribute Log Administrator
 
 [!INCLUDE [attribute-log-administrator](includes/attribute-log-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Attribute Log Reader
 
 [!INCLUDE [attribute-log-reader](includes/attribute-log-reader.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Attribute Provisioning Administrator
 
 [!INCLUDE [attribute-provisioning-administrator](includes/attribute-provisioning-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Attribute Provisioning Reader
 
 [!INCLUDE [attribute-provisioning-reader](includes/attribute-provisioning-reader.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Authentication Administrator
 
 [!INCLUDE [authentication-administrator](includes/authentication-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Authentication Extensibility Administrator
 
 [!INCLUDE [authentication-extensibility-administrator](includes/authentication-extensibility-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Authentication Policy Administrator
 
 [!INCLUDE [authentication-policy-administrator](includes/authentication-policy-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Azure AD Joined Device Local Administrator
 
 [!INCLUDE [azure-ad-joined-device-local-administrator](includes/azure-ad-joined-device-local-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Azure DevOps Administrator
 
 [!INCLUDE [azure-devops-administrator](includes/azure-devops-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Azure Information Protection Administrator
 
 [!INCLUDE [azure-information-protection-administrator](includes/azure-information-protection-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## B2C IEF Keyset Administrator
 
 [!INCLUDE [b2c-ief-keyset-administrator](includes/b2c-ief-keyset-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## B2C IEF Policy Administrator
 
 [!INCLUDE [b2c-ief-policy-administrator](includes/b2c-ief-policy-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Billing Administrator
 
 [!INCLUDE [billing-administrator](includes/billing-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Cloud App Security Administrator
 
 [!INCLUDE [cloud-app-security-administrator](includes/cloud-app-security-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Cloud Application Administrator
 
 [!INCLUDE [cloud-application-administrator](includes/cloud-application-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Cloud Device Administrator
 
 [!INCLUDE [cloud-device-administrator](includes/cloud-device-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Compliance Administrator
 
 [!INCLUDE [compliance-administrator](includes/compliance-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Compliance Data Administrator
 
 [!INCLUDE [compliance-data-administrator](includes/compliance-data-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Conditional Access Administrator
 
 [!INCLUDE [conditional-access-administrator](includes/conditional-access-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Customer LockBox Access Approver
 
 [!INCLUDE [customer-lockbox-access-approver](includes/customer-lockbox-access-approver.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Desktop Analytics Administrator
 
 [!INCLUDE [desktop-analytics-administrator](includes/desktop-analytics-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Directory Readers
 
@@ -334,19 +274,13 @@ This role inherits additional permissions from: [Directory Readers](#directory-r
 
 [!INCLUDE [directory-writers](includes/directory-writers.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Domain Name Administrator
 
 [!INCLUDE [domain-name-administrator](includes/domain-name-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Dynamics 365 Administrator
 
 [!INCLUDE [dynamics-365-administrator](includes/dynamics-365-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Dynamics 365 Business Central Administrator
 
@@ -356,79 +290,53 @@ This role inherits additional permissions from: [Directory Readers](#directory-r
 
 [!INCLUDE [edge-administrator](includes/edge-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Exchange Administrator
 
 [!INCLUDE [exchange-administrator](includes/exchange-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Exchange Recipient Administrator
 
 [!INCLUDE [exchange-recipient-administrator](includes/exchange-recipient-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Extended Directory User Administrator
 
 [!INCLUDE [extended-directory-user-administrator](includes/extended-directory-user-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## External ID User Flow Administrator
 
 [!INCLUDE [external-id-user-flow-administrator](includes/external-id-user-flow-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## External ID User Flow Attribute Administrator
 
 [!INCLUDE [external-id-user-flow-attribute-administrator](includes/external-id-user-flow-attribute-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## External Identity Provider Administrator
 
 [!INCLUDE [external-identity-provider-administrator](includes/external-identity-provider-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Fabric Administrator
 
 [!INCLUDE [fabric-administrator](includes/fabric-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Global Administrator
 
 [!INCLUDE [global-administrator](includes/global-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Global Reader
 
 [!INCLUDE [global-reader](includes/global-reader.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Global Secure Access Administrator
 
 [!INCLUDE [global-secure-access-administrator](includes/global-secure-access-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Global Secure Access Log Reader
 
 [!INCLUDE [global-secure-access-log-reader](includes/global-secure-access-log-reader.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Groups Administrator
 
 [!INCLUDE [groups-administrator](includes/groups-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Guest Inviter
 
@@ -438,97 +346,65 @@ This role inherits additional permissions from: [Directory Readers](#directory-r
 
 [!INCLUDE [helpdesk-administrator](includes/helpdesk-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Hybrid Identity Administrator
 
 [!INCLUDE [hybrid-identity-administrator](includes/hybrid-identity-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Identity Governance Administrator
 
 [!INCLUDE [identity-governance-administrator](includes/identity-governance-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Insights Administrator
 
 [!INCLUDE [insights-administrator](includes/insights-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Insights Analyst
 
 [!INCLUDE [insights-analyst](includes/insights-analyst.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Insights Business Leader
 
 [!INCLUDE [insights-business-leader](includes/insights-business-leader.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Intune Administrator
 
 [!INCLUDE [intune-administrator](includes/intune-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## IoT Device Administrator
 
 [!INCLUDE [iot-device-administrator](includes/iot-device-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Kaizala Administrator
 
 [!INCLUDE [kaizala-administrator](includes/kaizala-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Knowledge Administrator
 
 [!INCLUDE [knowledge-administrator](includes/knowledge-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Knowledge Manager
 
 [!INCLUDE [knowledge-manager](includes/knowledge-manager.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## License Administrator
 
 [!INCLUDE [license-administrator](includes/license-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Lifecycle Workflows Administrator
 
 [!INCLUDE [lifecycle-workflows-administrator](includes/lifecycle-workflows-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Message Center Privacy Reader
 
 [!INCLUDE [message-center-privacy-reader](includes/message-center-privacy-reader.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Message Center Reader
 
 [!INCLUDE [message-center-reader](includes/message-center-reader.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Microsoft 365 Backup Administrator
 
 [!INCLUDE [microsoft-365-backup-administrator](includes/microsoft-365-backup-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Microsoft 365 Migration Administrator
 
@@ -538,49 +414,33 @@ This role inherits additional permissions from: [Directory Readers](#directory-r
 
 [!INCLUDE [microsoft-graph-data-connect-administrator](includes/microsoft-graph-data-connect-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Microsoft Hardware Warranty Administrator
 
 [!INCLUDE [microsoft-hardware-warranty-administrator](includes/microsoft-hardware-warranty-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Microsoft Hardware Warranty Specialist
 
 [!INCLUDE [microsoft-hardware-warranty-specialist](includes/microsoft-hardware-warranty-specialist.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Network Administrator
 
 [!INCLUDE [network-administrator](includes/network-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Office Apps Administrator
 
 [!INCLUDE [office-apps-administrator](includes/office-apps-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Organizational Branding Administrator
 
 [!INCLUDE [organizational-branding-administrator](includes/organizational-branding-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Organizational Data Source Administrator
 
 [!INCLUDE [organizational-data-source-administrator](includes/organizational-data-source-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Organizational Messages Approver
 
 [!INCLUDE [organizational-messages-approver](includes/organizational-messages-approver.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Organizational Messages Writer
 
@@ -590,169 +450,113 @@ This role inherits additional permissions from: [Directory Readers](#directory-r
 
 [!INCLUDE [partner-tier1-support](includes/partner-tier1-support.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Partner Tier2 Support
 
 [!INCLUDE [partner-tier2-support](includes/partner-tier2-support.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Password Administrator
 
 [!INCLUDE [password-administrator](includes/password-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## People Administrator
 
 [!INCLUDE [people-administrator](includes/people-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Permissions Management Administrator
 
 [!INCLUDE [permissions-management-administrator](includes/permissions-management-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Power Platform Administrator
 
 [!INCLUDE [power-platform-administrator](includes/power-platform-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Printer Administrator
 
 [!INCLUDE [printer-administrator](includes/printer-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Printer Technician
 
 [!INCLUDE [printer-technician](includes/printer-technician.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Privileged Authentication Administrator
 
 [!INCLUDE [privileged-authentication-administrator](includes/privileged-authentication-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Privileged Role Administrator
 
 [!INCLUDE [privileged-role-administrator](includes/privileged-role-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Reports Reader
 
 [!INCLUDE [reports-reader](includes/reports-reader.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Search Administrator
 
 [!INCLUDE [search-administrator](includes/search-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Search Editor
 
 [!INCLUDE [search-editor](includes/search-editor.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Security Administrator
 
 [!INCLUDE [security-administrator](includes/security-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Security Operator
 
 [!INCLUDE [security-operator](includes/security-operator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Security Reader
 
 [!INCLUDE [security-reader](includes/security-reader.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Service Support Administrator
 
 [!INCLUDE [service-support-administrator](includes/service-support-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## SharePoint Administrator
 
 [!INCLUDE [sharepoint-administrator](includes/sharepoint-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## SharePoint Embedded Administrator
 
 [!INCLUDE [sharepoint-embedded-administrator](includes/sharepoint-embedded-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Skype for Business Administrator
 
 [!INCLUDE [skype-for-business-administrator](includes/skype-for-business-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Teams Administrator
 
 [!INCLUDE [teams-administrator](includes/teams-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Teams Communications Administrator
 
 [!INCLUDE [teams-communications-administrator](includes/teams-communications-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Teams Communications Support Engineer
 
 [!INCLUDE [teams-communications-support-engineer](includes/teams-communications-support-engineer.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Teams Communications Support Specialist
 
 [!INCLUDE [teams-communications-support-specialist](includes/teams-communications-support-specialist.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Teams Devices Administrator
 
 [!INCLUDE [teams-devices-administrator](includes/teams-devices-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Teams Reader
 
 [!INCLUDE [teams-reader](includes/teams-reader.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Teams Telephony Administrator
 
 [!INCLUDE [teams-telephony-administrator](includes/teams-telephony-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Tenant Creator
 
 [!INCLUDE [tenant-creator](includes/tenant-creator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Usage Summary Reports Reader
 
@@ -762,8 +566,6 @@ This role inherits additional permissions from: [Directory Readers](#directory-r
 
 [!INCLUDE [user-administrator](includes/user-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## User Experience Success Manager
 
 [!INCLUDE [user-experience-success-manager](includes/user-experience-success-manager.md)]
@@ -772,43 +574,29 @@ This role inherits additional permissions from: [Directory Readers](#directory-r
 
 [!INCLUDE [virtual-visits-administrator](includes/virtual-visits-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Viva Glint Tenant Administrator
 
 [!INCLUDE [viva-glint-tenant-administrator](includes/viva-glint-tenant-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Viva Goals Administrator
 
 [!INCLUDE [viva-goals-administrator](includes/viva-goals-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Viva Pulse Administrator
 
 [!INCLUDE [viva-pulse-administrator](includes/viva-pulse-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 ## Windows 365 Administrator
 
 [!INCLUDE [windows-365-administrator](includes/windows-365-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Windows Update Deployment Administrator
 
 [!INCLUDE [windows-update-deployment-administrator](includes/windows-update-deployment-administrator.md)]
 
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
-
 ## Yammer Administrator
 
 [!INCLUDE [yammer-administrator](includes/yammer-administrator.md)]
-
-This role inherits additional permissions from: [Directory Readers](#directory-readers).
 
 
 <!-- autogenerated content ends here -->
@@ -877,25 +665,3 @@ If the Modern Commerce Administrator role is unassigned from a user, they lose a
 - [Assign Microsoft Entra roles](manage-roles-portal.md)
 - [Understand the different roles](/azure/role-based-access-control/rbac-and-directory-admin-roles)
 - [Assign a user as an administrator of an Azure subscription](/azure/role-based-access-control/role-assignments-portal-subscription-admin)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

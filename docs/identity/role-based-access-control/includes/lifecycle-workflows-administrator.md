@@ -10,7 +10,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Assign the Lifecycle Workflows Administrator role to users who need to do the following tasks:
+This is a [privileged role](../privileged-roles-permissions.md). Assign the Lifecycle Workflows Administrator role to users who need to do the following tasks:
 
 - Create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID
 - Check the execution of scheduled workflows
@@ -24,5 +24,5 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Lifecyc
 > | --- | --- |
 > | microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks | Manage all aspects of lifecycle workflows and tasks in Microsoft Entra ID |
 > | microsoft.directory/organization/strongAuthentication/read | Read strong authentication properties of an organization |
-> | microsoft.directory/users/lifeCycleInfo/read | Read lifecycle information of users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/lifeCycleInfo/read | Read lifecycle information of users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 

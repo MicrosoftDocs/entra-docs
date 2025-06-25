@@ -10,7 +10,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Users with this role can change passwords, invalidate refresh tokens, create and manage support requests with Microsoft for Azure and Microsoft 365 services, and monitor service health. Invalidating a refresh token forces the user to sign in again. Whether a Helpdesk Administrator can reset a user's password and invalidate refresh tokens depends on the role the user is assigned. For a list of the roles that a Helpdesk Administrator can reset passwords for and invalidate refresh tokens, see [Who can reset passwords](privileged-roles-permissions.md#who-can-reset-passwords).
+This is a [privileged role](../privileged-roles-permissions.md). Users with this role can change passwords, invalidate refresh tokens, create and manage support requests with Microsoft for Azure and Microsoft 365 services, and monitor service health. Invalidating a refresh token forces the user to sign in again. Whether a Helpdesk Administrator can reset a user's password and invalidate refresh tokens depends on the role the user is assigned. For a list of the roles that a Helpdesk Administrator can reset passwords for and invalidate refresh tokens, see [Who can reset passwords](privileged-roles-permissions.md#who-can-reset-passwords).
 
 Users with this role **cannot** do the following:
 
@@ -37,10 +37,10 @@ This role was previously named Password Administrator in the [Azure portal](/azu
 > | --- | --- |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
-> | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deviceLocalCredentials/standard/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, except the password |
-> | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |

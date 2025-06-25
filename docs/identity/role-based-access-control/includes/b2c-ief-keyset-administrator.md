@@ -10,7 +10,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). User can create and manage policy keys and secrets for token encryption, token signatures, and claim encryption/decryption. By adding new keys to existing key containers, this limited administrator can roll over secrets as needed without impacting existing applications. This user can see the full content of these secrets and their expiration dates even after their creation.
+This is a [privileged role](../privileged-roles-permissions.md). User can create and manage policy keys and secrets for token encryption, token signatures, and claim encryption/decryption. By adding new keys to existing key containers, this limited administrator can roll over secrets as needed without impacting existing applications. This user can see the full content of these secrets and their expiration dates even after their creation.
 
 > [!IMPORTANT]
 > This is a sensitive role. The keyset administrator role should be carefully audited and assigned with care during pre-production and production.
@@ -21,5 +21,5 @@ This is a [privileged role](privileged-roles-permissions.md). User can create an
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks | Read and configure key sets in Azure Active Directory B2C<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks | Read and configure key sets in Azure Active Directory B2C<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 

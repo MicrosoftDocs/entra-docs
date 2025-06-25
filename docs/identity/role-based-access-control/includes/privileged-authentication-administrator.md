@@ -10,7 +10,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Assign the Privileged Authentication Administrator role to users who need to do the following:
+This is a [privileged role](../privileged-roles-permissions.md). Assign the Privileged Authentication Administrator role to users who need to do the following:
 
 - Set or reset any authentication method (including passwords) for any user, including Global Administrators.
 - Delete or restore any users, including Global Administrators. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
@@ -42,20 +42,20 @@ Users with this role **cannot** do the following:
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
-> | microsoft.directory/users/authenticationMethods/basic/update | Update basic properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/authenticationMethods/create | Update authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/authenticationMethods/delete | Delete authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/authenticationMethods/standard/read | Read standard properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/authenticationMethods/basic/update | Update basic properties of authentication methods for users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/authenticationMethods/create | Update authentication methods for users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/authenticationMethods/delete | Delete authentication methods for users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/authenticationMethods/standard/read | Read standard properties of authentication methods for users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/authorizationInfo/update | Update the multivalued Certificate user IDs property of users |
 > | microsoft.directory/users/basic/update | Update basic properties on users |
-> | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/manager/update | Update manager for users |
-> | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/restore | Restore deleted users |
-> | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |

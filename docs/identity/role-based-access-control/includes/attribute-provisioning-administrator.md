@@ -10,7 +10,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Assign the Attribute Provisioning Administrator role to users who need to do the following tasks:
+This is a [privileged role](../privileged-roles-permissions.md). Assign the Attribute Provisioning Administrator role to users who need to do the following tasks:
 
 - Read and write attribute mappings for custom security attributes when provisioning in an application.
 - Read and write provisioning and auditing logs for custom security attributes when provisioning in an application.
@@ -28,6 +28,6 @@ Users with this role cannot read audit logs for other events. This role must be 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes in the synchronization schema<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update | Update custom security attribute mappings in the synchronization schema<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes in the synchronization schema<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update | Update custom security attribute mappings in the synchronization schema<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 

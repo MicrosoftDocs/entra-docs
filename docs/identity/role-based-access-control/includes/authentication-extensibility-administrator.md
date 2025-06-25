@@ -10,7 +10,7 @@ ms.custom: include file
 
 [![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Assign the Authentication Extensibility Administrator role to users who need to do the following tasks:
+This is a [privileged role](../privileged-roles-permissions.md). Assign the Authentication Extensibility Administrator role to users who need to do the following tasks:
 
 - Create and manage all aspects of custom authentication extensions.
 
@@ -28,5 +28,5 @@ A custom authentication extension is an API endpoint created by a developer for 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 
