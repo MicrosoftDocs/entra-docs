@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 05/04/2025
+ms.date: 06/25/2025
 ms.reviewer: jasuri
 ms.service: identity-platform
 
@@ -65,6 +65,10 @@ Your REST API must handle:
 - Incoming and outgoing validation of HTTP request and response schemas.
 - Auditing and logging.
 - Availability, performance, and security controls.
+
+Watch this video to learn how create a authentication extensions REST API endpoint with Azure Logic Apps, without writing code. Azure Logic App empowers users to build workflows using a visual designer. The video covers customizing verification emails, and it applies to all types of custom authentication extensions, including custom claims providers.
+
+ [!VIDEO https://www.youtube.com/embed/2ZzX6_W93Sk?si=P9URBkKVnXPZ6Kfc]
 
 ### Request payload
 
