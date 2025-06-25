@@ -16,9 +16,9 @@ ms.author: owinfrey
 
 # Understanding access package visibility in the My Access portal
 
-The [My Access portal](https://myaccess.microsoft.com) is the central place for users to request, approve, and review their access to resources within Microsoft Entra. For administrators, the portal provides extra functionalities through the Microsoft Entra admin center, enabling configuration of access packages and the ability to conduct access reviews.
+The [My Access portal](https://myaccess.microsoft.com) is the central place for users to request, approve, and review their access to resources within Microsoft Entra. For administrators, the Microsoft Entra admin center provides extra functionalities, enabling configuration of access packages and the ability to conduct access reviews.
 
-When you manage access to resources in Microsoft Entra, understanding how access packages appear to users in the [My Access portal](https://myaccess.microsoft.com) is essential. Access package visibility determines which packages users can discover and request, and is influenced by several configuration settings and planned changes. This article provides a detailed overview of the factors that control access package visibility in the My Access portal, explains how it currently works, and highlights important changes effective September 30, 2025. 
+When you manage access to resources in Microsoft Entra, understanding how access packages appear to users in the [My Access portal](https://myaccess.microsoft.com) is essential. Access package visibility determines which packages users can discover and request, and is influenced by several configuration settings and planned changes. This article provides a detailed overview of the factors that control access package visibility in the My Access portal, explains how it currently works, and highlights important changes effective October 10, 2025. 
 
 ## Discovering requestable access packages
 
@@ -27,7 +27,7 @@ When a user lands on the "*Available*" tab, searches for requestable packages, o
 The following flow diagram illustrates the current logic used to determine if an access package appears in the browse/search view for a specific user:
 
 > [!IMPORTANT]
-> Effective September 30, 2025: The visibility behavior described here for policies scoped to "*Specific users and groups*" is changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-visibility.md#upcoming-changes-to-visibility) section for crucial details and required actions.
+> Effective October 10, 2025: The visibility behavior described here for policies scoped to "*Specific users and groups*" is changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-visibility.md#upcoming-changes-to-visibility) section for crucial details and required actions.
 
 :::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram.png" alt-text="Screenshot of visibility diagram for access package.":::
 
@@ -54,18 +54,18 @@ If **all** these checks pass, then the access package is Visible in the user's b
 
 ## Upcoming changes to visibility
 
-Effective September 30 2025, the visibility on the [My Access portal](https://myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you don't want the access packages visible to all members, you must hide the access package by this date.
+Effective October 10, 2025, the visibility on the [My Access portal](https://myaccess.microsoft.com) will change for access packages configured with one or more policies where "Who can request access" is set to **"For users in your directory: Specific users and groups.** Access packages configured for "Specific users and groups" will be visible to all members (excluding guests) in the My Access portal. If you don't want the access packages visible to all members, you must hide the access package by this date.
 
 The visibility change will only impact how end-users can discover access packages via the "Available" tab, the "View all" option, or when using the search bar within these sections to find requestable access packages. The change won't impact the visibility logic for other tabs like "Suggested," "Active," or "Expired" (even when using search within those tabs), nor does it impact other My Access portal sections such as "Request history" or "Approvals."
 
-The following flow diagram illustrates the logic, effective September 30 2025, used to determine if an access package appears in the browse/search view for a specific user:
+The following flow diagram illustrates the logic, effective October 10, 2025, used to determine if an access package appears in the browse/search view for a specific user:
 
 :::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram-2.png" alt-text="Screenshot of updated my access visibility access package diagram.":::
 
 
 ### Next Steps
 
-We recommend you review the access packages currently configured with policies scoped to "Specific users and groups" in your tenant. If the access package contains sensitive information that you wouldn't want all members, excluding guests, to see, hide the access package by **September 30, 2025** to ensure the desired end-user experience on the My Access portal.
+We recommend you review the access packages currently configured with policies scoped to "Specific users and groups" in your tenant. If the access package name, description, or the name and description of the contained resource roles are sensitive information that you wouldn't want all members, excluding guests, to see, hide the access package by **October 10, 2025** to ensure the desired end-user experience on the My Access portal.
 
 To hide an access package, follow these steps: [Change the Hidden section](entitlement-management-access-package-edit.md#change-the-hidden-setting).
 
@@ -86,7 +86,7 @@ Coinciding with this change, we're also introducing a **new tenant-wide setting*
 
 
 > [!NOTE]
-> If the access package isn't visible for the end-user according to the **Deep Dive: Discovering Requestable Access Packages**, then the "resource" tab won’t be available either. To configure this setting, go to the Microsoft Entra Admin Center with at least the Identity Governance role, and navigate to Entitlement Lifecycle Management > Control Configurations > My Access settings to see the resource role visibility control setting.
+> If the access package isn't visible for the end-user according to the **Deep Dive: Discovering Requestable Access Packages**, then the "resource" tab won’t be available either. To configure this setting, go to the Microsoft Entra Admin Center with at least the Identity Governance role, and navigate to Entitlement Management > Control Configurations > My Access settings to see the resource role visibility control setting.
 
 ## Related content
 
