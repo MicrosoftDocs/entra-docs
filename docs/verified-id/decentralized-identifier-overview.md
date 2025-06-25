@@ -5,7 +5,7 @@ author: barclayn
 manager: femila
 ms.service: entra-verified-id
 ms.topic: overview
-ms.date: 01/17/2025
+ms.date: 06/25/2025
 ms.author: barclayn
 ms.reviewer: 
 ---
@@ -63,7 +63,7 @@ To deliver on these promises, we need a technical foundation made up of seven ke
 IDs users create, own, and control independently of any organization or government. DIDs are globally unique identifiers linked to Decentralized Public Key Infrastructure (DPKI) metadata composed of JSON documents that contain public key material, authentication descriptors, and service endpoints.
 
 **2. Trust System**.
-In order to be able to resolve DID documents, DIDs are typically recorded on an underlying network of some kind that represents a trust system. Microsoft currently supports DID:Web trust system. DID:Web is a permission based model that allows trust using a web domain’s existing reputation. DID:Web is in support status General Available.
+In order to be able to resolve DID documents, DIDs are typically recorded on an underlying network of some kind that represents a trust system. Microsoft currently supports di:web trust system. The did:web trust system is a permission based model that allows trust using a web domain’s existing reputation. did:web is in support status General Available.
 
 **3. DID User Agent/Wallet: Microsoft Authenticator App**.
 Enables real people to use decentralized identities and Verifiable Credentials. **Microsoft Authenticator** creates DIDs, facilitates issuance and presentation requests for verifiable credentials and manages the backup of your DID's seed through an encrypted wallet file.

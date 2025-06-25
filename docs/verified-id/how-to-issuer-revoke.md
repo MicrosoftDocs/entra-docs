@@ -6,7 +6,7 @@ author: barclayn
 manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-ms.date: 01/31/2025
+ms.date: 06/25/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm trying to learn the process of revoking verifiable credentials that I've issued.
@@ -32,9 +32,6 @@ Microsoft Entra Verified ID implements the [W3C StatusList2021](https://github.c
 ### Verifiable credential data
 
 In every Microsoft-issued verifiable credential, there's a claim called `credentialStatus`. This data is a navigational map to where in a block of data this verifiable credential has its revocation flag.
-
-> [!NOTE]
-> If the verifiable credential is old and was issued during the preview period, this claim doesn't exist. Revocation doesn't work for this credential and you have to reissue it.
 
 ```json
 ...
