@@ -4,7 +4,7 @@ description: Partner Tier2 Support
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 06/20/2025
+ms.date: 06/25/2025
 ms.custom: include file
 ---
 

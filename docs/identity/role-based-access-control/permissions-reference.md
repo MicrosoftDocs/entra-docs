@@ -665,3 +665,4 @@ If the Modern Commerce Administrator role is unassigned from a user, they lose a
 - [Assign Microsoft Entra roles](manage-roles-portal.md)
 - [Understand the different roles](/azure/role-based-access-control/rbac-and-directory-admin-roles)
 - [Assign a user as an administrator of an Azure subscription](/azure/role-based-access-control/role-assignments-portal-subscription-admin)
+
