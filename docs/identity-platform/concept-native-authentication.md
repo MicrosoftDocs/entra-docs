@@ -109,13 +109,13 @@ For building web application using native authentication, please check following
 
 | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 | ----------- | ----------- |----------- |
-|React (Next.js) | &#8226; [Sign in users](/entra/external-id/customers/quickstart-sign-in-users-react-native-auth-msal-js) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-2-single-page-app-react-msal-js-sign-up.md)|
-|Angular | &#8226; [Sign in users](/entra/external-id/customers/quickstart-sign-in-users-angular-native-auth-msal-js) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-2-single-page-app-angular-msal-js-sign-up)|
+|React (Next.js) | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-react-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md)|
+|Angular | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-angular-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-angular-sdk-sign-up.md)|
 
 ## Related content 
 
 - [Android native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app).
 - [iOS native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app).
-- [Native authentication in React web applications tutorials](/entra/external-id/customers/quickstart-sign-in-users-react-native-auth-msal-js)
-- [Native authentication in Angular web applications tutorials](/entra/external-id/customers/quickstart-sign-in-users-angular-native-auth-msal-js)
+- [Native authentication in React web applications tutorials](quickstart-native-authentication-single-page-app-react-sdk-sign-in.md)
+- [Native authentication in Angular web applications tutorials](quickstart-native-authentication-single-page-app-angular-sdk-sign-in.md)
 - [Native authentication API documentation](reference-native-authentication-api.md).
