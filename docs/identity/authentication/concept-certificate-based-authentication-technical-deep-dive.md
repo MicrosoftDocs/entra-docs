@@ -461,6 +461,79 @@ Select CAs and select **Add**. The **Search** text box can be used to filter the
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." :::  
 
+## Certificate Authority (CA) Scoping (Preview)
+
+Certificate Authority (CA) Scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups. This feature enhances the security and manageability of certificate-based authentication (CBA) by ensuring that only authorized users can authenticate using certificates issued by specific CAs.
+
+CA Scoping is particularly useful in multi-PKI or B2B scenarios where multiple CAs are used across different user populations. It helps prevent unintended access and supports compliance with organizational policies.
+
+**Key Benefits**
+- Restrict certificate usage to specific user groups
+- Support for complex PKI environments with multiple CAs
+- Enhanced protection against certificate misuse or compromise
+- Visibility into CA usage via sign-in logs and monitoring tools
+
+CA Scoping allows admins to define rules that associate a CA (identified by its Subject Key Identifier, or SKI) with a specific Microsoft Entra group. When a user attempts to authenticate using a certificate, the system checks whether the certificate’s issuing CA is scoped to a group that includes the user. Entra walks up the CA chain and applies all the scope rules until user is found in one of the groups in all the scope rules. If the user is not in the scoped group, authentication fails, even if the certificate is otherwise valid.
+
+### Steps to enable CA scoping feature
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Entra ID** > **Authentication methods** > **Certificate-based Authentication**.
+1. Under **Configure**, go to **Certificate issuer scoping policy**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-config.png" alt-text="Screenshot of CA scoping policy.":::
+
+1. Select **Add rule**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-add-rule.png" alt-text="Screenshot of CA scoping add rule.":::
+
+1. Select **Filter CAs by PKI**. **Classic CAs** will show all the CAs from classic CA store and selecting a specific PKI will show all the CAs from the selected PKI. Select a PKI.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-pki-filter.png" alt-text="Screenshot of CA scoping PKI filter.":::
+
+1. **Certificate issuer** drop down will show all the CAs from the selected PKI. Select a CA to create a scope rule.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-select-cert.png" alt-text="Screenshot of CA scoping select CA.":::
+
+1. Select **Add group**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-add-group.png" alt-text="Screenshot of CA scoping add group.":::
+
+1. Select a group
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-select-group.png" alt-text="Screenshot of CA scoping select group.":::
+
+1. Select **Add** to save the rule
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-save-rule.png" alt-text="Screenshot of CA scoping save rule.":::
+
+1. Select **I Acknowledge** and Select **Save** to save CBA config
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-save-cbaconfig.png" alt-text="Screenshot of CA scoping save cbaconfig.":::
+
+1. To edit or delete a CA scoping policy select "..." on the rule row. Select **Edit** to edit the rule and **Delete** to delete the rule.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-policy-edit-delete.png" alt-text="Screenshot of CA scoping edit or delete.":::
+
+### Known Limitations
+- Only one group can be assigned per CA.
+- A maximum of 30 scoping rules is supported.
+- Scoping is enforced at the intermediate CA level.
+- Improper configuration may result in user lockouts if no valid scoping rules exist.
+
+### Sign-in log entries
+
+- Sign in log will show success and in **Additional Details** tab the SKI of the CA from scoping policy rule will be shown.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-log-success.png" alt-text="Screenshot of CA scoping rule sign in log success.":::
+
+- When a CBA authentication fails due to a CA scoping rule, the Basic info tab in the sign-in log will show the error code 500189
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-log-error.png" alt-text="Screenshot of CA scoping sign in log error.":::
+
+- End users will see the error message below.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-policy-user-error.png" alt-text="Screenshot of CA scoping user error.":::
 
 ## How CBA works with a Conditional Access authentication strength policy
 
