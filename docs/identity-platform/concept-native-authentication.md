@@ -93,24 +93,19 @@ Microsoft Entra's native authentication doesn't support single sign-on (SSO), an
 
 ## How to use native authentication
 
-You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android and iOS/macOS. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
+You can build apps that use native authentication by using our native authentication APIs or the Microsoft Authentication Library (MSAL) SDK for Android, iOS/macOS and web applications. Whenever possible, we recommend using MSAL to add native authentication to your apps. 
 
 For more information on native authentication samples and tutorials, see the following table.
 
-| Language/<br/>Platform | Code sample guide | Build and integrate guide |
+| Language/<br/>Platform | Quickstart | Build and integrate guide |
 | ----------- | ----------- |----------- |
 |Android (Kotlin) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-android-app)|
 |iOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
 |macOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-macos-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
-
-If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](reference-native-authentication-api.md).
-
-For building web application using native authentication, please check following sample apps and tutorials.
-
-| Language/<br/>Platform | Code sample guide | Build and integrate guide |
-| ----------- | ----------- |----------- |
 |React (Next.js) | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-react-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md)|
 |Angular | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-angular-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-angular-sdk-sign-up.md)|
+
+If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](reference-native-authentication-api.md).
 
 ## Related content 
 
