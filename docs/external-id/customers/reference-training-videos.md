@@ -9,7 +9,7 @@ ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 06/13/2025
+ms.date: 06/25/2025
 ms.custom: it-pro
 
 
@@ -116,6 +116,12 @@ This video provides detailed instructions on configuring Microsoft Entra custom 
 Microsoft Entra custom authentication extensions allow organizations to integrate custom business logic into their authentication workflows. This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom authentication extensions (knonwd as custom claims provider).
 
 > [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
+
+### Build Microsoft Entra custom authentication extensions
+
+This video explains how to create Microsoft Entra custom authentication extensions with Azure Logic Apps, without writing code. Azure Logic App empowers users to build workflows using a visual designer. The video covers customizing verification emails, and it applies to all types of custom authentication extensions, including custom claims providers.
+
+> [!VIDEO https://www.youtube.com/embed/2ZzX6_W93Sk?si=P9URBkKVnXPZ6Kfc]
 
 ### Edit user's profile
 
