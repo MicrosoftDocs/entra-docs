@@ -45,7 +45,7 @@ To set the policy to `proxy`:
 1. Choose the right connector group with the connector deployed in the service endpoint subnet.
 1. Select **Add application segment**:
     - Destination type: `FQDN` 
-    - Fully Qualified Domain Name (FQDN): `<fqdn of the storage account>`. For example, `contosodbserver1.database.windows.net`.
+    - Fully Qualified Domain Name (FQDN): `<fqdn of the SQL server>`. For example, `contosodbserver1.database.windows.net`.
     - Ports: `1443`
     - Protocol: `TCP`
 1. Select **Apply** to add the application segment.
