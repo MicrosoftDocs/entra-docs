@@ -19,6 +19,8 @@ This article provides several options for automatically and manually remediating
 
 ## Prerequisites
 
+- The Microsoft Entra ID P2 or Microsoft Entra Suite license is required for full access to Microsoft Entra ID Protection features.
+    - For a detailed list of capabilities for each license tier, see [What is Microsoft Entra ID Protection](overview-identity-protection.md).
 - The [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) role is the least privileged role required to **reset passwords**.
 - The [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) role is the least privileged role required to **dismiss user risk**.
 - The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **create or edit risk-based policies**.
@@ -38,6 +40,8 @@ When risk-based Conditional Access policies are configured, remediating user ris
 
 - [Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md)
 - [Self-remediation experience with Microsoft Entra ID Protection and Conditional Access](concept-identity-protection-user-experience.md)
+- [Require multifactor authentication for all users](../identity/conditional-access/policy-all-users-mfa-strength.md)
+- [Implement password hash sync](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md)
 
 ### Self-remediation of sign-in risk
 
@@ -64,7 +68,7 @@ If a user is prompted to use self-service password reset (SSPR) to remediate use
 
 In some cases, Microsoft Entra ID Protection can also automatically dismiss a user's risk state. Both the risk detection and the corresponding risky sign-in are identified by ID Protection as no longer posing a security threat. This automatic intervention can happen if the user provides a second factor, such as multifactor authentication (MFA) or if the real-time and offline assessment determines that the sign-in is no longer risky. This automatic remediation reduces noise in risk monitoring so you can focus on the things that require your attention.
 
-- **Risk state**: "At risk" -> "Remediated"
+- **Risk state**: "At risk" -> "Dismissed"
 - **Risk detail**: "-" -> "Microsoft Entra ID Protection assessed sign-in safe"
 
 ## Administrator manual remediation
@@ -85,10 +89,15 @@ By generating a temporary password, you can immediately bring an identity back i
 
 To generate a temporary password:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) and a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+   - To generate a temporary password from the user's details, you need the [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) role.
+   - To generate a temporary password from ID Protection, you need both the [Security Operator](../identity/role-based-access-control/permissions-reference.md#security-operator) and [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator) roles.
    - Security Operator is required to access ID Protection and User Administrator is required to reset passwords.
+
 1. Browse to **Protection** > **Identity Protection** > **Risky users**, and select the affected user.
-1. Select **Reset password** from the panel that appears.
+   - Alternatively, browse to **Users** > **All users**, and select the affected user.
+
+1. Select **Reset password**.
 
     :::image type="content" source="media/howto-identity-protection-remediate-unblock/risky-user-details.png" alt-text="Screenshot of the Risky User Details panel with reset password highlighted." lightbox="media/howto-identity-protection-remediate-unblock/risky-user-details.png":::
 
@@ -136,7 +145,7 @@ If after investigation, you confirm the sign-in or user account isn't at risk of
 1. Browse to **Protection** > **Identity Protection** > **Risky sign-ins** or **Risky users**, and select the risky activity.
 1. Select **Dismiss risky sign-in(s)** or **Dismiss user risk**.
 
-When you dismiss risk, the affected sign-in or user is no longer at risk. All the risky sign-ins and corresponding risk detections are dismissed. Because this method doesn't change the user's existing password, it doesn't bring their identity back into a safe state. You might still need to contact the user to inform them of the risk and advise them to change their password.
+Because this method doesn't change the user's existing password, it doesn't bring their identity back into a safe state. You might still need to contact the user to inform them of the risk and advise them to change their password.
 
 The risk state and risk details for the user, sign-ins, and corresponding risk detections are updated as follows:
 
@@ -160,7 +169,7 @@ The risk state and risk details for the user, sign-ins, and corresponding risk d
 - Risk state: "At risk" -> "Confirmed compromised"
 - Risk detail: "-" -> "Admin confirmed user compromised"
 
-For more information about what happens when confirming compromise, see [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
+For more information about what happens when confirming compromise, see [How to give feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
 
 ### Unblock users
 
@@ -187,14 +196,11 @@ You might need to [manually dismiss](#dismiss-risk) the risk or user so they can
 
 #### Automatic blocking due to high confidence risk
 
-Microsoft Entra ID Protection automatically blocks sign-ins that have a very high confidence of being risky. This block most commonly occurs on sign-ins performed using legacy authentication protocols or displaying properties of a malicious attempt.
-
-When a user is blocked for either scenario, they receive a 50053 authentication error. The sign-in logs display the following block reason: "Sign-in was blocked by built-in protections due to high confidence of risk."
+Microsoft Entra ID Protection automatically blocks sign-ins that have a very high confidence of being risky. This block most commonly occurs on sign-ins performed using legacy authentication protocols or displaying properties of a malicious attempt. When a user is blocked for either scenario, they receive a 50053 authentication error. The sign-in logs display the following block reason: "Sign-in was blocked by built-in protections due to high confidence of risk."
 
 To unblock an account based on high confidence sign-in risk, you have the following options:
 
 - **Add the IPs being used to sign in to the Trusted location settings**: If the sign-in is performed from a known location for your company, you can add the IP to the trusted list. For more information, see [Conditional Access: Network assignment](../identity/conditional-access/concept-assignment-network.md#trusted-locations).
-
 - **Use a modern authentication protocol**: If the sign-in is performed using a legacy protocol, switching to a modern method unblocks the attempt.
 
 ## Allow on-premises password reset to remediate user risks
