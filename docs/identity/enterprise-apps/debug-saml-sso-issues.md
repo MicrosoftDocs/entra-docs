@@ -1,5 +1,5 @@
 ---
-title: Debug SAML-based single sign-on
+title: Debug SAML-based single sign-on to applications
 description: Debug SAML-based single sign-on to applications in Microsoft Entra ID.
 ms.author: alamaral
 author: AllisonAm
@@ -7,7 +7,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: troubleshooting
-ms.date: 06/21/2024
+ms.date: 06/20/2025
 ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin troubleshooting SAML-based single sign-on issues in Microsoft Entra ID, I want to gather the necessary information and resolve sign-in errors, so that I can ensure successful single sign-on between Microsoft Entra ID and target applications.
 ---
@@ -92,6 +92,6 @@ To resolve the error, follow these steps, or watch this [short video about how t
 1. Now that you're done reviewing the SAML response, see [Error on an application's page after signing in](application-sign-in-problem-application-error.md) for guidance on how to resolve the problem.
 1. If you're still not able to sign in successfully, you can ask the application vendor what is missing from the SAML response.
 
-## Next steps
+## Related content
 
 Now that single sign-on is working to your application, you could [Automate user provisioning and deprovisioning to SaaS applications](~/identity/app-provisioning/user-provisioning.md) or [get started with Conditional Access](~/identity/conditional-access/policy-all-users-device-compliance.md).

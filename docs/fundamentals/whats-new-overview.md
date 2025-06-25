@@ -86,7 +86,7 @@ The following are the descriptions for the sortable columns in the roadmap table
 
 ### Why do we need a What's new feature when we already have the Microsoft 365 and Azure roadmaps?
 
-Not all Microsoft Entra products are part of Microsoft 365 and Azure (for example, Microsoft Entra Permissions Management, Microsoft Entra External ID). The What's new feature ensures transparency about new features and changes across all Microsoft Entra products in a centralized location.
+Not all Microsoft Entra products are part of Microsoft 365 and Azure (for example, Microsoft Entra External ID). The What's new feature ensures transparency about new features and changes across all Microsoft Entra products in a centralized location.
 
 ### Is What's new publicly accessible like the Microsoft 365 roadmap? 
 
