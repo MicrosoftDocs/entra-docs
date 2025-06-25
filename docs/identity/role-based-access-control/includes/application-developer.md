@@ -8,7 +8,7 @@ ms.date: 06/25/2025
 ms.custom: include file
 ---
 
-[![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
 This is a [privileged role](../privileged-roles-permissions.md). Users in this role can create application registrations when the "Users can register applications" setting is set to No. This role also grants permission to consent on one's own behalf when the "Users can consent to apps accessing company data on their behalf" setting is set to No. Users assigned to this role are added as owners when creating new application registrations.
 

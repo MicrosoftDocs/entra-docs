@@ -8,7 +8,7 @@ ms.date: 06/25/2025
 ms.custom: include file
 ---
 
-[![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
 This is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage role assignments in Microsoft Entra ID, as well as within Microsoft Entra Privileged Identity Management. They can create and manage groups that can be assigned to Microsoft Entra roles. In addition, this role allows management of all aspects of Privileged Identity Management and administrative units.
 

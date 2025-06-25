@@ -10,7 +10,7 @@ ms.custom: include file
 
 ## Intune Administrator
 
-[![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
 This is a [privileged role](../privileged-roles-permissions.md). Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups. For more information, see [Role-based administration control (RBAC) with Microsoft Intune](/mem/intune/fundamentals/role-based-access-control).
 

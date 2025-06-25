@@ -8,14 +8,14 @@ ms.date: 06/25/2025
 ms.custom: include file
 ---
 
-[![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)
 
 This is a [privileged role](../privileged-roles-permissions.md). Assign the Privileged Authentication Administrator role to users who need to do the following:
 
 - Set or reset any authentication method (including passwords) for any user, including Global Administrators.
-- Delete or restore any users, including Global Administrators. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
+- Delete or restore any users, including Global Administrators. For more information, see [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Force users to re-register against existing non-password credential (such as MFA or FIDO2) and revoke **remember MFA on the device**, prompting for MFA on the next sign-in of all users.
-- Update sensitive properties for all users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
+- Update sensitive properties for all users. For more information, see [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Create and manage support tickets in Azure and the Microsoft 365 admin center.
 - Configure certificate authorities with a PKI-based trust store (preview)
 
@@ -23,7 +23,7 @@ Users with this role **cannot** do the following:
 
 - Cannot manage per-user MFA in the legacy MFA management portal.
 
-[!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
+[!INCLUDE [authentication-table-include](authentication-table-include.md)]
 
 > [!IMPORTANT]
 > Users with this role can change credentials for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the credentials of a user may mean the ability to assume that user's identity and permissions. For example:

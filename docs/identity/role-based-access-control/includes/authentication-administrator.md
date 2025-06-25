@@ -8,22 +8,22 @@ ms.date: 06/25/2025
 ms.custom: include file
 ---
 
-[![Privileged label icon.](/media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
+[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
 This is a [privileged role](../privileged-roles-permissions.md). Assign the Authentication Administrator role to users who need to do the following:
 
-- Set or reset any authentication method (including passwords) for non-administrators and some roles. For a list of the roles that an Authentication Administrator can read or update authentication methods, see [Who can reset passwords](privileged-roles-permissions.md#who-can-reset-passwords).
+- Set or reset any authentication method (including passwords) for non-administrators and some roles. For a list of the roles that an Authentication Administrator can read or update authentication methods, see [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords).
 - Require users who are non-administrators or assigned to some roles to re-register against existing non-password credentials (for example, MFA or FIDO), and can also revoke **remember MFA on the device**, which prompts for MFA on the next sign-in.
 - Manage MFA settings in the legacy MFA management portal.
-- Perform sensitive actions for some users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
+- Perform sensitive actions for some users. For more information, see [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Create and manage support tickets in Azure and the Microsoft 365 admin center.
 
 Users with this role **cannot** do the following:
 
-- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](groups-concept.md).
+- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](../groups-concept.md).
 - Cannot manage Hardware OATH tokens.
 
-[!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
+[!INCLUDE [authentication-table-include](authentication-table-include.md)]
 
 > [!IMPORTANT]
 > Users with this role can change credentials for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the credentials of a user may mean the ability to assume that user's identity and permissions. For example:
