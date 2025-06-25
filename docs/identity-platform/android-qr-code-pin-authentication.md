@@ -78,11 +78,12 @@ By default, QR code and PIN authentication prompts users for camera permission e
 This is configured by the Authentication Policy Administrator through an [app configuration policy for managed Android Enterprise devices](/mem/intune/apps/app-configuration-policies-use-android) on the Microsoft Authenticator App, setting `sdm_suppress_camera_consent` equal to `true`, similar to how the `preferred_auth_method` is configured.
 
 When this setting is enabled:
-- The app will not show the camera consent prompt if camera permissions are already granted at the OS level
-- Users will have a smoother authentication experience without repeated permission requests
-- The QR code scanning flow will be more streamlined for managed devices
 
-This configuration is particularly useful in enterprise environments where devices are managed and camera permissions can be pre-configured by IT administrators.
+- The app won't show the camera consent prompt if camera permissions are already granted at the OS level.
+- Users will have a smoother authentication experience without repeated permission requests.
+- The QR code scanning flow will be more streamlined for managed devices.
+
+This configuration is useful in enterprise environments where devices are managed and camera permissions can be preconfigured by IT administrators.
 
 
 ## Related content
