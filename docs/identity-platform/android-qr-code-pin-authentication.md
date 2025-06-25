@@ -69,6 +69,22 @@ mpca.getPreferredAuthConfiguration()
 
 The `getPreferredAuthConfiguration` method requires the Microsoft Authenticator app to be installed on the device. If the Microsoft Authenticator app isn't installed, the method returns `None`.
 
+## Suppress camera consent prompt
+
+By default, QR code and PIN authentication prompts users for camera permission every time they need to use the camera to scan a QR code. However, administrators can suppress this behavior and skip requesting camera permission.
+
+![Screenshot showing Android QR code and PIN authentication prompt](media/common/android-qr-pin-prompt.png)
+
+This is configured by the Authentication Policy Administrator through an [app configuration policy for managed Android Enterprise devices](/mem/intune/apps/app-configuration-policies-use-android) on the Microsoft Authenticator App, setting `sdm_suppress_camera_consent` equal to `true`, similar to how the `preferred_auth_method` is configured.
+
+When this setting is enabled:
+- The app will not show the camera consent prompt if camera permissions are already granted at the OS level
+- Users will have a smoother authentication experience without repeated permission requests
+- The QR code scanning flow will be more streamlined for managed devices
+
+This configuration is particularly useful in enterprise environments where devices are managed and camera permissions can be pre-configured by IT administrators.
+
+
 ## Related content
 
 - [Set up QR code authentication in iOS//macOS app](ios-qr-code-pin-authentication.md)
