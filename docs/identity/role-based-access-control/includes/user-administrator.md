@@ -22,8 +22,8 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the User
 | Create and manage user views |  |
 | Create and manage all groups |  |
 | Assign and read licenses for all users, including all administrators |  |
-| Reset passwords | [Who can reset passwords](privileged-roles-permissions.md#who-can-reset-passwords) |
-| Invalidate refresh tokens | [Who can reset passwords](privileged-roles-permissions.md#who-can-reset-passwords) |
+| Reset passwords | [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords) |
+| Invalidate refresh tokens | [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords) |
 | Update (FIDO) device keys |  |
 | Update password expiration policies |  |
 | Create and manage support tickets in Azure and the Microsoft 365 admin center |  |
@@ -32,7 +32,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the User
 Users with this role **cannot** do the following:
 
 - Cannot manage MFA.
-- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](groups-concept.md).
+- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](../groups-concept.md).
 - Cannot manage shared mailboxes.
 - Cannot modify security questions for password reset operation.
 
