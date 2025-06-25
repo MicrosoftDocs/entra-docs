@@ -39,7 +39,8 @@ The server can revoke refresh tokens because of a change in credentials, user ac
 | Password expires | Stays alive | Stays alive | Stays alive | Stays alive | Stays alive |
 | Password changed by user | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
 | User does SSPR | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
-| Admin resets password (incl. M365 admin center) | Revoked | Revoked | Stays alive | Revoked | Revoked |
+| Admin resets password in Azure portal | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
+| Admin resets password in Microsoft Entra admin center | Revoked | Revoked | Stays alive | Revoked | Revoked |
 | User revokes their refresh tokens | Revoked | Revoked | Revoked | Revoked | Revoked |
 | Admin revokes all refresh tokens for a user | Revoked | Revoked | Revoked | Revoked | Revoked |
 | Single sign-out | Revoked | Stays alive | Revoked | Stays alive | Stays alive |
