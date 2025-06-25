@@ -50,7 +50,7 @@ The following table compares the two authentication methods to help you decide t
 | **Go live effort** |  Low. Use it straight out of the box.  |High. The developer builds, owns, and maintains the authentication experience. |
 | **Maintenance effort** | Low. |High. For each feature that Microsoft releases, you need to update the SDK to use it.  |
 | **Security** | Most secure option. |Security responsibility is shared with developers, and best practices need to be followed. It's prone to phishing attacks. |
-| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).  |
+| **Supported languages and frameworks** | <ul><li>ASP.NET Core</li><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>JavaScript</li><li>React</li><li>Angular</li><li>Nodejs</li><li>Python</li><li>Java</li></ul>  |<ul><li>Android (Kotlin, Java)</li><li>iOS/macOS (Swift, Objective-C)</li><li>Web (JavaScript, React, Angular) </li></ul> For other languages and platforms, you can use our [native authentication API](reference-native-authentication-api.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).  |
 
 
 ## Feature availability
@@ -105,8 +105,17 @@ For more information on native authentication samples and tutorials, see the fol
 
 If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](reference-native-authentication-api.md).
 
+For building web application using native authentication, please check following sample apps and tutorials.
+
+| Language/<br/>Platform | Code sample guide | Build and integrate guide |
+| ----------- | ----------- |----------- |
+|React (Next.js) | &#8226; [Sign in users](/entra/external-id/customers/quickstart-sign-in-users-react-native-auth-msal-js) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-2-single-page-app-react-msal-js-sign-up.md)|
+|Angular | &#8226; [Sign in users](/entra/external-id/customers/quickstart-sign-in-users-angular-native-auth-msal-js) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-2-single-page-app-angular-msal-js-sign-up)|
+
 ## Related content 
 
 - [Android native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app).
 - [iOS native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app).
+- [Native authentication in React web applications tutorials](/entra/external-id/customers/quickstart-sign-in-users-react-native-auth-msal-js)
+- [Native authentication in Angular web applications tutorials](/entra/external-id/customers/quickstart-sign-in-users-angular-native-auth-msal-js)
 - [Native authentication API documentation](reference-native-authentication-api.md).
