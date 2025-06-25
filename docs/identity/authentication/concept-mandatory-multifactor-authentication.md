@@ -230,7 +230,7 @@ If you select **Postpone MFA**, the date of MFA enforcement will be one month in
 You can separately request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). To postpone Phase 2 MFA enforcement, choose another start date, and click **Apply**. 
 
 >[!NOTE]
-> If you postpone the start of Phase 1, the start of Phase 2 is also postponed to the same. You can choose a later start date for Phase 2. 
+> If you postpone the start of Phase 1, the start of Phase 2 is also postponed to the same date. You can choose a later start date for Phase 2. 
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone-phase-two.png" alt-text="Screenshot of how to postpone mandatory MFA for phase two."
 
