@@ -14,20 +14,35 @@ ms.reviewer: kerenSemel
 ---
 
 # Application usage analytics overview
-Application usage analytics gives IT admins actionable insights into their organization's cloud application use. By analyzing traffic patterns, app categories, risk scores, and user activity, admins can identify shadow IT, generative AI apps, and potential security or compliance risks. This feature helps organizations enhance visibility, improve security posture, and optimize app use across their environment.
+Application usage analytics gives IT admins actionable insights into their organization's application use by analyzing traffic patterns, data usage, and which users are accessing the app. With these analytics, admins can identify shadow IT, generative AI apps, and potential security or compliance risks. Usage analytics help organizations enhance visibility, improve their security posture, and optimize app use across their environment.   
 
+## Insights and Analytics dashboard
+The **Insights and Analytics** dashboard includes three widgets:   
+
+### Applications count 
+This widget lists the **Total cloud applications**, the **Total private applications**, and the number of **New discovered segments** that were accessed or used within the selected time. For more information about the discovered segments, select the **View details** button to open the **Application discovery** page.   
+:::image type="content" source="media/concept-application-usage-analytics/[].png" alt-text="Screenshot of [].":::   
+ 
+### Usage distribution
+This widget shows the distribution of application usage according to application type, with one color for cloud and the other for private applications for the selected time range. You can aggregate the view by **Transactions**, **Users**, **Devices**, **Bytes sent**, or **Bytes received**.   
+:::image type="content" source="media/concept-application-usage-analytics/[].png" alt-text="Screenshot of [].":::   
+ 
+### Application usage trends
+This widget shows application usage over time, with one trend for cloud and the other for private applications. You can aggregate the view by **Transactions**, **Users**, **Devices**, **Bytes sent**, or **Bytes received**.   
+:::image type="content" source="media/concept-application-usage-analytics/[].png" alt-text="Screenshot of [].":::   
+ 
 ## Cloud application analytics
 Cloud application analytics give admins visibility and insights into the cloud applications their organization uses, including generative AI applications. These insights include the application category, risk score, number of transactions, traffic (bytes sent and received), and the users accessing the applications.   
 
-This information helps admins identify generative AI applications, shadow AI applications, and shadow IT. Insights from the analytics help admins check the security and compliance status.   
+This information helps admins identify generative AI applications, shadow AI applications, and shadow IT. Insights from the analytics help admins understand the security and compliance status.   
 
 ### Key capabilities
-Key capabilities of cloud application analytics include:
+With Cloud application analytics, you can:
 <!-- The images in this section have been modified to use approved, fictitious company names from https://microsoft.sharepoint.com/:b:/r/sites/CELAWeb-Copyrights-Trademarks-And-Patents/Shared%20Documents/Approved%20Fictitious%20Company%20Names%20and%20Domain%20Names%20-%20Oct%202024.pdf?csf=1&web=1&e=2JKgvG. -->
-- Identify the cloud applications that users access (using the Microsoft Defender for Cloud Apps Cloud app catalog), for both internet and Microsoft 365 traffic. Details include **Name**, **Category**, **Risk score**, and the number of **Users**.  
+- Identify the cloud applications that users access (using the Microsoft Defender for Cloud Apps Cloud app catalog), for both internet and Microsoft 365 traffic. Details include **Name**, **Category**, **Risk score**, the number of **Users**, **Sent bytes**, **Received bytes**, **Last access** date, and **First access** date.  
 :::image type="content" source="media/concept-application-usage-analytics/application-discovery-cloud.png" alt-text="Screenshot of a list of discovered cloud applications accessed by users.":::
 
-- Identify the generative AI applications that users access, for both internet and Microsoft 365 traffic.   
+- Use the **Generative AI apps only** toggle to identify the generative AI applications that users access, for both internet and Microsoft 365 traffic.   
 :::image type="content" source="media/concept-application-usage-analytics/application-discovery-generative-ai.png" alt-text="Screenshot of a list of discovered generative AI applications accessed by users.":::
 
 - The traffic log includes **Cloud application** information, including application name, category, risk score, security score, legal score, and general score.
