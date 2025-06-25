@@ -5,7 +5,7 @@ description: Reference table that maps risk detections to risk event types, and 
 ms.service: entra-id-protection
 
 ms.topic: reference
-ms.date: 06/05/2025
+ms.date: 06/25/2025
 
 author: shlipsey3
 ms.author: sarahlipsey

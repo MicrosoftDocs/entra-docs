@@ -5,7 +5,7 @@ description: Learn about risk detections and risk levels, including the differen
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 06/11/2025
+ms.date: 06/25/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -25,7 +25,7 @@ User risk detections might flag a legitimate user account as at risk, when a pot
 
 ## Risk levels
 
-ID Protection categorizes risk into three tiers: low, medium, and high. Risk levels are calculated by our machine learning algorithms and represent how confident Microsoft is that an unauthorized entity has obtained access.
+ID Protection categorizes risk into three tiers: low, medium, and high. Risk levels are calculated by our machine learning algorithms and represent how confident Microsoft is that one or more of the user's credentials are known by an unauthorized entity.
 
 Detections can fire at more than one risk level, depending on the confidence level. For example, [Unfamiliar sign-in properties](reference-risk-event-types.md#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the level of familiarity with the sign-in properties. Other detections, like [Leaked Credentials](reference-risk-event-types.md#leaked-credentials) and [Verified Threat Actor IP](reference-risk-event-types.md#verified-threat-actor-ip) are always delivered as high risk because we found proof of the leaked credential or the threat actor.
 
@@ -44,11 +44,11 @@ A risk detection with risk level of:
 
 ## Real-time and offline detections
 
-ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that users can self-remediate during sign-in and admins can can quickly investigate the potential compromise. Conditional Access policies triggered during sign-in can stop a bad actor before they gain access to the account.
+ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that users can self-remediate during sign-in and admins can quickly investigate the potential compromise. Conditional Access policies triggered during sign-in can stop a bad actor before they gain access to the account.
 
 Detections calculated offline can provide more insight into how the threat actor gained access to the account and the effect on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in compromise detection.
 
-Detections triggered in real-time take 5-10 minutes to surface details in the reports. Offline detections take up to 48 hours to surface in the reports, as it takes time to evaluate properties of the potential risk. It's important to remember that risk levels can change, because many risk detections are calculated offline. An offline detection can increase the risk level or a false positive can decrease the risk level.
+Detections triggered in real-time take 5-10 minutes to surface details in the reports. Offline detections take up to 48 hours to surface in the reports, as it takes time to evaluate properties of the potential risk. It's important to remember that risk levels can change, because some risk detections are calculated offline after sign-in.
 
 | Detection type | Sign-in risk | User risk |
 |----------------|--------------|-----------|
@@ -56,7 +56,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 | **Offline**        | Sign-in risk is identified after sign-in. If not remediated this risk might escalate into user risk if more risks are detected and aggregated into user risk. | User is deemed risky after sign-in. If Conditional Access policy is configured, the user is blocked until they perform self-service password reset the next time they authenticate. |
 
 > [!NOTE]
-> Our system might determine that the risk event that contributed to user risk score was either: 
+> Our system might determine that the risk event that contributed to the user risk score was either: 
 > 
 > - A false positive, or
 > - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) (by either completing multifactor authentication or a secure password change).
@@ -74,7 +74,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/location-condition.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
 
 > [!NOTE]
-> Looking for the **Risk detections mapped to riskEventType** table? It's moved to [**Risk detection and event types**](reference-risk-event-types.md).
+> Looking for the **Risk detections mapped to riskEventType** table? It moved to the new [**Risk detection and event types**](reference-risk-event-types.md) article.
 
 ## Related content
 
