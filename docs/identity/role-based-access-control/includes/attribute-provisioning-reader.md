@@ -15,7 +15,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the Attr
 - Read the attribute mappings for custom security attributes when provisioning in an application.
 - Read the provisioning and auditing logs for custom security attributes when provisioning in an application.
 
-Users with this role cannot read audit logs for other events. This role must be used in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
+Users with this role can't read audit logs for other events. This role must be used with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
 
 [Learn more](../../app-provisioning/provision-custom-security-attributes.md)
 

@@ -14,9 +14,9 @@ This is a [privileged role](../privileged-roles-permissions.md). Assign the Auth
 
 - Create and manage all aspects of custom authentication extensions.
 
-Users with this role **cannot** do the following:
+Users with this role **can't** do the following:
 
-- Cannot assign custom authentication extensions to applications to modify the authentication experiences, and cannot consent to application permissions or create app registrations associated with the custom authentication extension. Instead, you must use the Application Administrator, Application Developer, or Cloud Application Administrator roles.
+- Can't assign custom authentication extensions to applications to modify the authentication experiences, and can't consent to application permissions or create app registrations associated with the custom authentication extension. Instead, you must use the Application Administrator, Application Developer, or Cloud Application Administrator roles.
 
 A custom authentication extension is an API endpoint created by a developer for authentication events and is registered in Microsoft Entra ID. Application administrators and application owners can use custom authentication extensions to customize their application's authentication experiences, such as sign in and sign up, or password reset.
 

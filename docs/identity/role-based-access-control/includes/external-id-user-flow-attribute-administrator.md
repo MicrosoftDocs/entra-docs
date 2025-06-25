@@ -8,7 +8,7 @@ ms.date: 06/25/2025
 ms.custom: include file
 ---
 
-Users with this role add or delete custom attributes available to all user flows in the Microsoft Entra organization. As such, users with this role can change or add new elements to the end-user schema and impact the behavior of all user flows and indirectly result in changes to what data may be asked of end users and ultimately sent as claims to applications. This role cannot edit user flows.
+Users with this role add or delete custom attributes available to all user flows in the Microsoft Entra organization. As such, users with this role can change or add new elements to the end-user schema and impact the behavior of all user flows, and indirectly result in changes to what data may be asked of end users and ultimately sent as claims to applications. This role can't edit user flows.
 
 
 
