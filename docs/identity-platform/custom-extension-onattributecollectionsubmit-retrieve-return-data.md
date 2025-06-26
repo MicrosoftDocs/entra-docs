@@ -52,10 +52,7 @@ Content-Type: application/json
 [Request payload]
 ```
 
-
 The following JSON document provides an example of a request payload:
-
-#### JSON
 
 ```json
 {
