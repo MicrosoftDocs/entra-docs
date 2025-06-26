@@ -523,7 +523,7 @@ If you're considering using tenant restrictions for Teams, keep the following po
 - Tenant restrictions prevent users from using an externally issued identity to join Teams meetings.
 
 > [!NOTE]
-> The Microsoft Teams app has a dependency on SharePoint Online and Exchange Online apps. We recommend setting the tenant restrictions v2 policy on the Office 365 app instead of setting the policy on Microsoft Teams services, SharePoint Online, or Exchange Online separately. If you allow or block one of the applications (SharePoint Online, Exchange Online, and so on) that are part of Office 365, it will also affect apps like Microsoft Teams. Similarly, if the Microsoft Teams app is allowed or blocked, SharePoint Online and Exchange Online within the Teams app will be affected.
+> The Microsoft Teams app has a dependency on SharePoint Online and Exchange Online apps. We recommend setting the tenant restrictions v2 policy on the Office 365 app instead of setting the policy on Microsoft Teams services, SharePoint Online, or Exchange Online separately. If you allow or block one of the applications (SharePoint Online, Exchange Online, and so on) that are part of Office 365, it will also affect apps like Microsoft Teams. Similarly, if the Microsoft Teams app is allowed or blocked, SharePoint Online and Exchange Online within the Teams app will be affected. Due to a known issue blocking Office 365 will not block Teams Desktop app. As a workaround, tenant admins should block by adding Teams desktop app with app ID 8ec6bc83-69c8-4392-8f08-b3c986009232 along with Office 365 app.
 
 ### Pure anonymous meeting join
 
