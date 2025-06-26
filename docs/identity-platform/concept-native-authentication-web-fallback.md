@@ -52,4 +52,4 @@ Learn how to support web fallback in:
 - [Tutorial: Support web fallback in Android app](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback)
 - [Tutorial: Support web fallback in iOS/macOS app](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback)
 - [Tutorial: Support web fallback in iOS/macOS app](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback)
-- [Tutorial: Support web fallback using browser-delegated authentication in web applications](native-authentication-single-page-app-handle-web-fallback.md)
+- [Tutorial: Support web fallback in SPA that uses native authentication JavaScript SDK](native-authentication-single-page-app-handle-web-fallback.md)
