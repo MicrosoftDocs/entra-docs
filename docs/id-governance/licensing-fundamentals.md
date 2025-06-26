@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 06/11/2025
+ms.date: 06/26/2025
 ms.author: owinfrey
 ---
 
