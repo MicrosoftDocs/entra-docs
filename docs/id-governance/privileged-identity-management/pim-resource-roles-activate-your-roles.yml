@@ -67,11 +67,14 @@ procedureSection:
           
           **To reduce the scope of activation:**
           
+
           1. Go to the **Scope** tab to reduce the scope of activation.
           2. Click **Select scope** to select the scope.
           3. Use the dropdown provided to scope the search to a specific resource.
           4. The reduced scoped resources should be shown in **Selected resources** before activation and should be selected from the grid provided. (The dropdown selection does not define the reduced scope.)
-          5. If your eligibility is at the management group level, the dropdown will show all direct child resources (management group and subscription). You can select either a management group or subscription from the grid shown, or further scope down the search by selecting the appropriate management group or subscription.
+
+          >[!NOTE]
+          >If your eligibility is at the management group level, the dropdown will show all direct child resources (management group and subscription). You can select either a management group or subscription from the grid shown, or further scope down the search by selecting the appropriate management group or subscription.
 
           ![Screenshot of activate - Resource filter pane to specify scope.](./media/pim-resource-roles-activate-your-roles/resources-my-roles-resource-filter.png)
       - |
