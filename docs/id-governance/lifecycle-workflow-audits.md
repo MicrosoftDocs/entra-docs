@@ -1,6 +1,6 @@
 ---
 title: Auditing Lifecycle Workflows
-description: Information about audit logs with Lifecycle workflows
+description: Information about audit logs with Lifecycle Workflows
 author: owinfreyATL
 ms.author: owinfrey
 manager: dougeby
