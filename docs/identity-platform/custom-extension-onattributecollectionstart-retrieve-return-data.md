@@ -145,8 +145,6 @@ Content-Type: application/json
 In the HTTP response, provide one of following JSON documents. The **continueWithDefaultBehavior** action specifies that your external REST API is returning a continuation response.
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionStartResponseData",
@@ -162,8 +160,6 @@ HTTP/1.1 200 OK
 The **setPrefillValues** action specifies that the external REST API is returning a response to prefill attributes with default values. Your REST API can't add new attributes. Any extra attributes that are returned but that aren't part of the attribute collection are ignored.
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionStartResponseData",
@@ -183,8 +179,6 @@ HTTP/1.1 200 OK
 The **showBlockPage** action specifies that your external REST API is returning a blocking response.
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionStartResponseData",
