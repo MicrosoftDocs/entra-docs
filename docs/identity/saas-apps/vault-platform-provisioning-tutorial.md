@@ -137,6 +137,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
    
+>[!NOTE]
+>The attribute "externalID" is only sent to Vault on object creation and will not be updated if changed in Entra ID.
+
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Vault Platform, change the **Provisioning Status** to **On** in the **Settings** section.
