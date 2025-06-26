@@ -4,7 +4,7 @@ description: Reference documentation for a custom authentication extension that 
 author: msmimart
 manager: CelesteDG
 ms.author: mimart 
-ms.date: 04/28/2025
+ms.date: 06/26/2025
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -42,13 +42,22 @@ The request to your REST API is in the format shown in the following example. In
 
 The request contains the user attributes that are selected in the user flow for collection during self-service sign-up. Included are built-in attributes (for example, givenName and companyName) and [custom attributes already defined](~/external-id/customers/how-to-define-custom-attributes.md) (for example, universityGroups, graduationYear, and onMailingList). Your REST API can't add new attributes.
 
-The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password isn't sent. For attributes with multiple values, the values are sent as a comma-delimited string.
+The request also contains user identities, including the user's email if it was used as a verified credential to sign up. The password isn't sent. For attributes with multiple values, the values are sent as a comma-delimited string. The following HTTP request demonstrates how Microsoft Entra invokes your REST API. 
+
+```http
+POST https://example.azureWebsites.net/api/functionName
+
+Content-Type: application/json
+
+[Request payload]
+```
+
+
+The following JSON document provides an example of a request payload:
 
 #### JSON
 
 ```json
-POST https://exampleAzureFunction.azureWebsites.net/api/functionName
-
 {
   "type": "microsoft.graph.authenticationEvent.attributeCollectionSubmit",
   "source": "/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/applications/<resourceAppguid>",
@@ -76,7 +85,7 @@ POST https://exampleAzureFunction.azureWebsites.net/api/functionName
             "appId": "<Your Test Application App Id>",
             "appDisplayName": "My Test application",
             "displayName": "My Test application"
-        },
+        }
     },
     "userSignUpInfo": {
       "attributes": {
@@ -125,11 +134,17 @@ Microsoft Entra ID expects a REST API response in the following format. The resp
 - If the request contains an attribute `graduationYear` with an `@odata.type` of `int64DirectoryAttributeValue`, the response should include a `graduationYear` attribute with an integer value, such as `2010`.
 - If the request contains an attribute with multiple values specified as a comma-delimited string, the response should contain the values in a comma-delimited string.
 
+```http
+HTTP/1.1 200 OK
+
+Content-Type: application/json
+
+[JSON document]
+```
+
 The **continueWithDefaultBehavior** action specifies that your external REST API is returning a continuation response.
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",
@@ -146,8 +161,6 @@ The **modifyAttributeValues** action specifies that your external REST API retur
 
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",
@@ -167,8 +180,6 @@ HTTP/1.1 200 OK
 The **showBlockPage** action specifies that your external REST API is returning a blocking response.
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",
@@ -186,8 +197,6 @@ HTTP/1.1 200 OK
 The **showValidationError** action specifies that your REST API is returning a validation error and an appropriate message and status code.
 
 ```json
-HTTP/1.1 200 OK
-
 {
   "data": {
     "@odata.type": "microsoft.graph.onAttributeCollectionSubmitResponseData",
