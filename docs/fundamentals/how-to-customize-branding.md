@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 06/23/2025
+ms.date: 06/26/2025
 ms.author: sarahlipsey
 ms.reviewer: mkokkalera
 ms.custom: sfi-image-nochange
@@ -200,7 +200,9 @@ There are some scenarios for you to consider when you customize the sign-in page
 
 The default background image behind the sign-in box is changing later this year. The change is only to the image, requires no action, and doesn't affect any functionality. We know that the default background image is often used for training and documentation to demonstrate the sign-in experience. Providing the updated image allows you to update your documentation so you can demonstrate the exact sign-in experience that your users will see. For details on the upcoming change, see [Microsoft Entra releases and announcements](../fundamentals/whats-new.md).
 
-:::image type="content" source="media/how-to-customize-branding/updated-background-image.png" alt-text="Screenshot of the new default background image.":::
+:::image type="content" source="media/how-to-customize-branding/background-image-update.png" alt-text="Screenshot of the current background on the left and the new image on the right." lightbox="media/how-to-customize-branding/background-image-update-expanded.png":::
+
+The current background image is on the left and the new background image is on the right.
 
 ### Software as a Service (SaaS) and multitenant applications
 
