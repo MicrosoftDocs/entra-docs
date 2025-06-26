@@ -141,7 +141,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21992](../includes/secure-recommendations/21992.md)]
 
-### Creating new applications and service principles is restricted to privileged users 
+### Creating new applications and service principals is restricted to privileged users 
 
 [!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
 
