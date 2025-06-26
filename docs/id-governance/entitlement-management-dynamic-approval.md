@@ -74,7 +74,7 @@ Once you've created the custom extension and logic app, you can reference the cu
 
 Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**.
 
-    :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
+  :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
 
 ## Set logic app assigned identity and assign its role
 
