@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 06/25/2025
+ms.date: 06/24/2025
 ms.custom: template-concept, sfi-image-nochange
 ---
 
