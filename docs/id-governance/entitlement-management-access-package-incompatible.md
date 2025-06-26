@@ -134,7 +134,7 @@ Follow these steps to view the list of users who have assignments to two access 
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
-1. Open the access package where you are configuring incompatible assignments.
+1. Open the access package where you're configuring incompatible assignments.
 
 1. In the left menu, select **Assignments**.
 
