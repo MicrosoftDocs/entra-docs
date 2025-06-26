@@ -28,7 +28,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Sign up users into a React single-page app by using native authentication JavaScript SDK ](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md).  
+- Complete the steps in [Tutorial: Sign up users into a React single-page app by using native authentication JavaScript SDK ](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md).
 
 ### Create the CORS proxy server
 

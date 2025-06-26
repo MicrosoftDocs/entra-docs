@@ -115,7 +115,7 @@ In the code, find the placeholder:
 
 This app collects user details such as given name, username (email), and password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
 
-1. Create a folder called *src/app/sign-up* in the src folder.
+1. Create a folder called *src/app/sign-up* in the *src* folder.
 
 1. Create *sign-up/components/InitialFormWithPassword.tsx* file, then paste the code from [sign-up/components/InitialFormWithPassword.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/InitialFormWithPassword.tsx). This component displays a form that collects user sign-up details. 
 

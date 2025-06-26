@@ -201,6 +201,8 @@
                     href: tutorial-native-authentication-single-page-app-react-sdk-sign-in.md
                   - name: Reset password
                     href: tutorial-native-authentication-single-page-app-react-sdk-reset-password.md
+                  - name: Support web fallback
+                    href: native-authentication-single-page-app-javascript-sdk-support-web-fallback.md
         - name: Angular
           items:
           - name: Prepare your app
