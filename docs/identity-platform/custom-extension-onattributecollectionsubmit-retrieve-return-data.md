@@ -129,10 +129,12 @@ The following JSON document provides an example of a request payload:
 
 ### Response from the external REST API
 
-Microsoft Entra ID expects a REST API response in the following format. The response value types match the request value types, for example:
+The response value types match the request value types, for example:
 
 - If the request contains an attribute `graduationYear` with an `@odata.type` of `int64DirectoryAttributeValue`, the response should include a `graduationYear` attribute with an integer value, such as `2010`.
 - If the request contains an attribute with multiple values specified as a comma-delimited string, the response should contain the values in a comma-delimited string.
+
+Microsoft Entra ID expects a REST API response in the following format. 
 
 ```http
 HTTP/1.1 200 OK
@@ -142,7 +144,7 @@ Content-Type: application/json
 [JSON document]
 ```
 
-The **continueWithDefaultBehavior** action specifies that your external REST API is returning a continuation response.
+In the HTTP response, provide one of following JSON documents. The **continueWithDefaultBehavior** action specifies that your external REST API is returning a continuation response.
 
 ```json
 {
