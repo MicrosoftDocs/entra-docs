@@ -142,9 +142,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |name.familyName|String||
    |externalId|String||
    |displayName|String||
-   |addresses.work|String||
-   |phoneNumbers.work|String||
-   |phoneNumbers.mobile|String||
+   |addresses[type eq "work"].formatted|String||
+   |phoneNumbers[type eq "work"].value|String||
+   |phoneNumbers[type eq "mobile"].value|String||
    |userType|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
