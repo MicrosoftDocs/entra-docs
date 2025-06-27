@@ -70,8 +70,13 @@ procedureSection:
 
           1. Go to the **Scope** tab to reduce the scope of activation.
           2. Click **Select scope** to select the scope.
+          
+          :::image type="content" source="./media/pim-resource-roles-activate-your-roles/activate-billing-reader-select-scope.png" alt-text="Screenshot of the Scope tab in the Activate - Billing Reader pane, showing the 'Select scope' button and a management group listed under Selected resources. This helps users identify where to click to begin scoping their activation request.":::
+
           3. Use the dropdown provided to scope the search to a specific resource.
           4. The reduced scoped resources are shown in **Selected resources** before activation and should be selected from the grid provided. The dropdown selection does not define the reduced scope.
+
+          :::image type="content" source="./media/pim-resource-roles-activate-your-roles/active-billing-reader-set-scope.png" alt-text="Screenshot showing the process of setting the scope for activation, with a management group selected in the grid. This image demonstrates how to confirm the correct resource is selected before proceeding with activation.":::
 
           >[!NOTE]
           >If your eligibility is at the management group level, the dropdown will show all direct child resources (management group and subscription). You can select either a management group or subscription from the grid shown, or further scope down the search by selecting the appropriate management group or subscription.
