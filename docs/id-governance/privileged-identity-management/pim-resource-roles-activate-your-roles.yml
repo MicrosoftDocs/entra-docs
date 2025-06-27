@@ -61,7 +61,7 @@ procedureSection:
 
           ![Screenshot of screen to provide security verification such as a PIN code.](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
       - |
-         It's a best practice to only request access to the resources you need. If you want to specify a reduced scope, select **Scope** to open the Resource filter pane.
+         It's a best practice to only request access to the resources you need. If you want to specify a reduced scope, select the **Scope tab**.
 
           1. Go to the **Scope** tab to reduce the scope of activation.
           2. Click **Select scope** to select the scope.
