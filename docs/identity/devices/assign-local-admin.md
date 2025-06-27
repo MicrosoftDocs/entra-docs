@@ -4,7 +4,7 @@ description: Learn how to assign Azure roles to the local administrators group o
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
 manager: dougeby
