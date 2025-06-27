@@ -206,10 +206,6 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 
 [!INCLUDE [authentication-policy-administrator](includes/authentication-policy-administrator.md)]
 
-## Microsoft Entra Joined Device Local Administrator
-
-[!INCLUDE [microsoft-entra-joined-device-local-administrator](includes/microsoft-entra-joined-device-local-administrator.md)]
-
 ## Azure DevOps Administrator
 
 [!INCLUDE [azure-devops-administrator](includes/azure-devops-administrator.md)]
@@ -409,6 +405,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Microsoft 365 Migration Administrator
 
 [!INCLUDE [microsoft-365-migration-administrator](includes/microsoft-365-migration-administrator.md)]
+
+## Microsoft Entra Joined Device Local Administrator
+
+[!INCLUDE [microsoft-entra-joined-device-local-administrator](includes/microsoft-entra-joined-device-local-administrator.md)]
 
 ## Microsoft Graph Data Connect Administrator
 

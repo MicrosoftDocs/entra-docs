@@ -46,7 +46,7 @@ This role also grants the ability to consent for delegated permissions and appli
 > | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
 > | microsoft.directory/applications/basic/update | Update basic properties for applications |
 > | microsoft.directory/applications/create | Create all types of applications |
-> | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/applications/delete | Delete all types of applications |
 > | microsoft.directory/applications/extensionProperties/update | Update extension properties on applications |
 > | microsoft.directory/applications/notes/update | Update notes of applications |
@@ -64,17 +64,17 @@ This role also grants the ability to consent for delegated permissions and appli
 > | microsoft.directory/connectorGroups/delete | Delete application proxy connector groups |
 > | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
 > | microsoft.directory/connectors/create | Create application proxy connectors |
-> | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/deletedItems.applications/delete | Permanently delete applications, which can no longer be restored |
 > | microsoft.directory/deletedItems.applications/restore | Restore soft deleted applications to original state |
-> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/servicePrincipals/audience/update | Update audience properties on service principals |
 > | microsoft.directory/servicePrincipals/authentication/update | Update authentication properties on service principals |
 > | microsoft.directory/servicePrincipals/basic/update | Update basic properties on service principals |
 > | microsoft.directory/servicePrincipals/create | Create service principals |
-> | microsoft.directory/servicePrincipals/credentials/update | Update credentials of service principals<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/credentials/update | Update credentials of service principals<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/servicePrincipals/delete | Delete service principals |
 > | microsoft.directory/servicePrincipals/disable | Disable service principals |
 > | microsoft.directory/servicePrincipals/enable | Enable service principals |

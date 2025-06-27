@@ -28,6 +28,6 @@ Users with this role cannot read audit logs for other events. This role must be 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes in the synchronization schema<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update | Update custom security attribute mappings in the synchronization schema<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes in the synchronization schema<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update | Update custom security attribute mappings in the synchronization schema<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 

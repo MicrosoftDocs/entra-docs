@@ -36,8 +36,8 @@ This is a [privileged role](../privileged-roles-permissions.md). Users in this r
 > | microsoft.directory/groupSettings/basic/update | Update basic properties on group settings |
 > | microsoft.directory/groupSettings/create | Create group settings |
 > | microsoft.directory/groupSettings/delete | Delete group settings |
-> | microsoft.directory/oAuth2PermissionGrants/basic/update | Update OAuth 2.0 permission grants<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/oAuth2PermissionGrants/create | Create OAuth 2.0 permission grants<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/oAuth2PermissionGrants/basic/update | Update OAuth 2.0 permission grants<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/oAuth2PermissionGrants/create | Create OAuth 2.0 permission grants<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/credentials/manage | Manage cloud tenant to cloud tenant application provisioning secrets and credentials. |
 > | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/jobs/manage | Start, restart, and pause cloud tenant to cloud tenant application provisioning synchronization jobs. |
@@ -50,14 +50,14 @@ This is a [privileged role](../privileged-roles-permissions.md). Users in this r
 > | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
 > | microsoft.directory/users/basic/update | Update basic properties on users |
-> | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/users/inviteGuest | Invite guest users |
 > | microsoft.directory/users/manager/update | Update manager for users |
 > | microsoft.directory/users/photo/update | Update photo of users |
 > | microsoft.directory/users/reprocessLicenseAssignment | Reprocess license assignments for users |
 > | microsoft.directory/users/sponsors/update | Update sponsors of users |
-> | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 

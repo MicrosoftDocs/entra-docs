@@ -18,6 +18,6 @@ This is a [privileged role](../privileged-roles-permissions.md). Users in this r
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/applications/createAsOwner | Create all types of applications, and creator is added as the first owner |
-> | microsoft.directory/oAuth2PermissionGrants/createAsOwner | Create OAuth 2.0 permission grants, with creator as the first owner<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/oAuth2PermissionGrants/createAsOwner | Create OAuth 2.0 permission grants, with creator as the first owner<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/servicePrincipals/createAsOwner | Create service principals, with creator as the first owner |
 
