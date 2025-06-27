@@ -34,13 +34,13 @@ API-driven provisioning is now generally available in US Gov cloud. With this ca
  
 ---
 
-### Public Preview - Conditional Access Overview Monitoring Tab to Retire
+### Deprecated - Conditional Access Overview Monitoring Tab to Retire
  
 **Type:** Deprecated  
 **Service category:** Conditional Access  
 **Product capability:** Identity Security & Protection  
  
-We're retiring the Monitoring tab on the Conditional Access Overview pane (Public Preview) in July 2025. This retirement is due to low usage and known data accuracy issues. Customers can continue to monitor Conditional Access policies using Insights & Reporting, per-policy impact reports, and Sign-in logs. For more information, see: [Policy impact](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact).
+We're retiring the Conditional Access Overview Monitoring Tab in the Microsoft Entra Admin Center starting July 18th and completing by August 1st. After this date, admins will no longer have access to this tab. We encourage customers to transition to Conditional Access Per-Policy Reporting and the Insights and Reporting Dashboard, both of which are more reliable, offer greater accuracy, and have received significantly better feedback from customers. Learn more about [Per-Policy Reporting](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact) and [Insights and Reporting](../identity/conditional-access/howto-conditional-access-insights-reporting.md).
  
 ---
  
