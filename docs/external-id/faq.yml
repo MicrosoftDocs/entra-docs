@@ -4,7 +4,7 @@ metadata:
   description: Get answers to frequently asked questions about Microsoft Entra B2B collaboration.
   ms.service: entra-external-id
   ms.topic: faq
-  ms.date: 04/24/2024
+  ms.date: 06/27/2025
   ms.author: cmulligan
   author: csmulligan
   manager: dougeby
@@ -18,7 +18,10 @@ summary: |
   These frequently asked questions (FAQs) about Microsoft Entra business-to-business (B2B) collaboration are periodically updated to include new topics.
 
   > [!IMPORTANT]
-  > Starting July 2025, Microsoft will update the sign-in process for guest users in Entra ID B2B collaboration. Instead of signing in directly to your tenant, guests will enter their email on your sign-in screen, then be redirected to their own organization’s login page for authentication. This update, rolling out through the end of 2025, improves clarity and usability during cross-tenant sign-in. No admin action is required now. 
+  > Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025.
+  With this update, guest users initially access your organization's branded sign-in page. After entering their email address and selecting **Next**, they are redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process. 
+  This update is designed to make sign-in less confusing for guests from other organizations.
+  No administrative action is required before the rollout. We recommend reviewing your current B2B collaboration configuration to assess any potential impact.
     
 sections:
   - name: General
