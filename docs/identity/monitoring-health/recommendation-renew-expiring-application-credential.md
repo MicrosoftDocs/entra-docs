@@ -2,7 +2,7 @@
 title: Recommendation to renew expiring application credentials
 description: Learn how the Microsoft Entra recommendation to renew expiring application credentials works and why it's important.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
