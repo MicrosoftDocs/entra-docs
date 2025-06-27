@@ -1,11 +1,10 @@
-<!-- filepath: c:\Users\ombon\Downloads\role include files\microsoft-entra-joined-device-local-administrator.md -->
 ---
 title: Microsoft Entra Joined Device Local Administrator
 description: Microsoft Entra Joined Device Local Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 06/25/2025
+ms.date: 06/27/2025
 ms.custom: include file
 ---
 

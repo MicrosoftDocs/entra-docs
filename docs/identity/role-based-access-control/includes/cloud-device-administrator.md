@@ -4,7 +4,7 @@ description: role
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 06/25/2025
+ms.date: 06/27/2025
 ms.custom: include file
 ---
 
@@ -20,13 +20,13 @@ This is a [privileged role](../privileged-roles-permissions.md). Users in this r
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
-> | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deletedItems.devices/delete | Permanently delete devices, which can no longer be restored |
 > | microsoft.directory/deletedItems.devices/restore | Restore soft deleted devices to original state |
 > | microsoft.directory/deviceLocalCredentials/password/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, including the password |
-> | microsoft.directory/deviceManagementPolicies/basic/update | Update basic properties on mobile device management and mobile app management policies<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/deviceManagementPolicies/basic/update | Update basic properties on mobile device management and mobile app management policies<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
-> | microsoft.directory/deviceRegistrationPolicy/basic/update | Update basic properties on device registration policies<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/deviceRegistrationPolicy/basic/update | Update basic properties on device registration policies<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
 > | microsoft.directory/devices/delete | Delete devices from Microsoft Entra ID |
 > | microsoft.directory/devices/disable | Disable devices in Microsoft Entra ID |

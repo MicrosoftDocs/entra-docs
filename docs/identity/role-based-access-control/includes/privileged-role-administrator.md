@@ -4,7 +4,7 @@ description: Privileged Role Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 06/25/2025
+ms.date: 06/27/2025
 ms.custom: include file
 ---
 
@@ -27,7 +27,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/create | Create access reviews for membership in groups that are assignable to Microsoft Entra roles |
 > | microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/delete | Delete access reviews for membership in groups that are assignable to Microsoft Entra roles |
 > | microsoft.directory/administrativeUnits/allProperties/allTasks | Create and manage administrative units (including members) |
-> | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/directoryRoles/allProperties/allTasks | Create and delete directory roles, and read and update all properties |
 > | microsoft.directory/groupsAssignableToRoles/allProperties/update | Update role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/assignLicense | Assign a license to role-assignable groups |
@@ -35,7 +35,7 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/groupsAssignableToRoles/delete | Delete role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment | Reprocess license assignments to role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/restore | Restore role-assignable groups |
-> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
+> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/permissionGrantPolicies/allProperties/read | Read all properties of permission grant policies |
 > | microsoft.directory/permissionGrantPolicies/allProperties/update | Update all properties of permission grant policies |
 > | microsoft.directory/permissionGrantPolicies/create | Create permission grant policies |
