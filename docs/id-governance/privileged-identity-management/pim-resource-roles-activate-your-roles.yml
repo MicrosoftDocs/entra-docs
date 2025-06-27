@@ -6,7 +6,7 @@ metadata:
   ms.author: barclayn
   manager: pmwongera
   ms.reviewer: rianakarim
-  ms.date: 06/26/2025
+  ms.date: 06/27/2025
   ms.service: entra-id-governance
   ms.subservice: privileged-identity-management
   ms.topic: how-to
@@ -64,8 +64,6 @@ procedureSection:
         If you want to specify a reduced scope, select **Scope** to open the Resource filter pane.
 
           It's a best practice to only request access to the resources you need. On the Resource filter pane, you can specify the resource groups or resources that you need access to.
-          
-          **To reduce the scope of activation:**
           
 
           1. Go to the **Scope** tab to reduce the scope of activation.
