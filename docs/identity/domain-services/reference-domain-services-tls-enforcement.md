@@ -8,7 +8,7 @@ ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 03/20/2025
+ms.date: 06/29/2025
 ms.author: justinha
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -27,13 +27,11 @@ Domain Services will use the following retirement path for TLS versions 1.0 and 
 
 Use the Azure portal:
 
-1.	In the Azure portal, go to the Domain Services instance. 
-2.	Go to the Security settings.
-3.	If the TLS 1.2 only mode is set to **Disable**, the instance enables TLS versions 1.0 and 1.1.
-4.	Set TLS 1.2 only mode to **Enable**, and then click **Save**.
+1.	In the Azure portal, search for **Domain Services**, and select your Domain Services instance. 
+2.	Select **Security settings**.
+3.	If **TLS 1.2 Only Mode** is set to **Disable**, the instance enables TLS versions 1.0 and 1.1. Set **TLS 1.2 Only Mode** to **Enable**, and then click **Save**.
 
 This may take about 10 minutes to complete as domain security updates are enforced.
-
 
 Use PowerShell:
 
