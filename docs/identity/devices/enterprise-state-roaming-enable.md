@@ -4,10 +4,10 @@ description: Frequently asked questions about Enterprise State Roaming settings 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 08/01/2024
+ms.date: 06/27/2025
 ms.author: owinfrey
 author: MicrosoftGuyJFlo
-manager: owinfreyATL
+manager: dougeby
 ms.reviewer: sempofu, micrider
 ms.custom: references_regions, sfi-ga-blocked
 ---
