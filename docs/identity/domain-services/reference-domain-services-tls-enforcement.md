@@ -13,9 +13,9 @@ ms.author: justinha
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
-# Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services
+# How to migrate to Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services
 
-Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1 as communicated on November 10, 2023. While the Microsoft implementation of TLS 1.0 and TLS 1.1 versions is not known to have vulnerabilities, TLS 1.2 or later versions provide improved security features, including perfect forward secrecy and stronger cipher suites. This change helps protect customer data and ensures compliance with industry standards.
+Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1 as communicated on November 10, 2023. While the Microsoft implementation of TLS 1.0 and TLS 1.1 versions isn't known to have vulnerabilities, TLS 1.2 or later versions provide improved security features, including perfect forward secrecy and stronger cipher suites. This change helps protect customer data and ensures compliance with industry standards.
 
 Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they're disabled by default.
 Domain Services will use the following retirement path for TLS versions 1.0 and 1.1:
@@ -23,7 +23,8 @@ Domain Services will use the following retirement path for TLS versions 1.0 and 
 1. Domain Services will remove the ability to disable the TLS 1.2 only mode. Customers who disable TLS 1.2 only mode can enable it. 
 1. After Domain Services removes the ability to disable the TLS 1.2 only mode, customers can't enable or disable TLS 1.2 only mode. 
 
-## How to migrate to TLS 1.2 only mode in Domain Services
+
+## [**Azure portal**](#tab/portal)
 
 Use the Azure portal:
 
@@ -31,9 +32,9 @@ Use the Azure portal:
 2.	Select **Security settings**.
 3.	If **TLS 1.2 Only Mode** is set to **Disable**, the instance enables TLS versions 1.0 and 1.1. Set **TLS 1.2 Only Mode** to **Enable**, and then click **Save**.
 
-This may take about 10 minutes to complete as domain security updates are enforced.
+This change may take about 10 minutes to complete as domain security updates are enforced.
 
-Use PowerShell:
+## [**PowerShell**](#tab/powershell)
 
 1. Install the Az.ADDomainServices module:
 
@@ -73,10 +74,13 @@ Use PowerShell:
    Update-AzADDomainService -Name "name" -ResourceGroupName "resourceGroupName" -DomainSecuritySettingTlsV1 Disabled
    ```
 
-   This command may take about 10 minutes to complete as domain security updates are enforced.
+This command may take about 10 minutes to complete as domain security updates are enforced.
 
-Troubleshooting
-If the steps above fail, open an [Azure support request](/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
+---
+
+## Troubleshooting
+
+If the steps to enable **TLS 1.2 Only Mode** fail, open an [Azure support request](/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
 
 ## Related content
 
