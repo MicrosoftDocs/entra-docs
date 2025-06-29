@@ -23,6 +23,8 @@ Domain Services will use the following retirement path for TLS versions 1.0 and 
 1. Domain Services will remove the ability to disable **TLS 1.2 Only Mode**. Customers who disable **TLS 1.2 Only Mode** can enable it. 
 1. After Domain Services removes the ability to disable the **TLS 1.2 Only Mode**, customers can't change the setting.
 
+You can use the Azure portal or PowerShell to enable **TLS 1.2 Only Mode**.
+
 ## [**Azure portal**](#tab/portal)
 
 1.	In the Azure portal, search for **Domain Services**, and select your Domain Services instance. 
