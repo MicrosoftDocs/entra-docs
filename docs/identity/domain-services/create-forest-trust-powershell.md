@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 04/22/2025
+ms.date: 06/30/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
