@@ -1,5 +1,5 @@
 ---
-title: Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services | Microsoft Learn
+title: How to migrate to Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services | Microsoft Learn
 description: Learn how to enforce TLS 1.2 for a Microsoft Entra Domain Services managed domain.
 author: justinha
 manager: dougeby
@@ -26,10 +26,12 @@ Domain Services will use the following retirement path for TLS versions 1.0 and 
 ## [**Azure portal**](#tab/portal)
 
 1.	In the Azure portal, search for **Domain Services**, and select your Domain Services instance. 
-2.	Select **Security settings**.
+2.	Select **Security Settings**.
 3.	If **TLS 1.2 Only Mode** is set to **Disable**, the instance enables TLS versions 1.0 and 1.1. Set **TLS 1.2 Only Mode** to **Enable**, and then click **Save**.
 
-This change may take about 10 minutes to complete as domain security updates are enforced.
+   This change may take about 10 minutes to complete as domain security updates are enforced.
+
+   :::image type="content" border="true" source="media/reference-domain-services-tls-enforcement/enable.png" alt-text="Screenshot that shows how to enable TLS 1.2 Only Mode for Domain Services.":::
 
 ## [**PowerShell**](#tab/powershell)
 
