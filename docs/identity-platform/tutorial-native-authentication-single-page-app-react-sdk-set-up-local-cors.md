@@ -163,7 +163,7 @@ In this tutorial, you:
 
 1. To sign up for an account, input your details, select the **Sign Up** button, then follow the prompts.
 
-At this point, you've successfully created a React app that can sign up a user by using the native authentication JavaScript SDK. Next, you can update the React app to sign in a user or reset the user's password.
+At this point, you've successfully created a React app that can sign up a user by using the native authentication JavaScript SDK. Next, you can update the React app to sign in users.
 
 ## Additional information about CORS proxy server
 
@@ -174,4 +174,5 @@ In a production environment, you can use the steps in [Set up a reverse proxy fo
 ## Related content
 
 - [Tutorial: Sign in users into a React single-page app app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md).
-- [Tutorial: Reset password in a React single-page app app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-reset-password.md).
+- [Support web fallback](tutorial-native-authentication-single-page-app-javascript-sdk-support-web-fallback.md)
+- If your choice of authentication method is email and password, [Reset password in a React single-page app app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-reset-password.md).

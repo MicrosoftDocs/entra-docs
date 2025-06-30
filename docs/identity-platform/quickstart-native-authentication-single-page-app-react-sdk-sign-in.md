@@ -15,8 +15,7 @@ ms.date: 06/30/2025
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using native authentication SDK. The sample app demonstrates user sign-up, sign-in, sign-out and password reset with an email and a password.
-
+In this Quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using native authentication SDK. The sample app demonstrates user sign-up, sign-in, and sign-out for both email with password and email one-timepasscode authentication menthods.
 ## Prerequisites
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -26,7 +25,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). For this sample, you can include the following user attributes in the your user flow as the app submit these attributes:
+* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Under **Identity providers**, select your prefered method of authentication, that's, **Email with password** or **Email one-time passcode**. For this sample, you can include the following user attributes in the your user flow as the app submit these attributes:
   * **Given Name**
   * **Surname**
   * **Job Tittle**
@@ -79,7 +78,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure CORS proxy server
 
-The native authentication APIs don't support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) so you must set up a proxy server between your SPA app and the APIs.
+The native authentication API doesn't support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) so you must set up a proxy server between your SPA app and the APIs.
 
 This code sample includes a CORS proxy server that forwards requests to native authentication API URL endpoints. The CORS proxy server is a Node.js server that listens on port 3001.
 
@@ -110,7 +109,7 @@ You've now configured the sample app and it's ready to run.
 
 1. To sign up for an account, select **Sign Up**, then follow the prompts.
 
-1. After you sign up, test sign-in and password reset by selecting **Sign In** and **Reset Password** respectively.
+1. After you sign up, test sign-in and password reset by selecting **Sign In** and **Reset Password** buttorespectively.
 
 ## Related content
 
