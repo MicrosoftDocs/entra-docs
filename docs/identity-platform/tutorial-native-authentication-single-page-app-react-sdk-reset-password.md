@@ -257,6 +257,9 @@ Create *reset-password/page.tsx* file to handle logic for a sign-in flow. In thi
         return <ResetPasswordResultPage state={resetState} />;
     }
 
+## Sign in users automatically after password reset
+
+===============TODO=============
 
 ## Run and test your app
 
