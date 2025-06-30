@@ -42,6 +42,8 @@ The attribute value must follow the following rules:
 
 If the selected sourceAnchor isn't of type string, then Microsoft Entra Connect Base64Encode the attribute value to ensure no special characters appear. If you use another federation server than ADFS, make sure your server can also Base64Encode the attribute.
 
+The sourceAnchor attribute is case-sensitive. A value of “JohnDoe” isn't the same as “johndoe”. But you shouldn't have two different objects with only a difference in case.
+
 If you've a single forest on-premises, then the recommended attribute to use is **ms-DS-ConsistencyGuid**. This is also the default attribute used when you use express settings in Microsoft Entra Connect. For older versions or DirSync migrations, **objectGUID** was the attribute used.
 
 If you've multiple forests and don't move users between forests and domains, then **ms-DS-ConsistencyGuid** is also the recommended attribute to use in this case.
