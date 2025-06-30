@@ -241,7 +241,7 @@ Because trusts must be deployed across various network boundaries, they might ha
 > [!IMPORTANT]
 > Active Directory Domain Services doesn't support restricting Active Directory RPC traffic to specific ports.
 
-Read the **Windows Server 2008 and later versions** section of the Microsoft Support Article [How to configure a firewall for Active Directory domains and trusts](https://support.microsoft.com/help/179442/how-to-configure-a-firewall-for-domains-and-trusts) to learn about the ports needed for a forest trust.
+For more information about which ports need to be open to use a trust, see [Configure firewall settings for AD DS trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).
 
 ## Supporting services and tools
 

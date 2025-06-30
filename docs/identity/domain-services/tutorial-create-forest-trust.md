@@ -67,7 +67,7 @@ The virtual network that hosts the Domain Services forest needs a VPN or Express
 
 Before you configure a forest trust in Domain Services, make sure your networking between Azure and on-premises environment meets the following requirements:
 
-* Make sure firewall ports allow traffic that is necessary to create and use a trust. For more information about which ports need to be open to use a trust, see [Configure firewall settings for AD DS trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).
+* Make sure firewall ports and domain controllers allow traffic that is necessary to create and use a trust. For more information about which ports need to be open to use a trust, see [Configure firewall settings for AD DS trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts). All domain controllers in the domain that has a trust with Domain Services need to have these ports open.
 * Use private IP addresses. Don't rely on DHCP with dynamic IP address assignment.
 * Avoid overlapping IP address spaces to allow virtual network peering and routing to successfully communicate between Azure and on-premises.
 * An Azure virtual network needs a gateway subnet to configure an [Azure site-to-site (S2S) VPN][vpn-gateway] or [ExpressRoute][expressroute] connection.
@@ -144,7 +144,40 @@ If the forest trust is no longer needed for an environment, complete the followi
 1. From the menu on the left-hand side of the managed domain, select **Trusts**, choose the trust, and click **Remove**.
 1. Provide the same trust password that was used to configure the forest trust and click **OK**.
 
-## Validate resource authentication
+## Verify trust creation
+For two-way and one-way incoming trust, you can verify the incoming trust (the outbound trust from your on-premises domain) by using either the Active Directory Domains and Trusts console or the nltest command-line tool after you configure the forest trust.
+
+### Use Active Directory Domains and Trusts to verify a trust
+
+Complete the following steps from the on-premises AD DS domain controller using an account that has permissions to create and validate trust relationships.
+
+1. Select **Start** > **Administrative Tools** > **Active Directory Domains and Trusts**.
+1. Right-click your domain and select **Properties**.
+1. Choose the **Trusts** tab.
+1. Under **Domains trusted by this domain (outgoing trusts)**, select the trust you created.
+1. Choose **Properties**.
+1. Select **Validate**.
+1. Select **No, do not validate the incoming trust**.
+1. Click **Ok**.
+
+If the trust is configured correctly, you’ll see the message: `The outgoing trust has been validated. It is in place and active.`
+
+### Use nltest to verify a trust
+
+You can also verify the trust by using the nltest command-line tool. Complete the following steps from the on-premises AD DS domain controller using an account that has permissions to create and validate trust relationships.
+
+1. Open an elevated command prompt on your on-premises domain controller or administrative workstation.
+1. Run the following command:
+
+   ```
+   nltest /sc_verify:<TrustedDomain>
+   ```
+
+   Replace \<TrustedDomain> with the name of the Microsoft Entra Domain Services domain. If the trust is valid, the command returns a success message.
+
+   ![Screenshot of success message for trust creation.](./media/tutorial-create-forest-trust/success.png)
+
+## Validate resource access
 
 The following common scenarios let you validate that forest trust correctly authenticates users and access to resources:
 
