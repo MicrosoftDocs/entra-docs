@@ -90,9 +90,6 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 
 We're continually adding more administrative portals to the list.
 
-> [!NOTE]
-> The Microsoft Admin Portals app applies to interactive sign-ins to the listed admin portals only. Sign-ins to the underlying resources or services like Microsoft Graph or Azure Resource Manager APIs aren't covered by this application. Those resources are protected by the [Windows Azure Service Management API](#windows-azure-service-management-api) app. This grouping enables customers to move along the MFA adoption journey for admins without impacting automation that relies on APIs and PowerShell. When you're ready, Microsoft recommends using a [policy requiring administrators perform MFA always](policy-old-require-mfa-admin.md) for comprehensive protection.
-
 ### Other applications
 
 Administrators can add any Microsoft Entra registered application to Conditional Access policies. These applications might include:

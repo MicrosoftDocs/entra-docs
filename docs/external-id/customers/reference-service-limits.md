@@ -86,6 +86,8 @@ The following table lists the administrative configuration limits in the Microso
 |Total number of objects (user accounts and applications) per tenant. If you want to increase this limit, contact [Microsoft Support](/entra/identity-platform/developer-support-help-options?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json#create-an-azure-support-request). | 300,000 |
 |Number of [custom authentication extensions](/entra/identity-platform/custom-extension-overview)    |100         |
 |Number of event listener policies    |249         |
+|Maximum custom authentication extension timeout    |2000 ms         |
+|Maximum custom authentication extension retries    |1         |
 
 ## Telephony throttling limits
 The following table lists the service limits we implement to prevent outages and slowdowns. [Learn more](~/identity/authentication/concept-mfa-telephony-fraud.md)
