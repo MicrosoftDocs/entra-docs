@@ -25,6 +25,10 @@
         - name: App types and authentication flows
           displayName: Auth flows
           href: authentication-flows-app-scenarios.md
+        - name: App sign-in flow
+          href: app-sign-in-flow.md
+        - name: Sign-in audience
+          href: v2-supported-account-types.md
         - name: Security tokens
           href: security-tokens.md
         - name: Microsoft Authentication Library (MSAL)
@@ -83,7 +87,6 @@
           href: how-applications-are-added.md
         - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
-    
     - name: Customization and extensibility
       items:
       - name: Custom Authentication Extensions
@@ -108,6 +111,8 @@
       items:
         - name: Application security
           href: security-best-practices-for-app-registration.md
+        - name: Identifier URI restrictions
+          href: identifier-uri-restrictions.md
         - name: Least privileged access
           href: secure-least-privileged-access.md
         - name: Secure access control using groups
@@ -195,8 +200,6 @@
           items:
             - name: SPA that signs in users and calls web API
               items:
-                - name: App registration
-                  href: scenario-spa-app-registration.md
                 - name: Code configuration
                   href: scenario-spa-app-configuration.md
                 - name: Sign in and sign out
@@ -533,7 +536,7 @@
                     - name: System browser on Android
                       href: msal-net-system-browser-android-considerations.md
                     - name: Shared device mode for Android devices
-                      href: msal-android-shared-devices.md
+                      href: /entra/msal/android/shared-devices
                     - name: QR code authentication
                       href: android-qr-code-pin-authentication.md
                 - name: iOS
@@ -548,7 +551,7 @@
               href: scenario-mobile-acquire-token.md
             - name: Acquire token with broker
               displayName: Microsoft Authenticator Microsoft Intune, Authenticator
-              href: msal-net-use-brokers-with-xamarin-apps.md
+              href: /entra/msal/objc/single-sign-on-macos-ios
             - name: Calling a web API
               href: scenario-mobile-call-api.md
 - name: Service, daemon, script
@@ -559,11 +562,13 @@
       href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: .NET acquire token and call API
-          href: tutorial-dotnet-daemon-call-api.md
+        - name: .NET
+          items: 
+            - name: Acquire token and call API
+              href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
           items:
-            - name: Acquire access token and call API
+            - name: Acquire token and call API
               href: tutorial-daemon-node-call-api-build-app.md
             - name: Call Microsoft Graph API
               href: tutorial-v2-nodejs-console.md
@@ -615,14 +620,6 @@
               href: quickstart-configure-app-access-web-apis.md
             - name: Create a self-signed certificate to authenticate your app
               href: howto-create-self-signed-certificate.md
-        - name: Sign in users
-          items:
-            - name: Sign-in audience
-              href: v2-supported-account-types.md
-            - name: App sign-in flow
-              href: app-sign-in-flow.md
-            - name: Support passwordless authentication
-              href: support-fido2-authentication.md
         - name: Protect and access APIs
           items:
             - name: Restrict your app to a set of users
@@ -671,8 +668,12 @@
                   href: custom-extension-OnAttributeCollectionStart-retrieve-return-data.md
                 - name: Retrieve data from attribute collection submit event
                   href: custom-extension-OnAttributeCollectionSubmit-retrieve-return-data.md
-            - name: Configure a custom email provider for one time code send events
-              href: custom-extension-email-otp-get-started.md
+            - name: Custom email provider
+              items: 
+                - name: Configure a custom email provider for one time code send events
+                  href: custom-extension-email-otp-get-started.md
+                - name: On email OTP send event reference
+                  href: custom-extension-email-otp-send-data.md
             - name: Troubleshoot your custom authentication extension
               href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
@@ -698,16 +699,6 @@
               href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
     - name: Secure
       items:
-        - name: Build for resilience
-          items:
-            - name: Development Overview
-              href: ~/architecture/resilience-app-development-overview.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: Client applications
-              href: ~/architecture/resilience-client-app.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: Daemon applications
-              href: ~/architecture/resilience-daemon-app.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: OpenID Connect metadata refresh
-              href: howto-build-services-resilient-to-metadata-refresh.md
         - name: Use Continuous Access Evaluation APIs
           displayName: cae
           href: app-resilience-continuous-access-evaluation.md
@@ -753,8 +744,6 @@
               href: howto-add-terms-of-service-privacy-statement.md
         - name: Publish app to a marketplace
           items:
-            - name: Publish to App Source
-              href: v2-howto-get-appsource-certified.md
             - name: Publish to Microsoft Entra App Gallery
               href: ~/identity/enterprise-apps/v2-howto-app-gallery-listing.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: Publish to Microsoft 365 App Stores
@@ -766,8 +755,6 @@
           href: msal-migration.md
         - name: List all apps using ADAL
           href: howto-get-list-of-all-auth-library-apps.md
-        - name: Migrate off email-based authorization
-          href: migrate-off-email-claim-authorization.md
         - name: Azure Active Directory Graph app manifest deprecation
           href: azure-active-directory-graph-app-manifest-deprecation.md
     - name: Deprecate
@@ -807,29 +794,29 @@
             - name: Library initialization
               items:
                 - name: Android MSAL configuration file
-                  href: msal-configuration.md
+                  href: /entra/msal/android/msal-configuration
                 - name: Shared device mode
                   displayName: firstline worker, frontline worker, flw
                   href: msal-android-shared-devices.md
                 - name: Integrate with Azure AD B2C
-                  href: msal-android-b2c.md
+                  href: /azure/active-directory-b2c/configure-authentication-sample-android-app
             - name: Authentication and single sign-on (SSO)
               items:
                 - name: SSO with MSAL Android
-                  href: msal-android-single-sign-on.md
+                  href: /entra/msal/android/single-sign-on
                 - name: Accounts and tenant profiles
                   href: accounts-overview.md
                 - name: Single- and multi-account public client apps
-                  href: single-multi-account.md
+                  href: /entra/msal/android/single-multi-account
             - name: Logging and error handling
               items:
                 - name: Logging in MSAL for Android
-                  href: msal-logging-android.md
+                  href: /entra/msal/android/logging
                 - name: Handle errors and exceptions in MSAL for Android
                   displayName: android, mobile, handling, catch
-                  href: msal-android-handling-exceptions.md
+                  href: /entra/msal/android/handling-exceptions
             - name: Migrate from ADAL to MSAL Android
-              href: migrate-android-adal-msal.md
+              href: /entra/msal/android/migrate-android-adal-msal
         - name: MSAL iOS and macOS
           href: /entra/msal/objc/
         - name: MSAL Java

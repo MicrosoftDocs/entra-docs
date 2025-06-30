@@ -16,8 +16,6 @@ items:
     href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
     href: introduction-identity-access-management.md
-  - name: Get the most out of documentation
-    href: how-to-navigate.md
 - name: Set up your tenant and directory
   expanded: true
   items:
@@ -90,6 +88,8 @@ items:
   items:
   - name: Overview
     href: copilot-security-entra.md
+  - name: Microsoft Security Copilot scenarios in Microsoft Entra
+    href: copilot-entra-security-scenarios.md
   - name: Security Copilot agents in Microsoft Entra
     href: agents.md
   - name: Respond to identity threats using risky user summarization

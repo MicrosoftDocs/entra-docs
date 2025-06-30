@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Airbase
+title: Configure Airbase for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Airbase.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Airbase so that I can control who has access to Airbase, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Airbase
+# Configure Airbase for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Airbase with Microsoft Entra ID. All-in-one spend management platform designed to deliver more control, visibility, and automation to today's finance teams that need an efficient way to scale controls and accounting operations. When you integrate Airbase with Microsoft Entra ID, you can:
 

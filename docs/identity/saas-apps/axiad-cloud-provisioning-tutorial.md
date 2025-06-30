@@ -14,7 +14,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Axiad Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Axiad Cloud.
 ---
 
-# Configure Axiad Cloud for automatic user provisioning
+# Configure Axiad Cloud for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Axiad Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Axiad Cloud](https://www.axiad.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -96,30 +96,30 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Axiad Cloud|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |externalId|String|&check;|&check;
-   |active|Boolean||&check;
-   |displayName|String||
-   |title|String||
-   |emails[type eq "work"].value|String||
-   |preferredLanguage|String||
-   |name.givenName|String||
-   |name.familyName|String||
-   |name.formatted|String||
-   |addresses[type eq "work"].formatted|String||
-   |addresses[type eq "work"].streetAddress|String||
-   |addresses[type eq "work"].locality|String||
-   |addresses[type eq "work"].region|String||
-   |addresses[type eq "work"].postalCode|String||
-   |addresses[type eq "work"].country|String||
-   |phoneNumbers[type eq "work"].value|String||
-   |phoneNumbers[type eq "mobile"].value|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
-   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String||
+   |userName|String|&check;|&check;|
+   |externalId|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |displayName|String|||
+   |title|String|||
+   |emails[type eq "work"].value|String|||
+   |preferredLanguage|String|||
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |name.formatted|String|||
+   |addresses[type eq "work"].formatted|String|||
+   |addresses[type eq "work"].streetAddress|String|||
+   |addresses[type eq "work"].locality|String|||
+   |addresses[type eq "work"].region|String|||
+   |addresses[type eq "work"].postalCode|String|||
+   |addresses[type eq "work"].country|String|||
+   |phoneNumbers[type eq "work"].value|String|||
+   |phoneNumbers[type eq "mobile"].value|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String|||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|String|||
 
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Axiad Cloud**.
@@ -128,9 +128,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Axiad Cloud|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |externalId|String|&check;|&check;
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |externalId|String|&check;|&check;|
+   |members|Reference|||
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

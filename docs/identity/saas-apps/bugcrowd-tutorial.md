@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Bugcrowd
+title: Configure Bugcrowd for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Bugcrowd.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Bugcrowd
+# Configure Bugcrowd for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Bugcrowd with Microsoft Entra ID. When you integrate Bugcrowd with Microsoft Entra ID, you can:
 
@@ -24,7 +24,9 @@ In this article,  you learn how to integrate Bugcrowd with Microsoft Entra ID. W
 * Manage your accounts in one central location.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Bugcrowd single sign-on (SSO) enabled subscription.
 
@@ -43,7 +45,7 @@ To configure the integration of Bugcrowd into Microsoft Entra ID, you need to ad
 1. In the **Add from the gallery** section, type **Bugcrowd** in the search box.
 1. Select **Bugcrowd** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+[!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 ## Configure and test Microsoft Entra SSO for Bugcrowd
 
@@ -80,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://identity.bugcrowd.com `
+    `https://identity.bugcrowd.com`
 
 	> [!NOTE]
 	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Bugcrowd support team](https://bugcrowd-support.freshdesk.com/support/tickets/new) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.

@@ -14,7 +14,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cerby so that I can streamline the user management process and ensure that users have the appropriate access to Cerby.
 ---
 
-# Configure Cerby for automatic user provisioning
+# Configure Cerby for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to do in both Cerby and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Cerby](https://app.cerby.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -111,12 +111,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Cerby|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |emails[type eq "work"].value|String|&check;|&check;   
-   |active|Boolean||&check;
-   |name.givenName|String||&check;
-   |name.familyName|String||&check;
-   |externalId|String||
+   |userName|String|&check;|&check;|
+   |emails[type eq "work"].value|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |externalId|String|||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Cerby**.
 
@@ -124,11 +124,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Cerby|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |externalId|String||
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |externalId|String|||
+   |members|Reference|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Cerby, change the **Provisioning Status** to **On** in the **Settings** section.
 

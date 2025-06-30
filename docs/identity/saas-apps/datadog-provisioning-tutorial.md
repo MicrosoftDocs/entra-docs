@@ -14,7 +14,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Datadog so that I can streamline the user management process and ensure that users have the appropriate access to Datadog.
 ---
 
-# Configure Datadog for automatic user provisioning
+# Configure Datadog for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Datadog and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [Datadog](https://www.datadog.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -95,11 +95,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Datadog|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||
-   |title|string||
-   |emails[type eq "work"].value|String||
-   |name.formatted|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean|||
+   |title|string|||
+   |emails[type eq "work"].value|String|||
+   |name.formatted|String|||
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

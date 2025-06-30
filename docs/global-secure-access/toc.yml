@@ -34,6 +34,10 @@ items:
     href: ./scripts/powershell-break-glass.md
   - name: Restore traffic forwarding and compliant network requirement after a break glass operation
     href: ./scripts/powershell-break-glass-recovery.md
+  - name: Bypass internet destinations from the internet access profile
+    href: ./scripts/powershell-bypass-script.md
+  - name: Bypass Intune endpoints from the Internet Access profile
+    href: ./scripts/powershell-add-internet-access-device-compliance-bypasses.md
 - name: Concepts
   expanded: true
   items: 
@@ -140,6 +144,8 @@ items:
         href: how-to-application-discovery.md
       - name: Configure Private Access with Privileged Identity Management (PIM)
         href: how-to-configure-global-access-with-pim.md
+      - name: Configure Private Access to enable SSH-based server administration
+        href: how-to-manage-ssh-server-administration.md
       - name: Kerberos single sign-on (SSO)
         href: how-to-configure-kerberos-sso.md
       - name: Source IP anchoring
@@ -155,6 +161,10 @@ items:
         href: concept-internet-access.md
       - name: Configure web content filtering
         href: how-to-configure-web-content-filtering.md
+      - name: What is Transport Layer Security inspection? 
+        href: concept-transport-layer-security.md 
+      - name: Configure Transport Layer Security inspection 
+        href: how-to-transport-layer-security.md 
   - name: Logs and monitoring
     expanded: false
     items:
@@ -168,6 +178,8 @@ items:
         href: how-to-remote-network-health-logs.md
       - name: Traffic logs
         href: how-to-view-traffic-logs.md
+      - name: Deployment logs
+        href: how-to-view-deployment-logs.md
       - name: Event enrichment in Microsoft 365 enriched logs
         href: reference-event-enrichment-logs.md
       - name: How to use workbooks
@@ -220,9 +232,9 @@ items:
            - name: Coexistence with Cisco
              href: concept-cisco-coexistence.md
            - name: Coexistence with Palo Alto Networks
-             href: concept-palo-alto-coexistence.md
+             href: how-to-palo-alto-coexistence.md
            - name: Coexistence with Zscaler
-             href: concept-zscaler-coexistence.md
+             href: how-to-zscaler-coexistence.md
            - name: Coexistence with Netskope
              href: concept-netskope-coexistence.md
        - name: Find a Microsoft services partner
@@ -244,8 +256,12 @@ items:
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
   - name: Ciphers for Microsoft Entra Private Access
     href: reference-ciphers.md
-  - name: FAQs
+  - name: Global Secure Access FAQs
     href: resource-faq.yml
+  - name: Transport Layer Security inspection FAQs
+    href: faq-transport-layer-security.yml
+  - name: Ciphers for Microsoft Entra Private Access
+    href: reference-ciphers.md       
   - name: Connector version history
     href: reference-version-history.md
   - name: Windows client version history
@@ -254,3 +270,5 @@ items:
     href: reference-macos-client-release-history.md
   - name: Global Secure Access Certifications
     href: reference-global-secure-access-certifications.md
+  - name: Global Secure Access in China
+    href: reference-china-user-support.md

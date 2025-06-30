@@ -8,7 +8,7 @@ ms.date: 04/09/2025
 ms.topic: conceptual
 ms.service: entra-id
 manager: femila
-
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra UserPrincipalName population

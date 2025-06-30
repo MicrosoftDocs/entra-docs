@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 
 # Migrate to cloud authentication using Staged Rollout
 
-Staged Rollout allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. This article discusses how to make the switch. 
+Staged Rollout lets you gradually test cloud authentication features with selected user groups. These features include Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and more. This approach allows you to validate functionality and user experience before fully transitioning your domains. 
 
 Before you begin the Staged Rollout, you should consider the implications if one or more of the following conditions is true:
     
@@ -42,13 +42,13 @@ For an overview of the feature, view this "What is Staged Rollout?" video:
     
     For both options, we recommend enabling single sign-on (SSO) to achieve a silent sign-in experience. 
     For Windows 7 or 8.1 domain-joined devices, we recommend using seamless SSO. For more information, see [What is seamless SSO](how-to-connect-sso.md). 
-    For Windows 10, Windows Server 2016 and later versions, it's recommended to use SSO via [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md) with [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) or [personal registered devices](~/identity/devices/concept-device-registration.md) via Add Work or School Account.
+    For Windows 10, Windows Server 2016 and later versions, use SSO through [Primary Refresh Token (PRT)](~/identity/devices/concept-primary-refresh-token.md). For [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md), [Microsoft Entra hybrid joined devices](~/identity/devices/concept-hybrid-join.md) or [personal registered devices](~/identity/devices/concept-device-registration.md) use Add Work or School Account.
 
--   You have configured all the appropriate tenant-branding and Conditional Access policies you need for users who are being migrated to cloud authentication.
+-   You need to configure all the appropriate tenant-branding and Conditional Access policies you need for users who are being migrated to cloud authentication.
 
--   If you have moved from federated to cloud authentication, you must verify that the DirSync setting `synchronizeUpnForManagedUsersEnabled` is set to `true`, otherwise Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
+-   If you moved from federated to cloud authentication, you must verify that the DirSync setting `synchronizeUpnForManagedUsersEnabled` is set to `true`, otherwise Microsoft Entra ID doesn't allow sync updates to the UPN or alternate login ID for licensed user accounts that use managed authentication. For more information, see [Microsoft Entra Connect Sync service features](how-to-connect-syncservice-features.md).
 
--   If you plan to use Microsoft Entra multifactor authentication, we recommend that you use [combined registration for self-service password reset (SSPR) and multifactor authentication](~/identity/authentication/concept-registration-mfa-sspr-combined.md) to have your users register their authentication methods once. Note- when using SSPR to reset password or change password using MyProfile page while in Staged Rollout, Microsoft Entra Connect needs to sync the new password hash that can take up to 2 minutes after reset.
+-   If you plan to use Microsoft Entra multifactor authentication, we recommend enabling [combined registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md). This allows users to register their authentication methods once for both self-service password reset (SSPR) and multifactor authentication. Note- when using SSPR to reset password or change password using MyProfile page while in Staged Rollout, Microsoft Entra Connect needs to sync the new password hash that can take up to 2 minutes after reset.
 
 -   To use the Staged Rollout feature, you need to be a Hybrid Identity Administrator on your tenant.
 
@@ -65,7 +65,7 @@ The following scenarios are supported for Staged Rollout. The feature works only
 
 - User sign-in traffic on browsers and *modern authentication* clients. Applications or cloud services that use legacy authentication fall back to federated authentication flows. An example of legacy authentication might be Exchange online with modern authentication turned off, or Outlook 2010, which doesn't support modern authentication.
 
-- Group size is currently limited to 50,000 users.  If you have groups that are larger than 50,000 users, it's recommended to split this group over multiple groups for Staged Rollout.
+- Staged rollout supports groups of any size, provided they comply with the [Microsoft Entra directory service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md)
 
 - Windows 10 Hybrid Join or Microsoft Entra join primary refresh token acquisition without line-of-sight to the federation server for Windows 10 version 1903 and newer, when user's UPN is routable and domain suffix is verified in Microsoft Entra ID.
 
@@ -197,6 +197,14 @@ To configure Staged Rollout, follow these steps:
    >When adding a new group, users in the group (up to 200 users for a new group) will be updated to use managed auth immediately. 
    >Editing a group (adding or removing users), it can take up to 24 hours for changes to take effect.
    >Seamless SSO will apply only if users are in the Seamless SSO group and also in either a PTA or PHS group.
+
+### User Authentication Behavior During Staged Rollout Transitions
+
+When a user is added to a Staged Rollout (SR) group or when a group they belong to is added to SR, their authentication method will transition from federated to managed. This change takes effect after the user completes one more interactive sign-in using their existing federated login. After this sign-in, Microsoft Entra applies the managed authentication experience for subsequent logins.
+
+Similarly, when a user is removed from the SR group or when their group is removed from SR, they will continue to use managed authentication until they complete one more interactive sign-in. After that, federation is re-applied and future logins will redirect to the federated identity provider.
+
+This behavior ensures a seamless transition between authentication methods while maintaining user access continuity and security.
 
 ## Auditing
 

@@ -1,6 +1,6 @@
 ---
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: identity-platform
 ms.topic: include
 ms.date: 11/22/2024

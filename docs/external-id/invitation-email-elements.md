@@ -1,17 +1,14 @@
 ---
 title: About B2B Invitations
 description: Learn about the B2B collaboration invitation email you can send to business partners and external guest users who need to authenticate and access your apps.
-
- 
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 04/09/2025
-
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
-ms.custom: it-pro, seo-july-2024
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 # Customer intent: As a B2B collaboration user, I want to understand the elements of the invitation email, so that I can effectively invite partners to join my organization and provide them with the necessary information to make an informed decision.
 ---
 

@@ -2,7 +2,7 @@
 title: How to analyze activity logs with Microsoft Graph
 description: Learn how to access and analyze Microsoft Entra sign-in and audit logs with the Microsoft Graph reporting APIs.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

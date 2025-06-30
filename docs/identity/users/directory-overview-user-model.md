@@ -1,17 +1,17 @@
 ---
 title: Users, groups, licensing, and roles in Microsoft Entra ID
 description: The relationship between users and licenses assigned, administrator roles, dynamic membership groups in Microsoft Entra ID
-keywords:
+keywords: 
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.author: barclayn
 ms.reviewer: krbain
 ms.date: 01/31/2025
 ms.topic: overview
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a new Microsoft Entra identity administrator, user management is at the core of my work so I need to understand the user management tools such as groups, administrator roles, and licenses to manage users.
 ---
 # What is enterprise user management?

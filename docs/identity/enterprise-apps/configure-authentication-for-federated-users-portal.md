@@ -1,18 +1,17 @@
 ---
 title: Configure sign-in auto-acceleration
 description: Learn how to force federated IdP auto-acceleration for an application using Home Realm Discovery policy.
-
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: ludwignick
-ms.custom: enterprise-apps, no-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-minus-portal-aad
+ms.custom: enterprise-apps, no-azure-ad-ps-ref, sfi-ropc-nochange
 #customer intent: As an IT admin configuring sign-in behavior for federated users in Microsoft Entra ID, I want to understand how to use Home Realm Discovery (HRD) policy to enable auto-acceleration sign-in and direct username/password authentication, so that I can streamline the sign-in process for specific applications and improve user experience.
 ---
 

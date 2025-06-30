@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/10/2024
+ms.date: 05/14/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -39,7 +39,7 @@ The server can revoke refresh tokens because of a change in credentials, user ac
 | Password expires | Stays alive | Stays alive | Stays alive | Stays alive | Stays alive |
 | Password changed by user | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
 | User does SSPR | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
-| Admin resets password | Revoked | Revoked | Stays alive | Stays alive | Stays alive |
+| Admin resets password (incl. M365 admin center) | Revoked | Revoked | Stays alive | Revoked | Revoked |
 | User revokes their refresh tokens | Revoked | Revoked | Revoked | Revoked | Revoked |
 | Admin revokes all refresh tokens for a user | Revoked | Revoked | Revoked | Revoked | Revoked |
 | Single sign-out | Revoked | Stays alive | Revoked | Stays alive | Stays alive |

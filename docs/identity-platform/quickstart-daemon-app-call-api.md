@@ -2,7 +2,7 @@
 title: Quickstart - Call a web API in a sample daemon app
 description: A daemon app code sample quickstart that shows how to acquire an access token to call a protected web API by using Microsoft identity platform
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/20/2024
@@ -144,7 +144,7 @@ To use your app registration details in the client daemon app sample, use the fo
     // 'Enter the client ID obtained from the Microsoft Entra admin center
     ClientId = "Enter the client ID obtained from the Microsoft Entra admin center",
     // Client secret 'Value' (not its ID) from 'Client secrets' in the Microsoft Entra admin center
-    ClientSecret = "Enter the client secret value obtained from the Mifcrosoft Entra admin center",
+    ClientSecret = "Enter the client secret value obtained from the Microsoft Entra admin center",
     // Client 'Object ID' of app registration in Microsoft Entra admin center - this value is a GUID
     ClientObjectId = "Enter the client Object ID obtained from the Microsoft Entra admin center"
    ```

@@ -1,20 +1,18 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with SAP HANA
+title: Configure SAP HANA for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP HANA.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP HANA so that I can control who has access to SAP HANA, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra single sign-on (SSO) integration with SAP HANA
+# Configure SAP HANA for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SAP HANA with Microsoft Entra ID. When you integrate SAP HANA with Microsoft Entra ID, you can:
 
@@ -24,6 +22,7 @@ In this article,  you learn how to integrate SAP HANA with Microsoft Entra ID. W
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A SAP HANA subscription that's single sign-on (SSO) enabled
 - A HANA instance that's running on any public IaaS, on-premises, Azure VM, or SAP large instances in Azure

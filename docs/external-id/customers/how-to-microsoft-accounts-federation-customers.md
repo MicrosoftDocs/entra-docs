@@ -2,7 +2,7 @@
 title: Add MSA for customer sign-in
 description: Learn how to add MSA as an identity provider for your external tenant.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

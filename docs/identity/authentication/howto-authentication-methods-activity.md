@@ -1,16 +1,15 @@
 ---
 title: Authentication Methods Activity
-description: Overview of the authentication methods that users register to sign in and reset passwords. 
-
+description: Overview of the authentication methods that users register to sign in and reset passwords.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: sopand
-manager: femila
+manager: dougeby
 ms.reviewer: dawoo
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Authentication Methods Activity 
 
@@ -48,7 +47,7 @@ To access authentication method Usage and insights:
 1. There are two tabs in the report: **Registration** and **Usage**.
 
    ![Authentication Methods Activity overview](media/how-to-authentication-methods-usage-insights/registration-usage-tabs.png)
-
+   
 ## Registration details
 
 You can access the **Registration** tab to show the number of users capable of multifactor authentication, passwordless authentication, and self-service password reset. 
@@ -62,11 +61,11 @@ Click any of the following options to pre-filter a list of user registration det
   This number doesn't reflect users registered for MFA outside of Microsoft Entra ID. 
 - **Users capable of passwordless authentication** shows the breakdown of users who are registered to sign in without a password by using FIDO2, Windows Hello for Business, or passwordless Phone sign-in with the Microsoft Authenticator app. 
 - **Users capable of self-service password reset** shows the breakdown of users who can reset their passwords. Users can reset their password if they're both:
-  - Registered for enough methods to satisfy their organization's policy for self-service password reset 
+- Registered for enough methods to satisfy their organization's policy for self-service password reset 
   - Enabled to reset their password 
 
   ![Screenshot of users who can register](media/how-to-authentication-methods-usage-insights/users-capable.png)
-
+  
 **Users registered by authentication method** shows how many users are registered for each authentication method. Click an authentication method to see who is registered for that method.
 
 ![Screenshot of Users Registered](media/how-to-authentication-methods-usage-insights/users-registered.png)
@@ -117,7 +116,7 @@ The registration details report shows the following information for each user:
 - Last Updated Time (The date and time when the report most recently updated. This value is not related the user's authentication method registration.)
 
   ![Screenshot of user registration details](media/how-to-authentication-methods-usage-insights/registration-details.png)
-
+  
 ## Registration and reset events 
 
 **Registration and reset events** shows registration and reset events from the last 24 hours, last seven days, or last 30 days including:
@@ -131,10 +130,11 @@ The registration details report shows the following information for each user:
 - Reason for failure (explanation)
 
   ![Screenshot of registration and reset events](media/how-to-authentication-methods-usage-insights/registration-and-reset-logs.png)
-
+  
 ## Limitations
 
-- The data in the report is not updated in real-time and may reflect a latency of up to a few hours.
+- The data in the report is not updated in real-time and may reflect a latency of up to 36 hours.
+
 - The **PhoneAppNotification** or **PhoneAppOTP** methods that a user might have configured are not displayed in the dashboard on **Microsoft Entra authentication methods - Policies**.
 - Bulk operations in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. For more information, see [Bulk operations](/entra/fundamentals/bulk-operations-service-limitations?WT.mc_id=Portal-Microsoft_AAD_IAM).
 

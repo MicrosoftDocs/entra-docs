@@ -14,7 +14,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Canva so that I can streamline the user management process and ensure that users have the appropriate access to Canva.
 ---
 
-# Configure Canva for automatic user provisioning
+# Configure Canva for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Canva and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Canva](https://www.canva.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -97,13 +97,13 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Canva|
    |---|---|---|---|
-   |userName|String|&check;|&check;
-   |active|Boolean||
-   |externalId|String||
-   |emails[type eq "work"].value|String||&check;
-   |name.givenName|String||
-   |name.familyName|String||
-   |displayName|String||
+   |userName|String|&check;|&check;|
+   |active|Boolean|||
+   |externalId|String|||
+   |emails[type eq "work"].value|String||&check;|
+   |name.givenName|String|||
+   |name.familyName|String|||
+   |displayName|String|||
    
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Canva**.
 
@@ -111,10 +111,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Canva|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |members|Reference|||
    
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Canva, change the **Provisioning Status** to **On** in the **Settings** section.
 

@@ -1,20 +1,18 @@
 ---
-title: Configure Foodee for automatic user provisioning by using Microsoft Entra ID
+title: Configure Configure Foodee for for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Foodee.
-
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 02/27/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Foodee so that I can streamline the user management process and ensure that users have the appropriate access to Foodee.
 ---
 
-# Configure Foodee for automatic user provisioning
+# Configure Configure Foodee for for automatic user provisioning with Microsoft Entra ID
 
 This article shows you how to configure Microsoft Entra ID in Foodee and Microsoft Entra ID to automatically provision or deprovision users or groups to Foodee.
 

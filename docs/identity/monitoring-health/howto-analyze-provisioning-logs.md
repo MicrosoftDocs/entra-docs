@@ -2,16 +2,15 @@
 title: How to analyze the Microsoft Entra provisioning logs
 description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 03/19/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
-
 ---
 
 # How to download and analyze the Microsoft Entra provisioning logs
@@ -160,5 +159,5 @@ Use the following table to better understand how to resolve errors that you find
 ## Related content
 
 - [Check the status of user provisioning](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md)
-- [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/application-provisioning-config-problem.md)
+- [Problem configuring user provisioning to a Microsoft Entra Gallery application](../app-provisioning/troubleshoot.md)
 - [Graph API for provisioning logs](/graph/api/resources/provisioningobjectsummary)

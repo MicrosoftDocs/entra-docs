@@ -3,7 +3,7 @@ title: Partner ecosystem overview
 description: Learn about the Microsoft Secure Access Service Edge (SASE) partner ecosystem. Learn about partner integrations and partner coexistence.
 ms.author: kenwith
 author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: overview
 ms.date: 02/21/2025
 ms.service: global-secure-access
@@ -41,7 +41,7 @@ The partners that are demonstrated to provide coexistence include:
 - [Cisco](concept-cisco-coexistence.md)
 - [Netskope](concept-netskope-coexistence.md)
 - [Palo Alto Networks](concept-palo-alto-coexistence.md)
-- [Zscaler](concept-zscaler-coexistence.md)
+- [Zscaler](how-to-zscaler-coexistence.md)
 
 ## Partner connectivity offerings
 A core component of Microsoft’s Security Service Edge (SSE) solution, Microsoft Entra Internet Access, now integrates seamlessly with various SD-WAN and connectivity providers, enabling optimal connections between Microsoft’s identity-centric SSE and third-party network infrastructure. 

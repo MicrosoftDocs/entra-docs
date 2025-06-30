@@ -68,7 +68,7 @@ A CIAM exposes anonymously accessible endpoints to the internet, which authentic
 
 These endpoints are the front door when authenticating to applications. Therefore, implement multiple layers of security controls to protect the endpoints.
 
-* **Edge protection** - Use [Web Application Firewall](/azure/web-application-firewall/overview) (WAF) to protect endpoints from bot abuse
+* **Edge protection** - Use [Azure Web Application Firewall](/azure/web-application-firewall/overview) (WAF) to protect endpoints from bot abuse
 * **Sign up fraud prevention** - Integrate fraud prevention techniques such as email verification, short message service (SMS) verification, captcha controls, and fraud analysis techniques to help ensure bots can't sign up
 * **Account takeover protection** - Integrate risk-based authentication solutions to detect sign-in risk, and prompt a stronger authentication factor, if necessary. Microsoft has a goal to add an integrated third-party account takeover protection solution.
 * **Authorization** - Use Microsoft Entra groups and roles to determine which users have access to applications, and what they can access in the applications
@@ -83,7 +83,7 @@ Microsoft Entra External ID uses Microsoft Entra ID directory technology for sca
 
 The authentication journey is the front door to your services. Monitor it to determine its overall health: authentication journey success rates, multifactor authentication (MFA) rates, throttling, and logging. Use this data to evolve your authentication journeys for a balance between frictionless and security. To determine the balance between your deployment, present the collected data to the business. 
 
-Microsoft Entra External ID has a user insights dashboard to generate analytics on users interacting with your authentication journeys. See more detailed authentication logs to analyze using the Microsoft Entra ID sign in and audit logs. Export them with [Microsoft Azure Monitor](/azure/azure-monitor/), or [Microsoft Graph](/graph/overview) API. With Azure Monitor, logs are retained in a log analytics workspace for up to two years. Log archival for longer periods is achieved with a storage account. See more in [Auditing and monitoring](deployment-external-audit-monitor.md).
+Microsoft Entra External ID has a user insights dashboard to generate analytics on users interacting with your authentication journeys. See more detailed authentication logs to analyze using the Microsoft Entra ID sign in and audit logs. Export them with [Microsoft Azure Monitor](/azure/azure-monitor/), or [Microsoft Graph](/graph/overview) API. With Azure Monitor, logs are retained in a log analytics workspace for up to two years. Log archival for longer periods is achieved with a storage account. Learn more in [Security operations](deployment-external-operations.md).
 
 ## Next steps
 
@@ -92,6 +92,5 @@ Use the following articles to help you get started with a Microsoft Entra Extern
 * Introduction to Microsoft Entra External ID deployment guide
 * [Tenant design](deployment-external-tenant-design.md)
 * [Customer authentication experience](deployment-external-customer-authentication.md)
-* [Operations](deployment-external-operations.md)
+* [Security operations](deployment-external-operations.md)
 * [Authentication and access control architecture](deployment-external-authentication-access-control.md)
-* [Auditing and monitoring](deployment-external-audit-monitor.md)

@@ -5,7 +5,7 @@ ms.subservice: external
 ms.topic: include
 ms.date: 09/06/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 Now that you've added app groups claim in your application, add users to the security groups. If you don't have security group, [create one](~/fundamentals/how-to-manage-groups.yml#create-a-basic-group-and-add-members).
 

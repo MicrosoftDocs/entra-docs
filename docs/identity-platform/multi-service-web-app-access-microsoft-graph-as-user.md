@@ -11,7 +11,6 @@ ms.reviewer: stsoneff
 ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
-services: microsoft-graph, app-service-web
 #Customer intent: As an application developer, I want to learn how to access data in Microsoft Graph from a web app for a signed-in user.
 ---
 

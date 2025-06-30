@@ -18,7 +18,7 @@ A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) tha
 
 ## Create a custom credential with the idTokens attestation type
 
-In the Azure portal, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**. 
+In the **Azure portal**, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**.
 
 :::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the issue credentials quickstart for creating a custom credential.":::
 
@@ -134,9 +134,9 @@ The claims mapping in the following example requires that you configure the toke
 The clientId attribute is the application ID of a registered application in the OIDC identity provider. For Microsoft Entra ID, you create the application by following these steps:
 
 
-1. In the Azure portal, go to [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps).
+1. In the **Azure portal**, go to **Microsoft Entra ID**.
 
-1. Select **App registrations**, select **New registration**, and then give the app a name. 
+1. Select **App registrations**, select **New registration**, and then give the app a name.
 
    If you want only accounts in your tenant to be able to sign in, keep the **Accounts in this directory only** checkbox selected. 
 
@@ -161,6 +161,8 @@ https://login.microsoftonline.com/<your-tenantId>/oauth2/v2.0/authorize?client_i
 In the code, replace \<your-tenantId> with your tenant ID. To get the extra claims, you need to have **profile** as part of the **scope**.
 
 **For Azure Active Directory B2C**: The app registration process is the same, but B2C has built-in support in the Azure portal for testing your B2C policies via the **Run user flow** functionality.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ## Claims in the ID token from the identity provider
 
