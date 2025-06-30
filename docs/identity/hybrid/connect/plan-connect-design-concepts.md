@@ -42,13 +42,13 @@ The attribute value must follow the following rules:
 
 If the selected sourceAnchor isn't of type string, then Microsoft Entra Connect Base64Encode the attribute value to ensure no special characters appear. If you use another federation server than ADFS, make sure your server can also Base64Encode the attribute.
 
-The sourceAnchor attribute is case-sensitive. A value of “JohnDoe” isn't the same as “johndoe”. But you shouldn't have two different objects with only a difference in case.
+If you've a single forest on-premises, then the recommended attribute to use is **ms-DS-ConsistencyGuid**. This is also the default attribute used when you use express settings in Microsoft Entra Connect. For older versions or DirSync migrations, **objectGUID** was the attribute used.
 
-If you've a single forest on-premises, then the attribute you should use is **objectGUID**. This is also the attribute used when you use express settings in Microsoft Entra Connect and also the attribute used by DirSync.
+If you've multiple forests and don't move users between forests and domains, then **ms-DS-ConsistencyGuid** is also the recommended attribute to use in this case.
 
-If you've multiple forests and don't move users between forests and domains, then **objectGUID** is a good attribute to use even in this case.
+If you move users between forests and domains, then you must find an attribute that doesn't change or can be moved with the users during the move. The **ms-DS-ConsistencyGuid** attribute is ideal for this scenario as it can be configured and moved with users. During object creation, a new GUID is created and stamped on the user. Microsoft Entra Connect can automatically populate the ms-DS-ConsistencyGuid attribute with the objectGUID value if it's not already set. When you move the object, make sure to also copy the content of this value.
 
-If you move users between forests and domains, then you must find an attribute that doesn't change or can be moved with the users during the move. A recommended approach is to introduce a synthetic attribute. An attribute that could hold something that looks like a GUID would be suitable. During object creation, a new GUID is created and stamped on the user. A custom sync rule can be created in the sync engine server to create this value based on the **objectGUID** and update the selected attribute in AD DS. When you move the object, make sure to also copy the content of this value.
+Alternatively, you can introduce a synthetic attribute. An attribute that could hold something that looks like a GUID would be suitable. During object creation, a new GUID is created and stamped on the user. A custom sync rule can be created to create this value based on the **objectGUID** and update the selected attribute in AD DS.
 
 Another solution is to pick an existing attribute you know doesn't change. Commonly used attributes include **employeeID**. If you consider an attribute that contains letters, make sure there's no chance that the case (upper case vs. lower case) can change for the attribute's value. Bad attributes that shouldn't be used include those attributes with the name of the user. In a marriage or divorce, the name is expected to change, which isn't allowed for this attribute. This is also one reason why attributes such as **userPrincipalName**, **mail**, and **targetAddress** aren't even possible to select in the Microsoft Entra Connect installation wizard. Those attributes also contain the "\@" character, which isn't allowed in the sourceAnchor.
 
