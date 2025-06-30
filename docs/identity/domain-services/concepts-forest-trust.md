@@ -1,5 +1,5 @@
 ---
-title: How trusts work for Microsoft Entra Domain Services (Preview) | Microsoft Learn
+title: How trusts work for Microsoft Entra Domain Services | Microsoft Learn
 description: Learn more about how forest trust work with Microsoft Entra Domain Services
 author: justinha
 manager: dougeby
@@ -7,11 +7,11 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 01/27/2025
+ms.date: 06/30/2025
 ms.author: justinha
 ---
 
-# How trust relationships work for forests in Active Directory (Preview)
+# How trust relationships work for forests in Active Directory 
 
 Active Directory Domain Services (AD DS) provides security across multiple domains or forests through domain and forest trust relationships. Before authentication can occur across trusts, Windows must first check if the domain being requested by a user, computer, or service has a trust relationship with the domain of the requesting account.
 
