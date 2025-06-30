@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 04/30/2025
+ms.date: 06/30/2025
 ms.author: sarahlipsey
 
 # Customer intent: As an IT admin, I want to learn how to troubleshoot sign-up errors for various scenarios and using different tools so that I can resolve sign-up issues quickly.

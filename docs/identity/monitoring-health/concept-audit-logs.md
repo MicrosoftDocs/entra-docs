@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 04/30/2025
+ms.date: 06/30/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 ms.custom: sfi-image-nochange
