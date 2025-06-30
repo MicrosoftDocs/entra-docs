@@ -160,7 +160,9 @@ Complete the following steps from the on-premises AD DS domain controller using 
 1. Select **No, do not validate the incoming trust**.
 1. Click **Ok**.
 
-If the trust is configured correctly, you’ll see the message: `The outgoing trust has been validated. It is in place and active.`
+If the trust is configured correctly, you’ll see the message: 
+
+`The outgoing trust has been validated. It is in place and active.`
 
 ### Use nltest to verify a trust
 
