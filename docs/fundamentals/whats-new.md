@@ -22,6 +22,94 @@ This article provides information about the latest releases and change announcem
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
 
+## June 2025
+ 
+### General Availability - API-driven provisioning in US Gov cloud
+ 
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Identity Governance  
+ 
+API-driven provisioning is now generally available in US Gov cloud. With this capability, customers in US Gov cloud can now ingest identity data from any authoritative source into Microsoft Entra ID and on-premises Active Directory. For more information, see: [Quickstart API-driven inbound provisioning with Graph Explorer](../identity/app-provisioning/inbound-provisioning-api-graph-explorer.md).
+ 
+---
+
+### Deprecated - Conditional Access Overview Monitoring Tab to Retire
+ 
+**Type:** Deprecated  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+ 
+We're retiring the Conditional Access Overview Monitoring Tab in the Microsoft Entra Admin Center starting July 18th and completing by August 1st. After this date, admins will no longer have access to this tab. We encourage customers to transition to Conditional Access Per-Policy Reporting and the Insights and Reporting Dashboard, both of which are more reliable, offer greater accuracy, and have received significantly better feedback from customers. Learn more about [Per-Policy Reporting](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact) and [Insights and Reporting](../identity/conditional-access/howto-conditional-access-insights-reporting.md).
+ 
+---
+ 
+### General Availability - Manage Lifecycle Workflows with Microsoft Security CoPilot in Microsoft Entra
+ 
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance  
+ 
+Now customers can manage and customize Lifecycle Workflows using natural language with Microsoft Security CoPilot in Microsoft Entra. Our Lifecycle Workflows (LCW) Copilot solution provides step-by-step guidance to perform key workflow configuration and execution tasks using natural language. It allows customers to quickly get rich insights to help monitor and troubleshoot workflows for compliance. For more information, see: [Manage employee lifecycle using Microsoft Security Copilot](../fundamentals/copilot-entra-lifecycle-workflow.md).
+ 
+---
+ 
+### General Availability - Provision custom security attributes from HR sources
+ 
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Identity Governance  
+ 
+With this feature, customers can automatically provision "*custom security attributes*" in Microsoft Entra ID from authoritative HR sources. Supported authoritative sources: Workday, SAP SuccessFactors and any HR system integrated using API-driven provisioning. For more information, refer to: [Provision custom security attributes from HR sources](../identity/app-provisioning/provision-custom-security-attributes.md).
+ 
+---
+ 
+### General Availability - Conditional Access audience reporting
+ 
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Access Control  
+ 
+Conditional Access audience reporting in the sign-in logs lets admins view all the resources evaluated by Conditional Access as part of a sign-in event. For more information, see: [Audience reporting](../identity/conditional-access/troubleshoot-conditional-access.md#audience-reporting).
+ 
+---
+ 
+### Public Preview - Cross-tenant synchronization (cross-cloud)
+ 
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Identity Governance  
+ 
+Automate creating, updating, and deleting users across tenants across Microsoft clouds. The following combinations are supported:
+ 
+- Commercial -> US Gov  
+- US Gov -> Commercial  
+- Commercial -> China  
+ 
+For more information, see: [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md)
+ 
+---
+ 
+### General Availability - Conditional Access support for all Microsoft apps
+ 
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+ 
+Administrators can assign a Conditional Access policy to all cloud apps from Microsoft as long as the service principal appears in their tenant. For more information, see: [Microsoft cloud applications](../identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-cloud-applications).
+ 
+---
+ 
+### General Availability - Two-Way Forest Trusts for Microsoft Entra Domain Services
+ 
+**Type:** New feature  
+**Service category:** Microsoft Entra Domain Services  
+**Product capability:** Microsoft Entra Domain Services  
+ 
+Two-Way Forest Trusts for Microsoft Entra Domain Services are now generally available. This capability allows organizations to establish trust relationships between Microsoft Entra Domain Services domains and on-premises Active Directory (AD) domains. Forest trusts can now be configured in three directions: one-way outbound (as before), one-way inbound, and bi-directional, depending on organizational needs. Forest trusts can be used to enable resource access across trusted domains in hybrid environments. This capability offers more control and flexibility over how to manage your hybrid identity environment with Microsoft Entra Domain Services. Trusts require an Enterprise or Premium SKU license. For more information, see: [How trust relationships work for forests in Active Directory](../identity/domain-services/concepts-forest-trust.md).
+ 
+---
+
 ## May 2025
 
 ### General Availability - Microsoft Entra External ID:  User authentication with SAML/WS-Fed Identity Providers
