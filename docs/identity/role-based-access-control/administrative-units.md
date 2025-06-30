@@ -32,7 +32,7 @@ A central administrator could:
 - Create a role with administrative permissions over only Microsoft Entra users in the School of Business administrative unit.
 - Add the business school IT team to the role, along with its scope.
 
-![Screenshot of Devices and Administrative units page with Remove from administrative unit option.](./media/administrative-units/admin-unit-overview.png)
+:::image type="content" source="./media/administrative-units/admin-unit-overview.png" alt-text="Diagram of multiple example administrative units with role assignments that are scoped to an administrative unit." lightbox="./media/administrative-units/admin-unit-overview.png":::
 
 ## Constraints
 
