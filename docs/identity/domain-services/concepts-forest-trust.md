@@ -241,7 +241,7 @@ Because trusts must be deployed across various network boundaries, they might ha
 > [!IMPORTANT]
 > Active Directory Domain Services doesn't support restricting Active Directory RPC traffic to specific ports.
 
-For more information about which ports need to be open to use a trust, see [Configure firewall settings for AD DS trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).
+For more information about which ports need to be open to use a trust, see [Configure firewall settings for AD DS trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts). All domain controllers in the domain that has a trust with Domain Services need to have these ports open.
 
 ## Supporting services and tools
 
