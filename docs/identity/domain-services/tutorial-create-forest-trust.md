@@ -145,7 +145,7 @@ If the forest trust is no longer needed for an environment, complete the followi
 1. Provide the same trust password that was used to configure the forest trust and click **OK**.
 
 ## Verify trust creation
-For two-way and one-way incoming trust, you can verify the incoming trust (the outbound trust from your on-premises domain) by using either the Active Directory Domains and Trusts console or the nltest command-line tool after you configure the forest trust.
+After you create a two-way or one-way incoming trust, you can verify the incoming trust (the outbound trust from your on-premises domain) by using either the Active Directory Domains and Trusts console or the nltest command-line tool after you configure the forest trust.
 
 ### Use Active Directory Domains and Trusts to verify a trust
 
