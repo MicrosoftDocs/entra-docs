@@ -86,7 +86,7 @@ Automate creating, updating, and deleting users across tenants across Microsoft 
 - US Gov -> Commercial  
 - Commercial -> China  
  
-[Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md)
+For more information, see: [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md)
  
 ---
  
