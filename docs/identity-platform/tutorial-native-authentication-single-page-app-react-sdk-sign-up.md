@@ -420,9 +420,24 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
 One of the errors that can result from the `signUp()` method is `result.error?.isRedirectRequired()`. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide. Learn more about [native authentication web fallback](concept-native-authentication-web-fallback.md) and how to [support web fallback](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md) in your React app.
 
 
-## Sign in users automatically after sign-up
+## Optional: Sign in users automatically after sign-up
 
-===============TODO=============
+After a user successfully signs up, you can directly sign them into the app without initiating a new sign-in flow. To do so, use the following code snippet: 
+
+```typescript
+if (signUpState instanceof SignUpCompletedState) {
+    const result = await signUpState.signIn();
+    const state = result.state;
+    if (result.isFailed()) {
+        setError(result.error?.errorData?.errorDescription || "An error occurred during auto sign-in");
+    }
+    
+    if (result.isCompleted()) {
+        setData(result.data);
+        setSignUpState(state);
+    }
+}
+```
 
 At this point, you can run your app, then view your sign-up UI at *http://localhost:3000/sign-up*. However, since native authentication API doesn't support CORS, you need to set up the CORS proxy server to manage the CORS headers.
 

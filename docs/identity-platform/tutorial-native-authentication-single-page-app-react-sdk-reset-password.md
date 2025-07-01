@@ -257,9 +257,23 @@ Create *reset-password/page.tsx* file to handle logic for a sign-in flow. In thi
         return <ResetPasswordResultPage state={resetState} />;
     }
 
-## Sign in users automatically after password reset
+## Optional: Sign in users automatically after password reset
 
-===============TODO=============
+After a user successfully resets their password, you can directly sign them into the app without initiating a new sign-in flow. To do so, use the following code snippet: 
+
+```typescript
+if (resetState instanceof ResetPasswordCompletedState) {
+    const result = await resetState.signIn();
+    const state = result.state;
+    if (result.isFailed()) {
+        setError(result.error?.errorData?.errorDescription || "An error occurred during auto sign-in");
+    }
+    if (result.isCompleted()) {
+        setData(result.data);
+        setResetState(state);
+    }
+}
+```
 
 ## Run and test your app
 
