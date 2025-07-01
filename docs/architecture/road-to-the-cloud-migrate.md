@@ -2,13 +2,13 @@
 title: Road to the cloud - Move identity and access management from Active Directory to a Microsoft Entra migration workstream
 description: Learn to plan your migration workstream of IAM from Active Directory to Microsoft Entra ID.
 documentationCenter: ''
-author: janicericketts
-manager: martinco
+author: justinha
+manager: dougeby
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 08/25/2024
-ms.author: jricketts
+ms.date: 07/01/2025
+ms.author: justinha
 ms.custom: references_regions
 ---
 # Transition to the cloud
