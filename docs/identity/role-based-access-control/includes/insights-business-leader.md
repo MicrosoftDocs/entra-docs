@@ -4,7 +4,7 @@ description: Insights Business Leader
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
-ms.date: 06/27/2025
+ms.date: 07/01/2025
 ms.custom: include file
 ---
 
