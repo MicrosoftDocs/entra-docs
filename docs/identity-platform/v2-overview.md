@@ -54,18 +54,34 @@ Workforce and external tenants have different capabilities and limitations. Choo
 
 Choose your preferred [application scenario](authentication-flows-app-scenarios.md). Each of these scenario paths has an overview and links to a quickstart to help you get started:
 
-- [React Single-page app (SPA)](quickstart-single-page-app-react-sign-in.md)
-- [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md)
-- [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md)
-- [Desktop app](scenario-desktop-app-registration.md)
-- [Daemon app](scenario-daemon-app-registration.md)
-- [Mobile app](scenario-mobile-app-registration.md)
+Browser based authentication (Workforce and External tenants):
+
+- [React Single-page app (SPA)](quickstart-single-page-app-react-sign-in.md) using browser-based authentication.
+- [ASP.NET Core Web app](quickstart-web-app-dotnet-core-sign-in.md).
+- [ASP.NET Core API](quickstart-web-api-aspnet-core-protect-api.md).
+- [Desktop app](scenario-desktop-app-registration.md).
+- [Daemon app](scenario-daemon-app-registration.md).
+- [Mobile app](scenario-mobile-app-registration.md) in a workforce tenant.
+
+
+Native authentication (External tenants only):
+- [React Single-page app (SPA)](quickstart-native-authentication-single-page-app-react-sign-in.md)
+- [Android app](quickstart-native-authentication-android-sign-in.md)
+- [iOS app](quickstart-native-authentication-ios-sign-in.md)
+- [macOS app](quickstart-native-authentication-macos-sign-in.md)
 
 For a more in-depth look at building applications using the Microsoft identity platform, see our multipart tutorial series for the following applications:
+
+Browser based authentication (Workforce and External tenants):
 
 - [React Single-page app (SPA)](tutorial-single-page-app-react-prepare-app.md)
 - [ASP.NET Core Web app](tutorial-web-app-dotnet-prepare-app.md)
 - [ASP.NET Core API](tutorial-web-api-dotnet-register-app.md)
+
+Native authentication (External tenants only):
+- [React Single-page app (SPA)](tutorial-native-authentication-single-page-app-react-sign-up.md)
+- [Android Kotlin app](tutorial-native-authentication-prepare-android-app.md)
+- [iOS/macOS Switch app](tutorial-native-authentication-prepare-ios-macos-app)
 
 As you work with the Microsoft identity platform to integrate authentication and authorization in your apps, you can refer to this image that outlines the most common app scenarios and their identity components. Select the image to view it full-size.
 
