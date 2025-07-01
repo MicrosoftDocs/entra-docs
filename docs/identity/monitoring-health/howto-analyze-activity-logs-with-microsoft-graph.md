@@ -94,7 +94,9 @@ Try using the following queries for sign-up activity in your [external tenant](.
 - To find sign-up attempts that failed during email validation:
 
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=status/errorCode eq 1002013 and signUpStage eq 'credentialValidation'`
-  - Note: Error code 1002013 represents an expected (and successful) interrupt of the sign-up flow. [Learn more](howto-troubleshoot-sign-up-errors.md#sign-up-error-codes)
+
+   > [!NOTE]
+   > Error code 1002013 indicates an expected (and successful) interrupt of the sign-up flow. [Learn more](howto-troubleshoot-sign-up-errors.md#sign-up-error-codes)
 
 - For sign-ups during a date range:
   - GET `https://graph.microsoft.com/v1.0/auditLogs/signUps?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z)`
@@ -108,8 +110,8 @@ Try using the following queries for sign-up activity in your [external tenant](.
 - For social account sign-ups (Google in this example):
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentityProvider eq ‘Google'`
 
-- To see entries for a specific user, for example `user@email.com`:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentity/signUpIdentifier eq 'user@email.com'`
+- To see entries for a specific user, for example `user@contoso.com`:
+  - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=signUpIdentity/signUpIdentifier eq 'user@contoso.com'`
 
 - To find entries matching a specific correlation ID:  
   - GET `https://graph.microsoft.com/beta/auditLogs/signUps?$filter=correlationId eq 'CorrelationId'`
