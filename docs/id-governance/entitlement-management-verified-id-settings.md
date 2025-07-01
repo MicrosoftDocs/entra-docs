@@ -61,7 +61,7 @@ To add a verified ID requirement to an access package, you must start from the a
 1. Select **Add** to add the verified ID requirement to the access package policy. 
 
 1. If you want users to complete a Face Check, select **Require Face Check**. This will ask users requesting the access package to perform a real-time, privacy compliant selfie check against the photo that is stored on their Verified ID. Once you select the checkbox, it will ask you to select the claim name that maps to the photo on the ID. For more information on Face Check, see [Use Face Check with Microsoft Entra Verified ID](~/verified-id/using-facecheck.md). 
-    :::image type="content" source="media/entitlement-management-verified-id-settings/require-facecheck.png" alt-text="Screenshot of the require face check option.":::
+    :::image type="content" source="media/entitlement-management-verified-id-settings/require-face-check.png" alt-text="Screenshot of the require face check option.":::
 1. Once you finish configuring the rest of the settings, you can review your selections on the **Review + create** tab. You can see all verified ID requirements for this access package policy in the **Verified IDs** section.
     :::image type="content" source="media/entitlement-management-verified-id-settings/verified-ids-list.png" alt-text="Screenshot of a list of verified IDs.":::
 
