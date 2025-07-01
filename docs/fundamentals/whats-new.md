@@ -30,7 +30,7 @@ This article provides information about the latest releases and change announcem
 **Service category:** Authentications (Login)  
 **Product capability:** User Authentication  
  
-Starting September 29, 2025, we will be making a change to the default background image of our Microsoft Entra work or school authentication screens. This new background was designed to help users focus on signing into their accounts, enhancing productivity and minimizing distractions. With this, we aim to ensure visual consistency and a clean, simplified user experience throughout Microsoft’s authentication flows – aligning with Microsoft’s modernized Fluent design language. When our experiences look and feel consistent, it gives our users a familiar experience that they know and trust. 
+Starting September 29, 2025, we'll be making a change to the default background image of our Microsoft Entra work or school authentication screens. This new background was designed to help users focus on signing into their accounts, enhancing productivity, and minimizing distractions. With this, we aim to ensure visual consistency and a clean, simplified user experience throughout Microsoft’s authentication flows – aligning with Microsoft’s modernized Fluent design language. When our experiences look and feel consistent, it gives our users a familiar experience that they know and trust. 
 
 **What’s changing?**                                                   		           
 
@@ -43,7 +43,7 @@ This update is solely a visual user interface refresh with no changes to functio
     b. To change this background and use a custom background, configure Company Branding 
 
 1. **Tenants with a custom background configured:**  
-    a. Tenants with a custom background configured will only see the change wherever the URL does not have a specified tenant ID parameter (For example, login.microsoftonline.com directly without a domain hint or custom URL) 
+    a. Tenants with a custom background configured will only see the change wherever the URL doesn't have a specified tenant ID parameter (For example, login.microsoftonline.com directly without a domain hint or custom URL) 
     b. For all other screens, tenants with a custom background configured will see no change to their experience on all clients. 
 
 1. **Entra External ID Tenants will not see any change to their experience on all clients** 
@@ -71,7 +71,7 @@ API-driven provisioning is now generally available in US Gov cloud. With this ca
 **Service category:** Conditional Access  
 **Product capability:** Identity Security & Protection  
  
-We're retiring the Conditional Access Overview Monitoring Tab in the Microsoft Entra Admin Center starting July 18th and completing by August 1st. After this date, admins will no longer have access to this tab. We encourage customers to transition to Conditional Access Per-Policy Reporting and the Insights and Reporting Dashboard, both of which are more reliable, offer greater accuracy, and have received significantly better feedback from customers. Learn more about [Per-Policy Reporting](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact) and [Insights and Reporting](../identity/conditional-access/howto-conditional-access-insights-reporting.md).
+We're retiring the Conditional Access Overview Monitoring Tab in the Microsoft Entra Admin Center starting July 18 and completing by August 1. After this date, admins will no longer have access to this tab. We encourage customers to transition to Conditional Access Per-Policy Reporting and the Insights and Reporting Dashboard, both of which are more reliable, offer greater accuracy, and have received significantly better feedback from customers. Learn more about [Per-Policy Reporting](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact) and [Insights and Reporting](../identity/conditional-access/howto-conditional-access-insights-reporting.md).
  
 ---
  
