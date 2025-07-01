@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ServiceNow so that I can streamline the user management process and ensure that users have the appropriate access to ServiceNow.
 ---
 
-# Configure ServiceNow for automatic user provisioning
+# Configure ServiceNow for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps that you take in both ServiceNow and Microsoft Entra ID to configure automatic user provisioning. When Microsoft Entra ID is configured, it automatically provisions and deprovisions users and groups to [ServiceNow](https://www.servicenow.com) by using the Microsoft Entra provisioning service. 
 

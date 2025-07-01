@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra SSO integration with Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud
+title: Configure Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -12,7 +12,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Splunk Enterprise and Splunk Cloud so that I can control who has access to Splunk Enterprise and Splunk Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud
+# Configure Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID. When you integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID, you can:
 

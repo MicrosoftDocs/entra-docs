@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with UserTesting
+title: Configure UserTesting for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and UserTesting.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and UserTesting so that I can control who has access to UserTesting, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with UserTesting
+# Configure UserTesting for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate UserTesting with Microsoft Entra ID. UserTesting is a platform for getting rapid customer feedback on almost any customer experience you can imagine, including websites, mobile apps, prototypes, and real world experiences. When you integrate UserTesting with Microsoft Entra ID, you can:
 

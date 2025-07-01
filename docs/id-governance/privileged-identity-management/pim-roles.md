@@ -3,7 +3,7 @@ title: Roles you can't manage in Privileged Identity Management
 description: Describes the roles you can't manage in Microsoft Entra Privileged Identity
   Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Locus
+title: Configure Locus for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Locus.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Locus so that I can control who has access to Locus, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Locus
+# Configure Locus for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Locus with Microsoft Entra ID. Locus is a real-world ready dispatch management platform for last-mile excellence. When you integrate Locus with Microsoft Entra ID, you can:
 

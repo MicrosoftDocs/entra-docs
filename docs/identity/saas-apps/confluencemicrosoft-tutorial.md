@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
+title: Configure Confluence SAML SSO by Microsoft for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft.
 author: dhivyagana
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft so that I can control who has access to Confluence SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
+# Configure Confluence SAML SSO by Microsoft for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
@@ -62,10 +62,10 @@ As of now, following versions of Confluence are supported:
 - Confluence: 6.0.1 to 6.15.9
 - Confluence: 7.0.1 to 7.20.3
 - Confluence: 8.0.0 to 8.9.8
-- Confluence: 9.0.1 to 9.4.1
+- Confluence: 9.0.1 to 9.5.1
 
 > [!NOTE]
-> Please note that our Confluence Plugin also works on Ubuntu Version 16.04
+> Please note that our Confluence Plugin was last supported on **Ubuntu 16.04**, which is no longer supported. The plugin now supports **only Windows**.
 
 ## Scenario description
 

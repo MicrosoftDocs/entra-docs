@@ -4,10 +4,10 @@ description: Learn the role and management of Primary Refresh Token (PRT) in Mic
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 03/03/2025
+ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: 
 ms.custom: sfi-image-nochange
 ---

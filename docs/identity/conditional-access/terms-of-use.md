@@ -321,7 +321,7 @@ A: The terms of use details overview reflect aggregated acceptances of the curre
 A: Yes, end users are able to select hyperlinks to other pages but links to sections within the document aren't supported. Also, hyperlinks in terms of use policy PDFs don't work when accessed from the Microsoft Entra My Apps/MyAccount portal.
 
 **Q: Can a terms of use policy support multiple languages?**<br />
-A: Yes. An administrator can upload multiple PDF documents and tag those documents with a corresponding language. When end users sign in, we look at their browser language preference and display the matching document. If there's no match, we display the default document, which is the first document that is uploaded.
+A: Yes. An administrator can upload multiple PDF documents and tag those documents with a corresponding language. When end users sign in, we look at their browser language preference and display the matching document. If there's no match, we display the default document, which is the first document that is uploaded. Windows desktop applications using [Web Account Manager](/windows/uwp/security/web-account-manager), such as Microsoft Teams, will use the operating system language for the terms, not application-specific language settings.
 
 **Q: When is the terms of use policy triggered?**<br />
 A: A terms of use policy triggers during the sign-in experience.

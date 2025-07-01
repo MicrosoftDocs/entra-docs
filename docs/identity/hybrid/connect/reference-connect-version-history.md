@@ -20,16 +20,18 @@ This article helps you keep track of the versions that have released and the cha
 
 ### Breaking Change on Entra Connect Sync
 
+> [!IMPORTANT]
+> New Microsoft Entra Connect Sync Versions are only available via the Microsoft Entra admin center 
+> > Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer being released to the Microsoft Download Center.
+
 > [!WARNING]
-> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) will start impacting the Microsoft Entra Connect Sync wizard in April 2025. You must upgrade your Connect Sync version **by 30 April 2025** to maintain Connect Sync wizard capabilities such as schema refresh, configuration of staging mode, and user-sign in changes. The minimum supported versions are [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or any newer version. No action is required if your Microsoft Entra Connect Sync server is within the recommended version range. [Learn More](harden-update-ad-fs-pingfederate.md)
+> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) will impact the Microsoft Entra Connect Sync wizard in April 2025. You must upgrade your Connect Sync version **by 30 April 2025** to maintain Connect Sync wizard capabilities such as schema refresh, configuration of staging mode, and user-sign in changes. The minimum supported versions are [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or any newer version. No action is required if your Microsoft Entra Connect Sync server is within the recommended version range. [Learn More](harden-update-ad-fs-pingfederate.md)
 
 ## Looking for the latest versions?
 
 You can upgrade your Microsoft Entra Connect server from all supported versions with the latest versions:
 
 You can download the latest version from the [Microsoft Entra Admin Center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted) under **Manage**.
-
-Or, you can download the latest version of Microsoft Entra Connect 2.x from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594). See the [release notes for the latest release](reference-connect-version-history.md#21200).
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/aadconnectrss` into your ![RSS feed reader icon](media/reference-connect-version-history/feed-icon-16x16.png) feed reader.
 
@@ -55,8 +57,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 > 
 > For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version before the retirement of your current version.
 
-|Version|End of support date|
-|-----|-----|
+|Version |End of support date |
+|--------|--------------------|
 |[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
@@ -65,7 +67,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
-|[2.4.131.0](#241310)||
+|[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
+|[2.5.3.0](#2530)||
 
 **All other versions are not supported**
 
@@ -90,6 +93,22 @@ If you want all the latest features and updates, check this page and install wha
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
 
+## 2.5.3.0
+
+### Release status
+
+05/27/2025: Released for download via the Microsoft Entra admin center.
+
+### Added Features
+- Modern Authentication enabled allowing customers to configure application-based authentication for enhanced security (Public Preview). More details [here](authenticate-application-id.md)
+
+### Updated Features
+- Upgraded the bundled health agent to version 4.5.2520.0
+- Moved from download center to Azure portal for downloads
+- Administrator credentials now required when toggling staging mode via PowerShell with SSPR enabled.
+- Administrator credentials now required when enabling, disabling, or removing SSPR configuration via PowerShell.
+
+
 ## 2.4.131.0
 
 ### Release status
@@ -97,7 +116,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 03/27/2025: Released for download and auto upgrade.
 
 >[!NOTE]
->Auto upgrade will run from the release date until 15 April 2025. If your environment is not upgraded by then, it means the auto upgrade attempt failed and you will need to perform a [manual upgrade](how-to-upgrade-previous-version.md). You can check the [Application event logs](how-to-connect-install-automatic-upgrade.md#troubleshooting) for reasons for the failure of the auto upgrade.
+>Auto upgrade runs from the release date until 15 April 2025. If your environment isn't upgraded by then, it means the auto upgrade attempt failed and you need to perform a [manual upgrade](how-to-upgrade-previous-version.md). You can check the [Application event logs](how-to-connect-install-automatic-upgrade.md#troubleshooting) for reasons for the failure of the auto upgrade.
 
 ### Updated Features
 - Removed the pre-requisite check for the SchUseStrongCrypto registry key being enabled. This version uses .NET 4.7.2 which uses strong cryptography by default.
@@ -157,8 +176,8 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Updated Features
 - The step **Connect to Microsoft Entra ID** in the Connect Sync Wizard won't require password before redirecting you to the login page.
 - Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule. Adding this rule allows the sync engine to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled, in a scenario where:
-  - the same user is represented across different forests, and 
-  - the user is disabled in one of the forests
+ - the same user is represented across different forests, and 
+ - the user is disabled in one of the forests
 - Introduced a registry key that allows you to set the precedence number for custom rules to be more than 100, if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence,** allowing for more custom rules. If no value is set, 100 is the default.
 - Cmdlets in ADSync PowerShell module that communicate with Microsoft Entra ID now require Microsoft Entra ID login, for example, `Add-ADSyncAADServiceAccount` or `Get-ADSyncExportDeletionThreshold`
 
@@ -331,7 +350,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 7/6/2022: Released for download.
 
 > [!IMPORTANT] 
-> We have discovered a security vulnerability in the Microsoft Entra Connect Admin Agent. If you have installed the Admin Agent previously it is important that you update your Microsoft Entra Connect server(s) to this version to mitigate the vulnerability.
+> We have discovered a security vulnerability in the Microsoft Entra Connect Admin Agent. If you have installed the Admin Agent previously it's important that you update your Microsoft Entra Connect server(s) to this version to mitigate the vulnerability.
 
 ### Functional changes
 - We have removed the public preview functionality for the Admin Agent from Microsoft Entra Connect. We won't provide this functionality going forward.
@@ -466,7 +485,7 @@ A change was made that allows a user to deselect objects and attributes from the
 > [!NOTE]
 > This release is an update release of Microsoft Entra Connect. This version is intended to be used by customers who are running an older version of Windows Server and can't upgrade their server to Windows Server 2016 or newer at this time. You can't use this version to update a Microsoft Entra Connect V2.0 server.
 
-We'll begin auto-upgrading eligible tenants when this version is available for download. Auto-upgrade will take a few weeks to complete.
+We'll begin auto-upgrading eligible tenants when this version is available for download. Auto-upgrade takes a few weeks to complete.
 
 When you upgrade to this V1.6 build or any newer builds, the group membership limit resets to 50,000. When a server is upgraded to this build, or any newer 1.6 builds, reapply the rule changes you applied when you initially increased the group membership limit to 250,000 before you enable sync for the server.
 
@@ -567,8 +586,6 @@ We fixed a bug that occurred when you synced a large number of Password Hash Syn
 > This release is a security update release of Microsoft Entra Connect. This release requires Windows Server 2016 or newer. If you're using an older version of Windows Server, use [version 1.6.11.3](#16113).
 
 This release addresses a vulnerability as documented in [this CVE](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36949). For more information about this vulnerability, see the CVE.
-
-To download the latest version of Microsoft Entra Connect 2.0, see the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594).
 
 ### Release status
 
@@ -722,15 +739,15 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
 ### Functional changes
 
 - We updated default sync rules to limit membership in writeback groups to 50,000 members.
- - We added new default sync rules for limiting the membership count in group writeback (Out to AD - Group Writeback Member Limit) and group sync to Microsoft Entra ID (Out to Microsoft Entra ID - Group Writeup Member Limit) groups.
+ - We added new default sync rules for limiting the membership count in group writeback (Out to AD - Group Writeback Member Limit) and group sync to Microsoft Entra ID (Out to Microsoft Entra ID - Group Write up Member Limit) groups.
  - We added a member attribute to the Out to AD - Group SOAInAAD - Exchange rule to limit members in writeback groups to 50,000.
 - We updated sync rules to support group writeback V2:
  - If the In from Microsoft Entra ID - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-  - The updated rule is disabled by default, so targetWritebackType is null.
-  - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
+ - The updated rule is disabled by default, so targetWritebackType is null.
+ - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
  - If the Out to AD - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-  - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
-  - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
+ - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
+ - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
  - If the Cloned Custom Sync Rule doesn't flow some Mail and Exchange attributes, the new Exchange Sync Rule adds those attributes.
 - We added support for [Selective Password Hash Synchronization](./how-to-connect-selective-password-hash-synchronization.md).
 - We added the new [Single Object Sync cmdlet](./how-to-connect-single-object-sync.md). Use this cmdlet to troubleshoot your Microsoft Entra Connect Sync configuration.
@@ -791,7 +808,7 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
 - We modified policy import and export to fail if custom rule has duplicate precedence.
 - We fixed a bug in the domain selection logic.
 - We fixed an issue with build 1.5.18.0 if you use mS-DS-ConsistencyGuid as the source anchor and have cloned the In from AD - Group Join rule.
-- Fresh Microsoft Entra Connect installations will use the Export Deletion Threshold stored in the cloud if there's one available and if there isn't a different one passed in.
+- Fresh Microsoft Entra Connect installations use the Export Deletion Threshold stored in the cloud if there's one available and if there isn't a different one passed in.
 - We fixed an issue where Microsoft Entra Connect wouldn't read Active Directory displayName changes of hybrid-joined devices.
 
 ## 1.5.45.0

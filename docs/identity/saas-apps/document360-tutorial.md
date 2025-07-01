@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra SSO integration with Document360
+title: Configure Document360 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and Document360.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Document360 so that I can control who has access to Document360, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Document360
+# Configure Document360 for Single sign-on with Microsoft Entra ID
 
 This article teaches you how to integrate Document360 with Microsoft Entra ID. Document360 is an online self-service knowledge base software. When you integrate Document360 with Microsoft Entra ID, you can:
 

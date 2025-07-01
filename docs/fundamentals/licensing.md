@@ -2,10 +2,10 @@
 title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.topic: conceptual
-ms.date: 03/05/2025
+ms.date: 06/20/2025
 ms.subservice: fundamentals
 ms.author: barclayn
 ---
@@ -24,7 +24,7 @@ This article discusses licensing options for the Microsoft Entra product family.
 ## App provisioning
 
 [!INCLUDE [App provisioning](../includes/licensing-app-provisioning.md)]
-
+https://dev.azure.com/msft-skilling/Content/_workitems/edit/438678
 ## Authentication
 
 [!INCLUDE [Authentication](../includes/licensing-authentication.md)]
@@ -68,10 +68,6 @@ Microsoft Entra [External ID](../external-id/external-identities-overview.md) co
 ## Microsoft Entra monitoring and health
 
 [!INCLUDE [Microsoft Entra monitoring and health](../includes/licensing-monitoring-health.md)]
-
-## Microsoft Entra Permissions management
-
-Permissions Management supports all resources across Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform but only requires licenses for [billable resources](../permissions-management/product-data-billable-resources.md).
 
 ## Microsoft Entra Private Access
 

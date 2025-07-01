@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Testim
+title: Configure Testim for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Testim.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Testim so that I can control who has access to Testim, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Testim
+# Configure Testim for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Testim with Microsoft Entra ID. Testim is the fastest way to create your most resilient e2e tests. The AI- based platform fits your workflow and accelerates software releases. When you integrate Testim with Microsoft Entra ID, you can:
 

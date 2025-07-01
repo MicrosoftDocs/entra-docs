@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: vimrang
-manager: femila
+manager: dougeby
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
@@ -53,7 +53,7 @@ Optionally, you can also configure authentication bindings to map certificates t
 
 :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/steps.png" alt-text="Diagram of the steps required to enable Microsoft Entra certificate-based authentication.":::
 
-## Step 1: Configure the certificate authorities with PKI-based trust store (Preview)
+## Step 1: Configure the certificate authorities with PKI-based trust store
 
 Entra has a new public key infrastructure (PKI) based certificate authorities (CA) trust store. The PKI-based CA trust store keeps CAs within a container object for each different PKI. Admins can manage CAs in a container based on PKI easier than one flat list of CAs.
 
@@ -103,6 +103,7 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
    
    1. Select **Columns** to add or delete columns.
    1. Select **Refresh** to refresh the list of CAs.
+   1. Initially 100 CA certificates will be displayed and display more as the page is scrolled down.
 
 #### Upload all CAs with upload PKI into PKI container object
 1. To upload all CAs at once into the PKI container:
@@ -113,6 +114,7 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
    1. Select the upload.
    1. Upload PKI is an asynchronous process. As each CA is uploaded, it's available in the PKI. Completion of PKI upload can take up to 30 minutes.
    1. Select **Refresh** to refresh the CAs.
+   1. Each uploaded CA **CRL endpoint** attribute  will be updated with the CA certificate's first available http URL on **CRL distribution points** attribute. The leaf CA certificate CA needs to be updated manually by the admin.
 
    To generate the SHA256 checksum of the PKI .p7b file, run this command:
 
@@ -125,19 +127,23 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
 1. To edit PKI, select **...** on the PKI row and select **Edit**.
 1. Enter a new PKI name and select **Save**.
 
-
 #### Edit a CA
 
 1. To edit CA, select **...** on the CA row and select **Edit**.
 1. Enter new values for Certificate Authority type (root/intermediate), CRL URL, Delta CRL URL, Issuer Hints enabled flag as necessary and select **Save**.
 
+#### Bulk Edit of issuer hints attribute
 
-### Restore a PKI
+1. To edit multiple CAs **Issuer hints enabled** attribute, select multiple CAs and select **Edit** and select **Edit issuer hints**.
+1. The default value is **indeterminate** and select to enable **Issuer hints enabled** flag for all selected CAs or unselect to disable **Issuer hints enabled** flag for all selected CAs.
+1. Select **Save**
+
+#### Restore a PKI
 1. Select the **Deleted PKIs** tab.
 1. Select the PKI and select **Restore PKI**.
 
 
-### Restore a CA
+#### Restore a CA
 1. Select the **Deleted CAs** tab.
 1. Select the CA file and select **Restore certificate authority**.
 
@@ -235,11 +241,27 @@ For this configuration, you can use [Microsoft Graph PowerShell] (/powershell/mi
       Connect-MGGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All" -TenantId <tenantId>
    ``` 
 
+### Prioritization between PKI based trust store and classic CA store
+
+PKI based CA store will be prioritized if a CA exists in both PKI based CA store and the classic CA store. 
+Classic CA store will be used 1. when a CA exists on both stores but PKI based store has no CRL but classic store CA has a valid CRL 2. when a CA exists on both stores but PKI based store CA CRL is different from classic store CA
+
+### Sign-in log
+
+Entra sign in log interrupted entry will have two attributes in the **Additional Details** to indicate whether the Legacy store was used at all in the authentication.
+- **Is Legacy Store Used** attribute will have a value of 0 to indicate PKI based store usage and a value of 1 indicate Classic or Legacy store use.
+- **Legacy store Use Information** attribute will indicate the reason for using the legacy store
+
+:::image type="content" border="true" source="./media/how-to-certificate-based-authentication/ca-store-sign-in-log.png" alt-text="Sign in log entry for usage of PKI or Legacy CA store":::
 
 ### Audit log 
 Any CRUD operations on a PKI or CA within the trust store are logged into the Microsoft Entra audit logs. 
 
 :::image type="content" border="false" source="./media/how-to-certificate-based-authentication/audit-logs.png" alt-text="Diagram of Audit logs.":::
+
+### Migration from Classic CA store to PKI based store
+
+The tenant admin can upload all the CAs into the PKI based store and with PKI CA store taking priority over CLassic store all CBA authentications will happen using the PKI based store. Tenant admin can remove the CAs from legacy store after confirming that there is no indication of Legacy store use in the sign in logs 
 
 ### FAQs
 

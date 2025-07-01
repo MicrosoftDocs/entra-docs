@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with TextUnited Translation
+title: Configure TextUnited Translation for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and TextUnited Translation.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Microsoft Entra SSO integration with TextUnited Translation
+# Configure TextUnited Translation for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate TextUnited Translation with Microsoft Entra ID. When you integrate TextUnited Translation with Microsoft Entra ID, you can:
 

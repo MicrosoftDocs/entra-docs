@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra SSO integration with Alchemer
+title: Configure Alchemer for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Alchemer.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alchemer so that I can control who has access to Alchemer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Alchemer
+# Configure Alchemer for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Alchemer with Microsoft Entra ID. Alchemer offers the world’s most flexible feedback and data collection platform that allows organizations to close the loop with their customers and employees quickly and effectively. When you integrate Alchemer with Microsoft Entra ID, you can:
 

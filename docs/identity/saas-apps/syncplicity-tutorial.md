@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra integration with Syncplicity
+title: Configure Syncplicity for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Syncplicity.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Syncplicity so that I can control who has access to Syncplicity, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Integrate Syncplicity with Microsoft Entra ID
+# Configure Syncplicity for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Syncplicity with Microsoft Entra ID. When you integrate Syncplicity with Microsoft Entra ID, you can:
 

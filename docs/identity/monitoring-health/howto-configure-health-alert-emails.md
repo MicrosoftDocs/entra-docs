@@ -2,7 +2,7 @@
 title: How to configure Health email notifications (preview)
 description: Learn how to configure the Microsoft Entra health monitoring email notifications to monitor and improve the health of your tenant.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

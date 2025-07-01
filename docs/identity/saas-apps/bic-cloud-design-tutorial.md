@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with BIC Process Design
+title: Configure BIC Process Design for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and BIC Process Design.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BIC Process Design so that I can control who has access to BIC Process Design, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with BIC Process Design
+# Configure BIC Process Design for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate BIC Process Design with Microsoft Entra ID. When you integrate BIC Process Design with Microsoft Entra ID, you can:
 

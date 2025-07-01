@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Insightly SAML
+title: Configure Insightly SAML for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Insightly SAML.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Microsoft Entra SSO integration with Insightly SAML
+# Configure Insightly SAML for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Insightly SAML with Microsoft Entra ID. When you integrate Insightly SAML with Microsoft Entra ID, you can:
 

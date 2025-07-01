@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Perforce Helix Core - Helix Authentication Service
+title: Configure Perforce Helix Core - Helix Authentication Service for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Perforce Helix Core - Helix Authentication Service.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Perforce Helix Core - Helix Authentication Service so that I can control who has access to Perforce Helix Core - Helix Authentication Service, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Perforce Helix Core - Helix Authentication Service
+# Configure Perforce Helix Core - Helix Authentication Service for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Perforce Helix Core - Helix Authentication Service with Microsoft Entra ID. When you integrate Perforce Helix Core - Helix Authentication Service with Microsoft Entra ID, you can:
 

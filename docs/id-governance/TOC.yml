@@ -103,7 +103,7 @@
       - name: Using Entra Private Access with Entitlement Management  
         href: scenarios/entitlement-management-private-access.md
       - name: Restrict employee access to cloud apps using Microsoft Entra Suite
-        href: entra-suite-scenario.md      
+        href: entitlement-management-global-secure-access-restrict-employee-access.md      
   - name: Migrations
     items:
     - name: Transform your cloud posture
@@ -224,6 +224,8 @@
       href: lifecycle-workflow-audits.md
     - name: Workflow History
       href: lifecycle-workflow-history.md
+    - name: Workflow Execution conditions
+      href: lifecycle-workflow-execution-conditions.md         
     - name: Synced AD DS users
       href: lifecycle-workflow-on-premises.md         
     - name: Workflow Insights
@@ -298,7 +300,9 @@
       - name: Assign Microsoft Entra Roles (Preview)
         href: entitlement-management-roles.md
       - name: Suggested access packages in MyAccess (Preview)
-        href: entitlement-management-suggested-access-packages.md   
+        href: entitlement-management-suggested-access-packages.md 
+      - name: Assign eligible group membership and ownership in access packages using PIM managed groups (Preview)
+        href: entitlement-management-access-package-eligible.md   
     - name: Approvers
       items:
       - name: Approve requests
@@ -400,12 +404,16 @@
     href: governance-service-limits.md  
   - name: Licensing fundamentals
     href: licensing-fundamentals.md
+  - name: Licensing for guest users
+    href: microsoft-entra-id-governance-licensing-for-guest-users.md  
   - name: Services and integration partners
     href: services-and-integration-partners.md
   - name: Best practices for securing ID Governance
     href: best-practices-secure-id-governance.md 
   - name: Securing custom extension extensibility to Azure Logic Apps
     href: custom-extension-security.md  
+  - name: Using groups managed by Privileged Identity Management with access packages
+    href: entitlement-management-access-package-pim-reference.md
   - name: Identity Governance - PowerShell
     href: /powershell/module/microsoft.graph.identity.governance/?viewFallbackFrom=graph-powershell-beta&preserve-view=true&view=graph-powershell-1.0
   - name: Access reviews - Microsoft Graph API

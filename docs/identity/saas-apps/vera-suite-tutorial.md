@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Vera Suite
+title: Configure Vera Suite for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Vera Suite.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Vera Suite so that I can control who has access to Vera Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Vera Suite
+# Configure Vera Suite for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Vera Suite with Microsoft Entra ID. Vera Suite helps auto dealers maintain cultures of safety, streamline operations and manage risk. Vera Suite offers dealership workforce and workplace compliance solutions for EHS, HR and F&I managers. When you integrate Vera Suite with Microsoft Entra ID, you can:
 

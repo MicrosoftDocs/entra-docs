@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with F5
+title: Configure Advanced F5 Kerberos Delegation for Multi-Tier SaaS Architectures
 description: In this article, learn the steps you need to perform to integrate F5 with Microsoft Entra ID.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -12,7 +12,7 @@ ms.author: gideonkiratu
 ms.custom: sfi-image-nochange
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with F5
+# Configure Advanced F5 Kerberos Delegation for Multi-Tier SaaS Architectures
 
 In this article,  you learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 

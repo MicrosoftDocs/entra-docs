@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with GetThere
+title: Configure GetThere for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and GetThere.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GetThere so that I can control who has access to GetThere, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with GetThere
+# Configure GetThere for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate GetThere with Microsoft Entra ID. When you integrate GetThere with Microsoft Entra ID, you can:
 
@@ -110,11 +110,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure GetThere SSO
 
-To configure single sign-on on **GetThere** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [GetThere support team](mailto:dataintegration@sabre.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **GetThere** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [GetThere support team](mailto:dataintegration@serko.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create GetThere test user
 
-In this section, you create a user called B.Simon in GetThere. Work with [GetThere support team](mailto:dataintegration@sabre.com) to add the users in the GetThere platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in GetThere. Work with [GetThere support team](mailto:dataintegration@serko.com) to add the users in the GetThere platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

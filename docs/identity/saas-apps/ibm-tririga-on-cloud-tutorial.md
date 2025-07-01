@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with IBM TRIRIGA on Cloud
+title: Configure IBM TRIRIGA on Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and IBM TRIRIGA on Cloud.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IBM TRIRIGA on Cloud so that I can control who has access to IBM TRIRIGA on Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with IBM TRIRIGA on Cloud
+# Configure IBM TRIRIGA on Cloud for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate IBM TRIRIGA on Cloud with Microsoft Entra ID. IWMS that integrates functionalities across real estate, capital projects, facilities, workplace operations, portfolio data, and environmental and energy management within a single technology platform. When you integrate IBM TRIRIGA on Cloud with Microsoft Entra ID, you can:
 

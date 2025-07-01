@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Dining Sidekick
+title: Configure Dining Sidekick for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Dining Sidekick.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Dining Sidekick so that I can control who has access to Dining Sidekick, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Dining Sidekick
+# Configure Dining Sidekick for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Dining Sidekick with Microsoft Entra ID. When you integrate Dining Sidekick with Microsoft Entra ID, you can:
 

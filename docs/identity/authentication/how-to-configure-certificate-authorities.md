@@ -7,13 +7,13 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: vimrang
-manager: femila
+manager: dougeby
 ms.reviewer: vraganathan
 ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
 ---
 # How to configure certificate authorities for Microsoft Entra certificate-based authentication
 
-The best way to configure the certificate authorities (CAs) is with the PKI-based trust store (Preview). You can delegate configuration with a PKI-based trust store to least privileged roles. For more information see, [Step 1: Configure the certificate authorities with PKI-based trust store (Preview)](how-to-certificate-based-authentication.md#step-1-configure-the-certificate-authorities-with-pki-based-trust-store-preview).
+The best way to configure the certificate authorities (CAs) is with the PKI-based trust store (Preview). You can delegate configuration with a PKI-based trust store to least privileged roles. For more information see, [Step 1: Configure the certificate authorities with PKI-based trust store (Preview)](how-to-certificate-based-authentication.md#step-1-configure-the-certificate-authorities-with-pki-based-trust-store).
 
 As an alternative, a Global Administrator can follow steps in this topic to configure CAs by using the Microsoft Entra admin center, or Microsoft Graph REST APIs and the supported software development kits (SDKs), such as Microsoft Graph PowerShell. 
 

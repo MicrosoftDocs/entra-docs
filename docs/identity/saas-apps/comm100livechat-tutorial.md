@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Comm100 Live Chat
+title: Configure Comm100 Live Chat for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Comm100 Live Chat.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Comm100 Live Chat so that I can control who has access to Comm100 Live Chat, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with Comm100 Live Chat
+# Configure Comm100 Live Chat for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Comm100 Live Chat with Microsoft Entra ID. When you integrate Comm100 Live Chat with Microsoft Entra ID, you can:
 

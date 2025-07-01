@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra SSO integration with Informatica Intelligent Data Management Cloud
+title: Configure Informatica Intelligent Data Management Cloud for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Informatica Intelligent Data Management Cloud.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Informatica Intelligent Data Management Cloud so that I can control who has access to Informatica Intelligent Data Management Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Informatica Intelligent Data Management Cloud
+# Configure Informatica Intelligent Data Management Cloud for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Informatica Intelligent Data Management Cloud with Microsoft Entra ID. It's a SAML SSO Auth application to enable Informatica Intelligent Data Management Cloud on Azure Native Services. When you integrate Informatica Intelligent Data Management Cloud with Microsoft Entra ID, you can:
 

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with HackNotice
+title: Configure HackNotice for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HackNotice.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HackNotice so that I can control who has access to HackNotice, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with HackNotice
+# Configure HackNotice for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate HackNotice with Microsoft Entra ID. When you integrate HackNotice with Microsoft Entra ID, you can:
 

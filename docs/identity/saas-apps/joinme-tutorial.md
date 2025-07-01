@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra integration with join.me
+title: Configure join.me for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and join.me.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and join.me so that I can control who has access to join.me, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with join.me
+# Configure join.me for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate join.me with Microsoft Entra ID.
 Integrating join.me with Microsoft Entra ID provides you with the following benefits:

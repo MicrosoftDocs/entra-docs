@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with Logz.io
+title: Configure Logz.io for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Logz.io - Microsoft Entra Integration.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Logz.io - Microsoft Entra Integration so that I can control who has access to Logz.io - Microsoft Entra Integration, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) set up for Logz.io
+# Configure Logz.io for Single sign-on with Microsoft Entra ID
 
 ## Single sign-on (SSO) for the Logz.io - Azure portal integration
 

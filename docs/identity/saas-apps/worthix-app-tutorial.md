@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Worthix App
+title: Configure Worthix App for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Worthix App.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Worthix App so that I can control who has access to Worthix App, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Worthix App
+# Configure Worthix App for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Worthix App with Microsoft Entra ID. Worthix App is a Customer Value Alignment platform that uses I.A to dialogue with your company customers to collect their company value perceptions. When you integrate Worthix App with Microsoft Entra ID, you can:
 

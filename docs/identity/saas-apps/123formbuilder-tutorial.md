@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra integration with 123FormBuilder SSO
+title: Configure 123FormBuilder SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and 123FormBuilder SSO.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and 123FormBuilder so that I can control who has access to 123FormBuilder, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with 123FormBuilder SSO
+# Configure 123FormBuilder SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate 123FormBuilder SSO with Microsoft Entra ID. When you integrate 123FormBuilder SSO with Microsoft Entra ID, you can:
 

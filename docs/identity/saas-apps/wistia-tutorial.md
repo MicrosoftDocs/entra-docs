@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Wistia
+title: Configure Wistia for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wistia.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wistia so that I can control who has access to Wistia, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Wistia
+# Configure Wistia for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Wistia with Microsoft Entra ID. Sign into Wistia with Microsoft Entra ID and start to level up your video marketing strategy. Learn more about Wistia video marketing platform at wistia.com. When you integrate Wistia with Microsoft Entra ID, you can:
 

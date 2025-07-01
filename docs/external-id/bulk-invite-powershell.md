@@ -6,7 +6,7 @@ ms.topic: tutorial
 ms.date: 03/13/2025
 ms.author: cmulligan
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT admin managing external partners in Microsoft Entra B2B collaboration, I want to use PowerShell to send bulk invitations to guest users, so that I can efficiently add multiple users to my organization and streamline the onboarding process.

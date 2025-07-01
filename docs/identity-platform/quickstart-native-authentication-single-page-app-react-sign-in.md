@@ -2,7 +2,7 @@
 title: "Sign in users in a React single-page app (SPA) by using native authentication"
 description: Learn how to configure a sample React single-page app (SPA) that uses native authentication API to sign up users.
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external

@@ -1,8 +1,8 @@
 ---
-title: Microsoft Entra SSO integration with AppNeta Performance Manager
+title: Configure AppNeta Performance Manager for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AppNeta Performance Manager.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AppNeta Performance Monitor so that I can control who has access to AppNeta Performance Monitor, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with AppNeta Performance Manager
+# Configure AppNeta Performance Manager for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate AppNeta Performance Manager with Microsoft Entra ID. When you integrate AppNeta Performance Manager with Microsoft Entra ID, you can:
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://<subdomain>.pm.appneta.com`
 
    b. In the Reply URL (Assertion Consumer Service URL) field, enter:
-   `https://sso.connect.pingidentity.com/sso/sp/ACS.saml2`
+   `https://access.broadcom.com/default/saml/v1/sp/acs`
 
    > [!NOTE]
    > The Sign-on URL value above is an example. Update this value with the actual Sign-On URL. Contact [AppNeta Performance Manager customer support team](mailto:support@appneta.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
@@ -96,16 +96,12 @@ Follow these steps to enable Microsoft Entra SSO.
 
    | Name      | Source Attribute       |
    | --------- | ---------------------- |
-   | firstName | user.givenname         |
-   | lastName  | user.surname           |
-   | email     | user.userprincipalname |
-   | name      | user.userprincipalname |
-   | groups    | user.assignedroles     |
-   | phone     | user.telephonenumber   |
-   | title     | user.jobtitle          |
-   |           |                        |
+   | FirstName | user.givenname         |
+   | LastName  | user.surname           |
+   | Email     | user.userprincipalname |
+   | Groups    | user.assignedroles     |
 
-1. In order to properly pass along your ”groups” SAML assertions, you need to configure App roles and set the value to match the role mappings that are set within AppNeta Performance Manager. Under **Entra ID** > **App registrations**, select **Appneta Performance Manager**.
+1. In order to properly pass along your "Groups" SAML assertions, you need to configure App roles and set the value to match the role mappings that are set within AppNeta Performance Manager. Under **Entra ID** > **App registrations**, select **AppNeta Performance Manager**.
 
    ![Screenshot that shows the App Registrations with Appneta Performance Manager at the bottom.](./media/appneta-tutorial/app-registrations.png)
 

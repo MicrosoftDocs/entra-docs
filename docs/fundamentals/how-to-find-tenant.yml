@@ -4,7 +4,7 @@ metadata:
   description: Instructions about how to find and Microsoft Entra tenant ID to an existing Azure subscription.
   author: barclayn
   ms.author: barclayn
-  manager: femila
+  manager: pmwongera
   ms.reviewer: jeffsta
   ms.date: 01/14/2025
   ms.service: entra
