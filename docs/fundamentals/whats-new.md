@@ -24,6 +24,37 @@ This article provides information about the latest releases and change announcem
 
 ## June 2025
  
+### General Availability – Update to Microsoft Entra Work or School Default Background Image 
+ 
+**Type:** Changed feature  
+**Service category:** Authentications (Login)  
+**Product capability:** User Authentication  
+ 
+Starting September 29, 2025, we will be making a change to the default background image of our Microsoft Entra work or school authentication screens. This new background was designed to help users focus on signing into their accounts, enhancing productivity and minimizing distractions. With this, we aim to ensure visual consistency and a clean, simplified user experience throughout Microsoft’s authentication flows – aligning with Microsoft’s modernized Fluent design language. When our experiences look and feel consistent, it gives our users a familiar experience that they know and trust. 
+
+**What’s changing?**                                                   		           
+
+This update is solely a visual user interface refresh with no changes to functionality. This change will only affect screens where Company Branding doesn't apply or where users see the default background image. We recommend updating any documentation that contains screenshots and notifying your help desk. If you have configured a custom background image in Company Branding for your tenant, there will be no change for your users. 
+
+**Additional Details:** 
+
+1. **Tenants without a custom background configured:**  
+    a. Tenants without a custom background will see the change on every authentication screen 
+    b. To change this background and use a custom background, configure Company Branding 
+
+1. **Tenants with a custom background configured:**  
+    a. Tenants with a custom background configured will only see the change wherever the URL does not have a specified tenant ID parameter (For example, login.microsoftonline.com directly without a domain hint or custom URL) 
+    b. For all other screens, tenants with a custom background configured will see no change to their experience on all clients. 
+
+1. **Entra External ID Tenants will not see any change to their experience on all clients** 
+
+**What do you need to do?**
+
+No action is required. The update will be applied automatically starting September 29, 2025. 
+ 
+---
+
+
 ### General Availability - API-driven provisioning in US Gov cloud
  
 **Type:** New feature  
