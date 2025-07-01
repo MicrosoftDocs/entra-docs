@@ -39,7 +39,7 @@ During password reset flow, this app, collects the user's username (email), a on
 
 1. Create *reset-password/components/InitialForm.tsx* file, then paste the code from [reset-password/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/components/InitialForm.tsx). This component displays a form that collects a user's username (email). 
 
-1. Create *reset-password/components/CodeForm.tsx* file, then paste the code from [reset-password/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/components/CodeForm.tsx). This component displays a form that collects the one-time passcode that the user recives in their email. 
+1. Create *reset-password/components/CodeForm.tsx* file, then paste the code from [reset-password/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/components/CodeForm.tsx). This component displays a form that collects the one-time passcode that the user receives in their email inbox. 
 
 1. Create *reset-password/components/NewPasswordForm.tsx* file, then paste the code from [reset-password/components/NewPasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/components/NewPasswordForm.tsx). This component displays a form that collects a user's new password. 
 

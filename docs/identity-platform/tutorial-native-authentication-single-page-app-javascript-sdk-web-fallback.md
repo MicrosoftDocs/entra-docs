@@ -16,7 +16,7 @@ ms.date: 06/30/2025
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-This tutorial demonstrates how to acquire a security tokens through a browser-based authentication where native authentication isn't sufficient to complete the authentication flow by using a mechanism called *web fallback*.
+This tutorial demonstrates how to acquire security tokens through a browser-based authentication where native authentication isn't sufficient to complete the authentication flow by using a mechanism called *web fallback*.
 
 Web fallback allows a client app that uses native authentication to use browser-delegated authentication as a fallback mechanism to improve resilience. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide. Learn more about [web fallback](concept-native-authentication-web-fallback.md).
 
@@ -34,7 +34,7 @@ In this tutorial, you:
 
 ## Check and handle web fallback
 
-One of the errors you can encounter when you use the JavaScript SDK's `signIn()` or `SignUp()` method is `result.error?.isRedirectRequired()`. The utility method `isRedirectRequired()` checks the need to fallback to browser-delegated authentication. When this happens, use the following code snippet to support web fallback:
+One of the errors you can encounter when you use the JavaScript SDK's `signIn()` or `SignUp()` method is `result.error?.isRedirectRequired()`. The utility method `isRedirectRequired()` checks the need to fallback to browser-delegated authentication. Use the following code snippet to support web fallback:
 
 
    ```typescript
@@ -81,7 +81,7 @@ One of the errors you can encounter when you use the JavaScript SDK's `signIn()`
    }
    ```
 
-When web fallback kicks in, the app accquires security tokens by using the `loginPopup()` method.
+When the app users fallback mechanism, the app acquires security tokens by using the `loginPopup()` method.
 
 
 ## Related content
