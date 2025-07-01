@@ -78,12 +78,10 @@ By the end of this article, you'll be able to:
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
 ::: zone pivot="same-cloud-synchronization"
-- Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 ::: zone-end
 
 ::: zone pivot="cross-cloud-synchronization"
-- Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 ::: zone-end
 
