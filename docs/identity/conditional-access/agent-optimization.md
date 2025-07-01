@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 
-ms.date: 06/09/2025
+ms.date: 07/01/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -12,12 +12,9 @@ ms.topic: how-to
 ---
 # Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot
 
-
 The Conditional Access optimization agent helps you ensure all users are protected by policy. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
-In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow.
-
-The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies.
+In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. With **one-click remediation**, when the agent identifies a suggestion you can have the agent update the associated policy with one click.
 
 ## Prerequisites
 
@@ -40,16 +37,20 @@ The agent also evaluates all existing enabled policies to propose potential cons
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
 
-## Conditional Access optimization agent key features
+## How it works
 
-The Conditional Access optimization agent scans your tenant for new users and applications and determines if Conditional Access policies are applicable. In preview, the key features include:
+The Conditional Access optimization agent scans your tenant for new users and applications and determines if Conditional Access policies are applicable. If the agent finds users or applications that aren't protected by Conditional Access policies, it provides suggested next steps, such as creating or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
+
+In preview, the policy suggestions reviewed by the agent include:
 
 - **Require MFA**: The agent identifies users who aren't covered by a Conditional Access policy that requires MFA and can update the policy.
 - **Require device-based controls**: The agent can enforce device-based controls, such as device compliance, app protection policies, and domain-joined devices.
 - **Block legacy authentication**: User accounts with legacy authentication are blocked from signing in.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 - **Block device code flow**: The agent looks for a policy blocking device code flow authentication.
-- **One-click remediation**: When the agent identifies a suggestion, you can select **Apply suggestion** to have the agent update the associated policy with one click.
+
+> [!IMPORTANT]
+> The agent only provides the suggestion. It doesn't create or modify policies unless an administrator explicitly approves the suggestion. All new policies created by the agent are created in report-only mode. 
 
 ## Getting started
 
