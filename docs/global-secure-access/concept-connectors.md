@@ -32,10 +32,8 @@ Setup and registration between a connector and the application proxy service is 
 
 It's recommended that you always deploy multiple connectors for redundancy and scale. The connectors, in conjunction with the service, take care of all the high availability tasks and can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is available. When a connector is running, it remains active as it connects to the service. If a connector is temporarily unavailable, it doesn't respond to this traffic. Unused connectors are tagged as inactive and removed after 10 days of inactivity.
 
-Connectors also poll the server to find out if there's a newer version of the connector. Although you can do a manual update, connectors will update automatically as long as the private network connector Updater service is running. For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
-
 > [!NOTE]
-> You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates.
+> You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates so that you can schedule appropriate connector upgrades.
 
 Each private network connector is assigned to a [connector group](concept-connector-groups.md). Connectors in the same connector group act as a single unit for high availability and load balancing. You can create new groups, assign connectors to them in the Microsoft Entra admin center, then assign specific connectors to serve specific applications. It's recommended to have at least two connectors in each connector group for high availability.
 
@@ -59,11 +57,11 @@ You can monitor your connectors from the machine they're running on, using eithe
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as `_inactive_` and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart the computer to fully remove the service.
 
-## Automatic updates
+## Connector updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
+Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors may update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
 
-If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
+If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector. Note that not all updates are scheduled for automatic update. It is recommended that you monitor the [version history page](reference-version-history.md) for information about whether an update is deployed automatically or manually via the Microsoft Entra portal.
 
 For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
 

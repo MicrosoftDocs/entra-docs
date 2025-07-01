@@ -3,7 +3,7 @@ title: Configure Convercent | Microsoft Docs for Single sign-on with Microsoft E
 description: Learn how to configure single sign-on between Microsoft Entra ID and Convercent.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access Client for Windows: Advanced Diagn
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 05/09/2025
+ms.date: 06/24/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -18,9 +18,16 @@ This article provides troubleshooting guidance for the Global Secure Access clie
 The Global Secure Access client runs in the background, routing relevant network traffic to Global Secure Access without requiring user interaction. Use the advanced diagnostics tool to gain visibility into the client's behavior and troubleshoot issues effectively.  
 
 ## Launch the advanced diagnostics tool
-To launch the advanced diagnostics tool:
+There are two ways to launch the advanced diagnostics tool:
 1. Right-click the **Global Secure Access client** icon in the system tray.
 1. Select **Advanced Diagnostics**. If enabled, User Account Control (UAC) prompts you to elevate privileges.
+
+Or
+1. Select the **Global Secure Access client** icon in the system tray.
+1. Switch to the **Troubleshooting** view.
+1. Under **Advanced diagnostics tool**, select **Run tool**.
+
+:::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/client-interface-troubleshooting-run-tool.png" alt-text="Screenshot of the Troubleshooting view of the Global Secure Access client interface with the Run tool button highlighted.":::
 
 ## Overview tab
 The advanced diagnostics **Overview** tab shows general configuration details for the Global Secure Access client:
@@ -118,36 +125,35 @@ When advanced log collection stops, the folder containing the log files opens. B
 
 The following files are collected:
 
-|File|Description|
+|File |Description |
 | - | - |
-|Application-Crash.evtx|Application log filtered by event ID 1001. This log is useful when services are crashing.|
-|BindingNetworkDrivers.txt|Result of "Get-NetAdapterBinding -AllBindings -IncludeHidden" showing all the modules bound to network adapters. This output is useful to identify if non-Microsoft drivers are bound to the network stack|
+|Application-Crash.evtx |Application log filtered by event ID 1001. This log is useful when services are crashing. |
+|BindingNetworkDrivers.txt |Result of "Get-NetAdapterBinding -AllBindings -IncludeHidden" showing all the modules bound to network adapters. This output is useful to identify if non-Microsoft drivers are bound to the network stack. |
 |ClientChecker.log|Results of the Global Secure Access client health checks. These results are easier to analyze if you load the zip file in the Global Secure Access client. See [Analyze Global Secure Access client logs on a different device than where they were collected](#analyze-global-secure-access-client-logs-on-a-different-device-than-where-they-were-collected).|
-|DeviceInformation.log|Environment variables including OS version and Global Secure Access client version.|
-|dsregcmd.txt|Output of dsregcmd /status showing device state including Microsoft Entra Joined, Hybrid Joined, PRT details, and Windows Hello for Business details|
-|filterDriver.txt|Windows Filtering Platform filters|
-|ForwardingProfile.json|The json policy that was delivered to the Global Secure Access client and includes the Global Secure Access service edge IP address your Global Secure Access client is connecting to (*.globalsecureaccess.microsoft.com) as well as forwarding profile rules|
-|GlobalSecureAccess-Boot-Trace.etl|Global Secure Access client debug logging|
-|GlobalSecureAccess-Boot-Trace.etl|Global Secure Access client debug logging|
-|Multiple .reg files|Global Secure Access client registry exports|
-|hosts|Host file|
-|installedPrograms.txt|Windows installed apps, which can by useful to understand what might be causing issues|
-|ipconfig.txt|Ipconfig /all output including IP address and DNS servers that have been assigned to the device|
-|Kerberos_info.txt|Output of klist, klist tgt, and klist cloud_debug. This output is useful for troubleshooting kerberos issues, and SSO with Windows Hello for Business|
-|LogsCollectorLog.log and LogsCollectorLog.log.x|Logs for the log collector process itself. These logs are useful if you're having issues with Global Secure Access log collection|
-|Multiple .evtx|Exports of multiple Windows event logs|
-|NetworkInformation.log|Output of route print, Name Resolution Policy Table (NRPT) table, and latency results for Global Secure Access connectivity test. This output is useful to troubleshoot NRPT issues.|
-|RunningProcesses.log|Running processes|
-|systeminfo.txt|System information including hardware, OS versions, and patches|
-|systemWideProxy.txt|Output of netsh winhttp show proxy|
-|userConfiguredProxy|Output of proxy settings in the registry|
-|userSessions.txt|User session list|
-|DNSClient.etl|DNS client logs. These logs are useful for diagnosing DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: `Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView`|
-|InternetDebug.etl|Logs collected using "netsh trace start scenario=internetClient_dbg capture=yes persistent=yes"|
-|NetworkTrace.etl|Net capture taken with pktmon|
-|NetworkTrace.pcap|Network capture including traffic inside the tunnel|
-|NetworkTrace.txt|Pkmon trace in text format|
-|wfplog.cab|Windows Filtering Platform logs|
+|DeviceInformation.log |Environment variables including OS version and Global Secure Access client version.|
+|dsregcmd.txt|Output of dsregcmd /status showing device state including Microsoft Entra Joined, Hybrid Joined, PRT details, and Windows Hello for Business details. |
+|filterDriver.txt |Windows Filtering Platform filters |
+|ForwardingProfile.json |The json policy delivered to the Global Secure Access client. The policy includes the Global Secure Access service edge IP address your client connects to (*.globalsecureaccess.microsoft.com) and forwarding profile rules. |
+|GlobalSecureAccess-Boot-Trace.etl |Global Secure Access client debug logging |
+|Multiple .reg files |Global Secure Access client registry exports |
+|hosts |Host file |
+|installedPrograms.txt |Windows installed apps, which can be useful to understand what might be causing issues. |
+|ipconfig.txt |Ipconfig /all output including IP address and DNS servers assigned to the device. |
+|Kerberos_info.txt |Output of klist, klist tgt, and klist cloud_debug. This output is useful for troubleshooting kerberos issues, and SSO with Windows Hello for Business. |
+|LogsCollectorLog.log and LogsCollectorLog.log.x |Logs for the log collector process itself. These logs are useful if you're having issues with Global Secure Access log collection. |
+|Multiple .evtx |Exports of multiple Windows event logs. |
+|NetworkInformation.log |Output of route print, Name Resolution Policy Table (NRPT) table, and latency results for Global Secure Access connectivity test. This output is useful to troubleshoot NRPT issues. |
+|RunningProcesses.log |Running processes |
+|systeminfo.txt |System information including hardware, OS versions, and patches. |
+|systemWideProxy.txt |Output of netsh winhttp show proxy |
+|userConfiguredProxy |Output of proxy settings in the registry |
+|userSessions.txt |User session list |
+|DNSClient.etl |DNS client logs. These logs are useful for diagnosing DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: `Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView`|
+|InternetDebug.etl |Logs collected using "netsh trace start scenario=internetClient_dbg capture=yes persistent=yes". |
+|NetworkTrace.etl |Net capture taken with pktmon |
+|NetworkTrace.pcap |Network capture including traffic inside the tunnel |
+|NetworkTrace.txt |Pkmon trace in text format |
+|wfplog.cab |Windows Filtering Platform logs |
 
 ### Useful Network Traffic Analyzer filters
 In some instances, you need to investigate traffic within the Global Secure Access service tunnel. By default, a network capture only shows encrypted traffic. Instead, analyze the network capture created by Global Secure Access advanced log collection in a network traffic analyzer. 

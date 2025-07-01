@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/04/2025
+ms.date: 06/25/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -207,15 +207,32 @@ Support for external MFA solutions is in preview with [external authentication m
 
 If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. For more information, see [Expected inbound assertions for Microsoft Entra MFA](how-to-mfa-expected-inbound-assertions.md).
 
-## Request more time to prepare for enforcement 
+## Request more time to prepare for Phase 1 MFA enforcement 
 
-We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
+We understand that some customers may need more time to prepare for this MFA requirement. Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 1 for their tenants until September 30, 2025. 
 
-Global Administrators can go to the [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. If you postponed the start date for Phase 1, Phase 2 enforcement *doesn't* begin before the start date you choose. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) and use MFA before they can postpone the start date of MFA enforcement.  
+For each tenant where they want to postpone the start date of enforcement, a Global Administrator can go to the [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure) to select a start date. 
 
-Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
+>[!Caution]
+>
+>By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
 
-By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
+If you never previously signed in to the Azure portal with MFA, you're prompted to complete MFA to sign in, or postpone MFA enforcement. This screen is displayed only once. For more information about how to set up MFA, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md).
+
+:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/mandatory.png" alt-text="Screenshot of prompt to confirm mandatory MFA."
+
+If you select **Postpone MFA**, the date of MFA enforcement will be one month in the future, or Sept 30, 2025, whichever is earlier. After you sign in, you can change the date at [https://aka.ms/managemfaforazure](https://aka.ms/managemfaforazure). To confirm that you want to proceed with the postponement request, click **Confirm postponement**. A Global Administrator must [elevate access](https://aka.ms/enableelevatedaccess) to postpone the start date of MFA enforcement.  
+
+:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone.png" alt-text="Screenshot of how to postpone mandatory MFA."
+
+## Request more time to prepare for Phase 2 MFA enforcement 
+
+Microsoft allows customers with complex environments or technical barriers to postpone the enforcement of Phase 2 for their tenants until July 1st, 2026. You can request more time to prepare for Phase 2 MFA enforcement at [https://aka.ms/postponePhase2MFA](https://aka.ms/postponePhase2MFA). Choose another start date, and click **Apply**. 
+
+>[!NOTE]
+> If you postpone the start of Phase 1, the start of Phase 2 is also postponed to the same date. You can choose a later start date for Phase 2. 
+
+:::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone-phase-two.png" alt-text="Screenshot of how to postpone mandatory MFA for phase two."
 
 ## FAQs
 

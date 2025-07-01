@@ -3,7 +3,7 @@ title: Configure Meta Work Accounts for automatic user provisioning with Microso
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Meta Work Accounts.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.author: thomasakelo
 ms.reviewer: CelesteDG
 ms.service: entra-id

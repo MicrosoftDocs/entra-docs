@@ -576,8 +576,6 @@
         href: cloudbees-ci-tutorial.md
       - name: CloudCords
         href: cloudcords-tutorial.md
-      - name: CloudKnox Permissions Management Platform
-        href: cloudknox-permissions-management-platform-tutorial.md
       - name: Cloudmore
         href: cloudmore-tutorial.md
       - name: CloudPassage
@@ -3424,6 +3422,8 @@
         href: cybsafe-provisioning-tutorial.md
       - name: Dagster Cloud
         href: dagster-cloud-provisioning-tutorial.md
+      - name: Darwinbox to Microsoft Entra ID
+        href: darwinbox-entra-integration-tutorial.md
       - name: Datadog
         href: datadog-provisioning-tutorial.md
       - name: Documo
@@ -3740,6 +3740,8 @@
         href: rhombus-systems-provisioning-tutorial.md
       - name: RingCentral
         href: ringcentral-provisioning-tutorial.md
+      - name: Rippling HCM to Active Directory
+        href: rippling-hcm-microsoft-entra-id-integration-tutorial.md
       - name: Robin
         href: robin-provisioning-tutorial.md
       - name: Rollbar

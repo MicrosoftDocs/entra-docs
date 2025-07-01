@@ -2,7 +2,7 @@
 title: Home Realm Discovery policy for an application
 description: Learn how to manage Home Realm Discovery policy for Microsoft Entra authentication for federated users, including auto-acceleration and domain hints.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article

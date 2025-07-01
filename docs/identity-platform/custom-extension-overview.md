@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 05/04/2025
+ms.date: 06/25/2025
 ms.reviewer: jasuri
 ms.service: identity-platform
 
@@ -17,7 +17,7 @@ titleSuffix: Microsoft identity platform
 
 # Custom authentication extensions overview
 
-The Microsoft Entra ID authentication pipeline consists of several built-in authentication events, like the validation of user credentials, conditional access policies, multifactor authentication, self-service password reset, and more.
+The Microsoft Entra ID authentication pipeline consists of several built-in authentication events, like the validation of user credentials, Conditional Access policies, multifactor authentication, self-service password reset, and more.
 
 Microsoft Entra custom authentication extensions allow you to extend authentication flows with your own business logic at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. 
 
@@ -65,6 +65,10 @@ Your REST API must handle:
 - Incoming and outgoing validation of HTTP request and response schemas.
 - Auditing and logging.
 - Availability, performance, and security controls.
+
+Watch this video to learn how to create an authentication extensions REST API endpoint with Azure Logic Apps, without writing code. Azure Logic App empowers users to build workflows using a visual designer. The video covers customizing verification emails, and it applies to all types of custom authentication extensions, including custom claims providers.
+
+> [!VIDEO https://www.youtube.com/embed/2ZzX6_W93Sk?si=P9URBkKVnXPZ6Kfc]
 
 ### Request payload
 
@@ -134,7 +138,7 @@ The token issuance start event, **OnTokenIssuanceStart** is triggered when a tok
 
 ### One time passcode send
  
-The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up, reset their password, or sign-in with email and one-time passcode.
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to [call a REST API to use your own email provider](./custom-extension-email-otp-get-started.md). This event can be used to send customized emails to users who sign up with email address, sign in with email one-time passcode (Email OTP), reset their password using Email OTP, or use Email OTP for multifactor authentication (MFA).
  
 When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
 

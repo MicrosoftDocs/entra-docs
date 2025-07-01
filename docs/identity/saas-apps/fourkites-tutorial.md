@@ -3,7 +3,7 @@ title: Configure FourKites SAML2.0 SSO for Tracking for Single sign-on with Micr
 description: Learn how to configure single sign-on between Microsoft Entra ID and FourKites SAML2.0 SSO for Tracking.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
