@@ -46,48 +46,75 @@ In preview, the policy suggestions reviewed by the agent include:
 - **Require MFA**: The agent identifies users who aren't covered by a Conditional Access policy that requires MFA and can update the policy.
 - **Require device-based controls**: The agent can enforce device-based controls, such as device compliance, app protection policies, and domain-joined devices.
 - **Block legacy authentication**: User accounts with legacy authentication are blocked from signing in.
-- **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 - **Block device code flow**: The agent looks for a policy blocking device code flow authentication.
+- **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 
 > [!IMPORTANT]
-> The agent only provides the suggestion. It doesn't create or modify policies unless an administrator explicitly approves the suggestion. All new policies created by the agent are created in report-only mode. 
+> The agent only provides the suggestion. It doesn't create or modify policies unless an administrator explicitly approves the suggestion.
+>
+> All new policies suggested by the agent are created in report-only mode. 
 
 ## Getting started
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. From the new home page, select **Go to agents** from the agent notification card then select **View details** under the Conditional Access Optimization Agent.
+1. From the new home page, select **Go to agents** from the agent notification card.
+   - You can also select **Agents** from the left navigation menu.
 
-   :::image type="content" source="media/agent-optimization/conditional-access-optimization-agent-try-now.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/agent-optimization/conditional-access-optimization-agent-try-now.png":::
+   :::image type="content" source="media/agent-optimization/go-to-agents.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/agent-optimization/go-to-agents.png":::
 
-1. Select **Run agent** to begin your first run. 
+1. Select **View details** on the Conditional Access Optimization Agent tile.
 
-   :::image type="content" source="media/agent-optimization/agent-optimization-start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization Agent configuration page." lightbox="media/agent-optimization/agent-optimization-start-agent.png":::
+   :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/agent-optimization/view-details.png":::
 
-1. When the agent overview page loads, any suggestions appear at the top. You can also see the recent activity 
-and performance highlights.
+1. Select **Start agent** to begin your first run. 
+   - Avoid using an account with a role activated through PIM.
+   - All logs for the agent will be associated with the user who started the agent. 
+   - A message that says "The agent is starting its first run" appears in the upper-right corner.
+   - The first run might take a few minutes to complete.
 
-   :::image type="content" source="media/agent-optimization/agent-optimization-overview-activity.png" alt-text="Screenshot showing recent activity of the Conditional Access optimization agent." lightbox="media/agent-optimization/agent-optimization-overview-activity.png":::
+   :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization Agent configuration page." lightbox="media/agent-optimization/start-agent.png":::
 
-1. Select **Review suggestion** to see the details of the suggestion. Next steps on this page include the following options:
-   - **Apply suggestion**: The agent can apply the suggested changes to the policy with one click.
-   - **Review policy changes**: Review the policy changes before applying them.
-   - **Policy impact**: Displays a visualization of the potential impact of the policy. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
+1. When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, select **Review suggestion** to see the details, review the policy, determine policy impact, and apply the changes if needed. These options are covered in detail in the [Reviewing results](#reviewing-results) section.
 
-   :::image type="content" source="media/agent-optimization/agent-optimization-require-mfa-details.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/agent-optimization-require-mfa-details.png":::
-
-[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
-
-> [!TIP]
-> - Policies created by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
-> - Newly created policies are created in report-only mode. As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
+   :::image type="content" source="media/agent-optimization/review-suggestions.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/review-suggestions.png":::
 
 ## Reviewing results
 
 The agent might run and:
 
 - Not identify any unprotected users or recommend any changes
-- Suggest creation of a new Conditional Access policy in report-only mode
-- Suggest adding newly created users to an existing policy
+- Suggest creating a new Conditional Access policy in report-only mode
+- Suggest modifying an existing policy
+- Suggest consolidating overlapping policies
+
+When you select **Review suggestion**, you are provided a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
+
+### Policy impact
+
+This tab displays a visualization of the potential impact of the policy. Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that would be affected by the policy. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
+
+### View agent's full activity
+
+To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The **summary of agent activity** is a natural language description of the activity that's illustrated in the **agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion. 
+
+### Review policy changes
+
+Select the **Review policy changes** button to see the details of the policy that the agent suggests modifying. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion. Select **JSON view** to see the policy in JSON format, with the changes highlighted. You can even select **Go to policy** to open the full Conditional Access policy.
+
+Select **Approve suggested changes** to apply the changes to the policy. The agent applies the changes and updates the policy in report-only mode.
+
+### Apply suggestion
+
+If you select **Apply suggestion**, the agent applies the changes to the policy in report-only mode.
+
+> [!TIP]
+> As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
+
+Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+
+:::image type="content" source="media/agent-optimization/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/created-by-conditional-access-optimization-agent-expanded.png":::
+
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
@@ -127,7 +154,7 @@ You can tailor the policy to your needs using the optional **Custom Instructions
 
 ## Remove agent
 
-If you no longer wish to use the Conditional Access optimization agent, you can remove it using the **Remove agent** button at the top of the agent window.
+If you no longer wish to use the Conditional Access optimization agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any policies created or updated based on the agent suggestions remain intact. Previously applied suggestions remain unchanged so you can continue to use the policies created or modified by the agent.
 
 ## FAQs
 
