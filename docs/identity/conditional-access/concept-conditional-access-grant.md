@@ -178,6 +178,8 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Provectus - Secure Contacts
 - Viva Engage (Android, iOS, and iPadOS)
 
+- Windows App (Android, iOS/iPadOS and Edge on Windows)
+
 > [!NOTE]
 > Kaizala, Skype for Business, and Visio don't support the **Require app protection policy** grant. If you require these apps to work, use the **Require approved apps** grant exclusively. Using the "or" clause between the two grants will not work for these three applications.
 
