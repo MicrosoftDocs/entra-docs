@@ -53,116 +53,116 @@ Create *reset-password/page.tsx* file to handle logic for a sign-in flow. In thi
 - Import the necessary components and display the proper form based on the state. See a full example in [reset-password/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/page.tsx):
 
     
-      ```typescript
-      import {
-        CustomAuthPublicClientApplication,
-        ICustomAuthPublicClientApplication,
-        ResetPasswordCodeRequiredState,
-        ResetPasswordPasswordRequiredState,
-        ResetPasswordCompletedState,
-        AuthFlowStateBase,
-      } from "@azure/msal-browser/custom-auth";
-    
-      export default function ResetPassword() {
-        const [app, setApp] = useState<ICustomAuthPublicClientApplication | null>(
-          null
-        );
-        const [loadingAccountStatus, setLoadingAccountStatus] = useState(true);
-        const [isSignedIn, setSignInState] = useState(false);
-        const [email, setEmail] = useState("");
-        const [code, setCode] = useState("");
-        const [newPassword, setNewPassword] = useState("");
-        const [error, setError] = useState("");
-        const [loading, setLoading] = useState(false);
-        const [resetState, setResetState] = useState<AuthFlowStateBase | null>(
-          null
-        );
-    
-        useEffect(() => {
-          const initializeApp = async () => {
-            const appInstance = await CustomAuthPublicClientApplication.create(
-              customAuthConfig
-            );
-            setApp(appInstance);
-          };
-    
-          initializeApp();
-        }, []);
-    
-        useEffect(() => {
-          const checkAccount = async () => {
-            if (!app) return;
-    
-            const accountResult = app.getCurrentAccount();
-    
-            if (accountResult.isCompleted()) {
-              setSignInState(true);
-            }
-    
-            setLoadingAccountStatus(false);
-          };
-    
-          checkAccount();
-        }, [app]);
-    
-        const renderForm = () => {
-          if (loadingAccountStatus) {
-            return;
+    ```typescript
+    import {
+      CustomAuthPublicClientApplication,
+      ICustomAuthPublicClientApplication,
+      ResetPasswordCodeRequiredState,
+      ResetPasswordPasswordRequiredState,
+      ResetPasswordCompletedState,
+      AuthFlowStateBase,
+    } from "@azure/msal-browser/custom-auth";
+  
+    export default function ResetPassword() {
+      const [app, setApp] = useState<ICustomAuthPublicClientApplication | null>(
+        null
+      );
+      const [loadingAccountStatus, setLoadingAccountStatus] = useState(true);
+      const [isSignedIn, setSignInState] = useState(false);
+      const [email, setEmail] = useState("");
+      const [code, setCode] = useState("");
+      const [newPassword, setNewPassword] = useState("");
+      const [error, setError] = useState("");
+      const [loading, setLoading] = useState(false);
+      const [resetState, setResetState] = useState<AuthFlowStateBase | null>(
+        null
+      );
+  
+      useEffect(() => {
+        const initializeApp = async () => {
+          const appInstance = await CustomAuthPublicClientApplication.create(
+            customAuthConfig
+          );
+          setApp(appInstance);
+        };
+  
+        initializeApp();
+      }, []);
+  
+      useEffect(() => {
+        const checkAccount = async () => {
+          if (!app) return;
+  
+          const accountResult = app.getCurrentAccount();
+  
+          if (accountResult.isCompleted()) {
+            setSignInState(true);
           }
-    
-          if (isSignedIn) {
-            return (
-              <div style={styles.signed_in_msg}>
-                Please sign out before processing the password reset.
-              </div>
-            );
-          }
-    
-          if (resetState instanceof ResetPasswordPasswordRequiredState) {
-            return (
-              <NewPasswordForm
-                onSubmit={handleNewPasswordSubmit}
-                newPassword={newPassword}
-                setNewPassword={setNewPassword}
-                loading={loading}
-              />
-            );
-          }
-    
-          if (resetState instanceof ResetPasswordCodeRequiredState) {
-            return (
-              <CodeForm
-                onSubmit={handleCodeSubmit}
-                code={code}
-                setCode={setCode}
-                loading={loading}
-              />
-            );
-          }
-    
-          if (resetState instanceof ResetPasswordCompletedState) {
-            return <ResetPasswordResultPage />;
-          }
-    
+  
+          setLoadingAccountStatus(false);
+        };
+  
+        checkAccount();
+      }, [app]);
+  
+      const renderForm = () => {
+        if (loadingAccountStatus) {
+          return;
+        }
+  
+        if (isSignedIn) {
           return (
-            <InitialForm
-              onSubmit={handleInitialSubmit}
-              email={email}
-              setEmail={setEmail}
+            <div style={styles.signed_in_msg}>
+              Please sign out before processing the password reset.
+            </div>
+          );
+        }
+  
+        if (resetState instanceof ResetPasswordPasswordRequiredState) {
+          return (
+            <NewPasswordForm
+              onSubmit={handleNewPasswordSubmit}
+              newPassword={newPassword}
+              setNewPassword={setNewPassword}
               loading={loading}
             />
           );
-        };
-    
+        }
+  
+        if (resetState instanceof ResetPasswordCodeRequiredState) {
+          return (
+            <CodeForm
+              onSubmit={handleCodeSubmit}
+              code={code}
+              setCode={setCode}
+              loading={loading}
+            />
+          );
+        }
+  
+        if (resetState instanceof ResetPasswordCompletedState) {
+          return <ResetPasswordResultPage />;
+        }
+  
         return (
-          <div style={styles.container}>
-            <h2 style={styles.h2}>Reset Password</h2>
-            {renderForm()}
-            {error && <div style={styles.error}>{error}</div>}
-          </div>
+          <InitialForm
+            onSubmit={handleInitialSubmit}
+            email={email}
+            setEmail={setEmail}
+            loading={loading}
+          />
         );
-      }
-      ```
+      };
+  
+      return (
+        <div style={styles.container}>
+          <h2 style={styles.h2}>Reset Password</h2>
+          {renderForm()}
+          {error && <div style={styles.error}>{error}</div>}
+        </div>
+      );
+    }
+    ```
 
 - To start the password reset flow, use the following code snippet. See a full example at [reset-password/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/page.tsx) to learn where to place the code snippet:
 
@@ -270,4 +270,4 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 - [Set up a reverse proxy for a single-page app that uses MSAL JS SDK with native authentication by using Azure Function App](how-to-native-authentication-cors-solution-test-environment.md).
 - [Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses MSAL JS SDK with native authentication](how-to-native-authentication-cors-solution-production-environment.md).
-- [MSAL JS SDK Reference](https://learn.microsoft.com/javascript/api/overview/msal-overview?view=msal-js-latest).
+- [MSAL JS SDK Reference](/javascript/api/overview/msal-overview).

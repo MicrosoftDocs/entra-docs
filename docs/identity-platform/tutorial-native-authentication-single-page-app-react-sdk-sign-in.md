@@ -1,6 +1,6 @@
 ---
 title: Sign in users in React SPA by using native authentication JavaScript SDK
-description: Learn how to build a React single-page app that signs in users in a React single-page app into an external tenant by using native authentication.
+description: Learn how to build a React single-page app that signs in users in a React single-page app into an external tenant by using native authentication JavaScript SDK .
 
 author: kengaderdus
 manager: dougeby
@@ -267,12 +267,11 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
 - Submit password in the `submitPassword()` method. You handle this errors if your choice of sign-up method is by email and password.
 
 
-One of the errors that can result from the `signIn()` method is `result.error?.isRedirectRequired()`. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide. Learn more about [native authentication web fallback](concept-native-authentication-web-fallback.md) and how to [support web fallback](tutorial-native-authentication-single-page-app-javascript-sdk-support-web-fallback.md) in your React app.
+One of the errors that can result from the `signIn()` method is `result.error?.isRedirectRequired()`. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide. Learn more about [native authentication web fallback](concept-native-authentication-web-fallback.md) and how to [support web fallback](tutorial-native-auth-single-page-app-javascript-sdk-support-web-fallback.md) in your React app.
 
 ## Run and test your app
 
 Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-set-up-local-cors.md#run-and-test-you-app) to run your app, then test sign-in flow. 
-
 
 ## Related content
 
