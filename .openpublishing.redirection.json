@@ -1,6 +1,351 @@
 {
   "redirections": [
     {
+      "source_path": "docs/permissions-management/all-reports.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/all-reports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/error-codes-onboarding.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/error-codes-onboarding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/faqs.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/faqs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-add-remove-role-task.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-add-remove-role-task",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-add-remove-user-to-group.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-add-remove-user-to-group",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-attach-detach-permissions.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-attach-detach-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-audit-trail-results.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-audit-trail-results",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-clone-role-policy.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-clone-role-policy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-configure-aws-iam.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-configure-aws-iam",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-configure-okta-as-an-identity-provider.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-configure-okta-as-an-identity-provider",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-configure-servicenow-application.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-configure-servicenow-application",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-create-alert-trigger.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-create-alert-trigger",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-create-approve-privilege-request.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-create-approve-privilege-request",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-create-custom-queries.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-create-custom-queries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-create-folders.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-create-folders",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-create-group-based-permissions.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-create-group-based-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-create-role-policy.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-create-role-policy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-create-rule.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-create-rule",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-delete-role-policy.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-delete-role-policy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-modify-role-policy.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-modify-role-policy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-offboard-permissions-management.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-offboard-permissions-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-recommendations-rule.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-recommendations-rule",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-revoke-task-readonly-status.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-revoke-task-readonly-status",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/how-to-view-role-policy.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/how-to-view-role-policy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/index.yml",
+      "redirect_url": "/previous-versions/entra/permissions-management/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/integration-api.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/integration-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/multi-cloud-glossary.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/multi-cloud-glossary",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/onboard-add-account-after-onboarding.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/onboard-add-account-after-onboarding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/onboard-aws.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/onboard-aws",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/onboard-azure.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/onboard-azure",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/onboard-enable-controller-after-onboarding.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/onboard-enable-controller-after-onboarding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/onboard-enable-tenant.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/onboard-enable-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/onboard-gcp.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/onboard-gcp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/overview.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/partner-list.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/partner-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/permissions-management-for-defender-for-cloud.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/permissions-management-for-defender-for-cloud",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/permissions-management-quickstart-guide.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/permissions-management-quickstart-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-account-explorer.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-account-explorer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-account-settings.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-account-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-audit-trail.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-audit-trail",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-dashboard.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-dashboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-data-billable-resources.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-data-billable-resources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-data-sources.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-data-sources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-define-permission-levels.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-define-permission-levels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-permission-analytics.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-permission-analytics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-permissions-analytics-reports.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-permissions-analytics-reports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-privileged-role-insights.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-privileged-role-insights",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-reports.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-reports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-roles-permissions.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-roles-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-rule-based-anomalies.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-rule-based-anomalies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/product-statistical-anomalies.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/product-statistical-anomalies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/report-create-custom-report.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/report-create-custom-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/report-view-system-report.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/report-view-system-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/troubleshoot.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/troubleshoot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/ui-audit-trail.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/ui-audit-trail",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/ui-autopilot.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/ui-autopilot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/ui-dashboard.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/ui-dashboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/ui-remediation.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/ui-remediation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/ui-tasks.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/ui-tasks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/ui-triggers.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/ui-triggers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/ui-user-management.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/ui-user-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/usage-analytics-access-keys.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/usage-analytics-access-keys",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/usage-analytics-active-resources.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/usage-analytics-active-resources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/usage-analytics-active-tasks.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/usage-analytics-active-tasks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/usage-analytics-groups.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/usage-analytics-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/usage-analytics-home.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/usage-analytics-home",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/usage-analytics-serverless-functions.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/usage-analytics-serverless-functions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/usage-analytics-users.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/usage-analytics-users",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/permissions-management/whats-new-in-permissions-management.md",
+      "redirect_url": "/previous-versions/entra/permissions-management/whats-new-in-permissions-management",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "docs/identity/authentication/howto-mfaserver-deploy.md",
       "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy",
       "redirect_document_id": false
