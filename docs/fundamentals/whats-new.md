@@ -39,11 +39,11 @@ This update is solely a visual user interface refresh with no changes to functio
 **Additional Details:** 
 
 1. **Tenants without a custom background configured:**  
-    a. Tenants without a custom background will see the change on every authentication screen 
+    a. Tenants without a custom background will see the change on every authentication screen<br> 
     b. To change this background and use a custom background, configure Company Branding 
 
 1. **Tenants with a custom background configured:**  
-    a. Tenants with a custom background configured will only see the change wherever the URL doesn't have a specified tenant ID parameter (For example, login.microsoftonline.com directly without a domain hint or custom URL) 
+    a. Tenants with a custom background configured will only see the change wherever the URL doesn't have a specified tenant ID parameter (For example, login.microsoftonline.com directly without a domain hint or custom URL)<br> 
     b. For all other screens, tenants with a custom background configured will see no change to their experience on all clients. 
 
 1. **Entra External ID Tenants will not see any change to their experience on all clients** 
