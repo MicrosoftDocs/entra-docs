@@ -417,7 +417,7 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
 - Submit password in the `submitPassword()` method. You handle this errors if your choice of sign-up method is by email and password.
 
 
-One of the errors that can result from the `signUp()` method is `result.error?.isRedirectRequired()`. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide. Learn more about [native authentication web fallback](concept-native-authentication-web-fallback.md) and how to [support web fallback](tutorial-native-auth-single-page-app-javascript-sdk-support-web-fallback.md) in your React app.
+One of the errors that can result from the `signUp()` method is `result.error?.isRedirectRequired()`. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide. Learn more about [native authentication web fallback](concept-native-authentication-web-fallback.md) and how to [support web fallback](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md) in your React app.
 
 
 ## Sign in users automatically after sign-up

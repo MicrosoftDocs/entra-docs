@@ -1,5 +1,5 @@
 ---
-title: Disable sign-up sign-up and sign-in user flow
+title: Disable sign-up in a sign-up and sign-in user flow
 description: Disable sign-up in your user flow with Microsoft Graph API. Prevent new registrations and allow only sign-in for your external users. 
 ms.author: kengaderdus
 author: kengaderdus
@@ -20,7 +20,7 @@ To restrict access so that only existing external users can sign in, you can dis
 
 You use the [Update authenticationEventsFlow API in Microsoft Graph](/graph/api/authenticationeventsflow-update) to update the **onInteractiveAuthFlowStart** property > **isSignUpAllowed** property to `false`. 
 
-## Prerequisites
+## Prerequisitesf
 
 - **A sign-up and sign-in user flow**: Before you begin, [create the user flow](how-to-user-flow-sign-up-sign-in-customers.md) that you want to associate with your application.
 - **Application registration**: In your external tenant, [register your application](/entra/identity-platform/quickstart-register-app).
@@ -37,7 +37,7 @@ Follow these steps to disable the sign-up flow:
     1. In the left menu, under **Use**, select **Applications**.
     1. From the list, under **Application (client) ID** column, copy the Application (client) ID.
 
-1. Identify the ID of the user flow whose sign-up you want to disable. To do so, [List the user flow associated with the specific application](/graph/api/identitycontainer-list-authenticationeventsflows#example-4-list-user-flow-associated-with-specific-application-id). This is a Microsoft Graph API, which requires you to know the application ID you obtained from the previous step. 
+1. Identify the ID of the user flow whose sign-up you want to disable. To do so, [List the user flow associated with the specific application](/graph/api/identitycontainer-list-authenticationeventsflows#example-4-list-user-flow-associated-with-specific-application-id). This Microsoft Graph API endpoint requires you to know the application ID you obtained from the previous step. 
 
 1. [Update your user flow](/graph/api/authenticationeventsflow-update) to disable sign-up. 
 

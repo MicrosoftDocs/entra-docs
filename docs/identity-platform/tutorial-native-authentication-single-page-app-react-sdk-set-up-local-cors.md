@@ -174,5 +174,5 @@ In a production environment, you can use the steps in [Set up a reverse proxy fo
 ## Related content
 
 - [Tutorial: Sign in users into a React single-page app app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md).
-- [Support web fallback](tutorial-native-authentication-single-page-app-javascript-sdk-support-web-fallback.md)
+- [Support web fallback](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md)
 - If your choice of authentication method is email and password, [Reset password in a React single-page app app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-reset-password.md).
