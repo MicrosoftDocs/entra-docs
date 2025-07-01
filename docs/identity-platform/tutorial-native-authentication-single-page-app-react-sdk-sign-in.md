@@ -38,7 +38,7 @@ In this section, you create the form that collects the user's sign-in informatio
 
 1. Create *sign-in/components/InitialForm.tsx* file, then paste the code from [sign-in/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/InitialForm.tsx). This component displays a form that collects a user's username (email). 
 
-1. In your choice of authentication method is email and one-time passcode, create a *sign-in/components/CodeForm.tsx* file, then paste the code from [sign-in/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/CodeForm.tsx). If the administrator set email one-time passcode as the sign-in method in the Microsoft Entra admin center, this component displays form to collect the one-time passcode from the user. 
+1. In your choice of authentication method is email and one-time passcode, create a *sign-in/components/CodeForm.tsx* file, then paste the code from [sign-in/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/CodeForm.tsx). If the administrator set email one-time passcode as the sign-in flow in the Microsoft Entra admin center, this component displays a form to collect the one-time passcode from the user. 
 
 1. In your choice of authentication method is email and password, create a *sign-in/components/PasswordForm.tsx* file, then paste the code from [sign-in/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/CodeForm.tsx). This component displays a form that collects a user's password.
 
@@ -258,13 +258,13 @@ Create *sign-in/page.tsx* file to handle logic for a sign-in flow. In this file:
 
 ## Handle sign-up errors
 
-During sign-in, not all actions succeed. For instance, the user might attempt to sign in with a username that doesn't exist or submit an invalid email one-time passcode or a password that doesn't meet minimun requirements. Make sure you handle errors properly when you:
+During sign-in, not all actions succeed. For instance, the user might attempt to sign in with a username that doesn't exist or submit an invalid email one-time passcode or a password that doesn't meet the minimum requirements. Make sure you handle errors properly when you:
 
 - Start the sign-in flow in the `signIn()` method.
 
 - Submit the one-time passcode in the `submitCode()` method.
 
-- Submit password in the `submitPassword()` method. You handle this errors if your choice of sign-up method is by email and password.
+- Submit password in the `submitPassword()` method. You handle this error if your choice of sign-up flow is by email and password.
 
 
 One of the errors that can result from the `signIn()` method is `result.error?.isRedirectRequired()`. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide. Learn more about [native authentication web fallback](concept-native-authentication-web-fallback.md) and how to [support web fallback](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md) in your React app.

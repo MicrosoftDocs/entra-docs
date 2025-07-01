@@ -81,7 +81,7 @@ One of the errors you can encounter when you use the JavaScript SDK's `signIn()`
    }
    ```
 
-When the app users fallback mechanism, the app acquires security tokens by using the `loginPopup()` method.
+When the app uses the fallback mechanism, the app acquires security tokens by using the `loginPopup()` method.
 
 
 ## Related content

@@ -15,7 +15,7 @@ ms.date: 06/30/2025
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this Quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using native authentication SDK. The sample app demonstrates user sign-up, sign-in, and sign-out for both email with password and email one-timepasscode authentication menthods.
+In this Quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using native authentication SDK. The sample app demonstrates user sign-up, sign-in, and sign-out for both email with password and email one-time passcode authentication flows.
 ## Prerequisites
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -25,7 +25,7 @@ In this Quickstart, you use a React single-page application (SPA) to demonstrate
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Under **Identity providers**, select your prefered method of authentication, that's, **Email with password** or **Email one-time passcode**. For this sample, you can include the following user attributes in the your user flow as the app submit these attributes:
+* A user flow. For more information, see [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Under **Identity providers**, select your preferred method of authentication, that's, **Email with password** or **Email one-time passcode**. For this code sample, you can include the following user attributes in your user flow as the app submit these attributes:
   * **Given Name**
   * **Surname**
   * **Job Tittle**
@@ -74,7 +74,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     * Find the placeholder `Enter_the_Application_Id_Here` then  replace it with the Application (client) ID of the app you registered earlier.
     * Find the placeholder `Enter_the_Tenant_Subdomain_Here` then replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
 
-1. Save the chanes.
+1. Save the changes.
 
 ## Configure CORS proxy server
 

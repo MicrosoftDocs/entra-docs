@@ -68,7 +68,7 @@ spasample/
 
 ## Add JavaScript SDK to your project
 
-To use the native authentication JavaScript SDK into your project, opent the *package.json* file, then add the following dependencies:
+To use the native authentication JavaScript SDK into your project, open the *package.json* file, then add the following dependencies:
 
 ```typescript
 "dependencies": {
@@ -283,7 +283,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
     }
     ```
 
-    This code also creates an instance of the native authentication publi client app by using the [client configuration](#add-client-configuration):
+    This code also creates an instance of the native authentication public client app by using the [client configuration](#add-client-configuration):
 
     ```typescript
     const appInstance = await CustomAuthPublicClientApplication.create(customAuthConfig);
@@ -398,7 +398,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
         };
     ```
 
-- Use the `signUpState instanceof SignUpCompletedState` to indicsate that the user has been signed up and the flow is complete. See a full example at [sign-up/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
+- Use the `signUpState instanceof SignUpCompletedState` to indicate that the user has been signed up and the flow is complete. See a full example at [sign-up/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx):
 
     ```typescript
     if (signUpState instanceof SignUpCompletedState) {
@@ -414,7 +414,7 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
 
 - Submit the one-time passcode in the `submitCode()` method.
 
-- Submit password in the `submitPassword()` method. You handle this errors if your choice of sign-up method is by email and password.
+- Submit password in the `submitPassword()` method. You handle this error if your choice of sign-up flow is by email and password.
 
 
 One of the errors that can result from the `signUp()` method is `result.error?.isRedirectRequired()`. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For example, if the authorization server requires capabilities that the client can't provide. Learn more about [native authentication web fallback](concept-native-authentication-web-fallback.md) and how to [support web fallback](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md) in your React app.
@@ -424,7 +424,7 @@ One of the errors that can result from the `signUp()` method is `result.error?.i
 
 ===============TODO=============
 
-At this point, you can run your app, then view your sign-up UI at *http://localhost:3000/sign-up*. However, since native authentication API don't support CORS, you need to set up the CORS proxy server to manage the CORS headers.
+At this point, you can run your app, then view your sign-up UI at *http://localhost:3000/sign-up*. However, since native authentication API doesn't support CORS, you need to set up the CORS proxy server to manage the CORS headers.
 
 ## Set up poweredByHeader to false in next.config.js
 
