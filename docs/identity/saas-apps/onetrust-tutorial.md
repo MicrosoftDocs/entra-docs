@@ -3,7 +3,7 @@ title: Configure OneTrust Privacy Management Software for Single sign-on with Mi
 description: Learn how to configure single sign-on between Microsoft Entra ID and OneTrust Privacy Management Software.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

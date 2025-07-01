@@ -19,7 +19,7 @@ Microsoft Entra ID will block authentication for multitenant applications that d
 
 This change to service principal-less authentication will make client service principal a requirement for all applications in order to improve our "Security by default" ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). Service principal-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations. Microsoft has verified that validations aren't vulnerable to service principal-less authentication. However, with this action, the risk of this gap reappearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
 
-Additionally, by enforcing the requirement that applications must be registered in every tenant where they authenticate, we reinforce tenant administrator’s governance of all access, including the ability to write conditional access policies for these applications. 
+Additionally, by enforcing the requirement that applications must be registered in every tenant where they authenticate, we reinforce tenant administrator’s governance of all access, including the ability to write Conditional Access policies for these applications. 
 
 You must act **before March 31, 2026**, to avoid authentication failure of applications. 
 

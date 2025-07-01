@@ -2,7 +2,7 @@
 title: Manage custom security attributes for an application
 description: Assign, update, list, or remove custom security attributes for an application that is registered with your Microsoft Entra tenant.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to

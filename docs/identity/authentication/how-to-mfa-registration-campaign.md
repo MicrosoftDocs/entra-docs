@@ -4,7 +4,7 @@ description: Learn how to move your organization away from less secure authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 06/19/2025
 ms.author: justinha
 author: mjsantani
 manager: dougeby
@@ -279,13 +279,13 @@ The nudge won't appear on mobile devices that run Android or iOS.
 
 ## Frequently asked questions
 
-**Is registration campaign available for MFA Server?** 
-
-No, the registration campaign is available only for users using Microsoft Entra multifactor authentication. 
-
 **Can users be nudged within an application?**
 
-Yes, we support embedded browser views in certain applications. We don't nudge users in out of the box experiences or in browser views embedded in Windows settings.
+Yes, we support embedded browser views in certain applications. We don't nudge users in out-of-the-box experiences or in browser views embedded in Windows settings.
+
+**Can users be nudged within a single sign-on (SSO) session?**
+ 
+Nudge doesn't trigger if the user is already signed in with SSO. 
 
 **Can users be nudged on a mobile device?** 
 

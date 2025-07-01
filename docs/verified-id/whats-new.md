@@ -220,7 +220,7 @@ Take the following steps to configure the Verifiable Credentials service in Euro
 
 Applications that use the Microsoft Entra Verified ID service must use the Request API endpoint that corresponds to their Microsoft Entra tenant's region.  
 
-| Tenant region | Request API endpoint POST |
+| **Tenant region** | **Request API endpoint POST** |
 |------------|-------------------|
 | Europe | `https://beta.eu.did.msidentity.com/v1.0/{tenantID}/verifiablecredentials/request` |
 | Non-EU | `https://beta.did.msidentity.com/v1.0/{tenantID}/verifiablecredentials/request`  |

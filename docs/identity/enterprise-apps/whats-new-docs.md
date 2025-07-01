@@ -7,7 +7,7 @@ ms.subservice: enterprise-apps
 ms.topic: whats-new
 ms.author: jomondi
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 
 #customer intent: As an IT admin responsible for managing applications in Microsoft Entra ID, I want to stay updated on new documentation and significant updates, so that I can effectively manage and troubleshoot application-related issues in the platform.
 ---

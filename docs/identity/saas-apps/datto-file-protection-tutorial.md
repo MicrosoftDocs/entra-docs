@@ -3,7 +3,7 @@ title: Configure Datto File Protection Single Sign On for Single sign-on with Mi
 description: Learn how to configure single sign-on between Microsoft Entra ID and Datto File Protection Single Sign On.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

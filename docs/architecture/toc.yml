@@ -248,21 +248,7 @@ items:
     - name: Identity governance
       href: ops-guide-govern.md
     - name: Operations
-      href: ops-guide-ops.md
-  - name: Microsoft Entra Permissions Management Operations reference
-    items:
-    - name: Introduction
-      href: permissions-manage-ops-guide-intro.md
-    - name: Phase 1 - Implement the framework to manage at scale
-      href: permissions-manage-ops-guide-one.md
-    - name: Phase 2 - Right-size permissions and automate the principle of least privilege
-      href: permissions-manage-ops-guide-two.md
-    - name: Phase 3 - Configure Permissions Management monitoring and alerting
-      items:
-      - name: Implement reporting and alerting strategies
-        href: permissions-manage-ops-guide-three.md
-      - name: Configure alerts
-        href: permissions-manage-ops-guide-alerts.md      
+      href: ops-guide-ops.md    
   - name: Security
     items: 
     - name: Security baseline
@@ -339,3 +325,7 @@ items:
     items: 
     - name: Secure Generative AI 
       href: secure-generative-ai.md
+  - name: Resources
+    items:
+    - name: Microsoft Entra Suite services and integration partners
+      href: locate-integration-partners.md

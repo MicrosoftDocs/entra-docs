@@ -41,7 +41,7 @@ All verifiable credentials already issued continue to exist. For the ION trust s
 
 ## Opt out from Microsoft Entra Verified ID
 
-1. From the Azure portal, search for verifiable credentials.
+1. From the **Azure portal**, search for verifiable credentials.
 1. Select **Organization Settings** on the leftmost menu.
 1. In the section **Reset your organization**, select **Delete all credentials and reset service**.
 

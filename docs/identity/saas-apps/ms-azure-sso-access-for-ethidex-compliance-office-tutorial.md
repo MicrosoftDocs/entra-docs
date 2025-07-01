@@ -3,7 +3,7 @@ title: Configure MS Azure SSO Access for Ethidex Compliance Office™ for Single
 description: Learn how to configure single sign-on between Microsoft Entra ID and MS Azure SSO Access for Ethidex Compliance Office™.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

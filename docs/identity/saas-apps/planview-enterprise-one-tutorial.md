@@ -3,7 +3,7 @@ title: Configure Planview Enterprise One for Single sign-on with Microsoft Entra
 description: Learn how to configure single sign-on between Microsoft Entra ID and Planview Enterprise One.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

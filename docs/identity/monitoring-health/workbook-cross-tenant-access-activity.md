@@ -2,7 +2,7 @@
 title: Cross-tenant access activity workbook
 description: Learn how to use the cross-tenant access activity workbook in Microsoft Entra ID to monitor the resources your external users are accessing.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

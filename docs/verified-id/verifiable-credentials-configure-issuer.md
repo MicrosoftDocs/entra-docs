@@ -46,7 +46,7 @@ The following diagram illustrates the Microsoft Entra Verified ID architecture a
 
 In this step, you create the verified credential expert card by using Microsoft Entra Verified ID. After you create the credential, your Microsoft Entra tenant can issue it to users who initiate the process.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
+1. Sign in to the **Microsoft Entra admin center** with the **Authentication Policy Administrator** role.
 1. Select **Verifiable credentials**.
 1. After you [set up your tenant](verifiable-credentials-configure-tenant.md), the **Create credential** should appear. Alternatively, you can select **Credentials** in the left hand menu and select **+ Add a credential**.
 1. In **Create credential**, select **Custom Credential** and select **Next**:
@@ -90,7 +90,7 @@ In this step, you create the verified credential expert card by using Microsoft 
 
     1. Copy the following JSON and paste it in the  **Rules definition** textbox
     
-        ```JSON
+        ```json
         {
           "attestations": {
             "idTokenHints": [

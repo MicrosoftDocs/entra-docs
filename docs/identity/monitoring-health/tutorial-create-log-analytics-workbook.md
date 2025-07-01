@@ -7,7 +7,7 @@ ms.topic: tutorial
 ms.date: 03/27/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.reviewer: sandeo
 
 # Customer intent: As an IT admin, I want to create custom workbooks so I can analyze the health of my environment.

@@ -3,7 +3,7 @@ title: Configure Explanation-Based Auditing System for Single sign-on with Micro
 description: Learn how to configure single sign-on between Microsoft Entra ID and Explanation-Based Auditing System.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

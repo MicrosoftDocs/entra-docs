@@ -2,7 +2,7 @@
 title: Review and take action on admin consent requests
 description: Learn how to review and take action on admin consent requests that were created after you were designated as a reviewer.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to

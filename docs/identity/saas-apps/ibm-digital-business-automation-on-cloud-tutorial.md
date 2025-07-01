@@ -3,7 +3,7 @@ title: Configure IBM Digital Business Automation on Cloud for Single sign-on wit
 description: Learn how to configure single sign-on between Microsoft Entra ID and IBM Digital Business Automation on Cloud.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

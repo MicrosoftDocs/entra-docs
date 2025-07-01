@@ -3,7 +3,7 @@ title: Configure Serraview Space Utilization Software Solutions for Single sign-
 description: Learn how to configure single sign-on between Microsoft Entra ID and Serraview Space Utilization Software Solutions.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

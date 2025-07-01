@@ -3,7 +3,7 @@ title: Configure ATP SpotLight and ChronicX for Single sign-on with Microsoft En
 description: Learn how to configure single sign-on between Microsoft Entra ID and ATP SpotLight and ChronicX.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

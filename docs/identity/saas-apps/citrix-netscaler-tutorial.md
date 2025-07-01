@@ -2,7 +2,7 @@
 title: Configure Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and Citrix ADC SAML Connector for Microsoft Entra ID by using Kerberos-based authentication.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

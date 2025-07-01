@@ -3,7 +3,7 @@ title: 'PowerShell sample: Export app registrations with expiring secrets and ce
 description: PowerShell example that exports all app registrations with expiring secrets and certificates for the specified apps in your Microsoft Entra tenant.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

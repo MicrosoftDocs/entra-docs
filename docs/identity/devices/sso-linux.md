@@ -15,7 +15,7 @@ Microsoft Single Sign-on (SSO) for Linux is powered by a software component that
 
 ## Features
 
-This feature empowers users on Linux desktop clients to register their devices with Microsoft Entra ID, enroll into Intune management, and satisfy device-based conditional access policies when accessing their corporate resources.
+This feature empowers users on Linux desktop clients to register their devices with Microsoft Entra ID, enroll into Intune management, and satisfy device-based Conditional Access policies when accessing their corporate resources.
 
 - Provides Microsoft Entra ID registration & enrollment of Linux desktops
 - Provides SSO capabilities for native & web applications (ex: Azure CLI, Microsoft Edge Browser, Teams PWA, etc.) to access M365/Azure protected resources

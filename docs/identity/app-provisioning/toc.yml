@@ -97,7 +97,7 @@ items:
       items:
       - name: On-demand provisioning
         href: provision-on-demand.md
-      - name: Provision custom security attributes (preview)
+      - name: Provision custom security attributes
         href: provision-custom-security-attributes.md
     - name: Monitor and report on provisioning
       items:

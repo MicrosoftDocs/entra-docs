@@ -20,7 +20,7 @@ A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) tha
 
 ## Create a custom credential with the selfIssued attestation type
 
-In the Azure portal, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**. 
+In the **Azure portal**, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**.
 
 :::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the Issue credentials quickstart for creating a custom credential.":::
 

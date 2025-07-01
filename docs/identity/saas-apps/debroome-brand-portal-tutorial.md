@@ -3,7 +3,7 @@ title: Configure deBroome Brand Portal for Single sign-on with Microsoft Entra I
 description: Learn how to configure single sign-on between Microsoft Entra ID and deBroome Brand Portal.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

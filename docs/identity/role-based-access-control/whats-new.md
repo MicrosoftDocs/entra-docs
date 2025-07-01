@@ -20,6 +20,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| June 2025 | Administrative units | General availability of restricted management administrative units. See [Restricted management administrative units in Microsoft Entra ID](admin-units-restricted-management.md). |
 | May 2025 | Roles | Updated permissions for multiple roles. See [Microsoft Entra built-in roles](permissions-reference.md). |
 | May 2025 | Roles | Added [Microsoft Graph Data Connect Administrator](permissions-reference.md#microsoft-graph-data-connect-administrator) role. |
 | March 2025 | Roles | Added [Viva Glint Tenant Administrator](permissions-reference.md#viva-glint-tenant-administrator) role. |

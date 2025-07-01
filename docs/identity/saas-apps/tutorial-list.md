@@ -3,7 +3,7 @@ title: SaaS App configuration guides for Microsoft Entra ID
 description: Configure Microsoft Entra single sign-on integration with a variety of third-party software as a service application.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: landing-page

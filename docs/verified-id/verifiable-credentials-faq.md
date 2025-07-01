@@ -69,12 +69,12 @@ Resetting requires that you opt out and opt back into the Microsoft Entra Verifi
 
 ### How can I check my Microsoft Entra tenant's region?
 
-1. In the [Azure portal](https://portal.azure.com), go to Microsoft Entra ID for the subscription you use for your Microsoft Entra Verified ID deployment.
-1. Under Manage, select Properties.
+1. In the [Azure portal](https://portal.azure.com), go to **Microsoft Entra ID** for the subscription you use for your Microsoft Entra Verified ID deployment.
+1. Under **Manage**, select **Properties**.
 
-    :::image type="content" source="media/verifiable-credentials-faq/region.png" lightbox="media/verifiable-credentials-faq/region.png" alt-text="Screenshot of settings delete and opt out.":::
+    :::image type="content" source="media/verifiable-credentials-faq/region.png" alt-text="Screenshot of settings delete and opt out.":::
 
-1. See the value for Country or Region. If the value is a country or a region in Europe, your Microsoft Entra Verified ID service is set up in Europe.
+1. See the value for **Country or Region**. If the value is a country or a region in Europe, your Microsoft Entra Verified ID service is set up in Europe.
 
 ### Does Microsoft Entra Verified ID support ION as its DID method?
 

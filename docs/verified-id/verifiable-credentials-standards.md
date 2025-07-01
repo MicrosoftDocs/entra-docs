@@ -27,7 +27,7 @@ In this article, you find the currently supported open standards for Microsoft E
 
 Microsoft Entra Verified ID supports the following open standards:
 
-| Technology stack component | Open standard | Standard body |
+| **Technology stack component** | **Open standard** | **Standard body** |
 |:------|:-----|:-----|
 | Data model | [Verifiable Credentials Data Model v1.1](https://www.w3.org/TR/vc-data-model) | W3C VC WG |
 | Credential format | [JSON Web Token VC (JWT-VC)](https://www.w3.org/TR/vc-data-model/#json-web-token) - encoded as JSON and signed as a JWS ([RFC7515](https://datatracker.ietf.org/doc/html/rfc7515)) | W3C VC WG /IETF |
@@ -43,7 +43,7 @@ Microsoft Entra Verified ID supports the following open standards:
 
 Microsoft Entra Verified ID supports the following key types for the JSON Web Signature (JWS) signature verification:
 
-|Key type|JWT algorithm|
+|**Key type**|**JWT algorithm**|
 |--------|-------------|
 |secp256k1|ES256K|
 |Ed25519|EdDSA|

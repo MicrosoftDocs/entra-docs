@@ -3,7 +3,7 @@ title: Protect against consent phishing
 description: Learn ways of mitigating against application-based consent phishing attacks using Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

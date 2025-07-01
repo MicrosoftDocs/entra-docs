@@ -3,7 +3,7 @@ title: Configure myPolicies for automatic user provisioning with Microsoft Entra
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to myPolicies.
 
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 

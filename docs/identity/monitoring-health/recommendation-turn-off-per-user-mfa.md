@@ -2,7 +2,7 @@
 title: Turn off per user MFA in Microsoft Entra ID
 description: Learn why you should turn off per user MFA in Microsoft Entra ID with Microsoft Entra recommendations
 author: shlipsey3
-manager: femila
+manager: pmwongera
 
 ms.service: entra-id
 ms.topic: how-to

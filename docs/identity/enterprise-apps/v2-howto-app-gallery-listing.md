@@ -3,7 +3,7 @@ title: Submit a request to publish your application
 description: Learn how to publish your application in Microsoft Entra application gallery.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to

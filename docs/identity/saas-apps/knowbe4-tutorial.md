@@ -3,7 +3,7 @@ title: Configure KnowBe4 Security Awareness Training for Single sign-on with Mic
 description: Learn how to configure single sign-on between Microsoft Entra ID and KnowBe4 Security Awareness Training.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

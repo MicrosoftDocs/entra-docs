@@ -5,7 +5,7 @@ description: Learn how to use the Identity Secure Score to improve the security 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: conceptual
-ms.date: 06/02/2025
+ms.date: 06/12/2025
 
 ms.author: sarahlipsey
 author: shlipsey3
@@ -20,6 +20,18 @@ ms.reviewer: jadedsouza
 The Identity Secure Score is shown as a percentage that functions as an indicator for how aligned you are with Microsoft's recommendations for security. Each improvement action in Identity Secure Score is tailored to your configuration. You can access the score and view individual recommendations related to your score in Microsoft Entra recommendations. You can also see how your score changes over time. 
 
 ![Screenshot of the Recommendations page with the Secure Score details highlighted.](./media/concept-identity-secure-score/secure-score-overview.png)
+
+## Prerequisites
+
+- Identity Secure Score is available to free and paid customers.
+- Some recommendations require a paid license to view and act on. For more information, see [What are Microsoft Entra recommendations](overview-recommendations.md).
+- To *view* the improvement action but not update, you need at least the [Service Support Administrator](../role-based-access-control/permissions-reference.md#service-support-administrator) role.
+- To *update* the status of an improvement action, you need at least the [SharePoint Administrator](../role-based-access-control/permissions-reference.md#sharepoint-administrator) role. 
+- For a full list of roles, see [Least privileged roles by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---recommendations-least-privileged-roles).
+
+## How does the Identity Secure Score benefit me?
+
+This score helps to objectively measure your identity security posture, help you plan identity security improvements, and review the success of your improvements. By following the improvement actions in the Microsoft Entra recommendations, you can take advantage the features available to your organization as part of your identity investments.
 
 The following recommendations are included in the Identity Secure Score:
 
@@ -47,29 +59,9 @@ The following recommendations are included in the Identity Secure Score:
 - Stop weak cipher usage
 - Use least privileged administrative roles
 
-## How does the Identity Secure Score benefit me?
-
-This score helps to:
-
-- Objectively measure your identity security posture
-- Plan identity security improvements
-- Review the success of your improvements
-
-By following the improvement actions in the Microsoft Entra recommendations, you can:
-
-- Improve your security posture and your score
-- Take advantage the features available to your organization as part of your identity investments
-
 ## How does it work?
 
 Every 24 hours, we look at your security configuration and compare your settings with the recommended best practices. Based on the outcome of this evaluation, a new score is calculated for your directory. It’s possible that your security configuration isn’t fully aligned with the best practice guidance and the improvement actions are only partially met. In these scenarios, you're awarded a portion of the max score available for the control.
-
-## Prerequisites
-
-- Identity Secure Score is available to free and paid customers.
-- Some recommendations require a paid license to view and act on. For more information, see [What are Microsoft Entra recommendations](overview-recommendations.md).
-- To update the status of an improvement action, you need to have [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator), [Exchange Administrator](../role-based-access-control/permissions-reference.md#exchange-administrator), or [SharePoint Administrator](../role-based-access-control/permissions-reference.md#sharepoint-administrator) permissions.
-- To view the improvement action but not update, you need to have [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator), [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator), [Service Support Administrator](../role-based-access-control/permissions-reference.md#service-support-administrator), [Security Reader](../role-based-access-control/permissions-reference.md#security-reader), [Security Operator](../role-based-access-control/permissions-reference.md#security-operator), or [Global Reader](../role-based-access-control/permissions-reference.md#global-reader) permissions.
 
 ## How do I use the Identity Secure Score?
 

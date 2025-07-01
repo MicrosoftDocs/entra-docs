@@ -3,7 +3,7 @@ title: 'PowerShell sample: Export secrets and certificates for enterprise apps'
 description: PowerShell example that exports all secrets and certificates for the specified enterprise apps in your Microsoft Entra tenant.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

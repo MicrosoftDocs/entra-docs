@@ -3,7 +3,7 @@ title: Configure Five9 Plus Adapter (CTI, Contact Center Agents) for Single sign
 description: Learn how to configure single sign-on between Microsoft Entra ID and Five9 Plus Adapter (CTI, Contact Center Agents).
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -27,6 +27,18 @@ Here's a list of related resources:
 | Understand Microsoft Entra private network connectors | Find out more about [connector management](../identity/app-proxy/application-proxy-connectors.md) and how connectors [autoupgrade](../identity/app-proxy/application-proxy-connectors.md#automatic-updates). |
 | Microsoft Entra private network connector Download    | [Download the latest connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
+## Version 1.5.4364.0
+ 
+### Release status
+ 
+June 25, 2025: Released for download. This version is only available for install via the download page in the Microsoft Entra admin center. It will not be available as auto update. 
+ 
+### New features and improvements
+ 
+- Updated connector signaling in GSA Private Access, increasing overall stability and responsiveness. 
+- Added additional performance counters, enabling more comprehensive and effective diagnostics for connectors. 
+- Bug fixes and minor improvements to enhance stability and performance. 
+
 ## Version 1.5.4287.0
  
 ### Release status

@@ -3,7 +3,7 @@ title: What is single sign-on?
 description: Learn about single sign-on for enterprise applications in Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

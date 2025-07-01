@@ -2,7 +2,7 @@
 title: Configure FortiGate SSL VPN for Single sign-on with Microsoft Entra ID
 description: Learn the steps you need to perform to integrate FortiGate SSL VPN with Microsoft Entra ID.
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

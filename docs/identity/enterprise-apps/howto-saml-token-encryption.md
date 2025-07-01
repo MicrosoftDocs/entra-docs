@@ -2,7 +2,7 @@
 title: Configure Microsoft Entra SAML token encryption
 description: Learn how to configure Microsoft Entra SAML token encryption.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to

@@ -7,7 +7,7 @@ ms.topic: quickstart
 ms.date: 11/13/2024
 ms.author: sarahlipsey
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.reviewer: besiler
 ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I want to be able to find a failed sign-in attempt with the Microsoft Graph API.

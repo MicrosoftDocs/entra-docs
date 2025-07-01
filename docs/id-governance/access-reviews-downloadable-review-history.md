@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 03/10/2025
+ms.date: 06/18/2025
 ms.author: owinfrey
 ---
 

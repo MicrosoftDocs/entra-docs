@@ -3,7 +3,7 @@ title: Configure SDS & Chemical Information Management for Single sign-on with M
 description: Learn how to configure single sign-on between Microsoft Entra ID and SDS & Chemical Information Management.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -62,7 +62,7 @@ After you create your key vault, Verifiable Credentials generates a set of keys 
 
 To set up Verified ID, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
+1. Sign in to the **Microsoft Entra admin center** with the **Authentication Policy Administrator** role.
 
 1. From the left menu, select **Overview** under **Verified ID**.
 
@@ -90,10 +90,10 @@ To set up Verified ID, follow these steps:
 
 Your application needs to get access tokens when it wants to call into Microsoft Entra Verified ID so it can issue or verify credentials. To get access tokens, you have to register an application and grant API permission for the Verified ID Request Service. For example, use the following steps for a web application:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with appropriate administrator permissions.
-1. Select Microsoft Entra ID.
+1. Sign in to the **Microsoft Entra admin center** with appropriate administrator permissions.
+1. Select **Microsoft Entra ID**.
 
-1. Under **Applications**, select **App registrations** > **New registration**.  
+1. Under **Applications**, select **App registrations** > **New registration**.
 
     :::image type="content" source="media/verifiable-credentials-configure-tenant/register-app.png" alt-text="Screenshot that shows how to select a new application registration.":::
 

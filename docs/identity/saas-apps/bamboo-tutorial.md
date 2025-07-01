@@ -3,7 +3,7 @@ title: Configure SAML SSO for Bamboo by resolution GmbH for Single sign-on with 
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Bamboo by resolution GmbH.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

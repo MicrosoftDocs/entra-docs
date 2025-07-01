@@ -15,6 +15,19 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## June 2025
+
+### New articles
+
+- [Restrictions on identifier URIs of Microsoft Entra applications](identifier-uri-restrictions.md)
+
+### Updated articles
+
+- [Retrieve and return data from an OnAttributeCollectionStart event](custom-extension-onattributecollectionstart-retrieve-return-data.md) - Update request payload and response
+- [Retrieve and return data from an OnAttributeCollectionSubmit event](custom-extension-onattributecollectionsubmit-retrieve-return-data.md) - Update request payload and response
+- [Security best practices for application properties in Microsoft Entra ID](security-best-practices-for-app-registration.md) - Update security best practices
+- [Run automated integration tests](test-automate-integration-testing.md) - The update improved content clarity.
+
 ## May 2025
 
 ### New articles
@@ -51,17 +64,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 * [Tutorial: Set up a Node.js web app to sign in users by using Microsoft identity platform](tutorial-web-app-node-sign-in-prepare-app.md) - Register app refactor
 * [Tutorial: Set up an Android app to sign in users by using Microsoft identity platform](tutorial-mobile-app-android-prepare-app.md) - Register app refactor
 
-## March 2025
-
-### Updated articles
-
-- [Microsoft Entra app manifest (Azure AD Graph format)](reference-app-manifest.md) - The update improved content clarity.
-- [Quickstart: Call a web API in a sample daemon app](quickstart-daemon-app-call-api.md) - The update improved content clarity.
-- [Quickstart: Sign in users in a sample Desktop app](quickstart-desktop-app-sign-in.md) - The update improved content clarity.
-- [Quickstart: Sign in users in a sample mobile app](quickstart-mobile-app-sign-in.md) - The update improved content clarity.
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API](quickstart-single-page-app-sign-in.md) - The update improved content clarity.
-- [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md) - The update improved content clarity.
-- [Tutorial: Add sign-in and sign-out flows to a JavaScript SPA](tutorial-single-page-app-javascript-configure-authentication.md) - The tutorial was updated with the latest code sample.
-- [Tutorial: Prepare a JavaScript single-page application for authentication](tutorial-single-page-app-javascript-prepare-app.md) - The tutorial was updated with the latest code sample.
-- [Understand the app manifest (Microsoft Graph format)](reference-microsoft-graph-app-manifest.md) - The update improved content clarity.
-- [Web app that signs in users: Sign-in and sign out](scenario-web-app-sign-user-sign-in.md) - The update improved content clarity.

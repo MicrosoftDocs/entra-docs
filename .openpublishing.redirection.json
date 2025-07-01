@@ -536,6 +536,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/cloudknox-permissions-management-platform-tutorial.md",
+      "redirect_url": "/entra/permissions-management/overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-proxy/application-proxy-release-version-history.md",
       "redirect_url": "/entra/global-secure-access/reference-version-history",
       "redirect_document_id": false
@@ -2405,11 +2410,36 @@
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/saas-apps/kontiki-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-alerts.md",
+      "redirect_url": "/entra/permissions-management/how-to-create-alert-trigger",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-intro.md",
+      "redirect_url": "/entra/permissions-management/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-one.md",
+      "redirect_url": "/entra/permissions-management/onboard-enable-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-two.md",
+      "redirect_url": "/entra/permissions-management/define-permission-levels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-three.md",
+      "redirect_url": "/entra/permissions-management/ui-triggers",
+      "redirect_document_id": false
+    },
   ]
 }
 

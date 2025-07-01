@@ -3,7 +3,7 @@ title: Configure SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suit
 description: Learn how to configure single sign-on between Microsoft Entra ID and SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suite - EBS, PeopleSoft, and JDE.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

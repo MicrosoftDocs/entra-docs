@@ -3,7 +3,7 @@ title: Configure Agile Provisioning for automatic user provisioning with Microso
 description: Learn how to configure single sign-on between Microsoft Entra ID and Agile Provisioning.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

@@ -3,7 +3,7 @@ title: My Apps portal overview
 description: Learn about how to manage applications in the My Apps portal.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article

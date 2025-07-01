@@ -3,7 +3,7 @@ title: Unexpected error when performing consent to an application
 description: This article discusses errors that can occur during the process of consenting to an application and what you can do about them.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

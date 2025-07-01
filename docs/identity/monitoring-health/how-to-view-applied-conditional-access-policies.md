@@ -2,7 +2,7 @@
 title: Conditional Access and Microsoft Entra activity logs
 description: Learn how to view Conditional Access details in Microsoft Entra activity logs so that you can assess the effect of your policies.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

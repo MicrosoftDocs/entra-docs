@@ -3,7 +3,7 @@ title: View Activity logs of application permissions
 description: Understand how to view the activity logs of what permissions are being granted and revoked for applications in my directory.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

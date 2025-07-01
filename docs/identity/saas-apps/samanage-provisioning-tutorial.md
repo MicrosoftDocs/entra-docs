@@ -3,7 +3,7 @@ title: Configure SolarWinds Service Desk (previously Samanage) for automatic use
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to SolarWinds Service Desk (previously Samanage).
 
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 

@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 03/05/2025
+ms.date: 06/20/2025
 ms.author: barclayn
 ms.custom: it-pro, sfi-ga-nochange
 ms.collection: M365-identity-device-management
@@ -54,8 +54,6 @@ To enhance your Microsoft Entra implementation, you can also add paid features b
 In addition to Microsoft Entra ID licenses, you can enable additional identity management capabilities with licenses for other Microsoft Entra products, including:
 
 - **Microsoft Entra ID Governance.** [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) is an advanced set of [identity governance capabilities](~/id-governance/licensing-fundamentals.md) for Microsoft Entra ID P1 and P2 customers.
-
-- **Microsoft Entra Permissions Management.** [Microsoft Entra Permissions Management](/entra/permissions-management/) is a cloud infrastructure entitlement management (CIEM) solution that provides comprehensive visibility into permissions assigned to all identities (users and workloads), actions, and resources across cloud infrastructures Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
 
 - **"Pay as you go" feature licenses.** You can also get licenses for features such as Microsoft Entra Domain Services, and Microsoft Entra customer identity and access management solution (CIAM). CIAM can help you provide identity and access management solutions for your customer-facing apps. For more information, see our next-generation solution for external identities, [Microsoft Entra External ID](/entra/external-id/).
 

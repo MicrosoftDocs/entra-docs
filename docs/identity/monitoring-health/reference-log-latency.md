@@ -2,7 +2,7 @@
 title: Log latency for Microsoft Entra ID
 description: Reference information for the factors that drive sign-in and audit log latency in Microsoft Entra ID
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: reference
 ms.subservice: monitoring-health

@@ -3,7 +3,7 @@ title: Configure Predictix Assortment Planning for Single sign-on with Microsoft
 description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and Predictix Assortment Planning.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

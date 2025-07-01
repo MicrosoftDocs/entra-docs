@@ -5,7 +5,7 @@ description: Learn how to sign in to an Azure VM that's running Linux by using M
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 03/07/2025
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL

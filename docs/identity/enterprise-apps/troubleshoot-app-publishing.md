@@ -3,7 +3,7 @@ title: Your sign-in was blocked
 description: Troubleshoot a blocked sign-in to the Microsoft Application Network portal. 
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: troubleshooting

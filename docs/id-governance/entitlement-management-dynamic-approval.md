@@ -52,7 +52,7 @@ To create a custom extension, and its underlying Azure Logic App, you'd do the f
 1. On the **Extension Type** page, select **Request workflow (triggered when an access package is request, approved, granted, or removed)** and select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extension-type.png" alt-text="Screenshot of selecting the extension type for a custom extension.":::
 1. On the **Extension Configuration** page, for Behavior select **Launch and wait**, for Response data select **Approval Stage (Preview)**, and then select **Next**.
-
+    :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approval-stage.png" alt-text="Screenshot of the custom extension approval stage option.":::
 1. On the **Details** page, choose a subscription, resource group, and name for the logic app being created. Once you've entered this information, select **Create a logic app**. Once the logic app is created, select **Next**.
 
 1. On the **Review + create** page, make sure all your details are correct, then select **Create**. 
@@ -73,7 +73,8 @@ Once you've created the custom extension and logic app, you can reference the cu
 1. Select **Update**.
 
 Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**.
-:::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
+
+  :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
 
 ## Set logic app assigned identity and assign its role
 
@@ -105,7 +106,7 @@ With the Azure Logic App given the access package assignment manager role for th
 1. On the Add an Action pane, select **HTTP**.
 
 1. On the **HTTP** pane under Parameters, enter the following parameters:
-    - URI: https://graph.microsoft.com/v1.0@{triggerBody()?['CallbackUriPath']}
+    - URI: `https://graph.microsoft.com/v1.0@{triggerBody()?['CallbackUriPath']}`
     - Method: POST
     - Authentication Type: Managed identity
     - Managed Identity: System-assigned managed identity

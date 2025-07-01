@@ -3,7 +3,7 @@ title: Configure FirmPlay - Employee Advocacy for Recruiting for Single sign-on 
 description: Learn how to configure single sign-on between Microsoft Entra ID and FirmPlay - Employee Advocacy for Recruiting.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

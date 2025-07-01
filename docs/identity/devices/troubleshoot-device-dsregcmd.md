@@ -5,7 +5,7 @@ description: This article covers how to use the output from the dsregcmd command
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 03/03/2025
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL

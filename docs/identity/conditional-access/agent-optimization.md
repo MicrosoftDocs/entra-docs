@@ -122,7 +122,7 @@ You can assign Conditional Access Administrators with Security Copilot access. T
 
 ### Custom instructions
 
-You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. For example: "The user "Break Glass" should be excluded from policies created."
+You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. For example: "The user "Break Glass" should be excluded from policies created." Custom instructions can be used to include or exclude users, groups, and roles. This can be used to exclude them from consideration entirely or for a specific scenario and can also be used to add exceptions to the suggested policy. 
 
 ## Remove agent
 

@@ -2,7 +2,7 @@
 title: Configure F5 BIG-IP Easy Button for SSO to Oracle Enterprise Business Suite
 description: Learn to implement SHA with header-based SSO to Oracle Enterprise Business Suite using F5's BIG-IP Easy Button guided configuration
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

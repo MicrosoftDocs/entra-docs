@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 11/13/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ---
 
@@ -37,7 +37,7 @@ The script is available on [GitHub](https://github.com/microsoft/access-reviews-
 The output also includes the individual domains for each of these external identities. 
 
 >[!NOTE]
->The script previously referenced is a sample script that checks for group membership, role assignments, and application assignments in Microsoft Entra ID. There may be other assignments in applications that external users received outside of Microsoft Entra ID, such as SharePoint (direct membership assignment) or Azure RBAC or Azure DevOps.
+>The script previously referenced is a sample script that checks for group membership, role assignments, and application assignments in Microsoft Entra ID. There could be other assignments in applications that external users received outside of Microsoft Entra ID, such as SharePoint (direct membership assignment) or Azure RBAC or Azure DevOps.
 
 ## Review resources used by external identities
 

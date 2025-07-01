@@ -3,7 +3,7 @@ title: Configure Reprints Desk - Article Galaxy for Single sign-on with Microsof
 description: Learn how to configure single sign-on between Microsoft Entra ID and Reprints Desk - Article Galaxy.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

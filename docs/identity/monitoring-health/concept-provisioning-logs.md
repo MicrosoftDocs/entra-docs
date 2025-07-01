@@ -2,7 +2,7 @@
 title: User provisioning logs in Microsoft Entra ID
 description: Learn about the details included in the user provisioning logs in Microsoft Entra ID when a non-Microsoft service provisions users.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health

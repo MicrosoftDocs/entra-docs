@@ -206,7 +206,7 @@ Run the project with a web server by using Node.js:
 1. To start the server, run the following commands from within the project directory:
 
     ```console
-    cd angular-spa/App
+    cd angular-spa
     npm install
     npm start
     ```

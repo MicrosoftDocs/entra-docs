@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 04/29/2025
+ms.date: 06/24/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -21,6 +21,23 @@ The current version of the Global Secure Access client is available to download 
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
+
+## Version 2.20.56
+Released for download on June 24, 2025.
+### Functional changes
+- New Global Secure Access client installer for Windows on Arm is available for download in the portal.
+- A new client user interface with channel status, a troubleshooting section, and settings. To open the interface, double-click the Global Secure Access icon in the system tray.
+- Telemetry collection is enabled.
+- The new UI includes a link to Microsoft's privacy policy to comply with the telemetry collection policy.
+- The client supports non-ASCII characters in the OS name.
+- The Advanced Diagnostics tool has accessibility improvements.
+- The Global Secure Access client cleans up Name Resolution Policy Table (NRPT) rules when it starts in "Private Access disabled" mode.
+- The client supports DNS records that point to an IP in the 127.0.0.0/8 address range.       
+### Other changes
+- .NET Runtime is upgraded to version 8.0.14.
+- OneAuth is upgraded to version 5.6.0.    
+- Improvements and bug fixes for Advanced diagnostics.   
+- Miscellaneous bug fixes and improvements.   
 
 ## Version 2.18.62
 Released for download on April 29, 2025.

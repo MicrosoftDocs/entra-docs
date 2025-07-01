@@ -3,7 +3,7 @@ title: Configure ON24 Virtual Environment SAML Connection for Single sign-on wit
 description: Learn how to configure single sign-on between Microsoft Entra ID and ON24 Virtual Environment SAML Connection.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

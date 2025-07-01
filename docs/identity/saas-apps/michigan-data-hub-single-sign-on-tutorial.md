@@ -3,7 +3,7 @@ title: Configure Michigan Data Hub Single Sign-On for Single sign-on with Micros
 description: Learn how to configure single sign-on between Microsoft Entra ID and Michigan Data Hub Single Sign-On.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

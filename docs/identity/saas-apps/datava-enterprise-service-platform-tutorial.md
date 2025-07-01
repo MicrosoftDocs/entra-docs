@@ -3,7 +3,7 @@ title: Configure Datava Enterprise Service Platform for Single sign-on with Micr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Datava Enterprise Service Platform.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

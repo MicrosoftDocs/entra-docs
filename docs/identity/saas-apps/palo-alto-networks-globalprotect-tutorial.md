@@ -3,7 +3,7 @@ title: Configure Palo Alto Networks - GlobalProtect for Single sign-on with Micr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - GlobalProtect.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

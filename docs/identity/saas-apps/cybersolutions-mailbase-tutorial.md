@@ -3,7 +3,7 @@ title: Configure CyberSolutions MAILBASEΣ\CMSS for Single sign-on in Microsoft 
 description: Learn how to configure single sign-on between Microsoft Entra ID and CyberSolutions MAILBASEΣ\CMSS.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

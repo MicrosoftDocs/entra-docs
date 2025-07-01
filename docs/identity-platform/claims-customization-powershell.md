@@ -131,4 +131,5 @@ To assign the policy to the service principal you will need the `ObjectId` of yo
 
 ## Related content
 
+- [How to: Customize claims with the claims mapping policy in Microsoft Graph](/graph/how-to-claims-customization)
 - [Microsoft Graph identity SignIns](/powershell/module/microsoft.graph.identity.signins)

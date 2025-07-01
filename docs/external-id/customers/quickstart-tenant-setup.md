@@ -25,7 +25,7 @@ In this quickstart, you'll learn how to create a tenant with external configurat
 ## Prerequisites
 
 - An Azure subscription. 
-- An Azure account that's been assigned at least the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) role scoped to the subscription.
+- An Azure account that's been assigned at least the [Tenant Creator](/entra/identity/role-based-access-control/permissions-reference#tenant-creator) role scoped to the subscription.
 
 ## Create a new tenant with external configurations 
 

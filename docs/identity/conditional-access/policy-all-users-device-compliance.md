@@ -5,7 +5,7 @@ description: Require devices accessing resources be marked as compliant with you
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 06/24/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -55,7 +55,9 @@ The following steps help create a Conditional Access policy to require devices a
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!NOTE]
-> You can enroll your new devices to Intune even if you select **Require device to be marked as compliant** for **All users** and **All resources (formerly 'All cloud apps')** using the previous steps. The **Require device to be marked as compliant** control doesn't block Intune enrollment.
+> You can enroll your new devices to Intune even if you select **Require device to be marked as compliant** for **All users** and **All resources (formerly 'All cloud apps')** using the previous steps. The **Require device to be marked as compliant** control doesn't block Intune enrollment. 
+>
+> Similarly, the **Require device to be marked as compliant** doesn't block Microsoft Authenticator app access to the UserAuthenticationMethod.Read scope. Authenticator needs access to the UserAuthenticationMethod.Read scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to UserAuthenticationMethod.ReadWrite to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
 
 ### Known behavior
 

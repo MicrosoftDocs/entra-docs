@@ -2,7 +2,7 @@
 title: How to download logs in Microsoft Entra ID
 description: How to download the audit, sign-in, and provisioning log data for manual storage in Microsoft Entra ID.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

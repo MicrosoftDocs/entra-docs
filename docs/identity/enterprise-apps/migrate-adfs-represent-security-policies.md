@@ -2,7 +2,7 @@
 title: 'Represent AD FS security policies in Microsoft Entra ID: Mappings and examples'
 description: Learn how to map AD FS security policies to Microsoft Entra ID when migrating app authentication, including authorization and multifactor authentication rules.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article

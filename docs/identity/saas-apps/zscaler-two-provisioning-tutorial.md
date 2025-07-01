@@ -2,7 +2,7 @@
 title: Configure Zscaler Two for automatic user provisioning with Microsoft Entra ID
 description: In this article,  you learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler Two.
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

@@ -3,7 +3,7 @@ title: Review permissions granted to enterprise applications
 description: Learn how to review and revoke permissions, and invalidate refresh tokens for an application in Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

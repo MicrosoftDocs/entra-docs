@@ -3,12 +3,12 @@ title: Add password-based single sign-on to an application
 description: Add password-based single sign-on to an application in Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: concept-article
+ms.topic: how-to
 
-ms.date: 06/27/2024
+ms.date: 06/20/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
@@ -72,8 +72,8 @@ For password-based SSO, the end user’s browsers can be:
 - Microsoft Edge on Windows 10 Anniversary Edition or later
 - Chrome--on Windows 7 or later, and on macOS X or later
 
-Users may only have a maximum of [48 credentials](~/identity/users/directory-service-limits-restrictions.md) configured for applications utilizing password-based single sign-on. 
+Users might only have a maximum of [48 credentials](~/identity/users/directory-service-limits-restrictions.md) configured for applications utilizing password-based single sign-on. 
 
-## Next steps
+## Related content
 
 - [Manage access to apps](what-is-access-management.md)

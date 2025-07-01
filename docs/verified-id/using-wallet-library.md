@@ -17,9 +17,9 @@ In this tutorial, you learn how a mobile app can use the Microsoft Entra Wallet 
 
 ## Prerequisites
 
-- [Android Studio](https://developer.android.com/studio) installed on Mac/Windows and an Android test device. You need to enable [developer mode](https://developer.android.com/studio/debug/dev-options) on your Android test device.
-- An [Apple developer account](https://developer.apple.com/), Mac with [Xcode](https://developer.apple.com/xcode/) and an iOS test device with [developer mode](https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device) enabled. The iOS version needs to be at least IOs 16.
-- Install the [QR Code Reader](https://apps.apple.com/us/app/qr-code-reader/id1200318119) app on your test device. The WalletLibraryDemo app doesn't come with the ability to scan QR codes, so you need the QR Code Reader app to scan the QR codes with.
+- **[Android Studio](https://developer.android.com/studio)** installed on Mac/Windows and an Android test device. You need to enable [developer mode](https://developer.android.com/studio/debug/dev-options) on your Android test device.
+- An **[Apple developer account](https://developer.apple.com/)**, Mac with **[Xcode](https://developer.apple.com/xcode/)** and an iOS test device with [developer mode](https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device) enabled. The iOS version needs to be at least IOs 16.
+- Install the **[QR Code Reader](https://apps.apple.com/us/app/qr-code-reader/id1200318119)** app on your test device. The **WalletLibraryDemo** app doesn't come with the ability to scan QR codes, so you need the **QR Code Reader** app to scan the QR codes with.
 
 You don't need to be a mobile developer to follow this tutorial and get the demo app up and running. The tools and a test device and the courage to try is all you need. You also don't need a Microsoft Entra Verified ID tenant onboarded as you can test the demo app with our public end to end demo website.
 
@@ -48,7 +48,7 @@ You add the Wallet Library to your mobile app project via adding a maven depende
 
 For iOS, add the WalletLibrary pod to your Podfile.
 
-```Swift
+```swift
 target "YourApp" do
   use_frameworks!
   pod "WalletLibrary", "~> 1.0.1"
