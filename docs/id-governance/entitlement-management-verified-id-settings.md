@@ -21,6 +21,8 @@ Sometimes you might want users to present extra identity proofs during the reque
 
 As an access package manager, you can include verified ID requirements for an access package at any time by editing an existing policy or adding a new policy for requesting access. 
 
+>[!VIDEO https://www.youtube.com/embed/gH9z6amIlv8]
+
 This article describes how to configure the verified ID requirement settings for an access package.
 
 ## Prerequisites
