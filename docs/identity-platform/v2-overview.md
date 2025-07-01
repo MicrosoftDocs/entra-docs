@@ -81,7 +81,7 @@ Browser based authentication (Workforce and External tenants):
 Native authentication (External tenants only):
 - [React Single-page app (SPA)](tutorial-native-authentication-single-page-app-react-sign-up.md)
 - [Android Kotlin app](tutorial-native-authentication-prepare-android-app.md)
-- [iOS/macOS Switch app](tutorial-native-authentication-prepare-ios-macos-app)
+- [iOS/macOS Switch app](tutorial-native-authentication-prepare-ios-macos-app.md)
 
 As you work with the Microsoft identity platform to integrate authentication and authorization in your apps, you can refer to this image that outlines the most common app scenarios and their identity components. Select the image to view it full-size.
 
