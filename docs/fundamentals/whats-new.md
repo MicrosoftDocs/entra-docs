@@ -30,21 +30,21 @@ This article provides information about the latest releases and change announcem
 **Service category:** Authentications (Login)  
 **Product capability:** User Authentication  
  
-Starting September 29, 2025, we'll be making a change to the default background image of our Microsoft Entra work or school authentication screens. This new background was designed to help users focus on signing into their accounts, enhancing productivity, and minimizing distractions. With this, we aim to ensure visual consistency and a clean, simplified user experience throughout Microsoft’s authentication flows – aligning with Microsoft’s modernized Fluent design language. When our experiences look and feel consistent, it gives our users a familiar experience that they know and trust. 
+Starting September 29, 2025, we'll be making a change to the default background image of our Microsoft Entra work or school authentication screens. This new background was designed to help users focus on signing into their accounts, enhancing productivity, and minimizing distractions. With this, we aim to ensure visual consistency and a clean, simplified user experience throughout Microsoft’s authentication flows – aligning with Microsoft’s modernized [Fluent](https://microsoft.design/articles/four-principles-for-the-future-of-design/) design language. When our experiences look and feel consistent, it gives our users a familiar experience that they know and trust. 
 
 **What’s changing?**                                                   		           
 
-This update is solely a visual user interface refresh with no changes to functionality. This change will only affect screens where Company Branding doesn't apply or where users see the default background image. We recommend updating any documentation that contains screenshots and notifying your help desk. If you have configured a custom background image in Company Branding for your tenant, there will be no change for your users. 
+This update is solely a visual user interface refresh with no changes to functionality. This change will only affect screens where [Company Branding](how-to-customize-branding.md) doesn't apply or where users see the [default background image](https://aka.ms/entradefaultbackground). We recommend updating any documentation that contains screenshots and notifying your help desk. If you have configured a custom background image in Company Branding for your tenant, there will be no change for your users. 
 
 **Additional Details:** 
 
 1. **Tenants without a custom background configured:**  
     a. Tenants without a custom background will see the change on every authentication screen<br> 
-    b. To change this background and use a custom background, configure Company Branding 
+    b. To change this background and use a custom background, configure [Company Branding](how-to-customize-branding.md)
 
 1. **Tenants with a custom background configured:**  
-    a. Tenants with a custom background configured will only see the change wherever the URL doesn't have a specified tenant ID parameter (For example, login.microsoftonline.com directly without a domain hint or custom URL)<br> 
-    b. For all other screens, tenants with a custom background configured will see no change to their experience on all clients. 
+    a. Tenants with a custom background configured will only see the change wherever the URL doesn't have a specified tenant ID parameter (For example, login.microsoftonline.com directly **without** a domain hint or custom URL)<br> 
+    b. For all other screens, tenants with a custom background configured **will see no change** to their experience on all clients. 
 
 1. **Entra External ID Tenants will not see any change to their experience on all clients** 
 
