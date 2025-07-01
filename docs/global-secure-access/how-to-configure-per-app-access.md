@@ -40,7 +40,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 Per-App Access is configured by creating a new Global Secure Access app. You create the app, select a connector group, and add network access segments. These settings make up the individual app that you can assign users and groups to.
 
-To configure Per-App Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. This connector group handles the traffic to this new application. With Connectors, you can isolate apps per network and connector.
+To configure Per-App Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/entra/identity/app-proxy/) connector. This connector group handles the traffic to this new application. With Connectors, you can isolate apps per network and connector.
 
 To summarize, the overall process is as follows:
 

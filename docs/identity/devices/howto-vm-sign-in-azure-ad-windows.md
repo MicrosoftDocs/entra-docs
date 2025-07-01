@@ -4,7 +4,7 @@ description: Learn how to sign in to an Azure VM that's running Windows by using
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/11/2025
+ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
 manager: dougeby
