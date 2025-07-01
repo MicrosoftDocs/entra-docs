@@ -60,6 +60,8 @@ To add a verified ID requirement to an access package, you must start from the a
     > If you select multiple credential types from one issuer, users will be required to present credentials of all selected types. Similarly, if you include multiple issuers, users will be required to present credentials from each of the issuers you include in the policy. To give users the option of presenting different credentials from various issuers, configure separate policies for each issuer/credential type you’ll accept.
 1. Select **Add** to add the verified ID requirement to the access package policy. 
 
+1. If you want users to complete a Face Check, select **Require Face Check**. This will ask users requesting the access package to perform a real-time, privacy compliant selfie check against the photo that is stored on their Verified ID. Once you select the checkbox, it will ask you to select the claim name that maps to the photo on the ID. For more information on Face Check, see [Use Face Check with Microsoft Entra Verified ID](~/verified-id/using-facecheck.md). 
+
 1. Once you finish configuring the rest of the settings, you can review your selections on the **Review + create** tab. You can see all verified ID requirements for this access package policy in the **Verified IDs** section.
     :::image type="content" source="media/entitlement-management-verified-id-settings/verified-ids-list.png" alt-text="Screenshot of a list of verified IDs.":::
 
@@ -78,6 +80,9 @@ The requestor steps are as follows:
     :::image type="content" source="media/entitlement-management-verified-id-settings/present-verified-id-access-package.png" alt-text="Screenshot of the present verified ID for access package option.":::
 1. Select **Request Access**. You should now see a QR code. Use your phone to scan the QR code. This launches Microsoft Authenticator, where you're prompted to share your credentials.
     :::image type="content" source="media/entitlement-management-verified-id-settings/verified-id-qr-code.png" alt-text="Screenshot of use QR code for verified IDs.":::
+
+1. If Face Check is required for the access package, the requesting user will need to perform a real-time selfie check against the photo stored on their Verified ID. Face Check protects user privacy by sharing only the match results and not any sensitive identity data.
+
 1. After you share your credentials, My Access will automatically take you to the next step of the request process.
 
 
