@@ -39,6 +39,10 @@ Implementing a Conditional Access policy that blocks access to resources for hig
 	- You must be signed in as a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) to view this template.
 	- For more information, see [Conditional Access conditions: Insider Risk](../../identity/conditional-access/concept-conditional-access-conditions.md#insider-risk).
 
+## License requirements
+
+Using this feature requires Microsoft Entra ID P2 licenses.
+
 ## Next steps
 
 - [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
