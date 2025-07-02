@@ -32,7 +32,7 @@ This article covers how to work with Microsoft Entra recommendations. Each Micro
 Most recommendations follow the same pattern. You're provided information about how the recommendation works, its value, and some action steps to address the recommendation. This section provides an overview of the details provided in a recommendation, but aren't specific to one recommendation.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Entra ID** > **Overview** > **Recommendations**.
+1. Browse to **Identity** > **Overview** > **Recommendations**.
 1. Select a recommendation from the list.
 
     ![Screenshot of the list of recommendations.](media/howto-use-recommendations/recommendations-list.png)

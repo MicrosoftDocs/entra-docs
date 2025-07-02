@@ -114,7 +114,7 @@ If Conditional Access policies are in use in your tenant, you can see if those p
 - **Success:** The Conditional Access policy was applied successfully to the sign-in attempt.
 - **Failure:** The Conditional Access policy was applied to the sign-in attempt, but the sign-in attempt failed.
 - **Not Applied:** The sign-in didn't match the criteria for the policy to be applied.
-   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that would not be possible to complete. These are considered "bootstrap scenarios" and might include sign-ins associated with device registration, device compliance, or Network Policy Server connectors.
+   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that wouldn't be possible to complete. These scenarios are considered "bootstrap scenarios" and might include sign-ins associated with device registration, device compliance, or Network Policy Server connectors.
    - Windows Hello for Business sign-ins show as "Not Applied" because Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process.
 - **Disabled:** The policy was disabled at the time of the sign-in attempt.
 
@@ -136,7 +136,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - `Not applied`: No policy applied to the user and application during sign-in. Windows Hello for Business shows up as "Not Applied" because Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process. Other sign-ins might get interrupted so a policy isn't applied.
   - `Success`: One or more Conditional Access policies applied to or were evaluated for the user and application (but not necessarily the other conditions) during sign-in. Even though a Conditional Access policy might not apply, if it was evaluated, the Conditional Access status shows *Success*.
   - `Failure`: The sign-in satisfied the user and application condition of at least one Conditional Access policy and grant controls are either not satisfied or set to block access.
-  - Conditional Access does not apply to Windows sign-in, such as Windows Hello for Business. Conditional Access protects sign-in attempts to cloud resources, not the device sign-in process.
+  - Conditional Access doesn't apply to Windows sign-in, such as Windows Hello for Business. Conditional Access protects sign-in attempts to cloud resources, not the device sign-in process.
 
 - **Continuous access evaluation:** Shows whether continuous access evaluation (CAE) was applied to the sign-in event.
   - There are multiple sign-in requests for each authentication, which can appear on either the interactive or non-interactive tabs.
@@ -149,7 +149,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - `b2bDirectConnect` - A cross tenant sign-in performed by a B2B.
   - `microsoftSupport`- A cross tenant sign-in performed by a Microsoft support agent in a Microsoft external tenant.
   - `serviceProvider` - A cross-tenant sign-in performed by a Cloud Service Provider (CSP) or similar admin on behalf of that CSP's customer in a tenant.
-  - `unknownFutureValue` - A sentinel value used by MS Graph to help clients handle changes in enum lists. For more information, see [Best practices for working with Microsoft Graph](/graph/best-practices-concept).
+  - `unknownFutureValue` - A value used by MS Graph to help clients handle changes in enum lists. For more information, see [Best practices for working with Microsoft Graph](/graph/best-practices-concept).
 
 - **Tenant:** The sign-in log tracks two tenant identifiers that are relevant in cross-tenant scenarios:
   - **Home tenant** – The tenant that owns the user identity. Microsoft Entra ID tracks the ID and name.
@@ -187,3 +187,8 @@ The following scenarios are important to consider when you're reviewing sign-in 
   - If you're unsure of a detail in the logs, gather the **Request ID** and **Correlation ID** to use for further analyzing or troubleshooting.
   - If Conditional Access policies for authentication or session lifetime are applied, they're listed above the sign-in attempts. If you don't see either of those options, those policies aren't currently applied. For more information, see [Conditional Access session controls](~/identity/conditional-access/concept-conditional-access-session.md).
   
+- **TimeGenerated and CreatedDateTime:**
+  - If you're sending sign-in logs to a Log Analytics workspace, you might notice two different timestamps for the same sign-in event.
+  - The `TimeGenerated` field in Log Analytics is the time the sign-in event was received and published by Log Analytics.
+  - The `CreatedDateTime` field is the actual date and time of the sign-in event.
+  - The difference between the two timestamps is caused by the time it takes for the sign-in event to be processed and sent to Log Analytics.
