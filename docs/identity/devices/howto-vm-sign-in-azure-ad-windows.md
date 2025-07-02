@@ -12,7 +12,7 @@ ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
 ---
 
-# Sign in to Windows virtual machine in Azure or Arc-enabled Windows Server, using Microsoft Entra ID
+# Sign in to Windows virtual machine in Azure or Arc-enabled Windows Server, using Microsoft Entra ID and Azure Roles Based Access Control
 
 Organizations can improve the security of Windows devices in Azure or connected using Azure Arc by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into *Windows Server 2019 Datacenter edition* and later, or *Windows 10 1809* and later. You can then centrally control and enforce Azure role-based access control (RBAC) and Conditional Access policies that allow or deny access to the devices.
 
@@ -42,14 +42,14 @@ MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs d
 This feature currently supports the following Windows distributions:
 
 ::: zone pivot="identity-extension-vm"
-- Windows 11 with [2022-10 Cumulative Updates for Windows 11 (KB5018418)](https://support.microsoft.com/kb/KB5018418) or later installed.
+- Windows 11 21H2 or later installed.
 - Windows 10, version 1809 or later installed.
-- Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
+- Windows Server 1809 or later installed with Desktop Experience.
 ::: zone-end
 
 ::: zone pivot="identity-extension-hybrid"
-- Windows 11 24H2 and later
-- Windows Server 2025 and later, with Desktop Experience.
+- Windows 11 24H2 or later installed.
+- Windows Server 2025 or later installed with Desktop Experience.
 ::: zone-end
 
 This feature is now available in the following Azure clouds:
@@ -73,13 +73,24 @@ Azure Global:
 
 Azure Government:
 - `https://enterpriseregistration.microsoftonline.us`: Device registration.
+::: zone pivot="identity-extension-vm"
 - `http://169.254.169.254`: Azure Instance Metadata Service endpoint.
+::: zone-end
+::: zone pivot="identity-extension-hybrid"
+- `http://localhost:40342`: Arc Instance Metadata Service endpoint.
+::: zone-end
+
 - `https://login.microsoftonline.us`: Authentication flows.
 - `https://pasff.usgovcloudapi.net`: Azure role-based access control flows.
 
 Microsoft Azure operated by 21Vianet:
 - `https://enterpriseregistration.partner.microsoftonline.cn`: Device registration.
+::: zone pivot="identity-extension-vm"
 - `http://169.254.169.254`: Azure Instance Metadata Service endpoint.
+::: zone-end
+::: zone pivot="identity-extension-hybrid"
+- `http://localhost:40342`: Arc Instance Metadata Service endpoint.
+::: zone-end
 - `https://login.chinacloudapi.cn`: Authentication flows.
 - `https://pas.chinacloudapi.cn`: Azure role-based access control flows.
 
