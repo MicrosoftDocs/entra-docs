@@ -43,7 +43,7 @@ This feature currently supports the following Windows distributions:
 
 ::: zone pivot="identity-extension-vm"
 - Windows 11 with [2022-10 Cumulative Updates for Windows 11 (KB5018418)](https://support.microsoft.com/kb/KB5018418) or later installed.
-- Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
+- Windows 10, version 1809 or later installed.
 - Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
 ::: zone-end
 
