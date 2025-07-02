@@ -34,7 +34,7 @@ No, External ID add-ons don't have a free tier. However, the ID Governance premi
 
 ### Does External ID have phone authentication via SMS?
 
-No, as per this [article](concept-multifactor-authentication-customers.md), "Currently, SMS isn't available for first-factor authentication or self-service password reset in external tenants".
+Currently, SMS isn't available for first-factor authentication or self-service password reset in external tenants. However, SMS is now available for second-factor verification in external tenants at additional cost. [Learn more](concept-multifactor-authentication-customers.md#sms-based-authentication)
 
 ### I linked my external tenant to a subscription, but the license status still shows "free"
 
