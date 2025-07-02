@@ -4,11 +4,10 @@ description: Learn about federation with an external organization's SAML/WS-Fed 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 02/21/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.date: 05/07/2025
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As an External ID admin of a workforce or external tenant, I want to configure and enable federation with a SAML/WS-Fed identity provider (IdP) for external users, so that they can easily use self-service sign-up or redeem  invitations and access our apps and resources.
@@ -23,9 +22,6 @@ In Microsoft Entra workforce and external tenants, you can set up federation wit
 You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or unverified.
 
 Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner needs to update their DNS text records. They also need to update their IdP with the required claims and relying party trusts.
-
-> [!NOTE]
-> SAML/WS-Fed federation is currently in preview for external tenants and is generally available for workforce tenants.
 
 ## User authentication with SAML/WS-Fed IdP federation
 

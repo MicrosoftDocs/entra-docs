@@ -4,13 +4,15 @@ description: Azure Active Directory B2C deployment guide for planning, implement
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 01/17/2023
+ms.date: 05/20/2025
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
 ---
 
 # Azure Active Directory B2C deployment plans
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 Azure Active Directory B2C (Azure AD B2C) is an identity and access management solution that can ease integration with your infrastructure. Use the following guidance to help understand requirements and compliance throughout an Azure AD B2C deployment.
 

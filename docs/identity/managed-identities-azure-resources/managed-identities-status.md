@@ -2,8 +2,8 @@
 title: Azure Services and resources with managed identities
 description: Explore Azure services and resource types supporting managed identities for secure, credential-free authentication.
 
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 05/09/2025
 ms.topic: conceptual
 ms.service: entra-id
@@ -69,6 +69,7 @@ The following Azure services support managed identities for Azure resources:
 | Azure Kubernetes Service (AKS)  | [Use managed identities in Azure Kubernetes Service](/azure/aks/use-managed-identity)                                                                                                                           |
 | Azure Load Testing                | [Use managed identities for Azure Load Testing](/azure/load-testing/how-to-use-a-managed-identity)  |
 | Azure Logic Apps                | [Authenticate access to Azure resources using managed identities in Azure Logic Apps](/azure/logic-apps/create-managed-service-identity)                                                                                                       |
+| Azure Log Analytics workspace   | [Enable managed identity for Log Analytics workspace](/azure/azure-monitor/logs/private-storage?tabs=azure-portal##link-storage-accounts-to-your-log-analytics-workspace)  |
 | Azure Log Analytics cluster     | [Azure Monitor customer-managed key](/azure/azure-monitor/logs/customer-managed-keys)|
 | Azure Machine Learning Services | [Use Managed identities with Azure Machine Learning](/azure/machine-learning/how-to-identity-based-service-authentication?tabs=python)                                                                                         |
 | Azure Managed Disk              | [Use the Azure portal to enable server-side encryption with customer-managed keys for managed disks](/azure/virtual-machines/disks-enable-customer-managed-keys-portal)                                                                                        |

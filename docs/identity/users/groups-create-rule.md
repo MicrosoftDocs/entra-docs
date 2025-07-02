@@ -1,17 +1,15 @@
 ---
 title: Create or Edit a Dynamic Membership Group and Get Its Processing Status
 description: Learn how to create or update rules for dynamic membership groups in the Azure portal and check their processing status.
-
 author: barclayn
-manager: femila
-
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ---
 
 # Create or update a dynamic membership group in Microsoft Entra ID

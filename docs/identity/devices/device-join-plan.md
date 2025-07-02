@@ -5,11 +5,11 @@ description: Explains the steps that are required to implement Microsoft Entra j
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 05/29/2024
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # How to: Plan your Microsoft Entra join implementation

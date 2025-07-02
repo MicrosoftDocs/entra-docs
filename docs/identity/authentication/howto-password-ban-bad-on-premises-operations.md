@@ -1,16 +1,15 @@
 ---
 title: Enable on-premises Microsoft Entra Password Protection
 description: Learn how to enable Microsoft Entra Password Protection for an on-premises Active Directory Domain Services environment
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: jsimmons
+ms.custom: sfi-image-nochange
 ---
 # Enable on-premises Microsoft Entra Password Protection
 

@@ -1,21 +1,21 @@
 ---
-title: Microsoft Entra single sign-on (SSO) integration with ProdPad
+title: Configure ProdPad for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ProdPad.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProdPad so that I can control who has access to ProdPad, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra single sign-on (SSO) integration with ProdPad
+# Configure ProdPad for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate ProdPad with Microsoft Entra ID. When you integrate ProdPad with Microsoft Entra ID, you can:
 
@@ -25,6 +25,7 @@ In this article,  you learn how to integrate ProdPad with Microsoft Entra ID. Wh
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - ProdPad single sign-on (SSO) enabled subscription.
 

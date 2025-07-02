@@ -3,7 +3,7 @@ title: How to remove a user's access to an application in Microsoft Entra ID
 description: Understand how to remove a user's access to an application in Microsoft Entra ID
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

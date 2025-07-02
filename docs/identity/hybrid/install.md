@@ -21,6 +21,7 @@ The following document provides the steps to install either cloud sync or Micros
 Cloud sync uses the Microsoft Entra provisioning agent.  Use the steps below to install it.
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
+ 3. Select **cloud sync**
  4. On the left, select **Agent**.
  5. Select **Download on-premises agent**, and select **Accept terms & download**.
  6. Once the **Microsoft Entra provisioning agent package** has completed downloading, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.

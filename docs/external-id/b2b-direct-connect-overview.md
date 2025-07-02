@@ -1,17 +1,14 @@
 ---
 title: B2B direct connect Microsoft Entra overview
 description: Microsoft Entra B2B direct connect lets users from other Microsoft Entra tenants seamlessly sign in to your shared resources via Teams shared channels. There's no need for a guest user object in your Microsoft Entra directory.
-
- 
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 09/06/2024
-
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin managing collaboration between organizations, I want to configure B2B direct connect settings, so that I can control inbound and outbound access for users and groups from external organizations and ensure secure collaboration.
 ---
 

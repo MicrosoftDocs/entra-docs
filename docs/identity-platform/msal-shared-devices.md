@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.date: 05/09/2025
-ms.reviewer: brianmel, akgoel, dmwendia
+ms.reviewer: akgoel
 ms.service: identity-platform
 
 ms.topic: concept-article

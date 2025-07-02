@@ -1,17 +1,15 @@
 ---
 title: 'Quickstart: Create and assign a user account'
 description: Create a user account and assign it to an enterprise application in your Microsoft Entra tenant. Begin managing access efficiently today
-
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: quickstart
-
 ms.date: 03/21/2025
 ms.author: jomondi
 ms.reviewer: alamaral
-ms.custom: mode-other, enterprise-apps
+ms.custom: mode-other, enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin managing user accounts in Microsoft Entra, I want to create a new user account and assign it to an enterprise application, so that I can provide access to the application for the user.
 ---
 

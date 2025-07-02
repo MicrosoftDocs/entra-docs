@@ -3,7 +3,7 @@ title: Configure Meta Work Accounts for automatic user provisioning with Microso
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Meta Work Accounts.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.author: thomasakelo
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -15,7 +15,7 @@ ms.date: 03/25/2025
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Facebook Work Accounts so that I can streamline the user management process and ensure that users have the appropriate access to Facebook Work Accounts.
 ---
 
-# Configure Meta Work Accounts for automatic user provisioning
+# Configure Meta Work Accounts for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Meta Work Accounts and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Meta Work Accounts](https://work.meta.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 

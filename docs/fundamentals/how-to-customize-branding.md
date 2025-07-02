@@ -2,15 +2,14 @@
 title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
 author: shlipsey3
-manager: femila
-
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 03/25/2025
+ms.date: 06/26/2025
 ms.author: sarahlipsey
-ms.reviewer: almars
-
+ms.reviewer: mkokkalera
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to customize the sign-in experience for my organization's users so that I can provide a consistent look and feel across all sign-ins.
 ---
 
@@ -41,6 +40,8 @@ The **Organizational Branding Administrator** role is the minimum role required 
 **External URLs aren't supported in the sign-in experience.** For example, if you add an external URL for your internal help desk to the footer, that URL is displayed explicitly but isn't clickable. Users must copy the URL and navigate to it directly.
 
 **The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding.md) in the Azure AD B2C documentation.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 **Use Microsoft Graph with Microsoft Entra company branding.** Company branding can be viewed and managed using Microsoft Graph on the `/beta` endpoint and the `organizationalBranding` resource type. For more information, see the [organizational branding API documentation](/graph/api/resources/organizationalbranding?view=graph-rest-beta&preserve-view=true).
 
@@ -173,7 +174,7 @@ All of the available options appear in one list so you can review everything you
 
 Once your default sign-in experience is created, select the **Edit** button to make any changes. You can't delete a default sign-in experience after it's created, but you can remove all custom settings.
 
-The time it takes for changes to appear in the sign-in experience can vary based on the tenant's geographical location. Updates can take a few minutes or up to 2 hours. This time range is a target, not a guarantee. 
+The time it takes for changes to appear in the sign-in experience vary based on the tenant's geographical location.
 
 ## Customize the sign-in experience by browser language
 
@@ -194,6 +195,14 @@ Microsoft Entra ID supports right-to-left functionality for languages such as Ar
 ## User experience
 
 There are some scenarios for you to consider when you customize the sign-in pages for your organization's tenant-specific applications.
+
+### Default background image
+
+The default background image behind the sign-in box is changing later this year. The change is only to the image, requires no action, and doesn't affect any functionality. We know that the default background image is often used for training and documentation to demonstrate the sign-in experience. Providing the updated image allows you to update your documentation so you can demonstrate the exact sign-in experience that your users will see. For details on the upcoming change, see [Microsoft Entra releases and announcements](../fundamentals/whats-new.md).
+
+:::image type="content" source="media/how-to-customize-branding/background-image-update.png" alt-text="Screenshot of the current background on the left and the new image on the right." lightbox="media/how-to-customize-branding/background-image-update-expanded.png":::
+
+The current background image is on the left and the new background image is on the right.
 
 ### Software as a Service (SaaS) and multitenant applications
 

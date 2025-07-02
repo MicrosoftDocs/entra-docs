@@ -1,15 +1,14 @@
 ---
 title: Bulk delete users in Microsoft Entra ID
 description: Delete users in bulk in Microsoft Entra ID
-
 author: barclayn
 ms.author: barclayn
-manager: femila
+manager: pmwongera
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
 

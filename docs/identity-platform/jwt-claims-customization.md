@@ -4,12 +4,11 @@ description: Learn how to customize the claims issued by Microsoft identity plat
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: curation-claims
-ms.date: 05/30/2024
-ms.reviewer: rahulnagraj, alamaral
+ms.date: 05/30/2025
+ms.reviewer: alamaral
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: curation-claims, sfi-ropc-nochange
 #Customer intent: As an application developer, I want to customize the claims issued in the JSON web tokens so that I can tailor the information about the user that is included in the token for my enterprise application.
 ---
 
@@ -336,8 +335,8 @@ else
     $base64cer = [System.Convert]::ToBase64String($cer_cert)
  
     # getting id for the keyCredential object
-    $guid1 = New-Guid
-    $guid2 = New-Guid
+    [string]$guid1 = New-Guid
+    [string]$guid2 = New-Guid
  
     # get the custom key identifier from the certificate thumbprint:
     $hasher = [System.Security.Cryptography.HashAlgorithm]::Create('sha256')

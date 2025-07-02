@@ -2,14 +2,14 @@
 title: Use Azure Policy to assign managed identities (preview)
 description: Documentation for the Azure Policy that can be used to assign managed identities to Azure resources.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 editor: barclayn
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 05/23/2022
-ms.author: ryanwi
+ms.author: shermanouko
 
 ---
 

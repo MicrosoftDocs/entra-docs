@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Proactis Rego Invoice Capture
+title: Configure Proactis Rego Invoice Capture for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Proactis Rego Invoice Capture.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Proactis Rego Invoice Capture so that I can control who has access to Proactis Rego Invoice Capture, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Proactis Rego Invoice Capture
+# Configure Proactis Rego Invoice Capture for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Proactis Rego Invoice Capture with Microsoft Entra ID. With Proactis AP automation, you can capture all invoices and convert into eInvoices, validate their accuracy, duplicates and a valid supplier, and then transfer them into your finance system. When you integrate Proactis Rego Invoice Capture with Microsoft Entra ID, you can:
 

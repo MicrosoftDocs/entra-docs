@@ -5,8 +5,8 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 05/30/2024
-ms.reviewer: rahulnagraj, alamaral, jeedes
+ms.date: 05/14/2025
+ms.reviewer: alamaral
 ms.service: identity-platform
 
 ms.topic: how-to

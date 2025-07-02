@@ -2,12 +2,12 @@
 title: Create an access review of PIM for Groups (preview)
 description: Learn how to create an access review of PIM for Groups in Microsoft Entra ID.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 03/10/2025
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: jgangadhar
 ---

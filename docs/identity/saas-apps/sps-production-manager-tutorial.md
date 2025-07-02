@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with SPS|Production Manager.
+title: Configure SPS|Production Manager. for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and SPS|Production Manager.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SPS|Production Manager so that I can control who has access to SPS|Production Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with SPS|Production Manager
+# Configure SPS|Production Manager. for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate SPS|Production Manager with Microsoft Entra ID. When you integrate SPS|Production Manager with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate SPS|Production Manager with Microso
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SPS|Production Manager single sign-on (SSO) enabled subscription.
 

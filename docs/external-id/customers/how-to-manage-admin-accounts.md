@@ -2,14 +2,14 @@
 title: Add and manage admin accounts
 description: Learn how to add and manage admin accounts in your external tenant with Microsoft Entra External ID.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
 ms.date: 03/10/2025
-ms.author: mimart
 ms.custom: it-pro
 
 ---
