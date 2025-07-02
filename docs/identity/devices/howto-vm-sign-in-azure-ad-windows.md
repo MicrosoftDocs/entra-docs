@@ -67,7 +67,12 @@ To enable Microsoft Entra authentication to virtual machines in Azure or Arc-ena
 
 Azure Global:
 - `https://enterpriseregistration.windows.net`: Device registration.
+::: zone pivot="identity-extension-vm"
 - `http://169.254.169.254`: Azure Instance Metadata Service endpoint.
+::: zone-end
+::: zone pivot="identity-extension-hybrid"
+- `http://localhost:40342`: Arc Instance Metadata Service endpoint.
+::: zone-end
 - `https://login.microsoftonline.com`: Authentication flows.
 - `https://pas.windows.net`: Azure role-based access control flows.
 
@@ -224,6 +229,9 @@ You can sign in over RDP using one of two methods:
 ### Sign in using passwordless authentication with Microsoft Entra ID
 
 To use passwordless authentication for your Windows VMs in Azure, you need the Windows client machine and the session host (VM) on the following operating systems:
+- Windows 11 with [2022-10 Cumulative Updates for Windows 11 (KB5018418)](https://support.microsoft.com/kb/KB5018418) or later installed.
+- Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
+- Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
 
 - Windows 11 with [2022-10 Cumulative Updates for Windows 11 (KB5018418)](https://support.microsoft.com/kb/KB5018418) or later installed.
 - Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
@@ -340,7 +348,7 @@ If the AADLoginForWindows extension fails with an error code, you can perform th
 
 ### Device name already exists
 
-If a device object with the same displayName as the hostname of the Azure virtual machine exists, the device fails to join Microsoft Entra with a hostname duplication error. Avoid duplication by modifying the hostname.
+If a device object with the same displayName as the hostname of the Azure virtual machine exists, the device fails to join Microsoft Entra with a hostname duplication error. Avoid duplication by [modifying the hostname](https://learn.microsoft.com/azure/virtual-network/virtual-networks-viewing-and-modifying-hostnames#modify-a-hostname).
 
 ### Terminal error code 1007 and exit code -2145648574.
 
