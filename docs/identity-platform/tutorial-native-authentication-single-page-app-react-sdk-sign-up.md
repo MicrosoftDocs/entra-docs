@@ -68,14 +68,10 @@ spasample/
 
 ## Add JavaScript SDK to your project
 
-To use the native authentication JavaScript SDK into your project, open the *package.json* file, then add the following dependencies:
+To use the native authentication JavaScript SDK into your project, use your terminal to install it by using the following command:
 
-```typescript
-"dependencies": {
-        "@azure/msal-common": "https://raw.githubusercontent.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/main/typescript/native-auth/azure-msal-common-15.2.1.tgz",
-        "@azure/msal-browser": "https://raw.githubusercontent.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/main/typescript/native-auth/azure-msal-browser-4.7.0.tgz",
-        ...
-}
+```console
+npm intall @azure/msal-browser
 ```
 
 The native authentication capabilities are part of the `azure-msal-browser` library. To use native authentication features, you import from `@azure/msal-browser/custom-auth`. For example:
@@ -302,13 +298,14 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
     
         if (!authClient) return;
     
-        const attributes = new UserAccountAttributes();
-        attributes.setDisplayName(`${firstName} ${lastName}`);
-        attributes.setSurname(lastName);
-        attributes.setGivenName(firstName);
-        attributes.setJobTitle(jobTitle);
-        attributes.setCity(city);
-        attributes.setCountry(country);
+        const attributes: UserAccountAttributes = {
+            displayName: `${firstName} ${lastName}`,
+            givenName: firstName,
+            surname: lastName,
+            jobTitle: jobTitle,
+            city: city,
+            country: country,
+        };
     
         const result = await authClient.signUp({
             username: email,
@@ -402,7 +399,7 @@ Create *sign-up/page.tsx* to handle logic for a sign-up flow. In this file:
 
     ```typescript
     if (signUpState instanceof SignUpCompletedState) {
-        return <SignUpResultPage state={signUpState} />;
+        return <SignUpResultPage/>;
     }
     ```
    
@@ -422,7 +419,7 @@ One of the errors that can result from the `signUp()` method is `result.error?.i
 
 ## Optional: Sign in users automatically after sign-up
 
-After a user successfully signs up, you can directly sign them into the app without initiating a new sign-in flow. To do so, use the following code snippet: 
+After a user successfully signs up, you can directly sign them into the app without initiating a new sign-in flow. To do so, use the following code snippet. See a full example at [sign-up/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/page.tsx): 
 
 ```typescript
 if (signUpState instanceof SignUpCompletedState) {

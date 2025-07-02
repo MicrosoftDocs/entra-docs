@@ -254,12 +254,12 @@ Create *reset-password/page.tsx* file to handle logic for a sign-in flow. In thi
 
     ```typescript
     if (resetState instanceof ResetPasswordCompletedState) {
-        return <ResetPasswordResultPage state={resetState} />;
+        return <ResetPasswordResultPage/>;
     }
 
 ## Optional: Sign in users automatically after password reset
 
-After a user successfully resets their password, you can directly sign them into the app without initiating a new sign-in flow. To do so, use the following code snippet: 
+After a user successfully resets their password, you can directly sign them into the app without initiating a new sign-in flow. To do so, use the following code snippet. See a full example at [reset-password/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/page.tsx): 
 
 ```typescript
 if (resetState instanceof ResetPasswordCompletedState) {
