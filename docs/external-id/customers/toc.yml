@@ -454,7 +454,7 @@ items:
         - name: User activity insights
           href: how-to-user-insights.md
         - name: Sign-up logs
-          href: /entra/identity/monitoring/concept-sign-ups?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+          href: /entra/identity/monitoring-health/concept-sign-ups?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Azure Monitor
           href: how-to-azure-monitor.md
         - name: Known issues
