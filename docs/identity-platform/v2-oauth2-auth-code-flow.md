@@ -38,7 +38,7 @@ This diagram shows a high-level view of the authentication flow:
 
 Redirect URIs for SPAs that use the auth code flow require special configuration.
 
-- **Add a redirect URI** that supports auth code flow with PKCE and cross-origin resource sharing (CORS): Follow the steps in [Redirect URI: MSAL.js 2.0 with auth code flow](scenario-spa-app-registration.md#redirect-uri-msaljs-20-with-auth-code-flow).
+- **Add a redirect URI** that supports auth code flow with PKCE and cross-origin resource sharing (CORS): Follow the steps in [How to add a redirect URI to your application](how-to-add-redirect-uri.md).
 - **Update a redirect URI**: Set the redirect URI's `type` to `spa` by using the [application manifest editor](reference-microsoft-graph-app-manifest.md) in the Microsoft Entra admin center.
 
 
