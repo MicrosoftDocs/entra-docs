@@ -5,7 +5,7 @@ description: Troubleshooting Microsoft Entra hybrid joined down-level devices.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 05/29/2024
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
