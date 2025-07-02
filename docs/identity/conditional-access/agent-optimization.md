@@ -64,7 +64,7 @@ In preview, the policy suggestions reviewed by the agent include:
 
 1. Select **View details** on the Conditional Access Optimization Agent tile.
 
-   :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the "view details" button highlighted. lightbox="media/agent-optimization/view-details.png":::
+   :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the view details button highlighted. lightbox="media/agent-optimization/view-details.png":::
 
 1. Select **Start agent** to begin your first run. 
    - Avoid using an account with a role activated through PIM.
@@ -95,13 +95,13 @@ When you select **Review suggestion**, you are provided a thorough overview of t
 
 This tab displays a visualization of the potential impact of the policy. Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that would be affected by the policy. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
 
-:::image type="content" source="media/agent-optimization/policy-impact-button.png" alt-text="Screenshot of the policy suggestion details with the "policy impact" button highlighted." lightbox="media/agent-optimization/policy-impact-button.png":::
+:::image type="content" source="media/agent-optimization/policy-impact-button.png" alt-text="Screenshot of the policy suggestion details with the policy impact button highlighted." lightbox="media/agent-optimization/policy-impact-button.png":::
 
 ### View agent's full activity
 
 To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The **summary of agent activity** is a natural language description of the activity that's illustrated in the **agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion. 
 
-:::image type="content" source="media/agent-optimization/view-agent-activity-link.png" alt-text="Screenshot of the policy suggestion details with the "view agent's full activity" link highlighted." lightbox="media/agent-optimization/view-agent-activity-link.png":::
+:::image type="content" source="media/agent-optimization/view-agent-activity-link.png" alt-text="Screenshot of the policy suggestion details with the view agent's full activity link highlighted." lightbox="media/agent-optimization/view-agent-activity-link.png":::
 
 ### Review and apply suggestion
 
