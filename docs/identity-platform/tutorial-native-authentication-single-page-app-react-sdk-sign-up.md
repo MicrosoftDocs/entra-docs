@@ -68,7 +68,7 @@ spasample/
 
 ## Add JavaScript SDK to your project
 
-To use the native authentication JavaScript SDK into your project, use your terminal to install it by using the following command:
+To use the native authentication JavaScript SDK in your app, use your terminal to install it by using the following command:
 
 ```console
 npm intall @azure/msal-browser
