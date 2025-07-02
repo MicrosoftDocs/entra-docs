@@ -64,7 +64,7 @@ In preview, the policy suggestions reviewed by the agent include:
 
 1. Select **View details** on the Conditional Access Optimization Agent tile.
 
-   :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Microsoft Entra admin center showcasing the new Security Copilot agents experience." lightbox="media/agent-optimization/view-details.png":::
+   :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the "view details" button highlighted. lightbox="media/agent-optimization/view-details.png":::
 
 1. Select **Start agent** to begin your first run. 
    - Avoid using an account with a role activated through PIM.
@@ -72,11 +72,11 @@ In preview, the policy suggestions reviewed by the agent include:
    - A message that says "The agent is starting its first run" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
 
-   :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization Agent configuration page." lightbox="media/agent-optimization/start-agent.png":::
+   :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization agent start agent page." lightbox="media/agent-optimization/start-agent.png":::
 
 1. When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, select **Review suggestion** to see the details, review the policy, determine policy impact, and apply the changes if needed. These options are covered in detail in the [Reviewing results](#reviewing-results) section.
 
-   :::image type="content" source="media/agent-optimization/review-suggestions.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/review-suggestions.png":::
+   :::image type="content" source="media/agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the "review suggestion" buttons highlighted." lightbox="media/agent-optimization/review-suggestions.png":::
 
 ## Reviewing results
 
@@ -89,23 +89,27 @@ The agent might run and:
 
 When you select **Review suggestion**, you are provided a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
 
+:::image type="content" source="media/agent-optimization/review-suggestions-details.png" alt-text="Screenshot of the results of the agent suggestion." lightbox="media/agent-optimization/review-suggestions-details-expanded.png":::
+
 ### Policy impact
 
 This tab displays a visualization of the potential impact of the policy. Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that would be affected by the policy. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
+
+:::image type="content" source="media/agent-optimization/policy-impact-button.png" alt-text="Screenshot of the policy suggestion details with the "policy impact" button highlighted." lightbox="media/agent-optimization/policy-impact-button.png":::
 
 ### View agent's full activity
 
 To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The **summary of agent activity** is a natural language description of the activity that's illustrated in the **agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion. 
 
-### Review policy changes
+:::image type="content" source="media/agent-optimization/view-agent-activity-link.png" alt-text="Screenshot of the policy suggestion details with the "view agent's full activity" link highlighted." lightbox="media/agent-optimization/view-agent-activity-link.png":::
 
-Select the **Review policy changes** button to see the details of the policy that the agent suggests modifying. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion. Select **JSON view** to see the policy in JSON format, with the changes highlighted. You can even select **Go to policy** to open the full Conditional Access policy.
+### Review and approve policy changes
+
+If the agent suggests modifying an existing policy, select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion. Select **JSON view** to see the policy in JSON format, with the changes highlighted. You can even select **Go to policy** to open the full Conditional Access policy.
 
 Select **Approve suggested changes** to apply the changes to the policy. The agent applies the changes and updates the policy in report-only mode.
 
-### Apply suggestion
-
-If you select **Apply suggestion**, the agent applies the changes to the policy in report-only mode.
+If the agent suggests creating a new policy, select **Apply suggestion**, the agent applies the changes to the policy in report-only mode.
 
 > [!TIP]
 > As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
@@ -179,6 +183,7 @@ Both features provide different insights into your Conditional Access policies. 
 | One-click policy changes | ✅ |  |
 | Review existing CA policies and assignments (Do policies apply to Alice?) | ✅ | ✅ |
 | Troubleshoot a user’s access (Why was Alice prompted for MFA?) |  | ✅ |
+
 
 ### I activated the agent but see "Fail" in the activity status. What's happening?
 
