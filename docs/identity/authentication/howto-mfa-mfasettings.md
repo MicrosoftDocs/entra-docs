@@ -197,6 +197,15 @@ You can use the following sample scripts to create your own custom messages. The
 
 Message name | Script
 -------------|--------
+Authentication successful | Your sign-in was successful.
+Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
+Fraud confirmation | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
+Fraud reported | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+Activation | script
+Authentication denied retry | I'm sorry we can't sign you in at this time. Please try again later.
+Retry (Standard) | script
+Greeting (Standard) | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
 OTP extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue. 
 OTP fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to continue. If you are not trying to sign in, press 0 and #.
 OTP fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
@@ -205,11 +214,7 @@ OTP goodbye | Goodbye.
 OTP greeting | This is Microsoft. If you are trying to sign in, press the # key to continue.
 OTP last verification code | Again, your code is
 Greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
-Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
-Fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
-Fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
-Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
-Authentication successful | Your sign-in was successful.
+
 Authentication failed | I'm sorry we can't sign you in at this time. Please try again later.
 
 ### Set up a custom message
