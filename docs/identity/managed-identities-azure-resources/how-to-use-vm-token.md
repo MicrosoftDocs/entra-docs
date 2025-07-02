@@ -125,26 +125,41 @@ Using the Azure identity client library is the recommended way to use managed id
 
 ```csharp
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Web.Script.Serialization; 
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
-// Build request to acquire managed identities for Azure resources token
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/");
-request.Headers["Metadata"] = "true";
-request.Method = "GET";
+// Construct HttpClient
+var httpClient = new HttpClient
+{
+    DefaultRequestHeaders =
+    {
+        { "Metadata", Boolean.TrueString }
+    }
+};
 
-// Call /token endpoint
-    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+// Construct URI to call
+var resource = "https://management.azure.com/";
+var uri = $"http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource={resource}";
 
-    // Pipe response Stream to a StreamReader, and extract access token
-    StreamReader streamResponse = new StreamReader(response.GetResponseStream()); 
-    string stringResponse = streamResponse.ReadToEnd();
-    JavaScriptSerializer j = new JavaScriptSerializer();
-    Dictionary<string, string> list = (Dictionary<string, string>) j.Deserialize(stringResponse, typeof(Dictionary<string, string>));
-    string accessToken = list["access_token"];
+// Make call
+var response = await httpClient.GetAsync(uri);
+try
+{
+    response.EnsureSuccessStatusCode();
+}
+catch (HttpRequestException)
+{
+    var error = await response.Content.ReadAsStringAsync();
+    Console.WriteLine(error);
+    throw;
+}
 
+// Parse response using Newtonsoft.Json
+var content = await response.Content.ReadAsStringAsync();
+var obj = JObject.Parse(content);
+var accessToken = obj["access_token"];
+
+Console.WriteLine(accessToken);
 ```
 
 ## Get a token using Java
@@ -277,24 +292,28 @@ The following example demonstrates how to use the managed identities for Azure r
 2. Use the access token to call an Azure Resource Manager REST API and get information about the VM. Be sure to substitute your subscription ID, resource group name, and virtual machine name for `<SUBSCRIPTION-ID>`, `<RESOURCE-GROUP>`, and `<VM-NAME>`, respectively.
 
 ```azurepowershell
-Invoke-WebRequest -Method GET -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -Headers @{Metadata="true"}
+Invoke-RestMeth -Method GET -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -Headers @{Metadata="true"}
 ```
 
 Example of how to parse the access token from the response:
 ```azurepowershell
 # Get an access token for managed identities for Azure resources
 $resource = 'https://management.azure.com'
-$response = Invoke-WebRequest -Method GET `
-                              -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=$resource' `
-                              -Headers @{ Metadata="true" }
+$response = Invoke-RestMeth -Method GET `
+                            -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=$resource' `
+                            -Headers @{ Metadata="true" }
 $content = $response.Content | ConvertFrom-Json
-$access_token = $content.access_token
-echo "The managed identities for Azure resources access token is $access_token"
+$accessToken = $content.access_token
+Write-Host "Access token using a User-Assigned Managed Identity is $accessToken"
 
 # Use the access token to get resource information for the VM
-$vmInfoRest = (Invoke-WebRequest -Uri 'https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>/providers/Microsoft.Compute/virtualMachines/<VM-NAME>?api-version=2017-12-01' -Method GET -ContentType "application/json" -Headers @{ Authorization ="Bearer $access_token"}).content
-echo "JSON returned from call to get VM info:"
-echo $vmInfoRest
+$secureToken = $accessToken | ConvertTo-SecureString -AsPlainText
+$vmInfoRest = Invoke-RestMeth -Method GET `
+                              -Uri 'https://management.azure.com/subscriptions/<SUBSCRIPTION-ID>/resourceGroups/<RESOURCE-GROUP>/providers/Microsoft.Compute/virtualMachines/<VM-NAME>?api-version=2017-12-01' `
+                              -ContentType 'application/json' `
+                              -Authentication Bearer `
+                              -Token $secureToken
+Write-Host "JSON returned from call to get VM info: $($vmInfoRest.content)"
 
 ```
 
@@ -304,13 +323,12 @@ echo $vmInfoRest
 curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true -s
 ```
 
-
 Example of how to parse the access token from the response:
 
 ```bash
 response=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true -s)
 access_token=$(echo $response | python -c 'import sys, json; print (json.load(sys.stdin)["access_token"])')
-echo The managed identities for Azure resources access token is $access_token
+echo Access token using a User-Assigned Managed Identity is $access_token
 ```
 
 ## Token caching
