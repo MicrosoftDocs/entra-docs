@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 
-ms.date: 07/01/2025
+ms.date: 07/02/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -103,13 +103,22 @@ To see a detailed summary of the agent's activity and how it calculated the sugg
 
 :::image type="content" source="media/agent-optimization/view-agent-activity-link.png" alt-text="Screenshot of the policy suggestion details with the "view agent's full activity" link highlighted." lightbox="media/agent-optimization/view-agent-activity-link.png":::
 
-### Review and approve policy changes
+### Review and apply suggestion
 
-If the agent suggests modifying an existing policy, select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion. Select **JSON view** to see the policy in JSON format, with the changes highlighted. You can even select **Go to policy** to open the full Conditional Access policy.
+The experience for reviewing and applying the suggestion depends on whether the agent suggests modifying an existing policy or creating a new policy. 
 
-Select **Approve suggested changes** to apply the changes to the policy. The agent applies the changes and updates the policy in report-only mode.
+If the agent suggests modifying an existing policy:
 
-If the agent suggests creating a new policy, select **Apply suggestion**, the agent applies the changes to the policy in report-only mode.
+- Select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion.
+- Select **JSON view** to see the policy in JSON format, with the changes highlighted. You can even select **Go to policy** to open the full Conditional Access policy.
+
+    :::image type="content" source="media/agent-optimization/require-mfa-details.png" alt-text="Screenshot of the policy suggestion details to require MFA for all users." lightbox="media/agent-optimization/require-mfa-details-expanded.png":::
+
+- From the **Review policy changes** page, select **Approve suggested changes** to apply the changes to the policy. The agent applies the changes and updates the policy in report-only mode.
+
+If the agent suggests creating a new policy:
+
+- Select **Apply suggestion** to have the agent apply the changes to the policy in report-only mode.
 
 > [!TIP]
 > As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
@@ -146,7 +155,7 @@ Use the checkboxes under **Objects** to specify what the agent should monitor wh
 
 ### Identity and permissions
 
-The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*. Because of this requirement, you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation.
+The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*. Because of this requirement, you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation. The audit logs for actions taken by the agent are associated with the user who enabled the agent.
 
 The Security Administrator and Global Administrator roles also have access to Security Copilot by default.
 
@@ -183,7 +192,6 @@ Both features provide different insights into your Conditional Access policies. 
 | One-click policy changes | ✅ |  |
 | Review existing CA policies and assignments (Do policies apply to Alice?) | ✅ | ✅ |
 | Troubleshoot a user’s access (Why was Alice prompted for MFA?) |  | ✅ |
-
 
 ### I activated the agent but see "Fail" in the activity status. What's happening?
 
