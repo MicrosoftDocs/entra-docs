@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 06/25/2025
 
 #CustomerIntent: As an admin, I want to download history reports as a CSV.
 ---

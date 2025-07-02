@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Aqua Platform
+title: Configure Aqua Platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Aqua Platform.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Aqua Platform so that I can control who has access to Aqua Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Aqua Platform
+# Configure Aqua Platform for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Aqua Platform with Microsoft Entra ID. Aqua Platform enables customers to securely build, scale and automate cloud native applications. When you integrate Aqua Platform with Microsoft Entra ID, you can:
 

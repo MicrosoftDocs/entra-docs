@@ -1,18 +1,15 @@
 ---
-title: Sign in to Windows virtual machine in Azure or Arc-enabled Windows Server, using Microsoft Entra ID
-description: Learn how to sign in to an Azure virtual machine or Arc-enabled Windows Server that's running Windows Server by using Microsoft Entra authentication.
-
+title: Sign in to a Windows virtual machine in Azure by using Microsoft Entra ID
+description: Learn how to sign in to an Azure VM that's running Windows by using Microsoft Entra authentication.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 05/13/2025
-
+ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
-ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref
-zone_pivot_groups: identity-extension-windows-environment
+ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, has-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Sign in to Windows virtual machine in Azure or Arc-enabled Windows Server, using Microsoft Entra ID
@@ -32,6 +29,8 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
 - Use Conditional Access policy "phishing resistant MFA" and other signals such as user sign-in risk.
 - Use Azure Policy to deploy and audit policies to require Microsoft Entra sign in for Windows devices and to flag the use of unapproved local accounts on the devices.
 - Use Intune to automate and scale Microsoft Entra join with mobile device management (MDM) autoenrollment of Azure Windows VMs that are part of your virtual desktop infrastructure (VDI) deployments. MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
+
+MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!IMPORTANT]
 > After you enable this capability, your Azure virtual machine / Arc-enabled machine will be Microsoft Entra joined. You can't join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the device from Microsoft Entra by uninstalling the extension. In addition, if you deploy a supported golden image, you can enable Microsoft Entra ID authentication by installing the extension.
@@ -58,6 +57,9 @@ This feature is now available in the following Azure clouds:
 - Azure Global
 - Azure Government
 - Microsoft Azure operated by 21Vianet
+
+> [!NOTE]
+> CIS hardened images support Microsoft Entra ID authentication for Microsoft Windows Enterprise and Microsoft Windows Server offerings. For more information, see: [CIS Hardened Images on Microsoft Windows Enterprise](https://azuremarketplace.microsoft.com/marketplace/apps/center-for-internet-security-inc.cis-windows-server).
 
 ### Network requirements
 

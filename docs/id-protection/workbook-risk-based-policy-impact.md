@@ -1,16 +1,14 @@
 ---
 title: Impact analysis of risk-based access policies workbook
 description: Take a proactive look at the impact of risk-based Conditional Access policies in your environment.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 04/25/2025
-
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-image-nochange
 ---
 # Workbook: Impact analysis of risk-based access policies
 

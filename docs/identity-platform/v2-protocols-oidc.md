@@ -4,12 +4,11 @@ description: Sign in Microsoft Entra users by using the Microsoft identity platf
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
 ms.date: 01/04/2025
 ms.service: identity-platform
 ms.reviewer: jmprieur, ludwignick
-
 ms.topic: reference
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer integrating authentication into my application, I want to understand how to enable ID tokens for my application registered with the Microsoft identity platform, so that I can verify the identity of the user and obtain other information about them.
 ---
 

@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 03/24/2023
-ms.reviewer: manrath, sureshja
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: reference

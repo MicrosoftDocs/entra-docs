@@ -9,7 +9,7 @@ ms.date: 12/10/2024
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 # Customer intent: As an organization administrator, I want to customize the invitation process for external users using the Microsoft Graph REST API, so that I can tailor the onboarding experience and control the notifications sent to the users.

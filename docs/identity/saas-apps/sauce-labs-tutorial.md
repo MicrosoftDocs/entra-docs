@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Sauce Labs
+title: Configure Sauce Labs for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sauce Labs.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sauce Labs so that I can control who has access to Sauce Labs, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Sauce Labs
+# Configure Sauce Labs for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Sauce Labs with Microsoft Entra ID. App integration for single sign-on and automatic account provisioning at Sauce Labs. When you integrate Sauce Labs with Microsoft Entra ID, you can:
 

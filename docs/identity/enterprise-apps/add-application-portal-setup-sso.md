@@ -1,17 +1,15 @@
 ---
 title: Enable SAML single sign-on for an enterprise application
 description: Enable single sign-on for an enterprise application in Microsoft Entra ID.
-
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 ms.date: 07/02/2024
 ms.author: jomondi
 ms.reviewer: ergleenl
-ms.custom: mode-other, enterprise-apps
-
+ms.custom: mode-other, enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to enable single sign-on for an enterprise application in Microsoft Entra, so that my users can sign in using their Microsoft Entra credentials and have a seamless authentication experience.
 ---
 

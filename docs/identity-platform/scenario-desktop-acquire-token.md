@@ -4,7 +4,6 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref 
 ms.date: 03/27/2023
 ms.service: identity-platform
 

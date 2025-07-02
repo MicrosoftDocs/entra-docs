@@ -1,13 +1,13 @@
 ---
-title: "What's new in Microsoft Entra application management"
+title: What's new in Microsoft Entra application management
 description: "This article shows the new and updated documentation for the Microsoft Entra application management."
-ms.date: 05/06/2025
+ms.date: 06/03/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
 ms.author: jomondi
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 
 #customer intent: As an IT admin responsible for managing applications in Microsoft Entra ID, I want to stay updated on new documentation and significant updates, so that I can effectively manage and troubleshoot application-related issues in the platform.
 ---
@@ -15,6 +15,12 @@ manager: CelesteDG
 # Microsoft Entra application management: What's new
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## May 2025
+
+### Updated articles
+
+No updates this month.
 
 ## April 2025
 
@@ -48,17 +54,3 @@ Replaced reference examples of Azure AD PowerShell with Microsoft Entra PowerShe
 - [Review permissions granted to enterprise applications](manage-application-permissions.md)
 
 - [Overview of user and admin consent](user-admin-consent-overview.md) - Revised the article to improve technical accuracy and clarity. 
-
-## February 2025
-
-### New articles
-
-- [Enable single sign-on for an enterprise application with a relying party STS](add-application-portal-setup-sso-rpsts.md)
-
-### Updated articles
-
-Reviewed the following articles for technical accuracy and clarity:
-
-- [Add an OpenID Connect-based single sign-on application](add-application-portal-setup-oidc-sso.md)
-- [Configure enterprise application properties](add-application-portal-configure.md)
-- [Tutorial: Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md)

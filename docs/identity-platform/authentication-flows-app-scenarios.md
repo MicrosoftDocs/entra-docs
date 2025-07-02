@@ -4,12 +4,11 @@ description: Learn about application scenarios for the Microsoft identity platfo
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-adal-ref
 ms.date: 04/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an app developer, I want to learn about authentication flows and application scenarios so I can create applications protected by the Microsoft identity platform.
 ---
 

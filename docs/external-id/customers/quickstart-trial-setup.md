@@ -3,7 +3,7 @@ title: Quickstart - Set up an external tenant free trial
 description: Use our quickstart to set up the external tenant free trial.
  
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external

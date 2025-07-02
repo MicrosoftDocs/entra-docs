@@ -1,16 +1,15 @@
 ---
 title: Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos Resources in Platform SSO
 description: How administrators can set up macOS Platform Single Sign-on to support Kerberos authentication to on-premises Active Directory and Microsoft Entra ID kerberos-integrated resources.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 05/13/2024
-
 ms.author: cwerner
 author: cilwerner
 manager: 
 ms.reviewer: brianmel
+ms.custom: sfi-image-nochange
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference between setting up with secure enclave, smart card or password based authentication methods.
 ---
 

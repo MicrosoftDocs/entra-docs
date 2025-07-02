@@ -1,17 +1,14 @@
 ---
 title: Configure external collaboration
 description: Learn how to configure external collaboration settings in Microsoft Entra External ID. Control guest user access, specify who can invite guests, and manage domain restrictions for B2B collaboration.
-
 ms.service: entra-external-id
-ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 02/18/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: has-azure-ad-ps-ref, sfi-ga-blocked
 #customer intent: As an administrator managing external collaboration settings in Microsoft Entra, I want to configure guest user access, invite settings, self-service sign-up, and collaboration restrictions, so that I can control the level of access and permissions for external users and ensure secure collaboration with other organizations.
 ---
 

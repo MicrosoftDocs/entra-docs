@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Coveo Hosted Services
+title: Configure Coveo Hosted Services for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Coveo Hosted Services.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Coveo Hosted Services so that I can control who has access to Coveo Hosted Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Coveo Hosted Services
+# Configure Coveo Hosted Services for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Coveo Hosted Services with Microsoft Entra ID. Coveo is an enterprise insight engine aimed at providing relevant content in the right context. Access to the Coveo Relevance Platform can be configured through SSO with Microsoft Entra ID. When you integrate Coveo Hosted Services with Microsoft Entra ID, you can:
 

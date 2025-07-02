@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with VMware Identity Service
+title: Configure VMware Identity Service for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and VMware Identity Service.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and VMware Identity Service so that I can control who has access to VMware Identity Service, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with VMware Identity Service
+# Configure VMware Identity Service for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate VMware Identity Service with Microsoft Entra ID. VMware Identity Service provides integration with Microsoft Entra ID for VMware products. It uses the SCIM protocol for user and group provisioning and SAML for authentication. When you integrate VMware Identity Service with Microsoft Entra ID, you can:
 

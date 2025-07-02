@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with HighQ
+title: Configure HighQ for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and HighQ.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HighQ so that I can control who has access to HighQ, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with HighQ
+# Configure HighQ for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate HighQ with Microsoft Entra ID. Thomson Reuters HighQ is a simple, flexible, and expandable solution that transforms the way law firms and corporate legal departments work and engage with their clients and colleagues. When you integrate HighQ with Microsoft Entra ID, you can:
 

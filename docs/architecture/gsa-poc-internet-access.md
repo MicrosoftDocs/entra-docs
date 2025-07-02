@@ -103,9 +103,9 @@ The ability to help secure Microsoft traffic is a key feature of Microsoft Entra
 
 ### Implement universal tenant restrictions
 
-[Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) enable you to control access to external tenants by unmanaged identities on company-managed devices and networks. You can enforce this restriction at the authentication plane with tenant restrictions v1, by either blocking or allowing all traffic to an external tenant.
+[Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) enable you to control access to external tenants by unmanaged identities on company-managed devices and networks. You can enforce this restriction with Entra ID Tenant Restrictions, by either blocking or allowing all traffic to an external tenant.
 
-This scenario usually requires hair-pinning traffic to a corporate network proxy. With universal tenant restrictions, organizations can restrict access on a per-application level, extend protection to the data plane (in addition to the authentication plane), and eliminate the need to hair-pin traffic to reduce network latency.
+This scenario usually requires that you send all of your traffic through a corporate network proxy. With Universal Tenant Restrictions, organizations can apply tenant restrictions policies to users on any device with the Global Secure Access client, without the need to implement VPN and send traffic through a specific proxy, reducing network latency.
 
 After you enable the Microsoft traffic profile, follow these steps to implement universal tenant restrictions:
 
@@ -113,11 +113,9 @@ After you enable the Microsoft traffic profile, follow these steps to implement 
 
 1. [Enable Global Secure Access signaling for tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#enable-global-secure-access-signaling-for-tenant-restrictions).
 
-1. Sign in to your test device and try to access a different tenant's SharePoint Online or Exchange Online resource for which you have valid credentials.
+1. Sign in to your test device and use a private browser window to sign in to any application that is protected by Entra ID in a different tenant, using member account credentials from that tenant.
 
-1. [Validate authentication plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-authentication-plane-protection).
-
-1. [Validate data plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-data-plane-protection).
+1. [Validate Univeral Tenant Restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-authentication-plane-protection).
 
 ## Troubleshoot
 

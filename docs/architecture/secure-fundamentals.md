@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 08/25/2024
 ms.author: gasinh
-
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Entra fundamentals
@@ -168,7 +168,9 @@ they put in place to control these capabilities.
 
 ### Consumer Identity and Access Management (IAM)
 
-**Azure AD B2C**. [Azure AD B2C](/azure/active-directory-b2c/overview) is a service that can be enabled in an Azure subscription to provide identities to consumers for your organization's customer-facing applications. This service is a separate identity offering, and therefore these users don't typically appear in the organization's Microsoft Entra tenant. Azure AD B2C is managed by administrators in the tenant associated with the Azure subscription.
+**Azure AD B2C**. [Azure AD B2C](/azure/active-directory-b2c/overview) is Microsoft's legacy solution for customer identity and access management. Effective May 1, 2025, Azure AD B2C will no longer be available to purchase for new customers. To learn more, please see [Is Azure AD B2C still available to purchase?](/azure/active-directory-b2c/faq?tabs=app-reg-ga#azure-ad-b2c-end-of-sale) in our FAQ.
+
+**Microsoft Entra External ID** is our next generation product, combining powerful solutions for collaborating with people outside your organization. With External ID capabilities, you can allow external identities to securely access your apps and resources. Whether you’re working with external partners, consumers, or business customers, users can bring their own identities—ranging from corporate or government-issued accounts to social identity providers like Google or Facebook. For more information, see [Introduction to Microsoft Entra External ID](/entra/external-id/external-identities-overview).
 
 ## Next steps
 

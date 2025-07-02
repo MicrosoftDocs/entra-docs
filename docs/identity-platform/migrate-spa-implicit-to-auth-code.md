@@ -4,11 +4,10 @@ description: How to update a JavaScript SPA using MSAL.js 2.x and the authorizat
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
 ms.date: 05/12/2025
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer currently using MSAL.js 1.x with implicit grant flow, I want to migrate my JavaScript single-page app to MSAL.js 2.x with auth code flow, so that I can improve security and take advantage of new features like PKCE and CORS support.
 ---
 

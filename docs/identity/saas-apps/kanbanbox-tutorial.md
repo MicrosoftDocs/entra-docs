@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with KanbanBOX
+title: Configure KanbanBOX for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and KanbanBOX.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and KanbanBOX so that I can control who has access to KanbanBOX, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with KanbanBOX
+# Configure KanbanBOX for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate KanbanBOX with Microsoft Entra ID. KanbanBOX digitizes kanban material flows along the Supply Chain. KanbanBOX supports internal production and logistic flows, and collaboration with external suppliers and customers. When you integrate KanbanBOX with Microsoft Entra ID, you can:
 
