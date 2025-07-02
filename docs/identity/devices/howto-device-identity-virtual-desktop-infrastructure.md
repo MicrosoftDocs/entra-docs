@@ -5,11 +5,11 @@ description: Learn how VDI and Microsoft Entra device identities can be used tog
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 05/21/2024
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # Device identity and desktop virtualization
@@ -57,7 +57,7 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 | Microsoft Entra registered | Federated/Managed | Windows current | Persistent/Non-persistent | Not Applicable |
 
 > [!IMPORTANT]
-> When deploying a VDI farm (persistent or non-persistent), customers should take into consideration [Entra device operation throttling limits](https://learn.microsoft.com/graph/throttling-limits#identity-and-access-device-operation-service-limits). Microsoft recommends device registration requests to be staged at the rate of 500 requests per every 2 minutes and 30 seconds interval. Failure to stage such requests can lead to throttling errors resulting in device registration failures and longer delays for device registration to succeed.
+> When deploying a VDI farm (persistent or non-persistent), customers should take into consideration [Entra device operation throttling limits](/graph/throttling-limits#identity-and-access-device-operation-service-limits). Microsoft recommends device registration requests to be staged at the rate of 500 requests per every 2 minutes and 30 seconds interval. Failure to stage such requests can lead to throttling errors resulting in device registration failures and longer delays for device registration to succeed.
 
 <sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other non-Microsoft IdP. In a federated identity infrastructure environment, computers follow the [federated device registration flow](device-registration-how-it-works.md#microsoft-entra-joined-in-federated-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
 

@@ -2,11 +2,11 @@
 title: View and remove requests for an access package in entitlement management - Microsoft Entra
 description: Learn how to view requests and remove for an access package in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 06/25/2025
 ms.author: owinfrey
 #Customer intent: As an access package manager, I want detailed information about requests for access packages so that I can view the status and troubleshoot any issues.
 ---

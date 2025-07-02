@@ -3,7 +3,7 @@ title: Understand how Application Provisioning in Microsoft Entra ID
 description: Understand how Application Provisioning works in Microsoft Entra ID.
 
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual

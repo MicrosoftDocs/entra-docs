@@ -28,7 +28,7 @@
     "ffff5555-aa66-7777-88bb-999999cccccc",
     "aaaa6666-bb77-8888-99cc-000000dddddd"
   ],
-  "directoryId|tenantId|tid|issuer|iss": [
+  "directoryId|tenantId|tid|issuer|iss|api": [
     "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "bbbbcccc-1111-dddd-2222-eeee3333ffff",
     "ccccdddd-2222-eeee-3333-ffff4444aaaa",

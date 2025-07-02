@@ -8,7 +8,7 @@ metadata:
   description: Learn about multitenant organizations.
   ms.service: entra-id
   ms.subservice: multitenant-organizations
-  manager: femila
+  manager: dougeby
   ms.topic: landing-page
   ms.date: 04/23/2024
   author: kenwith

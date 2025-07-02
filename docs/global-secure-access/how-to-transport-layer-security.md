@@ -50,7 +50,7 @@ To create a CSR and upload the signed certificate for TLS termination:
 1. Select **Create CSR**.
 :::image type="content" source="media/how-to-transport-layer-security/create-certificate.png" alt-text="Screenshot of the Create certificate pane with fields filled and the Create CSR button highlighted.":::   
 
-1. Sign the CSR using your PKI service. Make sure Server Auth is in Extended Key Usage and certificate authority (CA)=true in Basic Extension.
+1. Sign the CSR using your PKI service. Make sure Server Auth is in Extended Key Usage and `certificate authority (CA)=true`, `keyUsage=critical,keyCertSign,cRLSign`, and `basicConstraints=critical,CA:TRUE` in Basic Extension. Save the signed certifcate in .pem format.
 1. Select **+Upload certificate**.
 1. In the Upload certificate form, upload the certificate.pem and chain.pem files.
 1. Select **Upload signed certificate**.
@@ -85,8 +85,8 @@ With this method, the baseline profile policy is evaluated last and applies to a
 :::image type="content" source="media/how-to-transport-layer-security/security-profile-baseline.png" alt-text="Screenshot of the Edit Baseline profile screen showing a list of policy names and their priorities.":::   
 
 #### Option 2: Link the TLS policy to a security profile for specific users or groups
-Alternatively, add a TLS policy to a security profile and link it to a [conditional access policy](how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) for a specific user or group.
-:::image type="content" source="media/how-to-transport-layer-security/conditional-access-group-assignment.png" alt-text="Screenshot of the new conditional access policy form with all fields completed with sample information.":::   
+Alternatively, add a TLS policy to a security profile and link it to a [Conditional Access policy](how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) for a specific user or group.
+:::image type="content" source="media/how-to-transport-layer-security/conditional-access-group-assignment.png" alt-text="Screenshot of the new Conditional Access policy form with all fields completed with sample information.":::   
 
 ### Step 4: Test the configuration
 To test the configuration:
@@ -148,10 +148,10 @@ extendedKeyUsage = serverAuth
 ```
 
 2. Create a new root certificate authority and private key using the following *openssl.cnf* config file:   
-```openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCA.key -sha256 -days 365 -out rootCA.crt -subj “/C=US/ST=US/O=Self Signed/CN=Self Signed Root CA” -config openssl.cnf -extensions rootCA_ext```   
-1. Sign *csr.txt* with the following command:   
-```openssl x509 -req -in csr.txt -CA _rootCA.crt_ -CAkey rootCA.key -CAcreateserial -out signedcertificate.crt -days 365 -sha256 -extfile openssl.cnf -extensions signedCA_ext```   
-1. Rename *signedcertificate.crt* to *signedcertificate.pem* and *rootCA.crt* to *rootCA.pem*. Upload the signed certificates according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
+```openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCA.key -sha256 -days 365 -out rootCA.pem -subj "/C=US/ST=US/O=Self Signed/CN=Self Signed Root CA" -config openssl.cnf -extensions rootCA_ext```
+1. Sign the CSR using the following command:
+ ```openssl x509 -req -in <CSR file> -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out signedcertificate.pem -days 365 -sha256 -extfile openssl.cnf -extensions signedCA_ext```
+1. Upload the signed certificates according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
 
 ## Related content
 

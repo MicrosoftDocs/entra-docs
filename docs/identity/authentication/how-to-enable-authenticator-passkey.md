@@ -4,10 +4,10 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/02/2025
+ms.date: 06/24/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: mjsantani
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.
@@ -30,6 +30,9 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
   > Users can't use cross-device registration if you enable attestation. 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
+
+> [!NOTE]
+> If you grant the **Require device to be marked as compliant** control as part of a Conditional Access policy, it doesn't block Microsoft Authenticator app access to the UserAuthenticationMethod.Read scope. Authenticator needs access to the UserAuthenticationMethod.Read scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to UserAuthenticationMethod.ReadWrite to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
 
 ## Enable passkeys in Authenticator in the admin center
 

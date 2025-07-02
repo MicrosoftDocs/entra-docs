@@ -3,7 +3,7 @@ title: Configure Genesys Cloud for Azure for automatic user provisioning with Mi
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Genesys Cloud for Azure.
 
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 

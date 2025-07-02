@@ -2,7 +2,7 @@
 title: Trigger Logic Apps with custom extensions in entitlement management
 description: Learn how to configure and use custom logic app workflows in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to

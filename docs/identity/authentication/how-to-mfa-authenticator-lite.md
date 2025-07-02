@@ -8,7 +8,7 @@ ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: guptashi
-manager: femila
+manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---

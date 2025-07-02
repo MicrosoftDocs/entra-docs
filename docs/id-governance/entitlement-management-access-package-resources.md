@@ -2,11 +2,11 @@
 title: Change resource roles for an access package in entitlement management
 description: Learn how to change the resource roles for an existing access package in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 06/25/2025
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
@@ -51,14 +51,14 @@ A resource role is a collection of permissions associated with and defined by a 
 When they lose an access package assignment, then they're removed from all the resource roles in the access package.
 
 > [!NOTE]
-> If users were added to the resources outside of entitlement management, and they need to retain access even if they later receive access package assignments and their access package assignments expire, then do not add the resource roles to an access package.
+> If users were added to the resources outside of entitlement management, and they need to retain access even if they later receive access package assignments and their access package assignments expire, then don't add the resource roles to an access package.
 
 If you want some users to receive different resource roles than others, then you need to create multiple access packages in the catalog, with separate access packages for each of the resource roles. You can also mark the access packages as [incompatible](entitlement-management-access-package-incompatible.md) with each other so users can't request access to access packages that would give them excessive access.
 
 In particular, applications can have multiple app roles. When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in the access package.
 
 > [!NOTE]
-> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles. If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
+> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles. If instead you want users to only have some of the application's roles, then you'll need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
 
 In addition, applications can also rely upon security groups for expressing permissions. For example, an application might have a single app role `User` and also check the membership of two groups - a `Ordinary Users` group and a `Administrative Access` groups. A user of the application must be a member of exactly one of those two groups. If you wished to configure that users could request either permission, then you would put into a catalog three resources: the application, the group `Ordinary Users` and the group `Administrative Access`. Then, you would create in that catalog two access packages, and indicate each access package is [incompatible](entitlement-management-access-package-incompatible.md#scenarios-for-separation-of-duties-checks) with the other:
 
@@ -69,12 +69,12 @@ In addition, applications can also rely upon security groups for expressing perm
 
 When a resource role is added to an access package by an admin, users who are already in that resource role, but don't have assignments to the access package, will remain in the resource role, but won't be assigned to the access package. For example, if a user is a member of a group and then an access package is created and that group's member role is added to an access package, the user won't automatically receive an assignment to the access package.
 
-If you want the users who had a resource role membership to also be assigned to the access package, you can [directly assign users](entitlement-management-access-package-assignments.md#directly-assign-a-user) to an access package using the Microsoft Entra admin center, or in bulk via Graph or PowerShell. The users you assign to the access package will then also receive access to the other resource roles in the access package. However, as those users who were in the resource role already have access prior to being added to the access package, when their access package assignment is removed, they are removed from that resource role.
+If you want the users who had a resource role membership to also be assigned to the access package, you can [directly assign users](entitlement-management-access-package-assignments.md#directly-assign-a-user) to an access package using the Microsoft Entra admin center, or in bulk via Graph or PowerShell. The users you assign to the access package will then also receive access to the other resource roles in the access package. However, as those users who were in the resource role already have access prior to being added to the access package, when their access package assignment is removed, they're removed from that resource role.
 
 ## Add resource roles
 
 >[!NOTE] 
-> You need to be a Global Administrator or a Privileged Role Administrator with Catalog Owner permissions to add Entra Roles to a catalog. Once an Entra Role is added to a catalog, Identity Governance Administrators and Access Package Managers can create access packages containing that Entra Role, and other users with permissions to manage access packages can assign users to that Entra Role. Similarly, Applications with EntitlementManagement.RW.All permissions cannot add Microsoft Entra Roles to catalogs unless they also have the Global Administrator or Privileged Role Administrator role with necessary Entitlement Management permissions.
+> You need to be a Global Administrator or a Privileged Role Administrator with Catalog Owner permissions to add Microsoft Entra Roles to a catalog. Once a Microsoft Entra Role is added to a catalog, Identity Governance Administrators and Access Package Managers can create access packages containing that Microsoft Entra Role, and other users with permissions to manage access packages can assign users to that Microsoft Entra Role. Similarly, Applications with EntitlementManagement.RW.All permissions cannot add Microsoft Entra Roles to catalogs unless they also have the Global Administrator or Privileged Role Administrator role with necessary Entitlement Management permissions.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
@@ -146,7 +146,7 @@ If your application hasn't yet been integrated with your Microsoft Entra directo
 Applications can have multiple app roles defined in their manifest and managed through the [app roles UI](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui). When you add an application's app role as a resource role to an access package, if that application has more than one app role, you need to specify the appropriate role for those users in that access package. If you're developing applications, you can read more about how those roles are added to your applications in [How to: Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md). If you're using the Microsoft Authentication Libraries, there's also a [code sample](~/identity-platform/sample-v2-code.md) for how to use app roles for access control.
 
 > [!NOTE]
-> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles. If instead you want users to only have some of the application's roles, then you will need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
+> If an application has multiple app roles, and more than one role of that application are in an access package, then the user will receive all those application's included roles. If instead you want users to only have some of the application's roles, then you'll need to create multiple access packages in the catalog, with separate access packages for each of the app roles.
 
 Once an app role is a resource of an access package:
 

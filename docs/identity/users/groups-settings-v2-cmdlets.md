@@ -3,7 +3,7 @@ title: PowerShell V2 examples for managing groups
 description: This page provides PowerShell examples to help you manage your groups in Microsoft Entra ID
 keywords: Azure AD, Azure Active Directory, PowerShell, Groups, Group management
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to

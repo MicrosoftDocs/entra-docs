@@ -3,7 +3,7 @@ title: Configure Jira for Single sign-on in Microsoft Entra ID using Kantego SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jira using Kantega SSO.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

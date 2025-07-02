@@ -4,7 +4,7 @@ metadata:
   description: Frequently asked questions around Microsoft Entra monitoring and health, including logs and reports.
   
   author: shlipsey3
-  manager: femila
+  manager: pmwongera
   ms.service: entra-id
   ms.topic: faq
   ms.subservice: monitoring-health

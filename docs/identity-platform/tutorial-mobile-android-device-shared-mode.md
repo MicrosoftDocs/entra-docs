@@ -2,7 +2,7 @@
 title: "Tutorial: Add Shared Device Mode support to an Android device"
 description: In this tutorial, learn how to add Shared Device Mode support to an Android device using the Microsoft Authenticator App or Intune
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 08/30/2024
 ms.service: identity-platform
