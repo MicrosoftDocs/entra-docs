@@ -473,7 +473,7 @@ Another way to verify it is via Graph PowerShell:
 
 Some tenants might see the application named Azure Windows VM Sign-in instead of Microsoft Azure Windows Virtual Machine Sign-in. The application has the same Application ID of 372140e0-b3b7-4226-8ef9-d57986796201.
 
-### Unable to authenticate as a Microsoft Entra user connecting from a Windows Server device when device configuration conditional access is required
+### Unable to use this capability when require compliant device Conditional Access policy is enforced on Azure Windows VM Sign-in resource and you are connecting from a Windows Server device```
 
 Windows Server device compliance configuration in Conditional Access policy isn't supported.
 
