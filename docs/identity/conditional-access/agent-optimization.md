@@ -64,7 +64,7 @@ In preview, the policy suggestions reviewed by the agent include:
 
 1. Select **View details** on the Conditional Access Optimization Agent tile.
 
-   :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the view details button highlighted. lightbox="media/agent-optimization/view-details.png":::
+   :::image type="content" source="media/agent-optimization/view-details.png" alt-text="Screenshot of the Conditional Access agent tile with the view details button highlighted." lightbox="media/agent-optimization/view-details.png":::
 
 1. Select **Start agent** to begin your first run. 
    - Avoid using an account with a role activated through PIM.
@@ -76,7 +76,7 @@ In preview, the policy suggestions reviewed by the agent include:
 
 1. When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, select **Review suggestion** to see the details, review the policy, determine policy impact, and apply the changes if needed. These options are covered in detail in the [Reviewing results](#reviewing-results) section.
 
-   :::image type="content" source="media/agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the "review suggestion" buttons highlighted." lightbox="media/agent-optimization/review-suggestions.png":::
+   :::image type="content" source="media/agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the review suggestion buttons highlighted." lightbox="media/agent-optimization/review-suggestions.png":::
 
 ## Reviewing results
 
