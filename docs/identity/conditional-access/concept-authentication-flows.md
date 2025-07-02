@@ -26,7 +26,7 @@ Authentication transfer is a flow that lets users seamlessly transfer authentica
 
 ## Protocol tracking 
 
-To ensure Conditional Access policies are accurately enforced on specified authentication flows, we use functionality called protocol tracking. This tracking is applied to the session using device code flow or authentication transfer. In these cases, the sessions are considered protocol tracked. Any protocol tracked sessions are subject to policy enforcement if a policy exists. Protocol tracking state is sustained through subsequent refreshes. Given this, it is possible for non device code flow or authentication transfer flows to be subject to enforcement of authentication flows policies.  
+To ensure Conditional Access policies are accurately enforced on specified authentication flows, we use functionality called protocol tracking. This tracking is applied to the session using device code flow or authentication transfer. In these cases, the sessions are considered protocol tracked. Any protocol tracked sessions are subject to policy enforcement if a policy exists. Protocol tracking state is sustained through subsequent refreshes, meaning it is possible for non device code flow or authentication transfer flows to be subject to enforcement of authentication flows policies.  
 
 For example: 
 
