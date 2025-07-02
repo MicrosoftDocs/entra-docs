@@ -42,9 +42,8 @@ A client application can request a managed identity [app-only access token](~/id
 | Link | Description |
 | -------------- | -------------------- |
 | [Get a token using HTTP](#get-a-token-using-http) | Protocol details for managed identities for Azure resources token endpoint |
-| [Get a token using Azure.Identity](#get-a-token-using-the-azure-identity-client-library) | Get a token using Azure.Identity library |
-| [Get a token using the Microsoft.Azure.Services.AppAuthentication library for .NET](#get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net) | Example of using the Microsoft.Azure.Services.AppAuthentication library from a .NET client |
-| [Get a token using C#](#get-a-token-using-c) | Example of using managed identities for Azure resources REST endpoint from a C# client |
+| [Get a token using Azure.Identity](#get-a-token-using-the-azure-identity-client-library) | Example of using managed identities for Azure resources REST endpoint from a C# client using Azure.Identity |
+| [Get a token using C#](#get-a-token-using-c) | Example of using managed identities for Azure resources REST endpoint from a C# client using HttpClient |
 | [Get a token using Java](#get-a-token-using-java) | Example of using managed identities for Azure resources REST endpoint from a Java client |
 | [Get a token using Go](#get-a-token-using-go) | Example of using managed identities for Azure resources REST endpoint from a Go client |
 | [Get a token using PowerShell](#get-a-token-using-powershell) | Example of using managed identities for Azure resources REST endpoint from a PowerShell client |
