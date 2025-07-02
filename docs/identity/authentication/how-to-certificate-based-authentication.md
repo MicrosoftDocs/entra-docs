@@ -74,7 +74,7 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
 
 To create a PKI container object:
 
-1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-referencemd#privileged-authentication-administrator).
+1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
 1. Browse to **Entra ID** > **Identity Secure Score** > **Public key infrastructure (Preview)**.
 1. Click **+ Create PKI**.
 1. Enter **Display Name**.
