@@ -81,7 +81,7 @@ Microsoft Azure operated by 21Vianet:
 - `https://login.chinacloudapi.cn`: Authentication flows.
 - `https://pas.chinacloudapi.cn`: Azure role-based access control flows.
 
-For Azure Arc-enabled Windows Servers, additional network requirements are provided in the [Arc-connected server documentation](/azure/azure-arc/servers/network-requirements).
+For Azure Arc-enabled Windows Servers, more network requirements are provided in the [Arc-connected server documentation](/azure/azure-arc/servers/network-requirements).
 
 ### Authentication requirements
 
@@ -199,7 +199,7 @@ The following documentation provides step-by-step details to add user accounts t
 - [Assign Azure roles by using Azure PowerShell](/azure/role-based-access-control/role-assignments-powershell)
 
 
-## Log in by using Microsoft Entra credentials to a Windows VM
+## Sign in by using Microsoft Entra credentials to a Windows VM
 
 You can sign in over RDP using one of two methods:
 
@@ -208,7 +208,7 @@ You can sign in over RDP using one of two methods:
 
 <a name='log-in-using-passwordless-authentication-with-azure-ad'></a>
 
-### Log in using passwordless authentication with Microsoft Entra ID
+### Sign in using passwordless authentication with Microsoft Entra ID
 
 To use passwordless authentication for your Windows VMs in Azure, you need the Windows client machine and the session host (VM) on the following operating systems:
 
@@ -226,40 +226,40 @@ To connect to the remote computer:
 - Specify the name of the remote computer and select **Connect**.
 
 > [!IMPORTANT]
-> IP address cannot be used with **Use a web account to sign in to the remote computer** option.
+> IP address can't be used with **Use a web account to sign in to the remote computer** option.
 > The name must match the hostname of the remote device in Microsoft Entra ID and be network addressable, resolving to the IP address of the remote device.
 
 - When prompted for credentials, specify your user name in `user@domain.com` format.
 - You're then prompted to allow the remote desktop connection when connecting to a new PC. Microsoft Entra remembers up to 15 hosts for 30 days before prompting again. If you see this dialogue, select **Yes** to connect.
 
 > [!IMPORTANT]
-> If your organization has configured and is using [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md), your device must satisfy the Conditional Access requirements to allow connection to the remote computer. Conditional Access policies might be applied to the application **Microsoft Remote Desktop (a4a365df-50f1-4397-bc59-1a1564b8bb9c)** for controlled access.
+> If your organization is using [Microsoft Entra Conditional Access](~/identity/conditional-access/overview.md), your device must satisfy the Conditional Access requirements to allow connection to the remote computer. Conditional Access policies might be applied to the application **Microsoft Remote Desktop (a4a365df-50f1-4397-bc59-1a1564b8bb9c)** for controlled access.
 
 > [!NOTE]
-> The Windows lock screen in the remote session doesn't support Microsoft Entra authentication tokens or passwordless authentication methods like FIDO keys. The lack of support for these authentication methods means that users can't unlock their screens in a remote session. When you try to lock a remote session, either through user action or system policy, the session is instead disconnected and the service sends a message to the user explaining they've been disconnected. Disconnecting the session also ensures that when the connection is relaunched after a period of inactivity, Microsoft Entra ID reevaluates the applicable Conditional Access policies.
+> The Windows lock screen in the remote session doesn't support Microsoft Entra authentication tokens or passwordless authentication methods like FIDO keys. The lack of support for these authentication methods means that users can't unlock their screens in a remote session. When you try to lock a remote session, either through user action or system policy, the session is instead disconnected and the service sends a message to the user. Disconnecting the session also ensures that when the connection is relaunched after a period of inactivity, Microsoft Entra ID reevaluates the applicable Conditional Access policies.
 
 <a name='log-in-using-passwordlimited-passwordless-authentication-with-azure-ad'></a>
 
-### Log in using password/limited passwordless authentication with Microsoft Entra ID
+### Sign in using password/limited passwordless authentication with Microsoft Entra ID
 
 > [!IMPORTANT]
 > Remote connection to VMs that are joined to Microsoft Entra ID is allowed only from Windows 10 or later PCs that are either Microsoft Entra registered (minimum required build is 20H1) or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login or Virtual Machine User Login.
 >
-> If you're using a Microsoft Entra registered Windows 10 or later PC, you must enter credentials in the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`). At this time, you can use Azure Bastion to log in with Microsoft Entra authentication [via the Azure CLI and the native RDP client mstsc](/azure/bastion/native-client).
+> If you're using a Microsoft Entra registered Windows 10 or later PC, you must enter credentials in the `AzureAD\UPN` format (for example, `AzureAD\john@contoso.com`). At this time, you can use Azure Bastion to sign in with Microsoft Entra authentication [via the Azure CLI and the native RDP client mstsc](/azure/bastion/native-client).
 
 To sign in to your Windows Server 2019 virtual machine by using Microsoft Entra ID:
 
-1. Go to the overview page of the virtual machine that has been enabled with Microsoft Entra login.
+1. Go to the overview page of the virtual machine enabled with Microsoft Entra sign in.
 1. Select **Connect** to open the **Connect to virtual machine** pane.
 1. Select **Download RDP File**.
 1. Select **Open** to open the Remote Desktop Connection client.
-1. Select **Connect** to open the Windows login dialog.
-1. Log in by using your Microsoft Entra credentials.
+1. Select **Connect** to open the Windows sign in dialog.
+1. Sign in by using your Microsoft Entra credentials.
 
 You're now signed in to the Windows Server 2019 Azure virtual machine with the role permissions as assigned, such as VM User or VM Administrator.
 
 > [!NOTE]
-> You can save the .RDP file locally on your computer to start future remote desktop connections to your virtual machine, instead of going to the virtual machine overview page in the Azure portal and using the connect option.
+> You can save the `.RDP` file locally on your computer to start future remote desktop connections to your virtual machine, instead of going to the virtual machine overview page in the Azure portal and using the connect option.
 
 ## Enforce Conditional Access policies
 
@@ -371,7 +371,7 @@ Exit code -2145648607 translates to `DSREG_AUTOJOIN_DISC_FAILED`. The extension 
 
 Exit code 51 translates to "This extension isn't supported on this operating system."
 
-The AADLoginForWindows extension is intended to be installed only on Windows Server 2019 or Windows 10 1809 or later on Azure virtual machine and Windows Server 2025 or Windows 11 24H2 on Arc-enabled Windows Server. Ensure that your version or build of Windows is supported. If it isn't supported, uninstall the extension.
+The AADLoginForWindows extension is intended to be installed only on Azure virtual machines with operating systems Windows Server 2019 or Windows 10 1809 or later, and Arc-enabled Windows Servers with operating systems Windows Server 2025 or Windows 11 24H2 on Arc-enabled Windows Server. Ensure that your version or build of Windows is supported. If it isn't supported, uninstall the extension.
 
 ## Troubleshoot sign-in problems
 
