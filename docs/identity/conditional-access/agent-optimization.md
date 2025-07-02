@@ -14,7 +14,7 @@ ms.topic: how-to
 
 The Conditional Access optimization agent helps you ensure all users are protected by policy. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
-In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. With **one-click remediation**, when the agent identifies a suggestion you can have the agent update the associated policy with one click.
+In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion you can have the agent update the associated policy with one click-remediation.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ In preview, the Conditional Access optimization agent evaluates policies such as
 
 The Conditional Access optimization agent scans your tenant for new users and applications and determines if Conditional Access policies are applicable. If the agent finds users or applications that aren't protected by Conditional Access policies, it provides suggested next steps, such as creating or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
 
-In preview, the policy suggestions reviewed by the agent include:
+In preview, the policy suggestions identified by the agent include:
 
 - **Require MFA**: The agent identifies users who aren't covered by a Conditional Access policy that requires MFA and can update the policy.
 - **Require device-based controls**: The agent can enforce device-based controls, such as device compliance, app protection policies, and domain-joined devices.
@@ -68,9 +68,9 @@ In preview, the policy suggestions reviewed by the agent include:
 
 1. Select **Start agent** to begin your first run. 
    - Avoid using an account with a role activated through PIM.
-   - All logs for the agent will be associated with the user who started the agent. 
    - A message that says "The agent is starting its first run" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
+   - Running the agent doesn't apply any changes.
 
    :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization agent start agent page." lightbox="media/agent-optimization/start-agent.png":::
 
@@ -89,45 +89,52 @@ The agent might run and:
 
 When you select **Review suggestion**, you are provided a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
 
-:::image type="content" source="media/agent-optimization/review-suggestions-details.png" alt-text="Screenshot of the results of the agent suggestion." lightbox="media/agent-optimization/review-suggestions-details-expanded.png":::
-
 ### Policy impact
 
-This tab displays a visualization of the potential impact of the policy. Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that would be affected by the policy. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
+From the details panel that opens, select **Policy impact** to see a visualization of the potential impact of the policy.
 
 :::image type="content" source="media/agent-optimization/policy-impact-button.png" alt-text="Screenshot of the policy suggestion details with the policy impact button highlighted." lightbox="media/agent-optimization/policy-impact-button.png":::
 
+Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that would be affected by the policy. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
+
 ### View agent's full activity
 
-To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The **summary of agent activity** is a natural language description of the activity that's illustrated in the **agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion. 
+To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. 
 
 :::image type="content" source="media/agent-optimization/view-agent-activity-link.png" alt-text="Screenshot of the policy suggestion details with the view agent's full activity link highlighted." lightbox="media/agent-optimization/view-agent-activity-link.png":::
 
-### Review and apply suggestion
+The **Summary of agent activity** is a natural language description of the activity that's illustrated in the **Agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion. 
+
+### Review and apply suggestions
 
 The experience for reviewing and applying the suggestion depends on whether the agent suggests modifying an existing policy or creating a new policy. 
 
 If the agent suggests modifying an existing policy:
 
 - Select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion.
-- Select **JSON view** to see the policy in JSON format, with the changes highlighted. You can even select **Go to policy** to open the full Conditional Access policy.
 
     :::image type="content" source="media/agent-optimization/require-mfa-details.png" alt-text="Screenshot of the policy suggestion details to require MFA for all users." lightbox="media/agent-optimization/require-mfa-details-expanded.png":::
 
-- From the **Review policy changes** page, select **Approve suggested changes** to apply the changes to the policy. The agent applies the changes and updates the policy in report-only mode.
+- Select **JSON view** from the **Review policy changes** page to see the policy in JSON format, with the changes highlighted. 
+
+- Select **Approve suggested changes** or **Apply suggestion** to have the agent apply the changes to the policy.
 
 If the agent suggests creating a new policy:
 
-- Select **Apply suggestion** to have the agent apply the changes to the policy in report-only mode.
+- Select **Apply suggestion** to have the agent apply the changes to the policy *in report-only mode*.
 
-> [!TIP]
-> As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
+## Audit and policy logs 
 
 Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
 
 :::image type="content" source="media/agent-optimization/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/created-by-conditional-access-optimization-agent-expanded.png":::
 
+In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent.
+
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
+
+> [!TIP]
+> As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
 
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
