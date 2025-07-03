@@ -123,14 +123,6 @@ If the agent suggests creating a new policy:
 
 - Select **Apply suggestion** to have the agent apply the changes to the policy *in report-only mode*.
 
-## Audit and policy logs 
-
-Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
-
-:::image type="content" source="media/agent-optimization/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/created-by-conditional-access-optimization-agent-expanded.png":::
-
-In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent.
-
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!TIP]
@@ -138,6 +130,14 @@ In the **Audit logs** the **Initiated by (actor)** field show the name of the us
 
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
+
+## Audit and policy logs 
+
+Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
+
+:::image type="content" source="media/agent-optimization/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/created-by-conditional-access-optimization-agent-expanded.png":::
+
+In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent.
 
 ### Providing feedback
 
