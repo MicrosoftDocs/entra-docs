@@ -22,7 +22,7 @@ Microsoft Entra self-service password reset (SSPR) gives users the ability to ch
 
 ## How does the password reset process work?
 
-A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). They must first register their desired authentication methods. When a user accesses the SSPR portal, the Microsoft Entra platform considers the following factors:
+A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). Also to highlight SSPR for Administrators isn't enabled on the tenant by default as SSPR is only for the end users.  They must first register their desired authentication methods. When a user accesses the SSPR portal, the Microsoft Entra platform considers the following factors:
 
 * How should the page be localized?
 * Is the user account valid?
