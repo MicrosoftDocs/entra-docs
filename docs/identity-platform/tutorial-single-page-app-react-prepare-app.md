@@ -4,7 +4,7 @@ description: Learn how to prepare a React single-page app (SPA) for authenticati
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 02/25/2025
+ms.date: 05/25/2025
 ms.service: identity-platform
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a new React project in an IDE and add authentication.
@@ -288,7 +288,7 @@ The `msal` packages are used to provide authentication in the application. The `
     // Default to using the first account if no account is active on page load
     if (!msalInstance.getActiveAccount() && msalInstance.getAllAccounts().length > 0) {
         // Account selection logic is app dependent. Adjust as needed for different use cases.
-        msalInstance.setActiveAccount(msalInstance.getActiveAccount()[0]);
+        msalInstance.setActiveAccount(msalInstance.getAllAccounts()[0]);
     }
 
     // Listen for sign-in event and set active account

@@ -2,14 +2,14 @@
 title: Sign up for premium editions
 description: Instructions about how to sign up for Microsoft Entra ID P1 or P2 editions.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
 ms.date: 03/05/2025
 ms.author: barclayn
 ms.reviewer: piotrci
-ms.custom: it-pro
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ms.collection: M365-identity-device-management
 ---
 

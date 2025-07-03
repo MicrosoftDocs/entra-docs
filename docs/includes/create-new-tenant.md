@@ -1,10 +1,10 @@
 ---
- author: barclayn
- ms.service: entra-id
- ms.topic: include
- ms.date: 01/31/2025
- ms.author: barclayn
- ms.custom: include file
+author: barclayn
+ms.service: entra-id
+ms.topic: include
+ms.date: 01/31/2025
+ms.author: barclayn
+ms.custom: include file, sfi-ga-nochange
 ---
 
 1. Sign in to the [Azure portal](https://portal.azure.com).

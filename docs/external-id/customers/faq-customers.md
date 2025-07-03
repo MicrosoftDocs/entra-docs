@@ -2,14 +2,14 @@
 title: Frequently asked questions
 description: Find answers to frequently asked questions about Microsoft Entra External ID. Learn about pricing, features, and the future of Azure AD B2C and External Identities. 
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: faq
 ms.date: 04/25/2025
-ms.author: mimart
 ms.custom: it-pro
 ---
 
@@ -85,7 +85,7 @@ Get started with securing your consumer and business customer apps by [creating 
 
 ### What's happening to Azure AD B2C and Azure AD External Identities?
 
-Effective May 1, 2025 Azure AD External Identities P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, remains unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, also remain unchanged. We'll continue supporting Azure AD B2C until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
+Effective May 1, 2025 Azure AD B2C P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, remains unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, also remain unchanged. We'll continue supporting Azure AD B2C until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
 
 ### What's happening to Azure AD B2B collaboration and B2B direct connect?
 
@@ -155,6 +155,6 @@ You can see example code for each of these steps in our [sample applications](sa
 
 External ID supports server-side integrations with external systems via [custom authentication extensions](~/identity-platform/custom-extension-overview.md). This capability allows developers to implement their own logic and invoke it via real-time API calls during sign-in/up flows.
 
-## Next steps
+## Related content
 
 [Learn more about Microsoft Entra External ID](../index.yml).

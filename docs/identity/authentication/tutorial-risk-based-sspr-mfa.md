@@ -1,17 +1,15 @@
 ---
 title: Risk-based user sign-in protection in Microsoft Entra ID
 description: In this tutorial, you learn how to enable Microsoft Entra ID Protection to protect users when risky sign-in behavior is detected on their account.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: chuqiaoshi
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to use Microsoft Entra ID Protection to protect users by automatically detecting risk sign-in behavior and prompting for additional forms of authentication or request a password change.
 ---
 # Tutorial: Use risk detections for user sign-ins to trigger Microsoft Entra multifactor authentication or password changes

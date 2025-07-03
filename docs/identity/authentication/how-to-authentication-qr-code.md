@@ -5,13 +5,13 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/21/2025
+ms.date: 06/18/2025
 
 ms.author: justinha
 author: aanjusingh
 contributors: minatoruan
 ms.reviewer: anjusingh
-manager: femila
+manager: dougeby
 
 # Customer intent: As an identity administrator, I want to understand how to enable QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -19,6 +19,8 @@ manager: femila
 # How to enable the QR code authentication method in Microsoft Entra ID (Preview)
 
 This topic covers how to enable the QR code authentication method in the Authentication methods policy in Microsoft Entra ID. It also covers how to manage the QR code authentication method for users, and how they can sign in with a QR code and PIN. 
+
+Before you enable QR code authentication method, review the best practices for using security controls for work or home access for frontline workers. For more information, see [Best practices to protect frontline workers](/entra/identity-platform/security-best-practices-for-frontline-workers).
 
 ## Prerequisites to enable the QR code authentication method
 
@@ -30,7 +32,7 @@ This topic covers how to enable the QR code authentication method in the Authent
 - You need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role in your Microsoft Entra tenant to enable the QR code authentication method.
 - Each user that's enabled in the QR code authentication method policy must be licensed, even if they don't use it. Each enabled user must have one of the following Microsoft Entra ID, EMS, Microsoft 365 licenses:
     - [Microsoft 365 F1 or F3][m365-firstline-workers-licensing]
-    - [Microsoft Entra ID P1 or P2][azure-ad-pricing]
+    - [Microsoft Entra ID P1 or P2](https://www.microsoft.com/security/business/microsoft-entra-pricing)
     - [Enterprise Mobility + Security (EMS) E3 or E5][ems-licensing] or [Microsoft 365 E3 or E5][m365-licensing]
     - [Office 365 F3][o365-f3]
 - Android, iOS, or iPadOS (iOS/iPadOS version 15.0 or later) shared devices. 

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Knowledge Work
+title: Configure Knowledge Work for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Knowledge Work.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Knowledge Work so that I can control who has access to Knowledge Work, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Knowledge Work
+# Configure Knowledge Work for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Knowledge Work with Microsoft Entra ID. "Knowledge Work" is a cloud service that realizes various elements of sales enablement with a single tool and improves the sales productivity of companies. Specifically, it's possible to share sales materials and sales know-how, and provide learning programs for sales. When you integrate Knowledge Work with Microsoft Entra ID, you can:
 

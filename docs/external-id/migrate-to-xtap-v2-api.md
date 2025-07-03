@@ -2,9 +2,9 @@
 title: "Migrate to CrossTenantAccessPolicy Microsoft Graph API v2"
 description: Learn how to Migrate to version 2 of the CrossTenantAccessPolicy Microsoft Graph API.
 
-author: msmimart
-manager: celestedg
-ms.author: mimart
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
 
 ROBOTS: NOINDEX, NOFOLLOW

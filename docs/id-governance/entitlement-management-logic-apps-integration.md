@@ -2,12 +2,13 @@
 title: Trigger Logic Apps with custom extensions in entitlement management
 description: Learn how to configure and use custom logic app workflows in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
 ms.date: 07/15/2024
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can configure and add custom logic apps to my catalogs and access packages in entitlement management.
 ---
 # Trigger Logic Apps with custom extensions in entitlement management
@@ -205,7 +206,7 @@ With Launch and wait, admins also have the ability to deny a request if the exte
 As mentioned, custom extensions created with the request workflow type, which includes four associated policy stages, can be enabled with “*Launch and wait*” if desired. 
 
 
-The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can't be denied at the **assignmentRequestCreated** stage of the callout.
+The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can only be denied at the **assignmentRequestCreated**  or **assignmentRequestApproved** stages of the callout.
 
 > [!TIP]
 > If you resume the access package assignment request via Azure Logic Apps, disable the [asynchronous pattern](/azure/connectors/connectors-native-http?tabs=standard#asynchronous-request-response-behavior).

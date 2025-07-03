@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with Getty Images
+title: Configure Getty Images for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Getty Images.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Getty Images so that I can control who has access to Getty Images, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Getty Images
+# Configure Getty Images for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Getty Images with Microsoft Entra ID. Getty Images finds the perfect image for your next project from the world's best photo library of creative stock photos, vector art illustrations and stock photography. When you integrate Getty Images with Microsoft Entra ID, you can:
 
@@ -85,7 +85,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 1. If you wish to configure the application in **SP** initiated mode, then perform the following step:
 
     In the **Sign on URL** textbox, type the URL:
-    `https://www.gettyimages.in/sign-in/sso`
+    `https://www.gettyimages.com/sign-in/sso`
 
     > [!NOTE]
     > The Reply URL value isn't real. Update this value with the actual Reply URL. Contact [Getty Images support team](mailto:support@gettyimages.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.

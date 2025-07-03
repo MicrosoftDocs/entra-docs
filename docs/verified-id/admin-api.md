@@ -9,7 +9,7 @@ ms.service: entra-verified-id
 ms.topic: reference
 ms.date: 01/30/2025
 ms.author: barclayn
-
+ms.custom: sfi-ga-nochange
 #Customer intent: As an administrator, I am trying to learn how to use the Admin API and automate my tenant.
 ---
 
@@ -17,7 +17,8 @@ ms.author: barclayn
 
 The Microsoft Entra Verified ID Admin API enables you to manage all aspects of the Verifiable Credential service. It offers a way to set up a brand new service, manage and create Verifiable Credential contracts, revoke Verifiable Credentials and completely opt out the service as well.
 
-> The API is intended for developers comfortable with RESTful APIs and enough permissions on the Microsoft Entra tenant to enable the service
+> [!NOTE]
+> The API is intended for developers comfortable with RESTful APIs and enough permissions on the Microsoft Entra tenant to enable the service.
 
 ## Base URL
 
@@ -70,7 +71,7 @@ Don't supply a request body for this method.
 
 #### Return message
 
-```
+```json
 HTTP/1.1 201 Created
 Content-type: application/json
 
@@ -129,7 +130,7 @@ Don't supply a request body for this method
 
 #### Response message
 
-```
+```json
 HTTP/1.1 200 OK
 Content-type: application/json
 
@@ -157,7 +158,6 @@ Content-type: application/json
         "resourceUrl": "https://vccontosokv.vault.azure.net/"
     }
 }
-
 ```
 
 The response contains the following properties.
@@ -217,13 +217,11 @@ Don't supply a request body for this method.
 Response message is an array of [Authorities](#authority-type)
 
 Example:
-```
+```json
 HTTP/1.1 200 OK
 Content-type: application/json
 {
-    value:
-
-    [
+    "value": [
         {
             "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "name": "AuthorityName",

@@ -1,19 +1,17 @@
 ---
 title: Configure Jive for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps you need to perform in Jive and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Jive.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jive so that I can streamline the user management process and ensure that users have the appropriate access to Jive.
 ---
-# Configure Jive for automatic user provisioning
+# Configure Jive for automatic user provisioning with Microsoft Entra ID
 
 The objective of this article is to show you the steps you need to perform in Jive and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Jive.
 

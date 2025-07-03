@@ -3,7 +3,7 @@ title: API concepts in Privileged Identity management
 description: Information for understanding the APIs in Microsoft Entra Privileged
   Identity Management (PIM).
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
@@ -55,6 +55,9 @@ This is the final iteration of the PIM API. It includes:
   - PIM for groups in Microsoft Graph API - Generally available. 
   - PIM alerts for Microsoft Entra roles in Microsoft Graph API - Preview.
   - PIM alerts for Azure Resources in ARM API - Preview.
+
+> [!NOTE]
+> The roleAssignmentApprovals APIs are only available in /beta.
 
 Having PIM for Microsoft Entra roles in Microsoft Graph API and PIM for Azure Resources in ARM API provide a few benefits including:
   - Alignment of the PIM APIs for regular role assignment for both Microsoft Entra roles and Azure Resource roles. 

@@ -1,17 +1,15 @@
 ---
 title: How to manage local administrators on Microsoft Entra joined devices
 description: Learn how to assign Azure roles to the local administrators group of a Windows device.
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 06/27/2024
-
+ms.date: 06/27/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
-ms.reviewer:
-
+manager: dougeby
+ms.reviewer: 
+ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to manage the local administrators group assignment during a Microsoft Entra join, so that I can control who can manage Microsoft Entra joined devices
 ---
 # How to manage the local administrators group on Microsoft Entra joined devices
@@ -44,7 +42,7 @@ To view and update the membership of an [administrator role](../role-based-acces
 You can manage the [Microsoft Entra Joined Device Local Administrator](~/identity/role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) role from **Device settings**.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
-1. Browse to **Entra ID** > **Devices** > **All devices** > **Device settings**.
+1. Browse to **Identity** > **Devices** > **All devices** > **Device settings**.
 1. Select **Manage Additional local administrators on all Microsoft Entra joined devices**.
 1. Select **Add assignments** then choose the other administrators you want to add and select **Add**.
 

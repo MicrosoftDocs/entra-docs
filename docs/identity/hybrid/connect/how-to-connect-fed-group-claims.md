@@ -1,7 +1,6 @@
 ---
 title: Configure group claims for applications by using Microsoft Entra ID
 description: Get information on how to configure group claims for use with Microsoft Entra ID.
-
 ms.reviewer: paulgarn
 manager: femila
 ms.subservice: hybrid-connect
@@ -10,6 +9,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.author: billmath
 author: billmath
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 ---
 
 # Configure group claims for applications by using Microsoft Entra ID
@@ -26,7 +26,7 @@ Microsoft Entra ID can provide a user's group membership information in tokens f
 ## Important caveats for this functionality
 
 - Support for use of `sAMAccountName` and security identifier (SID) attributes synced from on-premises is designed to enable moving existing applications from Active Directory Federation Services (AD FS) and other identity providers. Groups managed in Microsoft Entra ID don't contain the attributes necessary to emit these claims.
-- In order to avoid the number of groups limit if your users have large numbers of group memberships, you can restrict the groups emitted in claims to the relevant groups for the application. Read more about emitting groups assigned to the application for [JWT tokens](~/identity-platform/optional-claims.md#configure-groups-optional-claims) and [SAML tokens](#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration). If assigning groups to your applications is not possible, you can also configure a [group filter](#group-filtering) to reduce the number of groups emitted in the claim. Group filtering applies to tokens emitted for apps where group claims and filtering were configured in the **Enterprise apps** blade in the portal. Keep in mind that in larger organizations, the number of groups where a user is a member might exceed the limit that Microsoft Entra ID applies before emitting groups claims in a token. Exceeding this limit will cause Microsoft Entra ID completely omit sending group claims in the token.
+- In order to avoid the number of groups limit if your users have large numbers of group memberships, you can restrict the groups emitted in claims to the relevant groups for the application. Read more about emitting groups assigned to the application for [JWT tokens](~/identity-platform/optional-claims.md#configure-groups-optional-claims) and [SAML tokens](#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration). If assigning groups to your applications is not possible, you can also configure a [group filter](#group-filtering) to reduce the number of groups emitted in the claim. Group filtering applies to tokens emitted for apps where group claims and filtering were configured in the **Enterprise apps** blade in the portal. Keep in mind that in larger organizations, the number of groups where a user is a member might exceed the limit that Microsoft Entra ID applies before emitting groups claims in a token. Exceeding this limit will cause Microsoft Entra ID to completely omit sending group claims in the token.
 - Group claims have a five-group limit if the token is issued through the implicit flow. Tokens requested via the implicit flow will have a `"hasgroups":true` claim only if the user is in more than five groups.
 - We recommend basing in-app authorization on application roles rather than groups when:
 

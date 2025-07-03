@@ -1,16 +1,15 @@
 ---
 title: Learn about flagged sign-ins in Microsoft Entra ID
 description: Learn about how flagged the sign-ins feature can be used for troubleshooting sign-in issues in Microsoft Entra ID.
-
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
 ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
 ---
 

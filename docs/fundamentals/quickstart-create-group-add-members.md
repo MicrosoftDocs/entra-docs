@@ -3,7 +3,7 @@ title: Create a group with members and view all groups and members
 description: Instructions about how to search for and view your organization's groups
   and their assigned members.
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with OptiTurn
+title: Configure OptiTurn for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and OptiTurn.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OptiTurn so that I can control who has access to OptiTurn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with OptiTurn
+# Configure OptiTurn for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate OptiTurn with Microsoft Entra ID. OptiTurn is a returns management platform that helps retailers route returned items, improve warehouse operations, and manage inventory backlogs. When you integrate OptiTurn with Microsoft Entra ID, you can:
 

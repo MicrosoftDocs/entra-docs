@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with DDC Web
+title: Configure DDC Web for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DDC Web.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DDC Web so that I can control who has access to DDC Web, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with DDC Web
+# Configure DDC Web for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate DDC Web with Microsoft Entra ID. Engage and mobilize your advocates and PAC eligible class with ease using the flexible DDC Web platform with personalized content, simple activation, and PAC fundraising tools. When you integrate DDC Web with Microsoft Entra ID, you can:
 

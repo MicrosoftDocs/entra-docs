@@ -1,16 +1,14 @@
 ---
 title: Sign-in to Microsoft Entra ID with email as an alternate login ID
 description: Learn how to enable users to sign in to Microsoft Entra ID with their email as an alternate login ID
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 04/17/2025
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: rahulnagraj
 ---
 # Sign-in to Microsoft Entra ID with email as an alternate login ID (Preview)

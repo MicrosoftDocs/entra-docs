@@ -1,7 +1,6 @@
 ---
 title: 'Install the Microsoft Entra provisioning agent'
 description: Learn how to install the Microsoft Entra provisioning agent and how to configure it in the Microsoft Entra admin center.
-
 author: billmath
 manager: femila
 ms.service: entra-id
@@ -9,7 +8,7 @@ ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-ga-nochange
 ---
 
 # Install the Microsoft Entra provisioning agent

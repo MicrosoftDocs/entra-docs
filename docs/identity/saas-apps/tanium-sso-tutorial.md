@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Tanium SSO
+title: Configure Tanium SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tanium SSO.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tanium SSO so that I can control who has access to Tanium SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Tanium SSO
+# Configure Tanium SSO for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Tanium SSO with Microsoft Entra ID. Tanium, the industry’s only provider of converged endpoint management (XEM), leads the paradigm shift in legacy approaches to managing complex security and technology environments. When you integrate Tanium SSO with Microsoft Entra ID, you can:
 

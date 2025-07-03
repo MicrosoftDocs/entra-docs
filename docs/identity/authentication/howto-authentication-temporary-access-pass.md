@@ -1,16 +1,15 @@
 ---
 title: Configure a Temporary Access Pass in Microsoft Entra ID to register passwordless authentication methods
 description: Learn how to configure and enable users to register passwordless authentication methods by using a Temporary Access Pass (TAP).
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
-author: tilarso 
-manager: femila
+author: tilarso
+manager: dougeby
 ms.reviewer: tilarso
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Configure Temporary Access Pass to register passwordless authentication methods
 
@@ -149,6 +148,9 @@ For joined devices to Microsoft Entra ID:
 - If the [Web sign-in](/windows/client-management/mdm/policy-csp-authentication#authentication-enablewebsignin) feature on Windows is also enabled, the user can use TAP to sign into the device. This is intended only for completing initial device setup, or recovery when the user doesn't know or have a password. 
 
 For hybrid-joined devices, users must first authenticate with another method such as a password, smartcard or FIDO2 key, before using TAP to set up Windows Hello for Business. 
+
+> [!NOTE]
+> For federated domains where federatedIdpMfaBehavior is set to enforceMfaByFederatedIdp, users will not be prompted for TAP to satisfy multifactor authentication (MFA) to set up Windows Hello for Business. Instead, they are redirected to the federated Identity Provider (IdP) for multifactor authentication (MFA).
 
 :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/windows-10-tap.png" alt-text="Screenshot of how to enter Temporary Access Pass when setting up Windows.":::
 

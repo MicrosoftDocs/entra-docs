@@ -1,16 +1,16 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-author: rolyon
-manager: femila
+author: barclayn
+manager: pmwongera
 search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 01/08/2025
-ms.author: rolyon
+ms.date: 05/26/2025
+ms.author: barclayn
 ms.reviewer: abhijeetsinha
-ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 
 # Microsoft Entra built-in roles
@@ -97,6 +97,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Network Administrator](#network-administrator) | Can manage network locations and review enterprise network design insights for Microsoft 365 Software as a Service applications. | d37c8bed-0711-4417-ba38-b4abe66ce4c2 |
 > | [Office Apps Administrator](#office-apps-administrator) | Can manage Office apps cloud services, including policy and settings management, and manage the ability to select, unselect and publish 'what's new' feature content to end-user's devices. | 2b745bdf-0803-4d80-aa65-822c4493daac |
 > | [Organizational Branding Administrator](#organizational-branding-administrator) | Manage all aspects of organizational branding in a tenant. | 92ed04bf-c94a-4b82-9729-b799a7a4c178 |
+> | [Organizational Data Source Administrator](#organizational-data-source-administrator) | Set up and manage the ingestion of organizational data into Microsoft 365. | 9d70768a-0cbc-4b4c-aea3-2e124b2477f4 |
 > | [Organizational Messages Approver](#organizational-messages-approver) | Review, approve, or reject new organizational messages for delivery in the Microsoft 365 admin center before they are sent to users. | e48398e2-f4bb-4074-8f31-4586725e205b |
 > | [Organizational Messages Writer](#organizational-messages-writer) | Write, publish, manage, and review the organizational messages for end-users through Microsoft product surfaces. | 507f53e4-4e52-4077-abd3-d2e1558b6ea2 |
 > | [Partner Tier1 Support](#partner-tier1-support) | Do not use - not intended for general use.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 4ba39ca4-527c-499a-b93d-d9b492c50246 |
@@ -1045,6 +1046,9 @@ Users with this role have global permissions within Microsoft Exchange Online, w
 > | microsoft.backup/restorePoints/userMailboxes/allProperties/allTasks | Manage all restore points associated with selected Exchange Online mailboxes in M365 Backup |
 > | microsoft.backup/userMailboxProtectionUnits/allProperties/allTasks | Manage mailboxes added to Exchange Online protection policy in Microsoft 365 Backup |
 > | microsoft.backup/userMailboxRestoreArtifacts/allProperties/allTasks | Manage mailboxes added to restore session for Exchange Online in Microsoft 365 Backup |
+> | microsoft.directory/contacts/allProperties/read | Read all properties for contacts |
+> | microsoft.directory/contacts/memberOf/read | Read the group membership for all contacts in Microsoft Entra ID |
+> | microsoft.directory/contacts/standard/read | Read basic properties on contacts in Microsoft Entra ID |
 > | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
@@ -1052,6 +1056,7 @@ Users with this role have global permissions within Microsoft Exchange Online, w
 > | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
 > | microsoft.office365.exchange/allEntities/basic/allTasks | Manage all aspects of Exchange Online |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
@@ -1295,7 +1300,9 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.hardware.support/warrantyClaims/allProperties/allTasks | Create and manage all aspects of Microsoft hardware warranty claims |
 > | microsoft.insights/allEntities/allProperties/allTasks | Manage all aspects of Insights app |
 > | microsoft.intune/allEntities/allTasks | Manage all aspects of Microsoft Intune |
+> | microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks | Manage all aspects of organizational data in Microsoft 365 |
 > | microsoft.networkAccess/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Entra Network Access |
+> | microsoft.networkAccess/trafficLogs/standard/read | Read standard properties of traffic logs such as DeviceId, DestinationIp and PolicyRuleId |
 > | microsoft.office365.complianceManager/allEntities/allTasks | Manage all aspects of Office 365 Compliance Manager |
 > | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft 365 Copilot |
 > | microsoft.office365.desktopAnalytics/allEntities/allTasks | Manage all aspects of Desktop Analytics |
@@ -1323,6 +1330,10 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.office365.userCommunication/allEntities/allTasks | Read and update what's new messages visibility |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.office365.yammer/allEntities/allProperties/allTasks | Manage all aspects of Yammer |
+> | microsoft.peopleAdmin/organization/allProperties/read | Read people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.peopleAdmin/organization/allProperties/update | Update people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.people/users/photo/read | Read profile photo of user |
+> | microsoft.people/users/photo/update | Update profile photo of user |
 > | microsoft.permissionsManagement/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Entra Permissions Management |
 > | microsoft.powerApps/allEntities/allTasks | Manage all aspects of Power Apps |
 > | microsoft.powerApps.powerBI/allEntities/allTasks | Manage all aspects of Fabric and Power BI |
@@ -1408,6 +1419,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/multiTenantOrganization/tenants/standard/read | Read basic properties of a tenant participating in a multi-tenant organization |
 > | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/read | Read all properties of OAuth 2.0 permission grants |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
 > | microsoft.directory/organization/allProperties/read | Read all properties for an organization |
 > | microsoft.directory/pendingExternalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
 > | microsoft.directory/permissionGrantPolicies/standard/read | Read standard properties of permission grant policies |
@@ -1434,6 +1446,7 @@ Users with this role **cannot** do the following:
 > | microsoft.hardware.support/shippingStatus/allProperties/read | Read shipping status for open Microsoft hardware warranty claims |
 > | microsoft.hardware.support/warrantyClaims/allProperties/read | Read Microsoft hardware warranty claims |
 > | microsoft.insights/allEntities/allProperties/read | Read all aspects of Viva Insights |
+> | microsoft.microsoft365.organizationalData/allEntities/allProperties/read | Read all aspects of organizational data in Microsoft 365 |
 > | microsoft.networkAccess/allEntities/allProperties/read | Read all aspects of Microsoft Entra Network Access |
 > | microsoft.office365.copilot/allEntities/allProperties/read | Read all settings for Microsoft 365 Copilot |
 > | microsoft.office365.fileStorageContainers/allEntities/allProperties/read | Read entities and permissions of SharePoint Embedded containers |
@@ -2103,6 +2116,27 @@ Assign the Organizational Branding Administrator role to users who need to do th
 > | --- | --- |
 > | microsoft.directory/loginOrganizationBranding/allProperties/allTasks | Create and delete loginTenantBranding, and read and update all properties |
 
+## Organizational Data Source Administrator
+
+Assign the Organizational Data Source Administrator role to users who need to do the following tasks:
+
+- Manage settings related to ingesting and managing organizational data for Microsoft 365 and Microsoft Viva applications
+- Upload, update, and delete the ingested organizational data in Microsoft 365 and Microsoft Viva applications
+- Export organizational data from the authorized applications
+
+[Learn more](/viva/import-orgdata)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks | Manage all aspects of organizational data in Microsoft 365 |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
 ## Organizational Messages Approver
 
 Assign the Organizational Messages Approver role to users who need to do the following tasks:
@@ -2270,6 +2304,7 @@ Assign the People Administrator role to users who need to do the following tasks
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.peopleAdmin/organization/allProperties/read | Read people settings for users, such as pronouns, name pronunciation, and profile card settings |
 > | microsoft.peopleAdmin/organization/allProperties/update | Update people settings for users, such as pronouns, name pronunciation, and profile card settings |
 > | microsoft.people/users/photo/read | Read profile photo of user |
@@ -2975,6 +3010,7 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/groups/settings/update | Update settings of groups |
 > | microsoft.directory/groups/visibility/update | Update the visibility property of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
 > | microsoft.directory/policies/standard/read | Read basic properties on policies |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
@@ -3054,6 +3090,7 @@ For more information, see [Key roles for Viva Glint](/viva/glint/start/role-defi
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.viva.glint/allEntities/allProperties/allTasks | Manage and configure all Microsoft Viva Glint settings in the Microsoft 365 admin center |

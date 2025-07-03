@@ -1,16 +1,15 @@
 ---
 title: Customize Self-Service Password Reset
 description: Learn how to customize user display and experience options for Microsoft Entra self-service password reset.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: tilarso
+ms.custom: sfi-image-nochange
 ---
 # Customize the user experience for Microsoft Entra self-service password reset
 

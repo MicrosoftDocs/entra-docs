@@ -5,10 +5,10 @@ description: Learn best practices and recommendations for business-to-business (
 
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 10/29/2024
+ms.date: 05/07/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.custom: "it-pro"
 ms.collection: M365-identity-device-management
 
@@ -34,7 +34,7 @@ This article contains recommendations and best practices for business-to-busines
 | Restrict guest user access to the directory  | By default, guest users have limited access to your Microsoft Entra directory. They can manage their own profile and see some information about other users, groups, and apps. You can further restrict access so that guests can see only their own profile information. Learn more about [default guest permissions](~/fundamentals/users-default-permissions.md) and how to configure [external collaboration settings](external-collaboration-settings-configure.md).  |
 | Determine who can invite guests  | By default, all users in your organization, including B2B collaboration guest users, can invite external users to B2B collaboration. If you want to limit the ability to send invitations, you can turn invitations on or off for everyone, or limit invitations to certain roles by configuring [external collaboration settings](external-collaboration-settings-configure.md).  |
 | Use tenant restrictions to control how external accounts are used on your networks and managed devices. | With tenant restrictions, you can prevent your users from using accounts they've created in unknown tenants or accounts they've received from external organizations. We recommend you disallow these accounts and use B2B collaboration instead.  |
-| For an optimal sign-in experience, federate with identity providers | Whenever possible, federate directly with identity providers to allow invited users to sign in to your shared apps and resources without having to create Microsoft Accounts (MSAs) or Microsoft Entra accounts. You can use the [Google federation feature](google-federation.md) to allow B2B guest users to sign in with their Google accounts. Or, you can use the [SAML/WS-Fed identity provider (preview) feature](direct-federation.md) to set up federation with any organization whose identity provider (IdP) supports the SAML 2.0 or WS-Fed protocol. |
+| For an optimal sign-in experience, federate with identity providers | Whenever possible, federate directly with identity providers to allow invited users to sign in to your shared apps and resources without having to create Microsoft Accounts (MSAs) or Microsoft Entra accounts. You can use the [Google federation feature](google-federation.md) to allow B2B guest users to sign in with their Google accounts. Or, you can use the [SAML/WS-Fed identity provider feature](direct-federation.md) to set up federation with any organization whose identity provider (IdP) supports the SAML 2.0 or WS-Fed protocol. |
 | Use the Email one-time passcode  feature for B2B guests who can’t authenticate by other means | The [Email one-time passcode](one-time-passcode.md) feature authenticates B2B guest users when they can't be authenticated through other means like Microsoft Entra ID, a Microsoft account (MSA), or Google federation. When the guest user redeems an invitation or accesses a shared resource, they can request a temporary code, which is sent to their email address. Then they enter this code to continue signing in. |
 | Add company branding to your sign-in page | You can customize your sign-in page so it's more intuitive for your B2B guest users. See how to [add company branding to sign in and Access Panel pages](~/fundamentals/how-to-customize-branding.md). |
 | Add your privacy statement to the B2B guest user redemption experience | You can add the URL of your organization's privacy statement to the first time invitation redemption process so that an invited user must consent to your privacy terms to continue. See [How-to: Add your organization's privacy info in Microsoft Entra ID](~/fundamentals/properties-area.yml). |
