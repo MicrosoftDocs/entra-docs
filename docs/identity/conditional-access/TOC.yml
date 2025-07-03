@@ -4,6 +4,12 @@
   items:
   - name: What is Conditional Access?
     href: overview.md
+- name: Security Copilot + Microsoft Entra
+  items:
+  - name: Get started with optimization agent
+    href: agent-optimization.md
+  - name: Review optimization agent suggestions
+    href: agent-optimization-review-suggestions.md
 - name: Tutorials
   items:
   - name: Require multifactor authentication
@@ -33,8 +39,6 @@
        href: concept-conditional-access-session.md
   - name: Analyze impact
     href: concept-conditional-access-report-only.md
-  - name: Optimization agent
-    href: agent-optimization.md
   - name: Service dependencies
     href: service-dependencies.md
   - name: Filter for applications
