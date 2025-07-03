@@ -14,7 +14,7 @@ ms.topic: how-to
 
 The Conditional Access optimization agent helps you ensure all users are protected by policy. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
-In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion you can have the agent update the associated policy with one click-remediation.
+In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
 ## Prerequisites
 
@@ -87,7 +87,7 @@ The agent might run and:
 - Suggest modifying an existing policy
 - Suggest consolidating overlapping policies
 
-When you select **Review suggestion**, you are provided a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
+When you select **Review suggestion**, you're provided a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
 
 ### Policy impact
 
@@ -113,7 +113,7 @@ If the agent suggests modifying an existing policy:
 
 - Select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion.
 
-    :::image type="content" source="media/agent-optimization/require-mfa-details.png" alt-text="Screenshot of the policy suggestion details to require MFA for all users." lightbox="media/agent-optimization/require-mfa-details-expanded.png":::
+   :::image type="content" source="media/agent-optimization/require-multifactor-authentication-details.png" alt-text="Screenshot of the policy suggestion details to require multifactor authentication for all users." lightbox="media/agent-optimization/require-multifactor-authentication-details-expanded.png":::
 
 - Select **JSON view** from the **Review policy changes** page to see the policy in JSON format, with the changes highlighted. 
 
@@ -126,7 +126,7 @@ If the agent suggests creating a new policy:
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!TIP]
-> As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
+> As a best practice, organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
 
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
