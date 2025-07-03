@@ -346,7 +346,7 @@ If the AADLoginForWindows extension fails with an error code, you can perform th
 
 ### Device name already exists
 
-If a device object with the same displayName as the hostname of the Azure virtual machine exists, the device fails to join Microsoft Entra with a hostname duplication error. Avoid duplication by [modifying the hostname](./azure/virtual-network/virtual-networks-viewing-and-modifying-hostnames#modify-a-hostname).
+If a device object with the same displayName as the hostname of the Azure virtual machine exists, the device fails to join Microsoft Entra with a hostname duplication error. Avoid duplication by [modifying the hostname](/azure/virtual-network/virtual-networks-viewing-and-modifying-hostnames#modify-a-hostname).
 
 ### Terminal error code 1007 and exit code -2145648574.
 
