@@ -2,7 +2,7 @@
 title: View information about alerts and alert triggers in Permissions Management
 description: How to view information about alerts and alert triggers in the Alerts dashboard in Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
