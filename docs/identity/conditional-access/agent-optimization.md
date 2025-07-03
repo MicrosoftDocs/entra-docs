@@ -78,13 +78,6 @@ In preview, the policy suggestions identified by the agent include:
 
    :::image type="content" source="media/agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the review suggestion buttons highlighted." lightbox="media/agent-optimization/review-suggestions.png":::
 
-## Audit and policy logs 
-
-Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
-
-:::image type="content" source="media/agent-optimization/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization/created-by-conditional-access-optimization-agent-expanded.png":::
-
-In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent.
 
 ## Settings
 
