@@ -15,6 +15,8 @@ ms.custom: sfi-image-nochange
 
 # Developer guidance for Microsoft Entra Conditional Access
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 The Conditional Access feature in Microsoft Entra ID offers one of several ways that you can use to secure your app and protect a service. Conditional Access enables developers and enterprise customers to protect services in a multitude of ways including:
 
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)

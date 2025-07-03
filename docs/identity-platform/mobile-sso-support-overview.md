@@ -14,6 +14,8 @@ ms.topic: concept-article
 
 # Support single sign-on and app protection policies in mobile apps you develop
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Single sign-on (SSO) is a key offering of the Microsoft identity platform and Microsoft Entra ID, providing easy and secure logins for users of your app. In addition, app protection policies (APP) enable support of the key security policies that keep your user's data safe. Together, these features enable secure user logins and management of your app's data.
 
 > [!VIDEO https://www.youtube.com/embed/JpeMeTjQJ04]
