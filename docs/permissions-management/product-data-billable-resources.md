@@ -2,7 +2,7 @@
 title: View current billable resources in your authorization systems
 description: How to view current billable resources in your authorization system in Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
