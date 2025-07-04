@@ -198,7 +198,7 @@ After the extension is installed on the device, `provisioningState` shows `Succe
 
 ## Configure role assignments
 
-A User account in Microsoft Entra must be added to a role assignment in Azure before the user is allowed to sign in to Azure virtual machines or Arc-connected Windows Server. The same roles are use for both Azure virtual machines and Arc-enabled Windows Server.
+A User account in Microsoft Entra must be added to a role assignment in Azure before the user is allowed to sign in to Azure virtual machines or Arc-connected Windows Server. The same roles are used for both Azure virtual machines and Arc-enabled Windows Server.
 
 To assign user roles, you must have the [Virtual Machine Data Access Administrator](/azure/role-based-access-control/built-in-roles#virtual-machine-data-access-administrator-preview) role, or any role that includes the `Microsoft.Authorization/roleAssignments/write` action such as the [Role Based Access Control Administrator](/azure/role-based-access-control/built-in-roles#role-based-access-control-administrator-preview) role. However, if you use a different role than Virtual Machine Data Access Administrator, we recommend you [add a condition to reduce the permission to create role assignments](/azure/role-based-access-control/delegate-role-assignments-overview).
 
@@ -222,8 +222,8 @@ The following documentation provides step-by-step details to add user accounts t
 
 You can sign in over RDP using one of two methods:
 
-1. Passwordless using any of the supported Microsoft Entra credentials (recommended)
-1. Password/limited passwordless using Windows Hello for Business deployed using certificate trust model
+- Passwordless using any of the supported Microsoft Entra credentials (recommended)
+- Password/limited passwordless using Windows Hello for Business deployed using certificate trust model
 
 <a name='log-in-using-passwordless-authentication-with-azure-ad'></a>
 
@@ -306,27 +306,27 @@ The AADLoginForWindows extension must be installed successfully for the device t
 
 1. Connect to the device and examine the *CommandExecution.log* file under *C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.ActiveDirectory.AADLoginForWindows\1.0.0.1*.
 
-If the extension restarts after the initial failure, the log with the deployment error will be saved as *CommandExecution_YYYYMMDDHHMMSSSSS.log*.
+    If the extension restarts after the initial failure, the log with the deployment error will be saved as *CommandExecution_YYYYMMDDHHMMSSSSS.log*.
 
 1. Open a PowerShell window on the device. Verify that the following queries against the Azure Instance Metadata Service endpoint running on the host return the expected output:
 
-For Azure virtual machines:
-
-   | Command to run | Expected output |
-   | --- | --- |
-   | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/instance?api-version=2017-08-01"` | Correct information about the Azure virtual machine |
-   | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01"` | Valid tenant ID associated with the Azure subscription |
-   | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Valid access token issued by Microsoft Entra ID for the managed identity that is assigned to this virtual machine |
-
-For Arc-enabled Windows Servers:
-
-   | Command to run | Expected output |
-   | --- | --- |
-   | `curl.exe -H Metadata:true "http://localhost:40342/metadata/instance?api-version=2017-08-01"` | Correct information about the Azure Arc-enabled Windows Server |
-   | `curl.exe -H Metadata:true "http://localhost:40342/metadata/identity/info?api-version=2018-02-01"` | Valid tenant ID associated with the Azure subscription |
-   | `curl.exe -H Metadata:true "http://localhost:40342/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Valid access token issued by Microsoft Entra ID for the managed identity that is assigned to this Azure Arc-enabled Windows Server |
-
-You can decode the access token by using a tool like [https://jwt.ms/](https://jwt.ms/). Verify that the `oid` value in the access token matches the managed identity of the device.
+    For Azure virtual machines:
+    
+       | Command to run | Expected output |
+       | --- | --- |
+       | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/instance?api-version=2017-08-01"` | Correct information about the Azure virtual machine |
+       | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/identity/info?api-version=2018-02-01"` | Valid tenant ID associated with the Azure subscription |
+       | `curl.exe -H Metadata:true "http://169.254.169.254/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Valid access token issued by Microsoft Entra ID for the managed identity that is assigned to this virtual machine |
+    
+    For Arc-enabled Windows Servers:
+    
+       | Command to run | Expected output |
+       | --- | --- |
+       | `curl.exe -H Metadata:true "http://localhost:40342/metadata/instance?api-version=2017-08-01"` | Correct information about the Azure Arc-enabled Windows Server |
+       | `curl.exe -H Metadata:true "http://localhost:40342/metadata/identity/info?api-version=2018-02-01"` | Valid tenant ID associated with the Azure subscription |
+       | `curl.exe -H Metadata:true "http://localhost:40342/metadata/identity/oauth2/token?resource=urn:ms-drs:enterpriseregistration.windows.net&api-version=2018-02-01"` | Valid access token issued by Microsoft Entra ID for the managed identity that is assigned to this Azure Arc-enabled Windows Server |
+    
+    You can decode the access token by using a tool like [https://jwt.ms/](https://jwt.ms/). Verify that the `oid` value in the access token matches the managed identity of the device.
 
 1. Ensure that the required endpoints are accessible from the device via PowerShell:
 
@@ -348,7 +348,7 @@ If the AADLoginForWindows extension fails with an error code, you can perform th
 
 If a device object with the same displayName as the hostname of the Azure virtual machine exists, the device fails to join Microsoft Entra with a hostname duplication error. Avoid duplication by [modifying the hostname](/azure/virtual-network/virtual-networks-viewing-and-modifying-hostnames#modify-a-hostname).
 
-### Terminal error code 1007 and exit code -2145648574.
+### Terminal error code 1007 and exit code -2145648574
 
 Terminal error code 1007 and exit code -2145648574 translate to `DSREG_E_MSI_TENANTID_UNAVAILABLE`. The extension can't query the Microsoft Entra tenant information.
 
@@ -474,7 +474,7 @@ Another way to verify it is via Graph PowerShell:
 
 Some tenants might see the application named Azure Windows VM Sign-in instead of Microsoft Azure Windows Virtual Machine Sign-in. The application has the same Application ID of 372140e0-b3b7-4226-8ef9-d57986796201.
 
-### Unable to use this capability when require compliant device Conditional Access policy is enforced on Azure Windows VM Sign-in resource and you are connecting from a Windows Server device```
+### Unable to use this capability when require compliant device Conditional Access policy is enforced on Azure Windows VM Sign-in resource and you are connecting from a Windows Server device
 
 Windows Server device compliance configuration in Conditional Access policy isn't supported.
 
