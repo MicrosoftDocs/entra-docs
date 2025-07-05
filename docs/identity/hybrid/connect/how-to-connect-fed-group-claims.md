@@ -261,6 +261,7 @@ You can also configure group claims in the [optional claims](~/identity-platform
 
    > [!NOTE]
    > If you use `"emit_as_roles"`, any configured application roles that the user is assigned to will not appear in the role claim.
+   > Cloud_displayname for JWT tokens, currently, only works with single-tenant applications. For multi-tenant applications, the group ID will be issued.
 
 ### Examples
 
