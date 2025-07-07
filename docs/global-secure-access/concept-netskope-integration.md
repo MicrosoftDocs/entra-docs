@@ -111,9 +111,9 @@ To activate the Netskope offer for your tenant:
 >- If the file type is binary and executable, and the Netskope threat engine doesn't have a verdict, the threat engine blocks the activity.
 >- If the file type isn't binary and executable, the file doesn't match the policy. 
 
-For ATP policy recommendations from Netskope, refer to the [FAQ section](#frequently-asked-questions-faq) of this document.   
+   For ATP policy recommendations from Netskope, refer to the [FAQ section](#frequently-asked-questions-faq) of this document.   
 
-5. Select **Next**.   
+1. Select **Next**.   
 1. Review the details and select **Submit**. 
 
 ### Create a DLP policy 
@@ -193,7 +193,7 @@ To validate your configuration settings:
 :::image type="content" source="media/concept-netskope-integration/lookup-success.png" alt-text="Netskope URL Lookup Success":::
 
 **Failure**: If you see the message, "The URL Lookup is only available for Netskope customers. Use a Netskope steering method to access this service.", the test failed. Check the [Troubleshooting section](#troubleshooting) for guidance.   
-:::image type="content" source="media/concept-netskope-integration/lookup-fail.png" alt-text="Netskope URL Lookup failure message"::: 
+:::image type="content" source="media/concept-netskope-integration/lookup-fail.png" alt-text="Screenshot showing Netskope URL Lookup failure message"::: 
 
 ### Test ATP policies   
 To test your ATP policies, we recommend using the European Institute for Computer Antivirus Research (EICAR) anti-malware test file. Feel free to engage your security or red teams for more advanced testing. For the EICAR test:
@@ -317,8 +317,8 @@ To test if Netskope's ATP engine is analyzing traffic, check the test machine's 
 
 ## Known limitations
 Known limitations for Advanced Threat Protection include:
-1. The baseline security profile doesn't support enforcing ATP or DLP policies in this preview. Use Security Profiles and Conditional Access to assign threat protection policies to users.
-1. Firefox isn't supported. 
+- The baseline security profile doesn't support enforcing ATP or DLP policies in this preview. Use Security Profiles and Conditional Access to assign threat protection policies to users.
+- Firefox isn't supported. 
 
 ## Frequently asked questions (FAQ) 
 ### What threat efficacy does Netskope ATP provide?
