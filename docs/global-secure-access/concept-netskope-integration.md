@@ -81,7 +81,7 @@ To activate the Netskope offer for your tenant:
  
 4. Once the offer is provisioned, the Offers page lists the Netskope status as **Active**.
 
-:::image type="content" source="media/concept-netskope-integration/offers-netskope-active.png" alt-text="Screenshot of the Offers page with the Netskope status of Active highlighted.":::
+:::image type="content" source="media/concept-netskope-integration/offers-active.png" alt-text="Screenshot of the Offers page with the Netskope status of Active highlighted.":::
 
 ### Create an ATP policy 
 1. Browse to **Global Secure Access** > **Secure** > **Threat Protection policies**. 
@@ -190,10 +190,10 @@ To validate your configuration settings:
 1. Browse to [netskope.com/url-lookup](https://www.netskope.com/url-lookup).   
 
 **Success**: If you see a search field and **Search** button, Netskope is analyzing your traffic and the policies are in effect.
-:::image type="content" source="media/concept-netskope-integration/netskope-url-lookup-success.png" alt-text="Netskope URL Lookup Success":::
+:::image type="content" source="media/concept-netskope-integration/lookup-success.png" alt-text="Netskope URL Lookup Success":::
 
 **Failure**: If you see the message, "The URL Lookup is only available for Netskope customers. Use a Netskope steering method to access this service.", the test failed. Check the [Troubleshooting section](#troubleshooting) for guidance.   
-:::image type="content" source="media/concept-netskope-integration/netskope-url-lookup-fail.png" alt-text="Netskope URL Lookup failure message"::: 
+:::image type="content" source="media/concept-netskope-integration/lookup-fail.png" alt-text="Netskope URL Lookup failure message"::: 
 
 ### Test ATP policies   
 To test your ATP policies, we recommend using the European Institute for Computer Antivirus Research (EICAR) anti-malware test file. Feel free to engage your security or red teams for more advanced testing. For the EICAR test:
@@ -233,7 +233,7 @@ To show all traffic subject to Netskope inspection:
 1. Search for or scroll to find the **Vendor names** filter.
 1. Enter `Netskope` in the field to show only Netskope traffic.
 1. Select **Apply**.      
-:::image type="content" source="media/concept-netskope-integration/traffic-logs-netskope-filter.png" alt-text="Screenshot of the Traffic logs with the Vendor names contains Netskope filter highlighted.":::   
+:::image type="content" source="media/concept-netskope-integration/traffic-logs-filter.png" alt-text="Screenshot of the Traffic logs with the Vendor names contains Netskope filter highlighted.":::   
 
 This sample shows an event triggered by an ATP policy with blocked content. Check the **filteringProfileName** and **policyName** to identify the policies responsible for the applied action.     
 
