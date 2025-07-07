@@ -41,6 +41,31 @@ In preview, the Conditional Access optimization agent evaluates policies such as
 
 The Conditional Access optimization agent scans your tenant for new users and applications and determines if Conditional Access policies are applicable. If the agent finds users or applications that aren't protected by Conditional Access policies, it provides suggested next steps, such as creating or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
 
+
+| Step | SCU cost |
+|------|----------|
+| Scan Conditional Access policies | Free |
+| Check for policy gaps and consolidation opportunities | Free |
+| Review previous suggestions | Free |
+| Identify new policy gaps or consolidation opportunities | Consumes SCUs |
+| Evaluate custom instructions | Consumes SCUs |
+| Provide policy suggestion | Consumes SCUs |
+
+Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
+
+1. The agent scans all Conditional Access policies in your tenant.
+1. The agent checks for policy gaps and if any policies can be combined.
+1. The agent reviews previous suggestions so it won't suggest the same policy again.
+
+If the agent identifies something that wasn't previously suggested, it takes the following steps. **These action steps consume SCUs.**
+
+1. The agent identifies a policy gap or a pair of policies that can be consolidated.
+1. The agent evaluates any custom instructions you provided.
+1. The agent provides the suggestion to create or modify the policy, including any logic provided by the custom instructions.
+
+> [!TIP]
+> Two policies can be consolidated if they differ by no more than 2 conditions or controls.
+
 In preview, the policy suggestions identified by the agent include:
 
 - **Require MFA**: The agent identifies users who aren't covered by a Conditional Access policy that requires MFA and can update the policy.
