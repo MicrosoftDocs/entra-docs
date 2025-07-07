@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: reference
-ms.date: 09/30/2024
+ms.date: 07/07/2025
 ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
@@ -32,17 +32,17 @@ Microsoft Entra's native authentication API supports sign-up and sign-in for two
 
 1. A Microsoft Entra external tenant. If you don't already have one, [create an external tenant](../external-id/customers/how-to-create-external-tenant-portal.md).
 
-1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](/entra/identity-platform/quickstart-register-app). Make sure you grant delegated permissions, and enable public client and native authentication flows.
+1. If you haven't already done so, [Register an application in the Microsoft Entra admin center](/entra/identity-platform/quickstart-register-app). Make sure [enable public client and native authentication flows](concept-native-authentication.md#how-to-enable-native-authentication).
 
 1. If you haven't already done so, [Create a user flow in the Microsoft Entra admin center](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#to-add-a-new-user-flow). When you create the user flow, take note of the user attributes you configure as required as these attributes are the ones that Microsoft Entra expects your app to submit.
 
 1. [Associate your app registration with the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the API signIn. Alternatively, you can get this test user after you run the sign-up flow.
+1. For sign-in flow, [register a customer user](../external-id/customers/how-to-manage-customer-accounts.md#create-a-customer-account), which you use to test the sign-in API. Alternatively, you can get this test user after you run the sign-up flow.
 
 1. For SSPR flow, [enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users who use email with password authentication method.  
 
-1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add MFA to your sign-in flow. Currently, native authentication supports email one-time passcode as a second factor for MFA. Therefore, it's only available when the authentication method is email with password.
+1. To enforce multifactor authentication (MFA) for your customers, use the steps in [Add multifactor authentication (MFA) to an app](../external-id/customers/how-to-multifactor-authentication-customers.md) to add MFA to your sign-in flow. Native authentication supports email one-time passcode as a second factor for MFA.
 
 ## Continuation token
 
@@ -868,20 +868,20 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 [!INCLUDE [native-auth-api-cors-note](./includes/native-auth-api/user-attribute-format.md)]
 
-## API signIn reference
+## Sign-in API reference
 
 Users need to sign in with the authentication method that they use to sign up. For example, users who sign up using email with password authentication method must sign in email and password.
 
 To request for security tokens, your app interacts with three endpoints, `/initiate`, `/challenge` and `/token`.
 
-### API signIn endpoints
+### Sign-in API endpoints
 
 |    Endpoint           | Description                                |
 |-----------------------|--------------------------------------------|
 | `/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
-|   `/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to request for the user's [default MFA method](#determine-the-default-mfa-method).|
-|  `/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge.|
-| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered MFA methods if the `/challenge` endpoint doesn't return a default MFA method or the user requests to complete the MFA challenge using a different MFA method from the default MFA method. Currently, since native authentication supports email one-time passcode as the only MFA method, this endpoint returns only email as the challenge channel. Learn [how to interact with the introspect endpoint](#request -user-registered-mfa-methods-optional)|
+|   `/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to indicate the user's choice of strong authentication method challenge channel.|
+|  `/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge or register a strong authentication method.|
+| `/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered stronh authentication methods. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods-optional)|
 
 ### Sign-in challenge types
 
@@ -1054,7 +1054,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/initiate` endpoint, or call to the `/token` endpoint when the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-| `id` | No | This is the string identifier of the MFA method that's returned from the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request -user-registered-mfa-methods-optional).|
+| `id` | No | This is the string identifier of the MFA method that's returned from the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods-optional).|
 
 #### Success response
 
@@ -1211,7 +1211,7 @@ If the request to the `/challenge` endpoint is to complete an MFA challenge, but
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request-for-user-registered-mfa-methods-optional).|
+|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods-optional).|
 
 ### Step 3: Request for security tokens
 
@@ -1319,7 +1319,7 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 | `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `/challenge` endpoint to request for the user's [default MFA method](#determine-the-default-mfa-method). |
 | `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered MFA method invalid.|
 
-### Request for user registered MFA methods (optional)
+### Request for user registered strong authentication methods (optional)
 
 Use the `/introspect` endpoint to request user registered MFA method. Your app calls this endpoint if the `/challenge` endpoint doesn't return a [default MFA method](#determine-the-default-mfa-method) or the user requests to complete the MFA challenge using a different MFA method from the default verification method. 
 
