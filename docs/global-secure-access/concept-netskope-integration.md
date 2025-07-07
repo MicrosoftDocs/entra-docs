@@ -105,11 +105,11 @@ To activate the Netskope offer for your tenant:
     1. Select **Apply**. 
     1. The **Advanced settings** allow you to select the **Patient zero** option, which signals the threat engine to run more diagnostics on the threat and blocks the user from uploading or downloading until the threat engine reaches a verdict. These diagnostics can take up to 15 minutes.  
 
-> [!NOTE]
-> Leave the **Patient zero** check box unchecked unless you explicitly understand and want to include the feature behavior. When Patient zero is enabled, the policy matches *only* binary and executable file types. The implications for Patient zero are:
->- If the file type is binary and executable, and the Netskope threat engine has a verdict, the threat engine takes the action that matches the policy.
->- If the file type is binary and executable, and the Netskope threat engine doesn't have a verdict, the threat engine blocks the activity.
->- If the file type isn't binary and executable, the file doesn't match the policy. 
+       > [!NOTE]
+       > Leave the **Patient zero** check box unchecked unless you explicitly understand and want to include the feature behavior. When Patient zero is enabled, the policy matches *only* binary and executable file types. The implications for Patient zero are:
+          >- If the file type is binary and executable, and the Netskope threat engine has a verdict, the threat engine takes the action that matches the policy.
+          >- If the file type is binary and executable, and the Netskope threat engine doesn't have a verdict, the threat engine blocks the activity.
+          >- If the file type isn't binary and executable, the file doesn't match the policy. 
 
    For ATP policy recommendations from Netskope, refer to the [FAQ section](#frequently-asked-questions-faq) of this document.   
 
