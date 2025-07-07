@@ -3,7 +3,7 @@ title: Logs and metrics for the Conditional Access optimization agent
 description: Learn about the Security Copilot for Microsoft Entra optimization agent metrics and events in audit logs.
 ms.author: sarahlipsey
 author: shlipsey3
-
+ms.reviewer: lhuangnorth
 ms.date: 07/03/2025
 
 ms.service: entra-id

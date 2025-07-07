@@ -3,7 +3,7 @@ title: Review suggestions from the Conditional Access optimization agent
 description: Learn how  to review and apply suggestions provided by the Security Copilot for Microsoft Entra optimization agent.
 ms.author: sarahlipsey
 author: shlipsey3
-
+ms.reviewer: lhuangnorth
 ms.date: 07/02/2025
 
 ms.service: entra-id
