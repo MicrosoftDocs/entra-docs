@@ -54,9 +54,9 @@ The token issuance rate of a user flow is dependent on the number of requests co
 |Sign in        |4   |
 |Password reset |4   |
 
-When you add more features to a user flow, such as multifactor authentication, more requests are consumed. The following table shows how many other requests are consumed when a user interacts with one of these features.
+When you add more features to a user flow, such as multifactor authentication, more requests are consumed. The following table shows how many additional requests are consumed when a user interacts with one of these features.
 
-|Feature |Other requests consumed    |
+|Feature |Additional requests consumed    |
 |---------|---------|
 |Email one-time password      |2   |
 
