@@ -3,11 +3,11 @@ title: API-driven inbound provisioning concepts
 description: An overview of API-driven inbound provisioning.
 
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 03/04/2025
+ms.date: 07/07/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -63,7 +63,7 @@ In all of the above scenarios, integration is simplified as the Microsoft Entra 
 ### Key features of API-driven inbound user provisioning
 
 - Available as a provisioning app that exposes an *asynchronous* Microsoft Graph provisioning [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint accessed using valid OAuth token.
-- Tenant admins must grant API clients interacting with this provisioning app the Graph permission `SynchronizationData-User.Upload`. 
+- Tenant admins must grant API clients interacting with this provisioning app the Graph permissions `SynchronizationData-User.Upload`, `SynchronizationData-User.Upload.OwnedBy` (for ISVs), and `ProvisioningLog.Read.All`. 
 - The Graph API endpoint accepts valid bulk request payloads using SCIM schema constructs.
 - With SCIM schema extensions, you can send any attribute in the bulk request payload. 
 - The rate limit for the inbound provisioning API is 40 bulk upload requests per second. Each bulk request can contain a maximum of 50 user records, thereby supporting an upload rate of 2000 records per second. 
