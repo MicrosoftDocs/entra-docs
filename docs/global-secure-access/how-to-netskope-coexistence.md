@@ -10,9 +10,7 @@ ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 
-# Security Service Edge (SSE) coexistence With Microsoft and Netskope
-
-Learn about Security Service Edge (SSE) coexistence with Microsoft and Netskope
+# Security Service Edge (SSE) coexistence with Microsoft and Netskope
 
 In today's rapidly evolving digital landscape, organizations require robust, and unified solutions to ensure secure and seamless connectivity. Microsoft and Netskope offer complementary Secure Access Service Edge (SASE) capabilities that, when integrated, provide enhanced security and connectivity for diverse access scenarios.
 
@@ -120,7 +118,7 @@ Netskope portal configuration
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration. If not, select the **Update** link.
     > [!NOTE]
-    > If you experience `information troubleshooting` health check failures, see [Troubleshoot the Global Secure Access client](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+    > To troubleshoot health check failures, see [Troubleshoot the Global Secure Access client](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 #### Test traffic flow
 
@@ -141,7 +139,7 @@ Netskope portal configuration
 In this scenario, both clients handle traffic for separate private applications. The Global Secure Access client handles private applications in Microsoft Entra Private Access and the Netskope client handles private applications in Netskope Private Access. Netskope handles internet traffic.
 
 > [!NOTE]
-> Known limitation – When the macOS Global Secure Access client is connected before the Netskope client Global Secure Access functionality is disrupted.
+> Known limitation – When the macOS Global Secure Access client is connected before the Netskope client, Global Secure Access functionality is disrupted.
 
 ### Microsoft Entra Private Access configuration
 
@@ -197,7 +195,7 @@ In the Netskope portal:
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created. If not, select the **Update** link.
     > [!NOTE]
-    > For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+    > To troubleshoot health check failures, see [Troubleshoot the Global Secure Access client](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 #### Test traffic flow
 
@@ -220,7 +218,7 @@ In the Netskope portal:
 In this scenario, Global Secure Access handles all Microsoft 365 traffic. Netskope Private Access handles Private application traffic and Netskope Internet Access handles Internet traffic.
 
 > [!NOTE]
-> Known limitation – When the macOS Global Secure Access client is connected before the Netskope client Global Secure Access functionality is disrupted.
+> Known limitation – When the macOS Global Secure Access client is connected before the Netskope client, Global Secure Access functionality is disrupted.
 
 ### Microsoft Entra Microsoft Access configuration
 
@@ -273,7 +271,7 @@ In the Netskope portal:
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created. If not, select the **Update** link.
     > [!NOTE]
-    > For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+    > To troubleshoot health check failures, see [Troubleshoot the Global Secure Access client](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 #### Test traffic flow
 
@@ -359,7 +357,7 @@ In the Netskope portal:
 1. Navigate to **Advanced Diagnostics** > **Health Check** and ensure no checks are failing.
 1. Right-click on **Netskope Client** > **Configuration**. Verify **Steering Configuration** matches the name of the configuration created. If not, select the **Update** link.
     > [!NOTE]
-    >  For information troubleshooting health check failures: [Troubleshoot the Global Secure Access client: Health check - Global Secure Access | Microsoft Learn](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
+    > To troubleshoot health check failures, see [Troubleshoot the Global Secure Access client](/entra/global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check).
 
 #### Test traffic flow
 
