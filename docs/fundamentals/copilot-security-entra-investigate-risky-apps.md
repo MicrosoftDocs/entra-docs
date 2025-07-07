@@ -4,8 +4,8 @@
 title: Investigate app risk in Microsoft Security Copilot
 description: Use Microsoft Security Copilot and Microsoft Entra skills to quickly investigate potential risky applications.
 keywords:
-author: rwike77
-ms.author: ryanwi
+author: cilwerner
+ms.author: cwerner
 manager: celestedg
 ms.date: 12/12/2024
 ms.topic: conceptual
