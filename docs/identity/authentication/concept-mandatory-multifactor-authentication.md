@@ -27,18 +27,18 @@ There's no change for users if your organization already enforces MFA for them, 
  
 The scope of enforcement includes when enforcement is planned to occur, which applications plan to enforce MFA, applications that are out of scope, and which accounts have a mandatory MFA requirement.
 
-## Enforcement phases 
+### Enforcement phases 
 
 > [!NOTE]
 > The date of enforcement for Phase 2 has changed to September 1, 2025.
 
 The enforcement of MFA for applications rolls out in two phases. 
 
-### Applications that enforce MFA in phase 1 
+#### Applications that enforce MFA in phase 1 
 
 Starting in October 2024, MFA is required for accounts that sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center to perform any Create, Read, Update, or Delete (CRUD) operation. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. Phase 1 won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-### Applications that enforce MFA in phase 2 
+#### Applications that enforce MFA in phase 2 
 
 Starting September 1, 2025, MFA enforcement will gradually begin for accounts that sign in to Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints to perform any Create, Update, or Delete operation. Read operations won't require MFA. 
 
