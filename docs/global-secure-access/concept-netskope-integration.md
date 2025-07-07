@@ -113,7 +113,7 @@ To activate the Netskope offer for your tenant:
 
 For ATP policy recommendations from Netskope, refer to the [FAQ section](#frequently-asked-questions-faq) of this document.   
 
-7. Select **Next**.   
+5. Select **Next**.   
 1. Review the details and select **Submit**. 
 
 ### Create a DLP policy 
