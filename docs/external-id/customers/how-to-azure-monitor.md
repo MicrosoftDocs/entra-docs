@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 09/16/2024
+ms.date: 07/07/2025
 ms.author: cmulligan
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to set up Azure Monitor in external tenants to collect and analyze data in this tenant.
@@ -242,7 +242,7 @@ Azure Monitor Logs are designed to scale and support collecting, indexing, and s
 
 ## Disable monitoring data collection
 
-To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You'll continue to incur charges for retaining log data you've already collected into your workspace. If you no longer need the monitoring data you've collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring additional data retention charges.
+To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You'll continue to incur charges for retaining log data you've already collected into your workspace. If you no longer need the monitoring data you've collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring other data retention charges.
 
 ### Delete Log Analytics workspace and resource group
 
