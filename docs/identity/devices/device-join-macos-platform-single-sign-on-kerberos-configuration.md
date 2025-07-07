@@ -34,7 +34,7 @@ Refer to the [Microsoft Entra ID macOS Platform SSO documentation](./macos-psso.
 
 ## Kerberos SSO MDM profile configuration for on-premises Active Directory
 
-You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. If you dont plan to use the Microsoft Entra Cloud Kerberos TGT, then you only need to configure the on-premises Kerberos SSO profile.
+You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. If you don't plan to use the Microsoft Entra Cloud Kerberos TGT, then you only need to configure the on-premises Kerberos SSO profile.
 
 Use the following settings to configure the on-premises Active Directory profile, ensuring that you replace all references to **contoso.com** and **Contoso** with the proper values for your environment:
 
