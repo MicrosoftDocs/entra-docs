@@ -5,7 +5,7 @@ ms.author: kenwith
 author: kenwith
 manager: dougeby
 ms.topic: overview
-ms.date: 06/09/2025
+ms.date: 07/07/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 #customer intent: As a administrator, I want to understand the Microsoft SASE partner ecosystem so that I can decide how partner solutions integrate with Microsoft.
