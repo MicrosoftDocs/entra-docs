@@ -294,7 +294,7 @@ In the Netskope portal:
 1. You can also validate that the traffic is captured in the Global Secure Access traffic logs. In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Monitor** > **Traffic logs**.
 1. Validate traffic related to Outlook Online and SharePoint Online is missing from Netskope portal in **Skope IT** > **Events & Alerts** > **Page Events**.
 
-## Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access and with Netskope Private Access
+## Configuration 4: Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Netskope Private Access
 
 In this scenario Netskope only captures private application traffic. Global Secure Access handles all other traffic.
 
