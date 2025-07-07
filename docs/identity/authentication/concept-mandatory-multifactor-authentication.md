@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/25/2025
+ms.date: 07/07/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -25,12 +25,27 @@ There's no change for users if your organization already enforces MFA for them, 
 
 ## Scope of enforcement 
  
-The scope of enforcement includes which applications plan to enforce MFA, applications that are out of scope, when enforcement is planned to occur, and which accounts have a mandatory MFA requirement.
+The scope of enforcement includes when enforcement is planned to occur, which applications plan to enforce MFA, applications that are out of scope, and which accounts have a mandatory MFA requirement.
 
-### Applications
+## Enforcement phases 
 
 > [!NOTE]
 > The date of enforcement for Phase 2 has changed to September 1, 2025.
+
+The enforcement of MFA for applications rolls out in two phases. 
+
+### Applications that enforce MFA in phase 1 
+
+Starting in October 2024, MFA is required for accounts that sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center to perform any Create, Read, Update, or Delete (CRUD) operation. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. Phase 1 won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
+
+### Applications that enforce MFA in phase 2 
+
+Starting September 1, 2025, MFA enforcement will gradually begin for accounts that sign in to Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints to perform any Create, Update, or Delete (CRUD) operation. Read operations won't require MFA. 
+
+Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+
+
+### Applications
 
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
@@ -56,7 +71,7 @@ The following table lists affected apps and URLs for Microsoft 365.
 
 ### Accounts 
 
-All users who sign into the [applications](#applications) listed earlier to perform any Create, Read, Update, or Delete (CRUD) operation must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
+All accounts that sign in to perform operations cited in the [applications section](#applications) must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
 
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
@@ -173,17 +188,6 @@ This requirement for MFA at sign-in is implemented for admin portals and other [
 Mandatory MFA isn't configurable. It's implemented separately from any access policies configured in the tenant. 
 
 For example, if your organization chose to retain Microsoft's [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
-
-## Enforcement phases 
-
-> [!NOTE]
-> The date of enforcement for Phase 2 has changed to September 1, 2025.
-
-The enforcement of MFA rolls out in two phases: 
-
-- **Phase 1**: Starting in October 2024, MFA is required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
-
-- **Phase 2**: Starting September 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 ## Notification channels 
 
