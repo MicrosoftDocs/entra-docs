@@ -2,7 +2,7 @@
 title: Recommendation to renew expiring application credentials
 description: Learn how the Microsoft Entra recommendation to renew expiring application credentials works and why it's important.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -49,7 +49,7 @@ This recommendation is available in the Microsoft Entra admin center and using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
 
-1. Browse to **Entra ID** > **Overview**.
+1. Browse to **Identity** > **Overview**.
 
 1. Select the **Recommendations** tab and select the **Renew expiring application credentials** recommendation.
 

@@ -2,7 +2,7 @@
 title: Configure a multitenant organization using PowerShell or Microsoft Graph API
 description: Learn how to configure a multitenant organization in Microsoft Entra ID using Microsoft Graph PowerShell or Microsoft Graph API.
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to

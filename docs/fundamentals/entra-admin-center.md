@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 04/25/2025
+ms.date: 06/04/2025
 ms.author: barclayn
 ms.custom: sfi-image-nochange
 #Customer intent: As a user, I want an overview of the products and features available in the Microsoft Entra admin center and then be able to easily navigate to learn more about those products and features. 
@@ -40,7 +40,7 @@ For more information about configuring and managing Microsoft Entra ID solutions
 * [App registrations](~/identity-platform/application-model.md)
 * [Roles and admins](~/identity/role-based-access-control/custom-overview.md)
 * [External identities](~/external-id/external-identities-overview.md)
-* [Conditional access](~/identity/conditional-access/overview.md)
+* [Conditional Access](~/identity/conditional-access/overview.md)
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md)
 * [Identity secure score](~/identity/monitoring-health/concept-identity-secure-score.md)
 * [Authentication methods](~/identity/authentication/concept-authentication-methods.md)
@@ -83,14 +83,6 @@ For more information about configuring and managing Microsoft Entra ID Governanc
 For more information about configuring and managing Microsoft Entra Verified ID solutions, see the following documentation:
 
 * [Credentials](~/verified-id/verifiable-credentials-configure-tenant-quick.md)
-
-### Permissions Management
-
-**Permissions Management** gives administrators and developers access to [Microsoft Entra Permissions Management](~/permissions-management/overview.md) solutions, including user identities, actions, and resources across multicloud infrastructure environments.
-
-:::image type="content" source="./media/entra-admin-center/entra-admin-permissions-management.png" alt-text="Screenshot of the Microsoft Entra admin center Permissions Management menu.":::
-
-For more information about configuring and managing Microsoft Entra Permissions Management solutions, see the [Quickstart guide to Microsoft Entra Permissions Management](~/permissions-management/permissions-management-quickstart-guide.md).
 
 ### Global Secure Access
 

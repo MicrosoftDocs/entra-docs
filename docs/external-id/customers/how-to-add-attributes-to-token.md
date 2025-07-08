@@ -3,7 +3,7 @@ title: Add attributes to token claims
 description: Learn how to add built-in user attributes and custom attributes as claims to the application token. Use directory extension attributes for sending user data to applications in token claims.
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to

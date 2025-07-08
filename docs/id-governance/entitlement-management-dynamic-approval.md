@@ -15,7 +15,15 @@ ms.date: 04/12/2025
 
 # Externally determine the approval requirements for an access package using custom extensions (Preview)
 
-In entitlement management, approvers for access package requests can either be directly assigned, or determined dynamically. While entitlement management natively supports dynamic approvers such as the requestor's manager, second-level manager, or sponsor from a connected organization, these options don't cover all scenarios. With [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview), you're able to determine approval requirements for access packages at the time of request through an external system. With this external call, you're able to determine approval requirements based on each of the [ApprovalStage properties](/graph/api/resources/approvalstage?view=graph-rest-beta#properties). This article walks you through making a custom extension, its underlying Azure Logic App, setting its system-assigned identity and role in the catalog, editing the logic app action to perform business logic, and testing to see if it runs successfully.
+In entitlement management, approvers for access package requests can either be directly assigned, or determined dynamically. Entitlement management natively supports approvers when they are the requestors manager, their second-level manager, or a sponsor from a connected organization:
+
+:::image type="content" source="media/entitlement-management-dynamic-approval/native-support-diagram.png" alt-text="Screenshot of native support of approvers in Entitlement management." lightbox="media/entitlement-management-dynamic-approval/native-support-diagram.png":::
+ 
+With the inclusion of [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview), you're able to determine approval based on each of the [ApprovalStage properties](/graph/api/resources/approvalstage?view=graph-rest-beta#properties). For example, if the user requesting an access package is in a department where leadership has recently changed, dynamic approvals can query the system and assign the new department head as the approver.
+
+:::image type="content" source="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png" alt-text="Screenshot of example of determining approvers using custom extensions." lightbox="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png":::
+
+This article walks you through making a custom extension, its underlying Azure Logic App, setting its system-assigned identity and role in the catalog, editing the logic app action to perform business logic, and testing to see if it runs successfully.
 
 
 ## License requirements
@@ -44,7 +52,7 @@ To create a custom extension, and its underlying Azure Logic App, you'd do the f
 1. On the **Extension Type** page, select **Request workflow (triggered when an access package is request, approved, granted, or removed)** and select **Next**.
     :::image type="content" source="media/entitlement-management-dynamic-approval/extension-type.png" alt-text="Screenshot of selecting the extension type for a custom extension.":::
 1. On the **Extension Configuration** page, for Behavior select **Launch and wait**, for Response data select **Approval Stage (Preview)**, and then select **Next**.
-
+    :::image type="content" source="media/entitlement-management-dynamic-approval/custom-extension-approval-stage.png" alt-text="Screenshot of the custom extension approval stage option.":::
 1. On the **Details** page, choose a subscription, resource group, and name for the logic app being created. Once you've entered this information, select **Create a logic app**. Once the logic app is created, select **Next**.
 
 1. On the **Review + create** page, make sure all your details are correct, then select **Create**. 
@@ -65,7 +73,8 @@ Once you've created the custom extension and logic app, you can reference the cu
 1. Select **Update**.
 
 Once updated, you can go to the edited policy, and confirm the change by selecting **Approval stage details**.
-:::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
+
+  :::image type="content" source="media/entitlement-management-dynamic-approval/access-package-approval-stage-details.png" alt-text="Screenshot of edited approval stage details.":::  
 
 ## Set logic app assigned identity and assign its role
 
@@ -88,7 +97,7 @@ With the Azure logic app created, you must enable its system-assigned identity, 
 
 ## Configure the logic app and corresponding business logic
 
-With the Azure Logic App given the access package assignment manager role for the catalog, you must now go to logic app to edit it to communicate with Microsoft Entra and add your business logic. To do this, you'd do the following steps:
+With the Azure Logic App given the access package assignment manager role for the catalog, you must now go to logic app to edit it to communicate with Microsoft Entra. To do this, you'd do the following steps:
 
 1. On the logic app created, go to **Development Tools** > **Logic app designer**.
 
@@ -97,15 +106,29 @@ With the Azure Logic App given the access package assignment manager role for th
 1. On the Add an Action pane, select **HTTP**.
 
 1. On the **HTTP** pane under Parameters, enter the following parameters:
-    - URI: https://graph.microsoft.com/beta@{triggerBody()?['CallbackUriPath']}
+    - URI: `https://graph.microsoft.com/v1.0@{triggerBody()?['CallbackUriPath']}`
     - Method: POST
-    - Body: Your own custom logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard). For an example of the body action see: [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
     - Authentication Type: Managed identity
     - Managed Identity: System-assigned managed identity
     - Audience: https://graph.microsoft.com
 1. Under HTTP Settings, disable **Asynchronous Pattern**. 
     :::image type="content" source="media/entitlement-management-dynamic-approval/disable-asynchronous-pattern.png" alt-text="Screenshot of disabling asynchronous pattern in a logic app http call.":::
 1. After you've made changes to the HTTP trigger, select **Save**. 
+
+## Add business logic to the logic app
+
+With the logic app configured for communication with Microsoft Entra, you can now add what you want the app to do. Logic app actions are added to the body of the **HTTP** section you configured for the logic app. To edit this, you do the following:
+
+1. On the logic app created, go to **Development Tools** > **Logic app designer**.
+
+1. On the logic app designer page, select **HTTP**.
+
+1. On the HTTP pane under **Parameters**, scroll down to **Body** and enter your logic data based on the parameters you want to query for. For more information, see: [Call external HTTP or HTTPS endpoints from workflows in Azure Logic Apps](/azure/connectors/connectors-native-http?tabs=standard).
+    :::image type="content" source="media/entitlement-management-dynamic-approval/logic-app-business-logic.png" alt-text="Screenshot of adding business logic to logic app.":::
+    > [!NOTE]
+    > For an example of the body action see: [HTTP action example](entitlement-management-dynamic-approval.md#http-action-example).
+1. When finished adding your business logic, select **save**.
+
 
 ## Verify the extension worked
 

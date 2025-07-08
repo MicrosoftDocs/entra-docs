@@ -4,8 +4,8 @@
 title: Investigate app risk in Microsoft Security Copilot
 description: Use Microsoft Security Copilot and Microsoft Entra skills to quickly investigate potential risky applications.
 keywords:
-author: rwike77
-ms.author: ryanwi
+author: cilwerner
+ms.author: cwerner
 manager: celestedg
 ms.date: 12/12/2024
 ms.topic: conceptual
@@ -16,7 +16,7 @@ ms.collection: ce-skilling-ai-copilot
 # Customer intent: As a SOC analyst or IT admin, I want to learn how to use the Microsoft Entra skills in Microsoft Security Copilot so that I can proactively identify potential app risks.
 ---
 
-# Assess application risks using Microsoft Security Copilot in Microsoft Entra (Preview)
+# Assess application risks using Microsoft Security Copilot in Microsoft Entra
 
 [Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) gets insights from your Microsoft Entra data through many different skills, such as Investigate identity risks with Entra ID Protection and Explore Microsoft Entra audit log details. App risk skills allow identity admins and security analysts who manage applications or workload identities in Microsoft Entra to identify and understand risks through natural language prompts. By using prompts like, "List risky app details for my tenant", the analyst gets a better picture of the risk from application identities and can discover other application details in Microsoft Entra - including permissions granted (especially those that might be considered high privileged), unused apps in their tenant, and apps from outside their tenant. Security Copilot then uses prompt context to respond, such as with a list of apps or permissions, then surface links to the Microsoft Entra admin center so that admins can see a full list and take the appropriate remediation actions for their risky apps. IT admins and security operations center (SOC) analysts can use these skills and others to gain the right context to help investigate and remediate identity-based incidents using natural language prompts. 
 
@@ -33,7 +33,7 @@ Jason, an IT admin at Woodgrove Bank, is proactively trying to identify and unde
 
 Jason starts his assessment and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the Microsoft Entra admin center. In order to view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and needs an [Microsoft Entra role assignment](../identity/role-based-access-control/permissions-reference.md) of Application Administrator, Cloud Application Administrator, or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. 
 
-Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](copilot-security-entra.md#create-security-copilot-prompts-in-the-microsoft-entra-admin-center-preview) can choose from a set of app risk starter prompts that appear at the top of the Security Copilot window. Select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: **Enterprise apps**, **App Registrations**, and **Identity Protection Risky workload identities**.
+Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](./copilot-entra-security-scenarios.md#create-security-copilot-prompts-in-the-microsoft-entra-admin-center) can choose from a set of app risk starter prompts that appear at the top of the Security Copilot window. Select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: **Enterprise apps**, **App Registrations**, and **Identity Protection Risky workload identities**.
 
 :::image type="content" source="./media/copilot-security-entra-investigate-risky-apps/starter-prompts.png" alt-text="Screenshot that shows starter prompts in Security Copilot.":::
 

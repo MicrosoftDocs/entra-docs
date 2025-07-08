@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 author: brozbab
 ms.author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: bozbayburtlu
 ---
 # Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP

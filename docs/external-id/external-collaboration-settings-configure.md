@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 02/18/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: has-azure-ad-ps-ref, sfi-ga-blocked
 #customer intent: As an administrator managing external collaboration settings in Microsoft Entra, I want to configure guest user access, invite settings, self-service sign-up, and collaboration restrictions, so that I can control the level of access and permissions for external users and ensure secure collaboration with other organizations.
@@ -28,14 +28,12 @@ External collaboration settings let you specify what roles in your organization 
 
 For B2B collaboration with other Microsoft Entra organizations, you should also review your [cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml) to ensure your inbound and outbound B2B collaboration and scope access to specific users, groups, and applications.
 
-For B2B collaboration end-users who perform cross-tenant sign-ins, their home tenant branding appears, even if there isn't custom branding specified. In the following example, the company branding for Woodgrove Groceries appears on the left. The example on the right displays the default branding for the user's home tenant.
-
-:::image type="content" source="media/external-identities-overview/b2b-comparison.png" alt-text="Screenshots showing a comparison of the branded sign-in experience and the default sign-in experience.":::
+> [!NOTE]
+> Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025. With this update, guest users initially access your organization's branded sign-in page. After entering their email address and selecting **Next**, they are redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process. This update is designed to make sign-in less confusing for guests from other organizations. No administrative action is required before the rollout. We recommend reviewing your current B2B collaboration configuration to assess any potential impact.
 
 ## Configure settings in the portal
 
-> [!NOTE]
-> In the Microsoft Entra admin center, you must be assigned the Global Administrator role to activate the External Collaboration Settings page and update the settings. When using Microsoft Graph, lesser privileged roles might be available for individual settings; see [Configure settings with Microsoft Graph](#configure-settings-with-microsoft-graph) later in this article.
+In the Microsoft Entra admin center, you must be assigned the Global Administrator role to activate the External Collaboration Settings page and update the settings. When using Microsoft Graph, lesser privileged roles might be available for individual settings; see [Configure settings with Microsoft Graph](#configure-settings-with-microsoft-graph) later in this article.
 
 ### To configure guest user access
 
@@ -104,7 +102,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 1. Under **Collaboration restrictions**, you can choose whether to allow or deny invitations to the domains you specify and enter specific domain names in the text boxes. For multiple domains, enter each domain on a new line. For more information, see [Allow or block invitations to B2B users from specific organizations](allow-deny-list.md).
 
-   :::image type="content" source="./media/external-collaboration-settings-configure/collaboration-restrictions.png" alt-text="Screenshot showing Collaboration restrictions settings."::: 
+   :::image type="content" source="./media/external-collaboration-settings-configure/collaboration-restrictions.png" alt-text="Screenshot showing Collaboration restrictions settings.":::
 
 ## Configure settings with Microsoft Graph
 
@@ -140,7 +138,7 @@ New-MgDirectoryRoleMemberByRef -DirectoryRoleId $role.Id -BodyParameter $DirObje
 
 ## Sign-in logs for B2B users
 
-When a B2B user signs into a resource tenant to collaborate, a sign-in log is generated in both the home tenant and the resource tenant. These logs include information such as the application being used, email addresses, tenant name, and tenant ID for both the home tenant and the resource tenant. 
+When a B2B user signs into a resource tenant to collaborate, a sign-in log is generated in both the home tenant and the resource tenant. These logs include information such as the application being used, email addresses, tenant name, and tenant ID for both the home tenant and the resource tenant.
 
 ## Next steps
 

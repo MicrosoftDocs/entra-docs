@@ -3,11 +3,11 @@ title: External Tenant Features
 description: Compare features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 06/04/2025
+ms.date: 07/02/2025
 ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
 ---
@@ -218,11 +218,25 @@ The following table compares the features available for token customization in e
 | **Types of application registration** | <ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li><li>Enterprise applications offer [more options](../../identity/enterprise-apps/plan-sso-deployment.md), like password-based, linked, and header-based.</li></ul> |<ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li></ul>|
 | **Domain name** | When a user authenticates, a session cookie is set on the Microsoft Entra domain `login.microsoftonline.com` in the web browser.| When a user authenticates, a session cookie is set on the Microsoft Entra external ID domain `<tenant-name>.ciamlogin.com` or a [custom URL domain](concept-custom-url-domain.md) in the web browser. To ensure SSO functions correctly, use a single URL domain.|
 | **Keep me signed in** | You can enable or disabled [stay signed in](~/fundamentals/how-to-manage-stay-signed-in-prompt.yml) option. | Same as workforce. |
-| **Session invalidation** | Scenarios where SSO may be invalidated, which require reauthentication: <ul><li>Session expiry</li><li>Browser issues, such as clearing browser cookies or cache.</li><li>Conditional access policy, such as multifactor authentication requirement.</li><li>[Session revocation](/graph/api/user-revokesigninsessions)</li><li>Security issues, such as suspicious activity.</li><li>The application specifies in the authorization request to prompt the user for their credentials using `login=prompt` query string parameter in OpenID Connect and `ForceAuthn` attribute in SAML request. </li></ul> |Same as workforce.|
-|**Conditional access**| Check the [conditional access](#conditional-access) section. | Check the [conditional access](#conditional-access) section.| 
+| **Session invalidation** | Scenarios where SSO may be invalidated, which require reauthentication: <ul><li>Session expiry</li><li>Browser issues, such as clearing browser cookies or cache.</li><li>Conditional Access policy, such as multifactor authentication requirement.</li><li>[Session revocation](/graph/api/user-revokesigninsessions)</li><li>Security issues, such as suspicious activity.</li><li>The application specifies in the authorization request to prompt the user for their credentials using `login=prompt` query string parameter in OpenID Connect and `ForceAuthn` attribute in SAML request. </li></ul> |Same as workforce.|
+|**Conditional Access**| Check the [Conditional Access](#conditional-access) section. | Check the [Conditional Access](#conditional-access) section.| 
 |**Microsoft Entra’s native authentication**| Not available| [Native authentication](concept-native-authentication.md) doesn't support SSO.|
 | **Sign-out** | When a [SAML](../../identity-platform/single-sign-out-saml-protocol.md) or [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#send-a-sign-out-request) application directs the user to the logout endpoint, Microsoft Entra ID removes and invalidates the user's session from the browser. | Same as workforce.|
 | **Single sign-out**| Upon successful sign-out, Microsoft Entra ID sends a logout notification to all other [SAML](../../identity-platform/single-sign-out-saml-protocol.md) and [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#single-sign-out) applications that the user is signed into. | Same as workforce.|
+
+## Activity logs and reports
+
+The table below compares the features available for activity logs and reports across different types of tenants.
+
+|Feature  |Workforce tenant  | External tenant |
+|---------|---------|---------|
+|[Audit logs](~/identity/monitoring-health/concept-audit-logs.md)|Detailed report of all events logged in Microsoft Entra ID, including modifications to applications, groups, and users.|Same as workforce.|
+|[Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) |The sign-in logs track all sign-in activities within a Microsoft Entra tenant, including access to your applications and resources.|Same as workforce.|
+|[Sign-up logs](~/identity/monitoring-health/concept-sign-ups.md) (preview)| Not available|Microsoft Entra External ID logs all self-service sign-up events, including both successful sign-ups and failed attempts. |
+| [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md)| The provisioning logs provide detailed records of provisioning events within a tenant, such as user account creations, updates, and deletions.|Not available|
+| [Retention policies activity logs](~/identity/monitoring-health/concept-provisioning-logs.md) | Microsoft Entra data retention policies determine how long different types of logs (like audit, sign-in, and provisioning logs) are stored.| Seven days|
+|[Export activity logs](~/identity/monitoring-health/howto-configure-diagnostic-settings.md)| Using diagnostic settings in Microsoft Entra ID, you can integrate logs with Azure Monitor, stream logs to an event hub, or integrate with Security Information and Event Management (SIEM) tools.| [Azure Monitor for external tenants (preview)](./how-to-azure-monitor.md)|
+|[Application user activity reports](./how-to-user-insights.md)|Not available| Application user activity provides analytics on how users interact with registered applications in your tenant. It tracks metrics like active users, new users, sign-ins, and multifactor authentication (MFA) success rates. |
 
 ## Microsoft Graph APIs
 

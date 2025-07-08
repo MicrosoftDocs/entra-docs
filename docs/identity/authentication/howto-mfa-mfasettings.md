@@ -4,10 +4,10 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/21/2025
+ms.date: 06/19/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: jupetter
 ms.custom: sfi-image-nochange
 ---
@@ -127,7 +127,7 @@ The following table lists more numbers for different countries/regions.
 |:---------------------|:----------------|
 | Austria              | +43 6703062076  |
 | Bangladesh           | +880 9604606026 |
-| China                | +44 1235619418, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 1235619535, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930|
+| China                | +44 1235619418, +44 1235619536, +44 1235619537, +44 1235619538, +44 1235619539, +44 1235619535, +44 7897087681, +44 7897087690, +44 7897087692, +66 977832930, +86 1052026902, +86 1052026905, +86 1052026907|
 | Croatia              | +385 15507766   |
 | Ecuador              | +593 964256042  |
 | Estonia              | +372 6712726    |
@@ -193,24 +193,29 @@ For example, if there's only one custom message, and it's in German:
 
 ### Custom voice message defaults
 
-You can use the following sample scripts to create your own custom messages. These phrases are the defaults if you don't configure your own custom messages.
+You can use the following sample scripts to create your own custom messages. These phrases are used by default if you don't configure your own custom messages.
 
-| Message name | Script |
-| --- | --- |
-| Authentication successful | Your sign-in was successfully verified. Goodbye. |
-| Extension prompt | Thank you for using Microsoft's sign-in verification system. Please press the pound key to continue. |
-| Activation | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Authentication denied retry | Verification denied. |
-| Retry (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Greeting (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Retry (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Extension prompt after digits | If already at this extension, press the pound key to continue. |
-| Authentication denied | I'm sorry, we cannot sign you in at this time. Please try again later. |
-| Activation greeting (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Activation retry (standard) | Thank you for using the Microsoft sign-in verification system. Please press the pound key to finish your verification. |
-| Activation greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the pound key to finish your verification. |
-| Extension prompt before digits | Thank you for using Microsoft's sign-in verification system. Please transfer this call to extension \<extension>. |
+Message name | Script
+-------------|--------
+Authentication successful | Your sign-in was successful.
+Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
+Fraud confirmation | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
+Fraud reported | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+Activation | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Authentication denied retry | I'm sorry we can't sign you in at this time. Please try again later.
+Retry (Standard) | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Greeting (Standard) | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
+Greeting (PIN) | This is Microsoft. If you are trying to sign in, enter your PIN to finish signing in.
+Fraud greeting (PIN) | This is Microsoft. If you are trying to sign in, enter your PIN to finish signing in. If you are not trying to sign in, press 0 and #.
+Retry (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the # key to finish your verification.
+Extension prompt after digits | If already at this extension, press the # key to continue.
+Authentication denied | I'm sorry we can't sign you in at this time. Please try again later.
+Activation greeting (Standard) | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Activation retry (Standard)| Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Activation greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the # key to finish your verification.
+Extension prompt before digits | Thank you for using Microsoft's sign-in verification system. Please transfer this call to extension {0}.
+
 
 ### Set up a custom message
 

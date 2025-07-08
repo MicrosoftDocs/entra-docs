@@ -5,7 +5,7 @@ metadata:
   description: Create sign-up and sign-in user flows for apps you build. Users with external identities can sign up, submit user attributes, and create a B2B collaboration guest account.
   ms.author: cmulligan
   author: csmulligan
-  ms.date: 06/28/2024
+  ms.date: 07/07/2025
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -31,7 +31,7 @@ introduction: |
   > You can associate user flows with apps built by your organization. User flows can't be used for Microsoft apps, like SharePoint or Teams.
 prerequisites:
   summary: |
-    Before you begin you may need to add identity providers and define custom attributes.
+    Before you begin, you may need to add identity providers and define custom attributes.
 
     ### Add identity providers (optional)
 

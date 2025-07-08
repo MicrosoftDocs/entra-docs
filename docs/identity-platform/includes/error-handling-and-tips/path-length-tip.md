@@ -1,6 +1,6 @@
 ---
-author: rwike77
-ms.author: ryanwi
+author: OwenRichards1
+ms.author: owenrichards
 ms.date: 03/04/2021
 ms.service: identity-platform
 manager: CelesteDG

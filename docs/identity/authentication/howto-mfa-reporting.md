@@ -4,10 +4,10 @@ description: Learn how to view sign-in activity for Microsoft Entra multifactor 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 06/24/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: michmcla
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
@@ -17,8 +17,11 @@ To review and understand Microsoft Entra multifactor authentication events, you 
 
 <a name='view-the-azure-ad-sign-ins-report'></a>
 
-## View the Microsoft Entra sign-in logs
+## Note about interpreting MFA
 
+When a user signs in interactively to Microsoft Entra for the first time, they can use any supported authentication method (including strong auth), even if it isn’t strictly required. If a user chooses to authenticate via passwordless or another strong auth method, the user receives an MFA claim. To reduce latency and unnecessary redirects between our applications and the authentication service, resource providers generally review any existing claims already given to a user authenticating instead of requesting a new set of claims each time. As a result, it's possible that certain sign-ins might appear as "single factor" despite having an MFA requirement on the application because the user's previous MFA claim was accepted. No MFA requirement was requested or logged for that particular authentication. For accurate understanding of the authentication context, it's important to always check both the MFA details and the root authentication method associated with each event. Don't rely only on the `authenticationRequirement` field as it doesn't take into account previously satisfied MFA claims due to not explicitly required strong authentication usage. 
+
+## View the Microsoft Entra sign-in logs
 
 The sign-in logs provides you with information about the usage of managed applications and user sign-in activities, which includes information about multifactor authentication usage. The MFA data gives you insights into how MFA is working in your organization. It answers questions like:
 
@@ -132,7 +135,7 @@ Get-MgUser -All | Select-Object @{N='UserPrincipalName';E={$_.UserPrincipalName}
 ```
 
 ## Additional MFA reports
-NPS extension and AD FS adapter for cloud MFA activity are now included in the Sign-in logs and not with a specific activity report.
+NPS extension and AD FS adapter for cloud MFA activity are now included in the sign-in logs and not with a specific activity report.
 
 Cloud MFA sign-in events from an on-premises AD FS adapter or NPS extension won't have all fields in the sign-in logs populated due to limited data returned by the on-premises component. You can identify these events by the resourceID *adfs* or *radius* in the event properties. They include:
 - resultSignature
