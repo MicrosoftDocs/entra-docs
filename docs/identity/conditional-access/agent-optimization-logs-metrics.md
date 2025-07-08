@@ -33,7 +33,7 @@ ms.topic: how-to
 
 The **Agent summary** at the top of the Conditional Access optimization agent page provides a quick summary of what the agent has discovered in the last 30 days. The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent is also provided.
 
-:::image type="content" source="media/agent-optimization-logs-metrics/agent-summary-tile.png" alt-text="Screenshot of the agent summary tile." lightbox="media/agent-optimization/agent-summary-tile.png":::
+:::image type="content" source="media/agent-optimization-logs-metrics/agent-summary-tile.png" alt-text="Screenshot of the agent summary tile." lightbox="media/agent-optimization-logs-metrics/agent-summary-tile.png":::
 
 - **Unprotected users discovered**: The number of users who were identified by the agent and protected by a policy suggested by the agent.
 - **Unprotected apps discovered**: The number of applications that were identified by the agent and protected by a policy suggested by the agent.

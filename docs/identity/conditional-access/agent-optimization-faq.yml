@@ -14,7 +14,7 @@ metadata:
 
 title: Frequently asked questions around Microsoft Entra Conditional Access optimization agent
 summary: |
-  This article includes answers to frequently asked questions about the Microsoft Entra Conditional Access optimization agent. For more information, see [Microsoft Entra Conditional Access optimization agent overview](overview-conditional-access-optimization-agent.md).
+  This article includes answers to frequently asked questions about the Microsoft Entra Conditional Access optimization agent. For more information, see [Microsoft Entra Conditional Access optimization agent overview](agent-optimization.md).
 
 sections:
   - name: Getting started

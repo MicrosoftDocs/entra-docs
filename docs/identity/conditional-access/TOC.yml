@@ -10,6 +10,10 @@
     href: agent-optimization.md
   - name: Review optimization agent suggestions
     href: agent-optimization-review-suggestions.md
+  - name: Optimization agent logs and metrics
+    href: agent-optimization-logs-metrics.md
+  - name: Frequently asked questions
+    href: agent-optimization-faq.yml
 - name: Tutorials
   items:
   - name: Require multifactor authentication
