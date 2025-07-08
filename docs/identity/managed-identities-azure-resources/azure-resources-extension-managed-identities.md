@@ -53,6 +53,16 @@ These properties can't be directly viewed in the Azure Resources extension. You'
     /@azure get the Client ID of the managed identity named "myManagedIdentity"
    ```
 
+## Confirm source resources using a managed identity
+
+Managed identities can be used as an identity for various Azure resources, such as virtual machines, app services, and more. To confirm which resources are using a specific managed identity, you can check the target services associated with that identity.
+
+1. Open the Azure Resources extension in the VS Code sidebar
+1. Select your subscription
+1. Locate the Managed Identities section. Here. you'll see all your MIs that you have access to.
+1. Select a managed identity then select **Source Resources**.
+1. All resources using the managed identity are listed here.
+
 ## Confirm managed identity assignment to target resource
 
 Managed identities can be assigned to various Azure resources. You can check the resources to which a managed identity is assigned directly from the Azure Resources extension in Visual Studio Code. This is particularly useful for ensuring that your managed identity is correctly configured for the resources it needs to access.
@@ -61,11 +71,11 @@ Managed identities can be assigned to various Azure resources. You can check the
 1. Select your subscription
 1. Locate the Managed Identities section. Here. yopu'll see all your MIs that you have access to.
 1. Select a managed identity then select **Target Services**.
-1. All resources that the managed identity is assigned to will be listed here.
+1. All resources that the managed identity is assigned to are listed here.
 
 ## Confirm managed identity permissions to target resources
 
-Target resources are the Azure services that your managed identity needs to access. This could include Azure Key Vault, Azure Storage, or any other service that supports managed identities. Permissions are managed through Azure Role-Based Access Control (RBAC), which allows you to assign roles to your managed identity for specific resources.
+Permissions are managed through Azure Role-Based Access Control (RBAC), which allows you to assign roles to your managed identity for specific resources.
 
 Follow these steps to confirm the permissions of your managed identity:
 
