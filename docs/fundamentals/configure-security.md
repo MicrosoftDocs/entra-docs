@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 06/24/2025
+ms.date: 07/08/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -88,6 +88,10 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Turn off Seamless SSO if there is no usage
 
 [!INCLUDE [21985](../includes/secure-recommendations/21985.md)]
+
+### Password expiration is disabled
+
+[!INCLUDE [21811](../includes/secure-recommendations/21811.md)]
 
 ## Access control
 
@@ -177,6 +181,18 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21774](../includes/secure-recommendations/21774.md)]
 
+### User consent settings are restricted
+
+[!INCLUDE [21776](../includes/secure-recommendations/21776.md)]
+
+### Workload Identities are not assigned privileged roles
+
+[!INCLUDE [21836](../includes/secure-recommendations/21836.md)]
+
+### Enterprise applications must require explicit assignment or scoped provisioning
+
+[!INCLUDE [21869](../includes/secure-recommendations/21869.md)]
+
 ## External collaboration
 
 ### Guests can't invite other guests
@@ -198,6 +214,22 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Tenant restrictions v2 policy is configured
 
 [!INCLUDE [21793](../includes/secure-recommendations/21793.md)]
+
+### Guest self-service sign up via user flow is disabled
+
+[!INCLUDE [21823](../includes/secure-recommendations/21823.md)]
+
+### Guests don't have long lived sign-in sessions
+
+[!INCLUDE [21824](../includes/secure-recommendations/21824.md)]
+
+### Inactive guest identities are disabled or removed from the tenant
+
+[!INCLUDE [21858](../includes/secure-recommendations/21858.md)]
+
+### Guests don't own apps in the tenant
+
+[!INCLUDE [21868](../includes/secure-recommendations/21868.md)]
 
 ## Monitoring
 
