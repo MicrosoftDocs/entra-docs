@@ -5,14 +5,14 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to   
-ms.date: 07/07/2025
+ms.date: 07/08/2025
 manager: dougeby
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
 
 #customer intent: As an IT administrator, I want to configure Advanced Threat Protection and Data Loss Prevention policies so that I can protect my organization from malware and data leaks.
 ---
-# Protect your organization with Global Secure Access Advanced Threat Protection (preview)
+# Global Secure Access integration with Netskope's Advanced Threat Protection and Data Loss Prevention (preview)
 
 In today's evolving threat landscape, organizations face challenges protecting sensitive data and systems from cyberattacks. Global Secure Access Advanced Threat Protection (ATP) combines Microsoft Security Service Edge (SSE) with Netskope's advanced threat detection and data loss prevention (DLP) capabilities to deliver a comprehensive security solution. This integration offers real-time protection against malware, zero-day vulnerabilities, and data leaks, and simplifies management through a unified platform.
 
