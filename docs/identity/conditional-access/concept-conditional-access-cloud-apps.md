@@ -16,7 +16,7 @@ ms.reviewer: lhuangnorth
 ---
 # Conditional Access: Target resources
 
-Target resources (formerly Cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies allow administrators to assign controls to specific applications, services, actions, or authentication context.
+Target resources (formerly Cloud apps, actions, and authentication context) are key signals in a Conditional Access policy. Conditional Access policies allow administrators to assign controls to specific Entra-registered applications, 365 applications, actions, authentication contexts or how native apps access 365 services (for example, a mail client logging into an Exchange account). You cannot block access to specific apps (such as Outlook) via Conditional Access.
 
 - Administrators can choose from the list of applications or services that include built-in Microsoft applications and any [Microsoft Entra integrated applications](~/identity/enterprise-apps/what-is-application-management.md) including gallery, non-gallery, and applications published through [Application Proxy](~/identity/app-proxy/overview-what-is-app-proxy.md).
 - Administrators might choose to define policy not based on a cloud application but on a [user action](#user-actions) like **Register security information** or **Register or join devices**, allowing Conditional Access to enforce controls around those actions.
@@ -31,9 +31,9 @@ Administrators can assign a Conditional Access policy to cloud apps from Microso
 
 ### Office 365
 
-Microsoft 365 provides cloud-based productivity and collaboration services like Exchange, SharePoint, and Microsoft Teams. Microsoft 365 cloud services are deeply integrated to ensure smooth and collaborative experiences. This integration can cause confusion when creating policies as some apps such as Microsoft Teams have dependencies on others such as SharePoint or Exchange.
+The integration between 365 Applications can cause confusion when creating policies as some apps such as Microsoft Teams have dependencies on others such as SharePoint or Exchange.
 
-The Office 365 suite makes it possible to target these services all at once. We recommend using the new Office 365 suite, instead of targeting individual cloud apps to avoid issues with [service dependencies](service-dependencies.md).
+The Office 365 suite target makes it possible to target these services all at once. We recommend using the new Office 365 suite, instead of targeting individual cloud apps to avoid issues with [service dependencies](service-dependencies.md).
 
 Targeting this group of applications helps to avoid issues that might arise because of inconsistent policies and dependencies. For example: The Exchange Online app is tied to traditional Exchange Online data like mail, calendar, and contact information. Related metadata might be exposed through different resources like search. To ensure that all metadata is protected by as intended, administrators should assign policies to the Office 365 app.
 
@@ -103,7 +103,7 @@ Administrators can add any Microsoft Entra registered application to Conditional
 > [!NOTE]
 > Since Conditional Access policy sets the requirements for accessing a service, you aren't able to apply it to a client (public/native) application. In other words, the policy isn't set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications aren't available for selection in the app picker and Conditional Access option isn't available in the application settings for the client (public/native) application registered in your tenant.
 
-Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')** or add the missing service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) PowerShell cmdlet or by using the [Microsoft Graph API](/graph/api/serviceprincipal-post-serviceprincipals).
+Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')** or add the missing service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) PowerShell cmdlet or by using the [Microsoft Graph API](/graph/api/serviceprincipal-post-serviceprincipals). Some scenarios, like blocking access to OWA, can be targeted via Conditions on Apps, rather than resources.
 
 #### Understanding Conditional Access for different client types
 
