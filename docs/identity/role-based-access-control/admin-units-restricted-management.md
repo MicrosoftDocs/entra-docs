@@ -6,14 +6,16 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: role-based-access-control
-ms.date: 05/24/2025
+ms.date: 06/04/2025
 ms.author: barclayn
 ms.custom: oldportal, it-pro;, sfi-ga-nochange
 ---
 
+
 # Restricted management administrative units in Microsoft Entra ID
 
 Organizations have resources that need strict security, like the CEO's user account. Currently, a Helpdesk Administrator can potentially gain access to a CEO's account by resetting its password, and a tenant-level Groups Administrator can add users to security groups with financial data access on SharePoint.
+
 
 Restricted management administrative units allow you to protect specific objects in your tenant from modification by anyone other than a specific set of people that you designate. This allows you to meet security or compliance requirements without having to remove tenant-level role assignments from your administrators.
 
