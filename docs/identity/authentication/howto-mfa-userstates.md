@@ -51,7 +51,7 @@ All users start out *Disabled*. When you enroll users in per-user Microsoft Entr
 The per-user MFA administration experience in the Microsoft Entra admin center is recently improved. To view and manage user states, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select a user account, and select **User MFA settings**.
 1. After you make any changes, select **Save**.
 
