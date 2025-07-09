@@ -46,7 +46,7 @@ The agent might run and:
 - Suggest modifying an existing policy
 - Suggest consolidating overlapping policies
 
-We want to provide as much information as possible about the logic used to identify the suggestions because Conditional Access policies can be complex. As a best practice, review the information provided before applying a suggestion or changing a report-only policy to an active policy.
+We want to provide as much information as possible about the logic used to identify the suggestions because Conditional Access policies can be complex. With each suggestion, the agent provides detailed reasoning, policy impact summaries, and details of the policy. As a best practice, review the information provided before applying a suggestion or changing a report-only policy to an active policy.
 
 ## Review suggestions and agent logic
 

@@ -69,7 +69,7 @@ In preview, the policy suggestions identified by the agent include:
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 
 > [!IMPORTANT]
-> The agent only provides the suggestions for modifying existing policies. It doesn't make any changes to existing policies unless an administrator explicitly approves the suggestion.
+> The agent doesn't make any changes to existing policies unless an administrator explicitly approves the suggestion.
 >
 > All *new* policies suggested by the agent are created in report-only mode. 
 
