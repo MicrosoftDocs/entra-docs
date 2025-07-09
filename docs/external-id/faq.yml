@@ -23,10 +23,7 @@ sections:
       - question: |
           What's changing in the guest user sign-in experience in B2B collaboration? 
         answer: |
-          Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025.
-          With this update, guest users initially access your organization's branded sign-in page. After entering their email address and selecting **Next**, they are redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process. 
-          This update is designed to make sign-in less confusing for guests from other organizations.
-          No administrative action is required before the rollout. We recommend reviewing your current B2B collaboration configuration to assess any potential impact.
+          Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025. With this update, guest users will be redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process.
           
       - question: |
           Can B2B collaboration users access SharePoint Online and OneDrive?
