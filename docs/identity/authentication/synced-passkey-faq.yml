@@ -1,0 +1,25 @@
+### YamlMime:FAQ
+metadata:
+  title: Synced passkeys FAQs
+  description: Frequently asked questions and answers related to synced passkeys. 
+  ms.service: entra-id
+  ms.subservice: authentication
+  ms.topic: faq
+  ms.date: 07/08/2025
+  ms.author: justinha
+  author: justinha
+  manager: dougeby
+  ms.reviewer: calui
+title: Frequently asked questions about synced passkeys 
+summary: |
+  This article addresses frequently asked questions about synced passkeys. Keep checking back for updated content.
+
+
+sections:
+  - name: General
+    questions:
+      - question: |
+          How are synced passkeys saved?
+        answer: |
+          
+
