@@ -16,7 +16,7 @@ ms.date: 07/09/2025
 
 Regional isolation for user-assigned managed identities helps improve security and resilience by restricting where managed identities can be used. This article explains how to enable regional isolation scope and its benefits.
 
-When working with managed identities, there are two types of resources:
+When you're working with managed identities, there are two types of resources:
 
 - **Source resource**: The resource that has the managed identity assigned to it
 - **Target resource**: The resource that the source resource accesses using the managed identity
@@ -42,13 +42,13 @@ To maximize the benefits of regional isolation:
 - Match managed identity region to compute resources. Ensure managed identities reside in the same region as their source resources
 - Plan for dependencies. Ensure all compute resources sharing a managed identity have access to the same dependencies
 
-## Enable regional isolation in Azure Portal
+## Enable regional isolation in Azure portal
 
 To create a user-assigned managed identity with regional isolation scope:
 
-1. Sign in to the [Azure Portal](https://portal.azure.com)
+1. Sign in to the [Azure portal](https://portal.azure.com)
 
-1. Navigate to **Managed Identities**. In the search box, type "Managed Identities". Under **Services**, select **Managed Identities**
+1. Navigate to **Managed Identities**. In the search box, type *Managed Identities*. Under **Services**, select **Managed Identities**
 
 1. Create a new managed identity. Select **+ Create** to add a new user-assigned managed identity. Configure the basic settings:
     
