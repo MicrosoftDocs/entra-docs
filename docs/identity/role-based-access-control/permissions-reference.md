@@ -145,7 +145,7 @@ Assign the AI Administrator role to users who need to do the following tasks:
 - Manage all aspects of Microsoft 365 Copilot
 - Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center
 - Approve and publish line-of-business copilot agents
-- Allow users to install an app or install an app for users in the organization if the app does not require permission
+- Allow users to install an app or install an app for users in the organization if the app does not require permission.
 - Read and configure Azure and Microsoft 365 service health dashboards
 - View usage reports, adoption insights, and organizational insight
 - Create and manage support tickets in Azure and the Microsoft 365 admin center
@@ -163,6 +163,9 @@ Assign the AI Administrator role to users who need to do the following tasks:
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+> [!Note]
+> This role does not allow the creation of applications through the Entra or Azure portal. The least privileged role for this task is the Application Administrator role.
 
 ## Application Administrator
 
