@@ -50,8 +50,8 @@ The values in the agent summary reflect the activity after suggestions are appli
 
 Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
 
-:::image type="content" source="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent-expanded.png":::
+:::image type="content" source="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of Agent summary tile at the top of the agent page." lightbox="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent-expanded.png":::
 
 In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent. To quickly see agent activity, filter to **Service: Conditional Access**. 
 
-:::image type="content" source="media/agent-optimization-logs-metrics/audit-logs.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization-logs-metrics/audit-logs.png":::
+:::image type="content" source="media/agent-optimization-logs-metrics/audit-logs.png" alt-text="Screenshot of audit logs filtered to Conditional Access." lightbox="media/agent-optimization-logs-metrics/audit-logs.png":::

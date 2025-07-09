@@ -8,11 +8,11 @@
   items:
   - name: Get started with the Conditional Access optimization agent
     href: agent-optimization.md
-  - name: Review optimization agent suggestions
+  - name: Review and approve suggestions
     href: agent-optimization-review-suggestions.md
   - name: Optimization agent logs and metrics
     href: agent-optimization-logs-metrics.md
-  - name: Frequently asked questions
+  - name: Optimization agent FAQ
     href: agent-optimization-faq.yml
 - name: Tutorials
   items:
