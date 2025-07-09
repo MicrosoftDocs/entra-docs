@@ -13,6 +13,10 @@ ms.topic: how-to
 
 # How to review and apply suggestions from the Conditional Access optimization agent
 
+The Microsoft Entra Conditional Access optimization agent provides suggestions for your Conditional Access policies. The suggestions vary based on what the agent finds. As the administrator, you need to review the suggestions and decide what to do. No changes are made without your approval.
+
+This article provides an overview of the logic behind the suggestions and how to review the details of the suggestions. 
+
 ## Prerequisites
 
 - You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
@@ -41,7 +45,7 @@ The agent might run and:
 - Suggest modifying an existing policy
 - Suggest consolidating overlapping policies
 
-When you select **Review suggestion**, you are provided a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
+When you select **Review suggestion**, you're provided a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
 
 ### Policy impact
 
@@ -80,7 +84,7 @@ If the agent suggests creating a new policy:
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!TIP]
-> As a best practice organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
+> As a best practice, organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
 
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.

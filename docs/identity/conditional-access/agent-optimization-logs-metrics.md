@@ -10,7 +10,11 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
 ---
-# Logs and metrics for the Conditional Access optimization agent
+# View logs and metrics for the Conditional Access optimization agent
+
+The Conditional Access optimization agent helps organizations improve their security posture by automatically analyzing sign-in patterns and suggesting policy optimizations. This Microsoft Security Copilot agent identifies unprotected users and applications, recommends policy improvements, and helps consolidate redundant policies.
+
+To ensure transparency and maintain control over automated recommendations, Microsoft Entra ID provides comprehensive logging and metrics for all agent activities. This article explains how to monitor agent performance, review audit logs, and understand the metrics that help you measure the agent's impact on your security environment.
 
 ## Prerequisites
 
@@ -38,11 +42,16 @@ The **Agent summary** at the top of the Conditional Access optimization agent pa
 - **Unprotected users discovered**: The number of users who were identified by the agent and protected by a policy suggested by the agent.
 - **Unprotected apps discovered**: The number of applications that were identified by the agent and protected by a policy suggested by the agent.
 - **Sign-ins protected**: The number of sign-ins that were protected by a policy suggested by the agent.
+- **Security compute units consumed**: The total number of SCUs consumed by the agent in the last 30 days. 
 
-## Audit and policy logs 
+The values in the agent summary reflect the activity after suggestions are applied. If you run the agent and don't apply any suggestions, the values in the agent summary won't change.
+
+## Audit logs 
 
 Policies created or modified by the agent are tagged with **Conditional Access Optimization Agent** in the Conditional Access policies pane.
 
 :::image type="content" source="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization-logs-metrics/created-by-conditional-access-optimization-agent-expanded.png":::
 
-In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent.
+In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent. To quickly see agent activity, filter to **Service: Conditional Access**. 
+
+:::image type="content" source="media/agent-optimization-logs-metrics/audit-logs.png" alt-text="Screenshot of the details of a policy suggestion." lightbox="media/agent-optimization-logs-metrics/audit-logs.png":::

@@ -6,7 +6,7 @@
     href: overview.md
 - name: Security Copilot + Microsoft Entra
   items:
-  - name: Get started with optimization agent
+  - name: Get started with the Conditional Access optimization agent
     href: agent-optimization.md
   - name: Review optimization agent suggestions
     href: agent-optimization-review-suggestions.md
