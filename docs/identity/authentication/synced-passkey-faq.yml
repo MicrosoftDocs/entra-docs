@@ -26,5 +26,10 @@ sections:
           How are synced passkeys saved?
         answer: |
           answer
+additionalContent: |
+  ## Related content
+    * [How do I complete a successful rollout of SSPR?](howto-sspr-deployment.md)
+    * [Reset or change your password](https://support.microsoft.com/account-billing/reset-your-work-or-school-password-using-security-info-23dde81f-08bb-4776-ba72-e6b72b9dda9e)
+
 
 
