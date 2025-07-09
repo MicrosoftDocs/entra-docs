@@ -28,8 +28,4 @@ sections:
           answer
 additionalContent: |
   ## Related content
-    * [How do I complete a successful rollout of SSPR?](howto-sspr-deployment.md)
-    * [Reset or change your password](https://support.microsoft.com/account-billing/reset-your-work-or-school-password-using-security-info-23dde81f-08bb-4776-ba72-e6b72b9dda9e)
-
-
-
+    * [Microsoft Entra ID attestation for FIDO2 security key vendors](concept-fido2-hardware-vendor.md)
