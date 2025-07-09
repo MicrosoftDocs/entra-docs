@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 ms.reviewer: lhuangnorth
-ms.date: 07/02/2025
+ms.date: 07/09/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -24,6 +24,8 @@ In preview, the Conditional Access optimization agent evaluates policies such as
 - To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
 - You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
+- [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
+- [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) roles can view the agent and take action on the suggestions.
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
@@ -51,7 +53,7 @@ If the agent identifies something that wasn't previously suggested, it takes the
 
 1. The agent identifies a policy gap or a pair of policies that can be consolidated.
 1. The agent evaluates any custom instructions you provided.
-1. The agent provides the suggestion to create or modify the policy, including any logic provided by the custom instructions.
+1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
 
 > [!TIP]
 > Two policies can be consolidated if they differ by no more than two conditions or controls.
@@ -67,7 +69,7 @@ In preview, the policy suggestions identified by the agent include:
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 
 > [!IMPORTANT]
-> The agent only provides the suggestions for modifying existing policies. It doesn't make any changes unless an administrator explicitly approves the suggestion.
+> The agent only provides the suggestions for modifying existing policies. It doesn't make any changes to existing policies unless an administrator explicitly approves the suggestion.
 >
 > All *new* policies suggested by the agent are created in report-only mode. 
 
@@ -90,10 +92,9 @@ In preview, the policy suggestions identified by the agent include:
 
    :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization agent start agent page." lightbox="media/agent-optimization/start-agent.png":::
 
-1. When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, select **Review suggestion** to see the details, review the policy, determine policy impact, and apply the changes if needed. These options are covered in detail in the [Review and approve suggestions](agent-optimization-review-suggestions.md) article.
+When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and approve Conditional Access agent suggestions](agent-optimization-review-suggestions.md).
 
    :::image type="content" source="media/agent-optimization/review-suggestions.png" alt-text="Screenshot of agent summary and recent suggestions with the review suggestion buttons highlighted." lightbox="media/agent-optimization/review-suggestions.png":::
-
 
 ## Settings
 
@@ -134,5 +135,6 @@ Use the **Give Microsoft feedback** button at the top of the agent window to pro
 
 ## Related content
 
+- [Review and approve agent suggestions](agent-optimization-review-suggestions.md)
 - [Conditional Access policy templates](concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories)
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)

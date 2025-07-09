@@ -19,7 +19,8 @@ To ensure transparency and maintain control over automated recommendations, Micr
 ## Prerequisites
 
 - To view the Microsoft Entra audit logs, you need at least the [Reports reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
-- To view the Conditional Access policies, you need at least the [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
+- [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
+- [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) roles can view the agent and take action on the suggestions.
    - For more information on roles for the Conditional Access optimization agent, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
