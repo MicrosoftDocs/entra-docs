@@ -14,11 +14,11 @@ ms.collection: M365-identity-device-management
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to manage OATH tokens in Microsoft Entra ID to improve and secure user sign-in events.
 ---
-# How to manage hardware OATH tokens in Microsoft Entra ID (Preview)
+# How to manage OATH tokens in Microsoft Entra ID (Preview)
 
 This topic covers how to manage hardware oath tokens in Microsoft Entra ID, including Microsoft Graph APIs that you can use to upload, activate, and assign hardware OATH tokens. 
 
-## Enable hardware OATH tokens in the Authentication methods policy
+## Manage hardware OATH tokens in the Authentication methods policy (Preview)
 
 You can view and enable hardware OATH tokens in the Authentication methods policy by using Microsoft Graph APIs or the Microsoft Entra admin center. 
 
@@ -52,6 +52,14 @@ To enable hardware OATH tokens in the Microsoft Entra admin center:
 
 We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Entra ID** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
 
+## Manage third-party software OATH tokens
+
+Third-party software OATH tokens are enabled for sign in by default. An [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can disable them for sign in to prevent users from 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Entra ID** > **Authentication methods** > **Third-party software OATH tokens**.
+1. Move the silder for the **Enable** control to prevent users from signing in with third-party software OATH tokens.
+1. Click **I Acknowledge**, then click **Save**.
 
 ## Scenario: Admin creates, assigns, and activates a hardware OATH token 
 
@@ -336,6 +344,8 @@ To identify and remove the legacy token.
    ```https
    DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/{legacyHardwareOathMethodId}
    ```
+
+
 
 ## Related content
 
