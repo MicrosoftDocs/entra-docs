@@ -60,7 +60,7 @@ The visibility change will only impact how end-users can discover access package
 
 The following flow diagram illustrates the logic, effective October 10, 2025, used to determine if an access package appears in the browse/search view for a specific user:
 
-:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram-2.png" alt-text="Screenshot of updated my access visibility access package diagram." lightbox="media/entitlement-management-access-package-visibility/visibility-diagram-2.png":::
+:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram-2-small.png" alt-text="Screenshot of updated my access visibility access package diagram." lightbox="media/entitlement-management-access-package-visibility/visibility-diagram-2.png":::
 
 
 ### Next Steps
