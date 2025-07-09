@@ -29,9 +29,7 @@ The following flow diagram illustrates the current logic used to determine if an
 > [!IMPORTANT]
 > Effective October 10, 2025: The visibility behavior described here for policies scoped to "*Specific users and groups*" is changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-visibility.md#upcoming-changes-to-visibility) section for crucial details and required actions.
 
-:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram.png" alt-text="Screenshot of access package visibility diagram current workflow.":::
-
-:::image-end:::
+:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram.png" alt-text="Screenshot of access package visibility diagram current workflow." lightbox="media/entitlement-management-access-package-visibility/visibility-diagram.png":::
 
 **Explaining the current visibility flow**
 
