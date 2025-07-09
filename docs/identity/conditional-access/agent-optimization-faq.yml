@@ -1,0 +1,50 @@
+### YamlMime:FAQ
+metadata:
+  title: Microsoft Entra Conditional Access optimization agent FAQ
+  description: Frequently asked questions about the Conditional Access optimization agent.
+
+  author: shlipsey3
+  manager: pmwongera
+  ms.service: entra-id
+  ms.topic: faq
+  ms.subservice: conditional-access
+  ms.date: 07/07/2025
+  ms.author: sarahlipsey
+  ms.reviewer: lhuangnorth
+
+title: Frequently asked questions around Microsoft Entra Conditional Access optimization agent
+summary: |
+  This article includes answers to frequently asked questions about the Microsoft Entra Conditional Access optimization agent. For more information, see [Microsoft Entra Conditional Access optimization agent overview](agent-optimization.md).
+
+sections:
+  - name: Getting started
+    questions:
+      - question: |
+          When should I use the Conditional Access optimization agent vs Copilot Chat?
+        answer: |
+          Both features provide different insights into your Conditional Access policies. The following table provides a comparison of the two features:
+
+          | Scenario | Conditional Access Optimization Agent | Copilot Chat |
+          |----------|---------------------------------------|--------------|
+          | **Generic Scenarios** |||
+          | Utilize tenant-specific configuration | ✅ |  |
+          | Advanced reasoning | ✅ |  |
+          | On-demand insights |  | ✅ |
+          | Interactive troubleshooting |  | ✅ |
+          | Continuous policy assessment | ✅ |  |
+          | Automated improvement suggestions | ✅ |  |
+          | Get guidance on CA best practices and configuration | ✅ | ✅ |
+          | **Specific Scenarios** |||
+          | Identify unprotected users or applications proactively | ✅ |  |
+          | Enforce MFA and other baseline controls for all users | ✅ |  |
+          | Continuous monitoring and optimization of CA policies | ✅ |  |
+          | One-click policy changes | ✅ |  |
+          | Review existing CA policies and assignments (Do policies apply to Alice?) | ✅ | ✅ |
+          | Troubleshoot a user's access (Why was Alice prompted for MFA?) |  | ✅ |
+      - question: |
+          I activated the agent but see "Fail" in the activity status. What's happening?
+        answer: |
+          It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. You are prompted to reauthenticate if PIM permission expired.
+          
+          You can resolve this issue by removing the agent, then enabling the agent again with a user account that has standing permissions for Security Copilot access. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+
