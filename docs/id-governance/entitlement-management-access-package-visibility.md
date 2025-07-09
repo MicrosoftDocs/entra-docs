@@ -29,7 +29,7 @@ The following flow diagram illustrates the current logic used to determine if an
 > [!IMPORTANT]
 > Effective September 30, 2025: The visibility behavior described here for policies scoped to "*Specific users and groups*" is changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-visibility.md#upcoming-changes-to-visibility) section for crucial details and required actions.
 
-:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram.png" alt-text="Screenshot of visibility diagram for access package.":::
+:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram.png" alt-text="Screenshot of visibility diagram for access package." lightbox="media/entitlement-management-access-package-visibility/visibility-diagram.png":::
 
 **Explaining the current visibility flow**
 
@@ -60,7 +60,7 @@ The visibility change will only impact how end-users can discover access package
 
 The following flow diagram illustrates the logic, effective September 30 2025, used to determine if an access package appears in the browse/search view for a specific user:
 
-:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram-2.png" alt-text="Screenshot of updated my access visibility access package diagram.":::
+:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram-2.png" alt-text="Screenshot of updated my access visibility access package diagram." lightbox="media/entitlement-management-access-package-visibility/visibility-diagram-2.png":::
 
 
 ### Next Steps
