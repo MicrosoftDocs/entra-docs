@@ -12,7 +12,7 @@ ms.topic: how-to
 ---
 # Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot
 
-The Conditional Access optimization agent helps you ensure all users are protected by policy. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
+The Conditional Access optimization agent helps you ensure all users and applications are protected by Conditional Access policies. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
 In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
@@ -39,7 +39,7 @@ In preview, the Conditional Access optimization agent evaluates policies such as
 
 ## How it works
 
-The Conditional Access optimization agent scans your tenant for new users and applications and determines if Conditional Access policies are applicable. If the agent finds users or applications that aren't protected by Conditional Access policies, it provides suggested next steps, such as creating or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
+The Conditional Access optimization agent scans your tenant for new users and applications from the last 24 hours and determines if Conditional Access policies are applicable. If the agent finds users or applications that aren't protected by Conditional Access policies, it provides suggested next steps, such as turning on or modifying a Conditional Access policy. You can review the suggestion, how the agent identified the solution, and what would be included in the policy.
 
 Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
 
@@ -62,12 +62,14 @@ In preview, the policy suggestions identified by the agent include:
 - **Require device-based controls**: The agent can enforce device-based controls, such as device compliance, app protection policies, and domain-joined devices.
 - **Block legacy authentication**: User accounts with legacy authentication are blocked from signing in.
 - **Block device code flow**: The agent looks for a policy blocking device code flow authentication.
+- **Risky users**: The agent suggests a policy to require secure password change for high risk users. Requires Microsoft Entra ID P2 license.
+- **Risky sign-ins**: The agent suggests a policy to require multifactor authentication for high risk sign-ins. Requires Microsoft Entra ID P2 license.
 - **Policy consolidation**: The agent scans your policy and identifies overlapping settings. For example, if you have more than one policy that has the same grant controls, the agent suggests consolidating those policies into one.
 
 > [!IMPORTANT]
-> The agent only provides the suggestion. It doesn't create or modify policies unless an administrator explicitly approves the suggestion.
+> The agent only provides the suggestions for modifying existing policies. It doesn't make any changes unless an administrator explicitly approves the suggestion.
 >
-> All new policies suggested by the agent are created in report-only mode. 
+> All *new* policies suggested by the agent are created in report-only mode. 
 
 ## Getting started
 
@@ -85,7 +87,6 @@ In preview, the policy suggestions identified by the agent include:
    - Avoid using an account with a role activated through PIM.
    - A message that says "The agent is starting its first run" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
-   - Running the agent doesn't apply any changes.
 
    :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization agent start agent page." lightbox="media/agent-optimization/start-agent.png":::
 
@@ -105,7 +106,7 @@ Once the agent is enabled, you can adjust a few settings. You can access the set
 
 The agent is configured to run every 24 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
 
-:::image type="content" source="media/agent-optimization/agent-optimization-trigger-toggle.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/agent-optimization-trigger-toggle.png":::
+:::image type="content" source="media/agent-optimization/trigger-setting.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/trigger-setting.png":::
 
 ### Objects
 

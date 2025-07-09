@@ -13,7 +13,7 @@ ms.topic: how-to
 
 # How to review and apply suggestions from the Conditional Access optimization agent
 
-The Microsoft Entra Conditional Access optimization agent provides suggestions for your Conditional Access policies. The suggestions vary based on what the agent finds. As the administrator, you need to review the suggestions and decide what to do. No changes are made without your approval.
+The Microsoft Entra Conditional Access optimization agent provides suggestions for your Conditional Access policies. The suggestions vary based on what the agent finds. As the administrator, you need to review the suggestions and decide what to do.
 
 This article provides an overview of the logic behind the suggestions and how to review the details of the suggestions. 
 
@@ -36,16 +36,26 @@ This article provides an overview of the logic behind the suggestions and how to
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
 
-## Reviewing results
+## How it works
 
 The agent might run and:
 
 - Not identify any unprotected users or recommend any changes
-- Suggest creating a new Conditional Access policy in report-only mode
+- Create a new Conditional Access policy *in report-only mode*
 - Suggest modifying an existing policy
 - Suggest consolidating overlapping policies
 
+Because Conditional Access policies can be complex and cover a wide range of scenarios, we want to provide as much information as possible about the logic used to identify the suggestions. As a best practice, review the information provided before applying a suggestion or changing a report-only policy to an active policy.
+
+## Review suggestions and agent logic
+
 When you select **Review suggestion**, you're provided a thorough overview of the suggestion, including the logic used to identify the suggestion and the potential impact of the policy.
+
+### Policy details
+
+The default view of the suggestion provides the policy details, including a high-level description at the top followed by the details that are used in the policy.
+
+:::image type="content" source="media/agent-optimization-review-suggestions/review-suggestions-details.png" alt-text="Screenshot of the policy suggestion details with the view agent's full activity link highlighted." lightbox="media/agent-optimization-review-suggestions/review-suggestions-details-expanded.png":::
 
 ### Policy impact
 
@@ -63,25 +73,43 @@ To see a detailed summary of the agent's activity and how it calculated the sugg
 
 The **Summary of agent activity** is a natural language description of the activity that's illustrated in the **Agent activity map**. These details can help you understand the logic behind the suggestion so you can make an informed decision about whether to apply the suggestion. 
 
-### Review and apply suggestions
+:::image type="content" source="media/agent-optimization-review-suggestions/agent-activity-detail.png" alt-text="Screenshot of the agent activity map." lightbox="media/agent-optimization-review-suggestions/agent-activity-detail-expanded.png":::
 
-The experience for reviewing and applying the suggestion depends on whether the agent suggests modifying an existing policy or creating a new policy. 
+### Review policy changes
 
-If the agent suggests modifying an existing policy:
+If the agent suggests modifying an existing policy, select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion.
 
-- Select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion.
+:::image type="content" source="media/agent-optimization-review-suggestions/review-policy-changes.png" alt-text="Screenshot of the policy suggestion details to require MFA for all users." lightbox="media/agent-optimization-review-suggestions/review-policy-changes.png":::
 
-    :::image type="content" source="media/agent-optimization-review-suggestions/require-multifactor-authentication-details.png" alt-text="Screenshot of the policy suggestion details to require MFA for all users." lightbox="media/agent-optimization-review-suggestions/require-multifactor-authentication-details-expanded.png":::
+You can also select **JSON view** from the **Review policy changes** page to see the policy in JSON format, with the changes highlighted.
 
-- Select **JSON view** from the **Review policy changes** page to see the policy in JSON format, with the changes highlighted. 
+## Apply suggestions
 
-- Select **Approve suggested changes** or **Apply suggestion** to have the agent apply the changes to the policy.
+The experience for applying the suggestion depends on whether the agent suggests modifying an existing policy or creating a new policy. 
 
-If the agent suggests creating a new policy:
+### Modify an existing policy
 
-- Select **Apply suggestion** to have the agent apply the changes to the policy *in report-only mode*.
+The agent could suggest modifying an existing policy or consolidating overlapping policies. After reviewing the details and impact of the policy change, you can apply the suggestion to the policy.
 
-[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
+- From the **Policy details** page, select **Apply suggestion** to apply the changes to the policy.
+
+  :::image type="content" source="media/agent-optimization-review-suggestions/policy-update-details.png" alt-text="Screenshot of the policy suggestion details to require MFA for all users." lightbox="media/agent-optimization-review-suggestions/policy-update-details.png":::  
+
+- From the **Review policy changes** page, you can also select **Approve suggested changes** from the bottom of the page. 
+
+  :::image type="content" source="media/agent-optimization-review-suggestions/approve-suggested-changes.png" alt-text="Screenshot of the review policy page with the approve suggested changes button highlighted." lightbox="media/agent-optimization-review-suggestions/approve-suggested-changes.png":::
+
+### Turn on a new policy
+
+When the agent suggests a new policy, it creates the policy in report-only mode. After reviewing the policy impact, you can turn on the policy directly from the agent experience.
+
+- Select **Turn on policy** to have the agent apply the changes to the policy *in report-only mode*.
+
+   :::image type="content" source="media/agent-optimization-review-suggestions/turn-on-policy.png" alt-text="Screenshot of the policy details with the turn on policy button highlighted." lightbox="media/agent-optimization-review-suggestions/turn-on-policy.png":::  
+
+- From Conditional Access, you can also select the policy and then change the **Enable policy** toggle from **Report-only** to **On**.   
+
+    :::image type="content" source="media/agent-optimization-review-suggestions/report-only-mode-toggle.png" alt-text="Screenshot of the report-only mode toggle in Conditional Access." lightbox="media/agent-optimization-review-suggestions/report-only-mode-toggle.png":::
 
 > [!TIP]
 > As a best practice, organizations should exclude their break-glass accounts from policy to avoid being locked out due to misconfiguration.
