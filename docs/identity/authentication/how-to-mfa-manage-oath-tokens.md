@@ -54,7 +54,7 @@ We recommend that you [migrate to the Authentication methods policy](how-to-auth
 
 ## Manage third-party software OATH tokens
 
-Third-party software OATH tokens are enabled for sign in by default. An [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can disable them for sign in to prevent users from 
+Third-party software OATH tokens are enabled for sign in by default. An [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can disable them to prevent users from signing in with a one-time password from a third-party Identity Provider.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Third-party software OATH tokens**.
