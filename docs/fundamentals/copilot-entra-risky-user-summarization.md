@@ -2,8 +2,8 @@
 title: Investigate risky users with Copilot
 description: Use Copilot in Microsoft Entra to quickly respond to identity threats by summarizing the risk level for a user and receiving insights relevant to the incident.
 keywords: 
-author: rwike77
-ms.author: ryanwi
+author: cilwerner
+ms.author: cwerner
 manager: celestedg
 ms.date: 11/07/2024
 ms.topic: conceptual
