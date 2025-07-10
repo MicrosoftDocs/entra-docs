@@ -23,9 +23,7 @@ Additionally, by enforcing the requirement that all applications must have a ser
 
 If applications you rely on are authenticating without a service principal in your tenant, you must act **before March 31, 2026** to avoid disruption.
 
-### April 2025 freeze
-
-In April 2025, we froze most resource apps accessed by service principal-less client apps. We allowed traffic where the client app home tenant and resource tenant matched if it was observed between **February 11th and March 11th, 2025**, which will continue to work until March 2026. However, any traffic that wasn't identified during this period or new traffic after March 11 was blocked starting **April 2025**.
+**For the most up-to-date information on the retirement, see [Service principal required for Microsoft Entra ID | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/service-principal-required-for-microsoft-entra-id/4405796).**
 
 ## Use sign-in logs to find applications authenticating without a service principal
 
