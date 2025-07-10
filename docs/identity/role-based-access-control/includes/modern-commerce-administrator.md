@@ -10,7 +10,7 @@ ms.custom: include file
 
 Template ID: d24aef57-1500-4070-84db-2666f29cf966
 
-Do not use. This role isn't returned by PowerShell of the Microsoft Graph API. It's automatically assigned from Commerce, and is not intended or supported for any other use.
+Do not use. This role isn't returned by PowerShell or the Microsoft Graph API. It's automatically assigned from Commerce, and is not intended or supported for any other use.
 
 The Modern Commerce Administrator role gives certain users permission to access Microsoft 365 admin center and see the left navigation entries for **Home**, **Billing**, and **Support**. The content available in these areas is controlled by [commerce-specific roles](/azure/cost-management-billing/manage/understand-mca-roles) assigned to users to manage products that they bought for themselves or your organization. This might include tasks like paying bills, or for access to billing accounts and billing profiles.
 
