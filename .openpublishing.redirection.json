@@ -2445,6 +2445,11 @@
       "redirect_url": "/entra/permissions-management/ui-triggers",
       "redirect_document_id": false
     },
+    {
+      "source_path_from_root": "/docs/verified-id/linkedin-employment-verification.md",
+      "redirect_url": "/entra/verified-id/whats-new",
+      "redirect_document_id": false
+    }
   ]
 }
 
