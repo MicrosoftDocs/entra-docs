@@ -1,6 +1,6 @@
 ---
-title: role
-description: role
+title: Organizational Messages Writer
+description: Organizational Messages Writer
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include

@@ -1,6 +1,6 @@
 ---
-title: role
-description: role
+title: Cloud App Security Administrator
+description: Cloud App Security Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include

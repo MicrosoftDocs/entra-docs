@@ -1,6 +1,6 @@
 ---
-title: role
-description: role
+title: Compliance Data Administrator
+description: Compliance Data Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include

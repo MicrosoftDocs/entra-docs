@@ -1,6 +1,6 @@
 ---
-title: role
-description: role
+title: Organizational Messages Approver
+description: Organizational Messages Approver
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include

@@ -1,6 +1,6 @@
 ---
-title: role
-description: role
+title: Customer LockBox Access Approver
+description: Customer LockBox Access Approver
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include

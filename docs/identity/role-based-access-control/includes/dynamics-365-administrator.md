@@ -1,6 +1,6 @@
 ---
 title: Dynamics 365 Administrator
-description: Assign the Dynamics 365 Administrator role to users who need to manage all aspects of Dynamics 365 services, including configuration, user management, and support tickets.
+description: Dynamics 365 Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include

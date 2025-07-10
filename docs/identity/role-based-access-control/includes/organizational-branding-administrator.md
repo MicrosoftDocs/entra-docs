@@ -1,6 +1,6 @@
 ---
-title: role
-description: role
+title: Organizational Branding Administrator
+description: Organizational Branding Administrator
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: include
