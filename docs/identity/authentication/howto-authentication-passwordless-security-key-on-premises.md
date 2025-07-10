@@ -331,6 +331,9 @@ Make sure that enough DCs are patched to respond in time to service your resourc
  
 Yes, you can have up to 1,010 groups per token.
 
+### How do I resolve `Failed to read secrets` error when running `AzureADHybridAuthenticationManagement` module commands? 
+Temporarily disable [FIPS Policy](/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing). FIPS policy can be re-enabled after performing the steps with the `AzureADHybridAuthenticationManagement` module. If error persists after disabling FIPS policy, ensure account being used has default administrative permissions.
+
 ### Do FIDO2 security keys work in a Windows login with RODC present in the hybrid environment?
 
 An FIDO2 Windows login looks for a writable DC to exchange the user TGT. As long as you have at least one writable DC per site, the login works fine. 

@@ -2,7 +2,7 @@
 title: Create and view activity alerts and alert triggers in Microsoft Entra Permissions Management
 description: How to create and view activity alerts and alert triggers in Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

@@ -18,8 +18,8 @@ ms.author: barclayn
   
 The Microsoft Entra Verified ID Network API enables you to search for published credentials in the [Microsoft Entra Verified ID Network](how-use-vcnetwork.md). 
 
->[!NOTE] 
->The API is intended for developers comfortable with RESTful APIs.
+> [!NOTE]
+> The API is intended for developers comfortable with RESTful APIs.
 
 ## Base URL
 
@@ -53,7 +53,7 @@ This API is used to search for issuers available in the Microsoft Entra Verified
 
 #### Return message
 
-```
+```json
 HTTP/1.1 200 OK
 Content-type: application/json
 
@@ -104,7 +104,7 @@ This API is used to search for published credential types for a specific issuer.
 
 #### Return message
 
-```
+```json
 HTTP/1.1 200 OK
 Content-type: application/json
 

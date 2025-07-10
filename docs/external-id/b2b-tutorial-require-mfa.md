@@ -75,7 +75,7 @@ To complete the scenario in this tutorial, you need:
 1. Access the Microsoft Entra admin center using only your sign-in credentials. No other authentication is required.
 1. Sign out of the Microsoft Entra admin center.
 
-## Create a conditional access policy that requires MFA
+## Create a Conditional Access policy that requires MFA
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -101,7 +101,7 @@ To complete the scenario in this tutorial, you need:
 
 The **Conditional Access What If policy tool** helps you understand the effects of Conditional Access policies in your environment. Instead of manually testing your policies with multiple sign-ins, you can use this tool to simulate a user's sign-in. The simulation predicts how this sign-in will affect your policies and generates a report. For more information, see [Use the What If tool to understand Conditional Access policies](/entra/identity/conditional-access/what-if-tool).
 
-## Test your conditional access policy
+## Test your Conditional Access policy
 
 1. Use your test user name and password to sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. You should see a request for more authentication methods. It can take some time for the policy to take effect.

@@ -13,10 +13,6 @@ metadata:
 title: Frequently asked questions about Microsoft Entra multifactor authentication
 summary: |
   This FAQ answers common questions about Microsoft Entra multifactor authentication and using the multifactor authentication service. It's broken down into questions about the service in general, billing models, user experiences, and troubleshooting.
-  
-  > [!IMPORTANT]
-  > In September 2022, Microsoft announced deprecation of Multifactor Authentication Server. Beginning September 30, 2024, Multifactor Authentication Server deployments will no longer service multifactor authentication requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users' authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Microsoft Entra multifactor authentication service. For more information, see [MFA Server Migration](./how-to-migrate-mfa-server-to-mfa-user-authentication.md).
-  
 
 sections:
   - name: General
@@ -98,16 +94,7 @@ sections:
           Security defaults can be enabled in the Microsoft Entra ID Free tier. With security defaults, all users are enabled for multifactor authentication using the Microsoft Authenticator app. There's no ability to use text message or phone verification with security defaults, just the Microsoft Authenticator app.
           
           For more information, see [What are security defaults?](~/fundamentals/security-defaults.md)
-          
-      - question: |
-          Can my organization switch between per-user and per-authentication consumption billing models at any time?
-        answer: |
-          If your organization purchases MFA as a standalone service with consumption-based billing, you choose a billing model when you create an MFA provider. You can't change the billing model after an MFA provider is created. 
-          
-          If your MFA provider is *not* linked to a Microsoft Entra tenant, or you link the new MFA provider to a different Microsoft Entra tenant, user settings, and configuration options aren't transferred. Also, existing MFA Servers need to be reactivated using activation credentials generated through the new MFA Provider. Reactivating the MFA Servers to link them to the new MFA Provider doesn't impact phone call and text message authentication, but mobile app notifications stop working for all users until they reactivate the mobile app.
-          
-          Learn more about MFA providers in [Getting started with an Azure multifactor authentication provider](concept-mfa-authprovider.md).
-          
+                    
       - question: |
           Can my organization switch between consumption-based billing and subscriptions (a license-based model) at any time?
         answer: |
@@ -169,24 +156,6 @@ sections:
           If your users often have problems with reliably receiving text messages, tell them to use the Microsoft Authenticator app or phone call method instead. The Microsoft Authenticator can receive notifications both over cellular and Wi-Fi connections. In addition, the mobile app can generate verification codes even when the device has no signal at all. The Microsoft Authenticator app is available for [Android](https://go.microsoft.com/fwlink/?Linkid=825072), [iOS](https://go.microsoft.com/fwlink/?Linkid=825073), and [Windows Phone](https://www.microsoft.com/p/microsoft-authenticator/9nblgggzmcj6).
           
       - question: |
-          Can I change the amount of time my users have to enter the verification code from a text message before the system times out?
-        answer: |
-          In some cases, yes.
-          
-          For one-way SMS with MFA Server v7.0 or higher, you can configure the timeout setting by setting a registry key. After the MFA cloud service sends the text message, the verification code (or one-time passcode) is returned to the MFA Server. The MFA Server stores the code in memory for 300 seconds by default. If the user doesn't enter the code before the 300 seconds have passed, their authentication is denied. Use these steps to change the default timeout setting:
-          
-          1. Go to `HKLM\Software\Wow6432Node\Positive Networks\PhoneFactor`.
-          2. Create a **DWORD** registry key called *pfsvc_pendingSmsTimeoutSeconds* and set the time in seconds that you want the MFA Server to store one-time passcodes.
-          
-          >[!TIP]
-          >
-          > If you have multiple MFA Servers, only the one that processed the original authentication request knows the verification code that was sent to the user. When the user enters the code, the authentication request to validate it must be sent to the same server. If the code validation is sent to a different server, the authentication is denied.
-          
-          If users don't respond to the SMS within the defined timeout period, their authentication is denied.
-          
-          For one-way SMS with Microsoft Entra multifactor authentication in the cloud (including the AD FS adapter or the Network Policy Server extension), you can't configure the timeout setting. Microsoft Entra ID stores the verification code for 180 seconds.
-          
-      - question: |
           Can I use hardware tokens with Multifactor Authentication Server?
         answer: |
           If you're using Multifactor Authentication Server, you can import third-party Open Authentication (OATH) time-based, one-time password (TOTP) tokens, and then use them for two-step verification.
@@ -205,11 +174,6 @@ sections:
           
           Security changes in Windows Server 2012 R2 changed how Multifactor Authentication Server connects to the Local Security Authority (LSA) security package in Windows Server 2012 and earlier versions. For versions of Terminal Services in Windows Server 2012 or earlier, you can [secure an application with Windows Authentication](howto-mfaserver-windows.md#to-secure-an-application-with-windows-authentication-use-the-following-procedure). If you're using Windows Server 2012 R2, you need RD Gateway.
           
-      - question: |
-          I configured Caller ID in MFA Server, but my users still receive multifactor authentication calls from an anonymous caller.
-        answer: |
-          When multifactor authentication calls are placed through the public telephone network, sometimes they're routed through a carrier that doesn't support caller ID. Because of this carrier behavior, caller ID isn't guaranteed, even though the multifactor authentication system always sends it.
-
       - question: |
           Why are my users being prompted to register their security information?
         answer: |
@@ -242,12 +206,6 @@ sections:
           
           A workaround for this error is to have separate user accounts for admin-related and nonadmin operations. Later, you can link mailboxes between your admin account and nonadmin account so that you can sign in to Outlook by using your nonadmin account. For more details about this solution, learn how to [give an administrator the ability to open and view the contents of a user's mailbox](https://help.outlook.com/141/gg709759.aspx?sl=1).
           
-      - question: |  
-          What are the possible reasons why a user fails, with the error code "LsaLogonUser failed with NTSTATUS -1073741715 for MFA Server"?
-        answer: |
-          Error 1073741715 = Status Logon Failure -> The attempted logon is invalid. This is due to either a bad username or authentication.
-
-          A plausible reason for this error: If the primary credentials entered are correct, there might be a mismatch between the supported NTLM version on the MFA server and the domain controller. MFA Server supports only NTLMv1 (LmCompatabilityLevel=1 through 4) and not NTLMv2 (LmCompatabilityLevel=5).
           
 additionalContent: |
   ## Next steps
