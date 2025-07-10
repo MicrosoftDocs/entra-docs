@@ -19,7 +19,7 @@ You can change a group's membership from static to dynamic (or vice versa) in Mi
 Creating dynamic membership groups eliminates the management overhead of adding and removing users. This article shows you how to convert existing membership groups from static to dynamic, by using either the Azure portal or PowerShell cmdlets. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
 > [!WARNING]
-> When a static group is converted to a dynamic membership group, existing members who meet the membership rule will remain. Members who do not are removed. New members who satisfy the rule will be added automatically. The membership rule is then processed to add new members. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
+> When a static group is converted to a dynamic membership group, existing members who meet the membership rule remain. Members who do not are removed. Other users who satisfy the membership rule are added automatically. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
 >
 > We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Resolve group license problems](/entra/fundamentals/licensing-groups-resolve-problems).
 
