@@ -15,9 +15,9 @@ From March 2026, Microsoft Entra ID will no longer support app authentication wi
 
 ## Blocking app authentication without a service principal
 
-Microsoft Entra ID will block authentication for all non-Microsoft multi-tenant applications that don't have a service principal in the tenant where they are authenticating. This scenario is also known as service principal-less authentication. This behavior has already been disabled for most non-Microsoft applications. This change addresses a few remaining exceptions and is a preventive security measure. 
+Microsoft Entra ID will block authentication for all non-Microsoft multi-tenant applications that don't have a service principal in the tenant where they're authenticating. This scenario is also known as service principal-less authentication. This behavior has already been disabled for most non-Microsoft applications. This change addresses a few remaining exceptions and is a preventive security measure. 
 
-App authentication without a service principal allows a multi-tenant client application to obtain an app-only token from a tenant without an object identifier (object ID) claim. In most cases, the absence of a service principal means the app has not been granted authorization to access any data, and this is harmless. However, in rare cases where the target API has implemented improper authorization checks, this capability could lead to unauthorized access. Microsoft has already verified that Microsoft-published APIs aren't vulnerable to this type of abuse. Disabling this behavior entirely also protects non-Microsoft APIs with insufficient authorization checks.
+App authentication without a service principal allows a multi-tenant client application to obtain an app-only token from a tenant without an object identifier (object ID) claim. In most cases, the absence of a service principal means the app hasn't been granted authorization to access any data, and this is harmless. However, in rare cases where the target API has implemented improper authorization checks, this capability could lead to unauthorized access. Microsoft has already verified that Microsoft-published APIs aren't vulnerable to this type of abuse. Disabling this behavior entirely also protects non-Microsoft APIs with insufficient authorization checks.
 
 Additionally, by enforcing the requirement that all applications must have a service principal in every tenant where they authenticate, we facilitate tenant administrator's governance of all access, including the ability to target these apps individually with Conditional Access policies. 
 
@@ -37,7 +37,7 @@ First, you'll need to verify that access by the named applications to the resour
 3. Go to the **Service principal sign-ins** tab.
 4. Filter by **Service principal ID**, and enter `00000000-0000-0000-0000-000000000000` in the input field.
 5. Set the date range to **Last 1 month**.
-6. Click on a log entry to view the details, and identify the app's **Application ID**. You will need this in the next step.
+6. Click on a log entry to view the details, and identify the app's **Application ID**. You'll need this in the next step.
 
 :::image type="content" source="media/retire-service-principal-less-authentication/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Microsoft Entra admin center with filters applied to extract on SP-less auth sign ins.":::
 
@@ -45,8 +45,8 @@ First, you'll need to verify that access by the named applications to the resour
 
 Once you've identified an application authenticating without a service principal, use the details in the sign-in logs to decide whether it's expected and should continue to authenticate in your tenant.
 
-If you do not recognize the app and wish to block it, [create a service principal](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell) for the app, and then [disable the service principal](/entra/identity/enterprise-apps/disable-user-sign-in-portal?pivots=portal). Disabling the app's service principal will block all future sign-in and authentication attempts by that app in your tenant.
+If you don't recognize the app and wish to block it, [create a service principal](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell) for the app, and then [disable the service principal](/entra/identity/enterprise-apps/disable-user-sign-in-portal?pivots=portal). Disabling the app's service principal will block all future sign-in and authentication attempts by that app in your tenant.
 
 ## Verify the changes you made
 
-Once you've taken action for an application, the sign-in logs will include the app's new service principal ID, now with a unique alphanumeric GUID in the format `aaaaaaaa-bbbb-cccc-1111-222222222222`. This confirms that the app has a sevice principal in your tenant and will not be further affected by the upcoming change.
+Once you've taken action for an application, the sign-in logs will include the app's new service principal ID, now with a unique alphanumeric GUID in the format `aaaaaaaa-bbbb-cccc-1111-222222222222`. This confirms that the app has a sevice principal in your tenant and won't be further affected by the upcoming change.
