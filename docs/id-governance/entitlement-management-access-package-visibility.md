@@ -1,5 +1,5 @@
 ---
-title: Understanding access package visibility in the My Access portal
+title: Understand access package visibility in the My Access portal
 description: A conceptual article describing access package visibility in the My Access portal.
 author: owinfreyATL
 manager: dougeby
@@ -14,13 +14,13 @@ ms.author: owinfrey
 ---
 
 
-# Understanding access package visibility in the My Access portal
+# Understand access package visibility in the My Access portal
 
 The [My Access portal](https://myaccess.microsoft.com) is the central place for users to request, approve, and review their access to resources within Microsoft Entra. For administrators, the Microsoft Entra admin center provides extra functionalities, enabling configuration of access packages and the ability to conduct access reviews.
 
 When you manage access to resources in Microsoft Entra, understanding how access packages appear to users in the [My Access portal](https://myaccess.microsoft.com) is essential. Access package visibility determines which packages users can discover and request, and is influenced by several configuration settings and planned changes. This article provides a detailed overview of the factors that control access package visibility in the My Access portal, explains how it currently works, and highlights important changes effective October 10, 2025. 
 
-## Discovering requestable access packages
+## Discover requestable access packages
 
 When a user lands on the "*Available*" tab, searches for requestable packages, or selects "*View all*," Microsoft Entra evaluates which access packages they should be able to see and potentially request. This visibility is determined by a specific sequence of checks.
 
@@ -39,7 +39,7 @@ The logic of this diagram is as follows:
 
 1.  **Is the end-user an external user?** The system checks if the user is an external user or an internal user. This affects the next step.
 
-    1.  **(If external user) Is the catalog enabled for external users?** For external users, the catalog must **also** be enabled for external users in its settings. If not, external users don't see packages from this catalog. Internal users skip this check.
+    - **(If external user) Is the catalog enabled for external users?** For external users, the catalog must **also** be enabled for external users in its settings. If not, external users don't see packages from this catalog. Internal users skip this check.
 
 1.  **Is the access package hidden?** This checks the specific "hidden" setting directly on the access package's properties (under "Edit"). If set to "Yes," the package is hidden from the browse/search view, regardless of policies.
 
@@ -76,7 +76,7 @@ Coinciding with this change, we're also introducing a **new tenant-wide setting*
 
 
 > [!NOTE]
-> If the access package isn't visible for the end-user according to the [Discovering Requestable Access Packages](entitlement-management-access-package-visibility.md#discovering-requestable-access-packages) section, then the "Resource" tab won’t be available either. To configure this setting, go to the Microsoft Entra Admin Center with at least the Identity Governance role, and navigate to Entitlement Management > Control Configurations > My Access settings to see the resource role visibility control setting.
+> If the access package isn't visible for the end-user according to the [Discover Requestable Access Packages](entitlement-management-access-package-visibility.md#discover-requestable-access-packages) section, then the "Resource" tab won’t be available either. To configure this setting, go to the Microsoft Entra Admin Center with at least the Identity Governance role, and navigate to Entitlement Management > Control Configurations > My Access settings to see the resource role visibility control setting.
 
 ## Related content
 
