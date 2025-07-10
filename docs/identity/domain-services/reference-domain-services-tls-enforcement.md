@@ -54,11 +54,12 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
    Connect-AzAccount -Subscription aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e
    ```
 
-1. Update the value of TLS 1.2 only mode by executing the two commands below:
+1. Update the value of **TLS 1.2 Only Mode** by executing these two commands:
 
    ```powershell
    $domainService = Get-AzADDomainService
    ```
+   
    ```powershell
    Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Disabled
    ```
