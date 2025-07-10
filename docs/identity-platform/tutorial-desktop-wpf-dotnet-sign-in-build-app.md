@@ -318,7 +318,7 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
             }
             catch (MsalException msalEx)
             {
-                ResultText.Text = $"Error Acquiring Token:{System.Environment.NewLine}{msalex}";
+                ResultText.Text = $"Error Acquiring Token:{System.Environment.NewLine}{msalEx}";
             }
             catch (Exception ex)
             {
