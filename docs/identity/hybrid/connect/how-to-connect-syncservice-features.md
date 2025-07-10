@@ -160,27 +160,28 @@ After enabling this feature, existing userPrincipalName values remain as-is. On 
 
 ## Password Hash Sync
 
-This feature allows the sync engine to use password hash sync and is automatically enabled by the sync client.
+This feature allows the sync engine to use password hash synchronization and is automatically enabled by the sync client.
 
 You can see if this feature is enabled for you by running:  
 
 ```powershell
-# Connect Microsoft Graph
+# Connect to Microsoft Graph
 Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
 
-# Get DirSync service features
+
+# Retrieve DirSync service features
 $DirectorySync = Get-MgDirectoryOnPremiseSynchronization
 $DirectorySync.Features.PasswordSyncEnabled
 ```
 
 
-If this feature is no longer needed, for instance after decommissioning synchronization from on-premises Active Directory, you can disable it by running: 
+If password hash sync is no longer needed, for example, after decommissioning synchronization from on-premises Active Directory, you can disable it using:
 
 ```powershell
-# Connect Microsoft Graph
+# Connect to Microsoft Graph
 Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
 
-# Disable PassworHashSync
+# Disable Password Hash Sync
 $DirectorySync = Get-MgDirectoryOnPremiseSynchronization
 $DirectorySync.Features.PasswordSyncEnabled = $false
 Update-MgDirectoryOnPremiseSynchronization -Features $DirectorySync.Features -OnPremisesDirectorySynchronizationId $DirectorySync.Id
@@ -189,7 +190,11 @@ Update-MgDirectoryOnPremiseSynchronization -Features $DirectorySync.Features -On
 
 ## Password Writeback
 
-Used to indicate that writeback of password updates from Microsoft Entra ID to on-premises AD is enabled. This property is no longer in use and updating it isn't supported.
+This property indicates whether password writeback from Microsoft Entra ID to on-premises Active Directory is enabled.
+
+> [!IMPORTANT] 
+> This property is no longer in use, and updating it is not supported.
+
 
 ## See also
 
