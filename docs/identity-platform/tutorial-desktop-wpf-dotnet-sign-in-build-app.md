@@ -306,7 +306,7 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
             authResult = await app.AcquireTokenSilent(scopes, firstAccount)
                     .ExecuteAsync();
         }
-        catch (MsalUiRequiredException ex)
+        catch (MsalUiRequiredException msalUiEx)
         {
             try
             {
@@ -316,7 +316,7 @@ The *MainWindow.xaml.cs* file contains the code that provides th runtime logic f
                     .WithPrompt(Prompt.SelectAccount)
                     .ExecuteAsync();
             }
-            catch (MsalException msalex)
+            catch (MsalException msalEx)
             {
                 ResultText.Text = $"Error Acquiring Token:{System.Environment.NewLine}{msalex}";
             }
