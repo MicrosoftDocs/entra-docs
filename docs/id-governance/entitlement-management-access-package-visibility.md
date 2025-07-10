@@ -24,7 +24,7 @@ When you manage access to resources in Microsoft Entra, understanding how access
 
 When a user lands on the "*Available*" tab, searches for requestable packages, or selects "*View all*," Microsoft Entra evaluates which access packages they should be able to see and potentially request. This visibility is determined by a specific sequence of checks.
 
-The following flow diagram illustrates the current logic used to determine if an access package appears in the browse/search view for a specific user:
+The following flow diagram, which can be selected to enlarge, illustrates the current logic used to determine if an access package appears in the browse/search view for a specific user:
 
 > [!IMPORTANT]
 > Effective October 10, 2025: The visibility behavior described here for policies scoped to "*Specific users and groups*" is changing. See the [Upcoming Changes to Visibility](entitlement-management-access-package-visibility.md#upcoming-changes-to-visibility) section for crucial details and required actions.
