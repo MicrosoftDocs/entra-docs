@@ -13,7 +13,7 @@ ms.reviewer:
 ---
 # Understanding Primary Refresh Token (PRT)
 
-A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication in supported versions of Windows, iOS, and Android. A PRT is a secure artifact specially issued to Microsoft first party token brokers to enable single sign-on (SSO) across the applications used on those devices. This article explains how a PRT is issued, used, and protected, enhancing your security and enabling single sign-on (SSO) across applications.
+A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication in supported versions of Windows, iOS/MacOS, Android, and Linux. A PRT is a secure artifact specially issued to Microsoft first party token brokers to enable single sign-on (SSO) across the applications used on those devices. This article explains how a PRT is issued, used, and protected, enhancing your security and enabling single sign-on (SSO) across applications.
 
 This article assumes that you already understand the different device states available in Microsoft Entra ID and how single sign-on works in Windows. For more information about devices in Microsoft Entra ID, see [What is device management in Microsoft Entra ID?](overview.md).
 
@@ -46,9 +46,9 @@ Device registration is a prerequisite for device based authentication in Microso
 - Device key (dkpub/dkpriv)
 - Transport key (tkpub/tkpriv)
 
-If the device has a valid and functioning TPM, the private keys are bound to the device’s TPM. The public keys are sent to Microsoft Entra ID during the device registration process in order to validate the device state during PRT requests.
+If the device has a valid and functioning TPM, the private keys are bound to the device’s TPM on supported platforms. The public keys are sent to Microsoft Entra ID during the device registration process in order to validate the device state during PRT requests.
 
-PRT is only used on those platforms when broker is present. Broker is a component distributed with the following apps: Intune Company Portal on macOS and Linux, Authenticator on iOS, Authenticator, Link to Windows, and Company portal on Android. On Mac, Mobile Device Management (MDM) is required to activate the broker alongside the SSO extension profile: [Apple SSO Plugin](../../identity-platform/apple-sso-plugin.md)
+PRT can only be issued when an Microsoft Entra ID broker is present. Broker is a component distributed with the following apps: Intune Company Portal on macOS and Linux, Authenticator on iOS, Authenticator, Link to Windows, and Company portal on Android. On Mac, Mobile Device Management (MDM) is required to activate the broker alongside the SSO extension profile: [Apple SSO Plugin](../../identity-platform/apple-sso-plugin.md)
 
 ### [Windows](#tab/windows-prt-issued)
 
@@ -67,7 +67,7 @@ macOS [Platform Single Sign-on (PSSO)](macos-psso) is a new feature powered by M
 
 The PSSO Primary Refresh Token (PRT) is issued exclusively to Entra-joined macOS devices that have successfully completed Platform SSO registration. During this registration process, macOS generates secure enclave–backed cryptographic key pairs: one for device signing and another for device encryption. The public key references are shared with the SSO extension.
 
-The SSO extension uses these keys to complete device registration with the Microsoft Entra Id Device Registration Service. It then configures Apple’s loginConfiguration API with the necessary parameters for PRT acquisition.
+The SSO extension uses these keys to complete device registration with the Microsoft Entra ID Device Registration Service. It then configures Apple’s loginConfiguration API with the necessary parameters for PRT acquisition.
 
 Once registration is successfully completed, macOS initiates a sign in request signed with the Device Signing key. Microsoft Entra ID validates the request, device signing key and associated parameters, and issues PRT response. macOS decrypts this response using Device Encryption key, stores the PRT and makes it available to the SSO extension. The sign in request is sent during user authentication on PSSO registered macOS.
 
@@ -80,18 +80,20 @@ Once registration is successfully completed, macOS initiates a sign in request s
 - Client always attempts to use device-bound PRT whenever possible.
 
 ### [Linux](#tab/linux-prt-issued)
-**Linux** supports both deviceless PRT for Edge and device bound PRT when broker is present.
+**Linux** supports both deviceless PRT for Microsoft Edge and device bound PRT when broker is present.
 
 ---
 
 ### Browser behavior
 
-On non-Windows platforms, PRT isn't available to browser flows or apps that aren't integrated with one of the Microsoft identity libraries that know how to communicate with the broker. The only exception is iOS and macOS with the SSO extension profile that can make PRT-based short-lived artifact available to other apps, Chrome, Firefox, and Safari browser through an MDM setting.
+On non-Windows platforms, PRT isn't available to browser flows or apps that aren't integrated with one of the Microsoft identity libraries that know how to communicate with the broker. The only exception is iOS and macOS with the SSO extension profile installed, enabling:
+- Chrome and Firefox are supported on macOS
+- Safari is supported on both iOS and macOS
 
 The list of supported browsers is available here: [Supported Browsers](../conditional-access/concept-conditional-access-conditions.md#supported-browsers)
 
 > [!NOTE]
-> Non-Microsoft identity providers need to support the WS-Trust protocol to enable PRT issuance on Windows 10 or newer devices. Without WS-Trust, a PRT can't be issued to users on Microsoft Entra hybrid joined or Microsoft Entra joined devices. On ADFS only usernamemixed endpoints are required. On ADFS if `Smartcard/certificate` is used during Windows sign-in `certificatemixed` endpoints are required. Both `adfs/services/trust/2005/windowstransport` and `adfs/services/trust/13/windowstransport` should be enabled as intranet facing endpoints only and **must NOT be exposed** as extranet facing endpoints through the Web Application Proxy.
+> Non-Microsoft identity providers need to support the WS-Trust protocol to enable PRT issuance on Windows 10 or newer devices. Without WS-Trust, a PRT can't be issued to users on Microsoft Entra hybrid joined or Microsoft Entra joined devices. On ADFS, only `usernamemixed` endpoints are required. On ADFS if `Smartcard/certificate` is used during Windows sign-in `certificatemixed` endpoints are required. Both `adfs/services/trust/2005/windowstransport` and `adfs/services/trust/13/windowstransport` should be enabled as intranet facing endpoints only and **must NOT be exposed** as extranet facing endpoints through the Web Application Proxy.
 
 > [!NOTE] 
 > Microsoft Entra Conditional Access policies aren't evaluated when PRTs are issued.
@@ -116,11 +118,11 @@ A PRT is used by two key components in Windows:
 
 ### [macOS](#tab/macos-prt-used)
 
-A PSSO PRT is used by the [sso extension](../../identity-platform/apple-sso-plugin) to provide SSO on to apps and websites. PRT is used to request refresh and access tokens for applications that rely on SSO extension for token requests. It also enables SSO on browsers by injecting the PRT into browser requests.
+A PSSO PRT is used by the [SSO extension](../../identity-platform/apple-sso-plugin) to provide SSO on to apps and websites. A PRT is used to request refresh and access tokens for applications that rely on the SSO extension for token requests. It also enables SSO on browsers by injecting the PRT into browser requests.
 
 ### [iOS and Android](#tab/other-prt-used)
 
-PRT is used in a similar manner to the description of the “Microsoft Entra WAM plugin” for native apps. The only browsers that support Browser SSO are Safari, Firefox, Chrome, and Microsoft Edge.
+PRT is used in a similar manner to the description of the "Microsoft Entra WAM plugin" for native apps. The browsers that support Browser SSO are Safari, Firefox, Chrome, and Microsoft Edge.
 
 ### [Linux](#tab/linux-prt-used)
 
@@ -151,7 +153,7 @@ Windows transport endpoints are required for password authentication only when a
 
 ### [macOS](#tab/macos-prt-renewal)
 
-macOS renews the PSSO Primary Refresh Token (PRT) every 4 hours, or sooner if the SSO tokens are missing or has expired.
+macOS renews the PSSO Primary Refresh Token (PRT) every 4 hours, or sooner if the SSO tokens are missing or have expired.
 
 ### [iOS](#tab/iOS-prt-renewal)
 
@@ -175,7 +177,7 @@ A PRT is valid for 90 days and is renewed every 4 hours if the device is in use.
 
 ## How is the PRT protected?
 
-A PRT is protected by binding it to the device the user has signed in to.
+A PRT is protected by binding it to the device the user has signed in to, where it will use hardware binding when available and supported.
 
 ### [Windows](#tab/windows-prt-protection)
 
@@ -193,10 +195,6 @@ A Primary Refresh Token (PRT) is securely bound to the device on which the user 
 
 The PRT is issued only after a request is signed using a secure enclave–backed Device Signing Key, which is cryptographically generated during device registration. If the signature from this key can't be validated, the PRT won't be issued. 
 
-Along with the PRT, Microsoft Entra ID issues a session key encrypted with the public Device Encryption key that was shared during registration. This session key can only be decrypted using the corresponding private key stored in the secure enclave. 
-
-This session key acts as a Proof-of-Possession (POP) key for all subsequent requests to Microsoft Entra ID. Any request not signed with this session key is rejected, ensuring that only the registered device can use the PRT.
-
 ---
 
 ## How are App Tokens protected?
@@ -211,7 +209,7 @@ For an overview of how tokens are protected in general, refer to [Protecting tok
 
 ### [macOS & iOS](#tab/iOSMacOS-prt-apptokens)
 
-- **macOS/iOS unmanaged**: On devices without MDM SSO extension profile, broker returns both the access token and the refresh token to the calling app. Calling app will use refresh token for subsequent refreshes and that refresh token won’t be protected.
+- **iOS unmanaged**: On devices without MDM SSO extension profile, broker returns both the access token and the refresh token to the calling app. The calling app will use the refresh token for subsequent refreshes and that refresh token won’t be protected.
 - **macOS/iOS managed**: On devices with MDM SSO extension profile, broker returns only the access token to the calling app. Broker uses PRT for any subsequent token refresh and doesn't use unprotected refresh token. We recommend customers to use this configuration over the unmanaged one due to the extra protection it provides.
 
 ### [Android](#tab/android-apptokens)
@@ -220,7 +218,7 @@ For an overview of how tokens are protected in general, refer to [Protecting tok
 
 ### [Linux](#tab/linux-apptokens)
 
-- On Linux, Broker only returns the access token to the calling app and stores refresh tokens locally for both managed and unmanaged devices.
+- On Linux, the broker only returns the access token to the calling app and stores refresh tokens locally for both managed and unmanaged devices.
 - The locally stored refresh tokens are encrypted with an encryption key stored in UNIX User’s sign in keyring.
 
 ---
@@ -229,9 +227,9 @@ For an overview of how tokens are protected in general, refer to [Protecting tok
 
 ### [Windows](#tab/windows-browsercookies)
 
-- In Windows 10 or newer, Microsoft Entra ID supports browser SSO in Microsoft Edge natively, in Google Chrome via [native support](https://chromeenterprise.google/policies/#CloudAPAuthEnabled) and in Mozilla Firefox v91+ via a browser setting. The security is built not only to protect the cookies but also the endpoints to which the cookies are sent.
+- In Windows 10 or newer, Microsoft Entra ID supports browser SSO in Microsoft Edge natively, in Google Chrome via native support or [extension](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji) and in Mozilla Firefox v91+ via a browser setting. The security is built not only to protect the cookies but also the endpoints to which the cookies are sent.
+- When a user initiates a browser interaction, the browser (or the extension) invokes a [platform API](https://learn.microsoft.com/en-us/windows/win32/api/proofofpossessioncookieinfo/nf-proofofpossessioncookieinfo-iproofofpossessioncookieinfomanager-getcookieinfoforuri). The extension calls this API via a native messaging host. The API ensures that the page is from one of the allowed domains. The browser sends full query string, which includes a nonce. The platform API creates a PRT and device header, which are signed with the TPM-protected keys. The PRT-header is signed by the session key, the device header by device key, thus it's difficult to tamper with. These headers are included in all requests for Microsoft Entra ID to validate the device it's originating from and the user. Once Microsoft Entra ID validates those headers, it issues a session cookie to the browser. This session cookie also contains the same session or device key used to sign the request. During subsequent requests, the session key is validated effectively binding the cookie to the device and preventing replays from elsewhere
 
-- When a user initiates a browser interaction, the browser (or extension) invokes the extension "native messaging host", a browser COM interface. The native client host ensures that the page is from one of the allowed domains. The browser sends full query string, other parameters to the native client host, including a nonce, however the native client host guarantees validation of the hostname. The native client host requests a PRT-cookie from the OS, which creates and signs it with the TPM-protected session key. As the PRT-cookie is signed by the session key, it's difficult to tamper with. This PRT-cookie is included in the request header for Microsoft Entra ID to validate the device it's originating from. Once Microsoft Entra ID validates the PRT cookie, it issues a session cookie to the browser. This session cookie also contains the same session key issued with a PRT. During subsequent requests, the session key is validated effectively binding the cookie to the device and preventing replays from elsewhere.
 
 ### [iOS and Mac](#tab/iOS-browsercookies)
 
@@ -261,7 +259,7 @@ A PRT can get a multifactor authentication claim in specific scenarios. When an 
 - Windows 10 or newer maintain a partitioned list of PRTs for each credential. So, there's a PRT for each of Windows Hello for Business, password, or smart card. This partitioning ensures that MFA claims are isolated based on the credential used, and not mixed up during token requests.
 
 > [!NOTE]
-> When using password to sign into Windows 10 or newer Microsoft Entra joined or Microsoft Entra hybrid joined device, MFA during WAM interactive sign in might be required after session key associated with PRT is rolled.
+> When using password to sign into Windows 10 or newer Microsoft Entra joined or Microsoft Entra hybrid joined device, MFA during WAM interactive sign in might be required after session key associated with PRT is rolled - depending on if the user passed 2FA process within that session.
 
 ### [iOS/Mac/Android/Linux](#tab/other-mfa)
 
@@ -318,7 +316,7 @@ The following diagrams illustrate the underlying details in issuing, renewing, a
 | G | CloudAP plugin passes the encrypted PRT and Session key to CloudAP. CloudAP requests the TPM to decrypt the Session key using the Transport key (tkpriv) and reencrypt it using the TPM's own key. CloudAP stores the encrypted Session key in its cache along with the PRT. |
 
 > [!NOTE]
-> A PRT can be renewed externally without the need of a VPN connection when usernamemixed endpoints are enabled externally.
+> A PRT can be renewed externally without the need of a VPN connection when `usernamemixed` endpoints are enabled externally.
 
 ### PRT usage during app token requests
 
