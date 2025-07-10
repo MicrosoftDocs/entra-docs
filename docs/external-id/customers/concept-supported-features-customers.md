@@ -130,8 +130,8 @@ Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | **Application gallery**         | The [app gallery](/entra/identity/enterprise-apps/overview-application-gallery) contains thousands of applications that are preintegrated into Microsoft Entra ID.   | The app gallery dashboard is not available. To find apps, use the search bar instead.    |
 | **Identity Provider (IdP)-initiated sign-in**         | [Use a SAML 2.0 Identity Provider (IdP) for  single sign-on.](/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp)  |  Not available.    |
-| **Self-service**         | [Self-service application assignment](/entra/identity/enterprise-apps/manage-self-service-access).  | Partially available.    |
-| **Group provisioning**         | [On-demand provisioning](/entra/identity/app-provisioning/provision-on-demand)  | [Cross-tenant synchronization](/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization) is not available.    |
+| **Self-service**         | Let users [self-discover apps](/entra/identity/enterprise-apps/manage-self-service-access).  | Partially available.    |
+| **Group provisioning**         | Provision a user or group [on-demand](/entra/identity/app-provisioning/provision-on-demand). | [Cross-tenant synchronization](/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization) is not available.    |
 | **Application proxy**         | [Microsoft Entra application proxy](/entra/identity/app-proxy/overview-what-is-app-proxy) provides secure remote access to on-premises web applications.  | Not available.    |
 
 ### Consent and permission features for enterprise applications 
