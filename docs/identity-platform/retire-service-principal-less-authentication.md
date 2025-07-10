@@ -23,7 +23,7 @@ Additionally, by enforcing the requirement that all applications must have a ser
 
 If applications you rely on are authenticating without a service principal in your tenant, you must act **before March 31, 2026** to avoid disruption.
 
-**For the most up-to-date information on the retirement, see [Service principal required for Microsoft Entra ID | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/service-principal-required-for-microsoft-entra-id/4405796).**
+**For the most up-to-date information on the retirement, see [Service principal required for Microsoft Entra ID | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/service-principal-required-for-microsoft-entra-id/4405796/).**
 
 ## Use sign-in logs to find applications authenticating without a service principal
 
