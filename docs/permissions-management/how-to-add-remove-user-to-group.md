@@ -2,7 +2,7 @@
 title: Add or remove a user in Microsoft Entra Permissions Management through the Microsoft Entra admin center
 description: How to add or remove a user in Microsoft Entra Permissions Management through the Microsoft Enter admin center.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

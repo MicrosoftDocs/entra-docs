@@ -28,7 +28,7 @@ For important details on what this service does, how it works, and frequently as
 > Cross-cloud synchronization is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-This article describes the steps to configure cross-tenant synchronization between Microsoft clouds. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. While this tutorial focuses on synchronizing identities from the commercial cloud --> US Government, the same steps apply for Government --> Commercial and China --> Commercial.
+This article describes the steps to configure cross-tenant synchronization between Microsoft clouds. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. While this tutorial focuses on synchronizing identities from the commercial cloud --> US Government, the same steps apply for Government --> Commercial and Commercial --> China.
 
 For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). For differences between cross-tenant synchronization and cross-cloud synchronization, see [Cross-cloud synchronization in Frequently asked questions](./cross-tenant-synchronization-overview.md#clouds).
 
@@ -78,12 +78,10 @@ By the end of this article, you'll be able to:
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
 ::: zone pivot="same-cloud-synchronization"
-- Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 ::: zone-end
 
 ::: zone pivot="cross-cloud-synchronization"
-- Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 ::: zone-end
 
@@ -109,7 +107,7 @@ By the end of this article, you'll be able to:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Microsoft cloud settings** tab, select the check box of the cloud you want to collaborate with, such as **Microsoft Azure Government**.
 
@@ -123,7 +121,7 @@ By the end of this article, you'll be able to:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the target tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Microsoft cloud settings** tab, select the cross-cloud synchronization check box for the source tenant, such as **Microsoft Azure Commercial**.
 

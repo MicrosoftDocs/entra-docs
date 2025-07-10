@@ -1,9 +1,9 @@
 ---
 title: "How to: Change the account types supported by an application"
 description: In this how-to, you configure an application registered with the Microsoft identity platform to change who, or what accounts, can access the application.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom: 
 ms.date: 09/15/2023
 ms.reviewer: sureshja

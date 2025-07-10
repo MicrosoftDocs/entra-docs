@@ -2,7 +2,7 @@
 title: What's new in Microsoft Entra Permissions Management
 description: View the latest public preview and general availability of features in Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: whats-new
