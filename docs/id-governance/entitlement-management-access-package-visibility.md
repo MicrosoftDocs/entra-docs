@@ -58,21 +58,11 @@ Effective October 10, 2025, the visibility on the [My Access portal](https://mya
 
 The visibility change will only impact how end-users can discover access packages via the "Available" tab, the "View all" option, or when using the search bar within these sections to find requestable access packages. The change won't impact the visibility logic for other tabs like "Suggested," "Active," or "Expired" (even when using search within those tabs), nor does it impact other My Access portal sections such as "Request history" or "Approvals."
 
-The following flow diagram illustrates the logic, effective October 10, 2025, used to determine if an access package appears in the browse/search view for a specific user:
-
-:::image type="content" source="media/entitlement-management-access-package-visibility/visibility-diagram-2-small.png" alt-text="Diagram of access package visibility flow after October 2025." lightbox="media/entitlement-management-access-package-visibility/visibility-diagram-2.png":::
-
-
 ### Next Steps
 
 We recommend you review the access packages currently configured with policies scoped to "Specific users and groups" in your tenant. If the access package name, description, or the name and description of the contained resource roles are sensitive information that you wouldn't want all members, excluding guests, to see, hide the access package by **October 10, 2025** to ensure the desired end-user experience on the My Access portal.
 
 To hide an access package, follow these steps: [Change the Hidden section](entitlement-management-access-package-edit.md#change-the-hidden-setting).
-
-To see all access packages that are scoped to specific users and groups in your tenant, see the following PowerShell script:
-
-<span class="mark">\[PowerShell script/ MS Graph call to see all access
-packages scoped to users and groups\]</span>
 
 ## Resource role visibility control
 
