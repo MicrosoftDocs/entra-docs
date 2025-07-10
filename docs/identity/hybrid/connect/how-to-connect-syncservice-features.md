@@ -158,6 +158,39 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SyncUpnManagedUsers `
 
 After enabling this feature, existing userPrincipalName values remain as-is. On next change of the userPrincipalName attribute on-premises, the normal delta sync on users updates the UPN. Once this feature is enabled, it's not possible to disable it.
 
+## Password Hash Sync
+
+This feature allows the sync engine to use password hash sync and is automatically enabled by the sync client.
+
+You can see if this feature is enabled for you by running:  
+
+```powershell
+# Connect Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
+
+# Get DirSync service features
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.PasswordSyncEnabled
+```
+
+
+If this feature is no longer needed, for instance after decommissioning synchronization from on-premises Active Directory, you can disable it by running: 
+
+```powershell
+# Connect Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+# Disable PassworHashSync
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.PasswordSyncEnabled = $false
+Update-MgDirectoryOnPremiseSynchronization -Features $DirectorySync.Features -OnPremisesDirectorySynchronizationId $DirectorySync.Id
+
+```
+
+## Password Writeback
+
+Used to indicate that writeback of password updates from Microsoft Entra ID to on-premises AD is enabled. This property is no longer in use and updating it isn't supported.
+
 ## See also
 
 * [Microsoft Entra Connect Sync](how-to-connect-sync-whatis.md)
