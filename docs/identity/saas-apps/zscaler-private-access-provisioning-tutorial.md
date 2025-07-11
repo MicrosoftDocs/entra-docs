@@ -144,8 +144,15 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "work"].value|String||  
    |name.givenName|String||
    |name.familyName|String||
-   |displayName|String||
+   |displayName|String||   
+   |userType|String||
+   |nickName|String||
+   |title|String||
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter|string||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|String||
+
+
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler Private Access (ZPA)**.
 
