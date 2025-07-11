@@ -65,7 +65,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |445         |UDP/TCP    |Replication, User and Computer Authentication, Group Policy  |
 |464         |UDP/TCP    |Password Change Request  |
 |636         |TCP        |LDAP SSL  |
-|1025-5000   |UDP/TCP    |Ephemeral ports, includes 3268-3269 TCP used for Global catalog from client to domain controller  |
+|1024-5000   |UDP/TCP    |Ephemeral ports, includes 3268-3269 TCP used for Global catalog from client to domain controller  |
 |49152-65535  |UDP/TCP    |Ephemeral ports  |
 
 
