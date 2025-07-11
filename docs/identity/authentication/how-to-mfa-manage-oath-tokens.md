@@ -68,7 +68,7 @@ This scenario covers how to create, assign, and activate a hardware OATH token a
 >[!NOTE]
 >There might be up to a 20-minute delay for the policy propagation. Allow an hour for the policy to update before users can sign in with their hardware OATH token and see it in their [Security info](https://mysignins.microsoft.com/security-info).
 
-Let's look at an example where an Authentication Policy Administrator creates a token and assigns it to a user. You can allow assignment without activation. 
+Let's look at an example where an Global Administrator creates a token and assigns it to a user. You can allow assignment without activation. 
 
 For the body of the POST in this example, you can find the **serialNumber** from your device and the **secretKey** is delivered to you.
 
@@ -127,7 +127,7 @@ GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardw
 
 
 
-This example creates a single token:
+This example Authentication Policy Administrator creates a single token:
 
 ```https
 POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
@@ -181,7 +181,7 @@ DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/ha
 
 ## Scenario: Admin creates and assigns a hardware OATH token that a user activates
 
-In this scenario, an Authentication Policy Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
+In this scenario, a Global Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
 
 ```https
@@ -196,7 +196,7 @@ POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hard
 }
 ```
 
-The response includes an **id** value for each token. An Authentication Administrator can assign the token to a user:
+An Authentication Administrator can assign the token to a user:
 
 ```https
 POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods
@@ -265,7 +265,7 @@ Here are steps users can follow to self-activate their hardware OATH token by us
 
 ## Scenario: Admin creates multiple hardware OATH tokens in bulk that users self-assign and activate
 
-In this scenario, an Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens. You can upload new tokens to the tenant in bulk. Users can sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
+In this scenario, an Authentication Policy Administrator creates tokens without assignment, and users self-assign and activate the tokens. You can upload new tokens to the tenant in bulk. Users can sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
 For greater assurance that the token is only activated by a specific user, you can assign the token to the user, and send the device to them for self-activation.
 
