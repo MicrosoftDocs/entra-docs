@@ -68,7 +68,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
-1. If you want to configure **SP** initiated SSO, then perform the following step:
+1. If you want to configure **IdP** initiated SSO, then perform the following step:
 
     In the **Relay State** textbox, type the URL:
     `https://auth.gln.com/Welcome`
