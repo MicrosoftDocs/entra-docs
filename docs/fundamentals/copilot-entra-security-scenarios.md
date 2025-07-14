@@ -32,6 +32,8 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - [Investigate alerts in Scenario Health Monitoring](#investigate-alerts-in-scenario-health-monitoring): Analyze scenario-specific metrics, detect anomalies, and raise alerts for proactive investigation.
 - [SLA in Scenario Health Monitoring](#sla-in-scenario-health-monitoring): Get look-back reporting on Service Level Agreements (SLA) for authentication availability in your Microsoft Entra tenant.
 - [MFA, Authentication methods](#mfa-authentication-methods): Use natural language to investigate multifactor authentication (MFA) and authentication methods in your Microsoft Entra tenant.
+- [Conditional Access](#conditional-access): Use natural language to understand and evaluate Conditional Access policies in your tenant.
+- [Privileged Identity Management (PIM)](#privileged-identity-management): Manage and monitor privileged access in your organization using natural language queries.
 - [Microsoft Entra domains](#microsoft-entra-domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
 - [Microsoft Entra tenants](#microsoft-entra-tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
 - [Microsoft Entra Role Based Access Control (RBAC)](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
@@ -191,6 +193,31 @@ The following example prompts can be used to investigate MFA and authentication 
 - *What authentication methods does karita@woodgrovebank.com have registered?*
 - *Is user karita@woodgrovebank.com enabled for per-user MFA?*
 - *How many users have the FIDO2 Security keys method registered?*
+
+### Conditional Access
+
+Microsoft Entra Conditional Access applies the capabilities of Microsoft Security Copilot to help admins easily understand and evaluate their Conditional Access policies.  By combining Conditional Access APIs with the power of generative AI, Security Copilot enables analysts to ask natural language questions, such as identifying what policies apply to users or what policies use certain controls, and receive clear insights in seconds. 
+
+- List active MFA Conditional Access policies in my tenant.
+- Which MFA policies are enforced in my tenant?
+- Which Conditional Access policies are enabled in my tenant?
+- Which CA policies should I enable?
+- Which CA policies are not enabled in my tenant?
+- List all inactive Conditional Access policies in my tenant.
+- List CA policies that are currently active in my tenant.
+- Which Conditional Access policies in my tenant exclude trusted locations?
+- Get all CA policies for user by group.
+
+### Privileged Identity Management (PIM)
+
+With Microsoft Security Copilot, you can easily manage and monitor privileged access in your organization using natural language queries. Security Copilot integrates with Microsoft Entra Privileged Identity Management (PIM) to provide instant insights into just-in-time role assignments, group memberships, and access to critical resources. By leveraging AI-powered analysis, Security Copilot helps you quickly identify who has eligible or active PIM assignments, track changes, and respond to potential risks—streamlining privileged access management and strengthening your security posture.
+
+Using this feature requires a at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), or [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) in Microsoft Entra ID. You will also need a [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements), and a tenant with PIM configured.
+
+- *Which PIM roles are currently assigned to the user karita@woodgrovebank.com?*
+- *Which PIM eligible roles are assigned to the user casey@woodgrovebank.com?*
+- *Who has PIM eligible assignment of Security Reader?*
+- *Who has PIM active assignment of Cloud Application Administrator?*
 
 ### Microsoft Entra domains
 
