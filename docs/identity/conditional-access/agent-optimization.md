@@ -4,7 +4,7 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 ms.reviewer: lhuangnorth
-ms.date: 07/09/2025
+ms.date: 07/13/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -14,14 +14,14 @@ ms.topic: how-to
 
 The Conditional Access optimization agent helps you ensure all users and applications are protected by Conditional Access policies. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
-In preview, the Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
+The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
 ## Prerequisites
 
 - You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
-- To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
+- To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
 - You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
 - [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
@@ -31,11 +31,11 @@ In preview, the Conditional Access optimization agent evaluates policies such as
 
 ### Limitations
 
-- During the preview, avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
+- Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - For policy consolidation, each agent run only looks at four similar policy pairs.
 - The agent currently runs as the user who enables it.
-- In preview, you should only run the agent from the Microsoft Entra admin center.
+- We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
 
@@ -58,7 +58,7 @@ If the agent identifies something that wasn't previously suggested, it takes the
 > [!TIP]
 > Two policies can be consolidated if they differ by no more than two conditions or controls.
 
-In preview, the policy suggestions identified by the agent include:
+The policy suggestions identified by the agent include:
 
 - **Require MFA**: The agent identifies users who aren't covered by a Conditional Access policy that requires MFA and can update the policy.
 - **Require device-based controls**: The agent can enforce device-based controls, such as device compliance, app protection policies, and domain-joined devices.
@@ -117,9 +117,9 @@ Use the checkboxes under **Objects** to specify what the agent should monitor wh
 
 The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*. Because of this requirement, you should avoid using an account that requires elevation like those that use PIM for just-in-time elevation. The audit logs for actions taken by the agent are associated with the user who enabled the agent.
 
-The Security Administrator and Global Administrator roles also have access to Security Copilot by default.
+The Security Administrator and Global Administrator roles have access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 
-You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+The user who approves a suggestion to add users to a policy becomes an owner of the group for adding users to a policy.
 
 ### Custom instructions
 

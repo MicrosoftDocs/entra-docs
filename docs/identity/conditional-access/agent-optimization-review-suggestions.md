@@ -4,7 +4,7 @@ description: Learn how  to review and apply suggestions provided by the Security
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
-ms.date: 07/09/2025
+ms.date: 07/13/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -29,11 +29,11 @@ This article provides an overview of the logic behind the suggestions and how to
 
 ### Limitations
 
-- During the preview, avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
+- Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - For policy consolidation, each agent run only looks at four similar policy pairs.
 - The agent currently runs as the user who enables it.
-- In preview, you should only run the agent from the Microsoft Entra admin center.
+- We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
 
