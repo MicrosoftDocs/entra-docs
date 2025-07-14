@@ -167,6 +167,9 @@ After one or more access reviews have been started, you may want to modify or up
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/current-v-series-setting.png" alt-text="Screenshot of the settings page under access reviews." lightbox="./media/pim-create-azure-ad-roles-and-resource-roles-review/current-v-series-setting.png":::
     
+> [!NOTE]
+> Creating Access Reviews for Azure resources using AOBO (Admin On Behalf Of) under the Azure Plan is not supported. If you're a CSP partner managing a customer's subscription via AOBO, you cannot create Access Reviews from your own (partner) tenant.<br>**Workaround**:<br> Have the CSP partner added as a **guest user** in the customer's tenant with the necessary permissions, and create the Access Review **from within the customer's tenant**.
+
 ## Next steps
 
 - [Perform an access review of Azure resource and Microsoft Entra roles in PIM](./pim-perform-roles-and-resource-roles-review.md)
