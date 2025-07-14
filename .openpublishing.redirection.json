@@ -576,6 +576,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/global-secure-access/concept-netskope-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-netskope-coexistence",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/global-secure-access/concept-palo-alto-coexistence.md",
       "redirect_url": "/entra/global-secure-access/how-to-palo-alto-coexistence",
       "redirect_document_id": false
@@ -2410,9 +2415,39 @@
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     },
-        {
+    {
       "source_path_from_root": "/docs/identity/saas-apps/kontiki-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-alerts.md",
+      "redirect_url": "/entra/permissions-management/how-to-create-alert-trigger",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-intro.md",
+      "redirect_url": "/entra/permissions-management/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-one.md",
+      "redirect_url": "/entra/permissions-management/onboard-enable-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-two.md",
+      "redirect_url": "/entra/permissions-management/define-permission-levels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/permissions-manage-ops-guide-three.md",
+      "redirect_url": "/entra/permissions-management/ui-triggers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/verified-id/linkedin-employment-verification.md",
+      "redirect_url": "/entra/verified-id/whats-new",
       "redirect_document_id": false
     }
   ]

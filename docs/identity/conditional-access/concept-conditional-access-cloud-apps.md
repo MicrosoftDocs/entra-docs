@@ -7,7 +7,7 @@ ms.subservice: conditional-access
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
 
-ms.date: 06/16/2024
+ms.date: 06/25/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -27,12 +27,7 @@ Target resources (formerly Cloud apps, actions, and authentication context) are 
 
 ## Microsoft cloud applications
 
-Many of the existing Microsoft cloud applications are included in the list of applications you can select from.
-
-Administrators can assign a Conditional Access policy to these Microsoft cloud applications. Some apps like [Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. 
-
-> [!IMPORTANT]
-> Applications that are available to Conditional Access go through an onboarding and validation process. These applications don't include all Microsoft apps. Many applications are backend services that aren't meant to have policy directly applied to them. If you're looking for an application that is missing, you can contact the specific application team or make a request on [UserVoice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
+Administrators can assign a Conditional Access policy to cloud apps from Microsoft as long as the service principal appears in their tenant, except for Microsoft Graph. Microsoft Graph functions as an umbrella resource. Use [Audience Reporting](troubleshoot-conditional-access.md#audience-reporting) to see the underlying services and target those services in your policies. Some apps like [Office 365](#office-365) and [Windows Azure Service Management API](#windows-azure-service-management-api) include multiple related child apps or services. When new Microsoft cloud applications are created, they appear in the app picker list as soon as the service principal is created in the tenant. 
 
 ### Office 365
 
@@ -60,6 +55,7 @@ Because the policy is applied to the Azure management portal and API, any servic
 
 - Azure CLI
 - Azure Data Factory portal
+- Azure DevOps
 - Azure Event Hubs
 - Azure PowerShell
 - Azure Service Bus
@@ -94,9 +90,6 @@ When a Conditional Access policy targets the Microsoft Admin Portals cloud app, 
 
 We're continually adding more administrative portals to the list.
 
-> [!NOTE]
-> The Microsoft Admin Portals app applies to interactive sign-ins to the listed admin portals only. Sign-ins to the underlying resources or services like Microsoft Graph or Azure Resource Manager APIs aren't covered by this application. Those resources are protected by the [Windows Azure Service Management API](#windows-azure-service-management-api) app. This grouping enables customers to move along the MFA adoption journey for admins without impacting automation that relies on APIs and PowerShell. When you're ready, Microsoft recommends using a [policy requiring administrators perform MFA always](policy-old-require-mfa-admin.md) for comprehensive protection.
-
 ### Other applications
 
 Administrators can add any Microsoft Entra registered application to Conditional Access policies. These applications might include:
@@ -110,7 +103,7 @@ Administrators can add any Microsoft Entra registered application to Conditional
 > [!NOTE]
 > Since Conditional Access policy sets the requirements for accessing a service, you aren't able to apply it to a client (public/native) application. In other words, the policy isn't set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications aren't available for selection in the app picker and Conditional Access option isn't available in the application settings for the client (public/native) application registered in your tenant.
 
-Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')**.
+Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')** or add the missing service principal using the [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal) PowerShell cmdlet or by using the [Microsoft Graph API](/graph/api/serviceprincipal-post-serviceprincipals).
 
 #### Understanding Conditional Access for different client types
 
@@ -130,7 +123,7 @@ To view [sign-in logs](/entra/identity/monitoring-health/concept-sign-ins) for t
 1. Add a filter for **Client credential type**.
 1. Adjust the filter to view a specific set of logs based on the client credential used in the sign-in.
 
-For more information see the article [Public client and confidential client applications](/entra/identity-platform/msal-client-applications).
+For more information, see the article [Public client and confidential client applications](/entra/identity-platform/msal-client-applications).
 
 <a name='all-cloud-apps'></a>
 
@@ -190,7 +183,7 @@ User actions are tasks that a user performs. Currently, Conditional Access suppo
 - **Register security information**: This user action allows Conditional Access policy to enforce when users who are enabled for combined registration attempt to register their security information. More information can be found in the article, [Combined security information registration](~/identity/authentication/concept-registration-mfa-sspr-combined.md).
 
 > [!NOTE]
-> When administrators apply a policy targeting user actions for register security information, if the user account is a guest from [Microsoft personal account (MSA)](~/external-id/microsoft-account.md), using the control 'Require multifactor authentication', will require the MSA user to register security information with the organization. If the guest user is from another provider such as [Google](~/external-id/google-federation.md), access is blocked.
+> When administrators apply a policy targeting user actions for register security information, if the user account is a guest from [Microsoft personal account (MSA)](~/external-id/microsoft-account.md), using the control 'Require multifactor authentication', requires the MSA user to register security information with the organization. If the guest user is from another provider such as [Google](~/external-id/google-federation.md), access is blocked.
 
 - **Register or join devices**: This user action enables administrators to enforce Conditional Access policy when users [register](~/identity/devices/concept-device-registration.md) or [join](~/identity/devices/concept-directory-join.md) devices to Microsoft Entra ID. It provides granularity in configuring multifactor authentication for registering or joining devices instead of a tenant-wide policy that currently exists. There are three key considerations with this user action:
    - `Require multifactor authentication` is the only access control available with this user action and all others are disabled. This restriction prevents conflicts with access controls that are either dependent on Microsoft Entra device registration or not applicable to Microsoft Entra device registration. 
@@ -216,7 +209,7 @@ Authentication contexts are managed under **Entra ID** > **Conditional Access** 
 Create new authentication context definitions by selecting **New authentication context**. Organizations are limited to a total of 99 authentication context definitions **c1-c99**. Configure the following attributes:
 
 - **Display name** is the name that is used to identify the authentication context in Microsoft Entra ID and across applications that consume authentication contexts. We recommend names that can be used across resources, like *trusted devices*, to reduce the number of authentication contexts needed. Having a reduced set limits the number of redirects and provides a better end to end-user experience.
-- **Description** provides more information about the policies, used by administrators and those applying authentication contexts to resources.
+- **Description** provides more information about the policies. This information is used by administrators and those applying authentication contexts to resources.
 - **Publish to apps** checkbox when checked, advertises the authentication context to apps and makes them available to be assigned. If not checked the authentication context is unavailable to downstream resources.
 - **ID** is read-only and used in tokens and apps for request-specific authentication context definitions. Listed here for troubleshooting and development use cases.
 

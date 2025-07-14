@@ -165,7 +165,8 @@ In the following diagram:
 The [OAuth 2.0 resource owner password credentials](v2-oauth-ropc.md) (ROPC) grant allows an application to sign in the user by directly handling their password. In your desktop application, you can use the username/password flow to acquire a token silently. No UI is required when using the application.
 
 > [!WARNING]
-> The resource owner password credentials (ROPC) flow is NOT recommended. ROPC requires a high degree of trust and credential exposure. *Resort to using ROPC only if a more secure flow can't be used.* For more information, see [What's the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
+> The ROPC flow has been deprecated, use a more secure flow. Follow [this guide](https://aka.ms/msal-ropc-migration) for migration guidance.
+> ROPC requires a high degree of trust and credential exposure.For more information, see [What's the solution to the growing problem of passwords?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/).
 
 In the following diagram, the application:
 

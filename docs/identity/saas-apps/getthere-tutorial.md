@@ -110,11 +110,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ## Configure GetThere SSO
 
-To configure single sign-on on **GetThere** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [GetThere support team](mailto:dataintegration@sabre.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **GetThere** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [GetThere support team](mailto:dataintegration@serko.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create GetThere test user
 
-In this section, you create a user called B.Simon in GetThere. Work with [GetThere support team](mailto:dataintegration@sabre.com) to add the users in the GetThere platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in GetThere. Work with [GetThere support team](mailto:dataintegration@serko.com) to add the users in the GetThere platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
