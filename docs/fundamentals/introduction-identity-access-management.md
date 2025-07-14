@@ -85,7 +85,7 @@ Created to simplify the process of managing user identities, SCIM provisioning a
 
 #### Web Services Federation (WS-Fed)
 
-WS-Fed was developed by Microsoft and used extensively in their applications, this standard defines the way security tokens can be transported between different entities to exchange identity and authorization information. To learn more, read Web Services Federation Protocol.
+WS-Fed was developed by Microsoft and used extensively in their applications, this standard defines the way security tokens can be transported between different entities to exchange identity and authorization information. To learn more, read [Web Services Federation Protocol](/openspecs/windows_protocols/ms-adfsod/204de335-ea34-4f9b-ae73-8b7d4c8152d1).
 
 ## Next steps
 
