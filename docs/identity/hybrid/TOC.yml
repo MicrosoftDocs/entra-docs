@@ -214,10 +214,6 @@
           href: source-of-authority/active-directory-group-cleanup.md
         - name: Set up self-service group management
           href: source-of-authority/how-to-source-of-authority-self-service-group-management.md
-      - name: Reference
-        items:
-        - name: Group type matching
-          href: source-of-authority/reference-group-types.md
     - name: Migration scenarios for cloud sync
       items:
         - name: Migrate to Microsoft Entra Cloud Sync from Connect sync
