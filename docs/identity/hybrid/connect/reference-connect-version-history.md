@@ -20,15 +20,9 @@ This article helps you keep track of the versions that have released and the cha
 
 ### Breaking Change on Entra Connect Sync
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > New Microsoft Entra Connect Sync Versions are only available via the Microsoft Entra admin center 
->
-> Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer be released to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=47594).
-
-
-
-> [!WARNING]
-> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) will impact the Microsoft Entra Connect Sync wizard in April 2025. You must upgrade your Connect Sync version **by 30 April 2025** to maintain Connect Sync wizard capabilities such as schema refresh, configuration of staging mode, and user-sign in changes. The minimum supported versions are [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or any newer version. No action is required if your Microsoft Entra Connect Sync server is within the recommended version range. [Learn More](harden-update-ad-fs-pingfederate.md)
+> > Following up on our earlier [What’s New](../../../fundamentals/whats-new.md#general-availability---download-microsoft-entra-connect-sync-on-the-microsoft-entra-admin-center) communication, new versions of Microsoft Entra Connect Sync are only available on the [Microsoft Entra Connect blade](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/%7E/GetStarted) within Microsoft Entra admin center and are no longer being released to the Microsoft Download Center.
 
 ## Looking for the latest versions?
 
@@ -60,8 +54,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 > 
 > For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version before the retirement of your current version.
 
-|Version|End of support date|
-|-----|-----|
+|Version |End of support date |
+|--------|--------------------|
 |[2.3.2.0](#2320)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.3.6.0](#2360)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.3.8.0](#2380)|30 Apr 2025 (To align with the security change released in version 2.4.18.0)|
@@ -70,7 +64,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
-|[2.4.131.0](#241310)|26 May 2026|(12 months after release of 2.5.3.0)|
+|[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)||
 
 **All other versions are not supported**
@@ -589,8 +583,6 @@ We fixed a bug that occurred when you synced a large number of Password Hash Syn
 > This release is a security update release of Microsoft Entra Connect. This release requires Windows Server 2016 or newer. If you're using an older version of Windows Server, use [version 1.6.11.3](#16113).
 
 This release addresses a vulnerability as documented in [this CVE](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-36949). For more information about this vulnerability, see the CVE.
-
-To download the latest version of Microsoft Entra Connect 2.0, see the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47594).
 
 ### Release status
 

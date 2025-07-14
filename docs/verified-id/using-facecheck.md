@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 
 Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services. Face Check protects user privacy by sharing only the match results and not any sensitive identity data, while allowing organizations to be sure the person claiming an identity is really them.
 
-:::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of using Face Check.":::
+:::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of Microsoft Authenticator Face Check verification flow showing verify, confirm, and review steps with facial recognition interface.":::
 
 ## Prerequisites
 
@@ -35,15 +35,15 @@ The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin 
 ### Setting up Face Check with Microsoft Entra Verified ID in the Admin Center
 1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on.
 
-:::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
+:::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of Microsoft Entra Verified ID overview page showing Face Check add-on in Add-ons section with Enable button.":::
 
 2. In the Link a subscription step, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 
-:::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
+:::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot of Face Check subscription linking dialog showing dropdown menus for Subscription, Resource group, and Resource location with Validate button.":::
 
 3. Once validated you can `Enable` the add-on.
 
-:::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot Face Check add-on enabled.":::
+:::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot of Face Check add-on configuration showing successful validation with Enable button to activate the service.":::
 
 Now you can start using Face Check in your enterprise applications.
 
@@ -56,13 +56,13 @@ To set up the Face Check Add-on on a given authority, you must have the [Azure P
 
 1. Run the following command in PowerShell
 ```http
-  az login --tenant  <tenant ID>
+az login --tenant  <tenant ID>
 ```
 1. Select the subscription that you want to enable Face Check billing on
 
 1. Run the following command
 ```http
-  az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
+az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
 ```
 - replace `<subscription-id>` with your subscription ID
 - replace `<resource-group-name>` with your resource group name
@@ -216,7 +216,7 @@ When the confidence score is lower than the threshold, the presentation request 
 
 The Authenticator displays an error message informing the user that the confidence score failed to meet the threshold.
 
-:::image type="content" source="media/using-facecheck/facecheck-low-score.png" alt-text="Screenshot of low confidence score in Face Check.":::
+:::image type="content" source="media/using-facecheck/facecheck-low-score.png" alt-text="Screenshot of Microsoft Authenticator error message showing Face Check failed due to low confidence score not meeting the required threshold.":::
 
 ## Frequently asked questions for Face Check with Microsoft Entra Verified ID
 

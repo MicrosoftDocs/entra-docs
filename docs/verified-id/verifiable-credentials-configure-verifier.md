@@ -60,7 +60,7 @@ git clone git@github.com:Azure-Samples/active-directory-verifiable-credentials-d
 
 Create a client secret for the registered application you created. The sample application uses the client secret to prove its identity when it requests tokens.
 
-1. In Microsoft Entra ID, go to **App registrations**.
+1. In **Microsoft Entra ID**, go to **App registrations**.
 
 1. Select the **verifiable-credentials-app** application you created earlier.
 

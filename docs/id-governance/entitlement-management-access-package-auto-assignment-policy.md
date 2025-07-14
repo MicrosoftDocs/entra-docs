@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 06/26/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package to include a policy for users to get and lose access package assignments automatically, without them or an administrator needing to request access.
@@ -48,7 +48,7 @@ To create a policy for an access package, you need to start from the access pack
 1. Provide a rule for dynamic membership groups using the [membership rule builder](../identity/users/groups-dynamic-membership.md) or by clicking **Edit** on the rule syntax text box.
 
    > [!NOTE]
-   > The rule builder might not be able to display some rules constructed in the text box, and validating a rule currently requires the you to be in the Groups Administrator role. For more information, see [rule builder in the Microsoft Entra admin center](../identity/users/groups-create-rule.md#rule-builder-in-the-azure-portal).
+   > The rule builder might not be able to display some rules constructed in the text box, and validating a rule currently requires that you to be in the Groups Administrator role. For more information, see [rule builder in the Microsoft Entra admin center](../identity/users/groups-create-rule.md#rule-builder-in-the-azure-portal).
 
     ![Screenshot of an access package automatic assignment policy rule configuration.](./media/entitlement-management-access-package-auto-assignment-policy/auto-assignment-rule-configuration.png)
 

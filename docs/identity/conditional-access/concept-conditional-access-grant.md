@@ -4,7 +4,7 @@ description: Grant controls in a Microsoft Entra Conditional Access policy.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/12/2024
+ms.date: 06/24/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
@@ -69,6 +69,8 @@ The **Require device to be marked as compliant** control:
 > On Windows, iOS, Android, macOS, and some third-party web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
 
 You can use the Microsoft Defender for Endpoint app with the approved client app policy in Intune to set the device compliance policy to Conditional Access policies. There's no exclusion required for the Microsoft Defender for Endpoint app while you're setting up Conditional Access. Although Microsoft Defender for Endpoint on Android and iOS (app ID dd47d17a-3194-4d86-bfd5-c6ae6f5651e3) isn't an approved app, it has permission to report device security posture. This permission enables the flow of compliance information to Conditional Access.
+
+Similarly, the **Require device to be marked as compliant** doesn't block Microsoft Authenticator app access to the UserAuthenticationMethod.Read scope. Authenticator needs access to the UserAuthenticationMethod.Read scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to UserAuthenticationMethod.ReadWrite to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
 
 <a name='require-hybrid-azure-ad-joined-device'></a>
 
@@ -175,6 +177,8 @@ The following client apps support this setting. This list isn't exhaustive and i
 - Notate for Intune
 - Provectus - Secure Contacts
 - Viva Engage (Android, iOS, and iPadOS)
+
+- Windows App (Android, iOS/iPadOS and Edge on Windows)
 
 > [!NOTE]
 > Kaizala, Skype for Business, and Visio don't support the **Require app protection policy** grant. If you require these apps to work, use the **Require approved apps** grant exclusively. Using the "or" clause between the two grants will not work for these three applications.

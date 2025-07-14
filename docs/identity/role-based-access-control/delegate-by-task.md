@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 06/12/2025
+ms.date: 06/20/2025
 ms.author: barclayn
 ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, I want to know which role has the least privilege for a given task to make my Microsoft Entra organization more secure.
@@ -361,18 +361,6 @@ Here are the least privileged roles you should use when performing tasks for [pa
 > | Configure password reset properties | [User Administrator](permissions-reference.md#user-administrator) | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |
 > | Configure registration | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | Read all configuration | [Security Administrator](permissions-reference.md#security-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-
-## Permissions management least privileged roles
-
-Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Permissions Management](../../permissions-management/overview.md).
-
-> [!div class="mx-tableFixed"]
-> | Task | Least privileged role | Additional roles |
-> | ---- | --------------------- | ---------------- |
-> | Tenant onboarding | [Permissions Management Administrator](permissions-reference.md#permissions-management-administrator) |  |
-> | Onboard cloud environments | [Permissions Management Administrator](permissions-reference.md#permissions-management-administrator) |  |
-> | Assign permissions in Microsoft Entra Permissions Management | [Permissions Management Administrator](permissions-reference.md#permissions-management-administrator) |  |
-> | Start trial and buy Microsoft Entra Permissions Management licenses | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
 ## Privileged Identity Management least privileged roles
 
