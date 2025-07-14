@@ -122,6 +122,10 @@ Manually or automatically applying results doesn't have an effect on a group tha
 > - User not found / other errors can also result in an apply result not being supported.
 > - Reviewing the members of mail enabled group: The group can't be managed in Microsoft Entra ID, so membership can't be changed.
 > - Reviewing an Application that uses group assignment won't remove the members of those groups, so they'll retain the existing access from the group relationship for the application assignment
+
+
+> [!NOTE]
+> Access review decisions do not change membership in dynamic groups. These groups are managed by rules-users remain members as long as they match the rule conditions.
  
 ## Actions taken on denied guest users in an access review
  
