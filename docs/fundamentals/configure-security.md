@@ -215,7 +215,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21793](../includes/secure-recommendations/21793.md)]
 
-### Guest self-service sign up via user flow is disabled
+### Guest self-service sign-up via user flow is disabled
 
 [!INCLUDE [21823](../includes/secure-recommendations/21823.md)]
 
