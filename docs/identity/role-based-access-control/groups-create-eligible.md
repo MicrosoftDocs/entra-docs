@@ -2,15 +2,15 @@
 title: Create a role-assignable group in Microsoft Entra ID
 description: Learn how to a role-assignable group in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 01/03/2025
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref
 
 
 ---
@@ -37,7 +37,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 
 1. Select **New group**.
 

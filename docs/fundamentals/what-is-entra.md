@@ -1,13 +1,13 @@
 ---
 title: What is Microsoft Entra?
 description: Introduction to the Microsoft Entra product family including links to get started.
-author: jason-nydegger
-manager: CelesteDG
+author: barclayn
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 07/10/2024
-ms.author: janydegger
+ms.date: 06/20/2025
+ms.author: barclayn
 
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
 ---
@@ -77,12 +77,6 @@ In addition to identities that are used for authentication, there are decentrali
 **For example**, organizations can set up self-service registration for customers to sign-in to a web application using methods such as one-time passcodes, or social accounts from Google or Facebook.
 
 ### Secure access in any cloud
-
-#### Microsoft Entra Permissions Management
-
-[Microsoft Entra Permissions Management](~/permissions-management/overview.md) provides comprehensive visibility into permissions assigned to all identities managed by Microsoft Entra ID and other identity providers. It enables organizations to detect, automatically right-size, and continuously monitor unused and excessive permissions across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
-
-**For example**, administrators can see the users that have high-risk permissions but aren't using them, and automatically remove those unused permissions across authorization systems.
 
 #### Microsoft Entra Workload ID
 

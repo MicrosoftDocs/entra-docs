@@ -1,16 +1,15 @@
 ---
 title: Use My Staff to delegate user management
-description:  Delegate user management using My Staff and administrative units
-
-author: rolyon
-manager: amycolannino
+description: Delegate user management using My Staff and administrative units
+author: barclayn
+manager: pmwongera
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.date: 05/18/2021
-ms.author: rolyon
-ms.reviewer: sahenry
-ms.custom: oldportal;it-pro;
+ms.date: 02/12/2025
+ms.author: barclayn
+ms.reviewer: lenalepa
+ms.custom: oldportal;it-pro;, sfi-image-nochange
 ---
 # Manage your users with My Staff
 
@@ -46,7 +45,7 @@ After configuring administrative units, you can apply this scope to your users w
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Users** > **User settings**.
+1. Browse to **Entra ID** > **Users** > **User settings**.
 
 1. Under **User feature**, select **Manage user feature settings**.
 
@@ -67,7 +66,7 @@ You'll see the service principal when you create a Conditional Access policy tha
 
 ## Using My Staff
 
-When a user selects My Staff, they are shown the names of the [administrative units](administrative-units.md) over which they have administrative permissions. In the [My Staff user documentation](https://support.microsoft.com/account-billing/manage-front-line-users-with-my-staff-c65b9673-7e1c-4ad6-812b-1a31ce4460bd), we use the term "location" to refer to administrative units. If an administrator's permissions donn't have an administrative unit scope, then the permissions apply across the organization. 
+When a user selects My Staff, they are shown the names of the [administrative units](administrative-units.md) over which they have administrative permissions. In the [My Staff user documentation](https://support.microsoft.com/account-billing/manage-front-line-users-with-my-staff-c65b9673-7e1c-4ad6-812b-1a31ce4460bd), we use the term "location" to refer to administrative units. If an administrator's permissions don't have an administrative unit scope, then the permissions apply across the organization. 
 
 After My Staff has been enabled, the users who are enabled and have been assigned an administrative role can access it through [https://mystaff.microsoft.com](https://mystaff.microsoft.com). They can select an administrative unit to view the users in that unit, and select a user to open their profile.
 
@@ -93,11 +92,11 @@ The following roles have permission to reset a user's password:
 From **My Staff**, open a user's profile. Select **Reset password**.
 
 * If the user is cloud-only, you can see a temporary password that you can give to the user.
-* If the user is synced from on-premises Active Directory, you can enter a password that meets your on-premises AD policies. You can then give that password to the user.
+* If the user is synced from on-premises Active Directory, you can enter a password that meets your on-premises domain policies. You can then give that password to the user.
 
     ![Password reset progress indicator and success notification](./media/my-staff-configure/reset-password.png)
 
-The user is required to change their password the next time they sign in.
+The user needs to change their password the next time they sign in.
 
 ## Manage a phone number
 
@@ -113,6 +112,22 @@ To manage a user's phone number, you must be assigned one of the following roles
 
 * [Authentication Administrator](permissions-reference.md#authentication-administrator)
 * [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)
+
+## Manage QR code authentication
+
+You can use **My Staff** to manage the QR code authentication method for users.
+
+### Add QR code authentication method for a user in My Staff
+
+[!Include [Add QR code](../../includes/add-qr-code-my-staff.md)]
+
+### Edit the QR code authentication method for a user in My Staff
+
+[!Include [Edit QR code](../../includes/edit-qr-code-my-staff.md)]
+
+### Delete the QR code authentication method for a user in My Staff
+
+[!Include [Delete QR authentication method](../../includes/delete-qr-code-authentication-method-my-staff.md)]
 
 ## Search
 

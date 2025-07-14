@@ -1,31 +1,27 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SharePoint on-premises'
+title: Configure SharePoint on-premises for Single sign-on with Microsoft Entra ID
 description: Learn how to implement federated authentication between Microsoft Entra ID and SharePoint on-premises.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.custom:
- - has-azure-ad-ps-ref
- - azure-ad-ref-level-one-done
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: gideonkiratu
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SharePoint on-premises so that I can control who has access to SharePoint on-premises, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Implement federated authentication between Microsoft Entra ID and SharePoint on-premises
+# Configure SharePoint on-premises for Single sign-on with Microsoft Entra ID
 
 ## Scenario description
 
-In this tutorial, you configure a federated authentication between Microsoft Entra ID and SharePoint on-premises. The goal is to allow users to sign in on Microsoft Entra ID and use their identity to access the SharePoint on-premises sites.
+In this article,  you configure a federated authentication between Microsoft Entra ID and SharePoint on-premises. The goal is to allow users to sign in on Microsoft Entra ID and use their identity to access the SharePoint on-premises sites.
 
 ## Prerequisites
 
 To perform the configuration, you need the following resources:
-* A Microsoft Entra tenant. If you don't have one, you can create a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]. If you don't have one, you can create a [free account](https://azure.microsoft.com/free/).
 * A SharePoint 2013 farm or newer.
 
 This article uses the following values:
@@ -46,14 +42,14 @@ To configure the federation in Microsoft Entra ID, you need to create a dedicate
 ### Create the enterprise application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, enter **SharePoint on-premises**. Select **SharePoint on-premises** from the result pane.
-1. Specify a name for your application (in this tutorial, it is `SharePoint corporate farm`), and click **Create** to add the application.
-1. In the new enterprise application, select **Properties**, and check the value for **User assignment required?**. For this scenario, set its value to **No** and click **Save**.
+1. Specify a name for your application (in this article,  it's `SharePoint corporate farm`), and select **Create** to add the application.
+1. In the new enterprise application, select **Properties**, and check the value for **User assignment required?**. For this scenario, set its value to **No** and select **Save**.
 
 ### Configure the enterprise application
 
-In this section, you configure the SAML authentication and define the claims that will be sent to SharePoint upon successful authentication.
+In this section, you configure the SAML authentication and define the claims that's sent to SharePoint upon successful authentication.
 
 1. In the Overview of the Enterprise application `SharePoint corporate farm`, select **2. Set up single sign-on** and choose the **SAML** in the next dialog.
  
@@ -81,7 +77,7 @@ In this section, you configure the SAML authentication and define the claims tha
 
     ![Basic SAML settings](./media/sharepoint-on-premises-tutorial/azure-entra-app-saml-ids.png)
 
-1. Copy the information that you'll need later in SharePoint:
+1. Copy the information that you need later in SharePoint:
 
 	- In the **SAML Signing Certificate** section, **Download** the **Certificate (Base64)**. This is the public key of the signing certificate used by Microsoft Entra ID to sign the SAML token. SharePoint will need it to verify the integrity of the incoming SAML tokens.
 
@@ -200,14 +196,14 @@ The basic configuration of the trust between SharePoint and Microsoft Entra ID i
 
 ## Sign in as a member user
 
-Microsoft Entra ID has [two type of users](~/external-id/user-properties.md): Guest users and Member users. Let's start with a member user, which is merely a user that is homed in your organization.
+Microsoft Entra ID has [two type of users](~/external-id/user-properties.md): Guest users and Member users. Let's start with a member user, which is merely a user that's homed in your organization.
 
 <a name='create-a-member-user-in-azure-active-directory'></a>
 
 ### Create a member user in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -221,15 +217,15 @@ Microsoft Entra ID has [two type of users](~/external-id/user-properties.md): Gu
 
 ### Grant permissions to the Microsoft Entra user in SharePoint
 
-Sign in to the SharePoint root site collection as your Windows account (site collection administrator) and click **Share**.  
+Sign in to the SharePoint root site collection as your Windows account (site collection administrator) and select **Share**.  
 In the dialog, you need to type the exact value of the userprincipalname, for example `AzureUser1@demo1984.onmicrosoft.com`, and be careful to select the **name** claim result (move your mouse on a result to see its claim type)
 
 > [!IMPORTANT]
-> Be careful to type the exact value of the user you want to invite, and choose the appropriate claim type in the list, otherwise the sharing will not work.
+> Be careful to type the exact value of the user you want to invite, and choose the appropriate claim type in the list, otherwise the sharing doesn't work.
 
 ![Screenshot of people picker results without EntraCP.](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-no-entracp.png)
 
-This limitation is because SharePoint does not validate the input from the people picker, which can be confusing and lead to misspellings or users accidentally choosing the wrong claim type.  
+This limitation is because SharePoint doesn't validate the input from the people picker, which can be confusing and lead to misspellings or users accidentally choosing the wrong claim type.  
 To fix this scenario, an open-source solution called [EntraCP](https://entracp.yvand.net/) can be used to connect SharePoint 2019 / 2016 / 2013 with Microsoft Entra ID and resolve the input against your Microsoft Entra tenant. For more information, see [EntraCP](https://entracp.yvand.net/).
 
 Below is the same search with EntraCP configured: SharePoint returns actual users based on the input:
@@ -250,7 +246,7 @@ Microsoft Entra user `AzureUser1@demo1984.onmicrosoft.com` can now use his/her i
 1. In the **User Attributes & Claims** section, follow these steps if there is no group claim present:
 
     1. Select **Add a group claim**, select **Security groups**, make sure that **Source Attribute** is set to **Group ID**
-    1. Check **Customize the name of the group claim**, then check **Emit groups as role claims** and click **Save**.
+    1. Check **Customize the name of the group claim**, then check **Emit groups as role claims** and select **Save**.
     1. The **User Attributes & Claims** should look like this:
 
     ![Claims for users and group](./media/sharepoint-on-premises-tutorial/azure-entra-claims-with-group.png)
@@ -261,18 +257,18 @@ Microsoft Entra user `AzureUser1@demo1984.onmicrosoft.com` can now use his/her i
 
 Let's create a security group.
 
-1. Browse to **Identity** > **Groups**.
+1. Browse to **Entra ID** > **Groups**.
 
 1. Select **New group**.
 
-1. Fill in the **Group type** (Security), **Group name** (for example, `AzureGroup1`), and **Membership type**. Add the user you created above as a member and click select **Create**:
+1. Fill in the **Group type** (Security), **Group name** (for example, `AzureGroup1`), and **Membership type**. Add the user you created above as a member and select select **Create**:
 
     ![Create a Microsoft Entra security group](./media/sharepoint-on-premises-tutorial/azure-entra-new-group.png)
   
 ### Grant permissions to the security group in SharePoint
 
 Microsoft Entra security groups are identified with their attribute `Id`, which is a GUID (for example, `00aa00aa-bb11-cc22-dd33-44ee44ee44ee`).  
-Without a custom claims provider, users need to type the exact value (`Id`) of the group in the people picker, and select the corresponding claim type. This is not user-friendly nor reliable.  
+Without a custom claims provider, users need to type the exact value (`Id`) of the group in the people picker, and select the corresponding claim type. This isn't user-friendly nor reliable.  
 To avoid this, this article uses third-party claims provider [EntraCP](https://entracp.yvand.net/) to find the group in a friendly way in SharePoint:
 
 ![People picker search Microsoft Entra group](./media/sharepoint-on-premises-tutorial/sp-people-picker-search-azure-entra-group.png)
@@ -302,9 +298,9 @@ As a conclusion, to ensure that guest accounts are all identified with the same 
 
 1. In the **User Attributes & Claims** section, follow these steps:
 
-    1. Select **Unique User Identifier (Name ID)**, change its **Source Attribute** property to **user.localuserprincipalname**, and click **Save**.
+    1. Select **Unique User Identifier (Name ID)**, change its **Source Attribute** property to **user.localuserprincipalname**, and select **Save**.
     
-    1. Select `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`, change its **Source Attribute** property to **user.localuserprincipalname**, and click **Save**.
+    1. Select `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`, change its **Source Attribute** property to **user.localuserprincipalname**, and select **Save**.
     
     1. The **User Attributes & Claims** should look like this:
     
@@ -321,7 +317,7 @@ Now, the configuration of EntraCP needs to be updated to reflect that change and
 1. Open the **SharePoint Central Administration** site.
 1. Under **Security**, select **EntraCP global configuration**.
 1. In the section **User identifier property**: Set the **User identifier for 'Guest' users:** to **UserPrincipalName**.
-1. Click Ok
+1. Select Ok
 
 You can now invite any guest user in the SharePoint sites.
 
@@ -342,18 +338,18 @@ $t.Update()
 ### Add the URLs in the enterprise application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > Select the previously created enterprise application, and select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > Select the previously created enterprise application, and select **Single sign-on**.
 
 1. On the **Set up Single Sign-On with SAML** page, edit **Basic SAML Configuration**.
 
-1. In the section **Reply URL (Assertion Consumer Service URL)**, add the URL (for example, `https://otherwebapp.contoso.local/`) of all additional web applications that need to sign in users with Microsoft Entra ID and click **Save**.
+1. In the section **Reply URL (Assertion Consumer Service URL)**, add the URL (for example, `https://otherwebapp.contoso.local/`) of all additional web applications that need to sign in users with Microsoft Entra ID and select **Save**.
 
 ![Specify additional web applications](./media/sharepoint-on-premises-tutorial/azure-entra-app-reply-urls.png)
 
 ## Configure the lifetime of the security token
 
-By default, Microsoft Entra ID creates a SAML token that is valid for 1 hour, that cannot be customized in the Azure portal or using a Conditional Access policy.  
-However, it is possible to create a [custom token lifetime policy](~/identity-platform/configurable-token-lifetimes.md), and assign it to the enterprise application you created for SharePoint Server.  
+By default, Microsoft Entra ID creates a SAML token that's valid for 1 hour, that can't be customized in the Azure portal or using a Conditional Access policy.  
+However, it's possible to create a [custom token lifetime policy](~/identity-platform/configurable-token-lifetimes.md), and assign it to the enterprise application you created for SharePoint Server.  
 You can run the script below to achieve this:
 
 ```powershell

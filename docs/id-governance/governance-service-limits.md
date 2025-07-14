@@ -3,7 +3,7 @@ title: Microsoft Entra ID Governance service limits
 description: This article details service limits for offerings within Microsoft Entra ID Governance
 author: owinfreyATL
 ms.author: owinfrey
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: concept-article
 ms.date: 12/10/2024
@@ -32,6 +32,8 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 |Connected Organizations     |  2,500 per tenant       |
 |Custom extensions     |  500 per tenant       |
 |Policies - An access package assignment policy specifies the policy by which users can request or be assigned an access package    |  25,000 per tenant       |
+|Connected Organizations referenced in a single policy as part of the 'Users who can request access' definition    |  1,000 per policy       |
+|Combined number of users and groups explicitly referenced in a single policy as part of the 'Users who can request access' definition.     |  500 per policy       |
 |Requests (within 3 months)  - An access package assignment request is created by or on behalf of a user who wants to obtain, update or remove an access package assignment. This includes requests which are created by the system for automatic assignment policies   |  200,000 per tenant       |
 
 ## Lifecycle Workflows

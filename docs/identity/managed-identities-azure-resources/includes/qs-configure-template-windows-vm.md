@@ -1,6 +1,6 @@
 ---
-author: rwike77
-ms.author: ryanwi
+author: SHERMANOUKO
+ms.author: shermanouko
 ms.date: 04/24/2024
 ms.topic: include
 ms.custom:
@@ -212,7 +212,7 @@ To remove a user-assigned identity from a VM, your account needs the [Virtual Ma
 
    **Microsoft.Compute/virtualMachines API version 2018-06-01**
 
-   To remove a single user-assigned managed identity from a VM, remove it from the `useraAssignedIdentities` dictionary.
+   To remove a single user-assigned managed identity from a VM, remove it from the `userAssignedIdentities` dictionary.
 
    If you have a system-assigned managed identity, keep it in the `type` value under the `identity` value.
 

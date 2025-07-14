@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 09/06/2022
 ms.author: jricketts
-ms.reviewer: ajburnle
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Entra security operations for Privileged Identity Management

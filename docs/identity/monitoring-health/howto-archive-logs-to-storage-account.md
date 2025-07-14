@@ -2,7 +2,7 @@
 title: How to archive activity logs to a storage account
 description: Learn how to archive Microsoft Entra activity logs to a storage account through Diagnostic settings.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

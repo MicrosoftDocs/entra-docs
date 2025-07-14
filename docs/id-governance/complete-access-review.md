@@ -2,14 +2,15 @@
 title: Complete an access review of groups & applications
 description: Learn how to complete an access review of group members or application access in Microsoft Entra access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
  
 # Complete an access review of groups and applications in access reviews
@@ -21,7 +22,7 @@ As an administrator, you [create an access review of groups or applications](cre
 ## Prerequisites
  
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global Administrator, User Administrator, or Identity Governance Administrator to manage access of reviews on groups and applications. Users who have the Global Administrator role or the Privileged Role Administrator role can manage reviews of role-assignable groups, see: [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md)
+- At least the role of User Administrator or Identity Governance Administrator to manage access of reviews on groups and applications. Users who have at least the Privileged Role Administrator role can manage reviews of role-assignable groups, see: [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md)
 - Security readers have read access.
  
 For more information, see: [License requirements](access-reviews-overview.md#license-requirements).
@@ -34,7 +35,7 @@ Do the following steps to track the progress of access reviews as they're comple
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews**.
+1. Browse to **ID Governance** > **Access Reviews**.
  
 1. In the list, select an access review.
  
@@ -44,7 +45,7 @@ Do the following steps to track the progress of access reviews as they're comple
  
     All blades under **Current** are only viewable during the duration of each review instance. 
     > [!NOTE]
-    > While the **Current** access review only shows information about the active review instance, you can get information about reviews yet to take place in the **Series** under the **Scheduled review** section.
+    > While the **Current** access review only shows information about the active review instance, you can get information about reviews yet to take place in the **Series** under the **View status of multi-stage review (preview)** section.
  
     The Results page provides more information on each user under review in the instance, including the ability to Stop, Reset, and Download results.
  
@@ -61,7 +62,9 @@ Do the following steps to track the progress of access reviews as they're comple
 1. If you want to stop an access review before it reaches the scheduled end date, select the **Stop** button.
  
     When you stop a review, reviewers will no longer be able to give responses. You can't restart a review after it's stopped.
- 
+    > [!NOTE]
+    > The Stop option is only available for a specific review instance, not for the entire recurring review series.
+    To stop a recurring review series, you can edit the series and update the **End** option to the desired date when you want the series to stop. This change prevents any future review instances from being created beyond the updated end date.
 1. If you're no longer interested in the access review, you can delete it by clicking the **Delete** button.
  
 ### View status of multi-stage review (preview)
@@ -114,11 +117,11 @@ Manually or automatically applying results doesn't have an effect on a group tha
 
 > [!NOTE]
 > Some denied users are unable to have results applied to them. Scenarios where this could happen include:
-> - Reviewing members of a synced on-premises Windows Server AD group: If the group is synced from on-premises Windows Server AD, the group cannot be managed in Microsoft Entra ID and therefore membership cannot be changed.
-> - Reviewing a resource (role, group, application) with nested groups assigned: For users who have membership through a nested group, we will not remove their membership to the nested group and therefore they will retain access to the resource being reviewed.
+> - Reviewing members of a synced on-premises Windows Server AD group: If the group is synced from on-premises Windows Server AD, the group can't be managed in Microsoft Entra ID and therefore membership can't be changed.
+> - Reviewing a resource (role, group, application) with nested groups assigned: For users who have membership through a nested group, we won't remove their membership to the nested group and therefore they'll retain access to the resource being reviewed.
 > - User not found / other errors can also result in an apply result not being supported.
-> - Reviewing the members of mail enabled group: The group cannot be managed in Microsoft Entra ID, so membership cannot be changed.
-> - Reviewing an Application that uses group assignment will not remove the members of those groups, so they will retain the existing access from the group relationship for the application assignment
+> - Reviewing the members of mail enabled group: The group can't be managed in Microsoft Entra ID, so membership can't be changed.
+> - Reviewing an Application that uses group assignment won't remove the members of those groups, so they'll retain the existing access from the group relationship for the application assignment
  
 ## Actions taken on denied guest users in an access review
  

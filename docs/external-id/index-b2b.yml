@@ -1,17 +1,17 @@
 ### YamlMime:Landing
 
 title: External ID for business guests documentation
-summary: External ID is a set of capabilities that enables organizations to secure and manage any external user, including customers and partners. Building on B2B collaboration, External ID gives you more ways to interact and connect with users outside your organization.
+summary: Microsoft Entra External ID is a solution for managing your external identities scenarios, including guest user access (B2B collaboration) and customer identity and access management (CIAM) for apps. Learn how to use B2B collaboration capabilities to secure and manage workforce collaboration with business guests and partners.
 
 metadata:
   title: External ID for business guests documentation
-  description: External ID is a set of capabilities that enables organizations to secure and manage any external user, including customers and partners. Building on B2B collaboration, External ID gives you more ways to interact and connect with users outside your organization.
+  description: Microsoft Entra External ID enables secure and efficient workforce collaboration with business guests and partners.
   ms.service: entra-external-id   
   ms.topic: landing-page
-  ms.date: 01/18/2024
-  author: msmimart
-  ms.author: mimart
-  manager: celested
+  ms.date: 04/15/2025
+  ms.author: cmulligan
+  author: csmulligan
+  manager: dougeby
 
 landingContent:
   - title: About External ID
@@ -24,8 +24,6 @@ landingContent:
             url: what-is-b2b.md
           - text: What is Microsoft Entra B2B direct connect?
             url: b2b-direct-connect-overview.md
-          - text: What is Azure AD B2C (business-to-consumer) identity?
-            url: /azure/active-directory-b2c/overview
   - title: Collaborate with users outside your org (B2B)
     linkLists:
       - linkListType: concept
@@ -48,26 +46,6 @@ landingContent:
             url: one-time-passcode.md
           - text: Add and invite guest users
             url: add-users-administrator.yml
-  - title: Scale apps to consumers and customers (Azure AD B2C)
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: About Azure AD B2C
-            url: /azure/active-directory-b2c/overview
-          - text: Technical and feature overview
-            url: /azure/active-directory-b2c/technical-overview
-          - text: See all Azure AD B2C documentation
-            url: /azure/active-directory-b2c/
-      - linkListType: concept
-        links:
-          - text: Azure AD B2C user flows
-            url: /azure/active-directory-b2c/user-flow-overview
-          - text: Azure AD B2C custom policies
-            url: /azure/active-directory-b2c/custom-policy-overview
-      - linkListType: tutorial
-        links:
-          - text: Create user flows in Azure AD B2C
-            url: /azure/active-directory-b2c/tutorial-create-user-flows
   - title: Self-service sign-up flows for B2B guest users
     linkLists:
       - linkListType: overview

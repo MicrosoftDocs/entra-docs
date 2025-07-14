@@ -1,16 +1,16 @@
 ---
 title: Unexpected error when performing consent to an application
-description: Discusses errors that can occur during the process of consenting to an application and what you can do about them
+description: This article discusses errors that can occur during the process of consenting to an application and what you can do about them.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: troubleshooting
-ms.date: 09/06/2022
+ms.date: 02/27/2025
 ms.author: jomondi
-ms.reviewer: phsignor, yuhko
+ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
 ms.custom: enterprise-apps
 

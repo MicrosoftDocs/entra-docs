@@ -4,10 +4,11 @@ description: In this tutorial, you learn how to enable Microsoft Entra self-serv
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/16/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and use self-service password reset so that my end-users can unlock their accounts or reset their passwords through a web browser.
 ---
 
@@ -44,7 +45,7 @@ To finish this tutorial, you need the following resources and privileges:
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
     * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 * A group that the non-administrator user is a member of, likes *SSPR-Test-Group*. You'll enable SSPR for this group in this tutorial.
-    * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
+    * If you need to create a group, see [Create a basic group and add members using Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
 ## Enable self-service password reset
 
@@ -57,7 +58,7 @@ Microsoft Entra ID lets you enable SSPR for *None*, *Selected*, or *All* users. 
 In this tutorial, set up SSPR for a set of users in a test group. Use the *SSPR-Test-Group* and provide your own Microsoft Entra group as needed:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Password reset** from the menu on the left side.
+1. Browse to **Entra ID** > **Password reset**.
 1. From the **Properties** page, under the option *Self service password reset enabled*, choose **Selected**.
 1. If your group isn't visible, choose **No groups selected**, browse for and select your Microsoft Entra group, like *SSPR-Test-Group*, and then choose *Select*.
 
@@ -96,7 +97,7 @@ An administrator can manually provide this contact information, or users can go 
 1. To apply the registration settings, select **Save**.
 
 > [!NOTE]
-> The interruption to request to register contact information during signing in only occurs if the conditions configured on the settings are met. This only applies to users and admin accounts that are enabled to reset passwords using Microsoft Entra self-service password reset. 
+> The interruption to register contact information during signing in only occurs if the conditions configured on the settings are met. This only applies to users and admin accounts that are enabled to reset passwords using Microsoft Entra self-service password reset. 
 
 ## Set up notifications and customizations
 
@@ -109,7 +110,7 @@ To keep users informed about account activity, you can set up Microsoft Entra ID
 
 1. To apply the notification preferences, select **Save**.
 
-If users need more help with the SSPR process, you can customize the "Contact your administrator" link. The user can select this link in the SSPR registration process and when they unlock their account or resets their password. To make sure your users get the support needed, we recommend you provide a custom helpdesk email or URL.
+If users need more help with the SSPR process, you can customize the **"Contact your administrator"** link. The user can select this link in the SSPR registration process and when they unlock their account or resets their password. To make sure your users get the support needed, we recommend you provide a custom helpdesk email or URL.
 
 1. From the menu on the left side of the **Customization** page, set **Customize helpdesk link** to *Yes*.
 1. In the **Custom helpdesk email or URL** field, provide an email address or web page URL where your users can get more help from your organization, like *https:\//support.contoso.com/*
@@ -139,7 +140,7 @@ In a later tutorial in this series, you set up password writeback. This feature 
 If you no longer want to use the SSPR functionality you set up as part of this tutorial, set the SSPR status to **None** using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Password reset**.
+1. Browse to **Entra ID** > **Password reset**.
 1. From the **Properties** page, under the option *Self service password reset enabled*, select **None**.
 1. To apply the SSPR change, select **Save**.
 

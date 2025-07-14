@@ -2,11 +2,10 @@
 title: Issuer service communication examples - Microsoft Entra Verified ID
 description: Details of communication between identity provider and issuer service
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: conceptual
-ms.date: 12/16/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 # Customer intent: As a developer I am looking for information on how to enable my users to control their own information
 ---
@@ -32,7 +31,7 @@ Examples of the HTTP request sent to your identity provider are included below. 
 
 ## Client registration
 
-To receive a verifiable credential, your users need to sign into your IDP from the Microsoft Authenticator app. 
+To receive a verifiable credential, your users need to sign into your IDP from the **Microsoft Authenticator** app.
 
 To enable this exchange, register an application with your identity provider. If you are using Microsoft Entra ID, you can find the instructions [here](~/identity-platform/quickstart-register-app.md). Use the following values when registering.
 
@@ -102,7 +101,7 @@ client_id=<client-id>&redirect_uri=vcclient%3A%2F%2Fopenid%2F&grant_type=authori
 
 When your identity provider receives the token request, it responds with an ID token.
 
-```HTTP
+```json
 HTTP/1.1 200 OK
 Content-Type: application/json
 Cache-Control: no-store

@@ -1,12 +1,11 @@
 ---
 title: Introduction to Microsoft Entra Verified ID
 description: An overview Microsoft Entra Verified ID.
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: overview
-ms.date: 01/17/2025
+ms.date: 06/25/2025
 ms.author: barclayn
 ms.reviewer: 
 ---
@@ -15,7 +14,7 @@ ms.reviewer:
 
 In today's world, our digital and physical lives are becoming increasingly intertwined with the apps, services, and devices we use. This digital revolution opened a world of possibilities, allowing us to connect with countless companies and individuals in ways that were once unimaginable. 
 
-This increased connectivity introduces a greater risk of identity theft and data breaches. These breaches can be devastating to our personal and professional lives. Microsoft actively collaborates with various organizations and standards bodies to create a Decentralized Identity solution that puts individuals in control of their own digital identities. Decentralized identy technologies provide a secure and private way to manage identity data without relying on centralized authorities or intermediaries.
+This increased connectivity introduces a greater risk of identity theft and data breaches. These breaches can be devastating to our personal and professional lives. Microsoft actively collaborates with various organizations and standards bodies to create a Decentralized Identity solution that puts individuals in control of their own digital identities. Decentralized identity technologies provide a secure and private way to manage identity data without relying on centralized authorities or intermediaries.
 
 ## Why we need decentralized identity
 
@@ -64,10 +63,10 @@ To deliver on these promises, we need a technical foundation made up of seven ke
 IDs users create, own, and control independently of any organization or government. DIDs are globally unique identifiers linked to Decentralized Public Key Infrastructure (DPKI) metadata composed of JSON documents that contain public key material, authentication descriptors, and service endpoints.
 
 **2. Trust System**.
-In order to be able to resolve DID documents, DIDs are typically recorded on an underlying network of some kind that represents a trust system. Microsoft currently supports DID:Web trust system. DID:Web is a permission based model that allows trust using a web domain’s existing reputation. DID:Web is in support status General Available.
+In order to be able to resolve DID documents, DIDs are typically recorded on an underlying network of some kind that represents a trust system. Microsoft currently supports di:web trust system. The did:web trust system is a permission based model that allows trust using a web domain’s existing reputation. did:web is in support status General Available.
 
 **3. DID User Agent/Wallet: Microsoft Authenticator App**.
-Enables real people to use decentralized identities and Verifiable Credentials. Microsoft Authenticator creates DIDs, facilitates issuance and presentation requests for verifiable credentials and manages the backup of your DID's seed through an encrypted wallet file.
+Enables real people to use decentralized identities and Verifiable Credentials. **Microsoft Authenticator** creates DIDs, facilitates issuance and presentation requests for verifiable credentials and manages the backup of your DID's seed through an encrypted wallet file.
 
 **4. Microsoft Resolver**.
 An API that looks up and resolves DIDs using the ```did:web```method and returns the DID Document Object (DDO). The DDO includes DPKI metadata associated with the DID such as public keys and service endpoints. 

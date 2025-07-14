@@ -2,7 +2,7 @@
 title: View associated resources for a user-assigned managed identity
 description: Step-by-step instructions for viewing the Azure resources that are associated with a user-assigned managed identity
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: entra-id
@@ -10,14 +10,14 @@ ms.subservice: managed-identities
 
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 01/18/2023
-ms.author: ryanwi
+ms.date: 03/15/2025
+ms.author: shermanouko
 
 ---
 
 # View associated Azure resources for a user-assigned managed identity (Preview)
 
-This article will explain how to view the Azure resources that are associated with a user-assigned managed identity. This feature is available in public preview.
+This article explains how to view the Azure resources that are associated with a user-assigned managed identity. This feature is available in public preview.
 
 ## Prerequisites
 
@@ -27,14 +27,14 @@ This article will explain how to view the Azure resources that are associated wi
 
 ## View resources for a user-assigned managed identity
 
-Being able to quickly see which Azure resources are associated with a user-assigned managed identity gives you greater visibility into your environment. You can quickly identify unused identities that can be safely deleted, and know which resources will be affected by changing the permissions or group membership of a managed identity.
+Being able to quickly see which Azure resources are associated with a user-assigned managed identity gives you greater visibility into your environment. You can quickly identify unused identities that can be safely deleted, and know which resources are affected by changing the permissions or group membership of a managed identity.
 
 ### Portal
 
 - From the **Azure portal** search for **Managed Identities**.
 - Select a managed identity
 - In the left-hand menu, select the **Associated resources** link
-- A list of the Azure resources associated with the managed identity will be displayed
+- A list of the Azure resources associated with the managed identity is displayed
 
 :::image type="content" source="media/viewing-associated-resources/associated-resources-list-cropped.png" alt-text="Screenshot showing a list of associated resources for a user-assigned managed identity.":::
 
@@ -48,7 +48,7 @@ Select the column title to sort alphabetically, ascending or descending.
 
 ### REST API 
 
-The list of associated resources can also be accessed using the REST API. This endpoint is separate to the API endpoint used to retrieve a list of user-assigned managed identities. You'll need the following information:
+The list of associated resources can also be accessed using the REST API. This endpoint is separate to the API endpoint used to retrieve a list of user-assigned managed identities. You need the following information:
  - Subscription ID
  - Resource name of the user-assigned managed identity that you want to view the resources for
  - Resource group of the user-assigned managed identity
@@ -65,7 +65,7 @@ https://management.azure.com/subscriptions/{resourceID of user-assigned identity
 | $filter  |  ```type eq 'microsoft.cognitiveservices/account' and contains(name, 'test')``` |  An OData expression that allows you to filter any of the available fields: name, type, resourceGroup, subscriptionId, subscriptionDisplayName<br/><br/>The following operations are supported: ```and```, ```or```, ```eq``` and ```contains``` |
 |  $orderby |  ```name asc``` |  An OData expression that allows you to order by any of the available fields |
 |  $skip |  50 |  The number of items you want to skip while paging through the results. |
-| $top  |  10 | The number of resources to return. 0 will return only a count of the resources.  |
+| $top  |  10 | The number of resources to return. Zero returns only a count of the resources.  |
 
 You can see a sample request to the REST API:
 
@@ -109,7 +109,7 @@ To view the associated resources for a user-assigned managed identity, run the f
 az identity list-resources --resource-group <ResourceGroupName> --name <ManagedIdentityName>
 ```
 
-The response will look like this:
+The response looks like this:
 
 ```json
 [
@@ -165,11 +165,11 @@ Invoke-AzRestMethod -Path "/subscriptions/XXX-XXX-XXX-XXX/resourceGroups/test-rg
 ```
 
 >[!NOTE]
-> All resources associated with an identity will be returned, regardless of the user's permissions. The user only needs to have access to read the managed identity. This means that more resources may be visible than the user can see elsewhere in the portal. This is to provide full visibility of the identity's usage. If the user doesn't have access to an associated resource, an error will be displayed if they try to access it from the list.
+> All resources associated with an identity are returned, regardless of the user's permissions. The user only needs to have access to read the managed identity. This means that more resources may be visible than the user can see elsewhere in the portal. This is to provide full visibility of the identity's usage. If the user doesn't have access to an associated resource, an error is displayed if they try to access it from the list.
 
 ## Delete a user-assigned managed identity
 
-When you select the delete button for a user-assigned managed identity, you'll see a list of up to 10 associated resources for that identity. The full count will be displayed at the top of the pane. This list allows you to see which resources will be affected by deleting the identity. You'll be asked to confirm your decision.
+When you select the delete button for a user-assigned managed identity, you see a list of up to 10 associated resources for that identity. The full count is displayed at the top of the pane. This list allows you to see which resources are affected by deleting the identity. You're asked to confirm your decision.
 
 :::image type="content" source="media/viewing-associated-resources/associated-resources-delete.png" alt-text="Screenshot showing the delete confirmation screen for a user-assigned managed identity.":::
 
@@ -177,11 +177,11 @@ This confirmation process is only available in the portal. To view an identity's
 
 ## Limitations
 
- - This functionality is available in all public regions, and will be available in USGov and China in the coming weeks.
+ - This functionality is available in all public regions and in USGov and China.
  - API requests for associated resources are limited to one per second per tenant. If you exceed this limit, you may receive an `HTTP 429` error. This limit doesn't apply to retrieving a list of user-assigned managed identities.
  - Azure Resources types that are in preview, or their support for Managed identities is in preview, may not appear in the associated resources list until fully generally available. This list includes Service Fabric clusters, Blueprints, and Machine learning services.
- - This functionality is limited to tenants with fewer than 5,000 subscriptions. An error will be displayed if the tenant has greater than 5,000 subscriptions.
- - The list of associated resources will display the resource type, not display name.
+ - This functionality is limited to tenants with fewer than 5,000 subscriptions. An error is displayed if the tenant has greater than 5,000 subscriptions.
+ - The list of associated resources display the resource type, not the display name.
  - Azure Policy assignments appear in the list, but their names aren't displayed correctly.
  - This functionality isn't yet available through PowerShell.
 

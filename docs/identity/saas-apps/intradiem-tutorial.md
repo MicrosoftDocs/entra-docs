@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Intradiem
+title: Configure Intradiem for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Intradiem.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Intradiem so that I can control who has access to Intradiem, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Intradiem
+# Configure Intradiem for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Intradiem with Microsoft Entra ID. AI-Powered Productivity Solution that Integrates with Call Center and Workforce Management Software to Improve Savings, Productivity, and Engagement. When you integrate Intradiem with Microsoft Entra ID, you can:
 
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Intradiem** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Intradiem** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -90,9 +90,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	| `https://<CustomerName>.intradiem.com` |
 
 	> [!Note]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Intradiem support team](mailto:support@intradiem.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Intradiem support team](mailto:support@intradiem.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -108,17 +108,17 @@ In this section, you create a user called Britta Simon in Intradiem. Work with [
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Intradiem Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Intradiem Sign-on URL where you can initiate the login flow. 
 
 * Go to Intradiem Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Intradiem tile in the My Apps, this will redirect to Intradiem Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Intradiem tile in the My Apps, this option redirects to Intradiem Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Intradiem you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

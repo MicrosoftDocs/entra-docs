@@ -1,22 +1,21 @@
 ---
 title: Tutorial - Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
-description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID
+description: In this tutorial, you learn how to use Face Check with Microsoft Entra Verified ID.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 12/13/2024
+ms.date: 04/30/2025
+ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Using Face Check with Microsoft Entra Verified ID and unlocking high assurance verifications at scale
 
 Face Check is a privacy-respecting facial matching. It allows enterprises to perform high-assurance verifications securely, simply, and at scale. Face Check adds a critical layer of trust by performing facial matching between a user’s real-time selfie and a photo. The facial matching is powered by Azure AI services. Face Check protects user privacy by sharing only the match results and not any sensitive identity data, while allowing organizations to be sure the person claiming an identity is really them.
 
-:::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of using Face Check.":::
+:::image type="content" source="media/using-facecheck/verify-confirm-review.png" alt-text="Screenshot of Microsoft Authenticator Face Check verification flow showing verify, confirm, and review steps with facial recognition interface.":::
 
 ## Prerequisites
 
@@ -36,15 +35,15 @@ The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin 
 ### Setting up Face Check with Microsoft Entra Verified ID in the Admin Center
 1. In the Verified ID overview page, scroll down to the new Add-ons section and `Enable` the Face Check add-on.
 
-:::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of the Face Check add-on.":::
+:::image type="content" source="media/using-facecheck/face-check-add-on.png" alt-text="Screenshot of Microsoft Entra Verified ID overview page showing Face Check add-on in Add-ons section with Enable button.":::
 
 2. In the Link a subscription step, select a Subscription, a Resource group, and the Resource location. Then select `Validate`. If there are no subscriptions listed, see [What if I can't find a subscription?](using-facecheck.md#what-if-i-cant-find-a-subscription)
 
-:::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot subscription linking for Face Check.":::
+:::image type="content" source="media/using-facecheck/face-check-subscription-linking.png" alt-text="Screenshot of Face Check subscription linking dialog showing dropdown menus for Subscription, Resource group, and Resource location with Validate button.":::
 
 3. Once validated you can `Enable` the add-on.
 
-:::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot Face Check add-on enabled.":::
+:::image type="content" source="media/using-facecheck/face-check-add-on-enabled.png" alt-text="Screenshot of Face Check add-on configuration showing successful validation with Enable button to activate the service.":::
 
 Now you can start using Face Check in your enterprise applications.
 
@@ -57,13 +56,13 @@ To set up the Face Check Add-on on a given authority, you must have the [Azure P
 
 1. Run the following command in PowerShell
 ```http
-  az login --tenant  <tenant ID>
+az login --tenant  <tenant ID>
 ```
 1. Select the subscription that you want to enable Face Check billing on
 
 1. Run the following command
 ```http
-  az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
+az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
 ```
 - replace `<subscription-id>` with your subscription ID
 - replace `<resource-group-name>` with your resource group name
@@ -144,7 +143,7 @@ The claim containing the photo must be named and you might optionally specify yo
 
 #### Successful Face Check presentation_verified callback event
 
-The JSON payload for the `presentation_verified` has more data when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
+The JSON payload for the `presentation_verified` has more data in the response when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
 
 ```json
   "verifiedCredentialsData": [ 
@@ -163,6 +162,42 @@ The JSON payload for the `presentation_verified` has more data when a Face Check
   ], 
 ```
  
+#### Face Check presentation_verified callback event receipt
+
+If the presentation request was created with asking for a [receipt](presentation-request-api.md#presentation-request-payload), 
+then the `presentation_verified` callback will contain an attribute named `faceCheck`.
+
+```JSON
+{
+  "requestId": "11111111-2222-3333-4444-55555555",
+  "requestStatus": "presentation_verified",
+  "receipt": {
+    ...
+    "faceCheck": "eyJhbGc...svw"
+  },
+  ...
+}
+```
+
+The value of the `faceCheck` attribute is a signed JWT token that is source data for the liveness check. Base64-decoding the JWT token gives a verifiable credential of type `MicrosoftFaceCheckReceipt`. The `sourceVcJti` is the identity of the credential used to match the liveness check.
+
+```JSON
+... 
+    "type": [
+      "VerifiableCredential",
+      "MicrosoftFaceCheckReceipt"
+    ],
+    "credentialSubject": {
+      "faceCheckResults": [
+        {
+          "sourceVcJti": "urn:pic:4f741111222233334444000000000000",
+          "matchConfidenceThreshold": 70,
+          "matchConfidenceScore": 86.314159,
+          "sourcePhotoQuality": "HIGH"
+        }
+      ]
+```
+
 #### Failed Face Check callback event
 
 When the confidence score is lower than the threshold, the presentation request is failed and a `presentation_error` is returned. The verifying application doesn't get the score returned.
@@ -181,7 +216,7 @@ When the confidence score is lower than the threshold, the presentation request 
 
 The Authenticator displays an error message informing the user that the confidence score failed to meet the threshold.
 
-:::image type="content" source="media/using-facecheck/facecheck-low-score.png" alt-text="Screenshot of low confidence score in Face Check.":::
+:::image type="content" source="media/using-facecheck/facecheck-low-score.png" alt-text="Screenshot of Microsoft Authenticator error message showing Face Check failed due to low confidence score not meeting the required threshold.":::
 
 ## Frequently asked questions for Face Check with Microsoft Entra Verified ID
 

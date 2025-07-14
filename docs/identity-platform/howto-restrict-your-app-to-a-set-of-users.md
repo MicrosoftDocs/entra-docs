@@ -46,13 +46,16 @@ To update an application to require user assignment, you must be owner of the ap
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Directories + subscriptions** filter :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **Enterprise applications**, then select **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps**, then select **All applications**.
 1. Select the application you want to configure to require assignment. Use the filters at the top of the window to search for a specific application.
 1. On the application's **Overview** page, under **Manage**, select **Properties**.
 1. Locate the setting **Assignment required?** and set it to **Yes**.
 1. Select **Save** on the top bar.
 
 When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
+
+> [!NOTE]
+> If the user is a Global Administrator, user assignment requirement will not be applicable. Global Administrator is an highly privileged role that allows access to all administrative features in Microsoft Entra ID and can elevate their access to manage all Azure subscriptions and management groups. 
 
 ## Assign the app to users and groups to restrict access
 

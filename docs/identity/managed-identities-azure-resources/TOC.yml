@@ -4,6 +4,8 @@
   items:
   - name: About managed identities for Azure resources
     href: overview.md
+  - name: Secretless authentication to Azure resources
+    href: secretless-authentication.md
 - name: Quickstart guide
   items:
   - name: Use a VM managed identity to access Azure Resource Manager
@@ -79,9 +81,7 @@
   - name: Known issues
     href: known-issues.md
   - name: Azure services that support managed identities for Azure resources
-    href: managed-identities-status.md
-  - name: Azure services that support Microsoft Entra authentication
-    href: services-id-authentication-support.md
+    href: managed-identities-status.md  
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-managed-identity
   - name: Microsoft Entra Developers forum

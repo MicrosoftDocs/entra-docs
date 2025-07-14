@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Beable
+title: Configure Beable for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Beable.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Beable so that I can control who has access to Beable, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Beable
+# Configure Beable for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Beable with Microsoft Entra ID. Beable Education offers interactive & engaging online learning platforms, textbooks & mobile apps for students to access information & succeed in studies. When you integrate Beable with Microsoft Entra ID, you can:
 
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Beable** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Beable** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -75,13 +75,13 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 	`https://prod-literacy-backend-alb-<ID>.beable.com/login/ssoVerification/?providerId=<ProviderID>&identifier=<DOMAIN>`
 
 	> [!Note]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Contact [Beable support team](https://beable.com/contact/) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Beable support team](https://beable.com/contact/) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
 
 1. Beable application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
-1. In addition to above, Beable application expects few more attributes to be passed back in SAML response, which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+1. In addition to above, Beable application expects few more attributes to be passed back in SAML response, which are shown in the following table. These attributes are also pre populated but you can review them as per your requirements.
 
 	| Name |  Source Attribute|
 	| ---------------|  --------- |
@@ -109,10 +109,10 @@ In this section, the users are rostered in Beable. Work with [Beable support tea
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Beable for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Beable for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Beable tile in the My Apps, you should be automatically signed in to the Beable for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Beable tile in the My Apps, you should be automatically signed in to the Beable for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Beable you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

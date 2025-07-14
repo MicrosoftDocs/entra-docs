@@ -6,7 +6,6 @@ author: barclayn
 manager: martinco
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 12/17/2024
 ms.author: barclayn
 ms.custom: references_regions
@@ -145,7 +144,7 @@ After establishing the use case for a credential, you need to decide the credent
 
 All verifiable credentials must declare their *type* in their [rules definition](rules-and-display-definitions-model.md#rulesmodel-type). The credential type distinguishes a verifiable credentials schema from other credentials and it ensures interoperability between issuers and verifiers. To indicate a credential type, provide one or more credential types that the credential satisfies. Each type is a unique string. Often, a URI is used to ensure global uniqueness. The URI doesn't need to be addressable. It's treated as a string. As an example, a diploma credential issued by Contoso University might declare the following types:
 
-| Type | Purpose |
+| **Type** | **Purpose** |
 | ---- | ------- |
 | `https://schema.org/EducationalCredential` | Declares that diplomas issued by Contoso University contain attributes defined by the schema.org `EducationaCredential` object. |
 | `https://schemas.ed.gov/universityDiploma2020` | Declares that diplomas issued by Contoso University contain attributes defined by the U.S. Department of Education. |

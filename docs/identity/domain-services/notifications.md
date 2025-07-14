@@ -2,13 +2,13 @@
 title: Email notifications for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure email notifications to alert you about issues in a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.assetid: b9af1792-0b7f-4f3e-827a-9426cdb33ba6
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ---
 # Configure email notifications for issues in Microsoft Entra Domain Services

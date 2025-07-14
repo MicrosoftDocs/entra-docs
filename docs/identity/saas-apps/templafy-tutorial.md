@@ -1,38 +1,37 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Templafy SAML2'
+title: Configure Templafy SAML2 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Templafy SAML2.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Templafy SAML2 so that I can control who has access to Templafy SAML2, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Templafy SAML2
+# Configure Templafy SAML2 for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Templafy SAML2 with Microsoft Entra ID. When you integrate Templafy SAML2 with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Templafy SAML2 with Microsoft Entra ID. When you integrate Templafy SAML2 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Templafy SAML2.
 * Enable your users to be automatically signed-in to Templafy SAML2 with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Templafy SAML2 single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Templafy SAML2 supports **SP** initiated SSO.
 * Templafy SAML2 supports **Just In Time** user provisioning.
@@ -46,11 +45,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Templafy SAML2 into Microsoft Entra ID, you need to add Templafy SAML2 from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Templafy SAML2** in the search box.
 1. Select **Templafy SAML2** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-templafy-saml2'></a>
 
@@ -61,10 +60,10 @@ Configure and test Microsoft Entra SSO with Templafy SAML2 using a test user cal
 To configure and test Microsoft Entra SSO with Templafy SAML2, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Templafy SAML2 SSO](#configure-templafy-saml2-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Templafy SAML2 test user](#create-templafy-saml2-test-user)** - to have a counterpart of B.Simon in Templafy SAML2 that is linked to the Microsoft Entra representation of user.
+    1. **[Create Templafy SAML2 test user](#create-templafy-saml2-test-user)** - to have a counterpart of B.Simon in Templafy SAML2 that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,9 +73,9 @@ To configure and test Microsoft Entra SSO with Templafy SAML2, perform the follo
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Templafy SAML2** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Templafy SAML2** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -86,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<CLIENT_SUBDOMAIN>.templafy.com`
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [Templafy SAML2 Client support team](mailto:support@templafy.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value isn't real. Update the value with the actual Sign-On URL. Contact [Templafy SAML2 Client support team](mailto:support@templafy.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Templafy SAML2 application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -112,39 +111,13 @@ Follow these steps to enable Microsoft Entra SSO.
 	| nameidentifier | user.mail | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims`|
 	| | |
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to Templafy SAML2.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Templafy SAML2**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Templafy SAML2 SSO
 
@@ -152,7 +125,7 @@ To configure single sign-on on **Templafy SAML2** side, you need to send the **A
 
 ### Create Templafy SAML2 test user
 
-In this section, a user called B.Simon is created in Templafy SAML2. Templafy SAML2 supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Templafy SAML2, a new one is created after authentication.
+In this section, a user called B.Simon is created in Templafy SAML2. Templafy SAML2 supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Templafy SAML2, a new one is created after authentication.
 
 Templafy SAML2 also supports automatic user provisioning, you can find more details [here](./templafy-saml-2-provisioning-tutorial.md) on how to configure automatic user provisioning.
 
@@ -160,12 +133,12 @@ Templafy SAML2 also supports automatic user provisioning, you can find more deta
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Templafy SAML2 Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Templafy SAML2 Sign-on URL where you can initiate the login flow. 
 
 * Go to Templafy SAML2 Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Templafy SAML2 tile in the My Apps, this will redirect to Templafy SAML2 Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Templafy SAML2 tile in the My Apps, this option redirects to Templafy SAML2 Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Templafy SAML2 you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

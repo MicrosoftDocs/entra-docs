@@ -1,22 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Snowflake'
+title: Configure Snowflake for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Snowflake.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Snowflake so that I can control who has access to Snowflake, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Snowflake
+# Configure Snowflake for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you learn how to integrate Snowflake with Microsoft Entra ID. When you integrate Snowflake with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Snowflake with Microsoft Entra ID. When you integrate Snowflake with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Snowflake.
 * Enable your users to be automatically signed-in to Snowflake with their Microsoft Entra accounts.
@@ -36,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Snowflake supports **SP and IDP** initiated SSO.
 * Snowflake supports [automated user provisioning and deprovisioning](snowflake-provisioning-tutorial.md) (recommended).
@@ -46,7 +44,7 @@ In this tutorial, you'll configure and test Microsoft Entra single sign-on in a 
 To configure the integration of Snowflake into Microsoft Entra ID, you need to add Snowflake from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Snowflake** in the search box.
 1. Select **Snowflake** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -61,10 +59,10 @@ Configure and test Microsoft Entra SSO with Snowflake using a test user called *
 To configure and test Microsoft Entra SSO with Snowflake, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-	1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-	1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+	1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+	1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Snowflake SSO](#configure-snowflake-sso)** - to configure the single sign-on settings on application side.
-	1. **[Create Snowflake test user](#create-snowflake-test-user)** - to have a counterpart of B.Simon in Snowflake that is linked to the Microsoft Entra representation of user.
+	1. **[Create Snowflake test user](#create-snowflake-test-user)** - to have a counterpart of B.Simon in Snowflake that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -74,7 +72,7 @@ To configure and test Microsoft Entra SSO with Snowflake, perform the following 
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Snowflake** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Snowflake** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -109,39 +107,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable B.Simon to use single sign-on by granting access to Snowflake.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Snowflake**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
-   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Added Assignment** dialog, select the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Snowflake SSO
 
 1. In a different web browser window, sign in to Snowflake as a Security Administrator.
 
-1. **Switch Role** to **ACCOUNTADMIN**, by clicking on **profile** on the top right side of page.
+1. **Switch Role** to **ACCOUNTADMIN**, by selecting **profile** on the top right side of page.
 
 	> [!NOTE]
 	> This is separate from the context you have selected in the top-right corner under your User Name.
@@ -205,7 +177,7 @@ To enable Microsoft Entra users to sign in to Snowflake, they must be provisione
 
 1. Sign in to Snowflake as a Security Administrator.
 
-2. **Switch Role** to **ACCOUNTADMIN**, by clicking on **profile** on the top right side of page.  
+2. **Switch Role** to **ACCOUNTADMIN**, by selecting **profile** on the top right side of page.  
 
 	![The Snowflake admin](./media/snowflake-tutorial/account.png)
 
@@ -226,20 +198,20 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select on **Test this application**, this will redirect to Snowflake Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to Snowflake Sign on URL where you can initiate the login flow.  
 
 * Go to Snowflake Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the Snowflake for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the Snowflake for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Snowflake tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Snowflake for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Snowflake tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Snowflake for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Prevent application access through local accounts
 
-Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
+Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your Conditional Access policies, MFA, etc. is in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
 
-## Next steps
+## Related content
 
 Once you configure Snowflake you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

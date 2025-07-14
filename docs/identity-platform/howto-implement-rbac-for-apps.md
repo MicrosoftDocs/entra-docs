@@ -1,9 +1,9 @@
 ---
 title: Implement role-based access control in applications
 description: Learn how to implement role-based access control in your applications.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.date: 10/29/2024
 ms.reviewer: 
 ms.service: identity-platform
@@ -78,13 +78,13 @@ Implementing RBAC in an ASP.NET Core web API mainly involves utilizing the *Auth
 
 1. Follow the instructions specified in [Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app](./quickstart-v2-aspnet-core-webapp.md?view=aspnetcore-5.0&preserve-view=true) to add authentication to the application.
 1. Add role checks on the controller actions as outlined in [Adding role checks](/aspnet/core/security/authorization/roles?view=aspnetcore-5.0&preserve-view=true#adding-role-checks).
-1. Call the API from a client application. See [Angular single-page application calling ASP.NET Core web API and using App Roles to implement Role-Based Access Control](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-angular-v3-samples) for an end to end sample.
+1. Call the API from a client application. See [Angular single-page application calling ASP.NET Core web API and using App Roles to implement Role-Based Access Control](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-angular-samples) for an end to end sample.
 
 ## Implement RBAC in other platforms
 
 ### Angular SPA
 
-Implementing RBAC in an Angular SPA involves the use of the [Microsoft Authentication Library for Angular](https://www.npmjs.com/package/@azure/msal-angular) to authorize access to the Angular routes contained within the application. An example is shown in the [MSAL Angular v3 Samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-angular-v3-samples).
+Implementing RBAC in an Angular SPA involves the use of the [Microsoft Authentication Library for Angular](https://www.npmjs.com/package/@azure/msal-angular) to authorize access to the Angular routes contained within the application. An example is shown in the [MSAL Angular v3 Samples](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/msal-angular-samples).
 
 > [!NOTE]
 > Client-side RBAC implementations should be paired with server-side RBAC to prevent unauthorized applications from accessing sensitive resources.

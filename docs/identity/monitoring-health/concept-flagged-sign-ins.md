@@ -1,16 +1,15 @@
 ---
 title: Learn about flagged sign-ins in Microsoft Entra ID
 description: Learn about how flagged the sign-ins feature can be used for troubleshooting sign-in issues in Microsoft Entra ID.
-
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 10/01/2024
+ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want a tool that gives me the right level of insights into the sign-in activities in my system so that I can easily diagnose and solve problems when they occur.
 ---
 
@@ -38,11 +37,19 @@ You can use flagged sign-ins to:
 
 When users see a sign-in error, they can choose to enable flagging. For the next 20 minutes, any sign-in event from that user, on the same browser and client device or computer, displays *Flagged for Review: Yes* in the sign-in logs. After 20 minutes, the flagging automatically turns off.
 
-### User: How to flag an error
+- Any user signing into Microsoft Entra ID can flag sign-ins for review, including member and guest users. 
+- Reviewing flagged sign-in events requires permissions to read the sign-in logs. For more information, see [How to access activity logs](howto-access-activity-logs.md#prerequisites).
+- While the names are similar, **flagged sign-ins** and **risky sign-ins** are different capabilities:
+    - Flagged sign-ins are sign-in error events users are asking assistance on. 
+    - A risky sign-in is a functionality of Microsoft Entra ID Protection. For more information, see [What is Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
+
+### [How to flag an error](#tab/how-to-flag-an-error)
+
+The user must complete this first step to enable flagging for sign-in errors.
 
 1. The user receives an error during sign-in.
-1. The user selects **View details** in the error page.
-1. In the **Troubleshooting details** section, the user selects **Enable flagging**.
+1. The user selects **View details** in the error message.
+1. In the **Troubleshooting details** section of the error message, the user selects **Enable flagging**.
     - The text changes to **Disable Flagging** and flagging is now enabled.
     - The user must use the same browser and client or the events aren't flagged.
     
@@ -52,12 +59,12 @@ When users see a sign-in error, they can choose to enable flagging. For the next
 
 If the sign-in error is reproduced, the flagged diagnostics are sent to the sign-in logs.
 
-### Admin: Find flagged events in reports
+### [Find flagged events in the admin center](#tab/find-flagged-events-in-the-admin-center)
 
 The sign-in logs might take several minutes for the flagged sign-in events to appear.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Open the **Add filters** menu and select **Flagged for review**. All flagged events are shown.
 
     ![Screenshot of the Microsoft Entra ID sign-in logs with the Flagged for review filter selected.](./media/concept-flagged-sign-ins/flagged-sign-in-admins.png)
@@ -65,7 +72,7 @@ The sign-in logs might take several minutes for the flagged sign-in events to ap
 1. If needed, apply more filters to refine the event view.
 1. Select the event to review what happened.
 
-### Admin or Developer: Find flagged events using Microsoft Graph
+### [Find flagged events using Microsoft Graph](#tab/find-flagged-events-using-microsoft-graph)
 
 You can find flagged sign-ins using the Microsoft Graph API. For more information, see the [signIn resource type](/graph/api/resources/signin) Microsoft Graph documentation.
 
@@ -81,22 +88,7 @@ Flagged Sign-ins query for specific user and date greater than:
 
 - `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=flaggedforReview eq true and createdDateTime ge 2021-10-01 and userPrincipalname eq 'user@contoso.com'`
  
-## Who can create flagged sign-ins?
-
-Any user signing into Microsoft Entra ID can flag sign-ins for review, including member and guest users. 
-
-## Who can review flagged sign-ins?
-
-Reviewing flagged sign-in events requires permissions to read the sign-in report events in the Microsoft Entra admin center. For more information, see [How to access activity logs](howto-access-activity-logs.md#prerequisites).
-
-## What you should know 
-
-While the names are similar, **flagged sign-ins** and **risky sign-ins** are different capabilities:
-
-- Flagged sign-ins are sign-in error events users are asking assistance on. 
-- A risky sign-in is a functionality of Microsoft Entra ID Protection. For more information, see [What is Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
-
-## Next steps
+## Related content
 
 - [Sign-in logs in Microsoft Entra ID](concept-sign-ins.md)
 - [Sign-in diagnostics for Microsoft Entra scenarios](concept-sign-in-diagnostics-scenarios.md)

@@ -2,7 +2,7 @@
 title: Acquire a token to call a web API using device code flow (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app using device code flow
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.custom: 
 ms.date: 10/07/2022
@@ -13,6 +13,8 @@ ms.topic: how-to
 ---
 
 # Desktop app that calls web APIs: Acquire a token using Device Code flow 
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 If you're writing a command-line tool that doesn't have web controls, and you can't or don't want to use the previous flows, use the device code flow.
 
@@ -103,7 +105,7 @@ private static async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublic
         // Kind of errors you could have (in ex.Message)
 
         // AADSTS50059: No tenant-identifying information found in either the request or implied by any provided credentials.
-        // Mitigation: as explained in the message from Azure AD, the authoriy needs to be tenanted. you have probably created
+        // Mitigation: as explained in the message from Azure AD, the authority needs to be tenanted. you have probably created
         // your public client application with the following authorities:
         // https://login.microsoftonline.com/common or https://login.microsoftonline.com/organizations
 

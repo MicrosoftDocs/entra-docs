@@ -2,14 +2,15 @@
 title: Tutorial - Manage access to resources in entitlement management
 description: Step-by-step tutorial for how to create your first access package using the Microsoft Entra admin center in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 08/25/2024
+ms.date: 06/26/2025
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
 ---
 # Tutorial: Manage access to resources in entitlement management
@@ -51,7 +52,7 @@ A resource directory has one or more resources to share. In this step, you creat
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. [Create two users](../fundamentals/add-users.md). Use the following names or different names.
 
@@ -60,7 +61,7 @@ A resource directory has one or more resources to share. In this step, you creat
     | **Admin1** | At least an Identity Governance Administrator. This user can be the user you're currently signed in. |
     | **Requestor1** | User |
 
-4. [Create a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
+4. [Create a Microsoft Entra security group](/entra/fundamentals/how-to-manage-groups) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
 
 
 ## Step 2: Create an access package
@@ -72,7 +73,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the Access packages page, open an access package.
 
@@ -106,10 +107,10 @@ An *access package* is a bundle of resources that a team or project needs and is
     :::image type="content" source="./media/entitlement-management-access-package-first/resource-roles.png" alt-text="Screenshot the shows how to select the member role." lightbox="./media/entitlement-management-access-package-first/resource-roles.png":::
 
     >[!IMPORTANT]
-    >The [role-assignable groups](../identity/role-based-access-control/groups-concept.md) added to an access package will be indicated using the Sub Type **Assignable to roles**. For more information, check out the [Create a role-assignable group](../identity/role-based-access-control/groups-create-eligible.md) article. Keep in mind that once a role-assignable group is present in an access package catalog, administrative users who are able to manage in entitlement management, including users in the Global Administrator role, users in the Identity Governance Administrator role, and catalog owners of the catalog, will be able to control the access packages in the catalog, allowing them to choose who can be added to those groups. If you don't see a role-assignable group that you want to add or you are unable to add it, make sure you have the required Microsoft Entra role and entitlement management role to perform this operation. You might need to ask someone with the required roles add the resource to your catalog. For more information, see [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
+    >The [role-assignable groups](../identity/role-based-access-control/groups-concept.md) added to an access package will be indicated using the Sub Type **Assignable to roles**. For more information, check out the [Create a role-assignable group](../identity/role-based-access-control/groups-create-eligible.md) article. Keep in mind that once a role-assignable group is present in an access package catalog, administrative users who are able to manage in entitlement management, including users in the Global Administrator role, users in the Identity Governance Administrator role, and catalog owners of the catalog, will be able to control the access packages in the catalog, allowing them to choose who can be added to those groups. If you don't see a role-assignable group that you want to add or you're unable to add it, make sure you have the required Microsoft Entra role and entitlement management role to perform this operation. You might need to ask someone with the required roles add the resource to your catalog. For more information, see [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
     >[!NOTE]
-    > When using [dynamic membership groups](../identity/users/groups-create-rule.md) you will not see any other roles available besides owner. This is by design.
+    > When using [dynamic membership groups](../identity/users/groups-create-rule.md) you won't see any other roles available besides owner. This is by design.
     > ![Screenshots that shows a dynamic group available roles.](./media/entitlement-management-access-package-first/dynamic-group-warning.png)
     
 
@@ -200,7 +201,7 @@ In this step, you confirm that the **internal requestor** was assigned the acces
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as **Admin1**, which is at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. Find and select **Marketing Campaign** access package.
 
@@ -212,7 +213,7 @@ In this step, you confirm that the **internal requestor** was assigned the acces
 
     :::image type="content" source="./media/entitlement-management-access-package-first/request-details.png" alt-text="Screenshot of the access package request details." lightbox="./media/entitlement-management-access-package-first/request-details.png":::
 
-1. In the left navigation, select **Identity**.
+1. In the left navigation, select **Entra ID**.
 
 1. Select **Groups** and open the **Marketing resources** group.
 
@@ -226,7 +227,7 @@ In this step, you confirm that the **internal requestor** was assigned the acces
 
 In this step, you remove the changes you made and delete the **Marketing Campaign** access package.
 
-1. In the Microsoft Entra admin center as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) select **Identity Governance**.
+1. In the Microsoft Entra admin center as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) select **ID Governance**.
 
 1. Open the **Marketing Campaign** access package.
 

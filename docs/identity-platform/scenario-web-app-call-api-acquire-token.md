@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # A web app that calls web APIs: Acquire a token for the app
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 You've built your client application object. Now, you use it to acquire a token to call a web API. In ASP.NET or ASP.NET Core, calling a web API is done in the controller:
 
 - Get a token for the web API by using the token cache. To get this token, you call the Microsoft Authentication Library (MSAL) `AcquireTokenSilent` method (or the equivalent in Microsoft.Identity.Web).

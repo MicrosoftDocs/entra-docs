@@ -4,7 +4,7 @@ description: How to assign licenses to groups using the Microsoft 365 admin cent
 
 keywords: Azure AD licensing
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 
 ms.service: entra-id
 ms.subservice: users

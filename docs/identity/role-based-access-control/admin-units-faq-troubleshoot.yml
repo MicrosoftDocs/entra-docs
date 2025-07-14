@@ -2,13 +2,13 @@
 metadata:
   title: "Administrative units troubleshooting and FAQ"
   description: Investigate administrative units to grant permissions with restricted scope in Microsoft Entra ID.  
-  author: rolyon
-  manager: amycolannino
+  author: barclayn
+  manager: pmwongera
   ms.service: entra-id
   ms.topic: faq
   ms.subservice: role-based-access-control
   ms.date: 10/29/2024
-  ms.author: rolyon
+  ms.author: barclayn
   ms.reviewer: anandy
   ms.custom: oldportal;it-pro;
   
@@ -114,7 +114,7 @@ sections:
         answer: |
           No.
 
-  - name: Restricted management administrative units (Preview)
+  - name: Restricted management administrative units
     questions:
       - question: |
           I am the owner of a group that is a member of a restricted management administrative unit. How are my permissions affected?

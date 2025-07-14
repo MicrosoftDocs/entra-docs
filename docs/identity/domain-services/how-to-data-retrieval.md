@@ -2,14 +2,14 @@
 title: Instructions for data retrieval from Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to retrieve data from Microsoft Entra Domain Services.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 12/02/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: manthanm
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Domain Services instructions for data retrieval
@@ -31,7 +31,7 @@ To add a new user, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/azure/active-directory/roles/permissions-reference#user-administrator).
 
-1. Browse to **Identity** > **Users**, and then select **New user**.
+1. Browse to **Entra ID** > **Users**, and then select **New user**.
 
     ![Add a user through Users - All users in Microsoft Entra ID](./media/tutorial-create-management-vm/add-user-in-users-all-users.png)
 

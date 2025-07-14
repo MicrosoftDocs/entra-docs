@@ -3,11 +3,11 @@ title: Set up self-service group management
 description: Create and manage security groups or Microsoft 365 groups in Microsoft Entra ID and request security group or Microsoft 365 group memberships.
 
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 02/03/2025
+ms.date: 02/12/2025
 ms.author: barclayn
 ms.reviewer: MohitBhargava
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -26,7 +26,7 @@ You can allow users to create security groups to manage access to shared resourc
 
 Only the group's owners can update membership. You can give group owners the ability to approve or deny membership requests from the My Groups portal. Security groups created by self-service through the My Groups portal are available to join for all users, whether owner-approved or autoapproved. In the My Groups portal, you can change membership options when you create the group.
 
-Microsoft 365 groups provide collaboration opportunities for your users. You can create groups in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. You can also create Microsoft 365 groups in Azure portals by using Microsoft Graph PowerShell or from the My Groups portal. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group).
+Microsoft 365 groups provide collaboration opportunities for your users. You can create groups in any of the Microsoft 365 applications, such as SharePoint, and Microsoft Teams. You can also create Microsoft 365 groups in Azure portals by using Microsoft Graph PowerShell or from the My Groups portal. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md).
 
 Groups created in | Security group default behavior | Microsoft 365 group default behavior
 ------------------ | ------------------------------- | ---------------------------------

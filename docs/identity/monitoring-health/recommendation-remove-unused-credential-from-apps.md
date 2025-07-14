@@ -1,23 +1,22 @@
 ---
 title: Recommendation to remove unused credentials from apps
 description: Learn how the Microsoft Entra recommendation to remove unused credentials from apps works and why it's important.
-
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/22/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT Admin I need to know what credentials haven't been used so I can remove them to improve security.
 ---
 # Microsoft Entra recommendation: Remove unused credentials from apps (preview)
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to remove unused credentials from apps. This recommendation is called `StaleAppCreds` in the recommendations API in Microsoft Graph. 
+This article covers the recommendation to remove unused credentials from apps. This recommendation is called `staleAppCreds` in the recommendations API in Microsoft Graph. 
 
 ## Prerequisites
 
@@ -52,7 +51,7 @@ Applications that the recommendation identified appear in the list of **Impacted
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
 
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 
 1. Select the **Recommendations** tab and select the **Remove unused credentials from applications** recommendation.
 
@@ -68,7 +67,7 @@ Applications that the recommendation identified appear in the list of **Impacted
     > If the origin of the credential is Service Principal, follow the guidance in the [**Service principals**](#service-principals) section.
 
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Certificates & secrets** area of the app registration to remove the unused credential.
-    1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and select the application that was surfaced as part of this recommendation. 
+    1. Alternatively, browse to **Entra ID** > **App registrations** and select the application that was surfaced as part of this recommendation. 
 
         :::image type="content" source="media/recommendation-remove-unused-credential-from-apps/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-remove-unused-credential-from-apps/app-registrations-list-expanded.png":::
 
@@ -91,18 +90,18 @@ To retrieve all recommendations for your tenant:
 GET https://graph.microsoft.com/beta/directory/recommendations
 ```
 
-From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_Microsoft.Identity.IAM.Insights.StaleAppCreds`.
+From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_staleAppCreds`.
 
 To identify impacted resources:
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.StaleAppCreds
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_staleAppCreds
 ```
 
 To filter the resources based on their status (for example, *active* resources):
 
 ```http
-GET https://graph.microsoft.com/eta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.StaleAppCreds/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
+GET https://graph.microsoft.com/eta/directory/recommendations/{tenantId}_staleAppCreds/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
 ```
 
 - Take note of the `AppId`, `CredentialId`, and origin of the credential you want to remove.
@@ -114,7 +113,7 @@ GET https://graph.microsoft.com/eta/directory/recommendations/536279f6-15cc-45f2
 
 ```json
 {
-  "id": "536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.StaleAppCreds",
+  "id": "aaaabbbb-0000-cccc-1111-dddd2222eeee_staleAppCreds",
   "recommendationType": "staleAppCreds",
   "createdDateTime": "2022-09-07T21:25:36Z",
   "impactStartDateTime": "2022-09-07T21:25:36Z",
@@ -160,9 +159,9 @@ GET https://graph.microsoft.com/eta/directory/recommendations/536279f6-15cc-45f2
 
 If the origin of the credential is **service principal**, there are a few considerations and extra steps to follow.
 
-Because there's often multiple service principals for a single application, it may be easier to navigate to Enterprise apps to view everything in one place.
+Because there's often multiple service principals for a single application, it might be easier to navigate to Enterprise apps to view everything in one place.
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Identity** > **Applications** > **Enterprise applications**.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Entra ID** > **Enterprise apps**.
 1. Search for and open the application that was surfaced as part of this recommendation.
 1. Select **Single sign-on** from the side menu.
 

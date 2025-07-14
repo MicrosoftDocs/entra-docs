@@ -44,6 +44,8 @@
       href: concept-authentication-oath-tokens.md
     - name: Phone options
       href: concept-authentication-phone-options.md
+    - name: QR code
+      href: concept-authentication-qr-code.md
     - name: Text
       href: howto-authentication-sms-signin.md
     - name: Email
@@ -123,6 +125,8 @@
     href: how-to-authentication-methods-manage.md
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
+  - name: Enable QR code auth method
+    href: how-to-authentication-qr-code.md
   - name: Passwordless
     items:
     - name: Plan phishing-resistant passwordless authentication
@@ -133,6 +137,8 @@
         href: how-to-deploy-phishing-resistant-passwordless-authentication.md
       - name: Persona guidance
         href: how-to-plan-persona-phishing-resistant-passwordless-authentication.md
+      - name: RDP guidance
+        href: how-to-plan-rdp-phishing-resistant-passwordless-authentication.md
     - name: Passkey (FIDO2) authentication
       items:
       - name: Enable passkeys for an organization
@@ -249,6 +255,8 @@
       href: howto-mfa-userdevicesettings.yml
     - name: Verify mandatory MFA
       href: how-to-mandatory-multifactor-authentication.md
+    - name: Unlock users for mandatory MFA
+      href: how-to-unlock-users-for-mandatory-multifactor-authentication.md
     - name: Federate MFA setup
       href: how-to-mfa-expected-inbound-assertions.md
     - name: Find coverage gaps
@@ -303,6 +311,8 @@
     href: howto-password-smart-lockout.md
   - name: Reporting
     items:
+    - name: Linkable identifiers
+      href: how-to-authentication-track-linkable-identifiers.md
     - name: Authentication methods activity
       href: howto-authentication-methods-activity.md
     - name: SSPR Reports

@@ -1,22 +1,19 @@
 ---
-title: Use the AD FS application migration to move AD FS apps to Microsoft Entra ID
+title: AD FS application migration to move AD FS apps to Microsoft Entra ID
 description: Learn how to use the AD FS application migration to migrate AD FS relying party applications from ADFS to Microsoft Entra ID. This guided experience provides one-click configuration for basic SAML URLs, claims mapping, and user assignments to integrate the application with Microsoft Entra ID.
-
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: how-to
-
-ms.date: 06/10/2024
+ms.topic: concept-article
+ms.date: 06/20/2025
 ms.author: jomondi
 ms.reviewer: smriti3
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin currently using AD FS to access applications, I want to migrate my AD FS applications to Microsoft Entra ID using the AD FS application migration wizard, so that I can have a unified experience to discover, evaluate, and configure new Microsoft Entra applications.
 ---
 
-# Use AD FS application migration to move AD FS apps to Microsoft Entra ID
+# AD FS application migration to move AD FS apps to Microsoft Entra ID
 
 In this article, you learn how to migrate your Active Directory Federation Services (AD FS) applications to Microsoft Entra ID using the AD FS application migration.
 
@@ -45,7 +42,7 @@ To use the AD FS application migration:
   - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594)
   - [Microsoft Entra Connect Heath AD FS agents](https://go.microsoft.com/fwlink/?LinkID=518973)
 
-There are couple reasons why you won't see all the applications that you're expecting after you have installed Microsoft Entra Connect Health agents for AD FS:
+There are couple reasons why you won't see all the applications that you're expecting after you install Microsoft Entra Connect Health agents for AD FS:
 
 - The AD FS application migration dashboard only shows AD FS applications that have user logins in the last 30 days.
 - Microsoft related AD FS relying party applications aren't available on the dashboard.
@@ -57,16 +54,16 @@ The AD FS application migration dashboard is available in the Microsoft Entra ad
 From **Enterprise applications** section:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Under **Usage & Insights**, select **AD FS application migration** to access the AD FS applications migration dashboard.
 
 From **Monitoring & health** section:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage & insights**.
 1. Under **Manage**, select **Usage & Insights**, and then select **AD FS application migration** to access the AD FS applications migration dashboard.
 
-The AD FS application migration dashboard shows the list of all your AD FS relying party applications that have actively had sign-in traffic in the last 30 days period.
+The AD FS application migration dashboard shows the list of all your AD FS relying party applications that have active sign-in traffic in the last 30 days period.
 
 The dashboard has the date range filter. The filter allows you to select all the active AD FS relying party application as per selected time range. The filter supports last 1 day, 7 days, and 30 days period.
 
@@ -80,10 +77,10 @@ The three tabs on the dashboard are:
 
 ### Application migration status
 
-The Microsoft Entra Connect and Microsoft Entra Connect Health agents for AD FS reads your AD FS relying party application configurations and sign-in audit logs. This data about each AD FS application is analyzed to determine whether the application can be migrated as-is, or if additional review is needed. Based on the result of this analysis, migration status for the given application is indicated as one of the following statuses:
+The Microsoft Entra Connect and Microsoft Entra Connect Health agents for AD FS reads your AD FS relying party application configurations and sign-in audit logs. This data about each AD FS application is analyzed to determine whether the application can be migrated as-is, or if more review is needed. Based on the result of this analysis, migration status for the given application is indicated as one of the following statuses:
 
 - **Ready to migrate** means, the AD FS application configuration is fully supported in Microsoft Entra ID and can be migrated as-is.
-- **Needs review** means, some of the application's settings can be migrated to Microsoft Entra ID, but you need to review the settings that can't be migrated as-is. However, those aren't blocker for the migration.
+- **Needs review** means, some of the application's settings can be migrated to Microsoft Entra ID, but you need to review the settings that can't be migrated as-is. However,  settings aren't blockers for the migration.
 - **Additional steps required** means, Microsoft Entra ID doesn't support some of the application's settings, so the application can't be migrated in its current state.
 
 Let's review each tab on the AD FS application migration dashboard in more detail.
@@ -96,14 +93,14 @@ To view details about each validation rule, see [AD FS application migration val
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/migration-details.png" alt-text="Screenshot of the AD FS application migration details pane.":::
 
-Select a message to open additional migration rule details. For a full list of the properties tested, see the following configuration tests table.
+Select a message to open other migration rule details. For a full list of the properties tested, see the following configuration tests table.
 
 #### Check the results of claim rule tests
 
-If you have configured a claim rule for the application in AD FS, the experience provides a granular analysis of all the claim rules. You see which claim rules you can move to Microsoft Entra ID and which ones need further review.
+If you configured a claim rule for the application in AD FS, the experience provides a granular analysis of all the claim rules. You see which claim rules you can move to Microsoft Entra ID and which ones need further review.
 
 1. Select an app from the list of apps in the **All apps** tab, then select the status in the **Migration status** column to view migration details. You see a summary of the configuration tests that passed, along with any potential migration issues.
-2. On the **Migration rule details** page, expand the results to display details about potential migration issues and to get additional guidance. For a detailed list of all claim rules tested, see the [claim rule tests](#claim-rule-tests) section in this article.
+2. On the **Migration rule details** page, expand the results to display details about potential migration issues and to get more guidance. For a detailed list of all claim rules tested, see the [claim rule tests](#claim-rule-tests) section in this article.
 
 The following example shows migration rule details for the IssuanceTransform rule. It lists the specific parts of the claim that need to be reviewed and addressed before you can migrate the application to Microsoft Entra ID.
 
@@ -115,14 +112,14 @@ The following table lists all claim rule tests that are performed on AD FS appli
 
 |Property  |Description  |
 |---------|---------|
-|UNSUPPORTED_CONDITION_PARAMETER      | The condition statement uses Regular Expressions to evaluate if the claim matches a certain pattern.  To achieve a similar functionality in Microsoft Entra ID, you can use predefined transformation such as  IfEmpty(), StartWith(), Contains(), among others. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
-|UNSUPPORTED_CONDITION_CLASS      | The condition statement has multiple conditions that need to be evaluated before running the issuance statement. Microsoft Entra ID can support this functionality with the claim’s transformation functions where you can evaluate multiple claim values.  For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
+|UNSUPPORTED_CONDITION_PARAMETER      | The condition statement uses Regular Expressions to evaluate if the claim matches a certain pattern. To achieve a similar functionality in Microsoft Entra ID, you can use predefined transformation such as  IfEmpty(), StartWith(), Contains(), among others. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
+|UNSUPPORTED_CONDITION_CLASS      | The condition statement has multiple conditions that need to be evaluated before running the issuance statement. Microsoft Entra ID can support this functionality with the claim’s transformation functions where you can evaluate multiple claim values. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
 |UNSUPPORTED_RULE_TYPE      | The claim rule couldn’t be recognized. For more information on how to configure claims in Microsoft Entra ID, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
-|CONDITION_MATCHES_UNSUPPORTED_ISSUER      | The condition statement uses an Issuer that isn't supported in Microsoft Entra ID. Currently, Microsoft Entra doesn’t source claims from stores different that Active Directory or Microsoft Entra ID. If this is blocking you from migrating applications to Microsoft Entra ID, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).         |
-|UNSUPPORTED_CONDITION_FUNCTION      | The condition statement uses an aggregate function to issue or add a single claim regardless of the number of matches.  In Microsoft Entra ID, you can evaluate the attribute of a user to decide what value to use for the claim with functions like IfEmpty(), StartWith(), Contains(), among others. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
+|CONDITION_MATCHES_UNSUPPORTED_ISSUER      | The condition statement uses an Issuer that isn't supported in Microsoft Entra ID. Currently, Microsoft Entra doesn’t source claims from stores different that Active Directory or Microsoft Entra ID. If this condition is blocking you from migrating applications to Microsoft Entra ID, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).         |
+|UNSUPPORTED_CONDITION_FUNCTION      | The condition statement uses an aggregate function to issue or add a single claim regardless of the number of matches. In Microsoft Entra ID, you can evaluate the attribute of a user to decide what value to use for the claim with functions like IfEmpty(), StartWith(), Contains(), among others. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
 |RESTRICTED_CLAIM_ISSUED      | The condition statement uses a claim that is restricted in Microsoft Entra ID. You might be able to issue a restricted claim, but you can’t modify its source or apply any transformation. For more information, see [Customize claims emitted in tokens for a specific app in Microsoft Entra ID](~/identity-platform/saml-claims-customization.md).          |
 |EXTERNAL_ATTRIBUTE_STORE      | The issuance statement uses an attribute store different that Active Directory. Currently, Microsoft Entra doesn’t source claims from stores different that Active Directory or Microsoft Entra ID. If this result is blocking you from migrating applications to Microsoft Entra ID, [let us know](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).          |
-|UNSUPPORTED_ISSUANCE_CLASS      | The issuance statement uses ADD to add claims to the incoming claim set. In Microsoft Entra ID, this can be configured as multiple claim transformations.  For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).         |
+|UNSUPPORTED_ISSUANCE_CLASS      | The issuance statement uses ADD to add claims to the incoming claim set. In Microsoft Entra ID, this setting can be configured as multiple claim transformations. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).         |
 |UNSUPPORTED_ISSUANCE_TRANSFORMATION      | The issuance statement uses Regular Expressions to transform the value of the claim to be emitted. To achieve similar functionality in Microsoft Entra ID, you can use predefined transformation such as `Extract()`, `Trim()`, and `ToLower()`. For more information, see [Customize claims issued in the SAML token for enterprise applications](~/identity-platform/saml-claims-customization.md).          |
 
 ### Ready to migrate tab
@@ -165,7 +162,7 @@ The AD FS application migration doesn't support the following configurations:
 - The signing certificate isn't migrated from the AD FS relying party application.
 The following tabs exist in the AD FS application migration wizard:
 
-Let's look at the details of each tab in the assisted one-click application migration section of the AD FS application migration wizard
+Let's look at the details of each tab in the assisted one-click application migration section of the wizard.
 
 ### Basics tab
 
@@ -185,13 +182,13 @@ Assisted users and groups configuration supports the following configurations fr
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/user-group-settings-on-premises.png" alt-text="Screenshot of the AD FS users and groups settings pane.":::
 
-These are the users and groups you can view on the configuration wizard. This is a read-only view, you can't make any changes to this section.
+You can view the users and groups on the configuration wizard. This section is a read-only view, you can't make any changes to this section.
 
 ### SAML configurations tab
 
 This tab shows the basic SAML properties that are used for the Single sign-on settings of the Microsoft Entra application. Currently, only required properties are mapped which are Identifier and Reply URL only.
 
-These settings are directly implemented from your AD FS relying party application and can't be modified from this tab. However, after configuring application, you can modify these from the Microsoft Entra admin center's Single sign-on pane of your enterprise application.
+These settings are directly implemented from your AD FS relying party application and can't be modified from this tab. However, after configuring application, you can modify these settings from the Microsoft Entra admin center's Single sign-on pane of your enterprise application.
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/saml-configurations-on-premises.png" alt-text="Screenshot of the AD FS SAML configurations pane.":::
 
@@ -201,11 +198,11 @@ These settings are directly implemented from your AD FS relying party applicatio
 
 All AD FS claims don't get translated as is to the Microsoft Entra claims. The migration wizard supports specific claims only. If you find any missing claims, you can configure them on the migrated enterprise application in Microsoft Entra admin center.
 
-In case, AD FS relying party application has `nameidentifier` configured which is supported in Microsoft Entra ID, then it's configured as `nameidentifier`. Otherwise, `user.userprincipalname` is used as default nameidentifier claim.
+In case, AD FS relying party application has `nameidentifier` configured which is supported in Microsoft Entra ID, then configured as `nameidentifier`. Otherwise, `user.userprincipalname` is used as default nameidentifier claim.
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/claims-configurations-on-premises.png" alt-text="Screenshot of the AD FS claims configurations pane.":::
 
-This is read-only view, you can't make any changes here.
+This section is read-only view, you can't make any changes here.
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/claims-configurations-application-migration.png" alt-text="Screenshot of the AD FS application migration claims configurations tab.":::
 
@@ -219,7 +216,7 @@ From this tab, you can access the relevant documentation to investigate and unde
 
 ### Review + create tab
 
-This tab shows the summary of all the configurations that you have seen from the previous tabs. You can review it once again. If you're happy with all the configurations and you want to go ahead with application migration, select the **Create** button to start the migration process. This migrates the new application into your Microsoft Entra tenant.
+This tab shows the summary of all the configurations that you saw from the previous tabs. You can review it once again. If you're happy with all the configurations and you want to go ahead with application migration, select the **Create** button to start the migration process. It migrates the new application into your Microsoft Entra tenant.
 
 The application migration is currently a nine step process that you can monitor using the notifications. The workflow completes the following actions:
 
@@ -233,7 +230,7 @@ Once the migration process is complete, you see a notification message that read
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/application-configuration-successful.png" alt-text="Screenshot of the application migration successful message.":::
 
-On application migration completion, you get redirected to the **Ready to configure** tab where all previously migrated applications are shown, including the latest ones that you've configured.
+On application migration completion, you get redirected to the **Ready to configure** tab where all previously migrated applications are shown, including the latest ones that you configured.
 
 ## Review and configure the enterprise application
 
@@ -241,7 +238,7 @@ On application migration completion, you get redirected to the **Ready to config
 
    :::image type="content" source="media/migrate-ad-fs-application-howto/saml-based-sign-on-pane.png" alt-text="Screenshot of the SAML-based sign-on pane.":::
 
-1. From the **SAML-based Sign-on** pane, all AD FS relying party application settings are already applied to the newly migrated Microsoft Entra application. The **Identifier** and **Reply URL** properties from the **Basic SAML Configuration** and list of claims from the **Attributes & Claims** tabs of the AD FS application migration wizard are the same as those on the enterprise application.
+1. From the **SAML-based Sign-on** pane, all AD FS relying party application settings are already applied to the newly migrated Microsoft Entra application. The **Identifier** and **Reply URL** properties from the **Basic SAML Configuration** and list of claims from the **Attributes & Claims** tabs of the AD FS application migration wizard are the same as claims on the enterprise application.
 
 1. From the **Properties** pane of the application, the application template logo implies that the application is linked to the selected application template. On the **Owners** page, the current administrator user gets added as a one of the owners of the application.
 
@@ -262,7 +259,10 @@ The wizard doesn't provide any automated clean-up. In case you don't want to pro
 
 ### Can't see all my AD FS applications in the report
 
-If you have installed Microsoft Entra Connect Health agents for AD FS but you still see the prompt to install it or you don't see all your AD FS applications in the report, it might be that you don't have active AD FS applications, or your AD FS applications are Microsoft application.
+If you installed the Microsoft Entra Connect Health agents for AD FS but still see a prompt to install them, or you don’t see all your AD FS applications in the report, there are two possible reasons:
+
+- You don’t have any active AD FS applications.
+- Your missing AD FS applications are Microsoft applications.
 
 > [!NOTE]
 > The AD FS application migration lists all the AD FS applications in your organization with active users sign-in in the last 30 days only.
@@ -272,7 +272,7 @@ If you have installed Microsoft Entra Connect Health agents for AD FS but you st
 
 Each application within your tenant should have a unique application identifier. If you see this error message, it means you already have another application with the same identifier in your Microsoft Entra tenant. In this case, you either need to update the existing application identifier or update your AD FS relying party application identifier and wait for 24 hours to get updates reflected.
 
-## Next steps
+## Related content
 
 - [Managing applications with Microsoft Entra](what-is-application-management.md)
 - [Manage access to apps](what-is-access-management.md)

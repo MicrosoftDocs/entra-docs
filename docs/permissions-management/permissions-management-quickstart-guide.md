@@ -1,17 +1,20 @@
 ---
 title: Microsoft Entra Permissions Management Quickstart Guide
 description: Quickstart guide - How to quickly onboard your Microsoft Entra Permissions Management product
-# CustomerIntent: As a security administrator, I want to successfully onboard Permissions Management so that I can enable identity security in my cloud environment as efficiently as possible.'
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
-
 ms.topic: quickstart
-ms.date: 05/13/2024
+ms.date: 04/01/2025
 ms.author: jfields
+ms.custom: sfi-image-nochange
+# CustomerIntent: As a security administrator, I want to successfully onboard Permissions Management so that I can enable identity security in my cloud environment as efficiently as possible.'
 ---
 
 # Quickstart guide to Microsoft Entra Permissions Management 
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 Welcome to the Quickstart Guide for Microsoft Entra Permissions Management. 
 

@@ -1,12 +1,12 @@
 ---
 title: Single and multitenant apps in Microsoft Entra ID
 description: Learn about the features and differences between single-tenant and multitenant apps in Microsoft Entra ID.
-author: rwike77
+author: cilwerner
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: cwerner
 ms.custom:
-ms.date: 04/26/2024
-ms.reviewer: justhu
+ms.date: 03/13/2025
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article

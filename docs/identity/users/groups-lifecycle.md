@@ -1,18 +1,15 @@
 ---
 title: Set expiration for Microsoft 365 groups
 description: Learn how to set up expiration for Microsoft 365 groups in Microsoft Entra ID.
-
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: jodah
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Configure the expiration policy for Microsoft 365 groups
@@ -83,7 +80,7 @@ For more information on permissions to restore a deleted group, see [Restore a d
 ## Set group expiration
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select **Microsoft Entra ID**.
+1. Select **Identity**.
 1. Select **Groups** > **All groups**, and then select **Expiration** to open the expiration settings.
   
    :::image type="content" source="./media/groups-lifecycle/expiration-settings.png" alt-text="Screenshot that shows expiration settings for groups.":::
@@ -210,7 +207,7 @@ You can use the following cmdlets to configure the policy in more detail. For mo
 For more information on Microsoft Entra groups, see:
 
 - [Existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage members of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

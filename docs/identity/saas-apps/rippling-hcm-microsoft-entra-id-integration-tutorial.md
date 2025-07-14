@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Rippling Human Capital Management (HCM) integration with Microsoft Entra ID/Active Directory'
+title: Configure Rippling Human Capital Management (HCM) for user provisioning in Active Directory
 description: Integrating Rippling Human Capital Management (HCM) with Microsoft Entra ID/Active Directory.
 author: jenniferf-skc
-manager: amycolannino
-ms.reviewer: rahuln3223
+manager: pmwongera
+ms.reviewer: cmmdesai
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
-ms.date: 12/18/2024
+ms.topic: how-to
+ms.date: 06/18/2025
 ms.author: jfields
 ---
 
-# Tutorial: Rippling HCM integration with Microsoft Entra ID/Active Directory
+# Configure Rippling Human Capital Management (HCM) for user provisioning
 
 The document provides a step-by-step guide for integrating Rippling HCM with Microsoft Entra ID/Active Directory. The steps include establishing a connection, configuring attribute mapping, testing account provisioning, configuring account access rules, and monitoring provisioning. This integration allows IT admins to automate business processes using Microsoft Entra ID Governance Lifecycle Workflows. 
 
-For detailed guidance on how to integrate your Rippling HCM environment, reference the Rippling guide [here](https://app.rippling.com/sign-in/id). Click the **Help docs** link next to the application name. 
+For detailed guidance on how to integrate your Rippling HCM environment, reference the Rippling guide [here](https://app.rippling.com/sign-in/id). Select the **Help docs** link next to the application name. 
 
 Here are the high-level steps for configuring the app integration with Microsoft Entra ID/Active Directory in the [Rippling App Shop](https://www.rippling.com/app-shop/app/microsoftactivedirectory): 
 
@@ -53,6 +53,6 @@ In this step, the IT admin can monitor the actions performed by Rippling and rev
 
 Using the above steps, once employee data from Rippling is available in Microsoft Entra ID, the IT admin can configure Microsoft Entra ID Governance Lifecycle Workflows to automate the Joiner-Mover-Leaver business processes. 
 
-## Next steps
+## Related content
 - [Govern access for applications in your environment](../../id-governance/identity-governance-applications-prepare.md)
 - [Connected applications](../../id-governance/apps.md)

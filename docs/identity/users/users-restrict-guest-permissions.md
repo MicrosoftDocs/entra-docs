@@ -1,15 +1,14 @@
 ---
 title: Restrict guest user access permissions
 description: Restrict guest user access permissions using the Azure portal, PowerShell, or Microsoft Graph in Microsoft Entra ID
-
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ms.reviewer: krbain
 ---
 
@@ -27,11 +26,8 @@ When guest access is restricted, guests can view only their own user profile. Pe
 
 ## Update in the Microsoft Entra admin center
 
-
-We’ve made changes to the existing Azure portal controls for guest user permissions.
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Select **Identity**  > **External Identities**.
+1. Select **Entra ID** > **External Identities**.
 1. Select **External collaboration settings**.
 1. On the **External collaboration settings** page, select **Guest user access is restricted to properties and memberships of their own directory objects** option.
 

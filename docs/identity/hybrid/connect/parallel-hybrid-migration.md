@@ -2,10 +2,10 @@
 title: 'Multi-organizational on-premises Exchange mailbox migration for Hosters using Microsoft Entra Connect'
 description: Scenario that describes how Hosters can do a multi-organizational mailbox migration with hybrid identity.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ---
 

@@ -14,9 +14,9 @@ metadata:
    manage their access through our quickstarts, tutorials, code samples, and API reference documentation.
 
   author: Dickson-Mwendia
-  manager: CelesteDG
+  manager: dougeby
   ms.author: dmwendia
-  ms.date: 03/22/2024
+  ms.date: 02/11/2025
   ms.service: identity-platform  
   ms.topic: hub-page
 ## FRONT MATTER END
@@ -102,7 +102,7 @@ conceptualContent:
     - title: Sign in users
       links:
         - text: Single-page web app (SPA)
-          url: quickstart-single-page-app-react-sign-in.md
+          url: quickstart-single-page-app-sign-in.md
           itemType: quickstart
         - text: Web app
           url: quickstart-web-app-dotnet-core-sign-in.md
@@ -208,21 +208,21 @@ additionalContent:
       - title: Connect to Microsoft Graph
         summary: >
           Programmatic access to organizational, user, and app data stored in Microsoft Entra ID. Call Microsoft Graph from your app to
-          create and manage Microsoft Entra users and groups, get and modify your users' data like their profiles, calendars, email, and more.
+          create and manage Microsoft Entra users and groups, get, and modify your users' data like their profiles, calendars, email, and more.
         links:
         - url: /graph/overview?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
           text: Microsoft Graph API documentation
       ## CARD 3 ######################
       - title: Manage and market your apps
         summary: >
-          Make existing SaaS apps like Dropbox, Salesforce, and ServiceNow available to your organization's users, configure SSO, and manage security.
+          Make existing SaaS apps like Dropbox, Salesforce, and ServiceNow available to your organization's users, configure single sign-on (SSO), and manage security.
           Or, become an independent software vendor (ISV) by publishing your own SaaS app for use by *other* organizations that use Microsoft Entra ID.
         links:
         - url: ~/identity/enterprise-apps/what-is-application-management.md
           text: App management documentation
       ## CARD 4 ####################
       - title: Manage app users and their access
-        summary: Automatically create user identities and their roles in your organization's installed SaaS apps. HR-driven provisioning, System for Cross-domain Identity Management (SCIM), and more.
+        summary: Automatically create user identities and their roles in your organization's SaaS apps. HR-driven provisioning, System for Cross-domain Identity Management (SCIM), and more.
         links:
           - url: ~/identity/app-provisioning/user-provisioning.md
             text: App user and role provisioning documentation

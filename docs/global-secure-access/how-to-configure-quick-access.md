@@ -3,17 +3,23 @@ title: How to Configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: how-to
-ms.date: 12/23/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
-
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 # How to configure Quick Access for Global Secure Access
 
 With Global Secure Access, you can define specific fully qualified domain names (FQDNs) or IP addresses of private resources to include in the traffic for Microsoft Entra Private Access. Your organization's employees can then access the apps and sites that you specify. This article describes how to configure Quick Access for Microsoft Entra Private Access.
+
+> [!NOTE]
+> Use Quick Access as a transition state in your Zero Trust journey. After Quick Access has enabled you to replace your VPN, [configure per-app access](quickstart-per-app-access.md) to achieve application segmentation and per-app granular controls.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/MfcZ3zQhF-4]
 
 ## Prerequisites
 
@@ -35,7 +41,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 Configuring your Quick Access settings is a major component to utilizing Microsoft Entra Private Access. When you configure Quick Access for the first time, Private Access creates a new enterprise application. The properties of this new app are automatically configured to work with Private Access.
 
-To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. The connector group handles the traffic to this new application. Once you have Quick Access and a private network connector group configured, you need to grant access to the app.
+To configure Quick Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/entra/identity/app-proxy/) connector. The connector group handles the traffic to this new application. Once you have Quick Access and a private network connector group configured, you need to grant access to the app.
 
 To summarize, the overall process is as follows:
 
@@ -85,7 +91,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
         - Provide the ports to include.
-        - NetBIOS isn't supported. For example, use `contoso.local/app1` instead of `contoso/app1`.
+        - Wildcard FQDNs must be specified in the format `*.contoso.com`.
     - **IP address range (CIDR)**:
         - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses. An IP address is followed by a suffix indicating the number of network bits in the subnet mask.
         - For example, 192.168.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.
@@ -116,8 +122,6 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 
 > [!NOTE]
 > You can add up to 500 application segments to your Quick Access app.
->
-> Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
 
 ### Add private DNS suffixes
 Private DNS support for Microsoft Entra Private Access lets you query your own internal DNS servers to resolve IP addresses for internal domain names. Let’s look at an example. Let’s say you have an internal IP range of `10.8.0.0` to `10.8.255.255`. You configure this range in your Quick Access application definition. You want users to access a web application responding on IP `10.8.0.5` when they type

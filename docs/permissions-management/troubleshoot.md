@@ -2,15 +2,18 @@
 title: Troubleshoot issues with Permissions Management
 description: Troubleshoot issues with Permissions Management
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: troubleshooting
-ms.date: 11/21/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Troubleshoot issues with Permissions Management
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This section addresses how to troubleshoot issues with Permissions Management.
 

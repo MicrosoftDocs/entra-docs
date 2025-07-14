@@ -4,11 +4,11 @@ description: Describes how to use Entitlement Management with Private Access
 ms.service: entra-id-governance
 ms.subservice:
 author: billmath
-manager: amycolannino
+manager: dougeby
 
 ms.workload: identity
 ms.topic: overview
-ms.date: 02/04/2025
+ms.date: 04/09/2025
 ms.author: billmath
 ---
 
@@ -62,7 +62,7 @@ With the user’s access provisioned, they can now securely connect to the on-pr
 
 ### Scenario 3: VPN Replacement for disconnected apps 
 
-Organizations may have legacy applications that don’t support any provisioning protocols or modern authentication protocols like Kerberos or SAML. ​In these scenarios, organizations can​ manually provision users to the app and then put the app into a separate network segment (a VLAN) along with its dependences and the Entra Private Access proxy. This prevents users, even on premises, from connecting to the app. 
+Organizations may have legacy applications that don’t support any provisioning protocols or modern authentication protocols like Kerberos or SAML. ​In these scenarios, organizations can​ manually provision users to the app and then put the app into a separate network segment (a VLAN) along with its dependencies and the Entra Private Access proxy. This prevents users, even on premises, from connecting to the app. 
 
 Users can then request access to the protected app. Once approved, Entra ID Governance opens a service ticket (e.g., in ServiceNow) for the app owner to manually give the employee [an account in that system](../entitlement-management-ticketed-provisioning.md). Entra ID Governance then assigns the user to the representation of the app in Entra.  
  

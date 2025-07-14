@@ -5,9 +5,9 @@ ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, "languages:iOS", mode-api
+ms.custom:
 ms.date: 02/15/2022
-ms.reviewer: jmprieur, saeeda
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -201,7 +201,7 @@ ms.topic: concept-article
 > * When MFA or other Conditional Access policies are required
 > 
 > ```swift
-> let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParameters: self.webViewParamaters!)
+> let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParameters: self.webViewParameters!)
 > self.applicationContext!.acquireToken(with: parameters) { (result, error) in /* Add your handling logic */}
 > ```
 > 

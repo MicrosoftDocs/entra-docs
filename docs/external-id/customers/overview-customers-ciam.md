@@ -2,14 +2,14 @@
 title: External Tenant Overview
 description: Learn how Microsoft Entra External ID provides to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: overview
-ms.date:  09/30/2024
-ms.author: mimart
+ms.date: 06/11/2025
 ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about identity solutions for apps for consumers and business customers.
@@ -57,7 +57,7 @@ Learn more about managing [customer accounts](how-to-manage-customer-accounts.md
 
 External ID is intended for businesses that want to make applications available to their customers using the Microsoft Entra platform for identity and access.
 
-- **Add sign-up and sign-in pages to your apps.** Quickly add intuitive, user-friendly sign-up and sign-up experiences for your customer apps. With a single identity, a customer can securely access all the applications you want them to use.
+- **Add sign-up and sign-in pages to your apps.** Quickly add intuitive, user-friendly sign-up and sign-in experiences for your customer apps. With a single identity, a customer can securely access all the applications you want them to use.
 
 - **Add single sign-on (SSO) with social and enterprise identities.** Customers can choose a social, enterprise, or managed identity to sign in with a username and password, email, or one-time passcode.
 
@@ -97,11 +97,29 @@ Learn more about [adding your own business logic](concept-custom-extensions.md) 
 
 External ID represents the convergence of business-to-consumer (B2C) features into the Microsoft Entra platform. You benefit from platform features like enhanced security, compliance with regulations, and the ability to scale your identity and access management processes.
 
-- **Microsoft Entra security.** Get all the security and data privacy benefits of Microsoft Entra, including Conditional Access, multifactor authentication, and governance. Protect access to your apps using strong authentication and risk-based adaptive access policies. Because customers are managed in a separate tenant, you can tailor your access policies to users who typically use personal and shared devices instead of managed ones.
+### Conditional Access
 
-- **Microsoft Entra reliability and scalability**. Create highly customized sign-in experiences and manage customer accounts at a large scale. Ensure a good customer experience by taking advantage of Microsoft Entra performance, resiliency, business continuity, low-latency, and high throughput.
+Microsoft Entra Conditional Access brings signals together, to make decisions, and enforce security policies. Conditional Access policies at their simplest are if-then statements; **if** a user wants to access your application, **then** they must complete an action.
 
-Learn more about the [security and governance](concept-security-customers.md) features that are available in an external tenant.
+Conditional Access policies are enforced after the user has completed first-factor authentication. For example, if a user's sign-in risk level is high, they must perform MFA to gain access. Alternatively, the most restrictive approach is to block access to the application.
+
+> [!TIP]
+> [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=CA)
+> 
+> To try out this feature, go to the Woodgrove Groceries demo and start the “Conditional Access and multifactor authentication” use case.
+### Multifactor authentication (MFA)
+
+Microsoft Entra MFA helps safeguard access to data and applications while maintaining simplicity for your users. Microsoft Entra External ID integrates directly with Microsoft Entra MFA so you can add security to your sign-up and sign-in experiences by requiring a second form of authentication. You can fine-tune MFA depending on the extent of security you want to apply to your apps. Consider the following scenarios:
+
+- You offer a single app to customers and you want to enable MFA for an extra layer of security. You can enable MFA in a Conditional Access policy that's targeted to all users and your app.
+
+- You offer multiple apps to your customers, but you don't require MFA for every application. For example, the customer can sign into an auto insurance application with a social or local account, but must verify the phone number before accessing the home insurance application registered in the same directory. In your Conditional Access policy, you can target all users but just those apps for which you want to enforce MFA.
+
+Learn more about [MFA in external tenants](concept-multifactor-authentication-customers.md) or see [how to enable multifactor authentication](how-to-multifactor-authentication-customers.md).
+
+### Microsoft Entra reliability and scalability
+
+Create highly customized sign-in experiences and manage customer accounts at a large scale. Ensure a good customer experience by taking advantage of Microsoft Entra performance, resiliency, business continuity, low-latency, and high throughput.
 
 ## Analyze user activity and engagement
 
@@ -111,17 +129,7 @@ Learn more about the [application user activity dashboards](how-to-user-insights
 
 ## About Azure AD B2C
 
-If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID. Opt for the current Azure AD B2C product if:
-
-- You have an immediate need to deploy a production ready build.
-  
-   > [!NOTE]
-   > Keep in mind that the next generation Microsoft Entra External ID platform represents the future of CIAM for Microsoft, and rapid innovation, new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture.
-
-Opt for the next generation Microsoft Entra External ID platform if:
-
-- You’re starting fresh building identities into apps or you're in the early stages of product discovery.
-- The benefits of rapid innovation, new features, and added capabilities are a priority.
+Effective May 1, 2025, [Azure AD B2C](/azure/active-directory-b2c/) is no longer available for purchase by new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID is the next-generation CIAM solution from Microsoft, with all new features and capabilities being built on this platform.
 
 ## Next steps
 

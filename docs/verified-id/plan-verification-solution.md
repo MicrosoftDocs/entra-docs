@@ -6,7 +6,6 @@ author: barclayn
 manager: martinco
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 12/16/2024
 ms.author: barclayn
 ms.custom: references_regions
@@ -68,7 +67,7 @@ Microsoft Entra Verified ID currently supports [DID Web](https://w3c-ccg.github.
 
 :::image type="content" source="media/plan-verification-solution/plan-verification-solution-authenticator.png" alt-text="Diagram of the components of a verification solution with Microsoft Authenticator application highlighted.":::
 
-Microsoft Authenticator is the mobile application. Authenticator orchestrates the interactions between the user, the Microsoft Entra VC service and the contract used to issue VCs. It acts as a digital wallet in which the holder of the VC stores the VC, including the private key of the subject of the VC. Authenticator is also the mechanism used to present VCs for verification.
+**Microsoft Authenticator** is the mobile application. **Authenticator** orchestrates the interactions between the user, the Microsoft Entra VC service and the contract used to issue VCs. It acts as a digital wallet in which the holder of the VC stores the VC, including the private key of the subject of the VC. **Authenticator** is also the mechanism used to present VCs for verification.
 
 
 ### Relying party (RP) 

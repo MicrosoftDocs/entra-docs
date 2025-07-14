@@ -2,14 +2,13 @@
 title: Tutorial - Issue Microsoft Entra Verified ID credentials from an application
 description: In this tutorial, you learn how to issue verifiable credentials by using a sample app.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 12/13/2024
+ms.date: 04/30/2025
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 
@@ -47,7 +46,7 @@ The following diagram illustrates the Microsoft Entra Verified ID architecture a
 
 In this step, you create the verified credential expert card by using Microsoft Entra Verified ID. After you create the credential, your Microsoft Entra tenant can issue it to users who initiate the process.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the **Microsoft Entra admin center** with the **Authentication Policy Administrator** role.
 1. Select **Verifiable credentials**.
 1. After you [set up your tenant](verifiable-credentials-configure-tenant.md), the **Create credential** should appear. Alternatively, you can select **Credentials** in the left hand menu and select **+ Add a credential**.
 1. In **Create credential**, select **Custom Credential** and select **Next**:
@@ -91,7 +90,7 @@ In this step, you create the verified credential expert card by using Microsoft 
 
     1. Copy the following JSON and paste it in the  **Rules definition** textbox
     
-        ```JSON
+        ```json
         {
           "attestations": {
             "idTokenHints": [
@@ -156,7 +155,7 @@ git clone https://github.com/Azure-Samples/active-directory-verifiable-credentia
 
 Create a client secret for the registered application that you created. The sample application uses the client secret to prove its identity when it requests tokens.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with appropriate administrator permissions.
 1. Select Microsoft Entra ID.
 1. Go to **Applications** > **App registrations** page.
 

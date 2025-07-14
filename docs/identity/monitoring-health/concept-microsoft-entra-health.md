@@ -2,11 +2,11 @@
 title: Learn about Microsoft Entra Health monitoring
 description: Monitor the health of your tenant through several identity scenarios and authentication availability rates with Microsoft Entra Health
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/17/2024
+ms.date: 04/25/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 ---
@@ -18,7 +18,7 @@ Microsoft Entra Health provides you with observability of your Microsoft Entra t
 When these metrics and signals are paired together, you get a comprehensive view of the health of your Microsoft Entra tenant. Regularly monitoring the information provided in Microsoft Entra Health can help you identify trends, potential issues, and areas for improvement in your tenant's health. Email notifications can also be configured to alert you when the service identifies an anomaly in the pattern for your tenant. This article provides an overview of the Microsoft Entra Health monitoring features.
 
 > [!IMPORTANT]
-> Microsoft Entra Health features are currently in PREVIEW.
+> Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Access Microsoft Entra Health
@@ -26,11 +26,11 @@ When these metrics and signals are paired together, you get a comprehensive view
 Scenario monitoring and SLA Attainment are available in the Microsoft Entra Health area of the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Health**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Health**.
 
 The page opens to the SLA Attainment page.
 
-![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png)
+:::image type="content" source="media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png" alt-text="Screenshot of the Microsoft Entra Health landing page." lightbox="media/concept-microsoft-entra-health/identity-health-landing-page-attainment-expanded.png":::
 
 ## How Microsoft Entra Health monitoring (preview) works
 
@@ -59,7 +59,7 @@ The following key scenarios can be monitored in Microsoft Entra Health:
 
 The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. 
 
-![Screenshot of the MFA scenario monitoring data.](media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa.png)
+:::image type="content" source="media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa.png" alt-text="Screenshot of the MFA scenario monitoring data." lightbox="media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa-expanded.png":::
 
 Each scenario detail page provides trends and totals for that scenario for the last 30 days. This data is aggregated every 15 minutes, for low latency insights into your tenant's health.
 
@@ -74,8 +74,7 @@ The service provides alerts for the following scenarios:
 - [Sign-ins requiring a Conditional Access compliant device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring a Conditional Access managed device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
-
-At this time, alerts are only available through the Microsoft Graph API. With the Microsoft Graph health monitoring alerts APIs, you can view the alerts, configure email notifications, and update the state of the alert. For more information, see [Microsoft Graph Health monitoring alerts API documentation](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+- [Conditional Access block policy](scenario-health-conditional-access-block-policy.md)
 
 ## Related content
 

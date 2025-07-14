@@ -3,12 +3,13 @@ title: Manage access to custom security attributes in Microsoft Entra ID
 description: Learn how to manage access to custom security attributes in Microsoft Entra ID.
 author: rolyon
 ms.author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/01/2024
+ms.date: 03/30/2025
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 ---
 
 # Manage access to custom security attributes in Microsoft Entra ID
@@ -113,7 +114,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Protection** > **Custom security attributes**.
+1. Browse to **Entra ID** > **Custom security attributes**.
 
 1. Select the attribute set you want grant access to.
 
@@ -153,17 +154,6 @@ Content-type: application/json
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[New-AzureADMSRoleAssignment](/powershell/module/azuread/new-azureadmsroleassignment)
-
-```powershell
-$roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
-$directoryScope = "/attributeSets/Engineering"
-$roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScope
-```
-
 ---
 
 ### Assign roles at tenant scope
@@ -174,7 +164,7 @@ The following examples show how to assign a custom security attribute role to a 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
     :::image type="content" source="./media/custom-security-attributes-manage/manage-tenant.png" alt-text="Screenshot of assigning attribute roles at tenant scope." lightbox="./media/custom-security-attributes-manage/manage-tenant.png":::
 
@@ -205,17 +195,6 @@ Content-type: application/json
     "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "directoryScopeId": "/"
 }
-```
-
-# [Azure AD PowerShell](#tab/aad-powershell)
-
-[New-AzureADMSRoleAssignment](/powershell/module/azuread/new-azureadmsroleassignment)
-
-```powershell
-$roleDefinitionId = "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d"
-$principalId = "aaaaaaaa-bbbb-cccc-1111-222222222222"
-$directoryScope = "/"
-$roleAssignment = New-AzureADMSRoleAssignment -RoleDefinitionId $roleDefinitionId -PrincipalId $principalId -DirectoryScopeId $directoryScope
 ```
 
 ---

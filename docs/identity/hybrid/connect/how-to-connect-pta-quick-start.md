@@ -1,18 +1,17 @@
 ---
 title: 'Microsoft Entra pass-through authentication - Quickstart'
 description: This article describes how to get started with Microsoft Entra pass-through authentication.
-
 keywords: Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/20/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra pass-through authentication: Quickstart
@@ -106,7 +105,7 @@ Follow these instructions to verify that you have enabled Pass-through Authentic
 4. Verify that the **Pass-through authentication** feature appears as **Enabled**.
 1. Select **Pass-through authentication**. The **Pass-through authentication** pane lists the servers where your Authentication Agents are installed.
 
-   ![Screenhot shows Microsoft Entra admin center: Microsoft Entra Connect pane.](./media/how-to-connect-pta-quick-start/azure-ad-connect-blade.png)
+   ![Screenshot shows Microsoft Entra admin center: Microsoft Entra Connect pane.](./media/how-to-connect-pta-quick-start/azure-ad-connect-blade.png)
    
    ![Screenshot shows Microsoft Entra admin center: Pass-through Authentication pane.](./media/how-to-connect-pta-quick-start/pta-server-list.png)
    

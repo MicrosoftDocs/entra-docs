@@ -1,16 +1,15 @@
 ---
 title: Renew expiring service principal credentials recommendation
 description: Learn how the Microsoft Entra recommendation to renew expiring service principal credentials work and why it's important.
-
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/22/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand why it's important to renew expiring service principals so I can make sure my applications continue to function.
 ---
 # Microsoft Entra recommendation: Renew expiring service principal credentials (preview)
@@ -48,14 +47,14 @@ This recommendation is available in the Microsoft Entra admin center and using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
 
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 
 1. Select the **Recommendations** tab and select the **Renew expiring service principal credentials** recommendation.
 
 1. Select **More Details** from the **Actions** column.
 
 1. From the panel that opens, select **Update Credential** to navigate directly to the **Single sign-on** area of the app registration.
-    1. Alternatively, browse to **Identity** > **Applications** > **App registrations** and locate the application for which the credential needs to be rotated.
+    1. Alternatively, browse to **Entra ID** > **App registrations** and locate the application for which the credential needs to be rotated.
 
       :::image type="content" source="media/recommendation-renew-expiring-service-principal-credential/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-renew-expiring-service-principal-credential/app-registrations-list-expanded.png":::
 
@@ -88,18 +87,18 @@ To retrieve all recommendations for your tenant:
 GET https://graph.microsoft.com/beta/directory/recommendations
 ```
 
-From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_Microsoft.Identity.IAM.Insights.servicePrincipalKeyExpiry`.
+From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_servicePrincipalKeyExpiry`.
 
 To identify impacted resources:
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.servicePrincipalKeyExpiry
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_servicePrincipalKeyExpiry
 ```
 
 To filter the list of resources based on their status, for example only resources that are marked as `active`:
 
 ```http
-https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights. servicePrincipalKeyExpiry/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
+https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_ servicePrincipalKeyExpiry/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active'
 ```
 
 - Take note of the `AppId`, `CredentialId`, and the origin of the credential you want to remove.
@@ -114,7 +113,7 @@ https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.
 
 ```json
 {
-  "id": "536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.ServicePrincipalKeyExpiry",
+  "id": "ddddeeee-3333-ffff-4444-aaaa5555bbbb_ServicePrincipalKeyExpiry",
   "recommendationType": "servicePrincipalKeyExpiry",
   "createdDateTime": "2022-05-29T00:11:17Z",
   "impactStartDateTime": "2022-05-29T00:11:17Z",

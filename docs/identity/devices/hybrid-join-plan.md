@@ -5,11 +5,11 @@ description: Explains the steps that are required to implement Microsoft Entra h
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 02/26/2024
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
 ---
 
@@ -27,7 +27,7 @@ This article assumes that you're familiar with the [Introduction to device ident
 > [!NOTE]
 > The minimum required domain controller (DC) version for Windows 10 or newer Microsoft Entra hybrid join is Windows Server 2008 R2.
 
-Microsoft Entra hybrid joined devices require network line of sight to your domain controllers periodically. Without this connection, devices become unusable.
+Microsoft Entra hybrid joined devices require periodic network line of sight to your domain controllers. Without this connection, devices become unusable.
 
 Scenarios that break without line of sight to your domain controllers include:
 
@@ -37,7 +37,7 @@ Scenarios that break without line of sight to your domain controllers include:
 
 ## Plan your implementation
 
-To plan your hybrid Microsoft Entra implementation, you should familiarize yourself with:
+To plan your hybrid Microsoft Entra implementation, familiarize yourself with:
 
 > [!div class="checklist"]
 > - Review supported devices
@@ -55,6 +55,7 @@ Microsoft Entra hybrid join supports a broad range of Windows devices.
 - Windows Server 2016
   - **Note:** Azure National cloud customers require version 1803
 - Windows Server 2019
+- Windows Server 2022
 
 As a best practice, Microsoft recommends you upgrade to the latest version of Windows.
 
@@ -68,7 +69,7 @@ As a best practice, Microsoft recommends you upgrade to the latest version of Wi
 
 ### OS imaging considerations
 
-- If you're relying on the System Preparation Tool (Sysprep) and if you're using a **pre-Windows 10 1809** image for installation, make sure that image isn't from a device that is already registered with Microsoft Entra ID as Microsoft Entra hybrid joined.
+- If you're relying on the System Preparation Tool (Sysprep) and using a **pre-Windows 10 1809** image for installation, make sure that image isn't from a device already registered with Microsoft Entra ID as Microsoft Entra hybrid joined.
 
 - If you're relying on a Virtual Machine (VM) snapshot to create more VMs, make sure that snapshot isn't from a VM that is already registered with Microsoft Entra ID as Microsoft Entra hybrid joined.
 
@@ -78,7 +79,7 @@ As a best practice, Microsoft recommends you upgrade to the latest version of Wi
 
 ### Handling devices with Microsoft Entra registered state
 
-If your Windows 10 or newer domain joined devices are [Microsoft Entra registered](concept-device-registration.md) to your tenant, it could lead to a dual state of Microsoft Entra hybrid joined and Microsoft Entra registered device. We recommend upgrading to Windows 10 1803 (with KB4489894 applied) or newer to automatically address this scenario. In pre-1803 releases, you need to remove the Microsoft Entra registered state manually before enabling Microsoft Entra hybrid join. In 1803 and above releases, the following changes were made to avoid this dual state:
+If your Windows 10 or newer domain joined devices are [Microsoft Entra registered](concept-device-registration.md) to your tenant, it might lead to a dual state of Microsoft Entra hybrid joined and Microsoft Entra registered device. We recommend upgrading to Windows 10 1803 (with KB4489894 applied) or newer to automatically address this scenario. In pre-1803 releases, you need to remove the Microsoft Entra registered state manually before enabling Microsoft Entra hybrid join. In 1803 and above releases, the following changes were made to avoid this dual state:
 
 - Any existing Microsoft Entra registered state for a user would be automatically removed <i>after the device is Microsoft Entra hybrid joined and the same user logs in</i>. For example, if User A had a Microsoft Entra registered state on the device, the dual state for User A is cleaned up only when User A logs in to the device. If there are multiple users on the same device, the dual state is cleaned up individually when those users sign in. After an admin removes the Microsoft Entra registered state, Windows 10 will unenroll the device from Intune or other mobile device management (MDM), if the enrollment happened as part of the Microsoft Entra registration via autoenrollment.
 - Microsoft Entra registered state on any local accounts on the device isn't affected by this change. Only applicable to domain accounts. Microsoft Entra registered state on local accounts isn't removed automatically even after user logon, since the user isn't a domain user.
@@ -86,7 +87,7 @@ If your Windows 10 or newer domain joined devices are [Microsoft Entra registere
 - In Windows 10 1803, if you have Windows Hello for Business configured, the user needs to reconfigure Windows Hello for Business after the dual state cleanup. This issue is addressed with KB4512509.
 
 > [!NOTE]
-> Even though Windows 10 and Windows 11 automatically remove the Microsoft Entra registered state locally, the device object in Microsoft Entra ID is not immediately deleted if it is managed by Intune. You can validate the removal of Microsoft Entra registered state by running dsregcmd /status and consider the device not to be Microsoft Entra registered based on that.
+> Even though Windows 10 and Windows 11 automatically remove the Microsoft Entra registered state locally, the device object in Microsoft Entra ID isn't immediately deleted if it's managed by Intune. You can validate the removal of Microsoft Entra registered state by running `dsregcmd /status`.
 
 <a name='hybrid-azure-ad-join-for-single-forest-multiple-azure-ad-tenants'></a>
 
@@ -113,10 +114,10 @@ To register devices as Microsoft Entra hybrid join to respective tenants, organi
 
 ## Review targeted Microsoft Entra hybrid join
 
-Organizations might want to do a targeted rollout of Microsoft Entra hybrid join before enabling it for their entire organization. Review the article [Microsoft Entra hybrid join targeted deployment](hybrid-join-control.md) to understand how to accomplish it.
+Organizations might want to do a targeted rollout of Microsoft Entra hybrid join before enabling it for the entire organization. Review the article [Microsoft Entra hybrid join targeted deployment](hybrid-join-control.md) to understand how to accomplish it.
 
 > [!WARNING]
-> Organizations should include a sample of users from varying roles and profiles in their pilot group. A targeted rollout will help identify any issues your plan might not have addressed before you enable for the entire organization.
+> Organizations should include a sample of users from varying roles and profiles in their pilot group. A targeted rollout helps identify any issues your plan might not address before you enable for the entire organization.
 
 ## Select your scenario based on your identity infrastructure
 
@@ -171,6 +172,6 @@ The following table provides details on support for these on-premises Microsoft 
 | Routable | Managed | From 1803 release | Generally available, Microsoft Entra SSPR on Windows lock screen isn't supported in environments where the on-premises UPN is different from the Microsoft Entra UPN. The on-premises UPN must be synced to the `onPremisesUserPrincipalName` attribute in Microsoft Entra ID |
 | Nonroutable | Managed | Not supported | |
 
-## Next step
+## Next steps
 
 - [Configure Microsoft Entra hybrid join](how-to-hybrid-join.md)

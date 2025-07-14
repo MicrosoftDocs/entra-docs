@@ -1,17 +1,15 @@
 ---
 title: Create a custom role with permissions to create unlimited app registrations
 description: Assign a custom role to grant unrestricted app registrations in Microsoft Entra ID.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
 ms.date: 01/03/2025
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 # Create a custom role with permissions to create unlimited app registrations
 
@@ -35,7 +33,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select **New custom role**.
 
@@ -55,7 +53,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select the Application Registration Creator role and select **Add assignment**.
 

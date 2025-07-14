@@ -32,7 +32,7 @@ Use Microsoft authentication methods to meet required NIST authenticator types.
 | **Recommended methods**|    |
 |  Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator<sup>1</sup>| Multi-factor cryptographic hardware |
 | **Additional methods**||
-|Password<br>**AND**<br>Single-factor hardware protected certificate|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
+|Password **OR** QR Code (PIN) <br>**AND**<br>Single-factor hardware protected certificate|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
 
 <sup>1</sup> Passkey in Microsoft Authenticator is overall considered partial AAL3 and can qualify as AAL3 on platforms with FIPS 140 Level 2 Overall (or higher) and FIPS 140 level 3 physical security (or higher). For additional information on FIPS 140 compliance for Microsoft Authenticator (iOS/Android) See [FIPS 140 compliant for Microsoft Entra authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 ### Recommendations

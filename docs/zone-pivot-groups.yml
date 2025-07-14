@@ -44,8 +44,27 @@ groups:
     title: Application provisioning
   - id: cross-tenant-synchronization
     title: Cross-tenant synchronization
+# Owner: rolyon
+- id: same-cloud-cross-cloud-synchronization
+  title: Same cloud synchronization or cross-cloud synchronization
+  prompt: Choose cloud type
+  pivots:
+  - id: same-cloud-synchronization
+    title: Same cloud synchronization
+  - id: cross-cloud-synchronization
+    title: Cross-cloud synchronization
 ########### BEGIN MICROSOFT IDENTITY PLATFORM
 # Referenced by: /entra/identity-platform/*
+# Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner, kengaderdus
+## Tenant types
+- id: entra-tenants
+  title: entra-tenants
+  prompt: Choose a tenant type
+  pivots:
+  - id: workforce
+    title: Workforce
+  - id: external
+    title: External
 # Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner
 ## WEB API ##
 - id: web-api-howto-prereq
@@ -69,14 +88,7 @@ groups:
 ########### BEGIN APPLICATION MANAGEMENT
 # Owner(s):      jomondi, celested
 ## Home realm discovery ##
-- id: home-realm-discovery
-  title: hrd-policy
-  prompt: Choose an option
-  pivots:
-  - id: powershell-hrd
-    title: Azure AD PowerShell
-  - id: graph-hrd
-    title: Microsoft Graph
+
 ## template with all
 - id: enterprise-apps-all
   title: Manage Enterprise apps
@@ -84,8 +96,17 @@ groups:
   pivots:
   - id: portal
     title: Microsoft Entra admin center
-  - id: aad-powershell
-    title: Azure AD PowerShell
+  - id: entra-powershell
+    title: Microsoft Entra PowerShell
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
+## template with only graph-powershell, ms-graph
+- id: enterprise-app-graph-ps-ms-graph
+  title: Manage Enterprise apps policy
+  prompt: Choose an option
+  pivots:
   - id: ms-powershell
     title: Microsoft Graph PowerShell
   - id: ms-graph
@@ -95,13 +116,13 @@ groups:
   title: Manage Enterprise apps
   prompt: Choose an option
   pivots:
-  - id: aad-powershell
-    title: Azure AD PowerShell
+  - id: entra-powershell
+    title: Microsoft Entra PowerShell
   - id: ms-powershell
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
-## Template without portal and Azure AD Graph
+## Template without portal and Azure AD PowerShell
 - id: enterprise-apps-minus-portal-aad
   title: Manage Enterprise apps
   prompt: Choose an option
@@ -121,8 +142,8 @@ groups:
     title: Azure AD PowerShell
   - id: ms-powershell
     title: Microsoft Graph PowerShell
-## template without azure AD PowerShell
-- id: enterprise-apps-minus-former-powershell
+## template without legacy PowerShell
+- id: enterprise-apps-minus-legacy-powershell
   title: Manage Enterprise apps
   prompt: Choose an option
   pivots:
@@ -147,7 +168,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: msgraph-powershell
-    title: Microsoft graph PowerShell
+    title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
   - id: azure-cli
@@ -351,3 +372,12 @@ groups:
     title: Onboard
   - id: identity-governance-guest-offboard
     title: Offboard
+# Owner owinfrey
+- id: identity-extension-windows-environment
+  title: Azure Virtual Machine extensions and extensions for Arc-enabled Windows Server.
+  prompt: Select how your device is connected to Azure.
+  pivots:
+  - id: identity-extension-vm
+    title: Virtual Machine
+  - id: identity-extension-hybrid
+    title: Arc-enabled Server

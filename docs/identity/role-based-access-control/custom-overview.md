@@ -1,18 +1,15 @@
 ---
 title: Overview of Microsoft Entra role-based access control (RBAC)
 description: Learn how to understand the parts of a role assignment and restricted scope in Microsoft Entra ID.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: overview
-ms.date: 04/10/2023
-ms.author: rolyon
+ms.date: 03/30/2025
+ms.author: barclayn
 ms.reviewer: abhijeetsinha
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Overview of role-based access control in Microsoft Entra ID
@@ -63,7 +60,7 @@ You can [create role assignments](manage-roles-portal.md) and [list the role ass
 
 The following diagram shows an example of a role assignment. In this example, Chris has been assigned the App Registration Administrator custom role at the scope of the Contoso Widget Builder app registration. The assignment grants Chris the permissions of the App Registration Administrator role for only this specific app registration.
 
-![Role assignment is how permissions are enforced and has three parts.](./media/custom-overview/rbac-overview.png)
+:::image type="content" source="./media/custom-overview/rbac-overview.png" alt-text="Diagram of a role assignment that consists of three parts." lightbox="./media/custom-overview/rbac-overview.png":::
 
 ### Security principal
 

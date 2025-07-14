@@ -1,22 +1,21 @@
 ---
 title: Troubleshoot Conditional Access using the What If tool
 description: Where to find what Conditional Access policies were applied and why
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
 ms.date: 08/13/2024
-
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: calebb
+ms.custom: sfi-image-nochange
 ---
 # Troubleshooting Conditional Access using the What If tool
 
 The [What If tool](what-if-tool.md) in Conditional Access is powerful when trying to understand why a policy was or wasn't applied to a user in a specific circumstance or if a policy would apply in a known state.
 
-The What If tool is located in the **Microsoft Entra admin center** > **Protection** > **Conditional Access** > **Policies** > **What If**.
+The What If tool is located in the **Microsoft Entra admin center** > **Entra ID** > **Conditional Access** > **Policies** > **What If**.
 
 ![Conditional Access What If tool at default state](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-tool.png)
 
@@ -61,7 +60,7 @@ Many organizations create policies based on network locations, permitting truste
 
 To validate that a configuration is appropriate, an administrator could use the What If tool to mimic access, from a location that should be allowed and from a location that should be denied.
 
-[ ![What If tool showing results with Block access](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png)](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png#lightbox)
+[![What If tool showing results with Block access](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png)](./media/troubleshoot-conditional-access-what-if/conditional-access-what-if-results.png#lightbox)
 
 In this instance, the user would be blocked from accessing any cloud app on their trip to North Korea as Contoso blocked access from that location.
 

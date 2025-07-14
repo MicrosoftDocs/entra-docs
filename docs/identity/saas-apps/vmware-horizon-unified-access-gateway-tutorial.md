@@ -1,38 +1,37 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with VMware Horizon - Unified Access Gateway'
+title: Configure VMware Horizon - Unified Access Gateway for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and VMware Horizon - Unified Access Gateway.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and VMware Horizon - Unified Access Gateway so that I can control who has access to VMware Horizon - Unified Access Gateway, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with VMware Horizon - Unified Access Gateway
+# Configure VMware Horizon - Unified Access Gateway for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate VMware Horizon - Unified Access Gateway with Microsoft Entra ID. When you integrate VMware Horizon - Unified Access Gateway with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate VMware Horizon - Unified Access Gateway with Microsoft Entra ID. When you integrate VMware Horizon - Unified Access Gateway with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to VMware Horizon - Unified Access Gateway.
 * Enable your users to be automatically signed-in to VMware Horizon - Unified Access Gateway with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * VMware Horizon - Unified Access Gateway single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * VMware Horizon - Unified Access Gateway supports **SP and IDP** initiated SSO
 
@@ -41,11 +40,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of VMware Horizon - Unified Access Gateway into Microsoft Entra ID, you need to add VMware Horizon - Unified Access Gateway from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **VMware Horizon - Unified Access Gateway** in the search box.
 1. Select **VMware Horizon - Unified Access Gateway** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-vmware-horizon---unified-access-gateway'></a>
@@ -57,10 +56,10 @@ Configure and test Microsoft Entra SSO with VMware Horizon - Unified Access Gate
 To configure and test Microsoft Entra SSO with VMware Horizon - Unified Access Gateway, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure VMware Horizon-Unified Access Gateway SSO](#configure-vmware-horizon-unified-access-gateway-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create VMware Horizon-Unified Access Gateway test user](#create-vmware-horizon-unified-access-gateway-test-user)** - to have a counterpart of B.Simon in VMware Horizon - Unified Access Gateway that is linked to the Microsoft Entra representation of user.
+    1. **[Create VMware Horizon-Unified Access Gateway test user](#create-vmware-horizon-unified-access-gateway-test-user)** - to have a counterpart of B.Simon in VMware Horizon - Unified Access Gateway that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -70,9 +69,9 @@ To configure and test Microsoft Entra SSO with VMware Horizon - Unified Access G
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **VMware Horizon - Unified Access Gateway** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **VMware Horizon - Unified Access Gateway** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -84,13 +83,13 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<HORIZON_UAG_FQDN>/portal/samlsso`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<HORIZON_UAG_FQDN>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [VMware Horizon - Unified Access Gateway Client support team](mailto:support@vmware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [VMware Horizon - Unified Access Gateway Client support team](mailto:support@vmware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -102,33 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to VMware Horizon - Unified Access Gateway.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **VMware Horizon - Unified Access Gateway**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been setup for this app, you see "Default Access" role selected.
-1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure VMware Horizon-Unified Access Gateway SSO
 
@@ -144,16 +117,16 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to VMware Horizon - Unified Access Gateway Sign-on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to VMware Horizon - Unified Access Gateway Sign-on URL where you can initiate the login flow.  
 
 * Go to VMware Horizon - Unified Access Gateway Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the VMware Horizon - Unified Access Gateway for which you set up the SSO 
+* Select **Test this application**, and you should be automatically signed in to the VMware Horizon - Unified Access Gateway for which you set up the SSO 
 
-You can also use Microsoft Access Panel to test the application in any mode. When you click the VMware Horizon - Unified Access Gateway tile in the Access Panel, you should be automatically signed in to the VMware Horizon - Unified Access Gateway for which you set up the SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft Access Panel to test the application in any mode. When you select the VMware Horizon - Unified Access Gateway tile in the Access Panel, you should be automatically signed in to the VMware Horizon - Unified Access Gateway for which you set up the SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next Steps
+## Related content
 
 Once you configure VMware Horizon - Unified Access Gateway you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

@@ -4,11 +4,11 @@ description: Learn how to call a protected ASP.NET Core web API using the Micros
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 04/24/2024
+ms.date: 03/06/2025
 ms.service: identity-platform
-
 ms.topic: how-to
 zone_pivot_groups: web-api-howto-prereq
+ms.custom: sfi-image-nochange
 #Customer intent: As a software developer, I want to call a protected ASP.NET Core web API using the Microsoft identity platform with cURL
 ---
 
@@ -68,7 +68,7 @@ Follow these steps to create the web API registration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.  
 1. Enter a **Name** for the application, such as *NewWebAPI1*.  
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select **Help me choose** option.  
@@ -95,7 +95,7 @@ Once the API is registered, you can configure its permission by defining the sco
    1. In the **User consent display name** box, enter `Read forecast data`. 
    1. In the **User consent description** box, enter `Allows the application to read weather forecast data`. 
    1. Ensure that the **State** is set to **Enabled**.
-1. Select **Add scope**. If the scope has been entered correctly, it'll be listed in the **Expose an API** pane.  
+1. Select **Add scope**. If the scope has been entered correctly, it is listed in the **Expose an API** pane.  
 
    :::image type="content" source="./media/web-api-tutorial-01-register-app/add-a-scope.png" alt-text="Screenshot that shows the field values when adding the scope to an API." lightbox="./media/web-api-tutorial-01-register-app/add-a-scope.png":::
 
@@ -114,7 +114,7 @@ Follow these steps to create the web app registration:
 
 ::: zone pivot="no-api"
 
-1. Select **Home** to return to the home page. Browse to **Identity** > **Applications** > **App registrations**.
+1. Select **Home** to return to the home page. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application, such as `web-app-calls-web-api`. 
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option. 
@@ -127,7 +127,7 @@ Follow these steps to create the web app registration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.  
 1. Enter a Name for the application, such as `web-app-calls-web-api`. 
 1. For **Supported account types**, select **Accounts in this organizational directory only**. For information on different account types, select the **Help me choose** option. 
@@ -162,12 +162,12 @@ Follow these steps to configure the web app permissions to the web API:
 
 1. From the **Overview** pane of your web application (*web-app-that-calls-web-api*), under **Manage**, select **API permissions** > **Add a permission** > **APIs my organization uses**.  
 1. Select **NewWebAPI1** or the API that you wish to add permissions to. 
-1. Under **Select permissions**, check the box next to **Forecast.Read**. You may need to expand the **Permission** list. This selects the permissions the client app should have on behalf of the signed-in user.  
+1. Under **Select permissions**, check the box next to **Forecast.Read**. You might need to expand the **Permission** list. This selects the permissions the client app should have on behalf of the signed-in user.  
 1. Select **Add permissions** to complete the process.  
 
 After adding these permissions to your API, you should see the selected permissions under **Configured permissions**.  
 
-You may also notice the **User.Read** permission for the Microsoft Graph API. This permission is added automatically when you register an app.  
+You might also notice the **User.Read** permission for the Microsoft Graph API. This permission is added automatically when you register an app.  
 
 ::: zone pivot="no-api"
 
@@ -258,7 +258,7 @@ The authorization code flow begins with the client directing the user to the `/a
    - `{web-app-calls-web-api_application_client_id}` is the **Application (client) ID** on the web app's (*web-app-calls-web-api*) **Overview** pane.
    - `{web_API_application_client_id}` is the **Application (client) ID** on the web API's (*NewWebAPI1*) **Overview** pane.
 1. Sign in as a user in the Microsoft Entra tenant in which the apps are registered. Consent to any requests for access, if necessary.  
-1. Your browser will be redirected to `http://localhost/`. Refer to your browser's navigation bar and copy the `{authorization_code}` to use in the following steps. The URL takes the form of the following snippet:  
+1. Your browser is redirected to `http://localhost/`. Refer to your browser's navigation bar and copy the `{authorization_code}` to use in the following steps. The URL takes the form of the following snippet:  
 
    ```http
    http://localhost/?code={authorization_code}

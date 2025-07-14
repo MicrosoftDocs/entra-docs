@@ -1,16 +1,14 @@
 ---
 title: Plan a Microsoft Entra ID Protection deployment
 description: Create a plan to deploy Microsoft Entra ID Protection.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
-ms.date: 08/13/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.date: 05/22/2025
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: jhenders, tracyyu, chuqiaoshi
+ms.custom: sfi-image-nochange
 ---
 # Plan an ID Protection deployment
 
@@ -23,6 +21,7 @@ This deployment plan extends concepts introduced in the [Conditional Access depl
 ## Prerequisites
 
 * A working Microsoft Entra tenant with Microsoft Entra ID P2, or trial license enabled. If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+   * Microsoft 365 E5 or Microsoft Enterprise Mobility + Security E5 licenses are needed for some risk detections. For more information, see [What is Microsoft Entra ID Protection?](overview-identity-protection.md#microsoft-defender).
 * Administrators who interact with ID Protection must have one or more of the following role assignments depending on the tasks they're performing. To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) to just-in-time activate privileged role assignments.
    * Read ID Protection and Conditional Access policies and configurations 
       * [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader)
@@ -34,7 +33,7 @@ This deployment plan extends concepts introduced in the [Conditional Access depl
       * [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
       * [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator)
 * A test user who isn't an administrator to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
-* A group that the user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
+* A group that the user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
 ### Engage the right stakeholders
 

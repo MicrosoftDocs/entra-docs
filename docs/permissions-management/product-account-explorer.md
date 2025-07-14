@@ -1,16 +1,19 @@
 ---
 title: View roles and identities that can access account information from an external account
 description: How to view information about identities that can access accounts from an external account in Permissions Management.
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management 
 
 ms.topic: how-to
 author: jenniferf-skc
-ms.date: 12/10/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # View roles and identities that can access account information from an external account
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 You can view information about users, groups, and resources that can access account information from an external account in Permissions Management.
 

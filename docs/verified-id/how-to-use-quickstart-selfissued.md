@@ -1,15 +1,14 @@
 ---
 title: Create verifiable credentials for self-asserted claims
-description: Learn how to use a quickstart to create custom credentials for self-issued claims
+description: Learn how to use a quickstart to create custom credentials for self-issued claims.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 01/17/2025
 ms.author: barclayn
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for self-asserted claims scenario. 
 ---
 
@@ -21,7 +20,7 @@ A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) tha
 
 ## Create a custom credential with the selfIssued attestation type
 
-In the Azure portal, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**. 
+In the **Azure portal**, when you select **Add credential**, you get the option to launch two quickstarts. Select **custom credential**, and then select **Next**.
 
 :::image type="content" source="media/how-to-use-quickstart/quickstart-startscreen.png" alt-text="Screenshot of the Issue credentials quickstart for creating a custom credential.":::
 

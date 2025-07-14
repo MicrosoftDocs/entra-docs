@@ -1,19 +1,15 @@
 ---
 title: Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
 description: This article helps to troubleshoot deploying the Microsoft Enterprise SSO plug-in on Apple devices
-
-
 ms.service: entra-id
 ms.subservice: devices
-ms.custom: devx-track-linux
 ms.topic: troubleshooting
 ms.date: 07/05/2023
-
 ms.author: miepping
 author: ryschwa-msft
 manager: 
 ms.reviewer: 
-
+ms.custom: devx-track-linux, sfi-image-nochange
 #Customer intent: As an IT admin, I want to learn how to discover and fix issues related to the Microsoft Enterprise SSO plug-in on macOS and iOS.
 ---
 # Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
@@ -480,7 +476,7 @@ Analyzing the SSO extension logs is an excellent way to troubleshoot the authent
 - Authorization Request Types
    - Native MSAL
    - Non MSAL/Browser SSO
-- Interaction with the macOS Keychain for credential retrival/storage operations
+- Interaction with the macOS Keychain for credential retrieval/storage operations
 - Correlation IDs for Microsoft Entra sign-in events
    - PRT acquisition
    - Device Registration
@@ -516,7 +512,7 @@ During the MDM configuration of the Microsoft Enterprise SSO Extension, an optio
 |**1**|**[browser_sso_interaction_enabled](~/identity-platform/apple-sso-plugin.md#allow-users-to-sign-in-from-applications-that-dont-use-msal-and-the-safari-browser)**|Non-MSAL or Safari browser can bootstrap a PRT   |
 |**2**|**browser_sso_disable_mfa**|(Now deprecated) During bootstrapping of the PRT credential, by default MFA is required. Notice this configuration is set to **null** which means that the default configuration is enforced|
 |**3**|**[disable_explicit_app_prompt](~/identity-platform/apple-sso-plugin.md#disable-oauth-2-application-prompts)**|Replaces **prompt=login** authentication requests from applications to reduce prompting|
-|**4**|**[AppPrefixAllowList](~/identity-platform/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix)**|Any Non-MSAL application that has a Bundle ID that starts with **`com.micorosoft.`** can be intercepted and handled by the SSO extension broker   |
+|**4**|**[AppPrefixAllowList](~/identity-platform/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix)**|Any Non-MSAL application that has a Bundle ID that starts with **`com.microsoft.`** can be intercepted and handled by the SSO extension broker   |
 
 > [!IMPORTANT]
 > Feature flags set to **null** means that their **default** configuration is in place. Check **[Feature Flag documentation](~/identity-platform/apple-sso-plugin.md#more-configuration-options)** for more details

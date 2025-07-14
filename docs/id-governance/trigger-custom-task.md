@@ -3,7 +3,7 @@ title: Trigger Logic Apps based on custom task extensions
 description: Trigger Logic Apps based on custom task extensions
 author: owinfreyATL
 ms.author: owinfrey
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
@@ -31,7 +31,7 @@ To use a custom task extension in your workflow, first a custom task extension m
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
 
 1. On the Lifecycle workflows screen, select **Custom task extension**. 
 

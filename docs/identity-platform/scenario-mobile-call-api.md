@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: 
 ms.date: 05/18/2020
-ms.reviewer: brianmel, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -14,6 +14,8 @@ ms.topic: how-to
 ---
 
 # Call a web API from a mobile app
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 After your app signs in a user and receives tokens, the Microsoft Authentication Library (MSAL) exposes information about the user, the user's environment, and the issued tokens. Your app can use these values to call a web API or display a welcome message to the user.
 
@@ -148,6 +150,6 @@ catch(MsalUiRequiredException ex)
 
 ## Next steps
 
-- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
 
 - Explore Microsoft identity platform [mobile code samples](sample-v2-code.md#mobile) 

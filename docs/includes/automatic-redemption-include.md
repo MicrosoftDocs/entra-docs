@@ -2,7 +2,7 @@
 title: include file
 description: include file
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 01/23/2023
@@ -33,7 +33,7 @@ The following table shows how this setting compares when enabled for these scena
 | Users must accept a [consent prompt](~/external-id/redemption-experience.md#consent-experience-for-the-guest) | No | No | No |
 | Users receive a [B2B collaboration notification email](~/external-id/redemption-experience.md#automatic-redemption-process-setting) | No | Yes | N/A |
 
-This setting doesn't impact application consent experiences. For more information, see [Consent experience for applications in Microsoft Entra ID](~/identity-platform/application-consent-experience.md). This setting isn't supported for organizations across different Microsoft cloud environments, such as Azure commercial and Azure Government.
+This setting doesn't impact application consent experiences. For more information, see [Consent experience for applications in Microsoft Entra ID](~/identity-platform/application-consent-experience.md). This setting is supported for organizations across different Microsoft cloud environments, such as Azure commercial and Azure Government, but is currently in preview. For more information, see [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md?pivots=cross-cloud-synchronization).
 
 #### When is consent prompt suppressed?
 

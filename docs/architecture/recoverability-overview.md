@@ -98,7 +98,9 @@ Document the state of your tenant and its objects regularly. Then if a hard dele
 - [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations.
 - [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings.
 - [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings.
-- [Conditional Access APIs](https://github.com/Azure-Samples/azure-ad-conditional-access-apis) can be used to manage your Conditional Access policies as code.
+- [Conditional Access APIs](/graph/api/resources/conditionalaccesspolicy) can be used to manage your Conditional Access policies as code.
+
+In the rare case that an API is not available for a certain configuration setting, screenshot(s) can be taken to enable manual recovery.
 
 ### Commonly used Microsoft Graph APIs
 
@@ -131,8 +133,8 @@ The [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) can p
 > Settings in the legacy multifactor authentication portal for Application Proxy and federation settings might not be exported with the Microsoft Entra Exporter, or with the Microsoft Graph API.
 The [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) module uses Microsoft Graph and PowerShell to retrieve the state of many of the configurations in Microsoft Entra ID. This information can be used as reference information or, by using PowerShell Desired State Configuration scripting, to reapply a known good state.
 
- Use [Conditional Access Graph APIs](https://github.com/Azure-Samples/azure-ad-conditional-access-apis) to manage policies like code. Automate approvals to promote policies from preproduction environments, backup and restore, monitor change, and plan ahead for emergencies.
-
+Use [Conditional Access Graph APIs](/graph/api/resources/conditionalaccesspolicy) to manage policies like code.
+ 
 ### Map the dependencies among objects
 
 The deletion of some objects can cause a ripple effect because of dependencies. For example, deletion of a security group used for application assignment would result in users who were members of that group being unable to access the applications to which the group was assigned.

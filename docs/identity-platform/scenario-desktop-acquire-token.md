@@ -4,7 +4,6 @@ description: Learn how to build a desktop app that calls web APIs to acquire a t
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref 
 ms.date: 03/27/2023
 ms.service: identity-platform
 
@@ -13,6 +12,8 @@ ms.topic: how-to
 ---
 
 # Desktop app that calls web APIs: Acquire a token
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 After you've built an instance of the public client application, you'll use it to acquire a token that you'll then use to call a web API.
 

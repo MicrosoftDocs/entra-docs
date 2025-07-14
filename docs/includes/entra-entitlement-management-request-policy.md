@@ -1,14 +1,13 @@
 ---
 title: include file
 description: include file
-
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 02/27/2023
 ms.author: owinfrey
-ms.custom: include file
+ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 ---
 
 ## Allow users in your directory to request the access package
@@ -222,6 +221,13 @@ Requests can only be forwarded to alternate approvers a day after the request du
 In this example, the duration of the request is 14 days. The request duration reaches half-life at day 7. So, the request can't be forwarded earlier than day 8.
 
 Also, requests can't be forwarded on the last day of the request duration. So in the example, the latest the request can be forwarded is day 13.
+
+## Email Notifications (Preview)
+
+1. You're able to disable assignment emails notifying you of assignment requests that are delivered, expired, or near expiration.
+    :::image type="content" source="media/entitlement-management-request-policy/email-notifications.png" alt-text="Screenshot of the email notifications selection in creating an access package.":::
+
+You can always either enable, or disable, email notifications in the future after you finish creating the access package.    
 
 ## Enable requests
 

@@ -3,10 +3,9 @@ title: Link your domain to your decentralized identifier (DID) - Microsoft Entra
 description: Learn how to link your domain to your decentralized identifier (DID).
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 12/18/2024
 ms.author: barclayn
 
@@ -27,7 +26,7 @@ To verify domain ownership to your DID, you need to:
 
 The domain you verify ownership of to your DID is defined in the [overview section](verifiable-credentials-configure-tenant.md#set-up-verified-id). The domain needs to be a domain under your control and it should be in the format `https://www.example.com/`.
 
-1. From the Microsoft Entra admin center, choose **Verified ID** page.
+1. From the **Microsoft Entra admin center**, choose **Verified ID** page.
 
 1. Select **Overview** and from this section, choose **Verify domain ownership**.
 1. Select **Verify** for the domain.

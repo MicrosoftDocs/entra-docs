@@ -4,10 +4,9 @@ titleSuffix: Microsoft Entra Verified ID
 description: Learn how to issue a verifiable credential.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
 ms.date: 01/30/2025
 ms.author: barclayn
 
@@ -48,16 +47,16 @@ Content-Type: application/json
 Authorization: Bearer <token>
 
 {
-    "callback": {
-        "url": "https://contoso.com/api/issuer/issuanceCallback",
+    "callback": {
+        "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "Aaaabbbb11112222",
-        "headers": {
-            "api-key": "an-api-key-can-go-here"
+        "headers": {
+            "api-key": "an-api-key-can-go-here"
         }
     },
     ...
 }
-```  
+```
 
 The following permission is required to call the Request Service REST API. For more information, see [Grant permissions to get access tokens](verifiable-credentials-configure-tenant.md#grant-permissions-to-get-access-tokens).
 
@@ -200,9 +199,9 @@ The following example demonstrates a callback payload when the authenticator app
 
 ```json
 {  
-    "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
-    "requestStatus":"request_retrieved",  
-    "state": "de19cb6b-36c1-45fe-9409-909a51292a9c"
+    "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
+    "requestStatus":"request_retrieved",  
+    "state": "de19cb6b-36c1-45fe-9409-909a51292a9c"
 } 
 ```
 
@@ -210,10 +209,10 @@ The following example demonstrates a callback payload after the user successfull
 
 ```json
 {  
-    "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
-    "requestStatus":"issuance_successful",
-    "state": "de19cb6b-36c1-45fe-9409-909a51292a9c"
-} 
+    "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
+    "requestStatus":"issuance_successful",
+    "state": "de19cb6b-36c1-45fe-9409-909a51292a9c"
+} 
 ```
 
 ### Callback errors  

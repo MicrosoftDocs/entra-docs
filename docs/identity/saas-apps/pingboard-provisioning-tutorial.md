@@ -1,28 +1,28 @@
 ---
-title: 'Tutorial: User provisioning for Pingboard'
+title: Configure Pingboard for automatic user provisioning in Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Pingboard.
 
 author: ArvindHarinder1
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 05/20/2025
 ms.author: arvinh
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Pingboard so that I can streamline the user management process and ensure that users have the appropriate access to Pingboard.
 ---
 
-# Tutorial: Configure Pingboard for automatic user provisioning
+# Configure Pingboard for automatic user provisioning in Microsoft Entra ID
 
-The purpose of this tutorial is to show you the steps you need to follow to enable automatic provisioning and de-provisioning of user accounts from Microsoft Entra ID to Pingboard.
+The purpose of this article is to show you the steps you need to follow to enable automatic provisioning and de-provisioning of user accounts from Microsoft Entra ID to Pingboard.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Pingboard tenant [Pro account](https://pingboard.com/pricing)
 * A user account in Pingboard with admin permissions
 
@@ -53,7 +53,7 @@ This section guides you through connecting your Microsoft Entra ID to the Pingbo
 ### To configure automatic user account provisioning to Pingboard in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. If you already configured Pingboard for single sign-on, search for your instance of Pingboard by using the search field. Otherwise, select **Add** and search for **Pingboard** in the application gallery. Select **Pingboard** from the search results, and add it to your list of applications.
 

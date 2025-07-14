@@ -1,17 +1,15 @@
 ---
 title: Plan a Privileged Identity Management deployment
 description: Learn how to deploy Privileged Identity Management (PIM) in your Microsoft Entra organization.
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: conceptual
-ms.date: 12/11/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim
-
+ms.custom: pim, sfi-ga-nochange
 ---
 
 # Plan a Privileged Identity Management deployment
@@ -63,14 +61,14 @@ You can assign the following to these roles or groups:
 * **Groups**- Anyone in a group to get just-in-time access to Microsoft Entra roles and Azure roles. For Microsoft Entra roles, the group must be a newly created cloud group that’s marked as assignable to a role while for Azure roles, the group can be any Microsoft Entra security group. We don't recommend assigning/nesting a group to a PIM for Groups. 
 
 > [!NOTE] 
->You cannot assign service principals as eligible to Microsoft Entra roles, Azure roles, and PIM for Groups but you can grant a time limited active assignment to all three.
+>You can't assign service principals as eligible to Microsoft Entra roles, Azure roles, and PIM for Groups but you can grant a time limited active assignment to all three.
 
 ### Principle of least privilege
 
 You assign users the role with the [least privileges necessary to perform their tasks](~/identity/role-based-access-control/delegate-by-task.md). This practice minimizes the number of Global Administrators and instead uses specific administrator roles for certain scenarios.
 
 > [!NOTE] 
-> Microsoft has very few Global Administrators. Learn more at [how Microsoft uses Privileged Identity Management](https://www.microsoft.com/itshowcase/Article/Content/887/Using-Azure-AD-Privileged-Identity-Management-for-elevated-access).
+> Microsoft has few Global Administrators. Learn more at [how Microsoft uses Privileged Identity Management](https://www.microsoft.com/itshowcase/Article/Content/887/Using-Azure-AD-Privileged-Identity-Management-for-elevated-access).
 
 ### Type of assignments 
 

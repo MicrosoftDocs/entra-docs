@@ -2,14 +2,14 @@
 title: Managed identity sign-in logs
 description: Learn about the type of information captured in the managed identity sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/10/2024
+ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is captured in the managed identity sign-in logs so that I can use the logs to monitor the health of my tenant and troubleshoot issues.
 ---
 # What are managed identity sign-ins in Microsoft Entra?
@@ -17,9 +17,6 @@ ms.reviewer: egreenberg14
 Managed identities for Azure resources sign-ins are sign-ins that were performed by resources that have their secrets managed by Azure to simplify credential management. A VM with managed credentials uses Microsoft Entra ID to get an Access Token.
 
 ![Screenshot of the managed identity sign-in log.](media/concept-managed-identity-sign-ins/sign-in-logs-managed-identity.png)
-
-**Report size:** Small </br>
-**Examples:**
 
 You can't customize the fields shown in this report.
 

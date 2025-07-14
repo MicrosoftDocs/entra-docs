@@ -2,11 +2,11 @@
 title: Change approval settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change approval and requestor information settings for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 08/08/2024
+ms.date: 06/26/2025
 ms.author: owinfrey
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
@@ -36,7 +36,7 @@ For a demonstration of how to add a multi-stage approval to a request policy, wa
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=25c39e83-da3e-4f41-8d91-8b865b25b702]
 
 > [!NOTE]
-> Approvers are not able to approve their own access package requests.
+> Approvers aren't able to approve their own access package requests.
 
 ## Change approval settings of an existing access package assignment policy
 
@@ -46,7 +46,7 @@ Follow these steps to specify the approval settings for requests for the access 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
     > Other least privilege roles that can complete this task include the Catalog owner and the Access Package assignment manager.
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. On the Access packages page, open an access package.
 
@@ -120,7 +120,7 @@ If you selected a multi-stage approval, you need to add an approver for each ext
     If the users aren't in your directory, you also can select **Internal sponsor** or **External sponsor** as the third approver. After selecting the approver, add the fallback approvers.
 
     > [!NOTE]
-    > <ul>Like the second stage, if the users are in your directory and **Manager as approver** is selected in either the first or second stage of approval, you will only see an option to select specific approvers for the third stage of approval.</ul><ul>If you want to designate the manager as a third approver, you can adjust your selections in the previous approval stages to ensure that **Manager as approver** isn’t selected. Then, you should see **Manager as approver** as an option in the dropdown.</ul><ul>If the users aren’t in your directory and you have not selected **Internal sponsor** or **External sponsor** as approvers in previous stages, you will see them as options for **Third Approver**. Otherwise, you will only be able to select **Choose specific approvers**.</ul>
+    > <ul>Like the second stage, if the users are in your directory and **Manager as approver** is selected in either the first or second stage of approval, you'll only see an option to select specific approvers for the third stage of approval.</ul><ul>If you want to designate the manager as a third approver, you can adjust your selections in the previous approval stages to ensure that **Manager as approver** isn’t selected. Then, you should see **Manager as approver** as an option in the dropdown.</ul><ul>If the users aren’t in your directory and you haven't selected **Internal sponsor** or **External sponsor** as approvers in previous stages, you'll see them as options for **Third Approver**. Otherwise, you'll only be able to select **Choose specific approvers**.</ul>
 
 1. Specify the number of days the third approver has to approve the request in the box under **Decision must be made in how many days?**.
 

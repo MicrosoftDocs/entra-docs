@@ -1,11 +1,10 @@
 ### YamlMime:HowTo
-
 metadata:
   title: Activate Azure resource roles in PIM
   description: Learn how to activate your Azure resource roles in Microsoft Entra Privileged Identity Management (PIM).
   author: barclayn
   ms.author: barclayn
-  manager: amycolannino
+  manager: pmwongera
   ms.reviewer: rianakarim
   ms.date: 12/19/2024
   ms.service: entra-id-governance
@@ -14,7 +13,7 @@ metadata:
   ms.custom:
     - pim
     - ge-structured-content-pilot
-
+    - sfi-image-nochange
 title: |
   Activate my Azure resource roles in Privileged Identity Management
 introduction: |
@@ -40,9 +39,10 @@ procedureSection:
 
     steps:
       - |
-        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+        Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+
       - |
-        Browse to **Identity governance** > **Privileged Identity Management** > **My roles**.
+        Browse to **ID Governance** > **Privileged Identity Management** > **My roles**.
 
           [ ![Screenshot of my roles page showing roles you can activate.](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png) ](./media/pim-resource-roles-activate-your-roles/resources-my-roles.png#lightbox)
       - |

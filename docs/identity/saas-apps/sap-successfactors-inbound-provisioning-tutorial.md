@@ -1,22 +1,21 @@
 ---
-title: 'Tutorial: Configure SuccessFactors inbound provisioning in AD and Microsoft Entra ID'
+title: Configure SuccessFactors inbound provisioning in AD and Microsoft Entra ID
 description: Learn how to configure inbound provisioning from SuccessFactors
 author: cmmdesai
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
-
+ms.topic: how-to
 ms.date: 05/06/2024
 ms.author: chmutali
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors to Active Directory.
 ---
-# Tutorial: Configure SAP SuccessFactors to Active Directory user provisioning 
-The objective of this tutorial is to show the steps you need to perform to provision users from SuccessFactors Employee Central into Active Directory (AD) and Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
+# Configure SAP SuccessFactors to Active Directory user provisioning 
+The objective of this article is to show the steps you need to perform to provision users from SuccessFactors Employee Central into Active Directory (AD) and Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
 
 >[!NOTE]
->Use this tutorial if the users you want to provision from SuccessFactors need an on-premises AD account and optionally a Microsoft Entra account. If the users from SuccessFactors only need Microsoft Entra account (cloud-only users), then please refer to the tutorial on [configure SAP SuccessFactors to Microsoft Entra ID](sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) user provisioning. 
+>Use this article if the users you want to provision from SuccessFactors need an on-premises AD account and optionally a Microsoft Entra account. If the users from SuccessFactors only need Microsoft Entra account (cloud-only users), then please refer to the article on [configure SAP SuccessFactors to Microsoft Entra ID](sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) user provisioning. 
 
 The following video provides a quick overview of the steps involved when planning your provisioning integration with SAP SuccessFactors. 
 
@@ -42,9 +41,9 @@ This SuccessFactors to Active Directory user provisioning solution is ideally su
 
 * Organizations that desire a pre-built, cloud-based solution for SuccessFactors user provisioning, including organizations that are populating SuccessFactors from SAP HCM using SAP Integration Suite
 
-* Organizations that will be [deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md), using Microsoft Entra to set up identities for workers so they can sign in to one or more SAP applications, such as SAP ECC or SAP S/4HANA, as well as optionally non-SAP applications
+* Organizations that's [deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md), using Microsoft Entra to set up identities for workers so they can sign in to one or more SAP applications, such as SAP ECC or SAP S/4HANA, and optionally non-SAP applications
 
-* Organizations that require direct user provisioning from SuccessFactors to Active Directory so that users can access Windows Server Active Directory-integrated applications as well as Microsoft Entra ID integrated applications
+* Organizations that require direct user provisioning from SuccessFactors to Active Directory so that users can access Windows Server Active Directory-integrated applications and Microsoft Entra ID integrated applications
 
 * Organizations that require users to be provisioned using data obtained from the [SuccessFactors Employee Central (EC)](https://www.successfactors.com/products-services/core-hr-payroll/employee-central.html)
 
@@ -57,7 +56,7 @@ This SuccessFactors to Active Directory user provisioning solution is ideally su
 This section describes the end-to-end user provisioning solution architecture for common hybrid environments. There are two related flows:
 
 * **Authoritative HR Data Flow – from SuccessFactors to on-premises Active Directory:** In this flow worker events (such as New Hires, Transfers, Terminations) first occur in the cloud SuccessFactors Employee Central and then the event data flows into on-premises Active Directory through Microsoft Entra ID and the Provisioning Agent. Depending on the event, it may lead to create/update/enable/disable operations in AD.
-* **Email Writeback Flow – from on-premises Active Directory to SuccessFactors:** Once the account creation is complete in Active Directory, it is synced with Microsoft Entra ID through Microsoft Entra Connect Sync and email attribute can be written back to SuccessFactors.
+* **Email Writeback Flow – from on-premises Active Directory to SuccessFactors:** Once the account creation is complete in Active Directory, it's synced with Microsoft Entra ID through Microsoft Entra Connect Sync and email attribute can be written back to SuccessFactors.
 
   ![Overview](./media/sap-successfactors-inbound-provisioning/sf2ad-overview.png)
 
@@ -98,11 +97,11 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. Log in to SAP SuccessFactors with a user account that has access to the Admin Center.
 1. Search for *Manage Permission Roles*, then select **Manage Permission Roles** from the search results.
   ![Manage Permission Roles](./media/sap-successfactors-inbound-provisioning/manage-permission-roles.png)
-1. From the Permission Role List, click **Create New**.
+1. From the Permission Role List, select **Create New**.
     > [!div class="mx-imgBorder"]
     > ![Create New Permission Role](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
 1. Add a **Role Name** and **Description** for the new permission role. The name and description should indicate that the role is for API usage permissions.
-1. Under Permission settings, click **Permission...**, then scroll down the permission list and click **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
+1. Under Permission settings, select **Permission...**, then scroll down the permission list and select **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
     > [!div class="mx-imgBorder"]
     > ![Manage integration tools](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
 1. Scroll down in the same box and select **Employee Central API**. Add permissions as shown below to read using ODATA API and edit using ODATA API. Select the edit option if you plan to use the same account for the Writeback to SuccessFactors scenario. 
@@ -118,32 +117,32 @@ Work with your SuccessFactors admin team or implementation partner to create or 
     >[!NOTE]
     >For the complete list of attributes retrieved by this provisioning app, please refer to [SuccessFactors Attribute Reference](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
 
-1. Click on **Done**. Click **Save Changes**.
+1. Select **Done**. Select **Save Changes**.
 
 ### Create a Permission Group for the API user
 
 1. In the SuccessFactors Admin Center, search for *Manage Permission Groups*, then select **Manage Permission Groups** from the search results.
     > [!div class="mx-imgBorder"]
     > ![Manage permission groups](./media/sap-successfactors-inbound-provisioning/manage-permission-groups.png)
-1. From the Manage Permission Groups window, click **Create New**.
+1. From the Manage Permission Groups window, select **Create New**.
     > [!div class="mx-imgBorder"]
     > ![Add new group](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
 1. Add a Group Name for the new group. The group name should indicate that the group is for API users.
     > [!div class="mx-imgBorder"]
     > ![Permission group name](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
-1. Add members to the group. For example, you could select **Username** from the People Pool drop-down menu and then enter the username of the API account that will be used for the integration. 
+1. Add members to the group. For example, you could select **Username** from the People Pool drop-down menu and then enter the username of the API account that's used for the integration. 
     > [!div class="mx-imgBorder"]
     > ![Add group members](./media/sap-successfactors-inbound-provisioning/add-group-members.png)
-1. Click **Done** to finish creating the Permission Group.
+1. Select **Done** to finish creating the Permission Group.
 
 ### Grant Permission Role to the Permission Group
 
 1. In SuccessFactors Admin Center, search for *Manage Permission Roles*, then select **Manage Permission Roles** from the search results.
 1. From the **Permission Role List**, select the role that you created for API usage permissions.
-1. Under **Grant this role to...**, click the **Add...** button.
-1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above.
+1. Under **Grant this role to...**, select the **Add...** button.
+1. Select **Permission Group...** from the drop-down menu, then select **Select...** to open the Groups window to search and select the group created above.
 1. Review the Permission Role grant to the Permission Group.
-1. Click **Save Changes**.
+1. Select **Save Changes**.
 
 ## Configuring user provisioning from SuccessFactors to Active Directory
 
@@ -160,7 +159,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 **To configure SuccessFactors to Active Directory provisioning:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. Search for **SuccessFactors to Active Directory User Provisioning**, and add that app from the gallery.
 
@@ -168,7 +167,7 @@ This section provides steps for user account provisioning from SuccessFactors to
 
 1. Change the **Provisioning** **Mode** to **Automatic**
 
-1. Click on the information banner displayed to download the Provisioning Agent. 
+1. Select the information banner displayed to download the Provisioning Agent. 
    >[!div class="mx-imgBorder"]
    >![Screenshot of provisioning agent informational.](~/includes/governance/media/workday-inbound-tutorial/pa-download-agent.png "Download Agent Screen")
 
@@ -182,7 +181,7 @@ Transfer the downloaded agent installer to the server host and follow the steps 
 In this step, we establish connectivity with SuccessFactors and Active Directory. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > SuccessFactors to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent)
+1. Browse to **Entra ID** > **Enterprise apps** > SuccessFactors to Active Directory User Provisioning App created in [Part 1](#part-1-add-the-provisioning-connector-app-and-download-the-provisioning-agent)
 
 1. Complete the **Admin Credentials** section as follows:
 
@@ -197,22 +196,22 @@ In this step, we establish connectivity with SuccessFactors and Active Directory
    * **Active Directory Container -** Enter the container DN where the agent should create user accounts by default.
         Example: *OU=Users,DC=contoso,DC=com*
         > [!NOTE]
-        > This setting only comes into play for user account creations if the *parentDistinguishedName* attribute is not configured in the attribute mappings. This setting is not used for user search or update operations. The entire domain sub tree falls in the scope of the search operation.
+        > This setting only comes into play for user account creations if the *parentDistinguishedName* attribute isn't configured in the attribute mappings. This setting isn't used for user search or update operations. The entire domain sub tree falls in the scope of the search operation.
 
    * **Notification Email –** Enter your email address, and check the "send email if failure occurs" checkbox.
      > [!NOTE]
      > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
-   * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and the AD credentials configured on the agent setup are valid.
+   * Select the **Test Connection** button. If the connection test succeeds, select the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and the AD credentials configured on the agent setup are valid.
 
 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping **Synchronize SuccessFactors Users to On Premises Active Directory**
 
 ### Part 4: Configure attribute mappings
 
-In this section, you'll configure how user data flows from SuccessFactors to Active Directory.
+In this section, you configure how user data flows from SuccessFactors to Active Directory.
 
-1. On the Provisioning tab under **Mappings**, click **Synchronize SuccessFactors Users to On Premises Active Directory**.
+1. On the Provisioning tab under **Mappings**, select **Synchronize SuccessFactors Users to On Premises Active Directory**.
 
 1. In the **Source Object Scope** field, you can select which sets of  users in SuccessFactors should be in scope for provisioning to AD, by defining a set of attribute-based filters. The default scope is **all users in SuccessFactors**. Example filters:
 
@@ -232,7 +231,7 @@ In this section, you'll configure how user data flows from SuccessFactors to Act
       * Operator: IS NOT NULL
 
    > [!TIP]
-   > When you are configuring the provisioning app for the first time, you'll need to test and verify your attribute mappings and expressions to make sure that it is giving you the desired result. Microsoft recommends using the scoping filters under **Source Object Scope** to test your mappings with a few test users from SuccessFactors. Once you have verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
+   > When you're configuring the provisioning app for the first time, you need to test and verify your attribute mappings and expressions to make sure that it's giving you the desired result. Microsoft recommends using the scoping filters under **Source Object Scope** to test your mappings with a few test users from SuccessFactors. Once you have verified that the mappings work, then you can either remove the filter or gradually expand it to include more users.
 
    > [!CAUTION] 
    > The default behavior of the provisioning engine is to disable/delete users that go out of scope. This may not be desirable in your SuccessFactors to AD integration. To override this default behavior refer to the article [Skip deletion of user accounts that go out of scope](~/identity/app-provisioning/skip-out-of-scope-deletions.md)
@@ -244,7 +243,7 @@ In this section, you'll configure how user data flows from SuccessFactors to Act
      >[!NOTE]
      >For the complete list of SuccessFactors attribute supported by the application, please refer to [SuccessFactors Attribute Reference](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
 
-1. Click on an existing attribute mapping to update it, or click **Add new mapping** at the bottom of the screen to add new mappings. An individual attribute mapping supports these properties:
+1. Select an existing attribute mapping to update it, or select **Add new mapping** at the bottom of the screen to add new mappings. An individual attribute mapping supports these properties:
 
       * **Mapping Type**
 
@@ -271,7 +270,7 @@ In this section, you'll configure how user data flows from SuccessFactors to Act
 
          * **Only during creation** - Apply this mapping only on user creation actions
 
-1. To save your mappings, click **Save** at the top of the  Attribute-Mapping section.
+1. To save your mappings, select **Save** at the top of the  Attribute-Mapping section.
 
 Once your attribute mapping configuration is complete, you can test provisioning for a single user using [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) and then [enable and launch the user provisioning service](#enable-and-launch-user-provisioning).
 
@@ -282,7 +281,7 @@ Once the SuccessFactors provisioning app configurations are complete and you hav
 > [!TIP]
 > By default when you turn on the provisioning service, it initiates provisioning operations for all users in scope. If there are errors in the mapping or SuccessFactors data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring **Source Object Scope** filter and testing  your attribute mappings with a few test users using [on-demand provisioning](~/identity/app-provisioning/provision-on-demand.md) before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
 
-1. Go to the **Provisioning** blade and click on **Start provisioning**.
+1. Go to the **Provisioning** blade and select **Start provisioning**.
 
 1. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the SuccessFactors tenant. You can check the progress bar to the track the progress of the sync cycle. 
 
@@ -293,7 +292,7 @@ Once the SuccessFactors provisioning app configurations are complete and you hav
    > [!div class="mx-imgBorder"]
    > ![Provisioning progress bar](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
-## Next steps
+## Related content
 
 * [Learn more about supported SuccessFactors Attributes for inbound provisioning](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
 * [Learn how to configure email writeback to SuccessFactors](sap-successfactors-writeback-tutorial.md)

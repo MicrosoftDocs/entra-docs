@@ -9,7 +9,7 @@ ms.date: 10/21/2024
 
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 
@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 ## What are dynamic membership groups?
-A dynamic membership group is a security-based configuration for Microsoft Entra available in the [Microsoft Entra admin center](https://entra.microsoft.com). Administrators can set rules to populate dynamic membership groups that are created in Microsoft Entra ID based on user attributes (such as [userType](user-properties.md), department, or country/region). Members can be automatically added to or removed from a security group based on their attributes. These groups can provide access to applications or cloud resources (SharePoint sites, documents) and to assign licenses to members. Learn more about [dedicated groups in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
+A dynamic membership group is a security-based configuration for Microsoft Entra available in the [Microsoft Entra admin center](https://entra.microsoft.com). Administrators can set rules to populate dynamic membership groups that are created in Microsoft Entra ID based on user attributes (such as [userType](user-properties.md), department, or country/region). Members can be automatically added to or removed from a security group based on their attributes. These groups can provide access to applications or cloud resources (SharePoint sites, documents) and to assign licenses to members. Learn more about [dedicated groups in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups).
 
 ## Prerequisites
 [Microsoft Entra ID P1 or P2 licensing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing) is required to create and use dynamic membership groups. Learn more in [Create attribute-based rules for dynamic membership groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
@@ -32,7 +32,7 @@ A dynamic membership group is a security-based configuration for Microsoft Entra
 You can create a group containing all users within a tenant using a membership rule. When users are added or removed from the tenant in the future, the group's membership is adjusted automatically.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Groups** > **All groups**, and then select **New group**.
+1. Browse to **Entra ID** > **Groups** > **All groups**, and then select **New group**.
 1. On the **New Group** page, under **Group type**, select **Security**. Enter a **Group name** and **Group description** for the new group. 
 2. Under **Membership type**, select **Dynamic User**, and then select **Add dynamic query**. 
 4. Above the **Rule syntax** text box, select **Edit**. On the **Edit rule syntax** page, type the following expression in the text box:

@@ -1,7 +1,7 @@
 ---
-author: rwike77
-ms.author: ryanwi
-ms.date: 06/05/2024
+author: SHERMANOUKO
+ms.author: shermanouko
+ms.date: 03/14/2025
 ms.topic: include
 ms.service: entra-id
 ms.subservice: managed-identities
@@ -36,11 +36,11 @@ ms.custom:
     echo "object id for managed identity is: $oidForMI"
     ```
 
-1. Create a new application registration to represent the service that your managed identity sends a request to.
+1. [Create a new application registration](/entra/identity-platform/quickstart-register-app) to represent the service that your managed identity sends a request to.
    -  If the API or service that exposes the app role grant to the managed identity already has a service principal in your Microsoft Entra tenant, skip this step.
 
-1. Find the object ID of the service application's service principal. You can find this using the Azure portal. 
-   - Go to Microsoft Entra ID and open the **Enterprise applications** page, then find the application and look for the **Object ID**. 
+1. Find the object ID of the service application's service principal. You can find this using the [Microsoft Entra admin center](https://entra.microsoft.com/). 
+   - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/). In the left nav blade, select **Entra ID** > **Enterprise apps**. Then find the application and look for the **Object ID**.  
    - You can also find the service principal's object ID by its display name using the following script:
 
     ```azurecli
@@ -68,7 +68,7 @@ ms.custom:
             "Application"
         ],
         "displayName": "Read data from MyApi",
-        "id": "0566419e-bb95-4d9d-a4f8-ed9a0f147fa6",
+        "id": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "isEnabled": true,
         "description": "Allow the application to read data as itself.",
         "value": "MyApi.Read.All"

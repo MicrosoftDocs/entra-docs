@@ -9,7 +9,7 @@ ms.date: 05/21/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Conditional Access: Users, groups, and workload identities
