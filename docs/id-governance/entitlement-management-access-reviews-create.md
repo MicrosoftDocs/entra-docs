@@ -2,12 +2,13 @@
 title: Create an access review of an access package in entitlement management
 description: Learn how to set up an access review in a policy for entitlement management access packages in Microsoft Entra ID part of Microsoft Entra.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 06/18/2025
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
 ---
 # Create an access review of an access package in entitlement management
@@ -16,27 +17,21 @@ To reduce the risk of stale access, you should enable periodic reviews of users 
 
 ## Prerequisites
 
-To enable reviews of access packages, you must meet the prerequisites for creating an access package:
-- Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global administrator, Identity Governance administrator, Catalog owner, or Access package manager
-
-For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
-
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Create an access review of an access package
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 You can enable access reviews when [creating a new access package](entitlement-management-access-package-create.md) or [editing an existing access package assignment policy](entitlement-management-access-package-lifecycle-policy.md) policy. If you have multiple policies, for different communities of users to request access, you can have independent access review schedules for each policy. Follow these steps to enable access reviews of an access package's assignments:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 
-1. Browse to **Identity governance** > **Access reviews** > **Access package**.
+1. Browse to **ID Governance** > **Access reviews** > **Access package**.
 
 1. To create a new access policy, select **New access** package.
 
-1. To edit an existing access policy, in the left menu, select **Access packages** and open the access package you want to edit. Then, in the left menu, select **Policies** and select the policy that has the lifecycle settings you want to edit.
+1. To edit an existing access policy, in the left menu, select **Access packages** and open the access package you want to edit. Then, in the left menu, select **Policies**, and select the policy that has the lifecycle settings you want to edit.
 
 1. Open the **Lifecycle** tab for an access package assignment policy to specify when a user's assignment to the access package expires. You can also specify whether users can extend their assignments.
 
@@ -46,9 +41,9 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
     For **Number of days**, specify a number between 0 and 3660 days.
 
-    For **Number of hours**, specify a number of hours.
+    For **Number of hours**, specify the number of hours.
 
-    Based on your selection, a user's assignment to the access package expires on a certain date, a certain number of days after they're approved, or never.
+    Based on your selection, a user's assignment to the access package expires on a certain date, a specific number of days after they're approved, or never.
     
     ![Access package - Lifecycle Expiration settings](./media/entitlement-management-access-reviews/expiration.png)
 
@@ -56,7 +51,7 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
 1. To allow user to extend their assignments, set **Allow users to extend access** to **Yes**.
 
-    If extensions are allowed in the policy, the user will receive an email 14 days and also one day before their access package assignment is set to expire, prompting them to extend the assignment. The user must still be in the scope of the policy at the time they request an extension. Also, if the policy has an explicit end date for assignments, and a user submits a request to extend access, the extension date in the request must be at or before when assignments expire, as defined in the policy that was used to grant the user access to the access package. For example, if the policy indicates that assignments are set to expire on June 30, the maximum extension a user can request is June 30.
+    If extensions are allowed in the policy, the user receives an email 14 days and also one day before their access package assignment is set to expire, prompting them to extend the assignment. The user must still be in the scope of the policy at the time they request an extension. Also, if the policy has an explicit end date for assignments, and a user submits a request to extend access, the extension date in the request must be at or before when assignments expire, as defined in the policy that was used to grant the user access to the access package. For example, if the policy indicates that assignments are set to expire on June 30, the maximum extension a user can request is June 30.
 
     If a user's access is extended, they won't be able to request the access package after the specified extension date (date set in the time zone of the user who created the policy).
 
@@ -68,16 +63,15 @@ You can enable access reviews when [creating a new access package](entitlement-m
 
     ![Add the access review](./media/entitlement-management-access-reviews/access-reviews-pane.png)
 
-1. Specify the date the reviews will start next to **Starting on**.
+1. Specify the date the reviews start next to **Starting on**.
 
-1. Next, set the **Review frequency** to **Annually**, **Bi-annually**, **Quarterly** or **Monthly**.
-This setting determines how often access reviews will occur.
+1. Next, set the **Review frequency** to **Annually**, **Bi-annually**, **Quarterly** or **Monthly**. This setting determines how often access reviews occur.
 
-1. Set the **Duration** to define how many days each review of the recurring series will be open for input from reviewers. For example, you might schedule an annual review that starts on January 1 and is open for review for 30 days so that reviewers have until the end of the month to respond.
+1. Set the **Duration** to define how many days each review of the recurring series is open for input from reviewers. For example, you might schedule an annual review that starts on January 1 and is open for review for 30 days so that reviewers have until the end of the month to respond.
 
 1. Next to **Reviewers**, select **Self-review** if you want users to perform their own access review or select **Specific reviewer(s)** if you want to designate a reviewer. You can also select **Manager** if you want to designate the reviewer’s manager to be the reviewer. If you select this option, you need to add a **fallback** to forward the review to in case the manager can't be found in the system.
 
-1. If you selected **Specific reviewer(s)**, specify which users will do the access review:
+1. If you selected **Specific reviewer(s)**, specify which users do the access review:
 
     ![Select Add reviewers](./media/entitlement-management-access-reviews/access-reviews-add-reviewer.png)
 
@@ -102,7 +96,7 @@ This setting determines how often access reviews will occur.
         
         ![Add advanced access review settings](./media/entitlement-management-access-reviews/advanced-access-reviews.png)
         
-    1. If you want to see system recommendations, select **Show reviewer decision helpers**. The system's recommendations are based on the users' activity. The reviewers will see one of the following recommendations: 
+    1. If you want to see system recommendations, select **Show reviewer decision helpers**. The system's recommendations are based on the users' activity. The reviewers see one of the following recommendations: 
         - **approve** the review if the user has signed-in at least once during the last 30 days. 
         - **deny** the review if the user hasn't signed-in during the last 30 days.
     1. If you want the reviewer to share their reasons for their approval decision, select **Require reviewer justification**. Their justification is visible to other reviewers and the requestor.
@@ -119,7 +113,7 @@ After the start date, an access review will be listed in the **Access reviews** 
     
     ![Select access reviews](./media/entitlement-management-access-reviews/access-review-status-access-package-overview.png)
 
-1. A list will appear that contains all of the policies that have access reviews associated with them. Select the review to see its report.
+1. A list appears that contains all of the policies that have access reviews associated with them. Select the review to see its report.
 
     ![List of access reviews](./media/entitlement-management-access-reviews/access-review-status-select-access-reviews.png)
    
@@ -131,9 +125,12 @@ After the start date, an access review will be listed in the **Access reviews** 
 ## Access reviews email notifications
 You can designate reviewers, or users can review their access themselves. By default, Microsoft Entra ID will send an email to reviewers or self-reviewers shortly after the review starts.
 
-The email will include instructions on how to review access to access packages. If the review is for users to review their access, show them the instructions on how to perform a self-review of their access packages.
+The email includes instructions on how to review access to access packages. If the review is for users to review their access, show them the instructions on how to perform a self-review of their access packages.
   
 If you've assigned guest users as reviewers, and they haven't accepted their Microsoft Entra guest invitation, they won't receive emails from access reviews. They must first accept the invite and create an account with Microsoft Entra ID before they can receive the emails. 
+
+> [!NOTE]
+> While the review cycle is open, reviewers can always change their access review decisions. At the midpoint of your access review, even if the reviewer has previously made a decision, a reminder email is still sent to reviewers notifying them that the access review cycle is still open.
 
 ## Next steps
 

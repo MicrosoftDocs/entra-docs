@@ -1,11 +1,10 @@
 ---
-title: OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform
-description: A guide to OAuth 2.0 and OpenID Connect protocols as supported by the Microsoft identity platform.
+title: OAuth 2.0 and OpenID Connect protocols 
+description: Learn about OAuth 2.0 and OpenID Connect in Microsoft identity platform. Explore authentication flows, endpoints, and secure user authentication.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-adal-ref
-ms.date: 02/09/2024
+ms.date: 05/14/2025
 ms.reviewer: nickludwig
 ms.service: identity-platform
 
@@ -13,7 +12,7 @@ ms.topic: concept-article
 #Customer intent: As a developer integrating authentication into my app using the Microsoft identity platform, I want to understand the roles and concepts of OAuth 2.0 and OpenID Connect, so that I can effectively use the platform's documentation, authentication libraries, and endpoints to add authentication to my application.
 ---
 
-# OAuth 2.0 and OpenID Connect (OIDC) in the Microsoft identity platform
+# OAuth 2.0 and OIDC authentication flow in the Microsoft identity platform
 
 Knowing about OAuth or OpenID Connect (OIDC) at the protocol level isn't required to use the Microsoft identity platform. However, you'll encounter protocol terms and concepts as you use the identity platform to add authentication to your apps. As you work with the Microsoft Entra admin center, our documentation, and authentication libraries, knowing some fundamentals can assist your integration and overall experience.
 
@@ -21,19 +20,19 @@ Knowing about OAuth or OpenID Connect (OIDC) at the protocol level isn't require
 
 Four parties are generally involved in an OAuth 2.0 and OpenID Connect authentication and authorization exchange. These exchanges are often called *authentication flows* or *auth flows*.
 
-![Diagram showing the OAuth 2.0 roles](./media/v2-flows/protocols-roles.svg)
+![Screenshot of a diagram showing the roles in OAuth 2.0, including authorization server, client, resource owner, and resource server](./media/v2-flows/protocols-roles.svg)
 
 * **Authorization server** - The Microsoft identity platform is the authorization server. Also called an *identity provider* or *IdP*, it securely handles the end-user's information, their access, and the trust relationships between the parties in the auth flow. The authorization server issues the security tokens your apps and APIs use for granting, denying, or revoking access to resources (authorization) after the user has signed in (authenticated).
 
 * **Client** - The client in an OAuth exchange is the application requesting access to a protected resource. The client could be a web app running on a server, a single-page web app running in a user's web browser, or a web API that calls another web API. You'll often see the client referred to as *client application*, *application*, or *app*.
 
-* **Resource owner** - The resource owner in an auth flow is usually the application user, or *end-user* in OAuth terminology. The end-user "owns" the protected resource (their data) which your app accesses on their behalf. The resource owner can grant or deny your app (the client) access to the resources they own. For example, your app might call an external system's API to get a user's email address from their profile on that system. Their profile data is a resource the end-user owns on the external system, and the end-user can consent to or deny your app's request to access their data.
+* **Resource owner** - The resource owner in an auth flow is usually the application user, or *end-user* in OAuth terminology. The end-user "owns" the protected resource (their data) which your app accesses on their behalf. The resources owners can grant or deny your app (the client) access to the resources they own. For example, your app might call an external system's API to get a user's email address from their profile on that system. Their profile data is a resource the end-user owns on the external system, and the end-user can consent to or deny your app's request to access their data.
 
 * **Resource server** - The resource server hosts or provides access to a resource owner's data. Most often, the resource server is a web API fronting a data store. The resource server relies on the authorization server to perform authentication and uses information in bearer tokens issued by the authorization server to grant or deny access to resources.
 
 ## Tokens
 
-The parties in an authentication flow use **bearer tokens** to assure, verify, and authenticate a principal (user, host, or service) and to grant or deny access to protected resources (authorization). Bearer tokens in the Microsoft identity platform are formatted as [JSON Web Tokens](https://tools.ietf.org/html/rfc7519) (JWT).
+The parties in an authentication flow use **bearer tokens** to assure, verify, and authenticate a principal (user, host, or service) and to grant or deny access to protected resources (authorization). Bearer tokens in the Microsoft identity platform are formatted as [JSON Web Tokens (JWT)](https://tools.ietf.org/html/rfc7519).
 
 Three types of bearer tokens are used by the identity platform as *security tokens*:
 
@@ -79,7 +78,7 @@ https://login.microsoftonline.com/<issuer>/oauth2/v2.0/token
 
 To find the endpoints for an application you've registered, in the [Microsoft Entra admin center](https://entra.microsoft.com) navigate to:
 
-**Identity** > **Applications** > **App registrations** > \<YOUR-APPLICATION\> > **Endpoints**
+**Entra ID** > **App registrations** > \<YOUR-APPLICATION\> > **Endpoints**
 
 ## Next steps
 

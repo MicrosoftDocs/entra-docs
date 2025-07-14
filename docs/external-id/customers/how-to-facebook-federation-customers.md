@@ -1,22 +1,22 @@
 ---
 title: Add Facebook for customer sign-in
-description: Learn how to add Facebook as an identity provider for your customer tenant.
- 
-author: msmimart
-manager: celestedg
+description: Learn how to add Facebook as an identity provider for your external tenant, enabling customers to sign in to your applications using their Facebook accounts.
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 03/26/2024
-ms.author: mimart
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-#Customer intent: As a dev, devops, or it admin, I want to
+ms.date: 05/22/2025
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
+#Customer intent: As a developer or IT admin, I want to add Facebook as an identity provider for my external tenant so that customers can sign in to my applications using their Facebook accounts.
 ---
 
 # Add Facebook as an identity provider
 
-By setting up federation with Facebook, you can allow customers to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra ID for customers with a Facebook account. (Learn more about [authentication methods and identity providers for customers](concept-authentication-methods-customers.md).)
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+By setting up federation with Facebook, you can allow customers to sign in to your applications with their own Facebook accounts. After you've added Facebook as one of your application's sign-in options, on the sign-in page, customers can sign-in to Microsoft Entra External ID with a Facebook account. (Learn more about [authentication methods and identity providers for customers](/entra/external-id/customers/concept-authentication-methods-customers).)
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=Social)
@@ -51,10 +51,10 @@ If you don't already have a Facebook account, sign up at [https://www.facebook.c
 1. Select **Save changes**. 
 1. Select **Use cases** on the left and select **Customize** next to **Authentication and account creation**.
 1. Select **Go to settings** under **Facebook Login**.
-1.  In **Valid OAuth Redirect URIs**, enter the following URIs, replacing `<tenant-ID>` with your Microsoft Entra tenant ID and `<tenant-name>` with your Microsoft Entra tenant name:
+1.  In **Valid OAuth Redirect URIs**, enter the following URIs, replacing `<tenant-ID>` with your **external tenant ID** and `<tenant-name>` with your **external tenant name**:
 
 - `https://login.microsoftonline.com/te/<tenant-ID>/oauth2/authresp`
-- `https://login.microsoftonline.com/te/<tenant-subdomain>.onmicrosoft.com/oauth2/authresp`
+- `https://login.microsoftonline.com/te/<tenant-name>.onmicrosoft.com/oauth2/authresp`
 - `https://<tenant-name>.ciamlogin.com/<tenant-ID>/federation/oidc/www.facebook.com`
 - `https://<tenant-name>.ciamlogin.com/<tenant-name>.onmicrosoft.com/federation/oidc/www.facebook.com`
 - `https://<tenant-name>.ciamlogin.com/<tenant-ID>/federation/oauth2`
@@ -66,13 +66,13 @@ If you don't already have a Facebook account, sign up at [https://www.facebook.c
 19. Select **Go back** at the top of the page.
 20. At this point, only Facebook application owners can sign in. Because you registered the app, you can sign in with your Facebook account. To make your Facebook application available to your users, from the menu, select **Go live**. Follow all of the steps listed to complete all requirements. You'll likely need to complete data handling questions and the business verification to verify your identity as a business entity or organization. For more information, see [Meta App Development](https://developers.facebook.com/docs/development/release).
 
-## Configure Facebook federation in Microsoft Entra ID for customers
+## Configure Facebook federation in Microsoft Entra External ID
 
 After you create the Facebook application, in this step you set the Facebook client ID and client secret in Microsoft Entra ID. You can use the Microsoft Entra admin center or PowerShell to do so. To configure Facebook federation in the Microsoft Entra admin center, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
-2. Select **+ Facebook**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
+2. On the **Built-in** tab, next to **Facebook**, select **Configure**.
 
    <!-- ![Screenshot that shows how to add Facebook identity provider in Microsoft Entra ID.](./media/sign-in-with-facebook/configure-facebook-idp.png)-->
 
@@ -90,7 +90,7 @@ To configure Facebook federation by using PowerShell, follow these steps:
    Connect-MgGraph -Scopes "IdentityProvider.ReadWrite.All"
    ```
 
-1. At the sign-in prompt, sign in with the managed Global Administrator account.  
+1. At the sign-in prompt, sign in as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator). 
 1. Run the following commands:
 
    ```powershell
@@ -109,9 +109,9 @@ Use the client ID and client secret from the app you created in [Create a Facebo
 
 ## Add Facebook identity provider to a user flow
 
-At this point, the Facebook identity provider has been set up in your customer tenant, but it's not yet available in any of the sign-in pages. To add the Facebook identity provider to a user flow:
+At this point, the Facebook identity provider has been set up in your external tenant, but it's not yet available in any of the sign-in pages. To add the Facebook identity provider to a user flow:
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the Facebook identity provider.
 1. Under Settings, select **Identity providers**
 1. Under **Other Identity Providers**, select **Facebook**.
@@ -120,7 +120,8 @@ At this point, the Facebook identity provider has been set up in your customer t
 
 1. At the top of the pane, select **Save**.
 
-## Next steps
+## Related content
 
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
-- [Customize the branding for customer sign-in experiences](how-to-customize-branding-customers.md)
+- [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

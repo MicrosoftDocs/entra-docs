@@ -5,14 +5,13 @@ description: Explains the steps that are required to implement Microsoft Entra j
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 01/24/2023
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
 ---
-
 # How to: Plan your Microsoft Entra join implementation
 
 You can join devices directly to Microsoft Entra ID without the need to join to on-premises Active Directory while keeping your users productive and secure. Microsoft Entra join is enterprise-ready for both at-scale and scoped deployments. Single sign-on (SSO) access to on-premises resources is also available to devices that are Microsoft Entra joined. For more information, see [How SSO to on-premises resources works on Microsoft Entra joined devices](device-sso-to-on-premises-resources.md).
@@ -49,7 +48,7 @@ Consider Microsoft Entra join if your goals align with the following criteria:
 
 ## Review your identity infrastructure
 
-Microsoft Entra join works in managed and federated environments. We think most organizations will deploy managed domains. Managed domain scenarios don't require configuring and managing a federation server like Active Directory Federation Services (AD FS).
+Microsoft Entra join works in managed and federated environments. Most organizations deploy managed domains. Managed domain scenarios don't require configuring and managing a federation server like Active Directory Federation Services (AD FS).
 
 ### Managed environment
 
@@ -174,7 +173,7 @@ Microsoft Entra joined devices don't support on-premises applications relying on
 
 Remote desktop connection to a Microsoft Entra joined devices requires the host machine to be either Microsoft Entra joined or Microsoft Entra hybrid joined. Remote desktop from an unjoined or non-Windows device isn't supported. For more information, see [Connect to remote Microsoft Entra joined PC](/windows/client-management/client-tools/connect-to-remote-aadj-pc)
 
-Starting with the Windows 10 2004 update, users can also use remote desktop from a Microsoft Entra registered Windows 10 or newer device to another Microsoft Entra joined device.
+After the Windows 10 2004 update, users can use remote desktop from a Microsoft Entra registered Windows 10 or newer device to another Microsoft Entra joined device.
 
 ### RADIUS and Wi-Fi authentication
 
@@ -183,13 +182,13 @@ Currently, Microsoft Entra joined devices don't support RADIUS authentication us
 ## Understand your provisioning options
 
 >[!Note]
->[Microsoft Entra joined devices can't be deployed using System Preparation Tool (Sysprep) or similar imaging tools.
+> Microsoft Entra joined devices can't be deployed using System Preparation Tool (Sysprep) or similar imaging tools.
 
 You can provision Microsoft Entra joined devices using the following approaches:
 
 - **Self-service in OOBE/Settings** - In the self-service mode, users go through the Microsoft Entra join process either during Windows Out of Box Experience (OOBE) or from Windows Settings. For more information, see [Join your work device to your organization's network](https://support.microsoft.com/account-billing/join-your-work-device-to-your-work-or-school-network-ef4d6adb-5095-4e51-829e-5457430f3973).
 - **Windows Autopilot** - Windows Autopilot enables preconfiguration of devices for a smoother Microsoft Entra join experience in OOBE. For more information, see the [Overview of Windows Autopilot](/windows/deployment/windows-autopilot/windows-10-autopilot).
-- **Bulk enrollment** - Bulk enrollment enables an administrator driven Microsoft Entra join by using a bulk provisioning tool to configure devices. For more information, see [Bulk enrollment for Windows devices](/intune/windows-bulk-enroll).
+- **Bulk enrollment** - Bulk enrollment enables an administrator driven Microsoft Entra join by using a bulk provisioning tool to configure devices. For more information, see [Bulk enrollment for Windows devices](/mem/intune/enrollment/windows-bulk-enroll).
 
 Here's a comparison of these three approaches
 
@@ -215,7 +214,7 @@ Choose your deployment approach or approaches by reviewing the previous table an
 
 ## Configure your device settings
 
-The [Microsoft Entra admin center](https://entra.microsoft.com) allows you to control the deployment of Microsoft Entra joined devices in your organization. To configure the related settings, browse to **Identity** > **Devices** > **All devices** > **Device settings**. [Learn more](manage-device-identities.md)
+The [Microsoft Entra admin center](https://entra.microsoft.com) allows you to control the deployment of Microsoft Entra joined devices in your organization. To configure the related settings, browse to **Entra ID** > **Devices** > **All devices** > **Device settings**. [Learn more](manage-device-identities.md)
 
 <a name='users-may-join-devices-to-azure-ad'></a>
 
@@ -265,7 +264,7 @@ Select **Some** or **All** based on the scope of your deployment.
 
 Based on your scope, one of the following happens:
 
-- **User is in MDM scope:** If you have a Microsoft Entra ID P1 or P2 subscription, MDM enrollment is automated along with Microsoft Entra join. All scoped users must have an appropriate license for your MDM. If MDM enrollment fails in this scenario, Microsoft Entra join will also be rolled back.
+- **User is in MDM scope:** If you have a Microsoft Entra ID P1 or P2 subscription, MDM enrollment is automated along with Microsoft Entra join. All scoped users must have an appropriate license for your MDM. If MDM enrollment fails in this scenario, Microsoft Entra join is rolled back.
 - **User is not in MDM scope:** If users aren't in MDM scope, Microsoft Entra join completes without any MDM enrollment. This scope results in an unmanaged device.
 
 ### MDM URLs

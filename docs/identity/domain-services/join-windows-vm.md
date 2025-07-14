@@ -2,13 +2,13 @@
 title: Join a Windows Server VM to a Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, learn how to join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 09/15/2023
+ms.date: 02/05/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 #Customer intent: As a server administrator, I want to learn how to join a Windows Server VM to a Microsoft Entra Domain Services managed domain to provide centralized identity and policy.
 ---
 # Tutorial: Join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain
@@ -41,9 +41,9 @@ To complete this tutorial, you need the following resources:
 
 If you already have a VM that you want to domain-join, skip to the section to [join the VM to the managed domain](#join-the-vm-to-the-managed-domain).
 
-## Sign in to the Microsoft Entra admin center
+## Sign in to the Azure portal
 
-In this tutorial, you create a Windows Server VM to join to your managed domain using the Microsoft Entra admin center. To get started, first sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+In this tutorial, you create a Windows Server VM to join to your managed domain using the Azure portal. To get started, first sign in to the [Azure portal](https://portal.azure.com).
 
 ## Create a Windows Server virtual machine
 
@@ -51,19 +51,18 @@ To see how to join a computer to a managed domain, let's create a Windows Server
 
 If you already have a VM that you want to domain-join, skip to the section to [join the VM to the managed domain](#join-the-vm-to-the-managed-domain).
 
-1. From the Microsoft Entra admin center menu or from the **Home** page, select **Create a resource**.
+1. From the Azure portal menu or from the **Home** page, select **Create a resource**.
 
-1. From **Get started**, choose **Windows Server 2016 Datacenter**.
+1. Below **Virtual machine**, click **Create**.
 
-    ![Choose to create a Windows Server 2016 Datacenter VM](./media/join-windows-vm/select-vm-image.png)
-
-1. In the **Basics** window, configure the core settings for the virtual machine. Leave the defaults for *Availability options*, *Image*, and *Size*.
+1. In the **Basics** window, configure these settings for the virtual machine. Use the default values for other options.
 
     | Parameter            | Suggested value   |
     |----------------------|-------------------|
     | Resource group       | Select or create a resource group, such as *myResourceGroup* |
     | Virtual machine name | Enter a name for the VM, such as *myVM* |
     | Region               | Choose the region to create your VM in, such as *East US* |
+    | Image                | Choose a Windows Server version |
     | Username             | Enter a username for the local administrator account to create on the VM, such as *azureuser* |
     | Password             | Enter, and then confirm, a secure password for the local administrator to create on the VM. Don't specify a domain user account's credentials. [Windows LAPS](/windows-server/identity/laps/laps-overview) isn't supported. |
 
@@ -84,8 +83,8 @@ If you already have a VM that you want to domain-join, skip to the section to [j
     
     If you select a virtual network subnet that isn't connected to the subnet for your managed domain, you can't join the VM to the managed domain. For this tutorial, let's create a new subnet in the Azure virtual network.
 
-    In the **Networking** pane, select the virtual network in which your managed domain is deployed, such as *aaads-vnet*
-1. In this example, the existing *aaads-subnet* is shown that the managed domain is connected to. Don't connect your VM to this subnet. To create a subnet for the VM, select **Manage subnet configuration**.
+    In the **Networking** pane, select the virtual network in which your managed domain is deployed, such as *aadds-vnet*
+1. In this example, the existing *aadds-subnet* is shown that the managed domain is connected to. Don't connect your VM to this subnet. To create a subnet for the VM, select **Manage subnet configuration**.
 
     ![Choose to manage the subnet configuration](./media/join-windows-vm/manage-subnet.png)
 

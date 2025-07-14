@@ -1,16 +1,15 @@
 ---
 title: Overview of the Microsoft Entra application gallery
-description: An overview of using the Microsoft Entra application gallery.
+description: Explore the Microsoft Entra application gallery for seamless SaaS integration with preconfigured SSO and user provisioning. Enhance cloud app deployment.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: overview
-ms.date: 12/20/2023
+ms.date: 12/06/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: enterprise-apps
-
+ms.custom: enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to easily find and deploy pre-integrated SaaS applications from the Microsoft Entra application gallery, so that I can provide users with a seamless single sign-on experience and automate user provisioning.
 ---
 
@@ -18,9 +17,7 @@ ms.custom: enterprise-apps
 
 The Microsoft Entra application gallery is a collection of software as a service (SaaS) [applications](~/identity-platform/app-objects-and-service-principals.md) that are preintegrated with Microsoft Entra ID. The collection contains thousands of applications that make it easy to deploy and configure [single sign-on (SSO)](~/identity-platform/single-sign-on-saml-protocol.md) and [automated user provisioning](~/identity/app-provisioning/user-provisioning.md).
 
-To find the gallery when signed into your tenant, browse to **Identity** > **Applications** > **Enterprise applications** > **All applications** > **New application**.
-
-:::image type="content" source="media/overview-application-gallery/enterprise-applications.png" alt-text="Screenshot showing the Microsoft Entra application gallery pane in the [Microsoft Entra admin center](https://entra.microsoft.com).":::
+To find the gallery when signed into your tenant, browse to **Entra ID** > **Enterprise apps** > **All applications** > **New application**.
 
 The applications available from the gallery follow the SaaS model that allows users to connect to and use cloud-based applications over the Internet. Common examples are email, calendaring, and office tools (such as Microsoft Office 365).
 
@@ -56,13 +53,23 @@ Applications that are specific to major cloud platforms, such as AWS, Google, or
 
 ### On-premises applications
 
-On-premises applications are connected to Microsoft Entra ID using Microsoft Entra application proxy. From the on-premises section of the Microsoft Entra gallery, you can undertake the following tasks:
+There are five ways on-premises applications can be connected to Microsoft Entra ID. One is using Microsoft Entra application proxy for single sign-on. If your application supports single-sign on via SAML or Kerberos, then from the on-premises section of the Microsoft Entra gallery, you can undertake the following tasks:
 
 - Configure Application Proxy to enable remote access to an on-premises application.
 - Use the documentation to learn more about how to use Application Proxy to secure remote access to on-premises applications.
-- Manage any Application Proxy connectors that you created.
+- Manage any private network connectors that you created.
 
 :::image type="content" source="media/overview-application-gallery/on-premises-applications.png" alt-text="Screenshot showing the on-premises application options on the Microsoft Entra application gallery pane in the Microsoft Entra admin center.":::
+
+If your application uses Kerberos and also requires group memberships, then you can populate Windows Server AD groups from corresponding groups in Microsoft Entra. For more information, see [group writeback with Microsoft Entra Cloud Sync](~/identity/hybrid/group-writeback-cloud-sync.md).
+
+The second is using the provisioning agent to provision to an on-premises application that has its own user store and doesn't rely upon Windows Server AD. You can configure provisioning to [on-premises applications that support SCIM](../app-provisioning/on-premises-scim-provisioning.md), that use [SQL databases](../app-provisioning/on-premises-sql-connector-configure.md), that use an [LDAP directory](../app-provisioning/on-premises-ldap-connector-configure.md), or support a [SOAP or REST provisioning API](../app-provisioning/on-premises-web-services-connector.md).
+
+The third is using Microsoft Entra Private Access, by configuring a Global Secure Access app for per-app connections. For more information, see [Learn about Microsoft Entra Private Access](/entra/global-secure-access/concept-private-access).
+
+The fourth is to use the application's own connector. If you have [`SAP S/4HANA On-premise`](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-sap-s-4hana-on-premise), then provision users from Microsoft Entra ID to SAP Cloud Identity Directory. SAP Cloud Identity Services then provisions the users that are in the SAP Cloud Identity Directory into the downstream SAP applications, such as `SAP S/4HANA On-Premise`, through the SAP cloud connector. For more information, see [plan deploying Microsoft Entra for user provisioning with SAP source and target apps](../app-provisioning/plan-sap-user-source-and-target.md).
+
+The fifth is to use a third party integration technology. In cases where an application doesn't support standards such as SCIM, partners have custom ECMA connectors and SCIM gateways to integrate Microsoft Entra ID with more applications, including on-premises applications. For more information, see the list of [available partner-driven integrations](../app-provisioning/partner-driven-integrations.md#available-partner-driven-integrations).
 
 ### Featured applications
 

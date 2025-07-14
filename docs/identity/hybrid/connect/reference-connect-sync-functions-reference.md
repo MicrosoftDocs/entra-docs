@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect Sync: Functions Reference'
 description: Reference of declarative provisioning expressions in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 4f525ca0-be0e-4a2e-8da1-09b6b567ed5f
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -410,7 +410,7 @@ The CGuid function converts the string representation of a GUID to its binary re
 **Syntax:**  
 `bin CGuid(str GUID)`
 
-* A String formatted in this pattern: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx or {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
+* A String formatted in this pattern: 00001111-aaaa-2222-bbbb-3333cccc4444 or {00001111-aaaa-2222-bbbb-3333cccc4444}
 
 ---
 ### Contains
@@ -784,7 +784,7 @@ If the string could be converted to a GUID, then the IsGuid function evaluated t
 `bool IsGuid(str GUID)`
 
 **Remarks:**  
-A GUID is defined as a string following one of these patterns: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx or {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
+A GUID is defined as a string following one of these patterns: 00001111-aaaa-2222-bbbb-3333cccc4444 or {00001111-aaaa-2222-bbbb-3333cccc4444}
 
 Used to determine if CGuid() can be successful.
 

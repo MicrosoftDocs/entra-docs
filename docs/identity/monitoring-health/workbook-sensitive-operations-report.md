@@ -3,11 +3,11 @@ title: Sensitive operations report workbook
 description: Learn how to use the sensitive operations report workbook in Microsoft Entra ID to explore suspicious app and service principal activity.
 
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -16,9 +16,7 @@ ms.reviewer: sarbar
 
 # Sensitive operations report workbook
 
-As an IT administrator, you need to be able to identify compromises in your environment to ensure that you can keep it in a healthy state. 
-
-The sensitive operations report workbook is intended to help identify suspicious application and service principal activity that may indicate compromises in your environment.
+The sensitive operations report workbook is intended to help identify suspicious application and service principal activity that might indicate compromises in your environment.
 
 This article provides you with an overview of the **Sensitive Operations Report** workbook.
 
@@ -30,15 +28,15 @@ This article provides you with an overview of the **Sensitive Operations Report*
 
 ![Workbook category](./media/workbook-sensitive-operations-report/workbook-category.png)
 
-This workbook identifies recent sensitive operations that have been performed in your tenant and which may service principal compromise.
+This workbook identifies recent sensitive operations performed in your tenant.
 
-If your organization is new to Azure monitor workbooks, you need to integrate your Microsoft Entra sign-in and audit logs with Azure Monitor before accessing the workbook. This integration allows you to store, and query, and visualize your logs using workbooks for up to two years. Only sign-in and audit events created after Azure Monitor integration are stored, so the workbook won't contain insights prior to that date. Learn more about the prerequisites to Azure Monitor workbooks for Microsoft Entra ID. If you've previously integrated your Microsoft Entra sign-in and audit logs with Azure Monitor, you can use the workbook to assess past information. 
+If your organization is new to Azure monitor workbooks, you need to integrate your Microsoft Entra sign-in and audit logs with Azure Monitor before accessing the workbook. This integration allows you to store, query, and visualize your logs using workbooks for up to two years. Only sign-in and audit events created after Azure Monitor integration are stored, so the workbook won't contain insights before that date. For more information, see [Integrate Microsoft Entra logs with Azure Monitor](howto-integrate-activity-logs-with-azure-monitor-logs.yml).
  
 ## How to access the workbook
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Sensitive Operations Report** workbook from the **Troubleshoot** section.
 
@@ -46,9 +44,9 @@ If your organization is new to Azure monitor workbooks, you need to integrate yo
 
 This workbook is split into four sections:
 
-![Workbook sections](./media/workbook-sensitive-operations-report/workbook-sections.png)
+![Screenshot of the workbook sections.](./media/workbook-sensitive-operations-report/workbook-sections.png)
 
-- **Modified application and service principal credentials/authentication methods** - This report flags actors who have recently changed many service principal credentials, and how many of each type of service principal credentials have been changed.
+- **Modified application and service principal credentials/authentication methods** - This report flags actors who recently changed many service principal credentials, and how many of each type of service principal credentials changed.
 
 - **New permissions granted to service principals** - This workbook also highlights recently granted OAuth 2.0 permissions to service principals. 
 
@@ -58,7 +56,7 @@ This workbook is split into four sections:
 
 ### Modified application and service principal credentials/authentication methods
 
-One of the most common ways for attackers to gain persistence in the environment is by adding new credentials to existing applications and service principals. The credentials allow the attacker to authenticate as the target application or service principal, granting them access to all resources to which it has permissions.
+One of the most common ways for attackers to gain access in the environment is by adding new credentials to existing applications and service principals. The credentials allow the attacker to authenticate as the target application or service principal, granting them access to all resources to which it has permissions.
 
 This section includes the following data to help you detect:
 
@@ -70,7 +68,7 @@ This section includes the following data to help you detect:
 
 ### New permissions granted to service principals
 
-In cases where the attacker can't find a service principal or an application with a high privilege set of permissions through which to gain access, they'll often attempt to add the permissions to another service principal or app.
+Attackers often attempt to add permissions to another service principal or application if they can't find a service principal or application with a high privilege set of permissions through which to gain access.
 
 This section includes a breakdown of the AppOnly permissions grants to existing service principals. Admins should investigate any instances of excessive high permissions being granted, including, but not limited to, Exchange Online, and Microsoft Graph.
 
@@ -85,7 +83,7 @@ This section includes an overview of all changes made to service principal membe
 Another common approach to gain a long-term foothold in the environment is to:
 
 - Modify the tenant’s federated domain trusts.
-- Add another SAML IDP that is controlled by the attacker as a trusted authentication source. 
+- Add another SAML IDP that the attacker controls as a trusted authentication source. 
 
 This section includes the following data:
 
@@ -125,8 +123,13 @@ This paragraph lists the supported filters for each section.
 
 ## Best practices
 
-- * Use modified application and service principal credentials** to look out for credentials being added to service principals that aren't frequently used in your organization. Use the filters present in this section to further investigate any of the suspicious actors or service principals that were modified.
+- **Use modified application and service principal credentials** to look out for credentials being added to service principals that aren't frequently used in your organization. Use the filters present in this section to further investigate any of the suspicious actors or service principals that were modified.
 
-- **Use new permissions granted to service principals** to look out for broad or excessive permissions being added to service principals by actors that may be compromised.  
+- **Use new permissions granted to service principals** to look out for broad or excessive permissions being added to service principals by actors that might be compromised.  
 
 - **Use modified federation settings** section to confirm that the added or modified target domain/URL is a legitimate admin behavior. Actions that modify or add domain federation trusts are rare and should be treated as high fidelity to be investigated as soon as possible.
+
+## Related content
+
+- [How to use the identity workbooks](howto-use-workbooks.md)
+- [Service principal sign-in logs](concept-service-principal-sign-ins.md)

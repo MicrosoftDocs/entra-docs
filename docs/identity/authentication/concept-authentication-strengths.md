@@ -6,11 +6,11 @@ description: Learn how admins can use Microsoft Entra Conditional Access to dist
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/25/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckms
-manager: amycolannino
+manager: dougeby
 ms.reviewer: inbarc
 ---
 # Conditional Access authentication strength 
@@ -100,9 +100,15 @@ Conditional Access Administrators can also create custom authentication strength
 
 - **Windows Hello for Business** – If the user signed in with Windows Hello for Business as their primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. However, if the user signed in with another method like password as their primary authentication method, and the authentication strength requires Windows Hello for Business, they aren't prompted to sign in with Windows Hello for Business. The user needs to restart the session, choose **Sign-in options**, and select a method required by the authentication strength.
 
-## Known issue
+## Known issues
 
-- **FIDO2 security key Advanced options** - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
+- **Authentication strength and sign-in frequency** - When a resource requires an authentication strength and a sign-in frequency, users can satisfy both requirements at two different times. 
+
+  For example, let's say a resource requires passkey (FIDO2) for the authentication strength, and a 1-hour sign-in frequency. 24 hours ago, a user signed in with passkey (FIDO2) to access the resource. 
+  
+  When the user unlocks their Windows device using Windows Hello for Business, they can access the resource again. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
+
+- **Authentication strength blade double representation** - Platform credentials, such as Windows Hello for Business and **Platform Credential for macOS** are both represented in authentication strength under **Windows Hello For Business**. To configure a custom authentication strength that allows the use of **Platform Credential for macOS**, use **Windows Hello For Business**.
 
 ## FAQ
 
@@ -118,7 +124,6 @@ As a result, users in Contoso can access most of the resources in the tenant usi
 ## Prerequisites
 
 - **Microsoft Entra ID P1** - Your tenant needs to have Microsoft Entra ID P1 license to use Conditional Access. If needed, you can enable a [free trial](https://www.microsoft.com/security/business/get-started/start-free-trial).
-- **Enable combined registration** - Authentication strengths are supported when using [combined MFA and SSPR registration](howto-registration-mfa-sspr-combined.md). Using the legacy registration will result in poor user experience as the user may register methods that aren't required by the Authentication methods policy.
 
 ## Next steps
 

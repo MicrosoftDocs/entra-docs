@@ -1,21 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)'
+title: Configure Citrix ADC (header-based authentication) for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and Citrix ADC by using header-based authentication.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Tutorial: Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)
+# Configure Citrix ADC (header-based authentication) for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Citrix ADC with Microsoft Entra ID. When you integrate Citrix ADC with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Citrix ADC with Microsoft Entra ID. When you integrate Citrix ADC with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Citrix ADC.
 * Enable your users to be automatically signed-in to Citrix ADC with their Microsoft Entra accounts.
@@ -23,14 +22,14 @@ In this tutorial, you'll learn how to integrate Citrix ADC with Microsoft Entra 
 
 ## Prerequisites
 
-To get started, you need the following items:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Citrix ADC single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. The tutorial includes these scenarios:
+In this article,  you configure and test Microsoft Entra SSO in a test environment. The article includes these scenarios:
 
 * **SP-initiated** SSO for Citrix ADC
 
@@ -45,13 +44,13 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To integrate Citrix ADC with Microsoft Entra ID, first add Citrix ADC to your list of managed SaaS apps from the gallery:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 1. In the **Add from the gallery** section, enter **Citrix ADC** in the search box.
 
 1. In the results, select **Citrix ADC**, and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-citrix-adc'></a>
 
@@ -63,13 +62,13 @@ To configure and test Microsoft Entra SSO with Citrix ADC, perform the following
 
 1. [Configure Microsoft Entra SSO](#configure-azure-ad-sso) - to enable your users to use this feature.
 
-    1. [Create a Microsoft Entra test user](#create-an-azure-ad-test-user) - to test Microsoft Entra SSO with B.Simon.
+    1. Create a Microsoft Entra test user - to test Microsoft Entra SSO with B.Simon.
 
-    1. [Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user) - to enable B.Simon to use Microsoft Entra SSO.
+    1. Assign the Microsoft Entra test user - to enable B.Simon to use Microsoft Entra SSO.
 
 1. [Configure Citrix ADC SSO](#configure-citrix-adc-sso) - to configure the SSO settings on the application side.
 
-    * [Create a Citrix ADC test user](#create-a-citrix-adc-test-user) - to have a counterpart of B.Simon in Citrix ADC that is linked to the Microsoft Entra representation of the user.
+    * [Create a Citrix ADC test user](#create-a-citrix-adc-test-user) - to have a counterpart of B.Simon in Citrix ADC that's linked to the Microsoft Entra representation of the user.
 
 1. [Test SSO](#test-sso) - to verify whether the configuration works.
 
@@ -80,7 +79,7 @@ To configure and test Microsoft Entra SSO with Citrix ADC, perform the following
 To enable Microsoft Entra SSO by using the Azure portal, complete these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Citrix ADC** application integration pane, under **Manage**, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Citrix ADC** application integration pane, under **Manage**, select **Single sign-on**.
 
 1. On the **Select a single sign-on method** pane, select **SAML**.
 
@@ -141,10 +140,10 @@ To enable Microsoft Entra SSO by using the Azure portal, complete these steps:
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -159,14 +158,14 @@ In this section, you'll create a test user called B.Simon.
 
 In this section, you enable the user B.Simon to use Azure SSO by granting the user access to Citrix ADC.
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. In the applications list, select **Citrix ADC**.
 
 1. On the app overview, under **Manage**, select **Users and groups**.
 1. Select **Add user**. Then, in the **Add Assignment** dialog box, select **Users and groups**.
 1. In the **Users and groups** dialog box, select **B.Simon** from the **Users** list. Choose **Select**.
-1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
 1. In the **Add Assignment** dialog box, select **Assign**.
 
 ## Configure Citrix ADC SSO
@@ -348,7 +347,7 @@ To configure Citrix ADC for header-based authentication, complete the following 
 
     1. For **Type**, enter **INSERT_HTTP_HEADER**.
 
-    1. For **Header Name**, enter a header name (in this example, we use _SecretID_).
+    1. For **Header Name**, enter a header name (in this example, we use *SecretID*).
 
     1. For **Expression**, enter **aaa.USER.ATTRIBUTE("mySecretID")**, where **mySecretID** is the Microsoft Entra SAML claim that was sent to Citrix ADC.
 
@@ -383,9 +382,6 @@ To bind a rewrite policy to a virtual server by using the GUI:
 1. In the list of virtual servers, select the virtual server to which you want to bind the rewrite policy, and then select **Open**.
 
 1. On the **Load Balancing Virtual Server** pane, under **Advanced Settings**, select **Policies**. All policies that are configured for your NetScaler instance appear in the list.
- 
-    ![Screenshot that shows the "Configuration" tab with the "Name", "Action", and "Expression" fields highlighted and "Create" button selected.](./media/header-citrix-netscaler-tutorial/header05.png)
-
     ![Citrix ADC configuration - Load Balancing Virtual Server pane](./media/header-citrix-netscaler-tutorial/header06.png)
 
 1.	Select the check box next to the name of the policy you want to bind to this virtual server.
@@ -420,7 +416,7 @@ To bind a rewrite policy to a virtual server by using the GUI:
 
 ### Create a Citrix ADC test user
 
-In this section, a user called B.Simon is created in Citrix ADC. Citrix ADC supports just-in-time user provisioning, which is enabled by default. There is no action for you to take in this section. If a user doesn't already exist in Citrix ADC, a new one is created after authentication.
+In this section, a user called B.Simon is created in Citrix ADC. Citrix ADC supports just-in-time user provisioning, which is enabled by default. There's no action for you to take in this section. If a user doesn't already exist in Citrix ADC, a new one is created after authentication.
 
 > [!NOTE]
 > If you need to create a user manually, contact the [Citrix ADC client support team](https://www.citrix.com/contact/technical-support.html).
@@ -429,13 +425,13 @@ In this section, a user called B.Simon is created in Citrix ADC. Citrix ADC supp
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Citrix ADC Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Citrix ADC Sign-on URL where you can initiate the login flow. 
 
 * Go to Citrix ADC Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Citrix ADC tile in the My Apps, this will redirect to Citrix ADC Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Citrix ADC tile in the My Apps, this option redirects to Citrix ADC Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 Once you configure Citrix ADC you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

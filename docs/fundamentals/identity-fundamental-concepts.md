@@ -1,14 +1,14 @@
 ---
 title: Introduction to identity
 description:  Learn the fundamental concepts of identity and access management (IAM).  Learn about identities, resources, authentication, authorization, permissions, identity providers, and more.
-author: rwike77
+author: cilwerner
 manager: CelesteDG
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 01/10/2024
-ms.author: ryanwi
+ms.date: 03/13/2025
+ms.author: cwerner
 ms.reviewer: 
 ---
 
@@ -35,7 +35,7 @@ Identities are used to authenticate and authorize access to resources, communica
 
 At a high level, there are three types of identities:  
 
-- **Human identities** represent people such as employees (internal workers and front line workers) and external users (customers, consultants, vendors, and partners).
+- **Human identities** represent people such as employees (internal workers and frontline workers) and external users (customers, consultants, vendors, and partners).
 - **Workload identities** represent software workloads such as an application, service, script, or container.
 - **Device identities** represent devices such as desktop computers, mobile phones, IoT sensors, and IoT managed devices. Device identities are distinct from human identities.
 
@@ -43,7 +43,7 @@ At a high level, there are three types of identities:
 
 Authentication is the process of challenging a person, software component, or hardware device for credentials in order to verify their identity, or prove they're who or what they claim to be. Authentication typically requires the use of credentials (like username and password, fingerprints, certificates, or one-time passcodes). Authentication is sometimes shortened to *AuthN*.
 
-Multi-factor authentication (MFA) is a security measure that requires users to provide more than one piece of evidence to verify their identities, such as:
+Multifactor authentication (MFA) is a security measure that requires users to provide more than one piece of evidence to verify their identities, such as:
 - Something they know, for example a password.
 - Something they have, like a badge or [security token](~/identity-platform/security-tokens.md).
 - Something they are, like a biometric (fingerprint or face).
@@ -66,7 +66,7 @@ Here's a quick overview of authentication and authorization:
 
 | Authentication | Authorization |
 | ------- | -------- |
-| Can be thought of as a gatekeeper, allowing access only to those  who provide valid credentials. | Can be thought of as a guard, ensuring that only those with the proper clearance can enter certain areas. |
+| Can be thought of as a gatekeeper, allowing access only to those entities who provide valid credentials. | Can be thought of as a guard, ensuring that only those entities with the proper clearance can enter certain areas. |
 | Verifies whether a user, machine, or software is who or what they claim to be.| Determines if the user, machine, or software is allowed to access a particular resource. |
 | Challenges the user, machine, or software for verifiable credentials (for example, passwords, biometric identifiers, or certificates).| Determines what level of access a user, machine, or software has.|
 | Done before authorization. | Done after successful authentication. |
@@ -99,10 +99,10 @@ With modern authentication, all services, including all authentication services,
 
 With a central identity provider, organizations can establish authentication and authorization policies, monitor user behavior, identify suspicious activities, and reduce malicious attacks.  
 
-[Microsoft Entra ID](../index.yml) is an example of a cloud-based identity provider. Other examples include Twitter, Google, Amazon, LinkedIn, and GitHub.
+[Microsoft Entra](../index.yml) is an example of a cloud-based identity provider. Other examples include X, Google, Amazon, LinkedIn, and GitHub.
 
 ## Next steps
 
 - Read [Introduction to identity and access management](introduction-identity-access-management.md) to learn more.
 - Learn about [Single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md).
-- Learn about [Multi-factor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md).
+- Learn about [multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md).

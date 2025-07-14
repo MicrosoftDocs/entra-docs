@@ -3,11 +3,11 @@ title: 'AADCloudSyncTools PowerShell module for Microsoft Entra Cloud Sync'
 description: This article describes how to install the Microsoft Entra Connect cloud provisioning agent.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -152,7 +152,7 @@ This cmdlet requires `TenantId` of the Microsoft Entra tenant. It will verify if
 
 #### Example:
 ``` powershell
-Disable-AADCloudSyncToolsDirSyncAccidentalDeletionPrevention -tenantId "340ab039-1234-5678-9012-28fe88f83980"
+Disable-AADCloudSyncToolsDirSyncAccidentalDeletionPrevention -tenantId "aaaabbbb-0000-cccc-1111-dddd2222eeee"
 ```
 
 

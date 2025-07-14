@@ -1,14 +1,14 @@
 ### YamlMime:FAQ
 metadata:
   title: 'Microsoft Entra Connect FAQ -'
-  description: This article answers frequently asked questions about Microsoft Entra Connect.  
+  description: This article answers frequently asked questions about Microsoft Entra Connect. 
   author: billmath
-  manager: amycolannino
+  manager: femila
   ms.assetid: 4e47a087-ebcd-4b63-9574-0c31907a39a3
   ms.service: entra-id
   ms.tgt_pltfrm: na
   ms.topic: faq
-  ms.date: 02/08/2023
+  ms.date: 12/27/2024
   ms.subservice: hybrid-connect
   ms.author: billmath
   
@@ -22,9 +22,9 @@ sections:
       - question: |
           How can I harden my Microsoft Entra Connect server to decrease the security attack surface?
         answer: |
-          Microsoft recommends hardening your Microsoft Entra Connect server to decrease the security attack surface for this critical component of your IT environment.  Following the recommendations below will decrease the security risks to your organization.
+          Microsoft recommends hardening your Microsoft Entra Connect server to decrease the security attack surface for this critical component of your IT environment. Following these recommendations decreases the security risks to your organization.
           
-          * Deploy Microsoft Entra Connect on a domain joined server and restrict administrative access to domain administrators or other tightly controlled security groups
+          * Deploy Microsoft Entra Connect on a domain joined server and restrict administrative access to domain administrators or other tightly controlled security groups.
           
           To learn more, see: 
           
@@ -37,7 +37,7 @@ sections:
           * [Reducing the Active Directory attack surface](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface)
           
       - question: |
-          Will installation work if the Microsoft Entra Global Administrator has two-factor authentication (2FA) enabled?  
+          Does the installation work if the Microsoft Entra Hybrid Identity Administrator has two-factor authentication (2FA) enabled?
         answer: |
           As of the February 2016 builds, this scenario is supported.
 
@@ -71,64 +71,65 @@ sections:
       - question: |
           Can I move the Microsoft Entra Connect database from the local database to a remote SQL Server instance?   
         answer: |
-          Yes, the following steps provide general guidance on how to do this. We're currently working on a more detailed document.
+          Yes, the following steps provide general guidance on how to do this move. For more information, see [Move Microsoft Entra Connect database from SQL Server Express to remote SQL Server](how-to-connect-install-move-db.md)
           1. Back up the LocalDB ADSync database.
-          The simplest way to do this is to use SQL Server Management Studio installed on the same machine as Microsoft Entra Connect. Connect to *(LocalDb).\ADSync*, and then back up the ADSync database.
+          The simplest way to make this backup is to use SQL Server Management Studio installed on the same machine as Microsoft Entra Connect. Connect to *(LocalDb).\ADSync*, and then back up the ADSync database.
           
           2. Restore the ADSync database to your remote SQL Server instance.
           
           3. Install Microsoft Entra Connect against the existing [remote SQL database](how-to-connect-install-existing-database.md).
-             The article demonstrates how to migrate to using a local SQL database. If you're migrating to using a remote SQL database, in step 5 of the process you must also enter an existing service account that the Windows Sync service will run as. This sync engine service account is described here:
+             The article demonstrates how to migrate to using a local SQL database. If you're migrating to using a remote SQL database, in step 5 of the process you must also enter an existing service account that the Windows ADSync service uses. This sync engine service account is described here:
              
-                **Use an existing service account**: By default, Microsoft Entra Connect uses a virtual service account for the synchronization services to use. If you use a remote SQL Server instance or use a proxy that requires authentication, use a managed service account or a service account in the domain, and know the password. In those cases, enter the account to use. Make sure that users who are running the installation are system administrators in SQL so that login credentials for the service account can be created. For more information, see [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md#adsync-service-account). 
+                **Use an existing service account**: By default, Microsoft Entra Connect uses a virtual service account for the synchronization services to use. For remote SQL Server instance or web proxy with authentication, use a managed service account or a service account in the domain. In those cases, enter the account to use. Make sure that users who are running the installation are system administrators in SQL so that login credentials for the service account can be created. For more information, see [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md#adsync-service-account). 
              
-                With the latest build, provisioning the database can now be performed out of band by the SQL administrator and then installed by the Microsoft Entra Connect administrator with database owner rights. For more information, see [Install Microsoft Entra Connect by using SQL delegated administrator permissions](how-to-connect-install-sql-delegation.md).
+                With the latest build, the SQL administrator can provision the database and grant the Microsoft Entra Connect administrator with database owner rights to install the product. For more information, see [Install Microsoft Entra Connect by using SQL delegated administrator permissions](how-to-connect-install-sql-delegation.md).
           
-          To keep things simple, we recommend that users who install Microsoft Entra Connect be system administrators in SQL. However, with recent builds you can now use delegated SQL administrators, as described in [Install Microsoft Entra Connect using SQL delegated administrator permissions](how-to-connect-install-sql-delegation.md).
+          To keep things simple, we recommend the users who install Microsoft Entra Connectto have system administrator rights in SQL. However, with recent builds you can now use delegated SQL administrators, as described in [Install Microsoft Entra Connect using SQL delegated administrator permissions](how-to-connect-install-sql-delegation.md).
           
       - question: |
           What are some of the best practices from the field?  
         answer: |
-          The following is an informational document that presents some of the best practices that engineering, support and our consultants have developed over the years.  This is presented in a bullet list that can be quickly referenced.  Although this list attempts to be comprehensive, there may be additional best practices that might not have made it on the list yet.
+          The following is an informational document that presents some of the best practices that engineering, support, and our consultants have developed over the years. This is presented in a bullet list that can be quickly referenced. Although this list attempts to be comprehensive, there may be other best practices that might be added to the list in the future.
           
-          - If using Full SQL then it should remain local vs. remote
+          - If using Full SQL then it should remain local vs. remote:
               - Fewer hops
               - Easier to troubleshoot
               - Less complexity
-              - Need to designate resources to SQL and allow overhead for Microsoft Entra Connect and OS
-          - Bypass Proxy if at all possible, if you're unable to bypass the proxy then you need to ensure that the timeout value is greater than 5 minutes.
-          - If proxy is required then you must add the proxy to the machine.config file
-          - Be aware of local SQL jobs and maintenance and how they'll impact Microsoft Entra Connect - particularly re-indexing
-          - Ensure than DNS can resolve externally
-          - Ensure that [server specifications](how-to-connect-install-prerequisites.md#hardware-requirements-for-azure-ad-connect) are per recommendation whether you're using physical or virtual servers
-          - Ensure that if you're using a virtual server that resources required are dedicated
-          - Ensure that you have the disk and disk configuration meet Best Practices for SQL Server
-          - Install and configure Microsoft Entra Connect Health for monitoring
-          - Use the Delete Threshold that is built into Microsoft Entra Connect.
-          - Carefully review release updates to be prepared for all changes and new attributes that may be added
-          - Backup everything
+              - Need to designate resources to SQL and allow overhead for Microsoft Entra Connect and OS.
+          - Bypass the web proxy if possible, otherwise ensure that the web proxy timeout value is greater than 5 minutes.
+          - If a web proxy is required, then you must add the web proxy configuration to the machine.config file.
+          - Be aware of local SQL jobs and maintenance and how they'll impact Microsoft Entra Connect - particularly re-indexing.
+          - Ensure that DNS can resolve names externally.
+          - Ensure that [server specifications](how-to-connect-install-prerequisites.md#hardware-requirements-for-azure-ad-connect) are per recommendation whether you're using physical or virtual servers.
+          - Ensure that if you're using a virtual server that resources required are dedicated.
+          - Ensure that you have the disk and disk configuration meet Best Practices for SQL Server.
+          - Install and configure Microsoft Entra Connect Health for monitoring.
+          - Use the export deletion threshold that is built into Microsoft Entra Connect to prevent accidental deletes.
+          - Carefully review release updates to be prepared for all changes and new attributes that may be added.
+          - Backup everything:
               - Backup Keys
               - Backup Synchronization Rules
               - Backup Server Configuration
               - Backup SQL Database
-          - Ensure that there are no 3rd party backup agents that are backing up SQL without the SQL VSS Writer (common in virtual servers with 3rd party snapshots)
-          - Limit the amount of custom synchronization rules that are used as they add complexity
-          - Treat Microsoft Entra Connect Servers as Tier 0 Servers
-          - Be leery of modifying  cloud synchronization rules without great understanding of the impact and the right business drivers
-          - Make sure that the correct URL's and Firewall ports are open for support of Microsoft Entra Connect and Microsoft Entra Connect Health
-          - Leverage the cloud filtered attribute to troubleshoot and prevent phantom objects
-          - With the Staging Server ensure that you're using the Microsoft Entra Connect Configuration Documenter for consistency between servers
-          - Staging Servers should be in separate datacenters (Physical Locations
-          - Staging servers aren't meant to be a High Availability solution, but you can have multiple staging servers
-          - Introducing a "Lag" Staging Servers could mitigate some potential downtime in case of error
-          - Test and Validate all upgrades on the Staging Server first
-          - Always validate exports before switching over to the staging server.  Leverage the staging server for Full Imports and Full Synchronizations to reduce business impact
-          - Keep version consistency between Microsoft Entra Connect Servers as much as possible 
+          - Avoid using Azure Backup for the ADSync database as it may lead to deadlocks and potentially cause the run profile to freeze.
+          - Ensure that there are no 3rd party backup agents that are backing up SQL without the SQL VSS Writer (common in virtual servers with 3rd party snapshots).
+          - Limit the number of custom synchronization rules that are used as they add complexity.
+          - Treat Microsoft Entra Connect Servers as Tier 0 Servers.
+          - Be leery of modifying  cloud synchronization rules without great understanding of the impact and the right business drivers.
+          - Make sure that the correct URLs and Firewall ports are open for support of Microsoft Entra Connect and Microsoft Entra Connect Health.
+          - Leverage the cloud filtered attribute to troubleshoot and prevent phantom objects.
+          - With the Staging Server ensure that you're using the Microsoft Entra Connect Configuration Documenter tool for consistency between servers.
+          - Staging Servers should be in separate datacenters (Physical Locations.
+          - Staging servers aren't meant to be a High Availability solution, but you can have multiple staging servers.
+          - Introducing a "Lag" Staging Servers could mitigate some potential downtime in case of an issue.
+          - Test and Validate all upgrades on the Staging Server first.
+          - Always validate exports before switching over to the staging server. Leverage the staging server for Full Imports and Full Synchronizations to reduce business impact.
+          - Keep version consistency between Microsoft Entra Connect Servers as much as possible.
           
       - question: |
           Can I allow Microsoft Entra Connect to create the Microsoft Entra Connector account on Workgroup machine?
         answer: |
-          No.  In order to allow Microsoft Entra Connect to auto-create the Microsoft Entra Connector account, the machine must be domain-joined.  
+          No, in order to allow Microsoft Entra Connect to auto-create the Microsoft Entra Connector account, the machine must be domain-joined.
 
   - name: Network
     questions:
@@ -160,7 +161,7 @@ sections:
       - question: |
           I have a multi-forest environment and the network between the two forests is using NAT (Network Address Translation). Is using Microsoft Entra Connect between these two forests supported?
         answer: |
-          No, using Microsoft Entra Connect over NAT isn't supported. 
+          No, using Microsoft Entra Connect over NAT isn't supported because it's dependent on Active Directory which does not support NAT. See [support boundaries for Active Directory over NAT](https://learn.microsoft.com/troubleshoot/windows-server/active-directory/support-for-active-directory-over-nat).
           
   - name: Federation
     questions:
@@ -184,17 +185,17 @@ sections:
       - question: |
           Are Next Generation Cryptographic (NGC) sync rules supported on a FIPS-enabled machine?  
         answer: |
-          No.  They aren't supported.
+          No. They aren't supported.
           
       - question: |
           If I disabled a synced device in the [Microsoft Entra admin center](https://entra.microsoft.com), why it's re-enabled?
         answer: |
-          Synced devices might be authored or mastered on premises. If a synced device is enabled on premises, it might be re-enabled in the [Microsoft Entra admin center](https://entra.microsoft.com) even if was previously disabled by an administrator. To disable a synced device, use the on-premises Active Directory to disable the computer account.
+          Synced devices might be authored or managed on-premises. If a synced device is enabled on premises, it might be re-enabled in the [Microsoft Entra admin center](https://entra.microsoft.com) even if was previously disabled by an administrator. To disable a synced device, use the on-premises Active Directory to disable the computer account.
           
       - question: |
           If I block user sign-in at the Microsoft 365 or [Microsoft Entra admin center](https://entra.microsoft.com) for synced users, why it's unblocked upon signing in again?
         answer: |
-          Synced users might be authored or mastered on premises. If the account is enabled on premises, it can unblock the sign-in block placed by administrator.
+          Synced users might be authored or managed on-premises. If the account is enabled on premises, it can unblock the sign-in block placed by administrator.
           
   - name: Identity data
     questions:
@@ -245,43 +246,43 @@ sections:
         answer: |
           No.
 
-  - name: Auto upgrade
+  - name: autoupgrade
     questions:
       - question: |
-          What are the advantages and consequences of using auto upgrade?  
+          What are the advantages and consequences of using autoupgrade?  
         answer: |
-          We're advising all customers to enable auto upgrade for their Microsoft Entra Connect installation. The benefit's that you always receive the latest patches, including security updates for vulnerabilities that have been found in Microsoft Entra Connect. The upgrade process is painless and happens automatically as soon as a new version is available. Many thousands of Microsoft Entra Connect customers use auto upgrade with every new release.
+          We're advising all customers to enable autoupgrade for their Microsoft Entra Connect installation. The benefit's that you always receive the latest patches, including security updates for vulnerabilities that have been found in Microsoft Entra Connect. The upgrade process is painless and happens automatically as soon as a new version is available. Many thousands of Microsoft Entra Connect customers use autoupgrade with every new release.
           
-          The auto-upgrade process always first establishes whether an installation is eligible for auto upgrade. If it's eligible, the upgrade is performed and tested. The process also includes looking for custom changes to rules and specific environmental factors. If the tests show that an upgrade is unsuccessful, the previous version is automatically restored.
+          The autoupgrade process always first establishes whether an installation is eligible for autoupgrade. If it's eligible, the upgrade is performed and tested. The process also includes looking for custom changes to rules and specific environmental factors. If the tests show that an upgrade is unsuccessful, the previous version is automatically restored.
           
           Depending on the size of the environment, the process can take a couple of hours. While the upgrade is in progress, no sync between Windows Server Active Directory and Microsoft Entra ID happens.
           
       - question: |
-          I received an email telling me that my auto upgrade no longer works and I need to install a new version. Why do I need to do this?  
+          I received an email telling me that my autoupgrade no longer works and I need to install a new version. Why do I need to do this?  
         answer: |
-          Last year, we released a version of Microsoft Entra Connect that, under certain circumstances, might have disabled the auto-upgrade feature on your server. We have fixed the issue in Microsoft Entra Connect version 1.1.750.0. If you have been affected by the issue, you can mitigate it by running a PowerShell script to repair it or by manually upgrading to the latest version of Microsoft Entra Connect. 
+          Last year, we released a version of Microsoft Entra Connect that, under certain circumstances, might have disabled the autoupgrade feature on your server. We have fixed the issue in Microsoft Entra Connect version 1.1.750.0. If you have been affected by the issue, you can mitigate it by running a PowerShell script to repair it or by manually upgrading to the latest version of Microsoft Entra Connect. 
           
           To run the PowerShell script, [download the script](/samples/browse/?redirectedfrom=TechNet-Gallery) and run it on your Microsoft Entra Connect server in an administrative PowerShell window. To learn how to run the script, [view this short video](https://aka.ms/repairaadcau).
           
           To manually upgrade, you must download and run the latest version of the `AADConnect.msi` file.
            
           -  If your current version is older than 1.1.750.0, [download and upgrade to the latest version](https://www.microsoft.com/download/details.aspx?id=47594).
-          - If your Microsoft Entra Connect version is 1.1.750.0 or later, no further action is required. You’re already using the version that contains the auto-upgrade fix. 
+          - If your Microsoft Entra Connect version is 1.1.750.0 or later, no further action is required. You’re already using the version that contains the autoupgrade fix. 
           
       - question: |
-          I received an email telling me to upgrade to the latest version to re-enable auto upgrade. I'm using version 1.1.654.0. Do I need to upgrade?  
+          I received an email telling me to upgrade to the latest version to re-enable autoupgrade. I'm using version 1.1.654.0. Do I need to upgrade?  
         answer: |
-          Yes, you need to upgrade to version 1.1.750.0 or later to re-enable auto upgrade. [Download and upgrade to the latest version](https://www.microsoft.com/download/details.aspx?id=47594).
+          Yes, you need to upgrade to version 1.1.750.0 or later to re-enable autoupgrade. [Download and upgrade to the latest version](https://www.microsoft.com/download/details.aspx?id=47594).
           
       - question: |
-          I received an email telling me to upgrade to the latest version to re-enable auto upgrade. If I have used PowerShell to enable auto upgrade, do I still need to install the latest version?  
+          I received an email telling me to upgrade to the latest version to re-enable autoupgrade. If I have used PowerShell to enable autoupgrade, do I still need to install the latest version?  
         answer: |
-          Yes, you still need to upgrade to version 1.1.750.0 or later. Enabling the auto-upgrade service with PowerShell doesn't mitigate the auto-upgrade issue found in versions before 1.1.750.0.
+          Yes, you still need to upgrade to version 1.1.750.0 or later. Enabling the autoupgrade service with PowerShell doesn't mitigate the autoupgrade issue found in versions before 1.1.750.0.
 
       - question: |
           I want to upgrade to a newer version but I’m not sure who installed Microsoft Entra Connect, and we don't have the username and password. Do we need this?
         answer: |
-          You don’t need to know the username and password that was initially used to upgrade Microsoft Entra Connect. Use any Microsoft Entra account that has the Global Administrator role.
+          You don’t need to know the username and password that was initially used to upgrade Microsoft Entra Connect. Use any Microsoft Entra account that has the Hybrid Identity Administrator role.
 
       - question: |
           How can I find which version of Microsoft Entra Connect I'm using?  
@@ -298,7 +299,7 @@ sections:
       - question: |
           We already upgraded to the latest version of Microsoft Entra Connect last year. Do we need to upgrade again?  
         answer: |
-          The Microsoft Entra Connect team makes frequent updates to the service. To benefit from bug fixes and security updates as well as new features, it's important to keep your server up to date with the latest version. If you enable auto upgrade, your software version is updated automatically. To find the version release history of Microsoft Entra Connect, see [Microsoft Entra Connect: Version release history](reference-connect-version-history.md).
+          The Microsoft Entra Connect team makes frequent updates to the service. To benefit from bug fixes and security updates as well as new features, it's important to keep your server up to date with the latest version. If you enable autoupgrade, your software version is updated automatically. To find the version release history of Microsoft Entra Connect, see [Microsoft Entra Connect: Version release history](reference-connect-version-history.md).
           
       - question: |
           How long does it take to perform the upgrade, and what is the impact on my users?  
@@ -311,44 +312,44 @@ sections:
           The Office team is working to get the Office portal updates to reflect the current product name. It doesn't reflect which sync tool you're using.
 
       - question: |
-          My auto-upgrade status says, “Suspended." Why is it suspended? Should I enable it?  
+          My autoupgrade status says, “Suspended." Why is it suspended? Should I enable it?  
         answer: |
-          A bug was introduced in a previous version that, under certain circumstances, leaves the auto-upgrade status set to “Suspended.” Manually enabling it's technically possible but would require several complex steps. The best thing you can do is install the latest version of Microsoft Entra Connect.
+          A bug was introduced in a previous version that, under certain circumstances, leaves the autoupgrade status set to “Suspended.” Manually enabling it's technically possible but would require several complex steps. The best thing you can do is install the latest version of Microsoft Entra Connect.
 
       - question: |
-          My company has strict change-management requirements, and I want to control when it’s pushed out. Can I control when auto upgrade is launched?  
+          My company has strict change-management requirements, and I want to control when it’s pushed out. Can I control when autoupgrade is launched?  
         answer: |
           No, there's no such feature today. The feature is being evaluated for a future release.
 
       - question: |
-          Will I get an email if the auto upgrade failed? How will I know that it was successful?  
+          Will I get an email if the autoupgrade failed? How will I know that it was successful?  
         answer: |
           You won't be notified of the result of the upgrade. The feature is being evaluated for a future release.
 
       - question: |
-          Do you publish a timeline for when you plan to push out auto upgrades?  
+          Do you publish a timeline for when you plan to push out autoupgrades?  
         answer: |
-          Auto upgrade is the first step in the release process of a newer version. Whenever there's a new release, upgrades are pushed automatically. Newer versions of Microsoft Entra Connect are pre-announced in the [Microsoft Entra Roadmap](~/fundamentals/whats-new.md).
+          autoupgrade is the first step in the release process of a newer version. Whenever there's a new release, upgrades are pushed automatically. Newer versions of Microsoft Entra Connect are pre-announced in the [Microsoft Entra Roadmap](~/fundamentals/whats-new.md).
           
       - question: |
-          Does auto upgrade also upgrade Microsoft Entra Connect Health?  
+          Does autoupgrade also upgrades Microsoft Entra Connect Health?  
         answer: |
-          Yes, auto upgrade also upgrades Microsoft Entra Connect Health.
+          Yes, autoupgrade also upgrades Microsoft Entra Connect Health.
 
       - question: |
-          Do you also auto-upgrade Microsoft Entra Connect servers in staging mode?  
+          Do you also autoupgrade Microsoft Entra Connect servers in staging mode?  
         answer: |
-          Yes, you can auto-upgrade a Microsoft Entra Connect server that is in staging mode.
+          Yes, you can autoupgrade a Microsoft Entra Connect server that is in staging mode.
 
       - question: |
-          If auto upgrade fails and my Microsoft Entra Connect server doesn't start, what should I do?  
+          If autoupgrade fails and my Microsoft Entra Connect server doesn't start, what should I do?  
         answer: |
           In rare cases, the Microsoft Entra Connect service doesn't start after you perform the upgrade. In these cases, rebooting the server usually fixes the issue. If the Microsoft Entra Connect service still doesn't start, open a support ticket. For more information, see [Create a service request to contact Microsoft 365 support](/archive/blogs/praveenkumar/how-to-create-service-requests-to-contact-office-365-support). 
           
       - question: |
           I’m not sure what the risks are when I upgrade to a newer version of Microsoft Entra Connect. Can you call me to help me with the upgrade?  
         answer: |
-          If you need help upgrading to a newer version of Microsoft Entra Connect, open a support ticket at [Create a service request to contact Microsoft 365 support](/archive/blogs/praveenkumar/how-to-create-service-requests-to-contact-office-365-support).
+          If you need help with upgrading to a newer version of Microsoft Entra Connect, open a support ticket at [Create a service request to contact Microsoft 365 support](/archive/blogs/praveenkumar/how-to-create-service-requests-to-contact-office-365-support).
           
       - question: |
           Operational best practice
@@ -383,4 +384,4 @@ sections:
       - question: |
           Why am I seeing Events 6311 and 6401 occur after Sync Step Errors?
         answer: |
-          The events 6311 - **The server encountered an unexpected error while performing a callback** and 6401 - **The management agent controller encountered an unexpected error** - are always logged after a synchronization step error. To resolve these errors, you need to clean up the synchronization step errors.  For more information, see [Troubleshooting errors during synchronization](tshoot-connect-sync-errors.md) and [Troubleshoot object synchronization with Microsoft Entra Connect Sync](tshoot-connect-objectsync.md)
+          The events 6311 - **The server encountered an unexpected error while performing a callback** and 6401 - **The management agent controller encountered an unexpected error** - are always logged after a synchronization step error. To resolve these errors, you need to clean up the synchronization step errors. For more information, see [Troubleshooting errors during synchronization](tshoot-connect-sync-errors.md) and [Troubleshoot object synchronization with Microsoft Entra Connect Sync](tshoot-connect-objectsync.md)

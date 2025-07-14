@@ -1,18 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Seamless Single Sign-On - How it works'
 description: This article describes how the Microsoft Entra seamless single sign-on feature works.
-
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD, SSO, Single Sign-on
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra seamless single sign-on: Technical deep dive
@@ -32,7 +31,7 @@ This section has three parts to it:
 Seamless SSO is enabled using Microsoft Entra Connect as shown [here](how-to-connect-sso-quick-start.md). While enabling the feature, the following steps occur:
 
 - A computer account (`AZUREADSSOACC`) is created in your on-premises Active Directory (AD) in each AD forest that you synchronize to Microsoft Entra ID (using Microsoft Entra Connect).
-- In addition, a number of Kerberos service principal names (SPNs) are created to be used during the Microsoft Entra sign-in process.
+- In addition, a number of Kerberos service principal names (SPNs) are created for use during the Microsoft Entra sign-in process.
 - The computer account's Kerberos decryption key is shared securely with Microsoft Entra ID. If there are multiple AD forests, each computer account will have its own unique Kerberos decryption key.
 
 >[!IMPORTANT]
@@ -48,7 +47,7 @@ Once the set-up is complete, Seamless SSO works the same way as any other sign-i
 The sign-in flow on a web browser is as follows:
 
 1. The user tries to access a web application (for example, the Outlook Web App - https://outlook.office365.com/owa/) from a domain-joined corporate device inside your corporate network.
-2. If the user is not already signed in, the user is redirected to the Microsoft Entra sign-in page.
+2. If the user isn't already signed in, the user is redirected to the Microsoft Entra sign-in page.
 3. The user types in their user name into the Microsoft Entra sign-in page.
 
    >[!NOTE]
@@ -59,29 +58,29 @@ The sign-in flow on a web browser is as follows:
 6. Active Directory locates the computer account and returns a Kerberos ticket to the browser encrypted with the computer account's secret.
 7. The browser forwards the Kerberos ticket it acquired from Active Directory to Microsoft Entra ID.
 8. Microsoft Entra ID decrypts the Kerberos ticket, which includes the identity of the user signed into the corporate device, using the previously shared key.
-9. After evaluation, Microsoft Entra ID either returns a token back to the application or asks the user to perform additional proofs, such as Multi-Factor Authentication.
+9. After evaluation, Microsoft Entra ID either returns a token back to the application or asks the user to perform additional proofs, such as multifactor authentication.
 10. If the user sign-in is successful, the user is able to access the application.
 
 The following diagram illustrates all the components and the steps involved.
 
 ![Seamless Single Sign On - Web app flow](./media/how-to-connect-sso-how-it-works/sso2.png)
 
-Seamless SSO is opportunistic, which means if it fails, the sign-in experience falls back to its regular behavior - i.e, the user needs to enter their password to sign in.
+Seamless SSO is opportunistic. This means that if it fails, the sign-in experience falls back to its regular behavior. In that case, the user needs to enter their password to sign in.
 
 ### How does sign-in on a native client with Seamless SSO work?
 
 The sign-in flow on a native client is as follows:
 
 1. The user tries to access a native application (for example, the Outlook client) from a domain-joined corporate device inside your corporate network.
-2. If the user is not already signed in, the native application retrieves the username of the user from the device's Windows session.
-3. The app sends the username to Microsoft Entra ID, and retrieves your tenant's WS-Trust MEX endpoint. This WS-Trust endpoint is used exclusively by the Seamless SSO feature, and is not a general implementation of the WS-Trust protocol on Microsoft Entra ID.
+2. If the user isn't already signed in, the native application retrieves the username of the user from the device's Windows session.
+3. The app sends the username to Microsoft Entra ID, and retrieves your tenant's WS-Trust MEX endpoint. This WS-Trust endpoint is used exclusively by the Seamless SSO feature, and isn't a general implementation of the WS-Trust protocol on Microsoft Entra ID.
 4. The app then queries the WS-Trust MEX endpoint to see if integrated authentication endpoint is available. The integrated authentication endpoint is used exclusively by the Seamless SSO feature.
 5. If step 4 succeeds, a Kerberos challenge is issued.
 6. If the app is able to retrieve the Kerberos ticket, it forwards it up to Microsoft Entra integrated authentication endpoint.
 7. Microsoft Entra ID decrypts the Kerberos ticket and validates it.
 8. Microsoft Entra ID signs the user in, and issues a SAML token to the app.
 9. The app then submits the SAML token to Microsoft Entra ID OAuth2 token endpoint.
-10. Microsoft Entra ID validates the SAML token, and issues to the app an access token and a refresh token for the specified resource, and an id token.
+10. Microsoft Entra ID validates the SAML token and issues an access token, a refresh token for the specified resource, and an ID token to the app.
 11. The user gets access to the app's resource.
 
 The following diagram illustrates all the components and the steps involved.

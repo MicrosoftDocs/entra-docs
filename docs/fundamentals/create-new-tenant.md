@@ -2,69 +2,48 @@
 title: Quickstart - Access and create new tenant
 description: Instructions about how to find Microsoft Entra ID and how to create a new tenant for your organization.
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
-ms.date: 11/28/2023
+ms.date: 03/05/2025
 ms.author: barclayn
-ms.custom: it-pro, fasttrack-edit, mode-other
+ms.custom: it-pro, fasttrack-edit, mode-other, sfi-image-nochange
 ms.collection: M365-identity-device-management
 ---
 
 # Quickstart: Create a new tenant in Microsoft Entra ID
 
-You can do all of your administrative tasks using the Microsoft Entra admin center, including creating a new tenant for your organization.
+You can perform all of your administrative tasks using the Microsoft Entra admin center, including creating a new tenant for your organization.
 
-In this quickstart article, you'll learn how to get to the Azure portal and Microsoft Entra ID, and you'll learn how to create a basic tenant for your organization.
+In this quickstart article, you learn how to create a basic tenant for your organization.
 
-If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+>[!Note]
+>Only paid customers can create a new Workforce tenant in Microsoft Entra ID. Customers using a free tenant, or a trial subscription won't be able to create additional tenants from the Microsoft Entra admin center. Customers facing this scenario who need a new tenant can sign up for a [free account](https://azure.microsoft.com/free/).
 
 ## Create a new tenant for your organization
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After you sign in to the [Azure portal](https://portal.azure.com), you can create a new tenant for your organization. Your new tenant represents your organization and helps you to manage a specific instance of Microsoft Cloud services for your internal and external users.
 
 >[!NOTE]
-> If you're unable to create Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If tenant creation is switched off, ask your *Global Administrator* to assign you a *Tenant Creator* role.
+>
+> - If you're unable to create a Microsoft Entra ID or Azure AD B2C tenant, review your user settings page to ensure that tenant creation isn't switched off. If it is not enabled you must be assigned at least the [Tenant Creator](../identity/role-based-access-control/permissions-reference.md#tenant-creator) role.
+> - This article doesn't cover creating an *external* tenant configuration for consumer-facing apps; learn more about using [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) for your customer identity and access management (CIAM) scenarios.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ### To create a new tenant
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
-
-1. From the Azure portal menu, select **Microsoft Entra ID**.
-
-1. Navigate to **Identity** > **Overview** > **Manage tenants**.
-
-1. Select **Create**.
-
-   :::image type="content" source="media/create-new-tenant/portal.png" alt-text="Screenshot of Microsoft Entra ID - Overview page - Create a tenant.":::
-
-1. On the Basics tab, select the type of tenant you want to create, either **Microsoft Entra ID** or **Microsoft Entra ID (B2C)**.
-
-1. Select **Next: Configuration** to move to the Configuration tab.
-
-1. On the Configuration tab, enter the following information:
-
-   :::image type="content" source="media/create-new-tenant/create-new-tenant.png" alt-text="Screenshot of Microsoft Entra ID - Create a tenant page - configuration tab.":::
-
-   - Type your desired Organization name (for example *Contoso Organization*) into the **Organization name** box.
-   - Type your desired Initial domain name (for example *Contosoorg*) into the **Initial domain name** box.
-   - Select your desired Country/Region or leave the *United States* option in the **Country or region** box.
-
-1. Select **Next: Review + Create**. Review the information you entered and if the information is correct, select **Create** in the lower left corner.
-
-Your new tenant is created with the domain contoso.onmicrosoft.com.
+[!INCLUDE [Create](../includes/definitions/create-new-tenant.md)]
 
 ## Your user account in the new tenant
 
-When you create a new Microsoft Entra tenant, you become the first user of that tenant. As the first user, you're automatically assigned the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role. Check out your user account by navigating to the [**Users**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers) page.
+[!INCLUDE [Create](../includes/definitions/tenant-installation-account.md)]
 
 By default, you're also listed as the [technical contact](/microsoft-365/admin/manage/change-address-contact-and-more#what-do-these-fields-mean) for the tenant. Technical contact information is something you can change in [**Properties**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties).
 
-> [!WARNING]
-> Ensure your directory has at least two accounts with Global Administrator privileges assigned to them. This will help in the case that one Global Administrator is locked out. For more detail see the article, [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 ## Clean up resources
 
@@ -79,11 +58,11 @@ If you're not going to continue to use this application, you can delete the tena
 
 ## Next steps
 
-- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.md).
+- Change or add other domain names, see [How to add a custom domain name to Microsoft Entra ID](add-custom-domain.yml).
 
 - Add users, see [Add or delete a new user](./add-users.md)
 
-- Add groups and members, see [Create a basic group and add members](./how-to-manage-groups.md).
+- Add groups and members, see [Create a basic group and add members](./how-to-manage-groups.yml).
 
 - Learn about [Azure role-based access control (RBAC)](/azure/role-based-access-control/overview) and [Conditional Access](~/identity/conditional-access/overview.md) to help manage your organization's application and resource access.
 

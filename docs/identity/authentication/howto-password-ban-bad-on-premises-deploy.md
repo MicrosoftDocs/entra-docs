@@ -1,16 +1,15 @@
 ---
 title: Deploy on-premises Microsoft Entra Password Protection
 description: Learn how to plan and deploy Microsoft Entra Password Protection in an on-premises Active Directory Domain Services environment
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: mimanans
+ms.custom: sfi-ga-nochange
 ---
 # Plan and deploy on-premises Microsoft Entra Password Protection
 
@@ -101,7 +100,7 @@ The following core requirements apply:
 
 The following requirements apply to the Microsoft Entra Password Protection DC agent:
 
-* Machines where the Microsoft Entra Password Protection DC agent software will be installed can run any supported version of Windows Server, including Windows Server Core editions.
+* Machines where the Microsoft Entra Password Protection DC agent software will be installed must run Windows Server 2012 R2 or later, including Windows Server Core editions.
     * The Active Directory domain or forest can be any supported functional level. 
 * All machines where the Microsoft Entra Password Protection DC agent will be installed must have .NET 4.7.2 installed.
     * If .NET 4.7.2 is not already installed, download and run the installer found at [The .NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).
@@ -130,8 +129,8 @@ The following requirements apply to the Microsoft Entra Password Protection prox
     * If .NET 4.7.2 is not already installed, download and run the installer found at [The .NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).
 * All machines that host the Microsoft Entra Password Protection proxy service must be configured to grant domain controllers the ability to log on to the proxy service. This ability is controlled via the "Access this computer from the network" privilege assignment.
 * All machines that host the Microsoft Entra Password Protection proxy service must be configured to allow outbound TLS 1.2 HTTP traffic.
-* A *Global Administrator* account is required to register the Microsoft Entra Password Protection proxy service for the first time in a given tenant. Subsequent proxy and forest registrations with Microsoft Entra ID may use an account with either *Global Administrator* or *Security Administrator* credentials.
-* Network access must be enabled for the set of ports and URLs specified in the [Application Proxy environment setup procedures](~/identity/app-proxy/application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment). This is in addition to the two endpoints described above.
+* A [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) is required to register the Microsoft Entra Password Protection proxy service for the first time in a given tenant. Subsequent proxy and forest registrations with Microsoft Entra ID may use an account with at least the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role.
+* Network access must be enabled for the set of ports and URLs specified in the [application proxy environment setup procedures](../../global-secure-access/how-to-configure-connectors.md). This is in addition to the two endpoints described above.
 
 <a name='microsoft-azure-ad-connect-agent-updater-prerequisites'></a>
 
@@ -140,7 +139,7 @@ The following requirements apply to the Microsoft Entra Password Protection prox
 The Microsoft Entra Connect Agent Updater service is installed side by side with the Microsoft Entra Password Protection Proxy service. Additional configuration is required in order for the Microsoft Entra Connect Agent Updater service to be able to function:
 
 * If your environment uses an HTTP proxy server, follow the guidelines specified in [Work with existing on-premises proxy servers](~/identity/app-proxy/application-proxy-configure-connectors-with-proxy-servers.md).
-* The Microsoft Entra Connect Agent Updater service also requires the TLS 1.2 steps specified in [TLS requirements](~/identity/app-proxy/application-proxy-add-on-premises-application.md#transport-layer-security-tls-requirements).
+* The Microsoft Entra Connect Agent Updater service also requires the TLS 1.2 steps specified in [TLS requirements](../../global-secure-access/how-to-configure-connectors.md).
 
 > [!WARNING]
 > Microsoft Entra Password Protection proxy and Microsoft Entra application proxy install different versions of the Microsoft Entra Connect Agent Updater service, which is why the instructions refer to Application Proxy content. These different versions are incompatible when installed side by side and doing so will prevent the Agent Updater service from contacting Azure for software updates, so you should never install Microsoft Entra Password Protection Proxy and Application Proxy on the same machine.
@@ -208,7 +207,7 @@ To install the Microsoft Entra Password Protection proxy service, complete the f
 
 1. The proxy service is running on the machine, but doesn't have credentials to communicate with Microsoft Entra ID. Register the Microsoft Entra Password Protection proxy server with Microsoft Entra ID using the `Register-AzureADPasswordProtectionProxy` cmdlet.
 
-    This cmdlet requires *Global Administrator* credentials the first time any proxy is registered for a given tenant. Subsequent proxy registrations in that tenant, whether for the same or different proxies, may use either *Global Administrator* or *Security Administrator* credentials.
+    This cmdlet requires *Global Administrator* credentials the first time any proxy is registered for a given tenant. Subsequent proxy registrations in that tenant, whether for the same or different proxies, may use *Security Administrator* credentials.
 
     After this command succeeds once, additional invocations will also succeed but are unnecessary.
 
@@ -246,7 +245,7 @@ To install the Microsoft Entra Password Protection proxy service, complete the f
         >
         > You may also see MFA required if Azure Device Registration (which is used under the covers by Microsoft Entra Password Protection) has been configured to globally require MFA. To workaround this requirement you may use a different account that supports MFA with one of the previous two authentication modes, or you may also temporarily relax the Azure Device Registration MFA requirement.
         >
-        > To make this change, select **Identity** in the [Microsoft Entra admin center](https://entra.microsoft.com), then select **Devices** > **Device Settings**. Set **Require multifactor authentication to join devices** to *No*. Be sure to reconfigure this setting back to *Yes* once registration is complete.
+        > To make this change, select **Entra ID** in the [Microsoft Entra admin center](https://entra.microsoft.com), then select **Devices** > **Device Settings**. Set **Require multifactor authentication to join devices** to *No*. Be sure to reconfigure this setting back to *Yes* once registration is complete.
         >
         > We recommend that MFA requirements be bypassed for test purposes only.
 
@@ -299,7 +298,7 @@ To install the Microsoft Entra Password Protection proxy service, complete the f
         >
         > You may also see MFA required if Azure Device Registration (which is used under the covers by Microsoft Entra Password Protection) has been configured to globally require MFA. To workaround this requirement you may use a different account that supports MFA with one of the previous two authentication modes, or you may also temporarily relax the Azure Device Registration MFA requirement.
         >
-        > To make this change, select **Identity** in the [Microsoft Entra admin center](https://entra.microsoft.com), then select **Devices** > **Device Settings**. Set **Require multifactor authentication to join devices** to *No*. Be sure to reconfigure this setting back to *Yes* once registration is complete.
+        > To make this change, select **Entra ID** in the [Microsoft Entra admin center](https://entra.microsoft.com), then select **Devices** > **Device Settings**. Set **Require multifactor authentication to join devices** to *No*. Be sure to reconfigure this setting back to *Yes* once registration is complete.
         >
         > We recommend that MFA requirements be bypassed for test purposes only.
 

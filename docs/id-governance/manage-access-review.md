@@ -2,12 +2,12 @@
 title: Manage access with access reviews
 description: Learn how to manage user and guest access as membership of a group or assignment to an application with Microsoft Entra access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 06/28/2023
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -21,14 +21,11 @@ With access reviews, you can easily ensure that users or guests have appropriate
  
 ## Prerequisites
  
-- Microsoft Entra ID P2 or Microsoft Entra ID Governance
- 
-For more information, see [License requirements](access-reviews-overview.md#license-requirements).
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
  
 ## Create and perform an access review for users
-First, you must be assigned one of the following roles:
-- Global administrator
-- User administrator
+First, you must be assigned as at least one of the following roles:
+- User Administrator
 - Identity Governance Administrator 
 - Privileged Role Administrator (for reviews of role-assignable groups only)
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed 
@@ -41,13 +38,13 @@ You can have one or more users as reviewers in an access review.
  
 2. Decide whether to have each user review their own access or to have one or more users review everyone's access.
  
-3. In one of the roles listed above, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
+3. In one of the previously listed roles, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
  
 4. Create the access review. For more information, see [Create an access review of groups or applications](create-access-review.md).
  
 5. When the access review starts, ask the reviewers to give input. By default, they each receive an email from Microsoft Entra ID with a link to the access panel, where they [review access to groups or applications](self-access-review.md).
  
-6. If the reviewers haven't given input, you can ask Microsoft Entra ID to send them a reminder. By default, Microsoft Entra ID automatically sends a reminder halfway to the end date to all reviewers.
+6. If the reviewers hasn't given input, you can ask Microsoft Entra ID to send them a reminder. By default, Microsoft Entra ID automatically sends a reminder halfway to the end date to all reviewers.
  
 7. After the reviewers give input, stop the access review and apply the changes. For more information, see [Complete an access review of groups or applications](complete-access-review.md).
  
@@ -55,7 +52,7 @@ You can have one or more users as reviewers in an access review.
 
 ## Manage guest access with Microsoft Entra access reviews
  
-With Microsoft Entra ID, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.md) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
+With Microsoft Entra ID, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.yml) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
  
  
  

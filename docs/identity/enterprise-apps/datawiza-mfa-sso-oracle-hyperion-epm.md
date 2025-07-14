@@ -1,18 +1,15 @@
 ---
 title: Tutorial to configure Datawiza to enable Microsoft Entra multifactor authentication  and single sign-on to Oracle Hyperion EPM
 description: Enable Microsoft Entra multifactor authentication and single sign-on for an Oracle Hyperion EPM using Datawiza Access Proxy (DAP)
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: tutorial
-
 ms.date: 11/01/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin, I want to configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle Hyperion EPM, so that I can enhance the security of user sign-ins and provide seamless access to the application.
 ---
 
@@ -29,7 +26,7 @@ Benefits of integrating applications with Microsoft Entra ID by using DAP:
 * [How it works: Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md) - users are prompted during sign-in for forms of identification, such as a code on their cellphone, or a fingerprint scan
 * [What is Conditional Access?](../conditional-access/overview.md) - policies are if-then statements, if a user wants to access a resource, then they must complete an action
 * [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) - use web applications such as: [Oracle JDE](./datawiza-sso-oracle-jde.md), [Oracle E-Business Suite](./datawiza-sso-oracle-peoplesoft.md), [Oracle Siebel](https://www.datawiza.com/enable-sso-mfa-for-oracle-siebel-crm-in-minutes/), and home-grown apps
-* Use the [Datawiza Cloud Management Console](https://console.datawiza.com) (DCMC) - manage access to applications in public clouds and on-premises
+* Use the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com) - manage access to applications in public clouds and on-premises
 
 ## Scenario description
 
@@ -68,7 +65,7 @@ Ensure the following prerequisites are met:
 
 To integrate Oracle Hyperion EMP with Microsoft Entra ID:
 
-1. Sign in to [Datawiza Cloud Management Console](https://console.datawiza.com/) (DCMC).
+1. Sign in to [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com/).
 2. The Welcome page appears.
 3. Select the orange **Getting started** button. 
 
@@ -96,8 +93,6 @@ To integrate Oracle Hyperion EMP with Microsoft Entra ID:
 16. Select **Create**.
 17. The DAP deployment page appears.
 18. Make a note of the deployment Docker Compose file. The file includes the DAP image, also the Provisioning Key and Provisioning Secret, which pull the latest configuration and policies from DCMC.
-
-    [![Screenshot shows the DAP deployment page.](./media/datawiza-mfa-sso-oracle-hyperion-epm/datawiza-access-proxy-deployment-page.png)](./media/datawiza-mfa-sso-oracle-hyperion-epm/datawiza-access-proxy-deployment-page.png#lightbox)
 
 19. Select **Done**.
 
@@ -158,7 +153,7 @@ To provide more security for sign-ins, you can enforce Microsoft Entra multifact
 
 Learn more in the [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as a [Global Administrator role.](../role-based-access-control/permissions-reference.md)
+1. Sign in to the [Azure portal](https://portal.azure.com) as an [Application Administrator role.](../role-based-access-control/permissions-reference.md)
 2. Select **Microsoft Entra ID** > **Manage** > **Properties**.
 3. Under **Properties** select **Manage security defaults**.
 4. Under **Enable Security Defaults**, select **Yes**.
@@ -203,6 +198,5 @@ To confirm Oracle Hyperion application access, a prompt appears to use a Microso
 ## Next steps
 
 * [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-* [Tutorial: Configure Azure AD B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 * Go to Datawiza for [Add SSO and MFA to Oracle Hyperion EPM in minutes](https://www.datawiza.com/sso-and-mfa-for-oracle-hyperion-epm/)
 * Go to docs.datawiza.com for Datawiza [User Guides](https://docs.datawiza.com/)

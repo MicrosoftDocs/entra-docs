@@ -5,11 +5,11 @@ description: Learn about Web browser cookies used in Microsoft Entra authenticat
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 01/29/2023
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: custorod
-manager: amycolannino
+manager: femila
 ms.reviewer: sahenry, michmcla
 
 # Customer intent: As a Microsoft Entra administrator, I want to understand which weh browser cookies are used for Microsoft Entra ID.
@@ -20,6 +20,8 @@ During authentication against Microsoft Entra ID through a web browser, multiple
 
 Persistent session tokens are stored as persistent cookies on the web browser's cookie jar. Non-persistent session tokens are stored as session cookies on the web browser, and are destroyed when the browser session is closed. 
 
+<!--Cookie name "buid" in the table that follows is correct do not replace with "build"-->
+ 
 |  Cookie Name | Type | Comments |
 |--|--|--|
 | ESTSAUTH | Common | Contains user's session information to facilitate SSO. Transient. |
@@ -27,16 +29,16 @@ Persistent session tokens are stored as persistent cookies on the web browser's 
 | ESTSAUTHLIGHT | Common  | Contains Session GUID Information. Lite session state cookie used exclusively by client-side JavaScript in order to facilitate OIDC sign-out. Security feature. |
 | SignInStateCookie | Common | Contains list of services accessed to facilitate sign-out. No user information. Security feature. |
 | CCState | Common | Contains session information state to be used between Microsoft Entra ID and the [Microsoft Entra Backup Authentication Service](~/identity/conditional-access/resilience-defaults.md). |
-| build | Common | Tracks browser related information. Used for service telemetry and protection mechanisms. |
+| buid | Common | Tracks browser related information. Used for service telemetry and protection mechanisms. |
 | fpc | Common | Tracks browser related information. Used for tracking requests and throttling. |
 | esctx | Common | Session context cookie information. For CSRF protection. Binds a request to a specific browser instance so the request can't be replayed outside the browser. No user information. |
 | ch | Common | ProofOfPossessionCookie. Stores the Proof of Possession cookie hash to the user agent. |
 | ESTSSC | Common | Legacy cookie containing session count information no longer used. |
-| ESTSSSOTILES | Common | Tracks session sign-out. When present and not expired, with value "ESTSSSOTILES=1", it will interrupt SSO, for specific SSO authentication model, and will present tiles for user account selection. |
+| ESTSSSOTILES | Common | Tracks session sign-out. When present and not expired, with value "ESTSSSOTILES=1", it interrupts SSO, for specific SSO authentication model, and presents tiles for user account selection. |
 | AADSSOTILES | Common | Tracks session sign-out. Similar to ESTSSSOTILES but for other specific SSO authentication model. |
 | ESTSUSERLIST | Common | Tracks Browser SSO user's list. |
 | SSOCOOKIEPULLED | Common | Prevents looping on specific scenarios. No user information. |
-| cltm | Common | For telemetry purposes. Tracks AppVersion, ClientFlight and Network type. | 
+| cltm | Common | For telemetry purposes. Tracks AppVersion, ClientFlight, and Network type. | 
 | brcap | Common | Client-side cookie (set by JavaScript) to validate client/web browser's touch capabilities. |
 | clrc | Common | Client-side cookie (set by JavaScript) to control local cached sessions on the client. |
 | CkTst | Common | Client-side cookie (set by JavaScript). No longer in active use. | 
@@ -49,8 +51,8 @@ Persistent session tokens are stored as persistent cookies on the web browser's 
 | ESTSNCLOGIN | Specific | National Cloud Login related Cookie. | 
 | UsGovTraffic | Specific | US Gov Cloud Traffic Cookie. | 
 | ESTSWCTXFLOWTOKEN | Specific | Saves flowToken information when redirecting to ADFS. |
-| CcsNtv | Specific | To control when Microsoft Entra Gateway will send requests to [Microsoft Entra Backup Authentication Service](~/identity/conditional-access/resilience-defaults.md). Native flows. | 
-| CcsWeb | Specific | To control when Microsoft Entra Gateway will send requests to [Microsoft Entra Backup Authentication Service](~/identity/conditional-access/resilience-defaults.md). Web flows. | 
+| CcsNtv | Specific | To control when Microsoft Entra Gateway sends requests to [Microsoft Entra Backup Authentication Service](~/identity/conditional-access/resilience-defaults.md). Native flows. | 
+| CcsWeb | Specific | To control when Microsoft Entra Gateway sends requests to [Microsoft Entra Backup Authentication Service](~/identity/conditional-access/resilience-defaults.md). Web flows. | 
 | Ccs* | Specific | Cookies with prefix Ccs*, have the same purpose as the ones without prefix, but only apply when [Microsoft Entra Backup Authentication Service](~/identity/conditional-access/resilience-defaults.md) is in use. | 
 | threxp | Specific | Used for throttling control. | 
 | rrc | Specific | Cookie used to identify a recent B2B invitation redemption. | 

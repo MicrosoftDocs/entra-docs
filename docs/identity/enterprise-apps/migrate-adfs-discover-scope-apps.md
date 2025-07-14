@@ -3,12 +3,12 @@ title: 'Phase 1: Discover and scope apps'
 description: This article describes phase 1 of planning migration of applications from AD FS to Microsoft Entra ID
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 05/30/2023
+ms.date: 01/31/2025
 ms.author: jomondi
 ms.reviewer: gasinh
 ms.collection: M365-identity-device-management
@@ -37,10 +37,10 @@ Discover applications using ADFS:
  
 ## Using other identity providers (IdPs)
 
+If you're using other identity providers, you can use the following approaches to discover applications:
+
 - If you’re currently using Okta, refer to our [Okta to Microsoft Entra migration guide](migrate-applications-from-okta.md).
-
-- If you’re currently using Ping Federate, then consider using the [Ping Administrative API](https://docs.pingidentity.com/r/en-us/pingfederate-112/pf_admin_api) to discover applications.
-
+- If you’re currently using Ping Federate, then consider using the [Ping Administrative API](https://docs.pingidentity.com/pingfederate/11.2/developers_reference_guide/pf_admin_api.html)
 - If the applications are integrated with Active Directory, search for service principals or service accounts that may be used for applications.  
 
 ## Using cloud discovery tools
@@ -51,7 +51,7 @@ In the cloud environment, you need rich visibility, control over data travel, an
 - **Cloud Discovery** - By configuring [Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps), you gain visibility into the cloud app usage, and can discover unsanctioned or Shadow IT apps.
 - **Azure Hosted Applications** - For apps connected to Azure infrastructure, you can use the APIs and tools on those systems to begin to take an inventory of hosted apps. In the Azure environment:
   - Use the [Get-AzureWebsite](/powershell/module/servicemanagement/azure/get-azurewebsite) cmdlet to get information about Azure websites.
-  - Use the [Get-AzureRMWebApp](/powershell/module/azurerm.websites/get-azurermwebapp) cmdlet to get information about your Azure Web Apps.D
+  - Use the [Get-AzWebApp](/powershell/module/Az.websites/get-Azwebapp) cmdlet to get information about your Azure Web Apps.
   - Query Microsoft Entra ID looking for [Applications](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity) and [Service Principals](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#serviceprincipal-entity).
 
 ## Manual discovery process
@@ -92,7 +92,7 @@ For certain apps using legacy authentication protocols, sometimes modernizing th
 - Apps connected to an on-premises identity or federation provider that you don't want to change.
 - Apps developed using on-premises authentication standards that you have no plans to move
 
-Microsoft Entra ID can bring great benefits to these legacy apps. You can enable modern Microsoft Entra security and governance features like [Multi-Factor Authentication](~/identity/authentication/concept-mfa-howitworks.md), [Conditional Access](~/identity/conditional-access/overview.md), [Identity Protection](~/id-protection/index.yml), [Delegated Application Access](./manage-self-service-access.md), and [Access Reviews](~/id-governance/manage-user-access-with-access-reviews.md#create-and-perform-an-access-review) against these apps without touching the app at all!
+Microsoft Entra ID can bring great benefits to these legacy apps. You can enable modern Microsoft Entra security and governance features like [Multi-Factor Authentication](~/identity/authentication/concept-mfa-howitworks.md), [Conditional Access](~/identity/conditional-access/overview.md), [Microsoft Entra ID Protection](~/id-protection/index.yml), [Delegated Application Access](./manage-self-service-access.md), and [Access Reviews](~/id-governance/manage-user-access-with-access-reviews.md#create-and-perform-an-access-review) against these apps without touching the app at all!
 
 - Start by extending these apps into the cloud with [Microsoft Entra application proxy](/entra/identity/app-proxy).
 - Or explore using on of our [Secure Hybrid Access (SHA) partner integrations](secure-hybrid-access.md) that you might have deployed already.

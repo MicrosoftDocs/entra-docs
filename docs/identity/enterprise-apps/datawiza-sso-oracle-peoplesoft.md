@@ -9,15 +9,13 @@ ms.topic: how-to
 ms.date: 01/30/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT admin, and I want to configure Datawiza to enable Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) to Oracle PeopleSoft. My goal is to enhance user sign-in security and provide seamless access to applications.
 ---
 
 # Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and single sign-on to Oracle PeopleSoft
 
-In this tutorial, learn how to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for an
-Oracle PeopleSoft application using Datawiza Access Proxy (DAP).
+In this tutorial, learn how to enable Microsoft Entra single sign-on (SSO) and Microsoft Entra multifactor authentication for an Oracle PeopleSoft application using Datawiza Access Proxy (DAP).
 
 Learn more: [Datawiza Access Proxy](https://www.datawiza.com/)
 
@@ -27,8 +25,8 @@ Benefits of integrating applications with Microsoft Entra ID using DAP:
 * [Microsoft Entra single sign-on](https://azure.microsoft.com/solutions/active-directory-sso/#overview) - secure and seamless access for users and apps, from any location, using a device
 * [How it works: Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) - users are prompted during sign-in for forms of identification, such as a code on their cellphone or a fingerprint scan
 * [What is Conditional Access?](~/identity/conditional-access/overview.md) - policies are if-then statements, if a user wants to access a resource, then they must complete an action
-* [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) - use web applications such as: Oracle JDE, Oracle E-Business Suite, Oracle Sibel, and home-grown apps
-* Use the [Datawiza Cloud Management Console](https://console.datawiza.com) (DCMC) - manage access to applications in public clouds and on-premises
+* [Easy authentication and authorization in Microsoft Entra ID with no-code Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) - use web applications such as: Oracle JDE, Oracle E-Business Suite, Oracle Siebel, and home-grown apps
+* Use the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com) - manage access to applications in public clouds and on-premises
 
 ## Scenario description
 
@@ -60,7 +58,7 @@ Ensure the following prerequisites are met.
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to an on-premises directory
   * See, [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An account with Microsoft Entra ID and the Application Administrator role
-  * See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md#all-roles)
+  * See, [Microsoft Entra built-in roles, all roles](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
 * An Oracle PeopleSoft environment
 * (Optional) An SSL web certificate to publish services over HTTPS. You can use default Datawiza self-signed certs for testing.
 
@@ -68,7 +66,7 @@ Ensure the following prerequisites are met.
 
 To integrate Oracle PeopleSoft with Microsoft Entra ID:
 
-1. Sign in to [Datawiza Cloud Management Console](https://console.datawiza.com/) (DCMC).
+1. Sign in to [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com/).
 2. The Welcome page appears.
 3. Select the orange **Getting started** button.
   
@@ -85,9 +83,6 @@ To integrate Oracle PeopleSoft with Microsoft Entra ID:
 9. For **Public Domain**, for example use `https://ps-external.example.com`. For testing, you can use localhost DNS. If you aren't deploying DAP behind a load balancer, use the Public Domain port.
 10. For **Listen Port**, select the port that DAP listens on.
 11. For **Upstream Servers**, select the Oracle PeopleSoft implementation URL and port to be protected. 
-
-   ![Screenshot of entries under Add Application.](./media/datawiza-sso-oracle-peoplesoft/add-application.png)
-   
 12. Select **Next**.
 13. On the **Configure IdP** dialog, enter information.
 
@@ -100,8 +95,6 @@ To integrate Oracle PeopleSoft with Microsoft Entra ID:
 
 15. The DAP deployment page appears.
 16. Make a note of the deployment Docker Compose file. The file includes the DAP image, the Provisioning Key and Provision Secret, which pulls the latest configuration and policies from DCMC.
-
-   ![Screenshot of three sets of Docker information.](./media/datawiza-sso-oracle-peoplesoft/docker-compose-file.png)
 
 ## SSO and HTTP headers
 
@@ -148,14 +141,13 @@ The Oracle PeopleSoft application needs to recognize the user. Using a name, the
 
 ## Enable Microsoft Entra multifactor authentication
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enforce Microsoft Entra multifactor authentication. 
 
 Learn more: [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](~/identity/authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-2. Browse to **Identity** > **Overview** > **Properties** tab.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+2. Browse to **Entra ID** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.
 5. Select **Save**.
@@ -165,9 +157,6 @@ Learn more: [Tutorial: Secure user sign-in events with Microsoft Entra multifact
 To enable SSO in the Oracle PeopleSoft environment:
 
 1. Sign in to the PeopleSoft Console `http://{your-peoplesoft-fqdn}:8000/psp/ps/?cmd=start` using Admin credentials, for example, PS/PS.
-
-   ![Screenshot that shows Oracle PeopleSoft console.](./media/datawiza-sso-oracle-peoplesoft/peoplesoft-console.png)
-
 2. Add a default public access user to PeopleSoft.
 3. From the main menu, navigate to **PeopleTools > Security > User Profiles > User Profiles > Add a New Value**.
 4. Select **Add a new value**.
@@ -216,5 +205,4 @@ To confirm Oracle PeopleSoft application access occurs correctly, a prompt appea
 
 - Video: [Enable SSO and MFA for Oracle JD Edwards with Microsoft Entra ID via Datawiza](https://www.youtube.com/watch?v=_gUGWHT5m90)
 - [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-- [Tutorial: Configure Azure AD B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 - Go to docs.datawiza.com for Datawiza [User Guides](https://docs.datawiza.com/)

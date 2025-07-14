@@ -2,13 +2,14 @@
 title: Access Microsoft Entra application proxy apps in Teams
 description: Use Microsoft Entra application proxy to access your on-premises application through Microsoft Teams.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: harshja
+ai-usage: ai-assisted
 ---
 
 # Access your on-premises applications through Microsoft Teams with Microsoft Entra application proxy
@@ -17,11 +18,11 @@ Microsoft Entra application proxy gives you single sign-on to on-premises applic
 
 Your users can add cloud apps to their Teams channels [using tabs](https://support.office.com/article/Video-Using-Tabs-7350a03e-017a-4a00-a6ae-1c9fe8c497b3?ui=en-US&rs=en-US&ad=US), but what about the SharePoint sites or planning tool that are hosted on-premises? Application proxy is the solution. They can add apps published through application proxy to their channels using the same external URLs they always use to access their apps remotely. And because application proxy authenticates through Microsoft Entra ID, your users get a single sign-on experience.
 
-## Install the application proxy connector and publish your app
+## Install the private network connector and publish your app
 
 If you haven't already, [configure application proxy for your tenant and install the connector](~/identity/app-proxy/application-proxy-add-on-premises-application.md). Then, publish your on-premises application for remote access. Make note of the external URL because you use it to add the app to Teams.
 
-If you already have your apps published but don't remember their external URLs, look them up in the [Microsoft Entra admin center](https://entra.microsoft.com). Sign in, then browse to **Identity** > **Applications** > **Enterprise applications** > select your app > **Application proxy**.
+If you already have your apps published but don't remember their external URLs, look them up in the [Microsoft Entra admin center](https://entra.microsoft.com). Sign in, then browse to **Entra ID** > **Enterprise apps** > select your app > **Application proxy**.
 
 ## Add your app to Teams
 

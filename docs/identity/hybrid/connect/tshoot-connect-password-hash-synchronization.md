@@ -1,39 +1,37 @@
 ---
 title: Troubleshoot password hash synchronization with Microsoft Entra Connect Sync
 description: This article provides information about how to troubleshoot password hash synchronization problems.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Troubleshoot password hash synchronization with Microsoft Entra Connect Sync
 
-This topic provides steps for how to troubleshoot issues with password hash synchronization. If passwords are not synchronizing as expected, it can be either for a subset of users or for all users.
+This topic provides steps for how to troubleshoot issues with password hash synchronization. If passwords aren't synchronizing as expected, it can be either for a subset of users or for all users.
 
 For Microsoft Entra Connect deployment with version 1.1.614.0 or after, use the troubleshooting task in the wizard to troubleshoot password hash synchronization issues:
 
 * If you have an issue where no passwords are synchronized, refer to the [No passwords are synchronized: troubleshoot by using the troubleshooting task](#no-passwords-are-synchronized-troubleshoot-by-using-the-troubleshooting-task) section.
 
-* If you have an issue with individual objects, refer to the [One object is not synchronizing passwords: troubleshoot by using the troubleshooting task](#one-object-is-not-synchronizing-passwords-troubleshoot-by-using-the-troubleshooting-task) section.
+* If you have an issue with individual objects, refer to the [One object is not synchronizing passwords: troubleshoot by using the troubleshooting task](#one-object-isnt-synchronizing-passwords-troubleshoot-by-using-the-troubleshooting-task) section.
 
-For deployment with version 1.1.524.0 or later, there is a diagnostic cmdlet that you can use to troubleshoot password hash synchronization issues:
+For deployment with version 1.1.524.0 or later, there's a diagnostic cmdlet that you can use to troubleshoot password hash synchronization issues:
 
 * If you have an issue where no passwords are synchronized, refer to the [No passwords are synchronized: troubleshoot by using the diagnostic cmdlet](#no-passwords-are-synchronized-troubleshoot-by-using-the-diagnostic-cmdlet) section.
 
-* If you have an issue with individual objects, refer to the [One object is not synchronizing passwords: troubleshoot by using the diagnostic cmdlet](#one-object-is-not-synchronizing-passwords-troubleshoot-by-using-the-diagnostic-cmdlet) section.
+* If you have an issue with individual objects, refer to the [One object is not synchronizing passwords: troubleshoot by using the diagnostic cmdlet](#one-object-isnt-synchronizing-passwords-troubleshoot-by-using-the-diagnostic-cmdlet) section.
 
 For older versions of Microsoft Entra Connect deployment:
 
 * If you have an issue where no passwords are synchronized, refer to the [No passwords are synchronized: manual troubleshooting steps](#no-passwords-are-synchronized-manual-troubleshooting-steps) section.
 
-* If you have an issue with individual objects, refer to the [One object is not synchronizing passwords: manual troubleshooting steps](#one-object-is-not-synchronizing-passwords-manual-troubleshooting-steps) section.
+* If you have an issue with individual objects, refer to the [One object is not synchronizing passwords: manual troubleshooting steps](#one-object-isnt-synchronizing-passwords-manual-troubleshooting-steps) section.
 
 
 
@@ -54,9 +52,9 @@ To troubleshoot issues where no passwords are synchronized:
 
 3. Start the Microsoft Entra Connect wizard.
 
-4. Navigate to the **Additional Tasks** page, select **Troubleshoot**, and click **Next**.
+4. Navigate to the **Additional Tasks** page, select **Troubleshoot**, and select **Next**.
 
-5. On the Troubleshooting page, click **Launch** to start the troubleshooting menu in PowerShell.
+5. On the Troubleshooting page, select **Launch** to start the troubleshooting menu in PowerShell.
 
 6. In the main menu, select **Troubleshoot password hash synchronization**.
 
@@ -68,7 +66,7 @@ The troubleshooting task performs the following checks:
 
 * Validates that the password hash synchronization feature is enabled for your Microsoft Entra tenant.
 
-* Validates that the Microsoft Entra Connect server is not in staging mode.
+* Validates that the Microsoft Entra Connect server isn't in staging mode.
 
 * For each existing on-premises Active Directory connector (which corresponds to an existing Active Directory forest):
 
@@ -122,9 +120,9 @@ If the AD DS account used by the on-premises Active Directory connector to synch
 
 
 
-## One object is not synchronizing passwords: troubleshoot by using the troubleshooting task
+## One object isn't synchronizing passwords: troubleshoot by using the troubleshooting task
 
-You can use the troubleshooting task to determine why one object is not synchronizing passwords.
+You can use the troubleshooting task to determine why one object isn't synchronizing passwords.
 
 > [!NOTE]
 > The troubleshooting task is available only for Microsoft Entra Connect version 1.1.614.0 or later.
@@ -139,13 +137,13 @@ To troubleshoot issues for a specific user object:
 
 3. Start the Microsoft Entra Connect wizard.
 
-4. Navigate to the **Additional Tasks** page, select **Troubleshoot**, and click **Next**.
+4. Navigate to the **Additional Tasks** page, select **Troubleshoot**, and select **Next**.
 
-5. On the Troubleshooting page, click **Launch** to start the troubleshooting menu in PowerShell.
+5. On the Troubleshooting page, select **Launch** to start the troubleshooting menu in PowerShell.
 
 6. In the main menu, select **Troubleshoot password hash synchronization**.
 
-7. In the sub menu, select **Password is not synchronized for a specific user account**.
+7. In the sub menu, select **Password isn't synchronized for a specific user account**.
 
 ### Understand the results of the troubleshooting task
 
@@ -167,7 +165,7 @@ The rest of this section describes specific results returned by the cmdlet and c
 
 #### The Active Directory object isn't exported to Microsoft Entra ID
 
-password hash synchronization for this on-premises Active Directory account fails because there is no corresponding object in the Microsoft Entra tenant. The following error is returned:
+password hash synchronization for this on-premises Active Directory account fails because there's no corresponding object in the Microsoft Entra tenant. The following error is returned:
 
 ![Microsoft Entra object is missing](./media/tshoot-connect-password-hash-synchronization/phssingleobjectnotexported.png)
 
@@ -175,9 +173,9 @@ password hash synchronization for this on-premises Active Directory account fail
 
 Older versions of Microsoft Entra Connect did not support synchronizing temporary passwords with Microsoft Entra ID. A password is considered to be temporary if the **Change password at next logon** option is set on the on-premises Active Directory user. The following error is returned with these older versions:
 
-![Temporary password is not exported](./media/tshoot-connect-password-hash-synchronization/phssingleobjecttemporarypassword.png)
+![Temporary password isn't exported](./media/tshoot-connect-password-hash-synchronization/phssingleobjecttemporarypassword.png)
 
-To enable synchonization of temporary passwords you must have Microsoft Entra Connect version 2.0.3.0 or higher installed and the feature [ForcePasswordChangeOnLogon](../connect/how-to-connect-password-hash-synchronization.md#synchronizing-temporary-passwords-and-force-password-change-on-next-logon) must be enabled.
+To enable synchronizations of temporary passwords you must have Microsoft Entra Connect version 2.0.3.0 or higher installed and the feature [ForcePasswordChangeOnLogon](../connect/how-to-connect-password-hash-synchronization.md#synchronizing-temporary-passwords-and-force-password-change-on-next-logon) must be enabled.
 
 #### Results of last attempt to synchronize password aren't available
 
@@ -208,9 +206,9 @@ To troubleshoot issues where no passwords are synchronized:
 
 
 
-## One object is not synchronizing passwords: troubleshoot by using the diagnostic cmdlet
+## One object isn't synchronizing passwords: troubleshoot by using the diagnostic cmdlet
 
-You can use the `Invoke-ADSyncDiagnostics` cmdlet to determine why one object is not synchronizing passwords.
+You can use the `Invoke-ADSyncDiagnostics` cmdlet to determine why one object isn't synchronizing passwords.
 
 > [!NOTE]
 > The `Invoke-ADSyncDiagnostics` cmdlet is available only for Microsoft Entra Connect version 1.1.524.0 or later.
@@ -249,15 +247,18 @@ Follow these steps to determine why no passwords are synchronized:
 
     ![PowerShell script output from password sync settings](./media/tshoot-connect-password-hash-synchronization/psverifyconfig.png)  
 
-3. If the feature is not enabled in Microsoft Entra ID or if the sync channel status is not enabled, run the Connect installation wizard. Select **Customize synchronization options**, and unselect password sync. This change temporarily disables the feature. Then run the wizard again and re-enable password sync. Run the script again to verify that the configuration is correct.
+3. If the feature isn't enabled in Microsoft Entra ID or if the sync channel status isn't enabled, run the Connect installation wizard. Select **Customize synchronization options**, and unselect password sync. This change temporarily disables the feature. Then run the wizard again and re-enable password sync. Run the script again to verify that the configuration is correct.
 
 4. Look in the event log for errors. Look for the following events, which would indicate a problem:
-    * Source: "Directory synchronization" ID: 0, 611, 652, 655
+    
+    Source: "Directory synchronization"  
+    ID: 0, 611, 652, 655
+
     If you see these events, you have a connectivity problem. The event log message contains forest information where you have a problem.
 
 5. If you see no heartbeat or if nothing else worked, run [Trigger a full sync of all passwords](#trigger-a-full-sync-of-all-passwords). Run the script only once.
 
-6. See the Troubleshoot one object that is not synchronizing passwords section.
+6. See the Troubleshoot one object that isn't synchronizing passwords section.
 
 ### Connectivity problems
 
@@ -271,14 +272,14 @@ If you used custom installation, set the permissions manually by doing the follo
  
 2. Go to **Connectors**, and then search for the on-premises Active Directory forest you are troubleshooting. 
  
-3. Select the connector, and then click **Properties**. 
+3. Select the connector, and then select **Properties**. 
  
 4. Go to **Connect to Active Directory Forest**.  
     
     ![Account used by Active Directory connector](./media/tshoot-connect-password-hash-synchronization/connectoraccount.png)  
     Note the username and the domain where the account is located.
     
-5. Start **Active Directory Users and Computers**, and then verify that the account you found earlier has the follow permissions set at the root of all domains in your forest:
+5. Start **Active Directory Users and Computers**, and then verify that the account you found earlier has the following permissions set at the root of all domains in your forest:
     * Replicate Directory Changes
     * Replicate Directory Changes All
 
@@ -288,16 +289,16 @@ If you used custom installation, set the permissions manually by doing the follo
 
 7. Go back to **Synchronization Service Manager** and **Configure Directory Partition**. 
  
-8. Select your domain in **Select directory partitions**, select the **Only use preferred domain controllers** check box, and then click **Configure**. 
+8. Select your domain in **Select directory partitions**, select the **Only use preferred domain controllers** check box, and then select **Configure**. 
 
 9. In the list, enter the domain controllers that Connect should use for password sync. The same list is used for import and export as well. Do these steps for all your domains.
 
 > [!NOTE]
 > To apply these changes, restart the **Microsoft Entra ID Sync** (ADSync) service.
 
-10. If the script shows that there is no heartbeat, run the script in [Trigger a full sync of all passwords](#trigger-a-full-sync-of-all-passwords).
+10. If the script shows that there's no heartbeat, run the script in [Trigger a full sync of all passwords](#trigger-a-full-sync-of-all-passwords).
 
-## One object is not synchronizing passwords: manual troubleshooting steps
+## One object isn't synchronizing passwords: manual troubleshooting steps
 
 You can easily troubleshoot password hash synchronization issues by reviewing the status of an object.
 
@@ -305,13 +306,13 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
 
     ![Active Directory productive passwords](./media/tshoot-connect-password-hash-synchronization/adprodpassword.png)  
 
-    If the check box is selected, ask the user to sign in and change the password. Temporary passwords are not synchronized with Microsoft Entra ID.
+    If the check box is selected, ask the user to sign in and change the password. Temporary passwords aren't synchronized with Microsoft Entra ID.
 
-2. If the password looks correct in Active Directory, follow the user in the sync engine. By following the user from on-premises Active Directory to Microsoft Entra ID, you can see whether there is a descriptive error on the object.
+2. If the password looks correct in Active Directory, follow the user in the sync engine. By following the user from on-premises Active Directory to Microsoft Entra ID, you can see whether there's a descriptive error on the object.
 
     a. Start the [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md).
 
-    b. Click **Connectors**.
+    b. Select **Connectors**.
 
     c. Select the **Active Directory Connector** where the user is located.
 
@@ -321,9 +322,9 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
 
     ![Search for user in connector space with DN](./media/tshoot-connect-password-hash-synchronization/searchcs.png)  
 
-    f. Locate the user you are looking for, and then click **Properties** to see all the attributes. If the user is not in the search result, verify your [filtering rules](how-to-connect-sync-configure-filtering.md) and make sure that you run [Apply and verify changes](how-to-connect-sync-configure-filtering.md#apply-and-verify-changes) for the user to appear in Connect.
+    f. Locate the user you are looking for, and then select **Properties** to see all the attributes. If the user isn't in the search result, verify your [filtering rules](how-to-connect-sync-configure-filtering.md) and make sure that you run [Apply and verify changes](how-to-connect-sync-configure-filtering.md#apply-and-verify-changes) for the user to appear in Connect.
 
-    g. To see the password sync details of the object for the past week, click **Log**.  
+    g. To see the password sync details of the object for the past week, select **Log**.  
 
     ![Object log details](./media/tshoot-connect-password-hash-synchronization/csobjectlog.png)  
 
@@ -333,17 +334,17 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
 
     ![Lineage information about a user](./media/tshoot-connect-password-hash-synchronization/cspasswordsync.png)  
 
-    i. Click **Metaverse Object Properties** to display a list of user attributes.  
+    i. Select **Metaverse Object Properties** to display a list of user attributes.  
 
     ![Screenshot that shows the list of user attributes for the Metaverse Object Properties.](./media/tshoot-connect-password-hash-synchronization/mvpasswordsync.png)  
 
-    Verify that there is no **cloudFiltered** attribute present. Make sure that the domain attributes (domainFQDN and domainNetBios) have the expected values.
+    Verify that there's no **cloudFiltered** attribute present. Make sure that the domain attributes (domainFQDN and domainNetBios) have the expected values.
 
-    j. Click the **Connectors** tab. Make sure that you see connectors to both on-premises Active Directory and Microsoft Entra ID.
+    j. Select the **Connectors** tab. Make sure that you see connectors to both on-premises Active Directory and Microsoft Entra ID.
 
     ![Metaverse information](./media/tshoot-connect-password-hash-synchronization/mvconnectors.png)  
 
-    k. Select the row that represents Microsoft Entra ID, click **Properties**, and then click the **Lineage** tab. The connector space object should have an outbound rule in the **PasswordSync** column set to **True**. In the default configuration, the name of the sync rule is **Out to Microsoft Entra ID - User Join**.  
+    k. Select the row that represents Microsoft Entra ID, select **Properties**, and then select the **Lineage** tab. The connector space object should have an outbound rule in the **PasswordSync** column set to **True**. In the default configuration, the name of the sync rule is **Out to Microsoft Entra ID - User Join**.  
 
     ![Connector Space Object Properties dialog box](./media/tshoot-connect-password-hash-synchronization/cspasswordsync2.png)  
 
@@ -354,15 +355,15 @@ The status column can have the following values:
 | Status | Description |
 | --- | --- |
 | Success |Password has been successfully synchronized. |
-| FilteredByTarget |Password is set to **User must change password at next logon**. Password has not been synchronized. |
+| FilteredByTarget |Password is set to **User must change password at next logon**. Password hasn't been synchronized. |
 | NoTargetConnection |No object in the metaverse or in the Microsoft Entra connector space. |
 | SourceConnectorNotPresent |No object found in the on-premises Active Directory connector space. |
-| TargetNotExportedToDirectory |The object in the Microsoft Entra connector space has not yet been exported. |
+| TargetNotExportedToDirectory |The object in the Microsoft Entra connector space hasn't yet been exported. |
 | MigratedCheckDetailsForMoreInfo |Log entry was created before build 1.0.9125.0 and is shown in its legacy state. |
 | Error |Service returned an unknown error. |
 | Unknown |An error occurred while trying to process a batch of password hashes.  |
-| MissingAttribute |Specific attributes (for example, Kerberos hash) required by Microsoft Entra Domain Services are not available. |
-| RetryRequestedByTarget |Specific attributes (for example, Kerberos hash) required by Microsoft Entra Domain Services were not available previously. An attempt to resynchronize the user's password hash is made. |
+| MissingAttribute |Specific attributes (for example, Kerberos hash) required by Microsoft Entra Domain Services aren't available. |
+| RetryRequestedByTarget |Specific attributes (for example, Kerberos hash) required by Microsoft Entra Domain Services weren't available previously. An attempt to resynchronize the user's password hash is made. |
 
 ## Scripts to help troubleshooting
 
@@ -428,19 +429,41 @@ Write-Host
 
 You can trigger a full sync of all passwords by using the following script:
 
-```powershell
-$adConnector = "<CASE SENSITIVE AD CONNECTOR NAME>"
-$aadConnector = "<CASE SENSITIVE AAD CONNECTOR NAME>"
-Import-Module adsync
-$c = Get-ADSyncConnector -Name $adConnector
-$p = New-Object Microsoft.IdentityManagement.PowerShell.ObjectModel.ConfigurationParameter "Microsoft.Synchronize.ForceFullPasswordSync", String, ConnectorGlobal, $null, $null, $null
-$p.Value = 1
-$c.GlobalParameters.Remove($p.Name)
-$c.GlobalParameters.Add($p)
-$c = Add-ADSyncConnector -Connector $c
-Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $false
-Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true
-```
+1. Assign the local Active Directory **$adConnector** value
+   
+    ```$adConnector = "<CASE SENSITIVE AD CONNECTOR NAME>"```
+
+2. Assign the AzureAD **$aadConnector** value
+   
+    ```$aadConnector = "<CASE SENSITIVE AAD CONNECTOR NAME>"```
+
+3. Install the AzureAD Sync Module
+   
+   ```Import-Module adsync```
+
+4. Create a new Force Full Password Sync configuration parameter object
+   
+    ```$c = Get-ADSyncConnector -Name $adConnector```
+
+5. Update the existing connector with the following new configurations. Run each line separately
+   
+   a.  ```$p = New-Object Microsoft.IdentityManagement.PowerShell.ObjectModel.ConfigurationParameter "Microsoft.Synchronize.ForceFullPasswordSync", String, ConnectorGlobal, $null,   $null, $null```
+
+    b. ```$p.Value = 1```
+  
+    c. ```$c.GlobalParameters.Remove($p.Name)```
+
+    d. ```$c.GlobalParameters.Add($p)```
+
+    e. ```$c = Add-ADSyncConnector -Connector $c```
+
+6. Disable Entra ID Connect
+    
+    ```Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $false```
+
+7. Enable Entra ID Connect to force full password synchronization
+
+     ```Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true```
 
 ## Next steps
 

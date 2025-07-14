@@ -1,21 +1,21 @@
 ---
+title: Email one-time passcode authentication
+description: Learn how to enable and use email one-time passcode authentication for B2B guest users in Microsoft Entra External ID. This feature provides a seamless fallback authentication method for sign-in.
 
-title: One-time passcode authentication for B2B guest users
-description: How to use Email one-time passcode to authenticate B2B guest users without the need for a Microsoft account.
-
- 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
-ms.author: mimart
-author: msmimart
-manager: CelesteDG
+ms.date: 10/21/2024
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 #customer intent: As a B2B collaboration administrator, I want to make sure invited users can authenticate using email one-time passcode, so that invited users can sign in using a passcode even when other authentication methods are not available.
 ---
 
-# Email one-time passcode authentication
+# Email one-time passcode authentication for B2B guest users
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 The email one-time passcode feature is a way to authenticate B2B collaboration users when they can't be authenticated through other means, such as Microsoft Entra ID, Microsoft account (MSA), or social identity providers. When a B2B guest user tries to redeem your invitation or sign in to your shared resources, they can request a temporary passcode, which is sent to their email address. Then they enter this passcode to continue signing in.
 
@@ -39,7 +39,7 @@ Email one-time passcode guest users can also use application endpoints that incl
   * `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
   * `https://portal.azure.com/<your tenant ID>`
 
-You can also give email one-time passcode guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`.
+You can also give email one-time passcode guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
 
 > [!NOTE]
 > Email one-time passcode guest users can sign in to Microsoft Teams directly from the common endpoint without choosing **Sign-in options**. During the sign-in process to Microsoft Teams, the guest user can select a link to send a one-time passcode.
@@ -92,16 +92,15 @@ The email one-time passcode feature is now turned on by default for all new tena
 
 ### To enable or disable email one-time passcodes
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 
-1. In the **Configured identity providers** list, select **Email one-time passcode**.
+1. On the **Built-in** tab, next to Email one-time passcode, select **Configured**.
 
 1. Under **Email one-time passcode for guests**, select one of the following:
-   - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned it off. To enable the feature, make sure **Yes** is selected.
+   - **Yes**: The toggle is set to **Yes** by default unless the feature has been explicitly turned off. To enable the feature, make sure **Yes** is selected.
    - **No**: If you want to disable the email one-time passcode feature, select **No**.
  
 :::image type="content" source="media/one-time-passcode/email-one-time-passcode-toggle.png" alt-text="Screenshots showing the Email one-time passcode toggle.":::
@@ -124,7 +123,7 @@ For more information about the different redemption process pathways, see [B2B c
 
 **Will the “No account? Create one!” option for self-service sign-up go away?**
 
-No. It’s easy to get [self-service sign-up in the context of External Identities](self-service-sign-up-overview.md) confused with self-service sign-up for email-verified users, but they're two different features. The unmanaged ("viral") feature that has been deprecated is [self-service sign-up with email-verified users](~/identity/users/directory-self-service-signup.md), which resulted in guests creating an unmanaged Microsoft Entra account. However, self-service sign-up for External Identities will continue to be available, which results in your guests signing up to your organization with a [variety of identity providers](identity-providers.md).  
+No. It’s easy to get [self-service sign-up in the context of External ID](self-service-sign-up-overview.md) confused with self-service sign-up for email-verified users, but they're two different features. The unmanaged ("viral") feature that has been deprecated is [self-service sign-up with email-verified users](~/identity/users/directory-self-service-signup.md), which resulted in guests creating an unmanaged Microsoft Entra account. However, self-service sign-up for External ID will continue to be available, which results in your guests signing up to your organization with a [variety of identity providers](identity-providers.md).  
 
 **What does Microsoft recommend we do with existing Microsoft accounts (MSA)?**
 
@@ -136,4 +135,4 @@ No, the global rollout of the change to enable email one-time passcode by defaul
 
 ## Next steps
 
-Learn about [Identity Providers for External Identities](identity-providers.md), and how to reset [redemption status for a guest user](reset-redemption-status.md).
+Learn about [Identity Providers for External ID](identity-providers.md), and how to reset [redemption status for a guest user](reset-redemption-status.md).

@@ -3,13 +3,14 @@ title: Enable automatic user provisioning for multi-tenant applications in Micro
 description: A guide for independent software vendors for enabling automated provisioning in Microsoft Entra ID
 
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: zhchia, arvinh
+ai-usage: ai-assisted
 ---
 
 # Enable automatic user provisioning for your multi-tenant application in Microsoft Entra ID
@@ -58,7 +59,7 @@ To help determine which integration option to use for your application, refer to
 |---|---|---|---|
 | User and group management in Microsoft Entra ID| √| √| User only |
 | Manage users and groups synced from on-premises Active Directory| √*| √*| User only* |
-| Access data beyond users and groups during provisioning Access to Microsoft 365 data (Teams, SharePoint, Email, Calendar, Documents, etc.)| X+| √| X |
+| Access data beyond users and groups during provisioning Access to Microsoft 365 data (Teams, SharePoint, Email, Calendar, Documents, and so on)| X+| √| X |
 | Create, read, and update users based on business rules| √| √| √ |
 | Delete users based on business rules| √| √| X |
 | Manage automatic user provisioning for all applications from the Microsoft Entra admin center| √| X| √ |
@@ -73,7 +74,7 @@ To help determine which integration option to use for your application, refer to
 
 ## Microsoft Entra provisioning service (SCIM)
 
-The Microsoft Entra provisioning service uses [SCIM](https://aka.ms/SCIMOverview), an industry standard for provisioning supported by many identity providers (IdPs) as well as applications (e.g. Slack, G Suite, Dropbox). We recommend you use the Microsoft Entra provisioning service if you want to support IdPs in addition to Microsoft Entra ID, as any SCIM-compliant IdP can connect to your SCIM endpoint. Building a simple /User endpoint, you can enable provisioning without having to maintain your own sync engine. 
+The Microsoft Entra provisioning service uses [SCIM](https://aka.ms/SCIMOverview), an industry standard for provisioning supported by many identity providers (IdPs) as well as applications (such as Slack, G Suite, Dropbox). We recommend you use the Microsoft Entra provisioning service if you want to support IdPs in addition to Microsoft Entra ID, as any SCIM-compliant IdP can connect to your SCIM endpoint. Building a simple /User endpoint, you can enable provisioning without having to maintain your own sync engine. 
 
 For more information on how the Microsoft Entra provisioning service users SCIM, see: 
 

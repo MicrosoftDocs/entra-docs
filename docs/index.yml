@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Microsoft Entra documentation
-summary: Learn more about the Microsoft Entra family of multicloud identity and access solutions.
+summary: Learn more about the Microsoft Entra family of multicloud identity and network access solutions.
 brand: azure
 
 metadata:
@@ -10,7 +10,25 @@ metadata:
   ms.topic: hub-page
   author: CelesteDG
   ms.author: celested
-  ms.date: 03/23/2024
+  ms.date: 05/07/2025
+
+## BAND 1 - HIGHLIGHTED CONTENT ##############################################
+highlightedContent:
+  items:
+    - title: What is Microsoft Entra?
+      itemType: overview
+      url: /entra/fundamentals/what-is-entra
+    - title: What is Microsoft Entra ID?
+      itemType: overview
+      url: /entra/fundamentals/whatis
+    - title: Identity fundamentals
+      url: /entra/fundamentals/identity-fundamental-concepts
+      itemType: concept
+    - title: Secure Generative AI with Microsoft Entra
+      url: /entra/architecture/secure-generative-ai
+      itemType: concept
+
+## BAND 1 - HIGHLIGHTED CONTENT END ##########################################
 
 productDirectory:
   title: Get started
@@ -28,7 +46,7 @@ productDirectory:
       summary: "Protect, monitor, and audit access to critical assets while ensuring employee productivity."
       url: /entra/id-governance/
     - title: Microsoft Entra External ID
-      imageSrc: ./media/index/placeholder-icon.png
+      imageSrc: ./media/index/external-id-color.png
       summary: "Secure and manage any external user, including customers and partners, in your organization."
       url: /entra/external-id/
     - title: Microsoft Entra Internet Access
@@ -39,10 +57,6 @@ productDirectory:
       imageSrc: ./media/index/private-access-color.png
       summary: "Secure access to all private apps and resources with identity-centric Zero Trust Network Access (ZTNA)."
       url: /entra/global-secure-access/
-    - title: Microsoft Entra Permissions Management
-      imageSrc: ./media/index/permissions-management-color.png
-      summary: "One unified model to manage permissions of any identity across any cloud."
-      url: /entra/permissions-management/
     - title: Microsoft Entra Verified ID
       imageSrc: ./media/index/verified-id-color.png
       summary: "Enable more secure interactions while respecting privacy with an industry-leading global platform."
@@ -59,18 +73,18 @@ conceptualContent:
     ## CARD 1 ######################
     - title: Fundamentals
       links:
-        - text: What is Microsoft Entra ID?
-          url: /entra/fundamentals/whatis
-          itemType: overview
+        - text: New name for Azure AD
+          url: /entra/fundamentals/new-name
+          itemType: concept
+        - text: Create a new tenant
+          url: /entra/fundamentals/create-new-tenant
+          itemType: quickstart
         - text: Access the admin center and create a tenant
           url: /entra/fundamentals/create-new-tenant
           itemType: quickstart
-        - text: Create a group and add members 
-          url: /entra/fundamentals/groups-view-azure-portal
-          itemType: quickstart
-        - text: Add your custom domain name 
-          url: /entra/fundamentals/add-custom-domain
-          itemType: how-to-guide
+        - text: Copilot in Microsoft Entra 
+          url: /entra/fundamentals/copilot-security-entra
+          itemType: concept
     ## CARD 2 ######################
     - title: Architecture
       links:
@@ -127,9 +141,9 @@ additionalContent:
         - title: "New name for Azure Active Directory"
           summary: "Learn more about the new name, what the change means, and how it affects you."
           url: https://aka.ms/AzureADNewName
-        - title: "Introducing Security Service Edge (SSE)"
-          summary: "Read the blog on expanded capabilities for securing access with Microsoft Entra."
-          url: https://aka.ms/EntraMomentSecurityblog
+        - title: "Introducing Microsoft Entra Suite"
+          summary: "Learn how the Microsoft Entra Suite simplifies your Zero Trust security model with a complete cloud-based solution for workforce access."
+          url: https://aka.ms/EntraSuiteTechCommunity
         - title: "Microsoft Security documentation"
           summary: "Technical guidance to help security professionals build and implement cybersecurity strategy, architecture, and prioritized roadmaps."
           url: /security/

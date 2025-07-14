@@ -1,67 +1,20 @@
 ---
-title: 'Provision groups to Active Directory using Microsoft Entra Cloud Sync'
+title: 'Configure - Provisioning Microsoft Entra ID to Active Directory using Microsoft Entra Cloud Sync'
 description: This article describes how to configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: sfi-image-nochange
 ---
 
-# Provision groups to Active Directory using Microsoft Entra Cloud Sync (Preview)
+# Provision Microsoft Entra ID to Active Directory - Configuration
+The following document will guide you through configuring Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory. If you are looking for information on provisioning from AD to Microsoft Entra ID, see [ Configure - Provisioning Active Directory to Microsoft Entra ID using Microsoft Entra Cloud Sync](how-to-configure.md)
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
-
-The following document will guide you through configuring cloud sync to synchronize groups to on-premises Active Directory. This configuration document is specific to on-premises Microsoft Entra Cloud Sync's Group Provision to AD. For information on a traditional on-premises to cloud configuration see [Configure and new installation - AD to Microsoft Entra ID](how-to-configure.md).
-
-For more information, see [Govern on-premises application access with groups from the cloud](govern-on-premises-groups.md).
-
-## Prerequisites
-The following prerequisites are required to implement this scenario.
-
- - Microsoft Entra account with at least a [Hybrid Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
- - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
-     - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
- - Provisioning agent with build version [1.1.1370.0](reference-version-history.md#1113700) or later.
-
- > [!NOTE]
- > The permissions to the service account are assigned during clean install only. In case you're upgrading from the previous version then permissions need to be assigned manually using PowerShell cmdlet: 
- > 
- > ```
- > $credential = Get-Credential  
- >
- >   Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
- >```
- >If the permissions are set manually, you need to ensure that Read, Write, Create, and Delete all properties for all descendent Groups and User objects. 
- >
- >These permissions aren't applied to AdminSDHolder objects by default
-
- [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
-
- - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
-     - Required for global catalog lookup to filter out invalid membership references
- - Microsoft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later
-     - Required to support on-premises user membership synchronized using Microsoft Entra Connect 
-     - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier
-
-## Supported groups
-For this scenario, only the following is supported:
-  - only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
-  - these groups can have assigned or dynamic membership.
-  - these groups can only contain on-premises synchronized users and / or additional cloud created security groups.
-  - the on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
-  - these groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope). Your on-premises environment must support the universal group scope.
-  - groups that are larger than 50,000 members aren't supported.
-  - each direct child nested group counts as one member in the referencing group
-
-## License requirements
-[!INCLUDE [entra-p1-license.md](~/includes/entra-p1-license.md)]
-
 
 
 ## Configure provisioning
@@ -72,7 +25,7 @@ To configure provisioning, follow these steps.
  3. Select **New configuration**.
  4. Select **Microsoft Entra ID to AD sync**.
 
-  :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
  5. On the configuration screen, select your domain and whether to enable password hash sync. Click **Create**. 
  
@@ -80,26 +33,33 @@ To configure provisioning, follow these steps.
 
  6. The **Get started** screen will open. From here, you can continue configuring cloud sync.
 
-  :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png" alt-text="Screenshot of the configuration sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-2.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-1.png" alt-text="Screenshot of the configuration sections." lightbox="media/how-to-configure-entra-to-active-directory/config-1.png":::
 
- 7. The configuration is split in to the following 3 sections.
+ 7. The configuration is split in to the following 5 sections.
 
-   |Section|Description|
-   |-----|-----|
-   |1. Add [scoping filters](#scope-provisioning-to-specific-groups)|Use this section to define what objects appear in Microsoft Entra ID|
-   |2. View [default properties](#accidental-deletions-and-email-notifications)|View the default setting prior to enabling them and make changes where appropriate|
-   |3. Enable [your configuration](#enable-your-configuration)|Once ready, enable the configuration and users/groups will begin synchronizing|
+  |Section|Description|
+  |-----|-----|
+  |1. Add [scoping filters](#scope-provisioning-to-specific-groups)|Use this section to define what objects appear in Microsoft Entra ID|
+  |2. Map [attributes](#attribute-mapping)|Use this section to map attributes between your on-premises users/groups with Microsoft Entra objects|
+  |3. [Test](#on-demand-provisioning)|Test your configuration before deploying it|
+  |4. View [default properties](#accidental-deletions-and-email-notifications)|View the default setting prior to enabling them and make changes where appropriate|
+  |5. Enable [your configuration](#enable-your-configuration)|Once ready, enable the configuration and users/groups will begin synchronizing|
 
 ## Scope provisioning to specific groups
-You can scope the agent to synchronize all or specific security groups. You can configure groups and organizational units within a configuration. 
- 
+You can scope the agent to synchronize all or specific security groups. 
+
+For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md) and [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
+
+
+You can configure groups and organizational units within a configuration. 
+
  1. On the **Getting started** configuration screen. Click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
 
-  :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-2.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/config-2.png":::
  
  2. Select the scoping filter. The filter can be one of the following:
-     - **All security groups**: Scopes the configuration to apply to all cloud security groups.
-     - **Selected security groups**: Scopes the configuration to apply to specific security groups.
+   - **All security groups**: Scopes the configuration to apply to all cloud security groups.
+   - **Selected security groups**: Scopes the configuration to apply to specific security groups.
 
  3. For specific security groups select **Edit groups** and pick your desired groups from the list.
 
@@ -110,170 +70,115 @@ You can scope the agent to synchronize all or specific security groups. You can 
 
  4. You can use the **Target Container** box to scope groups that use a specific container. Accomplish this task by using the parentDistinguishedName attribute. Use either a constant, direct, or expression mapping.
  
-  Multiple target containers can be configured using an attribute mapping expression with the Switch() function. With this expression, if the displayName value is Marketing or Sales, the group is created in the corresponding OU. If there's no match, then the group is created in the default OU.
+ Multiple target containers can be configured using an attribute mapping expression with the Switch() function. With this expression, if the displayName value is Marketing or Sales, the group is created in the corresponding OU. If there's no match, then the group is created in the default OU.
 
-  ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com")  ```
+ ```Switch([displayName],"OU=Default,OU=container,DC=contoso,DC=com","Marketing","OU=Marketing,OU=container,DC=contoso,DC=com","Sales","OU=Sales,OU=container,DC=contoso,DC=com") ```
 
-  :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-4.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-4.png":::
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-6.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/how-to-configure-entra-to-active-directory/config-6.png":::
 
- 5. Attribute based scope filtering is supported. For more information see [Attribute based scope filtering](#attribute-scope-filtering)
+ 5. Attribute based scope filtering is supported. For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md) and [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
  4. Once your scoping filters are configured, click **Save**.
  5. After saving, you should see a message telling you what you still need to do to configure cloud sync. You can click the link to continue.
  :::image type="content" source="media/how-to-configure/new-ux-configure-16.png" alt-text="Screenshot of the nudge for scoping filters." lightbox="media/how-to-configure/new-ux-configure-16.png":::
 
+ ### Scope provisioning to specific groups using directory extensions
+ For more advanced scoping and filtering, you can configure the use of directory extensions.  For an overview of directory extensions see [Directory extensions for provisioning Microsoft Entra ID to Active Directory](custom-attribute-mapping-entra-to-active-directory.md)
 
-## Attributes and attribute based scope filtering
+For a step-by-step tutorial on how to extend the schema and then use the directory extension attribute with cloud sync provisioning to AD, see [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
+
+## Attribute mapping
+Microsoft Entra Cloud Sync allows you to easily map attributes between your on-premises user/group objects and the objects in Microsoft Entra ID. 
+
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-3.png" alt-text="Screenshot of the default attribute mappings." lightbox="media/how-to-configure-entra-to-active-directory/config-3.png":::
+
+
 You can customize the default attribute-mappings according to your business needs. So, you can change or delete existing attribute-mappings, or create new attribute-mappings. 
 
-:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
+After saving, you should see a message telling you what you still need to do to configure cloud sync. You can click the link to continue.
 
-<a name='schema-for-microsoft-entra-id-to-ad-configurations'></a>
+For more information, see [attribute mapping](how-to-attribute-mapping-entra-to-active-directory.md) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md).
 
-### Schema for Microsoft Entra ID to Active Directory configurations
-Currently, the AD Schema isn't discoverable and there's fixed set of mappings. The following table provides the default mappings and schema for the Microsoft Entra ID to Active Directory configurations.
-
-|Target attribute|Source attribute|Mapping type|Notes|
-|-----|-----|-----|-----|
-|adminDescription|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for filtering out AD to cloud sync</br></br>Not visible in UI|
-|cn|Append(Append(Left(Trim([displayName]),51),"_"),Mid([objectId],25,12))|Expression||
-|description|Left(Trim([description]),448)|Expression||
-|displayName|displayName|Direct||
-|isSecurityGroup|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
-|member|members|Direct|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
-|msDS-ExternalDirectoryObjectId|Append("Group_",[objectId])|Expression|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Used for joining - matching in AD</br></br>Not visible in UI|
-|ObjectGUID|||CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Read only - anchor in AD</br></br>Not visible in UI|
-|parentDistinguishedName|OU=Users,DC=&lt;domain selected at configuration start&gt;,DC=com|Constant|Default in the UI|
-|UniversalScope|True|Constant|CANNOT UPDATE IN UI - SHOULD NOT UPDATE</br></br>Not visible in UI|
-
-Be aware that not all of the above mappings are visible in the portal. For more information on how to add an attribute mapping see, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview).
-
-
-### Attribute scope filtering
-Attribute based scope filtering is supported. You can scope groups based on certain attributes. However, be aware that the attribute mapping section for a Microsoft Entra ID to Active Directory configuration is slightly different than the traditional attribute mapping section.
-
-:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png" alt-text="Screenshot of the attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-6.png":::
-
-#### Supported clauses
-
-A scoping filter consists of one or more clauses. Clauses determine which groups are allowed to pass through the scoping filter by evaluating each group's attributes. For example, you might have one clause that requires that a groups  "displayName" attribute equals "Marketing", so only Marketing groups are provisioned.
-
-#### The default security grouping
-The default security grouping is applied on top of every clause created and uses the "AND" logic. It contains the following conditions:
-  - securityEnabled IS True AND 
-  - dirSyncEnabled IS FALSE AND 
-  - mailEnabled IS FALSE
-  
-The default security grouping is ALWAYS applied first and uses the AND logic when working with a single clause.  Clause will then follow the logic outlined below.
-
-A single clause defines a single condition for a single attribute value. If multiple clauses are created in a single scoping filter, they're evaluated together using "AND" logic. The "AND" logic means all clauses must evaluate to "true" in order for a user to be provisioned.
-
-:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-8.png" alt-text="Screenshot of AND clause attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-8.png":::
-
-Finally, multiple scoping filters can be created for a group. If multiple scoping filters are present, they're evaluated together by using "OR" logic. The "OR" logic means that if either of the clauses in any of the configured scoping filters evaluate to "true", the group is provisioned.
-
-:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-9.png" alt-text="Screenshot of OR clause attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-9.png":::
-
-
-#### Supported operators
-The following operators are supported:
-
-|Operator|Description|
-|-----|-----|
-|&||
-|ENDS_WITH||
-|EQUALS|Clause returns "true" if the evaluated attribute matches the input string value exactly (case sensitive).|
-|GREATER_THAN|Clause returns "true" if the evaluated attribute is greater than the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...].|
-|GREATER_THAN_OR_EQUALS| Clause returns "true" if the evaluated attribute is greater than or equal to the value. The value specified on the scoping filter must be an integer and the attribute on the user must be an integer [0,1,2,...].|
-|INCLUDES||
-|IS FALSE| Clause returns "true" if the evaluated attribute contains a Boolean value of false.|
-|IS_MEMBER_OF||
-|IS NOT NULL|Clause returns "true" if the evaluated attribute isn't empty.|
-|IS NULL|Clause returns "true" if the evaluated attribute is empty.|
-|IS TRUE|Clause returns "true" if the evaluated attribute contains a Boolean value of true.|
-|!&L||
-|NOT EQUALS|Clause returns "true" if the evaluated attribute doesn't match the input string value (case sensitive).|
-|NOT REGEX MATCH|Clause returns "true" if the evaluated attribute doesn't match a regular expression pattern. It returns "false" if the attribute is null / empty.|
-|PRESENT||
-|REGEX MATCH|Clause returns "true" if the evaluated attribute matches a regular expression pattern. For example: ([1-9][0-9]) matches any number between 10 and 99 (case sensitive).|
-|VALID CERT MATCH||
-
-#### Create an attribute based filter
-To create an attribute based filter use the following steps:
-
-1. Click **Add attribute filter**
-2. In the **Name** box, provide a name for your filter
-3. From the drop-down, under **Target attribute** select the target attribute
-4. Under **Operator**, select an operator.
-5. Under **Value**, specify a value.
-6. Click **Save**.
-
-:::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png" alt-text="Screenshot of the setting up attribute based scoping." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-7.png":::
-
-For more information, see [attribute mapping](how-to-attribute-mapping.md#add-an-attribute-mapping---microsoft-entra-id-to-ad-preview).
-
+## Directory extensions and custom attribute mapping.
+Microsoft Entra Cloud Sync allows you to extend the directory with extensions and provides for custom attribute mapping. For more information see [Directory extensions and custom attribute mapping](custom-attribute-mapping.md).
 
 ## On-demand provisioning
-Microsoft Entra Connect cloud sync allows you to test configuration changes, by applying these changes to a group. 
+Microsoft Entra Cloud Sync allows you to test configuration changes, by applying these changes to a single user or group. 
 
-You can use this test to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID. 
+ :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-5.png" alt-text="Screenshot of the provisioning on-demand." lightbox="media/how-to-configure-entra-to-active-directory/config-5.png":::
 
-The following is true with regrad to on-demand provisioning of groups:
-- On-demand provisioning of groups supports updating up to five members at a time.
-- On-demand provisioning doesn't support deleting groups that have been deleted from Microsoft Entra ID. Those groups don't appear when you search for a group.
-- On-demand provisioning doesn't support nested groups that aren't directly assigned to the application.
-- The on-demand provisioning request API can only accept a single group with up to 5 members at a time.
+You can use this to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID. 
 
+After testing, you should see a message telling you what you still need to do to configure cloud sync. You can click the link to continue.
 
-### Verify a group
-To use on-demand provisioning, follow these steps:
-
->[!NOTE]
->When using on-demand provisioning, members aren't automatically provsisioned. You need to select which members you wish to test on and there's a 5 member limit.
-
- [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
-
- 3. Under **Configuration**, select your configuration.
- 4. On the left, select **Provision on demand**.
- 5. Enter the name of the group in the **Selected group** box
- 6. From the **Selected users** section, select some users to test.
- 
-   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-10.png" alt-text="Screenshot of adding members." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-10.png":::
-
- 7. Click **Provision**.
- 8. You should see the group provisioned.
- 
-   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png":::
-
-
-For more information, see [on-demand provisioning](how-to-on-demand-provision.md).
+For more information, see [on-demand provisioning](how-to-on-demand-provision-entra-to-active-directory.md).
 
 ## Accidental deletions and email notifications
+The default properties section provides information on accidental deletions and email notifications.
+
+
+
 The accidental delete feature is designed to protect you from accidental configuration changes and changes to your on-premises directory that would affect many users and groups. 
 
 This feature allows you to:
 
-- configure the ability to prevent accidental deletes automatically. 
+- Configure the ability to prevent accidental deletes automatically. 
 - Set the # of objects (threshold) beyond which the configuration will take effect 
-- set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario 
+- Set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario 
 
 For more information, see [Accidental deletes](how-to-accidental-deletes.md)
 
+Click the **pencil** next to **Basics** to change the defaults in a configuration.
+
+
 ## Enable your configuration
-Once you've finalized and tested your configuration, you can enable it. Click **Enable configuration** to enable it.
+Once you've finalized and tested your configuration, you can enable it.
 
 
-## Provisioning logs and quarantines
+Click **Enable configuration** to enable it.
+
+
+
+## Quarantines
 Cloud sync monitors the health of your configuration and places unhealthy objects in a quarantine state. If most or all of the calls made against the target system consistently fail because of an error, for example, invalid admin credentials, the sync job is marked as in quarantine. For more information, see the troubleshooting section on [quarantines](how-to-troubleshoot.md#provisioning-quarantined-problems).
 
-Provisioning logs are available and can be used to provide information and assist in troubleshooting.
+## Restart provisioning 
+If you don't want to wait for the next scheduled run, trigger the provisioning run by using the **Restart sync** button. 
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
+ 4. Under **Configuration**, select your configuration.
 
-   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-11.png":::
 
-For more information on provisioning logs, see [Enabling provisioning logs](how-to-cloud-sync-workbook.md#enabling-provisioning-logs)
+
+ 5. At the top, select **Restart sync**.
+
+## Remove a configuration
+To delete a configuration, follow these steps.
+
+ [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
+ 3. Under **Configuration**, select your configuration.
+
+
+
+ 4. At the top of the configuration screen, select **Delete configuration**.
+
+>[!IMPORTANT]
+>There's no confirmation prior to deleting a configuration. Make sure this is the action you want to take before you select **Delete**.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 ## Next steps 
-- [Group writeback with Microsoft Entra Cloud Sync (Preview)](../group-writeback-cloud-sync.md)
+- [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+- [Scoping filter and attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping-entra-to-active-directory.md)

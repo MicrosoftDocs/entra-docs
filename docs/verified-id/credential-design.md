@@ -1,13 +1,11 @@
 ---
 title: Customize your Microsoft Entra Verified ID
 description: This article shows you how to create your own custom verifiable credential.
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: how-to
-ms.date: 06/22/2022
+ms.date: 12/13/2024
 ms.author: barclayn
 # Customer intent: As a developer, I am looking for information about how to enable my users to control their own information. 
 ---
@@ -15,7 +13,7 @@ ms.author: barclayn
 # Customize your verifiable credentials
 
   
-Verifiable credentials definitions are made up of two components, *display* definitions and *rules* definitions. A display definition controls the branding of the credential and styling of the claims. A rules definition determines what users need to provide before they receive a verifiable credential.  
+Verifiable credentials (VC)s definitions are made up of two components, *display* definitions and *rules* definitions. A display definition controls the branding of the credential and styling of the claims. A rules definition determines what users need to provide before they receive a verifiable credential.  
 
 This article explains how to modify both types of definitions to meet the requirements of your organization. 
 
@@ -47,7 +45,7 @@ The display definition has the following structure. The logo uri, if specified a
       "backgroundColor": "#000000",
       "textColor": "#ffffff",
       "logo": {
-        "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png",
+        "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png",
         "description": "Verified Credential Expert Logo"
       },
       "description": "Use your verified credential to prove to anyone that you know all about verifiable credentials."
@@ -95,14 +93,14 @@ The rules definition is a simple JSON document that describes important properti
 
 The following four attestation types are currently available to be configured in the rules definition. They are different ways of providing claims used by the Microsoft Entra Verified ID issuing service to be inserted into a verifiable credential and attest to that information with your decentralized identifier (DID). Multiple attestation types can be used in the rules definition. 
 
-* **ID token**: When this option is configured, you'll need to provide an OpenID Connect configuration URI and include the claims that should be included in the verifiable credential. Users are prompted to 'Sign in' on the Authenticator app to meet this requirement and add the associated claims from their account. To configure this option, see this [how to guide](how-to-use-quickstart-idtoken.md)
+* **ID token**: When this option is configured, you need to provide an OpenID Connect configuration URI and include the claims that should be included in the verifiable credential. Users are prompted to **Sign in** on the **Authenticator** app to meet this requirement and add the associated claims from their account. To configure this option, see this [how to guide](how-to-use-quickstart-idtoken.md)
 
 
-* **ID token hint**: The sample App and Tutorial use the ID token Hint. When this option is configured, the relying party app will need to provide claims that should be included in the verifiable credential in the Request Service API issuance request. Where the relying party app gets the claims from is up to the app, but it can come from the current sign-in session, from backend CRM systems or even from self asserted user input. To configure this option, please see this [how to guide](how-to-use-quickstart.md)
+* **ID token hint**: The sample App and Tutorial use the ID token Hint. When this option is configured, the relying party app needs to provide claims that should be included in the verifiable credential in the Request Service API issuance request. Where the relying party app gets the claims from is up to the app, but it can come from the current sign-in session, from backend CRM systems or even from self asserted user input. To configure this option, see this [how to guide](how-to-use-quickstart.md)
 
-* **Verifiable credentials**: The end result of an issuance flow is to produce a verifiable credential but you may also ask the user to Present a verifiable credential in order to issue one. The rules definition is able to take specific claims from the presented verifiable credential and include those claims in the newly issued verifiable credential from your organization.  To configure this option, please see this [how to guide](how-to-use-quickstart-presentation.md)
+* **Verifiable credentials**: The end result of an issuance flow is to produce a verifiable credential but you may also ask the user to Present a verifiable credential in order to issue one. The rules definition is able to take specific claims from the presented verifiable credential and include those claims in the newly issued verifiable credential from your organization.  To configure this option, see this [how to guide](how-to-use-quickstart-presentation.md)
 
-* **Self-attested claims**: When this option is selected, the user can type information directly into Authenticator. At this time, strings are the only supported input for self attested claims. To configure this option, please see this [how to guide](how-to-use-quickstart-selfissued.md)
+* **Self-attested claims**: When this option is selected, the user can type information directly into **Authenticator**. At this time, strings are the only supported input for self attested claims. To configure this option, see this [how to guide](how-to-use-quickstart-selfissued.md)
 
 For more information about the rules JSON model, see [rulesModel type](rules-and-display-definitions-model.md#rulesmodel-type).
 

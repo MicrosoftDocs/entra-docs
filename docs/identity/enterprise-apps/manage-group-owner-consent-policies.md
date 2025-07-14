@@ -2,13 +2,13 @@
 title: Manage app consent policies for group owners  
 description: Learn how to manage built-in and custom app consent policies for group owner to control when consent can be granted.
 
-manager: CelesteDG
+manager: mwongerapk
 author: omondiatieno
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 08/25/2023
+ms.date: 05/16/2025
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.custom: 
@@ -34,11 +34,9 @@ Group owner consent policies where the ID begins with "microsoft-" are built-in 
 ## Prerequisites
 
 - A user or service with one of the following roles:
-  - Global Administrator directory role
-  - Privileged Role Administrator directory role
-  - A custom directory role with the necessary [permissions to manage group owner consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
+  - [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator)
+  - A custom role with the necessary [permissions to manage group owner consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
   - The Microsoft Graph app role (application permission) Policy.ReadWrite.PermissionGrant (when connecting as an app or a service)
-- To allow group owner consent subject to app consent policies, the group owner consent setting must be disabled. Once disabled, your current policy is read from the app consent policy. To learn how to disable group owner consent, see [Disable group owner consent setting](configure-user-consent-groups.md)
 
 :::zone pivot="ms-powershell"
 
@@ -230,14 +228,14 @@ Follow these steps to create a custom group owner consent policy:
    Repeat this step to add more "include" condition sets.
 
 1. Optionally, add "exclude" condition sets.
-     Exclude delegated permissions for the Azure Management API (appId 46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b)
+     Exclude delegated permissions for the Azure Management API (appId 00001111-aaaa-2222-bbbb-3333cccc4444)
 
    ```http
    POST https://graph.microsoft.com/v1.0/policies/permissionGrantPolicies/{ my-custom-app-consent-policy-for-group }/excludes
    
    {
      "permissionType": "delegated",
-     "resourceApplication": "46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b "
+     "resourceApplication": "00001111-aaaa-2222-bbbb-3333cccc4444 "
    }
    ```
 

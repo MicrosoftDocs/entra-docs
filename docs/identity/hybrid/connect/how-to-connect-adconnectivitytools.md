@@ -3,10 +3,10 @@ title: 'Microsoft Entra Connect: What is the ADConnectivityTool PowerShell Modul
 description: This document introduces the new ADConnectivity PowerShell module and how it can be used to help troubleshoot.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -38,22 +38,22 @@ Whenever any of these issues are found, a related error message is displayed in 
 
 ![Error](media/how-to-connect-adconnectivitytools/error1.png)
 
-For example, when we're attempting to add a directory on the **Connect your directories** screen, Microsoft Entra Connect needs to verify this and expects to be able to communicate with a domain controller over port 389.  If it can't, we'll see the error that is shown in the screenshot.  
+For example, when we're attempting to add a directory on the **Connect your directories** screen, Microsoft Entra Connect needs to verify this and expects to be able to communicate with a domain controller over port 389. If it can't, we'll see the error that is shown in the screenshot.  
 
-What is actually happening behind the scenes, is that Microsoft Entra Connect is calling the `Start-NetworkConnectivityDiagnosisTools` function.  This function is called when the validation of credentials fails due to a network connectivity issue.
+What is actually happening behind the scenes, is that Microsoft Entra Connect is calling the `Start-NetworkConnectivityDiagnosisTools` function. This function is called when the validation of credentials fails due to a network connectivity issue.
 
 Finally, a detailed log file is generated whenever the tool is called from the wizard. The log is located in **C:\ProgramData\AADConnect\ADConnectivityTool-\<date>-\<time>.log**
 
 ## ADConnectivityTools post installation
-After Microsoft Entra Connect has been installed, any of the functions in the ADConnectivityTools PowerShell module can be used.  
+After Microsoft Entra Connect is installed, any of the functions in the ADConnectivityTools PowerShell module can be used.  
 
 You can find reference information on the functions in the [ADConnectivityTools Reference](reference-connect-adconnectivitytools.md)
 
 ### Start-ConnectivityValidation
 
-We're going to call out this function because it can **only** be called manually once the ADConnectivityTool.psm1 has been imported into PowerShell. 
+We're going to call out this function because it can **only** be called manually once the ADConnectivityTool.psm1 is imported into PowerShell. 
 
-This function executes the same logic that the  Microsoft Entra Connect Wizard runs to validate the provided AD Credentials.  However it provides a much more verbose explanation about the problem and a suggested solution. 
+This function executes the same logic that the  Microsoft Entra Connect Wizard runs to validate the provided AD Credentials. However, it provides a much more verbose explanation about the problem and a suggested solution. 
 
 The connectivity validation consists of the following steps:
 -	Get Domain FQDN (fully qualified domain name) object
@@ -62,7 +62,7 @@ The connectivity validation consists of the following steps:
 -	Confirm that at least one domain associated with the previously obtained Forest FQDN object is reachable
 -	Verify that the functional level of the forest is Windows Server 2003 or greater.
 
-The user will be able to add a Directory if all these actions were executed successfully.
+The user is able to add a Directory if all these actions were executed successfully.
 
 If the user runs this function, after a problem is solved (or if no problem exists at all), the output will indicate for the user to go back to the Microsoft Entra Connect Wizard and try inserting the credentials again.
 

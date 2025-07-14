@@ -2,15 +2,18 @@
 title: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management
 description: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: faq
-ms.date: 08/23/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Frequently asked questions (FAQs)
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article answers frequently asked questions (FAQs) about Microsoft Entra Permissions Management.
 
@@ -86,6 +89,10 @@ The Permissions Creep Index (PCI) is a quantitative measure of risk associated w
 
 Permissions Management allows users to right-size excessive permissions and automate least privilege policy enforcement with just a few clicks. The solution continuously analyzes historical permission usage data for each identity and gives customers the ability to right-size the permissions of that identity to permissions that are only being used for day-to-day operations. All unused and other risky permissions can be automatically removed.
 
+## Why is a user I deleted still visible in the Analytics tab?
+
+Check to see if the user was assigned a *Classic Administrator* role. Classic admin roles don't go away when a user is deleted. To resolve this, go to the [Classic admin page](https://go.microsoft.com/fwlink/?linkid=2268264) and delete that role assignment separately for the user.
+
 ## How can customers grant permissions on-demand with Permissions Management?
 
 For any break-glass or one-off scenarios where an identity needs to perform a specific set of actions on a set of specific resources, the identity can request those permissions on-demand for a limited period with a self-service workflow. Customers can either use the built-in workflow engine or their IT service management (ITSM) tool. The user experience is the same for any identity type, identity source (local, enterprise directory, or federated) and cloud.
@@ -109,11 +116,11 @@ For information about permissions usage reports, see [Generate and download the 
 
 ## Does Permissions Management integrate with third-party ITSM (Information Technology Service Management) tools?
 
-Integration with ITMS tools, such as ServiceNow, is in the future roadmap.
+Integration with ITSM tools, such as ServiceNow, is in the future roadmap.
 
 ## How is Permissions Management being deployed?
 
-Customers with Global Administrator role have first to onboard Permissions Management on their Microsoft Entra tenant, and then onboard their AWS accounts, GCP projects, and Azure subscriptions. More details about onboarding can be found in our product documentation.
+Customers assigned the [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) role must first onboard Permissions Management to their Microsoft Entra tenant, and then onboard their AWS accounts, GCP projects, and Azure subscriptions. More details about onboarding can be found in our [product documentation](onboard-enable-tenant.md).
 
 ## How long does it take to deploy Permissions Management?
 
@@ -137,7 +144,7 @@ If a customer initiates a free Permissions Management 45-day trial and does not 
 
 If a customer decides to discontinue licensing the service, all previously collected data is deleted within 30 days of license termination.
 
-Customers can also remove, export or modify specific data if a Global Administrator using the Permissions Management service files an official Data Subject Request. To file a request:
+Customers can also remove, export or modify specific data if a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) using the Permissions Management service files an official Data Subject Request. To file a request:
 
 If you're an enterprise customer, you can contact your Microsoft representative, account team, or tenant admin to file a high-priority IcM support ticket requesting a Data Subject Request. Do not include details or any personally identifiable information in the IcM request. We'll reach out to you for these details only after an IcM is filed.
 
@@ -183,7 +190,7 @@ Where xx-XX is one of the following available language parameters: 'cs-CZ', 'de-
 
 ## Resources
 
-- [Microsoft Entra (`Azure AD`) blog](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/bg-p/Identity)
+- [Microsoft Entra blog](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/bg-p/Identity)
 - [Permissions Management web page](https://microsoft.com/security/business/identity-access-management/permissions-management)
 - For more information about Microsoft's privacy and security terms, see [Commercial Licensing Terms](https://www.microsoft.com/licensing/terms/product/ForallOnlineServices/all). 
 - For more information about Microsoft's data processing and security terms when you subscribe to a product, see [Microsoft Products and Services Data Protection Addendum (DPA)](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA).

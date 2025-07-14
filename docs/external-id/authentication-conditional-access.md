@@ -1,27 +1,25 @@
 ---
 title: Authentication and Conditional Access for B2B users
 description: Learn how to enforce multifactor authentication policies for Microsoft Entra B2B users.
-
- 
 ms.service: entra-external-id
-ms.custom: has-azure-ad-ps-ref
 ms.topic: concept-article
-ms.date: 02/05/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-
+ms.date: 07/07/2025
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: As an IT admin managing external user access to resources in my organization, I want to understand the authentication flow and Conditional Access policies for external users, so that I can ensure secure access and compliance with our organization's policies.
 ---
 
 # Authentication and Conditional Access for External ID
 
-> [!TIP]
-> This article applies to B2B collaboration and B2B direct connect. If your tenant is configured for customer identity and access management, see [Security and governance in Microsoft Entra ID for customers](customers/concept-security-customers.md).
+  [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-When an external user accesses resources in your organization, the authentication flow is determined by the collaboration method (B2B collaboration or B2B direct connect), user's identity provider (an external Microsoft Entra tenant, social identity provider, etc.), Conditional Access policies, and the [cross-tenant access settings](cross-tenant-access-overview.md) configured both in the user's home tenant and the tenant hosting resources.
+> [!TIP]
+> This article applies to B2B collaboration and B2B direct connect in workforce tenants. For information about external tenants, see [Security and governance in Microsoft Entra External ID](customers/concept-security-customers.md).
+
+When an external user accesses resources in your organization, the authentication flow is determined by the collaboration method (B2B collaboration or B2B direct connect), user's identity provider (an external Microsoft Entra tenant, social identity provider, and so on), Conditional Access policies, and the [cross-tenant access settings](cross-tenant-access-overview.md) configured both in the user's home tenant and the tenant hosting resources.
 
 This article describes the authentication flow for external users who are accessing resources in your organization. Organizations can enforce multiple Conditional Access policies for their external users, which can be enforced at the tenant, app, or individual user level in the same way that they're enabled for full-time employees and members of the organization.
 
@@ -31,7 +29,7 @@ This article describes the authentication flow for external users who are access
 
 The following diagram illustrates the authentication flow when a Microsoft Entra organization shares resources with users from other Microsoft Entra organizations. This diagram shows how cross-tenant access settings work with Conditional Access policies, such as multifactor authentication, to determine if the user can access resources. This flow applies to both B2B collaboration and B2B direct connect, except as noted in step 6.
 
-[ ![Diagram showing the cross-tenant authentication process.](media/authentication-conditional-access/cross-tenant-auth.png) ](media/authentication-conditional-access/cross-tenant-auth.png#lightbox)
+[![Diagram showing the cross-tenant authentication process.](media/authentication-conditional-access/cross-tenant-auth.png)](media/authentication-conditional-access/cross-tenant-auth.png#lightbox)
 
 |Step  |Description  |
 |---------|---------|
@@ -44,34 +42,34 @@ The following diagram illustrates the authentication flow when a Microsoft Entra
 
 For more information, see the [Conditional Access for external users](#conditional-access-for-external-users) section.
 
-## Authentication flow for non-Azure AD external users
+## Authentication flow for non-Microsoft Entra ID external users
 
 When a Microsoft Entra organization shares resources with external users with an identity provider other than Microsoft Entra ID, the authentication flow depends on whether the user is authenticating with an identity provider or with email one-time passcode authentication. In either case, the resource tenant identifies which authentication method to use, and then either redirects the user to their identity provider or issues a one-time passcode.
 
-### Example 1: Authentication flow and token for a non-Azure AD external user
+### Example 1: Authentication flow and token for a non-Microsoft Entra ID external user
 
-The following diagram illustrates the authentication flow when an external user signs in with an account from a non-Azure AD identity provider, such as Google, Facebook, or a federated SAML/WS-Fed identity provider.
+The following diagram illustrates the authentication flow when an external user signs in with an account from a non-Microsoft Entra ID identity provider, such as Google, Facebook, or a federated SAML/WS-Fed identity provider.
 
-[ ![Diagram showing the Authentication flow for B2B guest users from an external directory.](media/authentication-conditional-access/authentication-flow-b2b-guests.png) ](media/authentication-conditional-access/authentication-flow-b2b-guests.png#lightbox)
+[![Diagram showing the Authentication flow for B2B guest users from an external directory.](media/authentication-conditional-access/authentication-flow-b2b-guests.png)](media/authentication-conditional-access/authentication-flow-b2b-guests.png#lightbox)
 
 | Step | Description |
 |--------------|-----------------------|
 | **1** | The B2B guest user requests access to a resource. The resource redirects the user to its resource tenant,  a trusted IdP.|
-| **2** | The resource tenant identifies the user as external and redirects the user to the B2B guest user’s IdP. The user performs primary authentication in the IdP.
-| **3** | Authorization policies are evaluated in the B2B guest user's IdP. If the user satisfies these policies, the B2B guest user's IdP issues a token to the user. The user is redirected back to the resource tenant with the token. The resource tenant validates the token and then evaluates the user against its Conditional Access policies. For example, the resource tenant could require the user to perform Microsoft Entra multifactor authentication.
-| **4** | Inbound cross-tenant access settings and Conditional Access policies are evaluated. If all policies are satisfied, the resource tenant issues its own token and redirects the user to its resource.
+| **2** | The resource tenant identifies the user as external and redirects the user to the B2B guest user’s IdP. The user performs primary authentication in the IdP. |
+| **3** | Authorization policies are evaluated in the B2B guest user's IdP. If the user satisfies these policies, the B2B guest user's IdP issues a token to the user. The user is redirected back to the resource tenant with the token. The resource tenant validates the token and then evaluates the user against its Conditional Access policies. For example, the resource tenant could require the user to perform Microsoft Entra multifactor authentication. |
+| **4** | Inbound cross-tenant access settings and Conditional Access policies are evaluated. If all policies are satisfied, the resource tenant issues its own token and redirects the user to its resource. |
 
 ### Example 2: Authentication flow and token for one-time passcode user
 
 The following diagram illustrates the flow when email one-time passcode authentication is enabled and the external user isn't authenticated through other means, such as Microsoft Entra ID, Microsoft account (MSA), or social identity provider.
 
-[ ![Diagram showing the Authentication flow for B2B guest users with one-time passcode.](media/authentication-conditional-access/authentication-flow-b2b-guests-otp.png) ](media/authentication-conditional-access/authentication-flow-b2b-guests-otp.png#lightbox)
+[![Diagram showing the Authentication flow for B2B guest users with one-time passcode.](media/authentication-conditional-access/authentication-flow-b2b-guests-otp.png)](media/authentication-conditional-access/authentication-flow-b2b-guests-otp.png#lightbox)
 
 | Step | Description |
 |--------------|-----------------------|
 | **1** |The user requests access to a resource in another tenant. The resource redirects the user to its resource tenant, a trusted IdP.|
 | **2** | The resource tenant identifies the user as an external email one-time passcode (OTP) user and sends an email with the OTP to the user.|
-| **3** | The user retrieves the OTP and submits the code. The resource tenant evaluates the user against its Conditional Access policies.
+| **3** | The user retrieves the OTP and submits the code. The resource tenant evaluates the user against its Conditional Access policies. |
 | **4** | Once all Conditional Access policies are satisfied, the resource tenant issues a token and redirects the user to its resource. |
 
 ## Conditional Access for external users
@@ -93,11 +91,11 @@ When configuring a Conditional Access policy, you have granular control over the
 - **Other external users** - Applies to any users who don't fall into these categories, but who aren't considered internal members of your organization, meaning they don't authenticate internally via Microsoft Entra ID, and the user object created in the resource Microsoft Entra directory doesn't have a UserType of Member.
 
 >[!NOTE]
-> The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Condtional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX does not have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specifc types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
+> The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Conditional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX doesn't have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specific types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
 
 Learn more about [Conditional Access user assignments](~/identity/conditional-access/concept-conditional-access-users-groups.md).
 
-### Comparing External Identities Conditional Access policies
+### Comparing External ID Conditional Access policies
 
 The following table gives a detailed comparison of the security policy and compliance options in Microsoft Entra External ID. Security policy and compliance are managed by the host/inviting organization under Conditional Access policies.
 
@@ -105,8 +103,8 @@ The following table gives a detailed comparison of the security policy and compl
 | :------------ | :-------------- | :----- |
 |**Grant controls—Block access**   |   Supported       |   Supported      |
 |**Grant controls - Require multifactor authentication**     |  Supported        |   Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept MFA claims from the external organization       |
-|**Grant controls - Require compliant device**     | Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) to accept compliant device claims from the external organization.      | Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept compliant device claims from the external organization.         |
-|**Grant controls - Require Microsoft Entra hybrid joined device**   |  Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) to accept Microsoft Entra hybrid joined device claims from the external organization  |   Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept Microsoft Entra hybrid joined device claims from the external organization       |
+|**Grant controls - Require compliant device**     | Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) to accept compliant device claims from the external organization.      | Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept compliant device claims from the external organization.         |
+|**Grant controls - Require Microsoft Entra hybrid joined device**   |  Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) to accept Microsoft Entra hybrid joined device claims from the external organization  |   Supported, requires configuring your [inbound trust settings](cross-tenant-access-settings-b2b-direct-connect.md#to-change-inbound-trust-settings-for-mfa-and-device-state) to accept Microsoft Entra hybrid joined device claims from the external organization       |
 |**Grant controls - Require approved client app**    | Not supported         |   Not supported       |
 |**Grant controls - Require app protection policy**     |  Not supported        |  Not supported        |
 |**Grant controls - Require password change**     |  Not supported        |    Not supported      |
@@ -126,15 +124,15 @@ If you configured your inbound trust settings to accept MFA claims from a B2B co
 
 If MFA trust isn't enabled, the user experience is different for B2B collaboration users and B2B direct connect users:
 
-- **B2B collaboration users**: If the resource organization doesn't enable MFA trust with the user's home tenant, the user is presented with an MFA challenge from the resource organization. (The flow is the same as the [MFA flow for non-Azure AD external users](#mfa-for-non-azure-ad-external-users).)
+- **B2B collaboration users**: If the resource organization doesn't enable MFA trust with the user's home tenant, the user is presented with an MFA challenge from the resource organization. (The flow is the same as the [MFA flow for non-Microsoft Entra ID external users](#mfa-for-non-microsoft-entra-id-external-users).)
 
 - **B2B direct connect users**: If the resource organization doesn't enable MFA trust with the user's home tenant, the user is blocked from accessing resources. If you want to allow B2B direct connect with an external organization and your Conditional Access policies require MFA, you *must* configure your inbound trust settings to accept MFA claims from the organization.
 
-Learn more about how to [configure inbound trust settings for MFA](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims).
+Learn more about how to [configure inbound trust settings for MFA](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims).
 
-### MFA for non-Azure AD external users
+### MFA for non-Microsoft Entra ID external users
 
-For non-Azure AD external users, the resource tenant is always responsible for MFA. The following example shows a typical MFA flow. This scenario works for any identity, including a Microsoft Account (MSA) or social ID. This flow also applies for Microsoft Entra external users when you don't configure trust settings with their home Microsoft Entra organization.
+For non-Microsoft Entra ID external users, the resource tenant is always responsible for MFA. The following example shows a typical MFA flow. This scenario works for any identity, including a Microsoft Account (MSA) or social ID. This flow also applies for Microsoft Entra external users when you don't configure trust settings with their home Microsoft Entra organization.
 
 1. An admin or information worker in a company named Fabrikam invites a user from another company named Contoso to use Fabrikam's app.
 
@@ -155,31 +153,23 @@ Fabrikam must have sufficient premium Microsoft Entra ID licenses that support M
 
 The following PowerShell cmdlets are available to *proof up* or request MFA registration from B2B collaboration users.
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
 1. Connect to Microsoft Entra ID:
 
    ```powershell
-   $cred = Get-Credential
-   Connect-MsolService -Credential $cred
+   Connect-Entra -Scopes 'User.Read.All'
    ```
 
 2. Get all users with proof up methods:
 
    ```powershell
-   Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
-   ```
-
-   For example:
-
-   ```powershell
-   Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
+   Get-EntraUser | where { $_.StrongAuthenticationMethods} | select userPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
    ```
 
 3. Reset the Microsoft Entra multifactor authentication method for a specific user to require the user to set proof up methods again, for example:
 
    ```powershell
-   Reset-MsolStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@ WoodGroveAzureAD.onmicrosoft.com
+   Connect-Entra -Scopes 'UserAuthenticationMethod.ReadWrite.All'
+   Reset-EntraStrongAuthenticationMethodByUpn -UserPrincipalName jmorgan_fabrikam.com#EXT#@woodgrovebank.onmicrosoft.com
    ```
 
 ### Authentication strength policies for external users
@@ -199,7 +189,7 @@ You can use one of these built-in strengths or create a custom authentication st
 > [!NOTE]
 > Currently, you can only apply authentication strength policies to external users who authenticate with Microsoft Entra ID. For email one-time passcode, SAML/WS-Fed, and Google federation users, use the MFA grant control to require MFA.
 
-When you apply an authentication strength policy to external Microsoft Entra users, the policy works together with [MFA trust settings](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user first authenticates using their own account in their home Microsoft Entra tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you enabled MFA trust.
+When you apply an authentication strength policy to external Microsoft Entra users, the policy works together with [MFA trust settings](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA. A Microsoft Entra user first authenticates using their own account in their home Microsoft Entra tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you enabled MFA trust.
 
 In external user scenarios, the authentication methods that are acceptable for fulfilling authentication strength vary, depending on whether the user is completing MFA in their home tenant or the resource tenant. The following table indicates the acceptable methods in each tenant. If a resource tenant opts to trust claims from external Microsoft Entra organizations, only those claims listed in the “Home tenant” column are accepted by the resource tenant for MFA fulfillment. If the resource tenant disabled MFA trust, the external user must complete MFA in the resource tenant using one of the methods listed in the “Resource tenant” column.
 
@@ -210,20 +200,20 @@ In external user scenarios, the authentication methods that are acceptable for f
 |SMS as second factor                         | &#x2705;        | &#x2705; |
 |Voice call                                   | &#x2705;        | &#x2705; |
 |Microsoft Authenticator push notification    | &#x2705;        | &#x2705; |
-|Microsoft Authenticator phone sign-in        | &#x2705;        | &#x2705; |
+|Microsoft Authenticator phone sign-in        | &#x2705;        |          |
 |OATH software token                          | &#x2705;        | &#x2705; |
 |OATH hardware token                          | &#x2705;        |          |
 |FIDO2 security key                           | &#x2705;        |          |
 |Windows Hello for Business                   | &#x2705;        |          |
+|Certificate-based authentication             | &#x2705;        |          |
 
-
-To configure a Conditional Access policy that applies authentication strength requirements to external users or guests, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
+To configure a Conditional Access policy that applies authentication strength requirements to external users or guests, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/policy-guests-mfa-strength.md).
 
 <a name='user-experience-for-external-azure-ad-users'></a>
 
 #### User experience for external Microsoft Entra users
 
-Authentication strength policies work together with [MFA trust settings](cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA.  
+Authentication strength policies work together with [MFA trust settings](cross-tenant-access-settings-b2b-collaboration.yml#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings to determine where and how the external user must perform MFA.  
 
 First, a Microsoft Entra user authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you've enabled MFA trust.
 
@@ -238,7 +228,7 @@ If the user is unable to complete MFA, or if a Conditional Access policy (such a
 
 Organizations can use Conditional Access policies to require users' devices to be managed by Microsoft Intune. Such policies can block external user access, because an external user can't register their unmanaged device with the resource organization. Devices can only be managed by a user's home tenant.
 
-However, you can use device trust settings to unblock external users while still requiring managed devices. In your cross-tenant access settings, you can choose to trust claims from an external user's home tenant about whether the user's device meets their device compliance policies or is [Microsoft Entra hybrid joined](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md). You can set device trust settings for all Microsoft Entra organizations or individual organizations.
+However, you can use device trust settings to unblock external users while still requiring managed devices. In your cross-tenant access settings, you can choose to trust claims from an external user's home tenant about whether the user's device meets their device compliance policies or is [Microsoft Entra hybrid joined](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md). You can set device trust settings for all Microsoft Entra organizations or individual organizations.
 
 When device trust settings are enabled, Microsoft Entra ID checks a user's authentication session for a device claim. If the session contains a device claim indicating that the policies were already met in the user's home tenant, the external user is granted seamless sign-on to your shared resource.
 
@@ -281,22 +271,22 @@ The [User-risk policy](~/identity/conditional-access/concept-conditional-access-
 
 [Session controls](~/identity/conditional-access/concept-conditional-access-session.md) behave the same for B2B guest users as they do for any other type of user.
 
-## Identity protection and user risk policies
+## Microsoft Entra ID Protection and user risk policies
 
-Identity Protection detects compromised credentials for Microsoft Entra users and marks user accounts that may be compromised as "at risk." As a resource tenant, you can apply user risk policies to external users to block risky sign-ins. For an external user, the user risk is evaluated at their home directory. The real-time sign-in risk for these users is evaluated at the resource directory when they try to access the resource. However, because an external user's identity exists in their home directory, the following are limitations:
+Microsoft Entra ID Protection detects compromised credentials for Microsoft Entra users and marks user accounts that may be compromised as "at risk." As a resource tenant, you can apply user risk policies to external users to block risky sign-ins. For an external user, the user risk is evaluated at their home directory. The real-time sign-in risk for these users is evaluated at the resource directory when they try to access the resource. However, because an external user's identity exists in their home directory, the following are limitations:
 
-- If an external user triggers the Identity Protection user risk policy to force password reset, they're blocked because they can't reset their password in the resource organization.
+- If an external user triggers the ID Protection user risk policy to force password reset, they're blocked because they can't reset their password in the resource organization.
 - The resource organization's risky users report doesn't reflect external users because the risk evaluation occurs in the external user's home directory.
 - Admins in the resource organization can't dismiss or remediate a risky external user because they don't have access to the B2B user's home directory.
 
-You can prevent risk-based policies from affecting external users by creating a group in Microsoft Entra ID that contains all of your organization's external users. Then, add this group as an exclusion for your built-in Identity Protection user risk and sign-in risk policies, and any Conditional Access policies that use sign-in risk as a condition.
+You can prevent risk-based policies from affecting external users by creating a group in Microsoft Entra ID that contains all of your organization's external users. Then, add this group as an exclusion for your user risk and sign-in risk based Conditional Access policies.
 
-For more information, see [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md).
+For more information, see [Microsoft Entra ID Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md).
 
 ## Next steps
 
 For more information, see the following articles:
 
 - [Zero Trust policies for allowing guest access and B2B external user access](/microsoft-365/security/office-365-security/identity-access-policies-guest-access?view=o365-worldwide&preserve-view=true)
-- [Identity Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md)
+- [Microsoft Entra ID Protection and B2B users](~/id-protection/concept-identity-protection-b2b.md)
 - [Frequently Asked Questions (FAQs)](./faq.yml)

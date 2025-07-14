@@ -4,6 +4,7 @@ ms.service: entra-id
 ms.topic: include
 ms.date: 12/22/2022
 ms.author: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 <a name='retrieve-the-ids-of-the-users-in-azure-ad'></a>
@@ -33,12 +34,22 @@ The first time your organization uses these cmdlets for this scenario, you need 
 1. Connect to Microsoft Entra ID:
 
    ```powershell
-   $msg = Connect-MgGraph -ContextScope Process -Scopes "User.Read.All,Application.ReadWrite.All,AppRoleAssignment.ReadWrite.All,EntitlementManagement.ReadWrite.All"
+   $msg = Connect-MgGraph -ContextScope Process -Scopes "User.ReadWrite.All,Application.ReadWrite.All,AppRoleAssignment.ReadWrite.All,EntitlementManagement.ReadWrite.All"
    ```
+
+1. If this is the first time you have used this command, you may need to consent to allow the Microsoft Graph Command Line tools to have these permissions.
+
 
 1. Read the list of users obtained from the application's data store into the PowerShell session. If the list of users was in a CSV file, you can use the PowerShell cmdlet `Import-Csv` and provide the name of the file from the previous section as an argument. 
 
-   For example, if the file is named *users.csv* and located in the current directory, enter this command:
+   For example, if the file obtained from SAP Cloud Identity Services is named *Users-exported-from-sap.csv* and is located in the current directory, enter this command.
+
+   ```powershell
+   $filename = ".\Users-exported-from-sap.csv"
+   $dbusers = Import-Csv -Path $filename -Encoding UTF8
+   ```
+
+   For another example if you are using a database or directory, if the file is named *users.csv* and located in the current directory, enter this command:
 
    ```powershell
    $filename = ".\users.csv"
@@ -47,7 +58,14 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
 1. Choose the column of the *users.csv* file that will match with an attribute of a user in Microsoft Entra ID.
 
-   For example, you might have users in a database where the value in the column named `EMail` is the same value as in the Microsoft Entra attribute `userPrincipalName`:
+   If you are using SAP Cloud Identity Services, then the default mapping is the SAP SCIM attribute `userName` with the Microsoft Entra ID attribute `userPrincipalName`:
+
+   ```powershell
+   $db_match_column_name = "userName"
+   $azuread_match_attr_name = "userPrincipalName"
+   ```
+
+   For another example if you are using a database or directory, you might have users in a database where the value in the column named `EMail` is the same value as in the Microsoft Entra attribute `userPrincipalName`:
 
    ```powershell
    $db_match_column_name = "EMail"
@@ -56,7 +74,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
 1. Retrieve the IDs of those users in Microsoft Entra ID.
 
-   The following PowerShell script uses the `$dbusers`, `$db_match_column_name`, and `$azuread_match_attr_name` values specified earlier. It will query Microsoft Entra ID to locate a user that has an attribute with a matching value for each record in the source file. If there are many users in the source database or directory, this script might take several minutes to finish.  If you don't have an attribute in Microsoft Entra ID that has the value, and need to use a `contains` or other filter expression, then you will need to customize this script and that in step 11 below to use a different filter expression.
+   The following PowerShell script uses the `$dbusers`, `$db_match_column_name`, and `$azuread_match_attr_name` values specified earlier. It will query Microsoft Entra ID to locate a user that has an attribute with a matching value for each record in the source file. If there are many users in the file obtained from the source SAP Cloud Identity Services, database, or directory, this script might take several minutes to finish. If you don't have an attribute in Microsoft Entra ID that has the value, and need to use a `contains` or other filter expression, then you will need to customize this script and that in step 11 below to use a different filter expression.
 
    ```powershell
    $dbu_not_queried_list = @()
@@ -87,7 +105,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
    ```
 
-1. View the results of the previous queries. See if any of the users in the database or directory couldn't be located in Microsoft Entra ID, because of errors or missing matches.
+1. View the results of the previous queries. See if any of the users in SAP Cloud Identity Services, the database, or directory couldn't be located in Microsoft Entra ID, because of errors or missing matches.
 
    The following PowerShell script will display the counts of records that weren't located:
 
@@ -127,12 +145,14 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
    For example, someone's email address and userPrincipalName might have been changed in Microsoft Entra ID without their corresponding `mail` property being updated in the application's data source. Or, the user might have already left the organization but is still in the application's data source. Or there might be a vendor or super-admin account in the application's data source that does not correspond to any specific person in Microsoft Entra ID.
 
-1. If there were users who couldn't be located in Microsoft Entra ID, or weren't active and able to sign in, but you want to have their access reviewed or their attributes updated in the database or directory, you need to update or create Microsoft Entra users for them. You can create users in bulk by using either:
+1. If there were users who couldn't be located in Microsoft Entra ID, or weren't active and able to sign in, but you want to have their access reviewed or their attributes updated in SAP Cloud Identity Services, the database, or directory, you'll need to update the application, the matching rule, or update or create Microsoft Entra users for them. For more information on which change to make, see [manage mappings and user accounts in applications that did not match to users in Microsoft Entra ID](~/identity/app-provisioning/application-provisioning-application-unmatched-users.md).
+
+   If you choose the option of creating users in Microsoft Entra ID, you can create users in bulk by using either:
 
    - A CSV file, as described in [Bulk create users in the Microsoft Entra admin center](~/identity/users/users-bulk-add.md)
    - The [New-MgUser](/powershell/module/microsoft.graph.users/new-mguser?view=graph-powershell-1.0#examples&preserve-view=true) cmdlet  
 
-   Ensure that these new users are populated with the attributes required for Microsoft Entra ID to later match them to the existing users in the application, and the attributes required by Microsoft Entra ID, including `userPrincipalName`, `mailNickname` and `displayName`.  The `userPrincipalName` must be unique among all the users in the directory.
+   Ensure that these new users are populated with the attributes required for Microsoft Entra ID to later match them to the existing users in the application, and the attributes required by Microsoft Entra ID, including `userPrincipalName`, `mailNickname` and `displayName`. The `userPrincipalName` must be unique among all the users in the directory.
 
    For example, you might have users in a database where the value in the column named `EMail` is the value you want to use as the Microsoft Entra user principal Name, the value in the column `Alias` contains the Microsoft Entra ID mail nickname, and the value in the column `Full name` contains the user's display name:
 
@@ -142,7 +162,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
    $db_mail_nickname_column_name = "Alias"
    ```
 
-   Then you can use this script to create Microsoft Entra users for those in the database or directory that didn't match with users in Microsoft Entra ID.  Note that you may need to modify this script to add additional Microsoft Entra attributes needed in your organization, or if the `$azuread_match_attr_name` is neither `mailNickname` nor `userPrincipalName`, in order to supply that Microsoft Entra attribute.
+   Then you can use this script to create Microsoft Entra users for those in SAP Cloud Identity Services, the database, or directory that didn't match with users in Microsoft Entra ID. Note that you may need to modify this script to add additional Microsoft Entra attributes needed in your organization, or if the `$azuread_match_attr_name` is neither `mailNickname` nor `userPrincipalName`, in order to supply that Microsoft Entra attribute.
 
    ```powershell
    $dbu_missing_columns_list = @()
@@ -169,7 +189,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
    }
    ```
 
-1. After you add any missing users to Microsoft Entra ID, run the script from step 6 again. Then run the script from step 7. Check that no errors are reported.
+1. After you add any missing users to Microsoft Entra ID, run the script from step 7 again. Then run the script from step 8. Check that no errors are reported.
 
    ```powershell
    $dbu_not_queried_list = @()

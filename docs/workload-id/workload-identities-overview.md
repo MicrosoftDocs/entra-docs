@@ -1,14 +1,14 @@
 ---
 title: Workload identities
 description: Understand the concepts and supported scenarios for using workload identity in Microsoft Entra.
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 ms.service: entra-workload-id
 
-ms.topic: concept-article
-ms.date: 01/10/2024
-ms.author: ryanwi
-ms.reviewer: arluca, ilanas, naha
+ms.topic: overview
+ms.date: 03/13/2025
+ms.author: shermanouko
+ms.reviewer: arluca, ilanas, hosamsh
 ms.custom: aaddev
 #Customer intent: As a developer, I want workload identities so I can authenticate with Microsoft Entra ID and access Microsoft Entra protected resources.
 ---
@@ -41,8 +41,7 @@ At a high level, there are two types of identities: human and machine/non-human 
 
 More and more, solutions are reliant on non-human entities to complete vital tasks and the number of non-human identities is increasing dramatically. Recent cyber attacks show that adversaries are increasingly targeting non-human identities over human identities.
 
-Human users typically have a single identity used to access a broad range of resources. Unlike a human user, a software workload may deal with multiple credentials to access different resources and those credentials need to be stored
-securely. It’s also hard to track when a workload identity is created or when it should be revoked. Enterprises risk their applications or services being exploited or breached because of difficulties in securing workload identities.
+Human users typically have a single identity used to access a broad range of resources. Unlike a human user, a software workload may deal with multiple credentials to access different resources and those credentials need to be stored securely. It’s also hard to track when a workload identity is created or when it should be revoked. Enterprises risk their applications or services being exploited or breached because of difficulties in securing workload identities.
 
 :::image type="content" source="media/workload-identities-overview/pain-points.png" alt-text="Diagram that shows pain points in securing workload identities." border="false":::
 
@@ -60,7 +59,7 @@ Secure access with adaptive policies:
 
 Intelligently detect compromised identities:
 
-- Detect risks (like leaked credentials), contain threats, and reduce risk to workload identities using [Identity Protection](~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
+- Detect risks (like leaked credentials), contain threats, and reduce risk to workload identities using [Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md?toc=/azure/active-directory/workload-identities/toc.json&bc=/azure/active-directory/workload-identities/breadcrumb/toc.json).
 
 Simplify lifecycle management:
 

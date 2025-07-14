@@ -3,7 +3,7 @@ title: Troubleshoot problems signing in to an application from My Apps portal
 description: Troubleshoot problems signing in to an application from Microsoft Entra My Apps
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
@@ -47,7 +47,7 @@ Here are some things to check if an app is appearing or not appearing:
 - Make sure the user’s account is **not locked out.**
 - Make sure the user’s **password is not expired or forgotten.**
 - Make sure **Multi-Factor Authentication** isn't blocking user access.
-- Make sure a **Conditional Access policy** or **Identity Protection** policy isn't blocking user access.
+- Make sure a **Conditional Access policy** or **legacy Identity Protection** policy isn't blocking user access.
 - Make sure that a user’s **authentication contact info** is up to date to allow Multi-Factor Authentication or Conditional Access policies to be enforced.
 - Make sure to also try clearing your browser’s cookies and trying to sign in again.
 
@@ -66,7 +66,6 @@ Access to My Apps can be blocked due to a problem with the user’s account. Fol
 - [Check a user’s assigned licenses](#check-a-users-assigned-licenses)
 - [Assign a user a license](#assign-a-user-a-license)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 <a name='check-if-a-user-account-exists-in-azure-active-directory'></a>
 
@@ -75,7 +74,7 @@ Access to My Apps can be blocked due to a problem with the user’s account. Fol
 To check if a user’s account is present, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Search for the user you're interested in and select the row to view the details of the user.
 1. Check the properties of the user object to be sure that they look as you expect and no data is missing.
 
@@ -84,7 +83,7 @@ To check if a user’s account is present, follow these steps:
 To check a user’s account status, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Profile**.
 1. Under **Settings** ensure that **Block sign in** is set to **No**.
@@ -94,12 +93,12 @@ To check a user’s account status, follow these steps:
 To reset a user’s password, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select the **Reset password** button at the top of the user pane.
 1. Select the **Reset password** button on the **Reset password** pane that appears.
 1. Copy the **temporary password** or **enter a new password** for the user.
-1. Communicate this new password to the user, they be required to change this password during their next sign-in to Microsoft Entra ID.
+1. Communicate this new password to the user. They might be required to change this password during their next sign-in to Microsoft Entra ID.
 
 ### Enable self-service password reset
 
@@ -113,7 +112,7 @@ To enable self-service password reset, follow these deployment steps:
 To check a user’s multi-factor authentication status, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select the **Per-user MFA** button at the top of the pane.
 1. Once the **Multi-Factor Authentication** administration portal loads, ensure you are on the **Users** tab.
 1. Find the user in the list of users by searching, filtering, or sorting.
@@ -123,10 +122,10 @@ To check a user’s multi-factor authentication status, follow these steps:
 
 ### Check a user’s authentication contact info
 
-To check a user’s authentication contact info used for Multi-factor authentication, Conditional Access, Identity Protection, and Password Reset, follow these steps:
+To check a user’s authentication contact info used for multifactor authentication, Conditional Access, and Password Reset, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Authentication method** under **Manage**.
 1. **Review** the data registered for the user and update as needed.
@@ -136,7 +135,7 @@ To check a user’s authentication contact info used for Multi-factor authentica
 To check a user’s group memberships, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Groups** to see which groups the user is a member of.
 
@@ -158,7 +157,7 @@ To check if a user has more than 999 app role assignments, follow these steps:
 To check a user’s assigned licenses, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Licenses** to see which licenses the user currently has assigned.
 
@@ -167,7 +166,7 @@ To check a user’s assigned licenses, follow these steps:
 To assign a license to a user, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Search for the user you're interested in and select the row with the user's details.
 1. Select **Licenses** to see which licenses the user currently has assigned.
 1. Select the **Assignments** button.
@@ -184,7 +183,7 @@ Deep links or User access URLs are links your users may use to access their pass
 To check if you have the correct deep link, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. Find the label **User Access URL**. Your deep link should match this URL.
 

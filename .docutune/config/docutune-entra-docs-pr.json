@@ -7,9 +7,6 @@
     }
   ],
   "MetadataDelimiter": "\"",
-  "Include": [
-    "docs/identity/devices"
-  ],
   "Exclude": [],
   "RemoveTermSets": [
     "*au-administrative-unit*",
@@ -21,17 +18,22 @@
     "*single-backtick*",
     "*incorrect-backtick-spacing*",
     "*-caution-*",
+    "*cloudsimple*",
     "*-crm-*",
     "*-crud-*",
+    "*-mdm-*",
     "*-mvc-*",
+    "*-mvp-*",
+    "*september-october-november*",
     "product-azure-app-service",
-    "invalid-product-microsoft-visual-studio-vs"
+    "invalid-product-microsoft-visual-studio-vs",
+    "casing-prefixes-0026"
   ],
   "PreloadTOCFiles": [
   ],
   "TermFiles": [
     "Dictionary-Onboard.ps1",
-    "Bundle-Standard.txt",
+    "Bundle-EverGreen.txt",
     "Bundle-Cloud.txt"
   ],
   "ApplyPolicies": []

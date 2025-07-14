@@ -1,18 +1,15 @@
 ---
 title: Microsoft Entra certificate-based authentication technical deep dive
 description: Learn how Microsoft Entra certificate-based authentication works
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/14/2023
-
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vraganathan
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-image-nochange
 ms.localizationpriority: high
 ---
 
@@ -28,7 +25,7 @@ The following image describes what happens when a user tries to sign in to an ap
 
 :::image type="content" border="false" source="./media/concept-certificate-based-authentication-technical-deep-dive/how-it-works.png" alt-text="Illustration with steps about how Microsoft Entra certificate-based authentication works." :::
 
-Now we'll walk through each step:
+What follows are the steps to take:
 
 1. The user tries to access an application, such as [MyApps portal](https://myapps.microsoft.com/).
 1. If the user isn't already signed in, the user is redirected to the Microsoft Entra ID **User Sign-in** page at [https://login.microsoftonline.com/](https://login.microsoftonline.com/).
@@ -47,25 +44,22 @@ Now we'll walk through each step:
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-alt.png" alt-text="Screenshot of the Sign-in if FIDO2 is also enabled.":::
 
-1. Once the user selects certificate-based authentication, the client is redirected to the certauth endpoint, which is [https://certauth.login.microsoftonline.com](https://certauth.login.microsoftonline.com) for public Entra ID. For [Azure Government](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers), the certauth endpoint is [https://certauth.login.microsoftonline.us](https://certauth.login.microsoftonline.us).  
+1. Once the user selects certificate-based authentication, the client is redirected to the certauth endpoint, which is [https://certauth.login.microsoftonline.com](https://certauth.login.microsoftonline.com) for public Microsoft Entra ID. For [Azure Government](/azure/azure-government/compare-azure-government-global-azure#guidance-for-developers), the certauth endpoint is [https://certauth.login.microsoftonline.us](https://certauth.login.microsoftonline.us).  
 
    <!---
    If you enable issuer hints, the certauth endpoint is `https://t{tenantid}.certauth.login.microsoftonline.com`.
    --->
 
-   The endpoint performs TLS mutual authentication, and requests the client certificate as part of the TLS handshake. An entry for this request appears in the Sign-ins log.
+   The endpoint performs TLS mutual authentication, and requests the client certificate as part of the TLS handshake. An entry for this request appears in the sign-in log.
 
    >[!NOTE]
    >The network administrator should allow access to the User sign-in page and certauth endpoint `*.certauth.login.microsoftonline.com` for the customer's cloud environment. Disable TLS inspection on the certauth endpoint to make sure the client certificate request succeeds as part of the TLS handshake.
 
    Make sure your TLS inspection disablement also works for the new url with issuer hints. Don't hardcode the url with tenantId because it might change for B2B users. Use a regular expression to allow both the old and new URL to work for TLS inspection disablement. For example, depending on the proxy, use `*.certauth.login.microsoftonline.com` or `*certauth.login.microsoftonline.com`. In Azure Government, use `*.certauth.login.microsoftonline.us` or `*certauth.login.microsoftonline.us`.
 
-   Unless access is allowed, certificate-based authentication fails if you enable the upcoming Trusted CA hints feature.
+   Unless access is allowed, certificate-based authentication fails if you enable [issuer hints](#understanding-issuer-hints-preview).
 
 1. Microsoft Entra ID requests a client certificate. The user picks the client certificate, and selects **Ok**.
-
-   >[!NOTE] 
-   >Trusted CA hints aren't supported, so the list of certificates can't be further scoped. We're looking into adding this functionality in the future.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png" alt-text="Screenshot of the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png":::
 
@@ -74,40 +68,69 @@ Now we'll walk through each step:
 1. Microsoft Entra ID completes the sign-in process by sending a primary refresh token back to indicate successful sign-in.
 1. If the user sign-in is successful, the user can access the application.
 
-## Certificate-based authentication is MFA capable
+## Understanding issuer hints (Preview)
 
-Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
+Issuer hints send back a Trusted CA Indication as part of the TLS handshake. The trusted CA list is set to subject of the Certificate Authorities (CAs) uploaded by the tenant in the Entra trust store. A browser client or native application client can use the hints sent back by server to filter the certificates shown in the certificate picker. The client shows only the authentication certificates issued by the CAs in the trust store. 
+
+### Enable issuer hints
+
+To enable select on the check box **Issuer Hints**. [Authentication Policy Administrators](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) should select **I acknowledge** after making sure that the proxy with TLS inspection enabled is updated correctly, and save.
+
+>[!NOTE]
+>If your organization has firewalls or proxies with TLS inspection, acknowledge that you disabled TLS inspection of the certauth endpoint capable of matching any name under `[*.]certauth.login.microsoftonline.com`, customized according to the specific proxy in use. 
+
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot of how to enable issuer hints.":::
+
+>[!Note] 
+>The certificate authority URL is in the format `t{tenantId}.certauth.login.microsoftonline.com` after issuer hints are enabled.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints-picker.png" alt-text="Screenshot of the certificate picker after issuer hints are enabled.":::
+
+### CA trust store update propagation
+
+After you enable issuer hints and add, update, or delete CAs from the trust state, there's a delay of up to 10 minutes to propagate the issuer hints back to client. Users can't authenticate with certificates issued by the new CAs until the hints are propagated. 
+
+Authentication Policy Administrators should sign in with a certificate after they enable issuer hints to initiate the propagation. Users see the following error message when CA trust store updates are in propagation.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/propagation-error.png" alt-text="Screenshot of an error users see if updates are in progress.":::
+
+## MFA with single-factor certificate-based authentication
+
+Microsoft Entra CBA is supported as both first factor and second factor for authentication. 
+Some of the supported combinations are:
+
+1. CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey.md) (second factor)
+1. CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
+1. CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md) (second factor)
+1. Password (first factor) + CBA (second factor) (Preview)
+
+>[!Note]
+>CBA as a second factor on iOS has [known issues](./concept-certificate-based-authentication-mobile-ios.md#known-issues) and is blocked on iOS. We are working on fixing the issues and should be supported on iOS.
+
+Users need to have a way to get MFA and register passwordless sign-in or FIDO2 in advance to signing in with Microsoft Entra CBA.
+
+>[!IMPORTANT]
+>A user is considered MFA capable when they're included in the CBA method settings. This means the user can't use proof up as part of their authentication to register other available methods. Make sure users without a valid certificate aren't included in the CBA method settings. For more information about how authentication works, see [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
+
+## Options to get MFA capability with Single factor certificates
+
+Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user with single factor certificate needs another factor to complete MFA which is why we will not allow registration of other methods without satisfying MFA. If the user doesn't have any other MFA auth method registered and are added into scope for CBA auth method, the user can't proof up to register other authentication methods and get MFA.
 
 If the CBA-enabled user only has a Single Factor (SF) certificate and needs to complete MFA:
-   1. Use a password and SF certificate.
-   1. Issue a Temporary Access Pass.
+   1. Use a password and SF certificate (OR)
+   1. Authentication Policy Administrator can issue a Temporary Access Pass (OR)
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
 
 If the CBA-enabled user hasn't yet been issued a certificate and needs to complete MFA:
-   1. Issue a Temporary Access Pass.
+   1. Authentication Policy Administrator can issue a Temporary Access Pass (OR)
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
 
 If the CBA-enabled user can't use an MF cert, such as on mobile device without smart card support, and needs to complete MFA:
-   1. Issue a Temporary Access Pass.
-   1. User needs to register another MFA method (when user can use MF cert).
-   1. Use password and MF cert (when user can use MF cert).
+   1. Authentication Policy Administrator can issue a Temporary Access Pass (OR)
+   1. User needs to register another MFA method (when user can use MF cert on some device) (OR)
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
-
-
-## MFA with single-factor certificate-based authentication (Preview)
-
-Microsoft Entra CBA can be used as a second factor to meet MFA requirements with single-factor certificates. 
-Some of the supported combinations are:
-
-1. CBA (first factor) and passwordless phone sign-in (passwordless sign-in as second factor)
-1. CBA (first factor) and FIDO2 security keys (second factor) 
-1. Password (first factor) and CBA (second factor) 
-
-Users need to have another way to get MFA and register passwordless sign-in or FIDO2 in advance to signing in with Microsoft Entra CBA.
-
->[!IMPORTANT]
->A user is considered MFA capable when they are included in the CBA method settings. This means the user can't use proof up as part of their authentication to register other available methods. Make sure users without a valid certificate aren't included in the CBA method settings. For more information about how authentication works, see [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
-
+      
 **Steps to set up passwordless phone sign in (PSI) with CBA**
 
 For passwordless sign-in to work, users should disable legacy notification through their mobile app.
@@ -119,7 +142,7 @@ For passwordless sign-in to work, users should disable legacy notification throu
    >[!IMPORTANT]
    >In the preceding configuration, make sure you chose **Passwordless** option. You need to change the **Authentication mode** for any groups added for PSI to **Passwordless**. If you choose **Any**, CBA and PSI don't work.
 
-1. Select **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
+1. Select **Entra ID** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/configure.png" alt-text="Screenshot of how to configure multifactor authentication settings.":::
 
@@ -162,11 +185,11 @@ Let's look at an example of a user who has single-factor certificate, and is con
 
 ## Understanding the authentication binding policy
 
-The authentication binding policy helps determine the strength of authentication as either single-factor or multifactor. An administrator can change the default value from single-factor to multifactor, or set up custom policy configurations either by using issuer subject or policy OID or Issuer and Policy OID fields in the certificate.
+The authentication binding policy helps determine the strength of authentication as either single-factor or multifactor. Authentication Policy Administrators can change the default value from single-factor to multifactor, or set up custom policy configurations either by using issuer subject or policy OID or Issuer and Policy OID fields in the certificate.
 
 ### Certificate strengths
 
-An admin can determine whether the certificates are single-factor or multifactor strength. For more information, see the documentation that maps [NIST Authentication Assurance Levels to Microsoft Entra auth Methods](https://aka.ms/AzureADNISTAAL), which builds upon [NIST 800-63B SP 800-63B, Digital Identity Guidelines: Authentication and Lifecycle Mgmt](https://csrc.nist.gov/publications/detail/sp/800-63b/final).
+Authentication Policy Administrators can determine whether the certificates are single-factor or multifactor strength. For more information, see the documentation that maps [NIST Authentication Assurance Levels to Microsoft Entra auth Methods](https://aka.ms/AzureADNISTAAL), which builds upon [NIST 800-63B SP 800-63B, Digital Identity Guidelines: Authentication and Lifecycle Mgmt](https://csrc.nist.gov/publications/detail/sp/800-63b/final).
 
 ### Multifactor certificate authentication 
 
@@ -176,10 +199,10 @@ When a user has a multifactor certificate, they can perform multifactor authenti
 
 ### How Microsoft Entra ID resolves multiple authentication policy binding rules
 
-Because multiple custom authentication binding policy rules can be created with different certificate fields like using issuer + policy OID, or just Policy OID or just issuer. below are the steps used to determine the authentication protection level when custom rules overlap. They are as follows:
+Because multiple custom authentication binding policy rules can be created with different certificate fields like using issuer + policy OID, or just Policy OID or just issuer. Below are the steps used to determine the authentication protection level when custom rules overlap. They are as follows:
 
 1. Issuer + policy OID rules take precedence over Policy OID rules. Policy OID rules take precedence over certificate issuer rules. 
-1. Issuer + policy OID rules are evaluated first. If you have a custom rule with issuer CA1 and policy OID **1.2.3.4.5** with MFA, only certificate A satisfies both issuer value and policy OID will be given MFA.
+1. Issuer + policy OID rules are evaluated first. If you have a custom rule with issuer CA1 and policy OID **1.2.3.4.5** with MFA, only certificate A that satisfies both issuer value and policy OID is given MFA.
 1. Next, custom rules using policy OIDs are evaluated. If you have a certificate A with policy OID **1.2.3.4.5** and a derived credential B based on that certificate has a policy OID **1.2.3.4.5.6**, and the custom rule is defined as **Policy OID** with value **1.2.3.4.5** with MFA, only certificate A satisfies MFA, and credential B satisfies only single-factor authentication. If the user used derived credential during sign-in and was configured to have MFA, the user is asked for a second factor for successful authentication.
 1. If there's a conflict between multiple policy OIDs (such as when a certificate has two policy OIDs, where one binds to single-factor authentication and the other binds to MFA) then treat the certificate as a single-factor authentication.
 1. Next, custom rules using issuer CA are evaluated.
@@ -189,13 +212,13 @@ Because multiple custom authentication binding policy rules can be created with 
 1. One certificate issuer can only have one valid strong authentication binding (that is, a certificate can't bind to both single-factor and MFA).
 
 >[!IMPORTANT]
->There is a known issue where an Entra tenant admin configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
+>There's a known issue where a Microsoft Entra Authentication Policy Administrator configures a CBA authentication policy rule using both Issuer and Policy OID impacts some device registration scenarios including:
 >- Windows Hello For Business enrollment
 >- Fido2 Security Key registration
 >- Windows Passwordless Phone Sign-in
 >  
->Device registration with Workplace Join, Entra ID and Hybrid Entra ID device join scenarios are not impacted. CBA authentication policy rules using either Issuer OR Policy OID are not impacted.
->To mitigate, admins should :
+>Device registration with Workplace Join, Microsoft Entra ID and Hybrid Microsoft Entra device join scenarios aren't impacted. CBA authentication policy rules using either Issuer OR Policy OID aren't impacted.
+>To mitigate, Authentication Policy Administrators should:
 >- Edit the certificate-based authentication policy rules currently using both Issuer and Policy OID options and remove either the Issuer or OID requirement and save. OR
 >- Remove the authentication policy rule currently using both Issuer and Policy OID and create rules using only issuer or policy OID
 >  
@@ -215,15 +238,18 @@ Mapping types based on user names and email addresses are considered low-affinit
 |:--------------------------|:----------------------------------------:|:----------------------:|:----:|
 |PrincipalName | `X509:<PN>bob@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
 |RFC822Name	| `X509:<RFC822>user@woodgrove.com` | userPrincipalName <br> onPremisesUserPrincipalName <br> certificateUserIds | low-affinity |
-|IssuerAndSubject (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
-|Subject (preview)| `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
-|SKI | `X509:<SKI>123456789abcdef` | certificateUserIds | high-affinity |
-|SHA1PublicKey | `X509:<SHA1-PUKEY>123456789abcdef` | certificateUserIds | high-affinity |
-|IssuerAndSerialNumber (preview) | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
+|IssuerAndSubject | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest` | certificateUserIds | low-affinity |
+|Subject | `X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=mfatest`  | certificateUserIds | low-affinity |
+|SKI | `X509:<SKI>aB1cD2eF3gH4iJ5kL6-mN7oP8qR=` | certificateUserIds | high-affinity |
+|SHA1PublicKey | `X509:<SHA1-PUKEY>aB1cD2eF3gH4iJ5kL6-mN7oP8qR` <br> The SHA1PublicKey value (SHA1 hash of the entire certificate content including the public key) is found in the Thumbprint property of certificate.| certificateUserIds | high-affinity |
+|IssuerAndSerialNumber | `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT` <br> To get the correct value for serial number, run this command and store the value shown in CertificateUserIds:<br> **Syntax**:<br> `Certutil –dump –v [~certificate path~] >> [~dumpFile path~]` <br> **Example**: <br> `certutil -dump -v firstusercert.cer >> firstCertDump.txt` | certificateUserIds | high-affinity |
 
-### Define Affinity binding at the tenant level and override with custom rules (Preview)
+>[!IMPORTANT]
+> You can use the [CertificateBasedAuthentication PowerShell module](concept-certificate-based-authentication-certificateuserids.md#how-to-find-the-correct-certificateuserids-values-for-a-user-from-the-end-user-certificate-using-powershell-module) to find the correct CertificateUserIds values for a user from the end user certificate.
 
-With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based or Issuer and Policy OID, or Policy OID, or Issuer.
+### Define Affinity binding at the tenant level and override with custom rules
+
+With this feature an Authentication Policy Administrator can configure whether a user can be authenticated by using low-affinity or high-affinity username binding mapping. You can set **Required affinity binding** for the tenant, which applies to all users. You can also override the tenant-wide default value by creating custom rules based on Issuer and Policy OID, or Policy OID, or Issuer.
 
 <a name='how-microsoft-entra-id-resolves-multiple-username-policy-binding-rules'></a>
 
@@ -232,7 +258,7 @@ With this feature an Authentication Policy Administrator can configure whether a
 Use the highest priority (lowest number) binding.
 
 1. Look up the user object by using the username or User Principal Name.
-1. Get the list of all username bindings setup by the tenant admin in the CBA auth method configuration ordered by the 'priority' attribute. Today the concept of priority is not exposed in Portal UX. Graph will return you the priority attribute for each binding and they are used in the evaluation process.
+1. Get the list of all username bindings setup by the Authentication Policy Administrator in the CBA authentication method configuration ordered by the 'priority' attribute. Today the concept of priority isn't exposed in Portal UX. Graph returns the priority attribute for each binding and they're used in the evaluation process.
 1. If the tenant has high affinity binding enabled or if the certificate value matches a custom rule that required high affinity binding, remove all the low affinity bindings from the list.
 1. Evaluate each binding in the list until a successful authentication occurs.
 1. If the X.509 certificate field of the configured binding is on the presented certificate, Microsoft Entra ID matches the value in the certificate field to the user object attribute value.
@@ -246,7 +272,7 @@ Use the highest priority (lowest number) binding.
 
 ## Securing Microsoft Entra configuration with multiple username bindings
 
-Each of the Microsoft Entra user object attributes (userPrincipalName, onPremiseUserPrincipalName, certificateUserIds) available to bind certificates to Microsoft Entra user accounts has a unique constraint to ensure a certificate only matches a single Microsoft Entra user account. However, Microsoft Entra CBA supports multiple binding methods in the username binding policy which allows an administrator to accommodate one certificate to multiple Entra user accounts configurations.
+Each of the Microsoft Entra user object attributes (userPrincipalName, onPremiseUserPrincipalName, certificateUserIds) available to bind certificates to Microsoft Entra user accounts has a unique constraint to ensure a certificate only matches a single Microsoft Entra user account. However, Microsoft Entra CBA supports multiple binding methods in the username binding policy which allows an Authentication Policy Administrator to accommodate one certificate to multiple Microsoft Entra user accounts configurations.
 
 >[!IMPORTANT]
 >If you configure multiple bindings, Microsoft Entra CBA authentication is only as secure as your lowest affinity binding because CBA validates each binding to authenticate the user. To prevent a scenario where a single certificate matches multiple Microsoft Entra accounts, an Authentication Policy Administrator can:
@@ -256,76 +282,80 @@ Each of the Microsoft Entra user object attributes (userPrincipalName, onPremise
 
 For example, lets suppose you have two username bindings on PrincipalName mapped to UPN and SubjectKeyIdentifier (SKI) to certificateUserIds. If you want a certificate to only be used for a single account, an Authentication Policy Administrator must make sure that account has the UPN that is present in the certificate, and implement the SKI mapping in the certificateUserId attribute of the same account.
 
-### Support for multiple certificates with one Entra user account (M:1)
+<a name='support-for-multiple-certificates-with-one-entra-user-account-m1'></a>
+
+### Support for multiple certificates with one Microsoft Entra user account (M:1)
 There are scenarios where an organization issues multiple certificates for a single identity. Most commonly this could be a derived credential for a mobile device or can also be for a secondary smartcard or x509 credential holder capable device such as a Yubikey. 
 
 **Cloud only accounts**
 For cloud-only accounts you can map multiple certificates (up to 5) for use by populating the certificateUserIds field (Authorization info in the User Portal) with unique values identifying each certificate. If the organization is using high affinity bindings say Issuer + SerialNumber, values within CertificateUserIds may look like the following: 
  
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT`\
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8-qR9sT0uV`
  
-In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. The user may present either certificate at sign-in and as long as the CBA Username Binding is set to point to the certificateUserIds field to look for the particular binding type (i.e. Issuer+SerialNumber in this example), then the user will successfully sign-in. 
+In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. The user may present either certificate at sign-in and as long as the CBA Username Binding is set to point to the certificateUserIds field to look for the particular binding type (that is, Issuer+SerialNumber in this example), then the user successfully signs in. 
 
 **Hybrid Synchronized accounts**
-For synchronized accounts you can map multiple certificates for use by populating the altSecurityIdentities field in AD the values identifying each certificate. If the organization is using high affinity (i.e. strong authentication) bindings say Issuer + SerialNumber, this could look like the following: 
+For synchronized accounts you can map multiple certificates for use by populating the altSecurityIdentities field in AD the values identifying each certificate. If the organization is using high affinity (that is, strong authentication) bindings say Issuer + SerialNumber, this could look like the following: 
  
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>c11154138u089b48767212a86cd0ef76`
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT`\
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8-qR9sT0uV`
  
-In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. These values must then be synchronized to the certificateUserIds field in Azure AD.  
+In this example the first value represents X509Certificate1 and the second value represents X509Certificate2. These values must then be synchronized to the certificateUserIds field in Microsoft Entra ID.  
 
-### Support for one certificate with multiple Entra user accounts (1:M)
-There are scenarios where an organization needs the user to use the same certificate to authenticate into multiple identities. Most commonly this is for administrative accounts. It can also be for developer accounts or temporary duty accounts. In traditional AD the altSecurityIdentities field is used to populate the certificate values and a Hint is used during login to direct AD to the desired account to check for the login. With Microsoft Entra CBA this is different and there is no Hint. Instead, Home Realm Discovery identifies the desired account to check the certificate values. The other key difference is that Microsoft Entra CBA enforces uniqueness in the certificateUserIds field. This means that two accounts cannot both populate the same certificate values. 
+<a name='support-for-one-certificate-with-multiple-entra-user-accounts-1m'></a>
+
+### Support for one certificate with multiple Microsoft Entra user accounts (1:M)
+There are scenarios where an organization needs the user to use the same certificate to authenticate into multiple identities. Most commonly this is for administrative accounts. It can also be for developer accounts or temporary duty accounts. In traditional AD the altSecurityIdentities field is used to populate the certificate values and a Hint is used during sign-in to direct AD to the desired account to check for the sign-in. With Microsoft Entra CBA this is different and there is no Hint. Instead, Home Realm Discovery identifies the desired account to check the certificate values. The other key difference is that Microsoft Entra CBA enforces uniqueness in the certificateUserIds field. This means that two accounts can't both populate the same certificate values. 
 
 >[!Important]
-> It is not a very secure configuration to use same credential to authenticate into different Entra ID accounts and it is recommended not to allow one certificate for multiple Entra user accounts.
+> It isn't a very secure configuration to use same credential to authenticate into different Microsoft Entra accounts and it's recommended not to allow one certificate for multiple Microsoft Entra user accounts.
 
 **Cloud only accounts**
-For cloud-only accounts you need to create multiple username bindings and need to map unique values to each user account that will be utilizing the certificate. Each account will be authenticated into using a different username binding. This applies within the boundary of a single directory/tenant (i.e. Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too).  
+For cloud-only accounts you need to create multiple username bindings and map unique values to each user account that is to use the certificate. Each account is authenticated into using a different username binding. This applies within the boundary of a single directory/tenant (that is, Authentication Policy Administrators can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too).  
  
-Populate the certificateUserIds field (Authorization info in the User Portal) with a unique value identifying the desired certificate. If the organization is using high affinity bindings (i.e. strong authentication) bindings say Issuer + SerialNumber and SKI, this could look like the following: 
+Populate the certificateUserIds field (Authorization info in the User Portal) with a unique value identifying the desired certificate. If the organization is using high affinity bindings (that is, strong authentication) bindings say Issuer + SerialNumber and SKI, this could look like the following: 
 
 Username bindings:
 - Issuer + Serial Number -> CertificateUserIds
 - SKI -> CertificateUserIds
 
 User account CertificateUserIds values:\
-`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>b24134139f069b49997212a86ba0ef48`\
-`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`
+`X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>aB1cD2eF3gH4iJ5kL6-mN7oP8qR`\
+`X509:<SKI>cD2eF3gH4iJ5kL6mN7-oP8qR9sT`
 
-Now, when either user presents the same certificate at sign-in the user will successfully sign-in because their account matches a unique value on that certificate. One account will be authenticated into using Issuer+SerialNumber and the other using SKI binding.
+Now, when either user presents the same certificate at sign-in the user is successfully sign-in because their account matches a unique value on that certificate. One account is authenticated into using Issuer+SerialNumber and the other using SKI binding.
 
 >[!Note]
-> The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported will be limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject).
+> The number of accounts that can be used in this manner is limited by the number of username bindings configured on the tenant. If the organization is using only High Affinity bindings the number of accounts supported is limited to 3. If the organization is also utilizing low affinity bindings then this number increases to 7 accounts (1 PrincipalName, 1 RFC822Name, 1 SubjectKeyIdentifier, 1 SHA1PublicKey, 1 Issuer+Subject, 1 Issuer+SerialNumber, 1 Subject).
 
 **Hybrid Synchronized accounts**
-For synchronized accounts the approach will be different. While the tenant admin can map unique values to each user account that will be utilizing the certificate, the common practice of populating all values to each account in Entra ID would make this difficult. Instead, Azure AD Connect should filter the desired values per account to unique values populated into the account in Entra ID. The uniqueness rule applies within the boundary of a single directory/tenant (i.e. Tenant admin can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too). Further, the organization may have multiple AD forests contributing users into a single Entra ID tenant. In this case Azure AD Connect will apply the filter to each of these AD forests with the same goal to populate only a desired unique value to the cloud account. 
+For synchronized accounts the approach is different. While Authentication Policy Administrators can map unique values to each user account that use the certificate, the common practice of populating all values to each account in Microsoft Entra ID makes this difficult. Instead, Microsoft Entra Connect should filter the desired values per account to unique values populated into the account in Microsoft Entra ID. The uniqueness rule applies within the boundary of a single directory/tenant (that is, Authentication Policy Administrators can map the certificate for use in another directory/tenant as well, as long as the values remain unique per account too). Further, the organization may have multiple AD forests contributing users into a single Microsoft Entra tenant. In this case, Microsoft Entra Connect applies the filter to each of these AD forests with the same goal to populate only a desired unique value to the cloud account. 
 
-Populate the altSecurityIdentities field in AD with the values identifying the desired certificate and to include the desired certificate value for that user account type (e.g. detailee, admin, developer, etc.). Select a key attribute in AD which will tell the synchronization which user account type the user is evaluating (e.g. msDS-cloudExtensionAttribute1). Populate this attribute with the user type value you desire such as detailee, admin, or developer. If this is the user’s primary account, the value can be left empty/null. 
+Populate the altSecurityIdentities field in AD with the values identifying the desired certificate and to include the desired certificate value for that user account type (such as detailee, admin, developer, and so on). Select a key attribute in AD which tells the synchronization which user account type the user is evaluating (such as msDS-cloudExtensionAttribute1). Populate this attribute with the user type value you desire such as detailee, admin, or developer. If this is the user’s primary account, the value can be left empty/null. 
  
 The accounts could look like the following: 
  
 Forest 1 - Account1 (bob@woodgrove.com):\
-`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`\
-`X509:<SHA1-PUKEY>123456789abcdef`\
+`X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
+`X509:<SHA1-PUKEY>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
  
 Forest 1 - Account2 (bob-admin@woodgrove.com): \
-`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`\
-`X509:<SHA1-PUKEY>123456789abcdef`\
+`X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
+`X509:<SHA1-PUKEY>>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
  
 Forest 2 – ADAccount1 (bob-tdy@woodgrove.com):\
-`X509:<SKI>82b287a25c48af0918ea088d5293712324dfd523`\
-`X509:<SHA1-PUKEY>123456789abcdef`\
+`X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
+`X509:<SHA1-PUKEY>>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
  
-These values must then be synchronized to the certificateUserIds field in Entra ID.
+These values must then be synchronized to the certificateUserIds field in Microsoft Entra ID.
 
 **Steps to synchronize to certificateUserIds**
-1. Configure Azure AD connect to add the alternativeSecurityIds field to the Metaverse
-1. For each AD Forest, configure a new custom inbound rule with a high precedence (low number below 100). Add an Expression transform with the altSecurityIdentities field as the source. The target expression will use the Key Attribute that you selected and populated as well as the mapping to the User Types that you defined.
+1. Configure Microsoft Entra Connect to add the alternativeSecurityIds field to the Metaverse
+1. For each AD Forest, configure a new custom inbound rule with a high precedence (low number below 100). Add an Expression transform with the altSecurityIdentities field as the source. The target expression uses the Key Attribute that you selected and populated as well as the mapping to the User Types that you defined.
 1. For example:
 
 ```powershell
@@ -338,8 +368,8 @@ IIF((IsPresent([msDS-cloudExtensionAttribute1]) && IsPresent([altSecurityIdentit
     Where($item,[altSecurityIdentities],(BitAnd(InStr($item, "X509:<I>"),InStrRev($item, "<SR>"))>0)), NULL) 
 )
 ```
-In the example above, altSecurityIdentities and the key attribute msDS-cloudExtensionAttribute1is are first checked to see if they are populated. If not, altSecurityIdentities is checked to see if it's populated. If it is empty then we set it to NULL. Otherwise the account falls into the default case and in this example we filter to only the Issuer+SerialNumber mapping. If the key attribute is populated, then the value is checked to see if it is equal to one of our defined user types. In this example if that value is detailee, then we filter to the SHA1PublicKey value from altSecurityIdentities. If the value is developer, then we filter to the SubjectKeyIssuer value from altSecurityIdentities. There may be multiple certificate values of a specific type. For example, multiple PrincipalName values or multiple SKI or SHA1-PUKEY values. The filter will get all the values and sync into Entra ID – not just the first one it finds.
-1. A second example that shows how to push an empty value if the control attribute is empty is below.
+In the example above, altSecurityIdentities and the key attribute msDS-cloudExtensionAttribute1is are first checked to see if they're populated. If not, altSecurityIdentities is checked to see if it's populated. If it's empty then we set it to NULL. Otherwise the account falls into the default case and in this example we filter to only the Issuer+SerialNumber mapping. If the key attribute is populated, then the value is checked to see if it's equal to one of our defined user types. In this example if that value is detailee, then we filter to the SHA1PublicKey value from altSecurityIdentities. If the value is developer, then we filter to the SubjectKeyIssuer value from altSecurityIdentities. There may be multiple certificate values of a specific type. For example, multiple PrincipalName values or multiple SKI or SHA1-PUKEY values. The filter gets all the values and sync into Microsoft Entra ID – not just the first one it finds.
+1. A second example that shows how to push an empty value if the control attribute is empty is:
  
 ```powershell
 IIF((IsPresent([msDS-cloudExtensionAttribute1]) && IsPresent([altSecurityIdentities])), 
@@ -351,41 +381,41 @@ IIF((IsPresent([msDS-cloudExtensionAttribute1]) && IsPresent([altSecurityIdentit
     AuthoritativeNull, NULL) 
 ) 
 ```
-If the value in altSecurityIdentities does not match any of the search values in the control attribute, then an AuthoritativeNull is passed. This ensures that prior or subsequent rules which populate alternativeSecurityId are ignored and the result is empty in Entra ID. 
+If the value in altSecurityIdentities doesn't match any of the search values in the control attribute, then an AuthoritativeNull is passed. This ensures that prior or subsequent rules which populate alternativeSecurityId are ignored and the result is empty in Microsoft Entra ID. 
 1. Configure a new custom outbound rule with a low precedence (high number above 160 – bottom of list).
 1. Add a direct transform with the alternativeSecurityIds field as the source and the certificateUserIds field as the target.
-1. Run a synchronization cycle to complete the population of the data in Entra ID. 
+1. Run a synchronization cycle to complete the population of the data in Microsoft Entra ID. 
  
-Ensure that CBA in each tenant is configured with the Username Bindings pointing to the certificateUserIds field for the field types that you have mapped from the certificate. Now any of these users may present the certificate at sign-in and after the unique value from the certificate is validated against the certificateUserIds field, that user will be successfully signed-in. 
+Ensure that CBA in each tenant is configured with the Username Bindings pointing to the certificateUserIds field for the field types that you have mapped from the certificate. Now any of these users may present the certificate at sign-in and after the unique value from the certificate is validated against the certificateUserIds field, that user is successfully signed-in. 
 
 ## Understanding the certificate revocation process
 
-The certificate revocation process allows the admin to revoke a previously issued certificate from being used for future authentication. The certificate revocation won't revoke already issued tokens of the user. Follow the steps to manually revoke tokens at [Configure revocation](./certificate-based-authentication-federation-get-started.md#step-3-configure-revocation).
+The certificate revocation process allows Authentication Policy Administrators to revoke a previously issued certificate from being used for future authentication. The certificate revocation won't revoke already issued tokens of the user. Follow the steps to manually revoke tokens at [Configure revocation](./certificate-based-authentication-federation-get-started.md#step-3-configure-revocation).
 
 Microsoft Entra ID downloads and caches the customers certificate revocation list (CRL) from their certificate authority to check if certificates are revoked during the authentication of the user.
 
-An admin can configure the CRL distribution point during the setup process of the trusted issuers in the Microsoft Entra tenant. Each trusted issuer should have a CRL that can be referenced by using an internet-facing URL.
+Authentication Policy Administrators can configure the CRL distribution point during the setup process of the trusted issuers in the Microsoft Entra tenant. Each trusted issuer should have a CRL that can be referenced by using an internet-facing URL.
  
 >[!IMPORTANT]
->The maximum size of a CRL for Microsoft Entra ID to successfully download on an interactive sign-in and cache is 20 MB in public Entra ID and 45 MB in Azure US Government clouds, and the time required to download the CRL must not exceed 10 seconds. If Microsoft Entra ID can't download a CRL, certificate-based authentications using certificates issued by the corresponding CA fail. As a best practice to keep CRL files within size limits, keep certificate lifetimes within reasonable limits and to clean up expired certificates. For more information, see [Is there a limit for CRL size?](certificate-based-authentication-faq.yml#is-there-a-limit-for-crl-size-).
+>The maximum size of a CRL for Microsoft Entra ID to successfully download on an interactive sign-in and cache is 20 MB in public Microsoft Entra ID and 45 MB in Azure US Government clouds, and the time required to download the CRL must not exceed 10 seconds. If Microsoft Entra ID can't download a CRL, certificate-based authentications using certificates issued by the corresponding CA fail. As a best practice to keep CRL files within size limits, keep certificate lifetimes within reasonable limits and to clean up expired certificates. For more information, see [Is there a limit for CRL size?](certificate-based-authentication-faq.yml#is-there-a-limit-for-crl-size-).
 
 When a user performs an interactive sign-in with a certificate, and the CRL exceeds the interactive limit for a cloud, their initial sign-in fails with the following error:
 
 "The Certificate Revocation List (CRL) downloaded from {uri} has exceeded the maximum allowed size ({size} bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators."
 
-After the error, Microsoft Entra ID attempts to download the CRL subject to the service-side limits (45 MB in public Entra ID and 150 MB in Azure US Government clouds).
+After the error, Microsoft Entra ID attempts to download the CRL subject to the service-side limits (45 MB in public Microsoft Entra ID and 150 MB in Azure US Government clouds).
 
 >[!IMPORTANT]
->If the admin skips the configuration of the CRL, Microsoft Entra ID doesn't perform any CRL checks during the certificate-based authentication of the user. This can be helpful for initial troubleshooting, but shouldn't be considered for production use.
+>If an Authentication Policy Administrator skips the configuration of the CRL, Microsoft Entra ID doesn't perform any CRL checks during the certificate-based authentication of the user. This can be helpful for initial troubleshooting, but shouldn't be considered for production use.
 
-As of now, we don't support Online Certificate Status Protocol (OCSP) because of performance and reliability reasons. Instead of downloading the CRL at every connection by the client browser for OCSP, Microsoft Entra ID downloads once at the first sign-in and caches it, thereby improving the performance and reliability of CRL verification. We also index the cache so the search is much faster every time. Customers must publish CRLs for certificate revocation.
+As of now, we don't support Online Certificate Status Protocol (OCSP) because of performance and reliability reasons. Instead of downloading the CRL at every connection by the client browser for OCSP, Microsoft Entra ID downloads once at the first sign-in and caches it. This action improves the performance and reliability of CRL verification. We also index the cache so the search is much faster every time. Customers must publish CRLs for certificate revocation.
 
 The following steps are a typical flow of the CRL check:
 
 1. Microsoft Entra ID attempts to download the CRL at the first sign-in event of any user with a certificate of the corresponding trusted issuer or certificate authority. 
 1. Microsoft Entra ID caches and reuses the CRL for any subsequent usage. It honors the **Next update date** and, if available, **Next CRL Publish date** (used by Windows Server CAs) in the CRL document.
 1. The user certificate-based authentication fails if:
-   - A CRL has been configured for the trusted issuer and Microsoft Entra ID can't download the CRL, due to availability, size, or latency constraints.
+   - A CRL is configured for the trusted issuer and Microsoft Entra ID can't download the CRL, due to availability, size, or latency constraints.
    - The user's certificate is listed as revoked on the CRL.
    
      :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/user-cert.png" alt-text="Screenshot of the revoked user certificate in the CRL." :::  
@@ -394,11 +424,11 @@ The following steps are a typical flow of the CRL check:
 
 >[!NOTE]
 >Microsoft Entra ID checks the CRL of the issuing CA and other CAs in the PKI trust chain up to the root CA. We have a limit of up to 10 CAs from the leaf client certificate for CRL validation in the PKI chain. The limitation is to make sure a bad actor doesn't bring down the service by uploading a PKI chain with a huge number of CAs with a bigger CRL size.
-If the tenant's PKI chain has more than 5 CAs and in case of a CA compromise, the administrator should remove the compromised trusted issuer from the Microsoft Entra tenant configuration.
+If the tenant's PKI chain has more than 5 CAs, and if there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration.
  
 
 >[!IMPORTANT]
->Due to the nature of CRL caching and publishing cycles, it is highly recommended in case of a certificate revocation to also revoke all sessions of the affected user in Microsoft Entra ID.
+>Due to the nature of CRL caching and publishing cycles, it's highly recommended that, if there's a certificate revocation, to also revoke all sessions of the affected user in Microsoft Entra ID.
 
 As of now, there's no way to manually force or retrigger the download of the CRL. 
 
@@ -406,6 +436,104 @@ As of now, there's no way to manually force or retrigger the download of the CRL
 
 [!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
+## Understanding CRL validation
+
+A CRL is a record of digital certificates that have been revoked before the end of their validity period by a certificate authority (CA).
+When CAs are uploaded to the Microsoft Entra trust store, a CRL, or more specifically the CrlDistributionPoint attribute, isn't required. A CA can be uploaded without a CRL endpoint, and certificate-based authentication won't fail if an issuing CA doesn't have a CRL specified. 
+
+To strengthen security and avoid misconfigurations, an Authentication Policy Administrator can require CBA authentication to fail if no CRL is configured for a CA that issues an end user certificate.
+
+### Enable CRL validation
+
+To enable CRL validation, select **Require CRL validation (recommended)**. 
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/require-validation.png" alt-text="Screenshot of how to require CRL validation." :::  
+
+Once enabled, any CBA fail is because the end user certificate was issued by a CA with no CRL configured.
+
+An Authentication Policy Administrator can exempt a CA if its CRL has issues that should be fixed. Select **Add Exemption** and select any CAs that should be exempted.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempt-validation.png" alt-text="Screenshot of how to exempt CAs from CRL validation." :::  
+
+The CAs in the exempted list aren't required to have CRL configured and the end-user certificates that they issue don't fail authentication.
+
+Select CAs and select **Add**. The **Search** text box can be used to filter the CA lists to select specific CAs.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." :::  
+
+## Certificate Authority (CA) Scoping (Preview)
+
+Certificate Authority (CA) Scoping in Microsoft Entra allows tenant administrators to restrict the use of specific certificate authorities (CAs) to defined user groups. This feature enhances the security and manageability of certificate-based authentication (CBA) by ensuring that only authorized users can authenticate using certificates issued by specific CAs.
+
+CA Scoping is particularly useful in multi-PKI or B2B scenarios where multiple CAs are used across different user populations. It helps prevent unintended access and supports compliance with organizational policies.
+
+**Key Benefits**
+- Restrict certificate usage to specific user groups
+- Support for complex PKI environments with multiple CAs
+- Enhanced protection against certificate misuse or compromise
+- Visibility into CA usage via sign-in logs and monitoring tools
+
+CA Scoping allows admins to define rules that associate a CA (identified by its Subject Key Identifier, or SKI) with a specific Microsoft Entra group. When a user attempts to authenticate using a certificate, the system checks whether the certificate’s issuing CA is scoped to a group that includes the user. Entra walks up the CA chain and applies all the scope rules until user is found in one of the groups in all the scope rules. If the user is not in the scoped group, authentication fails, even if the certificate is otherwise valid.
+
+### Steps to enable CA scoping feature
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Entra ID** > **Authentication methods** > **Certificate-based Authentication**.
+1. Under **Configure**, go to **Certificate issuer scoping policy**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-config.png" alt-text="Screenshot of CA scoping policy.":::
+
+1. Select **Add rule**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-add-rule.png" alt-text="Screenshot of CA scoping add rule.":::
+
+1. Select **Filter CAs by PKI**. **Classic CAs** will show all the CAs from classic CA store and selecting a specific PKI will show all the CAs from the selected PKI. Select a PKI.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-pki-filter.png" alt-text="Screenshot of CA scoping PKI filter.":::
+
+1. **Certificate issuer** drop down will show all the CAs from the selected PKI. Select a CA to create a scope rule.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-select-cert.png" alt-text="Screenshot of CA scoping select CA.":::
+
+1. Select **Add group**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-add-group.png" alt-text="Screenshot of CA scoping add group.":::
+
+1. Select a group
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-select-group.png" alt-text="Screenshot of CA scoping select group.":::
+
+1. Select **Add** to save the rule
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-save-rule.png" alt-text="Screenshot of CA scoping save rule.":::
+
+1. Select **I Acknowledge** and Select **Save** to save CBA config
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-save-cbaconfig.png" alt-text="Screenshot of CA scoping save cbaconfig.":::
+
+1. To edit or delete a CA scoping policy select "..." on the rule row. Select **Edit** to edit the rule and **Delete** to delete the rule.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-policy-edit-delete.png" alt-text="Screenshot of CA scoping edit or delete.":::
+
+### Known Limitations
+- Only one group can be assigned per CA.
+- A maximum of 30 scoping rules is supported.
+- Scoping is enforced at the intermediate CA level.
+- Improper configuration may result in user lockouts if no valid scoping rules exist.
+
+### Sign-in log entries
+
+- Sign in log will show success and in **Additional Details** tab the SKI of the CA from scoping policy rule will be shown.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-log-success.png" alt-text="Screenshot of CA scoping rule sign in log success.":::
+
+- When a CBA authentication fails due to a CA scoping rule, the Basic info tab in the sign-in log will show the error code 500189
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in-log-error.png" alt-text="Screenshot of CA scoping sign in log error.":::
+
+- End users will see the error message below.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/ca-scoping-policy-user-error.png" alt-text="Screenshot of CA scoping user error.":::
 
 ## How CBA works with a Conditional Access authentication strength policy
 
@@ -417,7 +545,7 @@ You can also create a custom authentication strength to allow only CBA to access
 
 ### CBA authentication strength with advanced options
 
-In the CBA Authentication methods policy, an admin can determine the strength of the certificate by using [authentication binding policy](#understanding-the-authentication-binding-policy) on the CBA method. Now you can configure **Advanced options** when you create a custom authentication strength to require a specific certificate to be used, based on issuer and policy OIDs, when users perform CBA to access certain sensitive resources. This feature provides a more precise configuration to determine the certificates and users that can access resources. For more information, see [Advanced options for Conditional Access authentication strength](concept-authentication-strength-advanced-options.md).
+In the CBA Authentication methods policy, an Authentication Policy Administrator can determine the strength of the certificate by using [authentication binding policy](#understanding-the-authentication-binding-policy) on the CBA method. Now you can configure **Advanced options** when you create a custom authentication strength to require a specific certificate to be used, based on issuer and policy OIDs, when users perform CBA to access certain sensitive resources. This feature provides a more precise configuration to determine the certificates and users that can access resources. For more information, see [Advanced options for Conditional Access authentication strength](concept-authentication-strength-advanced-options.md).
 
 ## Understanding Sign-in logs
 
@@ -433,8 +561,8 @@ The user certificate should be configured like this screenshot:
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/user-certificate.png" alt-text="Screenshot of the user certificate." :::  
 
 ### Troubleshooting sign-in issues with dynamic variables in sign-in logs
-Although sign-in logs provide all the information to debug a user's sign-in issues, there are times when specific values are required and since sign-in logs does not support dynamic variables, the sign-in logs would have missing information.
-For ex: The failure reason in sign-in log would show something like "The Certificate Revocation List (CRL) failed signature validation. Expected Subject Key Identifier {expectedSKI} does not match CRL Authority Key {crlAK}. Please request your tenant administrator to check the CRL configuration." where {expectedSKI} and {crlAKI} are not populated with correct values.
+Although sign-in logs provide all the information to debug a user's sign-in issues, there are times when specific values are required and since sign-in logs don't support dynamic variables, the sign-in logs would have missing information.
+For ex: The failure reason in sign-in log would show something like "The Certificate Revocation List (CRL) failed signature validation. Expected Subject Key Identifier {expectedSKI} doesn't match CRL Authority Key {crlAK}. Request your tenant administrator to check the CRL configuration." where {expectedSKI} and {crlAKI} aren't populated with correct values.
 
 When users sign-in with CBA fails, please copy the log details from 'More Details' link in the error page. For more detailed info, look at [understanding CBA error page](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-based-authentication-error-page)
 
@@ -453,7 +581,7 @@ For the first test scenario, configure the authentication policy where the Issue
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/entry-one.png" alt-text="Screenshot of single-factor authentication entry in the sign-in logs." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/entry-one.png":::  
 
-   The **Activity Details** shows this is just part of the expected login flow where the user selects a certificate. 
+   The **Activity Details** shows this is just part of the expected sign-in flow where the user selects a certificate. 
    
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/cert-activity-details.png" alt-text="Screenshot of activity details in the sign-in logs." :::  
 
@@ -478,7 +606,7 @@ For the next test scenario, configure the authentication policy where the **poli
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/several-entries.png" alt-text="Screenshot of several entries in the sign-in logs." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/several-entries.png":::  
 
-    The **Activity Details** shows this is just part of the expected login flow where the user selects a certificate. 
+    The **Activity Details** shows this is just part of the expected sign-in flow where the user selects a certificate. 
    
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/mfacert-activity-details.png" alt-text="Screenshot of second-factor sign-in details in the sign-in logs." :::  
    
@@ -503,17 +631,43 @@ Certificate-based authentication can fail for reasons such as the certificate be
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." :::  
 
 If CBA fails on a browser, even if the failure is because you cancel the certificate picker, you need to close the browser session and open a new session to try CBA again. A new session is required because browsers cache the certificate. When CBA is retried, the browser sends the cached certificate during the TLS challenge, which causes sign-in failure and the validation error.
+
+>[!NOTE]
+>However, Edge browser has added a new feature to [reset the certificate selection without restarting the browser](concept-certificate-based-authentication-technical-deep-dive.md#reset-the-certificate-choice-on-edge-browser).
  
-Select **More details** to get logging information that can be sent to an administrator, who in turn can get more information from the Sign-in logs.
+Select **More details** to get logging information that can be sent to an Authentication Policy Administrator, who in turn can get more information from the Sign-in logs.
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/details.png" alt-text="Screenshot of error details." :::  
 
 Select **Other ways to sign in** to try other methods available to the user to sign in. 
  
->[!NOTE]
->If you retry CBA in a browser, it'll keep failing due to the browser caching issue. Users need to open a new browser session and sign in again.
-
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/new-sign-in.png" alt-text="Screenshot of a new sign-in attempt." :::  
+
+## Reset the certificate choice on edge browser
+
+If CBA fails on a browser, even if the failure is because you cancel the certificate picker, you need to close the browser session and open a new session to try CBA again as the browsers cache the certificate. However, Edge browser had added a new enhancement to reset the certificate choice on the browser.
+
+- When CBA fails, the user will be sent to error page
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." :::  
+
+- Select the lock icon to the left of the address URL and select **Your certificate choices**.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice.png" alt-text="Screenshot of edge browser certificate choice." :::  
+
+- Select **Reset certificate choices**
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice-reset.png" alt-text="Screenshot of edge browser certificate choice reset." :::
+
+- Select **Reset choices** in the dialog
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/edge-certificate-choice-reset-accept.png" alt-text="Screenshot of edge browser certificate choice reset acceptance." :::
+
+- Click on **Other ways to sign in** in the error page
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/validation-error.png" alt-text="Screenshot of a certificate validation error." ::: 
+
+- Select **Use a certificate or smart card** in the picker and continue with CBA authentication. 
 
 ## Certificate-based authentication in MostRecentlyUsed (MRU) methods
  
@@ -521,15 +675,13 @@ Once a user authenticates successfully using CBA, the user's MostRecentlyUsed (M
 
 To reset the MRU method, the user needs to cancel the certificate picker, select **Other ways to sign in**, and select another method available to the user and authenticate successfully.
 
+The MRU auth method is set at user level so if a user successfully signins on a different device using a different auth method the MRU will be reset on the user to the currently logged in method.
+
 ## External identity support
 
-An external identity can't perform multifactor authentication to the resource tenant with Microsoft Entra CBA. Instead, have the user perform MFA using CBA in the home tenant, and set up cross tenant settings for the resource tenant to trust MFA from the home tenant.
+An external identity B2B guest user can use CBA on the home tenant and if the cross tenant settings for the resource tenant are set up to trust MFA from the home tenant, user's CBA auth on home tenant is honored. For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
+CBA on resource tenant isn't supported yet. 
 
-For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims).
-
-## Known issues
-
-- On iOS clients, there's a double prompt issue as part of the Microsoft Entra CBA flow where the user needs to select **Use the certificate or smart card** twice. We're aware of the UX experience issue and working on fixing this for a seamless UX experience.
 
 ## Next steps
 

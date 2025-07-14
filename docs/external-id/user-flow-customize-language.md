@@ -2,13 +2,13 @@
 title: Language customization in Microsoft Entra user flows
 description: Learn about customizing the language experience in your user flows in Microsoft Entra External ID.
  
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
-ms.author: mimart
+ms.date: 05/15/2024
 
 ms.collection: M365-identity-device-management
 ms.custom:  
@@ -17,10 +17,12 @@ ms.custom:
 
 # Language customization in Microsoft Entra External ID
 
-> [!TIP]
-> This article applies to B2B collaboration user flows. If your tenant is configured for customer identity and access management, see [Customize the language of the authentication experience](customers/how-to-customize-languages-customers.md) for customers.
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-Language customization in Microsoft Entra External ID allows your user flow to accommodate different languages to suit your user's needs. Microsoft provides the translations for [36 languages](#supported-languages). In this article, you learn how to customize the attribute names on the [attribute collection page](self-service-sign-up-user-flow.md#select-the-layout-of-the-attribute-collection-form), even if your experience is provided for only a single language.
+> [!TIP]
+> This article applies to B2B collaboration user flows in workforce tenants. For information about external tenants, see [Customize the language of the authentication experience](customers/how-to-customize-languages-customers.md).
+
+Language customization in Microsoft Entra External ID allows your user flow to accommodate different languages to suit your user's needs. Microsoft provides the translations for [36 languages](#supported-languages). In this article, you learn how to customize the attribute names on the [attribute collection page](self-service-sign-up-user-flow.yml#select-the-layout-of-the-attribute-collection-form), even if your experience is provided for only a single language.
 
 ## How language customization works
 
@@ -28,12 +30,11 @@ By default, language customization is enabled for users signing up to ensure a c
 
 ## Customize your strings 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Language customization enables you to customize any string in your user flow.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External ID User Flow Administrator](~/identity/role-based-access-control/permissions-reference.md#external-id-user-flow-administrator).
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow that you want to enable for translations.
 1. Select **Languages**.
 1. On the **Languages** page for the user flow, select the language that you want to customize.

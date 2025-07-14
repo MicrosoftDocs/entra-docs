@@ -7,9 +7,9 @@ summary: >
 
 metadata:
   author: Dickson-Mwendia
-  manager: CelesteDG
+  manager: dougeby
   ms.author: dmwendia
-  ms.date: 02/02/2024
+  ms.date: 02/11/2025
   ms.service: identity-platform  
   ms.topic: landing-page
 
@@ -39,7 +39,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Mobile application that calls a web API
-            url: scenario-mobile-overview.md
+            url: scenario-mobile-app-registration.md
 ## ROW 2 ################################################### ROW 2 ##
   # - title: $CARD_TITLE
   #   linkLists:

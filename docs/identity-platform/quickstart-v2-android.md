@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, "languages:Android", has-adal-ref, mode-api
+ms.custom:
 ms.date: 01/14/2022
 ms.service: identity-platform
 
@@ -301,7 +301,7 @@ ms.topic: quickstart
 > 
 > ```json
 > {
->   "client_id" : "0984a7b6-bc13-4141-8b0d-8f767e136bb7",
+>   "client_id" : "00001111-aaaa-2222-bbbb-3333cccc4444",
 >   "authorization_user_agent" : "DEFAULT",
 >   "redirect_uri" : "msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D",
 >   "account_mode" : "SINGLE",
@@ -457,7 +457,7 @@ ms.topic: quickstart
 > 
 > ```json
 > {
->   "client_id" : "0984a7b6-bc13-4141-8b0d-8f767e136bb7",
+>   "client_id" : "00001111-aaaa-2222-bbbb-3333cccc4444",
 >   "authorization_user_agent" : "DEFAULT",
 >   "redirect_uri" : "msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D",
 >   "account_mode" : "MULTIPLE",

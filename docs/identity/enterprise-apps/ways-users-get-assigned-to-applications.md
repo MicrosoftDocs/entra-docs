@@ -3,7 +3,7 @@ title: Understand how users are assigned to apps
 description: Understand how users get assigned to an app that is using Microsoft Entra ID for identity management.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
@@ -33,7 +33,7 @@ There are several ways a user can be assigned an application. Assignment can be 
   * A static security group created in the cloud
   * A [dynamic security group](~/identity/users/groups-dynamic-membership.md) created in the cloud
   * A Microsoft 365 group created in the cloud
-  * The [All Users](~/fundamentals/how-to-manage-groups.md) group
+  * The [All Users](/entra/fundamentals/how-to-manage-groups) group
 * An administrator enables [Self-service Application Access](./manage-self-service-access.md) to allow a user to add an application using [My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) **Add App** feature **without business approval**
 * An administrator enables [Self-service Application Access](./manage-self-service-access.md) to allow a user to add an application using [My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) **Add App** feature, but only **with prior approval from a selected set of business approvers**
 * An administrator enables [Self-service Group Management](~/identity/users/groups-self-service-management.md) to allow a user to join a group that an application is assigned to **without business approval**

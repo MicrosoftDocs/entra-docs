@@ -2,14 +2,14 @@
 title: What are protected actions in Microsoft Entra ID?
 description: Learn about protected actions in Microsoft Entra ID.
 
-author: rolyon
-manager: amycolannino
-ms.author: rolyon
+author: barclayn
+manager: pmwongera
+ms.author: barclayn
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 04/10/2023
+ms.date: 01/31/2025
 ---
 
 # What are protected actions in Microsoft Entra ID?
@@ -24,11 +24,11 @@ You use protected actions when you want to add an additional layer of protection
 
 ## What policies are typically used with protected actions?
 
-We recommend using multi-factor authentication on all accounts, especially accounts with privileged roles. Protected actions can be used to require additional security. Here are some common stronger Conditional Access policies.
+We recommend using multifactor authentication on all accounts, especially accounts with privileged roles. Protected actions can be used to require additional security. Here are some common stronger Conditional Access policies.
 
 - Stronger MFA authentication strengths, such as [Passwordless MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths) or [Phishing-resistant MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths),  
 - Privileged access workstations, by using Conditional Access policy [device filters](~/identity/conditional-access/concept-condition-filters-for-devices.md).
-- Shorter session timeouts, by using Conditional Access [sign-in frequency session controls](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency). 
+- Shorter session time-outs, by using Conditional Access [sign-in frequency session controls](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency). 
 
 ## What permissions can be used with protected actions?
 
@@ -36,6 +36,7 @@ Conditional Access policies can be applied to limited set of permissions. You ca
 
 - Conditional Access policy management
 - Cross-tenant access settings management
+- Hard deletion of some directory objects
 - Custom rules that define network locations
 - Protected action management
 
@@ -47,24 +48,33 @@ Here's the initial set of permissions:
 > | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
 > | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
 > | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for conditional access policies |
-> | microsoft.directory/conditionalAccessPolicies/create | Create conditional access policies |
-> | microsoft.directory/conditionalAccessPolicies/delete | Delete conditional access policies |
+> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
 > | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update | Update allowed cloud endpoints of the cross-tenant access policy|
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of the default cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy.
-> | microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update | Update tenant restrictions of the default cross-tenant access policy.
+> | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy. |
+> | microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update | Update tenant restrictions of the default cross-tenant access policy. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update | Update cross-cloud Teams meeting settings  of cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/delete | Delete cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/tenantRestrictions/update | Update tenant restrictions of cross-tenant access policy for partners. |
+> | microsoft.directory/deletedItems/delete | Permanently delete objects, which can no longer be restored |
 > | microsoft.directory/namedLocations/basic/update | Update basic properties of custom rules that define network locations |
 > | microsoft.directory/namedLocations/create | Create custom rules that define network locations |
 > | microsoft.directory/namedLocations/delete | Delete custom rules that define network locations |
 > | microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update | Update Conditional Access authentication context of Microsoft 365 role-based access control (RBAC) resource actions |
+
+## Deletion of directory objects
+
+Microsoft Entra ID supports two types of deletion for most directory objects: soft deletion and hard deletion. When a directory object is soft deleted, the object, its property values and relationships are preserved in the recycle bin for 30 days. A soft-deleted object can be restored with the same ID and all the property values and relationships intact. When a soft-deleted object is hard deleted, the object is permanently deleted and it cannot be recreated with the same object ID.
+
+To help protect against accidental or malicious hard deletions of some soft-deleted directory objects from the recycle bin and permanent data loss, you can add a protected action for the following permission. This deletion applies to users, Microsoft 365 groups, and applications.
+
+- microsoft.directory/deletedItems/delete
 
 ## How do protected actions compare with Privileged Identity Management role activation?
 
@@ -73,7 +83,7 @@ Here's the initial set of permissions:
 ## Steps to use protected actions
 
 > [!NOTE]
-> You should perform these steps in the following sequence to ensure that protected actions are properly configured and enforced. If you don't follow this order, you may get unexpected behavior, such as [getting repeated requests to reauthenticate](./protected-actions-add.md#symptom---policy-is-never-satisfied).
+> You should perform these steps in the following sequence to ensure that protected actions are properly configured and enforced. If you don't follow this order, you might get unexpected behavior, such as [getting repeated requests to reauthenticate](./protected-actions-add.md#symptom---policy-is-never-satisfied).
 
 1. **Check permissions**
 
@@ -89,11 +99,11 @@ Here's the initial set of permissions:
 
 1. **Test protected actions**
 
-    Sign in as a user and test the user experience by performing the protected action. You should be prompted to satisfy the Conditional Access policy requirements. For example, if the policy requires multi-factor authentication, you should be redirected to the sign-in page and prompted for strong authentication. [Learn more](./protected-actions-add.md#step-3-test-protected-actions)
+    Sign in as a user and test the user experience by performing the protected action. You should be prompted to satisfy the Conditional Access policy requirements. For example, if the policy requires multifactor authentication, you should be redirected to the sign-in page and prompted for strong authentication. [Learn more](./protected-actions-add.md#step-3-test-protected-actions)
 
 ## What happens with protected actions and applications?
 
-If an application or service attempts to perform a protection action, it must be able to handle the required Conditional Access policy. In some cases, a user might need to intervene and satisfy the policy. For example, they may be required to complete multi-factor authentication. The following applications support step-up authentication for protected actions:
+If an application or service attempts to perform a protection action, it must be able to handle the required Conditional Access policy. In some cases, a user might need to intervene and satisfy the policy. For example, they might be required to complete multifactor authentication. The following applications support step-up authentication for protected actions:
 
 - Microsoft Entra administrator experiences for the actions in the [Microsoft Entra admin center](https://entra.microsoft.com)
 - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview?branch=main)
@@ -102,7 +112,6 @@ If an application or service attempts to perform a protection action, it must be
 There are some known and expected limitations. The following applications will fail if they attempt to perform a protected action.
  
 - [Azure PowerShell](/powershell/azure/what-is-azure-powershell?branch=main) 
-- [Azure AD PowerShell](/powershell/azure/active-directory/overview?branch=main)
 - Creating a new [terms of use](~/identity/conditional-access/terms-of-use.md) page or [custom control](~/identity/conditional-access/controls.md) in the Microsoft Entra admin center. New terms of use pages or custom controls are registered with Conditional Access so are subject to Conditional Access create, update, and delete protected actions. Temporarily removing the policy requirement from the Conditional Access create, update, and delete actions will allow the creation of a new terms of use page or custom control.
 
 If your organization has developed an application that calls the Microsoft Graph API to perform a protected action, you should review the code sample for how to handle a claims challenge using step-up authentication. For more information, see [Developer guide to Conditional Access authentication context](~/identity-platform/developer-guide-conditional-access-authentication-context.md).
@@ -121,7 +130,7 @@ Here are some best practices for using protected actions.
 
 - **Use named network locations**
 
-    Named network location permissions aren't used when managing multi-factor authentication trusted IPs. We recommend using [named network locations](~/identity/conditional-access/location-condition.md#named-locations).
+    Named network location permissions aren't used when managing multifactor authentication trusted IPs. We recommend using [named network locations](../conditional-access/concept-assignment-network.md).
 
 - **Don't use protected actions to block access based on identity or group membership**
 
@@ -129,7 +138,7 @@ Here are some best practices for using protected actions.
 
 ## License requirements
 
-[!INCLUDE [Azure AD Premium P1 license](~/includes/entra-p1-license.md)]
+[!INCLUDE [Microsoft Entra ID Premium P1 license](~/includes/entra-p1-license.md)]
 
 ## Next steps
 

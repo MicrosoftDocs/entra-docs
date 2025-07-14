@@ -1,48 +1,46 @@
 ---
 title: Add users, groups, or devices to an administrative unit
 description: Add users, groups, or devices to an administrative unit in Microsoft Entra ID
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
-ms.date: 06/09/2023
-ms.author: rolyon
+ms.date: 01/03/2025
+ms.author: barclayn
 ms.reviewer: anandy
-ms.custom: oldportal;it-pro;
+ms.custom: oldportal;it-pro;, sfi-image-nochange
 ---
 
 # Add users, groups, or devices to an administrative unit
 
 In Microsoft Entra ID, you can add users, groups, or devices to an administrative unit to limit the scope of role permissions. Adding a group to an administrative unit brings the group itself into the management scope of the administrative unit, but **not** the members of the group. For additional details on what scoped administrators can do, see [Administrative units in Microsoft Entra ID](administrative-units.md).
 
-This article describes how to add users, groups, or devices to administrative units manually. For information about how to add users or devices to administrative units dynamically using rules, see [Manage users or devices for an administrative unit with dynamic membership rules](admin-units-members-dynamic.md).
+This article describes how to add users, groups, or devices to administrative units manually. For information about how to add users or devices to administrative units dynamically using rules, see [Manage users or devices for an administrative unit with rules for dynamic membership groups](admin-units-members-dynamic.md).
 
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
 - To add existing users, groups, or devices:
-    - Privileged Role Administrator or Global Administrator
+    - Privileged Role Administrator
 - To create new groups:
-    - Groups Administrator (scoped to the administrative unit or entire directory) or Global Administrator
-- Microsoft Graph PowerShell
+    - Groups Administrator (scoped to the administrative unit or entire directory)
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 You can add users, groups, or devices to administrative units using the Microsoft Entra admin center. You can also add users in a bulk operation or create a new group in an administrative unit.
 
 ### Add a single user, group, or device to administrative units
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity**.
+1. Browse to **Entra ID**.
 
 1. Browse to one of the following:
 
@@ -58,13 +56,13 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. In the **Select** pane, select the administrative units and then select **Select**.
 
-    ![Screenshot of the Administrative units page for adding a user to an administrative unit.](./media/admin-units-members-add/assign-users-individually.png)
+    :::image type="content" source="./media/admin-units-members-add/assign-users-individually.png" alt-text="Screenshot of the Administrative units page for adding a user to an administrative unit." lightbox="./media/admin-units-members-add/assign-users-individually.png":::
 
 ### Add users, groups, or devices to a single administrative unit
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit you want to add users, groups, or devices to.
 
@@ -78,19 +76,19 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. In the **Select** pane, select the users, groups, or devices you want to add to the administrative unit and then select **Select**.
 
-    ![Screenshot of adding multiple devices to an administrative unit.](./media/admin-units-members-add/admin-unit-members-add.png)
+    :::image type="content" source="./media/admin-units-members-add/admin-unit-members-add.png" alt-text="Screenshot of adding multiple devices to an administrative unit." lightbox="./media/admin-units-members-add/admin-unit-members-add.png":::
 
 ### Add users to an administrative unit in a bulk operation
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit you want to add users to.
 
 1. Select **Users** > **Bulk operations** > **Bulk add members**.
 
-   ![Screenshot of the Users page for assigning users to an administrative unit as a bulk operation.](./media/admin-units-members-add/bulk-assign-to-admin-unit.png)
+    :::image type="content" source="./media/admin-units-members-add/bulk-assign-to-admin-unit.png" alt-text="Screenshot of the Users page for assigning users to an administrative unit as a bulk operation." lightbox="./media/admin-units-members-add/bulk-assign-to-admin-unit.png":::
 
 1. In the **Bulk add members** pane, download the comma-separated values (CSV) template.
 
@@ -100,15 +98,15 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Save your changes and upload the CSV file.
 
-   ![Screenshot of an edited CSV file for adding users to an administrative unit in bulk.](./media/admin-units-members-add/bulk-user-entries.png)
+    :::image type="content" source="./media/admin-units-members-add/bulk-user-entries.png" alt-text="Screenshot of an edited CSV file for adding users to an administrative unit in bulk." lightbox="./media/admin-units-members-add/bulk-user-entries.png":::
 
 1. Select **Submit**.
 
 ### Create a new group in an administrative unit
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](permissions-reference.md#groups-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Admin units**.
+1. Browse to **Entra ID** > **Roles & admins** > **Admin units**.
 
 1. Select the administrative unit you want to create a new group in.
 
@@ -116,53 +114,57 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Select **New group** and complete the steps to create a new group.
 
-    ![Screenshot of the Administrative units page for creating a new group in an administrative unit.](./media/admin-units-members-add/admin-unit-create-group.png)
+    :::image type="content" source="./media/admin-units-members-add/admin-unit-create-group.png" alt-text="Screenshot of the Administrative units page for creating a new group in an administrative unit." lightbox="./media/admin-units-members-add/admin-unit-create-group.png":::
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
-Use the [Invoke-MgGraphRequest](/powershell/microsoftgraph/authentication-commands#using-invoke-mggraphrequest) command to add user, groups, or devices to an administrative unit or create a new group in an administrative unit.
+Use the [New-MgDirectoryAdministrativeUnitMemberByRef](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunitmemberbyref) command to add user, groups, or devices to an administrative unit or create a new group in an administrative unit.
 
 ### Add users to an administrative unit
 
 ```powershell
-Invoke-MgGraphRequest -Method POST -Uri https://graph.microsoft.com/v1.0/directory/administrativeUnits/{ADMIN_UNIT_ID}/members/ -Body '{
-         "@odata.id": "https://graph.microsoft.com/v1.0/users/{USER_ID}"
-       }'
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq '{admin-unit-id}'"
+$userObj = Get-MgUser -Filter "UserPrincipalName eq '{user-principal-name}'"
+$odataId = "https://graph.microsoft.com/v1.0/users/" + $userObj.Id
+New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -OdataId $odataId
 ```
 
 ### Add groups to an administrative unit
 
 ```powershell
-Invoke-MgGraphRequest -Method POST -Uri https://graph.microsoft.com/v1.0/directory/administrativeUnits/{ADMIN_UNIT_ID}/members/ -Body '{
-         "@odata.id": https://graph.microsoft.com/v1.0/groups/{GROUP_ID}
-       }'
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq '{admin-unit-id}'"
+$groupObj = Get-MgGroup -Filter "DisplayName eq 'group-name'"
+$odataId = "https://graph.microsoft.com/v1.0/groups/" + $groupObj.Id
+New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -OdataId $odataId
 ```
 
 ### Add devices to an administrative unit
 
 ```powershell
-Invoke-MgGraphRequest -Method POST -Uri https://graph.microsoft.com/v1.0/directory/administrativeUnits/{ADMIN_UNIT_ID}/members/ -Body '{
-         "@odata.id": https://graph.microsoft.com/v1.0/devices/{DEVICE_ID}
-       }'
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq '{admin-unit-id}'"
+$odataId = "https://graph.microsoft.com/v1.0/devices/{device-id}"
+New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj.Id -OdataId $odataId
 ```
 
 ### Create a new group in an administrative unit
 
 ```powershell
-$exampleGroup = Invoke-MgGraphRequest -Method POST -Uri https://graph.microsoft.com/v1.0/directory/administrativeUnits/{ADMIN_UNIT_ID}/members/ -Body '{
-         "@odata.type": "#Microsoft.Graph.Group",
-         "description": "{Example group description}",
-         "displayName": "{Example group name}",
-         "groupTypes": [
-              "Unified"
-          ],
-         "mailEnabled": true,
-          "mailNickname": "{exampleGroup}",
-          "securityEnabled": false
-       }'
+$adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq '{admin-unit-id}'"
+$params = @{
+    "@odata.type" = "#microsoft.graph.group"
+    description = "{group-description}"
+    displayName = "{group-name}"
+    groupTypes = @(
+        "Unified"
+    )
+    mailEnabled = $false
+    mailNickname = "{group-name}"
+    securityEnabled = $true
+}
+New-MgDirectoryAdministrativeUnitMember -AdministrativeUnitId $adminUnitObj.Id -BodyParameter $params
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
 Use the [Add a member](/graph/api/administrativeunit-post-members) API to add users, groups, or devices to an administrative unit or create a new group in an administrative unit.
 
@@ -254,9 +256,11 @@ Body
 }
 ```
 
+---
+
 ## Next steps
 
 - [Administrative units in Microsoft Entra ID](administrative-units.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
-- [Manage users or devices for an administrative unit with dynamic membership rules](admin-units-members-dynamic.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)
+- [Manage users or devices for an administrative unit with rules for dynamic membership groups](admin-units-members-dynamic.md)
 - [Remove users, groups, or devices from an administrative unit](admin-units-members-remove.md)

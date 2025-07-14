@@ -2,14 +2,14 @@
 title: Customize and filter activity logs in Microsoft Entra ID
 description: Learn how to customize the columns and filter of the Microsoft Entra activity logs so you can analyze the results.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to learn how to customize my view of the logs so I can more effectively filter the results.
 ---
 
@@ -21,16 +21,18 @@ This article shows you how to customize the columns and then filter the logs to 
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+- A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it.
+    - For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 ## How to access the activity logs in the Microsoft Entra admin center
 
 You can always access your own sign-in history at [https://mysignins.microsoft.com](https://mysignins.microsoft.com). You can also access the sign-in logs from **Users** and **Enterprise applications** in Microsoft Entra ID.
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**/**Sign-in logs**/**Provisioning logs**.
 
 ## [Audit logs](#tab/audit-logs)
 
@@ -44,13 +46,13 @@ For example, if you're looking into changes to Microsoft Entra groups, you can a
 
 ### Customize the layout of the audit logs
 
-You can customize the columns in the audit logs to view only the information you need. The **Service**, **Category** and **Activity** columns are related to each other, so these columns should always be visible.
+You can customize the columns in the audit logs to view only the information you need. The **Service**, **Category**, and **Activity** columns are related to each other, so these columns should always be visible.
 
 ![Screenshot of the Columns button on the audit logs.](media/howto-customize-filter-logs/audit-log-columns.png)
 
 ### Filter the audit logs
 
-When you filter the logs by **Service**, the **Category** and **Activity** details automatically change. In some cases, there might only be one Category or Activity. For a detailed table of all potential combinations of these details, see [Audit activities](reference-audit-activities.md).
+When you filter the logs by **Service**, the **Category**, and **Activity** details automatically change. In some cases, there might only be one Category or Activity. For a detailed table of all potential combinations of these details, see [Audit activities](reference-audit-activities.md).
 
 :::image type="content" source="media/howto-customize-filter-logs/audit-log-activities-filter.png" alt-text="Screenshot of the audit log filter with Conditional Access as the service." lightbox="media/howto-customize-filter-logs/audit-log-activities-filter-expanded.png":::
 
@@ -72,17 +74,17 @@ When you filter the logs by **Service**, the **Category** and **Activity** detai
 
 ## [Sign-in logs](#tab/sign-in-logs)
 
-On the sign-in logs page, you can switch between four sign-in log types. For more information on the four types of logs, see [What are Microsoft Entra sign-in logs?](concept-sign-ins.md).
+On the sign-in logs page, you can switch between four sign-in log types.
 
 :::image type="content" source="media/howto-customize-filter-logs/sign-in-logs-types.png" alt-text="Screenshot of the four sign-in log types." lightbox="media/howto-customize-filter-logs/sign-in-logs-types-expanded.png":::
 
-- **Interactive user sign-ins:** Sign-ins where a user provides an authentication factor, such as a password, a response through an MFA app, a biometric factor, or a QR code.
+- [**Interactive user sign-ins:**](concept-interactive-sign-ins.md) Sign-ins where a user provides an authentication factor, such as a password, a response through an MFA app, a biometric factor, or a QR code.
 
-- **Non-interactive user sign-ins:** Sign-ins performed by a client on behalf of a user. These sign-ins don't require any interaction or authentication factor from the user. For example, authentication and authorization using refresh and access tokens that don't require a user to enter credentials.
+- [**Non-interactive user sign-ins:**](concept-noninteractive-sign-ins.md) Sign-ins performed by a client on behalf of a user. These sign-ins don't require any interaction or authentication factor from the user. For example, authentication and authorization using refresh and access tokens that don't require a user to enter credentials.
 
-- **Service principal sign-ins:** Sign-ins by apps and service principals that don't involve any user. In these sign-ins, the app or service provides a credential on its own behalf to authenticate or access resources.
+- [**Service principal sign-ins:**](concept-service-principal-sign-ins.md) Sign-ins by apps and service principals that don't involve any user. In these sign-ins, the app or service provides a credential on its own behalf to authenticate or access resources.
 
-- **Managed identities for Azure resources sign-ins:** Sign-ins by Azure resources that have secrets managed by Azure. For more information, see [What are managed identities for Azure resources?](../managed-identities-azure-resources/overview.md).
+- [**Managed identities for Azure resources sign-ins:**](concept-managed-identity-sign-ins.md) Sign-ins by Azure resources that have secrets managed by Azure. For more information, see [What are managed identities for Azure resources?](../managed-identities-azure-resources/overview.md).
 
 ### Customize the layout of the sign-in logs
 
@@ -99,7 +101,7 @@ Filtering the sign-in logs is a helpful way to quickly find logs that match a sp
 
 Some filter options prompt you to select more options. Follow the prompts to make the selection you need for the filter. You can add multiple filters.
 
-1. Select the **Add filters** button, choose a filter option and select **Apply**.
+1. Select the **Add filters** button, choose a filter option, and select **Apply**.
 
     ![Screenshot of the sign-in logs page with the Add filters option highlighted.](media/howto-customize-filter-logs/sign-in-logs-add-filters.png)
 
@@ -113,7 +115,7 @@ You can filter on several details. The following table describes some commonly u
 | --- | --- |
 | Request ID | Unique identifier for a sign-in request |
 | Correlation ID | Unique identifier for all sign-in requests that are part of a single sign-in attempt |
-| User | The *user principal name* (UPN) of the user |
+| User | The *user principal name (UPN)* of the user |
 | Application | The application targeted by the sign-in request |
 | Status | Options are *Success*, *Failure*, and *Interrupted* |
 | Resource | The name of the service used for the sign-in |
@@ -130,15 +132,15 @@ Customizing the columns and adjusting the filter helps to look at logs with simi
 
 When reviewing where a sign-in originated, you might need to use the **Client app** filter. Client app has two subcategories: **Modern authentication clients** and **Legacy authentication clients**. Modern authentication clients have two more subcategories: **Browser** and **Mobile apps and desktop clients**. There are several subcategories for Legacy authentication clients, which are defined in the [Legacy authentication client details](#legacy-authentication-client-details) table.
 
-![Screenshot of the client app filter selected, with the categories highlighted.](media/concept-sign-ins/client-app-filter.png)
+![Screenshot of the client app filter selected, with the categories highlighted.](media/howto-customize-filter-logs/client-app-filter.png)
 
 **Browser** sign-ins include all sign-in attempts from web browsers. When you view the details of a sign-in from a browser, the **Basic info** tab shows **Client app: Browser**.
 
-![Screenshot of the sign-in details, with the client app detail highlighted.](media/concept-sign-ins/client-app-browser.png)
+![Screenshot of the sign-in details, with the client app detail highlighted.](media/howto-customize-filter-logs/client-app-browser.png)
 
 On the **Device info** tab, **Browser** shows the details of the web browser. The browser type and version are listed, but in some cases, the name of the browser and version isn't available. You might see something like **Rich Client 4.0.0.0**.
 
-![Screenshot of the sign-in activity details with a Rich Client browser example highlighted.](media/concept-sign-ins/browser-rich-client.png)
+![Screenshot of the sign-in activity details with a Rich Client browser example highlighted.](media/howto-customize-filter-logs/browser-rich-client.png)
 
 #### Legacy authentication client details
 
@@ -151,7 +153,7 @@ The following table provides the details for each of the *Legacy authentication 
 |Exchange ActiveSync|This filter shows all sign-in attempts where the EAS protocol was attempted.|
 |Exchange ActiveSync| Shows all sign-in attempts from users with client apps using Exchange ActiveSync to connect to Exchange Online|
 |Exchange Online PowerShell|Used to connect to Exchange Online with remote PowerShell. If you block basic authentication for Exchange Online PowerShell, you need to use the Exchange Online PowerShell module to connect. For instructions, see [Connect to Exchange Online PowerShell using multifactor authentication](/powershell/exchange/connect-to-exchange-online-powershell).|
-|Exchange Web Services|A programming interface that's used by Outlook, Outlook for Mac, and third-party apps.|
+|Exchange Web Services|A programming interface that's used by Outlook, Outlook for Mac, and non-Microsoft apps.|
 |IMAP4|A legacy mail client using IMAP to retrieve email.|
 |MAPI over HTTP|Used by Outlook 2010 and later.|
 |Offline Address Book|A copy of address list collections that are downloaded and used by Outlook.|
@@ -214,7 +216,7 @@ The **Action** filter enables you to filter these actions:
 
 In addition to the filters of the default view, you can set the following filters.
 
-- **Job ID**: A unique job ID is associated with each application that you've enabled provisioning for.
+- **Job ID**: A unique job ID is associated with each application for which you enabled provisioning.
 
 - **Cycle ID**: The cycle ID uniquely identifies the provisioning cycle. You can share this ID with product support to look up the cycle in which this event occurred.
 
@@ -228,7 +230,7 @@ In addition to the filters of the default view, you can set the following filter
 
 ---
 
-## Next steps
+## Related content
 
 - [Analyze a sign-in error](quickstart-analyze-sign-in.md)
 - [Troubleshoot sign-in errors](howto-troubleshoot-sign-in-errors.md)

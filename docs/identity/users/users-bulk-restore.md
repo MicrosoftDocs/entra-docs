@@ -1,21 +1,20 @@
 ---
 title: Bulk restore deleted users in the Azure portal
 description: Restore deleted users in bulk in the Azure portal in Microsoft Entra ID
-
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
-ms.date: 11/21/2022
+manager: pmwongera
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, has-azure-ad-ps-ref, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
 
 # Bulk restore deleted users in Microsoft Entra ID
 
-Microsoft Entra ID, part of Microsoft Entra, supports bulk user restore operations and supports downloading lists of users, groups, and group members.
+Microsoft Entra ID supports bulk user restore operations and downloading lists of users, groups, and group members.
 
 ## Understand the CSV template
 
@@ -40,11 +39,10 @@ The rows in a downloaded CSV template are as follows:
 
 ## To bulk restore users
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
-1. Select **All users**  > **Users** > **Deleted**.
+1. Select **All users **Users** > **Deleted**.
 1. On the **Deleted users** page, select **Bulk restore** to upload a valid CSV file of properties of the users to restore.
 
    :::image type="content" source="./media/users-bulk-restore/bulk-restore.png" alt-text="Screenshot of selecting the bulk restore command on the Deleted users page.":::
@@ -53,14 +51,12 @@ The rows in a downloaded CSV template are as follows:
 
     :::image type="content" source="./media/users-bulk-restore/upload-button.png" alt-text="Screenshot of selecting a local CSV file in which you list the users you want to add":::
 
-1. On the **Bulk restore** page, under **Upload your csv file**, browse to the file. When you select the file and click **Submit**, validation of the CSV file starts.
-1. When the file contents are validated, you’ll see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
+1. On the **Bulk restore** page, under **Upload your csv file**, browse to the file. When you select the file and select **Submit**, validation of the CSV file starts.
+1. When the file contents are validated, you see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
 1. When your file passes validation, select **Submit** to start the bulk operation that restores the users.
-1. When the restore operation completes, you'll see a notification that the bulk operation succeeded.
+1. When the restore operation completes, you see a notification that the bulk operation succeeded.
 
-If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
-
-[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk restore service limits](#bulk-restore-service-limits).
 
 ## Check status
 
@@ -87,7 +83,11 @@ Get-MgUser -Filter "UserType eq 'Member'"
 
 You should see that the users that you restored are listed.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
+## Bulk restore service limits
+
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

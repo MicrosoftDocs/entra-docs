@@ -6,8 +6,9 @@ manager: travisgr
 ms.service: entra
 ms.topic: conceptual
 ms.subservice: architecture
-ms.date: 08/17/2022
+ms.date: 08/25/2024
 ms.author: martinco
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra authentication management operations reference guide
@@ -53,12 +54,12 @@ Use the following table to find the recommended solution for mitigating the issu
 | Issue | Recommendation |
 | :- | :- |
 | No mechanism to protect against weak passwords | Enable Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) and [password protection](~/identity/authentication/concept-password-ban-bad-on-premises.md) |
-| No mechanism to detect leaked passwords | Enable [password hash sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) (PHS) to gain insights |
+| No mechanism to detect leaked passwords | Enable [password hash sync (PHS)](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) to gain insights |
 | Using AD FS and unable to move to managed authentication | Enable [AD FS Extranet Smart Lockout](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) and / or [Microsoft Entra Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md) |
 | Password policy uses complexity-based rules such as length, multiple character sets, or expiration | Reconsider in favor of [Microsoft Recommended Practices](https://www.microsoft.com/research/publication/password-guidance/?from=http%3A%2F%2Fresearch.microsoft.com%2Fpubs%2F265143%2Fmicrosoft_password_guidance.pdf) and switch your approach to password management and deploy [Microsoft Entra password protection](~/identity/authentication/concept-password-ban-bad.md). |
 | Users aren't registered to use multifactor authentication | [Register all user's security information](~/id-protection/howto-identity-protection-configure-mfa-policy.md) so it can be used as a mechanism to verify the user's identity along with their password |
-| There is no revocation of passwords based on user risk | Deploy Microsoft Entra [Identity Protection user risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to force password changes on leaked credentials using SSPR |
-| There's no smart lockout mechanism to protect malicious authentication from bad actors coming from identified IP addresses | Deploy cloud-managed authentication with either password hash sync or [pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md) (PTA) |
+| There is no revocation of passwords based on user risk | Deploy Microsoft Entra [ID Protection user risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to force password changes on leaked credentials using SSPR |
+| There's no smart lockout mechanism to protect malicious authentication from bad actors coming from identified IP addresses | Deploy cloud-managed authentication with either password hash sync or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta-quick-start.md) |
 
 #### Password policies recommended reading
 
@@ -68,7 +69,7 @@ Use the following table to find the recommended solution for mitigating the issu
 
 Users needing to change or reset their passwords is one of the biggest sources of volume and cost of help desk calls. In addition to cost, changing the password as a tool to mitigate a user risk is a fundamental step in improving the security posture of your organization.
 
-At a minimum, it's recommended you deploy Microsoft Entra ID [self-service password reset](~/identity/authentication/concept-sspr-howitworks.md) (SSPR) and on-premises [password protection](~/identity/authentication/howto-password-ban-bad-on-premises-deploy.md) to accomplish:
+At a minimum, it's recommended you deploy Microsoft Entra ID [self-service password reset (SSPR)](~/identity/authentication/concept-sspr-howitworks.md) and on-premises [password protection](~/identity/authentication/howto-password-ban-bad-on-premises-deploy.md) to accomplish:
 
 - Deflect help desk calls.
 - Replace the use of temporary passwords.
@@ -76,7 +77,7 @@ At a minimum, it's recommended you deploy Microsoft Entra ID [self-service passw
 - [Eliminate weak passwords](~/identity/authentication/concept-password-ban-bad.md) in your organization.
 
 > [!NOTE]
-> For organizations with a Microsoft Entra ID P2 subscription, it is recommended to deploy SSPR and use it as part of an [Identity Protection User Risk Policy](~/id-protection/howto-identity-protection-configure-risk-policies.md).
+> For organizations with Microsoft Entra ID P2 licenses, it is recommended to deploy SSPR and use it as part of an [Microsoft Entra ID Protection risk-based Conditional Access policies](~/id-protection/howto-identity-protection-configure-risk-policies.md).
 
 ### Strong credential management
 
@@ -146,8 +147,6 @@ If you would like to learn more about passwordless authentication, see [A world 
 
 Providing a standardized single sign-on mechanism to the entire enterprise is crucial for best user experience, reduction of risk, ability to report, and governance. If you're using applications that support SSO with Microsoft Entra ID but are currently configured to use local accounts, you should reconfigure those applications to use SSO with Microsoft Entra ID. Likewise, if you're using any applications that support SSO with Microsoft Entra ID but are using another Identity Provider, you should reconfigure those applications to use SSO with Microsoft Entra ID as well. For applications that don't support federation protocols but do support forms-based authentication, we recommend you configure the application to use [password vaulting](~/identity/app-proxy/application-proxy-configure-single-sign-on-password-vaulting.md) with Microsoft Entra application proxy.
 
-![AppProxy Password-based Sign-on](./media/ops-guide-auth/ops-img8.png)
-
 > [!NOTE]
 > If you don't have a mechanism to discover unmanaged applications in your organization, we recommend implementing a discovery process using a cloud application security broker (CASB) such as [Microsoft Defender for Cloud Apps](https://www.microsoft.com/enterprise-mobility-security/cloud-app-security).
 
@@ -170,11 +169,11 @@ Finally, if you have a Microsoft Entra app gallery and use applications that sup
 
 ### Assign users to applications
 
-[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include [attribute-based dynamic group membership](~/identity/users/groups-dynamic-membership.md) and [delegation to app owners](~/fundamentals/how-to-manage-groups.md). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
+[Assigning users to applications](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) is best mapped by using groups because they allow greater flexibility and ability to manage at scale. The benefits of using groups include attribute-based [dynamic membership groups](~/identity/users/groups-dynamic-membership.md) and [delegation to app owners](/entra/fundamentals/how-to-manage-groups). Therefore, if you're already using and managing groups, we recommend you take the following actions to improve management at scale:
 
 - Delegate group management and governance to application owners.
 - Allow self-service access to the application.
-- Define dynamic groups if user attributes can consistently determine access to applications.
+- Define dynamic membership groups if user attributes can consistently determine access to applications.
 - Implement attestation to groups used for application access using [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
 
 On the other hand, if you find applications that have assignment to individual users, be sure to implement [governance](~/id-governance/index.yml) around those applications.
@@ -189,10 +188,10 @@ On the other hand, if you find applications that have assignment to individual u
 
 ### Named locations
 
-With [named locations](~/identity/conditional-access/location-condition.md) in Microsoft Entra ID, you can label trusted IP address ranges in your organization. Microsoft Entra ID uses named locations to:
+With [named locations](../identity/conditional-access/concept-assignment-network.md) in Microsoft Entra ID, you can label trusted IP address ranges in your organization. Microsoft Entra ID uses named locations to:
 
 - Prevent false positives in risk events. Signing in from a trusted network location lowers a user's sign-in risk.
-- Configure [location-based Conditional Access](~/identity/conditional-access/location-condition.md).
+- Configure [location-based Conditional Access](../identity/conditional-access/concept-assignment-network.md).
 
 ![Named location](./media/ops-guide-auth/ops-img10.png)
 
@@ -221,7 +220,7 @@ If you already own Microsoft Entra ID P2 licenses that support using risk in acc
 
 ### Client application access policies
 
-Microsoft Intune Application Management (MAM) provides the ability to push data protection controls such as storage encryption, PIN, remote storage cleanup, and so on. to compatible client mobile applications such as Outlook Mobile. In addition, Conditional Access policies can be created to [restrict access](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.md) to cloud services such as Exchange Online from approved or compatible apps.
+Microsoft Intune Application Management (MAM) provides the ability to push data protection controls such as storage encryption, PIN, remote storage cleanup, and so on. to compatible client mobile applications such as Outlook Mobile. In addition, Conditional Access policies can be created to [restrict access](~/identity/conditional-access/policy-all-users-device-compliance.md) to cloud services such as Exchange Online from approved or compatible apps.
 
 If your employees install MAM-capable applications such as Office mobile apps to access corporate resources such as Exchange Online or SharePoint in Microsoft 365, and you also support BYOD (bring your own device), we recommend you deploy application MAM policies to manage the application configuration in personally owned devices without MDM enrollment and then update your Conditional Access policies to only allow access from MAM-capable clients.
 
@@ -345,7 +344,7 @@ Below are the user and group settings that can be locked down if there isn't an 
 
 ### Traffic from unexpected locations
 
-Attackers originate from various parts of the world. Manage this risk by using Conditional Access policies with location as the condition. The [location condition](~/identity/conditional-access/location-condition.md) of a Conditional Access policy enables you to block access for locations from where there's no business reason to sign in from.
+Attackers originate from various parts of the world. Manage this risk by using Conditional Access policies with location as the condition. The [location condition](../identity/conditional-access/concept-assignment-network.md) of a Conditional Access policy enables you to block access for locations from where there's no business reason to sign in from.
 
 ![Create a new named location](./media/ops-guide-auth/ops-img14.png)
 

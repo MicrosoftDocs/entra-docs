@@ -1,15 +1,14 @@
 ---
 title: Manage user-assigned managed identities
 description: Create user-assigned managed identities.
-
-author: barclayn
-manager: amycolannino
+author: SHERMANOUKO
+manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
-ms.date: 05/10/2023
-ms.author: barclayn
-ms.custom: devx-track-azurecli, devx-track-linux
+ms.date: 01/15/2025
+ms.author: shermanouko
+ms.custom: devx-track-azurecli, devx-track-linux, sfi-image-nochange
 zone_pivot_groups: identity-mi-methods
 ---
 
@@ -17,7 +16,7 @@ zone_pivot_groups: identity-mi-methods
 
 Managed identities for Azure resources eliminate the need to manage credentials in code. You can use them to get a Microsoft Entra token for your applications. The applications can use the token when accessing resources that support Microsoft Entra authentication. Azure manages the identity so you don't have to.
 
-There are two types of managed identities: system-assigned and user-assigned. System-assigned managed identities have their lifecycle tied to the resource that created them. User-assigned managed identities can be used on multiple resources. To learn more about managed identities, see [What are managed identities for Azure resources?](overview.md).
+There are two types of managed identities: system-assigned and user-assigned. System-assigned managed identities have their lifecycle tied to the resource that created them. This identity is restricted to only one resource, and you can grant permissions to the managed identity by using Azure role-based access control (RBAC).  User-assigned managed identities can be used on multiple resources. To learn more about managed identities, see [What are managed identities for Azure resources?](overview.md).
 
 ::: zone pivot="identity-mi-methods-azp"
 
@@ -30,7 +29,6 @@ In this article, you learn how to create, list, delete, or assign a role to a us
 
 ## Create a user-assigned managed identity
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To create a user-assigned managed identity, your account needs the [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 
@@ -346,8 +344,7 @@ To create a user-assigned managed identity, your account needs the [Managed Iden
 
 ```bash
 curl 'https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroup
-s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview' -X PUT -d '{"loc
-ation": "<LOCATION>"}' -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS TOKEN>"
+s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview' -X PUT -d '{"location": "<LOCATION>"}' -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS TOKEN>"
 ```
 
 ```HTTP
@@ -398,8 +395,9 @@ s/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<U
 ```
 
 ```HTTP
-DELETE https://management.azure.com/subscriptions/80c696ff-5efa-4909-a64d-f1b616f423ca/resourceGroups/TestRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview HTTP/1.1
+DELETE https://management.azure.com/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourceGroups/TestRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<USER ASSIGNED IDENTITY NAME>?api-version=2015-08-31-preview HTTP/1.1
 ```
+
 |Request header  |Description  |
 |---------|---------|
 |*Content-Type*     | Required. Set to `application/json`.        |

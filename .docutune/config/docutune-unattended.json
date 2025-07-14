@@ -1,48 +1,28 @@
 {
-  "baseConfiguration": "docutune-unattended-default.json",
-  "onboarding": {
-    "maxInFlightPullRequests": 20,
-    "maxInFlightFiles": 200
-  },
-  "pullRequest": {
-    "title": "[BULK] [DocuTune-Remediation] - Scheduled execution to fix known issues in Microsoft Entra docs",
-    "batchSize": 9,
-    "maxBatches": 100,
-    "body": "",
-    "newBranchNamePrefix": "",
-    "headRemote": "origin",
-    "draft": false,
-    "requestReview": true,
-    "signOff": false,
-    "properties": {},
-    "sleepInterval": 15,
-    "groupByFolder": "docs/*",
-    "correlationId": "e8e4e6af-593b-4a01-83e4-d21853c0b42c"
-  },
-  "types": [
-    {
-      "name": "Default",
-      "command": "Fix",
-      "configType": "full",
-      "include": [
-        // "docs/external-id/",
-        // "docs/fundamentals/",
-        // "docs/identity/authentication/",
-        // "docs/identity/domain-services/",
-        // "docs/identity/conditional-access/",
-        "docs/identity/devices/"
-        // "docs/identity/hybrid/",
-        // "docs/identity/monitoring-health/",
-        // "docs/identity/role-based-access-control/",
-        // "docs/identity-platform/",
-        // "docs/id-governance/"
-      ]
+    "baseConfiguration": "docutune-unattended-default.json",
+    "onboarding": {
+        "maxInFlightPullRequests": 20,
+        "maxInFlightFiles": 200
     },
-    {
-      "name": "FlagBrokenLinks",
-      "base": "Default",
-      "configType": "links-only",
-      "stopAt": 10
-    }
-  ]
+    "pullRequest": {
+        "title": "[BULK] - DocuTune remediation - Content SFI",
+        "batchSize": 9,
+        "maxBatches": 100,
+        "groupByFolder": "docs/*",
+        "body": "Remediating articles to align with content SFI guidance related to sensitive terms with GUIDs, thumbprints, and secrets.",
+        "newBranchNamePrefix": "",
+        "headRemote": "origin",
+        "draft": false,
+        "requestReview": true,
+        "signOff": false,
+        "properties": {},
+        "sleepInterval": 15
+    },
+    "types": [
+        {
+            "name": "Default",
+            "command": "Fix",
+            "configType": "full"
+        }
+    ]
 }

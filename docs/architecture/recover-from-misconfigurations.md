@@ -9,6 +9,7 @@ ms.topic: conceptual
 ms.date: 08/26/2022
 ms.author: jricketts
 ms.reviewer: jricketts
+ms.custom: sfi-image-nochange
 ---
 
 # Recover from misconfiguration
@@ -23,21 +24,21 @@ You need to understand the configuration items that are important to your organi
 
 ### Tenant-wide configurations
 
-* **External identities**: Global administrators for the tenant identify and control the external identities that can be provisioned in the tenant. They determine:
+* **External identities**: Administrators for the tenant identify and control the external identities that can be provisioned in the tenant. They determine:
 
   * Whether to allow external identities in the tenant.
   * From which domains external identities can be added.
   * Whether users can invite users from other tenants.
 
-* **Named locations**: Global administrators can create named locations, which can then be used to:
+* **Named locations**: Administrators can create named locations, which can then be used to:
 
   * Block sign-ins from specific locations.
   * Trigger Conditional Access policies like multifactor authentication.
 
-* **Allowed authentication methods**: Global administrators set the authentication methods allowed for the tenant.
-* **Self-service options**: Global administrators set self-service options like self-service password reset and create Office 365 groups at the tenant level.
+* **Allowed authentication methods**: Administrators set the authentication methods allowed for the tenant.
+* **Self-service options**: Administrators set self-service options like self-service password reset and create Office 365 groups at the tenant level.
 
-The implementation of some tenant-wide configurations can be scoped, provided they aren't overridden by global administration policies. For example:
+The implementation of some tenant-wide configurations can be scoped, provided they aren't overridden by global policies. For example:
 
 * If the tenant is configured to allow external identities, a resource administrator can still exclude those identities from accessing a resource.
 * If the tenant is configured to allow personal device registration, a resource administrator can exclude those devices from accessing specific resources.

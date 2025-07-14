@@ -1,13 +1,13 @@
 ---
 title: "Tutorial: Govern and monitor applications"
-description: In this tutorial, you learn how to govern and monitor an application in Microsoft Entra ID.
+description: Learn how to govern and monitor an application in Microsoft Entra ID, including access reviews and integrating logs with Azure Monitor.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.author: jomondi
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: tutorial
-ms.date: 09/07/2023
+ms.date: 12/04/2024
 ms.reviewer: saibandaru
 ms.custom: enterprise-apps
 
@@ -22,19 +22,18 @@ Using the information in this tutorial, an administrator of the application lear
 
 > [!div class="checklist"]
 > * Create an access review
-> * Access the audit logs report
-> * Access the sign-ins report
+> * Access the audit logs
+> * Access the sign-ins
 > * Send logs to Azure Monitor
 
 ## Prerequisites
 
 - An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Identity Governance Administrator, Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
+- One of the following roles: Identity Governance Administrator, Privileged Role Administrator, Cloud Application Administrator, or Application Administrator.
 - An enterprise application that has been configured in your Microsoft Entra tenant.
 
 ## Create an access review
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The administrator wants to make sure that users or guests have appropriate access. They decide to ask users of the application to participate in an access review and recertify or attest to their need for access. When the access review is finished, they can then make changes and remove access from users who no longer need it. For more information, see
 [Manage user and guest user access with access reviews](~/id-governance/manage-access-review.md).
@@ -42,7 +41,7 @@ The administrator wants to make sure that users or guests have appropriate acces
 To create an access review:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Identity Governance** > **Access reviews**.
+1. Browse to **ID Governance** > **Access reviews**.
 1. Select **New access review** to create a new access review.
 1. In **Select what to review**, select **Applications**.
 1. Select **+ Select application(s)**, select the application, and then choose **Select**.
@@ -72,21 +71,21 @@ If you've assigned guests as reviewers and they haven't accepted their invitatio
 
 ### View the status of an access review
 
-You can track the progress of access reviews as they are completed.
+You can track the progress of access reviews as they're completed.
  
-1. Go to **Identity** > **Identity Governance** > **Access reviews**.
+1. Go to **ID Governance** > **Access reviews**.
 1. In the list, select the access review you created.
 1. On the **Overview** page, check the progress of the access review. 
 
 The **Results** page provides information on each user under review in the instance, including the ability to Stop, Reset, and Download results. To learn more, check out the [Complete an access review of groups and applications in Microsoft Entra access reviews](~/id-governance/complete-access-review.md) article. 
 
-## Access the audit logs report
+## Access the audit logs
 
-The audit logs report combines several reports around application activities into a single view for context-based reporting. For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
+The Microsoft Entra audit logs capture a wide variety of activities within your tenant. These logs provide valuable insights into the activities you need to monitor. For more information, see [Audit logs in Microsoft Entra ID](~/identity/monitoring-health/concept-audit-logs.md).
 
-To access the audit logs report, go to **Identity** > **Monitoring & health** > **Audit logs**.
+To access the audit logs, go to **Entra ID** > **Monitoring & health** > **Audit logs**.
 
-The audit logs report consolidates the following reports:
+The audit logs capture activities that fall under the following categories. This list is not exhaustive. For a full list of the audit log categories and activities, see [Audit log activities](../monitoring-health/reference-audit-activities.md).
 
 - Password reset activity
 - Password reset registration activity
@@ -96,24 +95,27 @@ The audit logs report consolidates the following reports:
 - Password rollover status
 - Account provisioning errors
 
-## Access the sign-ins report
+## Access the sign-in logs
 
-The Sign-ins view includes all user sign-ins, and the Application Usage report. You also can view application usage information in the Manage section of the Enterprise applications overview. For more information, see [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md)
+The Microsoft Entra sign-in logs capture interactive, non-interactive, managed identity, and service principal sign-ins. For more information, see [Sign-in logs in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
 
-To access the sign-in logs report, go to **Identity** > **Monitoring & health** > **Sign-in logs**.
+To access the sign-in logs, go to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
+
+You also can view application sign-in information from the Enterprise applications area. The sign-in logs open the same logs from **Monitoring & health** > **Sign-in logs**, but the filter is already set to the selected application. The **Usage & insights** report also summarizes sign-in activity for the application.
 
 ## Send logs to Azure Monitor
 
-The Microsoft Entra activity logs only store information for a maximum of 30 days. Depending on your needs, you may require extra storage to back up the activity logs data. Using the Azure Monitor, you can archive the audit and sign logs to an Azure storage account to retain the data for a longer time. 
-The Azure Monitor is also useful for rich visualization, monitoring and alerting of data. To learn more about the Azure Monitor and the cost considerations for extra storage, see [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md).
+The Microsoft Entra activity logs only store information for seven days for Microsoft Entra ID Free and 30 days for Microsoft Entra ID P1/P2. Depending on your needs, you might require extra storage to back up the activity logs data.
 
-To send logs to your logs analytics workspace:
+Using Azure Monitor logs, you can retain the data for longer and enable powerful analysis tools, such as visualization and alerts. For more information about integrating logs with Azure Monitor logs, see [Integrate Microsoft Entra logs with Azure Monitor](../monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
+
+To send logs to Azure Monitor, you need a Log Analytics workspace. Once that's created, you configure diagnostic settings to integrate with Log Analytics. There are cost considerations associated with integrating logs with Azure Monitor and Log Analytics, so review this section of [Microsoft Entra activity logs in Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md#cost-considerations) before proceeding.
+
+With a Log Analytics workspace configured:
 
 1. Select **Diagnostic settings**, and then select **Add diagnostic setting**. You can also select Export Settings from the Audit Logs or Sign-ins page to get to the diagnostic settings configuration page.
-1. In the Diagnostic settings menu, select **Send to Log Analytics workspace**, and then select Configure.
-1. Select the Log Analytics workspace you want to send the logs to, or create a new workspace in the provided dialog box.
-1. Select the logs that you would like to send to the workspace.
-1. Select **Save** to save the setting.
+1. Choose the logs you want to stream, select the **Send to Log Analytics workspace** option, and complete the fields.
+1. Select **Save**.
 
 After about 15 minutes, verify that events are streamed to your Log Analytics workspace.
 

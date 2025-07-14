@@ -15,7 +15,7 @@ ms.reviewer: gudlapreethi, bemey, filuz, robgarcia, v-leedennis
 ---
 # Troubleshoot primary refresh token issues on Windows devices
 
-This article discusses how to troubleshoot issues that involve the [primary refresh token](./concept-primary-refresh-token.md) (PRT) when you authenticate on a Microsoft Entra joined Windows device by using your Microsoft Entra credentials.
+This article discusses how to troubleshoot issues that involve the [primary refresh token (PRT)](./concept-primary-refresh-token.md) when you authenticate on a Microsoft Entra joined Windows device by using your Microsoft Entra credentials.
 
 <!-- docutune:ignore AAD -->
 
@@ -45,7 +45,7 @@ If you suspect that a PRT problem exists, we recommend that you first collect Mi
                    AzureAdPrt : YES
          AzureAdPrtUpdateTime : 2020-07-12 22:57:53.000 UTC
          AzureAdPrtExpiryTime : 2020-07-26 22:58:35.000 UTC
-          AzureAdPrtAuthority : https://login.microsoftonline.com/01234567-89ab-cdef-0123-456789abcdef
+          AzureAdPrtAuthority : https://login.microsoftonline.com/00001111-aaaa-2222-bbbb-3333cccc4444
                 EnterprisePrt : YES
       EnterprisePrtUpdateTime : 2020-07-12 22:57:54.000 UTC
       EnterprisePrtExpiryTime : 2020-07-26 22:57:54.000 UTC
@@ -71,14 +71,14 @@ To get the PRT error code, run the `dsregcmd` command, and then locate the `SSO 
 
 ```output
                 AzureAdPrt : NO
-       AzureAdPrtAuthority : https://login.microsoftonline.com/01234567-89ab-cdef-0123-456789abcdef
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaa0000-bb11-2222-33cc-444444dddddd
      AcquirePrtDiagnostics : PRESENT
       Previous Prt Attempt : 2020-09-18 20:20:09.760 UTC
             Attempt Status : 0xc000006d
              User Identity : user@contoso.com
            Credential Type : Password
-            Correlation ID : 12345678-9abc-def0-1234-56789abcdef0
-              Endpoint URI : https://login.microsoftonline.com/01234567-89ab-cdef-0123-456789abcdef/oauth2/token
+            Correlation ID : aaaa0000-bb11-2222-33cc-444444dddddd
+              Endpoint URI : https://login.microsoftonline.com/aaaa0000-bb11-2222-33cc-444444dddddd/oauth2/token
                HTTP Method : POST
                 HTTP Error : 0x0
                HTTP status : 400
@@ -220,7 +220,7 @@ The UPN for the user isn't in the expected format. The UPN value varies accordin
 
 ##### Solution
 
-- Set the UPN of the user to an internet-style sign-in name, based on internet standard [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). To find the current UPN, look for event ID 1144 in the Microsoft Entra analytic logs.
+- Set the UPN of the user to an internet-style sign-in name, based on internet standard RFC 822. To find the current UPN, look for event ID 1144 in the Microsoft Entra analytic logs.
 
   To view Event IDs in the Microsoft Entra analytic logs, refer to the [Method 2: Use Event Viewer to examine Microsoft Entra analytic and operational logs][view-event-ids] section.
 
@@ -324,7 +324,7 @@ You can find a full list and description of server error codes in [Microsoft Ent
 
 ##### Solution
 
-Re-register the device based on the device join type. For instructions, see [I disabled or deleted my device. But the local state on the device says it's still registered. What should I do?](./faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-still-registered--what-should-i-do).
+Re-register the device based on the device join type. For instructions, see [I disabled or deleted my device. But the local state on the device says it's still registered. What should I do?](./faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-registered--what-should-i-do).
 </details>
 
 <details>
@@ -432,7 +432,7 @@ Common general network-related issues.
 
 #### Time travel traces
 
-The following procedure describes how to capture traces by using the [Time Travel Debugging](/windows-hardware/drivers/debugger/time-travel-debugging-overview) (TTD) feature.
+The following procedure describes how to capture traces by using the [Time Travel Debugging (TTD)](/windows-hardware/drivers/debugger/time-travel-debugging-overview) feature.
 
 > [!WARNING]  
 > Time travel traces contain personal data. In addition, Local Security Authority Subsystem Service (LSASS or *lsass.exe*) traces contain extremely sensitive information. When you handle these traces, make sure that you use best practices for the storage and sharing of this type of information.

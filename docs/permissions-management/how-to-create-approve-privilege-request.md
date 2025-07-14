@@ -2,15 +2,18 @@
 title: Create or approve a request for permissions in the Remediation dashboard
 description: How to create or approve a request for permissions in the Remediation dashboard.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Create or approve a request for permissions
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how to create or approve a request for permissions in the **Remediation** dashboard in Microsoft Entra Permissions Management. You can create and approve requests for the Amazon Web Services (AWS), Microsoft Azure, or Google Cloud Platform (GCP) authorization systems.
 
@@ -86,6 +89,7 @@ The **Remediation** dashboard has two privilege-on-demand (POD) workflows you ca
 
 
 ## Following are the time limits per frequency type while creating the request.
+
 | Frequency Type                | Time Limit (in hours)                |
 |----------------------------|-----------------------------------|
 |ASAP                        |    24                  |

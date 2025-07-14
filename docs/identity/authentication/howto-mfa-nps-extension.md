@@ -6,11 +6,11 @@ description: Learn how to use Microsoft Entra multifactor authentication capabil
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/27/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: jupetter
 ms.custom: has-azure-ad-ps-ref
 ---
@@ -99,11 +99,11 @@ The NPS Extension for Microsoft Entra multifactor authentication is available to
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Settings**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
-
+   
 ### Network requirements
 
 The NPS server must be able to communicate with the following URLs over TCP port 443:
@@ -122,11 +122,16 @@ The NPS server must be able to communicate with the following URLs over TCP port
 Additionally, connectivity to the following URLs is required to complete the [setup of the adapter using the provided PowerShell script](#run-the-powershell-script):
 
 * `https://onegetcdn.azureedge.net`
-* `https://login.microsoftonline.com`
-* `https://provisioningapi.microsoftonline.com`
-* `https://aadcdn.msauth.net`
-* `https://www.powershellgallery.com`
+* `https://graph.microsoft.com`
+
 * `https://go.microsoft.com`
+
+* `https://provisioningapi.microsoftonline.com`
+
+* `https://www.powershellgallery.com`
+
+* `https://aadcdn.msauth.net`
+
 * `https://aadcdn.msftauthimages.net`
 
 The following table describes the ports and protocols required for the NPS extension. TCP 443 (inbound and outbound) is the only port needed from the NPS Extension server to Entra ID. The RADIUS ports are needed between the access point and the NPS Extension server.
@@ -162,8 +167,8 @@ Depending on which VPN solution you use, the steps to configure your RADIUS auth
 
 This step may already be complete on your tenant, but it's good to double-check that Microsoft Entra Connect has synchronized your databases recently.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Browse to **Entra ID** > **Entra Connect**.
 3. Verify that your sync status is **Enabled** and that your last sync was less than an hour ago.
 
 If you need to kick off a new round of synchronization, see [Microsoft Entra Connect Sync: Scheduler](~/identity/hybrid/connect/how-to-connect-sync-feature-scheduler.md#start-the-scheduler).
@@ -194,7 +199,7 @@ If you need to create and configure a test account, use the following steps:
 1. Sign in to [https://aka.ms/mfasetup](https://aka.ms/mfasetup) with a test account.
 2. Follow the prompts to set up a verification method.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** >  **Multifactor authentication** and enable for the test account.
+1. Browse to **Entra ID** > **Multifactor authentication** and enable for the test account.
 
 > [!IMPORTANT]
 >
@@ -202,7 +207,7 @@ If you need to create and configure a test account, use the following steps:
 >
 > Combined security registration can be enabled that configures SSPR and Microsoft Entra multifactor authentication at the same time. For more information, see [Enable combined security information registration in Microsoft Entra ID](howto-registration-mfa-sspr-combined.md).
 >
-> You can also [force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-user-authentication-options) if they previously only enabled SSPR.
+> You can also [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml) if they previously only enabled SSPR.
 >
 > Users who connect to the NPS server using username and password will be required to complete a multifactor authentication prompt.
 
@@ -257,20 +262,25 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
 
    > [!IMPORTANT]
-   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *AzureEnvironment* parameters for the required cloud. For example, specify *-AzureEnvironment USGovernment* or *-AzureEnvironment AzureChinaCloud*.
+   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *Environment* parameters for the required cloud. For example, specify *-Environment USGov* or *-Environment China*.  Environment options: USGov, USGovDoD, Germany, China, Global.   Example: Connect-MgGraph -Scopes Application.ReadWrite.All -Environment USGov -NoWelcome -Verbose -ErrorAction Stop.
    
    ```powershell
    .\AzureMfaNpsExtnConfigSetup.ps1
    ```
 
-1. When prompted, sign in to Microsoft Entra ID as a Global administrator.
+1. When prompted, sign in to Microsoft Entra ID. A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature.
+
 1. PowerShell prompts for your tenant ID. Use the *Tenant ID* GUID that you copied in the prerequisites section.
 1. A success message is shown when the script is finished.  
 
 If your previous computer certificate has expired, and a new certificate has been generated, you should delete any expired certificates. Having expired certificates can cause issues with the NPS Extension starting.
 
 > [!NOTE]
-> If you use your own certificates instead of generating certificates with the PowerShell script, make sure that they align to the NPS naming convention. The subject name must be **CN=\<TenantID\>,OU=Microsoft NPS Extension**.
+> If you use your own certificates instead of generating certificates with the PowerShell script, make sure that they include the Client Authentication purpose and that the private key has **READ** permission granted to the user *NETWORK SERVICE*. 
+>
+> If you use version 1.2.2893.1 or later, the certificate’s thumbprint can be used to identify the certificate. Set HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa\CLIENT_CERT_IDENTIFIER to the thumbprint in **Registry Settings**. There have been issues with subject name lookup for some certificates. Using thumbprint works around this issue.
+>
+> If you use version 1.2.2677.2 or earlier, the certificate must align to the NPS naming convention and the subject name must be **CN=\<TenantID\>,OU=Microsoft NPS Extension**. 
 
 ### Microsoft Azure Government or Microsoft Azure operated by 21Vianet additional steps
 
@@ -318,7 +328,8 @@ This section includes design considerations and suggestions for successful NPS e
 
 ### Configuration limitations
 
-- The NPS extension for Microsoft Entra multifactor authentication doesn't include tools to migrate users and settings from MFA Server to the cloud. For this reason, we suggest using the extension for new deployments, rather than existing deployment. If you use the extension on an existing deployment, your users have to perform proof-up again to populate their MFA details in the cloud.  
+- The NPS extension for Microsoft Entra multifactor authentication doesn't include tools to migrate users and settings from MFA Server to the cloud. For this reason, we suggest using the extension for new deployments, rather than existing deployment. If you use the extension on an existing deployment, your users have to perform proof-up again to populate their MFA details in the cloud.
+- The NPS extension doesn't support custom phone calls configured on Phone call settings. The default phone call language will be used (EN-US). 
 - The NPS extension uses the UPN from the on-premises AD DS environment to identify the user on Microsoft Entra multifactor authentication for performing the Secondary Auth. The extension can be configured to use a different identifier like alternate login ID or custom AD DS field other than UPN. For more information, see the article, [Advanced configuration options for the NPS extension for multifactor authentication](howto-mfa-nps-extension-advanced.md).
 - Not all encryption protocols support all verification methods.
    - **PAP** supports phone call, one-way text message, mobile app notification, and mobile app verification code
@@ -352,20 +363,24 @@ The [Microsoft Entra multifactor authentication NPS Extension health check scrip
 
 ### How to fix the error "Service principal was not found" while running `AzureMfaNpsExtnConfigSetup.ps1` script? 
 
-If for any reason the "Azure multifactor authentication Client" service principal was not created in the tenant, it can be manually created by running PowerShell. 
+If for any reason the "Azure Multi-factor Auth Client" service principal was not created in the tenant, it can be manually created by running PowerShell. 
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.ReadWrite.All'
-New-MgServicePrincipal -AppId 981f26a1-7f43-403b-a875-f8b09b8cd720 -DisplayName "Azure Multi-Factor Auth Client"
+New-MgServicePrincipal -AppId 00001111-aaaa-2222-bbbb-3333cccc4444 -DisplayName "Azure Multi-Factor Auth Client"
 ```
 
-Once done, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator). Browse to **Identity** > **Applications** > **Enterprise applications** > and search for "Azure multifactor authentication client". Then click **Check properties for this app**. Confirm if the service principal is enabled or disabled. Click the application entry > **Properties**. If the option **Enabled for users to sign-in?** is set to **No**, set it to **Yes**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator).
+1. Browse to **Entra ID** > **Enterprise apps** > and search for "Azure Multi-factor Auth Client". 
+1. Click **Check properties for this app**. Confirm if the service principal is enabled or disabled. 
+1. Click the application entry > **Properties**. 
+1. If the option **Enabled for users to sign-in?** is set to **No**, set it to **Yes**.
 
 Run the `AzureMfaNpsExtnConfigSetup.ps1` script again and it should not return the **Service principal was not found** error. 
 
 ### How do I verify that the client cert is installed as expected?
 
-Look for the self-signed certificate created by the installer in the cert store, and check that the private key has permissions granted to user *NETWORK SERVICE*. The cert has a subject name of **CN \<tenantid\>, OU = Microsoft NPS Extension**
+Look for the self-signed certificate created by the installer in the cert store, and check that the private key has "READ" permission granted to user *NETWORK SERVICE*. The cert has a subject name of **CN \<tenantid\>, OU = Microsoft NPS Extension**
 
 Self-signed certificates generated by the `AzureMfaNpsExtnConfigSetup.ps1` script have a validity lifetime of two years. When verifying that the certificate is installed, you should also check that the certificate hasn't expired.
 
@@ -373,11 +388,14 @@ Self-signed certificates generated by the `AzureMfaNpsExtnConfigSetup.ps1` scrip
 
 ### How can I verify that my client certificate is associated to my tenant in Microsoft Entra ID?
 
-Open PowerShell command prompt and run the following commands:
+Open PowerShell and run the following command. Replace the fictitious app ID with the correct ID. 
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.Read.All'
-(Get-MgServicePrincipal -Filter "appid eq '981f26a1-7f43-403b-a875-f8b09b8cd720'" -Property "KeyCredentials").KeyCredentials | Format-List KeyId, DisplayName, StartDateTime, EndDateTime, @{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key)}}, @{Name = "Thumbprint"; Expression = {$Cert = New-object System.Security.Cryptography.X509Certificates.X509Certificate2; $Cert.Import([System.Text.Encoding]::UTF8.GetBytes([System.Convert]::ToBase64String($_.Key))); $Cert.Thumbprint}}
+(Get-MgServicePrincipal -Filter "appid eq '00001111-aaaa-2222-bbbb-3333cccc4444'" -Property "KeyCredentials").KeyCredentials | 
+Format-List KeyId, DisplayName, StartDateTime, EndDateTime, 
+@{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key) }}, 
+@{Name = "Thumbprint"; Expression = { [Convert]::ToBase64String($_.CustomKeyIdentifier)}}
 ```
 
 These commands print all the certificates associating your tenant with your instance of the NPS extension in your PowerShell session. Look for your certificate by exporting your client cert as a *Base-64 encoded X.509(.cer)* file without the private key, and compare it with the list from PowerShell. Compare the thumbprint of the certificate installed on the server to this one. The certificate thumbprints should match.
@@ -443,3 +461,5 @@ Additional troubleshooting guidance and possible solutions can be found in the a
 - Learn how to integrate [Remote Desktop Gateway](howto-mfa-nps-extension-rdg.md) and [VPN servers](howto-mfa-nps-extension-vpn.md) using the NPS extension
 
 - [Resolve error messages from the NPS extension for Microsoft Entra multifactor authentication](howto-mfa-nps-extension-errors.md)
+
+<!-- docutune:ignore "Azure Multi-Factor Authentication Client" -->

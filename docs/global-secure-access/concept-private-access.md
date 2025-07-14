@@ -3,13 +3,13 @@ title: Learn about Microsoft Entra Private Access
 description: Learn about how Microsoft Entra Private Access secures access to your private corporate resources through the creation of Quick Access and Global Secure Access apps.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: conceptual
-ms.date: 07/27/2023
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
-
+ai-usage: ai-assisted
 ---
 
 # Learn about Microsoft Entra Private Access
@@ -22,7 +22,7 @@ The features of Microsoft Entra Private Access provide a quick and easy way to r
 
 ## Quick Access and Global Secure Access apps
 
-When you configure the Quick Access and Global Secure Access apps, you create a new enterprise application. The app serves as a container for the private resources that you want to secure. The application has its own [Microsoft Entra application proxy connector](how-to-configure-connectors.md) to broker the connection between the service and the internal resource. You can assign users and groups to the app, and then use Conditional Access policies to control access to the app.
+When you configure the Quick Access and Global Secure Access apps, you create a new enterprise application. The app serves as a container for the private resources that you want to secure. The application has its own [Microsoft Entra private network connector](how-to-configure-connectors.md) to broker the connection between the service and the internal resource. You can assign users and groups to the app, and then use Conditional Access policies to control access to the app.
 
 Quick Access and Per-app Access are similar, but there are a few key concepts to understand so you can decide how to configure each one.
 

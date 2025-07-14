@@ -1,19 +1,15 @@
 ---
 title: Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
 description: This article helps to troubleshoot deploying the Microsoft Enterprise SSO plug-in on Apple devices
-
-
 ms.service: entra-id
 ms.subservice: devices
-ms.custom: devx-track-linux
 ms.topic: troubleshooting
 ms.date: 07/05/2023
-
 ms.author: miepping
 author: ryschwa-msft
 manager: 
 ms.reviewer: 
-
+ms.custom: devx-track-linux, sfi-image-nochange
 #Customer intent: As an IT admin, I want to learn how to discover and fix issues related to the Microsoft Enterprise SSO plug-in on macOS and iOS.
 ---
 # Troubleshooting the Microsoft Enterprise SSO Extension plugin on Apple devices
@@ -207,7 +203,20 @@ Sometimes, this command is insufficient and doesn't fully reset the cache. In th
 * Remove or move the Intune Company Portal app to the Trash, then restart your device. After the restart is complete, you can try re-install the Company Portal app. 
 * Re-enroll your device.
 
-If none of above methods resolve your issue, there may be something else in your environment that could be blocking the associated domain validation. If this happens, please reach out to Apple support for further troubleshooting. 
+If none of above methods resolve your issue, there may be something else in your environment that could be blocking the associated domain validation. If this happens, please reach out to Apple support for further troubleshooting.
+
+#### Make sure System Integrity Protection (SIP) is enabled
+
+The Enterprise SSO framework requires successful validation of code signing. If a machine has been explicitly opted out of [System Integrity Protection (SIP)](https://support.apple.com/en-us/102149), code signing might not work properly. If this happens, the machine will encounter sysdiagnose failures like the following error:
+
+```
+Error Domain=com.apple.AppSSO.AuthorizationError Code=-1000 "invalid team identifier of the extension=com.microsoft.CompanyPortalMac.ssoextension" UserInfo={NSLocalizedDescription=invalid team identifier of the extension=com.microsoft.CompanyPortalMac.ssoextension}
+```
+
+To resolve this issue, perform one of the following steps:
+
+1. Re-enable System Integrity Protection on the affected machine.
+2. If re-enabling System Integrity Protection is not possible, ensure that `sudo nvram boot-args` does not have the `amfi_get_out_of_my_way` value set to `1`. If it does, remove that value or set it to `0` to fix the issue.
 
 #### Validate SSO configuration profile on macOS device
 
@@ -467,7 +476,7 @@ Analyzing the SSO extension logs is an excellent way to troubleshoot the authent
 - Authorization Request Types
    - Native MSAL
    - Non MSAL/Browser SSO
-- Interaction with the macOS Keychain for credential retrival/storage operations
+- Interaction with the macOS Keychain for credential retrieval/storage operations
 - Correlation IDs for Microsoft Entra sign-in events
    - PRT acquisition
    - Device Registration
@@ -503,7 +512,7 @@ During the MDM configuration of the Microsoft Enterprise SSO Extension, an optio
 |**1**|**[browser_sso_interaction_enabled](~/identity-platform/apple-sso-plugin.md#allow-users-to-sign-in-from-applications-that-dont-use-msal-and-the-safari-browser)**|Non-MSAL or Safari browser can bootstrap a PRT   |
 |**2**|**browser_sso_disable_mfa**|(Now deprecated) During bootstrapping of the PRT credential, by default MFA is required. Notice this configuration is set to **null** which means that the default configuration is enforced|
 |**3**|**[disable_explicit_app_prompt](~/identity-platform/apple-sso-plugin.md#disable-oauth-2-application-prompts)**|Replaces **prompt=login** authentication requests from applications to reduce prompting|
-|**4**|**[AppPrefixAllowList](~/identity-platform/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix)**|Any Non-MSAL application that has a Bundle ID that starts with **`com.micorosoft.`** can be intercepted and handled by the SSO extension broker   |
+|**4**|**[AppPrefixAllowList](~/identity-platform/apple-sso-plugin.md#enable-sso-for-all-apps-with-a-specific-bundle-id-prefix)**|Any Non-MSAL application that has a Bundle ID that starts with **`com.microsoft.`** can be intercepted and handled by the SSO extension broker   |
 
 > [!IMPORTANT]
 > Feature flags set to **null** means that their **default** configuration is in place. Check **[Feature Flag documentation](~/identity-platform/apple-sso-plugin.md#more-configuration-options)** for more details
@@ -537,7 +546,7 @@ The user clicks on the **Call Microsoft Graph API** button to invoke the sign-in
 Handling SSO request, requested operation: get_accounts_operation
 (Default accessor) Get accounts.
 (MSIDAccountCredentialCache) retrieving cached credentials using credential query
-(Default accessor) Looking for token with aliases (null), tenant (null), clientId 08dc26ab-e050-465e-beb4-d3f2d66647a5, scopes (null)
+(Default accessor) Looking for token with aliases (null), tenant (null), clientId 00001111-aaaa-2222-bbbb-3333cccc4444, scopes (null)
 (Default accessor) No accounts found in default accessor.
 (Default accessor) No accounts found in other accessors.
 Completed get accounts SSO request with a personal device mode.
@@ -557,9 +566,9 @@ Starting SSO broker request with payload: {
     authority = "https://login.microsoftonline.com/common";
     "client_app_name" = MSALMacOS;
     "client_app_version" = "1.0";
-    "client_id" = "08dc26ab-e050-465e-beb4-d3f2d66647a5";
+    "client_id" = "00001111-aaaa-2222-bbbb-3333cccc4444";
     "client_version" = "1.1.7";
-    "correlation_id" = "3506307A-E90F-4916-9ED5-25CF81AE97FC";
+    "correlation_id" = "aaaa0000-bb11-2222-33cc-444444dddddd";
     "extra_oidc_scopes" = "openid profile offline_access";
     "instance_aware" = 0;
     "msg_protocol_ver" = 4;
@@ -573,7 +582,7 @@ Starting SSO broker request with payload: {
 //Request PRT from Microsoft Authentication Broker Service//
 ////////////////////////////////////////////////////////////
 Using request handler <ADInteractiveDevicelessPRTBrokerRequestHandler: 0x117ea50b0>
-(Default accessor) Looking for token with aliases (null), tenant (null), clientId 29d9ed98-a469-4536-ade2-f981bc1d605e, scopes (null)
+(Default accessor) Looking for token with aliases (null), tenant (null), clientId 11112222-bbbb-3333-cccc-4444dddd5555, scopes (null)
 Attempting to get Deviceless Primary Refresh Token interactively.
 Caching AAD Environements
 networkHost: login.microsoftonline.com, cacheHost: login.windows.net, aliases: login.microsoftonline.com, login.windows.net, login.microsoft.com, sts.windows.net
@@ -666,12 +675,12 @@ Handle silent PRT response Masked(not-null), error Masked(null)
 //Provide Access Token received from Azure AD back to Client Application// 
 //and complete authorization request                                    //
 //////////////////////////////////////////////////////////////////////////
-[MSAL] (Default cache) Removing credentials with type AccessToken, environment login.windows.net, realm TenantID, clientID 08dc26ab-e050-465e-beb4-d3f2d66647a5, unique user ID dbb22b2f, target User.Read profile openid email
+[MSAL] (Default cache) Removing credentials with type AccessToken, environment login.windows.net, realm TenantID, clientID 00001111-aaaa-2222-bbbb-3333cccc4444, unique user ID dbb22b2f, target User.Read profile openid email
 ADBrokerAcquireTokenWithPRTAction succeeded.
 Composing broker response.
 Sending broker response.
 Returning to app (msauth.com.microsoft.idnaace.MSALMacOS://auth) - protocol version: 3
-hash: 4A07DFC2796FD75A27005238287F2505A86BA7BB9E6A00E16A8F077D47D6D879
+hash: AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
 payload: Masked(not-null)
 Completed interactive SSO request.
 Completed interactive SSO request.
@@ -730,9 +739,9 @@ Starting SSO broker request with payload: {
     authority = "https://login.microsoftonline.com/<TenantID>";
     "client_app_name" = MSALMacOS;
     "client_app_version" = "1.0";
-    "client_id" = "08dc26ab-e050-465e-beb4-d3f2d66647a5";
+    "client_id" = "00001111-aaaa-2222-bbbb-3333cccc4444";
     "client_version" = "1.1.7";
-    "correlation_id" = "45418AF5-0901-4D2F-8C7D-E7C5838A977E";
+    "correlation_id" = "aaaa0000-bb11-2222-33cc-444444dddddd";
     "extra_oidc_scopes" = "openid profile offline_access";
     "home_account_id" = "<UserObjectId>.<TenantID>";
     "instance_aware" = 0;
@@ -750,14 +759,14 @@ Executing new request
 Beginning ADBrokerAcquireTokenSilentAction
 Beginning silent flow.
 [MSAL] Resolving authority: Masked(not-null), upn: auth.placeholder-61945244__domainname.com
-[MSAL] (Default cache) Removing credentials with type AccessToken, environment login.windows.net, realm <TenantID>, clientID 08dc26ab-e050-465e-beb4-d3f2d66647a5, unique user ID dbb22b2f, target User.Read profile openid email
+[MSAL] (Default cache) Removing credentials with type AccessToken, environment login.windows.net, realm <TenantID>, clientID 00001111-aaaa-2222-bbbb-3333cccc4444, unique user ID dbb22b2f, target User.Read profile openid email
 [MSAL] (MSIDAccountCredentialCache) retrieving cached credentials using credential query
 [MSAL] Silent controller with PRT finished with error Masked(null)
 ADBrokerAcquireTokenWithPRTAction succeeded.
 Composing broker response.
 Sending broker response.
 Returning to app (msauth.com.microsoft.idnaace.MSALMacOS://auth) - protocol version: 3
-hash: 292FBF0D32D7EEDEB520098E44C0236BA94DDD481FAF847F7FF6D5CD141B943C
+hash: AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
 payload: Masked(not-null)
 Completed silent SSO request.
 Request complete
@@ -804,7 +813,7 @@ Init MSIDKeychainTokenCache with keychainGroup: Masked(not-null)
 [MSAL] (Default accessor) Found 1 tokens
 [Browser SSO] Checking PRTs for deviceId 73796663
 [MSAL] [Browser SSO] Executing without UI for authority https://login.microsoftonline.com/common, number of PRTs 1, device registered 1
-[MSAL] [Browser SSO] Processing request with PRTs and correlation ID in headers (null), query 67b6a62f-6c5d-40f1-8440-a8edac7a1f87
+[MSAL] [Browser SSO] Processing request with PRTs and correlation ID in headers (null), query aaaa0000-bb11-2222-33cc-444444dddddd
 [MSAL] Resolving authority: Masked(not-null), upn: Masked(null)
 [MSAL] No cached preferred_network for authority
 [MSAL] Caching AAD Environements

@@ -1,13 +1,13 @@
 ---
 title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
-author: kenwith
-ms.author: kenwith
-manager: amycolannino
+author: jenniferf-skc
+ms.author: jfields
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/02/2024
+ms.date: 03/25/2025
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -30,35 +30,41 @@ This article discusses known issues to be aware of when you work with app provis
 - Synchronizing contacts and converting contacts to B2B users
 - Synchronizing meeting rooms across tenants
 
-### Microsoft Teams
+### Updating exchange attributes such as proxyAddresses and HiddenFromAddressListEnabled 
+Cross-tenant synchronization can manage user properties in Entra. It does not directly manage exchange attributes. For example: 
+* ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
+* Cross-tenant synchronization can update the ShowInAddressList attribute in Entra, but it cannot directly update HiddenFromAddressListEnabled in Exchange.
+* TargetAddress, which maps to the ExternalEmailAddress property in Microsoft Exchange Online, isn't available as an attribute you can choose. If you need to change this attribute, you have to do it manually over the required object.
 
-External / B2B users of type `member` created by cross-tenant synchronization can be added to a shared channel in Microsoft Teams. However, external member users created outside of cross-tenant sync cannot be added to a Teams shared channel.  
-
- ### Provisioning users
+### SMS sign-in enabled users are skipped
 
 An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
 In addition, users that are enabled for SMS sign-in cannot be synchronized through cross-tenant synchronization.
 
+
 ### Updating the showInAddressList property fails
 
-For existing B2B collaboration users, the showInAddressList attribute will be updated as long as the B2B collaboration user doesn't have a mailbox enabled in the target tenant. If the mailbox is enabled in the target tenant, use the [Set-MailUser](/powershell/module/exchange/set-mailuser) PowerShell cmdlet to set the HiddenFromAddressListsEnabled property to a value of $false.
+For existing B2B collaboration users, the showInAddressList attribute is updated as long as the B2B collaboration user doesn't have a mailbox enabled in the target tenant. If the mailbox is enabled in the target tenant, use the [Set-MailUser](/powershell/module/exchange/set-mailuser) PowerShell cmdlet to set the HiddenFromAddressListsEnabled property to a value of $false.
 
 `Set-MailUser [GuestUserUPN] -HiddenFromAddressListsEnabled:$false`
 
 Where [GuestUserUPN] is the calculated UserPrincipalName. Example:  
 
-`Set-MailUser guestuser1_contoso.com#EXT#@fabricam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
+`Set-MailUser guestuser1_contoso.com#EXT#@fabrikam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
 
 For more information, see [About the Exchange Online PowerShell module](/powershell/exchange/exchange-online-powershell-v2).
 
+### Mail attribute is not updated
+If the user in the target tenant is assigned an exchange license, cross-tenant synchronization will not be able to update the mail attribute. To work around this, remove the exchange license for the user, update the mail attribute, and assign the license to the user again. 
+
 ### Configuring synchronization from target tenant
 
-Configuring synchronization from the target tenant isn't supported. All configurations must be done in the source tenant. Note that the target administrator is able to turn off cross-tenant synchronization at any time.
+Configuring synchronization from the target tenant isn't supported. All configurations must be done in the source tenant. The target administrator is able to turn off cross-tenant synchronization at any time.
 
 ### Two users in the source tenant matched with the same user in the target tenant
 
-When two users in the source tenant have the same mail, and they both need to be created in the target tenant, one user will be created in the target and linked to the two users in the source. Please ensure that the mail attribute is not shared among users in the source tenant. In addition, please ensure that the mail of the user in the source tenant is from a verified domain. The external user will not be created successfully if the mail is from an unverified domain. 
+When two users in the source tenant have the same mail, and they both need to be created in the target tenant, one user is created in the target and linked to the two users in the source. Ensure that the mail attribute is not shared among users in the source tenant. In addition, please ensure that the mail of the user in the source tenant is from a verified domain. The external user will not be created successfully if the mail is from an unverified domain. 
 
 <a name='usage-of-azure-ad-b2b-collaboration-for-cross-tenant-access'></a>
 
@@ -73,13 +79,13 @@ When two users in the source tenant have the same mail, and they both need to be
 
 #### Unable to change provisioning mode back to manual
 
-After you've configured provisioning for the first time, you'll notice that the provisioning mode has switched from manual to automatic. You can't change it back to manual. But you can turn off provisioning through the UI. Turning off provisioning in the UI effectively does the same as setting the dropdown to manual.
+On configuring provisioning for the first time, you'll notice that the provisioning mode has switched from manual to automatic. You can't change it back to manual. But you can turn off provisioning through the UI. Turning off provisioning in the UI effectively does the same as setting the dropdown to manual.
 
 ## Attribute mappings 
 
 #### Attribute SamAccountName or userType not available as a source attribute
 
-The attributes **SamAccountName** and **userType** aren't available as a source attribute by default. Extend your schema to add the attributes. You can add the attributes to the list of available source attributes by extending your schema. To learn more, see [Missing source attribute](user-provisioning-sync-attributes-for-mapping.md). 
+The attributes **SamAccountName** and **userType** aren't available as source attributes. You can instead use a directory extension attribute as a workaround. To learn more, see [Missing source attribute](user-provisioning-sync-attributes-for-mapping.md). 
 
 #### Source attribute dropdown missing for schema extension
 
@@ -87,7 +93,11 @@ Extensions to your schema can sometimes be missing from the source attribute dro
 
 #### Null attribute can't be provisioned
 
-Microsoft Entra ID currently can't provision null attributes. If an attribute is null on the user object, it will be skipped. 
+Microsoft Entra ID currently can't provision null attributes. If an attribute is null on the user object, it is skipped. 
+
+#### Special characters are not supported on joining properties
+
+Microsoft Entra ID currently can't perform filter queries on values containing special characters. Therefore a provisioning attempt on a resource (user or group) with a special character on filter attributes fails. An example is, a group with a special character on the name can be created on Microsoft Entra ID but can't be synced to a target system.
 
 #### Maximum characters for attribute-mapping expressions
 
@@ -95,7 +105,7 @@ Attribute-mapping expressions can have a maximum of 10,000 characters.
 
 #### Unsupported scoping filters
 
-The **appRoleAssignments**, **userType**, and **accountExpires** attributes aren't supported as scoping filters.
+The **appRoleAssignments**, **userType**, **manager**, and **date-type** attributes (for example, StatusHireDate, startDate, endDate, StatusTerminationDate, accountExpires) aren't supported as scoping filters.
 
 ::: zone pivot="cross-tenant-synchronization"
 #### OtherMails should not be included in your attribute mappings as a target attribute
@@ -107,14 +117,16 @@ The otherMails property is automatically computed in the target tenant. Changes 
 
 Multivalue directory extensions can't be used in attribute mappings or scoping filters. 
 
+
 ## Service issues 
 
 #### Unsupported scenarios
 
 - Provisioning passwords isn't supported. 
-- Provisioning nested groups isn't supported. 
-- Provisioning to B2C tenants isn't supported because of the size of the tenants.
-- Not all provisioning apps are available in all clouds. For example, Atlassian isn't yet available in the Government cloud. We're working with app developers to onboard their apps to all clouds.
+- Provisioning nested groups beyond the first level is not supported. 
+- Provisioning is not supported for B2C tenants, including into or out of the tenant.
+- Provisioning is not supported for External ID tenants, including into or out of the tenant.
+- Not all provisioning apps are available in all clouds. 
 
 ::: zone pivot="app-provisioning"
 #### Automatic provisioning isn't available on my OIDC-based application
@@ -158,7 +170,7 @@ Credentials, including the secret token, notification email, and SSO certificate
 
 ::: zone pivot="app-provisioning"
 ## On-premises application provisioning
-The following information is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
+This is a current list of known limitations with the Microsoft Entra ECMA Connector Host and on-premises application provisioning.
 
 ### Application and directories
 The following applications and directories aren't yet supported.

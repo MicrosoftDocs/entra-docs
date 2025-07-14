@@ -6,7 +6,7 @@ summary:  Microsoft’s identity solutions span on-premises and cloud-based capa
 metadata:
   author: billmath
   description: Integrate your on-premises directories with Microsoft Entra ID. This allows you to provide a common identity for your users for Microsoft 365, Azure, and SaaS applications integrated with Microsoft Entra ID.
-  manager: amycolannino
+  manager: femila
   ms.author: billmath
   ms.collection: na
   ms.date: 05/01/2023
@@ -64,67 +64,56 @@ landingContent:
             url: connect/how-to-connect-sync-feature-scheduler.md
           - text: Prevent accidental deletions
             url: accidental-deletes.md
-    # Card
-  - title: Manage passwords
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: What is password hash sync?
-            url: connect/whatis-phs.md
-          - text: What is pass-through authentication?
-            url: connect/how-to-connect-pta.md
-          - text: What is federation?
-            url: connect/whatis-fed.md
-  # Card
-  - title: Manage single sign-on
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: What is single sign-on?
-            url: connect/how-to-connect-sso.md
-          - text: Get started
-            url: sso.md
-          - text: Single sign-on FAQ
-            url: connect/how-to-connect-sso-faq.yml
-  # Card
-  - title: Manage attributes
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: Attribute mapping in cloud sync
-            url: cloud-sync/how-to-attribute-mapping.md
-          - text: Overview of the default configuration in  connect sync
-            url: connect/concept-azure-ad-connect-sync-default-configuration.md
-          - text: How to change the default configuration in  connect sync
-            url: connect/how-to-connect-sync-change-the-configuration.md
-          - text: Attributes synchronized to AD
-            url: connect/reference-connect-sync-attributes-synchronized.md
+
+
+
 
     # Card
-  - title: Provision to Active Directory using Microsoft Entra Cloud Sync
+  - title: Provision -  Active Directory to Microsoft Entra ID
     linkLists:
       - linkListType: get-started
         links:
-          - text: Provision groups to Active Directory using Microsoft Entra Cloud Sync
-            url: cloud-sync/how-to-configure-entra-to-active-directory.md
-          - text: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
-            url: cloud-sync/govern-on-premises-groups.md
-  
-  
-  # Card
-  - title: Cloud sync reference
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: What is cloud sync?
-            url: cloud-sync/what-is-cloud-sync.md
-          - text: What is the provisioning agent?
-            url: cloud-sync/what-is-provisioning-agent.md
+        - text: Integrate a single AD forest  with a single Microsoft Entra tenant
+          url: cloud-sync/tutorial-single-forest.md
+        - text: Integrate an existing forest and a new forest with a single Microsoft Entra tenant
+          url: cloud-sync/tutorial-existing-forest.md
+        - text: Configuration - AD to Microsoft Entra ID
+          url: cloud-sync/how-to-configure.md
+        - text: Attribute mapping - AD to Microsoft Entra ID
+          url: cloud-sync/how-to-attribute-mapping.md 
+        - text: Directory extensions and custom attributes - AD to Microsoft Entra ID
+          url: cloud-sync/custom-attribute-mapping.md
+        - text: Supported topologies - AD to Microsoft Entra ID
+          url: cloud-sync/plan-cloud-sync-topologies.md
 
-  # Card
-  - title: Connect sync reference
+    # Card
+  - title: Provision - Microsoft Entra ID to Active Directory
     linkLists:
-      - linkListType: concept
+      - linkListType: get-started
         links:
-          - text: What is connect sync?
-            url: connect/whatis-azure-ad-connect-v2.md
+        - text: Provision groups to Active Directory using Microsoft Entra Cloud Sync
+          url: group-writeback-cloud-sync.md
+        - text: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+          url: cloud-sync/govern-on-premises-groups.md
+        - text: Supported topologies - Microsoft Entra ID to AD
+          url: cloud-sync/plan-cloud-sync-topologies.md
+        - text: Configuration - Microsoft Entra ID to AD
+          url: cloud-sync/how-to-configure-entra-to-active-directory.md
+        - text: Scenario - Provisioning groups to AD
+          url: cloud-sync/tutorial-group-provisioning.md
+        - text: Scenario - Using directory extensions with group provisioning to AD
+          url: cloud-sync/tutorial-directory-extension-group-provisioning.md
+        - text: Provisioning to Active Directory FAQ
+          url: cloud-sync/reference-provision-to-active-directory-faq.yml
+
+      # Card
+  - title: Migrations
+    linkLists:
+      - linkListType: get-started
+        links:
+        - text: Migrate to Microsoft Entra Cloud Sync from Connect sync
+          url: cloud-sync/migrate-azure-ad-connect-to-cloud-sync.md
+        - text: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+          url: cloud-sync/migrate-group-writeback.md
+
+  

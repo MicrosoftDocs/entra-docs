@@ -2,15 +2,18 @@
 title: View current billable resources in your authorization systems
 description: How to view current billable resources in your authorization system in Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 06/19/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # View billable resources listed in your authorization system
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 Gain insight into current billable resources listed in your authorization system. In Microsoft Entra Permissions Management, a billable resource is defined as a cloud service that uses compute or memory and requires a license. The Permissions Management Billable Resources tab shows you which resources are in your authorization system, and how many of them you're being billed for.
 

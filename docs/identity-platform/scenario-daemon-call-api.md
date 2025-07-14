@@ -2,18 +2,19 @@
 title: How to call a downstream web API from a daemon app
 description: Learn how to build a daemon app that calls a web API.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.custom: 
-ms.date: 02/01/2024
+ms.date: 03/25/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
 # How to call a downstream web API from a daemon app
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 .NET daemon apps can call a web API. .NET daemon apps can also call several preapproved web APIs.
 
@@ -129,29 +130,6 @@ For daemon apps, the web APIs that you call need to be preapproved. There's no i
 
 ## Next steps
 
-# [.NET](#tab/idweb)
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
 
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=idweb).
-
-# [Java](#tab/java)
-
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=java).
-
-# [Node.js](#tab/nodejs)
-
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=nodejs).
-
-# [Python](#tab/python)
-
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=python).
-
-# [.NET low level](#tab/dotnet)
-
-Move on to the next article in this scenario,
-[Move to production](./scenario-daemon-production.md?tabs=dotnet).
-
----
+- Explore Microsoft identity platform [service / daemon  code samples](sample-v2-code.md) 

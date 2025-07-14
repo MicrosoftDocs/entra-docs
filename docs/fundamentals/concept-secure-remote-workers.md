@@ -1,28 +1,27 @@
 ---
-title: Secure your organization's identities with Microsoft Entra ID
-description: Improve your security posture and empower users with Microsoft Entra ID.
+title: Secure your organization's identities
+description: Improve your security posture and empower users with Microsoft Entra ID with the principles of Zero Trust architecture.
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 03/28/2023
+ms.date: 05/31/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
-ms.reviewer: lhuangnorth, martinco
+manager: femila
 
-ms.collection: M365-identity-device-management
+ms.reviewer: lhuangnorth, martinco
 ms.custom: zt-include
 ---
 
 # Secure your organization's identities with Microsoft Entra ID
 
-It can seem daunting trying to secure your workers in today's world, especially when you have to respond rapidly and provide access to many services quickly. This article is meant to provide a concise list of all the actions to take, helping you identify and prioritize which order to deploy the Microsoft Entra features based on the license type you own.
+It can seem daunting trying to secure your workers in today's world, especially when you have to respond rapidly and provide access to many services quickly. This article helps provide a concise list of actions to take, helping you identify and prioritize features based on the license type you own.
 
 Microsoft Entra ID offers many features and provides many layers of security for your Identities, navigating which feature is relevant can sometimes be overwhelming. This document is intended to help organizations deploy services quickly, with secure identities as the primary consideration.
 
-Each table provides a consistent security recommendation, protecting identities from common security attacks while minimizing user friction.
+Each table provides security recommendations to protect identities from common security attacks while minimizing user friction.
 
 The guidance helps:
 
@@ -32,7 +31,9 @@ The guidance helps:
 
 ## Prerequisites
 
-This guide assumes that your cloud only or hybrid identities have been established in Microsoft Entra ID already. For help with choosing your identity type see the article, [Choose the right authentication (AuthN) method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md).
+This guide assumes that your cloud-only or hybrid identities are established in Microsoft Entra ID already. For help with choosing your identity type see the article, [Choose the right authentication (AuthN) method for your Microsoft Entra hybrid identity solution](~/identity/hybrid/connect/choose-ad-authn.md).
+
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 ### Guided walkthrough
 
@@ -59,7 +60,7 @@ There are many recommendations that Microsoft Entra ID Free, Office 365, or Micr
 | [Automate user provisioning and deprovisioning from SaaS Applications](~/identity/app-provisioning/user-provisioning.md) (if applicable) | Automatically create user identities and roles in the cloud (SaaS) applications that users need access to. In addition to creating user identities, automatic provisioning includes the maintenance and removal of user identities as status or roles change, increasing your organization's security. |
 | [Enable Secure hybrid access: Secure legacy apps with existing app delivery controllers and networks](~/identity/enterprise-apps/secure-hybrid-access.md) (if applicable) | Publish and protect your on-premises and cloud legacy authentication applications by connecting them to Microsoft Entra ID with your existing application delivery controller or network. |
 | [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) (applicable to cloud only accounts) | This ability reduces help desk calls and loss of productivity when a user can't sign in to their device or an application. |
-| [Use least privileged roles where possible](~/identity/role-based-access-control/permissions-reference.md) | Give your administrators only the access they need to only the areas they need access to. Not all administrators need to be Global Administrators. |
+| [Use least privileged roles where possible](~/identity/role-based-access-control/permissions-reference.md) | Give your administrators only the access they need to only the areas they need access to. |
 | [Enable Microsoft's password guidance](https://www.microsoft.com/research/publication/password-guidance/) | Stop requiring users to change their password on a set schedule, disable complexity requirements, and your users are more apt to remember their passwords and keep them something that is secure. |
 
 <a name='guidance-for-azure-ad-premium-plan-1-customers'></a>
@@ -74,12 +75,11 @@ The following table is intended to highlight the key actions for the following l
 
 | Recommended action | Detail |
 | --- | --- |
-| [Create more than one Global Administrator](~/identity/role-based-access-control/security-emergency-access.md) | Assign at least two cloud-only permanent Global Administrator accounts for use in an emergency. These accounts aren't to be used daily and should have long and complex passwords. |
 | [Enable combined registration experience for Microsoft Entra multifactor authentication and SSPR to simplify user registration experience](~/identity/authentication/howto-registration-mfa-sspr-combined.md) | Allow your users to register from one common experience for both Microsoft Entra multifactor authentication and self-service password reset. |
 | [Configure multifactor authentication settings for your organization](~/identity/authentication/howto-mfa-getstarted.md) | Ensure accounts are protected from being compromised with multifactor authentication. |
 | [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) | This ability reduces help desk calls and loss of productivity when a user can't sign in to their device or an application. |
 | [Implement Password Writeback](~/identity/authentication/tutorial-enable-sspr-writeback.md) (if using hybrid identities) | Allow password changes in the cloud to be written back to an on-premises Windows Server Active Directory environment. |
-| Create and enable Conditional Access policies | [Multifactor authentication for admins to protect accounts that are assigned administrative rights](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md). <br><br> [Block legacy authentication protocols due to the increased risk associated with legacy authentication protocols](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md). <br><br> [Multifactor authentication for all users and applications to create a balanced multifactor authentication policy for your environment, securing your users and applications](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md). <br><br> [Require multifactor authentication for Azure Management to protect your privileged resources by requiring multifactor authentication for any user accessing Azure resources](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md). |
+| Create and enable Conditional Access policies | [Multifactor authentication for admins to protect accounts that are assigned administrative rights](~/identity/conditional-access/policy-old-require-mfa-admin.md). <br><br> [Block legacy authentication protocols due to the increased risk associated with legacy authentication protocols](~/identity/conditional-access/policy-block-legacy-authentication.md). <br><br> [Multifactor authentication for all users and applications to create a balanced multifactor authentication policy for your environment, securing your users and applications](~/identity/conditional-access/policy-all-users-mfa-strength.md). <br><br> [Require multifactor authentication for Azure Management to protect your privileged resources by requiring multifactor authentication for any user accessing Azure resources](~/identity/conditional-access/policy-old-require-mfa-azure-mgmt.md). |
 | [Enable Password Hash Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) (if using hybrid identities) | Provide redundancy for authentication and improve security (including Smart Lockout, IP Lockout, and the ability to discover leaked credentials.) |
 | [Enable AD FS smart lock out](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) (If applicable) | Protects your users from experiencing extranet account lockout from malicious activity. |
 | [Enable Microsoft Entra smart lockout](~/identity/authentication/howto-password-smart-lockout.md) (if using managed identities) | Smart lockout helps to lock out bad actors who are trying to guess your users' passwords or use brute-force methods to get in. |
@@ -90,7 +90,7 @@ The following table is intended to highlight the key actions for the following l
 | [Automate user provisioning and deprovisioning from SaaS Applications](~/identity/app-provisioning/user-provisioning.md) (if applicable) | Automatically create user identities and roles in the cloud (SaaS) applications that users need access to. In addition to creating user identities, automatic provisioning includes the maintenance and removal of user identities as status or roles change, increasing your organization's security. |
 | [Enable Conditional Access – Device-based](~/identity/conditional-access/concept-conditional-access-grant.md) | Improve security and user experiences with device-based Conditional Access. This step ensures users can only access from devices that meet your standards for security and compliance. These devices are also known as managed devices. Managed devices can be Intune compliant or Microsoft Entra hybrid joined devices. |
 | [Enable Password Protection](~/identity/authentication/howto-password-ban-bad-on-premises-deploy.md) | Protect users from using weak and easy to guess passwords. |
-| [Use least privileged roles where possible](~/identity/role-based-access-control/permissions-reference.md) | Give your administrators only the access they need to only the areas they need access to. Not all administrators need to be Global Administrators. |
+| [Use least privileged roles where possible](~/identity/role-based-access-control/permissions-reference.md) | Give your administrators only the access they need to only the areas they need access to. |
 | [Enable Microsoft's password guidance](https://www.microsoft.com/research/publication/password-guidance/) | Stop requiring users to change their password on a set schedule, disable complexity requirements, and your users are more apt to remember their passwords and keep them something that is secure. |
 | [Create an organization specific custom banned password list](~/identity/authentication/tutorial-configure-custom-password-protection.md) | Prevent users from creating passwords that include common words or phrases from your organization or area. |
 | [Deploy passwordless authentication methods for your users](~/identity/authentication/concept-authentication-passwordless.md) | Provide your users with convenient passwordless authentication methods. |
@@ -108,14 +108,13 @@ The following table is intended to highlight the key actions for the following l
 
 | Recommended action | Detail |
 | --- | --- |
-| [Create more than one Global Administrator](~/identity/role-based-access-control/security-emergency-access.md) | Assign at least two cloud-only permanent Global Administrator accounts for use in an emergency. These accounts aren't to be used daily and should have long and complex passwords. |
 | [Enable combined registration experience for Microsoft Entra multifactor authentication and SSPR to simplify user registration experience](~/identity/authentication/howto-registration-mfa-sspr-combined.md) | Allow your users to register from one common experience for both Microsoft Entra multifactor authentication and self-service password reset. |
 | [Configure multifactor authentication settings for your organization](~/identity/authentication/howto-mfa-getstarted.md) | Ensure accounts are protected from being compromised with multifactor authentication. |
 | [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) | This ability reduces help desk calls and loss of productivity when a user can't sign in to their device or an application. |
 | [Implement Password Writeback](~/identity/authentication/tutorial-enable-sspr-writeback.md) (if using hybrid identities) | Allow password changes in the cloud to be written back to an on-premises Windows Server Active Directory environment. |
-| [Enable Identity Protection policies to enforce multifactor authentication registration](~/id-protection/howto-identity-protection-configure-mfa-policy.md) | Manage the roll-out of Microsoft Entra multifactor authentication. |
-| [Enable Identity Protection user and sign-in risk policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) | Enable Identity Protection User and Sign-in policies. The recommended sign-in policy is to target medium risk sign-ins and require multifactor authentication. For User policies, you should target high risk users requiring the password change action. |
-| Create and enable Conditional Access policies | [Multifactor authentication for admins to protect accounts that are assigned administrative rights](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md). <br><br> [Block legacy authentication protocols due to the increased risk associated with legacy authentication protocols](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md). <br><br> [Require multifactor authentication for Azure Management to protect your privileged resources by requiring multifactor authentication for any user accessing Azure resources](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md). |
+| [Enable Microsoft Entra ID Protection policies to enforce multifactor authentication registration](~/id-protection/howto-identity-protection-configure-mfa-policy.md) | Manage the roll-out of Microsoft Entra multifactor authentication. |
+| [Enable user and sign-in risk-based Conditional Access policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) | The recommended sign-in policy is to target medium risk sign-ins and require multifactor authentication. For User policies, you should target high risk users requiring the password change action. |
+| Create and enable Conditional Access policies | [Multifactor authentication for admins to protect accounts that are assigned administrative rights](~/identity/conditional-access/policy-old-require-mfa-admin.md). <br><br> [Block legacy authentication protocols due to the increased risk associated with legacy authentication protocols](~/identity/conditional-access/policy-block-legacy-authentication.md). <br><br> [Require multifactor authentication for Azure Management to protect your privileged resources by requiring multifactor authentication for any user accessing Azure resources](~/identity/conditional-access/policy-old-require-mfa-azure-mgmt.md). |
 | [Enable Password Hash Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md) (if using hybrid identities) | Provide redundancy for authentication and improve security (including Smart Lockout, IP Lockout, and the ability to discover leaked credentials.) |
 | [Enable AD FS smart lock out](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-smart-lockout-protection) (If applicable) | Protects your users from experiencing extranet account lockout from malicious activity. |
 | [Enable Microsoft Entra smart lockout](~/identity/authentication/howto-password-smart-lockout.md) (if using managed identities) | Smart lockout helps to lock out bad actors who are trying to guess your users' passwords or use brute-force methods to get in. |
@@ -126,7 +125,7 @@ The following table is intended to highlight the key actions for the following l
 | [Automate user provisioning and deprovisioning from SaaS Applications](~/identity/app-provisioning/user-provisioning.md) (if applicable) | Automatically create user identities and roles in the cloud (SaaS) applications that users need access to. In addition to creating user identities, automatic provisioning includes the maintenance and removal of user identities as status or roles change, increasing your organization's security. |
 | [Enable Conditional Access – Device-based](~/identity/conditional-access/concept-conditional-access-grant.md) | Improve security and user experiences with device-based Conditional Access. This step ensures users can only access from devices that meet your standards for security and compliance. These devices are also known as managed devices. Managed devices can be Intune compliant or Microsoft Entra hybrid joined devices. |
 | [Enable Password Protection](~/identity/authentication/howto-password-ban-bad-on-premises-deploy.md) | Protect users from using weak and easy to guess passwords. |
-| [Use least privileged roles where possible](~/identity/role-based-access-control/permissions-reference.md) | Give your administrators only the access they need to only the areas they need access to. Not all administrators need to be Global Administrators. |
+| [Use least privileged roles where possible](~/identity/role-based-access-control/permissions-reference.md) | Give your administrators only the access they need to only the areas they need access to. |
 | [Enable Microsoft's password guidance](https://www.microsoft.com/research/publication/password-guidance/) | Stop requiring users to change their password on a set schedule, disable complexity requirements, and your users are more apt to remember their passwords and keep them something that is secure. |
 | [Create an organization specific custom banned password list](~/identity/authentication/tutorial-configure-custom-password-protection.md) | Prevent users from creating passwords that include common words or phrases from your organization or area. |
 | [Deploy passwordless authentication methods for your users](~/identity/authentication/concept-authentication-passwordless.md) | Provide your users with convenient passwordless authentication methods |
@@ -134,7 +133,7 @@ The following table is intended to highlight the key actions for the following l
 | [Enable Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) | Enables you to manage, control, and monitor access to important resources in your organization, ensuring admins have access only when needed and with approval. |
 | [Complete an access review for Microsoft Entra directory roles in PIM](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) | Work with your security and leadership teams to create an access review policy to review administrative access based on your organization's policies. |
 
-[!INCLUDE [active-directory-zero-trust](~/includes/entra-zero-trust.md)]
+[!INCLUDE [active-directory-zero-trust](../includes/entra-zero-trust.md)]
 
 ## Next steps
 

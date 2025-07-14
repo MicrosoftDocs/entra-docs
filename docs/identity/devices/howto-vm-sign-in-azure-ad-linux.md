@@ -5,18 +5,18 @@ description: Learn how to sign in to an Azure VM that's running Linux by using M
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 02/26/2024
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
-ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux
+ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---
 
 # Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 
-To improve the security of Linux virtual machines (VMs) in Azure, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies.
+To improve the security of Azure Linux virtual machines (VMs) or Azure Arc-enabled Linux servers, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies.
 
 This article shows you how to create and configure a Linux VM and log in with Microsoft Entra ID by using OpenSSH certificate-based authentication.
 
@@ -38,14 +38,18 @@ The following Linux distributions are currently supported for deployments in a s
 
 | Distribution | Version |
 | --- | --- |
-| Common Base Linux Mariner (CBL-Mariner) | CBL-Mariner 1, CBL-Mariner 2 |
-| CentOS | CentOS 7, CentOS 8 |
+| AlmaLinux | AlmaLinux 8, AlmaLinux 9 |
+| Azure Linux (formerly known as Common Base Linux Mariner)| CBL-Mariner 2.0, Azure Linux 3.0 |
 | Debian | Debian 9, Debian 10, Debian 11, Debian 12 |
-| openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1+ |
+| openSUSE | openSUSE Leap 42.3, openSUSE Leap 15.1 to 15.5, openSUSE Leap 15.6+ |
 | Oracle | Oracle Linux 8, Oracle Linux 9 |
-| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+ |
-| SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1+ |
-| Ubuntu Server | Ubuntu Server 16.04 to Ubuntu Server 22.04, all minor version after Ubuntu 22.04 |
+| RedHat Enterprise Linux (RHEL) | RHEL 7.4 to RHEL 7.9, RHEL 8.3+, RHEL 9.0+ |
+| Rocky | Rocky 8, Rocky 9 |
+| SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1 to 15.5, SLES 15.6+ |
+| Ubuntu | Ubuntu 16.04 to Ubuntu 24.04 |
+
+> [!NOTE]
+> SUSE made a breaking change with version 15.6 that is incompatible with the older versions. Since the Microsoft Entra login VM extension always installs the latest package, this will not work on older SUSE versions. You can install the aadsshlogin packages from packages.microsoft.com for older SUSE versions. After adding the repo, one can manually install them with this command: `sudo zypper install aadsshlogin=1.0.027980001`.
 
 The following Azure regions are currently supported for this feature:
 
@@ -175,6 +179,10 @@ The AADSSHLoginForLinux extension can be installed on an existing (supported dis
 
 The `provisioningState` value of `Succeeded` appears when the extension is successfully installed on the VM. The VM must have a running [VM agent](/azure/virtual-machines/extensions/agent-linux) to install the extension.
 
+## Enable Microsoft Entra login for a Azure Arc-enabled Linux servers
+
+You can find the relevant details on [SSH access to Azure Arc-enabled servers](/azure/azure-arc/servers/ssh-arc-overview)
+
 ## Configure role assignments for the VM
 
 Now that you've created the VM, you need to assign one of the following Azure roles to determine who can sign in to the VM. To assign these roles, you must have the [Virtual Machine Data Access Administrator](/azure/role-based-access-control/built-in-roles#virtual-machine-data-access-administrator-preview) role, or any role that includes the `Microsoft.Authorization/roleAssignments/write` action such as the [Role Based Access Control Administrator](/azure/role-based-access-control/built-in-roles#role-based-access-control-administrator-preview) role. However, if you use a different role than Virtual Machine Data Access Administrator, we recommend you [add a condition to reduce the permission to create role assignments](/azure/role-based-access-control/delegate-role-assignments-overview).
@@ -274,21 +282,8 @@ The application that appears in the Conditional Access policy is called *Azure L
 If the Azure Linux VM Sign-In application is missing from Conditional Access, make sure the application isn't in the tenant:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Remove the filters to see all applications, and search for **Virtual Machine**. If you don't see Microsoft Azure Linux Virtual Machine Sign-In as a result, the service principal is missing from the tenant.
-
-Another way to verify it is via Graph PowerShell:
-
-1. [Install the Graph PowerShell SDK](/powershell/microsoftgraph/installation) if you haven't already done so.
-1. Enter the command `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All","Application.ReadWrite.All"`.
-1. Sign in with a Global Administrator account.
-1. Consent to the prompt that asks for your permission.
-1. Enter the command `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Microsoft Azure Linux Virtual Machine Sign-In"'`.
-
-   If this command results in no output and returns you to the PowerShell prompt, you can create the service principal by using the following Graph PowerShell command: `New-MgServicePrincipal -AppId ce6ff14a-7fdc-4685-bbe0-f6afdfcfa8e0`.
-
-   Successful output will show that the app ID and the application name Azure Linux VM Sign-In were created.
-1. Sign out of Graph PowerShell by using the following command: `Disconnect-MgGraph`.
 
 <a name='log-in-by-using-an-azure-ad-user-account-to-ssh-into-the-linux-vm'></a>
 
@@ -465,7 +460,7 @@ To uninstall old packages:
 
 1. Log in as a local user with admin privileges.
 1. Make sure there are no logged-in Microsoft Entra users. Call the `who -u` command to see who is logged in. Then use `sudo kill <pid>` for all session processes that the previous command reported.
-1. Run `sudo apt remove --purge aadlogin` (Ubuntu/Debian), `sudo yum remove aadlogin` (RHEL or CentOS), or `sudo zypper remove aadlogin` (openSUSE or SLES).
+1. Run `sudo apt remove --purge aadlogin` (Ubuntu/Debian), `sudo yum remove aadlogin` (RHEL), or `sudo zypper remove aadlogin` (openSUSE or SLES).
 1. If the command fails, try the low-level tools with scripts disabled:
    1. For Ubuntu/Debian, run `sudo dpkg --purge aadlogin`. If it's still failing because of the script, delete the `/var/lib/dpkg/info/aadlogin.prerm` file and try again.
    1. For everything else, run `rpm -e --noscripts aadogin`.
@@ -497,7 +492,7 @@ The solution is to uninstall the older AADLoginForLinux VM extension from the VM
 
 #### Installation failures when using an HTTP proxy
 
-The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open ` /lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
+The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open `/lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
 ```
 [Service]
 Environment="http_proxy=http://proxy.example.com:80/"
@@ -542,13 +537,13 @@ One solution is to remove `AllowGroups` and `DenyGroups` statements from *sshd_c
 
 Another solution is to move `AllowGroups` and `DenyGroups` to a `match user` section in *sshd_config*. Make sure the match template excludes Microsoft Entra users.
 
-### Getting Permission Denied when trying to connect from Azure Shell to Linux Red Hat/Oracle/CentOS 7.X VM.
+### Getting Permission Denied when trying to connect from Azure Shell to Linux Red Hat/Oracle 7.X VM.
 
 The OpenSSH server version in the target VM 7.4 is too old. Version incompatible with OpenSSH client version 8.8. Refer to [RSA SHA256 certificates no longer work](https://bugzilla.mindrot.org/show_bug.cgi?id=3351) for more information.
 
 Workaround:
 
-- Adding option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `az ssh vm ` command.
+- Adding option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `az ssh vm` command.
 
 ```azurecli-interactive
 az ssh vm -n myVM -g MyResourceGroup -- -A -o "PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"

@@ -5,18 +5,18 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 02/06/2024
-ms.reviewer: jassuri
+ms.date: 05/25/2025
+ms.reviewer: jasuri
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: how-to
 titleSuffix: Microsoft identity platform
 #Customer intent: As a developer, I want to learn about custom authentication extensions so that I can augment tokens with claims from an external identity system or role management system.
 ---
 
 # Custom claims provider reference
 
-In this reference article, you can learn about the REST API schema and claims mapping policy structure for custom claim provider events.
+In this how-to guide, you can learn about the REST API schema and claims mapping policy structure for custom claim provider events.
 
 ## Token issuance start event
 
@@ -41,15 +41,24 @@ Your REST API endpoint is responsible for interfacing with downstream services. 
 
 The REST API returns an HTTP response to Microsoft Entra ID containing the attributes. Attributes that return by your REST API aren't automatically added into a token. Instead, an application's claims mapping policy must be configured for any attribute to be included in the token. In Microsoft Entra ID, a claims mapping policy modifies the claims emitted in tokens issued for specific applications.
 
-### REST API schema
+### Request to the REST API
 
 To develop your own REST API for the token issuance start event, use the following REST API data contract. The schema describes the contract to design the request and response handler.
 
-Your custom extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign-in. The `id` value in the following JSON is a Microsoft application that represents the Microsoft Entra authentication events service. The JSON attributes can be used to perform extra logic by your API. The request to your API is in the following format:
+Your custom extension in Microsoft Entra ID makes an HTTP call to your REST API with a JSON payload. The JSON payload contains user profile data, authentication context attributes, and information about the application the user wants to sign-in. The `id` value in the following JSON is a Microsoft application that represents the Microsoft Entra authentication events service. The JSON attributes can be used to perform extra logic by your API. 
+
+The following HTTP request demonstrates how Microsoft Entra invokes your REST API. This HTTP request can be used to debug your REST API by simulating a request from Microsoft Entra.
 
 ```http
 POST https://your-api.com/endpoint
 
+Content-Type: application/json
+
+[Request payload]
+```
+The following JSON document provides an example of a request payload:
+
+```json
 {
     "type": "microsoft.graph.authenticationEvent.tokenIssuanceStart",
     "source": "/tenants/<Your tenant GUID>/applications/<Your Test Application App Id>",
@@ -66,7 +75,6 @@ POST https://your-api.com/endpoint
                 "market": "en-us"
             },
             "protocol": "OAUTH2.0",
-            "requestType": "SignIn",
             "clientServicePrincipal": {
                 "id": "<Your Test Applications servicePrincipal objectId>",
                 "appId": "<Your Test Application App Id>",
@@ -80,11 +88,11 @@ POST https://your-api.com/endpoint
                 "displayName": "My Test application"
             },
             "user": {
-                "companyName": "Casey Jensen"
+                "companyName": "Casey Jensen",
                 "createdDateTime": "2016-03-01T15:23:40Z",
                 "displayName": "Casey Jensen",
                 "givenName": "Casey",
-                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // Client ID representing the Microsoft Entra authentication events service
+                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", 
                 "mail": "casey@contoso.com",
                 "onPremisesSamAccountName": "caseyjensen",
                 "onPremisesSecurityIdentifier": "<Enter Security Identifier>",
@@ -99,7 +107,34 @@ POST https://your-api.com/endpoint
 }
 ```
 
-The REST API response format which Azure expects is in the following format, where the claims `DateOfBirth` and `CustomRoles` are returned to Azure:
+When a B2B user from Fabrikam organization authenticates to Contoso's organization, the request payload sent to the REST API has the `user` element in the following format:
+
+```json
+"user": {
+    "companyName": "Fabrikam",
+    "createdDateTime": "2022-07-15T00:00:00Z",
+    "displayName": "John Wright",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+    "mail": "johnwright@fabrikam.com",
+    "preferredDataLocation": "EUR",
+    "userPrincipalName": "johnwright_fabrikam.com#EXT#@contoso.onmicrosoft.com",
+    "userType": "Guest"
+}
+```
+
+### Response from the REST API
+
+Microsoft Entra ID expects a REST API response in the following HTTP.
+
+```http
+HTTP/1.1 200 OK
+
+Content-Type: application/json
+
+[JSON document]
+```
+ 
+In the HTTP response, provide the following JSON document, where the claims `DateOfBirth` and `CustomRoles` are returned to Microsoft Entra:
 
 ```json
 {
@@ -121,21 +156,6 @@ The REST API response format which Azure expects is in the following format, whe
 }
 ```
 
-When a B2B user from Fabrikam organization authenticates to Contoso's organization, the request payload sent to the REST API has the `user` element in the following format:
-
-```json
-"user": {
-    "companyName": "Fabrikam",
-    "createdDateTime": "2022-07-15T00:00:00Z",
-    "displayName": "John Wright",
-    "id": "12345678-0000-0000-0000-000000000000",
-    "mail": "johnwright@fabrikam.com",
-    "preferredDataLocation": "EUR",
-    "userPrincipalName": "johnwright_fabrikam.com#EXT#@contoso.onmicrosoft.com",
-    "userType": "Guest"
-}
-```
-
 ### Supported data types
 
 The following table shows the data types supported by Custom claims providers for the token issuance start event:
@@ -146,6 +166,10 @@ The following table shows the data types supported by Custom claims providers fo
 | String array | True      |
 | Boolean      | False     |
 | JSON         | False     |
+
+### Claim size limitations
+
+The maximum claim size that a claims provider can return is limited to 3KB. This is the sum of all the key and value pairs returned by the REST API.
 
 ### Claims mapping policy
 

@@ -1,11 +1,11 @@
 ---
 author: kengaderdus
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
-ms.date: 03/30/2023
+ms.date: 04/06/2024
 ms.author: kengaderdus
-ms.manager: mwongerapk
+ms.manager: dougeby
 ---
 To grant your client app (*ciam-client-app*) API permissions, follow these steps:
 
@@ -15,19 +15,7 @@ To grant your client app (*ciam-client-app*) API permissions, follow these steps
  
 1. Under **Configured permissions**, select **Add a permission**.
 
-1. Select **Microsoft APIs** tab.
-
-1. Under **Commonly used Microsoft APIs** section, select **Microsoft Graph**.
-
-1. Select **Delegated permissions** option.
-
-1. Under **Select permissions** section, search for and select both **openid** and **offline_access** permissions.
-
-1. Select **Add permissions** button. 
- 
-1. Under **Configured permissions**, select **Add a permission** again.
-
-1. Select the **My APIs** tab.
+1. Select the **APIs my organization uses** tab.
  
 1. In the list of APIs, select the API such as *ciam-ToDoList-api*.
  
@@ -35,9 +23,7 @@ To grant your client app (*ciam-client-app*) API permissions, follow these steps
  
 1. From the permissions list, select **ToDoList.Read, ToDoList.ReadWrite** (use the search box if necessary).
  
-1. Select the **Add permissions** button.
- 
-1. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the  consumer users themselves can't consent to these permissions. To address this problem, you as the admin must consent to these permissions on behalf of all the users in the tenant:
+1. Select the **Add permissions** button. At this point, you've assigned the permissions correctly. However, since the tenant is a customer's tenant, the  consumer users themselves can't consent to these permissions. To address this problem, you as the admin must consent to these permissions on behalf of all the users in the tenant:
 
     1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
 

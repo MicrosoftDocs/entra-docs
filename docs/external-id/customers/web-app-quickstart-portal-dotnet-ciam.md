@@ -3,20 +3,20 @@ title: "Quickstart: Add sign in to ASP.NET web app"
 description: Learn how to run a sample ASP.NET web app to sign in users
  
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
  
 ms.custom: devx-track-dotnet
 ROBOTS: NOINDEX
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date: 06/06/2023
 ---
 
 # Portal quickstart for ASP.NET web app
 
-> In this quickstart, you download and run a code sample that demonstrates how ASP.NET web app can sign in users with Microsoft Entra ID for customers.
+> In this quickstart, you download and run a code sample that demonstrates how ASP.NET web app can sign in users with Microsoft Entra External ID.
 >
 > [!div renderon="portal" id="display-on-portal" class="sxs-lookup"]
 > 1. Make sure you've installed [.NET SDK v7](https://dotnet.microsoft.com/download/dotnet/7.0) or later.

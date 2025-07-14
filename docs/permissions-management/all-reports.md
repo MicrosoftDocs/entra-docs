@@ -2,15 +2,19 @@
 title: View a list and description of all system reports available in Permissions Management reports
 description: View a list and description of all system reports available in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 06/13/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
+
 # View a list and description of system reports
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire). 
 
 Microsoft Entra Permissions Management has various types of system reports that capture specific sets of data. These reports allow management, auditors, and administrators to:
 

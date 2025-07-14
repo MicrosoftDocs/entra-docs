@@ -2,15 +2,16 @@
 title: What is automated app user provisioning in Microsoft Entra ID
 description: An introduction to how you can use Microsoft Entra ID to automatically provision, deprovision, and continuously update user accounts across multiple third-party applications.
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: overview
-ms.date: 09/15/2023
+ms.date: 04/09/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
+#customer intent: As an IT admin, I want to understand app provisioning in Microsoft Entra ID so that I can automate user account management across applications.  
 ---
-
 # What is app provisioning in Microsoft Entra ID?
 
 In Microsoft Entra ID, the term *app provisioning* refers to automatically creating user identities and roles for applications.
@@ -23,7 +24,7 @@ Microsoft Entra ID also supports provisioning users into applications hosted on-
 
 |Protocol |Connector|
 |-----|-----|
-| SCIM | [SCIM - SaaS](use-scim-to-provision-users-and-groups.md) <br />[SCIM - On-prem / Private network](./on-premises-scim-provisioning.md) |
+| SCIM | [SCIM - SaaS](use-scim-to-provision-users-and-groups.md) <br />[SCIM - On-premises / Private network](./on-premises-scim-provisioning.md) |
 | LDAP | [LDAP](./on-premises-ldap-connector-configure.md)|
 | SQL  | [SQL](./tutorial-ecma-sql-connector.md) |
 | REST | [Web Services](./on-premises-web-services-connector.md)|
@@ -69,7 +70,7 @@ Some common motivations for using automatic provisioning include:
 - Easily importing a large number of users into a particular SaaS application or system.
 - A single set of policies to determine provisioned users that can sign in to an app.
 
-Microsoft Entra user provisioning can help address these challenges. To learn more about how customers have been using Microsoft Entra user provisioning, read the [ASOS case study](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/asos-better-protects-its-data-with-azure-ad-automated-user/ba-p/827846). The following video provides an overview of user provisioning in Microsoft Entra ID.
+Microsoft Entra user provisioning can help address these challenges. To learn more about how customers have been using Microsoft Entra user provisioning, read the [ASOS case study](https://techcommunity.microsoft.com/blog/identity/asos-better-protects-its-data-with-azure-ad-automated-user-provisioning/827846). The following video provides an overview of user provisioning in Microsoft Entra ID.
 
 > [!VIDEO https://www.youtube.com/embed/_ZjARPpI6NI]
 
@@ -77,7 +78,7 @@ Microsoft Entra user provisioning can help address these challenges. To learn mo
 
 ## What applications and systems can I use with Microsoft Entra automatic user provisioning?
 
-Microsoft Entra features preintegrated support for many popular SaaS apps and human resources systems, and generic support for apps that implement specific parts of the [SCIM 2.0 standard](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/provisioning-with-scim-getting-started/ba-p/880010).
+Microsoft Entra features preintegrated support for many popular SaaS apps and human resources systems, and generic support for apps that implement specific parts of the [SCIM 2.0 standard](https://techcommunity.microsoft.com/blog/microsoftsecurityandcompliance/provisioning-with-scim-%e2%80%93-getting-started/880010).
 
 * **Preintegrated applications (gallery SaaS apps)**: You can find all applications for which Microsoft Entra ID supports a preintegrated provisioning connector in [Tutorials for integrating SaaS applications with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md). The preintegrated applications listed in the gallery generally use SCIM 2.0-based user management APIs for provisioning. 
 
@@ -86,6 +87,10 @@ Microsoft Entra features preintegrated support for many popular SaaS apps and hu
    To request a new application for provisioning, see [Submit a request to publish your application in Microsoft Entra application gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md). For a user provisioning request, we require the application to have a SCIM-compliant endpoint. Request that the application vendor follows the SCIM standard so we can onboard the app to our platform quickly.
 
 * **Applications that support SCIM 2.0**: For information on how to generically connect applications that implement SCIM 2.0-based user management APIs, see [Build a SCIM endpoint and configure user provisioning](use-scim-to-provision-users-and-groups.md).
+
+* **Applications that use an existing directory or database, or provide a provisioning interface**: See tutorials for how to provision to [LDAP](./on-premises-ldap-connector-configure.md) directory, a [SQL](./tutorial-ecma-sql-connector.md) database, have a [REST or SOAP](./on-premises-web-services-connector.md) interface, or can be reached through [PowerShell](./on-premises-powershell-connector.md), a [custom ECMA connector](./on-premises-custom-connector.md) or [connectors and gateways built by partners](./partner-driven-integrations.md).
+
+* **Applications that support Just-in-time provisioning via SAML**.
 
 ## How do I set up automatic provisioning to an application?
 

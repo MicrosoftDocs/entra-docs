@@ -1,15 +1,15 @@
 ---
 title: FortiGate deployment guide
 description: Set up and work with the Fortinet FortiGate next-generation firewall product.
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/21/2022
-ms.author: jeedes
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
 # FortiGate Azure Virtual Machine Deployment Guide
@@ -112,8 +112,7 @@ The following sections walk you through how to set up the FortiGate VM.
 2. Continue past any certificate errors.
 3. Sign in by using the administrator credentials provided during the FortiGate VM deployment.
 4. In the left menu, select **System** > **Firmware**.
-5. In **Firmware Management**, select **Browse**, and select the firmware file downloaded
-    earlier.
+5. In **Firmware Management**, select **Browse**, and select the firmware file downloaded earlier.
 6. Ignore the warning and select **Backup config and upgrade**.
 
     ![Screenshot of Firmware Management.](backup-configure-upgrade.png)
@@ -133,8 +132,7 @@ The following sections walk you through how to set up the FortiGate VM.
 3. Sign in by using the administrator credentials provided during the FortiGate VM deployment.
 4. In the left menu, select **System**.
 5. Under **Administration Settings**, change the HTTPS port to **8443**, and select **Apply**.
-6. After the change applies, the browser attempts to reload the administration page, but it
-    fails. From now on, the administration page address is `https://<address>:8443`.
+6. After the change applies, the browser attempts to reload the administration page, but it fails. From now on, the administration page address is `https://<address>:8443`.
 
     ![Screenshot of Upload Remote Certificate.](certificate.png)
 
@@ -148,13 +146,11 @@ The following sections walk you through how to set up the FortiGate VM.
 3. Sign in by using the administrator credentials provided during the FortiGate VM deployment.
 4. In the left menu, select **System** > **Certificates**.
 5. Select **Import** > **Remote Certificate**.
-6. Browse to the certificate downloaded from the FortiGate custom app deployment in the
-    Azure tenant. Select it, and select **OK**.
+6. Browse to the certificate downloaded from the FortiGate custom app deployment in the Azure tenant. Select it, and select **OK**.
 
 ### Upload and configure a custom SSL certificate
 
-You might want to configure the FortiGate VM with your own SSL certificate that supports the FQDN you're using. If you have access to an SSL certificate packaged with the private key in PFX format, it
-can be used for this purpose.
+You might want to configure the FortiGate VM with your own SSL certificate that supports the FQDN you're using. If you have access to an SSL certificate packaged with the private key in PFX format, it can be used for this purpose.
 
 1. Go to `https://<address>:8443`. Here, `<address>` is the FQDN or the public IP address assigned to the FortiGate VM.
 
@@ -208,13 +204,13 @@ Multi-homed Azure VMs have all network interfaces on the same virtual network (b
 4. Under Network, select **Static Routes**.
 5. Select **Create New**.
 6. Next to Destination select **Subnet**.
-7. Under Subnet, specify the subnet information where the on-premises corporate resources reside (e.g. 10.1.0.0/255.255.255.0)
-8. Next to Gateway Address specify the gateway on the Azure subnet where port2 is connected (e.g. this usually ends in 1 like 10.6.1.1)
-9. Next to Interface select the internal network interface, port2
+7. Under Subnet, specify the subnet information where the on-premises corporate resources reside (such as `10.1.0.0/255.255.255.0`).
+8. Next to Gateway Address specify the gateway on the Azure subnet where port2 is connected (for example, this usually ends in `1`, as in `10.6.1.1`).
+9. Next to Interface select the internal network interface, `port2`.
 10. Select **OK**.
 
     ![Screenshot of Configuring a Route.](route.png)
 
 ## Configure FortiGate SSL VPN
 
-Follow the steps outlined in [Tutorial: Microsoft Entra single sign-on (SSO) integration with FortiGate SSL VPN](../../fortigate-ssl-vpn-tutorial.md)
+Follow the steps outlined in [Microsoft Entra single sign-on (SSO) integration with FortiGate SSL VPN](../../fortigate-ssl-vpn-tutorial.md)

@@ -5,8 +5,8 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: mode-api, devx-track-js
-ms.date: 08/22/2022
+ms.custom: mode-api
+ms.date: 09/24/2024
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -36,7 +36,7 @@ ms.topic: concept-article
 > 
 > ### Download and configure the sample app
 > 
-> #### Step 1: Configure the application in Azure portal
+> #### Step 1: Configure the application in the Microsoft Entra admin center
 > For the code sample for this quickstart to work, you need to create a client secret, and add Graph API's **User.Read.All** application permission.
 >
 > <button id="makechanges" class="nextstepaction configure-app-button"> Make these changes for me </button>
@@ -55,7 +55,6 @@ ms.topic: concept-article
 > 
 > #### Step 3: Admin consent
 > 
-> If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires **admin consent**: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
 > 
 > ##### Global tenant administrator
 > 
@@ -93,7 +92,7 @@ ms.topic: concept-article
 > 
 > ### MSAL Node
 > 
-> [MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by application permissions (using the application's own identity) instead of delegated permissions. The authentication flow used in this case is known as [OAuth 2.0 client credentials flow](v2-oauth2-client-creds-grant-flow.md). For more information on how to use MSAL Node with daemon apps, see [Scenario: Daemon application](scenario-daemon-overview.md).
+> [MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by application permissions (using the application's own identity) instead of delegated permissions. The authentication flow used in this case is known as [OAuth 2.0 client credentials flow](v2-oauth2-client-creds-grant-flow.md). For more information on how to use MSAL Node with daemon apps, see [Scenario: Daemon application](scenario-daemon-app-registration.md).
 > 
 >  You can install MSAL Node by running the following npm command.
 > 
@@ -124,9 +123,9 @@ ms.topic: concept-article
 > 
 > > | Where: |Description |
 > > |---------|---------|
-> > | `clientId` | Is the **Application (client) ID** for the application registered in the Azure portal. You can find this value in the app's **Overview** page in the Azure portal. |
+> > | `clientId` | Is the **Application (client) ID** for the application registered in the Microsoft Entra admin center. You can find this value in the app's **Overview** page. |
 > > | `authority`    | The STS endpoint for user to authenticate. Usually `https://login.microsoftonline.com/{tenant}` for public cloud, where {tenant} is the name of your tenant or your tenant Id.|
-> > | `clientSecret` | Is the client secret created for the application in Azure portal. |
+> > | `clientSecret` | Is the client secret created for the application in the Microsoft Entra admin center. |
 > 
 > For more information, please see the [reference documentation for `ConfidentialClientApplication`](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/initialize-confidential-client-application.md)
 > 
@@ -144,7 +143,7 @@ ms.topic: concept-article
 > 
 > > |Where:| Description |
 > > |---------|---------|
-> > | `tokenRequest` | Contains the scopes requested. For confidential clients, this should use the format similar to `{Application ID URI}/.default` to indicate that the scopes being requested are the ones statically defined in the app object set in the Azure portal (for Microsoft Graph, `{Application ID URI}` points to `https://graph.microsoft.com`). For custom web APIs, `{Application ID URI}` is defined under **Expose an API** section in Azure portal's Application Registration. |
+> > | `tokenRequest` | Contains the scopes requested. For confidential clients, this should use the format similar to `{Application ID URI}/.default` to indicate that the scopes being requested are the ones statically defined in the app object set in the Microsoft Entra admin center (for Microsoft Graph, `{Application ID URI}` points to `https://graph.microsoft.com`). For custom web APIs, `{Application ID URI}` is defined under **Expose an API** section in Microsoft Entra admin center's Application Registration. |
 > > | `tokenResponse` | The response contains an access token for the scopes requested. |
 > 
 > [!INCLUDE [Help and support](./includes/error-handling-and-tips/help-support-include.md)]

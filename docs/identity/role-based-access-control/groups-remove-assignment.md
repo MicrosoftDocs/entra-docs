@@ -1,138 +1,135 @@
 ---
-title: Remove role assignments from a group in Microsoft Entra ID
-description: Remove role assignments from a group in Microsoft Entra ID using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
+title: Remove Microsoft Entra role assignments
+description: Remove role assignments in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 02/04/2022
-ms.author: rolyon
+ms.date: 05/25/2025
+ms.author: barclayn
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 
 ---
 
-# Remove role assignments from a group in Microsoft Entra ID
+# Remove Microsoft Entra role assignments
 
-This article describes how an IT admin can remove Microsoft Entra roles assigned to groups. In the Microsoft Entra admin center, you can now remove both direct and indirect role assignments to a user. If a user is assigned a role by a group membership, remove the user from the group to remove the role assignment.
+This article describes how to remove Microsoft Entra role assignments using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
+
+You can remove both direct and indirect role assignments for a user. If a user is assigned a role by a group membership, remove the user from the group to remove the role assignment. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
+
+## Microsoft Entra roles in PIM
+
+If you have a Microsoft Entra ID P2 license and [Privileged Identity Management (PIM)](../../id-governance/privileged-identity-management/pim-configure.md), you have additional capabilities for role assignments. For information about removing Microsoft Entra role assignments in PIM, see these articles:
+
+| Method | Information |
+| --- | --- |
+| Microsoft Entra admin center | [Update or remove an existing role assignment in PIM](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md#update-or-remove-an-existing-role-assignment) |
+| Microsoft Graph PowerShell | [Remove an eligible assignment](/powershell/microsoftgraph/tutorial-pim#step-6-admin-removes-an-eligible-assignment) |
+| Microsoft Graph API | [Manage Microsoft Entra role assignments using PIM APIs](/graph/api/resources/privilegedidentitymanagementv3-overview)<br/>[Remove eligible assignment via Microsoft Graph API](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md#remove-eligible-assignment-via-microsoft-graph-api) |
 
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
-- Microsoft Graph PowerShell module when using PowerShell
+- Privileged Role Administrator
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
-## Microsoft Entra admin center
+## Remove Microsoft Entra role assignments
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+# [Admin center](#tab/admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Select a *role name*.
+1. Browse to **Entra ID** > **Roles & admins**.
 
-1. Select the group from which you want to remove the role assignment and select **Remove assignment**.
+1. Select a role name to open the role. 
 
-   ![Remove a role assignment from a selected group.](./media/groups-remove-assignment/remove-assignment.png)
+1. Add a check mark next to the users or groups from which you want to remove the role assignment.
+
+1. Select **Remove assignment**.
+
+    If your experience is different than the following screenshot, you might have Microsoft Entra ID P2 and PIM. For more information, see [Update or remove an existing role assignment in PIM](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md#update-or-remove-an-existing-role-assignment).
+
+    :::image type="content" source="./media/groups-remove-assignment/remove-assignment.png" alt-text="Screenshot of Assignments page to remove a role assignment." lightbox="./media/groups-remove-assignment/remove-assignment.png":::
 
 1. When asked to confirm your action, select **Yes**.
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
-### Create a group that can be assigned to role
+Use the [Get-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroleassignment) command to list the role assignment ID you want to remove. For examples, see [List Microsoft Entra role assignments](view-assignments.md?tabs=ms-powershell).
 
-```powershell
-$group = New-MgGroup -DisplayName "Contoso_Helpdesk_Administrators" `
-   -Description "This group is assigned to Helpdesk Administrator built-in role in Microsoft Entra ID." `
-   -MailNickname "contosohelpdeskadministrators" -IsAssignableToRole:$true `
-   -MailEnabled:$true -SecurityEnabled:$true
-```
-
-### Get the role definition you want to assign the group to
-
-```powershell
-$roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "displayName eq 'Helpdesk Administrator'"
-```
-
-### Create a role assignment
-
-```powershell
-$Params = @{
-   "directoryScopeId" = "/" 
-   "principalId" = $group.Id
-   "roleDefinitionId" = $roleDefinition.Id
-}
-$roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -BodyParameter $Params
-```
-
-### Remove the role assignment
+With the role assignment ID, use the [Remove-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/remove-mgrolemanagementdirectoryroleassignment) command to remove the role assignment.
 
 ```powershell
 Remove-MgRoleManagementDirectoryRoleAssignment -UnifiedRoleAssignmentId $roleAssignment.Id
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
-<a name='create-a-group-that-can-be-assigned-an-azure-ad-role'></a>
+Use the [List unifiedRoleAssignments](/graph/api/rbacapplication-list-roleassignments) API to list the role assignment ID you want to remove. For examples, see [List Microsoft Entra role assignments](view-assignments.md?tabs=ms-graph).
 
-### Create a group that can be assigned a Microsoft Entra role
+With the role assignment ID, use the [Delete unifiedRoleAssignment](/graph/api/unifiedroleassignment-delete) API to remove the role assignment.
 
-Use the [Create group](/graph/api/group-post-groups) API to create a group.
+### Remove a role assignment for a user
 
 ```http
-POST https://graph.microsoft.com/v1.0/groups
+DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
+```
 
+Response
+
+```http
+HTTP/1.1 204 No Content
+```
+
+### Remove a role assignment that no longer exists
+
+```http
+DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
+```
+
+Response
+
+```http
+HTTP/1.1 404 Not Found
+```
+
+### Remove a Global Administrator role assignment for the current user
+
+```http
+DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/lAPpYvVpN0KRkAEhdxReEJC2sEqbR_9Hr48lds9SGHI-1
+```
+
+Response
+
+```http
+HTTP/1.1 400 Bad Request
 {
-    "description": "This group is assigned to Helpdesk Administrator built-in role of Microsoft Entra ID",
-    "displayName": "Contoso_Helpdesk_Administrators",
-    "groupTypes": [
-        "Unified"
-    ],
-    "isAssignableToRole": true,
-    "mailEnabled": true,
-    "mailNickname": "contosohelpdeskadministrators",
-    "securityEnabled": true
+    "odata.error":
+    {
+        "code":"Request_BadRequest",
+        "message":
+        {
+            "lang":"en",
+            "value":"Removing self from Global Administrator built-in role is not allowed"},
+            "values":null
+        }
+    }
 }
 ```
 
-### Get the role definition
+You are prevented from removing your own Global Administrator role assignment to avoid a scenario where a tenant has zero Global Administrators. Removing other roles assigned to yourself is allowed.
 
-Use the [List unifiedRoleDefinitions](/graph/api/rbacapplication-list-roledefinitions) API to get a role definition.
-
-```http
-GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions?$filter=displayName+eq+'Helpdesk Administrator'
-```
-
-### Create the role assignment
-
-Use the [Create unifiedRoleAssignment](/graph/api/rbacapplication-post-roleassignments) API to assign the role.
-
-```http
-POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
-{
-    "@odata.type": "#microsoft.graph.unifiedRoleAssignment",
-    "principalId": "{object-id-of-group}",
-    "roleDefinitionId": "{role-definition-id}",
-    "directoryScopeId": "/"
-}
-```
-
-### Delete role assignment
-
-Use the [Delete unifiedRoleAssignment](/graph/api/unifiedroleassignment-delete) API to delete the role assignment.
-
-```http
-DELETE https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments/{role-assignment-id}
-```
+---
 
 ## Next steps
 
-- [Use Microsoft Entra groups to manage role assignments](groups-concept.md)
+- [Update or remove an existing role assignment in PIM](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md#update-or-remove-an-existing-role-assignment)
 - [Troubleshoot Microsoft Entra roles assigned to groups](groups-faq-troubleshooting.yml)

@@ -4,11 +4,21 @@
   items:
   - name: What is a device identity?
     href: overview.md
+  - name: Whats new in Linux for devices
+    href: whats-new-linux.md
 - name: Tutorials
   expanded: false
   items:
   - name: Microsoft Entra join a new Windows device
     href: device-join-out-of-box.md
+  - name: Microsoft Entra join a new Mac device
+    href: device-join-macos-platform-single-sign-on.md
+  - name: Join a Mac device using Company Portal
+    href: device-join-microsoft-entra-company-portal.md
+  - name: Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios
+    href: device-join-macos-platform-single-sign-on-multi-user-device.md
+  - name: Enable Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources in Platform SSO
+    href: device-join-macos-platform-single-sign-on-kerberos-configuration.md
 - name: Concepts
   expanded: true
   items:
@@ -20,10 +30,18 @@
     href: concept-hybrid-join.md
   - name: Device registration flows
     href: device-registration-how-it-works.md
-  - name: single sign-on (SSO) to on-premises resources
+  - name: Single sign-on (SSO) to on-premises resources
     href: device-sso-to-on-premises-resources.md
   - name: Primary Refresh Tokens
     href: concept-primary-refresh-token.md
+  - name: Understanding tokens in Microsoft Entra ID 
+    href: concept-tokens-microsoft-entra-id.md
+  - name: Protecting tokens in Microsoft Entra ID
+    href: protecting-tokens-microsoft-entra-id.md 
+  - name: macOS Platform Single Sign-on overview 
+    href: macos-psso.md
+  - name: Microsoft Single Sign-on to Linux
+    href: sso-linux.md
 - name: How-to guides
   expanded: false
   items:
@@ -46,11 +64,11 @@
     - name: Configure Microsoft Entra hybrid join
       href: how-to-hybrid-join.md
     - name: Verifying Microsoft Entra hybrid join
-      href: how-to-hybrid-join-verify.md
+      href: how-to-hybrid-join-verify.yml
     - name: Troubleshoot Microsoft Entra hybrid join
       expanded: false
       items:
-      - name: Troubleshoot Microsoft Entra hybrid joined Windows current version
+      - name: Troubleshoot Microsoft Entra hybrid joined Windows devices
         href: troubleshoot-hybrid-join-windows-current.md
       - name: Troubleshoot pending device state
         href: /troubleshoot/azure/active-directory/pending-devices?context=/entra/identity/devices/context/devices-context.json
@@ -79,6 +97,8 @@
     href: faq.yml
   - name: Troubleshoot SSO on Apple devices
     href: troubleshoot-mac-sso-extension-plugin.md
+  - name: Troubleshoot macOS PSSO on Mac
+    href: troubleshoot-macos-platform-single-sign-on-extension.md
   - name: Enterprise state roaming
     expanded: false
     items:
@@ -91,7 +111,9 @@
     - name: Enterprise state roaming Group Policy Object (GPO) settings
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Enterprise state roaming Windows settings
-      href: enterprise-state-roaming-windows-settings-reference.md
+      href: /windows/configuration/windows-backup/catalog-esr
+  - name: KDFv1 removal
+    href: deprecation-key-derivation-function-version-1.md
 - name: Reference
   items:
   - name: Microsoft Entra hybrid join reference
@@ -116,4 +138,3 @@
   - name: Stack Overflow
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Videos
-    href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory

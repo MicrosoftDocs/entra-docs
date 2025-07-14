@@ -1,17 +1,18 @@
 ---
-title: Global Secure Access (preview) remote network connectivity
-description: Learn how remote network connectivity in Global Secure Access (preview) allows users to connect to your corporate network from a remote location, such as a branch office.
+title: Global Secure Access remote network connectivity
+description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: conceptual
-ms.date: 02/29/2024
+ms.date: 05/09/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 ---
 
 # Understand remote network connectivity
 
-Global Secure Access (preview) supports two connectivity options: installing a client on end-user device and configuring a remote network, for example a branch location with a physical router. Remote network connectivity streamlines how your end-users and guests connect from a remote network without needing to install the Global Secure Access Client.
+Global Secure Access supports two connectivity options: installing a client on end-user device and configuring a remote network, for example a branch location with a physical router. Remote network connectivity streamlines how your end-users and guests connect from a remote network without needing to install the Global Secure Access Client.
 
 This article describes the key concepts of remote network connectivity along with common scenarios where it's useful.
 
@@ -33,8 +34,7 @@ Remote networks, such as a branch location, are typically connected to the corpo
 
 To connect a remote network to Global Secure Access, you set up an Internet Protocol Security (IPSec) tunnel between your on-premises equipment and the Global Secure Access endpoint. Traffic that you specify is routed through the IPSec tunnel to the nearest Global Secure Access endpoint. You can apply security policies in the Microsoft Entra admin center.
 
-Global Secure Access remote network connectivity provides a secure solution between a remote network and the
-Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
+Global Secure Access remote network connectivity provides a secure solution between a remote network and the Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
 To learn more about secure remote network-to-remote network connectivity, see the [Azure Virtual WAN documentation](/azure/virtual-wan/).
  
 ## Why remote network connectivity is important for you? 
@@ -51,7 +51,107 @@ Sometimes, clients can't be installed on all devices. Global Secure Access curre
 ### I have guests on my network who don't have the client installed.  
 Guest devices on your network might not have the client installed. To ensure that those devices adhere to your network security policies, you need their traffic routed through the Global Secure Access endpoint. Remote network connectivity solves this problem. No clients need to be installed on guest devices. All outgoing traffic from the remote network is going through security evaluation by default.  
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+### How much bandwidth will be allocated per tenant 
+
+The total bandwidth you are allocated is determined by the number of licenses purchased. Each Microsoft Entra ID P1 license, Microsoft Entra Internet Access license, or Microsoft Entra Suite license contributes to your total bandwidth. Bandwidth for remote networks can be assigned to IPsec tunnels in increments of 250 Mbps, 500 Mbps, 750 Mbps, or 1000 Mbps. This flexibility allows you to allocate bandwidth to different remote network locations according to your specific needs. For optimal performance, Microsoft recommends configuring at least two IPsec tunnels per location for high availability. The table below details the total bandwidth based on the number of licenses purchased. 
+
+#### Initial bandwidth allocation
+
+| # of licenses | Total Bandwidth (Mbps) |
+|---------------|------------------------|
+| 50 – 99       | 500 Mbps               |
+| 100 – 499     | 1,000 Mbps             |
+| 500 – 999     | 2,000 Mbps             |
+| 1,000 – 1,499 | 3,500 Mbps             |
+| 1,500 – 1,999 | 4,000 Mbps             |
+| 2,000 – 2,499 | 4,500 Mbps             |
+| 2,500 – 2,999 | 5,000 Mbps             |
+| 3,000 – 3,499 | 5,500 Mbps             |
+| 3,500 – 3,999 | 6,000 Mbps             |
+| 4,000 – 4,499 | 6,500 Mbps             |
+| 4,500 – 4,999 | 7,000 Mbps             |
+| 5,000 – 5,499 | 10,000 Mbps            |
+| 5,500 – 5,999 | 10,500 Mbps            |
+| 6,000 – 6,499 | 11,000 Mbps            |
+| 6,500 – 6,999 | 11,500 Mbps            |
+| 7,000 – 7,499 | 12,000 Mbps            |
+| 7,500 – 7,999 | 12,500 Mbps            |
+| 8,000 – 8,499 | 13,000 Mbps            |
+| 8,500 – 8,999 | 13,500 Mbps            |
+| 9,000 – 9,499 | 14,000 Mbps            |
+| 9,500 – 9,999 | 14,500 Mbps            |
+| 10,000 +      | 35,000 Mbps +          |
+
+**Table notes**
+- Minimum number of licenses to use remote network connectivity feature is 50. 
+- The number of licenses is equal to the total number of licenses purchased (Entra ID P1 + Entra Internet Access /Entra Suite). After 10,000 licenses you get an additional 500 Mbps for every 500 licenses purchased (example 11,000 licenses = 36,000 Mbps). 
+- Organizations crossing the 10,000-license mark often operate at an enterprise scale requiring more robust infrastructure. The jump to 35,000 Mbps ensures ample capacity to meet the demands of such deployments, supporting higher traffic volumes and providing the flexibility to expand bandwidth allocations as needed. 
+- If more bandwidth is required, additional bandwidth is available for purchase in increments of 500 Mbps via the Remote Network Bandwidth SKU.
+
+
+#### Examples of Allocated Bandwidth per tenant: 
+
+**Tenant 1:**
+
+- 1,000 Entra ID P1 licenses
+- Allocated: 1,000 licenses, 3,500 Mbps
+
+**Tenant 2:**
+
+- 3,000 Entra ID P1 licenses
+- 3,000 Internet Access licenses
+- Allocated: 6,000 licenses, 11,000 Mbps
+
+**Tenant 3:**
+
+- 8,000 Entra ID P1 licenses
+- 6,000 Entra Suite licenses
+- Allocated: 14,000 licenses, 39,000 Mbps
+
+#### Examples of Bandwidth distribution for Remote Networks 
+
+**Tenant 1:**
+
+Total Bandwidth: 3,500 Mbps
+
+Allocation:
+
+- Site A: 2 IPsec tunnels: 2 x 250 Mbps = 500 Mbps
+- Site B: 2 IPsec tunnels: 2 x 250 Mbps = 500 Mbps
+- Site C: 2 IPsec tunnels: 2 x 500 Mbps = 1,000 Mbps
+- Site D: 2 IPsec tunnels: 2 x 750 Mbps = 1,500 Mbps
+
+Remaining Bandwidth: None
+
+**Tenant 2:**
+
+Total Bandwidth: 11,000 Mbps
+
+Allocation:
+
+- Site A: 2 IPsec tunnels: 2 x 250 Mbps = 500 Mbps
+- Site B: 2 IPsec tunnels: 2 x 500 Mbps = 1,000 Mbps
+- Site C: 2 IPsec tunnels: 2 x 750 Mbps = 1,500 Mbps
+- Site D: 2 IPsec tunnels: 2 x 1,000 Mbps = 2,000 Mbps
+- Site E: 2 IPsec tunnels: 2 x 1,000 Mbps = 2,000 Mbps
+
+Remaining Bandwidth: 4,000 Mbps
+
+**Tenant 3:**
+
+Total Bandwidth: 39,000 Mbps
+
+Allocation:
+
+- Site A: 2 IPsec tunnels: 2 x 250 Mbps = 500 Mbps
+- Site B: 2 IPsec tunnels: 2 x 500 Mbps = 1,000 Mbps
+- Site C: 2 IPsec tunnels: 2 x 750 Mbps = 1,500 Mbps
+- Site D: 2 IPsec tunnels: 2 x 750 Mbps = 1,500 Mbps
+- Site E: 2 IPsec tunnels: 2 x 1,000 Mbps = 2,000 Mbps
+- Site F: 2 IPsec tunnels: 2 x 1,000 Mbps = 2,000 Mbps
+- Site G: 2 IPsec tunnels: 2 x 1,000 Mbps = 2,000 Mbps
+
+Remaining Bandwidth: 28,500 Mbps
 
 ## Next steps
 - [List all remote networks](how-to-list-remote-networks.md)

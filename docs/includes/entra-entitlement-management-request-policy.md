@@ -1,14 +1,13 @@
 ---
 title: include file
 description: include file
-
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 02/27/2023
 ms.author: owinfrey
-ms.custom: include file
+ms.custom: include file, sfi-ga-nochange, sfi-image-nochange
 ---
 
 ## Allow users in your directory to request the access package
@@ -75,7 +74,7 @@ Follow these steps if you want to allow users not in your directory to request t
 
     If the organization that you want to collaborate with isn't in the list, you can ask your administrator to add it as a connected organization. For more information, see [Add a connected organization](~/id-governance/entitlement-management-organization.md).
 
-1. If you selected **All connected organizations**, then you should confirm with your global administrator the list of connected organizations that are currently configured and planned to be in scope.
+1. If you selected **All connected organizations**, then you should confirm the list of connected organizations that are currently configured and planned to be in scope.
 
 1. If you selected **All users**, then you will need to configure approvals in the approvals section, as this scope would allow any identity on the Internet to request access.
 
@@ -109,11 +108,11 @@ In the **Approval** section, you specify whether an approval is required when us
 
 For a demonstration of how to add approvers to a request policy, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4cZfg]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=15df4213-d77d-4c88-b5c4-9ccfb261eefa]
 
 For a demonstration of how to add a multiple-stage approval to a request policy, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4d1Jw]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=25c39e83-da3e-4f41-8d91-8b865b25b702]
 
 Follow these steps to specify the approval settings for requests for the access package:
 
@@ -143,11 +142,11 @@ Use the following steps to add approvers after you select the number of stages.
 
 1. If you selected **Manager** as the first approver, select **Add fallback** to select one or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the manager for the user who's requesting access.
 
-    Entitlement management finds the manager by using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.md).
+    Entitlement management finds the manager by using the **Manager** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.yml).
 
 1. If you selected **Sponsors** as the first approver, select **Add fallback** to select one or more users or groups in your directory to be a fallback approver. Fallback approvers receive the request if entitlement management can't find the sponsor for the user who's requesting access.
 
-    Entitlement management finds sponsors by using the **Sponsors** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.md).
+    Entitlement management finds sponsors by using the **Sponsors** attribute. The attribute is in the user's profile in Microsoft Entra ID. For more information, see [Add or update a user's profile information and settings](~/fundamentals/how-to-manage-user-profile-info.yml).
 
 1. If you selected **Choose specific approvers**, select **Add approvers** to select one or more users or groups in your directory to be approvers.
 
@@ -223,6 +222,13 @@ In this example, the duration of the request is 14 days. The request duration re
 
 Also, requests can't be forwarded on the last day of the request duration. So in the example, the latest the request can be forwarded is day 13.
 
+## Email Notifications (Preview)
+
+1. You're able to disable assignment emails notifying you of assignment requests that are delivered, expired, or near expiration.
+    :::image type="content" source="media/entitlement-management-request-policy/email-notifications.png" alt-text="Screenshot of the email notifications selection in creating an access package.":::
+
+You can always either enable, or disable, email notifications in the future after you finish creating the access package.    
+
 ## Enable requests
 
 1. If you want the access package to be made immediately available for users in the request policy to request, move the **Enable new requests and assignments** toggle to **Yes**.
@@ -239,7 +245,7 @@ Also, requests can't be forwarded on the last day of the request duration. So in
 
 Use the following steps if you want to add a verified ID requirement to your access package policy. Users who want access to the access package need to present the required verified IDs before successfully submitting their request. To learn how to configure your tenant with the Microsoft Entra Verified ID service, see [Introduction to Microsoft Entra Verified ID](~/verified-id/decentralized-identifier-overview.md).
 
-You need a global administrator role to add verified ID requirements to an access package. An Identity Governance administrator, user administrator, catalog owner, or access package manager can't yet add verified ID requirements.
+You need a Global Administrator role to add verified ID requirements to an access package in a request policy. An Identity Governance administrator, user administrator, catalog owner, or access package manager can't yet add verified ID requirements.
 
 1. Select **+ Add issuer**, and then select an issuer from the Microsoft Entra Verified ID network. If you want to issue your own credentials to users, you can find instructions in [Issue Microsoft Entra Verified ID credentials from an application](~/verified-id/verifiable-credentials-configure-issuer.md).
 

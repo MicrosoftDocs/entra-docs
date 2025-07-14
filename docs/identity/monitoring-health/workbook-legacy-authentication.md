@@ -1,16 +1,15 @@
 ---
 title: Sign-ins using legacy authentication workbook
 description: Learn how to use the sign-ins using legacy authentication workbook in Microsoft Entra ID to identify apps using legacy methods.
-
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 ms.reviewer: besiler
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an IT admin, I need to use the sign-ins using legacy authentication workbook to determine whether it's safe to turn off legacy authentication in my tenant so I can improve the security of my Microsoft Entra tenant and experience of my users.
 ---
 
@@ -44,7 +43,7 @@ Unfortunately, legacy authentication:
 
 - Makes it impossible for your organization to move to passwordless authentication. 
 
-To improve the security of your Microsoft Entra tenant and experience of your users, you should disable legacy authentication. However, important user experiences in your tenant might depend on legacy authentication. Before shutting off legacy authentication, you may want to find those cases so you can migrate them to more secure authentication. 
+To improve the security of your Microsoft Entra tenant and experience of your users, you should disable legacy authentication. However, important user experiences in your tenant might depend on legacy authentication. Before shutting off legacy authentication, you might want to find those cases so you can migrate them to more secure authentication. 
 
 The **Sign-ins using legacy authentication** workbook lets you see all legacy authentication sign-ins in your environment. This workbook helps you find and migrate critical workflows to more secure authentication methods before you shut off legacy authentication.
 
@@ -52,7 +51,7 @@ The **Sign-ins using legacy authentication** workbook lets you see all legacy au
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) using the appropriate combination of roles.
 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 
 1. Select the **Sign-ins using legacy authentication** workbook from the **Usage** section.
 
@@ -84,7 +83,7 @@ This workbook supports multiple filters:
 
 ## Best practices
 
-- For guidance on blocking legacy authentication in your environment, see [Block legacy authentication to Microsoft Entra ID with Conditional Access](~/identity/conditional-access/block-legacy-authentication.md).
+- For guidance on blocking legacy authentication in your environment, see [Block legacy authentication to Microsoft Entra ID with Conditional Access](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 - Many email protocols that once relied on legacy authentication now support more secure modern authentication methods. If you see legacy email authentication protocols in this workbook, consider migrating to modern authentication for email instead. For more information, see [Deprecation of Basic authentication in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-basic-authentication-exchange-online).
 
@@ -93,3 +92,8 @@ This workbook supports multiple filters:
 - To learn more about identity protection, see [What is identity protection](~/id-protection/overview-identity-protection.md). 
 
 - For more information about Microsoft Entra workbooks, see [How to use Microsoft Entra workbooks](./howto-use-workbooks.md).
+
+## Related content
+
+- [How to use the identity workbooks](howto-use-workbooks.md)
+- [Authentication methods overview](../authentication/concept-authentication-methods.md)

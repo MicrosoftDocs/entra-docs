@@ -10,9 +10,9 @@ metadata:
   ms.subservice: enterprise-apps
   
   ms.topic: landing-page
-  ms.date: 03/07/2024
+  ms.date: 03/31/2025
   author: CelesteDG
-  ms.author: CelesteDG
+  ms.author: celested
 
 landingContent:
   - title: Fundamentals
@@ -43,7 +43,7 @@ landingContent:
         links:
           - text: Get started with app integration
             url: plan-an-application-integration.md
-          - text: Add a pre-integrated cloud application
+          - text: Add a preintegrated cloud application
             url: add-application-portal.md
           - text: Register your app
             url: ~/identity-platform/quickstart-register-app.md
@@ -71,7 +71,7 @@ landingContent:
         links:
           - text: Set up Conditional Access
             url: ~/identity/conditional-access/concept-conditional-access-cloud-apps.md
-          - text: Set up Multi-Factor Authentication
+          - text: Set up multifactor authentication
             url: ~/identity/authentication/howto-mfa-getstarted.md
           - text: Manage certificates
             url: ./tutorial-manage-certificates-for-federated-single-sign-on.md

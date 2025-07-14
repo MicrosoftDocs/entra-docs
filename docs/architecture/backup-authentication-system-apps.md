@@ -1,18 +1,16 @@
 ---
 title: Application requirements for the backup authentication system
 description: How to configure your application to allow for backup authentication system support.
-
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 06/02/2023
-
+ms.date: 05/29/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: joroja
+ms.custom: sfi-ropc-nochange
 ---
-
 # Application requirements for the backup authentication system
 
 The Microsoft Entra backup authentication system provides resilience to applications that use supported protocols and flows. For more information about the backup authentication system, see [Microsoft Entra ID's backup authentication system](backup-authentication-system.md).
@@ -74,7 +72,7 @@ The backup authentication system partially supports the Security Assertion Marku
 
 ##### Managed identity
 
-Applications that use Managed Identities to acquire Microsoft Entra access tokens are protected. Microsoft recommends the use of user-assigned managed identities in most scenarios, however this protection applies to both [user and system-assigned managed identities](~/identity/managed-identities-azure-resources/overview.md).
+Applications that use Managed Identities to acquire Microsoft Entra access tokens are protected. Microsoft recommends the use of user-assigned managed identities in most scenarios. This protection applies to both [user and system-assigned managed identities](~/identity/managed-identities-azure-resources/overview.md).
 
 ##### Service principal
 

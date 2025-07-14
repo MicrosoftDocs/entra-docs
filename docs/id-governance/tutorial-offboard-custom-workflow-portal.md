@@ -2,14 +2,14 @@
 title: Execute employee termination tasks by using lifecycle workflows
 description: Learn how to remove users from an organization in real time on their last day of work by using lifecycle workflows in the Microsoft Entra admin center.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 06/22/2023
+ms.date: 04/08/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial
+ms.custom: template-tutorial, sfi-image-nochange
 ---
 
 # Execute employee termination tasks by using lifecycle workflows
@@ -31,7 +31,7 @@ For more information, see [Run a workflow on demand](on-demand-workflow.md).
 
 ## Before you begin
 
-As part of the prerequisites for completing this tutorial, you need an account that has group and Teams memberships and that can be deleted during the tutorial. For comprehensive instructions on how to complete these prerequisite steps, see [Prepare user accounts for lifecycle workflows](tutorial-prepare-user-accounts.md).
+To complete this tutorial, you must satisfy the prerequisites listed in this section before starting the tutorial as they aren't included in the actual tutorial. As part of the prerequisites for completing this tutorial, you need an account that has group and Teams memberships and that can be deleted during the tutorial. For comprehensive instructions on how to complete these prerequisite steps, see [Prepare user accounts for lifecycle workflows](tutorial-prepare-user-accounts.md).
 
 The leaver scenario includes the following steps:
 
@@ -43,10 +43,10 @@ The leaver scenario includes the following steps:
 
 ## Create a workflow by using the leaver template
 
-Use the following steps to create a leaver on-demand workflow that will execute a real-time employee termination by using lifecycle workflows in the Microsoft Entra admin center:
+Use the following steps to create a leaver on-demand workflow that executes a real-time employee termination by using lifecycle workflows in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
-2. Select **Identity Governance**.
+2. Select **ID Governance**.
 3. Select **Lifecycle workflows**.
 4. On the **Overview** tab, select **New workflow**.
 
@@ -64,7 +64,7 @@ Use the following steps to create a leaver on-demand workflow that will execute 
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/real-time-tasks.png" alt-text="Screenshot of the tab for reviewing template tasks." lightbox="media/tutorial-lifecycle-workflows/real-time-tasks.png":::
 
-8. Choose the **Select users to run now** option. It allows you to select users for which the workflow will be executed immediately after creation. Regardless of the selection, you can run the workflow on demand later at any time, as needed.
+8. On the **Select users** page, for **Selection type** choose **Select users to run now**. It allows you to select users for which the workflow will be executed immediately after creation. Regardless of the selection, you can run the workflow on demand later at any time, as needed.
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/real-time-users.png" alt-text="Screenshot of the option for selecting users to run now." lightbox="media/tutorial-lifecycle-workflows/real-time-users.png":::
 
@@ -86,7 +86,7 @@ Use the following steps to create a leaver on-demand workflow that will execute 
 
 ## Run the workflow
 
-Now that you've created the workflow, it will automatically run every three hours. Lifecycle workflows check every three hours for users in the associated execution condition and execute the configured tasks for those users.
+After the workflow is created, it runs automatically every three hours. Lifecycle workflows check every three hours for users in the associated execution condition, and executes the configured tasks for those users.
 
 To run the workflow immediately, you can use the on-demand feature.
 

@@ -58,9 +58,7 @@ items:
     - name: Planning an application proxy deployment
       href: conceptual-deployment-plan.md
     - name: Connectors
-      href: application-proxy-connectors.md
-    - name: Connector groups
-      href: application-proxy-connector-groups.md
+      href: application-proxy-conceptual-connectors.md
     - name: High availability and load balancing
       href: application-proxy-high-availability-load-balancing.md
     - name: SAML-based SSO (on-premises apps)
@@ -104,8 +102,6 @@ items:
       href: application-proxy-configure-for-claims-aware-applications.md
     - name: Configure mobile and desktop client apps
       href: application-proxy-configure-native-client-application.md
-    - name: Register connector - silent install
-      href: application-proxy-register-connector-powershell.md
     - name: Remove personal data
       href: application-proxy-remove-personal-data.md
     - name: Publishing walkthroughs
@@ -136,21 +132,17 @@ items:
         href: application-proxy-application-gateway-waf.md
     - name: Troubleshoot
       items:
-      - name: Application proxy troubleshooting
+      - name: Troubleshoot application proxy apps
         href: application-proxy-troubleshoot.md
-      - name: Connector troubleshooting flowchart
-        href: application-proxy-debug-connectors.md
-      - name: Application troubleshooting flowchart
+      - name: Debug apps and troubleshooting flowchart
         href: application-proxy-debug-apps.md
-      - name: Links on application page not working
+      - name: Broken links in application
         href: application-proxy-page-links-broken-problem.md
-      - name: Configure Kerberos Constrained Delegation
+      - name: Kerberos constrained delegation errors
         href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
       - name: Can't Access this Corporate Application error
         href: application-proxy-sign-in-bad-gateway-timeout-error.md
-      - name: Problem installing the application proxy connector
-        href: application-proxy-connector-installation-problem.md
-      - name: CORS issues in application proxy
+      - name: CORS issues
         href: application-proxy-understand-cors-issues.md
   - name: Reference
     items:

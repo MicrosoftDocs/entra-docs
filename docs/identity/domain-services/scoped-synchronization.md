@@ -2,13 +2,13 @@
 title: Scoped synchronization for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to use the Microsoft Entra admin center to configure scoped synchronization from Microsoft Entra ID to a Microsoft Entra Domain Services managed domain
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.assetid: 9389cf0f-0036-4b17-95da-80838edd2225
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 02/05/2025
 ms.author: justinha
 ---
 # Configure scoped synchronization from Microsoft Entra ID to Microsoft Entra Domain Services using the Microsoft Entra admin center
@@ -39,7 +39,7 @@ By default, all users and groups from a Microsoft Entra directory are synchroniz
 
 If only a few groups of users need to access the managed domain, you can select **Filter by group entitlement** to synchronize only those groups. This scoped synchronization is only group-based. When you configure group-based scoped synchronization, only the user accounts that belong to the groups you specify are synchronized to the managed domain. Nested groups aren't synchronized; only the groups you specify get synchronized.
 
-You can change the synchronization scope before or after you create the managed domain. The scope of synchronization is defined by a service principal with the application identifier 2565bd9d-da50-47d4-8b85-4c97f669dc36. To prevent scope loss, don't delete or change the service principal. If it is accidentally deleted, the synchronization scope can't be recovered. 
+You can change the synchronization scope before or after you create the managed domain. The scope of synchronization is defined by a service principal with the application identifier `2565bd9d-da50-47d4-8b85-4c97f669dc36`. To prevent scope loss, don't delete or change the service principal. If it is accidentally deleted, the synchronization scope can't be recovered. 
 
 Keep in mind the following caveats if you change the synchronization scope:
 

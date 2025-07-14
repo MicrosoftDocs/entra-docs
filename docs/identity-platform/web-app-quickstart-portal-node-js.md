@@ -3,9 +3,9 @@ title: "Quickstart: Add authentication to a Node.js web app with MSAL Node"
 description: In this quickstart, you learn how to implement authentication with a Node.js web app and the Microsoft Authentication Library (MSAL) for Node.js.
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: celested
+manager: dougeby
 ms.author: dmwendia
-ms.custom: scenarios:getting-started, "languages:js", devx-track-js, mode-api
+ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform
 
@@ -17,7 +17,7 @@ ms.topic: quickstart
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add authentication to a Node.js web app with MSAL Node](quickstart-web-app-nodejs-msal-sign-in.md)
+> > [Quickstart: Add authentication to a Node.js web app with MSAL Node](quickstart-web-app-nodejs-sign-in.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -36,7 +36,7 @@ ms.topic: quickstart
 > * [Node.js](https://nodejs.org/en/download/)
 > * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 > 
-> #### Step 1: Configure the application in Azure portal
+> #### Step 1: Configure the application in the Microsoft Entra admin center
 > For the code sample for this quickstart to work, you need to create a client secret and add the following reply URL: `http:/> /localhost:3000/redirect`.
 > 
 > <button id="makechanges" class="nextstepaction configure-app-button"> Make these changes for me </button>

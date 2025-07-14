@@ -3,33 +3,33 @@ title: 'Microsoft Entra Connect Sync: Understanding Users, Groups, and Contacts'
 description: Explains users, groups, and contacts in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 8d204647-213a-4519-bd62-49563c421602
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
 
 ---
 # Microsoft Entra Connect Sync: Understanding Users, Groups, and Contacts
-There are several different reasons why you would have multiple Active Directory forests and there are several different deployment topologies. Common models include an account-resource deployment and GAL sync’ed forests after a merger & acquisition. But even if there are pure models, hybrid models are common as well. The default configuration in Microsoft Entra Connect Sync doesn't assume any particular model but depending on how user matching was selected in the installation guide, different behaviors can be observed.
+There are several different reasons why you would have multiple Active Directory forests and there are several different deployment topologies. Common models include an account-resource deployment and GAL sync’ed forests after a merger & acquisition. But even if there are pure models, hybrid models are common as well. The default configuration in Microsoft Entra Connect Sync doesn't assume any particular model. However, depending on how user matching was selected in the installation guide, different behaviors can be observed.
 
-In this topic, we go through how the default configuration behaves in certain topologies. We go through the configuration and the Synchronization Rules Editor can be used to look at the configuration.
+In this article, we go through how the default configuration behaves in certain topologies. We go through the configuration and the Synchronization Rules Editor can be used to look at the configuration.
 
 There are a few general rules the configuration assumes:
 * Regardless of which order we import from the source Active Directories, the end result should always be the same.
-* An active account will always contribute sign-in information, including **userPrincipalName** and **sourceAnchor**.
+* An active account contributes sign-in information, including **userPrincipalName** and **sourceAnchor**.
 * A disabled account contributes userPrincipalName and sourceAnchor, unless it's a linked mailbox, if there's no active account to be found.
-* An account with a linked mailbox will never be used for userPrincipalName and sourceAnchor. It's assumed that an active account will be found later.
-* A contact object might be provisioned to Microsoft Entra ID as a contact or as a user. You don’t really know until all source Active Directory forests have been processed.
+* An account with a linked mailbox is never be used for userPrincipalName and sourceAnchor. It's assumed that an active account will be found later.
+* A contact object might be provisioned to Microsoft Entra ID as a contact or as a user. You don’t really know until all source Active Directory forests are processed.
 
 ## Groups
 > [!NOTE]
-> Keep in mind that when you add a user from another forest to the group, there is an anchor created in the Active Directory where the groups exists inside a specific OU. This anchor is a Foreign security principal and is stored inside the OU ‘ForeignSecurityPrincipals’. If you don't synchronize this OU the users where removed from the group membership.
+> Keep in mind that when you add a user from another forest to the group, there is an anchor created in the Active Directory where the groups exists inside a specific OU. This anchor is a Foreign security principal and is stored inside the OU ‘ForeignSecurityPrincipals’. If you don't synchronize this OU the users are removed from the group membership.
 > 
 > 
 
@@ -54,22 +54,22 @@ Important points to be aware of when synchronizing groups from Active Directory 
       * An Active Directory group whose proxyAddress attribute has values *{"X500:/0=contoso.com/ou=users/cn=testgroup", "smtp:johndoe\@contoso.com"}* will also be mail-enabled in Microsoft Entra ID.
 
 ## Contacts
-Having contacts representing a user in a different forest is common after a merger & acquisition where a GALSync solution is bridging two or more Exchange forests. The contact object is always joining from the connector space to the metaverse using the mail attribute. If there's already a contact object or user object with the same mail address, the objects are joined together. This is configured in the rule **In from AD – Contact Join**. There is also a rule named **In from AD – Contact Common** with an attribute flow to the metaverse attribute **sourceObjectType** with the constant **Contact**. This rule has low precedence so if any user object is joined to the same metaverse object, then the rule **In from AD – User Common** will contribute the value User to this attribute. With this rule, this attribute has the value Contact if no user has been joined and the value User if at least one user has been found.
+Having contacts representing a user in a different forest is common after a merger & acquisition where a GALSync solution is bridging two or more Exchange forests. The contact object is always joining from the connector space to the metaverse using the mail attribute. If there's already a contact object or user object with the same mail address, the objects are joined together. This is configured in the rule **In from AD – Contact Join**. There's also a rule named **In from AD – Contact Common** with an attribute flow to the metaverse attribute **sourceObjectType** with the constant **Contact**. This rule has low precedence so if any user object is joined to the same metaverse object, then the rule **In from AD – User Common** contributes the value User to this attribute. With this rule, this attribute has the value Contact if no user is joined and the value User if at least one user is found.
 
-For provisioning an object to Microsoft Entra ID, the outbound rule **Out to Microsoft Entra ID – Contact Join** will create a contact object if the metaverse attribute **sourceObjectType** is set to **Contact**. If this attribute is set to **User**, then the rule **Out to Microsoft Entra ID – User Join** will create a user object instead.
-It is possible that an object is promoted from Contact to User when more source Active Directories are imported and synchronized.
+For provisioning an object to Microsoft Entra ID, the outbound rule **Out to Microsoft Entra ID – Contact Join** creates a contact object if the metaverse attribute **sourceObjectType** is set to **Contact**. If this attribute is set to **User**, then the rule **Out to Microsoft Entra ID – User Join** creates a user object instead.
+It's possible that an object is promoted from Contact to User when more source Active Directories are imported and synchronized.
 
-For example, in a GALSync topology we find contact objects for everyone in the second forest when we import the first forest. This stages new contact objects in the Microsoft Entra Connector. When we later import and synchronize the second forest, we find the real users and join them to the existing metaverse objects. We will then delete the contact object in Microsoft Entra ID and create a new user object instead.
+For example, in a GALSync topology we find contact objects for everyone in the second forest when we import the first forest. This stages new contact objects in the Microsoft Entra Connector. When we later import and synchronize the second forest, we find the real users and join them to the existing metaverse objects. We'll then delete the contact object in Microsoft Entra ID and create a new user object instead.
 
-If you have a topology where users are represented as contacts, make sure you select to match users on the mail attribute in the installation guide. If you select another option, then you have an order-dependent configuration. Contact objects will always join on the mail attribute, but user objects will only join on the mail attribute if this option was selected in the installation guide. You could then end up with two different objects in the metaverse with the same mail attribute if the contact object was imported before the user object. During export to Microsoft Entra ID, an error is shown. This behavior is by design and would indicate bad data or that the topology was not correctly identified during the installation.
+If you have a topology where users are represented as contacts, make sure you select to match users on the mail attribute in the installation guide. If you select another option, then you have an order-dependent configuration. Contact objects always join on the mail attribute, but user objects only join on the mail attribute if this option was selected in the installation guide. You could then end up with two different objects in the metaverse with the same mail attribute if the contact object was imported before the user object. During export to Microsoft Entra ID, an error is shown. This behavior is by design and would indicate bad data or that the topology wasn't correctly identified during the installation.
 
 ## Disabled accounts
-Disabled accounts are synchronized as well to Microsoft Entra ID. Disabled accounts are common to represent resources in Exchange, for example conference rooms. The exception is users with a linked mailbox; as previously mentioned, these will never provision an account to Microsoft Entra ID.
+Disabled accounts are synchronized as well to Microsoft Entra ID. Disabled accounts are common to represent resources in Exchange, for example conference rooms. The exception is users with a linked mailbox; as previously mentioned, these never provision an account to Microsoft Entra ID.
 
-The assumption is that if a disabled user account is found, then we won't find another active account later and the object is provisioned to Microsoft Entra ID with the userPrincipalName and sourceAnchor found. In case another active account join to the same metaverse object, then its userPrincipalName and sourceAnchor will be used.
+The assumption is that if a disabled user account is found, then we won't find another active account later. The object is provisioned to Microsoft Entra ID with the userPrincipalName and sourceAnchor found. In case another active account join to the same metaverse object, then its userPrincipalName and sourceAnchor are used.
 
 ## Changing sourceAnchor
-When an object has been exported to Microsoft Entra ID then it's not allowed to change the sourceAnchor anymore. When the object has been exported the metaverse attribute **cloudSourceAnchor** is set with the **sourceAnchor** value accepted by Microsoft Entra ID. If **sourceAnchor** is changed and not match **cloudSourceAnchor**, the rule **Out to Microsoft Entra ID – User Join** will throw the error **sourceAnchor attribute has changed**. In this case, the configuration or data must be corrected so the same sourceAnchor is present in the metaverse again before the object can be synchronized again.
+When an object is exported to Microsoft Entra ID, then it's not allowed to change the sourceAnchor anymore. When the object is exported the metaverse attribute **cloudSourceAnchor** is set with the **sourceAnchor** value accepted by Microsoft Entra ID. If **sourceAnchor** is changed and not match **cloudSourceAnchor**, the rule **Out to Microsoft Entra ID – User Join** throws the error **sourceAnchor attribute has changed**. In this case, the configuration or data must be corrected so the same sourceAnchor is present in the metaverse again before the object can be synchronized again.
 
 ## Additional Resources
 * [Microsoft Entra Connect Sync: Customizing Synchronization options](how-to-connect-sync-whatis.md)

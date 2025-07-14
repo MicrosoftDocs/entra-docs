@@ -3,13 +3,12 @@ title: 'Use the expression builder with Microsoft Entra Cloud Sync'
 description: This article describes how to use the expression builder with cloud sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 
@@ -24,7 +23,7 @@ To access the expression builder:
  4. Under **Manage attributes**, select **Click to edit mappings**.
  5. On the **Edit attribute mappings** pane, select **Add attribute mapping**.
  6. Under **Mapping type**, select **Expression**.
- 7. Select **Try the expression builder (Preview)**.
+ 7. Select **Try the expression builder **.
  
     ![Screenshot that shows using expression builder.](media/how-to-expression-builder/expression-1.png)
 
@@ -49,7 +48,7 @@ The expression basically says, replace the mail attribute on user objects that h
 For more information on supported expressions, see [Writing expressions for attribute mappings in Microsoft Entra ID](reference-expressions.md).
 
 ### Information on expression builder input boxes
-Depending on which function you selected, the boxes provided by the expression builder will accept multiple values. For example, the JOIN function will accept strings or the value that's associated with a given attribute. For example, we can use the value contained in the attribute value of **[givenName]** and join it with a string value of **@contoso.com** to create an email address.
+Depending on which function you selected, the boxes provided by the expression builder accepts multiple values. For example, the JOIN function accepts strings or the value that's associated with a given attribute. For example, we can use the value contained in the attribute value of **[givenName]** and join it with a string value of **@contoso.com** to create an email address.
 
   ![Screenshot that shows input box values.](media/how-to-expression-builder/expression-8.png)
 
@@ -72,7 +71,7 @@ This action adds the expression to the agent configuration.
 ![Screenshot that shows agent configuration.](media/how-to-expression-builder/expression-6.png)
 
 ## Set a NULL value on an expression
-To set an attribute's value to NULL, use an expression with the value of `""`. This expression will flow the NULL value to the target attribute.
+To set an attribute's value to NULL, use an expression with the value of `""`. This expression flows the NULL value to the target attribute.
 
 ![Screenshot that shows a NULL value.](media/how-to-expression-builder/expression-7.png)
 

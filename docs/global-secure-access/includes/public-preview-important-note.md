@@ -1,10 +1,10 @@
 ---
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: kenwith
+author: kenwith
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: include
-ms.date: 08/22/2023
+ms.date: 02/21/2025
 ms.custom: include file
 ---
 

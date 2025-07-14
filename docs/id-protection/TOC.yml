@@ -1,6 +1,7 @@
 - name: Microsoft Entra ID Protection Documentation
   href: index.yml
 - name: Overview
+  expanded: true
   items:
   - name: What is Microsoft Entra ID Protection?
     href: overview-identity-protection.md
@@ -48,10 +49,10 @@
     href: howto-identity-protection-risk-feedback.md
   - name: Impact analysis workbook
     href: workbook-risk-based-policy-impact.md
-  - name: FAQs
-    href: troubleshooting-identity-protection-faq.yml
 - name: Reference
   items:
+  - name: FAQs
+    href: id-protection-faq.yml
   - name: Microsoft Graph APIs
     items: 
     - name: riskDetection API

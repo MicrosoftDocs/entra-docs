@@ -2,11 +2,10 @@
 title: Issuer service communication examples - Microsoft Entra Verified ID
 description: Details of communication between identity provider and issuer service
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: conceptual
-ms.date: 05/25/2023
+ms.date: 04/30/2025
 ms.author: barclayn
 # Customer intent: As a developer I am looking for information on how to enable my users to control their own information
 ---
@@ -28,11 +27,11 @@ To issue a Verifiable Credential, Authenticator is instructed through downloadin
 | Client registration | Must support public client registration using a `redirect_uri` value of `vcclient://openid/`. | 
 | PKCE | Recommended for security reasons, but not required. |
 
-Examples of the HTTP requests sent to your identity provider are included below. Your identity provider must accept and respond to these requests in accordance with the OpenID Connect authentication standard.
+Examples of the HTTP request sent to your identity provider are included below. Your identity provider must accept and respond to these requests in accordance with the OpenID Connect authentication standard.
 
 ## Client registration
 
-To receive a verifiable credential, your users need to sign into your IDP from the Microsoft Authenticator app. 
+To receive a verifiable credential, your users need to sign into your IDP from the **Microsoft Authenticator** app.
 
 To enable this exchange, register an application with your identity provider. If you are using Microsoft Entra ID, you can find the instructions [here](~/identity-platform/quickstart-register-app.md). Use the following values when registering.
 
@@ -42,7 +41,7 @@ To enable this exchange, register an application with your identity provider. If
 | Redirect URI | `vcclient://openid/ ` |
 
 
-After you register an application with your identity provider, record its client ID. You will use it in the section that follows. You also need to write down the URL to the well-known endpoint for the OIDC compatible identity provider. The Issuing Service uses this endpoint to download the public keys needed to validate the ID token once that it’s sent by Authenticator.
+After you register an application with your identity provider, record its client ID. You'll use it in the section that follows. You also need to write down the URL to the well-known endpoint for the OIDC compatible identity provider. The Issuing Service uses this endpoint to download the public keys needed to validate the ID token once that it’s sent by Authenticator.
 
 The configured redirect URI is used by Authenticator so it knows when the sign-in is completed and it can retrieve the ID token. 
 
@@ -66,7 +65,7 @@ Connection: Keep-Alive
 | `state` | Must be returned to the client according to the OpenID Connect standard. |
 | `nonce` | Must be returned as a claim in the ID token according to the OpenID Connect standard. |
 
-When it receives an authorization request, your identity provider should authenticate the user and take any steps necessary to complete sign-in, such as multi-factor authentication.
+When it receives an authorization request, your identity provider should authenticate the user and take any steps necessary to complete sign-in, such as multifactor authentication.
 
 You may customize the sign-in process to meet your needs. You could ask users to provide additional information, accept terms of service, pay for their credential, and more. Once all steps complete, respond to the authorization request by redirecting to the redirect URI as shown below. 
 
@@ -81,7 +80,7 @@ vcclient://openid/?code=nbafhjbh1ub1yhbj1h4jr1&state=12345
 
 ## Token request
 
-The token request sent to your identity provider will have the following form.
+The token request sent to your identity provider has the following form.
 
 ```HTTP
 POST /token HTTP/1.1
@@ -100,9 +99,9 @@ client_id=<client-id>&redirect_uri=vcclient%3A%2F%2Fopenid%2F&grant_type=authori
 | `grant_type` | Must support `authorization_code`. |
 | `code` | The authorization code returned by your identity provider. |
 
-Upon receiving the token request, your identity provider should respond with an ID token.
+When your identity provider receives the token request, it responds with an ID token.
 
-```HTTP
+```json
 HTTP/1.1 200 OK
 Content-Type: application/json
 Cache-Control: no-store
@@ -132,7 +131,7 @@ The ID token must use the JWT compact serialization format, and must not be encr
 | `exp` | Must contain the expiry time of the ID token. |
 | `iat` | Must contain the time at which the ID token was issued. |
 | `nonce` | The value included in the authorization request. |
-| Additional claims | The ID token should contain any additional claims whose values will be included in the Verifiable Credential that will be issued. This section is where you should include any attributes about the user, such as their name. |
+| Additional claims | The ID token should contain any other claims whose values will be included in the Verifiable Credential that will be issued. This section is where you should include any attributes about the user, such as their name. |
 
 ## Next steps
 

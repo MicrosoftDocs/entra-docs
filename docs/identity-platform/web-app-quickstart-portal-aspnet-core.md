@@ -3,9 +3,9 @@ title: "Quickstart: Add sign-in with Microsoft Identity to an ASP.NET Core web a
 description: In this quickstart, you learn how an app implements Microsoft sign-in on an ASP.NET Core web app by using OpenID Connect
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-other
+ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform
 
@@ -27,7 +27,7 @@ ms.topic: quickstart
 >
 > In this quickstart, you download and run a code sample that demonstrates how an ASP.NET Core web app can sign in users from any Microsoft Entra organization.  
 > 
-> ### Step 1: Configure your application in the Azure portal
+> ### Step 1: Configure your application in the Microsoft Entra admin center
 > For the code sample in this quickstart to work:
 > - For **Redirect URI**, enter **https://localhost:44321/** and **https://localhost:44321/signin-oidc**.
 > - For **Front-channel logout URL**, enter **https://localhost:44321/signout-oidc**. 
@@ -92,7 +92,7 @@ ms.topic: quickstart
 > 
 > | *appsettings.json* key | Description                                                                                                                                                          |
 > |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | `ClientId`             | Application (client) ID of the application registered in the Azure portal.                                                                                       |
+> | `ClientId`             | Application (client) ID of the application registered in the Microsoft Entra admin center.                                                                                       |
 > | `Instance`             | Security token service (STS) endpoint for the user to authenticate. This value is typically `https://login.microsoftonline.com/`, indicating the Azure public cloud. |
 > | `TenantId`             | Name of your tenant or the tenant ID (a GUID), or `common` to sign in users with work or school accounts or Microsoft personal accounts.                             |
 > 

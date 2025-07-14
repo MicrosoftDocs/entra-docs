@@ -4,12 +4,11 @@ description: Support browser-less authentication flows using the resource owner 
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
-ms.date: 08/11/2023
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.reviewer: jmprieur, ludwignick
+ms.topic: reference
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As a developer building an application that requires user authentication, I want to understand how to use the OAuth 2.0 Resource Owner Password Credentials (ROPC) grant in the Microsoft identity platform, so that I can directly handle user passwords and acquire tokens for calling secured web APIs.
 ---
 
@@ -18,7 +17,7 @@ ms.topic: concept-article
 The Microsoft identity platform supports the [OAuth 2.0 Resource Owner Password Credentials (ROPC) grant](https://tools.ietf.org/html/rfc6749#section-4.3), which allows an application to sign in the user by directly handling their password.  This article describes how to program directly against the protocol in your application.  When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows).  Also take a look at the [sample apps that use MSAL](sample-v2-code.md).
 
 > [!WARNING]
-> Microsoft recommends you do _not_ use the ROPC flow. In most scenarios, more secure alternatives are available and recommended. This flow requires a very high degree of trust in the application, and carries risks that are not present in other flows. You should only use this flow when other more secure flows aren't viable.
+> Microsoft recommends you do *not* use the ROPC flow; it's incompatible with multifactor authentication (MFA). In most scenarios, more secure alternatives are available and recommended. This flow requires a very high degree of trust in the application, and carries risks that aren't present in other flows. You should only use this flow when more secure flows aren't viable.
 
 > [!IMPORTANT]
 >
@@ -29,6 +28,41 @@ The Microsoft identity platform supports the [OAuth 2.0 Resource Owner Password 
 > * ROPC is not supported in [hybrid identity federation](~/identity/hybrid/connect/whatis-fed.md) scenarios (for example, Microsoft Entra ID and AD FS used to authenticate on-premises accounts). If users are full-page redirected to an on-premises identity provider, Microsoft Entra ID is not able to test the username and password against that identity provider. [Pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta.md) is supported with ROPC, however.
 > * An exception to a hybrid identity federation scenario would be the following: Home Realm Discovery policy with **AllowCloudPasswordValidation** set to TRUE will enable ROPC flow to work for federated users when an on-premises password is synced to the cloud. For more information, see [Enable direct ROPC authentication of federated users for legacy applications](~/identity/enterprise-apps/home-realm-discovery-policy.md#enable-direct-ropc-authentication-of-federated-users-for-legacy-applications).
 > * Passwords with leading or trailing whitespaces are not supported by the ROPC flow.
+
+## How to migrate away from ROPC
+
+As MFA becomes more prevalent, some Microsoft web APIs will only accept access tokens if they have passed MFA requirements. Applications and test rigs relying on ROPC will be locked out. Microsoft Entra will either not issue the token, or the resource will reject the request.
+
+If you are using ROPC to acquire tokens to call protected downstream APIs, migrate to a secure token acquisition strategy.
+
+### When user context is available
+
+If an end user needs to access a resource, the client application that acts on their behalf should use a form of interactive authentication. The end user can be only challenged for MFA when prompted in the browser.
+
+- For web applications:
+  - If the authentication is done in the front-end, see [Single Page Application](./sample-v2-code.md?tabs=apptype#single-page-applications).
+  - If the authentication is done in the back-end, see [Web Applications](./sample-v2-code.md?tabs=apptype#web-applications).
+- Web APIs cannot display a browser. Instead, they must return a challenge back to the client application. For details, see [Web APIs](./sample-v2-code.md?tabs=apptype#web-api) and [challenging users in web APIs](v2-oauth2-on-behalf-of-flow.md#error-response-example).
+- Desktop applications should use broker-based authentication. Brokers use browser-based authentication, so they can enforce MFA, and also enable the most secure posture possible.
+- Mobile applications should also be configured to use broker (Authenticator, Company Portal) based authentication.
+
+### When user context is not available
+
+Examples of scenarios where no user context is involved can be, but is not limited to, the following:
+
+- A script running as part of a CI pipeline.
+- A service needing to call a resource on behalf of itself, with no user details.
+
+Application developers should use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). MFA does not apply to Service Principals.
+
+There are multiple ways to authenticate as a service principal:
+
+- If your app is running on Azure infrastructure, use [Managed Identity](./../identity/managed-identities-azure-resources/overview.md). Managed Identity eliminates the overhead of maintaining and rotating secrets and certificates.
+- If your app is running on a system managed by another OAuth2-compliant Identity provider, such as GitHub, use [Federated Identity Credentials](./../workload-id/workload-identity-federation-create-trust.md?pivots=identity-wif-apps-methods-azp).
+- If you cannot use a Managed Identity or a Federated Identity, use a [certificate credential](certificate-credentials.md).
+
+> [!WARNING]
+> Do not use Service Principal authentication when a user context is available.  App-only access is inherently high-privilege, often granting tenant-wide access and potentially allowing a bad actor to access customer data for any user. 
 
 ## Protocol diagram
 
@@ -47,7 +81,7 @@ POST {tenant}/oauth2/v2.0/token
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=user.read%20openid%20profile%20offline_access
 &username=MyUsername@myTenant.com
 &password=SuperS3cret

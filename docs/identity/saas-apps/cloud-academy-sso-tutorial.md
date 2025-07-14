@@ -1,23 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Cloud Academy'
-description: In this tutorial, you learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy.
-
-author: jeevansd
-manager: CelesteDG
+title: Configure Cloud Academy for Single sign-on with Microsoft Entra ID
+description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy.
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/15/2023
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy so that I can control who has access to Cloud Academy, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Cloud Academy
+# Configure Cloud Academy for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you learn how to integrate Cloud Academy with Microsoft Entra ID. When you integrate Cloud Academy with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Cloud Academy with Microsoft Entra ID. When you integrate Cloud Academy with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access Cloud Academy.
 * Enable your users to be automatically signed in to Cloud Academy with their Microsoft Entra accounts.
@@ -30,9 +28,9 @@ To get started, you need the following items:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A Cloud Academy subscription with single sign-on (SSO) enabled.
 
-## Tutorial description
+## Article description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cloud Academy supports **SP** initiated SSO.
 * Cloud Academy supports **Just In Time** user provisioning.
@@ -43,11 +41,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Cloud Academy into Microsoft Entra ID, you need to add Cloud Academy from the gallery to your list of managed SaaS apps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, enter **Cloud Academy** in the search box.
 1. Select **Cloud Academy** in the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-cloud-academy'></a>
 
@@ -55,10 +53,10 @@ To configure the integration of Cloud Academy into Microsoft Entra ID, you need 
 
 You'll configure and test Microsoft Entra SSO with Cloud Academy by using a test user named **B.Simon**. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the corresponding user in Cloud Academy.
 
-To configure and test Microsoft Entra SSO with Cloud Academy, you'll complete these high-level steps:
+To configure and test Microsoft Entra SSO with Cloud Academy, you complete these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use the feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
     1. **[Grant access to the test user](#grant-access-to-the-test-user)** to enable the user to use Microsoft Entra single sign-on.
 1. **[Configure single sign-on for Cloud Academy](#configure-single-sign-on-for-cloud-academy)** on the application side.
     1. **[Create a Cloud Academy test user](#create-a-cloud-academy-test-user)** as a counterpart to the Microsoft Entra representation of the user.
@@ -71,7 +69,7 @@ To configure and test Microsoft Entra SSO with Cloud Academy, you'll complete th
 Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cloud Academy** application integration page, in the **Manage** section, select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Cloud Academy** application integration page, in the **Manage** section, select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil button for **Basic SAML Configuration** to edit the settings:
 
@@ -116,7 +114,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -129,11 +127,11 @@ In this section, you create a test user called B.Simon.
 
 In this section, you enable B.Simon to use Azure single sign-on by granting that user access to Cloud Academy.
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. In the applications list, select **Cloud Academy**.
 1. On the app's overview page, in the **Manage** section, select **Users and groups**:
 1. Select **Add user**, and then select **Users and groups** in the **Add Assignment** dialog box:
-1. In the **Users and groups** dialog box, select **B.Simon** in the **Users** list, and then click the **Select** button at the bottom of the screen.
+1. In the **Users and groups** dialog box, select **B.Simon** in the **Users** list, and then select the **Select** button at the bottom of the screen.
 1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
 1. In the **Add Assignment** dialog box, select **Assign**.
 
@@ -141,15 +139,13 @@ In this section, you enable B.Simon to use Azure single sign-on by granting that
 
 1. In a different browser window, sign in to your Cloud Academy company site as administrator.
 
-1. On the home page, click the **Azure Integration Team** icon, and then select **Settings** in the left menu.
+1. On the home page, select the **Azure Integration Team** icon, and then select **Settings** in the left menu.
 
 1. On the **INTEGRATIONS** tab, select the **SSO** card.
 
     ![Screenshot that shows the Settings & Integrations option.](./media/cloud-academy-sso-tutorial/integrations.png)
 
 1. Select **Start Configuring** to set up SSO.
-
-    ![Screenshot that shows the Integrations and S S O page.](./media/cloud-academy-sso-tutorial/start-configuring.png)
 
 1. On the **General Settings** page, complete the following steps:
 
@@ -208,7 +204,7 @@ In this section, you enable B.Simon to use Azure single sign-on by granting that
 
 In this section, a user called B.Simon is created in Cloud Academy. Cloud Academy supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Cloud Academy, a new one is created after authentication.
 
-Cloud Academy also supports automatic user provisioning. For more information, see the [Cloud Academy SSO provisioning tutorial](./cloud-academy-sso-provisioning-tutorial.md).
+Cloud Academy also supports automatic user provisioning. For more information, see the [Cloud Academy SSO provisioning  article](./cloud-academy-sso-provisioning-tutorial.md).
 
 ## Test SSO
 
@@ -218,8 +214,8 @@ In this section, you test your Microsoft Entra SSO configuration by using one of
 
 * Go to Cloud Academy sign-on URL directly and initiate the sign-in flow from there.
 
-* You can use Microsoft My Apps. When you click the Cloud Academy tile in the My Apps portal, this will redirect to Cloud Academy sign-on URL. For more information about the My Apps portal, see [Introduction to My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Cloud Academy tile in the My Apps portal, this option redirects to Cloud Academy sign-on URL. For more information about the My Apps portal, see [Introduction to My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 After you configure Cloud Academy, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

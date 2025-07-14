@@ -2,18 +2,20 @@
 title: Work with existing on-premises proxy servers and Microsoft Entra ID
 description: Covers how to work with existing on-premises proxy servers with Microsoft Entra ID.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/23/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Work with existing on-premises proxy servers
 
-Configure Microsoft Entra application proxy connectors to use outbound proxy servers. The article assumes the network environment already has a proxy server.
+Configure Microsoft Entra private network connectors to use outbound proxy servers. The article assumes the network environment already has a proxy server.
 
 We start by looking at these main deployment scenarios:
 
@@ -21,7 +23,7 @@ We start by looking at these main deployment scenarios:
 * Configure connectors to use an outbound proxy to access Microsoft Entra application proxy.
 * Configure using a proxy between the connector and backend application.
 
-For more information about how connectors work, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
+For more information about how connectors work, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
 
 ## Bypass outbound proxies
 
@@ -31,7 +33,7 @@ The OS components attempt to locate a proxy server by carrying out a Domain Name
 
 You can configure the connector to bypass your on-premises proxy to ensure that it uses direct connectivity to the Microsoft Entra application proxy service. Direct connections are recommended because they require less configuration. However, some network policies require traffic going through a local proxy server.
 
-To disable outbound proxy usage for the connector, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\ApplicationProxyConnectorService.exe.config` file and add the `system.net` section shown in the code sample:
+To disable outbound proxy usage for the connector, edit the `C:\Program Files\Microsoft Entra private network connector\MicrosoftEntraPrivateNetworkConnectorService.exe.config` file and add the `system.net` section shown in the code sample:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -43,12 +45,12 @@ To disable outbound proxy usage for the connector, edit the `C:\Program Files\Mi
     <gcServer enabled="true"/>
   </runtime>
   <appSettings>
-    <add key="TraceFilename" value="AadAppProxyConnector.log" />
+    <add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" />
   </appSettings>
 </configuration>
 ```
 
-To ensure that the Connector Updater service also bypasses the proxy, make a similar change to the `ApplicationProxyConnectorUpdaterService.exe.config` file. This file is located at `C:\Program Files\Microsoft Azure AD App Proxy Connector Updater`.
+To ensure that the Connector Updater service also bypasses the proxy, make a similar change to the `MicrosoftEntraPrivateNetworkConnectorUpdaterService.exe.config` file. This file is located at `C:\Program Files\Microsoft Entra private network connector Updater`.
 
 Be sure to make copies of the original files, in case you need to revert to the default `.config` files.
 
@@ -63,13 +65,13 @@ You can configure the connector traffic to go through the outbound proxy, as sho
 As a result of having only outbound traffic, there's no need to configure inbound access through your firewalls.
 
 > [!NOTE]
-> Application proxy does not support authentication to other proxies. The connector/updater network service accounts should be able to connect to the proxy without being challenged for authentication.
+> Application proxy doesn't support authentication to other proxies. The connector/updater network service accounts should be able to connect to the proxy without being challenged for authentication.
 
 ### Step 1: Configure the connector and related services to go through the outbound proxy
 
 If WPAD is enabled in the environment and configured appropriately, the connector automatically discovers the outbound proxy server and attempt to use it. However, you can explicitly configure the connector to go through an outbound proxy.
 
-To do so, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\ApplicationProxyConnectorService.exe.config` file, and add the `system.net` section shown in code sample. Change `proxyserver:8080` to reflect your local proxy server name or IP address and port. The value must have the prefix `http://` even if you're using an IP address.
+To do so, edit the `C:\Program Files\Microsoft Entra private network connector\MicrosoftEntraPrivateNetworkConnectorService.exe.config` file, and add the `system.net` section shown in code sample. Change `proxyserver:8080` to reflect your local proxy server name or IP address and port. The value must have the prefix `http://` even if you're using an IP address.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -83,15 +85,15 @@ To do so, edit the `C:\Program Files\Microsoft Azure AD App Proxy Connector\Appl
     <gcServer enabled="true"/>
   </runtime>
   <appSettings>
-    <add key="TraceFilename" value="AadAppProxyConnector.log" />
+    <add key="TraceFilename" value="MicrosoftEntraPrivateNetworkConnector.log" />
   </appSettings>
 </configuration>
 ```
 
-Next, configure the Connector Updater service to use the proxy by making a similar change to the `C:\Program Files\Microsoft Azure AD App Proxy Connector Updater\ApplicationProxyConnectorUpdaterService.exe.config` file.
+Next, configure the Connector Updater service to use the proxy by making a similar change to the `C:\Program Files\Microsoft Entra private network connector Updater\MicrosoftEntraPrivateNetworkConnectorUpdaterService.exe.config` file.
 
 > [!NOTE]
-> The Connector service evaluates the **defaultProxy** configuration for usage in `%SystemRoot%\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config`, if the **defaultProxy** isn't configured (by default) in ApplicationProxyConnectorService.exe.config. The same applies to the Connector Updater service (ApplicationProxyConnectorUpdaterService.exe.config) too. 
+> The Connector service evaluates the **defaultProxy** configuration for usage in `%SystemRoot%\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config`, if the **defaultProxy** isn't configured (by default) in MicrosoftEntraPrivateNetworkConnectorService.exe.config. The same applies to the Connector Updater service (MicrosoftEntraPrivateNetworkConnectorUpdaterService.exe.config) too. 
 
 ### Step 2: Configure the proxy to allow traffic from the connector and related services to flow through
 
@@ -141,7 +143,7 @@ To enable a forward proxy, follow these steps:
 
 ### Step 1: Add the required registry value to the server
 1. To enable use of the default proxy, add the registry value **(DWORD)** 
-`UseDefaultProxyForBackendRequests = 1` to the connector configuration registry key located in `HKEY_LOCAL_MACHINE\Software\Microsoft\Microsoft Azure AD App Proxy Connector`.
+`UseDefaultProxyForBackendRequests = 1` to the connector configuration registry key located in `HKEY_LOCAL_MACHINE\Software\Microsoft\Microsoft Entra private network connector`.
 
 ### Step 2: Configure the proxy server manually using netsh command
 1. Enable the group policy `Make proxy settings per-machine`. The group policy is found in: `Computer Configuration\Policies\Administrative Templates\Windows Components\Internet Explorer`. The group policy needs to be set rather than having the policy set per user.
@@ -149,12 +151,12 @@ To enable a forward proxy, follow these steps:
 3. Launch an elevated command prompt with admin rights and enter `control inetcpl.cpl`.
 4. Configure the required proxy settings. 
 
-The settings make the connector use the same forward proxy for the communication to Azure and to the backend application. Modify the file `ApplicationProxyConnectorService.exe.config` to change the forward proxy. Forward proxy configuration is described in the sections *Bypass outbound proxies* and *Use the outbound proxy server*.
+The settings make the connector use the same forward proxy for the communication to Azure and to the backend application. Modify the file `MicrosoftEntraPrivateNetworkConnectorService.exe.config` to change the forward proxy. Forward proxy configuration is described in the sections *Bypass outbound proxies* and *Use the outbound proxy server*.
 
 > [!NOTE]
 > There are various ways to configure the internet proxy in the operating system. Proxy settings configured via `NETSH WINHTTP` (run `NETSH WINHTTP SHOW PROXY` to verify) override the proxy settings you configured in Step 2. 
 
-The connector updater service uses the machine proxy. The setting is found in the  `ApplicationProxyConnectorUpdaterService.exe.config` file.
+The connector updater service uses the machine proxy. The setting is found in the  `MicrosoftEntraPrivateNetworkConnectorUpdaterService.exe.config` file.
 
 ## Troubleshoot connector proxy problems and service connectivity issues
 
@@ -165,7 +167,7 @@ The best way to identify and troubleshoot connector connectivity issues is to ta
 You can use the monitoring tool of your choice. For the purposes of this article, we used Microsoft Message Analyzer.
 
 > [!NOTE]
-> [Microsoft Message Analyzer (MMA) was retired](/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) and its download packages removed from microsoft.com sites on November 25 2019.  There is currently no Microsoft replacement for Microsoft Message Analyzer in development at this time.  For similar functionality, please consider using a 3rd party network protocol analyzer tool such as Wireshark.
+> [Microsoft Message Analyzer (MMA) was retired](/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) and its download packages removed from microsoft.com sites on November 25 2019. There's currently no Microsoft replacement for Microsoft Message Analyzer in development at this time. For similar functionality, consider using a non-Microsoft partner network protocol analyzer tool such as Wireshark.
 
 The following examples are specific to Message Analyzer, but the principles can be applied to any analysis tool.
 
@@ -173,13 +175,13 @@ The following examples are specific to Message Analyzer, but the principles can 
 
 For initial troubleshooting, perform the following steps:
 
-1. From `services.msc`, stop the Microsoft Entra application proxy connector service.
+1. From `services.msc`, stop the Microsoft Entra private network connector service.
 
-   ![Microsoft Entra application proxy connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
+   ![Microsoft Entra private network connector service in services.msc](./media/application-proxy-configure-connectors-with-proxy-servers/services-local.png)
 
 1. Run *Message Analyzer* as an administrator.
 1. Select **Start local trace**.
-1. Start the Microsoft Entra application proxy connector service.
+1. Start the Microsoft Entra private network connector service.
 1. Stop the network capture.
 
    ![Screenshot shows the Stop network capture button](./media/application-proxy-configure-connectors-with-proxy-servers/stop-trace.png)
@@ -193,7 +195,7 @@ A synchronization (SYN) packet is the first packet sent to establish a TCP conne
 
 ### Check if the connector traffic uses outbound proxies
 
-If you configured your application proxy connector traffic to go through the proxy servers, look for failed `https` connections to your proxy.
+If you configured your private network connector traffic to go through the proxy servers, look for failed `https` connections to your proxy.
 
 Use the Message Analyzer filter to identify failed HTTPS connection attempts to your proxy. Enter `(https.Request or https.Response) and tcp.port==8080` in the Message Analyzer filter, replacing `8080` with your proxy service port. Select **Apply** to see the filter results.
 
@@ -203,5 +205,5 @@ If you see other response codes, such as 407 or 502, that means that the proxy i
 
 ## Next steps
 
-- [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md)
-- [Visit the Microsoft Question and Answer (Q&A) page for Microsoft Entra ID](/answers/tags/455/entra-id)
+- [Understand Microsoft Entra private network connectors](application-proxy-connectors.md)
+- [Visit the Microsoft Question and Answer page for Microsoft Entra ID](/answers/tags/455/entra-id)

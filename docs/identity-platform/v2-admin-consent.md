@@ -1,9 +1,9 @@
 ---
 title: Microsoft identity platform admin consent protocols
 description: A description of authorization in the Microsoft identity platform, including scopes, permissions, and consent.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom:
 ms.date: 11/08/2023
 ms.reviewer: ludwignick
@@ -29,7 +29,7 @@ When you're ready to request permissions from your organization's admin, you can
 
 ```none
 https://login.microsoftonline.com/{tenant}/v2.0/adminconsent
-        ?client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+        ?client_id=00001111-aaaa-2222-bbbb-3333cccc4444
         &scope=https://graph.microsoft.com/Calendars.Read https://graph.microsoft.com/Mail.Send
         &redirect_uri=http://localhost/myapp/permissions
         &state=12345
@@ -52,7 +52,7 @@ If the admin approves the permissions for your app, the successful response look
 ```none
 http://localhost/myapp/permissions
     ?admin_consent=True
-    &tenant=fa00d692-e9c7-4460-a743-29f2956fd429
+    &tenant=aaaabbbb-0000-cccc-1111-dddd2222eeee
     &scope=https://graph.microsoft.com/Calendars.Read https://graph.microsoft.com/Mail.Send
     &state=12345
 ```
@@ -73,7 +73,7 @@ http://localhost/myapp/permissions
 http://localhost/myapp/permissions
         ?admin_consent=True
         &error=consent_required
-        &error_description=AADSTS65004%3a+The+resource+owner+or+authorization+server+denied+the+request.%0d%0aTrace+ID%3a+d320620c-3d56-42bc-bc45-4cdd85c41f00%0d%0aCorrelation+ID%3a+8478d534-5b2c-4325-8c2c-51395c342c89%0d%0aTimestamp%3a+2019-09-24+18%3a34%3a26Z
+        &error_description=AADSTS65004%3a+The+resource+owner+or+authorization+server+denied+the+request.%0d%0aTrace+ID%3a+0000aaaa-11bb-cccc-dd22-eeeeee333333%0d%0aCorrelation+ID%3a+8478d534-5b2c-4325-8c2c-51395c342c89%0d%0aTimestamp%3a+2019-09-24+18%3a34%3a26Z
         &state=12345
 ```
 

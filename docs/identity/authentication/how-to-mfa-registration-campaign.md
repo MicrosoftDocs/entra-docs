@@ -1,15 +1,14 @@
 ---
 title: How to run a registration campaign to set up Microsoft Authenticator
 description: Learn how to move your organization away from less secure authentication methods to Microsoft Authenticator
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/05/2024
-
+ms.date: 06/19/2025
 ms.author: justinha
 author: mjsantani
-manager: amycolannino
+manager: dougeby
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -42,7 +41,7 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
     :::image type="content" source="./media/how-to-mfa-registration-campaign/user-prompt.png" alt-text="Screenshot of multifactor authentication."::: 
 
 1. Tap **Next** and step through the Authenticator app setup. 
-   1. First download the app.  
+1. First download the app.  
 
     :::image type="content" source="./media/how-to-mfa-registration-campaign/user-downloads-microsoft-authenticator.png" alt-text="Screenshot of download for Microsoft Authenticator."::: 
 
@@ -62,8 +61,8 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
       :::image type="content" source="./media/how-to-mfa-registration-campaign/test.png" alt-text="Screenshot of test notification."::: 
 
-   1. Authenticator app is now successfully set up as your default sign-in method.
-
+   1. Authenticator app is now successfully set up.
+   
       :::image type="content" source="./media/how-to-mfa-registration-campaign/finish.png" alt-text="Screenshot of installation complete.":::
 
 1. If you don't want to install the Authenticator app, you can tap **Skip for now** to snooze the prompt for up to 14 days, which can be set by an admin. Users with free and trial subscriptions can snooze the prompt up to three times.
@@ -74,8 +73,8 @@ You can also define how many days a user can postpone, or "snooze," the nudge. I
 
 To enable a registration campaign in the Microsoft Entra admin center, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Registration campaign** and click **Edit**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Entra ID** > **Authentication methods** > **Registration campaign** and click **Edit**.
 1. For **State**:
 
    - Select **Enabled** to enable the registration campaign for all users.
@@ -93,7 +92,7 @@ To enable a registration campaign in the Microsoft Entra admin center, complete 
 
 ## Enable the registration campaign policy using Graph Explorer
 
-In addition to using the Microsoft Entra admin center, you can also enable the registration campaign policy using Graph Explorer. To enable the registration campaign policy, you must use the Authentication Methods Policy using Graph APIs. **Global Administrators** and **Authentication Policy Administrators** can update the policy. 
+In addition to using the Microsoft Entra admin center, you can also enable the registration campaign policy using Graph Explorer. To enable the registration campaign policy, you must use the Authentication Methods Policy using Graph APIs. Those assigned at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role can update the policy. 
 
 To configure the policy using Graph Explorer:
 
@@ -102,7 +101,7 @@ To configure the policy using Graph Explorer:
    To open the Permissions panel:
 
    ![Screenshot of Graph Explorer.](./media/how-to-nudge-authenticator-app/permissions.png)
-
+   
 1. Retrieve the Authentication methods policy: 
 
    ```json
@@ -112,7 +111,7 @@ To configure the policy using Graph Explorer:
 1. Update the registrationEnforcement and authenticationMethodsRegistrationCampaign section of the policy to enable the nudge on a user or group.
 
    ![Screenshot of the API response.](media/how-to-mfa-registration-campaign/response.png)
-
+   
    To update the policy, perform a PATCH on the Authentication Methods Policy with only the updated registrationEnforcement section: 
 
    ```json
@@ -135,7 +134,7 @@ The following table lists **includeTargets** properties.
 | Name | Possible values | Description |
 |------|-----------------|-------------|
 | targetType| "user"<br>"group" | The kind of entity targeted. |
-| Id | A guid identifier | The ID of the user or group targeted. |
+| ID | A guid identifier | The ID of the user or group targeted. |
 | targetedAuthenticationMethod | "microsoftAuthenticator" | The authentication method user is prompted to register. The only permissible value is "microsoftAuthenticator". |
 
 The following table lists **excludeTargets** properties.
@@ -143,7 +142,7 @@ The following table lists **excludeTargets** properties.
 | Name       | Possible values   | Description                           |
 |------------|-------------------|---------------------------------------|
 | targetType | "user"<br>"group" | The kind of entity targeted.          |
-| Id         | A string          | The ID of the user or group targeted. |
+| ID         | A string          | The ID of the user or group targeted. |
 
 ### Examples
 
@@ -248,7 +247,7 @@ Here are a few sample JSONs you can use to get started!
 1. When you tap the specific user, you’ll see their **Object ID**, which is the user’s GUID.
 
    ![User object ID](./media/how-to-nudge-authenticator-app/object-id.png)
-
+   
 ### Identify the GUIDs of groups to insert in the JSONs
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
@@ -257,7 +256,7 @@ Here are a few sample JSONs you can use to get started!
 1. Tap the group and get the **Object ID**.
 
    ![Nudge group](./media/how-to-nudge-authenticator-app/group.png)
-
+   
 <!---comment out PS until ready>
 
 ### PowerShell
@@ -280,13 +279,13 @@ The nudge won't appear on mobile devices that run Android or iOS.
 
 ## Frequently asked questions
 
-**Is registration campaign available for MFA Server?** 
+**Can users be nudged within an application?**
 
-No, the registration campaign is available only for users using Microsoft Entra multifactor authentication. 
+Yes, we support embedded browser views in certain applications. We don't nudge users in out-of-the-box experiences or in browser views embedded in Windows settings.
 
-**Can users be nudged within an application?** 
-
-The registration campaign is available only on browsers and not on applications.
+**Can users be nudged within a single sign-on (SSO) session?**
+ 
+Nudge doesn't trigger if the user is already signed in with SSO. 
 
 **Can users be nudged on a mobile device?** 
 

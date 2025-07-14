@@ -9,10 +9,11 @@ metadata:
   ms.service: entra-id
   ms.subservice: app-proxy
   ms.topic: landing-page
-  ms.date: 02/23/2024
+  ms.date: 02/21/2025
   author: kenwith
   ms.author: kenwith
-  manager: amycolannino
+  manager: dougeby 
+  ai-usage: ai-assisted
 landingContent:
   - title: About application proxy
     linkLists:
@@ -26,7 +27,7 @@ landingContent:
         links:
           - text: Add an on-premises application for remote access through application proxy in Microsoft Entra ID
             url: application-proxy-add-on-premises-application.md
-          - text: Understand Microsoft Entra application proxy connectors
+          - text: Understand Microsoft Entra private network connectors
             url: application-proxy-connectors.md
   - title: Understand single sign-on
     linkLists:

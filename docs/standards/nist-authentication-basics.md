@@ -9,7 +9,7 @@ ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
 ms.date: 11/23/2022
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ---
 
 # NIST authentication basics 
@@ -73,7 +73,7 @@ The strength of something you have is based on the likelihood of the subscriber 
 
 ### Something you are
 
-When determining requirements for something you are, consider how easy it is for an attacker to obtain, or spoof something like a biometric. NIST is drafting a framework for biometrics, however currently doesn't accept biometrics as a single factor. It must be part of multi-factor authentication (MFA). This precaution is because biometrics don't always provide an exact match, as passwords do. For more information, see [Strength of Function for Authenticators – Biometrics](https://pages.nist.gov/SOFA/SOFA.html) (SOFA-B). 
+When determining requirements for something you are, consider how easy it is for an attacker to obtain, or spoof something like a biometric. NIST is drafting a framework for biometrics, however currently doesn't accept biometrics as a single factor. It must be part of multi-factor authentication (MFA). This precaution is because biometrics don't always provide an exact match, as passwords do. For more information, see [Strength of Function for Authenticators – Biometrics (SOFA-B)](https://pages.nist.gov/SOFA/SOFA.html). 
 
 SOFA-B framework to quantify biometrics strength:
 

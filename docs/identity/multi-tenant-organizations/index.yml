@@ -8,11 +8,11 @@ metadata:
   description: Learn about multitenant organizations.
   ms.service: entra-id
   ms.subservice: multitenant-organizations
-  manager: amycolannino
+  manager: dougeby
   ms.topic: landing-page
-  ms.date: 08/22/2023
-  author: rolyon
-  ms.author: rolyon
+  ms.date: 04/23/2024
+  author: kenwith
+  ms.author: kenwith
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -23,57 +23,47 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: Multitenant organization scenario
+          - text: Multitenant organization capabilities
             url: overview.md
+          - text: Compare multitenant capabilities
+            url: overview.md#compare-multitenant-capabilities
+
+  # Card
+  - title: Configure a multitenant organization
+    linkLists:
+      - linkListType: overview
+        links:
           - text: What is a multitenant organization?
             url: multi-tenant-organization-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Microsoft 365 admin center
+            url: /microsoft-365/enterprise/set-up-multi-tenant-org
+          - text: PowerShell or Microsoft Graph API
+            url: multi-tenant-organization-configure-graph.md
+
+  # Card
+  - title: Configure cross-tenant synchronization
+    linkLists:
+      - linkListType: overview
+        links:
           - text: What is cross-tenant synchronization?
             url: cross-tenant-synchronization-overview.md
-  
-  # Card
-  - title: Compare capabilities
-    linkLists:
-      - linkListType: concept
+      - linkListType: how-to-guide
         links:
-          - text: Compare multitenant capabilities
-            url: overview.md#compare-multi-tenant-capabilities
-          - text: Topologies for cross-tenant synchronization
-            url: cross-tenant-synchronization-topology.md
+          - text: Microsoft Entra admin center
+            url: cross-tenant-synchronization-configure.md
+          - text: PowerShell or Microsoft Graph API
+            url: cross-tenant-synchronization-configure-graph.md
 
   # Card
   - title: Collaborate in Microsoft 365
     linkLists:
       - linkListType: concept
         links:
-          - text: Multitenant organizations and Microsoft 365
+          - text: Identity provisioning for Microsoft 365
             url: multi-tenant-organization-microsoft-365.md
+          - text: Microsoft 365 multitenant people search
+            url: /microsoft-365/enterprise/multi-tenant-people-search
           - text: Plan for multitenant organizations in Microsoft 365
             url: /microsoft-365/enterprise/plan-multi-tenant-org-overview
-          - text: Microsoft 365 multitenant organization people search
-            url: /microsoft-365/enterprise/multi-tenant-people-search
-
-  # Card
-  - title: Configure a multitenant organization
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Set up a multitenant org in Microsoft 365
-            url: /microsoft-365/enterprise/set-up-multi-tenant-org
-          - text: Join or leave a multitenant organization in Microsoft 365
-            url: /microsoft-365/enterprise/join-leave-multi-tenant-org
-          - text: Microsoft Graph API
-            url: multi-tenant-organization-configure-graph.md
-
-  # Card
-  - title: Configure cross-tenant synchronization
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Admin center
-            url: cross-tenant-synchronization-configure.md
-          - text: PowerShell or Microsoft Graph API
-            url: cross-tenant-synchronization-configure-graph.md
-          - text: Scoping users or groups to be provisioned
-            url: ~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization
-          - text: Synchronize users in multitenant organizations in Microsoft 365
-            url: /microsoft-365/enterprise/sync-users-multi-tenant-orgs

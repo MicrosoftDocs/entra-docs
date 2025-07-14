@@ -1,19 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Troubleshoot Pass-through Authentication'
 description: This article describes how to troubleshoot Microsoft Entra pass-through authentication.
-
 keywords: Troubleshoot Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot Microsoft Entra pass-through authentication
@@ -21,7 +19,7 @@ ms.author: billmath
 This article helps you find troubleshooting information about common issues regarding Microsoft Entra pass-through authentication.
 
 > [!IMPORTANT]
-> If you are facing user sign-in issues with Pass-through Authentication, don't disable the feature or uninstall Pass-through Authentication Agents without having a cloud-only Global Administrator account or a Hybrid Identity Administrator account to fall back on. Learn about [adding a cloud-only Global Administrator account](~/fundamentals/add-users.md). Doing this step is critical and ensures that you don't get locked out of your tenant.
+> If you are facing user sign-in issues with Pass-through Authentication, don't disable the feature or uninstall Pass-through Authentication Agents without having a cloud-only a Hybrid Identity Administrator account to fall back on. 
 
 ## General issues
 
@@ -29,9 +27,9 @@ This article helps you find troubleshooting information about common issues rega
 
 Ensure that the Pass-through Authentication feature is still **Enabled** on your tenant and the status of Authentication Agents shows **Active**, and not **Inactive**. You can check status by going to the **Microsoft Entra Connect** blade on the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
-![Screnshot shows Microsoft Entra admin center - Microsoft Entra Connect blade.](./media/tshoot-connect-pass-through-authentication/azure-ad-connect-blade.png)
+![Screenshot shows Microsoft Entra admin center - Microsoft Entra Connect blade.](./media/tshoot-connect-pass-through-authentication/azure-ad-connect-blade.png)
 
-![Screenhot shows Microsoft Entra admin center - Pass-through Authentication blade.](./media/tshoot-connect-pass-through-authentication/pta-server-list.png)
+![Screenshot shows Microsoft Entra admin center - Pass-through Authentication blade.](./media/tshoot-connect-pass-through-authentication/pta-server-list.png)
 
 ### User-facing sign-in error messages
 
@@ -78,7 +76,7 @@ If your tenant has a Microsoft Entra ID P1 or P2 license associated with it, you
 
 [![Screenshot shows Microsoft Entra admin center - Sign-ins report,](./media/tshoot-connect-pass-through-authentication/sign-in-report.png)](./media/tshoot-connect-pass-through-authentication/sign-in-report.png#lightbox)
 
-Navigate to **Microsoft Entra ID** -> **Sign-ins** on the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/) and click a specific user's sign-in activity. Look for the **SIGN-IN ERROR CODE** field. Map the value of that field to a failure reason and resolution using the following table:
+Navigate to **Microsoft Entra ID** > **Sign-ins** on the [[Microsoft Entra admin center](https://entra.microsoft.com)](https://portal.azure.com/) and click a specific user's sign-in activity. Look for the **SIGN-IN ERROR CODE** field. Map the value of that field to a failure reason and resolution using the following table:
 
 |Sign-in error code|Sign-in failure reason|Resolution
 | --- | --- | ---
@@ -110,7 +108,7 @@ Ensure that the server on which the Authentication Agent has been installed can 
 
 ### Registration of the Authentication Agent failed due to token or account authorization errors
 
-Ensure that you use a cloud-only Global Administrator account or a Hybrid Identity Administrator account for all Microsoft Entra Connect or standalone Authentication Agent installation and registration operations. There is a known issue with MFA-enabled Global Administrator accounts; turn off MFA temporarily (only to complete the operations) as a workaround.
+Ensure that you use a cloud-only Hybrid Identity Administrator account for all Microsoft Entra Connect or standalone Authentication Agent installation and registration operations. There is a known issue with MFA-enabled Hybrid Identity Administrator accounts; turn off MFA temporarily (only to complete the operations) as a workaround.
 
 ### An unexpected error occurred
 
@@ -138,7 +136,7 @@ Ensure that the server on which Microsoft Entra Connect is installed can communi
 
 ### Enabling the feature failed due to token or account authorization errors
 
-Ensure that you use a cloud-only Global Administrator account when enabling the feature. There is a known issue with multi-factor authentication (MFA)-enabled Global Administrator accounts; turn off MFA temporarily (only to complete the operation) as a workaround.
+Ensure that you use a cloud-only Hybrid Identity Administrator account when enabling the feature. There is a known issue with multi-factor authentication (MFA)-enabled Hybrid Identity Administrator accounts; turn off MFA temporarily (only to complete the operation) as a workaround.
 
 ## Collecting Pass-through Authentication Agent logs
 
@@ -191,4 +189,4 @@ Another way to monitor Authentication Agents is to track specific Performance Mo
 ![Pass-through Authentication Performance Monitor counters](./media/tshoot-connect-pass-through-authentication/pta12.png)
 
 > [!IMPORTANT]
-> Pass-through Authentication provides high availability using multiple Authentication Agents, and _not_ load balancing. Depending on your configuration, _not_ all your Authentication Agents receive roughly _equal_ number of requests. It is possible that a specific Authentication Agent receives no traffic at all.
+> Pass-through Authentication provides high availability using multiple Authentication Agents, and *not* load balancing. Depending on your configuration, *not* all your Authentication Agents receive roughly *equal* number of requests. It is possible that a specific Authentication Agent receives no traffic at all.

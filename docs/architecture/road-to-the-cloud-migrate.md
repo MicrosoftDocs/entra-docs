@@ -7,7 +7,7 @@ manager: martinco
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 07/27/2023
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.custom: references_regions
 ---
@@ -48,7 +48,7 @@ Additional considerations include:
 
 To transform groups and distribution lists:
 
-* For security groups, use your existing business logic that assigns users to security groups. Migrate the logic and capability to Microsoft Entra ID and dynamic groups.
+* For security groups, use your existing business logic that assigns users to security groups. Migrate the logic and capability to Microsoft Entra ID and dynamic membership groups.
 
 * For self-managed group capabilities provided by Microsoft Identity Manager, replace the capability with self-service group management.
 
@@ -188,7 +188,7 @@ After you move SaaS applications that were federated to Microsoft Entra ID, ther
 
 * [Move application authentication to Microsoft Entra ID](~/identity/enterprise-apps/migrate-adfs-apps-stages.md)
 
-* [Migrate from Azure Multi-Factor Authentication Server to Microsoft Entra multifactor authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
+* [Migrate from Azure Multifactor Authentication Server (MFA Server) to Microsoft Entra multifactor authentication](~/identity/authentication/how-to-migrate-mfa-server-to-azure-mfa.md)
 
 * [Migrate from federation to cloud authentication](~/identity/hybrid/connect/migrate-from-federation-to-cloud-authentication.md)
 
@@ -214,9 +214,9 @@ Use the following table to determine what Azure-based tools you can use to repla
 | Management area | On-premises (Active Directory) feature | Equivalent Microsoft Entra feature |
 | - | - | -|
 | Security policy management| GPO, Microsoft Configuration Manager| [Microsoft 365 Defender for Cloud](https://azure.microsoft.com/services/security-center/) |
-| Update management| Microsoft Configuration Manager, Windows Server Update Services| [Azure Automation Update Management](/azure/automation/update-management/overview) |
-| Configuration management| GPO, Microsoft Configuration Manager| [Azure Automation State Configuration](/azure/automation/automation-dsc-overview) |
-| Monitoring| System Center Operations Manager| [Azure Monitor Log Analytics](/azure/azure-monitor/logs/log-analytics-overview) |
+| Update management| Microsoft Configuration Manager, Windows Server Update Services| [Azure Update Manager](/azure/update-manager/overview) |
+| Configuration management| GPO, Microsoft Configuration Manager| [Azure Machine Configuration](/azure/governance/machine-configuration/overview) |
+| Monitoring| System Center Operations Manager| [Azure Monitor](/azure/azure-monitor/fundamentals/overview) |
 
 Here's more information that you can use for application server management:
 
@@ -254,7 +254,7 @@ In the most preferred approach, you undertake projects to migrate from legacy ap
 
 >[!NOTE]
 >* Use Microsoft Entra Domain Services if the dependencies are aligned with [common deployment scenarios for Microsoft Entra Domain Services](/entra/identity/domain-services/scenarios). 
->* To validate if Microsoft Entra Domain Services is a good fit, you might use tools like [Service Map in Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ServiceMapOMS?tab=Overview) and [automatic dependency mapping with Service Map and Live Maps](https://techcommunity.microsoft.com/t5/system-center-blog/automatic-dependency-mapping-with-service-map-and-live-maps/ba-p/351867).
+>* To validate if Microsoft Entra Domain Services is a good fit, you might use tools like Azure Monitor VM insights [https://learn.microsoft.com/azure/azure-monitor/vm/vminsights-overview]. 
 >* Validate that your SQL Server instantiations can be [migrated to a different domain](https://social.technet.microsoft.com/wiki/contents/articles/24960.migrating-sql-server-to-new-domain.aspx). If your SQL service is running in virtual machines, [use this guidance](/azure/azure-sql/migration-guides/virtual-machines/sql-server-to-sql-on-azure-vm-individual-databases-guide).
 
 #### Approach 2
@@ -306,7 +306,7 @@ Here are key points about usage of Microsoft Entra ID for VPN authentication:
 
 * Check if your VPN providers support modern authentication. For example:
 
-  * [Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md)
+  * [Tutorial: Microsoft Entra SSO integration with Cisco Secure Firewall - Secure Client](~/identity/saas-apps/cisco-secure-firewall-secure-client.md)
 
   * [Tutorial: Microsoft Entra SSO integration with Palo Alto Networks GlobalProtect](~/identity/saas-apps/palo-alto-networks-globalprotect-tutorial.md) 
 

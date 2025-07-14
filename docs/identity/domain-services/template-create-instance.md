@@ -2,13 +2,13 @@
 title: Enable Azure DS Domain Services using a template | Microsoft Docs
 description: Learn how to configure and enable Microsoft Entra Domain Services using an Azure Resource Manager template.
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-arm-template, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: sample
-ms.date: 09/15/2023
+ms.date: 02/19/2025
 ms.author: justinha
 ---
 
@@ -85,7 +85,7 @@ New-MgGroup -DisplayName "AAD DC Administrators" `
   -MailNickName "AADDCAdministrators"
 ```
 
-With the *AAD DC Administrators* group created, add a user to the group using the [New-MgGroupMember](/powershell/module/microsoft.graph.groups/new-mggroupmember) cmdlet. You first get the *AAD DC Administrators* group object ID using the [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet, then the desired user's object ID using the [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) cmdlet.
+With the *AAD DC Administrators* group created, add a user to the group using the [New-MgGroupMemberByRef](/powershell/module/microsoft.graph.groups/new-mggroupmemberbyref) cmdlet. You first get the *AAD DC Administrators* group object ID using the [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet, then the desired user's object ID using the [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) cmdlet.
 
 In the following example, the user object ID for the account with a UPN of `admin@contoso.onmicrosoft.com`. Replace this user account with the UPN of the user you wish to add to the *AAD DC Administrators* group:
 
@@ -126,7 +126,7 @@ As part of the Resource Manager resource definition, the following configuration
 |-------------------------|---------|
 | domainName              | The DNS domain name for your managed domain, taking into consideration the previous points on naming prefixes and conflicts. |
 | filteredSync            | Domain Services lets you synchronize *all* users and groups available in Microsoft Entra ID, or a *scoped* synchronization of only specific groups.<br /><br /> For more information about scoped synchronization, see [Microsoft Entra Domain Services scoped synchronization][scoped-sync].|
-| notificationSettings    | If there are any alerts generated in the managed domain, email notifications can be sent out. <br /><br />*Global administrators* of the Azure tenant and members of the *AAD DC Administrators* group can be *Enabled* for these notifications.<br /><br /> If desired, you can add other recipients for notifications when there are alerts that require attention.|
+| notificationSettings    | If there are any alerts generated in the managed domain, email notifications can be sent out. <br /><br />Highly privileged administrators in the Microsoft Entra ID tenant and members of the *AAD DC Administrators* group can be *Enabled* for these notifications.<br /><br /> If desired, you can add other recipients for notifications when there are alerts that require attention.|
 | domainConfigurationType | By default, a managed domain is created as a *User* forest. This type of forest synchronizes all objects from Microsoft Entra ID, including any user accounts created in an on-premises AD DS environment. You don't need to specify a *domainConfiguration* value to create a user forest.<br /><br /> A *Resource* forest only synchronizes users and groups created directly in Microsoft Entra ID. Set the value to *ResourceTrusting* to create a resource forest.<br /><br />For more information on *Resource* forests, including why you might use one and how to create forest trusts with on-premises AD DS domains, see [Domain Services resource forests overview][resource-forests].|
 
 The following condensed parameters definition shows how these values are declared. A user forest named *aaddscontoso.com* is created with all users from Microsoft Entra ID synchronized to the managed domain:

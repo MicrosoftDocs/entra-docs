@@ -2,20 +2,23 @@
 title: Onboard a Microsoft Azure subscription in Permissions Management
 description: How to a Microsoft Azure subscription on Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/20/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Onboard a Microsoft Azure subscription
 
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
+
 This article describes how to onboard a Microsoft Azure subscription or subscriptions on Permissions Management. Onboarding a subscription creates a new authorization system to represent the Azure subscription in Permissions Management.
 
 > [!NOTE]
-> You must have [Global Administrator](https://aka.ms/globaladmin) permissions to perform the tasks in this article.
+> You must be a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) to perform the tasks in this article.
 
 ## Explanation
 

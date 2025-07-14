@@ -1,27 +1,28 @@
 ---
-title: What is Microsoft Entra B2B collaboration
-description: Microsoft Entra B2B collaboration supports guest user access so you can securely share resources and collaborate with external partners.
-
+title: Workforce Tenant Overview
+description: Learn about B2B collaboration for sharing apps with external identities, business partners, and guests, using External ID for authentication and identity access management.
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 01/18/2024
+ms.date: 02/19/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
-ms.custom: it-pro
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 # Customer intent: As an administrator managing B2B collaboration, I want to easily invite guest users from the Microsoft Entra admin center, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
 ---
 
-# B2B collaboration overview
+# Overview: B2B collaboration with external guests for your workforce
 
-B2B collaboration is a feature within Microsoft Entra External ID that lets you invite guest users to collaborate with your organization. With B2B collaboration, you can securely share your company's applications and services with external users, while maintaining control over your own corporate data. Work safely and securely with external partners, large or small, even if they don't have Microsoft Entra ID or an IT department.
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-![Diagram illustrating B2B collaboration.](media/what-is-b2b/b2b-collaboration-overview.png)
+Microsoft Entra External ID includes collaboration capabilities that allow your workforce to work securely with business partners and guests. In your workforce tenant, you can use B2B collaboration to share your company's applications and services with guests, while maintaining control over your own corporate data. Work securely with external partners, even if they don't have Microsoft Entra ID or an IT department.
 
-A simple invitation and redemption process lets partners use their own credentials to access your company's resources. You can also enable self-service sign-up user flows to let external users sign up for apps or resources themselves. Once the external user has redeemed their invitation or completed sign-up, they're represented in your directory as a user object. The user type for these B2B collaboration users is typically set to "guest" and their user principal name contains the #EXT# identifier.
+:::image type="content" source="media/what-is-b2b/b2b-collaboration-overview.png" alt-text="Diagram illustrating B2B collaboration." border="true":::
 
-Developers can use Microsoft Entra business-to-business APIs to customize the invitation process or write applications like self-service sign-up portals. For licensing and pricing information related to guest users, refer to [Microsoft Entra External ID pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/).
+A simple invitation and redemption process lets partners use their own credentials to access your company's resources. You can also enable self-service sign-up user flows to let guests sign up for apps or resources themselves. Once the guest redeems their invitation or completes sign-up, they're represented in your directory as a user object. The user type for these B2B collaboration users is typically set to "guest" and their user principal name contains the #EXT# identifier.
+
+Developers can use Microsoft Entra business-to-business APIs to customize the invitation process or write applications like self-service sign-up portals. For licensing and pricing information related to guest users, refer to [Billing model for Microsoft Entra External ID](external-identities-pricing.md).
 
 > [!IMPORTANT]
 > The [email one-time passcode](one-time-passcode.md) feature is now turned on by default for all new tenants and for any existing tenants where you haven't explicitly turned it off. When this feature is turned off, the fallback authentication method is to prompt invitees to create a Microsoft account.
@@ -34,15 +35,35 @@ With Microsoft Entra B2B, the partner uses their own identity management solutio
 - You don't need to manage external accounts or passwords.
 - You don't need to sync accounts or manage account lifecycles.
 
-## Manage B2B collaboration with other organizations and clouds
+## Manage B2B collaboration with other organizations
 
-B2B collaboration is enabled by default, but comprehensive admin settings let you control your inbound and outbound B2B collaboration with external partners and organizations:
+B2B collaboration is enabled by default, but comprehensive admin settings let you control your inbound and outbound B2B collaboration with external partners and organizations.
 
-- For B2B collaboration with other Microsoft Entra organizations, use [cross-tenant access settings](cross-tenant-access-overview.md). Manage inbound and outbound B2B collaboration, and scope access to specific users, groups, and applications. Set a default configuration that applies to all external organizations, and then create individual, organization-specific settings as needed. Using cross-tenant access settings, you can also trust multifactor (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
+- **Cross-tenant access settings.** For B2B collaboration with other Microsoft Entra organizations, use [cross-tenant access settings](cross-tenant-access-overview.md) to control which users can authenticate with which resources. Manage inbound and outbound B2B collaboration, and scope access to specific users, groups, and applications. Set a default configuration that applies to all external organizations, and then create individual, organization-specific settings as needed. Using cross-tenant access settings, you can also trust multifactor (MFA) and device claims (compliant claims and Microsoft Entra hybrid joined claims) from other Microsoft Entra organizations.
 
-- Use [external collaboration settings](external-collaboration-settings-configure.md) to define who can invite external users, allow or block B2B specific domains, and set restrictions on guest user access to your directory.
+- **External collaboration settings.** Use [external collaboration settings](external-collaboration-settings-configure.md) to define who can invite external users into your organization as guests. By default, all users in your organization, including B2B collaboration guest users, can invite external users to B2B collaboration. If you want to limit the ability to send invitations, you can turn invitations on or off for everyone, or limit invitations to certain roles. You can also allow or block B2B specific domains and set restrictions on guest user access to your directory.
 
-- Use [Microsoft Cloud settings](cross-cloud-settings.md) to establish mutual B2B collaboration between the Microsoft Azure global cloud and [Microsoft Azure Government](/azure/azure-government/) or [Microsoft Azure operated by 21Vianet](/azure/china/).
+These settings are used to manage two different aspects of B2B collaboration. Cross-tenant access settings control whether users can authenticate with external Microsoft Entra tenants. They apply to both inbound and outbound B2B collaboration. By contrast, external collaboration settings control which users in your organization are allowed to send B2B collaboration invitations to guests from any organization.
+
+### How cross-tenant access and external collaboration settings work together
+
+When you're considering B2B collaboration with a specific external Microsoft Entra organization, determine whether your cross-tenant access settings allow B2B collaboration with that organization. Also consider whether your external collaboration settings allow your users to send invitations to that organization's domain. Here are some examples:
+
+- **Example 1**: You previously added `adatum.com` (a Microsoft Entra organization) to the list of blocked domains in your external collaboration settings, but your cross-tenant access settings enable B2B collaboration for all Microsoft Entra organizations. In this case, the most restrictive setting applies. Your external collaboration settings prevent your users from sending invitations to users at `adatum.com`.
+
+- **Example 2**: You allow B2B collaboration with Fabrikam in your cross-tenant access settings, but then you add `fabrikam.com` to your blocked domains in your external collaboration settings. Your users can't invite new Fabrikam business guests, but existing Fabrikam guests can continue using B2B collaboration.
+
+> [!NOTE]
+> Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025. With this update, guest users will be redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process.   
+
+### Manage B2B collaboration with other Microsoft Clouds
+
+Microsoft Azure cloud services are available in separate national clouds, which are physically isolated instances of Azure. Increasingly, organizations are finding the need to collaborate with organizations and users across global cloud and national cloud boundaries. With Microsoft cloud settings, you can establish mutual B2B collaboration between the following Microsoft Azure clouds:
+
+- Microsoft Azure global cloud and [Microsoft Azure Government](/azure/azure-government/)
+- Microsoft Azure global cloud and [Microsoft Azure operated by 21Vianet](/azure/china/)
+
+To set up B2B collaboration between tenants in different clouds, both tenants configure their Microsoft cloud settings to enable collaboration with the other cloud. Then each tenant configures inbound and outbound cross-tenant access with the tenant in the other cloud. See [Microsoft cloud settings](cross-cloud-settings.md) for details.
 
 ## Easily invite guest users from the Microsoft Entra admin center
 
@@ -60,7 +81,7 @@ As an administrator, you can easily add guest users to your organization in the 
 
 ## Allow self-service sign-up
 
-With a self-service sign-up user flow, you can create a sign-up experience for external users who want to access your apps. As part of the sign-up flow, you can provide options for different social or enterprise identity providers, and collect information about the user. Learn about [self-service sign-up and how to set it up](self-service-sign-up-overview.md).
+With a self-service sign-up user flow, you can create a sign-up experience for guests who want to access your apps. As part of the sign-up flow, you can provide options for different social or enterprise identity providers, and collect information about the user. Learn about [self-service sign-up and how to set it up](self-service-sign-up-overview.md).
 
 You can also use API connectors to integrate your self-service sign-up user flows with external cloud systems. You can connect with custom approval workflows, perform identity verification, validate user-provided information, and more.
 
@@ -70,18 +91,18 @@ You can also use API connectors to integrate your self-service sign-up user flow
 
 You can use authentication and authorization policies to protect your corporate content. Conditional Access policies, such as multifactor authentication, can be enforced:
 
-- At the tenant level.
-- At the application level.
-- For specific guest users to protect corporate apps and data.
+- At the tenant level
+- At the application level
+- For specific guest users to protect corporate apps and data
 
 :::image type="content" source="media/what-is-b2b/tutorial-mfa-policy-2.png" alt-text="Screenshot showing the Conditional Access option.":::
 
 ## Let application and group owners manage their own guest users
 
-You can delegate guest user management to application owners so that they can add guest users directly to any application they want to share, whether it's a Microsoft application or not.
+You can delegate guest user management to application owners. This allows them to add guest users directly to any application they want to share, whether it's a Microsoft application or not.
 
 - Administrators set up self-service app and group management.
-- Non-administrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
+- Nonadministrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
 
 :::image type="content" source="media/what-is-b2b/access-panel-manage-app.png" alt-text="Screenshot showing the Access panel for a guest user."  lightbox="media/what-is-b2b/access-panel-manage-app.png":::
 
@@ -94,18 +115,16 @@ Bring your external partners on board in ways customized to your organization's 
 
 ## Integrate with Identity providers
 
-Microsoft Entra External ID supports external identity providers like Facebook, Microsoft accounts, Google, or enterprise identity providers. You can set up federation with identity providers. This way your external users can sign in with their existing social or enterprise accounts instead of creating a new account just for your application. Learn more about [identity providers for External Identities](identity-providers.md).
+Microsoft Entra External ID supports external identity providers like Facebook, Microsoft accounts, Google, or enterprise identity providers. You can set up federation with identity providers. This way your guests can sign in with their existing social or enterprise accounts instead of creating a new account just for your application. Learn more about [identity providers for External ID](identity-providers.md).
 
 :::image type="content" source="media/what-is-b2b/identity-providers.png" alt-text="Screenshot showing the Identity providers page.":::
 
 ## Integrate with SharePoint and OneDrive
 
-You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint-azureb2b-integration) to share files, folders, list items, document libraries, and sites with people outside your organization, while using Azure B2B for authentication and management. The users you share resources with are typically guest users in your directory, and permissions and groups work the same for these guests as they do for internal users. When enabling integration with SharePoint and OneDrive, you also enable the [email one-time passcode](one-time-passcode.md) feature in Microsoft Entra B2B to serve as a fallback authentication method.
+You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint-azureb2b-integration) to share files, folders, list items, document libraries, and sites with people outside your organization, while using Microsoft Entra B2B for authentication and management. The users you share resources with are typically guest users in your directory, and permissions and groups work the same for these guests as they do for internal users. When enabling integration with SharePoint and OneDrive, you also enable the [email one-time passcode](one-time-passcode.md) feature in Microsoft Entra B2B to serve as a fallback authentication method.
 
 :::image type="content" source="media/what-is-b2b/enable-email-otp-options.png" alt-text="Screenshot of the email one-time-passcode setting.":::
 
-## Next steps
+## Related content
 
-- [Invitation email](invitation-email-elements.md)
-- [Add B2B collaboration guest users in the admin center](add-users-administrator.md)
-- [B2B direct connect](b2b-direct-connect-overview.md)
+To learn more about B2B collaboration users, see the following article: [Add B2B collaboration guest users in the admin center](add-users-administrator.yml). To learn more about how to establish mutual trust relationships between organizations for seamless collaboration using Microsoft Teams shared channels, see the following article:  [B2B direct connect](b2b-direct-connect-overview.md).

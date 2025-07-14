@@ -1,14 +1,14 @@
 ---
-title: Quickstart guide to analyze a failed Microsoft Entra sign-in
+title: Quickstart guide to analyze a failed sign-in attempt
 description: In this quickstart, you learn how you can use the sign-in log to determine the reason for a failed sign-in to Microsoft Entra ID.
 
 ms.service: entra-id
 ms.subservice: monitoring-health
 ms.topic: quickstart
-ms.date: 09/14/2023
+ms.date: 02/25/2025
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.reviewer: besiler
 
 #Customer intent: As an IT admin, you need to know how to use the sign-in log so that you can fix sign-in issues.
@@ -22,8 +22,9 @@ With the information in the Microsoft Entra sign-in log, you can figure out what
 
 To complete the scenario in this quickstart, you need:
 
-- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
-- A user with the **Reports Reader**, **Security Reader**, **Security Administrator**, or **Global Administrator** role for the tenant.
+- An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
+- A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md).
+- A user with the **Reports Reader**, **Security Reader**, or **Security Administrator** role for the tenant.
 - **A test account called Isabella Simonsen** - If you don't know how to create a test account, see [Add cloud-based users](~/fundamentals/add-users.md#add-a-new-user).
 
 ## Perform a failed sign-in
@@ -39,11 +40,10 @@ The goal of this step is to create a record of a failed sign-in in the Microsoft
 
 This section provides you with the steps to analyze a failed sign-in. Filter the sign-in log to remove all records that aren't relevant to your analysis. For example, set a filter to display only the records of a specific user. Then you can review the error details. The log details provide helpful information. You can also look up the error using the [sign-in error lookup tool](https://login.microsoftonline.com/error). This tool might provide you with information to troubleshoot a sign-in error. 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader). 
 
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 
 1. Adjust the filter to view only the records for Isabella Simonsen:
 
@@ -79,8 +79,6 @@ Now, that you know how to find an entry in the sign-in log by name, you should a
 
 When no longer needed, delete the test user. If you don't know how to delete a Microsoft Entra user, see [Delete users from Microsoft Entra ID](~/fundamentals/add-users.md#delete-a-user). 
 
-## Next step
+## Related content
 
-
-> [!div class="nextstepaction"]
-> [Learn how to use the sign-in diagnostic](howto-use-sign-in-diagnostics.md)
+- [Learn how to use the sign-in diagnostic](howto-use-sign-in-diagnostics.md)

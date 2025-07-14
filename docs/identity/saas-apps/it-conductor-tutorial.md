@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with IT-Conductor
+title: Configure IT-Conductor for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and IT-Conductor.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 02/06/2023
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IT-Conductor so that I can control who has access to IT-Conductor, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with IT-Conductor
+# Configure IT-Conductor for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate IT-Conductor with Microsoft Entra ID. IT-Conductor is a Software-as-a-Service automation platform for remote agentless monitoring, performance management and IT operations. When you integrate IT-Conductor with Microsoft Entra ID, you can:
+In this article, you learn how to integrate IT-Conductor with Microsoft Entra ID. IT-Conductor is a Software-as-a-Service automation platform for remote agentless monitoring, performance management and IT operations. When you integrate IT-Conductor with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to IT-Conductor.
 * Enable your users to be automatically signed-in to IT-Conductor with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ You'll configure and test Microsoft Entra single sign-on for IT-Conductor in a t
 To integrate Microsoft Entra ID with IT-Conductor, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * IT-Conductor single sign-on (SSO) enabled subscription.
 
@@ -60,13 +60,13 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **IT-Conductor** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **IT-Conductor** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, the user does not have to perform any step as the app is already pre-integrated with Azure.
+1. On the **Basic SAML Configuration** section, the user doesn't have to perform any step as the app is already pre-integrated with Azure.
 
 1. IT-Conductor application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -101,15 +101,15 @@ In this section, a user called B.Simon is created in IT-Conductor. IT-Conductor 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the IT-Conductor for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the IT-Conductor for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the IT-Conductor tile in the My Apps, you should be automatically signed in to the IT-Conductor for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the IT-Conductor tile in the My Apps, you should be automatically signed in to the IT-Conductor for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure IT-Conductor you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

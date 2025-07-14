@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: MicrosoftGuyJFlo
   ms.author: joflore
-  ms.date: 01/03/2024
+  ms.date: 07/03/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -30,9 +30,7 @@ landingContent:
           - text: What are conditions?
             url: concept-conditional-access-conditions.md
           - text: How can I define locations?
-            url: location-condition.md
-          - text: What are controls?
-            url: controls.md
+            url: concept-assignment-network.md
           - text: Conditional Access service dependencies
             url: service-dependencies.md
 
@@ -60,16 +58,26 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Require MFA for administrators
-            url: howto-conditional-access-policy-admin-mfa.md
+            url: policy-old-require-mfa-admin.md
           - text: Require MFA for Azure management
-            url: howto-conditional-access-policy-azure-management.md
+            url: policy-old-require-mfa-azure-mgmt.md
           - text: Block legacy authentication
-            url: howto-conditional-access-policy-block-legacy.md
+            url: policy-block-legacy-authentication.md
           - text: Risk-based Conditional Access (Requires Microsoft Entra ID P2)
-            url: howto-conditional-access-policy-risk.md
+            url: policy-risk-based-sign-in.md
           - text: Require trusted location for MFA registration
-            url: howto-conditional-access-policy-registration.md
+            url: policy-all-users-security-info-registration.md
           - text: Block access by location
-            url: howto-conditional-access-policy-location.md
+            url: policy-block-by-location.md
           - text: Require compliant device
-            url: howto-conditional-access-policy-compliant-device.md
+            url: policy-alt-all-users-compliant-hybrid-or-mfa.md
+
+  # Card
+  - title: Conditional Access optimization agent
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Get started with optimization agent
+            url: agent-optimization.md
+          - text: Review optimization agent suggestions
+            url: agent-optimization-review-suggestions.md

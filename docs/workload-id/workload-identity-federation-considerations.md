@@ -2,14 +2,14 @@
 title: Workload identity federation for app considerations
 description: Important considerations and restrictions for creating a federated identity credential on an app.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: entra-workload-id
 
 ms.topic: concept-article
 ms.date: 02/28/2024
-ms.author: ryanwi
+ms.author: shermanouko
 ms.reviewer: shkhalid
 ms.custom: aaddev, references_regions
 ---
@@ -36,11 +36,8 @@ Federated identity credentials don't consume the Microsoft Entra tenant service 
 
 Creation of federated identity credentials is currently **not supported** on user-assigned managed identities created in the following regions:
 
-- East Asia
-- Qatar Central
 - Malaysia South
-- Italy North
-- Israel Central
+- New Zealand North
 
 Support for creating federated identity credentials on user assigned identities in these regions will be gradually rolled out. 
 Resources in this region which need to use federated identity credentials, can do so by leveraging a user assigned managed identity created in a supported region. 
@@ -52,19 +49,6 @@ Resources in this region which need to use federated identity credentials, can d
 Only issuers that provide tokens signed using the RS256 algorithm are supported for token exchange using workload identity federation.  Exchanging tokens signed with other algorithms may work, but haven't been tested.
 
 <a name='azure-active-directory-issuers-arent-supported'></a>
-
-## Microsoft Entra issuers aren't supported
-
-*Applies to: applications and user-assigned managed identities*
-
-Creating a federation between two Microsoft Entra identities from the same or different tenants isn't supported. When creating a federated identity credential, configuring the *issuer* (the URL of the external identity provider) with the following values isn't supported:
-
-- *.login.microsoftonline.com
-- *.login.windows.net
-- *.login.microsoft.com
-- *.sts.windows.net
-
-While it's possible to create a federated identity credential with a Microsoft Entra issuer, attempts to use it for authorization fail with error `AADSTS700222: AAD-issued tokens may not be used for federated identity flows`.
 
 ## Time for federated credential changes to propagate
 
@@ -80,7 +64,7 @@ To avoid this issue, wait a short time after adding the federated identity crede
 
 Creating multiple federated identity credentials under the same user-assigned managed identity concurrently triggers concurrency detection logic, which causes requests to fail with 409-conflict HTTP status code.  
 
-[Terraform Provider for Azure (Resource Manager)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) version 3.40.0 introduces an [update](https://github.com/hashicorp/terraform-provider-azurerm/pull/20003) which creates multiple federated identity credentials sequentially instead of concurrently.  Versions earlier than 3.40.0 can cause failures in pipelines when multiped federated identities are created. We recommend you use [Terraform Provider for Azure (Resource Manager) v3.40.0](https://github.com/hashicorp/terraform-provider-azurerm/tree/main) or later so that multiple federated identity credentials are created sequentially.
+[Terraform Provider for Azure (Resource Manager)](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) version 3.40.0 introduces an [update](https://github.com/hashicorp/terraform-provider-azurerm/pull/20003) which creates multiple federated identity credentials sequentially instead of concurrently.  Versions earlier than 3.40.0 can cause failures in pipelines when multiple federated identities are created. We recommend you use [Terraform Provider for Azure (Resource Manager) v3.40.0](https://github.com/hashicorp/terraform-provider-azurerm/tree/main) or later so that multiple federated identity credentials are created sequentially.
 
 When you use automation or Azure Resource Manager templates (ARM templates) to create federated identity credentials under the same parent identity, create the federated credentials sequentially. Federated identity credentials under different managed identities can be created in parallel without any restrictions.
 

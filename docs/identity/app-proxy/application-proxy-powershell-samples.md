@@ -2,13 +2,14 @@
 title: PowerShell samples for Microsoft Entra application proxy
 description: Use these PowerShell samples for Microsoft Entra application proxy to get information about application proxy apps and connectors in your directory, assign users and groups to apps, and get certificate information.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: sample
-ms.date: 02/15/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Microsoft Entra application proxy PowerShell examples
@@ -16,7 +17,7 @@ ms.reviewer: ashishj
 The following table includes links to PowerShell script examples for Microsoft Entra application proxy. These samples require the [Microsoft Graph Beta PowerShell module](/powershell/microsoftgraph/installation) 2.10 or newer, unless otherwise noted.
 
 
-For more information about the cmdlets used in these samples, see [application proxy application management](/powershell/module/azuread/#application_proxy_application_management) and [application proxy connector management](/powershell/module/azuread/#application_proxy_connector_management).
+For more information about the cmdlets used in these samples, see [application proxy application management](/powershell/module/azuread/#application_proxy_application_management) and [private network connector management](/powershell/module/azuread/#application_proxy_connector_management).
 
 | Link | Description |
 |---|---|

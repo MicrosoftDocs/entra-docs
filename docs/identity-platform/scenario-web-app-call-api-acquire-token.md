@@ -5,15 +5,17 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 08/11/2023
+ms.date: 01/30/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # A web app that calls web APIs: Acquire a token for the app
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 You've built your client application object. Now, you use it to acquire a token to call a web API. In ASP.NET or ASP.NET Core, calling a web API is done in the controller:
 
@@ -119,7 +121,7 @@ public class HomeController : Controller
   // Get an authorization header.
   ITokenAcquirer tokenAcquirer = TokenAcquirerFactory.GetDefaultInstance().GetTokenAcquirer();
   string[] scopes = new string[]{"user.read"};
-  string token = await await tokenAcquirer.GetTokenForUserAsync(scopes);
+  string token = await tokenAcquirer.GetTokenForUserAsync(scopes);
 
   // Use the access token to call a protected web API.
   HttpClient client = new HttpClient();

@@ -1,15 +1,16 @@
 ---
 title: Retrieve pronoun information from Workday
 description: Learn how to retrieve pronoun information from Workday
-
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh, chmutali
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Configure Microsoft Entra provisioning to retrieve pronoun information from Workday
@@ -40,7 +41,7 @@ This section describes the steps required to enable pronoun data in Workday. We 
     >[!div class="mx-imgBorder"] 
     >![Screenshot of enabling pronoun display option.](./media/workday-pronoun-data/enable-pronoun-display-preference.png)
 
-1. Use Workday Studio or Postman to invoke [Get_Workers API version 38.1](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v38.1/Get_Workers.html) for the test user using the Workday Microsoft Entra integration system user. In the SOAP request header, specify the option Include_Reference_Descriptors_In_Response. 
+1. Use Workday Studio to invoke [Get_Workers API version 38.1](https://community.workday.com/sites/default/files/file-hosting/productionapi/Human_Resources/v38.1/Get_Workers.html) for the test user using the Workday Microsoft Entra integration system user. In the SOAP request header, specify the option Include_Reference_Descriptors_In_Response. 
     ```
       <bsvc:Workday_Common_Header>
          <bsvc:Include_Reference_Descriptors_In_Response>true</bsvc:Include_Reference_Descriptors_In_Response>
@@ -60,8 +61,8 @@ Once you confirm that pronoun data is available in the *Get_Workers* response, g
 
 To retrieve pronouns from Workday, update your Microsoft Entra provisioning app to query Workday using v38.1 of the Workday Web Services. We recommend testing this configuration first in your test/sandbox environment before implementing the change in production.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select your Workday to Active Directory / Microsoft Entra user provisioning application and go to **Provisioning** .
 1. In the **Admin Credentials** section, update the **Tenant URL** to include the Workday Web Service version v38.1 as shown.
 

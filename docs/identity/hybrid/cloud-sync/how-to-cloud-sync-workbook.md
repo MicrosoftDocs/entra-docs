@@ -1,16 +1,14 @@
 ---
 title: 'Microsoft Entra Connect cloud sync insights workbook'
 description: This article describes the Azure Monitor workbook for cloud sync.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -18,12 +16,12 @@ ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 # Microsoft Entra Connect cloud sync insights workbook
 The cloud sync workbook provides a flexible canvas for data analysis. The workbook allows you to create rich visual reports within the Microsoft Entra admin center. To learn more, see Azure Monitor Workbooks overview.
 
-This workbook is intended for Hybrid Identity Admins who use cloud sync to sync users from AD to Microsoft Entra ID.  It allows admins to gain insights into sync status and details.
+This workbook is intended for Hybrid Identity Administrators who use cloud sync to sync users from AD to Microsoft Entra ID. It allows admins to gain insights into sync status and details.
 
 The workbook can be accessed by select **Insights** on the left hand side of the cloud sync page.
 
 >[!NOTE]
->The Insights node is available at both the all configurations level and the individual configuration level.  To view information on individual configurations select the Job Id for the configuration.
+>The Insights node is available at both the all configurations level and the individual configuration level. To view information on individual configurations select the Job Id for the configuration.
 
 This workbook:
 
@@ -44,7 +42,7 @@ This workbook:
 
 ## Enabling provisioning logs
 
-You should already be familiar with Azure monitoring and Log Analytics. If not, jump over to learn about them and then come back to learn about application provisioning logs. To learn more about Azure monitoring, see [Azure Monitor overview](/azure/azure-monitor/overview). To learn more about Azure Monitor logs and Log Analytics, see [Overview of log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview) and [Provisioning Logs for troubleshooting cloud sync](how-to-troubleshoot.md).
+You should already be familiar with Azure monitoring and Log Analytics. If not, jump over to learn about them, and then come back to learn about application provisioning logs. To learn more about Azure monitoring, see [Azure Monitor overview](/azure/azure-monitor/overview). To learn more about Azure Monitor logs and Log Analytics, see [Overview of log queries in Azure Monitor](/azure/azure-monitor/logs/log-query-overview) and [Provisioning Logs for troubleshooting cloud sync](how-to-troubleshoot.md).
 
 ## Sync summary  
 The sync summary section provides a summary of your organizations synchronization activities.  These activities include:
@@ -70,7 +68,7 @@ You can further drill in to the sync log details for additional information.
   :::image type="content" source="media/how-to-cloud-sync-workbook/workbook-4.png" alt-text="Screenshot of the log details." lightbox="media/how-to-cloud-sync-workbook/workbook-4.png":::
 
 ## Job Id
-A Job Id will be created for each configuration when it runs and is populated with data.  You can look at individual configuration based on Job Id.   
+A Job Id is created for each configuration when it runs and is populated with data. You can look at individual configuration based on Job Id.   
 
 
 

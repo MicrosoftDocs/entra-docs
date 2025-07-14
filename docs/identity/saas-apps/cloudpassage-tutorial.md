@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with CloudPassage'
+title: Configure CloudPassage for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and CloudPassage.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CloudPassage so that I can control who has access to CloudPassage, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with CloudPassage
+# Configure CloudPassage for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate CloudPassage with Microsoft Entra ID. When you integrate CloudPassage with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate CloudPassage with Microsoft Entra ID. When you integrate CloudPassage with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to CloudPassage.
 * Enable your users to be automatically signed in to CloudPassage with their Microsoft Entra accounts.
@@ -27,14 +27,14 @@ To learn more about SaaS app integration with Microsoft Entra ID, see [What is a
 
 ## Prerequisites
 
-To get started, you need the following items:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * CloudPassage single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * CloudPassage supports **SP** initiated SSO
 
@@ -46,11 +46,11 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of CloudPassage into Microsoft Entra ID, you need to add CloudPassage from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **CloudPassage** in the search box.
 1. Select **CloudPassage** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-cloudpassage'></a>
@@ -62,10 +62,10 @@ Configure and test Microsoft Entra SSO with CloudPassage using a test user calle
 To configure and test Microsoft Entra SSO with CloudPassage, complete the following building blocks:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure CloudPassage SSO](#configure-cloudpassage-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create CloudPassage test user](#create-cloudpassage-test-user)** - to have a counterpart of B.Simon in CloudPassage that is linked to the Microsoft Entra representation of user.
+    1. **[Create CloudPassage test user](#create-cloudpassage-test-user)** - to have a counterpart of B.Simon in CloudPassage that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -75,9 +75,9 @@ To configure and test Microsoft Entra SSO with CloudPassage, complete the follow
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **CloudPassage** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **CloudPassage** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -87,12 +87,12 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://portal.cloudpassage.com/saml/init/accountid`
 
 	b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://portal.cloudpassage.com/saml/consume/accountid`. You can get your value for this attribute by clicking **SSO Setup documentation** in the **Single Sign-on Settings** section of your CloudPassage portal.
+    `https://portal.cloudpassage.com/saml/consume/accountid`. You can get your value for this attribute by selecting **SSO Setup documentation** in the **Single Sign-on Settings** section of your CloudPassage portal.
 
 	![Screenshot shows the CloudPassage portal with the S S O Setup Documentation link called out.](./media/cloudpassage-tutorial/tutorial_cloudpassage_05.png)
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign-On URL and Reply URL. Contact [CloudPassage Client support team](https://fidelissecurity.com/contact/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Sign-On URL and Reply URL. Contact [CloudPassage Client support team](https://fidelissecurity.com/contact/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. CloudPassage application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -116,49 +116,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to CloudPassage.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **CloudPassage**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-
-   ![The "Users and groups" link](common/users-groups-blade.png)
-
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-
-	![The Add User link](common/add-assign-user.png)
-
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
-1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure CloudPassage SSO
 
 1. In a different browser window, sign-on to your CloudPassage company site as administrator.
 
-1. In the menu on the top, click **Settings**, and then click **Site Administration**. 
+1. In the menu on the top, select **Settings**, and then select **Site Administration**. 
    
     ![Screenshot shows the CloudPassage site with Site Administration selected.][12]
 
-1. Click the **Authentication Settings** tab. 
+1. Select the **Authentication Settings** tab. 
    
     ![Screenshot shows the CloudPassage site with the Authentication Settings tab selected.][13]
 
@@ -176,7 +144,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
   
     e. Open your downloaded certificate in notepad, copy the content of downloaded certificate into your clipboard, and then paste it into the **x 509 certificate** textbox.
   
-    f. Click **Save**.
+    f. Select **Save**.
 
 ### Create CloudPassage test user
 
@@ -186,11 +154,11 @@ The objective of this section is to create a user called B.Simon in CloudPassage
 
 1. Sign-on to your **CloudPassage** company site as an administrator. 
 
-1. In the toolbar on the top, click **Settings**, and then click **Site Administration**. 
+1. In the toolbar on the top, select **Settings**, and then select **Site Administration**. 
    
 	![Screenshot shows CloudPassage with Site Administration selected.][22] 
 
-1. Click the **Users** tab, and then click **Add New User**. 
+1. Select the **Users** tab, and then select **Add New User**. 
    
 	![Screenshot shows CloudPassage Site Administration with the Users tab selected and the option to Add New User.][23]
 
@@ -206,17 +174,17 @@ The objective of this section is to create a user called B.Simon in CloudPassage
   
     d. As **Access Type**, select **Enable Halo Portal Access**.
   
-    e. Click **Add**.
+    e. Select **Add**.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the CloudPassage tile in the Access Panel, you should be automatically signed in to the CloudPassage for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the CloudPassage tile in the Access Panel, you should be automatically signed in to the CloudPassage for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

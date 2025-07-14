@@ -1,0 +1,90 @@
+### YamlMime:FAQ
+metadata:
+  title: Passkeys in Microsoft Authenticator FAQs
+  description: Frequently asked questions and answers related to passkey support in Microsoft Authenticator. 
+  ms.service: entra-id
+  ms.subservice: authentication
+  ms.topic: faq
+  ms.date: 04/23/2025
+  ms.author: justinha
+  author: justinha
+  manager: dougeby
+  ms.reviewer: mjsantani
+title: Frequently asked questions about passkey support in Microsoft Authenticator
+summary: |
+  This article addresses frequently asked questions about passkey support in Microsoft Authenticator. Keep checking back for updated content.
+
+
+sections:
+  - name: General
+    questions:
+      - question: |
+          How does Microsoft Authenticator store passkeys on a device?
+        answer: |
+          Authenticator passkeys are backed by hardware. 
+
+          On iOS, Authenticator stores the private key in the [Secure Enclave](https://support.apple.com/guide/security/secure-enclave-sec59b0b31ff/web).
+ 
+          On Android, Authenticator uses the [Android Keystore system API](https://developer.android.com/privacy-and-security/keystore) to securely store device-bound passkeys. 
+          The Android Keystore system supports binding key material to the secure hardware of an Android device, in this order of preference:
+
+          - [Secure Element (SE)](https://developer.android.com/privacy-and-security/keystore#StrongBoxKeyMint)
+          - [Trusted Execution Environment (TEE)](https://source.android.com/docs/security/features/trusty)
+
+          On Android, Authenticator only stores a passkey (private key) if the Android device has one of these two secure hardware options. 
+          If neither hardware option exists, Authenticator passkey registration fails, even if attestation is disabled.
+
+      - question: |
+          Can I restore or sync Authenticator passkeys to a new device?
+        answer: |
+          Authenticator passkeys are only device-bound and can't be synced. For more information, see [Device-bound passkeys in Microsoft Authenticator](/entra/identity/authentication/concept-authentication-authenticator-app#device-bound-passkey).
+      - question: |
+          Do I need to enable Bluetooth to perform cross-device authentication?
+        answer: |
+          To complete cross-device authentication by using passkeys in Authenticator, you must enable Bluetooth on both the laptop and the mobile device. Both devices need internet access. 
+      - question: |
+          Can I have multiple passkeys in Authenticator?
+        answer: |        
+          You can have only one passkey for each account in Authenticator. At this time, Authenticator only supports passkeys for Microsoft Entra ID.
+      - question: |
+          Can I use the Authenticator app camera to scan the WebAuthn QR code for registration and authentication?
+        answer: |
+          You can use the Authenticator camera to register and authenticate with passkeys. This option is useful if your organization doesn't push the system camera app to Android Work Profile. 
+      - question: |
+          Can I use passkeys in Authenticator without an internet connection?
+        answer: |
+          You can't use passkeys without an internet connection. 
+          For same-device scenarios, the mobile device that contains the passkey needs internet access. 
+          For cross-device scenarios, both the device with the passkey and the secondary device where you want to sign in need internet access.
+      - question: |
+          Why is cross-device registration failing with "Device couldn't connect"?
+        answer: |
+          Make sure that Bluetooth and an active internet connection are enabled on both devices. 
+          Also, allow connectivity to these two endpoints in your organization to enable cross-device registration and authentication:
+          
+          - `https://cable.ua5v.com`
+          - `https://cable.auth.com`
+      - question: |
+          I'm on an Android 14 device, and I followed all the steps. Why can't I register passkeys in the Authenticator app?
+        answer: |
+          The Authenticator app uses [Android APIs](https://developer.android.com/identity/sign-in/credential-provider) on Android 14 or higher to use passkeys. 
+          Manufacturers choose whether or not to implement these APIs for each device they make. 
+          If your device doesn't support these APIs, the Authenticator app might not work for your device on Android 14. 
+          For the best experience, we recommend that you upgrade to Android 15.
+      - question: |
+          Why do I get prompted for PIN instead of biometric sign-in on my Android device?
+        answer: |        
+          If biometric sign-in fails on an Android device, the Authenticator app will prompt you to enter your PIN instead. 
+          The next time you sign in with the passkey, Authenticator continues to request the PIN rather than biometric sign-in.
+          Authenticator periodically retries biometric sign-in. 
+          If biometric sign-in succeeds, it will be used for subsequent sign-ins.
+      - question: |
+          What happens to my passkey after I change my PIN or biometric sign-in on my Android device?
+        answer: |        
+          Your passkey is invalidated if you change your PIN, or if you change your biometric sign in from thumbprint to face, or vice-versa. 
+          If your passkey is invalidated, you need to sign-in by using a different method, and then create a new passkey.
+      - question: |
+          Can I sign in with a passkey in Authenticator in China?
+        answer: |        
+          No. Only limited authentication methods are available for Authenticator in China. For more information, see [Download Microsoft Authenticator in China](https://support.microsoft.com/account-billing/download-microsoft-authenticator-in-china-ebbef05c-a429-4236-8570-1bb1900fec35).
+

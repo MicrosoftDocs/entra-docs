@@ -1,17 +1,16 @@
 ---
 title: 'Customize an installation of Microsoft Entra Connect'
 description: This article explains the custom installation options for Microsoft Entra Connect. Use these instructions to install Active Directory through Microsoft Entra Connect.
-
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Custom installation of Microsoft Entra Connect
@@ -26,6 +25,14 @@ Prerequisites:
 
 To set up a custom installation for Microsoft Entra Connect, go through the wizard pages that the following sections describe.
 
+## TLS 1.2 enforcement for Microsoft Entra Connect Sync
+
+Transport Layer Security (TLS) protocol version 1.2 is a cryptography protocol that is designed to provide  secure communications. The TLS protocol aims primarily to provide privacy and data integrity. TLS has gone through many iterations, with version 1.2 being defined in [RFC 5246](https://tools.ietf.org/html/rfc5246). The latest version of Microsoft Entra Connect Sync fully supports using only TLS 1.2 for communications with Microsoft Entra ID. Before installing the latest versions of Microsoft Entra Connect Sync, be sure to enable TLS 1.2.  
+
+:::image type="content" source="media/how-to-connect-install-express/install-10.png" alt-text="Screenshot of TLS warning screen." lightbox="media/how-to-connect-install-express/install-10.png":::
+
+For more information see [TLS 1.2 enforcement for Microsoft Entra Connect Sync](reference-connect-tls-enforcement.md)
+
 ### Express settings
 On the **Express Settings** page, select **Customize** to start a customized-settings installation.  The rest of this article guides you through the custom installation process. Use the following links to quickly go to the information for a particular page:
 
@@ -37,7 +44,7 @@ On the **Express Settings** page, select **Customize** to start a customized-set
 ### Install required components
 When you install the synchronization services, you can leave the optional configuration section unselected. Microsoft Entra Connect sets up everything automatically. It sets up a SQL Server 2019 Express LocalDB instance, creates the appropriate groups, and assign permissions. If you want to change the defaults, select the appropriate boxes.  The following table summarizes these options and provides links to additional information. 
 
-![Screenshot showing optional selections for the required installation components in Microsoft Entra Connect.](./media/how-to-connect-install-custom/requiredcomponents2.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-1.png" alt-text="Screenshot of required components screen." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-1.png":::
 
 | Optional configuration | Description |
 | --- | --- |
@@ -50,7 +57,7 @@ When you install the synchronization services, you can leave the optional config
 ### User sign-in
 After installing the required components, select your users' single sign-on method. The following table briefly describes the available options. For a full description of the sign-in methods, see [User sign-in](plan-connect-user-signin.md).
 
-![Screenshot that shows the "User Sign-in" page. The "Password Hash Synchronization" option is selected.](./media/how-to-connect-install-custom/usersignin4.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-2.png" alt-text="Screenshot of the user sign-in screen." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-2.png":::
 
 | Single sign-on option | Description |
 | --- | --- |
@@ -70,14 +77,15 @@ You might want to use an account in the default *onmicrosoft.com* domain, which 
  
 >[!NOTE]
 >A best practice is to avoid using on-premises synced accounts for Microsoft Entra role assignments. If the on-premises account is compromised, this can be used to compromise your Microsoft Entra resources as well.  For a complete list of best practices refer to [Best practices for Microsoft Entra roles](~/identity/role-based-access-control/best-practices.md)
- 
-![Screenshot showing the "Connect to Microsoft Entra ID" page.](./media/how-to-connect-install-custom/connectaad.png)
 
-If your Global Administrator account has multifactor authentication enabled, you provide the password again in the sign-in window, and you must complete the multifactor authentication challenge. The challenge could be a verification code or a phone call.  
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-3.png" alt-text="Screenshot of the connect to Microsoft Entra ID." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-3.png":::
 
-![Screenshot showing the "Connect to Microsoft Entra ID" page. A multifactor authentication field prompts the user for a code.](./media/how-to-connect-install-custom/connectaadmfa.png)
+If your Hybrid Identity Administrator account has multifactor authentication enabled, you provide the password again in the sign-in window, and you must complete the multifactor authentication challenge. The challenge could be a verification code or a phone call.  
 
-The Global Administrator account can also have [privileged identity management](~/id-governance/privileged-identity-management/pim-getting-started.md) enabled.
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-4.png" alt-text="Screenshot of mfa." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-4.png":::
+
+
+The Hybrid Identity Administrator account can also have [privileged identity management](~/id-governance/privileged-identity-management/pim-getting-started.md) enabled.
 
 To use authentication support for non-password scenarios such as federated accounts, smartcards and MFA scenarios, you can provide the switch **/InteractiveAuth** when starting the wizard. Using this switch will bypass the Wizard's authentication user interface and use the MSAL library's UI to handle the authentication.
 
@@ -90,7 +98,8 @@ The following sections describe the pages in the **Sync** section.
 ### Connect your directories
 To connect to Active Directory Domain Services (AD DS), Microsoft Entra Connect needs the forest name and credentials of an account that has sufficient permissions.
 
-![Screenshot that shows the "Connect your directories" page.](./media/how-to-connect-install-custom/connectdir01.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-5.png" alt-text="Screenshot of the connected directories screen." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-5.png":::
+
 
 After you enter the forest name and select  **Add Directory**, a window appears. The following table describes your options.
 
@@ -99,7 +108,8 @@ After you enter the forest name and select  **Add Directory**, a window appears.
 | Create new account | Create the AD DS account that Microsoft Entra Connect needs to connect to the Active Directory forest during directory synchronization. After you select this option, enter the username and password for an enterprise admin account.  Microsoft Entra Connect uses the provided enterprise admin account to create the required AD DS account. You can enter the domain part in either NetBIOS format or FQDN format. That is, enter *FABRIKAM\administrator* or *fabrikam.com\administrator*. |
 | Use existing account | Provide an existing AD DS account that Microsoft Entra Connect can use to connect to the Active Directory forest during directory synchronization. You can enter the domain part in either NetBIOS format or FQDN format. That is, enter *FABRIKAM\syncuser* or *fabrikam.com\syncuser*. This account can be a regular user account because it needs only the default read permissions. But depending on your scenario, you might need more permissions. For more information, see [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md#create-the-ad-ds-connector-account). |
 
-![Screenshot showing the "Connect Directory" page and the A D forest account window, where you can choose to create a new account or use an existing account.](./media/how-to-connect-install-custom/connectdir02.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-6.png" alt-text="Screenshot of the connected directories screen for choosing account." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-6.png":::
+
 
 >[!NOTE]
 > As of build 1.4.18.0, you can't use an enterprise admin or domain admin account as the AD DS connector account. When you select **Use existing account**, if you try to enter an enterprise admin account or a domain admin account, you see the following error: "Using  an Enterprise or Domain administrator account for your AD forest account is not allowed. Let Microsoft Entra Connect create the account for you or specify a synchronization account with the correct permissions."
@@ -110,9 +120,9 @@ After you enter the forest name and select  **Add Directory**, a window appears.
 ### Microsoft Entra sign-in configuration
 On the **Microsoft Entra sign-in configuration** page, review the user principal name (UPN) domains in on-premises AD DS. These UPN domains have been verified in Microsoft Entra ID. On this page, you configure the attribute to use for the userPrincipalName.
 
-![Screenshot showing unverified domains on the "Microsoft Entra sign-in configuration" page.](./media/how-to-connect-install-custom/aadsigninconfig2.png)  
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-7.png" alt-text="Screenshot of the sign-in configuration." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-7.png":::
 
-Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
+Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
 
 Users use the *userPrincipalName* attribute when they sign in to Microsoft Entra ID and Microsoft 365. Microsoft Entra ID should verify the domains, also known as the UPN-suffix, before users are synchronized. Microsoft recommends that you keep the default attribute userPrincipalName. 
 
@@ -130,7 +140,7 @@ The alternate ID attribute value must follow the RFC 822 standard. You can use a
 ### Domain and OU filtering
 By default, all domains and organizational units (OUs) are synchronized. If you don't want to synchronize some domains or OUs to Microsoft Entra ID, you can clear the appropriate selections.  
 
-![Screenshot showing the Domain and O U filtering page.](./media/how-to-connect-install-custom/domainoufiltering.png)  
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-8.png" alt-text="Screenshot of the domain filtering." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-8.png":::
 
 This page configures domain-based and OU-based filtering. If you plan to make changes, then see [Domain-based filtering](how-to-connect-sync-configure-filtering.md#domain-based-filtering) and [OU-based filtering](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering). Some OUs are essential for functionality, so you should leave them selected.
 
@@ -138,11 +148,7 @@ If you use OU-based filtering with a Microsoft Entra Connect version older than 
 
 If you plan to use [group-based filtering](#sync-filtering-based-on-groups), then make sure the OU with the group is included and isn't filtered by using OU-filtering. OU filtering is evaluated before group-based filtering is evaluated.
 
-It's also possible that some domains are unreachable because of firewall restrictions. These domains are unselected by default, and they display a warning.  
-
-![Screenshot showing unreachable domains.](./media/how-to-connect-install-custom/unreachable.png)  
-
-If you see this warning, make sure that these domains are indeed unreachable and that the warning is expected.
+It's also possible that some domains are unreachable because of firewall restrictions. These domains are unselected by default, and they display a warning. If you see this warning, make sure that these domains are indeed unreachable and that the warning is expected.
 
 ### Uniquely identifying your users
 
@@ -151,7 +157,7 @@ On the **Identifying users** page, choose how to identify users in your on-premi
 #### Select how users should be identified in your on-premises directories
 By using the *Matching across forests* feature, you can define how users from your AD DS forests are represented in Microsoft Entra ID. A user might be represented only once across all forests or might have a combination of enabled and disabled accounts. The user might also be represented as a contact in some forests.
 
-![Screenshot showing the page where you can uniquely identify your users.](./media/how-to-connect-install-custom/unique2.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-9.png" alt-text="Screenshot of uniquely identify your users." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-9.png":::
 
 | Setting | Description |
 | --- | --- |
@@ -182,7 +188,7 @@ The filtering-on-groups feature allows you to sync only a small subset of object
 
 All objects that you want to synchronize must be direct members of the group. Users, groups, contacts, and computers or devices must all be direct members. Nested group membership isn't resolved. When you add a group as a member, only the group itself is added. Its members aren't added.
 
-![Screenshot showing the page where you can choose how to filter users and devices.](./media/how-to-connect-install-custom/filter2.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-10.png" alt-text="Screenshot of the user and device filtering." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-10.png":::
 
 > [!WARNING]
 > This feature is intended to support only a pilot deployment. Don't use it in a full production deployment.
@@ -198,7 +204,7 @@ On the next page, you can select optional features for your scenario.
 >
 >If you want to use password writeback, download the [latest version of Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 
-![Screenshot showing the "Optional Features" page.](./media/how-to-connect-install-custom/optional2a.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-11.png" alt-text="Screenshot of optional features." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-11.png":::
 
 > [!WARNING]
 > If Azure AD Sync or Direct Synchronization (DirSync) are active, don't activate any writeback features in Microsoft Entra Connect.
@@ -221,11 +227,11 @@ On the next page, you can select optional features for your scenario.
 ### Microsoft Entra app and attribute filtering
 If you want to limit which attributes synchronize to Microsoft Entra ID, then start by selecting the services you use. If you change the selections on this page, you have to explicitly select a new service by rerunning the installation wizard.
 
-![Screenshot showing optional Microsoft Entra apps features.](./media/how-to-connect-install-custom/azureadapps2.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-12.png" alt-text="Screenshot of the app features." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-12.png":::
 
 Based on the services you selected in the previous step, this page shows all attributes that are synchronized. This list is a combination of all object types that are being synchronized. If you need some attributes to remain unsynchronized, you can clear the selection from those attributes.
 
-![Screenshot showing optional Microsoft Entra attributes features.](./media/how-to-connect-install-custom/azureadattributes2.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-13.png" alt-text="Screenshot of the attribute features." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-13.png":::
 
 > [!WARNING]
 > Removing attributes can affect functionality. For best practices and recommendations, see [Attributes to synchronize](reference-connect-sync-attributes-synchronized.md#attributes-to-synchronize).
@@ -237,7 +243,7 @@ You can extend the schema in Microsoft Entra ID by using custom attributes that 
 >[!NOTE]
 >The **Available Attributes** field is case sensitive.
 
-![Screenshot showing the "Directory Extensions" page.](./media/how-to-connect-install-custom/extension2.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-14.png" alt-text="Screenshot of the directory extensions." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-14.png":::
 
 For more information, see [Directory extensions](how-to-connect-sync-feature-directory-extensions.md).
 
@@ -250,7 +256,7 @@ On the **Single sign-on** page, you configure single sign-on for use with passwo
 #### Create the computer account in Active Directory
 For each forest that has been added in Microsoft Entra Connect, you need to supply domain administrator credentials so that the computer account can be created in each forest. The credentials are used only to create the account. They aren't stored or used for any other operation. Add the credentials on the **Enable single sign-on** page, as the following image shows.
 
-![Screenshot showing the "Enable single sign-on" page. Forest credentials are added.](./media/how-to-connect-install-custom/enablesso.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-15.png" alt-text="Screenshot of enabling single sign-on." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-15.png":::
 
 >[!NOTE]
 >You can skip forests where you don't want to use single sign-on.
@@ -265,7 +271,7 @@ On a computer that has Group Policy management tools:
 3. Go to **User Configuration** > **Administrative Templates** > **Windows Components** > **Internet Explorer** > **Internet Control Panel** > **Security Page**. Then select **Site to Zone Assignment List**.
 4. Enable the policy. Then, in the dialog box, enter a value name of `https://autologon.microsoftazuread-sso.com`and `https://aadg.windows.net.nsatc.net` with a value of `1` for both URLs. Your setup should look like the following image.
   
-    ![Screenshot showing intranet zones.](./media/how-to-connect-install-custom/sitezone.png)
+    ![Screenshot showing intranet zones.](./media/how-to-connect-install-custom/site-zone.png)
 
 6. Select **OK** twice.
 
@@ -282,10 +288,14 @@ You can configure AD FS with Microsoft Entra Connect in just a few clicks. Befor
 ### AD FS configuration prerequisites
 To configure your AD FS farm by using Microsoft Entra Connect, ensure that WinRM is enabled on the remote servers. Make sure you've completed the other tasks in [Federation prerequisites](how-to-connect-install-prerequisites.md#prerequisites-for-federation-installation-and-configuration). Also make sure you follow the ports requirements that are listed in the [Microsoft Entra Connect and Federation/WAP servers](reference-connect-ports.md#table-3---azure-ad-connect-and-ad-fs-federation-serverswap) table.
 
+You're prompted to enter credentials so that the web application server can establish a secure connection to the AD FS server. These credentials must be for a local administrator account on the AD FS server.
+
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-1.png" alt-text="Screenshot of the AD FS credential page." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-1.png":::
+
 ### Create a new AD FS farm or use an existing AD FS farm
 You can use an existing AD FS farm or create a new one. If you choose to create a new one, you must provide the TLS/SSL certificate. If the TLS/SSL certificate is protected by a password, then you're prompted to provide the password.
 
-![Screenshot showing the "A D F S Farm" page](./media/how-to-connect-install-custom/adfs1.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-2.png" alt-text="Screenshot of the AD FS server farm page." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-2.png":::
 
 If you choose to use an existing AD FS farm, you see the page where you can configure the trust relationship between AD FS and Microsoft Entra ID.
 
@@ -300,9 +310,7 @@ Microsoft recommends installing a single AD FS server for test and pilot deploym
 > [!NOTE]
 > Before you set up this configuration, ensure that all of your servers are joined to a Microsoft Entra domain.
 >
-
-
-![Screenshot showing the "Federation Servers" page.](./media/how-to-connect-install-custom/adfs2.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-3.png" alt-text="Screenshot of the federation servers page." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-3.png":::
 
 ### Specify the Web Application Proxy servers
 Specify your Web Application Proxy servers. The Web Application Proxy server is deployed in your perimeter network, facing the extranet. It supports authentication requests from the extranet. You can add one or more servers, depending on your capacity needs. 
@@ -315,12 +323,9 @@ Microsoft recommends installing a single Web Application Proxy server for test a
 > - Ensure that there's HTTP/HTTPS connectivity between the Web Application Server and the AD FS server to allow authentication requests to flow through.
 >
 
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-4.png" alt-text="Screenshot of the Web Application Proxy page." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-4.png":::
 
-![Screenshot showing the Web Application Proxy servers page.](./media/how-to-connect-install-custom/adfs3.png)
 
-You're prompted to enter credentials so that the web application server can establish a secure connection to the AD FS server. These credentials must be for a local administrator account on the AD FS server.
-
-![Screenshot showing the "Credentials" page. Administrator credentials are entered in the username field and the password field.](./media/how-to-connect-install-custom/adfs4.png)
 
 ### Specify the service account for the AD FS service
 The AD FS service requires a domain service account to authenticate users and to look up user information in Active Directory. It can support two types of service accounts:
@@ -333,7 +338,7 @@ If you selected **Create a group Managed Service Account** and this feature has 
 > [!NOTE]
 > Microsoft Entra Connect checks whether the AD FS service is already registered as a service principal name (SPN) in the domain.  AD DS doesn't allow duplicate SPNs to be registered at the same time.  If a duplicate SPN is found, you can't proceed further until the SPN is removed.
 
-![Screenshot showing the "A D F S service account" page.](./media/how-to-connect-install-custom/adfs5.png)
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-5.png" alt-text="Screenshot of the AD FS service account." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-5.png":::
 
 <a name='select-the-azure-ad-domain-that-you-want-to-federate'></a>
 
@@ -342,14 +347,14 @@ Use the **Microsoft Entra Domain** page to set up the federation relationship be
 
 On this page, you can configure only a single domain in the initial installation. You can configure more domains later by running Microsoft Entra Connect again.
 
-![Screenshot that shows the "Microsoft Entra Domain" page.](./media/how-to-connect-install-custom/adfs6.png)
+You're prompted to enter credentials so that the web application server can establish a secure connection to the AD FS server. These credentials must be for a local administrator account on the AD FS server.
+
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-6.png" alt-text="Screenshot of the Microsoft Entra ID domain page." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-adfs-6.png":::
 
 <a name='verify-the-azure-ad-domain-selected-for-federation'></a>
 
 ### Verify the Microsoft Entra domain selected for federation
-When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
-
-![Screenshot showing the "Microsoft Entra Domain" page, including information you can use to verify the domain.](./media/how-to-connect-install-custom/verifyfeddomain.png)
+When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
 
 > [!NOTE]
 > Microsoft Entra Connect tries to verify the domain during the configuration stage. If you don't add the necessary Domain Name System (DNS) records, the configuration can't be completed.
@@ -358,37 +363,28 @@ When you select the domain that you want to federate, Microsoft Entra Connect pr
 
 ## Configuring federation with PingFederate
 You can configure PingFederate with Microsoft Entra Connect in just a few clicks. The following prerequisites are required:
-- PingFederate 8.4 or later. For more information, see [PingFederate integration with Microsoft Entra ID and Microsoft 365](https://docs.pingidentity.com/access/sources/dita/topic?category=integrationdoc&resourceid=pingfederate_azuread_office365_integration) in the Ping Identity documentation.
+- PingFederate 8.4 or later. For more information, see [PingFederate integration with Microsoft Entra ID and Microsoft 365](https://docs.pingidentity.com/integrations/azure/azure_ad_and_office_365_integration_guide/pf_azuread_office365_integration_enabling_federated_authentication.html) in the Ping Identity documentation.
 - A TLS/SSL certificate for the federation service name that you intend to use (for example, sts.contoso.com).
 
 ### Verify the domain
 After you choose to set up federation by using PingFederate, you're asked to verify the domain you want to federate.  Select the domain from the drop-down menu.
-
-![Screenshot that shows the "Microsoft Entra Domain" page. The example domain "contoso.com" is selected.](./media/how-to-connect-install-custom/ping1.png)
 
 ### Export the PingFederate settings
 
 
 Configure PingFederate as the federation server for each federated Azure domain.  Select **Export Settings** to share this information with your PingFederate administrator.  The federation server administrator updates the configuration and then provides the PingFederate server URL and port number so that Microsoft Entra Connect can verify the metadata settings.  
 
-![Screenshot showing the "PingFederate settings" page. The "Export Settings" button appears near the top of the page.](./media/how-to-connect-install-custom/ping2.png)
+You're prompted to enter credentials so that the web application server can establish a secure connection to the AD FS server. These credentials must be for a local administrator account on the AD FS server.
+
+:::image type="content" source="media/how-to-connect-install-custom/connect-sync-custom-install-ping-2.png" alt-text="Screenshot of the export settings page." lightbox="media/how-to-connect-install-custom/connect-sync-custom-install-ping-2.png":::
 
 Contact your PingFederate administrator to resolve any validation issues.  The following image shows information about a PingFederate server that has no valid trust relationship with Azure.
-
-![Screenshot showing server information: The PingFederate server was found, but the service provider connection for Azure is missing or disabled.](./media/how-to-connect-install-custom/ping5.png)
-
-
-
 
 ### Verify federation connectivity
 Microsoft Entra Connect attempts to validate the authentication endpoints that it retrieves from the PingFederate metadata in the previous step.  Microsoft Entra Connect first attempts to resolve the endpoints by using your local DNS servers.  Next, it attempts to resolve the endpoints by using an external DNS provider.  Contact your PingFederate administrator to resolve any validation issues.  
 
-![Screenshot showing the "Verify Connectivity" page.](./media/how-to-connect-install-custom/ping3.png)
-
 ### Verify federation sign-in
 Finally, you can verify the newly configured federated login flow by signing in to the federated domain. If your sign-in succeeds, then the federation with PingFederate is successfully configured.
-
-![Screenshot showing the "Verify federated login" page. A message at the bottom indicates a successful sign-in.](./media/how-to-connect-install-custom/ping4.png)
 
 ## Configure and verify pages
 The configuration happens on the **Configure** page.
@@ -397,16 +393,10 @@ The configuration happens on the **Configure** page.
 > If you configured federation, then make sure that you have also configured [Name resolution for federation servers](how-to-connect-install-prerequisites.md#name-resolution-for-federation-servers) before you continue the installation.
 >
 
-
-
-![Screenshot showing the "Ready to configure" page.](./media/how-to-connect-install-custom/readytoconfigure2.png)
-
 ### Use staging mode
 It's possible to set up a new sync server in parallel with staging mode. If you want to use this setup, then only one sync server can export to one directory in the cloud. But if you want to move from another server, for example a server running DirSync, then you can enable Microsoft Entra Connect in staging mode. 
 
 When you enable the staging setup, the sync engine imports and synchronizes data as normal. But it exports no data to Microsoft Entra ID or Active Directory. In staging mode, the password sync feature and password writeback feature are disabled.
-
-![Screenshot showing the "Enable staging mode" option.](./media/how-to-connect-install-custom/stagingmode.png)
 
 In staging mode, you can make required changes to the sync engine and review what will be exported. When the configuration looks good, run the installation wizard again and disable staging mode. 
 
@@ -422,11 +412,7 @@ Microsoft Entra Connect verifies the DNS settings when you select the **Verify**
     * DNS A record: Microsoft Entra Connect checks whether your federation service has an A record. In the absence of an A record, the verification fails. To complete the verification, create an A record (not a CNAME record) for your federation FQDN.
 * **Extranet connectivity**
     * Resolve federation FQDN: Microsoft Entra Connect checks whether the DNS can resolve the federation FQDN to ensure connectivity.
-
-      ![Screenshot showing the "Installation complete" page.](./media/how-to-connect-install-custom/completed.png)
-
-      ![Screenshot showing the "Installation complete" page. A message indicates that the intranet configuration was verified.](./media/how-to-connect-install-custom/adfs7.png)
-
+err
 To validate end-to-end authentication, manually perform one or more of the following tests:
 
 * When synchronization finishes, in Microsoft Entra Connect, use the **Verify federated login** additional task to verify authentication for an on-premises user account that you choose.
@@ -439,7 +425,7 @@ This section contains troubleshooting information that you can use if you have a
 
 When you customize a Microsoft Entra Connect installation, on the **Install required components** page, you can select **Use an existing SQL Server**. You might see the following error: "The ADSync database already contains data and cannot be overwritten. Please remove the existing database and try again."
 
-![Screenshot that shows the "Install required components" page. An error appears at the bottom of the page.](./media/how-to-connect-install-custom/error1.png)
+![Screenshot that shows the "Install required components" page. An error appears at the bottom of the page.](./media/how-to-connect-install-custom/connect-sync-install-error-1.png)
 
 You see this error because a database named *ADSync* already exists on the SQL instance of SQL Server that you specified.
 
@@ -457,7 +443,7 @@ To fix this problem:
     1. On the context menu, select **Delete**.
     1. Select **OK** to delete the database.
 
-![Screenshot showing Microsoft SQL Server Management Studio. A D Sync is selected.](./media/how-to-connect-install-custom/error2.png)
+![Screenshot showing Microsoft SQL Server Management Studio. A D Sync is selected.](./media/how-to-connect-install-custom/connect-sync-install-error-2.png)
 
 After you delete the ADSync database, select **Install** to retry the installation.
 

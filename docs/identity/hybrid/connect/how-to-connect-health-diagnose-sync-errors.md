@@ -3,13 +3,13 @@ title: Microsoft Entra Connect Health - Diagnose duplicated attribute synchroniz
 description: This document describes the diagnosis process of duplicated attribute synchronization errors and a potential fix of the orphaned object scenarios directly from the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 author: billmath
-manager: amycolannino
+manager: femila
 editor: billmath
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.author: billmath
 
 ---
@@ -51,7 +51,7 @@ The diagnose feature supports user objects with the following duplicated attribu
 | OnPremiseSecurityIdentifier |  AttributeValueMustBeUnique |
 
 >[!IMPORTANT]
-> To access this feature, **Global Administrator** permission, or **Contributor** permission from Azure RBAC, is required.
+> To access this feature, **Contributor** permissions from Azure RBAC, is required at minimum.
 >
 
 Follow the steps from the [Microsoft Entra admin center](https://entra.microsoft.com) to narrow down the sync error details and provide more specific solutions:
@@ -128,7 +128,7 @@ The sync error will be resolved after the next sync. Connect Health will no long
 
 ## Failures and error messages
 **User with conflicting attribute is soft deleted in the Microsoft Entra ID. Ensure the user is hard deleted before retry.**  
-The user with conflicting attribute in Microsoft Entra ID should be cleaned before you can apply fix. Check out [how to delete the user permanently in Microsoft Entra ID](~/fundamentals/users-restore.md) before retrying the fix. The user will also be automatically deleted permanently after 30 days in soft deleted state. 
+The user with conflicting attribute in Microsoft Entra ID should be cleaned before you can apply fix. Check out [how to delete the user permanently in Microsoft Entra ID](~/fundamentals/users-restore.yml) before retrying the fix. The user will also be automatically deleted permanently after 30 days in soft deleted state. 
 
 **Updating source anchor to cloud-based user in your tenant is not supported.**  
 Cloud-based user in Microsoft Entra ID should not have source anchor. Updating source anchor is not supported in this case. Manual fix is required from on premises. 
@@ -146,7 +146,7 @@ The specific settings such as [UserWriteback in Microsoft Entra Connect](./how-t
 
 
 **Q.** What permission does a user need to apply the fix?  
-**A.** **Global Administrator**, or **Contributor** from Azure RBAC, has permission to access the diagnostic and troubleshooting process.
+**A.** **Contributor** from Azure RBAC, has permissions to access the diagnostic and troubleshooting process.  This is the minimum permission you need.
 
 
 **Q.** Do I have to configure Microsoft Entra Connect or update the Microsoft Entra Connect Health agent for this feature?  

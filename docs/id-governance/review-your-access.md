@@ -2,14 +2,15 @@
 title: Review your access to groups & apps in access reviews
 description: Learn how to review your own access to groups or applications in access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 06/28/2023
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-image-nochange
 ---
 
 # Review access for yourself to groups or applications in access reviews
@@ -23,7 +24,7 @@ This article describes how to review your own access to a group or an applicatio
 The first step to perform an access review is to find and open the access review.
 
 >[!IMPORTANT]
-> There could be delays in receiving email and it some cases it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you are receiving all emails.
+> There could be delays in receiving email and it some cases it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft that asks you to review access. Here's an example email to review your access to a group.
 
@@ -67,10 +68,10 @@ Once you have opened the access review, you can see your access.
 
     Your selection is submitted and you're returned to the My Apps portal.
 
-    If you want to change your response, reopen the access reviews page and update your response. You can change your response at any time until the access review has ended.
+    If you want to change your response, reopen the access reviews page and update your response. You can change your response at any time until the access review ends.
 
     > [!NOTE]
-    > If you indicated that you no longer need access, you aren't removed immediately. You are removed when the review has ended or when an administrator stops the review.
+    > If you indicated that you no longer need access, you aren't removed immediately. You're removed when the review ends or when an administrator stops the review.
 
 ## Review your own access using My Access (New)
 
@@ -91,12 +92,12 @@ You can try the new experience with the updated user interface in My Access a co
 
     ![Pending access reviews list for apps and groups with the new experience available banner displayed during the preview](./media/review-your-access/banner-your-access.png)
 
-4. Continue in the section **Perform the access review**
+4. Continue in the section **Perform the access review**.
 
 ### Email
 
 >[!IMPORTANT]
-> There could be delays in receiving email and it some cases it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you are receiving all emails.
+> There could be delays in receiving email and it some cases it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft asking you to review access. You can see an example email message below:
 
@@ -104,10 +105,10 @@ You can try the new experience with the updated user interface in My Access a co
 
 2. Select the **Review access** link to open the access review.
 
-3. Continue in the section **Perform the access review**
+3. Continue in the section **Perform the access review**.
 
 >[!NOTE]
->If clicking start review takes you to **My Apps** follow the steps listed in the section above titled **My Apps Portal**.
+>If clicking start review takes you to **My Apps** follow the steps listed in the section titled **My Apps Portal**.
 
 ### Directly at My Access
 
@@ -148,10 +149,10 @@ You can also view your pending access reviews by using your browser to open My A
 
     Your selection is submitted and you're returned to the My Access page.
 
-    If you want to change your response, reopen the access reviews page and update your response. You can change your response at any time until the access review has ended.
+    If you want to change your response, reopen the access reviews page and update your response. You can change your response at any time until the access review ends.
 
     > [!NOTE]
-    > If you indicated that you no longer need access, you aren't removed immediately. You are removed when the review has ended or when an administrator stops the review.
+    > If you indicated that you no longer need access, you aren't removed immediately. You're removed when the review ends or when an administrator stops the review.
 
 ## Next steps
 

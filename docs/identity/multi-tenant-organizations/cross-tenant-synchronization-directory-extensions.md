@@ -1,13 +1,13 @@
 ---
 title: Map directory extensions in cross-tenant synchronization
 description: Learn how to map directory extensions in cross-tenant synchronization using the Microsoft Entra admin center.
-author: rolyon
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
 ms.date: 01/30/2024
-ms.author: rolyon
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
@@ -35,7 +35,7 @@ Once you have one or more directory extensions, you can use them when mapping at
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -73,7 +73,7 @@ If your directory extension wasn't automatically discovered, you can try the fol
 
     https://entra.microsoft.com/?Microsoft_AAD_Connect_Provisioning_forceSchemaEditorEnabled=true
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -81,13 +81,13 @@ If your directory extension wasn't automatically discovered, you can try the fol
 
 1. Select **Provision Microsoft Entra ID Users** to open the **Attribute Mapping** page.
 
-1. Scroll to the bottom and select the **Show advanced settings** check box.
+1. Scroll to the bottom and select the **Show advanced settings** checkbox.
 
     :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png" alt-text="Screenshot of the Attribute Mapping page with advanced options displayed." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png":::
 
     > [!TIP]
     > If you don't see the **Edit attribute list** links, be sure that you are signed in to the Microsoft Entra admin center using the link in Step 1.
-    
+
 1. If you created a directory extension in the source tenant, select the **Edit attribute list for Microsoft Entra ID** link.
 
 1. If you created an extension in the target tenant, select the **Edit attribute list for Azure Active Directory (target tenant)** link.
@@ -110,7 +110,7 @@ Follow these steps to manually add directory extensions to the schema by using t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -118,7 +118,7 @@ Follow these steps to manually add directory extensions to the schema by using t
 
 1. Select **Provision Microsoft Entra ID Users** to open the **Attribute Mapping** page.
 
-1. Scroll to the bottom and select the **Show advanced settings** check box.
+1. Scroll to the bottom and select the **Show advanced settings** checkbox.
 
     :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png" alt-text="Screenshot of the Attribute Mapping page with link to schema editor." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png":::
 

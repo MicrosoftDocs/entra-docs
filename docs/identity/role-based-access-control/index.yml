@@ -1,31 +1,33 @@
 ### YamlMime:Landing
 
-title: Microsoft Entra roles documentation
-summary: Microsoft Entra role-based access control manages access to Microsoft Entra resources. Create custom roles, assign roles that use administrative units to restrict scope of control, assign application access to groups or users, manage eligibility with Privileged Identity Management (PIM), or delegate permissions to distribute identity management tasks. 
+title: Microsoft Entra RBAC documentation
+summary: Microsoft Entra role-based access control (RBAC) manages access to Microsoft Entra resources. Assign roles to grant access, use groups to manage role assignments, create administrative units to restrict scope, or create custom roles with specific permissions. 
 
 
 metadata:
-  title: Microsoft Entra roles documentation
-  description: Learn how to use Microsoft Entra roles to manage access in your organization.  
+  title: Microsoft Entra RBAC documentation
+  description: Learn how to use Microsoft Entra role-based access control (RBAC) to manage access in your organization.  
   ms.service: entra-id
   ms.subservice: role-based-access-control
-  manager: amycolannino
+  manager: pmwongera
   ms.topic: landing-page
-  ms.date: 12/17/2021
-  author: rolyon
-  ms.author: rolyon
+  ms.date: 02/18/2025
+  author: barclayn
+  ms.author: barclayn
 
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
 landingContent:
   # Card
-  - title: About Microsoft Entra roles
+  - title: About Microsoft Entra RBAC
     linkLists:
       - linkListType: overview
         links:
           - text: What is Microsoft Entra RBAC?
             url: custom-overview.md
+          - text: "What's new in docs"
+            url: whats-new.md
       - linkListType: concept
         links:
           - text: Understand Microsoft Entra roles
@@ -62,20 +64,10 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Assign roles to users
+          - text: Assign roles to users and groups
             url: manage-roles-portal.md
-          - text: Assign roles at different scopes
-            url: assign-roles-different-scopes.md
-
-  # Card
-  - title: Assign roles to groups
-    linkLists:
-      - linkListType: how-to-guide
-        links:
           - text: Create a role-assignable group
             url: groups-create-eligible.md
-          - text: Assign roles to groups
-            url: groups-assign-role.md
 
   # Card
   - title: Create custom roles
@@ -97,4 +89,4 @@ landingContent:
           - text: Add members
             url: admin-units-members-add.md
           - text: Assign roles with scope
-            url: admin-units-assign-roles.md
+            url: manage-roles-portal.md

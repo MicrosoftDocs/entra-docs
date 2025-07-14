@@ -5,8 +5,8 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 05/01/2023
-ms.reviewer: rahulnagraj, alamaral, jeedes
+ms.date: 05/14/2025
+ms.reviewer: alamaral
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -25,7 +25,7 @@ By default, the Microsoft identity platform issues a SAML token to an applicatio
 
 To view or edit the claims issued in the SAML token to the application:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application, select **Single sign-on** in the left-hand menu, and then select **Edit** in the **Attributes & Claims** section.
 
 You might need to edit the claims issued in the SAML token for the following reasons:
@@ -33,7 +33,7 @@ You might need to edit the claims issued in the SAML token for the following rea
 * The application requires the `NameIdentifier` or `nameID` claim to be something other than the username (or user principal name).
 * The application has been written to require a different set of claim URIs or claim values.
 
-## Edit nameID
+## Edit `nameID`
 
 To edit the name identifier value claim:
 
@@ -60,7 +60,6 @@ Transient `nameID` is also supported, but isn't available in the dropdown and ca
 
 ### Attributes
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Select the desired source for the `NameIdentifier` (or `nameID`) claim. You can select from the options in the following table.
 
@@ -82,7 +81,7 @@ Any constant (static) value can be assigned to any claim. Use the following step
 1. On the **Attributes & Claims** blade, select the required claim that you want to modify.
 1. Enter the constant value without quotes in the **Source attribute** as per your organization and select **Save**. The constant value is displayed.
 
-### Directory Schema extensions (Preview)
+### Directory Schema extensions
 
 You can also configure directory schema extension attributes as non-conditional/conditional attributes. Use the following steps to configure the single or multi-valued directory schema extension attribute as a claim:
 
@@ -109,13 +108,22 @@ To add application-specific claims:
 1. Enter the **name** of the claims. The value doesn't strictly need to follow a URI pattern, per the SAML spec. If you need a URI pattern, you can put that in the **Namespace** field.
 1. Select the **Source** where the claim is going to retrieve its value. You can select a user attribute from the source attribute dropdown or apply a transformation to the user attribute before emitting it as a claim.
 
+## Add a group claim
+
+Group claims are used to make authorization decisions to access a resource by an app or a service provider. To add group claims;
+
+1. Navigate to **App registrations** and select the app you wish to add a group claim to.
+1. Select **Add groups claim**.
+1. Select the group types to include in your token. You can add security groups, directory groups, or groups assigned to a particular application.
+1. Choose the values you wish to include in your groups claim, then select **Add**.
+
 ### Claim transformations
 
 To apply a transformation to a user attribute:
 
 1. In **Manage claim**, select *Transformation* as the claim source to open the **Manage transformation** page.
 1. Select the function from the transformation dropdown. Depending on the function selected, provide parameters and a constant value to evaluate in the transformation.
-1. Select the source of the attribute by clicking on the appropriate radio button. Directory schema extension source is in preview currently.
+1. Select the source of the attribute by clicking on the appropriate radio button. 
 1. Select the attribute name from the dropdown.
 1. **Treat source as multivalued** is a checkbox indicating whether the transform should be applied to all values or just the first. By default, transformations are only applied to the first element in a multi-value claim, by checking this box it ensures it's applied to all. This checkbox is only be enabled for multi-valued attributes, for example `user.proxyaddresses`.
 1. To apply multiple transformations, select **Add transformation**. You can apply a maximum of two transformations to a claim. For example, you could first extract the email prefix of the `user.mail`. Then, make the string upper case.
@@ -141,9 +149,9 @@ You can use the following functions to transform claims.
 | **ExtractNumeric() - Suffix** | Returns the suffix numerical part of the string. For example, if the input's value is `BSimon_123`, then it returns `123`. |
 | **IfEmpty()** | Outputs an attribute or constant if the input is null or empty. For example, if you want to output an attribute stored in an extension attribute if the employee ID for a user is empty. To perform this function, configure the following values: `Parameter 1(input): user.employeeid`, `Parameter 2 (output): user.extensionattribute1`, and `Parameter 3 (output if there's no match): user.employeeid`. |
 | **IfNotEmpty()** | Outputs an attribute or constant if the input isn't null or empty. For example, if you want to output an attribute stored in an extension attribute if the employee ID for a user isn't empty. To perform this function, configure the following values: `Parameter 1(input): user.employeeid` and `Parameter 2 (output): user.extensionattribute1`. |
-| **Substring() - Fixed Length** (Preview)| Extracts parts of a string claim type, beginning at the character at the specified position, and returns the specified number of characters. The `sourceClaim` is the claim source of the transform that should be executed. The `StartIndex` is the zero-based starting character position of a substring in this instance. The `Length` is the length in characters of the substring. For example, `sourceClaim - PleaseExtractThisNow`, `StartIndex - 6`, and `Length - 11` produces an output of `ExtractThis`. |
-| **Substring() - EndOfString** (Preview) | Extracts parts of a string claim type, beginning at the character at the specified position, and returns the rest of the claim from the specified start index. The `sourceClaim` is the claim source of the transform that should be executed. The `StartIndex` is the zero-based starting character position of a substring in this instance. For example, `sourceClaim - PleaseExtractThisNow` and `StartIndex - 6` produces an output of `ExtractThisNow`. |
-| **RegexReplace()** (Preview) | For more information about regex-based claims transformation, see the next section. |
+| **Substring() - Fixed Length** | Extracts parts of a string claim type, beginning at the character at the specified position, and returns the specified number of characters. The `sourceClaim` is the claim source of the transform that should be executed. The `StartIndex` is the zero-based starting character position of a substring in this instance. The `Length` is the length in characters of the substring. For example, `sourceClaim - PleaseExtractThisNow`, `StartIndex - 6`, and `Length - 11` produces an output of `ExtractThis`. |
+| **Substring() - EndOfString** | Extracts parts of a string claim type, beginning at the character at the specified position, and returns the rest of the claim from the specified start index. The `sourceClaim` is the claim source of the transform that should be executed. The `StartIndex` is the zero-based starting character position of a substring in this instance. For example, `sourceClaim - PleaseExtractThisNow` and `StartIndex - 6` produces an output of `ExtractThisNow`. |
+| **RegexReplace()** | For more information about regex-based claims transformation, see the next section. |
 
 ## Regex-based claims transformation
 
@@ -209,9 +217,9 @@ When the following conditions occur after **Add** or **Run test** is selected, a
 
 ## Add the UPN claim to SAML tokens
 
-The `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn` claim is part of the [SAML restricted claim set](reference-claims-mapping-policy-type.md#saml-restricted-claim-set). If you have custom signing key configured, you can add it in the **Attributes & Claims** section.  
+The `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn` claim is part of the [SAML restricted claim set](reference-claims-customization.md#saml-restricted-claim-set). If you have custom signing key configured, you can add it in the **Attributes & Claims** section.  
 
-In case there is no custom signing key configured, please refer to [SAML Restricted claim set](reference-claims-mapping-policy-type.md#saml-restricted-claim-set). You can add it as an [optional claim](./optional-claims.md) through **App registrations** in the Azure portal.
+In case there is no custom signing key configured, please refer to [SAML Restricted claim set](reference-claims-customization.md#saml-restricted-claim-set). You can add it as an [optional claim](./optional-claims.md) through **App registrations** in the Azure portal.
  
 Open the application in **App registrations**, select **Token configuration**, and then select **Add optional claim**. Select the **SAML** token type, choose **upn** from the list, and then click **Add** to add the claim to the token.
 
@@ -236,7 +244,7 @@ To add a claim condition:
 1. In **Manage claim**, expand the Claim conditions.
 1. Select the user type.
 1. Select the group(s) to which the user should belong. You can select up to 50 unique groups across all claims for a given application.
-1. Select the **Source** where the claim is going to retrieve its value. You can either select a user attribute from the dropdown for the source attribute or apply a transformation to the user attribute. You can also select a directory schema extension (preview) before emitting it as a claim.
+1. Select the **Source** where the claim is going to retrieve its value. You can either select a user attribute from the dropdown for the source attribute or apply a transformation to the user attribute. You can also select a directory schema extension before emitting it as a claim.
 
 The order in which you add the conditions are important. Microsoft Entra first evaluates all conditions with source `Attribute` and then evaluates all conditions with source `Transformation` to decide which value to emit in the claim. Conditions with the same source are evaluated from top to bottom. The last value, which matches the expression is emitted in the claim. Transformations such as `IsNotEmpty` and `Contains` act like  restrictions.
 
@@ -260,8 +268,8 @@ The following table lists other advanced options that can be configured for an a
 |--------|-------------|
 | Append application ID to issuer | Automatically adds the application ID to the issuer claim. This option ensures a unique claim value for each instance when there are multiple instances of the same application. This setting is ignored if a custom signing key isn't configured for the application. |
 | Override audience claim | Allows for the overriding of the audience claim sent to the application. The value provided must be a valid absolute URI. This setting is ignored if a custom signing key isn't configured for the application. |
-| Include attribute name format | If selected, Microsoft Entra ID adds an attribute called `NameFormat` that describes the format of the name to restricted, core, and optional claims for the application.  For more information, see, [Claims mapping policy type](reference-claims-mapping-policy-type.md#claim-sets) |
+| Include attribute name format | If selected, Microsoft Entra ID adds an attribute called `NameFormat` that describes the format of the name to restricted, core, and optional claims for the application.  For more information, see, [Claims mapping policy type](reference-claims-customization.md#claim-sets) |
 
-## Next steps
+## Related content
 
 * [Configure single sign-on for applications that aren't in the Microsoft Entra application gallery](./single-sign-on-saml-protocol.md)

@@ -1,19 +1,19 @@
 ---
 title: Register a web app that signs in users
-description: Learn how to register a web app that signs in users
+description: Learn how to register a web app that signs in users using the Microsoft identity platform with step-by-step guidance for various frameworks.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
-ms.date: 03/25/2024
+ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 
 # Web app that signs in users: App registration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 This article explains the app registration steps for a web app that signs in users.
 
@@ -31,14 +31,13 @@ You can use the following link to bootstrap the creation of your web application
 
 ## Register an app by using the Azure portal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 > [!NOTE]
 > The portal to use is different depending on whether your application runs in the Microsoft Azure public cloud or in a national or sovereign cloud. For more information, see [National clouds](./authentication-national-cloud.md#app-registration-endpoints).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations**, select **New registration**.
+1. Browse to **Entra ID** > **App registrations**, select **New registration**.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
@@ -50,7 +49,6 @@ You can use the following link to bootstrap the creation of your web application
 1. Under **Manage**, select **Authentication** and then add the following information:
    1. In the **Web** section, add `https://localhost:44321/signin-oidc` as a **Redirect URI**.
    1. In **Front-channel logout URL**, enter `https://localhost:44321/signout-oidc`.
-   1. Under **Implicit grant and hybrid flows**, select **ID tokens**.
    1. Select **Save**.
    
 # [ASP.NET](#tab/aspnet)
@@ -61,7 +59,6 @@ You can use the following link to bootstrap the creation of your web application
    1. In the **Redirect URI (optional)** section, select **Web** in the combo box and enter a **Redirect URI** of `https://localhost:44326/`.
    1. Select **Register** to create the application.
 1. Under **Manage**, select **Authentication**.
-1. In the **Implicit grant and hybrid flows** section, select **ID tokens**. This sample requires the [implicit grant flow](v2-oauth2-implicit-grant-flow.md) to be enabled to sign in the user.
 1. Select **Save**.
 
 # [Java](#tab/java)
@@ -107,7 +104,7 @@ By default, the sample uses:
 
 1. When the **Register an application page** appears, enter your application's registration information:
    1. Enter a **Name** for your application, for example `python-webapp`. Users of your app might see this name, and you can change it later.
-   1. Change **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
+   1. Change **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (such as Skype, Xbox, Outlook.com)**.
    1. In the **Redirect URI (optional)** section, select **Web** in the combo  box and enter the following redirect URI: `http://localhost:5000/getAToken`.
    1. Select **Register** to create the application.
 1. On the app's **Overview** page, find the **Application (client) ID** value and record it for later. You'll need it to configure the *.env* file for this project.
@@ -177,7 +174,7 @@ $webAppServicePrincipal = New-MgServicePrincipal -AppId $currentAppId -Tags {Win
 $owner = Get-MgApplicationOwner -ApplicationId $currentAppObjectId
 if ($owner -eq $null)
 {
-   New-MgApplicationOwnerByRef -ApplicationId $currentAppObjectId  -BodyParameter = @{"@odata.id" = "htps://graph.microsoft.com/v1.0/directoryObjects/$user.ObjectId"}
+   New-MgApplicationOwnerByRef -ApplicationId $currentAppObjectId  -BodyParameter = @{"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/$user.ObjectId"}
    Write-Host "'$($user.UserPrincipalName)' added as an application owner to app '$($webAppServicePrincipal.DisplayName)'"
 }
 Write-Host "Done creating the webApp application (WebApp)"

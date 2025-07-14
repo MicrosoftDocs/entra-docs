@@ -4,11 +4,10 @@ ms.author: vakarand
 ms.date: 10/28/2022
 ms.service: entra-id
 ms.subservice: managed-identities
-ms.custom: devx-track-azurecli, devx-track-azurepowershell
+ms.custom: devx-track-azurecli, devx-track-azurepowershell, sfi-image-nochange
 ms.topic: include
 title: Cross-tenant customer-managed key (CMK) configuration - Azure
 description: include file for cross-tenant customer-managed key (CMK) configuration
-
 ---
 
 ## Configure cross-tenant customer-managed keys
@@ -48,9 +47,9 @@ Create a user-assigned managed identity to be used as a federated identity crede
 1. Select **Review + create**.
 1. On successful deployment, note the **Azure ResourceId** of the user-assigned managed identity, which is available under **Properties**. For example:
 
-   `/subscriptions/tttttttt-0000-tttt-0000-tttt0000tttt/resourcegroups/XTCMKDemo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ConsotoCMKDemoUA`
+   `/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourcegroups/XTCMKDemo/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ContosoCMKDemoUA`
 
-    :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" alt-text="Screen shot showing how to create a resource group and a user-assigned managed identity." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" border="true":::
+    :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" alt-text="Screenshot showing how to create a resource group and a user-assigned managed identity." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-user-assigned-managed-identity.png" border="true":::
 
 #### The service provider configures the user-assigned managed identity as a federated credential on the application
 
@@ -60,17 +59,13 @@ Configure a user-assigned managed identity as a federated identity credential on
 2. Select **Certificates & secrets**.
 3. Select **Federated credentials**.
 
-   :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/certificates-secrets.png" alt-text="Screen shot showing how to navigate to Certificate and secrets." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/certificates-secrets.png" border="true":::
+   :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/certificates-secrets.png" alt-text="Screenshot showing how to navigate to Certificate and secrets." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/certificates-secrets.png" border="true":::
 
 4. Select **+ Add credential**.
 5. Under **Federated credential scenario**, select **Customer Managed Keys**.
 6. Click **Select a managed identity**. From the pane, select the subscription. Under **Managed identity**, select **User-assigned managed identity**. In the **Select** box, search for the managed identity you created earlier, then click **Select** at the bottom of the pane.
 
-   :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/select-managed-identity.png" alt-text="Screen shot showing how to select a managed identity." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/select-managed-identity.png" border="true":::
-
 7. Under **Credential details**, provide a name and optional description for the credential and select **Add**.
-
-   :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/add-credential.png" alt-text="Screen shot showing how to add a credential." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/add-credential.png" border="true":::
 
 # [PowerShell](#tab/azure-powershell)
 
@@ -233,13 +228,13 @@ Find the application ID (client ID) of the multi-tenant application and share it
 
 The following steps are performed by the customer in the customer's tenant *Tenant2*. The customer can use the Azure portal, Azure PowerShell, or Azure CLI.
 
-The user executing the steps must be an administrator with a privileged role such as [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator), [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+The user executing the steps must be an administrator with at least the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) role.
 
 # [Portal](#tab/azure-portal)
 
 Sign in to the [Azure portal](https://portal.azure.com) and follow these steps.
 
-#### The customer installs the service provider application in the customer tenant
+#### The customer installs the service provider application in the external tenant
 
 To install the service provider's registered application in the customer's tenant, you create a service principal with the application ID from the registered app. You can create the service principal in either of the following ways:
 
@@ -258,7 +253,7 @@ To create the key vault, the user's account must be assigned the **Key Vault Con
 1. On the **Access policy** tab, select **Azure role-based access control** for **Permission model**.
 1. Select **Review + create** and then **Create**.
 
-    :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-key-vault.png" alt-text="Screen shot showing how to create a key vault." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-key-vault.png" border="true":::
+    :::image type="content" source="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-key-vault.png" alt-text="Screenshot showing how to create a key vault." lightbox="media/msi-cross-tenant-cmk-create-identities-authorize-key-vault/create-key-vault.png" border="true":::
 
 Take note of the key vault name and URI Applications that access your key vault must use this URI.
 
@@ -309,16 +304,16 @@ To use Azure PowerShell to configure the client's tenant, install the latest [Az
 In Azure PowerShell, sign in to the customer's tenant and set the active subscription to the customer's subscription.
 
 ```azurepowershell
-$customerTenantId="<customer-tenant-id>"
+$externaltenantid="<external-tenant-id>"
 $customerSubscriptionId="<customer-subscription-id>"
 
 # Sign in to Azure in the customer's tenant.
-Connect-AzAccount -Tenant $customerTenantId
+Connect-AzAccount -Tenant $externaltenantid
 # Set the context to the customer's subscription.
 Set-AzContext -Subscription $customerSubscriptionId
 ```
 
-#### The customer installs the service provider application in the customer tenant
+#### The customer installs the service provider application in the external tenant
 
 Once you receive the application ID of the service provider's multi-tenant application, install the application in your tenant, *Tenant2*, by creating a service principal.
 
@@ -399,7 +394,7 @@ Sign in to Azure to use Azure CLI.
 az login
 ```
 
-#### The customer installs the service provider application in the customer tenant
+#### The customer installs the service provider application in the external tenant
 
 Once you receive the application ID of the service provider's multi-tenant application, install the application in your tenant *Tenant2* using the following command. Installing the application creates a service principal in your tenant.
 

@@ -1,14 +1,13 @@
 ---
 title: Specify the Request Service REST API issuance request
 titleSuffix: Microsoft Entra Verified ID
-description: Learn how to issue a verifiable credential that you've issued.
+description: Learn how to issue a verifiable credential.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
-ms.date: 07/19/2022
+ms.date: 01/30/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
@@ -48,17 +47,16 @@ Content-Type: application/json
 Authorization: Bearer <token>
 
 {
-    "includeQRCode": true,
-    "callback": {
-        "url": "https://contoso.com/api/issuer/issuanceCallback",
+    "callback": {
+        "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "Aaaabbbb11112222",
-        "headers": {
-            "api-key": "an-api-key-can-go-here"
+        "headers": {
+            "api-key": "an-api-key-can-go-here"
         }
     },
     ...
 }
-```  
+```
 
 The following permission is required to call the Request Service REST API. For more information, see [Grant permissions to get access tokens](verifiable-credentials-configure-tenant.md#grant-permissions-to-get-access-tokens).
 
@@ -72,7 +70,7 @@ The issuance request payload contains information about your verifiable credenti
 
 ```json
 {
-  "includeQRCode": false,
+  "authority": "did:web:verifiedid.contoso.com",
   "callback": {
     "url": "https://contoso.com/api/issuer/issuanceCallback",
     "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -80,12 +78,11 @@ The issuance request payload contains information about your verifiable credenti
       "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
     }
   },
-  "authority": "did:web:verifiedid.contoso.com",
   "registration": {
     "clientName": "Verifiable Credential Expert Sample"
   },
   "type": "VerifiedCredentialExpert",
-  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
+  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
   "pin": {
     "value": "3539",
     "length": 4
@@ -102,15 +99,15 @@ The payload contains the following properties:
 
 |Parameter |Type  | Description |
 |---------|---------|---------|
-| `includeQRCode` |  Boolean |   Determines whether a QR code is included in the response of this request. Present the QR code and ask the user to scan it. Scanning the QR code launches the authenticator app with this issuance request. Possible values are `true` (default) or `false`. When you set the value to `false`, use the return `url` property to render a deep link.  |
-|`callback`|  [Callback](#callback-type)| Mandatory. Allows the developer to asynchronously get information on the flow during the verifiable credential issuance process. For example, the developer might want a call when the user has scanned the QR code or if the issuance request succeeds or fails.|
+| `includeQRCode` |  Boolean | Optional. Determines whether a QR code is included in the response of this request. Present the QR code and ask the user to scan it. Scanning the QR code launches the authenticator app with this issuance request. Possible values are `true` or `false` (default). When you set the value to `false`, use the return `url` property to render a deep link.  |
+|`callback`|  [Callback](#callback-type)| Mandatory. Allows the developer to asynchronously get information on the flow during the verifiable credential issuance process. For example, the developer might want a call when the user scans the QR code or if the issuance request succeeds or fails.|
 | `authority` | string|  The issuer's decentralized identifier (DID). For more information, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md).|
 | `registration` | [RequestRegistration](#requestregistration-type)|  Provides information about the issuer that can be displayed in the authenticator app. |
 | `type` |  string |  The verifiable credential type. Should match the type as defined in the verifiable credential manifest. For example: `VerifiedCredentialExpert`. For more information, see [Create the verified credential expert card in Azure](verifiable-credentials-configure-issuer.md). |
 | `manifest` | string| The URL of the verifiable credential manifest document. For more information, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md).|
 | `claims` | string| Optional. Can only be used for the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow to include a collection of assertions made about the subject in the verifiable credential. |
 | `pin` | [PIN](#pin-type)| Optional. PIN code can only be used with the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow. A PIN number to provide extra security during issuance. You generate a PIN code, and present it to the user in your app. The user must provide the PIN code that you generated. |
-| `expirationDate` | string| Optional. The expirationDate can only be used with the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow. If specified, the value needs to be a date expressed in the [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format. The date will override the [validityInterval](rules-and-display-definitions-model.md#rulesmodel-type) in the credentials rules definition for this issuance request. Use this setting to explicitly control when a credential expires, like end-of-day, end-of-month or end-of-year, regardless of when it is issued. Please note that the date is expressed in UTC format. If you specify end-of-year, with time set to `23:59:59`, that is 1 second to midnight in UTC time. Any user in a different timezone will get the expiration date presented in local timezone in the Microsoft Authenticator. This means that if you are in the CET timezone, it will be presented as January 1 1am.<br/><br/>The credential contract needs to have the flag [allowOverrideValidityOnIssuance](admin-api.md#contract-type) set to true. |
+| `expirationDate` | string| Optional. The expirationDate can only be used with the [ID token hint](rules-and-display-definitions-model.md#idtokenhintattestation-type) attestation flow. If specified, the value needs to be a date expressed in the [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format. The date overrides the [validityInterval](rules-and-display-definitions-model.md#rulesmodel-type) in the credentials rules definition for this issuance request. Use this setting to explicitly control when a credential expires, like end-of-day, end-of-month or end-of-year, regardless of issuance time. The date is expressed in UTC format. If you specify end-of-year, with time set to `23:59:59` (that is 1 second to midnight in UTC time) any user in a different timezone gets the expiration date presented in local timezone in the Microsoft Authenticator. This means that if you are in the CET timezone, it will be presented as January 1 1am.<br/><br/>The credential contract needs to have the flag [allowOverrideValidityOnIssuance](admin-api.md#contract-type) set to true. |
 
 There are currently four claims attestation types that you can send in the payload. Microsoft Entra Verified ID uses four ways to insert claims into a verifiable credential and attest to that information with the issuer's DID. The following are the four types:
 
@@ -140,9 +137,9 @@ The Request Service REST API generates several events to the callback endpoint. 
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `url` | string| URI to the callback endpoint of your application. The URI must point to a reachable endpoint on the internet otherwise the service will throw callback URL unreadable error. Accepted formats IPv4, IPv6 or DNS resolvable hostname |
+| `url` | string| URI to the callback endpoint of your application. The URI must point to a reachable endpoint on the internet otherwise the service throws callback URL unreadable error. Accepted formats IPv4, IPv6, or DNS resolvable hostname. To harden your network, see [FAQ](verifiable-credentials-faq.md#network-hardening-for-callback-events). |
 | `state` | string| Correlates the callback event with the state passed in the original payload. |
-| `headers` | string| Optional. You can include a collection of HTTP headers required by the receiving end of the POST message. The current supported header values are the `api-key` or the `Authorization` headers. Any other header will throw an invalid callback header error|
+| `headers` | string| Optional. You can include a collection of HTTP headers required by the receiving end of the POST message. The current supported header values are the `api-key` or the `Authorization` headers. Any other header throws an invalid callback header error|
 
 ### Pin type
 
@@ -164,7 +161,7 @@ If successful, this method returns a response code (*HTTP 201 Created*), and a c
 ```json
 {  
     "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
-    "url": "openid://vc?request_uri=https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/request/178319f7-20be-4945-80fb-7d52d47ae82e",  
+    "url": "openid://vc?request_uri=https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/request/178319f7-20be-4945-80fb-7d52d47ae82e",  
     "expiry": 1622227690,  
     "qrCode": "data:image/png;base64,iVBORw0KggoA<SNIP>"  
 } 
@@ -176,14 +173,14 @@ The response contains the following properties:
 |---------|---------|---------|
 | `requestId`| string | An autogenerated request ID. The [callback](#callback-events) uses the same request, allowing you to keep track of the issuance request and its callbacks. |
 | `url`|  string| A URL that launches the authenticator app and starts the issuance process. You can present this URL to the user if they can't scan the QR code. |
-| `expiry`| integer| Indicates when the response will expire. |
+| `expiry`| integer| Indicates when the response expires. |
 | `qrCode`| string | A QR code that user can scan to start the issuance flow. |
 
 When your app receives the response, the app needs to present the QR code to the user. The user scans the QR code, which opens the authenticator app and starts the issuance process.
 
 ## Error response
 
-If there is an error with the request, an [error response](error-codes.md) will be returned and should be handled appropriately by the app. 
+If there's an error with the request, an [error response](error-codes.md) is returned. The app should handle the response appropriately. 
 
 ## Callback events
 
@@ -202,9 +199,9 @@ The following example demonstrates a callback payload when the authenticator app
 
 ```json
 {  
-    "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
-    "requestStatus":"request_retrieved",  
-    "state": "de19cb6b-36c1-45fe-9409-909a51292a9c"
+    "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
+    "requestStatus":"request_retrieved",  
+    "state": "de19cb6b-36c1-45fe-9409-909a51292a9c"
 } 
 ```
 
@@ -212,10 +209,10 @@ The following example demonstrates a callback payload after the user successfull
 
 ```json
 {  
-    "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
-    "requestStatus":"issuance_successful",
-    "state": "de19cb6b-36c1-45fe-9409-909a51292a9c"
-} 
+    "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
+    "requestStatus":"issuance_successful",
+    "state": "de19cb6b-36c1-45fe-9409-909a51292a9c"
+} 
 ```
 
 ### Callback errors  

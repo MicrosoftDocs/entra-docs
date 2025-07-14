@@ -6,14 +6,16 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: 
 ms.date: 05/07/2019
-ms.reviewer: brianmel, jmprieur
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # Get a token for a mobile app that calls web APIs
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 Before your app can call protected web APIs, it needs an access token. This article walks you through the process to get a token by using the Microsoft Authentication Library (MSAL).
 
@@ -31,11 +33,6 @@ String[] SCOPES = {"https://graph.microsoft.com/.default"};
 ### iOS
 ```swift
 let scopes = ["https://graph.microsoft.com/.default"]
-```
-
-### Xamarin
-```csharp
-var scopes = new [] {"https://graph.microsoft.com/.default"};
 ```
 
 ## Get tokens
@@ -58,11 +55,15 @@ sampleApp.getAccounts(new PublicClientApplication.AccountsLoadedCallback() {
     @Override
     public void onAccountsLoaded(final List<IAccount> accounts) {
 
-        if (accounts.isEmpty() && accounts.size() == 1) {
-            // TODO: Create a silent callback to catch successful or failed request.
+        if (!accounts.isEmpty() && accounts.size() == 1) {
+            // One account found, attempt silent sign-in.
             sampleApp.acquireTokenSilentAsync(SCOPES, accounts.get(0), getAuthSilentCallback());
+        } else if (accounts.isEmpty()) {
+            // No accounts found. Interactively request a token.
+            sampleApp.acquireToken(getActivity(), SCOPES, getAuthInteractiveCallback());
         } else {
-            /* No accounts or > 1 account. */
+            // Multiple accounts found. Handle according to your app logic.
+            // You may need to prompt the user to select an account.
         }
     }
 });
@@ -177,27 +178,6 @@ MSAL for iOS and macOS supports various modifiers to get a token interactively o
 * [Parameters for getting an interactive token](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALInteractiveTokenParameters.html#/Configuring%20MSALInteractiveTokenParameters)
 * [Parameters for getting a silent token](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALSilentTokenParameters.html)
 
-#### Xamarin
-
-The following example shows the minimal code to get a token interactively. The example uses Microsoft Graph to read the user's profile.
-
-```csharp
-string[] scopes = new string[] {"user.read"};
-var app = PublicClientApplicationBuilder.Create(clientId).Build();
-var accounts = await app.GetAccountsAsync();
-AuthenticationResult result;
-try
-{
- result = await app.AcquireTokenSilent(scopes, accounts.FirstOrDefault())
-             .ExecuteAsync();
-}
-catch(MsalUiRequiredException)
-{
- result = await app.AcquireTokenInteractive(scopes)
-             .ExecuteAsync();
-}
-```
-
 #### Mandatory parameters in MSAL.NET
 
 `AcquireTokenInteractive` has only one mandatory parameter: `scopes`. The `scopes` parameter enumerates strings that define the scopes for which a token is required. If the token is for Microsoft Graph, you can find the required scopes in the API reference of each Microsoft Graph API. In the reference, go to the "Permissions" section.
@@ -287,5 +267,6 @@ client_id=<CLIENT_ID>
 
 ## Next steps
 
-Move on to the next article in this scenario,
-[Calling a web API](scenario-mobile-call-api.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
+
+- Explore Microsoft identity platform [mobile code samples](sample-v2-code.md#mobile) 

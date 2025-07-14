@@ -1,32 +1,29 @@
 ---
 title: Complete an access review of Azure resource and Microsoft Entra roles in PIM
 description: Learn how to complete an access review of Azure resource and Microsoft Entra roles Privileged Identity Management.
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/12/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim
-
+ms.custom: pim, sfi-image-nochange
 ---
 
 # Complete an access review of Azure resource and Microsoft Entra roles in PIM
 
-Privileged role administrators can review privileged access once an [access review has been started](./pim-create-roles-and-resource-roles-review.md). Privileged Identity Management (PIM) in Microsoft Entra ID will automatically send an email that prompts users to review their access. If a user doesn't receive an email, you can send them the instructions for [how to perform an access review](./pim-perform-roles-and-resource-roles-review.md).
+Privileged Role Administrators can review privileged access once an [access review starts](./pim-create-roles-and-resource-roles-review.md). Privileged Identity Management (PIM) in Microsoft Entra ID will automatically send an email that prompts users to review their access. If a user doesn't receive an email, you can send them the instructions for [how to perform an access review](./pim-perform-roles-and-resource-roles-review.md).
 
 Once the review has been created, follow the steps in this article to complete the review and see the results.
 
 ## Complete access reviews
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one of the prerequisite role(s).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one or more prerequisite roles.
 
-1. Browse to **Identity governance** > **Privileged Identity Management**. 
+1. Browse to **ID Governance** > **Privileged Identity Management**. 
 
 1. For **Microsoft Entra roles**, select **Microsoft Entra roles**. For **Azure resources**, select **Azure resources**
 

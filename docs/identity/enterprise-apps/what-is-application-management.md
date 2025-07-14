@@ -2,11 +2,11 @@
 title: What is application management?
 description: An overview of managing the lifecycle of an application in Microsoft Entra ID.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: overview
-ms.date: 12/19/2023
+ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
@@ -37,7 +37,7 @@ The following image shows how these applications interact with Microsoft Entra I
 
 ### Preintegrated applications
 
-Many applications are already preintegrated (shown as “Cloud applications” in the previous image in this article) and can be set up with minimal effort. Each application in the Microsoft Entra gallery has an article available that shows you the steps required to [configure the application](~/identity/saas-apps/tutorial-list.md). For a simple example of how an application can be added to your Microsoft Entra tenant from the gallery, see [Quickstart: Add an enterprise application](add-application-portal.md).
+Many applications are already preintegrated (shown as **Cloud applications** in the previous image in this article) and can be set up with minimal effort. Each application in the Microsoft Entra gallery has an article available that shows you the steps required to [configure the application](~/identity/saas-apps/tutorial-list.md). For a simple example of how an application can be added to your Microsoft Entra tenant from the gallery, see [Quickstart: Add an enterprise application](add-application-portal.md).
 
 ### Your own applications
 

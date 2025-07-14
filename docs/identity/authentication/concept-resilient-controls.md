@@ -8,7 +8,7 @@ ms.custom: has-azure-ad-ps-ref
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/29/2023
+ms.date: 03/04/2025
 ms.author: martinco
 ---
 # Create a resilient access control management strategy with Microsoft Entra ID
@@ -47,11 +47,11 @@ Mitigating an actual disruption must be an organization’s primary focus in dea
 
 ### Administrator lockout contingency
 
-To unlock admin access to your tenant, you should create emergency access accounts. These emergency access accounts, also known as *break glass* accounts, allow access to manage Microsoft Entra configuration when normal privileged account access procedures aren’t available. At least two emergency access accounts should be created following the [emergency access account recommendations](~/identity/role-based-access-control/security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
 ### Mitigating user lockout
 
- To mitigate the risk of user lockout, use Conditional Access policies with multiple controls to give users a choice of how they access apps and resources. By giving a user the choice between, for example, signing in with MFA **or** signing in from a managed device **or** signing in from the corporate network, if one of the access controls is unavailable the user has other options to continue to work.
+To mitigate the risk of user lockout, use Conditional Access policies with multiple controls to give users a choice of how they access apps and resources. By giving a user the choice between, for example, signing in with MFA **or** signing in from a managed device **or** signing in from the corporate network, if one of the access controls is unavailable the user has other options to continue to work.
 
 #### Microsoft recommendations
 
@@ -278,8 +278,7 @@ Undo the changes you made as part of the activated contingency plan once the ser
 
 * [Microsoft Entra authentication Documentation](./howto-mfaserver-iis.md)
 * [Manage emergency-access administrative accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md)
-* [Configure named locations in Microsoft Entra ID](~/identity/conditional-access/location-condition.md)
-  * [Set-MsolDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings)
+* [Configure named locations in Microsoft Entra ID](../conditional-access/concept-assignment-network.md)
 * [How to configure Microsoft Entra hybrid joined devices](~/identity/devices/hybrid-join-plan.md)
 * [Windows Hello for Business Deployment Guide](/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Password Guidance - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf)

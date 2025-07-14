@@ -3,11 +3,11 @@ title: Group naming policy quickstart
 description: Explains how to add new users or delete existing users in Microsoft Entra ID
 
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: quickstart
-ms.date: 11/15/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Naming policy for groups in Microsoft Entra ID
 
-In this quickstart, in Microsoft Entra ID, part of Microsoft Entra, you will set up naming policy in your Microsoft Entra organization for user-created Microsoft 365 groups, to help you sort and search your groups. For example, you could use the naming policy to:
+In this quickstart, in Microsoft Entra ID, part of Microsoft Entra, you set up naming policy in your Microsoft Entra organization for user-created Microsoft 365 groups, to help you sort and search your groups. For example, you could use the naming policy to:
 
 * Communicate the function of a group, membership, geographic region, or who created the group.
 * Help categorize groups in the address book.
@@ -27,7 +27,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Configure the group naming policy
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Groups** > **All groups**  then select **Naming policy** to open the Naming policy page.
 
@@ -50,7 +50,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 1. Upload the new list of custom blocked words by selecting the file icon.
 1. Select **Save** for your changes to the policy to go into effect.
 
-That's it. You've set your naming policy and added your custom blocked words.
+That's it. You finished setting up your naming policy and added your custom blocked words.
 
 ## Clean up resources
 

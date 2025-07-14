@@ -3,18 +3,22 @@ title: Configure provisioning using Microsoft Graph APIs
 description: Learn how to save time by using the Microsoft Graph APIs to automate the configuration of automatic provisioning.
 
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Configure provisioning using Microsoft Graph APIs
 
-The Microsoft Entra admin center is a convenient way to configure provisioning for individual apps one at a time. But if you're creating several—or even hundreds—of instances of an application, it can be easier to automate app creation and configuration with the Microsoft Graph APIs. This article outlines how to automate provisioning configuration through APIs. This method is commonly used for applications like [Amazon Web Services](~/identity/saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
+The Microsoft Entra admin center is a convenient way to configure provisioning for individual apps one at a time. But if you're creating several—or even hundreds—of instances of an application, or migrating application configuration from one environment to another, it can be easier to automate app creation and configuration with the Microsoft Graph APIs. This article outlines how to automate provisioning configuration through APIs. This method is commonly used for applications like [Amazon Web Services](~/identity/saas-apps/amazon-web-service-tutorial.md#configure-azure-ad-sso).
+
+This article illustrates the process with APIs in the [Microsoft Graph beta endpoint](/graph/api/overview?view=graph-rest-beta&preserve-view=true) and Microsoft Graph Explorer; similar APIs are also available in the [Microsoft Graph v1.0 endpoint](/graph/api/overview?view=graph-rest-1.0&preserve-view=true). For an example of configuring provisioning with Graph v1.0 and PowerShell, see steps 6-13 of [Configure cross-tenant synchronization using PowerShell or Microsoft Graph API](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure-graph.md?tabs=ms-powershell).
+
 
 **Overview of steps for using Microsoft Graph APIs to automate provisioning configuration**
 
@@ -27,12 +31,14 @@ The Microsoft Entra admin center is a convenient way to configure provisioning f
 |[Step 4. Start provisioning job](#step-4-start-the-provisioning-job)     |Start the job         |
 |[Step 5. Monitor provisioning](#step-5-monitor-provisioning)     |Check the status of the provisioning job <br> Retrieve the provisioning logs         |
 
+If you are provisioning to an on-premises application, then you will also need to install and configure the provisioning agent, and assign the provisioning agent to the application.
+
 ## Step 1: Create the gallery application
 
-### Sign in to Microsoft Graph Explorer (recommended), Postman, or any other API client you use
+### Sign in to Microsoft Graph Explorer (recommended), or any other API client you use
 
 1. Start [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Select the "Sign-In with Microsoft" button and sign in using Microsoft Entra Global Administrator or App Admin credentials.
+1. Select the "Sign-In with Microsoft" button and sign in with a user with the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) role.
 1. Upon successful sign-in, you'll see the user account details in the left-hand pane.
 
 ### Retrieve the gallery application template identifier
@@ -104,8 +110,8 @@ Content-type: application/json
 
 {
     "application": {
-        "objectId": "cbc071a6-0fa5-4859-8g55-e983ef63df63",
-        "appId": "92653dd4-aa3a-3323-80cf-e8cfefcc8d5d",
+        "objectId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "applicationTemplateId": "8b1025e4-1dd2-430b-a150-2ef79cd700f5",
         "displayName": "AWS Contoso",
         "homepage": "https://signin.aws.amazon.com/saml?metadata=aws|ISV9.1|primary|z",
@@ -116,7 +122,7 @@ Content-type: application/json
         "samlMetadataUrl": null,
     },
     "servicePrincipal": {
-        "objectId": "f47a6776-bca7-4f2e-bc6c-eec59d058e3e",
+        "objectId": "bbbbbbbb-1111-2222-3333-cccccccccccc",
         "appDisplayName": "AWS Contoso",
         "applicationTemplateId": "8b1025e4-1dd2-430b-a150-2ef79cd700f5",
         "appRoleAssignmentRequired": true,
@@ -236,7 +242,7 @@ HTTP/1.1 204 No Content
 
 ### Save your credentials
 
-Configuring provisioning requires establishing a trust between Microsoft Entra ID and the application. Authorize access to the third-party application. The following example is for an application that requires a client secret and a secret token. Each application has its own requirements. Review the [API documentation](/graph/api/synchronization-synchronizationjob-validatecredentials?tabs=http&view=graph-rest-beta&preserve-view=true) to see the available options. 
+Configuring provisioning requires establishing a trust between Microsoft Entra ID and the application to authorize Microsoft Entra to have the ability to call the third-party application. The following example is specific to an application that requires a client secret and a secret token. Each application has its own requirements. Review the [API documentation](/graph/api/synchronization-synchronizationjob-validatecredentials?tabs=http&view=graph-rest-beta&preserve-view=true) to see the available options. 
 
 #### Request
 ```msgraph-interactive
@@ -345,7 +351,7 @@ Content-type: application/json
         {
             "id": "gc532ff9-r265-ec76-861e-42e2970a8218",
             "activityDateTime": "2019-06-24T20:53:08Z",
-            "tenantId": "7928d5b5-7442-4a97-ne2d-66f9j9972ecn",
+            "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
             "cycleId": "44576n58-v14b-70fj-8404-3d22tt46ed93",
             "changeId": "eaad2f8b-e6e3-409b-83bd-e4e2e57177d5",
             "action": "Create",
@@ -359,7 +365,7 @@ Content-type: application/json
                 "id": "cd22f60b-5f2d-1adg-adb4-76ef31db996b",
                 "displayName": "AWS Contoso",
                 "details": {
-                    "ApplicationId": "f2764360-e0ec-5676-711e-cd6fc0d4dd61",
+                    "ApplicationId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                     "ServicePrincipalId": "chc46a42-966b-47d7-9774-576b1c8bd0b8",
                     "ServicePrincipalDisplayName": "AWS Contoso"
                 }
@@ -374,7 +380,9 @@ Content-type: application/json
     ]
 }
 ```
+
 ## See also
 
 - [Review the synchronization Microsoft Graph documentation](/graph/api/resources/synchronization-overview?view=graph-rest-beta&preserve-view=true)
 - [Integrating a custom SCIM app with Microsoft Entra ID](./use-scim-to-provision-users-and-groups.md)
+- [Configure cross-tenant synchronization using PowerShell or Microsoft Graph API](~/identity/multi-tenant-organizations/cross-tenant-synchronization-configure-graph.md?tabs=ms-powershell)

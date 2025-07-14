@@ -1,17 +1,15 @@
 ---
 title: Self-service password reset policies
 description: Learn about the different Microsoft Entra self-service password reset policy options
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/28/2023
-
+ms.date: 05/15/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: tilarso
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 # Password policies and account restrictions in Microsoft Entra ID
 
@@ -23,13 +21,13 @@ This article describes the password policy settings and complexity requirements 
 
 ## Username policies
 
-Every account that signs in to Microsoft Entra ID must have a unique user principal name (UPN) attribute value associated with their account. In hybrid environments with an on-premises Active Directory Domain Services (AD DS) environment synchronized to Microsoft Entra ID using Microsoft Entra Connect, by default the Microsoft Entra UPN is set to the on-premises UPN.
+Every account that signs in to Microsoft Entra ID must have a unique user principal name (UPN) attribute value associated with their account. In hybrid environments with an on-premises Active Directory Domain Services environment synchronized to Microsoft Entra ID using Microsoft Entra Connect, by default the Microsoft Entra ID UPN is set to the on-premises UPN.
 
-The following table outlines the username policies that apply to both on-premises AD DS accounts that are synchronized to Microsoft Entra ID, and for cloud-only user accounts created directly in Microsoft Entra ID:
+The following table outlines the username policies that apply to both on-premises accounts that are synchronized to Microsoft Entra ID, and for cloud-only user accounts created directly in Microsoft Entra ID:
 
 | Property | UserPrincipalName requirements |
 | --- | --- |
-| Characters allowed |A – Z<br>a - z<br>0 – 9<br>' \. - \_ ! \# ^ \~ |
+| Characters allowed |A-Z<br>a-z<br>0-9<br>' \. - \_ ! \# ^ \~ |
 | Characters not allowed |Any "\@\" character that's not separating the username from the domain.<br>Can't contain a period character "." immediately preceding the "\@\" symbol |
 | Length constraints |The total length must not exceed 113 characters<br>There can be up to 64 characters before the "\@\" symbol<br>There can be up to 48 characters after the "\@\" symbol |
 
@@ -39,9 +37,7 @@ The following table outlines the username policies that apply to both on-premise
 
 A password policy is applied to all user accounts that are created and managed directly in Microsoft Entra ID. Some of these password policy settings can't be modified, though you can [configure custom banned passwords for Microsoft Entra password protection](tutorial-configure-custom-password-protection.md) or account lockout parameters.
 
-By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. The user is locked out for one minute. Further incorrect sign-in attempts lock out the user for increasing durations of time. [Smart lockout](howto-password-smart-lockout.md) tracks the last three bad password hashes to avoid incrementing the lockout counter for the same password. If someone enters the same bad password multiple times, they won't get locked out. You can define the smart lockout threshold and duration.
-
-The Microsoft Entra password policy doesn't apply to user accounts synchronized from an on-premises AD DS environment using Microsoft Entra Connect, unless you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*.
+By default, an account is locked out after 10 unsuccessful sign-in attempts with the wrong password. The user is locked out for one minute. The lockout duration increases after further incorrect sign-in attempts. [Smart lockout](howto-password-smart-lockout.md) tracks the last three bad password hashes to avoid incrementing the lockout counter for the same password. If someone enters the same bad password multiple times, they aren't locked out. You can define the smart lockout threshold and duration.
 
 The following Microsoft Entra password policy options are defined. Unless noted, you can't change these settings:
 
@@ -50,52 +46,76 @@ The following Microsoft Entra password policy options are defined. Unless noted,
 | Characters allowed |A – Z<br>a - z<br>0 – 9<br>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ' , . ? / \` ~ " ( ) ; < ><br>Blank space |
 | Characters not allowed | Unicode characters<br> UserPrincipalName<br>Firstname<br>Lastname |
 | Password restrictions |A minimum of 8 characters and a maximum of 256 characters.<br>Requires three out of four of the following types of characters:<br>- Lowercase characters<br>- Uppercase characters<br>- Numbers (0-9)<br>- Symbols (see the previous password restrictions) |
-| Password expiry duration (Maximum password age) |Default value: **90** days. If the tenant was created after 2021, it has no default expiration value. You can check current policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph module for PowerShell.|
+| Password expiry duration (Maximum password age) |Default value: **No expiration**. If the tenant was created before 2021, it has a **90** day expiration value by default. You can check current policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph module for PowerShell.|
 | Password expiry (Let passwords never expire) |Default value: **false** (indicates that passwords have an expiration date).<br>The value can be configured for individual user accounts by using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) cmdlet. |
 | Password change history | The last password *can't* be used again when the user changes a password. |
 | Password reset history | The last password *can* be used again when the user resets a forgotten password. |
 
+> [!IMPORTANT]
+> The password change history applies to password writeback. For users in the cloud only, reset password for Entra ID doesn't have the user's old password and can't check for or prevent password reuse.
+
+If you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*, the Microsoft Entra password policy applies to user accounts synchronized from on-premises using Microsoft Entra Connect. In addition, if a user changes a password on-premises to include a unicode character, the password change may succeed on-premises but not in Microsoft Entra ID. If password hash synchronization is enabled with Microsoft Entra Connect, the user can still receive an access token for cloud resources. But if the tenant enables [User risk-based password change](~/identity/conditional-access/policy-risk-based-user.md), the password change is reported as high risk. 
+
+The user is prompted to change their password again. But if the change still includes a unicode character, they could get locked out if [smart lockout](howto-password-smart-lockout.md) is also enabled. 
+
+## Risk based password reset policy limitations
+
+If you enable [EnforceCloudPasswordPolicyForPasswordSyncedUsers](~/identity/conditional-access/policy-risk-based-user.md), a cloud password change is required once a high risk is identified. The user is prompted to change their password when they sign in to Microsoft Entra ID. The new password must comply with both the cloud and on-premises password policies. 
+ 
+If a password change meets on-premises requirements but fails to meet cloud requirements, the password change succeeds if password hash synchronization is enabled. For example, if the new password includes a Unicode character, the password change can be updated on-premises but not in the cloud. 
+
+If the password didn't comply with the cloud password requirements, it isn't updated in the cloud, and the account risk doesn't decrease. The user still receives an access token for cloud resources, but they're prompted to change their password again the next time they access cloud resources. The user doesn't see any error or notification that their chosen password failed to meet the cloud requirements.
+
 ## Administrator reset policy differences
 
-By default, administrator accounts are enabled for self-service password reset, and a strong default *two-gate* password reset policy is enforced. This policy may be different from the one you have defined for your users, and this policy can't be changed. You should always test password reset functionality as a user without any Azure administrator roles assigned.
+By default, administrator accounts are enabled for self-service password reset, and a strong default *two-gate* password reset policy is enforced. This policy may be different from the one you defined for your users, and this policy can't be changed. You should always test password reset functionality as a user without any Azure administrator roles assigned.
 
 The two-gate policy requires two pieces of authentication data, such as an email address, authenticator app, or a phone number, and it prohibits security questions. Office and mobile voice calls are also prohibited for trial or free versions of Microsoft Entra ID. 
+
+The SSPR administrator policy doesn't depend upon the Authentications method policy. For example, if you disable third party software tokens in the Authentication methods policy, administrator accounts can still register third party software token applications and use them, but only for SSPR. 
 
 A two-gate policy applies in the following circumstances:
 
 * All the following Azure administrator roles are affected:
-  * Application administrator
-  * Application proxy service administrator
-  * Authentication administrator
-  * Billing administrator
-  * Compliance administrator
-  * Device administrators
-  * Directory synchronization accounts
-  * Directory writers
-  * Dynamics 365 administrator
-  * Exchange administrator
-  * Global administrator or company administrator
-  * Helpdesk administrator
-  * Intune administrator
-  * Mailbox Administrator
+  * Application Administrator
+  * Authentication Administrator
+  * Billing Administrator
+  * Compliance Administrator
+  * Cloud Device Administrator
+  * Directory Synchronization Accounts (an admin role assigned to the Microsoft Entra Connect service)
+  * Directory Writers
+  * Dynamics 365 Administrator
+  * Exchange Administrator
+  * Global Administrator
+  * Helpdesk Administrator
+  * Intune Administrator
   * Microsoft Entra Joined Device Local Administrator
   * Partner Tier1 Support
   * Partner Tier2 Support
-  * Password administrator
-  * Power BI service administrator
-  * Privileged Authentication administrator
-  * Privileged role administrator
-  * Security administrator
-  * Service support administrator
-  * SharePoint administrator
-  * Skype for Business administrator
-  * User administrator
+  * Password Administrator
+  * Power Platform Administrator
+  * Privileged Authentication Administrator
+  * Privileged Role Administrator
+  * Security Administrator
+  * Service Support Administrator
+  * SharePoint Administrator
+  * Skype for Business Administrator
+  * Teams Administrator
+  * Teams Communications Administrator
+  * Teams Devices Administrator
+  * User Administrator
 
-* If 30 days have elapsed in a trial subscription; or
-* A custom domain has been configured for your Microsoft Entra tenant, such as *contoso.com*; or
-* Microsoft Entra Connect is synchronizing identities from your on-premises directory
+* If 30 days elapsed in a trial subscription 
 
-You can disable the use of SSPR for administrator accounts using the [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) PowerShell cmdlet. The `-AllowedToUseSspr:$true|$false ` parameter enables/disables SSPR for administrators. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect. 
+  -Or-
+  
+* A custom domain is configured for your Microsoft Entra tenant, such as *contoso.com*
+
+  -Or-
+
+* Microsoft Entra Connect synchronizes identities from your on-premises directory
+
+You can disable the use of SSPR for administrator accounts using the [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) PowerShell cmdlet. The `-AllowedToUseSspr:$true|$false` parameter enables/disables SSPR for administrators. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect. 
 
 ### Exceptions
 
@@ -109,7 +129,7 @@ A one-gate policy requires one piece of authentication data, such as an email ad
 
 ## Password expiration policies
 
-A *Global Administrator* or *User Administrator* can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
+[User Administrators](../role-based-access-control/permissions-reference.md#user-administrator) can use the [Microsoft Graph](/powershell/microsoftgraph/) to set user passwords not to expire.
 
 You can also use PowerShell cmdlets to remove the never-expires configuration or to see which user passwords are set to never expire.
 
@@ -126,25 +146,25 @@ After the module is installed, use the following steps to complete each task as 
 
 ### Check the expiration policy for a password
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Run one of the following commands for either an individual user or for all users:
 
    * To see if a single user's password is set to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check:
 
        ```powershell
-       Get-MgUser -UserId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+       Get-MgUser -UserId <user ID> -Property UserPrincipalName, PasswordPolicies | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
        ```
 
    * To see the **Password never expires** setting for all users, run the following cmdlet:
 
        ```powershell
-       Get-MgUser -All | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+       Get-MgUser -All -Property UserPrincipalName, PasswordPolicies | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
        ```
 
 ### Set a password to expire
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 
 1. Run one of the following commands for either an individual user or for all users:
 
@@ -162,7 +182,7 @@ After the module is installed, use the following steps to complete each task as 
 
 ### Set a password to never expire
 
-1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) using a *Global Administrator* or *User Administrator* account.
+1. Open a PowerShell prompt and [connect to your Microsoft Entra tenant](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 1. Run one of the following commands for either an individual user or for all users:
 
    * To set the password of one user to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check:
@@ -184,4 +204,4 @@ After the module is installed, use the following steps to complete each task as 
 
 To get started with SSPR, see [Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset](tutorial-enable-sspr.md).
 
-If you or users have problems with SSPR, see [Troubleshoot self-service password reset](./troubleshoot-sspr.md)
+If you or users have problems with SSPR, see [Troubleshoot self-service password reset](./troubleshoot-sspr.md).

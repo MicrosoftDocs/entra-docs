@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect: Features in preview'
 description: This topic describes in more detail features which are in preview in Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: c75cd8cf-3eff-4619-bbca-66276757cc07
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -22,7 +22,7 @@ This topic describes how to use features currently in preview.
 
 ## Microsoft Entra Connect Sync V2 endpoint API
 
-We've deployed a new endpoint (API) for Microsoft Entra Connect that improves the performance of the synchronization service operations to Microsoft Entra ID. By utilizing the new V2 endpoint, you'll experience noticeable performance gains on export and import to Microsoft Entra ID. This new endpoint also supports syncing groups with up to 250k members. Using this endpoint also allows you to write back Microsoft 365 unified groups, with no maximum membership limit, to your on-premises Active Directory, when group writeback is enabled. For more information see [Microsoft Entra Connect Sync V2 endpoint API](how-to-connect-sync-endpoint-api-v2.md).
+We've deployed a new endpoint (API) for Microsoft Entra Connect that improves the synchronization service operations performance for Microsoft Entra ID. By utilizing the new V2 endpoint, you'll experience noticeable performance gains on export and import to Microsoft Entra ID. This new endpoint also supports syncing groups with up to 250k members. Using this endpoint also allows you to write back Microsoft 365 unified groups, with no maximum membership limit, to your on-premises Active Directory, when group writeback is enabled. For more information, see [Microsoft Entra Connect Sync V2 endpoint API](how-to-connect-sync-endpoint-api-v2.md).
 
 ## User writeback
 > [!IMPORTANT]

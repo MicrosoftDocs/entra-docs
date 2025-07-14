@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Signiant Media Shuttle
+title: Configure Signiant Media Shuttle for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Signiant Media Shuttle.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/29/2023
-ms.author: jeedes
+ms.date: 05/20/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Signiant Media Shuttle so that I can control who has access to Signiant Media Shuttle, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Signiant Media Shuttle
+# Configure Signiant Media Shuttle for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Signiant Media Shuttle with Microsoft Entra ID. Media Shuttle is a solution for securely moving large files and data sets to, and from, cloud-based or on-premises storage. Transfers are accelerated and can be up to hundreds of times faster than FTP. 
 
@@ -33,7 +33,7 @@ You must configure and test Microsoft Entra single sign-on for Signiant Media Sh
 To integrate Microsoft Entra ID with Signiant Media Shuttle, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A Signiant Media Shuttle subscription with a SAML Web SSO license, and access to the IT and Operations Administration Consoles.
 
@@ -62,7 +62,7 @@ You can also use the [Enterprise App Configuration Wizard](https://portal.office
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Signiant Media Shuttle** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Signiant Media Shuttle** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -92,13 +92,13 @@ Complete the following steps to enable Microsoft Entra single sign-on.
    | Portal Level | `https://<PORTALNAME>.mediashuttle.com/auth` |
 
 	> [!Note]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Signiant Media Shuttle support team](mailto:support@signiant.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Signiant Media Shuttle support team](mailto:support@signiant.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
 
 1. Your Signiant Media Shuttle application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example. The default value of **Unique User Identifier** is **user.userprincipalname** but Signiant Media Shuttle expects to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -112,7 +112,7 @@ To add Microsoft Entra Metadata in Media Shuttle:
 
 2. On the Security page, in the Identity Provider Metadata field, paste the **App Federation Metadata Url** which you've copied.
 
-3. Click **Save**.
+3. Select **Save**.
 
 Once you have set up Microsoft Entra ID for Media Shuttle, assigned users and groups can sign in to Media Shuttle portals through single sign-on using Microsoft Entra authentication.
 
@@ -120,23 +120,23 @@ Once you have set up Microsoft Entra ID for Media Shuttle, assigned users and gr
 
 In this section, a user called Britta Simon is created in Signiant Media Shuttle. Signiant Media Shuttle supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Signiant Media Shuttle, a new one is created after authentication.
 
-If **Auto-add SAML authenticated members to this portal** is not enabled as part of the SAML configuration, you must add users through the **Portal Administration** console at `https://<PORTALNAME>.mediashuttle.com/admin`.
+If **Auto-add SAML authenticated members to this portal** isn't enabled as part of the SAML configuration, you must add users through the **Portal Administration** console at `https://<PORTALNAME>.mediashuttle.com/admin`.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Signiant Media Shuttle Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Signiant Media Shuttle Sign-on URL where you can initiate the login flow. 
 
 * Go to Signiant Media Shuttle Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Signiant Media Shuttle tile in the My Apps, this will redirect to Signiant Media Shuttle Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Signiant Media Shuttle tile in the My Apps, this option redirects to Signiant Media Shuttle Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Signiant Media Shuttle you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

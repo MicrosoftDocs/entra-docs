@@ -3,38 +3,44 @@ title: Migrate from ADAL to MSAL recommendation
 description: Learn why you should migrate from the Azure Active Directory Authentication Library to the Microsoft Authentication Libraries.
 
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/21/2023
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: jamesmantu
+
+# Customer intent: As an IT admin, I need to know what services are using ADAL so I can migrate them to MSAL.
 ---
 
 # Microsoft Entra recommendation: Migrate from the Azure Active Directory Authentication Library to the Microsoft Authentication Libraries
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to migrate from the Azure Active Directory Authentication Library (ADAL) to the Microsoft Authentication Libraries. This recommendation is called `AdalToMsalMigration` in the recommendations API in Microsoft Graph. 
+This article covers the recommendation to migrate from the Azure Active Directory Authentication Library (ADAL) to the Microsoft Authentication Libraries (MSAL). This recommendation is called `adalToMsalMigration` in the recommendations API in Microsoft Graph. 
 
 ## Description
 
-ADAL is currently slated for end-of-support on June 30, 2023. We recommend that customers migrate to Microsoft Authentication Libraries (MSAL), which replaces ADAL. 
+The **Migrate from ADAL to MSAL** recommendation is created to raise awareness and alert you about all applications using ADAL within your tenant. This recommendation is triggered for tenants with applications using ADAL. It labels any application that requests a token via ADAL as an "ADAL application," including those applications using both ADAL and MSAL.
 
-This recommendation shows up if your tenant has applications that still use ADAL. The service marks any application in your tenant that makes a token request from the ADAL as an ADAL application. Applications that use both ADAL and MSAL are marked as ADAL applications.
+Azure Active Directory Authentication Library (ADAL) has been deprecated. We strongly recommend migrating to the Microsoft Authentication Library (MSAL), which replaces ADAL. Microsoft **no longer releases new features and security fixes on ADAL**. Applications using ADAL won't be able to utilize the latest security features, leaving them vulnerable to future security threats. If you have existing applications that use ADAL, be sure to [migrate them to MSAL](../../identity-platform/msal-migration.md). 
 
-When an application is identified as an ADAL application, each day the recommendation looks back 30 days for any new ADAL requests from applications within the tenant. If an ADAL recommendation doesn't send any new ADAL requests for 30 days, the recommendation is marked as completed. When all applications are completed, the recommendation status changes to completed. If a new ADAL request is detected for an application that was completed, the status changes back to active.
+## How it works
+
+The system checks daily for new ADAL token requests over the past 30 days. If an application makes no new requests for 30 days, the recommendation status is marked as completed. The overall recommendation status updates to "completed" once all applications meet this criterion. If a new ADAL request is detected for a previously completed application, the status reverts back to "active."
 
 ## Value 
 
-MSAL is designed to enable a secure solution without developers having to worry about the implementation details. MSAL simplifies how tokens are acquired, managed, cached, and refreshed. MSAL also uses best practices for resilience. For more information on migrating to MSAL, see [Migrate applications to MSAL](~/identity-platform/msal-migration.md).
-
-Existing apps that use ADAL will continue to work after the end-of-support date.
+MSAL is designed to enable a secure solution without developers having to worry about the implementation details. MSAL simplifies how tokens are acquired, managed, cached, and refreshed. MSAL also uses best practices for resilience. For more information on MSAL supported scenarios, see [Migrate applications to MSAL](../../identity-platform/msal-migration.md#why-switch-to-msal).
 
 ## Action plan
 
-The first step to migrating your apps from ADAL to MSAL is to identify all applications in your tenant that are currently using ADAL. You can identify your apps programmatically with the Microsoft Graph API or the Microsoft Graph PowerShell SDK. The steps for the Microsoft Graph PowerShell SDK are provided in the Recommendation details in the Microsoft Entra admin center.
+To identify and get details of all applications in your tenant that are currently using ADAL, you can use Sign-ins Workbook. To get the list of all apps programmatically, you can also use Microsoft Graph API or the Microsoft Graph PowerShell SDK.
+
+### [Sign-ins Workbook](#tab/sign-ins-Workbook)
+
+The sign-ins Workbook in the Microsoft Entra admin center consolidates logs from various types of sign-in events, including interactive, non-interactive, and service principal sign-ins. This aggregation offers detailed insights into the usage of ADAL applications across your tenant to help you fully understand and manage migration of your ADAL applications. For a more detailed analysis and deeper investigation of ADAL app sign-in data, you can enable the [Microsoft Entra sign-ins workbook](../../identity-platform/howto-get-list-of-all-auth-library-apps.md) in your tenant. This tool supports the migration by providing comprehensive sign-in data insights.
 
 ### [Microsoft Graph API](#tab/Microsoft-Graph-API)
 
@@ -43,9 +49,8 @@ You can use Microsoft Graph to identify apps that need to be migrated to MSAL. T
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **GET** as the HTTP method from the dropdown.
 1. Set the API version to **beta**.
-1. Run the following query in Microsoft Graph, replacing the `<TENANT_ID>` placeholder with your tenant ID. This query returns a list of the impacted resources in your tenant.
-    -  `https://graph.microsoft.com/beta/directory/recommendations/<TENANT_ID>_Microsoft.Identity.IAM.Insights.AdalToMsalMigration/impactedResources`
-
+1. Run the following query in Microsoft Graph, replacing the `{tenantId}` placeholder with your tenant ID. This query returns a list of the impacted resources in your tenant.
+    -  `https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_adalToMsalMigration/impactedResources`
 
 The following response provides the details of the impacted resources using ADAL:
 
@@ -53,7 +58,7 @@ The following response provides the details of the impacted resources using ADAL
 {
     "id": "<APPLICATION_ID>",
     "subjectId": "<APPLICATION_ID>",
-    "recommendationId": "TENANT_ID_Microsoft.Identity.IAM.Insights.AdalToMsalMigration",
+    "recommendationId": "TENANT_ID_Microsoft.Identity.IAM.Insights.adalToMsalMigration",
     "resourceType": "app",
     "addedDateTime": "2023-03-29T09:29:01.1708723Z",
     "postponeUntilDateTime": null,
@@ -62,8 +67,7 @@ The following response provides the details of the impacted resources using ADAL
     "displayName": "sample-adal-app",
     "owner": null,
     "rank": 1,
-    "portalUrl": "
-df.onecloud.azure-test.net/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Branding/appId/{0}"
+    "portalUrl": "df.onecloud.azure-test.net/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Branding/appId/{0}",
     "apiUrl": null,
     "status": "completedBySystem",
     "additionalDetails": [
@@ -82,7 +86,7 @@ You can run the following set of commands in Windows PowerShell. These commands 
 1. Open Windows PowerShell as an administrator.
 
 1. Connect to Microsoft Graph:
-    - `Connect-MgGraph-Tenant <YOUR_TENANT_ID>`
+    - `Connect-MgGraph -Tenant {tenantId}`
 
 1. Select your profile:
     - `Select-MgProfile beta`
@@ -90,37 +94,39 @@ You can run the following set of commands in Windows PowerShell. These commands 
 1. Get a list of your recommendations:
     - `Get-MgDirectoryRecommendation | Format-List`
 
-1. Update the code for your apps using the instructions in [How to migrate to MSAL](~/identity-platform/msal-migration.md#how-to-migrate-to-msal).
+1. Update the code for your apps using the instructions in [How to migrate to MSAL](../../identity-platform/msal-migration.md#how-to-migrate-to-msal).
 
 ---
 
-
 ## Frequently asked questions
 
-Review the following common questions as you work with the ADAL to MSAL recommendation.
+Review the following common questions as you work on ADAL to MSAL migration.
 
 ### Why does it take 30 days to change the status to completed?
 
 To reduce false positives, the service uses a 30 day window for ADAL requests. This way, the service can go several days without an ADAL request and not be falsely marked as completed. 
 
-### How were ADAL applications identified before the recommendation was released?
-
-The [Microsoft Entra sign-ins workbook](~/identity-platform/howto-get-list-of-all-auth-library-apps.md) was an alternative method to identify these apps. The workbook is still available to you, but using the workbook requires streaming sign-in logs to Azure Monitor first. The ADAL to MSAL recommendation works out of the box. Plus, the sign-ins workbook doesn't capture Service Principal sign-ins, while the recommendation does.
-
-### Why is the number of ADAL applications different in the workbook and the recommendation?
-
-Because the recommendation captures Service Principal sign-ins and the workbook doesn't, the recommendation may show more ADAL applications.
-
 ### How do I identify the owner of an application in my tenant?
 
-You can locate owner from the recommendation details. Select the resource, which takes you to the application details. Select **Owners** from the navigation menu.
+You can locate the owner from the recommendation details. Select the resource, which takes you to the application details. Go to **Manage** > **Owners** to view the current owners. Viewing the owners requires at least the [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 
 ### Can the status change from *completed* to *active*?
 
-Yes. If an application was marked as completed - so no ADAL requests were made during the 30 day window - that application would be marked as complete. If the service detects a new ADAL request, the status changes back to *active*.
+Yes. If an application was marked as completed - so no ADAL requests were made during the 30 day window - that application would be marked as complete. If the service detects a new ADAL request, the status changes back to *active*. The system updates the status to *active* or *completed*. This status can't be manually changed.
 
-## Next steps
+### How can I integrate  Microsoft Entra sign-ins workbook?
+You can find the detailed steps in the [Microsoft Entra sign-ins workbook](../../identity-platform/howto-get-list-of-all-auth-library-apps.md). 
 
-- [Review the Microsoft Entra recommendations overview](overview-recommendations.md)
+### Why is the number of ADAL applications different in the sign-ins workbook and the recommendation?
+
+- **Aggregated Data  vs. Transactional Data:** The recommendation aggregates data over the last 30 days, providing a summarized view of application activities. Conversely, the sign-ins workbook details each sign-in request as a transaction, which allows for a more detailed analysis.
+
+- **Time Frame Flexibility:** The sign-ins workbook data can be filtered from as recently as the last 30 minutes to up to 30 days. This flexibility in selecting the time frame can lead to variations in the application count, potentially skewing the results.
+
+- **Access to Historical Data:** Viewing data older than 7 days in the sign-ins workbook requires a Microsoft Entra ID P1 or P2 tenant subscription. This requirement affects the volume of historical data accessible compared to the aggregated data in the recommendation.
+
+## Related content
+
+- [Get a list of apps using ADAL in your tenant](../../identity-platform/howto-get-list-of-all-auth-library-apps.md)
 - [Learn how to use Microsoft Entra recommendations](howto-use-recommendations.md)
 - [Explore the Microsoft Graph API properties for recommendations](/graph/api/resources/recommendation)

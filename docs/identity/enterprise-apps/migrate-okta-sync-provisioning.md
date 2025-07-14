@@ -4,14 +4,12 @@ description: Migrate user provisioning from Okta to Microsoft Entra ID. See how 
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
-
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 12/04/2024
 ms.author: gasinh
 ms.subservice: enterprise-apps
-ms.custom: kr2b-contr-experiment, not-enterprise-apps, has-azure-ad-ps-ref
-
-#customer intent: As an IT admin currently using Okta for user provisioning, I want to migrate user provisioning to Microsoft Entra Connect synchronization, so that I can provision users into Microsoft Entra ID and Office 365.
+ms.custom: kr2b-contr-experiment, not-enterprise-apps, no-azure-ad-ps-ref, sfi-image-nochange
+#customer intent: I'm an IT admin using Okta for user provisioning. I want to migrate user provisioning to Microsoft Entra Connect synchronization, so I can add users into Microsoft Entra ID and Office 365.
 ---
 
 # Tutorial: Migrate Okta sync provisioning to Microsoft Entra Connect synchronization
@@ -36,36 +34,29 @@ When you synchronize users, use a Microsoft Entra Connect server if your organiz
 - Support for more than 150,000 objects
 - Support for writeback
 
-To use Microsoft Entra Connect, you need to sign in with one of the following roles: Global Administrator, or Hybrid Identity Administrator.
+To use Microsoft Entra Connect, you need to sign in with a Hybrid Identity Administrator role.
 
 >[!NOTE]
 >Take all prerequisites into consideration when you install Microsoft Entra Connect or Microsoft Entra cloud provisioning. Before you continue with installation, see [Prerequisites for Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-prerequisites.md).
 
 ## Confirm ImmutableID attribute synchronized by Okta
 
-The ImmutableID attribute ties synchronized objects to their on-premises counterparts. Okta takes the Active Directory objectGUID of an on-premises object and converts it to a Base64-encoded string. By default, it then stamps that string to the ImmutableID field in Microsoft Entra ID.
+The ImmutableID attribute ties synchronized objects to their on-premises counterparts. Okta takes the Active Directory objectGUID of an on-premises object and converts it to a Base-64-encoded string. By default, it then stamps that string to the ImmutableID field in Microsoft Entra ID.
 
-You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you've never used the Microsoft Graph PowerShell module, run
-`Install-Module AzureAD` in an administrative session before you run the following commands:
+You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run:
 
-```Powershell
-Import-Module AzureAD
-Connect-MgGraph
-```
+ `Install-Module Microsoft.Graph -Scope CurrentUser -Repository PSGallery -Force` in an administrative session before you run the following commands:
+ 
+ ```Powershell
+ Connect-MgGraph
+ ```
 
 If you have the module, a warning might appear to update to the latest version.
 
-1. Import the module after it's installed.
+1. Import the installed module.
 2. In the authentication window, sign in as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-
-   ![Screenshot of the Microsoft Graph PowerShell window. The install-module, import-module, and connect commands are visible with their output.](./media/migrate-okta-sync-provisioning/import-module.png)
-
 3. Connect to the tenant.
 4. Verify ImmutableID value settings. The following example is the default of converting the objectGUID into the ImmutableID.
-
-   ![Screenshot of the Microsoft Graph PowerShell window. The Get-AzureADUser command is visible. Its output includes the UserPrincipalName and the ImmutableId.](./media/migrate-okta-sync-provisioning/okta-default-objectid.png)
-
-
 5. Manually confirm the conversion from objectGUID to Base64 on-premises. To test an individual value, use these commands:
 
    ```PowerShell
@@ -74,29 +65,23 @@ If you have the module, a warning might appear to update to the latest version.
    [system.convert]::ToBase64String(([GUID]$objectGUID).ToByteArray())
    ```
 
-   ![Screenshot of the Azure AD PowerShell window. The commands converting an objectGUID to an ImmutableID appear with output.](./media/migrate-okta-sync-provisioning/manual-objectguid.png)
-
 ## ObjectGUID mass-validation methods
 
 Before you move to Microsoft Entra Connect, it's critical to validate that the ImmutableID values in Microsoft Entra ID match their on-premises values.
 
 The following command gets on-premises Microsoft Entra users and exports a list of their objectGUID values and ImmutableID values already calculated to a CSV file.
 
-1. Run this command in Microsoft Graph PowerShell on an on-premises domain controller:
-
+1. Run the following command in Microsoft Graph PowerShell on an on-premises domain controller:
 
    ```PowerShell
-   Get-MgUser -Filter * -Properties objectGUID | Select-Object
+   Get-ADUser -Filter * -Properties objectGUID | Select-Object
    UserPrincipalName, Name, objectGUID, @{Name = 'ImmutableID';
    Expression = {
    [system.convert]::ToBase64String((GUID).tobytearray())
    } } | export-csv C:\Temp\OnPremIDs.csv
    ```
 
-   ![Screenshot of a .csv file with sample output data. Columns include UserPrincipalName, Name, objectGUID, and ImmutableID.](./media/migrate-okta-sync-provisioning/domain-controller.png)
-
-1. Run this command in a Microsoft Graph PowerShell session to list the synchronized values:
-
+2. Run the following command in a Microsoft Graph PowerShell session to list the synchronized values:
 
    ```powershell
    Get-MgUser -all $true | Where-Object {$_.dirsyncenabled -like
@@ -105,8 +90,6 @@ The following command gets on-premises Microsoft Entra users and exports a list 
    [GUID][System.Convert]::FromBase64String($_.ImmutableID) } },
    ImmutableID | export-csv C:\\temp\\AzureADSyncedIDS.csv
    ```
-
-   ![Screenshot of a .csv file with sample output data. Columns include UserPrincipalName, objectGUID, and ImmutableID.](./media/migrate-okta-sync-provisioning/powershell.png)
 
 3. After both exports, confirm user ImmutableID values match.
 
@@ -122,68 +105,43 @@ After you prepare your list of source and destination targets, install a Microso
 1. Download and install Microsoft Entra Connect on a server. See, [Custom installation of Microsoft Entra Connect](~/identity/hybrid/connect/how-to-connect-install-custom.md).
 2. In the left panel, select **Identifying users**.
 3. On the **Uniquely identifying your users** page, under **Select how users should be identified with Microsoft Entra ID**, select **Choose a specific attribute**. 
-4. If you haven't modified the Okta default, select **mS-DS-ConsistencyGUID**.
+4. If you didn't modify the Okta default, select **mS-DS-ConsistencyGUID**.
 
    >[!WARNING]
-   >This step is critical. Ensure the attribute you select for a source anchor currently populates your Microsoft Entra users. If you select the wrong attribute, uninstall and reinstall Microsoft Entra Connect to reselect this option.
+   >This step is critical. Ensure the attribute you select for a source anchor populates your Microsoft Entra users. If you select the wrong attribute, uninstall and reinstall Microsoft Entra Connect to reselect this option.
    
-   ![Screenshot of the Microsoft Entra Connect window. The page is titled Uniquely identifying your users, and the mS-DS-ConsistencyGuid attribute is selected.](./media/migrate-okta-sync-provisioning/consistency-guid.png)
-
 5. Select **Next**.
 6. In the left panel, select **Configure**.
 7. On the **Ready to configure** page, select **Enable staging mode**. 
 8. Select **Install**.
-
-   ![Screenshot of the Microsoft Entra Connect window. The page is titled Ready to configure, and the Enable staging mode checkbox is selected.](./media/migrate-okta-sync-provisioning/enable-staging-mode.png)
-
 9. Verify the ImmutableID values match.
 10. When the configuration is complete, select **Exit**.
 11. Open **Synchronization Service** as an administrator.
-
-   ![Screenshot of the Synchronization Service shortcut menus, with More and Run as administrator selected.](./media/migrate-okta-sync-provisioning/open-sync-service.png)
-
 12. Find the **Full Synchronization** to the domain.onmicrosoft.com connector space. 
 13. Confirm there are users under the **Connectors with Flow Updates** tab.
-
-   ![Screenshot of the Synchronization Service window. The Connectors with Flow Updates tab is selected.](./media/migrate-okta-sync-provisioning/connector-flow-update.png)
-
 14. Verify no pending deletions in the export. 
 15. Select the **Connectors** tab.
 16. Highlight the domain.onmicrosoft.com connector space. 
 17. Select **Search Connector Space**.
-
-   ![Screenshot of the Synchronization Service window. The Search Connector Space action is selected.](./media/migrate-okta-sync-provisioning/search-connector-space.png)
-
 18. In the **Search Connector Space** dialog, under **Scope**, select **Pending Export**.
-
-   ![Screenshot of the Search Connector Space dialog. In the Scope list, Pending Export is selected.](./media/migrate-okta-sync-provisioning/pending-export.png)
-
 19. Select **Delete**.
 20. Select **Search**. If all objects match, no matching records appear for **Deletes**. 
 21. Record objects pending deletion and their on-premises values.
-
-   ![Screenshot of the Search Connector Space dialog. In the search results, Text is highlighted indicating no matching records.](./media/migrate-okta-sync-provisioning/delete-matching-records.png)
-
 22. Clear **Delete**.
 23. Select **Add**.
 24. Select **Modify**. 
 25. Select **Search**. 
 26. Update functions appear for users being synchronized to Microsoft Entra ID via Okta. Add new objects Okta isn't syncing, which are in the organizational unit (OU) structure selected during Microsoft Entra Connect installation.
-
-   ![Screenshot of the Search Connector Space dialog. In the search results, seven records appear.](./media/migrate-okta-sync-provisioning/add-new-object.png)
-
 27. To see what Microsoft Entra Connect communicates with Microsoft Entra ID, double-click an update.
 
    > [!NOTE]
-  > If there are **add** functions for a user in Microsoft Entra ID, their on-premises account doesn't match the cloud account. AD Connect creates a new object and records new and unexpected adds. 
+   > If there are **add** functions for a user in Microsoft Entra ID, their on-premises account doesn't match the cloud account. Entra Connect creates a new object and records new and unexpected adds. 
 
 28. Before you exit the staging mode, correct the ImmutableID value in Microsoft Entra ID.
 
 In this example, Okta stamped the **mail** attribute to the user's account, although the on-premises value wasn't accurate. When Microsoft Entra Connect takes over the account, the **mail** attribute is deleted from the object.
 
 29. Verify updates include attributes expected in Microsoft Entra ID. If multiple attributes are being deleted, you can populate on-premises AD values before you remove the staging mode.
-
-   ![Screenshot of the Connector Space Object Properties window. User attributes appear.](./media/migrate-okta-sync-provisioning/on-premises-values.png)
 
    >[!NOTE]
    >Before you continue, ensure user attributes are syncing and appear on the **Pending Export** tab. If they're deleted, ensure the ImmutableID values match and the user is in a selected OU for synchronization.
@@ -231,40 +189,24 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 
 1. From the desktop, run the installation wizard from the desktop.
 2. Select **Configure**.
-
-   ![Screenshot of the Microsoft Entra Connect window. The welcome page appears with a Configure button.](./media/migrate-okta-sync-provisioning/connect-server.png)
-
 3. Select **Configure staging mode** 
 4. Select **Next**. 
-5. Enter the credentials of the Global administrator account for your environment.
-
-   ![Screenshot of the Microsoft Entra Connect window. Tasks is selected. On the Additional tasks page, Configure staging mode is selected.](./media/migrate-okta-sync-provisioning/configure-staging-mode.png)
-
+5. Enter the credentials of the Hybrid Identity Administrator account for your environment.
 6. Clear **Enable staging mode**.
 7. Select **Next**.
-
-   ![Screenshot of the Microsoft Entra Connect window. On the left, Staging Mode is selected. On the Configure staging mode page, nothing is selected.](./media/migrate-okta-sync-provisioning/uncheck-enable-staging-mode.png)
-
 8. Select **Configure**.
-
-   ![Screenshot of the Ready to configure page in Microsoft Entra Connect. On the left, Configure is selected. A Configure button is also visible.](./media/migrate-okta-sync-provisioning/ready-to-configure.png)
-
 9. After configuration, open the **Synchronization Service** as an administrator. 
 10. On the domain.onmicrosoft.com connector, view the **Export**. 
 11. Verify additions, updates, and deletions.
-
-   ![Screenshot of the Synchronization Service window. An export line is selected, and export statistics appear.](./media/migrate-okta-sync-provisioning/verify-sync-service.png)
-
 12. Migration is complete. Rerun the installation wizard to update and expand Microsoft Entra Connect features.
 
 ## Enable cloud sync agents
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agent can synchronize objects.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-2. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**. 
+2. Browse to **Entra ID** > **Entra Connect** > **Connect Sync**. 
 3. Select **Configuration** profile.
 4. Select **Enable**.
 5. Return to the provisioning menu and select **Logs**.
@@ -276,4 +218,4 @@ After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agen
 
 - [Tutorial: Migrate your applications from Okta to Microsoft Entra ID](migrate-applications-from-okta.md)
 - [Tutorial: Migrate Okta federation to Microsoft Entra ID managed authentication](migrate-okta-federation.md)
-- [Tutorial: Migrate Okta sign-on policies to Microsoft Entra Conditional Access](./migrate-okta-sign-on-policies-conditional-access.md)
+- [Tutorial: Migrate Okta sign-on policies to Conditional Access](./migrate-okta-sign-on-policies-conditional-access.md)

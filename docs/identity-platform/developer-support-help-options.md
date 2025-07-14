@@ -4,7 +4,6 @@ description: Learn where to get help and find answers to your questions as you b
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref
 ms.date: 05/31/2023
 ms.service: identity-platform
 
@@ -22,11 +21,11 @@ If you need an answer to a question or help in solving a problem not covered in 
     <img alt='Azure support' src='./media/common/logo_azure.svg'>
 </div>
 
-Explore the range of [Azure support options and choose the plan](https://azure.microsoft.com/support/plans) that best fits you. There are two options to create and manage support requests in the Microsoft Entra admin center:
+Explore the range of [Azure support options and choose the plan](https://azure.microsoft.com/support/plans) that best fits you. The following options for creating and managing support requests are available in the Microsoft Entra admin center:
 
 - If you already have an Azure Support Plan, [open a support request here](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
 
-- If you're using Microsoft Entra ID for customers (preview), the support request feature is currently unavailable in customer tenants. However, you can use the **Give Feedback** link on the **New support request** page to provide feedback. Or, you can switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
+- If you're using Microsoft Entra External ID in an external tenant, the support request feature is currently unavailable for external tenant technical issues. However, you can use the **Give Feedback** link on the **New support request** page to provide feedback. Or, you can switch to your Microsoft Entra workforce tenant and [open a support request](https://entra.microsoft.com/#view/Microsoft_Azure_Support/NewSupportRequestV3Blade/callerName/ActiveDirectory/issueType/technical).
 
 - If you're not an Azure customer, you can open a support request with [Microsoft Support for business](https://support.serviceshub.microsoft.com/supportforbusiness).
 
@@ -44,9 +43,9 @@ If you can't find an answer to your problem by searching Microsoft Q&A, submit a
 
 | Component/area                                            | Tags                                                                                         |
 | ----------------------------------------------------------| ---------------------------------------------------------------------------------------------|
-| Microsoft Entra ID for customers / External Identities              | [Microsoft Entra ID for customers](https://aka.ms/microsoftentraexternalid)              |
-| Microsoft Entra B2B / External Identities                        | [Microsoft Entra External ID](/answers/tags/231/azure-active-directory-b2c)   |
-| Azure AD B2C                                              | [Microsoft Entra External ID](/answers/tags/231/azure-active-directory-b2c)   |
+| Microsoft Entra External ID / External Identities              | [Microsoft Entra External ID](https://aka.ms/microsoftentraexternalid)              |
+| Microsoft Entra B2B / External Identities                        | [Microsoft Entra External ID](/answers/tags/438/entra-external-id)   |
+| Azure AD B2C                                              | [Microsoft Entra External ID](/answers/tags/438/entra-external-id)   |
 | All other Microsoft Entra areas                    | [Microsoft Entra ID](/answers/tags/49/azure-active-directory)                             |
 | Azure RBAC                                                | [Azure Role-Based access control](/answers/tags/189/azure-rbac)                              |
 | Azure Key Vault                                           | [Azure Key Vault](/answers/tags/5/azure-key-vault)                                           |

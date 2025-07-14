@@ -9,10 +9,10 @@ metadata:
   ms.service: entra-id
   ms.subservice: managed-identities
   ms.topic: landing-page
-  author: barclayn
-  ms.author: barclayn
-  manager: amycolannino
-  ms.date: 11/09/2023
+  author: SHERMANOUKO
+  ms.author: shermanouko
+  manager: CelesteDG
+  ms.date: 01/15/2025
   
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
@@ -53,14 +53,22 @@ landingContent:
             url: how-to-use-vm-sign-in.md
           - text: Use with Azure SDK
             url: how-to-use-vm-sdk.md
+            
+  # Card
+  - title: Configuring applications
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Configure an application to trust a managed identity (preview)
+            url: /entra/workload-id/workload-identity-federation-config-app-trust-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
   # Card
   - title: Assign a managed identity access to another Azure resource
     linkLists:
       - linkListType: how-to-guide
         links:
           - text: Portal
-            url: howto-assign-access-portal.md
+            url: how-to-configure-managed-identities-scale-sets.md?pivots=identity-mi-methods-azp
           - text: CLI
-            url: howto-assign-access-cli.md
+            url: how-to-assign-access-azure-resource.md?pivots=identity-mi-access-cli
           - text: PowerShell
-            url: howto-assign-access-powershell.md
+            url: how-to-assign-access-azure-resource.md?pivots=identity-mi-access-powershell

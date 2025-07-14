@@ -2,13 +2,14 @@
 title: Security considerations for Microsoft Entra application proxy
 description: Covers security considerations for using Microsoft Entra application proxy
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 02/14/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # Security considerations for accessing apps remotely with Microsoft Entra application proxy
@@ -23,7 +24,7 @@ The following diagram shows how Microsoft Entra ID enables secure remote access 
 
 Microsoft Entra application proxy offers many security benefits. The list of benefits are:
 - Authenticated access
-- Conditional access
+- Conditional Access
 - Traffic termination
 - All outbound access
 - Cloud scale analytics and machine learning
@@ -56,9 +57,9 @@ Because Microsoft Entra application proxy is a reverse-proxy, all traffic to bac
 
 You don't need to open inbound connections to the corporate network.
 
-Application proxy connectors only use outbound connections to the Microsoft Entra application proxy service. There's no need to open firewall ports for incoming connections. Traditional proxies require a perimeter network (also known as *DMZ*, *demilitarized zone*, or *screened subnet*) and allow access to unauthenticated connections at the network edge. With application proxy, you don't need a perimeter network because all connections are outbound and take place over a secure channel.
+Private network connectors only use outbound connections to the Microsoft Entra application proxy service. There's no need to open firewall ports for incoming connections. Traditional proxies require a perimeter network (also known as *Demilitarized Zone (DMZ)*, or *screened subnet*) and allow access to unauthenticated connections at the network edge. With application proxy, you don't need a perimeter network because all connections are outbound and take place over a secure channel.
 
-For more information about connectors, see [Understand Microsoft Entra application proxy connectors](application-proxy-connectors.md).
+For more information about connectors, see [Understand Microsoft Entra private network connectors](application-proxy-connectors.md).
 
 ### Cloud-scale analytics and machine learning 
 
@@ -94,7 +95,7 @@ A flow between the connector and the application proxy service is established wh
 * A user accesses a published application.
 
 >[!NOTE]
->All communications occur over TLS, and they always originate at the connector to the application proxy service. The service is outbound only.
+>All communications occur using Transport Layer Security (TLS), and they always originate at the connector to the application proxy service. The service is outbound only.
 
 The connector uses a client certificate to authenticate to the application proxy service for nearly all calls. The only exception to this process is the initial setup step, where the client certificate is established.
 
@@ -103,7 +104,7 @@ The connector uses a client certificate to authenticate to the application proxy
 When the connector is first set up, the following flow events take place:
 
 1. The connector registration to the service happens as part of the installation of the connector. Users are prompted to enter their Microsoft Entra admin credentials. The token acquired from this authentication is then presented to the Microsoft Entra application proxy service.
-2. The application proxy service evaluates the token. It checks whether the user is a Global Administrator in the tenant. If the user isn't an administrator, the process is terminated.
+2. The application proxy service evaluates the token. It checks whether the user is at least an Application Administrator in the tenant. If the user isn't, the process is terminated.
 3. The connector generates a client certificate request and passes it, along with the token, to the application proxy service. The service in turn verifies the token and signs the client certificate request.
 4. The connector uses the client certificate for future communication with the application proxy service.
 5. The connector performs an initial pull of the system configuration data from the service using its client certificate, and it's now ready to take requests.
@@ -119,7 +120,7 @@ Whenever the application proxy service updates the configuration settings, the f
 
 ### Accessing published applications
 
-When users access a published application, the following events take place between the application proxy service and the application proxy connector:
+When users access a published application, the following events take place between the application proxy service and the private network connector:
 
 1. The service authenticates the user for the app
 2. The service places a request in the connector queue
@@ -171,4 +172,4 @@ Some processing of the application occurs at this time. For example, application
 
 ## Next steps
 - [Application proxy network topology](application-proxy-network-topology.md)
-- [Application proxy connectors](application-proxy-connectors.md)
+- [private network connectors](application-proxy-connectors.md)

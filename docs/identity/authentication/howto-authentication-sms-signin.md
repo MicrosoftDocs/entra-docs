@@ -1,24 +1,40 @@
 ---
 title: SMS-based user sign-in for Microsoft Entra ID
 description: Learn how to configure and enable users to sign-in to Microsoft Entra ID using SMS
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 06/18/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: anjusingh
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
 
-To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. SMS-based authentication lets users sign-in without providing, or even knowing, their user name and password. After their account is created by an identity administrator, they can enter their phone number at the sign-in prompt. They receive an SMS authentication code that they can provide to complete the sign-in. This authentication method simplifies access to applications and services, especially for Frontline workers.
+Entra SMS-based authentication allows users to sign in using only a registered phone number and a one-time passcode (OTP) sent via SMS, no username or password required. This is different from Entra SMS multi-factor authentication, which typically requires a username, password, and SMS as MFA method. This authentication method is primarily designed to simplify sign-in experience of fronline workers and not recommended for Information workers (IW).
 
-This article shows you how to enable SMS-based authentication for select users or groups in Microsoft Entra ID. For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
+Entra also has a public preview of an alternative approach for frontline-workers called [QR code authentication](concept-authentication-qr-code.md) that organizations may want to consider for frontline shared device scenarios.
+
+The rest of this article shows you how to enable SMS-based authentication as a first factor for select users or groups in Microsoft Entra ID. For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
 
 ## Before you begin
+
+Here are some important points before you start:
+
+- You should enable SMS authentication *only* for frontline workers. 
+- If you enable SMS authentication, make sure you follow best practices for using security controls for work or home access for frontline workers. For more information, see [Best practices to protect frontline workers](/entra/identity-platform/security-best-practices-for-frontline-workers).
+- If you enable SMS authentication for frontline workers, we suggest you to move to using QR code authentication (preview), which isn't phishable. For more information, see [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](/entra/identity/authentication/concept-authentication-qr-code).
+
+
+To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. SMS-based authentication lets users such as frontlone workers enter an SMS code as a first factor for sign in. Users don't need to provide, or even know, their user name and password. 
+
+After their account is created by an identity administrator, they can enter their phone number at the sign-in prompt. They receive an SMS authentication code that they can provide to complete the sign-in. This authentication method simplifies access to applications and services, especially for Frontline workers.
+
+
+## Prerequisites
 
 To complete this article, you need the following resources and privileges:
 
@@ -26,7 +42,7 @@ To complete this article, you need the following resources and privileges:
     * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A Microsoft Entra tenant associated with your subscription.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
-* You need *global administrator* privileges in your Microsoft Entra tenant to enable SMS-based authentication.
+* You need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role in your Microsoft Entra tenant to enable SMS-based authentication.
 * Each user that's enabled in the SMS authentication method policy must be licensed, even if they don't use it. Each enabled user must have one of the following Microsoft Entra ID, EMS, Microsoft 365 licenses:
     * [Microsoft 365 F1 or F3][m365-firstline-workers-licensing]
     * [Microsoft Entra ID P1 or P2][azure-ad-pricing]
@@ -42,6 +58,7 @@ Here are some known issues:
 * SMS-based authentication isn't supported for B2B accounts.
 * Federated users won't authenticate in the home tenant. They only authenticate in the cloud.
 * If a user's default sign-in method is a text or call to your phone number, then the SMS code or voice call is sent automatically during multifactor authentication. As of June 2021, some apps will ask users to choose **Text** or **Call** first. This option prevents sending too many security codes for different apps. If the default sign-in method is the Microsoft Authenticator app ([which we highly recommend](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/it-s-time-to-hang-up-on-phone-transports-for-authentication/ba-p/1751752)), then the app notification is sent automatically.
+* [Cross-tenant synchronization](/entra/identity/app-provisioning/known-issues?pivots=cross-tenant-synchronization) does not support users with SMS sign-in enabled. 
 
 
 ## Enable the SMS-based authentication method
@@ -56,13 +73,13 @@ There are three main steps to enable and use SMS-based authentication in your or
 First, let's enable SMS-based authentication for your Microsoft Entra tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** >  **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. From the list of available authentication methods, select **SMS**.
 
     ![Screenshot that shows how to select the SMS authentication method.](./media/howto-authentication-sms-signin/authentication-methods-policy.png)
 
 
-1. Click **Enable** and select **Target users**. You can choose to enable SMS-based authentication for *All users* or *Select users* and groups. 
+1. Select **Enable** and select **Target users**. You can choose to enable SMS-based authentication for *All users* or *Select users* and groups. 
    > [!NOTE]
    > To configure SMS-based authentication for first-factor (that is, to allow users to sign in with this method), check the **Use for sign-in** checkbox. Leaving this unchecked makes SMS-based authentication available for multifactor authentication and Self-Service Password Reset only.
 
@@ -80,7 +97,7 @@ Each user that's enabled in SMS authentication method policy must be licensed, e
 
 ## Set a phone number for user accounts
 
-Users are now enabled for SMS-based authentication, but their phone number must be associated with the user profile in Microsoft Entra ID before they can sign-in. The user can [set this phone number themselves](https://support.microsoft.com/account-billing/set-up-sms-sign-in-as-a-phone-verification-method-0aa5b3b3-a716-4ff2-b0d6-31d2bcfbac42) in *My Account*, or you can assign the phone number using the Microsoft Entra admin center. Phone numbers can be set by *global admins*, *authentication admins*, or *privileged authentication admins*.
+Users are now enabled for SMS-based authentication, but their phone number must be associated with the user profile in Microsoft Entra ID before they can sign-in. The user can [set this phone number themselves](https://support.microsoft.com/account-billing/set-up-sms-sign-in-as-a-phone-verification-method-0aa5b3b3-a716-4ff2-b0d6-31d2bcfbac42) in *My Account*, or you can assign the phone number using the Microsoft Entra admin center. Phone numbers can be set by those with at least the [Authentication Administrator](../role-based-access-control/permissions-reference.md#authentication-administrator) role.
 
 When a phone number is set for SMS-based sign-in, it's also then available for use with [Microsoft Entra multifactor authentication][tutorial-azure-mfa] and [self-service password reset][tutorial-sspr].
 
@@ -120,7 +137,7 @@ To test the user account that's now enabled for SMS-based sign-in, complete the 
 
 ## Troubleshoot SMS-based sign-in
 
-The following scenarios and troubleshooting steps can used if you have problems with enabling and using SMS-based sign-in. 
+You can use the following scenarios and troubleshooting steps if you have problems with enabling and using SMS-based sign-in. 
 For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
 
 
@@ -151,7 +168,7 @@ If you receive an error when you try to set a phone number for a user account in
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ~/fundamentals/sign-up-organization.md
-[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.md
+[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.yml
 [concepts-passwordless]: concept-authentication-passwordless.md
 [tutorial-azure-mfa]: tutorial-enable-azure-mfa.md
 [tutorial-sspr]: tutorial-enable-sspr.md

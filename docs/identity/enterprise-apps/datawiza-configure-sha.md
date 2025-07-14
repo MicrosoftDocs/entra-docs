@@ -9,8 +9,7 @@ ms.topic: tutorial
 ms.date: 01/30/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: kr2b-contr-experiment, not-enterprise-apps
-
+ms.custom: kr2b-contr-experiment, not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm a systems administrator, and I want to configure secure hybrid access (SHA) with Microsoft Entra ID and Datawiza. I need to enable single sign-on (SSO) and access controls for on-premises and cloud-hosted applications. My goal is to transition from legacy web access managers to Microsoft Entra ID without rewriting applications.
 ---
 
@@ -46,7 +45,7 @@ To get started, you need:
 
 * An Azure subscription
   * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/)
-* An [Microsoft Entra tenant](~/fundamentals/create-new-tenant.md) linked to the Azure subscription
+* A [Microsoft Entra tenant](~/fundamentals/create-new-tenant.md) linked to the Azure subscription
 * [Docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) are required to run DAP
   * Your applications can run on platforms, such as a virtual machine (VM) or bare metal
 * An on-premises or cloud-hosted application to transition from a legacy identity system to Microsoft Entra ID
@@ -56,7 +55,7 @@ To get started, you need:
 
 ## Configure Datawiza Cloud Management Console
 
-1. Sign in to [Datawiza Cloud Management Console](https://console.datawiza.com/) (DCMC).
+1. Sign in to [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com/).
 2. Create an application on DCMC and generate a key pair for the app: `PROVISIONING_KEY` and `PROVISIONING_SECRET`. 
 3. To create the app and generate the key pair, follow the instructions in [Datawiza Cloud Management Console](https://docs.datawiza.com/step-by-step/step2.html).
 4. Register your application in Microsoft Entra ID with [One Click Integration With Microsoft Entra ID](https://docs.datawiza.com/tutorial/web-app-azure-one-click.html).
@@ -116,7 +115,6 @@ To get started, you need:
 
 ## Next steps
 
-* [Tutorial: Configure Azure Active Directory B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 * [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and SSO to Oracle JD Edwards](datawiza-sso-oracle-jde.md)
 * [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and SSO to Oracle PeopleSoft](./datawiza-sso-oracle-peoplesoft.md)
 * [Tutorial: Configure Datawiza to enable Microsoft Entra multifactor authentication and SSO to Oracle Hyperion EPM](./datawiza-mfa-sso-oracle-hyperion-epm.md)

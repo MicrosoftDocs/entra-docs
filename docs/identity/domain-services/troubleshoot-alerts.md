@@ -2,13 +2,13 @@
 title: Common alerts and resolutions in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to resolve common alerts generated as part of the health status for Microsoft Entra Domain Services
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.assetid: 54319292-6aa0-4a08-846b-e3c53ecca483
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: troubleshooting
-ms.date: 09/15/2023
+ms.date: 02/19/2025
 ms.author: justinha
 ---
 # Known issues: Common alerts and resolutions in Microsoft Entra Domain Services
@@ -25,11 +25,13 @@ This article provides troubleshooting information for common alerts in Domain Se
 
 ### Resolution
 
-This error is usually caused when an Azure subscription is moved to a new Microsoft Entra directory and the old Microsoft Entra directory that's associated with Domain Services is deleted.
+When you move an Azure subscription to a new Microsoft Entra directory, it usually causes this error. Additionally, deleting the old Microsoft Entra directory associated with Domain Services also causes this error.
 
 This error is unrecoverable. To resolve the alert, [delete your existing managed domain](delete-aadds.md) and recreate it in your new directory. If you have trouble deleting the managed domain, [open an Azure support request][azure-support] for more troubleshooting help.
 
 ## AADDS101: Azure AD B2C is running in this directory
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 ### Alert message
 
@@ -62,7 +64,7 @@ Inside a virtual network, VMs can make requests to Azure resources in the same I
 > [!NOTE]
 > If you own the IP address range in the internet that is configured in your virtual network, this alert can be ignored. However, Microsoft Entra Domain Services can't commit to the [SLA](https://azure.microsoft.com/support/legal/sla/active-directory-ds/v1_0/) with this configuration since it can lead to unpredictable errors.
 
-To resolve this alert, delete your existing managed domain and recreate it in a virtual network with a private IP address range. This process is disruptive as the managed domain is unavailable and any custom resources you've created like OUs or service accounts are lost.
+To resolve this alert, delete your existing managed domain and recreate it in a virtual network with a private IP address range. This process is disruptive as the managed domain is unavailable and any custom resources you created like OUs or service accounts are lost.
 
 1. [Delete the managed domain](delete-aadds.md) from your directory.
 1. To update the virtual network IP address range, search for and select *Virtual network* in the Microsoft Entra admin center. Select the virtual network for Domain Services that incorrectly has a public IP address range set.
@@ -79,7 +81,7 @@ The managed domain's health automatically updates itself within two hours and re
 
 ### Alert message
 
-*Your Azure subscription associated with your managed domain has been deleted.  Microsoft Entra Domain Services requires an active subscription to continue functioning properly.*
+*Your Azure subscription associated with your managed domain has been deleted. Microsoft Entra Domain Services requires an active subscription to continue functioning properly.*
 
 ### Resolution
 
@@ -93,7 +95,7 @@ Domain Services requires an active subscription, and can't be moved to a differe
 
 ### Alert message
 
-*Your Azure subscription associated with your managed domain is not active.  Microsoft Entra Domain Services requires an active subscription to continue functioning properly.*
+*Your Azure subscription associated with your managed domain is not active. Microsoft Entra Domain Services requires an active subscription to continue functioning properly.*
 
 ### Resolution
 
@@ -112,7 +114,10 @@ When the managed domain is enabled again, the managed domain's health automatica
 
 ### Resolution
 
-Domain Services requires an active subscription, and can't be moved to a different subscription. If the Azure subscription that the managed domain was associated with is moved, move the subscription back to the previous directory, or [delete your managed domain](delete-aadds.md) from the existing directory and [create a replacement managed domain in the chosen subscription](tutorial-create-instance.md).
+Domain Services requires an active subscription, and can't be moved to a different subscription. If the Azure subscription that the managed domain was associated with is moved, you have two options:
+
+- Move the subscription back to the previous directory, or 
+- [Delete your managed domain](delete-aadds.md) from the existing directory and [create a replacement managed domain in the chosen subscription](tutorial-create-instance.md).
 
 ## AADDS109: Resources for your managed domain cannot be found
 
@@ -131,7 +136,7 @@ This alert is generated when one of these required resources is deleted. If the 
 1. In the health page, select the alert with the ID *AADDS109*.
 1. The alert has a timestamp for when it was first found. If that timestamp is less than 4 hours ago, the Azure platform may be able to automatically recreate the resource and resolve the alert by itself.
 
-    For different reasons, the alert may be older than 4 hours. In that case, you can [delete the managed domain](delete-aadds.md) and then [create a replacement managed domain](tutorial-create-instance.md) for an immediate fix, or you can open a support request to fix the instance. Depending on the nature of the problem, support may require a restore from backup.
+    For different reasons, the alert can be older than 4 hours. In that case, you can [delete the managed domain](delete-aadds.md) and then [create a replacement managed domain](tutorial-create-instance.md) for an immediate fix, or you can open a support request to fix the instance. Depending on the nature of the problem, support can require a restore from backup.
 
 
 ## AADDS110: The subnet associated with your managed domain is full
@@ -249,11 +254,15 @@ Review the [Domain Services Health](check-health.md) alert and see which Microso
 
 Then follow these steps to retry onboarding the custom attribute in the **Custom Attributes** page:
 
-1. Select the attributes that were unsuccessful, then click **Remove** and **Save**.
+1. Select the attributes that were unsuccessful, then select **Remove** and **Save**.
 1. Wait for the health alert to be removed, or verify that the corresponding attributes have been removed from the **AADDSCustomAttributes** OU from a domain-joined VM.
-1. Select **Add** and choose the desired attributes again, then click **Save**.
+    * **Note:** If the corresponding attributes are not removed from the **AADDSCustomAttributes** OU within a day:
+        1. Check that **Azure AD Domain Services Sync** manifest's _addIns_ section doesn't include corresponding attributes.
+            * By **Portal > App registrations > select "All applications" > "Azure AD Domain Services Sync" > Left blade > Manifest**
+        1. The AADDS DC Administrator can manually remove corresponding attributes from the **AADDSCustomAttributes** OU **if** the _addIns_ section doesn't include corresponding attributes. The alert should be cleared within two hours of manual deletion.
+1. Select **Add** and choose the desired attributes again, then select **Save**.
 
-Upon successful onboarding, Domain Services will back fill synchronized users and groups with the onboarded custom attribute values. The custom attribute values appear gradually, depending on the size of the tenant. To check the backfill status, go to [Domain Services Health](check-health.md) and verify the **Synchronization with Microsoft Entra ID** monitor timestamp has updated within the last hour.
+Upon successful onboarding, Domain Services back fills synchronized users and groups with the onboarded custom attribute values. The custom attribute values appear gradually, depending on the size of the tenant. To check the backfill status, go to [Domain Services Health](check-health.md) and verify the **Synchronization with Microsoft Entra ID** monitor timestamp has updated within the last hour.
 
 ## AADDS500: Synchronization has not completed in a while
 
@@ -268,7 +277,7 @@ Upon successful onboarding, Domain Services will back fill synchronized users an
 The following common reasons cause synchronization to stop in a managed domain:
 
 * Required network connectivity is blocked. To learn more about how to check the Azure virtual network for problems and what's required, see [troubleshoot network security groups](alert-nsg.md) and the [network requirements for Domain Services](network-considerations.md).
-*  Password synchronization wasn't set up or successfully completed when the managed domain was deployed. You can set up password synchronization for [cloud-only users](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) or [hybrid users from on-prem](tutorial-configure-password-hash-sync.md).
+*  Password synchronization wasn't set up or successfully completed when the managed domain was deployed. You can set up password synchronization for [cloud-only users](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) or [hybrid users from on-premises](tutorial-configure-password-hash-sync.md).
 
 ## AADDS501: A backup has not been taken in a while
 
@@ -315,7 +324,7 @@ When the managed domain is enabled again, the managed domain's health automatica
 
 ### Alert Message
 
-*Microsoft can’t manage the domain controllers for this managed domain due to unresolved health alerts \[IDs\]. This is blocking critical security updates as well as a planned migration to Windows Server 2019 for these domain controllers. Follow steps in the alert to resolve the issue. Failure to resolve this issue within 30 days will result in suspension of the managed domain.*
+*Microsoft can’t manage the domain controllers for this managed domain due to unresolved health alerts \[IDs\]. This is blocking critical security updates for these domain controllers. Follow steps in the alert to resolve the issue. Failure to resolve this issue within 30 days will result in suspension of the managed domain.*
 
 ### Resolution
 

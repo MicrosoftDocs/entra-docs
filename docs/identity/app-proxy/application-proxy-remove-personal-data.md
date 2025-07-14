@@ -2,13 +2,14 @@
 title: Remove personal data - Microsoft Entra application proxy
 description:  Remove personal data from connectors installed on devices for Microsoft Entra application proxy.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/14/2024
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: harshja
+ai-usage: ai-assisted
 ---
 
 # Remove personal data for Microsoft Entra application proxy
@@ -41,7 +42,7 @@ Use the following sections to remove personal data from connector event logs. Yo
 
 ### View or export specific data
 
-To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD application proxy connector\Trace`.
+To view or export specific data, search for related entries in each of the connector event logs. The logs are located at `C:\ProgramData\Microsoft\Microsoft AAD private network connector\Trace`.
 
 Since the logs are text files, you can use [findstr](/windows-server/administration/windows-commands/findstr) to search for text entries related to a user.  
 
@@ -58,13 +59,13 @@ To find personal data logged by an application that uses Kerberos Constrained De
 
 To delete specific data:
 
-1. Generate a new log file. Restart the Microsoft Entra application proxy connector service. The new log file enables you to delete or modify the old log files. 
+1. Generate a new log file. Restart the Microsoft Entra private network connector service. The new log file enables you to delete or modify the old log files. 
 1. Follow the [View or export specific data](#view-or-export-specific-data) process described previously to find information that needs to be deleted. Search all of the connector logs.
 1. Either delete the relevant log files or selectively delete the fields that contain personal data. You can also delete all old log files if you don’t need them anymore.
 
 ### Turn off connector logs
 
-One option to ensure the connector logs don't contain personal data is to turn off the log generation. To stop generating connector logs, remove the following highlighted line from `C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config`.
+One option to ensure the connector logs don't contain personal data is to turn off the log generation. To stop generating connector logs, remove the following highlighted line from `C:\Program Files\Microsoft Entra private network connector\MicrosoftEntraPrivateNetworkConnectorService.exe.config`.
 
 ![Shows a code snippet with the highlighted code to remove](./media/application-proxy-remove-personal-data/01.png)
 

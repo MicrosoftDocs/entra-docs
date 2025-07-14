@@ -25,8 +25,8 @@ When beginning your deployment plans, include your key stakeholders. Identify an
 |Sponsor|An enterprise senior leader with authority to approve or assign budget and resources. The sponsor is the connection between managers and the executive team.|
 |End users|The people for whom the service is implemented. Users can participate in a pilot program.|
 |IT Support Manager|Provides input on the supportability of proposed changes |
-|Identity architect or Azure Global Administrator|Defines how the change aligns with identity management infrastructure|
-|Application business owner |Owns the affected applications, which might include access management. Provides input on the user experience.
+|Identity architect |Defines how the change aligns with identity management infrastructure|
+|Application business owner |Owns the affected applications, which might include access management. Provides input on the user experience.|
 |Security owner|Confirms the change plan meets security requirements|
 |Compliance Manager|Ensures compliance with corporate, industry, or governmental requirements|
 

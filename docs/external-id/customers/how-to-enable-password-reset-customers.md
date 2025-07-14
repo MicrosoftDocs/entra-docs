@@ -1,23 +1,22 @@
 ---
 title: Enable self-service password reset
 description: Learn how to enable self-service password reset so your customers can reset their own passwords without admin assistance.
- 
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 02/29/2024
+ms.date: 12/05/2024
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As an it admin, I want to enable self-service password reset so my customers can reset their own passwords without admin assistance.
 ---
 
 # Enable self-service password reset
 
-Self-service password reset (SSPR) in Microsoft Entra ID for customers gives customers the ability to change or reset their password, with no administrator or help desk involvement. If a customer's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+Self-service password reset (SSPR) in Microsoft Entra External ID gives customers the ability to change or reset their password, with no administrator or help desk involvement. If a customer's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work.
 
 ## How does the password reset process work?
 
@@ -35,14 +34,14 @@ The following screenshots show the self-service password rest flow. From the app
 
 ## Prerequisites
 
-- If you haven't already created your own Microsoft Entra ID for customers tenant, create one now.
+- If you haven't already created your own external tenant, create one now.
 - If you haven't already created a User flow, [create one](how-to-user-flow-sign-up-sign-in-customers.md) now.
 
 ## Enable self-service password reset for customers
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the customer tenant you created earlier from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the external tenant you created earlier from the **Directories + subscriptions** menu.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. From the list of **User flows**, select the user flow you want to enable SSPR.
 1. Make sure that the sign-up user flow registers **Email with password** as an authentication method under **Identity providers**.
 
@@ -54,9 +53,9 @@ To enable self-service password reset, you need to enable the email one-time pas
 
    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
    
-   1. Browse to **Identity** > **Protection** > **Authentication methods**. 
+   1. Browse to **Entra ID** > **Authentication methods**. 
 
-   1. Under **Policies** > **Method** select **Email OTP (preview)**.
+   1. Under **Policies** > **Method** select **Email OTP**.
    
       :::image type="content" source="media/how-to-enable-password-reset-customers/authentication-methods.png" alt-text="Screenshot that shows authentication methods.":::
    
@@ -78,7 +77,7 @@ You can hide, show or customize the self-service password reset link on the sign
 
 1. Select **Review + save** and **Save** on the **Review** tab. 
 
-For more details, check out the [Customize the neutral branding in your customer tenant](how-to-customize-branding-customers.md#to-customize-self-service-password-reset) article.
+For more details, check out the [Customize the neutral branding in your external tenant](how-to-customize-branding-customers.md#to-customize-self-service-password-reset) article.
 
 ## Test self-service password reset
 
@@ -102,6 +101,6 @@ To go through the self-service password reset flow:
 
    :::image type="content" source="media/how-to-enable-password-reset-customers/update-password.png" alt-text="Screenshot that shows the update password screen.":::
 
-## Next steps
+## Related content
 
-- Add [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) federation.
+- Add [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or a custom [OIDC federation](how-to-custom-oidc-federation-customers.md) federation.

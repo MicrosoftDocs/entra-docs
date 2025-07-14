@@ -2,14 +2,14 @@
 title: Usage and insights report
 description: Learn about the information you can explore using the Usage and insights report in Microsoft Entra ID.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/15/2023
+ms.date: 05/27/2025
 ms.author: sarahlipsey
 ms.reviewer: madansr7
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to understand how my users are using Microsoft Entra ID so that I can make informed decisions about my organization's security posture.
 ---
 
@@ -26,9 +26,10 @@ With the Microsoft Entra **Usage and insights** reports, you can get an applicat
 
 To access the data from Usage and insights you must have:
 
-* A Microsoft Entra tenant
-* A Microsoft Entra ID P1 or P2 license to view the sign-in data
-* A user in the Reports Reader, Security Reader, Security Administrator, or Global Administrator role.
+- A Microsoft Entra tenant
+- A Microsoft Entra ID P1 or P2 license to view the sign-in data
+- The least privileged role is [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+    - [Security Reader](../role-based-access-control/permissions-reference.md#security-reader) and [Security Administrator](../role-based-access-control/permissions-reference.md#security-reader) can also view the report.
 
 ## Access Usage and insights
 
@@ -37,7 +38,7 @@ You can access the Usage and insights reports from the Azure portal and using Mi
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Usage & insights**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Usage & insights**.
 
 The **Usage & insights** reports are also available from the **Enterprise applications** area of Microsoft Entra ID. All users can access their own sign-ins at the [My Sign-Ins portal](https://mysignins.microsoft.com/security-info).
 
@@ -68,6 +69,8 @@ The sign-in activity graph uses interactive user sign-ins. Select a day in the a
 
 ![Screenshot of the sign-in activity details for a selected application.](./media/concept-usage-insights-report/application-activity-sign-in-detail.png)
 
+This report now includes applications owned by Microsoft Services that are instantiated in customer tenants. These applications can be involved in service-to-service authentications. When you select the applications from the **Usage and insights** report, the results say "Not found" because the application is not owned by your tenant, but is only instantiated in your tenant. To see the sign-in activity for these applications, select the **View sign-in activity** link. 
+
 ### Application activity using Microsoft Graph
 
 You can view the `applicationSignInSummary` or `applicationSignInDetailedSummary` of Microsoft Entra application activity with Microsoft Graph.
@@ -92,11 +95,11 @@ The **AD FS application activity** report in Usage & insights lists all Active D
 
 Viewing the AD FS application activity using Microsoft Graph retrieves a list of the `relyingPartyDetailedSummary` objects, which identifies the relying party to a particular Federation Service.
 
-Add the following query, then select the **Run query** button.
+Add the following query, then select the **Run query** button:
 
-   ```http
-   GET https://graph.microsoft.com/beta/reports/getRelyingPartyDetailedSummary(period='{period}')
-   ```
+```http
+GET https://graph.microsoft.com/beta/reports/getRelyingPartyDetailedSummary(period='{period}')
+```
 
 For more information, see [AD FS application activity in Microsoft Graph](/graph/api/resources/relyingpartydetailedsummary?view=graph-rest-beta&preserve-view=true).
 
@@ -126,7 +129,7 @@ Select the **View more details** link to locate the client and object IDs for th
 
 The `servicePrincipalSignInActivity` reports can be viewed using Microsoft Graph.
 
-Add the following query in Graph Explorer to retrieve the service principal sign-in activity, then select the **Run query** button.
+Add the following query in Graph Explorer to retrieve the service principal sign-in activity, then select the **Run query** button:
 
 ```http
 GET https://graph.microsoft.com/beta/reports/servicePrincipalSignInActivities/{id}
@@ -137,8 +140,8 @@ Example response:
 ```json
 {
      "@odata.context": "https://graph.microsoft.com/beta/$metadata#reports/servicePrincipalSignInActivities",
-     "id": "ODNmNDUyOTYtZmI4Zi00YWFhLWEzOTktYWM1MTA4NGUwMmI3",
-     "appId": "83f45296-fb8f-4aaa-a399-ac51084e02b7",    
+     "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+     "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",    
      "delegatedClientSignInActivity": {
           "lastSignInDateTime": "2021-01-01T00:00:00Z",
           "lastSignInRequestId": "2d245633-0f48-4b0e-8c04-546c2bcd61f5"
@@ -185,7 +188,7 @@ To get started, follow these instructions to work with `appCredentialSignInActiv
 1. Sign in to [Graph Explorer](https://aka.ms/ge).
 1. Select **GET** as the HTTP method from the dropdown.
 1. Set the API version to **beta**.
-1. Add the following query to retrieve recommendations, then select the **Run query** button.
+1. Add the following query to retrieve recommendations, then select the **Run query** button:
 
     ```http
     GET https://graph.microsoft.com/beta/reports/appCredentialSignInActivities/{id}
@@ -196,14 +199,14 @@ Example response:
 ```json
 {
  "@odata.type": "#microsoft.graph.appCredentialSignInActivity",
- "id": "ODNmNDUyOTYtZmI4Zi00YWFhLWEzOTktYWM1MTA4NGUwMmI3fGFwcGxpY2F0aW9u",
- "keyId": "83f45296-fb8f-4aaa-a399-ac51084e02b7",
+ "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
+ "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333",
  "keyType": "certificate",
  "keyUsage": "sign",
- "appId": "f4d9654f-0305-4072-878c-8bf266dfe146",
- "appObjectId": "6920caa5-1cae-4bc8-bf59-9c0b8495d240",
- "servicePrincipalObjectId": "cf533854-9fb7-4c01-9c0e-f68922ada8b6",
- "resourceId": "a89dc091-a671-4da4-9fcf-3ef06bdf3ac3",
+ "appId": "11112222-bbbb-3333-cccc-4444dddd5555",
+ "appObjectId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+ "servicePrincipalObjectId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+ "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
  "credentialOrigin": "application",
  "expirationDate": "2021-04-01T21:36:48-8:00",
  "signInActivity": {

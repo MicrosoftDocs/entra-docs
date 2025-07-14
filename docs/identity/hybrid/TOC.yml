@@ -27,6 +27,8 @@
       href:  get-started.md
     - name:  Prerequisites
       href:  prerequisites.md
+    - name: Topologies and scenarios for cloud sync
+      href: cloud-sync/plan-cloud-sync-topologies.md  
   - name: Managing your deployment
     items: 
     - name:  Install your sync tool
@@ -43,11 +45,13 @@
       href:  decommission-connect-sync-v1.md
     - name:  Verify your version of sync
       href:  verify-sync-tool-version.md
+    - name:  Security improvements to autoupgrade and alerts 
+      href:  connect/security-updates-pks.md
   - name: Managing users and groups
     items: 
     - name:  Provision users on-demand
       href:  on-demand-provision.md
-    - name:  Group writeback
+    - name:  Provision to AD - Group writeback
       href:  group-writeback-cloud-sync.md
     - name:  Scheduling imports
       href:  connect/how-to-connect-sync-feature-scheduler.md
@@ -81,13 +85,30 @@
       href:  connect/how-to-connect-sync-change-the-configuration.md
     - name:  Attributes synchronized to AD
       href:  connect/reference-connect-sync-attributes-synchronized.md
-  - name: Provision to AD using Microsoft Entra Cloud Sync
+  - name: Provision Active Directory to Microsoft Entra ID
     items: 
+    - name: Integrate a single AD forest  with a single Microsoft Entra tenant
+      href: cloud-sync/tutorial-single-forest.md
+    - name: Integrate an existing forest and a new forest with a single Microsoft Entra tenant
+      href: cloud-sync/tutorial-existing-forest.md
+  - name: Provision Microsoft Entra ID to Active Directory
+    items: 
+    - name:  Provision groups to Active Directory
+      href:  cloud-sync/tutorial-group-provisioning.md
+    - name:  Using directory extensions with provisioning groups to AD
+      href:  cloud-sync/tutorial-directory-extension-group-provisioning.md
     - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
       href:  cloud-sync/govern-on-premises-groups.md
-    - name:  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
-      href:  cloud-sync/migrate-group-writeback.md
-
+  - name: Migration scenarios for cloud sync
+    items: 
+    - name: Migrate to Microsoft Entra Cloud Sync from Connect sync
+      href: cloud-sync/tutorial-pilot-aadc-aadccp.md
+    - name: Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+      href: cloud-sync/migrate-group-writeback.md
+  - name: More migration scenarios
+    items:
+    - name: Multi-organizational on-premises Exchange mailbox migration with Microsoft Entra Connect
+      href: connect/parallel-hybrid-migration.md
 
 - name: Cloud sync reference
   items:
@@ -95,16 +116,6 @@
     href: cloud-sync/what-is-cloud-sync.md
   - name: What is the provisioning agent?
     href: cloud-sync/what-is-provisioning-agent.md
-  - name: Tutorials
-    items:
-    - name: Integrate a single AD forest  with a single Microsoft Entra tenant
-      href: cloud-sync/tutorial-single-forest.md
-    - name: Integrate an existing forest and a new forest with a single Microsoft Entra tenant
-      href: cloud-sync/tutorial-existing-forest.md
-    - name: Pilot cloud sync for an existing synced AD forest 
-      href: cloud-sync/tutorial-pilot-aadc-aadccp.md
-    - name:  Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
-      href:  cloud-sync/govern-on-premises-groups.md
   - name: Concepts
     items:
     - name: How it works
@@ -125,30 +136,39 @@
         href: cloud-sync/how-to-install.md
       - name: Install the provisioning agent using CLI and PowerShell
         href: cloud-sync/how-to-install-pshell.md
-      - name: Configuration - AD to Microsoft Entra ID
-        href: cloud-sync/how-to-configure.md
-      - name: Provision groups to AD using Microsoft Entra Cloud Sync
-        href: cloud-sync/how-to-configure-entra-to-active-directory.md
-      - name: On-demand provisioning
-        href: cloud-sync/how-to-on-demand-provision.md
-      - name: Attribute mapping
-        href: cloud-sync/how-to-attribute-mapping.md 
-      - name: Use Single Sign-On
-        href: cloud-sync/how-to-sso.md
-      - name: Directory extensions and custom attributes
-        href: cloud-sync/custom-attribute-mapping.md
-      - name: Exchange hybrid
-        href: cloud-sync/exchange-hybrid.md
+      - name: Provision Active Directory to Entra ID
+        items:
+        - name: Provision AD to Microsoft Entra ID - Configuration
+          href: cloud-sync/how-to-configure.md
+        - name: Attribute mapping - AD to Microsoft Entra ID
+          href: cloud-sync/how-to-attribute-mapping.md 
+        - name: Directory extensions and custom attributes - AD to Microsoft Entra ID
+          href: cloud-sync/custom-attribute-mapping.md
+        - name: On-demand provisioning - AD to Microsoft Entra ID
+          href: cloud-sync/how-to-on-demand-provision.md
+        - name: Use Single Sign-On
+          href: cloud-sync/how-to-sso.md
+        - name: Exchange hybrid
+          href: cloud-sync/exchange-hybrid.md
+      - name: Provision Microsoft Entra ID to Active Directory
+        items:  
+        - name: Provision Microsoft Entra ID to AD - Configuration
+          href: cloud-sync/how-to-configure-entra-to-active-directory.md
+        - name: Scoping filter and Attribute mapping - Microsoft Entra ID to AD
+          href: cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md 
+        - name: Directory extensions and custom attributes - Microsoft Entra ID to AD
+          href: cloud-sync/custom-attribute-mapping-entra-to-active-directory.md
+        - name: On-demand provisioning - Microsoft Entra ID to AD
+          href: cloud-sync/how-to-on-demand-provision-entra-to-active-directory.md
+
     - name: Migration
       items:
       - name:  Migrate your sync tool
         href:  cloud-sync/migrate-azure-ad-connect-to-cloud-sync.md
       - name:  Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
         href:  cloud-sync/migrate-group-writeback.md
-    - name: Plan and design
-      items:
-      - name: Topologies and scenarios for cloud sync
-        href: cloud-sync/plan-cloud-sync-topologies.md  
+
+
   - name: Manage 
     items:
     - name: Agent automatic upgrade
@@ -157,6 +177,8 @@
       href: cloud-sync/how-to-accidental-deletes.md
     - name: Agent registry options
       href: cloud-sync/how-to-manage-registry-options.md
+    - name: Cloud sync gMSA 
+      href: cloud-sync/gmsa-cloud-sync.md
     - name: Agent gMSA PowerShell cmdlets
       href: cloud-sync/how-to-gmsa-cmdlets.md
     - name: How to map usertype with cloud sync
@@ -185,6 +207,8 @@
       href: cloud-sync/reference-version-history.md
     - name: Cloud sync FAQ
       href: cloud-sync/reference-cloud-sync-faq.yml
+    - name: Provision to Active Directory FAQ
+      href: cloud-sync/reference-provision-to-active-directory-faq.yml
     - name: AADCloudSyncTools PowerShell module
       href: cloud-sync/reference-powershell.md
     - name: Attributes that are synchronized
@@ -305,6 +329,10 @@
         href: connect/how-to-connect-health-agent-install.md
       - name: Automatic upgrade
         href: connect/how-to-connect-install-automatic-upgrade.md
+      - name: Security update to the autoupgrade process 
+        href: connect/security-updates-pks.md
+      - name: Hardening update to Microsoft Entra Connect Sync AD FS and PingFederate
+        href: connect/harden-update-ad-fs-pingfederate.md
       - name: Running the installation wizard a second time
         href: connect/how-to-connect-installation-wizard.md
       - name: Upgrade to a new version of Microsoft Entra Connect
@@ -352,14 +380,12 @@
      
     - name: Manage Microsoft Entra Connect
       items:
+      - name: Administrator audit logging
+        href: connect/admin-audit-logging.md
       - name: Enable device writeback
         href: connect/how-to-connect-device-writeback.md
-      - name: Enable group writeback
+      - name: Group writeback for Microsoft 365 groups
         href: connect/how-to-connect-group-writeback-enable.md
-      - name: Modify group writeback
-        href: connect/how-to-connect-modify-group-writeback.md
-      - name: Disable group writeback
-        href: connect/how-to-connect-group-writeback-disable.md
       - name: Device options
         href: connect/how-to-connect-device-options.md
       - name: Additional features in Microsoft Entra Connect
@@ -382,7 +408,7 @@
         href: connect/how-to-connect-pta-quick-start.md
       - name: Pass-through authentication FAQ
         href: connect/how-to-connect-pta-faq.yml
-      - name: Disable PTA with Microsoft Entra Connect "Do not configure"
+      - name: Disable PTA with Microsoft Entra Connect "Don't configure"
         href: connect/how-to-connect-pta-disable-do-not-configure.md
     - name: Manage Federation Services
       items:
@@ -392,7 +418,7 @@
         href: connect/how-to-connect-install-multiple-domains.md
       - name: Federate multiple instances of Microsoft Entra ID with single instance of AD FS
         href: connect/how-to-connect-fed-single-adfs-multitenant-federation.md
-      - name: Renew federation certificates for O365 and Microsoft Entra ID 
+      - name: Renew federation certificates for M365 and Microsoft Entra ID 
         href: connect/how-to-connect-fed-o365-certs.md
       - name: Update the SSL certificate for AD FS
         href: connect/how-to-connect-fed-ssl-update.md
@@ -400,7 +426,7 @@
         href: connect/how-to-connect-azure-ad-trust.md
       - name: Configure group claims for applications
         href: connect/how-to-connect-fed-group-claims.md
-      - name: Change hash algorithm for O365 RP
+      - name: Change hash algorithm for M365 RP
         href: connect/how-to-connect-fed-sha256-guidance.md
       - name: Use a SAML 2.0 server as your Idp
         href: connect/how-to-connect-fed-saml-idp.md
@@ -484,7 +510,7 @@
       href: connect/tshoot-connect-connectivity.md
     - name: Errors during synchronization
       href: connect/tshoot-connect-sync-errors.md
-    - name: Object is not synchronized
+    - name: Object isn't synchronized
       href: connect/tshoot-connect-object-not-syncing.md
     - name: Source anchor during installation
       href: connect/tshoot-connect-source-anchor.md
@@ -510,6 +536,8 @@
       href: connect/howto-troubleshoot-upn-changes.md
     - name: End-to-end troubleshooting of objects and attributes
       href: /troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes
+    - name: Clear on-premises attributes from migrated Microsoft Entra ID users and groups
+      href: connect/tshoot-clear-on-premises-attributes.md
   - name: Reference
     items:
     - name: Hybrid Identity Required Ports and Protocols

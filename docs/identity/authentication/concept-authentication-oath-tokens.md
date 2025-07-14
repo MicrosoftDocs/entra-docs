@@ -1,19 +1,17 @@
 ---
 title: OATH tokens authentication method
 description: Learn about using OATH tokens in Microsoft Entra ID to help improve and secure sign-in events.
-
 services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/14/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
-
+ms.reviewer: lvandenende
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to use OATH tokens in Microsoft Entra ID to improve and secure user sign-in events.
 ---
 
@@ -21,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 OATH time-based one-time password (TOTP) is an open standard that specifies how one-time password (OTP) codes are generated. OATH TOTP can be implemented using either software or hardware to generate the codes. Microsoft Entra ID doesn't support OATH HOTP, a different code generation standard.
 
-## OATH software tokens
+## Software OATH tokens
 
 Software OATH tokens are typically applications such as the Microsoft Authenticator app and other authenticator apps. Microsoft Entra ID generates the secret key, or seed, that's input into the app and used to generate each OTP.
 
@@ -29,76 +27,68 @@ The Authenticator app automatically generates codes when set up to do push notif
 
 Some OATH TOTP hardware tokens are programmable, meaning they don't come with a secret key or seed preprogrammed. These programmable hardware tokens can be set up using the secret key or seed obtained from the software token setup flow. Customers can purchase these tokens from the vendor of their choice and use the secret key or seed in their vendor's setup process.
 
-## OATH hardware tokens (Preview)
+## Hardware OATH tokens (preview)
 
-Microsoft Entra ID supports the use of OATH-TOTP SHA-1 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. Hardware OATH tokens are available for users with a Microsoft Entra ID P1 or P2 license.  
+Microsoft Entra ID supports the use of OATH-TOTP SHA-1 and SHA-256 tokens that refresh codes every 30 or 60 seconds. Customers can purchase these tokens from the vendor of their choice. 
 
-> [!IMPORTANT]
-> The preview is only supported in Azure Global and Azure Government clouds.
+Microsoft Entra ID has a new Microsoft Graph API in preview for Azure. Administrators can access Microsoft Graph APIs with least privileged roles to manage tokens in the preview. There aren't any options to manage hardware OATH token in this preview refresh in the Microsoft Entra admin center. 
 
-OATH TOTP hardware tokens typically come with a secret key, or seed, pre-programmed in the token. These keys must be input into Microsoft Entra ID as described in the following steps. Secret keys are limited to 128 characters, which is not compatible with some tokens. The secret key can only contain the characters *a-z* or *A-Z* and digits *2-7*, and must be encoded in *Base32*.
+You can continue to manage tokens from the original preview in **OATH tokens** in the Microsoft Entra admin center. On the other hand, you can only manage tokens in the preview refresh by using Microsoft Graph APIs. 
 
-Programmable OATH TOTP hardware tokens that can be reseeded can also be set up with Microsoft Entra ID in the software token setup flow.
+Hardware OATH tokens that you add with Microsoft Graph for this preview refresh appear along with other tokens in the admin center. But you can only manage them by using Microsoft Graph. 
 
-OATH hardware tokens are supported as part of a public preview. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://aka.ms/EntraPreviewsTermsOfUse).
+### Time drift correction
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/oath-tokens.png" alt-text="Screenshot of OATH token management." lightbox="./media/concept-authentication-methods/oath-tokens.png":::
+Microsoft Entra ID adjusts time drift of the tokens during activation and every authentication. The following table lists the time adjustment that Microsoft Entra ID makes for tokens during activation and sign in. 
 
-Once tokens are acquired, they must be uploaded in a comma-separated values (CSV) file format. The file should include the UPN, serial number, secret key, time interval, manufacturer, and model, as shown in the following example:
+| Token refresh interval | Activation time range | Authentication time range |
+|------------------------|-----------------------|---------------------------|
+| 30 seconds             | +/- 1 day             | +/- 1 minute              |
+| 60 seconds             | +/- 2 days            | +/- 2 minutes             |
 
-```csv
-upn,serial number,secret key,time interval,manufacturer,model
-Helga@contoso.com,1234567,2234567abcdef2234567abcdef,60,Contoso,HardwareKey
-```
+### Improvements in the preview refresh
 
-> [!NOTE]
-> Make sure you include the header row in your CSV file. 
+This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators or Authentication Policy Administrators. 
 
-Once properly formatted as a CSV file, a Global Administrator can then sign in to the Microsoft Entra admin center, navigate to **Protection** > **Multifactor authentication** > **OATH tokens**, and upload the resulting CSV file.
+The following table lists the role requirements to manage hardware OATH tokens in the preview refresh.
 
-Depending on the size of the CSV file, it can take a few minutes to process. Select the **Refresh** button to get the current status. If there are any errors in the file, you can download a CSV file that lists any errors for you to resolve. The field names in the downloaded CSV file are different than the uploaded version.  
+| Task                                                                                               | Preview refresh role                |
+|----------------------------------------------------------------------------------------------------|-------------------------------------|
+| Create a new token in the tenant’s inventory.                                                      | Authentication Policy Administrator |
+| Read a token from the tenant’s inventory; doesn't return the secret.                               | Authentication Policy Administrator |
+| Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Authentication Policy Administrator |
+| Delete a token from the tenant’s inventory.                                                        | Authentication Policy Administrator |
 
-Once any errors are addressed, the administrator then can activate each key by selecting **Activate** for the token and entering the OTP displayed on the token. You can activate a maximum of 200 OATH tokens every 5 minutes. 
+As part of the preview refresh, end users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info). In the preview refresh, a token can only be assigned to one user. The following table lists token and role requirements to assign and activate tokens. 
 
-Users can have a combination of up to five OATH hardware tokens or authenticator applications, such as the Microsoft Authenticator app, configured for use at any time. Hardware OATH tokens can't be assigned to guest users in the resource tenant. 
+| Task | Token state | Role requirement |
+|------|-------------|------------------|
+| Assign a token from the inventory to a user in the tenant. | Assigned | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
+| Read the token of the user, doesn't return the secret. | Activated / Assigned  (depends if the token was already activated or not) | Member (self)<br>Authentication Administrator (only has restricted Read, not standard Read)<br>Privileged Authentication Administrator  |
+| Update the token of the user, such as provide current 6-digit code for activation, or change token name. | Activated | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
+| Remove the token from the user. The token goes back to the token inventory. | Available (back to the tenant inventory) | Member (self)<br>Authentication Administrator<br>Privileged Authentication Administrator |
 
-> [!IMPORTANT]
-> Make sure to only assign each token to a single user.
-> In the future, support for the assignment of a single token to multiple users stops to prevent a security risk.
+In the legacy multifactor authentication (MFA) policy, hardware and software OATH tokens can only be enabled together. If you enable OATH tokens in the legacy MFA policy, end users see an option to add **Hardware OATH tokens** in their Security info page.
 
-## Troubleshooting a failure during upload processing
+If you don't want end users to see an option to add **Hardware OATH tokens**, migrate to the Authentication methods policy. 
+In the Authentication methods policy, hardware and software OATH tokens can be enabled and managed separately. For more information about how to migrate to the Authentication methods policy, see [How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID](how-to-authentication-methods-manage.md).
 
-At times, there may be conflicts or issues that occur with the processing of an upload of the CSV file. If any conflict or issue occurs, you'll receive a notification similar to the following:  
+Tenants with a Microsoft Entra ID P1 or P2 license can continue to upload hardware OATH tokens as in the original preview. For more information, see [Upload hardware OATH tokens in CSV format](how-to-mfa-upload-oath-tokens.md).
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/upload-error-example.png" alt-text="Screenshot of upload error example.":::
-  
-To determine the error message, be sure and select **View Details**. The **Hardware token status** blade opens and provides the summary of the status of the upload. It shows that there's been a failure, or multiple failures, as in the following example:
+For more information about how to enable hardware OATH tokens and Microsoft Graph APIs that you can use to upload, activate, and assign tokens, see [How to manage OATH tokens](how-to-mfa-manage-oath-tokens.md).
+ 
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/hardware-token-status.png" alt-text="Screenshot of hardware token status example.":::
+## OATH token icons
 
-To determine the cause of the failure listed, make sure to click the checkbox next to the status you want to view, which activates the **Download** option. This downloads a CSV file that contains the error identified. 
+Users can add and manage OATH tokens at [Security info](https://aka.ms/mysecurityinfo), or they can select **Security info** from **My account**. Software and hardware OATH tokens have different icons.  
 
-:::image type="content" border="true" source="./media/concept-authentication-methods/download-status-example.png" alt-text="Screenshot of download status example.":::
-
-The downloaded file is named **Failures_filename.csv** where _filename_ is the name of the file uploaded. It's saved to your default downloads directory for your browser. 
-
-This example shows the error identified as a user who doesn't currently exist in the tenant directory:  
-
-:::image type="content" border="true" source="./media/concept-authentication-methods/error-reason-example.png" alt-text="Screenshot of error reason example.":::
-
-Once you've addressed the errors listed, upload the CSV again until it processes successfully. The status information for each attempt remains for 30 days. The CSV can be manually removed by clicking the checkbox next to the status, then selecting **Delete status** if so desired. 
-
-## Determine OATH token registration type
-
-Users can manage and add OATH token registrations by accessing [mysecurityinfo](https://aka.ms/mysecurityinfo) or by selecting **Security info** from **My account**. Specific icons are used to differentiate whether the OATH token registration is hardware or software based.  
-
-Token registration type | Icon |
------- | ------ |
-OATH software token   | <img width="63" alt="Software OATH token" src="media/concept-authentication-methods/software-oath-token-icon.png">  |
-OATH hardware token | <img width="63" alt="Hardware OATH token" src="media/concept-authentication-methods/hardware-oath-token-icon.png"> |
+| Token registration type | Icon |
+| ------ | ------ |
+| OATH software token   | <img width="63" alt="Software OATH token" src="media/concept-authentication-methods/software-oath-token-icon.png"> |
+| OATH hardware token | <img width="63" alt="Hardware OATH token" src="media/concept-authentication-methods/hardware-oath-token-icon.png"> |
 
 
-## Next steps
+## Related content
 
-Learn more about configuring authentication methods using the [Microsoft Graph REST API](/graph/api/resources/authenticationmethods-overview).
-Learn about [FIDO2 security key providers](concept-authentication-passwordless.md#fido2-security-key-providers) that are compatible with passwordless authentication.
+Learn more about [how to manage OATH tokens](how-to-mfa-manage-oath-tokens.md).
+Learn about [FIDO2 security key providers](concept-authentication-passwordless.md) that are compatible with passwordless authentication.

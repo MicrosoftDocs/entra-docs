@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Create a security plan for external access to resources
@@ -93,7 +93,7 @@ Learn more:
 
 - [Tutorial: Enforce multifactor authentication for B2B guest users](~/external-id/b2b-tutorial-require-mfa.md)
 - Trust multifactor authentication from external tenants
-  - See, [Configure cross-tenant access settings for B2B collaboration, Modify inbound access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#modify-inbound-access-settings)
+  - See, [Configure cross-tenant access settings for B2B collaboration, Modify inbound access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings)
 
 ### User and device sign-in conditions
 
@@ -103,14 +103,14 @@ Use the following table to help assess policy to address risk.
 | --- | --- |
 | Device| Require compliant devices |
 | Mobile apps| Require approved apps |
-| Identity protection is High risk| Require user to change password |
+| Microsoft Entra ID Protection user risk is high | Require user to change password |
 | Network location| To access confidential projects, require sign-in from an IP address range |
 
-To use device state as policy input, register, or join the device to your tenant. To trust the device claims from the home tenant, configure cross-tenant access settings. See, [Modify inbound access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#modify-inbound-access-settings).
+To use device state as policy input, register, or join the device to your tenant. To trust the device claims from the home tenant, configure cross-tenant access settings. See, [Modify inbound access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml#modify-inbound-access-settings).
 
-You can use identity-protection risk policies. However, mitigate issues in the user home tenant. See, [Common Conditional Access policy: Sign-in risk-based multifactor authentication](~/identity/conditional-access/howto-conditional-access-policy-risk.md).
+You can use identity-protection risk policies. However, mitigate issues in the user home tenant. See, [Common Conditional Access policy: Sign-in risk-based multifactor authentication](~/identity/conditional-access/policy-risk-based-sign-in.md).
 
-For network locations, you can restrict access to IP addresses ranges that you own. Use this method if external partners access applications while at your location. See, [Conditional Access: Block access by location](~/identity/conditional-access/howto-conditional-access-policy-location.md)
+For network locations, you can restrict access to IP addresses ranges that you own. Use this method if external partners access applications while at your location. See, [Conditional Access: Block access by location](~/identity/conditional-access/policy-block-by-location.md)
 
 ## Document access review policies
 

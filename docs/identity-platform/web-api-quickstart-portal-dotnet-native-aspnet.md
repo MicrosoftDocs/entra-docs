@@ -3,9 +3,9 @@ title: "Quickstart: Call an ASP.NET web API that is protected by the Microsoft i
 description: In this quickstart, learn how to call an ASP.NET web API that's protected by the Microsoft identity platform from a Windows Desktop (WPF) application.
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-api
+ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform
 
@@ -50,16 +50,16 @@ ms.topic: quickstart
 > 
 > ## Register the web API (TodoListService)
 > 
-> Register your web API in **App registrations** in the Azure portal.
+> Register your web API in **App registrations** in the Azure Microsoft Entra admin center.
 > 
-> 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-> 1. Browse to **Identity** > **Applications** > **App registrations**.
+> 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+> 1. Browse to **Entra ID** > **App registrations**.
 > 1. Select **New registration**.
 > 1. Enter a **Name** for your application, for example `AppModelv2-NativeClient-DotNet-TodoListService`. Users of your app might see this name, and you can change it later.
 > 1. For **Supported account types**, select **Accounts in any organizational directory**.
 > 1. Select **Register** to create the application.
 > 1. On the app **Overview** page, look for the **Application (client) ID** value, and then record it for later use. You'll need it to configure the Visual Studio configuration file for this project (that is, `ClientId` in the *TodoListService\Web.config* file).
-> 1. Under **Manage**, select **Expose an API** > **Add a scope**. Accept the proposed Application ID URI (`api://{clientId}> `) by selecting **Save and continue**, and then enter the following information:
+> 1. Under **Manage**, select **Expose an API** > **Add a scope**. Accept the proposed Application ID URI (`api://{clientId}>`) by selecting **Save and continue**, and then enter the following information:
 > 
 >     1. For **Scope name**, enter `access_as_user`.
 >     1. For **Who can consent**, ensure that the **Admins and users** option is selected.
@@ -76,7 +76,7 @@ ms.topic: quickstart
 > 
 > 1. Open the solution in Visual Studio, and then open the *Web.config* file under the root of the TodoListService project.
 > 
-> 1. Replace the value of the `ida:ClientId` parameter with the Client ID (Application ID) value from the application you registered in the **App registrations** portal.
+> 1. Replace the value of the `ida:ClientId` parameter with the Client ID (Application ID) value from the application you registered in the Microsoft Entra admin center.
 > 
 > ### Add the new scope to the app.config file
 > 
@@ -91,7 +91,7 @@ ms.topic: quickstart
 > 
 > ## Register the web app (TodoListClient)
 > 
-> Register your TodoListClient app in **App registrations** in the Azure portal, and then configure the code in the TodoListClient project. If the client and server are considered the same application, you can reuse the application that's registered in step 2. Use the same application if you want users to sign in with a personal Microsoft account.
+> Register your TodoListClient app in **App registrations** in the Microsoft Entra admin centers, and then configure the code in the TodoListClient project. If the client and server are considered the same application, you can reuse the application that's registered in step 2. Use the same application if you want users to sign in with a personal Microsoft account.
 > 
 > ### Register the app
 > 

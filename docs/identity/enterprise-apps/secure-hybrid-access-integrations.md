@@ -49,7 +49,7 @@ See the following sections for technical considerations and recommendations.
 
 ## Publishing applications to Azure Marketplace
 
-Azure Marketplace is a trusted source of applications for IT admins. Applications are compatible with Microsoft Entra ID and support SSO, automate user provisioning, and integrate into customer tenants with automated app registration.
+Azure Marketplace is a trusted source of applications for IT admins. Applications are compatible with Microsoft Entra ID and support SSO, automate user provisioning, and integrate into external tenants with automated app registration.
 
 You can pre-integrate your application with Microsoft Entra ID to support SSO and automated provisioning. See, [Submit a request to publish your application in Microsoft Entra application gallery](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md). 
 
@@ -70,7 +70,7 @@ You can use one of the following SAML approaches:
   *  [Making your application multi-tenant](~/identity-platform/howto-convert-app-to-be-multi-tenant.md)
 * **Alternate SAML approach**: Customers can create an OIDC application registration in their Microsoft Entra tenant and set the URIs, endpoints, and permissions
 
-Use the client credentials grant type, which requires the solution to allow customers to enter a client ID and secret. The solution also requires you store this information. Get a JWT from Microsoft Entra ID, and then use it to interact with Microsoft Graph. See, [Get a token](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#get-a-token). We recommend you repare customer documentation about how to create application registration in their Microsoft Entra tenant. Include endpoints, URIs, and permissions.
+Use the client credentials grant type, which requires the solution to allow customers to enter a client ID and secret. The solution also requires you store this information. Get a JWT from Microsoft Entra ID, and then use it to interact with Microsoft Graph. See, [Get a token](~/identity-platform/v2-oauth2-client-creds-grant-flow.md#get-a-token). We recommend you prepare customer documentation about how to create application registration in their Microsoft Entra tenant. Include endpoints, URIs, and permissions.
 
 > [!NOTE]
 > Before applications are used for IT administrator or user SSO, the customer IT administrator must consent to the application in their tenant. See, [Grant tenant-wide admin consent to an application](./grant-admin-consent.md).
@@ -113,7 +113,7 @@ The following diagram illustrates the user authentication flow:
 
 ### Users sign in to the applications
 
-When users sign in to applications, they use OIDC or SAML. If the applications need to interact with Microsoft Graph or Microsoft Entra protected API, we recommend you configure them to use OICD. This configuration ensures the JWT is applied to interact with Microsoft Graph. If there's no need for applications to interact with Microsoft Graph, or Microsoft Entra protected APIs, then use SAML.
+When users sign in to applications, they use OIDC or SAML. If the applications need to interact with Microsoft Graph or Microsoft Entra protected API, we recommend you configure them to use OIDC. This configuration ensures the JWT is applied to interact with Microsoft Graph. If there's no need for applications to interact with Microsoft Graph, or Microsoft Entra protected APIs, then use SAML.
 
 The following diagram shows user authentication flow:
 
@@ -149,7 +149,7 @@ Use the following information to implement application registrations, connect le
 
 #### Add apps in Azure Marketplace
 
-Some applications your customers use are in the [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps). You can create a solution that adds applications to the customer tenant. Use the following example with Microsoft Graph API to search Azure Marketplace for a template. 
+Some applications your customers use are in the [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps). You can create a solution that adds applications to the external tenant. Use the following example with Microsoft Graph API to search Azure Marketplace for a template. 
 
 > [!NOTE]
 > In Application Templates API, the display name is case-sensitive.
@@ -183,7 +183,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.salesforce.com"
@@ -197,7 +197,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.salesforce.com"]},
@@ -229,7 +229,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.samlapp.com"
@@ -243,7 +243,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.samlapp.com"]},
@@ -292,7 +292,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "preferredSingleSignOnMode":"saml",
     "loginURL": "https://www.samlapp.com"
@@ -306,7 +306,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: application/json
 
-https://graph.microsoft.com/v1.0/applications/54c4806b-b260-4a12-873c-967116983792
+https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
 {
     "web": {
     "redirectUris":["https://www.samlapp.com"]},
@@ -451,8 +451,6 @@ https://graph.microsoft.com/v1.0/identity/conditionalAccess/policies/
 }
 ```
 
-To create new Microsoft Entra Conditional Access policies, see [Conditional Access: Programmatic access](~/identity/conditional-access/howto-conditional-access-apis.md).
-
 ```https
 #Policy Template for Requiring Compliant Device
 
@@ -508,7 +506,7 @@ To create new Microsoft Entra Conditional Access policies, see [Conditional Acce
 
 ### Automate admin consent
 
-If the customer is adding applications from your solution to Microsoft Entra ID, you can automate administrator consent with Microsoft Graph. You need the application service principal object ID you created in API calls, and the Microsoft Graph service principal object ID from the customer tenant.
+If the customer is adding applications from your solution to Microsoft Entra ID, you can automate administrator consent with Microsoft Graph. You need the application service principal object ID you created in API calls, and the Microsoft Graph service principal object ID from the external tenant.
 
 Get the Microsoft Graph service principal object ID by making the following API call:
 
@@ -556,7 +554,7 @@ Get `AppRole` instances the application might have associated with it. It's comm
 Authorization: Required with a valid Bearer token
 Method:GET
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 ```
 
 From Microsoft Entra ID, get the user or group object ID that you want to assign to the application. Take the app role ID from the previous API call and submit it with the patch body on the service principal:
@@ -566,7 +564,7 @@ Authorization: Required with a valid Bearer token
 Method: PATCH
 Content-type: servicePrincipal/json
 
-https://graph.microsoft.com/v1.0/servicePrincipals/3161ab85-8f57-4ae0-82d3-7a1f71680b27
+https://graph.microsoft.com/v1.0/servicePrincipals/aaaaaaaa-bbbb-cccc-1111-222222222222
 {
     "principalId":"{Principal Object ID of User -or- Group}",
     "resourceId":"{Service Principal Object ID}",
@@ -591,8 +589,8 @@ To help protect legacy applications, while using networking and delivery control
 
 The following VPN solution providers connect with Microsoft Entra ID to enable modern authentication and authorization methods like SSO and multifactor authentication (MFA).
 
-* **Cisco AnyConnect**
-  * [Tutorial: Microsoft Entra SSO integration with Cisco AnyConnect](~/identity/saas-apps/cisco-anyconnect.md)
+* **Cisco Secure Firewall - Secure Client**
+  * [Tutorial: Microsoft Entra SSO integration with Cisco Secure Firewall - Secure Client](~/identity/saas-apps/cisco-secure-firewall-secure-client.md)
 * **Fortinet FortiGate**
   * [Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN](~/identity/saas-apps/fortigate-ssl-vpn-tutorial.md)
 * **F5 BIG-IP Access Policy Manager**

@@ -2,21 +2,21 @@
 title: Create and manage downloadable access review history report
 description: Using Microsoft Entra access reviews, you can download a review history for access reviews in your organization.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 06/28/2023
+ms.date: 06/18/2025
 ms.author: owinfrey
 ---
 
 # Create and manage downloadable access review history report in Microsoft Entra access reviews
 
-With access reviews, you can create a downloadable review history to help your organization gain more insight. The report pulls the decisions that are taken by reviewers when a report is created. These reports can be constructed to include specific access reviews, for a specific time frame, and can be filtered to include different review types and review results.
+With access reviews, you can create a downloadable review history to help your organization gain more insight. The report pulls the decisions taken by reviewers when a report is created. These reports can be constructed to include specific access reviews, for a specific time frame, and can be filtered to include different review types and review results.
  
 ## Who can access and request review history
 
-Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Global Administrator and Global Reader  can see history reports for all access reviews. All other users are only allowed to see reports on access reviews that they've generated.
+Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Least privilege roles that can create history reports include Privileged Role Administrator, Identity Governance Administrator, User Administrator, Security Reader, Global Reader, and Security Administrator role.
 
 ## How to create a review history report
 
@@ -24,7 +24,7 @@ Review history and request review history are available for any user if they're 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access Reviews** > **Review History**.
+1. Browse to **ID Governance** > **Access Reviews** > **Review History**.
  
 1. Select **New report**. 
 
@@ -40,7 +40,7 @@ Review history and request review history are available for any user if they're 
 
 Once a review history report is created, you can download it. All reports that are created are available for download for 30 days in CSV format.
 
-1. Select **Review History** under **Identity Governance**. All review history reports that you created will be available. 
+1. Select **Review History** under **Identity Governance**. All review history reports that you created are available. 
 1. Select the report you wish to download. 
 
 ## What is included in a review history report?

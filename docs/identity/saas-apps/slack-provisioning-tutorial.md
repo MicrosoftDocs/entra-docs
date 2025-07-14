@@ -1,32 +1,30 @@
 ---
-title: 'Tutorial: User provisioning for Slack'
-description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Slack.
+title: Automate User provisioning into Slack with Microsoft Entra ID
+description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Slack.
 
-documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
-ms.assetid: 7fa2a1b1-7ed3-4c51-ae17-f5d4ee88488c
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Slack so that I can streamline the user management process and ensure that users have the appropriate access to Slack.
 ---
 
-# Tutorial: Configure Slack for automatic user provisioning
+# Automate User provisioning into Slack with Microsoft Entra ID
 
-The objective of this tutorial is to show you the steps you need to perform in Slack and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Slack. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+> [!NOTE]
+> Integrating with Slack with a custom / BYOA application isn't supported. Using the gallery application as described in this article is supported. The gallery application has been customized to work with Slack's SCIM v1 server. 
+
+The objective of this article is to show you the steps you need to perform in Slack and Microsoft Entra ID to automatically provision and deprovision user accounts from Microsoft Entra ID to Slack. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
 > [!div class="checklist"]
 > * Create users in Slack
-> * Remove users in Slack when they do not require access anymore
+> * Remove users in Slack when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Slack
 > * Provision groups and group memberships in Slack
 > * [Single sign-on](./slack-tutorial.md) to Slack (recommended)
@@ -34,10 +32,10 @@ The objective of this tutorial is to show you the steps you need to perform in S
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Slack tenant with the [Plus plan](https://slack.com/pricing) or better enabled.
 * A user account in Slack with Team Admin permissions.
 
@@ -46,22 +44,18 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Slack](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-add-slack-from-the-azure-ad-application-gallery'></a>
 
 ## Step 2: Add Slack from the Microsoft Entra application gallery
 
-Add Slack from the Microsoft Entra application gallery to start managing provisioning to Slack. If you have previously setup Slack for SSO, you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Slack from the Microsoft Entra application gallery to start managing provisioning to Slack. If you have previously setup Slack for SSO, you can use the same application. However, we recommend that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 3: Define who will be in scope for provisioning 
+## Step 3: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, you can control this by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 4: Configure automatic user provisioning to Slack 
 
@@ -72,7 +66,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 ### To configure automatic user account provisioning to Slack in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -88,7 +82,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, click **Authorize**. This opens a Slack authorization dialog in a new browser window.
+5. Under the **Admin Credentials** section, select **Authorize**. This opens a Slack authorization dialog in a new browser window.
 
 	![Screenshot shows the Authorize Admin Credentials button.](media/slack-provisioning-tutorial/authorization.png)
 
@@ -107,7 +101,7 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 10. Under the Mappings section, select **Synchronize Microsoft Entra users to Slack**.
 
-11. In the **Attribute Mappings** section, review the user attributes that will be synchronized from Microsoft Entra ID to Slack. Note that the attributes selected as **Matching** properties will be used to match the user accounts in Slack for update operations. Select the Save button to commit any changes.
+11. In the **Attribute Mappings** section, review the user attributes that's synchronized from Microsoft Entra ID to Slack. The attributes selected as **Matching** properties are used to match the user accounts in Slack for update operations. Select the Save button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -144,14 +138,14 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Slack**.
 
-13. In the **Attribute Mappings** section, review the group attributes that will be synchronized from Microsoft Entra ID to Slack. Note that the attributes selected as **Matching** properties will be used to match the groups in Slack for update operations. Select the Save button to commit any changes.
+13. In the **Attribute Mappings** section, review the group attributes synchronized from Microsoft Entra ID to Slack. The attributes selected as **Matching** properties are used to match the groups in Slack for update operations. Select the Save button to commit any changes.
 
       |Attribute|Type|
       |---|---|
       |displayName|String|
       |members|Reference|
 
-14. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+14. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 15. To enable the Microsoft Entra provisioning service for Slack, change the **Provisioning Status** to **On** in the **Settings** section
 
@@ -161,32 +155,29 @@ This section guides you through connecting your Microsoft Entra ID to Slack's us
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-17. When you are ready to provision, click **Save**.
+17. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users and groups defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 5: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
 
-1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Troubleshooting Tips
 
 * When configuring Slack's **displayName** attribute, be aware of the following behaviors:
 
-  * Values are not entirely unique (e.g. 2 users can have the same display name)
+  * Values aren't entirely unique (such as two users can have the same display name)
 
   * Supports non-English characters, spaces, capitalization. 
   
-  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (e.g. **( [ { } ] )**), and separators (e.g. **, / ;**).
+  * Allowed punctuation includes periods, underscores, hyphens, apostrophes, brackets (for example, `( [ { } ] )`), and separators (for example, `, / ;`).
   
-  * displayName property cannot have an '@' character. If an '@' is included, you may find a skipped event in the provisioning logs with the description "AttributeValidationFailed."
+  * displayName property can't have an '@' character. If an '@' is included, you might find a skipped event in the provisioning logs with the description "AttributeValidationFailed."
 
-  * Only updates if these two settings are configured in Slack's workplace/organization - **Profile syncing is enabled** and **Users cannot change their display name**.
+  * Only updates if these two settings are configured in Slack's workplace/organization - **Profile syncing is enabled** and **Users can't change their display name**.
 
 * Slack's **userName** attribute has to be under 21 characters and have a unique value.
 
@@ -198,11 +189,11 @@ Once you've configured provisioning, use the following resources to monitor your
 
 * 06/16/2020 - Modified DisplayName attribute to only be updated during new user creation.
 
-## Additional Resources
+## More Resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

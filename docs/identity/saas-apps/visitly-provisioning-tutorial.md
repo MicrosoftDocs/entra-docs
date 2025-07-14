@@ -1,33 +1,30 @@
 ---
-title: 'Tutorial: Configure Visitly for automatic user provisioning with Microsoft Entra ID'
+title: Configure Visitly for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Visitly.
-
-author: twimmers
-writer: twimmers
-manager: CelesteDG
+author: thomasakelo
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
-
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: thomasakelo
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Visitly so that I can streamline the user management process and ensure that users have the appropriate access to Visitly.
 ---
 
-# Tutorial: Configure Visitly for automatic user provisioning
+# Configure Visitly for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps you perform in Visitly and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Visitly.
+The objective of this article is to demonstrate the steps you perform in Visitly and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Visitly.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software-as-a-service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software-as-a-service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Visitly tenant](https://www.visitly.io/pricing/)
 * A user account in Visitly with admin permissions
 
@@ -40,7 +37,7 @@ Before you configure and enable automatic user provisioning, decide which users 
 
 ## Important tips for assigning users to Visitly 
 
-* We recommend that you assign a single Microsoft Entra user to Visitly to test the automatic user provisioning configuration. Additional users or groups can be assigned later.
+* We recommend that you assign a single Microsoft Entra user to Visitly to test the automatic user provisioning configuration. More users or groups can be assigned later.
 
 * When you assign a user to Visitly, you must select any valid application-specific role (if available) in the assignment dialog box. Users with the Default Access role are excluded from provisioning.
 
@@ -68,7 +65,7 @@ To configure Visitly for automatic user provisioning with Microsoft Entra ID, ad
 To add Visitly from the Microsoft Entra application gallery, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.Visitly**, select **Visitly** in the results panel, and then select **Add** to add the application.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.Visitly**, select **Visitly** in the results panel, and then select **Add** to add the application.
 
 	![Visitly in the results list](common/search-new-app.png)
 
@@ -77,14 +74,14 @@ To add Visitly from the Microsoft Entra application gallery, follow these steps.
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users or groups in Visitly based on user or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> To enable SAML-based single sign-on for Visitly, follow the instructions in the [Visitly single sign-on tutorial](Visitly-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, although these two features complement each other.
+> To enable SAML-based single sign-on for Visitly, follow the instructions in the [Visitly single sign-on  article](Visitly-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, although these two features complement each other.
 
 <a name='configure-automatic-user-provisioning-for-visitly-in-azure-ad'></a>
 
 ### Configure automatic user provisioning for Visitly in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Visitly**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Visitly**.
 
 	![The Visitly link in the Applications list](common/all-applications.png)
 
@@ -108,13 +105,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Visitly**.
 
-	![Visitly user mappings](media/visitly-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Visitly in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Visitly for update operations. Select **Save** to commit any changes.
 
 	![Visitly user attributes](media/visitly-provisioning-tutorial/userattribute.png)
 
-10. To configure scoping filters, follow the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, follow the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Visitly, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -136,11 +131,11 @@ You can use the **Current Status** section to monitor progress and follow links 
 
 Visitly doesn't support hard deletes. Everything is soft delete only.
 
-## Additional resources
+## More resources
 
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

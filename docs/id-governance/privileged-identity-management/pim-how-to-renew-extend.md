@@ -1,26 +1,24 @@
 ---
 title: Renew Microsoft Entra role assignments in PIM
 description: Learn how to extend or renew Microsoft Entra role assignments in Microsoft Entra Privileged Identity Management (PIM)
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim
-
+ms.custom: pim, sfi-ga-nochange
 ---
 
 # Extend or renew Microsoft Entra role assignments in Privileged Identity Management
 
-Microsoft Entra Privileged Identity Management (PIM) provides controls to manage the access and assignment lifecycle for roles in Microsoft Entra ID. Administrators can assign roles using start and end date-time properties. When the assignment end approaches, Privileged Identity Management sends email notifications to the affected users or groups. It also sends email notifications to Microsoft Entra administrators to ensure that appropriate access is maintained. Assignments might be renewed and remain visible in an expired state for up to 30 days, even if access is not extended.
+Microsoft Entra Privileged Identity Management (PIM) provides controls to manage the access and assignment lifecycle for roles in Microsoft Entra ID. Administrators can assign roles using start and end date-time properties. When the assignment end approaches, Privileged Identity Management sends email notifications to the affected users or groups. It also sends email notifications to Microsoft Entra administrators to ensure that appropriate access is maintained. Assignments might be renewed and remain visible in an expired state for up to 30 days, even if access isn't extended.
 
 ## Who can extend and renew?
 
-Only Global Administrators or Privileged Role administrators can extend or renew Microsoft Entra role assignments. The affected user or group can ask to extend roles that are about to expire and request to renew roles that are already expired.
+Only Global Administrators or Privileged Role Administrators can extend or renew Microsoft Entra role assignments. The affected user or group can ask to extend roles that are about to expire and request to renew roles that are already expired.
 
 ## When are notifications sent?
 
@@ -72,13 +70,13 @@ In addition to using following the link from email, administrators can approve o
 
 When an Administrator selects **Approve** or **Deny**, the details of the request are shown, along with a field to provide a business justification for the audit logs.
 
-:::image type="content" source="./media/pim-how-to-renew-extend/extend-admin-approve-form.png" alt-text="Screenshot showing the Approve role assignment request with requestor reason, assignment type, start time, end time, and reason.":::
+:::image type="content" source="./media/pim-how-to-renew-extend/extend-admin-approve-form.png" alt-text="Screenshot showing the Approved role assignment request with requestor reason, assignment type, start time, end time, and reason.":::
 
 When approving a request to extend role assignment, administrators can choose a new start date, end date, and assignment type. Changing assignment type might be necessary if the administrator wants to provide limited access to complete a specific task (one day, for example). In this example, the administrator can change the assignment from **Eligible** to **Active**. This means they can provide access to the requestor without requiring them to activate.
 
 ### Admin initiated extension
 
-If a user assigned to a role doesn't request an extension for the role assignment, an administrator can extend an assignment on behalf of the user. Administrative extensions of role assignment do not require approval, but notifications are sent to all other administrators after the role has been extended.
+If a user assigned to a role doesn't request an extension for the role assignment, an administrator can extend an assignment on behalf of the user. Administrative extensions of role assignment don't require approval, but notifications are sent to all other administrators after the role has been extended.
 
 To extend a role assignment, browse to the role or assignment view in Privileged Identity Management. Find the assignment that requires an extension. Then select **Extend** in the action column.
 
@@ -99,7 +97,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
     "justification": "TEST",
     "roleDefinitionId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
     "directoryScopeId": "/",
-    "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "scheduleInfo": {
         "startDateTime": "2022-04-10T00:00:00Z",
         "expiration": {
@@ -122,7 +120,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
     "approvalId": null,
     "customData": null,
     "action": "adminExtend",
-    "principalId": "071cc716-8147-4397-a5ba-b2105951cc0b",
+    "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
     "roleDefinitionId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
     "directoryScopeId": "/",
     "appScopeId": null,
@@ -134,7 +132,7 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSch
         "device": null,
         "user": {
             "displayName": null,
-            "id": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5"
+            "id": "aaaaaaaa-bbbb-cccc-1111-222222222222"
         }
     },
     "scheduleInfo": {
@@ -165,7 +163,7 @@ Users who can no longer access resources can access up to 30 days of expired ass
 
 The list of roles shown defaults to **Eligible roles**. Select **Eligible** or **Active** assigned roles.
 
-To request renewal for any of the role assignments in the list, select the **Renew** action. Then provide a reason for the request. It's helpful to provide a duration in addition to any additional context or a business justification that can help the administrator decide whether to approve or deny.
+To request renewal for any of the role assignments in the list, select the **Renew** action. Then provide a reason for the request. It's helpful to provide a duration in addition to any other context or a business justification that can help the administrator decide whether to approve or deny.
 
 :::image type="content" source="./media/pim-how-to-renew-extend/renew-request-form.png" alt-text="Screenshot showing Renew role assignment pane showing Reason box.":::
 

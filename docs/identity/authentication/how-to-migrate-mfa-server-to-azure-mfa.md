@@ -1,22 +1,19 @@
 ---
 title: Migrate from MFA Server to Microsoft Entra multifactor authentication
 description: Step-by-step guidance to migrate from MFA Server on-premises to Microsoft Entra multifactor authentication
-
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, sfi-ga-nochange
 ms.topic: how-to
-ms.date: 09/28/2023
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: Gargi-Sinha
 manager: martinco
-ms.reviewer: michmcla
+ms.reviewer: jpettere
 ---
 # Migrate from MFA Server to Microsoft Entra multifactor authentication
 
-Multifactor authentication is important to securing your infrastructure and assets from bad actors. Azure Multi-Factor Authentication Server (MFA Server) isn't available for new deployments and will be deprecated. Customers who are using MFA Server should move to using cloud-based Microsoft Entra multifactor authentication.
+Multifactor authentication is important to securing your infrastructure and assets from bad actors. Azure Multi-Factor Authentication Server (MFA Server) isn't available for new deployments and is deprecated. Customers who are using MFA Server should move to using cloud-based Microsoft Entra multifactor authentication.
 
 In this article, we assume that you have a hybrid environment where:
 
@@ -40,11 +37,11 @@ If you can't move your user authentication, see the step-by-step guidance for [M
 
 ## Prerequisites
 
-- AD FS environment (required if you aren't migrating all your apps to Microsoft Entra prior to migrating MFA Server)
+- AD FS environment (required if you don't migrate all your apps to Microsoft Entra before you migrate MFA Server)
   - Upgrade to AD FS for Windows Server 2019, Farm behavior level (FBL) 4. This upgrade enables you to select authentication provider based on group membership for a more seamless user transition. While it's possible to migrate while on AD FS for Windows Server 2016 FBL 3, it isn't as seamless for users. During the migration, users are prompted to select an authentication provider (MFA Server or Microsoft Entra multifactor authentication) until the migration is complete. 
 - Permissions
-  - Enterprise administrator role in Active Directory to configure AD FS farm for Microsoft Entra multifactor authentication
-  - Global administrator role in Microsoft Entra ID to configure Microsoft Entra ID by using PowerShell
+  - Enterprise Administrator role in Active Directory to configure AD FS farm for Microsoft Entra multifactor authentication
+  - A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature. 
 
 
 ## Considerations for all migration paths
@@ -56,7 +53,7 @@ Microsoft's MFA server can be integrated with many systems, and you must evaluat
 
 Common ways to think about moving users in batches include moving them by regions, departments, or roles such as administrators. You should move user accounts iteratively, starting with test and pilot groups, and make sure you have a rollback plan in place. 
 
-You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA data stored in the on-premises Azure MFA Server to Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to reroute users to Azure MFA. Staged Rollout helps you test without making any changes to your domain federation settings.
+You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA data stored in the on-premises Azure MFA Server to Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to reroute users to Microsoft Entra multifactor authentication. Staged Rollout helps you test without making any changes to your domain federation settings.
 
 To help users to differentiate the newly added account from the old account linked to the MFA Server, make sure the Account name for the Mobile App on the MFA Server is named in a way to distinguish the two accounts. 
 For example, the Account name that appears under Mobile App on the MFA Server has been renamed to **On-Premises MFA Server**. 
@@ -67,9 +64,9 @@ We therefore recommend that regardless of the migration path you choose, that yo
 
 #### Migrating hardware security keys
 
-Microsoft Entra ID provides support for OATH hardware tokens. You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA settings between MFA Server and Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test user migrations without changing domain federation settings. 
+Microsoft Entra ID provides support for hardware OATH tokens. You can use the [MFA Server Migration Utility](how-to-mfa-server-migration-utility.md) to synchronize MFA settings between MFA Server and Microsoft Entra multifactor authentication and use [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) to test user migrations without changing domain federation settings. 
 
-If you only want to migrate OATH hardware tokens, you need to [upload tokens to Microsoft Entra ID by using a CSV file](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview), commonly referred to as a "seed file". 
+If you only want to migrate hardware OATH tokens, you need to [upload tokens to Microsoft Entra ID by using a CSV file](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview), commonly referred to as a "seed file". 
 The seed file contains the secret keys, token serial numbers, and other necessary information needed to upload the tokens into Microsoft Entra ID. 
 
 If you no longer have the seed file with the secret keys, it isn't possible to export the secret keys from MFA Server. 
@@ -78,7 +75,7 @@ If you no longer have access to the secret keys, contact your hardware vendor fo
 The MFA Server Web Service SDK can be used to export the serial number for any OATH tokens assigned to a given user. 
 You can use this information along with the seed file to import the tokens into Microsoft Entra ID and assign the OATH token to the specified user based on the serial number. 
 The user will also need to be contacted at the time of import to supply OTP information from the device to complete the registration. 
-Refer to the help file topic **GetUserInfo** > **userSettings** > **OathTokenSerialNumber** in Multi-Factor Authentication Server on your MFA Server. 
+Refer to the help file topic **GetUserInfo** > **userSettings** > **OathTokenSerialNumber** on your MFA Server. 
 
 ### More migrations
 
@@ -108,9 +105,9 @@ MIM can't be configured to use Microsoft Entra multifactor authentication.
 We recommend you evaluate moving your SSPR service to Microsoft Entra SSPR.
 You can use the opportunity of users registering for Microsoft Entra multifactor authentication to use the combined registration experience to register for Microsoft Entra SSPR.
 
-If you can't move your SSPR service, or you leverage MFA Server to invoke MFA requests for Privileged Access Management (PAM) scenarios, we recommend you update to an [alternate 3rd party MFA option](/microsoft-identity-manager/working-with-custommfaserver-for-mim).
+If you can't move your SSPR service, or you use MFA Server to invoke MFA requests for Privileged Access Management (PAM) scenarios, we recommend you update to an [alternate third-party MFA option](/microsoft-identity-manager/working-with-custommfaserver-for-mim).
 
-<a name='radius-clients-and-azure-ad-multi-factor-authentication'></a>
+<a name='radius-clients-and-azure-ad-multifactor-authentication'></a>
 
 ### RADIUS clients and Microsoft Entra multifactor authentication
 
@@ -125,7 +122,7 @@ There are limitations when using NPS for RADIUS clients, and we recommend evalua
 Check with the service provider for supported product versions and their capabilities. 
 
 - The NPS extension doesn't use Microsoft Entra Conditional Access policies. If you stay with RADIUS and use the NPS extension, all authentication requests going to NPS will require the user to perform MFA.
-- Users must register for Microsoft Entra multifactor authentication prior to using the NPS extension. Otherwise, the extension fails to authenticate the user, which can generate help desk calls.
+- Users must register for Microsoft Entra multifactor authentication before using the NPS extension. Otherwise, the extension fails to authenticate the user, which can generate help desk calls.
 - When the NPS extension invokes MFA, the MFA request is sent to the user's default MFA method. 
   - Because the sign-in happens on non-Microsoft applications, the user often can't see visual notification that multifactor authentication is required and that a request has been sent to their device.
   - During the multifactor authentication requirement, the user must have access to their default authentication method to complete the requirement. They can't choose an alternative method. Their default authentication method will be used even if it's disabled in the tenant authentication methods and multifactor authentication policies.
@@ -143,10 +140,10 @@ Others might include:
 - Citrix Gateway
   - [Citrix Gateway](https://docs.citrix.com/en-us/citrix-gateway) supports both RADIUS and NPS extension integration, and a SAML integration.
 - Cisco VPN
-  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-anyconnect.md).
+  - The Cisco VPN supports both RADIUS and [SAML authentication for SSO](~/identity/saas-apps/cisco-secure-firewall-secure-client.md).
   - By moving from RADIUS authentication to SAML, you can integrate the Cisco VPN without deploying the NPS extension.
 - All VPNs
-  - We recommend federating your VPN as a SAML app if possible. This federation will allow you to use Conditional Access. For more information, see a [list of VPN vendors that are integrated into the Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md#secure-hybrid-access-through-azure-ad-partner-integrations) App gallery.
+  - We recommend federating your VPN as a SAML app if possible. This federation allows you to use Conditional Access. For more information, see a [list of VPN vendors that are integrated into the Microsoft Entra ID](~/identity/enterprise-apps/secure-hybrid-access.md#secure-hybrid-access-through-azure-ad-partner-integrations) App gallery.
 
 
 ### Resources for deploying NPS

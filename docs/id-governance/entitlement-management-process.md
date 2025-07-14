@@ -2,12 +2,12 @@
 title: Request process & notifications - Microsoft Entra entitlement management
 description: Learn about the request process for an access package and when email notifications are sent in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: conceptual
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As a < type of user >, I want < what? > so that < why? >.
@@ -18,11 +18,11 @@ When a user submits a request to an access package, a process begins to deliver 
 
 ## Who can request an access package
 
-The catalog, access package and policy settings control whether a user can request an access package.
+The catalog, access package, and policy settings control whether a user can request an access package.
 
 * The catalog setting of **Enabled** determines whether users can request access packages in the catalog.
 * The catalog setting of **Enabled for external users** determines whether users who are from external directories can request access packages in the catalog.
-* The access package setting of **Hidden** determines whether users can see the access package in My access. It does not limit whether a user who has a link to the access package can request it.
+* The access package setting of **Hidden** determines whether users can see the access package in My access. It doesn't limit whether a user who has a link to the access package can request it.
 * The access package list of incompatible access packages and groups determines whether users who already have other assignments can request.
 * The policy settings within the access package determine who can request.
 
@@ -39,7 +39,7 @@ A user that needs access to the resources in an access package can submit an acc
 | Expired | If no approvers approve a request within the approval request timeout, the request expires. To try again, the user has to resubmit their request. |
 | Denied | Approver denies a request. |
 | Approved | Approver approves a request. |
-| Delivering | User has **not** been assigned access to all the resources in the access package. If this is an external user, the user may not have accessed the resource directory yet. They also may not have accepted the consent prompt. |
+| Delivering | User has **not** been assigned access to all the resources in the access package. If this is an external user, the user might not have accessed the resource directory yet. They also might not have accepted the consent prompt. |
 | Delivered | User has been assigned access to all the resources in the access package. |
 | Partially Delivered |  User has **not** been assigned access to all the resources in the access package yet. |
 | Access extended | If extensions are allowed in the policy, the user extended the assignment. |
@@ -70,7 +70,7 @@ The following diagram shows the experience of stage-1 and stage-2 approvers and 
 :::image type="content" source="./media/entitlement-management-process/2stage-approval-with-request-timeout-flow.png" alt-text="2-stage approval process flow" lightbox="./media/entitlement-management-process/2stage-approval-with-request-timeout-flow.png":::
 
 ### Email notifications table
-The following table provides more detail about each of these email notifications. To manage these emails, you can use rules. For example, in Outlook, you can create rules to move the emails to a folder if the subject contains words from this table.  The words are based on the default language settings of the tenant where the user is requesting access.
+The following table provides more detail about each of these email notifications. To manage these emails, you can use rules. For example, in Outlook, you can create rules to move the emails to a folder if the subject contains words from this table. The words are based on the default language settings of the tenant where the user is requesting access.
 
 | # | Email subject | When sent | Sent to |
 | --- | --- | --- | --- |
@@ -91,9 +91,10 @@ The following table provides more detail about each of these email notifications
 | 15 | Action required: Approve or deny forwarded request by *[date]* | This email is sent to stage-2 alternate approvers, if escalation is enabled, to take action. | Stage-2 alternate approvers |
 | 16 | Request approved for *[requestor]* to *[access_package]* | This email is sent to the second approver and stage-2 alternate approvers upon approving the request. | Second approver, Stage-2 alternate approvers |
 | 17 | A request has expired for *[access_package]* | This email will be sent to the second approver or alternate approvers, after the request expires. | Second approver, stage-2 alternate approvers |
-| 18 | You now have access to *[access_package]* | This email is sent to the end users to start using their access. | Requestor |
-| 19 | Extend access for *[access_package]* by *[date]* | This email is sent to the end users before their access expires. | Requestor |
-| 20 | Access has ended for *[access_package]* | This email will be sent to the end users after their access expires. | Requestor |
+| 18 | You now have access to *[access_package]* | This email is sent to the end users to start using their access. This is disabled by default using the entitlement management disable email feature. | Requestor |
+| 19 | Extend access for *[access_package]* by *[date]* | This email is sent to the end users before their access expires. This is disabled by default using the entitlement management disable email feature. | Requestor |
+| 20 | Access has ended for *[access_package]* | This email will be sent to the end users after their access expires. This is disabled by default using the entitlement management disable email feature. | Requestor |
+
 
 ### Access request emails
 
@@ -117,8 +118,7 @@ Both the approver and the alternate approvers can approve or deny the request.
 
 ### Approved or denied emails
 
- When an approver receives an access request submitted by a requestor, they can approve or deny the access request. The approver needs to add a business justification for their decision. Here's a sample email sent to the approvers
- and alternate approvers after a request is approved:
+ When an approver receives an access request submitted by a requestor, they can approve or deny the access request. The approver needs to add a business justification for their decision. Here's a sample email sent to the approvers and alternate approvers after a request is approved:
 
 ![Approved request to access package email](./media/entitlement-management-process/approver-request-email-approved.png)
 
@@ -154,5 +154,6 @@ Here's a sample email notification that is sent to a requestor when their access
 
 ## Next steps
 
+- [Create custom alerts for entitlement management](governance-custom-alerts.md)
 - [Request access to an access package](entitlement-management-request-access.md)
 - [Approve or deny access requests](entitlement-management-request-approve.md)

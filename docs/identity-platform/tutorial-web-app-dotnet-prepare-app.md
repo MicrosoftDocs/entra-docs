@@ -4,21 +4,22 @@ description: Learn how to create and prepare an ASP.NET Core application for aut
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.date: 01/18/2024
+ms.date: 04/15/2025
 ms.service: identity-platform
-
 ms.topic: tutorial
-#Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Azure portal and configure the application for authentication.
+ms.custom: sfi-image-nochange
+#Customer intent: As an application developer, I want to use an IDE to set up an ASP.NET Core project, set up and upload a self signed certificate to the Microsoft Entra admin center and configure the application for authentication.
 ---
 
-# Tutorial: Prepare an application for authentication
+# Tutorial: Set up an ASP.NET Core web app that authenticates users
 
-In the [previous tutorial](tutorial-web-app-dotnet-register-app.md), you registered a web application in the Microsoft Entra admin center. This tutorial demonstrates how to create an ASP.NET Core web app using an IDE. You'll also create and upload a self-signed certificate to the Microsoft Entra admin center to secure your application. Finally, you'll configure the application for authentication.
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-In this tutorial:
+In this tutorial, you create an ASP.NET Core web app and configure it for authentication. This is part 1 of a series that demonstrates how to build an ASP.NET Core web application and prepare it for authentication using the Microsoft Entra admin center. This application can be used for employees in a workforce tenant or for customers using an external tenant
+
+In this tutorial, you:
 
 > [!div class="checklist"]
->
 > * Create an ASP.NET Core web app
 > * Create a self-signed certificate
 > * Configure the settings for the application
@@ -26,137 +27,165 @@ In this tutorial:
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Register an application with the Microsoft identity platform](tutorial-web-app-dotnet-register-app.md).
-* You can download an IDE used in this tutorial [here](https://visualstudio.microsoft.com/downloads).
-  * Visual Studio 2022
-  * Visual Studio Code
-  * Visual Studio 2022 for Mac
-* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
+  * Application Administrator
+  * Application Developer
+* Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
+* A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+* An ASP.NET Core developer certificate. Install one using [dotnet dev-certs](/dotnet/core/additional-tools/self-signed-certificates-guide#with-dotnet-dev-certs)
+
+### [Workforce tenant](#tab/workforce-tenant)
+
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `https://localhost:5001/signin-oidc`
+  * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
+* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./how-to-add-credentials.md) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
+
+### [External tenant](#tab/external-tenant)
+
+* An external tenant. If you don't have one, [create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Web** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
+  * **Redirect URI**: `https://localhost:5001/signin-oidc`
+  * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
+* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./how-to-add-credentials.md) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
+* Associate your app with a user flow in the Microsoft Entra admin center. This user flow can be used across multiple applications. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
+
+---
 
 ## Create an ASP.NET Core project
 
-Use the following tabs to create an ASP.NET Core project within an IDE.
+In this section, you create an ASP.NET Core project in Visual Studio Code.
 
-### [Visual Studio](#tab/visual-studio)
-
-1. Open Visual Studio, and then select **Create a new project**.
-1. Search for and choose the **ASP.NET Core Web App** template, and then select **Next**.
-1. Enter a name for the project, such as *NewWebAppLocal*.
-1. Choose a location for the project or accept the default option, and then select **Next**.
-1. Accept the default for the **Framework**, **Authentication type**, and **Configure for HTTPS**. **Authentication type** can be set to **None** as this tutorial covers the process.
-1. Select **Create**.
-
-### [Visual Studio Code](#tab/visual-studio-code)
-
-1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
-1. Create a new folder using the **New Folder...** icon in the **Explorer** pane. Provide a name similar to the one registered previously, for example, *NewWebAppLocal*.
+1. Open Visual Studio Code and select **File > Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
-1. To create an ASP.NET Core web app template, run the following commands in the terminal to change into the directory and create the project:
+1. Enter the following command to make a Model View Controller (MVC) ASP.NET Core project.
 
-    ```powershell
-    cd NewWebAppLocal
-    dotnet new webapp
+    ```console
+    dotnet new mvc -n identity-client-web-app
     ```
 
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
+## Install identity packages
 
-1. Open Visual Studio, and then select **New**.
-1. Under **Web and Console** in the left navigation bar, select **App**.
-1. Under **ASP.NET Core**, select **Web Application** and ensure **C#** is selected in the drop down menu, then select **Continue**.
-1. Ensure the **Target Framework** is set to **.NET 6.0** at a minimum.
-1. Enter a name for **Project name**, this is reflected in **Solution Name**. Provide a similar name to the one registered on the Azure portal, such as *NewWebAppLocal*.
-1. Accept the default location for the project or choose a different location, and then select **Create**.
+This application uses [Microsoft.Identity.Web](/entra/msal/dotnet/microsoft-identity-web/) and the related NuGet package must be installed.
 
->[!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
+Use the following snippet to change into the new *identity-client-web-app* folder and install the relevant NuGet package:
 
----
+```console
+cd identity-client-web-app
+dotnet add package Microsoft.Identity.Web.UI
+```
 
-## Create and upload a self-signed certificate
+## Configure the application for authentication
 
-The use of certificates is a suggested way of securing communication between client and server. For the purpose of this tutorial, a self-signed certificate will be created in the project directory. Learn more about self-signed certificates [here](howto-create-self-signed-certificate.md).
+The values recorded in your application setup are used to configure the application for authentication. The configuration file, *appsettings.json*, is used to store application settings used during run-time.
 
-### [Visual Studio](#tab/visual-studio)
+### Update the configuration file
 
-1. Select **Tools > Command Line > Developer Command Prompt**.
-
-1. Enter the following command to create a new self-signed certificate:
-
-    ```powershell
-    dotnet dev-certs https -ep ./certificate.crt --trust
-    ```
-
-### [Visual Studio Code](#tab/visual-studio-code)
-
-1. In the **Terminal**, enter the following command to create a new self-signed certificate:
-
-    ```powershell
-    dotnet dev-certs https -ep ./certificate.crt --trust
-    ```
-
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
-
-1. Locate the **Terminal** option in your project.
-
-1. Enter the following command to create a new self-signed certificate:
-
-    ```powershell
-    dotnet dev-certs https -ep ./certificate.crt --trust
-    ```
-
->[!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
-
----
-
-### Upload certificate to the Microsoft Entra admin center
-
-To make the certificate available to the application, it must be uploaded into the tenant.
-
-1. Starting from the **Overview** page of the app created earlier, under **Manage**, select **Certificates & secrets** and select the **Certificates (0)** tab.
-1. Select **Upload certificate**.
-
-    :::image type="content" source="./media/web-app-tutorial-02-prepare-application/upload-certificate.png" alt-text="Screenshot of uploading a certificate into a Microsoft Entra tenant." lightbox="./media/web-app-tutorial-02-prepare-application/upload-certificate.png":::
-
-1. Select the **folder** icon, then browse for and select the certificate that was previously created.
-1. Enter a description for the certificate and select **Add**.
-1. Record the **Thumbprint** value, which will be used in the next step.
-
-    :::image type="content" source="./media/web-app-tutorial-02-prepare-application/copy-certificate-thumbprint.png" alt-text="Screenshot showing copying the certificate thumbprint.":::
-
-## Configure the application for authentication and API reference
-
-The values recorded earlier will be used to configure the application for authentication. The configuration file, *appsettings.json*, is used to store application settings used during run-time. As the application will also call into a web API, it must also contain a reference to it. 
-
-1. In your IDE, open *appsettings.json* and replace the file contents with the following snippet. Replace the text in quotes with the values that were recorded earlier.
+In your IDE, open *appsettings.json* and replace the file contents with the following snippet. Replace the text in quotes with the values that were recorded earlier.
   
-   :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json":::
+### [Workforce tenant](#tab/workforce-tenant)
 
-    * `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
-    * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
-    * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
-    * `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded.
-    * `CallbackPath` - Is an identifier to help the server redirect a response to the appropriate application.
-    * `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
-1. Save changes to the file.
+```json
+{
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "TenantId": "Enter_the_Tenant_Id_Here",
+    "ClientId": "Enter_the_Application_Id_Here",
+    "ClientCertificates": [
+      {
+        "SourceType": "StoreWithThumbprint",
+        "CertificateStorePath": "CurrentUser/My",
+        "CertificateThumbprint": "Enter the certificate thumbprint obtained the Microsoft Entra admin center"
+      }   
+    ],
+    "CallbackPath": "/signin-oidc"
+  },
+    "DownstreamApi": {
+      "BaseUrl": "https://graph.microsoft.com/v1.0/",
+      "RelativePath": "me",
+      "Scopes": [ 
+        "user.read" 
+      ]
+    },
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft.AspNetCore": "Warning"
+      }
+    },
+    "AllowedHosts": "*"
+  }
+```
+
+### [External tenant](#tab/external-tenant)
+
+```json
+{
+  "AzureAd": {
+    "Authority": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/",
+    "ClientId": "Enter_the_Application_Id_Here",
+    "ClientCertificates": [
+      {
+        "SourceType": "StoreWithThumbprint",
+        "CertificateStorePath": "CurrentUser/My",
+        "CertificateThumbprint": "Enter the certificate thumbprint obtained the Microsoft Entra admin center"
+      }   
+    ],
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath": "/signout-callback-oidc"
+  },
+  "DownstreamApi": {
+    "BaseUrl": "https://graph.microsoft.com/v1.0/",
+    "RelativePath": "me",
+    "Scopes": [ 
+      "user.read" 
+    ]
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
+```
+---
+
+* `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
+* `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
+* `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
+* `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded. Do not use a self signed certificate for production apps. 
+* `CallbackPath` - Is an identifier to help the server redirect a response to the appropriate application.
+* `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
+
+### Update the redirect URI
+
+From the [prerequisites](#prerequisites), the redirect URI is set to `https://localhost:5001/signin-oidc`. This needs to be updated in the application launch settings. You can use the redirect URI that is created during the local application setup, or any other available port number, provided it matches the redirect URI in the application registration.
+
 1. In the **Properties** folder, open the *launchSettings.json* file.
-1. Find and record the `https` value `applicationURI` within *launchSettings.json*, for example `https://localhost:{port}`. This URL will be used when defining the **Redirect URI**. Do not use the `http` value. 
+1. Find the `https` object, and update the value of `applicationURI` with the correct port number, in this case, `5001`. The line should look similar to the following snippet:
 
-## Add a platform redirect URI
+    ```json
+    "applicationUrl": "https://localhost:5001;http://localhost:{port}",
+    ```
 
-1. In the Microsoft Entra admin center, under **Manage**, select **App registrations**, and then select the application that was previously created.
-1. In the left menu, under **Manage**, select **Authentication**.
-1. In **Platform configurations**, select **Add a platform**, and then select **Web**.
+## Next step
 
-    :::image type="content" source="./media/web-app-tutorial-02-prepare-application/select-platform.png" alt-text="Screenshot on how to select the platform for the application." lightbox="./media/web-app-tutorial-02-prepare-application/select-platform.png":::
-
-1. Under **Redirect URIs**, enter the `applicationURL` and the `CallbackPath`, `/signin-oidc`, in the form of `https://localhost:{port}/signin-oidc`.
-1. Under **Front-channel logout URL**, enter the following URL for signing out, `https://localhost:{port}/signout-oidc`.
-1. Select **Configure**.
-
-## Next steps
+### [Workforce tenant](#tab/workforce-tenant)
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add sign-in to an application](tutorial-web-app-dotnet-sign-in-users.md)
+> [Configure an ASP.NET Core web app for authorization and authentication](./tutorial-web-app-dotnet-sign-in-users.md)
+
+### [External tenant](#tab/external-tenant)
+
+> [!div class="nextstepaction"]
+> [Configure an ASP.NET Core web app for authorization and authentication](./tutorial-web-app-dotnet-sign-in-users.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant)
+
+---

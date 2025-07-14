@@ -2,13 +2,14 @@
 title: Troubleshoot provisioning to a Microsoft Entra gallery app.
 description: How to troubleshoot common issues faced when configuring user provisioning to an application already listed in the Microsoft Entra application gallery.
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/04/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: asteen, arvinh
+ai-usage: ai-assisted
 ---
 
 # Problem configuring user provisioning to a Microsoft Entra gallery application
@@ -21,13 +22,13 @@ Start by finding the setup tutorial for your application. Then follow the steps 
 
 Once the service is configured, most insights into the operation of the service can be drawn from two places.
 
--   **Provisioning logs (preview)** – The [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) record all operations performed by the provisioning service. The logs include querying Microsoft Entra ID for assigned users that are in scope for provisioning. Query the target app for the existence of those users, comparing the user objects between the system. Then add, update, or disable the user account in the target system based on the comparison. You access the provisioning logs in the Microsoft Entra admin center by selecting **Identity** > **Applications** > **Enterprise applications** > **Provisioning logs** in the **Activity** section.
+-   **Provisioning logs (preview)** – The [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) record all operations performed by the provisioning service. The logs include querying Microsoft Entra ID for assigned users that are in scope for provisioning. Query the target app for the existence of those users, comparing the user objects between the system. Then add, update, or disable the user account in the target system based on the comparison. You access the provisioning logs in the Microsoft Entra admin center by selecting **Entra ID** > **Enterprise apps** > **Provisioning logs** in the **Activity** section.
 
--   **Current status –** A summary of the last provisioning run for a given app can be seen in the **Identity** > **Applications** > **Enterprise applications** > `[Application Name]` > **Provisioning** section, at the bottom of the screen under the service settings. The Current Status section shows if a provisioning cycle starts provisioning user accounts. Watch the progress of the cycle, see how many users and groups are provisioned, and how many roles are created. If there are errors, details can be found in the [Provisioning logs] (~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context).
+-   **Current status –** A summary of the last provisioning run for a given app can be seen in the **Entra ID** > **Enterprise apps** > `[Application Name]` > **Provisioning** section, at the bottom of the screen under the service settings. The Current Status section shows if a provisioning cycle starts provisioning user accounts. Watch the progress of the cycle, see how many users and groups are provisioned, and how many roles are created. If there are errors, details can be found in the [Provisioning logs] (~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context).
 
 ## Provisioning service doesn't appear to start
 
-You set the **Provisioning Status** to be **On** in the **Identity** > **Applications** > **Enterprise applications** > `[Application Name]` > **Provisioning** section of the Microsoft Entra admin center. However, no other status details are shown on the page after subsequent reloads. It's likely that the service is running but an initial cycle didn't complete. Check the **Provisioning logs** to determine what operations the service is performing, and if there are any errors.
+You set the **Provisioning Status** to be **On** in the **Entra ID** > **Enterprise apps** > `[Application Name]` > **Provisioning** section of the Microsoft Entra admin center. However, no other status details are shown on the page after subsequent reloads. It's likely that the service is running but an initial cycle didn't complete. Check the **Provisioning logs** to determine what operations the service is performing, and if there are any errors.
 
 >[!NOTE]
 >An initial cycle takes between 20 minutes and several hours. The time depends on the size of the Microsoft Entra directory and the number of users in scope for provisioning. Subsequent syncs are faster, as the provisioning service stores watermarks that represent the state of both systems after the initial cycle. The watermarks improve performance of subsequent syncs.

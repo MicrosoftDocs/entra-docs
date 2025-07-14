@@ -3,9 +3,9 @@ title: "Quickstart: ASP.NET web app that signs in users"
 description: Download and run a code sample that shows how an ASP.NET web app can sign in Microsoft Entra users.
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-other
+ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform
 
@@ -18,7 +18,7 @@ ms.topic: quickstart
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add sign-in with Microsoft to an ASP.NET web app](quickstart-web-app-aspnet-sign-in.md)
+> > [Quickstart: Add sign-in with Microsoft to an ASP.NET web app](quickstart-web-app-dotnet-core-sign-in.md)
 >
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -27,7 +27,7 @@ ms.topic: quickstart
 >
 > In this quickstart, you download and run a code sample that demonstrates an ASP.NET web application that can sign in users with Microsoft Entra accounts.
 > 
-> #### Step 1: Configure your application in the Azure portal
+> #### Step 1: Configure your application in the Microsoft Entra admin center
 > For the code sample in this quickstart to work, enter **https://localhost:44368/** for **Redirect URI**.
 > 
 > <button id="makechanges" class="nextstepaction configure-app-button"> Make these changes for me </button>
@@ -116,8 +116,8 @@ ms.topic: quickstart
 > 
 > > |Where  | Description |
 > > |---------|---------|
-> > | `ClientId`     | The application ID from the application registered in the Azure portal. |
-> > | `Authority`    | The security token service (STS) endpoint for the user to authenticate. It's usually `https://login.microsoftonline.com/{tenant}/v2.0` for the public cloud. In that URL, *{tenant}* is the name of your tenant, your 6, or `common` for a reference to the common endpoint. (The common endpoint is used for multitenant applications.) |
+> > | `ClientId`     | The application ID from the application registered in the Microsoft Entra admin center. |
+> > | `Authority`    | The security token service (STS) endpoint for the user to authenticate. It's usually `https://login.microsoftonline.com/{tenant}/v2.0` for the public cloud. In that URL, *{tenant}* is the name of your tenant, your tenant ID, or `common` for a reference to the common endpoint. (The common endpoint is used for multitenant applications.) |
 > > | `RedirectUri`  | The URL where users are sent after authentication against the Microsoft identity platform. |
 > > | `PostLogoutRedirectUri`     | The URL where users are sent after signing off. |
 > > | `Scope`     | The list of scopes being requested, separated by spaces. |
@@ -159,4 +159,4 @@ ms.topic: quickstart
 > For a complete step-by-step guide on building applications and new features, including a full explanation of this quickstart, try out the ASP.NET tutorial.
 > 
 > > [!div class="nextstepaction"]
-> > [Add sign-in to an ASP.NET web app](tutorial-web-app-dotnet-register-app.md)
+> > [Add sign-in to an ASP.NET web app](tutorial-web-app-dotnet-prepare-app.md)

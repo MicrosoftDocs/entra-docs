@@ -1,18 +1,15 @@
 ---
 title: Configure F5 BIG-IP Easy Button for SSO to Oracle EBS
 description: Learn to implement SHA with header-based SSO to Oracle EBS using F5 BIG-IP Easy Button Guided Configuration
-
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
 ms.date: 03/23/2023
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: As an IT admin responsible for securing Oracle E-Business Suite using Microsoft Entra ID, I want to configure F5 BIG-IP Easy Button for SSO to Oracle EBS, so that I can improve application security posture and enable SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
@@ -72,7 +69,7 @@ You need the following components:
 
 * An Azure subscription
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
-* Global Administrator, Cloud Application Administrator, or Application Administrator.
+* A Cloud Application Administrator, or Application Administrator role.
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP license SKUs:
@@ -95,7 +92,6 @@ This tutorial uses the Guided Configuration v16.1 Easy Button template. With the
 
 ## Register the Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it.
 
@@ -104,7 +100,7 @@ Learn more: [Quickstart: Register an application with the Microsoft identity pla
 Create a tenant app registration to authorize the Easy Button access to Graph. The BIG-IP pushes configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations** > **New registration**.
+2. Browse to **Entra ID** > **App registrations** > **New registration**.
 4. Enter an application **Name**. For example, F5 BIG-IP Easy Button.
 5. Specify who can use the application > **Accounts in this organizational directory only**.
 6. Select **Register**.
@@ -151,8 +147,6 @@ To reduce time and effort, reuse global settings to publish other applications.
 3. For **Tenant ID, Client ID**, and **Client Secret** enter what you noted during Easy Button client registration.
 4. Confirm the BIG-IP connects to your tenant.
 5. Select **Next**.
-
-   ![Screenshot of input on the Configuration Properties dialog.](./media/f5-big-ip-oracle/configuration-general-and-service-account-properties.png)
 
 ### Service Provider
 
@@ -215,7 +209,7 @@ When a user authenticates, Microsoft Entra ID issues a SAML token with default c
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab supports distributed systems that require attributes stored in directories for session augmentation. Attributes fetched from an LDAP source are injected as more SSO headers to control access based on roles, partner ID, etc.
+The **Additional User Attributes** tab supports distributed systems that require attributes stored in directories for session augmentation. Attributes fetched from an LDAP source are injected as more SSO headers to control access based on roles, partner ID, and so on.
 
 1. Enable the **Advanced Settings** option.
 2. Check the **LDAP Attributes** check box.
@@ -400,7 +394,7 @@ Use the **View Variables** link to investigate SSO issues, particularly if the B
 Learn more:
 
 * Go to devcentral.f5.com for [APM variable assign examples](https://devcentral.f5.com/s/articles/apm-variable-assign-examples-1107)
-* Go to techdocs.f5.com for [Manual Chapter: Session Variables](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html)
+* Go to techdocs.f5.com for [Manual Chapter: Session Variables](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html)
 
 ### Validate the APM service account
 

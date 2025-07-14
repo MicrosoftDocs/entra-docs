@@ -1,15 +1,16 @@
 ---
 title: Workday attribute reference for Microsoft Entra ID
-description: Learn which which attributes that you can fetch from Workday using XPATH queries in Microsoft Entra ID.
+description: Learn which attributes that you can fetch from Workday using XPATH queries in Microsoft Entra ID.
 
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Workday attribute reference for Microsoft Entra ID
@@ -21,7 +22,7 @@ This section provides a list of attributes that you can fetch from Workday using
 
 The table below captures the list of Workday attributes and corresponding XPATH expressions that are shipped out of the box with the Workday inbound provisioning app connector. These XPATH values are used *if no version information is specified in the connection URL or if the version is set to v21.1*. 
 
-:::image type="content" source="~/identity/saas-apps/media/workday-inbound-tutorial/workday-url-no-version-info.png" alt-text="Workday no version info":::
+:::image type="content" source="~/includes/governance/media/workday-inbound-tutorial/workday-url-no-version-info.png" alt-text="Screenshot of Workday no version info":::
 
 
 | \# | Workday Attribute Name                                  | Workday XPATH API expression                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -111,7 +112,7 @@ The table below captures the list of Workday attributes and corresponding XPATH 
 
 If you are using WWS API v30.0 or above in the connection URL as shown below:
 
-:::image type="content" source="~/identity/saas-apps/media/workday-inbound-tutorial/workday-url-version-info.png" alt-text="Workday version info":::
+:::image type="content" source="~/includes/governance/media/workday-inbound-tutorial/workday-url-version-info.png" alt-text="Screenshot of Workday version info":::
 
 ...then before turning on the provisioning job, please update the **XPATH API expressions** under **Attribute Mapping -> Advanced Options -> Edit attribute list for Workday** to use the values listed in the table. 
 

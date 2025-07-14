@@ -2,15 +2,18 @@
 title: Select group-based permissions settings with the User management dashboard
 description: How to select group-based permissions settings with the User management dashboard.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/15/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Select group-based permissions settings
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how you can create  and manage group-based permissions in Microsoft Entra Permissions Management with the User management dashboard.
 
@@ -21,7 +24,7 @@ This article describes how you can create  and manage group-based permissions in
 
 1. To display the **User Management** dashboard, select **User** (your initials) in the upper right of the screen, and then select **User Management**.
 1. Select the **Groups** tab, and then press the **Create Permission** button in the upper right of the table.
-1. In the **Set Group Permission** box, begin typing the name of an **Microsoft Entra Security Group** in your tenant.
+1. In the **Set Group Permission** box, begin typing the name of a **Microsoft Entra Security Group** in your tenant.
 
 1. Select the permission setting you want:
 2.

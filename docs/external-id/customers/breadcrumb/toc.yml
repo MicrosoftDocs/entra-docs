@@ -3,13 +3,16 @@ items:
   tocHref: /entra/
   topicHref: /entra/index
   items:
-  - name: External Identities
+  - name: External ID
     tocHref: /entra/external-id/
-    topicHref: /entra/external-id/
+    topicHref: /entra/external-id/index
     items:
-    - name: External ID for customers
+    - name: External ID in external tenants
+      tocHref: /entra/external-id/customers/
+      topicHref: /entra/external-id/index
+    - name: External ID in external tenants
       tocHref: /entra/identity-platform/
-      topicHref: /entra/external-id/customers/
-    - name: External ID for customers
+      topicHref: /entra/external-id/index
+    - name: External ID in external tenants
       tocHref: /entra/fundamentals/
-      topicHref: /entra/external-id/customers/
+      topicHref: /entra/external-id/index

@@ -1,27 +1,21 @@
 ---
 title: include file
 description: include file
-
 author: OwenRichards1
 manager: CelesteDG
 editor: ''
-
 ms.service: identity-platform
-
 ms.topic: include
 ms.tgt_pltfrm: na
-
 ms.date: 04/10/2019
 ms.author: owenrichards
 ms.reviewer: jmprieur
-ms.custom: include file
+ms.custom: include file, sfi-image-nochange
 ---
 
 ## Test your code
 
-To run your project, in Visual Studio, select **F5**. Your application **MainWindow** is displayed, as shown here:
-
-![Test your application.](../media/guidedsetup-windesktop-test/sample-screenshot.png)
+To run your project, in Visual Studio, select **F5**. Your application **MainWindow** is displayed.
 
 The first time that you run the application and select the **Call Microsoft Graph API** button, you're prompted to sign in. Use a Microsoft Entra account (work or school account) or a Microsoft account (live.com, outlook.com) to test it.
 
@@ -44,7 +38,7 @@ After you sign in, you should see the user profile information that's returned b
 
 ### More information about scopes and delegated permissions
 
-The Microsoft Graph API requires the *user.read* scope to read a user's profile. This scope is automatically added by default in every application that's registered in the Application Registration Portal. Other APIs for Microsoft Graph, as well as custom APIs for your back-end server, might require additional scopes. The Microsoft Graph API requires the *Calendars.Read* scope to list the user's calendars.
+The Microsoft Graph API requires the *user.read* scope to read a user's profile. This scope is automatically added by default in every application that's registered in the Application Registration Portal. Other APIs for Microsoft Graph, and custom APIs for your back-end server, might require more scopes. The Microsoft Graph API requires the *Calendars.Read* scope to list the user's calendars.
 
 To access the user's calendars in the context of an application, add the *Calendars.Read* delegated permission to the application registration information. Then, add the *Calendars.Read* scope to the `acquireTokenSilent` call.
 

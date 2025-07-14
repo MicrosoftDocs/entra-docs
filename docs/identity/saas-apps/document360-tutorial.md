@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with Document360
+title: Configure Document360 for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and Document360.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 08/21/2023
-ms.author: jeedes
-
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Document360 so that I can control who has access to Document360, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Document360
+# Configure Document360 for Single sign-on with Microsoft Entra ID
 
 This article teaches you how to integrate Document360 with Microsoft Entra ID. Document360 is an online self-service knowledge base software. When you integrate Document360 with Microsoft Entra ID, you can:
 
@@ -33,7 +31,7 @@ You configure and test Microsoft Entra single sign-on for Document360 in a test 
 To integrate Microsoft Entra ID with Document360, you need the following:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can [get a free account](https://azure.microsoft.com/free/).
 * Document360 subscription with SSO enabled. If you don't have a subscription, you can [Sign up for a new account](https://document360.com/signup/).
 
@@ -62,7 +60,7 @@ Alternatively, you can use the [Enterprise App Configuration Wizard](https://por
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Document360** application integration page, find the **Manage** section and select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Document360** application integration page, find the **Manage** section and select **single sign-on**.
 2. On the **Select a single sign-on method** page, select **SAML**.
 3. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -92,12 +90,12 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
     | **Sign on URL** |
     |-----------| 
-    | `https://identity.document360.io ` |
+    | `https://identity.document360.io` |
     | **(or)** |
     | `https://identity.us.document360.io` |
 
     > [!NOTE]
-    > The Reply URL is not real. Update this value with the actual Reply URL. You can also refer to the patterns shown in the Azure portal's **Basic SAML Configuration** section.
+    > The Reply URL isn't real. Update this value with the actual Reply URL. You can also refer to the patterns shown in the Azure portal's **Basic SAML Configuration** section.
 
 6. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -115,7 +113,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
     [![Screenshot shows the Document360 configuration.](./media/document360-tutorial/configuration.png "Document360")](./media/document360-tutorial/configuration.png#lightbox)
 
-1. Click on the Edit icon in **SAML basic configuration** on the Document360 portal side and paste the values from Microsoft Entra admin center based on the below mentioned field associations.
+1. Select the Edit icon in **SAML basic configuration** on the Document360 portal side and paste the values from Microsoft Entra admin center based on the below mentioned field associations.
 
     | Document360 portal fields | Microsoft Entra admin center values |
     | --- | --- |
@@ -125,14 +123,14 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | Sign Out URL | Logout URL |
     | SAML certificate | Download Certificate (Base64) from Microsoft Entra ID side and upload in Document360 |
 
-1. Click on the **Save** button when you’re done with the values.
+1. Select the **Save** button when you’re done with the values.
 
 
 ### Create Document360 test user
 
 1. In a different web browser window, log in to your Document360 portal as an administrator.
 
-1. From the Document360 portal, go to **Settings → Users & Security → Team accounts & groups  → Team account**. Click the **New team account** button and type in the required details, specify the roles, and follow the module steps to add a user to Document360. 
+1. From the Document360 portal, go to **Settings → Users & Security → Team accounts & groups  → Team account**. Select the **New team account** button and type in the required details, specify the roles, and follow the module steps to add a user to Document360. 
 
     [![Screenshot shows the Document360 test user.](./media/document360-tutorial/add-user.png "Document360")](./media/document360-tutorial/add-user.png#lightbox)
 
@@ -142,15 +140,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to the Document360 Sign-on URL, where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to the Document360 Sign-on URL, where you can initiate the login flow.  
 
 * Go to Document360 Sign-on URL directly and initiate the login flow.
 
 #### IDP initiated:
 
-* Click on **Test this application**, in the Azure portal, and you should be automatically signed in to the Document360 for which you set up the SSO. 
+* Select **Test this application**, in the Azure portal, and you should be automatically signed in to the Document360 for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the Document360 tile in the My Apps if configured in SP mode, you will be redirected to the application sign-on page for initiating the login flow. If configured in IDP mode, you should be automatically signed in to the Document360 for which you set up the SSO. 
+You can also use Microsoft My Apps to test the application in any mode. When you select the Document360 tile in the My Apps if configured in SP mode, you be redirected to the application sign-on page for initiating the login flow. If configured in IDP mode, you should be automatically signed in to the Document360 for which you set up the SSO. 
 
 For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
@@ -159,6 +157,6 @@ For more information, see [Microsoft Entra My Apps](/azure/active-directory/mana
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Document360, you can enforce session control, which protects the exfiltration and infiltration of your organization's sensitive data in real-time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

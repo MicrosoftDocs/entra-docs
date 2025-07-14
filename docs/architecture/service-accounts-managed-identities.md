@@ -8,8 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/07/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Securing managed identities in Microsoft Entra ID
@@ -22,7 +21,7 @@ Benefits of using managed identities:
 
 * With managed identities, credentials are fully managed, rotated, and protected by Azure. Identities are provided and deleted with Azure resources. Managed identities enable Azure resources to communicate with services that support Microsoft Entra authentication.
 
-* No one, including the Global Administrator, has access to the credentials, which can't be accidentally leaked by being included in code.
+* No one, including those assigned privileged roles, have access to the credentials, which can't be accidentally leaked by being included in code.
 
 ## Using managed identities
 
@@ -81,7 +80,7 @@ To find managed identities, you can use:
 2. In the left navigation, select **Enterprise applications**.
 3. In the **Application type** column, under **Value**, select the down-arrow to select **Managed Identities**.
 
-   ![Screenshot of the Managed Identies option under Values, in the Application type column.](./media/govern-service-accounts/service-accounts-managed-identities.png)
+   ![Screenshot of the Managed Identities option under Values, in the Application type column.](./media/govern-service-accounts/service-accounts-managed-identities.png)
 
 ### Microsoft Graph
 

@@ -1,14 +1,14 @@
 ---
 title: App permissions for custom roles in Microsoft Entra ID
-description: Preview enterprise app permissions for custom Microsoft Entra roles in the Microsoft Entra admin center, PowerShell, or Graph API.
+description: Enterprise app permissions for custom Microsoft Entra roles in the Microsoft Entra admin center, PowerShell, or Graph API.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: overview
-ms.date: 01/31/2023
-ms.author: rolyon
+ms.date: 03/30/2025
+ms.author: barclayn
 ms.reviewer: vincesm
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -211,12 +211,12 @@ To delegate create, read, update, and delete (CRUD) permissions for updating the
 > | microsoft.directory/applications/applicationProxyUrlSettings/update | Update URL settings for application proxy |
 > | microsoft.directory/applications/applicationProxySslCertificate/update | Update SSL certificate settings for application proxy |
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
-> | microsoft.directory/connectorGroups/create | Create application proxy connector groups |
-> | microsoft.directory/connectorGroups/delete | Delete application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
-> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of application proxy connector groups |
-> | microsoft.directory/connectors/create | Create application proxy connectors |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of application proxy connectors |
+> | microsoft.directory/connectorGroups/create | Create private network connector groups |
+> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
+> | microsoft.directory/connectorGroups/allProperties/update | Update all properties of private network connector groups |
+> | microsoft.directory/connectors/create | Create private network connectors |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
 > | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
 > | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
@@ -224,5 +224,5 @@ To delegate create, read, update, and delete (CRUD) permissions for updating the
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.md)
-- [List role assignments](view-assignments.md)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
+- [List Microsoft Entra role assignments](view-assignments.md)

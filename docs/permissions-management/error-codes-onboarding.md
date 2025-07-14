@@ -2,15 +2,18 @@
 title: Error codes when onboarding Permissions Management
 description: Understand potential error codes that may appear during onboarding of Microsoft Entra Permissions Management
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: reference
-ms.date: 09/07/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Error codes: Microsoft Entra Permissions Management 
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 During onboarding, Microsoft Entra Permissions Management may return error messages that an admin can triage. This article lists data collection error messages and their descriptions shown in the Permissions Management UI, along with proposed solutions.
 

@@ -1,212 +1,37 @@
 ---
-title: Single-page app sign-in & sign-out
+title: Single-page app sign-in & sign-out code
 description: Learn how to build a single-page application (sign-in)
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: 
-ms.date: 07/19/2022
+ms.date: 05/12/2025
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a single-page application by using the Microsoft identity platform.
 ---
 
-# Single-page application: Sign-in and Sign-out
+# Single-page application: Add sign-in and sign-out code
 
-Learn how to add sign-in to the code for your single-page application.
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-Before you can get tokens to access APIs in your application, you need an authenticated user context. You can sign in users to your application in MSAL.js in two ways:
+Before you can get tokens to access APIs in your application, you need an authenticated user context. To authenticate a user, you can use a [Pop-up window](#sign-in-with-a-pop-up-window) and/or a [Redirect](#sign-in-with-a-redirect) sign in method.
 
-- [Pop-up window](#sign-in-with-a-pop-up-window), by using the `loginPopup` method
-- [Redirect](#sign-in-with-redirect), by using the `loginRedirect` method
+If your application has access to an authenticated user context or ID token, you can skip the sign in step, and directly acquire tokens. For details, see [Single sign-on (SSO) with user hint](msal-js-sso.md#with-user-hint).
 
-You can also optionally pass the scopes of the APIs for which you need the user to consent at the time of sign-in.
+## Choosing between a pop-up or redirect experience
 
-If your application already has access to an authenticated user context or ID token, you can skip the login step, and directly acquire tokens. For details, see [SSO with user hint](msal-js-sso.md#with-user-hint).
+The choice between a pop-up or redirect experience depends on your application flow.
 
-## Choosing between a pop-up or redirect sign-in experience
+- Use a pop-up window if you don't want users to move away from your main application page during authentication. Because the authentication redirect happens in a pop-up window, the state of the main application is preserved.
+- Use a redirect if users have browser constraints or policies where pop-up windows are disabled. For example, there are [known issues with pop-up windows on Internet Explorer](./msal-js-use-ie-browser.md).
 
-The choice between a pop-up or redirect experience depends on your application flow:
-
-- If you don't want users to move away from your main application page during authentication, we recommend the pop-up method. Because the authentication redirect happens in a pop-up window, the state of the main application is preserved.
-
-- If users have browser constraints or policies where pop-up windows are disabled, you can use the redirect method. Use the redirect method with the Internet Explorer browser, because there are [known issues with pop-up windows on Internet Explorer](./msal-js-use-ie-browser.md).
-
-## Sign-in with a pop-up window
-
-# [JavaScript (MSAL.js v2)](#tab/javascript2)
-
-```javascript
-const config = {
-  auth: {
-    clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
-    postLogoutRedirectUri: "your_app_logout_redirect_uri",
-  },
-};
-
-const loginRequest = {
-  scopes: ["User.ReadWrite"],
-};
-
-let accountId = "";
-
-const myMsal = new PublicClientApplication(config);
-
-myMsal
-  .loginPopup(loginRequest)
-  .then(function (loginResponse) {
-    accountId = loginResponse.account.homeAccountId;
-    // Display signed-in user content, call API, etc.
-  })
-  .catch(function (error) {
-    //login failure
-    console.log(error);
-  });
-```
-
-# [JavaScript (MSAL.js v1)](#tab/javascript1)
-
-```javascript
-const config = {
-  auth: {
-    clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
-    postLogoutRedirectUri: "your_app_logout_redirect_uri",
-  },
-};
-
-const loginRequest = {
-  scopes: ["User.ReadWrite"],
-};
-
-const myMsal = new UserAgentApplication(config);
-
-myMsal
-  .loginPopup(loginRequest)
-  .then(function (loginResponse) {
-    //login success
-  })
-  .catch(function (error) {
-    //login failure
-    console.log(error);
-  });
-```
-
-# [Angular (MSAL.js v2)](#tab/angular2)
-
-The MSAL Angular wrapper allows you to secure specific routes in your application by adding `MsalGuard` to the route definition. This guard will invoke the method to sign in when that route is accessed.
-
-```javascript
-// In app-routing.module.ts
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { ProfileComponent } from "./profile/profile.component";
-import { MsalGuard } from "@azure/msal-angular";
-import { HomeComponent } from "./home/home.component";
-
-const routes: Routes = [
-  {
-    path: "profile",
-    component: ProfileComponent,
-    canActivate: [MsalGuard],
-  },
-  {
-    path: "",
-    component: HomeComponent,
-  },
-];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: false })],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
-```
-
-For a pop-up window experience, set the `interactionType` configuration to `InteractionType.Popup` in the Guard configuration. You can also pass the scopes that require consent as follows:
-
-```javascript
-// In app.module.ts
-import { PublicClientApplication, InteractionType } from "@azure/msal-browser";
-import { MsalModule } from "@azure/msal-angular";
-
-@NgModule({
-  imports: [
-    MsalModule.forRoot(
-      new PublicClientApplication({
-        auth: {
-          clientId: "Enter_the_Application_Id_Here",
-        },
-        cache: {
-          cacheLocation: "localStorage",
-          storeAuthStateInCookie: isIE,
-        },
-      }),
-      {
-        interactionType: InteractionType.Popup, // Msal Guard Configuration
-        authRequest: {
-          scopes: ["user.read"],
-        },
-      },
-      null
-    ),
-  ],
-})
-export class AppModule {}
-```
-
-# [Angular (MSAL.js v1)](#tab/angular1)
-
-The MSAL Angular wrapper allows you to secure specific routes in your application by adding `MsalGuard` to the route definition. This guard will invoke the method to sign in when that route is accessed.
-
-```javascript
-// In app-routing.module.ts
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { ProfileComponent } from "./profile/profile.component";
-import { MsalGuard } from "@azure/msal-angular";
-import { HomeComponent } from "./home/home.component";
-const routes: Routes = [
-  {
-    path: "profile",
-    component: ProfileComponent,
-    canActivate: [MsalGuard],
-  },
-  {
-    path: "",
-    component: HomeComponent,
-  },
-];
-@NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: false })],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
-```
-
-For a pop-up window experience, enable the `popUp` configuration option. You can also pass the scopes that require consent as follows:
-
-```javascript
-// In app.module.ts
-@NgModule({
-    imports: [
-        MsalModule.forRoot({
-            auth: {
-                clientId: 'your_app_id',
-            }
-        }, {
-            popUp: true,
-            consentScopes: ["User.ReadWrite"]
-        })
-    ]
-})
-```
+## Sign in with a pop-up window
 
 # [React](#tab/react)
 
-The MSAL React wrapper allows you to protect specific components by wrapping them in the `MsalAuthenticationTemplate` component. This component will invoke login if a user isn't already signed in or render child components otherwise.
+To invoke a sign in experience when a user isn't already signed in, use the `MsalAuthenticationTemplate` function from `@azure/msal-react`. The MSAL React wrapper protects specific components by wrapping them in the `MsalAuthenticationTemplate` component.
 
 ```javascript
 import { InteractionType } from "@azure/msal-browser";
@@ -223,14 +48,14 @@ function WelcomeUser() {
 function App() {
   return (
     <MsalAuthenticationTemplate interactionType={InteractionType.Popup}>
-      <p>This will only render if a user is signed-in.</p>
+      <p>This will only render if a user is not signed-in.</p>
       <WelcomeUser />
     </MsalAuthenticationTemplate>
   );
 }
 ```
 
-You can also use the `@azure/msal-browser` APIs directly to invoke a login paired with the `AuthenticatedTemplate` and/or `UnauthenticatedTemplate` components to render specific contents to signed-in or signed-out users respectively. This is the recommended approach if you need to invoke login as a result of user interaction such as a button click.
+To invoke a specific sign in experience based on user interaction (for example, button select), use the `AuthenticatedTemplate` and/or `UnauthenticatedTemplate` function from `@azure/msal-react`.
 
 ```javascript
 import {
@@ -243,7 +68,7 @@ function signInClickHandler(instance) {
   instance.loginPopup();
 }
 
-// SignInButton Component returns a button that invokes a popup login when clicked
+// SignInButton Component returns a button that invokes a popup sign in when clicked
 function SignInButton() {
   // useMsal hook will return the PublicClientApplication instance you provided to MsalProvider
   const { instance } = useMsal();
@@ -275,11 +100,7 @@ function App() {
 }
 ```
 
----
-
-## Sign-in with redirect
-
-# [JavaScript (MSAL.js v2)](#tab/javascript2)
+# [JavaScript (MSAL.js)](#tab/javascript)
 
 ```javascript
 const config = {
@@ -298,71 +119,62 @@ let accountId = "";
 
 const myMsal = new PublicClientApplication(config);
 
-function handleResponse(response) {
-  if (response !== null) {
-    accountId = response.account.homeAccountId;
+myMsal
+  .loginPopup(loginRequest)
+  .then(function (loginResponse) {
+    accountId = loginResponse.account.homeAccountId;
     // Display signed-in user content, call API, etc.
-  } else {
-    // In case multiple accounts exist, you can select
-    const currentAccounts = myMsal.getAllAccounts();
-
-    if (currentAccounts.length === 0) {
-      // no accounts signed-in, attempt to sign a user in
-      myMsal.loginRedirect(loginRequest);
-    } else if (currentAccounts.length > 1) {
-      // Add choose account code here
-    } else if (currentAccounts.length === 1) {
-      accountId = currentAccounts[0].homeAccountId;
-    }
-  }
-}
-
-myMsal.handleRedirectPromise().then(handleResponse);
+  })
+  .catch(function (error) {
+    //login failure
+    console.log(error);
+  });
 ```
 
-# [JavaScript (MSAL.js v1)](#tab/javascript1)
+# [Angular (MSAL.js)](#tab/angular)
 
-The redirect methods don't return a promise because of the move away from the main app. To process and access the returned tokens, register success and error callbacks before you call the redirect methods.
+To invoke a sign in experience for a specific route, import `@angular/router` and add `MsalGuard` to the route definition.
 
 ```javascript
-const config = {
-  auth: {
-    clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
-    postLogoutRedirectUri: "your_app_logout_redirect_uri",
+// In app-routing.module.ts
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ProfileComponent } from "./profile/profile.component";
+import { MsalGuard } from "@azure/msal-angular";
+import { HomeComponent } from "./home/home.component";
+
+const routes: Routes = [
+  {
+    path: "profile",
+    component: ProfileComponent,
+    canActivate: [MsalGuard],
   },
-};
+  {
+    path: "",
+    component: HomeComponent,
+  },
+];
 
-const loginRequest = {
-  scopes: ["User.ReadWrite"],
-};
-
-const myMsal = new UserAgentApplication(config);
-
-function authCallback(error, response) {
-  //handle redirect response
-}
-
-myMsal.handleRedirectCallback(authCallback);
-
-myMsal.loginRedirect(loginRequest);
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
 ```
 
-# [Angular (MSAL.js v2)](#tab/angular2)
-
-The code here's the same as described earlier in the section about sign-in with a pop-up window, except that the `interactionType` is set to `InteractionType.Redirect` for the MsalGuard Configuration, and the `MsalRedirectComponent` is bootstrapped to handle redirects.
+To enable a pop-up window experience, set the `interactionType` configuration to `InteractionType.Popup` in the `MsalGuardConfiguration`. You can also pass the scopes that require consent.
 
 ```javascript
 // In app.module.ts
 import { PublicClientApplication, InteractionType } from "@azure/msal-browser";
-import { MsalModule, MsalRedirectComponent } from "@azure/msal-angular";
+import { MsalModule } from "@azure/msal-angular";
 
 @NgModule({
   imports: [
     MsalModule.forRoot(
       new PublicClientApplication({
         auth: {
-          clientId: "Enter_the_Application_Id_Here",
+          clientId: "your_app_id",
         },
         cache: {
           cacheLocation: "localStorage",
@@ -370,26 +182,26 @@ import { MsalModule, MsalRedirectComponent } from "@azure/msal-angular";
         },
       }),
       {
-        interactionType: InteractionType.Redirect, // Msal Guard Configuration
+        interactionType: InteractionType.Popup, // MsalGuard Configuration
         authRequest: {
-          scopes: ["user.read"],
+          scopes: ["User.Read"],
         },
       },
       null
     ),
   ],
-  bootstrap: [AppComponent, MsalRedirectComponent],
 })
 export class AppModule {}
 ```
 
-# [Angular (MSAL.js v1)](#tab/angular1)
 
-The code here's the same as described earlier in the section about sign-in with a pop-up window. The default flow is redirect.
+---
+
+## Sign in with a redirect
 
 # [React](#tab/react)
 
-The MSAL React wrapper allows you to protect specific components by wrapping them in the `MsalAuthenticationTemplate` component. This component will invoke login if a user isn't already signed in or render child components otherwise.
+To invoke a sign in experience when a user isn't signed in, use the `MsalAuthenticationTemplate` function from `@azure/msal-react`.
 
 ```javascript
 import { InteractionType } from "@azure/msal-browser";
@@ -406,14 +218,14 @@ function WelcomeUser() {
 function App() {
   return (
     <MsalAuthenticationTemplate interactionType={InteractionType.Redirect}>
-      <p>This will only render if a user is signed-in.</p>
+      <p>This will only render if a user is not signed-in.</p>
       <WelcomeUser />
     </MsalAuthenticationTemplate>
   );
 }
 ```
 
-You can also use the `@azure/msal-browser` APIs directly to invoke a login paired with the `AuthenticatedTemplate` and/or `UnauthenticatedTemplate` components to render specific contents to signed-in or signed-out users respectively. This is the recommended approach if you need to invoke login as a result of user interaction such as a button click.
+To invoke a specific sign in experience based on user interaction (for example, button select), use the `AuthenticatedTemplate` and/or `UnauthenticatedTemplate` function from `@azure/msal-react`.
 
 ```javascript
 import {
@@ -458,85 +270,105 @@ function App() {
 }
 ```
 
----
-## Sign-out behavior on browsers
-
-The more apps a user has signed into and wants to sign out of, the more chance of problems occurring given the limited ways of implementing such functionality in browsers. Microsoft's [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) recommend that on a shared device where a user may want to sign out of an app, the user should use a browser's private/incognito mode and close all browser windows before stepping away from the device.  
-
-On devices that are not shared, users should leverage an operating system lockscreen so they can lock or sign out of their entire operating system session on the device. Microsoft uses its sign-out page to remind users of these best practices to help improve their privacy and security.
-
-For users who do not choose to follow the secure approach, the app can attempt to prepare for both of the following cases:
-
-1. The user having initiated the sign-out from the app directly.
-1. From another app that shares sign-in state with the new app, but manages its own session tokens/cookies.  
-
-For the first case, the following sections describe options on how to sign out the user from a local app by using a pop-up or redirect.
-
-For the second case where signout is initiated from another app, Microsoft uses the OpenID Connect's [Front Channel Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) for federated sign-out. There are some limitations to this implementation where third-party content is blocked, such as when browsers block third-party cookies by default. 
-
-The following pop-up and redirect methods will end the user's session at the endpoint and for the local app, but may not immediately clear the session for other federated applications, if front-channel communication is blocked. For a guaranteed federated sign-out regardless of browser behavior, we recommend the best practices to users of using either private browsing or lockscreens.
-
-
-## Sign-out with a pop-up window
-
-This mode is supported, but has the same limitiations of sign-in with a pop-up window that browsers constraints or policies can disable pop-up windows. MSAL.js v2 and higher provides a `logoutPopup` method that clears the cache in browser storage and opens a pop-up window to the Microsoft Entra sign-out page. After sign-out, Microsoft Entra ID redirects the pop-up back to your application and MSAL.js will close the pop-up. 
-
-You can configure the URI to which Microsoft Entra ID should redirect after sign-out by setting `postLogoutRedirectUri`. This URI should be registered as a redirect URI in your application registration.
-
-You can also configure `logoutPopup` to redirect the main window to a different page, such as the home page or sign-in page, after logout is complete by passing `mainWindowRedirectUri` as part of the request.
-
-# [JavaScript (MSAL.js v2)](#tab/javascript2)
+# [JavaScript (MSAL.js)](#tab/javascript)
 
 ```javascript
 const config = {
   auth: {
     clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", // defaults to application start page
+    redirectUri: "your_app_redirect_uri", //defaults to application start page
     postLogoutRedirectUri: "your_app_logout_redirect_uri",
   },
 };
 
-const myMsal = new PublicClientApplication(config);
-
-// you can select which account application should sign out
-const logoutRequest = {
-  account: myMsal.getAccountByHomeId(homeAccountId),
-  mainWindowRedirectUri: "your_app_main_window_redirect_uri",
+const loginRequest = {
+  scopes: ["User.ReadWrite"],
 };
 
-await myMsal.logoutPopup(logoutRequest);
+let accountId = "";
+
+const myMsal = new PublicClientApplication(config);
+
+function handleResponse(response) {
+  if (response !== null) {
+    accountId = response.account.homeAccountId;
+    // Display signed-in user content, call API, etc.
+  } else {
+    // In case multiple accounts exist, you can select
+    const currentAccounts = myMsal.getAllAccounts();
+
+    if (currentAccounts.length === 0) {
+      // no accounts signed-in, attempt to sign a user in
+      myMsal.loginRedirect(loginRequest);
+    } else if (currentAccounts.length > 1) {
+      // Add choose account code here
+    } else if (currentAccounts.length === 1) {
+      accountId = currentAccounts[0].homeAccountId;
+    }
+  }
+}
+
+myMsal.handleRedirectPromise().then(handleResponse);
 ```
 
-# [JavaScript (MSAL.js v1)](#tab/javascript1)
+# [Angular (MSAL.js)](#tab/angular)
 
-Signing out with a pop-up window isn't supported in MSAL.js v1
-
-# [Angular (MSAL.js v2)](#tab/angular2)
+To enable a redirect experience, set the `interactionType` configuration to `InteractionType.Redirect` in the `MsalGuardConfiguration`, and then bootstrap `MsalRedirectComponent` to handle redirects.
 
 ```javascript
 // In app.module.ts
-@NgModule({
-    imports: [
-        MsalModule.forRoot( new PublicClientApplication({
-            auth: {
-                clientId: 'your_app_id',
-                postLogoutRedirectUri: 'your_app_logout_redirect_uri'
-            }
-        }), null, null)
-    ]
-})
+import { PublicClientApplication, InteractionType } from "@azure/msal-browser";
+import { MsalModule, MsalRedirectComponent } from "@azure/msal-angular";
 
-// In app.component.ts
-logout() {
-    this.authService.logoutPopup({
-        mainWindowRedirectUri: "/"
-    });
-}
+@NgModule({
+  imports: [
+    MsalModule.forRoot(
+      new PublicClientApplication({
+        auth: {
+          clientId: "Enter_the_Application_Id_Here",
+        },
+        cache: {
+          cacheLocation: "localStorage",
+          storeAuthStateInCookie: isIE,
+        },
+      }),
+      {
+        interactionType: InteractionType.Redirect, // Msal Guard Configuration
+        authRequest: {
+          scopes: ["user.read"],
+        },
+      },
+      null
+    ),
+  ],
+  bootstrap: [AppComponent, MsalRedirectComponent],
+})
+export class AppModule {}
 ```
 
-# [Angular (MSAL.js v1)](#tab/angular1)
+---
 
-Signing out with a pop-up window isn't supported in MSAL Angular v1
+## Sign out behavior on browsers
+
+To ensure secure sign out of one or more apps, the following methods are recommended: 
+
+* On shared devices, users should use a browser's private/incognito mode and close all browser windows before they step away from the device. 
+
+* On devices that aren't shared, users should use an operating system lock screen to lock or sign out of their entire operating system session on the device. Microsoft uses its sign out page to remind users of these privacy and security best practices.
+
+For more information, see Microsoft's [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa).
+
+If a user chooses not to sign out using the recommendations, the following are other methods to enable sign out functionality:
+
+* Microsoft's OpenID Connect's [Front Channel Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html) for federated sign out. You can use this option when an app shares a sign in state with a new app, but manages its own session tokens/cookies. There are some limitations to this implementation where content is blocked, for example when browsers block third-party cookies. 
+
+* [Pop-up window](#sign-out-with-a-pop-up-window) and/or a [Redirect](#sign-out-with-a-redirect) for local app sign out. The pop-up and redirect methods end the user's session at the endpoint and for the local app. But, these methods might not immediately clear the session for other federated applications if front-channel communication is blocked.
+
+## Sign out with a pop-up window
+
+MSAL.js v2 and higher provides a `logoutPopup` method that clears the cache in browser storage and opens a pop-up window to the Microsoft Entra sign out page. After sign out, the redirect defaults to the sign in start page, and the pop-up is closed.
+
+For the after sign out experience, you can set the `postLogoutRedirectUri` to redirect the user to a specific URI. This URI should be registered as a redirect URI in your application registration. You can also configure `logoutPopup` to redirect the main window to a different page, such as the home page or sign in page by passing `mainWindowRedirectUri` as part of the request.
 
 # [React](#tab/react)
 
@@ -556,7 +388,7 @@ function signOutClickHandler(instance) {
   instance.logoutPopup(logoutRequest);
 }
 
-// SignOutButton Component returns a button that invokes a popup logout when clicked
+// SignOutButton component returns a button that invokes a pop-up sign out when clicked
 function SignOutButton() {
   // useMsal hook will return the PublicClientApplication instance you provided to MsalProvider
   const { instance } = useMsal();
@@ -582,23 +414,13 @@ function App() {
 }
 ```
 
----
-
-## Sign-out with a redirect
-
-MSAL.js provides a `logout` method in v1, and introduced `logoutRedirect` method in v2 that clears the cache in browser storage and redirects the window to the Microsoft Entra sign-out page. After sign-out, by default Microsoft Entra ID redirects back to the page that invoked logout. 
-
-Since the user will not see Microsoft's reminder of [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) about using a private browser and lockscreen, the SPA app may also want to describe best practices and remind users to close all browser windows.
-
-You can configure the URI to which it should redirect after sign-out by setting `postLogoutRedirectUri`. This URI should be registered as a redirect URI in your application registration.
-
-# [JavaScript (MSAL.js v2)](#tab/javascript2)
+# [JavaScript (MSAL.js)](#tab/javascript)
 
 ```javascript
 const config = {
   auth: {
     clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
+    redirectUri: "your_app_redirect_uri", // defaults to application start page
     postLogoutRedirectUri: "your_app_logout_redirect_uri",
   },
 };
@@ -608,28 +430,13 @@ const myMsal = new PublicClientApplication(config);
 // you can select which account application should sign out
 const logoutRequest = {
   account: myMsal.getAccountByHomeId(homeAccountId),
+  mainWindowRedirectUri: "your_app_main_window_redirect_uri",
 };
 
-myMsal.logoutRedirect(logoutRequest);
+await myMsal.logoutPopup(logoutRequest);
 ```
 
-# [JavaScript (MSAL.js v1)](#tab/javascript1)
-
-```javascript
-const config = {
-  auth: {
-    clientId: "your_app_id",
-    redirectUri: "your_app_redirect_uri", //defaults to application start page
-    postLogoutRedirectUri: "your_app_logout_redirect_uri",
-  },
-};
-
-const myMsal = new UserAgentApplication(config);
-
-myMsal.logout();
-```
-
-# [Angular (MSAL.js v2)](#tab/angular2)
+# [Angular (MSAL.js)](#tab/angular)
 
 ```javascript
 // In app.module.ts
@@ -646,27 +453,18 @@ myMsal.logout();
 
 // In app.component.ts
 logout() {
-    this.authService.logoutRedirect();
+    this.authService.logoutPopup({
+        mainWindowRedirectUri: "/"
+    });
 }
 ```
+---
 
-# [Angular (MSAL.js v1)](#tab/angular1)
+## Sign out with a redirect
 
-```javascript
-//In app.module.ts
-@NgModule({
-    imports: [
-        MsalModule.forRoot({
-            auth: {
-                clientId: 'your_app_id',
-                postLogoutRedirectUri: "your_app_logout_redirect_uri"
-            }
-        })
-    ]
-})
-// In app.component.ts
-this.authService.logout();
-```
+MSAL.js provides a `logoutRedirect` method in v2 that clears the cache in browser storage and redirects to the Microsoft Entra sign out page. After sign out, the redirect defaults to the sign in start page. For the after sign out experience, you can set the `postLogoutRedirectUri` to redirect the user to a specific URI. This URI should be registered as a redirect URI in your application registration.
+
+Because the Microsoft's reminder of [internet privacy best practices](https://support.microsoft.com/en-us/windows/protect-your-privacy-on-the-internet-ffe36513-e208-7532-6f95-a3b1c8760dfa) about using a private browser and lock screen isn't shown in this method, you might want to describe best practices and remind users to close all browser windows when they've signed out of their app. 
 
 # [React](#tab/react)
 
@@ -711,8 +509,49 @@ function App() {
 }
 ```
 
+# [JavaScript (MSAL.js)](#tab/javascript)
+
+```javascript
+const config = {
+  auth: {
+    clientId: "your_app_id",
+    redirectUri: "your_app_redirect_uri", //defaults to application start page
+    postLogoutRedirectUri: "your_app_logout_redirect_uri",
+  },
+};
+
+const myMsal = new PublicClientApplication(config);
+
+// you can select which account application should sign out
+const logoutRequest = {
+  account: myMsal.getAccountByHomeId(homeAccountId),
+};
+
+myMsal.logoutRedirect(logoutRequest);
+```
+
+# [Angular (MSAL.js)](#tab/angular)
+
+```javascript
+// In app.module.ts
+@NgModule({
+    imports: [
+        MsalModule.forRoot( new PublicClientApplication({
+            auth: {
+                clientId: 'your_app_id',
+                postLogoutRedirectUri: 'your_app_logout_redirect_uri'
+            }
+        }), null, null)
+    ]
+})
+
+// In app.component.ts
+logout() {
+    this.authService.logoutRedirect();
+}
+```
 ---
 
-## Next steps
+## Next step
 
-Move on to the next article in this scenario, [Acquiring a token for the app](scenario-spa-acquire-token.md).
+- [Acquiring a token for the app](scenario-spa-acquire-token.md).

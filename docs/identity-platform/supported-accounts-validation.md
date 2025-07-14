@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
 ms.date: 03/24/2023
-ms.reviewer: manrath, sureshja
+ms.reviewer: sureshja
 ms.service: identity-platform
 
 ms.topic: reference
@@ -23,7 +23,7 @@ After the application has been registered, you can check or change the account t
 |---------------------------------------------------|-----------------------------|
 | Accounts in this organizational directory only (Single tenant) | `AzureADMyOrg` |
 | Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) | `AzureADMultipleOrgs` |
-| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox) | `AzureADandPersonalMicrosoftAccount` |
+| Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (such as Skype, Xbox) | `AzureADandPersonalMicrosoftAccount` |
 | Personal Microsoft accounts only | `PersonalMicrosoftAccount` |
 
 If you change this property you may need to change other properties first. 
@@ -40,12 +40,11 @@ See the following table for the validation differences of various properties for
 | Client secrets (`passwordCredentials`)      | No limit\*                | No limit\*               | Maximum of two client secrets  |
 | Redirect URIs (`replyURLs`)                 | See [Redirect URI/reply URL restrictions and limitations](reply-url.md) for more info.  |  |   |
 | API permissions (`requiredResourceAccess`)  | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 400 permissions total across all APIs.  | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 400 permissions total across all APIs. | No more than 50 total APIs (resource apps), with no more than 10 APIs from other tenants. No more than 200 permissions total across all APIs. Maximum of 30 permissions per resource (for example, Microsoft Graph).   |
-| Scopes defined by this API (`oauth2Permissions`)             | Maximum scope name length of 120 characters <br><br> No limit\* on the number of scopes defined       | Maximum scope name length of 120 characters <br><br> No limit\* on the number of scopes defined    | Maximum scope name length of 40 characters <br><br> Maximum of 100 scopes defined     |
-| Authorized client applications (`preAuthorizedApplications`) | No limit\*  | No limit\*    | Total maximum of 500 <br><br> Maximum of 100 client apps defined <br><br> Maximum of 30 scopes defined per client  |
-| appRoles      | Supported <br> No limit\*   | Supported <br> No limit\* | Not supported |
-| Front-channel logout URL      | `https://localhost` is allowed <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters  | `https://localhost` is allowed <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters  | `https://localhost` is allowed, `http://localhost` fails <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters <br><br> Wildcards aren't supported                                            |
+| Scopes defined by this API (`oauth2Permissions`)             | Maximum scope name length of 120 characters <br><br> No set limit\* on the number of scopes defined       | Maximum scope name length of 120 characters <br><br> No set limit\* on the number of scopes defined    | Maximum scope name length of 40 characters <br><br> Maximum of 100 scopes defined     |
+| Authorized client applications (`preAuthorizedApplications`) | No set limit\*  | No set limit\*    | Total maximum of 500 <br><br> Maximum of 100 client apps defined <br><br> Maximum of 30 scopes defined per client  |
+| appRoles      | Supported <br> No limit\*   | Supported <br> No limit\* | `PersonalMicrosoftAccount`: Not supported <br><br> `AzureADandPersonalMicrosoftAccount`: Supported <br> No limit\* <br> App roles are not supported for consumer (MSA) users of the application at runtime |
+| Front-channel logout URL      | `https://localhost` is allowed <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters  | `https://localhost` is allowed <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters  | `https://localhost` is allowed, `http://localhost` fails <br><br> `http` scheme isn't allowed <br><br> Maximum length of 255 characters <br><br>   |
 | Display name    | Maximum length of 120 characters  | Maximum length of 120 characters  | Maximum length of 90 characters  |
-| Tags            | Individual tag size must be between 1 and 256 characters (inclusive) <br><br> No whitespaces or duplicate tags allowed <br><br> No limit\* on number of tags  | Individual tag size must be between 1 and 256 characters (inclusive) <br><br> No whitespaces or duplicate tags allowed <br><br> No limit\* on number of tags  | Individual tag size must be between 1 and 256 characters (inclusive) <br><br> No whitespaces or duplicate tags allowed <br><br> No limit\* on number of tags   |
 
 \* There's a global limit of about 1000 items across all the collection properties on the app object.
 

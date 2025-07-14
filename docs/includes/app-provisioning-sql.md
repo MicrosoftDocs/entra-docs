@@ -171,7 +171,7 @@ If you have already downloaded the provisioning agent and configured it for anot
  9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider.  If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
- 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
+ 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
  
 ## 4. Configure the On-premises ECMA app
@@ -210,12 +210,8 @@ To create a generic SQL connector, follow these steps:
 1. If you haven't already done so, launch the **Microsoft ECMA2Host Configuration Wizard** from the Windows Start menu.
 
 2. Select **New Connector**.
+3. On the **Properties** page, fill in the boxes with the values specified in the following table and select **Next**.
 
-     ![Screenshot that shows choosing New Connector.](.\media\app-provisioning-sql\sql-3.png)
-
-3. On the **Properties** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
-
-     [![Screenshot that shows entering properties.](.\media\app-provisioning-sql\conn-1.png)](.\media\app-provisioning-sql\conn-1.png#lightbox)
 
      |Property|Value|
      |-----|-----|
@@ -224,9 +220,7 @@ To create a generic SQL connector, follow these steps:
      |Secret Token|Enter the secret token you generated for this connector. The key should be 12 characters minimum.|
      |Extension DLL|For the generic SQL connector, select **Microsoft.IAM.Connector.GenericSql.dll**.|
 
-4. On the **Connectivity** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
-
-     [![Screenshot that shows the Connectivity page.](.\media\app-provisioning-sql\conn-2.png)](.\media\app-provisioning-sql\conn-2.png#lightbox)
+4. On the **Connectivity** page, fill in the boxes with the values specified in the following table and select **Next**.
      
      |Property|Description|
      |-----|-----|
@@ -282,6 +276,7 @@ After having provided credentials, the ECMA Connector Host will be ready to retr
      |Delta Strategy|For IBM DB2, select `None` |
      | Water Mark Query |For IBM DB2, type `SELECT CURRENT TIMESTAMP FROM SYSIBM.SYSDUMMY1;` |
      |Data Source Date Time Format|For SQL Server, `yyyy-MM-dd HH:mm:ss` and for IBM DB2, `YYYY-MM-DD`|
+
 10. On the **Partitions** page, select **Next**.
 
      [![Screenshot that shows the Partitions page.](.\media\app-provisioning-sql\conn-8.png)](.\media\app-provisioning-sql\conn-8.png#lightbox)
@@ -448,7 +443,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section. The Hybrid Identity Administrator role does not have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
 
 
 If there are existing users in the SQL database, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).

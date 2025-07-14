@@ -2,12 +2,12 @@
 title: What are custom security attributes in Microsoft Entra ID?
 description: Learn about custom security attributes in Microsoft Entra ID.
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 11/15/2023
+ms.date: 10/28/2024
 ms.collection: M365-identity-device-management
 ---
 
@@ -78,7 +78,7 @@ For more information about working with extensions, see [Add custom data to reso
 
 1. **Check permissions**
 
-    Check that you are assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) roles. If not, check with your administrator to assign you the appropriate role at tenant scope or attribute set scope. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. If necessary, a Global Administrator can assign these roles to themselves.
+    Check that you are assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) roles. If necessary, someone with at least the [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator) role can assign these roles.
 
     ![Diagram showing checking permissions to add custom security attributes in Microsoft Entra ID.](./media/custom-security-attributes-overview/attributes-permissions.png)
 
@@ -152,9 +152,9 @@ Here are some of the limits and constraints for custom security attributes.
 > | --- | :---: | --- |
 > | Attribute definitions per tenant | 500 | Applies only to active attributes in the tenant |
 > | Attribute sets per tenant | 500 |  |
-> | Attribute set name length | 32 | Unicode characters and case insensitive |
+> | Attribute set name length | 32 | Unicode characters and case sensitive |
 > | Attribute set description length | 128 | Unicode characters |
-> | Attribute name length | 32 | Unicode characters and case insensitive |
+> | Attribute name length | 32 | Unicode characters and case sensitive |
 > | Attribute description length | 128 | Unicode characters |
 > | Predefined values |  | Unicode characters and case sensitive |
 > | Predefined values per attribute definition | 100 |  |
@@ -178,8 +178,7 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 > | [Attribute Log Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-log-reader) | Read audit logs for custom security attributes |
 > | [Attribute Log Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-log-administrator) | Read audit logs for custom security attributes<br/>Configure diagnostic settings for custom security attributes |
 
-> [!IMPORTANT]
-> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes.
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 <a name='microsoft-graph-apis'></a>
 
@@ -187,7 +186,7 @@ Microsoft Entra ID provides built-in roles to work with custom security attribut
 
 You can manage custom security attributes programmatically using Microsoft Graph API. For more information, see [Overview of custom security attributes using the Microsoft Graph API](/graph/api/resources/custom-security-attributes-overview).
 
-You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) or Postman to more easily try the Microsoft Graph API for custom security attributes.
+You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-explorer-overview) to more easily try the Microsoft Graph API for custom security attributes.
 
 ![Screenshot that shows a Microsoft Graph API call for custom security attributes.](./media/custom-security-attributes-overview/graph-explorer-success.png)
 
@@ -200,3 +199,4 @@ You can use an API client such as [Graph Explorer](/graph/graph-explorer/graph-e
 - [Add or deactivate custom security attribute definitions in Microsoft Entra ID](custom-security-attributes-add.md)
 - [Manage access to custom security attributes in Microsoft Entra ID](custom-security-attributes-manage.md)
 - [Assign, update, list, or remove custom security attributes for a user](~/identity/users/users-custom-security-attributes.md)
+- [Provision custom security attributes from HR sources (preview)](~/identity/app-provisioning/provision-custom-security-attributes.md)

@@ -2,13 +2,13 @@
 title: Manage app consent policies
 description: Learn how to manage built-in and custom app consent policies to control when consent can be granted.
 
-manager: CelesteDG
+manager: mwongerapk
 author: omondiatieno
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 03/21/2024
+ms.date: 03/31/2025
 ms.author: jomondi
 ms.reviewer: phsignor, yuhko
 ms.custom: enterprise-apps
@@ -29,12 +29,11 @@ An app consent policy consists of one or more "include" condition sets and zero 
 
 Each condition set consists of several conditions. For an event to match a condition set, *all* conditions in the condition set must be met.
 
-App consent policies where the ID begins with "microsoft-" are built-in policies. Some of these built-in policies are used in existing built-in directory roles. For example, the `microsoft-application-admin` app consent policy describes the conditions under which the Application Administrator and Cloud Application Administrator roles are allowed to grant tenant-wide admin consent. Built-in policies can be used in custom directory roles and to configure user consent settings, but can't be edited or deleted.
+App consent policies where the ID begins with "microsoft-" are built-in policies. Some of these built-in policies are used in existing built-in directory roles. For example, the `microsoft-application-admin` app consent policy describes the conditions under which the Application Administrator and Cloud Application Administrator roles are allowed to grant tenant-wide admin consent. Built-in policies can be used in custom directory roles. They can also be used to configure user consent settings, but can't be edited or deleted.
 
 ## Prerequisites
 
 - A user or service with one of the following roles:
-  - Global Administrator directory role
   - Privileged Role Administrator directory role
   - A custom directory role with the necessary [permissions to manage app consent policies](~/identity/role-based-access-control/custom-consent-permissions.md#managing-app-consent-policies)
   - The Microsoft Graph app role (application permission) `Policy.ReadWrite.PermissionGrant` when connecting as an app or a service
@@ -185,7 +184,7 @@ Follow these steps to create a custom app consent policy:
    Repeat this step to add more "include" condition sets.
 
 1. Optionally, add "exclude" condition sets.
-     Exclude delegated permissions for the Azure Management API (appId 46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b)
+     Exclude delegated permissions for the Azure Management API (appId 00001111-aaaa-2222-bbbb-3333cccc4444)
 
    ```http
    POST https://graph.microsoft.com/v1.0/policies/permissionGrantPolicies/my-custom-policy /excludes
@@ -193,7 +192,7 @@ Follow these steps to create a custom app consent policy:
    
    {
      "permissionType": "delegated",
-     "resourceApplication": "46e6adf4-a9cf-4b60-9390-0ba6fb00bf6b "
+     "resourceApplication": "00001111-aaaa-2222-bbbb-3333cccc4444 "
    }
    ```
 
@@ -212,7 +211,7 @@ After creating the app consent policy, you need to assign it to a custom role in
 :::zone-end
 
 > [!WARNING]
-> Deleted app consent policies cannot be restored. If you accidentally delete a custom app consent policy, you will need to re-create the policy.
+> Deleted app consent policies can't be restored. If you accidentally delete a custom app consent policy, you need to re-create the policy.
 
 ### Supported conditions
 

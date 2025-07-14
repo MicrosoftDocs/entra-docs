@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/01/2023
+ms.date: 05/14/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -15,9 +15,11 @@ ms.topic: concept-article
 
 # ID tokens in the Microsoft identity platform
 
-The authorization server issues ID tokens that contain claims that carry information about the user. They can be sent alongside or instead of an access token. Information in ID tokens enables the client to verify that a user is who they claim to be. 
+ID tokens are a security token that serves as proof of authentication, confirming that a user is successfully authenticated. Information in ID tokens enables the client to verify that a user is who they claim to be, similar to name tags at a conference. The authorization server issues ID tokens that contain claims that carry information about the user. They can be sent alongside or instead of an access token, and are always JWT (JSON Web Token) format.  
 
-Third-party applications are intended to understand ID tokens. ID tokens shouldn't be used for authorization purposes. Access tokens are used for authorization. The claims provided by ID tokens can be used for UX inside your application, as keys in a database, and providing access to the client application. For more information about the claims used in an ID token, see the [ID token claims reference](id-token-claims-reference.md). For more information about claims-based authorization, see [Secure applications and APIs by validating claims](./claims-validation.md).
+ID tokens differ from [access tokens](./access-tokens.md), which serve as proof of authorization. Confidential clients should validate ID tokens. You shouldn't use an ID token to call an API.
+
+Third-party applications are intended to understand ID tokens. Do not use ID tokens for authorization purposes. Access tokens are used for authorization. The claims provided by ID tokens can be used for UX inside your application, as keys in a database, and providing access to the client application. For more information about the claims used in an ID token, see the [ID token claims reference](id-token-claims-reference.md). For more information about claims-based authorization, see [Secure applications and APIs by validating claims](./claims-validation.md).
 
 ## Token formats
 
@@ -60,11 +62,8 @@ The following JWT claims should be validated in the ID token after validating th
 * Audience: the `aud` claim should match the app ID for your application.
 * Nonce: the `nonce` claim in the payload must match the nonce parameter passed into the `/authorize` endpoint during the initial request.
 
-## See also
+## Related content
+
 * [ID token claims reference](id-token-claims-reference.md)
 * [OAuth 2.0 and OpenID Connect protocols](./v2-protocols.md)
-* [Optional claims](./optional-claims.md)
-
-## Next steps
-
-* Review the [OpenID Connect](v2-protocols-oidc.md) flow, which defines the protocols that emit an ID token.
+* [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md)

@@ -1,16 +1,15 @@
 ---
 title: Passwordless security key sign-in to on-premises resources
 description: Learn how to enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/19/2024
-
+ms.date: 07/13/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: calui
+ms.custom: sfi-ga-nochange
 ---
 # Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID 
 
@@ -20,7 +19,7 @@ This topic shows how to enable passwordless authentication to on-premises resour
 
 Microsoft Entra ID can issue Kerberos ticket-granting tickets (TGTs) for one or more of your Active Directory domains. With this functionality, users can sign in to Windows with modern credentials, such as FIDO2 security keys, and then access traditional Active Directory-based resources. Kerberos Service Tickets and authorization continue to be controlled by your on-premises Active Directory domain controllers (DCs).
 
-A Microsoft Entra Kerberos server object is created in your on-premises Active Directory instance and then securely published to Microsoft Entra ID. The object isn't associated with any physical servers. It's simply a resource that can be used by Microsoft Entra ID to generate Kerberos TGTs for your Active Directory domain.
+A Microsoft Entra Kerberos server object is created in your on-premises Active Directory instance and then securely published to Microsoft Entra ID by using Microsoft Entra Connect. The object isn't associated with any physical servers. It's simply a resource that can be used by Microsoft Entra ID to generate Kerberos TGTs for your Active Directory domain.
 
 :::image type="Image" source="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png" alt-text="Diagram showing how to get a TGT from Microsoft Entra ID and Active Directory Domain Services." lightbox="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png":::
 
@@ -35,7 +34,7 @@ A Microsoft Entra Kerberos server object is created in your on-premises Active D
 
 ## Prerequisites
 
-Before you begin the procedures in this article, your organization must complete the instructions in [Enable passwordless security key sign-in to Windows 10 devices](howto-authentication-passwordless-security-key.md).
+Before you begin the procedures in this article, your organization must complete the instructions in [Enable passkeys (FIDO2) for your organization](howto-authentication-passwordless-security-key.md).
 
 You must also meet the following system requirements:
 
@@ -49,14 +48,14 @@ You must also meet the following system requirements:
 
 - Have the credentials required to complete the steps in the scenario:
    - An Active Directory user who is a member of the Domain Admins group for a domain and a member of the Enterprise Admins group for a forest. Referred to as **$domainCred**.
-   - A Microsoft Entra user who is a member of the Global Administrators role. Referred to as **$cloudCred**.
+   - A Microsoft Entra user with the [Hybrid Identity Administrators](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role. Referred to as **$cloudCred**.
 
-- Users must have the following Entra ID attributes populated through Microsoft Entra Connect:
-   - onPremisesSamAccountName (accountName in Entra Connect)
-   - onPremisesDomainName (domainFQDN in Entra Connect)
-   - onPremisesSecurityIdentifier (objectSID in Entra Connect)
+- Users must have the following Microsoft Entra attributes populated through Microsoft Entra Connect:
+   - `onPremisesSamAccountName` (`accountName` in Microsoft Entra Connect)
+   - `onPremisesDomainName` (`domainFQDN` in Microsoft Entra Connect)
+   - `onPremisesSecurityIdentifier` (`objectSID` in Microsoft Entra Connect)
 
-  Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make you select accountName, domainFQDN, and objectSID for synchronization.
+  Microsoft Entra Connect synchronizes these attributes by default. If you change which attributes to synchronize, make sure you select `accountName`, `domainFQDN`, and `objectSID` for synchronization.
 
 ### Supported scenarios
 
@@ -77,7 +76,7 @@ The following scenarios aren't supported:
 
 <a name='install-the-azure-ad-kerberos-powershell-module'></a>
 
-## Install the `AzureADHybridAuthenticationManagement` module
+## Install the AzureADHybridAuthenticationManagement module
 
 The [`AzureADHybridAuthenticationManagement` module](https://www.powershellgallery.com/packages/AzureADHybridAuthenticationManagement) provides FIDO2 management features for administrators.
 
@@ -93,13 +92,13 @@ The [`AzureADHybridAuthenticationManagement` module](https://www.powershellgalle
    ```
 
 > [!NOTE]
-> - The `AzureADHybridAuthenticationManagement` module uses the [AzureADPreview PowerShell module](https://www.powershellgallery.com/packages/AzureADPreview) to provide advanced Microsoft Entra management features. If the [Azure Active Directory PowerShell module](https://www.powershellgallery.com/packages/AzureAD) is already installed on your local computer, the installation described here might fail because of conflict. To prevent any conflicts during installation, be sure to include the "-AllowClobber" option flag.
+> - As of update 2.3.331.0, the AzureADHybridAuthenticationManagement module doesn't install the AzureADPreview module.
 > - You can install the `AzureADHybridAuthenticationManagement` module on any computer from which you can access your on-premises Active Directory Domain Controller, without dependency on the Microsoft Entra Connect solution.
 > - The `AzureADHybridAuthenticationManagement` module is distributed through the [PowerShell Gallery](https://www.powershellgallery.com/). The PowerShell Gallery is the central repository for PowerShell content. In it, you can find useful PowerShell modules that contain PowerShell commands and Desired State Configuration (DSC) resources.
 
 ## Create a Kerberos Server object
 
-Administrators use the `AzureADHybridAuthenticationManagement` module to create a Microsoft Entra Kerberos server object in their on-premises directory.
+Administrators use the `AzureADHybridAuthenticationManagement` module to create a Microsoft Entra Kerberos server object in their on-premises directory. The object must be created on the Microsoft Entra Connect server or on a server that has the Microsoft.Online.PasswordSynchronization.Rpc.dll dependency installed.
 
 Run the following steps in each domain and forest in your organization that contain Microsoft Entra users:
 
@@ -108,7 +107,7 @@ Run the following steps in each domain and forest in your organization that cont
 
 ### Select Azure Cloud (Default is Azure Commercial)
 
-By default the `Set-AzureADKerberosSever` cmdlet will utlize the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment you will need to set the cmdlet to use the specified cloud.  
+By default the `Set-AzureADKerberosServer` cmdlet will use the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment, you need to set the cmdlet to use the specified cloud.  
 
 To get a **list** of the available clouds and the numeric value needed to change, run the following:  
 `Get-AzureADKerberosServerEndpoint`  
@@ -123,24 +122,29 @@ Supported Endpoints:
 ```
 Note the **numeric value** next to your desired cloud environment.
 
-To then **set** the desired cloud environment, run the following:  
-_(Example: For US Government Cloud)_  
+To then **set** the desired cloud environment, run the following:
+
+_(Example: For US Government Cloud)_
+
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
+
+> [!Tip]
+> For more information about how Azure Commercial compares sovereign clouds, see [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 
    ```powershell
-   # Specify the on-premises Active Directory domain. A new Azure AD
+   # Specify the on-premises Active Directory domain. A new Microsoft Entra ID
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter an Azure Active Directory global administrator username and password.
-   $cloudCred = Get-Credential -Message 'An Active Directory user who is a member of the Global Administrators group for Azure AD.'
+   # Enter an Azure Active Directory Hybrid Identity Administrator username and password.
+   $cloudCred = Get-Credential -Message 'An Active Directory user who is a member of the Hybrid Identity Administrators group for Microsoft Entra ID.'
 
-   # Enter a domain administrator username and password.
-   $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group.'
+   # Enter a Domain Administrator username and password.
+   $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group and an Enterprise Admin for the forest.'
 
-   # Create the new Azure AD Kerberos Server object in Active Directory
+   # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
    Set-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred -DomainCredential $domainCred
    ```
@@ -150,58 +154,58 @@ _(Example: For US Government Cloud)_
    > If you're working on a domain-joined machine with an account that has domain administrator privileges, you can skip the "-DomainCredential" parameter. If the "-DomainCredential" parameter isn't provided, the current Windows login credential is used to access your on-premises Active Directory Domain Controller.
 
    ```powershell
-   # Specify the on-premises Active Directory domain. A new Azure AD
+   # Specify the on-premises Active Directory domain. A new Microsoft Entra ID
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter an Azure Active Directory global administrator username and password.
+   # Enter an Azure Active Directory Hybrid Identity Administrator username and password.
    $cloudCred = Get-Credential
 
-   # Create the new Azure AD Kerberos Server object in Active Directory
+   # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
-   # Use the current windows login credential to access the on-prem AD.
+   # Use the current windows login credential to access the on-premises AD.
    Set-AzureADKerberosServer -Domain $domain -CloudCredential $cloudCred
    ```
 
 ### Example 3 prompt for all credentials using modern authentication
    > [!NOTE]
-   > If your organization protects password-based sign-in and enforces modern authentication methods such as multifactor authentication, FIDO2, or smart card technology, you must use the `-UserPrincipalName` parameter with the User Principal Name (UPN) of a global administrator.
+   > If your organization protects password-based sign-in and enforces modern authentication methods such as multifactor authentication, FIDO2, or smart card technology, you must use the `-UserPrincipalName` parameter with the User Principal Name (UPN) of a Hybrid Identity Administrator.
    > - Replace `contoso.corp.com` in the following example with your on-premises Active Directory domain name.
-   > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a global administrator.
+   > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a Hybrid Identity Administrator.
 
    ```powershell
-   # Specify the on-premises Active Directory domain. A new Azure AD
+   # Specify the on-premises Active Directory domain. A new Microsoft Entra ID
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter a UPN of an Azure Active Directory global administrator
+   # Enter a UPN of a Hybrid Identity Administrator
    $userPrincipalName = "administrator@contoso.onmicrosoft.com"
 
-   # Enter a domain administrator username and password.
+   # Enter a Domain Administrator username and password.
    $domainCred = Get-Credential
 
-   # Create the new Azure AD Kerberos Server object in Active Directory
+   # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
-   # Open an interactive sign-in prompt with given username to access the Azure AD.
+   # Open an interactive sign-in prompt with given username to access the Microsoft Entra ID.
    Set-AzureADKerberosServer -Domain $domain -UserPrincipalName $userPrincipalName -DomainCredential $domainCred
    ```
 
 ### Example 4 prompt for cloud credentials using modern authentication
    > [!NOTE]
-   > If you are working on a domain-joined machine with an account that has domain administrator privileges and your organization protects password-based sign-in and enforces modern authentication methods such as multifactor authentication, FIDO2, or smart card technology, you must use the `-UserPrincipalName` parameter with the User Principal Name (UPN) of a global administrator. And you can skip the "-DomainCredential" parameter.
-      > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a global administrator.
+   > If you are working on a domain-joined machine with an account that has domain administrator privileges and your organization protects password-based sign-in and enforces modern authentication methods such as multifactor authentication, FIDO2, or smart card technology, you must use the `-UserPrincipalName` parameter with the User Principal Name (UPN) of a Hybrid Identity Administrator. And you can skip the "-DomainCredential" parameter.
+      > - Replace `administrator@contoso.onmicrosoft.com` in the following example with the UPN of a Hybrid Identity Administrator.
 
    ```powershell
-   # Specify the on-premises Active Directory domain. A new Azure AD
+   # Specify the on-premises Active Directory domain. A new Microsoft Entra ID
    # Kerberos Server object will be created in this Active Directory domain.
    $domain = $env:USERDNSDOMAIN
 
-   # Enter a UPN of an Azure Active Directory global administrator
+   # Enter a UPN of a Hybrid Identity Administrator
    $userPrincipalName = "administrator@contoso.onmicrosoft.com"
 
-   # Create the new Azure AD Kerberos Server object in Active Directory
+   # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
-   # Open an interactive sign-in prompt with given username to access the Azure AD.
+   # Open an interactive sign-in prompt with given username to access the Microsoft Entra ID.
    Set-AzureADKerberosServer -Domain $domain -UserPrincipalName $userPrincipalName
    ```
 
@@ -235,7 +239,7 @@ This command outputs the properties of the Microsoft Entra Kerberos server. You 
 | CloudDomainDnsName | The *DomainDnsName* from the Microsoft Entra object. Must match the *DomainDnsName* from the second line of the table. |
 | CloudKeyVersion | The *KeyVersion* from the Microsoft Entra object. Must match the *KeyVersion* from the fifth line of the table. |
 | CloudKeyUpdatedOn | The *KeyUpdatedOn* from the Microsoft Entra object. Must match the *KeyUpdatedOn* from the sixth line of the table. |
-| | |
+
 
 <a name='rotate-the-azure-ad-kerberos-server-key'></a>
 
@@ -271,7 +275,7 @@ Follow the instructions in [Create a Kerberos Server object](#create-a-kerberos-
 ## Known behavior
 
 If your password has expired, signing in with FIDO is blocked. The expectation is that users reset their passwords before they can log in by using FIDO.
-This is applicable for hybrid on-prem synced user sign-in with WHFB Cloud kerberos trust as well.
+This behavior also applies to hybrid on-premises synced user sign-in with Windows Hello for Business cloud kerberos trust.
 
 ## Troubleshooting and feedback
 
@@ -285,7 +289,6 @@ If you encounter issues or want to share feedback about this passwordless securi
 
 ## Passwordless security key sign-in FAQ
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Here are some answers to commonly asked questions about passwordless sign-in:
 
@@ -303,7 +306,7 @@ We are working on this capability for the general availability (GA) release of t
 
 ### Where can I go to find compliant security keys?
 
-For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md#fido2-security-keys).
+For information about compliant security keys, see [FIDO2 security keys](concept-authentication-passwordless.md).
 
 ### What can I do if I lose my security key?
 
@@ -324,6 +327,13 @@ Make sure that enough DCs are patched to respond in time to service your resourc
 
 > [!NOTE]
 > The `/keylist` switch in the `nltest` command is available in client Windows 10 v2004 and later.
+
+### Is there a maximum number of groups per token for Microsoft Entra Kerberos?
+ 
+Yes, you can have up to 1,010 groups per token.
+
+### How do I resolve `Failed to read secrets` error when running `AzureADHybridAuthenticationManagement` module commands? 
+Temporarily disable [FIPS Policy](/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing). FIPS policy can be re-enabled after performing the steps with the `AzureADHybridAuthenticationManagement` module. If error persists after disabling FIPS policy, ensure account being used has default administrative permissions.
 
 ### Do FIDO2 security keys work in a Windows login with RODC present in the hybrid environment?
 

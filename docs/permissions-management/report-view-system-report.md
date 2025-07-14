@@ -2,15 +2,18 @@
 title: Generate and view a system report in Permissions Management
 description: How to generate and view a system report in the Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 04/24/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Generate and view a system report
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how to generate and view a system report in Permissions Management.
 

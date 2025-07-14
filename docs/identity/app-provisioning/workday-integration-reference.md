@@ -2,13 +2,13 @@
 title: Microsoft Entra ID and Workday integration reference
 description: Technical deep dive into Workday-HR driven provisioning in Microsoft Entra ID
 
-author: kenwith
-manager: amycolannino
+author: jenniferf-skc
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 03/04/2025
+ms.author: jfields
 ms.reviewer: arvinh, chmutali
 ---
 
@@ -32,11 +32,7 @@ Microsoft Entra provisioning service uses basic authentication to connect to Wor
 To further secure the connectivity between Microsoft Entra provisioning service and Workday, you can restrict access so that the designated integration system user only accesses the Workday APIs from allowed Microsoft Entra IP ranges. Engage your Workday administrator to complete the following configuration in your Workday tenant. 
 
 1. Download the [latest IP Ranges](https://www.microsoft.com/download/details.aspx?id=56519) for the Azure Public Cloud. 
-1. Open the file and search for tag **Microsoft Entra ID** 
-
-   >[!div class="mx-imgBorder"] 
-   >![Microsoft Entra IP range](media/sap-successfactors-integration-reference/azure-entra-ip-range.png)
-
+1. Open the file and search for tag `AzureActiveDirectory`.
 1. Copy all IP address ranges listed within the element *addressPrefixes* and use the range to build your IP address list.
 1. Sign in to Workday admin portal. 
 1. Access the **Maintain IP Ranges** task to create a new IP range for Azure data centers. Specify the IP ranges (using CIDR notation) as a comma-separated list.  
@@ -47,7 +43,9 @@ To further secure the connectivity between Microsoft Entra provisioning service 
 
 The default steps to [configure the Workday integration system user](~/identity/saas-apps/workday-inbound-tutorial.md#configure-integration-system-user-in-workday) grants access to retrieve all users in your Workday tenant. In certain integration scenarios, you may want to limit access. For example, only return users in certain supervisory organizations from the `Get_Workers` API call.
 
-You can limit access by working with your Workday admin and configuring constrained integration system security groups. For more information about Workday, see [Workday community](https://community.workday.com/forums/customer-questions/620393) (*Workday Community access required for this article*).
+You can limit access by working with your Workday admin and configuring constrained integration system security groups. For more information, review the section Get_Workers contextual security in this Workday document
+Concept: [Get Workers SOAP Web Service Guidelines](https://resourcecenter.workday.com/en-us/signin.html?fromURI=https://signin.resourcecenter.workday.com/app/workdayciam_aembetadoc2_1/exkd1j067lBdQMGYl4x7/sso/saml)
+(*Workday Community access required for this article*).
 
 This strategy of limiting access using constrained ISSG (Integration System Security Groups) is useful in the following scenarios: 
 * **Phased rollout scenario**: You have a large Workday tenant and plan to perform a phased rollout of Workday to Microsoft Entra ID automated provisioning. In this scenario, rather than excluding users who aren't in scope of the current phase with Microsoft Entra ID scoping filters, we recommend configuring constrained ISSG so that only in-scope workers are visible to Microsoft Entra ID.
@@ -421,8 +419,8 @@ Let's say you want to retrieve the following data sets from Workday and use them
 The above data sets aren't included by default. 
 To retrieve these data sets:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select your Workday to Active Directory / Microsoft Entra user provisioning application.
 1. Select **Provisioning**.
 1. Edit the mappings and open the Workday attribute list from the advanced section. 
@@ -524,7 +522,13 @@ Use the steps to retrieve attributes associated with international job assignmen
    * **Example 1:** To get `SecondaryBusinessTitle`, use the XPATH `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Title/text()`
    * **Example 2:** To get `SecondaryBusinessLocation`, use the XPATH `wd:Worker/wd:Worker_Data/wd:Employment_Data/wd:Worker_Job_Data[@wd:Primary_Job=0]/wd:Position_Data/wd:Business_Site_Summary_Data/wd:Location_Reference/@wd:Descriptor`
 
- 
+## Known limitations
+This section lists current, known limitations customers may experience in their Workday integration. 
+
+1. The connector doesn't support the [retrieval of Workday calculated fields](hr-attribute-retrieval-issues.md#issue-fetching-workday-calculated-fields).
+2. The connector doesn't support synchronizing photos from Workday.
+3. The connector doesn't support [advanced retrieval of workers whose last day of work is due](hr-user-update-issues.md#provisioning-last-day-of-work-field-from-workday).
+4. During incremental sync, there might be a [delay in processing the termination event](hr-user-update-issues.md#workday-termination-processing-delay) for workers located in the Asia Pacific and Australia/New Zealand regions.
 
 ## Next steps
 

@@ -2,14 +2,14 @@
 title: Network planning and connections for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about some of the virtual network design considerations and resources used for connectivity when you run Microsoft Entra Domain Services.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: xyuan
+ms.custom: sfi-image-nochange
 ---
 # Virtual network design considerations and configuration options for Microsoft Entra Domain Services
 
@@ -73,7 +73,7 @@ You can connect application workloads hosted in other Azure virtual networks usi
 
 ### Virtual network peering
 
-Virtual network peering is a mechanism that connects two virtual networks in the same region through the Azure backbone network. Global virtual network peering can connect virtual network across Azure regions. Once peered, the two virtual networks let resources, such as VMs, communicate with each other directly using private IP addresses. Using virtual network peering lets you deploy a managed domain with your application workloads deployed in other virtual networks.
+Virtual network peering is a mechanism that connects two virtual networks through the Azure backbone network, allowing resources such as virtual machines (VMs) to communicate with each other directly using private IP addresses. Virtual network peering supports both regional peering, which connects VNets within the same Azure region, and global virtual network peering, which connects VNets across different Azure regions. This flexibility allows you to deploy a managed domain with your application workloads across multiple virtual networks, regardless of their regional locations.
 
 ![Virtual network connectivity using peering](./media/entra-domain-services-design-guide/vnet-peering.png)
 
@@ -150,7 +150,9 @@ If needed, you can [create the required network security group and rules using A
 
 ### Outbound connectivity
 
-For Outbound connectivity, you can either keep **AllowVnetOutbound** and **AllowInternetOutBound** or restrict Outbound traffic by using ServiceTags listed in the following table. The ServiceTag for AzureUpdateDelivery must be added via [PowerShell](powershell-create-instance.md). Make sure no other NSG with higher priority denies the Outbound connectivity. If Outbound connectivity is denied, replication won't work between replica sets. 
+For Outbound connectivity, you can either keep **AllowVnetOutbound** and **AllowInternetOutBound** or restrict Outbound traffic by using ServiceTags listed in the following table. If you use [Log Analytics](/azure/azure-monitor/logs/logs-data-export), add **EventHub** to outbound destinations.
+
+Make sure no other NSG with higher priority denies the Outbound connectivity. If Outbound connectivity is denied, replication won't work between replica sets. 
 
 
 | Outbound port number | Protocol | Source | Destination   | Action | Required | Purpose |
@@ -158,10 +160,12 @@ For Outbound connectivity, you can either keep **AllowVnetOutbound** and **Allow
 | 443 | TCP	  | Any    | AzureActiveDirectoryDomainServices| Allow  | Yes      | Communication with the Microsoft Entra Domain Services management service. |
 | 443 | TCP   | Any    | AzureMonitor                      | Allow  | Yes      | Monitoring of the virtual machines. |
 | 443 | TCP	  | Any	   | Storage                           | Allow  | Yes      | Communication with Azure Storage.   | 
-| 443 | TCP	  | Any	   | Microsoft Entra ID              | Allow  | Yes      | Communication with Microsoft Entra ID.  |
-| 443 | TCP	  | Any	   | AzureUpdateDelivery               | Allow  | Yes      | Communication with Windows Update.  | 
-| 80  | TCP	  | Any	   | AzureFrontDoor.FirstParty         | Allow  | Yes      | Download of patches from Windows Update.    |
+| 443 | TCP	  | Any	   | AzureActiveDirectory              | Allow  | Yes      | Communication with Microsoft Entra ID.  |
 | 443 | TCP	  | Any	   | GuestAndHybridManagement          | Allow  | Yes      | Automated management of security patches.   |
+
+> [!NOTE]
+> The AzureUpdateDelivery and AzureFrontDoor.FirstParty tags are deprecated as of July 1, 2024. Microsoft Entra Domain Services manages WindowsUpdate independently, which removes the need for these tags. NSG adjustments aren't needed, with or without deprecated tags.
+
 
 
 ### Port 5986 - management using PowerShell remoting
@@ -172,7 +176,7 @@ For Outbound connectivity, you can either keep **AllowVnetOutbound** and **Allow
 
 ### Port 3389 - management using remote desktop
 
-* Used for remote desktop connections to domain controllers in your managed domain.
+* Used for remote desktop connections to domain controllers in your managed domain, this port cannot be changed or encapsulated into another port.
 * The default network security group rule uses the *CorpNetSaw* service tag to further restrict traffic.
     * This service tag permits only secure access workstations on the Microsoft corporate network to use remote desktop to the managed domain.
     * Access is only allowed with business justification, such as for management or troubleshooting scenarios.
@@ -186,6 +190,28 @@ For example, you can use the following script to create a rule allowing RDP:
 ```powershell
 Get-AzNetworkSecurityGroup -Name "nsg-name" -ResourceGroupName "resource-group-name" | Add-AzNetworkSecurityRuleConfig -Name "new-rule-name" -Access "Allow" -Protocol "TCP" -Direction "Inbound" -Priority "priority-number" -SourceAddressPrefix "CorpNetSaw" -SourcePortRange "*" -DestinationPortRange "3389" -DestinationAddressPrefix "*" | Set-AzNetworkSecurityGroup
 ```
+
+### Other ports - synchronization with secondary controller, backup
+
+|Client port(s)|Server port|Service|
+|---|---|---|
+|1024-65535/TCP|135/TCP|RPC Endpoint Mapper|
+|1024-65535/TCP|1024-65535/TCP|RPC for LSA, SAM, NetLogon |
+|1024-65535/TCP/UDP|389/TCP/UDP|LDAP|
+|1024-65535/TCP|636/TCP|LDAP SSL|
+|1024-65535/TCP|3268/TCP|LDAP GC|
+|1024-65535/TCP|3269/TCP|LDAP GC SSL|
+|53,1024-65535/TCP/UDP|53/TCP/UDP|DNS|
+|1024-65535/TCP/UDP|88/TCP/UDP|Kerberos|
+|1024-65535/TCP|445/TCP|SMB|
+|1024-65535/TCP|1024-65535/TCP|FRS RPC |
+
+* When configuring firewall rules or network security policies, it's crucial to consider other ports for synchronization with secondary controller.
+* If traffic restrictions are implemented for these ports, it's essential not to deny traffic between the IP addresses or the addressing range used by controllers of the service.
+* **Blocking communication via these ports between controllers will prevent the correct functioning of replication and data synchronization.** This causes errors in the backup process.
+* Ensure that security policies explicitly allow this internal communication to guarantee the integrity and availability of the service.
+
+For more information see [How to configure a firewall for Active Directory domains and trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).
 
 ## User-defined routes
 

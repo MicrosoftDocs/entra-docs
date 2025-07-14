@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-api
+ms.custom:
 ms.date: 01/10/2022
 ms.reviewer: jmprieur
 ms.service: identity-platform
@@ -52,17 +52,7 @@ ms.topic: quickstart
 > > [!div class="sxs-lookup"]
 > > > [!NOTE]
 > > > `Enter_the_Supported_Account_Info_Here`
-> 
-> #### Step 3: Admin consent
-> 
-> If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires Admin consent: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
-> 
-> ##### Global tenant administrator
-> 
-> If you are a Global Administrator, go to **API Permissions** page select **Grant admin consent for Enter_the_Tenant_Name_Here**.
-> > [!div id="apipermissionspage"]
-> > [Go to the API Permissions page]()
-> 
+>
 > ##### Standard user
 > 
 > If you're a standard user of your tenant, ask a Global Administrator to grant admin consent for your application. To do this, give the following URL to your administrator:
@@ -95,7 +85,7 @@ ms.topic: quickstart
 > 
 > ### MSAL Python
 > 
-> [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by using the application own identity instead of delegated permissions. The authentication flow used in this case is known as *[client credentials oauth flow](v2-oauth2-client-creds-grant-flow.md)*. For more information on how to use MSAL Python with daemon apps, see [this article](scenario-daemon-overview.md).
+> [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by using the application own identity instead of delegated permissions. The authentication flow used in this case is known as *[client credentials oauth flow](v2-oauth2-client-creds-grant-flow.md)*. For more information on how to use MSAL Python with daemon apps, see [this article](scenario-daemon-app-registration.md).
 > 
 >  You can install MSAL Python by running the following pip command.
 > 
@@ -153,4 +143,4 @@ ms.topic: quickstart
 > To learn more about daemon applications, see the scenario landing page.
 > 
 > > [!div class="nextstepaction"]
-> > [Daemon application that calls web APIs](scenario-daemon-overview.md)
+> > [Daemon application that calls web APIs](scenario-daemon-app-registration.md)

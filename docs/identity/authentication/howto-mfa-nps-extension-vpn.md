@@ -1,18 +1,15 @@
 ---
 title: VPN with Microsoft Entra multifactor authentication using the NPS extension
 description: Integrate your VPN infrastructure with Microsoft Entra multifactor authentication by using the Network Policy Server extension for Microsoft Azure.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 02/10/2024
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: michmcla
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Integrate your VPN infrastructure with Microsoft Entra multifactor authentication by using the Network Policy Server extension for Azure
 
@@ -56,7 +53,7 @@ Name: OVERRIDE_NUMBER_MATCHING_WITH_OTP
 
 Value = FALSE
 
-Prior to the availability of the NPS extension for Azure, customers who wanted to implement two-step verification for integrated NPS and MFA environments had to configure and maintain a separate MFA server in an on-premises environment. This type of authentication is offered by Remote Desktop Gateway and Azure Multi-Factor Authentication Server using RADIUS.
+Prior to the availability of the NPS extension for Azure, customers who wanted to implement two-step verification for integrated NPS and MFA environments had to configure and maintain a separate MFA server in an on-premises environment. Remote Desktop Gateway and Azure Multi-Factor Authentication Server offer this type of authentication using RADIUS.
 
 With the NPS extension for Azure, organizations can secure RADIUS client authentication by deploying either an on-premises based MFA solution or a cloud-based MFA solution.
 
@@ -77,8 +74,8 @@ When the NPS extension for Azure is integrated with the NPS, a successful authen
 1. The VPN server receives an authentication request from a VPN user that includes the username and password for connecting to a resource, such as a Remote Desktop session.
 2. Acting as a RADIUS client, the VPN server converts the request to a RADIUS *Access-Request* message and sends it (with an encrypted password) to the RADIUS server where the NPS extension is installed.
 3. The username and password combination is verified in Active Directory. If either the username or password is incorrect, the RADIUS Server sends an *Access-Reject* message.
-4. If all conditions, as specified in the NPS Connection Request and Network Policies, are met (for example, time of day or group membership restrictions), the NPS extension triggers a request for secondary authentication with Microsoft Entra multifactor authentication.
-5. Microsoft Entra multifactor authentication communicates with Microsoft Entra ID, retrieves the user's details, and performs the secondary authentication by using the method that's configured by the user (cell phone call, text message, or mobile app).
+4. If the conditions in the NPS Connection Request and Network Policies are met (like time of day or group membership restrictions), the NPS extension will request secondary authentication with Microsoft Entra multifactor authentication.
+5. Microsoft Entra multifactor authentication communicates with Microsoft Entra ID, retrieves the user's details, and uses the user configured method (cell phone call, text message, or mobile app) to perform the secondary authentication. 
 6. When the MFA challenge is successful, Microsoft Entra multifactor authentication communicates the result to the NPS extension.
 7. After the connection attempt is both authenticated and authorized, the NPS where the extension is installed sends a RADIUS *Access-Accept* message to the VPN server (RADIUS client).
 8. The user is granted access to the virtual port on the VPN server and establishes an encrypted VPN tunnel.
@@ -99,7 +96,7 @@ This section details the prerequisites that must be completed before you can int
 
 This article assumes that you have a working VPN infrastructure that uses Microsoft Windows Server 2016 and that your VPN server is currently not configured to forward connection requests to a RADIUS server. In the article, you configure the VPN infrastructure to use a central RADIUS server.
 
-If you do not have a working VPN infrastructure in place, you can quickly create one by following the guidance in numerous VPN setup tutorials that you can find on the Microsoft and third-party sites.
+If you don't have a working VPN infrastructure in place, you can quickly create one by following the guidance in numerous VPN setup tutorials that you can find on the Microsoft and third-party sites.
 
 ### The Network Policy and Access Services role
 
@@ -119,13 +116,13 @@ The following library is installed automatically with the NPS extension:
 
 - [Visual C++ Redistributable Packages for Visual Studio 2013 (X64)](https://www.microsoft.com/download/details.aspx?id=40784)
 
-If Microsoft Graph PowerShell module is not already present, it's installed with a configuration script that you run as part of the setup process. There's no need to install Graph PowerShell in advance.
+If Microsoft Graph PowerShell module isn't already present, it's installed with a configuration script that you run as part of the setup process. There's no need to install Graph PowerShell in advance.
 
 <a name='azure-active-directory-synced-with-on-premises-active-directory'></a>
 
 ### Microsoft Entra ID synced with on-premises Active Directory
 
-To use the NPS extension, on-premises users must be synced with Microsoft Entra ID and enabled for MFA. This guide assumes that on-premises users are synced with Microsoft Entra ID via Microsoft Entra Connect. Instructions for enabling users for MFA are provided below.
+To use the NPS extension, on-premises users must be synced with Microsoft Entra ID and enabled for MFA. This guide assumes that on-premises users are synced with Microsoft Entra ID via Microsoft Entra Connect. Instructions for enabling users for MFA are provided in the following section.
 
 For information about Microsoft Entra Connect, see [Integrate your on-premises directories with Microsoft Entra ID](~/identity/hybrid/whatis-hybrid-identity.md).
 
@@ -137,9 +134,9 @@ To install the NPS extension, you need to know the GUID of the Microsoft Entra I
 
 ## Configure RADIUS for VPN connections
 
-If you have installed the NPS role on a member server, you need to configure it to authenticate and authorize the VPN client that requests VPN connections. 
+If you installed the NPS role on a member server, you need to configure it to authenticate and authorize the VPN client that requests VPN connections. 
 
-This section assumes that you have installed the Network Policy and Access Services role but have not configured it for use in your infrastructure.
+This section assumes that you installed the Network Policy and Access Services role but haven't configured it for use in your infrastructure.
 
 > [!NOTE]
 > If you already have a working VPN server that uses a centralized RADIUS server for authentication, you can skip this section.
@@ -228,7 +225,7 @@ This section details the configuration you created by using the wizard.
 
 ## Configure your VPN server to use RADIUS authentication
 
-In this section, you configure your VPN server to use RADIUS authentication. The instructions assume that you have a working configuration of a VPN server but have not configured it to use RADIUS authentication. After you configure the VPN server, confirm that your configuration is working as expected.
+In this section, you configure your VPN server to use RADIUS authentication. The instructions assume that you have a working configuration of a VPN server but haven't configured it to use RADIUS authentication. After you configure the VPN server, confirm that your configuration is working as expected.
 
 
 > [!NOTE]
@@ -263,10 +260,10 @@ In this section, you configure your VPN server to use RADIUS authentication. The
 
 ### Test VPN connectivity
 
-In this section, you confirm that the VPN client is authenticated and authorized by the RADIUS server when you attempt to connect to the VPN virtual port. The instructions assume that you are using Windows 10 as a VPN client.
+In this section, you confirm that the RADIUS server authenticates and authorizes the VPN client when you attempt to connect to the VPN virtual port. The instructions assume you're using Windows 10 as a VPN client.
 
 > [!NOTE]
-> If you already configured a VPN client to connect to the VPN server and have saved the settings, you can skip the steps related to configuring and saving a VPN connection object.
+> If you already configured a VPN client to connect to the VPN server and saved the settings, you can skip the steps related to configuring and saving a VPN connection object.
 >
 
 1. On your VPN client computer, select the **Start** button, and then select the **Settings** button.
@@ -304,7 +301,7 @@ In this section, you confirm that the VPN client is authenticated and authorized
 
 ## Troubleshooting RADIUS
 
-Assume that your VPN configuration was working before you configured the VPN server to use a centralized RADIUS server for authentication and authorization. If the configuration was working, it is likely that the issue is caused by a misconfiguration of the RADIUS server or the use of an invalid username or password. For example, if you use the alternate UPN suffix in the username, the sign-in attempt might fail. Use the same account name for best results.
+Assume that your VPN configuration was working before you configured the VPN server to use a centralized RADIUS server for authentication and authorization. If the configuration was working, it's likely that a misconfiguration of the RADIUS server or the use of an invalid username or password caused the issue. For example, if you use the alternate UPN suffix in the username, the sign-in attempt might fail. Use the same account name for best results.
 
 To troubleshoot these issues, an ideal place to start is to examine the Security event logs on the RADIUS server. To save time searching for events, you can use the role-based Network Policy and Access Server custom view in Event Viewer, as shown here. "Event ID 6273" indicates events where the NPS denied access to a user.
 
@@ -314,7 +311,7 @@ To troubleshoot these issues, an ideal place to start is to examine the Security
 
 ## Configure multifactor authentication
 
-For assistance configuring users for multifactor authentication see the articles [Planning a cloud-based Microsoft Entra multifactor authentication deployment](howto-mfa-getstarted.md#plan-conditional-access-policies) and [Set up my account for two-step verification](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
+For assistance configuring users for multifactor authentication, see the articles [Planning a cloud-based Microsoft Entra multifactor authentication deployment](howto-mfa-getstarted.md#plan-conditional-access-policies) and [Set up my account for two-step verification](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc)
 
 ## Install and configure the NPS extension
 
@@ -324,13 +321,13 @@ This section provides instructions for configuring VPN to use MFA for client aut
 > The REQUIRE_USER_MATCH registry key is case sensitive. All values must be set in UPPER CASE format.
 >
 
-After you install and configure the NPS extension, all RADIUS-based client authentication that is processed by this server is required to use MFA. If all your VPN users are not enrolled in Microsoft Entra multifactor authentication, you can do either of the following:
+After you install and configure the NPS extension, this server requires all RADIUS-based client authentication to use MFA. If all your VPN users are not enrolled in Microsoft Entra multifactor authentication, you can do either of the following:
 
 * Set up another RADIUS server to authenticate users who are not configured to use MFA.
 
 * Create a registry entry that allows challenged users to provide a second authentication factor if they are enrolled in Microsoft Entra multifactor authentication.
 
-Create a new string value named _REQUIRE_USER_MATCH in HKLM\SOFTWARE\Microsoft\AzureMfa_, and set the value to *TRUE* or *FALSE*.
+Create a new string value named *REQUIRE_USER_MATCH in HKLM\SOFTWARE\Microsoft\AzureMfa*, and set the value to *TRUE* or *FALSE*.
 
 ![The "Require User Match" setting](./media/howto-mfa-nps-extension-vpn/image34.png)
 
@@ -342,8 +339,8 @@ If the value is set to *TRUE* or is blank, all authentication requests are subje
 
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Browse to **Identity** > **Settings**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
+1. Browse to **Entra ID** > **Overview** > **Properties**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
 
@@ -355,7 +352,7 @@ The NPS extension must be installed on a server that has the Network Policy and 
 
 2. Copy the setup executable file (*NpsExtnForAzureMfaInstaller.exe*) to the NPS server.
 
-3. On the NPS server, double-click **NpsExtnForAzureMfaInstaller.exe** and, if you are prompted, select **Run**.
+3. On the NPS server, double-click **NpsExtnForAzureMfaInstaller.exe** and, if you're prompted, select **Run**.
 
 4. In the **NPS Extension For Microsoft Entra multifactor authentication Setup** window, review the software license terms, select the **I agree to the license terms and conditions** check box, and then select **Install**.
 
@@ -385,7 +382,7 @@ To use the script, provide the extension with your Microsoft Entra administrativ
 
 2. At the PowerShell command prompt, enter **cd "c:\Program Files\Microsoft\AzureMfa\Config"**, and then select Enter.
 
-3. At the next command prompt, enter **.\AzureMfaNpsExtnConfigSetup.ps1**, and then select Enter. The script checks to see whether Graph PowerShell is installed. If it is not installed, the script installs Graph PowerShell for you.
+3. At the next command prompt, enter **.\AzureMfaNpsExtnConfigSetup.ps1**, and then select Enter. The script checks to see whether Graph PowerShell is installed. If it isn't installed, the script installs Graph PowerShell for you.
 
     ![Running the AzureMfsNpsExtnConfigSetup.ps1 configuration script](./media/howto-mfa-nps-extension-vpn/image38.png)
 
@@ -407,17 +404,17 @@ To use the script, provide the extension with your Microsoft Entra administrativ
 
 ### Verify the configuration
 
-To verify the configuration, you must establish a new VPN connection with the VPN server. After you've successfully entered your credentials for primary authentication, the VPN connection waits for the secondary authentication to succeed before the connection is established, as shown below.
+To verify the configuration, you must establish a new VPN connection with the VPN server. After you've successfully entered your credentials for primary authentication, the VPN connection waits for the secondary authentication to succeed before the connection is established, as shown in the following section.
 
 ![The Windows Settings VPN window](./media/howto-mfa-nps-extension-vpn/image42.png)
 
-If you successfully authenticate with the secondary verification method that you previously configured in Microsoft Entra multifactor authentication, you are connected to the resource. However, if the secondary authentication is unsuccessful, you are denied access to the resource.
+If you successfully authenticate with the secondary verification method that you previously configured in Microsoft Entra multifactor authentication, you're connected to the resource. However, if the secondary authentication is unsuccessful, you're denied access to the resource.
 
 In the following example, the Microsoft Authenticator app on a Windows Phone provides the secondary authentication:
 
 ![Example MFA prompt on Windows Phone](./media/howto-mfa-nps-extension-vpn/image43.png)
 
-After you've successfully authenticated by using the secondary method, you are granted access to the virtual port on the VPN server. Because you were required to use a secondary authentication method by using a mobile app on a trusted device, the sign-in process is more secure than if it were using only a username and password combination.
+After you've successfully authenticated by using the secondary method, you're granted access to the virtual port on the VPN server. Because you were required to use a secondary authentication method by using a mobile app on a trusted device, the sign-in process is more secure than if it were using only a username and password combination.
 
 ### View Event Viewer logs for successful sign-in events
 
@@ -431,7 +428,7 @@ On the server where you installed the NPS extension for Microsoft Entra multifac
 
 ## Troubleshooting guide
 
-If the configuration is not working as expected, begin troubleshooting by verifying that the user is configured to use MFA. Have the user sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). If the user is prompted for secondary authentication and can successfully authenticate, you can eliminate an incorrect configuration of MFA as an issue.
+If the configuration isn't working as expected, begin troubleshooting by verifying that the user is configured to use MFA. Have the user sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). If the user is prompted for secondary authentication and can successfully authenticate, you can eliminate an incorrect configuration of MFA as an issue.
 
 If MFA is working for the user, review the relevant Event Viewer logs. The logs include the security event, Gateway operational, and Microsoft Entra multifactor authentication logs that are discussed in the previous section.
 
@@ -443,7 +440,7 @@ A related event from the Microsoft Entra multifactor authentication log is shown
 
 ![Microsoft Entra multifactor authentication logs](./media/howto-mfa-nps-extension-vpn/image48.png)
 
-To do advanced troubleshooting, consult the NPS database format log files where the NPS service is installed. The log files are created in the _%SystemRoot%\System32\Logs_ folder as comma-delimited text files. For a description of the log files, see [Interpret NPS Database Format Log Files](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10)).
+To do advanced troubleshooting, consult the NPS database format log files where the NPS service is installed. The log files are created in the *%SystemRoot%\System32\Logs* folder as comma-delimited text files. For a description of the log files, see [Interpret NPS Database Format Log Files](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10)).
 
 The entries in these log files are difficult to interpret unless you export them to a spreadsheet or a database. You can find many Internet Authentication Service (IAS) parsing tools online to assist you in interpreting the log files. The output of one such downloadable [shareware application](https://www.deepsoftware.com/iasviewer) is shown here:
 

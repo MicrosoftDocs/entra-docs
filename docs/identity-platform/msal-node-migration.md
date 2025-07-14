@@ -4,11 +4,10 @@ description: How to update your existing Node.js application to use the Microsof
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: has-adal-ref, devx-track-js
 ms.date: 04/26/2021
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to learn how to change the code in my Node.js application from using ADAL as its authentication library to MSAL.
 ---
 
@@ -52,7 +51,7 @@ In ADAL Node, you initialize an `AuthenticationContext` object, which then expos
 var adal = require('adal-node');
 
 var authorityURI = "https://login.microsoftonline.com/common";
-var authenticationContex = new adal.AuthenticationContext(authorityURI);
+var authenticationContext = new adal.AuthenticationContext(authorityURI);
 ```
 
 In MSAL Node, you have two alternatives instead: If you're building a mobile app or a desktop app, you instantiate a `PublicClientApplication` object. The constructor expects a [configuration object](#configure-msal) that contains the `clientId` parameter at the very least. MSAL defaults the authority URI to `https://login.microsoftonline.com/common` if you don't specify it.
@@ -382,7 +381,7 @@ For more information, please refer to the [ADAL Node to MSAL Node migration samp
 
 ## Handle errors and exceptions
 
-When using MSAL Node, the most common type of error you might face is the `interaction_required` error. This error is often resolved by initiating an interactive token acquisition prompt. For instance, when using `acquireTokenSilent`, if there are no cached refresh tokens, MSAL Node won't be able to acquire an access token silently. Similarly, the web API you're trying to access might have a [Conditional Access](~/identity/conditional-access/overview.md) policy in place, requiring the user to perform [multi-factor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA). In such cases, handling `interaction_required` error by triggering `acquireTokenByCode` will prompt the user for MFA, allowing them to fullfil it.
+When using MSAL Node, the most common type of error you might face is the `interaction_required` error. This error is often resolved by initiating an interactive token acquisition prompt. For instance, when using `acquireTokenSilent`, if there are no cached refresh tokens, MSAL Node won't be able to acquire an access token silently. Similarly, the web API you're trying to access might have a [Conditional Access](~/identity/conditional-access/overview.md) policy in place, requiring the user to perform [multi-factor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md). In such cases, handling `interaction_required` error by triggering `acquireTokenByCode` will prompt the user for MFA, allowing them to fullfil it.
 
 Yet another common error you might face is `consent_required`, which occurs when permissions required for obtaining an access token for a protected resource aren't consented by the user. As in `interaction_required`, the solution for `consent_required` error is often initiating an interactive token acquisition prompt, using the `acquireTokenByCode` method.
 

@@ -2,19 +2,23 @@
 title: View information about active and completed tasks in Permissions Management
 description: How to view information about active and completed tasks in the Activities pane in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 02/23/2022
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # View information about active and completed tasks
 
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
+
 This article describes the usage of the **Permissions Management Tasks** pane in Permissions Management.
 
 ## Display active and completed tasks
+You can display both active and completed tasks in Permissions Management. This section will show you how to access the Tasks pane, view details about active and completed tasks, and understand the status of each task.
 
 1. In the Permissions Management home page, select **Tasks** (the timer icon).
 

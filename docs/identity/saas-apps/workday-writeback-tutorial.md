@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Configure Workday writeback in Microsoft Entra ID'
+title: Configure Workday writeback in Microsoft Entra ID
 description: Learn how to configure attribute writeback from Microsoft Entra ID to Workday
 
 author: cmmdesai
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
+ms.topic: how-to
 
-ms.date: 11/21/2022
+ms.date: 05/06/2024
 ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday Writeback so that I can streamline the user management process and ensure that users have the appropriate access to Workday Writeback.
 ---
-# Tutorial: Configure attribute writeback from Microsoft Entra ID to Workday
-The objective of this tutorial is to show the steps you need to perform to writeback attributes from Microsoft Entra ID to Workday. The Workday writeback provisioning app supports assigning values to the following Workday attributes:
+# Configure attribute writeback from Microsoft Entra ID to Workday
+The objective of this article is to show the steps you need to perform to writeback attributes from Microsoft Entra ID to Workday. The Workday writeback provisioning app supports assigning values to the following Workday attributes:
 * Work Email 
 * Workday username
 * Work landline telephone number (including country code, area code, number and extension)
@@ -24,7 +24,7 @@ The objective of this tutorial is to show the steps you need to perform to write
 
 ## Overview
 
-After you setup inbound provisioning integration using either [Workday to on-premises AD](workday-inbound-tutorial.md) provisioning app or [Workday to Microsoft Entra ID](workday-inbound-cloud-only-tutorial.md) provisioning app, you can optionally configure the Workday Writeback app to write contact information such as work email and phone number to Workday. 
+After you set up inbound provisioning integration using either [Workday to on-premises AD](workday-inbound-tutorial.md) provisioning app or [Workday to Microsoft Entra ID](workday-inbound-cloud-only-tutorial.md) provisioning app, you can optionally configure the Workday Writeback app to write contact information such as work email and phone number to Workday. 
 
 ### Who is this user provisioning solution best suited for?
 
@@ -51,7 +51,7 @@ Follow these instructions to configure writeback of user email addresses and use
 **To configure Workday Writeback connector:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. Search for **Workday Writeback**, and add that app from the gallery.
 1. After the app is added and the app details screen is shown, select **Provisioning**.
 1. Change the **Provisioning** **Mode** to **Automatic**.
@@ -67,46 +67,45 @@ Follow these instructions to configure writeback of user email addresses and use
 
    * **Notification Email –** Enter your email address, and check the  "send email if failure occurs" checkbox.
 
-   * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at the top. If it fails, double-check that the Workday URL and credentials are valid in Workday.
+   * Select the **Test Connection** button. If the connection test succeeds, select the **Save** button at the top. If it fails, double-check that the Workday URL and credentials are valid in Workday.
 
 ### Part 2: Configure writeback attribute mappings
 
-In this section, you will configure how writeback attributes flow from Microsoft Entra ID to Workday. 
+In this section, you configure how writeback attributes flow from Microsoft Entra ID to Workday. 
 
-1. On the Provisioning tab under **Mappings**, click on the mapping name.
+1. On the Provisioning tab under **Mappings**, select the mapping name.
 
-2. In the **Source Object Scope** field, you can optionally filter, which sets of users in Microsoft Entra ID should be part of the writeback. The default scope is "all users in Microsoft Entra ID".
+2. In the **Source Object Scope** field, you can optionally filter, which sets of users in Microsoft Entra ID should be part of the writeback. The default scope is **all users in Microsoft Entra ID**.
 
 3. In the **Attribute mappings** section, update the matching ID to indicate the attribute in Microsoft Entra ID where the Workday worker ID or employee ID is stored. A popular matching method is to synchronize the Workday worker ID or employee ID to extensionAttribute1-15 in Microsoft Entra ID, and then use this attribute in Microsoft Entra ID to match users back in Workday.
 
 4. Typically you map the Microsoft Entra ID *userPrincipalName* attribute to Workday *UserID* attribute and map the Microsoft Entra ID *mail* attribute to the Workday *EmailAddress* attribute. 
 
      >[!div class="mx-imgBorder"]
-     >![Azure portal](./media/workday-inbound-tutorial/workday-writeback-mapping.png)
+     >![Screenshot of the Microsoft Entra admin center.](~/includes/governance/media/workday-inbound-tutorial/workday-writeback-mapping.png)
 
-5. Use the guidance shared below to map phone number attribute values from Microsoft Entra ID to Workday. See [Writeback expression mapping examples](#writeback-expression-mapping-examples) to configure the right expression mapping for each attribute. 
+5. Use the following guidance to map phone number attribute values from Microsoft Entra ID to Workday. See [Writeback expression mapping examples](#writeback-expression-mapping-examples) to configure the right expression mapping for each attribute. 
 
      | Workday phone attribute | Expected value | Mapping guidance |
      |-------------------------|----------------|------------------|
      | WorkphoneLandlineIsPrimary | true/false | Constant or expression mapping whose output is "true" or "false" string value. |
      | WorkphoneLandlineCountryCodeName | [Three-letter ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) | Constant or expression mapping whose output is a three letter country code.  |
      | WorkphoneLandlineCountryCodeNumber | [International country calling code](https://en.wikipedia.org/wiki/List_of_country_calling_codes) | Constant or expression mapping whose output is a valid country code (without the + sign).  |
-     | WorkphoneLandlineNumber | Full phone number including the area code | Map to *telephoneNumber* attribute. Use regex to remove whitespace, brackets and country code.  |
+     | WorkphoneLandlineNumber | Full phone number including the area code | Map to *telephoneNumber* attribute. Use regex to remove whitespace, brackets, and country code.  |
      | WorkphoneLandlineExtension | Extension number | If *telephoneNumber* contains extension, use regex to extract the value. |
      | WorkphoneMobileIsPrimary | true/false | Constant mapping or expression mapping whose output is "true" or "false" string value |
      | WorkphoneMobileCountryCodeName | [Three-letter ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) | Constant or expression mapping whose output is a three letter country code. |
      | WorkphoneMobileCountryCodeNumber | [International country calling code](https://en.wikipedia.org/wiki/List_of_country_calling_codes) | Constant or expression mapping whose output is a valid country code (without the + sign). |
-     | WorkphoneMobileNumber | Full phone number including the area code | Map to *mobile* attribute. Use regex to remove whitespace, brackets and country code. |
+     | WorkphoneMobileNumber | Full phone number including the area code | Map to *mobile* attribute. Use regex to remove whitespace, brackets, and country code. |
 
      > [!NOTE]
      > When invoking the Change_Work_Contact Workday web service, Microsoft Entra ID sends the following constant values: <br>
-     > * **Communication_Usage_Type_ID** is set to the constant string "WORK" <br>
-     > * **Phone_Device_Type_ID** is set to constant string "Mobile" for mobile phone numbers and "Landline" for landline phone numbers. <br>
+     > * **Communication_Usage_Type_ID** is set to the constant string **WORK** <br>
+     > * **Phone_Device_Type_ID** is set to constant string **Mobile** for mobile phone numbers and **Landline** for landline phone numbers. <br>
      > 
-     > You will encounter writeback failures if your Workday tenant uses different Type_IDs. To prevent such failures, you can use the Workday **Maintain Reference IDs** task and update the Type_IDs to match the values used by Microsoft Entra ID. <br>
-     >  
+     > You'll encounter writeback failures if your Workday tenant uses different Type_IDs. To prevent such failures, you can use the Workday **Maintain Reference IDs** task and update the Type_IDs to match the values used by Microsoft Entra ID. <br>
 
-6. To save your mappings, click **Save** at the top of the Attribute-Mapping section.
+6. To save your mappings, select **Save** at the top of the Attribute-Mapping section.
 
 ## Writeback expression mapping examples
 This section provides examples for configuring the Workday Writeback application for common integration scenarios. 
@@ -122,16 +121,16 @@ This section provides examples for configuring the Workday Writeback application
 
 In a typical Workday integration with Microsoft Entra ID, inbound user provisioning app - [Workday to on-premises Active Directory](workday-inbound-tutorial.md) or [Workday to Microsoft Entra ID](workday-inbound-cloud-only-tutorial.md) - creates a new Microsoft Entra account for pre-hires generating unique email and userPrincipalName for the user. 
 
-By default, the Workday Writeback app will try to set the work email and userID values on the Workday account immediately after the user is created in Microsoft Entra ID. 
+By default, the Workday Writeback app tries to set the work email and userID values on the Workday account immediately after the user is created in Microsoft Entra ID. 
 
-If you want to delay the UserID or Email writeback so that it happens on or after hire date, follow the steps given below. 
+To delay the UserID or Email writeback so that it happens on or after the hire date, follow these steps: 
 
-1. There is an attribute in Microsoft Entra ID called *employeeHireDate* in which you can capture the user's employment start date.
-1. If you are using [Workday to on-premises Active Directory](workday-inbound-tutorial.md) provisioning job, configure it to flow the Workday *StatusHireDate* field to an attribute in on-premises Active Directory (e.g. *extensionAttribute8*). Configure Microsoft Entra Connect to sync the on-premises value to *employeeHireDate* in Microsoft Entra ID. 
-1. If you are using [Workday to Microsoft Entra ID](workday-inbound-cloud-only-tutorial.md) provisioning job, configure it to flow the Workday *StatusHireDate* field directly to *employeeHireDate* attribute in Microsoft Entra ID. 
+1. There's an attribute in Microsoft Entra ID called *employeeHireDate* in which you can capture the user's employment start date.
+1. If you're using [Workday to on-premises Active Directory](workday-inbound-tutorial.md) provisioning job, configure it to flow the Workday *StatusHireDate* field to an attribute in on-premises Active Directory (for example, *extensionAttribute8*). Configure Microsoft Entra Connect to sync the on-premises value to *employeeHireDate* in Microsoft Entra ID. 
+1. If you're using [Workday to Microsoft Entra ID](workday-inbound-cloud-only-tutorial.md) provisioning job, configure it to flow the Workday *StatusHireDate* field directly to *employeeHireDate* attribute in Microsoft Entra ID. 
 
    > [!NOTE]
-   > If you are storing the employee start date in any other Microsoft Entra ID *extensionAttribute*, you can use that attribute instead of *employeeHireDate* in the expression below.
+   > If you're storing the employee start date in any other Microsoft Entra ID *extensionAttribute*, you can use that attribute instead of *employeeHireDate* in the next expression.
 
 1. In your Workday Writeback application, use the following expression rule to export Microsoft Entra userPrincipalName to Workday UserID field.
 
@@ -139,19 +138,19 @@ If you want to delay the UserID or Email writeback so that it happens on or afte
    IgnoreFlowIfNullOrEmpty(IIF(DateDiff("d", Now(), CDate([employeeHireDate])) >= 0, "", [userPrincipalName]))
    ```
 
-   The expression above uses the [DateDiff](~/identity/app-provisioning/functions-for-customizing-application-data.md#datediff) function to evaluate the difference between *employeeHireDate* and today's date in UTC obtained using [Now](~/identity/app-provisioning/functions-for-customizing-application-data.md#now) function. If *employeeHireDate* is greater than or equal to today's date, then it updates the UserID. Else it returns an empty value and the [IgnoreFlowIfNullOrEmpty](~/identity/app-provisioning/functions-for-customizing-application-data.md#ignoreflowifnullorempty) function excludes this attribute from Writeback.
+   The previous expression uses the [DateDiff](~/identity/app-provisioning/functions-for-customizing-application-data.md#datediff) function to evaluate the difference between *employeeHireDate* and today's date in UTC obtained using [Now](~/identity/app-provisioning/functions-for-customizing-application-data.md#now) function. If *employeeHireDate* is greater than or equal to today's date, then it updates the UserID. Else it returns an empty value and the [IgnoreFlowIfNullOrEmpty](~/identity/app-provisioning/functions-for-customizing-application-data.md#ignoreflowifnullorempty) function excludes this attribute from Writeback.
 
 > [!IMPORTANT]
-> For the delayed Writeback to work as expected, an operation in on-premises Active Directory or Microsoft Entra ID must trigger a change to the user just a day before the arrival or on the hire date, so that this user's profile is updated and is considered for Writeback. It must be a change, that updates an attribute value on the user profile, where the new attribute value is different from the old attribute value. 
+> For the delayed Writeback to work as expected, an operation in on-premises Active Directory or Microsoft Entra ID must trigger a change to the user just a day before the arrival or on the hire date, so that this user's profile is updated and is considered for Writeback. This must be a change that updates an attribute value on the user profile, where the new attribute value is different from the old attribute value. 
 
 
 ### Handling phone number with country code and phone number
-For the phone number writeback operation to be successful, it is important to send the right country code name and country code number. The country code name is a three-letter code that complies with [ISO 3166-1 format](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3), while country code number refers to the country calling code or [international subscriber dialing (ISD) code](https://en.wikipedia.org/wiki/List_of_country_calling_codes) for that country. 
+For the phone number writeback operation to be successful, it's important to send the right country code name and country code number. The country code name is a three-letter code that complies with [ISO 3166-1 format](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3), while country code number refers to the country calling code or [international subscriber dialing (ISD) code](https://en.wikipedia.org/wiki/List_of_country_calling_codes) for that country. 
 
 This example assumes that the phone number value in Microsoft Entra ID for *telephoneNumber* or *mobile* has the format `+<isdCode><space><phoneNumber>`. <br>
-Example: If the phone number value is set to `+1 1112223333` or `+1 (111) 222-3333`, then `1` is the ISD Code and the country code name corresponding to it is `USA`.
+Example: If the phone number value is set to `+1 1112223333` or `+1 (111) 222-3333`, then `1` is the ISD Code and the country code name corresponding to it's `USA`.
 
-Use the regular expression mappings below to send the right country code name and country code number to Workday. You can use either *telphoneNumber* or *mobile* as the source attribute. The examples below use *telephoneNumber*. All expressions here use the [Replace](~/identity/app-provisioning/functions-for-customizing-application-data.md#replace) function. 
+Use these regular expression mappings to send the right country code name and country code number to Workday. You can use either *telephoneNumber* or *mobile* as the source attribute. The following examples use *telephoneNumber*. All expressions here use the [Replace](~/identity/app-provisioning/functions-for-customizing-application-data.md#replace) function. 
 
 **Example mapping for *WorkphoneLandlineNumber* or *WorkphoneMobileNumber***
 
@@ -167,7 +166,7 @@ Replace([telephoneNumber], , "\\+(?<isdCode>\\d*) (?<phoneNumber>.*)", , "${isdC
 
 **Example mapping for *WorkphoneLandlineCountryCodeName* or *WorkphoneMobileCountryCodeName***
 
-The expression below extracts the isdCode and uses [Switch](~/identity/app-provisioning/functions-for-customizing-application-data.md#switch) function to lookup the right country code name to send to Workday. 
+The next expression extracts the isdCode and uses [Switch](~/identity/app-provisioning/functions-for-customizing-application-data.md#switch) function to look up the right country code name to send to Workday. 
 
 ```C#
 Switch(Replace([telephoneNumber], , "\\+(?<isdCode>\\d*) (?<phoneNumber>.*)", , "${isdCode}", , ), "USA",
@@ -193,7 +192,7 @@ Switch(Replace([telephoneNumber], , "\\+(?<isdCode>\\d*) (?<phoneNumber>.*)", , 
 <a name='derive-country-codes-from-azure-ad-usagelocation-attribute'></a>
 
 ### Derive country codes from Microsoft Entra ID *usageLocation* attribute 
-If you want to set the country code name and country code number in Workday based on the *usageLocation* attribute, then use the expression mappings below to convert the two-letter country code to appropriate three-letter country code name and country code number. 
+If you want to set the country code name and country code number in Workday based on the *usageLocation* attribute, then use the following expression mappings to convert the two-letter country code to appropriate three-letter country code name and country code number. 
 
 **Example mapping for *WorkphoneLandlineCountryCodeNumber* or *WorkphoneMobileCountryCodeNumber***
 
@@ -243,16 +242,16 @@ Switch([usageLocation], "USA", "AF", "AFG", "AX", "ALA", "AL", "ALB", "DZ", "DZA
 
 ### Extracting a 10-digit phone number
 
-Use the below regular expression, if phone number in Microsoft Entra ID is set using the format required for Self Service Password Reset (SSPR). <br>
-Example: if the phone number value is +1 1112223333 -> then the regex expression will output 1112223333
+Use this regular expression, if phone number in Microsoft Entra ID is set using the format required for Self Service Password Reset (SSPR).<br>
+Example: if the phone number value is +1 1112223333 -> then the regex expression outputs 1112223333
 
 ```C#
 Replace([telephoneNumber], , "\\+(?<isdCode>\\d* )(?<phoneNumber>\\d{10})", , "${phoneNumber}", , )
 ```
 ### Removing spaces, dashes and brackets in a phone number
 
-Use the below regular expression, if phone number in Microsoft Entra ID is set using the format (XXX) XXX-XXXX. <br>
-Example: if the phone number value is (111) 222-3333 -> then the regex expression will output 1112223333
+Use this regular expression, if phone number in Microsoft Entra ID is set using the format (XXX) XXX-XXXX.<br>
+Example: if the phone number value is (111) 222-3333 -> then the regex expression outputs 1112223333
 
 ```C#
 Replace([mobile], , "[()\\s-]+", , "", , )
@@ -263,54 +262,54 @@ Replace([mobile], , "[()\\s-]+", , "", , )
 Let's say that all phone numbers in Microsoft Entra ID have extension numbers and you want to populate the extension numbers in Workday. 
 This example assumes that phone numbers are stored in the format: `+<isdCode><space><phoneNumber><space>x<extensionNumber>` and the extension number appears after the `x` character. <br>
 
-To extract the components of this phone number, use the expressions below: 
+To extract the components of this phone number, use these expressions: 
 
 **Example mapping for *WorkphoneLandlineNumber***
 
-If *telephoneNumber* has the value `+1 (206) 291-8163 x8125`, the expression below will return `2062918163`.
+If *telephoneNumber* has the value `+1 (206) 291-8163 x8125`, this expression returns `2062918163`.
 ```C#
 Replace(Replace([telephoneNumber], , "\+(?<isdCode>\d* )(?<phoneNumber>.* )[x](?<extension>.*)", , "${phoneNumber}", , ), ,"[()\\s-]+", ,"", , ) 
 ```
 
 **Example mapping for *WorkphoneLandlineCountryCodeNumber***
 
-If *telephoneNumber* has the value `+1 (206) 291-8163 x8125`, the expression below will return `1`.
+If *telephoneNumber* has the value `+1 (206) 291-8163 x8125`, this expression returns `1`.
 ```C#
 Replace(Replace([telephoneNumber], , "\+(?<isdCode>\d* )(?<phoneNumber>.* )[x](?<extension>.*)", , "${isdCode}", , ), ,"[()\\s-]+", ,"", , ) 
 ```
 
 **Example mapping for *WorkphoneLandlineExtension***
 
-If *telephoneNumber* has the value `+1 (206) 291-8163 x8125`, the expression below will return `8125`.
+If *telephoneNumber* has the value `+1 (206) 291-8163 x8125`, this expression returns `8125`.
 ```C#
 Replace(Replace([telephoneNumber], , "\+(?<isdCode>\d* )(?<phoneNumber>.* )[x](?<extension>.*)", , "${extension}", , ), ,"[()\\s-]+", ,"", , )
 ```
 
 ## Enable and launch user provisioning
 
-Once the Workday provisioning app configurations have been completed, you can turn on the provisioning service in the Microsoft Entra admin center.
+Once the Workday provisioning app configurations are complete, you can turn on the provisioning service in the Microsoft Entra admin center.
 
 > [!TIP]
-> By default when you turn on the provisioning service, it will initiate provisioning operations for all users in scope. If there are errors in the mapping or Workday data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring **Source Object Scope** filter and testing  your attribute mappings with a few test users using the [provision on demand](~/identity/app-provisioning/provision-on-demand.md) feature before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
+> By default when you turn on the provisioning service, it initiates provisioning operations for all users in scope. If there are errors in the mapping or Workday data issues, then the provisioning job might fail and go into the quarantine state. To avoid this, as a best practice, we recommend configuring the **Source Object Scope** filter and testing your attribute mappings with a few test users using the [provision on demand](~/identity/app-provisioning/provision-on-demand.md) feature before launching the full sync for all users. Once you have verified that the mappings work and are giving you the desired results, then you can either remove the filter or gradually expand it to include more users.
 
 1. In the **Provisioning** tab, set the **Provisioning Status** to **On**.
 
-1. In the **Scope** dropdown, select **Sync all users and groups**. With this option, the Writeback app will write back mapped attributes of all users from Microsoft Entra ID to Workday, subject to the scoping rules defined under **Mappings** -> **Source Object Scope**. 
+1. In the **Scope** dropdown, select **Sync all users and groups**. With this option, the Writeback app writes back mapped attributes of all users from Microsoft Entra ID to Workday, subject to the scoping rules defined under **Mappings** > **Source Object Scope**. 
 
    > [!div class="mx-imgBorder"]
    > ![Select Writeback scope](./media/sap-successfactors-inbound-provisioning/select-writeback-scope.png)
 
    > [!NOTE]
-   > The Workday Writeback provisioning app does not support the option **Sync only assigned users and groups**.
+   > The Workday Writeback provisioning app doesn't support the option **Sync only assigned users and groups** and will always operate as if the "Sync all users and groups" option is selected.
  
 
-2. Click **Save**.
+2. Select **Save**.
 
-3. This operation will start the initial sync, which can take a variable number of hours depending on how many users are in the source directory. You can check the progress bar to the track the progress of the sync cycle. 
+3. This operation starts the initial sync, which can take a variable number of hours depending on how many users are in the source directory. You can check the progress bar to the track the progress of the sync cycle. 
 
-4. At any time, check the **Provisioning logs** tab in the Azure portal to see what actions the provisioning service has performed. The audit logs lists all individual sync events performed by the provisioning service, such as which users are imported from the source and exported to the target application.  
+4. At any time, check the **Provisioning logs** tab in the Entra admin center to see what actions the provisioning service performs. The audit logs lists all individual sync events performed by the provisioning service, such as which users are imported from the source and exported to the target application.  
 
-5. Once the initial sync is completed, it will write a summary report in the **Provisioning** tab, as shown below.
+5. Once the initial sync is completed, it writes a summary report in the **Provisioning** tab.
 
      > [!div class="mx-imgBorder"]
      > ![Provisioning progress bar](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
@@ -318,11 +317,11 @@ Once the Workday provisioning app configurations have been completed, you can tu
 
 ## Known issues and limitations
 
-* The Writeback app uses a pre-defined value for parameters **Communication_Usage_Type_ID** and **Phone_Device_Type_ID**. If your Workday tenant is using a different value for these attributes, then the Writeback operation will not succeed. A suggested workaround is to update the Type_IDs in Workday. 
-* When the Writeback app is configured to update secondary phone numbers, it does not replace the existing secondary phone number in Workday. It adds one more secondary phone number to the worker record. There is no workaround to this behavior. 
+* The Writeback app uses a pre-defined value for parameters **Communication_Usage_Type_ID** and **Phone_Device_Type_ID**. If your Workday tenant is using a different value for these attributes, then the Writeback operation won't succeed. A suggested workaround is to update the Type_IDs in Workday. 
+* When the Writeback app is configured to update secondary phone numbers, it doesn't replace the existing secondary phone number in Workday. It adds one more secondary phone number to the worker record. There's no workaround to this behavior. 
 
 
-## Next steps
+## Related content
 
 * [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

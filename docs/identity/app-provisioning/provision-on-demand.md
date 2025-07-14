@@ -1,16 +1,17 @@
 ---
 title: Provision a user or group on demand using the Microsoft Entra provisioning service
 description: Learn how to provision users on demand in Microsoft Entra ID.
-
 author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # On-demand provisioning in Microsoft Entra ID
@@ -23,20 +24,19 @@ Use on-demand provisioning to provision a user or group in seconds. Among other 
 
 ## How to use on-demand provisioning
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 
 ::: zone pivot="app-provisioning"
 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > select your application.
+2. Browse to **Entra ID** > **Enterprise apps** > select your application.
 3. Select **Provisioning**.
 
 ::: zone-end
 
 ::: zone pivot="cross-tenant-synchronization"
 
-2. Browse to **Identity** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
+2. Browse to **Entra ID** > **External Identities** > **Cross-tenant Synchronization** > **Configurations**
 3. Select your configuration, and then go to the **Provisioning** configuration page.
 
 ::: zone-end
@@ -69,7 +69,7 @@ The provisioning service attempts to authorize access to the target system by ma
 
 * Ensure that you've provided valid credentials, such as the secret token and tenant URL, to the target system. The required credentials vary by application. For detailed configuration tutorials, see the [tutorial list](~/identity/saas-apps/tutorial-list.md). 
 * Make sure that the target system supports filtering on the matching attributes defined in the **Attribute mappings** pane. You might need to check the API documentation provided by the application developer to understand the supported filters.
-* For System for Cross-domain Identity Management (SCIM) applications, you can use a tool like Postman. Such tools help you ensure that the application responds to authorization requests in the way that the Microsoft Entra provisioning service expects. Have a look at an [example request](./use-scim-to-provision-users-and-groups.md#request-3).
+* For System for Cross-domain Identity Management (SCIM) applications, use a REST API tool like cURL. Such tools help you ensure that the application responds to authorization requests in the way that the Microsoft Entra provisioning service expects. Have a look at an [example request](./use-scim-to-provision-users-and-groups.md#request-3).
 
 ### Step 2: Import user
 
@@ -165,7 +165,7 @@ There are currently a few known limitations to on-demand provisioning. Post your
 ::: zone pivot="app-provisioning"
 > [!NOTE]
 > The following limitations are specific to the on-demand provisioning capability. For information about whether an application supports provisioning groups, deletions, or other capabilities, check the tutorial for that application.
-* On-demand provisioning of groups supports updating up to five members at a time. Connectors for cross-tenant synchronization, Workday, etc. do not support group provisioning and as a result do not support on-demand provisioning of groups.
+* On-demand provisioning of groups supports updating up to five members at a time. Connectors for cross-tenant synchronization, Workday, and so on. do not support group provisioning and as a result do not support on-demand provisioning of groups.
 * The on-demand provisioning request API can only accept a single group with up to 5 members at a time.
 ::: zone-end
 ::: zone pivot="cross-tenant-synchronization"
@@ -179,4 +179,4 @@ There are currently a few known limitations to on-demand provisioning. Post your
 
 ## Next steps
 
-* [Troubleshooting provisioning](./application-provisioning-config-problem.md)
+* [Troubleshooting provisioning](troubleshoot.md)

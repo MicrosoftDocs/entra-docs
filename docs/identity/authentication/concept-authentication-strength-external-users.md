@@ -6,11 +6,11 @@ description: Learn how admins can use authentication strength requirements for e
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/12/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckms
-manager: amycolannino
+manager: dougeby
 ms.reviewer: namkedia
 ---
 # How Conditional Access authentication strength works for external users
@@ -33,11 +33,11 @@ In external user scenarios, the authentication methods that can satisfy authenti
 |Windows Hello for Business                   | &#x2705;        |          |
 |Certificate-based Authentication             | &#x2705;        |          |
 
-For more information about how to set authentication strengths for external users, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
+For more information about how to set authentication strengths for external users, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/policy-guests-mfa-strength.md).
 
 ## User experience for external users
 
-An authentication strength Conditional Access policy works together with [MFA trust settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#to-change-inbound-trust-settings-for-mfa-and-device-claims) in your cross-tenant access settings. First, a Microsoft Entra user authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you've enabled MFA trust.
+An authentication strength Conditional Access policy works together with [MFA trust settings](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings. First, a Microsoft Entra user authenticates with their own account in their home tenant. Then when this user tries to access your resource, Microsoft Entra ID applies the authentication strength Conditional Access policy and checks to see if you've enabled MFA trust.
 
 - **If MFA trust is enabled**, Microsoft Entra ID checks the user's authentication session for a claim that indicates MFA was fulfilled in the user's home tenant. See the preceding table for authentication methods that are acceptable for MFA when completed in an external user's home tenant. If the session contains a claim that indicates the MFA policies are already met in the user's home tenant, and the methods satisfy the authentication strength requirements, the user is allowed access. Otherwise, Microsoft Entra ID presents the user with a challenge to complete MFA in the home tenant using an acceptable authentication method.
 - **If MFA trust is disabled**, Microsoft Entra ID presents the user with a challenge to complete MFA in the resource tenant using an acceptable authentication method. See preceding table for authentication methods that are acceptable for MFA by an external user.

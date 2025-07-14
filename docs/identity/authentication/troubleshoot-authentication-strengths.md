@@ -1,17 +1,15 @@
 ---
-title: Troubleshoot Conditional Access authentication strength 
+title: Troubleshoot Conditional Access authentication strength
 description: Learn how to resolve errors when using Microsoft Entra Conditional Access authentication strength.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 01/12/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: inbarckms
-manager: amycolannino
+manager: dougeby
 ms.reviewer: inbarc
+ms.custom: sfi-image-nochange
 ---
 # Troubleshoot Conditional Access authentication strength
 
@@ -34,7 +32,7 @@ To verify if a method can be used:
 1. Check if the user is enabled for a required method:
    1. Check the Authentication methods policy to see if the user is enabled for any method required by the authentication strength. Click **Security** > **Authentication methods** > **Policies**.
    1. As needed, check if the tenant is enabled for any method required for the authentication strength. Click **Security** > **Multifactor Authentication** > **Additional cloud-based multifactor authentication settings**. 
-1. Check which authentication methods are registered for the user in the Authentication methods policy. Click **Users and groups** > _username_ > **Authentication methods**. 
+1. Check which authentication methods are registered for the user in the Authentication methods policy. Click **Users and groups** > *username* > **Authentication methods**. 
 
 If the user is registered for an enabled method that meets the authentication strength, they might need to use another method that isn't available after primary authentication, such as Windows Hello for Business. For more information, see [How each authentication method works](concept-authentication-methods.md#how-each-authentication-method-works). The user needs to restart the session, choose **Sign-in options** , and select a method required by the authentication strength.
 
@@ -67,4 +65,3 @@ Some methods can't be registered during sign-in, or they need more setup beyond 
 - [Built-in Conditional Access authentication strengths](concept-authentication-strengths.md)
 - [Custom Conditional Access authentication strengths](concept-authentication-strength-advanced-options.md)
 - [How authentication strength works for external users](concept-authentication-strength-external-users.md)
-
