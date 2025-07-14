@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 06/16/2025
+ms.date: 07/14/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
@@ -108,6 +108,44 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 >
 > ![Screenshot showing the Private Access Sensor settings in the Windows Registry](media/how-to-configure-domain-controllers/private-access-sensor-windows-registry.png)
 
+## Exclusions and Inclusions for SPNs
+
+When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN in the `localpolicy` file.
+
+> [!NOTE]
+> Both `cloudpolicy` and `localpolicy` are evaluated for access. Only `localpolicy` can be used to configure exclusions or inclusions.
+
+If no exclusion is defined for a given SPN, the default behavior is to block all direct access to that SPN unless it is accessed from a device with the Global Secure Access client installed.
+
+### Exclusions
+
+Exclusions allow specific users or machines to access configured SPNs without requiring the Global Secure Access client. You can add exclusions by:
+
+- Client IP address
+- IP address ranges
+- On-premises user principal name (UPN)
+
+You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple UPNs for an SPN.
+
+### Inclusions
+
+If you need to allow access for many users, you can instead specify an inclusion list for each SPN. When you configure included users for an SPN, only those users are required to have the Global Secure Access client. Users not included in the list can access the SPN without the client.
+
+> [!IMPORTANT]
+> An SPN can have either an inclusion list of UPNs or an exclusion list of UPNs, but not both.
+
+### Combining Exclusions and Inclusions
+
+- You can configure both UPN inclusion and IP exclusion for a given SPN.
+- You can configure both UPN exclusion and IP exclusion for a given SPN.
+- If a policy match occurs for both UPN inclusion and IP exclusion, access to the SPN is allowed.
+- If a policy matches more than one rule (for example, a wildcard), access to the SPN is allowed if it matches at least one exclusion rule.
+
+> [!TIP]
+> Use exclusions and inclusions to fine-tune access for users and devices that do not have the Global Secure Access client, ensuring business continuity while maintaining security controls.
+
+Example of how to configure `localpolicy` file for SPN exclusions and inclusions:
+> ![Screenshot of the localpolicy file showing how to configure the file for SPN exclusions and inclusions](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)
 
 #### Break glass mode
 
