@@ -59,7 +59,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
      - Metadata for FIDO2 security keys needs to be published and verified with the FIDO Alliance Metadata Service, and also pass another set of validation testing by Microsoft. For more information, see [Become a Microsoft-compatible FIDO2 security key vendor](/entra/identity/authentication/concept-fido2-hardware-vendor).
      - Passkeys in Microsoft Authenticator also support attestation. For more information, see [How passkey attestation works with Authenticator](concept-authentication-authenticator-app.md#how-passkey-attestation-works-with-authenticator).
 
-     >[!WARNINGS]
+     >[!WARNING]
      >- If you set **Enforce attestation** to **No**, users can register any type of passkey. Set **Enforce attestation** to **Yes** to ensure that users can only register device-bound passkeys.
      >
      >- Attestation enforcement governs whether a passkey (FIDO2) is allowed only during registration. Users who register a passkey (FIDO2) without attestation aren't blocked from sign-in if **Enforce attestation** is set to **Yes** later.
