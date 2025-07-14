@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 07/08/2025
+ms.date: 07/14/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -230,6 +230,14 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Guests don't own apps in the tenant
 
 [!INCLUDE [21868](../includes/secure-recommendations/21868.md)]
+
+### Allow/Deny lists of domains to restrict external collaboration are configured
+
+[!INCLUDE [21874](../includes/secure-recommendations/21874.md)]
+
+### All guests have a sponsor
+
+[!INCLUDE [21877](../includes/secure-recommendations/21877.md)]
 
 ## Monitoring
 
