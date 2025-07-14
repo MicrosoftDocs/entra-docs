@@ -119,8 +119,6 @@ The agent runs under the identity and permissions of the *user who enabled the a
 
 The Security Administrator and Global Administrator roles have access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 
-The user who approves a suggestion to add users to a policy becomes an owner of the group the user is added to.
-
 The user who approves a suggestion to add users to a policy becomes an owner of the group for adding users to a policy.
 
 ### Custom instructions
