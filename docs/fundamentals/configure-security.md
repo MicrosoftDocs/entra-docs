@@ -73,7 +73,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21803](../includes/secure-recommendations/21803.md)]
 
-### Migrate from legacy MFA and self service password reset (SSPR) policies
+### SMS and Voice Call authentication methods are disabled
 
 [!INCLUDE [21804](../includes/secure-recommendations/21804.md)]
 
