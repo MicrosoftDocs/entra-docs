@@ -8,7 +8,7 @@ tags: azuread
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.reviewer: martincoetzer
 ms.author: billmath
 
@@ -36,7 +36,7 @@ The purpose of this document is to describe the factors influencing the performa
 
 The following diagram shows a high-level architecture of provisioning engine connecting to a single forest, although multiple forests are supported. This architecture shows how the various components interact with each other.
 
-![Diagram shows how the Connected Directories and Microsoft Entra Connect provisioning engine interact, including Connector Space and Metaverse components in an SQL Database.](media/plan-connect-performance-factors/AzureADConnentInternal.png)
+![Diagram shows how the Connected Directories and Microsoft Entra Connect provisioning engine interact, including Connector Space and Metaverse components in an SQL Database.](media/plan-connect-performance-factors/entra-connect-architecture.png)
 
 The provisioning engine connects to each Active Directory forest and to Microsoft Entra ID. The process of reading information from each directory is called Import. Export refers to updating the directories from the provisioning engine. Sync evaluates the rules of how the objects flow inside the provisioning engine. For a deeper dive, can refer to [Microsoft Entra Connect Sync: Understanding the architecture](./concept-azure-ad-connect-sync-architecture.md).
 

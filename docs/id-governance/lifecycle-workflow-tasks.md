@@ -3,11 +3,12 @@ title: Lifecycle Workflows tasks and definitions
 description: This article guides a user on Workflow task definitions and task parameters.
 author: OWinfreyATL
 ms.author: owinfrey
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 08/27/2024
+ms.date: 06/25/2025
+ms.custom: sfi-image-nochange
 ---
 
 # Lifecycle Workflow built-in tasks
@@ -857,6 +858,37 @@ Example of usage within the workflow:
                 }
             ]
         }
+```
+
+### Revoke all refresh tokens for user (Preview)
+
+Allows all refresh and browser session tokens to be revoked for a user. This invalidates all the refresh tokens and browser session tokens issued to applications for a user, except external user sign-in sessions because external users sign in through their home tenant.
+
+You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/revoke-refresh-tokens-task.png" alt-text="Screenshot of the revoke refresh tokens task.":::
+
+
+For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver,mover      |
+|displayName     |  Revoke all refresh tokens for user (Preview)        |
+|description     |  Revoke all refresh tokens for user        |
+|taskDefinitionId     |   509589a4-0466-4471-829e-49c5e502bdee      |
+
+
+
+```Example for usage within the workflow
+{
+    "category": "leaver, mover",
+    "continueOnError": false,
+    "description": "Revoke all refresh tokens for user (Preview)",
+    "displayName": "Revoke all refresh tokens for user",
+    "isEnabled": true,
+    "taskDefinitionId": "509589a4-0466-4471-829e-49c5e502bdee",
+    "arguments": []
+}
 ```
 
 ### Remove all license assignments from User

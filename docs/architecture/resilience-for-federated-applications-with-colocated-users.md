@@ -14,7 +14,7 @@ ms.date: 02/19/2025
 
 One scenario that many organizations [building for resilience](resilience-overview.md) in their identity and access management architecture need to accommodate is continuity of application access during temporary site disconnection. The organization may have one or more physical sites at which their applications are deployed. Some of their users are colocated at those sites and need to be able to access local applications. For example, employees at a factory or at a store may need to be able to sign-in to in-house-developed business applications managing operations at that site.
 
-Historically, organizations could use Active Directory Domain Services, deploy [domain controllers at each site](/windows-server/identity/ad-ds/plan/planning-domain-controller-placement), so that users could authenticate to a local domain controller. Authenticating users through Microsoft Entra and connecting applications to Microsoft Entra ID via federation protocols such as SAML brings benefits, including multifactor authentication and risk based conditional access. When applications are federated to Microsoft Entra, the users authenticate themselves to Microsoft Entra, and Microsoft Entra then provides tokens that carry claims and indicate their authentication status to the applications. However, if there is a break in the network connectivity between the site and the Internet, then users and applications are unable to access Microsoft Entra cloud endpoints. With that break in connectivity, no more tokens can be issued from Microsoft Entra to applications via that route until the break is repaired. Users already authenticated to the application and able to connect to the application may be able to continue to use the application for a time. However, if the application requires the user to reauthenticate and the break has not yet been repaired, then the user won't be able to get a new access token from Microsoft Entra. In addition, until the break is repaired, any user who hadn't previously connected to the application may find themselves unable to use the application as well.
+Historically, organizations could use Active Directory Domain Services, deploy [domain controllers at each site](/windows-server/identity/ad-ds/plan/planning-domain-controller-placement), so that users could authenticate to a local domain controller. Authenticating users through Microsoft Entra and connecting applications to Microsoft Entra ID via federation protocols such as SAML brings benefits, including multifactor authentication and risk based Conditional Access. When applications are federated to Microsoft Entra, the users authenticate themselves to Microsoft Entra, and Microsoft Entra then provides tokens that carry claims and indicate their authentication status to the applications. However, if there is a break in the network connectivity between the site and the Internet, then users and applications are unable to access Microsoft Entra cloud endpoints. With that break in connectivity, no more tokens can be issued from Microsoft Entra to applications via that route until the break is repaired. Users already authenticated to the application and able to connect to the application may be able to continue to use the application for a time. However, if the application requires the user to reauthenticate and the break has not yet been repaired, then the user won't be able to get a new access token from Microsoft Entra. In addition, until the break is repaired, any user who hadn't previously connected to the application may find themselves unable to use the application as well.
 
 One approach to solving this problem and ensuring tokens can be issued to federated applications even during temporary site disconnection is:
 
@@ -35,7 +35,7 @@ An alternative approach, described in this tutorial, is to add a relying party s
 
 :::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/topology-trust-with-relying-party-sts.png" alt-text="Diagram showing the trust relationship between an application, a relying party STS, and identity providers. Both Windows Server Active Directory and Microsoft Entra ID are configured in the relying party STS as identity providers.":::
 
-This tutorial illustrates how to configure Microsoft Entra for a federated application, using a relying party STS. In normal operations, users will authenticate to Microsoft Entra, and Microsoft Entra will issue tokens for the application. And in a site disconnect situation, users can authenticate to Active Directory, and obtain tokens for that application with similar claims as that provided by Microsoft Entra. While Microsoft Entra features including multifactor authentication or risk-based conditional access won't be available for applications during the time of disconnection, users will continue to be able to be authenticated to access to those applications.
+This tutorial illustrates how to configure Microsoft Entra for a federated application, using a relying party STS. In normal operations, users will authenticate to Microsoft Entra, and Microsoft Entra will issue tokens for the application. And in a site disconnect situation, users can authenticate to Active Directory, and obtain tokens for that application with similar claims as that provided by Microsoft Entra. While Microsoft Entra features including multifactor authentication or risk-based Conditional Access won't be available for applications during the time of disconnection, users will continue to be able to be authenticated to access to those applications.
 
    > [!IMPORTANT]
    > This guide is intended for organizations that are already familiar with deploying domain controllers across multiple sites and using federation technology such as AD FS to [provide Active Directory users with access to claims-Aware applications](/windows-server/identity/ad-fs/design/provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services). Architecture and deployment of Active Directory, AD FS, and related technologies for high availability and resilience to network outages is a substantial investment. Before beginning the journey described in this article, [determine Your AD FS Deployment Topology](/windows-server/identity/ad-fs/design/determine-your-ad-fs-deployment-topology). If you have not deployed an AD domain for high availability, or [verified that your production environment can support an AD FS deployment](/windows-server/identity/ad-fs/design/ad-fs-deployment-topology-considerations#verifying-that-your-production-environment-can-support-an-ad-fs-deployment), then select an alternative approach for resilience.
@@ -92,7 +92,7 @@ If the only applications connected to AD are those being configured for resilien
 
 Another option is to use [Microsoft Entra certificate-based authentication (CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). AD also supports certificate authentication, and some organizations have issued smartcards, virtual smartcards, or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
 
-## Deploy a relying party STS and configure Microsoft Entra as an identity provider
+## Deploy a relying party STS
 
 If you haven't already done so, [deploy AD FS](/windows-server/identity/ad-fs/ad-fs-deployment) or a similar identity technology on one or more Windows Servers at a site. This AD FS will be configured to operate as a relying party STS, so can't be the same installation as another AD FS configured as an identity provider to provide claims to Microsoft Entra.
 
@@ -106,7 +106,27 @@ If you haven't already done so, [deploy AD FS](/windows-server/identity/ad-fs/ad
 
 If you are using certificate based authentication, then you will also need to configure AD FS to authenticate users with certificates. For more information, see [Configure AD FS support for user certificate authentication](/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication).
 
-Then, perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. Performing that tutorial will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
+## Secure the relying party STS
+
+The relying party STS will be trusted by applications to provide tokens indicating users have been authenticated. This requires that you ensure the STS, the servers hosting it, and any upstream domain controllers or other resources, are locked down to the same security standards as the other identity infrastructure in your environment.
+
+For more information, see [Best practices for securing Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs).
+
+## Connect federated applications to the relying party STS
+
+You will need to identify which applications at a site are in scope for being connected to the relying party STS, rather than being connected directly to Microsoft Entra. This should be the minimum set needed to maintain operations during a loss of connectivity. Considerations include:
+
+* Applications which rely solely on an [Microsoft Authentication Library (MSAL) SDK](~/identity-platform/msal-overview.md) for token issuance cannot be connected to a relying party STS.
+* Applications which have been previously hardcoded with a single federation metadata endpoint or issuer certificate may require additional changes to remove that dependency prior to being integrated with a relying party STS.
+* Applications which are capable of supporting multiple identity providers may wish to retain the existing connection to Microsoft Entra.
+* The applications which are associated with a relying party STS will be represented as a single application in Microsoft Entra, so those applications will need to have the same users, CA policies, supplied claims, and other settings applicable to them. If two applications rely upon Microsoft Entra to limit token issuance to different user populations, or have different CA requirements, they cannot both be connected to the same relying party STS.
+
+## Configure Microsoft Entra as an identity provider to the relying party STS
+
+Perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. Performing that tutorial will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
+
+ > [!NOTE]
+ > A single application representation is used in Microsoft Entra for each relying party STS, independent of the number of applications connected to that relying party STS. If you have multiple applications connected to a single relying party STS, then they will share a common application in Microsoft Entra, so must have the same users, CA policies, supplied claims, and other settings in Microsoft Entra.
 
 ## Configure AD as an LDAP source in the relying party STS
 
@@ -132,7 +152,7 @@ When testing the configuration, you should assign a designated test user that wa
    If you're using Microsoft Entra Cloud Sync, you can monitor the `steadyStateLastAchievedTime` property of the synchronization status by retrieving the [synchronization job](/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0&preserve-view=true&tabs=powershell#example) of the service principal that represents Microsoft Entra Cloud Sync. If you don't have the service principal ID, see [View the synchronization schema](~/identity/hybrid/cloud-sync/concept-attributes.md#view-the-synchronization-schema).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and select the application from the search results.
 1. In the **Manage** section of the left menu, select **Properties**.
 1. Ensure that the value of **Enabled for users to sign-in** is set to **Yes**.
@@ -194,28 +214,32 @@ You'll next need to configure who can sign-in to each application. AD FS and Mic
 1. If you have multiple applications connected to the same relying party STS, then in Microsoft Entra, you may only be able to have a single application object representing all those applications. For the role assignments, you can use features like dynamic groups or entitlement management to assign users to an application role. If the user has a role membership on the application role, then the user will be able to receive a token from Microsoft Entra.
 1. In addition, AD FS also applies access control policies that are assigned to the applications. Any policy you select for the application needs to able to be evaluated by AD FS for both tokens from Microsoft Entra and for users which authenticate to AD. As tokens from Microsoft Entra do not pass through Active Directory, you can't use the **Permit specific group** access control policy, as that would deny Microsoft Entra tokens. If you wish to control access in AD FS for token issuance from AD, you'll need to use a different policy instead. For more information on access control policies, see [Access Control Policies in AD FS](/windows-server/identity/ad-fs/operations/access-control-policies-in-ad-fs).
 
-## Configure a task to perform automatic failover to AD
+## Configure a task to perform automatic failover to AD and to Microsoft Entra
 
 You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for each application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected, by invoking the `Set-AdfsRelyingPartyTrust` command for that application. Optionally, you may wish to configure a monitor to reset the AD FS configuration back to `Microsoft Entra` when connectivity is detected to have been restored.
 
 For a simple environment, you can implement a monitor by using a PowerShell script and the built-in Task Scheduler. For a scaled out deployment, deploying a monitor depends upon the IT automation system in use in your organization and is outside of the scope of this article.
 
-### Configuring an example scheduled task for AD FS
+### Configuring an example scheduled task for AD FS to failover to AD
 
-1. Create a script which detects a network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust` to change the identity provider.
-1. Copy the script to a server with AD FS.
-1. Edit the script to match the AD FS configuration and list of applications.
-1. Launch PowerShell on the Windows Server where AD FS is installed.
+1. Create a script which detects a network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust` to change the identity provider. An example of a script can be found at [https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/sample-changeover-multiple-apps.ps1](https://raw.githubusercontent.com/microsoft/Entra-reporting/refs/heads/main/PowerShell/sample-changeover-multiple-apps.ps1). Note that if you download a script, then you will need to use File Explorer to unblock the script before you can run it in PowerShell.
+1. Copy the script to a Windows Server with AD FS.
+1. Edit the script to match the AD FS configuration and list of applications configured in AD FS at that site.
+1. Launch PowerShell on a Windows Server where AD FS is installed.
 1. Register a source so the script can write to the Application event log. For example, if the script is named `AD FS changeover script`, then type the command `New-EventLog -LogName Application -Source "AD FS changeover script"`.
 1. Launch **Event Viewer** and navigate to the newly created log.
 1. Test the script by running it in PowerShell, to ensure it operates correctly from an interactive session.
 1. Launch **Task Scheduler** and view the Task Scheduler Library.
-1. If you don't already have a folder for your tasks, create a folder.
+1. If you don't already have a folder for your tasks in Task Scheduler, create a folder.
 1. Select the folder for your tasks, then select **Create task**.
 1. Fill out the **General** tab settings for the task.
 1. Change to the **Triggers** tab. Select **New** and provide a recurrence schedule for your task, in alignment with your organization's risk and network guidance.
 1. Change to the **Actions** tab. Select **New** and select an action to **Start a program**. Specify `powershell.exe` as the program, and specify arguments needed to invoke the PowerShell script. For example, `-NonInteractive -WindowStyle Hidden -File c:\scripts\ad_fs_changeover_script.ps1`. Then Select **OK** to close the action window and **OK** to close the task window. For more information, see [about powershell.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe).
 1. Select **Run**, wait one minute, then select **Refresh**. Ensure that the script started and completed successfully, and check **Event Viewer** to see if any errors were recorded.
+
+### Configure session invalidation (optional)
+
+Your applications may also have user sessions that are derived from the user having been authenticated. For example, a browser-based application may authenticate a user and then store a browser cookie indicating the user has been authenticated. You may wish to have your applications rely upon the disconnected identity providers for as short a period as possible. For example, if a user had not used an application before, and then the first time the user tried to connect to an application was when the site was disconnected, then the authentication was performed by Windows Server AD. Following that authentication, the application may have stored a session cookie for the user to be able to continue to interact with the application without needing to re-authenticate. However, once the site is reconnected, you may wish to have the user be re-authenticated by Microsoft Entra, so that the Microsoft Entra policies such as Conditional Access can be applied. This will require invalidating any session state for those users that was derived from Windows Server AD, such as by informing the application to not allow session state generated during a particular time window. How this is provided to the application will vary by applications.
 
 ## Complete configuration
 

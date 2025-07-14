@@ -1,17 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Upgrade from DirSync'
 description: Learn how to upgrade from DirSync to Microsoft Entra Connect. This article describes the steps for upgrading from DirSync to Microsoft Entra Connect.
-
 author: billmath
 manager: femila
-
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/09/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Connect: Upgrade from DirSync

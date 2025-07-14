@@ -44,6 +44,15 @@ groups:
     title: Application provisioning
   - id: cross-tenant-synchronization
     title: Cross-tenant synchronization
+# Owner: rolyon
+- id: same-cloud-cross-cloud-synchronization
+  title: Same cloud synchronization or cross-cloud synchronization
+  prompt: Choose cloud type
+  pivots:
+  - id: same-cloud-synchronization
+    title: Same cloud synchronization
+  - id: cross-cloud-synchronization
+    title: Cross-cloud synchronization
 ########### BEGIN MICROSOFT IDENTITY PLATFORM
 # Referenced by: /entra/identity-platform/*
 # Owner(s):  dmwendia, celested, ryanwi, henrymbugua, owenrichards, cwerner, kengaderdus
@@ -93,6 +102,15 @@ groups:
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
+## template with only graph-powershell, ms-graph
+- id: enterprise-app-graph-ps-ms-graph
+  title: Manage Enterprise apps policy
+  prompt: Choose an option
+  pivots:
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
+  - id: ms-graph
+    title: Microsoft Graph
 ## Template without portal
 - id: enterprise-apps-minus-portal
   title: Manage Enterprise apps
@@ -104,7 +122,7 @@ groups:
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
-## Template without portal and Azure AD Graph
+## Template without portal and Azure AD PowerShell
 - id: enterprise-apps-minus-portal-aad
   title: Manage Enterprise apps
   prompt: Choose an option
@@ -150,7 +168,7 @@ groups:
   prompt: Choose an option
   pivots:
   - id: msgraph-powershell
-    title: Microsoft graph PowerShell
+    title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
   - id: azure-cli
@@ -354,3 +372,12 @@ groups:
     title: Onboard
   - id: identity-governance-guest-offboard
     title: Offboard
+# Owner owinfrey
+- id: identity-extension-windows-environment
+  title: Azure Virtual Machine extensions and extensions for Arc-enabled Windows Server.
+  prompt: Select how your device is connected to Azure.
+  pivots:
+  - id: identity-extension-vm
+    title: Virtual Machine
+  - id: identity-extension-hybrid
+    title: Arc-enabled Server

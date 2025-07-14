@@ -1,15 +1,16 @@
 ---
 title: Find out when a specific user is able to access an app in Microsoft Entra Application Provisioning
 description: How to find out when a critically important user is able to access an application you have configured for user provisioning with Microsoft Entra ID.
-
 author: kenwith
-manager: femila
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Check the status of user provisioning
@@ -29,7 +30,7 @@ When you first configure automatic provisioning, the **Current Status** section 
 
 After a provisioning cycle is complete, the **Statistics to date** section shows the cumulative numbers of users and groups that have been provisioned to date, along with the completion date and duration of the last cycle. The **Activity ID** uniquely identifies the most recent provisioning cycle. The **Job ID** is a unique identifier for the provisioning job, and is specific to the app in your tenant.
 
-The provisioning progress is viewed in the Microsoft Entra admin center at **Identity** > **Applications** > **Enterprise applications** > \[*application name*\] > **Provisioning**.
+The provisioning progress is viewed in the Microsoft Entra admin center at **Entra ID** > **Enterprise apps** > \[*application name*\] > **Provisioning**.
 
 ![Provisioning page progress bar](./media/application-provisioning-when-will-provisioning-finish-specific-user/provisioning-progress-bar-section.png)
 
@@ -39,7 +40,7 @@ You can also use Microsoft Graph to programmatically monitor the status of provi
 
 To see the provisioning status for a selected user, consult the [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context) in Microsoft Entra ID. All operations run by the user provisioning service are recorded in the Microsoft Entra provisioning logs. The logs include read and write operations made to the source and target systems. Associated user data related to read and write operations is also logged.
 
-You can access the provisioning logs in the Microsoft Entra admin center by selecting **Identity** > **Applications** > **Enterprise applications** > **Provisioning logs** in the **Activity** section. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
+You can access the provisioning logs in the Microsoft Entra admin center by selecting **Entra ID** > **Enterprise apps** > **Provisioning logs** in the **Activity** section. You can search the provisioning data based on the name of the user or the identifier in either the source system or the target system. For details, see [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context). 
 
 The provisioning logs record all the operations performed by the provisioning service, including:
 
@@ -58,7 +59,7 @@ The time to provision a user, group, or group membership varies based on several
 - Some target systems implement request rate limits and throttling, which can impact performance during large sync operations. Under these conditions, an app that receives too many requests too fast might slow its response rate or close the connection. Gallery applications are configured to adhere to the rate limits set by the application developer, with no action required by an administrator configuring provisioning. 
 - Sync jobs for which all users are created for the first time take about twice as long as sync jobs for which all users are matched to existing users.
 - The number of failures that the provisioning service has to retry on a given sync cycle impacts performance. Check the progress bar and [provisioning logs](check-status-user-account-provisioning.md) for any failures and remediate them.
-- Provisioning jobs in quarantine run at a reduced frequency. Review the quarantine reason and remeditate it to restore the typical execution frequency.
+- Provisioning jobs in quarantine run at a reduced frequency. Review the quarantine reason and remediate it to restore the typical execution frequency.
 
 For the configuration **Sync assigned user and groups only**, you can use the following formulas to determine the **approximate** minimum and maximum expected **initial cycle** times:
 

@@ -1,19 +1,16 @@
 ---
 title: Microsoft Entra Connect Health Version History
 description: This document describes the releases for Microsoft Entra Connect Health and what has been included in those releases.
-
 author: zhiweiwangmsft
 manager: femila
-
 ms.assetid: 8dd4e998-747b-4c52-b8d3-3900fe77d88f
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.author: billmath
-
-
+ms.custom: sfi-ga-nochange
 ---
 # Microsoft Entra Connect Health: Version Release History
 The Microsoft Entra team regularly updates Microsoft Entra Connect Health with new features and functionality. This article lists the versions and features that have been released.  

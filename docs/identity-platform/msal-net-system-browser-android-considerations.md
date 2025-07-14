@@ -4,9 +4,9 @@ description: Learn about considerations for using system browsers on Xamarin And
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: devx-track-csharp,  devx-track-dotnet
+ms.custom:
 ms.date: 06/05/2024
-ms.reviewer: saeeda, dmwendia, negoe
+ms.reviewer: negoe
 ms.service: identity-platform
 
 ms.topic: concept-article

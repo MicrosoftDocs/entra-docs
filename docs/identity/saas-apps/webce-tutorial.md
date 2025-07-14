@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with WebCE
+title: Configure WebCE for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and WebCE.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WebCE so that I can control who has access to WebCE, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with WebCE
+# Configure WebCE for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate WebCE with Microsoft Entra ID. WebCE offers self-study online continuing education and pre-license training courses for a variety of professional licenses and designations. When you integrate WebCE with Microsoft Entra ID, you can:
 
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **WebCE** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **WebCE** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

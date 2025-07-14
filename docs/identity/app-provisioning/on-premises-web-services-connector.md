@@ -2,13 +2,13 @@
 title: Microsoft Entra provisioning to applications via web services connector
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer web services based APIs.
 
-author: billmath
-manager: femila
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/04/2025
-ms.author: billmath
+ms.date: 04/09/2025
+ms.author: kenwith
 ms.reviewer: arvinh
 ---
 

@@ -5,11 +5,11 @@ description: Learn how Microsoft Entra registered devices provide your users wit
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 02/27/2025
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
 ---
 

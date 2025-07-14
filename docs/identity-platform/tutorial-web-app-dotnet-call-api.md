@@ -6,8 +6,8 @@ manager: CelesteDG
 ms.author: cwerner
 ms.date: 01/18/2024
 ms.service: identity-platform
-
 ms.topic: tutorial
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to use my app to call a web API, in this case Microsoft Graph. I need to know how to modify my code so the API can be called successfully.
 ---
 
@@ -17,7 +17,7 @@ ms.topic: tutorial
 
 In this tutorial, you test the sign in and sign out experience of your ASP.NET Core web app and view the claims in the ID token. In the [previous tutorial](./tutorial-web-app-dotnet-sign-in-users.md), you added the authentication elements, the sign-in, and sign-out experiences to the application to enable your app call a web API. For the purposes of this tutorial, the Microsoft Graph API is called to display the profile information of the logged-in user.
 
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

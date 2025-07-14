@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with Zero Networks
+title: Configure Zero Networks for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zero Networks.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zero Networks so that I can control who has access to Zero Networks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Zero Networks
+# Configure Zero Networks for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Zero Networks with Microsoft Entra ID. When you integrate Zero Networks with Microsoft Entra ID, you can:
 
@@ -26,6 +23,7 @@ In this article,  you learn how to integrate Zero Networks with Microsoft Entra 
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Zero Networks single sign-on (SSO) enabled subscription.
 
@@ -43,7 +41,7 @@ In this article,  you configure Microsoft Entra SSO for the Zero Networks Admin 
 To configure the integration of Zero Networks into Microsoft Entra ID, you need to add Zero Networks from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Zero Networks** in the search box.
 1. Select **Zero Networks** from results panel and select **Create** to add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -56,7 +54,7 @@ To configure the integration of Zero Networks into Microsoft Entra ID, you need 
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zero Networks**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zero Networks**.
 1. select **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
@@ -103,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 ## Configure user assignment requirement
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zero Networks** application integration page, find the **Manage** section and select **Properties**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zero Networks** application integration page, find the **Manage** section and select **Properties**.
 1. Change **User assignment required?** to **No**.
 
 ![Screenshot for User assignment required.](./media/zero-networks-tutorial/user-assignment.png)

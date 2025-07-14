@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Tulip
+title: Configure Tulip for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tulip.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tulip so that I can control who has access to Tulip, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Tulip
+# Configure Tulip for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Tulip with Microsoft Entra ID. When you integrate Tulip with Microsoft Entra ID, you can:
 
@@ -26,6 +26,7 @@ In this article,  you learn how to integrate Tulip with Microsoft Entra ID. When
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Tulip single sign-on (SSO) enabled subscription.
 
@@ -43,7 +44,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Tulip into Microsoft Entra ID, you need to add Tulip from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Tulip** in the search box.
 1. Select **Tulip** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -67,7 +68,7 @@ To configure and test Microsoft Entra SSO with Tulip, perform the following step
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Tulip** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Tulip** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -111,7 +112,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to your Tulip instance as an Account Owner.
 
-1. Go to the **Settings** -> **SAML** and perform the following steps in the below page.
+1. Go to the **Settings** > **SAML** and perform the following steps in the below page.
 
 	![Screenshot for tulip configuration.](./media/tulip-tutorial/configuration.png)
 

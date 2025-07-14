@@ -2,7 +2,7 @@
 title: Acquire a token to call a web API using username and password (desktop app)
 description: Learn how to build a desktop app that calls web APIs to acquire a token for the app using username and password.
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 01/15/2024
 ms.service: identity-platform

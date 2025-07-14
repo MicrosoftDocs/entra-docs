@@ -3,7 +3,7 @@ title: Add OIDC for customer sign-in
 description: Learn how to set up OpenID Connect as an external identity provider in Microsoft Entra External ID, enabling users to sign in using their existing accounts. 
  
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
@@ -75,7 +75,7 @@ To configure OpenID connect federation with your identity provider in Microsoft 
 After you configured your identity provider, in this step you'll configure a new OpenID connect federation in the Microsoft Entra admin center. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **Open ID Connect**.
 
    :::image type="content" source="media/how-to-custom-oidc-federation-customers/add-new.jpg" alt-text="Screenshot of adding a new custom identity provider.":::
@@ -105,7 +105,7 @@ After you configured your identity provider, in this step you'll configure a new
 
 At this point, the OIDC identity provider has been set up in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the OIDC identity provider to a user flow:
 
-1. In your external tenant, browse to **Identity** > **External Identities** > **User flows**.
+1. In your external tenant, browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the OIDC identity provider.
 1. Under Settings, select **Identity providers.**
 1. Under **Other Identity Providers**, select **OIDC identity provider**.

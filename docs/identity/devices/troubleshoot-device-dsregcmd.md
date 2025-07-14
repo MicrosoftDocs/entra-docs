@@ -5,11 +5,11 @@ description: This article covers how to use the output from the dsregcmd command
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 03/03/2025
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: jploegert
 ---
 # Troubleshoot devices by using the dsregcmd command
@@ -31,7 +31,8 @@ This section lists the device join state parameters. The criteria that are requi
 > The Workplace Joined (Microsoft Entra registered) state is displayed in the ["User state"](#user-state) section.
 
 - **AzureAdJoined**: Set the state to *YES* if the device is joined to Microsoft Entra ID. Otherwise, set the state to *NO*.
-- **EnterpriseJoined**: Set the state to *YES* if the device is joined to an on-premises data replication service (DRS). A device can't be both EnterpriseJoined and AzureAdJoined.
+- **EnterpriseJoined**: Set the state to YES if the device is joined to an on-premises Active Directory (AD). A device can't be both EnterpriseJoined and AzureAdJoined.
+
 - **DomainJoined**: Set the state to *YES* if the device is joined to a domain (Active Directory).
 - **DomainName**: Set the state to the name of the domain if the device is joined to a domain.
 

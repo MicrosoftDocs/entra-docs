@@ -1,12 +1,12 @@
 ---
-title: Quickstart - Sign in to a SPA & call an API
-description: Quickstart that shows how to configure a sample SPA that signs in employees or customers by using Microsoft identity platform
+title: "Quickstart - Sign in users in a single-page app (SPA) and call the Microsoft Graph API"
+description: Quickstart that shows how to configure a sample SPA that signs in employees or customers by using the Microsoft identity platform
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
+ms.custom:
 ms.date: 01/27/2025
-ms.reviewer: OwenRichards1
+ms.reviewer: 
 ms.service: identity-platform
 zone_pivot_groups: entra-tenants
 ms.topic: quickstart
@@ -27,43 +27,42 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [JavaScript](#tab/javascript-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-spa*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Single-page application (SPA)
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:3000/`
 * [Node.js](https://nodejs.org/en/download/)
 
 #### [React](#tab/react-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-spa*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Single-page application (SPA)
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:3000/`
 * [Node.js](https://nodejs.org/en/download/)
 
 #### [Angular](#tab/angular-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-spa*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Single-page application (SPA)
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URI using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:4200/`
 * [Node.js](https://nodejs.org/en/download/)
 
 #### [Blazor](#tab/blazor-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-client-spa*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Single-page application (SPA)
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
   * **Redirect URI**: `http://localhost:5000/authentication/login-callback.`
 * [.NET SDK](https://dotnet.microsoft.com/download/dotnet)
 
@@ -189,7 +188,7 @@ Run the project with a web server by using Node.js:
 1. To start the server, run the following commands from within the project directory:
 
     ```console
-    cd react-spa/App
+    cd react-spa
     npm install
     npm start
     ```
@@ -207,7 +206,7 @@ Run the project with a web server by using Node.js:
 1. To start the server, run the following commands from within the project directory:
 
     ```console
-    cd angular-spa/App
+    cd angular-spa
     npm install
     npm start
     ```
@@ -247,7 +246,6 @@ Run the project with a web server by using dotnet:
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
@@ -256,39 +254,35 @@ Run the project with a web server by using dotnet:
 
 #### [JavaScript](#tab/javascript-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-spa*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-    * **Platform configuration**: Single-page application (SPA)
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/)
 
 #### [React](#tab/react-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-spa*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-    * **Platform configuration**: Single-page application (SPA)
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:3000/`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/)
 
 #### [Angular](#tab/angular-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-spa*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-    * **Platform configuration**: Single-page application (SPA)
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* Add the following redirect URIs using the **Single-page application** platform configuration. Refer to [How to add a redirect URI in your application](./how-to-add-redirect-uri.md) for more details.
     * **Redirect URI**: `http://localhost:4200/`
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/)
 
 ---
-
-## Grant admin consent
-
-[!INCLUDE [Grant admin consent](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Clone or download sample SPA
 

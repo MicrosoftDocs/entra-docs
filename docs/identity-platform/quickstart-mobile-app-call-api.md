@@ -1,7 +1,6 @@
 ---
 title: Quickstart - Sign in users and call a web API in sample app
 description: Quickstart for configuring a sample mobile app to sign in users and call web API with Microsoft identity platform.
-services: identity-platform
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.service: identity-platform
@@ -24,8 +23,7 @@ This guide demonstrates how to configure a sample mobile application to sign in 
 
 In this article, you do the following tasks: 
  
-- Register an application in the Microsoft Entra admin center.
-- Add a platform redirect URL.
+- Add a platform redirect URL to a web application.
 - Enable public client flows.   
 - Update the Android configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
 - Run and test the sample Android mobile application.
@@ -35,9 +33,8 @@ In this article, you do the following tasks:
 
 In this article, you do the following tasks: 
 
-- Register an application in the Microsoft Entra admin center.
-- Add a platform redirect URL.
-- Enable public client flows.   
+- Add a platform redirect URL to a web application.
+- Enable public client flows to an application.   
 - Update the iOS configuration code sample file to use your own Microsoft Entra External ID for customer tenant details.  
 - Run and test the sample iOS mobile application. 
 
@@ -47,11 +44,13 @@ In this article, you do the following tasks:
 
 #### [Android](#tab/android-external)
 
-- <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
-- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](../external-id/customers/sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
+* <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>. 
+* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* A web API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample Android mobile app](../external-id/customers/sample-native-authentication-android-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
-    - Register a web API application
     - Configure API scopes
     - Configure app roles
     - Configure optional claims
@@ -60,11 +59,13 @@ In this article, you do the following tasks:
 
 #### [iOS/macOS](#tab/ios-macos-external)
 
-- <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
-- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample iOS mobile app](../external-id/customers/sample-native-authentication-ios-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
+* <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID*
+* An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, follow the instructions for [call an API in a sample iOS mobile app](../external-id/customers/sample-native-authentication-ios-sample-app-call-web-api.md) to have a functional protected ASP.NET Core web API. Make sure you complete the following steps:
 
-    - Register a web API application.
     - Configure API scopes.
     - Configure app roles.
     - Configure optional claims.
@@ -72,10 +73,6 @@ In this article, you do the following tasks:
     - Configure and run sample web API.
 
 ---
-
-## Register an application
-
-[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
 
 ## Add a platform redirect URL
 
@@ -92,10 +89,6 @@ In this article, you do the following tasks:
 ## Enable public client flow
 
 [!INCLUDE [Enable public client](../external-id/customers/includes/register-app/enable-public-client-flow.md)]
-
-## Grant admin consent
-
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Grant web API permissions to the sample app
 

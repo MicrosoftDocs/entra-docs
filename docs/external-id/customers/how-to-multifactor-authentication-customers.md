@@ -1,17 +1,14 @@
 ---
 title: Add multifactor authentication (MFA) to a customer app
 description: Learn how to add multifactor authentication (MFA) to your consumer and business customer (CIAM) application. For example, add email one-time passcode as a second authentication factor to your CIAM sign-up and sign-in user flows.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: how-to
 ms.date: 11/20/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a dev, devops, or it admin, I want to add multifactor authentication to my custoconsumer and business customer app.
 ---
 
@@ -47,7 +44,7 @@ Create a Conditional Access policy in your external tenant that prompts users fo
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Protection** > **Conditional Access** > **Policies**, and then select **New policy**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**, and then select **New policy**.
 
    :::image type="content" source="media/how-to-multifactor-authentication-customers/new-policy.png" alt-text="Screenshot of the new policy button." lightbox="media/how-to-multifactor-authentication-customers/new-policy.png":::
 
@@ -87,7 +84,7 @@ Enable the email one-time passcode authentication method in your external tenant
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
-1. Browse to **Protection** > **Authentication methods**.
+1. Browse to **Entra ID** > **Authentication methods**.
 
 1. In the **Method** list, select **Email OTP**.
 
@@ -107,7 +104,7 @@ Enable the SMS authentication method in your external tenant for all users.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
 
-1. Browse to **Protection** > **Authentication methods**.
+1. Browse to **Entra ID** > **Authentication methods**.
 
 1. In the **Method** list, select **SMS**.
 

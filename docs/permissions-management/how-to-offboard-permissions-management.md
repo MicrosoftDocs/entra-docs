@@ -2,11 +2,11 @@
 title: Microsoft Entra Permissions Management offboarding guidance
 description: How to transition off of Microsoft Entra Permissions Management for the anticipated product deprecation.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 04/01/2025
+ms.date: 04/03/2025
 ms.author: jfields
 ---
 
@@ -21,7 +21,7 @@ On October 01, 2025, Permissions Management will be automatically offboarded and
 
 ## Why is Permissions Management being retired? 
 
-Microsoft made the decision to retire Permissions Management as part of a strategic realignment to focus Microsoft's Security investments on core identity categories, using AI for security and securing AI. 
+The decision to phase out Microsoft Entra Permissions Management from the Microsoft Security portfolio was made after deep consideration of our innovation portfolio and how we can focus on delivering the best innovations aligned to our differentiating areas and partners with the ecosystem on adjacencies. We remain committed to delivering top-tier solutions across the Microsoft Entra portfolio, which includes Microsoft Entra ID, Microsoft Entra Suite (encompassing ID Protection, ID Governance, Verified ID, Internet Access, and Private Access), Microsoft Entra External ID, Microsoft Entra Workload ID, and more.
 
 
 ## Recommended solutions
@@ -80,7 +80,7 @@ To find the Enterprise Application created which was used to set up OIDC connect
 1. Select the ellipses **(...)** at the end of the row in the table.
 1. Select **Edit Configuration**. The app is located under the **Azure App** name.
 1. Go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
-1. Navigate to **Identity > Applications > App Registrations**. 
+1. Navigate to **Entra ID** > **App registrations**. 
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. From the Overview page, select **Delete**. Read the deletion consequences. Check the box if one appears at the bottom of the pane.
 1. Select **Delete** to confirm that you want to delete the app. 
@@ -116,7 +116,7 @@ Once data collection stops for all AWS accounts, Azure subscriptions, and GCP pr
 To disable the CIEM App for users to sign in: 
 
 1. Go to [Microsoft Entra admin center](https://entra.microsoft.com/) and sign in to [Microsoft Entra ID](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview).
-1. Navigate to **Identity > Applications > Enterprise Applications > All applications**.
+1. Navigate to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Search for **Cloud Infrastructure Entitlement Management**. If you can’t locate the app, reset the filters.
 1. Open **Properties**.
 1. Toggle Enabled for users to sign-in to **No**.

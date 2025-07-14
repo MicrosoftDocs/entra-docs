@@ -4,6 +4,16 @@
   items:
   - name: What is Conditional Access?
     href: overview.md
+- name: Security Copilot + Microsoft Entra
+  items:
+  - name: Get started with the Conditional Access optimization agent
+    href: agent-optimization.md
+  - name: Review and approve suggestions
+    href: agent-optimization-review-suggestions.md
+  - name: Optimization agent logs and metrics
+    href: agent-optimization-logs-metrics.md
+  - name: Optimization agent FAQ
+    href: agent-optimization-faq.yml
 - name: Tutorials
   items:
   - name: Require multifactor authentication
@@ -31,7 +41,7 @@
        href: concept-conditional-access-grant.md
      - name: Session
        href: concept-conditional-access-session.md
-  - name: Report-only mode
+  - name: Analyze impact
     href: concept-conditional-access-report-only.md
   - name: Service dependencies
     href: service-dependencies.md
@@ -132,7 +142,7 @@
       href: policy-block-example.md
   - name: Microsoft-managed policies
     href: managed-policies.md
-  - name: Configure report only mode
+  - name: Policy insights and reporting
     href: howto-conditional-access-insights-reporting.md
   - name: Require terms of use
     href: terms-of-use.md
@@ -144,6 +154,8 @@
       href: troubleshoot-policy-changes-audit-log.md
     - name: Troubleshoot sign-in problems
       href: troubleshoot-conditional-access.md
+    - name: Troubleshoot Security Copilot
+      href: troubleshoot-security-copilot-policies.md
     - name: Troubleshoot using the What If tool 
       href: troubleshoot-conditional-access-what-if.md
     - name: Troubleshoot continuous access evaluation

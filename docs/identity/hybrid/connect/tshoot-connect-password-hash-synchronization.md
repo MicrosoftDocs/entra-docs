@@ -1,17 +1,15 @@
 ---
 title: Troubleshoot password hash synchronization with Microsoft Entra Connect Sync
 description: This article provides information about how to troubleshoot password hash synchronization problems.
-
 author: billmath
 manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 12/27/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 # Troubleshoot password hash synchronization with Microsoft Entra Connect Sync
 

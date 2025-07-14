@@ -1,7 +1,6 @@
 ---
 title: Using Microsoft Entra Connect Health with sync
 description: This is the Microsoft Entra Connect Health page that discusses how to monitor Microsoft Entra Connect Sync.
-
 author: billmath
 manager: femila
 ms.assetid: 1dfbeaba-bda2-4f68-ac89-1dbfaf5b4015
@@ -9,10 +8,9 @@ ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 04/09/2025
 ms.author: billmath
-ms.custom: H1Hack27Feb2017
-
+ms.custom: H1Hack27Feb2017, sfi-image-nochange
 ---
 # Monitor Microsoft Entra Connect Sync with Microsoft Entra Connect Health
 The following documentation is specific to monitoring Microsoft Entra Connect (Sync) with Microsoft Entra Connect Health. For information on monitoring AD FS with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health with AD FS](how-to-connect-health-adfs.md). Additionally, for information on monitoring Active Directory Domain Services with Microsoft Entra Connect Health see [Using Microsoft Entra Connect Health with AD DS](how-to-connect-health-adds.md).

@@ -4,7 +4,7 @@ description: This document provides reference information for the ADSyncConfig.p
 author: billmath
 manager: femila
 ms.service: entra-id
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.topic: reference

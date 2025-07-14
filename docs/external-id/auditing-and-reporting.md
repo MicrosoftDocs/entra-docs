@@ -1,16 +1,14 @@
 ---
 title: Auditing and reporting a B2B collaboration user
 description: Guest user properties are configurable in Microsoft Entra B2B collaboration
-
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 10/21/2024
-
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
-ms.custom: it-pro
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, sfi-image-nochange
 # Customer intent: As an IT admin managing B2B collaboration users, I want to audit and report on guest user activities, so that I can ensure the security and compliance of my organization's resources.
 ---
 
@@ -21,11 +19,11 @@ ms.collection: M365-identity-device-management
 With guest users, you have auditing capabilities similar to with member users.
 
 ## Access reviews
-You can use access reviews to periodically verify whether guest users still need access to your resources. The **Access reviews** feature is available in **Microsoft Entra ID** under **Identity governance** > **Access reviews**. To learn how to use access reviews, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
+You can use access reviews to periodically verify whether guest users still need access to your resources. The **Access reviews** feature is available in **Microsoft Entra ID** under **ID Governance** > **Access reviews**. To learn how to use access reviews, see [Manage guest access with Microsoft Entra access reviews](~/id-governance/manage-guest-access-with-access-reviews.md).
 
 ## Audit logs
 
-The Microsoft Entra audit logs provide records of system and user activities, including activities initiated by guest users. To access audit logs, in **Identity**, under **Monitoring & health**, select **Audit logs**. To access audit logs of one specific user, select **Identity** > **Users** > **All users** > select the user > **Audit logs**.
+The Microsoft Entra audit logs provide records of system and user activities, including activities initiated by guest users. To access audit logs, browse to **Entra ID** > **Monitoring & health** > **Audit logs**. To access audit logs of one specific user, select **Entra ID** > **Users** > select the user > **Audit logs**.
 
 :::image type="content" source="media/auditing-and-reporting/audit-log.png" alt-text="Screenshot showing an example of audit log output." lightbox="media/auditing-and-reporting/audit-log-large.png":::
 

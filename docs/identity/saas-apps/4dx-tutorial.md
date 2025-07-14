@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with 4DX
+title: Configure 4DX for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and 4DX.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and 4DX so that I can control who has access to 4DX, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with 4DX
+# Configure 4DX for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate 4DX with Microsoft Entra ID. When you integrate 4DX with Microsoft Entra ID, you can:
 
@@ -44,11 +41,11 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of 4DX into Microsoft Entra ID, you need to add 4DX from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **4DX** in the search box.
 1. Select **4DX** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-4dx'></a>
 
@@ -72,7 +69,7 @@ To configure and test Microsoft Entra SSO with 4DX, perform the following steps:
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **4DX** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **4DX** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with JobScore
+title: Configure JobScore for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and JobScore.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JobScore so that I can control who has access to JobScore, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra SSO integration with JobScore
+# Configure JobScore for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate JobScore with Microsoft Entra ID. When you integrate JobScore with Microsoft Entra ID, you can:
 
@@ -45,7 +45,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of JobScore into Microsoft Entra ID, you need to add JobScore from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **JobScore** in the search box.
 1. Select **JobScore** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -73,7 +73,7 @@ To configure and test Microsoft Entra SSO with JobScore, perform the following s
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **JobScore** application integration page, find the **Manage** section and select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **JobScore** application integration page, find the **Manage** section and select **single sign-on**.
 2. On the **Select a single sign-on method** page, select **SAML**.
 3. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
     

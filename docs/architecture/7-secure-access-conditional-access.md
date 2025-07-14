@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/23/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Manage external access to resources with Conditional Access policies
@@ -75,7 +75,7 @@ There are scenarios when it's necessary to allow access for a small, specific gr
 Before you begin, we recommend you create a security group, which contains external users who access resources. See, [Quickstart: Create a group with members and view all groups and members in Microsoft Entra ID](~/fundamentals/groups-view-azure-portal.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.

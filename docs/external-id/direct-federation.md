@@ -1,16 +1,14 @@
 ---
 title: Add a SAML/WS-Fed identity provider
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
-
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/21/2025
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024
+ms.date: 05/07/2025
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024, sfi-image-nochange
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
 
@@ -19,9 +17,6 @@ ms.collection: M365-identity-device-management
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
 Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in. 
-<!-- Do we need to break down the preview status further by tenant type and invitation vs. SSSU? -->
-> [!NOTE]
-> SAML/WS-Fed federation is currently in preview for external tenants and is generally available for workforce tenants.
 
 ## Prerequisites
 
@@ -73,10 +68,10 @@ Refer to the following tables for the required values.
 
 **Table 2. Required claims for the SAML 2.0 token issued by the IdP.**
 
-|Attribute Name                                                        |Value         |
-|----------------------------------------------------------------------|--------------|
+|Attribute Name                                                        |Value                                                  |
+|----------------------------------------------------------------------|-------------------------------------------------------|
 |NameID Format                                                         |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` |
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`  | emailaddress |
+|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`  | The user's email address                              |
 
 #### To configure a WS-Fed identity provider
 
@@ -127,7 +122,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your tenant from the **Directories** menu.
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
 
    :::image type="content" source="media/direct-federation/new-saml-wsfed-idp.png" alt-text="Screenshot showing button for adding a new SAML or WS-Fed IdP." lightbox="media/direct-federation/new-saml-wsfed-idp.png":::
@@ -187,7 +182,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 <!--TODO:::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list-multi.png" alt-text="Screenshot showing an identity provider in the SAML WS-Fed list.":::-->
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab.
 1. Scroll to an identity provider in the list or use the search box.
 1. To update the certificate or modify configuration details:
@@ -219,7 +214,7 @@ You can remove your federation configuration. If you do, federation guest users 
 To remove a configuration for an IdP in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
-1. Browse to **Identity** > **External Identities** > **All identity providers**.
+1. Browse to **Entra ID** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then scroll to the identity provider in the list or use the search box.
 1. Select the link in the **Domains** column to view the IdP's domain details.
 1. Delete all but one of the domains in the **Domain name** list.

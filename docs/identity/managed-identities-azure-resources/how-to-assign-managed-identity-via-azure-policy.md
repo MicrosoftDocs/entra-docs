@@ -2,14 +2,14 @@
 title: Use Azure Policy to assign managed identities (preview)
 description: Documentation for the Azure Policy that can be used to assign managed identities to Azure resources.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 editor: barclayn
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
 ms.date: 05/23/2022
-ms.author: ryanwi
+ms.author: shermanouko
 
 ---
 
@@ -83,10 +83,10 @@ For PolicyAssignmentMI managed identity to be able to assign the built-in policy
 
 | Principal| Role / Action | Scope | Purpose |
 |----|----|----------------|----|
-|PolicyAssigmentMI |Managed Identity Operator | /subscription/subscription-id/resourceGroups/built-in-identity <br> OR <br>Bring-your-own-User-assinged-Managed identity |Required to assign the built-in identity to VMs.|
-|PolicyAssigmentMI |Contributor | /subscription/subscription-id> |Required to create the resource-group that holds the built-in managed identity in the subscription. |
-|PolicyAssigmentMI |Managed Identity Contributor | /subscription/subscription-id/resourceGroups/built-in-identity |Required to create a new user-assigned managed identity.|
-|PolicyAssigmentMI |User Access Administrator | /subscription/subscription-id/resourceGroups/built-in-identity <br> OR <br>Bring-your-own-User-assigned-Managed identity |Required to set a lock on the user-assigned managed identity created by the policy.|
+|PolicyAssignmentMI |Managed Identity Operator | /subscription/subscription-id/resourceGroups/built-in-identity <br> OR <br>Bring-your-own-User-assigned-Managed identity |Required to assign the built-in identity to VMs.|
+|PolicyAssignmentMI |Contributor | /subscription/subscription-id> |Required to create the resource-group that holds the built-in managed identity in the subscription. |
+|PolicyAssignmentMI |Managed Identity Contributor | /subscription/subscription-id/resourceGroups/built-in-identity |Required to create a new user-assigned managed identity.|
+|PolicyAssignmentMI |User Access Administrator | /subscription/subscription-id/resourceGroups/built-in-identity <br> OR <br>Bring-your-own-User-assigned-Managed identity |Required to set a lock on the user-assigned managed identity created by the policy.|
 
 
 As the policy assignment object must have this permission ahead of time, PolicyAssignmentMI cannot be a system-assigned managed identity for this scenario. The user performing the policy assignment task must pre-authorize PolicyAssignmentMI ahead of time with the above role assignments.

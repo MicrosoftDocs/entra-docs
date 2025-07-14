@@ -2,10 +2,10 @@
 title: Microsoft Entra ID Governance integrations
 description: This page provides an overview of the Microsoft Entra ID Governance integrations available to automate provisioning and governance controls.
 author: billmath
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.reviewer: amycolannino
 ---

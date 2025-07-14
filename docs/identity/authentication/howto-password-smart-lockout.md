@@ -1,16 +1,15 @@
 ---
 title: Prevent attacks using smart lockout
 description: Learn how Microsoft Entra smart lockout helps protect your organization from brute-force attacks that try to guess user passwords.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
-
+ms.date: 04/29/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: rogoya
+ms.custom: sfi-image-nochange
 ---
 # Protect user accounts from attacks with Microsoft Entra smart lockout
 
@@ -52,7 +51,7 @@ When using [pass-through authentication](~/identity/hybrid/connect/how-to-connec
    > [!TIP]
    > This configuration ensures Microsoft Entra smart lockout stops your on-premises AD DS accounts from being locked out by brute force attacks, like [password spray attacks](../../id-protection/concept-identity-protection-risks.md#password-spray) on your Microsoft Entra accounts.
 
-For example, if you want your Microsoft Entra smart lockout duration to be higher than AD DS, then Microsoft Entra ID would be 120 seconds (2 minutes) while your on-premises AD is set to 1 minute (60 seconds). If you want your Microsoft Entra lockout threshold to be 10, then you want your on-premises AD DS lockout threshold to be 5. 
+For example, if you want your Microsoft Entra smart lockout duration to be higher than AD DS, then Microsoft Entra ID would be 120 seconds (2 minutes) while your on-premises AD is set to 1 minute (60 seconds). If you want your Microsoft Entra lockout threshold to be 10, then you want your on-premises AD DS lockout threshold to 20. 
 
 > [!IMPORTANT]
 > An administrator can unlock the users' cloud account if they have been locked out by the Smart Lockout capability, without the need of waiting for the lockout duration to expire. For more information, see [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.yml).
@@ -76,8 +75,8 @@ Based on your organizational requirements, you can customize the Microsoft Entra
 
 To check or modify the smart lockout values for your organization, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Password protection**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Entra ID** > **Authentication methods** > **Password protection**.
 1. Set the **Lockout threshold**, based on how many failed sign-ins are allowed on an account before its first lockout.
 
     The default is 10 for Azure Public tenants and 3 for Azure US Government tenants.

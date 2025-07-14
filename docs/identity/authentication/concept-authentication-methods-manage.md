@@ -1,16 +1,15 @@
 ---
 title: Manage authentication methods
 description: Learn about the authentication methods policy and different ways to manage authentication methods.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
 ms.reviewer: jpettere
-manager: femila
+manager: dougeby
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
 # Manage authentication methods for Microsoft Entra ID
@@ -27,7 +26,7 @@ Most methods also have configuration parameters to more precisely control how th
  
 Or let's say you want to enable passwordless authentication with Microsoft Authenticator. You can set extra parameters like showing the user sign-in location or the name of the app being signed into. These options provide more context for users when they sign-in and help prevent accidental MFA approvals.
 
-To manage the Authentication methods policy, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) and browse to **Protection** > **Authentication methods** > **Policies**.
+To manage the Authentication methods policy, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) and browse to **Entra ID** > **Authentication methods** > **Policies**.
 
 :::image type="content" border="true" source="./media/concept-authentication-methods-manage/authentication-methods-policy.png" alt-text="Screenshot of Authentication methods policy.":::
 
@@ -40,11 +39,11 @@ Two other policies, located in **Multifactor authentication** settings and **Pas
 >[!Important]
 >In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
 
-To manage the legacy MFA policy, browse to **Protection** > **Authentication methods** > **Policies** >**Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
+To manage the legacy MFA policy, Browse to **Entra ID** > **Multifactor authentication** > **Getting started** > **Configure** > **Additional cloud-based multifactor authentication settings**.
 
 :::image type="content" border="true" source="./media/concept-authentication-methods-manage/service-settings.png" alt-text="Screenshot of MFA service settings.":::
 
-To manage authentication methods for self-service password reset (SSPR), browse to **Protection** > **Password reset** > **Authentication methods**. The **Mobile phone** option in this policy allows either voice calls or text message to be sent to a mobile phone. The **Office phone** option allows only voice calls. 
+To manage authentication methods for self-service password reset (SSPR), browse to **Entra ID** > **Password reset** > **Authentication methods**. The **Mobile phone** option in this policy allows either voice calls or text message to be sent to a mobile phone. The **Office phone** option allows only voice calls. 
 
 :::image type="content" border="true" source="./media/concept-authentication-methods-manage/password-reset.png" alt-text="Screenshot of password reset settings.":::
 
@@ -70,7 +69,7 @@ Similarly, let's suppose you enable **Voice calls** for a group. After you enabl
 
 ## Migration between policies 
 
-The Authentication methods policy provides a migration guide to help unify administration of all authentication methods. All desired methods can be enabled in the Authentication methods policy if the policy targets intended user groups, or all users. The authentication methods migration guide automates the steps to audit your current policy settings for MFA and SSPR, and consolidate them in the Authentication methods policy. You can access the guide from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Protection** > **Authentication methods** > **Policies**.
+The Authentication methods policy provides a migration guide to help unify administration of all authentication methods. All desired methods can be enabled in the Authentication methods policy if the policy targets intended user groups, or all users. The authentication methods migration guide automates the steps to audit your current policy settings for MFA and SSPR, and consolidate them in the Authentication methods policy. You can access the guide from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Entra ID** > **Authentication methods** > **Policies**.
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/wizard-entry-point.png" alt-text="Screenshot of the Authentication methods policy blade with highlighted wizard entry point."
 

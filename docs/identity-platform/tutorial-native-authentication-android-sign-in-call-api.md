@@ -3,13 +3,13 @@ title: Call an API in Android app by using native authentication
 description: Learn how to acquire multiple access tokens and call an API in Android app by using native authentication.
 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 07/07/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to acquire multiple access tokens so that I call a web API in an Android mobile app by using native authentication
 ---
 
@@ -19,7 +19,7 @@ ms.custom: developer
 
 In this tutorial, you learn how to acquire an access token and call an API in your Android mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for Android allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
-In this tutorial, you learn how to: 
+In this tutorial, you: 
 
 > [!div class="checklist"]
 > 

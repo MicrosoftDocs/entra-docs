@@ -7,9 +7,8 @@ ms.author: jomondi
 ms.date: 01/03/2025
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
-
 ms.topic: concept-article
-
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how to request scopes and permissions, so that I can access web-hosted resources on behalf of a user and ensure fine-grained control over data access and API functionality.
 ---
 
@@ -36,8 +35,6 @@ Because of these types of permission definitions, the resource has fine-grained 
 When a resource's functionality is chunked into small permission sets, third-party apps can be built to request only the permissions that they need to perform their function. Users and administrators can know what data the app can access. And they can be more confident that the app isn't behaving with malicious intent. Developers should always abide by the principle of least privilege, asking for only the permissions they need for their applications to function.
 
 In OAuth 2.0, these types of permission sets are called *scopes*. They're also often referred to as *permissions*. In the Microsoft identity platform, a permission is represented as a string value. An app requests the permissions it needs by specifying the permission in the `scope` query parameter. Identity platform supports several well-defined [OpenID Connect scopes](#openid-connect-scopes) and resource-based permissions (each permission is indicated by appending the permission value to the resource's identifier or application ID URI). For example, the permission string `https://graph.microsoft.com/Calendars.Read` is used to request permission to read users calendars in Microsoft Graph.
-
-In requests to the authorization server, for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `scope=User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
 
 ## Admin-restricted permissions
 

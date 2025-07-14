@@ -2,13 +2,13 @@
 title: Quickstart - Call a web API from a sample Nodejs web app
 description: Learn how to configure a Node.js web app code sample to sign in users and call an API in an external tenant.
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 03/10/2025
-ms.custom: developer, devx-track-js
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn about how to configure a Nodejs code sample web app to sign in and sign out users with my external tenant.
 ---
 
@@ -20,25 +20,22 @@ In this Quickstart, you learn how to sign in users and call a web API from a Nod
 
 ## Prerequisites
 
-- Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-- [Node.js](https://nodejs.org).
-- [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.
-- An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
+* An external tenant. To create one, choose from the following methods:
+  * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* Register a new app for your web API in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* [Node.js](https://nodejs.org).
+* [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.
 
-## Register a web API
+## Configure API scopes and roles
 
-In this step, you create the web and the web API application registrations, and you specify the scopes of your web API.
-
-### Register a web API application
-
-[!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/register-api-app.md)]
+By registering the web API, you must configure API scopes to define the permissions that a client application can request to access the web API. Additionally, you need to set up app roles to specify the roles available for users or applications, and grant the necessary API permissions to the web app to enable it to call the web API.
 
 ### Configure API scopes
-
-This web API needs to expose permissions that a client app acquires to call the web API.
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-api-scopes.md)]
 
@@ -95,7 +92,7 @@ To use your app registration in the client web app sample:
     - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the client app you registered earlier. The client app is one that you registered in the prerequisites.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
     - `Enter_the_Client_Secret_Here` and replace it with the app secret value you copied earlier.
-    - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier. The web API app is one that you registered earlier in [Register a web API application](#register-a-web-api).
+    - `Enter_the_Web_Api_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied earlier as part of the prerequisites.
 
 To use your app registration in the web API sample: 
 
@@ -103,7 +100,7 @@ To use your app registration in the web API sample:
 
 1. Find the placeholder:
     
-    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. The web API app is one that you registered earlier in [Register a web API application](#register-a-web-api).
+    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the web API you copied. The web API app is one that you registered earlier sa part of the prerequisites.
     - `Enter_the_Tenant_Id_Here` and replace it with the Directory (tenant) ID you copied earlier.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 

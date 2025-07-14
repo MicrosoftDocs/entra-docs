@@ -6,7 +6,7 @@ author: billmath
 manager: femila
 ms.service: entra-id
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: app-provisioning
 ms.author: billmath
 ---

@@ -4,12 +4,12 @@ description: Learn how to secure your environment with token protection in Micro
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/27/2025
-
+ms.date: 05/27/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: sgrandhi
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra Conditional Access: Token protection (Preview)
 
@@ -24,10 +24,9 @@ Token protection creates a cryptographically secure tie between the token and th
 > The following changes have been made to Token Protection since the initial public preview release:
 >
 > * **Sign In logs output:** The value of the string used in **enforcedSessionControls** and **sessionControlsNotSatisfied** changed from **Binding** to **SignInTokenProtection** in late June 2023. Queries on Sign In Log data should be updated to reflect this change.
->
 > * Devices that are joined to Microsoft Entra using certain methods are no longer supported. See the [known limitations section](#known-limitations) for a complete list.  
-> 
 > * Error code change: The Token protection Conditional Access policy error code is changing from 53003 to 530084 to better identify errors related to token protection.
+> * Token protection now supports the Windows App, extending protection to Windows 365 and Azure Virtual Desktop.
 
 :::image type="content" source="media/concept-token-protection/complete-policy-components-session.png" alt-text="Screenshot of a Conditional Access policy requiring token protection as the session control.":::
 
@@ -53,6 +52,7 @@ The following devices and applications support accessing resources on which a to
 - [Exchange PowerShell module version 3.7.0 or newer](https://www.powershellgallery.com/packages/ExchangeOnlineManagement/3.7.0)
 - Microsoft Graph PowerShell version 2.0.0 or newer with [EnableLoginByWAM option](/powershell/module/microsoft.graph.authentication/set-mggraphoption#example-1-set-web-account-manager-support)
 - Visual Studio 2022 or newer when using the 'Windows authentication broker' Sign-in option 
+- Windows App version 2.0.379.0 or newer
 
 ### Known limitations
 
@@ -80,8 +80,9 @@ To prevent any disruption for new onboarding, you can modify the token protectio
 
 - Cloud PCs that are Microsoft Entra joined, you can use `systemLabels -eq "CloudPC" and trustType -eq "AzureAD"`. 
 - Azure Virtual Desktops that are Microsoft Entra joined, you can use `systemLabels -eq "AzureVirtualDesktop" and trustType -eq "AzureAD"`. 
-- Power Automate hosted machine groups that are Microsoft Entra joined, you can use `systemLabels -eq "MicrosoftPowerAutomate" and trustType -eq "AzureAD"`. 
-- Windows virtual machines in Azure that are Microsoft Entra joined, you can use `systemLabels -eq "AzureResource" and trustType -eq "AzureAD"`. 
+- Power Automate hosted machine groups that are Microsoft Entra joined, you can use `systemLabels -eq "MicrosoftPowerAutomate" and trustType -eq "AzureAD"`.
+- Windows Autopilot devices deployed using self-deploying mode, you can use enrollmentProfileName property. As an example, if you have created an enrollment profile in Intune for your Autopilot self-deployment mode devices as "Autopilot self-deployment profile", you can use `enrollmentProfileName -eq "Autopilot self-deployment profile".
+- Windows virtual machines in Azure that are Microsoft Entra joined, you can use `profileType -eq "SecureVM" and trustType -eq "AzureAD"`. 
 
 ## Deployment
 
@@ -104,7 +105,7 @@ Users who perform specialized roles like those described in [Privileged access s
 The steps that follow help create a Conditional Access policy to require token protection for Exchange Online and SharePoint Online on Windows devices.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -114,6 +115,10 @@ The steps that follow help create a Conditional Access policy to require token p
    1. Under **Select**, select the following applications supported by the preview:
        1. Office 365 Exchange Online
        1. Office 365 SharePoint Online
+       1. If you deployed Windows App in your environment, include:       
+          1. Azure Virtual Desktop
+          1. Windows 365
+          1. Windows Cloud Login
        
        > [!WARNING]
        > Your Conditional Access policy should only be configured for these applications. Selecting the **Office 365** application group might result in unintended failures. This change is an exception to the general rule that the **Office 365** application group should be selected in a Conditional Access policy. 
@@ -128,7 +133,7 @@ The steps that follow help create a Conditional Access policy to require token p
        1. Set **Configure** to **Yes**.
 
           > [!WARNING] 
-          > Not configuring the Client Apps condition, or leaving **Browser** selected might cause applications that use MSAL.js, such as Teams Web to be blocked.
+          > Not configuring the **Client Apps** condition, or leaving **Browser** selected might cause applications that use MSAL.js, such as Teams Web to be blocked.
 
        1. Under Modern authentication clients, only select **Mobile apps and desktop clients**. Leave other items unchecked.
        1. Select **Done**.
@@ -136,7 +141,7 @@ The steps that follow help create a Conditional Access policy to require token p
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!TIP]
 > Since Conditional Access policies requiring token protection are currently only available for Windows devices, it's necessary to secure your environment against potential policy bypass when an attacker might appear to come from a different platform. 
@@ -157,7 +162,7 @@ Use Microsoft Entra sign-in log to verify the outcome of a token protection enfo
 :::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**.
 1. Select a specific request to determine if the policy is applied or not.
 1. Go to the **Conditional Access** or **Report-Only** pane depending on its state and select the name of your policy requiring token protection.
 1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
@@ -190,8 +195,9 @@ AADNonInteractiveUserSignInLogs
 | where TimeGenerated > ago(7d) 
 | project Id,ConditionalAccessPolicies, Status,UserPrincipalName, AppDisplayName, ResourceDisplayName 
 | where ConditionalAccessPolicies != "[]" 
+| where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" or ResourceDisplayName =="Azure Virtual Desktop" or ResourceDisplayName =="Windows 365" or ResourceDisplayName =="Windows Cloud Login"
 | where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" 
-//Add userPrinicpalName if you want to filter  
+//Add userPrincipalName if you want to filter  
 // | where UserPrincipalName =="<user_principal_Name>" 
 | mv-expand todynamic(ConditionalAccessPolicies) 
 | where ConditionalAccessPolicies ["enforcedSessionControls"] contains '["Binding"]' or ConditionalAccessPolicies ["enforcedSessionControls"] contains '["SignInTokenProtection"]' 
@@ -219,6 +225,7 @@ AADNonInteractiveUserSignInLogs
 | where TimeGenerated > ago(7d) 
 | project Id,ConditionalAccessPolicies, UserPrincipalName, AppDisplayName, ResourceDisplayName 
 | where ConditionalAccessPolicies != "[]" 
+| where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" or ResourceDisplayName =="Azure Virtual Desktop" or ResourceDisplayName =="Windows 365" or ResourceDisplayName =="Windows Cloud Login"
 | where ResourceDisplayName == "Office 365 Exchange Online" or ResourceDisplayName =="Office 365 SharePoint Online" 
 //Add userPrincipalName if you want to filter  
 // | where UserPrincipalName =="<user_principal_Name>" 
@@ -246,6 +253,18 @@ AADNonInteractiveUserSignInLogs
 | where bindingStatusCode == 1003 
 | summarize count() by UserPrincipalName 
 ```
+
+### End user experience
+
+A user that registered or enrolled their device doesn't experience any differences in the sign in experience on a token protection supported application when the token protection requirement is enabled.
+
+A user that hasn't registered or enrolled their device, or when using an unsupported application when the token protection requirement is enabled will see the following screenshot after authenticating.
+
+:::image type="content" source="media/concept-token-protection/token-protection-register-or-enroll-device.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
+
+A user that isn't using a supported application when the token protection requirement is enabled will see the following screenshot after authenticating.
+
+:::image type="content" source="media/concept-token-protection/token-protection-required-error-message.png" alt-text="Screenshot of the error message when a token protection policy blocks access.":::
 
 ## Related content 
 

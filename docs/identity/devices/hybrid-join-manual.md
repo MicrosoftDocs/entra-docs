@@ -6,11 +6,11 @@ ms.service: entra-id
 ms.subservice: devices
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: femila
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: sandeo
 ---
 

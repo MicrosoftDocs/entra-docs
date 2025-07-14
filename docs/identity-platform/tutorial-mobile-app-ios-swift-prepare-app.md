@@ -9,7 +9,7 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 06/27/2024
-ms.custom: developer
+ms.custom:
 zone_pivot_groups: entra-tenants
 #Customer intent: As a developer, I want to prepare iOS (Swift) app for authentication using Microsoft Entra ID.
 ---
@@ -34,12 +34,20 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
-- If you haven't already, follow the instructions in [Tutorial: Register and configure iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-prepare-tenant.md) and register an app in your external tenant. Make sure you complete the following steps:
-    - Register an application.
-    - Add a platform redirect URL.
-- iOS (Swift) project.
+* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
+* iOS (Swift) project.
 
+## Add a platform redirect URL
+
+To specify your app type to your app registration, follow these steps:
+
+1. Under **Manage**, select **Authentication** > **Add a platform** > **iOS/macOS**.
+1. Enter your project's Bundle ID. If downloaded the code sample, the Bundle ID is `com.microsoft.identitysample.MSALiOS`. If you're creating your own project, select your project in Xcode and open the **General** tab. The bundle identifier appears in the **Identity** section.
+1. Select **Configure** and save the **MSAL Configuration** that appears in the **MSAL configuration** page so you can enter it when you configure your app later.
+1. Select **Done**.
 
 ## Add the MSAL framework to an iOS (Swift) app
 
@@ -214,13 +222,24 @@ In this tutorial, you;
 
 ## Prerequisites
 
-- <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
-- If you haven't already, follow the instructions in [Tutorial: Register and configure iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-prepare-tenant.md) and register an app in your external tenant. Make sure you complete the following steps:
-    - Register an application.
-    - Add a platform redirect URL.
-    - Enable public client flow.
-    - Delegated permission to Microsoft Graph.
-- iOS (Swift) project.
+* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
+* iOS (Swift) project.
+
+## Add a platform redirect URL
+
+To specify your app type to your app registration, follow these steps:
+
+1. Under **Manage**, select **Authentication** > **Add a platform** > **iOS/macOS**.
+1. Enter your project's Bundle ID. If downloaded the code sample, the Bundle ID is `com.microsoft.identitysample.MSALiOS`. If you're creating your own project, select your project in Xcode and open the **General** tab. The bundle identifier appears in the **Identity** section.
+1. Select **Configure** and save the **MSAL Configuration** that appears in the **MSAL configuration** page so you can enter it when you configure your app later.
+1. Select **Done**.
+
+## Enable public client flow
+
+[!INCLUDE [Enable public client](../external-id/customers/includes/register-app/enable-public-client-flow.md)]
 
 ## Add the MSAL framework to an iOS (Swift) app
 

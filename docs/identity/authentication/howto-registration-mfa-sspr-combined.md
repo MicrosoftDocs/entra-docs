@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: tilarso
 ---
 # Enable combined security information registration in Microsoft Entra ID
@@ -36,7 +36,7 @@ For more information about creating trusted locations in Conditional Access, see
 Complete the following steps to create a policy that applies to all selected users that attempt to register using the combined registration experience, and requires users connected on a non-trusted network to either perform MFA or sign in using a Temporary Access Pass (TAP) to register for MFA or reset their password using SSPR:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **+ New policy**.
 1. Enter a name for this policy, such as *Combined Security Info Registration on Trusted Networks*.
 1. Under **Assignments**, select **Users**. Choose the users and groups you want this policy to apply to.

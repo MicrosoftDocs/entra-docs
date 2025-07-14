@@ -1,14 +1,14 @@
 ---
 title: Microsoft Entra Permissions Management roles and permissions
 description: Review roles and the level of permissions assigned in Microsoft Entra Permissions Management.
-# customerintent: As a cloud administrator, I want to understand Permissions Management role assignments, so that I can effectively assign the correct permissions to users.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
-
 ms.topic: how-to
 ms.date: 04/01/2025
 ms.author: jfields
+ms.custom: sfi-ga-nochange
+# customerintent: As a cloud administrator, I want to understand Permissions Management role assignments, so that I can effectively assign the correct permissions to users.
 ---
 
 

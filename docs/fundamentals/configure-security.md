@@ -5,12 +5,12 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 03/13/2025
+ms.date: 06/24/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
-ms.reviewer: 
+ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for increased security (Preview)
 
@@ -39,11 +39,55 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21815](../includes/secure-recommendations/21815.md)]
 
+### Permissions to create new tenants are limited to the Tenant Creator role
+
+[!INCLUDE [21787](../includes/secure-recommendations/21787.md)]
+
+### Global Administrators don't have standing access to Azure subscriptions
+
+[!INCLUDE [21788](../includes/secure-recommendations/21788.md)]
+
+### Privileged role activations have monitoring and alerting configured
+
+[!INCLUDE [21818](../includes/secure-recommendations/21818.md)]
+
+### Global Administrator role activation triggers an approval workflow
+
+[!INCLUDE [21817](../includes/secure-recommendations/21817.md)]
+
+### Guests are not assigned high privileged directory roles
+
+[!INCLUDE [22128](../includes/secure-recommendations/22128.md)]
+
+### Conditional Access Policies for Privileged Access Workstations are configured
+
+[!INCLUDE [21830](../includes/secure-recommendations/21830.md)]
+
 ## Credential management
 
 ### Users have strong authentication methods configured
 
 [!INCLUDE [21801](../includes/secure-recommendations/21801.md)]
+
+### Migrate from legacy MFA and SSPR policies
+
+[!INCLUDE [21803](../includes/secure-recommendations/21803.md)]
+
+### Migrate from legacy MFA and self service password reset (SSPR) policies
+
+[!INCLUDE [21804](../includes/secure-recommendations/21804.md)]
+
+### Require password reset notifications for administrator roles
+
+[!INCLUDE [21891](../includes/secure-recommendations/21891.md)]
+
+### Authenticator app shows sign-in context
+
+[!INCLUDE [21802](../includes/secure-recommendations/21802.md)]
+
+### Turn off Seamless SSO if there is no usage
+
+[!INCLUDE [21985](../includes/secure-recommendations/21985.md)]
 
 ## Access control
 
@@ -71,6 +115,10 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21829](../includes/secure-recommendations/21829.md)]
 
+### Named locations are configured
+
+[!INCLUDE [21865](../includes/secure-recommendations/21865.md)]
+
 ## Application management
 
 ### Inactive applications don't have highly privileged Microsoft Graph API permissions 
@@ -93,13 +141,41 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21992](../includes/secure-recommendations/21992.md)]
 
-### Creating new applications and service principles is restricted to privileged users 
+### Creating new applications and service principals is restricted to privileged users 
 
 [!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
 
 ### App registrations use safe redirect URIs
 
 [!INCLUDE [21885](../includes/secure-recommendations/21885.md)]
+
+### Service principals use safe redirect URIs
+
+[!INCLUDE [23183](../includes/secure-recommendations/23183.md)]
+
+### Admin consent workflow is enabled
+
+[!INCLUDE [21809](../includes/secure-recommendations/21809.md)]
+
+### App registrations must not have dangling or abandoned domain redirect URIs
+
+[!INCLUDE [21888](../includes/secure-recommendations/21888.md)]
+
+### Workload identities based on risk policies are configured
+
+[!INCLUDE [21883](../includes/secure-recommendations/21883.md)]
+
+### App instance property lock is configured for all multitenant applications
+
+[!INCLUDE [21777](../includes/secure-recommendations/21777.md)]
+
+### Resource-specific consent to application is restricted
+
+[!INCLUDE [21810](../includes/secure-recommendations/21810.md)]
+
+### Microsoft services applications don't have credentials configured
+
+[!INCLUDE [21774](../includes/secure-recommendations/21774.md)]
 
 ## External collaboration
 
@@ -114,6 +190,14 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Guest access is protected by strong authentication methods 
 
 [!INCLUDE [21851](../includes/secure-recommendations/21851.md)]
+
+### Outbound cross-tenant access settings are configured
+
+[!INCLUDE [21790](../includes/secure-recommendations/21790.md)]
+
+### Tenant restrictions v2 policy is configured
+
+[!INCLUDE [21793](../includes/secure-recommendations/21793.md)]
 
 ## Monitoring
 
@@ -144,6 +228,14 @@ We recommend that all of the following controls be implemented where licenses ar
 ### All Microsoft Entra recommendations are addressed
 
 [!INCLUDE [21866](../includes/secure-recommendations/21866.md)]
+
+### User sign-in activity uses token protection
+
+[!INCLUDE [21786](../includes/secure-recommendations/21786.md)]
+
+### ID Protection notifications enabled
+
+[!INCLUDE [21798](../includes/secure-recommendations/21798.md)]
 
 ## Free security features
 

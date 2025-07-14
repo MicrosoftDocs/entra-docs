@@ -11,7 +11,7 @@ ms.service: identity-platform
 ms.subservice: external
 ms.topic: how-to
 ms.date: 02/23/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn about how to configure native authentication iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID.
 ---
 
@@ -23,28 +23,17 @@ In this quickstart you learn how to run an iOS sample application that demonstra
 
 ## Prerequisites 
 
-- <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a> 
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> 
-
-## Register an application 
-
-[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> 
+* A user flow set up with the *Email one-time passcode* identity provider option. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
+* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application).
+* <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a> 
 
 ## Enable public client and native authentication flows 
 
 [!INCLUDE [Enable public client and native authentication](../external-id/customers/includes/native-auth/enable-native-authentication.md)]
-
-## Grant admin consent 
-
-[!INCLUDE [Grant API permissions](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-## Create a user flow 
-
-[!INCLUDE [Create user flow](../external-id/customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
-
-## Associate the application with the user flow 
- 
-[!INCLUDE [associate user flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)] 
 
 ## Clone sample iOS mobile application 
 
@@ -99,9 +88,9 @@ The sample app supports the following flows:
 
 In this section, you test email with password flow, with its variants such as, email with password sign-up with user attributes and SSPR:
 
-1. Use the steps in [create a user flow](#create-a-user-flow) to create a new user flow, but this time select **Email with password** as your authentication method. You need to configure **Country/Region** and **City** as the user attributes. Alternatively, you can modify the existing user flow to use **Email with password** (Select **External Identities** > **User flows** > **SignInSignUpSample** > **Identity providers** > **Email with password** > **Save**).  
+1. Use the steps in [create a user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) to create a new user flow, but this time select **Email with password** as your authentication method. You need to configure **Country/Region** and **City** as the user attributes. Alternatively, you can modify the existing user flow to use **Email with password** (Select **External Identities** > **User flows** > **SignInSignUpSample** > **Identity providers** > **Email with password** > **Save**).  
 
-1. Use the steps in [associate the application with the new user flow](#associate-the-application-with-the-user-flow) to add an app to your new user flow. 
+1. Use the steps in [associate the application with the new user flow](../external-id/customers/how-to-user-flow-add-application.md) to add an app to your new user flow. 
 
 1. Run the sample app, then select the ellipsis menu (**...**) to open more options. 
 

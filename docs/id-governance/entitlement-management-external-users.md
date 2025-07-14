@@ -2,7 +2,7 @@
 title: Govern access for external users in entitlement management
 description: Learn about the settings you can specify to govern access for external users in entitlement management.
 author: owinfreyatl
-manager: femila
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 11/07/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want understand how I can govern access for external users in entitlement management.
 ---
 
@@ -137,7 +138,7 @@ You can select what happens when an external user, who was invited to your direc
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Settings**.
+1. Browse to **ID Governance** > **Entitlement management** > **Settings**.
 
 1. Select **Edit**.
 

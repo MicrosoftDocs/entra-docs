@@ -8,7 +8,7 @@ ms.service: entra
 ms.subservice: architecture
 ms.topic: concept-article
 ms.date: 06/13/2024
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #CustomerIntent: As a Microsoft Entra Suite customer, I want to provide remote employees with secure access to apps and resources so that we prevent unauthorized access.
 ---
 # Microsoft Entra Suite deployment scenario - Workforce and guest onboarding, identity, and access lifecycle governance across all your apps
@@ -69,7 +69,7 @@ For this scenario, complete these prerequisite steps to configure Microsoft Entr
 Follow these prerequisite steps to add a trusted external organization (B2B) for the scenario.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**. Select **Organizational settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**. Select **Organizational settings**.
 1. Select **Add organization**.
 1. Enter the organization's full domain name (or tenant ID).
 1. Select the organization in the search results. Select **Add**.
@@ -82,7 +82,7 @@ Follow these prerequisite steps to add a trusted external organization (B2B) for
 Follow these steps to create an Entitlement management catalog for the scenario.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
-1. Browse to **Identity governance** > **Entitlement management** > **Catalogs**.
+1. Browse to **ID Governance** > **Entitlement management** > **Catalogs**.
 1. Select **+New catalog**.
 
    :::image type="content" source="media/deployment-scenario-workforce-guest/identity-governance-catalogs-inline.png" alt-text="Screenshot of New access review, Enterprise applications, All applications, Identity Governance, New catalog." lightbox="media/deployment-scenario-workforce-guest/identity-governance-catalogs-expanded.png":::
@@ -105,7 +105,7 @@ To successfully deploy and test the solution, configure the access packages that
 Follow these steps to create an access package in entitlement management with Verified ID for remote (internal) users.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 1. Select **New access package**.
 1. For **Basics**, give the access package a name (such as *Finance Apps for Remote Users*). Specify the catalog that you previously created.
 1. For **Resource roles**, select a resource type (for example: Groups and Teams, Applications, SharePoint sites). Select one or more resources.
@@ -128,7 +128,7 @@ Follow these steps to create an access package in entitlement management with Ve
 Follow these steps to create an access package in entitlement management with Verified ID for guests (B2B).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator).
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 1. Select **New access package**.
 1. For **Basics**, give the access package a name (such as *Finance Apps for Remote Users*). Specify the catalog that you previously created.
 1. For **Resource roles**, select a resource type (for example: Groups and Teams, Applications, SharePoint sites). Select one or more resources.
@@ -153,7 +153,7 @@ Follow these steps to create an access package in entitlement management with Ve
 ## Create a sign-in risk-based Conditional Access policy
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Policies**.
+1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
 1. Select **New policy**.
 1. Enter a policy name such as *Protect applications for remote high-risk sign-in users*.
 1. For **Assignments**, select **Users**.

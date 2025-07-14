@@ -2,16 +2,15 @@
 title: Recommendation to migrate to Microsoft Graph API
 description: Learn about the Microsoft Entra recommendation to migrate from Azure Active Directory Graph APIs to Microsoft Graph APIs.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/25/2025
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: krbash
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to make sure that all apps and service principals are no longer using the Azure AD Graph APIs because they are being deprecated.
-
 ---
 # Microsoft Entra recommendation: Migrate from Azure AD Graph APIs to Microsoft Graph
 
@@ -43,11 +42,12 @@ Any applications or service principals still calling Azure AD Graph will be affe
 
 Both of the recommendations include a list of impacted resources. The process to review and update applications and service principals are similar.
 
-![Screenshot of the impacted applications.](media/recommendation-migrate-to-microsoft-graph-api/applications-to-migrate.png)
-
 1. Review the list of **applications** and **service principals** calling Azure AD Graph under **Impacted Resources** in the recommendations details.
 
 1. Select the **More Details** link to view the following details about the Azure AD Graph API activity.
+
+    ![Screenshot of the impacted applications.](media/recommendation-migrate-to-microsoft-graph-api/applications-to-migrate.png)
+
     - **Operation Name**: Description of the API operation, such as List Application, Create User, or Delete Group
     - **Requests - 30 Days**: The number of requests made by this application in the last 30 days
     - **Last Request Date**: The date and time the operation was last performed by the operation.
@@ -56,7 +56,7 @@ Both of the recommendations include a list of impacted resources. The process to
 
 1. Work with the owner or publisher of the corresponding application to identify the steps required to update the application.
 
-These recommendations show as **Active** until there has been no Azure AD Graph API activity for 30 days. After 30 days of no Azure AD Graph API activity, that application or service principal is marked as **Completed**. Once all resources are addressed, the recommendation is marked as **Completed**.
+These recommendations show as **Active** until there is no Azure AD Graph API activity for 30 days. After 30 days of no Azure AD Graph API activity, that application or service principal is marked as **Completed**. Once all resources are addressed, the recommendation is marked as **Completed**.
 
 ## Related content
 

@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -19,10 +19,10 @@ The following reference document describes these attributes used by Exchange and
 ## What are msExchUserHoldPolicies and cloudMsExchUserHoldPolicies?
 There are two types of [holds](/exchange/policy-and-compliance/holds/holds) available for an Exchange Server: Litigation Hold and In-Place Hold. When Litigation Hold is enabled, all mailbox all items are placed on hold.  An In-Place Hold is used to preserve only those items that meet the criteria of a search query that you defined by using the In-Place eDiscovery tool.
 
-The MsExchUserHoldPolcies and cloudMsExchUserHoldPolicies attributes allow on-premises AD and Microsoft Entra ID to determine which users are under a hold depending on whether they're using on-premises Exchange or Exchange on-line.
+The MsExchUserHoldPolicies and cloudMsExchUserHoldPolicies attributes allow on-premises AD and Microsoft Entra ID to determine which users are under a hold depending on whether they're using on-premises Exchange or Exchange on-line.
 
 ## msExchUserHoldPolicies synchronization flow
-By default MsExchUserHoldPolcies are synchronized by Microsoft Entra Connect directly to the msExchUserHoldPolicies attribute in the metaverse and then to the msExchUserHoldPolicies attribute in Microsoft Entra ID
+By default MsExchUserHoldPolicies are synchronized by Microsoft Entra Connect directly to the msExchUserHoldPolicies attribute in the metaverse and then to the msExchUserHoldPolicies attribute in Microsoft Entra ID
 
 The following tables describe the flow:
 

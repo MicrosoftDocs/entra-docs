@@ -1,17 +1,18 @@
 ### YamlMime:HowTo
 
----
 metadata:
   title: Add your organization's privacy information
   description: Add your organization's privacy information, privacy contact, and technical contact to your directory.
   author: barclayn
   ms.author: barclayn
-  ms.date: 12/13/2024
+  manager: pmwongera
+  ms.date: 04/30/2025
   ms.service: entra
   ms.topic: how-to
   ms.custom:
     - template-how-to
     - ge-structured-content-pilot
+    - sfi-ga-nochange
 
   #customer intent: As a <role>, I want <what> so that <why>.
 
@@ -36,7 +37,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Billing Administrator](../identity/role-based-access-control/permissions-reference.md#billing-administrator).
       - |
-        Browse to **Identity** > **Overview** > **Properties**.
+        Browse to **Entra ID** > **Overview** > **Properties**.
 
         :::image type="content" source="media/properties-area/properties-area.png" alt-text="Screenshot showing the properties area highlighting the privacy info area." lightbox="media/properties-area/properties-area.png":::
       - |

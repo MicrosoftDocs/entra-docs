@@ -1,16 +1,14 @@
 ---
 title: Microsoft Entra ID Protection overview
-description: Learn how the Microsoft Entra ID Protection overview provides a view into security posture.
-
+description: Learn how the Microsoft Entra ID Protection overview dashboard provides a view into security posture.
 ms.service: entra-id-protection
-
 ms.topic: how-to
-ms.date: 02/28/2025
-
+ms.date: 05/22/2025
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra ID Protection dashboard
 
@@ -28,13 +26,14 @@ To access this dashboard, you need:
 
 - Microsoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
 - Microsoft Entra ID P2 licenses to view a comprehensive list of recommendations and select the recommended action links.
+- Microsoft 365 E5 or Microsoft Enterprise Mobility + Security E5 licenses for some risk detections. For more information, see [What is Microsoft Entra ID Protection?](overview-identity-protection.md#microsoft-defender).
 
 ## Access the dashboard
 
 You can access the dashboard by:
 
 1. Sign in to the **[Microsoft Entra admin center](https://entra.microsoft.com)** as at least a [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Protection** > **Identity Protection** > **Dashboard**.
+1. Browse to **ID Protection** > **Dashboard**.
 
 ### Metric cards
  
@@ -146,4 +145,4 @@ Depending on the configuration of your tenant, there might not be recommendation
 
 - [Plan a deployment](how-to-deploy-identity-protection.md)
 - [What are risks?](concept-identity-protection-risks.md)
-- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy)
+- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#risk-based-policy)

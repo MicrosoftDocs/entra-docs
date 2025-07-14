@@ -1,16 +1,15 @@
 ---
 title: Microsoft Entra passwordless sign-in
 description: Learn about options for passwordless sign-in to Microsoft Entra ID using FIDO2 security keys or Microsoft Authenticator.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: calui
+ms.custom: sfi-image-nochange
 ---
 
 # Passwordless authentication options for Microsoft Entra ID
@@ -60,7 +59,7 @@ Platform Credential for macOS is a new capability on macOS that is enabled using
 
 Platform Credential for macOS allows users to go passwordless by configuring Touch ID to unlock the device, and uses phish-resistant credentials, based on Windows Hello for Business technology. This saves customer organizations money by removing the need for security keys and advances Zero Trust objectives using integration with the Secure Enclave.
 
-Platform Credential for macOS can also be used as a phishing-resistant credential for use in WebAuthn challenges, including browser re-authentication scenarios. Authentication Policy Administrators need to enable the **Passkey (FIDO2)** authentication method to support Platform Credential for macOS as a phishing-resistant credential. If you use Key Restriction Policies in your FIDO policy, you need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`.
+Platform Credential for macOS can also be used as a phishing-resistant credential for use in WebAuthn challenges, including browser re-authentication scenarios. If you use Key Restriction Policies in your FIDO policy, you need to add the AAGUID for the macOS Platform Credential to your list of allowed AAGUIDs: `7FD635B3-2EF9-4542-8D9D-164F2C771EFC`.
 
 ![Diagram that outlines the steps involved for user sign-in with macOS Platform SSO.](./media/concept-authentication-passwordless/macos-platform-single-sign-on-flow.png)
 
@@ -190,7 +189,7 @@ The following considerations apply:
 - Users can sign in with these passwordless authentication methods:
    - Authenticator app: Works in scenarios where Microsoft Entra authentication is used, including across all browsers, during Windows 10 setup, and with integrated mobile apps on any operating system.
    - Security keys: Work on lock screen for Windows 10 and the web in supported browsers like Microsoft Edge (both legacy and new Edge).
-- Users can use passwordless credentials to access resources in tenants where they're a guest, but they could still be required to perform MFA in that resource tenant. For more information, see [Possible double multifactor authentication](~/external-id/current-limitations.md#possible-double-multi-factor-authentication).  
+- Users can use passwordless credentials to access resources in tenants where they're a guest, but they could still be required to perform MFA in that resource tenant. For more information, see [Possible double multifactor authentication](~/external-id/current-limitations.md#possible-double-multifactor-authentication).  
 - Users can't register passwordless credentials within a tenant where they're a guest, the same way that they don't have a password managed in that tenant.  
 
 ## Unsupported scenarios

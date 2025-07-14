@@ -17,7 +17,7 @@ ms.topic: tutorial
 
 In this tutorial, you add the authentication and authorization elements to an ASP.NET Core web app. In the [previous tutorial](./tutorial-web-app-dotnet-prepare-app.md), you created an ASP.NET Core project and configured it for authentication. 
 
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

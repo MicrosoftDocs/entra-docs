@@ -1,15 +1,14 @@
 ---
 title: 'Configure - Provisioning Microsoft Entra ID to Active Directory using Microsoft Entra Cloud Sync'
 description: This article describes how to configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
-
 author: billmath
 manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
-
+ms.custom: sfi-image-nochange
 ---
 
 # Provision Microsoft Entra ID to Active Directory - Configuration
@@ -47,8 +46,13 @@ To configure provisioning, follow these steps.
   |5. Enable [your configuration](#enable-your-configuration)|Once ready, enable the configuration and users/groups will begin synchronizing|
 
 ## Scope provisioning to specific groups
-You can scope the agent to synchronize all or specific security groups. You can configure groups and organizational units within a configuration. 
- 
+You can scope the agent to synchronize all or specific security groups. 
+
+For more information see [Attribute based scope filtering](how-to-attribute-mapping-entra-to-active-directory.md#attribute-scope-filtering) and [Reference for writing expressions for attribute mappings in Microsoft Entra ID](../../app-provisioning/functions-for-customizing-application-data.md) and [Scenario - Using directory extensions with group provisioning to Active Directory](tutorial-directory-extension-group-provisioning.md).
+
+
+You can configure groups and organizational units within a configuration. 
+
  1. On the **Getting started** configuration screen. Click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
 
  :::image type="content" source="media/how-to-configure-entra-to-active-directory/config-2.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/config-2.png":::
@@ -177,3 +181,4 @@ To delete a configuration, follow these steps.
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+- [Scoping filter and attribute mapping - Microsoft Entra ID to Active Directory](how-to-attribute-mapping-entra-to-active-directory.md)

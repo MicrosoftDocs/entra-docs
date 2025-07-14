@@ -1,24 +1,23 @@
 ---
-title: "Tutorial: Sign in and sign out of a JavaScript SPA"
+title: "Tutorial: Sign in and sign out of a JavaScript single-page app (SPA)"
 description: Learn how to test sign-in and sign-out in a JavaScript single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.service: entra-external-id
-ms.subservice: external
-ms.custom: devx-track-js
+ms.service: identity-platform
+ms.custom:
 ms.topic: tutorial
 ms.date: 02/11/2024
 #Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out using the Microsoft identity platform.
 ---
 
-# Tutorial: Sign in and sign out of a JavaScript SPA
+# Tutorial: Sign in and sign out of a JavaScript single-page app (SPA)
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 This tutorial is the final part of a series that demonstrates building a JavaScript single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [part 2 of this series](tutorial-single-page-app-javascript-configure-authentication.md), you added authentication flows to a JavaScript SPA and built a responsive UI. This final step shows you how to test sign-in and sign-out functionality in your app.
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
 > * Add code to the *claimUtils.js* file to create the claims table

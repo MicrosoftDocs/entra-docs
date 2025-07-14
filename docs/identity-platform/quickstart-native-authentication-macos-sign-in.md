@@ -11,7 +11,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
 ms.date: 02/23/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, I want to learn about how to configure native authentication macOS sample app to sign up and sign in scenarios using Microsoft Entra External ID.
 ---
 
@@ -23,37 +23,24 @@ This guide shows how to run an macOS sample application that demonstrates sign-u
 
 In this article, you learn how to: 
 
-- Register application in the external tenant. 
 - Enable public client and native authentication flows. 
-- Create user flow in the external tenant. 
-- Associate your application with the user flow. 
 - Update a sample native macOS application to use your own external tenant details. 
 - Run and test the sample native macOS application. 
 
 ## Prerequisites 
 
-- <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a> 
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> 
-
-## Register an application 
-
-[!INCLUDE [register client app](../external-id/customers/includes/register-app/register-client-app-common.md)]
+* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a> 
+* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
+* Register a new client web app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in any organizational directory and personal Microsoft accounts*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
+  * Application (client) ID 
+  * Directory (tenant) ID
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application).
+* <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a> 
 
 ## Enable public client and native authentication flows 
 
 [!INCLUDE [Enable public client and native authentication](../external-id/customers/includes/native-auth/enable-native-authentication.md)]
 
-## Grant admin consent 
-
-[!INCLUDE [Grant API permissions](../external-id//customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-## Create a user flow 
-
-[!INCLUDE [Create user flow](../external-id/customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow-password.md)]
-
-## Associate the application with the user flow 
- 
-[!INCLUDE [associate user flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)] 
 
 ## Clone sample macOS application 
 

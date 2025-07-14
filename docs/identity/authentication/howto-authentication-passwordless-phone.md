@@ -1,18 +1,14 @@
 ---
 title: Passwordless sign-in with Authenticator
 description: Learn how to enable passwordless sign-in to Microsoft Entra ID by using Microsoft Authenticator.
-
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 03/04/2025
-
-
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: jogro
 ---
 
@@ -58,7 +54,7 @@ After **Microsoft Authenticator** is enabled as an authentication method, users 
 To enable the authentication method for passwordless phone sign-in, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 
 Each group is enabled by default to use **Any** mode. **Any** mode allows group members to sign in with either a push notification or passwordless phone sign-in.
 

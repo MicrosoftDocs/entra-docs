@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra integration with Explanation-Based Auditing System
+title: Configure Explanation-Based Auditing System for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Explanation-Based Auditing System.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Explanation-Based Auditing System so that I can control who has access to Explanation-Based Auditing System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Microsoft Entra integration with Explanation-Based Auditing System
+# Configure Explanation-Based Auditing System for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Explanation-Based Auditing System with Microsoft Entra ID.
 Integrating Explanation-Based Auditing System with Microsoft Entra ID provides you with the following benefits:
@@ -27,7 +27,9 @@ If you want to know more details about SaaS app integration with Microsoft Entra
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
 ## Prerequisites
+
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Explanation-Based Auditing System single sign-on enabled subscription
 
@@ -46,7 +48,7 @@ To configure the integration of Explanation-Based Auditing System into Microsoft
 **To add Explanation-Based Auditing System from the gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the search box, type **Explanation-Based Auditing System**, select **Explanation-Based Auditing System** from result panel then select **Add** button to add the application.
 
 	 ![Explanation-Based Auditing System in the results list](common/search-new-app.png)
@@ -76,7 +78,7 @@ In this section, you enable Microsoft Entra single sign-on.
 To configure Microsoft Entra single sign-on with Explanation-Based Auditing System, perform the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Explanation-Based Auditing System** application integration page, select **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Explanation-Based Auditing System** application integration page, select **Single sign-on**.
 
     ![Configure single sign-on link](common/select-sso.png)
 

@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
 ms.date: 01/28/2025
-ms.reviewer: brianmel
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -50,12 +50,12 @@ To use the Microsoft Enterprise SSO plug-in for Apple devices:
 - Configuration must be *pushed to the device* to enable the Enterprise SSO plug-in. Apple requires this security constraint.
 - Apple devices must be allowed to reach to both identity provider URLs and its own URLs without additional interception. This means that those URLs need to be excluded from network proxies, interception, and other enterprise systems. 
 
-  The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 as (On the latest operating system versions, Apple relies fully on its CDN):
+  The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released after 2022 and not targeted with Platform SSO are as follows: (On the latest operating system versions, Apple relies fully on its CDN):
   - `app-site-association.cdn-apple.com`
   - `app-site-association.networking.apple`
   - `config.edge.skype.com` - Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
 
-The minimum set of URLs that need to be allowed for the SSO plug-in to function on operating system versions released before 2022:
+The minimum set of URLs that need to be allowed for the SSO plug-in to function on Platform SSO targeted devices or on operating system versions released before 2022:
   - `app-site-association.cdn-apple.com`
   - `app-site-association.networking.apple`
   - `login.microsoftonline.com`
@@ -75,6 +75,8 @@ The minimum set of URLs that need to be allowed for the SSO plug-in to function 
 
   > [!WARNING]
   > If your organization uses proxy servers that intercept SSL traffic for scenarios like data loss prevention or tenant restrictions, ensure that traffic to these URLs are excluded from TLS break-and-inspect. Failure to exclude these URLs cause interference with client certificate authentication, cause issues with device registration, and device-based Conditional Access. SSO plugin won't work reliably without fully excluding Apple CDN domains from interception, and you'll experience intermittent issues until you do so. If your organization use OS versions released after 2022, there is no need to exclude Microsoft login URLs from TLS interspection. Customers using Tenant Restriction feature can do TLS inspection on Microsoft login URLs and add the necessary headers on the request.
+  > [!NOTE]
+  > Platform SSO is incompatible with the Microsoft Entra ID Tenant Restriction v2 feature when Tenant Restrictions are deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
 
   If your organization blocks these URLs users may see errors like `1012 NSURLErrorDomain error`, `1000 com.apple.AuthenticationServices.AuthorizationError` or `1001 Unexpected`.
 

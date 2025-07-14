@@ -1,22 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with Recurly
+title: Configure Recurly for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Recurly.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 05/20/2025
 ms.author: gideonkiratu
-
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Recurly so that I can control who has access to Recurly, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Recurly
+# Configure Recurly for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate Recurly with Microsoft Entra ID. When you integrate Recurly with Microsoft Entra ID, you can:
 
@@ -26,6 +23,7 @@ In this article,  you learn how to integrate Recurly with Microsoft Entra ID. Wh
 
 ## Prerequisites
 The scenario outlined in this article assumes that you already have the following prerequisites:
+
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Recurly single sign-on (SSO) enabled subscription.
 
@@ -43,7 +41,7 @@ In this article,  you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Recurly into Microsoft Entra ID, you need to add Recurly from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Recurly** in the search box.
 1. Select **Recurly** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -71,7 +69,7 @@ To configure and test Microsoft Entra SSO with Recurly, perform the following st
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Recurly** application integration page, find the **Manage** section and select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Recurly** application integration page, find the **Manage** section and select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -91,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     
    ![image](common/default-attributes.png)
 
-7. Recurly application expects to enable token encryption in order to make SSO work. To activate token encryption, Browse to **Identity** > **Applications** > **Enterprise applications** > select your application > **Token encryption**. For more information see the article [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
+7. Recurly application expects to enable token encryption in order to make SSO work. To activate token encryption, Browse to **Entra ID** > **Enterprise apps** > select your application > **Token encryption**. For more information see the article [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
 
    1. Please contact [Recurly Support](mailto:support@recurly.com) to get a copy of the certificate to import.
    1. After importing the certificate, select the `...` next to the thumbprint status, select `Activate token encryption certificate`.

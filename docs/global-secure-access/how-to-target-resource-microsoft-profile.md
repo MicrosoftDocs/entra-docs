@@ -7,8 +7,9 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
-manager: femila
+manager: dougeby
 ms.reviewer: alexpav
+ai-usage: ai-assisted
 ---
 # Apply Conditional Access policies to Global Secure Access traffic
 
@@ -28,7 +29,7 @@ This article describes how to apply Conditional Access policies to your Global S
 The following example policy targets all users except for your break-glass accounts and guest/external users, requiring multifactor authentication, device compliance, or a Microsoft Entra hybrid joined device for Global Secure Access internet traffic.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Identity** > **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select the **Users and groups** link.

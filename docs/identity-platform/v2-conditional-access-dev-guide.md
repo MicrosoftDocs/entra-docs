@@ -1,16 +1,15 @@
 ---
 title: Developer guidance for Microsoft Entra Conditional Access
 description: Developer guidance and scenarios for Microsoft Entra Conditional Access and Microsoft identity platform.
-author: rwike77
-keywords:
+author: OwenRichards1
+keywords: 
 manager: CelesteDG
-ms.author: ryanwi
-ms.custom: 
+ms.author: owenrichards
 ms.date: 05/18/2020
-ms.reviewer: jmprieur, saeeda
+ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer building apps for Microsoft Entra ID, I want to understand how my app is impacted by Conditional Access challenges, so that I can secure my app and protect the services it accesses.
 ---
 

@@ -12,7 +12,7 @@ ms.date: 03/25/2025
 ms.author: thomasakelo
 ---
 
-# Configure Island for automatic user provisioning
+# Configure Island for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Island and Microsoft Entra ID to configure automatic user and group provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Island](https://www.island.io/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -60,7 +60,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Island in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -92,28 +92,28 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    |Attribute|Type|Supported for filtering|Required by Island|
    |---|---|---|---|
-   |userName|String|&check;|&check; 
-   |active|Boolean||&check; 
-   |displayName|String||
-   |title|String||
-   |emails[type eq "work"].value|String||&check;
-   |preferredLanguage|String||
-   |name.givenName|String||&check;
-   |name.familyName|String||&check;
-   |name.formatted|String||
-   |externalId|String||&check;
+   |userName|String|&check;|&check;|
+   |active|Boolean||&check;|
+   |displayName|String|||
+   |title|String|||
+   |emails[type eq "work"].value|String||&check;|
+   |preferredLanguage|String|||
+   |name.givenName|String||&check;|
+   |name.familyName|String||&check;|
+   |name.formatted|String|||
+   |externalId|String||&check;|
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra ID Groups to Island**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Island in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Island for update operations. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by Island
+   |Attribute|Type|Supported for filtering|Required by Island|
    |---|---|---|---|
-   |displayName|String|&check;|&check;
-   |externalId|String||&check;
-   |members|Reference||
+   |displayName|String|&check;|&check;|
+   |externalId|String||&check;|
+   |members|Reference|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Island, change the **Provisioning Status** to **On** in the **Settings** section.
 

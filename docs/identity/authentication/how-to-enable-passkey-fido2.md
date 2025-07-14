@@ -1,20 +1,16 @@
 ---
 title: Enable passkeys for your organization
 description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (FIDO2).
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/31/2025
-
-
+ms.date: 05/21/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: calui, tilarso
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce passkeys sign in for end users.
-
 ---
 # Enable passkeys (FIDO2) for your organization
 
@@ -54,7 +50,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
 ## Enable passkey (FIDO2) authentication method 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. Under the method **Passkey (FIDO2)**, set the toggle to **Enable**. Select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab:
 
@@ -160,7 +156,7 @@ To make users sign in with a passkey (FIDO2) when they access a sensitive resour
 The following steps show how to create a custom authentication strength. It's a Conditional Access policy that allows passkey (FIDO2) sign-in for only a specific security key model or passkey (FIDO2) provider. For a list of FIDO2 providers, see [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
@@ -174,9 +170,9 @@ The following steps show how to create a custom authentication strength. It's a 
 
 Administrator provisioning of security keys is in preview. See [Microsoft Graph and custom clients to provision FIDO2 security keys on behalf of users](https://aka.ms/passkeyprovision).
 
-### B2B collaboration users 
+### Guest users 
 
-Registration of passkey (FIDO2) credentials isn't supported for B2B collaboration users in the resource tenant.
+Registration of passkey (FIDO2) credentials isn't supported for internal or external guest users, including B2B collaboration users in the resource tenant.
 
 ### UPN changes
 

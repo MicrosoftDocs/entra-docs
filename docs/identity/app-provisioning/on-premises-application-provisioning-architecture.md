@@ -2,13 +2,13 @@
 title: 'Microsoft Entra on-premises application provisioning architecture'
 description: Presents an overview of on-premises application provisioning architecture.
 
-author: billmath
-manager: femila
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.topic: overview
-ms.date: 03/04/2025
+ms.date: 06/27/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: kenwith
 ms.collection: M365-identity-device-management
 ---
 
@@ -78,7 +78,7 @@ Since ECMA Connector Host currently only supports the USER object type, the OBJE
 
 ### User creation workflow
 
-1. The Microsoft Entra provisioning service queries the ECMA Connector Host to see if the user exists. It uses the **matching attribute** as the filter. This attribute is defined in the Azure portal under Enterprise applications -> On-premises provisioning -> provisioning -> attribute matching. It's denoted by the 1 for matching precedence.
+1. The Microsoft Entra provisioning service queries the ECMA Connector Host to see if the user exists. It uses the **matching attribute** as the filter. This attribute is defined in the Microsoft Entra admin center under Enterprise applications -> On-premises provisioning -> provisioning -> attribute matching. It's denoted by the 1 for matching precedence.
 You can define one or more matching attributes and prioritize them based on the precedence. Should you want to change the matching attribute you can also do so.
  [![Matching attribute](./media/on-premises-application-provisioning-architecture/match-1.png)](./media/on-premises-application-provisioning-architecture/match-1.png#lightbox)
 
@@ -89,7 +89,6 @@ You can define one or more matching attributes and prioritize them based on the 
 
 
 ## Agent best practices
-- Using the same agent for the on-premises provisioning feature along with Workday / SuccessFactors / Microsoft Entra Connect cloud sync is currently unsupported. We're actively working to support on-premises provisioning on the same agent as the other provisioning scenarios.
 - - Avoid all forms of inline inspection on outbound TLS communications between agents and Azure. This type of inline inspection causes degradation to the communication flow.
 - The agent must communicate with both Azure and your application, so the placement of the agent affects the latency of those two connections. You can minimize the latency of the end-to-end traffic by optimizing each network connection. Ways you can optimize each connection include:
  - Reducing the distance between the two ends of the hop.

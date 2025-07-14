@@ -111,10 +111,10 @@ Use this field in the attribute mapping logic for the accountDisabled flag.
 * Workday to Microsoft Entra user provisioning
 
 | Troubleshooting | Details |
-|-- | -- |
-| **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions.  |
-| **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently doesn't implement specialized query to process termination records specific to a time zone.  |
-| **Resolution** | There are two possible workarounds:  
+| -- | -- |
+| **Issue** | During incremental sync, there may be a delay of 12-18 hours in processing the termination event for workers located in the Asia Pacific and Australia/New Zealand regions. |
+| **Cause** | The Workday Integration System User (ISU) accounts always retrieve data based on the Pacific time zone. The connector currently doesn't implement specialized query to process termination records specific to a time zone. |
+| **Resolution** | There are two possible workarounds: |
 
 1. Use provisioning on demand to process termination event of a specific user.  
 

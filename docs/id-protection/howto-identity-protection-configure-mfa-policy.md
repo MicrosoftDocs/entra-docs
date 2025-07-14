@@ -23,7 +23,7 @@ For more information, see the article [Common Conditional Access policy: Require
 ## Policy configuration
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Protection** > **Identity Protection** > **Multifactor authentication registration policy**.
+1. Browse to **ID Protection** > **Dashboard** > **Multifactor authentication registration policy**.
    1. Under **Assignments** > **Users**.
       1. Under **Include**, select **All users** or **Select individuals and groups** if limiting your rollout.
       1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
