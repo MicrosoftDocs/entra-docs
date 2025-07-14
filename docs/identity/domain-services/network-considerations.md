@@ -191,9 +191,9 @@ For example, you can use the following script to create a rule allowing RDP:
 Get-AzNetworkSecurityGroup -Name "nsg-name" -ResourceGroupName "resource-group-name" | Add-AzNetworkSecurityRuleConfig -Name "new-rule-name" -Access "Allow" -Protocol "TCP" -Direction "Inbound" -Priority "priority-number" -SourceAddressPrefix "CorpNetSaw" -SourcePortRange "*" -DestinationPortRange "3389" -DestinationAddressPrefix "*" | Set-AzNetworkSecurityGroup
 ```
 
-### Othert ports - synchronization with secondary controller, backup
+### Other ports - synchronization with secondary controller, backup
 
-|Client Port(s)|Server Port|Service|
+|Client port(s)|Server port|Service|
 |---|---|---|
 |1024-65535/TCP|135/TCP|RPC Endpoint Mapper|
 |1024-65535/TCP|1024-65535/TCP|RPC for LSA, SAM, NetLogon |
@@ -206,12 +206,12 @@ Get-AzNetworkSecurityGroup -Name "nsg-name" -ResourceGroupName "resource-group-n
 |1024-65535/TCP|445/TCP|SMB|
 |1024-65535/TCP|1024-65535/TCP|FRS RPC |
 
-* When configuring firewall rules or network security policies, it is crucial to consider other ports for syncrhonizacion with secondary controller.
-* If traffic restrictions are implemented for this ports, it is essential not to deny traffic between the IP addresses or the addressing range used by controllers of the service.
+* When configuring firewall rules or network security policies, it's crucial to consider other ports for synchronization with secondary controller.
+* If traffic restrictions are implemented for these ports, it's essential not to deny traffic between the IP addresses or the addressing range used by controllers of the service.
 * **Blocking communication via these ports between controllers will prevent the correct functioning of replication and data synchronization.** This causes errors in the backup process.
 * Ensure that security policies explicitly allow this internal communication to guarantee the integrity and availability of the service.
 
-For more information: [How to configure a firewall for Active Directory domains and trusts](https://learn.microsoft.com/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts)
+For more information see [How to configure a firewall for Active Directory domains and trusts](/troubleshoot/windows-server/active-directory/config-firewall-for-ad-domains-and-trusts).
 
 ## User-defined routes
 
