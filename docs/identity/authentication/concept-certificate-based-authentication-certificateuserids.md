@@ -1,17 +1,15 @@
 ---
-title: Mapping to the certificateUserIds attribute in Microsoft Entra ID 
+title: Mapping to the certificateUserIds attribute in Microsoft Entra ID
 description: Learn about certificate user IDs for Microsoft Entra certificate-based authentication without federation
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/03/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: vimrang
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vranganathan
-ms.custom: has-adal-ref
+ms.custom: has-adal-ref, sfi-image-nochange
 ---
 
 # Mapping to the certificateUserIds attribute in Microsoft Entra ID
@@ -50,7 +48,189 @@ Synchronized users must have at least **Hybrid Identity Administrator** role to 
 >[!NOTE]
 >Active Directory administrators can make changes that impact the certificateUserIds value in Microsoft Entra ID for any synchronized account. Administrators can include accounts with delegated administrative privilege over synchronized user accounts, or administrative rights over the Microsoft Entra Connect servers.
 
-## Update certificateUserIds
+## How to find the correct CertificateUserIds values for a user from the end user certificate using PowerShell module
+
+Certificate UserIds follow a certain pattern for its values as per the UserName binding configurations on the tenant. 
+The following PowerShell command helps an admin to retrieve the exact values for Certificate UserIds attribute for a user from an end user certificate. 
+Admin can also get the current values in Certificate UserIds attribute for a user for a given username binding and 
+set the value of the Certificate UserIds attribute.
+
+More information at [Microsoft Entra PowerShell Installation](/powershell/entra-powershell/installation) and [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation). 
+
+1. Start PowerShell.
+1. Install and import the Microsoft Graph PowerShell SDK.
+
+   ```powershell
+   Install-Module Microsoft.Graph -Scope CurrentUser
+   Import-Module Microsoft.Graph.Authentication
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+
+1. Install Microsoft Entra PowerShell module (Minimum required version is 1.0.6)
+   ```powershell
+       Install-Module -Name Microsoft.Entra
+   ```
+
+More information on CertificateBasedAuthentication module [here](/powershell/module/microsoft.entra)
+
+### Get-EntraUserCBAAuthorizationInfo
+
+Get-EntraUserCBAAuthorizationInfo helps retrieve authorization information for a Microsoft Entra ID user, including certificate-based authentication identifiers.
+
+**Syntax:**
+Get-EntraUserCBAAuthorizationInfo
+ `[-UserId] <String>`
+ `[-Raw]`
+ `[<CommonParameters>]`
+
+**Example 1: Get authorization information for a user by User Principal Name**
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All' 
+Get-EntraUserCBAAuthorizationInfo -UserId ‘user@contoso.com'
+```
+
+**Response:**
+
+|Attribute     | Value             |
+|---------------|------------------|
+|Id               | `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`|
+|DisplayName       | `Contoso User`|
+|UserPrincipalName | `user@contoso.com`|
+|UserType          | `Member`|
+|AuthorizationInfo | `@{CertificateUserIds=System.Object[]; RawAuthorizationInfo=System.Collections.Hashtable}`|
+
+This command retrieves the authorization information for the user with the specified User Principal Name.
+
+**Example 2: Retrieve authorization information for a user**
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All'
+$userInfo = Get-EntraUserCBAAuthorizationInfo -UserId 'user@contoso.com'
+$userInfo.AuthorizationInfo.CertificateUserIds | Format-Table Type, TypeName, Value
+```
+
+**Response:**
+
+|Type       |       TypeName             |     Value|
+|-------   |    ----------------         |     -------|
+|PN  | 	PrincipalName| 	`user@contoso.com`|
+|S   | 	Subject  |     			`CN=user@contoso.com`|
+|SKI 	|SubjectKeyIdentifier|		`1111112222333344445555`|
+
+This example retrieves the authorization information.
+
+**Example 3: Extract specific certificate user IDs**
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All'
+$userInfo = Get-EntraUserCBAAuthorizationInfo -UserId user@contoso.com'
+$userInfo.AuthorizationInfo.CertificateUserIds | Where-Object Type -eq "PN" | Select-Object -ExpandProperty Value
+```
+
+**Response:**
+user@contoso.com
+
+This example retrieves the authorization information and then filters to display only the Principal Name certificate values.
+
+### Get-EntraUserCertificateUserIdsFromCertificate
+
+Returns an object with the certificate values needed to configure CertificateUserIDs for Certificate-Based Authentication in Microsoft Entra ID.
+
+**Syntax:**
+Get-EntraUserCertificateUserIdsFromCertificate
+ `[-Path] <string>`
+ `[[-Certificate] <System.Security.Cryptography.X509Certificates.X509Certificate2> [-CertificateMapping] <string>]`
+ `[<CommonParameters>]`
+
+If the values from the certificate are too long, you can send the output to a file and copy from there.
+
+```powershell
+Connect-Entra -Scopes 'User.Read.All'
+Get-EntraUserCertificateUserIdsFromCertificate -Path C:\Downloads\test.pem | Format-List | Out-File -FilePath ".\certificateUserIds.txt"
+```
+
+**Example 1: Retrieve certificate object from a certificate path**
+
+```powershell
+Get-EntraUserCertificateUserIdsFromCertificate -Path 'C:\path\to\certificate.cer'
+```
+
+**Response:**
+
+|Name                 |          			Value|
+|----                    |      			 -----|
+|Subject                 |      			X509:`<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`|
+|IssuerAndSerialNumber   |      	 	X509:`<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8qR9sV0uD`|
+|RFC822Name             |       		X509:`<RFC822>user@contoso.com`|
+|SHA1PublicKey          |       		X509:`<SHA1-PUKEY>cA2eB3gH4iJ5kL6mN7oP8qR9sT`
+|IssuerAndSubject       |        		X509:`<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`|
+|SKI                    |        			X509:`<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`|
+|PrincipalName            |      		X509:`<PN>user@contoso.com`|
+
+This example shows how to get all possible certificate mappings as an object.
+
+**Example 2: Retrieve certificate object from a certificate path and certificate mapping**
+
+```powershell
+Get-EntraUserCertificateUserIdsFromCertificate -Path 'C:\path\to\certificate.cer' -CertificateMapping 'Subject' 
+```
+
+**Response:**
+`X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`
+
+This command returns the PrincipalName property.
+
+**Example 3: Retrieve certificate object from a certificate**
+
+ ```powershell
+$text = "-----BEGIN CERTIFICATE-----
+MIIDiz...=
+-----END CERTIFICATE-----"
+$bytes = [System.Text.Encoding]::UTF8.GetBytes($text)
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($bytes)
+Get-EntraUserCertificateUserIdsFromCertificate -Certificate $certificate -CertificateMapping 'Subject'
+```
+**Response:**
+`X509:<S>DC=com,DC=contoso,OU=UserAccounts,CN=user`
+
+This command returns the PrincipalName property.
+
+### Set-EntraUserCBACertificateUserId
+
+Sets certificate-based authentication user IDs for a user in Microsoft Entra ID using a certificate file or object.
+
+**Syntax**
+Set-EntraUserCBACertificateUserId
+ `-UserId <string>`
+ `[-CertPath <string>]`
+ `[-Cert <System.Security.Cryptography.X509Certificates.X509Certificate2>]`
+ `-CertificateMapping <string[]>`
+ `[<CommonParameters>]`
+
+**Example 1: Update user's certificate authorization information using certificate path**
+
+```powershell
+Connect-Entra -Scopes 'Directory.ReadWrite.All', 'User.ReadWrite.All'
+Set-EntraUserCBACertificateUserId -UserId ‘user@contoso.com' -CertPath 'C:\path\to\certificate.cer' -CertificateMapping @('Subject', 'PrincipalName')
+```
+
+This example sets the certificate user IDs for the specified user using a certificate file, mapping both the Subject and PrincipalName fields. You can use Get-EntraUserCBAAuthorizationInfo command to view updated details.
+
+**Example 2: Update user's certificate authorization information using a certificate**
+
+```powershell
+Connect-Entra -Scopes 'Directory.ReadWrite.All', 'User.ReadWrite.All'
+$text = '-----BEGIN CERTIFICATE-----
+MIIDiz...=
+-----END CERTIFICATE-----'
+$bytes = [System.Text.Encoding]::UTF8.GetBytes($text)
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($bytes)
+Set-EntraUserCBACertificateUserId -UserId user@contoso.com' -Cert $certificate -CertificateMapping @('RFC822Name', 'SKI')
+```
+This example sets the certificate user IDs for the specified user using a certificate object, mapping the RFC822Name and SKI fields. You can use Get-EntraUserCBAAuthorizationInfo command to view updated details.
+
+## Update certificateUserIds using Microsoft Entra admin center
  
 Use the following steps to update certificateUserIds for users:
 
@@ -125,7 +305,7 @@ Content-Type: application/json
     }
 }
 ```
-## Update certificateUserIds using PowerShell commands
+## Update certificateUserIds using Microsoft Graph PowerShell commands
 
 For this configuration, you can use [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation).
 
@@ -133,7 +313,7 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 1. Install and import the Microsoft Graph PowerShell SDK.
 
    ```powershell
-       Install-Module Microsoft.Graph -Scope AllUsers
+       Install-Module Microsoft.Graph -Scope CurrentUser
        Import-Module Microsoft.Graph.Authentication
        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
    ```
@@ -191,20 +371,20 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 Microsoft Entra Connect supports synchronizing values to certificateUserIds from an on-premises Active Directory environment. On-premises Active Directory supports certificate-based authentication and multiple username bindings. Make sure you use the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 
 To use these mapping methods, you need to populate the altSecurityIdentities attribute of user objects in the on-premises Active Directory. 
-In addition, after you apply certificate-based authentication changes on Windows domain controllers as described in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), you may have implemented some of the nonreusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
+In addition, after you apply certificate-based authentication changes on Windows domain controllers as described in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), you may have implemented some of the nonreusable mapping methods (Type=strong) mapping methods to meet the on-premises Active Directory strong certificate binding enforcement requirements. 
 
 To prevent synchronization errors, make sure the values being synchronized follow one of the supported formats for the certificateUserIds.  
 
 Before you begin, make sure all user accounts that are synchronized from on-premises Active Directory have:
 
-- 5 or fewer values in their altSecurityIdentities attributes 
+- 10 or fewer values in their altSecurityIdentities attributes 
 - No value with more than 1,024 characters
 - No duplicate values
   
   Carefully consider if a duplicate value is meant to map a single certificate to multiple on-premises Active Directory accounts. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
 
   >[!NOTE]
-  >In specific scenarios, a subset of users might have a valid business justification to map a single certificate to more than one on-premises Active Directory account. Review these scenarios and where needed, implement separate mapping methods to map to more then one account in both the on-premises Active Directory and Microsoft Entra ID.
+  >In specific scenarios, a subset of users might have a valid business justification to map a single certificate to more than one on-premises Active Directory account. Review these scenarios and where needed, implement separate mapping methods to map to more than one account in both the on-premises Active Directory and Microsoft Entra ID.
 
 **Considerations for ongoing synchronization of certificateUserIds**
 

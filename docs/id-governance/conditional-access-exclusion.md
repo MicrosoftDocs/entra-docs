@@ -2,12 +2,12 @@
 title: Manage users excluded from Conditional Access policies
 description: Learn how to use access reviews to manage users that have been excluded from Conditional Access policies
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 07/15/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -52,7 +52,7 @@ Follow these steps to create a new Microsoft Entra group and a Conditional Acces
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 
 1. Select **New group**.
 
@@ -70,7 +70,7 @@ Now you can create a Conditional Access policy that uses this exclusion group.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 
 1. Select **Create new policy**.
 
@@ -140,7 +140,7 @@ Now that you have everything in place, group, Conditional Access policy, and acc
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access reviews**.
+1. Browse to **ID Governance** > **Access reviews**.
 
 1. Select the Access review you're using with the group you created an exclusion policy for.
 

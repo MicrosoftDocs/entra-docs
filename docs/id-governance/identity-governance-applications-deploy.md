@@ -2,11 +2,11 @@
 title: Deploying policies for governing access to applications integrated with Microsoft Entra ID| Microsoft Docs
 description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility. You can use entitlement management and other identity governance features to enforce the policies for access.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 11/25/2024
+ms.date: 03/10/2025
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ---
@@ -35,7 +35,7 @@ Conditional Access is only possible for applications that rely upon Microsoft En
 
 ## Deploy entitlement management policies for automating access assignment
 
-In this section, you configure Microsoft Entra entitlement management so users can request access to your application's roles or to groups used by the application. In order to perform these tasks, you need to be in the *Global Administrator*, *Identity Governance Administrator* role, or be [delegated as a catalog creator](entitlement-management-delegate-catalog.md) and the owner of the application.
+In this section, you configure Microsoft Entra entitlement management so users can request access to your application's roles or to groups used by the application. In order to perform these tasks the default least privileged role is *Identity Governance Administrator* role, or another user can be [delegated as a catalog creator](entitlement-management-delegate-catalog.md), and also be the owner of the application.
 
 > [!NOTE]
 > Following least privilege access, we recommend using the Identity Governance Administrator role here.

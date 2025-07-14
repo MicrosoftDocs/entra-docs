@@ -1,17 +1,15 @@
 ---
 title: Overview of how Microsoft Entra authentication strength works in a Conditional Access policy
 description: Learn how admins can use a Conditional Access Policy to require specific authentication combinations to access a resource.
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/03/2024
-
+ms.date: 03/17/2025
 ms.author: justinha
-author: inbarckms
-manager: amycolannino
+author: justinha
+manager: dougeby
 ms.reviewer: inbarc
+ms.custom: sfi-image-nochange
 ---
 #  How Conditional Access authentication strength works 
 
@@ -88,7 +86,7 @@ The following authentication methods can't be registered as part of combined reg
 | Method | Registration requirements |
 |--------|---------------------------|
 |[Microsoft Authenticator (phone sign-in)](https://support.microsoft.com/account-billing/add-your-work-or-school-account-to-the-microsoft-authenticator-app-43a73ab5-b4e8-446d-9e54-2a4cb8e4e93c) | Can be registered from the Authenticator app.|
-|[Passkey(FIDO2)](howto-authentication-passwordless-security-key.md) | Can be registered using [combined registration managed mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#manage-mode) and enforced by Authentication strengths using [combined registration wizard mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#interrupt-mode) |
+|[Passkey(FIDO2)](howto-authentication-passwordless-security-key.md) | Can be registered using [combined registration managed mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#manage-mode) and enforced by Authentication strengths using [combined registration interrupt mode](/entra/identity/authentication/concept-registration-mfa-sspr-combined#interrupt-mode) |
 |[Certificate-based authentication](concept-certificate-based-authentication.md) | Requires administrator setup; can't be registered by the user. |
 |[Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-prepare-people-to-use) | Can be registered in the Windows Out of Box Experience (OOBE) or the Windows Settings menu.|
 

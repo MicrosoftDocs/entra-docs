@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with Adstream'
+title: Configure Adstream' for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Adstream.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adstream so that I can control who has access to Adstream, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Adstream
+# Configure Adstream' for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Adstream with Microsoft Entra ID. Adstream is a content management system that provides the ability for multiple teams to collaborate on assets and distribute content. When you integrate Adstream with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Adstream with Microsoft Entra ID. Adstream is a content management system that provides the ability for multiple teams to collaborate on assets and distribute content. When you integrate Adstream with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adstream.
 * Enable your users to be automatically signed-in to Adstream with their Microsoft Entra accounts.
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Adstream** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Adstream** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -100,17 +100,17 @@ In this section, you create a user called Britta Simon in Adstream. Work with [A
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Adstream Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Adstream Sign-on URL where you can initiate the login flow. 
 
 * Go to Adstream Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Adstream tile in the My Apps, this will redirect to Adstream Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Adstream tile in the My Apps, this option redirects to Adstream Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Adstream you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

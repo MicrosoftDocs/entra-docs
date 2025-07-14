@@ -4,9 +4,9 @@ description: Create a self-signed public certificate to authenticate your applic
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, 
+ms.custom:
 ms.date: 01/14/2025
-ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
+ms.reviewer: jmprieur, sureshja, ludwignick
 ms.service: identity-platform
 
 ms.topic: how-to

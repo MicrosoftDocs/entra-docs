@@ -2,12 +2,12 @@
 title: Review recommendations for Access reviews
 description: Learn how to review access of group members with review recommendations in Microsoft Entra access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -39,7 +39,7 @@ If the creator of the access review enables the decision helper, reviewers can r
 > [!NOTE]
 > This feature is only available for users in your directory. A user should have a manager attribute and should be a part of an organizational hierarchy for the User-to-group Affiliation to work.
 >
->Groups with more than 600 users are not supported.
+>Groups with more than 600 users aren't supported.
 
 The following image has an example of an organization's reporting structure in a cosmetics company: 
 

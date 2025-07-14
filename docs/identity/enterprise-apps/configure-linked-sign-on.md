@@ -3,12 +3,12 @@ title: Add linked single sign-on to an application
 description: Add linked single sign-on to an application in Microsoft Entra ID.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: concept-article
+ms.topic: how-to
 
-ms.date: 08/19/2024
+ms.date: 06/20/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
@@ -18,6 +18,8 @@ ms.custom: enterprise-apps
 # Add linked single sign-on to an application
 
 This article shows you how to configure linked-based single sign-on (SSO) for your application in Microsoft Entra ID. Linked-based SSO enables Microsoft Entra ID to provide SSO to an application that is already configured for SSO in another service. The linked option lets you configure the target location when a user selects the application in your organization's My Apps or Microsoft 365 portal.
+
+The term 'another service' refers to an external identity provider or service that has already configured SSO for the application. Microsoft Entra ID acts as a facilitator, linking users to the application without managing the sign-on process itself.
 
 Linked-based SSO doesn't provide sign-on functionality through Microsoft Entra ID. The option simply sets the location that users are sent when they select the application on the My Apps or Microsoft 365 portal.
 
@@ -37,8 +39,8 @@ To configure linked-based SSO in your Microsoft Entra tenant, you need:
 
 ## Configure linked-based single sign-on
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Search for and select the application that you want to add linked SSO.
 1. Select **Single sign-on** and then select **Linked**.
 1. Enter the URL for the sign-in page of the application.

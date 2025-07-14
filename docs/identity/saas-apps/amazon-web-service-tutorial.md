@@ -1,23 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with AWS Single-Account Access'
+title: Configure AWS Single-Account Access for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access so that I can control who has access to AWS Single-Account Access, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with AWS Single-Account Access
+# Configure AWS Single-Account Access for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you learn how to integrate AWS Single-Account Access with Microsoft Entra ID. When you integrate AWS Single-Account Access with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate AWS Single-Account Access with Microsoft Entra ID. When you integrate AWS Single-Account Access with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AWS Single-Account Access.
 * Enable your users to be automatically signed-in to AWS Single-Account Access with their Microsoft Entra accounts.
@@ -41,7 +39,7 @@ Use the information below to make a decision between using the AWS Single Sign-O
 |Conditional Access| Supports a single Conditional Access policy for all AWS accounts. | Supports a single Conditional Access policy for all accounts or custom policies per account|
 | CLI access | Supported | Supported|
 | Privileged  Identity Management | [Supported](./aws-single-sign-on-provisioning-tutorial.md#just-in-time-jit-application-access-with-pim-for-groups) | Not supported |
-| Centralize account management | Centralize account management in AWS. | Centralize account management in Microsoft Entra ID (will likely require a Microsoft Entra enterprise application per account). |
+| Centralize account management | Centralize account management in AWS. | Centralize account management in Microsoft Entra ID (likely requires a Microsoft Entra enterprise application per account). |
 | SAML certificate| Single certificate| Separate certificates per app / account | 
 
 ## AWS Single-Account Access architecture
@@ -76,11 +74,11 @@ To get started, you need the following items:
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
 > [!Note]
-> Roles should not be manually edited in Microsoft Entra ID when doing role imports.
+> Roles shouldn't be manually edited in Microsoft Entra ID when doing role imports.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * AWS Single-Account Access supports **SP and IDP** initiated SSO.
 
@@ -92,7 +90,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of AWS Single-Account Access into Microsoft Entra ID, you need to add AWS Single-Account Access from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **AWS Single-Account Access** in the search box.
 1. Select **AWS Single-Account Access** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -107,10 +105,10 @@ Configure and test Microsoft Entra SSO with AWS Single-Account Access using a te
 To configure and test Microsoft Entra SSO with AWS Single-Account Access, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure AWS Single-Account Access SSO](#configure-aws-single-account-access-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create AWS Single-Account Access test user](#create-aws-single-account-access-test-user)** - to have a counterpart of B.Simon in AWS Single-Account Access that is linked to the Microsoft Entra representation of user.
+    1. **[Create AWS Single-Account Access test user](#create-aws-single-account-access-test-user)** - to have a counterpart of B.Simon in AWS Single-Account Access that's linked to the Microsoft Entra representation of user.
     1. **[How to configure role provisioning in AWS Single-Account Access](#how-to-configure-role-provisioning-in-aws-single-account-access)**
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -121,9 +119,9 @@ To configure and test Microsoft Entra SSO with AWS Single-Account Access, perfor
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AWS Single-Account Access** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **AWS Single-Account Access** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot showing Edit Basic SAML Configuration.](common/edit-urls.png)
 
@@ -161,43 +159,17 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable B.Simon to use single sign-on by granting access to AWS Single-Account Access.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **AWS Single-Account Access**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure AWS Single-Account Access SSO
 
 1. In a different browser window, sign-on to your AWS company site as an administrator.
 
-1. In AWS home page, search for **IAM** and click it.
+1. In AWS home page, search for **IAM** and select it.
 
     ![Screenshot of AWS services page, with IAM highlighted.](./media/amazon-web-service-tutorial/identity-access-management.png)
 
-1. Go to **Access management** -> **Identity Providers** and click **Add provider** button.
+1. Go to **Access management** > **Identity Providers** and select **Add provider** button.
 
     ![Screenshot of IAM page, with Identity Providers and Create Provider highlighted.](./media/amazon-web-service-tutorial/add-provider.png)
 
@@ -211,7 +183,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
     c. To upload your downloaded **metadata file**, select **Choose file**.
 
-    d. Click **Add provider**.
+    d. Select **Add provider**.
 
 1. Select **Roles** > **Create role**.
 
@@ -248,7 +220,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 1. Use AWS service account credentials for fetching the roles from the AWS account in Microsoft Entra user provisioning. For this, open the AWS console home.
 
-1. In the IAM section, select **Policies** and click **Create policy**.
+1. In the IAM section, select **Policies** and select **Create policy**.
 
     ![Screenshot of IAM section, with Policies highlighted.](./media/amazon-web-service-tutorial/create-policy.png)
 
@@ -275,14 +247,13 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
     }
     ```
 
-    c. Click **Next: Tags**.
+    c. Select **Next: Tags**.
 
-1. You can also add the required tags in the below page and click **Next: Review**.
+1. You can also add the required tags in the below page and select **Next: Review**.
 
     ![Screenshot of Create policy tag page.](./media/amazon-web-service-tutorial/tag-policy.png)
 
 1. Define the new policy.
-
     ![Screenshot of Create policy page, with Name and Description fields highlighted.](./media/amazon-web-service-tutorial/review-policy.png)
 
     a. For **Name**, enter **AzureAD_SSOUserRole_Policy**.
@@ -290,10 +261,8 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
     b. For **Description**, enter **This policy will allow to fetch the roles from AWS accounts**.
 
     c. Select **Create policy**.
-
 1. Create a new user account in the AWS IAM service.
-
-    a. In the AWS IAM console, select **Users** and click **Add users**.
+    a. In the AWS IAM console, select **Users** and select **Add users**.
 
     ![Screenshot of AWS IAM console, with Users highlighted.](./media/amazon-web-service-tutorial/create-user.png)
 
@@ -310,22 +279,16 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
     e. Search for the newly created policy in the filter section **AzureAD_SSOUserRole_Policy**.
 
     f. Select the policy, and then select **Next**.
-
 1. Review your choices and select **Create user**.
-
-**Note:** Ensure to create and download the third-party access key for this user. This key will be used in the Microsoft Entra user provisioning section to fetch the roles from the AWS console.
-
+   > [!NOTE]
+   > Ensure to create and download the third-party access key for this user. This key is used in the Microsoft Entra user provisioning section to fetch the roles from the AWS console.
 1. To download the user credentials of a user, enable the console access in **Security credentials** tab.
-
     ![Screenshot shows the Security credentials.](./media/amazon-web-service-tutorial/enable-console-access.png)
-
 1. Enter these credentials into the Microsoft Entra user provisioning section to fetch the roles from the AWS console.
-
     ![Screenshot shows the download the user credentials.](./media/amazon-web-service-tutorial/download-password.png)
 
-
 > [!NOTE]
-> AWS has a set of permissions/limts are required to configure AWS SSO. To know more information on AWS limits, please refer [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) page.
+> AWS has a set of permissions/limits are required to configure AWS SSO. To know more information on AWS limits, please refer [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) page.
 
 ### How to configure role provisioning in AWS Single-Account Access
 
@@ -333,7 +296,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
     ![Screenshot of AWS app, with Provisioning highlighted.](./media/amazon-web-service-tutorial/provisioning.png)
 
-**Note:**  The username and password returned when enabling console access are not what is needed for the clientsecret and Secret Token values. Instead, create a third-party access key for this step.
+**Note:**  The username and password returned when enabling console access aren't what is needed for the clientsecret and Secret Token values. Instead, create a third-party access key for this step.
 
 2. Enter the access key and secret in the **clientsecret** and **Secret Token** fields, respectively.
 
@@ -352,7 +315,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
     ![Screenshot of Settings section, with On highlighted.](./media/amazon-web-service-tutorial/provisioning2.png)
 
 > [!NOTE]
-> The provisioning service imports roles only from AWS to Microsoft Entra ID. The service does not provision users and groups from Microsoft Entra ID to AWS.
+> The provisioning service imports roles only from AWS to Microsoft Entra ID. The service doesn't provision users and groups from Microsoft Entra ID to AWS.
 
 > [!NOTE]
 > After you save the provisioning credentials, you must wait for the initial sync cycle to run. Sync usually takes around 40 minutes to finish. You can see the status at the bottom of the **Provisioning** page, under **Current Status**.
@@ -367,15 +330,15 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to AWS Single-Account Access Sign on URL where you can initiate the login flow.  
+* Select **Test this application**, this option redirects to AWS Single-Account Access Sign on URL where you can initiate the login flow.  
 
 * Go to AWS Single-Account Access Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-* Click on **Test this application**, and you should be automatically signed in to the AWS Single-Account Access for which you set up the SSO. 
+* Select **Test this application**, and you should be automatically signed in to the AWS Single-Account Access for which you set up the SSO. 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the AWS Single-Account Access tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the AWS Single-Account Access for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the AWS Single-Account Access tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the AWS Single-Account Access for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Known issues
 
@@ -398,7 +361,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 * 01/12/2020 - Increased role length limit from 119 characters to 239 characters.
 
-## Next steps
+## Related content
 
 Once you configure AWS Single-Account Access you can enforce Session Control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 

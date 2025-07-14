@@ -1,23 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN'
+title: Configure FortiGate SSL VPN for Single sign-on with Microsoft Entra ID
 description: Learn the steps you need to perform to integrate FortiGate SSL VPN with Microsoft Entra ID.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FortiGate SSL VPN so that I can control who has access to FortiGate SSL VPN, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN
+# Configure FortiGate SSL VPN for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you learn how to integrate FortiGate SSL VPN with Microsoft Entra ID. When you integrate FortiGate SSL VPN with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate FortiGate SSL VPN with Microsoft Entra ID. When you integrate FortiGate SSL VPN with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access FortiGate SSL VPN.
 * Enable your users to be automatically signed in to FortiGate SSL VPN with their Microsoft Entra accounts.
@@ -30,9 +28,9 @@ To get started, you need the following items:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A FortiGate SSL VPN with single sign-on (SSO) enabled.
 
-## Tutorial description
+## Article description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 FortiGate SSL VPN supports SP-initiated SSO.
 
@@ -42,11 +40,11 @@ FortiGate SSL VPN supports SP-initiated SSO.
 To configure the integration of FortiGate SSL VPN into Microsoft Entra ID, you need to add FortiGate SSL VPN from the gallery to your list of managed SaaS apps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, enter **FortiGate SSL VPN** in the search box.
 1. Select **FortiGate SSL VPN** in the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-fortigate-ssl-vpn'></a>
 
@@ -57,7 +55,7 @@ You'll configure and test Microsoft Entra SSO with FortiGate SSL VPN by using a 
 To configure and test Microsoft Entra SSO with FortiGate SSL VPN, you complete these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable the feature for your users.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
     1. **[Grant access to the test user](#grant-access-to-the-test-user)** to enable Microsoft Entra single sign-on for that user.
 1. **[Configure FortiGate SSL VPN SSO](#configure-fortigate-ssl-vpn-sso)** on the application side.
     1. **Create a FortiGate SAML SSO user group** as a counterpart to the Microsoft Entra representation of the user.
@@ -70,7 +68,7 @@ To configure and test Microsoft Entra SSO with FortiGate SSL VPN, you complete t
 Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **FortiGate SSL VPN** application integration page, in the **Manage** section, select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **FortiGate SSL VPN** application integration page, in the **Manage** section, select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the **Edit** button for **Basic SAML Configuration** to edit the settings:
 
@@ -91,13 +89,13 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
     `https://<FortiGate IP or FQDN address>:<Custom SSL VPN port><FQDN>/remote/saml/logout`.
 
     > [!NOTE]
-    > These values are just patterns. You need to use the actual **Sign on URL**, **Identifier**, **Reply URL**, and **Logout URL** that is configured on the FortiGate. FortiGate support needs to supply the correct values for the environment.
+    > These values are just patterns. You need to use the actual **Sign on URL**, **Identifier**, **Reply URL**, and **Logout URL** that's configured on the FortiGate. FortiGate support needs to supply the correct values for the environment.
 
 1. The FortiGate SSL VPN application expects SAML assertions in a specific format, which requires you to add custom attribute mappings to the configuration. The following screenshot shows the list of default attributes.
 
    ![Screenshot of showing Attributes and Claims section.](./media/fortigate-ssl-vpn-tutorial/claims.png)
 
-1. The claims required by FortiGate SSL VPN are shown in the following table. The names of these claims must match the names used in the **Perform FortiGate command-line configuration** section of this tutorial. Names are case-sensitive.
+1. The claims required by FortiGate SSL VPN are shown in the following table. The names of these claims must match the names used in the **Perform FortiGate command-line configuration** section of this article. Names are case-sensitive.
 
    | Name |  Source attribute |
    | ------------ | --------- |
@@ -144,7 +142,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 In this section, you create a test user named B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -157,7 +155,7 @@ In this section, you create a test user named B.Simon.
 
 In this section, you enable B.Simon to use single sign-on by granting that user access to FortiGate SSL VPN.
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. In the applications list, select **FortiGate SSL VPN**.
 1. On the app's overview page, in the **Manage** section, select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Added Assignment** dialog.
@@ -169,7 +167,7 @@ In this section, you enable B.Simon to use single sign-on by granting that user 
 
 In this section, you create a security group in Microsoft Entra ID for the test user. FortiGate uses this security group to grant the user network access via the VPN.
 
-1. In the Microsoft Entra admin center, navigate to **Identity** > **Groups** > **New group**.
+1. In the Microsoft Entra admin center, navigate to **Entra ID** > **Groups** > **New group**.
 1. In the **New Group** properties, complete these steps:
    1. In the **Group type** list, select **Security**.
    1. In the **Group name** box, enter **FortiGateAccess**.
@@ -193,7 +191,7 @@ After you completed the SAML configuration of the FortiGate app in your tenant, 
 1. Select **Import** > **Remote Certificate**.
 1. Browse to the certificate downloaded from the FortiGate app deployment in the Azure tenant, select it, and then select **OK**.
 
-After the certificate is uploaded, take note of its name under **System** > **Certificates** > **Remote Certificate**. By default, it is named REMOTE_Cert_*N*, where *N* is an integer value.
+After the certificate is uploaded, take note of its name under **System** > **Certificates** > **Remote Certificate**. By default, it's named REMOTE_Cert_*N*, where *N* is an integer value.
 
 #### Complete FortiGate command-line configuration
 
@@ -240,7 +238,7 @@ To complete these steps, you need the values you recorded earlier:
 
 In this section, you configure FortiGate to recognize the Object ID of the security group that includes the test user. This configuration allows FortiGate to make access decisions based on the group membership.
 
-To complete these steps, you need the Object ID of the FortiGateAccess security group that you created earlier in this tutorial.
+To complete these steps, you need the Object ID of the FortiGateAccess security group that you created earlier in this article.
 
 1. Establish an SSH session to your FortiGate appliance, and sign in with a FortiGate Administrator account.
 
@@ -262,7 +260,7 @@ To complete these steps, you need the Object ID of the FortiGateAccess security 
 
 #### Create a FortiGate VPN Portals and Firewall Policy
 
-In this section, you configure a FortiGate VPN Portals and Firewall Policy that grants access to the FortiGateAccess security group you created earlier in this tutorial.
+In this section, you configure a FortiGate VPN Portals and Firewall Policy that grants access to the FortiGateAccess security group you created earlier in this article.
 
 Refer to [Configuring SAML SSO sign in for SSL VPN with Microsoft Entra ID acting as SAML IdP for instructions](https://docs.fortinet.com/document/fortigate-public-cloud/7.0.0/azure-administration-guide/584456/configuring-saml-sso-login-for-ssl-vpn-web-mode-with-azure-ad-acting-as-saml-idp).
 
@@ -270,12 +268,12 @@ Refer to [Configuring SAML SSO sign in for SSL VPN with Microsoft Entra ID actin
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* In Step 5) of the Azure SSO configuration, **Test single sign-on with your App*, select the **Test** button. This will redirect to FortiGate VPN Sign-on URL where you can initiate the sign in flow. 
+* In Step 5) of the Azure SSO configuration, **Test single sign-on with your App*, select the **Test** button. this option redirects to FortiGate VPN Sign-on URL where you can initiate the sign in flow. 
 
 * Go to FortiGate VPN Sign-on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you select the FortiGate VPN tile in the My Apps, this will redirect to FortiGate VPN Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the FortiGate VPN tile in the My Apps, this option redirects to FortiGate VPN Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure FortiGate VPN you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

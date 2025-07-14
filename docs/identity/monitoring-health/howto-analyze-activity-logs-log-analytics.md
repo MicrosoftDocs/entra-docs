@@ -2,14 +2,14 @@
 title: Analyze activity logs using Log Analytics
 description: Learn how to analyze audit, sign-in, and provisioning logs Microsoft Entra ID using Log Analytics queries.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to integrate Microsoft Entra activity logs with Azure Monitor logs so that I can analyze the logs with Log Analytics.
 ---
 
@@ -77,7 +77,7 @@ To view the Microsoft Entra ID Log Analytics, you must already be sending your a
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
-1. Browse to **Identity** > **Monitoring & health** > **Log Analytics**. A default search query runs.
+1. Browse to **Entra ID** > **Monitoring & health** > **Log Analytics**. A default search query runs.
 
     ![Default query](media/howto-analyze-activity-logs-log-analytics/default-query.png)
 

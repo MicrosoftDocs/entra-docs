@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with Oracle Access Manager for Oracle E-Business Suite
+title: Configure Oracle Access Manager for Oracle E-Business Suite for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oracle Access Manager for Oracle E-Business Suite.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Oracle Access Manager for Oracle E-Business Suite so that I can control who has access to Oracle Access Manager for Oracle E-Business Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Oracle Access Manager for Oracle E-Business Suite
+# Configure Oracle Access Manager for Oracle E-Business Suite for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Oracle Access Manager for Oracle E-Business Suite with Microsoft Entra ID. When you integrate Oracle Access Manager for Oracle E-Business Suite with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Oracle Access Manager for Oracle E-Business Suite with Microsoft Entra ID. When you integrate Oracle Access Manager for Oracle E-Business Suite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Oracle Access Manager for Oracle E-Business Suite.
 * Enable your users to be automatically signed-in to Oracle Access Manager for Oracle E-Business Suite with their Microsoft Entra accounts.
@@ -63,7 +63,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Oracle Access Manager for Oracle E-Business Suite** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Oracle Access Manager for Oracle E-Business Suite** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -89,9 +89,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 ## Configure Oracle Access Manager for Oracle E-Business Suite SSO
 
 1. Sign to the Oracle Access Manager console as an Administrator.
-1. Click the **Federation** tab at the top of the console.
-1. In the **Federation** area of the **Launch Pad** tab, click **Service Provider Management**.
-1. On the Service Provider Administration tab, click **Create Identity Provider Partner**.
+1. Select the **Federation** tab at the top of the console.
+1. In the **Federation** area of the **Launch Pad** tab, select **Service Provider Management**.
+1. On the Service Provider Administration tab, select **Create Identity Provider Partner**.
 1. In the **General** area, enter a name for the **Identity Provider partner** and select both **Enable Partner and Default Identity Provider Partner**. Go to the next step before saving.
 1. In the **Service Information** area:
 
@@ -99,19 +99,19 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
     b. Select **Load from provider metadata**.
 
-    c. Click **Browse** (for Windows) or **Choose File** (for Mac) and select the **Federation Metadata XML** file that you downloaded previously.
+    c. Select **Browse** (for Windows) or **Choose File** (for Mac) and select the **Federation Metadata XML** file that you downloaded previously.
 
     d. Go to the next step before saving.
 
 1. In the **Mapping Options** area:
 
-    a. Select the **User Identity Store** option that will be used as the Oracle Access Manager LDAP identity store that is checked for E-Business Suite users. Typically, this is already configured as the Oracle Access Manager identity store.
+    a. Select the **User Identity Store** option that's used as the Oracle Access Manager LDAP identity store that's checked for E-Business Suite users. Typically, this is already configured as the Oracle Access Manager identity store.
 
     b. Leave **User Search Base DN** blank. The search base is automatically picked from the identity store configuration.
 
     c. Select **Map assertion Name ID to User ID Store attribute** and enter mail in the text box.
 
-1. Click **Save** to save the identity provider partner.
+1. Select **Save** to save the identity provider partner.
 1. After the partner is saved, come back to the **Advanced** area at the bottom of the tab. Ensure that the options are configured as follows:
 
     a. **Enable global logout** is selected.
@@ -126,17 +126,17 @@ In this section, you create a user called Britta Simon at Oracle Access Manager 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Oracle Access Manager for Oracle E-Business Suite Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Oracle Access Manager for Oracle E-Business Suite Sign-on URL where you can initiate the login flow. 
 
 * Go to Oracle Access Manager for Oracle E-Business Suite Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you select the Oracle Access Manager for Oracle E-Business Suite tile in the My Apps, this will redirect to Oracle Access Manager for Oracle E-Business Suite Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Oracle Access Manager for Oracle E-Business Suite tile in the My Apps, this option redirects to Oracle Access Manager for Oracle E-Business Suite Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Oracle Access Manager for Oracle E-Business Suite you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

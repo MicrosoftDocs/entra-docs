@@ -1,20 +1,19 @@
 ---
 title: Tutorial - Set up and use Microsoft Authenticator with VerifiedID
-description: In this tutorial, you learn how to install and use Microsoft Authenticator for VerifiedID
+description: In this tutorial, you learn how to install and use Microsoft Authenticator for VerifiedID.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
 ms.date: 01/06/2025
+ms.custom: sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
-
 ---
 
 # Using the Microsoft Authenticator with Verified ID
 
-In this tutorial, you learn how to install the Microsoft Authenticator app and use it for the first time with Verified ID. You use the public end to end demo webapp to issue a verifiable credential to the Authenticator and present verifiable credentials from the Authenticator.
+In this tutorial, you learn how to install the **Microsoft Authenticator** app and use it for the first time with Verified ID. You use the public end to end demo webapp to issue a verifiable credential to the **Authenticator** and present verifiable credentials from the **Authenticator**.
 
 In this article, you learn how to:
 
@@ -33,11 +32,11 @@ If you already have Microsoft Authenticator installed, you can skip this section
 
 - On iPhone, open the [App Store](https://support.apple.com/HT204266) app and search for **Microsoft Authenticator** and install the app.
 
-    :::image type="content" source="media/using-authenticator/apple-appstore.png" alt-text="Screenshot of Apple App Store.":::
+    :::image type="content" source="media/using-authenticator/apple-appstore.png" alt-text="Screenshot of Apple App Store search results showing Microsoft Authenticator app with install button.":::
 
 - On Android, open the [Google Play](https://play.google.com/about/howplayworks/) app and search for **Microsoft Authenticator** and install the app.
 
-    :::image type="content" source="media/using-authenticator/google-play.png" alt-text="Screenshot of Google Play.":::
+    :::image type="content" source="media/using-authenticator/google-play.png" alt-text="Screenshot of Google Play Store search results showing Microsoft Authenticator app with install button.":::
 
 ## Use the Microsoft Authenticator for the first time
 
@@ -45,15 +44,15 @@ Using the Authenticator for the first time presents a set of screens that you ha
 
 1. Open the Authenticator app and press **Accept** on the first screen.
 
-    :::image type="content" source="media/using-authenticator/accept-screen.png" alt-text="Screenshot of Accept screen.":::
+    :::image type="content" source="media/using-authenticator/accept-screen.png" alt-text="Screenshot of Microsoft Authenticator app welcome screen with Accept button to agree to terms and conditions.":::
 
 2. Select your choice of sharing app usage data and press **Continue**.
 
-    :::image type="content" source="media/using-authenticator/app-usage-sharing-screen.png" alt-text="Screenshot of app usage data screen.":::
+    :::image type="content" source="media/using-authenticator/app-usage-sharing-screen.png" alt-text="Screenshot of Microsoft Authenticator app usage data sharing options screen with Continue button.":::
 
 3. Press **Skip** in the upper right corner of the screen asking you to **Sign in with Microsoft**.
 
-    :::image type="content" source="media/using-authenticator/skip-signin-with-microsoft-screen.png" alt-text="Screenshot of Skip Sign in with Microsoft screen.":::
+    :::image type="content" source="media/using-authenticator/skip-signin-with-microsoft-screen.png" alt-text="Screenshot of Microsoft Authenticator sign-in screen with Skip button in the upper right corner.":::
 
 ## Issue a verifiable credential
 
@@ -68,19 +67,19 @@ When the Microsoft Authenticator app is installed and ready, you use the public 
 3. Select **Verified IDs** in the lower right corner on the start screen
 4. Select **Scan QR code** button. This screen only shows if you have no verifiable credential cards in the app.
 
-    :::image type="content" source="media/using-authenticator/scan-qr-code-screen.png" alt-text="Screenshot of scan QR code screen.":::
+    :::image type="content" source="media/using-authenticator/scan-qr-code-screen.png" alt-text="Screenshot of Microsoft Authenticator Verified IDs screen with Scan QR code button displayed when no credentials are present.":::
 
 5. The first time you scan a QR code, the mobile device notifies you that the Authenticator is trying to access the camera. Select **OK** to continue scanning the QR code.
 
-    :::image type="content" source="media/using-authenticator/access-camera-screen.png" alt-text="Screenshot of access camera screen.":::
+    :::image type="content" source="media/using-authenticator/access-camera-screen.png" alt-text="Screenshot of device camera permission dialog asking for Microsoft Authenticator camera access with OK button.":::
 
 6. Scan the QR code and enter the pin code in the Authenticator and select **Next**. The pin code is shown in the browser page.
 
-    :::image type="content" source="media/using-authenticator/enter-pin-code-screen.png" alt-text="Screenshot of entering pin code screen.":::
+    :::image type="content" source="media/using-authenticator/enter-pin-code-screen.png" alt-text="Screenshot of Microsoft Authenticator pin code entry screen with numeric keypad and Next button.":::
 
 7. Select **Add** to add the verifiable credential card to the Authenticator wallet.
 
-    :::image type="content" source="media/using-authenticator/add-card-screen.png" alt-text="Screenshot of add Verifiable credential card screen.":::
+    :::image type="content" source="media/using-authenticator/add-card-screen.png" alt-text="Screenshot of Microsoft Authenticator credential preview screen showing True Identity credential details with Add button.":::
 
 8. Select **Return to Woodgrove** in the browser
 
@@ -99,7 +98,7 @@ In learning how to present a verifiable credential, you continue where you left 
 4. Press the **QR code symbol** in the top right corner to turn on the camera and scan the QR code.
 5. Select **Share** in the Authenticator to present the verifiable credential to the end to end demo webapp.
 
-    :::image type="content" source="media/using-authenticator/share-card-screen.png" alt-text="Screenshot of sharing a Verifiable credential card screen.":::
+    :::image type="content" source="media/using-authenticator/share-card-screen.png" alt-text="Screenshot of Microsoft Authenticator credential sharing screen showing True Identity credential details with Share button to present credential to verifier.":::
 
 6. In the browser, select the  **Continue onboarding** button
 
@@ -132,14 +131,14 @@ The end to end demo continues with onboarding you as a new employee to the Woodg
 The Microsoft Authenticator keeps records of the activity for your verifiable credentials.
 If you select a credential card and then switch to view **Activity**, you see the activity list for your credential sorted in most recently used order. For your **True Identity card**, you see two entries, where the first is when it was issued and the second that the credential was shared with Woodgrove.
 
-:::image type="content" source="media/using-authenticator/card-activity-screen.png" alt-text="Screenshot of VC activity screen.":::
+:::image type="content" source="media/using-authenticator/card-activity-screen.png" alt-text="Screenshot of Microsoft Authenticator activity screen showing usage history for True Identity credential with timestamped entries for issuance and presentation events.":::
 
 ## Delete a verifiable credential from your Authenticator
 
 You can delete a verifiable credential from the Microsoft Authenticator.
 Select on the credential card you want to delete to view its details. Then select on the trash can in the upper right corner and confirm the deletion prompt.
 
-:::image type="content" source="media/using-authenticator/delete-card-screen.png" alt-text="Screenshot of delete VC screen.":::
+:::image type="content" source="media/using-authenticator/delete-card-screen.png" alt-text="Screenshot of Microsoft Authenticator credential details screen with delete trash can icon in upper right corner to remove credential from wallet.":::
 
 Deleting a verifiable credential from the Authenticator is an irrevocable process and there is no recycle bin to bring it back from. If you have deleted a credential, you must go through the issuance process again.
 

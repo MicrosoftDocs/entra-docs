@@ -5,8 +5,8 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 04/10/2023
-ms.reviewer: JasSuri
+ms.date: 05/04/2025
+ms.reviewer: jasuri
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -24,7 +24,7 @@ Key data about a user is often stored in systems external to Microsoft Entra ID.
 
 The following video provides an excellent overview of the Microsoft Entra custom authentication extensions and custom claims providers:
 
-> [!VIDEO https://www.youtube.com/embed/1tPA7B9ztz0]
+> [!VIDEO https://www.youtube.com/embed/ZU90avf0Qyc?si=Z8Z3gR9fzZFzb5Bq]
 
 Use a custom claims provider for the following scenarios:
 
@@ -66,5 +66,4 @@ The authentication events trigger for Azure Functions allows you to implement a 
 ## See also
 
 - [Create a REST API with a token issuance start event](custom-extension-tokenissuancestart-setup.md)
-- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md) article.

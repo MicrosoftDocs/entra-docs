@@ -1,21 +1,18 @@
 ---
-title:  Register a passkey using a mobile device 
+title: Register a passkey using a mobile device
 description: Registration and management of passkey using a mobile device.
-
 services: active-directory
-ms.service: entra-id 
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/14/2025
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: calui, tilarso
-
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how users will register a passkey using a mobile device or with a security key. 
-
 ---
 # Register a passkey using a mobile device
 

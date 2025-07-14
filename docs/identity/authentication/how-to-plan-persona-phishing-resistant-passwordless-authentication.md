@@ -1,20 +1,17 @@
 ---
 title: Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 description: Persona-specific guidance to deploy passwordless and phishing-resistant authentication for organizations that use Microsoft Entra ID.
-
-ms.service: entra-id 
+ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/14/2025
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: mepples21
-manager: amycolannino
+manager: dougeby
 ms.reviewer: miepping
-
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to plan phishing-resistant and passwordless authentication deployment in Microsoft Entra ID
-
 ---
 # Considerations for specific personas in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID
 
@@ -148,3 +145,4 @@ If you plan to use certificates, smart cards, and PKI, then the deployment flow 
 
 [Deploy a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md)
 
+[Considerations for Remote Desktop Connections in a phishing-resistant passwordless authentication deployment in Microsoft Entra ID](how-to-plan-rdp-phishing-resistant-passwordless-authentication.md)

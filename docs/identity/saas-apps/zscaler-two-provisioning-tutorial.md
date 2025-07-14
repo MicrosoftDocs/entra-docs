@@ -1,31 +1,29 @@
 ---
-title: 'Tutorial: Configure Zscaler Two for automatic user provisioning with Microsoft Entra ID'
-description: In this tutorial, you'll learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler Two.
-
+title: Configure Zscaler Two for automatic user provisioning with Microsoft Entra ID
+description: In this article,  you learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler Two.
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 05/20/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Two so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Two.
 ---
 
-# Tutorial: Configure Zscaler Two for automatic user provisioning
+# Configure Zscaler Two for automatic user provisioning with Microsoft Entra ID
 
-In this tutorial, you'll learn how to configure Microsoft Entra ID to automatically provision and deprovision users and/or groups to Zscaler Two.
+In this article,  you learn how to configure Microsoft Entra ID to automatically provision and deprovision users and/or groups to Zscaler Two.
 
 > [!NOTE]
-> This tutorial describes a connector that's built on the Microsoft Entra user provisioning service. For important details on what this service does and how it works, and answers to frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector that's built on the Microsoft Entra user provisioning service. For important details on what this service does and how it works, and answers to frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Prerequisites
 
-To complete the steps outlined in this tutorial, you need the following:
+To complete the steps outlined in this article,  you need the following:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * A Zscaler Two tenant.
 * A user account in Zscaler Two with admin permissions.
 
@@ -37,7 +35,7 @@ To complete the steps outlined in this tutorial, you need the following:
 Before you configure Zscaler Two for automatic user provisioning with Microsoft Entra ID, you need to add Zscaler Two from the Microsoft Entra application gallery to your list of managed SaaS applications.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Zscaler Two** in the search box.
 1. Select **Zscaler Two** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -58,13 +56,13 @@ Before you configure and enable automatic user provisioning, you should decide w
 This section guides you through the steps for configuring the Microsoft Entra provisioning service to create, update, and disable users and groups in Zscaler Two based on user and group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You might also want to enable SAML-based single sign-on for Zscaler Two. If you do, follow the instructions in the [Zscaler Two single sign-on tutorial](zscaler-two-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, but the two features complement each other.
+> You might also want to enable SAML-based single sign-on for Zscaler Two. If you do, follow the instructions in the [Zscaler Two single sign-on  article](zscaler-two-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, but the two features complement each other.
 
 > [!NOTE]
 > When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zscaler Two**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zscaler Two**.
 1. Select the **Provisioning** tab:
 
 	![Zscaler Two Provisioning](./media/zscaler-two-provisioning-tutorial/provisioning-tab.png)
@@ -119,7 +117,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
    |members|Reference||
    |externalId|String||&check;
 
-1. To configure scoping filters, refer to the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Zscaler Two, change the **Provisioning Status** to **On** in the **Settings** section:
 
@@ -142,7 +140,7 @@ For information about how to read the Microsoft Entra provisioning logs, see [Re
 * [Managing user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 

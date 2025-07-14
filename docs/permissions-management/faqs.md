@@ -2,15 +2,18 @@
 title: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management
 description: Frequently asked questions (FAQs) about Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: faq
-ms.date: 05/13/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Frequently asked questions (FAQs)
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article answers frequently asked questions (FAQs) about Microsoft Entra Permissions Management.
 
@@ -113,7 +116,7 @@ For information about permissions usage reports, see [Generate and download the 
 
 ## Does Permissions Management integrate with third-party ITSM (Information Technology Service Management) tools?
 
-Integration with ITMS tools, such as ServiceNow, is in the future roadmap.
+Integration with ITSM tools, such as ServiceNow, is in the future roadmap.
 
 ## How is Permissions Management being deployed?
 

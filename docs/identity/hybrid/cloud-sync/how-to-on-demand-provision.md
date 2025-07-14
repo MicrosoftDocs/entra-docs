@@ -3,10 +3,10 @@ title: 'On-demand provisioning in Microsoft Entra Cloud Sync'
 description: This article describes how to use the cloud sync feature of Microsoft Entra Connect to test configuration changes.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/17/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -16,7 +16,7 @@ ms.author: billmath
 
 You can use the cloud sync feature of Microsoft Entra Connect to test configuration changes by applying these changes to a single user. This on-demand provisioning helps you validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.  
 
-The following document guides you through on-demand provisioning with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory.  If you are looking for information on provisioning from AD to Microsoft Entra ID, see [ On-demand provisioning - Microsoft Entra ID to Active Directory](how-to-on-demand-provision-entra-to-active-directory.md).
+The following document guides you through on-demand provisioning with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory.  If you are looking for information on provisioning from Microsoft Entra ID to AD, see [ On-demand provisioning - Microsoft Entra ID to Active Directory](how-to-on-demand-provision-entra-to-active-directory.md).
 
 > [!IMPORTANT] 
 > When you use on-demand provisioning, the scoping filters are not applied to the user that you selected. You can use on-demand provisioning on users who are outside the organization units that you specified.

@@ -9,7 +9,7 @@ ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
 ms.date: 11/23/2022
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ---
 
 # NIST authentication basics 

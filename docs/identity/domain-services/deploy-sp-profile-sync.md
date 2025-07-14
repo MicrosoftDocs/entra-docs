@@ -2,7 +2,7 @@
 title: Enable SharePoint User Profile service with Domain Services | Microsoft Docs
 description: Learn how to configure a Microsoft Entra Domain Services managed domain to support profile synchronization for SharePoint Server
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: entra-id

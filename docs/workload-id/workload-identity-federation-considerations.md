@@ -2,14 +2,14 @@
 title: Workload identity federation for app considerations
 description: Important considerations and restrictions for creating a federated identity credential on an app.
 
-author: rwike77
+author: SHERMANOUKO
 manager: CelesteDG
 
 ms.service: entra-workload-id
 
 ms.topic: concept-article
 ms.date: 02/28/2024
-ms.author: ryanwi
+ms.author: shermanouko
 ms.reviewer: shkhalid
 ms.custom: aaddev, references_regions
 ---
@@ -37,7 +37,7 @@ Federated identity credentials don't consume the Microsoft Entra tenant service 
 Creation of federated identity credentials is currently **not supported** on user-assigned managed identities created in the following regions:
 
 - Malaysia South
-- New Zeland South
+- New Zealand North
 
 Support for creating federated identity credentials on user assigned identities in these regions will be gradually rolled out. 
 Resources in this region which need to use federated identity credentials, can do so by leveraging a user assigned managed identity created in a supported region. 

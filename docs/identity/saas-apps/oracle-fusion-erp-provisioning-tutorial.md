@@ -1,31 +1,29 @@
 ---
-title: 'Tutorial: Configure Oracle Fusion ERP for automatic user provisioning with Microsoft Entra ID'
+title: Configure Oracle Fusion ERP for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Oracle Fusion ERP.
-
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Oracle Fusion ERP so that I can streamline the user management process and ensure that users have the appropriate access to Oracle Fusion ERP.
 ---
 
-# Tutorial: Configure Oracle Fusion ERP for automatic user provisioning
+# Configure Oracle Fusion ERP for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in Oracle Fusion ERP and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Oracle Fusion ERP.
+The objective of this article is to demonstrate the steps to be performed in Oracle Fusion ERP and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Oracle Fusion ERP.
 
 > [!NOTE]
->  This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+>  This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An [Oracle Fusion ERP tenant](https://www.oracle.com/applications/erp/).
 * A user account in Oracle Fusion ERP with Admin permissions.
 
@@ -38,17 +36,17 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
  ## Important tips for assigning users to Oracle Fusion ERP 
 
- * It is recommended that a single Microsoft Entra user is assigned to Oracle Fusion ERP to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+ * It's recommended that a single Microsoft Entra user is assigned to Oracle Fusion ERP to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Oracle Fusion ERP, you must select any valid application-specific role (if available) in the assignment dialog. Users with the Default Access role are excluded from provisioning.
 
 ## Set up Oracle Fusion ERP for provisioning
 
-Before configuring Oracle Fusion ERP for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Oracle Fusion ERP.
+Before configuring Oracle Fusion ERP for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Oracle Fusion ERP.
 
 1. Sign in to your [Oracle Fusion ERP Admin Console](https://cloud.oracle.com/sign-in)
 
-2. Click the Navigator on the top-left top corner. Under **Tools**, select **Security Console**.
+2. Select the Navigator on the top-left top corner. Under **Tools**, select **Security Console**.
 
 	:::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/login.png" alt-text="Screenshot of the Navigator page in the Oracle Fusion E R P admin console. Tools and Security console are highlighted." border="false":::
 
@@ -56,7 +54,7 @@ Before configuring Oracle Fusion ERP for automatic user provisioning with Micros
 	
 	:::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/user.png" alt-text="Screenshot of a panel in the Oracle Fusion E R P admin console. The Users item is highlighted." border="false":::
 
-4. Save the username and password for the admin user account which you will use to log into the Oracle Fusion ERP admin console. These values need to be entered in the **Admin Username** and **Password** fields in the Provisioning tab of your Oracle Fusion ERP application.
+4. Save the username and password for the admin user account which you use to log into the Oracle Fusion ERP admin console. These values need to be entered in the **Admin Username** and **Password** fields in the Provisioning tab of your Oracle Fusion ERP application.
 
 ## Add Oracle Fusion ERP from the gallery
 
@@ -65,7 +63,7 @@ To configure Oracle Fusion ERP for automatic user provisioning with Microsoft En
 **To add Oracle Fusion ERP from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Oracle Fusion ERP**, select **Oracle Fusion ERP** in the results panel.
 
 	![Oracle Fusion ERP in the results list](common/search-new-app.png)
@@ -75,7 +73,7 @@ To configure Oracle Fusion ERP for automatic user provisioning with Microsoft En
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Oracle Fusion ERP based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Oracle Fusion ERP by following the instructions provided in the [Oracle Fusion ERP Single sign-on tutorial](oracle-fusion-erp-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for Oracle Fusion ERP by following the instructions provided in the [Oracle Fusion ERP Single sign-on  article](oracle-fusion-erp-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 > [!NOTE]
 > To learn more about Oracle Fusion ERP's SCIM endpoint, refer to [REST API for Common Features in Oracle Applications Cloud](https://docs.oracle.com/en/cloud/saas/applications-common/23b/farca/index.html).
@@ -85,7 +83,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Fuze in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -101,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://ejlv.fa.em2.oraclecloud.com/hcmRestApi/scim/` in **Tenant URL**. Enter the admin user name and password retrieved earlier into the **Admin Username** and **Password** fields. Click on **Test connection** between Microsoft Entra ID and Oracle Fusion ERP. 
+5. Under the **Admin Credentials** section, input `https://ejlv.fa.em2.oraclecloud.com/hcmRestApi/scim/` in **Tenant URL**. Enter the admin user name and password retrieved earlier into the **Admin Username** and **Password** fields. Select **Test connection** between Microsoft Entra ID and Oracle Fusion ERP. 
 
 	:::image type="content" source="media/oracle-fusion-erp-provisioning-tutorial/admin.png" alt-text="Screenshot of the Admin credentials section. A Test connection button and fields for a Tenant U R L, admin username, and admin password are visible." border="false":::
 
@@ -109,7 +107,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Oracle Fusion ERP**.
 
@@ -135,7 +133,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    	|displayName|String|&check;|&check;
    	|members|Reference||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Oracle Fusion ERP, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -145,7 +143,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -156,14 +154,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ## Connector limitations
 
 * Oracle Fusion ERP only supports Basic Authentication for their SCIM endpoint.
-* Oracle Fusion ERP does not support group provisioning.
-* Roles in Oracle Fusion ERP are mapped to groups in Microsoft Entra ID. To assign roles to users in Oracle Fusion ERP from Microsoft Entra ID, you will need to assign users to the desired Microsoft Entra groups that are named after roles in Oracle Fusion ERP.
+* Oracle Fusion ERP doesn't support group provisioning.
+* Roles in Oracle Fusion ERP are mapped to groups in Microsoft Entra ID. To assign roles to users in Oracle Fusion ERP from Microsoft Entra ID, you need to assign users to the desired Microsoft Entra groups that are named after roles in Oracle Fusion ERP.
 
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

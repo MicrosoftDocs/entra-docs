@@ -2,7 +2,7 @@
 title: include file
 description: include file Microsoft Entra ID preview program information
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: include
 ms.date: 12/16/2024

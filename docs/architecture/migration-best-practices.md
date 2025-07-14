@@ -69,7 +69,7 @@ When choosing the first apps for migration, keep it simple. Criteria can include
 
 [Migration and testing tools](/azure/active-directory/manage-apps/migrate-adfs-plan-migration-test) include the [Microsoft Entra apps migration toolkit](/azure/active-directory/manage-apps/migration-resources) to discover, classify, and migrate apps. Reference the list of [SaaS app tutorials](/azure/active-directory/saas-apps/tutorial-list) and the [Microsoft Entra Single Sign-on (SSO) deployment plan](/azure/active-directory/manage-apps/plan-sso-deployment) that walk through the end-to-end process.
 
-Learn about [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) and use the complete [Microsoft Entra application proxy deployment plan](https://aka.ms/AppProxyDPDownload). Consider [secure hybrid access (SHA)](/azure/active-directory/manage-apps/secure-hybrid-access) to protect your on-premises and cloud legacy authentication applications by connecting them to Microsoft Entra ID. Use [Microsoft Entra Connect](/azure/active-directory/hybrid/connect/whatis-azure-ad-connect-v2) to synchronize AD FS users and groups with Microsoft Entra ID.
+Learn about [Microsoft Entra application proxy](/entra/identity/app-proxy/) and use the complete [Microsoft Entra application proxy deployment plan](https://aka.ms/AppProxyDPDownload). Consider [secure hybrid access (SHA)](/azure/active-directory/manage-apps/secure-hybrid-access) to protect your on-premises and cloud legacy authentication applications by connecting them to Microsoft Entra ID. Use [Microsoft Entra Connect](/azure/active-directory/hybrid/connect/whatis-azure-ad-connect-v2) to synchronize AD FS users and groups with Microsoft Entra ID.
 
 ### Phase 4: Plan management and insights
 

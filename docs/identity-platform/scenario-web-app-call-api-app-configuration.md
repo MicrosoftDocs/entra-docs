@@ -4,16 +4,17 @@ description: Learn how to configure the code of a web app that calls web APIs
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: 
 ms.date: 07/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: sfi-ropc-nochange
 #Customer intent: As an application developer, I want to know how to write a web app that calls web APIs by using the Microsoft identity platform.
 ---
 
 # A web app that calls web APIs: Code configuration
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 In the [previous article](./scenario-web-app-call-api-app-registration.md), you registered an application in Microsoft Entra. This article will show you how to configure the application code, and modify your web app so that it not only signs users in but also now calls web APIs. The application you create uses the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md) to sign the user in. This flow has two steps:
 

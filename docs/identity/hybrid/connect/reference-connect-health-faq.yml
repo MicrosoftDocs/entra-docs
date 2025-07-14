@@ -3,12 +3,13 @@ metadata:
   title: Microsoft Entra Connect Health FAQ - Azure
   description: This FAQ answers questions about Microsoft Entra Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support.  
   author: billmath
-  manager: amycolannino
+  manager: femila
   ms.assetid: f1b851aa-54d7-4cb4-8f5c-60680e2ce866
   ms.service: entra-id
   ms.subservice: hybrid-connect
   ms.tgt_pltfrm: na
-  ms.custom: has-azure-ad-ps-ref
+  ms.custom: no-azure-ad-ps-ref
+    - sfi-ga-nochange
   ms.topic: faq
   ms.date: 12/27/2024
   ms.author: billmath
@@ -202,11 +203,6 @@ sections:
           CheckForMS17-010
           
           ```
-          
-      - question: |
-          Why does the PowerShell cmdlet 'Get-MsolDirSyncProvisioningError' show fewer sync errors in the result?
-        answer: |
-          <i>Get-MsolDirSyncProvisioningError</i> only returns DirSync provisioning errors. The Connect Health portal also shows other sync error types such as export errors. Read more about [Microsoft Entra Connect Sync errors](./tshoot-connect-sync-errors.md).
           
       - question: |
           Why are my AD FS audits not being generated?

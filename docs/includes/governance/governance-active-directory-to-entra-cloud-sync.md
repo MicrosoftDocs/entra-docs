@@ -4,6 +4,7 @@ ms.service: entra-id-governance
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
+ms.custom: sfi-ga-nochange
 # Used by articles entra governance
 ---
 
@@ -58,13 +59,15 @@ Use the following steps to configure and start the provisioning:
  4. On the configuration screen, enter a **Notification email**, move the selector to **Enable** and select **Save**.
  5. The configuration status should now be **Healthy**.
 
+For more information on configuring Microsoft Entra Cloud Sync, see [Provision Active Directory to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
+
 ## Verify users are created and synchronization is occurring
 
 You'll now verify that the users that you had in your on-premises directory that are in scope of synchronization have been synchronized and now exist in your Microsoft Entra tenant. The sync operation may take a few hours to complete. To verify users are synchronized, follow these steps:
 
 
  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
- 2. Browse to **Identity** > **Users**.
+ 2. Browse to **Entra ID** > **Users**.
  3. Verify that you see the new users in our tenant
 
 ## Test signing in with one of your users

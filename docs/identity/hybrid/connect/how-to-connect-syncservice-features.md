@@ -3,13 +3,13 @@ title: Microsoft Entra Connect Sync service features and configuration
 description: Describes service side features for Microsoft Entra Connect Sync service.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 12/09/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -157,6 +157,44 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SyncUpnManagedUsers `
 ```
 
 After enabling this feature, existing userPrincipalName values remain as-is. On next change of the userPrincipalName attribute on-premises, the normal delta sync on users updates the UPN. Once this feature is enabled, it's not possible to disable it.
+
+## Password Hash Sync
+
+This feature allows the sync engine to use password hash synchronization and is automatically enabled by the sync client.
+
+You can see if this feature is enabled for you by running:  
+
+```powershell
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
+
+
+# Retrieve DirSync service features
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.PasswordSyncEnabled
+```
+
+
+If password hash sync is no longer needed, for example, after decommissioning synchronization from on-premises Active Directory, you can disable it using:
+
+```powershell
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+# Disable Password Hash Sync
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.PasswordSyncEnabled = $false
+Update-MgDirectoryOnPremiseSynchronization -Features $DirectorySync.Features -OnPremisesDirectorySynchronizationId $DirectorySync.Id
+
+```
+
+## Password Writeback
+
+This property indicates whether password writeback from Microsoft Entra ID to on-premises Active Directory is enabled.
+
+> [!IMPORTANT] 
+> This property is no longer in use, and updating it is not supported.
+
 
 ## See also
 

@@ -4,9 +4,9 @@ description: Learn about building single sign-on experiences using the Microsoft
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref, devx-track-js
+ms.custom: has-adal-ref
 ms.date: 01/16/2023
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article

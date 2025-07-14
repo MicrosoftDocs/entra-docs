@@ -3,10 +3,11 @@ title: Understand the Microsoft Entra private network connector
 description: Learn how Microsoft Entra private network connectors work and how they're used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: conceptual
-ms.date: 07/02/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 ---
 
 # Understand the Microsoft Entra private network connector
@@ -31,10 +32,8 @@ Setup and registration between a connector and the application proxy service is 
 
 It's recommended that you always deploy multiple connectors for redundancy and scale. The connectors, in conjunction with the service, take care of all the high availability tasks and can be added or removed dynamically. Each time a new request arrives it's routed to one of the connectors that is available. When a connector is running, it remains active as it connects to the service. If a connector is temporarily unavailable, it doesn't respond to this traffic. Unused connectors are tagged as inactive and removed after 10 days of inactivity.
 
-Connectors also poll the server to find out if there's a newer version of the connector. Although you can do a manual update, connectors will update automatically as long as the private network connector Updater service is running. For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
-
 > [!NOTE]
-> You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates.
+> You can monitor the [version history page](reference-version-history.md) to stay informed on the latest updates so that you can schedule appropriate connector upgrades.
 
 Each private network connector is assigned to a [connector group](concept-connector-groups.md). Connectors in the same connector group act as a single unit for high availability and load balancing. You can create new groups, assign connectors to them in the Microsoft Entra admin center, then assign specific connectors to serve specific applications. It's recommended to have at least two connectors in each connector group for high availability.
 
@@ -58,11 +57,11 @@ You can monitor your connectors from the machine they're running on, using eithe
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as `_inactive_` and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart the computer to fully remove the service.
 
-## Automatic updates
+## Connector updates
 
-Microsoft Entra ID provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
+Microsoft Entra ID occasionally provides automatic updates for all the connectors that you deploy. As long as the private network connector updater service is running, your connectors may update with the latest major connector release automatically. If you don’t see the Connector Updater service on your server, you need to reinstall your connector to get updates.
 
-If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector.
+If you don't want to wait for an automatic update to come to your connector, you can do a manual upgrade. Go to the [connector download page](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download) on the server where your connector is located and select **Download**. This process kicks off an upgrade for the local connector. Note that not all updates are scheduled for automatic update. It is recommended that you monitor the [version history page](reference-version-history.md) for information about whether an update is deployed automatically or manually via the Microsoft Entra portal.
 
 For tenants with multiple connectors, the automatic updates target one connector at a time in each group to prevent downtime in your environment.
 
@@ -107,6 +106,24 @@ Another factor that affects performance is the quality of the networking between
 
 For more information about optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 
+## Expanding Ephemeral Port Range
+
+Private Network connectors initiate TCP/UDP connections to designated destination endpoints, requiring available source ports on the connector host machine. Expanding the ephemeral port range can improve the availability of source ports, particularly when managing a high volume of concurrent connections.
+
+To view the current dynamic port range on a system, use the following netsh commands:
+- netsh int ipv4 show dynamicport tcp
+- netsh int ipv4 show dynamicport udp
+- netsh int ipv6 show dynamicport tcp
+- netsh int ipv6 show dynamicport udp
+ 
+Sample netsh commands to increase the ports
+- netsh int ipv4 set dynamicport tcp start=1025 num=64511
+- netsh int ipv4 set dynamicport udp start=1025 num=64511
+- netsh int ipv6 set dynamicport tcp start=1025 num=64511
+- netsh int ipv6 set dynamicport udp start=1025 num=64511
+
+These commands set the dynamic port range from 1025 to the maximum of 65535. The minimum start port is 1025.
+
 ## Specifications and Sizing Requirements
 The following specifications are recommended for each Entra Private Network Connector:
 
@@ -121,7 +138,7 @@ Each connector, configured with the above specifications, can support up to 1.5 
 **Additional Details:**  
 - Sizing recommendations made above are based on performance testing done on a test tenant using iPerf3 tool with TCP data streams. Actual performance can vary under different testing environments. More details on specific test cases will be published as part of this documentation in coming months. 
 - Once a connector is enrolled, it establishes outbound TLS tunnels to the Private Access cloud infrastructure. These tunnels handle all data path traffic. In addition, we have some control plane channel, driving keep-alive heartbeat, health reporting, connector upgrades and so on utilizing minimal bandwidth.
-- You can deploy additional connectors within the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](https://learn.microsoft.com/entra/identity/app-proxy/application-proxy-high-availability-load-balancing#best-practices-for-high-availability-of-connectors).
+- You can deploy additional connectors within the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](../identity/app-proxy/application-proxy-high-availability-load-balancing.md#best-practices-for-high-availability-of-connectors).
 
 ## Domain joining
 

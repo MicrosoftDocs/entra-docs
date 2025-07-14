@@ -1,13 +1,13 @@
 ---
 title: Limitations in multitenant organizations
 description: Learn about the limitations when you work with multitenant organizations in Microsoft Entra ID.
-author: rolyon
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: troubleshooting
 ms.date: 07/05/2024
-ms.author: rolyon
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
@@ -24,7 +24,7 @@ The limitations described in this article have the following scope.
 | --- | --- |
 | In scope | - Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in new Microsoft Teams, with reciprocally provisioned B2B members<br/>- Microsoft Entra administrator limitations related to multitenant organizations to support seamless collaboration experiences in Microsoft Viva Engage, with centrally provisioned B2B members |
 | Related scope | - Microsoft 365 admin center limitations related to multitenant organizations<br/>- Microsoft 365 multitenant organization people search experiences<br/>- Cross-tenant synchronization limitations related to Microsoft 365 |
-| Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in new Teams<br/>- End user experiences in Viva Engage<br/>- Tenant migration or consolidation |
+| Out of scope | - Cross-tenant synchronization unrelated to Microsoft 365<br/>- End user experiences in Viva Engage<br/>- Tenant migration or consolidation |
 | Unsupported scenarios | - Multitenant organizations across education tenants involving student scenarios<br/>- Multitenant organizations in Microsoft 365 Government<br/>- Seamless collaboration experience across multitenant organizations in classic Teams<br/>- Self-service for multitenant organizations larger than 100 tenants<br/>- Multitenant organizations in Azure Government or Microsoft Azure operated by 21Vianet<br/>- Cross-cloud multitenant organizations |
 
 ## Create or join a multitenant organization using the Microsoft 365 admin center

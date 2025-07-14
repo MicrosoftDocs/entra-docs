@@ -2,10 +2,10 @@
 title: 'Identity Governance custom alerts'
 description: This article shows how to create custom alerts with Microsoft Entra ID Governance
 author: billmath
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 12/30/2024
+ms.date: 04/09/2025
 ms.author: billmath
 ms.custom:
 ---
@@ -102,7 +102,7 @@ AuditLogs
 | where Result == "success"
 | mvexpand TargetResources 
 | extend  CustomExtensionName=TargetResources.displayName
-| where CustomExtensionName in ('<input custom exteionsion name>', '<input custom extension name>')
+| where CustomExtensionName in ('<input custom extension name>', '<input custom extension name>')
 ```
 
 ### Alert an IT admin when an entitlement management access package assignment policy is created or updated without requiring [approval.](/entra/id-governance/entitlement-management-access-package-approval-policy)
@@ -206,7 +206,7 @@ AuditLogs
 ## Provisioning
 
 **Alert an IT administrator when there's a spike in provisioning failures over the past day.**
-When configuring your alert in log analytics, set the aggregration granularity to 1-day.
+When configuring your alert in log analytics, set the aggregation granularity to 1-day.
 
 *Query*
 

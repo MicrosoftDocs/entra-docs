@@ -4,8 +4,8 @@
 title: Investigate identity risk in Microsoft Security Copilot
 description: Use Microsoft Security Copilot and Microsoft Entra skills to quickly investigate identity-based security incident.
 keywords:
-author: rwike77
-ms.author: ryanwi
+author: cilwerner
+ms.author: cwerner
 manager: celestedg
 ms.date: 11/7/2024
 ms.topic: conceptual
@@ -80,15 +80,6 @@ She uses the following prompts to get the information she needs:
 - *Tell me more about the Finance Department group.*
 - *Who are the owners of the Finance Department group?*
 - *What roles does this group have?*
-
-### Get diagnostic logs details
-
-Finally, Natasha reviews the diagnostic logs to get more detailed information about the system’s operations during the times of the suspicious activities. He filters the logs by John’s user ID and the times of the unusual sign-ins.
-
-She uses the following prompts to get the information she needs:
-
-- *What are the diagnostics log configuration for the tenant that is karita@woodgrovebank.com registered in?*
-- *Which logs are being collected in this tenant?*
 
 ## Remediate
 

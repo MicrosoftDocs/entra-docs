@@ -1,18 +1,18 @@
 ---
 title: Create a custom authentication extension for attribute collection start and submit events (preview)
-description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.  
+description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.
 author: msmimart
 manager: CelesteDG
 ms.author: mimart
-ms.date: 10/01/2024
+ms.date: 04/28/2025
 ms.service: identity-platform
-
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
+ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Create a custom authentication extension for attribute collection start and submit events (preview)
+# Create a custom authentication extension for attribute collection start and submit events
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -599,7 +599,7 @@ In this step, you register a custom authentication extension that is used by Mic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
-1. Browse to **Identity** > **External Identities** > **Custom authentication extensions**.
+1. Browse to **Entra ID** > **External Identities** > **Custom authentication extensions**.
 1. Select **Create a custom extension**.
 1. In **Basics**, select the **AttributeCollectionStart** event or the **AttributeCollectionSubmit** event, and then select **Next**. Be sure that this matches the configuration in the [previous step](#11-create-http-trigger-functions).
 1. In **Endpoint Configuration**, fill in the following properties:
@@ -618,7 +618,7 @@ In this step, you register a custom authentication extension that is used by Mic
 
 After your custom authentication extension is created, grant application consent to the registered app, which allows the custom authentication extension to authenticate to your API.
 
-1. Browse to **Identity** > **External Identities** > **Custom authentication extensions (Preview)**.
+1. Browse to **Entra ID** > **External Identities** > **Custom authentication extensions**.
 1. Select your custom authentication extension from the list.
 1. On the **Overview** tab, select the **Grant permission** button to give admin consent to the registered app. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission. Select **Accept**. 
 
@@ -633,7 +633,7 @@ Now you can associate the custom authentication extension with one or more of yo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator)
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/custom-extension-attribute-collection/settings-icon.png" border="false"::: in the top menu to switch to your external tenant.
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow from the list.
 1. Select **Custom authentication extensions**.
 1. On the **Custom authentication extensions** page, you can associate your custom authentication extension with two different steps in your user flow:
@@ -653,7 +653,7 @@ Follow these steps to register the **jwt.ms** web application:
 ### 4.1 Register the jwt.ms web application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
@@ -747,5 +747,5 @@ To test your custom authentication extension, follow these steps:
 
 ## Next steps
 
-- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-reference.md)
-- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-reference.md)
+- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-retrieve-return-data.md)
+- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-retrieve-return-data.md)

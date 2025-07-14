@@ -1,17 +1,16 @@
 ---
 title: Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
 description: How users can set up a Microsoft Entra with a new Mac device with macOS Platform Single Sign-on
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 12/19/2024
-
 ms.author: cwerner
 author: cilwerner
 manager: CelesteDG
 ms.reviewer: brianmel
-#Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference betwwen setting up with secure enclave, smart card, or password based authentication methods.
+ms.custom: sfi-image-nochange
+#Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference between setting up with secure enclave, smart card, or password based authentication methods.
 ---
 
 # Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)
@@ -27,6 +26,7 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 - A configured single sign-on (SSO) extension MDM payload with [PSSO settings in Intune](/mem/intune/configuration/platform-sso-macos) by an administrator
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
 - For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
+- Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#insufficient-permissions).
 
 ## Set up your macOS device
 

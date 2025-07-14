@@ -2,7 +2,7 @@
 title: Onboard external users with entitlement management
 description: Learn how to simplify approving access to applications and resources for onboarding external users to your organization.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management

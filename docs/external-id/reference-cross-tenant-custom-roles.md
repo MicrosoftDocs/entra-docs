@@ -2,11 +2,11 @@
 title: Custom roles for cross-tenant access settings
 description: Learn how your organization can define custom roles to manage cross-tenant access settings, allowing for precise control without relying on built-in management roles.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
 
 ms.topic: reference
-ms.date: 08/20/2024
+ms.date: 07/07/2025
 ms.author: cmulligan
 ms.custom: it-pro
 ---
@@ -23,7 +23,7 @@ The following actions are recommended for this role.
 
 | Actions |
 | ------- |
-| microsoft.directory.tenantRelationships/standard/read |
+| microsoft.directory/tenantRelationships/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update |
 | microsoft.directory/crossTenantAccessPolicy/basic/update |

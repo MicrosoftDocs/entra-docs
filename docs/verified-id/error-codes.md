@@ -4,10 +4,9 @@ titleSuffix: Microsoft Entra Verified ID
 description: Reference of error codes for Microsoft Entra Verified ID APIs
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
 ms.date: 01/30/2025
 ms.author: barclayn
 
@@ -33,10 +32,9 @@ During public preview, the Request Service API returned errors in the following 
     "message": "The request contains `includeQRCode`, but it is not boolean."
   }
 }
-
 ```
 
-This format is now changed into the following to enable both simpler error handling and better support for troubleshooting. In the new format, the outer [error](#error-type) code and message fields have standardized values while the [```innererror```](#inner-error-type) object provide details on what caused the error.
+This format is now changed into the following to enable both simpler error handling and better support for troubleshooting. In the new format, the outer [error](#error-type) code and message fields have standardized values while the [`innererror`](#inner-error-type) object provide details on what caused the error.
 
 ```json
 {

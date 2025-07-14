@@ -4,22 +4,21 @@ titleSuffix: Microsoft Entra Verified ID
 description: Learn how to manage your verifiable credential deployment using Admin API.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
 ms.date: 01/30/2025
 ms.author: barclayn
-
+ms.custom: sfi-ga-nochange
 #Customer intent: As an administrator, I am trying to learn how to use the Admin API and automate my tenant.
 ---
 
 # Verifiable credentials admin API
 
-  
 The Microsoft Entra Verified ID Admin API enables you to manage all aspects of the Verifiable Credential service. It offers a way to set up a brand new service, manage and create Verifiable Credential contracts, revoke Verifiable Credentials and completely opt out the service as well.
 
-> The API is intended for developers comfortable with RESTful APIs and enough permissions on the Microsoft Entra tenant to enable the service
+> [!NOTE]
+> The API is intended for developers comfortable with RESTful APIs and enough permissions on the Microsoft Entra tenant to enable the service.
 
 ## Base URL
 
@@ -31,7 +30,7 @@ The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. T
 
 ### User bearer tokens
 
-The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
+The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. The [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role also has these permissions but should only be used if no other role combination meets your needs. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
 
 ### Application bearer tokens
 
@@ -63,7 +62,7 @@ Use this endpoint to finish provisioning of the Verifiable Credential service in
 
 | Header | Value |
 | -------- | -------- |
-| Authorization     | Bearer (token). Required |
+| Authorization | Bearer (token). Required |
 | Content-Type | application/json |
 
 #### Request body
@@ -72,7 +71,7 @@ Don't supply a request body for this method.
 
 #### Return message
 
-```
+```json
 HTTP/1.1 201 Created
 Content-type: application/json
 
@@ -97,7 +96,7 @@ This endpoint can be used to create or update a Verifiable Credential service in
 | Methods | Return Type | Description |
 | -------- | -------- | -------- |
 | [Get Authority](#get-authority) | Authority | Read properties of an authority |
-| [List Authority](#list-authorities)     | Authority array     | Get a list of all configured Authorities/verifiable credential services     |
+| [List Authority](#list-authorities) | Authority array | Get a list of all configured Authorities/verifiable credential services |
 | [Create Authority](#create-authority) | Authority | Create a new authority |
 | [Update authority](#update-authority) | Authority | Update authority |
 | [Delete authority](#delete-authority) | Authority | Delete authority |
@@ -108,16 +107,15 @@ This endpoint can be used to create or update a Verifiable Credential service in
 | [Generate Well known DID Configuration](#well-known-did-configuration) | | |
 | [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
 
-
 ### Get authority
 
 Retrieve the properties of a configured authority or verifiable credential service instance.
 
 #### HTTP request
 
-`GET /v1.0/verifiableCredentials/authorities/:authorityId`
+`GET /v1.0/verifiableCredentials/authorities/<authorityId>`
 
-Replace the `:authorityId` with the value of one of the configured authorities.
+Replace the `<authorityId>` with the value of one of the configured authorities.
 
 #### Request headers
 
@@ -132,7 +130,7 @@ Don't supply a request body for this method
 
 #### Response message
 
-```
+```json
 HTTP/1.1 200 OK
 Content-type: application/json
 
@@ -160,7 +158,6 @@ Content-type: application/json
         "resourceUrl": "https://vccontosokv.vault.azure.net/"
     }
 }
-
 ```
 
 The response contains the following properties.
@@ -169,12 +166,11 @@ The response contains the following properties.
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
-| `Id`     | string | An autogenerated unique ID, which can be used to retrieve or update the specific instance of the verifiable credential service     |
+| `Id` | string | An autogenerated unique ID, which can be used to retrieve or update the specific instance of the verifiable credential service |
 | `name` | string | The friendly name of this instance of the verifiable credential service |
 | `status` | string | status of the service, this value is always `enabled` |
 | [didModel](#didmodel-type) | didModel | Information about the DID and keys |
-| [keyVaultMetadata](#keyvaultmetadata-type) | keyVaultMeta data | Information about the used Key Vault  |
-
+| [keyVaultMetadata](#keyvaultmetadata-type) | keyVaultMeta data | Information about the used Key Vault |
 
 #### didModel type
 
@@ -188,7 +184,6 @@ The response contains the following properties.
 | [didModel](#didmodel-type) | didModel | Information about the DID and keys |
 | `didDocumentStatus` | string | status of the DID, value is always `published` for this method |
 
-
 #### keyVaultMetadata type
 
 | Property | Type | Description |
@@ -197,7 +192,6 @@ The response contains the following properties.
 | `resourceGroup` | string | name of the resource group from this Key Vault |
 | `resourceName` | string | Key Vault name |
 | `resourceUrl` | string | URL to this Key Vault |
-
 
 ### List authorities
 
@@ -211,7 +205,7 @@ Get all configured authorities or verifiable credential services for this tenant
 
 | Header | Value |
 | -------- | -------- |
-| Authorization     | Bearer (token). Required |
+| Authorization | Bearer (token). Required |
 | Content-Type | application/json |
 
 #### Request body
@@ -223,13 +217,11 @@ Don't supply a request body for this method.
 Response message is an array of [Authorities](#authority-type)
 
 Example:
-```
+```json
 HTTP/1.1 200 OK
 Content-type: application/json
 {
-    value:
-
-    [
+    "value": [
         {
             "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "name": "AuthorityName",
@@ -358,7 +350,6 @@ Example message for did:web:
 }
 ```
 
-
 Example message for did:ion:
 
 ```
@@ -402,15 +393,15 @@ This method can be used to update the display name of this specific instance of 
 
 #### HTTP request
 
-`PATCH /v1.0/verifiableCredentials/authorities/:authorityId`
+`PATCH /v1.0/verifiableCredentials/authorities/<authorityId>`
 
-Replace the value of `:authorityId` with the value of the authority ID you want to update.
+Replace the value of `<authorityId>` with the value of the authority ID you want to update.
 
 #### Request headers
 
 | Header | Value |
 | -------- | -------- |
-| Authorization     | Bearer (token). Required |
+| Authorization | Bearer (token). Required |
 | Content-Type | application/json |
 
 #### Request body
@@ -434,15 +425,15 @@ This method can be used to delete an authority. Currently only `did:ion` authori
 
 #### HTTP request
 
-`DELETE /beta/verifiableCredentials/authorities/:authorityId`
+`DELETE /beta/verifiableCredentials/authorities/<authorityId>`
 
-Replace the value of `:authorityId` with the value of the authority ID you want to delete.
+Replace the value of `<authorityId>` with the value of the authority ID you want to delete.
 
 #### Request headers
 
 | Header | Value |
 | -------- | -------- |
-| Authorization     | Bearer (token). Required |
+| Authorization | Bearer (token). Required |
 | Content-Type | application/json |
 
 #### Request body
@@ -471,7 +462,6 @@ Content-type: application/json
         "message": "The organization has been opted out of the Verifiable Credentials, but the following keys could not be deleted. To keep your organization secure, delete keys that are not in use. https://kxxxxxx.vault.azure.net/keys/vcSigningKey-9daeexxxxx-0575-23dc-81be-5f6axxxxx/0dcc532adb9a4fcf9902f90xxxxx"
     }
 }
-
 ```
 
 ### Well-known DID configuration
@@ -480,7 +470,7 @@ The `generateWellknownDidConfiguration` method generates the signed did-configur
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/generateWellknownDidConfiguration`
+`POST /v1.0/verifiableCredentials/authorities/<authorityId>/generateWellknownDidConfiguration`
 
 #### Request headers
 
@@ -555,7 +545,7 @@ This call generates the DID Document used for DID:WEB identifiers. After the ser
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/generateDidDocument`
+`POST /v1.0/verifiableCredentials/authorities/<authorityId>/generateDidDocument`
 
 #### Request headers
 
@@ -634,7 +624,7 @@ This call checks your DID setup. It downloads the well known DID configuration a
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/validateWellKnownDidConfiguration`
+`POST /v1.0/verifiableCredentials/authorities/<authorityId>/validateWellKnownDidConfiguration`
 
 #### Request headers
 
@@ -646,7 +636,6 @@ This call checks your DID setup. It downloads the well known DID configuration a
 #### Request body
 
 Don't supply a request body for this method.
-
 
 #### Response message
 
@@ -661,7 +650,7 @@ The **Rotate** signing key creates a new private key for the did:web authority. 
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/signingKeys/rotate`
+`POST /v1.0/verifiableCredentials/authorities/<authorityId>/didInfo/signingKeys/rotate`
 
 #### Request headers
 
@@ -751,7 +740,7 @@ After [rotating](#rotate-signing-key) the signing key, the DID document should b
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/synchronizeWithDidDocument`
+`POST /v1.0/verifiableCredentials/authorities/<authorityId>/didInfo/synchronizeWithDidDocument`
 
 #### Request headers
 
@@ -811,19 +800,17 @@ This endpoint allows you to create new contracts, and update existing contracts.
 | Methods | Return Type | Description |
 | -------- | -------- | -------- |
 | [Get contract](#get-contract) | Contract | Read properties of a Contract |
-| [List contracts](#list-contracts)     | Contract collection     | Get a list of all configured contracts |
+| [List contracts](#list-contracts) | Contract collection | Get a list of all configured contracts |
 | [Create contract](#create-contract) | Contract | Create a new contract |
 | [Update contract](#update-contract) | Contract | Update contract |
-
 
 ### Get contract
 
 #### HTTP request
 
-`GET /v1.0/verifiableCredentials/authorities/:authorityId/contracts/:contractId`
+`GET /v1.0/verifiableCredentials/authorities/<authorityId>/contracts/<contractId>`
 
-Replace the ```:authorityId``` and ```:contractId``` with the correct value of the authority and contract.
-
+Replace the ```<authorityId>``` and ```<contractId>``` with the correct value of the authority and contract.
 
 #### Request headers
 
@@ -863,7 +850,7 @@ The response contains the following properties
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
-| `Id`     | string | contract ID    |
+| `Id` | string | contract ID |
 | `name` | string | The friendly name of this contract |
 | `status` | string | Always `Enabled` |
 | `manifestUrl` | string | URL to the contract used in the issuance request |
@@ -1030,7 +1017,6 @@ Example:
 
 #### displayClaims type
 
-
 | Property | Type | Description |
 | -------- | -------- | -------- |
 |`label`| string | the label of the claim in display |
@@ -1082,7 +1068,7 @@ This API lists all contracts configured in the current tenant for the specified 
 
 #### HTTP request
 
-`GET /v1.0/verifiableCredentials/authorities/:authorityId/contracts`
+`GET /v1.0/verifiableCredentials/authorities/<authorityId>/contracts`
 
 #### Request headers
 
@@ -1134,8 +1120,7 @@ The name of the contract is part of the contract URL used in issuance requests.
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/contracts`
-
+`POST /v1.0/verifiableCredentials/authorities/<authorityId>/contracts`
 
 #### Request headers
 
@@ -1145,7 +1130,6 @@ The name of the contract is part of the contract URL used in issuance requests.
 | Content-Type | application/json |
 
 #### Request body
-
 
 Example request
 
@@ -1177,12 +1161,11 @@ Content-type: application/json
 }
 ```
 
-
 ### Update contract
 
 This API Allows you to update the contract.
 
-`PATCH /v1.0/verifiableCredentials/authorities/:authorityId/contracts/:contractid`
+`PATCH /v1.0/verifiableCredentials/authorities/<authorityId>/contracts/<contractid>`
 
 Example request:
 
@@ -1223,27 +1206,31 @@ This endpoint allows you to search for issued verifiable credentials, check revo
 
 ### Methods
 
-
 | Methods | Return Type | Description |
 | -------- | -------- | -------- |
 | [Get credential](#get-credential) | Credential | Read properties of a Credential |
-| [Search credentials](#search-credentials) | Credential collection  | Search a list of credentials with a specific claim value |
-| [Revoke credential](#revoke-credential) |  | Revoke specific credential |
+| [Search credentials](#search-credentials) | Credential collection | Search a list of credentials with a specific claim value |
+| [Revoke credential](#revoke-credential) | | Revoke specific credential |
 
 ### Get credential
+
 This API allows you to retrieve a specific credential and check the status to see if it is revoked or not. 
 
 #### HTTP Request
-`GET /v1.0/verifiableCredentials/authorities/:authorityId/contracts/:contractId/credentials/:credentialId`
+
+`GET /v1.0/verifiableCredentials/authorities/<authorityId>/contracts/<contractid>/credentials/:credentialId`
 
 #### Request headers
+
 | Header | Value |
 | -------- | -------- |
 | Authorization | Bearer (token). Required |
 | Content-Type | application/json |
 
 #### Response message
+
 Example message
+
 ```
 HTTP/1.1 200 OK
 Content-type: application/json
@@ -1278,7 +1265,7 @@ The following request shows how to add the calculated value to the filter parame
 
 ### HTTP request
 
-`GET /v1.0/verifiableCredentials/authorities/:authorityId/contracts/:contractId/credentials?filter=indexclaimhash eq {hashedsearchclaimvalue}`
+`GET /v1.0/verifiableCredentials/authorities/<authorityId>/contracts/<contractid>/credentials?filter=indexclaimhash eq {hashedsearchclaimvalue}`
 
 #### Request headers
 
@@ -1317,7 +1304,7 @@ This API allows you to revoke a specific credential, after you searched for the 
 
 #### HTTP request
 
-`POST /v1.0/verifiableCredentials/authorities/:authorityId/contracts/:contractId/credentials/:credentialid/revoke`
+`POST /v1.0/verifiableCredentials/authorities/<authorityId>/contracts/<contractid>/credentials/:credentialid/revoke`
 
 #### Request headers
 
@@ -1337,14 +1324,13 @@ HTTP/1.1 204 No Content
 Content-type: application/json
 ```
 
-
 ## Opt-out
 
 This method removes all instances of the verifiable credential service in this tenant. It removes all configured contracts. Every issued verifiable credential can't be checked for revocation. This action can't be undone.
 
 >[!WARNING]
 > This action can't be undone and invalidates all issued verifiable credentials and created contracts.
- 
+
 #### HTTP Request
 `POST /v1.0/verifiableCredentials/optout`
 
@@ -1352,7 +1338,7 @@ This method removes all instances of the verifiable credential service in this t
 
 | Header | Value |
 | -------- | -------- |
-| Authorization     | Bearer (token). Required |
+| Authorization | Bearer (token). Required |
 | Content-Type | application/json |
 
 #### Request body

@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Change Process Management'
+title: Configure Change Process Management for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Change Process Management.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Change Process Management so that I can control who has access to Change Process Management, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Change Process Management
+# Configure Change Process Management for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Change Process Management with Microsoft Entra ID. When you integrate Change Process Management with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Change Process Management with Microsoft Entra ID. When you integrate Change Process Management with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access Change Process Management.
 * Enable your users to be automatically signed in to Change Process Management with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 Change Process Management supports IDP-initiated SSO.
 
@@ -43,11 +43,11 @@ Change Process Management supports IDP-initiated SSO.
 To configure the integration of Change Process Management into Microsoft Entra ID, you need to add Change Process Management from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, enter **Change Process Management** in the search box.
 1. Select **Change Process Management** in the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
 <a name='configure-and-test-azure-ad-sso-for-change-process-management'></a>
 
@@ -55,10 +55,10 @@ To configure the integration of Change Process Management into Microsoft Entra I
 
 You'll configure and test Microsoft Entra SSO with Change Process Management by using a test user named B.Simon. For SSO to work, you need to establish a link relationship between a Microsoft Entra user and the corresponding user in Change Process Management.
 
-To configure and test Microsoft Entra SSO with Change Process Management, you'll take these high-level steps:
+To configure and test Microsoft Entra SSO with Change Process Management, you take these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use the feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
     1. **[Grant access to the test user](#grant-access-to-the-test-user)** to enable the user to use Microsoft Entra single sign-on.
 1. **[Configure Change Process Management SSO](#configure-change-process-management-sso)** on the application side.
     1. **[Create a Change Process Management test user](#create-a-change-process-management-test-user)** as a counterpart to the Microsoft Entra representation of the user.
@@ -71,7 +71,7 @@ To configure and test Microsoft Entra SSO with Change Process Management, you'll
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Change Process Management** application integration page, in the **Manage** section, select **single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Change Process Management** application integration page, in the **Manage** section, select **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up Single Sign-On with SAML** page, select the pencil button for **Basic SAML Configuration** to edit the settings:
 
@@ -100,10 +100,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user named B.Simon.
+In this section, you create a test user named B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
+1. Browse to **Entra ID** > **Users**.
 1. Select **New user** > **Create new user**, at the top of the screen.
 1. In the **User** properties, follow these steps:
    1. In the **Display name** field, enter `B.Simon`.  
@@ -114,14 +114,14 @@ In this section, you'll create a test user named B.Simon.
 
 ### Grant access to the test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting that user access to Change Process Management.
+In this section, you enable B.Simon to use single sign-on by granting that user access to Change Process Management.
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. In the applications list, select **Change Process Management**.
 1. In the app's overview page, in the **Manage** section, select **Users and groups**:
 1. Select **Add user**, and then select **Users and groups** in the **Add Assignment** dialog box.
-1. In the **Users and groups** dialog box, select **B.Simon** in the **Users** list, and then click the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
+1. In the **Users and groups** dialog box, select **B.Simon** in the **Users** list, and then select the **Select** button at the bottom of the screen.
+1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog box, select the appropriate role for the user from the list and then select the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog box, select **Assign**.
 
 ## Configure Change Process Management SSO
@@ -136,10 +136,10 @@ Work with the [Change Process Management support team](mailto:support@realtech-
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the Change Process Management for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the Change Process Management for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the Change Process Management tile in the My Apps, you should be automatically signed in to the Change Process Management for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Change Process Management tile in the My Apps, you should be automatically signed in to the Change Process Management for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Change Process Management you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

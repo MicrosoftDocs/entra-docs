@@ -3,7 +3,7 @@ title: Disable auto-acceleration sign-in
 description: Learn how to prevent domain_hint auto-acceleration to federated IDPs using Home Realm Discovery policy.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
@@ -11,7 +11,7 @@ ms.date: 11/29/2024
 ms.author: jomondi
 ms.reviewer: ludwignick
 zone_pivot_groups: enterprise-apps-minus-portal-aad
-ms.custom: enterprise-apps, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: enterprise-apps, no-azure-ad-ps-ref, 
 #customer intent: As an administrator managing federated domains, I want to disable auto-acceleration sign-in for certain domains and applications, so that users can always use their managed credentials and have a consistent sign-in experience, improving security and reducing frustration.
 ---
 # Disable auto-acceleration sign-in

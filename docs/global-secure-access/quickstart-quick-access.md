@@ -3,10 +3,11 @@ title: "Quickstart: Configure Quick Access to private resources"
 description: Learn how to configure Quick Access to private resources in Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.service: global-secure-access
 ms.topic: quickstart
-ms.date: 07/22/2024
+ms.date: 02/21/2025
+ai-usage: ai-assisted
 
 #customer intent: As an administrator, I want learn how to configure Quick Access so that my users can access private resources in Global Secure Access.
 
@@ -17,6 +18,11 @@ ms.date: 07/22/2024
 Microsoft Entra Private Access provides a secure, zero-trust access solution for accessing internal resources without requiring a VPN. Configure Quick Access and enable the Private Access traffic forwarding profile to specify the sites and apps you want routed through Microsoft Entra Private Access. At this time, the Global Secure Access client must be installed on end-user devices to use Microsoft Entra Private Access, so that step is included in this section.
  
 This quickstart shows you the steps needed to configure Quick Access to private resources. To learn more about Global Secure Access, see [What is Global Secure Access?](overview-what-is-global-secure-access.md)
+
+> [!NOTE]
+> Use Quick Access as a transition phase in your Zero Trust journey. After Quick Access has enabled you to replace your VPN, [configure per-app access](quickstart-per-app-access.md) to achieve application segmentation and per-app granular controls.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/MfcZ3zQhF-4]
 
 ## Prerequisites
 

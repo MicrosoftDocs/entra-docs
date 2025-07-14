@@ -4,7 +4,7 @@ author: MicrosoftGuyJFlo
 ms.service: entra-id
 ms.topic: include
 ms.date: 05/10/2024
-ms.author: joflore
+ms.custom: sfi-ga-nochange
 # Include file for referencing attribute role caveat.
 ---
 

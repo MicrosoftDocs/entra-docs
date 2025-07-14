@@ -1,16 +1,15 @@
 ---
 title: Join a Mac device with Microsoft Entra ID and configure it for shared device scenarios
 description: How users can set up a Microsoft Entra Joined Mac that supports multiple users for shared device scenarios with macOS Platform Single Sign-on
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: tutorial
 ms.date: 05/13/2023
-
 ms.author: miepping
 author: mepples21
 manager: 
 ms.reviewer: brianmel
+ms.custom: sfi-image-nochange
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) and configure it to support multiple user login. I want to configure this device for student lab scenarios or similar multi-user Mac scenarios for shared devices.
 ---
 
@@ -36,7 +35,7 @@ There are three main steps for configuring Platform SSO on a shared device:
 
 Your Platform SSO MDM profile should apply the following configurations to support multi-user devices:
 
-| Configuration Paramter | Value(s) | Note |
+| Configuration Parameter | Value(s) | Note |
 |-|-|-|
 | Screen Locked Behavior | Do Not Handle | Required |
 | Registration Token | {{DEVICEREGISTRATION}} | Recommended for the best registration user experience |

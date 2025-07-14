@@ -1,24 +1,24 @@
 ### YamlMime:Hub
 
 ## FRONT MATTER START
-title: Documentation # < 60 chars
+title: Microsoft Entra External ID Documentation 
 summary: >
   Learn how to use Microsoft Entra External ID to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps. 
 brand: azure
 
 metadata:
   title: Microsoft Entra External ID documentation
-  description: Learn how to use Microsoft Entra External ID for all your external identities scenarios, including B2B collaboration for your workforce, and identity and access management for your consumer apps.
+  description: Learn how to use Microsoft Entra External ID for all your external identities scenarios, including B2B collaboration for your workforce and, and identity and access management for your consumer apps.
    
   ms.service: entra-external-id
   ms.subservice:
 
   ms.topic: hub-page
   ms.collection: collection
-  author: msmimart
-  ms.author: mimart
-  ms.date: 04/30/2024
-  ms.custom: seo-july-2024
+  ms.author: cmulligan
+  author: csmulligan
+  ms.date: 05/16/2025
+
 ## FRONT MATTER END
 
 ## BAND 1 - HIGHLIGHTED CONTENT START #############################################################################################################################
@@ -26,45 +26,79 @@ highlightedContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
   items:
     # Card
-    - title: What is Microsoft Entra External ID? 
+    - title: Find the latest in docs
+      itemType: whats-new
+      url: ./whats-new-docs.md
+    # Card
+    - title: Microsoft Entra External ID
       itemType: overview
       url: ./external-identities-overview.md
     # Card
-    - title: "Try the Woodgrove Groceries demo"
-      itemType: get-started
-      url: https://woodgrovedemo.com/      
+    - title: Billing model
+      itemType: concept
+      url: ./external-identities-pricing.md
     # Card
-    - title: "Set up an external tenant in minutes"
-      itemType: quickstart
-      url: ./customers/quickstart-tenant-setup.md
+    - title: Learn from the experts 
+      itemType: video
+      url: https://www.youtube.com/playlist?list=PL3ZTgFEc7Lythpts59O9KOVuEDLWJLLmA
+## BAND 1 - HIGHLIGHTED CONTENT END ###########################################################################################################################
 
+## BAND 2- CONCEPTUAL CONTENT START ##########################################################################################################################
 productDirectory:
   title: Get started
+  summary: Choose your scenario and learn about key features, setup guidance, and best practices for securing external access.
   items:
-    - title: Protect your consumer and business customer identities
+    # Card
+    - title: Manage guest collaboration with your workforce (B2B) 
+      summary: You should choose workforce configuration if you need to manage and secure access for your employees, contractors, and business partners within your organization.
       imageSrc: ./media/index/external-identities-icon.png
-      summary: "As an IT professional, learn how to use External ID as your customer identity and access management (CIAM) solution."
-      url: ./customers/overview-customers-ciam.md
-    - title: Collaborate with business guests
+      links:
+        - url: ./what-is-b2b.md
+          text: What is B2B collaboration with external guests?
+        - url: ./cross-tenant-access-overview.md
+          text: What are cross-tenant access settings?
+        - url: ./external-collaboration-settings-configure.md
+          text: How do I invite guests?
+        - url: ./redemption-experience.md
+          text: How do I accept the invitation?
+        - url: ./self-service-sign-up-user-flow.yml
+          text: How do I use self-service sign-up?
+        - url: ./user-properties.md
+          text: What are the different user types?
+    # Card
+    - title: Manage identity for a consumer app (CIAM)
+      summary: You should choose external configuration if you need to provide secure access for customers or external users interacting with your services.
       imageSrc: ./media/index/b2b-icon.png
-      summary: "Learn how your workforce can work securely with business guests using B2B collaboration."
-      url: what-is-b2b.md
-    - title: Build consumer and business customer apps for External ID
-      imageSrc: ./media/index/identity-platform-icon.png
-      summary: "As a developer, use our tutorials to learn how to integrate your consumer and business customer apps with External ID."
-      url: customers/samples-ciam-all.md?tabs=apptype
+      links:
+        - url: ./customers/overview-customers-ciam.md
+          text: What is External ID in an external tenant?
+        - url: ./customers/overview-solutions-customers.md
+          text: How can I access the demo?
+        - url: ~/identity-platform/quickstart-register-app.md
+          text: How do I register an app?
+        - url: ./customers/samples-ciam-all.md
+          text: What are the app samples and tutorials?
+        - url: ./customers/how-to-user-flow-sign-up-sign-in-customers.md
+          text: How do I create user flows for customers?
+        - url: ./customers/how-to-user-flow-add-application.md
+          text: How do I add my app to the user flow?
+## BAND 2- CONCEPTUAL CONTENT END ##########################################################################################################################
 
-
+## BAND 3 - ADDITIONAL CONTENT ##############################################################################################################################
 additionalContent:
   sections:
     - title: Resources
       items:
-        - title: "Microsoft Entra External ID Developer Center"
-          summary: "Explore code samples, videos, and community links."
+        - title: Microsoft Entra External ID Developer Center
+          summary: Explore code samples, videos, and community links.
           url: https://aka.ms/ciam/dev
-        - title: "Microsoft Entra identity platform blogs"
-          summary: "Read our blog posts for the latest product updates."
-          url: https://devblogs.microsoft.com/identity/
-        - title: "Microsoft Entra External ID video series"
-          summary: "Learn more through our overview and how-to videos."
-          url: https://www.youtube.com/playlist?list=PL3ZTgFEc7Lythpts59O9KOVuEDLWJLLmA
+        - title: Microsoft identity platform
+          summary: Learn how the Microsoft identity platform helps developers create apps that sign in users and access Microsoft APIs, including support for external identities.
+          url: ~/identity-platform/index.yml
+        - title: Microsoft Entra PowerShell
+          summary: Manage your external identities resources programmatically.
+          url: /powershell/entra-powershell
+        - title: Get support for Microsoft Entra ID
+          summary: Explore several options to get help and support for Microsoft Entra ID.
+          url: ~/fundamentals/how-to-get-support.md
+## BAND 3 - ADDITIONAL CONTENT END ##########################################################################################################################

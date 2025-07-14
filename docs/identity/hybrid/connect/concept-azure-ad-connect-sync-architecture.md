@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect Sync: Understanding the architecture - Azure'
 description: This topic describes the architecture of Microsoft Entra Connect Sync and explains the terms used.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 465bcbe9-3bdd-4769-a8ca-f8905abf426d
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/18/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -19,7 +19,7 @@ ms.author: billmath
 This article covers the basic architecture for Microsoft Entra Connect Sync. If you're familiar with earlier identity synchronization technologies, the content of this article might be familiar to you as well. If you're new to synchronization, then this article is for you. It's not a requirement to know the details of this article to be successful in making customizations to Microsoft Entra Connect Sync (called sync engine in this article).
 
 ## Architecture
-The sync engine creates an integrated view of objects that are stored in multiple connected data sources and manages identity information in those data sources. The identity information retrieved from connected data sources determines this integrated view. A set of rules determines how to processes this information.
+The sync engine creates an integrated view of objects that are stored in multiple connected data sources and manages identity information in those data sources. The identity information retrieved from connected data sources determines this integrated view. A set of rules determines how to process this information.
 
 ### Connected Data Sources and Connectors
 The sync engine processes identity information from different data repositories, such as Active Directory or a SQL Server database. Every data repository that organizes its data in a database-like format and that provides standard data-access methods is a potential data source candidate for the sync engine. The data repositories that are synchronized by sync engine are called **connected data sources** or **connected directories** (CD).

@@ -2,11 +2,11 @@
 title: Sign-ins to applications using SAML authentication
 description: Learn about the Microsoft Entra Health signals and alerts for sign-ins to applications that use SAML authentication
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera 
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/03/2025
+ms.date: 06/06/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -29,7 +29,7 @@ There are different roles, permissions, and license requirements to view health 
 - A tenant with a [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) is required to view the Microsoft Entra health scenario monitoring signals.
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role required to view scenario monitoring signals.
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
-- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
+- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#microsoft-entra-health-least-privileged-roles).
 
 ## Investigate the signals
 
@@ -37,7 +37,7 @@ You can view the signal using the Microsoft Entra admin center and the Microsoft
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
-1. Browse to **Identity** > **Monitoring and health** > **Health**. The page opens to the Service Level Agreement (SLA) Attainment page.
+1. Browse to **Entra ID** > **Monitoring & health** > **Health**. The page opens to the Service Level Agreement (SLA) Attainment page.
 
 1. Select the **Health Monitoring** tab.
 

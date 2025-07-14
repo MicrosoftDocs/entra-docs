@@ -1,16 +1,14 @@
 ---
 title: Certificate-based authentication with federation on iOS
 description: Learn about the supported scenarios and the requirements for configuring certificate-based authentication for Microsoft Entra ID in solutions with iOS devices
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ropc-nochange
 ms.topic: conceptual
-ms.date: 01/03/2024
-
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ---
 # Microsoft Entra certificate-based authentication with federation on iOS
 

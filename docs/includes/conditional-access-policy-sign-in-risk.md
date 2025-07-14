@@ -3,12 +3,12 @@ author: joflore
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
-ms.date: 09/17/2024
+ms.date: 02/21/2025
 ms.author: joflore
 ---
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -29,7 +29,7 @@ ms.author: joflore
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
-After administrators confirm the settings using [report-only mode](../identity/conditional-access/howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+[!INCLUDE [conditional-access-report-only-mode](conditional-access-report-only-mode.md)]
 
 ### Passwordless scenarios
 
@@ -52,8 +52,3 @@ For organizations that adopt [passwordless authentication methods](/entra/identi
     1. Select **Sign-in frequency**.
     1. Ensure **Every time** is selected.
     1. Select **Select**.
-
-#### Remediate and unblock passwordless sign-in risk
-
-1. Require administrator [investigation and remediation](/entra/id-protection/howto-identity-protection-investigate-risk) of any risk.
-1. Unblock the user.

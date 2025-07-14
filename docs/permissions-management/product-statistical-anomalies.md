@@ -2,15 +2,18 @@
 title: Create and view statistical anomaly alerts and alert triggers in Permissions Management
 description: How to create and view statistical anomaly alerts and alert triggers in the Statistical Anomaly tab in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 11/21/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Create and view statistical anomaly alerts and alert triggers
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 Statistical anomalies can detect outliers in an identity's behavior if the recent activity is determined to be unusual based on models defined in an activity trigger. The goal of this alert trigger is a high recall rate.
 

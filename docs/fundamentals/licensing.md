@@ -1,11 +1,11 @@
 ---
-title: 'Microsoft Entra licensing'
+title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra
 ms.topic: conceptual
-ms.date: 12/19/2024
+ms.date: 06/20/2025
 ms.subservice: fundamentals
 ms.author: barclayn
 ---
@@ -24,7 +24,7 @@ This article discusses licensing options for the Microsoft Entra product family.
 ## App provisioning
 
 [!INCLUDE [App provisioning](../includes/licensing-app-provisioning.md)]
-
+https://dev.azure.com/msft-skilling/Content/_workitems/edit/438678
 ## Authentication
 
 [!INCLUDE [Authentication](../includes/licensing-authentication.md)]
@@ -47,7 +47,7 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 ## Microsoft Entra Conditional Access
 
-[!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
+[!INCLUDE [Microsoft Entra Conditional Access](../includes/licensing-conditional-access.md)]
 
 ## Microsoft Entra Domain services
 
@@ -68,10 +68,6 @@ Microsoft Entra [External ID](../external-id/external-identities-overview.md) co
 ## Microsoft Entra monitoring and health
 
 [!INCLUDE [Microsoft Entra monitoring and health](../includes/licensing-monitoring-health.md)]
-
-## Microsoft Entra Permissions management
-
-Permissions Management supports all resources across Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform but only requires licenses for [billable resources](../permissions-management/product-data-billable-resources.md).
 
 ## Microsoft Entra Private Access
 
@@ -105,7 +101,6 @@ Microsoft Entra [Workload ID](../workload-id/workload-identities-overview.md) su
 
 [!INCLUDE [features-preview](../includes/licensing-features-preview.md)]
 
-## Next steps
+## Related content
 
 - [Microsoft Entra pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing)
-- [Azure AD B2C pricing](https://azure.microsoft.com/pricing/details/active-directory-b2c/)

@@ -5,12 +5,12 @@ description: Learn about risk detections, risk levels, and how they map to risk 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 01/16/2025
+ms.date: 05/16/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
-ms.reviewer: cokoopma, jaedwards
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
+ms.reviewer: cokoopma
 ---
 # What are risk detections?
 
@@ -243,7 +243,7 @@ Calculated in real-time or offline. This detection indicates that one of the pre
 
 #### Leaked credentials 
 
-Calculated offline. This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [common questions](#common-leaked-credentials-questions). 
+Calculated offline. This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see the [FAQs](id-protection-faq.yml). 
 
 [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections)
 
@@ -253,49 +253,6 @@ Calculated offline. This risk detection type indicates user activity that is unu
 
 [Tips for investigating Microsoft Entra threat intelligence detections.](howto-identity-protection-investigate-risk.md#microsoft-entra-threat-intelligence)
 
-## Common questions 
-
-### What if incorrect credentials were used to attempt to sign-in? 
-
-ID Protection generates risk detections only when the correct credentials are used. If incorrect credentials are used on a sign-in, it doesn't represent risk of credential compromise. 
-
-### Is password hash synchronization required? 
-
-Risk detections like leaked credentials require the presence of password hashes for detection to occur. For more information about password hash synchronization, see the article, [Implement password hash synchronization with Microsoft Entra Connect Sync](../identity/hybrid/connect/how-to-connect-password-hash-synchronization.md). 
-
-### Why are risk detections generated for disabled accounts? 
-
-User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and won't be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
-
-### I tried to sort the Risk detections report using the *Detection time* column, but it's not working
-
-Sorting by *Detection time* in the Risk detections report might not always give the correct result because of a known technical constraint for tenants with over 10,000,000 detections over a 90-day period. To sort by *Detection time*, select **Download** to export the data as a CSV file and sort accordingly.
-
-### Common leaked credentials questions
-
-#### Where does Microsoft find leaked credentials? 
-
-Microsoft finds leaked credentials in various places, including: 
-
-- Public paste sites where bad actors typically post such material.
-- Law enforcement agencies. 
-- Other groups at Microsoft doing dark web research. 
-
-#### Why am I not seeing any leaked credentials? 
-
-Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found **after** you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done. 
-
-#### I don't see any leaked credential risk events
-
-If you don't see any leaked credential risk events, it is because of the following reasons: 
-
-- You don't have PHS enabled for your tenant. 
-- Microsoft didn't find any leaked credential pairs that match your users. 
-
-#### How often does Microsoft process new credentials? 
-
-Credentials are processed immediately after they're found, normally in multiple batches per day. 
-
 ### Locations 
 
 Location in risk detections is determined using IP address lookup. Sign-ins from trusted [named locations](../identity/conditional-access/location-condition.md#trusted-locations) improve the accuracy of Microsoft Entra ID Protection's risk calculation, lowering a user's sign-in risk when they authenticate from a location marked as trusted.
@@ -304,3 +261,4 @@ Location in risk detections is determined using IP address lookup. Sign-ins from
 
 - [Learn about risk-based access policies](concept-identity-protection-policies.md)
 - [Learn how to investigate risk](howto-identity-protection-investigate-risk.md)
+- [Detections FAQs](id-protection-faq.yml#detections)

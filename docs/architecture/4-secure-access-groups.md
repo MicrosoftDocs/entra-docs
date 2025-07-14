@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 02/09/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+ms.custom: sfi-image-nochange
 ---
 
 # Secure external access with groups in Microsoft Entra ID and Microsoft 365
@@ -121,7 +121,7 @@ Use Microsoft Entra security groups to assign:
 
 Learn more:
 
-* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+* [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 * [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md). 
 
 > [!NOTE]

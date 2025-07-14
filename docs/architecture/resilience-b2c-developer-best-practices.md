@@ -7,10 +7,12 @@ ms.topic: how-to
 author: gargi-sinha
 ms.author: gasinh
 manager: martinco
-ms.date: 07/02/2024
+ms.date: 05/20/2025
 ---
 
 # Resilience through developer best practices
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 In this article, you can benefit from our experience working with large customers. You can consider these recommendations for the design and implementation of your services.
 

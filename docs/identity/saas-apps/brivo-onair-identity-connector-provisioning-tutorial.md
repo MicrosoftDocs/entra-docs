@@ -1,32 +1,30 @@
 ---
-title: 'Tutorial: Configure Brivo Onair Identity Connector for automatic user provisioning with Microsoft Entra ID'
+title: Configure Brivo Onair Identity Connector for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Brivo Onair Identity Connector.
-
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Brivo Onair Identity Connector so that I can streamline the user management process and ensure that users have the appropriate access to Brivo Onair Identity Connector.
 ---
 
-# Tutorial: Configure Brivo Onair Identity Connector for automatic user provisioning
+# Configure Brivo Onair Identity Connector for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in Brivo Onair Identity Connector and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Brivo Onair Identity Connector.
+The objective of this article is to demonstrate the steps to be performed in Brivo Onair Identity Connector and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Brivo Onair Identity Connector.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [A Brivo Onair Identity Connector tenant](https://www.brivo.com/lp/quote)
 * A user account in Brivo Onair Identity Connector with Senior Administrator permissions.
 
@@ -39,7 +37,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Brivo Onair Identity Connector
 
-* It is recommended that a single Microsoft Entra user is assigned to Brivo Onair Identity Connector to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Brivo Onair Identity Connector to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Brivo Onair Identity Connector, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -49,11 +47,11 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
    ![Brivo Onair Identity Connector Admin Console](media/brivo-onair-identity-connector-provisioning-tutorial/admin.png)
 
-2. Click on **Microsoft Entra ID** tab. On the **Microsoft Entra ID** details page re-enter the password of your senior administrator account. Click on **Submit**.
+2. Select **Microsoft Entra ID** tab. On the **Microsoft Entra ID** details page re-enter the password of your senior administrator account. Select **Submit**.
 
    ![Brivo Onair Identity Connector azure](media/brivo-onair-identity-connector-provisioning-tutorial/azuread.png)
 
-3. Click on **Copy Token** button and save the **Secret Token**. This value will be entered in the Secret Token field in the Provisioning tab of your Brivo Onair Identity Connector application.
+3. Select **Copy Token** button and save the **Secret Token**. This value is entered in the Secret Token field in the Provisioning tab of your Brivo Onair Identity Connector application.
 
    ![Brivo Onair Identity Connector token](media/brivo-onair-identity-connector-provisioning-tutorial/token.png)
 
@@ -64,7 +62,7 @@ Before configuring Brivo Onair Identity Connector for automatic user provisionin
 **To add Brivo Onair Identity Connector from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Brivo Onair Identity Connector** in the search box.
 1. Select **Brivo Onair Identity Connector** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -77,7 +75,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Brivo Onair Identity Connector in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
     ![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -93,7 +91,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://scim.brivo.com/ActiveDirectory/v2/` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Brivo Onair Identity Connector. If the connection fails, ensure your Brivo Onair Identity Connector account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://scim.brivo.com/ActiveDirectory/v2/` in **Tenant URL**. Input the **SCIM Authentication Token** value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Brivo Onair Identity Connector. If the connection fails, ensure your Brivo Onair Identity Connector account has Admin permissions and try again.
 
     ![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -101,7 +99,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Brivo Onair Identity Connector**.
 
@@ -115,7 +113,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Brivo Onair Identity Connector Group Attributes](media/brivo-onair-identity-connector-provisioning-tutorial/group-attributes.png)
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Brivo Onair Identity Connector, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -125,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
     ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -138,6 +136,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

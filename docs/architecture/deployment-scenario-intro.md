@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra deployment scenarios introduction
-description: The Microsoft Entra deployment scenarios article series provides guidance regarding the Microsoft Entra Suite. 
+title: Microsoft Entra Suite deployment scenarios introduction
+description: The Microsoft Entra Suite deployment scenarios article series provides guidance regarding the Microsoft Entra Suite. 
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -11,9 +11,9 @@ ms.date: 06/13/2024
 
 #CustomerIntent: As a Microsoft Entra customer, I want learn how to configure the Microsoft Entra Suite products so that we can achieve best practices for them working together.
 ---
-# Microsoft Entra deployment scenarios introduction
+# Microsoft Entra Suite deployment scenarios introduction
 
-The Microsoft Entra deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
+The Microsoft Entra Suite deployment scenarios provide you with detailed guidance on how to combine and test these Microsoft Entra Suite products:
 
 - [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md)
 - [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
@@ -34,7 +34,7 @@ The step-by-step solution focuses on Microsoft Entra Verified ID, Microsoft Entr
 
 - Microsoft Entra Verified ID issues and verifies digital identity proofs for remote employees and external users. Digital wallets store identity proofs to verify access to apps and resources. Face Check facial recognition verifies identity with credential-stored pictures.
 - Microsoft Entra ID Governance creates and grants access packages with verifiable credentials. Users request access packages through a self-service portal with digital identity verification. Microsoft Entra accounts regulate access to access package apps and resources with single sign-on and multifactor authentication (MFA).
-- Microsoft Entra ID Protection and Conditional Access (CA) monitor and protect accounts from risky sign-ins and user behavior. Access control enforcement factors in location, device, and risk level.
+- Microsoft Entra ID Protection and Conditional Access monitor and protect accounts from risky sign-ins and user behavior. Access control enforcement factors in location, device, and risk level.
 
 ## Modernize remote access to on-premises apps with MFA per app
 
@@ -45,7 +45,7 @@ The [Modernize remote access to on-premises apps with MFA per app](deployment-sc
 
 The step-by-step solution focuses on Microsoft Entra Private Access, Microsoft Entra ID Protection, and Microsoft Entra ID Governance:
 
-- Microsoft Entra Private Access provides secure access to private corporate resources. It builds on the Microsoft Entra application proxy to extend access to any private resource, independent of TCP/IP port and protocol. Remote users connect to private apps from any device and network without VPN. Per-app adaptive access based on Conditional Access (CA) policies provide granular security based on identity, endpoint, and risk signal.
+- Microsoft Entra Private Access provides secure access to private corporate resources. It builds on the Microsoft Entra application proxy to extend access to any private resource, independent of TCP/IP port and protocol. Remote users connect to private apps from any device and network without VPN. Per-app adaptive access based on Conditional Access policies provide granular security based on identity, endpoint, and risk signal.
 - Microsoft Entra ID Protection cloud-based identity and access management (IAM) protects user identities and credentials from compromise.
 - Microsoft Entra ID Governance enforces least privilege. Access packages include per-app network access alongside applications that require it, granting corporate network access to employees aligned with their job functions across their joiner/mover/leaver lifecycle.
 

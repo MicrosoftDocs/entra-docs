@@ -3856,5 +3856,22 @@
   "Azure Storage" : "e406a681-f3d4-42a8-90b6-c2b029497af1",
   "Power Platform API" : "8578e004-a5c6-46e7-913e-12f58912df43",
   "api.powerplatform.com" : "49676daf-ff23-4aac-adcc-55472d4e2ce0",
-  "Office 365 Groups" : "2f17f077-4175-4d82-b82b-17cd8950b74f"
+  "Office 365 Groups" : "2f17f077-4175-4d82-b82b-17cd8950b74f",
+  "CMS Bulk Operations - site builder app ID" : "3530b95b-aca8-4164-b78e-0c07cbfd0681",
+  "How to configure CPOS link" : "1b41fd96-951d-4f6f-a657-ca59229598df",
+  "Service to Service authentication in AX7 link" : "35a253ca-e72e-4247-8b11-c5a76575a3b3",
+  "Azure Service Fabric" : "d37b07e8-dd1c-4514-835d-8b918e6f9727",
+  "Microsoft Dynamics ERP Microservices" : "0cdb527f-a8d1-4bf8-9436-b352c68682b2",
+  "Dataverse" : "33976c19-1db5-4c02-810e-c243db79efde",
+  "connect from Dataverse to the finance and operations app" : "6f7d0213-62b1-43a8-b7f4-ff2bb8b7b452",
+  "Dual-write data management" : "2e49aa60-1bd3-43b6-8ab6-03ada3d9f08b",
+  "e-Invoicing Service service principal" : "ecd93392-c922-4f48-9ddf-10741e4a9b65",
+  "Electronic invoicing microservices" : "091c98b0-a1c9-4b02-b62c-7753395ccabe",
+  "Dynamics 365 HR Virtual Table" : "f9be0c49-aa22-4ec6-911a-c5da515226ff",
+  "Dayforce People Connector" : "6817703f-e5b3-4eec-b11f-ba6367f1b156",
+  "Dynamics 365 Human Resources" : "f9be0c49-aa22-4ec6-911a-c5da515226ff",
+  "Internet Information Services" : "4dc3e181-e14b-4a21-b022-59fc669b0914",
+  "EXCatalog - Centralized Deployment" : "61bcc63f-b860-4280-8280-3e4fb5ea7726",
+  "Azure Arc-enabled Kubernetes cluster server app ID" : "6256c85f-0aad-4d50-b960-e6e9b21efe35",
+  "Azure Arc-enabled Kubernetes cluster client app ID" : "3f4439ff-e698-4d6d-84fe-09c9d574f06b"
 }

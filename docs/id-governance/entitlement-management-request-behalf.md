@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to 
-ms.date: 09/11/2024
+ms.date: 06/18/2025
 
 #CustomerIntent: As an administrator, I want to set up policies that allow managers to approve access package requests on behalf of their employees, and show show them how they would do act on these policies.
 ---
@@ -41,7 +41,7 @@ Follow these steps to edit the policies, allowing on behalf of requests, for an 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**. 
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**. 
 
 1. Select the access package you want to set up for on behalf of requests.  
 
@@ -61,7 +61,7 @@ As a manager, you can request an access package for a direct report by doing the
 
 1. On the Access packages page, locate the access package you want to request for a direct report and select **Request**.
     
-1. On the Request pane under **Request details** select requesting for **Someone else**.
+1. On the Request pane under **Request details**, select requesting for **Someone else**.
     :::image type="content" source="media/entitlement-management-request-behalf/manager-request-package.png" alt-text="Screenshot of manager requesting access package for direct employee.":::
 1. Fill in additional information needed to request an access package for the direct report.
     :::image type="content" source="media/entitlement-management-request-behalf/manager-request-questions.png" alt-text="Screenshot of justification questions for requesting an access package for a direct report.":::

@@ -1,16 +1,15 @@
 ---
 title: Passwordless security key sign-in to on-premises resources
 description: Learn how to enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/08/2025
-
+ms.date: 04/16/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: calui
+ms.custom: sfi-ga-nochange
 ---
 # Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID 
 
@@ -20,7 +19,7 @@ This topic shows how to enable passwordless authentication to on-premises resour
 
 Microsoft Entra ID can issue Kerberos ticket-granting tickets (TGTs) for one or more of your Active Directory domains. With this functionality, users can sign in to Windows with modern credentials, such as FIDO2 security keys, and then access traditional Active Directory-based resources. Kerberos Service Tickets and authorization continue to be controlled by your on-premises Active Directory domain controllers (DCs).
 
-A Microsoft Entra Kerberos server object is created in your on-premises Active Directory instance and then securely published to Microsoft Entra ID. The object isn't associated with any physical servers. It's simply a resource that can be used by Microsoft Entra ID to generate Kerberos TGTs for your Active Directory domain.
+A Microsoft Entra Kerberos server object is created in your on-premises Active Directory instance and then securely published to Microsoft Entra ID by using Microsoft Entra Connect. The object isn't associated with any physical servers. It's simply a resource that can be used by Microsoft Entra ID to generate Kerberos TGTs for your Active Directory domain.
 
 :::image type="Image" source="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png" alt-text="Diagram showing how to get a TGT from Microsoft Entra ID and Active Directory Domain Services." lightbox="./media/howto-authentication-passwordless-on-premises/fido2-ticket-granting-ticket-exchange-process.png":::
 
@@ -108,7 +107,7 @@ Run the following steps in each domain and forest in your organization that cont
 
 ### Select Azure Cloud (Default is Azure Commercial)
 
-By default the `Set-AzureADKerberosSever` cmdlet will use the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment, you need to set the cmdlet to use the specified cloud.  
+By default the `Set-AzureADKerberosServer` cmdlet will use the Commercial cloud endpoints. If you are configuring Kerberos in another cloud environment, you need to set the cmdlet to use the specified cloud.  
 
 To get a **list** of the available clouds and the numeric value needed to change, run the following:  
 `Get-AzureADKerberosServerEndpoint`  
@@ -129,7 +128,7 @@ _(Example: For US Government Cloud)_
 
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
    > [!Tip]
-   > For Additional information comparing Azure commercial and soverign clouds, See: [Differences between Azure Commercial and Azure Soverign clouds](https://aka.ms/SovCC). 
+   > For Additional information comparing Azure commercial and sovereign clouds, See: [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 
@@ -142,7 +141,7 @@ _(Example: For US Government Cloud)_
    $cloudCred = Get-Credential -Message 'An Active Directory user who is a member of the Hybrid Identity Administrators group for Microsoft Entra ID.'
 
    # Enter a Domain Administrator username and password.
-   $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group.'
+   $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group and an Enterprise Admin for the forest.'
 
    # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
@@ -327,6 +326,13 @@ Make sure that enough DCs are patched to respond in time to service your resourc
 
 > [!NOTE]
 > The `/keylist` switch in the `nltest` command is available in client Windows 10 v2004 and later.
+
+### Is there a maximum number of groups per token for Microsoft Entra Kerberos?
+ 
+Yes, you can have up to 1,010 groups per token.
+
+### How do I resolve `Failed to read secrets` error when running `AzureADHybridAuthenticationManagement` module commands? 
+Temporarily disable [FIPS Policy](/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing). FIPS policy can be re-enabled after performing the steps with the `AzureADHybridAuthenticationManagement` module. If error persists after disabling FIPS policy, ensure account being used has default administrative permissions.
 
 ### Do FIDO2 security keys work in a Windows login with RODC present in the hybrid environment?
 

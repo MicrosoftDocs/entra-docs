@@ -5,21 +5,21 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/06/2025
+ms.date: 06/09/2025
 
 author: justinha
 ms.author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: calui
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 
-Microsoft Entra ID allows passkeys (FIDO2) to be used for multifactor passwordless authentication. This article covers which native applications, web browsers, and operating systems support sign-in using passkey with Microsoft Entra ID.
+This article provides a comprehensive overview of passkey (FIDO2) authentication support in Microsoft Entra ID. It outlines compatibility across web browsers, native apps, and operating systems, enabling passwordless multifactor authentication. You'll also find platform-specific considerations, known issues, and guidance for third-party app and identity provider (IdP) support. Use this information to ensure seamless integration and optimal user experiences with passkeys in your environment.
 
-For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID](howto-authentication-passwordless-security-key-windows.md).
+For more information about how to sign in with FIDO2 security keys on a Windows device, see [Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID](howto-authentication-passwordless-security-key-windows.md).
 
 > [!NOTE]
-> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
+> Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys or in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys, and plans to support synced passkeys for Microsoft Entra ID.
 
 ## [**Web browsers**](#tab/web)
 
@@ -79,16 +79,18 @@ If you registered more than three passkeys, sign in with a passkey might not wor
 
 ## [**Native apps**](#tab/native)
 
-The following section covers support for passkey (FIDO2) authentication in Microsoft and third-party applications with Microsoft Entra ID.
+The next sections cover support for passkey (FIDO2) authentication in Microsoft Entra ID for:
 
-> [!NOTE]
-> Passkey authentication with a third-party Identity Provider (IDP) isn't supported in third-party applications using authentication broker, or Microsoft applications on macOS, iOS, or Android at this time.
+- [Microsoft app support with authentication broker](#microsoft-app-support-with-authentication-broker)
+- [Microsoft app support without authentication broker](#microsoft-app-support-without-authentication-broker)
+- [Third-party app support without authentication broker](#third-party-app-support-without-authentication-broker)
+- [Third-party Identity Provider (IdP) support](#third-party-idp-support)
 
-### Native application support with authentication broker
+### Microsoft app support with authentication broker
 
-Microsoft applications provide native support for passkey authentication for all users who have an authentication broker installed for their operating system. Passkey authentication is also supported for third-party applications using the authentication broker.
+Microsoft apps provide native support for passkey authentication for all users who have an authentication broker installed for their operating system. Passkey authentication is also supported for third-party apps using the authentication broker.
 
-If a user installed an authentication broker, they can choose to sign in with a passkey when they access an application such as Outlook. They're redirected to sign in with passkey, and redirected back to Outlook as a signed in user after successful authentication.
+If a user installed an authentication broker, they can choose to sign in with a passkey when they access an app such as Outlook. They're redirected to sign in with passkey, and redirected back to Outlook as a signed in user after successful authentication.
 
 The following tables lists which authentication brokers are supported for different operating systems.
 
@@ -98,14 +100,14 @@ The following tables lists which authentication brokers are supported for differ
 | **macOS** | Microsoft Intune Company Portal |
 | **Android** | Authenticator, Company Portal, or Link to Windows app |
 
-### Microsoft application support without authentication broker 
+### Microsoft app support without authentication broker 
 
-The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker. Update your apps to the latest version to make sure they work with passkeys.
+The following table lists Microsoft app support for passkey (FIDO2) without an authentication broker. Update your apps to the latest version to make sure they work with passkeys.
 
-| Application    | macOS    | iOS      | Android  |
+| app    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|
-| [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#10060; |
-| [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#10060; |
+| [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#x2705; |
+| [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#x2705; |
 | Microsoft 365 Copilot (Office) | N/A | &#x2705; | &#10060; |
 | Word | &#x2705; | &#x2705; | &#10060; |
 | PowerPoint | &#x2705; | &#x2705; | &#10060; |
@@ -117,9 +119,26 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 | Teams | &#x2705; | &#x2705; | &#10060; |
 | Edge | &#x2705; | &#x2705; | &#10060; |
 
-### Third-party application support without authentication broker
+### Third-party app support without authentication broker
 
-If the user has yet to install an authentication broker, they can still sign in with a passkey when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+If the user has yet to install an authentication broker, they can still sign in with a passkey when they access MSAL-enabled apps. For more information about requirements for MSAL-enabled apps, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+
+### Third-party IdP support 
+
+> [!NOTE]
+> Passkey authentication with a third-party IdP isn't supported in third-party apps using authentication broker, or Microsoft apps on Android, iOS, or macOS at this time.
+
+Microsoft Entra ID doesn't support passkey authentication with a third-party IdP on iOS/macOS. 
+As a workaround, third-party IdPs can implement their own single sign-on (SSO) extension on iOS/macOS devices if they're managed by Mobile Device Management (MDM).
+
+Apple's extensible SSO framework on MDM-managed devices enables identity providers to intercept network requests directed to their URLs. 
+When the SSO extension of the identity provider intercepts a network request, they can implement a custom authentication handshake. 
+This allows them to use a system browser or native Apple APIs for passkey authentication without needing changes in Microsoft applications.
+
+For more information, see the following Apple documentation:
+
+- [ExtensibleSingleSignOn Device Management Profile](https://developer.apple.com/documentation/devicemanagement/extensiblesinglesignon)
+- [Enterprise single sign-on (SSO) API collection](https://developer.apple.com/documentation/authenticationservices/enterprise-single-sign-on-sso?language=objc)
 
 ## Considerations for each platform
 
@@ -140,7 +159,7 @@ If the user has yet to install an authentication broker, they can still sign in 
 #### Android
 - Sign-in with FIDO2 security key to native apps requires Android 13 or later.
 - Sign-in with passkey in Microsoft Authenticator to native apps requires Android 14 or later.
-- Sign-in with Yubico-manufactured FIDO2 security keys with YubiOTP enabled might not work on Samsung Galaxy devices. As a workaround, users can disable YubiOTP and attempt to sign in again.
+- Sign-in with Yubico-manufactured FIDO2 security keys with YubiOTP enabled might not work on Samsung Galaxy devices. As a workaround, users can disable YubiOTP and attempt to sign in again. For more information, see [FIDO issues on Samsung devices](https://support.yubico.com/hc/articles/18801283920156-FIDO-issues-on-Samsung-devices).
 
 ---
 

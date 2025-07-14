@@ -1,13 +1,11 @@
 ---
 title: Configure Verified ID by IDEMIA as your identity verification partner 
-description: This article shows you the steps you need to follow to configure IDEMIA as your identity verification partner
-
+description: This article shows you the steps you need to follow to configure IDEMIA as your identity verification partner.
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: how-to
-ms.date: 12/17/2024
+ms.date: 04/30/2025
 ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
@@ -26,7 +24,7 @@ Before you can continue, you need to meet the following requirements:
    - Register on the IDEMIA Experience Portal where you can create your own Microsoft verifiable credential application with a few steps low code integration. 
 
 >[!IMPORTANT]
->Before you can proceed, you must have already received a URL from IDEMIA. If you have not yet received it, follow up with IDEMIA before you try the steps documented below.
+>Before you can proceed, you must have already received a URL from IDEMIA. If you haven't yet received it, follow up with IDEMIA before you try the steps documented below.
 
 
 ## Scenario description
@@ -44,12 +42,12 @@ After verification, users are issued a reusable identity credential, which exped
 
 To configure IDEMIA as your identity verification proofing solution, follow these steps:
 
-1. In the Microsoft Entra admin center, locate **Verified ID** in the left hand menu and select `Overview`.
-1. Select `Explore` and select `Verification request`.
-1. Choose `Select issuer(s)` and select `Select first issuer`.
-1. Look for `IDEMIA` in the search/select issuers drop down.
-1. Select `VerifiedIdentity` as the credential type.
-1. Select **Add** and then select review.
+1. In the Microsoft Entra admin center, locate **Verified ID** in the left hand menu and select **Overview**.
+1. Select **Explore** and select **Verification request**.
+1. Choose **Select issuer(s)** and select **Select first issuer**.
+1. Look for **IDEMIA** in the search/select issuers drop down.
+1. Select **VerifiedIdentity** as the credential type.
+1. Select **Add** and then select **Review**.
 1. Download the request body and copy/paste the POST API request URL
 
 ## Developer steps

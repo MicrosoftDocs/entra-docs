@@ -8,7 +8,7 @@ ms.subservice: architecture
 ms.topic: conceptual
 ms.date: 7/5/2022
 ms.author: gasinh
-ms.reviewer: ajburnle
+
 ---
 
 # Resource isolation with multiple tenants
@@ -141,9 +141,7 @@ There are limited situations where resource isolation can't meet your requiremen
 
 ### Isolation common usage
 
-A separate identity boundary is typically used for business-critical applications and resources such as customer-facing services. In this scenario, Fabrikam has decided to create a separate tenant for their customer-facing SaaS product to avoid the risk of employee identity compromise affecting their SaaS customers. The following diagram illustrates this architecture:
-
-The FabrikamSaaS tenant contains the environments used for applications that are offered to customers as part of Fabrikam's business model.
+A separate identity boundary is typically used for business-critical applications and resources such as customer-facing services. In this scenario, Fabrikam has decided to create a separate tenant for their customer-facing SaaS product to avoid the risk of employee identity compromise affecting their SaaS customers. The diagram above illustrates the boundary between Fabrikam and FabrikamSaaS. The FabrikamSaaS tenant contains the environments used for applications that are offered to customers as part of Fabrikam's business model.
 
 ### Isolation of directory objects
 

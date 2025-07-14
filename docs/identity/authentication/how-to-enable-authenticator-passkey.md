@@ -1,18 +1,15 @@
 ---
-title: Enable passkeys in Authenticator for Microsoft Entra ID 
+title: Enable passkeys in Authenticator for Microsoft Entra ID
 description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/26/2025
-
-
+ms.date: 06/24/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: mjsantani
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.
 ---
 # Enable passkeys in Authenticator
@@ -34,10 +31,13 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
+> [!NOTE]
+> If you grant the **Require device to be marked as compliant** control as part of a Conditional Access policy, it doesn't block Microsoft Authenticator app access to the UserAuthenticationMethod.Read scope. Authenticator needs access to the UserAuthenticationMethod.Read scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to UserAuthenticationMethod.ReadWrite to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
+
 ## Enable passkeys in Authenticator in the admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab:
    - Set **Allow self-service set up** to **Yes**. If it's set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.
@@ -57,11 +57,7 @@ To learn more about FIDO2 support, see [Support for FIDO2 authentication with Mi
     > [!NOTE]
     > Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows don't support registration of attested passkeys.
 
-   - **Key restrictions** set the usability of specific passkeys for both registration and authentication. You can set **Enforce key restrictions** to **No** to allow users to register any supported passkey, including passkey registration directly in the Authenticator app.
-   
-     You can set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. Until mid-February, [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** so that users can choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users navigating to SecurityInfo might still be able to add a passkey in Authenticator by choosing the **Security key or passkey** method, depending on their operating system and browser. However, we don't expect many users to discover and use that method.
-
-     If you enforce key restrictions and already have active passkey usage, you should collect the AAGUIDs of the passkeys being used today. You can use a PowerShell script to find AAGUIDs that are used in your tenant. For more information, see [Find AAGUIDs](#find-aaguids).
+   - **Key restrictions** set the usability of specific passkeys for both registration and authentication. You can set **Enforce key restrictions** to **No** to allow users to register any supported passkey, including passkey registration directly in the Authenticator app. If you set **Enforce key restrictions** to **Yes** and already have active passkey usage, you should collect and add the AAGUIDs of the passkeys being used today. 
 
      If you set **Restrict specific keys** to **Allow**, select **Microsoft Authenticator** to automatically add the Authenticator app AAGUIDs to the key restrictions list. You can also manually add the following AAGUIDs to allow users to register passkeys in Authenticator by signing in to the Authenticator app or by going through a guided flow on **Security info**:
 
@@ -185,7 +181,7 @@ If a user deletes a passkey in Authenticator, the passkey is also removed from t
 To make users sign in with a passkey when they access a sensitive resource, use the built-in phishing-resistant authentication strength, or create a custom authentication strength by following these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive name for your new authentication strength.
 1. Optionally, provide a description.

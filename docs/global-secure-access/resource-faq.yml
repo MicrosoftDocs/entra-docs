@@ -4,11 +4,12 @@ metadata:
   description: Frequently asked questions for Global Secure Access.
   author: kenwith
   ms.author: kenwith
-  manager: amycolannino
+  manager: dougeby
   ms.service: global-secure-access
   ms.topic: faq
   ms.date: 08/03/2024
   ms.custom: references_regions
+  ai-usage: ai-assisted
 title: Global Secure Access Frequently asked questions
 summary: |
   Frequently asked questions related to Microsoft Entra Internet Access and Microsoft Entra Private Access, which are part of Global Secure Access.
@@ -47,9 +48,8 @@ sections:
             How do we assure no Microsoft engineer (or someone pretending to be one) can make a call to one of customer's applications?
           answer: |
             There are two safeguards for this that exist today:
-              - Every network flow that comes to the Connector must come with a valid token for an Entra 3P app.  In addition, the destination can be only one of the app segments configured in this 3P app.  The network tunnel that connects the Connector to our service in the Cloud needs this app token for every network flow to the Connector for the Connector to receive the traffic.   Thus, even if some Microsoft engineer were to try to send the traffic to the Connector, without this valid token, this traffic won't be delivered to the Connector.   
-              - Unlike App Proxy, where the communication between Connector and backend service was an https transaction, the network communication with Global Secure Access between Connector and Service is a mTLS tunnel which uses a service pinned certificate.   This means that, unlike app proxy, the traffic between our Service and Connector is not open for B&I and prevents MiTM (Man-in-the-Middle) attacks.
-
+              - Authentication and authorization are performed for all Private Access Scenarios. Every network flow that comes to the Connector must come with a valid token for an Entra 3P app.  In addition, the destination can be only one of the app segments configured in this 3P app.  The network tunnel that connects the Connector to our service in the Cloud needs this app token for every network flow to the Connector for the Connector to receive the traffic.   Thus, even if some Microsoft engineer were to try to send the traffic to the Connector, without this valid token, this traffic won't be delivered to the Connector.   
+              - The communication between Connector and Private Access cloud Infrastructure with Global Secure Access is encrypted and authenticated using TLS tunnels which uses a service pinned certificate.   This means that the traffic between our Service and Connector is not open for B&I and prevents MiTM (Man-in-the-Middle) attacks.
   - name: Remote networks
     questions:
         - question: |

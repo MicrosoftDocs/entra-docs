@@ -3,13 +3,13 @@ title: 'Microsoft Entra Connect: Features in preview'
 description: This topic describes in more detail features which are in preview in Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: c75cd8cf-3eff-4619-bbca-66276757cc07
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/20/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 

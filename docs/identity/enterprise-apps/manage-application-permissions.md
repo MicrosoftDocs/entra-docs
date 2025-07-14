@@ -1,19 +1,19 @@
 ---
-title: Review permissions granted to applications
+title: Review permissions granted to enterprise applications
 description: Learn how to review and revoke permissions, and invalidate refresh tokens for an application in Microsoft Entra ID.
 
-author: Jackson-Woods
-manager: CelesteDG
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 10/03/2024
-ms.author: jawoods
+ms.date: 03/03/2025
+ms.author: jomondi
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-all
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, no-azure-ad-ps-ref
 
 #customer intent: As an IT admin, I want to review and revoke permissions granted to applications in my Microsoft Entra tenant, so that I can ensure that only necessary permissions are granted and prevent malicious applications from accessing sensitive data.
 ---
@@ -28,9 +28,11 @@ The steps in this article apply to all applications that were added to your Micr
 
 To review permissions granted to applications, you need:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator.
-- A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
+- A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- One of the following roles:
+  - Cloud Application Administrator
+  - Application Administrator.
+  - A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
 
 :::zone pivot="portal"
 
@@ -44,7 +46,7 @@ For information on how to restore revoked or deleted permissions, see [Restore p
 To review an application's permissions granted for the entire organization or to a specific user or group:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the application that you want to restrict access to.
 1. Select **Permissions**. 
 1. To view permissions that apply to your entire organization, select the **Admin consent** tab. To view permissions granted to a specific user or group, select the **User consent** tab.
@@ -62,51 +64,57 @@ To revoke permissions in the **Admin consent** tab:
 
 :::zone-end
 
-:::zone pivot="aad-powershell"
+:::zone pivot="entra-powershell"
 
-## Review and revoke permissions using Azure AD PowerShell
+## Review and revoke permissions using Microsoft Entra PowerShell
 
-Use the following Azure AD PowerShell script to revoke all permissions granted to an application. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+Use the following Microsoft Entra PowerShell script to revoke all permissions granted to an application. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
-Connect-AzureAD 
+Connect-Entra -scopes "Application.ReadWrite.All", "DelegatedPermissionGrant.ReadWrite.All", "AppRoleAssignment.ReadWrite.All" 
 
 # Get Service Principal using objectId
-$sp = Get-AzureADServicePrincipal -ObjectId "<ServicePrincipal objectID>"
+$app_name = "<app-displayName>"
+$sp = Get-EntraServicePrincipal -Filter "displayName eq '$app_name'"
 
 # Get all delegated permissions for the service principal
-$spOAuth2PermissionsGrants = Get-AzureADOAuth2PermissionGrant -All $true| Where-Object { $_.clientId -eq $sp.ObjectId }
+$spOAuth2PermissionsGrants = Get-EntraOAuth2PermissionGrant -All | Where-Object { $_.clientId -eq $sp.ObjectId }
 
-# Remove all delegated permissions
+# Remove all delegated permissions granted to the service principal
 $spOAuth2PermissionsGrants | ForEach-Object {
-    Remove-AzureADOAuth2PermissionGrant -ObjectId $_.ObjectId
+    Remove-EntraOAuth2PermissionGrant -ObjectId $_.ObjectId
 }
 
 # Get all application permissions for the service principal
-$spApplicationPermissions = Get-AzureADServiceAppRoleAssignedTo -ObjectId $sp.ObjectId -All $true | Where-Object { $_.PrincipalType -eq "ServicePrincipal" }
+$spApplicationPermissions = Get-EntraServicePrincipalAppRoleAssignment -ObjectId $sp.ObjectId -All | Where-Object { $_.PrincipalType -eq "ServicePrincipal" }
 
 # Remove all application permissions
 $spApplicationPermissions | ForEach-Object {
-    Remove-AzureADServiceAppRoleAssignment -ObjectId $_.PrincipalId -AppRoleAssignmentId $_.objectId
+    Remove-EntraServicePrincipalAppRoleAssignment -ObjectId $_.PrincipalId -AppRoleAssignmentId $_.objectId
 }
 ```
 
-## Invalidate the refresh tokens using Azure AD PowerShell
+## Remove all user and group assignments using Microsoft Entra PowerShell
 
-Remove appRoleAssignments for users or groups to the application using the following scripts.
+Remove appRoleAssignments for users or groups to the application using the following scripts. 
 
 ```powershell
-Connect-AzureAD
+connect-entra -scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
+#Retrieve the service principal object ID.
+$app_name = "<Your App's display name>"
+$sp = Get-EntraServicePrincipal -Filter "displayName eq '$app_name'"
+$sp.ObjectId
 
-# Get Service Principal using objectId
-$sp = Get-AzureADServicePrincipal -ObjectId "<ServicePrincipal objectID>"
+# Get Microsoft Entra App role assignments using objectId of the Service Principal
+$assignments = Get-EntraServicePrincipalAppRoleAssignedTo -ObjectId $sp.ObjectId -All $true
 
-# Get Azure AD App role assignments using objectID of the Service Principal
-$assignments = Get-AzureADServiceAppRoleAssignment -ObjectId $sp.ObjectId -All $true | Where-Object {$_.PrincipalType -eq "User"}
-
-# Revoke refresh token for all users assigned to the application
+# Remove all users and groups assigned to the application
 $assignments | ForEach-Object {
-    Revoke-AzureADUserAllRefreshToken -ObjectId $_.PrincipalId
+    if ($_.PrincipalType -eq "User") {
+        Remove-EntraUserAppRoleAssignment -ObjectId $_.PrincipalId -AppRoleAssignmentId $_.ObjectId
+    } elseif ($_.PrincipalType -eq "Group") {
+        Remove-EntraGroupAppRoleAssignment -ObjectId $_.PrincipalId -AppRoleAssignmentId $_.ObjectId
+    }
 }
 ```
 :::zone-end
@@ -142,7 +150,7 @@ Remove-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $Sp.Id  -AppRoleA
 }
 ``` 
 
-## Invalidate the refresh tokens using Microsoft Graph PowerShell
+## Remove all user and group assignments using Microsoft Graph PowerShell
 
 Remove appRoleAssignments for users or groups to the application using the following scripts.
 
@@ -154,7 +162,7 @@ $sp = Get-MgServicePrincipal -ServicePrincipalID "<ServicePrincipal objectID>"
 
 Example: Get-MgServicePrincipal -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222'
 
-# Get Azure AD App role assignments using objectID of the Service Principal
+# Get Microsoft Entra App role assignments using objectID of the Service Principal
 $spApplicationPermissions = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalID $sp.Id -All | Where-Object { $_.PrincipalType -eq "ServicePrincipal" }
   
 # Revoke refresh token for all users assigned to the application
@@ -217,7 +225,7 @@ Run the following queries to review application permissions granted to an applic
     DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{resource-servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}
     ```
 
-## Invalidate the refresh tokens using Microsoft Graph
+## Remove all user and group assignments using Microsoft Graph
 
 Run the following queries to remove appRoleAssignments of users or groups to the application.
 
@@ -244,13 +252,13 @@ Run the following queries to remove appRoleAssignments of users or groups to the
 :::zone-end
 
 > [!NOTE]
-> Revoking the current granted permission won't stop users from re-consenting to the application's requested permissions. You need to [stop the application from requesting the permissions through dynamic consent](~/identity-platform/howto-update-permissions.md). If you want to block users from consenting altogether, read [Configure how users consent to applications](configure-user-consent.md).
+> Revoking the current granted permission doesn't stop users from re-consenting to the application's requested permissions. You need to [stop the application from requesting the permissions through dynamic consent](~/identity-platform/howto-update-permissions.md). If you want to block users from consenting altogether, read [Configure how users consent to applications](configure-user-consent.md).
 
 ## Other authorization to consider
 
 Delegated and application permissions aren't the only ways to grant applications and users access to protected resources. Admins should be aware of other authorization systems that might grant access to sensitive information. Examples of various authorization systems at Microsoft include [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Exchange RBAC](/exchange/permissions-exo/application-rbac), and [Teams resource-specific consent](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
 
-## Next steps
+## Related content
 
 - [Configure user consent setting](configure-user-consent.md)
 - [Configure admin consent workflow](configure-admin-consent-workflow.md)

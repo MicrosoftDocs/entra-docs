@@ -1,17 +1,15 @@
 ---
 title: Self-service password reset policies
 description: Learn about the different Microsoft Entra self-service password reset policy options
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
-
+ms.date: 05/15/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: tilarso
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
 # Password policies and account restrictions in Microsoft Entra ID
 
@@ -29,7 +27,7 @@ The following table outlines the username policies that apply to both on-premise
 
 | Property | UserPrincipalName requirements |
 | --- | --- |
-| Characters allowed |A – Z<br>a - z<br>0 – 9<br>' \. - \_ ! \# ^ \~ |
+| Characters allowed |A-Z<br>a-z<br>0-9<br>' \. - \_ ! \# ^ \~ |
 | Characters not allowed |Any "\@\" character that's not separating the username from the domain.<br>Can't contain a period character "." immediately preceding the "\@\" symbol |
 | Length constraints |The total length must not exceed 113 characters<br>There can be up to 64 characters before the "\@\" symbol<br>There can be up to 48 characters after the "\@\" symbol |
 
@@ -45,13 +43,16 @@ The following Microsoft Entra password policy options are defined. Unless noted,
 
 | Property | Requirements |
 | --- | --- |
-| Characters allowed |A – Z<br>a - z<br>0 – 9<br>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ' , . ? / \` ~ " ( ) ; < ><br>Blank space |
+| Characters allowed |A-Z<br>a-z<br>0-9<br>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ' , . ? / \` ~ " ( ) ; < ><br>Blank space |
 | Characters not allowed | Unicode characters |
 | Password restrictions |A minimum of 8 characters and a maximum of 256 characters.<br>Requires three out of four of the following types of characters:<br>- Lowercase characters<br>- Uppercase characters<br>- Numbers (0-9)<br>- Symbols (see the previous password restrictions) |
-| Password expiry duration (Maximum password age) |Default value: **90** days. If the tenant was created after 2021, it has no default expiration value. You can check current policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph module for PowerShell.|
+| Password expiry duration (Maximum password age) |Default value: **No expiration**. If the tenant was created before 2021, it has a **90** day expiration value by default. You can check current policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph module for PowerShell.|
 | Password expiry (Let passwords never expire) |Default value: **false** (indicates that passwords have an expiration date).<br>The value can be configured for individual user accounts by using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) cmdlet. |
 | Password change history | The last password *can't* be used again when the user changes a password. |
 | Password reset history | The last password *can* be used again when the user resets a forgotten password. |
+
+> [!IMPORTANT]
+> The password change history applies to password writeback. For users in the cloud only, reset password for Entra ID doesn't have the user's old password and can't check for or prevent password reuse.
 
 If you enable *EnforceCloudPasswordPolicyForPasswordSyncedUsers*, the Microsoft Entra password policy applies to user accounts synchronized from on-premises using Microsoft Entra Connect. In addition, if a user changes a password on-premises to include a unicode character, the password change may succeed on-premises but not in Microsoft Entra ID. If password hash synchronization is enabled with Microsoft Entra Connect, the user can still receive an access token for cloud resources. But if the tenant enables [User risk-based password change](~/identity/conditional-access/policy-risk-based-user.md), the password change is reported as high risk. 
 
@@ -81,7 +82,7 @@ A two-gate policy applies in the following circumstances:
   * Billing Administrator
   * Compliance Administrator
   * Cloud Device Administrator
-  * Directory Synchronization Accounts
+  * Directory Synchronization Accounts (an admin role assigned to the Microsoft Entra Connect service)
   * Directory Writers
   * Dynamics 365 Administrator
   * Exchange Administrator
@@ -114,7 +115,7 @@ A two-gate policy applies in the following circumstances:
 
 * Microsoft Entra Connect synchronizes identities from your on-premises directory
 
-You can disable the use of SSPR for administrator accounts using the [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) PowerShell cmdlet. The `-AllowedToUseSspr:$true|$false ` parameter enables/disables SSPR for administrators. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect. 
+You can disable the use of SSPR for administrator accounts using the [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/update-mgpolicyauthorizationpolicy) PowerShell cmdlet. The `-AllowedToUseSspr:$true|$false` parameter enables/disables SSPR for administrators. Policy changes to enable or disable SSPR for administrator accounts can take up to 60 minutes to take effect. 
 
 ### Exceptions
 
@@ -203,4 +204,4 @@ After the module is installed, use the following steps to complete each task as 
 
 To get started with SSPR, see [Tutorial: Enable users to unlock their account or reset passwords using Microsoft Entra self-service password reset](tutorial-enable-sspr.md).
 
-If you or users have problems with SSPR, see [Troubleshoot self-service password reset](./troubleshoot-sspr.md)
+If you or users have problems with SSPR, see [Troubleshoot self-service password reset](./troubleshoot-sspr.md).

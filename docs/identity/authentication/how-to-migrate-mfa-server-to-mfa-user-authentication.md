@@ -5,7 +5,7 @@ description: Guidance to move from MFA Server on-premises to Microsoft Entra mul
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/25/2024
+ms.date: 03/04/2025
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco

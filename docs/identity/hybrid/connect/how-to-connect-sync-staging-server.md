@@ -1,18 +1,16 @@
 ---
 title: 'Microsoft Entra Connect Sync: Operational tasks and considerations'
 description: This topic describes operational tasks for Microsoft Entra Connect Sync and how to prepare for operating this component.
-
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: b29c1790-37a3-470f-ab69-3cee824d220d
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 12/26/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
-
-
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Connect: Staging server and disaster recovery
@@ -36,7 +34,7 @@ During installation, you can select the server to be in **staging mode**. This a
 
 You can still force an export by using the synchronization service manager.
 
-A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure. If you make configuration changes to your primary server, it's your responsibility to make the same changes to the server in staging mode.
+A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure.
 
 For those of you with knowledge of older sync technologies, the staging mode is different since the server has its own SQL database. This architecture allows the staging mode server to be located in a different datacenter.
 
@@ -53,18 +51,19 @@ To apply this method, follow these steps:
 #### Prepare
 
 1. Install Microsoft Entra Connect, select **staging mode**, and unselect **start synchronization** on the last page in the installation wizard. This mode allows you to run the sync engine manually.
- ![Screenshot shows the Ready to configure page in the Microsoft Entra Connect dialog box.](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
+![Screenshot shows the Ready to configure page in the Microsoft Entra Connect dialog box.](./media/how-to-connect-sync-staging-server/readytoconfigure.png)
 2. Sign off/sign in and from the start menu select **Synchronization Service**.
 
 #### Configuration
 
-If you made custom changes to the primary server and want to compare the configuration with the staging server, then use [Microsoft Entra Connect configuration documenter](https://github.com/Microsoft/AADConnectConfigDocumenter).
+ If you make configuration changes to your primary server, it's your responsibility to make the same changes to the server in staging mode.
 
 #### Import and Synchronize
 
 1. Select **Connectors**, and select the first Connector with the type **Active Directory Domain Services**. Select **Run**, select **Full import**, and **OK**. Do these steps for all Connectors of this type.
 2. Select the Connector with type **Microsoft Entra ID (Microsoft)**. Select **Run**, select **Full import**, and **OK**.
-3. Make sure the tab Connectors is still selected. For each Connector with type **Active Directory Domain Services**, select **Run**, select **Delta Synchronization**, and **OK**.
+1. Make sure the tab Connectors is still selected. For each Connector with type **Active Directory Domain Services**, select **Run**, select **Delta Synchronization**, and **OK**. Do these steps for all Connectors of this type.
+
 4. Select the Connector with type **Microsoft Entra ID (Microsoft)**. Select **Run**, select **Delta Synchronization**, and **OK**.
 
 You've now staged export changes to Microsoft Entra ID and on-premises AD (if you're using Exchange hybrid deployment). The next steps allow you to inspect what is about to change before you actually start the export to the directories.
@@ -89,8 +88,8 @@ Most of the file is self-explanatory. Some abbreviations to understand the conte
 The export.csv file contains all changes that are about to be exported. Each row corresponds to a change for an object in the connector space and the object is identified by the DN attribute. The DN attribute is a unique identifier assigned to an object in the connector space. When you have many rows/changes in the export.csv to analyze, it may be difficult for you to figure out which objects the changes are for based on the DN attribute alone. To simplify the process of analyzing the changes, use the `csanalyzer.ps1` PowerShell script. The script retrieves common identifiers (for example, displayName, userPrincipalName) of the objects. To use the script:
 1. Copy the PowerShell script from the section [CSAnalyzer](#appendix-csanalyzer) to a file named `csanalyzer.ps1`.
 2. Open a PowerShell window and browse to the folder where you created the PowerShell script.
-3. Run: `.\csanalyzer.ps1 -xmltoimport %temp%\export.xml`.
-4. You now have a file named **processedusers1.csv** that can be examined in Microsoft Excel. Note that the file provides a mapping from the DN attribute to common identifiers (for example, displayName and userPrincipalName). It currently doesn't include the actual attribute changes that are about to be exported.
+1. Run: `.\csanalyzer.ps1 -Path %temp%\export.xml`.
+1. You now have a file or multiple files named `processedbatch[n].csv` (where `[n]` is the number of the batch, for example `processedbatch1.csv`) that can be examined in Microsoft Excel. Note that the file provides a mapping from the DN attribute to common identifiers (for example, displayName and userPrincipalName). It currently doesn't include the actual attribute changes that are about to be exported.
 
 #### Switch active server
 
@@ -124,23 +123,23 @@ We need to ensure that only one Sync Server is syncing changes at any given time
 
 1. For the currently active Microsoft Entra Connect server, open the Microsoft Entra Connect wizard and select "Configure staging mode" then Next: 
 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Staging Mode highlighted in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-menu.png)
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Staging Mode highlighted in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-menu.png)
 
 2. You need to sign into Microsoft Entra ID with Hybrid Identity Administrator credentials: 
 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Sign in prompt in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-sign-in.png)
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Sign in prompt in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-sign-in.png)
 
 3. Tick the box for Staging Mode and select Next: 
 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Staging Mode configuration in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-staging-mode.png)
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Staging Mode configuration in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-staging-mode.png)
 
 4. The Microsoft Entra Connect server checks for installed components and then prompt you whether you want to start the sync process when the configuration change completes: 
 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Ready to Configure screen in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-config.png) 
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Ready to Configure screen in the Active Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/active-server-config.png) 
 
 Since the server is in staging mode, it won't write changes to Microsoft Entra ID, but retains any changes to the AD in its Connector Space, ready to write them. 
 It's recommended to leave the sync process on for the server in Staging Mode, so if it becomes active, it will quickly take over and won't have to do a large sync to catch up to the current state of the Active Directory / Microsoft Entra objects in scope.
@@ -164,14 +163,17 @@ From the results, verify the value of the "StagingModeEnabled" setting. If the s
 #### Change current Staging Sync server to active mode
 
 At this point, all of our Microsoft Entra Connect Sync Servers should be in Staging Mode and not exporting changes.
+> [!WARNING]
+> Switching an Entra Connect server to active mode while it is using Password Writeback, and another Entra Connect server is still active, will disrupt the service bus communication of the latter as only one active server can utilize Password Writeback at a time.
+
 We can now move our Staging Sync Server to Active mode and actively sync changes.
 
 1. Now move to the Microsoft Entra Connect server that was originally in Staging Mode and open the Microsoft Entra Connect wizard. 
 
  Select "Configure staging mode" and select Next: 
 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Staging Mode highlighted in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-menu.png) 
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Staging Mode highlighted in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-menu.png) 
 
  The message at the bottom of the wizard indicates this server is in Staging Mode.
 
@@ -179,8 +181,8 @@ We can now move our Staging Sync Server to Active mode and actively sync changes
 
  Untick the box for Staging Mode and select Next. 
 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Staging Mode configuration in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-staging-mode.png) 
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Staging Mode configuration in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-staging-mode.png) 
 
  As per the warning on this page, it's important to ensure no other Microsoft Entra Connect server is actively syncing. 
 
@@ -188,18 +190,18 @@ We can now move our Staging Sync Server to Active mode and actively sync changes
 
 3. When you're prompted to start the sync process, tick this box and select Configure: 
 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Ready to Configure screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-config.png)
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Ready to Configure screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-config.png)
 
 4. Once the process is finished you should get the below confirmation screen where you can select Exit to finish: 
 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Confirmation screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-confirmation.png)
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Confirmation screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-confirmation.png)
 
-5. You can confirm that this process is working by opening the Sync Service Console and checking if Export jobs are running:
- 
- > [!div class="mx-imgBorder"]
- > ![Screenshot shows Sync Service console on the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-sync-server-mgmr.png)
+1. You can confirm that this process is working by opening the Sync Service Console and checking if Export steps are running:
+
+> [!div class="mx-imgBorder"]
+> ![Screenshot shows Sync Service console on the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-sync-server-mgmr.png)
 
 ## Disaster recovery
 
@@ -222,6 +224,8 @@ If you don't use the built-in SQL Express database, then you should also review 
 A viable strategy is to plan for a server rebuild when needed. Usually, installing the sync engine and do the initial import and sync can be completed within a few hours. If there isn’t a spare server available, it's possible to temporarily use a domain controller to host the sync engine.
 
 The sync engine server doesn't store any state about the objects so the database can be rebuilt from the data in Active Directory and Microsoft Entra ID. The **sourceAnchor** attribute is used to join the objects from on-premises and the cloud. If you rebuild the server with existing objects on-premises and the cloud, then the sync engine matches those objects together again on reinstallation. The things you need to document and save are the configuration changes made to the server, such as filtering and synchronization rules. These custom configurations must be reapplied before you start synchronizing.
+
+You can also rebuild a server using the [Import and export Microsoft Entra Connect configuration](/entra/identity/hybrid/connect/how-to-connect-import-export-config) method, so make sure you have a backup of an up-to-date export of the server configuration.
 
 ### Have a spare standby server - staging mode
 
@@ -357,8 +361,8 @@ if($result)
    Write-Host Hit the maximum users processed without completion... -ForegroundColor Yellow
 
    #export the collection of users as a CSV
-   Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
-   $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
+   Write-Host Writing processedbatch${outputfilecount}.csv -ForegroundColor Yellow
+   $objOutputUsers | Export-Csv -path processedbatch${outputfilecount}.csv -NoTypeInformation
 
    #increment the output file counter
    $outputfilecount+=1
@@ -380,8 +384,8 @@ if($result)
 
  #need to write out any users that didn't get picked up in a batch of 1000
  #export the collection of users as CSV
- Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
- $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
+ Write-Host Writing processedbatch${outputfilecount}.csv -ForegroundColor Yellow
+ $objOutputUsers | Export-Csv -path processedbatch${outputfilecount}.csv -NoTypeInformation
 }
 else
 {

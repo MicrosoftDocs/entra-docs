@@ -2,11 +2,11 @@
 title: How to configure Microsoft Entra diagnostic settings
 description: Learn how to configure Microsoft Entra diagnostic settings to integrate activity logs with SIEM tools.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/08/2024
+ms.date: 06/16/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -33,7 +33,7 @@ To configure diagnostic settings, you need:
 This article provides the steps to access diagnostic settings for the Microsoft Entra logs. If you need to configure diagnostic settings for Azure Monitor or Azure resources outside of Microsoft Entra ID, see [Diagnostic settings in Azure Monitor](/azure/azure-monitor/essentials/diagnostic-settings).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Diagnostic settings**. The **General** settings appear by default.
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**. The **General** settings appear by default.
 1. Any existing diagnostic settings appear in the table. Select **edit settings** to change an existing setting, or select **Add diagnostic setting** to create a new setting.
 
     ![Screenshot of the Microsoft Entra diagnostic settings page.](media/howto-configure-diagnostic-settings/diagnostic-settings-start.png)
@@ -83,14 +83,13 @@ For details on configuring diagnostic settings for a specific destination, see t
 
 The basic steps for configuring diagnostics settings are as follows:
 
+> [!NOTE]
+> It might take up to three days for the logs to start appearing in the destination.
+
 1. To create a new diagnostic setting, select **Add diagnostic setting**.
 1. Provide a name.
 1. Select the logs you want to include.
-1. Select the destination.
-1. Select the subscription and the destination from the dropdown menus that appear.
+1. Select the destination and subscription from the dropdown menus that appear.
 1. Select the **Save** button.
 
     ![Screenshot of the create diagnostic settings page, with several logs selected to go to a Log Analytics workspace.](media/howto-configure-diagnostic-settings/diagnostic-settings-save.png)
-
-> [!NOTE]
-> It might take up to three days for the logs to start appearing in the destination.

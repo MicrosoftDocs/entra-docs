@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with Parallels Desktop
+title: Configure Parallels Desktop for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Parallels Desktop.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Parallels Desktop so that I can control who has access to Parallels Desktop, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Parallels Desktop
+# Configure Parallels Desktop for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Parallels Desktop with Microsoft Entra ID. SSO/SAML authentication for employees to use Parallels Desktop. Enable your employees to sign in and activate Parallels Desktop with a corporate account. When you integrate Parallels Desktop with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Parallels Desktop with Microsoft Entra ID. SSO/SAML authentication for employees to use Parallels Desktop. Enable your employees to sign in and activate Parallels Desktop with a corporate account. When you integrate Parallels Desktop with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Parallels Desktop.
 * Enable your users to be automatically signed-in to Parallels Desktop with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Parallels Desktop** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Parallels Desktop** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -75,7 +75,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://account.parallels.com/webapp/sso/acs/<ID>`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL. Please note the Identifier and Reply URL values are customer specific and should be able to specify it manually by copying it from Parallels My Account to the identity provider Azure. Contact [Parallels Desktop support team](https://www.parallels.com/support/) for any help. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier and Reply URL. Please note the Identifier and Reply URL values are customer specific and should be able to specify it manually by copying it from Parallels My Account to the identity provider Azure. Contact [Parallels Desktop support team](https://www.parallels.com/support/) for any help. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
     c. In the **Sign on URL** textbox, type the URL:-
     `https://my.parallels.com/login?sso=1`
@@ -94,23 +94,23 @@ To configure single sign-on on **Parallels Desktop** side, follow the latest ver
 
 ### Create Parallels Desktop test user
 
-Add existing user accounts to the Admin or User groups on the Microsoft Entra ID side, following Parallels's Azure SSO setup guide that can be found on [this page](https://kb.parallels.com/en/129240). When a user account gets deactivated following their departure from the organization, that is immediately reflected in the user count of the Parallels's product license.
+Add existing user accounts to the Admin or User groups on the Microsoft Entra ID side, following Parallels's Azure SSO setup guide that can be found on [this page](https://kb.parallels.com/en/129240). When a user account gets deactivated following their departure from the organization, that's immediately reflected in the user count of the Parallels's product license.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Parallels Desktop Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Parallels Desktop Sign-on URL where you can initiate the login flow. 
 
 * Go to Parallels Desktop Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Parallels Desktop tile in the My Apps, this will redirect to Parallels Desktop Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Parallels Desktop tile in the My Apps, this option redirects to Parallels Desktop Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Parallels Desktop you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

@@ -1,16 +1,15 @@
 ---
 title: Assign sensitivity labels to groups
 description: Learn how to assign sensitivity labels to groups. See troubleshooting information and view more resources.
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 01/14/2025
+ms.date: 03/25/2025
 ms.author: barclayn
 ms.reviewer: krbain
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID
@@ -180,13 +179,9 @@ Your group is created and the site and group settings associated with the select
 1. Select **Remove**.
 1. Select **Save** to apply your changes.
 
-<a name='using-classic-azure-ad-classifications'></a>
-
 ## Use classic Microsoft Entra classifications
 
-After you enable this feature, the "classic" classifications for groups appear only on existing groups and sites. You should use them for new groups only if you create groups in apps that don't support sensitivity labels. Your admin can convert them to sensitivity labels later, if needed. Classic classifications are the old classifications you set up by defining values for the `ClassificationList` setting in Azure AD PowerShell. When this feature is enabled, those classifications aren't applied to groups.
-
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+After you enable this feature, the "classic" classifications for groups appear only on existing groups and sites. You should use them for new groups only if you create groups in apps that don't support sensitivity labels. Your admin can convert them to sensitivity labels later, if needed. Classic classifications are the old classifications you set up previously. When this feature is enabled, those classifications aren't applied to groups.
 
 ## Troubleshooting issues
 
@@ -235,5 +230,5 @@ If you must make a change, use a [PowerShell script](https://github.com/microsof
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
-- [Edit your group settings](~/fundamentals/how-to-manage-groups.yml)
+- [Edit your group settings](/entra/fundamentals/how-to-manage-groups)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

@@ -1,21 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on integration with F5'
+title: Configure F5 Kerberos Constrained Delegation for a Single-Tier SaaS App
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and F5.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 ---
 
-# Tutorial: Microsoft Entra single sign-on integration with F5
+# Configure F5 Kerberos Constrained Delegation for a Single-Tier SaaS App
 
-In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to F5.
 * Enable your users to be automatically signed-in to F5 with their Microsoft Entra accounts.
@@ -24,10 +23,9 @@ In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 
 * F5 single sign-on (SSO) enabled subscription.
 
@@ -38,7 +36,7 @@ To get started, you need the following items:
 
     * F5 BIG-IP Access Policy Manager&trade; (APM) add-on license on an existing BIG-IP F5 BIG-IP&reg; Local Traffic Manager&trade; (LTM).
 
-    * In addition to the above license, the F5 system may also be licensed with:
+    * In addition to the above license, the F5 system might also be licensed with:
 
         * A URL Filtering subscription to use the URL category database
 
@@ -48,38 +46,38 @@ To get started, you need the following items:
 
 * F5 BIG-IP system is provisioned with APM modules (LTM is optional)
 
-* Although optional, it is highly recommended to Deploy the F5 systems in a [sync/failover device group](https://techdocs.f5.com/content/techdocs/en-us/bigip-14-1-0/big-ip-device-service-clustering-administration-14-1-0.html) (S/F DG), which includes the active standby pair, with a floating IP address for high availability (HA). Further interface redundancy can be achieved using the Link Aggregation Control Protocol (LACP). LACP manages the connected physical interfaces as a single virtual interface (aggregate group) and detects any interface failures within the group.
+* Although optional, it's highly recommended to Deploy the F5 systems in a [sync/failover device group](https://techdocs.f5.com/kb/en-us/products/big-ip_ltm/manuals/product/bigip-device-service-clustering-admin-11-6-0.html) (S/F DG), which includes the active standby pair, with a floating IP address for high availability (HA). Further interface redundancy can be achieved using the Link Aggregation Control Protocol (LACP). LACP manages the connected physical interfaces as a single virtual interface (aggregate group) and detects any interface failures within the group.
 
 * For Kerberos applications, an on-premises AD service account for constrained delegation.  Refer to [F5 Documentation](https://support.f5.com/csp/article/K43063049) for creating an AD delegation account.
 
 ## Access guided configuration
 
-* Access guided configuration' is supported on F5 TMOS version 13.1.0.8 and above. If your BIG-IP system is running a version below 13.1.0.8, please refer to the **Advanced configuration** section.
+* Access guided configuration' is supported on F5 TMOS version 13.1.0.8 and above. If your BIG-IP system is running a version below 13.1.0.8, refer to the **Advanced configuration** section.
 
-* Access guided configuration presents a completely new and streamlined user experience. This workflow-based architecture provides intuitive, re-entrant configuration steps tailored to the selected topology.
+* Access guided configuration presents a new and streamlined user experience. This workflow-based architecture provides intuitive, re-entrant configuration steps tailored to the selected topology.
 
 * Before proceeding to the configuration, upgrade the guided configuration by downloading the latest use case pack from [downloads.f5.com](https://login.f5.com/resource/login.jsp?ctx=719748). To upgrade, follow the below procedure.
 
     >[!NOTE]
     >The screenshots below are for the latest released version (BIG-IP 15.0 with AGC version 5.0). The configuration steps below are valid for this use case across from 13.1.0.8 to the latest BIG-IP version.
 
-1. On the F5 BIG-IP Web UI, click on **Access >> Guide Configuration**.
+1. On the F5 BIG-IP Web UI, select **Access >> Guide Configuration**.
 
-2. On the **Guided Configuration** page, click on **Upgrade Guided Configuration** on the top left-hand corner.
+2. On the **Guided Configuration** page, select **Upgrade Guided Configuration** on the top left-hand corner.
 
     ![Screenshot that shows the "Guided Configuration" page with the "Upgrade Guided Configuration" action selected.](./media/kerbf5-tutorial/configure14.png) 
 
-3. On the Upgrade Guide Configuration pop screen, select **Choose File** to upload the downloaded use case pack and click on **Upload and Install** button.
+3. On the Upgrade Guide Configuration pop screen, select **Choose File** to upload the downloaded use case pack and select **Upload and Install** button.
 
     ![Screenshot that shows the "Upgrade Guided Configuration" pop-up screen with "Choose File" and "Upload and Install" selected.](./media/kerbf5-tutorial/configure15.png) 
 
-4. When upgrade is completed, click on the **Continue** button.
+4. When upgrade is completed, select the **Continue** button.
 
     ![Screenshot that shows the "Guided Configuration update is complete" dialog and the "Continue" button selected.](./media/kerbf5-tutorial/configure16.png)
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * F5 supports **SP and IDP** initiated SSO
 * F5 SSO can be configured in three different ways.
@@ -109,11 +107,11 @@ Apart from Microsoft Entra native integration support for modern authentication 
 To configure the integration of F5 into Microsoft Entra ID, you need to add F5 from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **F5** in the search box.
 1. Select **F5** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-f5'></a>
 
@@ -124,10 +122,10 @@ Configure and test Microsoft Entra SSO with F5 using a test user called **B.Simo
 To configure and test Microsoft Entra SSO with F5, complete the following building blocks:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure F5 SSO](#configure-f5-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create F5 test user](#create-f5-test-user)** - to have a counterpart of B.Simon in F5 that is linked to the Microsoft Entra representation of user.
+    1. **[Create F5 test user](#create-f5-test-user)** - to have a counterpart of B.Simon in F5 that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -137,9 +135,9 @@ To configure and test Microsoft Entra SSO with F5, complete the following buildi
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **F5** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **F5** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -151,13 +149,13 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<YourCustomFQDN>.f5.com/`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<YourCustomFQDN>.f5.com/`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [F5 Client support team](https://support.f5.com/csp/knowledge-center/software/BIG-IP?module=BIG-IP%20APM45) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [F5 Client support team](https://support.f5.com/csp/knowledge-center/software/BIG-IP?module=BIG-IP%20APM45) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and **Certificate (Base64)** then select **Download** to download the certificate and save it on your computer.
 
@@ -169,42 +167,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to F5.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **F5**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-
-   ![The "Users and groups" link](common/users-groups-blade.png)
-
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-
-    ![The Add User link](common/add-assign-user.png)
-
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
-1. In the **Add Assignment** dialog, click the **Assign** button.
-1. Click on **Conditional Access** .
-1. Click on **New Policy**.
-1. You can now see your F5 App as a resource for Conditional Access policy and apply any Conditional Access including multifactor authentication, device based access, or Microsoft Entra ID Protection risk.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure F5 SSO
 
@@ -218,41 +181,41 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Open a new web browser window and sign into your F5 (Kerberos) company site as an administrator and perform the following steps:
 
-1. You will need to import the Metadata Certificate into the F5 which will be used later in the setup process.
+1. You need to import the Metadata Certificate into the F5 which is used later in the setup process.
 
-1. Navigate to **System > Certificate Management > Traffic Certificate Management > SSL Certificate List**. Select **Import** from the right-hand corner. Specify a **Certificate Name** (will be referenced Later in the config). In the **Certificate Source**, select Upload File specify the certificate downloaded from Azure while configuring SAML Single Sign on. Click **Import**.
+1. Navigate to **System > Certificate Management > Traffic Certificate Management > SSL Certificate List**. Select **Import** from the right-hand corner. Specify a **Certificate Name** (is referenced Later in the config). In the **Certificate Source**, select Upload File specify the certificate downloaded from Azure while configuring SAML Single Sign on. Select **Import**.
 
     ![Screenshot that shows the "S S L Certificate/Key Source" page with the "Certificate Name" highlighted, "Upload File" and the "Import" button selected.](./media/kerbf5-tutorial/configure01.png) 
 
-1. Additionally, you will require **SSL Certificate for the Application Hostname. Navigate to System > Certificate Management > Traffic Certificate Management > SSL Certificate List**. Select **Import** from the right-hand corner. **Import Type** will be **PKCS 12(IIS)**. Specify a **Key Name** (will be referenced Later in the config) and the specify the PFX file. Specify the **Password** for the PFX. Click **Import**.
+1. Additionally, you require **SSL Certificate for the Application Hostname. Navigate to System > Certificate Management > Traffic Certificate Management > SSL Certificate List**. Select **Import** from the right-hand corner. **Import Type** is **PKCS 12(IIS)**. Specify a **Key Name** (is referenced Later in the config) and the specify the PFX file. Specify the **Password** for the PFX. Select **Import**.
 
     >[!NOTE]
-    >In the example our app name is `Kerbapp.superdemo.live`, we are using a Wild Card Certificate our keyname is `WildCard-SuperDemo.live`
+    >In the example our app name is `Kerbapp.superdemo.live`, we're using a Wild Card Certificate our keyname is `WildCard-SuperDemo.live`
 
     ![Screenshot that shows the "S S L Certificate/Key Source" page with the values entered and the "Import" button selected.](./media/kerbf5-tutorial/configure02.png) 
  
-1. We will use the Guided Experience to setup the Microsoft Entra Federation and Application Access. Go to – F5 BIG-IP **Main** and select **Access > Guided Configuration > Federation > SAML Service Provider**. Click **Next** then click **Next** to begin configuration.
+1. We use the Guided Experience to set up the Microsoft Entra Federation and Application Access. Go to – F5 BIG-IP **Main** and select **Access > Guided Configuration > Federation > SAML Service Provider**. Select **Next** then select **Next** to begin configuration.
 
     ![Screenshot that shows the "Guided Configuration" page with the "Federation" icon highlighted and "S A M L Service Provider" selected.](./media/kerbf5-tutorial/configure03.png) 
 
     ![Screenshot that shows the "Guided Configuration - S A M L Service Provider" page with the "Next" button selected.](./media/kerbf5-tutorial/configure04.png)
 
-1. Provide a **Configuration Name**. Specify the **Entity ID** (same as what you configured on the Microsoft Entra Application Configuration). Specify the **Host name**. Add a **Description** for reference. Accept the remaining default entries and select and then click **Save & Next**.
+1. Provide a **Configuration Name**. Specify the **Entity ID** (same as what you configured on the Microsoft Entra Application Configuration). Specify the **Host name**. Add a **Description** for reference. Accept the remaining default entries and select and then select **Save & Next**.
 
     ![Screenshot that shows the "Service Provider Properties" with "Host name" and "Description" text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure05.png) 
 
-1. In this example we are creating a new Virtual Server as 192.168.30.200 with port 443. Specify the Virtual Server IP address in the **Destination Address**. Select the Client **SSL Profile**, select Create new. Specify previously uploaded application certificate, (the wild card certificate in this example) and the associated key, and then click **Save & Next**.
+1. In this example we're creating a new Virtual Server as 192.168.30.200 with port 443. Specify the Virtual Server IP address in the **Destination Address**. Select the Client **SSL Profile**, select Create new. Specify previously uploaded application certificate, (the wild card certificate in this example) and the associated key, and then select **Save & Next**.
 
     >[!NOTE]
     >in this example our Internal webserver is running on port 80 and we want to publish it with 443.
 
     ![Screenshot that shows the "Virtual Server Properties" page with the "Destination Address" text box highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure06.png)
 
-1. Under **Select method to configure your IdP connector**, specify Metadata, click on Choose File and upload the Metadata XML file downloaded earlier from Microsoft Entra ID. Specify a unique **Name** for SAML IDP connector. Choose the **Metadata Signing Certificate** which was upload earlier. Click **Save & Next**.
+1. Under **Select method to configure your IdP connector**, specify Metadata, select **Choose File** and upload the Metadata XML file downloaded earlier from Microsoft Entra ID. Specify a unique **Name** for SAML IDP connector. Choose the **Metadata Signing Certificate** which was upload earlier. Select **Save & Next**.
 
     ![Screenshot that shows the "External Identity Provider Connector Settings" page with the "Name" text box highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure07.png)  
 
-1. Under **Select a Pool**, specify **Create New** (alternatively select a pool it already exists). Let other value be default.    Under Pool Servers, type the IP Address under **IP Address/Node Name**. Specify the **Port**. Click **Save & Next**.
+1. Under **Select a Pool**, specify **Create New** (alternatively select a pool it already exists). Let other value be default.    Under Pool Servers, type the IP Address under **IP Address/Node Name**. Specify the **Port**. Select **Save & Next**.
  
     ![Screenshot that shows the "Pool Properties" page with the "IP Address/Node Name" and "Port" text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure08.png)
 
@@ -262,10 +225,10 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Under **Kerberos Realm** type the Domain Name. 
 1. Under **Account Name/ Account Password**, Specify the APM Delegation Account and Password. 
 1. Specify the Domain Controller IP in the **KDC** Field. 
-1. Click **Save & Next**.
-1. For purposes of this guidance, we will skip endpoint checks.  Refer to F5 documentation for details.  On screen select **Save & Next**.
+1. Select **Save & Next**.
+1. For purposes of this guidance, we'll skip endpoint checks.  Refer to F5 documentation for details.  On screen, select **Save & Next**.
 
-1. Accept the defaults and click **Save & Next**. Consult F5 documentation for details regarding SAML session management settings.
+1. Accept the defaults and select **Save & Next**. Consult F5 documentation for details regarding SAML session management settings.
 
 
     ![Screenshot that shows the "Timeout Settings" page with the "Save & Next" button selected.](./media/kerbf5-tutorial/configure11.png) 
@@ -274,22 +237,22 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
  
     ![Screenshot that shows the "Your application is ready to be deployed page" with the "Summary" section highlighted and the "Deploy" button selected.](./media/kerbf5-tutorial/configure12.png)
 
-1. Once the application has been configured click on **Finish**.
+1. Once the application has been configured select **Finish**.
 
     ![Screenshot that shows the "Your application is deployed" page with the "Finish" button selected.](./media/kerbf5-tutorial/configure13.png)
 
 ## Advanced Configuration
 
 >[!NOTE]
->For reference click [here](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+>For reference select [here](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
 
 ### Configuring an Active Directory AAA server
 
 You configure an Active Directory AAA server in Access Policy Manager (APM) to specify domain controllers and credentials for APM to use for authenticating users.
 
-1. On the Main tab, click **Access Policy > AAA Servers > Active Directory**. The Active Directory Servers list screen opens.
+1. On the Main tab, select **Access Policy > AAA Servers > Active Directory**. The Active Directory Servers list screen opens.
 
-2. Click **Create**. The New Server properties screen opens.
+2. Select **Create**. The New Server properties screen opens.
 
 3. In the **Name** field, type a unique name for the authentication server.
 
@@ -307,11 +270,11 @@ You configure an Active Directory AAA server in Access Policy Manager (APM) to s
 
    * Type a name in the **Domain Controller Pool Name** field.
 
-   * Specify the **Domain Controllers** in the pool by typing the IP address and host name for each, and clicking the **Add** button.
+   * Specify the **Domain Controllers** in the pool by typing the IP address and host name for each, and selecting the **Add** button.
 
    * To monitor the health of the AAA server, you have the option of selecting a health monitor: only the **gateway_icmp** monitor is appropriate in this case; you can select it from the **Server Pool Monitor** list.
 
-8. In the **Admin Name** field, type an is case-sensitive name for an administrator who has Active Directory administrative permissions. APM uses the information in the **Admin Name** and **Admin Password** fields for AD Query. If Active Directory is configured for anonymous queries, you do not need to provide an Admin Name. Otherwise, APM needs an account with sufficient privilege to bind to an Active Directory server, fetch user group information, and fetch Active Directory password policies to support password-related functionality. (APM must fetch password policies, for example, if you select the Prompt user to change password before expiration option in an AD Query action.) If you do not provide Admin account information in this configuration, APM uses the user account to fetch information. This works if the user account has sufficient privilege.
+8. In the **Admin Name** field, type an is case-sensitive name for an administrator who has Active Directory administrative permissions. APM uses the information in the **Admin Name** and **Admin Password** fields for AD Query. If Active Directory is configured for anonymous queries, you don't need to provide an Admin Name. Otherwise, APM needs an account with sufficient privilege to bind to an Active Directory server, fetch user group information, and fetch Active Directory password policies to support password-related functionality. (APM must fetch password policies, for example, if you select the Prompt user to change password before expiration option in an AD Query action.) If you don't provide Admin account information in this configuration, APM uses the user account to fetch information. This works if the user account has sufficient privilege.
 
 9. In the **Admin Password** field, type the administrator password associated with the Domain Name.
 
@@ -325,18 +288,18 @@ You configure an Active Directory AAA server in Access Policy Manager (APM) to s
 
 14. In the **Timeout** field, type a timeout interval (in seconds) for the AAA server. (This setting is optional.)
 
-15. Click **Finished**. The new server displays on the list. 
+15. Select **Finished**. The new server displays on the list. 
 This adds the new Active Directory server to the Active Directory Servers list.
 
     ![Screenshot that shows the "General Properties" and "Configuration" sections.](./media/kerbf5-tutorial/configure-17.png)
 
 ### SAML Configuration
 
-1. You will need to import the Metadata Certificate into the F5 which will be used later in the setup process. Navigate to **System > Certificate Management > Traffic Certificate Management > SSL Certificate List**. Select **Import** from the right-hand corner.
+1. You need to import the Metadata Certificate into the F5 which is used later in the setup process. Navigate to **System > Certificate Management > Traffic Certificate Management > SSL Certificate List**. Select **Import** from the right-hand corner.
 
     ![Screenshot that shows the "Import S S L Certificate/Key Source" page with the "Import" button selected.](./media/kerbf5-tutorial/configure18.png)
 
-2. For setting up the SAML IDP, **navigate to Access > Federation > SAML: Service Provider > External Idp Connectors**, and click **Create > From Metadata**.
+2. For setting up the SAML IDP, **navigate to Access > Federation > SAML: Service Provider > External Idp Connectors**, and select **Create > From Metadata**.
 
     ![Screenshot that shows the "S A M L Service Provider" page with "From Metadata" selected from the "Create" drop-down.](./media/kerbf5-tutorial/configure19.png)
 
@@ -350,7 +313,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
     ![Screenshot that shows the "Edit S A M L I d P Connector" window with "S L O Service Settings" selected.](./media/kerbf5-tutorial/configure24.png)
 
-1. For setting up the SAML SP, navigate to **Access > Federation > SAML Service Provider > Local SP Services** and click **Create**. Complete the following information and click **OK**.
+1. For setting up the SAML SP, navigate to **Access > Federation > SAML Service Provider > Local SP Services** and select **Create**. Complete the following information and select **OK**.
 
     * Type Name: KerbApp200SAML
     * Entity ID*: https://kerb-app.com.cutestat.com
@@ -361,20 +324,20 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
      ![Screenshot that shows the "Edit S A M L S P Service" window with "General Settings" selected.](./media/kerbf5-tutorial/configure25.png)
 
-     b. Select the SP Configuration, KerbApp200SAML, and Click **Bind/UnBind IdP Connectors**.
+     b. Select the SP Configuration, KerbApp200SAML, and Select **Bind/UnBind IdP Connectors**.
 
      ![Screenshot that shows the "S A M L Service Provider - Local S P Services" page with "KerbAPP200 S A M L" selected.](./media/kerbf5-tutorial/configure26.png)
 
      ![Screenshot that shows the "Bind/Unbind I d P Connectors" button selected.](./media/kerbf5-tutorial/configure27.png)
 
-     c. Click on **Add New Row** and Select the **External IdP connector** created in previous step, click **Update**, and then click **OK**.
+     c. Select **Add New Row** and Select the **External IdP connector** created in previous step, select **Update**, and then select **OK**.
 
      ![Screenshot that shows the "Edit S A M L I d Ps that use this S P" window with the "Add New Row" button selected.](./media/kerbf5-tutorial/configure28.png)
 
-1. For configuring Kerberos SSO, navigate to **Access > Single Sign-on > Kerberos**, complete information and click **Finished**.
+1. For configuring Kerberos SSO, navigate to **Access > Single Sign-on > Kerberos**, complete information and select **Finished**.
 
     >[!Note]
-    > You will need the Kerberos Delegation Account to be created and specified. Refer KCD Section (Refer Appendix for Variable References)
+    > You need the Kerberos Delegation Account to be created and specified. Refer KCD Section (Refer Appendix for Variable References)
 
     * **Username Source**: session.saml.last.attr.name.http:\//schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
 
@@ -382,7 +345,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
         ![Screenshot that shows the "Single Sign-On - Properties" page with the "Username Source" and "User Realm Source" text boxes highlighted.](./media/kerbf5-tutorial/configure29.png)
 
-1. For configuring Access Profile, navigate to **Access > Profile/Policies > Access Profile (per session policies)**, click **Create**, complete the following information and click **Finished**.
+1. For configuring Access Profile, navigate to **Access > Profile/Policies > Access Profile (per session policies)**, select **Create**, complete the following information and select **Finished**.
 
     * Name: KerbApp200
     * Profile Type: All
@@ -391,14 +354,14 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
         ![Screenshot that shows the "Profiles/Policies - Properties" page with the "Name", "Profile Type", and "Languages" text boxes highlighted.](./media/kerbf5-tutorial/configure30.png)
 
-1. Click on the name, KerbApp200, complete the following information and click **Update**.
+1. Select the name, KerbApp200, complete the following information and select **Update**.
 
     * Domain Cookie: superdemo.live
     * SSO Configuration: KerAppSSO_sso
 
         ![Screenshot that shows the "S S D/Auth Domains" page with the "Domain Cookie" text box and "S S O Configuration" drop-down highlighted, and the "Update" button selected.](./media/kerbf5-tutorial/configure31.png)
 
-1. Click **Access Policy** and then click **Edit Access Policy** for Profile "KerbApp200".
+1. Select **Access Policy** and then select **Edit Access Policy** for Profile "KerbApp200".
 
     ![Screenshot that shows the "Access Policy" page with the "Edit Access Policy for Profile KerbApp200" action selected.](./media/kerbf5-tutorial/configure32.png)
 
@@ -425,7 +388,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
     * **mcget {session.logon.last.username}**
     * **mcget {session.logon.last.password**
 
-1. For adding New Node, navigate to **Local Traffic > Nodes > Node List, click Create**, complete the following information, and then click **Finished**.
+1. For adding New Node, navigate to **Local Traffic > Nodes > Node List, select Create**, complete the following information, and then select **Finished**.
 
     * Name: KerbApp200
     * Description: KerbApp200
@@ -433,7 +396,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
         ![Screenshot that shows the "New Node" page with the "Name", "Description", and "Address" text boxes highlighted, and the "Finished" button selected.](./media/kerbf5-tutorial/configure39.png)
 
-1. For creating a new Pool, navigate to **Local Traffic > Pools > Pool List, click Create**, complete the following information and click **Finished**.
+1. For creating a new Pool, navigate to **Local Traffic > Pools > Pool List, select Create**, complete the following information and select **Finished**.
 
     * Name: KerbApp200-Pool
     * Description: KerbApp200-Pool
@@ -443,7 +406,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
         ![Screenshot that shows the "New Pool" page with values entered and the "Finished" button selected.](./media/kerbf5-tutorial/configure40.png)
 
-1. For creating Virtual Server, navigate to **Local Traffic > Virtual Servers > Virtual Server List > +**, complete the following information and click **Finished**.
+1. For creating Virtual Server, navigate to **Local Traffic > Virtual Servers > Virtual Server List > +**, complete the following information and select **Finished**.
 
     * Name: KerbApp200
     * Destination Address/Mask: Host 192.168.30.200
@@ -458,7 +421,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 ### Setting up Kerberos Delegation 
 
 >[!NOTE]
->For reference click [here](https://www.f5.com/pdf/deployment-guides/kerberos-constrained-delegation-dg.pdf)
+>For reference, select [here](https://www.f5.com/pdf/deployment-guides/kerberos-constrained-delegation-dg.pdf)
 
 *  **Step 1:** Create a Delegation Account
 
@@ -482,7 +445,7 @@ This adds the new Active Directory server to the Active Directory Servers list.
 
     ![F5 (Kerberos) configuration](./media/kerbf5-tutorial/configure43.png)
 
-* Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html).
+* Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html).
 
 ### Create F5 test user
 
@@ -492,11 +455,11 @@ In this section, you create a user called B.Simon in F5. Work with [F5 Client s
 
 In this section, you test your Microsoft Entra single sign-on configuration using the Access Panel.
 
-When you click the F5 tile in the Access Panel, you should be automatically signed in to the F5 for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+When you select the F5 tile in the Access Panel, you should be automatically signed in to the F5 for which you set up SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
@@ -510,6 +473,6 @@ When you click the F5 tile in the Access Panel, you should be automatically sign
 
 - [F5 BIG-IP APM and Microsoft Entra integration for secure hybrid access](~/identity/enterprise-apps/f5-integration.md)
 
-- [Tutorial to deploy F5 BIG-IP Virtual Edition VM in Azure IaaS for secure hybrid access](~/identity/enterprise-apps/f5-bigip-deployment-guide.md)
+- [Article to deploy F5 BIG-IP Virtual Edition VM in Azure IaaS for secure hybrid access](~/identity/enterprise-apps/f5-bigip-deployment-guide.md)
 
-- [Tutorial for Microsoft Entra single sign-on integration with F5 BIG-IP for Password-less VPN](~/identity/enterprise-apps/f5-passwordless-vpn.md)
+- [Article for Microsoft Entra single sign-on integration with F5 BIG-IP for Password-less VPN](~/identity/enterprise-apps/f5-passwordless-vpn.md)

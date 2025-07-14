@@ -1,16 +1,15 @@
 ---
 title: Grant controls in Conditional Access policy
 description: Grant controls in a Microsoft Entra Conditional Access policy.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/12/2024
-
+ms.date: 06/24/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, jogro
+ms.custom: sfi-image-nochange
 ---
 # Conditional Access: Grant
 
@@ -51,7 +50,7 @@ Selecting this checkbox requires users to perform Microsoft Entra multifactor au
 
 ### Require authentication strength
 
-Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Protection** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
+Administrators can choose to require [specific authentication strengths](~/identity/authentication/concept-authentication-strengths.md) in their Conditional Access policies. These authentication strengths are defined in the **Microsoft Entra admin center** > **Entra ID** > **Authentication methods** > **Authentication strengths**. Administrators can choose to create their own or use the built-in versions.
 
 ### Require device to be marked as compliant
 
@@ -70,6 +69,8 @@ The **Require device to be marked as compliant** control:
 > On Windows, iOS, Android, macOS, and some third-party web browsers, Microsoft Entra ID identifies the device by using a client certificate that is provisioned when the device is registered with Microsoft Entra ID. When a user first signs in through the browser, the user is prompted to select the certificate. The user must select this certificate before they can continue to use the browser.
 
 You can use the Microsoft Defender for Endpoint app with the approved client app policy in Intune to set the device compliance policy to Conditional Access policies. There's no exclusion required for the Microsoft Defender for Endpoint app while you're setting up Conditional Access. Although Microsoft Defender for Endpoint on Android and iOS (app ID dd47d17a-3194-4d86-bfd5-c6ae6f5651e3) isn't an approved app, it has permission to report device security posture. This permission enables the flow of compliance information to Conditional Access.
+
+Similarly, the **Require device to be marked as compliant** doesn't block Microsoft Authenticator app access to the UserAuthenticationMethod.Read scope. Authenticator needs access to the UserAuthenticationMethod.Read scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to UserAuthenticationMethod.ReadWrite to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
 
 <a name='require-hybrid-azure-ad-joined-device'></a>
 
@@ -200,6 +201,16 @@ The following restrictions apply when you configure a policy by using the passwo
 ### Terms of use
 
 If your organization created terms of use, other options might be visible under grant controls. These options allow administrators to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
+
+## Multiple grant controls
+
+When multiple grant controls are applied to a user, it's important to understand that Conditional Access policies follow a specific validation order by design. For example, if a user has two policies requiring multifactor authentication (MFA) and Terms of Use (ToU), Conditional Access first validates the user's MFA claim and then the ToU.
+ 
+- If a valid MFA claim isn't present in the token, you see an "interrupt" (pending MFA) and a failure for ToU in the logs, even if the ToU was already accepted in a previous sign-in.
+- Once multifactor authentication is completed, a second log entry appears, validating the ToU. If the user already accepted the ToU, you see success for both MFA and ToU. 
+- If a valid MFA claim is present in the token, a single log shows success for both MFA and ToU.
+ 
+If multiple policies are applied to a user requiring MFA, Device State, and ToU, the process is similar. The validation order is MFA, Device State, and then ToU.
 
 ### Custom controls (preview)
 

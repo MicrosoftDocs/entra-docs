@@ -1,25 +1,25 @@
 ---
-title: 'Tutorial: Configure DocuSign for automatic user provisioning with Microsoft Entra ID| Microsoft Docs'
+title: Configure DocuSign for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DocuSign.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to DocuSign so that I can streamline the user management process and ensure that users have the appropriate access to DocuSign.
 ---
-# Tutorial: Configure DocuSign for automatic user provisioning
+# Configure DocuSign for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to show you the steps you need to perform in DocuSign and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to DocuSign.
+The objective of this article is to show you the steps you need to perform in DocuSign and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to DocuSign.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 *   A Microsoft Entra tenant.
 *   A DocuSign single sign-on enabled subscription.
@@ -35,12 +35,12 @@ Before configuring and enabling the provisioning service, you need to decide wha
 
 ### Important tips for assigning users to DocuSign
 
-*   It is recommended that a single Microsoft Entra user is assigned to DocuSign to test the provisioning configuration. Additional users may be assigned later.
+*   It's recommended that a single Microsoft Entra user is assigned to DocuSign to test the provisioning configuration. Additional users may be assigned later.
 
-*   When assigning a user to DocuSign, you must select a valid user role. The "Default Access" role does not work for provisioning.
+*   When assigning a user to DocuSign, you must select a valid user role. The "Default Access" role doesn't work for provisioning.
 
 > [!NOTE]
-> Microsoft Entra ID does not support group provisioning with the Docusign application, only users can be provisioned.
+> Microsoft Entra ID doesn't support group provisioning with the Docusign application, only users can be provisioned.
 
 ## Enable User Provisioning
 
@@ -54,7 +54,7 @@ This section guides you through connecting your Microsoft Entra ID to DocuSign's
 The objective of this section is to outline how to enable user provisioning of Active Directory user accounts to DocuSign.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. If you have already configured DocuSign for single sign-on, search for your instance of DocuSign using the search field. Otherwise, select **Add** and search for **DocuSign** in the application gallery. Select DocuSign from the search results, and add it to your list of applications.
 
@@ -77,7 +77,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive provisioning error notifications, and check the checkbox.
 
-1. Click **Save.**
+1. Select **Save.**
 
 1. Under the Mappings section, select **Synchronize Microsoft Entra users to DocuSign.**
 
@@ -85,14 +85,14 @@ The objective of this section is to outline how to enable user provisioning of A
 
 1. To enable the Microsoft Entra provisioning service for DocuSign, change the **Provisioning Status** to **On** in the Settings section
 
-1. Click **Save.**
+1. Select **Save.**
 
 It starts the initial synchronization of any users assigned to DocuSign in the Users and Groups section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity logs, which describe all actions performed by the provisioning service on your DocuSign app.
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md).
 
 ## Troubleshooting Tips
-* Provisioning a role or permission profile for a user in Docusign can be accomplished by using an expression in your attribute mappings using the [switch](~/identity/app-provisioning/functions-for-customizing-application-data.md#switch) and [singleAppRoleAssignment](~/identity/app-provisioning/functions-for-customizing-application-data.md#singleapproleassignment) functions. For example, the expression below will provision the ID "8032066" when a user has the "DS Admin" role assigned in Microsoft Entra ID. It will not provision any permission profile if the user isn't assigned a role on the Microsoft Entra ID side. The ID can be retrieved from the DocuSign [portal](https://support.docusign.com/).
+* Provisioning a role or permission profile for a user in Docusign can be accomplished by using an expression in your attribute mappings using the [switch](~/identity/app-provisioning/functions-for-customizing-application-data.md#switch) and [singleAppRoleAssignment](~/identity/app-provisioning/functions-for-customizing-application-data.md#singleapproleassignment) functions. For example, the expression below will provision the ID "8032066" when a user has the "DS Admin" role assigned in Microsoft Entra ID. It doesn't provision any permission profile if the user isn't assigned a role on the Microsoft Entra ID side. The ID can be retrieved from the DocuSign [portal](https://support.docusign.com/).
 
 Switch(SingleAppRoleAssignment([appRoleAssignments])," ", "DS Admin", "8032066")
 

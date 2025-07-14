@@ -2,25 +2,25 @@
 title: Check fleet metrics of Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to check fleet metrics of a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.assetid: 8999eec3-f9da-40b3-997a-7a2587911e96
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 12/02/2024
+ms.date: 02/05/2025
 ms.author: justinha
+ms.custom: sfi-image-nochange
 ---
 # Check fleet metrics of Microsoft Entra Domain Services
 
 Administrators can use Azure Monitor Metrics to configure a scope for Microsoft Entra Domain Services and gain insights into how the service is performing. 
 You can access Domain Services metrics from two places:
 
-- In Azure Monitor Metrics, click **New chart** > **Select a scope** and select the Domain Services instance:
+- In Azure Monitor Metrics, select **New chart** > **Select a scope** and select the Domain Services instance:
 
   :::image type="content" border="true" source="media/fleet-metrics/select.png" alt-text="Screenshot of how to select Domain Services for fleet metrics.":::
 
-- In Domain Services, under **Monitoring**, click **Metrics**:
+- In Domain Services, under **Monitoring**, select **Metrics**:
 
   :::image type="content" border="true" source="media/fleet-metrics/metrics-scope.png" alt-text="Screenshot of how to select Domain Services as scope in Azure Monitor Metrics.":::
 
@@ -46,16 +46,16 @@ The following table describes the metrics that are available for Domain Services
 
 | Metric | Description |
 |--------|-------------|
-|DNS - Total Query Received/sec |The average number of queries received by DNS server in each second. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|Total Response Sent/sec |The average number of responses sent by DNS server in each second. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|NTDS - LDAP Successful Binds/sec|The number of LDAP successful binds per second for the NTDS object. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|% Committed Bytes In Use |The ratio of Memory\\\Committed Bytes to the Memory\\\Commit Limit. Committed memory is the physical memory in use for which space has been reserved in the paging file should it need to be written to disk. The commit limit is determined by the size of the paging file. If the paging file is enlarged, the commit limit increases, and the ratio is reduced. This counter displays the current percentage value only; it isn't an average. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|Total Processor Time |The percentage of elapsed time that the processor spends to execute a non-Idle thread. It's calculated by measuring the percentage of time that the processor spends executing the idle thread and then subtracting that value from 100%. (Each processor has an idle thread that consumes cycles when no other threads are ready to run). This counter is the primary indicator of processor activity, and displays the average percentage of busy time observed during the sample interval. It should be noted that the accounting calculation of whether the processor is idle is performed at an internal sampling interval of the system clock (10ms). On today's fast processors, % Processor Time can therefore underestimate the processor utilization as the processor may be spending much time servicing threads between the system clock sampling interval. Workload-based timer applications are one type application that is more likely to be measured inaccurately because timers are signaled just after the sample is taken. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|Kerberos Authentications |The number of times that clients use a ticket to authenticate to this computer per second. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|NTLM Authentications|The number of NTLM authentications processed per second for the Active Directory on this domain controller or for local accounts on this member server. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|% Processor Time (dns)|The percentage of elapsed time that all of dns process threads used the processor to execute instructions. An instruction is the basic unit of execution in a computer, a thread is the object that executes instructions, and a process is the object created when a program is run. Code executed to handle some hardware interrupts and trap conditions are included in this count. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|% Processor Time (lsass)|The percentage of elapsed time that all of lsass process threads used the processor to execute instructions. An instruction is the basic unit of execution in a computer, a thread is the object that executes instructions, and a process is the object created when a program is run. Code executed to handle some hardware interrupts and trap conditions are included in this count. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
-|NTDS - LDAP Searches/sec |The average number of searches per second for the NTDS object. It's backed by performance counter data from the domain controller, and can be filtered or split by role instance.|
+|DNS - Total Query Received/sec |The average number of queries received by DNS server in each second. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|Total Response Sent/sec |The average number of responses sent by DNS server in each second. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|NTDS - LDAP Successful Binds/sec|The number of LDAP successful binds per second for the NTDS object. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|% Committed Bytes In Use |The ratio of Memory\\\Committed Bytes to the Memory\\\Commit Limit. Committed memory is the physical memory in use for which space has been reserved in the paging file should it need to be written to disk. The commit limit is determined by the size of the paging file. If the paging file is enlarged, the commit limit increases, and the ratio is reduced. This counter displays the current percentage value only; it isn't an average. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|Total Processor Time |The percentage of elapsed time that the processor spends to execute a non-Idle thread. It's calculated by measuring the percentage of time that the processor spends executing the idle thread and then subtracting that value from 100%. (Each processor has an idle thread that consumes cycles when no other threads are ready to run). This counter is the primary indicator of processor activity, and displays the average percentage of busy time observed during the sample interval. It should be noted that the accounting calculation of whether the processor is idle is performed at an internal sampling interval of the system clock (10 ms). On today's fast processors, % Processor Time can therefore underestimate the processor utilization as the processor may be spending much time servicing threads between the system clock sampling interval. Workload-based timer applications are one type application that is more likely to be measured inaccurately because timers are signaled just after the sample is taken. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|Kerberos Authentications |The number of times that clients use a ticket to authenticate to this computer per second. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|NTLM Authentications|The number of NTLM authentications processed per second for the Active Directory on this domain controller or for local accounts on this member server. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|% Processor Time (dns)|The percentage of elapsed time that all of dns process threads used the processor to execute instructions. An instruction is the basic unit of execution in a computer, a thread is the object that executes instructions, and a process is the object created when a program is run. Code executed to handle some hardware interrupts and trap conditions are included in this count. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|% Processor Time (lsass)|The percentage of elapsed time that all of lsass process threads used the processor to execute instructions. An instruction is the basic unit of execution in a computer, a thread is the object that executes instructions, and a process is the object created when a program is run. Code executed to handle some hardware interrupts and trap conditions are included in this count. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
+|NTDS - LDAP Searches/sec |The average number of searches per second for the NTDS object. The performance counter data from the domain controller backs it, and you can filter or split it by role instance.|
 
 ## Azure Monitor alert
 
@@ -63,7 +63,7 @@ You can configure metric alerts for Domain Services to be notified of possible p
 
 To view and manage Azure Monitor alert, a user needs to be assigned [Azure Monitor roles](/azure/azure-monitor/roles-permissions-security). 
  
-In Azure Monitor or Domain Services Metrics, click **New alert** and configure a Domain Services instance as the scope. Then choose the metrics you want to measure from the list of available signals:
+In Azure Monitor or Domain Services Metrics, select **New alert** and configure a Domain Services instance as the scope. Then choose the metrics you want to measure from the list of available signals:
 
   :::image type="content" border="true" source="media/fleet-metrics/available-alerts.png" alt-text="Screenshot of available alerts.":::
 

@@ -1,33 +1,31 @@
 ---
-title: 'Tutorial: Configure Dialpad for automatic user provisioning with Microsoft Entra ID'
+title: Configure Dialpad for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Dialpad.
-
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Dialpad so that I can streamline the user management process and ensure that users have the appropriate access to Dialpad.
 ---
 
-# Tutorial: Configure Dialpad for automatic user provisioning
+# Configure Dialpad for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in Dialpad and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Dialpad.
+The objective of this article is to demonstrate the steps to be performed in Dialpad and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Dialpad.
 
 > [!NOTE]
->  This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+>  This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 > This connector is currently in Preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A Dialpad tenant](https://www.dialpad.com/pricing/).
 * A user account in Dialpad with Admin permissions.
 
@@ -40,25 +38,25 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
  ## Important tips for assigning users to Dialpad
 
- * It is recommended that a single Microsoft Entra user is assigned to Dialpad to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+ * It's recommended that a single Microsoft Entra user is assigned to Dialpad to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Dialpad, you must select any valid application-specific role (if available) in the assignment dialog. Users with the Default Access role are excluded from provisioning.
 
 ## Setup Dialpad for provisioning
 
-Before configuring Dialpad for automatic user provisioning with Microsoft Entra ID, you will need to retrieve some provisioning information from Dialpad.
+Before configuring Dialpad for automatic user provisioning with Microsoft Entra ID, you need to retrieve some provisioning information from Dialpad.
 
 1. Sign in to your [Dialpad Admin Console](https://dialpadbeta.com/login) and select **Admin settings**. Ensure that **My Company** is selected from the dropdown. Navigate to **Authentication > API Keys**.
 
 	:::image type="content" source="media/dialpad-provisioning-tutorial/dialpad01.png" alt-text="Screenshot of the Dialpad admin console, with the settings icon, My Company, Authentication, and A P I keys highlighted, and My Company selected." border="false":::
 
-2. Generate a new key by clicking **Add a key** and configuring the properties of your secret token.
+2. Generate a new key by selecting **Add a key** and configuring the properties of your secret token.
 
 	:::image type="content" source="media/dialpad-provisioning-tutorial/dialpad02.png" alt-text="Screenshot of the A P I keys page in the Dialpad admin console. Add a key is highlighted." border="false":::
 
 	:::image type="content" source="media/dialpad-provisioning-tutorial/dialpad03.png" alt-text="Screenshot of the Edit A P I key page in the Dialpad admin console. The Save button is highlighted." border="false":::
 
-3. Click the **Click to show value** button for your recently created API key and copy the value shown. This value will be entered in the **Secret Token** field in the Provisioning tab of your Dialpad application. 
+3. Select the **Select to show value** button for your recently created API key and copy the value shown. This value is entered in the **Secret Token** field in the Provisioning tab of your Dialpad application. 
 
 	![Dialpad Create Token](media/dialpad-provisioning-tutorial/dialpad04.png)
 
@@ -69,7 +67,7 @@ To configuring Dialpad for automatic user provisioning with Microsoft Entra ID, 
 **To add Dialpad from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Dialpad**, select **Dialpad** in the results panel.
 	![Dialpad in the results list](common/search-new-app.png)
 
@@ -85,7 +83,7 @@ To configuring Dialpad for automatic user provisioning with Microsoft Entra ID, 
 
 	:::image type="content" source="media/dialpad-provisioning-tutorial/loginpage.png" alt-text="Screenshot of the Start making calls page in the Dialpad website. The Log in with Office 365 button is highlighted." border="false":::
 
-8. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Dialpad account.
+8. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you be redirected to your Dialpad account.
 
  ## Configure automatic user provisioning to Dialpad
 
@@ -96,7 +94,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Dialpad in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -112,7 +110,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://dialpad.com/scim` in **Tenant URL**. Input the value that you retrieved and saved earlier from Dialpad in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Dialpad. If the connection fails, ensure your Dialpad account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://dialpad.com/scim` in **Tenant URL**. Input the value that you retrieved and saved earlier from Dialpad in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Dialpad. If the connection fails, ensure your Dialpad account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -120,7 +118,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Dialpad**.
 
@@ -128,7 +126,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Dialpad User Attributes](media/dialpad-provisioning-tutorial/dialpad07.png)
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Dialpad, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -138,7 +136,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -146,13 +144,13 @@ This operation starts the initial synchronization of all users and/or groups def
 
 For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 ## 	Connector limitations
-* Dialpad does not support group renames today. This means that any changes to the **displayName** of a group in Microsoft Entra ID will not be updated and reflected in Dialpad.
+* Dialpad doesn't support group renames today. This means that any changes to the **displayName** of a group in Microsoft Entra ID isn't updated and reflected in Dialpad.
 
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

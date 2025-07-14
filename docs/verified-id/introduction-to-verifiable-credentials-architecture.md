@@ -3,12 +3,12 @@ title: Microsoft Entra Verified ID architecture overview
 description: Learn foundational information to plan and design your solution
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 12/16/2024
 ms.author: barclayn
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Verified ID architecture overview
@@ -33,7 +33,7 @@ Centralized approaches still work well in many cases, such as when applications,
 
 In centralized identity systems, the identity provider (IDP) controls the lifecycle and usage of credentials.
 
-:::image type="content" source="./media/introduction-to-verifiable-credentials-architecture/centralized-identity-architecture.png" alt-text="Diagram of an example centralized identity system.":::
+:::image type="content" source="./media/introduction-to-verifiable-credentials-architecture/centralized-identity-architecture.png" alt-text="Architectural diagram showing centralized identity system with identity provider controlling user credentials, applications, and services within a single trust boundary.":::
 
 
 However, there are scenarios where using a decentralized architecture with verifiable credentials can provide value by augmenting key scenarios such as
@@ -50,7 +50,7 @@ In decentralized identity systems, control of the lifecycle and usage of the cre
 
 Consider the scenario in the diagram where Proseware, an e-commerce website, wants to offer Woodgrove employees corporate discounts.
 
- :::image type="content" source="media/introduction-to-verifiable-credentials-architecture/decentralized-architecture.png" alt-text="Diagram of an example decentralized identity system.":::
+ :::image type="content" source="media/introduction-to-verifiable-credentials-architecture/decentralized-architecture.png" alt-text="Architectural diagram showing decentralized identity system with Woodgrove as issuer, Alice as holder, and Proseware as verifier, connected through verifiable credentials and decentralized identifiers.":::
 
 Terminology for verifiable credentials (VCs) might be confusing if you're not familiar with VCs. The following definitions are from the [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model/) terminology section. After each, we relate them to entities in the preceding diagram.
 
@@ -114,7 +114,7 @@ These use cases demonstrate how centralized identities and decentralized identit
 
 ## User journey: Onboarding to Woodgrove
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/onboarding-journey.png" alt-text="Diagram of a user's onboarding journey to Woodgrove.":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/onboarding-journey.png" alt-text="Process flow diagram showing Alice's onboarding journey with Woodgrove, including awareness, activation through QR code, identity verification with Adatum, credential issuance, and presentation to complete application.":::
 
  **Awareness**: Alice is interested in working for Woodgrove, Inc. and visits Woodgrove’s career website.
 
@@ -144,7 +144,7 @@ By combining centralized and decentralized identity architectures for onboarding
 
 ## User journey: Accessing resources inside the trust boundary
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/inside-trust-boundary.png" alt-text="Diagram showing how accessing resources inside of the trust boundary works.":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/inside-trust-boundary.png" alt-text="Architectural diagram showing Alice accessing Woodgrove resources within the centralized trust boundary, with identity provider controlling access to applications and services.":::
 
 As an employee, Alice is operating inside of the trust boundary of Woodgrove. Woodgrove acts as the identity provider (IDP) and maintains complete control of the identity and the configuration of the apps Alice uses to interact within the Woodgrove trust boundary. To use resources in the Microsoft Entra ID trust boundary, Alice provides potentially multiple forms of proof of identification to sign in Woodgrove’s trust boundary and access the resources inside of Woodgrove’s technology environment. Multiple proofs is a typical scenario that is well served using a centralized identity architecture.
 
@@ -170,7 +170,7 @@ Woodgrove negotiates a product purchase discount with Proseware. All Woodgrove e
 
 With decentralized identifiers, Woodgrove can provide Alice with a verifiable credential (VC) that Alice can use to access Proseware’s website and other external resources.
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/external-resources.png" alt-text="Diagram showing how accessing resources outside of the trust boundary works.":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/external-resources.png" alt-text="Architectural diagram showing Alice using Woodgrove-issued verifiable credential to access Proseware resources outside the trust boundary, with decentralized verification process.":::
 
 By providing Alice the VC, Woodgrove is attesting that Alice is an employee. Woodgrove is a trusted VC issuer in Proseware’s validation solution. This trust in Woodgrove’s issuance process allows Proseware to electronically accept the VC as proof that Alice is a Woodgrove employee and provide Alice the discount. As part of validation of the VC Alice presents, Proseware checks the validity of the VC by using the trust system. In this solution:
 
@@ -197,13 +197,13 @@ In decentralized identity architectures, the issuer, user, and relying party (RP
 For example: When VC holders need to access a resource, they must present the VC to that relying party. They do so by using a wallet application to read the RP’s request to present a VC. As a part of reading the request, the wallet application uses the RP’s DID to find the RP’s public keys using the trust system, validating that the request to present the VC hasn't been tampered with. To prove domain ownership, the wallet also checks that the DID is being referenced in a metadata document hosted in the DNS domain of the RP.
 
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/how-decentralized-works.png" alt-text="Diagram showing how a decentralized identity system works.":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/how-decentralized-works.png" alt-text="Technical diagram illustrating decentralized identity system workflow with DID resolution, trust system validation, wallet application interactions, and cryptographic verification processes.":::
 
 ### Flow 1: Verifiable credential issuance
 
 In this flow, the credential holder interacts with the issuer to request a verifiable credential as illustrated in the following diagram
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/issuance.png" alt-text="Diagram showing the verifiable credential issuance flow.":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/issuance.png" alt-text="Sequence diagram showing verifiable credential issuance flow from holder request through issuer web frontend, Microsoft Entra Verified ID service, QR code scanning, wallet validation, and credential storage.":::
 
 1. The holder starts the flow by using a browser or native application to access the issuer’s web frontend. There, the issuer website drives the user to collect data and executes issuer-specific logic to determine whether the credential can be issued, and its content.
 
@@ -211,7 +211,7 @@ In this flow, the credential holder interacts with the issuer to request a verif
 
 1. The web frontend renders a link to the request as a QR code or a device-specific deep link (depending on the device).
 
-1. The holder scans the QR code or deep link from step 3 using a Wallet app such as Microsoft Authenticator
+1. The holder scans the QR code or deep link from step 3 using a Wallet app such as **Microsoft Authenticator**
 
 1. The wallet downloads the request from the link. The request includes:
 
@@ -235,7 +235,7 @@ For detailed information on how to build an issuance solution and architectural 
 
 ### Flow 2: Verifiable credential presentation
 
-:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/presentation.png" alt-text="Diagram of the verifiable credential presentation flow.":::
+:::image type="content" source="media/introduction-to-verifiable-credentials-architecture/presentation.png" alt-text="Sequence diagram showing verifiable credential presentation flow from holder accessing relying party through Microsoft Entra Verified ID service, QR code scanning, wallet validation, credential sharing, and verification callback.":::
 
 In this flow, a holder interacts with a relying party (RP) to present a VC as part of its authorization requirements.
 

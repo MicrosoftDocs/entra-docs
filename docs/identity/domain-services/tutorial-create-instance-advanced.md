@@ -2,14 +2,13 @@
 title: Tutorial - Create a customized Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, you learn how to create and configure a customized Microsoft Entra Domain Services managed domain and specify advanced configuration options using the Microsoft Entra admin center.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: tutorial
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services managed domain and define advanced configuration options so that I can synchronize identity information with my Microsoft Entra tenant and provide Domain Services connectivity to virtual machines and applications in Azure.
 ---
 
@@ -82,7 +81,7 @@ The following DNS name restrictions also apply:
     * If the virtual network where you plan to enable the managed domain has a VPN connection with your on-premises network. In this scenario, ensure you don't have a domain with the same DNS domain name on your on-premises network.
     * If you have an existing Azure cloud service with that name on the Azure virtual network.
 
-Complete the fields in the *Basics* window of the Microsoft Entra admin center to create a managed domain:
+To create a managed domain, complete the fields in the *Basics* window of the Microsoft Entra admin center:
 
 1. Enter a **DNS domain name** for your managed domain, taking into consideration the previous points.
 1. Choose the Azure **Location** in which the managed domain should be created. If you choose a region that supports Availability Zones, the Domain Services resources are distributed across zones for additional redundancy.
@@ -92,7 +91,7 @@ Complete the fields in the *Basics* window of the Microsoft Entra admin center t
     >
     > There's nothing for you to configure for Domain Services to be distributed across zones. The Azure platform automatically handles the zone distribution of resources. For more information and to see region availability, see [What are Availability Zones in Azure?][availability-zones]
 
-1. The **SKU** determines the performance and backup frequency. You can change the SKU after the managed domain has been created if your business demands or requirements change. For more information, see [Domain Services SKU concepts][concepts-sku].
+1. The **SKU** determines the performance and backup frequency. You can change the SKU after creating the managed domain if your business demands or requirements change. For more information, see [Domain Services SKU concepts][concepts-sku].
 
     For this tutorial, select the *Standard* SKU.
 1. A *forest* is a logical construct used by Active Directory Domain Services to group one or more domains. 
@@ -107,7 +106,10 @@ Complete the fields in the *Basics* window of the Microsoft Entra admin center t
 
 ## Create and configure the virtual network
 
-To provide connectivity, an Azure virtual network and a dedicated subnet are needed. Domain Services is enabled in this virtual network subnet. In this tutorial, you create a virtual network, though you could instead choose to use an existing virtual network. In either approach, you must create a dedicated subnet for use by Domain Services.
+To provide connectivity, an Azure virtual network and a dedicated subnet are needed. Domain Services is enabled in this virtual network subnet. In this tutorial, you create a virtual network, though you could instead choose to use an existing virtual network. In either approach, you must create a dedicated subnet for use by Domain Services. 
+
+   > [!TIP]
+   > Because you must use the Microsoft Entra Domain Services deployment IPs as the DNS resolver in the VNET in which it resides, we recommend a dedicated Azure virtual network if using a different DNS service and configuring conditional forwarders on Microsoft Entra Domain Services itself.
 
 Some considerations for this dedicated virtual network subnet include the following areas:
 
@@ -123,7 +125,7 @@ Complete the fields in the *Network* window as follows:
     1. If you choose to create a virtual network, enter a name for the virtual network, such as *myVnet*, then provide an address range, such as *10.0.1.0/24*.
     1. Create a dedicated subnet with a clear name, such as *DomainServices*. Provide an address range, such as *10.0.1.0/24*.
 
-    [ ![Create a virtual network and subnet for use with Microsoft Entra Domain Services](./media/tutorial-create-instance-advanced/create-vnet.png)](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
+    [![Create a virtual network and subnet for use with Microsoft Entra Domain Services](./media/tutorial-create-instance-advanced/create-vnet.png)](./media/tutorial-create-instance-advanced/create-vnet-expanded.png#lightbox)
 
     Make sure to pick an address range that is within your private IP address range. IP address ranges you don't own that are in the public address space cause errors within Domain Services.
 
@@ -135,7 +137,7 @@ Complete the fields in the *Network* window as follows:
 A special administrative group named *AAD DC Administrators* is used for management of the Domain Services domain. Members of this group are granted administrative permissions on VMs that are domain-joined to the managed domain. On domain-joined VMs, this group is added to the local administrators group. Members of this group can also use Remote Desktop to connect remotely to domain-joined VMs.
 
 > [!IMPORTANT]
-> You don't have *Domain Administrator* or *Enterprise Administrator* permissions on a managed domain using Domain Services. These permissions are reserved by the service and aren't made available to users within the tenant.
+> You don't have *Domain Administrator* or *Enterprise Administrator* permissions on a managed domain using Domain Services. The service reserves these permissions and doesn't make them available to users within the tenant.
 >
 > Instead, the *AAD DC Administrators* group lets you perform some privileged operations. These operations include belonging to the administration group on domain-joined VMs, and configuring Group Policy.
 
@@ -163,7 +165,7 @@ Domain Services lets you synchronize *all* users and groups available in Microso
 
 On the **Summary** page of the wizard, review the configuration settings for your managed domain. You can go back to any step of the wizard to make changes. To redeploy a managed domain to a different Microsoft Entra tenant in a consistent way using these configuration options, you can also **Download a template for automation**.
 
-1. To create the managed domain, select **Create**. A note is displayed that certain configuration options like DNS name or virtual network can't be changed once the Domain Services managed has been created. To continue, select **OK**.
+1. To create the managed domain, select **Create**. A note displays that certain configuration options like DNS name or virtual network can't be changed once the Domain Services managed is created. To continue, select **OK**.
 1. The process of provisioning your managed domain can take up to an hour. A notification is displayed in the portal that shows the progress of your Domain Services deployment. Select the notification to see detailed progress for the deployment.
 
     ![Notification in the Microsoft Entra admin center of the deployment in progress](./media/tutorial-create-instance-advanced/deployment-in-progress.png)
@@ -203,11 +205,14 @@ To authenticate users on the managed domain, Domain Services needs password hash
 > [!NOTE]
 > Once appropriately configured, the usable password hashes are stored in the managed domain. If you delete the managed domain, any password hashes stored at that point are also deleted.
 >
-> Synchronized credential information in Microsoft Entra ID can't be re-used if you later create a managed domain - you must reconfigure the password hash synchronization to store the password hashes again. Previously domain-joined VMs or users won't be able to immediately authenticate - Microsoft Entra ID needs to generate and store the password hashes in the new managed domain.
+> Synchronized credential information in Microsoft Entra ID can't be re-used if you later create a managed domain - you must reconfigure the password hash synchronization to store the password hashes again. Previously domain-joined VMs or users can't immediately authenticate - Microsoft Entra ID needs to generate and store the password hashes in the new managed domain.
 >
 > For more information, see [Password hash sync process for Domain Services and Microsoft Entra Connect][password-hash-sync-process].
 
-The steps to generate and store these password hashes are different for cloud-only user accounts created in Microsoft Entra ID versus user accounts that are synchronized from your on-premises directory using Microsoft Entra Connect.
+The steps to generate and store these password hashes are different for two types of user accounts: 
+
+- Cloud-only user accounts created in Microsoft Entra ID. 
+- User accounts that are synchronized from your on-premises directory using Microsoft Entra Connect.
 
 A cloud-only user account is an account that was created in your Microsoft Entra directory using either the Microsoft Entra admin center or Microsoft Graph PowerShell cmdlets. These user accounts aren't synchronized from an on-premises directory.
 

@@ -2,12 +2,12 @@
 title: Approve or deny access requests - entitlement management
 description: Learn how to use the My Access portal to approve or deny requests to an access package in Microsoft Entra entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 08/12/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As an approver, I want steps for how to approve requests for access packages so that I can unlock requestors who need to use the resources.
@@ -41,7 +41,7 @@ If you don't have the email, you can find the access requests pending your appro
 
 
 > [!NOTE]
-> If you dont see an email to approve request, make sure that the access package does not have notifications disabled.
+> If you don't see an email to approve request, make sure that the access package doesn't have notifications disabled.
 
 ## View requestor's answers to questions
 
@@ -53,7 +53,7 @@ If you don't have the email, you can find the access requests pending your appro
 
     ![My Access portal - Access request- Click request details](./media/entitlement-management-request-approve/requestor-information-request-details.png)
 
-1. On the **Request details** page, basic information about the request are present such as who made the request, and whether it was for themselves or for someone else. See [Request access package on-behalf-of other users(Preview)](entitlement-management-request-behalf.md) for more details on requesting access for other users.
+1. On the **Request details** page, basic information about the request is present such as who made the request, and whether it was for themselves or for someone else. See [Request access package on-behalf-of other users(Preview)](entitlement-management-request-behalf.md) for more details on requesting access for other users.
 
 1. The information provided by the requestor is at the bottom of the panel.
 
@@ -87,7 +87,7 @@ After you open an access request pending approval, you can see details that will
 
 ## Revoke a request (preview)
 
-Users with Microsoft Entra ID Governance can undo their approval for an access request that they previously approved. This will revoke the approval and the requestor will no longer have access to the access package. 
+Users with Microsoft Entra ID Governance can undo their approval for an access request that they previously approved. This revokes the approval and the requestor will no longer have access to the access package. 
 
 **Prerequisite role:** Approver with Microsoft Entra ID Governance license
 
@@ -95,7 +95,7 @@ Users with Microsoft Entra ID Governance can undo their approval for an access r
 
 2. Select an approved request that you'd like to revoke the decision for.
 
-3. Select **Remove** to remove the user's access to the access package. Include a reason for why you are revoking your decision.
+3. Select **Remove** to remove the user's access to the access package. Include a reason for why you're revoking your decision.
 
 4. Select **Remove** to submit your decision. 
 

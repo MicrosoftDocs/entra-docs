@@ -95,7 +95,7 @@
     - name: Learn about groups and access rights  
       href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Manage access with groups
-      href: ~/fundamentals/how-to-manage-groups.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json  
+      href: /entra/fundamentals/how-to-manage-groups?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json  
     - name: Manage groups PowerShell for Graph (v2)   
       href: groups-settings-v2-cmdlets.md
     - name: Configure group settings with PowerShell
@@ -103,7 +103,9 @@
     - name: Search group and member lists   
       href: groups-members-owners-search.md
     - name: Dynamic groups    
-      items: 
+      items:
+      - name: Managing dynamic membership group processing    
+        href: manage-dynamic-group.md
       - name: Create a dynamic group    
         href: groups-create-rule.md
       - name: Dynamic group rule syntax
@@ -146,9 +148,7 @@
       href: licensing-admin-center.md
     - name: Additional scenarios    
       href: licensing-group-advanced.md
-    - name: Group licensing with PowerShell and Graph
-      href: licensing-ps-examples.md
-    - name: Group licensing examples Microsoft Graph PowerShell
+    - name: Group licensing examples using PowerShell
       href: licensing-powershell-graph-examples.md
     - name: Service plan IDs for licensing
       href: licensing-service-plan-reference.md

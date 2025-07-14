@@ -5,10 +5,10 @@ description: Learn which apps are supported for users to sign in to Microsoft En
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: aanjusingh
-manager: amycolannino
+manager: dougeby
 ms.reviewer: anjusingh
 ---
 
@@ -48,7 +48,7 @@ For the same reason, Microsoft Office mobile apps (except Microsoft Teams, Compa
 
 ## Support for Non-Microsoft apps 
 
-To make Non-Micorosoft apps compatible with the SMS sign-in feature: 
+To make Non-Microsoft apps compatible with the SMS sign-in feature: 
 - Integrate Non-Microsoft web apps with Microsoft Entra ID and use Microsoft Entra authentication. Use Security Assertion Markup Language [SAML](~/identity/enterprise-apps/add-application-portal-setup-sso.md) or OpenID Connect [OIDC](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to integrate with Microsoft Entra SSO. 
 - Integrate Non-Microsoft on-premises apps with Microsoft Entra ID using [Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md)
 - Integrate Non-Microsoft client apps with [Microsoft identity platform](~/identity-platform/v2-overview.md) for authentication 

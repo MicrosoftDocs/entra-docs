@@ -1,24 +1,40 @@
 ---
 title: SMS-based user sign-in for Microsoft Entra ID
 description: Learn how to configure and enable users to sign-in to Microsoft Entra ID using SMS
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/08/2025
+ms.date: 06/18/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: anjusingh
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Configure and enable users for SMS-based authentication using Microsoft Entra ID 
 
-To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. SMS-based authentication lets users sign-in without providing, or even knowing, their user name and password. After their account is created by an identity administrator, they can enter their phone number at the sign-in prompt. They receive an SMS authentication code that they can provide to complete the sign-in. This authentication method simplifies access to applications and services, especially for Frontline workers.
+Entra SMS-based authentication allows users to sign in using only a registered phone number and a one-time passcode (OTP) sent via SMS, no username or password required. This is different from Entra SMS multi-factor authentication, which typically requires a username, password, and SMS as MFA method. This authentication method is primarily designed to simplify sign-in experience of fronline workers and not recommended for Information workers (IW).
 
-This article shows you how to enable SMS-based authentication for select users or groups in Microsoft Entra ID. For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
+Entra also has a public preview of an alternative approach for frontline-workers called [QR code authentication](concept-authentication-qr-code.md) that organizations may want to consider for frontline shared device scenarios.
+
+The rest of this article shows you how to enable SMS-based authentication as a first factor for select users or groups in Microsoft Entra ID. For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
 
 ## Before you begin
+
+Here are some important points before you start:
+
+- You should enable SMS authentication *only* for frontline workers. 
+- If you enable SMS authentication, make sure you follow best practices for using security controls for work or home access for frontline workers. For more information, see [Best practices to protect frontline workers](/entra/identity-platform/security-best-practices-for-frontline-workers).
+- If you enable SMS authentication for frontline workers, we suggest you to move to using QR code authentication (preview), which isn't phishable. For more information, see [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](/entra/identity/authentication/concept-authentication-qr-code).
+
+
+To simplify and secure sign-in to applications and services, Microsoft Entra ID provides multiple authentication options. SMS-based authentication lets users such as frontlone workers enter an SMS code as a first factor for sign in. Users don't need to provide, or even know, their user name and password. 
+
+After their account is created by an identity administrator, they can enter their phone number at the sign-in prompt. They receive an SMS authentication code that they can provide to complete the sign-in. This authentication method simplifies access to applications and services, especially for Frontline workers.
+
+
+## Prerequisites
 
 To complete this article, you need the following resources and privileges:
 
@@ -57,7 +73,7 @@ There are three main steps to enable and use SMS-based authentication in your or
 First, let's enable SMS-based authentication for your Microsoft Entra tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** >  **Policies**.
+1. Browse to **Entra ID** > **Authentication methods** > **Policies**.
 1. From the list of available authentication methods, select **SMS**.
 
     ![Screenshot that shows how to select the SMS authentication method.](./media/howto-authentication-sms-signin/authentication-methods-policy.png)

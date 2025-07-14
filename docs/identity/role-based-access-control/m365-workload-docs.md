@@ -1,17 +1,15 @@
 ---
 title: Roles across Microsoft services
 description: Find content, API references, and audit and monitoring references related to role-based access control (RBAC) for Microsoft 365 and other services
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
 ms.date: 08/31/2024
-ms.author: rolyon
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange
 #Customer intent: As a Microsoft Entra administrator, to delegate permissions across Microsoft 365 services quickly and accurately I want to know where the content is for admin roles.
 ---
 
@@ -62,7 +60,7 @@ Includes SharePoint, OneDrive, Delve, Lists, Project Online, and Loop.
 > | Area | Content |
 > | --- | --- |
 > | Overview | [About the SharePoint Administrator role in Microsoft 365](/sharepoint/sharepoint-admin-role)<br/>[Delve for admins](/sharepoint/delve-for-office-365-admins)<br/>[Control settings for Microsoft Lists](/sharepoint/control-lists)<br/>[Change permission management in Project Online](/projectonline/change-permission-management-in-project-online) |
-> | Management API reference | **SharePoint-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• Roles with permissions starting with: `microsoft.office365.sharepoint`
+> | Management API reference | **SharePoint-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• Roles with permissions starting with: `microsoft.office365.sharepoint` |
 > | Audit and monitoring reference | **SharePoint-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category |
 
 ### Intune
@@ -169,8 +167,8 @@ Includes Defender suite, Secure Score, Cloud App Security, and Threat Intelligen
 > | Area | Content |
 > | --- | --- |
 > | Overview | [Universal Print Administrator Roles](/universal-print/fundamentals/universal-print-administrator-roles) |
-> | Management API reference | **Universal Print-specifc roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• See roles with permissions starting with `microsoft.azure.print` |
-> | Audit and monitoring reference | **Universal Print-specifc roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category |
+> | Management API reference | **Universal Print-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• See roles with permissions starting with `microsoft.azure.print` |
+> | Audit and monitoring reference | **Universal Print-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category |
 
 ### Microsoft 365 Apps suite management
 

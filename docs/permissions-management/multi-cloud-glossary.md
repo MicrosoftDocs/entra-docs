@@ -2,15 +2,18 @@
 title: Microsoft Entra Permissions Management glossary
 description: Microsoft Entra Permissions Management glossary
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: glossary
-ms.date: 03/20/2024
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # The Microsoft Entra Permissions Management glossary
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This glossary provides a list of some of the commonly used cloud terms in Microsoft Entra Permissions Management. These terms help Permissions Management users navigate through cloud-specific terms and cloud-generic terms.
 

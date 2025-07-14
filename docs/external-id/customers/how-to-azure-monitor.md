@@ -1,17 +1,15 @@
 ---
 title: Azure Monitor in external tenants
 description: Learn how to set up Azure Monitor in external tenants to collect and analyze data in your tenant.
-
 author: csmulligan
-manager: celestedg
-ms.service: entra-external-id 
+manager: dougeby
+ms.service: entra-external-id
 ms.subservice: external
-ms.topic: how-to 
-ms.date:  09/16/2024
+ms.topic: how-to
+ms.date: 07/07/2025
 ms.author: cmulligan
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to set up Azure Monitor in external tenants to collect and analyze data in this tenant.
-
 ---
 # Set up Azure Monitor in external tenants (preview)
 
@@ -171,7 +169,7 @@ In this example, we use the Log Analytics workspace to create a dashboard. Follo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories + subscriptions** menu. This account must be a member of the security group you specified previously.
-1. Browse to **Diagnostic settings** by navigating to **Identity** > **Monitoring & health**.
+1. Browse to **Diagnostic settings** by navigating to **Entra ID** > **Monitoring & health**.
 1. If there are existing settings for the resource, you'll see a list of settings already configured. Either select **Add diagnostic setting** to add a new setting, or select **Edit settings** to edit an existing setting. Each setting can have no more than one of each of the destination types.
 
     :::image type="content" source="media/how-to-azure-monitor/diagnostic-settings-pane-enabled.png" alt-text="Screenshot of the diagnostics settings.":::
@@ -244,7 +242,7 @@ Azure Monitor Logs are designed to scale and support collecting, indexing, and s
 
 ## Disable monitoring data collection
 
-To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You'll continue to incur charges for retaining log data you've already collected into your workspace. If you no longer need the monitoring data you've collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring additional data retention charges.
+To stop collecting logs to your Log Analytics workspace, delete the diagnostic settings you created. You'll continue to incur charges for retaining log data you've already collected into your workspace. If you no longer need the monitoring data you've collected, you can delete your Log Analytics workspace and the resource group you created for Azure Monitor. Deleting the Log Analytics workspace deletes all data in the workspace and prevents you from incurring other data retention charges.
 
 ### Delete Log Analytics workspace and resource group
 

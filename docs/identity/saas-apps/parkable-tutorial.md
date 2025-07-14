@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with Parkable
+title: Configure Parkable for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Parkable.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 08/13/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Parkable so that I can control who has access to Parkable, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Parkable
+# Configure Parkable for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate Parkable with Microsoft Entra ID. Parkable is a car park management platform that helps create happier staff, tenants and visitors all while helping you improve occupancy rates and increase revenue. When you integrate Parkable with Microsoft Entra ID, you can:
+In this article, you learn how to integrate Parkable with Microsoft Entra ID. Parkable is a car park management platform that helps create happier staff, tenants and visitors all while helping you improve occupancy rates and increase revenue. When you integrate Parkable with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Parkable.
 * Enable your users to be automatically signed-in to Parkable with their Microsoft Entra accounts.
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Parkable** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Parkable** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -97,12 +97,12 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 To configure single sign-on on **Parkable**, you need to follow the steps outlined in [this document](https://admin.parkable.com/s/article/Set-up-SSP-SAML) to continue the setup on the Parkable admin panel.
 
-* Click on **Test this application**, this will redirect to Parkable Sign-on URL where you can initiate the login flow. 
+* Select **Test this application**, this option redirects to Parkable Sign-on URL where you can initiate the login flow. 
 
 * Go to Parkable Sign-on URL directly and initiate the login flow from there.
 
-* You can use Microsoft My Apps. When you click the Parkable tile in the My Apps, this will redirect to Parkable Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Parkable tile in the My Apps, this option redirects to Parkable Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Parkable you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

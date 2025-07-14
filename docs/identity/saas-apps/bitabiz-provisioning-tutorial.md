@@ -1,32 +1,30 @@
 ---
-title: 'Tutorial: Configure BitaBIZ for automatic user provisioning with Microsoft Entra ID'
+title: Configure BitaBIZ for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to BitaBIZ.
-
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to BitaBIZ so that I can streamline the user management process and ensure that users have the appropriate access to BitaBIZ.
 ---
 
-# Tutorial: Configure BitaBIZ for automatic user provisioning
+# Configure BitaBIZ for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in BitaBIZ and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to BitaBIZ.
+The objective of this article is to demonstrate the steps to be performed in BitaBIZ and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to BitaBIZ.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant.
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)].
 * [A BitaBIZ tenant](https://bitabiz.dk/en/price/).
 * A user account in BitaBIZ with Admin permissions.
 
@@ -39,15 +37,15 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to BitaBIZ
 
-* It is recommended that a single Microsoft Entra user is assigned to BitaBIZ to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to BitaBIZ to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to BitaBIZ, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Setup BitaBIZ for provisioning
 
-Before configuring BitaBIZ for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on BitaBIZ.
+Before configuring BitaBIZ for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on BitaBIZ.
 
-1. Sign in to your [BitaBIZ Admin Console](https://www.bitabiz.com/login?lang=en). Click on **SETUP ADMIN**.
+1. Sign in to your [BitaBIZ Admin Console](https://www.bitabiz.com/login?lang=en). Select **SETUP ADMIN**.
 
 	:::image type="content" source="media/bitabiz-provisioning-tutorial/setup-admin.png" alt-text="Screenshot of the BitaBIZ Admin Console, with Setup admin highlighted." border="false":::
 
@@ -55,7 +53,7 @@ Before configuring BitaBIZ for automatic user provisioning with Microsoft Entra 
 
 	:::image type="content" source="media/bitabiz-provisioning-tutorial/integration.png" alt-text="Screenshot of the BitaBIZ Admin Console, with Integration highlighted." border="false":::
 
-2.	Navigate to **Microsoft Entra provisioning**.  Select **Enabled** in Automatic user provisioning. Copy the values for **SCIM Provisioning endpoint URL** and  **Bearer Token**. These values will be entered in the Tenant URL and Secret Token fields in the Provisioning tab of your BitaBIZ application.
+2.	Navigate to **Microsoft Entra provisioning**.  Select **Enabled** in Automatic user provisioning. Copy the values for **SCIM Provisioning endpoint URL** and  **Bearer Token**. These values are entered in the Tenant URL and Secret Token fields in the Provisioning tab of your BitaBIZ application.
 
 	![BitaBIZ Add SCIM](media/bitabiz-provisioning-tutorial/authentication.png)
 
@@ -67,7 +65,7 @@ To configure BitaBIZ for automatic user provisioning with Microsoft Entra ID, yo
 **To add BitaBIZ from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **BitaBIZ**, select **BitaBIZ** in the search box.
 1. Select **BitaBIZ** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![BitaBIZ in the results list](common/search-new-app.png)
@@ -77,14 +75,14 @@ To configure BitaBIZ for automatic user provisioning with Microsoft Entra ID, yo
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in BitaBIZ based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for BitaBIZ, following the instructions provided in the [BitaBIZ Single sign-on tutorial](BitaBIZ-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for BitaBIZ, following the instructions provided in the [BitaBIZ Single sign-on  article](BitaBIZ-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-bitabiz-in-azure-ad'></a>
 
 ### To configure automatic user provisioning for BitaBIZ in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -100,7 +98,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the Admin Credentials section, input the **SCIM Provisioning endpoint URL** and **Bearer Token** values retrieved earlier in Tenant URL and Secret Token respectively. Click **Test Connection** to ensure Microsoft Entra ID can connect to BitaBIZ. If the connection fails, ensure your BitaBIZ account has Admin permissions and try again.
+5. Under the Admin Credentials section, input the **SCIM Provisioning endpoint URL** and **Bearer Token** values retrieved earlier in Tenant URL and Secret Token respectively. Select **Test Connection** to ensure Microsoft Entra ID can connect to BitaBIZ. If the connection fails, ensure your BitaBIZ account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -108,7 +106,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to BitaBIZ**.
 
@@ -117,7 +115,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	![BitaBIZ User Attributes](media/bitabiz-provisioning-tutorial/user-attribute.png)
 
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for BitaBIZ, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -127,7 +125,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -138,13 +136,13 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 ## Connector limitations
 
 * BitaBIZ requires **userName**, **email**, **firstName** and **lastName** as mandatory attributes. 
-* BitaBIZ does not support hard deletes currently.
+* BitaBIZ doesn't support hard deletes currently.
 
 ## Additional resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md).
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md).

@@ -7,9 +7,9 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 11/12/2024
+ms.date: 06/20/2025
 ms.reviewer: joflore
-
+ms.custom: sfi-ga-nochange
 #CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses, so that I can ensure organizational security with Microsoft Entra.
 ---
 # Secure Generative AI with Microsoft Entra
@@ -18,7 +18,6 @@ As the digital landscape rapidly evolves, organizations across various industrie
 
 Microsoft Entra offers a comprehensive suite of capabilities to securely manage AI applications, appropriately control access, and protect sensitive data:
 
-- [Microsoft Entra Permissions Management](../permissions-management/overview.md) (MEPM)
 - [Microsoft Entra ID Governance](/graph/api/resources/identitygovernance-overview)
 - [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md)
 - [Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM)
@@ -34,7 +33,7 @@ Multicloud environment management is difficult as Identity and Access Management
 
 ### Identify nonhuman accounts
 
-Nonhuman accounts have repeatable patterns and are less likely to change over time. When you identify these accounts, consider using [workload or managed identities](../workload-id/workload-identities-overview.md) and Microsoft Entra Permissions Management. Permissions Management is a Cloud Infrastructure Entitlement Management (CIEM) tool. It provides comprehensive visibility into permissions that you assign to all identities across Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
+Nonhuman accounts have repeatable patterns and are less likely to change over time. When you identify these accounts, consider using [workload or managed identities](../workload-id/workload-identities-overview.md).
 
 Trim roles down to the [Zero Trust](/security/zero-trust/zero-trust-overview) least privilege access security principle. Pay close attention to [super identities](https://techcommunity.microsoft.com/blog/identity/securing-access-to-any-resource-anywhere/4120308) (such as [serverless functions and apps](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-is-serverless-computing)). Factor in use cases for Gen AI applications.
 
@@ -124,10 +123,7 @@ In some scenarios, you might only use AI applications seasonally. For example, f
 
 Ideally, all users follow access policies to secure access to organizational resources. When you need to use Conditional Access policies with exclusions for individual users or guests, you can avoid policy exception oversight. Use Microsoft Entra access reviews to provide auditors with proof of regular exception review.
 
-Continually review Permissions Management. As identities stay with an organization, they tend to gather permissions while they work on new projects or move teams. Monitor the Permissions Creep Index (PCI) score within Permissions Management and set up monitoring and alerting capabilities. This approach reduces gradual permissions creep and decreases the blast radius around compromised user accounts.
-
 - [Configure reports to regularly run](../permissions-management/how-to-audit-trail-results.md). [Configure custom reports](../permissions-management/report-create-custom-report.md) for specific use cases, especially for identities that need to access Gen AI apps.
-- To monitor permissions creep across [Azure, AWS, and GCP](../permissions-management/onboard-enable-tenant.md), use Permissions Management. Apply recommendations to workload identities to ensure that your Gen AI apps don't have excessive permissions or have more permissions added over time than necessary.
 
 ## Related content
 

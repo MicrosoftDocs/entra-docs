@@ -4,10 +4,9 @@ titleSuffix: Microsoft Entra Verified ID
 description: Learn how to start a presentation request in Verifiable Credentials
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
 ms.date: 01/30/2025
 ms.author: barclayn
 
@@ -49,14 +48,14 @@ Content-Type: application/json
 Authorization: Bearer  <token>
 
 {
-    "callback": {
-      "url": "https://contoso.com/api/verifier/presentationCallback",
-      "state": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
-      "headers": {
-        "api-key": "an-api-key-can-go-here"
-      }
-    },
-    ...
+    "callback": {
+      "url": "https://contoso.com/api/verifier/presentationCallback",
+      "state": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+      "headers": {
+        "api-key": "an-api-key-can-go-here"
+      }
+    },
+    ...
 }
 ```
 
@@ -146,7 +145,7 @@ The `RequestCredential` provides information about the requested credentials the
 |Property |Type |Description |
 |---------|---------|---------|
 | `type`| string| The verifiable credential type. The `type` must match the type as defined in the `issuer` verifiable credential manifest (for example, `VerifiedCredentialExpert`). To get the issuer manifest, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md). Copy the **Issue credential URL**, open it in a web browser, and check the **id** property. |
-| `purpose`| string | Optional. Provide information about the purpose of requesting this verifiable credential. This data isn't used by the Authenticator app. |
+| `purpose`| string | Optional. Provide information about the purpose of requesting this verifiable credential. This data isn't used by the **Authenticator** app. |
 | `acceptedIssuers`| string collection | Optional. A collection of issuers' DIDs that could issue the type of verifiable credential that subjects can present. To get your issuer DID, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md), and copy the value of the **Decentralized identifier (DID)**. If the `acceptedIssuers` collection is empty or not present, then the presentation request accepts a credential type issued by any issuer. |
 | `configuration.validation` | [Configuration.Validation](#configurationvalidation-type) | Optional settings for presentation validation.|
 | `constraints` | [Constraints](#constraints-type) | Optional. Collection of claims constraints.|

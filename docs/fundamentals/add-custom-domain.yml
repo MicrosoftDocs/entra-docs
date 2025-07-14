@@ -1,19 +1,18 @@
 ### YamlMime:HowTo
-
 metadata:
   title: Add your custom domain
   description: Instructions about how to add your custom domain name to your tenant.
   author: barclayn
   ms.author: barclayn
-  manager: amycolannino
+  manager: pmwongera
   ms.reviewer: elkuzmen
-  ms.date: 01/31/2025
+  ms.date: 03/05/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
-
+    - sfi-ga-nochange
 title: |
   Add your custom domain name to your tenant
 introduction: |
@@ -50,7 +49,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
       - |
-        Browse to **Identity** > **Settings** > **Domain names** > **Add custom domain**.
+        Browse to **Entra ID** > **Domain names** > **Add custom domain**.
 
           :::image type="content" source="media/add-custom-domain/add-custom-domain.png" alt-text="Screenshot of Custom domain names page, with Add custom domain shown.":::
       - |
@@ -88,7 +87,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
       - |
-        Browse to **Identity** > **Settings** > **Domain names**.
+        Browse to **Entra ID** > **Domain names**.
       - |
         In **Custom domain names**, select the custom domain name. In this example, select **contoso.com**.
 

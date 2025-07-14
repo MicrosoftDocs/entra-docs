@@ -5,10 +5,10 @@ metadata:
   ms.service: entra-id
   ms.subservice: devices
   ms.topic: faq
-  ms.date: 08/01/2024
-  ms.author: joflore
-  author: MicrosoftGuyJFlo
-  manager: amycolannino
+  ms.date: 06/27/2025
+  ms.author: owinfrey
+  author: owinfreyATL
+  manager: dougeby
   ms.reviewer: sempofu, micrider
 title: Settings and data roaming FAQ for administrators
 summary: This article answers some questions IT administrators might have about settings and app data sync.
@@ -56,7 +56,7 @@ sections:
         answer: |
           When multiple Microsoft Entra accounts from different Microsoft Entra tenants are on the same device, you must update the device's registry to communicate with the Azure Rights Management service for each Microsoft Entra tenant.  
           
-          1. Find the GUID for each Microsoft Entra tenant. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Identity** > **Overview** > **Properties** > **Tenant ID**.
+          1. Find the GUID for each Microsoft Entra tenant. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Entra ID** > **Overview** > **Properties** > **Tenant ID**.
           2. After you have the GUID, you'll need to add the registry key
              **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\SettingSync\WinMSIPC\<tenant ID GUID>**.
              From the **tenant ID GUID** key, create a new Multi-String value (REG-MULTI-SZ) named **AllowedRMSServerUrls**. For its data, specify the licensing distribution point URLs of the other Azure tenants that the device accesses.
@@ -72,7 +72,7 @@ sections:
         answer: |
           Prior to Nov 2022 all user data was secured using [Azure Rights Management](/azure/information-protection/what-is-information-protection).
 
-          Starting in November 2022, Microsoft no longer uses Azure Rights Management for all data encryption. Microsoft is committed to safeguarding customer data. Certain sensitive data such as passwords are encrypted client side with keys derived from the Microsoft Entra tenant to ensure an extra layer of security. All user data (including nonsensitive data) is encrypted in transit and at rest in the cloud. For a list of sensitive and nonsensitive data items roamed, see [Windows roaming settings reference](enterprise-state-roaming-windows-settings-reference.md).
+          Starting in November 2022, Microsoft no longer uses Azure Rights Management for all data encryption. Microsoft is committed to safeguarding customer data. Certain sensitive data such as passwords are encrypted client side with keys derived from the Microsoft Entra tenant to ensure an extra layer of security. All user data (including nonsensitive data) is encrypted in transit and at rest in the cloud. For a list of sensitive and nonsensitive data items roamed, see [Enterprise State Roaming settings catalog](/windows/configuration/windows-backup/catalog-esr).
           
       - question: |
           Can I manage sync for a specific app or setting?

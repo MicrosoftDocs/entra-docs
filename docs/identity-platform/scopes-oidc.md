@@ -7,9 +7,8 @@ ms.author: jomondi
 ms.date: 01/03/2025
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
-
 ms.topic: concept-article
-
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand how to request scopes and permissions, so that I can access web-hosted resources on behalf of a user and ensure fine-grained control over data access and API functionality.
 ---
 
@@ -37,8 +36,6 @@ When a resource's functionality is chunked into small permission sets, third-par
 
 In OAuth 2.0, these types of permission sets are called *scopes*. They're also often referred to as *permissions*. In the Microsoft identity platform, a permission is represented as a string value. An app requests the permissions it needs by specifying the permission in the `scope` query parameter. Identity platform supports several well-defined [OpenID Connect scopes](#openid-connect-scopes) and resource-based permissions (each permission is indicated by appending the permission value to the resource's identifier or application ID URI). For example, the permission string `https://graph.microsoft.com/Calendars.Read` is used to request permission to read users calendars in Microsoft Graph.
 
-In requests to the authorization server, for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `scope=User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
-
 ## Admin-restricted permissions
 
 Permissions in the Microsoft identity platform can be set to admin restricted. For example, many higher-privilege Microsoft Graph permissions require admin approval. If your app requires admin-restricted permissions, an organization's administrator must consent to those scopes on behalf of the organization's users. The following section gives examples of these kinds of permissions:
@@ -58,7 +55,7 @@ For a step by step guide on how to expose scopes in a web API, see [Configure an
 
 ## OpenID Connect scopes
 
-The Microsoft identity platform implementation of OpenID Connect has a few well-defined scopes that are also hosted on Microsoft Graph: `openid`, `email`, `profile`, and `offline_access`. The `address` and `phone` OpenID Connect scopes aren't supported.
+The Microsoft identity platform implementation of OpenID Connect has a few well-defined scopes that are also hosted on Microsoft Graph: `openid`, `email`, `profile`, and `offline_access`. The `address` and `phone` OpenID Connect scopes aren't supported. These scopes are sometimes optional and considered for ID token enrichment. These scopes will not always appear in separate lines in a consent prompt to a user.
 
 If you request the OpenID Connect scopes and a token, you get a token to call the [UserInfo endpoint](userinfo.md).
 
@@ -84,7 +81,7 @@ For a complete list of the `profile` claims available in the `id_tokens` paramet
 
 The [`offline_access` scope](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess) gives your app access to resources on behalf of the user for an extended time. On the consent page, this scope appears as the **Maintain access to data you have given it access to** permission.
 
-If any of the requested delegated permissions from the `scope` parameter (excluding `openid`, `profile`, `email`) are granted, this is sufficient for the app to request a refresh token using `offline_access`. For example, if `User.Read` for Microsoft is granted, the app will only recieve an access token. That said, if the app were to subsequently request a refresh token, the fact that `User.Read` had been granted is sufficient for a refresh token to be provided. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
+If any of the requested delegated permissions from the `scope` parameter (excluding `openid`, `profile`, `email`) are granted, this is sufficient for the app to request a refresh token using `offline_access`. For example, if `User.Read` for Microsoft is granted, the app will only receive an access token. That said, if the app were to subsequently request a refresh token, the fact that `User.Read` had been granted is sufficient for a refresh token to be provided. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
 
 > [!NOTE]
 > This permission currently appears on all consent pages, even for flows that don't provide a refresh token (such as the [implicit flow](v2-oauth2-implicit-grant-flow.md)). This setup addresses scenarios where a client can begin within the implicit flow and then move to the code flow where a refresh token is expected.

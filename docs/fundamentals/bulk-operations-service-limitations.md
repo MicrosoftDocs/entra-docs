@@ -1,19 +1,17 @@
 ---
 title: Bulk operations
-description: Learn about Microsoft Entra bulk operations related to users, groups, and devices in the Microsoft Entra admin portal could time out and fail on large tenants.
-keywords: Azure AD licensing
+description: Learn about Microsoft Entra bulk operations related to users, groups,
+  and devices in the Microsoft Entra admin portal could time out and fail on large
+  tenants.
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/05/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
-
-# Customer intent: As an IT admin, I want to understand bulk operations, so that I can effectively understand what some of the service limitations are and apply a workaround if possible.
 ---
 
 # Bulk operations
@@ -182,7 +180,7 @@ foreach ($group in $groups) {
         DisplayName = $group.displayName 
         Mail = $group.mail 
         GroupType = $groupType 
-        MemebershipType = $membershipType 
+        MembershipType = $membershipType 
     }   
     $groupData += $groupObject 
 } 

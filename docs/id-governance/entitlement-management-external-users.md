@@ -2,7 +2,7 @@
 title: Govern access for external users in entitlement management
 description: Learn about the settings you can specify to govern access for external users in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -10,6 +10,7 @@ ms.topic: how-to
 ms.date: 11/07/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want understand how I can govern access for external users in entitlement management.
 ---
 
@@ -98,7 +99,7 @@ To ensure people outside of your organization can request access packages and ge
 
 - Make sure to exclude the Entitlement Management app from any Conditional Access policies that impact guest users. Otherwise, a Conditional Access policy could block them from accessing MyAccess or being able to sign in to your directory. For example, guests likely don't have a registered device, aren't in a known location, and don't want to re-register for multifactor authentication (MFA), so adding these requirements in a Conditional Access policy will block guests from using entitlement management. For more information, see [What are conditions in Microsoft Entra Conditional Access?](~/identity/conditional-access/concept-conditional-access-conditions.md).
 
-- If the conditional access is blocking all cloud applications, in addition to excluding the Entitlement Management App, ensure that the *Request Approvals Read Platform* is also excluded in your Conditional Access (CA) policy. Start by confirming that you have the necessary roles: Conditional Access Administrator, Application Administrator, Attribute Assignment Administrator, and Attribute Definition Administrator. Then, create a custom security attribute with a suitable name and values. Locate the service principal for *Request Approvals Read Platform* in Enterprise Applications, and assign the custom attribute with the chosen value to this application. In your CA policy, apply a filter to exclude selected applications based on the custom attribute name and value assigned to *Request Approvals Read Platform*. For more details on filtering applications in CA policies, refer to : [Conditional Access: Filter for applications](../identity/conditional-access/concept-filter-for-applications.md)
+- If the Conditional Access is blocking all cloud applications, in addition to excluding the Entitlement Management App, ensure that the *Request Approvals Read Platform* is also excluded in your Conditional Access policy. Start by confirming that you have the necessary roles: Conditional Access Administrator, Application Administrator, Attribute Assignment Administrator, and Attribute Definition Administrator. Then, create a custom security attribute with a suitable name and values. Locate the service principal for *Request Approvals Read Platform* in Enterprise Applications, and assign the custom attribute with the chosen value to this application. In your Conditional Access policy, apply a filter to exclude selected applications based on the custom attribute name and value assigned to *Request Approvals Read Platform*. For more details on filtering applications in Conditional Access policies, refer to : [Conditional Access: Filter for applications](../identity/conditional-access/concept-filter-for-applications.md)
 
     :::image type="content" source="media/entitlement-management-external-users/exclude-app-guests.png" alt-text="Screenshot of exclude app options.":::
 
@@ -137,7 +138,7 @@ You can select what happens when an external user, who was invited to your direc
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Settings**.
+1. Browse to **ID Governance** > **Entitlement management** > **Settings**.
 
 1. Select **Edit**.
 

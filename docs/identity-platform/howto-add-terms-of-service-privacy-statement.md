@@ -1,9 +1,9 @@
 ---
 title: Terms of Service and privacy statement for apps
 description: Learn how you can configure the terms of service and privacy statement for apps registered to use Microsoft Entra ID.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom:
 ms.date: 12/15/2023
 ms.reviewer: sureshja
@@ -55,7 +55,7 @@ When the terms of service and privacy statement are ready, you can add links to 
 Follow these steps to add links:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **User experiences** > **Company branding**.
+1. Browse to **Entra ID** > **Custom Branding**.
 1. Select **Getting started**, and then select **Edit** for the **Default sign-in experience**.
 1. Select **Footer** and fill out the URL for **Terms of Use** and **Privacy & Cookies**.
 1. Select **Review + save**.

@@ -2,11 +2,11 @@
 title: Review access of an access package in entitlement management
 description: Learn how to complete an access review of entitlement management access packages in access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 #Customer intent: As an administrator, I want to review the active assignments of my users to ensure everyone has the appropriate access.
 ---
@@ -29,7 +29,7 @@ As at least an [Identity Governance Administrator](../identity/role-based-access
 
 1. Select the **Review user access** link to open the access review. 
 
-1. If you don’t have the email, you can find your pending access reviews by navigating directly to https://myaccess.microsoft.com.  (For US Government, use `https://myaccess.microsoft.us` instead.)
+1. If you don’t have the email, you can find your pending access reviews by navigating directly to https://myaccess.microsoft.com. (For US Government, use `https://myaccess.microsoft.us` instead.)
 
 1. Select **Access reviews** on the left navigation bar to see a list of pending access reviews assigned to you.
     
@@ -69,7 +69,7 @@ Once you open the access review, you see the names of users for which you need t
 If there are multiple reviewers, the last submitted response is recorded. Consider an example where an administrator designates two reviewers – Alice and Bob. Alice opens the review first and approves access. Before the review ends, Bob opens the review and denies access. In this case, the last deny access decision gets recorded.
 
 >[!NOTE]
->If a user is denied access in the review, they aren't removed from the access package immediately. The user will be removed from the access package once the review results are applied after the review is closed. The review will close automatically at the end of the review duration or earlier if an administrator manually stops the review. 
+>If a user is denied access in the review, they aren't removed from the access package immediately. The user will be removed from the access package once the review results are applied after the review is closed. The review closes automatically at the end of the review duration or earlier if an administrator manually stops the review. 
 
 ### Approve or deny access using the system-generated recommendations
 

@@ -1,32 +1,30 @@
 ---
-title: 'Tutorial: Configure Infor CloudSuite for automatic user provisioning with Microsoft Entra ID'
+title: Configure Infor CloudSuite for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Infor CloudSuite.
-
 author: thomasakelo
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 03/25/2024
+ms.topic: how-to
+ms.date: 03/25/2025
 ms.author: thomasakelo
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Infor CloudSuite so that I can streamline the user management process and ensure that users have the appropriate access to Infor CloudSuite.
 ---
 
-# Tutorial: Configure Infor CloudSuite for automatic user provisioning
+# Configure Infor CloudSuite for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in Infor CloudSuite and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Infor CloudSuite.
+The objective of this article is to demonstrate the steps to be performed in Infor CloudSuite and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Infor CloudSuite.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* A Microsoft Entra tenant
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * [An Infor CloudSuite tenant](https://www.infor.com/products)
 * A user account in Infor CloudSuite with Admin permissions.
 
@@ -39,17 +37,17 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Infor CloudSuite
 
-* It is recommended that a single Microsoft Entra user is assigned to Infor CloudSuite to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Infor CloudSuite to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
 * When assigning a user to Infor CloudSuite, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 ## Set up Infor CloudSuite for provisioning
 
-1. Sign in to your [Infor CloudSuite Admin Console](https://www.infor.com/customer-center). Click on the user icon and then navigate to **user management**.
+1. Sign in to your [Infor CloudSuite Admin Console](https://www.infor.com/customer-center). Select the user icon and then navigate to **user management**.
 
 	![Infor CloudSuite Admin Console](media/infor-cloudsuite-provisioning-tutorial/admin.png)
 
-2.	Click on the menu icon on the left top corner of the screen. Click on **Manage**.
+2.	Select the menu icon on the left top corner of the screen. Select **Manage**.
 
 	![Infor CloudSuite Add SCIM](media/infor-cloudsuite-provisioning-tutorial/manage.png)
 
@@ -57,7 +55,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Infor CloudSuite SCIM Account](media/infor-cloudsuite-provisioning-tutorial/scim.png)
 
-4.	Add an admin user by clicking on the plus icon. Provide a **SCIM Password** and type the same password under **Confirm Password**. Click on the folder icon to save the password. You will then see an **User Identifier** generated for the admin user.
+4.	Add an admin user by selecting the plus icon. Provide a **SCIM Password** and type the same password under **Confirm Password**. Select the folder icon to save the password. You then see an **User Identifier** generated for the admin user.
 
 	![Infor CloudSuite Admin user](media/infor-cloudsuite-provisioning-tutorial/newuser.png)
 	
@@ -75,7 +73,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	[Convert]::ToBase64String($bytes)
    	 ```
 
-3.	Copy the bearer token. This value will be entered in the Secret Token field in the Provisioning tab of your Infor CloudSuite application.
+3.	Copy the bearer token. This value is entered in the Secret Token field in the Provisioning tab of your Infor CloudSuite application.
 
 ## Add Infor CloudSuite from the gallery
 
@@ -84,7 +82,7 @@ Before configuring Infor CloudSuite for automatic user provisioning with Microso
 **To add Infor CloudSuite from the Microsoft Entra application gallery, perform the following steps:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Infor CloudSuite**, select **Infor CloudSuite** in the search box.
 1. Select **Infor CloudSuite** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 	![Infor CloudSuite in the results list](common/search-new-app.png)
@@ -94,14 +92,14 @@ Before configuring Infor CloudSuite for automatic user provisioning with Microso
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Infor CloudSuite based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Infor CloudSuite, following the instructions provided in the [Infor CloudSuite Single sign-on tutorial](./infor-cloud-suite-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for Infor CloudSuite, following the instructions provided in the [Infor CloudSuite Single sign-on  article](./infor-cloud-suite-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-infor-cloudsuite-in-azure-ad'></a>
 
 ### To configure automatic user provisioning for Infor CloudSuite in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -117,7 +115,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input `https://mingle-t20b-scim.mingle.awsdev.infor.com/INFORSTS_TST/v2/scim` in **Tenant URL**. Input the bearer token value retrieved earlier in **Secret Token**. Click **Test Connection** to ensure Microsoft Entra ID can connect to Infor CloudSuite. If the connection fails, ensure your Infor CloudSuite account has Admin permissions and try again.
+5. Under the **Admin Credentials** section, input `https://mingle-t20b-scim.mingle.awsdev.infor.com/INFORSTS_TST/v2/scim` in **Tenant URL**. Input the bearer token value retrieved earlier in **Secret Token**. Select **Test Connection** to ensure Microsoft Entra ID can connect to Infor CloudSuite. If the connection fails, ensure your Infor CloudSuite account has Admin permissions and try again.
 
 	![Tenant URL + Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -125,29 +123,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Click **Save**.
+7. Select **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Infor CloudSuite**.
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Infor CloudSuite in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Infor CloudSuite for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Infor CloudSuite|
 	|---|---|---|---|
-	|userName|String|&check;|&check;
-	|active|Boolean||
-	|displayName|String||
-	|externalId|String||
-	|name.familyName|String||
-	|name.givenName|String||
-	|displayName|String||
-	|title|String||
-	|emails[type eq "work"].value|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
-	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:actorId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:federationId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:ifsPersonId|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:lnUser|String||
-	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:userAlias|String||
+	|userName|String|&check;|&check;|
+	|active|Boolean|||
+	|displayName|String|||
+	|externalId|String|||
+	|name.familyName|String|||
+	|name.givenName|String|||
+	|displayName|String|||
+	|title|String|||
+	|emails[type eq "work"].value|String|||
+	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String|||
+	|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:actorId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:federationId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:ifsPersonId|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:lnUser|String|||
+	|urn:ietf:params:scim:schemas:extension:infor:2.0:User:userAlias|String|||
 
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Infor CloudSuite**.
@@ -156,11 +154,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	|Attribute|Type|Supported for filtering|Required by Infor CloudSuite|
 	|---|---|---|---|
-	|displayName|String|&check;|&check;
-	|members|Reference||
-	|externalId|String||
+	|displayName|String|&check;|&check;|
+	|members|Reference|||
+	|externalId|String|||
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Infor CloudSuite, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -170,7 +168,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -192,6 +190,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
