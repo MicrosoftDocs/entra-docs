@@ -4,64 +4,37 @@ description: Learn how to transition group management from Active Directory to M
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 06/17/2025
+ms.date: 07/14/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
 
 # Manage Group Source of Authority (SOA) 
 
-Source of Authority “SOA” (at an object level) is a feature that enables
-IT Administrators to transition the management of a specific objects
-from Active Directory (AD) to Microsoft Entra ID. When SOA is applied to
-an object synced from AD, it converts the object to a cloud object that
-can be edited & deleted in Entra ID, and Connect Sync (and soon Cloud
-Sync) honor the conversion and no longer attempt to sync the object from
-AD. By granting administrators the ability to selectively migrate
-objects to be cloud-managed, we facilitate a phased approach for the
-migration process. Instead of switching the entire directory at once to
-the cloud and discontinuing AD – an action that necessitates substantial
-redesign and re-platforming of applications – this feature allows for a
-gradual reduction of AD dependencies. This phased approach ensures
-seamless operations with minimal impact on end users as well as helping
-organizations secure their identities using capabilities in Entra ID and
-Entra ID Governance. There are important caveats and implications, so be
-sure to thoroughly understand and test prior to using this capability.
+Source of Authority (SOA) is a feature that enables IT administrators in hybrid environments to transition the management of specific objects from Active Directory (AD) to Microsoft Entra ID. 
+When an administrator applies SOA to an object synced from AD to Microsoft Entra ID, they convert the object to a cloud-owned object that can only be edited and deleted in Microsoft Entra ID. 
+Connect Sync and Cloud Sync honor the conversion, and no longer try to sync the object from AD. 
+
+Helping administrators select which objects they want to be cloud-managed lets them phase the migration process. 
+They don't need to switch the entire directory to the cloud and discontinue AD at once. 
+SOA helps hybrid environments avoid substantial redesign and re-platforming of applications, so they can gradually reduce AD dependencies.
+This phased approach ensures seamless operations, minimal impact on end users, and helps organizations secure their identities using capabilities in Microsoft Entra ID and
+Microsoft Entra ID Governance. 
 
 ## When can you use SOA?
 
-Group Source of Authority (SOA) at object level allows you to convert an
-on-prem AD group into a cloud group and manage the group from the cloud.
-If you no longer require the groups on-prem, you can delete them. If you
-do still need them, you can enable [cloud security group provisioning to
-AD](https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning).
-If you have one or more of the following customer scenarios, you can use
-Group SOA:
+Source of Authority (SOA) allows you to convert an on-premises AD group into a cloud-owned group and manage it from the cloud.
+If you no longer need the group on-premises, you can delete it from AD. 
+If you still need the group, you can use **Group Provisioning to AD**. 
+For more information, see [Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning).
 
-1.  You have begun your
-    "[Cloud-first](https://learn.microsoft.com/entra/architecture/road-to-the-cloud-posture#state-3-cloud-first)"
-    journey by creating all new groups in the and want to migrate your
-    existing on-premises AD groups to the cloud. This strategy enables
-    you to use Microsoft Entra Governance to control access to
-    applications through these groups. With Group Provisioning to AD,
-    you can provision only the necessary groups back to AD and govern
-    their membership using features like dynamic groups, entitlement
-    management, and access reviews.
+You can use SOA in any of these scenarios:
 
-2.  You no longer have any on-premises Exchange dependencies or require
-    Distribution Lists (DLs), and Mail Enabled Security Groups (MESGs)
-    to be present in Active Directory (AD), and you wish to transition
-    the management of these groups to Exchange Online (EXO).
+- You have begun your [Cloud-first](/entra/architecture/road-to-the-cloud-posture#state-3-cloud-first) journey by creating all new groups in the cloud, and now you want to migrate your existing on-premises AD groups to the cloud. This strategy enables you to use Microsoft Entra ID Governance to control access to applications through these groups. With **Group Provisioning to AD**, you can provision only the necessary groups back to AD, and govern their membership by using features like dynamic groups, entitlement management, and access reviews.
 
-3.  You have modernized your apps and no longer need Active Directory
-    groups for access (E.g., For instance, your apps now rely on group
-    claims via SAML or OpenID Connect from Microsoft Entra, rather than
-    ADFS). Using Microsoft Entra ID Governance, you want to manage these
-    apps with Entra features. With SOA, instead of creating new cloud
-    groups, you can migrate existing ones. After SOA conversion, app
-    functionality remains as group properties stay the same, enabling
-    you to manage app access using Microsoft Entra features that update
-    group membership.
+- You no longer have any on-premises Exchange dependencies, or require Distribution Lists (DLs), and Mail Enabled Security Groups (MESGs) to be present in AD. You also want to transition the management of these groups to Exchange Online (EXO).
+
+- You modernized your apps and no longer need AD groups for access. For example, your apps now rely on group claims that use SAML or OpenID Connect from Microsoft Entra, rather than ADFS. Using Microsoft Entra ID Governance, you want to manage these apps with Microsoft Entra features. With SOA, instead of creating new cloud groups, you can migrate on-premises groups. After SOA conversion, app functionality remains because group properties stay the same, enabling you to manage app access using Microsoft Entra features that update group membership.
 
 ## When should you not use SOA?
 
@@ -156,7 +129,7 @@ applications tied to the security group continue to function).
     for AD to Entra ID sync, the membership reference of Group A will
     not be synced when AD2EntraID sync happens for OnPremGroupB. This is
     because the sync client will not know the cloud group membership
-    references. This is by Design.
+    references. This is by design.
 
 - **SOA transfer of nested groups:** If you have nested groups in AD
     and want to transfer the SOA of the parent or top group from AD to
