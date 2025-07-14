@@ -88,7 +88,7 @@ Suppose you have a Conditional Access policy with the following configuration:
 | :---: | --- | :---: | :---: |
 | 1 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" | Applies | Does not apply |
 | 2 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" | Applies | Does not apply |
-| 3 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" <br> Location = “US” | Applies | Applies |
+| 3 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" <br> Location = “US” | Applies | Does not apply |
 | 4 | UserId = “aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" <br> ApplicationId = “00000003-0000-0ff1-ce00-000000000000" <br> Location = “US” <br> Sign-in Risk = “High” <br> | Applies | Applies |
 
 ## Related content
