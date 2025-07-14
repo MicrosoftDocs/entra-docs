@@ -125,7 +125,7 @@ Manually or automatically applying results doesn't have an effect on a group tha
 
 
 > [!NOTE]
-> Access review decisions do not change membership in dynamic groups. These groups are managed by rules-users remain members as long as they match the rule conditions.
+> Access review decisions don't change membership in dynamic groups. These groups are managed by rules users, and remain members as long as they match the rule conditions.
  
 ## Actions taken on denied guest users in an access review
  
