@@ -114,7 +114,7 @@ sections:
         answer: |
           No.
 
-  - name: Restricted management administrative units (Preview)
+  - name: Restricted management administrative units
     questions:
       - question: |
           I am the owner of a group that is a member of a restricted management administrative unit. How are my permissions affected?

@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 03/14/2025
+ms.date: 07/03/2025
 ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, DevOps, or it admin, I want to
@@ -33,7 +33,7 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 
 [Learn more](../../id-governance/entitlement-management-organization.md)
 
-**Cross-tenant synchronization** allows the source tenant to automate creating, updating, and deleting B2B users across tenants in an organization. Cross-tenant synchronization is only intended to be used within an organization.
+**Cross-tenant synchronization** allows the source tenant to automate creating, updating, and deleting B2B users across tenants in an organization.
 
 [Learn more](cross-tenant-synchronization-overview.md)
 

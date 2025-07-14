@@ -189,7 +189,9 @@
     - name: Request process and emails
       href: entitlement-management-process.md
     - name: Onboard external users
-      href: entitlement-management-onboard.md  
+      href: entitlement-management-onboard.md
+    - name: Visibility in My Access portal
+      href: entitlement-management-access-package-visibility.md      
   - name: Access reviews
     items:
     - name: What are access reviews?

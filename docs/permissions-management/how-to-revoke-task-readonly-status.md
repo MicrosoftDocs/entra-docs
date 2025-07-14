@@ -2,7 +2,7 @@
 title: Revoke access to high-risk and unused tasks or assign read-only status for Microsoft Azure and Google Cloud Platform (GCP) identities in the Remediation dashboard
 description: How to revoke access to high-risk and unused tasks or assign read-only status for Microsoft Azure and Google Cloud Platform (GCP) identities in the Remediation dashboard.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

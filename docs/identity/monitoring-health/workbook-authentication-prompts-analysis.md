@@ -2,7 +2,7 @@
 title: Authentication prompts analysis workbook
 description: Learn how to use the authentication prompts analysis workbook in Microsoft Entra ID to investigate users getting too many MFA prompts.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

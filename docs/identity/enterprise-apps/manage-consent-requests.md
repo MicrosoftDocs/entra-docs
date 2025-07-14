@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 06/20/2025
+ms.date: 07/20/2025
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.custom: enterprise-apps
@@ -22,7 +22,7 @@ Microsoft recommends that you [restrict user consent](~/identity/enterprise-apps
 
 After disabling or restricting user consent, you have several important steps to take to help keep your organization secure as you continue to allow business-critical applications to be used. These steps are crucial to minimize impact on your organization's support team and IT administrators, and to help prevent the use of unmanaged accounts in non-Microsoft applications.
 
-This article provides guidance on managing consent to applications and evaluating consent requests in Microsoft's recommendations, including restricting user consent to verified publishers and selected permissions. It covers concepts such as process changes, education for administrators, auditing and monitoring, and managing tenant-wide admin consent.
+This article explains the main concepts on managing consent to applications and evaluating consent requests in Microsoft's recommendations, including restricting user consent to verified publishers and selected permissions. It covers concepts such as process changes, education for administrators, auditing and monitoring, and managing tenant-wide admin consent.
 
 ## Process changes and education
 

@@ -2,7 +2,7 @@
 title: Microsoft Entra Permissions Management integrates with Microsoft Defender for Cloud
 description: Learn how Microsoft Entra Permissions Management helps strengthen security in cloud environments as an enhancement for Defender for Cloud
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: conceptual
