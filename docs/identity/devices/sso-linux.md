@@ -74,7 +74,7 @@ Run the following commands in a command line to manually install the Microsoft s
 4. Install the Microsoft Single Sign-on (microsoft-identity-broker) app.
 
     ```bash
-    sudo apt install Microsoft-identity-broker
+    sudo apt install microsoft-identity-broker
     ```
 
 5. Reboot your device.  
