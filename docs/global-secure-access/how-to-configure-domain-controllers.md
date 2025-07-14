@@ -150,7 +150,7 @@ Example of how to configure `localpolicy` file for SPN exclusions and inclusions
 #### Break glass mode
 
 - Private Access Sensor supports a break glass mode to allow all traffic in emergencies.
-- Enable break glass mode by setting `"IsBreakGlass": true` in the policy file or changing the `TmpBreakglass` registry key from `0` to `1`.
+- Enable break glass mode by changing the `TmpBreakglass` registry key from `0` to `1`.
 - Changes can take a few minutes to propagate. Restarting the sensors is required if updates made to the registry key. 
 
 ### 8. Test Microsoft Entra Private Access for Domain Controllers
