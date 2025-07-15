@@ -33,6 +33,8 @@ items:
         href: concept-sign-in-log-activity-details.md
       - name: Flagged sign-ins
         href: concept-flagged-sign-ins.md
+    - name: Sign-up logs
+      href: concept-sign-ups.md
     - name: Provisioning logs
       href: concept-provisioning-logs.md
     - name: Microsoft Graph activity logs
@@ -163,6 +165,8 @@ items:
   items:
   - name: Common user sign-in errors
     href: howto-troubleshoot-sign-in-errors.md
+  - name: Common user sign-up errors
+    href: howto-troubleshoot-sign-up-errors.md
   - name: Sign-in diagnostics
     href: howto-use-sign-in-diagnostics.md
   - name: Sign-in diagnostics scenarios

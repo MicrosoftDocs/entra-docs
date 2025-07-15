@@ -18,12 +18,12 @@ ms.collection: ce-skilling-ai-copilot
 
 # Assess application risks using Microsoft Security Copilot in Microsoft Entra
 
-[Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) gets insights from your Microsoft Entra data through many different skills, such as Investigate identity risks with Entra ID Protection and Explore Microsoft Entra audit log details. App risk skills allow identity admins and security analysts who manage applications or workload identities in Microsoft Entra to identify and understand risks through natural language prompts. By using prompts like, "List risky app details for my tenant", the analyst gets a better picture of the risk from application identities and can discover other application details in Microsoft Entra - including permissions granted (especially those that might be considered high privileged), unused apps in their tenant, and apps from outside their tenant. Security Copilot then uses prompt context to respond, such as with a list of apps or permissions, then surface links to the Microsoft Entra admin center so that admins can see a full list and take the appropriate remediation actions for their risky apps. IT admins and security operations center (SOC) analysts can use these skills and others to gain the right context to help investigate and remediate identity-based incidents using natural language prompts. 
+[Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) gets insights from your Microsoft Entra data through many different skills, such as Investigate identity risks with Microsoft Entra ID Protection and Explore Microsoft Entra audit log details. App risk skills allow identity admins and security analysts who manage applications or workload identities in Microsoft Entra to identify and understand risks through natural language prompts. By using prompts like, "*List risky app details for my tenant*", the analyst gets a better picture of the risk from application identities and can discover other application details in Microsoft Entra. Details can include permissions granted (especially high privileged permissions), unused apps in their tenant, and apps from outside their tenant. Security Copilot then uses prompt context to respond, such as with a list of apps or permissions, then surface links to the Microsoft Entra admin center so that admins can see a full list and take the appropriate remediation actions for their risky apps. IT admins and security operations center (SOC) analysts can use these skills and others to gain the right context to help investigate and remediate identity-based incidents using natural language prompts. 
 
 This article describes how a SOC analyst or IT admin could use the Microsoft Entra skills to investigate a potential security incident. 
 
 > [!NOTE]
-> These app risk skills provide data on single tenant, third party SaaS, and multi-tenant apps that are applications or service principals in Microsoft Entra. Managed identities are not currently in scope. 
+> These app risk skills provide data on single tenant, third party SaaS, and multitenant apps that are applications or service principals in Microsoft Entra. Managed identities aren't currently in scope. 
 
 ## Scenario
 
@@ -31,9 +31,9 @@ Jason, an IT admin at Woodgrove Bank, is proactively trying to identify and unde
 
 ## Investigate 
 
-Jason starts his assessment and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the Microsoft Entra admin center. In order to view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and needs an [Microsoft Entra role assignment](../identity/role-based-access-control/permissions-reference.md) of Application Administrator, Cloud Application Administrator, or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. 
+Jason starts his assessment and signs in to [Microsoft Security Copilot](https://securitycopilot.microsoft.com/) or the Microsoft Entra admin center. To view application and service principal details, he signs in as at least a [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) and a Microsoft Entra role assignment of [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or similar Microsoft Entra administrator role that has permissions to manage application/workload identities in Microsoft Entra. 
 
-Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](copilot-entra-security-scenarios.md#create-security-copilot-prompts-in-the-microsoft-entra-admin-center) can choose from a set of app risk starter prompts that appear at the top of the Security Copilot window. Select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: **Enterprise apps**, **App Registrations**, and **Identity Protection Risky workload identities**.
+Identity admins using [Security Copilot as a part of the Microsoft Entra admin center](./copilot-entra-security-scenarios.md#scenarios-supported-by-microsoft-security-copilot-in-microsoft-entra) can choose from a set of app risk starter prompts that appear at the top of the Security Copilot window. Select from suggested prompts that may appear after a response. App risk starter prompts will appear in application-related admin center blades: **Enterprise apps**, **App Registrations**, and **Identity Protection Risky workload identities**.
 
 :::image type="content" source="./media/copilot-security-entra-investigate-risky-apps/starter-prompts.png" alt-text="Screenshot that shows starter prompts in Security Copilot.":::
 
@@ -74,16 +74,16 @@ Jason uses the following prompts to retrieve selected application properties:
 
 ### View the permissions granted on a Microsoft Entra service principal 
 
-Jason continues his assessment and wants to know what permissions have been granted to all or one of the apps to find the potential impact if compromised. This is normally difficult to evaluate across some of the different types of permissions ([API permissions](../identity-platform/permissions-consent-overview.md) like User.Read.All + [Microsoft Entra administrator roles](../identity/role-based-access-control/permissions-reference.md) like Application Administrator) but Copilot simplifies it in a list in context of the investigation. This skill retrieves Delegated permissions, Application permissions, and Microsoft Entra administrator roles for a given Microsoft Entra service principal.  
+Jason continues his assessment and wants to know what permissions were granted to all or one of the apps to find the potential impact if compromised. This is normally difficult to evaluate across some of the different types of permissions and administrator roles but Copilot simplifies it in a list in context of the investigation. This skill retrieves Delegated permissions, Application permissions, and Microsoft Entra administrator roles for a given Microsoft Entra service principal.  
 
 Jason can also identify high privilege permissions granted on a service principal, based on Microsoft’s risk assessment. These are currently scoped to application permissions that generally enable tenant-wide access without user context and highly privileged Microsoft Entra administrator roles. 
 
 >[!IMPORTANT]
->This skill currently only looks at [API permissions](../identity-platform/permissions-consent-overview.md) and [Entra administrator roles](../identity/role-based-access-control/permissions-reference.md). It doesn’t currently look at non-directory permissions granted in places like Azure RBAC or other authorization systems. High privileged permissions are limited to a static list of maintained by Microsoft that might evolve over time and it is not currently viewable or customizable by customers. 
+>This skill currently only looks at [API permissions](../identity-platform/permissions-consent-overview.md) and [Microsoft Entra administrator roles](../identity/role-based-access-control/permissions-reference.md). It doesn’t currently look at non-directory permissions granted in places like Azure RBAC or other authorization systems. High privileged permissions are limited to a static list of maintained by Microsoft that might evolve over time and it isn't currently viewable or customizable by customers. 
 
 He uses the following prompts to get the permissions information he needs: 
 
-- *Which permissions are granted the app with ID {ServicePrincipalId} or app ID {AppId}?*
+- *Which permissions are granted to the app with ID {ServicePrincipalId} or app ID {AppId}?*
 - *What permissions do the above risky apps have (from previous response)?*
 - *Which permissions granted to this app are highly privileged?*
 
@@ -116,7 +116,7 @@ He uses the following prompts to get the information he needs:
 
 ## Remediate
 
-By using Security Copilot, Jason is able to gather comprehensive risk and basic information about the applications and service principals in their Microsoft Entra tenant. After completing his assessment, Jason takes action to remediate the risky applications. Security Copilot surfaces links to the Microsoft Entra admin center in responses for administrators to take the appropriate remediation actions. 
+By using Security Copilot, Jason is able to gather comprehensive risk and basic information about the applications and service principals in their Microsoft Entra tenant. After Jason completes his assessment, he takes action to remediate the risky applications. Security Copilot surfaces links to the Microsoft Entra admin center in responses for administrators to take the appropriate remediation actions. 
 
 He reads about [managing access and security for applications](../identity/enterprise-apps/tutorial-manage-access-security.md), [security workload identities](../id-protection/concept-workload-identity-risk.md), [protecting against consent phishing](../identity/enterprise-apps/protect-against-consent-phishing.md), and [response playbooks](/security/operations/incident-response-playbook-compromised-malicious-app) to determine possible actions to take next. 
 

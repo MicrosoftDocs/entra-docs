@@ -5,12 +5,12 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 03/13/2025
+ms.date: 07/14/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
-ms.reviewer: 
+manager: dougeby
+ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for increased security (Preview)
 
@@ -85,6 +85,14 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21802](../includes/secure-recommendations/21802.md)]
 
+### Turn off Seamless SSO if there is no usage
+
+[!INCLUDE [21985](../includes/secure-recommendations/21985.md)]
+
+### Password expiration is disabled
+
+[!INCLUDE [21811](../includes/secure-recommendations/21811.md)]
+
 ## Access control
 
 ### Block legacy authentication
@@ -125,7 +133,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21771](../includes/secure-recommendations/21771.md)]
 
-### Applications don't have secrets configured 
+### Applications don't have client secrets configured 
 
 [!INCLUDE [21772](../includes/secure-recommendations/21772.md)]
 
@@ -137,7 +145,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21992](../includes/secure-recommendations/21992.md)]
 
-### Creating new applications and service principles is restricted to privileged users 
+### Creating new applications and service principals is restricted to privileged users 
 
 [!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
 
@@ -173,6 +181,18 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21774](../includes/secure-recommendations/21774.md)]
 
+### User consent settings are restricted
+
+[!INCLUDE [21776](../includes/secure-recommendations/21776.md)]
+
+### Workload Identities are not assigned privileged roles
+
+[!INCLUDE [21836](../includes/secure-recommendations/21836.md)]
+
+### Enterprise applications must require explicit assignment or scoped provisioning
+
+[!INCLUDE [21869](../includes/secure-recommendations/21869.md)]
+
 ## External collaboration
 
 ### Guests can't invite other guests
@@ -194,6 +214,30 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Tenant restrictions v2 policy is configured
 
 [!INCLUDE [21793](../includes/secure-recommendations/21793.md)]
+
+### Guest self-service sign-up via user flow is disabled
+
+[!INCLUDE [21823](../includes/secure-recommendations/21823.md)]
+
+### Guests don't have long lived sign-in sessions
+
+[!INCLUDE [21824](../includes/secure-recommendations/21824.md)]
+
+### Inactive guest identities are disabled or removed from the tenant
+
+[!INCLUDE [21858](../includes/secure-recommendations/21858.md)]
+
+### Guests don't own apps in the tenant
+
+[!INCLUDE [21868](../includes/secure-recommendations/21868.md)]
+
+### Allow/Deny lists of domains to restrict external collaboration are configured
+
+[!INCLUDE [21874](../includes/secure-recommendations/21874.md)]
+
+### All guests have a sponsor
+
+[!INCLUDE [21877](../includes/secure-recommendations/21877.md)]
 
 ## Monitoring
 

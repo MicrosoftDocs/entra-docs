@@ -5,7 +5,7 @@ metadata:
   description: Learn how to integrate Microsoft Entra activity logs with Azure Monitor logs for querying and analysis.
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: femila
+  manager: pmwongera
   ms.reviewer: egreenberg
   ms.date: 05/27/2025
   ms.service: entra-id

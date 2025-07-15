@@ -9,7 +9,7 @@ ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 06/18/2025
+ms.date: 06/25/2025
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref, sfi-ga-nochange
@@ -21,6 +21,155 @@ ms.collection: M365-identity-device-management
 This article provides information about the latest releases and change announcements across the Microsoft Entra family of products over the last six months (updated monthly). If you're looking for information that's older than six months, see: [Archive for What's new in Microsoft Entra](whats-new-archive.md).
 
 >Get notified about when to revisit this page for updates by copying and pasting this URL: `https://learn.microsoft.com/api/search/rss?search=%22Release+notes+-+Azure+Active+Directory%22&locale=en-us` into your ![RSS feed reader icon](./media/whats-new/feed-icon-16x16.png) feed reader.
+
+## June 2025
+ 
+### General Availability – Update to Microsoft Entra Work or School Default Background Image 
+ 
+**Type:** Changed feature  
+**Service category:** Authentications (Login)  
+**Product capability:** User Authentication  
+ 
+Starting September 29, 2025, we'll be making a change to the default background image of our Microsoft Entra work or school authentication screens. This new background was designed to help users focus on signing into their accounts, enhancing productivity, and minimizing distractions. With this, we aim to ensure visual consistency and a clean, simplified user experience throughout Microsoft’s authentication flows – aligning with Microsoft’s modernized [Fluent](https://microsoft.design/articles/four-principles-for-the-future-of-design/) design language. When our experiences look and feel consistent, it gives our users a familiar experience that they know and trust. 
+
+**What’s changing?**                                                   		           
+
+This update is solely a visual user interface refresh with no changes to functionality. This change will only affect screens where [Company Branding](how-to-customize-branding.md) doesn't apply or where users see the [default background image](https://aka.ms/entradefaultbackground). We recommend updating any documentation that contains screenshots and notifying your help desk. If you have configured a custom background image in Company Branding for your tenant, there will be no change for your users. 
+
+**Additional Details:** 
+
+1. **Tenants without a custom background configured:**  
+    a. Tenants without a custom background will see the change on every authentication screen.<br> 
+    b. To change this background and use a custom background, configure [Company Branding](how-to-customize-branding.md).
+
+1. **Tenants with a custom background configured:**  
+    a. Tenants with a custom background configured will only see the change wherever the URL doesn't have a specified tenant ID parameter (For example, login.microsoftonline.com directly **without** a domain hint or custom URL).<br> 
+    b. For all other screens, tenants with a custom background configured **will see no change** to their experience on all clients. 
+
+1. **Entra External ID Tenants will not see any change to their experience on all clients** 
+
+**What do you need to do?**
+
+No action is required. The update will be applied automatically starting September 29, 2025. 
+ 
+---
+
+
+### General Availability - API-driven provisioning in US Gov cloud
+ 
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Identity Governance  
+ 
+API-driven provisioning is now generally available in US Gov cloud. With this capability, customers in US Gov cloud can now ingest identity data from any authoritative source into Microsoft Entra ID and on-premises Active Directory. For more information, see: [Quickstart API-driven inbound provisioning with Graph Explorer](../identity/app-provisioning/inbound-provisioning-api-graph-explorer.md).
+ 
+---
+
+### Deprecated - Conditional Access Overview Monitoring Tab to Retire
+ 
+**Type:** Deprecated  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+ 
+We're retiring the Conditional Access Overview Monitoring Tab in the Microsoft Entra Admin Center starting July 18 and completing by August 1. After this date, admins will no longer have access to this tab. We encourage customers to transition to Conditional Access Per-Policy Reporting and the Insights and Reporting Dashboard, both of which are more reliable, offer greater accuracy, and have received significantly better feedback from customers. Learn more about [Per-Policy Reporting](../identity/conditional-access/concept-conditional-access-report-only.md#policy-impact) and [Insights and Reporting](../identity/conditional-access/howto-conditional-access-insights-reporting.md).
+ 
+---
+ 
+### General Availability - Manage Lifecycle Workflows with Microsoft Security CoPilot in Microsoft Entra
+ 
+**Type:** New feature  
+**Service category:** Lifecycle Workflows  
+**Product capability:** Identity Governance  
+ 
+Now customers can manage and customize Lifecycle Workflows using natural language with Microsoft Security CoPilot in Microsoft Entra. Our Lifecycle Workflows (LCW) Copilot solution provides step-by-step guidance to perform key workflow configuration and execution tasks using natural language. It allows customers to quickly get rich insights to help monitor and troubleshoot workflows for compliance. For more information, see: [Manage employee lifecycle using Microsoft Security Copilot](../fundamentals/copilot-entra-lifecycle-workflow.md).
+ 
+---
+ 
+### General Availability - Provision custom security attributes from HR sources
+ 
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Identity Governance  
+ 
+With this feature, customers can automatically provision "*custom security attributes*" in Microsoft Entra ID from authoritative HR sources. Supported authoritative sources: Workday, SAP SuccessFactors and any HR system integrated using API-driven provisioning. For more information, refer to: [Provision custom security attributes from HR sources](../identity/app-provisioning/provision-custom-security-attributes.md).
+ 
+---
+ 
+### General Availability - Conditional Access audience reporting
+ 
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Access Control  
+ 
+Conditional Access audience reporting in the sign-in logs lets admins view all the resources evaluated by Conditional Access as part of a sign-in event. For more information, see: [Audience reporting](../identity/conditional-access/troubleshoot-conditional-access.md#audience-reporting).
+ 
+---
+ 
+### Public Preview - Cross-tenant synchronization (cross-cloud)
+ 
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Identity Governance  
+ 
+Automate creating, updating, and deleting users across tenants across Microsoft clouds. The following combinations are supported:
+ 
+- Commercial -> US Gov  
+- US Gov -> Commercial  
+- Commercial -> China  
+ 
+For more information, see: [Configure cross-tenant synchronization](../identity/multi-tenant-organizations/cross-tenant-synchronization-configure.md)
+ 
+---
+ 
+### General Availability - Conditional Access support for all Microsoft apps
+ 
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+ 
+Administrators can assign a Conditional Access policy to all cloud apps from Microsoft as long as the service principal appears in their tenant. For more information, see: [Microsoft cloud applications](../identity/conditional-access/concept-conditional-access-cloud-apps.md#microsoft-cloud-applications).
+ 
+---
+ 
+### General Availability - Two-Way Forest Trusts for Microsoft Entra Domain Services
+ 
+**Type:** New feature  
+**Service category:** Microsoft Entra Domain Services  
+**Product capability:** Microsoft Entra Domain Services  
+ 
+Two-Way Forest Trusts for Microsoft Entra Domain Services are now generally available. This capability allows organizations to establish trust relationships between Microsoft Entra Domain Services domains and on-premises Active Directory (AD) domains. Forest trusts can now be configured in three directions: one-way outbound (as before), one-way inbound, and bi-directional, depending on organizational needs. Forest trusts can be used to enable resource access across trusted domains in hybrid environments. This capability offers more control and flexibility over how to manage your hybrid identity environment with Microsoft Entra Domain Services. Trusts require an Enterprise or Premium SKU license. For more information, see: [How trust relationships work for forests in Active Directory](../identity/domain-services/concepts-forest-trust.md).
+ 
+---
+
+### General Availability - Certificate Authority (CA) Trust Store
+ 
+**Type:** New feature  
+**Service category:** Authentications (Login)   
+**Product capability:** User Authentication  
+ 
+The new PKI-based CA Trust Store replaces the legacy flat-list model with a more robust structure and no limitations on the size or the number of CAs. It supports bulk PKI uploads, CRL updates, issuer hints, and prioritization of the new store over the legacy one. Sign-in logs now indicate which store was used, helping admins phase out legacy configurations. For more information, see: [How to configure Microsoft Entra certificate-based authentication](../identity/authentication/how-to-certificate-based-authentication.md).
+ 
+---
+
+### General Availability - Certificate Revocation List (CRL) Fail Safe
+ 
+**Type:** New feature  
+**Service category:** Authentications (Login)   
+**Product capability:** User Authentication  
+ 
+CRL Fail Safe ensures that CBA auth fails if the end user certificate issuing CA does not have a Certificate Revocation List (CRL) configured. This closes a critical security gap where certificates could previously be accepted without revocation validation. Admins can enable this at the tenant level and configure exceptions for specific CAs as needed. For more information, see: [Understanding CRL validation](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-crl-validation).
+ 
+---
+
+### Public Preview - Certificate Authority (CA) Scoping
+ 
+**Type:** New feature  
+**Service category:** Authentications (Login)   
+**Product capability:** User Authentication 
+ 
+CA Scoping allows admins to bind specific CAs to defined user groups. This ensures that users can only authenticate using certificates from trusted sources scoped to them. This enhances compliance, and reduces exposure to mis-issued or rogue certificates. For more information, see: [Certificate Authority (CA) Scoping (Preview)](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-authority-ca-scoping-preview).
+ 
+---
 
 ## May 2025
 
@@ -117,7 +266,7 @@ Conditional Access What If evaluation API – Leverage the What If tool using th
 **Service category:** Lifecycle Workflows    
 **Product capability:** Identity Governance    
 
-Now customers can configure a Lifecycle workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user (Preview)](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user-preview).
+Now customers can configure a Lifecycle workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user).
 
 ---
 
