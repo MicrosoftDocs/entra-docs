@@ -15,11 +15,11 @@ From March 2026, Microsoft Entra ID will no longer support app authentication wi
 
 ## Blocking app authentication without a service principal
 
-Microsoft Entra ID will block authentication for all non-Microsoft multi-tenant applications that don't have a service principal in the tenant where they're authenticating. This scenario is also known as service principal-less authentication. This behavior has already been disabled for most non-Microsoft applications. This change addresses a few remaining exceptions and is a preventive security measure. 
+Microsoft Entra ID will block authentication for all non-Microsoft multitenant applications that don't have a service principal in the tenant where they're authenticating. This scenario is also known as service principal-less authentication. This behavior has already been disabled for most non-Microsoft applications. This change addresses a few remaining exceptions and is a preventive security measure. 
 
-App authentication without a service principal allows a multi-tenant client application to obtain an app-only token from a tenant without an object identifier (object ID) claim. In most cases, the absence of a service principal means the app hasn't been granted authorization to access any data, and this is harmless. However, in rare cases where the target API has implemented improper authorization checks, this capability could lead to unauthorized access. Microsoft has already verified that Microsoft-published APIs aren't vulnerable to this type of abuse. Disabling this behavior entirely also protects non-Microsoft APIs with insufficient authorization checks.
+App authentication without a service principal allows a multitenant client application to obtain an app-only token from a tenant without an object identifier (object ID) claim. In most cases, the absence of a service principal means the app hasn't been granted authorization to access any data, and this is harmless. However, in rare cases where the target API has implemented improper authorization checks, this capability could lead to unauthorized access. Microsoft has already verified that Microsoft-published APIs aren't vulnerable to this type of abuse. Disabling this behavior entirely also protects non-Microsoft APIs with insufficient authorization checks.
 
-Additionally, by enforcing the requirement that all applications must have a service principal in every tenant where they authenticate, we facilitate tenant administrator's governance of all access, including the ability to target these apps individually with Conditional Access policies. 
+Additionally, by enforcing the requirement that all applications must have a service principal in every tenant where they authenticate, we facilitate the tenant administrator's governance of all access, including the ability to target these apps individually with Conditional Access policies. 
 
 If applications you rely on are authenticating without a service principal in your tenant, you must act **before March 31, 2026** to avoid disruption.
 
@@ -39,7 +39,7 @@ First, you'll need to verify that access by the named applications to the resour
 5. Set the date range to **Last 1 month**.
 6. Click on a log entry to view the details, and identify the app's **Application ID**. You'll need this in the next step.
 
-:::image type="content" source="media/retire-service-principal-less-authentication/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Microsoft Entra admin center with filters applied to extract on SP-less auth sign ins.":::
+:::image type="content" source="media/retire-service-principal-less-authentication/sign-in-logs.png" alt-text="Screenshot showing sign-in logs page of the Microsoft Entra admin center with filters applied to extract on SP-less auth sign ins." lightbox="media/retire-service-principal-less-authentication/sign-in-logs.png":::
 
 ## Create a service principal
 
@@ -49,4 +49,4 @@ If you don't recognize the app and wish to block it, [create a service principal
 
 ## Verify the changes you made
 
-Once you've taken action for an application, the sign-in logs will include the app's new service principal ID, now with a unique alphanumeric GUID in the format `aaaaaaaa-bbbb-cccc-1111-222222222222`. This confirms that the app has a sevice principal in your tenant and won't be further affected by the upcoming change.
+Once you've taken action for an application, the sign-in logs will include the app's new service principal ID, now with a unique alphanumeric GUID in the format `aaaaaaaa-bbbb-cccc-1111-222222222222`. This confirms that the app has a service principal in your tenant and won't be further affected by the upcoming change.
