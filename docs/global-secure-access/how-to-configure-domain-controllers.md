@@ -123,22 +123,22 @@ Exclusions allow specific users or machines to access configured SPNs without re
 
 - Client IP address
 - IP address ranges
-- On-premises user principal name (UPN)
+- On-premises username, which is the first part of a User Principal Name (UPN) such as `username@domain`.
 
-You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple UPNs for an SPN.
+You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple usernames for a SPN.
 
 ### Inclusions
 
 If you need to allow access for many users, you can instead specify an inclusion list for each SPN. When you configure included users for an SPN, only those users are required to have the Global Secure Access client. Users not included in the list can access the SPN without the client.
 
 > [!IMPORTANT]
-> An SPN can have either an inclusion list of UPNs or an exclusion list of UPNs, but not both.
+> An SPN can have either an inclusion list of UPN usernames or an exclusion list of UPN usernames, but not both.
 
 ### Combining Exclusions and Inclusions
 
-- You can configure both UPN inclusion and IP exclusion for a given SPN.
-- You can configure both UPN exclusion and IP exclusion for a given SPN.
-- If a policy match occurs for both UPN inclusion and IP exclusion, access to the SPN is allowed.
+- You can configure both UPN username inclusion and IP exclusion for a given SPN.
+- You can configure both UPN username exclusion and IP exclusion for a given SPN.
+- If a policy match occurs for both UPN username inclusion and IP exclusion, access to the SPN is allowed.
 - If a policy matches more than one rule (for example, a wildcard), access to the SPN is allowed if it matches at least one exclusion rule.
 
 > [!TIP]
