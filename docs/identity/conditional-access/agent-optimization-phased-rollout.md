@@ -36,14 +36,25 @@ There are three main stages to the phased rollout process.
 
 When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan. Rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
 
+:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png":::
+
 ### Administrator reviews and accepts the rollout plan
 
 Administrators can accept the plan or modify details of the plan, such as the group assignments or the time between phases.
 
+:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png" alt-text="Screenshot of the phases of a policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png":::
+
 ### Agent executes the approved rollout plan
 
-The agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure there are no unexpected results. While the policy is being rolled out, the policy remains in report-only mode so you can monitor the impact of the policy. After every phase is complete, the agent will recommend deleting the report-only policy the next time it runs, so you can maintain a clean policy list.
+The agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure there are no unexpected results. While the policy is being rolled out, the policy remains in report-only mode so you can monitor the impact of the policy. 
+
+:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png" alt-text="Screenshot of a phased rollout that's in progress." lightbox="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png":::
+
+
+After every phase is complete, the agent will recommend deleting the report-only policy the next time it runs, so you can maintain a clean policy list.
 
 ## Built-in safeguards
 
 Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified so the details can be reviewed and potentially modified.
+
+:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-blocked-sign-ins.png" alt-text="Screenshot of a phased rollout stopped because of blocked sign ins." lightbox="media/agent-optimization-phased-rollout/phased-rollout-blocked-sign-ins.png":::
