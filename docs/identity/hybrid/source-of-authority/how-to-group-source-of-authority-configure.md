@@ -11,6 +11,7 @@ ms.reviewer: dhanyak
 
 # Manage Group Source of Authority (SOA) 
 
+
 Source of Authority (SOA) is a feature that enables IT administrators in hybrid environments to transition the management of specific objects from Active Directory (AD) to Microsoft Entra ID. 
 When an administrator applies SOA to an object synced from AD to Microsoft Entra ID, they convert the object to a cloud-owned object that can only be edited and deleted in Microsoft Entra ID. 
 Connect Sync and Cloud Sync honor the conversion, and no longer try to sync the object from AD. 
@@ -52,7 +53,9 @@ modernize apps tied to these groups so you can remove them eventually.
 
 ## Scenarios in scope for preview
 
+
 This preview supports the ability to switch the SOA of any synced group in Active Directory to a cloud group. These scenarios are enabled by Group SOA preview:
+
 
 - **Minimize on-premises groups in AD:** Migrate on-premises groups to the
 cloud and manage them from the cloud without having to re-create these
@@ -68,6 +71,7 @@ Cloud Security Group Provisioning to AD creates a *new* on-prem AD
 security group when provisioning from the cloud. Provisioning is supported by the *existing* AD security
 group that SOA was applied for (retaining the SID so existing
 applications tied to the security group continue to function).
+
 
 ## Supported features for Group SOA
 
@@ -163,8 +167,6 @@ Download the Provisioning agent with build version [1.1.1373.0](/entra/identity/
 1. [Instructions for download](/entra/identity/hybrid/cloud-sync/reference-version-history#download-link)
 
 1. Learn how to [identify the agent's current version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
-
-
 
 ### Prerequisites to call Microsoft Graph API
 
@@ -360,7 +362,9 @@ API call and the next run of Connect Sync (scheduled or forced).
 Select activity as "**Undo changes to Source of Authority from AD to
 cloud**"
 
+
 <img src="media/how-to-group-source-of-authority-configure/audit-undo-changes.png" style="width:6.5in;height:1.0625in" />
+
 
 ## VALIDATE IN CONNECT SYNC CLIENT
 

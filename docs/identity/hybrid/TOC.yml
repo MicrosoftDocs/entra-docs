@@ -109,7 +109,6 @@
 - name: Scenarios
   items:
     - name: Getting started with Active Directory
-      href: null
       items:
         - name: Common scenarios
           href: common-scenarios.md

@@ -1,19 +1,22 @@
 ---
 title: 'Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync'
 description: This tutorial shows how to setup and configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
-author: billmath
-manager: femila
+author: justinha
+manager: dougeby
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 06/19/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: justinha
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
 # Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync
 
-This tutorial walks you through creating and configuring cloud sync to synchronize groups to on-premises Active Directory. 
+This tutorial walks you through creating and configuring cloud sync to synchronize groups to on-premises Active Directory (AD). 
+
+> [!IMPORTANT]
+> We recommend using **Selected security groups** as the default scoping filter when you configure Group Provisioning to AD (GPAD). This default scoping filter helps prevent any performance issues when you provision groups.  
 
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
 
@@ -21,16 +24,19 @@ This tutorial walks you through creating and configuring cloud sync to synchroni
 This tutorial assumes the following:
 - You have an Active Directory on-premises environment
 - You have cloud sync setup to synchronize users to Microsoft Entra ID.
-- You have two users that are synchronized.  Britta Simon and Lola Jacobson.  These users exist on-premises and in Microsoft Entra ID.
-- Three Organizational Units have been created in Active Directory - Groups, Sales, and Marketing.  They have the following distinguishedNames:  
- - OU=Marketing,DC=contoso,DC=com
- - OU=Sales,DC=contoso,DC=com
- - OU=Groups,DC=contoso,DC=com
+- You have two users that are synchronized: Britta Simon and Lola Jacobson. These users exist on-premises and in Microsoft Entra ID.
+- An organizational unit (OU) is created in Active Directory for each of the following departments:
 
-## Create two groups in Microsoft Entra ID.
-To begin, we create two groups in Microsoft Entra ID.  One group is Sales and the other is Marketing.
+  Display name | Distinguished name
+  -------------|-------------------
+  Groups       | OU=Marketing,DC=contoso,DC=com
+  Sales        | OU=Sales,DC=contoso,DC=com
+  Marketing    | OU=Groups,DC=contoso,DC=com
 
-To create two groups, follow these steps.
+## Create two groups in Microsoft Entra ID
+To begin, we create two groups in Microsoft Entra ID. One group is Sales and the other is Marketing.
+
+To create two groups, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Entra ID** > **Groups** > **All groups**.
@@ -42,7 +48,10 @@ To create two groups, follow these steps.
 1. Repeat this process using **Marketing** as the **Group Name.**
 
 
-## Add users to the newly created groups
+## Add users to the newly created or SOA converted groups
+
+To add users to the groups, follow these steps:
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Entra ID** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
@@ -54,35 +63,48 @@ To create two groups, follow these steps.
 9. It should successfully add her to the group.
 10. On the far left, click **All groups** and repeat this process using the **Sales** group and adding **Lola Jacobson** to that group.
 
-
 ## Configure provisioning
-To configure provisioning, follow these steps.
+
+To configure provisioning, follow these steps:
 
    [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
    3. Select **New configuration**.
    4. Select **Microsoft Entra ID to AD sync**.
-   :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
+
+      :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
    5. On the configuration screen, select your domain and whether to enable password hash sync. Click **Create**. 
-    :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
-   6. The **Get started** screen opens. From here, you can continue configuring cloud sync
+      :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
+
+   6. The **Get started** screen opens. From here, you can continue configuring cloud sync.
    7. On the left, click **Scoping filters**.
-   8. Under **Group scope** set it to **All Security groups**
-   9.  Under **Target container** click **Edit attribute mapping**.
-     :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
+   8. For **Groups scope**, select **Selected security groups**.
 
-   10.  Change **Mapping type** to **Expression**
+      :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
+
+   9. There are two possible approaches to set the OU:
+
+      - You can preserve the original OU path from on-premises. With this approach, you to set the attribute mapping based on extensionAttribute value. For more information, see Preserve the original OU path.  
+   
+      or
+
+      - Under **Target container** click **Edit attribute mapping**.
+
+   10. Change **Mapping type** to **Expression**.
    11. In the expression box, enter the following:
-     ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
-   12. Change the **Default value** to be OU=Groups,DC=contoso,DC=com.
-     :::image type="content" source="media/tutorial-group-provision/group-provision-2.png" alt-text="Screenshot of the scoping filters expression." lightbox="media/tutorial-group-provision/group-provision-2.png":::
+
+       ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
+
+   12. Change the **Default value** to be `OU=Groups,DC=contoso,DC=com`.
+
+       :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
 
    13. Click **Apply** - This changes the target container depending on the group displayName attribute.
-   14. Click **Save**
-   15. On the left, click **Overview**
-   16. At the top, click **Review and enable**
-   17. On the right, click **Enable configuration**
+   14. Click **Save**.
+   15. On the left, click **Overview**.
+   16. At the top, click **Review and enable**.
+   17. On the right, click **Enable configuration**.
 
 
 ## Test configuration 
@@ -95,12 +117,13 @@ To configure provisioning, follow these steps.
  4. On the left, select **Provision on demand**.
  5. Enter **Sales** in the **Selected group** box
  6. From the **Selected users** section, select some users to test.
-   :::image type="content" source="media/tutorial-group-provision/group-provision-1.png" alt-text="Screenshot of adding members." lightbox="media/tutorial-group-provision/group-provision-1.png":::
+    
+    :::image type="content" source="media/tutorial-group-provision/select-user.png" alt-text="Screenshot of adding members." lightbox="media/tutorial-group-provision/select-user.png":::
 
  7. Click **Provision**.
  8. You should see the group provisioned.
  
-   :::image type="content" source="media/tutorial-group-provision/group-provision-3.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/tutorial-group-provision/group-provision-3.png":::
+   :::image type="content" source="media/tutorial-group-provision/success.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/tutorial-group-provision/success.png":::
 
 ## Verify in Active Directory
 Now you can make sure the group is provisioned to Active Directory.
@@ -110,9 +133,78 @@ Do the following:
 1.  Sign-in to your on-premises environment.
 2.  Launch **Active Directory Users and Computers**
 3.  Verify the new group is provisioned.
-   :::image type="content" source="media/tutorial-group-provision/group-provision-4.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/group-provision-4.png":::
+
+    :::image type="content" source="media/tutorial-group-provision/verify.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/verify.png":::
+
+## How Group Provisioning to Active Directory (GPAD) behaves with SOA converted groups
+
+When you flip the **Source of Authority (SOA)** to cloud for an on-prem
+group, that group becomes eligible for **Group Provisioning to Active Directory (GPAD)**.
+
+- If you run **Sync All**, the group is automatically added to the scope for **Group Provisioning to AD**.
+
+- If you run **Sync Selected**, you need to select the SOA-flipped group.
+
+### Known issue
+
+If you sync a group that isn't universal, such as a global group, and then try to switch SOA and run a GPAD job on that group, an Entry level error is returned. Make sure the group has universal scope.  
+
+:::image type="content" border="true" source="media/tutorial-group-provision/entry-level-error.png" alt-text="Screenshot of a universal group setting." lightbox="media/tutorial-group-provision/entry-level-error.png":::
+
+### Use GPAD to provision groups to AD
+
+**Example: SOAGroup2 Provisioning**
+
+In the diagram below, **SOATestGroup1** has been flipped to the cloud.
+As a result, it has become available for the **GPAD job scope**.
+
+:::image type="content" border="true" source="media/tutorial-group-provision/in-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/entry-level-error.png":::
+
+- When a **GPAD job** runs, the SOA-converted group is provisioned
+  successfully.
+
+- In the **Provisioning Logs**, you can search for the group name and verify that the group was provisioned.
+
+  :::image type="content" border="true" source="media/tutorial-group-provision/provisioning-logs.png" alt-text="Screenshot of the Provisioning logs." lightbox="media/tutorial-group-provision/provisioning-logs.png":::
+
+- The details will show that the group was matched with an existing target group.
+
+  :::image type="content" border="true" source="media/tutorial-group-provision/matched.png" alt-text="Screenshot of matched attributes." lightbox="media/tutorial-group-provision/matched.png":::
+
+- Additionally, you can confirm that the **Admin Description** and **CN (Common Name)** of the target group are updated.
+
+  :::image type="content" border="true" source="media/tutorial-group-provision/confirm-updates.png" alt-text="Screenshot of updated attributes." lightbox="media/tutorial-group-provision/confirm-updates.png":::
+
+- When you look at AD, you can find that the Original AD group is updated.
+
+  :::image type="content" border="true" source="media/tutorial-group-provision/updated-group.png" alt-text="Screenshot of the updated group." lightbox="media/tutorial-group-provision/updated-group.png":::
+
+  :::image type="content" border="true" source="media/tutorial-group-provision/group-properties.png" alt-text="Screenshot of group properties." lightbox="media/tutorial-group-provision/group-properties.png":::
 
 
+### Status of attributes after SOA switch
+
+The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes when an admin acts to switch the source of authority (SOA) of an object.
+
+Admin step | isCloudManaged value | dirSyncEnabled value | Description  
+-----|----------------------|----------------------|------------
+Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **dirSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
+Admin switches the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin switches the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin switches the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
+
+### Roll back Group SOA and Group Provisioning to AD
+
+To roll back Group SOA, follow these steps:
+
+- Flip back the SOA of the group SOATestGroup1.
+
+- When SOA transfer is rolled back to on-premises, **Group Provisioning to AD (GPAD)** stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle.
+
+- You can verify in the audit logs that sync won't happen for this object because it's managed on-premises. You can also check in AD that the group is still intact and not deleted.  
+
+  :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
+  
+  :::image type="content" border="true" source="media/tutorial-group-provision/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/tutorial-group-provision/audit-log-details.png":::
 
 
 ## How Group Provisioning to Active Directory (GPAD) behaves with SOA converted groups
