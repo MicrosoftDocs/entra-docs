@@ -20,7 +20,7 @@ ms.custom: enterprise-apps
 
 This article shows you how to configure OpenID Connect (OIDC) Single sign-on (SSO) in Microsoft Entra ID for both gallery applications and custom (non-gallery) applications. With OIDC SSO, your users can sign in to applications using their Microsoft Entra credentials, providing a seamless authentication experience.
 
-OpenID Connect is an authentication protocol built on top of OAuth 2.0 that enables secure user authentication and single sign-on. For detailed information about the OIDC protocol, see [OpenID Connect authentication with the Microsoft identity platform](~/identity-platform/v2-protocols-oidc.md).
+OIDC is an authentication protocol built on top of OAuth 2.0 that enables secure user authentication and single sign-on. For detailed information about the OIDC protocol, see [OIDC authentication with the Microsoft identity platform](~/identity-platform/v2-protocols-oidc.md).
 
 We recommend you use a nonproduction environment to test the steps in this article.
 
@@ -30,7 +30,7 @@ Before configuring OIDC SSO, it's helpful to understand the following core conce
 - **Permissions and consent**: Applications request permissions to access resources, and users or administrators grant consent. For details on the consent framework, see [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md).
 - **Multi-tenant applications**: Applications that can be used by multiple organizations. For guidance on multi-tenancy, see [How to: Convert your app to be multitenant](~/identity-platform/howto-convert-app-to-be-multi-tenant.md).
 - **Authentication flows**: Different methods for authenticating users, such as the Authorization Code flow with PKCE for single-page applications. For more information, see [Microsoft identity platform authentication flows](~/identity-platform/msal-authentication-flows.md).
-- **OIDC SSO**: A method of single sign-on that uses the OpenID Connect protocol to authenticate users across applications. It allows users to sign in once and access multiple applications without needing to reenter credentials.
+- **OIDC SSO**: A method of single sign-on that uses the OIDC protocol to authenticate users across applications. It allows users to sign in once and access multiple applications without needing to reenter credentials.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ To configure OIDC-based SSO, you need:
 
 Gallery applications in Microsoft Entra ID come preconfigured with OIDC support, making setup straightforward through a consent-based process.
 
-When you add an enterprise application that uses the OIDC standard for SSO, you select the **Sign Up** button. The button is found on the app's pane that appears on the right when you select the app from the app gallery. When you select the button, you complete the sign-up process for the application.
+When you add an enterprise application that uses the OIDC standard for SSO, you select the **Sign Up** button. The button is on the right hand side pane when you select the app from the app gallery. When you select the button, you complete the sign-up process for the application.
 
 To configure OIDC-based SSO for a gallery application:
 
@@ -63,7 +63,7 @@ After entering the sign-in credentials, the consent screen appears. The consent 
 1. Select **Consent on behalf of your organization** and then select **Accept**. The application is added to your tenant and the application home page appears.
 
 > [!NOTE]
-> You can add only one instance of a gallery application. If you have already added an application and try to provide consent again, it won't be added again to the tenant.
+> You can add only one instance of a gallery application. Once you add an application and try to provide consent again, you can't add it again to the tenant.
 
 For more information about user and admin consent, see [Understand user and admin consent](~/identity-platform/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent-and-make-appropriate-code-changes). For comprehensive information about the consent framework, see [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md).
 
@@ -93,15 +93,13 @@ For applications not available in the Microsoft Entra gallery, you need to manua
 1. **Configure authentication flows** (important for security):
 
    **For Single-Page Applications (SPAs):**
-   - Ensure your redirect URIs are listed under the **Single-page application** platform
-   - This automatically configures the secure **Authorization Code flow with PKCE**, which is the recommended approach for SPAs
+   - Ensure your redirect URIs are listed under the **Single-page application** platform. This option automatically configures the secure **Authorization Code flow with PKCE**, which is the recommended approach for SPAs
    - **Do NOT enable** the implicit grant option unless necessary for legacy applications
 
    **For Web Applications:**
 
-   - Ensure your redirect URIs are listed under the **Web** platform
-   - This configures the standard **Authorization Code flow**
-   
+   - Ensure your redirect URIs are listed under the **Web** platform. This option configures the standard **Authorization Code flow**.
+
    > [!WARNING]
    > The implicit grant flow is **not recommended** for new applications due to security vulnerabilities, including token leakage in browser history. Microsoft strongly recommends using the **Authorization Code flow with PKCE** for single-page applications instead. Only enable these options if you have a legacy application that can't be updated to support more secure flows and you understand the associated security risks.
    > 
@@ -114,7 +112,7 @@ If your application is a confidential client (server-side web application that c
 1. Navigate to **Certificates & secrets**.
 1. Select **New client secret**.
 1. Add a description and select an expiration period.
-1. Select **Add** and copy the secret value immediately (it won't be shown again).
+1. Select **Add** and copy the secret value immediately (it can't be shown again).
 1. Store the client secret securely in your application configuration.
 
 > [!TIP]
@@ -125,7 +123,7 @@ If your application is a confidential client (server-side web application that c
 1. Navigate to **API permissions**.
 1. The `User.Read` permission for Microsoft Graph is added by default.
 1. For OIDC authentication, you typically need these delegated permissions:
-   - **openid**: Required for OpenID Connect authentication
+   - **openid**: Required for OIDC authentication
    - **profile**: To access user's profile information
    - **email**: To access user's email address
 1. To add more permissions:
@@ -151,8 +149,8 @@ After registration and configuration, collect the following information needed f
 1. From the **Overview** page, note:
    - **Application (client) ID**: Your app's unique identifier
    - **Directory (tenant) ID**: Your tenant's unique identifier
-1. Select **Endpoints** to view the OpenID Connect metadata and endpoints:
-   - **OpenID Connect metadata document**: `https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid_configuration`
+1. Select **Endpoints** to view the OIDC metadata and endpoints:
+   - **OIDC metadata document**: `https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid_configuration`
    - **Authorization endpoint**: For initiating sign-in flows
    - **Token endpoint**: For exchanging authorization codes for tokens
    - **JWKS URI**: For token signature validation
@@ -203,6 +201,6 @@ For comprehensive troubleshooting guidance, see [Microsoft identity platform err
 
 ## Related content
 
-- [OpenID Connect authentication with the Microsoft identity platform](~/identity-platform/v2-protocols-oidc.md)
+- [OIDC authentication with the Microsoft identity platform](~/identity-platform/v2-protocols-oidc.md)
 - [Microsoft identity platform authentication flows](~/identity-platform/msal-authentication-flows.md)
 - [Migrate from implicit grant to auth code flow](~/identity-platform/migrate-spa-implicit-to-auth-code.md)
