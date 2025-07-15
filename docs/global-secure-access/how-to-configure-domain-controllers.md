@@ -145,7 +145,7 @@ If you need to allow access for many users, you can instead specify an inclusion
 > Use exclusions and inclusions to fine-tune access for users and devices that do not have the Global Secure Access client, ensuring business continuity while maintaining security controls.
 
 Example of how to configure `localpolicy` file for SPN username exclusions and inclusions:
-> ![Screenshot of the localpolicy file showing how to configure the file for SPN exclusions and inclusions](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)
+> ![Screenshot of the localpolicy file showing how to configure the file for SPN username exclusions and inclusions](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)
 
 #### Break glass mode
 
