@@ -9,7 +9,7 @@ ms.date: 07/14/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for increased security (Preview)
@@ -133,7 +133,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21771](../includes/secure-recommendations/21771.md)]
 
-### Applications don't have secrets configured 
+### Applications don't have client secrets configured 
 
 [!INCLUDE [21772](../includes/secure-recommendations/21772.md)]
 
