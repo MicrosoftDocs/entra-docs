@@ -4,7 +4,7 @@ description: Learn how to transition group management from Active Directory to M
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 07/15/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -400,103 +400,7 @@ Let's say we have a group **SOAGroup3**, and we update its group name to
 <img src="media/how-to-group-source-of-authority-configure/sync-blocked.png" style="width:6.03125in;height:4.26042in"
 alt="Inserting image..." />
 
+## Related content
 
-
-
-## How GPAD behaves with SOA converted groups
-
-## Cloud sync
-
-When you flip the **Source of Authority (SOA)** to cloud for an on-prem
-group, that group becomes eligible for **Group Provisioning to Active
-Directory (GPAD)**.
-
-- If you are running **Sync All**, then the group will automatically
-  come into scope for Group Provisioning to AD.
-
-- If you are running **Sync Selected**, then you must manually select
-  the SOA-flipped group.
-
-## Known issue
-
-- If you sync a group which is not universal, i.e global group and then
-  try to flip SOA and then run a GPAD job on that, then it will give an
-  Entry level error. Make sure the group has universal scope.  
-
-  <img src="media/how-to-group-source-of-authority-configure/image25.png" style="width:3.37517in;height:3.46546in"
-  alt="A screenshot of a computer AI-generated content may be incorrect." />
-
-## Use GPAD to provision groups to AD
-
-**Example: SOAGroup2 Provisioning**
-
-In the diagram below, **SOATestGroup1** has been flipped to the cloud.
-As a result, it has become available for the **GPAD job scope**.
-
-<img src="media/how-to-group-source-of-authority-configure/image26.jpg" style="width:5in;height:5.30208in"
-alt="A screenshot of a group AI-generated content may be incorrect." />
-
-- When a **GPAD job** runs, the SOA-converted group is provisioned
-  successfully.
-
-- In the **Provisioning Logs**, you can search for the group name and
-  verify that the group was provisioned.
-
-<img src="media/how-to-group-source-of-authority-configure/image27.jpg" style="width:6.5in;height:1.16667in"
-alt="A screenshot of a chat AI-generated content may be incorrect." />
-
-- The details will show that the group was matched with an existing
-  target group.
-
-<img src="media/how-to-group-source-of-authority-configure/image28.jpg" style="width:6.5in;height:5.47917in"
-alt="A screenshot of a computer AI-generated content may be incorrect." />
-
-- Additionally, you can confirm that the **Admin Description** and **CN
-  (Common Name)** of the target group have been updated.
-
-<img src="media/how-to-group-source-of-authority-configure/image29.jpg" style="width:6.5in;height:3.52083in"
-alt="A screenshot of a computer AI-generated content may be incorrect." />
-
-- When you look at AD, you can find that the Original AD group has been
-  updated.
-
-> <img src="media/how-to-group-source-of-authority-configure/image30.jpg" style="width:3.54167in;height:3.75in"
-> alt="A screenshot of a computer AI-generated content may be incorrect." />
-
-<img src="media/how-to-group-source-of-authority-configure/image31.png" style="width:5.45381in;height:4.00035in"
-alt="A screenshot of a computer AI-generated content may be incorrect." />
-
-
-## Status of attributes after SOA switch
-
-The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes when an admin acts to switch the source of authority (SOA) of an object.
-
-Admin step | isCloudManaged value | dirSyncEnabled value | Description  
------|----------------------|----------------------|------------
-Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **dirSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
-Admin switches the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin switches the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
-Admin rolls back the SOA operation | `false` | `null` | If an admin switches the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
-
-## Roll back group soa and group provision to AD
-
-- Flip back the SOA of the group SOATestGroup1.
-
-<!-- -->
-
-- When SOA transfer is rolled back to on-prem, **Group Provisioning to
-  AD** (GPAD) stops syncing changes without deleting the on-prem group.
-  It also removes the group from GPAD configuration scope. The on-prem
-  group remains intact and resumes control in the next sync cycle.
-
-<!-- -->
-
-- You can verify in audit logs that sync will not happen for this object
-  as it is managed on premises. Further you can go and check in AD that
-  the group is still intact and is not deleted.  
-  <img src="media/how-to-group-source-of-authority-configure/image32.png" style="width:4.4375in;height:2.84375in"
-  alt="A screenshot of a computer AI-generated content may be incorrect." />  
-    
-  <img src="media/how-to-group-source-of-authority-configure/image33.png" style="width:5.40625in;height:4.81711in"
-  alt="A screenshot of a computer AI-generated content may be incorrect." />
-
-  ## Related content
+- Group SOA overview
+- Provision groups to Active Directory using Microsoft Entra Cloud Sync
