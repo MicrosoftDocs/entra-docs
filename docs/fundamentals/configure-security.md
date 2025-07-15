@@ -73,7 +73,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21803](../includes/secure-recommendations/21803.md)]
 
-### Migrate from legacy MFA and self service password reset (SSPR) policies
+### SMS and Voice Call authentication methods are disabled
 
 [!INCLUDE [21804](../includes/secure-recommendations/21804.md)]
 
@@ -107,9 +107,21 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21797](../includes/secure-recommendations/21797.md)]
 
+### Restrict high risk sign-ins
+
+[!INCLUDE [21799](../includes/secure-recommendations/21799.md)]
+
+### Secure the MFA registration (My Security Info) page
+
+[!INCLUDE [21806](../includes/secure-recommendations/21806.md)]
+
 ### Restrict device code flow
 
 [!INCLUDE [21808](../includes/secure-recommendations/21808.md)]
+
+### Authentication transfer is blocked
+
+[!INCLUDE [21828](../includes/secure-recommendations/21828.md)]
 
 ### Require multifactor authentication for device join and device registration using user action
 
