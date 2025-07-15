@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 03/13/2025
+ms.date: 07/14/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -85,7 +85,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21771](../includes/secure-recommendations/21771.md)]
 
-### Applications don't have secrets configured 
+### Applications don't have client secrets configured 
 
 [!INCLUDE [21772](../includes/secure-recommendations/21772.md)]
 
