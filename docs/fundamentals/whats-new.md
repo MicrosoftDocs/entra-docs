@@ -266,7 +266,7 @@ Conditional Access What If evaluation API – Leverage the What If tool using th
 **Service category:** Lifecycle Workflows    
 **Product capability:** Identity Governance    
 
-Now customers can configure a Lifecycle workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user (Preview)](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user-preview).
+Now customers can configure a Lifecycle workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user).
 
 ---
 
