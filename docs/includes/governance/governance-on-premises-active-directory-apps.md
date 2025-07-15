@@ -59,6 +59,11 @@ This recognition is possible because both groups share the same security identif
 
 Before making the SOA switch, consider the following recommended steps:
 
+1. Move all the groups you plan to change the SOA for to a specific OU or OUs if possible. If this isn't possible, set the OU path for each group to the original OU path before you switch SOA of the groups. For more information about how to set the original OU path, see Preserve and use the original OU for group provisioning.
+1. Make the SOA change.
+1. When provisioning the groups to AD, set the attribute mapping as explained in Preserve and use the original OU for group provisioning.
+1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups. 
+
 
 1. Move all the groups you plan to change the SOA for to a specific OU or OUs if possible. If this isn't possible, set the OU path for each group to the original OU path before you switch SOA of the groups. For more information about how to set the original OU path, see [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Make the SOA change.
@@ -106,10 +111,12 @@ Use the following steps for applications to use new groups.
 
 ### Create an application and group
 
+
 1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application and configure the application to require user assignment.
 1. Create a new security group in Microsoft Entra ID.
 1. Use [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD.
 1. Launch Active Directory Users and Computers and wait for the resulting new AD group to be created in the AD domain. When it's present, record the distinguished name, domain, account name, and SID of the new AD group.
+
 
 ### Configure application to use new group
 

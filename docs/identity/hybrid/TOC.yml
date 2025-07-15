@@ -194,26 +194,6 @@
           href: cloud-sync/how-to-preserve-original-organizational-unit.md
         - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
           href: cloud-sync/govern-on-premises-groups.md
-    - name: Cloud-first approach with Group Source of Authority (SOA) 
-      items:
-      - name: Concepts
-        items:
-        - name: Group SOA overview
-          href: source-of-authority/concept-source-of-authority-overview.md
-        - name: How Group SOA works
-          href: source-of-authority/concept-group-source-of-authority-how-it-works.md
-        - name: Guidance for using Group SOA
-          href: source-of-authority/concept-group-source-of-authority-guidance.md
-      - name: How to guides
-        items:
-        - name: Configure Group SOA
-          href: source-of-authority/how-to-group-source-of-authority-configure.md
-        - name: Audit and monitor Group SOA
-          href: source-of-authority/how-to-source-of-authority-auditing-monitoring.md
-        - name: Remove unused AD groups
-          href: source-of-authority/active-directory-group-cleanup.md
-        - name: Set up self-service group management
-          href: source-of-authority/how-to-source-of-authority-self-service-group-management.md
     - name: Migration scenarios for cloud sync
       items:
         - name: Migrate to Microsoft Entra Cloud Sync from Connect sync
@@ -732,4 +712,5 @@
       href: connect/reference-connect-version-history-archive.md
     - name: How to use BypassDirSyncOverrides
       href: connect/how-to-bypassdirsyncoverrides.md
+
 
