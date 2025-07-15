@@ -139,13 +139,15 @@ applications tied to the security group continue to function).
 | Requirement | Description |
 |-------------|-------------|
 | **Roles** | - Groups Administrator role is allowed to call the OnPremisesSyncBehavior Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Graph API for Groups. |
-| **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. See [how to grant this permission](#granting-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
+| **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
 | **License needed** | Microsoft Entra Free or Basic license. |
 | **Connect Sync client** | Minimum version is 255.0.4.0 (see below on how to install the latest version of Connect Sync) |
 
 ## Setup
 
-### [**Connect Sync client**](#tab/set-up-connect-sync)
+You need to set up Connect Sync client and the Cloud Sync client Provisioning agent, and make sure you have required administrator roles. 
+
+### Connect Sync client
 
 1. Download the latest version of the Connect Sync build.
 
@@ -154,7 +156,7 @@ applications tied to the security group continue to function).
 > [!NOTE]
 > There will be no upgrade path from this private build of the Connect Sync client to the ultimate public version. So, plan to uninstall this private build in the future before installing the eventual public build.
 
-### [**Cloud Sync client**](#tab/set-up-connect-sync)
+### Cloud Sync client
 
 Download the Provisioning agent with build version [1.1.1373.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113730) or later.
 
@@ -162,7 +164,7 @@ Download the Provisioning agent with build version [1.1.1373.0](/entra/identity/
 
 1. Learn how to [identify the agent's current version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
 
----
+
 
 ### Prerequisites to call Microsoft Graph API
 
