@@ -82,11 +82,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.datacamp.com/groups/<group-slug>/sso/saml`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint/clients/datacamp-saml-login`
+    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint/clients/datacamp-saml-login`. Mark this URL as the default by selecting the checkbox.
 
-1. Select **Set additional URLs** and perform the following step:
-
-    In the **Sign-on URL** text box, type the URL:
+    c. Click on **Add Reply URL** to add a new text box in the **Reply URL**, type a URL using the following pattern:
     `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint`
 
 	> [!NOTE]
