@@ -98,4 +98,5 @@ Stop harvesting credentials and migrate applications to authenticate with Extern
 
 ## Related content
 
-If you are migrating from Azure AD B2C, the [seamless user migration sample](https://github.com/azure-ad-b2c/samples/tree/master/policies/migrate-to-entra-external-id-for-customers) repository on GitHub contains a seamless migration custom policy example and REST API code sample.
+- If you are migrating from Azure AD B2C, the [seamless user migration sample](https://github.com/azure-ad-b2c/samples/tree/master/policies/migrate-to-entra-external-id-for-customers) repository on GitHub contains a seamless migration custom policy example and REST API code sample.
+- Learn more about [custom authentication extensions](/entra/identity-platform/custom-extension-overview).
