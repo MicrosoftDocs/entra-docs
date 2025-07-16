@@ -6,7 +6,7 @@ ms.author: owinfrey
 manager: dougeby
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 05/27/2025
+ms.date: 06/26/2025
 
 #CustomerIntent: As a customer, I want to become informed on what happens in the different scenarios when PIM expiration dates differ from the access package expiration date.
 ---

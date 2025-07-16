@@ -17,7 +17,7 @@ ms.collection: null
 
 Microsoft Security Copilot is a powerful tool that can help you manage and secure your Microsoft Entra identity environment. This article describes how to use Microsoft Security Copilot with Microsoft Entra in identity related scenarios to enhance your identity protection efforts. Using this feature requires a tenant with Microsoft Security Copilot enabled.
 
-## Create Security Copilot prompts in the Microsoft Entra admin center
+## Scenarios supported by Microsoft Security Copilot in Microsoft Entra
 
 Security Copilot is a part of the Microsoft Entra admin center, and you can use it to create your own prompts. Security Copilot is launched from a globally available button in the menu bar. Choose from a set of starter prompts that appear at the top of the Security Copilot window or enter your own in the prompt bar to get started. Suggested prompts can appear after a response, which are predefined prompts that Security Copilot selects based on the prior response. 
 
@@ -31,6 +31,9 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - [Investigate insights within entitlements management](#investigate-insights-within-entitlements-management): Get quick access to information about access packages, policies, connected organizations, and catalog resources.
 - [Investigate alerts in Scenario Health Monitoring](#investigate-alerts-in-scenario-health-monitoring): Analyze scenario-specific metrics, detect anomalies, and raise alerts for proactive investigation.
 - [SLA in Scenario Health Monitoring](#sla-in-scenario-health-monitoring): Get look-back reporting on Service Level Agreements (SLA) for authentication availability in your Microsoft Entra tenant.
+- [MFA, Authentication methods](#mfa-authentication-methods): Use natural language to investigate multifactor authentication (MFA) and authentication methods in your Microsoft Entra tenant.
+- [Conditional Access](#conditional-access): Use natural language to understand and evaluate Conditional Access policies in your tenant.
+- [Privileged Identity Management (PIM)](#privileged-identity-management-pim): Manage and monitor privileged access in your organization using natural language queries.
 - [Microsoft Entra domains](#microsoft-entra-domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
 - [Microsoft Entra tenants](#microsoft-entra-tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
 - [Microsoft Entra Role Based Access Control (RBAC)](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
@@ -175,6 +178,46 @@ The following example prompts can be used to get SLA information:
 For more information, see:
 
 - [SLA performance for Microsoft Entra ID](/entra/identity/monitoring-health/reference-sla-performance)
+
+### MFA, Authentication methods
+
+Microsoft Security Copilot empowers administrators to quickly assess and manage authentication methods across their Microsoft Entra tenant. By using natural language queries, you can easily discover which authentication methods are enabled, understand user registration status, and identify potential gaps in your organization's authentication strategy. This capability streamlines security management, helping you ensure that strong authentication practices are in place to protect your users and resources.
+
+Using this feature requires a minimum of the [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference#authentication-policy-administrator) for tenant level configurations or [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) for user level configurations in Microsoft Entra ID, and can be used with any tenant and Microsoft Entra ID license.
+
+The following example prompts can be used to investigate MFA and authentication methods in Microsoft Entra:
+
+- *What authentication methods are enabled in my tenant?*
+- *Is Microsoft Authenticator enabled in my tenant? For who?*
+- *Is report suspicious activity enabled in my tenant? For who?*
+- *What authentication methods does karita@woodgrovebank.com have registered?*
+- *Is user karita@woodgrovebank.com enabled for per-user MFA?*
+- *How many users have the FIDO2 Security keys method registered?*
+
+### Conditional Access
+
+Microsoft Entra Conditional Access applies the capabilities of Microsoft Security Copilot to help admins easily understand and evaluate their Conditional Access policies.  By combining Conditional Access APIs with the power of generative AI, Security Copilot enables analysts to ask natural language questions, such as identifying what policies apply to users or what policies use certain controls, and receive clear insights in seconds. 
+
+- List active MFA Conditional Access policies in my tenant.
+- Which MFA policies are enforced in my tenant?
+- Which Conditional Access policies are enabled in my tenant?
+- Which CA policies should I enable?
+- Which CA policies are not enabled in my tenant?
+- List all inactive Conditional Access policies in my tenant.
+- List CA policies that are currently active in my tenant.
+- Which Conditional Access policies in my tenant exclude trusted locations?
+- Get all CA policies for user by group.
+
+### Privileged Identity Management (PIM)
+
+With Microsoft Security Copilot, you can easily manage and monitor privileged access in your organization using natural language queries. Security Copilot integrates with Microsoft Entra Privileged Identity Management (PIM) to provide instant insights into just-in-time role assignments, group memberships, and access to critical resources. By leveraging AI-powered analysis, Security Copilot helps you quickly identify who has eligible or active PIM assignments, track changes, and respond to potential risks—streamlining privileged access management and strengthening your security posture.
+
+Using this feature requires a at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), or [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) in Microsoft Entra ID. You will also need a [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements), and a tenant with PIM configured.
+
+- *Which PIM roles are currently assigned to the user karita@woodgrovebank.com?*
+- *Which PIM eligible roles are assigned to the user casey@woodgrovebank.com?*
+- *Who has PIM eligible assignment of Security Reader?*
+- *Who has PIM active assignment of Cloud Application Administrator?*
 
 ### Microsoft Entra domains
 

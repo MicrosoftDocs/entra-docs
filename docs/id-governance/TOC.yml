@@ -189,7 +189,9 @@
     - name: Request process and emails
       href: entitlement-management-process.md
     - name: Onboard external users
-      href: entitlement-management-onboard.md  
+      href: entitlement-management-onboard.md
+    - name: Visibility in My Access portal
+      href: entitlement-management-access-package-visibility.md      
   - name: Access reviews
     items:
     - name: What are access reviews?
@@ -404,6 +406,8 @@
     href: governance-service-limits.md  
   - name: Licensing fundamentals
     href: licensing-fundamentals.md
+  - name: Licensing for guest users
+    href: microsoft-entra-id-governance-licensing-for-guest-users.md  
   - name: Services and integration partners
     href: services-and-integration-partners.md
   - name: Best practices for securing ID Governance

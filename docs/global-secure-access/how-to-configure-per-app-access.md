@@ -40,7 +40,7 @@ To manage Microsoft Entra private network connector groups, which is required fo
 
 Per-App Access is configured by creating a new Global Secure Access app. You create the app, select a connector group, and add network access segments. These settings make up the individual app that you can assign users and groups to.
 
-To configure Per-App Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/azure/active-directory/app-proxy/application-proxy) connector. This connector group handles the traffic to this new application. With Connectors, you can isolate apps per network and connector.
+To configure Per-App Access, you need to have a connector group with at least one active [Microsoft Entra application proxy](/entra/identity/app-proxy/) connector. This connector group handles the traffic to this new application. With Connectors, you can isolate apps per network and connector.
 
 To summarize, the overall process is as follows:
 
@@ -132,7 +132,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 1. Select **Save**.
 
 > [!NOTE]
-> You can add up to 500 application segments to your app however none of these application segments can have overlapping FQDNs, IP addresses, or IP ranges within or between any Private Access apps. A special exception is allowed for overlapping segments between Private Access apps and Quick Access to allow for VPN replacement. If a segment defined on an Enterprise App (for example 10.1.1.1:3389) overlaps with a segment defined on Quick Access (for example 10.1.1.0/24:3389), then the segment defined on the Enterprise App will be given priority by the GSA service. No traffic from any user to an application segment defined as an Enterprise App will be processed by Quick Access. This means that any user that attempts to RDP to 10.1.1.1 will be evaluated and routed per the Enterprise App configuration, including user assignments and conditional access policies. As a best practice, remove application segments that you define in Enterprise Apps from Quick Access, breaking IP subnets into smaller ranges so that the exclusion is possible.
+> You can add up to 500 application segments to your app however none of these application segments can have overlapping FQDNs, IP addresses, or IP ranges within or between any Private Access apps. A special exception is allowed for overlapping segments between Private Access apps and Quick Access to allow for VPN replacement. If a segment defined on an Enterprise App (for example 10.1.1.1:3389) overlaps with a segment defined on Quick Access (for example 10.1.1.0/24:3389), then the segment defined on the Enterprise App will be given priority by the GSA service. No traffic from any user to an application segment defined as an Enterprise App will be processed by Quick Access. This means that any user that attempts to RDP to 10.1.1.1 will be evaluated and routed per the Enterprise App configuration, including user assignments and Conditional Access policies. As a best practice, remove application segments that you define in Enterprise Apps from Quick Access, breaking IP subnets into smaller ranges so that the exclusion is possible.
 
 ## Assign users and groups
 

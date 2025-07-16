@@ -1,12 +1,11 @@
 ---
-
 title: Leave an Organization
 titleSuffix: Microsoft Entra External ID
 description: As a B2B collaboration user, learn how to leave an organization if you no longer need guest user access to apps. If you're an admin, see how to allow external users to leave.
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 06/17/2025
 
 ms.author: cmulligan 
 author: csmulligan 
@@ -40,19 +39,19 @@ If you're a user looking for information about how to manage and leave an organi
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
    For example:
 
-   `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
-
-   -or-
-
-   `https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee`
-
-   You might need to open this URL in a private browser session.
+      `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
+    
+      -or-
+    
+      `https://myaccount.microsoft.com?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee`
+    
+      You might need to open this URL in a private browser session.
 
 1. Select **Organizations** from the left navigation pane or select the **Manage organizations** link from the **Organizations** block.
 
 1. The **Organizations** page appears, where you can view and manage the organizations you belong to.
 
-   ![Screenshot showing the list of organizations you belong to.](media/leave-the-organization/organization-list.png)
+   :::image type="content" source="media/leave-the-organization/organization-list.png" alt-text="Screenshot showing the list of organizations you belong to." lightbox="media/leave-the-organization/organization-list.png":::
 
    - **Home organization**: Your home organization is listed first. This organization owns your work or school account. Because your account is managed by your administrator, you're not allowed to leave your home organization. You'll see there's no link to **Leave**. If you don't have an assigned home organization, you'll just see a single heading that says **Organizations** with the list of your associated organizations.
 

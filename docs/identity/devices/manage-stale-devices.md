@@ -6,7 +6,7 @@ description: Learn how to remove stale devices from your database of registered 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 04/22/2024
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL

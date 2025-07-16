@@ -1,9 +1,9 @@
 ---
 title: Microsoft Entra authentication & authorization error codes
 description: Learn about the AADSTS error codes that are returned from the Microsoft Entra security token service (STS).
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom: 
 ms.date: 02/03/2025
 ms.reviewer: ludwignick
@@ -185,7 +185,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50139 | SessionMissingMsaOAuth2RefreshToken - The session is invalid due to a missing external refresh token. |
 | AADSTS50140 | KmsiInterrupt - This error occurred due to "Keep me signed in" interrupt when the user was signing-in. This is an expected part of the sign in flow, where a user is asked if they want to remain signed into their current browser to make further logins easier. For more information, see [The new Microsoft Entra sign-in and “Keep me signed in” experiences rolling out now!](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/the-new-azure-ad-sign-in-and-keep-me-signed-in-experiences/m-p/128267). You can [open a support ticket](~/fundamentals/how-to-get-support.md) with Correlation ID, Request ID, and Error code to get more details.|
 | AADSTS50141 | Protected key isn't intended for the authenticated user. |
-| AADSTS50142 | Password change is required due to a conditional access policy. |
+| AADSTS50142 | Password change is required due to a Conditional Access policy. |
 | AADSTS50143 | Session mismatch - Session is invalid because user tenant doesn't match the domain hint due to different resource. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Correlation ID, Request ID, and Error code to get more details. |
 | AADSTS50144 | InvalidPasswordExpiredOnPremPassword - User's Active Directory password has expired. Generate a new password for the user or have the user use the self-service reset tool to reset their password. |
 | AADSTS50147 | Invalid size of the code challenge parameter. Contact the application owner to correct their use of the PKCE parameters. |

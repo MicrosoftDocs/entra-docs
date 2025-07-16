@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ms.custom: sfi-ga-nochange, sfi-image-nochange
@@ -117,11 +117,15 @@ Manually or automatically applying results doesn't have an effect on a group tha
 
 > [!NOTE]
 > Some denied users are unable to have results applied to them. Scenarios where this could happen include:
-> - Reviewing members of a synced on-premises Windows Server AD group: If the group is synced from on-premises Windows Server AD, the group cannot be managed in Microsoft Entra ID and therefore membership cannot be changed.
-> - Reviewing a resource (role, group, application) with nested groups assigned: For users who have membership through a nested group, we will not remove their membership to the nested group and therefore they will retain access to the resource being reviewed.
+> - Reviewing members of a synced on-premises Windows Server AD group: If the group is synced from on-premises Windows Server AD, the group can't be managed in Microsoft Entra ID and therefore membership can't be changed.
+> - Reviewing a resource (role, group, application) with nested groups assigned: For users who have membership through a nested group, we won't remove their membership to the nested group and therefore they'll retain access to the resource being reviewed.
 > - User not found / other errors can also result in an apply result not being supported.
-> - Reviewing the members of mail enabled group: The group cannot be managed in Microsoft Entra ID, so membership cannot be changed.
-> - Reviewing an Application that uses group assignment will not remove the members of those groups, so they will retain the existing access from the group relationship for the application assignment
+> - Reviewing the members of mail enabled group: The group can't be managed in Microsoft Entra ID, so membership can't be changed.
+> - Reviewing an Application that uses group assignment won't remove the members of those groups, so they'll retain the existing access from the group relationship for the application assignment
+
+
+> [!NOTE]
+> Access review decisions don't change membership in dynamic groups. These groups are managed by rules users, and remain members as long as they match the rule conditions.
  
 ## Actions taken on denied guest users in an access review
  

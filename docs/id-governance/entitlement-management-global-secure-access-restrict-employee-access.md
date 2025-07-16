@@ -18,9 +18,9 @@ The Microsoft Entra Suite provides capabilities to govern who can access restric
 
 In this scenario, you set up Global Secure Access and Conditional Access to block access to a specific unauthorized website such as an unsanctioned AI app, while using entitlement management to provide governed access to users who should be exempt from the policy. This scenario is useful for generative AI applications and other web applications that don't support provisioning or federation with Microsoft Entra.
 
-:::image type="content" source="media/entra-suite-scenario/restrict-access-saas-app.png" alt-text="Screenshot of a diagram showing restricting software as a service app using conditional access and Global Secure Access.":::
+:::image type="content" source="media/entra-suite-scenario/restrict-access-saas-app.png" alt-text="Screenshot of a diagram showing restricting software as a service app using Conditional Access and Global Secure Access.":::
 
-:::image type="content" source="media/entra-suite-scenario/grant-governed-access-saas-app.png" alt-text="Screenshot of a diagram showing granting governed software as a service app using conditional access and Global Secure Access.":::
+:::image type="content" source="media/entra-suite-scenario/grant-governed-access-saas-app.png" alt-text="Screenshot of a diagram showing granting governed software as a service app using Conditional Access and Global Secure Access.":::
 
 ## Prerequisites
 

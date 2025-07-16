@@ -3,7 +3,7 @@ title: Configure Greenlight Enterprise Business Controls Platform for Single sig
 description: Learn how to configure single sign-on between Microsoft Entra ID and Greenlight Enterprise Business Controls Platform.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

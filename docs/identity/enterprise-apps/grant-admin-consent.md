@@ -3,7 +3,7 @@ title: Grant tenant-wide admin consent to an application
 description: Learn how to grant tenant-wide consent to an application so that end-users aren't prompted for consent when signing in to an application.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 

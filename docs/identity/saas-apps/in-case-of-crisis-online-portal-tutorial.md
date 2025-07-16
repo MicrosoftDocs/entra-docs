@@ -3,7 +3,7 @@ title: Configure In Case of Crisis - Online Portal for Single sign-on with Micro
 description: Learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Online Portal.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

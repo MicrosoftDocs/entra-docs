@@ -3,7 +3,7 @@ title: Configure Symantec Web Security Service (WSS) for Single sign-on with Mic
 description: Learn how to configure single sign-on between Microsoft Entra ID and Symantec Web Security Service (WSS).
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

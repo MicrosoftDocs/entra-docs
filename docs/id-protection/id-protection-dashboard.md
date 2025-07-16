@@ -3,10 +3,10 @@ title: Microsoft Entra ID Protection overview
 description: Learn how the Microsoft Entra ID Protection overview dashboard provides a view into security posture.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 05/22/2025
+ms.date: 06/05/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera
 ms.reviewer: chuqiaoshi
 ms.custom: sfi-image-nochange
 ---
@@ -144,5 +144,5 @@ Depending on the configuration of your tenant, there might not be recommendation
 ## Related content
 
 - [Plan a deployment](how-to-deploy-identity-protection.md)
-- [What are risks?](concept-risk-detections.md)
-- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#user-self-remediation)
+- [What are risks?](concept-identity-protection-risks.md)
+- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#end-user-self-remediation)

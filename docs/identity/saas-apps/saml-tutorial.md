@@ -3,7 +3,7 @@ title: Configure SAML 1.1 Token enabled LOB App for Single sign-on with Microsof
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML 1.1 Token enabled LOB App.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
