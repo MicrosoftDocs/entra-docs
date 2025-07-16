@@ -1,5 +1,5 @@
 ---
-title: What are risk detections?
+title: Types of risk detections
 description: Learn about risk detections and risk levels, including the difference between real-time and offline detections. 
 
 ms.service: entra-id-protection
@@ -14,7 +14,7 @@ ms.reviewer: cokoopma
 
 ---
 
-# What are risk detections?
+# Risk detection types
 
 Microsoft Entra ID Protection provides organizations with information about suspicious activity in their tenant and allows you to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to user accounts and service principals in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
 

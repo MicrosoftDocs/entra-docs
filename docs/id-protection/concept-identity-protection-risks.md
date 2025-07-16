@@ -1,11 +1,11 @@
 ---
-title: Risk detection and risk event types
-description: Reference table that maps risk detections to risk event types, and provides a description of each risk event type.
+title: What are risk detections?
+description: Explore the full list of risk detections and their corresponding risk event types, along with a description of each risk event type.
 
 ms.service: entra-id-protection
 
 ms.topic: reference
-ms.date: 06/25/2025
+ms.date: 07/16/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -13,7 +13,7 @@ manager: pmwongera
 ms.reviewer: cokoopma
 ---
 
-# Risk detections and risk event types
+# What are risk detections?
 
 Microsoft Entra ID Protection can provide a broad range of risk detections that can be used to identify suspicious activity in your organization. It's important to understand the license requirements or if the detection happens in real-time or offline. 
 
