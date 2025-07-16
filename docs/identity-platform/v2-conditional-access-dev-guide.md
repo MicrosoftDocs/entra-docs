@@ -110,12 +110,12 @@ The initial token request for Web API 1 does not prompt the end user for multifa
 Microsoft Entra ID returns an HTTP response with some interesting data:
 
 > [!NOTE]
-> In this instance it's a multi-factor authentication error description, but there's a wide range of `interaction_required` possible pertaining to Conditional Access.
+> In this instance it's a multifactor authentication error description, but there's a wide range of `interaction_required` possible pertaining to Conditional Access.
 
 ```
 HTTP 400; Bad Request
 error=interaction_required
-error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multi-factor authentication to access '<Web API 2 App/Client ID>'.
+error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to access '<Web API 2 App/Client ID>'.
 claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 ```
 
@@ -136,7 +136,7 @@ Alternatively, if the app initially requests a token for web service A, the end 
 ```
 HTTP 400; Bad Request
 error=interaction_required
-error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multi-factor authentication to access '<Web API App/Client ID>'.
+error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to access '<Web API App/Client ID>'.
 claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 ```
 
@@ -164,7 +164,7 @@ Microsoft Entra ID sends back the following HTTP response:
 ```
 HTTP 400; Bad Request
 error=interaction_required
-error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multi-factor authentication to access '<Web API App/Client ID>'.
+error_description=AADSTS50076: Due to a configuration change made by your administrator, or because you moved to a new location, you must use multifactor authentication to access '<Web API App/Client ID>'.
 ```
 
 Our app needs to catch the `error=interaction_required`. The application can then use either `acquireTokenPopup()` or `acquireTokenRedirect()` on the same resource. The user is forced to do a multifactor authentication. After the user completes the multifactor authentication, the app is issued a fresh access token for the requested resource.

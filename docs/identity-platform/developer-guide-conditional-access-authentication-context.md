@@ -25,9 +25,9 @@ To trigger a step-up authentication from within your applications and services u
 
 ## Problem statement
 
-The IT administrators and regulators often struggle between balancing prompting their users with extra factors of authentication too frequently and achieving adequate security and policy adherence for applications and services where parts of them contain sensitive data and operations. It can be a choice between a strong policy that impacts users' productivity when they access most data and actions or a policy that isn't strong enough for sensitive resources.
+The IT administrators and regulators often struggle to balance prompting users with extra factors of authenticationand achieving adequate security and policy adherence for applications. It can be a choice between a strong policy that impacts users' productivity or a policy that isn't strong enough for sensitive resources.
 
-So, what if apps were able to mix both, where they can function with a relatively lesser security and less frequent prompts for most users and operations and yet conditionally stepping up the security requirement when the users accessed more sensitive parts?
+So, what if apps were able to mix both? Functioning with a lower level of security and fewer prompts for most scenarios. Then conditionally stepping up the security requirements when more sensitive data is being accessed?
 
 ## Common scenarios
 
@@ -43,7 +43,7 @@ For example, while users might sign in to SharePoint using multifactor authentic
 
 ## Integration steps
 
-Once your application is integrated using the supported authentication protocols and registered in a Microsoft Entra tenant that has the Conditional Access feature available for use, you can kick start the process to integrating this feature in your applications that sign-in users.
+You can start integrating this feature in your applications once it is integrated using the supported authentication protocols and registered in a Microsoft Entra tenant that has the Conditional Access feature available.
 
 > [!NOTE]
 > A detailed walkthrough of this feature is also available as a recorded session at [Use Conditional Access Auth Context in your app for step\-up authentication](https://www.youtube.com/watch?v=_iO7CfoktTY).
@@ -56,13 +56,13 @@ Values **C1-C99** are available for use as **Auth Context IDs** in a tenant. Exa
 - **C2** – Require compliant devices
 - **C3** – Require trusted locations
 
-Create or modify your Conditional Access policies to use the Conditional Access Auth Contexts. Examples policies could be:
+To use the Conditional Access Auth Contexts create or modify your Conditional Access policies. Examples policies could be:
 
-- All users signing-into this web application should have successfully completed 2FA for auth context ID **C1**.
-- All users signing into this web application should have successfully completed 2FA and also access the web app from a certain IP address range for auth context ID **C3**.
+- All users signing-into this web application must successfully complete 2FA for auth context ID **C1**.
+- All users signing into this web application must successfully complete 2FA and also access the app from a defined IP address range for auth context ID **C3**.
 
 > [!NOTE]
-> The Conditional Access auth context values are declared and maintained separately from applications. It is not advisable for applications to take hard dependency on auth context ids. The Conditional Access policies are usually crafted by IT administrators as they have a better understanding of the resources available to apply policies on. For example, for a Microsoft Entra tenant, IT admins would have the knowledge of how many of the tenant's users are equipped to use 2FA for MFA and thus can ensure that Conditional Access policies that require 2FA are scoped to these equipped users.
+> The Conditional Access auth context values are declared and maintained separately from applications. It is not advisable for applications to take hard dependency on auth context ids. IT Administrators usually craft Conditional Access policies as they have a better understanding of the resources available. For example, IT admins would know of how many users are equipped to use 2FA for MFA and can ensure that Conditional Access policies that require 2FA are scoped correctly.
 > Similarly, if the application is used in multiple tenants, the auth context ids in use could be different and, in some cases, not available at all.
 
 **Second**: The developers of an application planning to use Conditional Access auth context are advised to first provide the application admins or IT admins a means to map potential sensitive actions to auth context IDs. The steps roughly being:
