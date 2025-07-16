@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 07/09/2025
+ms.date: 07/15/2025
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -70,7 +70,7 @@ Chunghwa Telecom FIDO2 Smart Card Authenticator|175cd298-83d2-4a26-b637-313c07a6
 Crayonic KeyVault K1 (USB-NFC-BLE FIDO2 Authenticator)|be727034-574a-f799-5c76-0929e0430973|&#x2705;|&#x2705;|&#x2705;|&#x2705;
 Cryptnox FIDO2|9c835346-796b-4c27-8898-d6032f515cc5|&#10060;|&#10060;|&#x2705;|&#10060;
 Cryptnox FIDO2.1|1d1b4e33-76a1-47fb-97a0-14b10d0933f1|&#10060;|&#10060;|&#x2705;|&#10060;
-Deepnet SafeKey/Classic (NFC)|b12eac35-586c-4809-a4b1-d81af6c305cf|&#10060;|&#10060;|&#10060;|&#10060;
+Deepnet SafeKey/Classic (NFC)|b12eac35-586c-4809-a4b1-d81af6c305cf|&#10060;|&#x2705;|&#x2705;|&#10060;
 Egomet FIDO2 Authenticator for Android|1105e4ed-af1d-02ff-ffff-ffffffffffff|&#x2705;|&#10060;|&#10060;|&#10060;
 Ensurity AUTH BioPro|454e5346-4944-4ffd-6c93-8e9267193e9b|&#x2705;|&#x2705;|&#10060;|&#10060;
 Ensurity ThinC|454e5346-4944-4ffd-6c93-8e9267193e9a|&#x2705;|&#x2705;|&#10060;|&#10060;

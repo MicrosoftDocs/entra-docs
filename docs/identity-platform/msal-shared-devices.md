@@ -14,6 +14,8 @@ ms.topic: concept-article
 
 # Overview of shared device mode
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Shared Device Mode (SDM) is a Microsoft Entra ID feature that enables organizations to configure an iOS, iPadOS, or Android device for shared use among multiple employees, a common practice in frontline worker environments. With SDM, employees sign in once to access their data across all supported applications, without accessing other employees’ data. When employees sign out after completing their shift or task, they're automatically signed out of the device and all supported applications, making the device ready for the next user.
 
 ## Why Shared Device Mode?
