@@ -198,7 +198,7 @@ Or
 
 -	Run the following command:
 
-`sudo /Applications/Global\ Secure\ Access\ Client.app/Contents/Resources/install_scripts/uninstall`
+`sudo /Applications/GlobalSecureAccessClient/Global\ Secure\ Access\ Client.app/Contents/Resources/install_scripts/uninstall`
 
 If you're using an MDM, uninstall the client with the MDM.
 
