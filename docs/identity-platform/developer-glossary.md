@@ -108,6 +108,10 @@ The process of a [resource owner](#resource-owner) granting authorization to a [
 
 See [consent framework](./application-consent-experience.md) for more information.
 
+## Identity provider
+
+An identity provider (IdP) is a service that creates, maintains, and manages identity information for users while providing authentication services to applications. In the context of Microsoft Entra, identity providers can include Microsoft accounts and social identity providers like Google or Facebook depending on your tenant configuration. When a user attempts to sign in, the application redirects the user to the appropriate identity provider for authentication.
+
 ## ID token
 
 An [OpenID Connect][OpenIDConnect-ID-Token] [security token](#security-token) provided by an [authorization server's](#authorization-server) [authorization endpoint](#authorization-endpoint), which contains [claims](#claim) pertaining to the authentication of an end user [resource owner](#resource-owner). Like an access token, ID tokens are also represented as a digitally signed [JSON Web Token (JWT)][JWT]. Unlike an access token though, an ID token's claims aren't used for purposes related to resource access and specifically access control.
@@ -217,6 +221,8 @@ An instance of a Microsoft Entra directory is referred to as a Microsoft Entra t
 
 Microsoft Entra tenants are created/associated with Azure and Microsoft 365 subscriptions during sign-up, providing Identity & Access Management features for the subscription. Azure subscription administrators can also create additional Microsoft Entra tenants. See [How to get a Microsoft Entra tenant][AAD-How-To-Tenant] for details on the various ways you can get access to a tenant. See [Associate or add an Azure subscription to your Microsoft Entra tenant][AAD-How-Subscriptions-Assoc] for details on the relationship between subscriptions and a Microsoft Entra tenant, and for instructions on how to associate or add a subscription to a Microsoft Entra tenant.
 
+Tenants can be configured for either workforce or external scenarios. The tenant configuration you choose depends on the type of users you want to authenticate and authorize in your application. For more information, see [Supported features in workforce and external tenants](../external-id/customers/concept-supported-features-customers.md).
+
 ## Token endpoint
 
 One of the endpoints implemented by the [authorization server](#authorization-server) to support OAuth 2.0 [authorization grants](#authorization-grant). Depending on the grant, it can be used to acquire an [access token](#access-token) (and related "refresh" token) to a [client](#client-application), or [ID token](#id-token) when used with the [OpenID Connect][OpenIDConnect] protocol.
@@ -224,6 +230,9 @@ One of the endpoints implemented by the [authorization server](#authorization-se
 ## User-agent-based client
 
 A type of [client application](#client-application) that downloads code from a web server and executes within a user-agent (for instance, a web browser), such as a single-page application (SPA). Since all code is executed on a device, it's considered a "public" client due to its inability to store credentials privately/confidentially. For more information, see [OAuth 2.0 client types and profiles][OAuth2-Client-Types].
+
+## User flow (External tenants only)
+A user flow is a predefined, configurable policy that defines the steps a user goes through to sign up or sign in. User flows are used in Microsoft Entra External to provide a customizable experience for end users. They allow you to define the user journey, including the identity providers used, the attributes collected, and the UI customization options available. For more information, see [Create a User Flow in Microsoft Entra External ID](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## User principal
 
