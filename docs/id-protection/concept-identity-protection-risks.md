@@ -15,11 +15,12 @@ ms.reviewer: cokoopma
 
 # What are risk detections?
 
-Microsoft Entra ID Protection can provide a broad range of risk detections that can be used to identify suspicious activity in your organization. It's important to understand the license requirements or if the detection happens in real-time or offline. 
+Microsoft Entra ID Protection can provide a broad range of risk detections that can be used to identify suspicious activity in your organization. The tables included in this article summarize the list of sign-in and user risk detections, including the license requirements or if the detection happens in real-time or offline. Further details about each risk detection can be found following the tables.
 
-This table also provides the license requirements for each detection type. Full details on most risk detections require Microsoft Entra ID P2. Customers without Microsoft Entra ID P2 licenses receive detections titled **Additional risk detected** without the detailed information regarding the detection that customers with P2 licenses do. For more information, see the [license requirements](overview-identity-protection.md#license-requirements). 
-
-For information on workload identity risk detections, see [Securing workload identities](/entra/id-protection/concept-workload-identity-risk).
+- Full details on most risk detections require Microsoft Entra ID P2.
+    - Customers without Microsoft Entra ID P2 licenses receive detections titled **Additional risk detected** without risk detection details.
+    - For more information, see the [license requirements](overview-identity-protection.md#license-requirements). 
+- For information on workload identity risk detections, see [Securing workload identities](/entra/id-protection/concept-workload-identity-risk).
 
 ## Sign-in risk detections mapped to riskEventType 
 

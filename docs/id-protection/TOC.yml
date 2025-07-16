@@ -12,7 +12,7 @@
     href: id-protection-dashboard.md
   - name: What are risk detections?
     href: concept-identity-protection-risks.md
-  - name: Risk detection types
+  - name: Risk detection types and levels
     href: concept-risk-detection-types.md
   - name: Risk-based access control policies
     href: concept-identity-protection-policies.md
