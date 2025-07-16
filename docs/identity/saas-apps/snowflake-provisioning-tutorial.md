@@ -141,6 +141,10 @@ To configure automatic user provisioning for Snowflake in Microsoft Entra ID:
    |name.givenName|String|
    |name.familyName|String|
    |externalId|String|
+   |urn:ietf:params:scim:schemas:extension:2.0:User:type [User management - Snowflake Documentation](https://docs.snowflake.com/en/user-guide/admin-user-management#label-user-management-types)|String|
+
+    >[!NOTE]
+    >Group display name editing is now unlocked. Previously, the group display name in Snowflake could not be changed, preventing customers from editing the mapping. It is now editable.
 
     >[!NOTE]
     >Snowflake supported custom extension user attributes during SCIM provisioning:
