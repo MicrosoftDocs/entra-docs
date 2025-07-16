@@ -2,7 +2,7 @@
 author: justinha
 ms.service: entra-id-governance
 ms.topic: include
-ms.date: 06/09/2025
+ms.date: 07/16/2025
 ms.author: justinha
 # Used by articles entra governance
 ---
@@ -43,6 +43,7 @@ For more information, see [cloud sync supported groups and scale limits](/entra/
 
 For this scenario, only the following groups are supported:
 
+
 - Only cloud-created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported.
 - Assigned or dynamic membership groups.
 - Contain on-premises synchronized users or cloud-created security groups.
@@ -70,6 +71,7 @@ Before making the SOA switch, consider the following recommended steps:
 1. When provisioning the groups to AD, set the attribute mapping as explained in [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups. 
 
+
 For more information on configuring the target location for group that are provisioned to Active Directory, see [Scope filter target container](/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
 
 
@@ -82,6 +84,7 @@ In this scenario option, when you have a group already present in AD used by the
 Use the following steps for applications to use the Group Source of Authority option.
 
 ### Create an application and transfer source of authority
+
 
 1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
 1. Ensure that the AD group you plan to convert is already synchronized to Microsoft Entra, and that the membership of the AD group is only users and optionally other groups which are themselves also synchronized to Microsoft Entra. If the group or any members of the group are not represented in Microsoft Entra, you will not be able to transfer the source of authority of the group.
@@ -112,10 +115,12 @@ Use the following steps for applications to use new groups.
 ### Create an application and group
 
 
+
 1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application and configure the application to require user assignment.
 1. Create a new security group in Microsoft Entra ID.
 1. Use [Group Provisioning to AD](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) to provision this group to AD.
 1. Launch Active Directory Users and Computers and wait for the resulting new AD group to be created in the AD domain. When it's present, record the distinguished name, domain, account name, and SID of the new AD group.
+
 
 
 ### Configure application to use new group
