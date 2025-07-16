@@ -29,32 +29,30 @@ sections:
       - question: What is certificate pinning, and how does it affect TLS inspection? 
         answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection.   
 
-      - Question: Why do I receive the error “SSL certificate problem: unable to get local issuer certificate” when using Git?
-       Answer: This error occurs because certain developer tools (such as Git) do not use the operating system’s certificate store by default; instead, they maintain their own certificate store. To resolve this issue, you need to add your TLS inspection root certificate to Git’s trusted CA store. One way to do this is to append the certificate to Git’s CA bundle. The following PowerShell script demonstrates how to do this on a Windows system:
-      
-       ```powershell
-       # Define the path to your custom root CA certificate
-$certPath = ".\myTLSInspectionRootCA.crt"
-
-# Verify the certificate file exists
-if (-Not (Test-Path $certPath)) {
-    Write-Host "Certificate file not found at $certPath"
-    exit 1
-}
-
-# --- Git Configuration ---
-$gitCAPath = git config --get http.sslcainfo
-if ($gitCAPath) {
-    try {
-        Get-Content $certPath | Add-Content -Path $gitCAPath
-        Write-Host "✅ Certificate appended to Git CA bundle at $gitCAPath"
-    } catch {
-        Write-Host "❌ Failed to append certificate to Git CA bundle: $_"
-    }
-} else {
-    Write-Host "⚠️ Git CA bundle path not found. Is Git installed and configured?"
-}
-```
+      - question: Why do I receive the error “SSL certificate problem: unable to get local issuer certificate” when using Git?
+       answer:| 
+           This error occurs because certain developer tools (such as Git) do not use the operating system’s certificate store by default; instead, they maintain their own certificate store. To resolve this issue, you need to add your TLS inspection root certificate to Git’s trusted CA store. One way to do this is to append the certificate to Git’s CA bundle. The following PowerShell script demonstrates how to do this on a Windows system:
+         ```powershell
+            # Define the path to your custom root CA certificate
+            $certPath = ".\myTLSInspectionRootCA.crt"
+            # Verify the certificate file exists
+            if (-Not (Test-Path $certPath)) {
+            Write-Host "Certificate file not found at $certPath"
+            exit 1
+            }
+           # --- Git Configuration ---
+           $gitCAPath = git config --get http.sslcainfo
+           if ($gitCAPath) {
+           try {
+           Get-Content $certPath | Add-Content -Path $gitCAPath
+           Write-Host "✅ Certificate appended to Git CA bundle at $gitCAPath"
+           } catch {
+           Write-Host "❌ Failed to append certificate to Git CA bundle: $_"
+          }
+          } else {
+          Write-Host "⚠️ Git CA bundle path not found. Is Git installed and configured?"
+          }
+          ```
      [!NOTE] If Git is installed in a protected directory (such as under Program Files), you may need to run PowerShell as an administrator to modify the CA bundle. 
      
 -questions: How do I add a TLS inspection root CA to the Python certificate store?
