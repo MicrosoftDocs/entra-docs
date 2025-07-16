@@ -37,7 +37,7 @@ For customers who wish to extend their current investment in SAP ERP HCM, The in
 | FM           | Function Modules; BAPI function modules configured in SAP HCM.  |
 | H4S4         | SAP HCM for SAP S/4HANA On-Premise; optimized SAP ERP HCM version for native S/4HANA platform deployment.  |
 
-## Understand current SAP HCM to SAP IDM integration
+## Understand the existing SAP HCM to SAP IDM integration
 
 ### Architecture overview
 
@@ -48,67 +48,95 @@ Reference: [Integration with SAP HCM | SAP Help Portal](https://help.sap.com/doc
 To enable data flow from SAP HCM to SAP IDM, the SAP administrators perform steps documented in [Setting Up an SAP HCM System | SAP Help Portal](https://help.sap.com/docs/SAP_IDENTITY_MANAGEMENT/4773a9ae1296411a9d5c24873a8d418c/0c0075a4a025422587257d16b22461ea.html). 
 
 ### SAP HCM Tables and Infotypes
-Employee data in SAP HCM is stored in a SQL relational database. With access to the right function modules (FM) and permissions, it is possible to query the backend database tables storing employee information. 
-For every table in the database, there is a functional equivalent in SAP HCM called Infotype, which is a mechanism to logically group related data. SAP HCM admins use Infotype terminology when managing employee data in SAP HCM screens. 
-This section provides a list of important tables in SAP HCM storing employee data. The field “Personnel number – PERNR” uniquely identifies every employee in these tables. 
+Employee data in SAP HCM is stored in a SQL relational database. With access to the right function modules (FM) and permissions, it's possible to query the backend database tables storing employee information. 
+For every table in the database, there's a functional equivalent in SAP HCM called **Infotype**, which is a mechanism to logically group related data. SAP HCM admins use Infotype terminology when managing employee data in SAP HCM screens. 
+This section provides a list of important tables in SAP HCM storing employee data. The field **Personnel number – PERNR** uniquely identifies every employee in these tables. 
 
 | Table name | Infotype | Remarks |
 |------------|----------|---------|
-| PA0000     | 0000- Actions      | Captures actions performed by HR on the employee. Example fields: employment status, action type, action name, start date, end date. | 
+| PA0000     | 0000- Actions  | Captures actions performed by HR on the employee. Example fields: employment status, action type, action name, start date, end date. | 
 | PA0001     | 0001 – Employee Org assignments | Captures organization data for an employee. Example fields: company code, cost center, business area. |
 | PA0002     | 0002 – Personal Data | Captures personal data. Example fields: first name, last name, date of birth, nationality. |
 | PA0006     | 0006 – Addresses | Captures address and phone data. Example fields: street, city, country, phone. |
 
 Example SQL query to fetch active employees’ username, status, first name and last name:
-SELECT DISTINCT p0.PERNR username, CASE WHEN (p0.STAT2 = 3) THEN 1 END statuskey, p2.NACHN last_name, p2.VORNA first_name 
-FROM SAP_PA0000 p0 left join SAP_PA0002 p2 on p0.PERNR = p2.PERNR 
-WHERE p0.STAT2 = 3 and p0.ENDDA > SYSDATE() 
 
-3.3	Scenarios Supported by SAP IDM 
+**SELECT DISTINCT** ```p0.PERNR username, CASE WHEN (p0.STAT2 = 3) THEN 1 END statuskey, p2.NACHN last_name, p2.VORNA first_name```
+**FROM** ```SAP_PA0000 p0 left join SAP_PA0002 p2 on p0.PERNR = p2.PERNR```
+**WHERE** ```p0.STAT2 = 3 and p0.ENDDA > SYSDATE()```
+
+
+### Scenarios Supported by SAP IDM 
+
 SAP IDM typically ingests more than just basic worker records from SAP HCM. The integration supports a broad range of employee-related data, including:
-•	Core identity attributes: name, employee ID, employment status.
-•	Organizational data: including cost center, business unit, and reporting structure.
-•	Personal data: such as date of birth, nationality, and contact information.
-•	Communication and external identifiers: like email addresses and external system IDs.
-This is achieved by reading from multiple SAP HCM infotypes (e.g., 0000, 0001, 0002, 0006, 0105), which are logical groupings of related employee data. These are accessed via SAP function modules (FMs) or BAPIs that abstract the underlying table structures.
-3.4	Key Aspects of SAP IDM Integration
-A notable architectural feature of SAP IDM is its use of a staging area—a conceptually distinct layer between the source system (SAP HCM) and the productive identity store. This staging area offers several advantages:
-•	Data validation and transformation: Data can be reviewed, enriched, or transformed before being committed to the identity store.
-•	Workflow integration: Approval workflows can be triggered based on staged data, allowing for human-in-the-loop validation.
-•	Schema flexibility: Changes in the SAP HCM schema can be accommodated by adjusting mappings in the staging area without altering the identity store schema.
-The staging area is equivalent to a "connector space"—a buffer zone where data can be inspected and controlled before it becomes authoritative. 
-3.5	Contrast with Microsoft Entra Provisioning Flow
-Currently, Microsoft Entra’s inbound provisioning flow does not include a native equivalent of this staging area. Data transformations and validations must be handled externally—typically in middleware (e.g., Azure Logic Apps or PowerShell scripts)—before invoking the Entra provisioning API. This architectural difference is incorporated in the solution options suggested below.
-4	SAP HCM and Entra Inbound Provisioning options
+
+- **Core identity attributes**: name, employee ID, employment status.
+- **Organizational data**: including cost center, business unit, and reporting structure.
+- **Personal data**: such as date of birth, nationality, and contact information.
+- **Communication and external identifiers**: like email addresses and external system IDs.
+
+This is achieved by reading from multiple SAP HCM infotypes (Example: 0000, 0001, 0002, 0006, 0105), which are logical groupings of related employee data. These are accessed through SAP function modules (FMs) or BAPIs that abstract the underlying table structures.
+
+### Key Aspects of SAP IDM Integration
+
+A notable architectural feature of SAP IDM is its use of a staging area — a conceptually distinct layer between the source system (SAP HCM) and the productive identity store. This staging area offers several advantages:
+
+- **Data validation and transformation**: Data is reviewed, enriched, or transformed before being committed to the identity store.
+- **Workflow integration**: Approval workflows is triggered based on staged data, allowing for human-in-the-loop validation.
+- **Schema flexibility**: Changes in the SAP HCM schema is accommodated by adjusting mappings in the staging area without altering the identity store schema.
+
+The staging area is equivalent to a "connector space"— a buffer zone where data is inspected and controlled before it becomes authoritative. 
+
+### Contrast with Microsoft Entra Provisioning Flow
+
+Currently, Microsoft Entra’s inbound provisioning flow doesn't include a native equivalent of this staging area. Data transformations and validations must be handled externally; typically in middleware (Example: Azure Logic Apps or PowerShell scripts) before invoking the Entra provisioning API. This architectural difference is incorporated in the solution options suggested below.
+
+## SAP HCM and Entra Inbound Provisioning options
+
 This section describes options that SAP HCM customers can consider for implementing inbound provisioning from SAP HCM to Microsoft Entra / on-premises Active Directory. 
 Use the following decision tree to determine which option to use. 
  
-4.1	Option 1: CSV-file based inbound provisioning
-4.1.1	When to use this approach
+![Diagram of SAP HCM to Entra ID sync workflow.](diagram-sap-hcm-entra-id-sync.png)
+
+## Option 1: CSV-file based inbound provisioning
+
+### When to use this approach
+
 Use this approach if the customer is using both SAP HCM and SAP SuccessFactors in side-by-side deployment mode, where SAP SuccessFactors is not yet authoritative/operational as the primary HR data source. This approach provides faster time-to-value and aligns better with the customer’s objective of eventually moving to SAP SuccessFactors. 
-In what scenarios will a customer have deployed both SAP HCM and SAP SuccessFactors?
+
+**In what scenarios will a customer have deployed both SAP HCM and SAP SuccessFactors?**
+
 It’s common for customers to start their SAP SuccessFactors deployment with ancillary HR modules like Performance and Goals, Learn, etc., before moving core HR modules to SAP SuccessFactors. In this scenario, the on-premises SAP HCM system continues to be the authoritative source for employee and organization data. 
-Why is this approach recommended only for SAP HCM customers with SAP SuccessFactors deployment plan?
-Only customers with this side-by-side deployment configuration are eligible to use SAP’s Add-on Integration Module for SAP HCM and SuccessFactors that simplifies the periodic export of employee data into CSV files. 
-4.1.2	High level data flow and configuration steps
+
+**Why is this approach recommended only for SAP HCM customers with SAP SuccessFactors deployment plan?**
+
+Only customers with this side-by-side deployment configuration are eligible to use SAP’s [Add-on Integration Module for SAP HCM and SuccessFactors](https://help.sap.com/doc/87c19c94e71e4e389e5b1daea1942c72/3.0 SP06/en-US/loio06b98261c1d34e67b554c9527d6a3565_06b98261c1d34e67b554c9527d6a3565.pdf) that simplifies the periodic export of employee data into CSV files. 
+
+### High level data flow and configuration steps
+
 The diagram below illustrates the high-level data flow and configuration steps. 
+
+![Diagram of high-level data flow from SAP HCM to Entra ID.](diagram-sap-hcm-entra-id-csv-file-dataflow.png)
  
-•	Step 1: In SAP HCM, configure periodic export of CSV files with employee data. When running the integration for the very first time, we recommend performing a full export for the initial sync. Once initial sync is complete, you can perform incremental exports that only capture changes. The exported CSV files can be stored on SFTP server or Azure File shares in encrypted format.  
-o	References: 
-	Replicating employee data from SAP ERP HCM
-	2214465 - Integration Add-On 3.0 for SAP ERP HCM - SAP for Me (requires SAP support login) 
-	Slide deck explaining integration between SAP ERP HCM and SuccessFactors
-o	Note: CSV Files can have delta (or incremental) data. 
-•	Step 2: In Microsoft Entra, configure API-driven provisioning app to receive employee data from SAP HCM.
-o	References: 
-	API-driven inbound provisioning concepts 
-	Configure API-driven inbound provisioning app
-•	Step 3: Configure middleware tool to decrypt/read the CSV, convert it to SCIM bulk payload and send the data to the API endpoint configured in step 2. The CSV file can be stored in a staging location like Azure File Share. It is recommended to implement validation and circuit-breaking logic in the middleware tool to keep out bad data from flowing into Entra. For e.g. if employeeType is invalid, then skip the record and if a certain percentage of HR records have invalid data, stop the bulk upload operation. 
-o	References: 
-	API-driven inbound provisioning with PowerShell script
-	API-driven inbound provisioning with Azure Logic Apps
-4.1.3	Deployment variations
+- **Step 1**: In SAP HCM, configure periodic export of CSV files with employee data. When running the integration for the very first time, we recommend performing a full export for the initial sync. Once initial sync is complete, you can perform incremental exports that only capture changes. The exported CSV files can be stored on SFTP server or Azure File shares in encrypted format.  
+    - References: 
+        - [Replicating employee data from SAP ERP HCM](https://help.sap.com/doc/2eff62546be748739ca05477c2ab7ba7/2405/en-US/SF_ERP_EC_EE_Data_HCI_en-US.pdf)
+        - [2214465 - Integration Add-On 3.0 for SAP ERP HCM - SAP for Me](https://me.sap.com/notes/0002214465) (requires SAP support login) 
+        - Slide deck explaining integration between [SAP ERP HCM and SuccessFactors](https://s3-eu-west-1.amazonaws.com/static.wm3.se/sites/572/media/339260_Integration_between_SAP_ERP_HCM_and_SuccessFactors_BizX.pdf?1572267595)
+	- Note: CSV Files can have delta (or incremental) data. 
+- **Step 2**: In Microsoft Entra, configure the API-driven provisioning app to receive employee data from SAP HCM.
+    - References: 
+        - [API-driven inbound provisioning concepts](~/identity/app-provisioning/inbound-provisioning-api-concepts) 
+        - [Configure API-driven inbound provisioning app](~/identity/app-provisioning/inbound-provisioning-api-configure-app)
+- **Step 3**: Configure middleware tool to decrypt/read the CSV, convert it to SCIM bulk payload and send the data to the API endpoint configured in step 2. The CSV file can be stored in a staging location like Azure File Share. It is recommended to implement validation and circuit-breaking logic in the middleware tool to keep out bad data from flowing into Entra. For e.g. if employeeType is invalid, then skip the record and if a certain percentage of HR records have invalid data, stop the bulk upload operation. 
+    - References: 
+        - [API-driven inbound provisioning with PowerShell script](~/identity/app-provisioning/inbound-provisioning-api-powershell)
+        - [API-driven inbound provisioning with Azure Logic Apps](~/identity/app-provisioning/inbound-provisioning-api-logic-apps)
+
+
+### Deployment variations
 If the customer does not have access to the SAP provided add-on integration module or does not plan to use SuccessFactors, even in this scenario, it’s still possible to use the CSV approach if the customer’s on-premises SAP ERP team can “build a custom automation in SAP HCM” to export CSV files on a regular basis for both full sync and incremental sync. 
+
 4.2	Option 2: SAP BAPI-based inbound provisioning
 4.2.1	When to use this approach
 Use this approach if the customer does not have SAP SuccessFactors deployed and the solution architecture calls for a scheduled periodic sync using Azure Logic Apps due to system constraints or deployment requirements. 
