@@ -4,7 +4,7 @@ description: Learn how to transition group management from Active Directory to M
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/15/2025
+ms.date: 07/16/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -195,21 +195,21 @@ Download the Provisioning agent with build version [1.1.1373.0](/entra/identity/
    > [!NOTE]
    > Consenting on behalf of the entire organization isn't required.
 
-   :::image type="content" source="media/how-to-use-source-of-authority/consent.png" alt-text="Screenshot of the consent screen for granting permissions in Microsoft Entra admin center.":::
+   :::image type="content" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of the consent screen for granting permissions in Microsoft Entra admin center.":::
 
    > [!NOTE]
    > Ignore this error if you see it after you click **Accept**: `AADSTS9002325: Proof Key for Code Exchange is required for cross-origin authorization code redemption.`
 
 1. To verify the permission is granted, open **Enterprise Applications** > **AppName** > **Security** > **Permissions** > **User consent in Microsoft Entra portal**. It may take a minute or two for the permission to appear.
 
-   :::image type="content" source="media/how-to-use-source-of-authority/verify-consent.png" alt-text="Screenshot of the permissions page in Microsoft Entra portal showing granted permissions.":::
+   :::image type="content" source="media/how-to-group-source-of-authority-configure/verify-consent.png" alt-text="Screenshot of the permissions page in Microsoft Entra portal showing granted permissions.":::
 
 ## Switch SOA of a test group
 
 Follow these steps to switch the SOA for a test group:
 
 1. Create a security group or a mail-enabled distribution group in AD for testing and add group members. Or you can use a group that's already synced to Microsoft Entra ID by using Connect Sync.
-1. Run the folloing command to start Connect Sync: 
+1. Run the following command to start Connect Sync: 
 
    ```powershell
    Start-ADSyncSyncCycle
@@ -223,7 +223,7 @@ Follow these steps to switch the SOA for a test group:
    GET https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior?\$select=isCloudManaged
    ```
 
-   :::image type="content" source="media/how-to-use-source-of-authority/get-group.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a group.":::
+   :::image type="content" source="media/how-to-group-source-of-authority-configure/get-group.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a group.":::
 
 1. Check that the synced group is read-only. Because the group is managed on-premises, any write attempts to the group in the cloud fail. The error message differs for mail-enabled groups, but updates still aren't allowed.
 
@@ -234,19 +234,18 @@ Follow these steps to switch the SOA for a test group:
       }   
    ```
 
-   :::image type="content" source="media/how-to-use-source-of-authority/try-update.png" alt-text="Screenshot of an attempt to update a group to verify it's read-only.":::
+   :::image type="content" source="media/how-to-group-source-of-authority-configure/try-update.png" alt-text="Screenshot of an attempt to update a group to verify it's read-only.":::
 
    > [!NOTE]
    > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required Group.ReadWrite.All permission.
  
 1. Check Microsoft Entra portal for the group to verify that all group fields are greyed out, and that source is Windows Server AD:  
 
-   :::image type="content" border="true" source="media/how-to-use-source-of-authority/basic.png" alt-text="Screenshot of basic group properties.":::
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/basic.png" alt-text="Screenshot of basic group properties.":::
 
-   :::image type="content" border="true" source="media/how-to-use-source-of-authority/properties.png" alt-text="Screenshot of advanced group properties.":::
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced group properties.":::
 
 1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to switch to the cloud:
-
 
    ```https
    PATCH https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior
@@ -255,8 +254,7 @@ Follow these steps to switch the SOA for a test group:
       }   
    ```
 
-   :::image type="content" border="true" source="media/how-to-use-source-of-authority/switch.png" alt-text="Screenshot of PATCH operation to update group properties.":::
-
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/switch.png" alt-text="Screenshot of PATCH operation to update group properties.":::
 
 1. To validate the change, call GET to verify *isCloudManaged* is true.
 
@@ -264,12 +262,11 @@ Follow these steps to switch the SOA for a test group:
    GET https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior?\$select=isCloudManaged
    ```
 
-   :::image type="content" border="true" source="media/how-to-use-source-of-authority/cloud-managed.png" alt-text="Screenshot of GET call to verify group properties.":::
-
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify group properties.":::
 
 1. Confirm the change in the Audit Logs. To access Audit Logs in the Azure portal, open **Manage Microsoft Entra ID** > **Monitoring** > **Audit Logs**, or search for *audit logs*. Select **Change Source of Authority from AD to cloud** as the activity.
 
-   :::image type="content" border="true" source="media/how-to-use-source-of-authority/audit.png" alt-text="Screenshot of change to group properties in Audit Logs.":::
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/audit.png" alt-text="Screenshot of change to group properties in Audit Logs.":::
 
 1. Check that the group can be updated in the cloud.
 
@@ -280,131 +277,102 @@ Follow these steps to switch the SOA for a test group:
       }   
    ```
 
-   :::image type="content" border="true" source="media/how-to-use-source-of-authority/retry-update.png" alt-text="Screenshot of a retry to change group properties.":::
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/retry-update.png" alt-text="Screenshot of a retry to change group properties.":::
 
 1. Open Microsoft Entra andmin center and confirm that the group **Source** property is **Cloud**.
 
-   :::image type="content" border="true" source="media/how-to-use-source-of-authority/source-cloud.png" alt-text="Screenshot of how to confirm group source property.":::
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/source-cloud.png" alt-text="Screenshot of how to confirm group source property.":::
 
 
-## Connect Sync Client
+## Connect Sync client
 
-1.  Run sync in connect sync by running “Start-ADSyncSyncCycle” in
-    PowerShell window.
+1. Run the following command to start Connect Sync: 
 
-2.  To look at the group object you switched SOA of, in the
-    “Synchronization Service Manager,” go to "Connectors":
+   ```powershell
+   Start-ADSyncSyncCycle
+   ```
 
-<img src="media/how-to-group-source-of-authority-configure/connectors.png" style="width:6.5in;height:2.38542in"
-alt="A screenshot of a computer Description automatically generated" />
+1. To look at the group object you switched SOA of, in the **Synchronization Service Manager**, go to **Connectors**:
 
-3.  Right-click **Active Directory Domain Services Connector**:
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/connectors.png" alt-text="Screenshot of Connectors.":::
 
-Search the group by RDN setting CN=\<GroupName\>
+1. Right-click **Active Directory Domain Services Connector**. Search for the group by the relative domain name (RDN) setting "CN=\<GroupName\>":
 
-> <img src="media/how-to-group-source-of-authority-configure/search.png" style="width:6.5in;height:4.72917in"
-> alt="A screenshot of a computer Description automatically generated" />
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/search.png" alt-text="Screenshot of how to search for RDN.":::
 
-4.  Double-click the searched entry and click **Lineage** > **Metaverse Object Properties**.
+1. Double-click the searched entry, and click **Lineage** > **Metaverse Object Properties**.
 
-<img src="media/how-to-group-source-of-authority-configure/lineage.png" style="width:6.02083in;height:4.71825in"
-alt="A screenshot of a computer Description automatically generated" />
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/lineage.png" alt-text="Screenshot of how to view lineage.":::
 
-5.  Click on “Connectors” and double click on the **Entra ID object**
-    with “CN={\<Alpha Numeric Characters\>}”
+1. Click **Connectors** and double-click the **Entra ID object** with "CN={\<Alphanumeric Characters\>}".
 
-6.  You will notice “blockOnPremisesSync” property is set to true on the
-    Entra ID object, which means any changes made in the corresponding
-    Active Directory object will not flow to the Entra ID object:
+1. You can see that the **blockOnPremisesSync** property is set to true on the Entra ID object. This property value means that any changes made in the corresponding Active Directory object don't flow to the Entra ID object:
 
-> <img src="media/how-to-group-source-of-authority-configure/block.png" style="width:6.5in;height:5.09375in"
-> alt="A screenshot of a computer Description automatically generated" />
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/block.png" alt-text="Screenshot of how to block data flow.":::
 
-7.  Let’s update the on-premises group object, change the group name
-    from SecGroup1 to SecGroup1.1:
+1. Let’s update the on-premises group object. We'll change the group name from *SecGroup1* to *SecGroup1.1*:
 
-> <img src="media/how-to-group-source-of-authority-configure/change-name.png" style="width:4.16667in;height:4.92708in"
-> alt="A screenshot of a computer Description automatically generated" />
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/change-name.png" alt-text="Screenshot of how to change the object name.":::
 
-8.  Run sync in connect sync by running “Start-ADSyncSyncCycle” in
-    PowerShell window.
+1. Run the following command to start Connect Sync: 
 
-9.  Open event viewer and filter the application event logs with event
-    id “6956”, this event id is reserved to inform the customers that
-    the object has not been synced to the cloud because the source of
-    authority of object is in the cloud.
+   ```powershell
+   Start-ADSyncSyncCycle
+   ```
 
-<img src="media/how-to-group-source-of-authority-configure/event-6956.png" style="width:6.47917in;height:1.70286in"
-alt="A screenshot of a computer Description automatically generated" />
+1. Open Event viewer and filter the application event logs with event ID 6956. This event ID is reserved to inform the customers that the object isn't synced to the cloud because the SOA of the object is in the cloud.
+
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
 
 ## Roll back SOA update
 
-**PATCH**
-*https://graph.microsoft.com/beta/groups/\<groupId\>/onPremisesSyncBehavior*
+Run this opreration to roll back the SOA update and revert the SOA to on-premises. 
 
-{
+   ```https
+   PATCH https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior
+      {
+        "isCloudManaged": false
+      }   
+   ```
 
-"isCloudManaged": false
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/rollback.png" alt-text="Screenshot of API cakll to revert SOA.":::
 
-}
+> [!NOTE]
+> This change to "isCloudManaged: false" simply allows the object to be taken over by Connect Sync the next time it runs (assuming the AD object remains in scope). Until Connect Sync runs next, the object can be edited in the cloud. So, the full "rollback of SOA" when the object becomes synched from on-premises again only happens after *both* the API call and the next sceduled or forced run of Connect Sync.
 
-<img src="media/how-to-group-source-of-authority-configure/rollback.png" style="width:6.5in;height:2.42708in" />
+### Check Audit Logs to validate the revert operation
 
-***Note:*** This change to “isCloudManaged: false” simply allows the
-object to be taken over by Connect Sync the next time it runs (assuming
-the AD object remains in scope). Until Connect Sync runs next, the
-object remains cloud editable. So, the full “rollback of SOA” when the
-object becomes synched from on-prem again only happens after *both* the
-API call and the next run of Connect Sync (scheduled or forced).
+Select activity as **Undo changes to Source of Authority from AD to cloud**:
 
-### Check audit logs to validate the revert operation
+:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/audit-undo-changes.png" alt-text="Screenshot of Undo Changes in Audit Logs.":::
 
-Select activity as "**Undo changes to Source of Authority from AD to
-cloud**"
+## Validate in Connect Sync client
 
+1. Run the following command to start Connect Sync: 
 
-<img src="media/how-to-group-source-of-authority-configure/audit-undo-changes.png" style="width:6.5in;height:1.0625in" />
+   ```powershell
+   Start-ADSyncSyncCycle
+   ```
 
+1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and blockOnPremisesSync = false, which means the object SOA is taken over by the on-premises again.
 
-## VALIDATE IN CONNECT SYNC CLIENT
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
 
-1.  Run sync in connect sync by running “Start-ADSyncSyncCycle” in
-    PowerShell window.
+## Check Cloud sync provisioning logs 
 
-2.  Open the object in the “Synchronization Server Manager”, details are
-    given in the [“Connect Sync Client”](#connect-sync-client)
-    section, you can notice the state of the Microsoft Entra ID connector
-    object as “Awaiting Export Confirmation” and blockOnPremisesSync =
-    false, means the object is taken over by the on-premises again.
+If you try to edit an attribute of a group in AD while **SOA is in the cloud**, the Cloud Sync skips the object.
 
-> <img src="media/how-to-group-source-of-authority-configure/await-export.png" style="width:6.5in;height:5.09375in" />
+Let's say we have a group *SOAGroup3*, and we update its group name to *SOA Group3.1*.
 
-## Cloud sync - provisioning logs 
+:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/update-group-name.png" alt-text="Screenshot of an object name update.":::
 
-If you attempt to edit an attribute of a group in AD while **SOA is in
-the cloud**, the **Cloud sync will skip this object**.
+In the **Provisioning Logs** of the **AD2AAD job**, you can see that **SOAGroup3 was skipped**.
 
-> **Example: SOAGroup3 Attribute Update**
+:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/skipped.png" alt-text="Screenshot of a skipped object.":::
 
-Let's say we have a group **SOAGroup3**, and we update its group name to
-**SOA Group3.1**.
+The details confirm: "As the SOA of this group is in the cloud, this object will not sync."
 
-> <img src="media/how-to-group-source-of-authority-configure/update-group-name.png" style="width:4.4375in;height:4.11458in"
-> alt="Inserting image..." />
-
-- In the **Provisioning Logs** of the **AD2AAD job**, you will see that
-  **SOAGroup3 was skipped**.
-
-> <img src="media/how-to-group-source-of-authority-configure/skipped.png" style="width:6.5in;height:1.10417in"
-> alt="Inserting image..." />
-
-- The details will confirm:
-
-  - *"As the SOA of this group is in the cloud, this object will not
-    sync."*
-
-<img src="media/how-to-group-source-of-authority-configure/sync-blocked.png" style="width:6.03125in;height:4.26042in"
-alt="Inserting image..." />
+:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
 ## Related content
 
