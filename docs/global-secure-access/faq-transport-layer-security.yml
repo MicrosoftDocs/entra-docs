@@ -34,7 +34,7 @@ sections:
            This error occurs because certain developer tools (such as Git) do not use the operating system’s certificate store by default; instead, they maintain their own certificate store. To resolve this issue, you need to add your TLS inspection root certificate to Git’s trusted CA store. One way to do this is to append the certificate to Git’s CA bundle. The following PowerShell script demonstrates how to do this on a Windows system:
          ```powershell
             # Define the path to your custom root CA certificate
-            $certPath = ".\myTLSInspectionRootCA.crt"
+            $certPath = ".\\myTLSInspectionRootCA.crt"
             # Verify the certificate file exists
             if (-Not (Test-Path $certPath)) {
             Write-Host "Certificate file not found at $certPath"
