@@ -13,7 +13,7 @@
   - name: What are risk detections?
     href: concept-identity-protection-risks.md
   - name: Risk detection types
-    href: risk-detection-types.md
+    href: concept-risk-detection-types.md
   - name: Risk-based access control policies
     href: concept-identity-protection-policies.md
   - name: User sign-in experience
