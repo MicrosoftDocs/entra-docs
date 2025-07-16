@@ -22,6 +22,9 @@ Microsoft Entra ID Protection can provide a broad range of risk detections that 
     - For more information, see the [license requirements](overview-identity-protection.md#license-requirements). 
 - For information on workload identity risk detections, see [Securing workload identities](/entra/id-protection/concept-workload-identity-risk).
 
+> [!NOTE]
+> For details on real-time vs offline detections and risk levels, see [**Risk detection types and levels**](concept-risk-detection-types.md).
+
 ## Sign-in risk detections mapped to riskEventType 
 
 Select a risk detection from the list to view the description of the risk detection, how it works, and the license requirements. In the table, *Premium* indicates the detection requires at least a Microsoft Entra ID P2 license. *Nonpremium* indicates the detection is available with Microsoft Entra ID Free. The `riskEventType` column indicates the value that appears in Microsoft Graph API queries.
