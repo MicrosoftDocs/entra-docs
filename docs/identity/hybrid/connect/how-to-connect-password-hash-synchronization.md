@@ -79,46 +79,63 @@ There are two types of password policies that are affected by enabling password 
 
 #### Password complexity policy
 
-When password hash synchronization is enabled, the password complexity policies in your on-premises Active Directory instance override complexity policies in the cloud for synchronized users. You can use all of the valid passwords from your on-premises Active Directory instance to access Microsoft Entra services.
+When password hash synchronization is enabled, the password complexity policies in your on-premises Active Directory instance override complexity policies in the cloud for synchronized users. You can use any valid password from your on-premises Active Directory instance to access Microsoft Entra services.
 
 > [!NOTE]
 > Passwords for users that are created directly in the cloud are still subject to password policies as defined in the cloud.
 
 #### Password expiration policy
 
-If a user is in the scope of password hash synchronization, by default the cloud account password is set to *Never Expire*.
+If a user is in the scope of password hash synchronization, by default the cloud password is set to *Never Expire*.
 
 You can continue to sign in to your cloud services by using a synchronized password that is expired in your on-premises environment. Your cloud password is updated the next time you change the password in the on-premises environment.
 
 ##### CloudPasswordPolicyForPasswordSyncedUsersEnabled
 
+The CloudPasswordPolicyForPasswordSyncedUsersEnabled feature ensures that Microsoft Entra ID enforces its native password policies (such as expiration and lockout), for users whose passwords are synchronized from on-premises Active Directory. This feature enables you to align the same on-premises Active Directory password policy with the Microsoft Entra password policy, for synchronized users.
+
 If there are synchronized users that only interact with Microsoft Entra integrated services and must also comply with a password expiration policy, you can force them to comply with your Microsoft Entra password expiration policy by enabling the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature (in the deprecated MSOnline PowerShell module it was called *EnforceCloudPasswordPolicyForPasswordSyncedUsers*).
 
-When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is the default setting), Microsoft Entra Connect updates the PasswordPolicies attribute of synchronized users to "DisablePasswordExpiration". This update is done every time a user's password is synchronized and instructs Microsoft Entra ID to ignore the cloud password expiration policy for that user. You can check the value of the attribute using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module with the following command:
+When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is the default setting), Microsoft Entra Connect updates the PasswordPolicies attribute of synchronized users to "DisablePasswordExpiration". This update is done every time a user's password hash is synchronized to the cloud and instructs Microsoft Entra to ignore the cloud password expiration policy for that user. 
 
-`(Get-MgUser -UserId <User Object ID> -Property PasswordPolicies).PasswordPolicies`
+You can check the value of the PasswordPolicies attribute using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module with the following command:
+
+
+```powershell
+Connect-MgGraph -Scopes "User.ReadWrite.All"
+
+(Get-MgUser -UserId "<User Object ID>" -Property PasswordPolicies).PasswordPolicies
+
+```
 
 To enable the CloudPasswordPolicyForPasswordSyncedUsersEnabled feature, run the following commands using the Graph PowerShell module:
 
 ```powershell
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
 $OnPremSync = Get-MgDirectoryOnPremiseSynchronization
 $OnPremSync.Features.CloudPasswordPolicyForPasswordSyncedUsersEnabled = $true
 
 Update-MgDirectoryOnPremiseSynchronization `
   -OnPremisesDirectorySynchronizationId $OnPremSync.Id `
-  -Features $OnPremSync.Features 
+  -Features $OnPremSync.Features
+
 ```
 
-> [!NOTE]
-> You need to install the MSGraph PowerShell module for the preceding script to work. If you get any errors related to insufficient privileges, make sure that you have consented the API scope correctly by using the following command when connecting `Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"`
-
-
-Once enabled, Microsoft Entra ID doesn't go to each synchronized user to remove the `DisablePasswordExpiration` value from the PasswordPolicies attribute. Instead, the `DisablePasswordExpiration` value is removed from PasswordPolicies during the next password hash sync for each user, upon their next password change in on-premises AD.
-
-After the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature is enabled, new users are provisioned without a PasswordPolicies value.
+Once CloudPasswordPolicyForPasswordSyncedUsersEnabled is enabled, Microsoft Entra doesn't clear `DisablePasswordExpiration` from PasswordPolicies attribute for each synchronized user. The `DisablePasswordExpiration` value is only removed during the next password hash sync for each user, upon their next password change in on-premises AD. Additionally, new users that are synchronized to the cloud will not have PasswordPolicies set.
 
 >[!TIP]
 >It's recommended to enable *CloudPasswordPolicyForPasswordSyncedUsersEnabled* prior to enabling password hash sync, so that the initial sync of password hashes doesn't add the `DisablePasswordExpiration` value to the PasswordPolicies attribute for the users.
+
+You can manually clear the PasswordPolicy for a user with the following command using the Graph PowerShell module:
+
+
+```powershell
+Connect-MgGraph -Scopes "User.ReadWrite.All"
+
+Update-MgUser -UserId $userId -PasswordPolicies None
+
+```
 
 The default Microsoft Entra password policy doesn't require users to change their passwords. If the policy in your on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
 
