@@ -28,9 +28,9 @@ Before you begin, ensure you have the following:
 
 Use the following steps to configure isolation scope for a user-assigned managed identity.
 
-1. Sign in to the [Azure portal](https://portal.azure.com)
+1. Sign in to the [Azure portal](https://portal.azure.com).
 
-1. Navigate to **Managed Identities**. In the search box, type *Managed Identities*. Under **Services**, select **Managed Identities**
+1. Navigate to **Managed Identities**. In the search box, type *Managed Identities*. Under **Services**, select **Managed Identities**.
 
 1. Create a new managed identity. Select **+ Create** to add a new user-assigned managed identity. Configure the basic settings:
     
