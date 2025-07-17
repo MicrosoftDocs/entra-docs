@@ -61,22 +61,6 @@ This recognition is possible because both groups share the same security identif
 
 Before making the SOA switch, consider the following recommended steps:
 
-- Only cloud-created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported.
-- Assigned or dynamic membership groups.
-- Contain on-premises synchronized users or cloud-created security groups.
-- On-premises synchronized users that are members of the cloud-created security group can be from the same domain or other domains from the same forest
-- The forest must support universal groups because the cloud-created security group is written back to AD with [universal group scope ](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope)
-- No more than 50,000 members
-- Each direct child nested group counts as one member in the referencing group
-
-## Considerations when provisioning groups back to AD
-
-When you make the SOA switch, if you are going to provision groups back to Active Directory (AD), it's important to provision those groups back to the same Organizational Unit (OU) in AD where they were originally located. This ensures that Microsoft Entra Cloud Sync recognizes the transferred group as the same one already in AD.
-
-This recognition is possible because both groups share the same security identifier (SID). If the group is provisioned to a different OU, it will maintain the same SID, and Microsoft Entra Cloud Sync will update the existing group, but you may experience Access Control List (ACL) issues. The reason for this, is because AD permissions don't always travel cleanly across containers and only explicit permissions will follow the group. Inherited permissions from the old OU or Group Policy Object permissions applied to the OU will not.
-
-Before making the SOA switch, consider the following recommended steps:
-
 1. Move all the groups you plan to change the SOA for to a specific OU or OUs if possible. If this isn't possible, set the OU path for each group to the original OU path before you switch SOA of the groups. For more information about how to set the original OU path, see [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Make the SOA change.
 1. When provisioning the groups to AD, set the attribute mapping as explained in [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
