@@ -860,7 +860,7 @@ Example of usage within the workflow:
         }
 ```
 
-### Revoke all refresh tokens for user (Preview)
+### Revoke all refresh tokens for user
 
 Allows all refresh and browser session tokens to be revoked for a user. This invalidates all the refresh tokens and browser session tokens issued to applications for a user, except external user sign-in sessions because external users sign in through their home tenant.
 
@@ -873,7 +873,7 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 |Parameter |Definition  |
 |---------|---------|
 |category    |  leaver,mover      |
-|displayName     |  Revoke all refresh tokens for user (Preview)        |
+|displayName     |  Revoke all refresh tokens for user        |
 |description     |  Revoke all refresh tokens for user        |
 |taskDefinitionId     |   509589a4-0466-4471-829e-49c5e502bdee      |
 
@@ -883,7 +883,7 @@ For Microsoft Graph, the parameters for the **Revoke all refresh tokens for user
 {
     "category": "leaver, mover",
     "continueOnError": false,
-    "description": "Revoke all refresh tokens for user (Preview)",
+    "description": "Revoke all refresh tokens for user",
     "displayName": "Revoke all refresh tokens for user",
     "isEnabled": true,
     "taskDefinitionId": "509589a4-0466-4471-829e-49c5e502bdee",

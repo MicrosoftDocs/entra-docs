@@ -1,12 +1,12 @@
 ---
 title: 'Microsoft Entra Connect: ADSyncTools PowerShell Reference'
 description: This document provides reference information for the ADSyncTools.psm1 PowerShell module.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.topic: reference
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ---

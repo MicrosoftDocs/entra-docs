@@ -1,11 +1,11 @@
 ---
 title: Include file
 description: Include file
-author: billmath
+author: omondiatieno
 ms.service: entra-id
 ms.topic: Include
 ms.date: 09/20/2024
-ms.author: billmath
+ms.author: jomondi
 ms.custom: Include file
 ---
 
