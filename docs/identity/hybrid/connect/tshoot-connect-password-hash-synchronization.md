@@ -306,7 +306,7 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
 
     ![Active Directory productive passwords](./media/tshoot-connect-password-hash-synchronization/adprodpassword.png)  
    
-       If the check box is selected, ask the user to sign in and change the password. Temporary passwords aren't synchronized with Microsoft Entra ID.
+  If the check box is selected, ask the user to sign in and change the password. Temporary passwords aren't synchronized with Microsoft Entra ID.
 
 1. If the password looks correct in Active Directory, follow the user in the sync engine. By following the user from on-premises Active Directory to Microsoft Entra ID, you can see whether there's a descriptive error on the object.
 
@@ -322,29 +322,29 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
 
     ![Search for user in connector space with DN](./media/tshoot-connect-password-hash-synchronization/searchcs.png)  
    
-       f. Locate the user you are looking for, and then select **Properties** to see all the attributes. If the user isn't in the search result, verify your [filtering rules](how-to-connect-sync-configure-filtering.md) and make sure that you run [Apply and verify changes](how-to-connect-sync-configure-filtering.md#apply-and-verify-changes) for the user to appear in Connect.
+    f. Locate the user you are looking for, and then select **Properties** to see all the attributes. If the user isn't in the search result, verify your [filtering rules](how-to-connect-sync-configure-filtering.md) and make sure that you run [Apply and verify changes](how-to-connect-sync-configure-filtering.md#apply-and-verify-changes) for the user to appear in Connect.
 
-       g. To see the password sync details of the object for the past week, select **Log**.  
+    g. To see the password sync details of the object for the past week, select **Log**.  
 
     ![Object log details](./media/tshoot-connect-password-hash-synchronization/csobjectlog.png)  
    
-       If the object log is empty, Microsoft Entra Connect has been unable to read the password hash from Active Directory. Continue your troubleshooting with Connectivity Errors. If you see any other value than **success**, refer to the table in [Password sync log](#password-sync-log).
+    If the object log is empty, Microsoft Entra Connect has been unable to read the password hash from Active Directory. Continue your troubleshooting with Connectivity Errors. If you see any other value than **success**, refer to the table in [Password sync log](#password-sync-log).
 
-       h. Select the **lineage** tab, and make sure that at least one sync rule in the **PasswordSync** column is **True**. In the default configuration, the name of the sync rule is **In from AD - User AccountEnabled**.  
+    h. Select the **lineage** tab, and make sure that at least one sync rule in the **PasswordSync** column is **True**. In the default configuration, the name of the sync rule is **In from AD - User AccountEnabled**.  
 
     ![Lineage information about a user](./media/tshoot-connect-password-hash-synchronization/cspasswordsync.png)  
    
-       i. Select **Metaverse Object Properties** to display a list of user attributes.  
+    i. Select **Metaverse Object Properties** to display a list of user attributes.  
 
     ![Screenshot that shows the list of user attributes for the Metaverse Object Properties.](./media/tshoot-connect-password-hash-synchronization/mvpasswordsync.png)  
    
-       Verify that there's no **cloudFiltered** attribute present. Make sure that the domain attributes (domainFQDN and domainNetBios) have the expected values.
+    Verify that there's no **cloudFiltered** attribute present. Make sure that the domain attributes (domainFQDN and domainNetBios) have the expected values.
 
-       j. Select the **Connectors** tab. Make sure that you see connectors to both on-premises Active Directory and Microsoft Entra ID.
+    j. Select the **Connectors** tab. Make sure that you see connectors to both on-premises Active Directory and Microsoft Entra ID.
 
     ![Metaverse information](./media/tshoot-connect-password-hash-synchronization/mvconnectors.png)  
    
-       k. Select the row that represents Microsoft Entra ID, select **Properties**, and then select the **Lineage** tab. The connector space object should have an outbound rule in the **PasswordSync** column set to **True**. In the default configuration, the name of the sync rule is **Out to Microsoft Entra ID - User Join**.  
+    k. Select the row that represents Microsoft Entra ID, select **Properties**, and then select the **Lineage** tab. The connector space object should have an outbound rule in the **PasswordSync** column set to **True**. In the default configuration, the name of the sync rule is **Out to Microsoft Entra ID - User Join**.  
 
     ![Connector Space Object Properties dialog box](./media/tshoot-connect-password-hash-synchronization/cspasswordsync2.png)  
    
