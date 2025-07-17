@@ -3,9 +3,9 @@ title: Learn about the Global Secure Access dashboard
 description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: conceptual
-ms.date: 02/21/2025
+ms.date: 07/16/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -23,7 +23,7 @@ The Global Secure Access dashboard provides you with visualizations of the netwo
 - How many unique users are accessing the network across all my tenants?
 - What are the cross-tenant access activity patterns?
 - What are the most popular website categories that users are accessing?
-- What are the most used private application segments that are not attributed to an application?
+- What are the most used private application segments that aren't attributed to an application?
 
 This article describes each of the dashboard widgets and how you can use the data on the dashboard to monitor and improve your network configurations.
 
@@ -41,8 +41,7 @@ To access the dashboard:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Dashboard**.
-
-    :::image type="content" source="media/concept-traffic-dashboard/traffic-dashboard.png" alt-text="Screenshot of the Private access profile, with the view applications link highlighted." lightbox="media/concept-traffic-dashboard/traffic-dashboard.png":::
+:::image type="content" source="media/concept-traffic-dashboard/traffic-dashboard.png" alt-text="Screenshot of the Microsoft Entra admin center, with the Dashboard navigation link highlighted.":::   
 
 ## Global Secure Access snapshot
 
@@ -143,6 +142,16 @@ The **Device status** widgets display the active and inactive devices that you h
 - **Inactive devices**: The number of distinct device IDs that were seen in the last seven days, but not during the last 24 hours. The % change during the last 24 hours is also displayed.
 
 ![Screenshot of the device status widgets.](media/concept-traffic-dashboard/device-status.png)
+
+## Top used cloud applications
+
+The **Top used cloud applications** widget displays the most used cloud applications. By default, the widget shows all cloud applications, but you can filter to show only the top used **Generative AI** applications.
+:::image type="content" source="media/concept-traffic-dashboard/top-used-cloud-applications.png" alt-text="Screenshot of the Top used cloud applications widget showing all cloud applications, sorted by the number of transactions.":::   
+
+## Cloud applications status
+
+The **Cloud applications status** widget displays the total number of cloud applications accessed by users and devices. The widget also shows the number of Generative AI applications, and the total number of high-risk applications accessed.
+:::image type="content" source="media/concept-traffic-dashboard/total-cloud-widget.png" alt-text="Screenshot of the Cloud applications status widget showing the total cloud applications, the total Generative AI applications, and the total at-risk applications.":::   
 
 ## No data available
 
