@@ -42,7 +42,7 @@ To configure Global Secure Access:
 3. **Configure Quick Access** to private resources and set up Private DNS and DNS suffixes.  
     See [How to configure Quick Access](how-to-configure-quick-access.md).
 4. **Install and configure the Global Secure Access client** on end-user devices.  
-    See [Global Secure Access clients](global-secure-access-client.md).
+    See [Global Secure Access clients](concept-clients.md).
 
 ## Cisco Secure Access setup
 
@@ -213,7 +213,7 @@ In this scenario, Global Secure Access handles private application traffic. Cisc
 ---
 
 > [!NOTE]
-> For troubleshooting health check failures, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-client-health-check.md).
+> For troubleshooting health check failures, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
  
 
