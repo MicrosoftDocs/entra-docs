@@ -197,20 +197,25 @@ You can use the following sample scripts to create your own custom messages. The
 
 Message name | Script
 -------------|--------
-OTP extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue. 
-OTP fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to continue. If you are not trying to sign in, press 0 and #.
-OTP fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
-OTP fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
-OTP goodbye | Goodbye.
-OTP greeting | This is Microsoft. If you are trying to sign in, press the # key to continue.
-OTP last verification code | Again, your code is
-Greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
-Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
-Fraud confirm | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
-Fraud confirmed | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
-Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
 Authentication successful | Your sign-in was successful.
-Authentication failed | I'm sorry we can't sign you in at this time. Please try again later.
+Extension prompt | This is Microsoft. If you are trying to sign in, press the # key to continue.
+Fraud confirmation | If this was not you trying to sign in, protect your account by notifying your IT team by pressing 1.
+Fraud greeting | This is Microsoft. If you are trying to sign in, press the # key to finish signing in. If you are not trying to sign in, press 0 and #.
+Fraud reported | We have notified your IT team, no further action is required. For help, please contact your company's IT team. Goodbye.
+Activation | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Authentication denied retry | I'm sorry we can't sign you in at this time. Please try again later.
+Retry (Standard) | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Greeting (Standard) | This is Microsoft. If you are trying to sign in, press the # key to finish signing in.
+Greeting (PIN) | This is Microsoft. If you are trying to sign in, enter your PIN to finish signing in.
+Fraud greeting (PIN) | This is Microsoft. If you are trying to sign in, enter your PIN to finish signing in. If you are not trying to sign in, press 0 and #.
+Retry (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the # key to finish your verification.
+Extension prompt after digits | If already at this extension, press the # key to continue.
+Authentication denied | I'm sorry we can't sign you in at this time. Please try again later.
+Activation greeting (Standard) | Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Activation retry (Standard)| Thank you for using the Microsoft's sign-in verification system. Please press the # key to finish your verification.
+Activation greeting (PIN) | Thank you for using Microsoft's sign-in verification system. Please enter your PIN followed by the # key to finish your verification.
+Extension prompt before digits | Thank you for using Microsoft's sign-in verification system. Please transfer this call to extension {0}.
+
 
 ### Set up a custom message
 

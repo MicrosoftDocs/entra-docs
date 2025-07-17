@@ -304,6 +304,10 @@ Wallis and Futuna|681
 Yemen|967  
 Zambia|260  
 Zimbabwe|263
+France | 33 
+Spain | 34 
+Australia | 61 
+The Dominican Republic | 1829 
 
 ## Next Steps
 

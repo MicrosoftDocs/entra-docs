@@ -2,7 +2,7 @@
 title: View data about the activity in your authorization system
 description: How to view data about the activity in your authorization system in the Microsoft Entra Permissions Management Dashboard.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

@@ -40,9 +40,7 @@ When you configure a federated identity credential, there are several important 
 - *issuer*, *subject* are the key pieces of information needed to set up the trust relationship. When the Azure workload requests Microsoft identity platform to exchange the managed identity token for an Entra app access token, the *issuer* and *subject* values of the federated identity credential are checked against the `issuer` and `subject` claims provided in the Managed Identity token. If that validation check passes, Microsoft identity platform issues an access token to the external software workload.
 - *issuer* is the URL of the Microsoft Entra tenant's Authority URL in the form `https://login.microsoftonline.com/{tenant}/v2.0`. Both the Microsoft Entra app and managed identity must belong to the same tenant. If the `issuer` claim has leading or trailing whitespace in the value, the token exchange is blocked.   
 - `subject`: This is the case-sensitive GUID of the managed identity’s **Object (Principal) ID** assigned to the Azure workload. The managed identity must be in the same tenant as the app registration, even if the target resource is in a different cloud. The Microsoft identity platform will reject the token exchange if the `subject` in the federated identity credential configuration does not exactly match the managed identity's Principal ID.
-    > [!IMPORTANT]
-    > Only user-assigned managed identities can be used as a federated credential for apps. system-assigned identities aren't supported.
-    
+
 - *audiences* specifies the value that appears in the `aud` claim in the managed identity token (Required). The value must be one of the following depending on the target cloud.
     - **Microsoft Entra ID global service**: `api://AzureADTokenExchange`
     - **Microsoft Entra ID for US Government**: `api://AzureADTokenExchangeUSGov`
@@ -117,7 +115,7 @@ Open a PowerShell terminal in your preferred IDE and run the following command t
 The audience value must be set to one of the following values:<br/> &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/>
 
 ```Powershell
-New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api://AzureADTokenExchange -Issuer 'https://login.microsoftonline.com/{tenantID}/v2.0' -Name 'MyMsiFic' -Subject '00001111-aaaa-2222-bbbb-3333cccc4444'
+New-AzADAppFederatedCredential -ApplicationObjectId $appObjectId -Audience api://AzureADTokenExchange -Issuer 'https://login.microsoftonline.com/{tenantID}/v2.0' -Name 'MyMsiFic' -Subject 'aaaabbbb-0000-cccc-1111-dddd2222eeee'
 ```
 
 
