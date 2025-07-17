@@ -110,7 +110,9 @@ If the agent identifies something that wasn't previously suggested, it takes the
 1. The agent identifies that a user is still active and using resources, the access review agent recommends approving access.
 
 
-## "\<verb\> * \<noun\>"
+
+
+## Getting started
 TODO: Add introduction sentence(s)
 [Include a sentence or two to explain only what is needed to complete the procedure.]
 TODO: Add ordered list of procedure steps
