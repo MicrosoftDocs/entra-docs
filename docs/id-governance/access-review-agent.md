@@ -80,6 +80,18 @@ Required: Make Prerequisites the first H2 after the H1.
 - [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) roles can view the agent and take action on the suggestions.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
+### Limitations
+
+- Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
+- Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
+- Recommendations are only available for single stage reviews.
+- Reviews must be for ‘*Teams + Groups*’ or ‘*Applications*’. Reviews for Access Packages, Microsoft Entra Roles, and Azure Resources are not currently supported.
+- The agent currently runs as the user who enables it.
+- The reviewer must be a [internal user (of userType member or guest)](../external-id/user-properties.md) within the tenant in which the review is scheduled. External guests or external members as reviewers are not currently supported.
+- We recommend running the agent from the Microsoft Entra admin center.
+- Scanning is limited to a 24 hour period.
+- Suggestions from the agent can't be customized or overridden.
+
 ## How it works
 
 
