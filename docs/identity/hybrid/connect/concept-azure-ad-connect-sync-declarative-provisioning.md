@@ -2,8 +2,8 @@
 title: 'Microsoft Entra Connect: Understanding Declarative Provisioning'
 description: Explains the declarative provisioning configuration model in Microsoft Entra Connect.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 
 ms.assetid: cfbb870d-be7d-47b3-ba01-9e78121f0067
 ms.service: entra-id
@@ -11,7 +11,7 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---

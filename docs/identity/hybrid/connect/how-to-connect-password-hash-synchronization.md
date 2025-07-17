@@ -1,15 +1,15 @@
 ---
 title: Implement password hash synchronization with Microsoft Entra Connect Sync
 description: Provides information about how password hash synchronization works and how to set up.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
 ms.service: entra-id
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 search.appverid:  
 - MET150
 ---
