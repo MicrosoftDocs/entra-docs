@@ -98,8 +98,8 @@ Currently, Microsoft Entra’s inbound provisioning flow doesn't include a nativ
 
 This section describes options that SAP HCM customers can consider for implementing inbound provisioning from SAP HCM to Microsoft Entra / on-premises Active Directory. 
 Use the following decision tree to determine which option to use. 
- 
-![Diagram of SAP HCM to Entra ID decision tree workflow.](diagram-sap-hcm-entra-id-sync.png)
+
+:::image type="content" source="~/media/sap-hcm-microsoft-entra-id-provisioning/diagram-sap-hcm-entra-id-sync.png" alt-text="Diagram of SAP HCM to Entra ID decision tree workflow.":::
 
 ## Option 1: CSV-file based inbound provisioning
 
