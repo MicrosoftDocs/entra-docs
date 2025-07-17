@@ -95,6 +95,9 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 
 ![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/connectors-and-sensors.png)
 
+> [!NOTE]
+> The IP address shown is for illustration purposes only. You will see the actual IP address in a live environment.
+
 ### 7. Configure Private Access Sensor policy files
 
 Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpolicy`) at the sensor installation path.
