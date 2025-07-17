@@ -2,7 +2,7 @@
 title: "Configure DekkoSecure SAML SSO with Microsoft Entra ID"
 description: "Step-by-step tutorial to integrate DekkoSecure with Microsoft Entra ID using SAML-based single sign-on."
 author: mmehmetekin
-ms.author: mmehmetekin
+ms.author: daveba
 ms.topic: tutorial
 ms.date: 07/17/2025
 ---
@@ -58,7 +58,7 @@ New users that receive invites where their domain is nominated for SSO registrat
 
 ## Group Access Controls
 
-There are multiple options for granting personnel access to register and log in to DekkoSecure with elevated authentication controls, as described in the Microsoft documentation resource [here](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-manage-groups).
+There are multiple options for granting personnel access to register and log in to DekkoSecure with elevated authentication controls, as described in the Microsoft documentation resource [here](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups).
 
 Access to a resource (DekkoSecure) can be assigned on an individual basis, to all users in an AD, or users in a group. **DekkoSecure recommends the group option**, as this provides the most precise control. Steps for creating a group are [here](https://learn.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
 
