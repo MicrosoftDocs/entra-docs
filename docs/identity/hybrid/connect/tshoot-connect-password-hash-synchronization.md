@@ -376,49 +376,49 @@ The Password Hash Synchronization feature generates a comprehensive set of appli
 For effective troubleshooting, consider increasing the size of the Application log. Without this adjustment, Password Hash Sync events may be overwritten, making it difficult to track synchronization status and diagnose issues.
 
 
-| Event ID | Description                                                                                                            |
-| -------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 601      | Event id used when password synchronization manager is starting.                                                       |
-| 602      | Event id used when password synchronization is stopping.                                                               |
-| 603      | Event id used when an unexpected error occurs.                                                                         |
-| 604      | Event id used when an task error occurs.                                                                               |
-| 605      | Event id used when an items are added to the retry queue.                                                              |
-| 606      | Event id used when an items are removed from the retry queue.                                                          |
-| 607      | Event id used when password sync is not able to start.                                                                 |
-| 609      | Event id used when password sync has stopped.                                                                          |
-| 610      | Event id used when password sync cannot stop.                                                                          |
-| 611      | Event id used when error synchronizing a domain.                                                                       |
-| 612      | Event id used when error initializing a synchronization context.                                                       |
-| 613      | Event identifier used to notify that password sync agent has paused because directory full sync has not yet completed. |
-| 614      | Event id used when password sync start is called when not shutdown.                                                    |
-| 615      | Event id used when password sync worker thread throws an exception.                                                    |
-| 616      | Event id used when connection to preferred DC fails.                                                                   |
-| 617      | Event id used when full password synchronization started for forest.                                                   |
-| 618      | Event id used when full password synchronization started for a domain.                                                 |
-| 619      | Event id used to indicate the progress of the password synchronization for a domain.                                   |
-| 620      | Event id used when the no-retry password sync objects are reported.                                                    |
-| 621      | Event id used when an attempt to full password synchronization fails.                                                  |
-| 622      | Event id used when full password synchronization completed for a domain.                                               |
-| 623      | Event id used when full password synchronization completed for a forest.                                               |
-| 650      | Start of Password Sync batch.                                                                                          |
-| 651      | End of Password Sync batch.                                                                                            |
-| 652      | Error during Password Sync.                                                                                            |
-| 653      | Start of Password Sync ping.                                                                                           |
-| 654      | End of Password Sync ping.                                                                                             |
-| 655      | Error during Password Sync ping.                                                                                       |
-| 656      | Password sync request message.                                                                                         |
-| 657      | Password sync response message.                                                                                        |
-| 658      | DCaaS sync event log message.                                                                                          |
-| 659      | Password policy sync event log message.                                                                                |
-| 660      | Event Id for start of self-healing the password hash sync company feature.                                             |
-| 661      | Event Id for end of self-healing the password hash sync company feature.                                               |
-| 662      | Event Id used when password sync health task fails during ping operation.                                              |
-| 663      | Event Id used to indicate that password sync manager is alive and running.                                             |
-| 664      | Event Id used to indicate that single object password sync failed.                                                     |
-| 665      | Event Id used to indicate that storing password hash sync cycle state for a domain failed.                             |
-| 666      | Event id used to indicate that password hash sync failed for a domain due to sql deadlock.                             |
-| 667      | Event Id used to indicate that generating MD5 decryption key has failed.                                               |
-| 668      | Event id used to show the number of objects in password batch that only have PwdLastSet changed.                       |
+| Event ID | Description                                                                               |
+| -------- | ----------------------------------------------------------------------------------------- |
+| 601      | Password hash sync manager is starting.                                                   |
+| 602      | Password hash sync is stopping.                                                           |
+| 603      | Password hash sync unexpected error occured.                                              |
+| 604      | Password hash sync task error occured.                                                    |
+| 605      | Password hash sync items are added to the retry queue.                                    |
+| 606      | Password hash sync items are removed from the retry queue.                                |
+| 607      | Password hash sync is not able to start.                                                  |
+| 609      | Password hash sync has stopped.                                                           |
+| 610      | Password hash sync cannot stop.                                                           |
+| 611      | Error during password hash sync for a domain.                                             |
+| 612      | Error initializing a password hash sync context.                                          |
+| 613      | Password hash sync agent has paused because directory full sync has not yet completed.    |
+| 614      | Password hash sync start is called when not shutdown.                                     |
+| 615      | Password hash sync worker thread exception occured.                                       |
+| 616      | Password hash sync connection to preferred DC failed.                                     |
+| 617      | Full password hash sync started for forest.                                               |
+| 618      | Full password hash sync started for a domain.                                             |
+| 619      | Shows the progress of password hash sync for a domain.                                    |
+| 620      | No-retry password hash sync objects are reported.                                         |
+| 621      | Full password hash sync attempt failed.                                                   |
+| 622      | Full password hash sync completed for a domain.                                           |
+| 623      | Full password hash sync completed for a forest.                                           |
+| 650      | Start of password hash sync batch.                                                        |
+| 651      | End of password hash sync batch.                                                          |
+| 652      | Error during password hash sync operation.                                                |
+| 653      | Start of password hash sync ping.                                                         |
+| 654      | End of password hash sync ping.                                                           |
+| 655      | Error during password hash sync ping.                                                     |
+| 656      | Password hash sync request message.                                                       |
+| 657      | Password hash sync response message.                                                      |
+| 658      | DCaaS sync event log message.                                                             |
+| 659      | Password policy sync event log message.                                                   |
+| 660      | Start of password hash sync company feature self-healing.                                 |
+| 661      | End of password hash sync company feature self-healing.                                   |
+| 662      | Password hash sync health task failed during ping operation.                              |
+| 663      | Password hash sync manager is alive and running.                                          |
+| 664      | Single object sync task failed.                                                           |
+| 665      | Storing password hash sync cycle state for a domain failed.                               |
+| 666      | Password hash sync failed for a domain due to sql deadlock.                               |
+| 667      | Generating MD5 decryption key has failed.                                                 |
+| 668      | Number of objects in password hash sync batch that only have PwdLastSet changed.          |
 
 
 ## Scripts to help troubleshooting
