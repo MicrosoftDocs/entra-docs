@@ -63,7 +63,9 @@ This section provides a list of important tables in SAP HCM storing employee dat
 Example SQL query to fetch active employees’ username, status, first name and last name:
 
 **SELECT DISTINCT** ```p0.PERNR username, CASE WHEN (p0.STAT2 = 3) THEN 1 END statuskey, p2.NACHN last_name, p2.VORNA first_name```
+
 **FROM** ```SAP_PA0000 p0 left join SAP_PA0002 p2 on p0.PERNR = p2.PERNR```
+
 **WHERE** ```p0.STAT2 = 3 and p0.ENDDA > SYSDATE()```
 
 
@@ -186,7 +188,6 @@ If you have defined custom function modules, then those should be included in th
 - References: 
     - [API-driven inbound provisioning concepts](../app-provisioning/inbound-provisioning-api-concepts) 
     - [Configure API-driven inbound provisioning app](../app-provisioning/inbound-provisioning-api-configure-app)
-    - 
 - **Step 3**: Configure a logic app workflow that invokes the appropriate BAPI function modules preferably via [BAPI call method in SAP](~/azure/logic-apps/connectors/built-in/reference/sap/#[bapi]-call-method-in-sap), processes the response, builds a SCIM payload and sends the response to the Microsoft Entra provisioning API endpoint. As a best practice to stay within [API-driven provisioning usage limits](~/id-governance/licensing-fundamentals#api-driven-provisioning), we recommend batching multiple changes into a single SCIM bulk request rather than submitting one SCIM bulk request for each change.
 
 - References: 
@@ -203,9 +204,9 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
 2.	**Implement the Logic**
     a.	Use ABAP code to fetch the required attributes and apply the filter for changes within the last hour.
     b.	Example ABAP snippet: 
+
         ```abap
         FORM read_database USING p_begda p_endda.
-
             IF lv_pernr IS INITIAL.
                 " Employee list
                 SELECT pernr endda begda FROM pa0000
@@ -289,8 +290,8 @@ Follow these steps to configure writeback:
 
 ## Acknowledgements
 We thank the following partners for their help reviewing and contributing to this article:
-•	[Kocho](https://kocho.co.uk/)
-•	[iC Consult](https://ic-consult.com/en/)
+- [Kocho](https://kocho.co.uk/)
+- [iC Consult](https://ic-consult.com/en/)
 
 ## Related content
 
