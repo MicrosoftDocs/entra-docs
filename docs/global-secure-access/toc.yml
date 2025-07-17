@@ -233,7 +233,7 @@ items:
              expanded: false
              items:
                - name: Coexistence with Cisco
-                 href: concept-cisco-coexistence.md
+                 href: how-to-cisco-coexistence.md
                - name: Coexistence with Cisco Secure Access
                  href: how-to-cisco-secure-access-coexistence.md
                - name: Coexistence with Cisco VPNs
