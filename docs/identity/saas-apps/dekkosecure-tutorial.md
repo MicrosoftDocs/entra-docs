@@ -60,11 +60,11 @@ New users that receive invites where their domain is nominated for SSO registrat
 
 There are multiple options for granting personnel access to register and log in to DekkoSecure with elevated authentication controls, as described in the Microsoft documentation resource [here](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups).
 
-Access to a resource (DekkoSecure) can be assigned on an individual basis, to all users in an AD, or users in a group. **DekkoSecure recommends the group option**, as this provides the most precise control. Steps for creating a group are [here](https://learn.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
+Access to a resource (DekkoSecure) can be assigned on an individual basis, to all users in an AD, or users in a group. **DekkoSecure recommends the group option**, as this provides the most precise control. Steps for creating a group are [here](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
 
-If your organisation has already established user groups and wants to grant DekkoSecure access to a subset of those users, groups can be created within groups by following [these steps](https://learn.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal). Finally, to grant DekkoSecure application access to the group, follow [these steps](https://learn.microsoft.com/azure/active-directory/users-groups-roles/groups-saasapps).
+If your organisation has already established user groups and wants to grant DekkoSecure access to a subset of those users, groups can be created within groups by following [these steps](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal). Finally, to grant DekkoSecure application access to the group, follow [these steps](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-saasapps).
 
-Optionally [Conditional Access](https://learn.microsoft.com/azure/active-directory/conditional-access/overview) controls can be set up to limit where/when/how a user can access DekkoSecure, for example, within the organisation’s network, only during business hours, or with a strict authentication type.
+Optionally [Conditional Access](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) controls can be set up to limit where/when/how a user can access DekkoSecure, for example, within the organisation’s network, only during business hours, or with a strict authentication type.
 
 ## Existing **Account Migration**
 
