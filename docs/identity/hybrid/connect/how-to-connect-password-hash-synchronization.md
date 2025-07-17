@@ -104,7 +104,7 @@ You can check the value of the PasswordPolicies attribute using the [Microsoft G
 ```powershell
 Connect-MgGraph -Scopes "User.ReadWrite.All"
 
-(Get-MgUser -UserId "<User Object ID>" -Property PasswordPolicies).PasswordPolicies
+(Get-MgUser -UserId "<UPN or Object ID>" -Property PasswordPolicies).PasswordPolicies
 
 ```
 
@@ -133,18 +133,21 @@ You can manually clear the PasswordPolicy for a user with the following command 
 ```powershell
 Connect-MgGraph -Scopes "User.ReadWrite.All"
 
-Update-MgUser -UserId $userId -PasswordPolicies None
+Update-MgUser -UserId "<UPN or Object ID>" -PasswordPolicies None
 
 ```
 
-The default Microsoft Entra password policy doesn't require users to change their passwords. If the policy in your on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
+If the policy in your on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the following PowerShell command. Microsoft Entra supports a separate password expiration policy per registered domain.
 
-Microsoft Entra ID supports a separate password expiration policy per registered domain.
-
-Caveat: If there are synchronized accounts that need to have nonexpiring passwords in Microsoft Entra ID, you must explicitly add the `DisablePasswordExpiration` value to the PasswordPolicies attribute of the user object in Microsoft Entra ID. You can add this value by running the following command:
 
 ```powershell
-Update-MgUser -UserID <User Object ID> -PasswordPolicies "DisablePasswordExpiration"`
+Update-MgDomain 
+```
+
+**Caveat:** If there are synchronized accounts that need to have non-expiring passwords in Microsoft Entra, for example a service account that is not used for interactive sign-in, you must explicitly add the `DisablePasswordExpiration` value to the PasswordPolicies attribute of the user in Microsoft Entra. You can add this value by running the following command:
+
+```powershell
+Update-MgUser -UserID "<UPN or Object ID>" -PasswordPolicies "DisablePasswordExpiration"
 ```
 
 > [!NOTE]
