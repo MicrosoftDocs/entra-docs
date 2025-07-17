@@ -70,23 +70,33 @@ Required: Make Prerequisites the first H2 after the H1.
 
 ## Prerequisites
 
-- You must have at least the [Microsoft Entra ID Governance](overview.md#license-requirements) license.
+- You must have at least the [Microsoft Entra ID Governance](licensing-fundamentals.md) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average each agent decision, which includes reasoning and your conversation with the agent, consumes less than one SCU.
-- To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
+- To activate the agent the first time, you need the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
 - You can assign [Identity Governance Administrators](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) with Security Copilot access, which gives your Identity Governance Administrators the ability to use the agent as well.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
 - [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
 - [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) roles can view the agent and take action on the suggestions.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+## How it works
+
+
+The Access Review Agent proactively scans active access reviews, and assists reviewers in making informed decisions about access for users in your environment. The agent, which reviewers communicates with directly via [Microsoft Teams](), uses user context to help inform decisions. When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
+
+Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
+
+1. The agent scans all access reviews in your tenant.
+1. The agent analyzes the data, such as their activity, of users being reviewed.
+1. The agent reviews previous access review decisions to help inform its recommendations.
+
+If the agent identifies something that wasn't previously suggested, it takes the following steps. **These action steps consume SCUs.**
+
+1. The agent evaluates access review durations, and recommends that the reviewer reviews the access review expiring earlier first.
+1. The agent identifies that a user is no longer active and recommends revoking access.
+1. The agent identifies that a user is still active and using resources, the access review agent recommends approving access.
+
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
