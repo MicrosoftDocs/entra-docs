@@ -99,7 +99,7 @@ Currently, Microsoft Entra’s inbound provisioning flow doesn't include a nativ
 This section describes options that SAP HCM customers can consider for implementing inbound provisioning from SAP HCM to Microsoft Entra / on-premises Active Directory. 
 Use the following decision tree to determine which option to use. 
 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-sap-hcm-entra-id-sync.png" alt-text="Diagram of SAP HCM to Entra ID decision tree workflow." lightbox="false":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-sap-hcm-entra-id-sync.png" alt-text="Diagram of SAP HCM to Entra ID decision tree workflow.":::
 
 ## Option 1: CSV-file based inbound provisioning
 
@@ -119,7 +119,7 @@ Only customers with this side-by-side deployment configuration are eligible to u
 
 This diagram illustrates the high-level data flow and configuration steps. 
 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-sap-hcm-entra-id-csv-file-dataflow.png" alt-text="Diagram of high-level data flow from SAP HCM to Entra ID." lightbox="false":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-sap-hcm-entra-id-csv-file-dataflow.png" alt-text="Diagram of high-level data flow from SAP HCM to Entra ID.":::
  
 - **Step 1**: In SAP HCM, configure periodic export of CSV files with employee data. When running the integration for the very first time, we recommend performing a full export for the initial sync. Once initial sync is complete, you can perform incremental exports that only capture changes. The exported CSV files can be stored on SFTP server or Azure File shares in encrypted format.  
     - References: 
@@ -130,12 +130,12 @@ This diagram illustrates the high-level data flow and configuration steps.
     > CSV Files can have delta (or incremental) data. 
 - **Step 2**: In Microsoft Entra, configure the API-driven provisioning app to receive employee data from SAP HCM.
     - References: 
-        - [API-driven inbound provisioning concepts](../app-provisioning/inbound-provisioning-api-concepts) 
-        - [Configure API-driven inbound provisioning app](../identity/app-provisioning/inbound-provisioning-api-configure-app)
+        - [API-driven inbound provisioning concepts](../app-provisioning/inbound-provisioning-api-concepts.md) 
+        - [Configure API-driven inbound provisioning app](../app-provisioning/inbound-provisioning-api-configure-app.md)
 - **Step 3**: Configure middleware tool to decrypt/read the CSV, convert it to SCIM bulk payload, then send the data to the API endpoint configured in Step 2. The CSV file can be stored in a staging location like Azure File Share. It's recommended to implement validation and circuit-breaking logic in the middleware tool to keep out bad data from flowing into Entra. For example, if ```employeeType``` is invalid, then skip the record and if a certain percentage of HR records have invalid data, stop the bulk upload operation. 
     - References: 
-        - [API-driven inbound provisioning with PowerShell script](../app-provisioning/inbound-provisioning-api-powershell)
-        - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps)
+        - [API-driven inbound provisioning with PowerShell script](../app-provisioning/inbound-provisioning-api-powershell.md)
+        - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
 
 
 ### Deployment variations
@@ -149,7 +149,7 @@ Use this approach if you don't have SAP SuccessFactors deployed and the solution
 
 This integration uses the [Azure Logic Apps SAP connector](/azure/logic-apps/connectors/sap.md?tabs=consumption). Azure Logic Apps ships two connector types for SAP: 
 
-- [SAP built-in connector](../saas-apps/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
+- [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
 - [SAP managed connector](/azure/logic-apps/connectors/sap) that's hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
 
 The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented in this article. For example, With the SAP built-in connector, on-premises connections don't require the on-premises data gateway and dedicated actions provide better experience for stateful BAPIs and RFC transactions. 
@@ -166,7 +166,7 @@ This diagram illustrates the high-level data flow and configuration steps for SA
 - If you prefer using the Azure Logic Apps SAP managed connector, then consider using Azure Express Route that permits peering of Logic App Standard network with that of on-premises SAP deployment. The on-premises data gateway component isn't recommended as it leads to diminished security. 
 - If the SAP HCM system is already running on Azure, the connection from Logic Apps to your SAP system can be done in the same VNET (without the need for on-premises data gateway).
  
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-prereqs-deployment-components-sap-azure-logic-apps-built-in-connector.png" alt-text="Diagram of high-level data flow of deployment components for SAP BAPI-based inbound provisioning." lightbox="false":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-prereqs-deployment-components-sap-azure-logic-apps-built-in-connector.png" alt-text="Diagram of high-level data flow of deployment components for SAP BAPI-based inbound provisioning.":::
 
 - **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap.md?tabs=standard#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The RPY* and SWO* function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
  
@@ -188,10 +188,10 @@ If you have defined custom function modules, then those should be included in th
 - References: 
     - [API-driven inbound provisioning concepts](../app-provisioning/inbound-provisioning-api-concepts) 
     - [Configure API-driven inbound provisioning app](../app-provisioning/inbound-provisioning-api-configure-app)
-- **Step 3**: Configure a logic app workflow that invokes the appropriate BAPI function modules preferably via [BAPI call method in SAP](/azure/logic-apps/connectors/built-in/reference/sap/#[bapi]-call-method-in-sap), processes the response, builds a SCIM payload and sends the response to the Microsoft Entra provisioning API endpoint. As a best practice to stay within [API-driven provisioning usage limits](../id-governance/licensing-fundamentals#api-driven-provisioning), we recommend batching multiple changes into a single SCIM bulk request rather than submitting one SCIM bulk request for each change.
+- **Step 3**: Configure a logic app workflow that invokes the appropriate BAPI function modules preferably via [BAPI call method in SAP](/azure/logic-apps/connectors/built-in/reference/sap/#[bapi]-call-method-in-sap), processes the response, builds a SCIM payload and sends the response to the Microsoft Entra provisioning API endpoint. As a best practice to stay within [API-driven provisioning usage limits](../../id-governance/licensing-fundamentals#api-driven-provisioning), we recommend batching multiple changes into a single SCIM bulk request rather than submitting one SCIM bulk request for each change.
 
 - References: 
-    - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps)
+    - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
 - **Step 4**: Query the Entra ID provisioning logs endpoints to check the status of the provisioning operation. Record successful operations and retry failures. 
 - 
 ### Define a custom RFC for delta imports 
@@ -237,12 +237,12 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
 5.	**Configure RFC call in Logic Apps**
 
     a. Specify the SAP system details, including the RFC name you created in SAP ECC.<br>
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/screenshot-sap-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of Call get user changes RFC function in SAP" lightbox="false":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/screenshot-sap-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of Call get user changes RFC function in SAP":::
     b. Input any required parameters for the RFC (for example, in the previous screenshot, the parameter BEGDA points to a watermark date stored in Azure Blob Storage corresponding to the previous run, while ENDDA is the start date of the current logic app run.).<br>
 6.	Parse the JSON Response from the RFC Call and use it to create the SCIM bulk request payload. 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/screenshot-outputs-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of the output for Call get user changes RFC function in SAP" lightbox="false":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/screenshot-outputs-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of the output for Call get user changes RFC function in SAP":::
 - References: 
-    - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps)
+    - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
 
 
 ##	Option 3: SAP IDocs-based inbound provisioning 
@@ -252,10 +252,10 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
 Use this approach if you don't have SAP SuccessFactors deployed and the solution architecture calls for event-based sync using Azure Logic Apps due to system constraints or deployment requirements. 
 
 This integration uses the Azure Logic Apps SAP Connector. Azure Logic Apps ships two connector types for SAP: 
-- [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap/), which is available only for Standard workflows in single-tenant Azure Logic Apps.
-- [SAP managed connector](azure/logic-apps/connectors/sap/), which is hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
+- [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
+- [SAP managed connector](/azure/logic-apps/connectors/sap), which is hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
 
-The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented [in this article](/azure/logic-apps/connectors/sap?tabs=consumption#connector-differences). For example, with the SAP built-in connector, on-premises connections don't require the on-premises data gateway, it supports IDoc deduplication and has better support for handling IDoc file formats in the trigger [when a message is received](/azure/logic-apps/connectors/built-in/reference/sap/#when-a-message-is-received). 
+The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented [in this article](/azure/logic-apps/connectors/sap.md#connector-differences). For example, with the SAP built-in connector, on-premises connections don't require the on-premises data gateway, it supports IDoc deduplication and has better support for handling IDoc file formats in the trigger [when a message is received](/azure/logic-apps/connectors/built-in/reference/sap.md#when-a-message-is-received). 
 
 
 ### High level data flow and configuration steps
@@ -266,7 +266,7 @@ This diagram illustrates the high-level data flow and configuration steps.
 **Networking considerations**: 
 - If you prefer using the Azure Logic Apps SAP managed connector, then consider using Azure Express Route that permits peering of the Logic Apps Standard network with on-premises SAP deployment. The on-premises data gateway component isn't recommended as it leads to diminished security. 
 - If the SAP HCM system is already running on Azure, the connection from Azure Logic Apps to the customers SAP system could be done in the same VNET (without the need for on-premises data gateway)
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-deployment-components-sap-azure-logic-apps-connector.png" alt-text="Diagram of high-level data flow of deployment components for the Azure Logic Apps SAP built-in connector." lightbox="false":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-deployment-components-sap-azure-logic-apps-connector.png" alt-text="Diagram of high-level data flow of deployment components for the Azure Logic Apps SAP built-in connector.":::
  
 - **Step 1**: Configure prerequisites in SAP HCM to use the Azure Logic Apps SAP built-in connector. This step includes setting up an SAP system account with appropriate authorizations to invoke BAPI function modules and IDoc messages. 
 Complete the steps to set up and test sending IDocs from SAP to your logic app workflow. 
@@ -284,7 +284,7 @@ Complete the steps to set up and test sending IDocs from SAP to your logic app w
 
 After a worker record from SAP HCM is provisioned in Entra ID, there's often a business need to write back IT-managed attributes like email and username to SAP HCM. 
 We recommend using Microsoft Entra ID Governance -> Joiner Lifecycle Workflow with a custom Logic Apps extension for this scenario. The flow schematic is as shown in this diagram. 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-joiner-lifecycle-workflow-azure-logic-apps.png" alt-text="Diagram of Joiner Lifecycle Workflow with Azure Logic Apps and SAP built-in connector." lightbox="false":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-joiner-lifecycle-workflow-azure-logic-apps.png" alt-text="Diagram of Joiner Lifecycle Workflow with Azure Logic Apps and SAP built-in connector.":::
 
 Follow these steps to configure writeback:
 
@@ -300,4 +300,4 @@ We thank the following partners for their help reviewing and contributing to thi
 
 ## Related content
 
-[API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps)
+[API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
