@@ -46,13 +46,13 @@ After SSO integration is complete you are able to nominate your SSO domain(s) wi
 
 **Standard account registration example:**
 
-![Example of standard DekkoSecure registration page](media/standard-rego.png)
+![Standard registration page](media/standard-registration.png)
 
 New users that receive invites where their domain is not nominated for SSO registration enforcement will be led to the *standard* account creation page. This is noted by the ***dekko.io/invite*** URL in the invite.
 
 **Corporate account registration example:**
 
-![Example of corporate DekkoSecure registration page](media/corporate-rego.png)
+![Corporate registration page](media/corporate-registration.png)
 
 New users that receive invites where their domain is nominated for SSO registration enforcement will be led to the *corporate* account creation page. This is noted by the ***dekko.io/corporateregistration*** URL in the invite.
 
