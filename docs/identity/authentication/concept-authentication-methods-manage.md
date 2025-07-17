@@ -39,7 +39,7 @@ Two other policies, located in **Multifactor authentication** settings and **Pas
 >[!Important]
 >In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
 
-To manage the legacy MFA policy, Browse to **Protection** > **Multifactor authentication** > **Getting started** >**Configure** > **Additional cloud-based multifactor authentication settings**.
+To manage the legacy MFA policy, Browse to **Entra ID** > **Multifactor authentication** > **Getting started** > **Configure** > **Additional cloud-based multifactor authentication settings**.
 
 :::image type="content" border="true" source="./media/concept-authentication-methods-manage/service-settings.png" alt-text="Screenshot of MFA service settings.":::
 

@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 08/05/2024
+ms.date: 07/02/2025
 ms.author: gasinh
 ms.custom: it-pro
 
@@ -53,6 +53,9 @@ Enable WAF for a domain.
 3. The status turns orange.
 
    [![Screenshot of proxied status.](media/tutorial-configure-cloudflare-integration/proxied-status.png)](media/tutorial-configure-cloudflare-integration/proxied-status-expanded.png#lightbox)
+
+> [!NOTE]
+> Azure Front Door-managed certificates aren't automatically renewed if your custom domain’s CNAME record points to a DNS record other than the Azure Front Door endpoint’s domain (for example, when using a third-party DNS service like Cloudflare). To renew the certificate in such cases, follow the instructions in the [Renew Azure Front Door-managed certificates](/azure/frontdoor/domain#renew-azure-front-door-managed-certificates) article.
 
 ## Cloudflare security controls
 

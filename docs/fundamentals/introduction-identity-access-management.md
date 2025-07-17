@@ -1,14 +1,14 @@
 ---
 title: What is identity and access management (IAM)?
 description:  Learn what identity and access management (IAM) is, why it's important, and how it works.  Learn about authentication and authorization, single sign-on (SSO), and multifactor authentication (MFA). Learn about SAML, Open ID Connect (OIDC), and OAuth 2.0 and other authentication and authorization standards, tokens, and more.
-author: rwike77
+author: cilwerner
 manager: CelesteDG
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 03/13/2025
-ms.author: ryanwi
+ms.author: cwerner
 ms.reviewer: 
 ---
 
@@ -85,7 +85,7 @@ Created to simplify the process of managing user identities, SCIM provisioning a
 
 #### Web Services Federation (WS-Fed)
 
-WS-Fed was developed by Microsoft and used extensively in their applications, this standard defines the way security tokens can be transported between different entities to exchange identity and authorization information. To learn more, read Web Services Federation Protocol.
+WS-Fed was developed by Microsoft and used extensively in their applications, this standard defines the way security tokens can be transported between different entities to exchange identity and authorization information. To learn more, read [Web Services Federation Protocol](/openspecs/windows_protocols/ms-adfsod/204de335-ea34-4f9b-ae73-8b7d4c8152d1).
 
 ## Next steps
 

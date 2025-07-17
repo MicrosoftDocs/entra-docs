@@ -37,7 +37,7 @@ To enable sign-in for users with a Microsoft account, you need to create an appl
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Entra ID** > **App registrations** then select **New registration**.
 1. Name the application, for example *ContosoApp*.
-1. Under **Supported account types**, select _Personal Microsoft accounts only_.
+1. Under **Supported account types**, select _Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant) and personal Microsoft accounts (e.g., Skype, Xbox)_.
 1. Under **Redirect URI**, select **Web** and enter your populated redirect URI explained [here](/entra/external-id/customers/how-to-custom-oidc-federation-customers#set-up-your-openid-connect-identity-provider)
 1. Select **Register**.
 

@@ -2,7 +2,7 @@
 title: Configure the ServiceNow application with Permissions Management
 description: How to configure ServiceNow with Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 ms.topic: how-to
 ms.date: 04/01/2025

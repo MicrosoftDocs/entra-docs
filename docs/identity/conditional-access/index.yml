@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: MicrosoftGuyJFlo
   ms.author: joflore
-  ms.date: 06/27/2024
+  ms.date: 07/03/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -71,3 +71,13 @@ landingContent:
             url: policy-block-by-location.md
           - text: Require compliant device
             url: policy-alt-all-users-compliant-hybrid-or-mfa.md
+
+  # Card
+  - title: Conditional Access optimization agent
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Get started with optimization agent
+            url: agent-optimization.md
+          - text: Review optimization agent suggestions
+            url: agent-optimization-review-suggestions.md

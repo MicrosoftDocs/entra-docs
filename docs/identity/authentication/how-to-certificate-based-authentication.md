@@ -71,56 +71,59 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
 ### Configure certificate authorities by using the Microsoft Entra admin center
 
 #### Create a PKI container object
-1.	Create a PKI container object.
-   1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
-   1. Browse to **Entra ID** > **Identity Secure Score** > **Public key infrastructure (Preview)**.
-   1. Click **+ Create PKI**.
-   1. Enter **Display Name**.
-   1. Click **Create**.
 
-      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to create a PKI.":::
+To create a PKI container object:
 
-   1. Select **Columns** to add or delete columns.
-   1. Select **Refresh** to refresh the list of PKIs.
+1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
+1. Browse to **Entra ID** > **Identity Secure Score** > **Public key infrastructure**.
+1. Click **+ Create PKI**.
+1. Enter **Display Name**.
+1. Click **Create**.
+   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required tocreate a PKI.":::
+1. Select **Columns** to add or delete columns.
+1. Select **Refresh** to refresh the list of PKIs.
 
 #### Delete a PKI container object
-1. To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
 
-      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
+To delete a PKI, select the PKI and select **Delete**. If the PKI has CAs in it, enter the name of the PKI to acknowledge the deletion of all CAs within it and select **Delete**.
+
+:::image type="content" border="true" source="./media/how-to-certificate-based-authentication/new-public-key-infrastructure.png" alt-text="Diagram of the steps required to delete a PKI.":::
 
 #### Upload individual CAs into PKI container object
-1. To upload a CA into the PKI container:
-   1. Click on **+ Add certificate authority**.
-   1. Select the CA file.
-   1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
-   1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication with revoked certificates doesn't fail.
-   1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
-   1. The **Issuer hints** flag is enabled by default. Turn off **Issuer hints** if the CA shouldn't be included in issuer hints.
-   1. Select **Save**.
-   1. To delete a CA certificate, select the certificate and select **Delete**.
 
-      :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/delete-certificate-authority.png" alt-text="Diagram of how to delete a CA certificate.":::
-   
-   1. Select **Columns** to add or delete columns.
-   1. Select **Refresh** to refresh the list of CAs.
-   1. Initially 100 CA certificates will be displayed and display more as the page is scrolled down.
+To upload a CA into the PKI container:
+
+1. Click on **+ Add certificate authority**.
+1. Select the CA file.
+1. Select **Yes** if the CA is a root certificate, otherwise select **No**.
+1. For **Certificate Revocation List URL**, set the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, authentication withrevoked certificates doesn't fail.
+1. For **Delta Certificate Revocation List URL**, set the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
+1. The **Issuer hints** flag is enabled by default. Turn off **Issuer hints** if the CA shouldn't be included in issuer hints.
+1. Select **Save**.
+1. To delete a CA certificate, select the certificate and select **Delete**.
+
+   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/delete-certificate-authority.png" alt-text="Diagram of how to delete a CAcertificate.":::
+
+1. Select **Columns** to add or delete columns.
+1. Select **Refresh** to refresh the list of CAs.
+1. Initially 100 CA certificates will be displayed and display more as the page is scrolled down.
 
 #### Upload all CAs with upload PKI into PKI container object
-1. To upload all CAs at once into the PKI container:
-   1. Create a PKI container object, or open one.
-   1. Select **Upload PKI**.
-   1. Enter the http internet facing URL where the .p7b file is available.
-   1. Enter the SHA256 checksum of the file.
-   1. Select the upload.
-   1. Upload PKI is an asynchronous process. As each CA is uploaded, it's available in the PKI. Completion of PKI upload can take up to 30 minutes.
-   1. Select **Refresh** to refresh the CAs.
-   1. Each uploaded CA **CRL endpoint** attribute  will be updated with the CA certificate's first available http URL on **CRL distribution points** attribute. The leaf CA certificate CA needs to be updated manually by the admin.
 
-   To generate the SHA256 checksum of the PKI .p7b file, run this command:
+To upload all CAs at once into the PKI container:
 
-   ```powershell
-   Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
-   ```
+1. Create a PKI container object, or open one.
+1. Select **Upload PKI**.
+1. Enter the http internet facing URL where the .p7b file is available.
+1. Enter the SHA256 checksum of the file.
+1. Select the upload.
+1. Upload PKI is an asynchronous process. As each CA is uploaded, it's available in the PKI. Completion of PKI upload can take up to 30 minutes.
+1. Select **Refresh** to refresh the CAs.
+1. Each uploaded CA **CRL endpoint** attribute  will be updated with the CA certificate's first available http URL on **CRL distribution points** attribute. The leaf CAcertificate CA needs to be updated manually by the admin.
+To generate the SHA256 checksum of the PKI .p7b file, run this command:
+```powershell
+Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
+```
 
 #### Edit a PKI
 

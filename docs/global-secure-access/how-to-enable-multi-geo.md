@@ -1,5 +1,5 @@
 ---
-title: Multi-Geo for Microsoft Entra Private Access (Preview)
+title: Multi-Geo for Microsoft Entra Private Access
 description: "Learn how to enable Multi-Geo Capability for Microsoft Entra Private Access to optimize traffic flow from Microsoft Entra Clients to Microsoft Entra Apps."
 ms.author: jayrusso
 author: HULKsmashGithub
@@ -12,13 +12,8 @@ ms.reviewer: sumi
 #customer intent: As an IT admin, I want to enable Multi-Geo Capability for Microsoft Entra Private Access so that I can optimize traffic flow from Microsoft Entra Clients to Microsoft Entra Apps.
 
 ---
-# Enable multi-Geo capability for Microsoft Entra Private Access (Preview)
+# Enable multi-Geo capability for Microsoft Entra Private Access
 Multi-Geo capability can help optimize the traffic flow from Microsoft Entra clients to Microsoft Entra apps through private access. This article explains how to enable the multi-Geo capability for Microsoft Entra Private Access.
-
-> [!IMPORTANT]
-> Multi-Geo capability for Microsoft Entra Private Access is currently in PREVIEW.
-> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. 
-> The preview is for testing purposes; don't use the preview for production traffic. We recommend that you use a test tenant for the preview. If you must use a production tenant for testing, don't use production connector groups. Instead, create a separate test connector group. 
 
 ## Prerequisites
 

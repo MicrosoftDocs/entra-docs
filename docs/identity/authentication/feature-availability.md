@@ -82,7 +82,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 
 | Risk Detection | Availability |
 |----------------|:--------------------:|
-|Leaked credentials (MACE) | &#x2705; |
+|Leaked credentials (Microsoft Account Compromise Exchange) | &#x2705; |
 |Microsoft Entra threat intelligence | &#10060; |
 |Anonymous IP address | &#x2705; | 
 |Atypical travel | &#x2705; |

@@ -1,9 +1,9 @@
 ---
 title: Custom role-based access control for application developers
 description: Learn about what custom RBAC is and why it's important to implement in applications.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom: template-concept
 ms.date: 01/06/2023
 ms.reviewer:
@@ -55,8 +55,6 @@ Developers can also use [Microsoft Entra groups](~/fundamentals/concept-learn-ab
 App roles and groups both store information about user assignments in the Microsoft Entra directory. Another option for managing user role information that is available to developers is to maintain the information outside of the directory in a custom data store. For example, in an SQL database, Azure Table storage, or Azure Cosmos DB for Table.
 
 Using custom storage allows developers extra customization and control over how to assign roles to users and how to represent them. However, the extra flexibility also introduces more responsibility. For example, there's no mechanism currently available to include this information in tokens returned from Microsoft Entra ID. Applications must retrieve the roles if role information is maintained in a custom data store. Retrieving the roles is typically done using extensibility points defined in the middleware available to the platform that's being used to develop the application. Developers are responsible for properly securing the custom data store.
-
-Using [Azure AD B2C Custom policies](/azure/active-directory-b2c/custom-policy-overview) it's possible to interact with custom data stores and to include custom claims within a token.
 
 ## Choose an approach
 

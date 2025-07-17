@@ -61,12 +61,12 @@ For more information on how SSO works with Windows 10 using PRT, see: [Primary R
 - It's supported on web browser-based clients and Office clients that support [modern authentication](/microsoft-365/enterprise/modern-auth-for-office-2013-and-2016) on platforms and browsers capable of Kerberos authentication:
 
 | OS\Browser |Internet Explorer|Microsoft Edge\*\*\*\*|Google Chrome|Mozilla Firefox|Safari|
-| --- | --- |--- | --- | --- | -- 
-|Windows 10|Yes\*|Yes|Yes|Yes\*\*\*|N/A
-|Windows 8.1|Yes\*|Yes*\*\*\*|Yes|Yes\*\*\*|N/A
-|Windows 8|Yes\*|N/A|Yes|Yes\*\*\*|N/A
-|Windows Server 2012 R2 or above|Yes\*\*|N/A|Yes|Yes\*\*\*|N/A
-|Mac OS X|N/A|N/A|Yes\*\*\*|Yes\*\*\*|Yes\*\*\*
+| --- | --- |--- | --- | --- | -- |
+|Windows 10/11|Yes\*|Yes|Yes|Yes\*\*\*|N/A|
+|Windows 8.1|Yes\*|Yes*\*\*\*|Yes|Yes\*\*\*|N/A|
+|Windows 8|Yes\*|N/A|Yes|Yes\*\*\*|N/A|
+|Windows Server 2012 R2 or above|Yes\*\*|Yes****|Yes|Yes\*\*\*|N/A|
+|Mac OS X|N/A|N/A|Yes\*\*\*|Yes\*\*\*|Yes\*\*\*|
 
  > [!NOTE]
  >Microsoft Edge legacy is no longer supported

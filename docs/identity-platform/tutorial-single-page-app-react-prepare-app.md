@@ -120,7 +120,7 @@ The *authConfig.js* file contains the configuration settings for the authenticat
         auth: {
             clientId: 'Enter_the_Application_Id_Here', // This is the ONLY mandatory field that you need to supply.
             authority: 'https://login.microsoftonline.com/Enter_the_Tenant_Info_Here', // Replace the placeholder with your tenant info
-            redirectUri: 'http://localhost:3000/redirect', // Points to window.location.origin. You must register this URI on Microsoft Entra admin center/App Registration.
+            redirectUri: 'http://localhost:3000', // Points to window.location.origin. You must register this URI on Microsoft Entra admin center/App Registration.
             postLogoutRedirectUri: '/', // Indicates the page to navigate after logout.
             navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
         },
@@ -288,7 +288,7 @@ The `msal` packages are used to provide authentication in the application. The `
     // Default to using the first account if no account is active on page load
     if (!msalInstance.getActiveAccount() && msalInstance.getAllAccounts().length > 0) {
         // Account selection logic is app dependent. Adjust as needed for different use cases.
-        msalInstance.setActiveAccount(msalInstance.getActiveAccount()[0]);
+        msalInstance.setActiveAccount(msalInstance.getAllAccounts()[0]);
     }
 
     // Listen for sign-in event and set active account

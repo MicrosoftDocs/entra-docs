@@ -31,7 +31,7 @@ When you create an external tenant, it comes with an initial domain name, &lt;do
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Domain Name Administrator](~/identity/role-based-access-control/permissions-reference.md#domain-name-administrator).
 1. Choose your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
-1. Navigate to **Entra ID** > **Domain names** > **Custom domain names**.
+1. Navigate to **Identity** > **Settings** > **Domain names** > **Custom domain names**.
 
 1. [Add your custom domain name](~/fundamentals/add-custom-domain.yml#add-your-custom-domain-name) to Microsoft Entra ID.
 

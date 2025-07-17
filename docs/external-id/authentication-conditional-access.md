@@ -3,7 +3,7 @@ title: Authentication and Conditional Access for B2B users
 description: Learn how to enforce multifactor authentication policies for Microsoft Entra B2B users.
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 05/15/2024
+ms.date: 07/07/2025
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -91,7 +91,7 @@ When configuring a Conditional Access policy, you have granular control over the
 - **Other external users** - Applies to any users who don't fall into these categories, but who aren't considered internal members of your organization, meaning they don't authenticate internally via Microsoft Entra ID, and the user object created in the resource Microsoft Entra directory doesn't have a UserType of Member.
 
 >[!NOTE]
-> The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Conditional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX does not have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specific types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
+> The "All guest and external users" selection has now been replaced with "Guest and external users" and all its sub types. For customers who previously had a Conditional Access policy with "All guest and external users" selected will now see "Guest and external users" along with all sub types being selected. This change in UX doesn't have any functional impact on how policy is evaluated by Conditional Access backend. The new selection provides customers the needed granularity to choose specific types of guest and external users to include/exclude from user scope when creating their Conditional Access policy.
 
 Learn more about [Conditional Access user assignments](~/identity/conditional-access/concept-conditional-access-users-groups.md).
 

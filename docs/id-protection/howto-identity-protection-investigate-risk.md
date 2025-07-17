@@ -28,7 +28,7 @@ When administrators select one or multiple entries, options to confirm or dismis
 
 ### Risky users report
 
-The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. [Learn more about what the levels signify](concept-identity-protection-risks.md#risk-levels)
+The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. [Learn more about what the levels signify](concept-risk-detection-types.md#risk-levels)
 
 #### Why is a user at risk?
 

@@ -2,7 +2,7 @@
 title: Enable Microsoft Entra Permissions Management in your organization
 description: How to enable Microsoft Entra Permissions Management in your organization.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 ms.topic: how-to
 ms.date: 05/02/2025

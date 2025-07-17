@@ -2,7 +2,7 @@
 title: Use queries to see how users access information in an authorization system in Permissions Management
 description: How to use queries to see how users access information in an authorization system in Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

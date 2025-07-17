@@ -28,7 +28,7 @@ After system-preferred MFA is enabled, the authentication system does all the wo
 
 ## Enable system-preferred MFA in the Microsoft Entra admin center
 
-By default, system-preferred MFA is Microsoft managed and disabled for all users. 
+By default, system-preferred MFA is Microsoft managed and enabled for all users. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Entra ID** > **Authentication methods** > **Settings**.

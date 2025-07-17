@@ -23,6 +23,9 @@ The actual user experience of granting consent differs depending on policies set
 - **User consent flow** is when an application developer directs users to the authorization endpoint with the intent to record consent for only the current user.
 - **Admin consent flow** is when an application developer directs users to the admin consent endpoint with the intent to record consent for the entire tenant. To ensure the admin consent flow works properly, application developers must list all permissions in the `RequiredResourceAccess` property in the application manifest. For more info, see [Application manifest](./reference-app-manifest.md).
 
+> [!Note]
+> For applications in external tenants customers can't consent to permissions themselves. An administrator will need to grant consent for the application to access resources on their behalf. For more information, see [Grant admin consent](quickstart-register-app.md#grant-admin-consent-external-tenants-only).
+
 ## Building blocks of the consent prompt
 
 The consent prompt is designed to ensure users have enough information to determine if they trust the client application to access protected resources on their behalf. Understanding the building blocks helps users granting consent make more informed decisions and helps developers build better user experiences.

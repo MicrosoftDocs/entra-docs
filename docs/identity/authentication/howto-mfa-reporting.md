@@ -48,7 +48,7 @@ If available, the authentication is shown, such as text message, Microsoft Authe
 
 The **Authentication Details** tab provides the following information, for each authentication attempt:
 
-- A list of authentication policies applied (such as Conditional Access, per-user MFA, Security Defaults)
+- A list of authentication policies applied (such as Conditional Access, per-user MFA, Security Defaults) is visible inside the detailed view of each sign-in, under the Conditional Access section
 - The sequence of authentication methods used to sign-in
 - Whether or not the authentication attempt was successful
 - Detail about why the authentication attempt succeeded or failed

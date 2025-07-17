@@ -70,6 +70,8 @@
       href: how-to-view-managed-identity-activity.md
     - name: Relocate a managed identity to another region
       href: /azure/operational-excellence/relocation-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
+  - name: Use Azure Resources Extension for VS Code
+    href: azure-resources-extension-managed-identities.md
 - name: Reference
   items:
   - name: Client libraries

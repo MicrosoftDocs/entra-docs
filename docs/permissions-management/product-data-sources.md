@@ -2,7 +2,7 @@
 title: View and configure settings for data collection
 description: How to view and configure settings for collecting data from your authorization system.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

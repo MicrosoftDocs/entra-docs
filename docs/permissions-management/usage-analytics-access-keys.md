@@ -2,7 +2,7 @@
 title: View analytic information about access keys in Permissions Management
 description: How to view  analytic information about access keys in Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

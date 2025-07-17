@@ -154,7 +154,7 @@ Microsoft Defender XDR when using Defender for Cloud Apps connectors and Defende
 
 ### Other detections
 
-[**Entra ID Protection risk detections**](../../id-protection/concept-identity-protection-risks.md#risk-detections-mapped-to-riskeventtype)
+[**Entra ID Protection risk detections**](../../id-protection/concept-identity-protection-risks.md)
 - Anomalous Token
 - Attacker in the Middle
 - Unfamiliar sign-in properties

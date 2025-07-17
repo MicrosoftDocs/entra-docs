@@ -236,7 +236,7 @@ items:
            - name: Coexistence with Zscaler
              href: how-to-zscaler-coexistence.md
            - name: Coexistence with Netskope
-             href: concept-netskope-coexistence.md
+             href: how-to-netskope-coexistence.md
        - name: Find a Microsoft services partner
          href: how-to-find-microsoft-services-partners.md
 - name: Reference

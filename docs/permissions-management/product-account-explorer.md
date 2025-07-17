@@ -1,7 +1,7 @@
 ---
 title: View roles and identities that can access account information from an external account
 description: How to view information about identities that can access accounts from an external account in Permissions Management.
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management 
 
 ms.topic: how-to

@@ -2,7 +2,7 @@
 title: View information about roles/policies in the Remediation dashboard
 description: How to view and filter information about roles/policies in the Microsoft Entra Permissions Management Remediation dashboard.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

@@ -4,8 +4,8 @@
 title: Respond to identity threats using Copilot.
 description: Use Copilot in Microsoft Entra to investigate identity risks and troubleshoot identity tasks quickly.
 keywords:
-author: rwike77
-ms.author: ryanwi
+author: cilwerner
+ms.author: cwerner
 manager: celestedg
 ms.date: 12/10/2024
 ms.topic: conceptual

@@ -1,7 +1,7 @@
 ---
 title: View personal and organization information in Microsoft Entra Permissions Management
 description: How to view personal and organization information in the Account settings dashboard in Microsoft Entra Permissions Management.
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management 
 
 ms.topic: how-to

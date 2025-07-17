@@ -2,7 +2,7 @@
 title: Create a role/policy in the Remediation dashboard
 description: How to create a role/policy in the Remediation dashboard.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

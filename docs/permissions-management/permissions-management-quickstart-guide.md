@@ -2,7 +2,7 @@
 title: Microsoft Entra Permissions Management Quickstart Guide
 description: Quickstart guide - How to quickly onboard your Microsoft Entra Permissions Management product
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 ms.topic: quickstart
 ms.date: 04/01/2025
