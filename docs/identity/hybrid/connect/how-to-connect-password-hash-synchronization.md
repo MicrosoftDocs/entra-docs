@@ -150,14 +150,10 @@ Update-MgDomain
 Update-MgUser -UserID "<UPN or Object ID>" -PasswordPolicies "DisablePasswordExpiration"
 ```
 
+> [!WARNING]
+> For 
 > [!NOTE]
-> For hybrid users that have a PasswordPolicies value set to `DisablePasswordExpiration`, this value switches to `None` after a password change is executed on-premises.
-
-> [!NOTE]
-> The [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) PowerShell command doesn't work on federated domains.
-
-> [!NOTE]
-> The [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) PowerShell command doesn't work on federated domains.
+> By design, the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) and [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) PowerShell commands don't work on federated domains.
 
 #### Synchronizing temporary passwords and "Force Password Change on Next Logon"
 
