@@ -24,9 +24,9 @@ Before you begin, ensure you have the following:
 
 - Read the [Isolation scope for user-assigned managed identities](managed-identities-isolation-scope.md) concept article to understand the benefits and implications.
 
-## Enable regional isolation in Azure portal
+## Configure isolation scope in Azure portal
 
-To create a user-assigned managed identity with regional isolation scope:
+Use the following steps to configure isolation scope for a user-assigned managed identity.
 
 1. Sign in to the [Azure portal](https://portal.azure.com)
 
@@ -37,7 +37,7 @@ To create a user-assigned managed identity with regional isolation scope:
     - **Subscription**: Select your subscription
     - **Resource Group**: Choose an existing resource group or create a new one
     - **Region**: Select the specific region for deployment
-    - **Isolation Scope**: Select *Regional*
+    - **Isolation Scope**: Select *Regional* to set the isolation scope to regional or *None* to set it to none
     - **Name**: Enter the name of the managed identity
 
 1. Review and create. Select **Review + create** to validate your configuration.
