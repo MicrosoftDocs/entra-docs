@@ -586,6 +586,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/global-secure-access/concept-cisco-coexistence.md",
+      "redirect_url": "/entra/global-secure-access/how-to-cisco-coexistence",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/app-provisioning/inbound-provisioning-api-postman.md",
       "redirect_url": "/entra/identity/app-provisioning/inbound-provisioning-api-curl-tutorial",
       "redirect_document_id": false
