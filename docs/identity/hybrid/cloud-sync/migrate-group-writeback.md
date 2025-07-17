@@ -2,13 +2,13 @@
 title: 'Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync'
 description: This article describes how to migrate groups that were initially set up for Group Writeback by using Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
