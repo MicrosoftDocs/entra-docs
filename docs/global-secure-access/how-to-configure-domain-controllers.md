@@ -5,13 +5,13 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 07/17/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
-# Configure Microsoft Entra Private Access for Active Directory Domain Controllers (preview)
+# Configure Microsoft Entra Private Access for Active Directory domain controllers (preview)
 
 This guide describes how to configure Microsoft Entra Private Access for Active Directory Domain Controllers (DCs). This capability helps strengthen secure access for on-premises users by enforcing conditional access/MFA to on-premises applications that use Kerberos authentication with the DCs.
 
@@ -62,7 +62,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. You can configure the port in either a Quick Access or Enterprise Application.
 1. Add the SPNs for the resources you want to secure. The system automatically delivers these SPNs to the Private Access Sensors installed on your domain controllers.
 
-![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers](media/how-to-configure-domain-controllers/quick-access-settings.png)
+![Diagram showing Quick Access settings when configuring Microsoft Entra Private Access integration with Active Directory Domain Controllers.](media/how-to-configure-domain-controllers/quick-access-settings.png)
 
 ### 3. Assign users and configure Conditional Access
 
@@ -76,7 +76,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. Go to **Global Secure Access** > **Connect** > **Traffic forwarding** > **Private Access Profile**.
 1. Enable the Private Access profile.
 
-![Screenshot showing the Private Access traffic forwarding profile activated in the Microsoft Entra admin center](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png)
+![Screenshot showing the Private Access traffic forwarding profile activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/traffic-forwarding-profile.png)
 
 ### 5. Install the Global Secure Access client
 
@@ -93,7 +93,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
 1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**.
 
-![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center](media/how-to-configure-domain-controllers/connectors-and-sensors.png)
+![Screenshot showing the Private Access sensor as activated in the Microsoft Entra admin center.](media/how-to-configure-domain-controllers/connectors-and-sensors.png)
 
 ### 7. Configure Private Access Sensor policy files
 
@@ -106,9 +106,9 @@ Installing the sensor creates two JSON policy files (`cloudpolicy` and `localpol
 > [!IMPORTANT]
 > The Private Access Sensor is installed in Audit (report-only) mode by default. To enforce MFA, set the `AuditMode` registry key for `PrivateAccessSensor` from `1` to `0`. You will need to restart the sensors after updating the registry key.
 >
-> ![Screenshot showing the Private Access Sensor settings in the Windows Registry](media/how-to-configure-domain-controllers/private-access-sensor-windows-registry.png)
+> ![Screenshot showing the Private Access Sensor settings in the Windows Registry.](media/how-to-configure-domain-controllers/private-access-sensor-windows-registry.png)
 
-## Exclusions and Inclusions for SPNs
+## Exclusions and inclusions for SPNs
 
 When configuring Service Principal Names (SPNs) in the Private Access Sensor policy, you may have users or machines in your environment that do not have the Global Secure Access client installed. To allow these users or machines to access the specified SPNs after the Private Access Sensor is deployed, you can configure exclusions or inclusions for each SPN in the `localpolicy` file.
 
@@ -125,7 +125,7 @@ Exclusions allow specific users or machines to access configured SPNs without re
 - IP address ranges
 - On-premises username, which is the first part of a User Principal Name (UPN) such as `username@domain`.
 
-You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple usernames for a SPN.
+You can configure multiple IP addresses, multiple IP ranges, or both for a single SPN. Similarly, you can exclude multiple usernames for an SPN.
 
 ### Inclusions
 
@@ -134,7 +134,7 @@ If you need to allow access for many users, you can instead specify an inclusion
 > [!IMPORTANT]
 > An SPN can have either an inclusion list of UPN usernames or an exclusion list of UPN usernames, but not both.
 
-### Combining Exclusions and Inclusions
+### Combining exclusions and inclusions
 
 - You can configure both UPN username inclusion and IP exclusion for a given SPN.
 - You can configure both UPN username exclusion and IP exclusion for a given SPN.
@@ -145,7 +145,7 @@ If you need to allow access for many users, you can instead specify an inclusion
 > Use exclusions and inclusions to fine-tune access for users and devices that do not have the Global Secure Access client, ensuring business continuity while maintaining security controls.
 
 Example of how to configure `localpolicy` file for SPN username exclusions and inclusions:
-> ![Screenshot of the localpolicy file showing how to configure the file for SPN username exclusions and inclusions](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)
+> ![Screenshot of the localpolicy file showing how to configure the file for SPN username exclusions and inclusions.](media/how-to-configure-domain-controllers/exclusions-and-inclusions.png)
 
 #### Break glass mode
 
@@ -153,7 +153,7 @@ Example of how to configure `localpolicy` file for SPN username exclusions and i
 - Enable break glass mode by changing the `TmpBreakglass` registry key from `0` to `1`.
 - Changes can take a few minutes to propagate. Restarting the sensors is required if updates made to the registry key. 
 
-### 8. Test Microsoft Entra Private Access for Domain Controllers
+### 8. Test Microsoft Entra Private Access for domain controllers
 
 1. Keep both the Global Secure Access client and Private Access Sensors turned off.
 1. Confirm that the DC FQDNs/IPs configured in the Quick Access app are present in the Global Secure Access client policy. Check via the Global Secure Access system tray icon: **Advanced Diagnostics** > **Traffic Forwarding Profile**.
