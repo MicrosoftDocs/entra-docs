@@ -328,7 +328,7 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
 
     ![Object log details](./media/tshoot-connect-password-hash-synchronization/csobjectlog.png)  
    
-    If the object log is empty, Microsoft Entra Connect has been unable to read the password hash from Active Directory. Continue your troubleshooting with Connectivity Errors. If you see any other value than **success**, refer to the table in [Password sync log](#password-sync-log).
+    If the object log is empty, Microsoft Entra Connect has been unable to read the password hash from Active Directory. Continue your troubleshooting with Connectivity Errors. If you see any other value than **success**, refer to the table in [Password sync log](#password-hash-sync-log).
 
     h. Select the **lineage** tab, and make sure that at least one sync rule in the **PasswordSync** column is **True**. In the default configuration, the name of the sync rule is **In from AD - User AccountEnabled**.  
 
