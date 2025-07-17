@@ -1,12 +1,20 @@
+---
+title: "Configure DekkoSecure SAML SSO with Microsoft Entra ID"
+description: "Step-by-step tutorial to integrate DekkoSecure with Microsoft Entra ID using SAML-based single sign-on."
+author: mmehmetekin
+ms.author: mmehmetekin
+ms.topic: tutorial
+ms.date: 07/17/2025
+---
+
 # Entra ID / Azure Active Directory Integration
 
 Published: Yes
 Suggested: No
 
-<aside>
-💡 See also: [FAQ for SSO/Azure AD/Entra ID](https://help.dekkosecure.com/onboarding/neLDFwWz7SpDeVu65uBTbc/faq-for-ssoazure-ad/wcS7SYb411QFDkoSpz6ma7)
 
-</aside>
+💡 **Tip:** See also: [FAQ for SSO/Azure AD/Entra ID](https://help.dekkosecure.com/onboarding/neLDFwWz7SpDeVu65uBTbc/faq-for-ssoazure-ad/wcS7SYb411QFDkoSpz6ma7)
+
 
 ## Introduction
 
@@ -18,10 +26,8 @@ Users that authenticate using SSO are able to interact with SSO and non-SSO user
 
 Deleting an SSO user will delete their files, avoiding malicious account takeover.
 
-<aside>
-💡 SSO integration is preferred to satisfy compliance requirements such as IRAP and your organisation’s internal “zero trust” security policies for logging and monitoring (such as [Sentinel](https://help.dekkosecure.com/organisation-management/rbXt8jt5HAgHbNz8FYp1a9/microsoft-sentinel-integration/wAdtY9fCGRRWeLDnAX8Kbw)).
+💡 **Tip:** SSO integration is preferred to satisfy compliance requirements such as IRAP and your organisation’s internal “zero trust” security policies for logging and monitoring (such as [Sentinel](https://help.dekkosecure.com/organisation-management/rbXt8jt5HAgHbNz8FYp1a9/microsoft-sentinel-integration/wAdtY9fCGRRWeLDnAX8Kbw)).
 
-</aside>
 
 ## Integration steps
 
@@ -35,20 +41,18 @@ Please [contact](https://www.dekkosecure.com/contact-us) DekkoSecure for more in
 
 After SSO integration is complete you are able to nominate your SSO domain(s) with DekkoSecure to enforce SSO registration for your internal users. After nomination, your new internal users (e.g., individuals that do not have a DekkoSecure account) will receive an invite containing a *corporate* account creation link instead of a *standard* account creation link. SSO domain registration nomination is imperative If you want to prevent your internal users from registering a *standard* account. Your externals will continue to receive *standard* invites.
 
-<aside>
-💡 If you already have a group of users who have standard accounts which need to be migrated to SSO, they can follow [these steps](https://help.dekkosecure.com/managing-your-account/jPq7opALsSsYrzVN8Uz3oS/migrate-your-account-to-single-sign-on/dkiSAZ9E71cANmrNCh1mBz).
+💡 **Tip:** If you already have a group of users who have standard accounts which need to be migrated to SSO, they can follow [these steps](https://help.dekkosecure.com/managing-your-account/jPq7opALsSsYrzVN8Uz3oS/migrate-your-account-to-single-sign-on/dkiSAZ9E71cANmrNCh1mBz).
 
-</aside>
 
 **Standard account registration example:**
 
-![standard-rego.png](./media/standard-rego.png)
+![Example of standard DekkoSecure registration page](media/standard-rego.png)
 
 New users that receive invites where their domain is not nominated for SSO registration enforcement will be led to the *standard* account creation page. This is noted by the ***dekko.io/invite*** URL in the invite.
 
 **Corporate account registration example:**
 
-![corporate-rego.png](./media/corporate-rego.png)
+![Example of corporate DekkoSecure registration page](media/corporate-rego.png)
 
 New users that receive invites where their domain is nominated for SSO registration enforcement will be led to the *corporate* account creation page. This is noted by the ***dekko.io/corporateregistration*** URL in the invite.
 
@@ -56,11 +60,11 @@ New users that receive invites where their domain is nominated for SSO registrat
 
 There are multiple options for granting personnel access to register and log in to DekkoSecure with elevated authentication controls, as described in the Microsoft documentation resource [here](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-manage-groups).
 
-Access to a resource (DekkoSecure) can be assigned on an individual basis, to all users in an AD, or users in a group. **DekkoSecure recommends the group option**, as this provides the most precise control. Steps for creating a group are [here](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
+Access to a resource (DekkoSecure) can be assigned on an individual basis, to all users in an AD, or users in a group. **DekkoSecure recommends the group option**, as this provides the most precise control. Steps for creating a group are [here](https://learn.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
 
-If your organisation has already established user groups and wants to grant DekkoSecure access to a subset of those users, groups can be created within groups by following [these steps](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal). Finally, to grant DekkoSecure application access to the group, follow [these steps](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-saasapps).
+If your organisation has already established user groups and wants to grant DekkoSecure access to a subset of those users, groups can be created within groups by following [these steps](https://learn.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal). Finally, to grant DekkoSecure application access to the group, follow [these steps](https://learn.microsoft.com/azure/active-directory/users-groups-roles/groups-saasapps).
 
-Optionally [Conditional Access](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview) controls can be set up to limit where/when/how a user can access DekkoSecure, for example, within the organisation’s network, only during business hours, or with a strict authentication type.
+Optionally [Conditional Access](https://learn.microsoft.com/azure/active-directory/conditional-access/overview) controls can be set up to limit where/when/how a user can access DekkoSecure, for example, within the organisation’s network, only during business hours, or with a strict authentication type.
 
 ## Existing **Account Migration**
 
