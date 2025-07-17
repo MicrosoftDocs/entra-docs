@@ -1223,11 +1223,11 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`|The continuation token included in the request is expired. |
 |`unsupported_challenge_type`|The `challenge_type` parameter value doesn't include the `redirect` challenge type. |
 
-If the request to the `/challenge` endpoint is to complete an MFA challenge, but the user doesn't have a default MFA method, the error response includes a `suberror` property for an *invalid_request* error:  
+<!--If the request to the `/challenge` endpoint is to complete an MFA challenge, but the user doesn't have a default MFA method, the error response includes a `suberror` property for an *invalid_request* error:  
 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
-|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `oauth2/v2.0/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods-optional).|
+|`introspect_required`| The user doesn't have a default MFA method. In this case, the client app needs to call the `oauth2/v2.0/introspect` endpoint. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods-optional).|-->
 
 ### Step 3: Request for security tokens
 
@@ -1332,8 +1332,8 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
 |`invalid_oob_value`| The value of one-time passcode that the app submits is invalid. |
-| `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `oauth2/v2.0/introspect` endpoint to request for a list of strong authentication methods registered for the user. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods).|
-|`registration_required`| A user needs to complete an MFA challenge, but they don't have a registered strong authentication method. The app needs to perform a [strong authentication method registration flow](#register-a-strong-authentication-method). |
+| `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `oauth2/v2.0/introspect` endpoint to request for a list of strong authentication methods registered for the user. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|
+|`registration_required`| A user needs to complete an MFA challenge, but they don't have a registered strong authentication method. The app needs to perform a [strong authentication method registration flow](#register-a-strong-authentication-method-api-reference). |
 
 <!--| `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered MFA method invalid.| -->
 
@@ -1360,7 +1360,7 @@ Content-Type: application/json
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
-### Request for user registered strong authentication methods
+### Get user registered strong authentication methods
 
 Use the `oauth2/v2.0/introspect` endpoint to request user's list of registered strong authentication methods.
 
@@ -1640,9 +1640,9 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`|The continuation token included in the request is expired. |
 
 
-### Step 2: Select strong authentication method and 
+### Step 2: Select strong authentication method 
 
-In this step, submit the strong authentication methods that the user wishes to register. Microsoft Entra then sends a challenge, such as email one-time passcode to the user.
+In this step, submit the strong authentication methods that the user wishes to register. Microsoft Entra then sends a challenge, such as email one-time passcode, to the user.
 
 Here's an example of the request(we present the example request in multiple lines for readability):
 
@@ -2275,7 +2275,7 @@ Content-Type: application/json
 |    Property     | Description        |
 |----------------------|------------------------|
 | `status`  | The status of the reset password request. If Microsoft Entra returns a status of *failed*, the app can resubmit the new password by making another request to the `/resetpassword/v1.0/submit` endpoint and include the new continuation token.|
-| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `oauth2/v2.0/token` endpoint as explained in [step 5 of sign-up flow](#step-5-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without initiating a new sign-in flow.|
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `oauth2/v2.0/token` endpoint as explained in [Request for security tokens](#step-5-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without initiating a new sign-in flow.|
 
 Here are the possible statuses that Microsoft Entra returns (possible values of the `status` parameter):
 
