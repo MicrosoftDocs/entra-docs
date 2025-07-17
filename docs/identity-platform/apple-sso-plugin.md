@@ -434,7 +434,7 @@ If you would like to enable Secure Enclave based storage of device identity keys
 
 - **Key**: `use_most_secure_storage`
 - **Type**: `Boolean`
-- **Value**: True
+- **Value**: False
 
 The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
