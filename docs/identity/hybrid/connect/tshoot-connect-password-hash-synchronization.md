@@ -243,10 +243,10 @@ Follow these steps to determine why no passwords are synchronized:
 
 1. Is the Connect server in [staging mode](how-to-connect-sync-staging-server.md)? A server in staging mode does not synchronize any passwords.
 
-2. Run the script in the [Get the status of password sync settings](#get-the-status-of-password-sync-settings) section. It gives you an overview of the password sync configuration.  
+1. Run the script in the [Get the status of password sync settings](#get-the-status-of-password-sync-settings) section. It gives you an overview of the password sync configuration.  
 
     ![PowerShell script output from password sync settings](./media/tshoot-connect-password-hash-synchronization/psverifyconfig.png)  
-
+   
 3. If the feature isn't enabled in Microsoft Entra ID or if the sync channel status isn't enabled, run the Connect installation wizard. Select **Customize synchronization options**, and unselect password sync. This change temporarily disables the feature. Then run the wizard again and re-enable password sync. Run the script again to verify that the configuration is correct.
 
 4. Look in the event log for errors. Look for the following events, which would indicate a problem:
@@ -274,19 +274,19 @@ If you used custom installation, set the permissions manually by doing the follo
  
 3. Select the connector, and then select **Properties**. 
  
-4. Go to **Connect to Active Directory Forest**.  
-    
+1. Go to **Connect to Active Directory Forest**.  
+
     ![Account used by Active Directory connector](./media/tshoot-connect-password-hash-synchronization/connectoraccount.png)  
-    Note the username and the domain where the account is located.
-    
+       Note the username and the domain where the account is located.
+ 
 5. Start **Active Directory Users and Computers**, and then verify that the account you found earlier has the following permissions set at the root of all domains in your forest:
     * Replicate Directory Changes
     * Replicate Directory Changes All
 
-6. Are the domain controllers reachable by Microsoft Entra Connect? If the Connect server cannot connect to all domain controllers, configure **Only use preferred domain controller**.  
-    
-    ![Domain controller used by Active Directory connector](./media/tshoot-connect-password-hash-synchronization/preferreddc.png)  
+1. Are the domain controllers reachable by Microsoft Entra Connect? If the Connect server cannot connect to all domain controllers, configure **Only use preferred domain controller**.  
 
+    ![Domain controller used by Active Directory connector](./media/tshoot-connect-password-hash-synchronization/preferreddc.png)  
+   
 7. Go back to **Synchronization Service Manager** and **Configure Directory Partition**. 
  
 8. Select your domain in **Select directory partitions**, select the **Only use preferred domain controllers** check box, and then select **Configure**. 
@@ -305,10 +305,10 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
 1. In **Active Directory Users and Computers**, search for the user, and then verify that the **User must change password at next logon** check box is cleared.  
 
     ![Active Directory productive passwords](./media/tshoot-connect-password-hash-synchronization/adprodpassword.png)  
+   
+       If the check box is selected, ask the user to sign in and change the password. Temporary passwords aren't synchronized with Microsoft Entra ID.
 
-    If the check box is selected, ask the user to sign in and change the password. Temporary passwords aren't synchronized with Microsoft Entra ID.
-
-2. If the password looks correct in Active Directory, follow the user in the sync engine. By following the user from on-premises Active Directory to Microsoft Entra ID, you can see whether there's a descriptive error on the object.
+1. If the password looks correct in Active Directory, follow the user in the sync engine. By following the user from on-premises Active Directory to Microsoft Entra ID, you can see whether there's a descriptive error on the object.
 
     a. Start the [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md).
 
@@ -321,34 +321,34 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
     e. In the **Scope** box, select **DN or Anchor**, and then enter the full DN of the user you are troubleshooting.
 
     ![Search for user in connector space with DN](./media/tshoot-connect-password-hash-synchronization/searchcs.png)  
+   
+       f. Locate the user you are looking for, and then select **Properties** to see all the attributes. If the user isn't in the search result, verify your [filtering rules](how-to-connect-sync-configure-filtering.md) and make sure that you run [Apply and verify changes](how-to-connect-sync-configure-filtering.md#apply-and-verify-changes) for the user to appear in Connect.
 
-    f. Locate the user you are looking for, and then select **Properties** to see all the attributes. If the user isn't in the search result, verify your [filtering rules](how-to-connect-sync-configure-filtering.md) and make sure that you run [Apply and verify changes](how-to-connect-sync-configure-filtering.md#apply-and-verify-changes) for the user to appear in Connect.
-
-    g. To see the password sync details of the object for the past week, select **Log**.  
+       g. To see the password sync details of the object for the past week, select **Log**.  
 
     ![Object log details](./media/tshoot-connect-password-hash-synchronization/csobjectlog.png)  
+   
+       If the object log is empty, Microsoft Entra Connect has been unable to read the password hash from Active Directory. Continue your troubleshooting with Connectivity Errors. If you see any other value than **success**, refer to the table in [Password sync log](#password-sync-log).
 
-    If the object log is empty, Microsoft Entra Connect has been unable to read the password hash from Active Directory. Continue your troubleshooting with Connectivity Errors. If you see any other value than **success**, refer to the table in [Password sync log](#password-sync-log).
-
-    h. Select the **lineage** tab, and make sure that at least one sync rule in the **PasswordSync** column is **True**. In the default configuration, the name of the sync rule is **In from AD - User AccountEnabled**.  
+       h. Select the **lineage** tab, and make sure that at least one sync rule in the **PasswordSync** column is **True**. In the default configuration, the name of the sync rule is **In from AD - User AccountEnabled**.  
 
     ![Lineage information about a user](./media/tshoot-connect-password-hash-synchronization/cspasswordsync.png)  
-
-    i. Select **Metaverse Object Properties** to display a list of user attributes.  
+   
+       i. Select **Metaverse Object Properties** to display a list of user attributes.  
 
     ![Screenshot that shows the list of user attributes for the Metaverse Object Properties.](./media/tshoot-connect-password-hash-synchronization/mvpasswordsync.png)  
+   
+       Verify that there's no **cloudFiltered** attribute present. Make sure that the domain attributes (domainFQDN and domainNetBios) have the expected values.
 
-    Verify that there's no **cloudFiltered** attribute present. Make sure that the domain attributes (domainFQDN and domainNetBios) have the expected values.
-
-    j. Select the **Connectors** tab. Make sure that you see connectors to both on-premises Active Directory and Microsoft Entra ID.
+       j. Select the **Connectors** tab. Make sure that you see connectors to both on-premises Active Directory and Microsoft Entra ID.
 
     ![Metaverse information](./media/tshoot-connect-password-hash-synchronization/mvconnectors.png)  
-
-    k. Select the row that represents Microsoft Entra ID, select **Properties**, and then select the **Lineage** tab. The connector space object should have an outbound rule in the **PasswordSync** column set to **True**. In the default configuration, the name of the sync rule is **Out to Microsoft Entra ID - User Join**.  
+   
+       k. Select the row that represents Microsoft Entra ID, select **Properties**, and then select the **Lineage** tab. The connector space object should have an outbound rule in the **PasswordSync** column set to **True**. In the default configuration, the name of the sync rule is **Out to Microsoft Entra ID - User Join**.  
 
     ![Connector Space Object Properties dialog box](./media/tshoot-connect-password-hash-synchronization/cspasswordsync2.png)  
-
-### Password sync log
+   
+### Password Hash Sync log
 
 The status column can have the following values:
 
@@ -364,6 +364,58 @@ The status column can have the following values:
 | Unknown |An error occurred while trying to process a batch of password hashes.  |
 | MissingAttribute |Specific attributes (for example, Kerberos hash) required by Microsoft Entra Domain Services aren't available. |
 | RetryRequestedByTarget |Specific attributes (for example, Kerberos hash) required by Microsoft Entra Domain Services weren't available previously. An attempt to resynchronize the user's password hash is made. |
+
+## Windows Event Viewer Logs for Password Hash Sync
+
+The Password Hash Synchronization feature generates a comprehensive set of application events in the Windows Event Viewer, capturing most of its operational activity.
+
+For effective troubleshooting, consider increasing the size of the Application log. Without this adjustment, PHS events may be overwritten, making it difficult to track synchronization status and diagnose issues.
+
+
+| Event ID | Description                                                                                                            |
+| -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 601      | Event id used when password synchronization manager is starting.                                                       |
+| 602      | Event id used when password synchronization is stopping.                                                               |
+| 603      | Event id used when an unexpected error occurs.                                                                         |
+| 604      | Event id used when an task error occurs.                                                                               |
+| 605      | Event id used when an items are added to the retry queue.                                                              |
+| 606      | Event id used when an items are removed from the retry queue.                                                          |
+| 607      | Event id used when password sync is not able to start.                                                                 |
+| 609      | Event id used when password sync has stopped.                                                                          |
+| 610      | Event id used when password sync cannot stop.                                                                          |
+| 611      | Event id used when error synchronizing a domain.                                                                       |
+| 612      | Event id used when error initializing a synchronization context.                                                       |
+| 613      | Event identifier used to notify that password sync agent has paused because directory full sync has not yet completed. |
+| 614      | Event id used when password sync start is called when not shutdown.                                                    |
+| 615      | Event id used when password sync worker thread throws an exception.                                                    |
+| 616      | Event id used when connection to preferred DC fails.                                                                   |
+| 617      | Event id used when full password synchronization started for forest.                                                   |
+| 618      | Event id used when full password synchronization started for a domain.                                                 |
+| 619      | Event id used to indicate the progress of the password synchronization for a domain.                                   |
+| 620      | Event id used when the no-retry password sync objects are reported.                                                    |
+| 621      | Event id used when an attempt to full password synchronization fails.                                                  |
+| 622      | Event id used when full password synchronization completed for a domain.                                               |
+| 623      | Event id used when full password synchronization completed for a forest.                                               |
+| 650      | Start of Password Sync batch.                                                                                          |
+| 651      | End of Password Sync batch.                                                                                            |
+| 652      | Error during Password Sync.                                                                                            |
+| 653      | Start of Password Sync ping.                                                                                           |
+| 654      | End of Password Sync ping.                                                                                             |
+| 655      | Error during Password Sync ping.                                                                                       |
+| 656      | Password sync request message.                                                                                         |
+| 657      | Password sync response message.                                                                                        |
+| 658      | DCaaS sync event log message.                                                                                          |
+| 659      | Password policy sync event log message.                                                                                |
+| 660      | Event Id for start of self-healing the password hash sync company feature.                                             |
+| 661      | Event Id for end of self-healing the password hash sync company feature.                                               |
+| 662      | Event Id used when password sync health task fails during ping operation.                                              |
+| 663      | Event Id used to indicate that password sync manager is alive and running.                                             |
+| 664      | Event Id used to indicate that single object password sync failed.                                                     |
+| 665      | Event Id used to indicate that storing password hash sync cycle state for a domain failed.                             |
+| 666      | Event id used to indicate that password hash sync failed for a domain due to sql deadlock.                             |
+| 667      | Event Id used to indicate that generating MD5 decryption key has failed.                                               |
+| 668      | Event id used to show the number of objects in password batch that only have PwdLastSet changed.                       |
+
 
 ## Scripts to help troubleshooting
 
