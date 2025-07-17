@@ -72,7 +72,7 @@ The troubleshooting task performs the following checks:
 
    * Validates that the password hash synchronization feature is enabled.
    
-   * Searches for password hash synchronization heartbeat events in the Windows Application Event logs.
+   * Searches for password hash synchronization heartbeat events in Application event logs.
 
    * For each Active Directory domain under the on-premises Active Directory connector:
 
@@ -84,11 +84,11 @@ The following diagram illustrates the results of the cmdlet for a single-domain,
 
 ![Diagnostic output for password hash synchronization](./media/tshoot-connect-password-hash-synchronization/phsglobalgeneral.png)
 
-The rest of this section describes specific results that are returned by the task and corresponding issues.
+The rest of this section describes specific results returned by the task and corresponding issues.
 
 #### Password hash synchronization feature isn't enabled
 
-If you haven't enabled password hash synchronization by using the Microsoft Entra Connect wizard, the following error is returned:
+If password hash synchronization isn't enabled by using the Microsoft Entra Connect wizard, the following error is returned:
 
 ![password hash synchronization isn't enabled](./media/tshoot-connect-password-hash-synchronization/phsglobaldisabled.png)
 
@@ -102,7 +102,9 @@ If the Microsoft Entra Connect server is in staging mode, password hash synchron
 
 #### No password hash synchronization heartbeat events
 
-Each on-premises Active Directory connector has its own password hash synchronization channel. When the password hash synchronization channel is established and there aren't any password changes to be synchronized, a heartbeat event (EventId 654) is generated once every 30 minutes under the Windows Application Event Log. For each on-premises Active Directory connector, the cmdlet searches for corresponding heartbeat events in the past three hours. If no heartbeat event is found, the following error is returned:
+Each on-premises Active Directory connector maintains its own password hash synchronization channel. When the channel is active but no password changes are pending, a heartbeat event (Event ID 654) is logged every 30 minutes in the Windows Application Event Log.
+
+To verify channel health, the cmdlet checks for heartbeat events from each connector within the past three hours. If none are found, it returns the following error:
 
 ![No password hash synchronization heart beat event](./media/tshoot-connect-password-hash-synchronization/phsglobalnoheartbeat.png)
 
@@ -175,7 +177,7 @@ Older versions of Microsoft Entra Connect did not support synchronizing temporar
 
 ![Temporary password isn't exported](./media/tshoot-connect-password-hash-synchronization/phssingleobjecttemporarypassword.png)
 
-To enable synchronizations of temporary passwords you must have Microsoft Entra Connect version 2.0.3.0 or higher installed and the feature [ForcePasswordChangeOnLogon](../connect/how-to-connect-password-hash-synchronization.md#synchronizing-temporary-passwords-and-force-password-change-on-next-logon) must be enabled.
+To enable synchronizations of temporary passwords, you must have Microsoft Entra Connect version 2.0.3.0 or higher installed and the feature [ForcePasswordChangeOnLogon](../connect/how-to-connect-password-hash-synchronization.md#synchronizing-temporary-passwords-and-force-password-change-on-next-logon) must be enabled.
 
 #### Results of last attempt to synchronize password aren't available
 
@@ -223,7 +225,7 @@ To troubleshoot issues where no passwords are synchronized for a user:
 
 3. Run `Import-Module ADSyncDiagnostics`.
 
-4. Run the following cmdlet:
+4. Get the user's DistinguishedName (DN) and run the following cmdlet:
 
    ```
    Invoke-ADSyncDiagnostics -PasswordSync -ADConnectorName <Name-of-AD-Connector> -DistinguishedName <DistinguishedName-of-AD-object>
@@ -260,13 +262,15 @@ Follow these steps to determine why no passwords are synchronized:
 
 6. See the Troubleshoot one object that isn't synchronizing passwords section.
 
-### Connectivity problems
+### Connectivity problems and AD DS permissions
 
-Do you have connectivity with Microsoft Entra ID?
+Check whether Microsoft Entra Connect can connect to Microsoft Entra ID.
 
-Does the account have required permissions to read the password hashes in all domains? If you installed Connect by using Express settings, the permissions should already be correct. 
+The AD DS Connector account must have the necessary permissions to read password hashes in all domains.
 
-If you used custom installation, set the permissions manually by doing the following:
+If you installed Microsoft Entra Connect using Express settings, the required permissions were configured automatically.
+
+If you used custom installation, assign the permissions manually by following these steps:
     
 1. To find the account used by the Active Directory connector, start **Synchronization Service Manager**. 
  
@@ -328,7 +332,7 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
 
     ![Object log details](./media/tshoot-connect-password-hash-synchronization/csobjectlog.png)  
    
-    If the object log is empty, Microsoft Entra Connect has been unable to read the password hash from Active Directory. Continue your troubleshooting with Connectivity Errors. If you see any other value than **success**, refer to the table in [Password sync log](#password-hash-sync-log).
+    If the object log is empty, Microsoft Entra Connect is unable to read the password hash from Active Directory. Continue your troubleshooting with Connectivity Errors. If you see any other value than **success**, refer to the table in [Password sync log](#password-hash-sync-log).
 
     h. Select the **lineage** tab, and make sure that at least one sync rule in the **PasswordSync** column is **True**. In the default configuration, the name of the sync rule is **In from AD - User AccountEnabled**.  
 
@@ -369,7 +373,7 @@ The status column can have the following values:
 
 The Password Hash Synchronization feature generates a comprehensive set of application events in the Windows Event Viewer, capturing most of its operational activity.
 
-For effective troubleshooting, consider increasing the size of the Application log. Without this adjustment, PHS events may be overwritten, making it difficult to track synchronization status and diagnose issues.
+For effective troubleshooting, consider increasing the size of the Application log. Without this adjustment, Password Hash Sync events may be overwritten, making it difficult to track synchronization status and diagnose issues.
 
 
 | Event ID | Description                                                                                                            |
