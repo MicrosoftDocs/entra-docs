@@ -48,10 +48,10 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ### Set up Global Secure Access
 
-- Enable and disable different traffic forwarding profiles for your Entra tenant. See [Traffic forwarding profiles](overview-traffic-forwarding-profiles.md).
+- Enable and disable different traffic forwarding profiles for your Entra tenant. See [Traffic forwarding profiles](concept-traffic-forwarding.md).
 - Install and configure the private network connector. See [Configure connectors](how-to-configure-connectors.md).
 - Configure Quick Access to private resources and set up private DNS and DNS suffixes. See [Configure Quick Access](how-to-configure-quick-access.md).
-- Install and configure the Global Secure Access client on end-user devices. See [Clients for Windows](how-to-client-windows.md) and [Clients for macOS](how-to-client-macos.md).
+- Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
 
 > [!NOTE]
 > Private Network Connectors are required for Private Access applications.
@@ -134,7 +134,7 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
   - Cisco Secure Client: validate Zero Trust Access and Umbrella are active.
 
 > [!NOTE]
-> For troubleshooting, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-client-health-check.md).
+> For troubleshooting, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
 #### Test traffic flow
 
