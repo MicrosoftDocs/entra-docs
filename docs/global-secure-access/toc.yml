@@ -237,7 +237,7 @@ items:
                - name: Coexistence with Cisco Secure Access
                  href: how-to-cisco-secure-access-coexistence.md
                - name: Coexistence with Cisco VPNs
-                 href: how-to-cisco-vpns-coexistence.md
+                 href: how-to-cisco-vpn-coexistence.md
            - name: Coexistence with Palo Alto Networks
              href: how-to-palo-alto-coexistence.md
            - name: Coexistence with Zscaler

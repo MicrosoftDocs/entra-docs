@@ -57,11 +57,12 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 
 ### Setting up Global Secure Access
 
-- Enable and disable different traffic forwarding profiles for your Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](global-secure-access-traffic-forwarding-profiles.md).
+- Enable and disable different traffic forwarding profiles for your Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 - Install and configure the Entra private network connector. See [How to configure connectors](how-to-configure-connectors.md).
 - **Note:** Private Network Connectors are required for Entra Private Access applications.
 - Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
-- Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](global-secure-access-clients.md), [Global Secure Access client for Windows](global-secure-access-client-windows.md), and [Global Secure Access Client for macOS](global-secure-access-client-macos.md).
+- Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
+
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN FQDN. This is only required for Cisco Secure Access VPN.
 
   1. Sign in to Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
@@ -131,7 +132,7 @@ After both clients are installed and running, verify that Global Secure Access a
 
 - Right-click Global Secure Access client > Advanced Diagnostics > Forwarding Profile. Verify only Internet and Microsoft 365 rules are applied.
 - In Advanced Diagnostics > Health Check, ensure no checks are failing.
-- See [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-health-check.md).
+- See [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
 **Test traffic flow:**
 
