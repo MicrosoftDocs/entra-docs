@@ -3,7 +3,7 @@ title: Configure Netpresenter Next for automatic user provisioning with Microsof
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Netpresenter Next.
 author: nguhiu
 manager: mwongerapk
-ms.author: thomasakelo
+ms.author: addimitu
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
