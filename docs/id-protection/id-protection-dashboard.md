@@ -64,9 +64,9 @@ To help you better understand your risk exposure, our attack graphic displays co
 
 #### What is considered an attack in Microsoft Entra ID Protection?
 
-An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-identity-protection-risks.md#what-are-risk-detections) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
+An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-risk-detection-types.md) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
 
-Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#risk-detections-mapped-to-riskeventtype) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
+Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#user-risk-detections-mapped-to-riskeventtype) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
 
 #### How to interpret the attack graphic?
 
