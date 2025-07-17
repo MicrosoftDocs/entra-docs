@@ -8,8 +8,8 @@ metadata:
 
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: femila
-  ms.date: 05/22/2025
+  manager: pmwongera
+  ms.date: 06/12/2025
   ms.reviewer: etbasser
 
 title: Frequently asked questions around Microsoft Entra ID Protection
@@ -99,7 +99,9 @@ sections:
       - question: |
           What if I am in a hybrid environment?
         answer: |
-          User risk can be self-remediated using a [secure password change](howto-identity-protection-remediate-unblock.md#user-self-remediation) if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks). 
+          User risk can be self-remediated using a secure password change if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks).
+
+          For more information, see [How to remediate risk and unblock users](howto-identity-protection-remediate-unblock.md#considerations-for-cloud-and-hybrid-users).
       - question: |
           If I deploy a risk policy, will the system autoremediate users differently or do I need to redo past remediations? 
         answer: |

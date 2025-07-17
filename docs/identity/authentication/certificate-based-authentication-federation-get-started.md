@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: vraganathan
 ---
 # Get started with certificate-based authentication in Microsoft Entra ID with federation

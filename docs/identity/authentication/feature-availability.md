@@ -11,7 +11,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: mattsmith
 ---
 
@@ -82,7 +82,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 
 | Risk Detection | Availability |
 |----------------|:--------------------:|
-|Leaked credentials (MACE) | &#x2705; |
+|Leaked credentials (Microsoft Account Compromise Exchange) | &#x2705; |
 |Microsoft Entra threat intelligence | &#10060; |
 |Anonymous IP address | &#x2705; | 
 |Atypical travel | &#x2705; |
@@ -115,4 +115,4 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 
 ## Other Microsoft Entra products
 
-[Microsoft Entra ID Governance](~/id-governance/licensing-fundamentals.md) is available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments. [Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-id-premium-plan-available-on-azure-government-clouds) is available in the US government clouds. [Microsoft Entra Permissions Management](~/permissions-management/faqs.md#is-permissions-management-available-in-government-cloud) is not available in the US government or US national clouds.
+[Microsoft Entra ID Governance](~/id-governance/licensing-fundamentals.md) is available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments. [Microsoft Entra Workload Identities Premium edition](~/workload-id/workload-identities-faqs.md#is-the-workload-id-premium-plan-available-on-azure-government-clouds) is available in the US government clouds.

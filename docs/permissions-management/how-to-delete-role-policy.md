@@ -2,7 +2,7 @@
 title: Delete a role/policy in the Remediation dashboard in Permissions Management
 description: How to delete a role/policy in the Microsoft Entra Permissions Management Remediation dashboard.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

@@ -5,7 +5,7 @@ metadata:
   description: Learn how you can configure Microsoft Entra user settings for Microsoft Entra multifactor authentication
   author: justinha
   ms.author: justinha
-  manager: femila
+  manager: dougeby
   ms.reviewer: jupetter
   ms.date: 01/26/2025
   ms.service: entra-id

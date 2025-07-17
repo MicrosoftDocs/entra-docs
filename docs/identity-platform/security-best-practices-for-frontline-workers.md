@@ -2,7 +2,7 @@
 title: Best practices to protect frontline workers
 description: Learn about the best practices and general guidance for protecting frontline workers in an organization
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.custom: template-concept
 ms.date: 02/14/2025

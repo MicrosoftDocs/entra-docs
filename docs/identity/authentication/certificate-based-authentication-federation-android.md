@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: annaba
 ---
 # Microsoft Entra certificate-based authentication with federation on Android

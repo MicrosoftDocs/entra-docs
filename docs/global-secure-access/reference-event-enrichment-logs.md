@@ -3,7 +3,7 @@ title: Event enrichment in Microsoft 365 enriched logs
 description: Global Secure Access includes Microsoft Entra Private Access and Microsoft Entra Internet Access. This article references event enrichment in Microsoft 365 enriched logs.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: reference
 ms.date: 02/21/2025
 ms.service: global-secure-access

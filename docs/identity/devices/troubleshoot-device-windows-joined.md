@@ -4,10 +4,10 @@ description: This article helps you troubleshoot Microsoft Entra hybrid joined W
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 11/25/2024
+ms.date: 07/27/2025
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: jogro
 ms.custom: sfi-image-nochange
 ---

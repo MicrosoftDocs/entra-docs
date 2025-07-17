@@ -3,7 +3,7 @@ title: Configure Hosted Heritage Online SSO for Single sign-on with Microsoft En
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hosted Heritage Online SSO.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

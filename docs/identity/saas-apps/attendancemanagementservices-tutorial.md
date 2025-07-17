@@ -3,7 +3,7 @@ title: Configure Attendance Management Services for Single sign-on with Microsof
 description: Learn how to configure single sign-on between Microsoft Entra ID and Attendance Management Services.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

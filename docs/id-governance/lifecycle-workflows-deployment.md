@@ -114,7 +114,7 @@ The following table provides information that you need to be aware of as you cre
 
 |Item|Description|
 |-----|-----|
-|Workflows|50 workflow limit per tenant|
+|Workflows|100 workflow limit per tenant|
 |Number of custom tasks|limit of 25 per workflow|
 |Value range for offsetInDays|Between -180 and 180 days|
 |Workflow execution schedule|Default every 3 hours - can be set to run anywhere from 1 to 24 hours|

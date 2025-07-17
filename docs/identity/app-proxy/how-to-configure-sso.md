@@ -3,7 +3,7 @@ title: Understand single sign-on with an on-premises app using application proxy
 description: Understand single sign-on with an on-premises app using application proxy.
 
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual

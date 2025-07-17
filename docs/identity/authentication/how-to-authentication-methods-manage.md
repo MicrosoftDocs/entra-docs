@@ -8,7 +8,7 @@ ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: jpettere
-manager: femila
+manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
@@ -21,6 +21,9 @@ You can use the authentication methods migration guide in the Microsoft Entra ad
 You can also migrate policy settings manually on your own schedule. The migration process is fully reversible. You can continue to use tenant-wide MFA and SSPR policies while you configure authentication methods more precisely for users and groups in the Authentication methods policy. 
 
 For more information about how these policies work together during migration, see [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md).
+
+> [!NOTE]
+> The migration guide only migrates tenant policy settings. Individual user settings aren't migrated. 
 
 ## Automated migration guide
 The automated migration guide lets you migrate where you manage authentication methods in just a few clicks. It can be accessed from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Entra ID** > **Authentication methods** > **Policies**.

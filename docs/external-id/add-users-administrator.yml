@@ -5,7 +5,7 @@ metadata:
   description: Learn how to add B2B collaboration users in the Microsoft Entra admin center. Invite guest users to the directory, groups, or applications, and manage their access to resources.
   author: csmulligan
   ms.author: cmulligan
-  manager: celestedg
+  manager: dougeby
   ms.date: 10/21/2024
   ms.service: entra-external-id
   ms.topic: how-to

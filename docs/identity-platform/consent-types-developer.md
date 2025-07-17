@@ -18,6 +18,9 @@ Applications in the Microsoft identity platform rely on consent in order to gain
 
 In this article, you learn about the different types of consent and how to request permissions for your application through consent.
 
+> [!Note]
+> For applications in external tenants customers can't consent to permissions themselves. An administrator will need to grant consent for the application to access resources on their behalf. For more information, see [Grant admin consent](quickstart-register-app.md#grant-admin-consent-external-tenants-only).
+
 ## Static user consent
 
 In the static user consent scenario, you must specify all the permissions it needs in the app's configuration in the Microsoft Entra admin center. If the user (or administrator, as appropriate) doesn't grant consent for this app, then Microsoft identity platform prompts the user to provide consent at this time.
