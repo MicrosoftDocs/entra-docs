@@ -151,7 +151,8 @@ Update-MgUser -UserID "<UPN or Object ID>" -PasswordPolicies "DisablePasswordExp
 ```
 
 > [!WARNING]
-> For 
+> In certain edge cases, particularly when using Microsoft Entra Domain Services, a full password hash synchronization triggered by Microsoft Entra Connect will enforce a password hash update in the cloud. This ensures that all password hashes are replicated end-to-end: from the on-premises Active Directory, through Microsoft Entra ID, and into the domain controllers hosted in Microsoft Entra Domain Services.> Consequently, when CloudPasswordPolicyForPasswordSyncedUsersEnabled feature is enabled, Microsoft Entra clears the PasswordPolicies attribute for all synchronized users since this is the default behavior of this feature. In such cases you'll have to manually set `DisablePasswordExpiration' again for any accounts that need to have non-expiring passwords in Microsoft Entra
+
 > [!NOTE]
 > By design, the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) and [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) PowerShell commands don't work on federated domains.
 
