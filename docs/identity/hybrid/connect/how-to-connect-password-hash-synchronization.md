@@ -92,7 +92,7 @@ You can continue to sign in to your cloud services by using a synchronized passw
 
 ##### CloudPasswordPolicyForPasswordSyncedUsersEnabled
 
-The Cloud Password Policy for Password-Synced Users feature (in the deprecated MSOnline PowerShell module it was called *EnforceCloudPasswordPolicyForPasswordSyncedUsers*) ensures that Microsoft Entra ID enforces its native password policies (such as expiration and lockout), for users whose passwords are synchronized from on-premises Active Directory. This feature enables you to align the same on-premises Active Directory password policy with the Microsoft Entra password policy, for synchronized users.
+The Cloud Password Policy for Password-Synced Users feature ensures that Microsoft Entra ID enforces its native password policies (such as expiration and lockout), for users whose passwords are synchronized from on-premises Active Directory. This feature enables you to align the same on-premises Active Directory password policy with the Microsoft Entra password policy, for synchronized users.
 
 If there are synchronized users that only interact with Microsoft Entra integrated services and must also comply with a password expiration policy, you can force them to comply with your Microsoft Entra password expiration policy by enabling the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature.
 
