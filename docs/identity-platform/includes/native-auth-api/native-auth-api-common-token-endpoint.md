@@ -58,8 +58,8 @@ Content-Type: application/json
 |`scopes`|  A space-separated list of scopes that the access token is valid for.|
 |`expires_in`|   The length of time in seconds the access token remains valid.|
 | `access_token`  |    The access token that the app requested from the `/token` endpoint. The app can use this access token to request access to secured resources such as web APIs.| 
-|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if you request *offline_access* scope.   |
-|`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](id-tokens.md).<br> **Note**: Only issued if you request *openid* scope. |
+|`refresh_token` |  An OAuth 2.0 refresh token. The app can use this token to acquire other access tokens after the current access token expires. Refresh tokens are long-lived. They can maintain access to resources for extended periods. For more detail on refreshing an access token, refer to [Refresh the access token](../../v2-oauth2-auth-code-flow.md#refresh-the-access-token) article. <br> **Note**: Only issued if you request *offline_access* scope.   |
+|`id_token`|  A JSON Web Token (Jwt) used to identify the customer user. The app can decode the token to request information about the user who signed in. The app can cache the values and display them, and confidential clients can use this token for authorization. For more information about ID tokens, see [ID tokens](../../id-tokens.md).<br> **Note**: Only issued if you request *openid* scope. |
 
 #### Error response 
 
@@ -109,8 +109,8 @@ If the error parameter has a value of *invalid_grant*, Microsoft Entra includes 
 |    Suberror value     | Description        |
 |----------------------|------------------------|
 |`invalid_oob_value`| The value of one-time passcode that the app submits is invalid. |
-| `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](#continuation-token). The app needs to call the `oauth2/v2.0/introspect` endpoint to request for a list of strong authentication methods registered for the user. Learn [how to get user registered strong authentication methods via the introspect endpoint](#get-user-registered-strong-authentication-methods).|
-|`registration_required`| A user needs to complete an MFA challenge, but they don't have a registered strong authentication method. The app needs to enable the user to register for a strong authentication method. Learn [how to registration for a strong authentication method](#register-a-strong-authentication-method-api-reference). |
+| `mfa_required` | The customer user needs to complete an MFA challenge. This type of response includes a [continuation token](../../reference-native-authentication-api.md#continuation-token). The app needs to call the `oauth2/v2.0/introspect` endpoint to request for a list of strong authentication methods registered for the user. Learn [how to get user registered strong authentication methods via the introspect endpoint](../../reference-native-authentication-api.md#get-user-registered-strong-authentication-methods).|
+|`registration_required`| A user needs to complete an MFA challenge, but they don't have a registered strong authentication method. The app needs to enable the user to register for a strong authentication method. Learn [how to registration for a strong authentication method](../../reference-native-authentication-api.md#register-a-strong-authentication-method-api-reference). |
 
 <!--| `basic_action` | This error occurs where the user is required to complete an MFA challenge, but the user has no MFA method registered. This scenario can happen if the tenant administrator changes MFA configuration, or if the user moves to a new location rendering the initially registered MFA method invalid.| -->
 
@@ -135,4 +135,4 @@ Content-Type: application/json
 | `challenge_type`  | Microsoft Entra returns a response that has a challenge type. The value of this challenge type is redirect, which enables the app to use the web-based authentication flow.  |  
 |`redirect_reason`| A reason for which a redirect is required. For example, Microsoft Entra announces that MFA or a registrationg for a strong authentication method is required, but the app didn't include these capabilities in its request.  |
 
-This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
+This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](../../reference-v2-libraries.md).
