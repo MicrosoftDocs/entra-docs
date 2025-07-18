@@ -21,6 +21,45 @@ In Microsoft Entra, we group our security recommendations into several main area
 
 We recommend that all of the following controls be implemented where licenses are available. This helps to provide a foundation for other resources built on top of this solution. More controls will be added to this document over time.
 
+## Protect identities and secrets
+
+- [Applications don't have client secrets configured](zero-trust-protect-identities.md#applications-dont-have-client-secrets-configured)
+- [Applications don't have certificates with expiration longer than 180 days](zero-trust-protect-identities.md#applications-dont-have-certificates-with-expiration-longer-than-180-days)
+- Application Certificates need to be rotated on a regular basis
+- Microsoft services applications don't have credentials configured
+- User consent settings are restricted
+- Admin consent workflow is enabled
+- Privileged accounts are cloud native identities
+- All privileged role assignments are activated just in time and not permanently active
+- Privileged accounts have phishing-resistant methods registered
+- Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
+- Require password reset notifications for administrator roles
+- Block legacy authentication
+- Migrate from legacy MFA and SSPR policies
+- SMS and Voice Call authentication methods are disabled
+- Secure the MFA registration (My Security Info) page
+- Use cloud authentication
+- Users have strong authentication methods configured
+- User sign-in activity uses token protection
+- Authenticator app shows sign-in context
+- Password expiration is disabled
+- Require multifactor authentication for device join and device registration using user action
+- Enable Microsoft Entra ID security defaults
+
+## Protect tenants and isolate production systems
+
+## Protect engineering systems
+
+## Protect networks
+
+## Monitor and detect threats
+
+## Accelerate response and remediation
+
+
+
+
+
 ## Privileged access
 
 ### Privileged accounts are cloud native identities  
@@ -145,13 +184,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21771](../includes/secure-recommendations/21771.md)]
 
-### Applications don't have client secrets configured 
 
-[!INCLUDE [21772](../includes/secure-recommendations/21772.md)]
-
-### Applications don't have certificates with expiration longer than 180 days 
-
-[!INCLUDE [21773](../includes/secure-recommendations/21773.md)]
 
 ### Application Certificates need to be rotated on a regular basis
 
