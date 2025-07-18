@@ -29,9 +29,9 @@ When you change an on-premises password, the updated password is synchronized, m
 The password hash synchronization feature automatically retries failed synchronization attempts. If an error occurs during an attempt to synchronize a password, an error is logged in your event viewer.
 
 The synchronization of a password has no impact on the user  who is currently signed in.
-Your current cloud service session isn't immediately affected by a synchronized password change that occurs, while you're signed in, to a cloud service. However, when the cloud service requires you to authenticate again, you need to provide your new password.
+If a password change is synchronized while you're signed in to a cloud service, your current session remains unaffected.
 
-A user must enter their corporate credentials a second time to authenticate to Microsoft Entra ID, regardless of whether they're signed in to their corporate network. This pattern can be minimized, however, if the user selects the Keep me signed in (KMSI) check box at sign-in. This selection sets a session cookie that bypasses authentication for 180 days. KMSI behavior can be enabled or disabled by the Microsoft Entra administrator. In addition, you can reduce password prompts by configuring [Microsoft Entra join](~/identity/devices/concept-directory-join.md) or [Microsoft Entra hybrid join](~/identity/devices/concept-hybrid-join.md), which automatically signs users in when they are on their corporate devices connected to your corporate network.
+A user must enter their corporate credentials a second time to authenticate to Microsoft Entra ID, regardless of whether they're signed in to their corporate network. This pattern can be minimized, however, if the user selects the Keep me signed in (KMSI) check box at sign-in. This selection sets a session cookie that bypasses authentication for 180 days. KMSI behavior can be managed by the Microsoft Entra administrator. In addition, you can reduce password prompts by configuring [Microsoft Entra join](~/identity/devices/concept-directory-join.md) or [Microsoft Entra hybrid join](~/identity/devices/concept-hybrid-join.md), which automatically signs users in when they are on their corporate devices connected to your corporate network.
 
 ### More advantages
 
@@ -47,10 +47,10 @@ The following section describes, in-depth, how password hash synchronization wor
 
 [![Detailed password flow](./media/how-to-connect-password-hash-synchronization/arch3d.png)](./media/how-to-connect-password-hash-synchronization/arch3d.png#lightbox)
 
-1. Every two minutes, the password hash synchronization agent on the AD Connect server requests stored password hashes (the unicodePwd attribute) from a DC. This request is via the standard [MS-DRSR](/openspecs/windows_protocols/ms-drsr/f977faaa-673e-4f66-b9bf-48c640241d47) replication protocol used to synchronize data between DCs. The AD DS Connector account must have Replicate Directory Changes and Replicate Directory Changes All AD permissions (granted by default on installation) to obtain the password hashes.
+1. Every two minutes, the password hash synchronization agent on the AD Connect server requests stored password hashes (the unicodePwd attribute) from a DC. This request is via the standard [MS-DRSR](/openspecs/windows_protocols/ms-drsr/f977faaa-673e-4f66-b9bf-48c640241d47) replication protocol used to synchronize data between DCs. The Active Directory Domain Services (AD DS) Connector account must have Replicate Directory Changes and Replicate Directory Changes All AD permissions (granted by default on installation) to obtain the password hashes.
 
-2. Before sending, the DC encrypts the MD4 password hash by using a key that is a [MD5](https://www.rfc-editor.org/rfc/rfc1321.txt) hash of the RPC session key and a salt. It then sends the result to the password hash synchronization agent over RPC. The DC also passes the salt to the synchronization agent by using the DC replication protocol, so the agent is able to decrypt the envelope.
-3. After the password hash synchronization agent has the encrypted envelope, it uses [MD5CryptoServiceProvider](/dotnet/api/system.security.cryptography.md5cryptoserviceprovider) and the salt to generate a key to decrypt the received data back to its original MD4 format. The password hash synchronization agent never has access to the clear text password. The password hash synchronization agent’s use of MD5 is strictly for replication protocol compatibility with the DC, and it's only used on-premises between the DC and the password hash synchronization agent.
+2. Before sending, the DC encrypts the MD4 password hash by using a key that is a [MD5](https://www.rfc-editor.org/rfc/rfc1321.txt) hash of the Remote Procedure Call (RPC) session key and a salt. It then sends the result to the password hash synchronization agent over RPC. The DC also passes the salt to the synchronization agent by using the DC replication protocol, so the agent is able to decrypt the envelope.
+3. After the password hash synchronization agent has the encrypted envelope, it uses [MD5CryptoServiceProvider](/dotnet/api/system.security.cryptography.md5cryptoserviceprovider) and the salt to generate a key to decrypt the received data back to its original MD4 format. The password hash synchronization agent never has access to the clear text password. The password hash synchronization agent uses MD5 solely for compatibility with the domain controller’s replication protocol. This usage is limited to on-premises communication between the domain controller and the agent.
 4. The password hash synchronization agent expands the 16-byte binary password hash to 64 bytes by first converting the hash to a 32-byte hexadecimal string, then converting this string back into binary with UTF-16 encoding.
 5. The password hash synchronization agent adds a per user salt, consisting of a 10-byte length salt, to the 64-byte binary to further protect the original hash.
 6. The password hash synchronization agent then combines the MD4 hash plus the per user salt, and inputs it into the [PBKDF2](https://www.ietf.org/rfc/rfc2898.txt) function. 1,000 iterations of the [HMAC-SHA256](/dotnet/api/system.security.cryptography.hmacsha256) keyed hashing algorithm are used. For more details, refer to the [Microsoft Entra Whitepaper](https://aka.ms/aaddatawhitepaper).
@@ -180,7 +180,7 @@ Update-MgDirectoryOnPremiseSynchronization `
 > If a user was created in Active Directory with "User must change password at next logon" before the feature was enabled, the user will receive an error while signing in. To remediate this issue, un-check and re-check the field "User must change password at next logon" in Active Directory Users and Computers. After synchronizing the user object changes, the user will receive the expected prompt in Microsoft Entra ID to update their password. 
 
 > [!CAUTION]
-> You should only use this feature when SSPR and Password Writeback are enabled on the tenant. This is so that if a user changes their password via SSPR, it will be synchronized to Active Directory.
+> You should only use this feature when Self-Service Password Reset and Password Writeback are enabled on the tenant. This is so that if a user changes their password via SSPR, it will be synchronized to Active Directory.
 
 #### Account expiration
 
@@ -200,7 +200,7 @@ With password hash synchronization enabled, this AD password hash is synced with
 > Previously, when SCRIL was re-enabled and a new randomized AD password was generated, the user was still able to use their old password to authenticate to Microsoft Entra ID. Now, Connect Sync has been updated so that new randomized AD password is synced to Microsoft Entra ID and the old password cannot be used once smart card login is enabled. 
 >
 > We recommend that admins person any of the below actions if they have users with a SCRIL bit in their AD Domain
-> 1.	Perform a full PHS sync as per [this guide](tshoot-connect-password-hash-synchronization.md) to ensure the passwords of all SCRIL users are scrambled
+> 1.	Perform a full password hash sync as per [this guide](tshoot-connect-password-hash-synchronization.md) to ensure the passwords of all SCRIL users are scrambled
 > 2.	Scramble the password of an individual user by toggling SCRIL settings off then back on or directly changing the user's password
 > 3.	Periodically rotate the passwords for SCRIL users. Eventually all such users will have their passwords scrambled
 
