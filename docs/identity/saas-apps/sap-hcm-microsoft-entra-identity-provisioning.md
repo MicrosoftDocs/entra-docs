@@ -241,10 +241,10 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
 5.	**Configure RFC call in Logic Apps**
 
     a. Specify the SAP system details, including the RFC name you created in SAP ECC.<br>
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/screenshot-sap-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of Call get user changes RFC function in SAP":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/screenshot-sap-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of Call get user changes RFC function in SAP":::
     b. Input any required parameters for the RFC (for example, in the previous screenshot, the parameter BEGDA points to a watermark date stored in Azure Blob Storage corresponding to the previous run, while ENDDA is the start date of the current logic app run.).<br>
 6.	Parse the JSON Response from the RFC Call and use it to create the SCIM bulk request payload. 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/screenshot-outputs-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of the output for Call get user changes RFC function in SAP":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/screenshot-outputs-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of the output for Call get user changes RFC function in SAP":::
 
 - References: 
     - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
