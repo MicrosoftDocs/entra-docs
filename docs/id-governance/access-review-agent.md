@@ -132,10 +132,7 @@ The agent considers the following about a user when making review recommendation
 
 Once the agent is enabled, you can adjust a few settings. You can access the settings by doing the following in the Microsoft Entra admin center:
 
-
 - From **Agents** > **Access Review Agent** > **Settings**.
-
-
 
 ### Trigger
 
