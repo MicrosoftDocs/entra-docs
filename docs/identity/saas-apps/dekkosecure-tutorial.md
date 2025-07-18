@@ -1,5 +1,5 @@
 ---
-title: "Configure DekkoSecure SAML SSO with Microsoft Entra ID"
+title: "Integrate DekkoSecure with Microsoft Entra ID for SAML-based SSO"
 description: "Step-by-step tutorial to integrate DekkoSecure with Microsoft Entra ID using SAML-based single sign-on."
 author: mmehmetekin
 ms.author: daveba
@@ -7,7 +7,7 @@ ms.topic: tutorial
 ms.date: 07/17/2025
 ---
 
-# Microsoft Entra ID Integration
+# Integrate DekkoSecure with Microsoft Entra ID for SAML-based SSO
 
 Published: Yes
 Suggested: No
