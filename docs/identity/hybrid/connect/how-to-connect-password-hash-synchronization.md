@@ -122,7 +122,7 @@ Update-MgDirectoryOnPremiseSynchronization `
 
 ```
 
-Once *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is enabled, Microsoft Entra doesn't clear `DisablePasswordExpiration` from PasswordPolicies attribute for each synchronized user. The `DisablePasswordExpiration` value is only removed during the next password hash sync for each user, upon their next password change in on-premises AD. Additionally, new users that are synchronized to the cloud will not have PasswordPolicies set.
+Once *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is enabled, Microsoft Entra ID doesn't clear `DisablePasswordExpiration` from PasswordPolicies attribute for each synchronized user. The `DisablePasswordExpiration` value is only removed during the next password hash sync for each user, upon their next password change in on-premises AD. Additionally, new users that are synchronized to the cloud will not have PasswordPolicies set.
 
 >[!TIP]
 >It's recommended to enable *CloudPasswordPolicyForPasswordSyncedUsersEnabled* prior to enabling password hash sync, so that the initial sync of password hashes doesn't add the `DisablePasswordExpiration` value to the PasswordPolicies attribute for the users.
