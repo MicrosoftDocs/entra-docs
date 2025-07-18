@@ -82,7 +82,7 @@ This detection is discovered using information provided by [Microsoft Defender
 
 ### Additional risk detected (sign-in) 
 
-This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled **Additional risk detected** for customers without Microsoft Entra ID P2 licenses. 
+This detection indicates that one of the premium detections was triggered. Since premium detections are only visible to Microsoft Entra ID P2 customers, they are labeled as **Additional risk detected** for users without Microsoft Entra ID P2 licenses. 
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
