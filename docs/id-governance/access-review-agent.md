@@ -153,13 +153,9 @@ Use the checkboxes under **Reviewers** to specify which reviewers can use the ag
 
     
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+## Remove agent
+
+If you no longer wish to use the Access Review agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any reviews approved or revoked based on the agent suggestions remain intact. Previously applied suggestions remain unchanged for the access reviews completed.
 
 <!-- 5. Next step/Related content------------------------------------------------------------------------
 
