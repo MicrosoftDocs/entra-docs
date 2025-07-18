@@ -63,7 +63,7 @@ The Access Review agent evaluates current access reviews based on policies aroun
 
 - You must have at least the [Microsoft Entra ID Governance](licensing-fundamentals.md) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-   - On average each agent decision, which includes reasoning and your conversation with the agent, consumes less than one SCU.
+   - On average each agent decision, which includes reasoning and your conversation with the Access Review Agent, consumes less than one SCU.
 - To activate the agent the first time, you need the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
 - You can assign [Identity Governance Administrators](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) with Security Copilot access, which gives your Identity Governance Administrators the ability to use the agent as well.
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
