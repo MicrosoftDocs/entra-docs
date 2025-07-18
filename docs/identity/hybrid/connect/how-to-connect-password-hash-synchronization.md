@@ -147,7 +147,7 @@ If the policy in your on-premises Active Directory is different, you can update 
 Update-MgDomain -DomainId "<domain name>" -PasswordValidityPeriodInDays <Int32> [-PasswordNotificationWindowInDays <Int32>]
 ```
 
-**Caveat:** If there are synchronized accounts that need to have non-expiring passwords in Microsoft Entra, for example a service account that is not used for interactive sign-in, you must explicitly add the `DisablePasswordExpiration` value to the PasswordPolicies attribute of the user in Microsoft Entra. You can add this value by running the following command:
+**Caveat:** If there are synchronized accounts that need to have non-expiring passwords in Microsoft Entra ID, for example a service account not used for interactive sign-in, you must explicitly add the `DisablePasswordExpiration` value to the PasswordPolicies attribute of the user in Microsoft Entra ID. You can add this value by running the following command:
 
 ```powershell
 Update-MgUser -UserID "<UPN or Object ID>" -PasswordPolicies "DisablePasswordExpiration"
