@@ -225,7 +225,7 @@ To troubleshoot issues where no passwords are synchronized for a user:
 
 3. Run `Import-Module ADSyncDiagnostics`.
 
-4. Get the user's DistinguishedName (DN) and run the following cmdlet:
+4. Get the user's `DistinguishedName` (DN) and run the following cmdlet:
 
    ```
    Invoke-ADSyncDiagnostics -PasswordSync -ADConnectorName <Name-of-AD-Connector> -DistinguishedName <DistinguishedName-of-AD-object>
