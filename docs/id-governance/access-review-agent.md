@@ -1,6 +1,6 @@
 ---
 title: Access Review Agent with Microsoft Security Copilot
-description: Learn how the Access Review Agent with Microsoft Security Copilot can help secure your organization through recommendations based on your data.
+description: Learn how the Access Review Agent, with Microsoft Security Copilot, can help secure your organization through recommendations based on your data.
 author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
@@ -53,21 +53,11 @@ Example: In this article, you will migrate your user databases from IBM Db2 to S
 
 -->
 
-TODO: Add your introductory paragraph
 
-<!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
+The Access Review Agent helps you ensure that access to resources provided to users are up to date, and based on specific data from your organization. The agent recommends access review decisions based not only on [existing best practices](review-recommendations-access-reviews.md) for reviews, but also based on other criteria developed with the agent.
 
--->
 
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Required: Make Prerequisites the first H2 after the H1. 
-
-* Provide a bulleted list of items that the user needs.
-* Omit any preliminary text to the list.
-* If there aren't any prerequisites, list "None" in plain text, not as a bulleted item.
-
--->
+The Access Review agent evaluates current access reviews based on policies around previous access review decisions, user activity, governance behavior, and account status. When the agent identifies a suggestion, you can have the agent complete the review based on you accepting, or rejecting, the recommendation.
 
 ## Prerequisites
 
@@ -86,12 +76,12 @@ Required: Make Prerequisites the first H2 after the H1.
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - Recommendations are only available for single stage reviews.
-- Reviews must be for ‘*Teams + Groups*’ or ‘*Applications*’. Reviews for Access Packages, Microsoft Entra Roles, and Azure Resources are not currently supported.
 - The agent currently runs as the user who enables it.
 - The reviewer must be a [internal user (of userType member or guest)](../external-id/user-properties.md) within the tenant in which the review is scheduled. External guests or external members as reviewers are not currently supported.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
+
 
 ## How it works
 
@@ -110,16 +100,58 @@ If the agent identifies something that wasn't previously suggested, it takes the
 1. The agent identifies that a user is no longer active and recommends revoking access.
 1. The agent identifies that a user is still active and using resources, the access review agent recommends approving access.
 
+The agent considers the following about a user when making review recommendations:
+
+- **Enabled Status**: Whether or not the user being reviewed is an enabled account.
+- **Creation date**: When the account of the user being reviewed was created.
+- **Specific Previous decisions**: When the review in question is a recurring review.
+- **The account state**: Whether or not the user being reviewed state is enabled.
+- **Microsoft Entra ID Governance History**: Whether or not the user has recently had other actions performed on it, such as having a workflow from Lifecycle Workflows ran for them.
+- **Related access package assignment request approval decisions**: When making access package recommendations, related access package assignment request decisions are taken into account of the agent recommendation.
+
 
 
 
 ## Getting started
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. From the new home page, select **Go to agents** from the agent notification card.
+   - You can also select **Agents** from the left navigation menu.
+   :::image type="content" source="media/access-review-agent/start-access-review-agent.png" alt-text="Screenshot of starting the Access Review Agent.":::
+1. Select **View details** on the Access Review Agent tile.
+    
+1. Select **Start agent** to begin your first run. 
+   - Avoid using an account with a role activated through PIM.
+   - A message that says "The agent is starting its first run" appears in the upper-right corner.
+   - The first run might take a few minutes to complete.
+1. 
+
+
+## Settings
+
+Once the agent is enabled, you can adjust a few settings. You can access the settings by doing the following in the Microsoft Entra admin center:
+
+
+- From **Agents** > **Access Review Agent** > **Settings**.
+
+
+
+### Trigger
+
+The agent is configured to run every 6 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
+
+    :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
+
+### Reviewers
+
+Use the checkboxes under **Reviewers** to specify which reviewers can use the agent for access reviews.
+
+    :::image type="content" source="media/access-review-agent/access-review-agent-reviewers.png" alt-text="Screenshot of setting reviewers for the Access Review Agent.":::
+
+
+
+    
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
