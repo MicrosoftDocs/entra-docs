@@ -168,7 +168,7 @@ This diagram illustrates the high-level data flow and configuration steps for SA
  
 :::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-prereqs-deployment-components-sap-azure-logic-apps-built-in-connector.png" alt-text="Diagram of high-level data flow of deployment components for SAP BAPI-based inbound provisioning.":::
 
-- **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap.md#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The RPY* and SWO* function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
+- **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The RPY* and SWO* function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
  
     - `RFC_READ_DATA`
     - `RFC_READ_TABLE`
@@ -206,23 +206,32 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
 
     a. Use ABAP code to fetch the required attributes and apply the filter for changes within the last hour.<br>
     b. Example ABAP snippet: 
-```abap
-    FORM read_database USING p_begda p_endda.
-          IF lv_pernr IS INITIAL.
-                " Employee list
-                SELECT pernr endda begda FROM pa0000
-                      INTO TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
 
-                " Org assignment details
-                     SELECT pernr endda begda FROM pa0001
-                          APPENDING TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
+```plaintext 
+FORM read_database USING p_begda p_endda. 
 
-                     " Personal Details
-                     SELECT pernr endda begda FROM pa0002
-                          APPENDING TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
-                ENDIF.
+    IF lv_pernr IS INITIAL. 
+
+*& -- > Employee list 
+
+        SELECT pernr endda begda FROM pa0000 
+
+            INTO TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
+
+*& -- > Org assignment details 
+
+        SELECT pernr endda begda FROM pa0001 
+
+            APPENDING TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
+
+*& -- > Personal Details 
+
+        SELECT pernr endda begda FROM pa0002 
+
+            APPENDING TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
+
+    ENDIF. 
 ```
-    
     c. Ensure the function module returns the data in a structured format (Example, internal table `1t_pernr`).<br>
 3.	**Enable RFC Access**
 
