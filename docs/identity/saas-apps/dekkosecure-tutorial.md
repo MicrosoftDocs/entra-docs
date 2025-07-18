@@ -7,18 +7,18 @@ ms.topic: tutorial
 ms.date: 07/17/2025
 ---
 
-# Entra ID / Azure Active Directory Integration
+# Microsoft Entra ID Integration
 
 Published: Yes
 Suggested: No
 
 
-💡 **Tip:** See also: [FAQ for SSO/Azure AD/Entra ID](https://help.dekkosecure.com/onboarding/neLDFwWz7SpDeVu65uBTbc/faq-for-ssoazure-ad/wcS7SYb411QFDkoSpz6ma7)
+💡 **Tip:** See also: [FAQ for Microsoft Entra ID](https://help.dekkosecure.com/onboarding/neLDFwWz7SpDeVu65uBTbc/faq-for-ssoazure-ad/wcS7SYb411QFDkoSpz6ma7)
 
 
 ## Introduction
 
-DekkoSecure natively supports Azure Active Directory/Entra ID integration for SSO. Custom integrations with alternative SSO services such as Okta are supported on a per-engagement basis. Please contact us for more information.
+DekkoSecure natively supports Microsoft Entra ID integration for SSO. Custom integrations with alternative SSO services are supported on a per-engagement basis. Please contact us for more information.
 
 Critically, SSO integration is for authentication only. Access to content such as files and organisational governance is managed by the DekkoSecure application (via [sharing permission](https://help.dekkosecure.com/collaboration-requests-and-signing/2MPjiL8hQXtHCrCbLcZigq) and [Tenancy controls](https://help.dekkosecure.com/organisation-management/rbXt8jt5HAgHbNz8FYp1a9/tenancy-and-hub-roles/vdAyeUtuTXABuKcBB9P5kB)).
 
@@ -31,7 +31,7 @@ Deleting an SSO user will delete their files, avoiding malicious account takeove
 
 ## Integration steps
 
-DekkoSecure is added to your Entra ID as an enterprise/third party application. Integration is done via a permissions request link which we will prepare and send to your administrative team following the receipt of your AAD tenant ID.
+DekkoSecure is added to your Microsoft Entra ID as an enterprise/third party application. Integration is done via a permissions request link which we will prepare and send to your administrative team following the receipt of your Microsoft Entra ID tenant ID.
 
 A formalised testing procedure covering auto-provisioning, account migration and account recreation for deleted accounts will follow.
 
@@ -60,7 +60,7 @@ New users that receive invites where their domain is nominated for SSO registrat
 
 There are multiple options for granting personnel access to register and log in to DekkoSecure with elevated authentication controls, as described in the Microsoft documentation resource [here](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups).
 
-Access to a resource (DekkoSecure) can be assigned on an individual basis, to all users in an AD, or users in a group. **DekkoSecure recommends the group option**, as this provides the most precise control. Steps for creating a group are [here](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
+Access to a resource (DekkoSecure) can be assigned on an individual basis, to all users in Entra ID, or users in a group. **DekkoSecure recommends the group option**, as this provides the most precise control. Steps for creating a group are [here](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
 
 If your organisation has already established user groups and wants to grant DekkoSecure access to a subset of those users, groups can be created within groups by following [these steps](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal). Finally, to grant DekkoSecure application access to the group, follow [these steps](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-saasapps).
 
