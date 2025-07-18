@@ -287,7 +287,7 @@ If you used custom installation, assign the permissions manually by following th
     * Replicate Directory Changes
     * Replicate Directory Changes All
 
-1. Are the domain controllers reachable by Microsoft Entra Connect? If the Connect server cannot connect to all domain controllers, configure **Only use preferred domain controller**.  
+1. Are the domain controllers reachable by Microsoft Entra Connect? If the Connect server can't connect to all domain controllers, configure **Only use preferred domain controller**.  
 
     ![Domain controller used by Active Directory connector](./media/tshoot-connect-password-hash-synchronization/preferreddc.png)  
    
