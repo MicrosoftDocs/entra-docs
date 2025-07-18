@@ -155,7 +155,7 @@ Update-MgUser -UserID "<UPN or Object ID>" -PasswordPolicies "DisablePasswordExp
 
 > [!CAUTION]
 > When you use Microsoft Entra Domain Services, a full password hash synchronization triggered by Microsoft Entra Connect enforces a password hash update in Microsoft Entra directory. This ensures that all password hashes are replicated end-to-end: from the on-premises Active Directory, through Microsoft Entra ID, and into the domain controllers hosted in Microsoft Entra Domain Services.
-> Consequently, when CloudPasswordPolicyForPasswordSyncedUsersEnabled feature is enabled and a full password hash synchronization triggered, Microsoft Entra clears the PasswordPolicies attribute for all synchronized users since this is the default behavior when the password hash is updated in the cloud. In such cases you'll have to manually set the `DisablePasswordExpiration` password policy again for any accounts that need to have non-expiring passwords in Microsoft Entra.
+> Consequently, when CloudPasswordPolicyForPasswordSyncedUsersEnabled feature is enabled and a full password hash synchronization triggered, Microsoft Entra clears the PasswordPolicies attribute for all synchronized users since this is the default behavior when the password hash is updated in the cloud. In such cases you have to manually set the `DisablePasswordExpiration` password policy again for any accounts that need to have non-expiring passwords in Microsoft Entra ID.
 
 #### Synchronizing temporary passwords and "Force Password Change on Next Logon"
 
