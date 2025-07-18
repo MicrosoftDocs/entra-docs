@@ -115,7 +115,7 @@ The agent considers the following about a user when making review recommendation
 ## Getting started
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. From the new home page, select **Go to agents** from the agent notification card.
    - You can also select **Agents** from the left navigation menu.
    :::image type="content" source="media/access-review-agent/start-access-review-agent.png" alt-text="Screenshot of starting the Access Review Agent.":::
