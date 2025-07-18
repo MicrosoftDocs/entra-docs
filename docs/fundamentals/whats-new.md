@@ -24,6 +24,16 @@ This article provides information about the latest releases and change announcem
 
 ##  July 2025
 
+### General Availability – Security Copilot in Microsoft Entra 
+
+**Type:** New feature  
+**Service category:** Copilot   
+**Product capability:** Identity Security & Protection 
+
+You can now interact with Copilot in Microsoft Entra to investigate threats, manage the identity lifecycle of employees and guests, and take action quickly across users, apps, and access. All of this works through natural language, without writing custom queries or scripts. For more information, see: [Copilot in Microsoft Entra](copilot-security-entra.md).
+
+---
+
 ### General Availability - Conditional Access Optimization Agent in Microsoft Entra
 
 **Type:** New feature  
@@ -50,7 +60,7 @@ Customers can now configure a Lifecycle workflows task to automatically revoke a
 **Service category:** Authentications (Logins)  
 **Product capability:** User Authentication  
 
-QR code authentication in Microsoft Entra ID is now generally available, offering frontline workers a quick and secure way to sign in using a QR code and personal PIN. This authentication method can be provisioned through Microsoft Entra ID, My Staff, or Microsoft Graph APIs. Users can sign in on a mobile device (Android, iOS, iPadOS) by visiting https://login.microsoftonline.com, selecting Sign-in options > Sign in to an organization > Sign in with QR code, a web-based sign-in option available for all apps. Additionally, some applications, including Microsoft Teams, MHS, Bluefletch, and Jamf, support a dedicated “Sign in with a QR code” button on their login page for a seamless experience.  For more Information, see:
+QR code authentication in Microsoft Entra ID is now generally available, offering frontline workers a quick and secure way to sign in using a QR code and personal PIN. This authentication method can be provisioned through Microsoft Entra ID, My Staff, or Microsoft Graph APIs. Users can sign in on a mobile device (Android, iOS, iPadOS) by visiting https://login.microsoftonline.com, selecting Sign-in options > Sign in to an organization > Sign in with QR code, a web-based sign-in option available for all apps. Additionally, some applications, including Microsoft Teams, MHS, Bluefletch, and Jamf, support a dedicated “Sign in with a QR code” button on their login page for a seamless experience.  For more information, see:
 
 - [Authentication methods in Microsoft Entra ID - QR code authentication method](../identity/authentication/concept-authentication-qr-code.md)
 - [How to enable the QR code authentication method in Microsoft Entra ID](../identity/authentication/how-to-authentication-qr-code.md)
@@ -87,7 +97,7 @@ The Conditional access What If API can be used to programmatically test the impa
 **Service category:** Group Management  
 **Product capability:** Microsoft Entra Connect  
 
-Ability to shift the source of authority of selected groups from AD to Entra ID.
+Ability to shift the source of authority of selected groups from AD to Microsoft Entra ID.
 
 ---
 
