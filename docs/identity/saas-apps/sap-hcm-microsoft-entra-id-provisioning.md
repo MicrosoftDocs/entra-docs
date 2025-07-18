@@ -207,31 +207,28 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
     a. Use ABAP code to fetch the required attributes and apply the filter for changes within the last hour.<br>
     b. Example ABAP snippet: 
 
-```plaintext 
-FORM read_database USING p_begda p_endda. 
+    ```abap
+    FORM read_database USING p_begda p_endda. 
 
-    IF lv_pernr IS INITIAL. 
+        IF lv_pernr IS INITIAL. 
 
-*& -- > Employee list 
+    *-- > Employee list 
+            SELECT pernr endda begda FROM pa0000 
+                INTO TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
 
-        SELECT pernr endda begda FROM pa0000 
+    *-- > Org assignment details 
+            SELECT pernr endda begda FROM pa0001 
+                APPENDING TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
 
-            INTO TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
+    *-- > Personal Details 
+            SELECT pernr endda begda FROM pa0002 
+                APPENDING TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
 
-*& -- > Org assignment details 
+        ENDIF.
 
-        SELECT pernr endda begda FROM pa0001 
+    ENDFORM.
+    ```
 
-            APPENDING TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
-
-*& -- > Personal Details 
-
-        SELECT pernr endda begda FROM pa0002 
-
-            APPENDING TABLE 1t_pernr WHERE aedtm BETWEEN p_begda AND p_endda. 
-
-    ENDIF. 
-```
     c. Ensure the function module returns the data in a structured format (Example, internal table `1t_pernr`).<br>
 3.	**Enable RFC Access**
 
