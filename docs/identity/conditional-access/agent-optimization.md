@@ -49,11 +49,11 @@ Each time the agent runs, it takes the following steps. **The initial scanning s
 1. The agent checks for policy gaps and if any policies can be combined.
 1. The agent reviews previous suggestions so it won't suggest the same policy again.
 
-If the agent identifies something that wasn't previously suggested, it takes the following steps. **These action steps consume SCUs.**
+If the agent identifies something that wasn't previously suggested, it takes the following steps. **The agent action steps consume SCUs.**
 
-1. The agent identifies a policy gap or a pair of policies that can be consolidated.
-1. The agent evaluates any custom instructions you provided.
-1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
+4. The agent identifies a policy gap or a pair of policies that can be consolidated.
+5. The agent evaluates any custom instructions you provided.
+6. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
 
 > [!TIP]
 > Two policies can be consolidated if they differ by no more than two conditions or controls.
@@ -115,13 +115,15 @@ Use the checkboxes under **Objects** to specify what the agent should monitor wh
 
 ### Identity and permissions
 
-The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*. Avoid using an account that requires elevation like those that use PIM for just-in-time elevation. If that user hasn't elevated to the appropriate role when the agent runs, the run will fail. The Security Administrator and Global Administrator roles have access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+There are several key points to consider regarding the identity and permissions of the agent:
 
-The user who approves a suggestion to add users to a policy becomes an owner of the group for adding users to a policy. For this reason we recommend limiting access to approve suggestions to only those who should be able to manage the group.
+- The agent runs under the identity and permissions of the *user who enabled the agent in your tenant*.
+- Avoid using an account that requires elevation through PIM for just-in-time elevation. If that user hasn't elevated to the appropriate role when the agent runs, the run fails.
+- The Security Administrator and Global Administrator roles have access to Security Copilot by default. You can assign Conditional Access Administrators with Security Copilot access. This authorization gives your Conditional Access Administrators the ability to use the agent as well. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+- The user who approves a suggestion to add users to a policy becomes an owner of a new group that adds the users to a policy. 
+- The audit logs for actions taken by the agent are associated with the user who enabled the agent. You can find the name of the account that started the agent in the **Identity and permissions** section of the settings.
 
-The audit logs for actions taken by the agent are associated with the user who enabled the agent. You can find the name of the account that started the agent in this section of the settings.
-
-:::image type="content" source="media/agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/identity-permissions.png":::
+    :::image type="content" source="media/agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/identity-permissions.png":::
 
 ### Custom instructions
 
@@ -166,7 +168,7 @@ Both features provide different insights into your Conditional Access policies. 
 
 ### I activated the agent but see "Fail" in the activity status. What's happening?
 
-It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. You are prompted to reauthenticate if PIM permission expired.
+It's possible that the agent was enabled with an account that requires role activation with Privileged Identity Management (PIM). So when the agent attempted to run, it failed because the account didn't have the required permissions at that time. You're prompted to reauthenticate if PIM permission expired.
           
 You can resolve this issue by removing the agent, then enabling the agent again with a user account that has standing permissions for Security Copilot access. For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 
