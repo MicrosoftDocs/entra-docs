@@ -1,11 +1,11 @@
 ---
-title: Learn about the Global Secure Access dashboard
+title: Learn about the Global Secure Access Dashboard
 description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
 author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/16/2025
+ms.date: 07/18/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 ---
@@ -59,7 +59,7 @@ The **Global Secure Access snapshot** defaults to showing all types of traffic, 
 
 ## Alerts and notifications (preview)
 
-This widget shows what is happening in the network and helps identify suspicious activities or trends identified by the network data.
+This widget shows network activity and helps you spot suspicious activities or trends in the network data.
 
 This widget provides the following alerts:
 
@@ -68,7 +68,7 @@ This widget provides the following alerts:
 - **Token and device inconsistency**: The original token is used on a different device.
 - **Web content blocked**: Access to the website has been blocked.
 
-![Screenshot of the alerts and notifications widget.](media/concept-traffic-dashboard/dashboard-alerts-notifications.png)
+![Screenshot of the alerts and notifications widget showing two alert types.](media/concept-traffic-dashboard/dashboard-alerts-notifications.png)
 
 Select the link next to the alert name to navigate to a related page with additional information.
 
@@ -84,7 +84,7 @@ Select the **Display by** filter to view the following usage categories:
 - Bytes sent
 - Bytes received
 
-The time period defaults to the previous month, but you can change the period of time to the last 24 hours or last week.
+The time period defaults to the previous month, but you can change the time period to the last 24 hours or last week.
 
 ![Screenshot of the usage profiling widget.](media/concept-traffic-dashboard/dashboard-usage-profiling.png)
 
@@ -145,8 +145,8 @@ The **Device status** widgets display the active and inactive devices that you h
 
 ## Top used cloud applications
 
-The **Top used cloud applications** widget displays the most used cloud applications. By default, the widget shows all cloud applications, but you can filter to show only the top used **Generative AI** applications.
-:::image type="content" source="media/concept-traffic-dashboard/top-used-cloud-applications.png" alt-text="Screenshot of the Top used cloud applications widget showing all cloud applications, sorted by the number of transactions.":::   
+The **Top used cloud applications** widget shows the most used cloud applications. By default, the widget shows **All** cloud applications, but you can filter to show only the top used **Generative AI** applications.
+:::image type="content" source="media/concept-traffic-dashboard/top-used-cloud-applications.png" alt-text="Screenshot of the Top used cloud applications widget. The All tab and the Generative AI tab are both sorted by the number of transactions.":::   
 
 ## Cloud applications status
 
