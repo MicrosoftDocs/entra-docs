@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 # Customer intent: As an IT administrator, I want to learn how to provision current users from SAP Human Capital Management (HCM) to Microsoft Entra ID so that I can streamline identity management and enhance security.
 ---
 
-# Provision users from SAP Human Capital Management (HCM) to Microsoft Entra ID
+# Provision users from SAP human capital management (HCM) to Microsoft Entra ID
 
 This article guides system integration partners planning to provision users from SAP HCM to Microsoft Entra ID. If SAP HCM is integrated with SAP Identity Management (SAP IDM) and you’re planning a migration to Microsoft Entra ID Governance, this document also discusses the important architectural considerations and how Azure Logic Apps are used. 
 
@@ -241,10 +241,10 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
 5.	**Configure RFC call in Logic Apps**
 
     a. Specify the SAP system details, including the RFC name you created in SAP ECC.<br>
-:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/screenshot-sap-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of Call get user changes RFC function in SAP":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/screenshot-sap-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of Call get user changes RFC function in SAP.":::
     b. Input any required parameters for the RFC (for example, in the previous screenshot, the parameter BEGDA points to a watermark date stored in Azure Blob Storage corresponding to the previous run, while ENDDA is the start date of the current logic app run.).<br>
 6.	Parse the JSON Response from the RFC Call and use it to create the SCIM bulk request payload. 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/screenshot-outputs-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of the output for Call get user changes RFC function in SAP":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/screenshot-outputs-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of the output for Call get user changes RFC function in SAP.":::
 
 - References: 
     - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
