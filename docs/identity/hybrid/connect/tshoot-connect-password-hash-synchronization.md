@@ -245,7 +245,7 @@ Follow these steps to determine why no passwords are synchronized:
 
 1. Is the Connect server in [staging mode](how-to-connect-sync-staging-server.md)? A server in staging mode does not synchronize any passwords.
 
-1. Run the script in the [Get the status of password sync settings](#get-the-status-of-password-sync-settings) section. It gives you an overview of the password sync configuration.  
+2. Run the script in the [Get the status of password sync settings](#get-the-status-of-password-sync-settings) section. It gives you an overview of the password sync configuration.  
 
     ![PowerShell script output from password sync settings](./media/tshoot-connect-password-hash-synchronization/psverifyconfig.png)  
    
@@ -278,7 +278,7 @@ If you used custom installation, assign the permissions manually by following th
  
 3. Select the connector, and then select **Properties**. 
  
-1. Go to **Connect to Active Directory Forest**.  
+4. Go to **Connect to Active Directory Forest**.  
 
     ![Account used by Active Directory connector](./media/tshoot-connect-password-hash-synchronization/connectoraccount.png)  
        Note the username and the domain where the account is located.
@@ -287,7 +287,7 @@ If you used custom installation, assign the permissions manually by following th
     * Replicate Directory Changes
     * Replicate Directory Changes All
 
-1. Are the domain controllers reachable by Microsoft Entra Connect? If the Connect server can't connect to all domain controllers, configure **Only use preferred domain controller**.  
+6. Are the domain controllers reachable by Microsoft Entra Connect? If the Connect server can't connect to all domain controllers, configure **Only use preferred domain controller**.  
 
     ![Domain controller used by Active Directory connector](./media/tshoot-connect-password-hash-synchronization/preferreddc.png)  
    
@@ -312,7 +312,7 @@ You can easily troubleshoot password hash synchronization issues by reviewing th
    
   If the check box is selected, ask the user to sign in and change the password. Temporary passwords aren't synchronized with Microsoft Entra ID.
 
-1. If the password looks correct in Active Directory, follow the user in the sync engine. By following the user from on-premises Active Directory to Microsoft Entra ID, you can see whether there's a descriptive error on the object.
+2. If the password looks correct in Active Directory, follow the user in the sync engine. By following the user from on-premises Active Directory to Microsoft Entra ID, you can see whether there's a descriptive error on the object.
 
     a. Start the [Synchronization Service Manager](how-to-connect-sync-service-manager-ui.md).
 
