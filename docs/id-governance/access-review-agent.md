@@ -148,8 +148,6 @@ Use the checkboxes under **Reviewers** to specify which reviewers can use the ag
 
 
 
-    
-
 ## Remove agent
 
 If you no longer wish to use the Access Review agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any reviews approved or revoked based on the agent suggestions remain intact. Previously applied suggestions remain unchanged for the access reviews completed.
@@ -162,22 +160,12 @@ Optional: You have two options for manually curated links in this pattern: Next 
 
 -->
 
-## Next step
+### Providing feedback
 
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
+Use the **Give Microsoft feedback** button at the top of the agent window to provide feedback to Microsoft about the agent.
 
 ## Related content
 
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
-
+- [Access Review Agent logs and metrics (Preview)](agent-optimization-review-suggestions.md)
+- [Review recommendations for Access reviews](review-recommendations-access-reviews.md)
+- [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)
