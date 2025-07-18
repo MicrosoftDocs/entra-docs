@@ -3773,7 +3773,7 @@
       - name: SAP HANA
         href: sap-hana-provisioning-tutorial.md
       - name: SAP HCM to Microsoft Entra ID
-        href: sap-hcm-microsoft-entra-id-provisioning.md
+        href: sap-hcm-microsoft-entra-identity-provisioning.md
       - name: SAP S/4HANA
         href: sap-s4hana-provisioning-tutorial.md
       - name: SAP SuccessFactors Learning

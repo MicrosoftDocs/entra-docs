@@ -100,7 +100,7 @@ Currently, Microsoft Entra’s inbound provisioning flow doesn't include a nativ
 This section describes options that SAP HCM customers can consider for implementing inbound provisioning from SAP HCM to Microsoft Entra / on-premises Active Directory. 
 Use the following decision tree to determine which option to use. 
 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-sap-hcm-entra-id-sync.png" alt-text="Diagram of SAP HCM to Entra ID decision tree workflow.":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/diagram-sap-hcm-entra-identity-sync.png" alt-text="Diagram of SAP HCM to Entra ID decision tree workflow.":::
 
 ## Option 1: CSV-file based inbound provisioning
 
@@ -120,7 +120,7 @@ Only customers with this side-by-side deployment configuration are eligible to u
 
 This diagram illustrates the high-level data flow and configuration steps. 
 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-sap-hcm-entra-id-csv-file-dataflow.png" alt-text="Diagram of high-level data flow from SAP HCM to Entra ID.":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/diagram-sap-hcm-entra-identity-csv-file-dataflow.png" alt-text="Diagram of high-level data flow from SAP HCM to Entra ID.":::
  
 - **Step 1**: In SAP HCM, configure periodic export of CSV files with employee data. When running the integration for the very first time, we recommend performing a full export for the initial sync. Once initial sync is complete, you can perform incremental exports that only capture changes. The exported CSV files can be stored on SFTP server or Azure File shares in encrypted format.  
     - References: 
@@ -166,7 +166,7 @@ This diagram illustrates the high-level data flow and configuration steps for SA
 - If you prefer using the Azure Logic Apps SAP managed connector, then consider using Azure Express Route that permits peering of Logic App Standard network with that of on-premises SAP deployment. The on-premises data gateway component isn't recommended as it leads to diminished security. 
 - If the SAP HCM system is already running on Azure, the connection from Logic Apps to your SAP system can be done in the same VNET (without the need for on-premises data gateway).
  
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-prereqs-deployment-components-sap-azure-logic-apps-built-in-connector.png" alt-text="Diagram of high-level data flow of deployment components for SAP BAPI-based inbound provisioning.":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/diagram-prereqs-deployment-components-sap-azure-logic-apps-built-in-connector.png" alt-text="Diagram of high-level data flow of deployment components for SAP BAPI-based inbound provisioning.":::
 
 - **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The RPY* and SWO* function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
  
@@ -271,7 +271,7 @@ This diagram illustrates the high-level data flow and configuration steps.
 **Networking considerations**: 
 - If you prefer using the Azure Logic Apps SAP managed connector, then consider using Azure Express Route that permits peering of the Logic Apps Standard network with on-premises SAP deployment. The on-premises data gateway component isn't recommended as it leads to diminished security. 
 - If the SAP HCM system is already running on Azure, the connection from Azure Logic Apps to the customers SAP system could be done in the same VNET (without the need for on-premises data gateway)
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-deployment-components-sap-azure-logic-apps-connector.png" alt-text="Diagram of high-level data flow of deployment components for the Azure Logic Apps SAP built-in connector.":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/diagram-deployment-components-sap-azure-logic-apps-connector.png" alt-text="Diagram of high-level data flow of deployment components for the Azure Logic Apps SAP built-in connector.":::
  
 - **Step 1**: Configure prerequisites in SAP HCM to use the Azure Logic Apps SAP built-in connector. This step includes setting up an SAP system account with appropriate authorizations to invoke BAPI function modules and IDoc messages. 
 Complete the steps to set up and test sending IDocs from SAP to your logic app workflow. 
@@ -289,7 +289,7 @@ Complete the steps to set up and test sending IDocs from SAP to your logic app w
 
 After a worker record from SAP HCM is provisioned in Entra ID, there's often a business need to write back IT-managed attributes like email and username to SAP HCM. 
 We recommend using Microsoft Entra ID Governance -> Joiner Lifecycle Workflow with a custom Logic Apps extension for this scenario. The flow schematic is as shown in this diagram. 
-:::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-joiner-lifecycle-workflow-azure-logic-apps.png" alt-text="Diagram of Joiner Lifecycle Workflow with Azure Logic Apps and SAP built-in connector.":::
+:::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/diagram-joiner-lifecycle-workflow-azure-logic-apps.png" alt-text="Diagram of Joiner Lifecycle Workflow with Azure Logic Apps and SAP built-in connector.":::
 
 Follow these steps to configure writeback:
 
