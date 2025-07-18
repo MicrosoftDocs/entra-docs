@@ -270,7 +270,7 @@ This diagram illustrates the high-level data flow and configuration steps.
 
 **Networking considerations**: 
 - If you prefer using the Azure Logic Apps SAP managed connector, then consider using Azure Express Route that permits peering of the Logic Apps Standard network with on-premises SAP deployment. The on-premises data gateway component isn't recommended as it leads to diminished security. 
-- If the SAP HCM system is already running on Azure, the connection from Azure Logic Apps to the customers SAP system could be done in the same VNET (without the need for on-premises data gateway)
+- If the SAP HCM system is already running on Azure, the connection from Azure Logic Apps to the customers SAP system could be done in the same VNET (without the need for on-premises data gateway).
 :::image type="content" source="./media/sap-hcm-microsoft-entra-identity-provisioning/diagram-deployment-components-sap-azure-logic-apps-connector.png" alt-text="Diagram of high-level data flow of deployment components for the Azure Logic Apps SAP built-in connector.":::
  
 - **Step 1**: Configure prerequisites in SAP HCM to use the Azure Logic Apps SAP built-in connector. This step includes setting up an SAP system account with appropriate authorizations to invoke BAPI function modules and IDoc messages. 
