@@ -7,6 +7,7 @@ manager: dougeby
 ms.topic: overview
 ms.date: 07/18/2025
 ms.service: global-secure-access
+ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
 #customer intent: As a administrator, I want to understand the Microsoft SASE partner ecosystem so that I can decide how partner solutions integrate with Microsoft.
 ---
