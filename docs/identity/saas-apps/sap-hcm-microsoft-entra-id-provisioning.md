@@ -7,8 +7,9 @@ ms.reviewer: chmutali
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 07/17/2025
+ms.date: 07/18/2025
 ms.author: jfields
+ai-usage: ai-assisted
 
 # Customer intent: As an IT administrator, I want to learn how to provision current users from SAP Human Capital Management (HCM) to Microsoft Entra ID so that I can streamline identity management and enhance security.
 ---
@@ -62,11 +63,11 @@ This section provides a list of important tables in SAP HCM storing employee dat
 
 Example SQL query to fetch active employees’ username, status, first name, and last name:
 
-**SELECT DISTINCT** ```p0.PERNR username, CASE WHEN (p0.STAT2 = 3) THEN 1 END statuskey, p2.NACHN last_name, p2.VORNA first_name```
-
-**FROM** ```SAP_PA0000 p0 left join SAP_PA0002 p2 on p0.PERNR = p2.PERNR```
-
-**WHERE** ```p0.STAT2 = 3 and p0.ENDDA > SYSDATE()```
+```sql
+SELECT DISTINCT p0.PERNR username, CASE WHEN (p0.STAT2 = 3) THEN 1 END statuskey, p2.NACHN last_name, p2.VORNA first_name
+FROM SAP_PA0000 p0 left join SAP_PA0002 p2 on p0.PERNR = p2.PERNR
+WHERE p0.STAT2 = 3 and p0.ENDDA > SYSDATE()
+```
 
 
 ### Scenarios Supported by SAP IDM 
@@ -146,8 +147,7 @@ If you don't have access to the SAP provided add-on integration module or don't 
 ### When to use this approach
 
 Use this approach if you don't have SAP SuccessFactors deployed and the solution architecture calls for a scheduled periodic sync using Azure Logic Apps due to system constraints or deployment requirements. 
-
-This integration uses the [Azure Logic Apps SAP connector](/azure/logic-apps/connectors/sap.md?tabs=consumption). Azure Logic Apps ships two connector types for SAP: 
+This integration uses the [Azure Logic Apps SAP connector](/azure/logic-apps/connectors/sap). Azure Logic Apps ships two connector types for SAP: 
 
 - [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
 - [SAP managed connector](/azure/logic-apps/connectors/sap) that's hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
@@ -168,32 +168,32 @@ This diagram illustrates the high-level data flow and configuration steps for SA
  
 :::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/diagram-prereqs-deployment-components-sap-azure-logic-apps-built-in-connector.png" alt-text="Diagram of high-level data flow of deployment components for SAP BAPI-based inbound provisioning.":::
 
-- **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap.md?tabs=standard#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The RPY* and SWO* function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
+- **Step 1**: Configure [prerequisites](/azure/logic-apps/connectors/sap.md#prerequisites) in SAP HCM to use the SAP built-in connector. This includes setting up an SAP system account with appropriate authorizations to invoke the following BAPI function modules. The RPY* and SWO* function modules enable you to use the dedicated BAPI actions that allow listing the available business objects and discovering which ABAP methods are available to act upon these objects. For better discoverability and more specific metadata for the input-output, we recommend this over direct call of the RFC implementation of the BAPI method.
  
-- `RFC_READ_DATA`
-- `RFC_READ_TABLE`
-- `BAPI_USER_GETLIST`
-- `BAPI_USER_GET_DETAIL`
-- `BAPI_EMPLOYEE_GETDATA`
-- `RFC_METADATA`
-    - `RFC_METADATA_GET`
-    - `RFC_METADATA_GET_TIMESTAMP`
-- `RPY_BOR_TREE_INIT` 
-- `SWO_QUERY_METHODS` 
-- `SWO_QUERY_API_METHODS`
+    - `RFC_READ_DATA`
+    - `RFC_READ_TABLE`
+    - `BAPI_USER_GETLIST`
+    - `BAPI_USER_GET_DETAIL`
+    - `BAPI_EMPLOYEE_GETDATA`
+    - `RFC_METADATA`
+        - `RFC_METADATA_GET`
+        - `RFC_METADATA_GET_TIMESTAMP`
+    - `RPY_BOR_TREE_INIT` 
+    - `SWO_QUERY_METHODS` 
+    - `SWO_QUERY_API_METHODS`
 
 If you have defined custom function modules, then those should be included in the list. 
 
 - **Step 2**: In Microsoft Entra, configure the API-driven provisioning app to receive employee data from SAP HCM.
-- References: 
-    - [API-driven inbound provisioning concepts](../app-provisioning/inbound-provisioning-api-concepts) 
-    - [Configure API-driven inbound provisioning app](../app-provisioning/inbound-provisioning-api-configure-app)
-- **Step 3**: Configure a logic app workflow that invokes the appropriate BAPI function modules preferably via [BAPI call method in SAP](/azure/logic-apps/connectors/built-in/reference/sap/#[bapi]-call-method-in-sap), processes the response, builds a SCIM payload and sends the response to the Microsoft Entra provisioning API endpoint. As a best practice to stay within [API-driven provisioning usage limits](../../id-governance/licensing-fundamentals#api-driven-provisioning), we recommend batching multiple changes into a single SCIM bulk request rather than submitting one SCIM bulk request for each change.
+    - References: 
+        - [API-driven inbound provisioning concepts](../app-provisioning/inbound-provisioning-api-concepts.md) 
+        - [Configure API-driven inbound provisioning app](../app-provisioning/inbound-provisioning-api-configure-app.md)
+- **Step 3**: Configure a logic app workflow that invokes the appropriate BAPI function modules preferably via [BAPI call method in SAP](/azure/logic-apps/connectors/built-in/reference/sap/#[bapi]-call-method-in-sap), processes the response, builds a SCIM payload and sends the response to the Microsoft Entra provisioning API endpoint. As a best practice to stay within [API-driven provisioning usage limits](../../id-governance/licensing-fundamentals.md#api-driven-provisioning), we recommend batching multiple changes into a single SCIM bulk request rather than submitting one SCIM bulk request for each change.
 
-- References: 
-    - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
+    - References: 
+        - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
 - **Step 4**: Query the Entra ID provisioning logs endpoints to check the status of the provisioning operation. Record successful operations and retry failures. 
-- 
+
 ### Define a custom RFC for delta imports 
 
 Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custom RFC returns attributes of users that have changed between a specific start date and end date. 
@@ -206,25 +206,23 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
 
     a. Use ABAP code to fetch the required attributes and apply the filter for changes within the last hour.<br>
     b. Example ABAP snippet: 
-
-        ```
-        FORM read_database USING p_begda p_endda.
-            IF lv_pernr IS INITIAL.
+```abap
+    FORM read_database USING p_begda p_endda.
+          IF lv_pernr IS INITIAL.
                 " Employee list
                 SELECT pernr endda begda FROM pa0000
-                    INTO TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
+                      INTO TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
 
                 " Org assignment details
-                SELECT pernr endda begda FROM pa0001
-                    APPENDING TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
+                     SELECT pernr endda begda FROM pa0001
+                          APPENDING TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
 
-                " Personal Details
-                SELECT pernr endda begda FROM pa0002
-                    APPENDING TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
-            ENDIF.
-
-        ENDFORM.
-        ```
+                     " Personal Details
+                     SELECT pernr endda begda FROM pa0002
+                          APPENDING TABLE lt_pernr WHERE aedtm BETWEEN p_begda AND p_endda.
+                ENDIF.
+```
+    
     c. Ensure the function module returns the data in a structured format (Example, internal table `1t_pernr`).<br>
 3.	**Enable RFC Access**
 
@@ -241,6 +239,7 @@ Use these steps to create a custom RFC in the SAP GUI/ABAP Workbench. This custo
     b. Input any required parameters for the RFC (for example, in the previous screenshot, the parameter BEGDA points to a watermark date stored in Azure Blob Storage corresponding to the previous run, while ENDDA is the start date of the current logic app run.).<br>
 6.	Parse the JSON Response from the RFC Call and use it to create the SCIM bulk request payload. 
 :::image type="content" source="./media/sap-hcm-microsoft-entra-id-provisioning/screenshot-outputs-call-user-changes-rfc-function-sap.png" alt-text="Screenshot of the output for Call get user changes RFC function in SAP":::
+
 - References: 
     - [API-driven inbound provisioning with Azure Logic Apps](../app-provisioning/inbound-provisioning-api-logic-apps.md)
 
@@ -255,7 +254,7 @@ This integration uses the Azure Logic Apps SAP Connector. Azure Logic Apps ships
 - [SAP built-in connector](/azure/logic-apps/connectors/built-in/reference/sap), which is available only for Standard workflows in single-tenant Azure Logic Apps.
 - [SAP managed connector](/azure/logic-apps/connectors/sap), which is hosted and run in multitenant Azure. It’s available with both Standard and Consumption logic app workflows. 
 
-The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented [in this article](/azure/logic-apps/connectors/sap.md#connector-differences). For example, with the SAP built-in connector, on-premises connections don't require the on-premises data gateway, it supports IDoc deduplication and has better support for handling IDoc file formats in the trigger [when a message is received](/azure/logic-apps/connectors/built-in/reference/sap.md#when-a-message-is-received). 
+The SAP "built-in connector" has certain advantages over the “managed connector” for the reasons documented [in this article](/azure/logic-apps/connectors/sap#connector-differences). For example, with the SAP built-in connector, on-premises connections don't require the on-premises data gateway, it supports IDoc deduplication and has better support for handling IDoc file formats in the trigger [when a message is received](/azure/logic-apps/connectors/built-in/reference/sap#when-a-message-is-received). 
 
 
 ### High level data flow and configuration steps
@@ -272,12 +271,12 @@ This diagram illustrates the high-level data flow and configuration steps.
 Complete the steps to set up and test sending IDocs from SAP to your logic app workflow. 
 
 - **Step 2**: In Microsoft Entra, configure API-driven provisioning app to receive employee data from SAP HCM.
-- References: 
-    - API-driven inbound provisioning concepts 
-     - Configure API-driven inbound provisioning app
+    - References: 
+        - [API-driven inbound provisioning concepts](../app-provisioning/inbound-provisioning-api-concepts.md)
+        - [Configure API-driven inbound provisioning app](../app-provisioning/inbound-provisioning-api-configure-app.md)
 - **Step 3**: Build a logic app workflow that is initiated with the trigger when message is received, process the IDocs message, build a SCIM payload and send the response to the Microsoft Entra provisioning API endpoint. As a best practice to stay within API-driven provisioning usage limits, we recommend batching multiple changes into a single SCIM bulk request rather than submitting one SCIM bulk request for each change.
-- References: 
-    - API-driven inbound provisioning with Azure Logic Apps
+    - References: 
+        - API-driven inbound provisioning with Azure Logic Apps
 - **Step 4**: Query the Entra ID provisioning logs endpoints to check the status of the provisioning operation. Record successful operations and retry failures.
 
 ## Configure Writeback to SAP HCM
