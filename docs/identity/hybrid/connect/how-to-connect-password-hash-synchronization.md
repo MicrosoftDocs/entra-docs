@@ -96,7 +96,7 @@ The Cloud Password Policy for Password-Synced Users feature (in the deprecated M
 
 If there are synchronized users that only interact with Microsoft Entra integrated services and must also comply with a password expiration policy, you can force them to comply with your Microsoft Entra password expiration policy by enabling the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature.
 
-When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is the default setting), Microsoft Entra Connect updates the PasswordPolicies attribute of synchronized users to "DisablePasswordExpiration". This update is done every time a user's password hash is synchronized to the cloud and instructs Microsoft Entra to ignore the cloud password expiration policy for that user. 
+When *CloudPasswordPolicyForPasswordSyncedUsersEnabled* is disabled (which is the default setting), Microsoft Entra Connect updates the PasswordPolicies attribute of synchronized users to "DisablePasswordExpiration". This update is done every time a user's password hash is synchronized to the cloud and instructs Microsoft Entra ID to ignore the cloud password expiration policy for that user. 
 
 You can check the value of the PasswordPolicies attribute using the [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module with the following command:
 
