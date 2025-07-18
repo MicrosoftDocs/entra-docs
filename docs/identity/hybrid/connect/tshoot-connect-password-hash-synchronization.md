@@ -102,7 +102,7 @@ If the Microsoft Entra Connect server is in staging mode, password hash synchron
 
 #### No password hash synchronization heartbeat events
 
-Each on-premises Active Directory connector maintains its own password hash synchronization channel. When the channel is active but no password changes are pending, a heartbeat event (Event ID 654) is logged every 30 minutes in the Windows Application Event Log.
+Each on-premises Active Directory connector maintains its own password hash synchronization channel. When the channel is active but no password changes are pending, a heartbeat event (Event ID 654) is logged every 30 minutes in the Windows Application event Log.
 
 To verify channel health, the cmdlet checks for heartbeat events from each connector within the past three hours. If none are found, it returns the following error:
 
