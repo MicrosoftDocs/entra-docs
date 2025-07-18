@@ -141,13 +141,13 @@ Once the agent is enabled, you can adjust a few settings. You can access the set
 
 The agent is configured to run every 6 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
 
-    :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
+   :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
 
 ### Reviewers
 
 Use the checkboxes under **Reviewers** to specify which reviewers can use the agent for access reviews.
 
-    :::image type="content" source="media/access-review-agent/access-review-agent-reviewers.png" alt-text="Screenshot of setting reviewers for the Access Review Agent.":::
+   :::image type="content" source="media/access-review-agent/access-review-agent-reviewers.png" alt-text="Screenshot of setting reviewers for the Access Review Agent.":::
 
 
 
