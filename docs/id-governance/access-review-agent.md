@@ -148,6 +148,20 @@ Use the checkboxes under **Reviewers** to specify which reviewers can use the ag
 
 
 
+## Using the Access Review Agent as a reviewer
+
+With the Access Review Agent started, and reviewers assigned, you are now ready to use the agent to review your access reviews. As a reviewer, you'd do the following:
+
+1. Open your Microsoft Teams application signed in as the user assigned as a reviewer.
+
+1. Select **+ Apps**.
+
+1. On the Apps page, locate the **Access Review Agent**, and select **Open**.
+    :::image type="content" source="media/access-review-agent/access-review-agent-teams.png" alt-text="Screenshot of the Access Review Agent application in Microsoft Teams.":::
+    > [!NOTE]
+    > For reviewers in your organization to use the Access Review Agent, the app must be made [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Work with your Microsoft Teams Administrator to make sure the app is published and available in your org.
+1. When open start the chat with the agent. An example of this is asking the agent "*Help me with my access reviews*".
+
 ## Remove agent
 
 If you no longer wish to use the Access Review agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any reviews approved or revoked based on the agent suggestions remain intact. Previously applied suggestions remain unchanged for the access reviews completed.
