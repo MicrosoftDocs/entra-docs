@@ -46,7 +46,7 @@ The Access Review agent evaluates current access reviews based on policies aroun
 ## How it works
 
 
-The Access Review Agent proactively scans active access reviews, and assists reviewers in making informed decisions about access for users in your environment. The agent, which reviewers communicate with directly via [Microsoft Teams](), uses user context to help inform decisions. When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
+The Access Review Agent proactively scans active access reviews, and assists reviewers in making informed decisions about access for users in your environment. The agent, which reviewers communicate with directly via a [Microsoft Teams](/microsoftteams/teams-overview) chat, uses user context to help inform decisions. When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
 
 Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
 
