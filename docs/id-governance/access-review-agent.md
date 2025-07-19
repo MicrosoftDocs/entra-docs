@@ -142,6 +142,6 @@ Use the **Give Microsoft feedback** button at the top of the agent window to pro
 
 ## Related content
 
-- [Access Review Agent logs and metrics (Preview)](agent-optimization-review-suggestions.md)
+- [Access Review Agent logs and metrics (Preview)](access-review-agent-logs-metrics.md)
 - [Review recommendations for Access reviews](review-recommendations-access-reviews.md)
 - [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)
