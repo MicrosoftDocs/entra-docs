@@ -34,31 +34,24 @@ To ensure transparency and maintain control over automated recommendations, Micr
 - Suggestions from the agent can't be customized or overridden.
 
 
+## Agent Summary
+
+The **Agent summary** at the top of the Access Review Agent page provides a quick summary of what the agent has discovered in the last 30 days. The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent is also provided.
+
+- **Unprotected users discovered**: The number of users who were identified by the agent and protected by a policy suggested by the agent.
+- **Unprotected apps discovered**: The number of applications that were identified by the agent and protected by a policy suggested by the agent.
+- **Sign-ins protected**: The number of sign-ins that were protected by a policy suggested by the agent.
+- **Security compute units consumed**: The total number of SCUs consumed by the agent in the last 30 days. 
+
+The values in the agent summary reflect the activity after suggestions are applied. If you run the agent and don't apply any suggestions, the values in the agent summary won't change.
 
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+## Audit logs 
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+Policies created or modified by the agent are tagged with **Access Review Agent** in the Access Review pane.
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+
+In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent. To quickly see agent activity, filter to **Service: Access Reviews**. 
 
 <!-- 5. Next step/Related content------------------------------------------------------------------------
 
