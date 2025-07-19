@@ -3,7 +3,7 @@ title: Configure Graebel Single Sign On with globalCONNECT for Single sign-on wi
 description: Learn how to configure single sign-on between Microsoft Entra ID and Graebel Single Sign On with globalCONNECT.
 services: active-directory
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

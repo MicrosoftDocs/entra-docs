@@ -3,7 +3,7 @@ title: Configure ExpenseMe Pro (by Inlogik) for Single sign-on with Microsoft En
 description: Learn how to configure single sign-on between Microsoft Entra ID and ExpenseMe Pro (by Inlogik).
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

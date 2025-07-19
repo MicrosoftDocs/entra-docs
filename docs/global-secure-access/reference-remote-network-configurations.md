@@ -3,7 +3,7 @@ title: Global Secure Access remote network configurations
 description: Valid Global Secure Access configurations for custom remote network device links settings, including IKE, ASN, IPSec, and DH group.
 author: kenwith
 ms.author: kenwith
-manager: femila
+manager: dougeby
 ms.topic: reference
 ms.date: 02/21/2025
 ms.service: global-secure-access

@@ -26,7 +26,7 @@ To get started, ensure the following prerequisites are met:
 
 - Complete the Digital Identity onboarding process.
 
-  - To create an account, go to [VU Security](https://www.vusecurity.com/) and select **Contact**.
+- To create an account, go to [VU Security](https://www.vusecurity.com/) and select **Contact**.
 
    >[!Important]
    >To proceed, use the VU Security-provided URL for users to be issued Verified IDs. 

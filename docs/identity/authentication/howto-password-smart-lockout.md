@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 04/29/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: rogoya
 ms.custom: sfi-image-nochange
 ---
@@ -51,7 +51,7 @@ When using [pass-through authentication](~/identity/hybrid/connect/how-to-connec
    > [!TIP]
    > This configuration ensures Microsoft Entra smart lockout stops your on-premises AD DS accounts from being locked out by brute force attacks, like [password spray attacks](../../id-protection/concept-identity-protection-risks.md#password-spray) on your Microsoft Entra accounts.
 
-For example, if you want your Microsoft Entra smart lockout duration to be higher than AD DS, then Microsoft Entra ID would be 120 seconds (2 minutes) while your on-premises AD is set to 1 minute (60 seconds). If you want your Microsoft Entra lockout threshold to be 10, then you want your on-premises AD DS lockout threshold to be 5. 
+For example, if you want your Microsoft Entra smart lockout duration to be higher than AD DS, then Microsoft Entra ID would be 120 seconds (2 minutes) while your on-premises AD is set to 1 minute (60 seconds). If you want your Microsoft Entra lockout threshold to be 10, then you want your on-premises AD DS lockout threshold to 20. 
 
 > [!IMPORTANT]
 > An administrator can unlock the users' cloud account if they have been locked out by the Smart Lockout capability, without the need of waiting for the lockout duration to expire. For more information, see [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.yml).

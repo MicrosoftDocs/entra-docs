@@ -4,12 +4,12 @@ description: Learn about known issues in external tenants.
  
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 04/19/2024
+ms.date: 07/07/2025
 ms.custom: it-pro
 
 ---
@@ -22,7 +22,7 @@ This article describes known issues that you may experience when you use Microso
 
 ### Using your admin email to create a local customer account prevents you from administering the tenant
 
-If you're the admin who created the external tenant, and you use the same email address as your admin account to create a local customer account in that same tenant, you can't sign in directly to the tenant with admin privileges.
+If you're the admin who created the external tenant and you use the same email address as your admin account to create a local customer account in that same tenant, you can't sign in directly to the tenant with admin privileges.
 
 **Cause**: Using your tenant admin email to create a customer account via self-service sign-up creates a second user with the same email address, but with customer-level privileges. When you sign in to the tenant via `https://entra.microsoft.com/<tenantID>` or `<tenantName>.onmicrosoft.com`, the least-privileged account takes precedence, and you're signed in as the customer instead of the admin. You have insufficient privileges to manage the tenant.
 

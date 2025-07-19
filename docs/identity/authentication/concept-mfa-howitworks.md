@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: michmcla
 ---
 # How it works: Microsoft Entra multifactor authentication
@@ -46,7 +46,8 @@ The following additional forms of verification can be used with Microsoft Entra 
 * Authenticator Lite (in Outlook)
 * Windows Hello for Business
 * Passkey (FIDO2) 
-* Passkey in Microsoft Authenticator (preview)
+* Passkey in Microsoft Authenticator 
+* QR code
 * Certificate-based authentication (when configured for multifactor authentication)
 * External authentication methods (preview)
 * Temporary Access Pass (TAP)

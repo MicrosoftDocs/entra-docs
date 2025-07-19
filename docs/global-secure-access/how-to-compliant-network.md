@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
-manager: femila
+manager: dougeby
 ms.reviewer: smistry
 ai-usage: ai-assisted
 ms.custom: sfi-image-nochange
@@ -43,7 +43,7 @@ To enable the required setting to allow the compliant network check, an administ
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with an account which has the [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator) and [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role activated.
 1. Browse to **Global Secure Access** > **Settings** > **Session management** > **Adaptive access**.
 1. Select the toggle to **Enable CA Signaling for Entra ID (covering all cloud apps)**. 
-1. Browse to **Protection** > **Conditional Access** > **Named locations**.
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**.
    1. Confirm you have a location called **All Compliant Network locations** with location type **Network Access**. Organizations can optionally mark this location as trusted.
 
 :::image type="content" source="media/how-to-compliant-network/toggle-enable-signaling-in-conditional-access.png" alt-text="Screenshot showing the toggle to enable signaling in Conditional Access.":::

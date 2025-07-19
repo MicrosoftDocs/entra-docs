@@ -3,7 +3,7 @@ title: Configure DigiCert for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and DigiCert.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -43,7 +43,7 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of DigiCert into Microsoft Entra ID, you need to add DigiCert from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+1. Browse to **Identity** > **Applications** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **DigiCert** in the search box.
 1. Select **DigiCert** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 

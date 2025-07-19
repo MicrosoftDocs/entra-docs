@@ -3,7 +3,7 @@ title: Configure GoToMeeting for Single sign-on with Microsoft Entra ID
 description: Learn the steps you need to perform to integrate GoToMeeting with Microsoft Entra ID.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps

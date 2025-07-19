@@ -2,7 +2,7 @@
 title: Recommendation to remove unused credentials from apps
 description: Learn how the Microsoft Entra recommendation to remove unused credentials from apps works and why it's important.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

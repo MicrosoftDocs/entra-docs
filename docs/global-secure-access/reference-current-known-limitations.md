@@ -4,8 +4,8 @@ description: This article details the known issues and limitations you might enc
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
-manager: femila
-ms.date: 03/12/2025
+manager: dougeby
+ms.date: 06/13/2025
 ms.service: global-secure-access
 
 
@@ -161,9 +161,6 @@ The client only tunnels traffic sent using sockets. It doesn't tunnel traffic in
 #### Multi-session
 The Global Secure Access client doesn't support concurrent sessions on the same machine. This limitation applies to Remote Desktop Protocol (RDP) servers and Virtual Desktop Infrastructure (VDI) solutions like Azure Virtual Desktop (AVD) that are configured for multi-session.
 
-#### Arm64
-The Global Secure Access client doesn't support Arm64 architecture.
-
 #### QUIC not supported for Internet Access
 Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
 > [!TIP]
@@ -241,7 +238,7 @@ Known limitations for access controls include:
 - Only the Global Secure Access client for Windows, starting with version 1.8.239.0, is aware of Universal CAE. On other platforms, the Global Secure Access client uses regular access tokens.
 - Microsoft Entra ID issues short-lived tokens for Global Secure Access. The lifetime for a Universal CAE access token is between 60 and 90 minutes, with support for near real-time revocation.
 - It takes approximately two to five minutes for the Microsoft Entra ID signal to reach the Global Secure Access client and prompt the user to reauthenticate.
-- The Global Secure Access client will prompt the user 3 times to authenticate with a 2 minute grace period each time. This means that the entire CAE flow includes 4-5 minutes to signal the Global Secure Access client, then up to 6 minutes grace period, resulting in a disconnect after approximately 10 minutes.
+- The Global Secure Access client prompts the user three times to authenticate with a 2-minute grace period each time. This means that the entire CAE flow includes 4-5 minutes to signal the Global Secure Access client, then up to a 6-minute grace period, resulting in a disconnect after approximately 10 minutes.
 ## Traffic forwarding profile limitations
 Known limitations for traffic forwarding profiles include:
 - At this time, Private Access traffic can only be acquired with the Global Secure Access client. Private Access traffic can't be acquired from remote networks.
@@ -264,4 +261,4 @@ Known limitations for Internet Access include:
 - Remote network connectivity for Internet Access is in development.
 - Transport Layer Security (TLS) inspection is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
-- Traffic available for acquisition in the Microsoft traffic profile is not available for acquisition in the Internet Access traffic profile.
+- Traffic available for acquisition in the Microsoft traffic profile isn't available for acquisition in the Internet Access traffic profile.

@@ -15,6 +15,35 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## June 2025
+
+### New articles
+
+- [Restrictions on identifier URIs of Microsoft Entra applications](identifier-uri-restrictions.md)
+
+### Updated articles
+
+- [Retrieve and return data from an OnAttributeCollectionStart event](custom-extension-onattributecollectionstart-retrieve-return-data.md) - Update request payload and response
+- [Retrieve and return data from an OnAttributeCollectionSubmit event](custom-extension-onattributecollectionsubmit-retrieve-return-data.md) - Update request payload and response
+- [Security best practices for application properties in Microsoft Entra ID](security-best-practices-for-app-registration.md) - Update security best practices
+- [Run automated integration tests](test-automate-integration-testing.md) - The update improved content clarity.
+
+## May 2025
+
+### New articles
+
+- [Email OTP send event reference](custom-extension-email-otp-send-data.md)
+
+### Updated articles
+
+- [Custom claims provider reference](custom-claims-provider-reference.md) - The update improved content clarity.
+- [Application configuration options](msal-client-application-configuration.md) - The update improved content clarity.
+- [Custom authentication extensions overview](custom-extension-overview.md) - The update improved content clarity.
+- [Single-page application: Acquire a token to call an API](scenario-spa-acquire-token.md) - The update improved content clarity.
+- [Single-page application: Code configuration](scenario-spa-app-configuration.md) - The update improved content clarity.
+- [Single-page application: Add sign-in and sign-out code](scenario-spa-sign-in.md) - The update improved content clarity.
+- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Partially update error code.
+
 ## April 2025
 
 ### New articles
@@ -35,28 +64,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 * [Tutorial: Set up a Node.js web app to sign in users by using Microsoft identity platform](tutorial-web-app-node-sign-in-prepare-app.md) - Register app refactor
 * [Tutorial: Set up an Android app to sign in users by using Microsoft identity platform](tutorial-mobile-app-android-prepare-app.md) - Register app refactor
 
-## March 2025
-
-### Updated articles
-
-- [Microsoft Entra app manifest (Azure AD Graph format)](reference-app-manifest.md) - The update improved content clarity.
-- [Quickstart: Call a web API in a sample daemon app](quickstart-daemon-app-call-api.md) - The update improved content clarity.
-- [Quickstart: Sign in users in a sample Desktop app](quickstart-desktop-app-sign-in.md) - The update improved content clarity.
-- [Quickstart: Sign in users in a sample mobile app](quickstart-mobile-app-sign-in.md) - The update improved content clarity.
-- [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API](quickstart-single-page-app-sign-in.md) - The update improved content clarity.
-- [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md) - The update improved content clarity.
-- [Tutorial: Add sign-in and sign-out flows to a JavaScript SPA](tutorial-single-page-app-javascript-configure-authentication.md) - The tutorial was updated with the latest code sample.
-- [Tutorial: Prepare a JavaScript single-page application for authentication](tutorial-single-page-app-javascript-prepare-app.md) - The tutorial was updated with the latest code sample.
-- [Understand the app manifest (Microsoft Graph format)](reference-microsoft-graph-app-manifest.md) - The update improved content clarity.
-- [Web app that signs in users: Sign-in and sign out](scenario-web-app-sign-user-sign-in.md) - The update improved content clarity.
-
-
-## February 2025
-
-### New articles
-
-- [Best practices to protect frontline workers](security-best-practices-for-frontline-workers.md) - Best Practices to Protect Frontline Workers
-
-### Updated articles
-
-- [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](v2-oauth-ropc.md) - Added clarity to the content

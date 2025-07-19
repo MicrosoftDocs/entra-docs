@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 04/15/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.collection: M365-identity-device-management
 ms.custom: it-pro, sfi-image-nochange
 #customer intent: As a User Administrator in Microsoft Entra, I want to add an API connector to a user flow after the authentication step or before creating the user, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems.

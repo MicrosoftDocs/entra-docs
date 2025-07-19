@@ -2,7 +2,7 @@
 title: Quickstart - Call a web API in a sample daemon app
 description: A daemon app code sample quickstart that shows how to acquire an access token to call a protected web API by using Microsoft identity platform
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/20/2024

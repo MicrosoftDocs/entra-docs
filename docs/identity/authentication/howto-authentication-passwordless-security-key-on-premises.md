@@ -4,10 +4,10 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/16/2025
+ms.date: 07/13/2025
 ms.author: justinha
 author: justinha
-manager: femila
+manager: dougeby
 ms.reviewer: calui
 ms.custom: sfi-ga-nochange
 ---
@@ -127,8 +127,9 @@ To then **set** the desired cloud environment, run the following:
 _(Example: For US Government Cloud)_
 
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
-   > [!Tip]
-   > For Additional information comparing Azure commercial and sovereign clouds, See: [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
+
+> [!Tip]
+> For more information about how Azure Commercial compares sovereign clouds, see [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 
@@ -330,6 +331,9 @@ Make sure that enough DCs are patched to respond in time to service your resourc
 ### Is there a maximum number of groups per token for Microsoft Entra Kerberos?
  
 Yes, you can have up to 1,010 groups per token.
+
+### How do I resolve `Failed to read secrets` error when running `AzureADHybridAuthenticationManagement` module commands? 
+Temporarily disable [FIPS Policy](/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing). FIPS policy can be re-enabled after performing the steps with the `AzureADHybridAuthenticationManagement` module. If error persists after disabling FIPS policy, ensure account being used has default administrative permissions.
 
 ### Do FIDO2 security keys work in a Windows login with RODC present in the hybrid environment?
 
