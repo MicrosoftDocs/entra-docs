@@ -1,0 +1,89 @@
+---
+title: #Required; "<verb> * <noun>"
+description: #Required; Keep the description within 100- and 165-characters including spaces.
+author: #Required; your GitHub user alias, with correct capitalization
+ms.author: #Required; microsoft alias of author
+ms.service: #Required; use the name-string related to slug in ms.product/ms.service
+ms.topic: how-to #Required; leave this attribute/value as-is
+ms.date: #Required; mm/dd/yyyy format
+
+#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+---
+
+# View logs and metrics for the Access Review agent
+
+The Conditional Access optimization agent helps organizations improve their security posture by automatically analyzing sign-in patterns and suggesting policy optimizations. This Microsoft Security Copilot agent identifies unprotected users and applications, recommends policy improvements, and helps consolidate redundant policies.
+
+To ensure transparency and maintain control over automated recommendations, Microsoft Entra ID provides comprehensive logging and metrics for all agent activities. This article explains how to monitor agent performance, review audit logs, and understand the metrics that help you measure the agent's impact on your security environment.
+
+## Prerequisites
+
+- To view the Microsoft Entra audit logs, you need at least the [Reports reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
+- [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
+- [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) roles can view the agent and take action on the suggestions.
+   - For more information on roles for the Access Review Agent, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
+- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
+
+### Limitations
+
+- Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
+- Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
+- The agent currently runs as the user who enables it.
+- We recommend running the agent from the Microsoft Entra admin center.
+- Scanning is limited to a 24 hour period.
+- Suggestions from the agent can't be customized or overridden.
+
+
+
+
+## "\<verb\> * \<noun\>"
+TODO: Add introduction sentence(s)
+[Include a sentence or two to explain only what is needed to complete the procedure.]
+TODO: Add ordered list of procedure steps
+1. Step 1
+1. Step 2
+1. Step 3
+
+## "\<verb\> * \<noun\>"
+TODO: Add introduction sentence(s)
+[Include a sentence or two to explain only what is needed to complete the procedure.]
+TODO: Add ordered list of procedure steps
+1. Step 1
+1. Step 2
+1. Step 3
+
+## "\<verb\> * \<noun\>"
+TODO: Add introduction sentence(s)
+[Include a sentence or two to explain only what is needed to complete the procedure.]
+TODO: Add ordered list of procedure steps
+1. Step 1
+1. Step 2
+1. Step 3
+
+<!-- 5. Next step/Related content------------------------------------------------------------------------
+
+Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
+  - For Next step, provide one link to the next step in a sequence. Use the blue box format
+  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
+
+-->
+
+## Next step
+
+TODO: Add your next step link(s)
+
+> [!div class="nextstepaction"]
+> [Write concepts](article-concept.md)
+
+<!-- OR -->
+
+## Related content
+
+TODO: Add your next step link(s)
+
+- [Write concepts](article-concept.md)
+
+<!--
+Remove all the comments in this template before you sign-off or merge to the main branch.
+-->
+

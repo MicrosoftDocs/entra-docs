@@ -14,7 +14,7 @@ ms.date: 07/17/2025
 # Access Review Agent with Microsoft Security Copilot
 
 
-The Access Review Agent helps you ensure that access to resources provided to users are up to date, and based on specific data from your organization. The agent recommends access review decisions based not only on [existing best practices](review-recommendations-access-reviews.md) for reviews, but also based on other criteria developed with the agent.
+The Access Review Agent helps you ensure that access to resources provided to users is up to date, and based on specific data from your organization. The agent recommends access review decisions based not only on [existing best practices](review-recommendations-access-reviews.md) for reviews, but also based on other criteria developed with the agent.
 
 
 The Access Review agent evaluates current access reviews based on policies around previous access review decisions, user activity, governance behavior, and account status. When the agent identifies a suggestion, you can have the agent complete the review based on you accepting, or rejecting, the recommendation.
@@ -37,7 +37,7 @@ The Access Review agent evaluates current access reviews based on policies aroun
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - Recommendations are only available for single stage reviews.
 - The agent currently runs as the user who enables it.
-- The reviewer must be a [internal user (of userType member or guest)](../external-id/user-properties.md) within the tenant in which the review is scheduled. External guests or external members as reviewers are not currently supported.
+- The reviewer must be a [internal user (of userType member or guest)](../external-id/user-properties.md) within the tenant in which the review is scheduled. External guests or external members as reviewers aren't currently supported.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
@@ -46,7 +46,7 @@ The Access Review agent evaluates current access reviews based on policies aroun
 ## How it works
 
 
-The Access Review Agent proactively scans active access reviews, and assists reviewers in making informed decisions about access for users in your environment. The agent, which reviewers communicates with directly via [Microsoft Teams](), uses user context to help inform decisions. When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
+The Access Review Agent proactively scans active access reviews, and assists reviewers in making informed decisions about access for users in your environment. The agent, which reviewers communicate with directly via [Microsoft Teams](), uses user context to help inform decisions. When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
 
 Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
 
@@ -110,7 +110,7 @@ Use the checkboxes under **Reviewers** to specify which reviewers can use the ag
 
 ## Using the Access Review Agent as a reviewer
 
-With the Access Review Agent started, and reviewers assigned, you are now ready to use the agent to review your access reviews. As a reviewer, you'd do the following:
+With the Access Review Agent started, and reviewers assigned, you're now ready to use the agent to review your access reviews. As a reviewer, you'd do the following:
 
 1. Open your Microsoft Teams application signed in as the user assigned as a reviewer.
 
@@ -120,9 +120,9 @@ With the Access Review Agent started, and reviewers assigned, you are now ready 
     :::image type="content" source="media/access-review-agent/access-review-agent-teams.png" alt-text="Screenshot of the Access Review Agent application in Microsoft Teams.":::
     > [!NOTE]
     > For reviewers in your organization to use the Access Review Agent, the app must be made [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Work with your Microsoft Teams Administrator to make sure the app is published and available in your org.
-1. When open start the chat with the agent. An example of this is asking the agent "*Help me with my access reviews*".
+1. When open start the chat with the agent. An example of this is asking the agent "*Help me with my access reviews*."
 
-From this chat you'll be able to see information about your access reviews, the recommendations and reasoning the agent makes, and will be able to reply so that the agent takes action based on your choices. 
+From this chat, you're able to see information about your access reviews, the recommendations and reasoning the agent makes, and can reply so that the agent takes action based on your choices. 
 
 ## Remove agent
 

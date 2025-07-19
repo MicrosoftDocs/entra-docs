@@ -129,11 +129,11 @@
 - name: Security Copilot + Microsoft Entra
   items:
   - name: Get started with the Access Review Agent (Preview)
-    href: 
+    href: access-review-agent-get-started.md
   - name: Manage lifecycle workflows using Microsoft Security Copilot (Preview)
     href: ~/fundamentals/copilot-entra-lifecycle-workflow.md 
   - name: Access Review Agent logs and metrics (Preview)
-    href: 
+    href: access-review-agent-logs-metrics.md
 - name: Tutorials
   expanded: true
   items:
