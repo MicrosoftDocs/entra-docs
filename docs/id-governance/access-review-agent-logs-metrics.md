@@ -1,18 +1,19 @@
 ---
-title: #Required; "<verb> * <noun>"
-description: #Required; Keep the description within 100- and 165-characters including spaces.
-author: #Required; your GitHub user alias, with correct capitalization
-ms.author: #Required; microsoft alias of author
-ms.service: #Required; use the name-string related to slug in ms.product/ms.service
+title: Logs and metrics for the Access Review Agent
+description: Learn about the Security Copilot for Microsoft Entra Access Review agent metrics and events in audit logs.
+author: owinfreyATL
+ms.author: owinfrey
+ms.service: entra-id-governance
+ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: #Required; mm/dd/yyyy format
+ms.date: 07/19/2025
 
 #CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
 ---
 
 # View logs and metrics for the Access Review agent
 
-The Conditional Access optimization agent helps organizations improve their security posture by automatically analyzing sign-in patterns and suggesting policy optimizations. This Microsoft Security Copilot agent identifies unprotected users and applications, recommends policy improvements, and helps consolidate redundant policies.
+The Access Review Agent helps organizations improve their security posture by automatically analyzing sign-in patterns and suggesting policy optimizations. This Microsoft Security Copilot agent identifies unprotected users and applications, recommends policy improvements, and helps consolidate redundant policies.
 
 To ensure transparency and maintain control over automated recommendations, Microsoft Entra ID provides comprehensive logging and metrics for all agent activities. This article explains how to monitor agent performance, review audit logs, and understand the metrics that help you measure the agent's impact on your security environment.
 
