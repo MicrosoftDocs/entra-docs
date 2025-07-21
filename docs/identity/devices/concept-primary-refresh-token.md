@@ -214,9 +214,10 @@ For an overview of how tokens are protected in general, refer to [Protecting tok
 
 ### [Windows](#tab/windows-apptokens)
 
-- When an app requests token through WAM, Microsoft Entra ID issues a refresh token and an access token. However, WAM only returns the access token to the app and secures the refresh token in its cache by encrypting it with the user's data protection application programming interface (DPAPI) key. 
-  - WAM securely uses the refresh token by signing requests with the session key to issue further access tokens. The DPAPI key is secured by a Microsoft Entra ID based symmetric key in Microsoft Entra itself.
-  - When the device needs to decrypt the user profile with the DPAPI key, Microsoft Entra ID provides the DPAPI key encrypted by the session key, which CloudAP plugin requests TPM to decrypt. This functionality ensures consistency in securing refresh tokens and avoids applications implementing their own protection mechanisms.
+- When an app requests token through WAM, Microsoft Entra ID issues an access token and, in some types of the requests, a refresh token. However, WAM only returns the access token to the app and secures the refresh token:
+  - If it is a refresh token for an SSO user, then this refresh token is bound to the device, with a session key (the same as PRT) or the device key.
+  - If it is a refresh token for a non-SSO user, then this refresh token is not bound to the device.
+- All refresh tokens are encrypted by the DPAPI.
 
 ### [macOS & iOS](#tab/iOSMacOS-prt-apptokens)
 
