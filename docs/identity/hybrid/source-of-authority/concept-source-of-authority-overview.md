@@ -3,7 +3,7 @@ title: Embrace cloud-first posture and transition AD group Source of Authority (
 description: Learn about Source of Authority (SOA), including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
 author: Justinha
 ms.topic: conceptual
-ms.date: 06/20/2025
+ms.date: 07/21/2025
 ms.author: justinha
 ms.reviewer: justinha
 ---
@@ -62,5 +62,5 @@ Applying Group SOA to a group that synchronizes from AD converts the group to a 
 
 ## Related content
 
-- Guidance for using Group Source of Authority (SOA)
-- How to configure Group SOA
+- [Guidance for using Group Source of Authority (SOA)](concept-group-source-of-authority-guidance.md)
+- [How to configure Group SOA](how-to-group-source-of-authority-configure.md)

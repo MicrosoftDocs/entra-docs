@@ -73,5 +73,5 @@ For more information about how to create custom queries, see [Understand how pro
 
 ## Related content
 
-- How to configure Group SOA
-- How Group SOA works
+- [Group SOA overview](concept-source-of-authority-overview.md)
+- [How to configure Group SOA](how-to-group-source-of-authority-configure.md)

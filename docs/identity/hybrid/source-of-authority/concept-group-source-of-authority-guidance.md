@@ -4,7 +4,7 @@ description: Discover how to manage and transition Active Directory groups to Mi
 author: justinha
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/16/2025
+ms.date: 07/21/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
@@ -93,5 +93,5 @@ When you transition to the cloud, map on-premises groups to modern group types i
 
 ## Related content
 
-- Group SOA overview
-- How to configure Group SOA
+- [Group SOA overview](concept-source-of-authority-overview.md)
+- [How to configure Group SOA](how-to-group-source-of-authority-configure.md)

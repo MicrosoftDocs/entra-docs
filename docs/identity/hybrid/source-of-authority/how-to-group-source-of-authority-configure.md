@@ -373,5 +373,5 @@ The details confirm: "As the SOA of this group is in the cloud, this object will
 
 ## Related content
 
-- Group SOA overview
-- Provision groups to Active Directory using Microsoft Entra Cloud Sync
+- [Group SOA overview](concept-source-of-authority-overview.md)
+- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning)

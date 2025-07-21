@@ -4,7 +4,7 @@ description: Step-by-step guide to identifying, triaging, and removing unused se
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/16/2025
+ms.date: 07/21/2025
 ms.author: justinha
 ms.reviewer: justinha
 ---
@@ -285,5 +285,5 @@ user being a member of a security group.
 
 ## Related content
 
-- Group SOA overview
-- How to configure Group SOA
+- [Group SOA overview](concept-source-of-authority-overview.md)
+- [How to configure Group SOA](how-to-group-source-of-authority-configure.md)
