@@ -101,10 +101,10 @@ On non-Windows platforms, browsers gain access to the PRT in multiple ways:
 The list of supported browsers is available here: [Supported Browsers](../conditional-access/concept-conditional-access-conditions.md#supported-browsers)
 
 > [!NOTE]
-> Customers who enable Entra federation with non-Microsoft Identity Providers must configure those Identity Providers to support WS-Trust protocol to enable PRT issuance on Windows 10 or newer devices. Without WS-Trust, a PRT can't be issued to users on Microsoft Entra hybrid joined or Microsoft Entra joined devices. 
+> Customers who enable Entra federation with non-Microsoft Identity Providers must configure those Identity Providers to support WS-Trust protocol to enable PRT issuance on Windows 10 or newer devices. Without WS-Trust for federation cases, a PRT can't be issued to users on Microsoft Entra hybrid joined or Microsoft Entra joined devices. 
 
 > [!NOTE]
-> For ADFS, `usernamemixed` endpoints are required. If `Smartcard/certificate` is used during Windows sign-in, then `certificatemixed` endpoints needs to be configured on ADFS. `adfs/services/trust/13/windowstransport` should be enabled as intranet facing endpoints only and **must NOT be exposed** as extranet facing endpoints through the Web Application Proxy.
+> For ADFS, `usernamemixed` endpoints are required. If `Smartcard/certificate` is used during Windows sign-in, then `certificatemixed` endpoints needs to be configured on ADFS. `windowstransport` should be enabled as intranet facing endpoints only and **must NOT be exposed** as extranet facing endpoints through the Web Application Proxy.
 
 > [!NOTE] 
 > Microsoft Entra Conditional Access policies aren't evaluated when PRTs are issued.
