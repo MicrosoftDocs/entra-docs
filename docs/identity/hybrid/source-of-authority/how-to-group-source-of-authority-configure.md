@@ -145,7 +145,7 @@ applications tied to the security group continue to function).
 | **Roles** | - Groups Administrator role is allowed to call the OnPremisesSyncBehavior Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Graph API for Groups. |
 | **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
 | **License needed** | Microsoft Entra Free or Basic license. |
-| **Connect Sync client** | Minimum version is 255.0.4.0 (see below on how to install the latest version of Connect Sync) |
+| **Connect Sync client** | Minimum version is 2.5.76.0 (see below on how to install the latest version of Connect Sync) |
 
 ## Setup
 
