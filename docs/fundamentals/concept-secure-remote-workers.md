@@ -1,33 +1,31 @@
 ---
-title: Secure your organization's identities
-description: Improve your security posture and empower users with Microsoft Entra ID with the principles of Zero Trust architecture.
-
+title: Secure Your Workforce with Microsoft Entra ID
+description: Learn how to protect organizational identities with Microsoft Entra ID. Discover security recommendations, multifactor authentication setup, and Zero Trust implementation strategies.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 05/31/2024
-
+ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
-
 ms.reviewer: lhuangnorth, martinco
-ms.custom: zt-include
+ms.custom:
+  - zt-include
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/21/2025
+  - ai-gen-description
 ---
-
 # Secure your organization's identities with Microsoft Entra ID
 
-It can seem daunting trying to secure your workers in today's world, especially when you have to respond rapidly and provide access to many services quickly. This article helps provide a concise list of actions to take, helping you identify and prioritize features based on the license type you own.
+Securing your workforce can feel overwhelming, but this guide makes it simple. You get a clear action plan to protect your organization's identities with Microsoft Entra ID, prioritized by your current license type.
 
-Microsoft Entra ID offers many features and provides many layers of security for your Identities, navigating which feature is relevant can sometimes be overwhelming. This document is intended to help organizations deploy services quickly, with secure identities as the primary consideration.
+**What you'll accomplish:**
+- Set up multifactor authentication in under 30 minutes
+- Block 99.9% of automated attacks with basic security settings
+- Create a Zero Trust security foundation that scales with your business
 
-Each table provides security recommendations to protect identities from common security attacks while minimizing user friction.
-
-The guidance helps:
-
-- Configure access to software as a service (SaaS) and on-premises applications in a secure and protected manner
-- Both cloud and hybrid identities
-- Users working remotely or in the office
+Whether you're starting with free features or have premium licenses, this guide shows you exactly which security features to enable first for maximum protection with minimal user friction.
 
 ## Prerequisites
 
