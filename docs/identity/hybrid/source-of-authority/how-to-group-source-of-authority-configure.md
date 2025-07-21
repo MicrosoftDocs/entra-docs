@@ -1,16 +1,15 @@
 ---
-title: Manage Group Source of Authority (SOA) in Microsoft Entra ID
+title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to transition group management from Active Directory to Microsoft Entra ID using Source of Authority (SOA), including prerequisites, setup, validation, rollback, and integration with Group Provisioning to Active Directory (GPAD).
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/16/2025
+ms.date: 07/18/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
 
-# Manage Group Source of Authority (SOA) 
-
+# Configure Group Source of Authority (SOA) 
 
 Source of Authority (SOA) is a feature that enables IT administrators in hybrid environments to transition the management of specific objects from Active Directory (AD) to Microsoft Entra ID. 
 When an administrator applies SOA to an object synced from AD to Microsoft Entra ID, they convert the object to a cloud-owned object that can only be edited and deleted in Microsoft Entra ID. 
@@ -142,10 +141,11 @@ applications tied to the security group continue to function).
 
 | Requirement | Description |
 |-------------|-------------|
-| **Roles** | - Groups Administrator role is allowed to call the OnPremisesSyncBehavior Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Graph API for Groups. |
+| **Roles** | - Groups Administrator role is allowed to call the OnPremisesSyncBehavior Microsoft Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Microsoft Graph API for Groups. |
 | **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
 | **License needed** | Microsoft Entra Free or Basic license. |
-| **Connect Sync client** | Minimum version is 2.5.76.0 (see below on how to install the latest version of Connect Sync) |
+| **Connect Sync client** | Minimum version is 2.5.76.0 |
+| **Cloud Sync client** | Minimum version is 1.1.1586.0 |
 
 ## Setup
 
@@ -155,16 +155,13 @@ You need to set up Connect Sync client and the Cloud Sync client Provisioning ag
 
 1. Download the latest version of the Connect Sync build.
 
-1. Verify the Connect Sync build has been successfully installed. Go to “Add remove programs” in the control panel and check version of “Microsoft Entra Connect Sync,” minimum version is **255.0.4.0.**
-
-> [!NOTE]
-> There will be no upgrade path from this private build of the Connect Sync client to the ultimate public version. So, plan to uninstall this private build in the future before installing the eventual public build.
+1. Verify the Connect Sync build has been successfully installed. Go to **Add remove programs** in the Control Panel and confirm that the version of Microsoft Entra Connect Sync is **2.5.76.0** or later.
 
 ### Cloud Sync client
 
-Download the Provisioning agent with build version [1.1.1373.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113730) or later.
+Download the Provisioning agent with build version [1.1.1586.0](/entra/identity/hybrid/cloud-sync/reference-version-history) or later.
 
-1. [Instructions for download](/entra/identity/hybrid/cloud-sync/reference-version-history#download-link)
+1. Follow the [instructions to download the Cloud Sync client](/entra/identity/hybrid/cloud-sync/reference-version-history#download-link).
 
 1. Learn how to [identify the agent's current version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
 
