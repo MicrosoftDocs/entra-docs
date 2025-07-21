@@ -4,7 +4,7 @@ description: Learn how to audit and monitor Group Source of Authority (SOA) in M
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/18/2025
+ms.date: 07/21/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -67,7 +67,7 @@ You can integrate Audit Logs with Azure Monitoring and search the following even
 
 - When SOA transfer is rolled back to on-premises, **Group Provisioning to AD (GPAD)** stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle. You can verify in the audit logs that sync won't happen for this object because it's managed on-premises. 
 
-  :::image type="content" border="true" source="media/tutorial-group-provision/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png":::
+  :::image type="content" border="true" source="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png":::
 
 For more information about how to create custom queries, see [Understand how provisioning integrates with Azure Monitor logs](/entra/identity/app-provisioning/application-provisioning-log-analytics).
 
