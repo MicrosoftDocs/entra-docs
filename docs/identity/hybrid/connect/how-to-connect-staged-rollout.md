@@ -77,7 +77,7 @@ The following scenarios aren't supported for Staged Rollout:
 
 - Legacy authentication such as POP3 and SMTP aren't supported.
 
-- Self-service password reset with writeback to an on-premises domain isn't supported. 
+- Self-service password reset with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. 
 
 - Certain applications send the "domain_hint" query parameter to Microsoft Entra ID during authentication. These flows continue, and users who are enabled for Staged Rollout continue to use federation for authentication.
 
