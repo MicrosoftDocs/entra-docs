@@ -51,9 +51,9 @@ Each time the agent runs, it takes the following steps. **The initial scanning s
 
 If the agent identifies something that wasn't previously suggested, it takes the following steps. **The agent action steps consume SCUs.**
 
-4. The agent identifies a policy gap or a pair of policies that can be consolidated.
-5. The agent evaluates any custom instructions you provided.
-6. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
+1. The agent identifies a policy gap or a pair of policies that can be consolidated.
+1. The agent evaluates any custom instructions you provided.
+1. The agent creates a new policy in report-only mode or provides the suggestion to modify a policy, including any logic provided by the custom instructions.
 
 > [!TIP]
 > Two policies can be consolidated if they differ by no more than two conditions or controls.
