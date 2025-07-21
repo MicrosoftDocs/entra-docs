@@ -4,7 +4,8 @@ description: Learn how the Microsoft Entra Conditional Access optimization agent
 ms.author: joflore
 author: MicrosoftGuyJFlo
 ms.reviewer: lhuangnorth
-ms.date: 07/17/2025
+manager: dougeby
+ms.date: 07/21/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -38,6 +39,7 @@ The Conditional Access optimization agent evaluates policies such as requiring m
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
+- The agent can review up to 150 users and 100 applications in a single run.
 
 ## How it works
 
