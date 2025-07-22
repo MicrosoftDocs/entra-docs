@@ -155,19 +155,18 @@ If you sync a group that isn't universal, such as a global group, and then try t
 
 **Example: SOAGroup2 Provisioning**
 
-In the diagram below, **SOATestGroup1** has been flipped to the cloud.
+In the following diagram, **SOATestGroup1** is flipped to the cloud.
 As a result, it has become available for the **GPAD job scope**.
 
 :::image type="content" border="true" source="media/tutorial-group-provision/in-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/entry-level-error.png":::
 
-- When a **GPAD job** runs, the SOA-converted group is provisioned
-  successfully.
+- When a **GPAD job** runs, the SOA-converted group is provisioned successfully.
 
 - In the **Provisioning Logs**, you can search for the group name and verify that the group was provisioned.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/provisioning-logs.png" alt-text="Screenshot of the Provisioning logs." lightbox="media/tutorial-group-provision/provisioning-logs.png":::
 
-- The details will show that the group was matched with an existing target group.
+- The details show that the group was matched with an existing target group.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/matched.png" alt-text="Screenshot of matched attributes." lightbox="media/tutorial-group-provision/matched.png":::
 
@@ -175,7 +174,7 @@ As a result, it has become available for the **GPAD job scope**.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/confirm-updates.png" alt-text="Screenshot of updated attributes." lightbox="media/tutorial-group-provision/confirm-updates.png":::
 
-- When you look at AD, you can find that the Original AD group is updated.
+- When you look at AD, you can find that the original AD group is updated.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/updated-group.png" alt-text="Screenshot of the updated group." lightbox="media/tutorial-group-provision/updated-group.png":::
 

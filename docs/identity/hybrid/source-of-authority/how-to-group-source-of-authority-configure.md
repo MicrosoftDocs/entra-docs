@@ -201,7 +201,7 @@ Download the Provisioning agent with build version [1.1.1586.0](/entra/identity/
 
    :::image type="content" source="media/how-to-group-source-of-authority-configure/verify-consent.png" alt-text="Screenshot of the permissions page in Microsoft Entra portal showing granted permissions.":::
 
-## Switch SOA of a test group
+## Switch SOA for a test group
 
 Follow these steps to switch the SOA for a test group:
 
@@ -320,6 +320,10 @@ Follow these steps to switch the SOA for a test group:
 1. Open Event viewer and filter the application event logs with event ID 6956. This event ID is reserved to inform the customers that the object isn't synced to the cloud because the SOA of the object is in the cloud.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
+
+## Bulk update Group SOA
+
+You can use PowerShell to update SOA for groups in bulk. 
 
 ## Roll back SOA update
 
