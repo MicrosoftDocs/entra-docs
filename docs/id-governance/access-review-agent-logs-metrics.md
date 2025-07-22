@@ -47,8 +47,6 @@ The **Agent summary** at the top of the Access Review Agent page provides a quic
 
 ## Audit logs 
 
-Policies created or modified by the agent are tagged with **Access Review Agent** in the Access Review pane.
-
 
 In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent. To quickly see agent activity, filter to **Service: Access Reviews**. 
 
