@@ -75,3 +75,6 @@ It runs in the context of the administrator who configured the agent.
 
 Administrators need the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role, or both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles during the preview.
 
+## Related content
+
+- [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)
