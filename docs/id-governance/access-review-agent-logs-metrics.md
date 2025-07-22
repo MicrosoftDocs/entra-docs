@@ -37,14 +37,12 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 ## Agent Summary
 
-The **Agent summary** at the top of the Access Review Agent page provides a quick summary of what the agent has discovered in the last 30 days. The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent is also provided.
+The **Agent summary** at the top of the Access Review Agent page provides a quick summary of access reviews completed using the agent in the last 30 days. The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent is also provided.
 
-- **Unprotected users discovered**: The number of users who were identified by the agent and protected by a policy suggested by the agent.
-- **Unprotected apps discovered**: The number of applications that were identified by the agent and protected by a policy suggested by the agent.
-- **Sign-ins protected**: The number of sign-ins that were protected by a policy suggested by the agent.
+- **Total access reviews**: The number of access reviews reviewed by the agent.
+- **Total reviewers engaged**: The number of reviewers who used the agent to complete access reviews.
+- **Total decisions analyzed**: The number of sign-ins that were protected by a policy suggested by the agent.
 - **Security compute units consumed**: The total number of SCUs consumed by the agent in the last 30 days. 
-
-The values in the agent summary reflect the activity after suggestions are applied. If you run the agent and don't apply any suggestions, the values in the agent summary won't change.
 
 
 ## Audit logs 
@@ -54,18 +52,8 @@ Policies created or modified by the agent are tagged with **Access Review Agent*
 
 In the **Audit logs** the **Initiated by (actor)** field show the name of the user who started the agent. To quickly see agent activity, filter to **Service: Access Reviews**. 
 
-<!-- 5. Next step/Related content------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
-
 
 ## Related content
-
-TODO: Add your next step link(s)
 
 - [Access Review Agent with Microsoft Security Copilot](access-review-agent.md)
 - [What are access reviews?](access-reviews-overview.md)
