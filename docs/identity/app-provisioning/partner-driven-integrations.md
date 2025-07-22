@@ -2,13 +2,13 @@
 title: 'Use partner driven integrations to provision accounts into all your applications'
 description: Use partner driven integrations to provision accounts into all your applications.
 
-author: jenniferf-skc
-manager: pmwongera
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: jfields
+ms.author: kenwith
 ms.collection: M365-identity-device-management
 ---
 # Partner-driven provisioning integrations

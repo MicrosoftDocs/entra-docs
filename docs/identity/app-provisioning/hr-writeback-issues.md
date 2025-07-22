@@ -2,7 +2,7 @@
 title: Troubleshoot writeback issues with HR provisioning
 description: This article provides potential issues and resolutions so you can troubleshoot writeback issues with HR provisioning.
 author: jenniferf-skc
-manager: pmwongera
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
