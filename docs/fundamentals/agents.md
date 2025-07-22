@@ -49,7 +49,7 @@ Administrators need the [Security Administrator](../identity/role-based-access-c
 
 ### Microsoft Entra Access Review Agent
 
-The [Access Review Agent](../id-governance/access-review-agent.md.md) helps reviewers quickly complete access reviews of users in their organization by providing suggestions for decisions based on both Microsoft Entra best practices, and specific knowledge of the reviewers environment.
+The [Access Review Agent](../id-governance/access-review-agent.md) helps reviewers quickly complete access reviews of users in their organization by providing suggestions for decisions based on both Microsoft Entra best practices, and specific knowledge of the reviewers environment.
 
 #### Trigger​
 
