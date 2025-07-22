@@ -46,3 +46,32 @@ It runs in the context of the administrator who configured the agent.
 #### Role-based access ​
 
 Administrators need the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role during the preview.
+
+### Microsoft Entra Access Review Agent
+
+The [Access Review Agent](../id-governance/access-review-agent.md.md) helps reviewers quickly complete access reviews of users in their organization by providing suggestions for decisions based on both Microsoft Entra best practices, and specific knowledge of the reviewers environment.
+
+#### Trigger​
+
+The agent runs every 24 hours but can also run manually. 
+
+#### Permissions​
+
+The agent reviews users currently in the scope of your access reviews, and makes suggestions on whether access should be approved or declined. The agent acts based on your selections.
+
+#### Identity​
+
+It runs in the context of the administrator who configured the agent.
+
+#### Products​
+
+[Access Reviews](../id-governance/access-reviews-overview.md) and [Security Copilot](/copilot/security/microsoft-security-copilot)
+
+#### Plugins​
+
+[Microsoft Entra](/entra/fundamentals/copilot-security-entra)
+
+#### Role-based access ​
+
+Administrators need the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role, or both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) roles during the preview.
+

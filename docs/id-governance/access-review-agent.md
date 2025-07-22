@@ -19,6 +19,7 @@ The Access Review Agent helps you ensure that access to resources provided to us
 
 The Access Review agent evaluates current access reviews based on policies around previous access review decisions, user activity, governance behavior, and account status. When the agent identifies a suggestion, you can have the agent complete the review based on you accepting, or rejecting, the recommendation.
 
+## Supported Scenarios
 
 The review scenarios supported by the Access Review Agent are as follows:
 
@@ -31,6 +32,8 @@ The review scenarios supported by the Access Review Agent are as follows:
 |Microsoft Entra role     |         |
 |Azure resource role     |         |
 |Groups managed by PIM     |         |
+
+For other considerations, and limitations, of the Access review agent, see: [Limitations](access-review-agent.md#limitations).
 
 
 ## Prerequisites
@@ -50,6 +53,7 @@ The review scenarios supported by the Access Review Agent are as follows:
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - Recommendations are only available for single stage reviews.
+- The agent only supports up to 35 decisions per review.
 - The agent currently runs as the user who enables it.
 - The reviewer must be a [internal user (of userType member or guest)](../external-id/user-properties.md) within the tenant in which the review is scheduled. External guests or external members as reviewers aren't currently supported.
 - We recommend running the agent from the Microsoft Entra admin center.
@@ -76,13 +80,12 @@ If the agent identifies something that wasn't previously suggested, it takes the
 
 The agent considers the following about a user when making review recommendations:
 
-- **Enabled Status**: Whether or not the user being reviewed is an enabled account.
-- **Creation date**: When the account of the user being reviewed was created.
-- **Specific Previous decisions**: When the review in question is a recurring review.
-- **The account state**: Whether or not the user being reviewed state is enabled.
-- **Microsoft Entra ID Governance History**: Whether or not the user has recently had other actions performed on it, such as having a workflow from Lifecycle Workflows ran for them.
-- **Related access package assignment request approval decisions**: When making access package recommendations, related access package assignment request decisions are taken into account of the agent recommendation.
-
+- **Activity**: If the user has signed in(SignInActivity) the past 30 days.
+- **User-to-Group affiliation**: If the user has a [low affiliation](review-recommendations-access-reviews.md) with other users who has the access being requested.
+- **Account enabled**: If the user's account is enabled(accountEnabled).
+- **Employment status**: If the user's employment ended(employeeLeaveDateTime)
+- **Lifecycle workflow history**: If the user has had a mover workflow ran for them in the past 30 days
+- **Previous reviews**: If the user being reviewed is part of a recurring review, decisions from previous review iterations or access package assignments are considered.
 
 
 
@@ -99,7 +102,6 @@ The agent considers the following about a user when making review recommendation
    - Avoid using an account with a role activated through PIM.
    - A message that says "The agent is starting its first run" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
-1. 
 
 
 ## Settings
