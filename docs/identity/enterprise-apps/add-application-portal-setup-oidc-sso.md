@@ -59,7 +59,7 @@ To configure OIDC-based SSO for a gallery application:
 
     :::image type="content" source="media/add-application-portal-setup-oidc-sso/oidc-sso-configuration.png" alt-text="Complete the consent screen for an application." lightbox="media/add-application-portal-setup-oidc-sso/oidc-sso-configuration.png":::
 
-After entering the sign-in credentials, the consent screen appears. The consent screen provides information about the application and the permissions it requires.
+   After entering the sign-in credentials, the consent screen appears. The consent screen provides information about the application and the permissions it requires.
 1. Select **Consent on behalf of your organization** and then select **Accept**. The application is added to your tenant and the application home page appears.
 
 Contact the application vendor to learn about any additional configuration steps required for the application.
