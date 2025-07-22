@@ -3,7 +3,7 @@ title: Scoping users or groups to be provisioned with scoping filters in Microso
 description: Learn how to use scoping filters to define attribute-based rules that determine which users or groups are provisioned in Microsoft Entra ID.
 
 author: jenniferf-skc
-manager: dougeby
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to

@@ -2,7 +2,7 @@
 title: Learn how Provisioning logs integrate with Azure Monitor
 description: Learn how to integrate Microsoft Entra Provisioning logs with Azure Monitor logs and use the associated workbooks.
 author: jenniferf-skc
-manager: dougeby
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual

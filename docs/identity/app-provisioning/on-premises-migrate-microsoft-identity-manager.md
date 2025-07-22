@@ -3,7 +3,7 @@ title: 'Export a Microsoft Identity Manager connector for use with the Microsoft
 description: Describes how to create and export a connector from MIM Sync to be used with the Microsoft Entra ECMA Connector Host.
 
 author: jenniferf-skc
-manager: dougeby
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025

@@ -3,7 +3,7 @@ title: 'Use partner driven integrations to provision accounts into all your appl
 description: Use partner driven integrations to provision accounts into all your applications.
 
 author: jenniferf-skc
-manager: dougeby
+manager: pmwongera
 ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025

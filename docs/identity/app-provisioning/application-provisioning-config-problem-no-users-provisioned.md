@@ -3,7 +3,7 @@ title: Users aren't being provisioned in my application
 description: Troubleshoot common issues faced when a user isn't appearing in a Microsoft Entra Gallery Application configured for user provisioning with Microsoft Entra ID.
 #customer intent: As an IT admin, I want to troubleshoot why users aren't being provisioned in a Microsoft Entra Gallery Application so that I can resolve the issue and ensure proper user access.  
 author: jenniferf-skc
-manager: dougeby
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to

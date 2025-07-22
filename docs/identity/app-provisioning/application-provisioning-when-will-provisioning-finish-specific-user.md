@@ -2,7 +2,7 @@
 title: Find out when a specific user is able to access an app in Microsoft Entra Application Provisioning
 description: How to find out when a critically important user is able to access an application you have configured for user provisioning with Microsoft Entra ID.
 author: jenniferf-skc
-manager: dougeby
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
