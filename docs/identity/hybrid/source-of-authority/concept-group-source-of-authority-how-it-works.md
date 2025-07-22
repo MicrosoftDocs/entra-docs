@@ -45,4 +45,4 @@ You convert the SOA of a synced group (parent) whose members are other synced gr
 
 ## Related content
 
-- [Configure Group Source of Authority](how-to-group-source-of-authority-configure)
+- [Configure Group Source of Authority](how-to-group-source-of-authority-configure.md)
