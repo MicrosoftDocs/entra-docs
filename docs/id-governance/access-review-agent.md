@@ -19,6 +19,20 @@ The Access Review Agent helps you ensure that access to resources provided to us
 
 The Access Review agent evaluates current access reviews based on policies around previous access review decisions, user activity, governance behavior, and account status. When the agent identifies a suggestion, you can have the agent complete the review based on you accepting, or rejecting, the recommendation.
 
+
+The review scenarios supported by the Access Review Agent are as follows:
+
+
+|Review Scenario  |Supported  |
+|---------|---------|
+|Teams + Groups     |  :white_check_mark:        |
+|Application assignment    |   :white_check_mark:       |
+|Access package assignment     |    :white_check_mark:      |
+|Microsoft Entra role     |         |
+|Azure resource role     |         |
+|Groups managed by PIM     |         |
+
+
 ## Prerequisites
 
 - You must have at least the [Microsoft Entra ID Governance](licensing-fundamentals.md) license.
