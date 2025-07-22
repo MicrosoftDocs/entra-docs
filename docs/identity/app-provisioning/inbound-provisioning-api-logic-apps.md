@@ -2,7 +2,7 @@
 title: API-driven inbound provisioning with Azure Logic Apps
 description: Learn how to implement API-driven inbound provisioning with Azure Logic Apps.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to

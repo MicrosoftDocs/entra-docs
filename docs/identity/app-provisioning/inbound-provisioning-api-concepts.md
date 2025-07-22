@@ -3,7 +3,7 @@ title: API-driven inbound provisioning concepts
 description: An overview of API-driven inbound provisioning.
 
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
