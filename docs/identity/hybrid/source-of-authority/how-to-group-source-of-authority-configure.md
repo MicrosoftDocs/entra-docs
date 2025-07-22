@@ -321,9 +321,56 @@ Follow these steps to switch the SOA for a test group:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
 
-## Bulk update Group SOA
+## Bulk updates for Group SOA
 
-You can use PowerShell to update SOA for groups in bulk. 
+You can use the following PowerShell script to automate Group SOA updates for app-based authentication. You need to provide the *clientId* and *clientSecret* of the app, and your *tenantId*.
+
+```powershell
+# Define your Azure AD app details and tenant information
+$clientId = ""
+$tenantId = ""
+$clientSecret = ""
+ 
+ 
+# Get the access token
+$body = @{
+    grant_type    = "client_credentials"
+    scope         = "https://graph.microsoft.com/.default"
+    client_id     = $clientId
+    client_secret = $clientSecret
+}
+ 
+$tokenResponse = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token" -Method Post -ContentType "application/x-www-form-urlencoded" -Body $body
+$token = $tokenResponse.access_token
+ # Provide Group ID of the group whose members you are going to switch SOA of
+ $groupID = "f1e26769-43df-4087-a85c-ba26612fddd3"
+
+    # Get group members
+    $members = Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/v1.0/groups/$groupID/members" -Headers @{Authorization = "Bearer $token"}
+ 
+    # Print UPN and Object ID of each member
+    $members.value | ForEach-Object {
+ 
+$userObjectID = $_.id
+Write-Host $_.userPrincipal $userObjectID
+ 
+ 
+# Define the MS Graph API endpoint for the user
+$url = "https://graph.microsoft.com/beta/users/$userObjectID/onPremisesSyncBehavior"
+ 
+# Define the JSON payload for the PATCH request
+$jsonPayload = @{
+    isCloudManaged = "true"
+} | ConvertTo-Json
+ 
+# Make the PATCH request to update the user's department
+Invoke-RestMethod -Uri $url -Method Patch -Headers @{
+    "Authorization" = "Bearer $token"
+    "Content-Type"  = "application/json"
+} -Body $jsonPayload
+ 
+    } | Format-Table -AutoSize
+```
 
 ## Roll back SOA update
 
@@ -336,7 +383,7 @@ Run this opreration to roll back the SOA update and revert the SOA to on-premise
       }   
    ```
 
-   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/rollback.png" alt-text="Screenshot of API cakll to revert SOA.":::
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/rollback.png" alt-text="Screenshot of API call to revert SOA.":::
 
 > [!NOTE]
 > This change to "isCloudManaged: false" simply allows the object to be taken over by Connect Sync the next time it runs (assuming the AD object remains in scope). Until Connect Sync runs next, the object can be edited in the cloud. So, the full "rollback of SOA" when the object becomes synched from on-premises again only happens after *both* the API call and the next sceduled or forced run of Connect Sync.
