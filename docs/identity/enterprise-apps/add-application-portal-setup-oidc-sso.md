@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 07/15/2025
+ms.date: 07/22/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
@@ -61,6 +61,8 @@ To configure OIDC-based SSO for a gallery application:
 
 After entering the sign-in credentials, the consent screen appears. The consent screen provides information about the application and the permissions it requires.
 1. Select **Consent on behalf of your organization** and then select **Accept**. The application is added to your tenant and the application home page appears.
+
+Contact the application vendor to learn about any additional configuration steps required for the application.
 
 > [!NOTE]
 > You can add only one instance of a gallery application. Once you add an application and try to provide consent again, you can't add it again to the tenant.
@@ -184,9 +186,9 @@ For specific implementation guidance, see [Authorization Code flow with PKCE](~/
 
 If your application needs to support users from multiple organizations:
 
-1. Configure the app registration with **Accounts in any organizational directory**
-2. Use the common endpoint: `https://login.microsoftonline.com/common/`
-3. Implement proper tenant validation in your application logic
+- Configure the app registration with **Accounts in any organizational directory**
+- Use the common endpoint: `https://login.microsoftonline.com/common/`
+- Implement proper tenant validation in your application logic
 
 For detailed guidance, see [How to: Convert your app to be multitenant](~/identity-platform/howto-convert-app-to-be-multi-tenant.md).
 
