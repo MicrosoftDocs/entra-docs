@@ -3,7 +3,7 @@ title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
 author: jenniferf-skc
 ms.author: jfields
-manager: pmwongera
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting

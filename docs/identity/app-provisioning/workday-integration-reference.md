@@ -3,7 +3,7 @@ title: Microsoft Entra ID and Workday integration reference
 description: Technical deep dive into Workday-HR driven provisioning in Microsoft Entra ID
 
 author: jenniferf-skc
-manager: pmwongera
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference

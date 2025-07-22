@@ -2,7 +2,7 @@
 title: Reference for writing expressions for attribute mappings in Microsoft Entra Application Provisioning
 description: Learn how to use expression mappings to transform attribute values into an acceptable format during automated provisioning of SaaS app objects in Microsoft Entra ID. Includes a reference list of functions.
 author: jenniferf-skc
-manager: pmwongera
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
