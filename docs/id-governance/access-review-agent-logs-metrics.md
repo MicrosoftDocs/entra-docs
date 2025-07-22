@@ -57,8 +57,3 @@ In the **Audit logs** the **Initiated by (actor)** field show the name of the us
 
 - [Access Review Agent with Microsoft Security Copilot](access-review-agent.md)
 - [What are access reviews?](access-reviews-overview.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
-
