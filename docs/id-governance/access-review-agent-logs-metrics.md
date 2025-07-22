@@ -8,7 +8,7 @@ ms.subservice: access-reviews
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 07/19/2025
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+#CustomerIntent: As a governance administrator, I want to view the logs and metrics for access reviews completed with help from the access review agent.
 ---
 
 # View logs and metrics for the Access Review agent
