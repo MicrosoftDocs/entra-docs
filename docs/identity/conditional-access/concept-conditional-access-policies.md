@@ -1,16 +1,19 @@
 ---
-title: Building a Conditional Access policy
-description: What are all of the options available to build a Conditional Access policy and what do they mean?
-
+title: Building Conditional Access policies in Microsoft Entra
+description: Understand the phases of Conditional Access policy enforcement in Microsoft Entra and how to apply them to secure user access.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/29/2024
-
+ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: lhuangnorth
+ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/22/2025
+  - ai-gen-description
 ---
 # Building a Conditional Access policy
 
@@ -50,7 +53,7 @@ The assignments portion controls the who, what, and where of the Conditional Acc
 
 ### Users and groups
 
-[Users and groups](concept-conditional-access-users-groups.md) assign who the policy include or exclude when applied. This assignment can include all users, specific groups of users, directory roles, or external guest users. 
+[Users and groups](concept-conditional-access-users-groups.md) assign who the policy include or exclude when applied. This assignment can include all users, specific groups of users, directory roles, or external guest users. Organizations with Microsoft Entra Workload ID licenses might target [workload identities](/entra/workload-id/workload-identities-overview) as well.
 
 <a name='cloud-apps-or-actions'></a>
 
@@ -142,7 +145,7 @@ A Conditional Access policy must contain at minimum the following to be enforced
 - **Name** of the policy.
 - **Assignments**
    - **Users and/or groups** to apply the policy to.
-   - **Cloud apps or actions** to apply the policy to.
+   - **Target resources** to apply the policy to.
 - **Access controls**
    - **Grant** or **Block** controls
 
@@ -152,7 +155,7 @@ The article [Common Conditional Access policies](concept-conditional-access-poli
 
 ## Related content
 
-- [Create a Conditional Access policy](~/identity/authentication/tutorial-enable-azure-mfa.md?bc=/azure/active-directory/conditional-access/breadcrumb/toc.json&toc=/azure/active-directory/conditional-access/toc.json#create-a-conditional-access-policy)
+- [Common Conditional Access policies](concept-conditional-access-policy-common.md)
 
 - [Managing device compliance with Intune](/mem/intune/protect/device-compliance-get-started)
 
