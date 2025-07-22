@@ -62,20 +62,13 @@ Optional: You have two options for manually curated links in this pattern: Next 
 
 -->
 
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
 
 ## Related content
 
 TODO: Add your next step link(s)
 
-- [Write concepts](article-concept.md)
+- [Access Review Agent with Microsoft Security Copilot](access-review-agent.md)
+- [What are access reviews?](access-reviews-overview.md)
 
 <!--
 Remove all the comments in this template before you sign-off or merge to the main branch.
