@@ -1,16 +1,19 @@
 ---
-title: Microsoft Entra ID's backup authentication system
-description: Increasing the resilience of the authentication plane with the backup authentication system.
-
+title: Backup Authentication System for Microsoft Entra ID
+description: Explore the resilience features of Microsoft Entra ID's backup authentication system, designed to maintain authentication availability for users and services.
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 05/29/2024
-
+ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: joroja
+ms.custom:
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/22/2025
+  - ai-gen-description
 ---
 # Microsoft Entra ID's backup authentication system
 
@@ -26,7 +29,7 @@ In addition to Microsoft applications, we support:
 - Software as a service (SaaS) applications available in the app gallery, like ADP, Atlassian, AWS, GoToMeeting, Kronos, Marketo, SAP, Trello, Workday, and more.
 - Selected line of business applications, based on their authentication patterns.
 
-Service to service authentication that relies on managed identities for Azure resources or are built on Azure services, like virtual machines, cloud storage, Azure AI services, and App Service, receives increased resilience from the backup authentication system.
+Service to service authentication that relies on managed identities for Azure resources or are built on Azure services receive increased resilience from the backup authentication system.
 
 Microsoft is continuously expanding the number of supported scenarios.
 
@@ -57,7 +60,7 @@ During an outage, a user can authenticate using the backup authentication system
 
 ### How does interactive authentication and user activity affect resilience?
 
-The backup authentication system relies on metadata from a prior authentication to reauthenticate the user during an outage. For this reason, a user must have authenticated in the last three days using the same app on the same device for the backup service to be effective. Users who are inactive or haven't authenticated to a given app can't use the backup authentication system for that application.
+The backup authentication system relies on metadata from a prior authentication to reauthenticate the user during an outage. A user must have authenticated in the last three days using the same app on the same device for the backup service to be effective. Users who are inactive or haven't authenticated to a given app can't use the backup authentication system for that application.
 
 ### How do Conditional Access policies affect resilience?
 
