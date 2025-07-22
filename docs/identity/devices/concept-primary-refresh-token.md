@@ -6,10 +6,10 @@ ms.subservice: devices
 ms.topic: conceptual
 ms.date: 07/22/2025
 
-ms.author: jploegert
-author: ploegert
+ms.author: owinfrey
+author: owinfreyATL
 manager: femila
-ms.reviewer: owinfrey
+ms.reviewer: 
 ---
 # Understanding Primary Refresh Token (PRT)
 
