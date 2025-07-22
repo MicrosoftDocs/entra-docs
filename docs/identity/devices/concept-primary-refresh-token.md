@@ -4,12 +4,12 @@ description: Learn the role and management of Primary Refresh Token (PRT) in Mic
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 03/03/2025
+ms.date: 07/22/2025
 
-ms.author: owinfrey
-author: owinfreyATL
+ms.author: jploegert
+author: ploegert
 manager: femila
-ms.reviewer: 
+ms.reviewer: owinfrey
 ---
 # Understanding Primary Refresh Token (PRT)
 
@@ -240,7 +240,7 @@ For an overview of how tokens are protected in general, refer to [Protecting tok
 ### [Windows](#tab/windows-browsercookies)
 
 - In Windows 10 or newer, Microsoft Entra ID supports browser SSO in Microsoft Edge natively, in Google Chrome via native support or [extension](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji) and in Mozilla Firefox v91+ via a browser setting. The security is built not only to protect the cookies but also the endpoints to which the cookies are sent.
-- When a user initiates a browser interaction, the browser (or the extension) invokes a [platform API](https://learn.microsoft.com/windows/win32/api/proofofpossessioncookieinfo/nf-proofofpossessioncookieinfo-iproofofpossessioncookieinfomanager-getcookieinfoforuri). The extension calls this API via a native messaging host. The API ensures that the page is from one of the allowed domains. The browser sends full query string, which includes a nonce. The platform API creates a PRT and device header, which are signed with the TPM-protected keys. The PRT-header is signed by the session key, the device header by device key, thus it's difficult to tamper with. These headers are included in all requests for Microsoft Entra ID to validate the device it's originating from and the user. Once Microsoft Entra ID validates those headers, it issues a session cookie to the browser. This session cookie also contains the same session or device key used to sign the request. During subsequent requests, the session key is validated effectively binding the cookie to the device and preventing replays from elsewhere.
+- When a user initiates a browser interaction, the browser (or the extension) invokes a [platform API](/windows/win32/api/proofofpossessioncookieinfo/nf-proofofpossessioncookieinfo-iproofofpossessioncookieinfomanager-getcookieinfoforuri.md). The extension calls this API via a native messaging host. The API ensures that the page is from one of the allowed domains. The browser sends full query string, which includes a nonce. The platform API creates a PRT and device header, which are signed with the TPM-protected keys. The PRT-header is signed by the session key, the device header by device key, thus it's difficult to tamper with. These headers are included in all requests for Microsoft Entra ID to validate the device it's originating from and the user. Once Microsoft Entra ID validates those headers, it issues a session cookie to the browser. This session cookie also contains the same session or device key used to sign the request. During subsequent requests, the session key is validated effectively binding the cookie to the device and preventing replays from elsewhere.
 
 
 ### [iOS and Mac](#tab/iOS-browsercookies)
