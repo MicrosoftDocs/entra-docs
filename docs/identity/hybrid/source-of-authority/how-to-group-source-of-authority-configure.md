@@ -374,7 +374,10 @@ Invoke-RestMethod -Uri $url -Method Patch -Headers @{
 
 ## Roll back SOA update
 
-Run this opreration to roll back the SOA update and revert the SOA to on-premises. 
+> [!IMPORTANT] 
+> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to Active Directory. The sync client takes over the object in the next sync cycle.
+
+You can run this opreration to roll back the SOA update and revert the SOA to on-premises. 
 
    ```https
    PATCH https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior

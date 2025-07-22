@@ -19,7 +19,7 @@ One challenge many organizations face is the proliferation of groups, particular
 
 There's no way to confirm if a group is needed to access a resource, like an app or a file. So we need another way to identify and clean up groups that are no longer needed.
 
-One option to clean up groups from an Active Directory domain, is to use a scream test methodology. For more information, see How to remove unused groups from Active Directory.
+One option to clean up groups from an Active Directory domain, is to use a scream test methodology. For more information, see [How to remove unused groups from Active Directory](active-directory-group-cleanup.md).
 
 ## Best practices
 
@@ -31,7 +31,7 @@ transition my group management capabilities to the cloud and use Microsoft Entra
 
 Microsoft Entra ID Governance supports governance of groups that are manageable with Microsoft Entra ID, i.e. cloud security groups and Microsoft 365 groups. While Distribution Lists (DLs) and Mail-Enabled Security Groups (MESGs) can exist in the cloud, they are Exchange concepts and cannot be managed through the Entra admin center or MS Graph.
 
-Customers should consider replacing DLs and MESGs with Microsoft 365 groups for collaboration and access management scenarios, as they offer built-in capabilities for governance, collaboration, and self-service. In most cases, DLs and MESGs will need to be recreated as Microsoft 365 groups. However, simple, non-nested cloud managed DLs can be directly upgraded to Microsoft 365 groups. [Learn More.](/exchange/recipients-in-exchange-online/manage-distribution-groups/upgrade-distribution-lists)
+Customers should consider replacing DLs and MESGs with Microsoft 365 groups for collaboration and access management scenarios, as they offer built-in capabilities for governance, collaboration, and self-service. In most cases, DLs and MESGs will need to be recreated as Microsoft 365 groups. However, simple, non-nested cloud managed DLs can be directly upgraded to Microsoft 365 groups. For more information, see [Create and manage distribution lists in Exchange Online](/exchange/recipients-in-exchange-online/manage-distribution-groups/upgrade-distribution-lists).
 
 ### Transition self-service group management
 
@@ -39,7 +39,7 @@ I use self-service group management in Microsoft Identity Manager or other servi
 
 Microsoft Entra ID provides self-service group management through My Groups for Microsoft 365 and non-mail-enabled security groups. Microsoft Entra ID Governance enables access management through My Access, where you can manage groups with access packages. Access packages allow users to request access to groups as part of a structured governance framework. However, these solutions don't exactly replicate the self-service group management capabilities in Microsoft Identity Manager due to differences in on-premises and cloud solutions.
 
-To transition self-service group management from on-premises AD groups, you can modernize applications and leverage cloud-based security groups and Microsoft 365 groups. For more information, see Self-service group management guidance for Group Source of Authority (SOA).
+To transition self-service group management from on-premises AD groups, you can modernize applications and leverage cloud-based security groups and Microsoft 365 groups. For more information, see [Self-service group management guidance for Group Source of Authority (SOA)](how-to-source-of-authority-self-service-group-management.md).
 
 ### Manage on-premises apps tied to Microsoft 365 groups
 
