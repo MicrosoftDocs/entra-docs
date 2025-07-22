@@ -21,7 +21,7 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 - To view the Microsoft Entra audit logs, you need at least the [Reports reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
 - [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
-- [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) roles can view the agent and take action on the suggestions.
+- [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles can view the agent and take action on the suggestions.
    - For more information on roles for the Access Review Agent, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
