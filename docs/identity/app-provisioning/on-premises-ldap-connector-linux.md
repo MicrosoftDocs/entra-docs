@@ -1,14 +1,14 @@
 ---
 title: Microsoft Entra provisioning to LDAP directories for Linux authentication
 description: This document describes how to configure Microsoft Entra ID to provision users into an LDAP directory so that the users can then sign into a Linux or other POSIX system using pluggable authentication.
-author: kenwith
+author: jenniferf-skc
 manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.custom: linux-related-content, sfi-ga-nochange
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: kenwith
+ms.author: jfields
 ms.reviewer: arvinh
 ---
 

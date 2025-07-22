@@ -1,13 +1,13 @@
 ---
 title: Microsoft Entra provisioning to applications via PowerShell
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer Windows PowerShell based APIs.
-author: kenwith
+author: jenniferf-skc
 manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: kenwith
+ms.author: jfields
 ms.reviewer: arvinh
 ms.custom: sfi-image-nochange
 ---
