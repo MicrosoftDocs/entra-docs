@@ -30,7 +30,7 @@ You may need to perform additional actions upon completion of various Platform S
 Consider using these events to record telemetry or monitoring for errors or success cases. Once Device & User registration have completed you should mark the device compliant via the compliance API service. 
 
 |Notification Name  |Trigger  |
-|:---:|:---:|
+|---|---|
 |Microsoft.PlatformSSO.DeviceRegistration.Started  |Device registration has started  |
 |Microsoft.PlatformSSO.DeviceRegistration.Succeeded  |Device registration finished  |
 |Microsoft.PlatformSSO.DeviceRegistration.Failed  |Device registration failed  |
