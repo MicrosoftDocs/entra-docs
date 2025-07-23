@@ -127,6 +127,8 @@ items:
       href: add-application-portal-configure.md
     - name: Add enterprise app for multi-tenant app
       href: create-service-principal-cross-tenant.md
+    - name: Configure app management policies
+      href: configure-app-mgmt-policies.md
     - name: Configure Single sign-on
       items:
       - name: Enable Single sign-on with SAML
