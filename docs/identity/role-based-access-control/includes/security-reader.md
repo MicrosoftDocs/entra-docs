@@ -33,7 +33,6 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/bulkJobs/standard/read | Read all bulk jobs in a directory |
 > | microsoft.directory/conditionalAccessPolicies/owners/read | Read the owners of Conditional Access policies |
 > | microsoft.directory/conditionalAccessPolicies/policyAppliedTo/read | Read the "applied to" property for Conditional Access policies |
 > | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |

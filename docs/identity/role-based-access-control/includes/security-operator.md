@@ -32,7 +32,6 @@ This is a [privileged role](../privileged-roles-permissions.md). Users with this
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
-> | microsoft.directory/bulkJobs/standard/read | Read all bulk jobs in a directory |
 > | microsoft.directory/cloudAppSecurity/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps |
 > | microsoft.directory/identityProtection/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Entra ID Protection<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
 > | microsoft.directory/privilegedIdentityManagement/allProperties/read | Read all resources in Privileged Identity Management |
