@@ -53,7 +53,7 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- The agent currently runs as the user who enables it.
+- The agent runs as the user who enables it, while each review decision is acted on by the reviewer accepting or denying the decision.
 - We recommend running the agent from the Microsoft Entra admin center.
 
 
