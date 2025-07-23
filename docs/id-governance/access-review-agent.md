@@ -14,14 +14,13 @@ ms.date: 07/17/2025
 # Access Review Agent with Microsoft Security Copilot
 
 
-The Access Review Agent helps you ensure that access to resources provided to users is up to date, and based on specific data from your organization. The agent recommends access review decisions based not only on [existing best practices](review-recommendations-access-reviews.md) for reviews, but also based on other criteria developed with the agent.
-
+The Access Review Agent helps you ensure that access to resources provided to users is up to date with actionable feedback based on specific data from your organization. The agent recommends access review decisions based not only on [existing best practices](review-recommendations-access-reviews.md) for reviews, but also based on other criteria developed with the agent.
 
 The Access Review agent evaluates current access reviews based on policies around previous access review decisions, user activity, governance behavior, and account status. When the agent identifies a suggestion, you can have the agent complete the review based on you accepting, or rejecting, the recommendation.
 
 ## Supported Scenarios
 
-The review scenarios supported by the Access Review Agent are as follows:
+The review scenarios currently supported by the Access Review Agent are as follows:
 
 
 |Review Scenario  |Supported  |
@@ -38,12 +37,10 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 
 ## Prerequisites
 
-- You must have at least the [Microsoft Entra ID Governance](licensing-fundamentals.md) license.
+- You must have the [Microsoft Entra ID Governance](licensing-fundamentals.md) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average each agent decision, which includes reasoning and your conversation with the Access Review Agent, consumes less than one SCU.
 - To activate the agent the first time, you need the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
-- You can assign [Identity Governance Administrators](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) with Security Copilot access, which gives your Identity Governance Administrators the ability to use the agent as well.
-   - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
 - [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader), and [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles can view the agent and any suggestions.
 - [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles can view the agent and take action on the suggestions.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
@@ -55,7 +52,7 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 - Recommendations are only available for single stage reviews.
 - The agent only supports up to 35 decisions per review.
 - The agent currently runs as the user who enables it.
-- The reviewer must be a [internal user (of userType member or guest)](../external-id/user-properties.md) within the tenant in which the review is scheduled. External guests or external members as reviewers aren't currently supported.
+- The reviewer must be an [internal user (of userType member or guest)](../external-id/user-properties.md) within the tenant in which the review is scheduled. External guests or external members as reviewers aren't currently supported.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
@@ -64,7 +61,7 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 ## How it works
 
 
-The Access Review Agent proactively scans active access reviews, and assists reviewers in making informed decisions about access for users in your environment. The agent, which reviewers communicate with directly via a [Microsoft Teams](/microsoftteams/teams-overview) chat, uses user context to help inform decisions. When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
+The Access Review Agent proactively scans access reviews, and assists reviewers in making informed decisions about the access for users in your environment. The agent, which reviewers communicate with directly via a [Microsoft Teams](/microsoftteams/teams-overview) chat, uses user context to help inform decisions. When providing review recommendations, the agent provides details that led to the recommendations, allowing reviewers to review the reasoning used and make their own decisions with the information provided.
 
 Each time the agent runs, it takes the following steps. **The initial scanning steps do not consume any SCUs.**
 
@@ -80,10 +77,10 @@ If the agent identifies something that wasn't previously suggested, it takes the
 
 The agent considers the following about a user when making review recommendations:
 
-- **Activity**: If the user has signed in(SignInActivity) the past 30 days.
+- **Activity**: If the user has signed in([SignInActivity](/graph/api/resources/signinactivity)) the past 30 days.
 - **User-to-Group affiliation**: If the user has a [low affiliation](review-recommendations-access-reviews.md) with other users who has the access being requested.
 - **Account enabled**: If the user's account is enabled(accountEnabled).
-- **Employment status**: If the user's employment ended(employeeLeaveDateTime)
+- **Employment status**: If the user's employment ended([employeeLeaveDateTime](/graph/tutorial-lifecycle-workflows-set-employeeleavedatetime))
 - **Lifecycle workflow history**: If the user has had a mover workflow ran for them in the past 30 days
 - **Previous reviews**: If the user being reviewed is part of a recurring review, decisions from previous review iterations or access package assignments are considered.
 
