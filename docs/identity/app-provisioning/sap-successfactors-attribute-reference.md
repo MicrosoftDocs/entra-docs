@@ -2,13 +2,13 @@
 title: SAP SuccessFactors attribute reference for Microsoft Entra ID
 description: Learn which attributes from SuccessFactors are supported by SuccessFactors-HR driven provisioning in Microsoft Entra ID.
 
-author: jenniferf-skc
-manager: pmwongera
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 03/04/2025
-ms.author: jfields
+ms.author: kenwith
 ms.reviewer: chmutali
 ai-usage: ai-assisted
 ---
