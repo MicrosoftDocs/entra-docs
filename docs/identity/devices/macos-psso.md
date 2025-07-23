@@ -106,7 +106,7 @@ macOS allows users to configure Platform SSO to support Kerberos-based SSO to on
 To learn more, see [Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources](./device-join-macos-platform-single-sign-on-kerberos-configuration.md).
 
 ## Graph API support
-You can use the Microsoft Graph API to manage macOS Platform SSO. 
+You can use the Microsoft Graph API to manage the PlatformCredential authentication method.
 
 The following APIs are available:
 
