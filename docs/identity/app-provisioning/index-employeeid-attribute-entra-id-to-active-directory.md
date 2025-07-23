@@ -55,7 +55,7 @@ Enabling indexing for other attributes such as `employeeId` increases storage re
   1. Select **Active Directory Schema** from the list and click **Add**, then **OK**.<br>
 
 ### Locate the Attribute to Index
-  1. In the left pane, expand Active Directory Schema and select Attributes.<br>
+  1. In the left pane, expand Active Directory Schema and select **Attributes**.<br>
   1. Scroll through the list to find the attribute you want to index (for example, `employeeId`).<br>
 
 ### Edit Attribute Properties
