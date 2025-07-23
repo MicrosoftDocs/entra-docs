@@ -156,7 +156,7 @@ The agent is configured to run every 24 hours based on when it's initially confi
 
 ## Remove agent
 
-If you no longer wish to use the Access Review agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any reviews approved or revoked based on the agent suggestions remain intact. Previously applied suggestions remain unchanged for the access reviews completed.
+If you no longer wish to use the Access Review agent, select **Remove agent** from the top of the agent window. The existing data such as access review information and justifications for are removed, but decisions made via decisions with the conversations with the agent remains. They should disable the agent on the access reviews that were enabled for use with the agent.
 
 ### Providing feedback
 
