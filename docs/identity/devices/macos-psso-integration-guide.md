@@ -4,7 +4,7 @@ description: Learn how to integrate macOS Platform Single Sign On (PSSO) into yo
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 23/07/2025
+ms.date: 07/23/2025
 ms.author: godonnell
 author: garrodonnell
 manager: dougeby
@@ -45,4 +45,4 @@ Consider using these events to record telemetry or monitoring for errors or succ
 
 * [macOS Platform Single Sign-on overview](./macos-psso.md)
 * [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md)
-* [Configure Platform SSO for macOS devices in Microsoft Intune](../../intune/intune-service/configuration/platform-sso-macos.md)
+* [Configure Platform SSO for macOS devices in Microsoft Intune](/intune/intune-service/configuration/platform-sso-macos)
