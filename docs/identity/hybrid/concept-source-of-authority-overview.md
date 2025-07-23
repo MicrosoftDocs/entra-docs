@@ -39,8 +39,6 @@ Applying Group SOA to a group that synchronizes from AD converts the group to a 
 
 - Use the Groups SOA to change the source of authority of the existing AD. Provision the groups back to AD with Group Provision to AD. In this model, you don’t need to change the app or create new groups. For more information, see [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](/entra/id-governance/scenarios/provision-entra-to-active-directory-groups).
 
-  :::image type="content" source="media/concept-source-of-authority-overview/source-of-authority-switch.png" alt-text="Conceptual diagram of switch for Source of Authority." lightbox="media/concept-source-of-authority-overview/source-of-authority-switch.png":::
-
 - To replicate the groups in AD, create them from scratch in Microsoft Entra ID as new cloud security groups. Provision them to AD as Universal groups with Group Provision to AD. In this model, you can change the app to use the new group security identifiers (SID). If you use the account, global, domain local, permission model, nest the newly provisioned group under the existing group. For more information, see [Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning).
 
 
