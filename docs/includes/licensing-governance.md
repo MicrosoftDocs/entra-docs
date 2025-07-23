@@ -17,7 +17,7 @@ The following table shows what features associated with identity governance are 
 
 |Feature|Free|Microsoft Entra ID P1|Microsoft Entra ID P2|Microsoft Entra ID Governance| Microsoft Entra Suite |
 |-----|:-----:|:-----:|:-----:|:-----:|:-----:|
-|[Access Review Agent](~/id-governance/access-review-agent.md)|| | | :white_check_mark: | |
+|[Access Review Agent (Preview)](~/id-governance/access-review-agent.md)|| | | :white_check_mark: | :white_check_mark: |
 |[API-driven provisioning](~/identity/app-provisioning/inbound-provisioning-api-concepts.md)|| :white_check_mark:  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[HR-driven provisioning](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)|| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Automated user provisioning to SaaS apps](~/identity/saas-apps/tutorial-list.md)| :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
