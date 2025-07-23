@@ -3,7 +3,7 @@ title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
 description: Learn how to transition group management from Active Directory to Microsoft Entra ID using Source of Authority (SOA), including prerequisites, setup, validation, rollback, and integration with Group Provisioning to Active Directory (GPAD).
 author: Justinha
 manager: dougeby
-ms.topic: concept-article
+ms.topic: how-to
 ms.date: 07/18/2025
 ms.author: justinha
 ms.reviewer: dhanyak
@@ -11,141 +11,17 @@ ms.reviewer: dhanyak
 
 # Configure Group Source of Authority (SOA) 
 
-Source of Authority (SOA) is a feature that enables IT administrators in hybrid environments to transition the management of specific objects from Active Directory (AD) to Microsoft Entra ID. 
-When an administrator applies SOA to an object synced from AD to Microsoft Entra ID, they convert the object to a cloud-owned object that can only be edited and deleted in Microsoft Entra ID. 
-Connect Sync and Cloud Sync honor the conversion, and no longer try to sync the object from AD. 
-
-Helping administrators select which objects they want to be cloud-managed lets them phase the migration process. 
-They don't need to switch the entire directory to the cloud and discontinue AD at once. 
-SOA helps hybrid environments avoid substantial redesign and re-platforming of applications, so they can gradually reduce AD dependencies.
-This phased approach ensures seamless operations, minimal impact on end users, and helps organizations secure their identities using capabilities in Microsoft Entra ID and
-Microsoft Entra ID Governance. 
-
-## When can you use SOA?
-
-Source of Authority (SOA) allows you to convert an on-premises AD group into a cloud-owned group and manage it from the cloud.
-If you no longer need the group on-premises, you can delete it from AD. 
-If you still need the group, you can use **Group Provisioning to AD**. 
-For more information, see [Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning).
-
-You can use SOA in any of these scenarios:
-
-- You have begun your [Cloud-first](/entra/architecture/road-to-the-cloud-posture#state-3-cloud-first) journey by creating all new groups in the cloud, and now you want to migrate your existing on-premises AD groups to the cloud. This strategy enables you to use Microsoft Entra ID Governance to control access to applications through these groups. With **Group Provisioning to AD**, you can provision only the necessary groups back to AD, and govern their membership by using features like dynamic groups, entitlement management, and access reviews.
-
-- You no longer have any on-premises Exchange dependencies, or require Distribution Lists (DLs), and Mail Enabled Security Groups (MESGs) to be present in AD. You also want to transition the management of these groups to Exchange Online (EXO).
-
-- You modernized your apps and no longer need AD groups for access. For example, your apps now rely on group claims that use SAML or OpenID Connect from Microsoft Entra, rather than ADFS. Using Microsoft Entra ID Governance, you want to manage these apps with Microsoft Entra features. With SOA, instead of creating new cloud groups, you can migrate on-premises groups. After SOA conversion, app functionality remains because group properties stay the same, enabling you to manage app access using Microsoft Entra features that update group membership.
-
-## When should you not use SOA?
-
-If you are a customer who has any of the following scenarios, we
-recommend that you review your group management strategy and determine
-which groups can migrate to the cloud so you can reduce your AD
-dependencies. For the ones that can’t, think about how you can remove or
-modernize apps tied to these groups so you can remove them eventually.
-
-| Customer scenario                                                                                          | What’s not supported                                                                                                                                                                                                                                                                                                                                                                                                             |
-|------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| You are using group management tools, such as MIM, for approval and complex group management capabilities. | In this scenario, you may be using these tools to provide self-service group management capabilities, with multiple approval stages or other complex group management features such as dynamic groups populated based on attributes not in the Entra ID directory. Such capabilities are currently not supported through Microsoft Entra ID cloud-hosted services. These groups are not candidates yet to move to cloud managed. |
-| You have on-prem groups tied to Exchange, such as Distribution Lists or Mail-Enabled security groups.      | You can apply SOA to these objects, but you must maintain membership through Exchange Online and not through Entra ID. As such, Entra ID Governance cannot be applied to them. They are also not able to be provisioned back to Active Directory. If you want to govern them from the cloud, we recommend you modernize the underlying apps and remove the groups from AD after you shift their SOA to the cloud.                |
-| Support for managing and governing AD based apps tied to M365 groups (Universal groups).                   | Currently, there are no plans to enable selective provisioning of M365 groups to Active Directory. Our goal is to help customers clean up their groups in AD and remove any groups tied to apps that have exchange features rather than continue to keep these apps, thereby keeping these groups in AD.                                                                                                                         |
-
-## Scenarios in scope for preview
-
-
-This preview supports the ability to switch the SOA of any synced group in Active Directory to a cloud group. These scenarios are enabled by Group SOA preview:
-
-
-- **Minimize on-premises groups in AD:** Migrate on-premises groups to the
-cloud and manage them from the cloud without having to re-create these
-groups in Entra ID. By leveraging Group SOA at object level feature, you
-can switch the SOA of an on-premises AD group to be a cloud group. If
-you have already modernized the underlying apps tied to this group, you
-can just remove these groups in AD once you have shifted your SOA. If
-you are using Entra Connect Sync, you can do this without having to make
-any configuration changes to your sync.
-
-- **Seamless switching of AD Security Group to the Cloud (via SOA) and enabling provisioning back to the same AD Security Group:** Currently,
-Cloud Security Group Provisioning to AD creates a *new* on-prem AD
-security group when provisioning from the cloud. Provisioning is supported by the *existing* AD security
-group that SOA was applied for (retaining the SID so existing
-applications tied to the security group continue to function).
-
-
-## Supported features for Group SOA
-
-- Microsoft Entra Connect Sync customers can apply SOA groups at the object
-    level (sync client will understand the SOA switch and will stop
-    syncing the object from AD to Entra ID).
-
-- Transfer the source of authority of **any** group from AD to Microsoft Entra
-    ID. This means, once the group is transferred, it becomes a cloud
-    group and will be mapped to the corresponding group type in the
-    cloud.
-
-- Once the group is a cloud group, it will no longer be in scope for
-    the AD to Microsoft Entra ID sync flow. This means, the group will not be
-    synced from AD to Microsoft Entra ID using Connect Sync. We recommend you
-    delete the group instead of removing it as out of scope in your
-    scoping filters if you no longer need the group in AD.
-
-- You can roll back the SOA switch at an object level the same way
-    you set it up (by toggling the appropriate attribute value).
-    However, rolling back the change is not instantaneous – the cloud
-    object instantly becomes eligible again to be "taken over" by
-    Connect Sync, but it only actually happens **when the next sync runs.** The Connect Sync client will again take over the cloud
-    object, assuming the AD object remains in scope for sync.
-
-- **Cloud sync** customers can use SOA switch for groups at object
-    level (Cloud sync client will understand the SOA switch and will
-    stop syncing the object from AD to Entra ID)
-
-- If the cloud security group needs to be provisioned back to AD,
-    Admins can add the group to the Group Provision to AD scoping
-    configuration. They can use **Selected groups** or **All groups** with
-    attribute value scoping. Dynamic groups can also be used.
-
-- When provisioning security groups back to AD, Cloud Sync provisions
-    to the same AD group that SOA had applied for (retaining the same
-    SID) and will not create a new on-premises group.
-
-## Limitations
-
-- **No reconciliation support for local AD groups:** An AD admin (or
-    other application with sufficient permissions) can directly modify
-    an AD group. If SOA had been applied to the object and/or if cloud
-    security group provisioning to AD is enabled, those local AD changes
-    will not be reflected in Microsoft Entra ID. When a change to the cloud
-    security group is made, any local AD changes will be overwritten if
-    group provisioning to AD is enabled.
-
-- **No dual write allowed:** Once you start managing a group’s
-    memberships from Microsoft Entra ID for the transferred group (say cloud
-    group A) and you provision this group to AD using Group Provision to
-    AD as a nested group under another AD group (OnPremGroupB) in scope
-    for AD to Entra ID sync, the membership reference of group A will
-    not be synced when AD2EntraID sync happens for OnPremGroupB. This is
-    because the sync client will not know the cloud group membership
-    references. This is by design.
-
-- **SOA transfer of nested groups:** If you have nested groups in AD
-    and want to transfer the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA will be switched. All the
-    groups underneath the parent group will continue to be AD groups.
-    You need to switch the SOA of these nested groups one by one. We
-    recommend you start with the group in the lowest hierarchy and move
-    up the tree.
-
-- **Extension Attributes (1-15):** Extension attributes 1 – 15 aren't supported on cloud security groups and aren't supported after SOA is converted.
+This topic explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Group SOA overview](concept-source-of-authority-overview.md). 
 
 ## Prerequisites
 
 | Requirement | Description |
 |-------------|-------------|
 | **Roles** | - Groups Administrator role is allowed to call the OnPremisesSyncBehavior Microsoft Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Microsoft Graph API for Groups. |
-| **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
+| **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
 | **License needed** | Microsoft Entra Free or Basic license. |
-| **Connect Sync client** | Minimum version is 2.5.76.0 |
-| **Cloud Sync client** | Minimum version is 1.1.1586.0 |
+| **Connect Sync client** | Minimum version is [2.5.76.0](~/identity/hybrid/connect-sync/reference-version-history#25760) |
+| **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
 
 ## Setup
 
@@ -155,11 +31,11 @@ You need to set up Connect Sync client and the Cloud Sync client Provisioning ag
 
 1. Download the latest version of the Connect Sync build.
 
-1. Verify the Connect Sync build has been successfully installed. Go to **Add remove programs** in the Control Panel and confirm that the version of Microsoft Entra Connect Sync is **2.5.76.0** or later.
+1. Verify the Connect Sync build has been successfully installed. Go to **Add remove programs** in the Control Panel and confirm that the version of Microsoft Entra Connect Sync is [2.5.76.0](~/identity/hybrid/connect-sync/reference-version-history#25760) or later.
 
 ### Cloud Sync client
 
-Download the Provisioning agent with build version [1.1.1586.0](/entra/identity/hybrid/cloud-sync/reference-version-history) or later.
+Download the Provisioning agent with build version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700) or later.
 
 1. Follow the [instructions to download the Cloud Sync client](/entra/identity/hybrid/cloud-sync/reference-version-history#download-link).
 
@@ -177,9 +53,9 @@ Download the Provisioning agent with build version [1.1.1586.0](/entra/identity/
 
 ## Grant permission to apps
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
 
-1. In the **Enterprise Applications** blade in the Microsoft Entra portal, find the **Application Id** of the app that needs permission to be granted, such as Graph Explorer. For Graph Explorer, the **Application Id** is *de8bc8b5-d9f9-48b1-a8ad-b748da725064*.
+1. In the **Enterprise Applications** blade in the Microsoft Entra admin center, find the **Application Id** of the app that needs permission to be granted, such as Graph Explorer. For Graph Explorer, the **Application Id** is *de8bc8b5-d9f9-48b1-a8ad-b748da725064*.
 
 1. In the same browser where you signed in, open the following URL to consent to the **Group-OnPremisesSyncBehavior.ReadWrite.All** permission. Replace the **Application Id** in URL below with the **Application Id** of the app that needs permission to be granted. For Graph Explorer, the URL is:
 
@@ -194,12 +70,7 @@ Download the Provisioning agent with build version [1.1.1586.0](/entra/identity/
 
    :::image type="content" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of the consent screen for granting permissions in Microsoft Entra admin center.":::
 
-   > [!NOTE]
-   > Ignore this error if you see it after you click **Accept**: `AADSTS9002325: Proof Key for Code Exchange is required for cross-origin authorization code redemption.`
-
 1. To verify the permission is granted, open **Enterprise Applications** > **AppName** > **Security** > **Permissions** > **User consent in Microsoft Entra portal**. It may take a minute or two for the permission to appear.
-
-   :::image type="content" source="media/how-to-group-source-of-authority-configure/verify-consent.png" alt-text="Screenshot of the permissions page in Microsoft Entra portal showing granted permissions.":::
 
 ## Switch SOA for a test group
 
@@ -323,12 +194,14 @@ Follow these steps to switch the SOA for a test group:
 
 ## Bulk updates for Group SOA
 
-You can use the following PowerShell script to automate Group SOA updates for app-based authentication. You need to provide the *clientId* and *clientSecret* of the app, and your *tenantId*.
+You can use the following PowerShell script to automate Group SOA updates for app-based authentication. 
 
 ```powershell
-# Define your Azure AD app details and tenant information
+
+# Define your Microsoft Entra ID app details and tenant information
 $clientId = ""
 $tenantId = ""
+$groupID = ""
 $clientSecret = ""
  
  
@@ -342,22 +215,24 @@ $body = @{
  
 $tokenResponse = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token" -Method Post -ContentType "application/x-www-form-urlencoded" -Body $body
 $token = $tokenResponse.access_token
- # Provide Group ID of the group whose members you are going to switch SOA of
- $groupID = "f1e26769-43df-4087-a85c-ba26612fddd3"
 
-    # Get group members
-    $members = Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/v1.0/groups/$groupID/members" -Headers @{Authorization = "Bearer $token"}
- 
-    # Print UPN and Object ID of each member
-    $members.value | ForEach-Object {
- 
-$userObjectID = $_.id
-Write-Host $_.userPrincipal $userObjectID
- 
- 
-# Define the MS Graph API endpoint for the user
-$url = "https://graph.microsoft.com/beta/users/$userObjectID/onPremisesSyncBehavior"
- 
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "Group.Read.All"
+
+# Define the group name you want to query
+$groupName = "HR London"
+
+
+# Retrieve the group using group name
+$group = Get-MgGroup -Filter "displayName eq '$groupName'"
+
+# Ensure group is found
+if ($group -ne $null)
+{
+    $groupObjectID = $($group.Id)
+# Define the Microsoft Graph API endpoint for the user
+$url = "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior"
+
 # Define the JSON payload for the PATCH request
 $jsonPayload = @{
     isCloudManaged = "true"
@@ -368,9 +243,13 @@ Invoke-RestMethod -Uri $url -Method Patch -Headers @{
     "Authorization" = "Bearer $token"
     "Content-Type"  = "application/json"
 } -Body $jsonPayload
- 
-    } | Format-Table -AutoSize
-```
+$result = Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior?$select=id,displayName,isCloudManaged" -Headers @{Authorization = "Bearer $token"}
+ Write-Host "Group Name: $($group.DisplayName)"
+ Write-Host "Group ID: $($result.id)"
+ Write-Host "SOA Converted: $($result.isCloudManaged)"
+}
+Format-Table -AutoSize
+ ```
 
 ## Roll back SOA update
 
@@ -389,7 +268,7 @@ You can run this opreration to roll back the SOA update and revert the SOA to on
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/rollback.png" alt-text="Screenshot of API call to revert SOA.":::
 
 > [!NOTE]
-> This change to "isCloudManaged: false" simply allows the object to be taken over by Connect Sync the next time it runs (assuming the AD object remains in scope). Until Connect Sync runs next, the object can be edited in the cloud. So, the full "rollback of SOA" when the object becomes synched from on-premises again only happens after *both* the API call and the next sceduled or forced run of Connect Sync.
+> This change to "isCloudManaged: false" allows an AD object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is complete only happens after *both* the API call and the next scheduled or forced run of Connect Sync.
 
 ### Check Audit Logs to validate the revert operation
 
@@ -409,7 +288,7 @@ Select activity as **Undo changes to Source of Authority from AD to cloud**:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
 
-## Check Cloud sync provisioning logs 
+## Check Cloud sync Provisioning Logs 
 
 If you try to edit an attribute of a group in AD while **SOA is in the cloud**, the Cloud Sync skips the object.
 
@@ -421,9 +300,19 @@ In the **Provisioning Logs** of the **AD2AAD job**, you can see that **SOAGroup3
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/skipped.png" alt-text="Screenshot of a skipped object.":::
 
-The details confirm: "As the SOA of this group is in the cloud, this object will not sync."
+The details state `As the SOA of this group is in the cloud, this object will not sync.
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
+
+## Limitations
+
+- **No reconciliation support for local AD groups:** An AD admin (or an application with sufficient permissions) can directly modify an AD group. If SOA is applied to the object or if cloud security group provisioning to AD is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD changes are overwritten if group provisioning to AD is enabled.
+
+- **No dual write allowed:** Once you start managing the memberships for the transferred group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD using Group Provision to AD as a nested group under another AD group (OnPremGroupB) that's in scope for AD to Entra ID sync, the membership reference of group A won't be synced when AD2EntraID sync happens for OnPremGroupB. This is because the sync client doesn't know the cloud group membership references. This behavior is by design.
+
+- **No SOA transfer of nested groups:** If you have nested groups in AD and want to transfer the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA is switched. Nested groups in the parent group continue to be AD groups. You need to switch the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest hierarchy, and move up the tree.
+
+- **Extension Attributes (1-15):** Extension attributes 1 – 15 aren't supported on cloud security groups and aren't supported after SOA is converted.
 
 ## Related content
 
