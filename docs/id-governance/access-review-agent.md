@@ -44,7 +44,7 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 - You must have the [Microsoft Entra ID Governance](licensing-fundamentals.md) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average 20 agent decisions, which includes reasoning and your conversation with the Access Review Agent, consumes 0.6 SCU.
-- To utilize the Access Review agent as either an admin or reviewer you must have  at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with the following for Read or Write capabilities:
+- To utilize the Access Review agent as either an admin or reviewer you must have  at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with the following for specific capabilities:
    - To activate, configure, run, and remove the Access Review Agent you need the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role, or a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles.
    - To view the overview, activities, or settings  of the Access Review Agent you need either the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role or a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
@@ -88,7 +88,9 @@ The agent considers the following about a user when making review recommendation
 ## Getting started
 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
+### Setting up the Access Review Agent
+
+1. With an account that has at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) at least with both the roles of [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 1. From the new home page, select **Go to agents** from the agent notification card.
    - You can also select **Agents** from the left navigation menu.
    :::image type="content" source="media/access-review-agent/start-access-review-agent.png" alt-text="Screenshot of starting the Access Review Agent.":::
@@ -98,6 +100,30 @@ The agent considers the following about a user when making review recommendation
    - Avoid using an account with a role activated through PIM.
    - A message that says "The agent is starting its first run" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
+
+
+### Enable Access review for use with the Access Review Agent
+
+After the Access review is started, you must now enable which access reviews you want the agent to make decisions on. The Access Review Agent is able to scan both new, and existing, access reviews. To Update an existing access review so that the agent scans it, do the following:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+
+1. Browse to **ID Governance** > **Access Reviews**.
+
+1. Select the access review you want the agent to support.
+
+1. On the access review overview page, select **Settings**.
+
+1. Under **Advanced Settings**, check the box that says **Enable Access Review Agent**.
+
+1. Select **Save**. 
+
+### Ensure reviewers can use the Access Review Agent
+
+The Access Review Agent is accessed through a published first-party [Microsoft Teams App](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47), ensure that the app is [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Using the app also requires that reviewers use [Microsoft Teams Public Preview](/microsoftteams/public-preview-doc-updates?tabs=new-teams-client).
+
+With the app published and available, also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews.
+
 
 
 ## Settings
