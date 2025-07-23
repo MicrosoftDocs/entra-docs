@@ -12,8 +12,6 @@ ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ---
-# Multiple Domain Support for Federating with Microsoft Entra ID
-The following documentation provides guidance on how to use multiple top-level domains and subdomains when federating with Microsoft 365 or Microsoft Entra domains.
 
 ## Multiple top-level domain support
 Federating multiple, top-level domains with Microsoft Entra ID requires some extra configuration that isn't required when federating with one top-level domain.
@@ -35,38 +33,26 @@ When you attempt to convert the bmfabrikam.com domain to be federated, an error 
 
 ### SupportMultipleDomain Parameter
 To work around this constraint, you need to add a different IssuerUri, which can be done by using the `-SupportMultipleDomain` parameter. This parameter is used with the following cmdlets:
+> [!NOTE]
+> ### SupportMultipleDomain Parameter
+> This parameter is no longer available for the following modules:
+> * `Microsoft.Graph`
+> * `Microsoft.Entra`
+>
 
 * `New-MgDomainFederationConfiguration`
 * `Update-MgDomainFederationConfiguration`
 
 This parameter makes Microsoft Entra ID configure the IssuerUri so that it's based on the name of the domain. The IssuerUri will be unique across directories in Microsoft Entra ID. Using the parameter allows the PowerShell command to complete successfully.
 
-`-SupportMultipleDomain` doesn't change the other endpoints, which are still configured to point to the federation service on adfs.bmcontoso.com.
-
-`-SupportMultipleDomain` also ensures that the AD FS system includes the proper Issuer value in tokens issued for Microsoft Entra ID. This value is set by taking the domain portion of the user's UPN and using it as the domain in the IssuerUri, that is, `https://{upn suffix}/adfs/services/trust`.
-
-Thus during authentication to Microsoft Entra ID or Microsoft 365, the IssuerUri element in the user’s token is used to locate the domain in Microsoft Entra ID. If a match can't be found, the authentication fails.
-
-For example, if a user’s UPN is bsimon@bmcontoso.com, the IssuerUri element in the token, AD FS issuer, is set to `http://bmcontoso.com/adfs/services/trust`. This element matches the Microsoft Entra configuration, and authentication succeeds.
-
-The following customized claim rule implements this logic:
-
-```
-c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)", "http://${domain}/adfs/services/trust/"));
-```
-
-
-> [!IMPORTANT]
-> In order to use the -SupportMultipleDomain switch when attempting to add new or convert already existing domains, your federated trust needs to have already been set up to support them.
->
->
-
-<a name='how-to-update-the-trust-between-ad-fs-and-azure-ad'></a>
 
 ## How to update the trust between AD FS and Microsoft Entra ID
-If you didn't set up the federated trust between AD FS and your instance of Microsoft Entra ID, you may need to re-create this trust. The reason is, when it's originally set up without the `-SupportMultipleDomain` parameter, the IssuerUri is set with the default value. In the screenshot below, you can see the IssuerUri is set to `https://adfs.bmcontoso.com/adfs/services/trust`.
 
-If you have successfully added a new domain in the [Microsoft Entra admin center](https://entra.microsoft.com) and then attempt to convert it using `New-MgDomainFederationConfiguration -DomainName <your domain>`, you'll get an error.
+
+If you have successfully added a new domain in the [Microsoft Entra admin center](https://entra.microsoft.com) either by using Microsoft Entra Connect or by command line, you can use the following commands to update your Federation settings on Microsoft Entra ID. 
+
+* `Get-EntraFederationProperty -domainName contoso.com`
+* `Update-MgDomainFederationConfiguration -DomainID contoso.com -InternalDomainFederationId '0f6xxxx-fxxx-4xxx-axxx-19xxxxxxxx23'`
 
 Use the steps below to add an additional top-level domain. If you have already added a domain, and didn't use the `-SupportMultipleDomain` parameter, start with the steps for removing and updating your original domain. If you haven't added a top-level domain yet, you can start with the steps for adding a domain using PowerShell of Microsoft Entra Connect.
 
