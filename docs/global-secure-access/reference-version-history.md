@@ -36,7 +36,6 @@ June 25, 2025: Released for download. This version is only available for install
 ### New features and improvements
  
 - Updated connector signaling in GSA Private Access, increasing overall stability and responsiveness. 
-- Added additional performance counters, enabling more comprehensive and effective diagnostics for connectors. 
 - Bug fixes and minor improvements to enhance stability and performance. 
 
 ## Version 1.5.4287.0
