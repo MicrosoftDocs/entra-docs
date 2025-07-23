@@ -46,6 +46,11 @@ You can find more information and instructions on how to configure in these arti
 
 - [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
 
+> [!NOTE]
+> If you are configuring Platform SSO for macOS devices using a 3rd party MDM, refer to the documentation provided by your MDM vendor for specific instructions on how to configure Platform SSO.
+>
+> If you are a developer of a 3rd party MDM solution, refer to the [Integrate macOS Platform Single Sign On (PSSO) into your MDM solution](./macos-psso-integration-guide.md) guide for more information on how to integrate PSSO into your MDM solution.
+
 ## Deployment
 
 You can find more information and instructions on how to deploy Platform SSO for macOS in these articles.
