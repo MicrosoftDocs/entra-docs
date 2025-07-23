@@ -1,5 +1,5 @@
 ---
-title: Embrace cloud-first posture and transition AD group Source of Authority (SOA) to the cloud
+title: Embrace cloud-first posture and transition AD group Source of Authority (SOA) to the cloud (Preview)
 description: Learn about Source of Authority (SOA), including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
 author: Justinha
 ms.topic: conceptual
@@ -7,7 +7,7 @@ ms.date: 07/21/2025
 ms.author: justinha
 ms.reviewer: justinha
 ---
-# Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud
+# Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud (Preview)
 
 Modernization requirements have many organizations shifting Identity and Access Management (IAM) solutions from on-premises to the cloud. For the road to the cloud initiative, Microsoft has [modeled five states of transformation](/entra/architecture/road-to-the-cloud-posture#five-states-of-transformation) to align with customer business goals.
 

@@ -1,5 +1,5 @@
 ---
-title: Configure Group Source of Authority (SOA) in Microsoft Entra ID
+title: Configure Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
 description: Learn how to transition group management from Active Directory to Microsoft Entra ID using Source of Authority (SOA), including prerequisites, setup, validation, rollback, and integration with Group Provisioning to Active Directory (GPAD).
 author: Justinha
 manager: dougeby
@@ -9,7 +9,7 @@ ms.author: justinha
 ms.reviewer: dhanyak
 ---
 
-# Configure Group Source of Authority (SOA) 
+# Configure Group Source of Authority (SOA) (Preview)
 
 This topic explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Group SOA overview](concept-source-of-authority-overview.md). 
 
