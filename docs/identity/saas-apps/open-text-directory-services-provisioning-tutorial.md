@@ -45,37 +45,19 @@ The scenario outlined in this article assumes that you already have the followin
 > The below steps  apply to an OpenText Directory Services installation. They don't apply for OpenText CoreShare or OpenText OT2 tenants.
 
 1. Create a dedicated confidential **OAuth client**.
-2. Set a long **Access token lifetime**.
-
-      ![Access Token Life](media/open-text-directory-services-provisioning-tutorial/token-life.png)
-
-3. don't specify any redirect URLs. They aren't required. 
-4. OTDS will generate and display the **client secret**. Save the **client id** and **client secret** in a secure location.
+2. Do not specify any redirect URLs. They aren't required. 
+3. OTDS will generate and display the **client secret**. Save the **client id** and **client secret** in a secure location.
 
       ![Client Secret](media/open-text-directory-services-provisioning-tutorial/client-secret.png)
 
-5. Create a partition for the users and groups to be synchronized from Microsoft Entra ID.
+4. Create a partition for the users and groups to be synchronized from Microsoft Entra ID.
 
       ![Partition page](media/open-text-directory-services-provisioning-tutorial/partition.png)
 
-6. Grant administrative rights to the OAuth client you created on the partition you use for the Microsoft Entra users and groups being synchronized.    
+5. Grant administrative rights to the OAuth client you created on the partition you use for the Microsoft Entra users and groups being synchronized.    
       * Partition -> Actions -> Edit Administrators
 
       ![Administrator page](media/open-text-directory-services-provisioning-tutorial/administrator.png)
-
-5. A secret token must be retrieved and configured in Microsoft Entra ID. Any HTTP client application can be used for this. Below are steps to retrieve using the Swagger API application included in OTDS.
-      * In a web browser, go to {OTDS URL}/otdsws/oauth2
-      * Go to /token and select the lock icon at the top right. Enter the OAuth client ID and secret retrieved earlier as the username and password respectively. Select Authorize.
-
-      ![Authorization button](media/open-text-directory-services-provisioning-tutorial/authorization.png)
-
-6. Select **client_credentials** for the grant_type and select **Execute**.
-
-      ![Execute button](media/open-text-directory-services-provisioning-tutorial/execute.png)
-
-7. The access token in the response should be used in the **Secret Token** field in Microsoft Entra ID.
-
-      ![Access Token](media/open-text-directory-services-provisioning-tutorial/access-token.png)
 
 <a name='step-3-add-opentext-directory-services-from-the-azure-ad-application-gallery'></a>
 
@@ -96,39 +78,39 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for OpenText Directory Services in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps**
+2. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
-1. In the applications list, select **OpenText Directory Services**.
+3. In the applications list, select **OpenText Directory Services**.
 
 	![The OpenText Directory Services link in the Applications list](common/all-applications.png)
 
-3. Select the **Provisioning** tab.
+4. Select the **Provisioning** tab.
 
 	![Provisioning tab](common/provisioning.png)
 
-4. Set the **Provisioning Mode** to **Automatic**.
+5. Set the **Provisioning Mode** to **Automatic**.
 
 	![Provisioning tab automatic](common/provisioning-automatic.png)
 
-5. Under the **Admin Credentials** section, input your OpenText Directory Services Tenant URL
+6. Under the **Admin Credentials** section, input your OpenText Directory Services Tenant URL
    * Non-specific tenant URL : {OTDS URL}/scim/{partitionName}
    * Specific tenant URL :  {OTDS URL}/otdstenant/{tenantID}/scim/{partitionName}
 
-6. Enter the Secret Token retrieved from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to OpenText Directory Services. If the connection fails, ensure your OpenText Directory Services account has Admin permissions and try again.
+7. Select 'OAuth2 Client Credentials Grant' as the Authentication Method and enter the Client ID and Client Secret retrieved from Step 2. Select **Test Connection** to ensure Microsoft Entra ID can connect to OpenText Directory Services. If the connection fails, ensure your OpenText Directory Services account has Admin permissions and try again.
 
-      ![Token](common/provisioning-testconnection-tenanturltoken.png)
+      ![Token](media/open-text-directory-services-provisioning-tutorial/oauth2-entra-config.png)
 
-6. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
+8. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and select the **Send an email notification when a failure occurs** check box.
 
 	![Notification Email](common/provisioning-notification-email.png)
 
-7. Select **Save**.
+9. Select **Save**.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to OpenText Directory Services**.
+10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to OpenText Directory Services**.
 
-9. Review the user attributes that are synchronized from Microsoft Entra ID to OpenText Directory Services in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in OpenText Directory Services for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the OpenText Directory Services API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+11. Review the user attributes that are synchronized from Microsoft Entra ID to OpenText Directory Services in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in OpenText Directory Services for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the OpenText Directory Services API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
    |Attribute|Type|
    |---|---|
@@ -155,9 +137,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Reference| 
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to OpenText Directory Services**.
+12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to OpenText Directory Services**.
 
-11. Review the group attributes that are synchronized from Microsoft Entra ID to OpenText Directory Services in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in OpenText Directory Services for update operations. Select the **Save** button to commit any changes.
+13. Review the group attributes that are synchronized from Microsoft Entra ID to OpenText Directory Services in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in OpenText Directory Services for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|
       |---|---|
@@ -165,17 +147,17 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+14. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. To enable the Microsoft Entra provisioning service for OpenText Directory Services, change the **Provisioning Status** to **On** in the **Settings** section.
+15. To enable the Microsoft Entra provisioning service for OpenText Directory Services, change the **Provisioning Status** to **On** in the **Settings** section.
 
 	![Provisioning Status Toggled On](common/provisioning-toggle-on.png)
 
-14. Define the users and/or groups that you would like to provision to OpenText Directory Services by choosing the desired values in **Scope** in the **Settings** section.
+16. Define the users and/or groups that you would like to provision to OpenText Directory Services by choosing the desired values in **Scope** in the **Settings** section.
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you're ready to provision, select **Save**.
+17. When you're ready to provision, select **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
