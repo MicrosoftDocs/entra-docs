@@ -188,8 +188,8 @@ Sometimes, exceptions need to be granted to the user or service creating or modi
 
 This type of exception - sometimes labeled an 'actor' or 'caller' exception - is configured using [custom security attributes](todo).  Because of this, you need two additional roles for this scenario, in addition to the role(s) from [prerequisites](#prerequisites).
 
-- Todo
-- Todo
+- [Attribute Definition Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#attribute-definition-administrator)
+- [Attribute Assignment Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#attribute-assignment-administrator)
 
 This example will grant a service an exception to the restriction enforcing a max lifetime on new certificates it adds to other applications and service principals.  The service will be represented by its service principal.  Find the service principal for a service by searching for it in [Enterprise applications](todo).
 
