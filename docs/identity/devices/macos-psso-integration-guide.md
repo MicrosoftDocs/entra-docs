@@ -29,17 +29,17 @@ You may need to perform additional actions upon completion of various Platform S
 ### Events
 Consider using these events to record telemetry or monitoring for errors or success cases. Once Device & User registration have completed you should mark the device compliant via the compliance API service. 
 
-| Notification Name  | Trigger  |
+|Notification Name  |Trigger  |
 |:---:|:---:|
-| Microsoft.PlatformSSO.DeviceRegistration.Started  | Device registration has started  |
-| Microsoft.PlatformSSO.DeviceRegistration.Succeeded  | Device registration finished  |
-| Microsoft.PlatformSSO.DeviceRegistration.Failed  | Device registration failed  |
-| Microsoft.PlatformSSO.UserRegistration.Started  | User registration has started  |
-| Microsoft.PlatformSSO.UserRegistration.Succeeded  | User registration has finished  |
-| Microsoft.PlatformSSO.UserRegistration.Failed  | User registration has failed  |
-| Microsoft.PlatformSSO.Registration.Succeeded  | Both device and user registration finished  |
-| Microsoft.PlatformSSO.Registration.Failed  | Either device or user registration has failed  |
-| Microsoft.PlatformSSO.Registration.Removed  | Platform SSO registration has been removed  |
+|Microsoft.PlatformSSO.DeviceRegistration.Started  |Device registration has started  |
+|Microsoft.PlatformSSO.DeviceRegistration.Succeeded  |Device registration finished  |
+|Microsoft.PlatformSSO.DeviceRegistration.Failed  |Device registration failed  |
+|Microsoft.PlatformSSO.UserRegistration.Started  |User registration has started  |
+|Microsoft.PlatformSSO.UserRegistration.Succeeded  |User registration has finished  |
+|Microsoft.PlatformSSO.UserRegistration.Failed  |User registration has failed  |
+|Microsoft.PlatformSSO.Registration.Succeeded  |Both device and user registration finished  |
+|Microsoft.PlatformSSO.Registration.Failed  |Either device or user registration has failed  |
+|Microsoft.PlatformSSO.Registration.Removed  |Platform SSO registration has been removed  |
 
 ## Related content
 
