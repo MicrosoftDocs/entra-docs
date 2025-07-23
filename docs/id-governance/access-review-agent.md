@@ -24,16 +24,16 @@ The following review scenarios are supported with the access review agent:
 
 
 |Review Scenario  |Supported  |
-|---------|---------|
-|Teams + Groups     |  :white_check_mark:        |
-|Application assignment    |   :white_check_mark:       |
+|-----------------|-----------|
 |Access package assignment     |    :white_check_mark:      |
-|Microsoft Entra roles     |         |
-|Single-stage reviews     |   :white_check_mark:       |
-|Azure resource roles     |         |
-|Groups managed by PIM     |         |
-|External Guests and Members as reviewers     |         |
-|Reviews with more than 35 decisions     |         |
+|Application assignment        |   :white_check_mark:       |
+|Azure resource roles          |                           |
+|External Guests and Members as reviewers |                |
+|Groups managed by PIM         |                           |
+|Microsoft Entra roles         |                           |
+|Reviews with more than 35 decisions |                     |
+|Single-stage reviews          |   :white_check_mark:       |
+|Teams + Groups                |   :white_check_mark:       |
 
 
 For other considerations, and limitations, of the Access review agent, see: [Limitations](access-review-agent.md#limitations).
