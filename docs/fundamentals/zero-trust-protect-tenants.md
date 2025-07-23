@@ -1,5 +1,5 @@
 ---
-title: Zero Trust assessment | Protect tenants and isolate production systems
+title: Security guidance | Protect tenants and isolate production systems
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect tenants and isolate production systems.
 
 ms.service: entra

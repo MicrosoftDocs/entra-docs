@@ -1,5 +1,5 @@
 ---
-title: Zero Trust assessment | Protect identities and secrets
+title: Security guidance | Protect identities and secrets
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect identities and secrets.
 
 ms.service: entra

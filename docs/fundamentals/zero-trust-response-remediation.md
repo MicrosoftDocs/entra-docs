@@ -1,5 +1,5 @@
 ---
-title: Zero Trust assessment | accelerate response and remediation
+title: Security guidance | accelerate response and remediation
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to accelerate response and remediation.
 
 ms.service: entra

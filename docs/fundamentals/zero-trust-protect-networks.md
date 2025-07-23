@@ -1,5 +1,5 @@
 ---
-title: Zero Trust assessment | Protect networks
+title: Security guidance | Protect networks
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect networks.
 
 ms.service: entra
