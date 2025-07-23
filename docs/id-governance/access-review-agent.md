@@ -20,7 +20,7 @@ The Access Review agent evaluates current access reviews based on policies aroun
 
 ## Supported Scenarios
 
-The review scenarios currently supported by the Access Review Agent are as follows:
+The following review scenarios are supported with the access review agent:
 
 
 |Review Scenario  |Supported  |
@@ -28,9 +28,13 @@ The review scenarios currently supported by the Access Review Agent are as follo
 |Teams + Groups     |  :white_check_mark:        |
 |Application assignment    |   :white_check_mark:       |
 |Access package assignment     |    :white_check_mark:      |
-|Microsoft Entra role     |         |
-|Azure resource role     |         |
+|Microsoft Entra roles     |         |
+|Single-stage reviews     |   :white_check_mark:       |
+|Azure resource roles     |         |
 |Groups managed by PIM     |         |
+|External Guests and Members as reviewers     |         |
+|Reviews with more than 35 decisions     |         |
+
 
 For other considerations, and limitations, of the Access review agent, see: [Limitations](access-review-agent.md#limitations).
 
@@ -39,7 +43,7 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 
 - You must have the [Microsoft Entra ID Governance](licensing-fundamentals.md) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-   - On average each agent decision, which includes reasoning and your conversation with the Access Review Agent, consumes less than one SCU.
+   - On average 20 agent decisions, which includes reasoning and your conversation with the Access Review Agent, consumes 0.6 SCU.
 - To activate the agent the first time, you need the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
 - [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader), and [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles can view the agent and any suggestions.
 - [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) and [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles can view the agent and take action on the suggestions.
@@ -49,13 +53,8 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- Recommendations are only available for single stage reviews.
-- The agent only supports up to 35 decisions per review.
 - The agent currently runs as the user who enables it.
-- The reviewer must be an [internal user (of userType member or guest)](../external-id/user-properties.md) within the tenant in which the review is scheduled. External guests or external members as reviewers aren't currently supported.
 - We recommend running the agent from the Microsoft Entra admin center.
-- Scanning is limited to a 24 hour period.
-- Suggestions from the agent can't be customized or overridden.
 
 
 ## How it works
@@ -109,7 +108,7 @@ Once the agent is enabled, you can adjust a few settings. You can access the set
 
 ### Trigger
 
-The agent is configured to run every 6 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
+The agent is configured to run every 24 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
 
    :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
 
