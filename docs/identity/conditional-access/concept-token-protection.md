@@ -32,10 +32,7 @@ Token protection creates a cryptographically secure tie between the token and th
 
 ## Requirements
 
-[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
-
-> [!NOTE]
-> Token protection enforcement is part of Microsoft Entra ID Protection and requires Microsoft Entra ID P2 licenses at general availability.
+[!INCLUDE [Microsoft Entra ID P1 license](~/includes/entra-p1-license.md)]
 
 The following devices and applications support accessing resources on which a token protection Conditional Access policy is applied:
 
