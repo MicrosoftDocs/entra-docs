@@ -104,7 +104,7 @@ The agent considers the following about a user when making review recommendation
 
 ### Enable Access review for use with the Access Review Agent
 
-After the Access review is started, you must now enable which access reviews you want the agent to make decisions on. The Access Review Agent is able to scan both new, and existing, access reviews. To Update an existing access review so that the agent scans it, do the following:
+After the Access review is started, you must now enable which access reviews you want the agent to make decisions on. The Access Review Agent is able to scan both new, and existing, access reviews. To Update an existing access review so that the agent scans it, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -114,7 +114,7 @@ After the Access review is started, you must now enable which access reviews you
 
 1. On the access review overview page, select **Settings**.
 
-1. Under **Advanced Settings**, check the box that says **Enable Access Review Agent**.
+1. Under **Advanced Settings**, check the **Enable** box on the setting that says **Access Review Agent**.
 
 1. Select **Save**. 
 
@@ -126,7 +126,7 @@ With the app published and available, also ensure that all reviewers have at lea
 
 ## Using the Access Review Agent as a reviewer
 
-With the Access Review Agent started, reviewers assigned with proper permissions, and the app published, you're now ready to use the agent to review your access reviews. As a reviewer, you'd do the following:
+With the Access Review Agent started, reviewers assigned with proper permissions, and the app published, you're now ready to use the agent to review your access reviews. As a reviewer, you'd do the following steps:
 
 1. Open your Microsoft Teams application signed in as the user assigned as a reviewer.
 
@@ -156,7 +156,21 @@ The agent is configured to run every 24 hours based on when it's initially confi
 
 ## Remove agent
 
-If you no longer wish to use the Access Review agent, select **Remove agent** from the top of the agent window. The existing data such as access review information and justifications for are removed, but decisions made via decisions with the conversations with the agent remains. They should disable the agent on the access reviews that were enabled for use with the agent.
+If you no longer wish to use the Access Review agent, select **Remove agent** from the top of the agent window. The existing data such as access review information and justifications for are removed, but decisions made via decisions with the conversations with the agent remains. They should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+
+1. Browse to **ID Governance** > **Access Reviews**.
+
+1. Select the access review that has agent support enabled.
+
+1. On the access review overview page, select **Settings**.
+
+1. Under **Advanced Settings**, check the **Disable** box on the setting that says **Access Review Agent**.
+
+1. Select **Save**. 
+
+
 
 ### Providing feedback
 
