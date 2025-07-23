@@ -20,7 +20,7 @@ One challenge many organizations face is the proliferation of groups, particular
 There's no way to confirm if a group is needed to access a resource, like an app or a file. 
 So we need another way to identify and clean up groups that are no longer needed.
 One way is to use a scream test methodology to identify groups that are no longer used. 
-For more information, see [How to remove unused groups from Active Directory](active-directory-group-cleanup.md).
+For more information, see [How to remove unused groups from Active Directory](how-to-active-directory-group-cleanup.md).
 
 ## Best practices
 
