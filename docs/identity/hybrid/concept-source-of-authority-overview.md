@@ -11,11 +11,11 @@ ms.reviewer: justinha
 
 Modernization requirements have many organizations shifting Identity and Access Management (IAM) solutions from on-premises to the cloud. For the road to the cloud initiative, Microsoft has [modeled five states of transformation](/entra/architecture/road-to-the-cloud-posture#five-states-of-transformation) to align with customer business goals.
 
-To minimize your on-premises infrastructure size and complexity, adopt a cloud-first approach. As your presence in the cloud grows, your Active Directory Domain Services (AD DS) presence should shrink. This is known as Active Directory (AD) minimization: only required objects remain in AD DS.
+To minimize your on-premises infrastructure size and complexity, adopt a cloud-first approach. As your presence in the cloud grows, your on-premises Active Directory (AD) presence can shrink. This process is called Active Directory (AD) minimization: only required objects remain in on-premises AD.
 
-A potential AD minimization approach is to transfer the source of authority for AD DS groups to Microsoft Entra ID. This approach allows you to directly manage those groups in the cloud. Administrators can delete groups from AD DS that they no longer need on-premises. If they want to keep a group in AD DS, they can configure security group provisioning from Microsoft Entra ID to AD. It then reflects changes made to the group in Microsoft Entra ID.
+One AD minimization approach is to transfer the source of authority for AD groups to Microsoft Entra ID. This approach lets you directly manage those groups in the cloud. You can delete AD groups that you no longer need on-premises. If you need to keep an AD group on-premises, you can configure security group provisioning from Microsoft Entra ID to AD. Then you can make changes to the group in Microsoft Entra ID and have those changes reflected in the AD group on-premises.
 
-This article describes a new feature, Group Source of Authority (SOA) switch and transfer. Group SOA can help you, as an IT administrator, to transition group management from AD DS to the cloud. You can enable advanced scenarios like access governance with Microsoft Entra ID Governance.
+This article describes Group Source of Authority (SOA) switch and transfer. Group SOA can help IT administrators transition group management from AD to the cloud. You can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
 
 ## Streamline AD group migration to the cloud with Group SOA transfer
 
@@ -28,6 +28,8 @@ Applying Group SOA to a group that synchronizes from AD converts the group to a 
 :::image type="content" source="media/concept-source-of-authority-overview/source-of-authority-switch.png" alt-text="Conceptual diagram of switch for Source of Authority." lightbox="media/concept-source-of-authority-overview/source-of-authority-switch.png":::
 
 ## Group Source of Authority scenarios
+
+The next sections exaplin more details about the scenarios that Group SOA supports. 
 
 ### Govern access with Microsoft Entra ID Governance
 
@@ -53,7 +55,7 @@ Applying Group SOA to a group that synchronizes from AD converts the group to a 
 
 ### Remove on-premises Exchange dependencies
 
-**Scenario:** You migrated all user exchange mailboxes to the cloud. You updated applications that rely on mail routing features to use modern authentication methods like SAML and OpenID Connect. You no longer need to manage Distribution Lists (DLs) and Mail-Enabled Security Groups (MESG) in AD. Your goal is to migrate existing DLs and MESGs to the cloud. Then you either update these groups to Microsoft 365 groups or manage them through Exchange Online.
+**Scenario:** You migrated all user Exchange mailboxes to the cloud. You updated applications that rely on mail routing features to use modern authentication methods like SAML and OpenID Connect. You no longer need to manage Distribution Lists (DLs) and Mail-Enabled Security Groups (MESG) in AD. Your goal is to migrate existing DLs and MESGs to the cloud. Then you either update these groups to Microsoft 365 groups or manage them through Exchange Online.
 
 **Solution:** You can achieve this goal with Group SOA to make them cloud managed groups and remove them from AD. You can continue to edit these groups directly in EXO or via Exchange PowerShell modules. These mail objects cannot be managed directly in Microsoft Entra ID or using the MS Graph APIs.
 

@@ -58,7 +58,6 @@ For more information about how group sync works with SOA in similar uses cases, 
 SOA applies only to the specified direct individual group object without recursion. If you apply SOA to nested groups within the group, they continue to be managed on-premises. Because this methodology is by design, explicitly apply SOA to each group that you want to convert. You might start with the group in the lowest hierarchy, and move up the tree.
 
 ### Limitation for custom LDAP connector in Microsoft Entra Connect Sync
-I currently use the custom LDAP connector in Microsoft Entra Connect Sync to sync identities and groups into Microsoft Entra ID. Does Group SOA work for this scenario?
 
 Group SOA doesn't support using the custom LDAP connector in Microsoft Entra Connect Sync to sync identities and groups into Microsoft Entra ID. It only supports transfer of SOA of groups that sync from AD to Microsoft Entra ID to be cloud objects. Rollback of SOA operations also only works if the original SOA of the object is AD.
 
