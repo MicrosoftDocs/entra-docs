@@ -9,7 +9,7 @@ ms.date: 07/21/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: jogro
 ---
 # Migrate approved client app to application protection policy in Conditional Access

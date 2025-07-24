@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 05/05/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: anjusingh, ludwignick
 ---
 # Conditional Access: Authentication flows

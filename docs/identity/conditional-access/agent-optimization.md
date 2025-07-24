@@ -3,8 +3,8 @@ title: Microsoft Entra Conditional Access optimization agent
 description: Learn how the Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot can help secure your organization.
 ms.author: joflore
 author: MicrosoftGuyJFlo
-ms.reviewer: lhuangnorth
 manager: dougeby
+ms.reviewer: lhuangnorth
 ms.date: 07/21/2025
 
 ms.service: entra-id
