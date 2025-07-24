@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 # Security Service Edge (SSE) coexistence with Microsoft and Cisco Umbrella and Secure Web Gateway
 
 Learn how to deploy Global Secure Access and Cisco Umbrella, with or without Secure Web Gateway (SWG), in a unified environment. This guide provides step-by-step instructions for configuring both platforms to enhance security and connectivity as part of your Secure Access Service Edge (SASE) strategy.
-
+Cisco Secure Access delivers DNS Defense, powered by Cisco Umbrella technology, to provide advanced DNS protection. In this guide, DNS protection is referred to as Umbrella. Configuration steps are provided for both the Umbrella portal and the Cisco Secure Access portal. When SWG is mentioned, it specifically refers to the Secure Web Gateway (SWG) feature within Cisco Secure Access.
 ## Scenarios
 
 This guide covers the following coexistence scenarios:
