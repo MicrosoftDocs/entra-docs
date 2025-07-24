@@ -55,8 +55,8 @@ To configure Cisco Umbrella and SWG:
     Integration with Microsoft Entra ID is recommended. See [Microsoft Entra ID SAML configuration guide](https://docs.cisco.com/c/en/us/td/docs/security/secure-client/secure-client-5-0/configuration-guide/b_5-0_secure-client_config_guide/microsoft-entra-id-saml.html).
 2. **Set up Internet Security**.  
     See [Manage Internet Security](https://docs.cisco.com/c/en/us/td/docs/security/secure-access/secure-access-1-0/configuration-guide/b_1-0_secure-access_config_guide/internet-security.html).
-3. **Create an Internet Access rule* to block domains for testing.
-      See [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
+3. **Create an Internet Access rule* to block domains for testing.**
+      For detailed information, see [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
 
 4. **Deploy and install the Cisco Secure Client**.  
     
