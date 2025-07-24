@@ -65,7 +65,8 @@ To configure Cisco Secure Access DNS Defense and SWG:
       1. net stop csc_vpnagent && net stop acsock && net start csc_vpnagent
  
    These steps are only required during the initial installation or reinstallation of the Cisco Secure Client.
-4. **Create an Internet Access policy** to block domains for testing.
+4. **Create an Internet Access rule* to block domains for testing.
+      See [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
 
 ## Bypass configuration for coexistence
 
