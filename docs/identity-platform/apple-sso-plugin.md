@@ -420,8 +420,9 @@ Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSA
 
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
 
-## Upcoming changes to device identity key storage
-Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2025, all new device registrations will use Apple’s Secure Enclave. There will be no opt-out of this storage location.
+## Device Identity Key Storage
+
+Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in July 2025, all new device registrations will use Apple’s Secure Enclave. 
 
 Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
 
@@ -441,7 +442,7 @@ The screenshot below shows the configuration page and settings for enabling Secu
 :::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin center showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
 
 > [!NOTE]
-> If want to disable most secure storage to troubleshoot issues, you can set the value to *false* during the troubleshooting process.
+> If want to disable most secure storage to troubleshoot, you can set the value to *false* during the troubleshooting process.
 
 ### Recognize app incompatibilities with Secure Enclave based device identity
 After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
