@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: sama
 ms.custom:
   - sfi-ga-nochange, sfi-image-nochange
