@@ -45,7 +45,7 @@ Global Secure Access handles internet and Microsoft traffic. Cisco ASA captures 
 
 #### Scenario 2: Split private access with Cisco ASA Remote Access VPN
 
-Both clients handle traffic for separate private applications. Private applications in Entra Private Access are handled by Global Secure Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client (AnyConnect) VPN. Internet and Microsoft traffic are handled by Global Secure Access.
+Both clients handle traffic for separate private applications. Private applications in Entra Private Access are handled by Global Secure Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client VPN. Internet and Microsoft traffic are handled by Global Secure Access.
 
 ## Prerequisites
 
