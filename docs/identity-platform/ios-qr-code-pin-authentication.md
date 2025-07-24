@@ -65,6 +65,18 @@ Finally, it calls `acquireTokenWithParameters` on the `MultipleAccountPublicClie
 
 It's advised to call the `getDeviceInformationWithParameters` API in MSAL to find out if the admin has configured QR code authentication method. If it has, an app can update its UI to indicate that QR code authentication method is available as a sign-in option.
 
+## Suppress camera consent prompt 
+By default, QR code authentication prompts users for camera permission every time they need to use the camera to scan a QR code. However, administrators can suppress this behavior and skip requesting camera permission. 
+This is configured by setting the following SSO extension configuration: 
+Key: suppress_camera_consent 
+Type: Integer  
+Value: 1 or 0.  
+This value is set to 0 by default. 
+NOTE: The key name is “sdm_suppress_camera_consent” during the public preview. 
+This is the same location where the “preferred_auth_method” key is configured. More information about SSO extension configuration is here: 
+https://learn.microsoft.com/en-us/entra/identity-platform/apple-sso-plugin#more-configuration-options  
+NOTE: The OS-level camera consent prompt will still show one time due to platform requirements.
+
 ## Related content
 
 - [Set up QR code authentication in Android app](android-qr-code-pin-authentication.md)
