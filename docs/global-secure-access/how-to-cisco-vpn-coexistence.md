@@ -114,7 +114,8 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
   > There is a known issue with this configuration preventing coexistence with Global Secure Access on macOS. 
 
 **Note:** In Tunnel All Networks configuration, if the Global Secure Access client is started first and then Cisco Secure Client VPN is established, it may take a few seconds for private resources to be accessible through the Cisco VPN.
-
+> [!IMPORTANT]
+> Known limitation: If the Secure Client Profile Host Address is an FQDN and GSA client connects first, the Cisco Secure Client will lose connection shortly after authenticating. To check this setting in ASDM navigate to Remote Access VPN > Network (Client) Access > Secure Client Profile > “ProfileName” > Server List > Host Address should be an IP Address.
 ## Coexistence configurations
 
 ### Cisco Secure Access VPN
