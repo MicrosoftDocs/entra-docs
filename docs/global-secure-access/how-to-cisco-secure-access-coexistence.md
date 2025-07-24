@@ -63,7 +63,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 - Provision users and groups. Integration with Entra ID provides the best user experience. See Cisco documentation for [Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
 - Add private resources and create access policies. See Cisco documentation for [managing private access rules](https://docs.sse.cisco.com/sse-user-guide/docs/manage-private-access-rules).
 - Set up and configure internet security. See Cisco documentation for managing internet security.
-- Deploy and install the Cisco Secure Client. See Cisco documentation for downloading and installing the client for Windows and macOS.
+- Deploy and install the Cisco Secure Client. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
 
 > [!NOTE]
 > Required Cisco Secure Client modules are listed in each configuration.
