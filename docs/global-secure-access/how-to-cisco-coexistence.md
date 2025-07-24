@@ -25,7 +25,8 @@ In this scenario, Global Secure Access handles Internet and Microsoft 365 traffi
 2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS (CSA DNS Defense).](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration2)**
 In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Secure Access DNS Defense handles DNS. Cisco Secure Web Gateway should be disabled.
 
-
+> [!NOTE]
+  > There is currently an issue with macOS preventing coexistence between GSA and Umbrella. This guide will be updated when the resolution is confirmed.
 ## Prerequisites
 
 - Both Cisco Secure Access SWG and Umbrella SWG features must be **disabled** for DNS-only configurations.
