@@ -100,7 +100,6 @@ To configure Cisco Umbrella and SWG:
   > [!NOTE]
   > `quickaccessapplicationid` is the application ID of the Quick Access app you’ve configured.
 
-- Add DNS suffixes configured in Quick Access or as FQDNs in Enterprise App Segments. For example, add `corp.local` and `contoso.com` if those are used.
 
 3. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
   ```
