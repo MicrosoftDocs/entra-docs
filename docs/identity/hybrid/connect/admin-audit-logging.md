@@ -12,9 +12,9 @@ ms.author: jomondi
 
 # Audit administrator events in Microsoft Entra Connect Sync
 
-Starting from version [(2.4.129.0)](reference-connect-version-history.md#241290) of Microsoft Entra Connect Sync, a new admin audit logging feature is available and enabled by default. This feature allows organizations to monitor changes made to Entra Connect Sync configurations by Global Administrators or Hybrid Administrators.
+Starting from version [(2.4.129.0)](reference-connect-version-history.md#241290) of Microsoft Entra Connect Sync, a new admin audit logging feature is available and enabled by default. This feature allows organizations to monitor changes made to Microsoft Entra Connect Sync configurations by Global Administrators or Hybrid Administrators.
 
-Admin actions performed through the Entra Connect Sync Wizard, PowerShell, or the Synchronization Rules Editor—such as updates to synchronization rules, authentication settings, and federation settings are captured and logged in a dedicated audit log channel within the Windows Event Viewer. This provides improved visibility into identity infrastructure changes and supports troubleshooting, operational accountability, and regulatory compliance.
+Admin actions performed through the Microsoft Entra Connect Sync Wizard, PowerShell, or the Synchronization Rules Editor—such as updates to synchronization rules, authentication settings, and federation settings are captured and logged in a dedicated audit log channel within the Windows Event Viewer. This provides improved visibility into identity infrastructure changes and supports troubleshooting, operational accountability, and regulatory compliance.
 
 This article outlines the list of events logged by this feature and explains how to disable it, if needed.
 
@@ -23,6 +23,9 @@ This article outlines the list of events logged by this feature and explains how
 The following table is a list of events that are logged with the new auditing feature. To view the events, use the Event Viewer and view the Application log.
 
 :::image type="content" source="media/admin-audit-logging/logging-2.png" alt-text="Screenshot that shows the Event Viewer." lightbox="media/admin-audit-logging/logging-2.png":::
+
+> [!NOTE]
+> We recommend that you increase the application events log size, as the Windows default size of 20MB is relatively small and can be quickly overwritten. A minimum size of 250MB-500MB is suggested.
 
 |Event ID|Event name|Description|
 |-----|-----|-----|
