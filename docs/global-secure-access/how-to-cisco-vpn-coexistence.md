@@ -14,9 +14,9 @@ ai-usage: ai-assisted
 
 # Security Service Edge (SSE) coexistence with Microsoft and Cisco VPNs
 
-Organizations require robust, unified solutions to ensure secure and seamless connectivity. Microsoft and Cisco offer complementary Secure Access Service Edge (SASE) capabilities that, when integrated, provide enhanced security and connectivity for diverse access scenarios.
+Organizations require robust, unified solutions to ensure secure and seamless connectivity. Microsoft Secure Access Service Edge (SASE) capabilities that, when integrated with Cisco Virtual Private Networks (VPN), provide enhanced security and connectivity for diverse access scenarios.
 
-This guide outlines how to configure and deploy Microsoft Entra solutions alongside Cisco Secure Access Service Edge (SSE) offerings. By leveraging both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
+This guide outlines how to configure and deploy Microsoft Entra solutions alongside Cisco VPN offerings. By leveraging both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
 
 ## Cisco remote access VPN platforms
 
@@ -45,14 +45,14 @@ Global Secure Access handles internet and Microsoft traffic. Cisco ASA captures 
 
 #### Scenario 2: Split private access with Cisco ASA Remote Access VPN
 
-Both clients handle traffic for separate private applications. Private applications in Entra Private Access are handled by Global Secure Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client (AnyConnect) VPN. Internet and Microsoft traffic are handled by Global Secure Access.
+Both clients handle traffic for separate private applications. Private applications in Entra Private Access are handled by Global Secure Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client VPN. Internet and Microsoft traffic are handled by Global Secure Access.
 
 ## Prerequisites
 
 To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 
 1. Set up Entra Internet Access and Entra Private Access. These products make up the Global Secure Access solution.
-2. Set up Cisco Secure Access Private Access and Internet Access.
+2. Set up a Cisco Secure Access VPN profile.
 3. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses.
 
 ### Setting up Global Secure Access
@@ -77,11 +77,11 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 - Configure the VPN profile Traffic Steering:
   - From the Cisco Secure Access portal, go to **Connect > End User Connectivity > Virtual Private Network**.
   - Select your VPN Profile, then **Traffic Steering**.
-  - In Tunnel Mode, select **Bypass Secure Access** and add exceptions for private subnets and `6.6.0.0/16`.
+  - In Tunnel Mode, select **Bypass Secure Access** and add exceptions for your private application subnets and `6.6.0.0/16`.
   - In DNS Mode, select **Split DNS** and add the domain suffix of your private applications.
 - Install the Cisco Secure Client software. See [Cisco Secure Client Download and Installation guide](https://docs.cisco.com/secure-client-download).
 
-**Note:** Other ways to configure Tunnel Mode and DNS Mode exist. For the scenarios below, only Bypass Secure Access and Split DNS (Split-Include) are selected.
+**Note:** Other ways to configure Tunnel Mode and DNS Mode exist. For the scenarios below, only Bypass Secure Access and Split DNS (Split-Include) are selected. This is the only supported Cisco Secure Access VPN configuration currently. This guide will be updated as more configurations are validated.
 
 ### Setting up Cisco ASA VPN
 
@@ -99,21 +99,23 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 6. Edit the ACL to permit the private application IP range (e.g., `10.101.0.0/16` and `6.6.0.0/16`).
 7. Save and apply settings.
 
-**Note:** Your ASA configuration may differ. This is known as split-include, meaning ASA only tunnels what is in the ACL.
+**Note:** Your ASA configuration may differ. This is known as split-include, meaning ASA only tunnels what is in the ACL. At this time split-exclude is not a supported coexistence configuration.
 
 #### Tunnel All Networks with dynamic exclusions
-
+> [!NOTE]
+> This configuration requires an IP address as the host address in the Secure Client Profile. See the [Known limitations](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files/3a59be5442d56ec71ca14f0bd52d0a21e87615b3#TunnelAllKnownLimitations) below for more information.
 1. Login to Cisco ASA through ASDM software.
 2. Go to **Configuration > Remote Access VPN > Network (Client) Access > Advanced > Secure Client Custom Attributes > Add**.
 3. For Type, enter `dynamic-split-exclude-domains`. For Description, enter "Dynamic split tunneling".
 4. Add a custom attribute name (e.g., `GSAfqdns`) and value (`globalsecureaccess.microsoft.com`).
 5. Apply settings.
 6. Configure the Remote Access VPN profile to tunnel all networks. Dynamic split exclusions bypass required IPs and FQDNs.
-
-**Note:** This configuration is a full tunnel. ASA tunnels all networks and exclusions are generated dynamically based on custom attributes.
+> [!NOTE]
+  > There is a known issue with this configuration preventing coexistence with Global Secure Access on macOS. 
 
 **Note:** In Tunnel All Networks configuration, if the Global Secure Access client is started first and then Cisco Secure Client VPN is established, it may take a few seconds for private resources to be accessible through the Cisco VPN.
-
+> [!IMPORTANT]
+> Known limitation: If the Secure Client Profile Host Address is an FQDN and GSA client connects first, the Cisco Secure Client will lose connection shortly after authenticating. To check this setting in ASDM navigate to Remote Access VPN > Network (Client) Access > Secure Client Profile > “ProfileName” > Server List > Host Address should be an IP Address.
 ## Coexistence configurations
 
 ### Cisco Secure Access VPN
@@ -143,7 +145,7 @@ After both clients are installed and running, verify that Global Secure Access a
 5. In Cisco Secure Access portal, go to **Monitor > Activity Search**. Validate traffic to these websites is not captured.
 6. Access private resources via Cisco Secure Access VPN client (e.g., RDP session).
 7. Validate RDP traffic is missing from Global Secure Access traffic logs and present in Cisco Secure Access logs.
-8. Stop collecting traffic in Global Secure Access client.
+8. Stop collecting traffic in Global Secure Access client and validate no private application traffic was captured.
 
 #### Configuration 2: Internet, Private Access, and Microsoft traffic with Cisco Secure Access VPN for split private access
 

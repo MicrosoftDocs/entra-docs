@@ -1,5 +1,5 @@
 ---
-title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco
+title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Umbrella and SWG
 description: Microsoft and Cisco’s Security Service Edge (SSE) coexistence solution guide.
 author: kenwith
 ms.author: kenwith
@@ -20,11 +20,13 @@ Learn how to deploy Global Secure Access and Cisco Secure Access DNS Defense (fo
 
 This guide covers the following coexistence scenarios:
 
-1. **Global Secure Access with Cisco Secure Access DNS Defense (DNS only)**
-2. **Global Secure Access with Cisco Secure Access DNS Defense and Secure Web Gateway (SWG)**
+1. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense).](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration1)**
+In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Secure Access DNS Defense provides DNS protections. Cisco Secure Web Gateway features should be disabled.
+2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS (CSA DNS Defense).](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration2)**
+In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Secure Access DNS Defense handles DNS. Cisco Secure Web Gateway should be disabled.
 
-Each scenario includes configuration steps for both platforms.
-
+> [!NOTE]
+  > There is currently an issue with macOS preventing coexistence between GSA and Umbrella. This guide will be updated when the resolution is confirmed.
 ## Prerequisites
 
 - Both Cisco Secure Access SWG and Umbrella SWG features must be **disabled** for DNS-only configurations.
@@ -54,7 +56,17 @@ To configure Cisco Secure Access DNS Defense and SWG:
     See [Manage Internet Security](https://docs.cisco.com/c/en/us/td/docs/security/secure-access/secure-access-1-0/configuration-guide/b_1-0_secure-access_config_guide/internet-security.html).
 3. **Deploy and install the Cisco Secure Client**.  
     See [Cisco Secure Client documentation](https://docs.cisco.com/c/en/us/td/docs/security/secure-client/secure-client-5-0/administration-guide/b_5-0_secure-client_admin_guide.html).
-4. **Create an Internet Access policy** to block domains for testing.
+    
+    > [!IMPORTANT]
+  > Cisco has released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation of CSC version 5.1.10.x (or later).
+   1. Install Cisco Secure Client version 5.1.10.x
+   1. Open CMD prompt as an administrator and run these commands:
+      1. "%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10
+      1. net stop csc_vpnagent && net stop acsock && net start csc_vpnagent
+ 
+   These steps are only required during the initial installation or reinstallation of the Cisco Secure Client.
+4. **Create an Internet Access rule* to block domains for testing.
+      See [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
 
 ## Bypass configuration for coexistence
 
@@ -122,9 +134,8 @@ To configure Cisco Secure Access DNS Defense and SWG:
 
 ## Configuration scenarios
 
-### Global Secure Access Internet Access and Microsoft Access with Cisco Secure Access DNS Defense
+### 1. Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense)
 
-In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Secure Access DNS Defense provides DNS protections. Cisco Secure Web Gateway features should be disabled.
 
 #### Steps
 
@@ -133,20 +144,33 @@ In this scenario, Global Secure Access handles Internet and Microsoft 365 traffi
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure required destinations to bypass Internet Security or Umbrella.
-- Disable Cisco Secure Access SWG.
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Disable Cisco Secure Access SWG
+1.	In the **Cisco Secure Access portal > Resources**
+2.	**Roaming Devices > Desktop Operating Systems**
+3.	Select the device > **Web Security** drop-down (on blue bar) > **Always Disable (override)**.
+
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 
 **Validation:**
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
+2. Access `bing.com`, `salesforce.com`, `yelp.com` in browsers.
+3. Verify Global Secure Access client **is** capturing traffic for these sites.
+   - We **do not** expect to see destination FQDN information for these sites in the traffic tab.
+4. In the Cisco Secure Access portal, validate DNS traffic to these sites **is** captured.
+5. Access `outlook.office365.com`, `<yourmicrosoftdomain>.sharepoint.com` in browsers.
+6. Verify Global Secure Access client **is** capturing traffic for these sites.
+   - We **do** expect to see destination FQDN information for these sites. 
+7. Access a site blocked by Cisco and validate that the Cisco block page is displayed.
+8. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
 ---
 
-### Global Secure Access Internet Access, Microsoft Access, and Private Access with Cisco Secure Access DNS Defense
+### 2. Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS (CSA DNS Defense)
 
-In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Secure Access DNS Defense handles DNS. Cisco Secure Web Gateway should be disabled.
 
 #### Steps
 
@@ -157,7 +181,7 @@ In this scenario, Global Secure Access handles Internet, Microsoft 365, and Priv
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure required destinations to bypass Internet Security or Umbrella.
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Disable Cisco Secure Access SWG.
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 
@@ -165,12 +189,22 @@ In this scenario, Global Secure Access handles Internet, Microsoft 365, and Priv
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
+2. Access `bing.com`, `salesforce.com`, `yelp.com` in browsers.
+3. Verify Global Secure Access client **is** capturing traffic for these sites.
+   - We **do not** expect to see destination FQDN information for these sites in the traffic tab.
+4. In the Cisco Secure Access portal, validate DNS traffic to these sites **is** captured.
+5. Access `outlook.office365.com`, `<yourmicrosoftdomain>.sharepoint.com` in browsers.
+6. Verify Global Secure Access client **is** capturing traffic for these sites.
+   - We **do** expect to see destination FQDN information for these sites. 
+7. Access a site blocked by Cisco and validate that the Cisco block page is displayed.
+8. Access an Entra private application (e.g., SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco is not.
+8. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
 ---
 
-### Global Secure Access Private Access and Cisco Secure Access DNS Defense with Secure Web Gateway
+### 3.	Microsoft Entra Private Access and Umbrella DNS (Cisco Secure Access DNS Defense) with Secure Web Gateway
 
-In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
 
 #### Steps
 
@@ -181,19 +215,24 @@ In this scenario, Global Secure Access handles private application traffic. Cisc
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure required destinations to bypass Internet Security or Umbrella.
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
-
+- Ensure that Secure Web Gateway is enabled.
 **Validation:**
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
+2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
+3. Verify Global Secure Access client **is not** capturing traffic for these sites.
+4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
+8. Access an Entra private application (e.g., SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco **is not**.
+8. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
 ---
 
-### Global Secure Access Microsoft Access with Cisco Secure Access DNS Defense and Secure Web Gateway
+### 4. Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense) and Secure Web Gateway
 
-In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
 
 #### Steps
 
@@ -202,13 +241,19 @@ In this scenario, Global Secure Access handles private application traffic. Cisc
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure required destinations to bypass Internet Security or Umbrella.
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
-
+- Ensure that Secure Web Gateway is enabled.
 **Validation:**
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
+2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
+3. Verify Global Secure Access client **is not** capturing traffic to these sites.
+4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
+8. Access an Entra private application (e.g., SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco **is not**.
+8. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
 ---
 

@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 # Security Service Edge (SSE) coexistence with Global Secure Access and Cisco Secure Access
 
-Learn how to configure Security Service Edge (SSE) coexistence using Global Secure Access and Cisco Secure Access Zero Trust.
+Learn how to configure Security Service Edge (SSE) coexistence using Global Secure Access and Cisco Secure Access.
 
 In today's digital landscape, organizations need robust, unified solutions for secure and seamless connectivity. Global Secure Access and Cisco Secure Access offer complementary Secure Access Service Edge (SASE) capabilities. When integrated, these platforms enhance security and connectivity for diverse access scenarios.
 
@@ -26,7 +26,7 @@ This guide outlines how to configure and deploy Global Secure Access solutions a
 
 In this scenario, both clients handle traffic for separate private applications. Private applications in Global Secure Access Private Access are managed by Global Secure Access, while private applications in Cisco Secure Access are managed by the Cisco Secure Client Zero Trust Network Access (ZTNA) module. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
 
-### Configuration 2: Microsoft Access with Cisco Secure Access Zero Trust Network Access (ZTNA), Domain Name System (DNS), and Secure Web Gateway (SWG)
+### Configuration 2: Microsoft Access with Cisco Secure Access ZTNA, DNS Defense, and SWG.
 
 Global Secure Access manages all Microsoft 365 traffic. Private applications in Cisco Secure Access are handled by the Cisco Secure Client Zero Trust Network Access (ZTNA) module. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
 
@@ -37,7 +37,8 @@ Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access
 ### Configuration 4: Internet Access, Microsoft Access, and Private Access with Cisco Secure Access Zero Trust Network Access (ZTNA) and Domain Name System (DNS) Defense (Umbrella)
 
 Global Secure Access manages internet access, Microsoft access, and some private access applications. Separate private applications are handled by Secure Access Zero Trust Network Access (ZTNA), and DNS Defense (Umbrella) provides DNS protection.
-
+> [!NOTE]
+  > There is currently an issue with macOS preventing coexistence between GSA and Cisco Secure Access ZTNA. This guide will be updated when the resolution is confirmed.
 ## Prerequisites
 
 To configure Global Secure Access and Cisco Secure Access for a unified SASE solution:
@@ -58,11 +59,11 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ### Set up Cisco Secure Access
 
-- Deploy and configure a resource connector for private applications. See Cisco documentation for managing resource connectors and connector groups.
-- Provision users and groups. Integration with Entra ID provides the best user experience. See Cisco documentation for Entra ID SAML configuration.
-- Add private resources and create access policies. See Cisco documentation for managing private access rules.
-- Set up and configure internet security. See Cisco documentation for managing internet security.
-- Deploy and install the Cisco Secure Client. See Cisco documentation for downloading and installing the client for Windows and macOS.
+- Deploy and configure a resource connector for private applications. See Cisco documentation for [managing resource connectors and connector groups](https://docs.sse.cisco.com/sse-user-guide/docs/manage-resource-connectors-and-connector-groups).
+- Provision users and groups. Integration with Entra ID provides the best user experience. See Cisco documentation for [Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
+- Add private resources and create access policies. See Cisco documentation for [managing private access rules](https://docs.sse.cisco.com/sse-user-guide/docs/manage-private-access-rules).
+- Set up and configure internet security. See Cisco documentation for [managing internet security](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
+- Deploy and install the Cisco Secure Client. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
 
 > [!NOTE]
 > Required Cisco Secure Client modules are listed in each configuration.
@@ -140,11 +141,12 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
 
 1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
 2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
-3. Verify Global Secure Access client isn't capturing traffic for these sites.
-4. In the Cisco Secure Access portal, validate traffic to these sites is captured.
+3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
+4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
 5. Access private applications via Global Secure Access (e.g., SMB file share).
 6. Access private resources via Cisco Secure Access ZTNA (e.g., RDP session).
-7. Validate traffic logs in both portals.
+7. Validate the SMB file share traffic is captured in Global Secure Access logs and is not shown in Cisco logs.
+8. Validate the RDP traffic is captured in Cisco logs and is not shown in Global Secure Access logs.
 8. Stop collecting traffic and confirm correct traffic handling.
 
 ### Configuration 2: Microsoft Access with Cisco Secure Access ZTNA, DNS, and SWG
@@ -165,13 +167,13 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
 
 1. Start collecting traffic in Global Secure Access client.
 2. Access `bing.com`, `salesforce.com` in browsers.
-3. Verify Global Secure Access client isn't capturing traffic for these sites.
-4. Cisco Secure Access portal: validate traffic to these sites is captured.
+3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
+4. In the Cisco Secure Access portal validate traffic to these sites **is** captured.
 5. Access `outlook.office365.com`, `<yourtenantdomain>.sharepoint.com`.
 6. Validate Global Secure Access traffic logs show these sites; Cisco Secure Access does not.
 7. Access private resources via Cisco Secure Access ZTNA.
 8. Validate traffic logs in both portals.
-9. Stop collecting traffic and confirm correct traffic handling.
+9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
 
 ### Configuration 3: Internet Access and Microsoft Access with Cisco Secure Access ZTNA
 
@@ -196,10 +198,10 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
 1. Start collecting traffic in Global Secure Access client.
 2. Access `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic for these sites.
-4. Cisco Secure Access portal: validate traffic to these sites is not captured.
+4. In the Cisco Secure Access portal validate traffic to these sites is not captured.
 5. Access private resources via Cisco Secure Access ZTNA.
 6. Validate traffic logs in both portals.
-7. Stop collecting traffic and confirm correct traffic handling.
+7. Stop collecting traffic and confirm Global Secure Access did not handle private application traffic.
 
 ### Configuration 4: Internet Access, Microsoft Access, and Private Access with Cisco Secure Access ZTNA and DNS Defense (Umbrella)
 
@@ -213,7 +215,7 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
    ```
    *.zpc.sse.cisco.com, 208.67.222.222, 208.67.220.220, 67.215.64.0/19, 146.112.0.0/16, 155.190.0.0/16, 185.60.84.0/22, 204.194.232.0/21, 208.67.216.0/21, 208.69.32.0/21
    ```
-- Create a web content filtering policy (e.g., block Games category), assign to a security profile, and link with a Conditional Access policy.
+- Create a web content filtering policy (e.g., block Games category), assign to a security profile, and link with a Conditional Access policy. See, Global Secure Access [web content filtering](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-web-content-filtering) documentation.
 
 #### Cisco Secure Access configuration
 
@@ -222,7 +224,7 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
 - Disable Cisco Secure Access SWG:
   - In Cisco Secure Access portal > Resources > Roaming Devices > Desktop Operating Systems.
   - Select device > Web Security drop-down > Always Disable (override).
-- Create an Internet Access block policy for a domain (e.g., `Zillow.com`).
+- Create an Internet Access block rule for a domain (e.g., `Zillow.com`).
 - Add private resources and access policies.
 
 #### Test traffic flow
