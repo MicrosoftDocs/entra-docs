@@ -66,7 +66,7 @@ In all of the above scenarios, integration is simplified as the Microsoft Entra 
 - Tenant admins must grant API clients interacting with this provisioning app the Graph permissions `SynchronizationData-User.Upload`, `SynchronizationData-User.Upload.OwnedBy` (for ISVs), and `ProvisioningLog.Read.All`. 
 - The Graph API endpoint accepts valid bulk request payloads using SCIM schema constructs.
 - With SCIM schema extensions, you can send any attribute in the bulk request payload. 
-- The bulkUpload API endpoint enforces the following throttling limits:
+- The `/bulkUpload` API endpoint enforces the following throttling limits:
     - There is a limit of 40 API calls within any 5-second window. If this threshold is exceeded, the service returns an HTTP 429 (Too Many Requests) response. To avoid throttling, implement pacing logic in the client to space out requests - such as adding delays or rate-limit handling between submissions.
     - There is a tenant-level limit of 2,000 API calls per 24-hour period under the Entra ID P1/P2 license, and 6,000 API calls under the Entra ID Governance license. Exceeding these limits results in an HTTP 429 (Too Many Requests) response. To stay within the quota, ensure that your SCIM bulk payloads are optimized to include up to 50 operations per API call.
 - Each API endpoint is associated with a specific provisioning app in Microsoft Entra ID. You can integrate multiple data sources by creating a provisioning app for each data source. 
