@@ -56,6 +56,15 @@ To configure Cisco Secure Access DNS Defense and SWG:
     See [Manage Internet Security](https://docs.cisco.com/c/en/us/td/docs/security/secure-access/secure-access-1-0/configuration-guide/b_1-0_secure-access_config_guide/internet-security.html).
 3. **Deploy and install the Cisco Secure Client**.  
     See [Cisco Secure Client documentation](https://docs.cisco.com/c/en/us/td/docs/security/secure-client/secure-client-5-0/administration-guide/b_5-0_secure-client_admin_guide.html).
+    
+    > [!IMPORTANT]
+  > Cisco has released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation of CSC version 5.1.10.x (or later).
+   1. Install Cisco Secure Client version 5.1.10.x
+   1. Open CMD prompt as an administrator and run these commands:
+      1. "%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10
+      1. net stop csc_vpnagent && net stop acsock && net start csc_vpnagent
+ 
+   These steps are only required during the initial installation or reinstallation of the Cisco Secure Client.
 4. **Create an Internet Access policy** to block domains for testing.
 
 ## Bypass configuration for coexistence
