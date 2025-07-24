@@ -44,7 +44,7 @@ Enabling indexing for other attributes such as `employeeId` increases storage re
   - The AD Schema snap-in isn't registered by default; you must register it first.
 
 ### Register the schema snap-in
-  1. Open a Command Prompt as an *Windows Server Administrator*.<br>
+  1. Open a Command Prompt as a *Windows Server Administrator*.<br>
   1. Run:
       `regsvr32 schmmgmt.dll`<br>
       You should see a confirmation dialog that the registration succeeded.
