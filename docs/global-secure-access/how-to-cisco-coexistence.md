@@ -20,10 +20,14 @@ Cisco Secure Access delivers DNS Defense, powered by Cisco Umbrella technology, 
 
 This guide covers the following coexistence scenarios:
 
-1. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS security.](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration1)**
+1. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS security.](#1-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-umbrella-dns-cisco-secure-access-dns-defense)**
 In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Umbrella provides DNS protections. Cisco Secure Web Gateway features should be disabled.
-2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS.](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration2)**
+2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS.](#2-microsoft-entra-internet-access-microsoft-entra-microsoft-access-and-microsoft-entra-private-access-with-cisco-umbrella-dns-csa-dns-defense)**
 In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Umbrella handles DNS. Cisco Secure Web Gateway should be disabled.
+3. **[Microsoft Entra Private Access with Umbrella DNS (Cisco Secure Access DNS Defense) and Secure Web Gateway.](#3microsoft-entra-private-access-and-umbrella-dns-cisco-secure-access-dns-defense-with-secure-web-gateway)**
+In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
+4. **[Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense) and Secure Web Gateway.](#4-microsoft-entra-microsoft-access-with-umbrella-dns-cisco-secure-access-dns-defense-and-secure-web-gateway)**
+In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
 
 > [!NOTE]
   > There is currently an issue with macOS preventing coexistence between GSA and Umbrella. This guide will be updated when the resolution is confirmed.
