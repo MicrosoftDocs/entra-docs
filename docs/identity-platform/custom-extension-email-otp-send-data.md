@@ -47,11 +47,11 @@ The following JSON document provides an example of a request payload:
             "identifier": "someone@example.com",
             "oneTimeCode": "12345678"
         },
-        "tenantId": "ffff5f5f-aa6a-bb7b-cc8c-dddddd9d9d9d",
+        "tenantId": "ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0",
         "authenticationEventListenerId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "customAuthenticationExtensionId": "11112222-bbbb-3333-cccc-4444dddd5555",
         "authenticationContext": {
-            "correlationId": "3333dddd-44ee-ffff-aa55-bbbbbbbb6666",
+            "correlationId": "aaaa0000-bb11-2222-33cc-444444dddddd",
             "client": {
                 "ip": "192.168.0.0",
                 "locale": "en-us",
@@ -61,13 +61,13 @@ The following JSON document provides an example of a request payload:
             "requestType": "signUp",
             "clientServicePrincipal": {
                 "id": "aaaaaaaa-bbbb-cccc-1111-222222222222",
-                "appId": "bbbbbbbb-cccc-dddd-2222-333333333333",
+                "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                 "appDisplayName": "My Test application",
                 "displayName": "My Test application"
             },
             "resourceServicePrincipal": {
                 "id": "aaaaaaaa-bbbb-cccc-1111-222222222222",
-                "appId": "bbbbbbbb-cccc-dddd-2222-333333333333",
+                "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                 "appDisplayName": "My Test application",
                 "displayName": "My Test application"
             }
