@@ -145,7 +145,7 @@ In this scenario, Global Secure Access handles Internet and Microsoft 365 traffi
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure required destinations to bypass Internet Security or Umbrella.
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Disable Cisco Secure Access SWG.
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 
