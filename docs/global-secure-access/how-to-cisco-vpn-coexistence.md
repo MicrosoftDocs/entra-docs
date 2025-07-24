@@ -102,7 +102,8 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 **Note:** Your ASA configuration may differ. This is known as split-include, meaning ASA only tunnels what is in the ACL. At this time split-exclude is not a supported coexistence configuration.
 
 #### Tunnel All Networks with dynamic exclusions
-
+> [!NOTE]
+> This configuration requires an IP address as the host address in the Secure Client Profile. See the [Known limitations](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files/3a59be5442d56ec71ca14f0bd52d0a21e87615b3#TunnelAllKnownLimitations) below for more information.
 1. Login to Cisco ASA through ASDM software.
 2. Go to **Configuration > Remote Access VPN > Network (Client) Access > Advanced > Secure Client Custom Attributes > Add**.
 3. For Type, enter `dynamic-split-exclude-domains`. For Description, enter "Dynamic split tunneling".
