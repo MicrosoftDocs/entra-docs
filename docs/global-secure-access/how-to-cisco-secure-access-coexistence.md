@@ -173,7 +173,7 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
 6. Validate Global Secure Access traffic logs show these sites; Cisco Secure Access does not.
 7. Access private resources via Cisco Secure Access ZTNA.
 8. Validate traffic logs in both portals.
-9. Stop collecting traffic and confirm correct traffic handling.
+9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
 
 ### Configuration 3: Internet Access and Microsoft Access with Cisco Secure Access ZTNA
 
