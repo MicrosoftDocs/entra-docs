@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 # Security Service Edge (SSE) coexistence with Global Secure Access and Cisco Secure Access
 
-Learn how to configure Security Service Edge (SSE) coexistence using Global Secure Access and Cisco Secure Access Zero Trust.
+Learn how to configure Security Service Edge (SSE) coexistence using Global Secure Access and Cisco Secure Access.
 
 In today's digital landscape, organizations need robust, unified solutions for secure and seamless connectivity. Global Secure Access and Cisco Secure Access offer complementary Secure Access Service Edge (SASE) capabilities. When integrated, these platforms enhance security and connectivity for diverse access scenarios.
 
