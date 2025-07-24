@@ -44,7 +44,7 @@ In the Bring Your Own Application (BYOA) setup, the customer administrator manag
 
 The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application needs the required [permissions](#microsoft-graph-permissions-for-byoa) assigned. 
 
-The following sample script shows how to set up permissions for BYOA:
+The following section shows how to set up permissions for BYOA using Microsoft Graph API calls:
   
 1. Update application `requiredResourceAccess` to configure required permissions on the application for Microsoft Entra AD Synchronization Service and Microsoft password reset service.
 
@@ -85,13 +85,13 @@ The following sample script shows how to set up permissions for BYOA:
 1. Determine service principal identifier for the following applications:
 
    - Connect Sync service principal.
-   - Microsoft Entra AD Synchronization Service service principal (appId=bbbbbbbb-2222-3333-4444-cccccccccccc)
-   - Microsoft password reset service service principal (appId=aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb) (might not exist if SSPR is not enabled on the tenant)
+   - Microsoft Entra AD Synchronization Service service principal (appId=`bbbbbbbb-2222-3333-4444-cccccccccccc`)
+   - Microsoft password reset service service principal (appId=`aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb`) (might not exist if SSPR is not enabled on the tenant)
 
      ```http
      GET /servicePrincipals(appId='{appId}')
      ```
-   Use id in the response wherever service principal identifier is needed in the next step.
+   Use `id` in the response wherever service principal identifier is needed in the next step.
      
 1. Assign app roles to the application service principal:
 
@@ -104,7 +104,7 @@ The following sample script shows how to set up permissions for BYOA:
       "resourceId": <Microsoft Entra AD Synchronization Service service principal identifier>,
       "appRoleId": "ab43b826-2c7a-4aff-9ecd-d0629d0ca6a9"
       }
-     ```
+      ```
 
       If password writeback is enabled on the Connect Sync server, add the 3 app role assignments for password reset service.
 
