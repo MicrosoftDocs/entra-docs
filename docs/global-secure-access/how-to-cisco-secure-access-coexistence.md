@@ -224,7 +224,7 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
 - Disable Cisco Secure Access SWG:
   - In Cisco Secure Access portal > Resources > Roaming Devices > Desktop Operating Systems.
   - Select device > Web Security drop-down > Always Disable (override).
-- Create an Internet Access block policy for a domain (e.g., `Zillow.com`).
+- Create an Internet Access block rule for a domain (e.g., `Zillow.com`).
 - Add private resources and access policies.
 
 #### Test traffic flow
