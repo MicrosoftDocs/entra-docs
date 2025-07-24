@@ -73,9 +73,11 @@ By default, QR code authentication prompts users for camera permission every tim
 
 Administrators can suppress this behavior and skip the request for camera permission. The request is configured by setting the following SSO extension configuration:
 
-**Key**: suppress_camera_consent
-**Type**: Integer 
-**Value**: 1 or 0. This value is set to 0 by default.
+- **Key**: suppress_camera_consent
+
+- **Type**: Integer 
+
+- **Value**: 1 or 0. This value is set to 0 by default.
 
 The location is the same as where you can configure preferred_auth_method. For more information about SSO extension configuration, see [More configuration options for Microsoft Enterprise SSO plug-in for Apple devices](/entra/identity-platform/apple-sso-plugin#more-configuration-options).
 
