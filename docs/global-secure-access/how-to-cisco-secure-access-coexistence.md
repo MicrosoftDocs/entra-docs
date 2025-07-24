@@ -37,7 +37,8 @@ Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access
 ### Configuration 4: Internet Access, Microsoft Access, and Private Access with Cisco Secure Access Zero Trust Network Access (ZTNA) and Domain Name System (DNS) Defense (Umbrella)
 
 Global Secure Access manages internet access, Microsoft access, and some private access applications. Separate private applications are handled by Secure Access Zero Trust Network Access (ZTNA), and DNS Defense (Umbrella) provides DNS protection.
-
+> [!NOTE]
+  > There is currently an issue with macOS preventing coexistence between GSA and Cisco Secure Access ZTNA. This guide will be updated when the resolution is confirmed.
 ## Prerequisites
 
 To configure Global Secure Access and Cisco Secure Access for a unified SASE solution:
