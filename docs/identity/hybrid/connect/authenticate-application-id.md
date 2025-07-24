@@ -106,7 +106,7 @@ The following section shows how to set up permissions for BYOA using Microsoft G
       }
       ```
 
-      If password writeback is enabled on the Connect Sync server, add the 3 app role assignments for password reset service.
+      If password writeback is enabled on the Connect Sync server, add the three app role assignments for password reset service.
 
    1. Add the first app role assignments for password reset service:
 
@@ -139,7 +139,7 @@ The following section shows how to set up permissions for BYOA using Microsoft G
       "resourceId": <Microsoft password reset service service principal identifier>,
       "appRoleId": "69201c67-737b-4a20-8f16-e0c8c64e0b0e"
       }
-     ```
+      ```
 
 The administrator is responsible for creating the certificate, rotation, and deletion of unused or expired certificates. The certificate must be stored in the `LOCAL_MACHINE` store.
 
