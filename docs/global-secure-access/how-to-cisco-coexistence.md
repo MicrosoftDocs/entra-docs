@@ -205,7 +205,6 @@ To configure Cisco Secure Access DNS Defense and SWG:
 
 ### 3.	Microsoft Entra Private Access and Umbrella DNS (Cisco Secure Access DNS Defense) with Secure Web Gateway
 
-In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
 
 #### Steps
 
