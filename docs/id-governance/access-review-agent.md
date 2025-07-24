@@ -90,6 +90,7 @@ The agent considers the following about a user when making review recommendation
 
 ### Setting up the Access Review Agent
 
+
 1. With an account that has at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) at least with both the roles of [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 1. From the new home page, select **Go to agents** from the agent notification card.
    - You can also select **Agents** from the left navigation menu.
@@ -134,8 +135,6 @@ With the Access Review Agent started, reviewers assigned with proper permissions
 
 1. On the Apps page, locate the **Access Review Agent**, and select **Open**.
     :::image type="content" source="media/access-review-agent/access-review-agent-teams.png" alt-text="Screenshot of the Access Review Agent application in Microsoft Teams.":::
-    > [!NOTE]
-    > For reviewers in your organization to use the Access Review Agent, the app must be made [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Work with your Microsoft Teams Administrator to make sure the app is published and available in your org.
 1. When open, you can select the available prompt to start the chat with the agent
      :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
 
