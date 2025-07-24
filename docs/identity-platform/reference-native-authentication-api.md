@@ -73,7 +73,9 @@ The sequence diagram demonstrates the flow of the sign-up process.
 
 :::image type="content" source="media/reference-native-auth-api/sign-up-email-with-password.png" alt-text="Diagram of native authentication a sign-up flow."::: 
 
-This diagram indicates that the app collects username (email), password (for email with password authentication methods), and attributes from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email), password and all the required, and optional attribute values in the same screen, then submit all of them via the `/signup/v1.0/start` endpoint. In this case, the app doesn't need to make calls and handle responses for the optional steps.
+This diagram indicates that the app collects username (email), password (for email with password authentication flow), and attributes from the user at different times (and possibly on separate screens). However, you can design your app to collect the username (email), password and all the required, and optional attribute values in the same screen, then submit all of them to the `/signup/v1.0/start` endpoint. If the app submits all the required information to the `/signup/v1.0/start` endpoint, the app doesn't need to make calls and handle responses in the optional steps.
+
+In step 21, the user is already signed up. However, if the app requires to automatically sign in a user after sign-up, the app calls the `oauth/v2.0/token` endpoint to request for security tokens.
 
 ### Step 1: Request to start the sign-up flow
 
@@ -477,7 +479,7 @@ Content-Type: application/json
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
-### Step 4: Authenticate and get token to sign up
+### Step 4: Authenticate and get a sign up token
 
 The app needs to submit the user's credential, in this case password, that Microsoft Entra requested in the previous step. The app needs to submit a password credential if it didn't do so via the `/signup/v1.0/start` endpoint. The app makes a request to the `/signup/v1.0/continue` endpoint to submit the password. Since we're submitting a password, a `password` parameter is required, and the `grant_type` parameter must have a value *password*.
 
