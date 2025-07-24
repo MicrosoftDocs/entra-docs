@@ -145,7 +145,8 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
 4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
 5. Access private applications via Global Secure Access (e.g., SMB file share).
 6. Access private resources via Cisco Secure Access ZTNA (e.g., RDP session).
-7. Validate traffic logs in both portals.
+7. Validate the SMB file share traffic is captured in Global Secure Access logs and is not shown in Cisco logs.
+8. Validate the RDP traffic is captured in Cisco logs and is not shown in Global Secure Access logs.
 8. Stop collecting traffic and confirm correct traffic handling.
 
 ### Configuration 2: Microsoft Access with Cisco Secure Access ZTNA, DNS, and SWG
