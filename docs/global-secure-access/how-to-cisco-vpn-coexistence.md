@@ -144,7 +144,7 @@ After both clients are installed and running, verify that Global Secure Access a
 5. In Cisco Secure Access portal, go to **Monitor > Activity Search**. Validate traffic to these websites is not captured.
 6. Access private resources via Cisco Secure Access VPN client (e.g., RDP session).
 7. Validate RDP traffic is missing from Global Secure Access traffic logs and present in Cisco Secure Access logs.
-8. Stop collecting traffic in Global Secure Access client.
+8. Stop collecting traffic in Global Secure Access client and validate no private application traffic was captured.
 
 #### Configuration 2: Internet, Private Access, and Microsoft traffic with Cisco Secure Access VPN for split private access
 
