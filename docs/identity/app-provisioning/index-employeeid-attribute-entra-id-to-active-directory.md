@@ -65,8 +65,8 @@ Enabling indexing for other attributes such as `employeeId` increases storage re
     ![Screenshot of the employee ID attribute properties.](./media/index-employee-id-attribute-entra-id-to-active-directory/screenshot-employee-id-attributes-properties.png)
 
 ### Apply and replicate changes
-  1. Click **OK** to save your changes.<br>
-     Schema changes are replicated to all domain controllers. It may take some time for the change to propagate.
+Click **OK** to save your changes.<br>
+Schema changes are replicated to all domain controllers. It may take some time for the change to propagate.
 
 ## Next steps
 - To check if your Active Directory attribute is indexed by default refer to this list - [Indexed Attributes (AD Schema) - Win32 apps](/windows/win32/adschema/attributes-indexed).
