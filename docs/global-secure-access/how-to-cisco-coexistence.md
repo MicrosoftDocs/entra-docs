@@ -243,7 +243,7 @@ To configure Cisco Secure Access DNS Defense and SWG:
 **Cisco configuration:**
 - Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
-
+- Ensure that Secure Web Gateway is enabled.
 **Validation:**
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
