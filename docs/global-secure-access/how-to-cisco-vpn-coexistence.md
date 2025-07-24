@@ -110,7 +110,8 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 4. Add a custom attribute name (e.g., `GSAfqdns`) and value (`globalsecureaccess.microsoft.com`).
 5. Apply settings.
 6. Configure the Remote Access VPN profile to tunnel all networks. Dynamic split exclusions bypass required IPs and FQDNs.
-
+> [!NOTE]
+  > There is a known issue with this configuration preventing coexistence with Global Secure Access on macOS. 
 
 **Note:** In Tunnel All Networks configuration, if the Global Secure Access client is started first and then Cisco Secure Client VPN is established, it may take a few seconds for private resources to be accessible through the Cisco VPN.
 
