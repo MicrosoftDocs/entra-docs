@@ -90,7 +90,7 @@ To complete the following steps of adding permissions, you need the following re
 
 1. Identify the permissions your app requires, their permission IDs, and whether they're app roles (application permissions) or delegated permissions. For example, if you want to request Microsoft Graph permissions, see [Microsoft Graph permissions](/graph/permissions-reference#permission-scenarios) for a list of permissions and their IDs.
 1. Add the required Microsoft Graph permissions to your app.
-   The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId`.
+   The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId`.
 
    ```http
    PATCH https://graph.microsoft.com/v1.0/applications/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
@@ -204,7 +204,7 @@ To complete the following steps of removing permissions, you need the following 
 1. Identify the permissions for your app.
 1. For example, to stop your app from requesting Microsoft Graph permissions, identify the Microsoft Graph permissions for your app, their permission IDs, and whether they're app roles (application permissions) or delegated permissions.
 1. Remove the unwanted Microsoft Graph permissions from your app.
-   The following example calls the [Update application](/graph/api/application-update) API to remove the unwanted Microsoft Graph permissions from an app registration identified by a sample client ID `00001111-aaaa-2222-bbbb-3333cccc4444`. In this example, the application has `Analytics.Read`, `User.Read`, and `Application.Read.All`. We need to remove `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId` and Microsoft Graph as its `DisplayName` and `AppDisplayName`.
+   The following example calls the [Update application](/graph/api/application-update) API to remove the unwanted Microsoft Graph permissions from an app registration identified by a sample client ID `ffffffff-eeee-dddd-cccc-bbbbbbbbbbb0`. In this example, the application has `Analytics.Read`, `User.Read`, and `Application.Read.All`. We need to remove `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId` and Microsoft Graph as its `DisplayName` and `AppDisplayName`.
 
     ```http
     PATCH https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444
