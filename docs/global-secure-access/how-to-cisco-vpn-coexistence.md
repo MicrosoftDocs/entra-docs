@@ -52,7 +52,7 @@ Both clients handle traffic for separate private applications. Private applicati
 To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 
 1. Set up Entra Internet Access and Entra Private Access. These products make up the Global Secure Access solution.
-2. Set up Cisco Secure Access Private Access and Internet Access.
+2. Set up a Cisco Secure Access VPN profile.
 3. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses.
 
 ### Setting up Global Secure Access
