@@ -51,27 +51,39 @@ There are different roles, permissions, and license requirements to view health 
 
 1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
 
+<!--- Confirm if the following broad strokes are accurate:
+- View the sign-in logs for ... what should they broadly look for in sign-in logs for a pattern?
+- Check audit logs for changes to the impacted application or security group for scenarios where large groups of users can't sign in?
+--->
+
+
 ## Mitigate common issues
 
-The following common issues could cause a spike in sign-ins to applications using SAML authentication. This list isn't exhaustive, but provides a starting point for investigation.
+The following common issues could cause a spike or dip in sign-ins to applications using SAML authentication. In general, this alert fires if a new application was rolled out without being properly configured for SAML authentication. This list isn't exhaustive, but provides a starting point for investigation.
 
-### SCENARIO
+### Application is missing signing certificates
 
-Summary
-
-To investigate:
-
-1. STEP
-1. STEP
-
-### SCENARIO
-
-Summary
+If an application doesn't have the correct signing certificate, the application object is considered corrupted, and users can't sign in to the application. 
 
 To investigate:
 
-1. STEP
-1. STEP
+1. From the **Affected entities** section of the selected scenario, select **View** for applications.
+ - A list of affected applications appears in a panel. Select the application to navigate directly to the application registration details.
+1. Check the **Certificates and secrets** section of the application to ensure that the signing certificate is present and valid.
+ - If the signing certificate is missing or expired, you need to update it with a valid certificate.
+1. Browse to the **Enterprise applications** > **Single sign-on** and select **Edit** in the **SAML Certificates** tile to update the certificate.
+1. After updating the certificate and validating the configuration works, remove any old certificates that are no longer needed.
+
+### Reply URL is missing or incorrect
+
+If the SAML reply URL is missing or incorrect, the sign-in attempt is blocked because Microsoft doesn't know where to send the sign-in response. 
+
+To investigate:
+
+1. From the **Affected entities** section of the selected scenario, select **View** for applications.
+ - A list of affected applications appears in a panel. Select the application to navigate directly to the application registration details.
+1. From **Enterprise applications** > **Single sign-on** and select **Edit** in the **Basic SAML Configuration** tile.
+1. In the **Reply URL** section, select **Add reply URL** using a standard pattern.
 
 ## Related content
 
