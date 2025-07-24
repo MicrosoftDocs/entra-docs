@@ -134,7 +134,7 @@ To configure Cisco Secure Access DNS Defense and SWG:
 
 ## Configuration scenarios
 
-### Global Secure Access Internet Access and Microsoft Access with Cisco Secure Access DNS Defense
+### 1. Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense)
 
 In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Secure Access DNS Defense provides DNS protections. Cisco Secure Web Gateway features should be disabled.
 
