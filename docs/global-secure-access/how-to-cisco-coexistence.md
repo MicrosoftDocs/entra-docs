@@ -62,10 +62,10 @@ To configure Cisco Umbrella and SWG:
     
   > [!IMPORTANT]
   > Cisco has released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation of CSC version 5.1.10.x (or later).
-  > 1. Install Cisco Secure Client version 5.1.10.x
+  > 1. Install Cisco Secure Client version 5.1.10.x.
   > 1. Open CMD prompt as an administrator and run these commands:
-  > 1. "%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10
-  > 1. net stop csc_vpnagent && net stop acsock && net start csc_vpnagent
+  > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
+  > 1. `net stop csc_vpnagent && net stop acsock && net start csc_vpnagent`
   >
   >  These steps are only required during the initial installation or reinstallation of the Cisco Secure Client.
 
