@@ -12,25 +12,26 @@ ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 
-# Security Service Edge (SSE) coexistence with Microsoft and Cisco
+# Security Service Edge (SSE) coexistence with Microsoft and Cisco Umbrella and Secure Web Gateway
 
-Learn how to deploy Global Secure Access and Cisco Secure Access DNS Defense (formerly Cisco Umbrella DNS), with or without Secure Web Gateway (SWG), in a unified environment. This guide provides step-by-step instructions for configuring both platforms to enhance security and connectivity as part of your Secure Access Service Edge (SASE) strategy.
-
+Learn how to deploy Global Secure Access and Cisco Umbrella, with or without Secure Web Gateway (SWG), in a unified environment. This guide provides step-by-step instructions for configuring both platforms to enhance security and connectivity as part of your Secure Access Service Edge (SASE) strategy.
+Cisco Secure Access delivers DNS Defense, powered by Cisco Umbrella technology, to provide advanced DNS protection. In this guide, DNS protection is referred to as Umbrella. Configuration steps are provided for both the Umbrella portal and the Cisco Secure Access portal. When SWG is mentioned, it specifically refers to the Secure Web Gateway (SWG) feature within Cisco Secure Access.
 ## Scenarios
 
 This guide covers the following coexistence scenarios:
 
-1. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense).](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration1)**
-In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Secure Access DNS Defense provides DNS protections. Cisco Secure Web Gateway features should be disabled.
-2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS (CSA DNS Defense).](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration2)**
-In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Secure Access DNS Defense handles DNS. Cisco Secure Web Gateway should be disabled.
+1. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS security.](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration1)**
+In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Umbrella provides DNS protections. Cisco Secure Web Gateway features should be disabled.
+2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS.](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration2)**
+In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Umbrella handles DNS. Cisco Secure Web Gateway should be disabled.
 
 > [!NOTE]
   > There is currently an issue with macOS preventing coexistence between GSA and Umbrella. This guide will be updated when the resolution is confirmed.
+ 
 ## Prerequisites
 
-- Both Cisco Secure Access SWG and Umbrella SWG features must be **disabled** for DNS-only configurations.
-- SWG must be **enabled** for configurations that require web gateway functionality.
+- Cisco SWG features must be **disabled** for configurations 1 and 2.
+- SWG must be **enabled** for configurations 3 and 4.
 - Integration with Microsoft Entra ID is recommended for best user experience.
 
 ## Global Secure Access setup
@@ -48,23 +49,25 @@ To configure Global Secure Access:
 
 ## Cisco Secure Access setup
 
-To configure Cisco Secure Access DNS Defense and SWG:
+To configure Cisco Umbrella and SWG:
 
 1. **Provision users and groups**.  
     Integration with Microsoft Entra ID is recommended. See [Microsoft Entra ID SAML configuration guide](https://docs.cisco.com/c/en/us/td/docs/security/secure-client/secure-client-5-0/configuration-guide/b_5-0_secure-client_config_guide/microsoft-entra-id-saml.html).
 2. **Set up Internet Security**.  
     See [Manage Internet Security](https://docs.cisco.com/c/en/us/td/docs/security/secure-access/secure-access-1-0/configuration-guide/b_1-0_secure-access_config_guide/internet-security.html).
-3. **Deploy and install the Cisco Secure Client**.  
-    See [Cisco Secure Client documentation](https://docs.cisco.com/c/en/us/td/docs/security/secure-client/secure-client-5-0/administration-guide/b_5-0_secure-client_admin_guide.html).
+3. **Create an Internet Access rule* to block domains for testing.
+      See [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
+
+4. **Deploy and install the Cisco Secure Client**.  
     
     > [!IMPORTANT]
   > Cisco has released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation of CSC version 5.1.10.x (or later).
-   1. Install Cisco Secure Client version 5.1.10.x
-   1. Open CMD prompt as an administrator and run these commands:
-      1. "%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10
-      1. net stop csc_vpnagent && net stop acsock && net start csc_vpnagent
- 
-   These steps are only required during the initial installation or reinstallation of the Cisco Secure Client.
+  > 1. Install Cisco Secure Client version 5.1.10.x
+  > 1. Open CMD prompt as an administrator and run these commands:
+         > 1. "%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10
+         > 1. net stop csc_vpnagent && net stop acsock && net start csc_vpnagent
+ >
+ >  These steps are only required during the initial installation or reinstallation of the Cisco Secure Client.
 4. **Create an Internet Access rule* to block domains for testing.
       See [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
 
