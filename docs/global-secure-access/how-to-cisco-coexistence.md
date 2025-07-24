@@ -29,7 +29,7 @@ In this scenario, Global Secure Access handles Internet, Microsoft 365, and Priv
   > There is currently an issue with macOS preventing coexistence between GSA and Umbrella. This guide will be updated when the resolution is confirmed.
 ## Prerequisites
 
-- Both Cisco Secure Access SWG and Umbrella SWG features must be **disabled** for DNS-only configurations.
+- Cisco SWG features must be **disabled** for configurations 1 and 2.
 - SWG must be **enabled** for configurations that require web gateway functionality.
 - Integration with Microsoft Entra ID is recommended for best user experience.
 
