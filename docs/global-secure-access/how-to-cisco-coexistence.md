@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/17/2025
+ms.date: 07/24/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -83,7 +83,7 @@ To configure Cisco Secure Access DNS Defense and SWG:
 
 ### Bypass Global Secure Access IPs and FQDNs in Cisco Secure Access
 
-#### Cisco Umbrella Portal
+#### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
 - Add domain suffixes and Entra service FQDNs to the **Internal domains** list:
   ```
@@ -111,7 +111,7 @@ To configure Cisco Secure Access DNS Defense and SWG:
 
 - Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
-#### Cisco Secure Access Portal
+#### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
 
 - Add Entra service FQDNs in Traffic Steering to the destination list to bypass Cisco Secure Access.
 - Go to **Connect > End User Connectivity > Internet Security**.
