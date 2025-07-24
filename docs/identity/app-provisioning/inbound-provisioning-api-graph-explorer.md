@@ -16,7 +16,7 @@ ms.reviewer: cmmdesai
 
 This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with Microsoft Graph Explorer.
 
-## Pre-requisite
+## Prerequisite
 
 - You configured [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md). 
 
