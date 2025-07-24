@@ -2,13 +2,13 @@
 title: Microsoft Entra provisioning into SAP ERP Central Component (SAP ECC, formerly SAP R/3) with NetWeaver AS ABAP 7.0 or later.
 description: This document describes how to configure Microsoft Entra ID to provision users into SAP ERP Central Component (SAP ECC, formerly SAP R/3) with NetWeaver AS ABAP 7.0 or later.
 
-author: kenwith
-manager: dougeby
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: kenwith
+ms.author: jenniferf-skc
 ms.reviewer: arvinh
 ---
 
