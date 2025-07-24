@@ -41,9 +41,9 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 
 ## Prerequisites
 
-- You must have the [Microsoft Entra ID Governance](licensing-fundamentals.md) license.
-- You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-   - On average 20 agent decisions, which includes reasoning and your conversation with the Access Review Agent, consumes 0.6 SCU.
+- You must have the [Microsoft Entra ID Governance or Microsoft Entra Suite license](licensing-fundamentals.md).
+- You must [Onboard to Security Copilot](/copilot/security/get-started-security-copilot#onboarding-to-security-copilot) with at least one [security compute units (SCU)](/copilot/security/manage-usage) provisioned.
+   - Completing an access review which includes 20 decisions, generating recommendations, as well as the reviewers natural language conversation to complete the review, on average consumes 0.6 SCU. The SCU consumption may vary based on the conversation length between the reviewer and agent..
 - To utilize the Access Review agent as either an admin or reviewer you must have  at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with the following steps for specific capabilities:
    - To activate, configure, run, and remove the Access Review Agent you need the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role, or a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles.
    - To view the overview, activities, or settings  of the Access Review Agent you need either the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, or a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles.
@@ -53,7 +53,7 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- The agent runs as the user who enables it, while each review decision is acted on by the reviewer accepting or denying the decision.
+- The agent runs using the identity of the administrator who activated it for the first time to gather insights and save recommendations. Final decisions, as part of the Microsoft Teams conversation, will be written with the reviewer’s identity.
 - We recommend running the agent from the Microsoft Entra admin center.
 
 
@@ -119,9 +119,27 @@ After the Access review is started, you must now enable which access reviews you
 
 1. Select **Save**. 
 
+
+To enable the agent to make recommendations on an existing access package, you'd do the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
+
+1. Select the access package you want the agent to support.
+
+1. On the access package overview page, select **Policies**, then select the policy you want to update and select **Edit**.
+
+1. On the edit policy page, select **Lifecycle**.
+
+1. On the lifecycle tab, check the **Enable** box on the setting that says **Access Review Agent**.
+
+1. Select **Save**.    
+
+
 ### Ensure reviewers can use the Access Review Agent
 
-The Access Review Agent is accessed through a published first-party [Microsoft Teams App](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47). Ensure that the app is [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Using the app also requires that reviewers use [Microsoft Teams Public Preview](/microsoftteams/public-preview-doc-updates?tabs=new-teams-client).
+The Access Review Agent is accessed through a published first-party [Microsoft Teams App](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47). Ensure that the app is [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Using the app also requires that reviewers use the [Microsoft Teams Public Preview](/microsoftteams/public-preview-doc-updates?tabs=new-teams-client).
 
 With the app published and available, also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews.
 
@@ -168,6 +186,22 @@ If you no longer wish to use the Access Review agent, select **Remove agent** fr
 1. Under **Advanced Settings**, check the **Disable** box on the setting that says **Access Review Agent**.
 
 1. Select **Save**. 
+
+To remove the agent from making recommendations on an existing access package, you'd do the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
+
+1. Select the access package you want the agent to support.
+
+1. On the access package overview page, select **Policies**, then select the policy you want to update and select **Edit**.
+
+1. On the edit policy page, select **Lifecycle**.
+
+1. On the lifecycle tab, check the **Disable** box on the setting that says **Access Review Agent**.
+
+1. Select **Save**.    
 
 ### Providing feedback
 
