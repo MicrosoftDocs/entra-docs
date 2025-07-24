@@ -31,7 +31,7 @@ In this scenario, Global Secure Access handles Internet, Microsoft 365, and Priv
 ## Prerequisites
 
 - Cisco SWG features must be **disabled** for configurations 1 and 2.
-- SWG must be **enabled** for configurations that require web gateway functionality.
+- SWG must be **enabled** for configurations 3 and 4.
 - Integration with Microsoft Entra ID is recommended for best user experience.
 
 ## Global Secure Access setup
