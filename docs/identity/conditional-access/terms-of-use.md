@@ -1,19 +1,24 @@
 ---
-title: Terms of use in Microsoft Entra
-description: Get started using Microsoft Entra terms of use to present information to employees or guests before getting access.
+title: Set Up Microsoft Entra Terms of Use with Conditional Access
+description: Set up Microsoft Entra terms of use with Conditional Access to require policy acceptance before resource access. Complete guide with prerequisites, step-by-step configuration, and troubleshooting tips.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/11/2024
+ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
 ms.reviewer: siz
-ms.custom: sfi-image-nochange
+ms.custom:
+  - sfi-image-nochange
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/21/2025
+  - ai-gen-description
 ---
-# Microsoft Entra terms of use
+# Set up Microsoft Entra terms of use with Conditional Access
 
-Microsoft Entra terms of use policies provide a simple method to present information to end users. Organizations can use terms of use along with Conditional Access policies to require employees or guests to accept your terms of use policy before getting access. These terms of use statements can be generalized or specific to groups or users and provided in multiple languages. Administrators can determine who has or hasn't accepted terms of use with the provided logs or APIs.
+Microsoft Entra terms of use policies provide a simple method to present information to end users before granting access to resources. This guide shows you how to set up Microsoft Entra terms of use with Conditional Access policies to require acceptance of your terms of use policy before accessing applications and data. These terms of use statements can be generalized or specific to groups or users and provided in multiple languages. Administrators can determine who has or hasn't accepted terms of use with the provided logs or APIs.
 
 [!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
@@ -23,7 +28,7 @@ To use and configure Microsoft Entra terms of use policies, you must have:
 
 * Microsoft Entra ID P1 licenses.
 * Administrators who need to read terms of use configuration and Conditional Access policies need at least the [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) role assigned.
-* Administrators who need to Create or modify terms of use and Conditional Access policies need at least the  [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned.
+* Administrators who need to Create or modify terms of use and Conditional Access policies need at least the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned.
 * A terms of use document in PDF format. The PDF file can be any content you decide to display. To support users on mobile devices, the recommended font size in the PDF is 24 point.
 
 ### Service limits
@@ -71,7 +76,7 @@ Once you complete your terms of use policy document, use the following procedure
       It's possible to use the **Expire consents** and **Duration before re-acceptance required (days)** settings together, but typically you use one or the other.
 
       > [!IMPORTANT]
-      > Users whose consent has expired regardless of the setting used, **Expire consents** or **Duration before re-acceptance required (days)** are prompted to re-accept the terms only if their session has expired.
+      > Users whose consent expires, regardless of the setting used, **Expire consents** or **Duration before re-acceptance required (days)** are prompted to reaccept the terms only if their session expired.
 
 1. Under **Conditional Access**, use the **Enforce with Conditional Access policy template** list to select the template to enforce the terms of use policy.
 
@@ -81,7 +86,7 @@ Once you complete your terms of use policy document, use the following procedure
    | **Create Conditional Access policy later** | This terms of use policy appears in the grant control list when creating a Conditional Access policy. |
 
    > [!IMPORTANT]
-   > Conditional Access policy controls (including terms of use policies) do not support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
+   > Conditional Access policy controls (including terms of use policies) don't support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
 
     Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](policy-all-users-require-terms-of-use.md).
 
@@ -103,7 +108,7 @@ Per-device terms of use have the following constraints:
 Conditional Access policies take effect immediately. When this enforcement happens, the administrator might see errors in the Microsoft Entra admin center. The administrator must sign out and sign in to satisfy the new policy.
 
 > [!IMPORTANT]
-> Users in scope will need to sign-out and sign-in in order to satisfy a new policy if:
+> Users in scope need to sign out and sign in in order to satisfy a new policy if:
 >
 > * a Conditional Access policy is enabled on a terms of use policy
 > * or a second terms of use policy is created
@@ -262,13 +267,13 @@ Supported modern web browsers (latest stable versions):
 * Safari
 
 ### Functionality on other configurations
-Users on operating systems or browsers not listed above, or those using older versions of supported operating systems or browsers, may still be able to accept terms of use during the sign-in process. However, please be aware that some features, visual rendering, or performance may be degraded. We do not actively test or provide support for operating systems and browsers not explicitly listed as supported. This includes, but is not limited to, browsers based on legacy engines such as EdgeHTML (found in Legacy Edge) and Trident/MSHTML (found in Internet Explorer). 
+Users on operating systems or browsers not listed above, or those using older versions of supported operating systems or browsers, may still be able to accept terms of use during the sign-in process. Some features, visual rendering, or performance might be degraded on unsupported configurations. We don't actively test or provide support for operating systems and browsers not explicitly listed as supported. This includes, but isn't limited to, browsers based on legacy engines such as EdgeHTML  and Trident/MSHTML. 
 
 ### Desktop and mobile applications with web views
-Applications that utilize web views based on the latest stable versions of modern HTML5 compliant browser engines (such as Blink, Gecko, or WebKit) should generally allow users to accept terms of use during sign-in. Nevertheless, some features, visual rendering, or performance degradation may occur. We do not actively test or offer support for all specific web view implementations.
+Applications that utilize web views based on the latest stable versions of modern HTML5 compliant browser engines (such as Blink, Gecko, or WebKit) should generally allow users to accept terms of use during sign-in. Nevertheless, some features, visual rendering, or performance degradation may occur. We don't actively test or offer support for all specific web view implementations.
 
 ### Experiencing Issues? 
-If you encounter issues accepting terms of use on a specific operating system, browser, browser engine, or web view implementation within an application, please open a support case. We will evaluate supportability on a case-by-case basis. 
+If you encounter issues accepting terms of use on a specific operating system, browser, browser engine, or web view implementation within an application, open a support case. We evaluate supportability on a case-by-case basis. 
 
 ## B2B guests
 
@@ -285,7 +290,7 @@ You can configure a Conditional Access policy for the Azure Information Protecti
 You can configure a Conditional Access policy for the Microsoft Intune Enrollment app and require a terms of use policy before enrollment of a device in Intune. For more information, see the Read [Choosing the right Terms solution for your organization blog post](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
 > [!NOTE]
-> The Intune Enrollment app is not supported for [Per-device terms of use](#per-device-terms-of-use).
+> The Intune Enrollment app isn't supported for [Per-device terms of use](#per-device-terms-of-use).
 >
 > For iOS/iPadOS Automated device enrollment, adding a custom URL to the Microsoft Entra Terms of Use policy doesn't allow for users to open the policy from the URL in Setup Assistant to read it. The policy can be read by the user after Setup Assistant is completed from the Company Portal website, or in the Company Portal app.
 
