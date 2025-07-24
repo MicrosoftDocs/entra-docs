@@ -434,11 +434,14 @@ If you would like to enable Secure Enclave based storage of device identity keys
 
 - **Key**: `use_most_secure_storage`
 - **Type**: `Boolean`
-- **Value**: False
+- **Value**: True
 
 The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
 :::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin center showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
+
+> [!NOTE]
+> If want to disable most secure storage to troubleshoot issues, you can set the value to *false* during the troubleshooting process.
 
 ### Recognize app incompatibilities with Secure Enclave based device identity
 After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
