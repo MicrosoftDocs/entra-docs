@@ -93,7 +93,7 @@ To configure Cisco Umbrella and SWG:
   ```
   Cisco Umbrella supports implied wildcards, so you can use `globalsecureaccess.microsoft.com`.
 
-- Add these Microsoft FQDNs:
+2. Add these Microsoft FQDNs and DNS suffixes configured in Quick Access or as FQDNs in Enterprise App Segments.
   ```
   `auth.microsoft.com`, `msftidentity.com`, `msidentity.com`, `onmicrosoft.com`, `outlook.com`, `protection.outlook.com`, `sharepoint.com`, `sharepointonline.com`, `svc.ms`, `wns.windows.com`, `account.activedirectory.windowsazure.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.cloud.microsoft`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`, `<quickaccessapplicationid>.globalsecureaccess.local`
   ```
