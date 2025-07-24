@@ -22,7 +22,8 @@ This guide covers the following coexistence scenarios:
 
 1. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense).](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration1)**
 In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Secure Access DNS Defense provides DNS protections. Cisco Secure Web Gateway features should be disabled.
-2. **Global Secure Access with Cisco Secure Access DNS Defense and Secure Web Gateway (SWG)**
+2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS (CSA DNS Defense).](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#Configuration2)**
+In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Secure Access DNS Defense handles DNS. Cisco Secure Web Gateway should be disabled.
 
 Each scenario includes configuration steps for both platforms.
 
