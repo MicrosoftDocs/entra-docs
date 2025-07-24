@@ -9,7 +9,7 @@ ms.subservice: app-provisioning
 ms.custom: no-azure-ad-ps-ref
 ms.topic: troubleshooting
 ms.date: 03/04/2025
-ms.author: jenniferf-skc
+ms.author: jfields
 ms.reviewer: arvinh
 ai-usage: ai-assisted
 ---

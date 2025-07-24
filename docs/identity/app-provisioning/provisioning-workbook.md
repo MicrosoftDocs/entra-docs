@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.topic: conceptual
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: jenniferf-skc
+ms.author: jfields
 ms.custom: sfi-image-nochange
 ---
 

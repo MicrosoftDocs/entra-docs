@@ -5,7 +5,7 @@ ms.date: 03/04/2025
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: whats-new
-ms.author: jenniferf-skc
+ms.author: jfields
 author: jenniferf-skc
 ---
 

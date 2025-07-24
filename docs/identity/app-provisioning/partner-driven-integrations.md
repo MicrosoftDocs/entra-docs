@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.topic: overview
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: jenniferf-skc
+ms.author: jfields
 ms.collection: M365-identity-device-management
 ---
 # Partner-driven provisioning integrations

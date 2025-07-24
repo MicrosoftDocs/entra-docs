@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 03/04/2025
-ms.author: jenniferf-skc
+ms.author: jfields
 ms.reviewer: zhchia, arvinh
 ai-usage: ai-assisted
 ---

@@ -8,7 +8,7 @@ ms.subservice: app-provisioning
 ms.custom: linux-related-content, sfi-ga-nochange
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: jenniferf-skc
+ms.author: jfields
 ms.reviewer: arvinh
 ---
 
