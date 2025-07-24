@@ -59,7 +59,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ### Set up Cisco Secure Access
 
-- Deploy and configure a resource connector for private applications. See Cisco documentation for managing resource connectors and connector groups.
+- Deploy and configure a resource connector for private applications. See Cisco documentation for [managing resource connectors and connector groups](https://docs.sse.cisco.com/sse-user-guide/docs/manage-resource-connectors-and-connector-groups).
 - Provision users and groups. Integration with Entra ID provides the best user experience. See Cisco documentation for Entra ID SAML configuration.
 - Add private resources and create access policies. See Cisco documentation for managing private access rules.
 - Set up and configure internet security. See Cisco documentation for managing internet security.
