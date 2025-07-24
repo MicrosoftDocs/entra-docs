@@ -102,7 +102,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 - Administrator action logging (General Availability) provides audit trails for all administrative changes made on Microsoft Entra Connect Sync. For more information, see [Audit administrator events in Microsoft Entra Connect Sync](/entra/identity/hybrid/connect/admin-audit-logging).
 
-- Group Source of Authority feature allowing administrators to transfer ownership of synchronized groups from on-premises Active Directory to cloud-only management in Microsoft Entra ID (Preview). For more information, see [Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud](../hybrid/concept-source-of-authority-overview.md).
+- Group Source of Authority feature allowing administrators to transfer ownership of synchronized groups from on-premises Active Directory to cloud-only management in Microsoft Entra ID (Preview). For more information, see [Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud](../../hybrid/concept-source-of-authority-overview.md).
 
 
 ### Bug fixes 
