@@ -118,7 +118,7 @@ To configure Cisco Umbrella and SWG:
 - Go to **Connect > End User Connectivity > Internet Security**.
 - In **Traffic Steering**, click **Add Destination > Bypass Secure Access**, add these FQDNs and save:
   ```
-  `*.globalsecureaccess.microsoft.com`
+  *.globalsecureaccess.microsoft.com
   ```
   > [!NOTE]
   > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.microsoft.com`.
