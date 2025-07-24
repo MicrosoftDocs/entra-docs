@@ -422,9 +422,9 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 
 ## Device Identity Key Storage
 
-Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in July 2025, all new device registrations will use Apple’s Secure Enclave. 
+In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning July 2025, all new device registrations will require Secure Enclave for key storage.
 
-Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
+If your applications or MDM solutions depend on accessing Workplace Join keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
 ### Enable Secure Enclave based storage of device identity keys
 
