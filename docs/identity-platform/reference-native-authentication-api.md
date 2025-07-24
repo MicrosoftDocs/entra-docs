@@ -817,12 +817,18 @@ After the app verifies the user's email with OTP, it receives security tokens. I
 
 # [Email with password](#tab/emailPassword)
 
-:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-default-mfa.png" alt-text="Diagram of native auth sign in with email and password option."::: 
+:::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password.png" alt-text="Diagram of native auth sign in with email and password option."::: 
 
 - This diagram indicates that the app collects username (email) and password from the user at different times (and possibly on separate screens). However, you can design your app to collect the two values in the same screen. 
 - If you collect the username (email) and password in the same screen, steps **two** and **three** gets merged with steps **eight** and **nine**. In this case, the app holds the password, then submits it in step **ten** where it's required.
-- If you enforce MFA for your users, and a user has a [default MFA method](#determine-the-default-mfa-method), then the flow goes through steps 11 to 16 before Microsoft Entra issues security tokens.
 
+---
+
+If the tenant administrator enforces MFA for your users:
+- and the user has a registered strong authentication method, the flow requires the user to complete an MFA challenge. 
+- If the user doesn't have a registered strong authentication method, then the user needs to [registration for a strong authentication method](#register-a-strong-authentication-method-api-reference). The requirement to complete an MFA challenge or register a strong authentication method is triggered when the app call the `/oauth2/v2.0/token` endpoint. 
+
+<!--
 The following are more flows you can expect when you enforce MFA for your users:
 
 - The app calls the `/challenge` endpoint to invoke default MFA, but after the app prompts the user for the code, the user selects to complete MFA challenge using a different method. See the following sequence diagram.
@@ -833,7 +839,8 @@ The following are more flows you can expect when you enforce MFA for your users:
 
 :::image type="content" source="media/reference-native-auth-api/sign-in-email-with-password-otp-no-default-MFA.png" alt-text="Diagram of native auth sign in with email and password option with no default MFA method."::: 
 
----
+-->
+
 
 In the sections that follow, we summarize the sign-in flow into three basic steps.
 
