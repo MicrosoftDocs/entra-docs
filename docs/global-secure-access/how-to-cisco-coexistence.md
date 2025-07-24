@@ -89,7 +89,7 @@ To configure Cisco Umbrella and SWG:
 
 - Add domain suffixes and Entra service FQDNs to the **Internal domains** list:
   ```
-  `*.globalsecureaccess.microsoft.com`
+  *.globalsecureaccess.microsoft.com
   ```
   Cisco Umbrella supports implied wildcards, so you can use `globalsecureaccess.microsoft.com`.
 
