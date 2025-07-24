@@ -98,11 +98,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Added features
 
-- Modern Authentication enabled to allow customers to configure application-based authentication for enhanced security (General Availability). 
+- Modern Authentication enabled to allow customers to configure application-based authentication for enhanced security (General Availability). For more information, see [Authenticate to Microsoft Entra ID by using application identity](/entra/identity/hybrid/connect/authenticate-application-id).
 
-- Administrator action logging (General Availability) provides audit trails for all administrative changes made on Microsoft Entra Connect Sync. 
+- Administrator action logging (General Availability) provides audit trails for all administrative changes made on Microsoft Entra Connect Sync. For more information, see [Audit administrator events in Microsoft Entra Connect Sync](/entra/identity/hybrid/connect/admin-audit-logging).
 
-- Group Source of Authority feature allowing administrators to transfer ownership of synchronized groups from on-premises Active Directory to cloud-only management in Microsoft Entra ID (Preview). For more information, see [Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud](./hybrid/c).
+- Group Source of Authority feature allowing administrators to transfer ownership of synchronized groups from on-premises Active Directory to cloud-only management in Microsoft Entra ID (Preview). For more information, see [Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud](../hybrid/concept-source-of-authority-overview.md).
 
 
 ### Bug fixes 
