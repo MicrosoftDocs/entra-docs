@@ -167,7 +167,7 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
 
 1. Start collecting traffic in Global Secure Access client.
 2. Access `bing.com`, `salesforce.com` in browsers.
-3. Verify Global Secure Access client isn't capturing traffic for these sites.
+3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
 4. Cisco Secure Access portal: validate traffic to these sites is captured.
 5. Access `outlook.office365.com`, `<yourtenantdomain>.sharepoint.com`.
 6. Validate Global Secure Access traffic logs show these sites; Cisco Secure Access does not.
