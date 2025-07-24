@@ -41,7 +41,7 @@ Enabling indexing for other attributes such as `employeeId` increases storage re
 
 **Prerequisites:**
   - Ensure you're a member of the **Schema Admins** group in Active Directory.
-  - The AD Schema snap-in is not registered by default; you must register it first.
+  - The AD Schema snap-in isn't registered by default; you must register it first.
 
 ### Register the schema snap-in
   1. Open a Command Prompt as an *Windows Server Administrator*.<br>
@@ -51,8 +51,9 @@ Enabling indexing for other attributes such as `employeeId` increases storage re
 
 ### Open the schema snap-in
   1. Press **Win + R**, type **mmc**, then press **Enter** to open the Microsoft Management Console.<br>
-  1. In the MMC, go to **File > Add/Remove Snap-in**.<br>
-  1. Select **Active Directory Schema** from the list and click **Add**, then **OK**.<br>
+  1. In the console, go to **File > Add/Remove Snap-in**.<br>
+  1. Select **Active Directory Schema** from the list, then click **Add**.<br>
+  1. Click **OK**.
 
 ### Locate the attribute to index
   1. In the left pane, expand Active Directory Schema and select **Attributes**.<br>
