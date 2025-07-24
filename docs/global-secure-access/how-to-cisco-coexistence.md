@@ -189,6 +189,17 @@ To configure Cisco Secure Access DNS Defense and SWG:
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
+2. Access `bing.com`, `salesforce.com`, `yelp.com` in browsers.
+3. Verify Global Secure Access client **is** capturing traffic for these sites.
+   - We **do not** expect to see destination FQDN information for these sites in the traffic tab.
+4. In the Cisco Secure Access portal, validate DNS traffic to these sites **is** captured.
+5. Access `outlook.office365.com`, `<yourmicrosoftdomain>.sharepoint.com` in browsers.
+6. Verify Global Secure Access client **is** capturing traffic for these sites.
+   - We **do** expect to see destination FQDN information for these sites. 
+7. Access a site blocked by Cisco and validate that the Cisco block page is displayed.
+8. Access an Entra private application (e.g., SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco is not.
+8. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
 ---
 
