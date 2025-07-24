@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 
 Organizations require robust, unified solutions to ensure secure and seamless connectivity. Microsoft Secure Access Service Edge (SASE) capabilities that, when integrated with Cisco Virtual Private Networks (VPN), provide enhanced security and connectivity for diverse access scenarios.
 
-This guide outlines how to configure and deploy Microsoft Entra solutions alongside Cisco Secure Access Service Edge (SSE) offerings. By leveraging both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
+This guide outlines how to configure and deploy Microsoft Entra solutions alongside Cisco VPN offerings. By leveraging both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
 
 ## Cisco remote access VPN platforms
 
