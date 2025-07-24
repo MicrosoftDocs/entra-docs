@@ -69,7 +69,7 @@ It's advised to call the `getDeviceInformationWithParameters` API in MSAL to fin
 
 By default, QR code authentication prompts users for camera permission every time they need to use the camera to scan a QR code. 
 
-:::image type="content" border="true" source="./media/ios-qr-code-pin-authentication/allow-camera.png" alt-text="Screenshot of a how to allow camera access on iOS.":::
+:::image type="content" border="true" source="./media/ios-qr-code-pin-authentication/allow-camera.png" alt-text="Screenshot of a how to allow camera access on iOS." lightbox="./media/ios-qr-code-pin-authentication/allow-camera.png":::
 
 Administrators can suppress this behavior and skip the request for camera permission. The request is configured by setting the following SSO extension configuration:
 
