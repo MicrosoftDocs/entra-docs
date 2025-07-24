@@ -290,7 +290,7 @@ To view the current authentication configuration, go to **Tasks** and then selec
 
 If the server is configured to use application-based authentication, you should be able to see the application (client) ID as shown in the following screenshot.
 
-:::image type="content" source="media/authenticate-application-id/authentication-8.png" alt-text="Screenshot that shows the client ID." lightbox="media/authenticate-application-id/authentication-8.png":::
+:::image type="content" source="media/authenticate-application-id/authentication-client-id.png" alt-text="Screenshot that shows the client ID." lightbox="media/authenticate-application-id/authentication-client-id.png":::
 
  Scroll down to the certificate details. The following table provides information about the certificate.
  
@@ -310,7 +310,7 @@ If the server is configured to use application-based authentication, you should 
 
 If the server is using username and password you should be able to see the account name as shown in the following screenshot.
 
-:::image type="content" source="media/authenticate-application-id/authentication-9.png" alt-text="Screenshot that shows the account name." lightbox="media/authenticate-application-id/authentication-9.png":::
+:::image type="content" source="media/authenticate-application-id/authentication-account-name.png" alt-text="Screenshot that shows the account name." lightbox="media/authenticate-application-id/authentication-account-name.png":::
 
 ## On-demand certificate rotation
 
