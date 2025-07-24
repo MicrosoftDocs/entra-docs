@@ -215,7 +215,7 @@ Add Entra service FQDNs in Traffic Steering to the destination list to bypass Ci
    ```
    *.zpc.sse.cisco.com, 208.67.222.222, 208.67.220.220, 67.215.64.0/19, 146.112.0.0/16, 155.190.0.0/16, 185.60.84.0/22, 204.194.232.0/21, 208.67.216.0/21, 208.69.32.0/21
    ```
-- Create a web content filtering policy (e.g., block Games category), assign to a security profile, and link with a Conditional Access policy.
+- Create a web content filtering policy (e.g., block Games category), assign to a security profile, and link with a Conditional Access policy. See, Global Secure Access [web content filtering](https://learn.microsoft.com/en-us/entra/global-secure-access/how-to-configure-web-content-filtering) documentation.
 
 #### Cisco Secure Access configuration
 
