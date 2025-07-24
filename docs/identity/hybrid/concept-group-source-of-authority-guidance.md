@@ -24,7 +24,7 @@ For more information, see [How to remove unused groups from Active Directory](ho
 
 ## Best practices
 
-Follow these best practices to transition group management from on-premises to Microsoft Entra.
+Follow these best practices to transition group management from on-premises to Microsoft Entra ID.
 
 ### Transition group management
 
@@ -47,15 +47,19 @@ But you can't choose which groups to provision to AD.
 If you provision cloud security groups to AD, and someone with permissions makes a change directly to the AD group, the change is overwritten the next time you provision the cloud group to AD (typically upon the next change to the cloud group). A local AD change doesn't reflect in Microsoft Entra ID.
 
 ### Use Group Provisioning to AD to provision nested security groups
-Let's say you use **Group Provisioning to AD** to provision a security group named *CloudGroupB*, which has a parent on-premises AD group named *OnPremGroupA*. You transferred SOA for *CloudGroupB*. 
+Let's look at an example where you use **Group Provisioning to AD** to provision a security group named *CloudGroupB*. It has a parent on-premises AD group named *OnPremGroupA*. You converted SOA for *CloudGroupB*. 
 
-Once you start managing group memberships in Microsoft Entra ID for a transferred group (*CloudGroupB*) and use **Group Provisioning to AD** to provision it as a nested group within an on-premises group (*OnPremGroupA*), the membership reference for *CloudGroupB* doesn't sync when the AD to Microsoft Entra ID sync configuration runs for *OnPremGroupA* that is in-scope for that sync. By design, the sync client doesn't recognize the cloud group membership references.
+Then you start to manage group memberships in Microsoft Entra ID for the converted group (*CloudGroupB*). You use **Group Provisioning to AD** to provision it as a nested group within an on-premises group (*OnPremGroupA*). If *OnPremGroupA* remains in-scope for sync, when the AD to Microsoft Entra ID sync configuration runs for *OnPremGroupA*, the membership reference for *CloudGroupB* doesn't sync. By design, the sync client doesn't recognize the cloud group membership references.
 
 For more information about how group sync works with SOA in similar uses cases, see [How group sync works with Source of Authority](concept-group-source-of-authority-how-it-works.md#how-group-sync-works-with-source-of-authority).
 
 ### How SOA applies to nested groups in AD
 
 SOA applies only to the specified direct individual group object without recursion. If you apply SOA to nested groups within the group, they continue to be managed on-premises. Because this methodology is by design, explicitly apply SOA to each group that you want to convert. You might start with the group in the lowest hierarchy, and move up the tree.
+
+### Recreate dynamic group configurations from on-premises AD in the cloud
+
+On-premises AD groups are inherently static. Dynamic membership is implemented through external tools such as Microsoft Identity Manager (MIM) or Forefront Identity Manager (FIM). Dynamic membership rules don't transfer automatically when you convert SOA because there's no native AD attribute that marks a group as dynamic. You need to recreate dynamic membership rules in the cloud after migration. For more information about how to set up dynamic membership group, see [Create or update a dynamic membership group in Microsoft Entra ID](/entra/identity/users/groups-create-rule).
 
 ### Limitation for custom LDAP connector in Microsoft Entra Connect Sync
 
