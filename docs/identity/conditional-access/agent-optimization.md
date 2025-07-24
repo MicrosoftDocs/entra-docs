@@ -3,9 +3,9 @@ title: Microsoft Entra Conditional Access optimization agent
 description: Learn how the Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot can help secure your organization.
 ms.author: joflore
 author: MicrosoftGuyJFlo
-ms.reviewer: lhuangnorth
 manager: dougeby
-ms.date: 07/21/2025
+ms.reviewer: lhuangnorth
+ms.date: 07/24/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -104,6 +104,10 @@ Once the agent is enabled, you can adjust a few settings. You can access the set
 
 - From **Agents** > **Conditional Access optimization agent** > **Settings**.
 - From **Conditional Access** > select the **Conditional Access optimization agent** card under **Policy summary** > **Settings**.
+
+### Agent capabilities
+
+By default, the Conditional Access optimization agent can create new policies *in report-only mode*. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
 
 ### Trigger
 
