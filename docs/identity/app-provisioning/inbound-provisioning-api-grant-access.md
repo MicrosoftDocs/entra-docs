@@ -39,7 +39,7 @@ This configuration registers an app in Microsoft Entra ID that represents the ex
 1. From the context menu **API permissions**, select the option **Add a permission**. 
 1. Under **Request API permissions**, select **Microsoft Graph**. 
 1. Select **Application permissions**.
-1. Search and select permission **ProvisioningLog.Read.All** and **SynchronizationData-User.Upload**.
+1. Search and select permissions **ProvisioningLog.Read.All** and **SynchronizationData-User.Upload**.
     > [!NOTE] 
     > If you're configuring the service principal for use by an HR ISV that will instantiate the API-driven provisioning app in your tenant, consider granting the `Application.ReadWrite.OwnedBy` and `SynchronizationData-User.Upload.OwnedBy` application permissions. This ensures that the ISV can only upload data to the `/bulkUpload` API endpoint associated with the app it creates.
 1. Click on **Grant admin consent** on the next screen to complete the permission assignment. Click Yes on the confirmation dialog. Your app should have the following permission sets.
