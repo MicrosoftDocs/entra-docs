@@ -84,7 +84,7 @@ The **Summary of agent activity** is a natural language description of the activ
 If the agent suggests modifying an existing policy, select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion.
 
 - Policy details are provided as both a list of all the details that are changing and a JSON view of the entire policy, with the changes highlighted.
-- For policy changes that affect users, you can download a JSON file of the users and groups affected by the policy change.
+- For policy changes that affect users or applications, you can download a JSON file of the users and applications affected by the policy change.
 
 :::image type="content" source="media/agent-optimization-review-suggestions/review-policy-changes.png" alt-text="Screenshot of the policy details page with the review policy changes button highlighted." lightbox="media/agent-optimization-review-suggestions/review-policy-changes.png":::
 
