@@ -69,8 +69,6 @@ To configure Cisco Umbrella and SWG:
   >
   >  These steps are only required during the initial installation or reinstallation of the Cisco Secure Client.
 
-4. **Create an Internet Access rule* to block domains for testing.
-      See [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
 
 ## Bypass configuration for coexistence
 
