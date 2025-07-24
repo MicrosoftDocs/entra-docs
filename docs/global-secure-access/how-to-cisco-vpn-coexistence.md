@@ -81,7 +81,7 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
   - In DNS Mode, select **Split DNS** and add the domain suffix of your private applications.
 - Install the Cisco Secure Client software. See [Cisco Secure Client Download and Installation guide](https://docs.cisco.com/secure-client-download).
 
-**Note:** Other ways to configure Tunnel Mode and DNS Mode exist. For the scenarios below, only Bypass Secure Access and Split DNS (Split-Include) are selected.
+**Note:** Other ways to configure Tunnel Mode and DNS Mode exist. For the scenarios below, only Bypass Secure Access and Split DNS (Split-Include) are selected. This is the only supported Cisco Secure Access VPN configuration currently. This guide will be updated as more configurations are validated.
 
 ### Setting up Cisco ASA VPN
 
