@@ -87,7 +87,7 @@ To configure Cisco Umbrella and SWG:
 
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
-- Add domain suffixes and Entra service FQDNs to the **Internal domains** list:
+1. Add domain suffixes and Entra service FQDNs to the **Internal domains** list:
   ```
   *.globalsecureaccess.microsoft.com
   ```
