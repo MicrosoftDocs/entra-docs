@@ -12,7 +12,7 @@ ms.author: jfields
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart: API-driven inbound provisioning with Graph Explorer
+# API-driven inbound provisioning with Graph Explorer
 
 This tutorial describes how you can quickly test [API-driven inbound provisioning](inbound-provisioning-api-concepts.md) with Microsoft Graph Explorer.
 
