@@ -99,7 +99,7 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 6. Edit the ACL to permit the private application IP range (e.g., `10.101.0.0/16` and `6.6.0.0/16`).
 7. Save and apply settings.
 
-**Note:** Your ASA configuration may differ. This is known as split-include, meaning ASA only tunnels what is in the ACL.
+**Note:** Your ASA configuration may differ. This is known as split-include, meaning ASA only tunnels what is in the ACL. At this time split-exclude is not a supported coexistence configuration.
 
 #### Tunnel All Networks with dynamic exclusions
 
