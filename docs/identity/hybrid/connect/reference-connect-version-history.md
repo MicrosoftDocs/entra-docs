@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: mwongerapk
 ms.topic: reference
-ms.date: 04/09/2025
+ms.date: 07/24/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
@@ -66,6 +66,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
 |[2.5.3.0](#2530)||
+|[2.5.76.0](#25760)||
 
 **All other versions are not supported**
 
@@ -101,16 +102,18 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 - Administrator action logging (General Availability) provides audit trails for all administrative changes made on Microsoft Entra Connect Sync. 
 
-- Group Source of Authority feature allowing administrators to transfer ownership of synchronized groups from on-premises Active Directory to cloud-only management in Microsoft Entra ID (Preview). For more information, see Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud.
+- Group Source of Authority feature allowing administrators to transfer ownership of synchronized groups from on-premises Active Directory to cloud-only management in Microsoft Entra ID (Preview). For more information, see [Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud](./hybrid/c).
 
 
 ### Bug fixes 
 
-- Resolved DirSync and organizational unit (OU) filtering issues that affected object synchronization in specific configurations. 
+- Fixed domain and organizational unit (OU) filtering issues in the Configuration Wizard that affected scenarios with multiple domains. 
 
 - Fixed federated identity provider MFA behavior settings for update operations. 
 
 - Enhanced agent updater reliability with improved machine ID detection and fallback mechanisms. 
+
+- Fixed an issue in the Configuration Wizard that failed with `Directory synchronization for this directory currently has a mismatch in sync enabled and sync status` when **DirSync Status** is *PendingEnabled*.
 
 ## 2.5.3.0
 
