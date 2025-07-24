@@ -59,7 +59,6 @@ To configure Cisco Umbrella and SWG:
       See [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
 
 4. **Deploy and install the Cisco Secure Client**.  
-    See [Cisco Secure Client documentation](https://docs.cisco.com/c/en/us/td/docs/security/secure-client/secure-client-5-0/administration-guide/b_5-0_secure-client_admin_guide.html).
     
     > [!IMPORTANT]
   > Cisco has released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation of CSC version 5.1.10.x (or later).
