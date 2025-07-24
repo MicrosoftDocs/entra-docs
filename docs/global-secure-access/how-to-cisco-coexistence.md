@@ -1,5 +1,5 @@
 ---
-title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco
+title: Security Service Edge (SSE) Coexistence With Microsoft and Cisco Umbrella and SWG
 description: Microsoft and Cisco’s Security Service Edge (SSE) coexistence solution guide.
 author: kenwith
 ms.author: kenwith
