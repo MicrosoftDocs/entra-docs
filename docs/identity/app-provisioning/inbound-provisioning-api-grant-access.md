@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 07/07/2025
+ms.date: 07/24/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -39,7 +39,9 @@ This configuration registers an app in Microsoft Entra ID that represents the ex
 1. From the context menu **API permissions**, select the option **Add a permission**. 
 1. Under **Request API permissions**, select **Microsoft Graph**. 
 1. Select **Application permissions**.
-1. Search and select permission **AuditLog.Read.All**, **ProvisioningLog.Read.All**, **SynchronizationData-User.Upload**, and **SyncrhonizationData-User.Upload.OwnedBy** (for ISVs).
+1. Search and select permission **ProvisioningLog.Read.All** and **SynchronizationData-User.Upload**.
+    > [!NOTE] 
+    > If you're configuring the service principal for use by an HR ISV that will instantiate the API-driven provisioning app in your tenant, consider granting the `Application.ReadWrite.OwnedBy` and `SynchronizationData-User.Upload.OwnedBy` application permissions. This ensures that the ISV can only upload data to the `/bulkUpload` API endpoint associated with the app it creates.
 1. Click on **Grant admin consent** on the next screen to complete the permission assignment. Click Yes on the confirmation dialog. Your app should have the following permission sets.
       [![Screenshot of app permissions.](media/inbound-provisioning-api-grant-access/api-client-permissions.png)](media/inbound-provisioning-api-grant-access/api-client-permissions.png#lightbox)  
 1. You're now ready to use the service principal with your API client.
@@ -68,7 +70,7 @@ This section describes how you can assign the necessary permissions to a managed
       $managedID = Get-MgServicePrincipal -Filter "DisplayName eq 'CSV2SCIMBulkUpload'"
       New-MgServicePrincipalAppRoleAssignment -PrincipalId $managedID.Id -ServicePrincipalId $managedID.Id -ResourceId $graphApp.Id -AppRoleId $AppRole.Id
 
-      $PermissionName = "AuditLog.Read.All"
+      $PermissionName = "ProvisioningLog.Read.All"
       $AppRole = $graphApp.AppRoles | `
       Where-Object {$_.Value -eq $PermissionName -and $_.AllowedMemberTypes -contains "Application"}
       $managedID = Get-MgServicePrincipal -Filter "DisplayName eq 'CSV2SCIMBulkUpload'"

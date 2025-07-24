@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 07/07/2025
+ms.date: 07/24/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -66,7 +66,9 @@ In all of the above scenarios, integration is simplified as the Microsoft Entra 
 - Tenant admins must grant API clients interacting with this provisioning app the Graph permissions `SynchronizationData-User.Upload`, `SynchronizationData-User.Upload.OwnedBy` (for ISVs), and `ProvisioningLog.Read.All`. 
 - The Graph API endpoint accepts valid bulk request payloads using SCIM schema constructs.
 - With SCIM schema extensions, you can send any attribute in the bulk request payload. 
-- The rate limit for the inbound provisioning API is 40 bulk upload requests per second. Each bulk request can contain a maximum of 50 user records, thereby supporting an upload rate of 2000 records per second. 
+- The bulkUpload API endpoint enforces the following throttling limits:
+    - There is a limit of 40 API calls within any 5-second window. If this threshold is exceeded, the service returns an HTTP 429 (Too Many Requests) response. To avoid throttling, implement pacing logic in the client to space out requests - such as adding delays or rate-limit handling between submissions.
+    - There is a tenant-level limit of 2,000 API calls per 24-hour period under the Entra ID P1/P2 license, and 6,000 API calls under the Entra ID Governance license. Exceeding these limits results in an HTTP 429 (Too Many Requests) response. To stay within the quota, ensure that your SCIM bulk payloads are optimized to include up to 50 operations per API call.
 - Each API endpoint is associated with a specific provisioning app in Microsoft Entra ID. You can integrate multiple data sources by creating a provisioning app for each data source. 
 - Incoming bulk request payloads are processed in near real-time.
 - Admins can check provisioning progress by viewing the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md). 
@@ -87,8 +89,8 @@ The `/bulkUpload` API endpoint expands the number of ways that you can manage us
 | *The resulting user is first created in...* | Microsoft Entra ID | On-premises Active Directory or Microsoft Entra ID | Microsoft Entra ID | Microsoft Entra ID |
 | *The resulting user authenticates to...* | Microsoft Entra ID, with the password you supply | On-premises Active Directory of Microsoft Entra ID, with a [Temporary Access Pass provided by Entra Lifecycle workflows](https://go.microsoft.com/fwlink/?linkid=2261542) | Home tenant or other identity provider | Home tenant or other identity provider | 
 | *Subsequent updates to the user can be done via* | Graph API or Microsoft Entra admin center | Graph API or HR inbound bulk API or Microsoft Entra admin center | Graph API or Microsoft Entra admin center | Graph API or Microsoft Entra admin center |
-| *The lifecycle of user when their employment starts, is determined by...* | Manual processes | [Entra onboarding Lifecycle workflows](~/id-governance/tutorial-onboard-custom-workflow-portal.md) that trigger based on the ```employeeHireDate``` attribute | Entitlement management | [Automatic assignment](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md) using Entitlement management access packages |
-| *The lifecycle of user when their employment is terminated is determined by...* | Manual processes | [Entra offboarding lifecycle workflows](~/id-governance/tutorial-scheduled-leaver-portal.md) that trigger based on the ```employeeLeaveDateTime``` attribute | Access reviews | Entitlement management when the user loses their last access package assignment, they're removed |
+| *The lifecycle of user when their employment starts, is determined by...* | Manual processes | [Entra onboarding Lifecycle workflows](~/id-governance/tutorial-onboard-custom-workflow-portal.md) that trigger based on the `employeeHireDate` attribute | Entitlement management | [Automatic assignment](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md) using Entitlement management access packages |
+| *The lifecycle of user when their employment is terminated is determined by...* | Manual processes | [Entra offboarding lifecycle workflows](~/id-governance/tutorial-scheduled-leaver-portal.md) that trigger based on the `employeeLeaveDateTime` attribute | Access reviews | Entitlement management when the user loses their last access package assignment, they're removed |
 
 
 ### Recommended learning path
