@@ -147,7 +147,7 @@ After both clients are installed and running, verify that Global Secure Access a
 3. Verify Global Secure Access client captures traffic from these sites.
 4. In Microsoft Entra admin center, go to **Global Secure Access > Monitor > Traffic logs**. Validate traffic is logged.
 5. In Cisco Secure Access portal, go to **Monitor > Activity Search**. Validate traffic to these websites isn't captured.
-6. Access private resources via Cisco Secure Access VPN client (for example, RDP session).
+6. Access private resources via Cisco Secure Access VPN client (e.g., RDP session).
 7. Validate RDP traffic is missing from Global Secure Access traffic logs and present in Cisco Secure Access logs.
 8. Stop collecting traffic in Global Secure Access client and validate no private application traffic was captured.
 
