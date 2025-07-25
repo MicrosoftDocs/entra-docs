@@ -44,7 +44,7 @@ The overview page also includes other general information about the agent such a
 
 ## Agent Activities
 
-From the overview page you can select the **Activities** tab to view a full list of the activities of the Access Review Agent.
+From the overview page, you can select the **Activities** tab to view a full list of the activities of the Access Review Agent.
 
 :::image type="content" source="media/access-review-agent-logs-metrics/access-review-agents-activities.png" alt-text="Screenshot of a list of activities in the Access Review Agent.":::
 
@@ -57,7 +57,7 @@ For each activity, you can see:
 
 ### View Agent's Full Activity
 
-To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View activity** next to a specific activity..
+To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View activity** next to a specific activity.
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details can help you understand the logic behind the decisions so you can make an informed choice about whether to apply the decision.
 
