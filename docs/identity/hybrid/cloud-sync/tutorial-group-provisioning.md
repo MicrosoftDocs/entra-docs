@@ -189,16 +189,6 @@ You convert the SOA of a synced group (parent) that has cloud-owned groups as me
 You convert the SOA of a synced group (parent) that has other synced groups as members. |AD security groups with SOA converted to cloud| AD security groups (synced groups) | AAD2ADGroupProvisioning (Group Provisioning to AD) |The job provisions the parent group, but all the member references (member Groups) that are AD security groups aren't provisioned.
 You convert the SOA of a synced group (parent) whose members are other synced groups that have SOA converted to cloud. | AD security groups with SOA converted to cloud | AD security groups with SOA converted to cloud | AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
 
-### Status of attributes after you convert SOA
-
-The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes you convert the SOA of an object.
-
-Admin step | isCloudManaged value | dirSyncEnabled value | Description  
------|----------------------|----------------------|------------
-Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **dirSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
-Admin switches the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin switches the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
-Admin rolls back the SOA operation | `false` | `null` | If an admin switches the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
-
 ### How Group Provisioning to AD works with SOA
 
 After you convert the SOA to on-premises AD, **Group Provisioning to AD (GPAD)** stops syncing changes, but it doesn't delete the on-premises group. It also removes the group from GPAD configuration scope. On-premises control of the group resumes in the next sync cycle.

@@ -250,6 +250,16 @@ $result = Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/beta/g
 }
 Format-Table -AutoSize
  ```
+### Status of attributes after you convert SOA
+
+The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes you convert the SOA of an object.
+
+Admin step | isCloudManaged value | dirSyncEnabled value | Description  
+-----|----------------------|----------------------|------------
+Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **dirSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
+Admin switches the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin switches the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin switches the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
+
 
 ## Roll back SOA update
 
@@ -303,6 +313,7 @@ In the **Provisioning Logs** of the **AD2AAD job**, you can see that **SOAGroup3
 The details state `As the SOA of this group is in the cloud, this object will not sync.
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
+
 
 ## Limitations
 
