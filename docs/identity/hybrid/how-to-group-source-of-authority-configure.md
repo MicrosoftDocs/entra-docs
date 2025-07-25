@@ -97,7 +97,7 @@ Follow these steps to convert the SOA for a test group:
 1. Let's check the existing SOA status. Since we haven’t updated the SOA yet, the *isCloudManaged* attribute value should be false. Replace the *groupID* in the following examples with the object ID of your group.  
 
    ```https
-   GET https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior?\$select=isCloudManaged
+   GET https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" source="media/how-to-group-source-of-authority-configure/get-group.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a group.":::
@@ -136,7 +136,7 @@ Follow these steps to convert the SOA for a test group:
 1. To validate the change, call GET to verify *isCloudManaged* is true.
 
    ```https
-   GET https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior?\$select=isCloudManaged
+   GET https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify group properties.":::
