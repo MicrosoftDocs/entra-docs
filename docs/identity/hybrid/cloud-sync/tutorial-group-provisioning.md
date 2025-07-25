@@ -199,13 +199,9 @@ Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | Whe
 Admin switches the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin switches the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
 Admin rolls back the SOA operation | `false` | `null` | If an admin switches the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
 
-### Roll back Group SOA and Group Provisioning to AD
+### How Group Provisioning to AD works with SOA
 
-To roll back Group SOA, follow these steps:
-
-- Convert the SOA of the group SOATestGroup1.
-
-- After you convert the SOA to on-premises AD, **Group Provisioning to AD (GPAD)** stops syncing changes, but it doesn't delete the on-premises group. It also removes the group from GPAD configuration scope. On-premises control of the group resumes in the next sync cycle.
+After you convert the SOA to on-premises AD, **Group Provisioning to AD (GPAD)** stops syncing changes, but it doesn't delete the on-premises group. It also removes the group from GPAD configuration scope. On-premises control of the group resumes in the next sync cycle.
 
 - You can verify in the Audit Logs that sync won't happen for this object because it's managed on-premises. 
   
