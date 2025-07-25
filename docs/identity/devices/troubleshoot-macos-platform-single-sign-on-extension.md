@@ -1,4 +1,4 @@
----
+<img width="520" height="19" alt="image" src="https://github.com/user-attachments/assets/5a174c87-e145-4c63-9ad8-1a109d2b32bb" />---
 title: macOS Platform single sign-on known issues and troubleshooting
 description: Identify and resolve known issues with macOS Platform single sign-on (PSSO).
 
@@ -87,8 +87,8 @@ Apple's app-site-association domains are critical for SSO extension functioning.
 #### URLs that need to be allowed for PSSO registration flows
 
 Please make sure traffic to below URLs are allowed by default for the registration flows that requires TLS challenge to succeed:
- - `https://enterpriseregistration.windows.net`
- - `https://*.enterpriseregistration.windows.net`
+ - `enterpriseregistration.windows.net`
+ - `certauth.enterpriseregistration.windows.net`
 
 > [!NOTE] 
 > Platform SSO is not compatible with the Microsoft Entra ID Tenant Restrictions v2 feature when Tenant Restrictions is deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
