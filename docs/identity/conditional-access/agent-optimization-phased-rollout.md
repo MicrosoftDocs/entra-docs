@@ -12,7 +12,7 @@ ms.topic: concept-article
 ---
 # Conditional Access optimization agent phased rollout
 
-The Conditional Access optimization agent for Microsoft Entra includes a phased rollout capability that helps organizations deploy new Conditional Access policies more safely and efficiently. This Microsoft Security Copilot feature in Microsoft Entra enables administrators to introduce policies gradually, monitor their impact, and minimize disruptions. There are several benefits to this phased rollout capability:
+The Conditional Access optimization agent for Microsoft Entra includes a phased rollout capability that helps organizations deploy new Conditional Access policies safely and efficiently. This Microsoft Security Copilot feature in Microsoft Entra enables administrators to introduce policies gradually, monitor their impact, and minimize disruptions. There are several benefits to this phased rollout capability:
 
 - **User impact mitigation**: Gradual deployment minimizes the chance of widespread disruption to end users.
 - **Operational efficiency**: Reduces the need for manual analysis and planning, saving weeks of effort.
@@ -30,17 +30,21 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 ## How it works
 
-There are three main stages to the phased rollout process.
+When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan. There are three main steps in the phased rollout process.
 
 ### Agent creates a report-only policy with a phased rollout
 
-When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan. Rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
+The agent creates a report-only policy and builds a phased rollout plan. Rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png":::
 
 ### Administrator reviews and accepts the rollout plan
 
 Administrators can accept the plan or modify details of the plan, such as the group assignments or the time between phases.
+
+To adjust the members of a phase:
+
+To adjust phased rollout schedule:
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png" alt-text="Screenshot of the phases of a policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png":::
 
