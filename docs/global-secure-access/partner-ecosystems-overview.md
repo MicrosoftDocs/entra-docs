@@ -5,7 +5,7 @@ ms.author: kenwith
 author: kenwith
 manager: dougeby
 ms.topic: overview
-ms.date: 07/23/2025
+ms.date: 07/25/2025
 ms.service: global-secure-access
 ms.reviewer: abhijeetsinha
 ai-usage: ai-assisted
@@ -53,7 +53,7 @@ The following partners offer automated integrations with Microsoft's SSE solutio
 | Partner         | Docs | Description    |
 |----------------|-------------------|----------------|
 | Aviatrix       | [Deployment guide](https://resources.aviatrix.com/home/aviatrixentra-gsa-configuration-guide-getting-started-with-aviatrix-secure-connectivity-to-entra-gsa)       | Aviatrix enables secure, instant access to Microsoft's SASE platform for any application or workload worldwide, offering identity-based zero-trust access to Microsoft 365, the Internet, and public PaaS/SaaS endpoints. Aviatrix Secure Access supports always-on connectivity to Microsoft's SASE for diverse environments, including containers, without needing agents or host configuration.|
-|  Netskope | [Configuration guide](https://community.netskope.com/discussions-37/microsoft-s-sse-netskope-sd-wan-configuration-guide-7854?tid=7854&fid=37) | Netskope One SD-WAN directs Microsoft traffic to Microsoft's SASE platform for fast, secure access. With powerful automation for Zero Touch Provisioning, this solution streamlines deployment at scale. Customers and partners can quickly onboard sites and reduce operational costs. |
+|  Netskope | [Deployment guide](https://community.netskope.com/additional-discussions-9/automating-netskope-one-sd-wan-and-microsoft-entra-sse-integration-7967) | Netskope One SD-WAN directs Microsoft traffic to Microsoft's SASE platform for fast, secure access. With powerful automation for Zero Touch Provisioning, this solution streamlines deployment at scale. Customers and partners can quickly onboard sites and reduce operational costs. |
 | Teridion       | [Deployment guide (PDF format)](https://www.teridion.com/wp-content/uploads/2024/11/Teridion-Secure-Connect.pdf) | Teridion Secure Connect combines Teridion Connect with Microsoft's SASE platform to deliver fast, secure internet access. This integration, designed for telecommunications companies and Global System Integrators (GSIs), simplifies operations and enhances service management, benefiting end customers.|
 
 For organizations seeking customization according to their unique network architecture, Microsoft offers templatized integrations with the following partners:
