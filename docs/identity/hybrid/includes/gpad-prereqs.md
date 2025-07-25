@@ -21,24 +21,23 @@ The following prerequisites are required to implement provisioning groups to Act
  - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
- - Provisioning agent with build version [1.1.3730.0](../cloud-sync/reference-version-history#1113730) or later.
+ - Provisioning agent with build version [1.1.3730.0](../cloud-sync/reference-version-history.md#1113730) or later.
 
  > [!NOTE]
- > The permissions to the service account are assigned during clean install only. In case you're upgrading from the previous version then permissions need to be assigned manually using PowerShell cmdlet: 
+ > The permissions to the service account are assigned during clean install only. If you're upgrading from the previous version, then permissions need to be assigned manually by using PowerShell: 
  > 
- > ```
+ > ```powershell
  > $credential = Get-Credential  
  >
- >   Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
- >```
- >If the permissions are set manually, you need to ensure that Read, Write, Create, and Delete all properties for all descendent Groups and User objects. 
+ > Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
+ > ```
+ >If the permissions are set manually, you need to assign Read, Write, Create, and Delete all properties for all descendent Groups and User objects. 
  >
- >These permissions aren't applied to AdminSDHolder objects by default
- [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](../cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain) 
+ >These permissions aren't applied to AdminSDHolder objects by default. For more information, see [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](../cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain). 
 
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for global catalog lookup to filter out invalid membership references
- - Microsoft Entra Connect Sync with build version [2.22.8.0](../connect/reference-connect-version-history#2280)
+ - Microsoft Entra Connect Sync with build version [2.22.8.0](../connect/reference-connect-version-history.md#2280)
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect Sync
      - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier
 
@@ -55,7 +54,7 @@ The following is supported:
   - Reconciliation of groups between Microsoft Entra ID and Active Directory isn't supported if the group is manually updated in Active Directory.
 
 ### Additional information
-  The following is additional information on provisioning groups to Active Directory.
+The following is additional information on provisioning groups to Active Directory.
 
 - Groups provisioned to AD using cloud sync can only contain on-premises synchronized users and / or additional cloud created security groups.
 - These users must have the onPremisesObjectIdentifier attribute set on their account.
