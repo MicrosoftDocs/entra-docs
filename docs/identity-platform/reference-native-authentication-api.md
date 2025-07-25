@@ -824,9 +824,14 @@ After the app verifies the user's email with OTP, it receives security tokens. I
 
 ---
 
-If the tenant administrator enforces MFA for your users:
+If the tenant administrator enforces MFA for the users:
 - and the user has a registered strong authentication method, the flow requires the user to complete an MFA challenge. 
-- If the user doesn't have a registered strong authentication method, then the user needs to [registration for a strong authentication method](#register-a-strong-authentication-method-api-reference). The requirement to complete an MFA challenge or register a strong authentication method is triggered when the app call the `/oauth2/v2.0/token` endpoint. 
+- If the user doesn't have a registered strong authentication method, then the user needs to [register for a strong authentication method](#register-a-strong-authentication-method-api-reference). The requirement to complete an MFA challenge or register a strong authentication method is triggered when the app calls the `/oauth2/v2.0/token` endpoint. 
+
+
+The sequence diagram demonstrates the email OTP flow when MFA is required, and the user has or doesn't have a strong authentication method. The flow starts when the app collects the OTP from the user to submit it to the `/oauth2/v2.0/token` endpoint for security tokens.
+
+:::image type="content" source="media/reference-native-auth-api/call-token-endpoint-register-authentication-method-complete-mfa.png" alt-text="Diagram of native auth call toke endpoint register authentication method or complete MFA."::: 
 
 <!--
 The following are more flows you can expect when you enforce MFA for your users:
