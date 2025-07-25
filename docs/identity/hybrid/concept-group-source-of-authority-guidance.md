@@ -51,7 +51,7 @@ Let's look at an example where you use **Group Provisioning to AD** to provision
 
 Then you start to manage group memberships in Microsoft Entra ID for the converted group (*CloudGroupB*). You use **Group Provisioning to AD** to provision it as a nested group within an on-premises group (*OnPremGroupA*). If *OnPremGroupA* remains in-scope for sync, when the AD to Microsoft Entra ID sync configuration runs for *OnPremGroupA*, the membership reference for *CloudGroupB* doesn't sync. By design, the sync client doesn't recognize the cloud group membership references.
 
-For more information about how group sync works with SOA in similar uses cases, see [How group sync works with Source of Authority](concept-group-source-of-authority-how-it-works.md#how-group-sync-works-with-source-of-authority).
+For more information about how group sync works with SOA in similar uses cases, see [How group sync works with Source of Authority](cloud-sync/tutorial-group-provisioning.md#how-group-sync-works-with-source-of-authority).
 
 ### How SOA applies to nested groups in AD
 

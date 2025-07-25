@@ -82,5 +82,5 @@ When configuring Group Provisioning to AD, use the synced attribute to control t
 
  ## Related content
 
- - [Group SOA overview](concept-source-of-authority-overview.md)
- - [How to configure Group SOA](how-to-group-source-of-authority-configure.md)
+ - [Group SOA overview](../concept-source-of-authority-overview.md)
+ - [How to configure Group SOA](../how-to-group-source-of-authority-configure.md)
