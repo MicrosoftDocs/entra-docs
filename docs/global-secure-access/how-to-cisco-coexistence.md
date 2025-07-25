@@ -20,7 +20,7 @@ Cisco Secure Access delivers DNS Defense, powered by Cisco Umbrella technology, 
 
 This guide covers the following coexistence scenarios:
 
-1. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS security.](#1-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-umbrella-dns-cisco-secure-access-dns-defense)**
+1. **[Internet Access and Microsoft Access with Umbrella DNS security.](#1-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-umbrella-dns-cisco-secure-access-dns-defense)**
 In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Umbrella provides DNS protections. Cisco Secure Web Gateway features should be disabled.
 2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS.](#2-microsoft-entra-internet-access-microsoft-entra-microsoft-access-and-microsoft-entra-private-access-with-cisco-umbrella-dns-csa-dns-defense)**
 In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Umbrella handles DNS. Cisco Secure Web Gateway should be disabled.
