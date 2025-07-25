@@ -24,6 +24,20 @@ This article provides information about the latest releases and change announcem
 
 ##  July 2025
 
+### General Availability - Application Based Authentication on Microsoft Entra Connect Sync
+
+**Type:** New feature  
+**Service category:** Microsoft Entra Connect   
+**Product capability:** Microsoft Entra Connect 
+
+The Application-Based Authentication (ABA) feature enables Microsoft Entra Connect to securely authenticate with Microsoft Entra ID without relying on a locally stored password. This feature uses a Microsoft Entra ID application identity and Oauth 2.0 client credential flow to authenticate with Microsoft Entra ID. Microsoft Entra Connect automatically creates a single-tenant third-party application in the customer’s Microsoft Entra ID tenant, registers a certificate as the application’s credential, and grants the required permissions for directory synchronization. 
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on the Microsoft Entra Admin Center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted).
+
+Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details of the change.
+
+---
+
 ### General Availability – Security Copilot in Microsoft Entra 
 
 **Type:** New feature  
@@ -51,6 +65,20 @@ Conditional Access Optimization Agent in Microsoft Entra monitors for new users 
 **Product capability:** Identity Governance  
 
 Customers can now configure a Lifecycle workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user).
+
+---
+
+### General Availability - Audit administrator events in Microsoft Entra Connect Sync
+
+**Type:** New feature  
+**Service category:** Provisioning  
+**Product capability:** Microsoft Entra Connect  
+
+The Admin Audit Logging feature enables organizations to monitor changes made to Microsoft Entra Connect Sync configurations by Global Administrators or Hybrid Administrators. It captures actions performed through the Microsoft Entra Connect Sync Wizard, PowerShell, or Synchronization Rules Editor—including changes to synchronization rules, authentication settings (such as enabling or disabling features), and Federation settings. These events are logged in a dedicated Microsoft Entra Connect Sync audit log channel within the Windows Event Viewer, providing greater visibility into identity infrastructure changes. This feature supports troubleshooting, operational accountability, and regulatory compliance.   
+
+The Microsoft Entra Connect Sync .msi installation file for this change is exclusively available on the Microsoft Entra Admin Center within the [Microsoft Entra Connect pane](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted). 
+
+Check our [version history page](../identity/hybrid/connect/reference-connect-version-history.md) for more details of the change. 
 
 ---
 
@@ -87,17 +115,31 @@ For more information, see: [Bicep templates for Microsoft Graph](/graph/template
 **Service category:** Conditional Access  
 **Product capability:** Access Control  
 
-The Conditional access What If API can be used to programmatically test the impact of policies on user and workload identity signins.
+The Conditional access What If API can be used to programmatically test the impact of policies on user and workload identity sign-ins.
 
 ---
 
-### Public Preview - Ability to switch Source of Authority of synced on-premises AD groups to cloud groups is now available
+### General availability - Conditional Access What If API
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** SSO  
+
+Enterprise apps SSO & User Provisioning SAML-based Single Sign-On (SSO) and gallery apps with user provisioning flows are now Generally Available (GA). These features help streamline secure access and automate user lifecycle management across your enterprise applications. For more information, see:
+
+[Enterprise applications](../external-id/customers/concept-supported-features-customers.md#enterprise-applications)
+[Quickstart: Add an enterprise application](../identity/enterprise-apps/add-application-portal.md)
+[Register a SAML app in your external tenant](../external-id/customers/how-to-register-saml-app.md)
+
+---
+
+### Public Preview - Switch Source of Authority of synced Active Directory groups
 
 **Type:** New feature  
 **Service category:** Group Management  
 **Product capability:** Microsoft Entra Connect  
 
-Ability to shift the source of authority of selected groups from AD to Microsoft Entra ID.
+Source of Authority (SOA) at the object level lets admins convert specific groups that are being synched from Active Directory (AD) to Microsoft Entra ID into cloud-editable objects (and no longer sync from AD), functioning as if the group was created originally in the cloud. This enables a phased migration approach, reducing AD dependencies gradually while minimizing user impact and operational disruption. Both Microsoft Entra Connect Sync and Cloud Sync honor the SOA switch on these objects. The ability to switch the SOA of synced groups from AD to Microsoft Entra ID is now available in Public Preview.
 
 ---
 
