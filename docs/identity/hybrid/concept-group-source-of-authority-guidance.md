@@ -46,12 +46,12 @@ But you can't choose which groups to provision to AD.
 ### On-premises changes to cloud-owned security groups are overwritten
 If you provision cloud security groups to AD, and someone with permissions makes a change directly to the AD group, the change is overwritten the next time you provision the cloud group to AD (typically upon the next change to the cloud group). A local AD change doesn't reflect in Microsoft Entra ID.
 
-### Use Group Provisioning to AD to provision nested security groups
+### How Group Provisioning to AD works with nested groups
 Let's look at an example where you use **Group Provisioning to AD** to provision a security group named *CloudGroupB*. It has a parent on-premises AD group named *OnPremGroupA*. You converted SOA for *CloudGroupB*. 
 
 Then you start to manage group memberships in Microsoft Entra ID for the converted group (*CloudGroupB*). You use **Group Provisioning to AD** to provision it as a nested group within an on-premises group (*OnPremGroupA*). If *OnPremGroupA* remains in-scope for sync, when the AD to Microsoft Entra ID sync configuration runs for *OnPremGroupA*, the membership reference for *CloudGroupB* doesn't sync. By design, the sync client doesn't recognize the cloud group membership references.
 
-For more information about how group sync works with SOA in similar uses cases, see [How group sync works with Source of Authority](cloud-sync/tutorial-group-provisioning.md#how-group-sync-works-with-source-of-authority).
+For more information about how group sync works with SOA in similar uses cases, see [Nested Groups and membership references handling](cloud-sync/tutorial-group-provisioning.md#nested-groups-and-membership-references-handling).
 
 ### How SOA applies to nested groups in AD
 
