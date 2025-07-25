@@ -220,7 +220,7 @@ Add Microsoft Entra service FQDNs in Traffic Steering to the destination list to
 
 #### Cisco Secure Access configuration
 
-- Configure required destinations to bypass Umbrella (Secure DNS) and Secure Access Zero Trust.
+- Configure required destinations to bypass Cisco Secure Access.
 - Deploy and configure Cisco Secure Client with the Zero Trust Access and Umbrella modules.
 - Disable Cisco Secure Access Secure Web Gateway (SWG):
   1. In the Cisco Secure Access portal, go to **Resources > Roaming Devices > Desktop Operating Systems**.
