@@ -29,8 +29,8 @@ The ideal customer for this engagement:
 
 ## Alignment with Microsoft recommendations 
 The content of the Microsoft Entra Suite Workshop will be updated when the Zero Trust Workshop gets updated, most recommendations are aligned with the Zero Trust Security Deployment Guidance:
-- [Zero Trust Guidance Center | Microsoft Learn](https://learn.microsoft.com/en-us/security/zero-trust/)
-- [Zero Trust deployment for technology pillars overview | Microsoft Learn](https://learn.microsoft.com/en-us/security/zero-trust/deploy/overview)
+- [Zero Trust Guidance Center | Microsoft Learn](/security/zero-trust.md)
+- [Zero Trust deployment for technology pillars overview | Microsoft Learn](/security/zero-trust/deploy/overview.md)
 
 ## Customer Stakeholders 
 In order to get the most out of these workshops, it's recommended to have people on the call from the customer’s side that can cover the following areas:
@@ -63,3 +63,13 @@ Below are the estimated delivery times for each section of the stage of the work
 - Enable Remote Access: 1 hour
 - Govern Internet Access: 1 hour
 **Total: 5 hours**
+
+## Related content
+
+- [Learn about Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
+- [What is Microsoft Entra ID Protection?](../id-protection/overview-identity-protection.md)
+- [Plan a Microsoft Entra ID Protection deployment](../id-protection/how-to-deploy-identity-protection.md)
+- [Get started with Global Secure Access](../global-secure-access/how-to-get-started-with-global-secure-access.md)
+- [Learn about the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access](../global-secure-access/concept-clients.md)
+- [Learn about Microsoft Entra Private Access](../global-secure-access/concept-private-access.md)
+- [Learn about Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md)
