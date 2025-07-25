@@ -111,12 +111,12 @@ Windows - Will pull the PRT from the broker into the browser on the following br
 
 Android - Microsoft Edge will pull the PRT from the broker into the browser
 
-### [iOS and Android](#tab/browser-behavior-apple)
+### [iOS and macOS](#tab/browser-behavior-apple)
 
 On iOS and macOS, browsers can also get the PRT when the SSO extension profile is installed, enabling:
 - Chrome and Firefox support on macOS
 - Safari support on both iOS and macOS
-- Microsoft Edge on iOS
+- Microsoft Edge on iOS and macOS
 
 ### [Linux](#tab/browser-behavior-linux)
 
@@ -240,10 +240,14 @@ The PRT is issued only after a request is signed using a secure enclave–backed
 
 For macOS where Platform SSO is used, it will use hardware binding by default.
 
+To enable hardware binding on iOS and Mac, follow guidance from [Apple SSO Plugin](../../identity-platform/apple-sso-plugin#upcoming-changes-to-device-identity-key-storage.md)
+
 
 ### [Other operating systems](#tab/other-prt-protection)
 
 Android, iOS, and Linux do not support hardware binding for PRTs.
+
+To enable hardware binding on iOS and Mac, follow guidance from [Apple SSO Plugin](../../identity-platform/apple-sso-plugin#upcoming-changes-to-device-identity-key-storage.md)
 
 ---
 
