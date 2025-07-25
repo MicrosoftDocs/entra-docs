@@ -57,7 +57,7 @@ For each activity, you can see:
 
 ### View Agent's Full Activity
 
-To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View agent's full activity**.
+To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View activity** next to a specific activity..
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details can help you understand the logic behind the decisions so you can make an informed choice about whether to apply the decision.
 
