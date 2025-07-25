@@ -252,7 +252,7 @@ To configure Cisco Umbrella and SWG:
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
-1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
+1. In the system tray, right-click **Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting**.
 2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
 3. Verify Global Secure Access client **is not** capturing traffic to these sites.
 4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
