@@ -60,6 +60,11 @@ Entra account. For information on configuring app proxy, see [Add an on-premises
 
 
 
+
+[!INCLUDE [governance-on-premises-active-directory-apps.md](~/includes/governance/governance-on-premises-active-directory-apps.md)]
+
+
+
 ## Related content
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
 - [Group provisioning to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
