@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: reference
-ms.date: 07/07/2025
+ms.date: 07/30/2025
 ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As an identity developer, I want to learn how to integrate customer-facing apps with native authentication API so that I can sign in customer users into external tenant.
 ---
@@ -366,7 +366,7 @@ Once the app successfully submits the one-time passcode, the sign-up flow depend
 
 |    Scenario          | How to proceed |
 |----------------------|------------------------|
-|The app successfully submits the user's password (for email with password authentication method) via the `/signup/v1.0/start` endpoint, and no attributes are configured in Microsoft Entra admin center or all the required user attributes are submitted via the `/signup/v1.0/start` endpoint. |Microsoft Entra issues a continuation token. The app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens).|
+|The app successfully submits the user's password (for email with password authentication method) via the `/signup/v1.0/start` endpoint, and no attributes are configured in Microsoft Entra admin center or all the required user attributes are submitted via the `/signup/v1.0/start` endpoint. |Microsoft Entra issues a continuation token. The app can use the continuation token to request for security tokens as shown in [Request for security tokens](#step-3-request-for-security-tokens).|
 |The app successfully submits the user's password(for email with password authentication method) via the `/signup/v1.0/start`, but not all the required user attributes, Microsoft Entra indicates the attributes that the app needs to submit as shown in [user attributes required](#user-attributes-required). | The app needs to submit the required user attributes via the `/signup/v1.0/continue` endpoint. The response is similar to the one in [User attributes required](#user-attributes-required). Submit the user attributes a shown in [submit user attributes](#submit-user-attributes).|
 |The app doesn't submit the user's password (for email with password authentication method) via `/signup/v1.0/start` endpoint.| Microsoft Entra's response indicates that credential is required. See [response](#response). <br> **This response is possible for email with password authentication method**.|
 
@@ -505,7 +505,7 @@ continuation_token=uY29tL2F1dGhlbnRpY...
 
 #### Success response
 
-If the request is successful, but no attributes were configured in Microsoft Entra admin center or all the required attributes were submitted via the `/signup/v1.0/start` endpoint, the app gets a continuation token without submitting any attributes. The app can use the continuation token to request for security tokens as shown in [step 5](#step-5-request-for-security-tokens). Otherwise, Microsoft Entra's response indicates that the app needs to submit required attributes. These attributes, built in or custom, were configured in the Microsoft Entra admin center by the tenant administrator.
+If the request is successful, but no attributes were configured in Microsoft Entra admin center or all the required attributes were submitted via the `/signup/v1.0/start` endpoint, the app gets a continuation token without submitting any attributes. The app can use the continuation token to request for security tokens as shown in [Request for security tokens](#step-3-request-for-security-tokens). Otherwise, Microsoft Entra's response indicates that the app needs to submit required attributes. These attributes, built in or custom, were configured in the Microsoft Entra admin center by the tenant administrator.
 
 ##### User attributes required
 
@@ -795,7 +795,7 @@ To request for security tokens, your app interacts with three endpoints, `oauth/
 | `oauth/v2.0/initiate`  | This endpoint initiates the sign-in flow. If your app calls it with a username of a user account that already exists, it returns a success response with a continuation token. If your app requests to use authentication methods that aren't supported by Microsoft Entra, this endpoint response can indicate to your app that it needs to use a browser-based authentication flow.|
 |   `oauth/v2.0/challenge`   | Your app calls this endpoint to request Microsoft Entra to select one of the supported [sign-in challenge types](#sign-in-challenge-types) for the user to authenticate with. Where the tenant administrator enforces MFA for customer users, your app calls this endpoint to indicate the user's choice of strong authentication method challenge channel.|
 |  `oauth/v2.0/token`  | This endpoint verifies user’s credentials it receives from your app, then it issues security tokens to your app. A response from this endpoint can also indicate whether the user needs to complete an MFA challenge or register a strong authentication method.|
-| `oauth/v2.0/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered stronh authentication methods. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods-optional)|
+| `oauth/v2.0/introspect` | This is an optional endpoint. Your app calls it to request for a list of registered strong authentication methods. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods)|
 
 ### Sign-in challenge types
 
@@ -981,8 +981,8 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/oauth2/v2.0/initiate` endpoint, or call to the `/oauth2/v2.0/token` endpoint when the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-|`id`| No | This is the string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods-optional). |
-| `challenge_channel` | No | This is the string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#request-for-user-registered-strong-authentication-methods-optional).|
+|`id`| No | This is the string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods). |
+| `challenge_channel` | No | This is the string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|
 
 #### Success response
 
@@ -2064,7 +2064,7 @@ Content-Type: application/json
 |    Property     | Description        |
 |----------------------|------------------------|
 | `status`  | The status of the reset password request. If Microsoft Entra returns a status of *failed*, the app can resubmit the new password by making another request to the `/resetpassword/v1.0/submit` endpoint and include the new continuation token.|
-| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `oauth2/v2.0/token` endpoint as explained in [Request for security tokens](#step-5-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without initiating a new sign-in flow.|
+| `continuation_token`  |  [Continuation token](#continuation-token) that Microsoft Entra returns. If the status is *succeeded*, the app can use the continuation token that Microsoft Entra returns to request for security tokens via the `oauth2/v2.0/token` endpoint as explained in [Request for security tokens](#step-3-request-for-security-tokens). This means that after a user successfully resets their password, you can directly sign them into your app without initiating a new sign-in flow.|
 
 Here are the possible statuses that Microsoft Entra returns (possible values of the `status` parameter):
 
@@ -2115,7 +2115,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ### Automatically sign in after password reset
 
-If the user must sign in after a successfull password reset. The app needs to call the `/oauth2/v2.0/token` endpoint. Learn [how to call the token endpoint](#step-3-request-for-security-tokens).
+If the user need to sign in after a successfull password reset. The app needs to call the `/oauth2/v2.0/token` endpoint. Learn [how to call the token endpoint](#step-3-request-for-security-tokens).
 
 ## Related content
 
