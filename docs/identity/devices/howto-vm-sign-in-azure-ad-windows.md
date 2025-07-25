@@ -15,7 +15,7 @@ zone_pivot_groups: identity-extension-windows-environment
 
 # Sign in to Windows virtual machine in Azure or Arc-enabled Windows Server, using Microsoft Entra ID and Azure Roles Based Access Control
 
-Organizations can improve the security of Windows devices in Azure or connected using Azure Arc by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into *Windows Server 2019 Datacenter edition* and later, or *Windows 10 1809* and later. You can then centrally control and enforce Azure role-based access control (RBAC) and Conditional Access policies that allow or deny access to the devices.
+Organizations can improve the security of Windows devices in Azure or connected using Azure Arc by integrating with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform to Remote Desktop Protocol (RDP) into supported versions of Windows. You can then centrally control and enforce Azure role-based access control (RBAC) and Conditional Access policies that allow or deny access to the devices.
 
 This article shows you how to create and configure a Windows machine and sign in by using Microsoft Entra ID-based authentication.
 

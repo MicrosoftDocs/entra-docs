@@ -4,8 +4,8 @@ description: Learn how to review and apply suggestions provided by the Security 
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
-ms.date: 07/25/2025
-
+manager: pmwongera
+ms.date: 07/24/2025
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
@@ -36,6 +36,7 @@ This article provides an overview of the logic behind the suggestions and how to
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
+- The agent can review up to 150 users and 100 applications in a single run.
 
 ## How it works
 
@@ -66,9 +67,11 @@ From the details panel that opens, select **Policy impact** to see a visualizati
 
 Adjust the filters and the display as needed. Select a point on the graph to see a sample of the data that the policy affects. For example, for a policy to require multifactor authentication (MFA), the graph shows a sample of sign-in events where the Conditional Access policy wasn't applied. For more information, see [Policy impact](concept-conditional-access-report-only.md#reviewing-results).
 
+:::image type="content" source="media/agent-optimization-review-suggestions/policy-impact-graph.png" alt-text="Screenshot of the policy impact graph." lightbox="media/agent-optimization-review-suggestions/policy-impact-graph.png":::
+
 ### View agent's full activity
 
-To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**.
+To see a detailed summary of the agent's activity and how it calculated the suggestion, select **View agent's full activity**. The agent's activity assesses policy drift, or gaps in policy coverage, for users and apps. The agent also looks for policies that can be merged or consolidated.
 
 :::image type="content" source="media/agent-optimization-review-suggestions/view-agent-activity-link.png" alt-text="Screenshot of the policy suggestion details with the view agent's full activity link highlighted." lightbox="media/agent-optimization-review-suggestions/view-agent-activity-link.png":::
 
@@ -80,9 +83,10 @@ The **Summary of agent activity** is a natural language description of the activ
 
 If the agent suggests modifying an existing policy, select **Review policy changes** to see the details of the recommended change. This page lists the users, target resources, and other details of the policy that will change if you apply the suggestion.
 
-:::image type="content" source="media/agent-optimization-review-suggestions/review-policy-changes.png" alt-text="Screenshot of the policy details page with the review policy changes button highlighted." lightbox="media/agent-optimization-review-suggestions/review-policy-changes.png":::
+- Policy details are provided as both a list of all the details that are changing and a JSON view of the entire policy, with the changes highlighted.
+- For policy changes that affect users or applications, you can download a JSON file of the users and applications affected by the policy change.
 
-You can also select **JSON view** from the **Review policy changes** page to see the policy in JSON format, with the changes highlighted.
+:::image type="content" source="media/agent-optimization-review-suggestions/review-policy-changes.png" alt-text="Screenshot of the policy details page with the review policy changes button highlighted." lightbox="media/agent-optimization-review-suggestions/review-policy-changes.png":::
 
 ## Apply suggestions
 
