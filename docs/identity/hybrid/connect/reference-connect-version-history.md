@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: mwongerapk
 ms.topic: reference
-ms.date: 07/24/2025
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
@@ -65,8 +65,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
-|[2.5.3.0](#2530)|31 Jul 2026 (12 months after release of 2.5.76.0)|
-|[2.5.76.0](#25760)||
+|[2.5.3.0](#2530)||
 
 **All other versions are not supported**
 
@@ -90,30 +89,6 @@ If you want all the latest features and updates, check this page and install wha
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
 
-## 2.5.76.0
-
-### Release status
-
-07/31/2025: Released for download via the Microsoft Entra admin center. 
-
-### Added features
-
-- Modern Authentication enabled to allow customers to configure application-based authentication for enhanced security (General Availability). For more information, see [Authenticate to Microsoft Entra ID by using application identity](/entra/identity/hybrid/connect/authenticate-application-id).
-
-- Administrator action logging (General Availability) provides audit trails for all administrative changes made on Microsoft Entra Connect Sync. For more information, see [Audit administrator events in Microsoft Entra Connect Sync](/entra/identity/hybrid/connect/admin-audit-logging).
-
-- Group Source of Authority feature allowing administrators to transfer ownership of synchronized groups from on-premises Active Directory to cloud-only management in Microsoft Entra ID (Preview). For more information, see [Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud](../../hybrid/concept-source-of-authority-overview.md).
-
-
-### Bug fixes 
-
-- Fixed domain and organizational unit (OU) filtering issues in the Configuration Wizard that affected scenarios with multiple domains. 
-
-- Fixed federated identity provider MFA behavior settings for update operations. 
-
-- Enhanced agent updater reliability with improved machine ID detection and fallback mechanisms. 
-
-- Fixed an issue in the Configuration Wizard that failed with `Directory synchronization for this directory currently has a mismatch in sync enabled and sync status` when **DirSync Status** is *PendingEnabled*.
 
 ## 2.5.3.0
 
@@ -121,12 +96,12 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 05/27/2025: Released for download via the Microsoft Entra admin center.
 
-### Added features
+### Added Features
 - Modern Authentication enabled allowing customers to configure application-based authentication for enhanced security (Public Preview). More details [here](authenticate-application-id.md)
 
-### Updated features
-- Upgraded the bundled health agent to version 4.5.2520.0.
-- Moved from download center to Azure portal for downloads.
+### Updated Features
+- Upgraded the bundled health agent to version 4.5.2520.0
+- Moved from download center to Azure portal for downloads
 - Administrator credentials now required when toggling staging mode via PowerShell with SSPR enabled.
 - Administrator credentials now required when enabling, disabling, or removing SSPR configuration via PowerShell.
 
@@ -140,7 +115,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 >[!NOTE]
 >Auto upgrade runs from the release date until 15 April 2025. If your environment isn't upgraded by then, it means the auto upgrade attempt failed and you need to perform a [manual upgrade](how-to-upgrade-previous-version.md). You can check the [Application event logs](how-to-connect-install-automatic-upgrade.md#troubleshooting) for reasons for the failure of the auto upgrade.
 
-### Updated features
+### Updated Features
 - Removed the pre-requisite check for the SchUseStrongCrypto registry key being enabled. This version uses .NET 4.7.2 which uses strong cryptography by default.
 
 ## 2.4.129.0
@@ -149,7 +124,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 01/15/2025: Released for download and autoupgrade
 
-### Added features
+### Added Features
 - Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
 
 ### Bug fixes
@@ -166,7 +141,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 11/14/2024: Released for download
 
-### Updated features
+### Updated Features
 - SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server#1874)
 
 ### Bug fixes
@@ -195,7 +170,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 10/07/2024: Released for download
 
 
-### Updated features
+### Updated Features
 - The step **Connect to Microsoft Entra ID** in the Connect Sync Wizard won't require password before redirecting you to the login page.
 - Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule. Adding this rule allows the sync engine to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled, in a scenario where:
  - the same user is represented across different forests, and 
