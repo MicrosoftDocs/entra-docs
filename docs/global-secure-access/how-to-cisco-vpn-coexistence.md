@@ -136,8 +136,8 @@ After both clients are installed and running, verify that Global Secure Access a
 
 **Verify configuration:**
 
-- Right-click Global Secure Access client > Advanced Diagnostics > Forwarding Profile. Verify only Internet and Microsoft 365 rules are applied.
-- In Advanced Diagnostics > Health Check, ensure no checks are failing.
+1. Right-click Global Secure Access client > Advanced Diagnostics > Forwarding Profile. Verify only Internet and Microsoft 365 rules are applied.
+2. In Advanced Diagnostics > Health Check, ensure no checks are failing.
 - See [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
 **Test traffic flow:**
