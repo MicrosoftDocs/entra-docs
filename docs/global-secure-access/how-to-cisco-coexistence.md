@@ -30,7 +30,7 @@ In this scenario, Global Secure Access handles private application traffic. Cisc
 In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
 
 > [!NOTE]
-  > There is currently an issue with macOS preventing coexistence between GSA and Umbrella. This guide will be updated when the resolution is confirmed.
+  > There's currently an issue with macOS preventing coexistence between Global Secure Access and Umbrella.
  
 ## Prerequisites
 
@@ -65,7 +65,7 @@ To configure Cisco Umbrella and SWG:
 4. **Deploy and install the Cisco Secure Client.**  
     
   > [!IMPORTANT]
-  > Cisco has released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation of CSC version 5.1.10.x (or later).
+  > Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation of CSC version 5.1.10.x (or later).
   > 1. Install Cisco Secure Client version 5.1.10.x.
   > 1. Open CMD prompt as an administrator and run these commands:
   > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
@@ -91,7 +91,7 @@ To configure Cisco Umbrella and SWG:
 
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
-1. Add domain suffixes and Entra service FQDNs to the **Internal domains** list:
+1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list:
   ```
   *.globalsecureaccess.microsoft.com
   ```
@@ -102,7 +102,7 @@ To configure Cisco Umbrella and SWG:
   `auth.microsoft.com`, `msftidentity.com`, `msidentity.com`, `onmicrosoft.com`, `outlook.com`, `protection.outlook.com`, `sharepoint.com`, `sharepointonline.com`, `svc.ms`, `wns.windows.com`, `account.activedirectory.windowsazure.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.cloud.microsoft`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`, `<quickaccessapplicationid>.globalsecureaccess.local`
   ```
   > [!NOTE]
-  > `quickaccessapplicationid` is the application ID of the Quick Access app you’ve configured.
+  > `quickaccessapplicationid` is the application ID of the configured Quick Access app.
 
 
 3. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
@@ -118,21 +118,21 @@ To configure Cisco Umbrella and SWG:
 
 #### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
 
- Add Entra service FQDNs in Traffic Steering to the destination list to bypass Cisco Secure Access.
+ Add Microsoft Entra service FQDNs in Traffic Steering to the destination list to bypass Cisco Secure Access.
 1. Go to **Connect > End User Connectivity > Internet Security**.
-2. In **Traffic Steering**, click **Add Destination > Bypass Secure Access**, add these FQDNs and save:
+2. In **Traffic Steering**, select **Add Destination > Bypass Secure Access**, add these FQDNs, and save:
   ```
   *.globalsecureaccess.microsoft.com
   ```
   > [!NOTE]
   > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.microsoft.com`.
 
-3. Add the same Microsoft FQDNs and DNS suffixes as above.
-4. In **Traffic Steering**, click **Add Destination > Bypass web proxy only**, add these IPs and save:
+3. Add the same Microsoft FQDNs and DNS suffixes.
+4. In **Traffic Steering**, select **Add Destination > Bypass web proxy only**, add these IPs and save:
   ```
   `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`
   ```
-- Add the same Microsoft IP addresses as above.
+- Add the same Microsoft IP addresses.
 6. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 ---
@@ -149,11 +149,11 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Disable Cisco Secure Access SWG
-    1. In the **Cisco Secure Access portal > Resources**
-    2. **Roaming Devices > Desktop Operating Systems**
-    3. Select the device > **Web Security** drop-down (on blue bar) > **Always Disable (override)**.
+    1. In the **Cisco Secure Access portal**, go to **Resources**.
+    2. Select **Roaming Devices > Desktop Operating Systems**.
+    3. Choose the device, then in the blue bar, open the **Web Security** drop-down and select **Always Disable (override)**.
 
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 
@@ -184,7 +184,7 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Disable Cisco Secure Access SWG.
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 
@@ -201,7 +201,7 @@ To configure Cisco Umbrella and SWG:
 6. Verify Global Secure Access client **is** capturing traffic for these sites.
    - We **do** expect to see destination FQDN information for these sites. 
 7. Access a site blocked by Cisco and validate that the Cisco block page is displayed.
-8. Access an Entra private application (e.g., SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco is not.
+8. Access a Microsoft Entra private application (for example, SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco isn't.
 8. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
 ---
@@ -218,7 +218,7 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Cisco Secure Access/Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Cisco Secure Access/Umbrella. See instructions for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 - Ensure that Secure Web Gateway is enabled.
 **Validation:**
@@ -229,7 +229,7 @@ To configure Cisco Umbrella and SWG:
 2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
 3. Verify Global Secure Access client **is not** capturing traffic for these sites.
 4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
-8. Access an Entra private application (e.g., SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco **is not**.
+8. Access a Microsoft Entra private application (for example, SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco **is not**.
 8. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
 ---
@@ -244,7 +244,7 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 - Ensure that Secure Web Gateway is enabled.
 **Validation:**
@@ -255,7 +255,7 @@ To configure Cisco Umbrella and SWG:
     2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
     3. Verify Global Secure Access client **is not** capturing traffic to these sites.
     4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
-    5. Access an Entra private application (e.g., SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco **is not**.
+    5. Access a Microsoft Entra private application (for example, SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco **is not**.
     6. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
 ---
