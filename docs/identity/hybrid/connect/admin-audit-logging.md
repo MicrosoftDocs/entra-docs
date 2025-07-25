@@ -12,9 +12,9 @@ ms.author: jomondi
 
 # Audit administrator events in Microsoft Entra Connect Sync
 
-Starting from version [(2.4.129.0)](reference-connect-version-history.md#241290) of Microsoft Entra Connect Sync, a new admin audit logging feature is available and enabled by default. This feature allows organizations to monitor changes made to Microsoft Entra Connect Sync configurations by Global Administrators or Hybrid Administrators.
+Starting from version [(2.4.129.0)](reference-connect-version-history.md#241290) of Microsoft Entra Connect Sync, a new admin audit logging feature is available and enabled by default. This feature allows organizations to monitor changes made to Microsoft Entra Connect Sync configurations by Global Administrators, Hybrid Administrators and local server administrators.
 
-Admin actions performed through the Microsoft Entra Connect Sync Wizard, PowerShell, or the Synchronization Rules Editor—such as updates to synchronization rules, authentication settings, and federation settings are captured and logged in a dedicated audit log channel within the Windows Event Viewer. This provides improved visibility into identity infrastructure changes and supports troubleshooting, operational accountability, and regulatory compliance.
+Admin actions performed through the Microsoft Entra Connect Sync Wizard, PowerShell, or the Synchronization Rules Editor—such as updates to synchronization rules, authentication settings, and federation settings are captured and logged in Windows Event Viewer Application's event log under a dedicated event source called **Entra Connect Admin Actions**. This provides improved visibility into identity infrastructure changes and supports troubleshooting, operational accountability, and regulatory compliance.
 
 This article outlines the list of events logged by this feature and explains how to disable it, if needed.
 
