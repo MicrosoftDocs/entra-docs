@@ -240,14 +240,14 @@ The PRT is issued only after a request is signed using a secure enclave–backed
 
 For macOS where Platform SSO is used, it will use hardware binding by default.
 
-To enable hardware binding on iOS and Mac, follow guidance from [Apple SSO Plugin](../../identity-platform/apple-sso-plugin#upcoming-changes-to-device-identity-key-storage.md)
+To enable hardware binding on iOS and Mac, follow guidance from [Apple SSO Plugin](../../identity-platform/apple-sso-plugin.md#upcoming-changes-to-device-identity-key-storage)
 
 
 ### [Other operating systems](#tab/other-prt-protection)
 
 Android, iOS, and Linux do not support hardware binding for PRTs.
 
-To enable hardware binding on iOS and Mac, follow guidance from [Apple SSO Plugin](../../identity-platform/apple-sso-plugin#upcoming-changes-to-device-identity-key-storage.md)
+To enable hardware binding on iOS and Mac, follow guidance from [Apple SSO Plugin](../../identity-platform/apple-sso-plugin.md#upcoming-changes-to-device-identity-key-storage)
 
 ---
 
