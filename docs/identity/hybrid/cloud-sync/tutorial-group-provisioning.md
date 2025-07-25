@@ -165,9 +165,9 @@ You convert the SOA of a synced group (parent) that has cloud-owned groups as me
 You convert the SOA of a synced group (parent) that has other synced groups as members. |AD security groups with SOA converted to cloud| AD security groups (synced groups) | AAD2ADGroupProvisioning (Group Provisioning to AD) |The job provisions the parent group, but all the member references (member Groups) that are AD security groups aren't provisioned.
 You convert the SOA of a synced group (parent) whose members are other synced groups that have SOA converted to cloud. | AD security groups with SOA converted to cloud | AD security groups with SOA converted to cloud | AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
 
-### How Group Provisioning to AD works with SOA
+## Group provision to AD behavior after you roll back SOA converted groups
 
-After you convert the SOA to on-premises AD, **Group Provisioning to AD (GPAD)** stops syncing changes, but it doesn't delete the on-premises group. It also removes the group from GPAD configuration scope. On-premises control of the group resumes in the next sync cycle.
+If you have SOA converted groups in scope and you roll back the SOA converted group to make it an AD owned group, **Group Provisioning to AD (GPAD)** will stop syncing the changes, but it doesn't delete the on-premises group. It also removes the group from GPAD configuration scope. On-premises control of the group resumes in the next sync cycle.
 
 - You can verify in the Audit Logs that sync won't happen for this object because it's managed on-premises. 
   
