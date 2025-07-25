@@ -49,7 +49,7 @@ Download the Provisioning agent with build version [1.1.1370.0](/entra/identity/
 
    - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator): To grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Graph APIs.
 
-   - [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator): To call the Microsoft Graph APIs to read and update SOA of groups.
+   - [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator): To call the Microsoft Graph APIs to read and update SOA of groups.
 
 ## Grant permission to apps
 
