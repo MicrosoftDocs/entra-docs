@@ -105,6 +105,8 @@ Windows - Will pull the PRT from the broker into the browser on the following br
 - Microsoft Edge
 - Firefox
 
+- Chrome
+
 ### [Android](#tab/browser-behavior-android)
 
 Android - Microsoft Edge will pull the PRT from the broker into the browser
