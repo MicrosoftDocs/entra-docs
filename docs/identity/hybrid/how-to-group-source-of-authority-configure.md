@@ -47,36 +47,36 @@ Download the Provisioning agent with build version [1.1.1370.0](/entra/identity/
 
 - A user account in the tenant with the following roles assigned:
 
-   - [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator): To grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Graph APIs.
+   - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator): To grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Graph APIs.
 
    - [Groups Administrator](/entra/identity/role-based-access-control/permissions-reference#groups-administrator): To call the Microsoft Graph APIs to read and update SOA of groups.
 
 ## Grant permission to apps
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+>[!Important] 
+> A known issue might prevent you from seeing new permissions in the Microsoft Entra admin center after you convert SOA. If you can't view the permissions in the Microsoft Entra ID center or in Graph Explorer, follow steps in the the [Workaround for granting permission to apps](#workaround-for-granting-permission-to-apps).
 
-1. In the **Enterprise Applications** blade in the Microsoft Entra admin center, find the **Application Id** of the app that needs permission to be granted, such as Graph Explorer. For Graph Explorer, the **Application Id** is *de8bc8b5-d9f9-48b1-a8ad-b748da725064*.
+This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. 
 
-1. In the same browser where you signed in, open the following URL to consent to the **Group-OnPremisesSyncBehavior.ReadWrite.All** permission. Replace the **Application Id** in URL below with the **Application Id** of the app that needs permission to be granted. For Graph Explorer, the URL is:
+Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite. All` permission to the corresponding app. For more information about how to add new permissions to your app registration and grant consent, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions). 
 
-   ```https
-   https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=de8bc8b5-d9f9-48b1-a8ad-b748da725064&response_type=code&scope=https://graph.microsoft.com/Group-OnPremisesSyncBehavior.ReadWrite.All
-   ```
+1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+1.	Click the profile icon, and select **Consent to permissions**.
+1.	Search for Group-OnPremisesSyncBehavior, and click **Consent** for the permission.
 
-1. Click **Accept** to grant consent.
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission.":::
 
-   > [!NOTE]
-   > Consenting on behalf of the entire organization isn't required.
+### Workaround for granting permission to apps
+You can grant consent via PowerShell/MS Graph by referring to this article: [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
+To validate permissions that the permissions have been granted, sign in to the Azure portal, navigate to **Enterprise Applications** > **App Name** and select **Security** > **Permissions**:
 
-   :::image type="content" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of the consent screen for granting permissions in Microsoft Entra admin center.":::
+:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/permission.png" alt-text="Screenshot of how to grant permission.":::
 
-1. To verify the permission is granted, open **Enterprise Applications** > **AppName** > **Security** > **Permissions** > **User consent in Microsoft Entra portal**. It may take a minute or two for the permission to appear.
+## Convert SOA for a test group
 
-## Switch SOA for a test group
+Follow these steps to convert the SOA for a test group:
 
-Follow these steps to switch the SOA for a test group:
-
-1. Create a security group or a mail-enabled distribution group in AD for testing and add group members. Or you can use a group that's already synced to Microsoft Entra ID by using Connect Sync.
+1. Create a security group or a mail-enabled distribution group in AD for testing and add group members. You can also use a group that's already synced to Microsoft Entra ID by using Connect Sync.
 1. Run the following command to start Connect Sync: 
 
    ```powershell
@@ -84,7 +84,7 @@ Follow these steps to switch the SOA for a test group:
    ```
 
 1. Verify that the group appears in the Microsoft Entra admin center as a synced group.
-1. Use Microsoft Graph API to change the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as Groups admin.
+1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as Groups admin.
 1. Let's check the existing SOA status. Since we haven’t updated the SOA yet, the *isCloudManaged* attribute value should be false. Replace the *groupID* in the following examples with the object ID of your group.  
 
    ```https
@@ -113,7 +113,7 @@ Follow these steps to switch the SOA for a test group:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced group properties.":::
 
-1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to switch to the cloud:
+1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud:
 
    ```https
    PATCH https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior
@@ -160,7 +160,7 @@ Follow these steps to switch the SOA for a test group:
    Start-ADSyncSyncCycle
    ```
 
-1. To look at the group object you switched SOA of, in the **Synchronization Service Manager**, go to **Connectors**:
+1. To look at the group object with converted SOA, in the **Synchronization Service Manager**, go to **Connectors**:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/connectors.png" alt-text="Screenshot of Connectors.":::
 
@@ -257,8 +257,8 @@ The following table explains the status for **isCloudManaged** and **dirSyncEnab
 Admin step | isCloudManaged value | dirSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
 Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **dirSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
-Admin switches the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin switches the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
-Admin rolls back the SOA operation | `false` | `null` | If an admin switches the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
+Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
 
 
 ## Roll back SOA update
@@ -321,7 +321,7 @@ The details state `As the SOA of this group is in the cloud, this object will no
 
 - **No dual write allowed:** Once you start managing the memberships for the transferred group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD using Group Provision to AD as a nested group under another AD group (OnPremGroupB) that's in scope for AD to Entra ID sync, the membership reference of group A won't be synced when AD2EntraID sync happens for OnPremGroupB. This is because the sync client doesn't know the cloud group membership references. This behavior is by design.
 
-- **No SOA transfer of nested groups:** If you have nested groups in AD and want to transfer the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA is switched. Nested groups in the parent group continue to be AD groups. You need to switch the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest hierarchy, and move up the tree.
+- **No SOA transfer of nested groups:** If you have nested groups in AD and want to transfer the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA is converted. Nested groups in the parent group continue to be AD groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest hierarchy, and move up the tree.
 
 - **Extension Attributes (1-15):** Extension attributes 1 – 15 aren't supported on cloud security groups and aren't supported after SOA is converted.
 
