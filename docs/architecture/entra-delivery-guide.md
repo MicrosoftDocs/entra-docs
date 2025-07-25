@@ -41,11 +41,13 @@ In order to get the most out of these workshops, it's recommended to have people
 - Networking
 
 Recommendations for the customer stakeholders that should attend the workshop are as follows:
+
 |Identity|Network|
 |---|---|
 | • Identity and Access Management (IAM) team <br/> • Security Operations team <br/> • Devices/Endpoint team <br/> • ID Governance (IGA) team <br/> • Enterprise Application Developers <br/> • CISO (if possible) <br/> • IT Director (if possible)| • Identity and Access Management (IAM) team <br/> • Network Operations team <br/>  • Security Operations team <br/> • Devices/Endpoint team <br/> • Applications / workloads stakeholders <br/> • CISO (if possible) <br/> • IT Director (if possible)|
 
 ## Engagement Model
+
 |Phases|Key Objectives|Key Activities|Success Criteria|
 |--|--|--|--|
 |**Initial Scoping call with Customer <br/> <br/> Duration: 30 minutes**| • Arrange that the customer understands the technical review activity and ensure scope, objectives, format, and deliverables <br/> • Confirm logistics and attendees <br/> • Decide which of the stages the customer would like delivered | • Gather customer context and validate intent and readiness for Microsoft Entra Suite <br/> • Conduct scoping meeting <br/> • Agree on the assessment logistics and schedule time to deliver individual stages of the workshop <br/> • Ensure customer understands prerequisites to run the assessment checks <br/> • Validate required customer technical and operational stakeholders <br/> • Validate that the customer understands their current Microsoft licensing arrangements for relevant services | • All required stakeholders understand the workshop engagement <br/> • Logistics for the review are finalized <br/> • Delivery Expert identified a way to share files with customer |
