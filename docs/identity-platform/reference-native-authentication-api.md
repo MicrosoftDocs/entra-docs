@@ -115,7 +115,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `challenge_type`    |   Yes  | A space-separated list of authorization challenge type strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` or `oob password redirect` for email with password authentication method.|
 |`password`| No | The password value that the app collects from the customer user. You can submit a user's password via the  `/signup/v1.0/start` or later in the `/signup/v1.0/continue` endpoint. Replace `{secure_password}` with the password value that the app collects from the customer user. It's your responsibility to confirm that the user is aware of the password they want to use by providing the password confirm field in the app's UI. You must also ensure that the user is aware of what constitutes a strong password per your organization's policy. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md). <br> **This parameter is only applicable for email with password authentication method**.|
 |`attributes`| No | The user attributes values that the app collects from the customer user. The value is a string, but formatted as a JSON object whose key values are [programmable name](../external-id/customers/concept-user-attributes.md#built-in-user-attributes) of user attributes. These attributes can be built in or custom, and required or optional. The key names of the object depend on the attributes that the administrator configured in Microsoft Entra admin center. You can submit some or all user attributes via the `/signup/v1.0/start` endpoint or later in the `/signup/v1.0/continue` endpoint. If you submit all the required attributes via the `/signup/v1.0/start` endpoint, you don't need to submit any attributes in the `/signup/v1.0/continue` endpoint. However, if you submit some required attributes via `/signup/v1.0/start` endpoint, you can submit the remaining required attributes later in the `/signup/v1.0/continue` endpoint. Replace `{given_name}`, `{user_age}` and `{postal_code}` with the name, age and postal code values respectively that the app collects from the customer user. **Microsoft Entra ignores any attributes that you submit, which don't exist**.|
-|`capability`| No | A space-separated list of capabilaties, which informs Microsoft Entra that the customer app can handle the specified challenge types not only during standard authentication flows, but also in scenarios where multifactor authentication is needed. Supported values are `mfa_required` and `registration_required`. You need this parameter if you enable MFA and you want to automatically sign in users after they successfully sign up by calling the `/oauth2/v2.0/token` endpoint. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
+|`capability`| No | A space-separated list of capabilities, which informs Microsoft Entra that the customer app can handle the specified challenge types not only during standard authentication flows, but also in scenarios where multifactor authentication is needed. Supported values are `mfa_required` and `registration_required`. You need this parameter if you enable MFA and you want to automatically sign in users after they successfully sign up by calling the `/oauth2/v2.0/token` endpoint. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
 
 #### Success response
 
@@ -479,7 +479,7 @@ Content-Type: application/json
 
 This response is considered successful, but the app is required to switch to a web-based authentication flow. In this case, we recommend that you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md).
 
-### Step 4: Authenticate and get a sign up token
+### Step 4: Authenticate and get a sign-up token
 
 The app needs to submit the user's credential, in this case password, that Microsoft Entra requested in the previous step. The app needs to submit a password credential if it didn't do so via the `/signup/v1.0/start` endpoint. The app makes a request to the `/signup/v1.0/continue` endpoint to submit the password. Since we're submitting a password, a `password` parameter is required, and the `grant_type` parameter must have a value *password*.
 
@@ -830,7 +830,7 @@ When the tenant administrator enforces MFA for the users, when the app calls the
 
 The sequence diagram demonstrates the email OTP flow when MFA is required, and the user has or doesn't have a strong authentication method. The flow starts when the app collects the OTP from the user to submit it to the `/oauth2/v2.0/token` endpoint for security tokens.
 
-:::image type="content" source="media/reference-native-auth-api/call-token-endpoint-register-authentication-method-complete-mfa.png" alt-text="Diagram of native auth call toke endpoint register authentication method or complete MFA."::: 
+:::image type="content" source="media/reference-native-auth-api/call-token-endpoint-register-authentication-method-complete-mfa.png" alt-text="Diagram of native auth call token endpoint register authentication method or complete MFA."::: 
 
 <!--
 The following are more flows you can expect when you enforce MFA for your users:
@@ -870,7 +870,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-|`capability`| No | A space-separated list of capabilaties, which informs Microsoft Entra that the customer app can handle the specified challenge types not only during standard authentication flows, but also in scenarios where multifactor authentication is needed. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
+|`capability`| No | A space-separated list of capabilities, which informs Microsoft Entra that the customer app can handle the specified challenge types not only during standard authentication flows, but also in scenarios where multifactor authentication is needed. Supported values are `mfa_required` and `registration_required`. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
 
 #### Success response
 
@@ -981,8 +981,8 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`       |   Yes   | The Application (client) ID of the app you registered in the Microsoft Entra admin center.|
 | `continuation_token` |    Yes   | [Continuation token](#continuation-token) that Microsoft Entra returned in the previous request. The previous request can be a call to the `/oauth2/v2.0/initiate` endpoint, or call to the `/oauth2/v2.0/token` endpoint when the user needs to complete MFA challenge.|
 | `challenge_type`    |   No  | A space-separated list of authorization [challenge type](#sign-in-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. The value is expected to `oob redirect` for email one-time passcode and `password redirect` for email with password.|
-|`id`| No | This is the string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods). |
-| `challenge_channel` | No | This is the string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|
+|`id`| No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods). |
+| `challenge_channel` | No | The string identifier of the strong authentication that's returned from the `/oauth2/v2.0/introspect` endpoint. Use this parameter when the user already has a strong authentication method. Learn [how to interact with the introspect endpoint](#get-user-registered-strong-authentication-methods).|
 
 #### Success response
 
@@ -1385,7 +1385,7 @@ The strong authentication methods object has the following properties:
 | `id`  |  String key of the method. Current supported value is *email*.  |
 | `challenge_type` | Challenge type selected for the user to use as the MFA method. Current supported challenge type is *oob*.  |
 | `challenge_channel` | The type of the channel to which the the MFA method is sent. Current supported challenge channel is *email*. |
-| `login_hint` | The hint for the strong authentication method such as an obfuscated email. This value is used by the client app to pre-populate the email textbox.|
+| `login_hint` | The hint for the strong authentication method such as an obfuscated email. This value is used by the client app to prepopulate the email textbox.|
 
 
 #### Error response
@@ -1637,7 +1637,7 @@ client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 | `client_id`         |   Yes    | The Application (client) ID of the app you registered in the Microsoft Entra admin center.                |
 | `username`          |    Yes   |   Email of the customer user such as *contoso-consumer@contoso.com*.  |
 | `challenge_type`    |   Yes  | A space-separated list of authorization [challenge type](#self-service-password-reset-challenge-types) strings that the app supports such as `oob password redirect`. The list must always include the `redirect` challenge type. For this request, the value is expected to contain `oob redirect`.|
-|`capability`| No | A space-separated list of capabilaties, which informs Microsoft Entra that the customer app can handle the specified challenge types not only during standard authentication flows, but also in scenarios where multifactor authentication is needed. Supported values are `mfa_required` and `registration_required`. You need this parameter if you enable MFA and you want to automatically sign in users after they successfully reset their password by calling the `/oauth2/v2.0/token` endpoint. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
+|`capability`| No | A space-separated list of capabilities, which informs Microsoft Entra that the customer app can handle the specified challenge types not only during standard authentication flows, but also in scenarios where multifactor authentication is needed. Supported values are `mfa_required` and `registration_required`. You need this parameter if you enable MFA and you want to automatically sign in users after they successfully reset their password by calling the `/oauth2/v2.0/token` endpoint. [Learn more about capabilities](concept-native-authentication-challenge-types.md).|
 
 #### Success response
 
@@ -2115,7 +2115,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 
 ### Automatically sign in after password reset
 
-If the user need to sign in after a successfull password reset. The app needs to call the `/oauth2/v2.0/token` endpoint. Learn [how to call the token endpoint](#step-3-request-for-security-tokens).
+If the user needs to sign in after a successful password reset. The app needs to call the `/oauth2/v2.0/token` endpoint. Learn [how to call the token endpoint](#step-3-request-for-security-tokens).
 
 ## Related content
 
