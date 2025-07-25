@@ -23,6 +23,7 @@ The following Windows components play a key role in requesting and using a Prima
 
 | **Term** | **Description** |
 | :--- | --- |
+| **broker** | An identity broker is a service that acts as an intermediary between an identity providers (IdPs) and service providers (SPs), simplifying authentication and authorization . Web Account Manager is an example of an identity broker.|
 | **Cloud Authentication Provider (CloudAP)**| CloudAP is the modern authentication provider for Windows sign in, that verifies users logging to a Windows 10 or newer device. CloudAP provides a plugin framework that identity providers can build on to enable authentication to Windows using that identity provider's credentials. |
 | **Web Account Manager (WAM)**| WAM is the default token broker on Windows 10 or newer devices. WAM also provides a plugin framework that identity providers can build on and enable SSO to their applications relying on that identity provider.|
 | **Microsoft Entra CloudAP plugin**| A Microsoft Entra specific plugin built on the CloudAP framework that verifies user credentials with Microsoft Entra ID during Windows sign in.|
