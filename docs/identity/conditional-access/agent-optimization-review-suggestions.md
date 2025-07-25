@@ -4,7 +4,7 @@ description: Learn how to review and apply suggestions provided by the Security 
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
-ms.date: 07/24/2025
+ms.date: 07/25/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access

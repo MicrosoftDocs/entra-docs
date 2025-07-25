@@ -3,8 +3,10 @@ title: Conditional Access optimization agent phased rollout
 description: Learn about the phased rollout capability for the Security Copilot for Microsoft Entra optimization agent.
 ms.author: sarahlipsey
 author: shlipsey3
+manager: pmwongera
+
 ms.reviewer: lhuangnorth
-ms.date: 07/15/2025
+ms.date: 07/25/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
