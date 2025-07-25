@@ -84,7 +84,7 @@ The SSO extension uses these keys to complete device registration with the Micro
 
 macOS supports Unregistered PRTs for Microsoft Edge and Registered PRTs when device is workplace joined and broker is present
 
-Once registration is successfully completed, macOS initiates a sign in request signed with the Device Signing key. Microsoft Entra ID validates the request, device signing key and associated parameters, and issues PRT response. macOS decrypts this response using Device Encryption key, stores the PRT and makes it available to the SSO extension. The sign in request is sent during user authentication on PSSO registered macOS.
+Once registration is successfully completed, macOS initiates a sign in request signed with the Device Signing key. Microsoft Entra ID validates the request, device signing key and associated parameters, and issues PRT response.
 
 ### [iOS and Android](#tab/other-prt-issued)
 
