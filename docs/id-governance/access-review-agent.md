@@ -72,11 +72,12 @@ For other considerations, and limitations, of the Access review agent, see: [Lim
 ## Prerequisites
 
 - You must have the [Microsoft Entra ID Governance or Microsoft Entra Suite license](licensing-fundamentals.md).
-- You must [Onboard to Security Copilot](/copilot/security/get-started-security-copilot#onboarding-to-security-copilot) with at least one [security compute units (SCU)](/copilot/security/manage-usage) provisioned.
+- You must [Onboard to Security Copilot](/copilot/security/get-started-security-copilot#onboarding-to-security-copilot) with at least one [security compute unit (SCU)](/copilot/security/manage-usage) provisioned.
    - Completing an access review which includes 20 decisions, generating recommendations, as well as the reviewers natural language conversation to complete the review, on average consumes 0.6 SCU. The SCU consumption may vary based on the conversation length between the reviewer and agent..
-- To utilize the Access Review agent as either an admin or reviewer you must have  at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with the following steps for specific capabilities:
-   - To activate, configure, run, and remove the Access Review Agent you need the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role, or a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles.
-   - To view the overview, activities, or settings  of the Access Review Agent you need either the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, or a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles.
+- To use the Access Review agent as either an admin, you must have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with the following roles for specific capabilities:
+   - To activate, configure, run, and remove the Access Review Agent, you need both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+   - To view the overview, activities, or settings of the Access Review Agent, you need either the [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+- To use the Access Review Agent to help you complete reviews as a reviewer, you must have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Limitations
@@ -132,6 +133,9 @@ The agent considers the following about a user when making review recommendation
    - A message that says "The agent is starting its first run" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
 
+
+> [!NOTE]
+> As both the agent admin, and reviewers require at least the security copilot contributor role, it is recommended to assign this role to a group.
 
 ### Enable Access review for use with the Access Review Agent
 
