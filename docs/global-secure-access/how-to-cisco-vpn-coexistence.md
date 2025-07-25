@@ -105,8 +105,6 @@ To configure split-include for Cisco ASA Remote Access VPN:
 > [!NOTE]
 > Your ASA configuration may differ. This is known as split-include, meaning ASA only tunnels what is in the ACL. At this time, split-exclude isn't a supported coexistence configuration.
 
-**Note:** Your ASA configuration may differ. This is known as split-include, meaning ASA only tunnels what is in the ACL. At this time, split-exclude isn't a supported coexistence configuration.
-
 #### Tunnel All Networks with dynamic exclusions
 > [!NOTE]
 > This configuration requires an IP address as the host address in the Secure Client Profile. For more information, see [Known limitations](/entra/global-secure-access/reference-current-known-limitations).
