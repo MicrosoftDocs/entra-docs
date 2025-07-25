@@ -41,7 +41,8 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 | Parameter | Type | Description |
 | --- | --- | --- |
 | `ID` | Required | Microsoft Entra ID uses this attribute to populate the `InResponseTo` attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, `id6c1c178c166d486687be4aaf5e482730` is a valid ID. |
-| `Version` | Required | This parameter should be set to `2.0`. |
+| `Version` | Required | This parameter should be set to `2.0`. |<img width="1677" height="510" alt="image" src="https://github.com/user-attachments/assets/619badf7-92d8-40c6-8f9d-359ec5fc9acf" />
+
 | `IssueInstant` | Required | This is a DateTime string with a UTC value and [round-trip format ("o")](/dotnet/standard/base-types/standard-date-and-time-format-strings). Microsoft Entra ID expects a DateTime value of this type, but doesn't evaluate or use the value. |
 | `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. Entra ID will honor the ACS URL if it is present in the SAML Request.|
 | `ForceAuthn` | Optional | This is a boolean value. If true, it means that the user will be forced to reauthenticate, even if they have a valid session with Microsoft Entra ID. |
@@ -130,17 +131,17 @@ When a requested sign-on completes successfully, Microsoft Entra ID posts a resp
 ```xml
 <samlp:Response ID="_a4958bfd-e107-4e67-b06d-0d85ade2e76a" Version="2.0" IssueInstant="2013-03-18T07:38:15.144Z" Destination="https://contoso.com/identity/inboundsso.aspx" InResponseTo="C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w" xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
   <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/</Issuer>
-  <ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
+  <SignatureValue xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
     ...
-  </ds:Signature>
+  </SignatureValue>
   <samlp:Status>
     <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
   </samlp:Status>
   <Assertion ID="_bf9c623d-cc20-407a-9a59-c2d0aee84d12" IssueInstant="2013-03-18T07:38:15.144Z" Version="2.0" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
     <Issuer>https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/</Issuer>
-    <ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
+    <SignatureValue xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
       ...
-    </ds:Signature>
+    </SignatureValue>
     <Subject>
       <NameID>Uz2Pqz1X7pxe4XLWxV9KJQ+n59d573SepSAkuYKSde8=</NameID>
       <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
@@ -228,9 +229,9 @@ Microsoft Entra ID signs the assertion in response to a successful sign-on. The 
 To generate this digital signature, Microsoft Entra ID uses the signing key in the `IDPSSODescriptor` element of its metadata document.
 
 ```xml
-<ds:Signature xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
+<SignatureValue xmlns:ds="https://www.w3.org/2000/09/xmldsig#">
   digital_signature_here
-</ds:Signature>
+</SignatureValue>
 ```
 
 #### Subject
