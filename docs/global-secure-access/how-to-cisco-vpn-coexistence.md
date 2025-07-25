@@ -64,7 +64,7 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 - Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
 - Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
 
-- Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN FQDN. This is only required for Cisco Secure Access VPN.
+- Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN FQDN.
 
   1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
   2. Under Internet access policies, select **View**.
