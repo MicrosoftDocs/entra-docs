@@ -4,7 +4,7 @@ description: Learn how to preserve and use the original organizational unit (OU)
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 06/18/2025
+ms.date: 07/25/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -12,11 +12,11 @@ ms.reviewer: dhanyak
 
 # Preserve and use the original OU for group provisioning 
 
-This topic covers how to preserve and use the original organizational unit (OU) during group provisioning. 
+This topic covers how to preserve and use the original organizational unit (OU) of an on-premises group during group provisioning to Microsoft Entra ID. 
 
 ## Step 1: Populate extensionAttribute13 in on-premises AD 
 
-Use PowerShell to extract the OU from each group's Distinguished Name (DN) and store it in the extensionAttribute13 attribute. 
+Use PowerShell to extract the OU from each group's distinguished name (DN) and store it in the extensionAttribute13 attribute. You can run the following cmdlet to store each group’s original OU path in a writable attribute before you convert its Source of Authority (SOA). 
 
 ```powershell
 Get-ADGroup -Filter * -SearchBase "DC=contoso,DC=com" | ForEach-Object { 
@@ -25,9 +25,7 @@ Get-ADGroup -Filter * -SearchBase "DC=contoso,DC=com" | ForEach-Object {
 } 
 ```
 
-This stores each group’s original OU path in a writable attribute before SOA (Source of Authority) switch. 
-
-## Step 2: Enable Sync for extensionAttribute13 in Azure AD Cloud Sync or Connect Sync 
+## Step 2: Enable sync for extensionAttribute13 in Microsoft Entra Cloud Sync or Connect Sync 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Provisioning** > **Cloud Sync**. 
@@ -43,48 +41,46 @@ This stores each group’s original OU path in a writable attribute before SOA (
      | Match objects | Leave unchecked |
      | Apply this mapping | Always |
 
-## Step 3: Confirm Attribute Sync in Entra ID (Skip this step if the extension attribute is not exposed through graph) 
+## Step 3: Confirm attribute sync in Microsoft Entra ID 
 
-Use PowerShell or Microsoft Graph to verify the attribute sync: 
+Use PowerShell or Microsoft Graph Explorer to verify the attribute sync.
  
 
-Option A – PowerShell (Microsoft Graph SDK): 
+- **PowerShell (Microsoft Graph SDK)**
 
-```powershell
-Get-MgGroup -GroupId <groupId> | Select -ExpandProperty OnPremisesExtensionAttributes 
-```
+  ```powershell
+  Get-MgGroup -GroupId <groupId> | Select -ExpandProperty OnPremisesExtensionAttributes 
+  ```
 
-Option B – Microsoft Graph Explorer: 
+- **Microsoft Graph Explorer**
 
-```graph
-GET https://graph.microsoft.com/v1.0/groups/{group-id}?$select=onPremisesExtensionAttributes 
-```
+  ```https
+  GET https://graph.microsoft.com/v1.0/groups/{group-id}?$select=onPremisesExtensionAttributes 
+  ```
 
-You should see: 
+  You should see: 
 
-```
-{ 
-  "onPremisesExtensionAttributes": { 
-    "extensionAttribute13": "OU=Finance,DC=contoso,DC=com" 
+  ```
+  { 
+    "onPremisesExtensionAttributes": { 
+      "extensionAttribute13": "OU=Finance,DC=contoso,DC=com" 
+    } 
   } 
-} 
-```
+  ```
 
 ## Step 4: Use extensionAttribute13 in Group Provisioning to AD (GPAD) 
 
 When configuring Group Provisioning to AD, use the synced attribute to control the target OU. 
  
 
-1. In your GPAD configuration, map onPremisesExtensionAttributes.extensionAttribute13 to a custom variable, e.g., preferredOU. 
-2. Use an expression like this to handle fallback: 
+1. In your GPAD configuration, map onPremisesExtensionAttributes.extensionAttribute13 to a custom variable such as *preferredOU*. 
+2. Use an expression like this one to handle fallback. This expression uses the original OU if it's available, or falls back to a default OU. You can change extensionAttribute13 later to override the value. 
 
    ```
    IIF(IsNullOrEmpty([preferredOU]), "OU=Default,DC=contoso,DC=com", [preferredOU]) 
    ```
 
-This: 
-- Uses the original OU if available 
-- Falls back to a default OU if not set 
-- Supports override by changing extensionAttribute13 later 
-
  ## Related content
+
+ - [Group SOA overview](concept-source-of-authority-overview.md)
+ - [How to configure Group SOA](how-to-group-source-of-authority-configure.md)

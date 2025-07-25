@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 06/13/2025
+ms.date: 07/25/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ---
@@ -14,7 +14,7 @@ ms.author: jomondi
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-This article outlines the scenarios around governance of on-prem AD
+This article outlines the scenarios around governance of on-premises AD
 based applications using Entra ID Governance capabilities.
 
 **Scenario(s) covered:** Manage on-premises applications with Active
@@ -31,7 +31,7 @@ For more information about how to govern applications that aren't AD-integrated,
 If you want to control whether a user is able to connect to an Active
 Directory application that uses Windows authentication, you can use the
 application proxy and a Microsoft Entra security group. If an
-application checks a user's AD group memberships, via Kerberos or LDAP,
+application checks a user's AD group memberships by using Kerberos or Lightweight Directory Access Protocol (LDAP),
 then you can use cloud sync group provisioning to ensure an AD user has
 those group memberships before the user accesses the applications.
 
@@ -61,7 +61,7 @@ Entra account. For information on configuring app proxy, see [Add an on-premises
 
 ## Watch the group writeback video
 
-For a great overview of cloud sync group provisioning to Active directory and what it can do for you, check out the video below.
+For a great overview of cloud sync group provisioning to Active directory and what it can do for you, check out our video:
 
 > [!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
 
