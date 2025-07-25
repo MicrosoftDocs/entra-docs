@@ -17,7 +17,7 @@ This topic explains the prerequisites and steps to configure Group Source of Aut
 
 | Requirement | Description |
 |-------------|-------------|
-| **Roles** | - Groups Administrator role is allowed to call the OnPremisesSyncBehavior Microsoft Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Microsoft Graph API for Groups. |
+| **Roles** | - Hybrid Administrator role is allowed to call the OnPremisesSyncBehavior Microsoft Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Microsoft Graph API for Groups. |
 | **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
 | **License needed** | Microsoft Entra Free or Basic license. |
 | **Connect Sync client** | Minimum version is [2.5.76.0](./connect/reference-connect-version-history.md) |
