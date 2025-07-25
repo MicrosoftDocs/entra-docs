@@ -235,7 +235,7 @@ To configure Cisco Umbrella and SWG:
 
 ---
 
-### 4. Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense) and Secure Web Gateway
+### 4. Microsoft Access with Umbrella DNS and Secure Web Gateway.
 
 
 #### Steps
