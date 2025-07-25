@@ -4,13 +4,13 @@ description: Learn how to convert group management from Active Directory to Micr
 author: justinha
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/23/2025
+ms.date: 07/25/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
 # How group Source of Authority (SOA) works (Preview)
 
-You can convert the Source of Authority (SOA) of a group from Active Directory (AD) to Microsoft Entra ID. After you convert the SOA, the group becomes a cloud-owned, and you can map it to a corresponding cloud group type in the cloud. For a list of supported groups types, see How AD groups translate to cloud groups after SOA transfer.
+You can convert the Source of Authority (SOA) of a group from Active Directory (AD) to Microsoft Entra ID. After you convert the SOA, the group becomes a cloud-owned, and you can map it to a corresponding cloud group type in the cloud. For a list of supported groups types, see [How to manage cloud security groups](concept-group-source-of-authority-guidance.md#how-to-manage-cloud-security-groups).
 
 ## Block sync from AD to Microsoft Entra ID after SOA change
 
