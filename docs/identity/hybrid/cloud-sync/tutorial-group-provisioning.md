@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 07/21/2025
+ms.date: 07/25/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
@@ -21,7 +21,7 @@ This tutorial walks you through creating and configuring cloud sync to synchroni
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
 
 ## Assumptions
-This tutorial assumes the following:
+This tutorial assumes:
 - You have an Active Directory on-premises environment
 - You have cloud sync setup to synchronize users to Microsoft Entra ID.
 - You have two users that are synchronized: Britta Simon and Lola Jacobson. These users exist on-premises and in Microsoft Entra ID.
@@ -45,7 +45,7 @@ To create two groups, follow these steps:
 1. For the **Group Name** enter **Sales**
 1. For **Membership type** keep it at assigned.
 1. Click **Create**.
-1. Repeat this process using **Marketing** as the **Group Name.**
+1. Repeat this process using **Marketing** as the **Group Name**.
 
 
 ## Add users to the newly created or SOA converted groups
@@ -56,11 +56,11 @@ To add users to the groups, follow these steps:
 2. Browse to **Entra ID** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
 4. Click on the new **Sales** group.
-5. On the left, click **Members**
+5. On the left, click **Members**.
 6. At the top, click **Add members**.
 7. At the top, in the search box, enter **Britta Simon**.
-8. Put a check next to **Britta Simon** and click **Select**
-9. It should successfully add her to the group.
+8. Put a check next to **Britta Simon** and click **Select**.
+9. It should successfully add the user to the group.
 10. On the far left, click **All groups** and repeat this process using the **Sales** group and adding **Lola Jacobson** to that group.
 
 ## Configure provisioning
@@ -85,14 +85,14 @@ To configure provisioning, follow these steps:
 
    9. There are two possible approaches to set the OU:
 
-      - You can preserve the original OU path from on-premises. With this approach, you to set the attribute mapping based on extensionAttribute value. For more information, see Preserve the original OU path.  
+      - You can preserve the original OU path from on-premises. With this approach, you to set the attribute mapping based on an extensionAttribute value. For more information, see [Preserve the original OU path](how-to-preserve-original-organizational-unit.md).  
    
-      or
+      Or
 
       - Under **Target container** click **Edit attribute mapping**.
 
    10. Change **Mapping type** to **Expression**.
-   11. In the expression box, enter the following:
+   11. In the expression box, enter:
 
        ```Switch([displayName],"OU=Groups,DC=contoso,DC=com","Marketing","OU=Marketing,DC=contoso,DC=com","Sales","OU=Sales,DC=contoso,DC=com") ```
 
@@ -109,13 +109,13 @@ To configure provisioning, follow these steps:
 
 ## Test configuration 
 >[!NOTE]
->When using on-demand provisioning, members aren't automatically provsisioned. You need to select which members you wish to test on and there's a 5 member limit.
+>When you run on-demand provisioning, members aren't automatically provisioned. You need to select the members you want to test, and the limit is five members.
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 
  3. Under **Configuration**, select your configuration.
  4. On the left, select **Provision on demand**.
- 5. Enter **Sales** in the **Selected group** box
+ 5. Enter **Sales** in the **Selected group** box.
  6. From the **Selected users** section, select some users to test.
     
     :::image type="content" source="media/tutorial-group-provision/select-user.png" alt-text="Screenshot of adding members." lightbox="media/tutorial-group-provision/select-user.png":::
@@ -126,9 +126,8 @@ To configure provisioning, follow these steps:
    :::image type="content" source="media/tutorial-group-provision/success.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/tutorial-group-provision/success.png":::
 
 ## Verify in Active Directory
-Now you can make sure the group is provisioned to Active Directory.
 
-Do the following:
+Follow these steps to make sure the group is provisioned to Active Directory:
 
 1.  Sign-in to your on-premises environment.
 2.  Launch **Active Directory Users and Computers**
@@ -136,27 +135,24 @@ Do the following:
 
     :::image type="content" source="media/tutorial-group-provision/verify.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/verify.png":::
 
-## How Group Provisioning to Active Directory (GPAD) behaves with SOA converted groups
+## How Group Provisioning to Active Directory (GPAD) behaves after you convert Group SOA
 
-When you flip the **Source of Authority (SOA)** to cloud for an on-prem
-group, that group becomes eligible for **Group Provisioning to Active Directory (GPAD)**.
+When you convert the **Source of Authority (SOA)** to cloud for an on-premises group, that group becomes eligible for **Group Provisioning to Active Directory (GPAD)**.
 
 - If you run **Sync All**, the group is automatically added to the scope for **Group Provisioning to AD**.
 
-- If you run **Sync Selected**, you need to select the SOA-flipped group.
+- If you run **Sync Selected**, you need to select the group that has converted SOA.
 
 ### Known issue
 
-If you sync a group that isn't universal, such as a global group, and then try to switch SOA and run a GPAD job on that group, an Entry level error is returned. Make sure the group has universal scope.  
+If you sync a group that isn't Universal, such as a Global Group, and then try to convert SOA and run a GPAD job on that group, an Entry level error is returned. Make sure the group has Universal scope.  
 
 :::image type="content" border="true" source="media/tutorial-group-provision/entry-level-error.png" alt-text="Screenshot of a universal group setting." lightbox="media/tutorial-group-provision/entry-level-error.png":::
 
-### Use GPAD to provision groups to AD
+## Use GPAD to provision groups to AD
 
-**Example: SOAGroup2 Provisioning**
-
-In the following diagram, **SOATestGroup1** is flipped to the cloud.
-As a result, it has become available for the **GPAD job scope**.
+In the following diagram, **SOATestGroup1** SOA is converted to the cloud.
+As a result, it becomes available for the **GPAD job scope**.
 
 :::image type="content" border="true" source="media/tutorial-group-provision/in-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/entry-level-error.png":::
 
@@ -180,10 +176,22 @@ As a result, it has become available for the **GPAD job scope**.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/group-properties.png" alt-text="Screenshot of group properties." lightbox="media/tutorial-group-provision/group-properties.png":::
 
+## How group sync works with SOA
 
-### Status of attributes after SOA switch
+The following table explains how sync works in different use cases, depending upon on ownership of the parent and member groups.
+	
+Use case | Parent group type | Member group type | Job | How sync works
+---------|-------------------|-------------------|-----|-----------------------
+A Microsoft Entra parent security group has only Microsoft Entra members. | Microsoft Entra security group |Microsoft Entra security group |AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
+A Microsoft Entra parent security group has some members that are synced groups. |Microsoft Entra security group |AD security groups (synced groups)| AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group, but all the member references (member Groups) that are AD groups aren't provisioned.
+A Microsoft Entra parent security group has some members that are synced groups whose SOA is converted to cloud. |Microsoft Entra security group | AD security groups whose SOA is converted to cloud. |AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group with all its member references (member groups).
+You convert the SOA of a synced group (parent) that has cloud-owned groups as members. | AD security groups with SOA converted to cloud | Microsoft Entra security group| AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group with all its member references (member groups).
+You convert the SOA of a synced group (parent) that has other synced groups as members. |AD security groups with SOA converted to cloud| AD security groups (synced groups) | AAD2ADGroupProvisioning (Group Provisioning to AD) |The job provisions the parent group, but all the member references (member Groups) that are AD security groups aren't provisioned.
+You convert the SOA of a synced group (parent) whose members are other synced groups that have SOA converted to cloud. | AD security groups with SOA converted to cloud | AD security groups with SOA converted to cloud | AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
 
-The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes when an admin acts to switch the source of authority (SOA) of an object.
+### Status of attributes after you convert SOA
+
+The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes you convert the SOA of an object.
 
 Admin step | isCloudManaged value | dirSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
@@ -195,15 +203,17 @@ Admin rolls back the SOA operation | `false` | `null` | If an admin switches t
 
 To roll back Group SOA, follow these steps:
 
-- Flip back the SOA of the group SOATestGroup1.
+- Convert the SOA of the group SOATestGroup1.
 
-- When SOA transfer is rolled back to on-premises, **Group Provisioning to AD (GPAD)** stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle.
+- After you convert the SOA to on-premises AD, **Group Provisioning to AD (GPAD)** stops syncing changes, but it doesn't delete the on-premises group. It also removes the group from GPAD configuration scope. On-premises control of the group resumes in the next sync cycle.
 
-- You can verify in the audit logs that sync won't happen for this object because it's managed on-premises. You can also check in AD that the group is still intact and not deleted.  
-
-  :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
+- You can verify in the Audit Logs that sync won't happen for this object because it's managed on-premises. 
   
   :::image type="content" border="true" source="media/tutorial-group-provision/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/tutorial-group-provision/audit-log-details.png":::
+
+  You can also check in AD that the group is still intact and not deleted.  
+
+  :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
 
 ## Next steps 
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)

@@ -1,6 +1,6 @@
 ---
-title: How to use Group Source of Authority (SOA) to manage Active Directory groups in Microsoft Entra ID (Preview)
-description: Learn how to transfer group management from Active Directory to Microsoft Entra ID using Group Source of Authority (SOA), block sync, provision groups, restore deleted groups, and roll back SOA changes for hybrid and cloud environments.
+title: How to use group Source of Authority (SOA) to manage Active Directory groups in Microsoft Entra ID (Preview)
+description: Learn how to transfer group management from Active Directory to Microsoft Entra ID using group source of authority (SOA), block sync, provision groups, restore deleted groups, and roll back SOA changes for hybrid and cloud environments.
 author: justinha
 manager: dougeby
 ms.topic: conceptual
@@ -8,7 +8,7 @@ ms.date: 07/23/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
-# How Group SOA works (Preview)
+# How group Source of Authority (SOA) works (Preview)
 
 Group SOA enables you to transfer the source of authority of any supported group from Active Directory (AD) to Microsoft Entra ID. After you transfer the group, it becomes a cloud group. You can then map it to the corresponding group type in the cloud. For a list of supported groups types, see How AD groups translate to cloud groups after SOA transfer.
 
@@ -29,19 +29,6 @@ If an administrator deletes a group in AD DS and subsequently decides to provisi
 ## Roll back SOA changes
 
 Administrators can revert changes to Group SOA operations. In this scenario, the object source of authority reverts, and AD DS manages it. During the next synchronization cycle of Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync, AD takes control of the object, making it read-only in Microsoft Entra ID. This method ensures that any changes made while the AD group was managed in the cloud are retained and once the object is taken over, any modifications made in the cloud will be overridden.
-
-## How group sync works with Source of Authority
-
-The following table explains how sync works in different use cases, depending upon on ownership of the parent and member groups.
-	
-Use case | Parent group type | Member group type | Job | How sync works
----------|-------------------|-------------------|-----|-----------------------
-A Microsoft Entra parent security group has only Microsoft Entra members. | Microsoft Entra security group |Microsoft Entra security group |AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
-A Microsoft Entra parent security group has some members that are synced groups. |Microsoft Entra security group |AD security groups (synced groups)| AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group, but all the member references (member Groups) that are AD groups aren't provisioned.
-A Microsoft Entra parent security group has some members that are synced groups whose SOA is converted to cloud. |Microsoft Entra security group | AD security groups whose SOA is converted to cloud. |AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group with all its member references (member groups).
-You convert the SOA of a synced group (parent) that has cloud-owned groups as members. | AD security groups with SOA converted to cloud | Microsoft Entra security group| AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group with all its member references (member groups).
-You convert the SOA of a synced group (parent) that has other synced groups as members. |AD security groups with SOA converted to cloud| AD security groups (synced groups) | AAD2ADGroupProvisioning (Group Provisioning to AD) |The job provisions the parent group, but all the member references (member Groups) that are AD security groups aren't provisioned.
-You convert the SOA of a synced group (parent) whose members are other synced groups that have SOA converted to cloud. | AD security groups with SOA converted to cloud | AD security groups with SOA converted to cloud | AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
 
 ## Related content
 
