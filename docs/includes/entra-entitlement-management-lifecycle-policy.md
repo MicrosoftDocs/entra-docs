@@ -41,6 +41,6 @@ On the **Lifecycle** tab, you specify when a user's assignment to the access pac
 
     This approval will use the same approval settings that you specified on the **Requests** tab.
 
-1. If you want to **Require an access review** for this access package, move the toggle to **Yes**.  Refer to the [detailed article on configuring the access review](/entra/id-governance/entitlement-management-access-reviews-create) and then return  back here to finish setting up the access package.
+1. If you want to **Require an access review** for this access package, move the toggle to **Yes**. Refer to the [detailed article on configuring the access review](/entra/id-governance/entitlement-management-access-reviews-create) and then return back here to finish setting up the access package.
   
-3. If you did not require an access review, or once you have configured it, select **Next** or **Update**.
+3. If you didn't require an access review, or once you have configured it, select **Next** or **Update**.
