@@ -84,6 +84,12 @@ Please ensure below URLs are exempted from TLS interception/inspection so that P
 
 Apple's app-site-association domains are critical for SSO extension functioning. (*) You only need to allow sovereign cloud domains if you rely on those in your environment. (**) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner. 
 
+#### URLs that need to be allowed for PSSO registration flows
+
+Please make sure traffic to below URLs are allowed by default for the registration flows that requires TLS challenge to succeed:
+ - `https://enterpriseregistration.windows.net`
+ - `https://*.enterpriseregistration.windows.net`
+
 > [!NOTE] 
 > Platform SSO is not compatible with the Microsoft Entra ID Tenant Restrictions v2 feature when Tenant Restrictions is deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
 
