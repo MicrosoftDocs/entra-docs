@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: siz
 ms.custom:
   - sfi-image-nochange

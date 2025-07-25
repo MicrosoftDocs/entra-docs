@@ -10,7 +10,7 @@ ms.date: 05/19/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # Conditional Access: Filter for devices
