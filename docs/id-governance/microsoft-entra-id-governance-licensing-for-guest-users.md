@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: reference
-ms.date: 06/05/2025
+ms.date: 07/25/2025
 ms.author: owinfrey
 ms.reviewer: jercon
 ---
