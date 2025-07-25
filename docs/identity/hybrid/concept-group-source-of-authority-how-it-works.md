@@ -1,6 +1,6 @@
 ---
 title: How to use group Source of Authority (SOA) to manage Active Directory groups in Microsoft Entra ID (Preview)
-description: Learn how to transfer group management from Active Directory to Microsoft Entra ID using group source of authority (SOA), block sync, provision groups, restore deleted groups, and roll back SOA changes for hybrid and cloud environments.
+description: Learn how to convert group management from Active Directory to Microsoft Entra ID using group source of authority (SOA), block sync, provision groups, restore deleted groups, and roll back SOA changes for hybrid and cloud environments.
 author: justinha
 manager: dougeby
 ms.topic: conceptual
@@ -10,7 +10,7 @@ ms.reviewer: dahnyahk
 ---
 # How group Source of Authority (SOA) works (Preview)
 
-Group SOA enables you to transfer the source of authority of any supported group from Active Directory (AD) to Microsoft Entra ID. After you transfer the group, it becomes a cloud group. You can then map it to the corresponding group type in the cloud. For a list of supported groups types, see How AD groups translate to cloud groups after SOA transfer.
+You can convert the Source of Authority (SOA) of a group from Active Directory (AD) to Microsoft Entra ID. After you convert the SOA, the group becomes a cloud-owned, and you can map it to a corresponding cloud group type in the cloud. For a list of supported groups types, see How AD groups translate to cloud groups after SOA transfer.
 
 ## Block sync from AD to Microsoft Entra ID after SOA change
 
@@ -28,7 +28,9 @@ If an administrator deletes a group in AD DS and subsequently decides to provisi
 
 ## Roll back SOA changes
 
-Administrators can revert changes to Group SOA operations. In this scenario, the object source of authority reverts, and AD DS manages it. During the next synchronization cycle of Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync, AD takes control of the object, making it read-only in Microsoft Entra ID. This method ensures that any changes made while the AD group was managed in the cloud are retained and once the object is taken over, any modifications made in the cloud will be overridden.
+Administrators can reverse operations to a group SOA. In this scenario, the object source of authority reverts, and AD DS manages it. During the next synchronization cycle, AD takes control of the object. In Microsoft Entra ID, the object becomes read-only. 
+
+This method ensures that any changes made while the AD group was managed in the cloud are retained. After the object is taken over, any modifications made in the cloud are overridden.
 
 ## Related content
 

@@ -25,8 +25,6 @@ Rather than move the entire directory to the cloud at once, with object-level SO
 
 Applying Group SOA to a group that synchronizes from AD converts the group to a cloud object. After it converts, you can edit, delete, and change the cloud group membership directly in the cloud. Microsoft Entra Connect Sync (and soon Microsoft Entra Cloud Sync) respects the conversion and stops synchronizing the object from AD. With Group SOA, you can migrate multiple groups or select specific groups. After transfer, you can perform all operations available for a cloud group. If necessary, you can reverse these changes.
 
-:::image type="content" source="media/concept-source-of-authority-overview/source-of-authority-switch.png" alt-text="Conceptual diagram of switch for Source of Authority." lightbox="media/concept-source-of-authority-overview/source-of-authority-switch.png":::
-
 ## Group Source of Authority scenarios
 
 The next sections exaplin more details about the scenarios that Group SOA supports. 
