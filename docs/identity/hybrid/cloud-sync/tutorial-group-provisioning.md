@@ -154,8 +154,10 @@ As a result, it becomes available for the **GPAD job scope**.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/group-properties.png" alt-text="Screenshot of group properties." lightbox="media/tutorial-group-provision/group-properties.png":::
 
-The following table explains what happens when you add SOA converted groups into scope for provisioning to AD and how the provisioning handles membership references.
-	
+### Nested Groups and membership references handling
+
+The following table explains how the provisioning handles membership references when you convert SOA for some groups within a nested group structure and add it into scope for provisioning to AD.
+
 Use case | Parent group type | Member group type | Job | How sync works
 ---------|-------------------|-------------------|-----|-----------------------
 A Microsoft Entra parent security group has only Microsoft Entra members. | Microsoft Entra security group |Microsoft Entra security group |AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
