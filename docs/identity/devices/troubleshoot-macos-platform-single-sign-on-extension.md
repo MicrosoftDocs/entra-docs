@@ -1,4 +1,3 @@
-<img width="520" height="19" alt="image" src="https://github.com/user-attachments/assets/5a174c87-e145-4c63-9ad8-1a109d2b32bb" />---
 title: macOS Platform single sign-on known issues and troubleshooting
 description: Identify and resolve known issues with macOS Platform single sign-on (PSSO).
 
