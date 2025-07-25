@@ -86,16 +86,6 @@
           href: cloud-sync/tutorial-single-forest.md
         - name: Integrate an existing forest and a new forest with a single Microsoft Entra tenant
           href: cloud-sync/tutorial-existing-forest.md
-    - name: Provision Microsoft Entra ID to Active Directory
-      items:
-        - name: Provision groups to Active Directory
-          href: cloud-sync/tutorial-group-provisioning.md
-        - name: Using directory extensions with provisioning groups to AD
-          href: cloud-sync/tutorial-directory-extension-group-provisioning.md
-        - name: Preserve and use the original OU for group provisioning
-          href: cloud-sync/how-to-preserve-original-organizational-unit.md
-        - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
-          href: cloud-sync/govern-on-premises-groups.md
     - name: Cloud-first approach with Group Source of Authority (SOA) 
       items:
       - name: Concepts
@@ -116,6 +106,16 @@
           href: how-to-active-directory-group-cleanup.md
         - name: Set up self-service group management
           href: how-to-source-of-authority-self-service-group-management.md
+    - name: Provision Microsoft Entra ID to Active Directory
+      items:
+        - name: Provision groups to Active Directory
+          href: cloud-sync/tutorial-group-provisioning.md
+        - name: Using directory extensions with provisioning groups to AD
+          href: cloud-sync/tutorial-directory-extension-group-provisioning.md
+        - name: Preserve and use the original OU for group provisioning
+          href: cloud-sync/how-to-preserve-original-organizational-unit.md
+        - name: Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+          href: cloud-sync/govern-on-premises-groups.md
     - name: Migration scenarios for cloud sync
       items:
         - name: Migrate to Microsoft Entra Cloud Sync from Connect sync
