@@ -9,7 +9,7 @@ ms.date: 06/20/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: kvenkit
 ---
 # Service dependencies in Microsoft Entra Conditional Access

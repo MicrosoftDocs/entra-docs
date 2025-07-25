@@ -2,13 +2,13 @@
 title: Microsoft Entra Cloud Sync expressions and function reference
 description: reference
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: reference
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

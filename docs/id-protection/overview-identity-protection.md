@@ -5,7 +5,7 @@ description: Automation to detect, remediate, investigate, and analyze risk data
 ms.service: entra-id-protection
 
 ms.topic: overview
-ms.date: 05/20/2025
+ms.date: 06/03/2025
 
 author: shlipsey3
 ms.author: sarahlipsey

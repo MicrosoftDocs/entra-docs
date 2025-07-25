@@ -58,6 +58,8 @@ Effective October 10, 2025, the visibility on the [My Access portal](https://mya
 
 The visibility change will only impact how end-users can discover access packages via the "Available" tab, the "View all" option, or when using the search bar within these sections to find requestable access packages. The change won't impact the visibility logic for other tabs like "Suggested," "Active," or "Expired" (even when using search within those tabs), nor does it impact other My Access portal sections such as "Request history" or "Approvals."
 
+These changes will not affect who is allowed to request access packages. Even if an end user can see an access package, they cannot request it if they do not meet the eligibility requirements to request. 
+
 ### Next Steps
 
 We recommend you review the access packages currently configured with policies scoped to "Specific users and groups" in your tenant. If the access package name, description, or the name and description of the contained resource roles are sensitive information that you wouldn't want all members, excluding guests, to see, hide the access package by **October 10, 2025** to ensure the desired end-user experience on the My Access portal.

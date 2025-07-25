@@ -31,6 +31,12 @@
         "Create and delete all resources, and read and update standard properties in Microsoft Cloud App Security": "Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps",
         "Read and manage objects to enable on-premises directory synchronization": "Read standard on-premises directory synchronization information"
     },
+    "excludedResourceActions": [
+        {
+            "actionName": "microsoft.directory/bulkJobs/standard/read",
+            "reason": "Not ready for use."
+        }
+    ],
     "excludedRoles": [
         {
             "templateId": "9c094953-4995-41c8-84c8-3ebb9b32c93f",
