@@ -21,7 +21,7 @@ The following prerequisites are required to implement provisioning groups to Act
  - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
- - Provisioning agent with build version [1.1.1370.0](../cloud-sync/reference-version-history.md#1113700) or later.
+ - Provisioning agent with build version [1.1.1586.0](../cloud-sync/reference-version-history#1115860).
 
  > [!NOTE]
  > The permissions to the service account are assigned during clean install only. In case you're upgrading from the previous version then permissions need to be assigned manually using PowerShell cmdlet: 
@@ -38,7 +38,7 @@ The following prerequisites are required to implement provisioning groups to Act
 
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for global catalog lookup to filter out invalid membership references
- - Microsoft Entra Connect Sync with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later
+ - Microsoft Entra Connect Sync with build version [2.22.8.0](../connect/reference-connect-version-history#2280)
      - Required to support on-premises user membership synchronized using Microsoft Entra Connect Sync
      - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier
 
