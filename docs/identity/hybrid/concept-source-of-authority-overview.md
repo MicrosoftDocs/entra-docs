@@ -13,19 +13,19 @@ Modernization requirements have many organizations shifting Identity and Access 
 
 To minimize your on-premises infrastructure size and complexity, adopt a cloud-first approach. As your presence in the cloud grows, your on-premises Active Directory (AD) presence can shrink. This process is called Active Directory (AD) minimization: only required objects remain in on-premises AD.
 
-One AD minimization approach is to transfer the source of authority for AD groups to Microsoft Entra ID. This approach lets you directly manage those groups in the cloud. You can delete AD groups that you no longer need on-premises. If you need to keep an AD group on-premises, you can configure security group provisioning from Microsoft Entra ID to AD. Then you can make changes to the group in Microsoft Entra ID and have those changes reflected in the AD group on-premises.
+One AD minimization approach is to convert the Source of Authority (SOA) for AD groups to Microsoft Entra ID. This approach lets you directly manage those groups in the cloud. You can delete AD groups that you no longer need on-premises. If you need to keep an AD group on-premises, you can configure security group provisioning from Microsoft Entra ID to AD. Then you can make changes to the group in Microsoft Entra ID and have those changes reflected in the AD group on-premises.
 
-This article describes Group Source of Authority (SOA) switch and transfer. Group SOA can help IT administrators transition group management from AD to the cloud. You can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
+This article describes SOA for groups. Group SOA can help IT administrators transition group management from AD to the cloud. You can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
 
-## Streamline AD group migration to the cloud with Group SOA transfer
+## Streamline AD group migration to the cloud by converting Group SOA 
 
-The Group SOA feature enables organizations to shift on-premises application access governance to the cloud. This feature transfers the source of authority of groups in Active Directory that synchronize to Microsoft Entra ID with Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync. With a phased migration approach, administrators can perform complex migration tasks while minimizing disruptions for end users.
+The Group SOA feature enables organizations to shift on-premises application access governance to the cloud. This feature converts the source of authority of groups in Active Directory that synchronize to Microsoft Entra ID with Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync. With a phased migration approach, administrators can perform complex migration tasks while minimizing disruptions for end users.
 
 Rather than move the entire directory to the cloud at once, with object-level SOA, you can gradually reduce AD dependencies in a controlled manner. You can use Microsoft Entra ID Governance to manage access governance for both cloud and on-premises applications associated with security groups.
 
-Applying Group SOA to a group that synchronizes from AD converts the group to a cloud object. After it converts, you can edit, delete, and change the cloud group membership directly in the cloud. Microsoft Entra Connect Sync (and soon Microsoft Entra Cloud Sync) respects the conversion and stops synchronizing the object from AD. With Group SOA, you can migrate multiple groups or select specific groups. After transfer, you can perform all operations available for a cloud group. If necessary, you can reverse these changes.
+Applying Group SOA to a group that synchronizes from AD converts the group to a cloud object. After it converts, you can edit, delete, and change the cloud group membership directly in the cloud. Microsoft Entra Connect Sync (and soon Microsoft Entra Cloud Sync) respects the conversion and stops synchronizing the object from AD. With Group SOA, you can migrate multiple groups or select specific groups. After you convert SOA, you can perform all operations available for a cloud group. If necessary, you can reverse these changes.
 
-## Group Source of Authority scenarios
+## Group SOA scenarios
 
 The next sections exaplin more details about the scenarios that Group SOA supports. 
 

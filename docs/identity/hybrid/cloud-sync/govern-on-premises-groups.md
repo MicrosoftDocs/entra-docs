@@ -40,7 +40,7 @@ cloud sync group provisioning. The scenario options are meant to ensure
 users assigned to the application have group memberships when they
 authenticate to the application.
 
-- Use Group Source of Authority to transfer the source of authority of groups in Active Directory that are synchronized to Microsoft Entra ID by using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync.
+- Use Group Source of Authority to convert the source of authority of groups in Active Directory that are synchronized to Microsoft Entra ID by using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync.
 
 - Create a new group and update the application, if it already exists,
   to check for the new group

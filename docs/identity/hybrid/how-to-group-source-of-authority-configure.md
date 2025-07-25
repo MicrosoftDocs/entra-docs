@@ -317,13 +317,13 @@ The details state `As the SOA of this group is in the cloud, this object will no
 
 ## Limitations
 
-- **No reconciliation support for local AD groups:** An AD admin (or an application with sufficient permissions) can directly modify an AD group. If SOA is applied to the object or if cloud security group provisioning to AD is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD changes are overwritten if group provisioning to AD is enabled.
+- **No reconciliation support for local AD groups**: An AD admin (or an application with sufficient permissions) can directly modify an AD group. If SOA is applied to the object or if cloud security group provisioning to AD is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD changes are overwritten if group provisioning to AD is enabled.
 
-- **No dual write allowed:** Once you start managing the memberships for the transferred group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD using Group Provision to AD as a nested group under another AD group (OnPremGroupB) that's in scope for AD to Entra ID sync, the membership reference of group A won't be synced when AD2EntraID sync happens for OnPremGroupB. This is because the sync client doesn't know the cloud group membership references. This behavior is by design.
+- **No dual write allowed**: After you start to manage the memberships for the converted group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD using Group Provision to AD as a nested group under another AD group (OnPremGroupB) that's in scope for AD to Entra ID sync, the membership reference of group A won't synced when sync happens for OnPremGroupB. This is because the sync client doesn't know the cloud group membership references. This behavior is by design.
 
-- **No SOA transfer of nested groups:** If you have nested groups in AD and want to transfer the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA is converted. Nested groups in the parent group continue to be AD groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest hierarchy, and move up the tree.
+- **No SOA conversion of nested groups**: If you have nested groups in AD and want to convert the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA is converted. Nested groups in the parent group continue to be AD groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest hierarchy, and move up the tree.
 
-- **Extension Attributes (1-15):** Extension attributes 1 – 15 aren't supported on cloud security groups and aren't supported after SOA is converted.
+- **Extension Attributes (1-15)**: Extension attributes 1 – 15 aren't supported on cloud security groups and aren't supported after SOA is converted.
 
 ## Related content
 
