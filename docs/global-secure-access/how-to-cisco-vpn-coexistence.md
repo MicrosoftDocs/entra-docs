@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/17/2025
+ms.date: 07/25/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 
 Organizations require robust, unified solutions to ensure secure and seamless connectivity. Microsoft Secure Access Service Edge (SASE) capabilities that, when integrated with Cisco Virtual Private Networks (VPN), provide enhanced security and connectivity for diverse access scenarios.
 
-This guide outlines how to configure and deploy Microsoft Entra solutions alongside Cisco VPN offerings. By leveraging both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
+This guide outlines how to configure and deploy Microsoft Entra solutions alongside Cisco VPN offerings. By using both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
 
 ## Cisco remote access VPN platforms
 
@@ -35,7 +35,7 @@ Global Secure Access handles internet and Microsoft traffic. Cisco Secure Access
 
 #### Scenario 2: Split private access with Cisco Secure Access VPN
 
-Both clients handle traffic for separate private applications. Private applications in Entra Private Access are handled by Global Secure Access, while private applications hosted through Cisco Secure Access VPN are accessed through Cisco Secure Client VPN. Internet and Microsoft traffic are handled by Global Secure Access.
+Both clients handle traffic for separate private applications. Private applications in Microsoft Entra Private Access are handled by Global Secure Access, while private applications hosted through Cisco Secure Access VPN are accessed through Cisco Secure Client VPN. Internet and Microsoft traffic are handled by Global Secure Access.
 
 ### Cisco ASA Remote Access VPN
 
@@ -45,27 +45,27 @@ Global Secure Access handles internet and Microsoft traffic. Cisco ASA captures 
 
 #### Scenario 2: Split private access with Cisco ASA Remote Access VPN
 
-Both clients handle traffic for separate private applications. Private applications in Entra Private Access are handled by Global Secure Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client VPN. Internet and Microsoft traffic are handled by Global Secure Access.
+Both clients handle traffic for separate private applications. Private applications in Microsoft Entra Private Access are handled by Global Secure Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client VPN. Internet and Microsoft traffic are handled by Global Secure Access.
 
 ## Prerequisites
 
 To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 
-1. Set up Entra Internet Access and Entra Private Access. These products make up the Global Secure Access solution.
+1. Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
 2. Set up a Cisco Secure Access VPN profile.
 3. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses.
 
 ### Setting up Global Secure Access
 
-- Enable and disable different traffic forwarding profiles for your Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
-- Install and configure the Entra private network connector. See [How to configure connectors](how-to-configure-connectors.md).
-- **Note:** Private Network Connectors are required for Entra Private Access applications.
+- Enable and disable different traffic forwarding profiles for your Microsoft Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
+- Install and configure the Microsoft Entra private network connector. See [How to configure connectors](how-to-configure-connectors.md).
+- **Note:** Private Network Connectors are required for Microsoft Entra Private Access applications.
 - Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
 - Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
 
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN FQDN. This is only required for Cisco Secure Access VPN.
 
-  1. Sign in to Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
+  1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
   2. Under Internet access policies, select **View**.
   3. Expand **Custom Bypass** and select **Add rule**.
   4. Leave destination type as FQDN and enter `*.vpn.sse.cisco.com` in Destination.
@@ -122,7 +122,7 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 
 #### Configuration 1: Internet and Microsoft traffic with Cisco Secure Access VPN for private access
 
-- Enable Entra Microsoft Access and Internet Access forwarding profiles.
+- Enable Microsoft Entra Microsoft Access and Internet Access forwarding profiles.
 - Install and configure the Global Secure Access client for Windows or macOS.
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN service.
 - Set up remote access VPN profile as described above.
@@ -141,7 +141,7 @@ After both clients are installed and running, verify that Global Secure Access a
 1. In the system tray, right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Traffic** tab > **Start collecting**.
 2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic from these sites.
-4. In Entra admin center, go to **Global Secure Access > Monitor > Traffic logs**. Validate traffic is logged.
+4. In Microsoft Entra admin center, go to **Global Secure Access > Monitor > Traffic logs**. Validate traffic is logged.
 5. In Cisco Secure Access portal, go to **Monitor > Activity Search**. Validate traffic to these websites is not captured.
 6. Access private resources via Cisco Secure Access VPN client (e.g., RDP session).
 7. Validate RDP traffic is missing from Global Secure Access traffic logs and present in Cisco Secure Access logs.
@@ -149,8 +149,8 @@ After both clients are installed and running, verify that Global Secure Access a
 
 #### Configuration 2: Internet, Private Access, and Microsoft traffic with Cisco Secure Access VPN for split private access
 
-- Enable Entra Private Access, Internet Access, and Microsoft Access forwarding profiles.
-- Install a Private Network Connector for Entra Private Access.
+- Enable Microsoft Entra Private Access, Internet Access, and Microsoft Access forwarding profiles.
+- Install a Private Network Connector for Microsoft Entra Private Access.
 - Configure Quick Access and set up Private DNS.
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN endpoint.
 - Install and configure the Global Secure Access client for Windows or macOS.
@@ -169,11 +169,11 @@ After both clients are installed and running, verify that Global Secure Access a
 1. Start collecting traffic in Global Secure Access client.
 2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic from these sites.
-4. Validate traffic in Entra admin center traffic logs.
+4. Validate traffic in Microsoft Entra admin center traffic logs.
 5. Validate traffic is not captured in Cisco Secure Access portal.
 6. Access private resources via Cisco Secure Access VPN client (e.g., RDP session).
 7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco Secure Access logs.
-8. Access private application in Entra Private Access (e.g., SMB file share).
+8. Access private application in Microsoft Entra Private Access (e.g., SMB file share).
 9. Validate SMB traffic is captured in Global Secure Access logs and not in Cisco Secure Access logs.
 10. Stop collecting traffic in Global Secure Access client.
 
@@ -181,7 +181,7 @@ After both clients are installed and running, verify that Global Secure Access a
 
 #### Configuration 1: Internet and Microsoft traffic with Cisco ASA private access
 
-- Enable Entra Microsoft Access and Internet Access forwarding profiles.
+- Enable Microsoft Entra Microsoft Access and Internet Access forwarding profiles.
 - Install and configure the Global Secure Access client for Windows or macOS.
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco ASA remote access SSL URL and public IP address.
 - Configure Cisco ASA remote access VPN connection profile as described above.
@@ -200,7 +200,7 @@ After both clients are installed and running, verify that Global Secure Access a
 1. Start collecting traffic in Global Secure Access client.
 2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic from these sites.
-4. Validate traffic in Entra admin center traffic logs.
+4. Validate traffic in Microsoft Entra admin center traffic logs.
 5. In Cisco ASDM, go to **Monitoring > Logging > View**. Validate website traffic is not captured.
 6. Access private resources via Cisco Secure Client (e.g., RDP session).
 7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco ASDM logs.
@@ -208,8 +208,8 @@ After both clients are installed and running, verify that Global Secure Access a
 
 #### Configuration 2: Internet, Private Access, and Microsoft traffic with Cisco ASA private access
 
-- Enable Entra Private Access forwarding profile.
-- Install a Private Network Connector for Entra Private Access.
+- Enable Microsoft Entra Private Access forwarding profile.
+- Install a Private Network Connector for Microsoft Entra Private Access.
 - Configure Quick Access and set up Private DNS.
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco ASA remote access SSL URL and public IP address.
 - Install and configure the Global Secure Access client for Windows or macOS.
@@ -229,11 +229,11 @@ After both clients are installed and running, verify that Global Secure Access a
 1. Start collecting traffic in Global Secure Access client.
 2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic from these sites.
-4. Validate traffic in Entra admin center traffic logs.
+4. Validate traffic in Microsoft Entra admin center traffic logs.
 5. In Cisco ASDM, go to **Monitoring > Logging > View**. Validate website traffic is not captured.
 6. Access private resources via Cisco Secure Client (e.g., RDP session).
 7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco ASDM logs.
-8. Access private application in Entra Private Access (e.g., SMB file share).
+8. Access private application in Microsoft Entra Private Access (e.g., SMB file share).
 9. Validate SMB traffic is captured in Global Secure Access logs and not in Cisco ASDM logs.
 10. Stop collecting traffic in Global Secure Access client.
 
