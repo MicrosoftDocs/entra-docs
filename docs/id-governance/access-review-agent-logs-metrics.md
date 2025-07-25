@@ -26,17 +26,36 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 ## Agent Summary
 
-The **Agent summary** at the top of the Access Review Agent page provides a quick summary of access reviews completed using the agent in the last 30 days. The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent is also provided.
+To access Access Review Agent information, open up the Access Review agent, and the Overview tab will open. From the Overview tab, you can find details about the Access Review Agent. The highlight of the overview page is the Agent summary, which provides a quick summary of agent actions over the course of 30 days.
+
 
 :::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the access review agent overview.":::
 
+
+The Agent Summary shows:
+
 - **Total access reviews**: The number of access reviews that are reviewed by the agent.
-- **Total reviewers**: The number of reviewers who used the agent to complete access reviews.
 - **Total decisions analyzed**: The number of sign-ins that were protected by a policy suggested by the agent.
-- **Security compute units consumed**: The total number of SCUs consumed by the agent in the last 30 days. 
+- **Total reviewers**: The number of reviewers who used the agent to complete access reviews.
+- **Security compute units used**: The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent. 
 
 
-### View agent's full activity
+The overview page also includes other general information about the agent such as its latest activity, and whether its currently active.
+
+## Agent Activities
+
+From the overview page you can select the **Activities** tab to view a full list of the activities of the Access Review Agent.
+
+:::image type="content" source="media/access-review-agent-logs-metrics/access-review-agents-activities.png" alt-text="Screenshot of a list of activities in the Access Review Agent.":::
+
+For each activity, you can see:
+
+- The date and time the run started
+- The number of SCU used
+- The number of reviewers that completed the decision
+- The status of the action
+
+### View Agent's Full Activity
 
 To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View agent's full activity**.
 
