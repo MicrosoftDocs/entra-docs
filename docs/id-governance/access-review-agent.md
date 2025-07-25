@@ -20,20 +20,50 @@ The Access Review agent evaluates current access reviews based on policies aroun
 
 ## Supported Scenarios
 
-The following review scenarios are supported with the access review agent:
+The following tables show current Access Review Agent support based on access review scenarios:
+
+### Resources
 
 
 |Review Scenario  |Supported  |
-|-----------------|-----------|
+|---------|---------|
+|Teams + Groups     |   :white_check_mark:       |
 |Access package assignment     |    :white_check_mark:      |
 |Application assignment        |   :white_check_mark:       |
 |Azure resource roles          |                           |
-|External Guests and Members as reviewers |                |
 |Groups managed by PIM         |                           |
 |Microsoft Entra roles         |                           |
-|Reviews with more than 35 decisions |                     |
-|Single-stage reviews          |   :white_check_mark:       |
-|Teams + Groups                |   :white_check_mark:       |
+|Bring your own data     |         |
+
+
+### Review Size
+
+
+|Review Scenario  |Supported  |
+|---------|---------|
+|Up to 35 decisions (per review, not reviewer)     |  :white_check_mark:       |
+|>35 decisions per review     |         |
+
+
+### Review stages
+
+
+|Review Scenario  |Supported  |
+|---------|---------|
+|Single Stage     |  :white_check_mark:       |
+|Two Stages     |         |
+|Three Stages     |         |
+
+
+### Reviewer Settings
+
+
+|Review Scenario  |Supported  |
+|---------|---------|
+|Specific     |   :white_check_mark:       |
+|Group Owners     |  :white_check_mark:        |
+|Managers     |  :white_check_mark:        |
+|Self-review     |         |
 
 
 For other considerations, and limitations, of the Access review agent, see: [Limitations](access-review-agent.md#limitations).
@@ -141,18 +171,19 @@ To enable the agent to make recommendations on an existing access package, you'd
 
 The Access Review Agent is accessed through a published first-party [Microsoft Teams App](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47). Ensure that the app is [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Using the app also requires that reviewers use the [Microsoft Teams Public Preview](/microsoftteams/public-preview-doc-updates?tabs=new-teams-client).
 
-With the app published and available, also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews.
+With the app published and available, also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews. This is required because the natural language conversation in Microsoft Teams is opening a Microsoft Security Copilot sessions behind the scenes. Participating reviewers will access the agentic experience via Microsoft Teams, but with the role assignment they will be entitled to access https://securitycopilot.microsoft.com/ or the Security Copilot experience in other Microsoft Security administrative portals. If reviewers access Security Copilot outside of Microsoft Teams, their data access with Security Copilot will still be subject to [default user permissions](../fundamentals/users-default-permissions.md).
 
 ## Using the Access Review Agent as a reviewer
 
-With the Access Review Agent started, reviewers assigned with proper permissions, and the app published, you're now ready to use the agent to review your access reviews. The Access Review Agent can be accessed directly from the Apps screen within Microsoft Teams, from a [direct link](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47), or from an email notification sent by an access review with the agent enabled when it's time for the review to be completed. The following steps walk you through accessing the agent directly from Microsoft Teams:
+With the Access Review Agent started, reviewers assigned with proper permissions, and the app published, your reviewers are now ready to complete their reviews with the help of the agent. The Access Review Agent can be accessed directly from the Apps screen within Microsoft Teams, from a [direct link](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47), or from an email notification sent by an access review with the agent enabled when it's time for the review to be completed. The following steps walk you through accessing the agent directly from Microsoft Teams:
 
 1. Open your Microsoft Teams application signed in as the user assigned as a reviewer.
 
 1. Select **Apps**.
 
-1. On the Apps page, locate the **Access Review Agent**, and select **Open**.
+1. On the Apps page, search **Access Review Agent**, and select **Add**.
     :::image type="content" source="media/access-review-agent/access-review-agent-teams.png" alt-text="Screenshot of the Access Review Agent application in Microsoft Teams.":::
+1. Once the agent is added, select **Open**.
 1. When open, you can select the available prompt to start the chat with the agent
      :::image type="content" source="media/access-review-agent/access-review-agent-prompt.png" alt-text="Screenshot of the initial prompt in the access review agent chat.":::
 
