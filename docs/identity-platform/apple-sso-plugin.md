@@ -73,7 +73,7 @@ The minimum set of URLs that need to be allowed for the SSO plug-in to function 
 
 #### URLs that need to be allowed for Device registration flows
 
-Please make sure traffic to below URLs are allowed by default for the registration flows that requires TLS challenge to succeed:
+Please make sure traffic to the URLs below is allowed by default and is also exempted from TLS interception/inspection, this is required for registration flows that needs TLS challenges to succeed:
  - `enterpriseregistration.windows.net`
  - `certauth.enterpriseregistration.windows.net`
 
