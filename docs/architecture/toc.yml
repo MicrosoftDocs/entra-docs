@@ -191,6 +191,8 @@ items:
         href: deployment-scenario-remote-access.md
       - name: Scenario - Internet access
         href: deployment-scenario-internet-access.md
+      - name: Workshop Delivery Guide
+        href: entra-delivery-guide.md
     - name: Microsoft Global Secure Access deployment guides
       items:
       - name: Introduction
