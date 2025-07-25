@@ -1,3 +1,4 @@
+---
 title: macOS Platform single sign-on known issues and troubleshooting
 description: Identify and resolve known issues with macOS Platform single sign-on (PSSO).
 
