@@ -212,7 +212,7 @@ Add Microsoft Entra service FQDNs in Traffic Steering to the destination list to
 - Install and configure the Global Secure Access client for Windows.
 - Add custom bypass for Cisco Secure Access:
   1. In Global Secure Access admin center, go to **Connect > Traffic forwarding > Internet access profile > View**.
-  - Expand **Custom Bypass**, add rules for:
+  2. Expand **Custom Bypass**, add rules for:
    ```
    *.zpc.sse.cisco.com, 208.67.222.222, 208.67.220.220, 67.215.64.0/19, 146.112.0.0/16, 155.190.0.0/16, 185.60.84.0/22, 204.194.232.0/21, 208.67.216.0/21, 208.69.32.0/21
    ```
