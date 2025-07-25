@@ -70,9 +70,14 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite. All` permis
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission.":::
 
-### Workaround for granting permission to apps
+### Workaround for granting permission to 
+
 You can grant consent via PowerShell/MS Graph by referring to this article: [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
-To validate permissions that the permissions have been granted, sign in to the Azure portal, navigate to **Enterprise Applications** > **App Name** and select **Security** > **Permissions**:
+
+
+## validate permissions that the permissions have been granted 
+
+Sign in to the Azure portal, navigate to **Enterprise Applications** > **App Name** and select **Security** > **Permissions**:
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/permission.png" alt-text="Screenshot of how to grant permission.":::
 
