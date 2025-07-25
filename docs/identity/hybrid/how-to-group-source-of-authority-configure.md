@@ -54,7 +54,7 @@ Download the Provisioning agent with build version [1.1.1370.0](/entra/identity/
 ## Grant permission to apps
 
 >[!Important] 
-> A known issue might prevent you from seeing new permissions in the Microsoft Entra admin center after you convert SOA. If you can't view the permissions in the Microsoft Entra ID center or in Graph Explorer, follow steps in the the [Workaround for granting permission to apps](#workaround-for-granting-permission-to-apps).
+> A known issue might prevent you from viewing the new permission associated with Source of Authority conversion feature in the Microsoft Entra admin center. If you can't view the permissions in the Microsoft Entra ID center or in Graph Explorer, follow steps in the the [Workaround for granting permission to apps](#workaround-for-granting-permission-to-apps).
 
 This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. 
 
