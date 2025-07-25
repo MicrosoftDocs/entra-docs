@@ -104,35 +104,6 @@ billing meter. See [Set up a multitenant org in Microsoft 365](/microsoft-365/en
 - Tailspin creates a second access review for a security group with 300 guest users with the user-to-group affiliation feature enabled. 
 - Billing: For May, Tailspin is billed for 500 users – 200 for the inactive guest access review and 300 for the review with user-to-group affiliation. 
 
-### Link your tenant to a subscription
-
-Your tenants must be linked to an Azure subscription for proper billing and access to features. To link your tenant to a subscription, follow these steps.
-
-1.  Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) with an account that has at least the Contributor role within the subscription or a resource group within the subscription.
-
-2. Select the directory you want to link: In the Microsoft Entra admin center toolbar, select the **Settings** icon in the portal toolbar. Then on the **Portal settings \| Directories + subscriptions** page, find your workforce tenant in the **Directory name** list, and then select **Switch**.
-
-3.  Browse to **Entra ID** > **ID Governance** > **Dashboard**.
-
-4.  On the governance dashboard, locate the guest governance panel and select **Get Started**.
-
-5.  In the **Link a subscription** pane, select a **Subscription** and a **Resource group**. Then select **Turn on**.
-
-After you complete these steps, your Azure subscription is billed based on your Azure Direct or Enterprise Agreement details, if applicable.
-
-## What if I can't find a subscription?
-
-If no subscriptions are available in the **Link a subscription** pane, here are some possible reasons:
-
-- You don't have the appropriate permissions. Be sure to sign in with an Azure account that has at least the Contributor role within the subscription or a resource group within the subscription.
-
-- A subscription exists, but it isn't associated with your directory yet. You can [associate an existing subscription to your tenant](../fundamentals/how-subscriptions-associated-directory.yml) and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
-
-- No subscription exists. In the **Link a subscription** pane, you can create a subscription by selecting **if you don't already have a subscription you may create one here**. After you create a new subscription, you'll need to [create a resource group](/azure/azure-resource-manager/management/manage-resource-groups-portal) in the new subscription, and then repeat the steps for [linking it to your tenant](../external-id/external-identities-pricing.md#link-your-azure-ad-tenant-to-a-subscription).
-
-## Turn off guest billing
-
-You can turn off governance guest billing by returning to the governance dashboard and selecting **Edit** on the guest governance panel. In the Edit Guest Access panel, select "Turn Off" to disable billing and Microsoft Entra ID Governance features for your guest users.
 
 ## Guest user licensing FAQs
 
