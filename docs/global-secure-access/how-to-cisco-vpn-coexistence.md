@@ -76,10 +76,10 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 
 - Create a Network Tunnel to establish connectivity to the Cisco Secure Access platform. See [Manage Network Tunnel Groups](https://docs.cisco.com/network-tunnel-groups).
 - Configure the VPN profile Traffic Steering:
-  - From the Cisco Secure Access portal, go to **Connect > End User Connectivity > Virtual Private Network**.
-  - Select your VPN Profile, then **Traffic Steering**.
-  - In Tunnel Mode, select **Bypass Secure Access** and add exceptions for your private application subnets and `6.6.0.0/16`.
-  - In DNS Mode, select **Split DNS** and add the domain suffix of your private applications.
+  1. From the Cisco Secure Access portal, go to **Connect > End User Connectivity > Virtual Private Network**.
+  2. Select your VPN Profile, then **Traffic Steering**.
+  3. In Tunnel Mode, select **Bypass Secure Access** and add exceptions for your private application subnets and `6.6.0.0/16`.
+  4. In DNS Mode, select **Split DNS** and add the domain suffix of your private applications.
 - Install the Cisco Secure Client software. See [Cisco Secure Client Download and Installation guide](https://docs.cisco.com/secure-client-download).
 
 **Note:** Other ways to configure Tunnel Mode and DNS Mode exist. For the scenarios, only Bypass Secure Access and Split DNS (Split-Include) are selected. This is the only supported Cisco Secure Access VPN configuration currently.
