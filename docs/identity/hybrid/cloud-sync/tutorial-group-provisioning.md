@@ -33,24 +33,13 @@ This tutorial assumes:
   Sales        | OU=Sales,DC=contoso,DC=com
   Marketing    | OU=Groups,DC=contoso,DC=com
 
-## Create two groups in Microsoft Entra ID
-To begin, we create two groups in Microsoft Entra ID. One group is Sales and the other is Marketing.
 
-To create two groups, follow these steps:
+## Add users to cloud-native or SOA converted security groups
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Entra ID** > **Groups** > **All groups**.
-1. At the top, click **New group**.
-1. Make sure the **Group type** is set to **security**.
-1. For the **Group Name** enter **Sales**
-1. For **Membership type** keep it at assigned.
-1. Click **Create**.
-1. Repeat this process using **Marketing** as the **Group Name**.
+To add synced users, follow these steps:
 
-
-## Add users to the newly created or SOA converted groups
-
-To add users to the groups, follow these steps:
+>[!NOTE]
+>Only synced user member references are provisioned to AD. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Entra ID** > **Groups** > **All groups**.
@@ -135,17 +124,12 @@ Follow these steps to make sure the group is provisioned to Active Directory:
 
     :::image type="content" source="media/tutorial-group-provision/verify.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/verify.png":::
 
-## How Group Provisioning to Active Directory (GPAD) behaves after you convert Group SOA
+## Group Provision to AD behavior for SOA converted objects
 
 When you convert the **Source of Authority (SOA)** to cloud for an on-premises group, that group becomes eligible for **Group Provisioning to Active Directory (GPAD)**.
+ Run **Sync Selected** and select the group that has converted SOA.
 
-- If you run **Sync All**, the group is automatically added to the scope for **Group Provisioning to AD**.
-
-- If you run **Sync Selected**, you need to select the group that has converted SOA.
-
-## Use GPAD to provision groups to AD
-
-In the following diagram, **SOATestGroup1** SOA is converted to the cloud.
+For example, in the following diagram, **SOATestGroup1** SOA is converted to the cloud.
 As a result, it becomes available for the **GPAD job scope**.
 
 :::image type="content" border="true" source="media/tutorial-group-provision/in-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/entry-level-error.png":::
@@ -170,9 +154,7 @@ As a result, it becomes available for the **GPAD job scope**.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/group-properties.png" alt-text="Screenshot of group properties." lightbox="media/tutorial-group-provision/group-properties.png":::
 
-## How group sync works with SOA
-
-The following table explains how sync works in different use cases, depending upon on ownership of the parent and member groups.
+The following table explains what happens when you add SOA converted groups into scope for provisioning to AD and how the provisioning handles membership references.
 	
 Use case | Parent group type | Member group type | Job | How sync works
 ---------|-------------------|-------------------|-----|-----------------------
