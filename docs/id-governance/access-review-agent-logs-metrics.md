@@ -1,5 +1,5 @@
 ---
-title: Logs and metrics for the Access Review Agent
+title: Logs and metrics for the Access Review Agent (Preview)
 description: Learn about the Security Copilot for Microsoft Entra Access Review agent metrics and events in audit logs.
 author: owinfreyATL
 ms.author: owinfrey
@@ -11,7 +11,7 @@ ms.date: 07/19/2025
 #CustomerIntent: As a governance administrator, I want to view the logs and metrics for access reviews completed with help from the access review agent.
 ---
 
-# View logs and metrics for the Access Review agent
+# View logs and metrics for the Access Review agent (Preview)
 
 The Access Review Agent helps organizations improve their security posture by automatically analyzing sign-in patterns and suggesting policy optimizations. This Microsoft Security Copilot agent identifies unprotected users and applications, recommends policy improvements, and helps consolidate redundant policies.
 
@@ -20,14 +20,15 @@ To ensure transparency and maintain control over automated recommendations, Micr
 ## Prerequisites
 
 - To view the Microsoft Entra audit logs, you need at least the [Reports reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
-- To utilize the Access Review agent settings, you must have  at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with the following:
-   - Either the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator), [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, or a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) roles.
+- To view the overview, activities, or settings of the Access Review Agent, you need either the [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 
 ## Agent Summary
 
 The **Agent summary** at the top of the Access Review Agent page provides a quick summary of access reviews completed using the agent in the last 30 days. The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent is also provided.
+
+:::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the access review agent overview.":::
 
 - **Total access reviews**: The number of access reviews that are reviewed by the agent.
 - **Total reviewers**: The number of reviewers who used the agent to complete access reviews.
