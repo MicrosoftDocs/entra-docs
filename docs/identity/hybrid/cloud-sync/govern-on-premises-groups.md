@@ -59,15 +59,6 @@ to access on-premises applications by signing in with their Microsoft
 Entra account. For information on configuring app proxy, see [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](/entra/identity/app-proxy/application-proxy-add-on-premises-application).
 
 
-## Watch the group writeback video
-
-For a great overview of cloud sync group provisioning to Active directory and what it can do for you, check out our video:
-
-> [!VIDEO https://www.youtube.com/embed/C6XXlSVaIeo]
-
-[!INCLUDE [governance-on-premises-active-directory-apps.md](~/includes/governance/governance-on-premises-active-directory-apps.md)]
-
-
 
 ## Related content
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
