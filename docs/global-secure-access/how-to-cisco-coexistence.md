@@ -173,7 +173,7 @@ To configure Cisco Umbrella and SWG:
 
 ---
 
-### 2. Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS (CSA DNS Defense)
+### 2. Internet Access, Microsoft Access, and Private Access with Cisco Umbrella DNS.
 
 
 #### Steps
