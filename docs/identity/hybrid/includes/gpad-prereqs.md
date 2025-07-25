@@ -21,7 +21,7 @@ The following prerequisites are required to implement provisioning groups to Act
  - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later. 
      - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
- - Provisioning agent with build version [1.1.1586.0](../cloud-sync/reference-version-history#1115860).
+ - Provisioning agent with build version [1.1.3730.0](../cloud-sync/reference-version-history#1113730) or later.
 
  > [!NOTE]
  > The permissions to the service account are assigned during clean install only. In case you're upgrading from the previous version then permissions need to be assigned manually using PowerShell cmdlet: 
