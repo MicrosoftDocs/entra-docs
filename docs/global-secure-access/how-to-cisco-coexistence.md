@@ -128,7 +128,7 @@ To configure Cisco Umbrella and SWG:
   > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.microsoft.com`.
 
 3. Add the same Microsoft FQDNs and DNS suffixes as above.
-- In **Traffic Steering**, click **Add Destination > Bypass web proxy only**, add these IPs and save:
+4. In **Traffic Steering**, click **Add Destination > Bypass web proxy only**, add these IPs and save:
   ```
   `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`
   ```
