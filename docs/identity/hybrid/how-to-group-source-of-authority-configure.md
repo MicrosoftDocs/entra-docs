@@ -58,7 +58,11 @@ Download the Provisioning agent with build version [1.1.1370.0](/entra/identity/
 
 This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. 
 
+### Custom apps
+
 Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite. All` permission to the corresponding app. For more information about how to add new permissions to your app registration and grant consent, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions). 
+
+### Microsoft Graph Explorer
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
 1.	Click the profile icon, and select **Consent to permissions**.
