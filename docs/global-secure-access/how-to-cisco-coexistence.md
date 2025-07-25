@@ -149,7 +149,7 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for Cisco Secure Access portal or Umbrella portal.
 - Disable Cisco Secure Access SWG
     1. In the **Cisco Secure Access portal**, go to **Resources**.
     2. Select **Roaming Devices > Desktop Operating Systems**.
@@ -184,7 +184,7 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for Cisco Secure Access portal or Umbrella portal.
 - Disable Cisco Secure Access SWG.
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 
@@ -218,7 +218,7 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Cisco Secure Access/Umbrella. See instructions for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Cisco Secure Access/Umbrella. See instructions for Cisco Secure Access portal or Umbrella portal.
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 - Ensure that Secure Web Gateway is enabled.
 **Validation:**
@@ -244,7 +244,7 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for Cisco Secure Access portal or Umbrella portal.
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 - Ensure that Secure Web Gateway is enabled.
 **Validation:**
