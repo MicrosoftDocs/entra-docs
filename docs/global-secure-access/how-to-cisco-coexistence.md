@@ -20,7 +20,7 @@ Cisco Secure Access delivers DNS Defense, powered by Cisco Umbrella technology, 
 
 This guide covers the following coexistence scenarios:
 
-1. **[Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS security.](#1-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-umbrella-dns-cisco-secure-access-dns-defense)**
+1. **[Internet Access and Microsoft Access with Umbrella DNS security.](#1-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-umbrella-dns-cisco-secure-access-dns-defense)**
 In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Umbrella provides DNS protections. Cisco Secure Web Gateway features should be disabled.
 2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS.](#2-microsoft-entra-internet-access-microsoft-entra-microsoft-access-and-microsoft-entra-private-access-with-cisco-umbrella-dns-csa-dns-defense)**
 In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Umbrella handles DNS. Cisco Secure Web Gateway should be disabled.
@@ -172,7 +172,7 @@ To configure Cisco Umbrella and SWG:
 
 ---
 
-### 2. Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS (CSA DNS Defense)
+### 2. Internet Access, Microsoft Access, and Private Access with Cisco Umbrella DNS.
 
 
 #### Steps
@@ -218,7 +218,7 @@ To configure Cisco Umbrella and SWG:
 - Install and configure the Global Secure Access client for Windows.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
+- Configure the required destinations to bypass Cisco Secure Access/Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 - Ensure that Secure Web Gateway is enabled.
 **Validation:**
@@ -234,7 +234,7 @@ To configure Cisco Umbrella and SWG:
 
 ---
 
-### 4. Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense) and Secure Web Gateway
+### 4. Microsoft Access with Umbrella DNS and Secure Web Gateway.
 
 
 #### Steps
