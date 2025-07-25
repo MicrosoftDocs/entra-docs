@@ -1260,7 +1260,7 @@ Here are the possible errors you can encounter (possible values of the `error` p
 |`expired_token`| The continuation token included in the request is expired. |
 | `server_error` | Something went wrong with the request. |
 
-After the client app successfully retrieves a list of strong authentication methods registered for the user, the user chooses a methof they wish to use to complete MFA. The flow then proceed as follows:
+After the client app successfully retrieves a list of strong authentication methods registered for the user, the user selects a method they wish to use to complete the MFA challenge. The flow then proceed as follows:
 
 1. The client app calls the `/oauth2/v2.0/challenge` and includes the continuation token obtained from the `/oauth2/v2.0/introspect` and the `id` of the MFA method of choice:
     
