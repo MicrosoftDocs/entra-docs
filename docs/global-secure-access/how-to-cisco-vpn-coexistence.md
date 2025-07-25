@@ -88,8 +88,6 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
 
 #### Split-Include configuration
 
-#### Split-Include configuration
-
 To configure split-include for Cisco ASA Remote Access VPN:
 
 1. Sign in to Cisco ASA using the ASDM software.
