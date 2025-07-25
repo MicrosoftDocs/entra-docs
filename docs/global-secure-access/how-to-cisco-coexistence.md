@@ -151,9 +151,9 @@ To configure Cisco Umbrella and SWG:
 **Cisco configuration:**
 - Configure the required destinations to bypass Internet Security or Umbrella. See instructions above for [Cisco Secure Access portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesCSAPortal) or [Umbrella portal](https://github.com/MicrosoftDocs/entra-docs-pr/pull/9086/files#BypassesUmbrellaPortal).
 - Disable Cisco Secure Access SWG
-1.	In the **Cisco Secure Access portal > Resources**
-2.	**Roaming Devices > Desktop Operating Systems**
-3.	Select the device > **Web Security** drop-down (on blue bar) > **Always Disable (override)**.
+    1. In the **Cisco Secure Access portal > Resources**
+    2. **Roaming Devices > Desktop Operating Systems**
+    3. Select the device > **Web Security** drop-down (on blue bar) > **Always Disable (override)**.
 
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 
