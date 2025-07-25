@@ -143,12 +143,6 @@ When you convert the **Source of Authority (SOA)** to cloud for an on-premises g
 
 - If you run **Sync Selected**, you need to select the group that has converted SOA.
 
-### Known issue
-
-If you sync a group that isn't Universal, such as a Global Group, and then try to convert SOA and run a GPAD job on that group, an Entry level error is returned. Make sure the group has Universal scope.  
-
-:::image type="content" border="true" source="media/tutorial-group-provision/entry-level-error.png" alt-text="Screenshot of a universal group setting." lightbox="media/tutorial-group-provision/entry-level-error.png":::
-
 ## Use GPAD to provision groups to AD
 
 In the following diagram, **SOATestGroup1** SOA is converted to the cloud.
