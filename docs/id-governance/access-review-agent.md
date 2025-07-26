@@ -151,7 +151,7 @@ After the Access review is started, you must now enable which access reviews you
 
 1. On the access review overview page, select **Settings**.
 
-1. Under **Advanced Settings**, check the **Enable** box on the setting that says **Access Review Agent**.
+1. Under **Advanced Settings**, check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**. 
 
@@ -168,7 +168,7 @@ To enable the agent to make recommendations on an existing access package, you'd
 
 1. On the edit policy page, select **Lifecycle**.
 
-1. On the lifecycle tab, check the **Enable** box on the setting that says **Access Review Agent**.
+1. On the lifecycle tab, check the **Enable** box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**.    
 
