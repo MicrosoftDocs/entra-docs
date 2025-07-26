@@ -127,7 +127,6 @@ Follow these steps to make sure the group is provisioned to Active Directory:
 ## Group Provision to AD behavior for SOA converted objects
 
 When you convert the **Source of Authority (SOA)** to cloud for an on-premises group, that group becomes eligible for **Group Provisioning to Active Directory (GPAD)**.
- Run **Sync Selected** and select the group that has converted SOA.
 
 For example, in the following diagram, **SOATestGroup1** SOA is converted to the cloud.
 As a result, it becomes available for the **GPAD job scope**.

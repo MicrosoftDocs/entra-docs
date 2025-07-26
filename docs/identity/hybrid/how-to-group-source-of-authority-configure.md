@@ -206,14 +206,12 @@ Follow these steps to convert the SOA for a test group:
 You can use the following PowerShell script to automate Group SOA updates for app-based authentication. 
 
 ```powershell
-
 # Define your Microsoft Entra ID app details and tenant information
 $clientId = ""
 $tenantId = ""
 $groupID = ""
 $clientSecret = ""
- 
- 
+
 # Get the access token
 $body = @{
     grant_type    = "client_credentials"
@@ -221,7 +219,7 @@ $body = @{
     client_id     = $clientId
     client_secret = $clientSecret
 }
- 
+
 $tokenResponse = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token" -Method Post -ContentType "application/x-www-form-urlencoded" -Body $body
 $token = $tokenResponse.access_token
 
@@ -231,7 +229,6 @@ Connect-MgGraph -Scopes "Group.Read.All"
 # Define the group name you want to query
 $groupName = "HR London"
 
-
 # Retrieve the group using group name
 $group = Get-MgGroup -Filter "displayName eq '$groupName'"
 
@@ -239,26 +236,29 @@ $group = Get-MgGroup -Filter "displayName eq '$groupName'"
 if ($group -ne $null)
 {
     $groupObjectID = $($group.Id)
-# Define the Microsoft Graph API endpoint for the user
-$url = "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior"
+    # Define the Microsoft Graph API endpoint for the user
+    $url = "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior"
 
-# Define the JSON payload for the PATCH request
-$jsonPayload = @{
-    isCloudManaged = "true"
-} | ConvertTo-Json
+    # Define the JSON payload for the PATCH request
+    $jsonPayload = @{
+        isCloudManaged = "true"
+    } | ConvertTo-Json
  
-# Make the PATCH request to update the user's department
-Invoke-RestMethod -Uri $url -Method Patch -Headers @{
-    "Authorization" = "Bearer $token"
-    "Content-Type"  = "application/json"
-} -Body $jsonPayload
-$result = Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior?$select=id,displayName,isCloudManaged" -Headers @{Authorization = "Bearer $token"}
- Write-Host "Group Name: $($group.DisplayName)"
- Write-Host "Group ID: $($result.id)"
- Write-Host "SOA Converted: $($result.isCloudManaged)"
+    # Make the PATCH request to update the user's department
+    Invoke-RestMethod -Uri $url -Method Patch -Headers @{
+        "Authorization" = "Bearer $token"
+        "Content-Type"  = "application/json"
+    } -Body $jsonPayload
+
+    $result = Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior?$select=id,displayName,isCloudManaged" -Headers @{Authorization = "Bearer $token"}
+
+    Write-Host "Group Name: $($group.DisplayName)"
+    Write-Host "Group ID: $($result.id)"
+    Write-Host "SOA Converted: $($result.isCloudManaged)"
 }
 Format-Table -AutoSize
- ```
+```
+
 ### Status of attributes after you convert SOA
 
 The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes you convert the SOA of an object.
