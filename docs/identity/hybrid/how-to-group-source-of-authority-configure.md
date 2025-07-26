@@ -11,14 +11,14 @@ ms.reviewer: dhanyak
 
 # Configure Group Source of Authority (SOA) (Preview)
 
-This topic explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Group SOA overview](concept-source-of-authority-overview.md). 
+This topic explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud (Preview)](concept-source-of-authority-overview.md). 
 
 ## Prerequisites
 
 | Requirement | Description |
 |-------------|-------------|
-| **Roles** | - Hybrid Administrator role is allowed to call the OnPremisesSyncBehavior Microsoft Graph API for Groups.<br>- Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the OnPremisesSyncBehavior Microsoft Graph API for Groups. |
-| **Permissions** | For apps calling into the OnPremisesSyncBehavior Graph API, Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
+| **Roles** | Hybrid Administrator role is allowed to call the OnPremisesSyncBehavior Microsoft Graph API for Groups.<br>Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the onPremisesSyncBehavior Microsoft Graph API for Groups. |
+| **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
 | **License needed** | Microsoft Entra Free or Basic license. |
 | **Connect Sync client** | Minimum version is [2.5.76.0](./connect/reference-connect-version-history.md) |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
@@ -70,14 +70,13 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite. All` permis
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission.":::
 
-### Workaround for granting permission to 
+### Workaround for granting permission to apps
 
-You can grant consent via PowerShell/MS Graph by referring to this article: [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
+You can grant consent by using PowerShell or Microsoft Graph. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
 
+## Validate that the permissions are granted 
 
-## validate permissions that the permissions have been granted 
-
-Sign in to the Azure portal, navigate to **Enterprise Applications** > **App Name** and select **Security** > **Permissions**:
+Sign in to the Azure portal, go to **Enterprise Applications** > **App Name**, and select **Security** > **Permissions**:
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/permission.png" alt-text="Screenshot of how to grant permission.":::
 
