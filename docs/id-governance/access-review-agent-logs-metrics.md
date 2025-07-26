@@ -20,13 +20,13 @@ To ensure transparency and maintain control over automated recommendations, Micr
 ## Prerequisites
 
 - To view the Microsoft Entra audit logs, you need at least the [Reports reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
-- To view the overview, activities, or settings of the Access Review Agent, you need either the [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+- To view the overview, activities, or settings of the Access Review Agent, you need either the [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 
 ## Agent Summary
 
-To access Access Review Agent information, open up the Access Review agent, and the Overview tab will open. From the Overview tab, you can find details about the Access Review Agent. The highlight of the overview page is the Agent summary, which provides a quick summary of agent actions over the course of 30 days.
+To access information about the Access Review Agent, open up the Access Review agent to get to the overview tab. The highlight of the overview page is the Agent summary, which provides a quick summary of agent actions over the course of the last 30 days.
 
 
 :::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the access review agent overview.":::
@@ -35,7 +35,7 @@ To access Access Review Agent information, open up the Access Review agent, and 
 The Agent Summary shows:
 
 - **Total access reviews**: The number of access reviews that are reviewed by the agent.
-- **Total decisions analyzed**: The number of sign-ins that were protected by a policy suggested by the agent.
+- **Total decisions analyzed**: The number of decisions made by the agent.
 - **Total reviewers**: The number of reviewers who used the agent to complete access reviews.
 - **Security compute units used**: The total number of [security compute units (SCU)](/copilot/security/manage-usage) consumed by the agent. 
 
