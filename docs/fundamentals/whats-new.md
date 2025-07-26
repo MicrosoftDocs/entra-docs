@@ -109,7 +109,7 @@ For more information, see: [Bicep templates for Microsoft Graph](/graph/template
 
 ---
 
-### General availability - Conditional Access What If API
+### General Availability - Conditional Access What If API
 
 **Type:** New feature  
 **Service category:** Conditional Access  
@@ -119,7 +119,7 @@ The Conditional access What If API can be used to programmatically test the impa
 
 ---
 
-### General availability - Conditional Access What If API
+### General Availability - Enterprise App SSO via pre-integrated gallery app or customer SAML apps
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management  
@@ -127,9 +127,9 @@ The Conditional access What If API can be used to programmatically test the impa
 
 Enterprise apps SSO & User Provisioning SAML-based Single Sign-On (SSO) and gallery apps with user provisioning flows are now Generally Available (GA). These features help streamline secure access and automate user lifecycle management across your enterprise applications. For more information, see:
 
-[Enterprise applications](../external-id/customers/concept-supported-features-customers.md#enterprise-applications)
-[Quickstart: Add an enterprise application](../identity/enterprise-apps/add-application-portal.md)
-[Register a SAML app in your external tenant](../external-id/customers/how-to-register-saml-app.md)
+- [Enterprise applications](../external-id/customers/concept-supported-features-customers.md#enterprise-applications)
+- [Quickstart: Add an enterprise application](../identity/enterprise-apps/add-application-portal.md)
+- [Register a SAML app in your external tenant](../external-id/customers/how-to-register-saml-app.md)
 
 ---
 
