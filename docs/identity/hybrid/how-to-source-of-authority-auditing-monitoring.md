@@ -39,25 +39,15 @@ You can also call the onPremisesSyncBehavior API and input each user object to q
 GET users/%USER_ID%/onPremisesSyncBehavior?$select=id,isCloudManaged
 ```
 
-To view all objects whose SOA has changed:
+To view all group objects whose SOA has changed:
 
 ```https
-GET users?$filter=onPremisesSyncBehavior/isCloudManaged eq true&$select=id,displayName,isCloudManaged
+GET groups?$filter=onPremisesSyncBehavior/isCloudManaged eq true&$select=id,displayName,isCloudManaged&$count=true
 ```
 
 <!---NL2MSGraph is a new platform that allows customers to use Security Co-Pilot to get answers using MSGraph calls. We can simplify customer experience by adding this filter at "all users" level
 Given SOA feature has no UX, this enables the ability to view bulk SOA changes after it's made.--->
 
-
-### Identify SOA objects that are rolled back 
-
-To help troubleshoot during rollback, you can use the **onPremisesImmutableId** in combination with **isCloudManaged** attribute to determine if an object is a cloud-native or converted for SOA. If the **onPremisesImmutableId** is set to null, it's a cloud-native object. You can use Microsoft Graph to set the **onPremisesImmutableId** attribute value, and then the sync client can manage an object.
-
-Query for **onPremisesImmutableId** != null and **DirSyncEnabled** != true. You need to use the ConsistencyLevel:eventual header.
-
-```https
-GET https://graph.microsoft.com/v1.0/users?$count=true&$filter=onPremisesSyncEnabled ne true and onPremisesImmutableId ne null
-```
 
 ## How to use Azure Monitor to create workbooks and reports using Log Analytics 
 
