@@ -220,7 +220,7 @@ If you no longer wish to use the Access Review agent, select **Remove agent** fr
 
 1. On the access review overview page, select **Settings**.
 
-1. Under **Advanced Settings**, check the **Disable** box on the setting that says **Access Review Agent**.
+1. Under **Advanced Settings**, check the **Disable** box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**. 
 
@@ -236,7 +236,7 @@ To remove the agent from making recommendations on an existing access package, y
 
 1. On the edit policy page, select **Lifecycle**.
 
-1. On the lifecycle tab, check the **Disable** box on the setting that says **Access Review Agent**.
+1. On the lifecycle tab, check the **Disable** box on the setting that says **Access Review Agent (Preview)**.
 
 1. Select **Save**.    
 
