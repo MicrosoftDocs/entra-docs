@@ -131,6 +131,14 @@ To review access of B2B direct connect users, use the following instructions:
 
 If a team you review shares channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](../external-id/b2b-direct-connect-overview.md).
 
+## Perform an access review using the Access Review Agent
+
+The Access Review Agent, a bot within Microsoft teams used to help reviewers complete their reviews using informed decisions, can be used to review access to groups and applications. To set up, and use, the Access Review Agent, see: [Enable Access review for use with the Access Review Agent](access-review-agent.md#enable-access-review-for-use-with-the-access-review-agent).
+
+> [!NOTE]
+> The Access Review Agent requires that reviewers also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role. For more information about other requirements, and limitations, of the Access Review Agent, see: [Access Review Agent with Microsoft Security Copilot](access-review-agent.md).
+
+
 ## Set up what will happen if no action is taken on access review
 
 When the access review is set up, the administrator can use advanced settings to determine what happens if a reviewer doesn't respond to an access review request.
