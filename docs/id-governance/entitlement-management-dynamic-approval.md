@@ -183,7 +183,7 @@ The following example of an action that can be placed in the HTTP body is a logi
 Although the example uses a user ID, the primaryApprovers and escalationApprovers section can contain any valid [subjectSet](/graph/api/resources/subjectset). The approval section of the code must follow the parameters as shown here: [accessPackageApprovalStage](/graph/api/resources/accesspackageapprovalstage).
 
 > [!NOTE]
-> While the Logic App is being called against the Beta version of the API, the body's [accessPackageApprovalStage](/graph/api/resources/accesspackageapprovalstage) is following v1.0 convention.
+> In Public Preview the resume call must be performed against Microsoft Graph's beta endpoint. However, the [accessPackageApprovalStage](/graph/api/resources/accesspackageapprovalstage) provided in the resume call body must follow the [v1.0 convention](/graph/api/resources/accesspackageapprovalstage) and not the [beta convention](/graph/api/resources/approvalstage).
 
 ## Related content
 
