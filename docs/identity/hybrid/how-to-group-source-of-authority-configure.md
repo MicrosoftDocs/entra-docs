@@ -93,7 +93,8 @@ Follow these steps to convert the SOA for a test group:
 
 1. Verify that the group appears in the Microsoft Entra admin center as a synced group.
 1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as Groups admin.
-1. Let's check the existing SOA status. We haven’t updated the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{id}* in the following examples with the object ID of your group.  
+1. Let's check the existing SOA status. We haven’t updated the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{id}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
+/graph/api/onpremisessyncbehavior-update
 
    ```https
    GET https://graph.microsoft.com/beta/groups/{id}/onPremisesSyncBehavior?$select=isCloudManaged
@@ -121,7 +122,7 @@ Follow these steps to convert the SOA for a test group:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced group properties.":::
 
-1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud:
+1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
    PATCH https://graph.microsoft.com/beta/groups/{id}/onPremisesSyncBehavior
@@ -337,3 +338,4 @@ The details state `As the SOA of this group is in the cloud, this object will no
 
 - [Group SOA overview](concept-source-of-authority-overview.md)
 - [Provision groups to Active Directory using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning)
+- [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior)
