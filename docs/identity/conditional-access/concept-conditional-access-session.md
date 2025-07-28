@@ -9,7 +9,7 @@ ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: calebb, vmahtani, ripull
 ---
 # Conditional Access: Session

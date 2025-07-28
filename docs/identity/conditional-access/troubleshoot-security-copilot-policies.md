@@ -9,7 +9,7 @@ ms.date: 06/04/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Troubleshoot Conditional Access policies for Microsoft Security Copilot

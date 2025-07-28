@@ -9,7 +9,7 @@ ms.date: 06/24/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: jodah
 ---
 # Require device compliance with Conditional Access

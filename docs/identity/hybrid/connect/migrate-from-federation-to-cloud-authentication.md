@@ -5,9 +5,9 @@ ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: jomondi
 author: gargi-sinha
-manager: femila
+manager: mwongerapk
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Migrate from federation to cloud authentication  

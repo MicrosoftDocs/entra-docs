@@ -200,7 +200,7 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     1. Select an expiration for the secret or specify a custom lifetime.
     1. Select **Add**.
     1. Record the **secret's value** for use in your client application code. This secret value is never displayed again after you leave this page.
-1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444`.
+1. From the menu, select **Expose an API** and copy the value of the **Application ID URI**. For example, `api://contoso.azurewebsites.net/aaaabbbb-0000-cccc-1111-dddd2222eeee`.
 1. Open your preferred API testing tool and create a new HTTP query.
 1. Change the **HTTP method** to `POST`.
 1. Enter the following URL. Replace the `{tenantID}` with your tenant ID.
@@ -216,7 +216,7 @@ After you acquire an access token, pass it the HTTP `Authorization` header. To o
     |`grant_type`| `client_credentials`|
     |`client_id`| The **Client ID** of your application.|
     |`client_secret`|The **Client Secret** of your application.|
-    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/00001111-aaaa-2222-bbbb-3333cccc4444/.default`|
+    |`scope`| The **Application ID URI** of your application, then add `.default`. For example, `api://contoso.azurewebsites.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/.default`|
 
 1. Run the HTTP query and copy the `access_token` into the <https://jwt.ms> web app.
 1. Compare the `iss` with the issuer name you [configured in your API](custom-extension-tokenissuancestart-configuration.md#step-4-protect-your-azure-function).

@@ -9,7 +9,7 @@ ms.date: 03/03/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: inbarc
 ---
 # Conditional Access adaptive session lifetime policies
