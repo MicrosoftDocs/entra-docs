@@ -1,5 +1,5 @@
 ---
-title: Sign in users in a React single-page app by using native authentication SDK
+title: Sign in users in a single-page app by using native authentication SDK
 description: Configure a React single-page app with native authentication SDK to let users sign up, sign in, sign out, and reset passwords. Start with this quickstart.
 author: kengaderdus
 manager: dougeby
@@ -8,14 +8,14 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 06/30/2025
-#Customer intent: As a developer, I want to configure a sample React single-page application using native authentication react SDK so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
+#Customer intent: As a developer, I want to configure a sample single-page application using native authentication react SDK so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
 ---
 
-# Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK (preview)
+# Quickstart: Sign in users in a single-page app by using native authentication JavaScript SDK (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this Quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using native authentication SDK. The sample app demonstrates user sign-up, sign-in, and sign-out for both email with password and email one-time passcode authentication flows.
+In this Quickstart, you use a single-page application (SPA) to demonstrate how to authenticate users by using native authentication SDK. The sample app demonstrates user sign-up, sign-in, and sign-out for both email with password and email one-time passcode authentication flows.
 ## Prerequisites
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
