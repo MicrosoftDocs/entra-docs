@@ -44,18 +44,26 @@ The agent creates a report-only policy and builds a phased rollout plan. Rollout
 
 Administrators can accept the plan or modify details of the plan, such as the group assignments or the time between phases.
 
-To adjust the members of a phase:
+To adjust the groups included in a phase:
 
-To adjust phased rollout schedule:
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+1. Browse to **Conditional Access Optimization Agent** and select the **Review suggestions** button for a policy suggestion that includes a phased rollout.
 
-:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png" alt-text="Screenshot of the phases of a policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png":::
+    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
+
+1. Select {SOMETHING} to edit the groups included in the phase.
+
+    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png" alt-text="Screenshot of the phases that can be edited." lightbox="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png":::
+
+1. Edit the groups by either adding or removing them from the phase. Select the **Select** button to save the changes.
+
+    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-group-edit.png" alt-text="Screenshot of the phase group edit options." lightbox="media/agent-optimization-phased-rollout/phased-rollout-group-edit.png":::
 
 ### Agent executes the approved rollout plan
 
 The agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure there are no unexpected results. While the policy is being rolled out, the policy remains in report-only mode so you can monitor the impact of the policy. 
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png" alt-text="Screenshot of a phased rollout that's in progress." lightbox="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png":::
-
 
 After every phase is complete, the agent will recommend deleting the report-only policy the next time it runs, so you can maintain a clean policy list.
 
