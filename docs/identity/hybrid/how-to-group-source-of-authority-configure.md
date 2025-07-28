@@ -60,7 +60,7 @@ This highly privileged operation requires the Application Administrator or Cloud
 
 ### Custom apps
 
-Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite. All` permission to the corresponding app. For more information about how to add new permissions to your app registration and grant consent, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions). 
+Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permission to the corresponding app. For more information about how to add new permissions to your app registration and grant consent, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions). 
 
 ### Microsoft Graph Explorer
 
@@ -93,10 +93,10 @@ Follow these steps to convert the SOA for a test group:
 
 1. Verify that the group appears in the Microsoft Entra admin center as a synced group.
 1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as Groups admin.
-1. Let's check the existing SOA status. Since we haven’t updated the SOA yet, the *isCloudManaged* attribute value should be false. Replace the *groupID* in the following examples with the object ID of your group.  
+1. Let's check the existing SOA status. We haven’t updated the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{id}* in the following examples with the object ID of your group.  
 
    ```https
-   GET https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/beta/groups/{id}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" source="media/how-to-group-source-of-authority-configure/get-group.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of a group.":::
@@ -104,7 +104,7 @@ Follow these steps to convert the SOA for a test group:
 1. Check that the synced group is read-only. Because the group is managed on-premises, any write attempts to the group in the cloud fail. The error message differs for mail-enabled groups, but updates still aren't allowed.
 
    ```https
-   PATCH https://graph.microsoft.com/v1.0/groups/groupId/
+   PATCH https://graph.microsoft.com/v1.0/groups/{id}/
       {
         "DisplayName": "Group1 Name Updated"
       }   
@@ -124,7 +124,7 @@ Follow these steps to convert the SOA for a test group:
 1. Now you can update the SOA of group to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud:
 
    ```https
-   PATCH https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/beta/groups/{id}/onPremisesSyncBehavior
       {
         "isCloudManaged": true
       }   
@@ -135,7 +135,7 @@ Follow these steps to convert the SOA for a test group:
 1. To validate the change, call GET to verify *isCloudManaged* is true.
 
    ```https
-   GET https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior?$select=isCloudManaged
+   GET https://graph.microsoft.com/beta/groups/{id}/onPremisesSyncBehavior?$select=isCloudManaged
    ```
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify group properties.":::
@@ -147,7 +147,7 @@ Follow these steps to convert the SOA for a test group:
 1. Check that the group can be updated in the cloud.
 
    ```https
-   PATCH https://graph.microsoft.com/v1.0/groups/groupId/
+   PATCH https://graph.microsoft.com/v1.0/groups/{id}/
       {
         "DisplayName": "Group1 Name Updated"
       }   
@@ -277,7 +277,7 @@ Admin rolls back the SOA operation | `false` | `null` | If an admin converts t
 You can run this opreration to roll back the SOA update and revert the SOA to on-premises. 
 
    ```https
-   PATCH https://graph.microsoft.com/beta/groups/groupId/onPremisesSyncBehavior
+   PATCH https://graph.microsoft.com/beta/groups/{id}/onPremisesSyncBehavior
       {
         "isCloudManaged": false
       }   
