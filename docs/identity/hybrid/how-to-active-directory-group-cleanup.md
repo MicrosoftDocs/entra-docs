@@ -114,37 +114,28 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
    - If the group was not needed, remove the group from the domain.
 
 1. If the group is a DL, then even if the members of the group are in
-   Microsoft Entra, the group will not be able to have its membership SOA converted
+   Microsoft Entra, the group SOA can't be converted
    to Microsoft Entra. You should perform cloud scream test and successor tests, and
    when complete, the options are:
 
-   1. If the group was still needed, replace with an Exchange Online DL
-
-   1. If the group was still needed, replace with a M365 group
-
-   1. If the group was not needed, remove the group from AD and do not
-      replace
+   - If you still need the group, replace it with an Exchange Online DL or a Microsoft 365 group.
+   - If the group was not needed, remove the group from the Active Directory domain and don't replace it. 
 
    Contact your Exchange administrator to determine which option to proceed
    with.
 
-1. If the group is a MESG, then the group will not be able to have its
-   membership SOA converted to Microsoft Entra. Perform cloud scream test and
+1. If the group is a MESG, then the group SOA can't be converterd. Perform cloud scream test and
    successor tests, and when complete, the options are:
 
-   1. Replace with a M365 group.
-
-   1. Create separate DL and SG, and process each one separately.
-
-   1. Convert the group to a non mail enabled SG.
-
-   1. remove the group from AD and do not replace.
+   - Replace with a Microsoft 365 group.
+   - Create separate DL and SG, and process each one separately.
+   - Convert the group so it's not a MESG.
+   - Remove the group from the Active Directory domain and don't replace it.
 
    Contact your Exchange administrator to determine if the group is still
-   needed for Exchange purposes. If so, then proceed with options a or b.
-   Otherwise assume that the group will only need to be a security group or
-   is no longer needed (options c or d), and proceed with the next section,
-   analysis for a security group.
+   needed for Exchange purposes. If it's still needed for Exchange, replace it with a Microsoft 365 group, or create separate DL and security group, and process each one separately.
+   Otherwise, assume that the group only needs to be a security group, or
+   it's no longer needed, and proceed with the analysis for a security group.
 
 ### Analysis for a security group
 
