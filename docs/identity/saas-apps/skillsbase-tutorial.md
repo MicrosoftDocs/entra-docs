@@ -26,7 +26,9 @@ In this article,  you learn how to integrate Skills Base with Microsoft Entra ID
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
 [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
-* A Skills Base license that supports single sign-on (SSO).
+* A Skills Base instance with a license that includes the **Single Sign-On Module**.
+* A Skills Base Administrator account (with local login email/password).
+* **Single Sign On** feature is enabled (in **Administration > Modules > Single Sign-On Module**).
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -46,11 +48,11 @@ In this article,  you configure and test Microsoft Entra single sign-on in a tes
 To configure the integration of Skills Base into Microsoft Entra ID, you need to add Skills Base from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
-1. In the **Add from the gallery** section, type **Skills Base** in the search box.
-1. Select **Skills Base** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+2. Browse to **Entra ID** > **Enterprise apps** > **New application**.
+3. In the **Add from the gallery** section, type **Skills Base** in the search box.
+4. Select **Skills Base** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-skills-base'></a>
 
@@ -74,71 +76,61 @@ To configure and test Microsoft Entra SSO with Skills Base, perform the followin
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **Skills Base** Enterprise Application Overview page, under **Getting Started** section select **Get started** under **2. Set up single sign on**.
-
-2. On the **Select a single sign-on method** page, select **SAML**.
-
-1. On the **Set up Single Sign-On with SAML** page, select the **Upload metadata file** button at the top of the page.
-
-4. Select the **Select a file** icon and select the metadata file that you downloaded from Skills Base.
-
-5. Select **Add**
+2. Browse to **Entra ID** > **Enterprise apps** > **Skills Base** Enterprise Application Overview page, under **Getting Started** section select **Get started** under **2. Set up single sign on**.
+3. On the **Select a single sign-on method** page, select **SAML**.
+4. On the **Set up Single Sign-On with SAML** page, select the **Upload metadata file** button at the top of the page.
+5. Select the **Select a file** icon and select the metadata file that you downloaded from Skills Base.
+6. Select **Add**
 
    ![Screenshot of showing Upload SP metadata.](common/browse-upload-metadata.png)
 
-6. On the **Basic SAML Configuration** page, in the **Sign on URL** text box, enter your Skills Base shortcut link, which should be in the format:
+7. On the **Basic SAML Configuration** page, in the **Sign on URL** text box, enter your Skills Base shortcut link, which should be in the format:
     `https://app.skills-base.com/o/<customer-unique-key>`
 
 	> [!NOTE]
 	> You can get the Sign on URL from the Skills Base application. Please log in as an Administrator and to go to \[Administration > Settings > Instance details > Shortcut link\]. Copy the shortcut link and paste it into the **Sign on URL** textbox in Microsoft Entra ID.
 
-5. Select **Save**
+8. Select **Save**
+9. Close the **Basic SAML Configuration** dialog.
+10. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, next to **Federation Metadata XML**, select **Download** to download the Federation Metadata XML and save it on your computer.
 
-6. Close the **Basic SAML Configuration** dialog.
-
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, next to **Federation Metadata XML**, select **Download** to download the Federation Metadata XML and save it on your computer.
-
-	![Screenshot of showing The Certificate download link.](common/metadataxml.png)
+   ![Screenshot of showing The Certificate download link.](common/metadataxml.png)
 
 ## Configure Skills Base SSO
 
 1. Log in to Skills Base as an Administrator.
+2. From the left side of menu, select **Administration > Authentication**.
 
-1. From the left side of menu, select **Administration > Authentication**.
+   ![Screenshot of showing The Authentication menu.](./media/skillsbase-tutorial/admin.png)
 
-	![Screenshot of showing The Authentication menu.](./media/skillsbase-tutorial/admin.png)
+3. On the **Authentication** page in the **Identity Providers** section, select **Add identity provider**.
 
-1. On the **Authentication** page in the **Identity Providers** section, select **Add identity provider**.
+   ![Screenshot shows the "Add identity provider" button.](./media/skillsbase-tutorial/configuration.png)
 
-	![Screenshot shows the "Add identity provider" button.](./media/skillsbase-tutorial/configuration.png)
+4. Select **Add** to use the default settings.
 
-1. Select **Add** to use the default settings.
+   ![Screenshot shows the Authentication page where you can enter the values described.](./media/skillsbase-tutorial/save-configuration.png)
 
-	![Screenshot shows the Authentication page where you can enter the values described.](./media/skillsbase-tutorial/save-configuration.png)
+5. In the **Application Details** panel, next to **SAML SP Metadata**, select **Download XML File** and save the resulting file on your computer.
 
-1. In the **Application Details** panel, next to **SAML SP Metadata**, select **Download XML File** and save the resulting file on your computer.
+   ![Screenshot shows the Application Details panel where you can download the SP Metadata file.](./media/skillsbase-tutorial/download-sp-metadata.png)
 
-	![Screenshot shows the Application Details panel where you can download the SP Metadata file.](./media/skillsbase-tutorial/download-sp-metadata.png)
-
-1. In the **Identity Providers** section, select the **edit** button (denoted by a pencil icon) for the Identity Provider record you added.
+6. In the **Identity Providers** section, select the **edit** button (denoted by a pencil icon) for the Identity Provider record you added.
 
    ![Screenshot of showing Edit Identity Providers button.](./media/skillsbase-tutorial/edit-identity-provider.png)
 
-1. In the **Edit identity provider** panel, for **SAML IdP Metadata** select **Upload an XML file**
-
-1. Select **Browse** to choose a file. Select the Federation Metadata XML file that you downloaded from Microsoft Entra ID and select **Save**.
+7. In the **Edit identity provider** panel, for **SAML IdP Metadata** select **Upload an XML file**
+8. Select **Browse** to choose a file. Select the Federation Metadata XML file that you downloaded from Microsoft Entra ID and select **Save**.
 
    ![Screenshot of showing Upload certificate type.](./media/skillsbase-tutorial/browse-and-save.png)
    
-1. In the **Authentication** panel, for **Single Sign-On** select the Identity Provider you added.
+9. In the **Authentication** panel, for **Single Sign-On** select the Identity Provider you added.
 
    ![Screenshot for Authentication panel for S S O.](./media/skillsbase-tutorial/select-identity-provider.png)
 
-1. Make sure the option to bypass the Skills Base login screen is **deselected** for now.  You can enable this option later, once the integration is proved to be working.
-
-1. If you would like to enable **Just In Time** user provisioning, enable the **Automatic user account provisioning** option.
-
-1. Select **Save changes**.
+10. Make sure the option to bypass the Skills Base login screen is **deselected** for now.  You can enable this option later, once the integration is proved to be working.
+11. If you would like to enable **Just In Time** user provisioning, enable the **Automatic user account provisioning** option.
+12. Select **Save changes**.
 
    ![Screenshot for Just in Time provisioning.](./media/skillsbase-tutorial/identity-provider-enabled.png)
 
@@ -161,9 +153,7 @@ Skills Base supports just-in-time user provisioning, which is enabled by default
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
 * Select **Test this application**, this option redirects to Skills Base Sign-on URL where you can initiate the login flow. 
-
 * Go to Skills Base Sign-on URL directly and initiate the login flow from there.
-
 * You can use Microsoft My Apps. When you select the Skills Base tile in the My Apps, this option redirects to Skills Base Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Renewing Token signing certificate
