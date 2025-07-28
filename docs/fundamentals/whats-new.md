@@ -121,7 +121,7 @@ The Conditional access What If API can be used to programmatically test the impa
 
 ### General Availability - Enterprise App SSO via pre-integrated gallery app or customer SAML apps
 
-**Type:** New feature  
+**Type:** Changed feature  
 **Service category:** B2C - Consumer Identity Management  
 **Product capability:** SSO  
 
