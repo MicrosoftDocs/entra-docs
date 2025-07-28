@@ -74,7 +74,7 @@ The goal for group analysis is to review and confirm that groups are:
 The first step is to identify and categorize the groups in your domains
 that need triage. For large organizations with many
 thousands of groups, you need to choose an order to evaluate the
-groups. This can include factors like:
+groups. The order can be based on factors like:
 
 - Group type (built-in group vs group created in the Active Directory domain)
 - Grooup organizational unit (OU)
@@ -83,10 +83,10 @@ groups. This can include factors like:
 
 Select a reasonable size batch of untriaged groups for analysis. Based upon the type of each group, see the next sections for steps to analyze it for potential cleanup:
 
-- [Analysis for a DL or MESG](#analysis-for-a-dl-or-mesg)
+- [Analysis for a Distribution List or Mail-ennabled security group](#analysis-for-a-distribution-list-or-mail-ennabled-security-group)
 - [Analysis for a security group](#analysis-for-a-security-group)
 
-### Analysis for a DL or MESG
+### Analysis for a Distribution List or Mail-ennabled security group
 
 1. Check if an owner is set for the group in Exchange or Exchange
    Online. Contact the owner of the group to determine if the
@@ -167,50 +167,43 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
    then contact them to determine the purpose of the group, and whether
    it can be converted to a cloud security group.
 
-1. Otherwise, if the group has not been recently modified, check if
-   there is an ACL on the group or its containing OU to delegate
+1. Otherwise, if the group isn't recently modified, check if
+   there's an access control list on the group or its OU that delegates
    ownership of the group. If there is, contact the owners to determine
    the purpose of the group.
 
-1. Otherwise, check if there's a group that has this group as a
+1. Otherwise, check if another group has this group as a
    member, and that group has an identified owner. If so, contact the
    owners of that group.
 
-1. If the group is not a dependent of another group, has not been
-   recently changed and has no clear owners, and the group has as
-   members only users and groups that were synched to Microsoft Entra, then
-   continue at the section below to perform a scream test for cloud
-   usage.
+1. If the group isn't a dependent of another group, isn't
+   recently changed, has no clear owner, and the members are only users and groups that are synced to Microsoft Entra, then
+   continue to the next section to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
 
 1. Otherwise, if the group has user or group members that aren't Microsoft Entra accounts,
-   and is not a built-in group, then proceed with the scream test for
-   Kerberos apps section.
+   and isn't a built-in group, then proceed with the [scream test for Kerberos apps](#scream-test-for-kerberos-apps).
 
 ## Scream test for cloud usage
 
 This test determines if there are users in groups that are used for cloud resources, including privileged roles in an Azure subscription.
 
-1. First, check in Entra if there is a reference to the group
+1. First, check in Microsoft Entra if there's a reference to the group:
 
-   1. in another cloud group
+   - From an app role
+   - From a Conditional Access policy
+   - In another cloud group
+   - In Privileged Identity Management
+   - In lifecycle workflows, access reviews or entitlement management
 
-   1. from an app role
-
-   1. from Conditional Access policy
-
-   1. in PIM
-
-   1. in Lifecycle Workflows, Access Reviews or Entitlement Management
-
-   If so, then contact the administrators of that resource / service to
+   If so, then contact the administrators of that resource or service to
    determine how the group is used and if it can be replaced with a cloud
    security group.
 
-1. Check if there is a reference to the group from an Azure role in an
+1. Check if there'ss a reference to the group from an Azure role in an
    Azure subscription, resource group or resource. If so, contact the
    owners of that Azure subscription.
 
-1. Check with Exchange, SharePoint, Intune, Azure and other
+1. Check with Exchange, SharePoint, Intune, Azure, and other
    administrators to determine if the group is needed for the
    administration of their services.
 
@@ -219,23 +212,21 @@ This test determines if there are users in groups that are used for cloud resour
 
 1. After you determine there's no evident use of the group in
    Microsoft Online Services, there may be another service that was
-   not evident. To detect if there's another service, proceed to perform a cloud
-   scream test.
+   not evident. To detect if there's another service, proceed to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
 
 1. Change your Cloud sync or Connect sync configuration to exclude the
-   group from being synched.
+   group from being synced.
 
 1. Wait for synchronization and confirm the group is no longer visible
    in Microsoft Entra.
 
 1. Wait *N* days.
 
-1. If there are complaints, remove the group from exclusion, and
-   identify the team relying upon the group, and determine a plan to
-   migrate the relying team to use a cloud managed group in future.
+1. If there are complaints, remove the group from exclusion. Identify the team that relies upon the group, and determine a plan to
+   migrate the team to use a cloud managed group in future.
 
 1. If there are no complaints about the group no longer being available
-   in Microsoft Entra, then proceed to the scream test for Kerberos apps.
+   in Microsoft Entra, then proceed to the [scream test for Kerberos apps](#scream-test-for-kerberos-apps).
 
 ## Scream test for Kerberos apps
 
