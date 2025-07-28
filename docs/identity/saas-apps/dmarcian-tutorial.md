@@ -155,7 +155,7 @@ To enable Microsoft Entra users to sign in to dmarcian, they must be provisioned
 **To provision a user account, perform the following steps:**
 
 1. Sign in to dmarcian as a Security Administrator.
-2. Click on the ⚙️ **Cog icon** in the top-right corner and select **Preferences**.
+2. Click on the ⚙️ **Cog icon** in the top-right corner and select **Manage Users**.
 
    <img src="./media/dmarcian-tutorial/manage-users.png" alt="The Manage Users Menu" width="200" />
 
