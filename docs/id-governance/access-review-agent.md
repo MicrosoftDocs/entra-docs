@@ -124,7 +124,7 @@ The agent considers the following about a user when making review recommendation
 ### Setting up the Access Review Agent
 
 
-1. With an account that has at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) at least with both the roles of [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. With an account that has at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least both the roles of [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 1. From the new home page, select **Go to agents** from the agent notification card.
    - You can also select **Agents** from the left navigation menu.
    :::image type="content" source="media/access-review-agent/start-access-review-agent.png" alt-text="Screenshot of starting the Access Review Agent.":::
