@@ -55,9 +55,9 @@ For this scenario, only the following groups are supported:
 
 ## Considerations when provisioning groups back to AD
 
-When you convert the SOA, if you are going to provision groups back to Active Directory (AD), it's important to provision those groups back to the same organizational unit (OU) in AD where they were originally located. This ensures that Microsoft Entra Cloud Sync recognizes the transferred group as the same one already in AD.
+When you convert the SOA, if you're going to provision groups back to the Active Directory domain, it's important to provision those groups back to the same organizational unit (OU) in AD where they were originally located. This practice ensures that Microsoft Entra Cloud Sync recognizes the transferred group as the same one already in AD.
 
-This recognition is possible because both groups share the same security identifier (SID). If the group is provisioned to a different OU, it will maintain the same SID, and Microsoft Entra Cloud Sync will update the existing group, but you may experience Access Control List (ACL) issues. The reason for this, is because AD permissions don't always travel cleanly across containers and only explicit permissions will follow the group. Inherited permissions from the old OU or Group Policy Object permissions applied to the OU will not.
+This recognition is possible because both groups share the same security identifier (SID). If you provision the group to a different OU, it maintains the same SID, and Microsoft Entra Cloud Sync updates the existing group, but you may experience problems with access control lists. Active Directory permissions don't always transfer cleanly across containers and only explicit permissions are provisioned with the group. Inherited permissions from the original OU or Group Policy Object permissions applied to the OU don't get provisioned with the group.
 
 Before you convert the SOA, consider the following recommended steps:
 
@@ -66,7 +66,7 @@ Before you convert the SOA, consider the following recommended steps:
 1. When provisioning the groups to AD, set the attribute mapping as explained in [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups. 
 
-For more information on configuring the target location for group that are provisioned to Active Directory, see [Scope filter target container](/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
+For more information about how to configure the target location for groups that are provisioned to Active Directory, see [Scope filter target container](/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
 
 ## Govern on-prem AD based apps using Group SOA
 
@@ -92,17 +92,17 @@ Use the following steps for applications to use the Group Source of Authority op
 
 For more information, see Embracing cloud-first posture: Transitioning AD Group Source of Authority to the cloud.
 
-## Govern on-prem AD with new cloud security groups provisioned to AD
+## Govern on-premises AD with new cloud security groups provisioned to an Active Directory domain
 
-In this scenario option, you update the application to check for the SID, name, or distinguished name of new groups created by cloud sync group provisioning. This scenario is applicable to:
+In this scenario, you update the application to check for the SID, name, or distinguished name of new groups created by Cloud Sync group provisioning. This scenario is applicable to:
 
-- Deployments for new applications being connected to AD DS for the first time.
+- Deployments for new applications being connected to an Active Directory domain for the first time.
 - New cohorts of users accessing the application.
-- For application modernization, to reduce the dependency on existing AD DS groups.
+- For application modernization, to reduce the dependency on existing Active Directory groups.
 
-Applications which currently check for membership of the `Domain Admins` group need to be updated to also check for a newly created AD group.
+Applications that currently check for membership of the `Domain Admins` group need to be updated to also check for a newly created AD group.
 
-Use the following steps for applications to use new groups.
+Follow the steps in the next sections to configure applications to use new groups.
 
 ### Create an application and group
 
