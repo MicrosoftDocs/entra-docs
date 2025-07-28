@@ -106,7 +106,7 @@ With the Azure Logic App given the access package assignment manager role for th
 1. On the Add an Action pane, select **HTTP**.
 
 1. On the **HTTP** pane under Parameters, enter the following parameters:
-    - URI: `https://graph.microsoft.com/v1.0@{triggerBody()?['CallbackUriPath']}`
+    - URI: `https://graph.microsoft.com/beta@{triggerBody()?['CallbackUriPath']}`
     - Method: POST
     - Authentication Type: Managed identity
     - Managed Identity: System-assigned managed identity
@@ -175,7 +175,7 @@ The following example of an action that can be placed in the HTTP body is a logi
     "customExtensionStageInstanceId": "@{triggerBody()?['CustomExtensionStageInstanceId']}",
     "stage": "assignmentRequestDeterminingApprovalRequirements"
   },
-  "source": "Entra",
+  "source": "LogicApps",
   "type": "microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestCreated"
 }
 ```
@@ -183,7 +183,7 @@ The following example of an action that can be placed in the HTTP body is a logi
 Although the example uses a user ID, the primaryApprovers and escalationApprovers section can contain any valid [subjectSet](/graph/api/resources/subjectset). The approval section of the code must follow the parameters as shown here: [accessPackageApprovalStage](/graph/api/resources/accesspackageapprovalstage).
 
 > [!NOTE]
-> While the Logic App is being called against the Beta version of the API, the parameters are using the v1.0 endpoint.
+> While the Logic App is being called against the Beta version of the API, the body's [accessPackageApprovalStage](/graph/api/resources/accesspackageapprovalstage) is following v1.0 convention.
 
 ## Related content
 
