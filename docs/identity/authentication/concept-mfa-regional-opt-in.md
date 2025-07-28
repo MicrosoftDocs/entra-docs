@@ -26,8 +26,8 @@ In addition, some region codes require opt-in. Admins can submit a support reque
 Together, these safeguards help organizations defend against fraud while preserving a smooth authentication experience for legitimate users.
 
 > [!NOTE]
-> B2C tenants can follow the guidelines in [B2C service limits](/azure/active-directory-b2c/service-limits).  
-> Microsoft Entra External ID tenants can follow the guidelines in [How to region code opt-in](/entra/external-id/customers/how-to-region-code-opt-in).
+> B2C tenants should follow the guidelines in [B2C service limits](/azure/active-directory-b2c/service-limits).  
+> Microsoft Entra External ID tenants should follow the guidelines in [How to region code opt-in](/entra/external-id/customers/how-to-region-code-opt-in).
 
 ## Behind-the-Scenes Protections
 
