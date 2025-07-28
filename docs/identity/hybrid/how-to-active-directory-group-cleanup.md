@@ -4,7 +4,7 @@ description: Step-by-step guide to identifying, triaging, and removing unused se
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/23/2025
+ms.date: 07/28/2025
 ms.author: justinha
 ms.reviewer: justinha
 ---
@@ -13,19 +13,17 @@ ms.reviewer: justinha
 
 One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory domains. An organization may create security groups for projects, but over time, they are no longer needed. These groups can linger unmaintained in the domain. 
 
-There's no way to confirm if a particular group is needed to access, for example, an app, or a file on a detached removable drive. So we need another way to identify and clean up these groups that are no longer needed.
+There's no way to confirm if a particular group is needed to access an app or a file. So we need another way to identify and clean up these groups that are no longer needed.
 
-This article outlines how to use a *scream test* methodology to clean up groups from an Active Directory domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from sync with Microsoft Entra. They can be deleted from Microsoft Entra, and they won't appear in the Microsoft Entra admin center or applications.
+This article outlines how to use a *scream test* methodology to clean up groups from an Active Directory domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from sync with Microsoft Entra. 
 
-In this approach, the administrator determines for each group, whether
-they are to be maintained and managed with an AD-based management
-system, such as Active Directory Users and Computers or Exchange, managed with a cloud-based management system such as Microsoft Entra or Exchange Online, or may no longer be needed. If the group may no longer be
-needed, it proceeds through multiple ‘scream test’ processes to determine that it is no longer in active use,before it is deleted from Active Directory.
+First you determine whether each group needs to be managed with an AD-based management
+tool like **Active Directory Users and Computers**, managed in the cloud with Microsoft Entra admin center or Exchange Online, or may no longer needed. If the group may no longer be
+needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the Active Directory domain.
 
-There are multiple paths to determining whether a group is no longer
-needed. In some cases, the scream test may indicate that a group is
-still required, and should continue to be maintained in AD, or should be
-managed in a cloud service such as Microsoft Entra.
+There are multiple ways to determine whether a group is no longer
+needed. In some cases, the scream test indicates that a group is
+still required, and whether to manage it in Microsoft Entra ID or the Active Directory domain.
 
 :::image type="content" source="media/active-directory-group-cleanup/paths.png" alt-text="Screenshot of a flowchart diagram showing the process for cleaning up Active Directory groups.":::
 
@@ -33,12 +31,12 @@ managed in a cloud service such as Microsoft Entra.
 
 - This article focuses on Security and Distribution List (DL) groups in
   an Active Directory topology, with a single forest, single domain.
-  Multi-forest, non-AD environments, and local groups on domain-joined
+  Multiforest, non-AD environments, and local groups on domain-joined
   computers, are outside the scope of this version of the article.
 
 - This article focuses on groups whose members are users and other
-  groups, which are in scope for being synched to Microsoft Entra.
-  Groups which contain computers, contacts or other objects as members
+  groups that are in scope for sync to Microsoft Entra.
+  Groups that contain computers, contacts, or other objects as members
   are outside the scope of this article.
 
 - This article focuses on groups created in Active Directory by using Active Directory Users and Computers, Microsoft Identity Manager (MIM), or other identity management tools. This article doesn't cover Built-in groups, or groups that get created by other products.
@@ -74,15 +72,14 @@ The goal for group analysis is to review and confirm that groups are:
 - Not needed by any applications that are integrated with AD or Microsoft Entra.
 
 The first step is to identify and categorize the groups in your domains
-which have not yet been triaged. For large organizations with many
-thousands of groups, you will need to select which order to evaluate the
+that need triage. For large organizations with many
+thousands of groups, you need to choose an order to evaluate the
 groups. This can include factors like:
 
-- Group type
-- Built-in group vs group created in domain
-- OU
-- Group size – number of memberships
-- Whether the group is a member of another group in AD
+- Group type (built-in group vs group created in the Active Directory domain)
+- Grooup organizational unit (OU)
+- Group size and membership
+- Group nesting (the group is a member of another group in the Active Directory domain)
 
 Select a reasonable size batch of untriaged groups for analysis. Based upon the type of each group, see the next sections for steps to analyze it for potential cleanup:
 
@@ -175,7 +172,7 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
    ownership of the group. If there is, contact the owners to determine
    the purpose of the group.
 
-1. Otherwise, check if there is a group which has this group as a
+1. Otherwise, check if there's a group that has this group as a
    member, and that group has an identified owner. If so, contact the
    owners of that group.
 
@@ -218,14 +215,14 @@ This test determines if there are users in groups that are used for cloud resour
    administration of their services.
 
 1. Check with the owners of data in Microsoft Online Services to
-   determine if they are using the group.
+   determine if they use the group.
 
-1. Now that you have determined there is no evident use of the group in
-   Microsoft Online Services, there may be another service which was
-   not evident. In order to detect this, proceed to performing a cloud
+1. After you determine there's no evident use of the group in
+   Microsoft Online Services, there may be another service that was
+   not evident. To detect if there's another service, proceed to perform a cloud
    scream test.
 
-1. Change your cloud sync/connect sync configuration to exclude the
+1. Change your Cloud sync or Connect sync configuration to exclude the
    group from being synched.
 
 1. Wait for synchronization and confirm the group is no longer visible
@@ -238,50 +235,47 @@ This test determines if there are users in groups that are used for cloud resour
    migrate the relying team to use a cloud managed group in future.
 
 1. If there are no complaints about the group no longer being available
-   in Microsoft Entra, then proceed to scream test for Kerberos apps.
+   in Microsoft Entra, then proceed to the scream test for Kerberos apps.
 
 ## Scream test for Kerberos apps
 
-This test determines if there are apps which are relying upon a user
-being a member of a security group, where AD provides a Kerberos ticket
-containing the group id of this group or another containing it, to the
-app.
+This test determines if there are apps that rely upon a user
+being a member of a security group, where AD DS provides to the app a Kerberos ticket
+that contains the group ID of this group or another group that contains it.
 
 To perform a Kerberos scream test, follow these steps:
 
 1. Move the group to the OU for groups in Kerberos scream test.
 
 1. Convert the group to a DL, so that the group is no longer included in
-   Kerberos tokens. Alternatively, remove all the membership, for
-   instance by moving the membership to some adjoining new group
+   Kerberos tokens. Alternatively, remove the members. For example, move the members to another new group
    temporarily.
 
 1. Wait *N* days.
 
-1. If there are complaints, convert the group type back to SG, re-add the
-   members, and identify the team relying upon the group. Work with
+1. If there are complaints, convert the group type back to a security group, re-add the
+   members, and identify the team that relies upon the group. Work with
    that team to plan to move to cloud managed groups.
 
 1. If there are no complaints, proceed to the scream test for LDAP apps.
 
 ## Scream test for LDAP apps
 
-This test determines if there are LDAP apps which are relying upon a
+This test determines if there are LDAP apps that rely upon a
 user being a member of a security group.
 
 1. Move group to the OU for groups in LDAP scream test.
 
-1. Empty the membership of the group. For instance, by moving the
-   membership to some adjoining new group temporarily.
+1. REmove members from the group. For example, move the members to another new group temporarily.
 
 1. Wait *N* days.
 
 1. If there are complaints, then restore the membership of the group,
-   move it back to its original OU. Identify the team relying upon the
+   move it back to its original OU. Identify the team that relies upon the
    group.
 
-1. If there are no complaints, then delete the group. The group will go
-   to the AD recycle bin.
+1. If there are no complaints, then delete the group. The group goes
+   to the Active Directory Recycle Bin.
 
 ## Related content
 
