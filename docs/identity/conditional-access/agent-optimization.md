@@ -5,7 +5,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
-ms.date: 07/24/2025
+ms.date: 07/28/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -139,6 +139,12 @@ You can also use the object ID for the users or groups you want to include in th
 
 - "Exclude users in the "Break Glass" group from any policy that requires multifactor authentication."
 - "Exclude user with Object ID dddddddd-3333-4444-5555-eeeeeeeeeeee from all policies"
+
+For more information about how to use custom instructions, check out the following video. 
+
+> [!VIDEO 5879a0f7-3644-4e34-a8ce-b186b8e5f128]
+
+Please note that some of the content in the video is subject to change as the agent is updated frequently.
 
 ## Remove agent
 
