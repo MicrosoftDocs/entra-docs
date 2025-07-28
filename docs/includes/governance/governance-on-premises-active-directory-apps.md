@@ -70,7 +70,7 @@ For more information about how to configure the target location for groups that 
 
 ## Govern on-prem AD based apps using Group SOA
 
-In this scenario, when a group in the Active Directory domain is used by an application, you can use the new capability **Group Source of Authority (SOA) switch** to change the Source of Authority of the group to Microsoft Entra. The, you can configure to provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD using Group Provision to AD. In this model, you don’t need to change the app or create new groups.
+In this scenario, when a group in the Active Directory domain is used by an application, you can use the new capability **Group Source of Authority (SOA) switch** to change the Source of Authority of the group to Microsoft Entra. Then you can configure to provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD using Group Provision to AD. In this model, you don’t need to change the app or create new groups.
 
 :::image type="content" source="media/governance-on-premises-active-directory-apps/source-of-authority-switch.png" alt-text="Screenshot of a conceptual diagram of the switch to Group Source of Authority.":::
 
@@ -134,7 +134,7 @@ If the app uses LDAP and follows nested group membership, the app will see the M
 ### Determine eligibility of existing group
 
 1. Launch Active Directory Users and Computers and record the distinguished name, type, and scope of the existing AD group used by the application.
-1. If the existing group is `Domain Admins`, `Domain Guests`, `Domain Users`, `Enterprise Admins`, `Enterprise Key Admins`, `Group Policy Creation Owners`, `Key Admins`, `Protected Users`, or `Schema Admins`, then you'll need to change the application to use a new group as described above, as these groups can't be used by cloud sync.
+1. If the existing group is `Domain Admins`, `Domain Guests`, `Domain Users`, `Enterprise Admins`, `Enterprise Key Admins`, `Group Policy Creation Owners`, `Key Admins`, `Protected Users`, or `Schema Admins`, then you need to change the application to use a new group as described above, as these groups can't be used by cloud sync.
 1. If the group has Global scope, change the group to have Universal scope. A global group can't have universal groups as members.
 
 ### Create application and group
@@ -153,15 +153,15 @@ If the app uses LDAP and follows nested group membership, the app will see the M
 1. Using Active Directory Users and Computers, remove the existing members, apart from the new AD group, from the existing AD group.
 1. In your AD domain monitoring, allow only the [gMSA account](~/identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts) that runs the provisioning agent [authorization to change the membership](/windows/security/threat-protection/auditing/audit-security-group-management) in the new AD group.
 
-You'll then be able to govern access to the AD application through this new access package.
+Then you can govern access to the AD application by using the new access package.
 
 ## Troubleshooting
 
-A user who is a member of the new AD group and is on a Windows PC already logged into an AD domain might have an existing ticket issued by an AD domain controller that doesn't include the new AD group membership. This is because the ticket might have been issued prior to the cloud sync group provisioning adding them to the new AD group. The user won't be able to present the ticket for access to the application, and so must wait for the ticket to expire and for a new ticket to be issued, or must purge their tickets, log out and then log back into the domain. See the [klist](/windows-server/administration/windows-commands/klist) command for more details.
+A user in the new AD group who signs in to a domain-joined device might have a ticket from a domain controller that doesn't include the new AD group membership. The ticket may be issued before Cloud Sync provisioned the user to the new AD group. The user can't use the ticket for access to the application. They must wait for the ticket to expire, and for a new ticket to be issued. Or they must purge their tickets, sign out, and then sign back into the domain. For more information, see [klist](/windows-server/administration/windows-commands/klist).
 
 <a name='existing-azure-ad-connect-group-writeback-v2-customers'></a>
 
 ## Existing Microsoft Entra Connect group writeback v2 customers
 
-If you're using Microsoft Entra Connect group writeback v2, you'll need to move to cloud sync provisioning to AD before you can take advantage of cloud sync group provisioning. See [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md)
+If you're using Microsoft Entra Connect group writeback v2, you need to move to Cloud Sync provisioning to AD before you can take advantage of Cloud Sync group provisioning. For more information, see [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md).
 
