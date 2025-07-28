@@ -27,7 +27,7 @@ The following prerequisites are required to implement this scenario.
   >
   > Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -TargetDomainCredential $credential
   > ```
-  > Make you sure you allow Read, Write, Create, and Delete all properties for all descendent Groups and User objects.
+  > Make you sure you allow Read, Write, Create, and Delete all properties for all descendent groups and users.
   >
   > These permissions aren't applied to AdminSDHolder objects by default by the [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain).
 
@@ -45,23 +45,23 @@ For more information, see [cloud sync supported groups and scale limits](/entra/
 
 For this scenario, only the following groups are supported:
 
-- Only cloud-created or SOA converted [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported.
+- Only cloud-created or Source of Authority (SOA) converted security groups are supported.
 - Assigned or dynamic membership groups.
 - Contain on-premises synchronized users or cloud-created security groups.
 - On-premises synchronized users that are members of the cloud-created security group can be from the same domain or other domains from the same forest
-- The forest must support universal groups because the cloud-created security group is written back to AD with [universal group scope ](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope)
+- The forest must support Universal groups because the cloud-created security group is written back to AD with [Universal group scope ](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope)
 - No more than 50,000 members
 - Each direct child nested group counts as one member in the referencing group
 
 ## Considerations when provisioning groups back to AD
 
-When you make the SOA switch, if you are going to provision groups back to Active Directory (AD), it's important to provision those groups back to the same Organizational Unit (OU) in AD where they were originally located. This ensures that Microsoft Entra Cloud Sync recognizes the transferred group as the same one already in AD.
+When you convert the SOA, if you are going to provision groups back to Active Directory (AD), it's important to provision those groups back to the same organizational unit (OU) in AD where they were originally located. This ensures that Microsoft Entra Cloud Sync recognizes the transferred group as the same one already in AD.
 
 This recognition is possible because both groups share the same security identifier (SID). If the group is provisioned to a different OU, it will maintain the same SID, and Microsoft Entra Cloud Sync will update the existing group, but you may experience Access Control List (ACL) issues. The reason for this, is because AD permissions don't always travel cleanly across containers and only explicit permissions will follow the group. Inherited permissions from the old OU or Group Policy Object permissions applied to the OU will not.
 
-Before making the SOA switch, consider the following recommended steps:
+Before you convert the SOA, consider the following recommended steps:
 
-1. Move all the groups you plan to change the SOA for to a specific OU or OUs if possible. If this isn't possible, set the OU path for each group to the original OU path before you switch SOA of the groups. For more information about how to set the original OU path, see [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
+1. Move the groups you plan to convert the SOA for to specific organizational units if possible. If this isn't possible, set the OU path for each group to the original OU path before you convert SOA of the groups. For more information about how to set the original OU path, see [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Make the SOA change.
 1. When provisioning the groups to AD, set the attribute mapping as explained in [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups. 
@@ -70,7 +70,7 @@ For more information on configuring the target location for group that are provi
 
 ## Govern on-prem AD based apps using Group SOA
 
-In this scenario option, when you have a group already present in AD used by the application, you can use the new capability **Group Source of Authority (SOA) switch** to change the Source of Authority of the group to Microsoft Entra. The, you can configure to provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD using Group Provision to AD. In this model, you don’t need to change the app or create new groups.
+In this scenario, when a group in the Active Directory domain is used by an application, you can use the new capability **Group Source of Authority (SOA) switch** to change the Source of Authority of the group to Microsoft Entra. The, you can configure to provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD using Group Provision to AD. In this model, you don’t need to change the app or create new groups.
 
 :::image type="content" source="media/governance-on-premises-active-directory-apps/source-of-authority-switch.png" alt-text="Screenshot of a conceptual diagram of the switch to Group Source of Authority.":::
 
@@ -78,7 +78,7 @@ Use the following steps for applications to use the Group Source of Authority op
 
 ### Create an application and transfer source of authority
 
-1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID representing the AD-based application, and configure the application to require user assignment.
+1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID that represents the AD-based application, and configure the application to require user assignment.
 1. Ensure that the AD group you plan to convert is already synchronized to Microsoft Entra, and that the membership of the AD group is only users and optionally other groups which are themselves also synchronized to Microsoft Entra. If the group or any members of the group are not represented in Microsoft Entra, you will not be able to transfer the source of authority of the group.
 1. Transfer the source of authority to your existing synchronized cloud group.
 1. Once the source of authority has been transferred, use [Group Provisioning to AD](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory) to provision subsequent changes to this group back to AD. Once group provisioning is enabled, Microsoft Entra Cloud Sync will recognize that a transferred group is the same group as the one already in AD, because both groups have the same security identifier (SID). Provisioning the transferred cloud group to AD will then update the existing AD group instead of creating a new one.
