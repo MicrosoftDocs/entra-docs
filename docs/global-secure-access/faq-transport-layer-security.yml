@@ -30,7 +30,7 @@ sections:
         answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection.   
 
       - question: Why do I receive the error “SSL certificate problem: unable to get local issuer certificate” when using Git?
-       answer:| 
+        answer: | 
            This error occurs because certain developer tools (such as Git) do not use the operating system’s certificate store by default; instead, they maintain their own certificate store. To resolve this issue, you need to add your TLS inspection root certificate to Git’s trusted CA store. One way to do this is to append the certificate to Git’s CA bundle. The following PowerShell script demonstrates how to do this on a Windows system:
          ```powershell
             # Define the path to your custom root CA certificate
