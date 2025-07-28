@@ -162,7 +162,7 @@
                   href: cloud-sync/custom-attribute-mapping.md
                 - name: On-demand provisioning - AD to Microsoft Entra ID
                   href: cloud-sync/how-to-on-demand-provision.md
-                - name: Use Single Sign-On
+                - name: Use single sign-on
                   href: cloud-sync/how-to-sso.md
                 - name: Exchange hybrid
                   href: cloud-sync/exchange-hybrid.md
@@ -372,7 +372,7 @@
               href: connect/plan-connect-topologies.md
             - name: Factors influencing the performance of Microsoft Entra Connect
               href: connect/plan-connect-performance-factors.md
-            - name: How will users sign in
+            - name: User sign-in
               href: connect/plan-connect-user-signin.md
             - name: Microsoft Entra UserPrincipalName population
               href: connect/plan-connect-userprincipalname.md
@@ -396,7 +396,7 @@
               href: connect/how-to-connect-group-writeback-enable.md
             - name: Device options
               href: connect/how-to-connect-device-options.md
-            - name: Additional features in Microsoft Entra Connect
+            - name: More features in Microsoft Entra Connect
               href: connect/how-to-connect-preview.md
             - name: Prevent accidental deletes
               href: connect/how-to-connect-sync-feature-prevent-accidental-deletes.md

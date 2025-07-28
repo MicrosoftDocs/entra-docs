@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 07/25/2025
+ms.date: 07/28/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ---
@@ -14,33 +14,32 @@ ms.author: jomondi
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-This article outlines the scenarios around governance of on-premises AD
-based applications using Entra ID Governance capabilities.
+This article outlines the scenarios to use Microsoft Entra ID Governance for on-premises applications that are integrated with Active Directory Domain Services (AD DS).
 
 **Scenario(s) covered:** Manage on-premises applications with Active
 Directory groups that are provisioned from and managed in the cloud.
 Microsoft Entra Cloud Sync allows you to fully govern application
-assignments in AD while taking advantage of Microsoft Entra ID
+assignments in AD DS while taking advantage of Microsoft Entra ID
 Governance features to control and remediate any access related
 requests.
 
-For more information about how to govern applications that aren't AD-integrated, see [Govern access for applications in your environment](/entra/id-governance/identity-governance-applications-prepare).
+For more information about how to govern applications that aren't integrated with AD DS, see [Govern access for applications in your environment](/entra/id-governance/identity-governance-applications-prepare).
 
 ## Supported scenarios
 
-If you want to control whether a user is able to connect to an Active
+If you want to control whether a user can connect to an Active
 Directory application that uses Windows authentication, you can use the
 application proxy and a Microsoft Entra security group. If an
-application checks a user's AD group memberships by using Kerberos or Lightweight Directory Access Protocol (LDAP),
-then you can use cloud sync group provisioning to ensure an AD user has
-those group memberships before the user accesses the applications.
+application checks a user's Active Directory group memberships by using Kerberos or Lightweight Directory Access Protocol (LDAP),
+then you can use Cloud Sync group provisioning to ensure the user has
+those group memberships before they access the application.
 
 The following sections discuss three options that are supported with
-cloud sync group provisioning. The scenario options are meant to ensure
+Cloud Sync group provisioning. The scenario options are meant to ensure
 users assigned to the application have group memberships when they
 authenticate to the application.
 
-- Use Group Source of Authority to convert the source of authority of groups in Active Directory that are synchronized to Microsoft Entra ID by using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync.
+- Convert the Source of Authority (SOA) of groups in Active Directory that are synchronized to Microsoft Entra ID by using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync.
 
 - Create a new group and update the application, if it already exists,
   to check for the new group
@@ -50,13 +49,11 @@ authenticate to the application.
 
 Before you begin, ensure that you're a domain administrator in the
 domain where the application is installed. Ensure you can sign into a
-domain controller, or have the [Remote Server Administration tools](/troubleshoot/windows-server/system-management-components/remote-server-administration-tools) for
-Active Directory Domain Services (AD DS) administration installed on
-your Windows PC.
+domain controller, or have the [Remote Server Administration tools](/troubleshoot/windows-server/system-management-components/remote-server-administration-tools) for AD DS administration installed on your Windows PC.
 
 Microsoft Entra ID has an application proxy service that enables users
 to access on-premises applications by signing in with their Microsoft
-Entra account. For information on configuring app proxy, see [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](/entra/identity/app-proxy/application-proxy-add-on-premises-application).
+Entra account. For more information about how to configure app proxy, see [Add an on-premises application for remote access through application proxy in Microsoft Entra ID](/entra/identity/app-proxy/application-proxy-add-on-premises-application).
 
 
 
