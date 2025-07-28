@@ -20,7 +20,7 @@ The following prerequisites are required to implement this scenario.
 
 
   > [!NOTE]
-  > The permissions to the service account are assigned during clean install only. If you're upgrading from a previous version, then you need to assign permissions manually by using PowerShell:
+  > The permissions to the service account are assigned only during a clean install. If upgrade from a previous version, assign permissions manually by using PowerShell:
   >
   > ```powershell
   > $credential = Get-Credential
@@ -55,13 +55,13 @@ For this scenario, only the following groups are supported:
 
 ## Considerations when provisioning groups back to AD
 
-When you convert the SOA, if you're going to provision groups back to the Active Directory domain, it's important to provision those groups back to the same organizational unit (OU) in AD where they were originally located. This practice ensures that Microsoft Entra Cloud Sync recognizes the transferred group as the same one already in AD.
+If you provision a group back to the Active Directory domain after you convert the group SOA, provision it back to its original organizational unit (OU). This practice ensures that Microsoft Entra Cloud Sync recognizes the converted group as the same one already in AD.
 
-This recognition is possible because both groups share the same security identifier (SID). If you provision the group to a different OU, it maintains the same SID, and Microsoft Entra Cloud Sync updates the existing group, but you may experience problems with access control lists. Active Directory permissions don't always transfer cleanly across containers and only explicit permissions are provisioned with the group. Inherited permissions from the original OU or Group Policy Object permissions applied to the OU don't get provisioned with the group.
+Cloud Sync recognizes the converted group because both groups share the same security identifier (SID). If you provision the group to a different OU, it maintains the same SID, and Microsoft Entra Cloud Sync updates the existing group, but you may experience problems with access control lists. Active Directory permissions don't always transfer cleanly across containers and only explicit permissions are provisioned with the group. Inherited permissions from the original OU or Group Policy Object permissions applied to the OU don't get provisioned with the group.
 
 Before you convert the SOA, consider the following recommended steps:
 
-1. Move the groups you plan to convert the SOA for to specific organizational units if possible. If this isn't possible, set the OU path for each group to the original OU path before you convert SOA of the groups. For more information about how to set the original OU path, see [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
+1. Move the groups you plan to convert the SOA for to specific organizational units if possible. If you can't move the groups, set the OU path for each group to the original OU path before you convert SOA of the groups. For more information about how to set the original OU path, see [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Make the SOA change.
 1. When provisioning the groups to AD, set the attribute mapping as explained in [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups. 
@@ -70,7 +70,7 @@ For more information about how to configure the target location for groups that 
 
 ## Govern on-prem AD based apps using Group SOA
 
-In this scenario, when a group in the Active Directory domain is used by an application, you can use the new capability **Group Source of Authority (SOA) switch** to change the Source of Authority of the group to Microsoft Entra. Then you can configure to provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD using Group Provision to AD. In this model, you don’t need to change the app or create new groups.
+In this scenario, when a group in the Active Directory domain is used by an application, you can convert the SOA of the group to Microsoft Entra. Then you can provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD using Group Provision to AD. In this model, you don’t need to change the app or create new groups.
 
 :::image type="content" source="media/governance-on-premises-active-directory-apps/source-of-authority-switch.png" alt-text="Screenshot of a conceptual diagram of the switch to Group Source of Authority.":::
 
@@ -163,5 +163,5 @@ A user in the new AD group who signs in to a domain-joined device might have a t
 
 ## Existing Microsoft Entra Connect group writeback v2 customers
 
-If you're using Microsoft Entra Connect group writeback v2, you need to move to Cloud Sync provisioning to AD before you can take advantage of Cloud Sync group provisioning. For more information, see [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md).
+If you use Microsoft Entra Connect group writeback v2, you need to move to Cloud Sync provisioning to AD before you can take advantage of Cloud Sync group provisioning. For more information, see [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](~/identity/hybrid/cloud-sync/migrate-group-writeback.md).
 
