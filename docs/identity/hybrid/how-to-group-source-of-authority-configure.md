@@ -17,15 +17,15 @@ This topic explains the prerequisites and steps to configure Group Source of Aut
 
 | Requirement | Description |
 |-------------|-------------|
-| **Roles** | Hybrid Administrator role is allowed to call the OnPremisesSyncBehavior Microsoft Graph API for Groups.<br>Cloud Application Administrator role is allowed to consent to the required permissions for apps to call the onPremisesSyncBehavior Microsoft Graph API for Groups. |
-| **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission to Graph Explorer or an existing app in your tenant](#grant-permission-to-apps) later in this topic. |
+| **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of groups.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
+| **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free or Basic license. |
 | **Connect Sync client** | Minimum version is [2.5.76.0](./connect/reference-connect-version-history.md) |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
 
 ## Setup
 
-You need to set up Connect Sync client and the Cloud Sync client Provisioning agent, and make sure you have required administrator roles. 
+You need to set up Connect Sync client and the Cloud Sync client Provisioning agent. 
 
 ### Connect Sync client
 
@@ -41,15 +41,6 @@ Download the Provisioning agent with build version [1.1.1370.0](/entra/identity/
 
 1. Learn how to [identify the agent's current version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
 
-### Prerequisites to call Microsoft Graph API
-
-- A Microsoft Entra ID tenant with on-premises sync enabled at the tenant level.
-
-- A user account in the tenant with the following roles assigned:
-
-   - [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator): To grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Graph APIs.
-
-   - [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator): To call the Microsoft Graph APIs to read and update SOA of groups.
 
 ## Grant permission to apps
 
@@ -319,7 +310,7 @@ In the **Provisioning Logs** of the **AD2AAD job**, you can see that **SOAGroup3
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/skipped.png" alt-text="Screenshot of a skipped object.":::
 
-The details state `As the SOA of this group is in the cloud, this object will not sync.
+The details explain that the object isn't synced because it's SOA is converted to the cloud.
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
@@ -330,7 +321,7 @@ The details state `As the SOA of this group is in the cloud, this object will no
 
 - **No dual write allowed**: After you start to manage the memberships for the converted group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD using Group Provision to AD as a nested group under another AD group (OnPremGroupB) that's in scope for AD to Entra ID sync, the membership reference of group A won't synced when sync happens for OnPremGroupB. This is because the sync client doesn't know the cloud group membership references. This behavior is by design.
 
-- **No SOA conversion of nested groups**: If you have nested groups in AD and want to convert the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA is converted. Nested groups in the parent group continue to be AD groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest hierarchy, and move up the tree.
+- **No SOA conversion of nested groups**: If there are nested groups in AD and want to convert the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA is converted. Nested groups in the parent group continue to be AD groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest hierarchy, and move up the tree.
 
 - **Extension Attributes (1-15)**: Extension attributes 1 – 15 aren't supported on cloud security groups and aren't supported after SOA is converted.
 
