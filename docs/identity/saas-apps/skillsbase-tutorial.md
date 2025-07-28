@@ -104,7 +104,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Log in to Skills Base as an Administrator.
 
-1. From the left side of menu, select **Administration -> Authentication**.
+1. From the left side of menu, select **Administration > Authentication**.
 
 	![Screenshot of showing The Authentication menu.](./media/skillsbase-tutorial/admin.png)
 
@@ -138,7 +138,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. If you would like to enable **Just In Time** user provisioning, enable the **Automatic user account provisioning** option.
 
-1. select **Save changes**.
+1. Select **Save changes**.
 
    ![Screenshot for Just in Time provisioning.](./media/skillsbase-tutorial/identity-provider-enabled.png)
 
@@ -165,6 +165,23 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Go to Skills Base Sign-on URL directly and initiate the login flow from there.
 
 * You can use Microsoft My Apps. When you select the Skills Base tile in the My Apps, this option redirects to Skills Base Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+
+## Renewing Token signing certificate
+
+After some time (by default, 3 years), the Token signing certificate you generated in Microsoft Entra will expire. You may receive advance notice of the pending certificate expiry via email from **Microsoft Security** with subject "**Action required: Renew your application certificate in Microsoft Entra ID**". This email is sent to the email address recorded in **Microsoft Entra > Enterprise apps > Skills Base > Single sign-on > SAM Certificates > Token signing certificate > Notification Email**. The email will include the certificate's expiration date. To avoid service disruption, the certificate must be renewed before this date.
+
+### Steps to renew
+
+1. In **Microsoft Entra** naviage to **Enterprise apps > Skills Base > Single sign-on > SAML Certificates** and select **Edit**.
+2. Select **New certificate**, but don't make it active yet.
+3. Next to **Federation Metadata XML**, click **Download**.
+4. In **Skills Base** naviage to **Administration > Authentication**.
+5. Under **Identity Providers**, find your Identity Provider and select the edit button in the **Actions** column.
+6. For **SAML IdP Metadata** select **Upload an XML file**.
+7. Upload the Federation Metadata XML file that you downloaded in step 3 above. and select **Save**.
+8. In **Microsoft Entra** naviage to **Enterprise apps > Skills Base > Single sign-on > SAML Certificates** and select **Edit**.
+9. Select the three dots beside the new certificate you created and select **Make certificate active** followed by **Yes**.
+10. Ensure that the new certificate expiry date is shown in the **Expiration** field of the **SAML Certificates** section.
 
 ## Related content
 
