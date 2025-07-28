@@ -20,7 +20,7 @@ To restrict access so that only existing external users can sign in, you can dis
 
 You use the [Update authenticationEventsFlow API in Microsoft Graph](/graph/api/authenticationeventsflow-update) to update the **onInteractiveAuthFlowStart** property > **isSignUpAllowed** property to `false`. 
 
-## Prerequisitesf
+## Prerequisites
 
 - **A sign-up and sign-in user flow**: Before you begin, [create the user flow](how-to-user-flow-sign-up-sign-in-customers.md) that you want to associate with your application.
 - **Application registration**: In your external tenant, [register your application](/entra/identity-platform/quickstart-register-app).

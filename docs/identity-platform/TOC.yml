@@ -196,7 +196,7 @@
                   - name: Sign up
                     href: tutorial-native-authentication-single-page-app-react-sdk-sign-up.md
                   - name: Set up local CORS
-                    href: tutorial-native-authentication-single-page-app-react-sdk-set-up-local-cors.md
+                    href: tutorial-native-authentication-single-page-app-sdk-set-up-local-cors.md
                   - name: Sign in
                     href: tutorial-native-authentication-single-page-app-react-sdk-sign-in.md
                   - name: Reset password
