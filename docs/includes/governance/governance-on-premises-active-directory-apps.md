@@ -2,7 +2,7 @@
 author: justinha
 ms.service: entra-id-governance
 ms.topic: include
-ms.date: 07/17/2025
+ms.date: 07/28/2025
 ms.author: justinha
 # Used by articles entra governance
 ---
@@ -45,7 +45,7 @@ For more information, see [cloud sync supported groups and scale limits](/entra/
 
 For this scenario, only the following groups are supported:
 
-- Only cloud-created [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported.
+- Only cloud-created or SOA converted [Security groups](~/fundamentals/concept-learn-about-groups.md#group-types) are supported.
 - Assigned or dynamic membership groups.
 - Contain on-premises synchronized users or cloud-created security groups.
 - On-premises synchronized users that are members of the cloud-created security group can be from the same domain or other domains from the same forest
