@@ -15,7 +15,7 @@ ms.custom: references_regions
 
 ---
 # Overview
-[!INCLUDE [applies-to-workforce-only](/docs/external-id/includes/applies-to-workforce-only.md)]
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 To protect customers from telephony-based abuse and fraud, Microsoft Entra ID applies intelligent detection and throttling mechanisms to all telecom-based authentication requests.
 
