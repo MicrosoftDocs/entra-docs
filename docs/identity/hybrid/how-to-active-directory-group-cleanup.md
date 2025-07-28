@@ -148,23 +148,17 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
 
 ### Analysis for a security group
 
-1. Check the membership of the group.
-
-   If the group has no members, proceed to cloud scream test.
-
-   If the group has as members:
+1. Check the membership of the group. If the group has no members, proceed to [cloud scream test](#scream-test-for-cloud-usage). Review the recommendations in the following table for other member object types.
 
    | **Member object type**                                   | **Recommendations**                                                                                                                                                                                                                 |
    |:--------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | One or more Computers                                   | *Group is likely used for group policy or System Center administration. Contact Windows Server and System Center administrators to determine their plans for this group. May replace with a new approach with Azure or Intune.*     |
-   | One or more FSP                                         | *If this is a multi-domain environment, then consider flattening domains as Microsoft Entra will not be able to manage group memberships across domains.*                                                                           |
-   | One or more Contacts                                    | *If this is a MESG, then those contacts will not be able to authenticate to Microsoft Entra, so should be removed from the group if the group is to be converted to non-mail-enabled.*                                                        |
-   | One or more users or groups not synched to Microsoft Entra (excluded from sync scope) | *The group should not have its SOA converted*                                                                                                                                                |
-   | Users and groups synched to Microsoft Entra                       | *Plan to perform a scream test for cloud usage.*                                                                                                                                            |
+   | One or more Computers                                   | Group is likely used for group policy or System Center administration. Contact Windows Server and System Center administrators to determine their plans for this group. May replace with a new approach with Azure or Intune.    |
+   | One or more Contacts                                   | If this is a MESG, then those contacts can't to authenticate to Microsoft Entra. Remove them from the group if you plan to convert the group to not be mail-enabled.                                                       |
+   | One or more users or groups not synced to Microsoft Entra (excluded from sync scope) | The group shouldn't have its Source of Authority converted.                                                                                                                                           |
+   | Users and groups synced to Microsoft Entra                       | Plan to perform a scream test for cloud usage.                                                                                                                                          |
 
-1. Check the change date of the group. If the group has been recently
-   modified, check the logs to determine who modified the group, and
-   then contact them to determine the purpose of the group, and whether
+1. Check the change date of the group. If the group is recently
+   modified, check the logs to determine who modified the group. Contact them to determine the purpose of the group, and whether
    it can be converted to a cloud security group.
 
 1. Otherwise, if the group isn't recently modified, check if
