@@ -11,7 +11,7 @@ ms.reviewer: dhanyak
 
 # How to audit and monitor Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
 
-Admins can use **Audit Logs** in the Azure portal or the onPremisesSyncBehavior Microsoft Graph API to monitor and report SOA changes in their environment. They can also integrate SOA changes with third-party monitoring systems.
+Admins can use **Audit Logs** in the Azure portal or the onPremisesSyncBehavior Microsoft Graph API to monitor and report SOA changes in their environment. They can also integrate SOA changes with third-party monitoring systems. For more information, see [onPremisesSyncBehavior](/graph/api/resources/onpremisessyncbehavior).
 
 ## How to use Audit Logs to see SOA changes  
 
@@ -31,12 +31,12 @@ You can use Microsoft Graph to report data such as how many objects are converte
 
 ### Filter and count converted objects
 
-The onPremisesSyncBehavior API helps you view the *isCloudManaged* property for user or a group. You can set the *isCloudManaged* property to `true` to convert the SOA of an object. 
+The [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior) helps you view the *isCloudManaged* property for user or a group. You can set the *isCloudManaged* property to `true` to convert the SOA of an object. 
 
 You can also call the onPremisesSyncBehavior API and input each user object to query how many objects have their SOA converted to cloud-managed:
 
 ```https
-GET users/%USER_ID%/onPremisesSyncBehavior?$select=id,isCloudManaged
+GET groups/%GROUP_ID%/onPremisesSyncBehavior?$select=id,isCloudManaged
 ```
 
 To view all group objects whose SOA has changed:

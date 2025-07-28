@@ -235,7 +235,7 @@ $group = Get-MgGroup -Filter "displayName eq '$groupName'"
 if ($group -ne $null)
 {
     $groupObjectID = $($group.Id)
-    # Define the Microsoft Graph API endpoint for the user
+    # Define the Microsoft Graph API endpoint for the group
     $url = "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior"
 
     # Define the JSON payload for the PATCH request
@@ -243,7 +243,7 @@ if ($group -ne $null)
         isCloudManaged = "true"
     } | ConvertTo-Json
  
-    # Make the PATCH request to update the user's department
+    # Make the PATCH request to update the JSON payload
     Invoke-RestMethod -Uri $url -Method Patch -Headers @{
         "Authorization" = "Bearer $token"
         "Content-Type"  = "application/json"
