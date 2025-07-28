@@ -42,7 +42,6 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 | --- | --- | --- |
 | `ID` | Required | Microsoft Entra ID uses this attribute to populate the `InResponseTo` attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, `id6c1c178c166d486687be4aaf5e482730` is a valid ID. |
 | `Version` | Required | This parameter should be set to `2.0`. |
-
 | `IssueInstant` | Required | This is a DateTime string with a UTC value and [round-trip format ("o")](/dotnet/standard/base-types/standard-date-and-time-format-strings). Microsoft Entra ID expects a DateTime value of this type, but doesn't evaluate or use the value. |
 | `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. Entra ID will honor the ACS URL if it is present in the SAML Request.|
 | `ForceAuthn` | Optional | This is a boolean value. If true, it means that the user will be forced to reauthenticate, even if they have a valid session with Microsoft Entra ID. |
