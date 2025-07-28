@@ -31,7 +31,7 @@ You need to set up Connect Sync client and the Cloud Sync client Provisioning ag
 
 1. Download the latest version of the Connect Sync build.
 
-1. Verify the Connect Sync build has been successfully installed. Go to **Programs** in Control Panel and confirm that the version of Microsoft Entra Connect Sync is [2.5.76.0](./connect/reference-connect-version-history.md) or later.
+1. Verify the Connect Sync build is successfully installed. Go to **Programs** in Control Panel and confirm that the version of Microsoft Entra Connect Sync is [2.5.76.0](./connect/reference-connect-version-history.md) or later.
 
 ### Cloud Sync client
 
@@ -84,7 +84,7 @@ Follow these steps to convert the SOA for a test group:
 
 1. Verify that the group appears in the Microsoft Entra admin center as a synced group.
 1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as Groups admin.
-1. Let's check the existing SOA status. We haven’t updated the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{id}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
+1. Let's check the existing SOA status. We didn’t updated the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{id}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 /graph/api/onpremisessyncbehavior-update
 
    ```https
@@ -147,7 +147,7 @@ Follow these steps to convert the SOA for a test group:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/retry-update.png" alt-text="Screenshot of a retry to change group properties.":::
 
-1. Open Microsoft Entra andmin center and confirm that the group **Source** property is **Cloud**.
+1. Open Microsoft Entra admin center and confirm that the group **Source** property is **Cloud**.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/source-cloud.png" alt-text="Screenshot of how to confirm group source property.":::
 
@@ -188,7 +188,7 @@ Follow these steps to convert the SOA for a test group:
    Start-ADSyncSyncCycle
    ```
 
-1. Open Event viewer and filter the application event logs with event ID 6956. This event ID is reserved to inform the customers that the object isn't synced to the cloud because the SOA of the object is in the cloud.
+1. Open Event viewer and filter the Application log for event ID 6956. This event ID is reserved to inform the customers that the object isn't synced to the cloud because the SOA of the object is in the cloud.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
 
@@ -266,7 +266,7 @@ Admin rolls back the SOA operation | `false` | `null` | If an admin converts t
 > [!IMPORTANT] 
 > Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to Active Directory. The sync client takes over the object in the next sync cycle.
 
-You can run this opreration to roll back the SOA update and revert the SOA to on-premises. 
+You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
    ```https
    PATCH https://graph.microsoft.com/beta/groups/{id}/onPremisesSyncBehavior
@@ -280,7 +280,7 @@ You can run this opreration to roll back the SOA update and revert the SOA to on
 > [!NOTE]
 > This change to "isCloudManaged: false" allows an AD object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is complete only happens after *both* the API call and the next scheduled or forced run of Connect Sync.
 
-### Check Audit Logs to validate the revert operation
+### Validate the change in the Audit Logs
 
 Select activity as **Undo changes to Source of Authority from AD to cloud**:
 
