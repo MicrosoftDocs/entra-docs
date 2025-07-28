@@ -1,10 +1,10 @@
 ---
 title: How to use group Source of Authority (SOA) to manage Active Directory groups in Microsoft Entra ID (Preview)
-description: Learn how to convert group management from Active Directory to Microsoft Entra ID using group source of authority (SOA), block sync, provision groups, restore deleted groups, and roll back SOA changes for hybrid and cloud environments.
+description: Learn how to convert group management from Active Directory to Microsoft Entra ID using group source of authority (SOA).
 author: justinha
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/25/2025
+ms.date: 07/28/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
@@ -20,17 +20,17 @@ After the group has SOA applied and becomes a cloud group, the latest versions o
 
 If you need to provision a security group back to AD to keep the AD copy of the group in-sync with Microsoft Entra ID (only for non-mail enabled cloud security groups), add the groups to the Group Provision to AD scoping configuration. Use **Selected Groups** or **All groups** with attribute value scoping. Provision dynamic security groups to AD. Cloud security groups provisioned to AD do so as Universal groups in AD.
 
-When Microsoft Entra Cloud Sync provisions a security group to AD, it recognizes when existing AD groups previously had SOA applied and are provisioned from Microsoft Entra ID to AD. The SID value provides this tie together. Therefore, provisioning the cloud security group to AD does so to the original AD group (if it exists). If it doesn’t find a match in AD, it creates a new on-prem security group.
+When Microsoft Entra Cloud Sync provisions a security group to AD, it recognizes when existing AD groups previously had SOA applied and are provisioned from Microsoft Entra ID to AD. The security identifier (SID) value provides this tie together. Therefore, provisioning the cloud security group to AD does so to the original AD group (if it exists). If it doesn’t find a match in AD, it creates a new on-prem security group.
 
-## Delete and restore groups in AD DS
+## Delete and restore groups in Active Directory Domain Services (AD DS)
 
-If an administrator deletes a group in AD DS and subsequently decides to provision it to AD using Group Provision to AD with the same SID, the administrator must ensure that the recycle bin in AD is enabled. The group should then be restored from the recycle bin before being added to the scope for Group Provision to AD.
+If an administrator deletes a group in AD DS and subsequently decides to provision it to AD using **Group Provision to AD** with the same SID, the administrator must ensure that the Active Directory Recycle Bin is enabled. You should restore the group from the Recycle Bin before you add it to the scope for **Group Provision to AD**.
 
 ## Roll back SOA changes
 
-Administrators can reverse operations to a group SOA. In this scenario, the object source of authority reverts, and AD DS manages it. During the next synchronization cycle, AD takes control of the object. In Microsoft Entra ID, the object becomes read-only. 
+Administrators can reverse operations to a group SOA. In this scenario, the object source of authority reverts, and AD DS manages it. During the next synchronization cycle, AD DS takes control of the object. In Microsoft Entra ID, the object becomes read-only. 
 
-This method ensures that any changes made while the AD group was managed in the cloud are retained. After the object is taken over, any modifications made in the cloud are overridden.
+This method ensures that any changes made while the A group was managed in the cloud are retained. After the object is taken over, any modifications made in the cloud are overridden.
 
 ## Related content
 
