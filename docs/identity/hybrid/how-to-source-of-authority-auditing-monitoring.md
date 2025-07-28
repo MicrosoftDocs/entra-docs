@@ -65,3 +65,4 @@ For more information about how to create custom queries, see [Understand how pro
 
 - [Group SOA overview](concept-source-of-authority-overview.md)
 - [How to configure Group SOA](how-to-group-source-of-authority-configure.md)
+- [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior)
