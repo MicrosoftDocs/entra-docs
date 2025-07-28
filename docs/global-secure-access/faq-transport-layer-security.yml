@@ -45,12 +45,12 @@ sections:
            if ($gitCAPath) {
            try {
            Get-Content $certPath | Add-Content -Path $gitCAPath
-           Write-Host "✅ Certificate appended to Git CA bundle at $gitCAPath"
+           Write-Host "Certificate appended to Git CA bundle at $gitCAPath"
            } catch {
-           Write-Host "❌ Failed to append certificate to Git CA bundle: $_"
+           Write-Host "Failed to append certificate to Git CA bundle: $_"
           }
           } else {
-          Write-Host "⚠️ Git CA bundle path not found. Is Git installed and configured?"
+          Write-Host "Git CA bundle path not found. Is Git installed and configured?"
           }
           ```
      [!NOTE] If Git is installed in a protected directory (such as under Program Files), you may need to run PowerShell as an administrator to modify the CA bundle. 
@@ -74,12 +74,12 @@ try {
     $certifiPath = python -c "import certifi; print(certifi.where())"
     if ($certifiPath) {
         Get-Content $certPath | Add-Content -Path $certifiPath
-        Write-Host "✅ Certificate appended to Python certifi bundle at $certifiPath"
+        Write-Host " Certificate appended to Python certifi bundle at $certifiPath"
     } else {
-        Write-Host "⚠️ Could not determine certifi CA bundle path"
+        Write-Host "Could not determine certifi CA bundle path"
     }
 } catch {
-    Write-Host "❌ Failed to append certificate to Python certifi bundle: $_"
+    Write-Host "Failed to append certificate to Python certifi bundle: $_"
 }
 '''
 [!NOTE] If Python is installed system-wide, you may need to run PowerShell as an administrator to modify the certifi CA bundle.
