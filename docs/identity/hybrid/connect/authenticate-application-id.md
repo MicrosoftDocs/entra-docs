@@ -166,7 +166,8 @@ The following prerequisites are required to implement authentication by using ap
 
 - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.3.0](reference-connect-version-history.md) or greater.
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
-- On-premises Active Directory Domain Services environment with a Windows Server 2016 operating system or later.
+- Microsoft Entra Connect version 2.5.3.0 or greater (required for manual interactive onboarding)
+- Microsoft Entra Connect version 2.5.76.0 or greater (required for automatic onboarding)
 - Optional: TPM 2.0 present and ready to use (recommended for security).
 
 The following extra requirements are needed for the BYOC certificate management option:
