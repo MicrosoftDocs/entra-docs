@@ -142,7 +142,8 @@ You can also use the object ID for the users or groups you want to include in th
 
 For more information about how to use custom instructions, check out the following video. Please note that some of the content in the video is subject to change as the agent is updated frequently.
 
-> [!VIDEO <https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=5879a0f7-3644-4e34-a8ce-b186b8e5f128>]
+> [!VIDEO 5879a0f7-3644-4e34-a8ce-b186b8e5f128]
+
 ## Remove agent
 
 If you no longer wish to use the Conditional Access optimization agent, select **Remove agent** from the top of the agent window. The existing data (agent activity, suggestions, and metrics) is removed but any policies created or updated based on the agent suggestions remain intact. Previously applied suggestions remain unchanged so you can continue to use the policies created or modified by the agent.
