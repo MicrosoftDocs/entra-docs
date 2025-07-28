@@ -77,7 +77,7 @@ thousands of groups, you need to choose an order to evaluate the
 groups. The order can be based on factors like:
 
 - Group type (built-in group vs group created in the Active Directory domain)
-- Grooup organizational unit (OU)
+- Group organizational unit (OU)
 - Group size and membership
 - Group nesting (the group is a member of another group in the Active Directory domain)
 
@@ -114,7 +114,7 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
    - If the group was not needed, remove the group from the domain.
 
 1. If the group is a DL, then even if the members of the group are in
-   Microsoft Entra, the group SOA can't be converted
+   Microsoft Entra, the group Source of Authority (SOA) can't be converted
    to Microsoft Entra. You should perform cloud scream test and successor tests, and
    when complete, the options are:
 
@@ -144,7 +144,7 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
    | **Member object type**                                   | **Recommendations**                                                                                                                                                                                                                 |
    |:--------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | One or more Computers                                   | Group is likely used for group policy or System Center administration. Contact Windows Server and System Center administrators to determine their plans for this group. May replace with a new approach with Azure or Intune.    |
-   | One or more Contacts                                   | If this is a MESG, then those contacts can't to authenticate to Microsoft Entra. Remove them from the group if you plan to convert the group to not be mail-enabled.                                                       |
+   | One or more Contacts                                   | If this is a MESG, then those contacts can't be used to authenticate to Microsoft Entra. Remove them from the group if you plan to convert the group to not be mail-enabled.                                                       |
    | One or more users or groups not synced to Microsoft Entra (excluded from sync scope) | The group shouldn't have its Source of Authority converted.                                                                                                                                           |
    | Users and groups synced to Microsoft Entra                       | Plan to perform a scream test for cloud usage.                                                                                                                                          |
 
@@ -184,7 +184,7 @@ This test determines if there are users in groups that are used for cloud resour
    determine how the group is used and if it can be replaced with a cloud
    security group.
 
-1. Check if there'ss a reference to the group from an Azure role in an
+1. Check if there's a reference to the group from an Azure role in an
    Azure subscription, resource group or resource. If so, contact the
    owners of that Azure subscription.
 
