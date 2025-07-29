@@ -138,7 +138,7 @@ The Conditional access What If API can be used to programmatically test the impa
 Enterprise apps SSO & User Provisioning SAML-based Single Sign-On (SSO) and gallery apps with user provisioning flows are now Generally Available (GA). These features help streamline secure access and automate user lifecycle management across your enterprise applications. For more information, see:
 
 - [Enterprise applications](../external-id/customers/concept-supported-features-customers.md#enterprise-applications)
-- [Add an enterprise application](..//external-id/customers/how-to-add-enterprise-application.md)
+- [Add an enterprise application](../external-id/customers/how-to-add-enterprise-application.md)
 - [Register a SAML app in your external tenant](../external-id/customers/how-to-register-saml-app.md)
 
 ---
