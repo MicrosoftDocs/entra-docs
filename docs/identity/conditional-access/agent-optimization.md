@@ -119,11 +119,11 @@ The agent is configured to run every 24 hours based on when it's initially confi
 
 Use the checkboxes under **Microsoft Entra objects to monitor** to specify what the agent should monitor when making policy recommendations. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
 
-## Agent capabilities
+### Agent capabilities
 
 By default, the Conditional Access optimization agent can create new policies in report-only mode. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
 
-## Phased rollout (preview)
+### Phased rollout (preview)
 
 When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can control and monitor the affect of the new policy. Phased rollout is on by default.
 
