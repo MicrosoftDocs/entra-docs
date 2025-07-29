@@ -90,7 +90,7 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
 
 1. See if the group has members. If there are no members, proceed to the cloud scream test.
 
-1. Search the Exchange or Exchange Online logs to see if mail was sent to the group. If mail was sent, then the group is likely still in use. Contact the senders of those mails to determine the purpose of the group.
+1. Search the Exchange or Exchange Online logs to see if mail was sent to the group. You can use [Get-MessageTrackingLog](/powershell/module/exchange/get-messagetrackinglog) to search and analyze the logs. If mail was sent, then the group is likely still in use. Contact the senders of those mails to determine the purpose of the group.
 
 1. See if the group members include any users, contacts, or groups that aren't synced to Microsoft Entra. If the group includes members that aren't synced, its group type isn't updated to a Microsoft 365 group or Exchange Online DL. Perform the Kerberos scream test and the successor tests. After you finish:
 
