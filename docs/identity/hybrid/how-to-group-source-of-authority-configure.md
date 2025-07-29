@@ -75,7 +75,7 @@ Sign in to the Azure portal, go to **Enterprise Applications** > **App Name**, a
 
 Follow these steps to convert the SOA for a test group:
 
-1. Create a security group or a mail-enabled distribution group in AD for testing and add group members. You can also use a group that's already synced to Microsoft Entra ID by using Connect Sync.
+1. Create a security group or a mail-enabled distribution group in AD for testing and add group members. You can also use a group that is synced to Microsoft Entra ID by using Connect Sync.
 1. Run the following command to start Connect Sync: 
 
    ```powershell
@@ -107,7 +107,7 @@ Follow these steps to convert the SOA for a test group:
    > [!NOTE]
    > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required Group.ReadWrite.All permission.
  
-1. Check Microsoft Entra portal for the group to verify that all group fields are greyed out, and that source is Windows Server AD:  
+1. Search the Microsoft Entra admin center for the group. Verify that all group fields are greyed out, and that source is Windows Server AD:  
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/basic.png" alt-text="Screenshot of basic group properties.":::
 
