@@ -1,5 +1,5 @@
 ---
-title: Enable automatic user provisioning for multi-tenant applications in Microsoft Entra ID
+title: Enable automatic user provisioning for multitenant applications in Microsoft Entra ID
 description: A guide for independent software vendors for enabling automated provisioning in Microsoft Entra ID
 
 author: kenwith
@@ -13,7 +13,7 @@ ms.reviewer: zhchia, arvinh
 ai-usage: ai-assisted
 ---
 
-# Enable automatic user provisioning for your multi-tenant application in Microsoft Entra ID
+# Enable automatic user provisioning for your multitenant application in Microsoft Entra ID
 
 Automatic user provisioning is the process of automating the creation, maintenance, and removal of user identities in target systems like your software-as-a-service applications.
 
