@@ -5,7 +5,7 @@ description: Microsoft Entra ID uses heuristics and machine learning to detect a
 ms.service: entra-id  
 ms.subservice: authentication  
 ms.topic: conceptual  
-ms.date: 05/20/2025
+ms.date: 07/28/2025
 
 author: justinha
 ms.author: justinha
@@ -14,8 +14,8 @@ ms.reviewer: aloom3
 ms.custom: references_regions
 
 ---
-
 # Overview
+[!INCLUDE [applies-to-workforce-only](../../external-id/includes/applies-to-workforce-only.md)]
 
 To protect customers from telephony-based abuse and fraud, Microsoft Entra ID applies intelligent detection and throttling mechanisms to all telecom-based authentication requests.
 
@@ -25,8 +25,9 @@ In addition, some region codes require opt-in. Admins can submit a support reque
 
 Together, these safeguards help organizations defend against fraud while preserving a smooth authentication experience for legitimate users.
 
-B2C tenants can follow the guidelines in [B2C service limits](/azure/active-directory-b2c/service-limits).  
-Microsoft Entra External ID tenants can follow the guidelines in [How to region code opt-in](/entra/external-id/customers/how-to-region-code-opt-in).
+> [!NOTE]
+> B2C tenants should follow the guidelines in [B2C service limits](/azure/active-directory-b2c/service-limits).  
+> Microsoft Entra External ID tenants should follow the guidelines in [How to region code opt-in](/entra/external-id/customers/how-to-region-code-opt-in).
 
 ## Behind-the-Scenes Protections
 
@@ -65,7 +66,8 @@ IRSF poses a significant threat to online services and can cause reputational ha
 
 ## Regions That Require Opt-In for MFA Telephony Verification
 
-For SMS and voice verification, the following region codes require opt-in. If you want to enable telephony in these regions, you must submit a support request.
+For SMS and voice verification, the following region codes require opt-in. If you want to enable telephony in these regions, you must submit a support request. 
+**This is not applicable for B2C or External tenants. For B2C tenants, follow the guidelines in [B2C service limits](/azure/active-directory-b2c/service-limits).**
 
 > [!NOTE]
 > We strongly recommend configuring more than one authentication method, with at least one being non-telecom-based.
