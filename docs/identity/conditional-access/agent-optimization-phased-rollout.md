@@ -85,3 +85,8 @@ After every phase is complete, the agent will recommend deleting the report-only
 ## Built-in safeguards
 
 Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified so the details can be reviewed and potentially modified.
+
+## Related content
+
+- [Learn more about Microsoft Security Copilot](/copilot/security/microsoft-security-copilot)
+- [Conditional Access optimization agent overview](agent-optimization.md)
