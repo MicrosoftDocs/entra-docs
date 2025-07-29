@@ -52,7 +52,7 @@ Security groups in Microsoft Entra can be integrated with governance features:
 
 ## Mail-enabled security groups
 
-### Self-service management xperience
+### Self-service management experience
 After you convert SOA for mail-enabled security groups, they become cloud-managed mail-enabled security groups.
 
 There are some limitations for cloud-managed mail-enabled security groups:
@@ -74,11 +74,11 @@ After you convert SOA of on-premises distribution lists, they can be transitione
 ### Limitations
 - Cloud distribution groups can't be managed by using **My Groups**.
 - Self-service management is only possible through Exchange’s end user self-service portal (link).
-- Nested distribution groups  are not supported for direct conversion to Microsoft 365 Groups.
+- Nested distribution groups aren't supported for direct conversion to Microsoft 365 Groups.
 
 ### Governance integration
 
-Distribution groups can't be used with Microsoft Entra Governance features, such as Access Packages, or Lifecycle Workflows. However, if distribution groups are converted to M365 Groups, governance scenarios are unblocked. 
+Distribution groups can't be used with Microsoft Entra Governance features, such as access packages, or lifecycle workflows. However, if distribution groups are converted to Micrsoft 365 groups, governance scenarios are unblocked. 
 
 ## Summary table
 
@@ -90,8 +90,8 @@ Distribution group|No|Exchange Admin Center, Exchange Self-Service Portal|No|Con
 
 ## Key takeaways for admins
 
-- **Enable Security Groups for Self-Service**: Set this in Microsoft Entra Admin Center before user rollout.
-- **Establish Group Ownership**: Ownership must be set on-premises before you convert SOA to ensure proper self-service experience.
+- **Enable security groups for self-service**: Enable security groups for self-service in Microsoft Entra Admin Center before user rollout.
+- **Establish group ownership**: Ownership must be set on-premises before you convert SOA to ensure proper self-service experience.
 - **Support governance scenarios**: Only Microsoft Entra security groups and Microsoft 365 groups support governance features. Distribution groups and mail-enabled security groups don't.
 - **Plan for limitations**: Review current group types and consider [upgrading them to Microsoft 365 Groups](/exchange/recipients-in-exchange-online/manage-distribution-groups/upgrade-distribution-lists) for the best end-user and governance experience.
 
