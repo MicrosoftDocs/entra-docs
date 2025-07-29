@@ -38,7 +38,7 @@ Microsoft Entra ID provides different benefits to members of your organization b
 
 Microsoft Online business services, such as Microsoft 365 or Microsoft Azure, use Microsoft Entra ID for sign-in activities and to help protect your identities. If you subscribe to any Microsoft Online business service, you automatically get access to [Microsoft Entra ID Free](https://www.microsoft.com/security/business/identity-access/azure-active-directory-pricing).
 
-To enhance your Microsoft Entra implementation, you can also add paid features by upgrading to Microsoft Entra ID P1 or P2 licenses, or adding on licenses for products such as Microsoft Entra ID Governance. You can also license Microsoft Entra paid licenses are built on top of your existing free directory. The licenses provide self-service, enhanced monitoring, security reporting, and secure access for your mobile users.
+To enhance your Microsoft Entra implementation, you can also add paid features by upgrading to Microsoft Entra ID P1 or P2 licenses, or adding on licenses for products such as Microsoft Entra ID Governance. Microsoft Entra paid licenses are built on top of your existing free directory. The licenses provide self-service, enhanced monitoring, security reporting, and secure access for your mobile users.
 
 >[!Note]
 >For the pricing options of these licenses, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
