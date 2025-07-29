@@ -35,13 +35,13 @@ After you convert the SOA for security groups to Microsoft Entra, they become fu
 - Controlling access to apps and resources
 - Managing group membership, ownership, and properties
 - Scoping of Access Package assignment policies
-- Triggering LCW workflow execution
+- Triggering lifecycle workflow execution
 
 ### Governance integration
 
 Security groups in Microsoft Entra can be integrated with governance features:
 
-- Access packages (via Entitlement Management): Bundle and delegate access to resources, automate approval workflows, and manage access lifecycle.
+- Access packages (using Entitlement Management): Bundle and delegate access to resources, automate approval workflows, and manage access lifecycle.
 - Lifecycle workflows: Automate user and group lifecycle events, such as provisioning, deprovisioning, and access review.
 
 ### How to enable self-service and correct group ownership and join policies
