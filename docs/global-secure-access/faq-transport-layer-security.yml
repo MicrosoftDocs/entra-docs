@@ -56,7 +56,7 @@ sections:
      [!NOTE] If Git is installed in a protected directory (such as under Program Files), you may need to run PowerShell as an administrator to modify the CA bundle. 
      
 -questions: How do I add a TLS inspection root CA to the Python certificate store?
-answer: Python uses the certifi package to manage its own CA bundle, separate from the system certificate store. To trust your TLS inspection root certificate, append it to the certifi CA bundle using the following PowerShell script:
+        answer: Python uses the certifi package to manage its own CA bundle, separate from the system certificate store. To trust your TLS inspection root certificate, append it to the certifi CA bundle using the following PowerShell script:
 
 '''PowerShell
 
