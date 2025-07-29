@@ -64,7 +64,7 @@ Conditional Access Optimization Agent in Microsoft Entra monitors for new users 
 **Service category:** Lifecycle Workflows  
 **Product capability:** Identity Governance  
 
-Customers can now configure a Lifecycle workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user).
+Customers can now configure a Lifecycle Workflows task to automatically revoke access tokens when employees move within, or leave, the organization. For more information, see: [Revoke all refresh tokens for user](../id-governance/lifecycle-workflow-tasks.md#revoke-all-refresh-tokens-for-user).
 
 ---
 
