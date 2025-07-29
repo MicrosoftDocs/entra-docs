@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/25/2025
+ms.date: 07/29/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -24,11 +24,11 @@ This guide outlines how to configure and deploy Global Secure Access solutions a
 
 ### Configuration 1: Private Access with Cisco Secure Access Zero Trust Network Access (ZTNA), Domain Name System (DNS) Defense, and Secure Web Gateway (SWG)
 
-In this scenario, both clients handle traffic for separate private applications. Private applications in Global Secure Access Private Access are managed by Global Secure Access, while private applications in Cisco Secure Access are managed by the Cisco Secure Client Zero Trust Network Access (ZTNA) module. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
+In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Global Secure Access Private Access, while the Cisco Secure Client Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Access. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
 
 ### Configuration 2: Microsoft Access with Cisco Secure Access ZTNA, DNS Defense, and SWG.
 
-Global Secure Access manages all Microsoft 365 traffic. Private applications in Cisco Secure Access are handled by the Cisco Secure Client Zero Trust Network Access (ZTNA) module. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
+Global Secure Access manages all Microsoft 365 traffic. The Cisco Secure Client Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Access. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
 
 ### Configuration 3: Internet Access and Microsoft Access with Cisco Secure Access Zero Trust Network Access (ZTNA)
 
@@ -36,7 +36,7 @@ Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access
 
 ### Configuration 4: Internet Access, Microsoft Access, and Private Access with Cisco Secure Access Zero Trust Network Access (ZTNA) and Domain Name System (DNS) Defense (Umbrella)
 
-Global Secure Access manages internet access, Microsoft access, and some private access applications. Separate private applications are handled by Secure Access Zero Trust Network Access (ZTNA), and DNS Defense (Umbrella) provides DNS protection.
+Global Secure Access manages internet access, Microsoft access, and some private access applications. Secure Access Zero Trust Network Access (ZTNA) handles separate private applications, and DNS Defense (Umbrella) provides DNS protection.
 > [!NOTE]
   > There's currently an issue with macOS preventing coexistence between Global Secure Access and Cisco Secure Access ZTNA.
 ## Prerequisites
@@ -97,7 +97,7 @@ Add Microsoft Entra service FQDNs in Traffic Steering to the destination list to
   > [!NOTE]
   > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
 
-  Add DNS suffixes configured in Quick Access or as FQDNs in Enterprise App Segments. For example, add `corp.local` and `contoso.com` domains if those are your DNS suffixes.
+  Add DNS suffixes configured in Quick Access or as FQDNs in Enterprise App Segments. For example, if your domains are `corp.local` and `contoso.com` then add them.
 
 4. In the Traffic Steering section, select **Add Destination > Bypass web proxy only**, add these IPs, and save:
 
@@ -233,7 +233,7 @@ Add Microsoft Entra service FQDNs in Traffic Steering to the destination list to
 
 1. Start collecting traffic in Global Secure Access client.
 2. Access `bing.com`, `salesforce.com`, `outlook.office365.com`.
-3. Verify Global Secure Access client captures traffic for these sites. DNS traffic is handled by Cisco.
+3. Verify Global Secure Access client captures traffic for these sites. Cisco handles DNS traffic.
 4. Validate traffic logs in both portals.
 5. Access private applications via Global Secure Access (for example, SMB file share).
 6. Access private resources via Cisco Secure Access ZTNA (for example, RDP session).
