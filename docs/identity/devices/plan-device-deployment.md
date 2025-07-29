@@ -80,7 +80,7 @@ You might want to do a [targeted deployment of Microsoft Entra hybrid join](hybr
 
 ### Network Requirements for Device Registration with Microsoft Entra
 
-When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
+The following sites must be exempted if using TLS interception or network proxy filtering to ensure registration works as intended:
 
 - `enterpriseregistration.windows.net`
 - `certauth.enterpriseregistration.windows.net`
