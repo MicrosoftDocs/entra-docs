@@ -57,7 +57,7 @@ For this scenario, only the following groups are supported:
 
 If you provision a group back to the Active Directory domain after you convert the group SOA, provision it back to its original organizational unit (OU). This practice ensures that Microsoft Entra Cloud Sync recognizes the converted group as the same one already in AD.
 
-Cloud Sync recognizes the converted group because both groups share the same security identifier (SID). If you provision the group to a different OU, it maintains the same SID, and Microsoft Entra Cloud Sync updates the existing group, but you may experience problems with access control lists. Active Directory permissions don't always transfer cleanly across containers and only explicit permissions are provisioned with the group. Inherited permissions from the original OU or Group Policy Object permissions applied to the OU don't get provisioned with the group.
+Cloud Sync recognizes the converted group because both groups share the same security identifier (SID). If you provision the group to a different OU, it maintains the same SID, and Microsoft Entra Cloud Sync updates the existing group, but you might experience problems with access control lists. Active Directory permissions don't always transfer cleanly across containers and only explicit permissions are provisioned with the group. Inherited permissions from the original OU or Group Policy Object permissions applied to the OU don't get provisioned with the group.
 
 Before you convert the SOA, consider the following recommended steps:
 
@@ -68,7 +68,7 @@ Before you convert the SOA, consider the following recommended steps:
 
 For more information about how to configure the target location for groups that are provisioned to Active Directory, see [Scope filter target container](/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
 
-## Govern on-prem AD based apps using Group SOA
+## Govern on-premises AD based apps using Group SOA
 
 In this scenario, when a group in the Active Directory domain is used by an application, you can convert the SOA of the group to Microsoft Entra. Then you can provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD using Group Provision to AD. In this model, you don’t need to change the app or create new groups.
 
@@ -76,7 +76,7 @@ In this scenario, when a group in the Active Directory domain is used by an appl
 
 Use the following steps for applications to use the Group Source of Authority option.
 
-### Create an application and convert source of authority
+### Create an application and convert SOA
 
 1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID that represents the AD-based application, and configure the application to require user assignment.
 1. Ensure that the AD group you plan to convert is already synchronized to Microsoft Entra, and that the membership of the AD group is only users and optionally other groups that are also synchronized to Microsoft Entra. If the group or any members of the group aren't represented in Microsoft Entra, you can't convert the SOA of the group.
@@ -157,7 +157,7 @@ Then you can govern access to the AD application by using the new access package
 
 ## Troubleshooting
 
-A user in the new AD group who signs in to a domain-joined device might have a ticket from a domain controller that doesn't include the new AD group membership. The ticket may be issued before Cloud Sync provisioned the user to the new AD group. The user can't use the ticket for access to the application. They must wait for the ticket to expire, and for a new ticket to be issued. Or they must purge their tickets, sign out, and then sign back into the domain. For more information, see [klist](/windows-server/administration/windows-commands/klist).
+A user in the new AD group who signs in to a domain-joined device might have a ticket from a domain controller that doesn't include the new AD group membership. The ticket might be issued before Cloud Sync provisioned the user to the new AD group. The user can't use the ticket for access to the application. They must wait for the ticket to expire, and for a new ticket to be issued. Or they must purge their tickets, sign out, and then sign back into the domain. For more information, see [klist](/windows-server/administration/windows-commands/klist).
 
 <a name='existing-azure-ad-connect-group-writeback-v2-customers'></a>
 
