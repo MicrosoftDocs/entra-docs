@@ -1,6 +1,6 @@
 ---
 title: Add an enterprise application
-description: Learn how to add enterprise applications to to your Microsoft Entra external tenant using the admin center. Discover gallery apps, configuration steps, and deployment tips.
+description: Learn how to add enterprise applications to your Microsoft Entra external tenant using the admin center. Discover gallery apps, configuration steps, and deployment tips.
 ms.author: cmulligan
 author: csmulligan
 manager: dougeby
@@ -36,7 +36,7 @@ To add an enterprise application to your Microsoft Entra external tenant, follow
 1. Select **New application** > **Create your own application**.
 1. Start typing the name of the application you want to add. If the application is already in the gallery, it appears in the list. In this article we use **Microsoft Entra SAML Toolkit** as an example.
 
-    :::image type="content" source="media/how-to-add-enterprise-application/add-enterprise-app.png" alt-text="Add an enterprise application in the external tenant.":::
+    :::image type="content" source="media/how-to-add-enterprise-application/add-enterprise-app.png" alt-text="Screenshot showing how to add an enterprise application in the external tenant.":::
 
 1. Select the application from the list, and then select **Create**.
 1. Select **Create**, you're taken to the application that you registered.
