@@ -53,7 +53,7 @@ sections:
           } else {
           Write-Host "Git CA bundle path not found. Is Git installed and configured?"
           }
-      '''
+         '''
         [!NOTE] If Git is installed in a protected directory (such as under Program Files), you may need to run PowerShell as an administrator to modify the Certificate Authority bundle. 
      
 -questions: How do I add a TLS inspection root CA to the Python certificate store?
