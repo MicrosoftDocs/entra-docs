@@ -78,13 +78,13 @@ After you convert SOA of on-premises distribution lists, they can be transitione
 
 ### Governance integration
 
-Distribution groups can't be used with Microsoft Entra Governance features, such as access packages, or lifecycle workflows. However, if distribution groups are converted to Micrsoft 365 groups, governance scenarios are unblocked. 
+Distribution groups can't be used with Microsoft Entra Governance features, such as access packages, or lifecycle workflows. However, if distribution groups are converted to Microsoft 365 groups, governance scenarios are unblocked. 
 
 ## Summary table
 
 Group type|Self-service in My Groups | Management experience|Governance support|Recommended action
 ----------|--------------------------|--------------------|------------------|------------------
-Security group|Yes|Entra Admin, Graph, My Groups|Yes|Populate owners, convert SOA, use self-service group management
+Security group|Yes|Microsoft Entra admin center, Graph, My Groups|Yes|Populate owners, convert SOA, use self-service group management
 Mail-enabled security group|No (read-only) | Exchange Online, PowerShell<br>No self-service experience for end users|No|Convert to security group if needed
 Distribution group|No|Exchange Admin Center, Exchange Self-Service Portal|No|Convert to Microsoft 365 group if possible
 
