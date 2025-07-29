@@ -128,7 +128,7 @@ The following table compares the unique features available for [enterprise appli
 
 Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **Application gallery**         | The [application gallery](/entra/identity/enterprise-apps/overview-application-gallery) contains thousands of applications that are preintegrated into Microsoft Entra ID.   | Choose from a range of pre-integrated apps. To find a third-party app, use the search bar. The full app gallery isn’t available yet.    |
+| **Application gallery**         | The [application gallery](/entra/identity/enterprise-apps/overview-application-gallery) contains thousands of applications that are preintegrated into Microsoft Entra ID.   | Choose from a range of pre-integrated apps. To find a third-party app, use the search bar. The full application gallery catalog isn’t available yet.    |
 | **Register a custom enterprise application**         | [Add an enterprise application.](/entra/identity/enterprise-apps/add-application-portal)  |  [Register a SAML app in your external tenant.](/entra/external-id/customers/how-to-register-saml-app)    |
 | **Self-service application assignment**         | Let users [self-discover apps](/entra/identity/enterprise-apps/manage-self-service-access).  | Self-service application assignment in the [My Apps portal](/entra/identity/enterprise-apps/myapps-overview) is not available.   |
 | **Application proxy**         | [Microsoft Entra application proxy](/entra/identity/app-proxy/overview-what-is-app-proxy) provides secure remote access to on-premises web applications.  | Not available.    |
