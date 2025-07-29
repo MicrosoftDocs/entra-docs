@@ -1,15 +1,20 @@
 ---
-title: Simplify Conditional Access policy deployment with templates
-description: Deploy recommended Conditional Access policies from easy to use templates.
+title: 'Conditional Access Templates: Simplify Security'
+description: Learn how Conditional Access templates provide preconfigured policies to secure your environment, aligned with Microsoft recommendations.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/28/2024
+ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth
-ms.custom: sfi-image-nochange
+ms.custom:
+  - sfi-image-nochange
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/22/2025
+  - ai-gen-description
 ---
 # Conditional Access policy templates
 
@@ -23,7 +28,7 @@ Conditional Access policy templates are organized into the following categories:
 
 # [Secure foundation](#tab/secure-foundation)
 
-Microsoft recommends these policies as the base for all organizations. We recommend these policies be deployed as a group.
+Microsoft recommends these policies as the base for all organizations. Deploy these policies as a group.
 
 - [Require multifactor authentication for admins](policy-old-require-mfa-admin.md)
 - [Securing security info registration](policy-all-users-security-info-registration.md)
@@ -36,7 +41,7 @@ Microsoft recommends these policies as the base for all organizations. We recomm
 
 # [Zero Trust](#tab/zero-trust)
 
-These policies as a group help support a [Zero Trust architecture](/security/zero-trust/deploy/identity).
+These policies help support a [Zero Trust architecture](/security/zero-trust/deploy/identity).
 
 - [Require multifactor authentication for admins](policy-old-require-mfa-admin.md)
 - [Securing security info registration](policy-all-users-security-info-registration.md)
@@ -72,7 +77,7 @@ These policies help secure organizations with remote workers.
 
 # [Protect administrator](#tab/protect-administrator)
 
-These policies are directed at highly privileged administrators in your environment, where compromise might cause the most damage.
+These policies are for highly privileged administrators in your environment, where compromise might cause the most damage.
 
 - [Require multifactor authentication for admins](policy-old-require-mfa-admin.md)
 - [Block legacy authentication](policy-block-legacy-authentication.md)
@@ -89,14 +94,14 @@ Policies in this category provide new ways to protect against compromise.
 
 ---
 
-Find these templates in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Conditional Access** > **Create new policy from templates**. Select **Show more** to see all policy templates in each category.
+Find these templates in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Conditional Access** > **Create new policy from templates**. Select **Show more** to view all policy templates in each category.
 
 :::image type="content" source="media/concept-conditional-access-policy-common/create-policy-from-template-identity.png" alt-text="Screenshot that shows how to create a Conditional Access policy from a preconfigured template in the Microsoft Entra admin center." lightbox="media/concept-conditional-access-policy-common/create-policy-from-template-identity.png":::
 
 > [!IMPORTANT]
-> Conditional Access template policies will exclude only the user creating the policy from the template. If your organization needs to [exclude other accounts](~/identity/role-based-access-control/security-emergency-access.md), you will be able to modify the policy once they are created. You can find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Conditional Access** > **Policies**. Select a policy to open the editor and modify the excluded users and groups to select accounts you want to exclude.
+> Conditional Access template policies exclude only the user creating the policy from the template. If your organization needs to [exclude other accounts](~/identity/role-based-access-control/security-emergency-access.md), modify the policy after it's created. You can find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) > **Entra ID** > **Conditional Access** > **Policies**. Select a policy to open the editor and modify the excluded users and groups to select accounts you want to exclude.
 
-By default, each policy is created in [report-only mode](concept-conditional-access-report-only.md), we recommended organizations test and monitor usage, to ensure intended result, before turning on each policy.
+By default, each policy is created in [report-only mode](concept-conditional-access-report-only.md). We recommend organizations test and monitor usage to ensure the intended result before turning on each policy.
 
 Organizations can select individual policy templates and:
 

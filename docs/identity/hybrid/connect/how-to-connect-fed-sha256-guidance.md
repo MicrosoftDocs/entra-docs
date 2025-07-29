@@ -3,15 +3,15 @@ title: Change signature hash algorithm for Microsoft 365 relying party trust
 description: This page provides guidelines for changing SHA algorithm for federation trust with Microsoft 365.
 keywords: SHA1,SHA256,M365,federation,aadconnect,adfs,ad fs,change sha,federation trust,relying party trust
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: cf6880e2-af78-4cc9-91bc-b64de4428bbd
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: jomondi
 
 
 ---

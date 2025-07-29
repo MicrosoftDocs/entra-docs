@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/25/2025
+ms.date: 07/29/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -25,12 +25,27 @@ There's no change for users if your organization already enforces MFA for them, 
 
 ## Scope of enforcement 
  
-The scope of enforcement includes which applications plan to enforce MFA, applications that are out of scope, when enforcement is planned to occur, and which accounts have a mandatory MFA requirement.
+The scope of enforcement includes when enforcement is planned to occur, which applications plan to enforce MFA, applications that are out of scope, and which accounts have a mandatory MFA requirement.
 
-### Applications
+### Enforcement phases 
 
 > [!NOTE]
-> The date of enforcement for Phase 2 has changed to September 1, 2025.
+> The date of enforcement for Phase 2 has changed to September 15, 2025.
+
+The enforcement of MFA for applications rolls out in two phases. 
+
+#### Applications that enforce MFA in phase 1 
+
+Starting in October 2024, MFA is required for accounts that sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center to perform any Create, Read, Update, or Delete (CRUD) operation. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. Phase 1 won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
+
+#### Applications that enforce MFA in phase 2 
+
+Starting September 15, 2025, MFA enforcement will gradually begin for accounts that sign in to Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints to perform any Create, Update, or Delete operation. Read operations won't require MFA. 
+
+Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+
+
+### Applications
 
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
@@ -39,12 +54,12 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
-| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | September 1, 2025 |
-| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | September 1, 2025 |
-| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | September 1, 2025 |
-| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | September 1, 2025 | 
-| [REST API (Control Plane)](/azure/azure-resource-manager/management/control-plane-and-data-plane#control-plane) | N/A | September 1, 2025 | 
-| [Azure SDK](/azure/developer/intro/azure-developer-create-resources#azure-sdk-and-rest-apis) | N/A | September 1, 2025 | 
+| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | September 15, 2025 |
+| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | September 15, 2025 |
+| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | September 15, 2025 |
+| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | September 15, 2025 | 
+| [REST API (Control Plane)](/azure/azure-resource-manager/management/control-plane-and-data-plane#control-plane) | N/A | September 15, 2025 | 
+| [Azure SDK](/azure/developer/intro/azure-developer-create-resources#azure-sdk-and-rest-apis) | N/A | September 15, 2025 | 
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
@@ -56,7 +71,7 @@ The following table lists affected apps and URLs for Microsoft 365.
 
 ### Accounts 
 
-All users who sign into the [applications](#applications) listed earlier to perform any Create, Read, Update, or Delete (CRUD) operation must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
+All accounts that sign in to perform operations cited in the [applications section](#applications) must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
 
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
@@ -68,10 +83,10 @@ The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is inc
 
 ### [.NET](#tab/dotnet)
 
-Changes are required if you use the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) package and one of the following APIs in your application:
+Changes are required if you use the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) package and one of the following APIs in your application. The public client API is **deprecated** [as of the 4.73.1 release](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/blob/main/CHANGELOG.md):
 
 - [IByUsernameAndPassword.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.ibyusernameandpassword.acquiretokenbyusernamepassword) (confidential client API)
-- [PublicClientApplication.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.publicclientapplication.acquiretokenbyusernamepassword) (public client API)
+- [PublicClientApplication.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.publicclientapplication.acquiretokenbyusernamepassword) (public client API) [deprecated]
 
 ### [Go](#tab/go)
 
@@ -174,17 +189,6 @@ Mandatory MFA isn't configurable. It's implemented separately from any access po
 
 For example, if your organization chose to retain Microsoft's [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
 
-## Enforcement phases 
-
-> [!NOTE]
-> The date of enforcement for Phase 2 has changed to September 1, 2025.
-
-The enforcement of MFA rolls out in two phases: 
-
-- **Phase 1**: Starting in October 2024, MFA is required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
-
-- **Phase 2**: Starting September 1, 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
-
 ## Notification channels 
 
 Microsoft will notify all Microsoft Entra Global Administrators through the following channels: 
@@ -233,6 +237,10 @@ Microsoft allows customers with complex environments or technical barriers to po
 > If you postpone the start of Phase 1, the start of Phase 2 is also postponed to the same date. You can choose a later start date for Phase 2. 
 
 :::image type="content" border="true" source="media/concept-mandatory-multifactor-authentication/postpone-phase-two.png" alt-text="Screenshot of how to postpone mandatory MFA for phase two."
+
+## Prepare for Phase 2 MFA enforcement
+
+To prepare for Phase 2 MFA enforcement, you can self-enforce MFA by using built-in definitions in Azure Policy. To learn more and follow a step-by-step overview to apply these policy assignments in your environment, see [Tutorial: Apply MFA self-enforcement through Azure Policy](/azure/governance/policy/tutorials/mfa-enforcement).
 
 ## FAQs
 

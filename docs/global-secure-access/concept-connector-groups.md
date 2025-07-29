@@ -23,7 +23,7 @@ Connector groups are useful if your applications are hosted in different locatio
 
 ## Prerequisites
 
-You must have multiple connectors to use connector groups. New connectors are automatically added to the **Default** connector group. For more information on installing connectors, see [configure connectorsD](how-to-configure-connectors.md).
+You must have multiple connectors to use connector groups. New connectors are automatically added to the **Default** connector group. For more information on installing connectors, see [configure connectors](how-to-configure-connectors.md).
 
 
 ## Assign applications to your connector groups

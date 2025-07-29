@@ -7,7 +7,8 @@ manager: dougeby
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 06/04/2025
+ms.date: 07/02/2025
+
 ms.custom: it-pro, seo-july-2024, sfi-ropc-nochange
 #Customer intent: As a dev, devops, or it admin, I want to learn about features supported in a CIAM tenant. 
 ---
@@ -121,7 +122,29 @@ The following table compares the features available for application authorizatio
 | **Attribute-based access control (ABAC)** | You can configure the app to include user attributes in the access token. Your application can then make authorization decisions based on the values in the security token. For more information, see [token customization](#token-customization). | Same as workforce.|
 | **Require user assignment**| When user assignment is required, only those users you assign to the application (either through direct user assignment or based on group membership) are able to sign in. For more information, see [manage users and groups assignment to an application](../../identity-platform/howto-restrict-your-app-to-a-set-of-users.md)| Same as workforce. For details, see [groups and application roles support](./reference-group-app-roles-support.md). |
 
+## Enterprise applications
 
+The following table compares the unique features available for [enterprise application](/entra/identity/enterprise-apps/) registration in workforce and external tenants. 
+
+Feature  |Workforce tenant  | External tenant |
+|---------|---------|---------|
+| **Application gallery**         | The [application gallery](/entra/identity/enterprise-apps/overview-application-gallery) contains thousands of applications that are preintegrated into Microsoft Entra ID.   | Choose from a range of pre-integrated apps. To find a third-party app, use the search bar. The application gallery catalog isn’t available yet.    |
+| **Register a custom enterprise application**         | [Add an enterprise application.](/entra/identity/enterprise-apps/add-application-portal)  |  [Register a SAML app in your external tenant.](/entra/external-id/customers/how-to-register-saml-app)    |
+| **Self-service application assignment**         | Let users [self-discover apps](/entra/identity/enterprise-apps/manage-self-service-access).  | Self-service application assignment in the [My Apps portal](/entra/identity/enterprise-apps/myapps-overview) is not available.   |
+| **Application proxy**         | [Microsoft Entra application proxy](/entra/identity/app-proxy/overview-what-is-app-proxy) provides secure remote access to on-premises web applications.  | Not available.    |
+
+### Consent and permission features for enterprise applications 
+
+The following table shows which consent and permission features are available for enterprise applications in each type of tenant.
+
+|Feature  |Workforce tenant  | External tenant |
+|---------|---------|---------|
+| **Admin consent for enterprise applications**            | You can [grant tenant-wide admin permissions](/entra/identity/enterprise-apps/grant-admin-consent), and  you can also [review and revoke](/entra/identity/enterprise-apps/manage-application-permissions?pivots=portal) them.  |  Same as workforce.        |
+| **User consent for enterprise applications**             | You can configure how [users consent to applications](/entra/identity/enterprise-apps/configure-user-consent) and you can [update these permissions](/entra/identity-platform/howto-update-permissions).           | Limited to permissions that don’t require [admin consent](/entra/identity/enterprise-apps/grant-admin-consent).  |
+| **Review or revoke admin consent**               | [Review and revoke](/entra/identity/enterprise-apps/manage-application-permissions) permissions.  | [Use the Microsoft Entra admin center](/entra/identity/enterprise-apps/manage-application-permissions?pivots=portal) to revoke admin consent. |
+| **Review or revoke user consent**                | [Review and revoke](/entra/identity/enterprise-apps/manage-application-permissions) permissions.                           | Use [Microsoft Graph API](/entra/identity/enterprise-apps/manage-application-permissions?pivots=ms-graph) or [PowerShell](/entra/identity/enterprise-apps/manage-application-permissions?pivots=entra-powershell) to revoke user consent.   |  
+| **Assign users or groups to apps**               |  You can [manage access to apps](/entra/identity/enterprise-apps/what-is-access-management) either in an individual or group-base assignment.  [Nested group](/entra/fundamentals/how-to-manage-groups) memberships aren't supported.     | Same as workforce.  |
+| **Role-based access control (RBAC) for app roles** | You can define and assign roles for fine-grained [access control](/entra/external-id/customers/how-to-use-app-roles-customers).               | Same as workforce.  |
 
 ## OpenID Connect and OAuth2 flows
 
@@ -182,7 +205,7 @@ The following table compares the features available for user management in each 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 |**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up.</li></ul> | <ul><li> External users created through self-service sign-up or [by an admin](how-to-manage-customer-accounts.md).</li><li> Internal users, with or without an admin role. </li><li> 	Invited users (preview), with or without an admin role. </li></ul> **Note:** All users in an external tenant have [default permissions](reference-user-permissions.md) unless they’re assigned an [admin role](how-to-manage-admin-accounts.md). |
-| **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.yml). |Same as workforce.|
+| **Manage user profile info** | <ul><li>Programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.yml).</li><li>Manage guest users across tenants with [Cross-tenant synchronization](/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview).</li></ul> |Same as workforce, except cross-tenant synchronization is not available.|
 | **Reset a user's password** | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.yml) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|
 |**Disable accounts**| Prevent the new user from being able to sign in. |Same as workforce.|
@@ -218,11 +241,26 @@ The following table compares the features available for token customization in e
 | **Types of application registration** | <ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li><li>Enterprise applications offer [more options](../../identity/enterprise-apps/plan-sso-deployment.md), like password-based, linked, and header-based.</li></ul> |<ul><li>OpenID Connect</li> <li>OAuth 2.0</li> <li>SAML (enterprise application)</li></ul>|
 | **Domain name** | When a user authenticates, a session cookie is set on the Microsoft Entra domain `login.microsoftonline.com` in the web browser.| When a user authenticates, a session cookie is set on the Microsoft Entra external ID domain `<tenant-name>.ciamlogin.com` or a [custom URL domain](concept-custom-url-domain.md) in the web browser. To ensure SSO functions correctly, use a single URL domain.|
 | **Keep me signed in** | You can enable or disabled [stay signed in](~/fundamentals/how-to-manage-stay-signed-in-prompt.yml) option. | Same as workforce. |
+| **User provisioning** | Use [automatic user provisioning](/entra/architecture/sync-scim) with the System for Cross-domain Identity Management (SCIM) to sync user accounts between Microsoft Entra External ID and supported apps. This keeps user data up to date automatically. User provisioning supports differential queries. These queries sync only the changes since the last update. This improves performance and reduces system load. | Same as workforce. |
 | **Session invalidation** | Scenarios where SSO may be invalidated, which require reauthentication: <ul><li>Session expiry</li><li>Browser issues, such as clearing browser cookies or cache.</li><li>Conditional Access policy, such as multifactor authentication requirement.</li><li>[Session revocation](/graph/api/user-revokesigninsessions)</li><li>Security issues, such as suspicious activity.</li><li>The application specifies in the authorization request to prompt the user for their credentials using `login=prompt` query string parameter in OpenID Connect and `ForceAuthn` attribute in SAML request. </li></ul> |Same as workforce.|
 |**Conditional Access**| Check the [Conditional Access](#conditional-access) section. | Check the [Conditional Access](#conditional-access) section.| 
 |**Microsoft Entra’s native authentication**| Not available| [Native authentication](concept-native-authentication.md) doesn't support SSO.|
 | **Sign-out** | When a [SAML](../../identity-platform/single-sign-out-saml-protocol.md) or [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#send-a-sign-out-request) application directs the user to the logout endpoint, Microsoft Entra ID removes and invalidates the user's session from the browser. | Same as workforce.|
 | **Single sign-out**| Upon successful sign-out, Microsoft Entra ID sends a logout notification to all other [SAML](../../identity-platform/single-sign-out-saml-protocol.md) and [OpenID Connect](../../identity-platform/v2-protocols-oidc.md#single-sign-out) applications that the user is signed into. | Same as workforce.|
+
+## Activity logs and reports
+
+The table below compares the features available for activity logs and reports across different types of tenants.
+
+|Feature  |Workforce tenant  | External tenant |
+|---------|---------|---------|
+|[Audit logs](~/identity/monitoring-health/concept-audit-logs.md)|Detailed report of all events logged in Microsoft Entra ID, including modifications to applications, groups, and users.|Same as workforce.|
+|[Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) |The sign-in logs track all sign-in activities within a Microsoft Entra tenant, including access to your applications and resources.|Same as workforce.|
+|[Sign-up logs](~/identity/monitoring-health/concept-sign-ups.md) (preview)| Not available|Microsoft Entra External ID logs all self-service sign-up events, including both successful sign-ups and failed attempts. |
+| [Provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md)| The provisioning logs provide detailed records of provisioning events within a tenant, such as user account creations, updates, and deletions.|Not available|
+| [Retention policies activity logs](~/identity/monitoring-health/concept-provisioning-logs.md) | Microsoft Entra data retention policies determine how long different types of logs (like audit, sign-in, and provisioning logs) are stored.| Seven days|
+|[Export activity logs](~/identity/monitoring-health/howto-configure-diagnostic-settings.md)| Using diagnostic settings in Microsoft Entra ID, you can integrate logs with Azure Monitor, stream logs to an event hub, or integrate with Security Information and Event Management (SIEM) tools.| [Azure Monitor for external tenants (preview)](./how-to-azure-monitor.md)|
+|[Application user activity reports](./how-to-user-insights.md)|Not available| Application user activity provides analytics on how users interact with registered applications in your tenant. It tracks metrics like active users, new users, sign-ins, and multifactor authentication (MFA) success rates. |
 
 ## Microsoft Graph APIs
 

@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-external-id
 
 ms.topic: reference
-ms.date: 08/20/2024
+ms.date: 07/07/2025
 ms.author: cmulligan
 ms.custom: it-pro
 ---

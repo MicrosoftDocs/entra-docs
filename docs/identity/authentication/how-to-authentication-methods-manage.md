@@ -22,6 +22,9 @@ You can also migrate policy settings manually on your own schedule. The migratio
 
 For more information about how these policies work together during migration, see [Manage authentication methods for Microsoft Entra ID](concept-authentication-methods-manage.md).
 
+> [!NOTE]
+> The migration guide only migrates tenant policy settings. Individual user settings aren't migrated. 
+
 ## Automated migration guide
 The automated migration guide lets you migrate where you manage authentication methods in just a few clicks. It can be accessed from the [Microsoft Entra admin center](https://entra.microsoft.com) by browsing to **Entra ID** > **Authentication methods** > **Policies**.
 
