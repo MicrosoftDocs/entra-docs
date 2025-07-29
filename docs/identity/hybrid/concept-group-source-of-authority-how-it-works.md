@@ -18,7 +18,7 @@ After the group has SOA applied and becomes a cloud group, the latest versions o
 
 ## Seamless integration with Security Group Provision to AD
 
-If you need to provision a security group back to AD to keep the AD copy of the group in-sync with Microsoft Entra ID (only for non-mail enabled cloud security groups), add the groups to the Group Provision to AD scoping configuration. Use **Selected Groups** or **All groups** with attribute value scoping. Provision dynamic security groups to AD. Cloud security groups provisioned to AD do so as Universal groups in AD.
+If you need to provision a security group back to AD to keep the AD copy of the group in-sync with Microsoft Entra ID (only for cloud security groups taht aren't mail-enabled), add the groups to the Group Provision to AD scoping configuration. Use **Selected Groups** or **All groups** with attribute value scoping. Provision dynamic security groups to AD. Cloud security groups provisioned to AD do so as Universal groups in AD.
 
 When Microsoft Entra Cloud Sync provisions a security group to AD, it recognizes when existing AD groups previously had SOA applied and are provisioned from Microsoft Entra ID to AD. The security identifier (SID) value provides this tie together. Therefore, provisioning the cloud security group to AD does so to the original AD group (if it exists). If it doesn’t find a match in AD, it creates a new on-prem security group.
 
@@ -30,7 +30,7 @@ Let's suppose you delete an on-premises group in AD DS. Later, you decide to pro
 
 You can reverse SOA changes to a group. In this scenario, the group SOA reverts, and AD DS manages it. During the next synchronization cycle, AD DS takes control of the group. In Microsoft Entra ID, the group becomes read-only. 
 
-This method reatins any changes made while the group was managed in the cloud. After the object is taken over, any modifications made in the cloud are overridden.
+This method retains any changes made while the group was managed in the cloud. After the object is taken over, any modifications made in the cloud are overridden.
 
 ## Related content
 
