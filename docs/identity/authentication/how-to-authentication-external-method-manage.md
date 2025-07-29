@@ -4,7 +4,7 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 07/29/2025
 ms.author: justinha
 author: gregkmsft
 manager: dougeby
