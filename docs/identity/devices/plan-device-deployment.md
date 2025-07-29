@@ -29,11 +29,13 @@ There are multiple methods to integrate your devices into Microsoft Entra ID. Th
 * [Join devices](concept-directory-join.md) to Microsoft Entra ID (cloud-only).
 * [Microsoft Entra hybrid join](concept-hybrid-join.md) devices to your on-premises Active Directory domain and Microsoft Entra ID. 
 
+When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
+
+- `enterpriseregistration.windows.net`
+- `certauth.enterpriseregistration.windows.net`
+
 > [!NOTE]
-> When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
-> 
->  - `enterpriseregistration.windows.net`
->  - `certauth.enterpriseregistration.windows.net`
+> Failure to exempt these endpoints may result in failure of device registration flows.
 
 ## Learn
 
