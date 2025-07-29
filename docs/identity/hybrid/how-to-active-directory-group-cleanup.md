@@ -15,7 +15,7 @@ One challenge many organizations face is the proliferation of groups, particular
 
 There's no way to confirm if a particular group is needed to access an app or a file. So we need another way to identify and clean up these groups that are no longer needed.
 
-This article outlines how to use a *scream test* methodology to clean up groups from an Active Directory domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from sync with Microsoft Entra. 
+This article outlines how to use a *scream test* methodology to clean up groups from an Active Directory domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from from being synced into Microsoft Entra. 
 
 First you determine whether each group needs to be managed with an AD-based management
 tool like **Active Directory Users and Computers**, managed in the cloud with Microsoft Entra admin center or Exchange Online, or may no longer needed. If the group may no longer be
@@ -43,18 +43,20 @@ still required, and whether to manage it in Microsoft Entra ID or the Active Dir
 
 ## Prerequisites
 
-These prerequisites must be completed before you start to remove unused groups:
+These prerequisites must be completed before you start to remove unused groups with this approach:
 
 - You need membership in the Domain Admins group, or similar permission to update, move, and delete groups. 
 
 - You need to be able to change the scope of Microsoft Entra Connect Sync or Cloud Sync to include or exclude groups.
 
-- You need to create a Group Policy Object (GPO) for all writable domain controllers to enable change logging and a central repository for logs.
+- You need to create a Group Policy Object (GPO) for all writable domain controllers to enable logging of Active Directory object modifications, and set up a central repository for collected logs. For more information, see: 
+  - [Configure audit policies for Windows event logs](/defender-for-identity/deploy/configure-windows-event-collection)
+  - [Event 5136: A directory service object was modified](/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-5136)
+  - [Collect Windows events from virtual machine with Azure Monitor](/azure/azure-monitor/vm/data-collection-windows-events)
 
-- You need to enable the Active Directory Recycle Bin.
+- You need to [enable the Active Directory Recycle Bin](/windows-server/identity/ad-ds/get-started/adac/active-directory-recycle-bin).
 
-- You need to creat two organizational units (OUs) in the domain – one for temporary Kerberos app scream
-  test groups, and another for temporary Lightweight Directory Access Protocol (LDAP) app scream test groups.
+- You need to create two organizational units (OUs) in the domain – one for temporary Kerberos app scream test groups, and another for temporary Lightweight Directory Access Protocol (LDAP) app scream test groups.
 
 ## Perform a group analysis for the domain
 
@@ -105,31 +107,27 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
    converted to a Microsoft 365 group or Exchange Online DL. Perform a Kerberos
    scream test and successor test. After you finish:
 
-   - If the group is still needed, maintain it in the domain by using Exchange on-premises.
+   - If the group is still needed, maintain it in the domain by using Exchange on-premises, or replace it with an Exchange Online
+      DL or Microsoft 365 group.
 
-   - If the group is still needed, change the sync rules to have the
-      members be present in Microsoft Entra and then replace with an Exchange Online
-      DL or M365 group.
-
-   - If the group was not needed, remove the group from the domain.
+   - If the group isn't needed, remove it from the domain.
 
 1. If the group is a DL, then even if the members of the group are in
    Microsoft Entra, the group Source of Authority (SOA) can't be converted
-   to Microsoft Entra. You should perform cloud scream test and successor tests, and
-   when complete, the options are:
+   to Microsoft Entra. You should perform a cloud scream test and successor tests. When complete, the options are:
 
    - If you still need the group, replace it with an Exchange Online DL or a Microsoft 365 group.
-   - If the group was not needed, remove the group from the Active Directory domain and don't replace it. 
+   - If the group isn't needed, remove it from the Active Directory domain, and don't replace it. 
 
    Contact your Exchange administrator to determine which option to proceed
    with.
 
-1. If the group is a MESG, then the group SOA can't be converterd. Perform cloud scream test and
+1. If the group is a mail-enabled security group (MESG), then the group SOA can't be converted. Perform a cloud scream test and
    successor tests, and when complete, the options are:
 
    - Replace with a Microsoft 365 group.
    - Create separate DL and SG, and process each one separately.
-   - Convert the group so it's not a MESG.
+   - Update the group type so it's either a security group or a DL instead of a MESG.
    - Remove the group from the Active Directory domain and don't replace it.
 
    Contact your Exchange administrator to determine if the group is still
@@ -148,25 +146,15 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
    | One or more users or groups not synced to Microsoft Entra (excluded from sync scope) | The group shouldn't have its Source of Authority converted.                                                                                                                                           |
    | Users and groups synced to Microsoft Entra                       | Plan to perform a scream test for cloud usage.                                                                                                                                          |
 
-1. Check the change date of the group. If the group is recently
-   modified, check the logs to determine who modified the group. Contact them to determine the purpose of the group, and whether
-   it can be converted to a cloud security group.
+1. Check the change date of the group. If the group is recently modified, check the logs to determine who modified the group. The security identifier (SID) of the user who modified the group is included in the subject field of [event 5136](/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-5136). Contact them to determine the purpose of the group, and whether it can be updated to a cloud security group.
 
-1. Otherwise, if the group isn't recently modified, check if
-   there's an access control list on the group or its OU that delegates
-   ownership of the group. If there is, contact the owners to determine
-   the purpose of the group.
+1. Otherwise, if the group isn't recently modified, use [Get-Acl](/powershell/module/microsoft.powershell.security/get-acl) to check if an access control list (ACL) on the group or its OU delegates ownership of the group. If an ACL delegates ownership, contact the owners to determine the purpose of the group.
 
-1. Otherwise, check if another group has this group as a
-   member, and that group has an identified owner. If so, contact the
-   owners of that group.
+1. Otherwise, check if another group has this group as a member, and that group has an identified owner. If so, contact the owners of that group.
 
-1. If the group isn't a dependent of another group, isn't
-   recently changed, has no clear owner, and the members are only users and groups that are synced to Microsoft Entra, then
-   continue to the next section to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
+1. If the group isn't a dependent of another group, isn't recently changed, has no clear owner, and the members are only users and groups that are synced to Microsoft Entra, then continue to the next section to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
 
-1. Otherwise, if the group has user or group members that aren't Microsoft Entra accounts,
-   and isn't a built-in group, then proceed with the [scream test for Kerberos apps](#scream-test-for-kerberos-apps).
+1. Otherwise, if the group has user or group members that aren't Microsoft Entra accounts, and isn't a built-in group, then proceed with the [scream test for Kerberos apps](#scream-test-for-kerberos-apps).
 
 ## Scream test for cloud usage
 
@@ -188,24 +176,17 @@ This test determines if there are users in groups that are used for cloud resour
    Azure subscription, resource group or resource. If so, contact the
    owners of that Azure subscription.
 
-1. Check with Exchange, SharePoint, Intune, Azure, and other
-   administrators to determine if the group is needed for the
-   administration of their services.
+1. Check with Exchange, SharePoint, Intune, Azure, and other administrators to determine if the group is needed for the administration of their services.
 
-1. Check with the owners of data in Microsoft Online Services to
-   determine if they use the group.
+1. Check with the admins of other applications in Microsoft Online Services to determine if they use the group.
 
-1. After you determine there's no evident use of the group in
-   Microsoft Online Services, there may be another service that was
-   not evident. To detect if there's another service, proceed to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
+1. After you determine there's no evident use of the group in Microsoft Online Services, there may be another service that wasn't evident. To detect if there's another service, proceed to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
 
-1. Change your Cloud sync or Connect sync configuration to exclude the
-   group from being synced.
+1. Change your Cloud sync or Connect sync configuration to exclude the group from being synced.
 
-1. Wait for synchronization and confirm the group is no longer visible
-   in Microsoft Entra.
+1. Wait for sync to finish and confirm the group is no longer visible in Microsoft Entra.
 
-1. Wait *N* days.
+1. Wait several days to determine if any users complain that the group is unavailable. For example, see if anyone opens a support ticket with IT helpdesk.
 
 1. If there are complaints, remove the group from exclusion. Identify the team that relies upon the group, and determine a plan to
    migrate the team to use a cloud managed group in future.
@@ -221,17 +202,13 @@ that contains the group ID of this group or another group that contains it.
 
 To perform a Kerberos scream test, follow these steps:
 
-1. Move the group to the OU for groups in Kerberos scream test.
+1. Move the group to the OU for groups in the Kerberos scream test.
 
-1. Convert the group to a DL, so that the group is no longer included in
-   Kerberos tokens. Alternatively, remove the members. For example, move the members to another new group
-   temporarily.
+1. Update the group type to a DL, so that the group is no longer included in Kerberos tokens. Alternatively, remove the members. For example, move the members to to another new DL group temporarily.
 
-1. Wait *N* days.
+1. Wait several days to determine if any users complain that the group is unavailable. For example, see if anyone opens a support ticket with IT helpdesk.
 
-1. If there are complaints, convert the group type back to a security group, re-add the
-   members, and identify the team that relies upon the group. Work with
-   that team to plan to move to cloud managed groups.
+1. If there are complaints, change the group type back to a security group or re-add the members. Then identify the team that relies upon the group.
 
 1. If there are no complaints, proceed to the scream test for LDAP apps.
 
@@ -242,15 +219,15 @@ user being a member of a security group.
 
 1. Move group to the OU for groups in LDAP scream test.
 
-1. REmove members from the group. For example, move the members to another new group temporarily.
+1. Remove members from the group. For example, move the members to another new group temporarily.
 
-1. Wait *N* days.
+1. Wait several days to determine if any users complain that the group is unavailable. For example, see if anyone opens a support ticket with IT helpdesk.
 
-1. If there are complaints, then restore the membership of the group,
+1. If there are complaints, restore the membership of the group, and
    move it back to its original OU. Identify the team that relies upon the
    group.
 
-1. If there are no complaints, then delete the group. The group goes
+1. If there are no complaints, delete the group. The deleted group goes
    to the Active Directory Recycle Bin.
 
 ## Related content
