@@ -1,5 +1,5 @@
 ---
-title: Enable automatic user provisioning for multi-tenant applications in Microsoft Entra ID
+title: Enable automatic user provisioning for multitenant applications in Microsoft Entra ID
 description: A guide for independent software vendors for enabling automated provisioning in Microsoft Entra ID
 
 author: jenniferf-skc
@@ -13,7 +13,7 @@ ms.reviewer: zhchia, arvinh
 ai-usage: ai-assisted
 ---
 
-# Enable automatic user provisioning for your multi-tenant application in Microsoft Entra ID
+# Enable automatic user provisioning for your multitenant application in Microsoft Entra ID
 
 Automatic user provisioning is the process of automating the creation, maintenance, and removal of user identities in target systems like your software-as-a-service applications.
 
@@ -74,9 +74,11 @@ To help determine which integration option to use for your application, refer to
 
 ## Microsoft Entra provisioning service (SCIM)
 
-The Microsoft Entra provisioning service uses [SCIM](https://aka.ms/SCIMOverview), an industry standard for provisioning supported by many identity providers (IdPs) as well as applications (such as Slack, G Suite, Dropbox). We recommend you use the Microsoft Entra provisioning service if you want to support IdPs in addition to Microsoft Entra ID, as any SCIM-compliant IdP can connect to your SCIM endpoint. Building a simple /User endpoint, you can enable provisioning without having to maintain your own sync engine. 
+The Microsoft Entra provisioning service uses [SCIM](https://aka.ms/SCIMOverview), an industry standard for provisioning supported by many identity providers (IdPs) as well as applications (such as Slack, G Suite, Dropbox). We recommend you use the Microsoft Entra provisioning service if you want to support IdPs in addition to Microsoft Entra ID, as any SCIM-compliant IdP can connect to your SCIM endpoint. Building a simple /User endpoint, you can enable provisioning without having to maintain your own sync engine.
 
-For more information on how the Microsoft Entra provisioning service users SCIM, see: 
+You can also use SCIM in [external tenants](/entra/external-id/customers/overview-customers-ciam) to automatically provision users from Microsoft Entra External ID to supported apps. This keeps user information up to date without any manual work. The service uses differential queries, so only changes since the last update are synced, which helps improve performance and reduce system load.
+
+For more information on how the Microsoft Entra provisioning service users SCIM, see:
 
 * [Learn more about the SCIM standard](https://aka.ms/SCIMOverview)
 
