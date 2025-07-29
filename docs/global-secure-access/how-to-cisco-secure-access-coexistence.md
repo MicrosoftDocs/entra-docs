@@ -22,21 +22,21 @@ This guide outlines how to configure and deploy Global Secure Access solutions a
 
 ## Coexistence configurations
 
-### Configuration 1: Private Access with Cisco Secure Access Zero Trust Network Access (ZTNA), Domain Name System (DNS) Defense, and Secure Web Gateway (SWG)
+### Configuration 1: Private Access with Cisco Secure Access - Zero Trust Network Access (ZTNA), Domain Name System (DNS) Defense, and Secure Web Gateway (SWG)
 
-In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Global Secure Access Private Access, while the Cisco Secure Client Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Access. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
+In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Global Secure Access Private Access, while the Cisco Secure Client - Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Access. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
 
 ### Configuration 2: Microsoft Access with Cisco Secure Access ZTNA, DNS Defense, and SWG.
 
-Global Secure Access manages all Microsoft 365 traffic. The Cisco Secure Client Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Access. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
+Global Secure Access manages all Microsoft 365 traffic. The Cisco Secure Client - Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Access. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
 
-### Configuration 3: Internet Access and Microsoft Access with Cisco Secure Access Zero Trust Network Access (ZTNA)
+### Configuration 3: Internet Access and Microsoft Cisco Secure Access - Zero Trust Network Access (ZTNA)
 
-Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access handles only Private Access with the Cisco Secure Client Zero Trust Network Access (ZTNA) module.
+Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access handles only Private Access with the Cisco Secure Client - Zero Trust Network Access (ZTNA) module.
 
-### Configuration 4: Internet Access, Microsoft Access, and Private Access with Cisco Secure Access Zero Trust Network Access (ZTNA) and Domain Name System (DNS) Defense (Umbrella)
+### Configuration 4: Internet Access, Microsoft Access, and Private Cisco Secure Access - Zero Trust Network Access (ZTNA) and Domain Name System (DNS) Defense (Umbrella)
 
-Global Secure Access manages internet access, Microsoft access, and some private access applications. Secure Access Zero Trust Network Access (ZTNA) handles separate private applications, and DNS Defense (Umbrella) provides DNS protection.
+Global Secure Access manages internet access, Microsoft access, and some private access applications. Secure Access - Zero Trust Network Access (ZTNA) handles separate private applications, and DNS Defense (Umbrella) provides DNS protection.
 > [!NOTE]
   > There's currently an issue with macOS preventing coexistence between Global Secure Access and Cisco Secure Access ZTNA.
 ## Prerequisites
@@ -60,7 +60,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 ### Set up Cisco Secure Access
 
 - Deploy and configure a resource connector for private applications. See Cisco documentation for [managing resource connectors and connector groups](https://docs.sse.cisco.com/sse-user-guide/docs/manage-resource-connectors-and-connector-groups).
-- Provision users and groups. Integration with Microsoft Entra ID provides the best user experience. See Cisco documentation for [Microsoft Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
+- Set up users and groups. Integration with Microsoft Entra ID provides the best user experience. See Cisco documentation for [Microsoft Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
 - Add private resources and create access policies. See Cisco documentation for [managing private access rules](https://docs.sse.cisco.com/sse-user-guide/docs/manage-private-access-rules).
 - Set up and configure internet security. See Cisco documentation for [managing internet security](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
 - Deploy and install the Cisco Secure Client. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
@@ -72,7 +72,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ## Cisco Secure Access bypasses
 
-Add Microsoft Entra service FQDNs in Traffic Steering to the destination list to bypass Cisco Secure Access.
+To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Steering to the destination list.
 
 1. In the Cisco Secure Access portal, go to **Connect > End User Connectivity > Internet Security**.
 2. In the **Traffic Steering** section, select **Add Destination > Bypass Secure Access**, add the following FQDNs, and save:
@@ -126,13 +126,13 @@ Add Microsoft Entra service FQDNs in Traffic Steering to the destination list to
 
 #### Cisco Secure Access configuration
 
-- Configure required destinations to bypass Internet Security.
-- Deploy and configure Cisco Secure Client with Zero Trust Access and Umbrella modules.
-- Add private resources and access policies.
-- Verify client configurations:
-  - Right-click Global Secure Access Client > Advanced Diagnostics > Forwarding Profile to verify Private Access and Private DNS rules.
-  - Advanced Diagnostics > Health Check: ensure no checks are failing.
-  - Cisco Secure Client: validate Zero Trust Access and Umbrella are active.
+1. **Configure required destinations to bypass Internet Security.**
+2. **Deploy and configure Cisco Secure Client** with Zero Trust Access and Umbrella modules.
+3. **Add private resources and create access policies.**
+4. **Verify client configurations:**
+  - Right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile** to confirm Private Access and Private DNS rules.
+  - Go to **Advanced Diagnostics** > **Health Check** and ensure all checks pass.
+  - In **Cisco Secure Client**, confirm the Zero Trust Access and Umbrella modules are active.
 
 > [!NOTE]
 > For troubleshooting, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
