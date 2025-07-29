@@ -29,6 +29,12 @@ There are multiple methods to integrate your devices into Microsoft Entra ID. Th
 * [Join devices](concept-directory-join.md) to Microsoft Entra ID (cloud-only).
 * [Microsoft Entra hybrid join](concept-hybrid-join.md) devices to your on-premises Active Directory domain and Microsoft Entra ID. 
 
+> [!NOTE]
+> When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
+> 
+>  - `enterpriseregistration.windows.net`
+>  - `certauth.enterpriseregistration.windows.net`
+
 ## Learn
 
 Before you begin, make sure that you're familiar with the [device identity management overview](overview.md).
@@ -117,11 +123,6 @@ iOS and Android devices are only Microsoft Entra registered. The following table
 | Self-service password reset from the Windows login screen | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | Windows Hello PIN reset | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 
-> [!NOTE]
-> When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
-> 
->  - `enterpriseregistration.windows.net`
->  - `certauth.enterpriseregistration.windows.net`
 
 <a name='azure-ad-registration-'></a>
 
