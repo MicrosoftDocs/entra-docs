@@ -86,7 +86,7 @@ Apple's app-site-association domains are critical for SSO extension functioning.
 
 #### URLs that need to be allowed for PSSO registration flows
 
-Please make sure traffic to the URLs below is allowed by default and is also exempted from TLS interception/inspection, this is required for registration flows that needs TLS challenges to succeed:
+Please make sure traffic to the URLs below is allowed by default and is also exempted from TLS interception/inspection, this is [required for registration](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra) flows that needs TLS challenges to succeed:
  - `enterpriseregistration.windows.net`
  - `certauth.enterpriseregistration.windows.net`
 
