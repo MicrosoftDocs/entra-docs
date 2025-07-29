@@ -24,13 +24,13 @@ When Microsoft Entra Cloud Sync provisions a security group to AD, it recognizes
 
 ## Delete and restore groups in Active Directory Domain Services (AD DS)
 
-If an administrator deletes a group in AD DS and subsequently decides to provision it to AD using **Group Provision to AD** with the same SID, the administrator must ensure that the Active Directory Recycle Bin is enabled. You should restore the group from the Recycle Bin before you add it to the scope for **Group Provision to AD**.
+Let's suppose you delete an on-premises group in AD DS. Later, you decide to provision the group with the same SID to the Active Directory domain using **Group Provisioning to AD**. In this case, you need to be sure that the Active Directory Recycle Bin is enabled. You should restore the group from the Recycle Bin before you add it to the scope for **Group Provisioning to AD**.
 
 ## Roll back SOA changes
 
-Administrators can reverse operations to a group SOA. In this scenario, the object source of authority reverts, and AD DS manages it. During the next synchronization cycle, AD DS takes control of the object. In Microsoft Entra ID, the object becomes read-only. 
+You can reverse SOA changes to a group. In this scenario, the group SOA reverts, and AD DS manages it. During the next synchronization cycle, AD DS takes control of the group. In Microsoft Entra ID, the group becomes read-only. 
 
-This method ensures that any changes made while the A group was managed in the cloud are retained. After the object is taken over, any modifications made in the cloud are overridden.
+This method reatins any changes made while the group was managed in the cloud. After the object is taken over, any modifications made in the cloud are overridden.
 
 ## Related content
 
