@@ -8,7 +8,7 @@ ms.date: 07/29/2025
 ms.author: justinha
 author: emakedon23
 manager: dougeby
-ms.reviewer: emakedon23, gustavosa
+ms.reviewer: emilymakedon, gustavosa
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an authentication administrator, I want learn how to manage an external authentication method (EAM) for Microsoft Entra ID.
 ---
