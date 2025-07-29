@@ -6,9 +6,9 @@ ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/29/2025
 ms.author: justinha
-author: gregkmsft
+author: emakedon23
 manager: dougeby
-ms.reviewer: gkinasewitz, gustavosa
+ms.reviewer: emakedon23, gustavosa
 ms.custom: sfi-ropc-blocked
 # Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external authentication method (EAM) for tenants.
 ---
