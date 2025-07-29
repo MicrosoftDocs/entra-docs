@@ -84,7 +84,7 @@ Follow these steps to convert the SOA for a test group:
 
 1. Verify that the group appears in the Microsoft Entra admin center as a synced group.
 1. Use Microsoft Graph API to convert the SOA of the group object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as Groups admin.
-1. Let's check the existing SOA status. We didn’t updated the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{id}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
+1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{id}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 /graph/api/onpremisessyncbehavior-update
 
    ```https
@@ -310,7 +310,7 @@ In the **Provisioning Logs** of the **AD2AAD job**, you can see that **SOAGroup3
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/skipped.png" alt-text="Screenshot of a skipped object.":::
 
-The details explain that the object isn't synced because it's SOA is converted to the cloud.
+The details explain that the object isn't synced because its SOA is converted to the cloud.
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
@@ -319,7 +319,7 @@ The details explain that the object isn't synced because it's SOA is converted t
 
 - **No reconciliation support for local AD groups**: An AD admin (or an application with sufficient permissions) can directly modify an AD group. If SOA is applied to the object or if cloud security group provisioning to AD is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD changes are overwritten if group provisioning to AD is enabled.
 
-- **No dual write allowed**: After you start to manage the memberships for the converted group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD using Group Provision to AD as a nested group under another AD group (OnPremGroupB) that's in scope for AD to Entra ID sync, the membership reference of group A won't synced when sync happens for OnPremGroupB. This is because the sync client doesn't know the cloud group membership references. This behavior is by design.
+- **No dual write allowed**: After you start to manage the memberships for the converted group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD using **Group Provision to AD** as a nested group under another AD group (OnPremGroupB) that's in scope for AD to Entra ID sync, the membership reference of group A won't be synced when sync happens for OnPremGroupB. They won't be synced because the sync client doesn't know the cloud group membership references. This behavior is by design.
 
 - **No SOA conversion of nested groups**: If there are nested groups in AD and want to convert the SOA of the parent or top group from AD to Microsoft Entra ID, only the parent group’s SOA is converted. Nested groups in the parent group continue to be AD groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest hierarchy, and move up the tree.
 
