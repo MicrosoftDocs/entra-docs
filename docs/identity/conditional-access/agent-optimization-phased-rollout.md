@@ -12,9 +12,9 @@ ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
 ---
-# Conditional Access optimization agent phased rollout
+# Conditional Access optimization agent phased rollout (preview)
 
-The Conditional Access optimization agent for Microsoft Entra includes a phased rollout capability that helps organizations deploy new Conditional Access policies safely and efficiently. This Microsoft Security Copilot feature in Microsoft Entra enables administrators to introduce policies gradually, monitor their impact, and minimize disruptions. There are several benefits to this phased rollout capability:
+The Conditional Access optimization agent for Microsoft Entra includes a preview phased rollout capability that helps organizations deploy new Conditional Access policies safely and efficiently. This Microsoft Security Copilot feature in Microsoft Entra enables administrators to introduce policies gradually, monitor their impact, and minimize disruptions. There are several benefits to this phased rollout capability:
 
 - **User impact mitigation**: Gradual deployment minimizes the chance of widespread disruption to end users.
 - **Operational efficiency**: Reduces the need for manual analysis and planning, saving weeks of effort.
@@ -22,6 +22,10 @@ The Conditional Access optimization agent for Microsoft Entra includes a phased 
 - **Transparency**: The agent provides clear reasoning for group assignments and rollout decisions.
 
 This article explains how the phased rollout process works, outlines prerequisites, and describes the built-in safeguards that help ensure a smooth deployment.
+
+> [!IMPORTANT]
+> The phased rollout capability in the Conditional Access Optimization agent is currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -81,5 +85,3 @@ After every phase is complete, the agent will recommend deleting the report-only
 ## Built-in safeguards
 
 Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified so the details can be reviewed and potentially modified.
-
-:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-blocked-sign-ins.png" alt-text="Screenshot of a phased rollout stopped because of blocked sign ins." lightbox="media/agent-optimization-phased-rollout/phased-rollout-blocked-sign-ins.png":::
