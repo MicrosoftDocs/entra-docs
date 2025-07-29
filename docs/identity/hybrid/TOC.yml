@@ -426,7 +426,7 @@
               href: connect/how-to-connect-install-multiple-domains.md
             - name: Federate multiple instances of Microsoft Entra ID with single instance of AD FS
               href: connect/how-to-connect-fed-single-adfs-multitenant-federation.md
-            - name: Renew federation certificates for M365 and Microsoft Entra ID
+            - name: Renew federation certificates 
               href: connect/how-to-connect-fed-o365-certs.md
             - name: Update the SSL certificate for AD FS
               href: connect/how-to-connect-fed-ssl-update.md
@@ -434,7 +434,7 @@
               href: connect/how-to-connect-azure-ad-trust.md
             - name: Configure group claims for applications
               href: connect/how-to-connect-fed-group-claims.md
-            - name: Change hash algorithm for M365 RP
+            - name: Change hash algorithm 
               href: connect/how-to-connect-fed-sha256-guidance.md
             - name: Use a SAML 2.0 server as your Idp
               href: connect/how-to-connect-fed-saml-idp.md
