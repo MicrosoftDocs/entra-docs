@@ -23,6 +23,21 @@ Before getting started, we recommend that you familiarize yourself with the foll
 * [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md).
 * [macOS Platform Single Sign-on overview](./macos-psso.md).
 
+## Minimum required payload properties
+
+The following settings and payload properties are required for use with the [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md). Please ensure these are configured with the following values and add other settings as required to ensure proper SSO for your apps.
+
+| **Setting ** | **Value(s) ** |
+|---|---|
+| Extension identifier  | com.microsoft.CompanyPortalMac.ssoextension  |
+| Team identifier  | UBF8T346G9  |
+| Authentication Method (Deprecated)    [Reqd for OS13 devices]  | One of...  Password  UserSecureEnclaveKey    |
+| Authentication method  (OS14+ devices)  | One of...  Password  UserSecureEnclaveKey  Smartcard (macOS 14+)  |
+| Screen Locked Behavior  | Do Not Handle  |
+| Type  | Redirect  |
+| URLs  | Supply the following URLs  https://login.microsoftonline.com  https://login.microsoft.com  https://sts.windows.net  https://login.partner.microsoftonline.cn  https://login.chinacloudapi.cn  https://login.microsoftonline.us  https://login-us.microsoftonline.com  |
+| Use Shared Device Keys  | Enable “Use Shared Device Keys” for the best PSSO experience and to avoid unnecessary re-registration experiences if enabled later.  |
+
 ## Event notifications
 You may need to perform additional actions upon completion of various Platform SSO events depending on the event's status. Below is the list of notifications that will be posted by the Entra ID SSO extension for various platform SSO events. MDMs can choose to listen to these and perform appropriate actions as needed. 
 
