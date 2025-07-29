@@ -74,6 +74,11 @@ We recommend that the initial configuration of your integration method is in a t
 
 You might want to do a [targeted deployment of Microsoft Entra hybrid join](hybrid-join-control.md) before enabling it across the entire organization.
 
+When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
+
+ - `enterpriseregistration.windows.net`
+ - `certauth.enterpriseregistration.windows.net`
+
 > [!WARNING]
 > Organizations should include a sample of users from varying roles and profiles in their pilot group. A targeted rollout will help identify any issues your plan may not have addressed before you enable for the entire organization.
 
