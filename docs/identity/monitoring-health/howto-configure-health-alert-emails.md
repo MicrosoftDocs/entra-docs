@@ -1,6 +1,6 @@
 ---
-title: How to configure Health email notifications (preview)
-description: Learn how to configure the Microsoft Entra health monitoring email notifications to monitor and improve the health of your tenant.
+title: How to configure Health notifications (preview)
+description: Learn how to configure the Microsoft Entra health monitoring email and webhook notifications to monitor and improve the health of your tenant.
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
@@ -14,11 +14,11 @@ ms.reviewer: sarbar
 
 ---
 
-# How to configure email notifications for Microsoft Entra Health monitoring alerts (preview)
+# How to configure notifications for Microsoft Entra Health monitoring alerts (preview)
 
-Microsoft Entra Health provides tenant-level metrics and health signals for several key identity scenarios. These signals are fed into an anomaly detection service, which triggers alerts when significant changes are detected. You can configure email notifications for when an alert is triggered.
+Microsoft Entra Health provides tenant-level metrics and health signals for several key identity scenarios. These signals are fed into an anomaly detection service, which triggers alerts when significant changes are detected. You can configure email and webhook notifications for when an alert is triggered.
 
-This article describes how to configure email notifications for Microsoft Entra Health monitoring alerts.
+This article describes how to configure email and webhook notifications for Microsoft Entra Health monitoring alerts.
 
 > [!IMPORTANT]
 > Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
@@ -50,7 +50,7 @@ Email notifications are sent to the [Microsoft Entra group](../../fundamentals
 - [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
 - [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)
 
-## Configure the email notifications
+## Configure email notifications
 
 Email notification settings can be configured for each scenario in the Microsoft Entra admin center or using the Microsoft Graph API.
 
@@ -139,3 +139,32 @@ Content-Type: application/json
 
 ---
 
+## Configure webhook notifications
+
+Webhook change notifications allow applications to receive alerts when a Microsoft Graph resource you're interested in is created, updated, or deleted. These notifications differ from email notifications in that when a service or system subscribes to the notification, the notification is sent to an HTTPS endpoint, not an email address.
+
+For the Microsoft Entra Health monitoring alerts, the service calls the subscription API to listen for health monitoring alerts. You provide Microsoft Graph an HTTPS endpoint so when a new alert is created, updated, or deleted, Microsoft Graph sends that notification to the specified HTTPS endpoint. 
+
+With the Microsoft Entra Health monitoring alerts onboarded to the Microsoft Graph change notifications, you can set up webhook notifications. For mor information, see [Microsoft Graph change notifications](/graph/change-notifications-overview). 
+
+The client app sends a **POST** request to the `/subscriptions` endpoint. The following example shows a basic request to subscribe to changes to a specific mail folder on behalf of the signed-in user. For more information about other Microsoft Graph resources that support change notifications, see [supported resources](/graph/change-notifications-overview#supported-resources).
+
+### Example subscription request
+
+<!-- {
+  "blockType": "request",
+  "name": "change-notifications-subscriptions-example"
+}-->
+```http
+POST https://graph.microsoft.com/v1.0/subscriptions
+Content-Type: application/json
+
+{
+  "changeType": "created,updated",
+  "notificationUrl": "https://webhook.azurewebsites.net/notificationClient",
+  "lifecycleNotificationUrl": "https://webhook.azurewebsites.net/api/lifecycleNotifications",
+  "resource": "/me/mailfolders('inbox')/messages",
+  "expirationDateTime": "2016-03-20T11:00:00.0000000Z",
+  "clientState": "SecretClientState"
+}
+```
