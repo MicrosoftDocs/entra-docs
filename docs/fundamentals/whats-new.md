@@ -58,6 +58,16 @@ Conditional Access Optimization Agent in Microsoft Entra monitors for new users 
 
 ---
 
+### General Availability - Conditional Access Agent Supports Disabling Agent Creation of Report-Only Policies
+
+**Type:** New feature  
+**Service category:** Conditional Access  
+**Product capability:** Identity Security & Protection  
+
+The Conditional Access Optimization Agent now supports a new setting that allows admins to configure if the agent can or cannot create report-only mode policies autonomously. If turned off, the agent will only create policies upon admin approval. For more information, see: [Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot](../identity/conditional-access/agent-optimization.md#agent-capabilities).
+
+---
+
 ### General Availability - New Lifecycle Workflows task to revoke refresh tokens
 
 **Type:** New feature  
