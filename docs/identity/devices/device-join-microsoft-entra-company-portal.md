@@ -26,7 +26,7 @@ In this tutorial, you learn how to register a Mac device with macOS Platform Sin
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 - For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
 - Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#insufficient-permissions).
-- If you have network proxy filtering or TLS inspection enabled in your environment, be sure to review the suggested settings documented [in the Platform Single Sign-On troubleshooting guide](./troubleshoot-macos-platform-single-sign-on-extension?tabs=macOS14#tls-inspection-urls-to-be-excluded-for-platform-sso)
+- If you have network proxy filtering or TLS inspection enabled in your environment, be sure to review the suggested settings documented [in the Platform Single Sign-On troubleshooting guide](/entra/identity/troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#tls-inspection-urls-to-be-excluded-for-platform-sso)
 
 ## Intune MDM and Microsoft Entra Join using Company Portal
 
