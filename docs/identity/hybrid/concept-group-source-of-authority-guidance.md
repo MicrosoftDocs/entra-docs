@@ -11,11 +11,11 @@ ms.reviewer: dahnyahk
 
 # Guidance for using Group Source of Authority (SOA) (Preview)
 
-Managing groups across hybrid environments is essential for organizations that transition from on-premises Active Directory (AD) to the cloud. Group Source of Authority (SOA) in Microsoft Entra ID enables you to transfer group management from AD to the cloud, providing greater flexibility, modern governance, and streamlined administration. This guidance explains how to use Group SOA to manage, provision, restore, and roll back groups in hybrid and cloud environments. You'll learn best practices for group cleanup, transitioning group management, and ensuring secure, efficient access control as you modernize your identity infrastructure.
+Managing groups across hybrid environments is essential for organizations that transition from on-premises Active Directory (AD) to the cloud. Group Source of Authority (SOA) in Microsoft Entra ID enables you to transfer group management from AD to the cloud, providing greater flexibility, modern governance, and streamlined administration. This guidance explains how to use Group SOA to manage, provision, restore, and roll back groups in hybrid and cloud environments. It explains best practices to clean up group cleanup, convert group management, and ensure secure, efficient access control as you modernize your identity infrastructure.
 
 ## AD group cleanup
 
-One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory domains. An organization may create security groups that are no longer needed after projects complete. These groups can linger unmaintained in the domain.
+One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory domains. An organization might create security groups that are no longer needed after projects complete. These groups can linger unmaintained in the domain.
 
 There's no way to confirm if a group is needed to access a resource, like an app or a file. 
 So we need another way to identify and clean up groups that are no longer needed.
@@ -28,7 +28,7 @@ Follow these best practices to transition group management from on-premises to M
 
 ### Transition group management
 
-Microsoft Entra ID Governance supports governance of Microsoft Entra ID security groups and Microsoft 365 groups. While Distribution Lists (DLs) and Mail-Enabled Security Groups (MESGs) can exist in the cloud, they are Exchange concepts and can't be managed by using the Microsoft Entra admin center or Microsoft Graph.
+Microsoft Entra ID Governance supports governance of Microsoft Entra ID security groups and Microsoft 365 groups. While Distribution Lists (DLs) and Mail-Enabled Security Groups (MESGs) can exist in the cloud, they're Exchange concepts and can't be managed by using the Microsoft Entra admin center or Microsoft Graph.
 
 You should replace DLs and MESGs with Microsoft 365 groups for collaboration and access management scenarios. They offer built-in capabilities for governance, collaboration, and self-service. In most cases, DLs and MESGs need to be recreated as Microsoft 365 groups. However, you can directly upgrade simple, non-nested cloud-managed DLs to Microsoft 365 groups. For more information, see [Upgrade Distribution Lists to Microsoft 365 Groups](/exchange/recipients-in-exchange-online/manage-distribution-groups/upgrade-distribution-lists).
 
@@ -61,7 +61,7 @@ SOA applies only to the specified direct individual group object without recursi
 
 On-premises AD groups are inherently static. Dynamic membership is implemented through external tools such as Microsoft Identity Manager (MIM) or Forefront Identity Manager (FIM). Dynamic membership rules don't transfer automatically when you convert SOA because there's no native AD attribute that marks a group as dynamic. You need to recreate dynamic membership rules in the cloud after migration. For more information about how to set up dynamic membership group, see [Create or update a dynamic membership group in Microsoft Entra ID](/entra/identity/users/groups-create-rule).
 
-### Limitation for custom LDAP connector in Microsoft Entra Connect Sync
+### Limitation for custom Lightweight Directory Access Protocol (LDAP) connector in Microsoft Entra Connect Sync
 
 Group SOA doesn't support using the custom LDAP connector in Microsoft Entra Connect Sync to sync identities and groups into Microsoft Entra ID. It only supports transfer of SOA of groups that sync from AD to Microsoft Entra ID to be cloud objects. Rollback of SOA operations also only works if the original SOA of the object is AD.
 
@@ -71,12 +71,12 @@ Security groups are fundamental for access control, policy management, and other
 
 When you transition to the cloud, map on-premises groups to modern group types in Microsoft Entra, Exchange Online, and Microsoft 365. The following table provides information about how to map groups and manage them after SOA conversion.
 
-| On-premises group type | Cloud group type | How they are managed after SOA conversion | Description |
+| On-premises group type | Cloud group type | How they're managed after SOA conversion | Description |
 |-----------------------|------------------|------------------------------------------|-------------|
-| Security group | Microsoft Entra security group (not mail enabled) | Microsoft Entra admin center <br> Microsoft Graph APIs | Vital for access control and translate directly as Microsoft Entra security groups, offering management by Microsoft Graph and various admin centers, including the Microsoft Entra admin center. |
-| Mail-enabled security group (Exchange on-premises) | Mail-enabled security group (read-only in Microsoft Entra ID and managed in Exchange) | Exchange Online or PowerShell | Can migrate directly, or be recreated as security-enabled Microsoft 365 Groups ([Create group](/graph/api/group-post-groups)). If email functionality is no longer needed, they may be recreated as Microsoft Entra security groups. Mail-enabled security groups are only editable by using Exchange or PowerShell. Security groups and Microsoft 365 groups are managed with Microsoft Graph and various admin centers, including the Microsoft Entra admin center. |
+| Security group | Microsoft Entra security group that's not mail-enabled | Microsoft Entra admin center <br> Microsoft Graph APIs | Vital for access control and translate directly as Microsoft Entra security groups, offering management by Microsoft Graph and various admin centers, including the Microsoft Entra admin center. |
+| Mail-enabled security group (Exchange on-premises) | Mail-enabled security group (read-only in Microsoft Entra ID and managed in Exchange) | Exchange Online or PowerShell | Can migrate directly, or be recreated as security-enabled Microsoft 365 Groups ([Create group](/graph/api/group-post-groups)). If email functionality is no longer needed, they might be recreated as Microsoft Entra security groups. Mail-enabled security groups are only editable by using Exchange or PowerShell. Security groups and Microsoft 365 groups are managed with Microsoft Graph and various admin centers, including the Microsoft Entra admin center. |
 | Distribution List (Exchange on-premises) | Distribution List (read-only for Microsoft Entra and managed in Exchange) | Exchange Online or via PowerShell | Are for email-only communication. They can be migrated as Exchange Online Distribution Lists, and managed by using Exchange Online or Exchange PowerShell. They can then be recreated as Microsoft 365 groups or you can directly [upgrade them to Microsoft 365 Groups](/exchange/recipients-in-exchange-online/manage-distribution-groups/upgrade-distribution-lists). They enable shared files, calendars, Teams integration, and self-service management with Outlook, Teams, My Groups, or Microsoft Graph. |
-| N/A (In the past with v1) | Microsoft 365 groups (cloud only) | Microsoft Entra admin center <br> Microsoft Graph APIs |  |
+| N/A (In the past with v1) | Microsoft 365 groups (cloud only) | Microsoft Entra admin center <br>Microsoft Graph APIs |  |
 
 ## Related content
 

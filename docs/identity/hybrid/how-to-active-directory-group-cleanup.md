@@ -11,19 +11,15 @@ ms.reviewer: justinha
 
 # Clean up unused Active Directory groups in a single domain
 
-One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory domains. An organization might create security groups for projects, but over time, they are no longer needed. These groups can linger unmaintained in the domain. 
+One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory domains. An organization might create security groups for projects, but over time, they're no longer needed. These groups can linger unmaintained in the domain. 
 
 There's no way to confirm if a particular group is needed to access an app or a file. So we need another way to identify and clean up these groups that are no longer needed.
 
 This article outlines how to use a *scream test* methodology to clean up groups from an Active Directory domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from being synced into Microsoft Entra. 
 
-First you determine whether each group needs to be managed with an AD-based management
-tool like **Active Directory Users and Computers**, managed in the cloud with Microsoft Entra admin center or Exchange Online, or might no longer needed. If the group might no longer be
-needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the Active Directory domain.
+First you determine whether each group needs to be managed with an AD-based management tool like **Active Directory Users and Computers**, or managed in the cloud with Microsoft Entra admin center or Exchange Online, or if it might not be needed. If the group might not be needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the Active Directory domain.
 
-There are multiple ways to determine whether a group is no longer
-needed. In some cases, the scream test indicates that a group is
-still required, and whether to manage it in Microsoft Entra ID or the Active Directory domain.
+There are multiple ways to determine whether a group is no longer needed. In some cases, the scream test indicates that a group is still required, and whether to manage it in Microsoft Entra ID or the Active Directory domain.
 
 :::image type="content" source="media/active-directory-group-cleanup/paths.png" alt-text="Screenshot of a flowchart diagram showing the process for cleaning up Active Directory groups.":::
 
