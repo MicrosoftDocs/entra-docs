@@ -27,7 +27,7 @@ sections:
           - Make sure the root certificate authority or intermediate certificate authority is installed on all client devices to establish trust for TLS inspection.   
   
       - question: What is certificate pinning, and how does it affect TLS inspection? 
-        answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection. "  
+        answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection.  
 
       - question: Why do I receive the error "SSL certificate problem: unable to get local issuer certificate" when using Git?
         answer: | 
