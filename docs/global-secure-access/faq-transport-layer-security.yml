@@ -31,9 +31,9 @@ sections:
 
       - question: Why do I receive the error "SSL certificate problem unable to get local issuer certificate" when using Git?
         answer: | 
-           This error occurs because certain developer tools (such as Git) do not use the operating system’s certificate store by default; instead, they maintain their own certificate store. To resolve this issue, one way is to add your TLS inspection root certificate to Git’s trusted Certificate Authorities store. One way to do this is to append the certificate to Git’s Certificate Authority bundle.
+           This error occurs because certain developer tools (such as Git) do not use the operating system’s certificate store by default; instead, they maintain their own certificate store. One way to resolve this is to append the certificate to Git’s Certificate Authority bundle.
            The following PowerShell script demonstrates how to do this on a Windows system.
-         '''powershell
+           '''powershell
             # Define the path to your custom root Certificate Authorities
             $certPath = "./myTLSInspectionRootCA.crt"
             # Verify the certificate file exists
