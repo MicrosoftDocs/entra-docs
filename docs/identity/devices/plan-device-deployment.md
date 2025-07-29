@@ -117,10 +117,11 @@ iOS and Android devices are only Microsoft Entra registered. The following table
 | Self-service password reset from the Windows login screen | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 | Windows Hello PIN reset | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 
-When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
-
- - `enterpriseregistration.windows.net`
- - `certauth.enterpriseregistration.windows.net`
+> [!NOTE]
+> When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
+> 
+>  - `enterpriseregistration.windows.net`
+>  - `certauth.enterpriseregistration.windows.net`
 
 <a name='azure-ad-registration-'></a>
 
