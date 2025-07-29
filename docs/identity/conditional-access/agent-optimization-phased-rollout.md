@@ -6,7 +6,7 @@ author: shlipsey3
 manager: pmwongera
 
 ms.reviewer: lhuangnorth
-ms.date: 07/25/2025
+ms.date: 07/29/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -42,16 +42,19 @@ The agent creates a report-only policy and builds a phased rollout plan. Rollout
 
 ### Administrator reviews and accepts the rollout plan
 
-Administrators can accept the plan or modify details of the plan, such as the group assignments or the time between phases.
+Administrators review the details of the plan and can accept it or modify the group assignments or the time between phases.
 
 To adjust the groups included in a phase:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+
 1. Browse to **Conditional Access Optimization Agent** and select the **Review suggestions** button for a policy suggestion that includes a phased rollout.
 
     :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-suggestions.png" alt-text="Screenshot of the agent suggestions with a phased rollout type highlighted." lightbox="media/agent-optimization-phased-rollout/phased-rollout-suggestions-expanded.png":::
 
-1. Select {SOMETHING} to edit the groups included in the phase.
+1. From the policy details page, select **Review phases**.
+
+1. Select the pencil icon to edit the groups included in the phase.
 
     :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png" alt-text="Screenshot of the phases that can be edited." lightbox="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png":::
 
@@ -59,9 +62,17 @@ To adjust the groups included in a phase:
 
     :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-group-edit.png" alt-text="Screenshot of the phase group edit options." lightbox="media/agent-optimization-phased-rollout/phased-rollout-group-edit.png":::
 
+1. Select **Apply suggestion** to save the changes to the groups and accept the rollout plan.
+
+To adjust the time between phases:
+
+1. From the Conditional Access Optimization Agent page, select the **Settings** tab. For more information, review the [Phased rollout settings](agent-optimization.md#phased-rollout-preview).
+1. Adjust the days between phases in the **Phased rollout** section.
+1. Select the **Save** button to apply the changes.
+
 ### Agent executes the approved rollout plan
 
-The agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure there are no unexpected results. While the policy is being rolled out, the policy remains in report-only mode so you can monitor the impact of the policy. 
+The agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure the policy does what's expected. While the policy is being rolled out, the policy remains in report-only mode for the remaining phases. 
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png" alt-text="Screenshot of a phased rollout that's in progress." lightbox="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png":::
 
