@@ -29,8 +29,8 @@ The ideal customer for this engagement:
 
 ## Alignment with Microsoft recommendations 
 The content of the Microsoft Entra Suite Workshop will be updated when the Zero Trust Workshop gets updated, most recommendations are aligned with the Zero Trust Security Deployment Guidance:
-- [Zero Trust Guidance Center | Microsoft Learn](/security/zero-trust)
-- [Zero Trust deployment for technology pillars overview | Microsoft Learn](/security/zero-trust/deploy/overview)
+- [Zero Trust Guidance Center](/security/zero-trust)
+- [Zero Trust deployment for technology pillars overview](/security/zero-trust/deploy/overview)
 
 ## Customer Stakeholders 
 In order to get the most out of these workshops, it's recommended to have people on the call from the customer’s side that can cover the following areas:
@@ -41,28 +41,33 @@ In order to get the most out of these workshops, it's recommended to have people
 - Networking
 
 Recommendations for the customer stakeholders that should attend the workshop are as follows:
-
-|Identity|Network|
-|---|---|
-| • Identity and Access Management (IAM) team <br/> • Security Operations team <br/> • Devices/Endpoint team <br/> • ID Governance (IGA) team <br/> • Enterprise Application Developers <br/> • CISO (if possible) <br/> • IT Director (if possible)| • Identity and Access Management (IAM) team <br/> • Network Operations team <br/>  • Security Operations team <br/> • Devices/Endpoint team <br/> • Applications / workloads stakeholders <br/> • CISO (if possible) <br/> • IT Director (if possible)|
+-	Identity and Access Management (IAM) team  
+-	Network Operations team
+-	Security Operations team  
+-	Devices/Endpoint team  
+-	ID Governance (IGA) team  
+-	Enterprise Application Developers 
+-	Applications / workloads stakeholders   
+-	CISO (if possible)  
+-	IT Director (if possible) 
 
 ## Engagement Model
 
 |Phases|Key Objectives|Key Activities|Success Criteria|
 |--|--|--|--|
 |**Initial Scoping call with Customer <br/> <br/> Duration: 30 minutes**| • Arrange that the customer understands the technical review activity and ensure scope, objectives, format, and deliverables <br/> • Confirm logistics and attendees <br/> • Decide which of the stages the customer would like delivered | • Gather customer context and validate intent and readiness for Microsoft Entra Suite <br/> • Conduct scoping meeting <br/> • Agree on the assessment logistics and schedule time to deliver individual stages of the workshop <br/> • Ensure customer understands prerequisites to run the assessment checks <br/> • Validate required customer technical and operational stakeholders <br/> • Validate that the customer understands their current Microsoft licensing arrangements for relevant services | • All required stakeholders understand the workshop engagement <br/> • Logistics for the review are finalized <br/> • Delivery Expert identified a way to share files with customer |
-|**Roadmap Mapping <br/> <br/> Duration: See Workshop Delivery Time Estimates section**| • Customer has a tailored adoption roadmap to implement the Microsoft Entra Suite | • Delivery expert leads working sessions to walk through the baseline adoption roadmap identified by Microsoft and fills it out based on customer requirements and constraints | • Customer has a customized deployment path with concrete deployment steps and decisions to make |
+|**Roadmap Mapping <br/> <br/> Duration: 6 hours**| • Customer has a tailored adoption roadmap to implement the Microsoft Entra Suite | • Delivery expert leads working sessions to walk through the baseline adoption roadmap identified by Microsoft and fills it out based on customer requirements and constraints | • Customer has a customized deployment path with concrete deployment steps and decisions to make |
 |**Closeout <br/> <br/> Duration: 1 hour**| • Gather customer feedback about the workshop <br/> • Identify other stages to deliver | • Customer fills out feedback survey | • Workshop feedback survey is completed |
 
 ## Workshop Delivery Time Estimates
 Below are the estimated delivery times for each section of the stage of the workshop:
 
-- Establish a baseline: 1 hour
-- Getting started: 1 hour
+- Establish a baseline: 1.5 hours
+- Getting started: 1.5 hours
 - Onboard your workforce: 1 hour
 - Enable Remote Access: 1 hour
 - Govern Internet Access: 1 hour
-**Total: 5 hours**
+**Total: 6 hours**
 
 ## Related content
 
