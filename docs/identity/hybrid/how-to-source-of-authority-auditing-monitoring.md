@@ -15,7 +15,7 @@ Admins can use **Audit Logs** in the Azure portal or the onPremisesSyncBehavior 
 
 ## How to use Audit Logs to see SOA changes  
 
-You can access Audit Logs in the Azure portal. They retain a record SOA changes for the last 30 days. 
+You can access Audit Logs in the Azure portal. They retain a record of SOA changes for the last 30 days. 
 
 1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator). 
 
@@ -27,7 +27,11 @@ You can access Audit Logs in the Azure portal. They retain a record SOA changes 
 
 ## How to use Microsoft Graph API to create reports for SOA 
 
-You can use Microsoft Graph to report data such as how many objects are converted to SOA, filter data for converted groups, or identify objects that were converted to SOA and rolled back. 
+You can use Microsoft Graph to report data such as:
+
+- Report how many objects are SOA converted
+- Filter data for converted groups
+- Identify objects that were SOA converted and rolled back
 
 ### Filter and count converted objects
 
@@ -39,7 +43,7 @@ You can also call the onPremisesSyncBehavior API and input each user object to q
 GET groups/%GROUP_ID%/onPremisesSyncBehavior?$select=id,isCloudManaged
 ```
 
-To view all group objects whose SOA has changed:
+To view all group objects with converted SOA:
 
 ```https
 GET groups?$filter=onPremisesSyncBehavior/isCloudManaged eq true&$select=id,displayName,isCloudManaged&$count=true
@@ -55,7 +59,7 @@ You can integrate Audit Logs with Azure Monitoring and search the following even
 
 - Event ID 6956 is logged if an object isn't synced to the cloud because the SOA of the object is cloud-managed.
 
-- When SOA transfer is rolled back to on-premises, **Group Provisioning to AD (GPAD)** stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle. You can verify in the audit logs that sync won't happen for this object because it's managed on-premises. 
+- When SOA transfer is rolled back to on-premises, **Group Provisioning to AD (GPAD)** stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle. You can verify in the **Audit Logs** that sync doesn't happen for this object because it's managed on-premises. 
 
   :::image type="content" border="true" source="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png":::
 
