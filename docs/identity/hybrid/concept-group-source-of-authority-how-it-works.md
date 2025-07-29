@@ -10,17 +10,17 @@ ms.reviewer: dahnyahk
 ---
 # How group Source of Authority (SOA) works (Preview)
 
-You can convert the Source of Authority (SOA) of a group from Active Directory (AD) to Microsoft Entra ID. After you convert the SOA, the group becomes a cloud-owned, and you can map it to a corresponding cloud group type in the cloud. For a list of supported groups types, see [How to manage cloud security groups](concept-group-source-of-authority-guidance.md#how-to-manage-cloud-security-groups).
+You can convert the Source of Authority (SOA) of a group from Active Directory Domain Services (AD DS) to Microsoft Entra ID. After you convert the SOA, the group becomes cloud-owned, and you can map it to a corresponding cloud group type in the cloud. For a list of supported groups types, see [How to manage cloud security groups](concept-group-source-of-authority-guidance.md#how-to-manage-cloud-security-groups).
 
 ## Block sync from AD to Microsoft Entra ID after SOA change
 
-After the group has SOA applied and becomes a cloud group, the latest versions of Microsoft Entra Connect Sync and Microsoft Entra Cloud Sync honor the SOA setting and no longer attempt to sync the group. When you no longer need the AD group, you can delete it instead of removing it as out-of-scope in your scoping filters.
+After you convert the group SOA and it becomes a cloud group, the latest versions of Microsoft Entra Connect Sync and Microsoft Entra Cloud Sync honor the SOA setting. They don't continue to sync the group. When you no longer need the AD group, you can delete it rather than remove it as out-of-scope in your scoping filters.
 
 ## Seamless integration with Security Group Provision to AD
 
 To provision a security group cloud that's not mail-enabled back to AD and sync it with Microsoft Entra ID, add the groups to the **Group Provision to AD** scoping configuration. Use **Selected Groups** or **All groups** with attribute value scoping. Provision dynamic security groups to AD. Cloud security groups are provisioned to as Universal groups.
 
-When Microsoft Entra Cloud Sync provisions a security group to AD, it recognizes when existing AD groups previously had SOA applied and are provisioned from Microsoft Entra ID to AD. The security identifier (SID) value provides this tie together. Therefore, provisioning the cloud security group to AD does so to the original AD group (if it exists). If it doesn’t find a match in AD, it creates a new on-prem security group.
+When Microsoft Entra Cloud Sync provisions a security group to AD, it recognizes when existing AD groups previously had SOA applied and are provisioned from Microsoft Entra ID to AD. The security identifier (SID) value provides this tie together. Therefore, provisioning the cloud security group to AD does so to the original AD group (if it exists). If it doesn’t find a match in AD, it creates a new on-premises security group.
 
 ## Delete and restore groups in Active Directory Domain Services (AD DS)
 
