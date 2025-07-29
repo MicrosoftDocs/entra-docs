@@ -90,63 +90,46 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
 
 ### Analysis for a Distribution List or Mail-ennabled security group
 
-1. Check if an owner is set for the group in Exchange or Exchange
-   Online. Contact the owner of the group to determine if the
-   group is still needed.
+1. See if an owner is set for the group in Exchange or Exchange Online. Contact the owner of the group to determine if the group is still needed.
 
-1. Check if the group has members. If there are no members, proceed to the cloud
-   scream test.
+1. See if the group has members. If there are no members, proceed to the cloud scream test.
 
-1. Check the Exchange or Exchange Online logs to see if mail was
-   sent to the group. If mail was sent, then the group is likely still
-   in use. Contact the senders of those mails to determine the
-   purpose of the group.
+1. Search the Exchange or Exchange Online logs to see if mail was sent to the group. If mail was sent, then the group is likely still in use. Contact the senders of those mails to determine the purpose of the group.
 
-1. Check if the group members include any users, contacts, or groups that aren't
-   synced to Microsoft Entra. If the group includes members that aren't synced, it won't be
-   converted to a Microsoft 365 group or Exchange Online DL. Perform a Kerberos
-   scream test and successor test. After you finish:
+1. See if the group members include any users, contacts, or groups that aren't synced to Microsoft Entra. If the group includes members that aren't synced, its group type isn't updated to a Microsoft 365 group or Exchange Online DL. Perform the Kerberos scream test and the successor tests. After you finish:
 
-   - If the group is still needed, maintain it in the domain by using Exchange on-premises, or replace it with an Exchange Online
-      DL or Microsoft 365 group.
+   - If the group is still needed, maintain it in the domain by using Exchange on-premises, or replace it with an Exchange Online DL or Microsoft 365 group.
 
    - If the group isn't needed, remove it from the domain.
 
-1. If the group is a DL, then even if the members of the group are in
-   Microsoft Entra, the group Source of Authority (SOA) can't be converted
-   to Microsoft Entra. You should perform a cloud scream test and successor tests. When complete, the options are:
+1. If the group is a DL, then even if the members of the group are in Microsoft Entra, the group Source of Authority (SOA) can't be converted to Microsoft Entra. You should perform a cloud scream test and the successor tests. When complete, the options are:
 
    - If you still need the group, replace it with an Exchange Online DL or a Microsoft 365 group.
    - If the group isn't needed, remove it from the Active Directory domain, and don't replace it. 
 
-   Contact your Exchange administrator to determine which option to proceed
-   with.
+   Contact your Exchange administrator to determine which option to proceed with.
 
-1. If the group is a mail-enabled security group (MESG), then the group SOA can't be converted. Perform a cloud scream test and
-   successor tests, and when complete, the options are:
+1. If the group is a mail-enabled security group (MESG), then the group SOA can't be converted. Perform a cloud scream test and the successor tests. When complete, the options are:
 
    - Replace with a Microsoft 365 group.
-   - Create separate DL and SG, and process each one separately.
+   - Create separate DL and security group, and process each one separately.
    - Update the group type so it's either a security group or a DL instead of a MESG.
    - Remove the group from the Active Directory domain and don't replace it.
 
-   Contact your Exchange administrator to determine if the group is still
-   needed for Exchange purposes. If it's still needed for Exchange, replace it with a Microsoft 365 group, or create separate DL and security group, and process each one separately.
-   Otherwise, assume that the group only needs to be a security group, or
-   it's no longer needed, and proceed with the analysis for a security group.
+   Contact your Exchange administrator to determine if the group is still needed for Exchange purposes. If you still need the group for Exchange, replace it with a Microsoft 365 group, or create separate DL and security group, and process each one separately. Otherwise, assume that the group only needs to be a security group, or it's no longer needed, and proceed with the analysis for a security group.
 
 ### Analysis for a security group
 
-1. Check the membership of the group. If the group has no members, proceed to [cloud scream test](#scream-test-for-cloud-usage). Review the recommendations in the following table for other member object types.
+1. Review the group members. If the group has no members, proceed to [cloud scream test](#scream-test-for-cloud-usage). Review the recommendations in the following table for other member object types.
 
    | **Member object type**                                   | **Recommendations**                                                                                                                                                                                                                 |
    |:--------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | One or more Computers                                   | Group is likely used for group policy or System Center administration. Contact Windows Server and System Center administrators to determine their plans for this group. May replace with a new approach with Azure or Intune.    |
-   | One or more Contacts                                   | If this is a MESG, then those contacts can't be used to authenticate to Microsoft Entra. Remove them from the group if you plan to convert the group to not be mail-enabled.                                                       |
+   | One or more Computers                                   | Group is likely used for Group Policy or System Center administration. Contact Windows Server and System Center administrators to determine their plans for this group. May replace with a new approach with Azure or Intune.    |
+   | One or more Contacts                                   | If the group is a MESG, then those contacts can't be used to authenticate to Microsoft Entra. Remove them from the group if you plan to convert the group to not be mail-enabled.                                                       |
    | One or more users or groups not synced to Microsoft Entra (excluded from sync scope) | The group shouldn't have its Source of Authority converted.                                                                                                                                           |
    | Users and groups synced to Microsoft Entra                       | Plan to perform a scream test for cloud usage.                                                                                                                                          |
 
-1. Check the change date of the group. If the group is recently modified, check the logs to determine who modified the group. The security identifier (SID) of the user who modified the group is included in the subject field of [event 5136](/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-5136). Contact them to determine the purpose of the group, and whether it can be updated to a cloud security group.
+1. Find the change date of the group. If the group is recently modified, check the logs to determine who modified the group. The security identifier (SID) of the user who modified the group is included in the subject field of [event 5136](/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-5136). Contact them to determine the purpose of the group, and whether it can be updated to a cloud security group.
 
 1. Otherwise, if the group isn't recently modified, use [Get-Acl](/powershell/module/microsoft.powershell.security/get-acl) to check if an access control list (ACL) on the group or its OU delegates ownership of the group. If an ACL delegates ownership, contact the owners to determine the purpose of the group.
 
@@ -172,13 +155,11 @@ This test determines if there are users in groups that are used for cloud resour
    determine how the group is used and if it can be replaced with a cloud
    security group.
 
-1. Check if there's a reference to the group from an Azure role in an
-   Azure subscription, resource group or resource. If so, contact the
-   owners of that Azure subscription.
+1. See if there's a reference to the group from an Azure role in an Azure subscription, resource group, or resource. If so, contact the owners of that Azure subscription.
 
-1. Check with Exchange, SharePoint, Intune, Azure, and other administrators to determine if the group is needed for the administration of their services.
+1. Speak with Exchange, SharePoint, Intune, Azure, and other administrators to determine if the group is needed for the administration of their services.
 
-1. Check with the admins of other applications in Microsoft Online Services to determine if they use the group.
+1. Speak with the admins of other applications in Microsoft Online Services to determine if they use the group.
 
 1. After you determine there's no evident use of the group in Microsoft Online Services, there may be another service that wasn't evident. To detect if there's another service, proceed to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
 
@@ -204,7 +185,7 @@ To perform a Kerberos scream test, follow these steps:
 
 1. Move the group to the OU for groups in the Kerberos scream test.
 
-1. Update the group type to a DL, so that the group is no longer included in Kerberos tokens. Alternatively, remove the members. For example, move the members to to another new DL group temporarily.
+1. Update the group type to a DL, so that the group is no longer included in Kerberos tokens. Alternatively, remove the members. For example, move the members to another new DL group temporarily.
 
 1. Wait several days to determine if any users complain that the group is unavailable. For example, see if anyone opens a support ticket with IT helpdesk.
 
