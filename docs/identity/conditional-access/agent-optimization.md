@@ -92,7 +92,7 @@ The policy suggestions identified by the agent include:
    - A message that says "The agent is starting its first run" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
 
-   :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization agent start agent page." lightbox="media/agent-optimization/start-agent.png":::
+   :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization start agent page." lightbox="media/agent-optimization/start-agent.png":::
 
 When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and approve Conditional Access agent suggestions](agent-optimization-review-suggestions.md).
 
@@ -125,9 +125,9 @@ By default, the Conditional Access optimization agent can create new policies in
 
 ### Phased rollout (preview)
 
-When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can control and monitor the affect of the new policy. Phased rollout is on by default.
+When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can control and monitor the effect of the new policy. Phased rollout is on by default.
 
-You can change the number of days between each phase by either dragging the slider or entering a number of days in the text box. After making any changes, select the **Save** button at the bottom of the page. The number of days between each phase is the same for all phases. Make sure you're starting the the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
+You can change the number of days between each phase by either dragging the slider or entering a number of days in the text box. After making any changes, select the **Save** button at the bottom of the page. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
 
 :::image type="content" source="media/agent-optimization/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/phased-rollout-settings.png":::
 
