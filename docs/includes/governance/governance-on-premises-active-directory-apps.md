@@ -20,7 +20,7 @@ The following prerequisites are required to implement this scenario.
 
 
   > [!NOTE]
-  > The permissions to the service account are assigned only during a clean install. If upgrade from a previous version, assign permissions manually by using PowerShell:
+  > The permissions to the service account are assigned only during a clean install. If you upgrade from a previous version, assign permissions manually by using PowerShell:
   >
   > ```powershell
   > $credential = Get-Credential
@@ -32,7 +32,7 @@ The following prerequisites are required to implement this scenario.
   > These permissions aren't applied to AdminSDHolder objects by default by the [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain).
 
 
-- The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
+- The provisioning agent must be able to communicate with one or more domain controllers on the port TCP/389 for Lightweight Directory Access Protocol (LDAP) and TCP/3268 for global catalog.
   - Required for global catalog lookup to filter out invalid membership references.
 
 - Microsoft Entra Connect with build version [2.2.8.0](~/identity/hybrid/connect/reference-connect-version-history.md#2280) or later.
@@ -76,14 +76,14 @@ In this scenario, when a group in the Active Directory domain is used by an appl
 
 Use the following steps for applications to use the Group Source of Authority option.
 
-### Create an application and transfer source of authority
+### Create an application and convert source of authority
 
 1. Using the Microsoft Entra admin center, create an application in Microsoft Entra ID that represents the AD-based application, and configure the application to require user assignment.
-1. Ensure that the AD group you plan to convert is already synchronized to Microsoft Entra, and that the membership of the AD group is only users and optionally other groups which are themselves also synchronized to Microsoft Entra. If the group or any members of the group are not represented in Microsoft Entra, you will not be able to transfer the source of authority of the group.
-1. Transfer the source of authority to your existing synchronized cloud group.
-1. Once the source of authority has been transferred, use [Group Provisioning to AD](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory) to provision subsequent changes to this group back to AD. Once group provisioning is enabled, Microsoft Entra Cloud Sync will recognize that a transferred group is the same group as the one already in AD, because both groups have the same security identifier (SID). Provisioning the transferred cloud group to AD will then update the existing AD group instead of creating a new one.
+1. Ensure that the AD group you plan to convert is already synchronized to Microsoft Entra, and that the membership of the AD group is only users and optionally other groups that are also synchronized to Microsoft Entra. If the group or any members of the group aren't represented in Microsoft Entra, you can't convert the SOA of the group.
+1. Convert the SOA to your existing synchronized cloud group.
+1. After you convert the SOA, use [Group Provisioning to AD](/entra/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory) to provision subsequent changes to this group back to AD. Once group provisioning is enabled, Microsoft Entra Cloud Sync recognizes that a converted group is the same group as the one already in AD, because both groups have the same security identifier (SID). Provisioning the converted cloud group to AD then updates the existing AD group instead of creating a new one.
 
-### Configure Microsoft Entra features to manage the membership of the transferred group
+### Configure Microsoft Entra features to manage the membership of the converted group
 
 1. Create an [access package](/entra/id-governance/entitlement-management-access-package-create). Add the application and the security group from the previous steps as resources in the access package. Configure a direct assignment policy in the access package.
 1. In [Entitlement Management](/entra/id-governance/entitlement-management-overview), assign the synced users who need access to the AD based app to the access package.
@@ -125,11 +125,11 @@ You can now govern access to the AD application through this new access package.
 
 In this scenario option, you add a new AD security group as a nested group member of an existing group. This scenario is applicable to deployments for applications that have a hardcoded dependency on a particular group account name, SID, or distinguished name.
 
-Nesting that group into the application's existing AD group will allow:
+Nesting that group into the application's existing AD group allows:
 
 - Microsoft Entra users who are assigned by a governance feature and who then access the app to have the appropriate Kerberos ticket. This ticket contains the existing group's SID. The nesting is allowed by AD group nesting rules.
 
-If the app uses LDAP and follows nested group membership, the app will see the Microsoft Entra users as having the existing group as one of their memberships.
+If the app uses LDAP and follows nested group membership, the app sees that the Microsoft Entra users have the existing group as one of their memberships.
 
 ### Determine eligibility of existing group
 
