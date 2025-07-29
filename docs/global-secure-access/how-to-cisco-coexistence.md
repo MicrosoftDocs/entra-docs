@@ -119,7 +119,7 @@ To configure Cisco Umbrella and SWG:
 
 #### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
 
- Add Microsoft Entra service FQDNs in Traffic Steering to the destination list to bypass Cisco Secure Access.
+ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Steering to the destination list.
 1. Go to **Connect > End User Connectivity > Internet Security**.
 2. In **Traffic Steering**, select **Add Destination > Bypass Secure Access**, add these FQDNs, and save:
   ```
@@ -160,7 +160,7 @@ To configure Cisco Umbrella and SWG:
 
 **Validation:**
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
-- Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
+- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
     1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
     2. Access `bing.com`, `salesforce.com`, `yelp.com` in browsers.
@@ -191,7 +191,7 @@ To configure Cisco Umbrella and SWG:
 
 **Validation:**
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
-- Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
+- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
 1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
 2. Access `bing.com`, `salesforce.com`, `yelp.com` in browsers.
@@ -224,7 +224,7 @@ To configure Cisco Umbrella and SWG:
 - Ensure that Secure Web Gateway is enabled.
 **Validation:**
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
-- Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
+- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
 1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
 2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
@@ -250,7 +250,7 @@ To configure Cisco Umbrella and SWG:
 - Ensure that Secure Web Gateway is enabled.
 **Validation:**
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
-- Use Advanced Diagnostics in the Global Secure Access client to verify rules are applied and health checks pass.
+- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
     1. In the system tray, right-click **Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting**.
     2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
