@@ -11,14 +11,14 @@ ms.reviewer: justinha
 
 # Clean up unused Active Directory groups in a single domain
 
-One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory domains. An organization may create security groups for projects, but over time, they are no longer needed. These groups can linger unmaintained in the domain. 
+One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory domains. An organization might create security groups for projects, but over time, they are no longer needed. These groups can linger unmaintained in the domain. 
 
 There's no way to confirm if a particular group is needed to access an app or a file. So we need another way to identify and clean up these groups that are no longer needed.
 
-This article outlines how to use a *scream test* methodology to clean up groups from an Active Directory domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from from being synced into Microsoft Entra. 
+This article outlines how to use a *scream test* methodology to clean up groups from an Active Directory domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from being synced into Microsoft Entra. 
 
 First you determine whether each group needs to be managed with an AD-based management
-tool like **Active Directory Users and Computers**, managed in the cloud with Microsoft Entra admin center or Exchange Online, or may no longer needed. If the group may no longer be
+tool like **Active Directory Users and Computers**, managed in the cloud with Microsoft Entra admin center or Exchange Online, or might no longer needed. If the group might no longer be
 needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the Active Directory domain.
 
 There are multiple ways to determine whether a group is no longer
@@ -124,7 +124,7 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
 
    | **Member object type**                                   | **Recommendations**                                                                                                                                                                                                                 |
    |:--------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | One or more Computers                                   | Group is likely used for Group Policy or System Center administration. Contact Windows Server and System Center administrators to determine their plans for this group. May replace with a new approach with Azure or Intune.    |
+   | One or more Computers                                   | Group is likely used for Group Policy or System Center administration. Contact Windows Server and System Center administrators to determine their plans for this group. You might replace it with a new approach with Azure or Intune.    |
    | One or more Contacts                                   | If the group is a MESG, then those contacts can't be used to authenticate to Microsoft Entra. Remove them from the group if you plan to convert the group to not be mail-enabled.                                                       |
    | One or more users or groups not synced to Microsoft Entra (excluded from sync scope) | The group shouldn't have its Source of Authority converted.                                                                                                                                           |
    | Users and groups synced to Microsoft Entra                       | Plan to perform a scream test for cloud usage.                                                                                                                                          |
@@ -161,7 +161,7 @@ This test determines if there are users in groups that are used for cloud resour
 
 1. Speak with the admins of other applications in Microsoft Online Services to determine if they use the group.
 
-1. After you determine there's no evident use of the group in Microsoft Online Services, there may be another service that wasn't evident. To detect if there's another service, proceed to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
+1. After you determine there's no evident use of the group in Microsoft Online Services, there might be another service that wasn't evident. To detect if there's another service, proceed to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
 
 1. Change your Cloud sync or Connect sync configuration to exclude the group from being synced.
 
@@ -189,7 +189,7 @@ To perform a Kerberos scream test, follow these steps:
 
 1. Wait several days to determine if any users complain that the group is unavailable. For example, see if anyone opens a support ticket with IT helpdesk.
 
-1. If there are complaints, change the group type back to a security group or re-add the members. Then identify the team that relies upon the group.
+1. If there are complaints, change the group type back to a security group or add back the members. Then identify the team that relies upon the group.
 
 1. If there are no complaints, proceed to the scream test for LDAP apps.
 
