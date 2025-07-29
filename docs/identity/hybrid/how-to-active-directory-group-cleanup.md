@@ -56,7 +56,7 @@ These prerequisites must be completed before you start to remove unused groups w
 
 ## Perform a group analysis for the domain
 
-The goal for group analysis is to review and confirm that groups are:
+The goal for group analysis is to review and confirm which of the groups in a domain are:
 
 - Needed for an AD-integrated application and managed by using an
   AD-integrated tool.
