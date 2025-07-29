@@ -23,8 +23,6 @@ Microsoft Entra External ID includes Microsoft's customer identity and access ma
 
 :::image type="content" source="media/overview-customers-ciam/overview-ciam.png" alt-text="Diagram showing an overview customer identity and access management." border="true":::
 
- 
-
 ## Create a dedicated external tenant
 
 When getting started with External ID for your consumer and business customer apps, you first create a tenant for your apps, resources, and directory of customer accounts.
@@ -33,7 +31,7 @@ If you've worked with Microsoft Entra ID, you're already familiar with using a M
 
 - **A directory**: The directory stores your customers' credentials and profile data. When a consumer or business customer signs up for your app, a local account is created for them in your external tenant.
 
-- **Application registrations**: Microsoft Entra ID performs identity and access management only for registered applications. Registering your app establishes a trust relationship and allows you to integrate your app with Microsoft Entra ID.
+- **Application registrations**: Microsoft Entra ID performs identity and access management only for registered applications. Registering your app establishes a trust relationship and allows you to integrate your app with Microsoft Entra ID. In external tenants, you can register apps that use either the OpenID Connect (OIDC) or Security Assertion Markup Language (SAML) protocol for authentication and single sign-on (SSO). The [app registration](/entra/identity-platform/quickstart-register-app) process is optimized for OIDC-based apps. To [register a SAML app](/entra/external-id/customers/how-to-register-saml-app), use the Enterprise applications feature instead.
 
 - **User flows**: The external tenant contains the self-service sign-up, sign-in, and password reset experiences you want to enable for your customers.
 
