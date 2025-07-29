@@ -44,13 +44,13 @@ To add synced users, follow these steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Entra ID** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
-4. Click on the new **Sales** group.
+4. Click the new **Sales** group.
 5. On the left, click **Members**.
 6. At the top, click **Add members**.
 7. At the top, in the search box, enter **Britta Simon**.
 8. Put a check next to **Britta Simon** and click **Select**.
 9. It should successfully add the user to the group.
-10. On the far left, click **All groups** and repeat this process using the **Sales** group and adding **Lola Jacobson** to that group.
+10. On the far left, click **All groups**. Repeat this process by using the **Sales** group, and add **Lola Jacobson** to that group.
 
 ## Configure provisioning
 
