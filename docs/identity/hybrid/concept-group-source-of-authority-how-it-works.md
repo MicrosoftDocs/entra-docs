@@ -18,13 +18,13 @@ After the group has SOA applied and becomes a cloud group, the latest versions o
 
 ## Seamless integration with Security Group Provision to AD
 
-If you need to provision a security group back to AD to keep the AD copy of the group in-sync with Microsoft Entra ID (only for cloud security groups taht aren't mail-enabled), add the groups to the Group Provision to AD scoping configuration. Use **Selected Groups** or **All groups** with attribute value scoping. Provision dynamic security groups to AD. Cloud security groups provisioned to AD do so as Universal groups in AD.
+To provision a security group cloud that's not mail-enabled back to AD and sync it with Microsoft Entra ID, add the groups to the **Group Provision to AD** scoping configuration. Use **Selected Groups** or **All groups** with attribute value scoping. Provision dynamic security groups to AD. Cloud security groups are provisioned to as Universal groups.
 
 When Microsoft Entra Cloud Sync provisions a security group to AD, it recognizes when existing AD groups previously had SOA applied and are provisioned from Microsoft Entra ID to AD. The security identifier (SID) value provides this tie together. Therefore, provisioning the cloud security group to AD does so to the original AD group (if it exists). If it doesn’t find a match in AD, it creates a new on-prem security group.
 
 ## Delete and restore groups in Active Directory Domain Services (AD DS)
 
-Let's suppose you delete an on-premises group in AD DS. Later, you decide to provision the group with the same SID to the Active Directory domain using **Group Provisioning to AD**. In this case, you need to be sure that the Active Directory Recycle Bin is enabled. You should restore the group from the Recycle Bin before you add it to the scope for **Group Provisioning to AD**.
+Let's suppose you delete an on-premises group in AD DS. Later, you decide to provision the group with the same SID to the Active Directory domain using **Group Provision to AD**. In this case, you need to be sure that the Active Directory Recycle Bin is enabled. You should restore the group from the Recycle Bin before you add it to the scope for **Group Provision to AD**.
 
 ## Roll back SOA changes
 
