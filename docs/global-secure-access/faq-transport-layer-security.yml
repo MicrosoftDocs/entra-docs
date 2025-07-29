@@ -48,7 +48,7 @@ sections:
            Get-Content $certPath | Add-Content -Path $gitCAPath
            Write-Host "Certificate appended to Git CA bundle at $gitCAPath"
            } catch {
-           Write-Host "Failed to append certificate to Git CA bundle: $_"
+           Write-Host "Failed to append certificate to Git CA bundle $_"
           }
           } else {
           Write-Host "Git CA bundle path not found. Is Git installed and configured?"
