@@ -150,8 +150,6 @@ items:
                   items:
                     - name: Sign up
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
-                    - name: Set up local CORS
-                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-sdk-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                     - name: Sign in
                       href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                     - name: Reset password
@@ -408,6 +406,8 @@ items:
                     displayName: rbac, roles, roles claim, groups claim
           - name: Native authentication
             items:
+              - name: Set up local CORS
+                href: /entra/identity-platform/how-to-native-authentication-single-page-app-sdk-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               - name: Set up CORS in test
                 href: /entra/identity-platform/how-to-native-authentication-cors-solution-test-environment?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
               - name: Set up CORS in production

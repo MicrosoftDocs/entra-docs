@@ -28,7 +28,8 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Complete the steps in [Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK ](quickstart-native-authentication-single-page-app-react-sdk-sign-in.md). This quickstart shows you run a sample React code sample.
+- Complete the steps in [Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK ](quickstart-native-authentication-single-page-app-sdk-sign-in.md). This quickstart shows you run a sample React code sample.
+- Complete the steps in [Set up CORS proxy server to manage CORS headers for native authentication](how-to-native-authentication-single-page-app-set-up-local-cors.md).
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
 
@@ -436,7 +437,33 @@ if (signUpState instanceof SignUpCompletedState) {
 }
 ```
 
-At this point, you can run your app, then view your sign-up UI at *http://localhost:3000/sign-up*. However, since native authentication API doesn't support CORS, you need to set up the CORS proxy server to manage the CORS headers.
+## Run and test your app
+
+1. Open a terminal window and navigate to the root folder of your app:
+
+    ```console
+    cd reactspa
+    ```
+
+1. To start the CORS proxy server, run the following command in your terminal:
+
+    ```console
+    npm run cors
+    ```
+
+1. To start the React app, open another terminal window, then run the following command:
+
+    ```console
+    cd reactspa
+    npm start
+    ```
+
+1. Open a web browser and navigate to `http://localhost:3000/`. A sign-up form appears.
+
+1. To sign up for an account, input your details, select the **Sign Up** button, then follow the prompts.
+
+
+Next, you can update the React app to sign in a user or reset the user's password.
 
 ## Set up poweredByHeader to false in next.config.js
 
@@ -452,4 +479,4 @@ const nextConfig: NextConfig = {
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Set up CORS proxy server to manage CORS headers for native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-set-up-local-cors.md)
+> [Tutorial: Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md)

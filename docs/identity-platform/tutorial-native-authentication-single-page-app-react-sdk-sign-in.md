@@ -27,7 +27,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Setup CORS Proxy server to manage CORS headers for native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-set-up-local-cors.md).
+- Complete the steps in [Sign up users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md).
 
 
 ## Create UI components

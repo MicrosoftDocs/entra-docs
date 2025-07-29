@@ -16,6 +16,7 @@ ms.date: 06/30/2025
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 In this Quickstart, you use a single-page application (SPA) to demonstrate how to authenticate users by using native authentication SDK. The sample app demonstrates user sign-up, sign-in, and sign-out for both email with password and email one-time passcode authentication flows.
+
 ## Prerequisites
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -55,11 +56,22 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Install project dependencies
 
+#### [React](#tab/react)
+
 1. Open a terminal window and navigate to the directory that contains the React sample app:
 
     ```console
         cd typescript/native-auth/react-nextjs-sample
     ```
+#### [Angular](#tab/angular)
+
+1. Open a terminal window and navigate to the directory that contains the React sample app:
+
+    ```console
+        cd typescript/native-auth/angular-sample
+    ```
+
+---
 
 1. Run the following command to install app dependencies:
 
@@ -69,6 +81,8 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the sample React app
 
+#### [React](#tab/react)
+
 1. Open *src\config\auth-config.ts* and replace the following placeholders with the values obtained from the Microsoft Entra admin center:
 
     * Find the placeholder `Enter_the_Application_Id_Here` then  replace it with the Application (client) ID of the app you registered earlier.
@@ -76,13 +90,26 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 1. Save the changes.
 
+#### [Angular](#tab/angular)
+
+
+1. Open *src/app/config/auth-config.ts* and replace the following placeholders with the values obtained from the Microsoft Entra admin center:
+
+    * Find the placeholder `Enter_the_Application_Id_Here` then  replace it with the Application (client) ID of the app you registered earlier.
+    * Find the placeholder `Enter_the_Tenant_Subdomain_Here` then replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.
+
+1. Save the changes.
+
+---
+
+
 ## Configure CORS proxy server
 
 The native authentication API doesn't support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) so you must set up a proxy server between your SPA app and the APIs.
 
 This code sample includes a CORS proxy server that forwards requests to native authentication API URL endpoints. The CORS proxy server is a Node.js server that listens on port 3001.
 
-To configure the proxy server, open the *react-nextjs-sample/proxy.config.js* file, then the find the placeholder:
+To configure the proxy server, open the *proxy.config.js* file, then the find the placeholder:
 
 - `tenantSubdomain` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 - `tenantId` and replace it with the Directory (tenant) ID. If you don't have your tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
@@ -114,3 +141,4 @@ You've now configured the sample app and it's ready to run.
 ## Related content
 
 - [Build a React single-page app that uses native authentication SDK to authenticate users](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md).
+- [Build your Angular single-page app that uses native authentication SDK to authenticate users](tutorial-native-authentication-single-page-app-angular-sign-up.md).

@@ -195,8 +195,6 @@
                   items:
                   - name: Sign up
                     href: tutorial-native-authentication-single-page-app-react-sdk-sign-up.md
-                  - name: Set up local CORS
-                    href: tutorial-native-authentication-single-page-app-sdk-set-up-local-cors.md
                   - name: Sign in
                     href: tutorial-native-authentication-single-page-app-react-sdk-sign-in.md
                   - name: Reset password
@@ -242,6 +240,8 @@
                   href: scenario-spa-call-api.md
         - name: Native authentication
           items:
+            - name: Set up local CORS
+              href: how-to-native-authentication-single-page-app-sdk-set-up-local-cors.md
             - name: Set up CORS in test environment
               href: how-to-native-authentication-cors-solution-test-environment.md
             - name: Set up CORS in production
