@@ -5,7 +5,7 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
-ms.date: 07/28/2025
+ms.date: 07/29/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -92,7 +92,7 @@ The policy suggestions identified by the agent include:
    - A message that says "The agent is starting its first run" appears in the upper-right corner.
    - The first run might take a few minutes to complete.
 
-   :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization agent start agent page." lightbox="media/agent-optimization/start-agent.png":::
+   :::image type="content" source="media/agent-optimization/start-agent.png" alt-text="Screenshot showing the Conditional Access Optimization start agent page." lightbox="media/agent-optimization/start-agent.png":::
 
 When the agent overview page loads, any suggestions appear in the **Recent suggestions** box. If a suggestion was identified, you can review the policy, determine policy impact, and apply the changes if needed. For more information, see [Review and approve Conditional Access agent suggestions](agent-optimization-review-suggestions.md).
 
@@ -115,9 +115,21 @@ The agent is configured to run every 24 hours based on when it's initially confi
 
 :::image type="content" source="media/agent-optimization/trigger-setting.png" alt-text="Screenshot of the trigger option in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/trigger-setting.png":::
 
-### Objects
+### Microsoft Entra objects to monitor
 
-Use the checkboxes under **Objects** to specify what the agent should monitor when making policy recommendations. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
+Use the checkboxes under **Microsoft Entra objects to monitor** to specify what the agent should monitor when making policy recommendations. By default the agent looks for both new users and applications in your tenant over the previous 24 hour period.
+
+### Agent capabilities
+
+By default, the Conditional Access optimization agent can create new policies in report-only mode. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+
+### Phased rollout (preview)
+
+When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can control and monitor the effect of the new policy. Phased rollout is on by default.
+
+You can change the number of days between each phase by either dragging the slider or entering a number of days in the text box. After making any changes, select the **Save** button at the bottom of the page. The number of days between each phase is the same for all phases. Make sure you're starting the phased rollout with enough time to monitor the impact before the next phase starts and so the rollout doesn't start on a weekend or holiday, in case you need to pause the rollout.
+
+:::image type="content" source="media/agent-optimization/phased-rollout-settings.png" alt-text="Screenshot of the phased rollout settings in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/phased-rollout-settings.png":::
 
 ### Identity and permissions
 
