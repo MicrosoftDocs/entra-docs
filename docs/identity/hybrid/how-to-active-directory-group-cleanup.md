@@ -74,7 +74,7 @@ that need triage. For large organizations with many
 thousands of groups, you need to choose an order to evaluate the
 groups. The order can be based on factors like:
 
-- Group type (built-in group vs group created in the Active Directory domain)
+- Group type (security group, mail-enabled security group, or distribution list)
 - Group organizational unit (OU)
 - Group size and membership
 - Group nesting (the group is a member of another group in the Active Directory domain)
