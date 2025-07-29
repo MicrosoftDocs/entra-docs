@@ -149,12 +149,6 @@ Users install the Company portal app to register BYOD and corporate owned mobile
 * [macOS](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp)
 * [Linux Desktop](/mem/intune/user-help/enroll-device-linux)
 
-
-When registering devices with Microsoft Entra, the following sites must be exempted if using TLS interception or network proxy for registration to work as intended:
-
- - `enterpriseregistration.windows.net`
- - `certauth.enterpriseregistration.windows.net`
-
 If registering your devices is the best option for your organization, see the following resources:
 
 * This overview of [Microsoft Entra registered devices](concept-device-registration.md).
