@@ -63,6 +63,12 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```console
         cd typescript/native-auth/react-nextjs-sample
     ```
+1. Run the following command to install app dependencies:
+
+    ```console
+    npm install
+    ```
+
 #### [Angular](#tab/angular)
 
 1. Open a terminal window and navigate to the directory that contains the React sample app:
@@ -70,20 +76,20 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```console
         cd typescript/native-auth/angular-sample
     ```
-
----
-
 1. Run the following command to install app dependencies:
 
     ```console
     npm install
     ```
 
+---
+
+
 ## Configure the sample React app
 
 #### [React](#tab/react)
 
-1. Open *src\config\auth-config.ts* and replace the following placeholders with the values obtained from the Microsoft Entra admin center:
+1. Open *src/config/auth-config.ts* and replace the following placeholders with the values obtained from the Microsoft Entra admin center:
 
     * Find the placeholder `Enter_the_Application_Id_Here` then  replace it with the Application (client) ID of the app you registered earlier.
     * Find the placeholder `Enter_the_Tenant_Subdomain_Here` then replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
@@ -118,6 +124,8 @@ To configure the proxy server, open the *proxy.config.js* file, then the find th
 
 You've now configured the sample app and it's ready to run.
 
+#### [React](#tab/react)
+
 1. From your terminal window, run the following commands to start the CORS proxy server:
 
     ```console
@@ -137,6 +145,30 @@ You've now configured the sample app and it's ready to run.
 1. To sign up for an account, select **Sign Up**, then follow the prompts.
 
 1. After you sign up, test sign-in and password reset by selecting **Sign In** and **Reset Password** buttorespectively.
+
+#### [Angular](#tab/angular)
+
+1. From your terminal window, run the following commands to start the CORS proxy server:
+
+    ```console
+    cd typescript/native-auth/angular-sample/
+    npm run cors
+    ```
+
+1. To start your React app, open another terminal window, then run the following commands:
+
+    ```console
+    cd typescript/native-auth/angular-sample/
+    npm run start
+    ```
+
+1. Open a web browser and go to `http://localhost:4200`.
+
+1. To sign up for an account, select **Sign Up**, then follow the prompts.
+
+1. After you sign up, test sign-in and password reset by selecting **Sign In** and **Reset Password** buttorespectively.
+
+---
 
 ## Related content
 
