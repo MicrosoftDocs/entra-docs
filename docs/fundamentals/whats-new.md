@@ -143,13 +143,13 @@ Enterprise apps SSO & User Provisioning SAML-based Single Sign-On (SSO) and gall
 
 ---
 
-### Public Preview - Switch Source of Authority of synced Active Directory groups
+### Public Preview - Convert Source of Authority of synced Active Directory groups to the cloud
 
 **Type:** New feature  
 **Service category:** Group Management  
-**Product capability:** Microsoft Entra Connect  
+**Product capability:** Microsoft Entra Connect and Microsoft Entra Cloud Sync
 
-Source of Authority (SOA) at the object level lets admins convert specific groups that are being synched from Active Directory (AD) to Microsoft Entra ID into cloud-editable objects (and no longer sync from AD), functioning as if the group was created originally in the cloud. This enables a phased migration approach, reducing AD dependencies gradually while minimizing user impact and operational disruption. Both Microsoft Entra Connect Sync and Cloud Sync honor the SOA switch on these objects. The ability to switch the SOA of synced groups from AD to Microsoft Entra ID is now available in Public Preview.
+The Group SOA feature lets organizations move application access governance from on-premises to the cloud by transferring Active Directory group authority to Microsoft Entra ID using Connect Sync or Cloud Sync. With phased migration, admins can reduce Active Directory dependencies gradually and minimize disruption. Microsoft Entra ID Governance manages access for both cloud and on-premises apps linked to security groups, and customers of either sync client can now use this feature. For more information, see: https://aka.ms/groupsoadocs
 
 ---
 
