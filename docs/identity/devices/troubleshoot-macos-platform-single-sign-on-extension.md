@@ -87,6 +87,13 @@ Apple's app-site-association domains are critical for SSO extension functioning.
 > [!NOTE] 
 > Platform SSO is not compatible with the Microsoft Entra ID Tenant Restrictions v2 feature when Tenant Restrictions is deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
 
+#### URLs that need to be allowed for PSSO registration flows
+
+Please ensure that traffic to the URLs listed [here](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra) is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration flows that rely on TLS challenges to complete successfully.
+
+> [!IMPORTANT]
+> **Note: There has been a recent update to the TLS endpoint used in registration flows. Please verify that your environment’s allowlist reflects the latest URL requirements to avoid disruptions.**
+
 ### Temporary passwords issued during password reset can't be synced with Platform SSO
 
 Temporary passwords issued during password reset can't be synced to the local device. Users are advised to complete the password reset process using their temporary password using the SSO extension.

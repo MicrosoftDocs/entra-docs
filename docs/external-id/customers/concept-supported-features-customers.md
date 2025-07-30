@@ -128,9 +128,9 @@ The following table compares the unique features available for [enterprise appli
 
 Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **Application gallery**         | The [application gallery](/entra/identity/enterprise-apps/overview-application-gallery) contains thousands of applications that are preintegrated into Microsoft Entra ID.   | The application gallery catalog is not available. To find apps, use the search bar instead.    |
-| **Identity Provider (IdP)-initiated sign-in**         | [Use a SAML 2.0 Identity Provider (IdP) for  single sign-on.](/entra/identity/hybrid/connect/how-to-connect-fed-saml-idp)  |  Not available.    |
-| **Self-service**         | Let users [self-discover apps](/entra/identity/enterprise-apps/manage-self-service-access).  | Self-service in the [My Apps portal](/entra/identity/enterprise-apps/myapps-overview) is not available.   |
+| **Application gallery**         | The [application gallery](/entra/identity/enterprise-apps/overview-application-gallery) contains thousands of applications that are preintegrated into Microsoft Entra ID.   | Choose from a range of pre-integrated apps. To find a third-party app, use the search bar. The application gallery catalog isn’t available yet.    |
+| **Register a custom enterprise application**         | [Add an enterprise application.](/entra/identity/enterprise-apps/add-application-portal)  |  [Register a SAML app in your external tenant.](/entra/external-id/customers/how-to-register-saml-app)    |
+| **Self-service application assignment**         | Let users [self-discover apps](/entra/identity/enterprise-apps/manage-self-service-access).  | Self-service application assignment in the [My Apps portal](/entra/identity/enterprise-apps/myapps-overview) is not available.   |
 | **Application proxy**         | [Microsoft Entra application proxy](/entra/identity/app-proxy/overview-what-is-app-proxy) provides secure remote access to on-premises web applications.  | Not available.    |
 
 ### Consent and permission features for enterprise applications 
