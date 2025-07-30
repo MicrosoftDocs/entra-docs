@@ -78,6 +78,9 @@ When you transition to the cloud, map on-premises groups to modern group types i
 | Distribution List (Exchange on-premises) | Distribution List (read-only for Microsoft Entra and managed in Exchange) | Exchange Online or via PowerShell | Are for email-only communication. They can be migrated as Exchange Online Distribution Lists, and managed by using Exchange Online or Exchange PowerShell. They can then be recreated as Microsoft 365 groups or you can directly [upgrade them to Microsoft 365 Groups](/exchange/recipients-in-exchange-online/manage-distribution-groups/upgrade-distribution-lists). They enable shared files, calendars, Teams integration, and self-service management with Outlook, Teams, My Groups, or Microsoft Graph. |
 | N/A (In the past with v1) | Microsoft 365 groups (cloud only) | Microsoft Entra admin center <br>Microsoft Graph APIs |  |
 
+>[!NOTE]
+>Security-enabled Microsoft 365 Groups can be used for both collaboration for apps like Teams, SharePoint, or Outlook, and access control in Microsoft Entra. However, security-enabled Microsoft 365 Groups aren't supported for assigning permissions to Exchange shared mailboxes. For scenarios where you need to secure a shared mailbox, continue to use mail-enabled security groups. 
+
 ## Related content
 
 - [Group SOA overview](concept-source-of-authority-overview.md)

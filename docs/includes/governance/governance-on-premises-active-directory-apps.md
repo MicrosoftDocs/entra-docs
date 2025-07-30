@@ -27,7 +27,7 @@ The following prerequisites are required to implement this scenario.
   >
   > Set-AAD DSCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -TargetDomainCredential $credential
   > ```
-  > Make you sure you allow Read, Write, Create, and Delete all properties for all descendent groups and users.
+  > Make you sure you allow Read, Write, Create, and Delete all properties for all descendant groups and users.
   >
   > These permissions aren't applied to AdminSDHolder objects by default by the [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain).
 
