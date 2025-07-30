@@ -466,7 +466,7 @@ If you see this error message during testing, first, ensure you have successfull
 
 #### Troubleshoot Secure Enclave
 
-If canses where you must troubleshoot issues with Secure Enclave, it can disable Secure Enclave by updating the following key in your Apple device's MDM configuration:
+In cases where you must troubleshoot issues with Secure Enclave, it can disable Secure Enclave by updating the following key in your Apple device's MDM configuration:
 
 - **Key**: `use_most_secure_storage`
 - **Type**: `Boolean`
