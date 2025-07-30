@@ -51,11 +51,11 @@ There are different roles, permissions, and license requirements to view health 
 
 1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
 
-<!--- Confirm if the following broad strokes are accurate:
-- View the sign-in logs for ... what should they broadly look for in sign-in logs for a pattern?
-- Check audit logs for changes to the impacted application or security group for scenarios where large groups of users can't sign in?
---->
+1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
 
+1. Review the sign-in logs.
+    - [Review the sign-in log details](concept-sign-in-log-activity-details.md).
+    - In the Microsoft Entra admin center, you might need to add the **Authentication protocol** column, then filter for **SAML 2.0** sign-ins to look for patterns in the sign-ins.
 
 ## Mitigate common issues
 
