@@ -18,9 +18,9 @@ It's mainly a process and policy-driven phase to stop, or limit as much as possi
 It's key at this point to identify the internal processes that would lead to adding new dependencies on Active Directory. For example, most organizations would have a change management process that has to be followed before the implementation of new scenarios, features, and solutions. We strongly recommend making sure that these change approval processes are updated to:
 
 - Include a step to evaluate whether the proposed change would add new dependencies on Active Directory.
-- Request the evaluation of Microsoft Entra alternatives when possible.
+- Evaluate Microsoft Entra alternatives when possible.
 
-## Users and groups
+## Attributes
 
 You can enrich user attributes in Microsoft Entra ID to make more user attributes available for inclusion. Examples of common scenarios that require rich user attributes include:
 
@@ -46,6 +46,11 @@ These links provide more information on this topic but aren't specific to changi
 
 * [Provide optional claims to Microsoft Entra apps - Microsoft identity platform](~/identity-platform/optional-claims.md)
 
+- [Attribute-based application provisioning with scoping filters](/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts) or [What is Microsoft Entra entitlement management](/entra/id-governance/entitlement-management-overview) (for application access)
+
+## Groups
+A cloud-first approach for groups involves creating new groups in the cloud. If you need them on-premises, [provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning). Convert the Source of Authority (SOA) of existing on-premises groups to manage them from Microsoft Entra. 
+
 These links provide more information about groups:
 
 * [Create or edit a dynamic group and get status in Microsoft Entra ID](~/identity/users/groups-create-rule.md)
@@ -57,6 +62,8 @@ These links provide more information about groups:
 * [Compare groups](/microsoft-365/admin/create-groups/compare-groups)
 
 * [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md)
+
+## Users
 
 You and your team might feel compelled to change your current employee provisioning to use cloud-only accounts at this stage. The effort is nontrivial but doesn't provide enough business value. We recommend that you plan this transition at a different phase of your transformation.
 
