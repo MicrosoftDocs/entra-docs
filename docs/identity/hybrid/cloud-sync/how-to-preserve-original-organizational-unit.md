@@ -16,7 +16,7 @@ This topic covers how to preserve and use the original organizational unit (OU) 
 
 ## Prerequisite
  
-Use Connect Sync or Cloud Sync to sync a custom extension attribute, or use an existing attribute from the default schema that you aren't using today, and set the OU path for the groups that you want to convert Source of Authority (SOA) to the cloud. The attribute helps you provision the group to the same OU when you update these groups from the cloud.
+Use [Connect Sync](/entra/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions) or [Cloud Sync](/entra/identity/hybrid/cloud-sync/custom-attribute-mapping) to sync a custom extension attribute, or use an existing attribute from the default schema that you aren't using today, and set the OU path for the groups that you want to convert Source of Authority (SOA) to the cloud. The attribute helps you provision the group to the same OU when you update these groups from the cloud.
 
 ## Step 1: Populate extensionAttribute13 in on-premises Active Directory Domain Services (AD DS) 
 
