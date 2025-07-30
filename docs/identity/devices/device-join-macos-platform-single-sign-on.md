@@ -26,8 +26,8 @@ Mac users can join their new device to Microsoft Entra ID during the first-run o
 - A configured single sign-on (SSO) extension MDM payload with [PSSO settings in Intune](/mem/intune/configuration/platform-sso-macos) by an administrator
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended): The user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) on their mobile device to complete device registration.
 - For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
-- Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](./troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#insufficient-permissions).
-- If you have network proxy filtering or TLS inspection enabled in your environment, be sure to review the suggested settings documented [the Platform Single Sign-On troubleshooting guide](/entra/identity/troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#tls-inspection-urls-to-be-excluded-for-platform-sso)
+- Users must have sufficient permissions to [register and join devices to Microsoft Entra ID](/entra/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#insufficient-permissions).
+- If you have network proxy filtering or TLS inspection enabled in your environment, be sure to review the suggested settings documented in the [Platform Single Sign-On troubleshooting guide](/entra/identity/devices/troubleshoot-macos-platform-single-sign-on-extension.md?tabs=macOS14#tls-inspection-urls-to-be-excluded-for-platform-sso)
 
 ## Set up your macOS device
 
