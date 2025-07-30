@@ -73,10 +73,10 @@ Use PowerShell or Microsoft Graph Explorer to verify the attribute sync.
 When you configure **Provisioning**, use the synced attribute to control the target OU. 
  
 1. In your **Provisioning** configuration, map onPremisesExtensionAttributes.extensionAttribute13 to a custom variable such as *preferredOU*. 
-2. Use an expression like this one to handle fallback. This expression uses the original OU if it's available, or falls back to a default OU. You can change extensionAttribute13 later to override the value. 
+2. Use an expression like this example to handle fallback. This expression uses the original OU if it's available, or falls back to a default OU that you specify. You can change extensionAttribute13 later to override the value. 
 
    ```
-   IIF(IsNullOrEmpty([extensionAttribute13]), "OU=Default,DC=contoso,DC=com", [extensionAttribute13]) 
+   IIF(IsNullOrEmpty([extensionAttribute13]), "OU=<Enter your default OU name>,DC=contoso,DC=com", [extensionAttribute13]) 
    ```
 
  ## Related content

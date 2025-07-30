@@ -35,15 +35,15 @@ You can use Microsoft Graph to report data such as:
 
 ### Filter and count converted objects
 
-The [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior) helps you view the *isCloudManaged* property for user or a group. You can set the *isCloudManaged* property to `true` to convert the SOA of an object. 
+The [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior) helps you view the *isCloudManaged* property for a group. You can set the *isCloudManaged* property to `true` to convert the Group SOA. 
 
-You can also call the onPremisesSyncBehavior API and input each group object to query how many groups converted their SOA to cloud-managed:
+You can also call the onPremisesSyncBehavior API to query how many groups converted their SOA to cloud-managed:
 
 ```https
 GET groups/%GROUP_ID%/onPremisesSyncBehavior?$select=id,isCloudManaged
 ```
 
-To view all group objects with converted SOA:
+You can use $search and $count to view all group objects with converted SOA. Before you can use $search or $count, you need to set consistencyLevel = eventual in **Request headers** in Microsoft Graph Explorer:
 
 ```https
 GET groups?$filter=onPremisesSyncBehavior/isCloudManaged eq true&$select=id,displayName,isCloudManaged&$count=true
