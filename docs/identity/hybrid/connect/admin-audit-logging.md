@@ -59,7 +59,7 @@ The following table is a list of events that are logged with the new auditing fe
 |2507|Enable/Disable sync start after installation.| Event is logged when sync is enabled or disabled after the installation is finished.|
 |2508|Create Active Directory Domain Services (AD DS) account.| Shows the created account needed to connect to the new directory added.|
 |2509|Use existing AD DS account.| Shows the name of the account used to connect to the directory.|
-|2510|Create/Update/Delete custom sync rule.| Shows the name of the sync rule that changed along with information on what changed.|
+|2510|Create/Update/Delete sync rule.| Shows the name of the sync rule that changed along with information on what changed.|
 |2511|Enable/Disable domain-based filtering.|Shows that domain filtering is selected and lists selected domains.|
 |2512|Enable/Disable OU-based filtering.| Shows that OU-based filtering is selected and lists selected OUs. |
 |2513|User sign-in method changed.|Shows the old sign-in method and the new one. |
