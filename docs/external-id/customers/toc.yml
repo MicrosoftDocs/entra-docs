@@ -298,6 +298,8 @@ items:
       href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
+    - name: Migrate to External ID
+      href: migrate-to-external-id.md
     - name: Adding your own business logic
       href: concept-custom-extensions.md
     - name: Frequently asked questions (FAQ)
