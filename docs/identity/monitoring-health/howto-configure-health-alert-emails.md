@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/05/2025
+ms.date: 07/30/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -32,6 +32,7 @@ There are different roles, permissions, and license requirements to view health 
 - A tenant with both a non-trial [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) *and* at least 100 monthly active users is required to *view alerts* and *receive alert notifications*.
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role required to *view scenario monitoring signals, alerts, and alert configurations*.
 - The [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) is the least privileged role required to *update alerts* and *update alert notification configurations*.
+- The `Group.Read.All` permission is the least privileged permission required to *view groups*.
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
@@ -81,37 +82,36 @@ Members of the selected group will receive an email notification the next time a
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
-To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts AND the scenario alert ID. 
+To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts and the scenario alert ID. 
 
-#### Locate the group's Object ID
+#### Locate the group ID and alert type
 
-From the Microsoft Entra admin center:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Groups** > **All groups** > and select the group you want to receive the alerts.
-1. Select **Properties** and copy the `Object ID` of the group. 
-
-    :::image type="content" source="media/howto-configure-health-alert-emails/locate-group-id.png" alt-text="Screenshot of the group properties in the Microsoft Entra admin center." lightbox="media/howto-configure-health-alert-emails/locate-group-id-expanded.png":::
-
-Using the Microsoft Graph API:
 1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) and consent to the appropriate permissions.
 1. Select **GET** as the HTTP method from the dropdown and set the API version to **v1.0**.
-1. Run the following query to retrieve the list of alerts for your tenant.
+1. Run one of the following queries to locate the `id` of the group to receive the email notifications.
+
+    - To retrieve the full list of groups:
 
     ```
     GET https://graph.microsoft.com/v1.0/groups
     ```
+
+    - To retrieve a specific group by its display name:
+    
+    ```
+    GET https://graph.microsoft.com/v1.0/groups?$filter=displayName eq 'GroupName'
+    ```
+
 1. Locate and save the `id` of the group you want to receive the alerts.
 
-#### Locate the scenario alert type
-
-1. Select **GET** as the HTTP method from the dropdown and set the API version to **beta**.
-1. Run the following query to retrieve the list of alerts for your tenant.
+1. Choose an alert type for the email notifications.
+    - Possible alert types: `unknown`, `mfaSignInFailure`, `managedDeviceSignInFailure`, `compliantDeviceSignInFailure`, and `conditionalAccessBlockedSignIn`.
+    - You can set up alerts for each `alertType` but if you want to start with a scenario that has activity and alerts, run the following query for each `alertType` to review the activity. The example uses `mfaSignInFailure`.
 
     ```http
-    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
+    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts?$filter=alertType eq 'mfaSignInFailure'&$select=alertType,category,createdDateTime,id
+
     ```
-1. Locate and save the `alertType` of the alert you want to be notified about, for example `alertType: "mfaSignInFailure`.
 
 #### Configure the email notifications
 
@@ -141,13 +141,11 @@ Content-Type: application/json
 
 ## Configure webhook notifications
 
-Webhook change notifications allow applications to receive alerts when a Microsoft Graph resource you're interested in is created, updated, or deleted. These notifications differ from email notifications in that when a service or system subscribes to the notification, the notification is sent to an HTTPS endpoint, not an email address.
+Change notifications let applications receive alerts when a Microsoft Graph resource is created, updated, or deleted. These notifications differ from email notifications because notifications are sent to an HTTPS endpoint, not an email address. You can receive change notifications through webhooks, Azure Event Grid, and Azure Event Hubs.
 
-For the Microsoft Entra Health monitoring alerts, the service calls the subscription API to listen for health monitoring alerts. You provide Microsoft Graph an HTTPS endpoint so when a new alert is created, updated, or deleted, Microsoft Graph sends that notification to the specified HTTPS endpoint. 
+First, the client app sends a **POST** request to the `/subscriptions` endpoint to subscribe to health monitoring alerts. The change notification service validates and confirms the subscription. When a new alert is created, updated, or deleted, Microsoft Graph sends that notification to the specified endpoint. For more information, see [Microsoft Graph change notifications](/graph/change-notifications-overview).
 
-With the Microsoft Entra Health monitoring alerts onboarded to the Microsoft Graph change notifications, you can set up webhook notifications. For mor information, see [Microsoft Graph change notifications](/graph/change-notifications-overview). 
-
-The client app sends a **POST** request to the `/subscriptions` endpoint. The following example shows a basic request to subscribe to changes to a specific mail folder on behalf of the signed-in user. For more information about other Microsoft Graph resources that support change notifications, see [supported resources](/graph/change-notifications-overview#supported-resources).
+The following example shows a basic request to subscribe to changes to Health Monitoring alert changes.
 
 ### Example subscription request
 
@@ -158,7 +156,6 @@ The client app sends a **POST** request to the `/subscriptions` endpoint. The fo
 ```http
 POST https://graph.microsoft.com/v1.0/subscriptions
 Content-Type: application/json
-
 {
   "changeType": "created,updated",
   "notificationUrl": "https://webhook.azurewebsites.net/notificationClient",
