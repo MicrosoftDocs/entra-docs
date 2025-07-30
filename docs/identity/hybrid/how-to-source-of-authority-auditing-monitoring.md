@@ -21,9 +21,9 @@ You can access Audit Logs in the Azure portal. They retain a record of SOA chang
 
 1. Select **Manage Microsoft Entra ID** > **Monitoring** > **Audit logs** or search for **audit logs** in the search bar.
 
-1. Select activity as **Change Source of Authority from AD to cloud**.
+1. Select activity as **Change Source of Authority from AD DS to cloud**.
 
-   :::image type="content" source="media/how-to-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD to cloud activity selection.":::
+   :::image type="content" source="media/how-to-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD DS to cloud activity selection.":::
 
 ## How to use Microsoft Graph API to create reports for SOA 
 
@@ -59,7 +59,7 @@ You can integrate Audit Logs with Azure Monitoring and search the following even
 
 - Event ID 6956 is logged if an object isn't synced to the cloud because the SOA of the object is cloud-managed.
 
-- When SOA transfer is rolled back to on-premises, group provisioning to AD DS stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle. You can verify in the **Audit Logs** that sync doesn't happen for this object because it's managed on-premises. 
+- When SOA transfer is rolled back to on-premises, group provisioning to AD DS stops syncing changes without deleting the AD DS group. The AD DS group is also removed from the configuration scope. The AD DS group remains intact, and AD DS resumes control in the next sync cycle. You can verify in the **Audit Logs** that sync doesn't happen for this object because it's managed on-premises. 
 
   :::image type="content" border="true" source="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png":::
 

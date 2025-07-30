@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 07/28/2025
+ms.date: 07/30/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ---
@@ -30,7 +30,7 @@ For more information about how to govern applications that aren't integrated wit
 If you want to control whether a user can connect to an Active
 Directory application that uses Windows authentication, you can use the
 application proxy and a Microsoft Entra security group. If an
-application checks a user's Active Directory group memberships by using Kerberos or Lightweight Directory Access Protocol (LDAP),
+application checks a user's AD DS group memberships by using Kerberos or Lightweight Directory Access Protocol (LDAP),
 then you can use Cloud Sync group provisioning to ensure the user has
 those group memberships before they access the application.
 
@@ -39,7 +39,7 @@ Cloud Sync group provisioning. The scenario options are meant to ensure
 users assigned to the application have group memberships when they
 authenticate to the application.
 
-- Convert the Source of Authority (SOA) of groups in Active Directory that are synchronized to Microsoft Entra ID by using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync.
+- Convert the Source of Authority (SOA) of groups in AD DS that are synchronized to Microsoft Entra ID by using Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync.
 
 - Create a new group and update the application, if it already exists,
   to check for the new group
@@ -64,5 +64,5 @@ Entra account. For more information about how to configure app proxy, see [Add a
 
 ## Related content
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
-- [Group provisioning to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+- [Group provisioning to AD DS using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
 - [Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync migration](migrate-group-writeback.md)
