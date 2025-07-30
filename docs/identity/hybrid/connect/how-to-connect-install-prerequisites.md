@@ -154,6 +154,29 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
 For more information, see MSDN about the [default proxy element](/dotnet/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings).
 For more information when you have problems with connectivity, see [Troubleshoot connectivity problems](tshoot-connect-connectivity.md).
 
+In the section discussing outbound proxy configuration for the Entra Connect Sync installation, the instructions recommend adding the following XML snippet to the machine.config file:
+
+<system.net>
+  <defaultProxy>
+    <proxy
+      usesystemdefault="true"
+      proxyaddress="http://<PROXYADDRESS>:<PROXYPORT>"
+      bypassonlocal="true" />
+  </defaultProxy>
+</system.net>
+
+It is stated that this should be added “at the bottom of the file.”  This instruction, and the settings themselves, are problematic for the following reasons:
+
+1. Invalid XML placement: The machine.config file is a strict XML document, and all new sections must be nested within the root <configuration> element. Placing this block outside of <configuration> renders the file invalid and may break .NET applications system-wide.
+2. Conflicting attributes: The use of both usesystemdefault="true" and a custom proxyaddress is ambiguous. According to Microsoft’s .NET documentation, these attributes are typically mutually exclusive.
+3. Lack of safeguards: The article does not recommend making a backup or validating the XML structure after editing, which are critical steps when modifying global configuration files.
+
+I respectfully suggest that the article be updated to clarify:
+- Proper placement of the <system.net> section within the <configuration> element.
+- The implications of combining usesystemdefault with proxyaddress.
+- Recommended best practices (e.g., backups, XML validation) to avoid service disruption.
+
+
 ### Other
 Optional: Use a test user account to verify synchronization.
 
