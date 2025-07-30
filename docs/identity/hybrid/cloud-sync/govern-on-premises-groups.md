@@ -1,5 +1,5 @@
 ---
-title: 'Govern on-premises Active Directory(Kerberos) application access with groups from the cloud'
+title: 'Govern on-premises Active Directory Domain Services (Kerberos) application access with groups from the cloud'
 description: This article provides an overview of how to use cloud sync to govern on-premises application access using groups.
 author: omondiatieno
 manager: mwongerapk
@@ -10,7 +10,7 @@ ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ---
 
-# Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance
+# Govern on-premises Active Directory Domain Services based apps (Kerberos) using Microsoft Entra ID Governance
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
