@@ -2,12 +2,12 @@
 title: PowerShell sample - List all Microsoft Entra application proxy apps with a policy
 description: PowerShell example that lists all Microsoft Entra application proxy applications in your directory that have a lifetime token policy.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---

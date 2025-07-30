@@ -5,9 +5,9 @@ ROBOTS: NOINDEX
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom:
 ms.date: 02/27/2024
-ms.reviewer: jamesmantu
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: quickstart

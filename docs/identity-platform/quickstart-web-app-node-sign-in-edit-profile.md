@@ -3,12 +3,12 @@ title: Quickstart - Edit profile in a sample Node.js web app
 description: Learn how to configure a sample web app to edit user's profile. The edit profile operation requires a customer user to complete multifactor authentication (MFA)
  
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: identity-platform
 ms.topic: quickstart
 ms.date: 11/28/2024
-ms.custom: developer
+ms.custom:
 #Customer intent: As a dev, devops, or IT admin, I want to configure a sample Node.js web app so that customer users edit profile after completing a multifactor authentication (MFA) in their external tenant
 ---
 

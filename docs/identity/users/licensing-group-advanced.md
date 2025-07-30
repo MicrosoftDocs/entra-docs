@@ -1,16 +1,15 @@
 ---
 title: Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID
 description: More scenarios limitations, and known issues for Microsoft Entra group-based licensing
-
 author: barclayn
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: sumitp
-
+ms.custom: sfi-image-nochange
 ---
 
 # Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID

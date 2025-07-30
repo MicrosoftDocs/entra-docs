@@ -9,7 +9,7 @@ ms.author: henrymbugua
 ms.service: identity-platform
 ms.topic: tutorial
 ms.date: 06/27/2024
-ms.custom: developer
+ms.custom:
 zone_pivot_groups: entra-tenants
 #Customer intent: As a developer, I want to prepare iOS (Swift) app for authentication using Microsoft Entra ID.
 ---

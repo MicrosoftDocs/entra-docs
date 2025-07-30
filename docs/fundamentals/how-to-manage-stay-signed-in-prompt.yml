@@ -13,6 +13,8 @@ metadata:
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-ga-nochange
+    - sfi-image-nochange
 
   # Customer intent: As an IT admin, I want to know how to configure the 'Stay signed in' prompt for Microsoft Entra users, so their sign-in experience is not interrupted unnecessarily.
 
@@ -58,7 +60,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
       - |
-        Browse to **Identity** > **Users** > **User settings**.
+        Browse to **Entra ID** > **Users** > **User settings**.
 
         :::image type="content" source="media/how-to-manage-stay-signed-in-prompt/user-settings-page.png" alt-text="Screenshot of the User settings page in Microsoft Entra ID.":::
       - |

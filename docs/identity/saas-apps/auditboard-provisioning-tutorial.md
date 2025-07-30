@@ -3,7 +3,7 @@ title: Configure AuditBoard for automatic user provisioning with Microsoft Entra
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to AuditBoard.
 
 
-author: thomasakelo
+author: adimitui
 manager: jeedes
 
 ms.service: entra-id
@@ -12,12 +12,12 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: addimitu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AuditBoard so that I can streamline the user management process and ensure that users have the appropriate access to AuditBoard.
 ---
 
-# Configure AuditBoard for automatic user provisioning
+# Configure AuditBoard for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both AuditBoard and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [AuditBoard](https://www.auditboard.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -78,7 +78,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for AuditBoard in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Enterprise applications blade](common/enterprise-applications.png)
 
@@ -111,10 +111,10 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for Filtering|
    |---|---|---|
    |emails[type eq "work"].value|String|&check;|
-   |active|Boolean|
-   |userName|String|
-   |name.givenName|String|
-   |name.familyName|String|
+   |active|Boolean||
+   |userName|String||
+   |name.givenName|String||
+   |name.familyName|String||
    
 
 10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).

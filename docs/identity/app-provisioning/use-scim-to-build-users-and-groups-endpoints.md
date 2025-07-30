@@ -2,14 +2,15 @@
 title: Build a SCIM endpoint for user provisioning to apps from Microsoft Entra ID
 description: Learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and automatically provision users and groups into your cloud applications.
 
-author: kenwith
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
 ms.date: 03/04/2025
-ms.author: kenwith
+ms.author: jfields
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Develop a sample SCIM endpoint in Microsoft Entra ID

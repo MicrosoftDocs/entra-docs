@@ -1,61 +1,63 @@
 ---
 title: Known issues with System for Cross-Domain Identity Management (SCIM) 2.0 protocol compliance
 description: How to solve common protocol compatibility issues faced when adding a non-gallery application that supports SCIM 2.0 to Microsoft Entra ID
-
-author: kenwith
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 03/04/2025
-ms.author: kenwith
+ms.date: 04/15/2025
+ms.author: jfields
 ms.reviewer: arvinh
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
+#customer intent: As an IT admin, I want to understand SCIM 2.0 compliance issues so that I can troubleshoot provisioning problems with non-gallery applications.  
 ---
 
 # Known issues and resolutions with SCIM 2.0 protocol compliance of the Microsoft Entra user provisioning service
 
-Microsoft Entra ID can automatically provision users and groups to any application or system that is fronted by a web service with the interface defined in the [System for Cross-Domain Identity Management (SCIM) 2.0 protocol specification](https://tools.ietf.org/html/draft-ietf-scim-api-19). 
+Microsoft Entra ID can automatically provision users and groups to any application or system fronted by a web service with the interface defined in the [System for Cross-Domain Identity Management (SCIM) 2.0 protocol specification](https://tools.ietf.org/html/draft-ietf-scim-api-19). 
 
 Microsoft Entra support for the SCIM 2.0 protocol is described in [Using System for Cross-Domain Identity Management (SCIM) to automatically provision users and groups from Microsoft Entra ID to applications](use-scim-to-provision-users-and-groups.md), which lists the specific parts of the protocol that it implements in order to automatically provision users and groups from Microsoft Entra ID to applications that support SCIM 2.0.
 
 This article describes current and past issues with the Microsoft Entra user provisioning service's adherence to the SCIM 2.0 protocol, and how to work around these issues.
 
 ## Understanding the provisioning job
-The provisioning service uses the concept of a job to operate against an application. The jobID can be found in the [progress bar](application-provisioning-when-will-provisioning-finish-specific-user.md#view-the-provisioning-progress-bar). All new provisioning applications are created with a jobID starting with "scim". The scim job represents the current state of the service. Older jobs have the ID "customappsso". This job represents the state of the service in 2018. 
+The provisioning service uses the concept of a job to operate against an application. The jobID can be found in the [progress bar](application-provisioning-when-will-provisioning-finish-specific-user.md#view-the-provisioning-progress-bar). All new provisioning applications are created with a jobID starting with `scim`. The scim job represents the current state of the service. Older jobs have the ID `customappsso`. This job represents the state of the service in 2018. 
 
-If you are using an application in the gallery, the job generally contains the name of the app (such as zoom snowFlake or dataBricks). You can skip this documentation when using a gallery application. This primarily applies for non-gallery applications with jobID SCIM or customAppSSO.
+If you're using an application in the gallery, the job generally contains the name of the app (such as zoom snowFlake or dataBricks). You can skip this documentation when using a gallery application. This primarily applies for non-gallery applications with jobID SCIM or customAppSSO.
 
 ## SCIM 2.0 compliance issues and status
-In the table below, any item marked as fixed means that the proper behavior can be found on the SCIM job. We have worked to ensure backwards compatibility for the changes we have made. We recommend using the new behavior for any new implementations and updating existing implementations. Please note that the customappSSO behavior that was the default prior to December 2018 is not supported anymore. 
+In the, any item marked as fixed means that the proper behavior can be found on the SCIM job. We have worked to ensure backwards compatibility for the changes we have made. We recommend using the new behavior for any new implementations and updating existing implementations. The customappSSO behavior that was the default prior to December 2018 isn't supported anymore. 
 
 > [!NOTE]
-> For the changes made in 2018, it is possible to revert back to the customappsso behavior. For the changes made since 2018, you can use the URLs to revert back to the older behavior. We have worked to ensure backwards compatibility for the changes we have made by allowing you to revert back to the old jobID or by using a flag. However, as previously mentioned, we do not recommend implementing old behavior as it is not supported anymore. We recommend using the new behavior for any new implementations and updating existing implementations.
+> For the changes made in 2018, it's possible to revert back to the customappsso behavior. For the changes made since 2018, you can use the URLs to revert back to the older behavior. We have worked to ensure backwards compatibility for the changes we have made by allowing you to revert back to the old jobID or by using a flag. However, as previously mentioned, we don't recommend implementing old behavior as it isn't supported anymore. We recommend using the new behavior for any new implementations and updating existing implementations.
 
 | **SCIM 2.0 compliance issue** |  **Fixed?** | **Fix date**  |  **Backwards compatibility** |
 |---|---|---|
 | Microsoft Entra ID requires "/scim" to be in the root of the application's SCIM endpoint URL  | Yes  |  December 18, 2018 | downgrade to customappSSO |
-| Extension attributes use dot "." notation before attribute names instead of colon ":" notation |  Yes  | December 18, 2018  | downgrade to customappSSO |
+| Extension attributes use dot `.` notation before attribute names instead of colon ":" notation |  Yes  | December 18, 2018  | downgrade to customappSSO |
 | Patch requests for multi-value attributes contain invalid path filter syntax | Yes  |  December 18, 2018  | downgrade to customappSSO |
 | Group creation requests contain an invalid schema URI | Yes  |  December 18, 2018  |  downgrade to customappSSO |
 | Update PATCH behavior to ensure compliance (such as active as boolean and proper group membership removals) | No | TBD| use feature flag |
 
 ## Flags to alter the SCIM behavior
-Use the flags below in the tenant URL of your application in order to change the default SCIM client behavior.
+Use the flags in the tenant URL of your application in order to change the default SCIM client behavior.
 
 :::image type="content" source="media/application-provisioning-config-problem-scim-compatibility/scim-flags.png" alt-text="SCIM flags to later behavior.":::
 
-Use the following URL to update PATCH behavior and ensure SCIM compliance. The flag will alter the following behaviors:                
+Use the following URL to update PATCH behavior and ensure SCIM compliance. The flag alters the following behaviors:                
 - Requests made to disable users
 - Requests to add a single-value string attribute
 - Requests to replace multiple attributes
 - Requests to remove a group member        
 
-This behavior is currently only available when using the flag, but will become the default behavior over the next few months. Note this feature flag currently does not work with on-demand provisioning. 
+This behavior is currently only available when using the flag, but will become the default behavior over the next few months. Note this feature flag currently doesn't work with on-demand provisioning. 
   * **URL (SCIM Compliant):** aadOptscim062020
   * **SCIM RFC references:** 
     * https://tools.ietf.org/html/rfc7644#section-3.5.2    
 
-Below are sample requests to help outline what the sync engine currently sends versus the requests that are sent once the feature flag is enabled. 
+Sample requests to help outline what the sync engine currently sends versus the requests that are sent once the feature flag is enabled. 
 
 **Requests made to disable users:**
 
@@ -233,10 +235,10 @@ Below are sample requests to help outline what the sync engine currently sends v
 
 
 ## Upgrading from the older customappsso job to the SCIM job
-Following the steps below will delete your existing customappsso job and create a new SCIM job.
+Delete your existing `customappsso` job and create a new SCIM job.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Locate and select your existing SCIM application.
 1. In the **Properties** section of your existing SCIM app, copy the **Object ID**.
 1. In a new web browser window, go to https://developer.microsoft.com/graph/graph-explorer and sign in as the administrator for the Microsoft Entra tenant where your app is added.
@@ -271,10 +273,10 @@ Following the steps below will delete your existing customappsso job and create 
 13. Verify your configuration, and then start the provisioning job. 
 
 ## Downgrading from the SCIM job to the customappsso job (not recommended)
- We allow you to downgrade back to the old behavior but don't recommend it as the customappsso does not benefit from some of the updates we make, and may not be supported forever. 
+ We allow you to downgrade back to the old behavior but don't recommend it as the customappsso doesn't benefit from some of the updates we make, and may not be supported forever. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 1. In the **Create application** section, create a new **Non-gallery** application.
 1. In the **Properties** section of your new custom app, copy the **Object ID**.
@@ -290,4 +292,4 @@ Following the steps below will delete your existing customappsso job and create 
 
 
 ## Next steps
-[Learn more about provisioning and de-provisioning to SaaS applications](user-provisioning.md)
+[Learn more about provisioning and deprovisioning to SaaS applications](user-provisioning.md)

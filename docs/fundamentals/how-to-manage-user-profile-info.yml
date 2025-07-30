@@ -4,7 +4,7 @@ metadata:
   description: Instructions for IT admins to learn how to manage a user's profile and settings in Microsoft Entra ID.
   author: barclayn
   ms.author: barclayn
-  manager: femila
+  manager: pmwongera
   ms.reviewer: jeffsta
   ms.date: 03/25/2025
   ms.service: entra
@@ -12,6 +12,8 @@ metadata:
   ms.topic: how-to
   ms.custom:
     - ge-structured-content-pilot
+    - sfi-ga-nochange
+    - sfi-image-nochange
 # Customer intent: As an IT admin, I need to understand the information contained in the user profile and settings so that I can properly create and manage users in my organization.
 
 title: |
@@ -42,7 +44,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |
-        Browse to **Identity** > **Users** > **All users**.
+        Browse to **Entra ID** > **Users**.
 
         :::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
       - |
@@ -87,7 +89,7 @@ procedureSection:
          - **On-premises:** Accounts synced from Windows Server Active Directory include other values not applicable to Microsoft Entra accounts.
 
         > [!NOTE]
-        > For users whose source of authority is Windows Server Active Directory, you must use Windows Server Active Directory to update their identity, contact info, or job info. After making updates, you must wait for the next synchronization cycle to complete before the changes take effect. However, you can update their attributes directly in the Microsoft Entra admin center if you are updating Microsoft Entra ID attributes, such as Usage Location.
+        > For users whose source of authority is Windows Server Active Directory, you must use Windows Server Active Directory to update their identity, contact info, or job info. After making updates, you must wait for the next synchronization cycle to complete before the changes take effect. However, you can update their attributes directly in the Microsoft Entra admin center if you are updating Microsoft Entra ID attributes, such as Usage Location. Some attributes that are synchronized from on-premises, such as User Principal Name, On Premises Immutable ID, and Account Enabled, can be updated in Microsoft Entra ID for users managed from on-premises, but we don't recommend managing these attributes in Entra ID other than for emergency purposes.
 
         ## Guidance on user name properties
 
@@ -150,7 +152,7 @@ procedureSection:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
       - |
-        Browse to **Identity** > **Users** > **User settings**.
+        Browse to **Entra ID** > **Users** > **User settings**.
 
         :::image type="content" source="media/how-to-manage-user-profile-info/user-settings.png" alt-text="Screenshot of the Microsoft Entra user settings options." lightbox="media/how-to-manage-user-profile-info/user-settings.png":::
  
@@ -177,14 +179,14 @@ procedureSection:
           - Administrators can access My Staff
 
   - title: |
-      Edit multiple users at once (preview)
+      Edit multiple users at once
     summary: |
          This new Microsoft Entra admin center update allows editing certain user attributes in bulk. On the All Users page, you can select up to 60 users at a time and update their attributes at once. For information about how to add users in bulk, see [Bulk create users in Microsoft Entra ID](../identity/users/users-bulk-add.md).
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |
-        Browse to **Identity** > **Users** > **All Users**.
+        Browse to **Entra ID** > **Users**.
     
         :::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the Microsoft Entra all users settings options." lightbox="media/how-to-manage-user-profile-info/all-users.png":::
      

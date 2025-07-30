@@ -1,18 +1,18 @@
 ---
 title: Configure ServiceNow for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ServiceNow.
-author: thomasakelo
+author: adimitui
 manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: thomasakelo
-
+ms.date: 05/20/2025
+ms.author: addimitu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ServiceNow so that I can streamline the user management process and ensure that users have the appropriate access to ServiceNow.
 ---
 
-# Configure ServiceNow for automatic user provisioning
+# Configure ServiceNow for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps that you take in both ServiceNow and Microsoft Entra ID to configure automatic user provisioning. When Microsoft Entra ID is configured, it automatically provisions and deprovisions users and groups to [ServiceNow](https://www.servicenow.com) by using the Microsoft Entra provisioning service. 
 
@@ -73,7 +73,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 To configure automatic user provisioning for ServiceNow in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
    ![Screenshot that shows the Enterprise applications pane.](common/enterprise-applications.png)
 

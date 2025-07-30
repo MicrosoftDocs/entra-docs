@@ -2,19 +2,19 @@
 title: Configure ClearView Trade for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ClearView Trade.
 
-author: thomasakelo
+author: adimitui
 manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
+ms.author: addimitu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ClearView Trade so that I can streamline the user management process and ensure that users have the appropriate access to ClearView Trade.
 ---
 
-# Configure ClearView Trade for automatic user provisioning
+# Configure ClearView Trade for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both ClearView Trade and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [ClearView Trade](https://gateway.clearviewtrade.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -58,7 +58,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for ClearView Trade in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -90,16 +90,16 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       |Attribute|Type|Supported for filtering|Required by ClearView Trade|
       |---|---|---|---|
-      |userName|String|&check;|&check;
-      |active|Boolean||&check;
-      |emails[type eq "work"].value|String||
-      |name.givenName|String||&check;
-      |name.familyName|String||&check;
-      |addresses[type eq "work"].country|String||
-      |phoneNumbers[type eq "work"].value|String||
-      |externalId|String||&check;
+      |userName|String|&check;|&check;|
+      |active|Boolean||&check;|
+      |emails[type eq "work"].value|String|||
+      |name.givenName|String||&check;|
+      |name.familyName|String||&check;|
+      |addresses[type eq "work"].country|String|||
+      |phoneNumbers[type eq "work"].value|String|||
+      |externalId|String||&check;|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for ClearView Trade, change the **Provisioning Status** to **On** in the **Settings** section.
 

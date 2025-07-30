@@ -1,14 +1,14 @@
 ---
 title: Microsoft Entra UserPrincipalName population
 description: The following document describes how the UserPrincipalName attribute is populated.
-author: billmath
+author: omondiatieno
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.date: 04/09/2025
 ms.topic: conceptual
 ms.service: entra-id
-manager: femila
-
+manager: mwongerapk
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra UserPrincipalName population

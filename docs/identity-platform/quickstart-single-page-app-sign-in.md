@@ -1,12 +1,12 @@
 ---
-title: Quickstart - Sign in to a SPA & call an API
-description: Quickstart that shows how to configure a sample SPA that signs in employees or customers by using Microsoft identity platform
+title: "Quickstart - Sign in users in a single-page app (SPA) and call the Microsoft Graph API"
+description: Quickstart that shows how to configure a sample SPA that signs in employees or customers by using the Microsoft identity platform
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
+ms.custom:
 ms.date: 01/27/2025
-ms.reviewer: OwenRichards1
+ms.reviewer: 
 ms.service: identity-platform
 zone_pivot_groups: entra-tenants
 ms.topic: quickstart
@@ -188,7 +188,7 @@ Run the project with a web server by using Node.js:
 1. To start the server, run the following commands from within the project directory:
 
     ```console
-    cd react-spa/App
+    cd react-spa
     npm install
     npm start
     ```
@@ -206,7 +206,7 @@ Run the project with a web server by using Node.js:
 1. To start the server, run the following commands from within the project directory:
 
     ```console
-    cd angular-spa/App
+    cd angular-spa
     npm install
     npm start
     ```

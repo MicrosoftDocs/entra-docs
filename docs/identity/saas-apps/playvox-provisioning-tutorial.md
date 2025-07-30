@@ -1,20 +1,18 @@
 ---
-title: Configure Playvox for automatic user provisioning by using Microsoft Entra ID
+title: Configure Configure Playvox for for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Playvox.
-
-author: thomasakelo
+author: adimitui
 manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
-
+ms.author: addimitu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Playvox so that I can streamline the user management process and ensure that users have the appropriate access to Playvox.
 ---
 
-# Configure Playvox for automatic user provisioning
+# Configure Configure Playvox for for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps to follow in both Playvox and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users or groups to [Playvox](https://www.playvox.com) by using the Microsoft Entra provisioning service. For important details on what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -79,7 +77,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 To configure automatic user provisioning for Playvox in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
     ![Partial screenshot of the Azure portal, with Enterprise applications and All applications items highlighted](common/enterprise-applications.png)
 

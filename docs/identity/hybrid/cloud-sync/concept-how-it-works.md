@@ -2,13 +2,13 @@
 title: 'Microsoft Entra Cloud Sync deep dive - how it works'
 description: This topic provides deep dive information on how cloud sync works.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: conceptual
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 ---
 
 # Cloud sync deep dive - how it works

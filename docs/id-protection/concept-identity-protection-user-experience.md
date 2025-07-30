@@ -1,16 +1,14 @@
 ---
 title: User self-remediation with Microsoft Entra ID Protection
-description: How can users self-remediate when administrators allow it? What is the experience when they don't?
-
+description: How can users self-remediate risk when administrators allow it? What is the experience when they don't?
 ms.service: entra-id-protection
-
 ms.topic: conceptual
-ms.date: 02/28/2025
-
+ms.date: 06/12/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pmwongera
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-image-nochange
 ---
 # Self-remediation experience with Microsoft Entra ID Protection and Conditional Access
 
@@ -20,11 +18,11 @@ With Microsoft Entra ID Protection and Conditional Access, you can:
 * Automate remediation of risky sign-ins and compromised users
 * Block users in specific cases.
 
-Conditional Access policies that integrate user and sign-in risk have an impact on the sign in experience for users. Allowing users to use tools like Microsoft Entra multifactor authentication and self-service password reset can lessen the impact. These tools, along with the appropriate policy choices, give users a self-remediation option when they need it while still enforcing strong security controls.
+Conditional Access policies that integrate user and sign-in risk affect the sign in experience for users. Allowing users to use tools like Microsoft Entra multifactor authentication and self-service password reset can lessen the impact. These tools, along with the appropriate policy choices, give users a self-remediation option when they need it while still enforcing strong security controls.
 
 ## Multifactor authentication registration
 
-When an administrator enables the ID Protection policy requiring Microsoft Entra multifactor authentication registration, users can use Microsoft Entra multifactor authentication to self-remediate. Configuring this policy gives users a 14-day period to register, after which they are forced to register.
+When an administrator enables the ID Protection policy requiring Microsoft Entra multifactor authentication registration, users can use Microsoft Entra multifactor authentication to self-remediate. Configuring this policy gives users a 14-day period to register, after which they're forced to register.
 
 ### Registration interrupt
 
@@ -52,7 +50,7 @@ Administrators might block users upon sign-in depending on their risk level. To 
 
 :::image type="content" source="media/concept-identity-protection-user-experience/conditional-access-blocked.png" alt-text="A screenshot showing your account is blocked screen." lightbox="media/concept-identity-protection-user-experience/conditional-access-blocked.png":::
 
-IT staff can follow the instructions in [Unblocking users](howto-identity-protection-remediate-unblock.md#unblocking-based-on-sign-in-risk) to allow users to sign back in.
+IT staff can follow the instructions in [Unblocking users](howto-identity-protection-remediate-unblock.md#unblock-users) to allow users to sign back in.
 
 ## High risk technician
 
@@ -61,9 +59,9 @@ If the home tenant didn't enable self-remediation policies, an administrator in 
 1. An organization has a managed service provider (MSP) or cloud solution provider (CSP) who takes care of configuring their cloud environment. 
 1. One of the MSPs technicians credentials are leaked and triggers high risk. That technician is blocked from signing in to other tenants. 
 1. The technician can self-remediate and sign in if the home tenant enabled the appropriate policies [requiring password change for high risk users](~/identity/conditional-access/policy-risk-based-user.md) or [MFA for risky users](~/identity/conditional-access/policy-risk-based-sign-in.md). 
-   1. If the home tenant didn't enable self-remediation policies, an administrator in the technician's home tenant has to [remediate the risk](howto-identity-protection-remediate-unblock.md#risk-remediation).
+   - If the home tenant didn't enable self-remediation policies, an administrator in the technician's home tenant has to [remediate the risk](howto-identity-protection-remediate-unblock.md).
 
-## See also
+## Related content
 
 - [Remediate risks and unblock users](howto-identity-protection-remediate-unblock.md)
 - [Microsoft Entra ID Protection](./overview-identity-protection.md)

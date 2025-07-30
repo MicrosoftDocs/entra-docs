@@ -5,11 +5,11 @@ description: Learn how to sign in to an Azure VM that's running Linux by using M
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 03/07/2025
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---
@@ -282,7 +282,7 @@ The application that appears in the Conditional Access policy is called *Azure L
 If the Azure Linux VM Sign-In application is missing from Conditional Access, make sure the application isn't in the tenant:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Remove the filters to see all applications, and search for **Virtual Machine**. If you don't see Microsoft Azure Linux Virtual Machine Sign-In as a result, the service principal is missing from the tenant.
 
 <a name='log-in-by-using-an-azure-ad-user-account-to-ssh-into-the-linux-vm'></a>
@@ -492,7 +492,7 @@ The solution is to uninstall the older AADLoginForLinux VM extension from the VM
 
 #### Installation failures when using an HTTP proxy
 
-The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open ` /lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
+The extension needs an HTTP connection to install packages and check for the existence of a system identity. It runs in the context of `walinuxagent.service` and requires a change to let the agent know about the proxy settings. Open `/lib/systemd/system/walinuxagent.service` file on the target machine and add the following line after `[Service]`:
 ```
 [Service]
 Environment="http_proxy=http://proxy.example.com:80/"
@@ -543,7 +543,7 @@ The OpenSSH server version in the target VM 7.4 is too old. Version incompatible
 
 Workaround:
 
-- Adding option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `az ssh vm ` command.
+- Adding option `"PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"` in the `az ssh vm` command.
 
 ```azurecli-interactive
 az ssh vm -n myVM -g MyResourceGroup -- -A -o "PubkeyAcceptedKeyTypes= +ssh-rsa-cert-v01@openssh.com"

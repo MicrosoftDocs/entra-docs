@@ -5,11 +5,11 @@ description: Learn how to do a targeted deployment of Microsoft Entra hybrid joi
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 06/27/2024
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: sandeo
 ---
 # Microsoft Entra hybrid join targeted deployment
@@ -64,7 +64,7 @@ Use the following example to create a Group Policy Object (GPO) to deploy a regi
       1. Key Path: **SOFTWARE\Microsoft\Windows\CurrentVersion\CDJ\AAD**.
       1. Value name: **TenantId**.
       1. Value type: **REG_SZ**.
-      1. Value data: The globally unique identifier (GUID) or **Tenant ID** of your Microsoft Entra tenant, which can be found in **Identity** > **Overview** > **Properties** > **Tenant ID**.
+      1. Value data: The globally unique identifier (GUID) or **Tenant ID** of your Microsoft Entra tenant, which can be found in **Entra ID** > **Overview** > **Properties** > **Tenant ID**.
    1. Select **OK**.
 1. Right-click on the Registry and select **New** > **Registry Item**.
    1. On the **General** tab, configure the following.

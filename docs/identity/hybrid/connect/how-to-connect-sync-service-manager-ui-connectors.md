@@ -1,19 +1,16 @@
 ---
 title: Connectors in the Microsoft Entra Connect Sync Service Manager UI'
 description: Understand the Connectors tab in the Service Manager for Microsoft Entra Connect Sync.
-
-author: billmath
-manager: femila
-
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 60f1d979-8e6d-4460-aaab-747fffedfc1e
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-ms.custom: H1Hack27Feb2017
-
+ms.author: jomondi
+ms.custom: H1Hack27Feb2017, sfi-image-nochange
 ---
 # Using connectors with the Microsoft Entra Connect Sync Service Manager
 

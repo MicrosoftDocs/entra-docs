@@ -1,9 +1,8 @@
 ---
-title: Sign in users in a React SPA by using native authentication
-description: Learn how to configure a sample React single-page application that uses native authentication API to sign up users.
-
+title: "Sign in users in a React single-page app (SPA) by using native authentication"
+description: Learn how to configure a sample React single-page app (SPA) that uses native authentication API to sign up users.
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
@@ -12,11 +11,11 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, I want to configure a sample React single-page application using native authentication so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
 ---
 
-# Quickstart: Sign in users in a sample React single-page application by using native authentication (preview)
+# Quickstart: Sign in users in a React single-page app by using native authentication (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](reference-native-authentication-api.md). The sample app demonstrates user sign-up, sign in, sign out and password reset with an email and a password.
+In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](reference-native-authentication-api.md). The sample app demonstrates user sign-up, sign-in, sign-out and password reset with an email and a password.
 
 ## Prerequisites
 
@@ -36,7 +35,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
- 
+
 ## Enable public client and native authentication flows 
 
 [!INCLUDE [Enable public client and native authentication](../external-id/customers/includes/native-auth/enable-native-authentication.md)]

@@ -3,15 +3,15 @@ title: 'Decommissioning Azure AD Connect V1'
 description: This article describes Azure AD Connect V1 decommissioning and how to migrate to V2.
 
 documentationcenter: ''
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 editor: ''
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ms.custom: docutune-disable
 ---
@@ -37,7 +37,7 @@ If you aren't yet eligible to move to cloud sync, use this table for more inform
 |-----|-----|
 |[Information on deprecation](connect/deprecated-azure-ad-connect.md)|Information on Azure AD Connect V1 deprecation|
 |[What is Microsoft Entra Connect V2?](connect/whatis-azure-ad-connect-v2.md)|Information on the latest version of Microsoft Entra Connect|
-|[Upgrading from a previous version](connect/how-to-upgrade-previous-version.md)|Information on moving from one version of Microsoft Entra Connect to another
+|[Upgrading from a previous version](connect/how-to-upgrade-previous-version.md)|Information on moving from one version of Microsoft Entra Connect to another|
 
 
 ## Frequently asked questions

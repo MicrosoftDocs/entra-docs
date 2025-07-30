@@ -1,15 +1,15 @@
 ---
 title: Microsoft Entra provisioning to applications via PowerShell
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer Windows PowerShell based APIs.
-
-author: billmath
-manager: femila
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: billmath
+ms.author: jfields
 ms.reviewer: arvinh
+ms.custom: sfi-image-nochange
 ---
 # Provisioning users into applications using PowerShell
 The following documentation provides configuration and tutorial information. It demonstrates how the generic PowerShell connector and the Extensible Connectivity (ECMA) Connector host are used to integrate Microsoft Entra ID with external systems that offer Windows PowerShell-based APIs.
@@ -51,7 +51,7 @@ The connector provides a bridge between the capabilities of the ECMA Connector H
 If you've downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
-1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud sync** > **Agents**.
+1. Browse to **Entra ID** > **Entra Connect** > **Cloud sync** > **Agents**.
  
  :::image type="content" source="~/includes/media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="~/includes/media/entra-cloud-sync-how-to-install/new-ux-1.png":::
 
@@ -70,7 +70,7 @@ If you've downloaded the provisioning agent and configured it for another on-pre
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**. 
+1. Browse to **Entra ID** > **Enterprise apps**. 
 1. Select **New application**.
 1. Search for the **On-premises ECMA app** application, give the app a name, and select **Create** to add it to your tenant.
 1. Navigate to the **Provisioning** page of your application.
@@ -270,7 +270,7 @@ Follow these steps to confirm the connector host is started and has identified a
    > If the window had timed out, then you need to re-select the agent.
    
    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-   1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+   1. Browse to **Entra ID** > **Enterprise apps**.
    1. Select the **On-premises ECMA app** application.
    1. Select **Provisioning**.
    1. If **Get started** appears, then change the mode to **Automatic**,  on the **On-Premises Connectivity** section, select the agent that you just deployed and select **Assign Agent(s)**, and wait 10 minutes. Otherwise go to **Edit Provisioning**.
@@ -297,7 +297,7 @@ Return to the web browser window where you were configuring the application prov
 > If the window had timed out, then you need to re-select the agent.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
 1. If **Get started** appears, then change the mode to **Automatic**,  on the **On-Premises Connectivity** section, select the agent that you deployed and select **Assign Agent(s)**. Otherwise go to **Edit Provisioning**.
@@ -323,7 +323,7 @@ Now you need to map attributes between the representation of the user in Microso
 You'll use the Azure portal to configure the mapping between the Microsoft Entra user's attributes and the attributes that you previously selected in the ECMA Host configuration wizard.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
 1. Select **Edit provisioning**, and wait 10 seconds.
@@ -365,7 +365,7 @@ Otherwise, if there are no current users of the application, then select a test 
 
 1. Ensure that the user selected has all the properties, mapped to the required attributes of the schema.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. On the left, under **Manage**, select **Users and groups**.
 1. Select **Add user/group**.
@@ -378,7 +378,7 @@ Otherwise, if there are no current users of the application, then select a test 
 Now that your attributes are mapped and users are assigned, you can test on-demand provisioning with one of your users.
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Select the **On-premises ECMA app** application.
 1. Select **Provisioning**.
 1. Select **Provision on demand**.

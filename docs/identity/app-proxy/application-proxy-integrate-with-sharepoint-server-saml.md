@@ -2,13 +2,15 @@
 title: Publish an on premises SharePoint farm with Microsoft Entra application proxy
 description: Learn how to integrate an on premises SharePoint farm with Microsoft Entra application proxy using Security Assertion Markup Language (SAML).
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Integrate Microsoft Entra application proxy with SharePoint using Security Assertion Markup Language (SAML)

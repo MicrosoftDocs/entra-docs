@@ -1,16 +1,14 @@
 ---
 title: 'Microsoft Entra Connect: ADSyncTools PowerShell Reference'
 description: This document provides reference information for the ADSyncTools.psm1 PowerShell module.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.topic: reference
-
-
-ms.custom: no-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ---
 
 # Microsoft Entra Connect:  ADSyncTools PowerShell Reference
@@ -1091,7 +1089,7 @@ Remove-ADSyncToolsAadObject [-Credential] <PSCredential> [-SourceAnchor] <Object
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjecType in batches of 10 objects The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
+Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjectType in batches of 10 objects The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
 ### EXAMPLES
 #### EXAMPLE 1
 ```

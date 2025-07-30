@@ -1,16 +1,14 @@
 ---
 title: Configure SAP SuccessFactors writeback in Microsoft Entra ID
 description: Learn how to configure attribute write-back to SAP SuccessFactors from Microsoft Entra ID
-
 author: cmmdesai
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-
 ms.date: 05/06/2024
 ms.author: chmutali
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors Writeback so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors Writeback.
 ---
 # Configure attribute write-back from Microsoft Entra ID to SAP SuccessFactors
@@ -217,7 +215,7 @@ This section provides steps for
 **To configure SuccessFactors Writeback:**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 
 5. Search for **SuccessFactors Writeback**, and add that app from the gallery.
 
@@ -298,8 +296,8 @@ Once the SuccessFactors provisioning app configurations are complete, you can tu
 1. In the **Provisioning** tab, set the **Provisioning Status** to **On**.
 
 1. Select **Scope**. You can select from one of the following options: 
-   * **Sync all users and groups**: Select this option if you plan to write back mapped attributes of all users from Microsoft Entra ID to SuccessFactors, subject to the scoping rules defined under **Mappings** -> **Source Object Scope**. 
-   * **Sync only assigned users and groups**: Select this option if you plan to write back mapped attributes of only users that you have assigned to this application in the **Application** -> **Manage** -> **Users and groups** menu option. These users are also subject to the scoping rules defined under **Mappings** -> **Source Object Scope**.
+   * **Sync all users and groups**: Select this option if you plan to write back mapped attributes of all users from Microsoft Entra ID to SuccessFactors, subject to the scoping rules defined under **Mappings** > **Source Object Scope**. 
+   * **Sync only assigned users and groups**: Select this option if you plan to write back mapped attributes of only users that you have assigned to this application in the **Application** > **Manage** > **Users and groups** menu option. These users are also subject to the scoping rules defined under **Mappings** > **Source Object Scope**.
 
    > [!div class="mx-imgBorder"]
    > ![Select Writeback scope](./media/sap-successfactors-inbound-provisioning/select-writeback-scope.png)

@@ -1,27 +1,24 @@
 ---
 title: How to manage OATH tokens in Microsoft Entra ID (Preview)
 description: Learn about how to manage OATH tokens in Microsoft Entra ID to help improve and secure sign-in events.
-
 services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/26/2025
-
 ms.author: justinha
 author: justinha
 ms.reviewer: lvandenende
-manager: femila
-
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand how to manage OATH tokens in Microsoft Entra ID to improve and secure user sign-in events.
 ---
-# How to manage hardware OATH tokens in Microsoft Entra ID (Preview)
+# How to manage OATH tokens in Microsoft Entra ID (Preview)
 
 This topic covers how to manage hardware oath tokens in Microsoft Entra ID, including Microsoft Graph APIs that you can use to upload, activate, and assign hardware OATH tokens. 
 
-## Enable hardware OATH tokens in the Authentication methods policy
+## Manage hardware OATH tokens in the Authentication methods policy (Preview)
 
 You can view and enable hardware OATH tokens in the Authentication methods policy by using Microsoft Graph APIs or the Microsoft Entra admin center. 
 
@@ -48,13 +45,21 @@ You can view and enable hardware OATH tokens in the Authentication methods polic
 To enable hardware OATH tokens in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
+1. Browse to **Entra ID** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
 1. Select **Enable**, choose which groups of users to include in the policy, and select **Save**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/enable.png" alt-text="Screenshot of how to enable hardware OATH tokens in the Microsoft Entra admin center.":::
 
-We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
+We recommend that you [migrate to the Authentication methods policy](how-to-authentication-methods-manage.md) to manage hardware OATH tokens. If you enable OATH tokens in the legacy MFA policy, browse to the policy in the Microsoft Entra admin center as an Authentication Policy Administrator: **Entra ID** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**. Clear the checkbox for **Verification code from mobile app or hardware token**. 
 
+## Manage third-party software OATH tokens
+
+Third-party software OATH tokens are enabled for sign in by default. An [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can disable them to prevent users from signing in with a one-time password from a third-party Identity Provider.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Browse to **Entra ID** > **Authentication methods** > **Third-party software OATH tokens**.
+1. Move the silder for the **Enable** control to prevent users from signing in with third-party software OATH tokens.
+1. Click **I Acknowledge**, then click **Save**.
 
 ## Scenario: Admin creates, assigns, and activates a hardware OATH token 
 
@@ -63,7 +68,7 @@ This scenario covers how to create, assign, and activate a hardware OATH token a
 >[!NOTE]
 >There might be up to a 20-minute delay for the policy propagation. Allow an hour for the policy to update before users can sign in with their hardware OATH token and see it in their [Security info](https://mysignins.microsoft.com/security-info).
 
-Let's look at an example where an Authentication Policy Administrator creates a token and assigns it to a user. You can allow assignment without activation. 
+Let's look at an example where an Global Administrator creates a token and assigns it to a user. You can allow assignment without activation. 
 
 For the body of the POST in this example, you can find the **serialNumber** from your device and the **secretKey** is delivered to you.
 
@@ -122,7 +127,7 @@ GET https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardw
 
 
 
-This example creates a single token:
+This example Authentication Policy Administrator creates a single token:
 
 ```https
 POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices
@@ -176,7 +181,7 @@ DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/ha
 
 ## Scenario: Admin creates and assigns a hardware OATH token that a user activates
 
-In this scenario, an Authentication Policy Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
+In this scenario, a Global Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
 
 ```https
@@ -191,7 +196,7 @@ POST https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hard
 }
 ```
 
-The response includes an **id** value for each token. An Authentication Administrator can assign the token to a user:
+An Authentication Administrator can assign the token to a user:
 
 ```https
 POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/authentication/hardwareOathMethods
@@ -260,7 +265,7 @@ Here are steps users can follow to self-activate their hardware OATH token by us
 
 ## Scenario: Admin creates multiple hardware OATH tokens in bulk that users self-assign and activate
 
-In this scenario, an Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens. You can upload new tokens to the tenant in bulk. Users can sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
+In this scenario, an Authentication Policy Administrator creates tokens without assignment, and users self-assign and activate the tokens. You can upload new tokens to the tenant in bulk. Users can sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
 For greater assurance that the token is only activated by a specific user, you can assign the token to the user, and send the device to them for self-activation.
 
@@ -339,6 +344,8 @@ To identify and remove the legacy token.
    ```https
    DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/{legacyHardwareOathMethodId}
    ```
+
+
 
 ## Related content
 

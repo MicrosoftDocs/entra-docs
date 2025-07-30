@@ -1,14 +1,13 @@
 ---
 title: Plan a single sign-on deployment
-description: 'SSO deployment planning: Streamline role assignments, certificate updates, and licensing for Microsoft Entra ID to ensure uninterrupted access.' 
-
+description: 'Plan your single sign‑on deployment in Microsoft Entra ID. Streamline role assignments, certificate management, and licensing to ensure uninterrupted access.'
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: concept-article
 
-ms.date: 03/31/2025
+ms.date: 04/30/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
@@ -19,7 +18,7 @@ ms.custom: has-adal-ref, enterprise-apps
 
 # Plan a single sign-on deployment
 
-This article provides information that you can use to plan your [single sign-on (SSO)](what-is-single-sign-on.md) deployment in Microsoft Entra ID. When you plan your SSO deployment with your applications in Microsoft Entra ID, you need to consider the following questions:
+This article provides information that you can use to plan your single sign-on (SSO) deployment in Microsoft Entra ID. When you plan your SSO deployment with your applications in Microsoft Entra ID, you need to consider the following questions:
 
 - What are the administrative roles required for managing the application?
 - Does the Security Assertion Markup Language (SAML) application certificate need to be renewed?
@@ -28,7 +27,7 @@ This article provides information that you can use to plan your [single sign-on 
 - Are shared and guest user accounts used to access the application?
 - Do I understand the options for SSO deployment?
 
-## Administrative Roles
+## Administrative roles
 
 Always use the role with the fewest permissions available to accomplish the required task within Microsoft Entra ID. Review the different roles that are available and choose the right one to solve your needs for each persona for the application. Some roles might need to be applied temporarily and removed after the deployment is completed.
 
@@ -89,7 +88,7 @@ There are several ways you can configure an application for SSO. Choosing an SSO
 
 This flowchart can help you decide which SSO method is best for your situation.
 
-![Decision flowchart for single sign-on method](./media/plan-sso-deployment/single-sign-on-options.png)
+:::image type="content" source="./media/plan-sso-deployment/single-sign-on-options.png" alt-text="Image of decision flowchart for single sign‑on method.":::
  
 The following SSO protocols are available to use:
 

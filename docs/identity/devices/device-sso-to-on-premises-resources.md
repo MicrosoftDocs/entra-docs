@@ -5,11 +5,11 @@ description: Extend the SSO experience by configuring Microsoft Entra hybrid joi
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 05/29/2024
+ms.date: 06/27/2025
 
 ms.author: owinfrey
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.reviewer: 
 ---
 # How SSO to on-premises resources works on Microsoft Entra joined devices
@@ -22,7 +22,7 @@ This article explains how this works.
 
 - An [Microsoft Entra joined device](concept-directory-join.md).
 - On-premises SSO requires line-of-sight communication with your on-premises AD DS domain controllers. If Microsoft Entra joined devices aren't connected to your organization's network, a VPN or other network infrastructure is required. 
-- Microsoft Entra Connect or Microsoft Entra Connect cloud sync: To synchronize default user attributes like SAM Account Name, Domain Name, and UPN. For more information, see the article [Attributes synchronized by Microsoft Entra Connect](~/identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
+- Microsoft Entra Connect or Microsoft Entra Cloud Sync: To synchronize default user attributes like SAM Account Name, Domain Name, and UPN. For more information, see the article [Attributes synchronized by Microsoft Entra Connect](~/identity/hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
 
 ## How it works 
 
@@ -30,7 +30,7 @@ With a Microsoft Entra joined device, your users already have an SSO experience 
 
 Microsoft Entra joined devices have no knowledge about your on-premises AD DS environment because they aren't joined to it. However, you can provide additional information about your on-premises AD to these devices with Microsoft Entra Connect.
 
-Microsoft Entra Connect or Microsoft Entra Connect cloud sync synchronize your on-premises identity information to the cloud. As part of the synchronization process, on-premises user and domain information is synchronized to Microsoft Entra ID. When a user signs in to a Microsoft Entra joined device in a hybrid environment:
+Microsoft Entra Connect or Microsoft Entra Cloud Sync synchronize your on-premises identity information to the cloud. As part of the synchronization process, on-premises user and domain information is synchronized to Microsoft Entra ID. When a user signs in to a Microsoft Entra joined device in a hybrid environment:
 
 1. Microsoft Entra ID sends the details of the user's on-premises domain back to the device, along with the [Primary Refresh Token](concept-primary-refresh-token.md)
 1. The local security authority (LSA) service enables Kerberos and NTLM authentication on the device.

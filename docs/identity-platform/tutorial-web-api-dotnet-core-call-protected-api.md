@@ -2,7 +2,7 @@
 title: "Tutorial: Call a protected ASP.NET Core web API"
 description:  Learn how to call a web API whose endpoints are protected using the Microsoft identity platform 
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
 ms.date: 03/18/2025
 ms.service: identity-platform
@@ -17,7 +17,7 @@ ms.topic: tutorial
 
 This tutorial is the final part of a series that demonstrates building and testing a protected web API registered in a Microsoft Entra tenant. In [Part 1 of this series](tutorial-web-api-dotnet-core-build-app.md), you created an ASP.NET Core web API and protected its endpoints. You'll now create a lightweight daemon app, register it in your tenant, and use the daemon app to test the web API you built.
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

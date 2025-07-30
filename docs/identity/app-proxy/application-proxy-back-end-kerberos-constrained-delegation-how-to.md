@@ -2,13 +2,15 @@
 title: Troubleshoot Kerberos Constrained Delegation
 description: Learn how to troubleshoot a Kerberos constrained delegation (KCD) configuration in Microsoft Entra application proxy.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: asteen, ashishj
+ai-usage: ai-assisted
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot Kerberos constrained delegation
@@ -40,13 +42,13 @@ The following list describes foundational considerations for KCD configuration a
 
 - Cross-domain scenarios rely on referrals that direct a connector host to DCs that might be outside of the local network perimeter. In these cases, it's equally important to send traffic onward to DCs that represent other respective domains. If you don't, delegation fails.
 
-- Avoid active Intrusion Prevention System (IPS) or Intrusion Detection System (IDS) devices between connector hosts and DCs. These devices are too intrusive and interfere with core Remote Procedure Call (RPC) traffic.
+- Avoidance of active Intrusion Prevention System (IPS) or Intrusion Detection System (IDS) devices between connector hosts and domain controllers (DCs) due to interference with core Remote Procedure Call (RPC) traffic.
 
 - Test delegation in a simple scenario. The more variables you introduce in a scenario, the more complex configuration and troubleshooting is. To save time, limit your testing to a single connector. Add more connectors after the issue is resolved.
 
 - Environmental factors might contribute to the cause of an issue. To avoid these factors, minimize architecture as much as possible during testing. For example, misconfigured internal firewall access control lists (ACLs) are common. If possible, send all traffic from a connector directly to the DCs and back-end application.
 
-- The best place to position connectors is as close as possible to their targets. A firewall that sits inline when you test adds unnecessary complexity and can prolong your investigations.
+- The best place to position connectors is as close as possible to their targets. A firewall that sits inline when you test the connector adds unnecessary complexity and can prolong your investigations.
 
 - What indicates a KCD problem? Several common errors indicate that KCD SSO is failing. The first signs of an issue appear in the browser.
 
@@ -94,15 +96,15 @@ If ticketing is working correctly, the logs likely show an event that indicates 
 
 ### The application
 
-The target application consumes the Kerberos ticket that the connector provides. At this stage, it's expected that the connector sent a Kerberos service ticket to the back end. The ticket is a header in the first application request.
+The target application processes the Kerberos ticket provided by the connector. At this stage, the connector includes a Kerberos service ticket as a header in the first application request to the back end.
 
 To troubleshoot an application issue:
 
-1. Use the application’s internal URL that's defined in the Azure portal to validate that the application is accessible directly from the browser on the connector host. If you can successfully sign in, the application is accessible.
+1. Ensure the application is accessible. Sign in directly from the browser on the connector host using the internal URL defined in the Azure portal. If the sign-in succeeds, the application is accessible.
 
-1. Verify that authentication between the browser and the application uses Kerberos. Use DevTools (select the **F12** key) in Internet Explorer or use [Fiddler](https://blogs.msdn.microsoft.com/crminthefield/2012/10/10/using-fiddler-to-check-for-kerberos-auth/) from the connector host. Go to the application by using the internal URL. To make sure that either "Negotiate" or "Kerberos" is included, inspect the web authorization headers that are returned in the response from the application.
+1. Check if the browser and application are using Kerberos for authentication. From the connector host, use Internet Explorer's DevTools (press **F12**) or [Fiddler](https://blogs.msdn.microsoft.com/crminthefield/2012/10/10/using-fiddler-to-check-for-kerberos-auth/) to access the application via the internal URL. Look for "Negotiate" or "Kerberos" in the web authorization headers in the application's response.
 
-   The next Kerberos blob that returns in the response from the browser to the application starts with `YII`. These letters indicate that Kerberos is running. A response from Microsoft NT LAN Manager (NTLM) always starts with `TlRMTVNTUAAB`. The response reads NTLM Security Support Provider (NTLMSSP) when it's decoded from Base64. If you see `TlRMTVNTUAAB` at the start of the blob, Kerberos isn't available. If you don’t see `TlRMTVNTUAAB`, Kerberos likely is available.
+   The browser response to the application includes a Kerberos blob that starts with `YII`, confirming that Kerberos is running. In contrast, a response from Microsoft NT LAN Manager (NTLM) always begins with `TlRMTVNTUAAB`. When decoded from Base64, this response reads NTLM Security Support Provider (NTLMSSP). If the blobs start with `TlRMTVNTUAAB`, Kerberos isn't available. If it doesn't, Kerberos is likely available.
 
    > [!NOTE]
    > If you use Fiddler, you must temporarily disable extended protection on the application configuration in IIS.
@@ -147,7 +149,7 @@ To troubleshoot an application issue:
 
 1. If Kernel mode is enabled, Kerberos operations improve. But the ticket for the requested service also must be decrypted by using the machine account. This account is also called the *Local system*. Set this value to **True** to break KCD when the application is hosted across more than one server in a farm.
 
-1. As another check, disable extended protection. In some test scenarios, extended protection broke KCD when it was enabled in specific configurations. In those cases, an application was published as a subfolder of the default website. This application is configured for anonymous authentication only. All the dialogs are inactive, with no available selections, which suggests that child objects wouldn't inherit any active settings. We recommend that you test, but don’t forget to restore this value to **enabled** if possible.
+1. As another check, disable extended protection. In some test scenarios, extended protection broke KCD when it was enabled in specific configurations. In those cases, an application was published as a subfolder of the default website. This application is configured for anonymous authentication only. All the dialogs are inactive, with no available selection, which suggests that child objects wouldn't inherit any active settings. We recommend that you test, but don’t forget to restore this value to **enabled** if possible.
 
    This extra check puts you on track to use your published application. You can generate more connectors that are also configured to delegate. For more information, read the more in-depth technical walkthrough [Troubleshooting the Microsoft Entra application proxy](https://aka.ms/proxytshootpaper).
 

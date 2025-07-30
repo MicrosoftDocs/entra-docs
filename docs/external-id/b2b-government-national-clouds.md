@@ -5,11 +5,11 @@ description: Learn what features are available in Microsoft Entra B2B collaborat
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 10/08/2024
+ms.date: 07/07/2025
 
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As an Azure US Government cloud tenant, I want to know if B2B collaboration is available in my tenant, so that I can determine if I can collaborate with other tenants and social users using Microsoft, Google accounts, or email one-time passcode accounts.

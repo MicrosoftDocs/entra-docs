@@ -2,13 +2,13 @@
 title: 'Prerequisites for Microsoft Entra Cloud Sync in Microsoft Entra ID'
 description: This article describes the prerequisites and hardware requirements you need for cloud sync.
 
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -23,7 +23,11 @@ You need the following to use Microsoft Entra Cloud Sync:
 - Domain Administrator or Enterprise Administrator credentials to create the Microsoft Entra Connect cloud sync gMSA (group managed service account) to run the agent service.
 - A Hybrid Identity Administrator account for your Microsoft Entra tenant that isn't a guest user.
 - An on-premises server for the provisioning agent with Windows 2016 or later. This server should be a tier 0 server based on the [Active Directory administrative tier model](/security/privileged-access-workstations/privileged-access-access-model). Installing the agent on a domain controller is supported.  For more information, see [Harden your Microsoft Entra provisioning agent server](#harden-your-microsoft-entra-provisioning-agent-server)
-    - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId 
+
+  - Required for AD Schema attribute  - msDS-ExternalDirectoryObjectId
+    
+- The Windows Credential Manager service (VaultSvc) cannot be disabled as that prevents the provisioning agent from installing.
+
 - High availability refers to the Microsoft Entra Cloud Sync's ability to operate continuously without failure for a long time. By having multiple active agents installed and running, Microsoft Entra Cloud Sync can continue to function even if one agent should fail. Microsoft recommends having 3 active agents installed for high availability.
 - On-premises firewall configurations.
 

@@ -1,15 +1,14 @@
 ---
 title: Workforce Tenant Overview
 description: Learn about B2B collaboration for sharing apps with external identities, business partners, and guests, using External ID for authentication and identity access management.
-
 ms.service: entra-external-id
 ms.topic: overview
 ms.date: 02/19/2025
 ms.author: cmulligan
 author: csmulligan
-manager: celestedg
-ms.custom: it-pro, seo-july-2024
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 # Customer intent: As an administrator managing B2B collaboration, I want to easily invite guest users from the Microsoft Entra admin center, so that I can securely share my company's applications and services with external partners and maintain control over my corporate data.
 ---
 
@@ -54,9 +53,8 @@ When you're considering B2B collaboration with a specific external Microsoft Ent
 
 - **Example 2**: You allow B2B collaboration with Fabrikam in your cross-tenant access settings, but then you add `fabrikam.com` to your blocked domains in your external collaboration settings. Your users can't invite new Fabrikam business guests, but existing Fabrikam guests can continue using B2B collaboration.
 
-For B2B collaboration end-users who perform cross-tenant sign-ins, their home tenant branding appears, even if there isn't custom branding specified. In the following example, the company branding for Woodgrove Groceries appears on the left. The example on the right displays the default branding for the user's home tenant.
-
-:::image type="content" source="media/external-identities-overview/b2b-comparison.png" alt-text="Screenshots showing a comparison of the branded sign-in experience and the default sign-in experience.":::
+> [!NOTE]
+> Effective July 2025, Microsoft begins rolling out an update to the guest user sign-in experience for B2B collaboration. The rollout continues through the end of 2025. With this update, guest users will be redirected to their own organization's sign-in page to provide their credentials. Guest users see the branding and URL endpoint of their home tenant. This step ensures greater clarity regarding which sign-in information to use. Following successful authentication in their own organization, guest users are returned to your organization to complete the sign-in process.   
 
 ### Manage B2B collaboration with other Microsoft Clouds
 

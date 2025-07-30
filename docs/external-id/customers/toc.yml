@@ -40,7 +40,9 @@ items:
       - name: Edit profile
         href: /entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
   - name: Daemon, service app
-    href: /entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external 
+    items: 
+      - name: Call a web API
+        href: /entra/identity-platform/quickstart-daemon-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external 
   - name: Desktop app
     items:
       - name: Electron - sign in users
@@ -123,7 +125,7 @@ items:
                   - name: Configure app for authentication
                     href: /entra/identity-platform/tutorial-single-page-app-react-configure-authentication
                   - name: Sign in and sign out
-                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-iign-out
+                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out
         - name: Native authentication
           items:
             - name: React
@@ -172,31 +174,24 @@ items:
       items: 
         - name: Node.js
           items:                
-            - name: Prepare tenant
-              href: tutorial-daemon-node-call-api-prepare-tenant.md
-              displayName: client credentials flow 
             - name: Acquire access token and call API
-              href: tutorial-daemon-node-call-api-build-app.md
+              href: /entra/identity-platform/tutorial-daemon-node-call-api-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: .NET acquire access token and call API
           href: /entra/identity-platform/tutorial-dotnet-daemon-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Desktop app
       items:
         - name: .NET MAUI
           items:
-            - name: Prepare tenant
-              href: tutorial-desktop-app-maui-sign-in-prepare-tenant.md
             - name: Create .NET MAUI app
-              href: tutorial-desktop-app-maui-sign-in-prepare-app.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Sign in and sign out
-              href: tutorial-desktop-app-maui-sign-in-sign-out.md
+              href: /entra/identity-platform/tutorial-desktop-app-maui-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Use role-based access control
-              href: tutorial-desktop-maui-role-based-access-control.md
+              href: /entra/identity-platform/tutorial-desktop-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: .NET WPF
           items:
-            - name: Prepare tenant
-              href: tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md
             - name: Sign in and sign out
-              href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
+              href: /entra/identity-platform/tutorial-desktop-wpf-dotnet-sign-in-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               displayName: Windows Presentation Form
     - name: Mobile
       items:
@@ -204,8 +199,6 @@ items:
           items:
             - name: .NET MAUI
               items:
-                - name: Prepare tenant
-                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Create .NET MAUI app
                   href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in and sign out
@@ -222,8 +215,6 @@ items:
                   href: /entra/identity-platform/tutorial-mobile-app-android-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: iOS
               items:
-                - name: Prepare tenant
-                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Prepare app
                   href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Sign in users
@@ -271,18 +262,18 @@ items:
       items:
         - name: Node.js
           items:
-            - name: Prepare tenant
-              href: tutorial-cli-app-node-sign-in-prepare-tenant.md
             - name: Create Node.js CLI app
-              href: tutorial-cli-app-node-sign-in-prepare-app.md
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Sign in users
-              href: tutorial-cli-app-node-sign-in-sign-out.md
+              href: /entra/identity-platform/tutorial-cli-app-node-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
 - name: Concepts
   items: 
     - name: Planning guide
       href: concept-planning-your-solution.md
     - name: Woodgrove demo overview
       href: overview-solutions-customers.md
+    - name: Security settings
+      href: concept-security-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
     - name: Identity providers
@@ -291,12 +282,6 @@ items:
       href: ../direct-federation-overview.md
     - name: Multifactor authentication (MFA)
       href: concept-multifactor-authentication-customers.md
-    - name: Custom authentication extensions
-      items:
-        - name: Overview
-          href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-        - name: Custom claims provider
-          href: ~/identity-platform/custom-claims-provider-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication
       items:
         - name: Native authentication
@@ -313,8 +298,8 @@ items:
       href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
-    - name: Security and governance
-      href: concept-security-customers.md
+    - name: Adding your own business logic
+      href: concept-custom-extensions.md
     - name: Frequently asked questions (FAQ)
       href: faq-customers.md
 - name: How-to guides
@@ -326,6 +311,12 @@ items:
         href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+      - name: Enterprise applications
+        items:
+          - name: Add an enterprise application
+            href: how-to-add-enterprise-application.md
+          - name: Register a SAML app
+            href: how-to-register-saml-app.md
       - name: Add a sign-up and sign-in flow
         href: how-to-user-flow-sign-up-sign-in-customers.md
         displayName: disable sign-up, disable sign up 
@@ -429,11 +420,15 @@ items:
                 - name: Create attribute collection start and submit events
                   href: ~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionStart event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: ~/identity-platform/custom-extension-onattributecollectionstart-retrieve-return-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionSubmit event reference
-                  href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-            - name: Configure a custom email provider for one time code send events
-              href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: ~/identity-platform/custom-extension-onattributecollectionsubmit-retrieve-return-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Custom email provider
+              items:             
+                - name: Configure a custom email provider for one time code send events
+                  href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: On email OTP send event reference
+                  href: ~/identity-platform/custom-extension-email-otp-send-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json                  
             - name: Troubleshoot your custom authentication extension
               href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure
@@ -462,6 +457,8 @@ items:
       items:
         - name: User activity insights
           href: how-to-user-insights.md
+        - name: Sign-up logs
+          href: /entra/identity/monitoring-health/concept-sign-ups?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
         - name: Azure Monitor
           href: how-to-azure-monitor.md
         - name: Known issues

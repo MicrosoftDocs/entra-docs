@@ -2,10 +2,10 @@
 title: Authentication for Microsoft Entra hybrid identity solutions
 description: This guide helps CEOs, CIOs, CISOs, Chief Identity Architects, Enterprise Architects, and Security and IT decision makers responsible for choosing an authentication method for their Microsoft Entra hybrid identity solution in medium to large organizations.
 keywords:
-author: billmath
-ms.author: billmath
+author: omondiatieno
+ms.author: jomondi
 ms.date: 04/09/2025
-manager: femila
+manager: mwongerapk
 ms.topic: article
 ms.service: entra-id
 ms.subservice: hybrid-connect
@@ -174,7 +174,7 @@ The following diagrams outline the high-level architecture components required f
 |Is Windows Hello for Business supported?|[Key trust model](/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Hybrid Cloud Trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-trust)|[Key trust model](/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Hybrid Cloud Trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust)<br><br>*Both require Windows Server 2016 Domain functional level*|[Key trust model](/windows/security/identity-protection/hello-for-business/hello-identity-verification)<br><br>[Hybrid Cloud Trust](/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-kerberos-trust)<br><br>[Certificate trust model](/windows/security/identity-protection/hello-for-business/hello-key-trust-adfs)|
 |What are the multifactor authentication options?|[Microsoft Entra multifactor authentication](/azure/multi-factor-authentication/)<br><br>[Custom Controls with Conditional Access*](~/identity/conditional-access/controls.md)|[Microsoft Entra multifactor authentication](~/identity/authentication/index.yml)<br><br>[Custom Controls with Conditional Access*](~/identity/conditional-access/controls.md)|[Microsoft Entra multifactor authentication](~/identity/authentication/index.yml)<br><br>[Third-party MFA](/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)<br><br>[Custom Controls with Conditional Access*](~/identity/conditional-access/controls.md)|
 |What user account states are supported?|Disabled accounts<br>(up to 30-minute delay)|Disabled accounts<br><br>Account locked out<br><br>Account expired<br><br>Password expired<br><br>Sign-in hours|Disabled accounts<br><br>Account locked out<br><br>Account expired<br><br>Password expired<br><br>Sign-in hours|
-|What are the Conditional Access options?|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|
+|What are the Conditional Access options?|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)|[Microsoft Entra Conditional Access, with Microsoft Entra ID P1 or P2](~/identity/conditional-access/overview.md)<br><br>[AD FS Access Control Policies](/windows-server/identity/ad-fs/operations/create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim)|
 |Is blocking legacy protocols supported?|[Yes](~/identity/conditional-access/overview.md)|[Yes](~/identity/conditional-access/overview.md)|[Yes](/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
 |Can you customize the logo, image, and description on the sign-in pages?|[Yes, with Microsoft Entra ID P1 or P2](~/fundamentals/how-to-customize-branding.md)|[Yes, with Microsoft Entra ID P1 or P2](~/fundamentals/how-to-customize-branding.md)|[Yes](how-to-connect-fed-management.md)|
 |What advanced scenarios are supported?|[Smart password lockout](~/identity/authentication/howto-password-smart-lockout.md)<br><br>[Leaked credentials reports, with Microsoft Entra ID P2](~/id-protection/overview-identity-protection.md)|[Smart password lockout](~/identity/authentication/howto-password-smart-lockout.md)|Multisite low-latency authentication system<br><br>[AD FS extranet lockout](/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection)<br><br>[Integration with third-party identity systems](how-to-connect-fed-compatibility.md)|

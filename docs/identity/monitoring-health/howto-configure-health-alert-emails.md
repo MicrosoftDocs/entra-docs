@@ -2,7 +2,7 @@
 title: How to configure Health email notifications (preview)
 description: Learn how to configure the Microsoft Entra health monitoring email notifications to monitor and improve the health of your tenant.
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -58,7 +58,7 @@ Email notification settings can be configured for each scenario in the Microsoft
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator).
 
-1. Browse to **Identity** > **Monitoring & health** > **Health** and select the **Health monitoring** tab.
+1. Browse to **Entra ID** > **Monitoring & health** > **Health** and select the **Health monitoring** tab.
 
 1. Select the scenario you want to configure email notifications for.
 

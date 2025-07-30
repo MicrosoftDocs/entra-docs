@@ -1,17 +1,16 @@
 ---
 title: 'Install Microsoft Entra Connect by using an existing ADSync database'
 description: This topic describes how to use an existing ADSync database.
-
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.reviewer: cychua
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Install Microsoft Entra Connect using an existing ADSync database
@@ -22,6 +21,11 @@ By pointing to an existing ADSync database:
 
 - Except for credentials information, the synchronization configuration stored in the ADSync database is automatically recovered and used during installation. This includes custom synchronization rules, connectors, filtering, and optional features configuration.
 - All the identity data (associated with connector spaces and metaverse) and synchronization cookies stored in the ADSync database are also recovered. The newly installed Microsoft Entra Connect server can continue to synchronize from where the previous Microsoft Entra Connect server left off, instead of having the need to perform a full sync.
+
+> [!IMPORTANT]
+> In certain edge cases, installing from an existing ADSync database may trigger a full synchronization cycle. If you're not ready to initiate a full sync immediately after installation, you can defer it by configuring the sync scheduler. Use one of the following options:
+> - To set the NextSyncCyclePolicyType: `Set-ADSyncScheduler -NextSyncCyclePolicyType Delta`
+> - To override connector behavior and prevent a full import/sync: `Set-ADSyncSchedulerConnectorOverride -ConnectorName '<connector name>' -FullImportRequired $false -FullSyncRequired $false`
 
 ## Scenarios where using an existing ADSync database is beneficial
 These benefits are useful in the following scenarios:
@@ -49,34 +53,34 @@ Important notes to take note of before you proceed:
 
 ## Steps to install Microsoft Entra Connect with “use existing database” mode
 1. Download Microsoft Entra Connect installer (AzureADConnect.MSI) to the Windows server. Double-select the Microsoft Entra Connect installer to start installing Microsoft Entra Connect.
-2. Once the MSI installation completes, the Microsoft Entra Connect wizard starts with the Express mode setup. Close the screen by selecting the Exit icon.
+1. Once the MSI installation completes, the Microsoft Entra Connect wizard starts with the Express mode setup. Close the screen by selecting the Exit icon.
 ![Screenshot that shows the "Welcome to Microsoft Entra Connect" page, with "Express Settings" in the left-side menu highlighted.](./media/how-to-connect-install-existing-database/db1.png)
-3. Start a new command prompt or PowerShell session. Navigate to folder "C:\Program Files\Microsoft Entra Connect". Run command .\AzureADConnect.exe /useexistingdatabase to start the Microsoft Entra Connect wizard in “Use existing database” setup mode.
+3. Start a new command prompt or PowerShell session. Navigate to folder "C:\Program Files\Microsoft Azure Active Directory Connect". Run command .\AzureADConnect.exe /useexistingdatabase to start the Microsoft Entra Connect wizard in “Use existing database” setup mode.
 
 > [!NOTE]
 > Use the switch **/UseExistingDatabase** only when the database already contains data from an earlier Microsoft Entra Connect installation. For instance, when you are moving from a local database to a full SQL Server database or when the Microsoft Entra Connect server was rebuilt and you restored a SQL backup of the ADSync database from an earlier installation of Microsoft Entra Connect. If the database is empty, that is, it doesn't contain any data from a previous Microsoft Entra Connect installation, skip this step.
 
 ![PowerShell](./media/how-to-connect-install-existing-database/db2.png)
 1. You are greeted with the Welcome to Microsoft Entra Connect screen. Once you agree to the license terms and privacy notice, select **Continue**.
-   ![Screenshot that shows the "Welcome to Microsoft Entra Connect" page](./media/how-to-connect-install-existing-database/db3.png)
-1. On the **Install required components** screen, the **Use an existing SQL Server** option is enabled. Specify the name of the SQL server that is hosting the ADSync database. If the SQL engine instance used to host the ADSync database isn't the default instance on the SQL server, you must specify the SQL engine instance name. Further, if SQL browsing isn't enabled, you must also specify the SQL engine instance port number. For example:         
-   ![Screenshot that shows the "Install required components" page.](./media/how-to-connect-install-existing-database/db4.png)           
+![Screenshot that shows the "Welcome to Microsoft Entra Connect" page.](./media/how-to-connect-install-existing-database/db3.png)
+1. On the **Install required components** screen, the **Use an existing SQL Server** option is enabled. Specify the name of the SQL server that is hosting the ADSync database. If the SQL engine instance used to host the ADSync database isn't the default instance on the SQL server, you must specify the SQL engine instance name. Further, if SQL browsing isn't enabled, you must also specify the SQL engine instance port number. For example:  
+![Screenshot that shows the "Install required components" page.](./media/how-to-connect-install-existing-database/db4.png)           
 
 1. On the **Connect to Microsoft Entra ID** screen, you must provide the credentials of a Hybrid Identity Administrator of your Microsoft Entra directory. The recommendation is to use an account in the default onmicrosoft.com domain. This account is only used to create a service account in Microsoft Entra ID and isn't used after the wizard completes.
-   ![Connect](./media/how-to-connect-install-existing-database/db5.png)
- 
+![Connect](./media/how-to-connect-install-existing-database/db5.png)
+
 1. On the **Connect your directories** screen, the existing AD forest configured for directory synchronization is listed with a red cross icon beside it. To synchronize changes from an on-premises AD forest, an AD DS account is required. The Microsoft Entra Connect wizard is unable to retrieve the credentials of the AD DS account stored in the ADSync database. This is because the credentials are encrypted and can only be decrypted by the previous Microsoft Entra Connect server. Select **Change Credentials** to specify the AD DS account for the AD forest.
-   ![Directories](./media/how-to-connect-install-existing-database/db6.png)
- 
+![Directories](./media/how-to-connect-install-existing-database/db6.png)
+
 1. In the pop-up dialog, you can either (i) provide an Enterprise Admin credential and let Microsoft Entra Connect create the AD DS account for you, or (ii) create the AD DS account yourself and provide its credential to Microsoft Entra Connect. Once you've selected an option and provide the necessary credentials, select **OK** to close the pop-up dialog.
-   ![Screenshot that shows the pop-up dialog "A D forest account" with "Create new A D account" selected.](./media/how-to-connect-install-existing-database/db7.png)
- 
+![Screenshot that shows the pop-up dialog "A D forest account" with "Create new A D account" selected.](./media/how-to-connect-install-existing-database/db7.png)
+
 1. Once the credentials are provided, the red cross icon is replaced with a green tick icon. Select **Next**.
-   ![Screenshot that shows the "Connect your directories" page.](./media/how-to-connect-install-existing-database/db8.png)
- 
+![Screenshot that shows the "Connect your directories" page.](./media/how-to-connect-install-existing-database/db8.png)
+
 1. On the **Ready to configure** screen, select **Install**.
-   ![Welcome](./media/how-to-connect-install-existing-database/db9.png)
- 
+![Welcome](./media/how-to-connect-install-existing-database/db9.png)
+
 1. Once installation completes, the Microsoft Entra Connect server is automatically enabled for Staging Mode. It's recommended that you review the server configuration and pending exports for unexpected changes before disabling Staging Mode. 
 
 ## Post installation tasks

@@ -1,23 +1,18 @@
 ---
 title: Configure Bizagi Studio for Digital Process Automation for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bizagi Studio for Digital Process Automation.
-
-
-author: thomasakelo
+author: adimitui
 manager: jeedes
-
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
 ms.topic: how-to
 ms.date: 03/25/2025
-ms.author: thomasakelo
-
+ms.author: addimitu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bizagi Studio for Digital Process Automation so that I can streamline the user management process and ensure that users have the appropriate access to Bizagi Studio for Digital Process Automation.
 ---
 
-# Configure Bizagi Studio for Digital Process Automation for automatic user provisioning
+# Configure Bizagi Studio for Digital Process Automation for automatic user provisioning with Microsoft Entra ID
 
 This article describes the steps you need to perform in both Bizagi Studio for Digital Process Automation and Microsoft Entra ID to configure automatic user provisioning. When configured to do so, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Bizagi Studio for Digital Process Automation](https://www.bizagi.com/) by using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -83,7 +78,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### Configure automatic user provisioning for Bizagi Studio for Digital Process Automation in Microsoft Entra ID
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
 	![Screenshot of the Azure portal, with Enterprise applications and All applications highlighted.](common/enterprise-applications.png)
 
@@ -121,12 +116,12 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |Attribute|Type|Supported for filtering|
    |---|---|---|
    |userName|String|&check;|
-   |active|Boolean|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |name.formatted|String|
-   |phoneNumbers[type eq "mobile"].value|String|
+   |active|Boolean||
+   |emails[type eq "work"].value|String||
+   |name.givenName|String||
+   |name.familyName|String||
+   |name.formatted|String||
+   |phoneNumbers[type eq "mobile"].value|String||
 
    Custom extension attributes can be added by navigating to **Show advanced options > Edit attribute list for Bizagi**. The custom extension attributes must be prefixed with **urn:ietf:params:scim:schemas:extension:bizagi:2.0:UserProperties:**. For example, if custom extension attribute is **IdentificationNumber**, the attribute must be added as **urn:ietf:params:scim:schemas:extension:bizagi:2.0:UserProperties:IdentificationNumber**. Select **Save** to commit any changes.
    
@@ -137,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 > [!NOTE]
 > Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, and so on). The properties linked to parametric tables or multiple types aren't supported yet.
 
-10. To configure scoping filters, see the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, see the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Bizagi Studio for Digital Process Automation, in the **Settings** section, change the **Provisioning Status** to **On**.
 

@@ -1,9 +1,9 @@
 ---
-title: Microsoft Entra SSO integration with CMD+CTRL Base Camp
+title: Configure CMD+CTRL Base Camp for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and CMD+CTRL Base Camp.
 
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CMD+CTRL Base Camp so that I can control who has access to CMD+CTRL Base Camp, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with CMD+CTRL Base Camp
+# Configure CMD+CTRL Base Camp for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate CMD+CTRL Base Camp with Microsoft Entra ID. CMD+CTRL Base Camp is a unique learning platform that combines our modes of software security training courses, labs, and cyber ranges into an engaging and effective integrated learner experience. When you integrate CMD+CTRL Base Camp with Microsoft Entra ID, you can:
 
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **CMD+CTRL Base Camp** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **CMD+CTRL Base Camp** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 

@@ -46,12 +46,12 @@ This feature can be used in the Azure portal, Microsoft Graph, and PowerShell. B
 ### Create a memberOf dynamic group
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. Select **New group**.
 1. Fill in group details. The group type can be **Security** or **Microsoft 365**, and the membership type can be set to **Dynamic User** or **Dynamic Device**.
 1. Select **Add dynamic query**.
-1. MemberOf isn't yet supported in the rule builder. Select **Edit** to write the rule in the **Rule syntax** box.
-    1. Example user rule: `user.memberof -any (group.objectId -in ['groupId', 'groupId'])`
-    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId', 'groupId'])`
+1. MemberOf isn't yet supported in the rule builder UI. Select **Edit** to write the rule in the **Rule syntax** box.
+    1. Example user rule: `user.memberof -any (group.objectId -in ['groupId'])`
+    1. Example device rule: `device.memberof -any (group.objectId -in ['groupId'])`
 1. Select **OK**.
 1. Select **Create group**.

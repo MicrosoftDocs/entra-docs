@@ -2,18 +2,23 @@
 title: Create Custom Reports Using Microsoft Entra and Application Data
 description: This tutorial describes how to create customized reports in Azure Data Explorer by using data from Microsoft Entra.
 author: billmath
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: tutorial
 ms.date: 04/09/2025
 ms.author: billmath
+ms.custom: sfi-ga-nochange
 ---
 
 # Tutorial: Create customized reports in Azure Data Explorer by using data from Microsoft Entra
 
 In this tutorial, you learn how to create customized reports in [Azure Data Explorer](/azure/data-explorer/data-explorer-overview) by using data from Microsoft Entra ID and Microsoft Entra ID Governance services.
 
-This tutorial complements reporting options such as [archiving and reporting with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md), which focuses on exporting the audit log into Azure Monitor for retention and analysis. By comparison, exporting Microsoft Entra ID data to Azure Data Explorer provides flexibility for creating custom reports on Microsoft Entra objects, including historical and deleted objects.
+This tutorial complements reporting options such as [archiving and reporting with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md), which focuses on exporting the audit log into Azure Monitor for retention and analysis. By comparison, exporting Microsoft Entra ID and Microsoft Entra ID Governance data to Azure Data Explorer provides flexibility for creating custom reports on Microsoft Entra objects, including historical and deleted objects.
+
+Here's a video that provides a quick overview of reporting on Microsoft Entra ID Governance data using Azure Data Explorer.
+
+>[!VIDEO https://www.youtube.com/embed/Ewsd4GsnmWY]
 
 Use of Azure Data Explorer also enables data aggregation from additional sources, with massive scalability, flexible schemas, and retention policies. Azure Data Explorer is especially helpful when you need to retain user access data for years, perform ad hoc investigations, or run custom queries on access data.
 
@@ -103,7 +108,7 @@ You can also bring in data to Azure Data Explorer from sources beyond Microsoft 
 
 - An admin wants to view all users added to an application from Microsoft Entra ID and their access rights in the application's own repository, such as a SQL database.
 
-These types of reports aren't built into Microsoft Entra ID. However, you can create these reports yourself by extracting data from Microsoft Entra ID and combining data by using custom queries in Azure Data Explorer. This tutorial addresses this process later, in the [Bring in data from other sources](#bring-in-data-from-other-sources) section.
+These types of reports aren't built into Microsoft Entra ID. However, you can create these reports yourself by extracting data from Microsoft Entra ID and combining data by using custom queries in Azure Data Explorer. This tutorial addresses this process later, in the [Bring in data from other sources](custom-entitlement-report-with-other-sources.md) article.
 
 For this tutorial, you extract Microsoft Entra ID data from these areas:
 
@@ -179,7 +184,19 @@ Generate a JSON file with group names and IDs that are used to create custom vie
 
 ```powershell
     # Get all groups and select Id and DisplayName 
-    $groups = Get-MgGroup -All | Select-Object Id,DisplayName 
+    $groups = Get-MgGroup -All | Foreach-Object {
+       $groupObject = @{} 
+       $groupObject["Id"] = $_.Id
+       $groupObject["DisplayName"] = $_.DisplayName
+       $groupObject["SecurityEnabled"] = $_.SecurityEnabled
+       $groupObject["MailEnabled"] = $_.MailEnabled
+       $groupObject["MailNickname"] = $_.MailNickname
+       $groupObject["SecurityIdentifier"] = $_.SecurityIdentifier
+       $date = [datetime]::Parse($_.CreatedDateTime) 
+       $groupObject["CreatedDateTime"] = $date.ToString("yyyy-MM-dd") 
+       $groupObject["SnapshotDate"] = $SnapshotDate
+      [pscustomobject]$groupObject 
+    }
     # Export the groups to a JSON file 
     $groups | ConvertTo-Json | Set-Content ".\EntraGroups.json" 
 ```
@@ -209,7 +226,7 @@ Generate a JSON file with group membership, which is used to create custom views
       Start-Sleep -Milliseconds 200 
     } 
     # Convert the results array to JSON format and save it to a file 
-    $results | ConvertTo-Json | Set-Content "EntraGroupMembership.json" 
+    $results | ConvertTo-Json | Set-Content "EntraGroupMemberships.json" 
 ```
 
 #### Get application and service principal data
@@ -221,11 +238,13 @@ Generate a JSON file with all applications and the corresponding service princip
     Get-MgApplication -All | ForEach-Object { 
       $app = $_ 
       $sp = Get-MgServicePrincipal -Filter "appId eq '$($app.AppId)'" 
+      $date = [datetime]::Parse($app.CreatedDateTime)
       [pscustomobject]@{ 
-        Name        = $app.DisplayName 
+        DisplayName     = $app.DisplayName
         ApplicationId   = $app.AppId 
         ServicePrincipalId = $sp.Id 
         SnapshotDate = $SnapshotDate
+        CreatedDateTime = $date.ToString("yyyy-MM-dd")
       } 
     } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
 ```
@@ -273,12 +292,16 @@ Generate a JSON file of all app role assignments of users in the tenant:
         $createdDateTime = $_.CreatedDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
         # Convert the milliseconds timestamp to a readable date format if necessary 
         $result += [PSCustomObject]@{ 
-          AppRoleId      = $_.AppRoleId 
-          CreatedDateTime   = $createdDateTime 
-          PrincipalDisplayName = $_.PrincipalDisplayName 
-          PrincipalId     = $_.PrincipalId 
-          ResourceDisplayName = $_.ResourceDisplayName 
-          ResourceId      = $_.ResourceId 
+          Id = $_.Id
+          AppRoleId      = $_.AppRoleId
+          CreatedDateTime   = $createdDateTime
+          PrincipalDisplayName = $user.DisplayName
+          PrincipalId     = $user.Id
+          AssignmentPrincipalType = $_.PrincipalType
+          AssignmentPrincipalDisplayName = $_.PrincipalDisplayName
+          AssignmentPrincipalId     = $_.PrincipalId
+          ResourceDisplayName = $_.ResourceDisplayName
+          ResourceId      = $_.ResourceId
           SnapshotDate     = $SnapshotDate
         } 
       } 
@@ -312,7 +335,7 @@ In this section, you import the newly created JSON files for the Microsoft Entra
 
    1. Repeat the preceding steps for each of the JSON files that you generated in the previous section.
 
-At the end of those steps, you have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMembership`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
+At the end of those steps, you have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMemberships`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
 
 ## Extract Microsoft Entra ID Governance data by using PowerShell
 
@@ -516,7 +539,7 @@ let directAssignments = roleAssignments
 // Process group-based assignments 
 
 let groupAssignments = roleAssignments 
-    | join kind=inner EntraGroupMembership on $left.PrincipalId == $right.GroupId // Join with group membership 
+    | join kind=inner EntraGroupMemberships on $left.PrincipalId == $right.GroupId // Join with group membership 
     | mvexpand Members // Expand group members 
     | extend MembersStr = tostring(Members) // Convert the member ID to a string 
     | distinct MembersStr, CreatedDateTime, AppRoleIdStr, SnapshotDate // Get distinct values 
@@ -868,91 +891,14 @@ az login
 LightIngest.exe "https://ingest-CLUSTERHOSTNAME;Fed=True" -database:"DATABASE" -table:EntraAccessPackages -sourcepath:"." -pattern:"EntraAccessPackages.json" -format:multijson -azcli:true
 ```
 
-## Query data in Azure Monitor
+## Reporting on data from more sources
 
-If you're sending the audit, sign-in, or other Microsoft Entra logs to Azure Monitor, you can incorporate those logs from that Azure Monitor Log Analytics workspace in your queries. For more information on the relationship between Azure Monitor and Azure Data Explorer, see [Query data in Azure Monitor using Azure Data Explorer](/azure/data-explorer/query-monitor-data).
+You can also bring in data to Azure Data Explorer from sources beyond Microsoft Entra. Scenario for this capability include:
 
-1. Sign in to the Microsoft Entra admin center.
+- An admin wants to view events in the audit log with additional details about users, access packages or other objects which aren't part of the audit record itself.
+- An admin wants to view all users added to an application from Microsoft Entra ID and their access rights in the application's own repository, such as a SQL database.
 
-1. Select [Diagnostic settings](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DiagnosticSettingsMenuBlade/~/General).
-
-1. Select the Log Analytics workspace where you're sending your logs.
-
-1. On the Log Analytics workspace overview, record the subscription ID, the name of the resource, and the name of the workspace.
-
-1. Sign in to the Azure portal.
-
-1. Go to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
-
-1. Ensure that your Azure Data Explorer cluster is listed.
-
-1. Select **+ Add** > **Connection**.
-
-1. In the **Add Connection** window, enter the URL in the Log Analytics workspace. The URL is formed from the cloud-specific host name, subscription ID, resource group name, and workspace name of the Azure Monitor Log Analytics workspace, as described in [Add a Log Analytics workspace](/azure/data-explorer/query-monitor-data#add-a-log-analytics-workspaceapplication-insights-resource-to-azure-data-explorer-client-tools).
-
-1. After the connection is established, your Log Analytics workspace appears on the left pane with your native Azure Data Explorer cluster.
-
-   Select **Query**, and then select your Azure Data Explorer cluster.
-
-1. On the query pane, refer to the Azure Monitor tables that contain the Microsoft Entra logs in your Azure Data Explorer queries. For example:
-
-    ```kusto
-    let CL1 = 'https://ade.loganalytics.io/subscriptions/*subscriptionid*/resourcegroups/*resourcegroupname*/providers/microsoft.operationalinsights/workspaces/*workspacename*';
-    cluster(CL1).database('*workspacename*').AuditLogs | where Category == "EntitlementManagement"  and OperationName == "Fulfill access package assignment request"
-    | mv-expand TargetResources | where TargetResources.type == 'AccessPackage' | project ActivityDateTime,APID = toguid(TargetResources.id)
-    | join EntraAccessPackage on $left.APID == $right.Id
-    | limit 100
-    ```
-
-## Bring in data from other sources
-
-You can [create additional tables](/azure/data-explorer/create-table-wizard) in Azure Data Explorer to ingest data from other sources. If the data is in a JSON file (similar to the preceding examples) or a CSV file, you can create the table at the time that you first [get data from the file](/azure/data-explorer/get-data-file). After the table is created, you can also [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest) from a JSON or CSV file.
-
-For more information on data ingestion, see [Azure Data Explorer data ingestion overview](/azure/data-explorer/ingest-data-overview).
-
-### Example: Combine app assignments from Microsoft Entra and a second source to create a report of all users who had access to an application between two dates
-
-This report illustrates how you can combine data from two separate systems to create custom reports in Azure Data Explorer. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting.
-
-The following example assumes that a table named `salesforceAssignments` was populated with data that came from another application. The table has the columns `UserName`, `Name`, `EmployeeId`, `Department`, `JobTitle`, `AppName`, `Role`, and `CreatedDateTime`.
-
-```kusto
-// Define the date range and service principal ID for the query 
-
-let startDate = datetime("2023-06-01"); 
-let endDate = datetime("2024-03-13"); 
-let servicePrincipalId = "<your service principal-id>"; 
-
-// Pre-process AppRoleAssignments with specific filters and projections 
-let processedAppRoleAssignments = AppRoleAssignments 
-    | where ResourceId == servicePrincipalId and todatetime(CreatedDateTime) between (startDate .. endDate) 
-    | extend AppRoleId = tostring(AppRoleId) 
-    | project PrincipalId, AppRoleId, CreatedDateTime, ResourceDisplayName; // Exclude DeletedDateTime and keep ResourceDisplayName 
-
-// Pre-process AppRoles to get RoleDisplayName for each role 
-let processedAppRoles = AppRoles 
-    | mvexpand AppRoles 
-    | project AppRoleId = tostring(AppRoles.Id), RoleDisplayName = tostring(AppRoles.DisplayName); 
-
-// Main query: Process EntraUsers by joining with processed role assignments and roles 
-EntraUsers 
-    | join kind=inner processedAppRoleAssignments on $left.ObjectID == $right.PrincipalId // Join with role assignments 
-    | join kind=inner processedAppRoles on $left.AppRoleId == $right.AppRoleId // Join with roles to get display names 
-
-    // Summarize to get the latest record for each unique combination of user and role attributes 
-    | summarize arg_max(AccountEnabled, *) by UserPrincipalName, DisplayName, tostring(EmployeeId), Department, JobTitle, ResourceDisplayName, RoleDisplayName, CreatedDateTime 
-
-    // Final projection of relevant fields, including source indicator and report date 
-    | project UserPrincipalName, DisplayName, EmployeeId=tostring(EmployeeId), Department, JobTitle, AccountEnabled=tostring(AccountEnabled), ResourceDisplayName, RoleDisplayName, CreatedDateTime, Source="EntraUsers", ReportDate = now() 
-
-// Union with processed salesforceAssignments to create a combined report 
-| union ( 
-    salesforceAssignments 
-
-    // Project fields from salesforceAssignments to align with the EntraUsers data structure 
-    | project UserPrincipalName = UserName, DisplayName = Name, EmployeeId = tostring(EmployeeId), Department, JobTitle, AccountEnabled = "N/A", ResourceDisplayName = AppName, RoleDisplayName = Role, CreatedDateTime, Source = "salesforceAssignments", ReportDate = now() 
-) 
-```
+For more information, see [Create customized reports in Azure Data Explorer using data from other sources](custom-entitlement-report-with-other-sources.md).
 
 ## Related content
 

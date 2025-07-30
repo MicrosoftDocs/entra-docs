@@ -4,13 +4,11 @@ description: Learn more about the Microsoft Entra consent experiences to see how
 author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
-ms.custom: 
 ms.date: 02/27/2025
-ms.reviewer: jesakowi, jawoods
+ms.reviewer: jawoods
 ms.service: identity-platform
-
 ms.topic: concept-article
-
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to understand the consent experience in Microsoft Entra ID, so that I can intelligently manage applications for my organization and develop applications with a more seamless consent experience.
 ---
 
@@ -24,6 +22,9 @@ The actual user experience of granting consent differs depending on policies set
 
 - **User consent flow** is when an application developer directs users to the authorization endpoint with the intent to record consent for only the current user.
 - **Admin consent flow** is when an application developer directs users to the admin consent endpoint with the intent to record consent for the entire tenant. To ensure the admin consent flow works properly, application developers must list all permissions in the `RequiredResourceAccess` property in the application manifest. For more info, see [Application manifest](./reference-app-manifest.md).
+
+> [!Note]
+> For applications in external tenants customers can't consent to permissions themselves. An administrator will need to grant consent for the application to access resources on their behalf. For more information, see [Grant admin consent](quickstart-register-app.md#grant-admin-consent-external-tenants-only).
 
 ## Building blocks of the consent prompt
 

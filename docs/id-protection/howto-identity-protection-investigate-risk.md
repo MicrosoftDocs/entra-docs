@@ -1,16 +1,14 @@
 ---
 title: Investigate risk Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
-
 ms.service: entra-id-protection
-
 ms.topic: how-to
 ms.date: 08/09/2024
-
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: cokoopma
+ms.custom: sfi-image-nochange
 ---
 # How To: Investigate risk
 
@@ -18,7 +16,7 @@ Microsoft Entra ID Protection provides organizations with reporting they can use
 
 ## Navigating the reports
 
-The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Identity Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
+The risk reports are found in the [Microsoft Entra admin center](https://entra.microsoft.com) under **ID Protection**. You can navigate directly to the reports or view a summary of important insights in the dashboard view and navigate to the corresponding reports from there.
 
 :::image type="content" source="media/howto-identity-protection-investigate-risk/view-high-risk-users-from-id-protection-dashboard.png" alt-text="Screenshot showing the number of high risk users widget from the ID Protection dashboard.":::
 
@@ -30,7 +28,7 @@ When administrators select one or multiple entries, options to confirm or dismis
 
 ### Risky users report
 
-The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. [Learn more about what the levels signify](concept-identity-protection-risks.md#risk-levels)
+The risky users report includes all users whose accounts are currently or were considered at risk of compromise. Risky users should be investigated and remediated to prevent unauthorized access to resources. We recommend starting with high risk users due to the high confidence of compromise. [Learn more about what the levels signify](concept-risk-detection-types.md#risk-levels)
 
 #### Why is a user at risk?
 

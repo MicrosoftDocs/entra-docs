@@ -1,8 +1,8 @@
 ---
-title: "Tutorial: Sign in user in Angular Single-page Application"
-description: Sign in user in an Angular Single-page Application in a Microsoft Entra tenant to manage authentication and secure user access.
+title: "Tutorial: Sign in user in Angular single-page app (SPA)"
+description: Sign in user in an Angular single-page app (SPA) in a Microsoft Entra tenant to manage authentication and secure user access.
 author: garrodonnell
-manager: celested
+manager: dougeby
 ms.author: godonnell
 ms.date: 02/20/2025
 ms.service: identity-platform
@@ -16,7 +16,7 @@ ms.topic: tutorial
 
 This tutorial is part 2 of a series that demonstrates building an Angular single-page application (SPA) and adding authentication using the Microsoft identity platform.  In [Part 1 of this series](tutorial-single-page-apps-angular-prepare-app.md), you created an Angular SPA and added initial configurations. 
 
-In this tutorial:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

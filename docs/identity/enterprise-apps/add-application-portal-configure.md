@@ -3,12 +3,12 @@ title: Configure enterprise application properties
 description: Learn how to configure the properties of an enterprise to how users access and interact with the application.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 04/08/2025
+ms.date: 06/10/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-legacy-powershell
@@ -40,7 +40,7 @@ Application properties control how the application is represented and how the ap
 To configure the application properties:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Search for and select the application that you want to use.
 1. In the **Manage** section, select **Properties** to open the **Properties** pane for editing.
 1. On the **Properties** pane, you might want to configure the following properties for your application.
@@ -127,8 +127,10 @@ Content-type: application/json
 ```
 :::zone-end
 
+Enterprise applications (service principals) inherit specific properties from their associated app registrations. These properties are synchronized from the app registration, but the synchronization isn't immediate or continuous. Sometimes, updating an enterprise application might prompt the directory to refresh properties from the app registration, causing updates that weren't part of the original request.
+
 > [!NOTE]
-> Managed identities are distinct from Microsoft Entra App Registrations. Managed identities only have a service principal object and do not possess an application object, which is typically used for granting app permissions. As a result, global admins cannot change the settings of a managed identity, as the security boundary is the resource itself.
+> Managed identities are distinct from Microsoft Entra App Registrations. Managed identities only have a service principal object and don't possess an application object, which is typically used for granting app permissions. As a result, global admins can't change the settings of a managed identity, as the security boundary is the resource itself.
 
 ## Use Microsoft Graph to configure advanced app properties
 

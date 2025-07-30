@@ -1,8 +1,8 @@
 ---
-title: "Tutorial: Prepare an Angular Single-page Application"
-description: Prepare an Angular Single-page Application in a Microsoft Entra tenant to manage authentication and secure user access.
+title: "Tutorial: Prepare an Angular single-page app (SPA) for authentication"
+description: Prepare an Angular single-page app (SPA) in a Microsoft Entra tenant to manage authentication and secure user access.
 author: garrodonnell
-manager: celested
+manager: dougeby
 ms.author: godonnell
 ms.date: 02/20/2025
 ms.service: identity-platform
@@ -10,13 +10,13 @@ ms.topic: tutorial
 #Customer intent: As an Angular developer, I want to know how to create a new Angular project in an IDE and add authentication.
 ---
 
-# Tutorial: Create an Angular application and prepare it for authentication
+# Tutorial: Create an Angular single-page app and prepare it for authentication
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 This tutorial is the first part of a series that demonstrates building an Angular single-page application (SPA), adding authentication and extracting user data using Microsoft identity platform.
 
-In this tutorial: 
+In this tutorial, you: 
 
 > [!div class="checklist"]
 > * Create a new Angular project
@@ -24,7 +24,6 @@ In this tutorial:
 > * Add authentication code to the application
 
 ## Prerequisites
-
 
 ### [Workforce tenant](#tab/workforce-tenant)
 

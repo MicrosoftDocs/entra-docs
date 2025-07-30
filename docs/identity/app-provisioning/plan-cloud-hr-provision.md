@@ -3,11 +3,11 @@ title: Plan cloud HR application to Microsoft Entra user provisioning
 description: This article describes the deployment process of integrating cloud HR systems, such as Workday and SuccessFactors, with Microsoft Entra ID. Integrating Microsoft Entra ID with your cloud HR system results in a complete identity lifecycle management system.
 
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 07/24/2025
 ms.author: jfields
 ms.reviewer: arvinh
 ---
@@ -148,7 +148,7 @@ Run the initial configuration in a [pilot environment](~/architecture/deployment
 
 To ensure the right HR records are mapped to users in Microsoft Entra ID (Entra ID)/ on-premises Active Directory (AD), work with your HR and IT teams to ensure data consistency and plan for any data cleansing tasks. Here is a list of best practices to get started.  
 
-1. **Matching identifier presence and uniqueness:** The provisioning service uses a matching attribute to uniquely identify and link user records in your HR system with corresponding user accounts in AD / Entra ID. The default matching attribute is based on Employee ID. Ensure that the value of employee ID is populated in Entra ID (for cloud-only users) and on-premises AD (for hybrid users) before initiating full sync and it uniquely identifies a user.  
+1. **Matching identifier presence and uniqueness:** The provisioning service uses a matching attribute to uniquely identify and link user records in your HR system with corresponding user accounts in AD / Entra ID. The default matching attribute is based on Employee ID. Ensure that the value of employee ID is populated in Entra ID (for cloud-only users) and on-premises AD (for hybrid users) before initiating full sync and it uniquely identifies a user. See [Index the employeeId attribute](./index-employeeid-attribute-entra-id-to-active-directory.md) in Active Directory before initiating full sync. 
 
 2. **Use scoping filters to skip HR records that are no longer relevant:** HR systems have several years of employment data probably going all the way back to 1970s. On the other hand, your IT team may only be interested in the list of currently active employees and termination records that come through after go-live. To filter out HR records that are no longer relevant from your IT team perspective, work with your HR team to add flags on the HR record that can be used in the Microsoft Entra provisioning scoping filters.  
 
@@ -200,7 +200,7 @@ We recommend the following production configuration:
 
 |Requirement|Recommendation|
 |:-|:-|
-|Number of Microsoft Entra Connect provisioning agents to deploy.|Two (for high availability and failover).
+|Number of Microsoft Entra Connect provisioning agents to deploy.|Two (for high availability and failover).|
 |Number of provisioning connector apps to configure.|One app per child domain.|
 |Server host for Microsoft Entra Connect provisioning agent.|Windows Server 2016 with line of sight to geolocated Active Directory domain controllers. </br>Can coexist with Microsoft Entra Connect service.|
 
@@ -468,8 +468,8 @@ After you configure the cloud HR app to Microsoft Entra user provisioning, run t
 
 |Scenarios|Expected results|
 |:-|:-|
-|New employee is hired in the cloud HR app.| - The user account is provisioned in Active Directory.</br>- The user can log into Active Directory-domain apps and perform the desired actions.</br>- If Microsoft Entra Connect Sync is configured, the user account also gets created in Microsoft Entra ID.
-|User is terminated in the cloud HR app.|- The user account is disabled in Active Directory.</br>- The user can't log into any enterprise apps protected by Active Directory.
+|New employee is hired in the cloud HR app.| - The user account is provisioned in Active Directory.</br>- The user can log into Active Directory-domain apps and perform the desired actions.</br>- If Microsoft Entra Connect Sync is configured, the user account also gets created in Microsoft Entra ID.|
+|User is terminated in the cloud HR app.|- The user account is disabled in Active Directory.</br>- The user can't log into any enterprise apps protected by Active Directory.|
 |User supervisory organization is updated in the cloud HR app.|Based on the attribute mapping, the user account moves from one OU to another in Active Directory.|
 |HR updates the user's manager in the cloud HR app.|The manager field in Active Directory is updated to reflect the new manager's name.|
 |HR rehires an employee into a new role.|Behavior depends on how the cloud HR app is configured to generate employee IDs. If the old employee ID is used for a rehired employee, the connector enables the existing Active Directory account for the user. If the rehired employee gets a new employee ID, the connector creates a new Active Directory account for the user.|
@@ -543,7 +543,7 @@ You can extend your HR-driven provisioning process to further automate business 
 
 To troubleshoot any issues that might turn up during provisioning, see the following articles:
 
-- [Problem configuring user provisioning to a Microsoft Entra Gallery application](application-provisioning-config-problem.md)
+- [Problem configuring user provisioning to a Microsoft Entra Gallery application](troubleshoot.md)
 - [Sync an attribute from your on-premises Active Directory to Microsoft Entra ID for provisioning to an application](user-provisioning-sync-attributes-for-mapping.md)
 - [Problem saving administrator credentials while configuring user provisioning to a Microsoft Entra Gallery application](./user-provisioning.md)
 - [No users are being provisioned to a Microsoft Entra Gallery application](application-provisioning-config-problem-no-users-provisioned.md)

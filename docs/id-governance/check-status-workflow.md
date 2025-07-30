@@ -3,12 +3,12 @@ title: Check status of a Lifecycle workflow
 description: This article guides a user on checking the status of a Lifecycle workflow
 author: OWinfreyATL
 ms.author: owinfrey
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
 ms.date: 01/02/2025
-ms.custom: template-how-to
+ms.custom: template-how-to, sfi-image-nochange
 ---
 
 
@@ -24,7 +24,7 @@ You're able to retrieve run information of a workflow using Lifecycle Workflows.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. Select the workflow you want to run history of. 
 

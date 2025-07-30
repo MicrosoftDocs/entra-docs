@@ -5,7 +5,7 @@ author: barclayn
 manager: femila
 ms.service: entra-verified-id
 ms.topic: whats-new
-ms.date: 12/16/2024
+ms.date: 04/30/2025
 ms.custom: references_regions
 ms.author: barclayn
 
@@ -35,7 +35,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 ## June 2024
 
-- [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Microsoft Entra Verified ID free to use during the public preview period ending on Aug 12.
+- [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Microsoft Entra Verified ID free to use during the public preview period ending on August 12.
 
 ## April 2024
 
@@ -58,7 +58,7 @@ This article lists the latest features, improvements, and changes in the Microso
 ## December 2023
 
 - [Request Service API](issuance-request-api.md#issuance-request-payload) now supports the issuing application to set the expiry date of the credential during and issuance request when the attestation is using the [idTokenHint flow](how-to-use-quickstart.md).
-- The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`. See the FAQ for [help on how move to did:web from did:ion](verifiable-credentials-faq.md#how-do-i-move-to-didweb-from-didion).
+- The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`.
 
 ## November 2023
 
@@ -81,7 +81,7 @@ POST https://verifiedid.did.msidentity.com/v1.0/:tenant/verifiablecredentials/pr
 POST https://verifiedid.did.msidentity.com/v1.0/:tenant/verifiablecredentials/issuance
 ```
 
-The first API was for creating an issuance or presentation request. The second API was for retrieving a request and the last two APIs was for a wallet completing issuance or presentation. The API endpoints to use since preview are:
+The first API was for creating an issuance or presentation request. The second API was for retrieving a request and the last two APIs was for a wallet completing issuance or presentation. The API endpoints are:
 
 ```http
 POST https://verifiedid.did.msidentity.com/v1.0/verifiablecredentials/createPresentationRequest
@@ -130,7 +130,7 @@ Instructions for setting up place of work verification on LinkedIn available [he
 
 ## November 2022
 
-- Microsoft Entra Verified ID now reports events in the [audit log](~/identity/monitoring-health/concept-audit-logs.md). Only management changes made via the Admin API are currently logged. Issuance or presentations of verifiable credentials aren't reported in the audit log. The log entries have a service name of `Verified ID` and the activity will be `Create authority`, `Update contract`, etc.  
+- Microsoft Entra Verified ID now reports events in the [audit log](~/identity/monitoring-health/concept-audit-logs.md). Only management changes made via the Admin API are currently logged. Issuance or presentations of verifiable credentials aren't reported in the audit log. The log entries have a service name of `Verified ID` and the activity is `Create authority`, `Update contract`, etc.  
 
 ## September 2022
 
@@ -168,8 +168,6 @@ Microsoft Entra Verified ID is now generally available (GA) as the new member of
   - Create Managed Credentials using the [new quickstart experience](how-to-use-quickstart.md).
   - Administrators can create a Verified Employee Managed Credential using the [new quick start](how-to-use-quickstart-verifiedemployee.md). The Verified Employee is a verifiable credential of type verifiedEmployee that is based on a predefined set of claims from your tenant's directory.
 
->[!IMPORTANT]
-> You need to migrate your Azure Storage based credentials to become Managed Credentials. We'll soon provide migration instructions.
 
 - We made the following updates to our docs:
   - (new) [Current supported open standards for Microsoft Entra Verified ID](verifiable-credentials-standards.md).
@@ -188,7 +186,7 @@ We're expanding our service to all Microsoft Entra ID customers! Verifiable cred
 Starting next month, we're rolling out exciting changes to the subscription requirements for the Verifiable Credentials service. Administrators must perform a small configuration change before **May 4, 2022** to avoid service disruptions.
 
 >[!IMPORTANT]
-> If changes are not applied before **May 4, 2022**, you will experience errors on issuance and presentation for your application or service using the Microsoft Entra Verified ID Service.
+> If changes aren't applied before **May 4, 2022**, you will experience errors on issuance and presentation for your application or service using the Microsoft Entra Verified ID Service.
 
 ## March 2022
 
@@ -203,35 +201,31 @@ We're rolling out some breaking changes to our service. These updates require Mi
 - Microsoft Entra Verified ID customers can take advantage of enhancements to credential revocation. These changes add a higher degree of privacy through the implementation of the [W3C Status List 2021](https://w3c-ccg.github.io/vc-status-list-2021/) standard.
 - We made updates to Microsoft Authenticator that change the interaction between the Issuer of a verifiable credential and the user presenting the verifiable credential. This update forces all Verifiable Credentials to be reissued in Microsoft Authenticator for Android. [More information](whats-new.md?#microsoft-authenticator-did-generation-update)
 
->[!IMPORTANT]
-> All Azure AD Verifiable Credential customers receiving a banner notice in the Azure portal need to go through a service reconfiguration before March 31st 2022. On March 31st 2022 tenants that have not been reconfigured will lose access to any previous configuration. Administrators will have to set up a new instance of the Azure AD Verifiable Credential service. Learn more about how to [reconfigure your tenant](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service).
 
 ### Microsoft Entra Verified ID available in Europe
 
 Since the beginning of the Microsoft Entra Verified ID service public preview, the service has only been available in our Azure North America region. Now, the service is also available in our Azure Europe region.
 
-- New customers with Azure AD European tenants now have their Verifiable Credentials data located and processed in our Azure Europe region.
-- Customers with Azure AD tenants setup in Europe who start using the Microsoft Entra Verified ID service after February 15, 2022, have their data automatically processed in Europe. There's no need to take any further actions.
-- Customers with Azure AD tenants setup in Europe that started using the Microsoft Entra Verified ID service before February 15, 2022, are required to reconfigure the service on their tenants before March 31, 2022.
+- New customers with Microsoft Entra European tenants now have their Verifiable Credentials data located and processed in our Azure Europe region.
+- Customers with Microsoft Entra ID tenants setup in Europe who start using the Microsoft Entra Verified ID service after February 15, 2022, have their data automatically processed in Europe. There's no need to take any further actions.
+- Customers with Microsoft Entra ID tenants setup in Europe that started using the Microsoft Entra Verified ID service before February 15, 2022, are required to reconfigure the service on their tenants before March 31, 2022.
 
 Take the following steps to configure the Verifiable Credentials service in Europe:
 
-1. [Check the location](verifiable-credentials-faq.md#how-can-i-check-my-microsoft-entra-tenants-region) of your Azure Active Directory to make sure is in Europe.
+1. [Check the location](verifiable-credentials-faq.md#how-can-i-check-my-microsoft-entra-tenants-region) of your Microsoft Entra ID to make sure is in Europe.
 1. [Reconfigure the Verifiable Credentials service](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service) in your tenant.
 
->[!IMPORTANT]
-> On March 31st, 2022 European tenants that have not been [reconfigured](verifiable-credentials-faq.md#how-do-i-reset-the-microsoft-entra-verified-id-service) in Europe will lose access to any previous configuration and will require to configure a new instance of the Azure AD Verifiable Credential service.
 
 #### Are there any changes to the way that we use the Request API as a result of this move?
 
-Applications that use the Microsoft Entra Verified ID service must use the Request API endpoint that corresponds to their Azure AD tenant's region.  
+Applications that use the Microsoft Entra Verified ID service must use the Request API endpoint that corresponds to their Microsoft Entra tenant's region.  
 
-| Tenant region | Request API endpoint POST |
+| **Tenant region** | **Request API endpoint POST** |
 |------------|-------------------|
 | Europe | `https://beta.eu.did.msidentity.com/v1.0/{tenantID}/verifiablecredentials/request` |
 | Non-EU | `https://beta.did.msidentity.com/v1.0/{tenantID}/verifiablecredentials/request`  |
 
-To confirm which endpoint you should use, we recommend checking your Azure AD tenant's region as described previously. If the Azure AD tenant is in the EU, you should use the Europe endpoint.  
+To confirm which endpoint you should use, we recommend checking your Microsoft Entra tenant's region as described previously. If the Microsoft Entra tenant is in the EU, you should use the Europe endpoint.  
 
 ### Microsoft Authenticator DID Generation Update
 
@@ -240,7 +234,7 @@ We're making protocol updates in Microsoft Authenticator to support Single Long 
 ## December 2021
 
 - We added [Postman collections](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/Postman) to our samples as a quick start to start using the Request Service REST API.
-- New sample added that demonstrates the integration of [Microsoft Entra Verified ID with Azure AD B2C](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/B2C).
+- New sample added that demonstrates the integration of [Microsoft Entra Verified ID with Microsoft Entra B2C](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/B2C).
 - Sample for setting up the Microsoft Entra Verified ID services using [PowerShell and an ARM template](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/ARM).
 - Sample Verifiable Credential configuration files to show sample cards for [ID Token](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/CredentialFiles/IDToken), [IDTokenHit](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/CredentialFiles/IDTokenHint) and [Self-attested](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/main/CredentialFiles/IDTokenHint) claims.
 
@@ -253,8 +247,6 @@ We're making protocol updates in Microsoft Authenticator to support Single Long 
 
 You can now use [Request Service REST API](get-started-request-api.md) to build applications that can issue and verify credentials from any programming language. This new REST API provides an improved abstraction layer and integration to the Microsoft Entra Verified ID Service.
 
-It's a good idea to start using the API soon, because the NodeJS SDK will be deprecated in the following months. Documentation and samples now use the Request Service REST API. For more information, see [Request Service REST API (preview)](get-started-request-api.md).
-
 ## April 2021
 
-You can now issue [verifiable credentials](decentralized-identifier-overview.md) in Azure AD. This service is useful when you need to present proof of employment, education, or any other claim. The holder of such a credential can decide when, and with whom, to share their credentials. Each credential is signed by using cryptographic keys associated with the decentralized identity that the user owns and controls.
+You can now issue [verifiable credentials](decentralized-identifier-overview.md) in Microsoft Entra. This service is useful when you need to present proof of employment, education, or any other claim. The holder of such a credential can decide when, and with whom, to share their credentials. Each credential is signed by using cryptographic keys associated with the decentralized identity that the user owns and controls.

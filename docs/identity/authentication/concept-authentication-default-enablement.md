@@ -5,11 +5,11 @@ description: Learn about authentication features that can be enabled by default 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 04/29/2025
 
 ms.author: justinha
-author: ChristianCB83
-manager: femila
+author: justinha
+manager: dougeby
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---
@@ -44,7 +44,7 @@ In addition to configuring Authentication methods policy settings to be either *
 
 The option to let Microsoft Entra ID manage the setting is a convenient way for an organization to allow Microsoft to enable or disable a feature by default. Organizations can more easily improve their security posture by trusting Microsoft to manage when a feature should be enabled by default. By configuring a setting as **Microsoft managed** (named *default* in Graph APIs), IT admins can trust Microsoft to enable a security feature they haven't explicitly disabled. 
 
-For example, an admin can enable [location and application name](how-to-mfa-number-match.md) in push notifications to give users more context when they approve MFA requests with Microsoft Authenticator. The additional context can also be explicitly disabled, or set as **Microsoft managed**. Today, the **Microsoft managed** configuration for location and application name is **Disabled**, which effectively disables the option for any environment where an admin chooses to let Microsoft Entra ID manage the setting. 
+For example, an admin can enable [location and application name](how-to-mfa-additional-context.md) in push notifications to give users more context when they approve MFA requests with Microsoft Authenticator. The additional context can also be explicitly disabled, or set as **Microsoft managed**. Today, the **Microsoft managed** configuration for location and application name is **Disabled**, which effectively disables the option for any environment where an admin chooses to let Microsoft Entra ID manage the setting. 
 
 As the security threat landscape changes over time, Microsoft can change the **Microsoft managed** configuration for location and application name to **Enabled**. For customers who want to rely upon Microsoft to improve their security posture, setting security features to **Microsoft managed** is an easy way stay ahead of security threats. They can trust Microsoft to determine the best way to configure security settings based on the current threat landscape.  
 

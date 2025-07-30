@@ -3,7 +3,7 @@ title: Sign up users in a React SPA by using native authentication
 description: Learn how to build a React single-page application that uses native authentication API to sign up users.
 
 author: kengaderdus
-manager: mwongerapk
+manager: dougeby
 ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
@@ -18,7 +18,7 @@ ms.date: 02/07/2025
 
 In this tutorial, you learn how to build a React single-page app that signs up users by using native authentication.
 
-In this tutorial, you learn how to:
+In this tutorial, you:
 
 >[!div class="checklist"]
 > - Create a React project.

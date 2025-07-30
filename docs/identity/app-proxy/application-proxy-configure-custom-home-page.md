@@ -5,12 +5,11 @@ author: HULKsmashGithub
 manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: jayrusso
 ms.reviewer: KaTabish
-
+ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 #customer intent: As an IT admin, I want to set a custom home page for published apps using Microsoft Entra application proxy so that users are directed to the correct page when accessing the app.
 ---
 # Set a custom home page for published apps by using Microsoft Entra application proxy
@@ -46,7 +45,7 @@ You can set the home page URL either through the Microsoft Entra admin center or
 To change the home page URL of your app through the Microsoft Entra admin center, follow these steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
-1. Browse to **Identity** > **Applications** > **App registrations**. The list of registered apps appears.
+1. Browse to **Entra ID** > **App registrations**. The list of registered apps appears.
 1. Choose your app from the list. A page showing the details of the registered app appears.
 1. Under **Manage**, select **Branding**.
 1. Update the **Home page URL**  with your new path.

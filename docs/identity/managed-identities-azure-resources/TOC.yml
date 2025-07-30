@@ -4,6 +4,8 @@
   items:
   - name: About managed identities for Azure resources
     href: overview.md
+  - name: Secretless authentication to Azure resources
+    href: secretless-authentication.md
 - name: Quickstart guide
   items:
   - name: Use a VM managed identity to access Azure Resource Manager
@@ -34,6 +36,8 @@
       href: how-managed-identities-work-vm.md
     - name: Best practice recommendations
       href: managed-identity-best-practice-recommendations.md
+    - name: Isolation scope for user-assigned managed identities
+      href: managed-identities-isolation-scope.md
 - name: How-to guides
   items:
   - name: Configure managed identities
@@ -44,6 +48,8 @@
       href: how-to-configure-managed-identities-scale-sets.md
     - name: Assign managed identities using Azure Policy (preview)
       href: how-to-assign-managed-identity-via-azure-policy.md
+    - name: Configure isolation scope
+      href: configure-managed-identities-isolation-scope.md
     - name: Configure an application to trust a managed identity (preview)
       href: /entra/workload-id/workload-identity-federation-config-app-trust-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
   - name: Maintain managed identities
@@ -68,6 +74,8 @@
       href: how-to-view-managed-identity-activity.md
     - name: Relocate a managed identity to another region
       href: /azure/operational-excellence/relocation-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
+  - name: Use Azure Resources Extension for VS Code
+    href: azure-resources-extension-managed-identities.md
 - name: Reference
   items:
   - name: Client libraries

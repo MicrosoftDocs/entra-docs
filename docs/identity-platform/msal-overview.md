@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref
 ms.date: 11/13/2024
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -22,7 +22,7 @@ MSAL provides multiple ways to get security tokens, with a consistent API for ma
 * There's no need to directly use the OAuth libraries or code against the protocol in your application.
 * Can acquire tokens on behalf of a user or application (when applicable to the platform).
 * Maintains a token cache for you and handles token refreshes when they're close to expiring.
-* Helps you specify which audience you want your application to sign in. The sign in audience can include personal Microsoft accounts, social identities with Azure AD B2C organizations, work, school, or users in sovereign and national clouds.
+* Helps you specify which audience you want your application to sign in. The sign in audience can include personal Microsoft accounts, social identities with Microsoft Entra External ID, work, school, or users in sovereign and national clouds.
 * Helps you set up your application from configuration files.
 * Helps you troubleshoot your app by exposing actionable exceptions, logging, and telemetry.
 

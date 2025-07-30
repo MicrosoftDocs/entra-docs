@@ -1,19 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: User sign-in'
 description: Microsoft Entra Connect user sign-in for custom settings.
-
-author: billmath
-manager: femila
-
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 547b118e-7282-4c7f-be87-c035561001df
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra Connect user sign-in options
 Microsoft Entra Connect allows your users to sign in to both cloud and on-premises resources by using the same passwords. This article describes key concepts for each identity model to help you choose the identity that you want to use for signing in to Microsoft Entra ID.

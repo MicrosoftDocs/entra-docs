@@ -2,14 +2,14 @@
 title: 'Tutorial: Preparing user accounts for Lifecycle workflows'
 description: Tutorial for preparing user accounts for Lifecycle workflows.
 author: owinfreyATL
-manager: femila
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
 ms.date: 08/13/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial, no-azure-ad-ps-ref
+ms.custom: template-tutorial, no-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
 # Preparing user accounts for Lifecycle workflows tutorials
 
@@ -178,7 +178,7 @@ Some of the attributes required for the prehire onboarding tutorial are exposed 
 For the tutorial, the **mail** attribute only needs to be set on the manager account and the **manager** attribute set on the employee account.  Use the following steps:
 
  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
- 1. Browse to > **Identity** > **Users** > **All Users**.
+ 1. Browse to > **Entra ID** > **Users**.
  1. Select **Melva Prince**.
  1. At the top, select **Edit**.
  1. Under manager, select **Change** and Select **Britta Simon**.
@@ -198,7 +198,7 @@ The employeeHireDate attribute is new to Microsoft Entra ID. It isn't exposed th
 In order to do this, we must get the object ID for our user Melva Prince.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to > **Identity** > **Users** > **All Users**.
+1. Browse to > **Entra ID** > **Users**.
 1. Select **Melva Prince**.
 1. Select the copy sign next to the **Object ID**.
 1. Now navigate to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
@@ -248,7 +248,7 @@ In this scenario, we use this feature of Microsoft Entra ID to generate a tempor
 To use this feature, it must be enabled on our Microsoft Entra tenant. To enable this feature, use the following steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Authentication Policy Administrator](../identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
-1. Browse to **Protection** > **Authentication methods** > **Temporary Access Pass**
+1. Browse to **Entra ID** > **Authentication methods** > **Temporary Access Pass**
 1. Select **Yes** to enable the policy and add Britta Simon and select which users have the policy applied, and any **General** settings.
 
 ## Consideration for leaver scenario

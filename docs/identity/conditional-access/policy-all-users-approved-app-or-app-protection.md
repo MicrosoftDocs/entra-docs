@@ -1,9 +1,9 @@
 ---
 title: Conditional Access - Require approved app or app protection policy
 description: Create a custom Conditional Access policy require approved app or app protection policy
-author: MicrosoftGuyJFlo
 ms.author: joflore
-manager: femila
+author: MicrosoftGuyJFlo
+manager: dougeby
 ms.reviewer: lhuangnorth
 ms.date: 04/01/2025
 ms.service: entra-id
@@ -33,7 +33,7 @@ The following steps help create a Conditional Access policy requiring an approve
 Organizations can choose to deploy this policy using the following steps or using the [Conditional Access templates](concept-conditional-access-policy-common.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
@@ -50,6 +50,9 @@ Organizations can choose to deploy this policy using the following steps or usin
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
 
+> [!NOTE]
+> When a policy is created in report-only mode for "Require app protection policy" control, your sign-in log may show the result as "Report-only: Failure" in "Conditional Access" tab when all configured policy conditions were satisfied. This is because the control was not satisified in report-only mode. Once you enabled the policy, the control is applied to the app and the sign-in will not be blocked.
+
 [!INCLUDE [conditional-access-report-only-mode](../../includes/conditional-access-report-only-mode.md)]
 
 > [!TIP]
@@ -60,7 +63,7 @@ Organizations can choose to deploy this policy using the following steps or usin
 This policy blocks all Exchange ActiveSync clients using basic authentication from connecting to Exchange Online.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.

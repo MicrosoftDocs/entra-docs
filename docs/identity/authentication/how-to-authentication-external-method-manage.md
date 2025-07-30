@@ -1,20 +1,16 @@
 ---
 title: How to manage an external authentication method (EAM) in Microsoft Entra ID (Preview)
 description: Learn how to manage an external authentication method (EAM) for Microsoft Entra multifactor authentication
-
-
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 03/04/2025
-
 ms.author: justinha
 author: gregkmsft
-manager: femila
+manager: dougeby
 ms.reviewer: gkinasewitz, gustavosa
-
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an authentication administrator, I want learn how to manage an external authentication method (EAM) for Microsoft Entra ID.
-
 ---
 # Manage an external authentication method in Microsoft Entra ID (Preview)
 
@@ -46,7 +42,7 @@ EAMs are managed with the Microsoft Entra ID Authentication methods policy, just
 Before you create an EAM in the admin center, make sure you have the [metadata to configure an EAM](#required-metadata-to-configure-an-eam). 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Add external method (Preview)**.
+1. Browse to **Entra ID** > **Authentication methods** > **Add external method (Preview)**.
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/add-external-method.png" alt-text="Screenshot of how to add an EAM in the Microsoft Entra admin center.":::
 

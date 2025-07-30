@@ -4,7 +4,7 @@ description: In this tutorial, you build an Electron desktop app that can sign i
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 02/17/2021
 ms.service: identity-platform
 
@@ -18,7 +18,7 @@ In this tutorial, you build an Electron desktop application that signs in users 
 
 [!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
-In this tutorial, you'll
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

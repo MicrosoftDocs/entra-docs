@@ -2,7 +2,7 @@
 title: Filter and query user activity in Microsoft Entra Permissions Management
 description: How to filter and query user activity in Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: femila
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to

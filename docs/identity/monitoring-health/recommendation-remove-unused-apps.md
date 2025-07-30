@@ -1,23 +1,22 @@
 ---
 title: Recommendation to remove unused apps
 description: Learn how the Microsoft Entra recommendation to remove unused apps works and why you should follow the guidance.
-
 author: shlipsey3
-manager: femila
+manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/22/2024
+ms.date: 04/09/2025
 ms.author: sarahlipsey
 ms.reviewer: saumadan
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT Admin I need to know what applications haven't been used so I can remove them to improve security.
 ---
 # Microsoft Entra recommendation: Remove unused applications (preview)
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 
-This article covers the recommendation to investigate unused applications. This recommendation is called `StaleApps` in the recommendations API in Microsoft Graph. 
+This article covers the recommendation to investigate unused applications. This recommendation is called `staleApps` in the recommendations API in Microsoft Graph. 
 
 > [!NOTE]
 > With [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot), you can use natural language prompts to get insights on unused applications. Learn more about how to [Assess application risks using Microsoft Security Copilot](/entra/fundamentals/copilot-security-entra-investigate-risky-apps#explore-unused-microsoft-entra-applications).
@@ -56,16 +55,16 @@ This recommendation is available in the Microsoft Entra admin center and using t
 
 ## [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-Applications that the recommendation identified appear in the list of **Impacted resources** at the bottom of the recommendation. 
+Applications identified by the recommendation appear in the list of **Impacted resources** at the bottom of the recommendation. 
 
 ### Review the applications
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#search-administrator).
-1. Browse to **Identity** > **Overview**.
+1. Browse to **Entra ID** > **Overview**.
 1. Select the **Recommendations** tab and select the **Remove unused applications** recommendation.
 1. From the **Impacted resources** table, select **More details** to view more details.
 1. Select the **Resource** link to go directly to the app registration for the app.
-    - Alternatively, you can browse to **Identity** > **Applications** > **App registrations** and locate the application that was surfaced as part of this recommendation.
+    - Alternatively, you can browse to **Entra ID** > **App registrations** and locate the application that was surfaced as part of this recommendation.
 
     :::image type="content" source="media/recommendation-remove-unused-apps/app-registrations-list.png" alt-text="Screenshot of the Microsoft Entra app registration page." lightbox="media/recommendation-remove-unused-apps/app-registrations-list-expanded.png":::
 
@@ -102,18 +101,18 @@ To retrieve all recommendations for your tenant:
 GET https://graph.microsoft.com/beta/directory/recommendations
 ```
 
-From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_Microsoft.Identity.IAM.Insights.StaleApps`.
+From the response, find the ID of the recommendation that matches the following pattern: `{tenantId}_staleApps`.
 
 To identify impacted resources:
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_Microsoft.Identity.IAM.Insights.StaleApps
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_staleApps
 ```
 
 To filter the resources based on their status (for example, *active* resources):
 
 ```http
-GET https://graph.microsoft.com/beta/directory/recommendations/536279f6-15cc-45f2-be2d-61e352b51eef_Microsoft.Identity.IAM.Insights.StaleApps/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active' 
+GET https://graph.microsoft.com/beta/directory/recommendations/{tenantId}_staleApps/impactedResources?$filter=status eq Microsoft.Graph.recommendationStatus'active' 
 ```
 
 Identify the `applicationObjectId` or `appId` of the unused app you want to delete. 
@@ -122,7 +121,7 @@ Identify the `applicationObjectId` or `appId` of the unused app you want to dele
 
 ```json
 {
-    "id": "0000000-000c-0000-000-00000000000f_Microsoft.Identity.IAM.Insights.StaleApps",
+    "id": "ccccdddd-2222-eeee-3333-ffff4444aaaa_staleApps",
     "recommendationType": "staleApps",
     "createdDateTime": "2022-06-16T01:18:55Z",
     "impactStartDateTime": "2022-06-16T01:18:55Z",

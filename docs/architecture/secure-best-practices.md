@@ -6,9 +6,9 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 7/5/2022
+ms.date: 05/21/2025
 ms.author: gasinh
-ms.reviewer: ajburnle
+ms.custom: sfi-ga-nochange
 ---
 
 # Best practices for all isolation architectures
@@ -209,6 +209,8 @@ Some approaches you can use for [using secure devices as part of your privileged
 * Regular review of the Microsoft Entra tenants in the billing plane needs to be implemented to detect and discover tenant creation outside the governed process. Refer to the *Inventory and Visibility* section of this document for further details.
 
 * Azure AD B2C tenant creation can be controlled using Azure Policy. The policy executes when an Azure subscription is associated to the B2C tenant (a pre-requisite for billing). Customers can limit the creation of Azure AD B2C tenants to specific management groups.
+
+[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
 
 * There are no technical controls to subordinate the creation of tenants to an organization. However, the activity is recorded in the Audit log. The onboarding to the billing plane is a compensating control at the gate. This needs to be complemented with monitoring and alerts instead.
 

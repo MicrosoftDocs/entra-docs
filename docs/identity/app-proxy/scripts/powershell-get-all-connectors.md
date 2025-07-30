@@ -2,12 +2,12 @@
 title: PowerShell sample - List all Microsoft Entra private network connector groups
 description: PowerShell example that lists all Microsoft Entra private network connector groups and connectors in your directory.
 author: kenwith
-manager: femila
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
-ms.date: 02/21/2025
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---

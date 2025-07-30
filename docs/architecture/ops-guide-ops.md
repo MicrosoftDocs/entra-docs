@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.subservice: architecture
 ms.date: 08/17/2022
 ms.author: martinco
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Microsoft Entra general operations guide reference

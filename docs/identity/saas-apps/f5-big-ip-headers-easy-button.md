@@ -1,21 +1,19 @@
 ---
-title: Microsoft Entra SSO integration with F5’s BIG-IP Easy Button for header-based SSO
+title: Configure F5’s BIG-IP Easy Button for header-based SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO.
-
 author: nguhiu
-manager: CelesteDG
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: gideonkiratu
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for header-based SSO so that I can control who has access to F5 BIG-IP Easy Button for header-based SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO
+# Configure F5’s BIG-IP Easy Button for header-based SSO for Single sign-on with Microsoft Entra ID
 
 In this article,  you learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
@@ -357,4 +355,4 @@ If you don’t see a BIG-IP error page, then the issue is probably more related 
 
 2. The **View Variables** link in this location may also help root cause SSO issues, particularly if the BIG-IP APM fails to obtain the right attributes from Microsoft Entra ID or another source.
 
-For more information, visit this F5 knowledge article [Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072). There’s also a great BIG-IP reference table to help diagnose LDAP-related issues in this F5 knowledge article on [LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/5.html).
+For more information, visit this F5 knowledge article [Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072). There’s also a great BIG-IP reference table to help diagnose LDAP-related issues in this F5 knowledge article on [LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/5.html).

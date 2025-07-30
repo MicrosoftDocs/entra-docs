@@ -1,17 +1,14 @@
 ---
 title: Overview of the Woodgrove Groceries demo
 description: Learn about the customer identity and access management solutions for your consumer and business customer apps that are provided by Microsoft Entra External ID.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 01/07/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.date: 04/14/2025
+ms.custom: it-pro, sfi-image-nochange
 ---
 # Overview of the Woodgrove Groceries demo
 

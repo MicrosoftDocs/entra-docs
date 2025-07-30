@@ -85,7 +85,14 @@ Please ensure below URLs are exempted from TLS interception/inspection so that P
 Apple's app-site-association domains are critical for SSO extension functioning. (*) You only need to allow sovereign cloud domains if you rely on those in your environment. (**) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner. 
 
 > [!NOTE] 
-> Platform SSO is not compatible with Tenant Restriction feature as Tenant Restriction needs the login URLs to be inspected. 
+> Platform SSO is not compatible with the Microsoft Entra ID Tenant Restrictions v2 feature when Tenant Restrictions is deployed using a corporate proxy. Alternate option is listed in [TRv2 Known limitation](/entra/external-id/tenant-restrictions-v2#known-limitation)
+
+#### URLs that need to be allowed for PSSO registration flows
+
+Please ensure that traffic to the URLs listed [here](./plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra) is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration flows that rely on TLS challenges to complete successfully.
+
+> [!IMPORTANT]
+> **Note: There has been a recent update to the TLS endpoint used in registration flows. Please verify that your environment’s allowlist reflects the latest URL requirements to avoid disruptions.**
 
 ### Temporary passwords issued during password reset can't be synced with Platform SSO
 
@@ -222,7 +229,7 @@ We'd love to hear your feedback. You should include the following information:
 
 If a user has insufficient permissions to complete Microsoft Entra ID join and registration, no error message is shown. For the device join and registration to complete successfully, the user initiating the registration flow must be allowlisted.
 
-1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Identity** > **Devices** > **Overview** > **Device Settings**.
+1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Entra ID** > **Devices** > **Overview** > **Device Settings**.
 1. Under **Microsoft Entra ID join and registration settings**, ensure that the **All** option is selected in the toggle menu for **Users may join devices to Microsoft Entra**.
 1. Select **Save** to apply the changes.
 
