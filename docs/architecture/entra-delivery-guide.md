@@ -69,6 +69,13 @@ Below are the estimated delivery times for each section of the stage of the work
 - Govern Internet Access: 1 hour
 **Total: 6 hours**
 
+## Expected outcome
+Upon completing this workshop, customers will:
+
+1. Gain a comprehensive understanding of the various scenarios supported by the Microsoft Entra Suite.
+2. Develop a clear overview of their organization's setup.
+3. Be well-equipped and ready to begin the planning process for deployment.
+
 ## Related content
 
 - [Learn about Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
