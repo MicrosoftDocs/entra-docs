@@ -153,16 +153,6 @@ The Source of Authority (SOA) at the object level allows administrators to conve
 
 ---
 
-### General Availability - Multi-Geo Support for Microsoft Entra Private Network Connector Groups
-
-**Type:** New feature  
-**Service category:** Private Access  
-**Product capability:** Platform  
-
-Multi-Geo Capability empowers enterprise customers to optimize traffic flow and improve performance across geographies. With Multi-Geo Support, customers can now assign Connector Groups based on their preferred geo locations, rather than being restricted to the tenant’s default region. Each connector group will now connect to the SSE backend in the selected geo, enabling lower latency, higher performance, and more efficient routing for private application access.
-
----
-
 ### General Availability - Restricted Management Administrative Units
 
 **Type:** New feature  
