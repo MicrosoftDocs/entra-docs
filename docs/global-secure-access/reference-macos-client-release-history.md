@@ -3,7 +3,7 @@ title: Global Secure Access Client for macOS Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for macOS.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 06/23/2025
+ms.date: 07/30/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -19,8 +19,24 @@ The current version of the Global Secure Access client is available to download 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
+1. Select the **macOS** tab.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+
+## Version 1.1.25070401
+Released for download on July 29, 2025.
+### Functional changes
+- First version in general availability.
+- Bug fix: better support for large forwarding profiles.
+- Supports log collection with a script.
+- Increases client's log file size to allow for more comprehensive logging.
+### Other changes
+- Bug fix: implements a workaround for DHCP failures seen in macOS 15.4 and above because of a change in macOS.
+- Bug fix: avoids repeated, unnecessary certificate signing requests.
+- Enhanced telemetry for better supportability and monitoring.
+- Miscellaneous bug fixes and improvements.
+### Known issues
+- There's a known compatibility issue with macOS 26 that causes the device to lose connectivity. A new client version compatible with macOS 26 is set to release in August 2025. You need to deploy that version before upgrading to macOS 26. 
 
 ## Version 1.1.25060400
 Released for download on June 24, 2025.
