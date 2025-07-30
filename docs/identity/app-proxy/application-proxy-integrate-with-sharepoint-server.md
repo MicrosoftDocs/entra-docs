@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 05/01/2025
+ms.date: 07/30/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ai-usage: ai-assisted
@@ -24,7 +24,7 @@ To perform the configuration, you need the following resources:
 - A Microsoft Office Web Apps Server farm to properly launch Office files from the on-premises SharePoint farm.
 - A [custom, verified domain](~/fundamentals/add-custom-domain.yml) in the Microsoft Entra tenant.
 - On-premises Active Directory deployments synchronized with Microsoft Entra Connect, through which users can [sign in to Azure](~/identity/hybrid/connect/plan-connect-user-signin.md).
-- a private network connector installed and running on a machine within the corporate domain.
+- A private network connector installed and running on a machine within the corporate domain.
 
 Configuring SharePoint with application proxy requires two URLs:
 - An external URL, visible to end-users and determined in Microsoft Entra ID. This URL can use a custom domain. Learn more about [working with custom domains in Microsoft Entra application proxy](how-to-configure-custom-domain.md).
