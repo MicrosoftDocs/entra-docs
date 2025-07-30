@@ -1,6 +1,6 @@
 ---
-title: Road to the cloud - Implement a cloud-first approach when moving identity and access management from Active Directory to Microsoft Entra ID
-description: Implement a cloud-first approach as part of planning your migration of IAM from Active Directory to Microsoft Entra ID.
+title: Road to the cloud - Implement a cloud-first approach when moving identity and access management from Active Directory Domain Services (AD DS) to Microsoft Entra ID
+description: Implement a cloud-first approach as part of planning your migration of IAM from Active Directory Domain Services (AD DS) to Microsoft Entra ID.
 documentationCenter: ''
 author: janicericketts
 manager: martinco
@@ -13,11 +13,11 @@ ms.custom: references_regions
 ---
 # Implement a cloud-first approach
 
-It's mainly a process and policy-driven phase to stop, or limit as much as possible, adding new dependencies to Active Directory and implement a cloud-first approach for new demand of IT solutions.
+It's mainly a process and policy-driven phase to stop, or limit as much as possible, adding new dependencies to Active Directory Domain Services (AD DS) and implement a cloud-first approach for new demand of IT solutions.
 
-It's key at this point to identify the internal processes that would lead to adding new dependencies on Active Directory. For example, most organizations would have a change management process that has to be followed before the implementation of new scenarios, features, and solutions. We strongly recommend making sure that these change approval processes are updated to:
+It's key at this point to identify the internal processes that would lead to adding new dependencies on AD DS. For example, most organizations would have a change management process that has to be followed before the implementation of new scenarios, features, and solutions. We strongly recommend making sure that these change approval processes are updated to:
 
-- Include a step to evaluate whether the proposed change would add new dependencies on Active Directory.
+- Include a step to evaluate whether the proposed change would add new dependencies on AD DS.
 - Evaluate Microsoft Entra alternatives when possible.
 
 ## Attributes
@@ -49,7 +49,7 @@ These links provide more information on this topic but aren't specific to changi
 - [Attribute-based application provisioning with scoping filters](/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts) or [What is Microsoft Entra entitlement management](/entra/id-governance/entitlement-management-overview) (for application access)
 
 ## Groups
-A cloud-first approach for groups involves creating new groups in the cloud. If you need them on-premises, [provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning). Convert the Source of Authority (SOA) of existing on-premises groups to manage them from Microsoft Entra. 
+A cloud-first approach for groups involves creating new groups in the cloud. If you need them on-premises, [provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning). Convert the Group Source of Authority (SOA) of existing on-premises groups to manage them from Microsoft Entra. 
 
 These links provide more information about groups:
 
@@ -92,7 +92,7 @@ The organization has a process to evaluate Microsoft Entra alternatives when it'
   > [!IMPORTANT]
   > Depending on the anticipated demands of applications that require legacy protocols, you can choose to deploy [Microsoft Entra Domain Services](/entra/identity/domain-services/overview) when more current alternatives won't work.
 
-* Provide a recommendation to create a policy to prioritize use of cloud-native alternatives. The policy should limit deployment of new application servers to the domain. Common cloud-native scenarios to replace Active Directory-joined servers include:
+* Provide a recommendation to create a policy to prioritize use of cloud-native alternatives. The policy should limit deployment of new application servers to the domain. Common cloud-native scenarios to replace domain member servers include:
 
    * File servers:
 
