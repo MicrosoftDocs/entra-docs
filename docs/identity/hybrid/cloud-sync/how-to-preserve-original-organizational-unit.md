@@ -14,9 +14,9 @@ ms.reviewer: dhanyak
 
 This topic covers how to preserve and use the original organizational unit (OU) of an on-premises group during group provisioning to Microsoft Entra ID. 
 
-## Step 1: Populate extensionAttribute13 in on-premises AD 
+## Step 1: Populate extensionAttribute13 in on-premises Active Directory Domain Services (AD DS) 
 
-Use PowerShell to extract the OU from each group's distinguished name (DN) and store it in the extensionAttribute13 attribute. You can run the following cmdlet to store each group’s original OU path in a writable attribute before you convert its Source of Authority (SOA). 
+Use PowerShell to extract the OU from each group's distinguished name (DN) and store it in the extensionAttribute13 attribute. You can run the following cmdlet to store the original OU path of each group in a writable attribute before you convert Group Source of Authority (SOA). 
 
 ```powershell
 Get-ADGroup -Filter * -SearchBase "DC=contoso,DC=com" | ForEach-Object { 
@@ -68,11 +68,11 @@ Use PowerShell or Microsoft Graph Explorer to verify the attribute sync.
   } 
   ```
 
-## Step 4: Use extensionAttribute13 in Group Provisioning to AD (GPAD) 
+## Step 4: Use extensionAttribute13 during provisioning 
 
-When configuring Group Provisioning to AD, use the synced attribute to control the target OU. 
+When you configure **Provisioning**, use the synced attribute to control the target OU. 
  
-1. In your GPAD configuration, map onPremisesExtensionAttributes.extensionAttribute13 to a custom variable such as *preferredOU*. 
+1. In your **Provisioning** configuration, map onPremisesExtensionAttributes.extensionAttribute13 to a custom variable such as *preferredOU*. 
 2. Use an expression like this one to handle fallback. This expression uses the original OU if it's available, or falls back to a default OU. You can change extensionAttribute13 later to override the value. 
 
    ```
