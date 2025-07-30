@@ -241,7 +241,7 @@
         - name: Native authentication
           items:
             - name: Set up local CORS
-              href: how-to-native-authentication-single-page-app-set-up-local-cors.md
+              href: how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md
             - name: Set up CORS in test environment
               href: how-to-native-authentication-cors-solution-test-environment.md
             - name: Set up CORS in production

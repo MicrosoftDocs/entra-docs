@@ -12,7 +12,7 @@ ms.date: 02/07/2025
 #Customer intent: As a developer or DevOps engineer, I want to set up a CORS proxy server for a React single-page application that uses native authentication API so that I can manage CORS headers and enable the app to interact with the native authentication API.
 ---
 
-# Set up CORS proxy server to manage CORS headers for native authentication (preview)
+# Set up CORS proxy server to manage CORS headers for native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -39,52 +39,80 @@ You can use the CORS server you set up in this article for local app development
     const http = require("http");
     const https = require("https");
     const url = require("url");
-    const proxyConfig = require("./proxy.config.js");
-
-    http
-    .createServer((req, res) => {
+    const proxyConfig = require("./proxy.config");
+    
+    const extraHeaders = [
+        "x-client-SKU",
+        "x-client-VER",
+        "x-client-OS",
+        "x-client-CPU",
+        "x-client-current-telemetry",
+        "x-client-last-telemetry",
+        "client-request-id",
+    ];
+    http.createServer((req, res) => {
         const reqUrl = url.parse(req.url);
         const domain = url.parse(proxyConfig.proxy).hostname;
+    
+        // Set CORS headers for all responses including OPTIONS
+        const corsHeaders = {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization, " + extraHeaders.join(", "),
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Max-Age": "86400", // 24 hours
+        };
+    
+        // Handle preflight OPTIONS request
+        if (req.method === "OPTIONS") {
+            res.writeHead(204, corsHeaders);
+            res.end();
+            return;
+        }
+    
         if (reqUrl.pathname.startsWith(proxyConfig.localApiPath)) {
-        
             const targetUrl = proxyConfig.proxy + reqUrl.pathname?.replace(proxyConfig.localApiPath, "") + (reqUrl.search || "");
-
+    
             console.log("Incoming request -> " + req.url + " ===> " + reqUrl.pathname);
-
+    
+            const newHeaders = {};
+            for (let [key, value] of Object.entries(req.headers)) {
+                if (key !== 'origin') {
+                    newHeaders[key] = value;
+                }
+            }
+    
             const proxyReq = https.request(
                 targetUrl,
                 {
                     method: req.method,
                     headers: {
-                        ...req.headers,
+                        ...newHeaders,
                         host: domain,
                     },
                 },
                 (proxyRes) => {
                     res.writeHead(proxyRes.statusCode, {
                         ...proxyRes.headers,
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-                        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+                        ...corsHeaders,
                     });
-
+    
                     proxyRes.pipe(res);
                 }
             );
-
+    
             proxyReq.on("error", (err) => {
                 console.error("Error with the proxy request:", err);
                 res.writeHead(500, { "Content-Type": "text/plain" });
                 res.end("Proxy error.");
             });
-
+    
             req.pipe(proxyReq);
         } else {
             res.writeHead(404, { "Content-Type": "text/plain" });
             res.end("Not Found");
         }
-    })
-    .listen(proxyConfig.port, () => {
+    }).listen(proxyConfig.port, () => {
         console.log("CORS proxy running on http://localhost:3001");
         console.log("Proxying from " + proxyConfig.localApiPath + " ===> " + proxyConfig.proxy);
     });
@@ -93,15 +121,15 @@ You can use the CORS server you set up in this article for local app development
 1. In the root folder of your SPA, create a file called *proxy.config.js*, then add the following code:
 
     ```javascript
-        const tenantSubdomain = "Enter_the_Tenant_Subdomain_Here";
-        const tenantId = "Enter_the_Tenant_Id_Here";
+    const tenantSubdomain = "Enter_the_Tenant_Subdomain_Here";
+    const tenantId = "Enter_the_Tenant_Id_Here";
     
-        const config = {
-            localApiPath: "/api",
-            port: 3001,
-            proxy: `https://${tenantSubdomain}.ciamlogin.com/${tenantId}`,
-        };
-        module.exports = config;
+    const config = {
+        localApiPath: "/api",
+        port: 3001,
+        proxy: `https://${tenantSubdomain}.ciamlogin.com/${tenantId}`,
+    };
+    module.exports = config;
     ```
 
     - Find the placeholder `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).

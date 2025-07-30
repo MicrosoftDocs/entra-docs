@@ -28,8 +28,8 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Complete the steps in [Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK ](quickstart-native-authentication-single-page-app-sdk-sign-in.md?tabs=react). This quickstart shows you run a sample React code sample.
-- Complete the steps in [Set up CORS proxy server to manage CORS headers for native authentication](how-to-native-authentication-single-page-app-set-up-local-cors.md).
+- Complete the steps in [Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK](quickstart-native-authentication-single-page-app-sdk-sign-in.md?tabs=react). This quickstart shows you run a sample React code sample.
+- Complete the steps in [Set up CORS proxy server to manage CORS headers for native authentication](how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md).
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
 
