@@ -14,6 +14,10 @@ ms.reviewer: dhanyak
 
 This topic covers how to preserve and use the original organizational unit (OU) of an on-premises group during group provisioning to Microsoft Entra ID. 
 
+## Prerequisite
+ 
+Use Connect Sync or Cloud Sync to sync a custom extension attribute, or use an existing attribute from the default schema that you aren't using today, and set the OU path for the groups that you want to convert Source of Authority (SOA) to the cloud. The attribute helps you provision the group to the same OU when you update these groups from the cloud.
+
 ## Step 1: Populate extensionAttribute13 in on-premises Active Directory Domain Services (AD DS) 
 
 Use PowerShell to extract the OU from each group's distinguished name (DN) and store it in the extensionAttribute13 attribute. You can run the following cmdlet to store the original OU path of each group in a writable attribute before you convert Group Source of Authority (SOA). 
