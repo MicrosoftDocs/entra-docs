@@ -19,7 +19,8 @@ sections:
         answer: TLS inspection decrypts and analyzes encrypted network traffic to detect threats, enforce security policies, and prevent data exfiltration. Since most internet traffic is encrypted, inspecting network traffic is crucial for comprehensive security.
           
       - question: How does TLS inspection work? 
-        answer: TLS inspection intercepts encrypted network traffic, decrypts it for security analysis, and re-encrypts it before sending it to its destination. To implement TLS inspection successfully, follow these best practices
+        answer: |
+          TLS inspection intercepts encrypted network traffic, decrypts it for security analysis, and re-encrypts it before sending it to its destination. To implement TLS inspection successfully, follow these best practices
           - Before you enable TLS inspection in a live environment, work with your organization's legal and privacy teams to draft a Terms of Use (ToU) policy for users.  
           - Select a root certificate authority or intermediate certificate authority to sign the Certificate Signing Request (CSR) for Global Secure Access.  
           - Set up a TLS policy that fits your organization's needs.   
@@ -31,8 +32,17 @@ sections:
 
       - question: Why do I receive the error "SSL certificate problem unable to get local issuer certificate" when using Git?
         answer: | 
-          "This error occurs because certain developer tools (such as Git) do not use the operating system’s certificate store by default; instead, they maintain their own certificate store. One way to resolve this is to append the certificate to Git’s Certificate Authority bundle.
-          The following PowerShell script demonstrates how to do this on a Windows system."
+          This error occurs because certain developer tools (such as Git) don't use the operating system's certificate store by default; instead, they maintain their own certificate store. One way to resolve this is to append the certificate to Git’s Certificate Authority bundle.
+          The following PowerShell script demonstrates how to do this on a Windows system.
+
+          ```powershell
+          $certPath = "C:\path\to\your\certificate.crt"
+          $gitCertPath = "C:\Program Files\Git\mingw64\ssl\certs\ca-bundle.crt"
+
+          # Append the certificate to Git's CA bundle
+          Get-Content $gitCertPath | Set-Content "$gitCertPath.bak"
+          Add-Content $gitCertPath $certPath
+          ```
 
       - question: How should I handle applications that use certificate pinning? 
         answer: The connection fails if TLS inspection terminates traffic from applications that use certificate pinning. To ensure your applications work as expected, create a custom bypass rule in the traffic forwarding profile to exclude traffic from these applications from Global Secure Access. You can perform this operation as part of custom bypass in the [Internet access forwarding profile](/mem/intune/protect/compliance-custom-script). We're working on custom TLS rules to let you acquire traffic and bypass TLS inspection only.      
