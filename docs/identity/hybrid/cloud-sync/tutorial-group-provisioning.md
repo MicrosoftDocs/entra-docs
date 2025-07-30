@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync'
-description: This tutorial shows how to setup and configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
+title: 'Tutorial - Provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync'
+description: This tutorial shows how to setup and configure Microsoft Entra Cloud Sync to provision groups to Active Directory Domain Services (AD DS).
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
@@ -11,21 +11,21 @@ ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 ---
 
-# Tutorial - Provision groups to Active Directory using Microsoft Entra Cloud Sync
+# Tutorial - Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync
 
-This tutorial walks you through creating and configuring cloud sync to synchronize groups to on-premises Active Directory (AD). 
+This tutorial walks you through how to confifure Cloud Sync to sync groups to on-premises Active Directory Domain Services (AD DS). 
 
 > [!IMPORTANT]
-> We recommend using **Selected security groups** as the default scoping filter when you configure Group Provisioning to AD (GPAD). This default scoping filter helps prevent any performance issues when you provision groups.  
+> We recommend using **Selected security groups** as the default scoping filter when you configure group provisioning to AD DS. This default scoping filter helps prevent any performance issues when you provision groups.  
 
 [!INCLUDE [pre-requisites](../includes/gpad-prereqs.md)]
 
 ## Assumptions
 This tutorial assumes:
-- You have an Active Directory on-premises environment
+- You have an AD DS on-premises environment
 - You have cloud sync setup to synchronize users to Microsoft Entra ID.
 - You have two users that are synchronized: Britta Simon and Lola Jacobson. These users exist on-premises and in Microsoft Entra ID.
-- An organizational unit (OU) is created in Active Directory for each of the following departments:
+- An organizational unit (OU) is created in AD DS for each of the following departments:
 
   Display name | Distinguished name
   -------------|-------------------
@@ -114,9 +114,9 @@ To configure provisioning, follow these steps:
  
    :::image type="content" source="media/tutorial-group-provision/success.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/tutorial-group-provision/success.png":::
 
-## Verify in Active Directory
+## Verify in AD DS
 
-Follow these steps to make sure the group is provisioned to Active Directory:
+Follow these steps to make sure the group is provisioned to AD DS:
 
 1.  Sign-in to your on-premises environment.
 2.  Launch **Active Directory Users and Computers**
@@ -126,7 +126,7 @@ Follow these steps to make sure the group is provisioned to Active Directory:
 
 ## Group Provision to AD behavior for SOA converted objects
 
-When you convert the **Source of Authority (SOA)** to cloud for an on-premises group, that group becomes eligible for **Group Provisioning to Active Directory (GPAD)**.
+When you convert the **Source of Authority (SOA)** to cloud for an on-premises group, that group becomes eligible for group provisioning to AD DS.
 
 For example, in the following diagram, **SOATestGroup1** SOA is converted to the cloud.
 As a result, it becomes available for the **GPAD job scope**.
@@ -180,5 +180,5 @@ If you have SOA converted groups in scope and you roll back the SOA converted gr
 
 ## Next steps 
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
-- [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
+- [Govern on-premises AD DS based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)

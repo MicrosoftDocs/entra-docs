@@ -1,10 +1,10 @@
 ---
 title: Configure Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
-description: Learn how to transition group management from Active Directory to Microsoft Entra ID using Source of Authority (SOA), including prerequisites, setup, validation, rollback, and integration with Group Provisioning to Active Directory (GPAD).
+description: Learn how to convert group management from Active Directory Domain Services (AD DS) to Microsoft Entra ID byb using Group Source of Authority (SOA), including prerequisites, setup, validation, and how to rollback.
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/25/2025
+ms.date: 07/30/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -194,7 +194,7 @@ Follow these steps to convert the SOA for a test group:
 
 ## Bulk updates for Group SOA
 
-You can use the following PowerShell script to automate Group SOA updates for app-based authentication. 
+You can use the following PowerShell script to automate Group SOA updates by using app-based authentication.
 
 ```powershell
 # Define your Microsoft Entra ID app details and tenant information
@@ -304,7 +304,6 @@ The details explain that the object isn't synced because its SOA is converted to
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
-
 ## Limitations
 
 - **No reconciliation support for local AD groups**: An AD admin (or an application with sufficient permissions) can directly modify an AD group. If SOA is applied to the object or if cloud security group provisioning to AD is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD changes are overwritten if group provisioning to AD is enabled.
@@ -318,5 +317,5 @@ The details explain that the object isn't synced because its SOA is converted to
 ## Related content
 
 - [Group SOA overview](concept-source-of-authority-overview.md)
-- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning)
-- [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior)
+- [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning)
+- [onPremisesSyncBehavior Microsoft Graph API](/graph/api/resources/onpremisessyncbehavior)
