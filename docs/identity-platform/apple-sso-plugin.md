@@ -71,11 +71,13 @@ The minimum set of URLs that need to be allowed for the SSO plug-in to function 
   ( ** ) You only need to allow sovereign cloud domains if you rely on those in your environment.
   ( *** ) Maintaining communications with the Experimentation Configuration Service (ECS) ensures that Microsoft can respond to a severe bug in a timely manner.
 
-##### URLs that need to be allowed for Device registration flows
+#### URLs that need to be allowed for Device registration flows
 Please ensure that traffic to the URLs listed [here](/entra/identity/devices/plan-device-deployment.md#network-requirements-for-device-registration-with-microsoft-entra) is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration flows that rely on TLS challenges to complete successfully.
 
 > [!IMPORTANT]
 > **Note: There has been a recent update to the TLS endpoint used in registration flows. Please verify that your environment’s allowlist reflects the latest URL requirements to avoid disruptions.**
+
+
 <br>
 The Microsoft Enterprise SSO plug-in relies on Apple's [enterprise SSO](https://developer.apple.com/documentation/authenticationservices) framework. Apple's enterprise SSO framework ensures that only an approved SSO plug-in can work for each identity provider by utilizing a technology called [associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains). To verify the identity of the SSO plug-in, each Apple device sends a network request to an endpoint owned by the identity provider and read information about approved SSO plug-ins. In addition to reaching out directly to the identity provider, Apple has also implemented another caching for this information.
 
