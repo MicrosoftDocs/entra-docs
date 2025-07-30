@@ -29,7 +29,7 @@ sections:
       - question: What is certificate pinning, and how does it affect TLS inspection? 
         answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection.  
 
-      - question: Why do I receive the error "SSL certificate problem unable to get local issuer certificate" when using Git?
+     - question: Why do I receive the error "SSL certificate problem unable to get local issuer certificate" when using Git?
         answer: | 
           This error occurs because certain developer tools (such as Git) do not use the operating system’s certificate store by default; instead, they maintain their own certificate store. One way to resolve this is to append the certificate to Git’s Certificate Authority bundle.
           The following PowerShell script demonstrates how to do this on a Windows system.
@@ -53,8 +53,8 @@ sections:
           } else {
           Write-Host "Git CA bundle path not found. Is Git installed and configured?"
           }
-         ```
-        [!NOTE] If Git is installed in a protected directory (such as under Program Files), you may need to run PowerShell as an administrator to modify the Certificate Authority bundle. 
+          ```
+        [!NOTE] If Git is installed in a protected directory such as under Program Files, you may need to run PowerShell as an administrator to modify the Certificate Authority bundle.
      
 -questions: How do I add a TLS inspection root CA to the Python certificate store?
         answer: Python uses the certifi package to manage its own Certificate Authority bundle, separate from the system certificate store. To trust your TLS inspection root certificate, append it to the Certificate Authority bundle using the following PowerShell script:
