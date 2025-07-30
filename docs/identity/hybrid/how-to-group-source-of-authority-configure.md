@@ -11,7 +11,7 @@ ms.reviewer: dhanyak
 
 # Configure Group Source of Authority (SOA) (Preview)
 
-This topic explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Embrace cloud-first posture: Transition AD Group Source of Authority to the cloud (Preview)](concept-source-of-authority-overview.md). 
+This topic explains the prerequisites and steps to configure Group Source of Authority (SOA), how to revert changes, and limitations. For more information about Group SOA, see [Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)](concept-source-of-authority-overview.md). 
 
 ## Prerequisites
 
@@ -198,33 +198,24 @@ You can use the following PowerShell script to automate Group SOA updates for ap
 
 ```powershell
 # Define your Microsoft Entra ID app details and tenant information
-$clientId = ""
 $tenantId = ""
-$groupID = ""
-$clientSecret = ""
+$clientId = ""
+$certThumbprint = ""
 
-# Get the access token
-$body = @{
-    grant_type    = "client_credentials"
-    scope         = "https://graph.microsoft.com/.default"
-    client_id     = $clientId
-    client_secret = $clientSecret
-}
+# Connect to Microsoft Graph as App-Only using a certificate. The app registration must have the Group.Read.All Group-OnPremisesSyncBehavior.ReadWrite.All permissions granted.
+Connect-MgGraph -ClientId $clientId -TenantId $tenantId -CertificateThumbprint $certThumbprint
 
-$tokenResponse = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token" -Method Post -ContentType "application/x-www-form-urlencoded" -Body $body
-$token = $tokenResponse.access_token
-
-# Connect to Microsoft Graph
-Connect-MgGraph -Scopes "Group.Read.All"
+#Connect to Microsoft Graph using delegated permissions
+#Connect-MgGraph -Scopes "Group.Read.All Group-OnPremisesSyncBehavior.ReadWrite.All" -TenantId $tenantId
 
 # Define the group name you want to query
-$groupName = "HR London"
+$groupName = "HR India"
 
 # Retrieve the group using group name
-$group = Get-MgGroup -Filter "displayName eq '$groupName'"
+$group = Get-MgBetaGroup -Filter "displayName eq '$groupName'"
 
 # Ensure group is found
-if ($group -ne $null)
+if ($null -ne $group)
 {
     $groupObjectID = $($group.Id)
     # Define the Microsoft Graph API endpoint for the group
@@ -234,20 +225,20 @@ if ($group -ne $null)
     $jsonPayload = @{
         isCloudManaged = "true"
     } | ConvertTo-Json
- 
-    # Make the PATCH request to update the JSON payload
-    Invoke-RestMethod -Uri $url -Method Patch -Headers @{
-        "Authorization" = "Bearer $token"
-        "Content-Type"  = "application/json"
-    } -Body $jsonPayload
 
-    $result = Invoke-RestMethod -Method Get -Uri "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior?$select=id,displayName,isCloudManaged" -Headers @{Authorization = "Bearer $token"}
+    # Make the PATCH request to update the JSON payload
+    Invoke-MgGraphRequest -Uri $url -Method Patch -ContentType "application/json" -Body $jsonPayload
+
+    $result = Invoke-MgGraphRequest -Method Get -Uri "https://graph.microsoft.com/beta/groups/$groupObjectID/onPremisesSyncBehavior?`$select=id,isCloudManaged"
 
     Write-Host "Group Name: $($group.DisplayName)"
     Write-Host "Group ID: $($result.id)"
     Write-Host "SOA Converted: $($result.isCloudManaged)"
 }
-Format-Table -AutoSize
+else 
+{
+    Write-Warning "Group '$groupName' not found."
+}
 ```
 
 ### Status of attributes after you convert SOA
@@ -259,7 +250,6 @@ Admin step | isCloudManaged value | dirSyncEnabled value | Description 
 Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **dirSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
 Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
 Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
-
 
 ## Roll back SOA update
 
