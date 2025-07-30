@@ -87,7 +87,8 @@ When you configure **Provisioning**, use the synced attribute to control the tar
    IIF(IsNullOrEmpty([extensionAttribute13]), "OU=<Enter your default OU name>,DC=contoso,DC=com", [extensionAttribute13]) 
    ```
 
- ## Related content
+## Related content
 
- - [Group SOA overview](../concept-source-of-authority-overview.md)
- - [How to configure Group SOA](../how-to-group-source-of-authority-configure.md)
+- [Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync](tutorial-group-provisioning.md)
+- [Govern on-premises Active Directory Domain Services based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
+
