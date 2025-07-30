@@ -4,7 +4,7 @@ description: Learn how to preserve and use the original organizational unit (OU)
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/25/2025
+ms.date: 07/30/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -72,12 +72,11 @@ Use PowerShell or Microsoft Graph Explorer to verify the attribute sync.
 
 When configuring Group Provisioning to AD, use the synced attribute to control the target OU. 
  
-
 1. In your GPAD configuration, map onPremisesExtensionAttributes.extensionAttribute13 to a custom variable such as *preferredOU*. 
 2. Use an expression like this one to handle fallback. This expression uses the original OU if it's available, or falls back to a default OU. You can change extensionAttribute13 later to override the value. 
 
    ```
-   IIF(IsNullOrEmpty([preferredOU]), "OU=Default,DC=contoso,DC=com", [preferredOU]) 
+   IIF(IsNullOrEmpty([extensionAttribute13]), "OU=Default,DC=contoso,DC=com", [extensionAttribute13]) 
    ```
 
  ## Related content

@@ -37,7 +37,7 @@ You can use Microsoft Graph to report data such as:
 
 The [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior) helps you view the *isCloudManaged* property for user or a group. You can set the *isCloudManaged* property to `true` to convert the SOA of an object. 
 
-You can also call the onPremisesSyncBehavior API and input each user object to query how many objects have their SOA converted to cloud-managed:
+You can also call the onPremisesSyncBehavior API and input each group object to query how many groups converted their SOA to cloud-managed:
 
 ```https
 GET groups/%GROUP_ID%/onPremisesSyncBehavior?$select=id,isCloudManaged
@@ -59,7 +59,7 @@ You can integrate Audit Logs with Azure Monitoring and search the following even
 
 - Event ID 6956 is logged if an object isn't synced to the cloud because the SOA of the object is cloud-managed.
 
-- When SOA transfer is rolled back to on-premises, **Group Provisioning to AD (GPAD)** stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle. You can verify in the **Audit Logs** that sync doesn't happen for this object because it's managed on-premises. 
+- When SOA transfer is rolled back to on-premises, group provisioning to AD DS stops syncing changes without deleting the on-premises group. It also removes the group from GPAD configuration scope. The on-premises group remains intact, and resumes control in the next sync cycle. You can verify in the **Audit Logs** that sync doesn't happen for this object because it's managed on-premises. 
 
   :::image type="content" border="true" source="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/how-to-source-of-authority-auditing-monitoring/audit-log-details.png":::
 
