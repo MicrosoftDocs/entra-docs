@@ -4,8 +4,8 @@ description: Learn about the Security Copilot for Microsoft Entra optimization a
 ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
-ms.date: 07/13/2025
-
+manager: pmwongera
+ms.date: 07/21/2025
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
@@ -33,6 +33,7 @@ To ensure transparency and maintain control over automated recommendations, Micr
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
+- The agent can review up to 150 users and 100 applications in a single run.
 
 ## Agent summary
 

@@ -9,7 +9,7 @@ ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Protect AI with Conditional Access policy
@@ -140,6 +140,7 @@ The following steps help create a Conditional Access policy to require all users
 
 ## Related content
 
+- [Manage Microsoft 365 for iOS and Android with Microsoft Intune](/intune/intune-service/apps/manage-microsoft-office#copilot-with-enterprise-data-protection)
 - [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
 - [Secure Generative AI with Microsoft Entra](../../architecture/secure-generative-ai.md)
 - [Microsoft Purview data security and compliance protections for generative AI apps](/purview/ai-microsoft-purview)
