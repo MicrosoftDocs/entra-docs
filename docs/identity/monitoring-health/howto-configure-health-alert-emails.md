@@ -141,7 +141,7 @@ Content-Type: application/json
 
 ## Configure webhook notifications
 
-Change notifications let applications receive alerts when a Microsoft Graph resource is created, updated, or deleted. These notifications differ from email notifications because notifications are sent to an HTTPS endpoint, not an email address. You can receive change notifications through webhooks, Azure Event Grid, and Azure Event Hubs.
+Change notifications let applications receive alerts when a Microsoft Graph resource is created, updated, or deleted. These notifications differ from email notifications because notifications are sent to an HTTPS endpoint, not an email address. Currently you can receive change notifications through webhooks.
 
 First, the client app sends a **POST** request to the `/subscriptions` endpoint to subscribe to health monitoring alerts. The change notification service validates and confirms the subscription. When a new alert is created, updated, or deleted, Microsoft Graph sends that notification to the specified endpoint. For more information, see [Microsoft Graph change notifications](/graph/change-notifications-overview).
 
