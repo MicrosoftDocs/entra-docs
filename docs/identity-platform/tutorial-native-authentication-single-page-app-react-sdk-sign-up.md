@@ -28,7 +28,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Complete the steps in [Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK ](quickstart-native-authentication-single-page-app-sdk-sign-in.md). This quickstart shows you run a sample React code sample.
+- Complete the steps in [Quickstart: Sign in users in a React single-page app by using native authentication JavaScript SDK ](quickstart-native-authentication-single-page-app-sdk-sign-in.md?tabs=react). This quickstart shows you run a sample React code sample.
 - Complete the steps in [Set up CORS proxy server to manage CORS headers for native authentication](how-to-native-authentication-single-page-app-set-up-local-cors.md).
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
@@ -458,7 +458,7 @@ if (signUpState instanceof SignUpCompletedState) {
     npm start
     ```
 
-1. Open a web browser and navigate to `http://localhost:3000/`. A sign-up form appears.
+1. Open a web browser and navigate to `http://localhost:3000/sign-up`. A sign-up form appears.
 
 1. To sign up for an account, input your details, select the **Sign Up** button, then follow the prompts.
 

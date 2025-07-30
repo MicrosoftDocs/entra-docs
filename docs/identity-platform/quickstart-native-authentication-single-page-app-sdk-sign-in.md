@@ -81,9 +81,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```console
     npm install
     ```
-
 ---
-
 
 ## Configure the sample React app
 
@@ -102,12 +100,11 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Open *src/app/config/auth-config.ts* and replace the following placeholders with the values obtained from the Microsoft Entra admin center:
 
     * Find the placeholder `Enter_the_Application_Id_Here` then  replace it with the Application (client) ID of the app you registered earlier.
-    * Find the placeholder `Enter_the_Tenant_Subdomain_Here` then replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.
+    * Find the placeholder `Enter_the_Tenant_Subdomain_Here` then replace it with the tenant subdomain in your Microsoft Entra admin center. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md).
 
 1. Save the changes.
 
 ---
-
 
 ## Configure CORS proxy server
 

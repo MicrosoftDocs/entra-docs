@@ -8,7 +8,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 06/30/2025
+ms.date: 07/30/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
 ---
 
