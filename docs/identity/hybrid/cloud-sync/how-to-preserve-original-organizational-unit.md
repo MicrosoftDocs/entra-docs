@@ -18,12 +18,16 @@ This topic covers how to preserve and use the original organizational unit (OU) 
 
 Use PowerShell to extract the OU from each group's distinguished name (DN) and store it in the extensionAttribute13 attribute. You can run the following cmdlet to store the original OU path of each group in a writable attribute before you convert Group Source of Authority (SOA). 
 
+
 ```powershell
 Get-ADGroup -Filter * -SearchBase "DC=contoso,DC=com" | ForEach-Object { 
     $ou = ($_.DistinguishedName -split ",", 2)[1]  # Extract OU path 
     Set-ADGroup -Identity $_.DistinguishedName -Replace @{extensionAttribute13 = $ou} 
 } 
 ```
+
+
+You can also store the OU information in some some other attribute also like info  or any other custom attribute. For more information about how to sync custom attributes, see [Custom attribute mapping](/entra/identity/hybrid/cloud-sync/custom-attribute-mapping). 
 
 ## Step 2: Enable sync for extensionAttribute13 in Microsoft Entra Cloud Sync or Connect Sync 
 

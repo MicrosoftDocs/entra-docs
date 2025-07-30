@@ -31,7 +31,7 @@ The following prerequisites are required to implement provisioning groups to Act
  >
  > Set-AADCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -EACredential $credential
  > ```
- >If the permissions are set manually, you need to assign Read, Write, Create, and Delete all properties for all descendent Groups and User objects. 
+ >If the permissions are set manually, you need to assign Read, Write, Create, and Delete all properties for all descendant Groups and User objects. 
  >
  >These permissions aren't applied to AdminSDHolder objects by default. For more information, see [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](../cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain). 
 
