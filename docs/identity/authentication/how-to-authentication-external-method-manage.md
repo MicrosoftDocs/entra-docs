@@ -20,6 +20,9 @@ EAMs differ from federation in that the user identity is originated and managed 
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
+>[!IMPORTANT]
+   >  Between 9/1/25 and 9/30/25, we are releasing a new improvement to the EAM feature that requires a backend migration to ensure a seamless experience. To minimize impact to your organization, this migration will be performed on behalf of tenants. As a result of this migration, some users in your organization may experience limited impact to their authentication experience. See [Authentication method registration for EAMs](#Authentication-method-registration-for-EAMs) for more details.
+
 ## Required metadata to configure an EAM
 To create an EAM, you need the following information from your external authentication provider:
 
@@ -110,10 +113,43 @@ If the user has no other methods enabled, they can just choose the EAM. They're 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/sign-in.png" alt-text="Screenshot of how to sign in with an EAM.":::
 
 ## Authentication method registration for EAMs
-In the preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA.  Users that are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
+In the EAM preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA.  Users that are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
 
 >[!NOTE]
->We're actively working on adding registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use it to satisfy MFA.
+>We're actively rolling out the registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use it to satisfy MFA. As part of this roll out, some users may experience a change in behavior at authentication time depending on their current authentication setup. Users who have not authenticated with their EAM in the past 28 days will experience one of the following scenarios depending on which category they fall into:
+> | Category | User experience |
+> |--------|-----|
+> | Users only enabled for EAM | Will be prompted to complete just-in-time registration of their EAM authentication method before continuing as usual.|
+> | Users enabled for EAM and other authentication methods | May lose access to EAM for authentication. To regain access, one of the following steps is required: <ul><li>The user must register their EAM via My Security Info (aka.ms/mysecurityinfo)</li><li>An admin must register the EAM on behalf of the user</li></ul> |
+
+**FAQ**
+1. How can my end users register their EAM via My Security Info?
+
+Users can register an EAM from the My Security Info page using the following steps:
+
+* Sign into My Security Info (https://aka.ms/mysecurityinfo)
+* Select "add sign-in method"
+* When prompted to select a sign-in method from a list of available options, select External Auth methods
+* Select next at the confirmation screen
+* Complete the second factor challenge with the external provider. If successful, the user will now find the EAM listed in their sign-in methods. 
+
+3. How can I register the EAM on my user's behalf?
+
+Admins can set a user as registered for an EAM or  delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the method is available and the user does not need to register the method through inline or manual registration. Deleting the method enables the admin to help users that are enabled but not registered for additional methods in recovery scenarios, by having their next sign in trigger registration. Admins can mark a user as registered via MS Graph or via the Microsoft Entra Admin Center using the following steps:
+
+Via MS Graph
+* Use the following **sample script**. This script is an example only and you should customize it as needed before using it.
+
+Via Entra Admin Center
+* In the Entra admin portal, navigate to the 'Users' page and select 'All users'
+* Select the user that needs to be registered for EAM
+* In the user menu, click on ‘Authentication Methods’ and click the ‘Add Authentication Method’ button. In the dropdown, select ‘External authentication method’
+* Select one or multiple EAM options and save
+* A success message will appear and the methods you previously selected will be listed in the ‘Usable authentication methods’ table. 
+
+4. What does the just-in-time registration experience look like for end users?
+
+On signing in, the user will be driven into the registration wizard. The user may then need to select ‘I want to set up a different method’ in order to proceed. If the user has multiple external authentication methods enabled, they will be able to select from those methods. When ‘registering’, the user will have to authenticate with the external authentication method provider. If successful, this will result in the method being ‘registered’, and the user will be shown that they have completed registration. They will then be redirected to the resource they were attempting to access. If the authentication fails, the user will be redirected back to the proof-up wizard, and the page for registering the external method will provide an error message. The user will have the options to try again, or if there are other allowable methods, to choose to register a different method instead.  
 
 ## Using EAM and Conditional Access custom controls in parallel
 
