@@ -103,19 +103,6 @@ Check our [version history page](../identity/hybrid/connect/reference-connect-ve
 
 ---
 
-### General Availability - QR code authentication for frontline workers
-
-**Type:** New feature  
-**Service category:** Authentications (Logins)  
-**Product capability:** User Authentication  
-
-QR code authentication in Microsoft Entra ID is now generally available, offering frontline workers a quick and secure way to sign in using a QR code and personal PIN. This authentication method can be provisioned through Microsoft Entra ID, My Staff, or Microsoft Graph APIs. Users can sign in on a mobile device (Android, iOS, iPadOS) by visiting https://login.microsoftonline.com, selecting Sign-in options > Sign in to an organization > Sign in with QR code, a web-based sign-in option available for all apps. Additionally, some applications, including Microsoft Teams, MHS, Bluefletch, and Jamf, support a dedicated “Sign in with a QR code” button on their login page for a seamless experience.  For more information, see:
-
-- [Authentication methods in Microsoft Entra ID - QR code authentication method](../identity/authentication/concept-authentication-qr-code.md)
-- [How to enable the QR code authentication method in Microsoft Entra ID](../identity/authentication/how-to-authentication-qr-code.md)
-
----
-
 ### General Availability - Bicep templates for Microsoft Graph resources
 
 **Type:** New feature  
@@ -216,6 +203,20 @@ No action is required. The update will be applied automatically starting Septemb
  
 API-driven provisioning is now generally available in US Gov cloud. With this capability, customers in US Gov cloud can now ingest identity data from any authoritative source into Microsoft Entra ID and on-premises Active Directory. For more information, see: [Quickstart API-driven inbound provisioning with Graph Explorer](../identity/app-provisioning/inbound-provisioning-api-graph-explorer.md).
  
+---
+
+### Public Preview – QR code authentication, a simple and fast authentication method for Frontline Workers
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+We're thrilled to announce public preview of QR code authentication in Microsoft Entra ID, providing an efficient and simple authentication method for frontline workers.
+
+You see a new authentication method ‘QR code’ in Microsoft Entra ID Authentication method Policies. You can enable and add QR code for your frontline workers via Microsoft Entra ID, My Staff, or MS Graph APIs. All users in your tenant see a new link ‘Sign in with QR code’ on navigating to https://login.microsoftonline.com > ‘Sign-in options’ > ‘Sign in to an organization’ page. This new link is visible only on mobile devices (Android/iOS/iPadOS). Users can use this auth method only if you add and provide a QR code to them. QR code auth is also available in BlueFletch and Jamf. MHS QR code auth support is generally available by early March.
+
+The feature has a ‘preview’ tag until it's generally available. For more information, see: [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](../identity/authentication/concept-authentication-qr-code.md).
+
 ---
 
 ### Deprecated - Conditional Access Overview Monitoring Tab to Retire
