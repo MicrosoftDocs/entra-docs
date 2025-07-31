@@ -145,6 +145,8 @@ Change notifications let applications receive alerts when a Microsoft Graph reso
 
 First, the client app sends a **POST** request to the `/subscriptions` endpoint to subscribe to health monitoring alerts. The change notification service validates and confirms the subscription. When a new alert is created, updated, or deleted, Microsoft Graph sends that notification to the specified endpoint. For more information, see [Microsoft Graph change notifications](/graph/change-notifications-overview).
 
+After receiving a notification, you should investigate the associated alert details, either through the Microsoft Entra admin center or through the Microsoft Graph API. For more information, see [How to investigate health scenario alerts](howto-investigate-health-scenario-alerts.md). You might need to delay this investigation to allow for enrichment data to be available. 
+
 The following example shows a basic request to subscribe to changes to Health Monitoring alert changes.
 
 ### Example subscription request
