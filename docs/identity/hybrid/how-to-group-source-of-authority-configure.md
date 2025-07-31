@@ -4,7 +4,7 @@ description: Learn how to convert group management from Active Directory Domain 
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/30/2025
+ms.date: 07/31/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -25,7 +25,7 @@ This topic explains the prerequisites and steps to configure Group Source of Aut
 
 ## Setup
 
-You need to set up Connect Sync client and the Cloud Sync client Provisioning agent. 
+You need to set up Connect Sync client and the Microsoft Entra Provisioning agent. 
 
 ### Connect Sync client
 
@@ -35,7 +35,7 @@ You need to set up Connect Sync client and the Cloud Sync client Provisioning ag
 
 ### Cloud Sync client
 
-Download the Provisioning agent with build version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700) or later.
+Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700) or later.
 
 1. Follow the [instructions to download the Cloud Sync client](/entra/identity/hybrid/cloud-sync/reference-version-history#download-link).
 
@@ -250,6 +250,7 @@ Admin step | isCloudManaged value | onPremisesSyncEnabled value | Descript
 Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
 Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **OnPremisesSyncEnabled** attribute value is set to `null`. 
 Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **OnPremisesSyncEnabled** is set to `null` until the sync client takes over the object.    
+Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, **isCloudManaged** is set to `false` and **onPremisesSyncEnabled** is set to `null`.
 
 ## Roll back SOA update
 
