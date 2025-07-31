@@ -67,8 +67,8 @@ The definitions for implementation effort are as follows:
 - **Low**: Customer IT and Security Operations teams need to carry out specific tasks.  
 
 User impact levels are defined as:  
-- **High**: A large number of non-privileged users need to take action or be informed of changes.  
-- **Medium**: A portion of non-privileged users must take action or be informed of changes.  
+- **High**: A large number of nonprivileged users need to take action or be informed of changes.  
+- **Medium**: A portion of nonprivileged users must take action or be informed of changes.  
 - **Low**: Actions can be performed by administrators, and users don't need to be notified.
 
 ## Workshop Delivery Time Estimates
