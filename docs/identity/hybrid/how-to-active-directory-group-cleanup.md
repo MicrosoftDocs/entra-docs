@@ -17,7 +17,7 @@ There's no way to confirm if a particular group is needed to access an app or a 
 
 This article outlines how to use a *scream test* methodology to clean up groups from an AD DS domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from being synced into Microsoft Entra. 
 
-First you determine whether each group needs to be managed with an AD-based management tool like **Active Directory Users and Computers**, or managed in the cloud with Microsoft Entra admin center or Exchange Online, or if it might not be needed. If the group might not be needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the AD DS domain.
+First you determine whether each group needs to be managed with an AD DS-based management tool like **Active Directory Users and Computers**, or managed in the cloud with Microsoft Entra admin center or Exchange Online, or if it might not be needed. If the group might not be needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the AD DS domain.
 
 There are multiple ways to determine whether a group is no longer needed. In some cases, the scream test indicates that a group is still required, and whether to manage it in Microsoft Entra ID or the AD DS domain.
 
@@ -25,7 +25,7 @@ There are multiple ways to determine whether a group is no longer needed. In som
 
 - This article focuses on Security and Distribution List (DL) groups in
   an AD DS topology, with a single forest, single domain.
-  Multiforest, non-AD environments, and local groups on domain-joined
+  Multiforest, non-AD DS environments, and local groups on domain-joined
   computers, are outside the scope of this version of the article.
 
 - This article focuses on groups whose members are users and other
