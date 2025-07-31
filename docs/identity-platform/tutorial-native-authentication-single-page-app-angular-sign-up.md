@@ -223,34 +223,34 @@ In this section, you define a configuration for native authentication public cli
 
 You can automatically sign in your users after a successful sign-up without starting a fresh sign-in flow. To do so, use the following code snippet. See a complete example at [sign-up/sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
-    ```typescript
-    if (this.signUpState instanceof SignUpCompletedState) {
-        const result = await this.signUpState.signIn();
-    
-        if (result.isFailed()) {
-            this.error = result.error?.errorData?.errorDescription || "An error occurred during auto sign-in";
-        }
-    
-        if (result.isCompleted()) {
-            this.userData = result.data;
-            this.signUpState = result.state;
-            this.isSignedUp = true;
-            this.showCode = false;
-            this.showPassword = false;
-        }
+```typescript
+if (this.signUpState instanceof SignUpCompletedState) {
+    const result = await this.signUpState.signIn();
+
+    if (result.isFailed()) {
+        this.error = result.error?.errorData?.errorDescription || "An error occurred during auto sign-in";
     }
-    ```
+
+    if (result.isCompleted()) {
+        this.userData = result.data;
+        this.signUpState = result.state;
+        this.isSignedUp = true;
+        this.showCode = false;
+        this.showPassword = false;
+    }
+}
+```
 
 When you autosign in a user, use the following snippet in your [sign-up/sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html) html file.
 
-    ```html
-    <div *ngIf="userData && !isSignedIn">
-        <p>Signed up complete, and signed in as {{ userData?.getAccount()?.username }}</p>
-    </div>
-    <div *ngIf="isSignedUp && !userData">
-        <p>Sign up completed! Signing you in automatically...</p>
-    </div>
-    ```
+```html
+<div *ngIf="userData && !isSignedIn">
+    <p>Signed up complete, and signed in as {{ userData?.getAccount()?.username }}</p>
+</div>
+<div *ngIf="isSignedUp && !userData">
+    <p>Sign up completed! Signing you in automatically...</p>
+</div>
+```
 
 ## Update app routing
 
