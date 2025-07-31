@@ -45,7 +45,7 @@ Download the Provisioning agent with build version [1.1.1370.0](/entra/identity/
 ## Grant permission to apps
 
 >[!Important] 
-> A known issue might prevent you from viewing the new permission associated with Source of Authority conversion feature in the Microsoft Entra admin center. If you can't view the permissions in the Microsoft Entra ID center or in Graph Explorer, follow steps in the the [Workaround for granting permission to apps](#workaround-for-granting-permission-to-apps).
+> A known issue might prevent you from viewing the new permission associated with Source of Authority conversion feature in the Microsoft Entra admin center. If you can't view the permissions in the Microsoft Entra ID center or in Graph Explorer, follow the steps in the [Workaround for granting permission to apps](#workaround-for-granting-permission-to-apps).
 
 This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. 
 
@@ -268,7 +268,7 @@ You can run this operation to roll back the SOA update and revert the SOA to on-
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/rollback.png" alt-text="Screenshot of API call to revert SOA.":::
 
 > [!NOTE]
-> This change to "isCloudManaged: false" allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is complete only happens after *both* the API call and the next scheduled or forced run of Connect Sync.
+> This change to "isCloudManaged: false" allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is finished only after *both* the API call and the next scheduled or forced run of Connect Sync are complete.
 
 ### Validate the change in the Audit Logs
 

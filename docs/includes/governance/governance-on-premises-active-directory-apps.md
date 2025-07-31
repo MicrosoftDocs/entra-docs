@@ -27,7 +27,7 @@ The following prerequisites are required to implement this scenario.
   >
   > Set-AAD DSCloudSyncPermissions -PermissionType UserGroupCreateDelete -TargetDomain "FQDN of domain" -TargetDomainCredential $credential
   > ```
-  > Make you sure you allow Read, Write, Create, and Delete all properties for all descendant groups and users.
+  > Make sure you allow Read, Write, Create, and Delete all properties for all descendant groups and users.
   >
   > These permissions aren't applied to AdminSDHolder objects by default by the [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain).
 
@@ -155,7 +155,7 @@ If the app uses LDAP and follows nested group membership, the app sees that the 
 
 Then you can govern access to the AD DS application by using the new access package.
 
-## Troubleshooting
+## Troubleshoot app access
 
 A user in the new AD DS group who signs in to a domain-joined device might have a ticket from a domain controller that doesn't include the new AD DS group membership. The ticket might be issued before Cloud Sync provisioned the user to the new AD DS group. The user can't use the ticket for access to the application. They must wait for the ticket to expire, and for a new ticket to be issued. Or they must purge their tickets, sign out, and then sign back into the domain. For more information, see [klist](/windows-server/administration/windows-commands/klist).
 
