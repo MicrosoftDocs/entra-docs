@@ -16,8 +16,6 @@
       items:
         - name: Identity fundamentals
           href: ~/fundamentals/identity-fundamental-concepts.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-        - name: Introduction to identity and access management
-          href: ~/fundamentals/introduction-identity-access-management.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Authentication vs. authorization
           href: authentication-vs-authorization.md
         - name: OAuth 2.0 and OpenID Connect

@@ -118,6 +118,5 @@ A central identity provider lets organizations establish authentication and auth
 
 ## Next steps
 
-- Read [Introduction to identity and access management](introduction-identity-access-management.md) to learn more.
 - Learn about [single sign-on (SSO)](~/identity/enterprise-apps/what-is-single-sign-on.md).
 - Learn about [multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md).
