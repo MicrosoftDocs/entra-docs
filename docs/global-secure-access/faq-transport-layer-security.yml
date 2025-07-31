@@ -18,7 +18,7 @@ sections:
       - question: What is Transport Layer Security (TLS) inspection? 
         answer: |
           TLS inspection decrypts and analyzes encrypted network traffic to help organizations detect threats, enforce security policies, and prevent data exfiltration. With the majority of internet traffic now encrypted, 
-          TLS inspection provides visibility into data flows that would otherwise be opaque to security tools. This capability enables enterprises to apply advanced protections such as content filtering without compromising 
+          TLS inspection provides visibility into data flows that would otherwise be opaque to security tools. TLS inspection enables enterprises to apply advanced protections such as content filtering without compromising 
           the confidentiality of legitimate communications.  
 
       - question: How does TLS inspection work? 
@@ -31,17 +31,10 @@ sections:
           - Configure Conditional Access: Create a Conditional Access policy and associate it with the Global Secure Access security profile linked to the TLS policy.
           - Distribute the trusted certificate: Ensure the selected certificate authority is installed on all client devices to establish trust and enable seamless TLS inspection.
   
-      - question: What is certificate pinning, and how does it affect TLS inspection? 
-        answer: |
-          Certificate pinning is a security mechanism that restricts an application's TLS connections to a specific set of trusted certificates or public keys. This ensures that the application only communicates with servers presenting those exact credentials, even if other certificates are valid and trusted by the system.
-          This technique helps defend against man-in-the-middle (MITM) attacks by preventing unauthorized interception of encrypted traffic. However, it also interferes with network security tools that rely on TLS inspection, which works by decrypting and re-encrypting traffic using an intermediary certificate.
-          To maintain compatibility with applications that enforce certificate pinning, it may be necessary to configure bypass rules that exclude those destinations from TLS inspection. This allows the application to function as intended while preserving inspection capabilities for other traffic. 
-
       - question: Why do I receive the error "SSL certificate problem unable to get local issuer certificate" when using Git?
         answer: | 
           This error occurs because certain developer tools (such as Git) don't use the operating system's certificate store by default; instead, they maintain their own certificate store. One way to resolve this is to append the certificate to Git’s Certificate Authority bundle.
-          The following PowerShell script demonstrates how to do this on a Windows system.
-
+          The following PowerShell script demonstrates how to add the certificate to Git’s CA bundle on a Windows system.
           ```powershell
           # Define the path to your custom root Certificate Authorities
             $certPath = "./myTLSInspectionRootCA.crt"
@@ -63,10 +56,14 @@ sections:
           Write-Host "Git CA bundle path not found. Is Git installed and configured?"
           }
           ```
-
+      - question: What is certificate pinning, and how does it affect TLS inspection? 
+        answer: |
+          Certificate pinning is a security mechanism that restricts an application's TLS connections to a specific set of trusted certificates or public keys. Certificate pining ensures that the application only communicates with servers presenting those exact credentials, even if other certificates are valid and trusted by the system.
+          This technique helps defend against man-in-the-middle (MITM) attacks by preventing unauthorized interception of encrypted traffic. However, it also interferes with network security tools that rely on TLS inspection, which works by decrypting and re-encrypting traffic using an intermediary certificate.
+          
       - question: How should I handle applications that use certificate pinning? 
         answer: |
-        The connection fails if TLS inspection terminates traffic from applications that use certificate pinning. To ensure your applications work as expected, create a custom bypass rule in the traffic forwarding profile to exclude traffic from these applications from Global Secure Access. You can perform this operation as part of custom bypass in the [Internet access forwarding profile](/mem/intune/protect/compliance-custom-script). We're working on custom TLS rules to let you acquire traffic and bypass TLS inspection only.      
+          The connection fails if TLS inspection terminates traffic from applications that use certificate pinning. To ensure your applications work as expected, create a custom bypass rule in the traffic forwarding profile to exclude traffic from these applications from Global Secure Access. You can perform this operation as part of custom bypass in the [Internet access forwarding profile](/mem/intune/protect/compliance-custom-script). We're working on custom TLS rules to let you acquire traffic and bypass TLS inspection only.      
 
       - question: Is TLS 1.3 supported? 
         answer: Microsoft Entra TLS inspection enables TLS 1.2 and TLS 1.3 by default. The highest mutually supported version is selected for the session, from the client to Global Secure Access and from Global Secure Access to the destinations. Microsoft Entra doesn't support TLS 1.3 with Encrypted Client Hello (ECH) because the Server Name Indication (SNI) is encrypted, which prevents Global Secure Access from creating the corresponding leaf certificates for TLS termination.
