@@ -143,7 +143,7 @@ Admins can set a user as registered for an EAM or delete the registration on beh
 
 Via Microsoft Graph PowerShell
 
-* Use the following **sample script**. This script is an example only and you should customize it as needed before using it.
+Use the following sample script. This script is an example only and you should customize it as needed before using it.
 
 ```powershell
 # PowerShell script to call MSGraph API to register external auth method
