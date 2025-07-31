@@ -140,9 +140,9 @@ Users can follow these steps to register an EAM in Security info:
 
 ### How admins register an EAM for a user
 
-Admins can set a user as registered for an EAM or delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the method is available and the user does not need to register the method through inline or manual registration. Deleting the method enables the admin to help users that are enabled but not registered for additional methods in recovery scenarios, by having their next sign in trigger registration. Admins can mark a user as registered via Microsoft Graph or via the Microsoft Entra admin center using the following steps:
+Admins can set a user as registered for an EAM or delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the method is available and the user doesn't need to register the method through inline or manual registration. Deleting the method enables the admin to help users who are enabled but not registered for other methods in recovery scenarios, by having their next sign in trigger registration. Admins can mark a user as registered by using Microsoft Graph or the Microsoft Entra admin center
 
-Via Microsoft Graph PowerShell
+#### Microsoft Graph PowerShell
 
 Use the following sample script. This script is an example only and you should customize it as needed before using it.
 
@@ -313,7 +313,7 @@ $Token = Get-OAuthToken -TenantId $TenantId -ClientId $ServicePrincipalAppId -Cl
 Register-ExternalAuthMethod -Token $Token -ExternalAuthMethodConfigId $ExternalAuthMethodConfigId -Users $Users -BatchSize 2
 ```
 
-Via Microsoft Entra admin center
+#### Microsoft Entra admin center
 
 1. In the Microsoft Entra admin center, select **Users** > **All users**.
 1. Select the user who needs to be registered for EAM.
@@ -324,7 +324,11 @@ Via Microsoft Entra admin center
 
 ### Registration experience for end users
 
-On signing in, the user will be driven into the registration wizard. The user may then need to select **I want to set up a different method** in order to proceed. If the user has multiple external authentication methods enabled, they will be able to select from those methods. When ‘registering’, the user will have to authenticate with the external authentication method provider. If successful, this will result in the method being ‘registered’, and the user will be shown that they have completed registration. They will then be redirected to the resource they were attempting to access. If the authentication fails, the user will be redirected back to the proof-up wizard, and the page for registering the external method will provide an error message. The user will have the options to try again, or if there are other allowable methods, to choose to register a different method instead.  
+When they sign in, users are prompted to begin the registration wizard. Users can select **I want to set up a different method** to proceed. If a user enabled multiple EAMs, they can select from those methods. To register, the user needs to authenticate with the EAM provider. 
+
+If successful, the user can see that registration completed and the EAM is registered. They are redirected to the resource they wanted to access. 
+
+If the authentication fails, the user is redirected back to the registration wizard, and the registration page provides an error message. The user can try again, or chose another way to sign in if they registered other methods.  
 
 ## Using EAM and Conditional Access custom controls in parallel
 
