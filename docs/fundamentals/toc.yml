@@ -12,10 +12,8 @@ items:
     href: entra-admin-center.md
   - name: Trial user guide for Microsoft Entra Suite
     href: try-microsoft-entra-suite.md
-  - name: Identity fundamentals
-    href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
-    href: introduction-identity-access-management.md
+    href: identity-fundamental-concepts.md
 - name: Set up your tenant and directory
   expanded: true
   items:

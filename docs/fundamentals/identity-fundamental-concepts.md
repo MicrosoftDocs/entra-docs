@@ -55,7 +55,7 @@ Identities are categorized into three types:
 
 ## Authentication
 
-Authentication challenges a person, software component, or hardware device for credentials to verify their identity or prove they are who or what they claim to be. Authentication typically requires credentials such as a username and password, fingerprints, certificates, or one-time passcodes. Authentication is sometimes shortened to *AuthN*.
+Authentication challenges a person, software component, or hardware device for credentials to verify their identity or prove they're who or what they claim to be. Authentication typically requires credentials such as a username and password, fingerprints, certificates, or one-time passcodes. Authentication is sometimes shortened to *AuthN*.
 
 Multifactor authentication (MFA) is a security measure that requires users to provide more than one piece of evidence to verify their identity. Examples include:
 
