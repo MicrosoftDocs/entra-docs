@@ -180,9 +180,9 @@ In this section, you define a configuration for native authentication public cli
     ng generate component sign-up
     ```
 
-3. Open *src/app/components/sign-up/sign-up.component.ts* file, then replace its contents with the contents in [sign-up.component](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts)
+3. Open *sign-up/sign-up.component.ts* file, then replace its contents with the contents in [sign-up.component](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts)
 
-4. Open *src/app/components/sign-up/sign-up.component.html* file and add the code in [html file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
+4. Open *sign-up/sign-up.component.html* file and add the code in [html file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
 
     - The following logic in the *sign-up.component.ts* file determines what the user needs to do next after starting the sign-up process. Depending on the result, it shows either the password form or the verification code form in *sign-up.component.html* so the user can continue with the sign-up flow:
          ```typescript
@@ -215,12 +215,12 @@ In this section, you define a configuration for native authentication public cli
         </div>
         ```
 
-5. Open the *src/app/components/sign-up/sign-up.component.scss* file, then add the following [styles file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.scss).
+5. Open the *sign-up/sign-up.component.scss* file, then add the following [styles file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.scss).
 
 
 ### Automatically sign-in after sign-up (optional)
 
-- You can automatically sign in your users after a successful sign-up without starting a fresh sign-in flow. To do so, use the following code snippet. See a complete example at [/app/components/sign-up/sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
+- You can automatically sign in your users after a successful sign-up without starting a fresh sign-in flow. To do so, use the following code snippet. See a complete example at [sign-up/sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
     ```typescript
     if (this.signUpState instanceof SignUpCompletedState) {
@@ -240,7 +240,7 @@ In this section, you define a configuration for native authentication public cli
     }
     ```
 
-- When you autosign in a user, use the following snippet in your [/app/components/sign-up/sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html) html file.
+- When you autosign in a user, use the following snippet in your [sign-up/sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html) html file.
 
     ```html
     <div *ngIf="userData && !isSignedIn">

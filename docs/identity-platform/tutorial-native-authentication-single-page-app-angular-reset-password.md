@@ -41,9 +41,9 @@ In this tutorial, you:
     ng generate component reset-password
     ```
 
-1. Open the *src/app/components/reset-password/reset-password.component.ts* file and replace its contents with the contents from [reset-password.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.ts)
+1. Open the *reset-password/reset-password.component.ts* file and replace its contents with the contents from [reset-password.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.ts)
 
-1. Open the *src/app/components/reset-password/reset-password.component.html* file and add the contents from [reset-password.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.html).
+1. Open the *reset-password/reset-password.component.html* file and add the contents from [reset-password.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.html).
 
     - The following logic in *reset-password.component.ts* determines the next step after the initial reset password operation. Depending on the result, it displays the code entry form in *reset-password.component.html* to continue the password reset process:
 
@@ -93,7 +93,7 @@ In this tutorial, you:
         </div>
         ```
 
-1. Open the *src/app/components/reset-password/reset-password.component.scss* file, then add the contents from [reset-password.component.scss](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.scss).
+1. Open the *reset-password/reset-password.component.scss* file, then add the contents from [reset-password.component.scss](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/reset-password/reset-password.component.scss).
 
 ### Automatically sign-in after reset password (optional)
 

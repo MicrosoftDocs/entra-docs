@@ -38,9 +38,9 @@ In this tutorial, you:
     ng generate component sign-in
     ```
 
-1. Open the *src/app/components/sign-in/sign-in.component.ts* file and replace its contents with content from [sign-in.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.ts)
+1. Open the *sign-in/sign-in.component.ts* file and replace its contents with content from [sign-in.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.ts)
 
-1. Open the  *src/app/components/sign-in/sign-in.component.html* file and add the contents from [sign-in.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.html).
+1. Open the  *sign-in/sign-in.component.html* file and add the contents from [sign-in.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.html).
 
     - The following logic in *sign-in.component.ts* determines the next step after the initial sign-in attempt. Depending on the result, it displays either the password or one-time code form in *sign-in.component.html* to guide the user through the appropriate part of the sign-in process:     
 
@@ -72,7 +72,7 @@ In this tutorial, you:
         </form>
         ```
 
-4. Open the *src/app/components/sign-in/sign-in.component.scss* file and add the content from [sign-in.component.scss](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.scss).
+4. Open the *sign-in/sign-in.component.scss* file and add the content from [sign-in.component.scss](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-in/sign-in.component.scss).
 
 ## Update the routing module
 
