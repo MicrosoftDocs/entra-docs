@@ -7,7 +7,7 @@ manager: mwongerapk
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 07/24/2025
+ms.date: 04/25/2025
 ms.subservice: hybrid
 ms.author: jomondi
 ---
@@ -34,112 +34,15 @@ For more information on TPM technology, see [Trusted Platform Module technology 
 
  :::image type="content" source="media/authenticate-application-id/auth-1.png" alt-text="Diagram that shows authentication with application ID." lightbox="media/authenticate-application-id/auth-1.png":::
 
-We recommend the Microsoft Entra Connect  certificate management option because we manage the keys and automatically rotate the certificate on expiry. This behavior is the default option in Microsoft Entra Connect Sync versions equal to or higher than 2.5.3.0.
+We recommend the Microsoft Entra Connect certificate management option because we manage the keys and automatically rotate the certificate on expiry. This behavior is the default option in Microsoft Entra Connect Sync versions equal to or higher than 2.5.3.0.
 
-Microsoft Entra Connect Sync uses the scheduler to check if the certificate is due for rotation and then automatically rotate the certificate. If the scheduler is suspended, autorotation can't happen even though Microsoft Entra Connect Sync manages the certificate.
+We use the maintenance task to check if the certificate is due for rotation and then automatically rotate the certificate. If the scheduler is suspended or the maintenance task is disabled, autorotation can't happen even though Microsoft Entra Connect Sync manages the certificate.
 
 ## Bring Your Own Application
 
-In the Bring Your Own Application (BYOA) setup, the customer administrator manages the application that Microsoft Entra Connect Sync uses to authenticate to Microsoft Entra ID, the application permissions, and the certificate credential that the application uses.
+In the Bring Your Own Application (BYOA) setup, the customer administrator manages the application that Microsoft Entra Connect Sync uses to authenticate to Microsoft Entra, the application permissions, and the certificate credential that the application uses.
 
-The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application needs the required [permissions](#microsoft-graph-permissions-for-byoa) assigned. 
-
-The following section shows how to set up permissions for BYOA using Microsoft Graph API calls:
-  
-1. Update application `requiredResourceAccess` to configure required permissions on the application for Microsoft Entra AD Synchronization Service and Microsoft password reset service.
-
-     ```http 
-          PATCH /applications(appId='{appId}')
-          {
-               "requiredResourceAccess": [
-                    {
-                         "resourceAppId": "aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb",
-                         "resourceAccess": [
-                              {
-                                   "id": "fc7e8088-95b5-453e-8bef-b17ecfec5ba3",
-                                   "type": "Role"
-                              },
-                              {
-                                   "id": "e006e431-a65b-4f3e-8808-77d29d4c5f1a",
-                                   "type": "Role"
-                              },
-                              {
-                                   "id": "69201c67-737b-4a20-8f16-e0c8c64e0b0e",
-                                   "type": "Role"
-                              }
-                         ]
-                    },
-                    {
-                         "resourceAppId": "bbbbbbbb-2222-3333-4444-cccccccccccc",
-                         "resourceAccess": [
-                              {
-                                   "id": "ab43b826-2c7a-4aff-9ecd-d0629d0ca6a9",
-                                   "type": "Role"
-                              }
-                         ]
-                    }
-               ]
-          }
-          ```
-     
-1. Determine service principal identifier for the following applications:
-
-   - Connect Sync service principal.
-   - Microsoft Entra AD Synchronization Service service principal (appId=`bbbbbbbb-2222-3333-4444-cccccccccccc`)
-   - Microsoft password reset service service principal (appId=`aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb`) (might not exist if SSPR is not enabled on the tenant)
-
-     ```http
-     GET /servicePrincipals(appId='{appId}')
-     ```
-   Use `id` in the response wherever service principal identifier is needed in the next step.
-     
-1. Assign app roles to the application service principal:
-
-   1. Add an app role assignment for `ADSynchronization.ReadWrite.All`
-     
-      ```http
-      POST /servicePrincipals(appId='{appId}')/appRoleAssignments
-      {
-      "principalId": <ConnectSync application service principal identifier>,
-      "resourceId": <Microsoft Entra AD Synchronization Service service principal identifier>,
-      "appRoleId": "ab43b826-2c7a-4aff-9ecd-d0629d0ca6a9"
-      }
-      ```
-
-      If password writeback is enabled on the Connect Sync server, add the three app role assignments for password reset service.
-
-   1. Add the first app role assignments for password reset service:
-
-      ```http   
-      POST /servicePrincipals(appId='{appId}')/appRoleAssignments
-      {
-      "principalId": <ConnectSync application service principal identifier>,
-      "resourceId": <Microsoft password reset service service principal identifier>,
-      "appRoleId": "fc7e8088-95b5-453e-8bef-b17ecfec5ba3"
-      }
-      ```
-
-   1. Add the second app role assignment for password reset service:
-
-      ```http
-      POST /servicePrincipals(appId='{appId}')/appRoleAssignments
-      {
-      "principalId": <ConnectSync application service principal identifier>,
-      "resourceId": <Microsoft password reset service service principal identifier>,
-      "appRoleId": "e006e431-a65b-4f3e-8808-77d29d4c5f1a"
-      }
-      ```
-     
-   1. Add the third app role assignment for password reset service:
-
-      ```http
-      POST /servicePrincipals(appId='{appId}')/appRoleAssignments
-      {
-      "principalId": <ConnectSync application service principal identifier>,
-      "resourceId": <Microsoft password reset service service principal identifier>,
-      "appRoleId": "69201c67-737b-4a20-8f16-e0c8c64e0b0e"
-      }
-      ```
+The administrator [registers a Microsoft Entra app and creates a service principal](/graph/tutorial-applications-basics?tabs=http#register-an-application-with-microsoft-entra-id). The application needs the required [permissions](#microsoft-graph-permissions-for-byoa) assigned.
 
 The administrator is responsible for creating the certificate, rotation, and deletion of unused or expired certificates. The certificate must be stored in the `LOCAL_MACHINE` store.
 
@@ -151,7 +54,7 @@ In the Bring Your Own Certificate (BYOC) setup, the administrator manages the ce
 
 The administrator is responsible for securing the private key of the certificate and ensuring that only Microsoft Entra Connect Sync can access the private key for signing.
 
-We recommend that you use a TPM or a Hardware Security Module (HSM) to provide a hardware-based security boundary, as opposed to the default. To check the status of the TPM, use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm) PowerShell cmdlet.
+We recommend that you use a TPM or a Hardware Security Module (HSM) to provide a hardware-based security boundary, as opposed to the default. To check the status of your TPM, use the [Get-TPM](/powershell/module/trustedplatformmodule/get-tpm) PowerShell cmdlet.
 
 If you use Hyper-V virtual machines (VMs), you can enable the TPM by selecting **Security** > **Enable Trusted Platform Module**. You can do this step only on generation 2 VMs. Generation 1 VMs can't be converted to generation 2 VMs. For more information, see [Generation 2 VM security settings for Hyper-V](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v) and [Enable trusted launch on existing Azure Gen2 VMs](/azure/virtual-machines/trusted-launch-existing-vm).
 
@@ -166,8 +69,7 @@ The following prerequisites are required to implement authentication by using ap
 
 - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version [2.5.3.0](reference-connect-version-history.md) or greater.
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
-- Microsoft Entra Connect version 2.5.3.0 or greater (required for manual interactive onboarding)
-- Microsoft Entra Connect version 2.5.76.0 or greater (required for automatic onboarding)
+- On-premises Active Directory Domain Services environment with a Windows Server 2016 operating system or later.
 - Optional: TPM 2.0 present and ready to use (recommended for security).
 
 The following extra requirements are needed for the BYOC certificate management option:
@@ -187,27 +89,28 @@ The following extra requirements are needed for the BYOA application management 
 
 ## Installation and upgrade (managed by Microsoft Entra Connect)
 
-The Microsoft Entra Connect Sync managed application and credential is automatically set up during initial installation or manual interactive upgrades. To confirm that Microsoft Entra Connect is using the application identity, use the PowerShell cmdlet `Get-ADSyncEntraConnectorCredential`.
+The Microsoft Entra Connect Sync managed application and credential is automatically set up during initial installation for new installations. To confirm that Microsoft Entra Connect is using the application identity, use the PowerShell cmdlet `Get-ADSyncEntraConnectorCredential`.
 
  :::image type="content" source="media/authenticate-application-id/auth-2.png" alt-text="Screenshot that shows Get-ADSyncEntraConnectorCredential." lightbox="media/authenticate-application-id/auth-2.png":::
 
-## Onboard to application-based authentication
+For upgrades, select **Configure application based authentication to Microsoft Entra ID (Preview)**.
 
-### Automatic configuration
+ :::image type="content" source="media/authenticate-application-id/auth-3.png" alt-text="Screenshot that shows configuring application-based authentication." lightbox="media/authenticate-application-id/auth-3.png":::
 
-Starting with version 2.5.76.0 or higher, the service will automatically configure application authentication within a six-hour window if the service is using username and password to authenticate to Microsoft Entra ID.
+ If you didn't select the box during upgrade, the following recommendation appears after installation finishes.
 
-If application authentication wasn't automatically configured, you can switch to application-based authentication manually using the following options.
+ :::image type="content" source="media/authenticate-application-id/auth-5.png" alt-text="Screenshot that shows recommendation." lightbox="media/authenticate-application-id/auth-5.png":::
 
-If you want to configure application-based authentication using the recommended option (Managed by Microsoft Entra Connect), you can use the wizard or PowerShell. However, if you want to configure application based authentication using BYOC or BYOA, you must use PowerShell.
+If you didn't select the box during upgrade or you want to switch to application-based authentication, use **Tasks**.
 
-### Manually - Using the wizard
-
-On the **Additional tasks** pane, select **Configure application-based authentication to Microsoft Entra ID** and then follow the prompts.
+On the **Additional tasks** pane, select **Configure application based authentication to Microsoft Entra ID (Preview)** and then follow the prompts.
 
  :::image type="content" source="media/authenticate-application-id/auth-4.png" alt-text="Screenshot that shows configuring application-based authentication on the Additional tasks pane." lightbox="media/authenticate-application-id/auth-4.png":::
 
-### Manually - Using PowerShell
+### Onboard to application-based authentication by using PowerShell
+
+This section is relevant only if you use the BYOC or BYOA options.
+Microsoft Entra Connect versions lower than 2.5.3.0 use a username and password by default to authenticate to Microsoft Entra ID. To onboard to application-based authentication, an administrator must perform the following steps on a Microsoft Entra Connect Sync version equal to or higher than 2.5.3.0.
 
 > [!NOTE]
 > Ensure that you're on the Microsoft Entra Connect server and that the Microsoft Entra Connect Sync PowerShell module is installed.
@@ -218,7 +121,7 @@ On the **Additional tasks** pane, select **Configure application-based authentic
      Get-ADSyncEntraConnectorCredential
      ```
 
-    This step should return the `ConnectorIdentityType` value currently in use, and the value must be `ServiceAccount` to proceed.
+    This step should return the `ConnectorIdentityType` value currently in use.
 
 1. Disable the scheduler to ensure that no sync cycles run until this change is completed.
     
@@ -243,7 +146,7 @@ On the **Additional tasks** pane, select **Configure application-based authentic
          Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash>
          ```
 
-        Replace `<CertificateSHA256Hash>` with `CertificateSHA256Hash`.
+        Replace `&lt;CertificateSHA256Hash&gt;` with `CertificateSHA256Hash`.
 
     - Use BYOA:
 
@@ -266,10 +169,10 @@ On the **Additional tasks** pane, select **Configure application-based authentic
      - Use BYOA:
     
         ``` powershell
-         Add-ADSyncApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash> –ApplicationAppId <appId>
+         Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash> –ApplicationAppId <appId>
         ```
 
-    Replace `<CertificateSHA256Hash>` with `CertificateSHA256Hash` and `<appId>` with the ID of the application that was created in Microsoft Entra ID.
+    Replace `&lt;CertificateSHA256Hash&gt;` with `CertificateSHA256Hash` and `&lt;appId&gt;` with the ID of the application that was created in Microsoft Entra ID.
 
 1. Run a verification to confirm that you're now using application identity. Run the following cmdlet to get the current authentication and ensure that it has the `ConnectorIdentityType` value as `Application`.
 
@@ -285,16 +188,10 @@ On the **Additional tasks** pane, select **Configure application-based authentic
 
 1. [Remove the Directory Synchronization Account (DSA) from Microsoft Entra ID (recommended)](#remove-a-legacy-service-account-by-using-powershell).
 
-## View the current authentication configuration
+## View the certificate
 
-To view the current authentication configuration, go to **Tasks** and then select **View or export current configuration**. 
+ To view the certificate information, go to **Tasks** and then select **View or export current configuration**. Scroll down to the certificate details. The following table provides information about the certificate.
 
-If the server is configured to use application-based authentication, you should be able to see the application (client) ID as shown in the following screenshot.
-
-:::image type="content" source="media/authenticate-application-id/authentication-client-id.png" alt-text="Screenshot that shows the client ID." lightbox="media/authenticate-application-id/authentication-client-id.png":::
-
- Scroll down to the certificate details. The following table provides information about the certificate.
- 
 |Property|Description|
 |-----|-----|
 |**Certificate managed by**|Whether Microsoft Entra Connect Sync or BYOC manages the certificate.|
@@ -309,17 +206,13 @@ If the server is configured to use application-based authentication, you should 
 
  :::image type="content" source="media/authenticate-application-id/auth-7.png" alt-text="Screenshot that shows the certificate." lightbox="media/authenticate-application-id/auth-7.png":::
 
-If the server is using username and password you should be able to see the account name as shown in the following screenshot.
-
-:::image type="content" source="media/authenticate-application-id/authentication-account-name.png" alt-text="Screenshot that shows the account name." lightbox="media/authenticate-application-id/authentication-account-name.png":::
-
 ## On-demand certificate rotation
 
 Microsoft Entra Connect warns if the certificate rotation is due. That is, if expiration is less than or equal to 150 days. It emits an error if the certificate is already expired. You can find these warnings (Event ID 1011) and errors (Event ID 1012) in the Application event log.
 
-This message is emitted at the scheduler frequency if the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if the scheduler is suspended.
+This message is emitted at the scheduler frequency if maintenance is enabled, and the scheduler isn't suspended. Run `Get-ADSyncSchedulerSettings` to see if the scheduler is suspended or maintenance is enabled or disabled.
 
-If Microsoft Entra Connect manages the certificate, *no action* is required from you unless the scheduler is suspended, Microsoft Entra Connect Sync adds the new certificate credential to the application and tries to remove the old certificate credential. If it fails to remove the old certificate credential, an error event appears in the Application logs in the Event Viewer.
+If Microsoft Entra Connect manages the certificate, *no action* is required from you unless the scheduler is suspended or maintenance is disabled. Microsoft Entra Connect Sync adds the new certificate credential to the application and tries to remove the old certificate credential. If it fails to remove the old certificate credential, an error event appears in the Application logs in the Event Viewer.
 
 If you see this error, run the following cmdlet in PowerShell to clean up the old certificate credential from Microsoft Entra. The cmdlet takes the `CertificateId` value of the certificate that must be removed, which you can obtain from the log or the Microsoft Entra admin center.
 
@@ -343,7 +236,7 @@ When you get a warning from Microsoft Entra Connect Sync when you use the BYOC o
      Set-ADSyncScheduler -SyncCycleEnabled $false
      ```
 
-1. Invoke certificate credential rotation when you use the Microsoft Entra Managed option (default mode) and the scheduler is suspended.
+1. Invoke certificate credential rotation when you use the Microsoft Entra Managed option (default mode) but the scheduler is suspended or maintenance is disabled.
 
      ``` powershell
      Invoke-ADSyncApplicationCredentialRotation
@@ -361,7 +254,7 @@ When you get a warning from Microsoft Entra Connect Sync when you use the BYOC o
      Add-EntraApplicationRegistration -CertificateSHA256Hash <CertificateSHA256Hash>
     ```
     
-    Replace `<CertificateSHA256Hash>` with the `CertificateSHA256Hash`.
+    Replace `&lt;CertificateSHA256Hash&gt;` with the `CertificateSHA256Hash`.
     
 1. Get the current authentication and confirm that it has the `ConnectorIdentityType` value as `Application`. Use the following PowerShell cmdlet to verify the current authentication:
 
@@ -455,7 +348,7 @@ Follow these steps to remove the legacy service account.
      $HACredential
      ```
 
- 1. You're prompted to enter the Microsoft Entra administrator `UserPrincipalName` value and the password. Enter the username and password.
+ 1. You're prompted to enter your Microsoft Entra administrator `UserPrincipalName` value and the password. Enter the username and password.
 
  1. Next, add the service account.
 
@@ -477,7 +370,7 @@ As part of the rollback, you need to re-create the DSA account. This new account
      Set-ADSyncScheduler -SyncCycleEnabled $false
      ```
 
-1. Add the service account. You're prompted to enter the Microsoft Entra administrator `UserPrincipalName` value and the password. Enter the credentials.
+1. Add the service account. You're prompted to enter your Microsoft Entra administrator `UserPrincipalName` value and the password. Enter the credentials.
 
      ``` powershell
     Add-ADSyncAADServiceAccount
