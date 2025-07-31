@@ -185,35 +185,35 @@ In this section, you define a configuration for native authentication public cli
 4. Open *src/app/components/sign-up/sign-up.component.html* file and add the code in [html file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html).
 
     - The following logic in the *sign-up.component.ts* file determines what the user needs to do next after starting the sign-up process. Depending on the result, it shows either the password form or the verification code form in *sign-up.component.html* so the user can continue with the sign-up flow:
-     ```typescript
-        const attributes: UserAccountAttributes = {
-                    givenName: this.firstName,
-                    surname: this.lastName,
-                    jobTitle: this.jobTitle,
-                    city: this.city,
-                    country: this.country,
-                };
-        const result = await client.signUp({
-                    username: this.email,
-                    attributes,
-                });
-    
-        if (result.isPasswordRequired()) {
-            this.showPassword = true;
-            this.showCode = false;
-        } else if (result.isCodeRequired()) {
-            this.showPassword = false;
-            this.showCode = true;
-        }
-    ```
+         ```typescript
+            const attributes: UserAccountAttributes = {
+                        givenName: this.firstName,
+                        surname: this.lastName,
+                        jobTitle: this.jobTitle,
+                        city: this.city,
+                        country: this.country,
+                    };
+            const result = await client.signUp({
+                        username: this.email,
+                        attributes,
+                    });
+        
+            if (result.isPasswordRequired()) {
+                this.showPassword = true;
+                this.showCode = false;
+            } else if (result.isCodeRequired()) {
+                this.showPassword = false;
+                this.showCode = true;
+            }
+        ```
 
     - If you want the user to start sign-in flow immeditaely after sign-up is completed, use this snippet:
 
-    ```html
-    <div *ngIf="isSignedUp">
-        <p>The user has been signed up, please click <a href="/sign-in">here</a> to sign in.</p>
-    </div>
-    ```
+        ```html
+        <div *ngIf="isSignedUp">
+            <p>The user has been signed up, please click <a href="/sign-in">here</a> to sign in.</p>
+        </div>
+        ```
 
 5. Open the *src/app/components/sign-up/sign-up.component.scss* file, then add the following [styles file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.scss).
 
