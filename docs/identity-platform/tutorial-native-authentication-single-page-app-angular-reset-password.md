@@ -58,12 +58,12 @@ In this tutorial, you:
 
         See how the above logic determined what UI is visible in the *reset-password.component.html* file:
         
-            ```html
-            <form *ngIf="showCode" (ngSubmit)="submitCode()">
-                <input type="text" [(ngModel)]="code" name="code" placeholder="OTP Code" required />
-                <button type="button" (click)="submitCode()" [disabled]="loading">{{ loading ? 'Verifying...' : 'Verify Code' }}</button>
-                </form>
-            ```
+        ```html
+        <form *ngIf="showCode" (ngSubmit)="submitCode()">
+            <input type="text" [(ngModel)]="code" name="code" placeholder="OTP Code" required />
+            <button type="button" (click)="submitCode()" [disabled]="loading">{{ loading ? 'Verifying...' : 'Verify Code' }}</button>
+            </form>
+        ```
 
     - After `submitCode()` is successfully invoked, the result determines the next step: if password is required, the new password form is displayed for the user to continue the password reset process.
 
@@ -133,14 +133,14 @@ When you autosign in a user, use the following snippet in your [reset-password.c
 
 Open the *src/app/app.routes.ts* file, then add the route for the password reset component:
 
-    ```typescript
-    import { ResetPasswordComponent } from './reset-password/reset-password.component';
+```typescript
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
-    const routes: Routes = [
-      { path: 'reset-password', component: ResetPasswordComponent },
-      ...
-    ];
-    ```
+const routes: Routes = [
+    { path: 'reset-password', component: ResetPasswordComponent },
+    ...
+];
+```
 
 ## Test the password reset functionality
 
