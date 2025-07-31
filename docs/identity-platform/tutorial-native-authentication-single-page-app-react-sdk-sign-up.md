@@ -460,7 +460,7 @@ if (signUpState instanceof SignUpCompletedState) {
 
 1. Open a web browser and navigate to `http://localhost:3000/sign-up`. A sign-up form appears.
 
-1. To sign up for an account, input your details, select the **Sign Up** button, then follow the prompts.
+1. To sign up for an account, input your details, select the **Continue** button, then follow the prompts.
 
 
 Next, you can update the React app to sign in a user or reset the user's password.

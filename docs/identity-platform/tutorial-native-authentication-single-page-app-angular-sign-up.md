@@ -218,7 +218,7 @@ In this section, you define a configuration for native authentication public cli
 5. Open the *src/app/components/sign-up/sign-up.component.scss* file, then add the following [styles file](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.scss).
 
 
-### Automatically sign-in after sign-up (Optional)
+### Automatically sign-in after sign-up (optional)
 
 - You can automatically sign in your users after a successful sign-up without starting a fresh sign-in flow. To do so, use the following code snippet. See a complete example at [/app/components/sign-up/sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
@@ -291,7 +291,7 @@ In this section, you define a configuration for native authentication public cli
 
 1. Open a web browser and navigate to `http://localhost:4200/sign-up`. A sign-up form appears.
 
-1. To sign up for an account, input your details, select the Sign Up button, then follow the prompts.
+1. To sign up for an account, input your details, select the **Continue** button, then follow the prompts.
 
 ## Next step
 
