@@ -174,7 +174,7 @@ Follow these steps to convert the SOA for a test group:
 
 1. Click **Connectors** and double-click the **Entra ID object** with "CN={\<Alphanumeric Characters\>}".
 
-1. You can see that the **blockOnPremisesSync** property is set to true on the Entra ID object. This property value means that any changes made in the corresponding Active Directory object don't flow to the Entra ID object:
+1. You can see that the **blockOnPremisesSync** property is set to true on the Entra ID object. This property value means that any changes made in the corresponding AD DS object don't flow to the Entra ID object:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/block.png" alt-text="Screenshot of how to block data flow.":::
 
@@ -243,18 +243,18 @@ else
 
 ### Status of attributes after you convert SOA
 
-The following table explains the status for **isCloudManaged** and **dirSyncEnabled** attributes you convert the SOA of an object.
+The following table explains the status for **isCloudManaged** and **onPremisesSyncEnabled** attributes you convert the SOA of an object.
 
-Admin step | isCloudManaged value | dirSyncEnabled value | Description  
+Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
-Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **dirSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
-Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **dirSyncEnabled** attribute value is set to `null`. 
-Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **dirSyncEnabled** is set to `null` until the sync client takes over the object.    
+Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
+Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **OnPremisesSyncEnabled** attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **OnPremisesSyncEnabled** is set to `null` until the sync client takes over the object.    
 
 ## Roll back SOA update
 
 > [!IMPORTANT] 
-> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to Active Directory. The sync client takes over the object in the next sync cycle.
+> Make sure that the groups that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the group to AD DS. The sync client takes over the object in the next sync cycle.
 
 You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
 
