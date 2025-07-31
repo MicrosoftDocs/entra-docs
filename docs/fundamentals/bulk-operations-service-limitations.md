@@ -106,8 +106,7 @@ foreach ($userRow in $usersData) {
         Write-Host "User $($userRow.UserPrincipalName) created successfully." 
     } catch { 
         Write-Host "Error creating user $($userRow.UserPrincipalName): $($_.Exception.Message)" 
-    } 
-} 
+    }  
 
 # Disconnect from Microsoft Graph 
 Disconnect-MgGraph 
