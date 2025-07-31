@@ -5,7 +5,7 @@ description: This article describes the steps required to install either cloud s
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: install-set-up-deploy
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid

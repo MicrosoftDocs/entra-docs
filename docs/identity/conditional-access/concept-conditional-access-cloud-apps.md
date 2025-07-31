@@ -9,7 +9,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:07/25/2025
   - ai-gen-description
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/25/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo

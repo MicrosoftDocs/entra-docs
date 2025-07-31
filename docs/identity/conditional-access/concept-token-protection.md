@@ -3,7 +3,7 @@ title: Microsoft Entra Conditional Access token protection explained
 description: Learn how to secure your environment with token protection in Microsoft Entra Conditional Access policies.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/27/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo

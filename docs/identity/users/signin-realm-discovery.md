@@ -5,7 +5,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
-ms.topic: conceptual
+ms.topic: article
 ms.date: 12/17/2024
 ms.author: barclayn
 ms.reviewer: kexia

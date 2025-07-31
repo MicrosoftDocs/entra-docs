@@ -3,7 +3,7 @@ title: How to verify that users are set up for mandatory Microsoft Entra multifa
 description: Steps to verify mandatory multifactor authentication for users who sign in to Azure and other management portals.
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/31/2025
 ms.author: justinha
 author: najshahid
