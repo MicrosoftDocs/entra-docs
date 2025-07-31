@@ -21,7 +21,7 @@ EAMs differ from federation in that the user identity is originated and managed 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
 >[!IMPORTANT]
->Between 9/1/25 and 9/30/25, we are releasing a new improvement to the EAM feature that requires a backend migration to ensure a seamless experience. To minimize impact to your organization, this migration will be performed on behalf of tenants. As a result of this migration, some users in your organization may experience limited impact to their authentication experience. For more information, see [Authentication method registration for EAMs](#authentication-method-registration-for-eams).
+>Between 9/1/25 and 9/30/25, a new improvement is available for EAM. The improvement requires a backend migration to ensure a seamless experience. To minimize impact to your organization, this migration is performed on your behalf. Some users in your organization might experience limited impact to their authentication experience. For more information, see [Authentication method registration for EAMs](#authentication-method-registration-for-eams).
 
 ## Required metadata to configure an EAM
 To create an EAM, you need the following information from your external authentication provider:
@@ -133,10 +133,10 @@ The next section cover common questions and answers.
 Users can follow these steps to register an EAM in Security info:
 
 1. Sign into [Security info](https://mysignins.microsoft.com/security-info)
-1. Select "add sign-in method"
-1. When prompted to select a sign-in method from a list of available options, select External Auth methods
-1. Select next at the confirmation screen
-1. Complete the second factor challenge with the external provider. If successful, the user will now find the EAM listed in their sign-in methods. 
+1. Select **+ Add sign-in method**.
+1. When prompted to select a sign-in method from a list of available options, select **External Auth methods**.
+1. Select **Next** at the confirmation screen.
+1. Complete the second factor challenge with the external provider. If successful, users can see the EAM listed in their sign-in methods. 
 
 ### How admins register an EAM for a user
 
