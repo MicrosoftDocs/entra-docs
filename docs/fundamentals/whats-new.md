@@ -24,13 +24,13 @@ This article provides information about the latest releases and change announcem
 
 ##  July 2025
 
-### General Availability - Application Based Authentication on Microsoft Entra Connect Sync
+### General Availability - Microsoft Entra External ID: Custom 3rd party email OTP provider
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management   
 **Product capability:** 3rd Party Integration 
 
-Use a 3rd Party Email OTP Provider to customize the Email OTP notifications for sign-in and sign-up flows for Entra External ID. A new "Custom Email OTP Provider" Custom Authentication Extension allows you to use Azure Communication Service (ACS) or a 3rd party provider, such as SendGrid, to maintain branding consistency through your end user authentication experiences. For more information, see: [Configure a custom email provider for one time passcode send events](../identity-platform/custom-extension-email-otp-get-started.md).
+Use a 3rd Party Email OTP Provider to customize the Email OTP notifications for sign-in and sign-up flows for Microsoft Entra External ID. A new "Custom Email OTP Provider" Custom Authentication Extension allows you to use Azure Communication Service (ACS) or a 3rd party provider, such as SendGrid, to maintain branding consistency through your end user authentication experiences. For more information, see: [Configure a custom email provider for one time passcode send events](../identity-platform/custom-extension-email-otp-get-started.md).
 
 ---
 
