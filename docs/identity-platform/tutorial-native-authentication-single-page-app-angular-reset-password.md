@@ -172,4 +172,4 @@ const routes: Routes = [
 
 ## Related content
 
-- [Tutorial: Support web fallback in native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md).
+- [Tutorial: Support web fallback in native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md?tabs=angular).

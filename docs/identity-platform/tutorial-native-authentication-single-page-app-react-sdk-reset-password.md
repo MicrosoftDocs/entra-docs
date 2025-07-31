@@ -282,6 +282,4 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 ## Related content
 
-- [Set up a reverse proxy for a single-page app that uses MSAL JS SDK with native authentication by using Azure Function App](how-to-native-authentication-cors-solution-test-environment.md).
-- [Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses MSAL JS SDK with native authentication](how-to-native-authentication-cors-solution-production-environment.md).
-- [MSAL JS SDK Reference](/javascript/api/overview/msal-overview).
+- [Tutorial: Support web fallback in native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md?tabs=react).
