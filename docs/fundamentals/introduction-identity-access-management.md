@@ -1,17 +1,16 @@
 ---
 title: What is identity and access management (IAM)?
 description:  Learn what identity and access management (IAM) is, why it's important, and how it works.  Learn about authentication and authorization, single sign-on (SSO), and multifactor authentication (MFA). Learn about SAML, Open ID Connect (OIDC), and OAuth 2.0 and other authentication and authorization standards, tokens, and more.
-author: cilwerner
-manager: CelesteDG
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: dougeby
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 03/13/2025
-ms.author: cwerner
 ms.reviewer: 
 ---
-
 # What is identity and access management (IAM)?
 
 In this article, you learn some of the fundamental concepts of Identity and Access Management (IAM), why it's important, and how it works.
@@ -20,23 +19,7 @@ Identity and access management ensures that the right people, machines, and soft
 
 To learn about the basic terms and concepts, see [Identity fundamentals](./identity-fundamental-concepts.md).
 
-## What does IAM do?
 
-IAM systems typically provide the following core functionality:
-
-- **Identity management** - The process of creating, storing, and managing identity information. Identity providers (IdP) are software solutions that are used to track and manage user identities, as well as the permissions and access levels associated with those identities.
-
-- **Identity federation** - You can allow users who already have passwords elsewhere (for example, in your enterprise network or with an internet or social identity provider) to get access to your system.
-
-- **Provisioning and deprovisioning of users** - The process of creating and managing user accounts, which includes specifying which users have access to which resources, and assigning permissions and access levels.
-
-- **Authentication of users** - Authenticate a user, machine, or software component by confirming that they're who or what they say they are. You can add multifactor authentication (MFA) for individual users for extra security or single sign-on (SSO) to allow users to authenticate their identity with one portal instead of many different resources.
-
-- **Authorization of users** - Authorization ensures a user is granted the exact level and type of access to a tool that they're entitled to. Users can also be portioned into groups or roles so large cohorts of users can be granted the same privileges.
-
-- **Access control** - The process of determining who or what has access to which resources. This includes defining user roles and permissions, as well as setting up authentication and authorization mechanisms. Access controls regulate access to systems and data.
-
-- **Reports and monitoring** - Generate reports after actions taken on the platform (like sign-in time, systems accessed, and type of authentication) to ensure compliance and assess security risks. Gain insights into the security and usage patterns of your environment.
 
 ## How IAM works
 
