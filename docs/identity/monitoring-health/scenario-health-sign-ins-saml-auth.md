@@ -45,11 +45,9 @@ There are different roles, permissions, and license requirements to view health 
 
 1. Select the **Health Monitoring** tab.
 
-1. Select the **Sign-ins to applications using SAML authentication** scenario and then select an active alert.
+1. Select the **Sign-ins to applications using SAML authentication** scenario and then select an active alert from the page that opens.
 
-    :::image type="content" source="media/scenario-health-sign-ins-saml-auth/health-monitoring-saml-authentication.png" alt-text="Screenshot of the SAML Health monitoring scenario." lightbox="media/scenario-health-sign-ins-saml-auth/health-monitoring-saml-authentication-expanded.png":::
-
-1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
+    :::image type="content" source="media/scenario-health-sign-ins-saml-auth/saml-alert.png" alt-text="Screenshot of the SAML Health monitoring scenario." lightbox="media/scenario-health-sign-ins-saml-auth/saml-alert.png":::
 
 1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
 
@@ -102,4 +100,5 @@ If the dip in sign-ins affects a large group of users:
 
 ## Related content
 
-- LINKS
+- [SAML authentication with Microsoft Entra ID](../../architecture/auth-saml.md)
+- [Investigate Microsoft Entra Health monitoring alerts](howto-investigate-health-scenario-alerts.md)
