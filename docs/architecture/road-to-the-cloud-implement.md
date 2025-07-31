@@ -7,7 +7,7 @@ manager: martinco
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 08/25/2024
+ms.date: 07/30/2025
 ms.author: jricketts
 ms.custom: references_regions
 ---

@@ -53,7 +53,7 @@ To transform groups and distribution lists:
 - For business logic that assigns users to security groups, evaluate whether you can migrate the logic to Entra ID and use dynamic membership groups.
 - For self-managed group capabilities provided by Microsoft Identity Manager, replace the capability with self-service group management.
 - You can [convert distribution lists to Microsoft 365 groups](/microsoft-365/admin/create-groups/office-365-groups) in Outlook. This approach is a great way to give your organization's distribution lists all the features and functionality of Microsoft 365 groups. 
-- Upgrade your [distribution lists to Microsoft 365 groups in Outlook](https://support.microsoft.com/office/7fb3d880-593b-4909-aafa-950dd50ce188) and [decommission your on-premises Exchange server](/exchange/decommission-on-premises-exchange).
+- Upgrade your [distribution lists to Microsoft 365 groups in Outlook](https://support.microsoft.com/office/7fb3d880-593b-4909-aafa-950dd50ce188).
 
 ### Move provisioning of users and groups to applications
 
