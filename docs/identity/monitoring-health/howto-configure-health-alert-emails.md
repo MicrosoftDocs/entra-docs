@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 07/30/2025
+ms.date: 07/31/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -149,19 +149,24 @@ The following example shows a basic request to subscribe to changes to Health Mo
 
 ### Example subscription request
 
-<!-- {
-  "blockType": "request",
-  "name": "change-notifications-subscriptions-example"
-}-->
 ```http
-POST https://graph.microsoft.com/v1.0/subscriptions
+POST https://graph.microsoft.com/**beta**/subscriptions
 Content-Type: application/json
 {
-  "changeType": "created,updated",
+  "changeType": "created",
   "notificationUrl": "https://webhook.azurewebsites.net/notificationClient",
   "lifecycleNotificationUrl": "https://webhook.azurewebsites.net/api/lifecycleNotifications",
-  "resource": "/me/mailfolders('inbox')/messages",
-  "expirationDateTime": "2016-03-20T11:00:00.0000000Z",
+  "resource": "/reports/healthmonitoring/alerts",
+  "expirationDateTime": "2025-08-30T11:00:00.0000000Z",
   "clientState": "SecretClientState"
 }
 ```
+
+If you want to subscribe to notifications for only one specific alert type, amend the request to include the following details:
+
+`"notificationQueryOptions":"$filter=alertType eq 'mfaSignInFailure'`
+
+## Related content
+
+- [Set up notifications for changes in resource data](/graph/change-notifications-overview)
+- [Configure email notifications for alerts](/graph/api/healthmonitoring-alertconfiguration-update?view=graph-rest-beta&preserve-view=true)
