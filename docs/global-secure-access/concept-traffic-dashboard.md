@@ -4,7 +4,7 @@ description: Monitor the health and status of your network traffic with the Glob
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/29/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted

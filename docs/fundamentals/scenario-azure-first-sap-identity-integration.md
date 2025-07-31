@@ -5,7 +5,7 @@ author: xstof
 manager: alberts
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: article
 ms.date: 08/26/2021
 ms.author: christoc
 ms.custom: sfi-image-nochange

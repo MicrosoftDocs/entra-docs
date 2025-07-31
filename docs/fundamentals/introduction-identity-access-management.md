@@ -6,7 +6,7 @@ manager: CelesteDG
 
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/13/2025
 ms.author: cwerner
 ms.reviewer: 

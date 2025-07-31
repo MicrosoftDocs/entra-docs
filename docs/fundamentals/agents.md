@@ -7,7 +7,7 @@ author: MicrosoftGuyJFlo
 ms.date: 04/25/2025
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ---
 # Microsoft Security Copilot agents in Microsoft Entra
 

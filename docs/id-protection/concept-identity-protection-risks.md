@@ -4,7 +4,7 @@ description: Explore the full list of risk detections and their corresponding ri
 
 ms.service: entra-id-protection
 
-ms.topic: reference
+ms.topic: article
 ms.date: 07/16/2025
 
 author: shlipsey3

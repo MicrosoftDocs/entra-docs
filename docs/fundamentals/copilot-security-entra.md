@@ -8,7 +8,7 @@ author: cilwerner
 ms.author: cwerner
 manager: celestedg
 ms.date: 12/10/2024
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra
 ms.custom: microsoft-copilot, ignite-2024
 ms.collection: ce-skilling-ai-copilot
