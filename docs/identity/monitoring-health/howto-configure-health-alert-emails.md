@@ -141,11 +141,11 @@ Content-Type: application/json
 
 ## Configure webhook notifications
 
-Change notifications let applications receive alerts when a Microsoft Graph resource is created, updated, or deleted. These notifications differ from email notifications because notifications are sent to an HTTPS endpoint, not an email address. Currently you can receive change notifications through webhooks.
+Microsoft Graph change notifications allow your application to receive real-time alerts whenever a resource is created, updated, or deleted. Unlike email notifications, these alerts are delivered directly to a secure HTTPS endpoint that you specify, making them ideal for automated workflows and integrations. Currently, change notifications for health monitoring alert *creations* are supported through webhooks. Microsoft Graph supports notifications for create, update, and delete operations, but at this time only alert creation notifications are available for health monitoring alerts.
+ 
+To start receiving notifications, your application sends a `POST` request to the /`subscriptions` endpoint to subscribe to a specific resource, in this case, health monitoring alerts. Microsoft Graph then validates the request and confirms the subscription. Once the subscription is active, Microsoft Graph sends a notification to your designated endpoint whenever the subscribed resource is created. For more information, see [Microsoft Graph change notifications](/graph/change-notifications-overview).
 
-First, the client app sends a **POST** request to the `/subscriptions` endpoint to subscribe to health monitoring alerts. The change notification service validates and confirms the subscription. When a new alert is created, updated, or deleted, Microsoft Graph sends that notification to the specified endpoint. For more information, see [Microsoft Graph change notifications](/graph/change-notifications-overview).
-
-After receiving a notification, you should investigate the associated alert details, either through the Microsoft Entra admin center or through the Microsoft Graph API. For more information, see [How to investigate health scenario alerts](howto-investigate-health-scenario-alerts.md). You might need to delay this investigation to allow for enrichment data to be available. 
+After receiving a notification, you should investigate the alert either through the Microsoft Entra admin center or through the Microsoft Graph API. If you need to assess the alert's impact, we recommend either polling or introducing a short delay before calling the health monitoring alert API for impact assessment data to be available. For more information, see [How to investigate health scenario alerts](howto-investigate-health-scenario-alerts.md).
 
 The following example shows a basic request to subscribe to changes to Health Monitoring alert changes.
 
