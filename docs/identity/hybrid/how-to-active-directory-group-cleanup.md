@@ -21,8 +21,6 @@ First you determine whether each group needs to be managed with an AD-based mana
 
 There are multiple ways to determine whether a group is no longer needed. In some cases, the scream test indicates that a group is still required, and whether to manage it in Microsoft Entra ID or the AD DS domain.
 
-:::image type="content" source="media/active-directory-group-cleanup/paths.png" alt-text="Screenshot of a flowchart diagram showing the process for cleaning up AD DS groups.":::
-
 ## Scope of applicability
 
 - This article focuses on Security and Distribution List (DL) groups in
