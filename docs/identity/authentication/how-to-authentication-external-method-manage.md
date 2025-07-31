@@ -113,15 +113,16 @@ If the user has no other methods enabled, they can just choose the EAM. They're 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/sign-in.png" alt-text="Screenshot of how to sign in with an EAM.":::
 
 ## Authentication method registration for EAMs
-In the EAM preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA. Users who are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
+In the EAM preview, all users who are included in groups that are enabled for EAM are capable to use an EAM to satisfy MFA. These users aren't included in reports on authentication method registration.
 
->[!NOTE]
->We're actively rolling out the registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Microsoft Entra ID before they will be prompted to use it to satisfy MFA. As part of this roll out, some users may experience a change in behavior at authentication time depending on their current authentication setup. Users who have not authenticated with their EAM in the past 28 days will experience one of the following scenarios depending on which category they fall into:
+Rollout of EAM registration in Microsoft Entra ID is in progress. After the rollout is finished, users who previously used an EAM need to register the EAM again with Microsoft Entra ID before they can use it to satisfy MFA. 
 
-> | Users | Experience |
-> |------|------------|
-> | EAM only | Users need to register their EAM authentication method before they can continue.|
-> | EAM and other methods | Users might lose access to EAM for authentication. There's two ways to regain access:<br>- They register their EAM at [Security info](https://mysignins.microsoft.com/security-info) <br>An admin must register the EAM on their behalf |
+If they didn't sign in with their EAM in the past 28 days, some users might see a change the next time they sign in, depending on their current authentication setup:
+
+- If they registered only an EAM, they need to register their EAM authentication method before they can continue.
+- If they registered an EAM and other methods, they might lose access to the EAM for authentication. There's two ways to regain access:
+  - They register their EAM at [Security info](https://mysignins.microsoft.com/security-info)
+  - An admin must register the EAM on their behalf 
 
 ## FAQ
 
