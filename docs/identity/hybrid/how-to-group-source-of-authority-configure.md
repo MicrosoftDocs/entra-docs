@@ -59,7 +59,7 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 1.	Click the profile icon, and select **Consent to permissions**.
 1.	Search for Group-OnPremisesSyncBehavior, and click **Consent** for the permission.
 
-   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission.":::
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-group-source-of-authority-configure/consent.png":::
 
 ### Workaround for granting permission to apps
 

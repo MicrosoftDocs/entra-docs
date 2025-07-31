@@ -2,7 +2,7 @@
 author: justinha
 ms.service: entra-id-governance
 ms.topic: include
-ms.date: 07/28/2025
+ms.date: 07/30/2025
 ms.author: justinha
 # Used by articles entra governance
 ---
