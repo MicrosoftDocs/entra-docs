@@ -59,7 +59,7 @@ Recommendations for the customer stakeholders that should attend the workshop ar
 |**Roadmap Mapping <br/> <br/> Duration: 6 hours**| • Customer has a tailored adoption roadmap to implement the Microsoft Entra Suite | • Delivery expert leads working sessions to walk through the baseline adoption roadmap identified by Microsoft and fills it out based on customer requirements and constraints | • Customer has a customized deployment path with concrete deployment steps and decisions to make |
 |**Closeout <br/> <br/> Duration: 1 hour**| • Gather customer feedback about the workshop <br/> • Identify other stages to deliver | • Customer fills out [feedback survey](https://aka.ms/EntraSuiteWorkshop/feedback) | • Workshop feedback survey is completed |
 
-While doing the roadmap mapping phase, each recommendation will provide details on the implementation effort and user impact. 
+During the roadmap mapping phase, each recommendation will include information on the implementation effort required and the impact on users.
 
 The definitions for implementation effort are as follows:  
 - **High**: Customer IT and Security Operations teams must implement programs that require continuous time or resource investment.  
