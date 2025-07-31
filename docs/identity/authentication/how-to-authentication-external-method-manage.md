@@ -4,7 +4,7 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/29/2025
+ms.date: 07/31/2025
 ms.author: justinha
 author: emakedon23
 manager: dougeby
@@ -118,10 +118,10 @@ In the EAM preview, all users in an include group for the EAM are considered MFA
 >[!NOTE]
 >We're actively rolling out the registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Microsoft Entra ID before they will be prompted to use it to satisfy MFA. As part of this roll out, some users may experience a change in behavior at authentication time depending on their current authentication setup. Users who have not authenticated with their EAM in the past 28 days will experience one of the following scenarios depending on which category they fall into:
 
-> | User | Experience |
+> | Users | Experience |
 > |------|------------|
-> | EAM only | Will be prompted to complete just-in-time registration of their EAM authentication method before continuing as usual.|
-> | EAM and other methods | May lose access to EAM for authentication. There's two ways to regain access:<br>- The user must register their EAM at [Security info](https://mysignins.microsoft.com/security-info) <br>An admin must register the EAM on behalf of the user |
+> | EAM only | Users need to register their EAM authentication method before they can continue.|
+> | EAM and other methods | Users might lose access to EAM for authentication. There's two ways to regain access:<br>- They register their EAM at [Security info](https://mysignins.microsoft.com/security-info) <br>An admin must register the EAM on their behalf |
 
 ## FAQ
 
@@ -141,8 +141,176 @@ Users can follow these steps to register an EAM in Security info:
 
 Admins can set a user as registered for an EAM or delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the method is available and the user does not need to register the method through inline or manual registration. Deleting the method enables the admin to help users that are enabled but not registered for additional methods in recovery scenarios, by having their next sign in trigger registration. Admins can mark a user as registered via Microsoft Graph or via the Microsoft Entra admin center using the following steps:
 
-Via Microsoft Graph
+Via Microsoft Graph PowerShell
+
 * Use the following **sample script**. This script is an example only and you should customize it as needed before using it.
+
+```powershell
+# PowerShell script to call MSGraph API to register external auth method
+ 
+# How to create ServicePrinciple AppId and give permission for User Auth method read write operation
+# 1. Create ServicePrincipal AppId:
+#    - Go to Azure Portal (https://portal.azure.com/)
+#    - Navigate to "Azure Active Directory" -> "App registrations" -> "New registration"
+#    - Enter a name for the application and select "Accounts in this organizational directory only"
+#    - click "Register"
+#    - After creation, note down the Application (client) ID 
+#    - Go to "Certificate & secrets" and create a new client secret, note down the client secret
+#
+# 2. Give permission for User Auth method read write operation:
+#    - In the registered application, navigate to "API permissions" -> "Add a permission"
+#    - Select "Microsoft Graph" -> "Application permissions"
+#    - Add permissions for "UserAuthenticationMethod.ReadWrite.All"
+#    - Click "Grant admin consent" to grant the permissions
+# 3. Run the PowerShell script, Follow the steps
+#    - Save the Script file on your computer. For Example: C:\ExternalAuth\RegisterExternalAuth.ps1
+#    - Open PowerShell on your computer. You can do this by searching for "PowerShell" in the Start menu and selecting "Windows PowerShell".
+#    - Use the cd command to navigate to the directory where you saved the script. For example: cd C:\ExternalAuth
+#    - Execute the script by providing the required parameters. Here is an example of how to call the script:
+#      .\RegisterExternalAuth.ps1 -TenantId "<Your-AzureActiveDirectoryTenantId> -ServicePrincipalAppId "<Your-ServicePrincipalAppId>" -ServicePrincipalAppSecret "<Your-ServicePrincipalAppSecret>" -ExternalAuthMethodConfigId "<Your-ExternalAuthMethodConfigId>" -Users @("<UserObjectId1>", "<UserObjectId2>", "<UserObjectId3>")
+#    - Make sure to replace <Your-AzureActiveDirectoryTenantId>,<Your-ServicePrincipalAppId>, <Your-ServicePrincipalAppSecret>, <Your-ExternalAuthMethodConfigId>, and the user object Ids with the actual values
+#
+# *. Here is a PowerShell script to query all users' object IDs using the Microsoft Graph API and store them in an array. Further, this array can be passed as parameter to the main script.
+#    $userObjectIds = @()
+#    $usersResponse = Invoke-RestMethod -Uri "https://graph.microsoft.com/v1.0/users" -Headers @{Authorization = "Bearer $Token"} -Method Get
+#    foreach ($user in $usersResponse.value) {
+#        $userObjectIds += $user.id
+#    }
+#    $Users = $userObjectIds
+ 
+ 
+param (
+    [Parameter(Mandatory=$true, HelpMessage="The tenant ID of your Azure Active Directory")]
+    [string]$TenantId,
+    [Parameter(Mandatory=$true, HelpMessage="The Application (client) ID of the ServicePrincipal")]
+    [string]$ServicePrincipalAppId,
+    [Parameter(Mandatory=$true, HelpMessage="The secret key of the ServicePrincipal")]
+    [string]$ServicePrincipalAppSecret,
+    [Parameter(Mandatory=$true, HelpMessage="The configuration ID for the external authentication method")]
+    [string]$ExternalAuthMethodConfigId,
+    [Parameter(Mandatory=$true, HelpMessage="List of user object Ids in array format")]
+    [array]$Users
+)
+ 
+# Function to get OAuth token
+function Get-OAuthToken {
+    param (
+        [string]$TenantId,
+        [string]$ClientId,
+        [string]$ClientSecret
+    )
+    $body = @{
+        grant_type    = "client_credentials"
+        scope         = "https://graph.microsoft.com/.default"
+        client_id     = $ClientId
+        client_secret = $ClientSecret
+    }
+    $response = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$TenantId/oauth2/v2.0/token" -Method Post -ContentType "application/x-www-form-urlencoded" -Body $body
+    return $response.access_token
+}
+ 
+# Function to register external auth method using MSGraph Batch API
+function Register-ExternalAuthMethod {
+    param (
+        [string]$Token,
+        [string]$ExternalAuthMethodConfigId,
+        [array]$Users,
+        [int]$BatchSize
+    )
+ 
+    $graphApiVersion = "beta"
+    $totalUsers = $Users.Count
+    $batches = [math]::Ceiling($totalUsers / $BatchSize)
+ 
+    # Initialize counters and lists for tracking results
+    $successfulBatches = 0
+    $failedBatches = 0
+    $successfulUsers = 0
+    $failedUsers = @()
+    for ($i = 0; $i -lt $batches; $i++) {
+        $startIndex = $i * $BatchSize
+        $endIndex = [math]::Min($startIndex + $BatchSize, $totalUsers)
+        $batchUsers = $Users[$startIndex..($endIndex-1)]
+ 
+        # Create batch request body
+        $requests = @()
+        foreach ($userGuid in $batchUsers) {
+            $requests += @{
+                id = ($userGuid).ToString()
+                method = "POST"
+                url = "/users/$userGuid/authentication/externalAuthenticationMethods"
+                headers = @{
+					"Content-Type" = "application/json"
+                }
+                body = @{
+                    configurationId = $ExternalAuthMethodConfigId
+                }
+            }
+        }
+        # Send batch request
+        try {
+ 
+            $batchBody = @{
+                requests = $requests
+            }
+ 
+            $headers = @{
+                "Authorization" = "Bearer $Token"
+                "Content-Type" = "application/json"
+            }
+ 
+            $response = Invoke-RestMethod -Uri "https://graph.microsoft.com/$graphApiVersion/`$batch" -Method Post -Headers $headers -Body ($batchBody | ConvertTo-Json -Depth 5)
+ 
+            $batchFailedUsers = 0
+            # Check response for success and failure
+            foreach ($result in $response.responses) {
+                if ($result.status -In 200..204) {
+                    $successfulUsers++
+                } else {
+                    $batchFailedUsers++
+                    $failedUsers += $result.id.split('/')
+                }
+            }
+ 
+            # Increment successful batch counter if all users succeeded, otherwise increment failed batch counter
+            if ($batchFailedUsers -eq 0) {
+                $successfulBatches++
+            } else {
+                $failedBatches++
+            }
+        } catch {
+            # Print error message and increment failed batch counter in case of exception
+            Write-Host "Error in batch $($i+1): $_"
+ 
+            # Increment failed batch counter in case of exception
+            $failedBatches++
+            foreach ($userGuid in $batchUsers) {
+                $failedUsers += $userGuid
+            }
+        }
+ 
+ 
+        # Show progress of batch execution
+        Write-Progress -Activity "Registering External Auth Method" -Status "Processing batch $($i+1) of $batches" -PercentComplete (($i+1) / $batches * 100)
+ 
+        Start-Sleep -Seconds 2
+ 
+    }
+ 
+    # Show final results
+    Write-Host "Batch Execution Results:"
+    Write-Host "Successful Batches: $successfulBatches"
+    Write-Host "Failed Batches: $failedBatches"
+    Write-Host "Successful Users: $successfulUsers"
+    Write-Host "Failed Users: $(($failedUsers | Measure-Object).Count)"
+    Write-Host "Failed User GUIDs: $(($failedUsers | Out-String))"
+}
+ 
+# Main script execution
+$Token = Get-OAuthToken -TenantId $TenantId -ClientId $ServicePrincipalAppId -ClientSecret $ServicePrincipalAppSecret
+ 
+Register-ExternalAuthMethod -Token $Token -ExternalAuthMethodConfigId $ExternalAuthMethodConfigId -Users $Users -BatchSize 2
+```
 
 Via Microsoft Entra admin center
 
