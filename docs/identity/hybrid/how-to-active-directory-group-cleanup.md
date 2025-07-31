@@ -1,6 +1,6 @@
 ---
-title: How to clean up unused Active Directory groups in a single domain
-description: Step-by-step guide to identifying, triaging, and removing unused security and distribution groups in Active Directory using a structured scream test methodology. Improve security and reduce administrative burden by cleaning up groups no longer needed in your domain.
+title: How to clean up unused Active Directory Domain Services (AD DS) groups in a single domain
+description: Step-by-step guide to identifying, triaging, and removing unused security and distribution groups in Active Directory Domain Services (AD DS) using a structured scream test methodology. Improve security and reduce administrative burden by cleaning up groups no longer needed in your domain.
 author: Justinha
 manager: dougeby
 ms.topic: how-to
@@ -9,24 +9,24 @@ ms.author: justinha
 ms.reviewer: justinha
 ---
 
-# Clean up unused Active Directory groups in a single domain
+# Clean up unused Active Directory Domain Services groups in a single domain
 
-One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory domains. An organization might create security groups for projects, but over time, they're no longer needed. These groups can linger unmaintained in the domain. 
+One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory Domain Services (AD DS) domains. An organization might create security groups for projects, but over time, they're no longer needed. These groups can linger unmaintained in the domain. 
 
 There's no way to confirm if a particular group is needed to access an app or a file. So we need another way to identify and clean up these groups that are no longer needed.
 
-This article outlines how to use a *scream test* methodology to clean up groups from an Active Directory domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from being synced into Microsoft Entra. 
+This article outlines how to use a *scream test* methodology to clean up groups from an AD DS domain. Cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from being synced into Microsoft Entra. 
 
-First you determine whether each group needs to be managed with an AD-based management tool like **Active Directory Users and Computers**, or managed in the cloud with Microsoft Entra admin center or Exchange Online, or if it might not be needed. If the group might not be needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the Active Directory domain.
+First you determine whether each group needs to be managed with an AD-based management tool like **Active Directory Users and Computers**, or managed in the cloud with Microsoft Entra admin center or Exchange Online, or if it might not be needed. If the group might not be needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the AD DS domain.
 
-There are multiple ways to determine whether a group is no longer needed. In some cases, the scream test indicates that a group is still required, and whether to manage it in Microsoft Entra ID or the Active Directory domain.
+There are multiple ways to determine whether a group is no longer needed. In some cases, the scream test indicates that a group is still required, and whether to manage it in Microsoft Entra ID or the AD DS domain.
 
-:::image type="content" source="media/active-directory-group-cleanup/paths.png" alt-text="Screenshot of a flowchart diagram showing the process for cleaning up Active Directory groups.":::
+:::image type="content" source="media/active-directory-group-cleanup/paths.png" alt-text="Screenshot of a flowchart diagram showing the process for cleaning up AD DS groups.":::
 
 ## Scope of applicability
 
 - This article focuses on Security and Distribution List (DL) groups in
-  an Active Directory topology, with a single forest, single domain.
+  an AD DS topology, with a single forest, single domain.
   Multiforest, non-AD environments, and local groups on domain-joined
   computers, are outside the scope of this version of the article.
 
@@ -35,7 +35,7 @@ There are multiple ways to determine whether a group is no longer needed. In som
   Groups that contain computers, contacts, or other objects as members
   are outside the scope of this article.
 
-- This article focuses on groups created in Active Directory by using Active Directory Users and Computers, Microsoft Identity Manager (MIM), or other identity management tools. This article doesn't cover Built-in groups, or groups that get created by other products.
+- This article focuses on groups created in AD DS by using Active Directory Users and Computers, Microsoft Identity Manager (MIM), or other identity management tools. This article doesn't cover Built-in groups, or groups that get created by other products.
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ These prerequisites must be completed before you start to remove unused groups w
 
 - You need to be able to change the scope of Microsoft Entra Connect Sync or Cloud Sync to include or exclude groups.
 
-- You need to create a Group Policy Object (GPO) for all writable domain controllers to enable logging of Active Directory object modifications, and set up a central repository for collected logs. For more information, see: 
+- You need to create a Group Policy Object (GPO) for all writable domain controllers to enable logging of AD DS object modifications, and set up a central repository for collected logs. For more information, see: 
   - [Configure audit policies for Windows event logs](/defender-for-identity/deploy/configure-windows-event-collection)
   - [Event 5136: A directory service object was modified](/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-5136)
   - [Collect Windows events from virtual machine with Azure Monitor](/azure/azure-monitor/vm/data-collection-windows-events)
@@ -77,14 +77,14 @@ groups. The order can be based on factors like:
 - Group type (security group, mail-enabled security group, or distribution list)
 - Group organizational unit (OU)
 - Group size and membership
-- Group nesting (the group is a member of another group in the Active Directory domain)
+- Group nesting (the group is a member of another group in the AD DS domain)
 
 Select a reasonable size batch of untriaged groups for analysis. Based upon the type of each group, see the next sections for steps to analyze it for potential cleanup:
 
-- [Analysis for a Distribution List or Mail-ennabled security group](#analysis-for-a-distribution-list-or-mail-ennabled-security-group)
+- [Analysis for a Distribution List or Mail-enabled security group](#analysis-for-a-distribution-list-or-mail-enabled-security-group)
 - [Analysis for a security group](#analysis-for-a-security-group)
 
-### Analysis for a Distribution List or Mail-ennabled security group
+### Analysis for a Distribution List or Mail-enabled security group
 
 1. See if an owner is set for the group in Exchange or Exchange Online. Contact the owner of the group to determine if the group is still needed.
 
@@ -101,7 +101,7 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
 1. If the group is a DL, then even if the members of the group are in Microsoft Entra, the group Source of Authority (SOA) can't be converted to Microsoft Entra. You should perform a cloud scream test and the successor tests. When complete, the options are:
 
    - If you still need the group, replace it with an Exchange Online DL or a Microsoft 365 group.
-   - If the group isn't needed, remove it from the Active Directory domain, and don't replace it. 
+   - If the group isn't needed, remove it from the AD DS domain, and don't replace it. 
 
    Contact your Exchange administrator to determine which option to proceed with.
 
@@ -110,7 +110,7 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
    - Replace with a Microsoft 365 group.
    - Create separate DL and security group, and process each one separately.
    - Update the group type so it's either a security group or a DL instead of a MESG.
-   - Remove the group from the Active Directory domain and don't replace it.
+   - Remove the group from the AD DS domain and don't replace it.
 
    Contact your Exchange administrator to determine if the group is still needed for Exchange purposes. If you still need the group for Exchange, replace it with a Microsoft 365 group, or create separate DL and security group, and process each one separately. Otherwise, assume that the group only needs to be a security group, or it's no longer needed, and proceed with the analysis for a security group.
 
@@ -205,7 +205,7 @@ user being a member of a security group.
    group.
 
 1. If there are no complaints, delete the group. The deleted group goes
-   to the Active Directory Recycle Bin.
+   to the **Active Directory Recycle Bin**.
 
 ## Related content
 

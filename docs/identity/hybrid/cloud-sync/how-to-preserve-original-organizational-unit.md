@@ -37,10 +37,10 @@ You can also store the OU information in some other attribute also like *info* o
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Provisioning** > **Cloud Sync**. 
-2. Select your Cloud Sync configuration. 
-3. Under **Attribute Mapping**, for Group objects: 
-   - Click **Edit Mapping** 
-   - Add a new mapping: 
+1. Select your Cloud Sync configuration. 
+1. Under **Attribute Mapping**, for Group objects: 
+   1. Click **Edit Mapping** 
+   1. Add a new mapping: 
 
      | Setting | Value |
      |---------|-------|

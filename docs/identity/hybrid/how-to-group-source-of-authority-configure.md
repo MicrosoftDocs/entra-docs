@@ -247,7 +247,7 @@ The following table explains the status for **isCloudManaged** and **onPremisesS
 
 Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
-Admin syncs an object from AD to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
+Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
 Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **OnPremisesSyncEnabled** attribute value is set to `null`. 
 Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **OnPremisesSyncEnabled** is set to `null` until the sync client takes over the object.    
 
@@ -268,11 +268,11 @@ You can run this operation to roll back the SOA update and revert the SOA to on-
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/rollback.png" alt-text="Screenshot of API call to revert SOA.":::
 
 > [!NOTE]
-> This change to "isCloudManaged: false" allows an AD object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is complete only happens after *both* the API call and the next scheduled or forced run of Connect Sync.
+> This change to "isCloudManaged: false" allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is complete only happens after *both* the API call and the next scheduled or forced run of Connect Sync.
 
 ### Validate the change in the Audit Logs
 
-Select activity as **Undo changes to Source of Authority from AD to cloud**:
+Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/audit-undo-changes.png" alt-text="Screenshot of Undo Changes in Audit Logs.":::
 
