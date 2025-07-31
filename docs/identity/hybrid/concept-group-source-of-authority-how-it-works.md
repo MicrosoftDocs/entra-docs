@@ -4,7 +4,7 @@ description: Learn how to convert group management from Active Directory Domain 
 author: justinha
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/30/2025
+ms.date: 07/31/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
@@ -12,7 +12,7 @@ ms.reviewer: dahnyahk
 
 You can convert the Source of Authority (SOA) of a group from Active Directory Domain Services (AD DS) to Microsoft Entra ID. After you convert the SOA, the group becomes cloud-owned, and you can map it to a corresponding cloud group type in the cloud. For a list of supported groups types, see [How to manage cloud security groups](concept-group-source-of-authority-guidance.md#how-to-manage-cloud-security-groups).
 
-## Block sync from AD to Microsoft Entra ID after SOA change
+## Block sync from AD DS to Microsoft Entra ID after SOA change
 
 After you convert the group SOA and it becomes a cloud group, the latest versions of Microsoft Entra Connect Sync and Microsoft Entra Cloud Sync honor the SOA setting. They don't continue to sync the group. When you no longer need the AD DS group, you can delete it rather than remove it as out-of-scope in your scoping filters.
 
@@ -22,7 +22,7 @@ To provision a security group cloud that's not mail-enabled back to AD DS and sy
 
 When Microsoft Entra Cloud Sync provisions a security group to AD DS, it recognizes when existing domain groups previously had SOA applied and are provisioned from Microsoft Entra ID to AD DS. The security identifier (SID) value correlates them together. Therefore, provisioning the cloud security group to AD DS does so to the original AD group (if it exists). If it doesn’t find a match in AD DS, it creates a new on-premises security group.
 
-## Delete and restore groups in Active Directory Domain Services (AD DS)
+## Delete and restore groups in AD DS
 
 Let's suppose you delete an on-premises group in AD DS. Later, you decide to provision the group with the same SID to the AD DS domain using Microsoft Entra Cloud Sync. In this case, you need to be sure that the **Active Directory Recycle Bin** is enabled. You should restore the group from the **Active Directory Recycle Bin** before you add it to the scope for group provisioning to AD DS.
 

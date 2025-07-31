@@ -2,7 +2,7 @@
 author: justinha
 ms.service: entra-id-governance
 ms.topic: include
-ms.date: 07/30/2025
+ms.date: 07/31/2025
 ms.author: justinha
 # Used by articles entra governance
 ---
@@ -13,8 +13,8 @@ The following prerequisites are required to implement this scenario.
 
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
 
-- On-premises Active Directory Domain Services (AD DS DS) environment with Windows Server 2016 operating system or later.
-  - Required for AD DS DS schema attribute - *msDS-ExternalDirectoryObjectId*.
+- On-premises Active Directory Domain Services (AD DS) environment with Windows Server 2016 operating system or later.
+  - Required for AD DS schema attribute - *msDS-ExternalDirectoryObjectId*.
 
 - Provisioning agent with build version [1.1.1367.0](~/identity/hybrid/cloud-sync/reference-version-history.md#1113700) or later.
 
@@ -49,13 +49,13 @@ For this scenario, only the following groups are supported:
 - Assigned or dynamic membership groups.
 - Contain on-premises synchronized users or cloud-created security groups.
 - On-premises synchronized users that are members of the cloud-created security group can be from the same domain or other domains from the same forest
-- The forest must support Universal groups because the cloud-created security group is written back to AD DS DS with [Universal group scope ](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope)
+- The forest must support Universal groups because the cloud-created security group is written back to AD DS with [Universal group scope ](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope)
 - No more than 50,000 members
 - Each direct child nested group counts as one member in the referencing group
 
-## Considerations when provisioning groups back to AD DS DS
+## Considerations when provisioning groups back to AD DS
 
-If you provision a group back to AD DS DS after you convert Group SOA, provision it back to its original organizational unit (OU). This practice ensures that Microsoft Entra Cloud Sync recognizes the converted group as the same one already in AD DS DS.
+If you provision a group back to AD DS after you convert Group SOA, provision it back to its original organizational unit (OU). This practice ensures that Microsoft Entra Cloud Sync recognizes the converted group as the same one already in AD DS.
 
 Cloud Sync recognizes the converted group because both groups share the same security identifier (SID). If you provision the group to a different OU, it maintains the same SID, and Microsoft Entra Cloud Sync updates the existing group, but you might experience problems with access control lists. Permissions don't always transfer cleanly across containers and only explicit permissions are provisioned with the group. Inherited permissions from the original OU or Group Policy Object permissions applied to the OU don't get provisioned with the group.
 
@@ -63,14 +63,14 @@ Before you convert the SOA, consider the following recommended steps:
 
 1. Move the groups you plan to convert the SOA for to specific organizational units if possible. If you can't move the groups, set the OU path for each group to the original OU path before you convert SOA of the groups. For more information about how to set the original OU path, see [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Make the SOA change.
-1. When provisioning the groups to AD DS DS, set the attribute mapping as explained in [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
+1. When provisioning the groups to AD DS, set the attribute mapping as explained in [Preserve and use the original OU for group provisioning](../../identity/hybrid/cloud-sync/how-to-preserve-original-organizational-unit.md).
 1. Perform an on-demand provisioning first before enabling provisioning for rest of the groups. 
 
 For more information about how to configure the target location for groups that are provisioned to AD DS, see [Scope filter target container](/entra/identity/hybrid/cloud-sync/how-to-attribute-mapping-entra-to-active-directory#scoping-filter-target-container).
 
-## Govern on-premises AD DS DS based apps using Group SOA
+## Govern on-premises AD DS based apps using Group SOA
 
-In this scenario, when a group in the AD DS domain is used by an application, you can convert the SOA of the group to Microsoft Entra. Then you can provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD DS DS by using Microsoft Entra Cloud Sync. In this model, you don’t need to change the app or create new groups.
+In this scenario, when a group in the AD DS domain is used by an application, you can convert the SOA of the group to Microsoft Entra. Then you can provision the membership changes to the group made in Microsoft Entra, such as through entitlement management or access reviews, back to AD DS by using Microsoft Entra Cloud Sync. In this model, you don’t need to change the app or create new groups.
 
 :::image type="content" source="media/governance-on-premises-active-directory-apps/source-of-authority-switch.png" alt-text="Screenshot of a conceptual diagram of the switch to Group Source of Authority.":::
 
