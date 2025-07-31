@@ -30,7 +30,15 @@ sections:
           - Define a TLS policy: Configure a TLS inspection policy that aligns with your organization's security and operational requirements.
           - Configure Conditional Access: Create a Conditional Access policy and associate it with the Global Secure Access security profile linked to the TLS policy.
           - Distribute the trusted certificate: Ensure the selected certificate authority is installed on all client devices to establish trust and enable seamless TLS inspection.
-  
+        
+      - question: How do I Sign CSR Using the Active Directory Certificate Services (AD CS)
+        answer: |
+          TLS inspection requires an intermediate certificate authority, ensure you are using the Subordinate CA template. To sign CSR generated from TLS settings,
+          you may use AD CS web enrollment UI or use the certreq command-line tool. 
+          ```cmd
+          certreq -submit -attrib "CertificateTemplate:SubCA" "C:\pathtoyourCSR\tlsca.csr" "tlsca.cer"
+          ```
+
       - question: Why do I receive the error "SSL certificate problem unable to get local issuer certificate" when using Git?
         answer: | 
           This error occurs because certain developer tools (such as Git) don't use the operating system's certificate store by default; instead, they maintain their own certificate store.
