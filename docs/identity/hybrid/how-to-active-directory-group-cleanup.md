@@ -56,16 +56,16 @@ These prerequisites must be completed before you start to remove unused groups w
 
 The goal for group analysis is to review and confirm which of the groups in a domain are:
 
-- Needed for an AD-integrated application and managed by using an
-  AD-integrated tool.
+- Needed for an AD DS-integrated application and managed by using an
+  AD DS-integrated tool.
 
-- Needed for an AD-integrated application and managed by using
+- Needed for an AD DS-integrated application and managed by using
   Microsoft Entra or Exchange Online, with the membership written back
   to Microsoft Entra.
 
-- Potentially no longer needed in the AD domain, but is needed in services that are connected to Microsoft Entra, and could be maintained solely in Microsoft Entra.
+- Potentially no longer needed in the AD DS domain, but is needed in services that are connected to Microsoft Entra, and could be maintained solely in Microsoft Entra.
 
-- Not needed by any applications that are integrated with AD or Microsoft Entra.
+- Not needed by any applications that are integrated with AD DS or Microsoft Entra.
 
 The first step is to identify and categorize the groups in your domains
 that need triage. For large organizations with many
@@ -192,7 +192,7 @@ To perform a Kerberos scream test, follow these steps:
 This test determines if there are LDAP apps that rely upon a
 user being a member of a security group.
 
-1. Move group to the OU for groups in LDAP scream test.
+1. Move group to the OU for groups in the LDAP scream test.
 
 1. Remove members from the group. For example, move the members to another new group temporarily.
 
