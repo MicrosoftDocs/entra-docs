@@ -28,7 +28,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Set up CORS proxy server to manage CORS headers for native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-set-up-local-cors.md).
+- Complete the steps in [Tutorial: Sign up users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md).
 - [Enable self-service password reset (SSPR)](../external-id/customers/how-to-enable-password-reset-customers.md) for customer users in the external tenant. SSPR is available for customer users for apps that use email with password authentication flow.
 
 ## Create UI components

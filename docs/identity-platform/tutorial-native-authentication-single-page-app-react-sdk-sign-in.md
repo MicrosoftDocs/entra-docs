@@ -271,7 +271,7 @@ One of the errors that can result from the `signIn()` method is `result.error?.i
 
 ## Run and test your app
 
-Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-set-up-local-cors.md#run-and-test-you-app) to run your app, then test sign-in flow. 
+Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-your-app) to run your app, then test sign-in flow. 
 
 ## Related content
 

@@ -1,5 +1,5 @@
 ---
-title: Set up CORS proxy server to manage headers for SPA with native authentication
+title: Set Up CORS Proxy Server to Manage Headers for SPA With Native Authentication JavaScript SDK
 description: Learn how to set up a CORS proxy server for single-page application that uses native authentication API.
 
 author: kengaderdus
