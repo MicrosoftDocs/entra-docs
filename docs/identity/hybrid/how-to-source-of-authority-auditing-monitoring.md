@@ -4,7 +4,7 @@ description: Learn how to audit and monitor Group Source of Authority (SOA) in M
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/23/2025
+ms.date: 07/30/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -40,10 +40,10 @@ The [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior) he
 You can also call the onPremisesSyncBehavior API to query how many groups converted their SOA to cloud-managed:
 
 ```https
-GET groups/%GROUP_ID%/onPremisesSyncBehavior?$select=id,isCloudManaged
+GET groups/{ID}/onPremisesSyncBehavior?$select=id,isCloudManaged
 ```
 
-You can use $search and $count to view all group objects with converted SOA. Before you can use $search or $count, you need to set consistencyLevel = eventual in **Request headers** in Microsoft Graph Explorer:
+You can use $search and $count to view all group objects with converted SOA. Before you can use $filter or $count, you need to set consistencyLevel = eventual in **Request headers** in Microsoft Graph Explorer:
 
 ```https
 GET groups?$filter=onPremisesSyncBehavior/isCloudManaged eq true&$select=id,displayName,isCloudManaged&$count=true
