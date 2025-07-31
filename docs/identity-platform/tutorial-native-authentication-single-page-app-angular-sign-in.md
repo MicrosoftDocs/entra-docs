@@ -1,6 +1,6 @@
 ---
 title: Sign In Users in Angular SPA by Using Native Authentication JavaScript SDK
-description: Learn how to build Angular single-page app that signs in users into an external tenant by using native authentication JavaScript SDK .
+description: Learn how to build Angular single-page app that signs in users into an external tenant by using native authentication JavaScript SDK.
 
 author: kengaderdus
 manager: dougeby
@@ -58,8 +58,9 @@ In this tutorial, you:
                 this.userData = result.data;
             }
         ```
+        - The SDK's instance method, `signIn()` starts the sign-in flow.
 
-        See how the above logic determined wht UI is visible in *sign-in.component.html*:
+        - In the *sign-in.component.html* file:
 
         ```html
         <form *ngIf="showPassword" (ngSubmit)="submitPassword()">

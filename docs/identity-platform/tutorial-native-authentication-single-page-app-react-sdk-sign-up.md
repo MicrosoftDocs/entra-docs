@@ -141,7 +141,7 @@ In the code, find the placeholder:
 
 ## Create UI components
 
-This app collects user details such as given name, username (email), password and a one-time passcode from the user. So, the app needs to have a form that collects this information.
+This app collects user details such as given name, username (email), password, and a one-time passcode from the user. So, the app needs to have a form that collects this information.
 
 1. Create a folder called *src/app/sign-up* in the *src* folder.
 

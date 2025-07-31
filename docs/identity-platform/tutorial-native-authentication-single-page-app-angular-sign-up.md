@@ -1,6 +1,6 @@
 ---
-title: Sign up users into a Angular SPA by using native authentication SDK
-description: Learn how to build a Angular single-page application that uses native authentication JavaScript SDK to sign up users.
+title: Sign up users into an Angular SPA by using native authentication SDK
+description: Learn how to build an Angular single-page application that uses native authentication JavaScript SDK to sign up users.
 
 author: kengaderdus
 manager: dougeby
@@ -9,26 +9,26 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 07/30/2025
-#Customer intent: As a developer, I want to build a Angular single-page application that uses native authentication's JavaScript SDK so that I can sign up users with email with password or email one-timepasscode authentication menthods
+#Customer intent: As a developer, I want to build an Angular single-page application that uses native authentication's JavaScript SDK so that I can sign up users with email with password or email one-timepasscode authentication menthods
 ---
 
-# Tutorial: Sign up users into a Angular single-page app by using native authentication JavaScript SDK (preview)
+# Tutorial: Sign up users into an Angular single-page app by using native authentication JavaScript SDK (preview)
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this tutorial, you learn how to build a Angular single-page app that signs up users by using native authentication's JavaScript SDK.
+In this tutorial, you learn how to build an Angular single-page app that signs up users by using native authentication's JavaScript SDK.
 
 In this tutorial, you:
 
 >[!div class="checklist"]
-> - Create a Angular Next.js project.
+> - Create an Angular Next.js project.
 > - Add MSAL JS SDK to it.
 > - Add UI components of the app.
 > - Setup the project to sign up users.
 
 ## Prerequisites
 
-- Complete the steps in [Quickstart: Sign in users in a Angular single-page app by using native authentication JavaScript SDK](quickstart-native-authentication-single-page-app-sdk-sign-in.md?tabs=angular). This quickstart shows you run a sample Angular code sample.
+- Complete the steps in [Quickstart: Sign in users in an Angular single-page app by using native authentication JavaScript SDK](quickstart-native-authentication-single-page-app-sdk-sign-in.md?tabs=angular). This quickstart shows you run a sample Angular code sample.
 - Complete the steps in [Set up CORS proxy server to manage CORS headers for native authentication](how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md).
 - [Visual Studio Code](https://visualstudio.microsoft.com/downloads/) or another code editor.
 - [Node.js](https://nodejs.org/en/download/).
@@ -206,8 +206,9 @@ In this section, you define a configuration for native authentication public cli
                 this.showCode = true;
             }
         ```
+        The SDK's instance method, `signUp()` starts the sign-up flow.
 
-    - If you want the user to start sign-in flow immeditaely after sign-up is completed, use this snippet:
+    - If you want the user to start sign-in flow immediately after sign-up is completed, use this snippet:
 
         ```html
         <div *ngIf="isSignedUp">
@@ -220,7 +221,7 @@ In this section, you define a configuration for native authentication public cli
 
 ### Automatically sign-in after sign-up (optional)
 
-- You can automatically sign in your users after a successful sign-up without starting a fresh sign-in flow. To do so, use the following code snippet. See a complete example at [sign-up/sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
+You can automatically sign in your users after a successful sign-up without starting a fresh sign-in flow. To do so, use the following code snippet. See a complete example at [sign-up/sign-up.component.ts](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.ts):
 
     ```typescript
     if (this.signUpState instanceof SignUpCompletedState) {
@@ -240,7 +241,7 @@ In this section, you define a configuration for native authentication public cli
     }
     ```
 
-- When you autosign in a user, use the following snippet in your [sign-up/sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html) html file.
+When you autosign in a user, use the following snippet in your [sign-up/sign-up.component.html](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/angular-sample/src/app/components/sign-up/sign-up.component.html) html file.
 
     ```html
     <div *ngIf="userData && !isSignedIn">

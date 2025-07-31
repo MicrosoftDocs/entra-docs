@@ -33,7 +33,7 @@ In this tutorial, you:
 
 ## Create UI components
 
-During password reset flow, this app, collects the user's username (email), a one-time passcode, and a new user password on different screens. In this section, you create the forms that collects the information the app requires to reset the password.
+During password reset flow, this app, collects the user's username (email), a one-time passcode, and a new user password on different screens. In this section, you create the forms that collect the information the app requires to reset the password.
 
 1. Create a folder called *src/app/reset-password*.
 

@@ -1,6 +1,6 @@
 ---
 title: Sign in users in React SPA by using native authentication JavaScript SDK
-description: Learn how to build a React single-page app that signs in users in a React single-page app into an external tenant by using native authentication JavaScript SDK .
+description: Learn how to build a React single-page app that signs in users in a React single-page app into an external tenant by using native authentication JavaScript SDK.
 
 author: kengaderdus
 manager: dougeby
@@ -38,9 +38,9 @@ In this section, you create the form that collects the user's sign-in informatio
 
 1. Create *sign-in/components/InitialForm.tsx* file, then paste the code from [sign-in/components/InitialForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/InitialForm.tsx). This component displays a form that collects a user's username (email). 
 
-1. In your choice of authentication method is email and one-time passcode, create a *sign-in/components/CodeForm.tsx* file, then paste the code from [sign-in/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/CodeForm.tsx). If the administrator set email one-time passcode as the sign-in flow in the Microsoft Entra admin center, this component displays a form to collect the one-time passcode from the user. 
+1. If your choice of authentication method is email and one-time passcode, create a *sign-in/components/CodeForm.tsx* file, then paste the code from [sign-in/components/CodeForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/CodeForm.tsx). If the administrator sets email one-time passcode as the sign-in flow in the Microsoft Entra admin center, this component displays a form to collect the one-time passcode from the user. 
 
-1. In your choice of authentication method is email and password, create a *sign-in/components/PasswordForm.tsx* file, then paste the code from [sign-in/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/CodeForm.tsx). This component displays a form that collects a user's password.
+1. If your choice of authentication method is email and password, create a *sign-in/components/PasswordForm.tsx* file, then paste the code from [sign-in/components/PasswordForm.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-up/components/CodeForm.tsx). This component displays a form that collects a user's password.
 
 1. Create a *sign-in/components/UserInfo.tsx* file, then paste the code from [sign-in/components/UserInfo.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/sign-in/components/UserInfo.tsx). This component displays a signed-in user's username and sign-in status. 
 

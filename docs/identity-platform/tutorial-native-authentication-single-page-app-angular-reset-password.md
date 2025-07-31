@@ -1,6 +1,6 @@
 ---
 title: Reset Password in Angular SPA App by Using Native Authentication JavaScript SDK
-description: Learn how to build a Angular single-page app that enables users to reset their passwords by using native authentication JavaScript SDK.
+description: Learn how to build an Angular single-page app that enables users to reset their passwords by using native authentication JavaScript SDK.
 
 author: kengaderdus
 manager: dougeby
@@ -55,8 +55,8 @@ In this tutorial, you:
                     this.showNewPassword = false;
                 }
         ```
-
-        See how the above logic determined what UI is visible in the *reset-password.component.html* file:
+        - The SDK's instance method, resetPassword() starts the password reset flow.
+        - In the *reset-password.component.html* file:
         
         ```html
         <form *ngIf="showCode" (ngSubmit)="submitCode()">
@@ -76,7 +76,7 @@ In this tutorial, you:
         }
         ```
 
-        See how the above logic determined what UI is visible in the *reset-password.component.html* file:
+       In the *reset-password.component.html* file:
 
     ```html
       <form *ngIf="showNewPassword" (ngSubmit)="submitNewPassword()">
@@ -85,7 +85,7 @@ In this tutorial, you:
       </form>
     ```
 
-    - If you want the user to start sign-in flow immeditaely after reset password is completed, use this snippet:
+    - If you want the user to start sign-in flow immediately after reset password is completed, use this snippet:
 
         ```html
         <div *ngIf="isReset">
@@ -157,7 +157,7 @@ const routes: Routes = [
 
 1. Open a web browser and navigate to `http://localhost:4200/reset-password`. A sign-up form appears.
 
-1. To reset passwor for an exisitng account, input your details, select the **Continue** button, then follow the prompts.
+1. To reset password for an existing user account, input your details, select the **Continue** button, then follow the prompts.
 
 ## Set up `poweredByHeader: false` in next.config.js
 

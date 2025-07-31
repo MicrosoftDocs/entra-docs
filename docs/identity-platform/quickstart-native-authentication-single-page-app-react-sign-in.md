@@ -15,7 +15,7 @@ ms.date: 02/07/2025
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](reference-native-authentication-api.md). The sample app demonstrates user sign-up, sign-in, sign-out and password reset with an email and a password.
+In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](reference-native-authentication-api.md). The sample app demonstrates user sign-up, sign-in, sign-out, and password reset with an email and a password.
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Ensure that the user flow includes the following user attributes:
+* A user flow. For more information, see [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Ensure that the user flow includes the following user attributes:
   * **Given Name**
   * **Surname**
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:

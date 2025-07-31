@@ -42,7 +42,7 @@ In this tutorial, you:
 
 ## Check and handle web fallback
 
-One of the errors you can encounter when you use the JavaScript SDK's `signIn()` or `SignUp()` method is `result.error?.isRedirectRequired()`. The utility method `isRedirectRequired()` checks the need to fallback to browser-delegated authentication. Use the following code snippet to support web fallback:
+One of the errors you can encounter when you use the JavaScript SDK's `signIn()` or `SignUp()` method is `result.error?.isRedirectRequired()`. The utility method `isRedirectRequired()` checks the need to fall back to browser-delegated authentication. Use the following code snippet to support web fallback:
 
 
    ```typescript
