@@ -125,33 +125,37 @@ In the EAM preview, all users in an include group for the EAM are considered MFA
 
 ## FAQ
 
-- How can my end users register their EAM via My Security Info?
+The next section cover common questions and answers.
 
-Users can register an EAM from Security info:
+### How users register their EAM in Security info
 
-* Sign into [Security info](https://mysignins.microsoft.com/security-info)
-* Select "add sign-in method"
-* When prompted to select a sign-in method from a list of available options, select External Auth methods
-* Select next at the confirmation screen
-* Complete the second factor challenge with the external provider. If successful, the user will now find the EAM listed in their sign-in methods. 
+Users can follow these steps to register an EAM in Security info:
 
-3. How can I register the EAM on my user's behalf?
+1. Sign into [Security info](https://mysignins.microsoft.com/security-info)
+1. Select "add sign-in method"
+1. When prompted to select a sign-in method from a list of available options, select External Auth methods
+1. Select next at the confirmation screen
+1. Complete the second factor challenge with the external provider. If successful, the user will now find the EAM listed in their sign-in methods. 
 
-Admins can set a user as registered for an EAM or  delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the method is available and the user does not need to register the method through inline or manual registration. Deleting the method enables the admin to help users that are enabled but not registered for additional methods in recovery scenarios, by having their next sign in trigger registration. Admins can mark a user as registered via MS Graph or via the Microsoft Entra Admin Center using the following steps:
+### How admins register an EAM for a user
 
-Via MS Graph
+Admins can set a user as registered for an EAM or delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the method is available and the user does not need to register the method through inline or manual registration. Deleting the method enables the admin to help users that are enabled but not registered for additional methods in recovery scenarios, by having their next sign in trigger registration. Admins can mark a user as registered via Microsoft Graph or via the Microsoft Entra admin center using the following steps:
+
+Via Microsoft Graph
 * Use the following **sample script**. This script is an example only and you should customize it as needed before using it.
 
-Via Entra Admin Center
-* In the Entra admin portal, navigate to the 'Users' page and select 'All users'
-* Select the user that needs to be registered for EAM
-* In the user menu, click on ‘Authentication Methods’ and click the ‘Add Authentication Method’ button. In the dropdown, select ‘External authentication method’
-* Select one or multiple EAM options and save
-* A success message will appear and the methods you previously selected will be listed in the ‘Usable authentication methods’ table. 
+Via Microsoft Entra admin center
 
-4. What does the just-in-time registration experience look like for end users?
+1. In the Microsoft Entra admin center, select **Users** > **All users**.
+1. Select the user who needs to be registered for EAM.
+1. In the User menu, select **Authentication Methods**, and select **+ Add Authentication Method**. 
+1. Select **External authentication method**.
+1. Select one or more EAMs, and select **Save**.
+1. A success message appears, and the methods that you previously selected are listed in **Usable authentication methods**. 
 
-On signing in, the user will be driven into the registration wizard. The user may then need to select ‘I want to set up a different method’ in order to proceed. If the user has multiple external authentication methods enabled, they will be able to select from those methods. When ‘registering’, the user will have to authenticate with the external authentication method provider. If successful, this will result in the method being ‘registered’, and the user will be shown that they have completed registration. They will then be redirected to the resource they were attempting to access. If the authentication fails, the user will be redirected back to the proof-up wizard, and the page for registering the external method will provide an error message. The user will have the options to try again, or if there are other allowable methods, to choose to register a different method instead.  
+### Registration experience for end users
+
+On signing in, the user will be driven into the registration wizard. The user may then need to select **I want to set up a different method** in order to proceed. If the user has multiple external authentication methods enabled, they will be able to select from those methods. When ‘registering’, the user will have to authenticate with the external authentication method provider. If successful, this will result in the method being ‘registered’, and the user will be shown that they have completed registration. They will then be redirected to the resource they were attempting to access. If the authentication fails, the user will be redirected back to the proof-up wizard, and the page for registering the external method will provide an error message. The user will have the options to try again, or if there are other allowable methods, to choose to register a different method instead.  
 
 ## Using EAM and Conditional Access custom controls in parallel
 
