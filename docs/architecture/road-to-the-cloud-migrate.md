@@ -7,7 +7,7 @@ manager: dougeby
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 07/01/2025
+ms.date: 07/30/2025
 ms.author: justinha
 ms.custom: references_regions
 ---
@@ -51,6 +51,9 @@ To transform groups and distribution lists:
 - For existing security groups created in AD DS that are now exclusively used to grant access to cloud resources, use Group Source of Authority (SOA) transfer to make those groups cloud-only. Manage the group membership from the cloud. Then, delete the group from AD DS.
 - For existing security groups created in AD DS that still require footprint in AD, update the scope of the AD group to be universal (if not already). Then, use Group SOA to convert these groups to be cloud-editable, and manage the membership from the cloud. Finally, use group provisioning to AD DS to provision any cloud changes to AD so the on-prem membership remains in sync. 
 - For business logic that assigns users to security groups, evaluate whether you can migrate the logic to Entra ID and use dynamic membership groups.
+- For self-managed group capabilities provided by Microsoft Identity Manager, replace the capability with self-service group management.
+- You can [convert distribution lists to Microsoft 365 groups](/microsoft-365/admin/create-groups/office-365-groups) in Outlook. This approach is a great way to give your organization's distribution lists all the features and functionality of Microsoft 365 groups. 
+- Upgrade your [distribution lists to Microsoft 365 groups in Outlook](https://support.microsoft.com/office/7fb3d880-593b-4909-aafa-950dd50ce188) and [decommission your on-premises Exchange server](/exchange/decommission-on-premises-exchange).
 
 ### Move provisioning of users and groups to applications
 
