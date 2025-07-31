@@ -30,7 +30,15 @@ In this tutorial, you:
 
 ## Prerequisites
 
+#### [React](#tab/react)
+
 - Complete the steps in [Tutorial: Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-react-sdk-sign-in.md).
+
+#### [Angular](#tab/angular)
+
+- Complete the steps in [Tutorial: Sign in users into Angular single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-angular-sign-in.md).
+
+--- 
 
 ## Check and handle web fallback
 

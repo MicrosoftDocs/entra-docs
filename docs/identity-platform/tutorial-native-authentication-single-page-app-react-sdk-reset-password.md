@@ -1,5 +1,5 @@
 ---
-title: Reset password in a React SPA app by using native authentication JavaScript SDK
+title: Reset Password in a React SPA App by Using Native Authentication JavaScript SDK
 description: Learn how to build a React single-page app that enables users to reset their passwords in a React single-page app into an external tenant by using native authentication JavaScript SDK.
 
 author: kengaderdus
@@ -12,7 +12,7 @@ ms.date: 06/30/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
 ---
 
-# Tutorial: Reset password in a React single-page app by using native authentication JavaScript SDK(preview)
+# Tutorial: Reset password in a React single-page app by using native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
@@ -277,7 +277,7 @@ if (resetState instanceof ResetPasswordCompletedState) {
 
 ## Run and test your app
 
-Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-you-app) to run your app, then test sign-in flow. 
+Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md#run-and-test-your-app) to run your app, then test sign-in flow. 
 
 
 ## Related content

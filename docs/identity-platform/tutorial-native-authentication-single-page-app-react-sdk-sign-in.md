@@ -12,7 +12,7 @@ ms.date: 07/30/2025
 #Customer intent: As a developer, I want to build a React single-page application that uses native authentication JavaScript SDK so that I can sign in users with a username (email) and password or email with one-time passcode.
 ---
 
-# Tutorial: Sign in users into a React single-page app by using native authentication JavaScript SDK (preview)
+# Tutorial: Sign in users into a React single-page app by using native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
