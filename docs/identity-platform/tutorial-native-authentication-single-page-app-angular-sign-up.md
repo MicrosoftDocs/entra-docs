@@ -293,7 +293,7 @@ In this section, you define a configuration for native authentication public cli
 
 1. To sign up for an account, input your details, select the Sign Up button, then follow the prompts.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-angular-sign-in.md).
