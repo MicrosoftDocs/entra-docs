@@ -65,7 +65,7 @@ In this tutorial, you:
                 </form>
             ```
 
-    - After *submitCode()* is successfully invoked, the result determines the next step: if password is required, the new password form is displayed for the user to continue the password reset process.
+    - After `submitCode()` is successfully invoked, the result determines the next step: if password is required, the new password form is displayed for the user to continue the password reset process.
 
         ```typescript
         if (result.isPasswordRequired()) {
