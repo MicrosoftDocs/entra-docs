@@ -21,7 +21,7 @@ EAMs differ from federation in that the user identity is originated and managed 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
 >[!IMPORTANT]
-   >  Between 9/1/25 and 9/30/25, we are releasing a new improvement to the EAM feature that requires a backend migration to ensure a seamless experience. To minimize impact to your organization, this migration will be performed on behalf of tenants. As a result of this migration, some users in your organization may experience limited impact to their authentication experience. See [Authentication method registration for EAMs](#Authentication-method-registration-for-EAMs) for more details.
+>Between 9/1/25 and 9/30/25, we are releasing a new improvement to the EAM feature that requires a backend migration to ensure a seamless experience. To minimize impact to your organization, this migration will be performed on behalf of tenants. As a result of this migration, some users in your organization may experience limited impact to their authentication experience. For more information, see [Authentication method registration for EAMs](#authentication-method-registration-for-eams).
 
 ## Required metadata to configure an EAM
 To create an EAM, you need the following information from your external authentication provider:
@@ -113,21 +113,23 @@ If the user has no other methods enabled, they can just choose the EAM. They're 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/sign-in.png" alt-text="Screenshot of how to sign in with an EAM.":::
 
 ## Authentication method registration for EAMs
-In the EAM preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA.  Users that are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
+In the EAM preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA. Users who are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
 
 >[!NOTE]
->We're actively rolling out the registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use it to satisfy MFA. As part of this roll out, some users may experience a change in behavior at authentication time depending on their current authentication setup. Users who have not authenticated with their EAM in the past 28 days will experience one of the following scenarios depending on which category they fall into:
-> | Category | User experience |
-> |--------|-----|
-> | Users only enabled for EAM | Will be prompted to complete just-in-time registration of their EAM authentication method before continuing as usual.|
-> | Users enabled for EAM and other authentication methods | May lose access to EAM for authentication. To regain access, one of the following steps is required: <ul><li>The user must register their EAM via My Security Info (aka.ms/mysecurityinfo)</li><li>An admin must register the EAM on behalf of the user</li></ul> |
+>We're actively rolling out the registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Microsoft Entra ID before they will be prompted to use it to satisfy MFA. As part of this roll out, some users may experience a change in behavior at authentication time depending on their current authentication setup. Users who have not authenticated with their EAM in the past 28 days will experience one of the following scenarios depending on which category they fall into:
 
-**FAQ**
-1. How can my end users register their EAM via My Security Info?
+> | User | Experience |
+> |------|------------|
+> | EAM only | Will be prompted to complete just-in-time registration of their EAM authentication method before continuing as usual.|
+> | EAM and other methods | May lose access to EAM for authentication. There's two ways to regain access:<br>- The user must register their EAM at [Security info](https://mysignins.microsoft.com/security-info) <br>An admin must register the EAM on behalf of the user |
 
-Users can register an EAM from the My Security Info page using the following steps:
+## FAQ
 
-* Sign into My Security Info (https://aka.ms/mysecurityinfo)
+- How can my end users register their EAM via My Security Info?
+
+Users can register an EAM from Security info:
+
+* Sign into [Security info](https://mysignins.microsoft.com/security-info)
 * Select "add sign-in method"
 * When prompted to select a sign-in method from a list of available options, select External Auth methods
 * Select next at the confirmation screen
