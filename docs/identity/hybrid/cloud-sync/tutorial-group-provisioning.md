@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 07/25/2025
+ms.date: 08/01/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
@@ -13,7 +13,7 @@ ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
 
 # Tutorial - Provision groups to Active Directory Domain Services by using Microsoft Entra Cloud Sync
 
-This tutorial walks you through how to confifure Cloud Sync to sync groups to on-premises Active Directory Domain Services (AD DS). 
+This tutorial walks you through how to configure Cloud Sync to sync groups to on-premises Active Directory Domain Services (AD DS). 
 
 > [!IMPORTANT]
 > We recommend using **Selected security groups** as the default scoping filter when you configure group provisioning to AD DS. This default scoping filter helps prevent any performance issues when you provision groups.  

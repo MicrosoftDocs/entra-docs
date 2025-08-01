@@ -4,7 +4,7 @@ description: Include file
 author: omondiatieno
 ms.service: entra-id
 ms.topic: Include
-ms.date: 07/30/2025
+ms.date: 08/01/2025
 ms.author: jomondi
 ms.custom: Include file
 ---
@@ -20,7 +20,7 @@ The following prerequisites are required to implement provisioning groups to Act
 
  - Microsoft Entra account with at least a [Hybrid Identity Administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
  - On-premises AD DS environment with Windows Server 2016 operating system or later. 
-     - Required for AD DS schema attribute  - msDS-ExternalDirectoryObjectId 
+   - Required for AD DS schema attribute - msDS-ExternalDirectoryObjectId 
  - Provisioning agent with build version [1.1.3730.0](../cloud-sync/reference-version-history.md#1113730) or later.
 
  > [!NOTE]

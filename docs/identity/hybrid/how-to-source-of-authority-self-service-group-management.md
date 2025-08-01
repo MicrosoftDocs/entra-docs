@@ -3,7 +3,7 @@ title: Set up self-service group management after Group SOA conversion (Preview)
 description: Configure self-service group management in Microsoft Entra for security groups, mail-enabled security groups, and distribution groups after SOA conversion.
 author: Justinha
 ms.topic: how-to
-ms.date: 07/31/2025
+ms.date: 08/01/2025
 ms.author: justinha
 manager: dougeby
 ms.reviewer: mbhargav
@@ -73,7 +73,7 @@ After you convert SOA of on-premises distribution lists, they can be transitione
 
 ### Limitations
 - Cloud distribution groups can't be managed by using **My Groups**.
-- Self-service management is only possible through Exchange’s end user self-service portal (link).
+- Self-service management is only possible through Exchange’s end user self-service portal.
 - Nested distribution groups aren't supported for direct conversion to Microsoft 365 Groups.
 
 ### Governance integration
