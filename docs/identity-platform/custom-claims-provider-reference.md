@@ -156,6 +156,23 @@ In the HTTP response, provide the following JSON document, where the claims `Dat
 }
 ```
 
+If no additional claim have to be returned, provide an empty `claims` object:
+
+```json
+{
+    "data": {
+        "@odata.type": "microsoft.graph.onTokenIssuanceStartResponseData",
+        "actions": [
+            {
+                "@odata.type": "microsoft.graph.tokenIssuanceStart.provideClaimsForToken",
+                "claims": {
+                }
+            }
+        ]
+    }
+}
+```
+
 ### Supported data types
 
 The following table shows the data types supported by Custom claims providers for the token issuance start event:
