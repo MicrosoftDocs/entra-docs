@@ -3,7 +3,7 @@ title: Embrace cloud-first posture and convert Group Source of Authority (SOA) t
 description: Learn about Source of Authority (SOA), including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
 author: Justinha
 ms.topic: conceptual
-ms.date: 07/30/2025
+ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: justinha
 ---
@@ -27,7 +27,7 @@ Applying Group SOA to a group that synchronizes from AD DS converts the group to
 
 ## Group SOA scenarios
 
-The next sections exaplin more details about the scenarios that Group SOA supports. 
+The next sections explain more details about the scenarios that Group SOA supports. 
 
 ### Govern access with Microsoft Entra ID Governance
 

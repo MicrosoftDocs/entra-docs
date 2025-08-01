@@ -4,14 +4,14 @@ description: Discover how to manage and transition Active Directory groups to Mi
 author: justinha
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/23/2025
+ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
 
 # Guidance for using Group Source of Authority (SOA) (Preview)
 
-Managing groups across hybrid environments is essential for organizations that transition from on-premises Active Directory (AD) to the cloud. Group Source of Authority (SOA) in Microsoft Entra ID enables you to transfer group management from AD to the cloud, providing greater flexibility, modern governance, and streamlined administration. This guidance explains how to use Group SOA to manage, provision, restore, and roll back groups in hybrid and cloud environments. It explains best practices to clean up group cleanup, convert group management, and ensure secure, efficient access control as you modernize your identity infrastructure.
+Managing groups across hybrid environments is essential for organizations that transition from on-premises Active Directory (AD) to the cloud. Group Source of Authority (SOA) in Microsoft Entra ID enables you to transfer group management from AD to the cloud, providing greater flexibility, modern governance, and streamlined administration. This guidance explains how to use Group SOA to manage, provision, restore, and roll back groups in hybrid and cloud environments. It explains best practices to clean up groups, convert group management, and ensure secure, efficient access control as you modernize your identity infrastructure.
 
 ## AD group cleanup
 

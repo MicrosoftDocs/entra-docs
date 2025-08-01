@@ -4,7 +4,7 @@ description: Step-by-step guide to identifying, triaging, and removing unused se
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/31/2025
+ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: justinha
 ---
@@ -25,8 +25,8 @@ There are multiple ways to determine whether a group is no longer needed. In som
 
 - This article focuses on Security and Distribution List (DL) groups in
   an AD DS topology, with a single forest, single domain.
-  Multiforest, non-AD DS environments, and local groups on domain-joined
-  computers, are outside the scope of this version of the article.
+  Multiforest environments, workgroups, local groups on domain-joined
+  computers, or other environments are outside the scope of this article.
 
 - This article focuses on groups whose members are users and other
   groups that are in scope for sync to Microsoft Entra.
