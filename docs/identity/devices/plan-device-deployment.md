@@ -84,6 +84,12 @@ The following sites must be exempted if using TLS interception or network proxy 
 
 - `enterpriseregistration.windows.net`
 - `certauth.enterpriseregistration.windows.net`
+- `enterpriseregistration.partner.microsoftonline.cn` (**)
+- `certauth.enterpriseregistration.partner.microsoftonline.cn`(**)
+- `enterpriseregistration.microsoftonline.us`(**)
+- `certauth.enterpriseregistration.microsoftonline.us`(**)
+
+( ** ) You only need to allow sovereign cloud domains if you rely on those in your environment.
 
 > [!NOTE]
 > Failure to exempt these endpoints may result in failure of device registration flows.
