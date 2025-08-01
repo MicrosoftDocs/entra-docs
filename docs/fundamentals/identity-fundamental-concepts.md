@@ -60,7 +60,7 @@ Authentication challenges a person, software component, or hardware device for c
 Multifactor authentication (MFA) is a security measure that requires users to provide more than one piece of evidence to verify their identity. Examples include:
 
 - Something they know, such as a password.
-- Something they have, like a badge or [security token](~/identity-platform/security-tokens.md).
+- Something they have, like a badge.
 - Something they are, like a biometric (fingerprint or face).
 
 Single sign-on (SSO) lets users authenticate their identity once and then silently authenticate later when accessing various resources that rely on the same identity. After authentication, the IAM system acts as the source of identity truth for other resources available to the user. It removes the need for signing on to multiple, separate target systems.
@@ -72,6 +72,7 @@ Authorization validates that the user, machine, or software component is granted
 ## Authentication vs. authorization
 
 The terms authentication and authorization are sometimes used interchangeably because they often seem like a single experience to users. They're actually two separate processes: 
+
 - Authentication proves the identity of a user, machine, or software component. 
 - Authorization grants or denies the user, machine, or software component access to certain resources. 
 
