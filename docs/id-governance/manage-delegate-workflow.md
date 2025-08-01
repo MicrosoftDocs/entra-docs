@@ -14,7 +14,7 @@ ms.date: 07/31/2025
 
 # Delegate Workflow Management (Preview)
 
-Workflows, unless specified during creation, by default can be managed by users with either the Lifecycle Workflows, or Global, administrator roles. As workflows can grow and change to meet the members of your organization, so can the need to limit who can manage it. With delegated workflow management, you can scope workflow management down to the specific user level. When you scope a Lifecycle Workflows administrator to a workflow, you grant this workflow admin the ability to handle all tasks associated with that workflow, while keeping separate workflows out of their scope. This allows for greater security within your environment by following Microsoft's least access principal guidelines, and only giving access to specifically whats needed.
+Workflows, unless specified during creation, by default can be managed by users with either the Lifecycle Workflows, or Global, administrator roles. As workflows grow and change to meet the needs of members of your organization, so can the need to limit who can manage it. With delegated workflow management, you can scope workflow management using specific [Administrative Units](../identity/role-based-access-control/administrative-units.md). When scoped, specific admins are only granted access to manage specific workflows. This allows for greater security within your environment by following Microsoft's least access principal guidelines, and only giving access to specifically whats needed.
 
 The following table shows the differences between the Lifecycle Administrator role, and the scoped workflow admin role in terms of Lifecycle workflow capability:
 
@@ -45,17 +45,9 @@ Existing workflows can have their scopes updated to be managed by certain admini
 
 1. Here you see a list of all of your current workflows. Select the workflow that you want to edit the administrative scope of.
 
-1. On the list, select the user you want to assign the administrator role over this workflow.
+1. Select the administrative unit you want to scope the workflow for. 
 
-1. Select **Save**. 
-
-<!-- 5. Next step/Related content------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
+1. Select **Save**.
 
 ## Next steps
 
