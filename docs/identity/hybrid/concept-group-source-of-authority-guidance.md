@@ -28,8 +28,7 @@ Follow these best practices to transition group management from on-premises to M
 
 ### Change to Universal group scope before you convert Group SOA
 
-If you plan to provision a converted SOA group back to AD DS, then you need to change the group scope to Universal before you convert Group SOA. 
-Global and Domain Local group scopes aren't supported for groups provisioned to AD DS. You need to check and update the group scope before you convert Group SOA for security groups that you want to provision back to AD DS.
+If you plan to provision a converted SOA security group (non-mail enabled) back to AD DS, then you need to change the group scope to Universal before you convert Group SOA. Global and Domain Local group scopes aren't supported for groups provisioned to AD DS. You need to check and update the group scope before you convert Group SOA for security groups that you want to provision back to AD DS.
 
 ### Transition group management
 
