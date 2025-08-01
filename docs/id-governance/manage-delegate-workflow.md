@@ -80,22 +80,7 @@ Optional: You have two options for manually curated links in this pattern: Next 
 
 -->
 
-## Next step
+## Next steps
 
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
-
+- [Manage workflow properties](manage-workflow-properties.md)
+- [Check status of a workflows](check-status-workflow.md)
