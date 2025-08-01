@@ -15,7 +15,7 @@ ms.reviewer: mamkumar
 
 # Approve or deny access requests in entitlement management
 
-With  entitlement management, you can configure policies to require approval for access packages, and choose one or more approvers. This article describes how designated approvers can approve or deny requests for access packages.
+With  entitlement management, you can configure policies to require approval for access packages, and choose one or more approvers. This article describes how designated approvers can approve or deny requests for access packages. For information about approving or denying access requests using the Access Review Agent, see: [Using the Access Review Agent as a reviewer](access-review-agent.md#using-the-access-review-agent-as-a-reviewer).
 
 ## Open request
 
