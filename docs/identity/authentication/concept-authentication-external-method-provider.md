@@ -4,11 +4,11 @@ description: Learn how to configure an external authentication method (EAM) prov
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/31/2025
+ms.date: 04/17/2025
 ms.author: justinha
-author: emakedon23
+author: gregkmsft
 manager: dougeby
-ms.reviewer: emilymakedon, gustavosa
+ms.reviewer: gkinasewitz, gustavosa
 ms.custom: sfi-ropc-blocked
 # Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external authentication method (EAM) for tenants.
 ---
@@ -228,7 +228,7 @@ Microsoft’s [token validation library](https://github.com/AzureAD/azure-active
 Once validation succeeds, you can work with the claims payload to get details of the user, and their tenant.
 
 >[!NOTE]
->It is important to validate the id_token_hint to ensure the id_token_hint is from a Microsoft tenant and represents your integration. The id_token_hint should be fully validated, particularly the signature, issuer, audience and the other claim values. 
+>It is important to validate the id_token_hint to ensure the id_token_hint is from a Microsoft tenant and represents your integration. The id_token_hint should be fully validated, particularly the signature, issuer, audience as well as the other claim values. 
 
 ### Microsoft Entra ID call to the external identity provider
 
@@ -488,7 +488,7 @@ Customers who currently use an integration with an external provider by using cu
 - The policies should use the **Require multifactor authentication** grant control instead of the custom control grant.  
 
    >[!NOTE]
-   >Grant controls based on authentication strengths, including the built-in MFA strength, aren't satisfied by the EAM. Policies should only be configured with **Require multifactor authentication**. 
+   >Grant controls based on authentication strengths, including the built-in MFA strength, aren't satisfied by the EAM. Policies should only be configured with **Require multifactor authentication**. Support for EAMs with authentication strengths will come later.
 
 - The new policy can be tested first with a subset of users. The test group would be excluded from the policy that requires the custom controls, and included in the policy that requires MFA. Once the admin is comfortable that the policy that requires MFA is satisfied by the EAM, the admin can include all required users in the policy with the MFA grant, and the policy configured for custom controls can be moved to **Off**. 
 
