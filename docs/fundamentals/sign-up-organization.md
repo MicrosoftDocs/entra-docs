@@ -9,11 +9,6 @@ ms.topic: conceptual
 ms.date: 08/01/2025
 ms.author: barclayn
 ms.reviewer: jeffsta
-ms.custom:
-  - ai-gen-docs-bap
-  - ai-gen-title
-  - ai-seo-date:08/01/2025
-  - ai-gen-description
 ---
 # Sign up for Microsoft Entra ID
 
