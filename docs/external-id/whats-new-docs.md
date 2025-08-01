@@ -69,7 +69,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 ### Updated articles
 
-- [Configure external collaborationD](external-collaboration-settings-configure.md) - Updated authentication experience for guest users
+- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Updated authentication experience for guest users
 
 ## March 2025
 
