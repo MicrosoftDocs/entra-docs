@@ -4,7 +4,7 @@ description: Learn how to audit and monitor Group Source of Authority (SOA) in M
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/31/2025
+ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -17,7 +17,7 @@ Admins can use **Audit Logs** in the Azure portal or the onPremisesSyncBehavior 
 
 You can access Audit Logs in the Azure portal. They retain a record of SOA changes for the last 30 days. 
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator). 
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader). 
 
 1. Select **Manage Microsoft Entra ID** > **Monitoring** > **Audit logs** or search for **audit logs** in the search bar.
 

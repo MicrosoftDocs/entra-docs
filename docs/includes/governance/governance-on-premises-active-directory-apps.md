@@ -2,14 +2,14 @@
 author: justinha
 ms.service: entra-id-governance
 ms.topic: include
-ms.date: 07/31/2025
+ms.date: 08/01/2025
 ms.author: justinha
 # Used by articles entra governance
 ---
 
 ## Prerequisites
 
-The following prerequisites are required to implement this scenario.
+The following prerequisites are required to implement this scenario:
 
 - Microsoft Entra account with at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
 
@@ -32,8 +32,8 @@ The following prerequisites are required to implement this scenario.
   > These permissions aren't applied to AdminSDHolder objects by default by the [Microsoft Entra provisioning agent gMSA PowerShell cmdlets](~/identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md#grant-permissions-to-a-specific-domain).
 
 
-- The provisioning agent must be able to communicate with one or more domain controllers on the port TCP/389 for Lightweight Directory Access Protocol (LDAP) and TCP/3268 for global catalog.
-  - Required for global catalog lookup to filter out invalid membership references.
+- The provisioning agent must be able to communicate with one or more domain controllers on the port TCP/389 for Lightweight Directory Access Protocol (LDAP) and TCP/3268 for Global Catalog.
+  - Required for Global Catalog lookup to filter out invalid membership references.
 
 - Microsoft Entra Connect with build version [2.2.8.0](~/identity/hybrid/connect/reference-connect-version-history.md#2280) or later.
   - Required to support on-premises user membership synchronized using Microsoft Entra Connect.

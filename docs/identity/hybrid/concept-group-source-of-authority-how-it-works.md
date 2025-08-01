@@ -4,7 +4,7 @@ description: Learn how to convert group management from Active Directory Domain 
 author: justinha
 manager: dougeby
 ms.topic: conceptual
-ms.date: 07/31/2025
+ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
@@ -18,7 +18,7 @@ After you convert the group SOA and it becomes a cloud group, the latest version
 
 ## Seamless integration with security group provisioning to AD DS
 
-To provision a security group cloud that's not mail-enabled back to AD DS and sync it with Microsoft Entra ID, add the group to the scoping configuration when you provision groups to AD DS. Use **Selected Groups** or **All groups** with attribute value scoping. Provision dynamic security groups to AD DS. Cloud security groups are provisioned as Universal groups.
+To provision a cloud security group that's not mail-enabled back to AD DS and sync it with Microsoft Entra ID, add the group to the scoping configuration when you provision groups to AD DS. Use **Selected Groups** or **All groups** with attribute value scoping. Provision dynamic security groups to AD DS. Cloud security groups are provisioned as Universal groups.
 
 When Microsoft Entra Cloud Sync provisions a security group to AD DS, it recognizes when existing domain groups previously had SOA applied and are provisioned from Microsoft Entra ID to AD DS. The security identifier (SID) value correlates them together. Therefore, provisioning the cloud security group to AD DS does so to the original AD group (if it exists). If it doesn’t find a match in AD DS, it creates a new on-premises security group.
 

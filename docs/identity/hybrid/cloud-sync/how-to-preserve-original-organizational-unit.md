@@ -4,7 +4,7 @@ description: Learn how to preserve and use the original organizational unit (OU)
 author: Justinha
 manager: dougeby
 ms.topic: concept-article
-ms.date: 07/30/2025
+ms.date: 08/01/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -31,7 +31,7 @@ Get-ADGroup -Filter * -SearchBase "DC=contoso,DC=com" | ForEach-Object {
 ```
 
 
-You can also store the OU information in some other attribute also like *info* or any other custom attribute. For more information about how to sync custom attributes, see [Custom attribute mapping](/entra/identity/hybrid/cloud-sync/tutorial-directory-extension-group-provisioning). 
+You can also store the OU information in some other attribute like *info* or any other custom attribute. For more information about how to sync custom attributes, see [Custom attribute mapping](/entra/identity/hybrid/cloud-sync/tutorial-directory-extension-group-provisioning). 
 
 ## Step 2: Enable sync for extensionAttribute13 in Microsoft Entra Cloud Sync or Connect Sync 
 
