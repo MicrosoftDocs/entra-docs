@@ -1,5 +1,5 @@
 ---
-title: Delegate Workflow Management
+title: Delegate Workflow Management (Preview)
 description: This article guides a user to editing a workflow's properties using Lifecycle Workflows.
 author: owinfreyATL
 ms.author: owinfrey
@@ -37,44 +37,26 @@ For example: "Migrate data from regular tables to ledger tables" or "Create a ne
 
 # Delegate Workflow Management (Preview)
 
+Workflows, unless specified during creation, by default can be managed by users with either the Lifecycle Workflows, or Global, administrator roles. As workflows can grow and change to meet the members of your organization, so can the need to limit who can manage it. With delegated workflow management, you can scope workflow management down to the specific user level. When you scope a Lifecycle Workflows administrator to a workflow, you grant this workflow admin the ability to handle all tasks associated with that workflow, while keeping separate workflows out of their scope. This allows for greater security within your environment by following Microsoft's least access principal guidelines, and only giving access to specifically whats needed.
+
+The following table shows the differences between the Lifecycle Administrator role, and the scoped workflow admin role in terms of Lifecycle workflow capability:
 
 
-<!-- 2. Introductory paragraph ----------------------------------------------------------
-
-Required: Lead with a light intro that describes, in customer-friendly language, what the customer will do. Answer the fundamental “why would I want to do this?” question. Keep it short.
-
-Readers should have a clear idea of what they will do in this article after reading the introduction.
-
-* Introduction immediately follows the H1 text.
-* Introduction section should be between 1-3 paragraphs.
-* Don't use a bulleted list of article H2 sections.
-
-Example: In this article, you will migrate your user databases from IBM Db2 to SQL Server by using SQL Server Migration Assistant (SSMA) for Db2.
-
--->
-
-Workflows, unless specified during creation, by default can be managed by users with either the Lifecycle Workflows, or Global, administrator roles. As workflows can grow and change to meet the members of your organization, so can the need to limit who can manage it. With delegated workflow management, you can scope workflow management down to the specific user level. When you scope a Lifecycle Workflows administrator to a workflow, you grant them the ability to handle all tasks associated with that workflow, while keeping separate workflows out of their scope. This allows for greater security within your environment
-
-
-created with Lifecycle Workflows are able to grow and change with the needs of your organization. Workflows exist as versions from creation. When making changes to other than basic information, you create a new version of the workflow. For more information, see  [Manage a workflow's properties](manage-workflow-properties.md).
-
-<!---Avoid notes, tips, and important boxes. Readers tend to skip over them. Better to put that info directly into the article text.
-
--->
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Required: Make Prerequisites the first H2 after the H1. 
-
-* Provide a bulleted list of items that the user needs.
-* Omit any preliminary text to the list.
-* If there aren't any prerequisites, list "None" in plain text, not as a bulleted item.
-
--->
+|Capability | Lifecycle Workflows Administrator  | Workflow Administrator  |
+|-----------|-----------------------------------|------------------------|
+|[Create Workflow](create-lifecycle-workflow.md)    | Yes | No |
+|[Edit Workflow](manage-workflow-properties.md)    | Yes | Yes (only assigned workflows) |
+|[Custom Task Extensions](trigger-custom-task.md)    | Yes | No |
+|[Delete Workflow](delete-lifecycle-workflow.md#delete-a-workflow-by-using-the-microsoft-entra-admin-center)    | Yes | Yes (only assigned workflows) |
+|[Restore Workflow](delete-lifecycle-workflow.md#view-deleted-workflows-in-the-microsoft-entra-admin-center)     | Yes | Yes (only assigned workflows) |
+|[View workflow history](lifecycle-workflow-history.md)     | Yes | Yes (only assigned workflows) |
+|[View Audit Logs](lifecycle-workflow-audits.md)   | Yes | No |
+|[Run Workflow on-demand](on-demand-workflow.md)    | Yes | Yes (only assigned workflows) |
+|[Scope Workflows](manage-delegate-workflow.md#edit-the-properties-of-a-workflow-using-the-microsoft-entra-admin-center)     | Yes | No |
 
 ## Prerequisites
 
-TODO: List the prerequisites
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
 <!-- 4. Task H2s ------------------------------------------------------------------------------
 
@@ -95,29 +77,19 @@ For portal-based procedures, minimize bullets and numbering.
 
 -->
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+## Edit the properties of a workflow using the Microsoft Entra admin center
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+To edit the properties of a workflow using the Microsoft Entra admin center, you do the following steps:
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
+
+1. Here you see a list of all of your current workflows. Select the workflow that you want to edit the administrative scope of.
+
+1. On the list, select the user you want to assign the administrator role over this workflow.
+
+1. Select **Save**. 
 
 <!-- 5. Next step/Related content------------------------------------------------------------------------
 
