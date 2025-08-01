@@ -39,7 +39,7 @@ To create a workflow based on a template:
 1. On the **Choose a workflow** page, select the workflow template that you want to use.
 
     :::image type="content" source="media/create-lifecycle-workflow/templates-list.png" alt-text="Screenshot of a list of lifecycle workflow templates." lightbox="media/create-lifecycle-workflow/templates-list.png":::
-1. On the **Basics** tab, enter a unique display name and description for the workflow, and then select **Next**.
+1. On the **Basics** tab, enter a unique display name, description, and [administrative scope](manage-delegate-workflow.md) for the workflow, and then select **Next**.
 
     :::image type="content" source="media/create-lifecycle-workflow/template-basics.png" alt-text="Screenshot of basic information about a workflow template.":::
 
