@@ -102,7 +102,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 - Application based authentication to Microsoft Entra ID is now generally available and will be the default option. See [Authenticate to Microsoft Entra ID by Using Application Identity](authenticate-application-id.md). 
 - Administrator action logging is now generally available, providing Windows audit events for all administrative changes made on Microsoft Entra Connect. See [Auditing administrator events in Microsoft Entra Connect Sync](admin-audit-logging.md). 
-- Group Source of Authority conversion feature allowing administrators to transfer on-premises Active Directory groups to become cloud only groups managed through Microsoft Entra ID (Public Preview). See [Group Source of Authority overview](concept-source-of-authority-overview.md). 
+- Group Source of Authority conversion feature allowing administrators to transfer on-premises Active Directory groups to become cloud only groups managed through Microsoft Entra ID (Public Preview). See [Group Source of Authority overview](../concept-source-of-authority-overview.md). 
 
 ### Bug fixes
 
