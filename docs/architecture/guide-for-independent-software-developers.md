@@ -109,7 +109,7 @@ Across all available platforms, the unified MSAL authentication framework seamle
 
 Applications often need more than authentication and authorization (such as access to the tenant's directory data). Access may include getting attributes of the user, groups, group members, applications, and governance.
 
-[Microsoft Graph](https://developer.microsoft.com/graph) provides access to the tenant's [identity and access](/graph/api/resources/azure-ad-overview?view=graph-rest-1.0&preserve-view=true), [users](/graph/api/resources/users?view=graph-rest-1.0&preserve-view=true), [groups](/graph/api/resources/groups-overview?view=graph-rest-1.0&tabs=http&preserve-view=true), and [applications](/graph/api/resources/application?view=graph-rest-1.0&preserve-view=true). Microsoft Graph is the gateway to data and intelligence in Microsoft 365. You can use its unified programmability model to access the tremendous amount of data in Microsoft 365, Windows, and Enterprise Mobility + Security (EMS).
+[Microsoft Graph](https://developer.microsoft.com/graph) provides access to the tenant's [identity and access](/graph/api/resources/identity-network-access-overview?view=graph-rest-1.0), [users](/graph/api/resources/users?view=graph-rest-1.0&preserve-view=true), [groups](/graph/api/resources/groups-overview?view=graph-rest-1.0&tabs=http&preserve-view=true), and [applications](/graph/api/resources/application?view=graph-rest-1.0&preserve-view=true). Microsoft Graph is the gateway to data and intelligence in Microsoft 365. You can use its unified programmability model to access the tremendous amount of data in Microsoft 365, Windows, and Enterprise Mobility + Security (EMS).
 
 ## Next steps
 
