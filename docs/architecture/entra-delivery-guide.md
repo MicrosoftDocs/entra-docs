@@ -9,10 +9,10 @@ author: martincoetzer
 ms.author: martinco
 #CustomerIntent: As a Microsoft Entra Suite customer, I want to deploy all components of the Microsoft Entra Suite.
 ---
-# Microsoft Entra Suite Workshop Delivery Guide
+# Microsoft Entra Suite workshop delivery guide
 
 ## Overview
-The [Microsoft Entra Suite Workshop](https://aka.ms/EntraSuiteWorkshop) helps customers to develop an actionable and orderly strategy for implementing the Microsoft Entra Suite. The workshop consists of five stages to help streamline all products and features in the suite. The first two stages are required to establish the correct foundation for deploying the products in the suite and should be completed before moving to the last three stages of the workshop. The following stages are available in the workshop:
+The [Microsoft Entra Suite workshop](https://aka.ms/EntraSuiteWorkshop) helps customers to develop an actionable and orderly strategy for implementing the Microsoft Entra Suite. The workshop consists of five stages to help streamline all products and features in the suite. The first two stages are required to establish the correct foundation for deploying the products in the suite and should be completed before moving to the last three stages of the workshop. The following stages are available in the workshop:
 
 - Establish a baseline
 - Getting started
@@ -22,17 +22,17 @@ The [Microsoft Entra Suite Workshop](https://aka.ms/EntraSuiteWorkshop) helps cu
 
 Customers can choose to deploy all the stages or just a subset of them depending on their priorities and resource availability. While the workshops are modular, customers are encouraged to start with Onboarding your workforce.
 
-## Target Customer
+## Target customer
 The ideal customer for this engagement:
-1. Understands and aligns to the Microsoft Identity security vision.
-2. Has the intent and resources to invest in projects to deploy Microsoft Security products
+- Understands and aligns to the Microsoft Identity security vision.
+- Has the intent and resources to invest in projects to deploy Microsoft Security products
 
 ## Alignment with Microsoft recommendations 
 The content of the Microsoft Entra Suite Workshop will be updated when the Zero Trust Workshop gets updated, most recommendations are aligned with the Zero Trust Security Deployment Guidance:
 - [Zero Trust Guidance Center](/security/zero-trust)
 - [Zero Trust deployment for technology pillars overview](/security/zero-trust/deploy/overview)
 
-## Customer Stakeholders 
+## Customer stakeholders 
 In order to get the most out of these workshops, it's recommended to have people on the call from the customer’s side that can cover the following areas:
 - Identity and Access Management (IAM)
 - Security (Governance/CERT/SOC)
@@ -51,7 +51,7 @@ Recommendations for the customer stakeholders that should attend the workshop ar
 -	CISO (if possible)  
 -	IT Director (if possible) 
 
-## Engagement Model
+## Engagement model
 
 |Phases|Key Objectives|Key Activities|Success Criteria|
 |--|--|--|--|
@@ -71,9 +71,8 @@ User impact levels are defined as:
 - **Medium**: A portion of nonprivileged users must take action or be informed of changes.  
 - **Low**: Actions can be performed by administrators, and users don't need to be notified.
 
-## Workshop Delivery Time Estimates
+## Workshop delivery time estimates
 Below are the estimated delivery times for each section of the stage of the workshop:
-
 - Establish a baseline: 1.5 hours
 - Getting started: 1.5 hours
 - Onboard your workforce: 1 hour
@@ -83,10 +82,9 @@ Below are the estimated delivery times for each section of the stage of the work
 
 ## Expected outcome
 Upon completing this workshop, customers will:
-
-1. Gain a comprehensive understanding of the various scenarios supported by the Microsoft Entra Suite.
-2. Develop a clear overview of their organization's setup.
-3. Be well-equipped and ready to begin the planning process for deployment.
+- Gain a comprehensive understanding of the various scenarios supported by the Microsoft Entra Suite.
+- Develop a clear overview of their organization's setup.
+- Be well-equipped and ready to begin the planning process for deployment.
 
 ## Related content
 
@@ -97,3 +95,4 @@ Upon completing this workshop, customers will:
 - [Learn about the Global Secure Access clients for Microsoft Entra Private Access and Microsoft Entra Internet Access](../global-secure-access/concept-clients.md)
 - [Learn about Microsoft Entra Private Access](../global-secure-access/concept-private-access.md)
 - [Learn about Microsoft Entra Internet Access](../global-secure-access/concept-internet-access.md)
+
