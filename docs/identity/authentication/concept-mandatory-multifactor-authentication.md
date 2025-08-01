@@ -34,18 +34,18 @@ The scope of enforcement includes when enforcement is planned to occur, which ap
 
 The enforcement of MFA for applications rolls out in two phases. 
 
-#### Applications that enforce MFA in phase 1 
+#### Phase 1 applications 
 
 Starting in October 2024, MFA is required for accounts that sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center to perform any Create, Read, Update, or Delete (CRUD) operation. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. Phase 1 won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-#### Applications that enforce MFA in phase 2 
+#### Phase 2 applications
 
 Starting September 15, 2025, MFA enforcement will gradually begin for accounts that sign in to Azure CLI, Azure PowerShell, Azure mobile app, IaC tools, and REST API endpoints to perform any Create, Update, or Delete operation. Read operations won't require MFA. 
 
 Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 
-### Applications
+### Application IDs and URLs
 
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
@@ -71,7 +71,7 @@ The following table lists affected apps and URLs for Microsoft 365.
 
 ### Accounts 
 
-All accounts that sign in to perform operations cited in the [applications section](#applications) must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
+All accounts that sign in to perform operations cited in the [applications section](#application-ids-and-urls) must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
 
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
@@ -171,7 +171,7 @@ Changes are required if you use the [azure-identity](https://pypi.org/project/az
 We recommend customers discover user accounts that are used as service accounts begin to migrate them to workload identities. 
 Migration often requires updating scripts and automation processes to use workload identities. 
 
-Review [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md) to identify all user accounts, including user accounts being used as service accounts, that sign in to the [applications](#applications).
+Review [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md) to identify all user accounts, including user accounts being used as service accounts, that sign in to the [applications](#application-ids-and-urls).
 
 For more information about how to migrate from user-based service accounts to workload identities for authentication with these applications, see: 
 
@@ -183,11 +183,17 @@ Some customers apply Conditional Access policies to user-based service accounts.
 
 ## Implementation
  
-This requirement for MFA at sign-in is implemented for admin portals and other [applications](#applications). Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) shows it as the source of the MFA requirement. 
+This requirement for MFA at sign-in is implemented for admin portals and other [applications](#application-ids-and-urls). Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) show it as the source of the MFA requirement. 
 
-Mandatory MFA isn't configurable. It's implemented separately from any access policies configured in the tenant. 
+For example, if your organization chose to retain Microsoft's [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant uses [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you configured a policy that requires users to sign in with MFA, then your users don't see a change. If you configured exceptions or exclusions in the policy, they no longer apply. Similarly, restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, remain enforced. 
 
-For example, if your organization chose to retain Microsoft's [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
+Right now if you're a user that hasn't signed in with MFA, you can still use any client. It's just when you perform a resource create, update, or delete request that you will get an error that says you need to sign in with MFA + a claims challenge. Clients can use that claims challenge to prompt the user to step up and perform MFA. 
+Unfortunately, certain clients don't have that capability today. Instead, they will just surface the error - but there's no way for you to actually get that MFA prompt. That's why we're recommending customers to turn on a CA Policy or Security Defaults as optional best practices to receive that MFA prompt from customers. 
+The CA Policy would be the one targeting Windows Azure Resource Management API - that's the same one outlined here. To best of my knowledge we don't have any way to target a smaller scope than this one.
+Maybe this could be under the Implementation section of MFA? 
+We can have a section for Phase 1 implication and Phase 2 implications. 
+For the Azure Policy - this draft docs outlines the processes to setup an Azure Policy to indicate impact
+For the documentation, we could just provide something to users that says "To understand impact for your tenant, you can use a CA Policy (link) or an Azure Policy (link)
 
 ## Notification channels 
 
@@ -254,11 +260,11 @@ To prepare for Phase 2 MFA enforcement, you can self-enforce MFA by using built-
 
 **Question**: Is MFA mandatory for all users or only administrators? 
 
-**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
+**Answer**: All users who sign in to any of the [applications](#application-ids-and-urls) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
 **Question**: Do I need to complete MFA if I choose the option to **Stay signed in**?
 
-**Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to these [applications](#applications).
+**Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to these [applications](#application-ids-and-urls).
 
 **Question**: Does the enforcement apply to B2B guest accounts?
 
@@ -274,7 +280,7 @@ To prepare for Phase 2 MFA enforcement, you can self-enforce MFA by using built-
 
 **Question**: Will mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
 
-**Answer**: No. The synchronization service account isn't affected by the mandatory MFA requirement. Only [applications](#applications) listed earlier require MFA for sign in. 
+**Answer**: No. The synchronization service account isn't affected by the mandatory MFA requirement. Only [applications](#application-ids-and-urls) listed earlier require MFA for sign in. 
 
 **Question**: Will I be able to opt out? 
 
