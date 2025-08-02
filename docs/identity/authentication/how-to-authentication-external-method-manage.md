@@ -64,7 +64,7 @@ Before you create an EAM in the admin center, make sure you have the [metadata t
 
    After you enter the values from your provider, press the button to request for admin consent to be granted to the application so that it can read the required info from the user to authenticate correctly. You're prompted to sign in with an account with admin permissions and grant the provider’s application with the required permissions.
 
-   After you sign in, click **Accept** to grant admin consent:
+   After you sign in, select **Accept** to grant admin consent:
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/permissions-requested.png" alt-text="Screenshot of how to grant admin consent.":::
 
@@ -90,7 +90,7 @@ To manage your EAMs in the Microsoft Entra admin center, open the Authentication
 If you no longer want your users to be able to use the EAM, you can either:
 
 - Set **Enable** to **Off** to save the method configuration
-- Click **Delete** to remove the method
+- Select **Delete** to remove the method
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/delete.png" alt-text="Screenshot of how to delete an EAM.":::
 
@@ -105,7 +105,6 @@ Users who are enabled for the EAM can use it when they sign-in and multifactor a
 If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select the EAM. For example, if the user has Authenticator enabled as another method, they get prompted for [number matching](/entra/identity/authentication/how-to-mfa-number-match).
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an EAM when system-preferred MFA is enabled.":::
-
 
 If the user has no other methods enabled, they can just choose the EAM. They're redirected to the external authentication provider to complete authentication.
 
