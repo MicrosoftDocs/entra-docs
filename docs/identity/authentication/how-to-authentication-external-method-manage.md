@@ -4,7 +4,7 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/31/2025
+ms.date: 08/01/2025
 ms.author: justinha
 author: emakedon23
 manager: dougeby
@@ -140,7 +140,7 @@ Users can follow these steps to register an EAM in Security info:
 
 ### How admins register an EAM for a user
 
-Admins can set a user as registered for an EAM or delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the user doesn't need to register the method through inline or manual registration. Deleting the method enables the admin to help users in recovery scenarios by having their next sign in trigger registration. This can be done through the Microsoft Entra admin center or with [Microsoft Graph](https://learn.microsoft.com/en-us/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta). Admins can create a PowerShell script to update the registration state of multiple users at once.
+Admins can set a user as registered for an EAM or delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the user doesn't need to register the method through inline or manual registration. Deleting the method enables the admin to help users in recovery scenarios by having their next sign in trigger registration. This can be done through the Microsoft Entra admin center or with [Microsoft Graph](/graph/api/resources/authenticationmethods-overview). Admins can create a PowerShell script to update the registration state of multiple users at once.
 
 In the Microsoft Entra admin center:
 
