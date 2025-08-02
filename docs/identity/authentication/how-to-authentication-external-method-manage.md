@@ -30,11 +30,10 @@ To create an EAM, you need the following information from your external authenti
 - A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Microsoft Entra ID requesting authentication.  
 - A **Discovery URL** is the OpenID Connect (OIDC) discovery endpoint for the external authentication provider. 
  
-   >[!NOTE]
-   >See [Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id) to set up the app registration.
+  For more information about how to set up the app registration, see [Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id).
    
    >[!IMPORTANT]
-   > Ensure that the kid (Key ID) property is base64-encoded in both the JWT header of the id_token and in the JSON Web Key Set (JWKS) retrieved from the provider’s jwks_uri. This encoding alignment is essential for the seamless validation of token signatures during authentication processes. Misalignment can result in issues with key matching or signature validation.
+   > Ensure that the kid (Key ID) property is base64-encoded in both the JSON Web Token (JWT) header of the id_token and in the JSON Web Key Set (JWKS) retrieved from the provider’s jwks_uri. This encoding alignment is essential for the seamless validation of token signatures during authentication processes. Misalignment can result in issues with key matching or signature validation.
 
 ## Manage an EAM in the Microsoft Entra admin center
 
@@ -57,7 +56,7 @@ Before you create an EAM in the admin center, make sure you have the [metadata t
    - App ID: 11112222-bbbb-3333-cccc-4444dddd5555
 
    >[!IMPORTANT]
-   >The display name is the name that's shown to the user in the method picker. It can't be changed after the method is created. Display names must be unique.
+   >The user sees the display name in the method picker. You can't change the name after you create the method. The display name must be unique.
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/method-properties.png" alt-text="Screenshot of how to add EAM properties.":::
 
@@ -131,7 +130,7 @@ The next sections cover steps for each option.
 
 Users can follow these steps to register an EAM in Security info:
 
-1. Sign into [Security info](https://mysignins.microsoft.com/security-info)
+1. Sign into [Security info](https://mysignins.microsoft.com/security-info).
 1. Select **+ Add sign-in method**.
 1. When prompted to select a sign-in method from a list of available options, select **External Auth methods**.
 1. Select **Next** at the confirmation screen.
@@ -148,7 +147,9 @@ If the authentication fails, the user is redirected back to the registration wiz
 
 ### How admins register an EAM for a user
 
-Admins can set a user as registered for an EAM, or delete the registration on behalf of the user. This gives admins the ability to mark a user capable of using the authentication method, ensuring the user doesn't need to register the method through inline or manual registration. Deleting the method enables the admin to help users in recovery scenarios by having their next sign in trigger registration. This can be done through the Microsoft Entra admin center or with [Microsoft Graph](/graph/api/resources/authenticationmethods-overview). Admins can create a PowerShell script to update the registration state of multiple users at once.
+Admins can register a user for an EAM. If they register a user for an EAM, the user doesn't need to register their EAM in [Security info](https://mysignins.microsoft.com/security-info) or by using the registration wizard. 
+
+Admins can also delete the registration on behalf of a user. They can delete a registration to help users in recovery scenarios because their next sign triggers a new registration. They can delete EAM registration in the [Microsoft Entra admin center](https://entra.microsoft.com/) or with [Microsoft Graph](/graph/api/resources/authenticationmethods-overview). Admins can create a PowerShell script to update the registration state of multiple users at once.
 
 In the Microsoft Entra admin center:
 
