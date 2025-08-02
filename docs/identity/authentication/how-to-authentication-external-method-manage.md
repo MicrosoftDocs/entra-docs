@@ -10,7 +10,7 @@ author: emakedon23
 manager: dougeby
 ms.reviewer: emilymakedon, gustavosa
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-# Customer intent: As an authentication administrator, I want learn how to manage an external authentication method (EAM) for Microsoft Entra ID.
+# Customer intent: As an authentication administrator, I want to learn how to manage an external authentication method (EAM) for Microsoft Entra ID.
 ---
 # Manage an external authentication method in Microsoft Entra ID (Preview)
 
@@ -114,12 +114,12 @@ If the user has no other methods enabled, they can just choose the EAM. They're 
 ## Authentication method registration for EAMs
 In the EAM Preview, users who are members of groups that are enabled for EAM can use an EAM to satisfy MFA. These users aren't included in reports about authentication method registration.
 
-Rollout of EAM registration in Microsoft Entra ID is in progress. After the rollout is finished, users to register their EAM with Microsoft Entra ID before they can use it to satisfy MFA. As part of this rollout, EAM users who recently signed in with their EAM are automatically marked as registered for the EAM.
+Rollout of EAM registration in Microsoft Entra ID is in progress. After the rollout is finished, users need to register their EAM with Microsoft Entra ID before they can use it to satisfy MFA. As part of this rollout, EAM users who recently signed in with their EAM are automatically marked as registered for the EAM.
 
 Users who didn't recently sign in with their EAM need to register it before they can use it again. These users might see a change the next time they sign in, depending on their current authentication setup:
 
 - If they're only enabled for EAM, they must complete a just-in-time registration of EAM before proceeding.
-- If they're enabled for EAM and other authentication methods, they might lose access to the EAM for authentication. There's two ways to regain access:
+- If they're enabled for EAM and other authentication methods, they might lose access to the EAM for authentication. There are two ways they can regain access:
   - They can register their EAM at [Security info](https://mysignins.microsoft.com/security-info).
   - They can register their EAM by using the registration wizard.
   - An admin can use the Microsoft Entra admin center or Microsoft Graph to register the EAM on their behalf. 
