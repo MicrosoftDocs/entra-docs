@@ -1,10 +1,10 @@
 ---
 title: Configure Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
-description: Learn how to convert group management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using Group Source of Authority (SOA), including prerequisites, setup, validation, and how to roll back.
+description: Learn how to convert group management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using Group Source of Authority (SOA).
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 08/01/2025
+ms.date: 08/03/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -56,7 +56,7 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 ### Microsoft Graph Explorer
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
-1.	SElect the profile icon, and select **Consent to permissions**.
+1.	Select the profile icon, and select **Consent to permissions**.
 1.	Search for Group-OnPremisesSyncBehavior, and select **Consent** for the permission.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-group-source-of-authority-configure/consent.png":::
