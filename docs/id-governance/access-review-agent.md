@@ -68,7 +68,7 @@ The following tables show current Access Review Agent support based on access re
 |Self-review     |         |
 
 
-For other considerations, and limitations, of the Access review agent, see: [Limitations](access-review-agent.md#limitations).
+For other considerations, and limitations, of the Access Review Agent, see: [Limitations](access-review-agent.md#limitations).
 
 
 ## Prerequisites
@@ -124,7 +124,7 @@ The agent considers the following about a user when making review recommendation
 ### Setting up the Access Review Agent
 
 
-1. With an account that has at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least both the roles of [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+1. With an account that has at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role.
 1. From the new home page, select **Go to agents** from the agent notification card.
    - You can also select **Agents** from the left navigation menu.
    :::image type="content" source="media/access-review-agent/start-access-review-agent.png" alt-text="Screenshot of starting the Access Review Agent.":::
@@ -137,11 +137,15 @@ The agent considers the following about a user when making review recommendation
 
 
 > [!NOTE]
-> As both the agent admin, and reviewers require at least the security copilot contributor role, it is recommended to assign this role to a group.
+> As both the agent admin, and reviewers, require at least the security copilot contributor role, it is recommended to assign this role to a group.
 
-### Enable Access review for use with the Access Review Agent
+### Enable resources for use with the Access Review Agent
 
-After the Access review is started, you must now enable which access reviews you want the agent to make decisions on. The Access Review Agent is able to scan both new, and existing, access reviews. To Update an existing access review so that the agent scans it, do the following steps:
+After the Access Review Agent is started, you must enable it on specific resources. The following sections walk you through enabling the Access Review Agent for use with different resources.
+
+#### Enable the Access Review Agent for Access Reviews
+
+The Access Review Agent is able to scan both new, and existing, access reviews. To Update an existing access review so that the agent scans it, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -155,6 +159,7 @@ After the Access review is started, you must now enable which access reviews you
 
 1. Select **Save**. 
 
+#### Enable the Access Review Agent for Access Package Assignments
 
 To enable the agent to make recommendations on an existing access package, you'd do the following steps:
 
