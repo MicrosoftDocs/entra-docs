@@ -213,9 +213,14 @@ The agent is configured to run every 24 hours based on when it's initially confi
    :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
 
 
-## Remove agent
+## Removing the agent 
 
-If you no longer wish to use the Access Review agent, select **Remove agent** from the top of the agent window. The existing data such as access review information and justifications for are removed, but decisions made via decisions with the conversations with the agent remains. They should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
+If you no longer wish to use the Access Review agent, the following sections walk you through removing the agent from resources.
+
+
+### Removing the agent from  an Access Review
+
+When removing the agent from accessing an access review, the existing data such as access review information and justifications for are removed, but decisions made via decisions with the conversations with the agent remains. You should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
@@ -229,7 +234,9 @@ If you no longer wish to use the Access Review agent, select **Remove agent** fr
 
 1. Select **Save**. 
 
-To remove the agent from making recommendations on an existing access package, you'd do the following steps:
+### Remove Agent From Access Package Assignments
+
+To remove the agent from making recommendations on an existing access package assignment, you'd do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
