@@ -133,7 +133,7 @@ If a team you review shares channels, all B2B direct connect users and teams tha
 
 ## Perform an access review using the Access Review Agent
 
-The Access Review Agent, a bot within Microsoft teams used to help reviewers complete their reviews using informed decisions, can be used to review access to groups and applications. To set up, and use, the Access Review Agent, see: [Enable Access review for use with the Access Review Agent](access-review-agent.md#enable-access-review-for-use-with-the-access-review-agent).
+The Access Review Agent, a bot within Microsoft teams used to help reviewers complete their reviews using informed decisions, can be used to review access to groups and applications. To set up, and use, the Access Review Agent, see: [Enable the Access Review Agent for Access Reviews](access-review-agent.md#enable-the-access-review-agent-for-access-reviews).
 
 > [!NOTE]
 > The Access Review Agent requires that reviewers also have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role. For more information about other requirements, and limitations, of the Access Review Agent, see: [Access Review Agent with Microsoft Security Copilot](access-review-agent.md).
