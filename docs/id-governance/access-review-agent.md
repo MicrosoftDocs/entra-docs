@@ -75,7 +75,7 @@ For other considerations, and limitations, of the Access Review Agent, see: [Lim
 
 - You must have the [Microsoft Entra ID Governance or Microsoft Entra Suite license](licensing-fundamentals.md).
 - You must [Onboard to Security Copilot](/copilot/security/get-started-security-copilot#onboarding-to-security-copilot) with at least one [security compute unit (SCU)](/copilot/security/manage-usage) provisioned.
-   - Completing an access review which includes 20 decisions, generating recommendations, as well as the reviewers natural language conversation to complete the review, on average consumes 0.6 SCU. The SCU consumption may vary based on the conversation length between the reviewer and agent..
+   - Completing an access review that includes 20 decisions, generating recommendations, and the reviewers natural language conversation to complete the review, on average consumes 0.6 SCU. The SCU consumption can vary based on the conversation length between the reviewer and agent.
 - To use the Access Review agent as either an admin, you must have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role along with the following roles for specific capabilities:
    - To activate, configure, run, and remove the Access Review Agent, you need both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
    - To view the overview, activities, or settings of the Access Review Agent, you need either the [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
@@ -137,7 +137,7 @@ The agent considers the following about a user when making review recommendation
 
 
 > [!NOTE]
-> As both the agent admin, and reviewers, require at least the security copilot contributor role, it is recommended to assign this role to a group.
+> As both the agent admin, and reviewers, require at least the security copilot contributor role, it's recommended to assign this role to a group.
 
 ### Enable resources for use with the Access Review Agent
 
@@ -182,7 +182,7 @@ To enable the agent to make recommendations on an existing access package, you'd
 
 The Access Review Agent is accessed through a published first-party [Microsoft Teams App](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47). Ensure that the app is [available to users within your organization](/microsoftteams/manage-apps#manage-org-wide-app-settings). Using the app also requires that reviewers use the [Microsoft Teams Public Preview](/microsoftteams/public-preview-doc-updates?tabs=new-teams-client).
 
-With the app published and available, also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews. This is required because the natural language conversation in Microsoft Teams is opening a Microsoft Security Copilot sessions behind the scenes. Participating reviewers will access the agentic experience via Microsoft Teams, but with the role assignment they will be entitled to access https://securitycopilot.microsoft.com/ or the Security Copilot experience in other Microsoft Security administrative portals. If reviewers access Security Copilot outside of Microsoft Teams, their data access with Security Copilot will still be subject to [default user permissions](../fundamentals/users-default-permissions.md).
+With the app published and available, also ensure that all reviewers have at least the [Security Copilot Contributor](/copilot/security/authentication#assign-security-copilot-access) role so that they can use the agent to complete their reviews. This is required because the natural language conversation in Microsoft Teams is opening a Microsoft Security Copilot session behind the scenes. Participating reviewers access the agentic experience via Microsoft Teams, but with the role assignment they'll be entitled to access https://securitycopilot.microsoft.com/ or the Security Copilot experience in other Microsoft Security administrative portals. If reviewers access Security Copilot outside of Microsoft Teams, their data access with Security Copilot is still subject to [default user permissions](../fundamentals/users-default-permissions.md).
 
 ## Using the Access Review Agent as a reviewer
 
