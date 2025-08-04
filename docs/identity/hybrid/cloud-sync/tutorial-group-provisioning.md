@@ -119,7 +119,7 @@ To configure provisioning, follow these steps:
 Follow these steps to make sure the group is provisioned to AD DS:
 
 1.  Sign in to your on-premises environment.
-2.  Launch **Active Directory Users and Computers**
+2.  Launch **Active Directory Users and Computers**.
 3.  Verify the new group is provisioned.
 
     :::image type="content" source="media/tutorial-group-provision/verify.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/verify.png":::
@@ -131,7 +131,7 @@ When you convert the **Source of Authority (SOA)** to cloud for an on-premises g
 For example, in the following diagram, **SOATestGroup1** SOA is converted to the cloud.
 As a result, it becomes available for the job scope in group provisioning to AD DS.
 
-:::image type="content" border="true" source="media/tutorial-group-provision/in-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/group-scope.png":::
+:::image type="content" border="true" source="media/tutorial-group-provision/group-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/group-scope.png":::
 
 - When a job runs, the SOA-converted group is provisioned successfully.
 
@@ -143,7 +143,7 @@ As a result, it becomes available for the job scope in group provisioning to AD 
 
   :::image type="content" border="true" source="media/tutorial-group-provision/matched.png" alt-text="Screenshot of matched attributes." lightbox="media/tutorial-group-provision/matched.png":::
 
-- Additionally, you can confirm that the **Admin Description** and **CN (Common Name)** of the target group are updated.
+- Additionally, you can confirm that the **adminDescription** and **cn** of the target group are updated.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/confirm-updates.png" alt-text="Screenshot of updated attributes." lightbox="media/tutorial-group-provision/confirm-updates.png":::
 
