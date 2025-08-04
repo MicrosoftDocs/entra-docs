@@ -35,7 +35,7 @@ The following table shows the differences between the Lifecycle Administrator ro
 
 [!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-## Edit the administrative scope of a workflow
+## Edit the administrative scope of a workflow using the Microsoft Entra admin center
 
 Existing workflows can have their scopes updated to be managed by certain administrators. To edit the properties of a workflow using the Microsoft Entra admin center, you do the following steps:
 
