@@ -34,7 +34,7 @@ This tutorial assumes:
   Marketing    | OU=Groups,DC=contoso,DC=com
 
 
-## Add users to cloud-native or SOA converted security groups
+## Add users to cloud-native or Source of Authority (SOA) converted security groups
 
 To add synced users, follow these steps:
 
@@ -170,7 +170,7 @@ You convert the SOA of a synced group (parent) whose members are other synced gr
 
 If you have SOA converted groups in scope and you roll back the SOA converted group to make it owned by AD DS, group provisioning to AD DS stops syncing the changes, but it doesn't delete the on-premises group. It also removes the group from configuration scope. On-premises control of the group resumes in the next sync cycle.
 
-- You can verify in the Audit Logs that sync won't happen for this object because it's managed on-premises. 
+- You can verify in the Audit Logs that sync does't happen for this object because it's managed on-premises. 
   
   :::image type="content" border="true" source="media/tutorial-group-provision/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/tutorial-group-provision/audit-log-details.png":::
 
