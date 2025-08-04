@@ -103,7 +103,7 @@ For more information on native authentication samples and tutorials, see the fol
 |iOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
 |macOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-macos-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
 |React (Next.js) | &#8226; [Quickstart](/quickstart-native-authentication-single-page-app-sdk-sign-in) | &#8226; [Tutorials](/tutorial-native-authentication-single-page-app-react-sdk-sign-up)|
-|Angular | &#8226; [Quickstart](//quickstart-native-authentication-single-page-app-sdk-sign-in) | &#8226; [Tutorials](/tutorial-native-authentication-single-page-app-angular-sign-up)|
+|Angular | &#8226; [Quickstart](/quickstart-native-authentication-single-page-app-sdk-sign-in) | &#8226; [Tutorials](/tutorial-native-authentication-single-page-app-angular-sign-up)|
 
 If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](reference-native-authentication-api.md).
 
