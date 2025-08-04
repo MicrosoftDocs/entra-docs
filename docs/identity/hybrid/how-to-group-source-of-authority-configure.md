@@ -1,10 +1,10 @@
 ---
 title: Configure Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
-description: Learn how to convert group management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using Group Source of Authority (SOA), including prerequisites, setup, validation, and how to roll back.
+description: Learn how to convert group management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using Group Source of Authority (SOA).
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 08/01/2025
+ms.date: 08/03/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -20,7 +20,7 @@ This topic explains the prerequisites and steps to configure Group Source of Aut
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of groups.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
 | **Permissions** | For apps calling into the onPremisesSyncBehavior Microsoft Graph API, the Group-OnPremisesSyncBehavior.ReadWrite.All permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free or Basic license. |
-| **Connect Sync client** | Minimum version is [2.5.76.0](./connect/reference-connect-version-history.md) |
+| **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760) |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
 
 ## Setup
@@ -31,7 +31,7 @@ You need to set up Connect Sync client and the Microsoft Entra Provisioning agen
 
 1. Download the latest version of the Connect Sync build.
 
-1. Verify the Connect Sync build is successfully installed. Go to **Programs** in Control Panel and confirm that the version of Microsoft Entra Connect Sync is [2.5.76.0](./connect/reference-connect-version-history.md) or later.
+1. Verify the Connect Sync build is successfully installed. Go to **Programs** in Control Panel and confirm that the version of Microsoft Entra Connect Sync is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760).
 
 ### Cloud Sync client
 
@@ -56,8 +56,8 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 ### Microsoft Graph Explorer
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
-1.	Click the profile icon, and select **Consent to permissions**.
-1.	Search for Group-OnPremisesSyncBehavior, and click **Consent** for the permission.
+1.	Select the profile icon, and select **Consent to permissions**.
+1.	Search for Group-OnPremisesSyncBehavior, and select **Consent** for the permission.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-group-source-of-authority-configure/consent.png":::
 
@@ -168,11 +168,11 @@ Follow these steps to convert the SOA for a test group:
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/search.png" alt-text="Screenshot of how to search for RDN.":::
 
-1. Double-click the searched entry, and click **Lineage** > **Metaverse Object Properties**.
+1. Double-click the searched entry, and select **Lineage** > **Metaverse Object Properties**.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/lineage.png" alt-text="Screenshot of how to view lineage.":::
 
-1. Click **Connectors** and double-click the **Entra ID object** with "CN={\<Alphanumeric Characters\>}".
+1. Select **Connectors** and double-click the **Entra ID object** with "CN={\<Alphanumeric Characters\>}".
 
 1. You can see that the **blockOnPremisesSync** property is set to true on the Entra ID object. This property value means that any changes made in the corresponding AD DS object don't flow to the Entra ID object:
 
