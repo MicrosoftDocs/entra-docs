@@ -503,7 +503,7 @@ If for any reason Secure Enclave needs to be disabled, follow these recommended 
 
 To opt your tenant out of the secure storage rollout, contact Microsoft customer support to request exclusion from the secure storage deployment. Once processed, your tenant is permanently excluded from this rollout. Any devices in your tenant previously registered with secure storage must follow the previous guidance for removing and re-adding the device after the permanent opt-out is completed. To opt in for Secure storage at a future date, you must contact Microsoft customer support.
  
-### How to detect if your device is registered with secure storage
+#### How to detect if your device is registered with secure storage
 
 Secure storage registration is seamless for the device. If you experience login issues or notice abnormal behavior, please contact Microsoft customer support.
 
