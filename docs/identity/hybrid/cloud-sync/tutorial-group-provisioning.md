@@ -135,7 +135,7 @@ As a result, it becomes available for the job scope in group provisioning to AD 
 
 - When a job runs, the SOA-converted group is provisioned successfully.
 
-- In the **Provisioning Logs**, you can search for the group name and verify that the group was provisioned.
+- In the **Provisioning logs**, you can search for the group name and verify that the group was provisioned.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/provisioning-logs.png" alt-text="Screenshot of the Provisioning logs." lightbox="media/tutorial-group-provision/provisioning-logs.png":::
 
@@ -170,7 +170,7 @@ You convert the SOA of a synced group (parent) whose members are other synced gr
 
 If you have SOA converted groups in scope and you roll back the SOA converted group to make it owned by AD DS, group provisioning to AD DS stops syncing the changes, but it doesn't delete the on-premises group. It also removes the group from configuration scope. On-premises control of the group resumes in the next sync cycle.
 
-- You can verify in the Audit Logs that sync does't happen for this object because it's managed on-premises. 
+- You can verify in the Audit Logs that sync doesn't happen for this object because it's managed on-premises. 
   
   :::image type="content" border="true" source="media/tutorial-group-provision/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/tutorial-group-provision/audit-log-details.png":::
 
