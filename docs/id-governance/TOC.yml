@@ -385,7 +385,7 @@
           href: download-workflow-history.md  
         - name: Check execution user scope
           href: check-workflow-execution-scope.md
-        - name: Delegate Workflow management (Preview)
+        - name: Delegate Workflow Management (Preview)
           href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
