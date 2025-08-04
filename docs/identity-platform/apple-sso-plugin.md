@@ -434,13 +434,13 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 
 ## Device Identity Key Storage
 
-In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning July 2025, new device registrations will require Secure Enclave for key storage.
+In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning August 2025 as part of the Secure Enclave rollout, certain new device registrations will require Secure Enclave for key storage. Eventually, all new device registrations will require Secure Enclave.
 
 If your applications or MDM solutions depend on accessing Workplace Join keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
 ### Enable Secure Enclave based storage of device identity keys
 
-If you are enabling Secure Enclave based storage of device identity keys before it becomes mandatory, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+If you are enabling Secure Enclave based storage of device identity keys before it becomes mandatory for all devices, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
 
 > [!NOTE]
 > For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
@@ -454,6 +454,7 @@ The screenshot below shows the configuration page and settings for enabling Secu
 :::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin center showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
 
 ### Recognize app incompatibilities with Secure Enclave based device identity
+
 After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
 
 :::image type="content" source="./media/apple-sso-plugin/device-mgmt-reqd.png" alt-text="Screenshot of a Conditional Access error message informing the user that the device must be managed before this resource can be accessed." lightbox="./media/apple-sso-plugin/device-mgmt-reqd.png":::
@@ -499,15 +500,19 @@ If for any reason Secure Enclave needs to be disabled, follow these recommended 
 > The device must be unregistered and re-registered for the storage location change to take effect. Simply updating the configuration flag without re-registration will not change the storage location for existing device registrations.
  
 #### Opting out of Secure Storage
-To opt your tenant out of the secure storage rollout, contact Microsoft customer support and request exclusion from the Secure storage deployment. Once processed, your tenant will be permanently excluded from this rollout. If any devices in your tenant are already registered with secure storage, they must follow the procedure above for removing and re-adding the device after the permanent opt-out is completed. And for the future, if the tenatn requires opting in again. You need to follow same procedure with Microsoft support.
+
+To opt your tenant out of the secure storage rollout, contact Microsoft customer support to request exclusion from the secure storage deployment. Once processed, your tenant is permanently excluded from this rollout. Any devices in your tenant previously registered with secure storage must follow the previous guidance for removing and re-adding the device after the permanent opt-out is completed. To opt in for Secure storage at a future date, you must contact Microsoft customer support.
  
 ### How to detect if your device is registered with secure storage
-Secure storage registration is seamless for the device. If you experience login issues or notice abnormal behavior, please contact Microsoft customer support. (upload logs and share the incident ID with Microsoft support to track and diagnose the problem.)
+
+Secure storage registration is seamless for the device. If you experience login issues or notice abnormal behavior, please contact Microsoft customer support.
 
 ### Scenarios impacted
-The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
 
-This isn't an exhaustive list and we do advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
+The list below contains some common scenarios that will be impacted by these changes. By default, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
+
+> [!NOTE]
+> This isn't an exhaustive list, and we advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
 
 #### Registered/Enrolled Device Conditional Access Policy Support in Chrome
 To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you'll need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
