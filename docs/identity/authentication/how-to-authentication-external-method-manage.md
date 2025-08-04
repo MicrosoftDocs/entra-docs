@@ -147,7 +147,7 @@ If the authentication fails, the user is redirected back to the registration wiz
 
 Admins can register a user for an EAM. If they register a user for an EAM, the user doesn't need to register their EAM in [Security info](https://mysignins.microsoft.com/security-info) or by using the registration wizard. 
 
-Admins can also delete the registration on behalf of a user. They can delete a registration to help users in recovery scenarios because their next sign triggers a new registration. They can delete EAM registration in the [Microsoft Entra admin center](https://entra.microsoft.com/) or with [Microsoft Graph](/graph/api/resources/authenticationmethods-overview). Admins can create a PowerShell script to update the registration state of multiple users at once.
+Admins can also delete the registration on behalf of a user. They can delete a registration to help users in recovery scenarios because their next sign triggers a new registration. They can delete EAM registration in the [Microsoft Entra admin center](https://entra.microsoft.com/) or with [Microsoft Graph](/graph/api/resources/externalauthenticationmethod). Admins can create a PowerShell script to update the registration state of multiple users at once.
 
 In the Microsoft Entra admin center:
 
