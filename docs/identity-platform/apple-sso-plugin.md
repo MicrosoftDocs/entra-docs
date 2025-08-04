@@ -73,7 +73,7 @@ The minimum set of URLs that need to be allowed for the SSO plug-in to function 
 
 **URLs that need to be allowed for Device registration flows**  
 
-Please ensure that traffic to the URLs listed [here](/entra/identity/devices/plan-device-deployment#network-requirements-for-device-registration-with-microsoft-entra) is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration flows that rely on TLS challenges to complete successfully.
+Ensure that traffic to the URLs listed [here](/entra/identity/devices/plan-device-deployment#network-requirements-for-device-registration-with-microsoft-entra) is allowed by default and explicitly exempted from TLS interception or inspection. This is critical for registration flows that rely on TLS challenges to complete successfully.
 
 > [!IMPORTANT]
 > **Note: There has been a recent update to the TLS endpoint used in registration flows. Please verify that your environment’s allowlist reflects the latest URL requirements to avoid disruptions.**
@@ -174,7 +174,7 @@ Your organization likely uses the Authenticator app for scenarios like multifact
 Use the following parameters to configure the Microsoft Enterprise SSO plug-in for apps that don't use MSAL.
 
 >[!IMPORTANT]
-> You don't need to add apps that use a Microsoft Authentication Library to this allow-list. Those apps participate in SSO by default. Most of the Microsoft-built apps use a Microsoft Authentication Library. 
+> You don't need to add apps that use a Microsoft Authentication Library to this allowlist. Those apps participate in SSO by default. Most of the Microsoft-built apps use a Microsoft Authentication Library. 
 
 #### Enable SSO for all managed apps
 
@@ -215,7 +215,7 @@ To *disable* SSO for Safari or Safari View Service, you must explicitly do so by
 - macOS: `com.apple.Safari`
 
 >[!NOTE]
-> SSO cannot be disabled for apps that use a Microsoft Authentication Library using this setting.
+> SSO can't be disabled for apps that use a Microsoft Authentication Library using this setting.
 
 #### Enable SSO through cookies for a specific application
 
@@ -238,7 +238,7 @@ Try this configuration only for applications that have unexpected sign-in failur
 #### Summary of keys
 
 >[!NOTE]
-> Keys described in this section only apply to apps that are not using a Microsoft Authentication Library.
+> Keys described in this section only apply to apps that aren't using a Microsoft Authentication Library.
 
 | Key | Type | Value |
 |--|--|--|
@@ -246,7 +246,7 @@ Try this configuration only for applications that have unexpected sign-in failur
 | `AppAllowList` | String<br/>*(comma-delimited  list)* | Bundle IDs of applications allowed to participate in SSO. |
 | `AppBlockList` | String<br/>*(comma-delimited  list)* | Bundle IDs of applications not allowed to participate in SSO. |
 | `AppPrefixAllowList` | String<br/>*(comma-delimited  list)* | Bundle ID prefixes of applications allowed to participate in SSO. For iOS, the default value would be set to `com.apple.` and that would enable SSO for all Apple apps. For macOS, the default value would be set to `com.apple.` and `com.microsoft.` and that would enable SSO for all Apple and Microsoft apps. Developers, Customers, or Admins could override the default value or add apps to `AppBlockList` to prevent them from participating in SSO. |
-| `AppCookieSSOAllowList` | String<br/>*(comma-delimited  list)* | Bundle ID prefixes of applications allowed to participate in SSO but that use special network settings and have trouble with SSO using the other settings. Apps you add to `AppCookieSSOAllowList` must also be added to `AppPrefixAllowList`. Please note that this key is to be used only for iOS apps and not for macOS apps. |
+| `AppCookieSSOAllowList` | String<br/>*(comma-delimited  list)* | Bundle ID prefixes of applications allowed to participate in SSO but that use special network settings and have trouble with SSO using the other settings. Apps you add to `AppCookieSSOAllowList` must also be added to `AppPrefixAllowList`. Note that this key is to be used only for iOS apps and not for macOS apps. |
 
 #### Settings for common scenarios
 
@@ -440,7 +440,7 @@ If your applications or MDM solutions depend on accessing Workplace Join keys th
 
 ### Enable Secure Enclave based storage of device identity keys
 
-If you are enabling Secure Enclave based storage of device identity keys before it becomes mandatory for all devices, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+If you're enabling Secure Enclave based storage of device identity keys before it becomes mandatory for all devices, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
 
 > [!NOTE]
 > For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
