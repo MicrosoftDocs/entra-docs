@@ -29,7 +29,7 @@ The following table shows the differences between the Lifecycle Administrator ro
 |[View workflow history](lifecycle-workflow-history.md)     | Yes | Yes (only assigned workflows) |
 |[View Audit Logs](lifecycle-workflow-audits.md)   | Yes | No |
 |[Run Workflow on-demand](on-demand-workflow.md)    | Yes | Yes (only assigned workflows) |
-|[Scope Workflows](manage-delegate-workflow.md#edit-the-administrative-scope-of-a-workflow)     | Yes | No |
+|[Scope Workflows](manage-delegate-workflow.md#edit-the-administrative-scope-of-a-workflow-using-the-microsoft-entra-admin-center)     | Yes | No |
 
 ## Prerequisites
 
