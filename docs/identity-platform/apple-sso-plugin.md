@@ -430,14 +430,17 @@ Compared to MSAL-based apps, the SSO plug-in acts more transparently for non-MSA
 
 The end user sees the familiar experience and doesn't have to sign in again in each application. For example, instead of displaying the native account picker, the SSO plug-in adds SSO sessions to the web-based account picker experience. 
 
-## Upcoming changes to device identity key storage
-Announced in March 2024, Microsoft Entra ID will be moving away from Apple’s Keychain for storing device identity keys. Starting in Q3 2025, all new device registrations will use Apple’s Secure Enclave. There will be no opt-out of this storage location.
+<a name='upcoming-changes-to-device-identity-key-storage'></a>
 
-Applications and MDM integrations that have a dependency on accessing Workplace Join keys via Keychain will need to start using MSAL and the Enterprise SSO plug-in to ensure compatibility with the Microsoft identity platform. 
+## Device Identity Key Storage
+
+In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning July 2025, all new device registrations will require Secure Enclave for key storage.
+
+If your applications or MDM solutions depend on accessing Workplace Join keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
 ### Enable Secure Enclave based storage of device identity keys
 
-If you would like to enable Secure Enclave based storage of device identity keys before it becomes mandatory, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+If you are enabling Secure Enclave based storage of device identity keys before it becomes mandatory, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
 
 > [!NOTE]
 > For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
@@ -460,6 +463,18 @@ This error appears in Microsoft Entra ID sign-in logs with the following details
 - **Failure reason:** `Device is required to be managed to access this resource.`
 
 If you see this error message during testing, first, ensure you have successfully enabled the SSO extension as well as have installed any requisite application-specific extensions (e.g., [Microsoft Single Sign On for Chrome](https://chromewebstore.google.com/detail/microsoft-single-sign-on/ppnbnpeolgkicgegkbkbjmhlideopiji)). If you continue to see this message, it's recommended that you contact the vendor of the application to alert them to the incompatibility with the new storage location. 
+
+#### Troubleshoot Secure Enclave
+
+In cases where you must troubleshoot issues with Secure Enclave, it can be disabled by updating the following key in your Apple device's MDM configuration:
+
+- **Key**: `use_most_secure_storage`
+- **Type**: `Boolean`
+- **Value**: False
+
+
+> [!NOTE]
+> Disabling Secure Enclave should only be done during troubleshooting.
 
 ### Scenarios impacted
 The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
