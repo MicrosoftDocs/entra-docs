@@ -20,7 +20,7 @@ Managing workflows can be accomplished in one of two ways:
 You can update the following basic information without creating a new workflow.
    - display name
    - description
-   - [Administrative Unit Scope]((manage-delegate-workflow.md))
+   - [Administrative Unit Scope](manage-delegate-workflow.md)
    - whether or not it's enabled
    - Whether or not workflow schedule is enabled
    - task name
