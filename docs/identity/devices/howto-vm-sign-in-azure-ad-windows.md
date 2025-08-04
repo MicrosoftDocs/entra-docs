@@ -45,7 +45,7 @@ This feature currently supports the following Windows distributions:
 ::: zone pivot="identity-extension-vm"
 - Windows 11 21H2 or later installed.
 - Windows 10, version 1809 or later installed.
-- Windows Server 1809 or later installed with Desktop Experience.
+- Windows Server -which version of Windows Server? (1809 is Windows 10)- or later installed with Desktop Experience.
 ::: zone-end
 
 ::: zone pivot="identity-extension-hybrid"
