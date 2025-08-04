@@ -120,7 +120,6 @@ Users who didn't recently sign in with their EAM need to register it before they
 - If they're only enabled for EAM, they must complete a just-in-time registration of EAM before proceeding.
 - If they're enabled for EAM and other authentication methods, they might lose access to the EAM for authentication. There are two ways they can regain access:
   - They can register their EAM at [Security info](https://mysignins.microsoft.com/security-info).
-  - They can register their EAM by using the registration wizard.
   - An admin can use the Microsoft Entra admin center or Microsoft Graph to register the EAM on their behalf. 
 
 The next sections cover steps for each option. 
