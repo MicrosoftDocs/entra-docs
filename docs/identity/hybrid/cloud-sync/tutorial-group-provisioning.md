@@ -5,7 +5,7 @@ author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 08/01/2025
+ms.date: 08/04/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-image-nochange
@@ -39,7 +39,7 @@ This tutorial assumes:
 To add synced users, follow these steps:
 
 >[!NOTE]
->Only synced user member references are provisioned to AD. 
+>Only synced user member references are provisioned to AD DS. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Entra ID** > **Groups** > **All groups**.
@@ -129,11 +129,11 @@ Follow these steps to make sure the group is provisioned to AD DS:
 When you convert the **Source of Authority (SOA)** to cloud for an on-premises group, that group becomes eligible for group provisioning to AD DS.
 
 For example, in the following diagram, **SOATestGroup1** SOA is converted to the cloud.
-As a result, it becomes available for the **GPAD job scope**.
+As a result, it becomes available for the job scope in group provisioning to AD DS.
 
-:::image type="content" border="true" source="media/tutorial-group-provision/in-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/entry-level-error.png":::
+:::image type="content" border="true" source="media/tutorial-group-provision/in-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/group-scope.png":::
 
-- When a **GPAD job** runs, the SOA-converted group is provisioned successfully.
+- When a job runs, the SOA-converted group is provisioned successfully.
 
 - In the **Provisioning Logs**, you can search for the group name and verify that the group was provisioned.
 
@@ -147,7 +147,7 @@ As a result, it becomes available for the **GPAD job scope**.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/confirm-updates.png" alt-text="Screenshot of updated attributes." lightbox="media/tutorial-group-provision/confirm-updates.png":::
 
-- When you look at AD, you can find that the original AD group is updated.
+- When you look at AD DS, you can find that the original group is updated.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/updated-group.png" alt-text="Screenshot of the updated group." lightbox="media/tutorial-group-provision/updated-group.png":::
 
@@ -155,26 +155,26 @@ As a result, it becomes available for the **GPAD job scope**.
 
 ### Nested Groups and membership references handling
 
-The following table explains how the provisioning handles membership references when you convert SOA for some groups within a nested group structure and add it into scope for provisioning to AD.
+The following table explains how the provisioning handles membership references when you convert SOA for some groups within a nested group structure and add it into scope for provisioning to AD DS.
 
 Use case | Parent group type | Member group type | Job | How sync works
 ---------|-------------------|-------------------|-----|-----------------------
-A Microsoft Entra parent security group has only Microsoft Entra members. | Microsoft Entra security group |Microsoft Entra security group |AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
-A Microsoft Entra parent security group has some members that are synced groups. |Microsoft Entra security group |AD security groups (synced groups)| AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group, but all the member references (member Groups) that are AD groups aren't provisioned.
-A Microsoft Entra parent security group has some members that are synced groups whose SOA is converted to cloud. |Microsoft Entra security group | AD security groups whose SOA is converted to cloud. |AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group with all its member references (member groups).
-You convert the SOA of a synced group (parent) that has cloud-owned groups as members. | AD security groups with SOA converted to cloud | Microsoft Entra security group| AAD2ADGroupProvisioning (Group Provisioning to AD)| The job provisions the parent group with all its member references (member groups).
-You convert the SOA of a synced group (parent) that has other synced groups as members. |AD security groups with SOA converted to cloud| AD security groups (synced groups) | AAD2ADGroupProvisioning (Group Provisioning to AD) |The job provisions the parent group, but all the member references (member Groups) that are AD security groups aren't provisioned.
-You convert the SOA of a synced group (parent) whose members are other synced groups that have SOA converted to cloud. | AD security groups with SOA converted to cloud | AD security groups with SOA converted to cloud | AAD2ADGroupProvisioning (Group Provisioning to AD) | The job provisions the parent group with all its member references (member groups).
+A Microsoft Entra parent security group has only Microsoft Entra members. | Microsoft Entra security group |Microsoft Entra security group |AAD2ADGroupProvisioning (group provisioning to AD DS) | The job provisions the parent group with all its member references (member groups).
+A Microsoft Entra parent security group has some members that are synced groups. |Microsoft Entra security group |AD DS security groups (synced groups)| AAD2ADGroupProvisioning (group provisioning to AD DS)| The job provisions the parent group, but all the member references (member Groups) that are AD DS groups aren't provisioned.
+A Microsoft Entra parent security group has some members that are synced groups whose SOA is converted to cloud. |Microsoft Entra security group | AD DS security groups whose SOA is converted to cloud. |AAD2ADGroupProvisioning (group provisioning to AD DS)| The job provisions the parent group with all its member references (member groups).
+You convert the SOA of a synced group (parent) that has cloud-owned groups as members. | AD DS security groups with SOA converted to cloud | Microsoft Entra security group| AAD2ADGroupProvisioning (group provisioning to AD DS)| The job provisions the parent group with all its member references (member groups).
+You convert the SOA of a synced group (parent) that has other synced groups as members. |AD DS security groups with SOA converted to cloud| AD DS security groups (synced groups) | AAD2ADGroupProvisioning (group provisioning to AD DS) |The job provisions the parent group, but all the member references (member Groups) that are AD DS security groups aren't provisioned.
+You convert the SOA of a synced group (parent) whose members are other synced groups that have SOA converted to cloud. | AD DS security groups with SOA converted to cloud | AD DS security groups with SOA converted to cloud | AAD2ADGroupProvisioning (group provisioning to AD DS) | The job provisions the parent group with all its member references (member groups).
 
-## Group provision to AD behavior after you roll back SOA converted groups
+## Group provision to AD DS behavior after you roll back SOA converted groups
 
-If you have SOA converted groups in scope and you roll back the SOA converted group to make it an AD owned group, **Group Provisioning to AD (GPAD)** will stop syncing the changes, but it doesn't delete the on-premises group. It also removes the group from GPAD configuration scope. On-premises control of the group resumes in the next sync cycle.
+If you have SOA converted groups in scope and you roll back the SOA converted group to make it owned by AD DS, group provisioning to AD DS stops syncing the changes, but it doesn't delete the on-premises group. It also removes the group from configuration scope. On-premises control of the group resumes in the next sync cycle.
 
 - You can verify in the Audit Logs that sync won't happen for this object because it's managed on-premises. 
   
   :::image type="content" border="true" source="media/tutorial-group-provision/audit-log-details.png" alt-text="Screenshot of Audit log details." lightbox="media/tutorial-group-provision/audit-log-details.png":::
 
-  You can also check in AD that the group is still intact and not deleted.  
+  You can also check in AD DS that the group is still intact and not deleted.  
 
   :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
 
