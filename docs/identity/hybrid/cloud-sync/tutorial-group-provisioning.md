@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial - Provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync'
-description: This tutorial shows how to setup and configure Microsoft Entra Cloud Sync to provision groups to Active Directory Domain Services (AD DS).
+description: This tutorial shows how to set up and configure Microsoft Entra Cloud Sync to provision groups to Active Directory Domain Services (AD DS).
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
@@ -74,7 +74,7 @@ To configure provisioning, follow these steps:
 
    9. There are two possible approaches to set the OU:
 
-      - You can preserve the original OU path from on-premises. With this approach, you to set the attribute mapping based on an extensionAttribute value. For more information, see [Preserve the original OU path](how-to-preserve-original-organizational-unit.md).  
+      - You can preserve the original OU path from on-premises. With this approach, you need to set the attribute mapping based on an extensionAttribute value. For more information, see [Preserve the original OU path](how-to-preserve-original-organizational-unit.md).
    
       Or
 
@@ -118,13 +118,13 @@ To configure provisioning, follow these steps:
 
 Follow these steps to make sure the group is provisioned to AD DS:
 
-1.  Sign-in to your on-premises environment.
+1.  Sign in to your on-premises environment.
 2.  Launch **Active Directory Users and Computers**
 3.  Verify the new group is provisioned.
 
     :::image type="content" source="media/tutorial-group-provision/verify.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/verify.png":::
 
-## Group Provision to AD behavior for SOA converted objects
+## Group provision to AD behavior for SOA converted objects
 
 When you convert the **Source of Authority (SOA)** to cloud for an on-premises group, that group becomes eligible for group provisioning to AD DS.
 
