@@ -434,7 +434,7 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 
 ## Device Identity Key Storage
 
-In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning July 2025, all new device registrations will require Secure Enclave for key storage.
+In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning July 2025, new device registrations will require Secure Enclave for key storage.
 
 If your applications or MDM solutions depend on accessing Workplace Join keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
@@ -467,14 +467,42 @@ If you see this error message during testing, first, ensure you have successfull
 #### Troubleshoot Secure Enclave
 
 In cases where you must troubleshoot issues with Secure Enclave, it can be disabled by updating the following key in your Apple device's MDM configuration:
-
-- **Key**: `use_most_secure_storage`
+ 
+- **Key**:: `use_most_secure_storage`
 - **Type**: `Boolean`
 - **Value**: False
-
-
+ 
+Alternatively:
+ 
+- **Key**: `use_most_secure_storage`
+- **Type**: `Integer`
+- **Value**: 0
+ 
 > [!NOTE]
 > Disabling Secure Enclave should only be done during troubleshooting.
+ 
+#### More details on disabling Secure Enclave
+ 
+If for any reason Secure Enclave needs to be disabled, follow these recommended steps:
+ 
+1. **Update the configuration**: Disable `use_most_secure_storage` by setting the flag to `false` for Boolean type or `0` for Integer type in your MDM configuration.
+ 
+1. **Unregister the device**: Remove the device registration using one of these methods:
+  - **Microsoft Authenticator**: Navigate to the device registration menu and follow the unregistration steps
+  - **Intune Company Portal**: Select your device from the list of device, Press `...` and then Remove your device
+ 
+1. **Re-register the device**: After unregistering, register the device again using either:
+  - **Intune Company Portal**: Select the device and register it again
+  - **Microsoft Authenticator**: Go to the menu, select Device Registration, and register the device again (Note: This method is not available on macOS)
+ 
+> [!IMPORTANT]
+> The device must be unregistered and re-registered for the storage location change to take effect. Simply updating the configuration flag without re-registration will not change the storage location for existing device registrations.
+ 
+#### Opting out of Secure Storage
+To opt your tenant out of the secure storage rollout, contact Microsoft customer support and request exclusion from the Secure storage deployment. Once processed, your tenant will be permanently excluded from this rollout. If any devices in your tenant are already registered with secure storage, they must follow the procedure above for removing and re-adding the device after the permanent opt-out is completed. And for the future, if the tenatn requires opting in again. You need to follow same procedure with Microsoft support.
+ 
+### How to detect if your device is registered with secure storage
+Secure storage registration is seamless for the device. If you experience login issues or notice abnormal behavior, please contact Microsoft customer support. (upload logs and share the incident ID with Microsoft support to track and diagnose the problem.)
 
 ### Scenarios impacted
 The list below contains some common scenarios that will be impacted by these changes. As a rule of thumb, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
