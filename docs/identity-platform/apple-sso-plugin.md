@@ -449,6 +449,13 @@ If you're enabling Secure Enclave based storage of device identity keys before i
 - **Type**: `Boolean`
 - **Value**: True
 
+Alternatively:
+
+
+- **Key**: `use_most_secure_storage`
+- **Type**: `Integer`
+- **Value**: 1
+
 The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
 :::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin center showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
