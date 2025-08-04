@@ -44,13 +44,13 @@ To add synced users, follow these steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 2. Browse to **Entra ID** > **Groups** > **All groups**.
 3. At the top, in the search box, enter **Sales**.
-4. Click the new **Sales** group.
-5. On the left, click **Members**.
-6. At the top, click **Add members**.
+4. Select the new **Sales** group.
+5. On the left, select **Members**.
+6. At the top, select **Add members**.
 7. At the top, in the search box, enter **Britta Simon**.
-8. Put a check next to **Britta Simon** and click **Select**.
+8. Put a check next to **Britta Simon** and select **Select**.
 9. It should successfully add the user to the group.
-10. On the far left, click **All groups**. Repeat this process by using the **Sales** group, and add **Lola Jacobson** to that group.
+10. On the far left, select **All groups**. Repeat this process by using the **Sales** group, and add **Lola Jacobson** to that group.
 
 ## Configure provisioning
 
@@ -62,12 +62,12 @@ To configure provisioning, follow these steps:
 
       :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png" alt-text="Screenshot of configuration selection." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-1.png":::
 
-   5. On the configuration screen, select your domain and whether to enable password hash sync. Click **Create**. 
+   5. On the configuration screen, select your domain and whether to enable password hash sync. Select **Create**. 
 
       :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
    6. The **Get started** screen opens. From here, you can continue configuring cloud sync.
-   7. On the left, click **Scoping filters**.
+   7. On the left, select **Scoping filters**.
    8. For **Groups scope**, select **Selected security groups**.
 
       :::image type="content" source="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png" alt-text="Screenshot of the scoping filters sections." lightbox="media/how-to-configure-entra-to-active-directory/entra-to-ad-3.png":::
@@ -78,7 +78,7 @@ To configure provisioning, follow these steps:
    
       Or
 
-      - Under **Target container** click **Edit attribute mapping**.
+      - Under **Target container** select **Edit attribute mapping**.
 
    10. Change **Mapping type** to **Expression**.
    11. In the expression box, enter:
@@ -89,11 +89,11 @@ To configure provisioning, follow these steps:
 
        :::image type="content" source="media/tutorial-group-provision/change-default.png" alt-text="Screenshot of how to change the default value of the OU." lightbox="media/tutorial-group-provision/change-default.png":::
 
-   13. Click **Apply** - This changes the target container depending on the group displayName attribute.
-   14. Click **Save**.
-   15. On the left, click **Overview**.
-   16. At the top, click **Review and enable**.
-   17. On the right, click **Enable configuration**.
+   13. Select **Apply** - This changes the target container depending on the group displayName attribute.
+   14. Select **Save**.
+   15. On the left, select **Overview**.
+   16. At the top, select **Review and enable**.
+   17. On the right, select **Enable configuration**.
 
 
 ## Test configuration 
@@ -109,7 +109,7 @@ To configure provisioning, follow these steps:
     
     :::image type="content" source="media/tutorial-group-provision/select-user.png" alt-text="Screenshot of adding members." lightbox="media/tutorial-group-provision/select-user.png":::
 
- 7. Click **Provision**.
+ 7. Select **Provision**.
  8. You should see the group provisioned.
  
    :::image type="content" source="media/tutorial-group-provision/success.png" alt-text="Screenshot of successful provisioning on demand." lightbox="media/tutorial-group-provision/success.png":::
