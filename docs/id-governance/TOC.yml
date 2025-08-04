@@ -386,7 +386,7 @@
         - name: Check execution user scope
           href: check-workflow-execution-scope.md
         - name: Delegate Workflow management (Preview)
-          href: delegate-workflow-management.md
+          href: manage-delegate-workflow.md
         - name: Customize the schedule of workflows
           href: customize-workflow-schedule.md
         - name: Manage synced AD DS users
