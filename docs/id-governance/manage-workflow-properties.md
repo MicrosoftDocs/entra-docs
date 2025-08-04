@@ -20,12 +20,11 @@ Managing workflows can be accomplished in one of two ways:
 You can update the following basic information without creating a new workflow.
    - display name
    - description
-   - Administrative Unit Scope
+   - [Administrative Unit Scope]((manage-delegate-workflow.md))
    - whether or not it's enabled
    - Whether or not workflow schedule is enabled
    - task name
    - task description
-   - The [administrative scope](manage-delegate-workflow.md) of the workflow
 
 If you change any other parameters, a new version is required to be created as outlined in the [Managing workflow versions](manage-workflow-tasks.md) article.
 
