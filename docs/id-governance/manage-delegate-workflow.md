@@ -49,7 +49,7 @@ Existing workflows can have their scopes updated to be managed by certain admini
 
 1. Select **Save**.
 
-## Edit the administrative scope of a workflow
+## Edit the administrative scope of a workflow using Microsoft Graph
 
 To edit the administrative scope of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
 
