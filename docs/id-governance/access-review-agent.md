@@ -65,7 +65,7 @@ The following tables show current Access Review Agent support based on access re
 |Specific     |   :white_check_mark:       |
 |Group Owners     |  :white_check_mark:        |
 |Managers     |  :white_check_mark:        |
-|Self-review     |         |
+|Self-review     |  :white_x_mark:    |
 
 
 For other considerations, and limitations, of the Access Review Agent, see: [Limitations](access-review-agent.md#limitations).
