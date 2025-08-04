@@ -194,7 +194,7 @@ Create *reset-password/page.tsx* file to handle logic for a sign-in flow. In thi
     };
     ```
 
-    The SDK's instance method, `resetPassword()`, starts the sign-in flow.
+    The SDK's instance method, `resetPassword()`, starts the password reset  flow.
 
 - To submit the one-time passcode, use the following code snippet. See a full example at [reset-password/page.tsx](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/typescript/native-auth/react-nextjs-sample/src/app/reset-password/page.tsx) to learn where to place the code snippet: 
 

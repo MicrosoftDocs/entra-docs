@@ -11,7 +11,7 @@ ms.date: 06/30/2025
 #Customer intent: As a developer, I want to configure a sample single-page application using native authentication react SDK so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
 ---
 
-# Quickstart: Sign in users in a single-page app by using native authentication JavaScript SDK (preview)
+# Quickstart: Sign in users in a single-page app by using native authentication JavaScript SDK
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
