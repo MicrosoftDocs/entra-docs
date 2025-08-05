@@ -1,5 +1,5 @@
 ---
-title: Configure a custom email provider for one time passcode send events (preview)
+title: Configure a custom email provider for one time passcode send events
 description: Learn how to configure and set up a custom email provider with the One Time Passcode Send event type.
 author: cilwerner
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra External ID customer, I want to learn how to configure a custom email provider for one time passcode send events, so that I can use my own email provider to send one time passcodes.
 ---
 
-# Configure a custom email provider for one time passcode send events (preview)
+# Configure a custom email provider for one time passcode send events
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 

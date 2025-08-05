@@ -19,7 +19,7 @@ In entitlement management, approvers for access package requests can either be d
 
 :::image type="content" source="media/entitlement-management-dynamic-approval/native-support-diagram.png" alt-text="Screenshot of native support of approvers in Entitlement management." lightbox="media/entitlement-management-dynamic-approval/native-support-diagram.png":::
  
-With the introduction of [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview) you are now able to dynamically determinie approval requirements for each access package assignment request based on your organizations specific business logic. The access package assignment request process will pause until your business logic hosted in Azure Logic Apps returns a [approval stage](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) which will then be leveraged in the subequent approval process via the [My Access portal](https://myaccess.microsoft.com). For example, if access requests must be approved by the department head of the person requesting an access package this feature allows you to query an external system, such as your human resources (HR) system, to on-the-fly look up the current department head and assign them as the approver for the given access request.
+With the introduction of [custom extensions](entitlement-management-logic-apps-integration.md) calling out to [Azure Logic Apps](/azure/logic-apps/logic-apps-overview) you are now able to dynamically determine approval requirements for each access package assignment request based on your organizations specific business logic. The access package assignment request process will pause until your business logic hosted in Azure Logic Apps returns a [approval stage](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) which will then be leveraged in the subequent approval process via the [My Access portal](https://myaccess.microsoft.com). For example, if access requests must be approved by the department head of the person requesting an access package this feature allows you to query an external system, such as your human resources (HR) system, to on-the-fly look up the current department head and assign them as the approver for the given access request.
 
 :::image type="content" source="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png" alt-text="Screenshot of example of determining approvers using custom extensions." lightbox="media/entitlement-management-dynamic-approval/dynamic-extensibility-diagram.png":::
 
@@ -180,10 +180,9 @@ The following example of an action that can be placed in the HTTP body is a logi
 }
 ```
 
-Although the example uses a user ID, the primaryApprovers and escalationApprovers section can contain any valid [subjectSet](/graph/api/resources/subjectset). The approval section of the code must follow the parameters as shown here: [accessPackageApprovalStage](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0).
 
 > [!NOTE]
-> In Public Preview the resume call must be performed against Microsoft Graph's beta endpoint. However, the [approval stage](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) provided in the resume call body must follow the [v1.0 convention](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) and not the [beta convention](/graph/api/resources/approvalstage?view=graph-rest-beta).
+> Although the example uses a user ID, the primaryApprovers and escalationApprovers section can contain valid [subjectSets](/graph/api/resources/subjectset) supported by Entitlement Management. In Public Preview the resume call must be performed against Microsoft Graph's beta endpoint. However, the [approval stage](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) provided in the resume call body must follow the [v1.0 convention](/graph/api/resources/accesspackageapprovalstage?view=graph-rest-1.0) and not the [beta convention](/graph/api/resources/approvalstage?view=graph-rest-beta).
 
 ## Related content
 

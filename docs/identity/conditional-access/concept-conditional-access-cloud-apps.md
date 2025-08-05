@@ -166,7 +166,10 @@ If the [recommended baseline MFA policy without app exclusions](policy-all-users
 1. Create or modify an existing policy.
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select > **Select resources** > **Edit filter**.  
 1. Adjust the filter to include your attribute set and definition from earlier.
-1. Save the policy 
+1. Save the policy
+
+> [!NOTE]
+> Configure this policy as described in the guidance above. Any deviations in creating the policy as described (such as defining app exclusions) may result in low privilege scopes being excluded and the policy not applying as intended.
 
 <a name='traffic-forwarding-profiles'></a>
 

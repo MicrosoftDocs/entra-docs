@@ -339,8 +339,12 @@ items:
         href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-      - name: Register a SAML app
-        href: how-to-register-saml-app.md
+      - name: Enterprise applications
+        items:
+          - name: Add an enterprise application
+            href: how-to-add-enterprise-application.md
+          - name: Register a SAML app
+            href: how-to-register-saml-app.md
       - name: Add a sign-up and sign-in flow
         href: how-to-user-flow-sign-up-sign-in-customers.md
       - name: Disable sign-up in a user flow
