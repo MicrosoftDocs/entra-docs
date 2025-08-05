@@ -26,8 +26,7 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 ## Agent Summary
 
-To access information about the Access Review Agent, open up the Access Review agent to get to the overview tab. The highlight of the overview page is the Agent summary, which provides a quick summary of agent actions over the course of the last 30 days.
-
+To view information about the Access Review Agent, open up the Access Review agent to get to the overview page. The highlight of the overview page is the Agent summary, which provides a quick summary of agent actions over the course of the last 30 days.
 
 :::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the access review agent overview.":::
 
@@ -59,7 +58,7 @@ For each activity, you can see:
 
 To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View activity** next to a specific activity.
 
-The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details can help you understand the logic behind the decisions so you can make an informed choice about whether to apply the decision.
+The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details help you understand the logic behind the decisions so you can make an informed choice about whether to apply the decision.
 
 :::image type="content" source="media/access-review-agent-logs-metrics/access-agent-review-card-justification.png" alt-text="Screenshot of access review agent justification in activity card.":::
 
