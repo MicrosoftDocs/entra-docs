@@ -96,7 +96,7 @@ items:
     expanded: false
     items:
     - name: How to configure Microsoft Entra Health notifications
-      href: howto-configure-health-alert-emails.md
+      href: howto-configure-health-alert-notifications.md
     - name: How to investigate Microsoft Entra Health alerts
       href: howto-investigate-health-scenario-alerts.md
     - name: Conditional Access block policy
