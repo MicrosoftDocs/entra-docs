@@ -183,7 +183,7 @@ To define the type of responses the app can receive from the native authenticati
     }
 ```
 
-### Process sign-up requests
+### Process the sign-up requests
 
 In this section, you add code that processes sign-up flow requests. Examples of these requests are starting a sign-up flow, selecting an authentication method, and submitting a one-time passcode.
 
