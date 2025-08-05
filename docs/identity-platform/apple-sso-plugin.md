@@ -478,13 +478,13 @@ In cases where you must troubleshoot issues with Secure Enclave, it can be disab
  
 - **Key**: `use_most_secure_storage`
 - **Type**: `Integer`
-- **Value**: 1
+- **Value**: 0
 
 Alternatively:
 
 - **Key**: `use_most_secure_storage`
 - **Type**: `Boolean`
-- **Value**: True
+- **Value**: False
  
 > [!NOTE]
 > Disabling Secure Enclave should only be done during troubleshooting.
