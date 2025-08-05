@@ -21,7 +21,7 @@ To ensure transparency and maintain control over automated recommendations, Micr
 
 - To view the Microsoft Entra audit logs, you need at least the [Reports reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role.
 - To view the overview, activities, or settings of the Access Review Agent, you need either the [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role, a combination of both the [Identity Governance  Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) role used along with the [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator) role, or the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role.
-- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
+- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
 
 ## Agent Summary
@@ -31,7 +31,7 @@ To view information about the Access Review Agent, open up the Access Review age
 :::image type="content" source="media/access-review-agent-logs-metrics/access-review-agent-overview.png" alt-text="Screenshot of the overview screen in the access review agent overview.":::
 
 
-The Agent Summary shows:
+The **Agent Summary** shows:
 
 - **Total access reviews**: The number of access reviews that are reviewed by the agent.
 - **Total decisions analyzed**: The number of decisions made by the agent.
@@ -56,7 +56,7 @@ For each activity, you can see:
 
 ### View Agent's Full Activity
 
-To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View activity** next to a specific activity.
+To see a detailed summary of the agent's activity, and how it justified the decisions made, select **View activity** next to the specific activity.
 
 The **Summary of agent activity** is a natural language description of the activity illustrated in the **Agent activity map**. These details help you understand the logic behind the decisions so you can make an informed choice about whether to apply the decision.
 
