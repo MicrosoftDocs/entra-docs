@@ -518,11 +518,9 @@ Secure storage registration is seamless for the device, however, you can verify 
 
 1. Navigate to your user account and access sign-in logs.
 
-1. If the latest entry shows that Token Protection - Sign In Session as "*Bound*" then the device is registered with secure storage
+1. If the latest entry shows that Token Protection - Sign In Session as "*Bound*" then the device is registered with secure storage.
 
 :::image type="content" source="media/apple-sso-plugin/token-protection.png" alt-text="Screenshot showing a section of the Microsoft Intune Portal interface. The primary subject is a status message displaying token protection information for a device.":::
-
-
 
 If you experience login issues or notice abnormal behavior, please contact Microsoft customer support.
 
