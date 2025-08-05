@@ -446,15 +446,15 @@ If you're enabling Secure Enclave based storage of device identity keys before i
 > For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
 
 - **Key**: `use_most_secure_storage`
-- **Type**: `Boolean`
-- **Value**: True
+- **Type**: `Integer`
+- **Value**: 1
 
 Alternatively:
 
-
 - **Key**: `use_most_secure_storage`
-- **Type**: `Integer`
-- **Value**: 1
+- **Type**: `Boolean`
+- **Value**: True
+
 
 The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
 
@@ -476,15 +476,15 @@ If you see this error message during testing, first, ensure you have successfull
 
 In cases where you must troubleshoot issues with Secure Enclave, it can be disabled by updating the following key in your Apple device's MDM configuration:
  
-- **Key**:: `use_most_secure_storage`
-- **Type**: `Boolean`
-- **Value**: False
- 
-Alternatively:
- 
 - **Key**: `use_most_secure_storage`
 - **Type**: `Integer`
-- **Value**: 0
+- **Value**: 1
+
+Alternatively:
+
+- **Key**: `use_most_secure_storage`
+- **Type**: `Boolean`
+- **Value**: True
  
 > [!NOTE]
 > Disabling Secure Enclave should only be done during troubleshooting.
@@ -512,7 +512,18 @@ To opt your tenant out of the secure storage rollout, contact Microsoft customer
  
 #### How to detect if your device is registered with secure storage
 
-Secure storage registration is seamless for the device. If you experience login issues or notice abnormal behavior, please contact Microsoft customer support.
+Secure storage registration is seamless for the device, however, you can verify that your device is using secure storage by doing the following:
+
+1. Sign into the Microsoft Intune Portal.
+
+1. Navigate to your user account and access sign-in logs.
+
+1. If the latest entry shows that Token Protection - Sign In Session as "*Bound*" then the device is registered with secure storage
+  :::image type="content" source="media/apple-sso-plugin/token-protection.png" alt-text="Screenshot showing a section of the Microsoft Intune Portal interface. The primary subject is a status message displaying token protection information for a device.":::
+
+
+
+If you experience login issues or notice abnormal behavior, please contact Microsoft customer support.
 
 ### Scenarios impacted
 
