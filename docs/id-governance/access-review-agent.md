@@ -208,7 +208,7 @@ Once the agent is enabled, you can adjust a few settings. You can access the set
 
 ### Trigger
 
-The agent is configured to run every 24 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off and then back on when you want it to run.
+The agent is configured to run every 24 hours based on when it's initially configured. You can run it at a specific time by toggling the **Trigger** setting off, and then back on when you want it to run.
 
    :::image type="content" source="media/access-review-agent/access-review-agent-trigger.png" alt-text="Screenshot of the Access Review Agent trigger.":::
 
@@ -220,7 +220,7 @@ If you no longer wish to use the Access Review agent, the following sections wal
 
 ### Removing the agent from  an Access Review
 
-When removing the agent from accessing an access review, the existing data such as access review information and justifications for are removed, but decisions made via decisions with the conversations with the agent remains. You should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
+When removing the agent from accessing an access review, the existing data such as access review information and justifications for decisions are removed, but decisions made via conversations with the agent remains. You should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
