@@ -95,7 +95,7 @@ items:
   - name: Microsoft Entra Health Monitoring
     expanded: false
     items:
-    - name: How to configure Microsoft Entra Health email notifications
+    - name: How to configure Microsoft Entra Health notifications
       href: howto-configure-health-alert-emails.md
     - name: How to investigate Microsoft Entra Health alerts
       href: howto-investigate-health-scenario-alerts.md
