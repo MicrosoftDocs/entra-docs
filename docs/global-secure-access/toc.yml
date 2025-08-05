@@ -234,7 +234,7 @@ items:
            - name: Coexistence with Cisco
              expanded: false
              items:
-               - name: Coexistence with Cisco
+               - name: Coexistence with Cisco Umbrella
                  href: how-to-cisco-coexistence.md
                - name: Coexistence with Cisco Secure Access
                  href: how-to-cisco-secure-access-coexistence.md
