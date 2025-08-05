@@ -119,9 +119,9 @@ Select a reasonable-size batch of untriaged groups for analysis. Based upon the 
 
 1. Otherwise, check if another group has this group as a member, and that group has an identified owner. If so, contact the owners of that group.
 
-1. If the group isn't a dependent of another group, isn't recently changed, has no clear owner, and the members are only users and groups that are synced to Microsoft Entra, then continue to the next section to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
+1. If all group members are users and groups that are synced to Microsoft Entra, and the group has no recent changes, no clear owner, it's not a dependent of another group, then continue to the next section to perform a [scream test for cloud usage](#scream-test-for-cloud-usage).
 
-1. Otherwise, if the group has user or group members that aren't Microsoft Entra accounts, and isn't a built-in group, then proceed with the [scream test for Kerberos apps](#scream-test-for-kerberos-apps).
+1. Otherwise, if the group has user or group members that aren't Microsoft Entra accounts, and it's not a built-in group, then proceed with the [scream test for Kerberos apps](#scream-test-for-kerberos-apps).
 
 ## Scream test for cloud usage
 
