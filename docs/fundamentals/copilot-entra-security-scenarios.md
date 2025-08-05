@@ -27,15 +27,15 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 
 Microsoft Security Copilot supports the following scenarios in Microsoft Entra ID: 
 
-- [Tenants](#microsoft-entra-tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
+- [Tenants](#tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
 - [Users](#users): Use natural language to investigate user accounts, including their properties, roles
 - [Groups](#groups): 
-- [Devices](#devices): 
+- [Devices](#devices): Use natural language to investigate your Microsoft Entra ID devices.
 - [Role Based Access Control (RBAC)](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
 - [Domain services](#microsoft-entra-domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
 - [Conditional Access](#conditional-access): Use natural language to understand and evaluate Conditional Access policies in your tenant.
 - [Multifactor authentication and other authentication methods](#multifactor-authentication-and-other-authentication-methodsication-methods): Use natural language to investigate multifactor authentication (MFA) and authentication methods in your Microsoft Entra tenant.
-- [Sign in logs]
+- [Sign in logs](#sign-in-logs): 
 - [Audit logs](#audit-logs): Use natural language to query and analyze audit logs in your Microsoft Entra tenant.
 - [Investigate recommendations](#investigate-recommendations): Use natural language to interact with Microsoft Entra recommendations and improve your tenant's security posture.
 - [Investigate alerts in Scenario Health Monitoring](#investigate-alerts-in-scenario-health-monitoring): Analyze scenario-specific metrics, detect anomalies, and raise alerts for proactive investigation.
@@ -46,7 +46,7 @@ Microsoft Security Copilot supports the following scenarios in Microsoft Entra I
 Microsoft Security Copilot supports the following scenarios in Microsoft Entra ID Protection: 
 
 - [Summarize a user's risk level](#summarize-a-users-risk-level): Quickly summarize a user's risk level and receive insights relevant to the incident at hand.
-- [Application risk]
+- [Application risk](#application-risk): 
 
 ### Microsoft Entra ID Governance
 
@@ -93,10 +93,22 @@ The following example prompts can be used to investigate alerts in Scenario Heal
 
 ### Devices
 
->[!NOTE]
-> ADDME: This section is a placeholder for future content.
+Microsoft Entra uses the capabilities of Security Copilot to help administrators investigate their Microsoft Entra ID devices using natural language queries. This feature allows admins to quickly access device information, such as device IDs, compliance status, activity and whether devices ae Entra ID registered, joined or hybrid joined.
 
-### Microsoft Entra Role Based Access Control (RBAC)
+This feature is available using a free Microsoft Entra ID license, and to any user in any tenant.
+
+The following example prompts can be used to investigate devices in Microsoft Entra:
+
+- *Show me the device for with an ID of {ID}*
+- *Show me all compliant devices/Show me all non-compliant devices*
+- *List devices that are not under management*
+- *List all devices that are Entra ID registered/Entra ID joined/Entra ID hybrid joined*
+- *Show me when device {ID} was last active*
+- *List the devices with specific {operating system name}*
+- *Show me how many devices are running Windows (8,10,11)*
+- *Show the count of Windows devices categorized by release*
+
+### Roles and administrators
 
 Microsoft Entra role-based access control (RBAC) helps you manage who has access to Microsoft Entra resources by assigning roles to users, groups, or applications. You can use built-in roles or create custom roles with specific permissions to meet your organization's needs. You can now use Microsoft Security Copilot to investigate roles within a directory. For example, you can ask which roles a user or group has, who has a specific role, or get details about a particular role. This makes it easier for administrators and analysts to understand and manage role assignments across your environment.
 
@@ -133,7 +145,9 @@ The following example prompts can be used to investigate alerts in Scenario Heal
 
 ### Conditional Access
 
-Microsoft Entra Conditional Access applies the capabilities of Microsoft Security Copilot to help admins easily understand and evaluate their Conditional Access policies.  By combining Conditional Access APIs with the power of generative AI, Security Copilot enables analysts to ask natural language questions, such as identifying what policies apply to users or what policies use certain controls, and receive clear insights in seconds. 
+Microsoft Entra Conditional Access applies the capabilities of Microsoft Security Copilot to help admins easily understand and evaluate their Conditional Access policies. By combining Conditional Access APIs with the power of generative AI, Security Copilot enables analysts to ask natural language questions, such as identifying what policies apply to users or what policies use certain controls, and receive clear insights in seconds.
+
+Using this feature requires at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), or [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader). You will also need a [Microsoft Entra ID P1 license](/entra/id-protection/overview-identity-protection#license-requirements) and a tenant with Conditional Access policies configured.
 
 - *List active MFA Conditional Access policies in my tenant.*
 - *Which MFA policies are enforced in my tenant?*
