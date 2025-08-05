@@ -41,7 +41,7 @@ There are different roles, permissions, and license requirements to view health 
 
 ## Investigate the alert and signal
 
-Investigating an alert starts with gathering data. With Microsoft Entra Health in the Microsoft Entra admin center, you can view the signal and alert details in one place. You can also view the signals and alerts using the Microsoft Graph API. For more information, see [How to investigate health scenario alerts](../monitoring-health/howto-investigate-health-scenario-alerts.md) for guidance on how to gather data using the Microsoft Graph API.
+[!INCLUDE [entra-health-alerts-investigate](../../includes/entra-health-alerts-investigate.md)]
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
