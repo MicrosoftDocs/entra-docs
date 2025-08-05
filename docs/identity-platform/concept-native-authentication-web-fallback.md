@@ -41,10 +41,13 @@ Let's look at an example when it's possible for Microsoft Entra to indicate that
 
 If Microsoft Entra's response indicates that the client app needs to fall back to the browser-delegated authentication, we recommend you use a [Microsoft-built and supported authentication library](reference-v2-libraries.md). 
 
-Learn how to support web fallback in [native Android apps](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback) and [native iOS/macOS apps](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback).
+Learn how to support web fallback in the following apps when you use native authentication:
+- [Android apps](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback).
+- [iOS/macOS apps](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback).
+- [Single-page apps](native-authentication-single-page-app-handle-web-fallback.md).
 
 ## Related content
 
-- [Native authentication challenge types](concept-native-authentication-challenge-types.md)
 - [Tutorial: Support web fallback in Android app](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback)
 - [Tutorial: Support web fallback in iOS/macOS app](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback)
+- [Tutorial: Support web fallback in SPA that uses native authentication JavaScript SDK](/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback)
