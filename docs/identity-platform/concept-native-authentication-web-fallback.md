@@ -6,7 +6,7 @@ manager: dougeby
 ms.service: identity-platform 
 ms.subservice: external
 ms.topic: concept-article
-ms.date:  04/27/2024
+ms.date:  08/08/2025
 ms.author: kengaderdus
 
 #Customer intent: As a developer, devops, I want to learn more native authentication web fallback, so that I can enable it in my client apps.
@@ -44,10 +44,11 @@ If Microsoft Entra's response indicates that the client app needs to fall back t
 Learn how to support web fallback in the following apps when you use native authentication:
 - [Android apps](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback).
 - [iOS/macOS apps](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback).
-- [Single-page apps](native-authentication-single-page-app-handle-web-fallback.md).
+- [Single-page apps](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.).
+
 
 ## Related content
 
 - [Tutorial: Support web fallback in Android app](/entra/external-id/customers/tutorial-native-authentication-android-support-web-fallback)
 - [Tutorial: Support web fallback in iOS/macOS app](/entra/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback)
-- [Tutorial: Support web fallback in SPA that uses native authentication JavaScript SDK](/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback)
+- [Tutorial: Support web fallback in SPA that uses native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md)

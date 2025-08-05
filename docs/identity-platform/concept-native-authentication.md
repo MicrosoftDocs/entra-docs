@@ -102,8 +102,8 @@ For more information on native authentication samples and tutorials, see the fol
 |Android (Kotlin) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-android-app)|
 |iOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
 |macOS (Swift) | &#8226; [Sign in users](/entra/external-id/customers/how-to-run-native-authentication-sample-macos-app) | &#8226; [Sign in users](/entra/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app)|
-|React (Next.js) | &#8226; [Quickstart](/quickstart-native-authentication-single-page-app-sdk-sign-in) | &#8226; [Tutorials](/tutorial-native-authentication-single-page-app-react-sdk-sign-up)|
-|Angular | &#8226; [Quickstart](/quickstart-native-authentication-single-page-app-sdk-sign-in) | &#8226; [Tutorials](/tutorial-native-authentication-single-page-app-angular-sign-up)|
+|React (Next.js) | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-react-sdk-sign-up.md)|
+|Angular | &#8226; [Quickstart](quickstart-native-authentication-single-page-app-sdk-sign-in.md) | &#8226; [Tutorials](tutorial-native-authentication-single-page-app-angular-sign-up.md)|
 
 If you're planning to create an app on a framework currently not supported by MSAL, you can use our authentication API. For more information, follow [this API reference article](reference-native-authentication-api.md).
 
@@ -111,6 +111,6 @@ If you're planning to create an app on a framework currently not supported by MS
 
 - [Android native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-android-app).
 - [iOS native authentication tutorials](/entra/external-id/customers/how-to-run-native-authentication-sample-ios-app).
-- [Native authentication in React SPA tutorial](/quickstart-native-authentication-single-page-app-sdk-sign-in).
-- [Native authentication in Angular SPA tutorial](/quickstart-native-authentication-single-page-app-sdk-sign-in).
+- [Native authentication in React SPA tutorial](quickstart-native-authentication-single-page-app-sdk-sign-in.md).
+- [Native authentication in Angular SPA tutorial](quickstart-native-authentication-single-page-app-sdk-sign-in.md).
 - [Native authentication API documentation](reference-native-authentication-api.md).
