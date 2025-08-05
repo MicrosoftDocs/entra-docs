@@ -495,11 +495,11 @@ If for any reason Secure Enclave needs to be disabled, follow these recommended 
  
 1. **Update the configuration**: Disable `use_most_secure_storage` by setting the flag to `false` for Boolean type or `0` for Integer type in your MDM configuration.
  
-1. **Unregister the device**: Remove the device registration using one of these methods:
+2. **Unregister the device**: Remove the device registration using one of these methods:
   - **Microsoft Authenticator**: Navigate to the device registration menu and follow the unregistration steps
   - **Intune Company Portal**: Select your device from the list of device, Press `...` and then Remove your device
  
-1. **Re-register the device**: After unregistering, register the device again using either:
+3. **Re-register the device**: After unregistering, register the device again using either:
   - **Intune Company Portal**: Select the device and register it again
   - **Microsoft Authenticator**: Go to the menu, select Device Registration, and register the device again (Note: This method is not available on macOS)
  
