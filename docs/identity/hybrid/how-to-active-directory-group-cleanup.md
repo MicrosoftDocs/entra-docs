@@ -181,7 +181,7 @@ To perform a Kerberos scream test, follow these steps:
 This test determines if there are LDAP apps that rely upon a
 user being a member of a security group.
 
-1. Move group to the OU for groups in the LDAP scream test.
+1. Move the group to the OU for groups in the LDAP scream test.
 
 1. Remove members from the group. For example, move the members to another new group temporarily.
 
