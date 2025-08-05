@@ -55,7 +55,7 @@ Microsoft Security Copilot supports the following scenarios in Microsoft Entra I
 - [Investigate access reviews](#investigate-access-reviews): Extract and analyze access review data using natural language queries.
 - [Investigate insights within entitlements management](#investigate-insights-within-entitlements-management): Get quick access to information about access packages, policies, connected organizations, and catalog resources.
 - [Privileged Identity Management (PIM)](#privileged-identity-management-pim): Manage and monitor privileged access in your organization using natural language queries.
-- [Lifecycle workflows]
+- [Lifecycle workflows](#lifecycle-workflows): Use natural language to reduce time and effort when configuring custom workflows to manage the lifecycle of users.
 
 ### Global Secure Access
 
@@ -100,11 +100,11 @@ The following example prompts can be used to investigate and manage users in Mic
 - *Show users by mail nickname*
 - *List users without assigned licenses*
 - *List users in Finance or Marketing department*
-- *Show users not in <Company Name>*
+- *Show users not in {Company Name}*
 - *Show users with account disabled*
 - *How many users are reporting to Brandon Artois?*
 - *Look up Abadi Bod’s permissions*
-- *Are there any users with <a specific license>?*
+- *Are there any users with {Specific license}?*
 
 ### Groups
 
@@ -219,15 +219,61 @@ The following example prompts can be used to investigate MFA and authentication 
 
 ### Sign-in logs
 
->[!NOTE]
-> ADDME: This section is a placeholder for future content.
+Microsoft Security Copilot streamlines the process of reviewing and troubleshooting sign-in activities in Microsoft Entra. Instead of manually sorting through complex log data, IT administrators and Helpdesk teams can use natural language queries to quickly analyze sign-in logs, identify issues, and receive clear, actionable answers. Copilot also suggests helpful follow-up questions to support your troubleshooting process and guide your next steps. Users in supported roles can access Copilot from the Entra command bar. When opened from the Sign-in Logs blade, Copilot provides tailored prompts for sign-in data analysis.
+
+Users assigned the following roles can use this feature:
+
+- [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader)
+- [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader)
+- [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
+- [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader)
+
+This feature is available with a [Microsoft Entra ID P1 or P2 license](/entra/id-protection/overview-identity-protection#license-requirements) and in any public cloud tenant with sign-in data.
+
+The following example prompts can be used to investigate sign-in logs in Microsoft Entra:
+
+- *Show sign-ins to a specific application*
+- *Show sign-ins without multi-factor authentication*
+- *Show sign-in failures due to a specific Conditional Access policy*
+- *Show sign-ins with unsatisfied Conditional Access policies*
+- *Show sign-in activities since a specific time period*
+- *Show sign-ins from non-compliant devices*
+- *Show logins from specific web browsers*
+- *Show logins from specific operating systems*
+- *Show sign-ins from specific locations*
+- *Show sign-in activity for a specific user*
+- *Show suspicious login activities*
+- *Display risky sign-ins*
 
 ### Audit logs
 
->[!NOTE]
-> ADDME: This section is a placeholder for future content.
+Microsoft Security Copilot streamlines the process of investigating and troubleshooting audit logs in Microsoft Entra. Instead of manually searching through extensive log data, IT administrators and Helpdesk teams can use natural language queries to quickly analyze audit activities, identify issues, and receive clear, actionable answers. Copilot also suggests helpful follow-up questions to support your investigation and guide your next steps.
 
+This feature is available to users with the following roles:
 
+- [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader)
+- [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader)
+- [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)
+- [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator)
+
+A free license is required, and the feature is available in any public cloud tenant with audit activity.
+
+The following example prompts can be used to investigate audit logs in Microsoft Entra:
+
+- *Show me recently deleted groups*
+- *What groups were deleted recently?*
+- *Last deleted groups in my directory*
+- *Show me risky sign-ins*
+- *List suspicious logins*
+- *Are there any risky authentications?*
+- *Who created this group?*
+- *Find out who created {A specific group}*
+- *What groups were created by these users?*
+- *Show groups created by specific users*
+- *List all groups created by user "Casey Jensen"*
+- *Check provisioning job status*
+- *Is my provisioning job completed?*
+- *Show provisioning jobs for this service principal*
 
 ### Investigate recommendations
 
@@ -324,32 +370,18 @@ Using this feature requires the [Identity Governance Administrator](/entra/ident
 
 ### Application risk
 
->[!NOTE]
-> ADDME: This section is a placeholder for future content.
-
 Identity administrators and security analysts can use Microsoft Security Copilot to quickly assess the risk level of applications from workload identities. By leveraging natural language queries, you can easily discover the granted permissions, unused apps in your tenant, and the risk level of applications. This allows admins to take appropriate actions to mitigate risks and ensure the security of your organization's applications.
 
 Using this feature requires a minimum of the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role in Microsoft Entra ID. Your tenant must be licensed for Workload Identity Premium or Risky Service Principal prompts. A [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements) is also needed for full functionality.
 
+Refer to the prompts and examples in [Assess application risks using Microsoft Security Copilot in Microsoft Entra](/entra/fundamentals/copilot-security-entra-investigate-risky-apps.md) to learn how to use Microsoft Security Copilot to assess application risk for the following use-cases;
 
-- *Find the application ID for our HR Onboarding Portal.*
-- *Who owns {ApplicationID}?*
-- *What is the service management reference for the app {ApplicationID}?*
-- *Who owns the service principal {ApplicationID}?*
-- *Get the app details for the Expense Management System.*
-- *Show me all apps that have 'Box' in the name.*
-
-What are the highest risk apps in my tenant? 
-
-List risky service principals 
-
-Which apps have the high risk level? 
-
-What are Risky applications? 
-
-Show risky enterprise apps. 
-
-Provide me risk history for the service principal with ID 0000. 
+- [Explore Microsoft Entra risky service principals](./copilot-security-entra-investigate-risky-apps.md#explore-microsoft-entra-risky-service-principals)
+- [Explore Microsoft Entra service principals](./copilot-security-entra-investigate-risky-apps.md#explore-microsoft-entra-service-principals)
+- [Explore Microsoft Entra applications](./copilot-security-entra-investigate-risky-apps.md#explore-microsoft-entra-applications)
+- [View the permissions granted on a Microsoft Entra service principal](./copilot-security-entra-investigate-risky-apps.md#explore-microsoft-entra-risky-service-principals)
+- [Explore unused Microsoft Entra applications](./copilot-security-entra-investigate-risky-apps.md#explore-unused-microsoft-entra-applications)
+- [Explore Microsoft Entra Applications outside my tenant](./copilot-security-entra-investigate-risky-apps.md#explore-microsoft-entra-applications-outside-my-tenant)
 
 ## Microsoft Entra ID Governance scenarios
 
@@ -423,11 +455,11 @@ Microsoft Entra ID Governance applies the capabilities of [Microsoft Security Co
 
 Using this feature requires a minimum of the [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator) role in Microsoft Entra ID, and a Microsoft Entra.
 
-Refer to the prompts and examples in [Manage employee lifecycle using Microsoft Security Copilot](/entra/fundamentals/copilot-entra-lifecycle-workflows.md) to learn how to use Microsoft Security Copilot with lifecycle workflows for the following use-cases;
+Refer to the prompts and examples in [Manage employee lifecycle using Microsoft Security Copilot](/entra/fundamentals/copilot-entra-lifecycle-workflow.md) to learn how to use Microsoft Security Copilot with lifecycle workflows for the following use-cases;
 
 - [Create step-by-step guidance for a new lifecycle workflow](./copilot-entra-lifecycle-workflow.md#create-step-by-step-guidance-for-a-new-lifecycle-workflow)
 - [Explore available workflow configurations](./copilot-entra-lifecycle-workflow.md#explore-available-workflow-configurations)
-- [Analyze active workflow lists](./copilot-entra-lifecycle-workflow.md#analyze-active-workflow-lists)
+- [Analyze active workflow lists](./copilot-entra-lifecycle-workflow.md#analyze-active-workflow-list)
 - [Troubleshoot a Lifecycle Workflow run](./copilot-entra-lifecycle-workflow.md#troubleshoot-a-lifecycle-workflow-run)
 - [Compare versions of a lifecycle workflow](./copilot-entra-lifecycle-workflow.md#compare-versions-of-a-lifecycle-workflow)
 
