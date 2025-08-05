@@ -136,7 +136,7 @@ Users can follow these steps to register an EAM in Security info:
 
 ### How users register their EAM by using the registration wizard
 
-When a user signs in, a registration wizard helps them register the EAMs they're enabled to use. If they enabled other methods for sign-in, they might need to select **I want to set up a different method** > **External Auth methods** to proceed. They need to authenticate with their EAM provider to register the EAM in Microsoft Entra ID. 
+When a user signs in, a registration wizard helps them register the EAMs they're enabled to use. If they are enabled for other authentication methods, they might need to select **I want to set up a different method** > **External Auth methods** to proceed. They need to authenticate with their EAM provider to register the EAM in Microsoft Entra ID. 
 
 If the authentication succeeds, a message confirms registration completed and the EAM is registered. 
 The user is redirected to the resource they wanted to access. 
