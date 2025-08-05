@@ -201,15 +201,15 @@ Microsoft Entra Conditional Access applies the capabilities of Microsoft Securit
 
 Using this feature requires at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), or [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader). You will also need a [Microsoft Entra ID P1 license](/entra/id-protection/overview-identity-protection#license-requirements) and a tenant with Conditional Access policies configured.
 
-- List active MFA Conditional Access policies in my tenant.
-- Which MFA policies are enforced in my tenant?
-- Which Conditional Access policies are enabled in my tenant?
-- Which CA policies should I enable?
-- Which CA policies are not enabled in my tenant?
-- List all inactive Conditional Access policies in my tenant.
-- List CA policies that are currently active in my tenant.
-- Which Conditional Access policies in my tenant exclude trusted locations?
-- Get all CA policies for user by group.
+- *List active MFA Conditional Access policies in my tenant.*
+- *Which MFA policies are enforced in my tenant?*
+- *Which Conditional Access policies are enabled in my tenant?*
+- *Which CA policies should I enable?*
+- *Which CA policies are not enabled in my tenant?*
+- *List all inactive Conditional Access policies in my tenant.*
+- *List CA policies that are currently active in my tenant.*
+- *Which Conditional Access policies in my tenant exclude trusted locations?*
+- *Get all CA policies for user by group.*
 
 ### Privileged Identity Management (PIM)
 
