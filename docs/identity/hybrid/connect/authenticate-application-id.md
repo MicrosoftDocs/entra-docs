@@ -480,7 +480,7 @@ $certHash = ($hashBytes|ForEach-Object ToString X2) -join ''
 
 For self-signed certificates, either Microsoft Entra Managed or BYOC, an administrator must perform manual revocation by removing the `keyCredential` value from Microsoft Entra ID. An on-demand rotation of the certificate is also an option.
 
-For BYOC certificates issued by a Certificate Authority registered with Microsoft Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#the-certificate-revocation-process).
+For BYOC certificates issued by a Certificate Authority registered with Microsoft Entra, the administrator can follow the [certificate revocation process](../../authentication/concept-certificate-based-authentication-technical-deep-dive.md#certificate-revocation-process).
 
 ## Remove a legacy service account
 
