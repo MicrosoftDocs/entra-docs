@@ -41,7 +41,7 @@ To delegate workflow management to administrative scopes, you must first assign 
 > [!TIP]
 > While the following steps walk you through setting the role to a specific user, you can set the role to a group within the administrative unit to delegate management within a scope to multiple users.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Entra ID** > **Users**.
 
