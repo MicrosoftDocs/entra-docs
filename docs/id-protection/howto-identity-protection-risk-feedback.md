@@ -9,7 +9,7 @@ ms.date: 05/27/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: cokoopma
 ---
 # How To: Give risk feedback in Microsoft Entra ID Protection

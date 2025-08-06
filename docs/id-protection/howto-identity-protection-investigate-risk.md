@@ -3,16 +3,23 @@ title: Investigate risk Microsoft Entra ID Protection
 description: Learn how to investigate risky users, detections, and sign-ins in Microsoft Entra ID Protection.
 ms.service: entra-id-protection
 ms.topic: how-to
-ms.date: 08/09/2024
+ms.date: 08/06/2025
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: cokoopma
 ms.custom: sfi-image-nochange
 ---
 # How To: Investigate risk
 
 Microsoft Entra ID Protection provides organizations with reporting they can use to investigate identity risks in their environment. These reports include risky users, risky sign-ins, risky workload identities, and risk detections. Investigation of events is key to better understanding and identifying any weak points in your security strategy. All these reports allow for downloading of events in .CSV format or integration with other security solutions like a dedicated Security Information and Event Management (SIEM) tool for further analysis. Organizations can also take advantage of Microsoft Defender and Microsoft Graph API integrations to aggregate data with other sources.
+
+## Prerequisites
+
+- The Microsoft Entra ID P2 or Microsoft Entra Suite license is required for full access to Microsoft Entra ID Protection features.
+    - For a detailed list of capabilities for each license tier, see [What is Microsoft Entra ID Protection](overview-identity-protection.md).
+- The [Global Reader](../identity/role-based-access-control/permissions-reference.md#global-reader) role is the least privileged role required to **view the risk reports**.
+- The [Reports Reader](../identity/role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role required to **view the sign-in and audit logs**.
 
 ## Navigating the reports
 
