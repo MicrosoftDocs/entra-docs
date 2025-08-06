@@ -4,7 +4,7 @@ description: Learn how remote network connectivity in Global Secure Access allow
 author: kenwith
 ms.author: kenwith
 manager: dougeby
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/09/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted

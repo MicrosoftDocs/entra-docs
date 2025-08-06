@@ -6,7 +6,7 @@ author: cilwerner
 ms.author: cwerner
 manager: pmwongera
 ms.date: 11/07/2024
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra
 ms.custom: microsoft-copilot, ignite-2024, sfi-image-nochange
 # Customer intent: As a SOC analyst or IT admin, I want to learn about risky user summarization in the Microsoft Entra ID Protection UX so that I can quickly respond to identity threats.
