@@ -608,7 +608,7 @@ The `certificateUserId` value is:
 
 #### Subject manual mapping
 
-Here's an example for subject manual mapping.
+The following example demonstrates subject manual mapping.
 
 The **Subject** value is:
 
@@ -626,8 +626,8 @@ The `certificateUserIds` value is:
 1. Select **Configure**.
 1. Set **Required Affinity Binding** at the tenant level.
 
-   > [!Important]
-   > Be careful with the tenant-wide affinity setting. You might lock out the entire tenant if you change the **Required Affinity Binding** for the tenant and you don't have correct values in the user object. Similarly, if you create a custom rule that applies to all users and requires high affinity binding, users in the tenant might be locked out.
+   > [!IMPORTANT]
+   > Be careful with the tenant-wide affinity setting. You might lock out the entire tenant if you change the **Required Affinity Binding** value for the tenant and you don't have correct values in the user object. Similarly, if you create a custom rule that applies to all users and requires high-affinity binding, users in the tenant might be locked out.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/affinity-binding.png" alt-text="Screenshot that shows how to set required affinity binding.":::
 
