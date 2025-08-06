@@ -60,7 +60,7 @@ To delegate workflow management to administrative scopes, you must first assign 
 
 1. Select **Save**.
 
-## Edit the administrative scope of a workflow using the Microsoft Entra admin center
+## Edit the administrative scopes of a workflow using the Microsoft Entra admin center
 
 With the role set for admins over the administrative unit, you must edit the workflow to be assigned within the scope of that administrative unit. To edit the properties of a workflow to be in an administrative unit's scope using the Microsoft Entra admin center, you do the following steps:
 
@@ -68,13 +68,13 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
 
-1. On the list of workflows page, select the workflow that you want to edit the administrative scope of.
+1. On the list of workflows page, select the workflow that you want to edit the administrative scopes of.
 
 1. On the workflow overview page, select **Properties**.
 
 1. Under properties, select **Administrative Scope**.
 
-1. From the administrative scope pane, you can see the list of all administrative units in your tenant. 
+1. From the administrative scopes pane, you can see the list of all administrative units in your tenant. 
 
 1. Select the administrative unit(s) you want to scope the workflow to. 
 
@@ -82,7 +82,7 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 ## View the administrative scopes of a workflow using the Microsoft Entra admin center
 
-When managing workflows, it is also important in seeing what administrative scope they fall under. This allows you to quickly see who can manage each specific workflow. To see the administrative scopes of a workflow, do the following steps:
+When managing workflows, it is important to see what administrative scopes they fall under. This allows you to quickly see who can manage each specific workflow. To see the administrative scopes of a workflow, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
@@ -115,15 +115,15 @@ Administration scopes can be removed from a workflow at any time. To remove an a
 
 ## Edit the administrative scopes of a workflow using Microsoft Graph
 
-To edit the administrative scope of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
+To edit the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
 
 ## View the administrative scopes of a workflow using Microsoft Graph
 
-To edit the administrative scope of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
+To edit the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
 
 ## Remove the administrative scopes of a workflow using Microsoft Graph
 
-To edit the administrative scope of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
+To edit the administrative scopes of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
 
 ## Next steps
 
