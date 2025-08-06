@@ -5,7 +5,7 @@ author: martincoetzer
 manager: travisgr
 tags: azuread
 ms.service: entra
-ms.topic: conceptual
+ms.topic: concept-article
 ms.subservice: fundamentals
 ms.date: 08/17/2022
 ms.author: martinco

@@ -5,8 +5,7 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
-ms.date: 08/06/2025
+ms.topic: article
 ms.author: jricketts
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---

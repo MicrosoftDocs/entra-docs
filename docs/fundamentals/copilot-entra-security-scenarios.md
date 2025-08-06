@@ -6,7 +6,7 @@ author: cilwerner
 ms.author: cwerner
 manager: pmwongera
 ms.date: 06/09/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra
 ms.custom: microsoft-copilot
 ms.collection: null

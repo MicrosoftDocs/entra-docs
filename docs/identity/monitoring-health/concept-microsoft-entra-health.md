@@ -4,7 +4,7 @@ description: Monitor the health of your tenant through several identity scenario
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 04/25/2025
 ms.author: sarahlipsey

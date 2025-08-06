@@ -4,7 +4,7 @@ description: Learn about the details included in the user provisioning logs in M
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ms.subservice: monitoring-health
 ms.date: 03/17/2025
 ms.author: sarahlipsey

@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.assetid: 8d204647-213a-4519-bd62-49563c421602
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
