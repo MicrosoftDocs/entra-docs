@@ -33,7 +33,11 @@ There are three main parts of app consent policies:
 - **Excluded condition sets:** A collection of condition sets that a given app consent request should not match *any* of to pass. This collection can be empty (it can contain zero excluded condition sets). Each condition set contains rules that describes characteristics of an app consent request, such as verified publisher status, permissions requested, and more.
 
 
-Each condition set consists of several conditions. For an event to match a condition set, *all* conditions in the condition set must be met. 
+## Supported conditions
+
+Each condition set consists of several conditions. For an event to match a condition set, *all* conditions in the condition set must be met. For example, a condition set might specify "Client applications that are publisher verified, created in this tenant, and requesting Microsoft Graph delegated Mail.Read" would not match on a consent request for a client application that is publisher verified, created in the tenant, and requesting openid and profile scopes.
+
+Condition sets include a number of properties used to define the consent events the set will match. A full list of the properties is located [here.](/graph/api/resources/permissiongrantconditionset)
 
 # Built-in consent policies
 
@@ -53,6 +57,9 @@ Every tenant comes with a set of app consent policies that are the same across a
 > [!WARNING]
 > Microsoft-user-default-recommended is a Microsoft managed policy. The conditions included in the policy will be automatically updated based on Microsoft's latest security recommendations for end-user consent.
 
+# Multiple policies
+
+A user can have more than one policy that allows them to give consent. Each policy is evaluated separately (as in, an exclude from one policy will not affect another policy) and the user only needs one policy to approve to be alowed to consent for a specific event. For example, an application admin can consent to everything a regular user can (thanks to the default policy applied to all users), and they also have broader permissions through the microsoft-application-admin policy, which lets them approve requests for any API permission—except Microsoft Graph app roles.
 
 ## Prerequisites
 
@@ -236,26 +243,13 @@ After creating the app consent policy, you need to assign it to a custom role in
 > [!WARNING]
 > Deleted app consent policies can't be restored. If you accidentally delete a custom app consent policy, you need to re-create the policy.
 
-### Supported conditions
 
-The following table provides the list of supported conditions for app consent policies.
 
-| Condition | Description|
-|:---------------|:----------|
-| PermissionClassification | The [permission classification](configure-permission-classifications.md) for the permission being granted, or "all" to match with any permission classification (including permissions that aren't classified). Default is "all." |
-| PermissionType | The permission type of the permission being granted. Use "application" for application permissions (for example, app roles) or "delegated" for delegated permissions. <br><br> **Note**: The value "delegatedUserConsentable" indicates delegated permissions that aren't configured by the API publisher to require admin consent. This value can be used in built-in permission grant policies, but can't be used in custom permission grant policies. Required. |
-| ResourceApplication | The **AppId** of the resource application (for example, the API) for which a permission is being granted, or "any" to match with any resource application or API. Default is "any." |
-| Permissions | The list of permission IDs for the specific permissions to match with, or a list with the single value "all" to match with any permission. Default is the single value "all." <br> - Delegated permission IDs can be found in the **OAuth2Permissions** property of the API's ServicePrincipal object. <br> - Application permission IDs can be found in the **AppRoles** property of the API's ServicePrincipal object. |
-| ClientApplicationIds | A list of **AppId** values for the client applications to match with, or a list with the single value "all" to match any client application. Default is the single value "all." |
-| ClientApplicationTenantIds | A list of Microsoft Entra tenant IDs in which the client application is registered, or a list with the single value "all" to match with client apps registered in any tenant. Default is the single value "all." |
-| ClientApplicationPublisherIds | A list of Microsoft Partner Network (MPN) IDs for [verified publishers](~/identity-platform/publisher-verification-overview.md) of the client application, or a list with the single value "all" to match with client apps from any publisher. Default is the single value "all." |
-| ClientApplicationsFromVerifiedPublisherOnly | Set this switch to only match on client applications with a [verified publishers](~/identity-platform/publisher-verification-overview.md). Disable this switch (`-ClientApplicationsFromVerifiedPublisherOnly:$false`) to match on any client app, even if it doesn't have a verified publisher. Default is `$false`. |
-|scopeType| The resource scope type the preapproval applies to. Possible values: `group` for [groups](/graph/api/resources/group) and [teams](/graph/api/resources/team), `chat` for [chats](/graph/api/resources/chat?view=graph-rest-1.0&preserve-view=true),  or `tenant` for tenant-wide access. Required.|
-| sensitivityLabels| The sensitivity labels that are applicable to the scope type and aren't preapproved. It allows you to protect sensitive organizational data. Learn about [sensitivity labels](/purview/sensitivity-labels). **Note:** Chat resource **does not** support sensitivityLabels yet.|
 
 ## Next steps
 
 - [Manage group owner consent policies](manage-group-owner-consent-policies.md)
+- [Change your default user consent policy](configure-user-consent.md)
 
 To get help or find answers to your questions:
 
