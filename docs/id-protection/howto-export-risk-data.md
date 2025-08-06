@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 11/18/2024
 author: shlipsey3
 ms.author: sarahlipsey
-manager: femila
+manager: pwongera
 ms.reviewer: cokoopma
 ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I want to know how to export and use Microsoft Entra ID Protection data so that I can investigate using long-term data in Microsoft Entra ID Protection.
@@ -29,7 +29,7 @@ This article describes the available methods for exporting risk data from Micros
 To export risk data for storage and analysis, you need:
 
 - An Azure subscription to create a Log Analytics workspace, Azure event hub, or Azure storage account. If you don't have an Azure subscription, you can [sign up for a free trial](https://azure.microsoft.com/free/).
-- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) access to create general diagnostic settings for the Microsoft Entra tenant.
+- The [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role is the least privileged role required to **configure diagnostic settings for the Microsoft Entra tenant**.
 
 ## Diagnostic settings
 
