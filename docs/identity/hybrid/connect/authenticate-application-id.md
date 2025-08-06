@@ -24,6 +24,11 @@ Microsoft Entra Connect provides three options for application and certificate m
 - [Bring Your Own Application (BYOA)](#bring-your-own-application)
 - [Bring Your Own Certificate (BYOC)](#bring-your-own-certificate)
 
+> [!NOTE]
+> The [Application Administrator](~/identity/role-based-access-control/permissions-reference#application-administrator) role grants the ability to consent for application permissions, with the exception of application permissions for Azure AD Graph and Microsoft Graph. This means that the application administrator can still consent to application permissions for other apps, notably the AWS first-party app and SSPR first-party app.
+>
+> This role also grants the ability to manage application credentials. User assigned to this role can add credentials to an application (notably the Connect Sync) and use those credentials to impersonate the application's identity. This might be an elevation of privilege over what the user can do via their role assignments.
+
 ## Managed by Microsoft Entra Connect (default)
 
 Microsoft Entra Connect manages the application and certificate, which includes creation, rotation, and deletion of the certificate. The certificate is stored in the `CURRENT_USER` store. For optimal protection of the certificate's private key, we recommend that the machine should use a Trusted Platform Module (TPM) solution to establish a hardware-based security boundary.
