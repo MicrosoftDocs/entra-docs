@@ -45,7 +45,7 @@ To delegate workflow management using administrative scopes, you must first assi
 
 1. Browse to **Entra ID** > **Users**.
 
-1. On the users page, select the user you want assign the admin scope to.
+1. On the users page, select the user you want to assign the admin scope to.
 
 1. From the user overview page, select **Assigned roles**.
 
@@ -82,13 +82,13 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 ## View the administrative scopes of a workflow using the Microsoft Entra admin center
 
-When managing workflows, it is important to see what administrative scopes they fall under. This allows you to quickly see who can manage each specific workflow. To see the administrative scopes of a workflow, do the following steps:
+When managing workflows, it's important to see what administrative scopes they fall under. This allows you to quickly see who can manage each specific workflow. To see the administrative scopes of a workflow, do the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 
 1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
 
-1. On the workflow list screen you can see the number of scopes assigned to the workflow under the **Administration scope assigned** column.
+1. On the workflow list screen, you can see the number of scopes assigned to the workflow under the **Administration scope assigned** column.
 
 1. Select the number in the column to see the list of scopes assigned to that workflow.
 
