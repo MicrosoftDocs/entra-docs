@@ -6,7 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.date: 04/09/2025
 manager: mwongerapk
-ms.topic: article
+ms.topic: how-to
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ---
