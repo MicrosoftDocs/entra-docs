@@ -1,125 +1,141 @@
 ---
 title: Bulk operations in Microsoft Entra ID (Preview)
-description: Learn about the new Microsoft Entra bulk operations experience  related to users, groups
+description: Learn about the new Microsoft Entra bulk operations experience for managing users, groups, and devices.
 author: barclayn
 manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 08/05/2025
+ms.date: 08/06/2025
 ms.author: barclayn
 ms.custom: it-pro
 ---
 
-
 # Bulk operations in Microsoft Entra ID (Preview)
 
-The new Bulk Operations in Microsoft Entra ID offer an enhanced experience for managing **Groups** and **Devices**, enabling bulk actions such as create, update, and delete. This streamlined service improves performance, reduces timeouts, and removes scaling limitations—especially for large tenants.
+The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups** and **Devices**. This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 
->[!NOTE] 
-> Currently, the new Bulk Operations service supports **Groups** and **Devices** only. Support for additional entities such as **Users**,
-**Applications**, and more is coming soon.
+> [!NOTE] 
+> The new bulk operations service currently supports **Groups** and **Devices**. Support for additional entities including **Users** and **Applications** will be added in future updates.
 
-[Previous Bulk Operations experience](bulk-operations-service-limitations.md)
+For information about limitations, see [Bulk operations service limitations](bulk-operations-service-limitations.md).
 
+## Bulk download groups
 
-## Bulk download a list of groups in Microsoft Entra ID
+To download all groups in your organization:
 
-- Go to [GroupsManagementMenuBlade](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true&enableNewBulkJobsExport=true&enableNewBulkJobsList=true#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/AllGroups/menuId/AllGroups)
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true&enableNewBulkJobsExport=true&enableNewBulkJobsList=true#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/AllGroups/menuId/AllGroups).
 
-    :::image type="content" source="Media/bulk-operations/groups-management-page.png" alt-text="Screenshot of the Microsoft Entra ID Groups management page showing the all groups view":::
+    :::image type="content" source="Media/bulk-operations/groups-management-page.png" alt-text="Screenshot of the Microsoft Entra ID Groups management page showing the all groups view.":::
 
-- Click on Download groups
+2. Select **Download groups**.
 
-    :::image type="content" source="Media/bulk-operations/download-groups-button.png" alt-text="Screenshot of the Download groups button in the Microsoft Entra ID Groups interface":::
+    :::image type="content" source="Media/bulk-operations/download-groups-button.png" alt-text="Screenshot of the Download groups button in the Microsoft Entra ID Groups interface.":::
 
-- Change filename as per your liking (please include your alias to uniquely identify) and click on start download.
+3. Enter a filename and select **Start download**.
 
-    :::image type="content" source="Media/bulk-operations/download-filename-dialog.png" alt-text="Screenshot of the download filename dialog box for bulk groups download":::
+    :::image type="content" source="Media/bulk-operations/download-filename-dialog.png" alt-text="Screenshot of the download filename dialog box for bulk groups download.":::
 
-- Verify notification message and if the job gets submitted successfully. Click on the "Success!" or "File is ready! Click here to download" link as shown above to get the file.
+4. When the success notification appears, select the **Success!** or **File is ready! Click here to download** link to download the file.
 
-    :::image type="content" source="Media/bulk-operations/success-notification.png" alt-text="Screenshot of the success notification message for bulk groups download operation":::
+    :::image type="content" source="Media/bulk-operations/success-notification.png" alt-text="Screenshot of the success notification message for bulk groups download operation.":::
 
-- Click on File name for the bulk job you created. It will download a csv file with all groups. Verify the csv contains all groups with desired columns included when bulk job was created.
+5. Select the filename to download the CSV file containing all groups with the specified columns.
 
-## Add filters and then download groups
+## Download filtered groups
 
-Follow first 2 steps from "[Bulk download group members](#bulk-download-group-members)"
+To download a filtered subset of groups:
 
--   Select appropriate filters and click on download groups.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true&enableNewBulkJobsExport=true&enableNewBulkJobsList=true#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/AllGroups/menuId/AllGroups).
 
-    :::image type="content" source="Media/bulk-operations/filters-download-groups.png" alt-text="Screenshot of the filters interface with download groups option in Microsoft Entra ID":::
+2. Apply the appropriate filters to the groups list.
 
--   Rest of the steps same as "Download Group members in Entra ID".
+    :::image type="content" source="Media/bulk-operations/filters-download-groups.png" alt-text="Screenshot of the filters interface with download groups option in Microsoft Entra ID.":::
+
+3. Select **Download groups**.
+
+4. Follow steps 3-5 from [Bulk download groups](#bulk-download-groups).
 
 ## Bulk download group members
 
+To download all members of a specific group:
 
--   Go to [GroupsManagementMenuBlade](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true&enableNewBulkJobsExport=true&enableNewBulkJobsList=true#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/AllGroups/menuId/AllGroups)
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true&enableNewBulkJobsExport=true&enableNewBulkJobsList=true#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade/~/AllGroups/menuId/AllGroups).
 
--   Click on any group from the list and go to the **members** tab.
+2. Select a group from the list and navigate to the **Members** tab.
 
-    :::image type="content" source="Media/bulk-operations/group-members-tab.png" alt-text="Screenshot of the group members tab in Microsoft Entra ID group management":::
+    :::image type="content" source="Media/bulk-operations/group-members-tab.png" alt-text="Screenshot of the group members tab in Microsoft Entra ID group management.":::
 
--   Click on Bulk operations -\> Download members
+3. Select **Bulk operations** > **Download members**.
 
-    :::image type="content" source="Media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the bulk operations menu with download members option selected":::
+    :::image type="content" source="Media/bulk-operations/bulk-operations-download-members.png" alt-text="Screenshot of the bulk operations menu with download members option selected.":::
 
--   Type appropriate name and click on Start download.
+4. Enter a filename and select **Start download**.
 
--   Rest of the steps same as "Download Group members in Entra ID".
+5. Follow the download process as described in [Bulk download groups](#bulk-download-groups).
 
-## Bulk add group members in Entra ID
+## Bulk add group members
 
-Follow first 2 steps from "[Bulk download group members](#bulk-download-group-members)"
+To add multiple members to a group:
 
--   Click on Import members from bulk operations
+1. Follow steps 1-2 from [Bulk download group members](#bulk-download-group-members).
 
-    :::image type="content" source="Media/bulk-operations/import-members-bulk-operations.png" alt-text="Screenshot of the import members option in bulk operations interface":::
+2. Select **Bulk operations** > **Import members**.
 
--   Download the template and add Object ids to the template. You can add valid as well as invalid Object ids.
+    :::image type="content" source="Media/bulk-operations/import-members-bulk-operations.png" alt-text="Screenshot of the import members option in bulk operations interface.":::
 
--   :::image type="content" source="Media/bulk-operations/template-download-object-ids.png" alt-text="Screenshot of the template download interface with object IDs input fields":::
+3. Download the CSV template and add object IDs for the members you want to add.
 
-    Here's the sample input file used: [test-groups-successful-case.xlsx](https://microsoft-my.sharepoint-df.com/:x:/p/nukulkarni/Ebp7Lo309FtNkufNGOFiBB0B2skDAbzxhmGakitazYl2AA?e=2mKEbE&nav=MTVfezY2MTNENzNDLUNBMTEtNENBRi04MzlDLUFBNUVCRTlEOENCNH0)
+    :::image type="content" source="Media/bulk-operations/template-download-object-ids.png" alt-text="Screenshot of the template download interface with object IDs input fields.":::
 
--   Please verify notification message and if the job gets submitted successfully. Click on the "Success!" link from notification and wait until the bulk job is completed successfully.
+4. Upload the completed CSV file and select **Submit**.
 
--   Note that if you have added invalid Object ids in the input the bulk operation status will be "Failed" with reason "NotAllRowsSuccessfullyProcessed". You can click on File name and check status of individual object id from downloaded csv.
+5. Monitor the notification for job completion. Select the **Success!** link to view the operation status.
 
-    :::image type="content" source="Media/bulk-operations/bulk-operation-failed-status.png" alt-text="Screenshot of the bulk operation failed status with NotAllRowsSuccessfullyProcessed message":::
+6. If the operation shows **Failed** status with reason **NotAllRowsSuccessfullyProcessed**, select the filename to download a detailed report showing the status of each object ID.
 
-## Bulk remove group members in Microsoft Entra ID
+    :::image type="content" source="Media/bulk-operations/bulk-operation-failed-status.png" alt-text="Screenshot of the bulk operation failed status with NotAllRowsSuccessfullyProcessed message.":::
 
-Follow first 2 steps from "[Bulk download group members](#bulk-download-group-members)"
+## Bulk remove group members
 
--   Click on Bulk operations -\> Remove members
+To remove multiple members from a group:
 
-    :::image type="content" source="Media/bulk-operations/remove-members-bulk-operations.png" alt-text="Screenshot of the bulk operations menu with remove members option selected":::
+1. Follow steps 1-2 from [Bulk download group members](#bulk-download-group-members).
 
--   Download the template and add Object ids to the template. You can add valid as well as invalid Object ids. :::image type="content" source="Media/bulk-operations/template-object-ids-removal.png" alt-text="Screenshot of the template with object IDs for member removal operation":::
+2. Select **Bulk operations** > **Remove members**.
 
--   Please verify notification message and if the job gets submitted successfully. Click on the "Success!" link from notification and wait until the bulk job is completed successfully.
+    :::image type="content" source="Media/bulk-operations/remove-members-bulk-operations.png" alt-text="Screenshot of the bulk operations menu with remove members option selected.":::
 
--   Note that if you have added invalid Object ids in the input the bulk operation status will be "Failed" with reason "NotAllRowsSuccessfullyProcessed". You can click on File name and check status of individual object id from downloaded csv.
+3. Download the CSV template and add object IDs for the members you want to remove.
 
-    :::image type="content" source="Media/bulk-operations/failed-status-remove-operation.png" alt-text="Screenshot of the failed status for bulk remove operation with error details":::
+    :::image type="content" source="Media/bulk-operations/template-object-ids-removal.png" alt-text="Screenshot of the template with object IDs for member removal operation.":::
 
--   Please verify if the correct object ids are removed from the group successfully.
+4. Upload the completed CSV file and select **Submit**.
 
-## Delete bulk job in Microsoft Entra ID
+5. Monitor the notification for job completion. Select the **Success!** link to view the operation status.
 
-    Steps:
+6. If the operation shows **Failed** status with reason **NotAllRowsSuccessfullyProcessed**, select the filename to download a detailed report showing the status of each object ID.
 
--   Go to the [Bulk Operations(Preview)](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true&enableNewBulkJobsExport=true&enableNewBulkJobsList=true#view/Microsoft_AAD_IAM/BulkJobsList.ReactView) blade.
+    :::image type="content" source="Media/bulk-operations/failed-status-remove-operation.png" alt-text="Screenshot of the failed status for bulk remove operation with error details.":::
 
--   Select bulk job you wish to delete and click on Delete button.
+7. Verify that the specified members have been removed from the group.
 
-    :::image type="content" source="Media/bulk-operations/delete-bulk-job.png" alt-text="Screenshot of the bulk operations list with delete button for removing bulk jobs":::
+## Delete bulk jobs
 
--   Confirm the deletion and verify if the selected bulk job is deleted and should be removed from the list of existing bulk jobs.
+To delete completed or failed bulk operations:
 
-## Related articles
+1. Navigate to the [Bulk Operations (Preview)](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true&enableNewBulkJobsExport=true&enableNewBulkJobsList=true#view/Microsoft_AAD_IAM/BulkJobsList.ReactView) page.
+
+2. Select the bulk job you want to delete.
+
+3. Select **Delete**.
+
+    :::image type="content" source="Media/bulk-operations/delete-bulk-job.png" alt-text="Screenshot of the bulk operations list with delete button for removing bulk jobs.":::
+
+4. Confirm the deletion. The selected bulk job will be removed from the list.
+
+## Related content
 
 - [Bulk operations service limitations](bulk-operations-service-limitations.md)
+- [Add or remove group members using Microsoft Entra ID](how-to-manage-groups.md)
+- [Bulk create users in Microsoft Entra ID](../identity/users/users-bulk-add.md)
