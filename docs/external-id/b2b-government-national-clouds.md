@@ -5,7 +5,7 @@ description: Learn what features are available in Microsoft Entra B2B collaborat
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 07/07/2025
+ms.date: 08/06/2025
 
 ms.author: cmulligan
 author: csmulligan
@@ -21,6 +21,8 @@ Microsoft Azure [national clouds](~/identity-platform/authentication-national-cl
 
 - Microsoft Azure global cloud and Microsoft Azure Government
 - Microsoft Azure global cloud and Microsoft Azure operated by 21Vianet
+
+Organizations with multiple tenants across Microsoft clouds can use [cross-cloud synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) to automate creating, updating, and deleting B2B users. 
 
 ## B2B collaboration across Microsoft clouds
 
@@ -69,6 +71,8 @@ Microsoft Azure operated by 21Vianet supports the following identity providers f
 - SAML/WS-Fed
 
 For more information about Microsoft Azure operated by 21Vianet, see [Service availability and roadmaps](/azure/china/concepts-service-availability).
+
+
 
 ## Next steps
 
