@@ -3,7 +3,7 @@ title: How to manage an external authentication method (EAM) in Microsoft Entra 
 description: Learn how to manage an external authentication method (EAM) for Microsoft Entra multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/02/2025
 ms.author: justinha
 author: emakedon23

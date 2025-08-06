@@ -5,7 +5,7 @@ author: adimitui
 manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/20/2025
 ms.author: addimitu
 ms.custom: sfi-image-nochange

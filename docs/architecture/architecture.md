@@ -6,7 +6,7 @@ manager: femila
 
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 01/16/2025
 ms.author: barclayn
 ms.reviewer: jeffsta

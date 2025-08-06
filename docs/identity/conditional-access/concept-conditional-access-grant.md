@@ -3,7 +3,7 @@ title: Grant controls in Conditional Access policy
 description: Grant controls in a Microsoft Entra Conditional Access policy.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 06/24/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo

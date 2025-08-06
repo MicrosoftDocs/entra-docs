@@ -2,7 +2,7 @@
 title: Learn about Universal Continuous Evaluation (Preview)
 description: Learn about Universal Continuous Evaluation concepts
 ms.service: global-secure-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 12/23/2024
 ms.author: alexpav
 author: idmdev

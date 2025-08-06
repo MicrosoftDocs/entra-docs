@@ -3,7 +3,7 @@ title: Overview of custom authentication strengths and advanced options for FIDO
 description: Learn how admins can create custom authentication strengths with advanced options for FIDO2 security keys and certificate-based authentication.
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/04/2025
 ms.author: justinha
 author: inbarckms
