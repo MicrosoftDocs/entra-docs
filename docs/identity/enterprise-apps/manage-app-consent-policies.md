@@ -24,7 +24,7 @@ App consent policies are a way to manage the permissions that apps have to acces
 In this article, you learn how to manage built-in and custom app consent policies to control when consent can be granted. App consent policies can be assigned to specific users or groups using custom roles, or you can set a default app consent policy for end-users in your organization.
 
 
-# App consent policy segments
+## App consent policy segments
 An app consent policy consists of one or more "include" condition sets and zero or more "exclude" condition sets. For an event to be considered in an app consent policy, it must match *at least* one "include" condition set, and must not match *any* "exclude" condition set. The exclusion and inclusions are used to determine whether the actor affected by the given policy can grant consent or not.
 
 There are three main parts of app consent policies: 
@@ -33,13 +33,13 @@ There are three main parts of app consent policies:
 - **Excluded condition sets:** A collection of condition sets that a given app consent request shouldn't match *any* of to pass. This collection can be empty (it can contain zero excluded condition sets). Each condition set contains rules that describe characteristics of an app consent request, such as verified publisher status, permissions requested, and more.
 
 
-## Supported conditions
+### Supported conditions
 
 Each condition set consists of several conditions. For an event to match a condition set, *all* conditions in the condition set must be met. For example, a condition set might specify "Client applications that are publisher verified, created in this tenant, and requesting Microsoft Graph delegated Mail.Read" wouldn't match on a consent request for a client application that is publisher verified, created in the tenant, and requesting openid and profile scopes.
 
 Condition sets include one or more properties used to define characteristics of the app or permissions requested. A full list of the properties is located [here.](/graph/api/resources/permissiongrantconditionset)
 
-# Built-in consent policies
+## Built-in consent policies
 
 Every tenant comes with a set of app consent policies that are the same across all tenants. Some of these built-in policies are used in existing built-in directory roles. For example, the `microsoft-application-admin` app consent policy describes the conditions under which the Application Administrator and Cloud Application Administrator roles are allowed to grant tenant-wide admin consent. Built-in policies can be used in custom directory roles or to configure an organization's default consent policy. These policies can't be edited. A list of the built-in policies are:
 - **microsoft-user-default-low:** All low risk permissions consentable by member type users by default.
@@ -57,7 +57,7 @@ Every tenant comes with a set of app consent policies that are the same across a
 > [!WARNING]
 > Microsoft-user-default-recommended is a Microsoft managed policy. The conditions included in the policy are automatically updated based on Microsoft's latest security recommendations for end-user consent.
 
-# Multiple policies
+## Multiple policies
 
 A user can have more than one policy that allows them to give consent. Each policy is evaluated separately (as in, an exclusion from one policy does not affect inclusions of another policy) and the user only needs one policy to approve to be allowed to consent for a specific event. For example, an application admin can consent to everything a regular user can (thanks to the default policy applied to all users), and they also have broader permissions through the microsoft-application-admin policy, which lets them approve requests for any API permission—except Microsoft Graph app roles.
 
