@@ -137,5 +137,5 @@ To delete completed or failed bulk operations:
 ## Related content
 
 - [Bulk operations service limitations](bulk-operations-service-limitations.md)
-- [Add or remove group members using Microsoft Entra ID](how-to-manage-groups.md)
+- [Add or remove group members using Microsoft Entra ID](how-to-manage-groups.yml)
 - [Bulk create users in Microsoft Entra ID](../identity/users/users-bulk-add.md)
