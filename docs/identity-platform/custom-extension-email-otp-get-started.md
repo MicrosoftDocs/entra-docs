@@ -2,7 +2,7 @@
 title: Configure a custom email provider for one time passcode send events
 description: Learn how to configure and set up a custom email provider with the One Time Passcode Send event type.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.reviewer: 
 ms.date: 06/25/2025
