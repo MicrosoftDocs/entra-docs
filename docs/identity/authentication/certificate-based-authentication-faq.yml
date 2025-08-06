@@ -49,7 +49,7 @@ sections:
           For more information about features in each Microsoft Entra edition, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
       - question: |
-          Does Microsoft Entra CBA support an alternate ID as the username instead of userPrincipalName?
+          Does Microsoft Entra CBA support an alternate ID as the username instead of `userPrincipalName`?
         answer: |
           No, sign-in by using a non-UPN value, such as an alternate email, currently isn't supported.
           
@@ -103,7 +103,7 @@ sections:
 
             When a CRL download fails, the following message appears: 
             
-            "The Certificate Revocation List (CRL) downloaded from <\URI>\ has exceeded the maximum allowed size (<\size>\ bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators."
+            "The Certificate Revocation List (CRL) downloaded from \<URI\> has exceeded the maximum allowed size (\<size\> bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators."
             
             The download remains in the background, with higher limits.
 
@@ -163,7 +163,6 @@ sections:
 
       - question: |
            After a CRL endpoint is configured, users can't sign in. They see the message "AADSTS500173: Unable to download CRL. Invalid status code Forbidden from CRL distribution point. errorCode: 500173."
-           ```
            
         answer: |
           This error commonly is seen when a firewall rule setting blocks access to the CRL endpoint. 

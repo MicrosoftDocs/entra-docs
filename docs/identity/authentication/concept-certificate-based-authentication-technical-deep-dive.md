@@ -204,7 +204,7 @@ You can create multiple custom authentication binding policy rules by using diff
 The following sequence determines the authentication protection level when custom rules overlap:
 
 1. Issuer and policy OID rules take precedence over policy OID rules. Policy OID rules take precedence over certificate issuer rules.
-1. Issuer and policy OID rules are evaluated first. If you have a custom rule with issuer CA1 and policy OID **1.2.3.4.5** with MFA, only certificate A that satisfies both the issuer value and the policy OID is given MFA.
+1. Issuer and policy OID rules are evaluated first. If you have a custom rule with issuer CA1 and policy OID `1.2.3.4.5` with MFA, only certificate A that satisfies both the issuer value and the policy OID is given MFA.
 1. Custom rules that use policy OIDs are evaluated. If you have a certificate A with policy OID of `1.2.3.4.5` and a derived credential B based on that certificate that has a policy OID  of `1.2.3.4.5.6`, and the custom rule is defined as a policy OID that has the value `1.2.3.4.5` with MFA, only certificate A satisfies MFA. Credential B satisfies only single-factor authentication. If the user used a derived credential during sign-in and was configured for MFA, the user is asked for a second factor for successful authentication.
 1. If there's a conflict between multiple policy OIDs (such as when a certificate has two policy OIDs, where one binds to single-factor authentication and the other binds to MFA), then treat the certificate as single-factor authentication.
 1. Custom rules that use issuer CAs are evaluated. If a certificate has matching policy OID and issuer rules, the policy OID is always checked first. If no policy rule is found, then the issuer bindings are checked. The policy OID has a higher strong-authentication binding priority than the issuer.
@@ -348,17 +348,17 @@ Populate the `altSecurityIdentities` field in Windows Server Active Directory wi
 
 Check that the accounts look similar to these examples:
 
-Forest 1 - Account1 (<bob@woodgrove.com>):\
+Forest 1: Account1 (<bob@woodgrove.com>):\
 `X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
 `X509:<SHA1-PUKEY>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
 
-Forest 1 - Account2 (<bob-admin@woodgrove.com>): \
+Forest 1: Account2 (<bob-admin@woodgrove.com>): \
 `X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
 `X509:<SHA1-PUKEY>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
 
-Forest 2 – ADAccount1 (<bob-tdy@woodgrove.com>):\
+Forest 2: ADAccount1 (<bob-tdy@woodgrove.com>):\
 `X509:<SKI>aB1cD2eF3gH4iJ5kL6mN7oP8qR`\
 `X509:<SHA1-PUKEY>cD2eF3gH4iJ5kL6mN7oP8qR9sT`\
 `X509:<PN>bob@woodgrove.com`
