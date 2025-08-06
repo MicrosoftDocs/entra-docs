@@ -6,7 +6,7 @@ description: Use Microsoft Security Copilot in the Microsoft Entra admin center 
 keywords:
 author: cilwerner
 ms.author: cwerner
-manager: celestedg
+manager: pmwongera
 ms.date: 02/19/2025
 ms.topic: article
 ms.service: entra

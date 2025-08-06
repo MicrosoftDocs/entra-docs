@@ -6,7 +6,7 @@ description: Use Copilot in Microsoft Entra to investigate identity risks and tr
 keywords:
 author: cilwerner
 ms.author: cwerner
-manager: celestedg
+manager: pmwongera
 ms.date: 12/10/2024
 ms.topic: how-to
 ms.service: entra

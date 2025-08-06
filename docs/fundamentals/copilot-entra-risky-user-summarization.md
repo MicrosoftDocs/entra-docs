@@ -4,7 +4,7 @@ description: Use Copilot in Microsoft Entra to quickly respond to identity threa
 keywords: 
 author: cilwerner
 ms.author: cwerner
-manager: celestedg
+manager: pmwongera
 ms.date: 11/07/2024
 ms.topic: how-to
 ms.service: entra

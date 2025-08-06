@@ -2,7 +2,7 @@
 title: Access tokens in the Microsoft identity platform
 description: Learn about access tokens used in the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 05/14/2025

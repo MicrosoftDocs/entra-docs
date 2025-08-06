@@ -9,7 +9,7 @@ ms.date: 12/19/2024
 
 ms.author: cwerner
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.reviewer: brianmel, miepping
 #Customer intent: As a customer, I want to understand how to troubleshoot macOS Platform single sign-on (PSSO) issues, have some frequently asked questions answered, and understand different scenarios to validate.
 ---

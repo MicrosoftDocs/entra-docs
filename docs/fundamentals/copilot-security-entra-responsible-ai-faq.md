@@ -1,9 +1,9 @@
 ---
 title: Responsible AI FAQ - Security Copilot in Microsoft Entra
 description: Frequently asked questions about related to Responsible AI as it relates to Copilot in Microsoft Entra.
-author:  cilwerner
-ms.author:  cwerner
-manager:  celestedg
+author: cilwerner
+ms.author: cwerner
+manager: pmwongera
 ms.date:  10/29/2024
 ms.topic: faq
 ms.service: entra
