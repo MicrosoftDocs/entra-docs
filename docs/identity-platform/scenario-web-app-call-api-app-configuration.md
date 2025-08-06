@@ -2,7 +2,7 @@
 title: Configure a web app that calls web APIs
 description: Learn how to configure the code of a web app that calls web APIs
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 07/19/2024
 ms.reviewer: jmprieur

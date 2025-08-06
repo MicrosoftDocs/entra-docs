@@ -2,7 +2,7 @@
 title: Configure a web app that signs in users
 description: Learn how to build a web app that signs in users (code configuration)
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 07/19/2024
