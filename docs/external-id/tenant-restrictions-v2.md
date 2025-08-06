@@ -372,7 +372,7 @@ After you create a tenant restrictions v2 policy, you can enforce the policy on 
 When you enable tenant restrictions on a Windows device, corporate proxies aren't required for policy enforcement. Devices don't need to be Microsoft Entra ID managed to enforce tenant restrictions v2. Domain-joined devices that are managed with Group Policy are also supported.
 
 > [!IMPORTANT]
-> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices. It doesn't protect the .NET stack, Chrome, or Firefox. The Windows GPO solution provides a temporary solution in public preview until general availability of data plane support with Universal tenant restrictions in [Microsoft Entra Global Secure Access (preview)](/azure/global-secure-access/overview-what-is-global-secure-access).
+> Tenant restrictions v2 on Windows is a partial solution that helps protect the authentication and data planes for some scenarios. It works on managed Windows devices and doesn't protect the .NET stack, Chrome, or Firefox. The Windows GPO solution provides a temporary solution in public preview until general availability of data plane support with Universal tenant restrictions in [Microsoft Entra Global Secure Access (preview)](/azure/global-secure-access/overview-what-is-global-secure-access).
 
 #### Use Group Policy to deploy tenant restrictions
 
