@@ -25,7 +25,7 @@ Assigning Microsoft Entra roles through access packages helps to efficiently man
 > [!NOTE]
 > As part of our ongoing commitment to strengthening security, we are evolving the preview capability of Microsoft Entra Roles in Entitlement Management access packages. 
 Moving forward, Entitlement Management will only allow access packages to contain Microsoft Entra roles which do not have privileged permissions. Roles with privileged permissions should be managed through **Privileged Identity Management**.  
-You can find more information on privileged built-in roles in the [roles reference](../identity/role-based-access-control/permissions-reference.md#all-roles). The reference also contains information on privileged permissions which you can use in custom roles. 
+You can find more information on privileged built-in roles in the [roles reference](../identity/role-based-access-control/permissions-reference.md#all-roles). Privileged roles are labeled as **Privileged** within the reference.
 
 ## Scenarios for Microsoft Entra role assignment using access packages
 
