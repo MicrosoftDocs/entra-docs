@@ -7,7 +7,7 @@ manager: mwongerapk
 tags: azuread
 ms.service: entra-id
 ms.subservice: hybrid-connect
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.reviewer: martincoetzer
 ms.author: jomondi

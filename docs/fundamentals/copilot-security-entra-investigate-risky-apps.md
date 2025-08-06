@@ -8,7 +8,7 @@ author: rwike77
 ms.author: ryanwi
 manager: celestedg
 ms.date: 12/12/2024
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra
 ms.custom: microsoft-copilot
 ms.collection: ce-skilling-ai-copilot

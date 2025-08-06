@@ -8,7 +8,7 @@ author: cilwerner
 ms.author: cwerner
 manager: pmwongera
 ms.date: 02/19/2025
-ms.topic: conceptual
+ms.topic: article
 ms.service: entra
 ms.custom: microsoft-copilot
 ---

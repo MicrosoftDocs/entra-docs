@@ -3,7 +3,7 @@ title: Configure Users, Groups, and Workload Identities in Conditional Access
 description: Configure Conditional Access user assignments in Microsoft Entra ID. Target specific users, groups, directory roles, and workload identities while avoiding administrator lockout with proper exclusions.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
