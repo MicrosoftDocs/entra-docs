@@ -297,7 +297,7 @@ The new PKI-based CA Trust Store replaces the legacy flat-list model with a more
 **Service category:** Authentications (Login)   
 **Product capability:** User Authentication  
  
-CRL Fail Safe ensures that CBA auth fails if the end user certificate issuing CA does not have a Certificate Revocation List (CRL) configured. This closes a critical security gap where certificates could previously be accepted without revocation validation. Admins can enable this at the tenant level and configure exceptions for specific CAs as needed. For more information, see: [Understanding CRL validation](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#understanding-crl-validation).
+CRL Fail Safe ensures that CBA auth fails if the end user certificate issuing CA does not have a Certificate Revocation List (CRL) configured. This closes a critical security gap where certificates could previously be accepted without revocation validation. Admins can enable this at the tenant level and configure exceptions for specific CAs as needed. For more information, see: [Understanding CRL validation](../identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#crl-validation).
  
 ---
 
