@@ -2,7 +2,7 @@
 title: Troubleshoot a custom authentication extension
 description: Troubleshoot and monitor your custom claims provider API.  Learn how to use logging and Microsoft Entra sign-in logs to find errors and issues in your custom claims provider API.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 04/10/2024
 ms.reviewer: jasuri
