@@ -28,7 +28,7 @@ The following table shows the differences between the Lifecycle Administrator ro
 |[Restore Workflow](delete-lifecycle-workflow.md#view-deleted-workflows-in-the-microsoft-entra-admin-center)     | Yes | Yes (only assigned workflows) |
 |[View workflow history](lifecycle-workflow-history.md)     | Yes | Yes (only assigned workflows) |
 |[Run Workflow on-demand](on-demand-workflow.md)    | Yes | Yes (only assigned workflows) |
-|[Scope Workflows](manage-delegate-workflow.md#edit-the-administrative-scope-of-a-workflow-using-the-microsoft-entra-admin-center)     | Yes | No |
+|[Scope Workflows](manage-delegate-workflow.md#edit-the-administrative-scopes-of-a-workflow-using-the-microsoft-entra-admin-center)     | Yes | No |
 
 ## Prerequisites
 
