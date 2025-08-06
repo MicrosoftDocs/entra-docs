@@ -5,7 +5,7 @@ author: owinfreyATL
 manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/12/2024
 ms.author: owinfrey
 ms.custom: sfi-image-nochange

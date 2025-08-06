@@ -4,7 +4,7 @@ description: This article describes the various options available for organizati
 author: martincoetzer
 manager: travisgr
 ms.service: entra
-ms.topic: conceptual
+ms.topic: article
 ms.date: 08/17/2022
 ms.subservice: architecture
 ms.author: martinco

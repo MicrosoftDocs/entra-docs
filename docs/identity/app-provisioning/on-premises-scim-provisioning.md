@@ -5,7 +5,7 @@ author: jenniferf-skc
 manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.author: jfields
 ms.reviewer: arvinh

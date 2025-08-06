@@ -3,7 +3,7 @@ title: Authentication transfer as a condition to secure mobile users
 description: Learn how authentication transfer can connect users to apps across desktop and mobile devices.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/05/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo

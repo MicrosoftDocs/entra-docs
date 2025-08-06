@@ -4,7 +4,7 @@ description: Learn how to use Conditional Access adaptive session lifetimes to e
 
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/03/2025
 
 ms.author: joflore

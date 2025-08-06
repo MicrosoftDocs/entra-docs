@@ -4,8 +4,8 @@ description: Explore the full list of risk detections and their corresponding ri
 
 ms.service: entra-id-protection
 
-ms.topic: reference
-ms.date: 07/16/2025
+ms.topic: article
+ms.date: 08/06/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -97,9 +97,9 @@ This detection indicates an administrator selected **Confirm user compromised** 
 ### Anomalous token (sign-in)
 <a name='anomalous-token'></a>
 
-This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens."
+This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens." If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
 
-Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
+Anomalous token was historically tuned to incur more noise than other detections. Recent improvements to the detection have reduced the noise; however, there's still a higher than normal chance that some of the sessions flagged by this detection are false positives at low and medium risk levels. 
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
@@ -228,9 +228,9 @@ This detection indicates that one of the premium detections was detected. Since 
 
 ### Anomalous token (user)
 
-This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens." 
+This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens." If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
 
-Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
+Anomalous token was historically tuned to incur more noise than other detections. Recent improvements to the detection have reduced the noise; however, there's still a higher than normal chance that some of the sessions flagged by this detection are false positives at low and medium risk levels.
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID P2
