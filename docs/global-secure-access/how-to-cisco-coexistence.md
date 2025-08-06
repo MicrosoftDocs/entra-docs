@@ -100,7 +100,7 @@ To configure Cisco Umbrella and SWG:
   > `quickaccessapplicationid` is the application ID of the configured Quick Access app.
 
 
-3. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
+4. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
   ```
   *.globalsecureaccess.microsoft.com, 150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
   ```
