@@ -82,9 +82,36 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 ## View the administrative scopes of a workflow using the Microsoft Entra admin center
 
+When managing workflows, it is also important in seeing what administrative scope they fall under. This allows you to quickly see who can manage each specific workflow. To see the administrative scopes of a workflow, do the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
+
+1. On the workflow list screen you can see the number of scopes assigned to the workflow under the **Administration scope assigned** column.
+
+1. Select a number in the column to see the number of scopes assigned.
 
 
 ## Remove the administrative scopes of a workflow using the Microsoft Entra admin center
+
+Administration scopes can be removed from a workflow at any time. To remove an administrative unit scope from a workflow, do the following steps:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
+
+1. Browse to **ID Governance** > **Lifecycle workflows** > **workflows**.
+
+1. On the list of workflows page, select the workflow that you want to remove an administrative scope from.
+
+1. On the workflow overview page, select **Properties**.
+
+1. Under properties, select **Administrative Scope**.
+
+1. From the administrative scope pane, you can see the list of all administrative scopes of the workflow.
+
+1. Select the administration scope you want to remove the workflow from.
+
+1. Select **Save**. 
 
 ## Edit the administrative scopes of a workflow using Microsoft Graph
 
