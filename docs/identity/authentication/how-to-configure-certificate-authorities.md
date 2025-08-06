@@ -13,7 +13,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref, sfi-ga-nochange
 ---
 # How to configure certificate authorities for Microsoft Entra certificate-based authentication
 
-The best way to configure the certificate authorities (CAs) is with the PKI-based trust store. You can delegate configuration with a PKI-based trust store to least privileged roles. For more information see, [Step 1: Configure the certificate authorities with PKI-based trust store](how-to-certificate-based-authentication.md#step-1-configure-the-certificate-authorities-with-pki-based-trust-store).
+The best way to configure the certificate authorities (CAs) is with the PKI-based trust store. You can delegate configuration with a PKI-based trust store to least privileged roles. For more information see, [Step 1: Configure the certificate authorities with PKI-based trust store](how-to-certificate-based-authentication.md#step-1-configure-the-cas-with-a-pki-based-trust-store).
 
 As an alternative, a Global Administrator can follow steps in this topic to configure CAs by using the Microsoft Entra admin center, or Microsoft Graph REST APIs and the supported software development kits (SDKs), such as Microsoft Graph PowerShell. 
 
@@ -96,7 +96,7 @@ The following table and graphic show how to map information from the CA certific
  of the CA in the certificate authority Microsoft Management Console (MMC).
 >- On the CA by running `certutil -cainfo cdp`. For more information, see [certutil](/windows-server/administration/windows-commands/certutil#-cainfo).
 
-For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
+For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#certificate-revocation-process).
 
 ### Configure certificate authorities using the Microsoft Graph APIs
 

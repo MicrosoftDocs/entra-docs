@@ -47,7 +47,7 @@ The following table outlines when an authentication method can be used during a 
 
 <sup>1</sup>Windows Hello for Business can serve as a step-up MFA credential if it's used in FIDO2 authentication. Users need to be registered for passkey (FIDO2).
 
-<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-certificate-based-authentication).
+<sup>2</sup>Passwordless sign-in can be used for secondary authentication only if [CBA is used for primary authentication](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#mfa-with-single-factor-cba).
 
 <sup>3</sup>Alternate phone methods can only be used for MFA.
 
