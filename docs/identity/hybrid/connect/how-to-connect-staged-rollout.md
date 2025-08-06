@@ -114,9 +114,7 @@ The following scenarios aren't supported for Staged Rollout:
 - If you have a Windows Hello for Business hybrid certificate trust with certs that are issued via your federation server acting as Registration Authority or smartcard users, the scenario isn't supported on a Staged Rollout. 
 
   >[!NOTE]
-  > You still need to make the final cutover from federated to cloud authentication by using Microsoft Entra Connect or 
-  > PowerShell. Staged Rollout doesn't switch domains from  federated to managed.  For more information about domain cut over see 
-  > [Migrate from federation to password hash synchronization](./migrate-from-federation-to-cloud-authentication.md#convert-domains-from-federated-to-managed).
+  > You still need to make the final cut over from federated to cloud authentication by using Microsoft Entra Connect or PowerShell. Staged Rollout doesn't switch domains from  federated to managed.  For more information about domain cut over see [convert domain from federated to managed](./migrate-from-federation-to-cloud-authentication.md#convert-domains-from-federated-to-managed).
   
 ## Get started with Staged Rollout
 
