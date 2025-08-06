@@ -80,11 +80,21 @@ With the role set for admins over the administrative unit, you must edit the wor
 
 1. Select **Save**.
 
-## View the administrative scope of a workflow using the Microsoft Entra admin center
+## View the administrative scopes of a workflow using the Microsoft Entra admin center
 
 
 
-## Edit the administrative scope of a workflow using Microsoft Graph
+## Remove the administrative scopes of a workflow using the Microsoft Entra admin center
+
+## Edit the administrative scopes of a workflow using Microsoft Graph
+
+To edit the administrative scope of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
+
+## View the administrative scopes of a workflow using Microsoft Graph
+
+To edit the administrative scope of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
+
+## Remove the administrative scopes of a workflow using Microsoft Graph
 
 To edit the administrative scope of a workflow via API using Microsoft Graph, see: [Update workflow](/graph/api/identitygovernance-workflow-update).
 
