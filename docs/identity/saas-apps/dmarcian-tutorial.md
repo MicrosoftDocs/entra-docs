@@ -114,7 +114,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 7. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url**, open it in a new browser tab, download the content of the page as an XML file and save it on your computer.
 
-   ![The Certificate download link](common/copy-metadataurl.png)
+   ![Screenshot of the Certificate download link.](common/copy-metadataurl.png)
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -126,15 +126,15 @@ Follow these steps to enable Microsoft Entra SSO.
 
 2. Click on the ⚙️ **Cog icon** in the top-right corner and select **Preferences**.
 
-   <img src="./media/dmarcian-tutorial/preferences.png" alt="The Preferences Menu" width="200" />
+   <img src="./media/dmarcian-tutorial/preferences.png" alt="Screenshot of the Preferences Menu." width="200" />
 
 3. Click on the **SSO** tab.
 
-   <img src="./media/dmarcian-tutorial/sso-tab.png" alt="The SSO tab" />
+   <img src="./media/dmarcian-tutorial/sso-tab.png" alt="Screenshot of the SSO tab." />
 
 4. Set the status to **Enabled** if it is not already set and perform the following steps:
 
-   <img src="./media/dmarcian-tutorial/configuration.png" alt="The Configuration Form" />
+   <img src="./media/dmarcian-tutorial/configuration.png" alt="Screenshot of the Configuration Form." />
 
    1. Under **Add dmarcian to your Identity Provider** section, click on the **Copy Icon** to copy the **Assertion Consumer Service URL** for your instance and paste it in **Reply URL** textbox in **Basic SAML Configuration section** on Azure portal.
    2. Under **Add dmarcian to your Identity Provider** section, click on the **Copy Icon** to copy the **Entity ID** for your instance and paste it in **Identifier** textbox in **Basic SAML Configuration section** on Azure portal.
@@ -157,15 +157,15 @@ To enable Microsoft Entra users to sign in to dmarcian, they must be provisioned
 1. Sign in to dmarcian as a Security Administrator.
 2. Click on the ⚙️ **Cog icon** in the top-right corner and select **Manage Users**.
 
-   <img src="./media/dmarcian-tutorial/manage-users.png" alt="The Manage Users Menu" width="200" />
+   <img src="./media/dmarcian-tutorial/manage-users.png" alt="Screenshot of the Manage Users Menu." width="200" />
 
 3. Click on the **+ Add New Users** button.
 
-   <img src="./media/dmarcian-tutorial/add-new-users.png" alt="The add users button" />
+   <img src="./media/dmarcian-tutorial/add-new-users.png" alt="Screenshot of the add users button." />
 
 4. In the **Add New Users** pop-up, perform the following steps:
 
-   ![The new user](./media/dmarcian-tutorial/new-users-popup.png)
+   ![Screenshot showing the new user.](./media/dmarcian-tutorial/new-users-popup.png)
 
    1. In the **New User Email** textbox, enter the email of the user, such as `email@domain.com` and press **Enter**.
 
