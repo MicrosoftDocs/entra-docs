@@ -47,6 +47,17 @@ Each application segment includes the following columns:
 - **Last access**: The last time in the time range the application segment was accessed.   
 - **First access**: The first time in the time range the application segment was accessed.  
 
+## Review recommendations and take action
+Microsoft Entra recommendations provide you with actionable guidance to improve your security posture. For Application discovery, recommendations help you identify which application segments to onboard as private applications. To learn more, see [What are Microsoft Entra recommendations?](../identity/monitoring-health/overview-recommendations.md).
+
+To access recommendations for Application discovery:
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Browse to Identity > Overview.
+1. Select the **Recommendations** tab.
+1. Select the recommendation for Application discovery: **Onboard new discovered application segments to enterprise applications**.
+:::image type="content" source="media/how-to-application-discovery/[]" alt-text="Screenshot of the Recommendations tab in the Microsoft Entra admin center, showing the Application discovery recommendation to onboard new discovered application segments to enterprise applications.":::
+1. Review the recommendation details and follow the suggested actions.
+
 ## Create a new application
 Use Application discovery to create new Microsoft Entra ID applications based on the discovered application segments of the main table. To add an application segment to a new application:
 1. From the Application discovery list, choose one or more application segments that correspond to an application that you would like to create.
@@ -96,3 +107,5 @@ Before you decide to create a private application, you might want to review othe
 
 ## Related content
 * [How to configure Quick Access for Global Secure Access](how-to-configure-quick-access.md)
+* [What is application usage analytics?](overview-application-usage-analytics.md)
+* [What are Microsoft Entra recommendations?](../identity/monitoring-health/overview-recommendations.md)
