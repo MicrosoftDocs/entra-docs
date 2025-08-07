@@ -31,7 +31,7 @@ The Connectors tab is used to manage all systems the sync engine is connected to
 | Import Connector |Not supported. |
 | Update Connector |Not supported. |
 | Refresh Schema |Not supported. Use the "Refresh directory schema" task in the configuration wizard which also updates sync rules.|
-| [Search Connector Space](#search-connector-space) |Finds objects and shows object data and metadata across the metaverse and other connected sources.|
+| [Search Connector Space](#search-connector-space) |Finds objects and shows object data across the Metaverse and other connected sources.|
 
 
 
