@@ -3,7 +3,7 @@ title: Application Discovery for Global Secure Access
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/30/2025
+ms.date: 08/07/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -47,16 +47,20 @@ Each application segment includes the following columns:
 - **Last access**: The last time in the time range the application segment was accessed.   
 - **First access**: The first time in the time range the application segment was accessed.  
 
-## Review recommendations and take action
+## Review recommendations
 Microsoft Entra recommendations provide you with actionable guidance to improve your security posture. For Application discovery, recommendations help you identify which application segments to onboard as private applications. To learn more, see [What are Microsoft Entra recommendations?](../identity/monitoring-health/overview-recommendations.md).
 
 To access recommendations for Application discovery:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to Identity > Overview.
+1. Browse to **Identity** > **Overview**.
 1. Select the **Recommendations** tab.
 1. Select the recommendation for Application discovery: **Onboard new discovered application segments to enterprise applications**.
-:::image type="content" source="media/how-to-application-discovery/[]" alt-text="Screenshot of the Recommendations tab in the Microsoft Entra admin center, showing the Application discovery recommendation to onboard new discovered application segments to enterprise applications.":::
-1. Review the recommendation details and follow the suggested actions.
+:::image type="content" source="media/how-to-application-discovery/recommendation-onboard-discovered.png" alt-text="Screenshot of the Recommendations tab in the Microsoft Entra admin center, showing the Application discovery recommendation to onboard new discovered application segments to enterprise applications.":::   
+1. Review the recommendation details and follow the suggested **Action plan**.
+:::image type="content" source="media/how-to-application-discovery/recommendation-action-plan.png" alt-text="Screenshot of the impacted resources and the recommended action plan." lightbox="media/how-to-application-discovery/recommendation-action-plan-expanded.png":::   
+
+> [!NOTE]
+> This feature is currently unavailable in Australia and Africa.
 
 ## Create a new application
 Use Application discovery to create new Microsoft Entra ID applications based on the discovered application segments of the main table. To add an application segment to a new application:
