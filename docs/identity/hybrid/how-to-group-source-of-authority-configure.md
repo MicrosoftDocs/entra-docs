@@ -245,7 +245,7 @@ else
 
 ### Status of attributes after you convert SOA
 
-The following table explains the status for **isCloudManaged** and **onPremisesSyncEnabled** attributes you convert the SOA of an object.
+The following table explains the status for **isCloudManaged** and **onPremisesSyncEnabled** attributes after you convert the SOA of an object.
 
 Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
@@ -290,22 +290,6 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and blockOnPremisesSync = false, which means the object SOA is taken over by the on-premises again.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
-
-## Check Cloud sync Provisioning Logs 
-
-If you try to edit an attribute of a group in AD while **SOA is in the cloud**, the Cloud Sync skips the object.
-
-Let's say we have a group *SOAGroup3*, and we update its group name to *SOA Group3.1*.
-
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/update-group-name.png" alt-text="Screenshot of an object name update.":::
-
-In the **Provisioning Logs** of the **AD2AAD job**, you can see that **SOAGroup3 was skipped**.
-
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/skipped.png" alt-text="Screenshot of a skipped object.":::
-
-The details explain that the object isn't synced because its SOA is converted to the cloud.
-
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
 ## Limitations
 
