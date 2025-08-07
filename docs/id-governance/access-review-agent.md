@@ -32,10 +32,10 @@ The following tables show current Access Review Agent support based on access re
 |Teams + Groups     |   :white_check_mark:       |
 |Access package assignment     |    :white_check_mark:      |
 |Application assignment        |   :white_check_mark:       |
-|Azure resource roles          |                           |
-|Groups managed by PIM         |                           |
-|Microsoft Entra roles         |                           |
-|Bring your own data     |         |
+|Azure resource roles          |    ❌                        |
+|Groups managed by PIM         |   ❌                         |
+|Microsoft Entra roles         |   ❌                         |
+|Bring your own data     |     ❌     |
 
 
 ### Review Size
@@ -44,7 +44,7 @@ The following tables show current Access Review Agent support based on access re
 |Review Scenario  |Supported  |
 |---------|---------|
 |Up to 35 decisions (per review, not reviewer)     |  :white_check_mark:       |
-|>35 decisions per review     |         |
+|>35 decisions per review     |   ❌       |
 
 
 ### Review stages
@@ -53,8 +53,8 @@ The following tables show current Access Review Agent support based on access re
 |Review Scenario  |Supported  |
 |---------|---------|
 |Single Stage     |  :white_check_mark:       |
-|Two Stages     |         |
-|Three Stages     |         |
+|Two Stages     |   ❌       |
+|Three Stages     |   ❌       |
 
 
 ### Reviewer Settings
@@ -65,7 +65,7 @@ The following tables show current Access Review Agent support based on access re
 |Specific     |   :white_check_mark:       |
 |Group Owners     |  :white_check_mark:        |
 |Managers     |  :white_check_mark:        |
-|Self-review     |     |
+|Self-review     |  ❌    |
 
 
 For other considerations, and limitations, of the Access Review Agent, see: [Limitations](access-review-agent.md#limitations).
