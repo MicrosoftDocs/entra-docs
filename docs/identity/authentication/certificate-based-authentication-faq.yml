@@ -82,42 +82,7 @@ sections:
           revocation list (CRL) from the configured certificate authority CRL distribution point (CDP). To assist with this task, it's recommended to install the 
           [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). 
           This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
-          
-      - question: |
-          How can I turn certificate revocation checking on or off for a particular CA?
-        answer: |
-          We highly recommend against disabling certificate revocation list (CRL) checking as you won't be able to revoke certificates. 
-          However, if you need to investigate issues with CRL checking, you can exempt a CA from CRL checking in the Microsoft Entra admin center. 
-          In the CBA Authentication methods policy, click **Configure** and then click **Add exemption**. Choose the CA that you want to exempt, and click **Add**. 
-          
-      - question: |
-          Is there a limit for CRL size?
-        answer: |
-          The following CRL size limits apply: 
-
-           - Interactive sign in download limit: 20 MB (Azure Global includes GCC), 45 MB for (Azure US government, includes GCC High, Dept. of Defense)
-           - Service download limit: 65 MB (Azure Global includes GCC), 150 MB for (Azure US government, includes GCC High, Dept. of Defense)
-
-            When a CRL download fails, the following message appears: 
-            
-            "The Certificate Revocation List (CRL) downloaded from {uri} has exceeded the maximum allowed size ({size} bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators."
-            
-            Download remains in the background with higher limits.
-
-            We're reviewing the impact of these limits and have plans to remove them.
-
-      - question: |
-          I see a valid Certificate Revocation List (CRL) endpoint set, but why don't I see any CRL revocation?
-        answer: |
-          - Make sure the CRL distribution point is set to a valid HTTP URL.
-          - Make sure the CRL distribution point is accessible via an internet-facing URL.
-          - Make sure the CRL sizes are within limits. 
-
-      - question: |
-          How do I instantly revoke a certificate?
-        answer: |
-          Follow the steps to [manually revoke a certificate](./certificate-based-authentication-federation-get-started.md#step-3-configure-revocation). 
-
+           
       - question: |
           Will the changes to the Authentication methods policy take effect immediately?
         answer: |
@@ -154,19 +119,8 @@ sections:
 
            ```http
            GET  https://graph.microsoft.com/v1.0/users?$filter=certificateUserIds/any(x:x eq 'bob@contoso.com')
-           ```
-
-      - question: |
-           After a CRL endpoint is configured, end users aren't able to sign in and they see the following diagnostic message:
-           
-           ```http
-           AADSTS500173: Unable to download CRL. Invalid status code Forbidden from CRL distribution point
-           errorCode: 500173
-           ```
-           
-        answer: |
-          This is commonly seen when a firewall rule setting blocks access to the CRL endpoint. 
-
+           ```   
+     
       - question: |
            Can Microsoft Entra CBA be used on Surface Hub?
         answer: |
