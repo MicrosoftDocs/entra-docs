@@ -68,7 +68,7 @@ To resolve the issue, update the AD DS user account using the following:
 5. In the pop-up dialog, select Connect to Active Directory Forest:
 6. The Forest name indicates the corresponding on premises AD.
 7. The User name indicates the AD DS account used for synchronization.
-1. Enter the new password of the AD DS account in the Password textbox
+8. Enter the new password of the AD DS account in the Password textbox
 ![Microsoft Entra Connect Sync Encryption Key Utility](./media/how-to-connect-sync-service-manager-ui-connectors/key6.png)
 9. Select OK to save the new password and restart the Synchronization Service to remove the old password from memory cache.
 
