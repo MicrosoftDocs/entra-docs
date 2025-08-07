@@ -6,9 +6,9 @@ description: Use Copilot in Microsoft Entra to investigate identity risks and tr
 keywords:
 author: cilwerner
 ms.author: cwerner
-manager: celestedg
+manager: pmwongera
 ms.date: 12/10/2024
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra
 ms.custom: microsoft-copilot, ignite-2024
 ms.collection: ce-skilling-ai-copilot

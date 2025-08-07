@@ -2,7 +2,7 @@
 title: Developer guidance for Microsoft Entra Conditional Access authentication context
 description: Developer guidance and scenarios for Microsoft Entra Conditional Access authentication context
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom:
 ms.date: 11/15/2022

@@ -14,7 +14,9 @@ ms.custom: sfi-image-nochange
 
 # Migrate to cloud authentication using Staged Rollout
 
-Staged Rollout lets you gradually test cloud authentication features with selected user groups. These features include Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and more. This approach allows you to validate functionality and user experience before fully transitioning your domains. 
+## Overview
+
+Staged rollout (SRO) is intended as a temporary testing mechanism for organizations with federated domains and allows to test cloud authentication with a group of users before [transitioning the entire domain from federated to managed](./migrate-from-federation-to-cloud-authentication.md#convert-domains-from-federated-to-managed). These features include Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and more. This approach allows you to validate functionality and user experience before fully transitioning your domains from federated to managed. 
 
 Before you begin the Staged Rollout, you should consider the implications if one or more of the following conditions is true:
     
@@ -28,8 +30,19 @@ Before you try this feature, we suggest that you review our guide on choosing th
 For an overview of the feature, view this "What is Staged Rollout?" video:
 
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=252dc370-5709-4dfb-b346-2cbf76f1640f]
+ 
+ >[!NOTE]
+ > Staged rollout is **not** designed to be a permanent configuration. Organizations should maintain a federated identity provider (IdP) as a fallback during staged rollout testing. Continuing to use staged rollout after
+ > migrating to managed authentication without a federated IdP in place can lead to unexpected authentication failures and degraded user experiences. To ensure a smooth transition, we recommend completing the [domain cut
+ > over to managed authentication](./migrate-from-federation-to-cloud-authentication.md#convert-domains-from-federated-to-managed) once testing is successful.
 
-
+## Best Practices for Using Staged Rollout
+ 
+-   Use staged rollout only for pilot groups to validate cloud authentication behavior before domain-wide changes.
+-   Maintain your federated IdP during SRO testing to ensure a fallback path for authentication.
+-   Avoid placing all users in staged rollout unless you have a clear transition plan to managed authentication.
+-   Monitor authentication flows during testing to detect anomalies early.
+-   Plan a timely cut over to managed authentication once testing is successful.
 
 ## Prerequisites
 
@@ -101,7 +114,7 @@ The following scenarios aren't supported for Staged Rollout:
 - If you have a Windows Hello for Business hybrid certificate trust with certs that are issued via your federation server acting as Registration Authority or smartcard users, the scenario isn't supported on a Staged Rollout. 
 
   >[!NOTE]
-  >You still need to make the final cutover from federated to cloud authentication by using Microsoft Entra Connect or PowerShell. Staged Rollout doesn't switch domains from  federated to managed.  For more information about domain cutover, see [Migrate from federation to password hash synchronization](./migrate-from-federation-to-cloud-authentication.md) and [Migrate from federation to pass-through authentication](./migrate-from-federation-to-cloud-authentication.md).
+  > You still need to make the final cut over from federated to cloud authentication by using Microsoft Entra Connect or PowerShell. Staged Rollout doesn't switch domains from  federated to managed.  For more information about domain cut over see [convert domain from federated to managed](./migrate-from-federation-to-cloud-authentication.md#convert-domains-from-federated-to-managed).
   
 ## Get started with Staged Rollout
 

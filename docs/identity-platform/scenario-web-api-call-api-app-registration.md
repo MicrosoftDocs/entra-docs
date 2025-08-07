@@ -2,7 +2,7 @@
 title: Register a web API that calls web APIs
 description: Learn how to configure a web API to securely call downstream APIs by registering it as a confidential client application.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 03/21/2025
 ms.reviewer: jmprieur

@@ -3,7 +3,7 @@ title: 'Backup Authentication System: Application Guidelines'
 description: Learn how to configure your application to support the Microsoft Entra backup authentication system for enhanced resilience and security.
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo

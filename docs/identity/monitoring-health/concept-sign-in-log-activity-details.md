@@ -4,7 +4,7 @@ description: Learn about the information available on each of the tabs on the Mi
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.subservice: monitoring-health
 ms.date: 07/01/2025
 ms.author: sarahlipsey

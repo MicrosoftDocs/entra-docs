@@ -7,7 +7,7 @@ ms.topic: tutorial
 ms.date: 05/13/2024
 ms.author: cwerner
 author: cilwerner
-manager: 
+manager: pmwongera
 ms.reviewer: brianmel
 ms.custom: sfi-image-nochange
 #Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference between setting up with secure enclave, smart card or password based authentication methods.
@@ -33,14 +33,14 @@ Refer to the [Microsoft Entra ID macOS Platform SSO documentation](./macos-psso.
 
 ## Kerberos SSO MDM profile configuration for on-premises Active Directory
 
-You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. It's recommended to deploy on-premises Active Directory profile before the Microsoft Entra ID Cloud Kerberos profile.
+You should configure separate Kerberos SSO MDM profiles if you plan to use both Microsoft Entra ID Cloud Kerberos and on-premises Active Directory realms. If you don't plan to use the Microsoft Entra Cloud Kerberos TGT, then you only need to configure the on-premises Kerberos SSO profile.
 
 Use the following settings to configure the on-premises Active Directory profile, ensuring that you replace all references to **contoso.com** and **Contoso** with the proper values for your environment:
 
 | Configuration Key     | Recommended Value               | Note                                                                                                                               |
 |-----------------------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `Hosts`               | `<string>.contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name                                                                   |
-| `Hosts`               | `<string>contoso.com</string>`  | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `.` characters before your domain/forest name |
+| `Hosts`               | `<string>.contoso.com</string>` | Replace **contoso.com** with your on-premises domain/forest name. Keep the preceding `.` character before your domain/forest name                                                                 |
+| `Hosts`               | `<string>contoso.com</string>`  | Replace **contoso.com** with your on-premises domain/forest name |
 | `Realm`               | `<string>CONTOSO.COM</string>`  | Replace **CONTOSO.COM** with your on-premises realm name. The value should be all capitalized.                                     |
 | `PayloadOrganization` | `<string>Contoso</string>`      | Replace **Contoso** with the name of your organization                                                                             |
 
@@ -124,7 +124,9 @@ Use the following settings to configure the Microsoft Entra ID Cloud Kerberos pr
 |-----------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `preferredKDCs`       | `<string>kkdcp://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/kerberos</string>` | Replace the **aaaabbbb-0000-cccc-1111-dddd2222eeee** value with the Tenant ID of your tenant, which can be found on the Overview page of the [Microsoft Entra Admin Center](https://entra.microsoft.com) |
 | `PayloadOrganization` | `<string>Contoso</string>`                                                                         | Replace **Contoso** with the name of your organization                                                                                                                                             |
-
+| `Hosts`               | `<string>.windows.net</string>` |                                                                    |
+| `Hosts`               | `<string>windows.net</string>`  | |
+| `Realm`               | `<string>KERBEROS.MICROSOFTONLINE.COM</string>`  | The value should be all capitalized.                                     |
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">

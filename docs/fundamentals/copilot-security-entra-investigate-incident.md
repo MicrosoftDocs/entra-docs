@@ -6,9 +6,9 @@ description: Use Microsoft Security Copilot and Microsoft Entra skills to quickl
 keywords:
 author: cilwerner
 ms.author: cwerner
-manager: celestedg
+manager: pmwongera
 ms.date: 11/7/2024
-ms.topic: conceptual
+ms.topic: article
 ms.service: entra
 ms.custom: microsoft-copilot, ignite-2024
 ms.collection: ce-skilling-ai-copilot

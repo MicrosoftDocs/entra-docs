@@ -12,6 +12,8 @@
     href: agent-optimization-review-suggestions.md
   - name: Optimization agent logs and metrics
     href: agent-optimization-logs-metrics.md
+  - name: Phased rollout
+    href: agent-optimization-phased-rollout.md
   - name: Optimization agent FAQ
     href: agent-optimization-faq.yml
 - name: Tutorials

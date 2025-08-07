@@ -6,7 +6,7 @@ author: cilwerner
 ms.author: cwerner
 manager: pmwongera
 ms.date: 06/09/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra
 ms.custom: microsoft-copilot
 ms.collection: null
@@ -36,6 +36,7 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - [Privileged Identity Management (PIM)](#privileged-identity-management-pim): Manage and monitor privileged access in your organization using natural language queries.
 - [Microsoft Entra domains](#microsoft-entra-domains): Simplify domain management by accessing domain information, verifying DNS records, and managing domain settings using natural language queries.
 - [Microsoft Entra tenants](#microsoft-entra-tenants): Get quick access to your Microsoft Entra ID organization information, including tenant ID, display name, active licenses, and contacts.
+- [Microsoft Entra devices](#microsoft-entra-devices): Use natural language to investigate your Microsoft Entra ID devices.
 - [Microsoft Entra Role Based Access Control (RBAC)](#microsoft-entra-role-based-access-control-rbac): Investigate roles within a directory, such as which roles a user or group has, who has a specific role, or details about a particular role.
 - [License Usage](#license-usage): Track licenses purchased and actual usage across your Microsoft Entra tenant using natural language queries.
 
@@ -198,15 +199,17 @@ The following example prompts can be used to investigate MFA and authentication 
 
 Microsoft Entra Conditional Access applies the capabilities of Microsoft Security Copilot to help admins easily understand and evaluate their Conditional Access policies.  By combining Conditional Access APIs with the power of generative AI, Security Copilot enables analysts to ask natural language questions, such as identifying what policies apply to users or what policies use certain controls, and receive clear insights in seconds. 
 
-- List active MFA Conditional Access policies in my tenant.
-- Which MFA policies are enforced in my tenant?
-- Which Conditional Access policies are enabled in my tenant?
-- Which CA policies should I enable?
-- Which CA policies are not enabled in my tenant?
-- List all inactive Conditional Access policies in my tenant.
-- List CA policies that are currently active in my tenant.
-- Which Conditional Access policies in my tenant exclude trusted locations?
-- Get all CA policies for user by group.
+Using this feature requires at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), or [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader). You will also need a [Microsoft Entra ID P1 license](/entra/id-protection/overview-identity-protection#license-requirements) and a tenant with Conditional Access policies configured.
+
+- *List active MFA Conditional Access policies in my tenant.*
+- *Which MFA policies are enforced in my tenant?*
+- *Which Conditional Access policies are enabled in my tenant?*
+- *Which CA policies should I enable?*
+- *Which CA policies are not enabled in my tenant?*
+- *List all inactive Conditional Access policies in my tenant.*
+- *List CA policies that are currently active in my tenant.*
+- *Which Conditional Access policies in my tenant exclude trusted locations?*
+- *Get all CA policies for user by group.*
 
 ### Privileged Identity Management (PIM)
 
@@ -244,6 +247,23 @@ The following example prompts can be used to investigate alerts in Scenario Heal
 - *What are all the active licenses assigned to my tenant?*
 - *Who is the technical contact for my tenant?*
 - *Who is the security compliance contact for my tenant?*
+
+### Microsoft Entra devices
+
+Microsoft Entra uses the capabilities of Security Copilot to help administrators investigate their Microsoft Entra ID devices using natural language queries. This feature allows admins to quickly access device information, such as device IDs, compliance status, activity and whether devices ae Entra ID registered, joined or hybrid joined.
+
+This feature is available using a free Microsoft Entra ID license, and to any user in any tenant.
+
+The following example prompts can be used to investigate devices in Microsoft Entra:
+
+- *Show me the device for with an ID of {ID}*
+- *Show me all compliant devices/Show me all non-compliant devices*
+- *List devices that are not under management*
+- *List all devices that are Entra ID registered/Entra ID joined/Entra ID hybrid joined*
+- *Show me when device {ID} was last active*
+- *List the devices with specific {operating system name}*
+- *Show me how many devices are running Windows (8,10,11)*
+- *Show the count of Windows devices categorized by release*
 
 ### Microsoft Entra Role Based Access Control (RBAC)
 
