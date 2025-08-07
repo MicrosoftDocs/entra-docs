@@ -32,7 +32,7 @@ sections:
           On the error page, select **More Details** for more information to help your tenant admin. The tenant admin can check the sign-in logs to investigate the error. For example, if a user certificate is revoked and is on the certification revocation list (CRL), authentication fails as intended.
 
       - question: |
-          How does an administrator turn on Microsoft Entra CBA?
+          How do we turn on Microsoft Entra CBA?
         answer: |        
           1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role assigned.
           1. Go to **Entra ID** > **Authentication methods** > **Policies**.
@@ -85,7 +85,7 @@ sections:
           The PowerShell cmdlet reviews the Microsoft Entra tenant CA configuration and surfaces errors and warnings for common configuration issues. 
           
       - question: |
-          How can I turn on certificate revocation checking for a specific CA?
+          How do I turn on certificate revocation checking for a specific CA?
         answer: |
           We highly recommend that you don't turn off CRL checking. If you turn off CRL checking, you can't revoke certificates.
 

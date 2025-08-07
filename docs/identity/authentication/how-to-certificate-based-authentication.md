@@ -657,9 +657,9 @@ The `certificateUserIds` value is:
 1. Update the user `certificateUserIds` value with the correct SKI value from the certificate and policy OID of `9.8.7.5`.
 1. Test by using a certificate with policy OID  of `9.8.7.5`. Verify that the user is authenticated with the SKI binding and that they're prompted to sign in with MFA and only the certificate.
 
-## Turn on CBA by using Microsoft Graph APIs
+## Set up CBA by using Microsoft Graph APIs
 
-To turn on CBA and configure username bindings by using Microsoft Graph APIs:
+To set up CBA and configure username bindings by using Microsoft Graph APIs:
 
 1. Go to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select **Sign in to Graph Explorer** and sign in to your tenant.
@@ -733,7 +733,7 @@ To turn on CBA and configure username bindings by using Microsoft Graph APIs:
 1. Verify that a `204 No content` response code returns. Rerun the GET request to make sure that the policies are updated correctly.
 1. Test the configuration by signing in with a certificate that satisfies the policy.
 
-## Turn on CBA by using Microsoft PowerShell
+## Set up CBA by using Microsoft PowerShell
 
 1. Open PowerShell.
 1. Connect to Microsoft Graph:

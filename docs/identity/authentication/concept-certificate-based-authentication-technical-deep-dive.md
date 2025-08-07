@@ -33,7 +33,7 @@ The following steps summarize the Microsoft Entra CBA process:
   
 1. Microsoft Entra ID checks whether CBA is set up for the tenant. If CBA is set up, the user sees a link to **Use a certificate or smart card** on the password page. If the user doesn't see the sign-in link, make sure that CBA is set up for the tenant.
 
-   For more information, see [How do I turn on Microsoft Entra CBA?](./certificate-based-authentication-faq.yml#how-does-an-administrator-enable-microsoft-entra-cba-).
+   For more information, see [How do we turn on Microsoft Entra CBA?](./certificate-based-authentication-faq.yml#how-do-we-turn-on-microsoft-entra-cba-).
 
    > [!NOTE]
    > If CBA is set up for the tenant, all users see the **Use a certificate or smart card** link on the password sign-in page. However, only users who are in scope for CBA can successfully authenticate for an application that uses Microsoft Entra ID as their identity provider.
