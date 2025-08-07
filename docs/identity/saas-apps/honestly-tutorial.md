@@ -73,36 +73,53 @@ To configure and test Microsoft Entra SSO with Honestly, complete the following 
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Enterprise apps** > **Honestly** > **Single sign-on**.
-1. On the **Select a single sign-on method** page, select **SAML**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Honestly**
+1. On the **Honestly** App page, select **2. Set up single sign on**.
 1. On the **Set up single sign-on with SAML** page, select the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
 
-    a. In the **Identifier** text box, type a URL using the following pattern:
+    a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
+   
     `https://webapp.honestly.de/saml2/<client-id>/metadata`
+   
+   	You can find this value of your Honestly account on the **Honestly SSO** page in the field **Honestly Entity ID**
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
+    b. In the **Reply URL (Assertion Consumer Service URL)** text box, type a URL using the following pattern:
+   
     `https://webapp.honestly.de/saml2/<client-id>/acs`
+   
+   	You can find this value of your Honestly account on the **Honestly SSO** page in the field **Honestly ACS URL**
 
-    > [!NOTE]
-	> These values aren't real. Update these values with the actual Identifier and Reply URL. Contact [Honestly Client support team](mailto:support@honestly.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL:
     `https://webapp.honestly.de/sso`
 
+## Configure Honestly SSO
+
+1. Go to the **Honestly SSO** page in your Honestly account.
+
+    a. In the **Your provider's SSO URL** text box, type your **Login URL** with the following pattern:
+    `https://login.microsoftonline.com/<client-id>/saml2`
+
+    b. In the **Your provider's Entity ID** text box, type your **Microsoft Entra Identifier** with the following pattern:
+    `https://sts.windows.net/<client-id>/`
+   
+   	You can find both of these values on the **Set up single sign-on with SAML** page in Azure und der the **Set up Honestly section**
+	![Copy configuration URLs](common/copy-configuration-urls.png)
+
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up Honestly** section, copy the appropriate URL(s) based on your requirement.
-
-	![Copy configuration URLs](common/copy-configuration-urls.png)
-<a name='create-an-azure-ad-test-user'></a>
+1. Open the certificate in any text editor.
+1. Copy everything, including the *-----BEGIN CERTIFICATE-----* and *-----END CERTIFICATE-----* tags and the beginning and end of the file.
+1. Paste it into the **x509 Certificate** field on the **Honestly SSO** page in your Honestly account.
+1. You can enable the checkbox at the bottom of the page in order to fall back to the reglular login in case anything went wrong and click on save.
 
 ### Create a Microsoft Entra test user
 
@@ -137,14 +154,6 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then select the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, select the **Assign** button.
-
-## Configure Honestly SSO
-
-To configure single sign-on on **Honestly** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Honestly support team](mailto:support@honestly.com). They set this setting to have the SAML SSO connection set properly on both sides.
-
-### Create Honestly test user
-
-In this section, you create a user called Britta Simon in Honestly. Work with [Honestly support team](mailto:support@honestly.com) to add the users in the Honestly platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
