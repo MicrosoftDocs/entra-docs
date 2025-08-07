@@ -79,7 +79,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	a. In the **Identifier (Entity ID)** text box, type a unique identifier for your Sage Intacct company, with the following format:
 
-   	   `https://saml.intacct.com`.
+   `https://saml.intacct.com`.
 
 	b. In the **Reply URL** text box, add the following URLs:  
 
