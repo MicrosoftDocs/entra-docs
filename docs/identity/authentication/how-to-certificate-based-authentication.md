@@ -44,7 +44,7 @@ Make sure that the following prerequisites are in place:
 
 ## Configure and test Microsoft Entra CBA
 
-You must complete some configuration steps before you enable Microsoft Entra CBA.
+You must complete some configuration steps before you turn on Microsoft Entra CBA.
 
 An admin must configure the trusted CAs that issue user certificates. As shown in the following diagram, Azure uses role-based access control (RBAC) to ensure that only least-privileged administrators are required to make changes.
 
@@ -52,9 +52,9 @@ An admin must configure the trusted CAs that issue user certificates. As shown i
 
 Optionally, you can configure authentication bindings to map certificates to single-factor authentication or to multifactor authentication (MFA). Configure username bindings to map the certificate field to an attribute of the user object. An [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) can configure user-related settings.
 
-When all configurations are finished, enable Microsoft Entra CBA on the tenant.
+When all configurations are finished, turn on Microsoft Entra CBA on the tenant.
 
-:::image type="content" border="false" source="./media/how-to-certificate-based-authentication/steps.png" alt-text="Diagram that shows an overview of the steps required to enable Microsoft Entra certificate-based authentication.":::
+:::image type="content" border="false" source="./media/how-to-certificate-based-authentication/steps.png" alt-text="Diagram that shows an overview of the steps required to turn on Microsoft Entra certificate-based authentication.":::
 
 ## Step 1: Configure the CAs with a PKI-based trust store
 
@@ -99,7 +99,7 @@ To upload a CA to a PKI container:
 1. If the CA is a root certificate, select **Yes**. Otherwise, select **No**.
 1. For **Certificate Revocation List URL**, enter the internet-facing URL for the CA base CRL that contains all revoked certificates. If the URL isn't set, an attempt to authenticate by using a revoked certificate doesn't fail.
 1. For **Delta Certificate Revocation List URL**, enter the internet-facing URL for the CRL that contains all revoked certificates since the last base CRL was published.
-1. If the CA shouldn't be included in issuer hints, turn off **Issuer hints**. The **Issuer hints** flag is enabled by default.
+1. If the CA shouldn't be included in issuer hints, turn off issuer hints. The **Issuer hints** flag is off by default.
 1. Select **Save**.
 1. To delete a CA, select the CA and select **Delete**.
 
@@ -297,12 +297,12 @@ To generate the SHA-256 checksum of the PKI `.p7b` file, run this command:
 Get-FileHash .\CBARootPKI.p7b -Algorithm SHA256
 ```
 
-## Step 2: Enable CBA on the tenant
+## Step 2: Turn on CBA for the tenant
 
 > [!IMPORTANT]
-> A user is considered capable of completing MFA when the user is designated as in scope for CBA in the authentication methods policy. This policy requirement means that a user can't use identity proof as part of their authentication to register other available methods. If the user doesn't have access to certificates, they're locked out and can't register other methods for MFA. Admins who are assigned the Authentication Policy Administrator role must enable CBA only for users who have valid certificates. Don't include **All users** for CBA. Use only groups of users who have valid certificates available. For more information, see [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md).
+> A user is considered capable of completing MFA when the user is designated as in scope for CBA in the authentication methods policy. This policy requirement means that a user can't use identity proof as part of their authentication to register other available methods. If the user doesn't have access to certificates, they're locked out and can't register other methods for MFA. Admins who are assigned the Authentication Policy Administrator role must turn on CBA only for users who have valid certificates. Don't include **All users** for CBA. Use only groups of users who have valid certificates available. For more information, see [Microsoft Entra multifactor authentication](concept-mfa-howitworks.md).
 
-To enable CBA via the Microsoft Entra admin center:
+To turn on CBA via the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with an account that is assigned at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 1. Go to **Groups** > **All groups**.
@@ -313,12 +313,12 @@ To enable CBA via the Microsoft Entra admin center:
 1. Choose specific groups, like the one you created, and then choose **Select**. Use specific groups instead of **All users**.
 1. Select **Save**.
 
-   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot that shows how to enable CBA.":::
+   :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot that shows how to turn on CBA.":::
 
-After CBA is enabled on the tenant, all users in the tenant see the option to sign in by using a certificate. Only users who are enabled for CBA can authenticate by using an X.509 certificate.
+After CBA is turned on for the tenant, all users in the tenant see the option to sign in by using a certificate. Only users who are capable of using CBA can authenticate by using an X.509 certificate.
 
 > [!NOTE]
-> The network administrator should allow access to the certificate authentication endpoint for the organization's cloud environment in addition to the `login.microsoftonline.com` endpoint. Disable TLS inspection on the certificate authentication endpoint to make sure that the client certificate request succeeds as part of the TLS handshake.
+> The network administrator should allow access to the certificate authentication endpoint for the organization's cloud environment in addition to the `login.microsoftonline.com` endpoint. Turn off TLS inspection on the certificate authentication endpoint to make sure that the client certificate request succeeds as part of the TLS handshake.
 
 <a name="#step-3-configure-authentication-binding-policy"></a>
 
@@ -538,7 +538,7 @@ The username binding policy helps validate the certificate of the user. Three bi
 
 By default, Microsoft Entra ID maps **Principal Name** in the certificate to `userPrincipalName` in the user object to determine the user. An Authentication Policy Administrator can override the default and create a custom mapping as described earlier.
 
-An Authentication Policy Administrator must enable the new bindings. To prepare, they must make sure that the correct values for the corresponding username bindings are updated in the `certificateUserIds` attribute of the user object:
+An Authentication Policy Administrator must set up the new bindings. To prepare, they must make sure that the correct values for the corresponding username bindings are updated in the `certificateUserIds` attribute of the user object:
 
 - For cloud-only users, use the [Microsoft Entra admin center](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificate-user-ids-in-the-azure-portal) or [Microsoft Graph APIs](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificateuserids-using-microsoft-graph-queries) to update the value in `certificateUserIds`.
 - For on-premises synced users, use Microsoft Entra Connect to sync the values from on-premises by following [Microsoft Entra Connect Rules](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#update-certificate-user-ids-using-azure-ad-connect) or by [syncing the `AltSecId` value](/azure/active-directory/authentication/concept-certificate-based-authentication-certificateuserids#synchronize-alternativesecurityid-attribute-from-ad-to-azure-ad-cba-certificateuserids).
@@ -657,9 +657,9 @@ The `certificateUserIds` value is:
 1. Update the user `certificateUserIds` value with the correct SKI value from the certificate and policy OID of `9.8.7.5`.
 1. Test by using a certificate with policy OID  of `9.8.7.5`. Verify that the user is authenticated with the SKI binding and that they're prompted to sign in with MFA and only the certificate.
 
-## Enable CBA by using Microsoft Graph APIs
+## Turn on CBA by using Microsoft Graph APIs
 
-To enable CBA and configure username bindings by using Microsoft Graph APIs:
+To turn on CBA and configure username bindings by using Microsoft Graph APIs:
 
 1. Go to [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. Select **Sign in to Graph Explorer** and sign in to your tenant.
@@ -676,7 +676,7 @@ To enable CBA and configure username bindings by using Microsoft Graph APIs:
    GET https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy/authenticationMethodConfigurations/X509Certificate
    ```
 
-1. By default, the X.509 certificate authentication method is disabled. To allow users to sign in by using a certificate, you must enable the authentication method and configure the authentication and username binding policies through an update operation. To update policy, run a PATCH request.
+1. By default, the X.509 certificate authentication method is turned off. To allow users to sign in by using a certificate, you must turn on the authentication method and configure the authentication and username binding policies through an update operation. To update policy, run a PATCH request.
 
    ### Request body
 
@@ -733,7 +733,7 @@ To enable CBA and configure username bindings by using Microsoft Graph APIs:
 1. Verify that a `204 No content` response code returns. Rerun the GET request to make sure that the policies are updated correctly.
 1. Test the configuration by signing in with a certificate that satisfies the policy.
 
-## Enable CBA by using Microsoft PowerShell
+## Turn on CBA by using Microsoft PowerShell
 
 1. Open PowerShell.
 1. Connect to Microsoft Graph:

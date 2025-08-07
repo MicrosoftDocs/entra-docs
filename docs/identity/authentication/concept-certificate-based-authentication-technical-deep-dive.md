@@ -31,9 +31,9 @@ The following steps summarize the Microsoft Entra CBA process:
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/sign-in.png" alt-text="Screenshot that shows the sign-in page for the MyApps portal.":::
   
-1. Microsoft Entra ID checks whether CBA is enabled for the tenant. If CBA is enabled, the user sees a link to **Use a certificate or smart card** on the password page. If the user doesn't see the sign-in link, make sure that CBA is enabled on the tenant.
+1. Microsoft Entra ID checks whether CBA is set up for the tenant. If CBA is set up, the user sees a link to **Use a certificate or smart card** on the password page. If the user doesn't see the sign-in link, make sure that CBA is set up for the tenant.
 
-   For more information, see [How do I enable Microsoft Entra CBA?](./certificate-based-authentication-faq.yml#how-does-an-administrator-enable-microsoft-entra-cba-).
+   For more information, see [How do I turn on Microsoft Entra CBA?](./certificate-based-authentication-faq.yml#how-does-an-administrator-enable-microsoft-entra-cba-).
 
    > [!NOTE]
    > If CBA is set up for the tenant, all users see the **Use a certificate or smart card** link on the password sign-in page. However, only users who are in scope for CBA can successfully authenticate for an application that uses Microsoft Entra ID as their identity provider.
@@ -53,7 +53,7 @@ The following steps summarize the Microsoft Entra CBA process:
    >
    > Make sure that turning off TLS inspection also works for issuer hints with the new URL. Don't hard-code the URL with the tenant ID. The tenant ID might change for business-to-business (B2B) users. Use a regular expression to allow both the previous URL and the new URL to work when you turn off TLS inspection. For example, depending on the proxy, use `*.certauth.login.microsoftonline.com` or `*certauth.login.microsoftonline.com`. In Azure Government, use `*.certauth.login.microsoftonline.us` or `*certauth.login.microsoftonline.us`.
 
-   Unless access is allowed, CBA fails if you enable [issuer hints](#issuer-hints-preview).
+   Unless access is allowed, CBA fails if you turn on [issuer hints](#issuer-hints-preview).
 
 1. Microsoft Entra ID requests a client certificate. The user selects the client certificate, and then selects **OK**.
 
@@ -69,19 +69,19 @@ If user sign-in is successful, the user can access the application.
 
 Issuer hints send back a *trusted CA* indicator as part of the TLS handshake. The trusted CA list is set to the subject of the CAs that the tenant uploads to the Microsoft Entra trust store. A browser client or native application client can use the hints that the server sends back to filter the certificates shown in the certificate picker. The client shows only the authentication certificates issued by the CAs in the trust store.
 
-### Enable issuer hints
+### Turn on issuer hints
 
-To enable issuer hints, select the **Issuer Hints** checkbox. An [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) should select **I Acknowledge** after making sure that the proxy with TLS inspection enabled is updated correctly, and then save the changes.
-
-> [!NOTE]
-> If your organization has firewalls or proxies that use TLS inspection, acknowledge that you disabled TLS inspection of the CA endpoint that is capable of matching any name under `[*.]certauth.login.microsoftonline.com`, customized according to the specific proxy in use.
-
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot that shows how to enable issuer hints." lightbox="media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png":::
+To turn on issuer hints, select the **Issuer Hints** checkbox. An [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) should select **I Acknowledge** after making sure that the proxy with TLS inspection set up is updated correctly, and then save the changes.
 
 > [!NOTE]
-> After issuer hints are enabled, the CA URL has the format `<tenantId>.certauth.login.microsoftonline.com`.
+> If your organization has firewalls or proxies that use TLS inspection, acknowledge that you turned off TLS inspection of the CA endpoint that is capable of matching any name under `[*.]certauth.login.microsoftonline.com`, customized according to the specific proxy in use.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints-picker.png" alt-text="Screenshot that shows the certificate picker after issuer hints are enabled.":::
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png" alt-text="Screenshot that shows how to turn on issuer hints." lightbox="media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints.png":::
+
+> [!NOTE]
+> After you turn on issuer hints, the CA URL has the format `<tenantId>.certauth.login.microsoftonline.com`.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/issuer-hints-picker.png" alt-text="Screenshot that shows the certificate picker after you turn on issuer hints.":::
 
 ### CA trust store update propagation
 
@@ -116,18 +116,18 @@ Microsoft Entra CBA can be either single-factor or multifactor depending on the 
 
 We don't allow registration of other methods without first satisfying MFA. If the user doesn't have any other MFA method registered and is in scope for CBA, the user can't use identity proof to register other authentication methods and get MFA.
 
-If the CBA-enabled user has only a single-factor certificate and needs to complete MFA, choose *one* of these options to authenticate the user:
+If the CBA-capable user has only a single-factor certificate and needs to complete MFA, choose *one* of these options to authenticate the user:
 
 - The user can enter a password and use a single-factor certificate.
 - An Authentication Policy Administrator can issue a temporary access pass.
 - An Authentication Policy Administrator can add a phone number and allow voice or text message authentication for the user account.
 
-If the CBA-enabled user hasn't been issued a certificate and needs to complete MFA, choose *one* of these options to authenticate the user:
+If the CBA-capable user hasn't been issued a certificate and needs to complete MFA, choose *one* of these options to authenticate the user:
 
 - An Authentication Policy Administrator can issue a temporary access pass.
 - An Authentication Policy Administrator can add a phone number and allow voice or text message authentication for the user account.
 
-If the CBA-enabled user can't use a multifactor certificate, such as if they're using a mobile device without smart card support but they need to complete MFA, choose *one* of these options to authenticate the user:
+If the CBA-capable user can't use a multifactor certificate, such as if they're using a mobile device without smart card support but they need to complete MFA, choose *one* of these options to authenticate the user:
 
 - An Authentication Policy Administrator can issue a temporary access pass.
 - The user can register another MFA method (when the user *can* use a multifactor certificate on a device).
@@ -263,7 +263,7 @@ To resolve multiple username policy binding rules, Microsoft Entra ID uses the h
 
 1. Looks up the user object by using the username or UPN.
 1. Gets the list of all username bindings set up by the Authentication Policy Administrator in the CBA method configuration ordered by the `priority` attribute. Currently, priority isn't shown in the admin center. Microsoft Graph returns the `priority` attribute for each binding. Then, priorities are used in the evaluation process.
-1. If the tenant has high-affinity binding enabled or if the certificate value matches a custom rule that requires high-affinity binding, removes all the low-affinity bindings from the list.
+1. If the tenant has high-affinity binding configured or if the certificate value matches a custom rule that requires high-affinity binding, removes all the low-affinity bindings from the list.
 1. Evaluates each binding in the list until a successful authentication occurs.
 1. If the X.509 certificate field of the configured binding is on the presented certificate, Microsoft Entra ID matches the value in the certificate field to the user object attribute value.
    - If a match is found, user authentication is successful.
@@ -469,9 +469,9 @@ When CAs are uploaded to the Microsoft Entra trust store, a `CrlDistributionPoin
 
 To strengthen security and avoid misconfigurations, an Authentication Policy Administrator can require CBA authentication to fail if no CRL is configured for a CA that issues a user certificate.
 
-### Enable CRL validation
+### Turn on CRL validation
 
-To enable CRL validation, select the **Require CRL validation (recommended)** checkbox.
+To turn on CRL validation, select the **Require CRL validation (recommended)** checkbox.
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/require-validation.png" alt-text="Screenshot that shows how to require CRL validation." :::  
 
@@ -502,7 +502,7 @@ CA scoping is useful in multi-PKI or B2B scenarios where multiple CAs are used a
 
 An admin can use CA scoping to define rules that associate a CA (identified by its SKI) with a specific Microsoft Entra group. When a user attempts to authenticate by using a certificate, the system checks whether the issuing CA for the certificate is scoped to a group that includes the user. Microsoft Entra proceeds up the CA chain. It applies all scope rules until the user is found in one of the groups in all the scope rules. If the user isn't in the scoped group, authentication fails, even if the certificate is otherwise valid.
 
-### Enable the CA scoping feature
+### Set up the CA scoping feature
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Go to **Entra ID** > **Authentication methods** > **Certificate-based authentication**.
@@ -610,7 +610,7 @@ For the first test scenario, configure the authentication policy where the `Issu
 
    The next figure shows some of the entries you can find in the sign-in logs.
 
-   The first entry requests the X.509 certificate from the user. The **Interrupted** status means that Microsoft Entra ID validated that CBA is enabled in the tenant. A certificate is requested for authentication.
+   The first entry requests the X.509 certificate from the user. The **Interrupted** status means that Microsoft Entra ID validated that CBA is set up for the tenant. A certificate is requested for authentication.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/entry-one.png" alt-text="Screenshot that shows single-factor authentication entry in the sign-in logs." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/entry-one.png":::  
 

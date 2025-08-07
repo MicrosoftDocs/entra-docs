@@ -24,7 +24,7 @@ sections:
       - question: |
           Why don't I see an option to sign in to Microsoft Entra ID by using certificates after I enter my username?
         answer: |
-          An administrator must enable CBA in the tenant to make the option to sign in by using a certificate available to users. For more information, see [Step 3: Configure the authentication binding policy](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy).
+          An administrator must turn on CBA for the tenant to make the option to sign in by using a certificate available to users. For more information, see [Step 3: Configure the authentication binding policy](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy).
 
       - question: |
           Where can I get more diagnostic information after a user sign-in fails? 
@@ -32,7 +32,7 @@ sections:
           On the error page, select **More Details** for more information to help your tenant admin. The tenant admin can check the sign-in logs to investigate the error. For example, if a user certificate is revoked and is on the certification revocation list (CRL), authentication fails as intended.
 
       - question: |
-          How does an administrator enable Microsoft Entra CBA?
+          How does an administrator turn on Microsoft Entra CBA?
         answer: |        
           1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role assigned.
           1. Go to **Entra ID** > **Authentication methods** > **Policies**.
@@ -49,7 +49,7 @@ sections:
           For more information about features in each Microsoft Entra edition, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
       - question: |
-          Does Microsoft Entra CBA support an alternate ID as the username instead of `userPrincipalName`?
+          Does Microsoft Entra CBA support an alternate ID as the username instead of userPrincipalName?
         answer: |
           No, sign-in by using a non-UPN value, such as an alternate email, currently isn't supported.
           
@@ -87,7 +87,7 @@ sections:
       - question: |
           How can I turn on certificate revocation checking for a specific CA?
         answer: |
-          We highly recommend that you don't turn off CRL checking because you won't be able to revoke certificates.
+          We highly recommend that you don't turn off CRL checking. If you turn off CRL checking, you can't revoke certificates.
 
           However, if you need to investigate issues with CRL checking, you can exempt a CA from CRL checking in the Microsoft Entra admin center.
 
@@ -107,7 +107,7 @@ sections:
             
             The download remains in the background, with higher limits.
 
-            We're reviewing the affect of these limits.
+            We're reviewing the effect of these limits.
 
       - question: |
           I see a valid CRL endpoint set, but why don't I see any CRL revocation?
