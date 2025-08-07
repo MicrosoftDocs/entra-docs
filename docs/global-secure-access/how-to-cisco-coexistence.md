@@ -125,9 +125,10 @@ To configure Cisco Umbrella and SWG:
 3. Add the same Microsoft FQDNs and DNS suffixes.
 4. In **Traffic Steering**, select **Add Destination > Bypass web proxy only**, add these IPs and save:
   ```
-  `150.171.19.0/24`, `150.171.20.0/24`, `13.107.232.0/24`, `13.107.233.0/24`, `150.171.15.0/24`, `150.171.18.0/24`, `151.206.0.0/16`, `6.6.0.0/16`
+  150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
   ```
-- Add the same Microsoft IP addresses.
+
+    - Add the same Microsoft IP addresses.
 6. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 ---
