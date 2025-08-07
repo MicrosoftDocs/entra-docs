@@ -1,6 +1,6 @@
 ---
-title: Microsoft Entra certificate-based authentication technical deep dive
-description: Learn how Microsoft Entra certificate-based authentication works
+title: Microsoft Entra certificate-based authentication Certificate revocation list
+description: Learn how certificate revocation list works with Microsoft Entra certificate-based authentication
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
@@ -44,7 +44,7 @@ The certificate revocation process allows Authentication Policy Administrators t
 Authentication Policy Administrators can configure the CRL distribution point during the setup process of the trusted issuers in the Microsoft Entra tenant. Each trusted issuer should have a CRL that can be referenced by using an internet-facing URL.
  
 >[!IMPORTANT]
->The maximum size of a CRL for Microsoft Entra ID to successfully download on an interactive sign-in and cache is 20 MB in public Microsoft Entra ID and 45 MB in Azure US Government clouds, and the time required to download the CRL must not exceed 10 seconds. If Microsoft Entra ID can't download a CRL, certificate-based authentications using certificates issued by the corresponding CA fail. As a best practice to keep CRL files within size limits, keep certificate lifetimes within reasonable limits and to clean up expired certificates. For more information, see [Is there a limit for CRL size?](certificate-based-authentication-faq.yml#is-there-a-limit-for-crl-size-).
+>The maximum size of a CRL for Microsoft Entra ID to successfully download on an interactive sign-in and cache is 20 MB in public Microsoft Entra ID and 45 MB in Azure US Government clouds, and the time required to download the CRL must not exceed 10 seconds. If Microsoft Entra ID can't download a CRL, certificate-based authentications using certificates issued by the corresponding CA fail. As a best practice to keep CRL files within size limits, keep certificate lifetimes within reasonable limits and to clean up expired certificates.
 
 1. When a user performs an interactive sign-in with a certificate, Microsoft Entra ID downloads and caches the customers certificate revocation list (CRL) from their certificate authority to check if certificates are revoked during the authentication of the user. Microsoft Entra will use SubjectKeyIdentifier attribute over SubjectName for CA matching. Admin should make sure all CAs have a valid SKI and AKI attribute.
 

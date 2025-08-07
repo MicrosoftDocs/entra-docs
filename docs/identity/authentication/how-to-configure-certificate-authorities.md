@@ -96,7 +96,7 @@ The following table and graphic show how to map information from the CA certific
  of the CA in the certificate authority Microsoft Management Console (MMC).
 >- On the CA by running `certutil -cainfo cdp`. For more information, see [certutil](/windows-server/administration/windows-commands/certutil#-cainfo).
 
-For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-certificate-revocation-process).
+For more information, see [Understanding the certificate revocation process](./concept-certificate-based-authentication-crl.md#understanding-the-certificate-revocation-process).
 
 ### Configure certificate authorities using the Microsoft Graph APIs
 
