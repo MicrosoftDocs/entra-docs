@@ -159,15 +159,15 @@ If you try to edit an attribute of a group in AD DS after you convert SOA to the
 
 Let's say we have a group **SOAGroup3**, and we update its group name to **SOA Group3.1**.
 
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/update-group-name.png" alt-text="Screenshot of an object name update.":::
+:::image type="content" border="true" source="media/tutorial-group-provision/update-group-name.png" alt-text="Screenshot of an object name update.":::
 
 In the **Provisioning Logs**, you can see that **SOAGroup3 was skipped**.
 
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/skipped.png" alt-text="Screenshot of a skipped object.":::
+:::image type="content" border="true" source="media/tutorial-group-provision/skipped.png" alt-text="Screenshot of a skipped object.":::
 
 The details explain that the object isn't synced because its SOA is converted to the cloud.
 
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
+:::image type="content" border="true" source="media/tutorial-group-provision/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
 ### Nested groups and membership references handling
 
@@ -193,8 +193,6 @@ If you have SOA converted groups in scope and you roll back the SOA converted gr
   You can also check in AD DS that the group is still intact and not deleted.  
 
   :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
-
-
 
 ## Next steps 
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)
