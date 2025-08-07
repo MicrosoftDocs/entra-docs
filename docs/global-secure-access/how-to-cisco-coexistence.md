@@ -22,9 +22,9 @@ In addition to Umbrella, Cisco incorporates DNS Defense as part of the Cisco Sec
 
 This guide covers the following coexistence scenarios:
 
-1. **[Internet Access and Microsoft Access with Umbrella DNS security.](#1-microsoft-entra-internet-access-and-microsoft-entra-microsoft-access-with-umbrella-dns-cisco-secure-access-dns-defense)**
+1. **Internet Access and Microsoft Access with Umbrella DNS security.**
 In this scenario, Global Secure Access handles Internet and Microsoft 365 traffic. Cisco Umbrella provides DNS protections. Cisco Secure Web Gateway features should be disabled.
-2. **[Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS.](#2-internet-access-microsoft-access-and-private-access-with-cisco-umbrella-dns)**
+2. **Microsoft Entra Internet Access, Microsoft Entra Microsoft Access, and Microsoft Entra Private Access with Cisco Umbrella DNS.**
 In this scenario, Global Secure Access handles Internet, Microsoft 365, and Private Access traffic. Cisco Umbrella handles DNS. Cisco Secure Web Gateway should be disabled.
 
 > [!NOTE]
@@ -94,8 +94,7 @@ To configure Cisco Umbrella and SWG:
   Cisco Umbrella supports implied wildcards, so you can use `globalsecureaccess.microsoft.com`.
 
 2. Add these Microsoft FQDNs and DNS suffixes configured in Quick Access or as FQDNs in Enterprise App Segments.
-  ```
-  `auth.microsoft.com`, `msftidentity.com`, `msidentity.com`, `onmicrosoft.com`, `outlook.com`, `protection.outlook.com`, `sharepoint.com`, `sharepointonline.com`, `svc.ms`, `wns.windows.com`, `account.activedirectory.windowsazure.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.cloud.microsoft`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`, `<quickaccessapplicationid>.globalsecureaccess.local`
+    `auth.microsoft.com`, `msftidentity.com`, `msidentity.com`, `onmicrosoft.com`, `outlook.com`, `protection.outlook.com`, `sharepoint.com`, `sharepointonline.com`, `svc.ms`, `wns.windows.com`, `account.activedirectory.windowsazure.com`, `accounts.accesscontrol.windows.net`, `admin.onedrive.com`, `adminwebservice.microsoftonline.com`, `api.passwordreset.microsoftonline.com`, `autologon.microsoftazuread-sso.com`, `becws.microsoftonline.com`, `ccs.login.microsoftonline.com`, `clientconfig.microsoftonline-p.net`, `companymanager.microsoftonline.com`, `device.login.microsoftonline.com`, `g.live.com`, `graph.microsoft.com`, `graph.windows.net`, `login-us.microsoftonline.com`, `login.microsoft.com`, `login.microsoftonline-p.com`, `login.microsoftonline.com`, `login.windows.net`, `logincert.microsoftonline.com`, `loginex.microsoftonline.com`, `nexus.microsoftonline-p.com`, `officeclient.microsoft.com`, `oneclient.sfx.ms`, `outlook.cloud.microsoft`, `outlook.office.com`, `outlook.office365.com`, `passwordreset.microsoftonline.com`, `provisioningapi.microsoftonline.com`, `spoprod-a.akamaihd.net`, `<quickaccessapplicationid>.globalsecureaccess.local`
   > [!NOTE]
   > `quickaccessapplicationid` is the application ID of the configured Quick Access app.
 
@@ -124,11 +123,12 @@ To configure Cisco Umbrella and SWG:
 
 3. Add the same Microsoft FQDNs and DNS suffixes.
 4. In **Traffic Steering**, select **Add Destination > Bypass web proxy only**, add these IPs and save:
+
   ```
-  150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
+    150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
   ```
 
-    - Add the same Microsoft IP addresses.
+  - Add the same Microsoft IP addresses.
 6. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 ---
