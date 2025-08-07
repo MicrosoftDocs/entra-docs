@@ -99,6 +99,8 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Sign-on URL** text box, type a URL:
     `https://webapp.honestly.de/sso`
 
+<a name='configure-honestly-sso'></a>
+
 ## Configure Honestly SSO
 
 1. Go to the **Honestly SSO** page in your Honestly account.
@@ -154,6 +156,13 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then select the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, select the **Assign** button.
+
+   
+<a name='create-honestly-test-user'></a>
+
+### Create Honestly test user
+
+In this section, you create a user called Britta Simon in Honestly. Work with [Honestly support team](mailto:support@honestly.com) to add the users in the Honestly platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
