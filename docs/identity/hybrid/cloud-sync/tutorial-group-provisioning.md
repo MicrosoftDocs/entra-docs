@@ -124,26 +124,26 @@ Follow these steps to make sure the group is provisioned to AD DS:
 
     :::image type="content" source="media/tutorial-group-provision/verify.png" alt-text="Screenshot of the newly provisioned group." lightbox="media/tutorial-group-provision/verify.png":::
 
-## Group provision to AD behavior for SOA converted objects
+## Group provision to AD DS behavior for SOA converted objects
 
-When you convert the **Source of Authority (SOA)** to cloud for an on-premises group, that group becomes eligible for group provisioning to AD DS.
+When you convert the Source of Authority (SOA) to cloud for an on-premises group, that group becomes eligible for group provisioning to AD DS.
 
-For example, in the following diagram, **SOATestGroup1** SOA is converted to the cloud.
+For example, in the following diagram, the SOA or **SOATestGroup1** is converted to the cloud.
 As a result, it becomes available for the job scope in group provisioning to AD DS.
 
 :::image type="content" border="true" source="media/tutorial-group-provision/group-scope.png" alt-text="Screenshot of job in scope." lightbox="media/tutorial-group-provision/group-scope.png":::
 
-- When a job runs, the SOA-converted group is provisioned successfully.
+- When a job runs, **SOATestGroup1** is provisioned successfully.
 
-- In the **Provisioning logs**, you can search for the group name and verify that the group was provisioned.
+- In the **Provisioning logs**, you can search for **SOATestGroup1** and verify that the group was provisioned.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/provisioning-logs.png" alt-text="Screenshot of the Provisioning logs." lightbox="media/tutorial-group-provision/provisioning-logs.png":::
 
-- The details show that the group was matched with an existing target group.
+- The details show that **SOATestGroup1** was matched with an existing target group.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/matched.png" alt-text="Screenshot of matched attributes." lightbox="media/tutorial-group-provision/matched.png":::
 
-- Additionally, you can confirm that the **adminDescription** and **cn** of the target group are updated.
+- You can also confirm that the **adminDescription** and **cn** of the target group are updated.
 
   :::image type="content" border="true" source="media/tutorial-group-provision/confirm-updates.png" alt-text="Screenshot of updated attributes." lightbox="media/tutorial-group-provision/confirm-updates.png":::
 
@@ -153,9 +153,25 @@ As a result, it becomes available for the job scope in group provisioning to AD 
 
   :::image type="content" border="true" source="media/tutorial-group-provision/group-properties.png" alt-text="Screenshot of group properties." lightbox="media/tutorial-group-provision/group-properties.png":::
 
-### Nested Groups and membership references handling
+## Cloud skips provisioning converted SOA objects to Microsoft Entra ID 
 
-The following table explains how the provisioning handles membership references when you convert SOA for some groups within a nested group structure and add it into scope for provisioning to AD DS.
+If you try to edit an attribute of a group in AD DS after you convert SOA to the cloud, Cloud Sync skips the object during provisioning.
+
+Let's say we have a group **SOAGroup3**, and we update its group name to **SOA Group3.1**.
+
+:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/update-group-name.png" alt-text="Screenshot of an object name update.":::
+
+In the **Provisioning Logs**, you can see that **SOAGroup3 was skipped**.
+
+:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/skipped.png" alt-text="Screenshot of a skipped object.":::
+
+The details explain that the object isn't synced because its SOA is converted to the cloud.
+
+:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
+
+### Nested groups and membership references handling
+
+The following table explains how the provisioning handles membership references after you convert SOA in different use cases.
 
 Use case | Parent group type | Member group type | Job | How sync works
 ---------|-------------------|-------------------|-----|-----------------------
@@ -177,6 +193,8 @@ If you have SOA converted groups in scope and you roll back the SOA converted gr
   You can also check in AD DS that the group is still intact and not deleted.  
 
   :::image type="content" border="true" source="media/tutorial-group-provision/users-and-computers.png" alt-text="Screenshot of Users and Computers." lightbox="media/tutorial-group-provision/users-and-computers.png":::
+
+
 
 ## Next steps 
 - [Group writeback with Microsoft Entra Cloud Sync ](../group-writeback-cloud-sync.md)

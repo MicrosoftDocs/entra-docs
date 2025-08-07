@@ -4,7 +4,7 @@ description: Discover how to manage and transition Active Directory groups to Mi
 author: justinha
 manager: dougeby
 ms.topic: conceptual
-ms.date: 08/01/2025
+ms.date: 08/07/2025
 ms.author: justinha
 ms.reviewer: dahnyahk
 ---
@@ -53,13 +53,13 @@ If you provision cloud security groups to AD DS, and someone with permissions ma
 ### How Group Provisioning to AD DS works with nested groups
 Let's look at an example where you provision a security group named *CloudGroupB* to AD DS. It has a parent on-premises AD DS group named *OnPremGroupA*. You convert SOA for *CloudGroupB*. 
 
-Then you start to manage group memberships in Microsoft Entra ID for the converted *CloudGroupB*. You use provision it as a nested group within the on-premises group *OnPremGroupA*. If *OnPremGroupA* remains in-scope for sync, when the AD DS to Microsoft Entra ID sync configuration runs for *OnPremGroupA*, the membership reference for *CloudGroupB* doesn't sync. By design, the sync client doesn't recognize the cloud group membership references.
+Then you start to manage group memberships in Microsoft Entra ID for the converted *CloudGroupB*. You provision it as a nested group within the on-premises group *OnPremGroupA*. If *OnPremGroupA* remains in-scope for sync, when the AD DS to Microsoft Entra ID sync configuration runs for *OnPremGroupA*, the membership reference for *CloudGroupB* doesn't sync. By design, the sync client doesn't recognize the cloud group membership references.
 
 For more information about how group sync works with SOA in similar uses cases, see [Nested Groups and membership references handling](cloud-sync/tutorial-group-provisioning.md#nested-groups-and-membership-references-handling).
 
 ### How SOA applies to nested groups
 
-SOA applies only to the specified direct individual group object without recursion. If you apply SOA to nested groups within the group, they continue to be managed on-premises. Because this methodology is by design, explicitly apply SOA to each group that you want to convert. You might start with the group in the lowest hierarchy, and move up the tree.
+SOA applies only to the specified direct individual group object without recursion. If you apply SOA to nested groups within the group, they continue to be managed on-premises. Because this methodology is by design, explicitly apply SOA to each group that you want to convert. If you want to convert nested groups, you might start with the group in the lowest hierarchy, and move up the tree.
 
 ### Recreate dynamic group configurations from on-premises AD in the cloud
 
