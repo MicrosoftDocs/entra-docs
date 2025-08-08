@@ -297,4 +297,4 @@ When you autosign in a user, use the following snippet in your [sign-up/sign-up.
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-angular-sign-in.md).
+> [Tutorial: Sign in users into a React single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-angular-sign-in.md)

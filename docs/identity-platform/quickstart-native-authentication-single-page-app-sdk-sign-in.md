@@ -29,8 +29,8 @@ In this Quickstart, you use a single-page application (SPA) to demonstrate how t
 * A user flow. For more information, see [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Under **Identity providers**, select your preferred method of authentication, that's, **Email with password** or **Email one-time passcode**. For this code sample, you can include the following user attributes in your user flow as the app submit these attributes:
   * **Given Name**
   * **Surname**
-  * **Job Tittle**
-  * **Country**
+  * **Job Title**
+  * **Country/Region**
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com), configured for *Accounts in this organizational directory only*. Refer to [Register an application](quickstart-register-app.md) for more details. Record the following values from the application **Overview** page for later use:
   * Application (client) ID 
   * Directory (tenant) ID
