@@ -333,13 +333,13 @@ Microsoft Entra ID Protection applies the capabilities of Security Copilot to [s
 
 Using this feature requires the [Identity Governance Administrator](/entra/identity/role-based-access-control/permissions-reference#identity-governance-administrator) role in Microsoft Entra ID and a [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements).
 
-:::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the ID Protection risky user summarization details.":::
-
 You can also add your own prompts in the Copilot window for the following use cases;
 
 - [List or Identify Users Based on Risk](copilot-entra-risky-user-summarization.md#list-or-identify-users-based-on-risk)
 - [User-Specific Risk Information](copilot-entra-risky-user-summarization.md#user-specific-risk-information)
 - [User Risk History](copilot-entra-risky-user-summarization.md#user-risk-history)
+
+:::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the ID Protection risky user summarization details.":::
 
 ### Application risk
 
