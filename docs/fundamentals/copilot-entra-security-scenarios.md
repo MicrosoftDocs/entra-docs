@@ -103,7 +103,7 @@ The following example prompts can be used to investigate and manage groups in Mi
 
 ### Devices
 
-Microsoft Entra uses the capabilities of Security Copilot to help administrators investigate their Microsoft Entra ID devices using natural language queries. This feature allows admins to quickly access device information, such as device IDs, compliance status, activity and whether devices ae Entra ID registered, joined or hybrid joined.
+Microsoft Entra uses the capabilities of Security Copilot to help administrators investigate their Microsoft Entra ID devices using natural language queries. This feature allows admins to quickly access device information, such as device IDs, compliance status, activity and whether devices are Entra ID registered, joined or hybrid joined.
 
 This feature is available using a free Microsoft Entra ID license, and to any user in any tenant.
 
@@ -415,7 +415,7 @@ For more information, see;
 
 With Microsoft Security Copilot, you can easily manage and monitor privileged access in your organization using natural language queries. Security Copilot integrates with Microsoft Entra Privileged Identity Management (PIM) to provide instant insights into just-in-time role assignments, group memberships, and access to critical resources. By leveraging AI-powered analysis, Security Copilot helps you quickly identify who has eligible or active PIM assignments, track changes, and respond to potential risks—streamlining privileged access management and strengthening your security posture.
 
-Using this feature requires a at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), or [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) in Microsoft Entra ID. You will also need a [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements), and a tenant with PIM configured.
+Using this feature requires at least the roles of [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator), [Global Reader](/entra/identity/role-based-access-control/permissions-reference#global-reader), or [Security Reader](/entra/identity/role-based-access-control/permissions-reference#security-reader) in Microsoft Entra ID. You will also need a [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements), and a tenant with PIM configured.
 
 - *Which PIM roles are currently assigned to the user karita@woodgrovebank.com?*
 - *Which PIM eligible roles are assigned to the user casey@woodgrovebank.com?*
