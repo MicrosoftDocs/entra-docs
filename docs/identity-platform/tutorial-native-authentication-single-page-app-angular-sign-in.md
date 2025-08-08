@@ -109,4 +109,4 @@ export const routes: Routes = [
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Reset password in Angular single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-angular-reset-password.md).
+> [Tutorial: Reset password in Angular single-page app by using native authentication JavaScript SDK](tutorial-native-authentication-single-page-app-angular-reset-password.md)
