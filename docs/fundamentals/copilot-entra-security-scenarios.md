@@ -26,7 +26,7 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 | Microsoft Entra product | Security Copilot and Microsoft Entra scenario |
 | --- | --- |
 | Microsoft Entra ID | [Tenants](#tenants)<br>[Users](#users)<br>[Groups](#groups)<br>[Devices](#devices)<br>[Roles and administrators](#roles-and-administrators)<br>[Domain services](#domain-services)<br>[Conditional Access](#conditional-access)<br>[Authentication](#authentication)<br>[Sign in logs](#sign-in-logs)<br>[Audit logs](#audit-logs)<br>[Recommendations](#recommendations)<br>[Health monitoring alerts](#health-monitoring-alerts)<br>[Service Level Agreement](#service-level-agreement) |
-| Microsoft Entra ID Protection | [User risk](#user-risk)<br>[Application risk](#application-risk) |
+| Microsoft Entra ID Protection | [Risky users](#risky-users)<br>[Application risk](#application-risk) |
 | Microsoft Entra ID Governance | [Access reviews](#access-reviews)<br>[Entitlement management](#entitlement-management)<br>[Privileged Identity Management (PIM)](#privileged-identity-management-pim)<br>[Lifecycle workflows](#lifecycle-workflows) |
 | Microsoft Entra Internet Access<br>Microsoft Entra Private Access | [License Usage](#license-usage) |
 
@@ -327,7 +327,7 @@ For more information, see:
 
 The following sections describe how to use Microsoft Security Copilot for various scenarios in Microsoft Entra ID Protection.
 
-### User risk
+### Risky users
 
 Microsoft Entra ID Protection applies the capabilities of Security Copilot to [summarize a user's risk level](copilot-entra-risky-user-summarization.md), provide insights relevant to the incident at hand, and provide recommendations for rapid mitigation. Identity risk investigation is a crucial step to defend an organization. Copilot helps reduce the time to resolution by providing IT admins and security operations center (SOC) analysts the right context to investigate and remediate identity risk and identity-based incidents. Risky user summarization provides admins and responders quick access to the most critical information in context to aid their investigation.
 
