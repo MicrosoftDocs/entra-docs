@@ -25,13 +25,6 @@ You can explore sign-ins and risky users, get contextualized insights on how to 
 
 This article introduces you to Security Copilot in Microsoft Entra.
 
-
-- [What is Microsoft Security Copilot?](/security-copilot/microsoft-security-copilot)
-- [Understand authentication in Microsoft Security Copilot](/security-copilot/authentication)
-- [Prompting in Microsoft Security Copilot](/security-copilot/prompting-security-copilot)
-
-
-
 ## Security Copilot experiences
 
 Security Copilot in Microsoft Entra includes the standalone Security Copilot experience, embedded experiences in the Microsoft Entra admin center, specialized agents that can perform tasks, and natural language prompts that can be used in several end-to-end scenarios.
@@ -44,15 +37,14 @@ For more information, see:
 
 ## Get started
 
-In the Security Copilot platform, Microsoft Entra is a plugin that provides access to identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin.
+In the Security Copilot platform, Microsoft Entra is a plugin that provides access to your organization's identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin. 
 
 1. Onboard to Security Copilot by following the [Get started with Microsoft Security Copilot](/security-copilot/get-started-security-copilot) guide.
     - This guide contains guidance around subscription requirements, billing, and capacity.
-1. In the Security Copilot standalone experience, select the **Sources** icon from the prompt bar. Turn on Microsoft Entra plugin for Security Copilot, if it's not already on.
+    - Take a moment to [understand authentication in Microsoft Security Copilot](/security-copilot/authentication).
+1. In the Security Copilot standalone experience, select the **Sources** icon from the prompt bar and turn on the Microsoft Entra plugin for Security Copilot, if it's not already on.
 
-
-
-Once you're all set up in Security Copilot, you can start using natural language prompts to help remediate identity-based incidents. You can always check the **Promptbook library** in the standalone [Security Copilot](https://securitycopilot.microsoft.com/) experience for more examples.
+Once you're all set up in Security Copilot, you can start using [natural language prompts](/security-copilot/prompting-security-copilot) to help remediate identity-based incidents. You can always check the **Promptbook library** in the standalone [Security Copilot](https://securitycopilot.microsoft.com/) experience for more examples.
 
 - *Give me all user details for karita@woodgrovebank.com and extract the user Object ID.*
 - *Does karita@woodgrovebank.com have any registered devices in Microsoft Entra?*
@@ -62,22 +54,11 @@ Once you're all set up in Security Copilot, you can start using natural language
 
 ## Provide feedback
 
-Copilot in Microsoft Entra uses AI and machine learning to process data and generate responses for each of the key features. However, AI might misinterpret some data, which sometimes cause a mismatch in responses. Your feedback on the generated responses helps improve the accuracy of Copilot and Microsoft Entra over time.
+Copilot in Microsoft Entra uses AI and machine learning to process data and generate responses for each of the key features. However, AI-generated content might be incorrect. Your feedback on the generated responses helps improve the accuracy of Copilot and Microsoft Entra over time.
 
-All key features have an option for providing feedback. To provide feedback, perform the following steps:
+All key features have an option for providing feedback, but the exact steps vary based on the feature. Look for the thumbs up and thumbs down icons to let us know if the response was helpful or not. 
 
-1. Select the thumb up icon located at the bottom of any response card in the Copilot pane.
-1. Answer the question **What did you like?**
-1. Select **Yes, share** samples or **No, don't share** samples.
-1. Select **Submit**.
 
-Or
-
-1. Select the thumb down icon located at the bottom of any response card in the Copilot pane.
-1. Select **Inaccurate** if any detail is incorrect or incomplete based on your assessment. Select **Offensive or inappropriate** if it contains potentially harmful, questionable, or ambiguous information.  Select **Other** for some other reason.
-1. Whenever possible, write a few words explaining what can be done to improve the outcome in the **What went wrong?** text box.
-1. Select **Yes, share** samples or **No, don't share** samples.
-1. Select **Submit**.
 
 ## Privacy and data security in Security Copilot
 
