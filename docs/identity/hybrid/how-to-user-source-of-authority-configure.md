@@ -36,7 +36,7 @@ For example: "Migrate data from regular tables to ledger tables" or "Create a ne
 
 -->
 
-# Configure Group Source of Authority (SOA) (Preview)
+# Configure User Source of Authority (SOA) (Preview)
 
 <!-- 2. Introductory paragraph ----------------------------------------------------------
 
