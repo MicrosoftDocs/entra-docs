@@ -25,7 +25,7 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 
 | Microsoft Entra product | Security Copilot and Microsoft Entra scenario |
 | --- | --- |
-| Microsoft Entra ID | [Tenants](#tenants)<br>[Users](#users)<br>[Groups](#groups)<br>[Devices](#devices)<br>[Roles and administrators](#roles-and-administrators)<br>[Domain services](#microsoft-entra-domains)<br>[Conditional Access](#conditional-access)<br>[Authentication methods](#authentication-methods)<br>[Sign in logs](#sign-in-logs)<br>[Audit logs](#audit-logs)<br>[Recommendations](#investigate-recommendations)<br>[Health monitoring alerts](#health-monitoring-alerts)<br>[Service Level Agreement](#service-level-agreement) |
+| Microsoft Entra ID | [Tenants](#tenants)<br>[Users](#users)<br>[Groups](#groups)<br>[Devices](#devices)<br>[Roles and administrators](#roles-and-administrators)<br>[Domain services](#microsoft-entra-domains)<br>[Conditional Access](#conditional-access)<br>[Authentication](#authentication)<br>[Sign in logs](#sign-in-logs)<br>[Audit logs](#audit-logs)<br>[Recommendations](#recommendations)<br>[Health monitoring alerts](#health-monitoring-alerts)<br>[Service Level Agreement](#service-level-agreement) |
 | Microsoft Entra ID Protection | [User risk](#user-risk)<br>[Application risk](#application-risk) |
 | Microsoft Entra ID Governance | [Access reviews](#access-reviews)<br>[Entitlement management](#entitlement-management)<br>[Privileged Identity Management (PIM)](#privileged-identity-management-pim)<br>[Lifecycle workflows](#lifecycle-workflows) |
 | Microsoft Entra Internet Access<br>Microsoft Entra Private Access | [License Usage](#license-usage) |
@@ -341,7 +341,7 @@ Identity administrators and security analysts can use Microsoft Security Copilot
 
 Using this feature requires a minimum of the [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) role in Microsoft Entra ID. Your tenant must be licensed for Workload Identity Premium or Risky Service Principal prompts. A [Microsoft Entra ID P2 license](/entra/id-protection/overview-identity-protection#license-requirements) is also needed for full functionality.
 
-Refer to the prompts and examples in [Assess application risks using Microsoft Security Copilot in Microsoft Entra](/entra/fundamentals/copilot-security-entra-investigate-risky-apps.md) to learn how to use Microsoft Security Copilot to assess application risk for the following use-cases;
+Refer to the prompts and examples in [Assess application risks using Microsoft Security Copilot in Microsoft Entra](./copilot-security-entra-investigate-risky-apps.md) to learn how to use Microsoft Security Copilot to assess application risk for the following use-cases;
 
 - [Explore Microsoft Entra risky service principals](./copilot-security-entra-investigate-risky-apps.md#explore-microsoft-entra-risky-service-principals)
 - [Explore Microsoft Entra service principals](./copilot-security-entra-investigate-risky-apps.md#explore-microsoft-entra-service-principals)
@@ -422,7 +422,7 @@ Microsoft Entra ID Governance applies the capabilities of [Microsoft Security Co
 
 Using this feature requires a minimum of the [Lifecycle Workflows Administrator](/entra/identity/role-based-access-control/permissions-reference#lifecycle-workflows-administrator) role in Microsoft Entra ID, and a Microsoft Entra.
 
-Refer to the prompts and examples in [Manage employee lifecycle using Microsoft Security Copilot](/entra/fundamentals/copilot-entra-lifecycle-workflow.md) to learn how to use Microsoft Security Copilot with lifecycle workflows for the following use-cases;
+Refer to the prompts and examples in [Manage employee lifecycle using Microsoft Security Copilot](./copilot-entra-lifecycle-workflow.md) to learn how to use Microsoft Security Copilot with lifecycle workflows for the following use-cases;
 
 - [Create step-by-step guidance for a new lifecycle workflow](./copilot-entra-lifecycle-workflow.md#create-step-by-step-guidance-for-a-new-lifecycle-workflow)
 - [Explore available workflow configurations](./copilot-entra-lifecycle-workflow.md#explore-available-workflow-configurations)
