@@ -55,6 +55,9 @@ Follow these steps to change the list of incompatible groups or other access pac
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) with Catalog Owner permissions.
 
+> [!NOTE]
+> [Identity Governance Administrators](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Catalog Owners](entitlement-management-delegate.md) who also have the [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role can add Microsoft Entra roles to an access package. 
+
 1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. On the Access packages page, open the access package you want to add resource roles to and select **Resource roles**. 
