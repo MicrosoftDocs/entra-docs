@@ -35,6 +35,8 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
 
    :::image type="content" border="true" source="media/reference-domain-services-tls-enforcement/enable.png" alt-text="Screenshot that shows how to enable TLS 1.2 Only Mode for Domain Services.":::
 
+***Note:*** Incase of any issues that may require rollback you can click `Disable` to allow legacy TLS traffic as you work on updating or replacing apps that might be failing before clicking enable again to remain compliant. This is allowed till August 31 2025. 
+
 ## [**PowerShell**](#tab/powershell)
 
 
@@ -62,11 +64,18 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
 
    This command may take about 10 minutes to complete as domain security updates are enforced.
 
+
 ## Troubleshooting
 
 - **Use application-level diagnostics**: Some apps provide logs or error messages when TLS handshakes fail. Look for errors related to unsupported protocols.
 
-- If the steps to enable **TLS 1.2 Only Mode** fail, or if your want to **temporarily disable TLS 1.2 Only Mode** open an [Azure support request](/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
+- ***Note*** Incase of any issues that may require rollback you can execute this command to temporarily allow legacy TLS traffic as you update or replace the failng apps. This is allowed till August 31, 2025.
+
+ ```powershell
+   Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Enabled
+   ```
+
+- Incase of any further assistance please open an [Azure support request](/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
 
 ## Related content
 
