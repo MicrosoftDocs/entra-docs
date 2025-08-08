@@ -60,7 +60,7 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
     - **Time-bound** assignments expire at the end of a specified period. Use this option with temporary or contract workers, for example, whose project end date and time are known.
 
     >[!NOTE]
-    > Active time-bound role assignment for Global Administrator role will not be removed on expiration time if there are no other assigned active role assignments for Global Administrator present – in other words, if it’s last active role assignment for GA role. Eligible time-bound role assignment for Global Administrator role are not removed on expiration time if there are no other assigned role assignments for Global Administrator role present – if it’s last assignment for GA role.
+    > Eligible time-bound role assignment for the Global Administrator role are not removed on expiration time if there are no other assigned active role assignments for Global Administrator present – in other words, if it’s last active role assignment for GA role. Eligible time-bound role assignment for Global Administrator role are not removed on expiration time if there are no other assigned role assignments for Global Administrator role present – if it’s last assignment for GA role.
     This is done to minimize risks of customers locking themselves out of the tenant by accident.
 
     :::image type="content" source="./media/pim-how-to-add-role-to-user/start-and-end-dates.png" alt-text="Screenshot showing Memberships settings - date and time.":::
