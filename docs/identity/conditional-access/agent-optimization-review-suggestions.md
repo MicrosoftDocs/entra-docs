@@ -6,9 +6,12 @@ author: shlipsey3
 ms.reviewer: lhuangnorth
 manager: pmwongera
 ms.date: 07/24/2025
+ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 ---
 
 # How to review and apply suggestions from the Conditional Access optimization agent

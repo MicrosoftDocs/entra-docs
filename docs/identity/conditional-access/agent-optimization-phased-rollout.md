@@ -11,6 +11,8 @@ ms.date: 07/29/2025
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: concept-article
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 ---
 # Conditional Access optimization agent phased rollout (preview)
 
