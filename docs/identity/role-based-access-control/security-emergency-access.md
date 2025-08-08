@@ -60,7 +60,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 1. [Validate accounts regularly](#validate-accounts-regularly).
 
 ## Forward Admin Email Notifications
-This workaround is only intended for customers using [PIM](/entra/id-governance/privileged-identity-management/pim-configure) and/or [separate administrator accounts](/microsoft-365/business-premium/m365bp-protect-admin-accounts?view=o365-worldwide&source=docs#protect-admin-accounts)
+This workaround is only intended for customers using [PIM](/entra/id-governance/privileged-identity-management/pim-configure) and/or [separate administrator accounts](/microsoft-365/business-premium/m365bp-protect-admin-accounts#protect-admin-accounts)
 
 1. Make the break-glass account a shared mailbox
    
