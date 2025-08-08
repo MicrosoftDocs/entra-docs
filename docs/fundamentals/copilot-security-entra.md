@@ -1,17 +1,16 @@
 ---
-# required metadata
-
-title: Respond to identity threats using Copilot.
+title: Respond to identity threats using Copilot
 description: Use Copilot in Microsoft Entra to investigate identity risks and troubleshoot identity tasks quickly.
 keywords:
 author: cilwerner
 ms.author: cwerner
 manager: pmwongera
-ms.date: 12/10/2024
+ms.date: 08/08/2025
+ms.update-cycle: 180-days
 ms.topic: how-to
 ms.service: entra
-ms.custom: microsoft-copilot, ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 #Customer intent: As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
 ---
 
@@ -33,7 +32,7 @@ For more information, see:
 
 - [Microsoft Security Copilot experiences](/security-copilot/experiences-security-copilot)
 - [Microsoft Security Copilot agents](/security-copilot/agents-overview)
-- [Microsoft Security Copilot scenarios](copilot-security-entra-scenarios.md)
+- [Microsoft Security Copilot scenarios](copilot-entra-security-scenarios.md)
 
 ## Get started
 
@@ -56,23 +55,16 @@ Once you're all set up in Security Copilot, you can start using [natural languag
 
 Copilot in Microsoft Entra uses AI and machine learning to process data and generate responses for each of the key features. However, AI-generated content might be incorrect. Your feedback on the generated responses helps improve the accuracy of Copilot and Microsoft Entra over time.
 
-All key features have an option for providing feedback, but the exact steps vary based on the feature. Look for the thumbs up and thumbs down icons to let us know if the response was helpful or not. 
+All key features have an option for providing feedback, but the exact steps vary based on the feature. Look for the thumbs up and thumbs down icons to let us know if the response was helpful or not.
 
-
+:::image type="content" source="./media/copilot-security-entra/thumbs-up-thumbs-down.png" alt-text="Screenshot of the Copilot thumbs up and thumbs down icons for providing feedback.":::
 
 ## Privacy and data security in Security Copilot
 
 To understand how Security Copilot handles your prompts and the data that’s retrieved from the service(prompt output), see [Privacy and data security in Microsoft Security Copilot](/security-copilot/privacy-data-security).
 
-## Next steps
+## Related content
 
-- Learn more about [risky user summarization](copilot-entra-risky-user-summarization.md).
+- [Responsible AI FAQs](/security-copilot/responsible-ai-overview-security-copilot)
 - [Investigate security incidents](copilot-security-entra-investigate-incident.md) using the Microsoft Entra skills in Microsoft Security Copilot.
 - [Investigate risky apps](copilot-security-entra-investigate-risky-apps.md) using the Microsoft Entra skills in Microsoft Security Copilot.
-
-## See also
-
-- [Get started with Microsoft Security Copilot](/security-copilot/get-started-security-copilot)
-- [What is Security Copilot?](/security-copilot/microsoft-security-copilot)
-- [Privacy and data security in Security Copilot](/security-copilot/privacy-data-security)
-- [Responsible AI FAQs](/security-copilot/responsible-ai-overview-security-copilot)

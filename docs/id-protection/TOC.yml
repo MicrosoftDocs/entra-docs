@@ -13,7 +13,7 @@
   - name: Investigate incidents with Security Copilot
     href: ../fundamentals/copilot-security-entra-investigate-incident.md?toc=/entra/id-protection/toc.json&bc=/entra/id-protection/breadcrumb/toc.json
 - name: Concepts
-  expanded: false
+  expanded: true
   items:
   - name: Microsoft Entra ID Protection dashboard
     href: id-protection-dashboard.md

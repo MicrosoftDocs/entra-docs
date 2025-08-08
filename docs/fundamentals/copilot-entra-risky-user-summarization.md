@@ -6,9 +6,11 @@ author: cilwerner
 ms.author: cwerner
 manager: pmwongera
 ms.date: 11/07/2024
+ms.update-cycle: 180-days
 ms.topic: how-to
 ms.service: entra
-ms.custom: microsoft-copilot, ignite-2024, sfi-image-nochange
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 # Customer intent: As a SOC analyst or IT admin, I want to learn about risky user summarization in the Microsoft Entra ID Protection UX so that I can quickly respond to identity threats.
 ---
 
