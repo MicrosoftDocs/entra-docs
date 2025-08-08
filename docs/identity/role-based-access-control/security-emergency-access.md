@@ -29,7 +29,8 @@ An organization might need to use an emergency access account in the following s
 - The person with the most recent Global Administrator access has left the organization. Microsoft Entra ID prevents the last Global Administrator account from being deleted, but it doesn't prevent the account from being deleted or disabled on-premises. Either situation might make the organization unable to recover the account.
 - Unforeseen circumstances such as a natural disaster emergency, during which a mobile phone or other networks might be unavailable.
 - If role assignments for Global Administrator and Privileged Role Administrator roles are eligible, approval is required for activation, but no approvers are selected (or all approvers are removed from the directory). Active Global Administrators and Privileged Role Administrators are default approvers. But there will be no active Global Administrators and Privileged Role Administrators and administration of the tenant will effectively be locked, unless emergency access accounts are used.
-- Organization has unlicensed Global Administrators who need to receive admin Email Notifications. Only licensed Global Admininstrator accounts receive email notifications and using a mail-enabled break glass account to forward mail to unlicensed Global Administrors is the recommended solution.
+- Global Administrators are using separate unlicensed admin accounts which do not receive Admin Email Notifications.
+- Global Administrators are using Privilaged Identity Management (PIM) for **just-in-time** access to admininistrative roles such as Global Administrator and also need to receive Admin Email Notifications.
 
 ## Create emergency access accounts
 
@@ -58,10 +59,12 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 1. [Validate accounts regularly](#validate-accounts-regularly).
 
-## Forward Admin Email Notifications to administrators using PIM or with separate unlicensed global admin accounts
-1. Make the account a shared mailbox
+## Forward Admin Email Notifications
+This workaround is only intended for customers using [PIM](/entra/id-governance/privileged-identity-management/pim-configure) and/or [separate administrator accounts](/microsoft-365/business-premium/m365bp-protect-admin-accounts?view=o365-worldwide&source=docs#protect-admin-accounts)
+
+1. Make the break-glass account a shared mailbox
    
-1. Create a distribution group containing the licensed user account for users who use PIM or have seaprate unlicensed admin accounts
+1. Create a Distribution List and add the licensed user accounts of any administrators using PIM and/or separate administraor accounts.
    
 1. Forward mail from the breakglass account to the distribution group created in the step above
 
