@@ -25,7 +25,7 @@ Security Copilot is a part of the Microsoft Entra admin center, and you can use 
 
 | Microsoft Entra product | Security Copilot and Microsoft Entra scenario |
 | --- | --- |
-| Microsoft Entra ID | [Tenants](#tenants)<br>[Users](#users)<br>[Groups](#groups)<br>[Devices](#devices)<br>[Roles and administrators](#roles-and-administrators)<br>[Domain services](#microsoft-entra-domains)<br>[Conditional Access](#conditional-access)<br>[Authentication](#authentication)<br>[Sign in logs](#sign-in-logs)<br>[Audit logs](#audit-logs)<br>[Recommendations](#recommendations)<br>[Health monitoring alerts](#health-monitoring-alerts)<br>[Service Level Agreement](#service-level-agreement) |
+| Microsoft Entra ID | [Tenants](#tenants)<br>[Users](#users)<br>[Groups](#groups)<br>[Devices](#devices)<br>[Roles and administrators](#roles-and-administrators)<br>[Domain services](#domain-services)<br>[Conditional Access](#conditional-access)<br>[Authentication](#authentication)<br>[Sign in logs](#sign-in-logs)<br>[Audit logs](#audit-logs)<br>[Recommendations](#recommendations)<br>[Health monitoring alerts](#health-monitoring-alerts)<br>[Service Level Agreement](#service-level-agreement) |
 | Microsoft Entra ID Protection | [User risk](#user-risk)<br>[Application risk](#application-risk) |
 | Microsoft Entra ID Governance | [Access reviews](#access-reviews)<br>[Entitlement management](#entitlement-management)<br>[Privileged Identity Management (PIM)](#privileged-identity-management-pim)<br>[Lifecycle workflows](#lifecycle-workflows) |
 | Microsoft Entra Internet Access<br>Microsoft Entra Private Access | [License Usage](#license-usage) |
@@ -141,7 +141,7 @@ For more information, see:
 - [Overview of role-based access control in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-overview)
 - [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference#application-administrator)
 
-### Microsoft Entra domains
+### Domain services
 
 Microsoft Entra uses the capabilities of Security Copilot to simplify domain management in the Microsoft Entra admin center. This feature allows administrators to quickly access domain information, verify DNS records, and manage domain settings using natural language queries.
 
