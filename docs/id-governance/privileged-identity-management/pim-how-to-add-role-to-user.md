@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/19/2024
+ms.date: 08/08/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: subject-rbac-steps, sfi-ga-nochange, sfi-image-nochange
@@ -58,6 +58,10 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
     - **Permanent** assignments have no expiration date. Use this option for permanent workers who frequently need the role permissions.
 
     - **Time-bound** assignments expire at the end of a specified period. Use this option with temporary or contract workers, for example, whose project end date and time are known.
+
+    >[!NOTE]
+    > Active time-bound role assignment for Global Administrator role will not be removed on expiration time if there are no other assigned active role assignments for Global Administrator present – in other words, if it’s last active role assignment for GA role. Eligible time-bound role assignment for Global Administrator role will not be removed on expiration time if there are no other assigned role assignments for Global Administrator role present – if it’s last assignment for GA role.
+    This is done to minimize risks of customer locking themselves out of the tenant inadvertently.
 
     :::image type="content" source="./media/pim-how-to-add-role-to-user/start-and-end-dates.png" alt-text="Screenshot showing Memberships settings - date and time.":::
 
@@ -240,7 +244,10 @@ This example shows the response. The response object shown here might be shorten
 
 ## Update or remove an existing role assignment
 
-Follow these steps to update or remove an existing role assignment. **Microsoft Entra ID P2 or Microsoft Entra ID Governance licensed customers only**: Don't assign a group as Active to a role through both Microsoft Entra ID and Privileged Identity Management (PIM). For a detailed explanation, see [Known issues](~/identity/role-based-access-control/groups-concept.md#known-issues).
+Follow these steps to update or remove an existing role assignment.  
+You cannot remove the last active role assignment for Global Administrator role. We recommend to have emergency access account with active permanent role assignment for Global Administrator role. See more [details](~/identity/role-based-access-control/security-emergency-access.md)  
+You cannot remove the last eligible role assignment for Global Administrator role if there are no assigned role assignments for Global Administrator role left.  
+This is done to minimize risks of administrators locking themselves out of the tenant inadvertently.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
