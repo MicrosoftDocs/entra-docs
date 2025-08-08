@@ -147,7 +147,7 @@ Microsoft Entra uses the capabilities of Security Copilot to simplify domain man
 
 Using this feature requires a minimum of the [Domain Name Administrator](/entra/identity/role-based-access-control/permissions-reference#domain-name-administrator) role in Microsoft Entra ID, and can be used with any tenant and Microsoft Entra ID license.
 
-The following example prompts can be used to investigate alerts in Scenario Health Monitoring:
+The following example prompts can be used to investigate alerts in domain services:
 
 - *List details of contoso.com*
 - *Show me DNS verification records of contoso.com*
