@@ -13,9 +13,9 @@ ms.reviewer: justinha
 
 One challenge many organizations face is the proliferation of groups, particularly security groups, in their Active Directory Domain Services (AD DS) domains. An organization might create security groups for projects, but over time, they're no longer needed. These groups can linger unmaintained in the domain. 
 
-Looking solely at domain controllers, there's no way to confirm if a particular group is needed to access an app or a file, since the ACLs might be stored on the domain member computers hosting the app or file. If going to all member computers is infeasible, you will need another way to identify and clean up these groups that are no longer needed.
+Looking solely at domain controllers, there's no way to confirm if a particular group is needed to access an app or a file, since the ACLs might be stored on the domain member computers hosting the app or file. If going to all member computers is infeasible, you'll need another way to identify and clean up these groups that are no longer needed.
 
-This article outlines how to use a *scream test* methodology to clean up groups from an AD DS domain. A scream test identifies a resource that might no longer be needed, temporarily makes that resource unavailable, and waits to see if anyone notifies the admins that they are impacted. If there are no reports of anyone impacted, the admins proceed to clean up the resource. For groups, cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from being synced into Microsoft Entra, reducing exposure in cloud applications.
+This article outlines how to use a *scream test* methodology to clean up groups from an AD DS domain. In a scream test, an administrator identifies a resource that might no longer be needed, temporarily makes that resource unavailable, and waits to see if anyone notifies the administrator that they were impacted. If there are no reports of anyone impacted, the admins proceed to clean up the resource. For groups, cleanup reduces administrative burden, and the risk of unmanaged groups in that domain. It also prevents these groups from being synced into Microsoft Entra, reducing exposure in cloud applications.
 
 First you determine whether each group needs to be managed with an AD DS-based management tool like **Active Directory Users and Computers**, or managed in the cloud with Microsoft Entra admin center or Exchange Online, or if it might not be needed. If the group might not be needed, you can run multiple scream tests to determine if it's active. If it's no longer active, you can delete it from the AD DS domain.
 
@@ -82,7 +82,7 @@ Select a reasonable size batch of untriaged groups for analysis. Based upon the 
 - [Analysis for a Distribution List or Mail-enabled security group](#analysis-for-a-distribution-list-or-mail-enabled-security-group)
 - [Analysis for a security group](#analysis-for-a-security-group)
 
-After performing one of those analysis on that batch, then proceed with the next batch of untriaged groups. When all groups have been analyzed, then the scream test is complete.
+After performing one of those analyses on that batch, then proceed with the next batch of untriaged groups. When all groups have been analyzed, then the scream test is complete.
 
 ### Analysis for a Distribution List or Mail-enabled security group
 
