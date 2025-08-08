@@ -6,10 +6,12 @@ author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
 ms.date: 08/08/2025
-
+ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 ---
 # Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot
 
