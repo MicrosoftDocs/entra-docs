@@ -151,7 +151,7 @@ You need an outbound sync rule with a link type of `JoinNoFlow` and the scoping 
 
 1. On the **Join rules** page, select **Next**.
 
-1. On the **Transformations** page, select **Add**.
+1. On the **Transformations** page, select **Add** to add the rule. 
 
 Follow the same steps for all object types (user, group, and contact).
 
