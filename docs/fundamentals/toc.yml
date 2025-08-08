@@ -101,7 +101,7 @@ items:
   - name: Investigate app risk using Microsoft Security Copilot
     href: copilot-security-entra-investigate-risky-apps.md
   - name: Responsible AI FAQ for Security Copilot
-    href: /security-copilot/rai-faqs-security-copilot?toc=/fundamentals/toc.json&bc=/fundamentals/breadcrumb/toc.json
+    href: /copilot/security/rai-faqs-security-copilot?toc=/fundamentals/toc.json&bc=/fundamentals/breadcrumb/toc.json
 - name: Support and help
   expanded: false
   items:
