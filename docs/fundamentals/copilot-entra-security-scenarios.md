@@ -335,6 +335,12 @@ Using this feature requires the [Identity Governance Administrator](/entra/ident
 
 :::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the ID Protection risky user summarization details.":::
 
+You can also add your own prompts in the Copilot window for the following use cases;
+
+- [List or Identify Users Based on Risk](copilot-entra-risky-user-summarization.md#list-or-identify-users-based-on-risk)
+- [User-Specific Risk Information](copilot-entra-risky-user-summarization.md#user-specific-risk-information)
+- [User Risk History](copilot-entra-risky-user-summarization.md#user-risk-history)
+
 ### Application risk
 
 Identity administrators and security analysts can use Microsoft Security Copilot to quickly assess the risk level of applications from workload identities. By leveraging natural language queries, you can easily discover the granted permissions, unused apps in your tenant, and the risk level of applications. This allows admins to take appropriate actions to mitigate risks and ensure the security of your organization's applications.
