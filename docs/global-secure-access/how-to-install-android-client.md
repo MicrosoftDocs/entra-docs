@@ -3,11 +3,11 @@ title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 08/08/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
-ms.reviewer: dhruvinrshah
+ms.reviewer: cagautham
 ms.custom: sfi-image-nochange
 # Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for Android devices.
 ---
@@ -46,87 +46,55 @@ Non-Microsoft mobile device management (MDM) scenarios are also supported. In th
 
 ## Deploy Microsoft Defender for Endpoint Android
 
-There are several combinations of deployment modes and scenarios for using the Global Secure Access client for Android.
+You can use the Global Secure Access client for Android in different deployment modes and scenarios.
 
-Once you enable a traffic forwarding profile and configure your network, the Global Secure Access Android client appears in the Defender app automatically; however, the Global Secure Access client is disabled by default. Users can enable the client from the Defender app. The steps to enable the client are provided in the [Confirm Global Secure Access appears in Defender app](#confirm-global-secure-access-appears-in-defender-app) section.
+After you enable a traffic forwarding profile and configure your network, the Global Secure Access Android client appears in the Defender app automatically. However, the Global Secure Access client is disabled by default. Users can enable the client from the Defender app. To learn how, see [Confirm Global Secure Access appears in Defender app](#confirm-global-secure-access-appears-in-defender-app).
 
-### [Device Administrator](#tab/device-administrator)
+You can enable the client using Android Enterprise enrollment mode. This mode supports corporate-owned, fully managed devices, corporate-owned devices with a work profile, and personal devices with a work profile.
 
-This legacy enrollment mode allows you to deploy Defender for Endpoint on Android with Microsoft Intune Company Portal - Device Administrator enrolled devices.
+### Create an MDM profile and configure Global Secure Access for Microsoft Defender for Endpoint 
 
-The high level process is as follows:
+1. In the [Microsoft Intune admin center](https://intune.microsoft.com/#home), go to **Apps** > **Android** > **Manage Apps** > **Configuration**. 
+1. Select the **+ Create** and then select **Managed devices**. The **Create app configuration policy** form opens.
+1. On the **Basics** tab:
+    1. Enter a **Name**.
+    1. Set the **Platform** to **Android Enterprise**.
+    1. Set the **Profile type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
+    1. Set the **Targeted app** to **Microsoft Defender**. 
+1. Select **Next**.
+1. On the **Settings** tab:
+    1. Set **Configuration settings format** to **Use configuration designer**.
+    1. Use the JSON editor to configure the disabled configuration keys. Select the **+Add** button.
+    1. In the search field, type `global` and select these configuration keys:
+        - **Global Secure Access** (this key is required to enable Global Secure Access). 
+        - **GlobalSecureAccessPrivateChannel** (this optional key enables Global Secure Access Private channel). 
+    1. Set the appropriate values for each configuration key according to the following table: 
+ 
+| Configuration key                | Value    | Details   |
+|----------------------------------|----------|-----------|
+| Global Secure Access             | No value | Global Secure Access isn't enabled and the tile isn't visible. |
+|                                  | 0        | Global Secure Access isn't enabled and the tile isn't visible. |
+|                                  | 1        | The tile is visible and defaults to false (disabled state). The user can enable or disable Global Secure Access using the toggle in the app. |
+|                                  | 2        | The tile is visible and defaults to true (enabled state). The user can override Global Secure Access. The user can enable or disable Global Secure Access using the toggle in the app. |
+|                                  | 3        | The tile is visible and defaults to true (enabled state). The user **can't** disable Global Secure Access. |
+| GlobalSecureAccessPrivateChannel | No value | Global Secure Access defaults to value 2 behavior. |
+|                                  | 0        | Private Access isn't enabled and the toggle option isn't visible to the user. |
+|                                  | 1        | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
+|                                  | 2        | The Private Access toggle is visible and defaults to the disabled state. The user can enable or disable Private Access. |
+|                                  | 3        | The Private Access toggle is visible but grayed out, and defaults to the enabled state. The user **can't** disable Private Access. |
 
-1. Deploy Defender to Intune enrolled Android devices.
+> [!NOTE]
+> The **GlobalSecureAccessPA** configuration key is deprecated.   
 
-1. [Enable at least one traffic forwarding profile](concept-traffic-forwarding.md) if Defender is already deployed.
+6. Select **Next**. 
+1. On the **Scope tags** tab, configure scope tags as needed and select **Next**.
+1. On the **Assignments** tab, select **+ Add groups** to assign the configuration policy and enable Global Secure Access.
 
-1. [Confirm Global Secure Access appears in the Defender app](#confirm-global-secure-access-appears-in-defender-app).
+> [!TIP]
+> To enable the policy for all but a few specific users, select **Add all devices** in the **Included groups** section, and then add the users or groups to exclude in the **Excluded groups** section.
 
-The detailed process for deploying Defender is as follows:
-
-1. Sign in to the [Microsoft Intune admin center](https://intune.microsoft.com/) as an [Intune Administrator](../identity/role-based-access-control/permissions-reference.md#intune-administrator).
-1. Browse to **Apps** > **Android** > **Add** > **Android store app** > **Select**.
-
-    ![Screenshot of the add Android app store options.](media/how-to-install-android-client/intune-add-android-store-app.png)
-
-1. Provide a **Name**, **Description**, and **Publisher**.
-1. Enter the URL in the **Appstore URL** field.
-    - `https://play.google.com/store/apps/details?id=com.microsoft.scmx`
-1. Leave all other fields as their default values and select **Next**.
-
-    ![Screenshot of the completed fields.](media/how-to-install-android-client/intune-add-defender-app-fields.png)
-
-1. In the **Required** section, select **Add group**, then select the groups to assign the app to and select **Next**.
-    - The selected group should consist of your Intune enrolled users.
-    - You can edit or add more groups later.
-
-    ![Screenshot of the add groups steps.](media/how-to-install-android-client/intune-add-group.png)
-
-1. On the **Review + create** tab, confirm the information is correct and select **Create**.
-1. On the new app details page, select **Device install status** and confirm the app is installed.
-
-**Users need to enable the client in the Defender app. It's disabled by default.** Proceed to the next section to confirm the app is installed and for how to enable the client.
-
-### [Android Enterprise](#tab/android-enterprise)
-
-Follow these steps to add the Microsoft Defender for Endpoint app into your managed Google Play store.
-
-The high level process is as follows:
-
-1. Deploy Defender on Android Enterprise enrolled devices.
-
-1. [Enable at least one traffic forwarding profile](concept-traffic-forwarding.md).
-
-1. [Confirm Global Secure Access appears in the Microsoft Defender for Endpoint app](#confirm-global-secure-access-appears-in-defender-app).
-
-The detailed process for deploying to the Google Play store is as follows:
-
-1. Sign in to the [Microsoft Intune admin center](https://intune.microsoft.com/) as an [Intune Administrator](../identity/role-based-access-control/permissions-reference.md#intune-administrator).
-1. Browse to **Apps** > **Android** > **Add** > **Managed Google Play app** > **Select**.
-
-    ![Screenshot of the add Google Play app options.](media/how-to-install-android-client/intune-add-google-play-app.png)
-
-1. On the managed Google Play page, search for **Microsoft Defender** and select it from the search results.
-1. On the details page for Microsoft Defender, select the **Select** button.
-1. Select the **Sync** button in the upper-left corner. This step syncs Defender with your apps list.
-
-    ![Screenshot of the Defender app details, with the Sync button highlighted.](media/how-to-install-android-client/intune-sync-google-play.png)
-
-1. Select the **Refresh** button on the Android apps screen so Microsoft Defender for Endpoint appears in the list.
-1. Select **Microsoft Defender** from the app list and browse to **Properties** > **Assignments** > **Edit**.
-
-    ![Screenshot of the Edit option for assigning groups.](media/how-to-install-android-client/intune-google-assignments-edit.png)
-
-1. In the **Required** section, select **Add group**, then select the groups to assign the app to and select **Next**.
-1. Select **Review + save** and once the details are confirmed, select **Save**.
-
-    ![Screenshot of the Add group option.](media/how-to-install-android-client/intune-google-add-group.png)
-
-After you assign a group, the app is automatically installed in the *work profile* during the next sync of the device via the Company Portal app.
-
-**Users need to enable the client in the Defender app. It's disabled by default.** Proceed to the next section to confirm the app is installed and for how to enable the client.
-
----
+9. Select **Next**.
+1. Review the configuration summary and select **Create**. 
 
 ## Confirm Global Secure Access appears in Defender app
 
