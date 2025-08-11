@@ -67,7 +67,7 @@ To configure Cisco Umbrella:
 
 ## Bypass configuration for coexistence
 
-### Bypass Cisco Secure Access/Umbrella required IPs in Global Secure Access
+### Bypass Umbrella/Cisco Secure Access required IPs in Global Secure Access
 
 1. In the Microsoft Entra admin center, go to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
 2. Under **Internet access policies**, select **View**.
