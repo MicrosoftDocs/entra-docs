@@ -242,14 +242,14 @@ else
 
 ### Status of attributes after you convert SOA
 
-The following table explains the status for **isCloudManaged** and **onPremisesSyncEnabled** attributes after you convert the SOA of an object.
+The following table explains the status for *isCloudManaged* and *onPremisesSyncEnabled* attributes after you convert the SOA of an object.
 
 Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
-Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to `true` and **isCloudManaged** is set to `false`.  
-Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **OnPremisesSyncEnabled** attribute value is set to `null`. 
-Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **OnPremisesSyncEnabled** is set to `null` until the sync client takes over the object.    
-Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, **isCloudManaged** is set to `false` and **onPremisesSyncEnabled** is set to `null`.
+Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the *onPremisesSyncEnabled* attribute is set to `true` and *isCloudManaged* is set to `false`.  
+Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the *isCloudManaged* attribute becomes set to `true` and the *onPremisesSyncEnabled* attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null` until the sync client takes over the object.    
+Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null`.
 
 ## Roll back SOA update
 
@@ -268,7 +268,7 @@ You can run this operation to roll back the SOA update and revert the SOA to on-
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/rollback.png" alt-text="Screenshot of API call to revert SOA.":::
 
 > [!NOTE]
-> This change to "isCloudManaged: false" allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is finished only after *both* the API call and the next scheduled or forced run of Connect Sync are complete.
+> The change of *isCloudManaged* to `false` allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is finished only after *both* the API call and the next scheduled or forced run of Connect Sync are complete.
 
 ### Validate the change in the Audit Logs
 
@@ -284,7 +284,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
    Start-ADSyncSyncCycle
    ```
 
-1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and blockOnPremisesSync = false, which means the object SOA is taken over by the on-premises again.
+1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and *blockOnPremisesSync* = false, which means the object SOA is taken over by the on-premises again.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
 
