@@ -181,7 +181,7 @@ To configure Cisco Umbrella:
 
 **Global Secure Access configuration:**
 - Enable Internet Access, Microsoft Access, and Private Access forwarding profiles.
-- Install a Private Network Connector.
+- Install a private network connector.
 - Configure Quick Access and Private DNS.
 - Install and configure the Global Secure Access client for Windows or macOS.
 
