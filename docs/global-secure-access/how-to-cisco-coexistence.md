@@ -178,7 +178,7 @@ To configure Cisco Umbrella and SWG:
 - Enable Internet Access, Microsoft Access, and Private Access forwarding profiles.
 - Install a Private Network Connector.
 - Configure Quick Access and Private DNS.
-- Install and configure the Global Secure Access client for Windows.
+- Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
 - Configure the required destinations to bypass Internet Security or Umbrella. See instructions for Cisco Secure Access portal or Umbrella portal.
