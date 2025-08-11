@@ -1,5 +1,5 @@
 ---
-title: Security guidance | Protect engineering systems
+title: Security guidance - Protect engineering systems
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect engineering systems.
 
 ms.service: entra
@@ -14,7 +14,7 @@ ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for Zero Trust: Protect engineering systems
 
-The [Secure Future Initiative](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/sfi-protect-engineering-systems.pdf) pillar to protect engineering systems was originally designed to protect the Microsoft software assets and infrastructure.
+The [Secure Future Initiative](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/microsoft-brand/documents/sfi-protect-engineering-systems.pdf) pillar to protect engineering systems was originally designed to protect the Microsoft software assets and infrastructure.
 
 ## Security recommendations
 

@@ -1,5 +1,5 @@
 ---
-title: Security guidance | Monitor and detect cyberthreats
+title: Security guidance - Monitor and detect cyberthreats
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to monitor and detect threats.
 
 ms.service: entra
@@ -15,7 +15,7 @@ ms.reviewer: ramical
 
 # Configure Microsoft Entra for Zero Trust: Monitor and detect cyberthreats
 
-Having robust health monitoring and threat detection capabilities is one of the six pillars of the [Secure Future Initiative](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/sfi-monitor-and-detect-cyberthreats.pdf). These guidelines are designed to help you set up a comprehensive logging system that provides standardized and accessible logs. We include recommendations related to the triage of risky sign-ins, risky users, and authentication methods.
+Having robust health monitoring and threat detection capabilities is one of the six pillars of the [Secure Future Initiative](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/microsoft-brand/documents/sfi-monitor-and-detect-cyberthreats.pdf). These guidelines are designed to help you set up a comprehensive logging system that provides standardized and accessible logs. We include recommendations related to the triage of risky sign-ins, risky users, and authentication methods.
 
 ## Security guidance
 

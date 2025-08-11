@@ -1,5 +1,5 @@
 ---
-title: Security guidance | Protect identities and secrets
+title: Security guidance - Protect identities and secrets
 description: Improve your security posture with the Microsoft Entra Zero Trust assessment to protect identities and secrets.
 
 ms.service: entra
@@ -13,9 +13,9 @@ manager: pmwongera
 ms.reviewer: ramical
 ---
 
-# Protect identities and secrets with the Zero Trust assessment
+# Configure Microsoft Entra for Zero Trust: Protect identities and secrets
 
-User and application authentication and authorization are the entry point into your identity and secrets infrastructure. Protecting all identities and secrets is a foundational step in your Zero Trust journey. 
+User and application authentication and authorization are the entry point into your identity and secrets infrastructure. Protecting all identities and secrets is a foundational step in your Zero Trust journey and a pillar of the [Secure Future Initiative](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/microsoft-brand/documents/secure-future-initiative-protect-identities-and-secrets.pdf). 
 
 The recommendations and Zero Trust checks that are part of this pillar help reduce the risk of unauthorized access.
 
