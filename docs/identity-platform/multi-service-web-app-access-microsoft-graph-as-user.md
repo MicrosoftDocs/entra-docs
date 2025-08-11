@@ -2,7 +2,7 @@
 title: Tutorial - Web app accesses Microsoft Graph as the user
 description: In this tutorial, you learn how to access data in Microsoft Graph from a web app for a signed-in user.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: azureday1
 ms.date: 09/15/2023

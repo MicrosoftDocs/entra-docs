@@ -4,7 +4,7 @@ description: Describes email notifications in Microsoft Entra Privileged Identit
 author: barclayn
 manager: pmwongera
 ms.service: entra-id-governance
-ms.topic: conceptual
+ms.topic: article
 ms.subservice: privileged-identity-management
 ms.date: 01/07/2025
 ms.author: barclayn

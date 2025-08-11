@@ -6,7 +6,7 @@ author: barclayn
 manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/05/2025
 ms.author: barclayn
 ms.reviewer: jeffsta

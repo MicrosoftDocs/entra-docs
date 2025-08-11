@@ -2,7 +2,7 @@
 title: Register a web app that signs in users
 description: Learn how to register a web app that signs in users using the Microsoft identity platform with step-by-step guidance for various frameworks.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 03/21/2025
 ms.reviewer: jmprieur

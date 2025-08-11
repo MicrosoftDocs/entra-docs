@@ -5,8 +5,15 @@
   items:
   - name: What is Microsoft Entra ID Protection?
     href: overview-identity-protection.md
-- name: Concepts
+- name: Security Copilot + Microsoft Entra ID Protection
   expanded: false
+  items:
+  - name: Security Copilot + Microsoft Entra overview
+    href: ../fundamentals/copilot-security-entra.md?toc=/entra/id-protection/toc.json&bc=/entra/id-protection/breadcrumb/toc.json
+  - name: Investigate incidents with Security Copilot
+    href: ../fundamentals/copilot-security-entra-investigate-incident.md?toc=/entra/id-protection/toc.json&bc=/entra/id-protection/breadcrumb/toc.json
+- name: Concepts
+  expanded: true
   items:
   - name: Microsoft Entra ID Protection dashboard
     href: id-protection-dashboard.md
@@ -29,7 +36,7 @@
     href: how-to-deploy-identity-protection.md
   - name: Configure notifications
     href: howto-identity-protection-configure-notifications.md
-  - name: Policy configuration
+  - name: Configure policies
     items:
     - name: Configure the MFA registration policy
       href: howto-identity-protection-configure-mfa-policy.md
