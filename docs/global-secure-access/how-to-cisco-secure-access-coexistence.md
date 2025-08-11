@@ -34,7 +34,7 @@ In this scenario, both clients handle traffic for separate private applications.
 
 Global Secure Access manages all Microsoft 365 traffic. The Cisco Secure Client - Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Access. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
 
-### ### Configuration 4: Internet Access and Microsoft Cisco Secure Access - Zero Trust Network Access (ZTNA)
+### ### Configuration 4: Internet Access and Microsoft Access with Cisco Secure Access Secure Private Access
 
 Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access handles only Private Access with the Cisco Secure Client - Zero Trust Network Access (ZTNA) module.
 > [!NOTE]
