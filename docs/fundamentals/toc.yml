@@ -72,8 +72,21 @@ items:
 - name: Fundamental security settings
   expanded: false
   items:
-  - name: Configure security recommendations
+  - name: Configure security recommendations using Zero Trust
     href: configure-security.md
+    items:
+    - name: Protect identities and secrets
+      href: zero-trust-protect-identities.md
+    - name: Protect tenants and isolate systems
+      href: zero-trust-protect-tenants.md
+    - name: Protect networks
+      href: zero-trust-protect-networks.md
+    - name: Protect engineering systems
+      href: zero-trust-protect-engineering-systems.md
+    - name: Monitor and detect cyberthreats
+      href: zero-trust-monitor-detect.md
+    - name: Accelerate response and remediation
+      href: zero-trust-response-remediation.md
   - name: Identity secure score
     href: ~/identity/monitoring-health/concept-identity-secure-score.md
   - name: Improve your security posture
