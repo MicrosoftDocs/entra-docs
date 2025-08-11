@@ -78,7 +78,7 @@ To configure Cisco Umbrella:
     ```
 5. Select **Save**.
 
-### Bypass Global Secure Access IPs and FQDNs in Cisco Secure Access
+### Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access
 
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
