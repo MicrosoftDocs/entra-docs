@@ -119,6 +119,27 @@ Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](
 
 1. Follow the [instructions to configure provisioning from AD DS to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
 
+
+## Grant permission to apps
+
+>[!Important] 
+> A known issue might prevent you from viewing the new permission associated with Source of Authority conversion feature in the Microsoft Entra admin center. If you can't view the permissions in the Microsoft Entra ID center or in Graph Explorer, follow the steps in the [Workaround for granting permission to apps](#workaround-for-granting-permission-to-apps).
+
+This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. 
+
+### Custom apps
+
+Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permission to the corresponding app. For more information about how to add new permissions to your app registration and grant consent, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions). 
+
+### Microsoft Graph Explorer
+
+1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
+
+1.	Select the profile icon, and select **Consent to permissions**. 
+
+1. Search for User-OnPremisesSyncBehavior, and select **Consent** for the permission.
+
+
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
 [Include a sentence or two to explain only what is needed to complete the procedure.]
