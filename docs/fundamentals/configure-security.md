@@ -23,7 +23,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 ## Protect identities and secrets
 
-- [Applications don't have client secrets configured](#zero-trust-protect-identities.md#applications-dont-have-client-secrets-configured)
+- [Applications don't have client secrets configured](zero-trust-protect-identities.md#applications-dont-have-client-secrets-configured)
 - [Applications don't have certificates with expiration longer than 180 days](zero-trust-protect-identities.md#applications-dont-have-certificates-with-expiration-longer-than-180-days)
 - [Application Certificates need to be rotated on a regular basis](zero-trust-protect-identities.md#application-certificates-need-to-be-rotated-on-a-regular-basis)
 - [Microsoft services applications don't have credentials configured](zero-trust-protect-identities.md#microsoft-services-applications-dont-have-credentials-configured)
@@ -69,37 +69,37 @@ We recommend that all of the following controls be implemented where licenses ar
 
 ## Protect engineering systems
 
-- [Global Administrator role activation triggers an approval workflow](../includes/secure-recommendations/21817.md)
-- [Global Administrators don't have standing access to Azure subscriptions](../includes/secure-recommendations/21788.md)
-- [Creating new applications and service principals is restricted to privileged users](../includes/secure-recommendations/21807.md)
-- [Inactive applications don't have highly privileged Microsoft Graph API permissions](../includes/secure-recommendations/21770.md)
-- [Inactive applications don't have highly privileged built-in roles](../includes/secure-recommendations/21771.md)
-- [App registrations use safe redirect URIs](../includes/secure-recommendations/21885.md)
-- [Service principals use safe redirect URIs](../includes/secure-recommendations/23183.md)
-- [App registrations must not have dangling or abandoned domain redirect URIs](../includes/secure-recommendations/21888.md)
-- [Resource-specific consent to application is restricted](../includes/secure-recommendations/21810.md)
-- [Workload Identities are not assigned privileged roles](../includes/secure-recommendations/21836.md)
-- [Enterprise applications must require explicit assignment or scoped provisioning](../includes/secure-recommendations/21869.md)
-- [Conditional Access policies for Privileged Access Workstations are configured](../includes/secure-recommendations/21830.md)
+- [Global Administrator role activation triggers an approval workflow](zero-trust-protect-engineering-systems.md#global-administrator-role-activation-triggers-an-approval-workflow)
+- [Global Administrators don't have standing access to Azure subscriptions](zero-trust-protect-engineering-systems.md#global-administrators-dont-have-standing-access-to-azure-subscriptions)
+- [Creating new applications and service principals is restricted to privileged users](zero-trust-protect-engineering-systems.md#creating-new-applications-and-service-principals-is-restricted-to-privileged-users)
+- [Inactive applications don't have highly privileged Microsoft Graph API permissions](zero-trust-protect-engineering-systems.md#inactive-applications-dont-have-highly-privileged-microsoft-graph-api-permissions)
+- [Inactive applications don't have highly privileged built-in roles](zero-trust-protect-engineering-systems.md#inactive-applications-dont-have-highly-privileged-built-in-roles)
+- [App registrations use safe redirect URIs](zero-trust-protect-engineering-systems.md#app-registrations-use-safe-redirect-uris)
+- [Service principals use safe redirect URIs](zero-trust-protect-engineering-systems.md#service-principals-use-safe-redirect-uris)
+- [App registrations must not have dangling or abandoned domain redirect URIs](zero-trust-protect-engineering-systems.md#app-registrations-must-not-have-dangling-or-abandoned-domain-redirect-uris)
+- [Resource-specific consent to application is restricted](zero-trust-protect-engineering-systems.md#resource-specific-consent-to-application-is-restricted)
+- [Workload Identities are not assigned privileged roles](zero-trust-protect-engineering-systems.md#workload-identities-are-not-assigned-privileged-roles)
+- [Enterprise applications must require explicit assignment or scoped provisioning](zero-trust-protect-engineering-systems.md#enterprise-applications-must-require-explicit-assignment-or-scoped-provisioning)
+- [Conditional Access policies for Privileged Access Workstations are configured](zero-trust-protect-engineering-systems.md#conditional-access-policies-for-privileged-access-workstations-are-configured)
 
 ## Monitor and detect cyberthreats
 
-- [Diagnostic settings are configured for all Microsoft Entra logs](../includes/secure-recommendations/21860.md)
-- [Privileged role activations have monitoring and alerting configured](../includes/secure-recommendations/21818.md)
-- [Privileged users sign in with phishing-resistant methods](../includes/secure-recommendations/21781.md)
-- [All high-risk users are triaged](../includes/secure-recommendations/21861.md)
-- [All high-risk sign-ins are triaged](../includes/secure-recommendations/21863.md)
-- [All user sign-in activity uses strong authentication methods](../includes/secure-recommendations/21800.md)
-- [High priority Microsoft Entra recommendations are addressed](../includes/secure-recommendations/22124.md)
-- [ID Protection notifications enabled](../includes/secure-recommendations/21798.md)
-- [No legacy authentication sign-in activity](../includes/secure-recommendations/21795.md)
-- [All Microsoft Entra recommendations are addressed](../includes/secure-recommendations/21866.md)
+- [Diagnostic settings are configured for all Microsoft Entra logs](zero-trust-monitor-detect.md#diagnostic-settings-are-configured-for-all-microsoft-entra-logs)
+- [Privileged role activations have monitoring and alerting configured](zero-trust-monitor-detect.md#privileged-role-activations-have-monitoring-and-alerting-configured)
+- [Privileged users sign in with phishing-resistant methods](zero-trust-monitor-detect.md#privileged-users-sign-in-with-phishing-resistant-methods)
+- [All high-risk users are triaged](zero-trust-monitor-detect.md#all-high-risk-users-are-triaged)
+- [All high-risk sign-ins are triaged](zero-trust-monitor-detect.md#all-high-risk-sign-ins-are-triaged)
+- [All user sign-in activity uses strong authentication methods](zero-trust-monitor-detect.md#all-user-sign-in-activity-uses-strong-authentication-methods)
+- [High priority Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#high-priority-microsoft-entra-recommendations-are-addressed)
+- [ID Protection notifications enabled](zero-trust-monitor-detect.md#id-protection-notifications-enabled)
+- [No legacy authentication sign-in activity](zero-trust-monitor-detect.md#no-legacy-authentication-sign-in-activity)
+- [All Microsoft Entra recommendations are addressed](zero-trust-monitor-detect.md#all-microsoft-entra-recommendations-are-addressed)
 
 ## Accelerate response and remediation
 
-- [Workload identities based on risk policies are configured](../includes/secure-recommendations/21883.md)
-- [Restrict high risk sign-ins](../includes/secure-recommendations/21799.md)
-- [Restrict access to high risk users](../includes/secure-recommendations/21797.md)
+- [Workload identities based on risk policies are configured](zero-trust-response-remediation.md#workload-identities-based-on-risk-policies-are-configured)
+- [Restrict high risk sign-ins](zero-trust-response-remediation.md#restrict-high-risk-sign-ins)
+- [Restrict access to high risk users](zero-trust-response-remediation.md#restrict-access-to-high-risk-users)
 
 ## Related content
 
