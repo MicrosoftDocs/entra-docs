@@ -12,3 +12,17 @@ author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
 ---
+
+# Protect networks with the Zero Trust assessment
+
+## Zero Trust security recommendations
+
+### Named locations are configured
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
+[!INCLUDE [21865](../includes/secure-recommendations/21865.md)]
+
+### Tenant restrictions v2 policy is configured
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
+[!INCLUDE [21793](../includes/secure-recommendations/21793.md)]

@@ -12,3 +12,21 @@ author: shlipsey
 manager: pmwongera
 ms.reviewer: ramical
 ---
+# Accelerate response and remediation with the Zero Trust Assessment
+
+## Zero Trust security recommendations
+
+### Workload identities based on risk policies are configured
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
+[!INCLUDE [21883](../includes/secure-recommendations/21883.md)]
+
+### Restrict high risk sign-ins
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
+[!INCLUDE [21799](../includes/secure-recommendations/21799.md)]
+
+### Restrict access to high risk users
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
+[!INCLUDE [21797](../includes/secure-recommendations/21797.md)]

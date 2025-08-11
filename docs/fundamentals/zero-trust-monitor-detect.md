@@ -20,24 +20,37 @@ Having robust health monitoring and threat detection capabilities is one of the 
 ## Security guidance
 
 ### Diagnostic settings are configured for all Microsoft Entra logs
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
+
 [!INCLUDE [21860](../includes/secure-recommendations/21860.md)]
 
 ### Privileged role activations have monitoring and alerting configured
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
+
 [!INCLUDE [21818](../includes/secure-recommendations/21818.md)]
 
 ### Privileged users sign in with phishing-resistant methods
 [!INCLUDE [21781](../includes/secure-recommendations/21781.md)]
 
 ### All high-risk users are triaged
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21861](../includes/secure-recommendations/21861.md)]
 
 ### All high-risk sign-ins are triaged
+
+
 [!INCLUDE [21863](../includes/secure-recommendations/21863.md)]
 
 ### All user sign-in activity uses strong authentication methods
 [!INCLUDE [21800](../includes/secure-recommendations/21800.md)]
 
 ### High priority Microsoft Entra recommendations are addressed
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
+
 [!INCLUDE [22124](../includes/secure-recommendations/22124.md)]
 
 ### ID Protection notifications enabled
@@ -47,6 +60,8 @@ Having robust health monitoring and threat detection capabilities is one of the 
 [!INCLUDE [21795](../includes/secure-recommendations/21795.md)]
 
 ### All Microsoft Entra recommendations are addressed
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21866](../includes/secure-recommendations/21866.md)]
 
 ## Related guidelines

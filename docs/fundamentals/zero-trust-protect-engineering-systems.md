@@ -19,30 +19,46 @@ The [Secure Future Initiative](https://cdn-dynmedia-1.microsoft.com/is/content/m
 ## Security recommendations
 
 ### Global Administrator role activation triggers an approval workflow
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21817](../includes/secure-recommendations/21817.md)]
 
 ### Global Administrators don't have standing access to Azure subscriptions
 [!INCLUDE [21788](../includes/secure-recommendations/21788.md)]
 
 ### Creating new applications and service principals is restricted to privileged users
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
 
 ### Inactive applications don't have highly privileged Microsoft Graph API permissions
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21770](../includes/secure-recommendations/21770.md)]
 
 ### Inactive applications don't have highly privileged built-in roles
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21771](../includes/secure-recommendations/21771.md)]
 
 ### App registrations use safe redirect URIs
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21885](../includes/secure-recommendations/21885.md)]
 
 ### Service principals use safe redirect URIs
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [23183](../includes/secure-recommendations/23183.md)]
 
 ### App registrations must not have dangling or abandoned domain redirect URIs
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21888](../includes/secure-recommendations/21888.md)]
 
 ### Resource-specific consent to application is restricted
+[!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
+
 [!INCLUDE [21810](../includes/secure-recommendations/21810.md)]
 
 ### Workload Identities are not assigned privileged roles
