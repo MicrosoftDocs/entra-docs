@@ -30,7 +30,8 @@ introduction: |
 
   >[!IMPORTANT]
   >If a user activating an administrative role is signed in to Microsoft Teams on a mobile device, they will receive a notification from the Teams app saying "Open Teams to continue receiving notifications for *&lt;email address&gt;*", or "*&lt;email address&gt;* needs to sign in to see notifications". The user will need to open the Teams app to continue receiving notifications. This behavior is by design.
-
+  >[!IMPORTANT]
+ >If your tenant has the 'Restrict access to Microsoft Entra Admin Center' Control set to 'Yes' identities that have Eligible assignments will not be able to access the Portal and Activate their PIM Roles. 
 procedureSection:
   - title: |
       Activate a role
