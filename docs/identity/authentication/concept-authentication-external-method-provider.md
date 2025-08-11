@@ -3,7 +3,7 @@ title: Microsoft Entra multifactor authentication external method provider refer
 description: Learn how to configure an external authentication method (EAM) provider for Microsoft Entra multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/17/2025
 ms.author: justinha
 author: gregkmsft

@@ -5,7 +5,7 @@ description: Learn how to interpret the details found in the Microsoft Entra aud
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: concept-article
 ms.subservice: monitoring-health
 ms.date: 05/27/2025
 ms.author: sarahlipsey

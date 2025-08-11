@@ -41,6 +41,8 @@ Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](
 
 1. Learn how to [identify the agent's current version](/azure/active-directory/hybrid/cloud-sync/how-to-automatic-upgrade).
 
+1. Follow the [instructions to configure provisioning from AD DS to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
+
 
 ## Grant permission to apps
 
@@ -95,6 +97,9 @@ Follow these steps to convert the SOA for a test group:
 
 1. Check that the synced group is read-only. Because the group is managed on-premises, any write attempts to the group in the cloud fail. The error message differs for mail-enabled groups, but updates still aren't allowed.
 
+   > [!NOTE]
+   > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required Group.ReadWrite.All permission.
+
    ```https
    PATCH https://graph.microsoft.com/v1.0/groups/{ID}/
       {
@@ -103,11 +108,8 @@ Follow these steps to convert the SOA for a test group:
    ```
 
    :::image type="content" source="media/how-to-group-source-of-authority-configure/try-update.png" alt-text="Screenshot of an attempt to update a group to verify it's read-only.":::
-
-   > [!NOTE]
-   > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required Group.ReadWrite.All permission.
  
-1. Search the Microsoft Entra admin center for the group. Verify that all group fields are greyed out, and that source is Windows Server AD:  
+1. Search the Microsoft Entra admin center for the group. Verify that all group fields are greyed out, and that source is Windows Server AD DS:  
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/basic.png" alt-text="Screenshot of basic group properties.":::
 
@@ -243,7 +245,7 @@ else
 
 ### Status of attributes after you convert SOA
 
-The following table explains the status for **isCloudManaged** and **onPremisesSyncEnabled** attributes you convert the SOA of an object.
+The following table explains the status for **isCloudManaged** and **onPremisesSyncEnabled** attributes after you convert the SOA of an object.
 
 Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
@@ -288,22 +290,6 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and blockOnPremisesSync = false, which means the object SOA is taken over by the on-premises again.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
-
-## Check Cloud sync Provisioning Logs 
-
-If you try to edit an attribute of a group in AD while **SOA is in the cloud**, the Cloud Sync skips the object.
-
-Let's say we have a group *SOAGroup3*, and we update its group name to *SOA Group3.1*.
-
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/update-group-name.png" alt-text="Screenshot of an object name update.":::
-
-In the **Provisioning Logs** of the **AD2AAD job**, you can see that **SOAGroup3 was skipped**.
-
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/skipped.png" alt-text="Screenshot of a skipped object.":::
-
-The details explain that the object isn't synced because its SOA is converted to the cloud.
-
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/sync-blocked.png" alt-text="Screenshot of a blocked sync.":::
 
 ## Limitations
 

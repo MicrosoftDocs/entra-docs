@@ -4,7 +4,7 @@ description: Learn about how flagged the sign-ins feature can be used for troubl
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: monitoring-health
 ms.date: 03/17/2025
 ms.author: sarahlipsey
