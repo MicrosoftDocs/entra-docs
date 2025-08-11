@@ -151,7 +151,7 @@ To configure Cisco Umbrella:
 - Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-- Configure the required destinations to bypass Internet Security or Umbrella. See instructions for Cisco Secure Access portal or Umbrella portal.
+- Configure the required destinations to bypass Umbrella. See instructions for [Umbrella portal](#cisco-umbrella-portal) or [Cisco Secure Access portal](#cisco-secure-access-portal).
 - Disable Cisco Secure Access SWG
     1. In the **Cisco Secure Access portal**, go to **Resources**.
     2. Select **Roaming Devices > Desktop Operating Systems**.
