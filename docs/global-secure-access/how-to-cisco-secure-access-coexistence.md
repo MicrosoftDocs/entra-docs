@@ -209,42 +209,33 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 8. Validate traffic logs in both portals.
 9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
 
-### Configuration 4: Internet Access, Microsoft Access, and Private Access with Cisco Secure Access ZTNA and DNS Defense (Umbrella)
+### ### Configuration 4: Internet Access and Microsoft Access with Cisco Secure Access ZTNA
 
 #### Global Secure Access configuration
 
-- Enable Internet Access, Microsoft Access, and Private Access forwarding profiles.
+- Enable **Internet Access** and **Microsoft Access** forwarding profiles.
 - Install and configure the Global Secure Access client for Windows.
-- Add custom bypass for Cisco Secure Access:
-  1. In Global Secure Access admin center, go to **Connect > Traffic forwarding > Internet access profile > View**.
-  2. Expand **Custom Bypass**, add rules for:
-   ```
-   *.zpc.sse.cisco.com, 208.67.222.222, 208.67.220.220, 67.215.64.0/19, 146.112.0.0/16, 155.190.0.0/16, 185.60.84.0/22, 204.194.232.0/21, 208.67.216.0/21, 208.69.32.0/21
-   ```
-- Create a web content filtering policy (for example, block Games category), assign to a security profile, and link with a Conditional Access policy. See, Global Secure Access [web content filtering](/entra/global-secure-access/how-to-configure-web-content-filtering) documentation.
+- Add a custom bypass for Cisco Secure Access:
+  1. In the Global Secure Access admin center, go to **Connect > Traffic forwarding > Internet access profile > View**.
+  2. Expand **Custom Bypass**.
+  3. Add a rule for the destination: `*.zpc.sse.cisco.com`.
 
 #### Cisco Secure Access configuration
 
-- Configure required destinations to bypass Cisco Secure Access.
-- Deploy and configure Cisco Secure Client with the Zero Trust Access and Umbrella modules.
-- Disable Cisco Secure Access Secure Web Gateway (SWG):
-  1. In the Cisco Secure Access portal, go to **Resources > Roaming Devices > Desktop Operating Systems**.
-  2. Select the device.
-  3. In the **Web Security** drop-down, select **Always Disable (override)**.
-- Create an Internet Access block rule for a domain (for example, `Zillow.com`).
-- Add private resources and create access policies.
+- Deploy and configure Cisco Secure Client with Zero Trust Access module.
+- Add private resources and access policies.
 
+> [!NOTE]
+> No Cisco Secure Access DNS Defense or SWG in this scenario; Umbrella module isn't installed.
 #### Test traffic flow
 
 1. Start collecting traffic in Global Secure Access client.
 2. Access `bing.com`, `salesforce.com`, `outlook.office365.com`.
-3. Verify Global Secure Access client captures traffic for these sites. Cisco handles DNS traffic.
-4. Validate traffic logs in both portals.
-5. Access private applications via Global Secure Access (for example, SMB file share).
-6. Access private resources via Cisco Secure Access ZTNA (for example, RDP session).
-7. Access `battle.net` and confirm Global Secure Access block page.
-8. Access `Zillow.com` and confirm Cisco block page.
-9. Stop collecting traffic and confirm correct traffic handling.
+3. Verify Global Secure Access client captures traffic for these sites.
+4. In the Cisco Secure Access portal, validate traffic to these sites isn't captured.
+5. Access private resources via Cisco Secure Access ZTNA.
+6. Validate traffic logs in both portals.
+7. Stop collecting traffic and confirm Global Secure Access didn't handle private application traffic.
 
 ## Next steps
 
