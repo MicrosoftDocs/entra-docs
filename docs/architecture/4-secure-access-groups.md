@@ -5,7 +5,7 @@ author: jricketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/09/2023
 ms.author: jricketts
 ms.custom: sfi-image-nochange

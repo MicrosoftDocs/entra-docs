@@ -7,7 +7,7 @@ manager: pmwongera
 ms.author: barclayn
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/05/2025
 ms.custom: it-pro
 ms.collection: M365-identity-device-management

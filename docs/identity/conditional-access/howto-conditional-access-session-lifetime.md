@@ -9,7 +9,7 @@ ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: inbarc
 ---
 # Configure adaptive session lifetime policies

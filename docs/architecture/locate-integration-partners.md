@@ -5,7 +5,7 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.service: entra
-ms.topic: conceptual
+ms.topic: article
 ms.date: 06/18/2025
 ms.reviewer: cammart
 ms.custom: references_regions

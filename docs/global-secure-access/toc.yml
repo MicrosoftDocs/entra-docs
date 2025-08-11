@@ -53,6 +53,8 @@ items:
     href: concept-remote-network-connectivity.md
   - name: Universal Continuous Access Evaluation
     href: concept-universal-continuous-access-evaluation.md
+  - name: Application Usage Analytics
+    href: overview-application-usage-analytics.md
 - name: How-to guides
   expanded: true
   items:
@@ -262,8 +264,6 @@ items:
     href: resource-faq.yml
   - name: Transport Layer Security inspection FAQs
     href: faq-transport-layer-security.yml
-  - name: Ciphers for Microsoft Entra Private Access
-    href: reference-ciphers.md       
   - name: Connector version history
     href: reference-version-history.md
   - name: Windows client version history

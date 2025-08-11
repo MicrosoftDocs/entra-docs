@@ -2,7 +2,7 @@
 title: Protected web API app registration
 description: Learn how to build a protected web API and acquire all the information you need to register the app.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 05/28/2024

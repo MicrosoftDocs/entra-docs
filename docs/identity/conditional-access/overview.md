@@ -9,7 +9,7 @@ ms.date: 07/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: kvenkit
 ---
 # What is Conditional Access?

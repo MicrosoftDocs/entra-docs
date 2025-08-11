@@ -3772,6 +3772,8 @@
         href: ~/identity/app-provisioning/on-premises-sap-connector-configure.md?toc=/entra/identity/saas-apps/toc.json?bc=/entra/identity/saas-apps/breadcrumb/toc.json
       - name: SAP HANA
         href: sap-hana-provisioning-tutorial.md
+      - name: SAP HCM to Microsoft Entra ID
+        href: sap-hcm-microsoft-entra-identity-provisioning.md
       - name: SAP S/4HANA
         href: sap-s4hana-provisioning-tutorial.md
       - name: SAP SuccessFactors Learning

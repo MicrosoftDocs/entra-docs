@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 07/14/2025
+ms.date: 07/21/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,14 @@ ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for increased security (Preview)
 
-In Microsoft Entra, we group our security recommendations into several main areas. This structure allows organizations to logically break up projects into related consumable chunks.
+The security recommendations in this document are designed to help you improve your security posture in Microsoft Entra. These recommendations are influenced by accepted industry standards like those developed by NIST, the configuration baselines we use internally at Microsoft, and our experiences with customers. The recommendations are organized by the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars) pillars:
+
+- Protect identities and secrets
+- Protect tenants and isolate production systems
+- Protect networks
+- Protect engineering systems
+- Monitor and detect cyberthreats
+- Accelerate response and remediation
 
 > [!TIP]
 > Some organizations might take these recommendations exactly as written, while others might choose to make modifications based on their own business needs. In our initial release of this guidance, we focus on traditional [workforce tenants](/entra/external-id/tenant-configurations#workforce-tenants). These workforce tenants are for your employees, internal business apps, and other organizational resources. 
@@ -45,8 +52,6 @@ We recommend that all of the following controls be implemented where licenses ar
 - Password expiration is disabled
 - Require multifactor authentication for device join and device registration using user action
 - Enable Microsoft Entra ID security defaults
-
-
 
 ## Protect identities and secrets
 

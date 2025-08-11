@@ -5,7 +5,7 @@ author: barclayn
 manager: pmwongera
 ms.author: barclayn
 ms.date: 02/10/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange

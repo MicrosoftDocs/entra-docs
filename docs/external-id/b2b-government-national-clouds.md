@@ -22,6 +22,8 @@ Microsoft Azure [national clouds](~/identity-platform/authentication-national-cl
 - Microsoft Azure global cloud and Microsoft Azure Government
 - Microsoft Azure global cloud and Microsoft Azure operated by 21Vianet
 
+Organizations with multiple tenants across Microsoft clouds can use [cross-cloud synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) to automate creating, updating, and deleting B2B users.
+
 ## B2B collaboration across Microsoft clouds
 
 To set up B2B collaboration between tenants in different clouds, both tenants need to configure their Microsoft cloud settings to enable collaboration with the other cloud. Then each tenant must configure inbound and outbound cross-tenant access with the tenant in the other cloud. For details, see [Microsoft cloud settings](cross-cloud-settings.md).

@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: how-to
-ms.date: 07/17/2025
+ms.date: 07/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: shkhalid
@@ -88,8 +88,7 @@ Create a new Enterprise Application or use Quick Access to publish the domain co
 ### 6. Install the Private Access Sensor on the domain controller
 
 1. Download the Private Access Sensor for DC from Microsoft Entra admin center at **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** > **Download private access sensor**.
-1. Extract the zip file.
-1. Install the sensor by running the `PrivateAccessSensorInstaller` batch file, or install the `PrivateAccessSensor` package followed by the `PrivateAccessSensorPolicyRetreiverInstaller` package.
+1. Install by clicking the Private Access Sensor Installer and follow the steps.
 1. During installation, sign in with a Microsoft Entra ID user when prompted.
 1. After installation, in the Microsoft Entra admin center, go to **Global Secure Access** > **Connect** > **Connectors and sensors** > **Private access sensors** and verify the sensor status is **Active**.
 

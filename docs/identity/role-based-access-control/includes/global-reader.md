@@ -48,7 +48,6 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md) |
-> | microsoft.directory/bulkJobs/standard/read | Read all bulk jobs in a directory |
 > | microsoft.directory/cloudAppSecurity/allProperties/read | Read all properties for Cloud app security |
 > | microsoft.directory/conditionalAccessPolicies/allProperties/read | Read all properties of Conditional Access policies |
 > | microsoft.directory/connectorGroups/allProperties/read | Read all properties of application proxy connector groups |
