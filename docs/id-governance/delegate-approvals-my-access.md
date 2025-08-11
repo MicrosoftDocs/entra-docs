@@ -48,14 +48,41 @@ When an approver sets a delegate, the following happens:
 
 ## License requirements
 
-## How delegation works
+[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+
 
 ## Enable Delegate Approvals preview
 
+To enable approvers to delegate in My Access, you'd do the following:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+
+1. Browse to **ID Governance** > **Entitlement Management** > **Preview Features**.
+
+1. Select **“Enable approvers to delegate in MyAccess”**.
+
 ### Set up a delegate
+
+With the delegate approvers option enabled, you can set up a delegate to approve access on your behalf. To set up a delegate, you'd do the following:
+
+1.	Sign in to the My Access portal.
+
+1.	Select the Approvals page.
+
+1.	Select Delegate approvals.
+
+1.	In the modal:
+    1.	Enter the name, or email, of the delegate.
+    1.	Set the start and end time (or select No end date).
+
+1.	Select Delegate.
+
+1.	A toast notification confirms the action. The active delegation is reflected on the Overview page and the Approvals page.
 
 
 ### Edit or remove a delegate
+
+
 
 ## Next step
 
