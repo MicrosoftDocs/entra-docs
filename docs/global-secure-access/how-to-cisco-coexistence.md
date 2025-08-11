@@ -134,7 +134,7 @@ To configure Cisco Umbrella:
     150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
   ```
 
-  - Add the same Microsoft IP addresses.
+5. Add these Microsoft IP addresses:
 6. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 ---
