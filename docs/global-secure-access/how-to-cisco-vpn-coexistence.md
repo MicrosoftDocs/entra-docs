@@ -230,7 +230,7 @@ After both clients are installed and running, verify that Global Secure Access a
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco ASA remote access TLS URL and public IP address.
 - Install and configure the Global Secure Access client for Windows or macOS.
 - Configure Cisco ASA remote access VPN connection profile as described previously.
-- Install Cisco Secure Client or AnyConnect software.
+- Install Cisco Secure Client software.
 - Connect to your VPN endpoint.
 
 After both clients are installed and running, verify that Global Secure Access and Cisco clients are enabled.
