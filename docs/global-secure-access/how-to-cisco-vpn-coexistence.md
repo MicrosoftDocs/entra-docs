@@ -246,7 +246,7 @@ After both clients are installed and running, verify that Global Secure Access a
 2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic from these sites.
 4. Validate traffic in Microsoft Entra admin center traffic logs.
-5. In Cisco ASDM, go to **Monitoring > Logging > View**. Validate website traffic isn't captured.
+5. In Cisco ASDM, go to **Monitoring > Logging > View**. Validate website traffic **isn't** captured.
 6. Access private resources via Cisco Secure Client (for example, RDP session).
 7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco ASDM logs.
 8. Access private application in Microsoft Entra Private Access (for example, SMB file share).
