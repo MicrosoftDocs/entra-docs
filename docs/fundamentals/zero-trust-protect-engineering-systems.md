@@ -14,7 +14,7 @@ ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for Zero Trust: Protect engineering systems
 
-The [Secure Future Initiative](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/microsoft-brand/documents/sfi-protect-engineering-systems.pdf) pillar to protect engineering systems was originally designed to protect the Microsoft software assets and infrastructure.
+The [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars) pillar to protect engineering systems was originally designed to protect the Microsoft software assets and infrastructure.
 
 ## Security recommendations
 

@@ -15,7 +15,7 @@ ms.reviewer: ramical
 
 # Configure Microsoft Entra for Zero Trust: Protect identities and secrets
 
-User and application authentication and authorization are the entry point into your identity and secrets infrastructure. Protecting all identities and secrets is a foundational step in your Zero Trust journey and a pillar of the [Secure Future Initiative](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/microsoft-brand/documents/secure-future-initiative-protect-identities-and-secrets.pdf). 
+User and application authentication and authorization are the entry point into your identity and secrets infrastructure. Protecting all identities and secrets is a foundational step in your Zero Trust journey and a pillar of the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars). 
 
 The recommendations and Zero Trust checks that are part of this pillar help reduce the risk of unauthorized access.
 
