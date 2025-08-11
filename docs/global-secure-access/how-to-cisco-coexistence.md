@@ -141,7 +141,7 @@ To configure Cisco Umbrella:
 
 ## Configuration scenarios
 
-### 1. Microsoft Entra Internet Access and Microsoft Entra Microsoft Access with Umbrella DNS (Cisco Secure Access DNS Defense)
+### 1. Internet Access and Microsoft Access with Umbrella DNS security.
 
 
 #### Steps
