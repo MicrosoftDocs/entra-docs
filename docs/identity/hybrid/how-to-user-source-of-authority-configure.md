@@ -150,6 +150,86 @@ Sign in to the Azure portal, go to **Enterprise Applications** > **App Name**, a
 
 :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/permission.png" alt-text="Screenshot of how to validate a permission is granted.":::
 
+## Convert SOA for a test user
+
+Follow these steps to convert the SOA for a test user:
+
+1. Create a user within AD. You can also use an existing user that is synced to Microsoft Entra ID by using Connect Sync.
+1. Run the following command to start Connect Sync: 
+
+   ```powershell
+   Start-ADSyncSyncCycle
+   ```
+
+1. Verify that the user appears in the Microsoft Entra admin center as a synced user.
+1. Use Microsoft Graph API to convert the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as user admin.
+1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
+/graph/api/onpremisessyncbehavior-update
+
+   ```https
+   GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   ```
+
+   :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of an user.":::
+
+1. Check that the synced user is read-only. Because the user is managed on-premises, any write attempts to the user in the cloud fail. The error message differs for mail-enabled users, but updates still aren't allowed.
+
+   > [!NOTE]
+   > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required User.ReadWrite.All permission.
+
+   ```https
+   PATCH https://graph.microsoft.com/v1.0/users/{ID}/
+      {
+        "DisplayName": "User Name Updated"
+      }   
+   ```
+
+   :::image type="content" source="media/how-to-user-source-of-authority-configure/try-update.png" alt-text="Screenshot of an attempt to update a user to verify it's read-only.":::
+ 
+1. Search the Microsoft Entra admin center for the user. Verify that all user fields are greyed out, and that source is Windows Server AD DS:  
+
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/basic.png" alt-text="Screenshot of basic group properties.":::
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced group properties.":::
+
+1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
+
+   ```https
+   PATCH https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior
+      {
+        "isCloudManaged": true
+      }   
+   ```
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/switch.png" alt-text="Screenshot of PATCH operation to update user properties.":::
+
+1. To validate the change, call GET to verify *isCloudManaged* is true.
+
+   ```https
+   GET https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior?$select=isCloudManaged
+   ```
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/cloud-managed.png" alt-text="Screenshot of GET call to verify user properties.":::
+
+1. Confirm the change in the Audit Logs. To access Audit Logs in the Azure portal, open **Manage Microsoft Entra ID** > **Monitoring** > **Audit Logs**, or search for *audit logs*. Select **Change Source of Authority from AD to cloud** as the activity.
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/audit.png" alt-text="Screenshot of change to user properties in Audit Logs.":::
+
+1. Check that the group can be updated in the cloud.
+
+   ```https
+   PATCH https://graph.microsoft.com/v1.0/users/{ID}/
+      {
+        "DisplayName": "Group1 Name Updated"
+      }   
+   ```
+
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/retry-update.png" alt-text="Screenshot of a retry to change group properties.":::
+
+1. Open Microsoft Entra admin center and confirm that the group **Source** property is **Cloud**.
+
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/source-cloud.png" alt-text="Screenshot of how to confirm group source property.":::
+
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
