@@ -138,6 +138,11 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 1.	Select the profile icon, and select **Consent to permissions**. 
 
 1. Search for User-OnPremisesSyncBehavior, and select **Consent** for the permission.
+    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to user-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-user-source-of-authority-configure/consent.png":::
+
+### Workaround for granting permission to apps
+
+You can grant consent by using PowerShell or Microsoft Graph. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
 
 
 ## "\<verb\> * \<noun\>"
