@@ -46,9 +46,7 @@ Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](
 
 ## Grant permission to apps
 
-You can grant permission in the Microsoft Entra ID center or in Graph Explorer, follow the steps in the [Workaround for granting permission to apps](#workaround-for-granting-permission-to-apps).
-
-This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. 
+You can grant permission in the Microsoft Entra admin center or in Graph Explorer. This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. You can also grant consent by using PowerShell. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
 
 ### Custom apps
 
@@ -72,16 +70,6 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 1.	Search for Group-OnPremisesSyncBehavior, and select **Consent** for the permission.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to Group-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-group-source-of-authority-configure/consent.png":::
-
-### Workaround for granting permission to apps
-
-You can grant consent by using PowerShell or Microsoft Graph. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
-
-## Validate that the permissions are granted 
-
-Sign in to the Azure portal, go to **Enterprise Applications** > ***App name***, and select **Permissions**:
-
-:::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/permission.png" alt-text="Screenshot of how to grant permission.":::
 
 ## Convert SOA for a test group
 
