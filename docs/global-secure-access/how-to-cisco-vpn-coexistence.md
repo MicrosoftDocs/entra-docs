@@ -70,6 +70,8 @@ To configure Microsoft and Cisco Secure Access for a unified SASE solution:
   2. Under Internet access policies, select **View**.
   3. Expand **Custom Bypass** and select **Add rule**.
   4. Leave destination type as FQDN and enter `*.vpn.sse.cisco.com` in Destination.
+  > [!NOTE]
+  > This FQDN is only required when using Cisco Secure Access VPN. If using ASA RAVPN enter the URL of your > SSLVPN endpoint and/or Public IP address.
   5. Select **Save**.
 
 ### Setting up Cisco Secure Access VPN
