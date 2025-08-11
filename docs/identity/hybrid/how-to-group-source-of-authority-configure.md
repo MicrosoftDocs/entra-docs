@@ -4,7 +4,7 @@ description: Learn how to convert group management from Active Directory Domain 
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 08/03/2025
+ms.date: 08/011/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -57,7 +57,13 @@ Follow these steps to grant `Group-OnPremisesSyncBehavior.ReadWrite.All` permiss
 ### Use Microsoft Entra admin center to grant permission to apps 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Entra ID** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
+1. Browse to **Enterprise Applications** > ***App name***.
+1. Select **Permissions** > **Grant admin consent for *tenant name***.
+1. Sign in again as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Review the list of permissions that require your consent, and select **Accept**.
+1. You can see the list of permissions that you granted:
+
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/permission.png" alt-text="Screenshot of how to grant permission.":::
 
 ### Use Graph Explorer to grant permission to apps 
 
@@ -73,7 +79,7 @@ You can grant consent by using PowerShell or Microsoft Graph. For more informati
 
 ## Validate that the permissions are granted 
 
-Sign in to the Azure portal, go to **Enterprise Applications** > **App Name**, and select **Security** > **Permissions**:
+Sign in to the Azure portal, go to **Enterprise Applications** > ***App name***, and select **Permissions**:
 
 :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/permission.png" alt-text="Screenshot of how to grant permission.":::
 
