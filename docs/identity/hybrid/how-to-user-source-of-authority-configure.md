@@ -215,7 +215,7 @@ Follow these steps to convert the SOA for a test user:
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/audit.png" alt-text="Screenshot of change to user properties in Audit Logs.":::
 
-1. Check that the group can be updated in the cloud.
+1. Check that the user can be updated in the cloud.
 
    ```https
    PATCH https://graph.microsoft.com/v1.0/users/{ID}/
@@ -224,11 +224,53 @@ Follow these steps to convert the SOA for a test user:
       }   
    ```
 
-   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/retry-update.png" alt-text="Screenshot of a retry to change group properties.":::
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/retry-update.png" alt-text="Screenshot of a retry to change user properties.":::
 
 1. Open Microsoft Entra admin center and confirm that the group **Source** property is **Cloud**.
 
-   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/source-cloud.png" alt-text="Screenshot of how to confirm group source property.":::
+   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/source-cloud.png" alt-text="Screenshot of how to confirm user source property.":::
+
+
+## Connect Sync client
+
+1. Run the following command to start Connect Sync: 
+
+   ```powershell
+   Start-ADSyncSyncCycle
+   ```
+
+1. To look at the user object with converted SOA, in the **Synchronization Service Manager**, go to **Connectors**:
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/connectors.png" alt-text="Screenshot of Connectors.":::
+
+1. Right-click **Active Directory Domain Services Connector**. Search for the user by the relative domain name (RDN) setting "CN=\<UserName\>":
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/search.png" alt-text="Screenshot of how to search for RDN.":::
+
+1. Double-click the searched entry, and select **Lineage** > **Metaverse Object Properties**.
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/lineage.png" alt-text="Screenshot of how to view lineage.":::
+
+1. Select **Connectors** and double-click the **Entra ID object** with "CN={\<Alphanumeric Characters\>}".
+
+1. You can see that the **blockOnPremisesSync** property is set to true on the Entra ID object. This property value means that any changes made in the corresponding AD DS object don't flow to the Entra ID object:
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/block.png" alt-text="Screenshot of how to block data flow.":::
+
+1. Let’s update the on-premises user object. We'll change the user name from *TestUserF1* to *TestUserF1.1*:
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/change-name.png" alt-text="Screenshot of how to change the object name.":::
+
+1. Run the following command to start Connect Sync: 
+
+   ```powershell
+   Start-ADSyncSyncCycle
+   ```
+
+1. Open Event viewer and filter the Application log for event ID 6956. This event ID is reserved to inform the customers that the object isn't synced to the cloud because the SOA of the object is in the cloud.
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
+
 
 
 ## "\<verb\> * \<noun\>"
