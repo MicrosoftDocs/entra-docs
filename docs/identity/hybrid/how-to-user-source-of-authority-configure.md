@@ -144,6 +144,12 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 
 You can grant consent by using PowerShell or Microsoft Graph. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
 
+## Validate that the permissions are granted 
+
+Sign in to the Azure portal, go to **Enterprise Applications** > **App Name**, and select **Security** > **Permissions**:
+
+:::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/permission.png" alt-text="Screenshot of how to validate a permission is granted.":::
+
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
