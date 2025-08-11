@@ -48,7 +48,7 @@ To configure Global Secure Access:
 
 ## Cisco Secure Access setup
 
-To configure Cisco Umbrella and SWG:
+To configure Cisco Umbrella:
 
 1. **Provision users and groups.**  
     Integration with Microsoft Entra ID is recommended. See [Microsoft Entra ID SAML configuration guide](https://docs.cisco.com/c/en/us/td/docs/security/secure-client/secure-client-5-0/configuration-guide/b_5-0_secure-client_config_guide/microsoft-entra-id-saml.html).
