@@ -46,8 +46,6 @@ We recommend that all of the following controls be implemented where licenses ar
 - [Require multifactor authentication for device join and device registration using user action](zero-trust-protect-identities.md#require-multifactor-authentication-for-device-join-and-device-registration-using-user-action)
 - [Enable Microsoft Entra ID security defaults](zero-trust-protect-identities.md#enable-microsoft-entra-id-security-defaults)
 
-
-
 ## Protect tenants and isolate production systems
 
 - [Permissions to create new tenants are limited to the Tenant Creator role](zero-trust-protect-tenants.md#permissions-to-create-new-tenants-are-limited-to-the-tenant-creator-role)
@@ -83,8 +81,6 @@ We recommend that all of the following controls be implemented where licenses ar
 - [Workload Identities are not assigned privileged roles](../includes/secure-recommendations/21836.md)
 - [Enterprise applications must require explicit assignment or scoped provisioning](../includes/secure-recommendations/21869.md)
 - [Conditional Access policies for Privileged Access Workstations are configured](../includes/secure-recommendations/21830.md)
-
-## Monitor and detect cyberthreats
 
 ## Monitor and detect cyberthreats
 
