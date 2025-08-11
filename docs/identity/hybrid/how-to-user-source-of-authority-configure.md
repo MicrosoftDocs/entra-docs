@@ -272,6 +272,55 @@ Follow these steps to convert the SOA for a test user:
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
 
 
+## Bulk updates for Group SOA
+
+You can use the following PowerShell script to automate User SOA updates by using app-based authentication.
+
+```powershell
+# Define your Microsoft Entra ID app details and tenant information
+$tenantId = ""
+$clientId = ""
+$certThumbprint = ""
+
+# Connect to Microsoft Graph as App-Only using a certificate. The app registration must have the User.Read.All User-OnPremisesSyncBehavior.ReadWrite.All permissions granted.
+Connect-MgGraph -ClientId $clientId -TenantId $tenantId -CertificateThumbprint $certThumbprint
+
+#Connect to Microsoft Graph using delegated permissions
+#Connect-MgGraph -Scopes "User.Read.All User-OnPremisesSyncBehavior.ReadWrite.All" -TenantId $tenantId
+
+# Define the user name you want to query
+$userName = "Ken Roy"
+
+# Retrieve the group using group name
+$user = Get-MgBetaUser -Filter "displayName eq '$userName'"
+
+# Ensure user is found
+if ($null -ne $user)
+{
+    $userObjectID = $($user.Id)
+    # Define the Microsoft Graph API endpoint for the user
+    $url = "https://graph.microsoft.com/beta/users/$userObjectID/onPremisesSyncBehavior"
+
+    # Define the JSON payload for the PATCH request
+    $jsonPayload = @{
+        isCloudManaged = "true"
+    } | ConvertTo-Json
+
+    # Make the PATCH request to update the JSON payload
+    Invoke-MgGraphRequest -Uri $url -Method Patch -ContentType "application/json" -Body $jsonPayload
+
+    $result = Invoke-MgGraphRequest -Method Get -Uri "https://graph.microsoft.com/beta/groups/$userObjectID/onPremisesSyncBehavior?`$select=id,isCloudManaged"
+
+    Write-Host "User Name: $($user.DisplayName)"
+    Write-Host "User ID: $($result.id)"
+    Write-Host "SOA Converted: $($result.isCloudManaged)"
+}
+else 
+{
+    Write-Warning "User '$userName' not found."
+}
+```
+
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
