@@ -82,6 +82,23 @@ With the delegate approvers option enabled, you can set up a delegate to approve
 
 ### Edit or remove a delegate
 
+To edit the delegate you'd: 
+
+1. Select Edit delegate on the Approvals page.
+
+1. Update the details listed on the page.
+
+1. Select Save and apply.
+
+To remove the delegate you'd: 
+
+1. Select Remove delegate. 
+
+1. Confirm the action. 
+
+Once confirmed, the delegate will no longer be able to respond to approvals.
+
+
 
 
 ## Next step
