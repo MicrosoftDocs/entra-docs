@@ -1,13 +1,12 @@
 ---
 title: Scenario - Using Microsoft Entra ID to secure access to SAP platforms and applications
 description: A guide for architects and IT administrators on how to secure access to SAP platforms and applications
-author: xstof
-manager: alberts
+author: MartinPankraz
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/26/2021
-ms.author: christoc
+ms.author: mapankra
 ms.custom: sfi-image-nochange
 ms.collection: 
 ---
@@ -261,26 +260,6 @@ If the certificates are allowed to expire, or when they are replaced in time but
 [Add an email notification address for certificate expiration](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md#add-email-notification-addresses-for-certificate-expiration) in Microsoft Entra ID and set it to a group mailbox so that it isn't sent to a single individual (who may even no longer have an account by the time the certificate is about to expire). By default, only the user who created the Enterprise Application will receive a notification.
 
 Consider building automation to execute the entire certificate rollover process. For example, one can periodically check for expiring certificates and replace them while updating all relying parties with the new metadata.
-
-## Using Azure AD B2C as the Identity Provider
-
-[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
-
-[Azure Active Directory B2C](/azure/active-directory-b2c/overview) provides business-to-customer identity as a service. Given that the integration with Azure AD B2C is similar to how you would allow enterprise users to sign in with Microsoft Entra ID, the recommendations above still mostly apply when you want to use Azure AD B2C for your customers, consumers or citizens and allow them to use their preferred social, enterprise, or local account identities. 
-
-There are a few important differences, however. Setting up Azure AD B2C as a corporate identity provider in IAS and configuring federation between both tenants is described in more detail in [this blog post](https://blogs.sap.com/2023/02/08/identity-federation-between-azure-ad-b2c-and-sap-cloud-identity-services-using-custom-policies/).
-
-### Registering a SAML application in Azure AD B2C
-
-Azure AD B2C doesn't have a gallery of enterprise applications that you can use to easily configure the trust relationship towards the Corporate Identity Provider in IAS. Instead, you will have to use [custom policies](/azure/active-directory-b2c/custom-policy-overview) to [register a SAML application](/azure/active-directory-b2c/saml-service-provider) in Azure AD B2C. This SAML application plays the same logical role as the enterprise application in Microsoft Entra ID, however, so the same guidance around rollover of SAML certificates applies, for example.
-
-### Authorization with Azure AD B2C
-
-Azure AD B2C doesn't natively support the use of groups to create collections of users that you can assign access to, which means that the guidance to [use Microsoft Entra groups for authorization through Role Collections in BTP](#3---use-azure-ad-groups-for-authorization-through-role-collections-in-iasbtp) has to be implemented differently.
-
-Fortunately, Azure AD B2C is highly customizable, so you can configure the SAML tokens it sends to IAS to include any custom information. For various options on supporting authorization claims, see the documentation accompanying the [Azure AD B2C App Roles sample](https://github.com/azure-ad-b2c/api-connector-samples/tree/main/Authorization-AppRoles), but in summary: through its [API Connector](/azure/active-directory-b2c/api-connectors-overview) extensibility mechanism you can optionally still use groups, app roles, or even a custom database to determine what the user is allowed to access.
-
-Regardless of where the authorization information comes from, it can then be emitted as the `Groups` attribute inside the SAML token by configuring that attribute name as the [default partner claim type on the claims schema](/azure/active-directory-b2c/claimsschema#defaultpartnerclaimtypes) or by overriding the [partner claim type on the output claims](/azure/active-directory-b2c/relyingparty#outputclaims). Note however that BTP allows you to [map Role Collections to User Attributes](https://help.sap.com/products/BTP/65de2977205c403bbc107264b8eccf4b/b3fbb1a9232d4cf99967a0b29dd85d4c.html), which means that *any* attribute name can be used for authorization decisions, even if you don't use the `Groups` attribute name.
 
 ## Next Steps
 
