@@ -4,7 +4,7 @@ description: Learn how to convert group management from Active Directory Domain 
 author: Justinha
 manager: dougeby
 ms.topic: how-to
-ms.date: 08/011/2025
+ms.date: 08/11/2025
 ms.author: justinha
 ms.reviewer: dhanyak
 ---
@@ -246,7 +246,7 @@ The following table explains the status for **isCloudManaged** and **onPremisesS
 
 Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
-Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
+Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to `true` and **isCloudManaged** is set to `false`.  
 Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **OnPremisesSyncEnabled** attribute value is set to `null`. 
 Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **OnPremisesSyncEnabled** is set to `null` until the sync client takes over the object.    
 Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, **isCloudManaged** is set to `false` and **onPremisesSyncEnabled** is set to `null`.
