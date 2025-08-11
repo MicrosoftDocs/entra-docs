@@ -64,9 +64,6 @@ To configure Cisco Umbrella:
   > 1. Open CMD prompt as an administrator and run these commands:
   > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
   > 1. `net stop csc_vpnagent && net stop acsock && net start csc_vpnagent`
-  >
-  >  These steps are only required during the initial installation or reinstallation of the Cisco Secure Client.
-
 
 ## Bypass configuration for coexistence
 
