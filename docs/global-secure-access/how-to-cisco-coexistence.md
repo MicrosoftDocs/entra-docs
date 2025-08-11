@@ -148,7 +148,7 @@ To configure Cisco Umbrella:
 
 **Global Secure Access configuration:**
 - Enable Internet Access and Microsoft Access forwarding profiles.
-- Install and configure the Global Secure Access client for Windows.
+- Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
 - Configure the required destinations to bypass Internet Security or Umbrella. See instructions for Cisco Secure Access portal or Umbrella portal.
