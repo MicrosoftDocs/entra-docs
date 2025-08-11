@@ -14,6 +14,8 @@ ms.reviewer: ramical
 ---
 # Protect tenants and isolate production systems with the Microsoft Entra Zero Trust assessment
 
+The patterns and practices associated with the "Protect tenants and isolate production systems" tenant from the Secure Future Initiative (SFI) focuses on establishing strong tenant boundaries and implementing isolation controls that safeguard your organization's identity infrastructure. This critical security domain addresses the need to limit tenant creation privileges, control external collaboration through guest access policies, and ensure proper segregation between production and non-production environments. By implementing these recommendations, organizations can prevent unauthorized tenant sprawl, minimize the risk of data exposure through misconfigured external partnerships, and maintain clear boundaries that protect sensitive resources from both internal and external threats. The following security recommendations help establish a robust foundation for tenant protection and system isolation within your Microsoft Entra environment.
+
 ## Zero Trust security recommendations
 
 ### Permissions to create new tenants are limited to the Tenant Creator role
