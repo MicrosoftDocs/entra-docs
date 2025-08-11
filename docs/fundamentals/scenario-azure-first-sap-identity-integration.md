@@ -45,7 +45,7 @@ Based on these assumptions, we focus mostly on the products and services present
 If you've been using SAP Identity Management (IDM), then you can migrate identity management scenarios from SAP IDM to Microsoft Entra. For more information, see [Migrate identity management scenarios from SAP IDM to Microsoft Entra](~/identity/app-provisioning/migrate-from-sap-idm.md).
 
 > [!WARNING]
-> Be aware of the SAP SAML assertion limits and impact of the length of SAP Cloud Foundry role collection names and amount of collections proxied by groups in SAP Cloud Identity Service. For more information, see SAP note [2732890](https://launchpad.support.sap.com/?sap-support-cross-site-visitor-id=b73c7292f9a46d52#/notes/2732890) in SAP for Me. Exceeded limits result in authorization issues.
+> Be aware of the SAP SAML assertion limits and impact of the length of SAP Cloud Foundry role collection names and number of collections proxied by groups in SAP Cloud Identity Service. For more information, see SAP note [2732890](https://launchpad.support.sap.com/?sap-support-cross-site-visitor-id=b73c7292f9a46d52#/notes/2732890) in SAP for Me. Exceeded limits result in authorization issues.
 
 ## Recommendations
 
@@ -168,7 +168,7 @@ In Microsoft Entra ID:
 - On the Microsoft Entra Enterprise Application representing the federation relation with IAS, configure the SAML User Attributes & Claims to [add a group claim for security groups](~/identity/hybrid/connect/how-to-connect-fed-group-claims.md#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration):
     - Set the Source attribute to "Group ID" and the Name to `Groups` (spelled exactly like this, with upper case 'G').
     - Further, in order to keep claims payloads small and to avoid running into the limitation whereby Microsoft Entra ID will limit the number of group claims to 150 in SAML assertions, we highly recommend limiting the groups returned in the claims to only those groups that explicitly were assigned:  
-        - Under "Which groups associated with the user should be returned in the claim?" answer with "Groups assigned to the application".Then for the groups you want to include as claims, assign them to the Enterprise Application using the "Users and Groups" section and selecting "Add user/group".
+        - Under "Which groups associated with the user should be returned in the claim?" answer with "Groups assigned to the application". Then for the groups you want to include as claims, assign them to the Enterprise Application using the "Users and Groups" section and selecting "Add user/group".
 
         ![Microsoft Entra group Claim configuration](./media/scenario-azure-first-sap-identity-integration/sap-aad-group-claim-configuration.png)
 
@@ -246,7 +246,7 @@ As discussed before, we recommend setting up a trust configuration in BTP toward
 
 ![Rolling over SAML Signing Certs](./media/scenario-azure-first-sap-identity-integration/sap-rollover-saml-signing-certs.png)
 
-SAP has example implementations for [client certificate notifications](https://blogs.sap.com/2017/12/06/sap-cloud-platform-integration-automated-notification-of-keystore-entries-reaching-expiry/) with SAP Cloud Integration and [near-expiry handling](https://blogs.sap.com/2019/03/01/sap-cloud-platform-integration-automated-notification-for-client-certificates-reaching-expiry/). This could be adapted with Azure Integration Services or PowerAutomate. However, they would need to be adapted to work with server certificates. Such approach requires a custom implementation.
+SAP has example implementations for [client certificate notifications](https://blogs.sap.com/2017/12/06/sap-cloud-platform-integration-automated-notification-of-keystore-entries-reaching-expiry/) with SAP Cloud Integration and [near-expiry handling](https://blogs.sap.com/2019/03/01/sap-cloud-platform-integration-automated-notification-for-client-certificates-reaching-expiry/). This could be adapted with Azure Integration Services or Power Automate. However, they would need to be adapted to work with server certificates. Such approach requires a custom implementation.
 
 #### Why this recommendation?
 
