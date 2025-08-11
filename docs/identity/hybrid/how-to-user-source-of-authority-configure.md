@@ -322,13 +322,64 @@ else
 ```
 
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+### Status of attributes after you convert SOA
+
+The following table explains the status for **isCloudManaged** and **onPremisesSyncEnabled** attributes after you convert the SOA of an object.
+
+Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
+-----|----------------------|----------------------|------------
+Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
+Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **OnPremisesSyncEnabled** attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **OnPremisesSyncEnabled** is set to `null` until the sync client takes over the object.    
+Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, **isCloudManaged** is set to `false` and **onPremisesSyncEnabled** is set to `null`.
+
+
+## Roll back SOA update
+
+> [!IMPORTANT] 
+> Make sure that the users that you roll back have no cloud references. Remove cloud users from SOA converted groups, and remove these groups from access packages before you roll back the users to AD DS. The sync client takes over the object in the next sync cycle.
+
+You can run this operation to roll back the SOA update and revert the SOA to on-premises. 
+
+   ```https
+   PATCH https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior
+      {
+        "isCloudManaged": false
+      }   
+   ```
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/rollback.png" alt-text="Screenshot of API call to revert SOA.":::
+
+> [!NOTE]
+> This change to "isCloudManaged: false" allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is finished only after *both* the API call and the next scheduled or forced run of Connect Sync are complete.
+
+### Validate the change in the Audit Logs
+
+Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
+
+:::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/audit-undo-changes.png" alt-text="Screenshot of Undo Changes in Audit Logs.":::
+
+## Validate in Connect Sync client
+
+1. Run the following command to start Connect Sync: 
+
+   ```powershell
+   Start-ADSyncSyncCycle
+   ```
+
+1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and blockOnPremisesSync = false, which means the object SOA is taken over by the on-premises again.
+
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
+
+## Limitations
+
+- **No reconciliation support for local AD groups**: An AD DS admin (or an application with sufficient permissions) can directly modify an AD DS group. If Group SOA is converted for the group, or if cloud security group provisioning to AD DS is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD DS changes are overwritten when group provisioning to AD DS runs.
+
+- **No dual write allowed**: After you start to manage the memberships for the converted group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD as a nested group under another AD DS group (OnPremGroupB) that's in scope for sync to Microsoft Entra ID, the membership references of group A aren't synced when sync happens for OnPremGroupB. The membership references aren't synced because the sync client doesn't know the cloud group membership references. This behavior is by design.
+
+- **No SOA conversion of nested groups**: If there are nested groups in AD DS, and you want to convert the SOA of the parent group or top group to Microsoft Entra ID, only the parent group SOA is converted. Nested groups in the parent group continue to be AD DS groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest in the hierarchy, and move up the tree.
+
+- **No support for extension attributes (1-15)**: Extension attributes 1–15 aren't supported on cloud security groups and aren't supported after SOA is converted.
 
 <!-- 5. Next step/Related content------------------------------------------------------------------------
 
