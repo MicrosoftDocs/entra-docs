@@ -26,7 +26,7 @@ This guide outlines how to configure and deploy Global Secure Access solutions a
 
 In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
 
-### Configuration 2: Private Access with Cisco Secure Access - Zero Trust Network Access (ZTNA), Domain Name System (DNS) Defense, and Secure Web Gateway (SWG)
+### Configuration 2: Private Access with Cisco Secure Access Internet and private application access
 
 In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Global Secure Access Private Access, while the Cisco Secure Client - Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Access. Web and DNS traffic is protected by Secure Access Secure Web Gateway (SWG) and DNS Defense (Umbrella).
 
