@@ -183,34 +183,31 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 8. Validate the RDP traffic is captured in Cisco logs and isn't shown in Global Secure Access logs.
 8. Stop collecting traffic and confirm correct traffic handling.
 
-### Configuration 3: Internet Access and Microsoft Access with Cisco Secure Access ZTNA
+### Configuration 3: Microsoft Access with Cisco Secure Access ZTNA, DNS, and SWG
 
 #### Global Secure Access configuration
 
-- Enable **Internet Access** and **Microsoft Access** forwarding profiles.
+- Enable Microsoft Access forwarding profile.
 - Install and configure the Global Secure Access client for Windows.
-- Add a custom bypass for Cisco Secure Access:
-  1. In the Global Secure Access admin center, go to **Connect > Traffic forwarding > Internet access profile > View**.
-  2. Expand **Custom Bypass**.
-  3. Add a rule for the destination: `*.zpc.sse.cisco.com`.
 
 #### Cisco Secure Access configuration
 
-- Deploy and configure Cisco Secure Client with Zero Trust Access module.
+- Configure required destinations to bypass Internet Security, including other Microsoft IPs and FQDNs.
+- Deploy and configure Cisco Secure Client with Zero Trust Access and Umbrella modules.
 - Add private resources and access policies.
-
-> [!NOTE]
-> No Cisco Secure Access DNS Defense or SWG in this scenario; Umbrella module isn't installed.
+- Verify client configurations as in Configuration 1.
 
 #### Test traffic flow
 
 1. Start collecting traffic in Global Secure Access client.
-2. Access `bing.com`, `salesforce.com`, `outlook.office365.com`.
-3. Verify Global Secure Access client captures traffic for these sites.
-4. In the Cisco Secure Access portal, validate traffic to these sites isn't captured.
-5. Access private resources via Cisco Secure Access ZTNA.
-6. Validate traffic logs in both portals.
-7. Stop collecting traffic and confirm Global Secure Access didn't handle private application traffic.
+2. Access `bing.com`, `salesforce.com` in browsers.
+3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
+4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
+5. Access `outlook.office365.com`, `<yourtenantdomain>.sharepoint.com`.
+6. Validate Global Secure Access traffic logs show these sites; Cisco Secure Access doesn't.
+7. Access private resources via Cisco Secure Access ZTNA.
+8. Validate traffic logs in both portals.
+9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
 
 ### Configuration 4: Internet Access, Microsoft Access, and Private Access with Cisco Secure Access ZTNA and DNS Defense (Umbrella)
 
