@@ -230,6 +230,7 @@ If the security token type is **Proof of Possession (POP)** for your custom task
     |Claim  |Value  |
     |---------|---------|
     |Issuer     |  https://sts.windows.net/(Tenant ID)/       |
+    |Audience     |  https://management.azure.com/       |
     |appid     |  00001111-aaaa-2222-bbbb-3333cccc4444   |
     |m     |  POST   |
     |u     |  management.azure.com   |
