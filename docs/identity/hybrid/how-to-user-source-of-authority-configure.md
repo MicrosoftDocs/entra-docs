@@ -1,5 +1,5 @@
 ---
-title: Configure Group Source of Authority (SOA) in Microsoft Entra ID (Preview)
+title: Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)
 description: Learn how to convert user management from Active Directory Domain Services (AD DS) to Microsoft Entra ID by using user Source of Authority (SOA).
 author: owinfreyATL
 ms.author: owinfrey
