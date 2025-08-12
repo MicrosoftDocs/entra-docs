@@ -215,7 +215,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
 4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
 5. Access private applications via Global Secure Access (for example, SMB file share).
-6. Access private resources via Cisco Secure Access ZTNA (for example, RDP session).
+6. Access private resources via Cisco Secure Private Access (for example, RDP session).
 7. Validate the SMB file share traffic is captured in Global Secure Access logs and isn't shown in Cisco logs.
 8. Validate the RDP traffic is captured in Cisco logs and isn't shown in Global Secure Access logs.
 8. Stop collecting traffic and confirm correct traffic handling.
