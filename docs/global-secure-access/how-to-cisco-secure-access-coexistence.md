@@ -131,7 +131,8 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 
 5. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
-## Configuration details
+#### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
+1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list:
 
 ### Configuration 1: Microsoft Entra Private Access with Cisco Secure Access Internet Security and DNS protection
 
