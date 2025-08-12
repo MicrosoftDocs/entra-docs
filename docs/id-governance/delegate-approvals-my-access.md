@@ -67,17 +67,17 @@ To enable approvers to delegate in My Access, you'd do the following steps:
 
 With the delegate approvers option enabled, you can set up a delegate to approve access on your behalf. To set up a delegate, you'd do the following steps:
 
-1.	Sign in to the My Access portal.
+1.	Sign in to the [My Access portal](https://myaccess.microsoft.com).
 
-1.	Select the Approvals page.
+1.	On the left menu, select the **Approvals** page.
 
-1.	Select Delegate approvals.
+1.	Select **Delegate approvals**.
 
 1.	In the modal:
     1.	Enter the name, or email, of the delegate.
-    1.	Set the start and end time (or select No end date).
+    1.	Set the start and end time (or select No end date) for delegate approval.
 
-1.	Select Delegate.
+1.	Select **Delegate**.
 
 1.	A toast notification confirms the action. The active delegation is reflected on the Overview page and the Approvals page.
 
@@ -86,17 +86,25 @@ With the delegate approvers option enabled, you can set up a delegate to approve
 
 To edit the delegate, you'd: 
 
-1. Select Edit delegate on the Approvals page.
+1. Sign in to the [My Access portal](https://myaccess.microsoft.com).
 
-1. Update the details listed on the page.
+1. On the left menu, select the **Approvals** page.
 
-1. Select Save and apply.
+1. Select **Edit delegate** on the Approvals page.
+
+1. Update the delegate to another user.
+
+1. Select **Save**.
 
 To remove the delegate, you'd: 
 
-1. Select Remove delegate. 
+1. Sign in to the [My Access portal](https://myaccess.microsoft.com).
 
-1. Confirm the action. 
+1. On the left menu, select the **Approvals** page.
+
+1. Select **Remove delegate**. 
+
+1. Select **Save**. 
 
 Once confirmed, the delegate is no longer be able to respond to approvals.
 
