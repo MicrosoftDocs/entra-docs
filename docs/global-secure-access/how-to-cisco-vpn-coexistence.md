@@ -102,7 +102,8 @@ Configure split-include for Cisco ASA Remote Access VPN:
   - **Send All DNS Lookups Through Tunnel**: `No`
   - **Policy**: `Tunnel Network List Below`
   - **Network List**: Select the access list that includes your private application IP ranges.
-6. Edit the access control list (ACL) to permit the private application IP ranges (for example, `10.101.0.0/16` and `6.6.0.0/16`).
+6. Edit the access control list (ACL) to permit the private application IP ranges (for example, `10.101.0.0/16`) 
+7. Add the Global Secure Access client synthetic IP range `6.6.0.0/16`.
 7. Save and apply your changes.
 
 > [!NOTE]
