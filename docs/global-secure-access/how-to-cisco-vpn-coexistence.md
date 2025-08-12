@@ -29,7 +29,7 @@ This guide focuses on two Cisco remote access VPN platforms:
 
 ### Cisco Secure Access VPN
 
-#### Scenario 1: Internet and Microsoft traffic with Cisco Secure Access VPN for private access
+#### Scenario 1: Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPN for private access
 
 Global Secure Access handles internet and Microsoft traffic. Cisco Secure Access VPN captures only private application traffic.
 
