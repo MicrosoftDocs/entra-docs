@@ -980,7 +980,7 @@ IgnoreFlowIfNullOrEmpty(IIF(IsPresent([extensionAttribute9]),IIF(DateDiff("d", N
 
 10. **Use regex patterns carefully** and validate them in online regex testers before implementation.
 
-## Additional resources
+## More resources
 
 - [Microsoft Entra ID Application Provisioning Functions Reference](functions-for-customizing-application-data.md)
 - [SuccessFactors Integration Reference](sap-successfactors-inbound-provisioning-tutorial.md)

@@ -85,7 +85,7 @@ Join(" ",Replace([HereditarySuffix], ,"(?<CountryISOCode>.*)_(?<suffix1>.*)_(?<s
 
 ### Text case conversion
 
-**Scenario 1**: You need to convert text to proper case but handle apostrophes correctly (e.g., "st john's hospital" should become "St John's Hospital").
+**Scenario 1**: You need to convert text to proper case but handle apostrophes correctly (for example, "st john's hospital" should become "St John's Hospital").
 
 **Target attribute**: company
 
@@ -111,7 +111,7 @@ ToLower(NormalizeDiacritics(StripSpaces(Join(".", [PreferredFirstName], [Preferr
 
 ### Country-specific naming logic
 
-**Scenario 1**: You need to apply different naming conventions based on the user's country (e.g., "Last, First" for certain countries).
+**Scenario 1**: You need to apply different naming conventions based on the user's country (for example, "Last, First" for certain countries).
 
 **Target attribute**: displayName, cn
 
@@ -240,7 +240,7 @@ Switch(Replace([telephoneNumber], , "\\+(?<isdCode>\\d* )(?<phoneNumber>.*)", , 
 - **Alternative Input**: [telephoneNumber] = "+1 555-123-4567"
 - **Alternative Output**: `USA`
 
-**Scenario 3**: You need to writeback the phone number that Microsoft Teams generates and sets in Microsoft Entra ID (e.g. +4926180001111). In this phone number, there is no space between the CountryCode and the actual phone number. You can use the following regex parsing mechanism to extract country codes relevant to your organization and use it to set the Workday `CountryCodeName`. 
+**Scenario 3**: You need to writeback the phone number that Microsoft Teams generates and sets in Microsoft Entra ID (for example +4926180001111). In this phone number, there is no space between the CountryCode and the actual phone number. You can use the following regex parsing mechanism to extract country codes relevant to your organization and use it to set the Workday `CountryCodeName`. 
 
 **Target attribute**: CountryCodeName
 
@@ -260,7 +260,7 @@ Switch(Replace([telephoneNumber], , "\+(?<isdCode>49|44|43|1|352|91|31|32|55|237
 
 ### Phone number formatting for different systems
 
-**Scenario 1**: You need to process phone numbers that include extensions (e.g., "+1 (206) 291-8163 x8125").
+**Scenario 1**: You need to process phone numbers that include extensions (for example, "+1 (206) 291-8163 x8125").
 
 **Target attribute**: telephoneNumber
 
@@ -460,7 +460,7 @@ NumFromDate(Join("",FormatDateTime(DateAdd("yyyy", 5, CDate([StatusHireDate])), 
 
 ### Conditional Date-Based Logic
 
-**Scenario 1**: You want to flow department information only if the employee has started work (hire date is in the past).
+**Scenario 1**: You want to flow department information only if the employee has started work (hire date has passed).
 
 **Target attribute**: department
 
@@ -589,7 +589,7 @@ SelectUniqueValue (
 ```
 
 **Example:**
-- **Input Values**: Generated GUID converted to Base64 (e.g., "mV8dXr...")
+- **Input Values**: Generated GUID converted to Base64 (for example, "mV8dXr...")
 - **Output of Expression**: `mVAdX` (digits replaced with 'A', or with 'B'/'C' if first option is taken)
 
 **Scenario 2**: You want to generate a random string that starts with "D" followed by 4 alphabetic characters.
@@ -694,7 +694,7 @@ SelectUniqueValue(
 
 ### Hide from Address Lists Logic
 
-This section describes how to set the boolean attribute `msExchHideFromAddressLists`. Use all caps "TRUE" or "FALSE" to set the boolean attribute. Using any other value will result in `HybridSynchronizationActiveDirectoryInvalidParameter` error. 
+This section describes how to set the boolean attribute `msExchHideFromAddressLists`. Use all caps "TRUE" or "FALSE" to set the boolean attribute. Using any other value results in a `HybridSynchronizationActiveDirectoryInvalidParameter` error. 
 
 **Scenario 1**: You want to set `msExchHideFromAddressLists` based on active account status of Workday user. 
 
@@ -723,7 +723,7 @@ IIF(DateDiff("d", Now(), CDate([StatusHireDate])) >= 0, "TRUE", "FALSE")
 - **Input Values**: [StatusHireDate] = "2025-07-31" (current date: 2025-07-30)
 - **Output of Expression**: `TRUE` (hide from address lists as hire date is in the future)
 - **Alternative Input**: [StatusHireDate] = "2025-07-31" (current date: 2025-08-01)
-- **Alternative Output**: `FALSE` (show in address lists as hire date has passed)
+- **Alternative Output**: `FALSE` (show in address lists as hire date is in the past)
 
 
 ### Multi-Valued Attribute Setting
@@ -777,7 +777,7 @@ IgnoreFlowIfNullOrEmpty(IIF(DateDiff("d", Now(), CDate([employeeHireDate])) > 0,
 
 7. **Always validate regular expressions** in an online regex tester before implementing.
 
-## Additional resources
+## More resources
 
 - [Microsoft Entra ID Application Provisioning Functions Reference](functions-for-customizing-application-data.md)
 - [Workday Integration Reference](../saas-apps/workday-inbound-tutorial.md)
