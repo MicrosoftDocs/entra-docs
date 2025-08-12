@@ -9,7 +9,7 @@ ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 08/07/2025
 ms.reviewer: dhanyak
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+#CustomerIntent: As a user administrator, I want to change the source of authority for a synced hybrid user so that their attributes can be fully managed in the cloud.
 ---
 
 <!--
@@ -67,8 +67,6 @@ Required: Make Prerequisites the first H2 after the H1.
 * If there aren't any prerequisites, list "None" in plain text, not as a bulleted item.
 
 -->
-
-## Prerequisites
 
 ## Prerequisites
 
