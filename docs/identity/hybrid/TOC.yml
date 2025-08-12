@@ -123,9 +123,9 @@
           items:  
           - name: Configure User SOA
             href: how-to-user-source-of-authority-configure.md
-          - name: Audit and monitor Group SOA
+          - name: Audit and monitor User SOA
             href: 
-          - name: Remove unused AD groups
+          - name: Prep Your environment for User SOA
             href: 
           - name: Set up self-service group management
             href:    
