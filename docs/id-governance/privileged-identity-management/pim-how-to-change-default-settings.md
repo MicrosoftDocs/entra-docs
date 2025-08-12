@@ -116,7 +116,7 @@ If all Privileged Role Administrators/Global Administrators have eligible assign
 
 >[!IMPORTANT]
 >You will be locked out of your tenant if all of the following conditions are true:
-> - All Privileged Role Administrators/Global Administrators have eligible assignments (i.e., none are active).
+> - All Privileged Role Administrators/Global Administrators have eligible assignments, but none are active.
 > - Approval is required for activation.
 > - No approvers are configured.
 
