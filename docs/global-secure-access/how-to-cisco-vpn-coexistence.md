@@ -178,6 +178,17 @@ After both clients are installed and running, verify that Global Secure Access a
 9. Validate SMB traffic is captured in Global Secure Access logs and not in Cisco Secure Access logs.
 10. Stop collecting traffic in Global Secure Access client.
 
+## Cisco ASA Remote Access VPN
+
+### Coexistence scenarios
+
+#### Scenario 1: Internet and Microsoft traffic with Cisco ASA Remote Access VPN for private access
+
+Global Secure Access handles internet and Microsoft traffic. Cisco ASA captures only private application traffic.
+
+#### Scenario 2:  Private Access, Internet Access, and Microsoft Access with Cisco ASA Remote Access VPN
+
+Both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client VPN. Global Secure Access handles internet and Microsoft traffic.
 ### Setting up Cisco ASA VPN
 
 #### Split-Include configuration
