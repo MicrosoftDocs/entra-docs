@@ -339,7 +339,7 @@ Switch([Active], , "1", IIF(DateDiff("d", Now(), CDate([StatusHireDate])) <= 14,
 - **Alternative Output**: `True` (account disabled as hire date is more than 14 days away)
 
 
-### Handling Hire Rescinds
+### Handling hire rescinds
 
 **Scenario 1**: You need to handle hire rescind scenarios when setting the `accountDisabled` attribute. You want to implement the logic: 
   * If Terminated = 1 in workday then accountDisabled = True
@@ -375,10 +375,10 @@ Switch([StatusTerminated], "False", "1", "True", "0",
 
 
 
-## Account Status Logic for Microsoft Entra ID
+## Account status logic for Microsoft Entra ID
 The expressions in this section are applicable to the `accountEnabled` attribute that is part of "Workday to Microsoft Entra ID user provisioning app". For setting the `accountDisabled` attribute that is part of "Workday to on-premises Active Directory user provisioning app", refer to the section [Account Status Logic for Active Directory](#account-status-logic-for-active-directory).   
 
-### Basic Account Status Management
+### Basic account status management
 
 **Scenario 1**: You want to disable Microsoft Entra ID accounts for users who are not active in Workday. 
 
@@ -394,7 +394,7 @@ Switch([Active], , "1", "True", "0", "False")
 - **Alternative Input**: [Active] = "0"
 - **Alternative Output**: `False` (account disabled)
 
-### Rehire Processing
+### Rehire processing
 
 **Scenario 1**: You need to handle rehire scenarios where accounts should only be enabled on or after the hire date.
 
@@ -412,7 +412,7 @@ Switch([Active], ,
 - **Alternative Input**: [Active] = "1", [StatusRehire] = "1", [StatusHireDate] = "2025-07-15"
 - **Alternative Output**: `True` (account enabled as hire date has passed)
 
-### Pre-Hire Account Creation
+### Pre-hire account creation
 
 **Scenario 1**: You want to create accounts for future hires but keep them disabled until 14 days before their start date.
 
@@ -430,9 +430,9 @@ Switch([Active], , "1", IIF(DateDiff("d", Now(), CDate([StatusHireDate])) <= 14,
 
 
 
-## Date Functions
+## Date functions
 
-### Date Formatting and Conversion
+### Date formatting and conversion
 
 **Scenario 1**: You need to convert a Workday contract end date to Active Directory format for the accountExpires attribute, so the account expires on the contract end date. 
 
@@ -458,7 +458,7 @@ NumFromDate(Join("",FormatDateTime(DateAdd("yyyy", 5, CDate([StatusHireDate])), 
 - **Input Values**: [StatusHireDate] = "2025-01-15"
 - **Output of Expression**: `139418879990000000` (numeric representation of 2030-01-15 23:59:59-05:00)
 
-### Conditional Date-Based Logic
+### Conditional date-based logic
 
 **Scenario 1**: You want to flow department information only if the employee has started work (hire date has passed).
 
@@ -490,7 +490,7 @@ IIF(DateDiff("d", Now(), CDate([StatusHireDate])) <= 14, "False", IgnoreObjectFl
 
 ## Organizational Unit (OU) Assignment
 
-### Simple OU Assignment
+### Simple OU assignment
 
 **Scenario 1**: You want to place users in different OUs based on their city.
 
@@ -511,7 +511,7 @@ Switch([City], "OU=Default,OU=Users,DC=contoso,DC=com",
 - **Alternative Input**: [City] = "Chicago"
 - **Alternative Output**: `OU=Default,OU=Users,DC=contoso,DC=com` (default for unspecified cities)
 
-### Complex OU Structure
+### Complex OU structure
 
 **Scenario 1**: You need to create a complex OU structure based on department, cost center, and country.
 
@@ -545,7 +545,7 @@ Join("",
 - **Alternative Input**: [SupervisoryOrganization] = "Sales", [CostCenter] = "Marketing", [CountryReferenceTwoLetter] = "UK"
 - **Alternative Output**: `OU=Users,DC=contoso,DC=com` (defaults when values don't match)
 
-### Terminated User OU Assignment
+### Terminated user OU assignment
 
 **Scenario 1**: You want to move terminated users to a special OU on their termination date.
 
@@ -572,9 +572,9 @@ IIF(DateDiff("d", Now(),CDate(Switch([StatusTerminationLastDayOfWork],[StatusTer
 - **Alternative Input**: [StatusTerminationLastDayOfWork] = "2025-08-15", [City] = "Dallas"
 - **Alternative Output**: `OU=Dallas,OU=Users,DC=contoso,DC=com` (remains in normal OU as termination date is in future)
 
-## Random ID Generation
+## Random ID generation
 
-### GUID-Based Random Generation
+### GUID-based random generation
 
 **Scenario 1**: You need to generate a random 5-character string that doesn't contain digits.
 
@@ -608,7 +608,7 @@ SelectUniqueValue(
 - **Input Values**: Generated GUID converted to Base64 containing alphabetic sequence "mVdX"
 - **Output of Expression**: `DMVDX` (or different if first option is taken)
 
-### Numeric ID Generation
+### Numeric ID generation
 
 **Scenario 1**: You need to generate a random 4-digit number from a GUID.
 
@@ -626,9 +626,9 @@ SelectUniqueValue(
 - **Input Values**: Generated GUID like "a1b2c3d4-e5f6-7890-1234-567890abcdef"
 - **Output of Expression**: `D7890` (or `D1234`, `D5678`, etc. depending on which 4-digit sequence is matched first)
 
-## Name Processing
+## Name processing
 
-### Display Name Generation
+### Display name generation
 
 **Scenario 1**: You want to create a display name in "Last, First" format.
 
@@ -654,7 +654,7 @@ Join("", [PreferredLastName], ",", [PreferredFirstName], " ", Mid([PreferredMidd
 - **Input Values**: [PreferredLastName] = "Johnson", [PreferredFirstName] = "Sarah", [PreferredMiddleName] = "Elizabeth", [WorkerID] = "12345"
 - **Output of Expression**: `Johnson,Sarah E-12345`
 
-### Common Name (CN) Generation with Uniqueness
+### Common name (CN) generation with uniqueness
 
 **Scenario 1**: You want to generate a unique common name with fallback options for duplicates.
 
@@ -672,7 +672,7 @@ SelectUniqueValue(
 - **Input Values**: [PreferredFirstName] = "José", [PreferredLastName] = "García", [PreferredMiddleName] = "Antonio"
 - **Output of Expression**: `Jose Garcia` (or `Jose A Garcia` if first option is taken, or `Jose Antonio Garcia` if first two are taken)
 
-### SamAccountName Generation
+### SamAccountName generation
 
 **Scenario 1**: You want to create a 20-character samAccountName using first initial and last name with numeric suffixes for duplicates.
 
@@ -690,9 +690,9 @@ SelectUniqueValue(
 - **Input Values**: [FirstName] = "María José", [LastName] = "González-López"
 - **Output of Expression**: `mgonzalezlopez` (or `mgonzalezlopez1` if first option is taken, or `mgonzalezlopez2` if first two are taken)
 
-## Advanced Scenarios
+## Advanced scenarios
 
-### Hide from Address Lists Logic
+### Hide from address lists logic
 
 This section describes how to set the boolean attribute `msExchHideFromAddressLists`. Use all caps "TRUE" or "FALSE" to set the boolean attribute. Using any other value results in a `HybridSynchronizationActiveDirectoryInvalidParameter` error. 
 
@@ -725,8 +725,7 @@ IIF(DateDiff("d", Now(), CDate([StatusHireDate])) >= 0, "TRUE", "FALSE")
 - **Alternative Input**: [StatusHireDate] = "2025-07-31" (current date: 2025-08-01)
 - **Alternative Output**: `FALSE` (show in address lists as hire date is in the past)
 
-
-### Multi-Valued Attribute Setting
+### Multi-valued attribute setting
 
 **Scenario 1**: You need to set multiple values for the msExchPoliciesExcluded attribute in Active Directory.
 
@@ -744,7 +743,64 @@ Split(
 - **Output of Expression**: `["a8cccada-a108-47ae-bf9a-f130499aa4cb", "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"]`
 
 
-### Writeback Scenarios
+### Writeback scenarios
+
+**Scenario 1**: You want to write back the username to Workday only if the employee hire date has passed.
+
+**Target attribute**: Username
+
+```
+IgnoreFlowIfNullOrEmpty(IIF(DateDiff("d", Now(), CDate([employeeHireDate])) > 0, "", [userPrincipalName]))
+```
+
+**Example:**
+- **Input Values**: [employeeHireDate] = "2025-07-15", [userPrincipalName] = "user@contoso.com" (current date: 2025-07-30)
+- **Output of Expression**: `user@contoso.com` (hire date has passed, write back username)
+- **Alternative Input**: [employeeHireDate] = "2025-08-15", [userPrincipalName] = "future@contoso.com"
+- **Alternative Output**: *(empty - ignored, hire date is in future)*
+
+
+## Best practices
+
+1. **Always use SelectUniqueValue** for attributes that require uniqueness (like UPN, samAccountName, email).
+
+2. **Handle null and empty values** using functions like `IsNullOrEmpty`, `IsPresent`, or `Switch` statements.
+
+3. **Use NormalizeDiacritics** when processing names with special characters to ensure compatibility.
+
+4. **Test date logic thoroughly** as different time zones and date formats can affect results.
+
+5. **Use IgnoreFlowIfNullOrEmpty** when you want to skip attribute updates for empty values.
+
+6. **Consider using Switch instead of nested IIF** statements for better readability.
+
+7. **Always validate regular expressions** in an online regex tester before implementing.
+
+## More resources
+
+- [Microsoft Entra ID Application Provisioning Functions Reference](functions-for-customizing-application-data.md)
+- [Workday Integration Reference](../saas-apps/workday-inbound-tutorial.md)
+- [Expression Builder in Application Provisioning](expression-builder.md)
+
+### Multi-valued attribute setting
+
+**Scenario 1**: You need to set multiple values for the msExchPoliciesExcluded attribute in Active Directory.
+
+**Target attribute**: msExchPoliciesExcluded
+
+```
+Split(
+    Join(",","a8cccada-a108-47ae-bf9a-f130499aa4cb","{26491cfc-9e50-4857-861b-0cb8df22b5d7}"),
+    ","
+)
+```
+
+**Example:**
+- **Input Values**: Static GUID values
+- **Output of Expression**: `["a8cccada-a108-47ae-bf9a-f130499aa4cb", "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"]`
+
+
+### Writeback scenarios
 
 **Scenario 1**: You want to write back the username to Workday only if the employee hire date has passed.
 
