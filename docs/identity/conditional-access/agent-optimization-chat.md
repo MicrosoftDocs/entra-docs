@@ -70,5 +70,4 @@ With the Conditional Access optimization agent chat interface, you can:
 ## Related content
 
 - [Conditional Access optimization agent overview](overview.md)
-- [Conditional Access optimization agent phased rollout](agent-phased-rollout.md)
-- [Manage Conditional Access policies](../../conditional-access/manage-policies.md)
+- [Conditional Access optimization agent phased rollout](agent-optimization-phased-rollout.md)
