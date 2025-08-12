@@ -127,7 +127,7 @@
             href: 
           - name: Prep Your environment for User SOA
             href: 
-          - name: Set up self-service group management
+          - name: Identify supported Applications and authentication types
             href:    
     - name: Provision Microsoft Entra ID to Active Directory
       items:
