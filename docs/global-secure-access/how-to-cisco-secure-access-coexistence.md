@@ -73,7 +73,6 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
   > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
   > 1. `net stop csc_vpnagent && net stop acsock && net start csc_vpnagent`
 
-- Set up and configure destinations to bypass Secure Access Internet Security and allow coexistence with Global Secure Access.
 
 ## Cisco Secure Access bypasses
 
