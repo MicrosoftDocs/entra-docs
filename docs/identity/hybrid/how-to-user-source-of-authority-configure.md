@@ -389,14 +389,6 @@ Optional: You have two options for manually curated links in this pattern: Next 
 
 -->
 
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
 
 ## Related content
 
