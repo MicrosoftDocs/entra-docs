@@ -187,7 +187,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 6. Validate the SMB file share traffic is captured in Global Secure Access logs and isn't shown in Cisco logs.
 7. Stop collecting traffic and confirm correct traffic handling.
 
-### Configuration 2: Private Access with Cisco Secure Access ZTNA, DNS Defense, and SWG
+### Configuration 2: Private Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
 #### Global Secure Access configuration
 
