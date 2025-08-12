@@ -119,7 +119,7 @@ If all Privileged Role Administrators/Global Administrators have eligible assign
 > - All Privileged Role Administrators/Global Administrators have eligible assignments, but none are active.
 > - Approval is required for activation.
 > - No approvers are configured.
-> <br><strong>Avoid this situation</strong> by configuring emergency access accounts and configuring specific approvers.
+> <br><strong>Avoid this situation</strong> by configuring [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) and configuring specific approvers.
 
 In this scenario, there are no active users who can approve activation, creating a circular dependency. To avoid this, configure emergency access accounts and specify approvers.
 
