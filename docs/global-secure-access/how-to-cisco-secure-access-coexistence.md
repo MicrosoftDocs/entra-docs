@@ -261,7 +261,8 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 - Add private resources and access policies.
 
 > [!NOTE]
-> No Cisco Secure Access DNS Defense or SWG in this scenario; Umbrella module isn't installed.
+> No Cisco Secure Internet Access in this scenario; Umbrella module should not be installed.
+
 #### Test traffic flow
 
 1. Start collecting traffic in Global Secure Access client.
