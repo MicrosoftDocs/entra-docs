@@ -146,7 +146,7 @@ This detection is discovered using information provided by [Microsoft Defender
 
 ### Microsoft Entra threat intelligence (sign-in) 
 
-This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. 
+Threat intelligence in Microsoft Entra indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. These detections show up as "Microsoft Entra threat intelligence" in logs and ID Protection reports.
 
 - Calculated in real-time or offline
 - License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
