@@ -30,7 +30,7 @@ When an approver sets a delegate, the following happens:
 - Delegation can be time-bound or indefinite.
 - Delegates are notified when they're assigned.
 - Requestors are notified when their request is approved by a delegate.
-- Delegation is always bull; approvers cannot delegate specific types of approvals.
+- Delegation is always bulk; approvers cannot delegate specific types of approvals.
 
 
 ### What delegates can see
