@@ -780,5 +780,5 @@ IgnoreFlowIfNullOrEmpty(IIF(DateDiff("d", Now(), CDate([employeeHireDate])) > 0,
 ## Additional resources
 
 - [Microsoft Entra ID Application Provisioning Functions Reference](functions-for-customizing-application-data.md)
-- [Workday Integration Reference](~/saas-apps/workday-inbound-tutorial)
+- [Workday Integration Reference](../saas-apps/workday-inbound-tutorial.md)
 - [Expression Builder in Application Provisioning](expression-builder.md)
