@@ -35,6 +35,47 @@ Global Secure Access handles internet and Microsoft traffic. Cisco Secure Access
 ### Scenario 2: Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco Secure Access VPN
 
 Both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while private applications hosted through Cisco Secure Access VPN are accessed through Cisco Secure Client VPN. Global Secure Access handles internet and Microsoft traffic.
+## Prerequisites
+
+To configure Microsoft and Cisco Secure Access VPN for a unified SASE solution:
+
+1. Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
+2. Set up a Cisco remote access VPN profile.
+3. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses.
+
+### Setting up Global Secure Access
+
+- Enable and disable different traffic forwarding profiles for your Microsoft Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
+- Install and configure the Microsoft Entra private network connector. See [How to configure connectors](how-to-configure-connectors.md).
+
+> [!NOTE] 
+   > Private network connectors are required for Microsoft Entra Private Access applications.
+   
+- Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
+- Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
+
+- Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN service FQDN.
+
+  1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
+  2. Under Internet access policies, select **View**.
+  3. Expand **Custom Bypass** and select **Add rule**.
+  4. Leave destination type as FQDN and enter `*.vpn.sse.cisco.com` in Destination.
+  5. Select **Save**.
+
+### Setting up Cisco Secure Access VPN
+
+#### Split-Include configuration
+
+- Create a Network Tunnel to establish connectivity to the Cisco Secure Access platform. See [Manage Network Tunnel Groups](https://docs.cisco.com/network-tunnel-groups).
+- Configure the VPN profile Traffic Steering:
+  1. From the Cisco Secure Access portal, go to **Connect > End User Connectivity > Virtual Private Network**.
+  2. Select your VPN Profile, then **Traffic Steering**.
+  3. In Tunnel Mode, select **Bypass Secure Access** and add exceptions for your private application subnets and `6.6.0.0/16`.
+  4. In DNS Mode, select **Split DNS** and add the domain suffix of your private applications.
+- Install the Cisco Secure Client software. See [Cisco Secure Client Download and Installation guide](https://docs.cisco.com/secure-client-download).
+
+> [!NOTE]
+> Currently **Split-Include** is the only supported Cisco Secure Access VPN configuration. Other coexistence configurations may be added as they are validated.
 
 ### Cisco ASA Remote Access VPN
 
