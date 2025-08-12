@@ -3,8 +3,8 @@ title: On-premises password writeback with self-service password reset
 description: Learn how password change or reset events in Microsoft Entra ID can be written back to an on-premises directory environment
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/04/2025
+ms.topic: article
+ms.date: 07/21/2025
 ms.author: justinha
 author: justinha
 manager: dougeby
@@ -25,6 +25,9 @@ Password writeback is supported in environments that use the following hybrid id
 * [Pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta.md)
 * [Active Directory Federation Services](~/identity/hybrid/connect/how-to-connect-fed-management.md)
 
+> [!NOTE]
+> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. 
+
 Password writeback provides the following features:
 
 * **Enforcement of on-premises Active Directory Domain Services (AD DS) password policies**: When a user resets their password, it's checked to ensure it meets your on-premises AD DS policy before committing it to that directory. This review includes checking the history, complexity, age, password filters, and any other password restrictions that you define in AD DS.
@@ -40,7 +43,7 @@ Password writeback provides the following features:
 To get started with SSPR writeback, complete either one or both of the following tutorials:
 
 - [Tutorial: Enable self-service password reset (SSPR) writeback](tutorial-enable-sspr-writeback.md)
-- [Tutorial: Enable Microsoft Entra Connect cloud sync self-service password reset writeback to an on-premises environment (Preview)](tutorial-enable-cloud-sync-sspr-writeback.md)
+- [Tutorial: Enable Microsoft Entra Connect cloud sync self-service password reset writeback to an on-premises environment](tutorial-enable-cloud-sync-sspr-writeback.md)
 
 <a name='azure-ad-connect-and-cloud-sync-side-by-side-deployment'></a>
 

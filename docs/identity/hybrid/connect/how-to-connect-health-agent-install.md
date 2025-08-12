@@ -1,14 +1,14 @@
 ---
 title: Install the Microsoft Entra Connect Health agents in Microsoft Entra ID
 description: Learn how to install the Microsoft Entra Connect Health agents for Active Directory Federation Services (AD FS) and for sync.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.topic: how-to
-ms.author: billmath
+ms.author: jomondi
 ms.custom: sfi-ga-nochange
 ---
 # Install the Microsoft Entra Connect Health agents
@@ -61,8 +61,8 @@ These URLs allow communication with Microsoft Entra Connect Health service endpo
 
 | Domain environment | Required Azure service endpoints |
 | --- | --- |
-| General public | - `*.blob.core.windows.net` <br />- `*.aadconnecthealth.azure.com` <br />- `**.servicebus.windows.net` - Port: 5671 (If 5671 is blocked, the agent falls back to 443, but we recommend that you use port 5671. This endpoint isn't required in the latest version of the agent.)<br />- `*.adhybridhealth.azure.com/`<br />- `https://management.azure.com` <br />- `https://policykeyservice.dc.ad.msft.net/` <br />- `https://login.windows.net` <br />- `https://login.microsoftonline.com` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.net` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
-| Azure Government | - `*.blob.core.usgovcloudapi.net` <br />- `*.servicebus.usgovcloudapi.net` <br />- `*.aadconnecthealth.microsoftazure.us` <br />- `https://management.usgovcloudapi.net` <br />- `https://policykeyservice.aadcdi.azure.us` <br />- `https://login.microsoftonline.us` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.us` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
+| General public | - `*.blob.core.windows.net` <br />- `*.aadconnecthealth.azure.com` <br />- `**.servicebus.windows.net` - Port: 5671 (If 5671 is blocked, the agent falls back to 443, but we recommend that you use port 5671. This endpoint isn't required in the latest version of the agent.)<br />- `*.adhybridhealth.azure.com/`<br />- `https://management.azure.com` <br />- `https://login.windows.net` <br />- `https://login.microsoftonline.com` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.net` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
+| Azure Government | - `*.blob.core.usgovcloudapi.net` <br />- `*.servicebus.usgovcloudapi.net` <br />- `*.aadconnecthealth.microsoftazure.us` <br />- `https://management.usgovcloudapi.net` <br />- `https://login.microsoftonline.us` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.us` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
 
 ## Download the agents
 

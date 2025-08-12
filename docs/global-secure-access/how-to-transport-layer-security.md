@@ -148,10 +148,10 @@ extendedKeyUsage = serverAuth
 ```
 
 2. Create a new root certificate authority and private key using the following *openssl.cnf* config file:   
-```openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCA.key -sha256 -days 365 -out rootCA.pem -subj "/C=US/ST=US/O=Self Signed/CN=Self Signed Root CA" -config openssl.cnf -extensions rootCA_ext```
+```openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCAchain.key -sha256 -days 370 -out rootCAchain.pem -subj "/C=US/ST=US/O=Self Signed/CN=Self Signed Root CA" -config openssl.cnf -extensions rootCA_ext```
 1. Sign the CSR using the following command:
- ```openssl x509 -req -in <CSR file> -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out signedcertificate.pem -days 365 -sha256 -extfile openssl.cnf -extensions signedCA_ext```
-1. Upload the signed certificates according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
+ ```openssl x509 -req -in <CSR file> -CA rootCAchain.pem -CAkey rootCAchain.key -CAcreateserial -out signedcertificate.pem -days 370 -sha256 -extfile openssl.cnf -extensions signedCA_ext```
+1. Upload the signed certificates (```signedcertificate.pem```and ```rootCAchain.pem```) according to the steps in [Create a CSR and upload the signed certificate for TLS termination](#step-1-global-secure-access-admin-create-a-csr-and-upload-the-signed-certificate-for-tls-termination).
 
 ## Related content
 

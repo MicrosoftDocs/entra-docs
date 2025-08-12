@@ -1,17 +1,16 @@
 ---
-# required metadata
-
 title: Investigate app risk in Microsoft Security Copilot
 description: Use Microsoft Security Copilot and Microsoft Entra skills to quickly investigate potential risky applications.
 keywords:
-author: rwike77
-ms.author: ryanwi
-manager: celestedg
+author: shlipsey3
+ms.author: sarahlipsey
+manager: pmwongera
 ms.date: 12/12/2024
-ms.topic: conceptual
+ms.update-cycle: 180-days
+ms.topic: how-to
 ms.service: entra
-ms.custom: microsoft-copilot
-ms.collection: ce-skilling-ai-copilot
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 
 # Customer intent: As a SOC analyst or IT admin, I want to learn how to use the Microsoft Entra skills in Microsoft Security Copilot so that I can proactively identify potential app risks.
 ---

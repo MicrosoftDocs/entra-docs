@@ -2,7 +2,7 @@
 title: "Sign in users in a Node.js/Express web app"
 description: In this tutorial, you add support for signing-in users in a web app.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 11/09/2022
 ms.service: identity-platform

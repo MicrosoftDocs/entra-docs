@@ -2,13 +2,13 @@
 metadata:
   title: Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ
   description: This document describes frequently asked questions for cloud sync.
-  author: billmath
-  manager: femila
+  author: omondiatieno
+  manager: mwongerapk
   ms.service: entra-id
   ms.topic: faq
   ms.date: 12/17/2024
   ms.subservice: hybrid-cloud-sync
-  ms.author: billmath
+  ms.author: jomondi
   
 title: Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ
 summary: |

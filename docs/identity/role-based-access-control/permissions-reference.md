@@ -1,14 +1,14 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-author: barclayn
+author: rolyon
 manager: pmwongera
 search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 07/09/2025
-ms.author: barclayn
+ms.date: 08/12/2025
+ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ---
@@ -107,6 +107,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Password Administrator](#password-administrator) | Can reset passwords for non-administrators and Password Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 966707d0-3269-4727-9be2-8c3a10f19b9d |
 > | [People Administrator](#people-administrator) | Manage profile photos of users and people settings for all users in the organization. | 024906de-61e5-49c8-8572-40335f1e0e10 |
 > | [Permissions Management Administrator](#permissions-management-administrator) | Manage all aspects of Microsoft Entra Permissions Management. | af78dc32-cf4d-46f9-ba4e-4428526346b5 |
+> | [Places Administrator](#places-administrator) | Manage all aspects of the Microsoft Places service. | 78b0ccd1-afc2-4f92-9116-b41aedd09592 |
 > | [Power Platform Administrator](#power-platform-administrator) | Can create and manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate. | 11648597-926c-4cf3-9c36-bcebb0ba8dcc |
 > | [Printer Administrator](#printer-administrator) | Can manage all aspects of printers and printer connectors. | 644ef478-e28f-4e28-b9dc-3fdde9aa0b1f |
 > | [Printer Technician](#printer-technician) | Can register and unregister printers and update printer status. | e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477 |
@@ -465,6 +466,10 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 ## Permissions Management Administrator
 
 [!INCLUDE [permissions-management-administrator](includes/permissions-management-administrator.md)]
+
+## Places Administrator
+
+[!INCLUDE [places-administrator](includes/places-administrator.md)]
 
 ## Power Platform Administrator
 

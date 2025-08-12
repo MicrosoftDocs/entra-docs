@@ -7,7 +7,7 @@ ms.topic: troubleshooting
 ms.date: 08/13/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: calebb, martinco
 ms.custom: sfi-image-nochange
 ---

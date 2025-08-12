@@ -1,15 +1,17 @@
 ---
 title: 'Microsoft Entra Connect: Version release history'
 description: This article lists all releases of Microsoft Entra Connect and Azure AD Sync.
-author: billmath
+author: omondiatieno
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
-manager: femila
+manager: mwongerapk
 ms.topic: reference
-ms.date: 04/09/2025
+ms.date: 08/01/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
+
+#customer-intent: As a Microsoft Entra administrator, I want to learn about the latest version of Microsoft Entra Connect, so that I can keep my environment up to date.
 ---
 
 # Microsoft Entra Connect: Version release history
@@ -65,10 +67,10 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|27 Mar 2026 (12 months after release of 2.4.131.0)|
 |[2.4.131.0](#241310)|26 May 2026 (12 months after release of 2.5.3.0)|
-|[2.5.3.0](#2530)||
+|[2.5.3.0](#2530)|31 July 2026 (12 months after release of 2.5.76.0)|
+|[2.5.76.0](#25760)||
 
 **All other versions are not supported**
-
 
 If you run a retired version of Microsoft Entra Connect, it might unexpectedly stop working. You also might not have the latest security fixes, performance improvements, troubleshooting and diagnostic tools, and service enhancements. If you require support, we might not be able to provide you with the level of service your organization needs.
 
@@ -88,6 +90,26 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## 2.5.76.0
+
+### Release status
+
+07/31/2025: Released for download via the Microsoft Entra admin center. Existing installations will be auto-upgrades to this build starting August 14th, 2025, and will be done in multiple phases.  
+
+
+### Added Features 
+
+- Application based authentication to Microsoft Entra ID is now generally available and will be the default option. See [Authenticate to Microsoft Entra ID by Using Application Identity](authenticate-application-id.md). 
+- Administrator action logging is now generally available, providing Windows audit events for all administrative changes made on Microsoft Entra Connect. See [Auditing administrator events in Microsoft Entra Connect Sync](admin-audit-logging.md). 
+- Group Source of Authority conversion feature allowing administrators to transfer on-premises Active Directory groups to become cloud only groups managed through Microsoft Entra ID (Public Preview). See [Group Source of Authority overview](../concept-source-of-authority-overview.md). 
+
+### Bug fixes
+
+- The issue in selecting and de-selecting child OUs, affecting Active Directory multi-domain scenarios in the Connect Sync wizard, is fixed.  
+- The issue where users were prompted to set up Azure MFA instead of on-premises ADFS MFA, due to federated domain settings and MFA flag resets during updates, has been resolved. 
+- Resolved an issue that prevented some Microsoft Entra Connect Sync instances from auto-upgrading by ensuring the agent identifier is correctly sourced when missing.
+- Fixed issue in the configuration wizard that resulted in **Directory synchronization for this directory currently has a mismatch in sync enabled and sync status** error when DirSync Status is in **PendingEnabled**
 
 
 ## 2.5.3.0
@@ -125,7 +147,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 01/15/2025: Released for download and autoupgrade
 
 ### Added Features
-- Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
+- Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Microsoft Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
 
 ### Bug fixes
 - Fixed the removal of the SSPR configuration when changes are made on the Azure AD Connector and saved in the Sync Service manager UI
@@ -808,22 +830,6 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
 - Fresh Microsoft Entra Connect installations use the Export Deletion Threshold stored in the cloud if there's one available and if there isn't a different one passed in.
 - We fixed an issue where Microsoft Entra Connect wouldn't read Active Directory displayName changes of hybrid-joined devices.
 
-## 1.5.45.0
-
-### Release status
-
-07/29/2020: Released for download
-
-### Functional changes
-
-This is a bug fix release. There are no functional changes in this release.
-
-### Fixed issues
-
-- We fixed an issue where admin can't enable seamless single sign-on if the AZUREADSSOACC computer account is already present in Active Directory.
-- We fixed an issue that caused a staging error during V2 API delta import for a conflicting object that was repaired via the Health portal.
-- We fixed an issue in the import/export configuration where a disabled custom rule was imported as enabled.
-
-## Next steps
+## Related content
 
 Learn more about how to [integrate your on-premises identities with Microsoft Entra ID](../whatis-hybrid-identity.md).

@@ -2,11 +2,11 @@
 title: Introduction to identity
 description:  Learn the fundamental concepts of identity and access management (IAM).  Learn about identities, resources, authentication, authorization, permissions, identity providers, and more.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 03/13/2025
 ms.author: cwerner
 ms.reviewer: 

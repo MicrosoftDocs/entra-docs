@@ -4,7 +4,7 @@ description: This operations reference guide describes the checks and actions yo
 author: martincoetzer
 manager: travisgr
 ms.service: entra
-ms.topic: conceptual
+ms.topic: article
 ms.subservice: architecture
 ms.date: 08/17/2022
 ms.author: martinco
