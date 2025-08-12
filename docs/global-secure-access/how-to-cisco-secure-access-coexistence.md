@@ -220,7 +220,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 8. Validate the RDP traffic is captured in Cisco logs and isn't shown in Global Secure Access logs.
 8. Stop collecting traffic and confirm correct traffic handling.
 
-### Configuration 3: Microsoft Access with Cisco Secure Access ZTNA, DNS, and SWG
+### Configuration 3: Microsoft Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
 #### Global Secure Access configuration
 
