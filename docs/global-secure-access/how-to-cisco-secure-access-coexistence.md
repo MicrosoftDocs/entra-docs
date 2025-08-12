@@ -73,7 +73,21 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
   > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
   > 1. `net stop csc_vpnagent && net stop acsock && net start csc_vpnagent`
 
+## Bypass configuration for coexistence
 
+### Bypass Cisco Secure Access/Umbrella required IPs in Global Secure Access
+
+1. In the Microsoft Entra admin center, go to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
+2. Under **Internet access policies**, select **View**.
+3. Expand **Custom Bypass** and select **Add rule**.
+4. Enter the following IPs:
+    ```
+    208.67.222.222, 208.67.220.220, 67.215.64.0/19, 146.112.0.0/16, 155.190.0.0/16, 185.60.84.0/22, 204.194.232.0/21, 208.67.216.0/21, 208.69.32.0/21
+    ```
+5. Add a rule for the destination: `*.zpc.sse.cisco.com`
+6. Select **Save**.
+
+### Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access
 ## Cisco Secure Access bypasses
 
 To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Steering to the destination list.
