@@ -86,26 +86,29 @@
           href: cloud-sync/tutorial-single-forest.md
         - name: Integrate an existing forest and a new forest with a single Microsoft Entra tenant
           href: cloud-sync/tutorial-existing-forest.md
-    - name: Cloud-first approach with Group Source of Authority (SOA) 
+    - name: Cloud-first approach with Source of Authority
+      expanded: true
       items:
-      - name: Concepts
+      - name: Cloud-first approach with Group Source of Authority (SOA) 
         items:
-        - name: Group SOA overview
-          href: concept-source-of-authority-overview.md
-        - name: How Group SOA works
-          href: concept-group-source-of-authority-how-it-works.md
-        - name: Guidance for using Group SOA
-          href: concept-group-source-of-authority-guidance.md
-      - name: How to guides
-        items:
-        - name: Configure Group SOA
-          href: how-to-group-source-of-authority-configure.md
-        - name: Audit and monitor Group SOA
-          href: how-to-source-of-authority-auditing-monitoring.md
-        - name: Remove unused AD groups
-          href: how-to-active-directory-group-cleanup.md
-        - name: Set up self-service group management
-          href: how-to-source-of-authority-self-service-group-management.md
+        - name: Concepts
+          items:
+          - name: Group SOA overview
+            href: concept-source-of-authority-overview.md
+          - name: How Group SOA works
+            href: concept-group-source-of-authority-how-it-works.md
+          - name: Guidance for using Group SOA
+            href: concept-group-source-of-authority-guidance.md
+        - name: How to guides
+          items:
+          - name: Configure Group SOA
+            href: how-to-group-source-of-authority-configure.md
+          - name: Audit and monitor Group SOA
+            href: how-to-source-of-authority-auditing-monitoring.md
+          - name: Remove unused AD groups
+            href: how-to-active-directory-group-cleanup.md
+          - name: Set up self-service group management
+            href: how-to-source-of-authority-self-service-group-management.md
     - name: Provision Microsoft Entra ID to Active Directory
       items:
         - name: Provision groups to Active Directory
