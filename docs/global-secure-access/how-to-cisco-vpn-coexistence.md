@@ -87,7 +87,7 @@ To configure Microsoft and Cisco remote access solutions for a unified SASE solu
 - Install the Cisco Secure Client software. See [Cisco Secure Client Download and Installation guide](https://docs.cisco.com/secure-client-download).
 
 > [!NOTE]
-> Other ways to configure Tunnel Mode and DNS Mode exist. For the scenarios in this guide, only **Bypass Secure Access** and **Split DNS (Split-Include)** are selected. The configuration is the only currently supported Cisco Secure Access VPN configuration.
+> Currently **Split-Include** is the only supported Cisco Secure Access VPN configuration. Other coexistence configurations may be added as they are validated.
 
 ### Setting up Cisco ASA VPN
 
