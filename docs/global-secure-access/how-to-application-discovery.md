@@ -3,7 +3,7 @@ title: Application Discovery for Global Secure Access
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/11/2025
+ms.date: 08/12/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -55,7 +55,7 @@ To access recommendations for Application discovery:
 1. Browse to **Identity** > **Overview**.
 1. Select the **Recommendations** tab.
 1. Select the recommendation for Application discovery: **Onboard new discovered application segments to enterprise applications**.
-:::image type="content" source="media/how-to-application-discovery/recommendation-onboard-discovered.png" alt-text="Screenshot of the Recommendations tab in the Microsoft Entra admin center, showing the Application discovery recommendation to onboard new discovered application segments to enterprise applications.":::   
+:::image type="content" source="media/how-to-application-discovery/recommendation-onboard-discovered.png" alt-text="Screenshot of the Recommendations tab, showing the recommendation to onboard new discovered application segments to enterprise applications.":::   
 1. Review the recommendation details and follow the suggested **Action plan**.
 :::image type="content" source="media/how-to-application-discovery/recommendation-action-plan.png" alt-text="Screenshot of the impacted resources and the recommended action plan." lightbox="media/how-to-application-discovery/recommendation-action-plan-expanded.png":::   
 
