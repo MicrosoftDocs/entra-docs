@@ -7,12 +7,12 @@ ms.service: entra-id-governance
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 08/11/2025
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+#CustomerIntent: As an access package approver, I want to delegate approvals so that designated individuals can approve when I am not available to.
 ---
 
 # Delegate Approvals in My Access (Preview)
 
-Approvals delegation in My Access allows approvers to assign another individual to respond to access package approval requests on their behalf. This feature helps maintain productivity when approvers are unavailable due to leave, travel, or other commitments.
+Approval delegation in My Access allows approvers to assign another individual to respond to access package approval requests on their behalf. This feature helps maintain productivity when approvers are unavailable due to leave, travel, or other commitments.
 
 > [!NOTE]
 > This feature applies only to approvals. Access review delegation isn't supported.
@@ -30,7 +30,7 @@ When an approver sets a delegate, the following happens:
 - Delegation can be time-bound or indefinite.
 - Delegates are notified when they're assigned.
 - Requestors are notified when their request is approved by a delegate.
-- Delegation is always bulk; approvers cannot delegate specific types of approvals.
+- Delegation is always bulk; approvers can't delegate specific types of approvals.
 
 
 ### What delegates can see
