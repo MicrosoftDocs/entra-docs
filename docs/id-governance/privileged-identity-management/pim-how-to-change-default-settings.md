@@ -110,9 +110,17 @@ You can require users to enter a support ticket number when they activate the el
 
 ### Require approval to activate
 
-We recommend requiring approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, active Privileged Role Administrator/Global Administrators become the default approvers.
+We recommend requiring approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, active Privileged Role Administrators/Global Administrators become the default approvers.
 
-If all Privileged Role Administrators/Global Administrators have eligible assignments, approval is required for activation. If the list of approvers is not configured – you will be locked out of the tenant. Only active Privileged Role Administrators/Global Administrators can approve activation and you won’t have them due to a circular dependency. Avoid this situation by configuring [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) and configuring specific approvers.
+If all Privileged Role Administrators/Global Administrators have eligible assignments, approval is required for activation. If the list of approvers is not configured, you will be locked out of the tenant. Only active Privileged Role Administrators/Global Administrators can approve activation and you won’t have them due to a circular dependency. Avoid this situation by configuring [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) and configuring specific approvers.
+
+>[!IMPORTANT]
+>You will be locked out of your tenant if all of the following conditions are true:
+> - All Privileged Role Administrators/Global Administrators have eligible assignments (i.e., none are active).
+> - Approval is required for activation.
+> - No approvers are configured.
+
+In this scenario, there are no active users who can approve activation, creating a circular dependency. To avoid this, configure emergency access accounts and specify approvers.
 
 To learn more about approvals, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](./pim-approval-workflow.md).
 
