@@ -1,16 +1,16 @@
 ---
 title: 'Microsoft Entra Connect: Design concepts'
 description: This topic details certain implementation design areas
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 4114a6c0-f96a-493c-be74-1153666ce6c9
 ms.service: entra-id
 ms.custom: azure-ad-connect, sfi-image-nochange
-ms.topic: conceptual
+ms.topic: article
 ms.tgt_pltfrm: na
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ---
 # Microsoft Entra Connect: Design concepts
 The purpose of this document is to describe areas that must be considered while configuring Microsoft Entra Connect. This document is a deep dive on certain areas and these concepts are briefly described in other documents as well.

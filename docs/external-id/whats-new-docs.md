@@ -18,6 +18,17 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 # [External ID in external tenants](#tab/external-tenants)
 
+## July 2025
+
+### New article
+
+- [Supported features in workforce and external tenants](customers/how-to-add-enterprise-application.md)
+
+### Updated articles
+
+- [Register a SAML app in your external tenant](customers/how-to-register-saml-app.md) - Enterprise applications and SAML SSO are generally available
+- [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added enterprise applications update
+
 ## June 2025
 
 ### Updated articles
@@ -36,7 +47,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 ## March 2025
 
-### New articles
+### New article
 
 - [Migrating users to Microsoft Entra External ID](customers/how-to-migrate-users.md)
 
@@ -53,6 +64,12 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 - [Supported features in workforce and external tenants](customers/concept-supported-features-customers.md) - Added default permissions
 
 # [External ID in workforce tenants](#tab/workforce-tenants)
+
+## July 2025
+
+### Updated articles
+
+- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Updated authentication experience for guest users
 
 ## March 2025
 
@@ -73,12 +90,5 @@ Welcome to what's new in documentation for Microsoft Entra External ID. This art
 
 - [Add federation with SAML/WS-Fed identity providers](direct-federation.md) - Editorial updates
 - [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Global Administrator role update
-
-## December 2024
-
-### Updated articles
-
-- [Leave an organization where you have a guest account](leave-the-organization.md) - Added additional support options
-- [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated pricing information
 
 ---

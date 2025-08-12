@@ -5,7 +5,7 @@ customer intent: As a Microsoft Partner, I want to deploy Microsoft Entra Privat
 author: jricketts
 manager: martinco
 ms.service: global-secure-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/06/2025
 ms.author: jricketts
 ---

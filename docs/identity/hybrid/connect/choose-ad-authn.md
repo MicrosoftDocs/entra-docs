@@ -2,11 +2,11 @@
 title: Authentication for Microsoft Entra hybrid identity solutions
 description: This guide helps CEOs, CIOs, CISOs, Chief Identity Architects, Enterprise Architects, and Security and IT decision makers responsible for choosing an authentication method for their Microsoft Entra hybrid identity solution in medium to large organizations.
 keywords:
-author: billmath
-ms.author: billmath
+author: omondiatieno
+ms.author: jomondi
 ms.date: 04/09/2025
-manager: femila
-ms.topic: article
+manager: mwongerapk
+ms.topic: how-to
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ---

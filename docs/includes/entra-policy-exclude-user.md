@@ -6,7 +6,7 @@ ms.date: 09/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ---
 Conditional Access policies are powerful tools, we recommend excluding the following accounts from your policies:
 

@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 02/07/2024
 ms.author: gasinh
 ---

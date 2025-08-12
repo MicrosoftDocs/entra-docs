@@ -3,11 +3,11 @@ title: Microsoft Entra Conditional Access token protection explained
 description: Learn how to secure your environment with token protection in Microsoft Entra Conditional Access policies.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/27/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: sgrandhi
 ms.custom: sfi-image-nochange
 ---
@@ -32,10 +32,7 @@ Token protection creates a cryptographically secure tie between the token and th
 
 ## Requirements
 
-[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
-
-> [!NOTE]
-> Token protection enforcement is part of Microsoft Entra ID Protection and requires Microsoft Entra ID P2 licenses at general availability.
+[!INCLUDE [Microsoft Entra ID P1 license](~/includes/entra-p1-license.md)]
 
 The following devices and applications support accessing resources on which a token protection Conditional Access policy is applied:
 

@@ -1,15 +1,15 @@
 ---
 title: 'Microsoft Entra Connect: Supported topologies'
 description: This topic details supported and unsupported topologies for Microsoft Entra Connect
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 1034c000-59f2-4fc8-8137-2416fa5e4bfe
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 # Topologies for Microsoft Entra Connect

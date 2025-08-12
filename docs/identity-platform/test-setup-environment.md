@@ -2,7 +2,7 @@
 title: Set up a test environment for your app
 description: Learn how to set up a Microsoft Entra test environment so you can test your application integrated with Microsoft identity platform. Evaluate whether you need a separate tenant for testing or if you can use your production tenant.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.date: 01/24/2025
 ms.reviewer: 

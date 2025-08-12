@@ -1,15 +1,15 @@
 ---
 title: 'Microsoft Entra Connect Sync: Understanding the default configuration'
 description: This article describes the default configuration in Microsoft Entra Connect Sync.
-author: billmath
-manager: femila
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: ed876f22-6892-4b9d-acbe-6a2d112f1cd1
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra Connect Sync: Understanding the default configuration

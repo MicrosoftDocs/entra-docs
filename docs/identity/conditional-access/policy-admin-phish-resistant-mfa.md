@@ -9,7 +9,7 @@ ms.date: 09/30/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Require phishing-resistant multifactor authentication for administrators

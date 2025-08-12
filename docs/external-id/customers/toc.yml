@@ -29,8 +29,14 @@ items:
             href: /entra/identity-platform/quickstart-single-page-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
       - name: Native authentication
         items:
-          - name: Sign in users
-            href: /entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+          - name: Use APIs
+            items:
+            - name: Sign in users
+              href: /entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+          - name: Use SDK
+            items:
+              - name: Sign in users in a React SPA
+                href: /entra/identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
   - name: Web app
     items:
       - name: Sign in users
@@ -130,14 +136,36 @@ items:
           items:
             - name: React
               items:
+                - name: Use APIs
+                  items:
+                    - name: Sign up
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Set up local CORS
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Sign in
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Reset password
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Use SDK
+                  items:
+                    - name: Sign up
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Sign in
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Reset password
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sdk-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    - name: Support web fallback
+                      href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+            - name: Angular
+              items:
                 - name: Sign up
-                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
-                - name: Set up local CORS
-                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Sign in
-                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Reset password
-                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-angular-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant 
+                - name: Support web fallback
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app
       items: 
         - name: Node/Express.js
@@ -311,11 +339,17 @@ items:
         href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-      - name: Register a SAML app
-        href: how-to-register-saml-app.md
+      - name: Enterprise applications
+        items:
+          - name: Add an enterprise application
+            href: how-to-add-enterprise-application.md
+          - name: Register a SAML app
+            href: how-to-register-saml-app.md
       - name: Add a sign-up and sign-in flow
         href: how-to-user-flow-sign-up-sign-in-customers.md
-        displayName: disable sign-up, disable sign up 
+      - name: Disable sign-up in a user flow
+        href: how-to-disable-sign-up-user-flow.md
+        displayName: disable sign up 
       - name: Add an application to the user flow
         href: how-to-user-flow-add-application.md
       - name: Test the user flow
@@ -376,6 +410,8 @@ items:
                     displayName: rbac, roles, roles claim, groups claim
           - name: Native authentication
             items:
+              - name: Set up local CORS
+                href: /entra/identity-platform/how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               - name: Set up CORS in test
                 href: /entra/identity-platform/how-to-native-authentication-cors-solution-test-environment?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
               - name: Set up CORS in production

@@ -9,7 +9,7 @@ ms.date: 04/01/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: femila
+manager: dougeby
 ms.reviewer: lhuangnorth
 ---
 # Protect security info registration with Conditional Access policy
