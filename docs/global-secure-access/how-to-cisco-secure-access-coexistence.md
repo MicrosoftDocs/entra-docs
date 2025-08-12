@@ -232,7 +232,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 - Configure required destinations to bypass Internet Security, including other Microsoft IPs and FQDNs.
 - Deploy and configure Cisco Secure Client with Zero Trust Access and Umbrella modules.
 - Add private resources and access policies.
-- Verify client configurations as in Configuration 1.
+- Verify client configurations as in Configuration 2.
 
 #### Test traffic flow
 
