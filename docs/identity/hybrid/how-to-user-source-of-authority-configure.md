@@ -373,13 +373,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 ## Limitations
 
-- **No reconciliation support for local AD groups**: An AD DS admin (or an application with sufficient permissions) can directly modify an AD DS group. If Group SOA is converted for the group, or if cloud security group provisioning to AD DS is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD DS changes are overwritten when group provisioning to AD DS runs.
 
-- **No dual write allowed**: After you start to manage the memberships for the converted group (say cloud group A) from Microsoft Entra ID, and you provision this group to AD as a nested group under another AD DS group (OnPremGroupB) that's in scope for sync to Microsoft Entra ID, the membership references of group A aren't synced when sync happens for OnPremGroupB. The membership references aren't synced because the sync client doesn't know the cloud group membership references. This behavior is by design.
-
-- **No SOA conversion of nested groups**: If there are nested groups in AD DS, and you want to convert the SOA of the parent group or top group to Microsoft Entra ID, only the parent group SOA is converted. Nested groups in the parent group continue to be AD DS groups. You need to convert the SOA of any nested groups one-by-one. We recommend you start with the group that is lowest in the hierarchy, and move up the tree.
-
-- **No support for extension attributes (1-15)**: Extension attributes 1–15 aren't supported on cloud security groups and aren't supported after SOA is converted.
 
 <!-- 5. Next step/Related content------------------------------------------------------------------------
 
