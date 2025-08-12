@@ -84,7 +84,7 @@ With the delegate approvers option enabled, you can set up a delegate to approve
 
 ### Edit or remove a delegate
 
-To edit the delegate, you'd: 
+#### To edit the delegate, you'd: 
 
 1. Sign in to the [My Access portal](https://myaccess.microsoft.com).
 
@@ -96,7 +96,7 @@ To edit the delegate, you'd:
 
 1. Select **Save**.
 
-To remove the delegate, you'd: 
+### To remove the delegate, you'd: 
 
 1. Sign in to the [My Access portal](https://myaccess.microsoft.com).
 
