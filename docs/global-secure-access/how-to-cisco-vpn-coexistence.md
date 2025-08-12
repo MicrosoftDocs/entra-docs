@@ -28,11 +28,11 @@ This guide focuses on two Cisco remote access VPN platforms:
 ## Cisco Secure Access VPN - Coexistence scenarios
 
 
-#### Scenario 1: Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPN for private access
+### Scenario 1: Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPN for private access
 
 Global Secure Access handles internet and Microsoft traffic. Cisco Secure Access VPN captures only private application traffic.
 
-#### Scenario 2: Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco Secure Access VPN
+### Scenario 2: Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco Secure Access VPN
 
 Both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while private applications hosted through Cisco Secure Access VPN are accessed through Cisco Secure Client VPN. Global Secure Access handles internet and Microsoft traffic.
 
