@@ -37,8 +37,6 @@ Global Secure Access manages all Microsoft 365 traffic. The Cisco Secure Client 
 ### ### Configuration 4: Internet Access and Microsoft Access with Cisco Secure Private Access
 
 Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access handles only Private Access with the Cisco Secure Client - Zero Trust Network Access (ZTNA) module.
-> [!NOTE]
-  > There's currently an issue with macOS preventing coexistence between Global Secure Access and Cisco Secure Access ZTNA.
 ## Prerequisites
 
 To configure Global Secure Access and Cisco Secure Access for a unified SASE solution:
