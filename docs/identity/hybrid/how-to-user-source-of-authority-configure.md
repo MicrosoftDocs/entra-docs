@@ -117,19 +117,31 @@ Download the Microsoft Entra Provisioning agent with build version [1.1.1370.0](
 
 1. Follow the [instructions to configure provisioning from AD DS to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
 
-
 ## Grant permission to apps
 
->[!Important] 
-> A known issue might prevent you from viewing the new permission associated with Source of Authority conversion feature in the Microsoft Entra admin center. If you can't view the permissions in the Microsoft Entra ID center or in Graph Explorer, follow the steps in the [Workaround for granting permission to apps](#workaround-for-granting-permission-to-apps).
-
-This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. 
+You can grant permission in the Microsoft Entra admin center or in Graph Explorer. This highly privileged operation requires the Application Administrator or Cloud Application Administrator role. You can also grant consent by using PowerShell. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
 
 ### Custom apps
 
 Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permission to the corresponding app. For more information about how to add new permissions to your app registration and grant consent, see [Update an app's requested permissions in Microsoft Entra ID](/entra/identity-platform/howto-update-permissions). 
 
-### Microsoft Graph Explorer
+### Use Microsoft Entra admin center to grant permission to apps 
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+
+1. Browse to **Enterprise Applications** > ***App name***.
+
+1. Select **Permissions** > **Grant admin consent for *tenant name***.
+
+1. Sign in again as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) or a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+
+1. Review the list of permissions that require your consent, and select **Accept**.
+
+1. You can see the list of permissions that you granted:
+
+:::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/permission.png" alt-text="Screenshot of how to validate a permission is granted.":::
+
+### Use Microsoft Graph Explorer to grant permission to apps 
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in as an [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
 
@@ -137,16 +149,6 @@ Follow these steps to grant `User-OnPremisesSyncBehavior.ReadWrite.All` permissi
 
 1. Search for User-OnPremisesSyncBehavior, and select **Consent** for the permission.
     :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/consent.png" alt-text="Screenshot of how to grant consent to user-OnPremisesSyncBehavior.ReadWrite permission." lightbox="media/how-to-user-source-of-authority-configure/consent.png":::
-
-### Workaround for granting permission to apps
-
-You can grant consent by using PowerShell or Microsoft Graph. For more information, see [Grant consent on behalf of a single user](/entra/identity/enterprise-apps/grant-consent-single-user?pivots=ms-graph).
-
-## Validate that the permissions are granted 
-
-Sign in to the Azure portal, go to **Enterprise Applications** > **App Name**, and select **Security** > **Permissions**:
-
-:::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/permission.png" alt-text="Screenshot of how to validate a permission is granted.":::
 
 ## Convert SOA for a test user
 
@@ -170,7 +172,7 @@ Follow these steps to convert the SOA for a test user:
 
    :::image type="content" source="media/how-to-user-source-of-authority-configure/get-user.png" alt-text="Screenshot of how to use Microsoft Graph Explorer to get the SOA value of an user.":::
 
-1. Check that the synced user is read-only. Because the user is managed on-premises, any write attempts to the user in the cloud fail. The error message differs for mail-enabled users, but updates still aren't allowed.
+1. Confirm that the synced user is read-only. Because the user is managed on-premises, any write attempts to the user in the cloud fail. The error message differs for mail-enabled users, but updates still aren't allowed.
 
    > [!NOTE]
    > If this API fails with 403, use the **Modify permissions** tab to grant consent to the required User.ReadWrite.All permission.
@@ -322,14 +324,14 @@ else
 
 ### Status of attributes after you convert SOA
 
-The following table explains the status for **isCloudManaged** and **onPremisesSyncEnabled** attributes after you convert the SOA of an object.
+The following table explains the status for *isCloudManaged* and *onPremisesSyncEnabled* attributes after you convert the SOA of an object.
 
 Admin step | isCloudManaged value | onPremisesSyncEnabled value | Description  
 -----|----------------------|----------------------|------------
-Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the **OnPremisesSyncEnabled** attribute is set to` true` and **isCloudManaged** is set to `false`.  
-Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the **isCloudManaged** attribute becomes set to `true` and the **OnPremisesSyncEnabled** attribute value is set to `null`. 
-Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the **isCloudManaged** is set to `false` and **OnPremisesSyncEnabled** is set to `null` until the sync client takes over the object.    
-Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, **isCloudManaged** is set to `false` and **onPremisesSyncEnabled** is set to `null`.
+Admin syncs an object from AD DS to Microsoft Entra ID | `false` | `true` | When an object is originally synchronized to Microsoft Entra ID, the *onPremisesSyncEnabled* attribute is set to `true` and *isCloudManaged* is set to `false`.  
+Admin converts the source of authority (SOA) of the object to the cloud | `true` | `null` | After an admin converts the SOA of an object to the cloud, the *isCloudManaged* attribute becomes set to `true` and the *onPremisesSyncEnabled* attribute value is set to `null`. 
+Admin rolls back the SOA operation | `false` | `null` | If an admin converts the SOA back to AD, the *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null` until the sync client takes over the object.    
+Admin creates a cloud native object in Microsoft Entra ID | `false` | `null` | If an admin creates a new cloud-native object in Microsoft Entra ID, *isCloudManaged* is set to `false` and *onPremisesSyncEnabled* is set to `null`.
 
 
 ## Roll back SOA update
@@ -349,7 +351,7 @@ You can run this operation to roll back the SOA update and revert the SOA to on-
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/rollback.png" alt-text="Screenshot of API call to revert SOA.":::
 
 > [!NOTE]
-> This change to "isCloudManaged: false" allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is finished only after *both* the API call and the next scheduled or forced run of Connect Sync are complete.
+> The change of *isCloudManaged* to `false` allows an AD DS object that's in scope for sync to be taken over by Connect Sync the next time it runs. Until the next time Connect Sync runs, the object can be edited in the cloud. The rollback of SOA is finished only after *both* the API call and the next scheduled or forced run of Connect Sync are complete.
 
 ### Validate the change in the Audit Logs
 
@@ -365,7 +367,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
    Start-ADSyncSyncCycle
    ```
 
-1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and blockOnPremisesSync = false, which means the object SOA is taken over by the on-premises again.
+1. Open the object in the **Synchronization Server Manager** (details are in the [Connect Sync Client](#connect-sync-client) section). You can see the state of the Microsoft Entra ID connector object is **Awaiting Export Confirmation** and *blockOnPremisesSync* = false, which means the object SOA is taken over by the on-premises again.
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/await-export.png" alt-text="Screenshot of an object awaiting export.":::
 
