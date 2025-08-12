@@ -170,10 +170,10 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 1. **Configure required destinations to bypass Internet Security.**
 2. **Deploy and configure Cisco Secure Client** with Zero Trust Access and Umbrella modules.
 3. **Add private resources and create access policies.**
-4. **Verify client configurations:**
+3. **Verify client configurations:**
   - Right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile** to confirm Private Access and Private DNS rules.
   - Go to **Advanced Diagnostics** > **Health Check** and ensure all checks pass.
-  - In **Cisco Secure Client**, confirm the Zero Trust Access and Umbrella modules are active.
+  - In **Cisco Secure Client**, confirm the Umbrella module is active.
 
 > [!NOTE]
 > For troubleshooting, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
