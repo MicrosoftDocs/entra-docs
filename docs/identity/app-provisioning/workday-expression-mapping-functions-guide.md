@@ -1,5 +1,5 @@
 ---
-title: 'Workday expression mapping functions for Microsoft Entra ID provisioning'
+title: 'Workday Expression Mapping Functions for Microsoft Entra ID Provisioning'
 description: A comprehensive guide to commonly used expression mapping functions when configuring Workday to on-premises Active Directory/Microsoft Entra ID user provisioning. These functions help transform and map data from Workday to create appropriate user attributes in Microsoft Entra ID.
 
 author: jenniferf-skc
@@ -762,19 +762,19 @@ IgnoreFlowIfNullOrEmpty(IIF(DateDiff("d", Now(), CDate([employeeHireDate])) > 0,
 
 ## Best practices
 
-1. **Always use SelectUniqueValue** for attributes that require uniqueness (like UPN, samAccountName, email).
+- **Always use SelectUniqueValue** for attributes that require uniqueness (like UPN, samAccountName, email).
 
-2. **Handle null and empty values** using functions like `IsNullOrEmpty`, `IsPresent`, or `Switch` statements.
+- **Handle null and empty values** using functions like `IsNullOrEmpty`, `IsPresent`, or `Switch` statements.
 
-3. **Use NormalizeDiacritics** when processing names with special characters to ensure compatibility.
+- **Use NormalizeDiacritics** when processing names with special characters to ensure compatibility.
 
-4. **Test date logic thoroughly** as different time zones and date formats can affect results.
+- **Test date logic thoroughly** as different time zones and date formats can affect results.
 
-5. **Use IgnoreFlowIfNullOrEmpty** when you want to skip attribute updates for empty values.
+- **Use IgnoreFlowIfNullOrEmpty** when you want to skip attribute updates for empty values.
 
-6. **Consider using Switch instead of nested IIF** statements for better readability.
+- **Consider using Switch instead of nested IIF** statements for better readability.
 
-7. **Always validate regular expressions** in an online regex tester before implementing.
+- **Always validate regular expressions** in an online regex tester before implementing.
 
 ## More resources
 

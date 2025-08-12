@@ -1,6 +1,6 @@
 ---
-title: 'SuccessFactors expression mapping functions for Microsoft Entra ID provisioning'
-description: S comprehensive guide to commonly used expression mapping functions when configuring SuccessFactors to Microsoft Entra ID user provisioning. These functions help transform and map data from SuccessFactors to create appropriate user attributes in Microsoft Entra ID.
+title: 'SuccessFactors Expression Mapping Functions for Microsoft Entra ID Provisioning'
+description: A comprehensive guide to commonly used expression mapping functions when configuring SuccessFactors to Microsoft Entra ID user provisioning. These functions help transform and map data from SuccessFactors to create appropriate user attributes in Microsoft Entra ID.
 
 author: jenniferf-skc
 manager: pmwongera
@@ -887,7 +887,7 @@ SelectUniqueValue (
 
 ### Apostrophe and special character handling
 
-**Scenario 1**: You need to remove apostrophes and dashes from email addresses for AAD Connect compatibility.
+**Scenario 1**: You need to remove apostrophes and dashes from email addresses for Azure AD Connect compatibility.
 
 **Target attribute**: mail
 
@@ -960,25 +960,25 @@ IgnoreFlowIfNullOrEmpty(IIF(IsPresent([extensionAttribute9]),IIF(DateDiff("d", N
 
 ## Best practices
 
-1. **Use SelectUniqueValue** for all attributes that require uniqueness (UPN, samAccountName, email).
+- **Use SelectUniqueValue** for all attributes that require uniqueness (UPN, samAccountName, email).
 
-2. **Handle null and empty values** using functions like `IsNullOrEmpty`, `IsPresent`, `Switch`, or `Coalesce`.
+- **Handle null and empty values** using functions like `IsNullOrEmpty`, `IsPresent`, `Switch`, or `Coalesce`.
 
-3. **Use NormalizeDiacritics and StripSpaces** when processing names to ensure compatibility across systems.
+- **Use NormalizeDiacritics and StripSpaces** when processing names to ensure compatibility across systems.
 
-4. **Validate JSONPath expressions** in a JSONPath tester before implementing in production.
+- **Validate JSONPath expressions** in a JSONPath tester before implementing in production.
 
-5. **Use proper date formatting** when working with SuccessFactors date fields to avoid conversion errors.
+- **Use proper date formatting** when working with SuccessFactors date fields to avoid conversion errors.
 
-6. **Consider time zones** when working with date comparisons and account expiration logic.
+- **Consider time zones** when working with date comparisons and account expiration logic.
 
-7. **Use IgnoreFlowIfNullOrEmpty** for conditional attribute flows and writeback scenarios.
+- **Use IgnoreFlowIfNullOrEmpty** for conditional attribute flows and writeback scenarios.
 
-8. **Test complex Switch statements** thoroughly as they can become difficult to debug.
+- **Test complex Switch statements** thoroughly as they can become difficult to debug.
 
-9. **Document business logic** clearly, especially for complex employment status and account management rules.
+- **Document business logic** clearly, especially for complex employment status and account management rules.
 
-10. **Use regex patterns carefully** and validate them in online regex testers before implementation.
+- **Use regex patterns carefully** and validate them in online regex testers before implementation.
 
 ## More resources
 
