@@ -17,6 +17,10 @@ Approvals delegation in My Access allows approvers to assign another individual 
 > [!NOTE]
 > This feature applies only to approvals. Access review delegation isn't supported.
 
+## License requirements
+
+[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
+
 ## How delegation works
 
 When an approver sets a delegate, the following happens:
@@ -47,11 +51,6 @@ When an approver sets a delegate, the following happens:
 - Delegation is limited to one level. If User A delegates to User B, and User B delegates to User C, User C won't receive approvals from User A.
 - Delegation isn't restricted. Any user can be selected as a delegate.
 - Delegation applies only to approvals assigned after the delegation is configured.
-
-
-## License requirements
-
-[!INCLUDE [entra-p2-governance-license.md](../includes/entra-p2-governance-license.md)]
 
 
 ## Enable Delegate Approvals preview
