@@ -373,7 +373,7 @@ Select activity as **Undo changes to Source of Authority from AD DS to cloud**:
 
 ## Limitations
 
-
+- **No reconciliation support for local AD groups**: An AD DS admin (or an application with sufficient permissions) can directly modify an AD DS group. If Group SOA is converted for the group, or if cloud security group provisioning to AD DS is enabled, those local AD changes aren't reflected in Microsoft Entra ID. When a change to the cloud security group is made, any local AD DS changes are overwritten when group provisioning to AD DS runs.
 
 <!-- 5. Next step/Related content------------------------------------------------------------------------
 
