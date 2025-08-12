@@ -242,7 +242,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
 5. Access `outlook.office365.com`, `<yourtenantdomain>.sharepoint.com`.
 6. Validate Global Secure Access traffic logs show these sites; Cisco Secure Access doesn't.
-7. Access private resources via Cisco Secure Access ZTNA.
+7. Access private resources via Cisco Secure Private Access.
 8. Validate traffic logs in both portals.
 9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
 
