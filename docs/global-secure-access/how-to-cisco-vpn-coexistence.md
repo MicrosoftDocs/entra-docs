@@ -49,7 +49,7 @@ Both clients handle traffic for separate private applications. Global Secure Acc
 
 ## Prerequisites
 
-To configure Microsoft and Cisco Secure Access for a unified SASE solution:
+To configure Microsoft and Cisco remote access solutions for a unified SASE solution:
 
 1. Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
 2. Set up a Cisco Secure Access VPN profile.
