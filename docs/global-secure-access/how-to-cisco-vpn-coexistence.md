@@ -41,7 +41,7 @@ Both clients handle traffic for separate private applications. Global Secure Acc
 
 #### Scenario 1: Internet and Microsoft traffic with Cisco ASA Remote Access VPN for private access
 
-Global Secure Access handles internet and Microsoft traffic. Cisco Adaptive Security Appliance (ASA) captures only private application traffic.
+Global Secure Access handles internet and Microsoft traffic. Cisco ASA captures only private application traffic.
 
 #### Scenario 2: Split private access with Cisco ASA Remote Access VPN
 
