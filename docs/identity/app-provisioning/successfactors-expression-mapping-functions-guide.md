@@ -983,7 +983,7 @@ IgnoreFlowIfNullOrEmpty(IIF(IsPresent([extensionAttribute9]),IIF(DateDiff("d", N
 ## Additional resources
 
 - [Microsoft Entra ID Application Provisioning Functions Reference](functions-for-customizing-application-data.md)
-- [SuccessFactors Integration Reference](~/saas-apps/sap-successfactors-inbound-provisioning-tutorial)
+- [SuccessFactors Integration Reference](~/sap-successfactors-inbound-provisioning-tutorial)
 - [JSONPath Expression Guide](https://goessner.net/articles/JsonPath/)
-- [Expression Builder in Application Provisioning](functions-for-customizing-application-data.md#expression-builder)
+- [Expression Builder in Application Provisioning](expression-builder.md)
 
