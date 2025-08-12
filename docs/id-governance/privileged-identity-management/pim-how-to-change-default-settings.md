@@ -114,13 +114,12 @@ We recommend requiring approval for activation of an eligible assignment. The ap
 
 If all Privileged Role Administrators/Global Administrators have eligible assignments, approval is required for activation. If the list of approvers is not configured, you will be locked out of the tenant. Only active Privileged Role Administrators/Global Administrators can approve activation and you won’t have them due to a circular dependency. Avoid this situation by configuring [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) and configuring specific approvers.
 
->[!IMPORTANT]
->You will be locked out of your tenant if all of the following conditions are true:
+> [!IMPORTANT]
+> You will be locked out of your tenant if all of the following conditions are true:
 > - All Privileged Role Administrators/Global Administrators have eligible assignments, but none are active.
 > - Approval is required for activation.
 > - No approvers are configured.
-> Avoid this situation by configuring [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) and configuring specific approvers.
-
+> <br><strong>Avoid this situation</strong> by configuring emergency access accounts and configuring specific approvers.
 
 In this scenario, there are no active users who can approve activation, creating a circular dependency. To avoid this, configure emergency access accounts and specify approvers.
 
