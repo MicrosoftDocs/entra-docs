@@ -147,7 +147,7 @@ There are several key points to consider regarding the identity and permissions 
 
 ### Custom instructions
 
-You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to include or exclude specific users, groups, and roles. Custom instructions can be used to exclude objects from being considered by the agent altogether or added to the exclusion group in the Conditional Access policy itself. Exceptions can be applied to specific policies, such as excluding a specific group from a policy, such as requiring MFA or mobile application management policies. 
+You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to include or exclude specific users, groups, and roles. Custom instructions can be used to exclude objects from being considered by the agent altogether or added to the Conditional Access policy itself. Exceptions can be applied to specific policies, such as excluding a specific group from a policy, such as requiring MFA or mobile application management policies. 
 
 You can enter either the name or the object ID in the custom instructions. Both values are validated. If you add the name of the group, the object ID for that group is automatically added on your behalf. Example custom instructions:
 
