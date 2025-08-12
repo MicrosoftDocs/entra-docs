@@ -66,8 +66,12 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 - Set up and configure destinations to bypass Secure Access Internet Security and allow coexistence with Global Secure Access.
 - Deploy and install the Cisco Secure Client. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
 
-> [!NOTE]
-> Required Cisco Secure Client modules are listed in each configuration.
+> [!IMPORTANT]
+  > Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation, or re-installation, of CSC version 5.1.10.x (or later).
+  > 1. Install Cisco Secure Client version 5.1.10.x.
+  > 1. Open CMD prompt as an administrator and run these commands:
+  > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
+  > 1. `net stop csc_vpnagent && net stop acsock && net start csc_vpnagent`
 
 - Set up and configure destinations to bypass Secure Access Internet Security and allow coexistence with Global Secure Access.
 
