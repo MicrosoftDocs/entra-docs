@@ -23,7 +23,7 @@ This guide outlines how to configure and deploy Microsoft Entra solutions alongs
 This guide focuses on two Cisco remote access VPN platforms:
 
 - **Cisco Adaptive Security Appliance (ASA) Remote Access VPN**
-- **Cisco Secure Access VPN Firewall-as-a-Service (FWaaS)**
+- **Cisco Secure Access VPN-as-a-Service (VPNaaS)**
 
 ## Coexistence scenarios
 
