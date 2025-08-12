@@ -95,7 +95,7 @@ To configure Microsoft and Cisco remote access solutions for a unified SASE solu
 
 Configure split-include for Cisco ASA Remote Access VPN:
 
-1. Sign in to Cisco ASA using the ASDM software.
+1. Sign in to Cisco ASA using the Cisco Adaptive Security Device Manager (ASDM) software.
 2. Navigate to **Configuration > Remote Access VPN > Network (Client) Access > Secure Client Connection Profiles**.
 3. Select an existing connection profile or create a new one, then select **Edit**.
 4. Under **Default Group Policy**, specify the private IP address of the DNS server used for private traffic.
