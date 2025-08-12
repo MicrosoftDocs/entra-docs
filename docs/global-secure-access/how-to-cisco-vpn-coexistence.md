@@ -25,9 +25,9 @@ This guide focuses on two Cisco remote access VPN platforms:
 - **Cisco Secure Access VPN-as-a-Service (VPNaaS)** 
 - **Cisco Adaptive Security Appliance (ASA) Remote Access VPN**
 
-## Cisco Secure Access VPN - Coexistence scenarios
+## Cisco Secure Access VPN
 
-
+### Coexistence scenarios
 ### Scenario 1: Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPN for private access
 
 Global Secure Access handles internet and Microsoft traffic. Cisco Secure Access VPN captures only private application traffic.
