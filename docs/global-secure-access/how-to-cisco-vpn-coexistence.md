@@ -226,7 +226,6 @@ kenwith marked this conversation as resolved.
 
 ## Coexistence configurations
 
-
 ### Cisco ASA Remote Access VPN
 
 #### Configuration 1: Internet and Microsoft traffic with Cisco ASA private access
