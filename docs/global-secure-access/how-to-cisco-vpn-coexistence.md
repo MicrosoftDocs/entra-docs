@@ -111,7 +111,7 @@ After both clients are installed and running, verify that Global Secure Access a
 - Enable Microsoft Entra Internet Access, Private Access, and Microsoft Access forwarding profiles.
 - Install a private network connector for Microsoft Entra Private Access.
 - Configure Quick Access and set up Private DNS.
-- Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN endpoint.
+- Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass) to exclude Cisco Secure Access VPNaaS endpoint.
 - Install and configure the Global Secure Access client for Windows or macOS.
 - Set up remote access VPN profile as described previously.
 - Install Cisco Secure Client with VPN.
