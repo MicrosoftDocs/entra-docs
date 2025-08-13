@@ -199,7 +199,6 @@ Configure split-include for Cisco ASA Remote Access VPN:
 
 #### Tunnel All Networks with dynamic exclusions
 > [!IMPORTANT]
-kenwith marked this conversation as resolved.
 > **Known limitation:** If the Secure Client Profile Host Address is configured as a fully qualified domain name (FQDN) and the Global Secure Access (GSA) client connects first, the Cisco Secure Client will lose connection shortly after authenticating.  
 >  
 > To avoid this issue, verify the Host Address setting in Cisco ASDM:
