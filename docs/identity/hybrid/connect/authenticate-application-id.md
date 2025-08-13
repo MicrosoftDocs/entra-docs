@@ -462,6 +462,9 @@ When you get a warning from Microsoft Entra Connect Sync, we *highly recommend t
 ## Script to generate the SHA256 hash of the certificate
 
 ``` powershell
+# Load certificate from Local Machine store
+Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Subject -eq 'CERTSUBJECT'}
+
 # Get raw data from X509Certificate cert
 $certRawDataString = $cert.GetRawCertData()
 
