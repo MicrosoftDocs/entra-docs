@@ -1,10 +1,10 @@
 ---
-title: macOS Platform Single Sign-on (PSSO) overview (preview)
+title: macOS Platform Single Sign-on (PSSO) overview
 description: Overview of macOS Platform Single Sign On (PSSO) for Microsoft Entra ID registered devices.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: overview
-ms.date: 05/01/2025
+ms.date: 06/12/2025
 ms.author: godonnell
 author: garrodonnell
 manager: dougeby
@@ -12,7 +12,7 @@ manager: dougeby
 #Customer intent: As a customer, I want to understand how to configure macOS Platform Single Sign-on (PSSO) for Microsoft Entra ID registered devices.
 ---
 
-# macOS Platform Single Sign-on overview (preview)
+# macOS Platform Single Sign-on overview 
 
 macOS Platform Single Sign-on (PSSO) is a new feature powered by Microsoft’s Enterprise SSO plug-in, Platform Credentials for macOS that enables users to sign in to Mac devices using their Microsoft Entra ID credentials. This feature provides benefits for admins by simplifying the sign-in process for users and reducing the number of passwords they need to remember. It also allows users to authenticate with Microsoft Entra ID with a smart card or hardware-bound key. This feature improves the end-user experience by not having to remember two separate passwords and diminishes the need for admins to manage the local account password. 
 
@@ -45,6 +45,11 @@ To deploy Platform SSO for macOS, you need the meet following minimum requiremen
 You can find more information and instructions on how to configure in these articles:
 
 - [Configure Platform SSO for macOS devices in Microsoft Intune](/mem/intune/configuration/platform-sso-macos)
+
+> [!NOTE]
+> If you are configuring Platform SSO for macOS devices using a 3rd party MDM, refer to the documentation provided by your MDM vendor for specific instructions on how to configure Platform SSO.
+>
+> If you are a developer of a 3rd party MDM solution, refer to the [Integrate macOS Platform Single Sign On (PSSO) into your MDM solution](./macos-psso-integration-guide.md) guide for more information on how to integrate PSSO into your MDM solution.
 
 ## Deployment
 
@@ -100,6 +105,20 @@ High-security customers can opt in to enable this feature by setting a flag in t
 - More Prompts: Users will encounter extra prompts during PSSO registration as the key is accessed multiple times during the process.
 - Biometric-Only Access: The PSSO passkey can only be accessed with biometric authentication. There's no password fallback. If the device is unlocked with a password, users will still be prompted for biometric authentication to obtain the PSSO token.
 
+## Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources
+macOS allows users to configure Platform SSO to support Kerberos-based SSO to on-premises and cloud resources, in addition to SSO to Microsoft Entra ID. Kerberos SSO is an optional capability within Platform SSO, but it's recommended if users still need to access on-premises Active Directory resources that use Kerberos for authentication.
+
+To learn more, see [Kerberos SSO to on-premises Active Directory and Microsoft Entra ID Kerberos resources](./device-join-macos-platform-single-sign-on-kerberos-configuration.md).
+
+## Graph API support
+You can use the Microsoft Graph API to manage the PlatformCredential authentication method.
+
+The following APIs are available:
+
+* [platformCredentialAuthenticationMethod resource type](/graph/api/resources/platformcredentialauthenticationmethod?preserveview=graph-rest-1.0).
+* [List platformCredentialAuthenticationMethods](/graph/api/platformcredentialauthenticationmethod-list?preserveview=graph-rest-1.0).
+* [Delete platformCredentialAuthenticationMethod](/graph/api/platformcredentialauthenticationmethod-delete?preserveview=graph-rest-1.0).
+   
 ## National Institute of Standards and Technology (NIST)
 
 The National Institute of Standards and Technology (NIST) is a non-regulatory federal agency within the U.S. Department of Commerce. NIST develops and issues standards, guidelines, and other publications to assist federal agencies in managing cost-effective programs to protect their information and information systems.
