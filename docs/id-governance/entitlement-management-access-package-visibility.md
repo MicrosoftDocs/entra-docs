@@ -13,7 +13,6 @@ ms.author: owinfrey
 
 ---
 
-
 # Understand access package visibility in the My Access portal
 
 > [!IMPORTANT]
