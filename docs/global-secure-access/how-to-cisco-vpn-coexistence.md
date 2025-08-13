@@ -186,7 +186,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 1. Sign in to Cisco ASA using the Cisco Adaptive Security Device Manager (ASDM) software.
 2. Navigate to **Configuration > Remote Access VPN > Network (Client) Access > Secure Client Connection Profiles**.
 3. Select an existing connection profile or create a new one, then select **Edit**.
-4. Under **Default Group Policy**, specify the private IP address of the DNS server used for private traffic.
+4. Under **Group Policy**, specify the private IP address of the DNS server used for private traffic.
 5. In the group policy settings, expand **Advanced > Split Tunneling** and configure the following:
   - **DNS Names**: `Inherit`
   - **Send All DNS Lookups Through Tunnel**: `No`
