@@ -16,6 +16,9 @@ ms.author: owinfrey
 
 # Understand access package visibility in the My Access portal
 
+> [!IMPORTANT]
+> In July 2025 we announced that the visibility behavior for access packages scoped to "Specific users and groups" would be changing. The previously announced changes to access package visibility have been cancelled. No action is required at this time.
+
 The [My Access portal](https://myaccess.microsoft.com) is the central place for users to request, approve, and review their access to resources within Microsoft Entra. For administrators, the Microsoft Entra admin center provides extra functionalities, enabling configuration of access packages and the ability to conduct access reviews.
 
 When you manage access to resources in Microsoft Entra, understanding how access packages appear to users in the [My Access portal](https://myaccess.microsoft.com) is essential. Access package visibility determines which packages users can discover and request, and is influenced by several configuration settings and planned changes. This article provides a detailed overview of the factors that control access package visibility in the My Access portal, explains how it currently works, and highlights important changes effective October 10, 2025. 
