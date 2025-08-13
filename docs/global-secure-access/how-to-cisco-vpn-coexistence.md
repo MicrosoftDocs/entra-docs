@@ -120,7 +120,7 @@ After both clients are installed and running, verify that Global Secure Access a
 
 **Verify configuration:**
 
-- Open the **Global Secure Access client**, right-click, and select **Advanced Diagnostics > Forwarding Profile**. Confirm that only **Internet** and **Microsoft 365** rules are applied.
+- Open the **Global Secure Access client**, right-click, and select **Advanced Diagnostics > Forwarding Profile**. Confirm that **Internet**, **Private Access**, and **Microsoft 365** rules are applied.
 - Open **Advanced Diagnostics > Health Check** in the Global Secure Access client and verify that all checks are passing.
 
 **Test traffic flow:**
