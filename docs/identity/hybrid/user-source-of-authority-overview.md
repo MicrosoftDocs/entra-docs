@@ -85,14 +85,19 @@ If your organization is using Microsoft Identity Manager with the AD MA to manag
 
 Your application must be modernized, and you should leverage [cloud authentication](/architecture/authenticate-applications-and-users) for source of authority to work. If you need to access on-premises resources, you can leverage Microsoft Entra Kerberos and [Entra Private Access](/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend using Microsoft Entra Domain Services.  
 
+### Devices
+
+We recommend that customers migrate their devices to the cloud, and use a Microsoft Entra Joined Device setup in order to fully leverage user SOA capabilities. For groups, there’s no pre-requisites around devices.  
+
+
 
 
 
 
 
 ## Related content
-TODO: Add your next step link(s)
-- [Write concepts](article-concept.md)
+
+- [Configure User Source of Authority (SOA) in Microsoft Entra ID (Preview)](how-to-user-source-of-authority-configure.md)
 
 <!--
 Remove all the comments in this template before you sign-off or merge to the 
