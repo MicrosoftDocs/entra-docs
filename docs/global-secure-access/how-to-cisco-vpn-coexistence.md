@@ -211,7 +211,16 @@ Configure split-include for Cisco ASA Remote Access VPN:
 3. For Type, enter `dynamic-split-exclude-domains`. For Description, enter `Dynamic split tunneling`.
 4. Add a custom attribute name (for example, `GSAfqdns`) and value (`globalsecureaccess.microsoft.com`).
 5. Apply settings.
-6. Configure the Remote Access VPN profile to tunnel all networks. Dynamic split exclusions bypass required IPs and FQDNs.
+6. Navigate to **Configuration > Remote Access VPN > Network (Client) Access > Secure Client Connection Profiles**.
+7. Select an existing connection profile or create a new one, then select **Edit**.
+8. In the **Basic** menu under **Group Policy**, specify the private IP address of the DNS server used for private traffic.
+9. In the group policy settings, expand **Advanced > Split Tunneling** and configure the following:
+  - **DNS Names**: `Inherit`
+  - **Send All DNS Lookups Through Tunnel**: `No`
+  - **Policy**: `Tunnel All Networks`
+  - **Network List**: None
+10. Navigate to **Advanced > expand Secure Client > Custom Attributes > Add > for Attribute type** click **Manage** > Select **“dynamic-split-exclude-domains”** > **OK**
+11. Choose **Select Value > GSAfqdns > OK > Apply**
 > [!NOTE]
   > There's a known issue with this configuration preventing coexistence with Global Secure Access on macOS. 
 
