@@ -15,7 +15,7 @@ ms.custom: sfi-image-nochange
 
 The Global Secure Access client can be deployed to compliant Android devices using Microsoft Intune and Microsoft Defender for Endpoint on Android. The Android client is built into the Defender for Endpoint Android app, which streamlines how your end users connect to Global Secure Access. The Global Secure Access Android client makes it easier for your end users to connect to the resources they need without having to manually configure VPN settings on their devices.
 
-This article explains the prerequisites and how to deploy the client onto Android devices.
+This article explains how to deploy the Global Secure Access client onto Android devices.
 
 ## Prerequisites
 
@@ -42,15 +42,11 @@ The Global Secure Access client for Android supports deployment for the followin
 
 ### Non-Microsoft mobile device management
 
-Non-Microsoft mobile device management (MDM) scenarios are also supported. In these scenarios, known as *Global Secure Access only mode*, you only need to enable a traffic forwarding profile and configure the app according to the vendor documentation.
+The Global Secure Access client also supports non-Microsoft mobile device management (MDM) scenarios. In these scenarios, known as *Global Secure Access only mode*, you only need to enable a traffic forwarding profile and configure the app according to the vendor documentation.
 
 ## Deploy Microsoft Defender for Endpoint Android
 
 You can use the Global Secure Access client for Android in different deployment modes and scenarios.
-
-After you enable a traffic forwarding profile and configure your network, the Global Secure Access Android client appears in the Defender app automatically. However, the Global Secure Access client is disabled by default. Users can enable the client from the Defender app. To learn how, see [Confirm Global Secure Access appears in Defender app](#confirm-global-secure-access-appears-in-defender-app).
-
-You can enable the client using Android Enterprise enrollment mode. This mode supports corporate-owned, fully managed devices, corporate-owned devices with a work profile, and personal devices with a work profile.
 
 ### Create an MDM profile and configure Global Secure Access for Microsoft Defender for Endpoint 
 
@@ -121,9 +117,9 @@ If the client is unable to connect, a toggle appears to disable the service. Use
 
 ## Troubleshooting
 
-The Global Secure Access tile doesn't appear after onboarding the tenant to the service. Restart the Defender app.
+If the Global Secure Access tile doesn't appear after onboarding the tenant to the service, try restarting the Defender app.
 
-When attempting to access a Private Access application, the connection might time out after a successful interactive sign-in. Reloading the application through a web browser refresh should resolve the issue.
+When attempting to access a Private Access application, the connection might time out after a successful interactive sign-in. Try reloading the application by refreshing the web browser.
 
 ## Related content
 - [About Microsoft Defender for Endpoint on Android](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-android)
