@@ -245,7 +245,7 @@ If the security token type is **Proof of Possession (POP)** for your custom task
 -	For `appid`, ensure the custom claim is `appid` in all lowercase. The `appid` value represents Lifecycle Workflows and is always the same.
 
 > [!NOTE]
-> This document has been updated to include the aud (audience) claim in the authorization policy configuration. Previously created configurations that do not include the aud claim remain secure. These configurations already use the u (resource URI) claim, and Logic Apps validates the token is for the correct service by verifying the domain of this URI.
+> This document has been updated to include the audience claim in the authorization policy configuration. Previously created configurations that do not include the audience claim remain secure. These configurations already use the u (resource URI) claim, and Logic Apps validates the token is for the correct service by verifying the domain of this URI.
 
 ## Configure authorization policy for custom task extension with normal security token type
 
