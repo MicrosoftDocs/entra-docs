@@ -244,6 +244,9 @@ If the security token type is **Proof of Possession (POP)** for your custom task
 -	For `Issuer`, ensure you included the slash after your Tenant ID
 -	For `appid`, ensure the custom claim is `appid` in all lowercase. The `appid` value represents Lifecycle Workflows and is always the same.
 
+> [!NOTE]
+> To compile with RFC 8725 this document and future Logic Apps created via the Lifecycle Workflows custom task extensions experience have been updated to include the audience claim in the authorization policy configuration. Previously created authorization policy configurations without the audience claim remain secure as they already include the u claim and Logic Apps validates the domain component of the u claim aligns with the audience.
+
 ## Configure authorization policy for custom task extension with normal security token type
 
 If the security token type is **Normal** for your custom task extension, you'd set the authorization policy by following these steps:
