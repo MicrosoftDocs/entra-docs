@@ -227,13 +227,6 @@ Configure split-include for Cisco ASA Remote Access VPN:
 > [!NOTE]
 > When using the Tunnel All Networks configuration, after the client connects, it might take a few seconds before you can access private resources through the Cisco VPN.
 
-> [!IMPORTANT]
-> **Known limitation:** If the Secure Client Profile Host Address is configured as a fully qualified domain name (FQDN) and the Global Secure Access (GSA) client connects first, the Cisco Secure Client will lose connection shortly after authenticating.  
->  
-> To avoid this issue, verify the Host Address setting in Cisco ASDM:
-> - Go to **Remote Access VPN > Network (Client) Access > Secure Client Profile > “ProfileName” > Server List**.
-> - Ensure the **Host Address** is set to an IP address, not an FQDN.
-
 ## Coexistence configurations
 
 ### Cisco ASA Remote Access VPN
