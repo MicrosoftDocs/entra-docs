@@ -147,6 +147,35 @@ Global Secure Access handles internet and Microsoft traffic. Cisco ASA captures 
 #### Scenario 2:  Private Access, Internet Access, and Microsoft Access with Cisco ASA Remote Access VPN
 
 Both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while private applications hosted through Cisco ASA are accessed through Cisco Secure Client VPN. Global Secure Access handles internet and Microsoft traffic.
+
+## Prerequisites
+
+To configure Microsoft and Cisco ASA remote access VPN for a unified SASE solution:
+
+1. Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
+2. Establish remote access connectivity to your Cisco ASA.
+3. Configure Global Secure Access fully qualified domain name (FQDN) and IP bypasses.
+
+### Setting up Global Secure Access
+
+- Enable and disable different traffic forwarding profiles for your Microsoft Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
+- Install and configure the Microsoft Entra private network connector. See [How to configure connectors](how-to-configure-connectors.md).
+
+> [!NOTE] 
+   > Private network connectors are required for Microsoft Entra Private Access applications.
+   
+- Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
+- Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
+
+- Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco ASA remote access VPN endpoint IP and FQDN.
+
+### Adding a Custom Bypass
+1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
+  2. Under Internet access policies, select **View**.
+  3. Expand **Custom Bypass** and select **Add rule**.
+  4. Leave destination type as FQDN and enter the FQDN used to connect to your VPN in Destination.
+  5. Set destination type as IP and enter the public IP address of your Cisco ASA.
+  6. Select **Save**.
 ### Setting up Cisco ASA VPN
 
 #### Split-Include configuration
