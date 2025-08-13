@@ -215,7 +215,7 @@ kenwith marked this conversation as resolved.
   > There's a known issue with this configuration preventing coexistence with Global Secure Access on macOS. 
 
 > [!NOTE]
-> When using the Tunnel All Networks configuration, start the Global Secure Access client before connecting to the Cisco Secure Client VPN. After the client connects, it might take a few seconds before you can access private resources through the Cisco VPN.
+> When using the Tunnel All Networks configuration, after the client connects, it might take a few seconds before you can access private resources through the Cisco VPN.
 
 > [!IMPORTANT]
 > **Known limitation:** If the Secure Client Profile Host Address is configured as a fully qualified domain name (FQDN) and the Global Secure Access (GSA) client connects first, the Cisco Secure Client will lose connection shortly after authenticating.  
