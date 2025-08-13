@@ -53,7 +53,9 @@ For an example, the built-in **Phishing-resistant MFA strength** allows the foll
 
 - Microsoft Entra certificate-based authentication (Multifactor)
 
-:::image type="content" border="true" source="./media/concept-authentication-strengths/authentication-strength-definitions.png" alt-text="Screenshot showing the phishing-resistant MFA strength definition.":::
+:::image type="content" border="true" source="./media/concept-authentication-strengths/authentication-strength-definitions.png" alt-text="Screenshot showing the phishing-resistant MFA strength definition." lightbox="./media/concept-authentication-strengths/authentication-strength-definitions.png":::
+
+
 
 The combinations of authentication methods for each built-in authentication strength are listed in the following table. These combinations include methods that need to be registered by users and enabled in the Authentication methods policy or the legacy MFA settings policy.
 
