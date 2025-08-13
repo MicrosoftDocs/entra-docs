@@ -38,7 +38,7 @@ Customers can customize the TGT mapping setting using the below key/value in the
 
 Configuration example:
 
-![Screenshot 2025-05-21 at 10 55 37 AM](https://github.com/user-attachments/assets/66130eaf-9d04-4f85-91c4-45d36e22af27)
+:::image type="content" source="media/device-join-macos-platform-single-sign-on-kerberos-configuration/customize-tgt-setting.png" alt-text="Screenshot of customizing Kerberos TGT SSO setting.":::
 
 
 ## Prerequisites
