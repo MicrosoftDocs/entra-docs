@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/12/2025
+ms.date: 08/13/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -21,11 +21,11 @@ This article explains the prerequisites and how to deploy the client onto Androi
 
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 - You must enable at least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md).
-- Device installation permissions on the device are required for installation.
-- Android devices must be running Android 10.0 or later.
-- Android devices must be Microsoft Entra registered devices.
-  - Devices not managed by your organization must have the Microsoft Authenticator app must be installed.
-  - Devices not managed through Intune must have the Company Portal app installed.
+- You need device installation permissions to install the client.
+- Android devices need to run Android 10.0 or later.
+- Android devices need to be Microsoft Entra registered devices.
+  - Devices not managed by your organization need to have the Microsoft Authenticator app installed.
+  - Devices not managed through Intune need to have the Company Portal app installed.
   - Device enrollment is required for Intune device compliance policies to be enforced.
 
 ### Known limitations
@@ -34,7 +34,7 @@ This article explains the prerequisites and how to deploy the client onto Androi
 
 ## Supported scenarios
 
-Global Secure Access client for Android supports deployment for the legacy Device Administrator and Android Enterprise scenarios. The following Android Enterprise scenarios are supported:
+The Global Secure Access client for Android supports deployment for the following Android Enterprise scenarios:
 
 - Corporate-owned, fully managed user devices.
 - Corporate-owned devices with a work profile.
