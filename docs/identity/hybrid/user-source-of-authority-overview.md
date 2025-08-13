@@ -53,7 +53,7 @@ Modernization requirements have many organizations shifting Identity and Access 
 
 To minimize your on-premises infrastructure size and complexity, adopt a cloud-first approach. As your presence in the cloud grows, your on-premises Active Directory Domain Services (AD DS) presence can shrink. This process is called AD DS minimization: only required objects remain in the on-premises domain.
 
-Using User SOA, you can migrate on-premises users to the cloud, and manage them there without having to re-create them in Microsoft Entra ID. By leveraging User SOA at the object level, you can switch the SOA of a user to be a cloud user. If you have already modernized the underlying apps tied to this user, you can just remove these users in AD once you have shifted their SOA. There’s no need to make any changes to your sync client.
+Using User SOA, you can migrate on-premises users to the cloud, and manage them there without having to re-create them in Microsoft Entra ID. By leveraging User SOA, users can be completely managed within the cloud. If you have already modernized the underlying apps tied to these users, they can be completely removed from AD once you have shifted their SOA. By using SOA for these users, there’s no need to make any changes within your sync client.
 
 This article describes how User SOA can help IT administrators transition user management from AD DS to the cloud. Once in the cloud, you can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
 
@@ -64,77 +64,25 @@ language and use a unordered list format.
 
 -->
 
-## Prerequisites
-TODO: [List the prerequisites if appropriate]
+## Consideration for User SOA
 
-<!-- 4. H2s (Article body)
---------------------------------------------------------------------
+Before you begin converting the SOA for users in your organization, there are certain conditions within your environment that you must consider. The following sections provides more details into what you must consider before implementing user SOA.
 
-Required: In a series of H2 sections, the article body should discuss the ideas that explain how "X is a (type of) Y that does Z":
-
-* Give each H2 a heading that sets expectations for the content that follows.
-* Follow the H2 headings with a sentence about how the section contributes to the whole.
-* Describe the concept's critical features in the context of defining what it is.
-* Provide an example of how it's used where, how it fits into the context, or what it does. If it's complex and new to the user, show at least two examples.
-* Provide a non-example if contrasting it will make it clearer to the user what the concept is.
-* Images, code blocks, or other graphical elements come after the text block it illustrates.
-* Don't number H2s.
-
--->
-
-## [Section 1 heading]
-TODO: add your content
-
-## [Section 2 heading]
-TODO: add your content
-
-## [Section n heading]
-TODO: add your content
-
-<!-- 5. Next step/Related content ------------------------------------------------------------------------ 
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
-
-## Next step
-
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
+### HR-driven Inbound Provisioning
 
 
-<!-- 6. Next step/Related content ------------------------------------------------------------------------
+If your organization is using Microsoft Entra HR inbound provisioning from a source such as Workday, or SuccessFactors, you must direct changes to those users directly to Microsoft Entra ID. For more information, see: [LINK TO HOW-TO DOC].
 
-Optional: You have two options for manually curated links in this pattern: Next step and Related
-content. You don't have to use either, but don't use both. For Next step, provide one link to the
-next step in a sequence. Use the blue box format For Related content provide 1-3 links. Include some
-context so the customer can determine why they would click the link. Add a context sentence for the
-following links.
+### Active Directory Users and Computers or the Active Directory module for PowerShell
 
--->
+If your organization is using AD management tools such as Active Directory Users and Computers or the Active Directory module for PowerShell, then changes made using those tools to AD objects whose SOA has been changed will cause an inconsistency with the Microsoft Entra representation. Prior to performing a SOA change, your organization should move those objects to a designated AD OU that signals those objects should no longer be managed via AD tools.   
 
-## Next step
-TODO: Add your next step link(s)
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
+### Microsoft Identity Manager with the AD MA
 
-<!-- OR -->
+
+
+
+
 
 ## Related content
 TODO: Add your next step link(s)
