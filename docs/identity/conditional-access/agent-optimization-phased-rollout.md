@@ -96,7 +96,7 @@ Once the phased rollout begins, you can't update the policy's grant controls. If
 
 ### How does the phased rollout capability work?
 
-After selecting the groups that each phase will apply to, the agent creates a duplicate Conditional Access policy that only includes the group of the first phase. The original Conditional Access policy persists in report-only mode and targets all users, so you can continue to collect data. When the deployment advances to the next phase, the next group is added to the enabled Conditional Access policy. The agent monitors the success rate of sign-ins associated with this policy. If the success rate drops below 90%, the phased rollout stops and the enabled policy is placed back into report-only mode. You can then review the logs to determine why sign-ins were failing before attempting the phased rollout again.
+After selecting the groups that each phase will apply to, the agent creates a duplicate Conditional Access policy that only includes the group of the first phase. The original Conditional Access policy persists in report-only mode and targets all users, so you can continue to collect data. When the deployment advances to the next phase, the batch of groups is added to the enabled Conditional Access policy. The agent monitors how each stage affects the sign-ins associated with this policy. If the success rate drops below 90%, the phased rollout stops and the enabled policy is placed back into report-only mode. You can then review the logs to determine why sign-ins were failing before attempting the phased rollout again.
 
 ### Do I have to turn on phased rollout?
 
