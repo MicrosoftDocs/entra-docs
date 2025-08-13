@@ -1,6 +1,6 @@
 ---
-title: Integrate macOS Platform Single Sign On (PSSO) into your MDM solution
-description: Learn how to integrate macOS Platform Single Sign On (PSSO) into your MDM solution.
+title: Integrate macOS Platform Single Sign-On (PSSO) into your MDM solution
+description: Learn how to integrate macOS Platform Single Sign-On (PSSO) into your MDM solution.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
@@ -9,11 +9,11 @@ ms.author: godonnell
 author: garrodonnell
 manager: dougeby
 
-#Customer intent: As a developer for a 3rd party MDM solution, I want to integrate macOS Platform Single Sign On (PSSO) into my MDM solution so that I can provide a seamless sign-in experience for users on macOS devices.
+#Customer intent: As a developer for a 3rd party MDM solution, I want to integrate macOS Platform Single Sign-On (PSSO) into my MDM solution so that I can provide a seamless sign-in experience for users on macOS devices.
 ---
 
-# Integrate macOS Platform Single Sign On (PSSO) into your MDM solution
-Platform Single Sign On (PSSO) for macOS devices is a feature that allows users to sign in to macOS devices using their Microsoft Entra credentials. This feature provides a seamless sign-in experience for users and helps organizations manage access to resources on macOS devices.
+# Integrate macOS Platform Single Sign-On (PSSO) into your MDM solution
+Platform Single Sign-On (PSSO) for macOS devices is a feature that allows users to sign in to macOS devices using their Microsoft Entra credentials. This feature provides a seamless sign-in experience for users and helps organizations manage access to resources on macOS devices.
 
 In this guide, you will learn how to integrate macOS Platform SSO into your MDM solution. This guide is intended for developers of 3rd party MDM solutions who want to support Platform SSO for macOS devices.
 
@@ -27,15 +27,15 @@ Before getting started, we recommend that you familiarize yourself with the foll
 
 The following settings and payload properties are required for use with the [Microsoft Enterprise SSO plug-in for Apple devices](../../identity-platform/apple-sso-plugin.md). Please ensure these are configured with the following values and add other settings as required to ensure proper SSO for your apps.
 
-| **Setting ** | **Value(s) ** |
+| **Setting** | **Value(s)** |
 |---|---|
 | Extension identifier  | com.microsoft.CompanyPortalMac.ssoextension  |
 | Team identifier  | UBF8T346G9  |
-| Authentication Method (Deprecated)    [Reqd for OS13 devices]  | One of...  Password  UserSecureEnclaveKey    |
-| Authentication method  (OS14+ devices)  | One of...  Password  UserSecureEnclaveKey  Smartcard (macOS 14+)  |
+| Authentication Method (Deprecated)    [Required for OS13 devices]  | One of...  Password <br> UserSecureEnclaveKey    |
+| Authentication method  (OS14+ devices)  | One of...  Password <br> UserSecureEnclaveKey <br> Smartcard (macOS 14+)  |
 | Screen Locked Behavior  | Do Not Handle  |
 | Type  | Redirect  |
-| URLs  | Supply the following URLs  https://login.microsoftonline.com  https://login.microsoft.com  https://sts.windows.net  https://login.partner.microsoftonline.cn  https://login.chinacloudapi.cn  https://login.microsoftonline.us  https://login-us.microsoftonline.com  |
+| URLs  | Supply the following URLs <br>  https://login.microsoftonline.com <br> https://login.microsoft.com <br> https://sts.windows.net <br> https://login.partner.microsoftonline.cn <br> https://login.chinacloudapi.cn <br> https://login.microsoftonline.us <br> https://login-us.microsoftonline.com  |
 | Use Shared Device Keys  | Enable “Use Shared Device Keys” for the best PSSO experience and to avoid unnecessary re-registration experiences if enabled later.  |
 
 ## Event notifications

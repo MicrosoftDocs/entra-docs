@@ -135,7 +135,7 @@ Users can reset the local password via Apple ID or an admin recovery key.
 
 There's a known concurrency issue on macOS 15+ (Sequoia) that can cause the PSSO device configuration to become corrupted. The device configuration can be corrupted by simultaneous updates from the system AppSSOAgent and AppSSODaemon processes. The corrupted configuration causes the operating system to trigger its re-registration remediation flow, resulting in unexpected registration prompts for users.
 
-This issue is currently being investigated by Apple..
+This issue is currently being investigated by Apple.
 
 Sysdiagnose logs from affected users contain the following error:
 
