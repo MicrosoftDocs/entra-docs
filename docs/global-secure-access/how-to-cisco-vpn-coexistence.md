@@ -109,7 +109,7 @@ After both clients are installed and running, verify that Global Secure Access a
 #### Configuration 2: Internet, Private Access, and Microsoft traffic with Cisco Secure Access VPN for split private access
 
 - Enable Microsoft Entra Internet Access, Private Access, and Microsoft Access forwarding profiles.
-- Install a Private Network Connector for Microsoft Entra Private Access.
+- Install a private network connector for Microsoft Entra Private Access.
 - Configure Quick Access and set up Private DNS.
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPN endpoint.
 - Install and configure the Global Secure Access client for Windows or macOS.
