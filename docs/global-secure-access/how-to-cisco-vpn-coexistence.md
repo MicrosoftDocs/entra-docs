@@ -37,7 +37,7 @@ Global Secure Access handles internet and Microsoft traffic. Cisco Secure Access
 Both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while private applications hosted through Cisco Secure Access VPNaaS are accessed through Cisco Secure Client VPN. Global Secure Access handles internet and Microsoft traffic.
 ## Prerequisites
 
-To configure Microsoft and Cisco Secure Access VPN for a unified SASE solution:
+To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solution:
 
 1. Set up Microsoft Entra Internet Access and Microsoft Entra Private Access. These products make up the Global Secure Access solution.
 2. Set up a Cisco remote access VPN profile.
