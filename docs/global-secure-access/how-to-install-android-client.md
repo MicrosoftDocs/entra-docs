@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/08/2025
+ms.date: 08/12/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -62,6 +62,8 @@ You can enable the client using Android Enterprise enrollment mode. This mode su
     1. Set the **Profile type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
     1. Set the **Targeted app** to **Microsoft Defender**. 
 1. Select **Next**.
+:::image type="content" source="media/how-to-install-android-client/create-policy-basics.png" alt-text="Screenshot of the Create app configuration policy on the Basics tab.":::   
+
 1. On the **Settings** tab:
     1. Set **Configuration settings format** to **Use configuration designer**.
     1. Use the JSON editor to configure the disabled configuration keys. Select the **+Add** button.
@@ -87,8 +89,11 @@ You can enable the client using Android Enterprise enrollment mode. This mode su
 > The **GlobalSecureAccessPA** configuration key is deprecated.   
 
 6. Select **Next**. 
+:::image type="content" source="media/how-to-install-android-client/create-policy-settings.png" alt-text="Screenshot of the Create app configuration policy on the Settings tab.":::   
+
 1. On the **Scope tags** tab, configure scope tags as needed and select **Next**.
 1. On the **Assignments** tab, select **+ Add groups** to assign the configuration policy and enable Global Secure Access.
+:::image type="content" source="media/how-to-install-android-client/create-policy-assignments.png" alt-text="Screenshot of the Create app configuration policy on the Assignments tab.":::   
 
 > [!TIP]
 > To enable the policy for all but a few specific users, select **Add all devices** in the **Included groups** section, and then add the users or groups to exclude in the **Excluded groups** section.
