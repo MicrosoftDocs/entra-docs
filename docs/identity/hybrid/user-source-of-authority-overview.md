@@ -79,6 +79,12 @@ If your organization is using AD management tools such as Active Directory Users
 
 ### Microsoft Identity Manager with the AD MA
 
+If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to an SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA.  Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are first sent to Microsoft Entra, and then to Active Directory where needed. For more information, see: [LINK TO HOW-TO DOC].
+
+### Applications
+
+Your application must be modernized, and you should leverage [cloud authentication](/architecture/authenticate-applications-and-users) for source of authority to work. If you need to access on-premises resources, you can leverage Microsoft Entra Kerberos and [Entra Private Access](/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend using Microsoft Entra Domain Services.  
+
 
 
 
