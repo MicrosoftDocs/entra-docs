@@ -246,7 +246,7 @@ This example shows the response. The response object shown here might be shorten
 
 Follow these steps to update or remove an existing role assignment.  
 You can't remove the last active role assignment for Global Administrators. We recommend having an emergency access account with active permanent role assignment for Global Administrator role. See more [details.](~/identity/role-based-access-control/security-emergency-access.md)  
-You can't remove the eligible role assignment for Global Administrators if there are no assigned role assignments for the Global Administrator role left.
+You can't remove the eligible role assignment for Global Administrators if there would be no assigned role assignments for the Global Administrator role left.
 This is done to minimize risks of administrators locking themselves out of the tenant inadvertently.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
