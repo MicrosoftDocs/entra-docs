@@ -1,7 +1,7 @@
 ---
 author: barclayn
 ms.author: barclayn
-ms.date: 08/13/2025
+ms.date: 08/12/2025
 manager: pmwongera
 ms.service: entra-id
 ms.topic: include
