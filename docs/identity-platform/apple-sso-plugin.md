@@ -506,20 +506,6 @@ If for any reason Secure Enclave needs to be disabled, follow these recommended 
 
 To opt your tenant out of the secure storage rollout, contact Microsoft customer support to request exclusion from the secure storage deployment. Once processed, your tenant is permanently excluded from this rollout. Any devices in your tenant previously registered with secure storage must follow the previous guidance for removing and re-adding the device after the permanent opt-out is completed. To opt in for Secure storage at a future date, you must contact Microsoft customer support.
 
-#### How to detect if your device is registered with secure storage
-
-Secure storage registration is seamless for the device, however, you can verify that your device is using secure storage by doing the following:
-
-1. Sign into the Microsoft Intune Portal.
-
-1. Navigate to your user account and access sign-in logs.
-
-1. If the latest entry shows that Token Protection - Sign In Session as "*Bound*" then the device is registered with secure storage.
-
-:::image type="content" source="media/apple-sso-plugin/token-protection.png" alt-text="Screenshot showing a section of the Microsoft Intune Portal interface. The primary subject is a status message displaying token protection information for a device.":::
-
-If you experience login issues or notice abnormal behavior, please contact Microsoft customer support.
-
 ### Scenarios impacted
 
 The list below contains some common scenarios that will be impacted by these changes. By default, any application that has a dependency on accessing device identity artifacts via Apple's Keychain will be affected.
