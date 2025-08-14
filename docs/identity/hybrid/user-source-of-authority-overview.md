@@ -57,13 +57,6 @@ Using User SOA, you can migrate on-premises users to the cloud, and manage them 
 
 This article describes how User SOA can help IT administrators transition user management from AD DS to the cloud. Once in the cloud, you can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
 
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Optional: Make **Prerequisites** your first H2 in the article. Use clear and unambiguous
-language and use a unordered list format. 
-
--->
-
 ## Consideration for User SOA
 
 Before you begin converting the SOA for users in your organization, there are certain conditions within your environment that you must consider. The following sections provides more details into what you must consider before implementing user SOA.
