@@ -274,7 +274,8 @@ Validate your configuration is working by testing with appropriate Kerberos-capa
 Cloud TGT issued through Platform SSO enable seamless access to Azure file shares without prompting users for interactive credentials. Please note that access to Azure file shares using the PSSO Kerberos TGT feature is currently in limited preview. If you're interested in trying it out, reach out to azurefiles@microsoft.com for onboarding support.
 If you need guidance on configuring a cloud file share in Azure Files, please refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable).
 
-> **Note:** When mounting the file share via SMB, ensure that the manifest file associated with the app registration for Azure File Share includes the `cifs` mapping in **lowercase**. If this value is set to uppercase `CIFS`, it may lead to issues during the mounting process.
+> [!NOTE]
+> When mounting the file share via SMB, ensure that the manifest file associated with the app registration for Azure File Share includes the `cifs` mapping in **lowercase**. If this value is set to uppercase `CIFS`, it may lead to issues during the mounting process.
 
 
 ## Known Issues
