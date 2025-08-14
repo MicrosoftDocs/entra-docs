@@ -134,7 +134,7 @@ To configure Cisco Umbrella:
   ```
 
 6. Add these Microsoft IP addresses:
-6. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
+7. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 ---
 
