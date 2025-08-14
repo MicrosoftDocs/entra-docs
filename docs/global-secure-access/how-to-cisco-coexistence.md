@@ -30,7 +30,7 @@ In this scenario, Global Secure Access handles Internet, Microsoft, and Private 
  
 ## Prerequisites
 
-- Cisco SWG features must be **disabled** for these configurations.
+- Cisco SWG features must be disabled for these configurations.
 - Integration with Microsoft Entra ID is recommended for best user experience.
 
 ## Global Secure Access setup
