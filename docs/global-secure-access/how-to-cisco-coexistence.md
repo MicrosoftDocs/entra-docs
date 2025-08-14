@@ -52,8 +52,8 @@ To configure Cisco Umbrella:
 
 1. **Provision users and groups.**  
     Integration with Microsoft Entra ID is recommended. See [Microsoft Entra ID SAML configuration guide] for [Umbrella](https://learn.microsoft.com/en-us/entra/identity/saas-apps/cisco-umbrella-tutorial) or [Cisco Secure Access](https://docs.sse.cisco.com/sse-user-guide/docs/manage-users-and-groups).
-3. **Create an Internet Access rule to block domains for testing.**
-      For detailed information, see [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
+2. **Create an policy to block a destination or content for testing.**
+      For detailed information, see [Umbrella policies](https://docs.umbrella.com/deployment-umbrella/docs/create-and-apply-policies) or [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
 4. **Deploy and install the Cisco Secure Client.**  
     
   > [!IMPORTANT]
