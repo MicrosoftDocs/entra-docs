@@ -86,7 +86,8 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 6. Select **Save**.
 
 ### Bypass Global Secure Access IPs and FQDNs in Cisco Secure Access/Umbrella
-#### [Cisco Secure Access **Portal](#tab/cisco-secure-access-portal)**
+
+#### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
 
 To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Steering to the destination list.
 
