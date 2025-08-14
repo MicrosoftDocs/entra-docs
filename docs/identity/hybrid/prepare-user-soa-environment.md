@@ -126,7 +126,23 @@ For customers using MIM, you can update the sync rules in MIM to determine which
 
 
 
-##
+## Prepare your Microsoft Exchange Setup 
+
+In case you have Exchange Hybrid setup with MICROSOFT 365 Exchange Online, please prepare your Exchange Server and Exchange Online as per the following guidance before switching the SOA of your user accounts.  
+
+If you are running an Exchange hybrid configuration, please ensure all your mailboxes have migrated to Exchange Online before you switch SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365 you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
+
+1.	Point the MX and Autodiscover DNS records to Exchange Online, instead of Exchange Server.  
+
+1.	Remove the Service Connection Point (SCP) values on Exchange servers. This step ensures that no SCPs are returned, and the Outlook clients will instead use the DNS method for Autodiscover. 
+
+1.	Optionally, to secure your environment, remove the inbound and outbound connectors created by the Hybrid Configuration Wizard used for mail flow between Exchange Server and Exchange online. 
+
+1.	Optionally, to secure your environment, remove the organization relationship, Fed Trust and oauth trust set up between Exchange Server and Exchange Online by HCW. 
+
+1.	Stop writing to on-premises Exchange for the object and sync the object to cloud to ensure EXO has the latest changes from on-premises.
+
+
 
 ##
 
