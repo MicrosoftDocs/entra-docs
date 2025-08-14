@@ -99,7 +99,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
   ```
 
   > [!NOTE]
-  > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.com`.
+  > Cisco Secure Access has an implied wildcard, so you can use `globalsecureaccess.microsoft.com`.
 
 3. Add these FQDNs for Microsoft traffic forwarding profile:
 
