@@ -142,6 +142,7 @@ If you are running an Exchange hybrid configuration, please ensure all your mail
 
 1.	Stop writing to on-premises Exchange for the object and sync the object to cloud to ensure EXO has the latest changes from on-premises.
 
+For more information on disabling Exchange Hybrid, see: [Manage recipients in Exchange Hybrid environments using Management tools](/Exchange/manage-hybrid-exchange-recipients-with-management-tools).
 
 
 ##
