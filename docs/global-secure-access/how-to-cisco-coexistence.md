@@ -17,7 +17,7 @@ ai-usage: ai-assisted
 Learn how to deploy Global Secure Access and Cisco Umbrella, with DNS protection only, in a unified environment. This guide provides step-by-step instructions for configuring both platforms to enhance security and connectivity as part of your Secure Access Service Edge (SASE) strategy.
 The configurations outlined apply to both Cisco Umbrella and Cisco Secure Access DNS Defense. Detailed instructions for configuring each portal are provided.
 > [!NOTE]
-   > If you have Umbrella DNS and Secure Web Gateway, see the coexistence configurations in the [Cisco Secure Access guide](how-to-cisco-secure-access-coexistence.md).
+   > These scenarios feature DNS security only. If you want to include Cisco's Secure Web Gateway, see the coexistence configurations in the [Cisco Secure Access guide](how-to-cisco-secure-access-coexistence.md).
 ## Scenarios
 
 This guide covers the following coexistence scenarios:
