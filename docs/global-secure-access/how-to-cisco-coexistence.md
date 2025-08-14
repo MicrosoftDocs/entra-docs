@@ -80,7 +80,7 @@ To configure Cisco Umbrella:
 
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
-1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list:
+1. Add domain suffixes and Microsoft Entra service FQDNs to the **Deployments > Configuration > Domain Management > Internal domains** list:
   ```
   *.globalsecureaccess.microsoft.com
   ```
