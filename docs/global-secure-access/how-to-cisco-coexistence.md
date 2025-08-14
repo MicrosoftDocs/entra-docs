@@ -51,7 +51,7 @@ To configure Global Secure Access:
 To configure Cisco Umbrella:
 
 1. **Provision users and groups.**  
-    Integration with Microsoft Entra ID is recommended. See [Microsoft Entra ID SAML configuration guide](https://docs.cisco.com/c/en/us/td/docs/security/secure-client/secure-client-5-0/configuration-guide/b_5-0_secure-client_config_guide/microsoft-entra-id-saml.html).
+    Integration with Microsoft Entra ID is recommended. See [Microsoft Entra ID SAML configuration guide] for [Umbrella](https://learn.microsoft.com/en-us/entra/identity/saas-apps/cisco-umbrella-tutorial) or [Cisco Secure Access](https://docs.sse.cisco.com/sse-user-guide/docs/manage-users-and-groups).
 2. **Set up Internet Security.**  
     See [Manage Internet Security](https://docs.cisco.com/c/en/us/td/docs/security/secure-access/secure-access-1-0/configuration-guide/b_1-0_secure-access_config_guide/internet-security.html).
 3. **Create an Internet Access rule to block domains for testing.**
