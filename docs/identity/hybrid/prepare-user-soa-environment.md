@@ -53,7 +53,7 @@ Example: In this article, you will migrate your user databases from IBM Db2 to S
 
 -->
 
-Once you've decided that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your environment based on how users are configured within your Active Directory environment. How you choose to prepare your environment is based on a number of factors. For more information on these factors, see: [Consideration for User SOA](user-source-of-authority-overview.md#consideration-for-user-soa).
+Once you've decided that you want to minimize your on-premises footprint by using Source of Authority for users, you must prepare your environment based on how users are configured within your Active Directory environment. How you choose to prepare your environment is based on many factors. For more information on these factors, see: [Consideration for User SOA](user-source-of-authority-overview.md#consideration-for-user-soa).
 
 This article walks you through how to prepare your environment for user SOA, and walks you through steps you take for synced users synced with Active Directory.
 
@@ -65,13 +65,13 @@ This article walks you through how to prepare your environment for user SOA, and
 
 ## Confirm your AD objects are ready to have their SOA changed 
 
-Before changing the SOA on users, retrieve the objects from your Active Directory domain and check that they’re ready to be converted by confirming the following:
+Before changing the SOA on users, retrieve the objects from your Active Directory domain and check that they’re ready to be converted by confirming the following information:
 
-- Confirm that the objects are already synchronized to Microsoft Entra. Administrative objects, or those excluded from synchronization,can’t have their SOA changed. 
+- Confirm that the objects are already synchronized to Microsoft Entra. Administrative objects, or those excluded from synchronization, can’t have their SOA changed. 
 - Confirm that all attributes you have, or plan to modify, on those users are being synched to Microsoft Entra and are visible as [directory schema extensions] `/graph/api/resources/extensionproperty` in Microsoft Graph. 
 - Confirm there are no reference-valued attributes populated on those objects in Active Directory other than the user’s manager.  
-- Confirm that the value of the manager and member attributes, if set, must be references to users in the same Active Directory domain and that they are synchronized to Microsoft Entra. They can’t refer to other object types, or to objects which aren’t synchronized from this domain to Microsoft Entra. 
-- Confirm that there are no attributes on the objects which are updated by another Microsoft on-premises technology, other than Active Directory Domain Services itself. For example, don’t change the SOA of a user whose `userCertificate` attribute is maintained by AD CS. 
+- Confirm that the value of the manager and member attributes, if set, must be references to users in the same Active Directory domain and that they're synchronized to Microsoft Entra. They can’t refer to other object types, or to objects that aren’t synchronized from this domain to Microsoft Entra. 
+- Confirm that there are no attributes on the objects that are updated by another Microsoft on-premises technology, other than Active Directory Domain Services itself. For example, don’t change the SOA of a user whose `userCertificate` attribute is maintained by AD CS. 
 
 ## Update Active Directory
 
@@ -89,7 +89,7 @@ When shifting your HR integration to the cloud from Active Directory, you should
 
 1.	Make sure you have your cloud HR system ready and in place to initiate provisioning to Microsoft Entra ID. 
 
-1.	Go to your HR Provisioning to Active Directory configuration, and remove the users no longer needed in Active Directory from the App-> Active Directory provisioning configuration (e.g., Workday to Active Directory). This stops these users from syncing into Active Directory. Apply a phased approach to provision identities from the HR system into Active directory by starting with a few users and then widening your selection criteria to scope users. 
+1.	Go to your HR Provisioning to Active Directory configuration, and remove the users no longer needed in Active Directory from the App-> Active Directory provisioning configuration (for example, Workday to Active Directory). This stops these users from syncing into Active Directory. Apply a phased approach to provision identities from the HR system into Active directory by starting with a few users and then widening your selection criteria to scope users. 
 
 1.	With these users stopped from syncing into Active Directory, switch the Source of Authority of the selected users from Active Directory to Microsoft Entra ID. 
 
@@ -104,9 +104,9 @@ The following sections walk you through preparing for user SOA if your Active Di
 
 ### Prepare your MIM setup 
 
-For customers using Microsoft Identity Manager(MIM), you can update the sync rules in MIM to determine which objects will continue to be provisioned into Active Directory, and which ones will be provisioned into Microsoft Entra ID.  
+For customers using Microsoft Identity Manager(MIM), you can update the sync rules in MIM to determine which objects will continue to be provisioned into Active Directory, and which ones are provisioned into Microsoft Entra ID.  
 
-1.	Select the attributes which will be the unique identifiers for users that are the same in both Active Directory and Microsoft Entra. 
+1.	Select the attributes that will be the unique identifiers for users that are the same in both Active Directory and Microsoft Entra. 
 
 1.	Add the [Microsoft Identity Manager connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) to MIM sync, configure a join of the existing Active Directory users brought in from this connector.  
 
@@ -116,13 +116,13 @@ For customers using Microsoft Identity Manager(MIM), you can update the sync rul
 
 1.	Confirm that all the users planned for the SOA conversion have been joined between the metaverse and the Microsoft Graph connector.  
 
-1.	Update the management system for those users (e.g., MIM Portal and Service) to add a label to user objects for which the SOA is changing to Microsoft Entra ID. 
+1.	Update the management system for those users (for example, MIM Portal and Service) to add a label to user objects for which the SOA is changing to Microsoft Entra ID. 
 
 1.	Update the sync rules so that you’re no longer syncing those labeled user objects from MIM to Active Directory, but instead synching to the Microsoft Graph connector.
 
-1.	Keep the sync rules de-activated until the SOA transfer is complete.   
+1.	Keep the sync rules deactivated until the SOA transfer is complete.   
 
-1.	After the SOA transfer, re-sync users. Confirm there are no exports pending to the AD MA for users whose SOA changed, only to the Microsoft Graph connector.
+1.	After the SOA transfer, resync users. Confirm there are no exports pending to the AD MA for users whose SOA changed, only to the Microsoft Graph connector.
 
 1.	Add to your run profile schedules a run of exporting changes from MIM to Microsoft Entra ID using the Microsoft Graph connector.   
 
@@ -132,7 +132,7 @@ For customers using Microsoft Identity Manager(MIM), you can update the sync rul
 
 In case you have Exchange Hybrid setup with MICROSOFT 365 Exchange Online, prepare your Exchange Server and Exchange Online as per the following guidance before switching the SOA of your user accounts.  
 
-If you are running an Exchange hybrid configuration, please ensure all your mailboxes have migrated to Exchange Online before you switch SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365, and you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
+If you're running an Exchange hybrid configuration, ensure all your mailboxes have migrated to Exchange Online before you switch SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365, and you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
 
 1.	Point the MX and Autodiscover DNS records to Exchange Online instead of Exchange Server.  
 
