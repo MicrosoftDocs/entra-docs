@@ -200,7 +200,6 @@ To configure Cisco Umbrella:
   8. Access a Microsoft Entra private application (for example, SMB file share) and validate that Global Secure Access **is** capturing traffic and Cisco isn't.
   9. In Global Secure Access, stop collecting traffic and confirm correct traffic handling.
 
----
 
 
 ---
