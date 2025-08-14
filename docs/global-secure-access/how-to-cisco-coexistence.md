@@ -39,7 +39,7 @@ To configure Global Secure Access:
 
 1. **Enable or disable traffic forwarding profiles** for your Microsoft Entra tenant.  
     See [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
-2. **Install and configure the Entra private network connector** for Private Access applications.  
+2. **Install and configure the Microsoft Entra private network connector** for Private Access applications.  
     See [How to configure connectors](how-to-configure-connectors.md).
 3. **Configure Quick Access** to private resources and set up Private DNS and DNS suffixes.  
     See [How to configure Quick Access](how-to-configure-quick-access.md).
