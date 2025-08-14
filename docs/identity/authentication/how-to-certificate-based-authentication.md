@@ -727,8 +727,8 @@ To set up CBA and configure username bindings by using Microsoft Graph APIs:
                 "isRegistrationRequired": false
             }
         ]
-    }
-    ```
+   }
+   ```
 
 1. Verify that a `204 No content` response code returns. Rerun the `GET` request to make sure that the policies are updated correctly.
 1. Test the configuration by signing in with a certificate that satisfies the policy.

@@ -291,7 +291,7 @@ In some scenarios, an organization issues multiple certificates for a single ide
 
 #### Cloud-only accounts (M:1)
 
-For cloud-only accounts, you can map multiple certificates (up to five) to use by populating the `certificateUserIds` field with unique values to identify each certificate. To map the certificates, in the admin center, go to the **Authorization info** tab.
+For cloud-only accounts, you can map up to five certificates to use by populating the `certificateUserIds` field with unique values to identify each certificate. To map the certificates, in the admin center, go to the **Authorization info** tab.
 
 If the organization uses high-affinity bindings like `IssuerAndSerialNumber`, values in `certificateUserIds` might look like the following example:
 
@@ -372,7 +372,7 @@ You must then sync these values to the `certificateUserIds` field in Microsoft E
 To sync to `certificateUserIds`:
 
 1. Configure Microsoft Entra Connect to add the `alternativeSecurityIds` field to the metaverse.
-1. For each on-premises Server Active Directory forest, configure a new custom inbound rule with a high precedence (a low number, below 100). Add an `Expression` transform with the `altSecurityIdentities` field as the source. The target expression uses the key attribute that you selected and populated, and it uses the mapping to the user types you defined.
+1. For each on-premises Active Directory forest, configure a new custom inbound rule with a high precedence (a low number, below 100). Add an `Expression` transform with the `altSecurityIdentities` field as the source. The target expression uses the key attribute that you selected and populated, and it uses the mapping to the user types you defined.
 
 For example:
 
