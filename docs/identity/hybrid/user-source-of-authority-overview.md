@@ -89,7 +89,7 @@ Your application must be modernized, and you should leverage [cloud authenticati
 
 We recommend that customers migrate their devices to the cloud, and use a Microsoft Entra Joined Device setup in order to fully leverage user SOA capabilities. For groups, there’s no pre-requisites around devices.  
 
-
+### Credentials
 
 
 
