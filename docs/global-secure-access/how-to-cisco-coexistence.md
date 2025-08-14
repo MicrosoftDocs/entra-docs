@@ -151,10 +151,7 @@ To configure Cisco Umbrella:
 
 **Cisco configuration:**
 - Configure the required destinations bypasses. See instructions for [Umbrella portal](#tab/cisco-umbrella-portal) or [Cisco Secure Access portal](#tab/cisco-secure-access-portal).
-- Disable Cisco Secure Access SWG
-    1. In the **Cisco Secure Access portal**, go to **Resources**.
-    2. Select **Roaming Devices > Desktop Operating Systems**.
-    3. Choose the device, then in the blue bar, open the **Web Security** drop-down and select **Always Disable (override)**.
+- Disable the SWG for [Umbrella devices](https://docs.umbrella.com/umbrella-user-guide/docs/selective-enablement#disable-the-swg-module) or [Cisco Secure Access devices](https://docs.sse.cisco.com/sse-user-guide/docs/edit-roaming-devices-internet-security-settings#disable-the-internet-security-settings).
 
 - Deploy and configure Cisco Secure Client software with the Umbrella module.
 
