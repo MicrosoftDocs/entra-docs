@@ -58,7 +58,7 @@ The following scenarios are supported:
   - `SubjectKeyIdentifier` (`SKI`) and `SHA1PublicKey`
   - `IssuerAndSubject` and `IssuerAndSerialNumber`
 
-- Ccertificate-to-user account bindings by using any of the user object attributes:
+- Certificate-to-user account bindings by using any of the user object attributes:
   - `userPrincipalName`
   - `onPremisesUserPrincipalName`
   - `certificateUserIds`

@@ -51,7 +51,7 @@ sections:
       - question: |
           Does Microsoft Entra CBA support an alternate ID as the username instead of userPrincipalName?
         answer: |
-          No, sign-in by using a non-UPN value, such as an alternate email, currently isn't supported.
+          No. Currently, sign-in by using a non-UPN value, such as an alternate email, isn't supported.
           
       - question: |
           Can I have more than one CRL distribution point for a certificate authority?
@@ -61,7 +61,7 @@ sections:
       - question: |
           Can I use a non-HTTP URL for a CDP?
         answer: |
-          No, CDP supports only HTTP URLs.
+          No. CDP supports only HTTP URLs.
 
       - question: |
           How do I find the CRL for a CA, or how do I troubleshoot the error "AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation"?
@@ -141,7 +141,7 @@ sections:
       - question: |
           Why doesn't identity proof to register other authentication methods appear as an option when I use single-factor certificates?
         answer: |
-          A user is considered capable of MFA when the user is in scope for CBA in the authentication methods policy. This policy requirement means that a user can't use identity proof as part of their authentication to register other available methods.
+          A user is considered capable of multifactor authentication (MFA) when the user is in scope for CBA in the authentication methods policy. This policy requirement means that a user can't use identity proof as part of their authentication to register other available methods.
           
       - question: |
           How can I use single-factor certificates to complete MFA?
@@ -170,8 +170,8 @@ sections:
       - question: |
            Can Microsoft Entra CBA be used on Microsoft Surface Hub?
         answer: |
-           Yes. CBA works out-of-the-box for most smart card and smart card reader combinations. 
-           If the smart card and smart card reader combination requires other drivers, you must install the drivers or readers before you can use the smart card and smart card reader combination on Surface Hub.
+           Yes. CBA works out-of-the-box for most combinations of smart card and smart card reader. 
+           If the combination smart card and smart card reader requires other drivers, you must install the drivers before you can use the combination smart card and smart card reader on Surface Hub.
       
 additionalContent: |
   ## Related content

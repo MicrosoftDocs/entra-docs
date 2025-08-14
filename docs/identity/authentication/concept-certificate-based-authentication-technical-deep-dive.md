@@ -60,7 +60,7 @@ The following steps summarize the Microsoft Entra CBA process:
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png" alt-text="Screenshot that shows the certificate picker." lightbox="./media/concept-certificate-based-authentication-technical-deep-dive/cert-picker.png":::
 
 1. Microsoft Entra ID verifies the certificate revocation list (CRL) to make sure that the certificate isn't revoked and that it's valid. Microsoft Entra ID identifies the user by using the [username binding configured](how-to-certificate-based-authentication.md#step-4-configure-username-binding-policy) on the tenant to map the certificate field value to the user attribute value.
-1. If a unique user is found via a Microsoft Entra Conditional Access policy that requires MFA and the [certificate authentication binding rule](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy) satisfies MFA, Microsoft Entra ID signs in the user immediately. If MFA is required but the certificate satisfies only a single factor, if the user is already registered, passwordless sign-in and FIDO2 are offered as second factors.
+1. If a unique user is found via a Microsoft Entra Conditional Access policy that requires multifactor authentication (MFA) and the [certificate authentication binding rule](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy) satisfies MFA, Microsoft Entra ID signs in the user immediately. If MFA is required but the certificate satisfies only a single factor, if the user is already registered, passwordless sign-in and FIDO2 are offered as second factors.
 1. Microsoft Entra ID completes the sign-in process by sending a primary refresh token back to indicate successful sign-in.
 
 If user sign-in is successful, the user can access the application.
@@ -71,7 +71,7 @@ Issuer hints send back a *trusted CA* indicator as part of the TLS handshake. Th
 
 ### Turn on issuer hints
 
-To turn on issuer hints, select the **Issuer Hints** checkbox. An [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) should select **I Acknowledge** after making sure that the proxy with TLS inspection set up is updated correctly, and then save the changes.
+To turn on issuer hints, select the **Issuer Hints** checkbox. An [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) should select **I Acknowledge** after making sure that the proxy that has TLS inspection set up is updated correctly, and then save the changes.
 
 > [!NOTE]
 > If your organization has firewalls or proxies that use TLS inspection, acknowledge that you turned off TLS inspection of the CA endpoint that is capable of matching any name under `[*.]certauth.login.microsoftonline.com`, customized according to the specific proxy in use.
@@ -291,7 +291,9 @@ In some scenarios, an organization issues multiple certificates for a single ide
 
 #### Cloud-only accounts (M:1)
 
-For cloud-only accounts, you can map multiple certificates (up to five) to use by populating the `certificateUserIds` field (on the **Authorization info** tab in the admin center) with unique values identifying each certificate. If the organization uses high-affinity bindings, like `IssuerAndSerialNumber`, values in `certificateUserIds` might look like the following example:
+For cloud-only accounts, you can map multiple certificates (up to five) to use by populating the `certificateUserIds` field with unique values to identify each certificate. To map the certificates, in the admin center, go to the **Authorization info** tab.
+
+If the organization uses high-affinity bindings like `IssuerAndSerialNumber`, values in `certificateUserIds` might look like the following example:
 
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT`\
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8-qR9sT0uV`
@@ -300,7 +302,7 @@ In this example, the first value represents *X509Certificate1*. The second value
 
 #### Hybrid synchronized accounts (M:1)
 
-For synchronized accounts, you can map multiple certificates. In Windows Server Active Directory, populate the `altSecurityIdentities` field with the values that identify each certificate. If your organization uses high-affinity bindings (that is, strong authentication) like `IssuerAndSerialNumber`, the values might look like these examples:
+For synchronized accounts, you can map multiple certificates. In on-premises Active Directory, populate the `altSecurityIdentities` field with the values that identify each certificate. If your organization uses high-affinity bindings (that is, strong authentication) like `IssuerAndSerialNumber`, the values might look like these examples:
 
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>cD2eF3gH4iJ5kL6mN7-oP8qR9sT`\
 `X509:<I>DC=com,DC=contoso,CN=CONTOSO-DC-CA<SR>eF3gH4iJ5kL6mN7oP8-qR9sT0uV`
@@ -311,7 +313,7 @@ In this example, the first value represents *X509Certificate1*. The second value
 
 In some scenarios, an organization requires a user to use the same certificate to authenticate into multiple identities. It might be for an administrative account or for a developer or temporary duty account.
 
-In Windows Server Active Directory, the `altSecurityIdentities` field populates the certificate values. A hint is used during sign-in to direct Windows Server Active Directory to the intended account to check for sign-in.
+In on-premises Active Directory, the `altSecurityIdentities` field populates the certificate values. A hint is used during sign-in to direct Active Directory to the intended account to check for sign-in.
 
 Microsoft Entra CBA has a different process, and no hint is included. Instead, Home realm discovery identifies the intended account and checks the certificate values. Microsoft Entra CBA also enforces uniqueness in the `certificateUserIds` field. Two accounts can't populate the same certificate values.
 
@@ -322,7 +324,9 @@ Microsoft Entra CBA has a different process, and no hint is included. Instead, H
 
 For cloud-only accounts, create multiple username bindings and map unique values to each user account  that uses the certificate. Access to each account is authenticated by using a different username binding. This authentication level applies to the boundary of a single directory or tenant. An Authentication Policy Administrator can map the certificate to use it in another directory or tenant if the values remain unique per account.  
 
-Populate the `certificateUserIds` field (on the **Authorization info** tab in the admin center) with a unique value that identifies the certificate. If the organization uses high-affinity bindings (that is, strong authentication) like `IssuerAndSerialNumber` and `SKI`, it might look like the following example:
+Populate the `certificateUserIds` field with a unique value that identifies the certificate. To populate the field, in the admin center, go to the **Authorization info** tab.
+
+If the organization uses high-affinity bindings (that is, strong authentication) like `IssuerAndSerialNumber` and `SKI`, the values might look like the following example:
 
 Username bindings:
 
@@ -342,9 +346,9 @@ Now, when either user presents the same certificate at sign-in, the user success
 
 Synchronized accounts require a different approach. Although an Authentication Policy Administrator can map unique values to each user account that uses the certificate, the common practice of populating all values to each account in Microsoft Entra ID makes this approach difficult. Instead, Microsoft Entra Connect should filter the values per account to unique values populated into the account in Microsoft Entra ID. The uniqueness rule applies to the boundary of a single directory or tenant. An Authentication Policy Administrator can map the certificate to use it in another directory or tenant if the values remain unique per account.
 
-The organization might also have multiple Windows Server Active Directory forests that contribute users to a single Microsoft Entra tenant. In this case, Microsoft Entra Connect applies the filter to each of the Windows Server Active Directory forests with the same goal: populate only a specific, unique value to the cloud account.
+The organization might also have multiple Active Directory forests that contribute users to a single Microsoft Entra tenant. In this case, Microsoft Entra Connect applies the filter to each of the Active Directory forests with the same goal: populate only a specific, unique value to the cloud account.
 
-Populate the `altSecurityIdentities` field in Windows Server Active Directory with the values that identify the certificate. Include the specific certificate value for that user account type (such as `detailed`, `admin`, or `developer`). Select a key attribute in Windows Server Active Directory. The attribute tells synchronization which user account type the user is evaluating (such as `msDS-cloudExtensionAttribute1`). Populate this attribute with the user type value you want to use, such as `detailed`, `admin`, or `developer`. If the account is the user’s primary account, the value can be empty or NULL.
+Populate the `altSecurityIdentities` field in Active Directory with the values that identify the certificate. Include the specific certificate value for that user account type (such as `detailed`, `admin`, or `developer`). Select a key attribute in Active Directory. The attribute tells synchronization which user account type the user is evaluating (such as `msDS-cloudExtensionAttribute1`). Populate this attribute with the user type value you want to use, such as `detailed`, `admin`, or `developer`. If the account is the user’s primary account, the value can be empty or NULL.
 
 Check that the accounts look similar to these examples:
 
@@ -368,7 +372,7 @@ You must then sync these values to the `certificateUserIds` field in Microsoft E
 To sync to `certificateUserIds`:
 
 1. Configure Microsoft Entra Connect to add the `alternativeSecurityIds` field to the metaverse.
-1. For each Windows Server Active Directory forest, configure a new custom inbound rule with a high precedence (a low number, below 100). Add an `Expression` transform with the `altSecurityIdentities` field as the source. The target expression uses the key attribute that you selected and populated, and it uses the mapping to the user types you defined.
+1. For each on-premises Server Active Directory forest, configure a new custom inbound rule with a high precedence (a low number, below 100). Add an `Expression` transform with the `altSecurityIdentities` field as the source. The target expression uses the key attribute that you selected and populated, and it uses the mapping to the user types you defined.
 
 For example:
 

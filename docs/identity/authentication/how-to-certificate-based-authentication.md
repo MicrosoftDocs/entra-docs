@@ -676,7 +676,7 @@ To set up CBA and configure username bindings by using Microsoft Graph APIs:
    GET https://graph.microsoft.com/v1.0/policies/authenticationmethodspolicy/authenticationMethodConfigurations/X509Certificate
    ```
 
-1. By default, the X.509 certificate authentication method is turned off. To allow users to sign in by using a certificate, you must turn on the authentication method and configure the authentication and username binding policies through an update operation. To update policy, run a PATCH request.
+1. By default, the X.509 certificate authentication method is turned off. To allow users to sign in by using a certificate, you must turn on the authentication method and configure the authentication and username binding policies through an update operation. To update policy, run a `PATCH` request.
 
    ### Request body
 
@@ -730,7 +730,7 @@ To set up CBA and configure username bindings by using Microsoft Graph APIs:
     }
     ```
 
-1. Verify that a `204 No content` response code returns. Rerun the GET request to make sure that the policies are updated correctly.
+1. Verify that a `204 No content` response code returns. Rerun the `GET` request to make sure that the policies are updated correctly.
 1. Test the configuration by signing in with a certificate that satisfies the policy.
 
 ## Set up CBA by using Microsoft PowerShell
@@ -796,7 +796,7 @@ To set up CBA and configure username bindings by using Microsoft Graph APIs:
     ) } | ConvertTo-Json -Depth 5
     ```
 
-1. Run the PATCH request:
+1. Run the `PATCH` request:
 
    ```powershell
    Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/policies/authenticationMethodsPolicy/authenticationMethodConfigurations/x509Certificate" -Body $body -ContentType "application/json"
