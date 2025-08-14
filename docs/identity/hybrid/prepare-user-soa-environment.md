@@ -94,7 +94,37 @@ The first step in setting up SOA is to determine your provisioning strategy for 
 1.	If you have switched Active Directory group management to the cloud, ensure these users are provisioned into that group moving forward.
 
 
-##
+## Prep Your Sync Client
+
+The following sections walk you through preparing for user SOA if your Active Directory environment is currently using a sync client for users
+
+### Prepare your MIM setup 
+
+For customers using MIM, you can update the sync rules in MIM to determine which objects will continue to be provisioned into Active Directory, and which ones will be provisioned into Microsoft Entra ID.  
+
+1.	Select the attributes which will be the unique identifiers for users and groups that are the same in both AD and Microsoft Entra. 
+
+1.	Add to MIM sync the [Microsoft Identity Manager connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph), configure a join of the existing AD users and groups with those brought in from this connector.  
+
+1.	Check the precedence settings on the user, group and contact objects. 
+
+1.	Perform a full import from Microsoft Entra using the Microsoft Graph connector.  
+
+1.	Confirm that all the users and groups which are planned for SOA conversion have been joined between the metaverse and the Microsoft Graph connector.  
+
+1.	Update the management system for those users and groups (e.g., MIM Portal and Service) to add a label to user and group objects for which the SOA is changing to Entra ID. 
+
+1.	Update the sync rules so that you’re no longer syncing those labeled user and group objects from MIM to AD, and instead synching to Microsoft Graph connector.
+
+1.	Keep the sync rules de-activated until SOA transfer is complete.   
+
+1.	After the SOA transfer, re-sync users and groups.  Confirm there are no exports pending for those users and groups to the AD MA, only to the Microsoft Graph connector.
+
+1.	Add to your run profile schedules a run of exporting changes from MIM to Entra ID using the Microsoft Graph connector.   
+
+1.	If you’re no longer exporting any changes to other users and groups in AD, then remove the export to AD run profile from your run profile schedules. 
+
+
 
 ##
 
