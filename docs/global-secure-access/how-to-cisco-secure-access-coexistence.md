@@ -95,7 +95,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 2. In the **Traffic Steering** section, select **Add Destination > Bypass Secure Access**, add the following FQDNs, and save:
 
   ```
-  *.globalsecureaccess.com
+  *.globalsecureaccess.microsoft.com
   ```
 
   > [!NOTE]
