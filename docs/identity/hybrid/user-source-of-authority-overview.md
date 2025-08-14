@@ -53,13 +53,13 @@ Modernization requirements have many organizations shifting Identity and Access 
 
 To minimize your on-premises infrastructure size and complexity, adopt a cloud-first approach. As your presence in the cloud grows, your on-premises Active Directory Domain Services (AD DS) presence can shrink. This process is called AD DS minimization: only required objects remain in the on-premises domain.
 
-Using User SOA, you can migrate on-premises users to the cloud, and manage them there without having to re-create them in Microsoft Entra ID. By leveraging User SOA, users can be completely managed within the cloud. If you have already modernized the underlying apps tied to these users, they can be completely removed from AD once you have shifted their SOA. By using SOA for these users, there’s no need to make any changes within your sync client.
+Using User SOA, you can migrate on-premises users to the cloud, and manage them there without having to re-create them in Microsoft Entra ID. By using User SOA, users can be managed within the cloud. If you have already modernized the underlying apps tied to these users, they can be removed from AD once you shift their SOA. By using SOA for these users, there’s no need to make any changes within your sync client.
 
 This article describes how User SOA can help IT administrators transition user management from AD DS to the cloud. Once in the cloud, you can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
 
 ## Consideration for User SOA
 
-Before you begin converting the SOA for users in your organization, there are certain conditions within your environment that you must consider. The following sections provides more details into what you must consider before implementing user SOA.
+Before you begin converting the SOA for users in your organization, there are certain conditions within your environment that you must consider. The following sections provide more details into what you must consider before implementing user SOA.
 
 ### HR-driven Inbound Provisioning
 
@@ -72,15 +72,15 @@ If your organization is using AD management tools such as Active Directory Users
 
 ### Microsoft Identity Manager with the AD MA
 
-If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to an SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA.  Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are first sent to Microsoft Entra, and then to Active Directory where needed. For more information, see: [LINK TO HOW-TO DOC].
+If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to an SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are first sent to Microsoft Entra, and then to Active Directory where needed. For more information, see: [LINK TO HOW-TO DOC].
 
 ### Applications
 
-Your application must be modernized, and you should leverage [cloud authentication](/entra/architecture/authenticate-applications-and-users) for source of authority to work. If you need to access on-premises resources, you can leverage Microsoft Entra Kerberos and [Entra Private Access](/entra/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend using Microsoft Entra Domain Services.  
+Your application must be modernized, and you should use [cloud authentication](/entra/architecture/authenticate-applications-and-users) for source of authority to work. If you need to access on-premises resources, you can use Microsoft Entra Kerberos and [Microsoft Entra Private Access](/entra/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend using Microsoft Entra Domain Services.  
 
 ### Devices
 
-We recommend that customers migrate their devices to the cloud, and use a Microsoft Entra Joined Device setup in order to fully leverage user SOA capabilities. For groups, there’s no pre-requisites around devices.  
+We recommend that customers migrate their devices to the cloud, and use a Microsoft Entra Joined Device setup in order to fully use user SOA capabilities. For groups, there’s no prerequisites around devices.  
 
 ### Credentials
 
