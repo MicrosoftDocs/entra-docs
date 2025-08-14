@@ -1,13 +1,13 @@
 ---
 author: barclayn
 ms.author: barclayn
-ms.date: 01/31/2025
-manager: femila
+ms.date: 08/12/2025
+manager: pmwongera
 ms.service: entra-id
 ms.topic: include
 ---
 
-To use Microsoft Entra Privileged Identity Management, a tenant must have a valid license. Licenses must also be assigned to the administrators and relevant users. This article describes the license requirements to use Privileged Identity Management. To use Privileged Identity Management, you must have one of the following licenses:
+To use Microsoft Entra Privileged Identity Management, a tenant must have a valid license. This article describes the license requirements to use Privileged Identity Management. To use Privileged Identity Management, you must have one of the following licenses:
 
 
 ### Valid licenses for PIM

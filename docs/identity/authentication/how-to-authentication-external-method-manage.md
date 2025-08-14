@@ -14,9 +14,14 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Manage an external authentication method in Microsoft Entra ID (Preview)
 
-An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign in to Microsoft Entra ID. An EAM can satisfy MFA requirements from Conditional Access policies, Microsoft Entra ID Protection risk-based Conditional Access policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
+An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign in to Microsoft Entra ID.
 
-EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
+> [!IMPORTANT]
+> External Authentication Provider is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+> With this preview, we're giving you the ability for an external authentication provider to integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy MFA requirements from Conditional Access policies, Microsoft Entra ID Protection risk-based Conditional Access policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA.
+> EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
+
+Here is a diagram of how external authentication method works:
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
