@@ -170,7 +170,7 @@ To configure Cisco Umbrella:
 
 ---
 
-### 2. Internet Access, Microsoft Access, and Private Access with Cisco Umbrella DNS.
+### 2. Internet Access, Microsoft Access, and Private Access with Cisco Umbrella DNS security.
 
 
 #### Steps
