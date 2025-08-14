@@ -46,7 +46,7 @@ To configure Global Secure Access:
 4. **Install and configure the Global Secure Access client** on end-user devices.  
     See [Global Secure Access clients](concept-clients.md).
 
-## Cisco Secure Access setup
+## Cisco Umbrella setup
 
 To configure Cisco Umbrella:
 
