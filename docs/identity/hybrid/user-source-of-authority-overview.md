@@ -83,7 +83,7 @@ If your organization is using Microsoft Identity Manager with the AD MA to manag
 
 ### Applications
 
-Your application must be modernized, and you should leverage [cloud authentication](/architecture/authenticate-applications-and-users) for source of authority to work. If you need to access on-premises resources, you can leverage Microsoft Entra Kerberos and [Entra Private Access](/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend using Microsoft Entra Domain Services.  
+Your application must be modernized, and you should leverage [cloud authentication](/entra/architecture/authenticate-applications-and-users) for source of authority to work. If you need to access on-premises resources, you can leverage Microsoft Entra Kerberos and [Entra Private Access](/entra/global-secure-access/concept-private-access) to access Kerberos based AD apps. For LDAP based applications, we recommend using Microsoft Entra Domain Services.  
 
 ### Devices
 
