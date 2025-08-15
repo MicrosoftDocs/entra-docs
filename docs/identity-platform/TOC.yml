@@ -149,8 +149,14 @@
               href: quickstart-single-page-app-sign-in.md?pivots=workforce
           - name: Native authentication
             items:
-              - name: Sign in users
-                href: quickstart-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
+              - name: Use API
+                items:
+                  - name: Sign in users in a React SPA
+                    href: quickstart-native-authentication-single-page-app-react-sign-in.md
+              - name: Use SDK
+                items:
+                - name: Sign in users in SPA
+                  href: quickstart-native-authentication-single-page-app-sdk-sign-in.md
     - name: Tutorials
       items:
         - name: JavaScript
@@ -173,22 +179,46 @@
                 href: tutorial-single-page-app-react-sign-in-sign-out.md
             - name: Native authentication
               items:
-                - name: Sign up
-                  href: tutorial-native-authentication-single-page-app-react-sign-up.md
-                - name: Set up local CORS
-                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
-                - name: Sign in
-                  href: tutorial-native-authentication-single-page-app-react-sign-in.md
-                - name: Reset password
-                  href: tutorial-native-authentication-single-page-app-react-reset-password.md
+                - name: Use API
+                  items:
+                  - name: Sign up
+                    href: tutorial-native-authentication-single-page-app-react-sign-up.md
+                  - name: Set up local CORS
+                    href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
+                  - name: Sign in
+                    href: tutorial-native-authentication-single-page-app-react-sign-in.md
+                  - name: Reset password
+                    href: tutorial-native-authentication-single-page-app-react-reset-password.md
+                - name: Use SDK
+                  items:
+                  - name: Sign up
+                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-up.md
+                  - name: Sign in
+                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-in.md
+                  - name: Reset password
+                    href: tutorial-native-authentication-single-page-app-react-sdk-reset-password.md
+                  - name: Support web fallback
+                    href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md
         - name: Angular
           items:
-          - name: Prepare your app
-            href: tutorial-single-page-apps-angular-prepare-app.md
-          - name: Sign in users
-            href: tutorial-single-page-apps-angular-sign-in-users-app.md
-          - name: Extract user data and test app
-            href: tutorial-single-page-apps-angular-extract-user-data.md
+            - name: Browser-delegated authentication
+              items:
+              - name: Prepare your app
+                href: tutorial-single-page-apps-angular-prepare-app.md
+              - name: Sign in users
+                href: tutorial-single-page-apps-angular-sign-in-users-app.md
+              - name: Extract user data and test app
+                href: tutorial-single-page-apps-angular-extract-user-data.md
+            - name: Native authentication
+              items:
+              - name: Sign up
+                href: tutorial-native-authentication-single-page-app-angular-sign-up.md
+              - name: Sign in
+                href: tutorial-native-authentication-single-page-app-angular-sign-in.md
+              - name: Reset password
+                href: tutorial-native-authentication-single-page-app-angular-reset-password.md
+              - name: Support web fallback
+                href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md 
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -208,6 +238,8 @@
                   href: scenario-spa-call-api.md
         - name: Native authentication
           items:
+            - name: Set up local CORS
+              href: how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md
             - name: Set up CORS in test environment
               href: how-to-native-authentication-cors-solution-test-environment.md
             - name: Set up CORS in production

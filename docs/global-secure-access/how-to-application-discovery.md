@@ -3,7 +3,7 @@ title: Application Discovery for Global Secure Access
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 06/30/2025
+ms.date: 08/12/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -12,7 +12,7 @@ ms.custom: sfi-image-nochange
 # Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.
 ---
 # Application discovery for Global Secure Access
-Application discovery lets administrators see which applications people use on their corporate network. By identifying which applications are accessed and by whom, administrators can create private applications with precise segmentation and least privilege access, so users only get the access they need. 
+Application discovery lets administrators see which applications people use on their corporate network. By identifying who uses which applications, administrators can create private applications with precise segmentation and least privilege access, so users only get the access they need. 
 
 With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, like with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a Conditional Access policy and set user assignments per application.  
 
@@ -46,6 +46,21 @@ Each application segment includes the following columns:
 - **Received bytes**: The total bytes of data the user device received from the application segment.  
 - **Last access**: The last time in the time range the application segment was accessed.   
 - **First access**: The first time in the time range the application segment was accessed.  
+
+## Review recommendations
+Microsoft Entra recommendations provide you with actionable guidance to improve your security posture. For Application discovery, recommendations help you identify which application segments to onboard as private applications. To learn more, see [What are Microsoft Entra recommendations?](../identity/monitoring-health/overview-recommendations.md).
+
+To access recommendations for Application discovery:
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
+1. Browse to **Identity** > **Overview**.
+1. Select the **Recommendations** tab.
+1. Select the recommendation for Application discovery: **Onboard new discovered application segments to enterprise applications**.
+:::image type="content" source="media/how-to-application-discovery/recommendation-onboard-discovered.png" alt-text="Screenshot of the Recommendations tab, showing the recommendation to onboard new discovered application segments to enterprise applications.":::   
+1. Review the recommendation details and follow the suggested **Action plan**.
+:::image type="content" source="media/how-to-application-discovery/recommendation-action-plan.png" alt-text="Screenshot of the impacted resources and the recommended action plan." lightbox="media/how-to-application-discovery/recommendation-action-plan-expanded.png":::   
+
+> [!NOTE]
+> This feature is currently unavailable in Australia and Africa.
 
 ## Create a new application
 Use Application discovery to create new Microsoft Entra ID applications based on the discovered application segments of the main table. To add an application segment to a new application:
@@ -96,3 +111,5 @@ Before you decide to create a private application, you might want to review othe
 
 ## Related content
 * [How to configure Quick Access for Global Secure Access](how-to-configure-quick-access.md)
+* [What is application usage analytics?](overview-application-usage-analytics.md)
+* [What are Microsoft Entra recommendations?](../identity/monitoring-health/overview-recommendations.md)

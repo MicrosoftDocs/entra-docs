@@ -96,3 +96,21 @@ The enforcements are turned on by configuring an organization's [app management 
 [Learn how to check if the protection has been enabled in your organization](https://aka.ms/check-identifier-uri-protection-state)
 
 Even though Microsoft is enabling this setting by default, tenant administrators retain control over it. They can turn it on, off, or grant exceptions to it.
+
+### Why am I hitting this error when configuring my SAML application?
+
+SAML applications are exempt from the identifier URI restrictions by default.  However, they must be explicitly indicated as SAML applications in order for the exemption to apply.
+
+If the SAML setup was configured using the 'Single Sign On' page of 'Enterprise applications', then the app will automatically be indicated as a SAML app.  If not, you can indicate the app as a SAML app by setting the `preferredSingleSignOn` mode property of the service principal to `SAML`.
+
+To do this, make the following request.  You can get the object ID of the service principal from the [Enterprise applications experience](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview).
+
+```http
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/{objectIdOfServicePrincipal}
+```
+
+```json
+{
+    "preferredSingleSignOnMode": "SAML"
+}
+```

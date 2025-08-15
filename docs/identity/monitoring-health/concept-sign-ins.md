@@ -4,7 +4,7 @@ description: Learn about the different types of sign-in logs that are available 
 author: shlipsey3
 manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ms.subservice: monitoring-health
 ms.date: 06/30/2025
 ms.author: sarahlipsey

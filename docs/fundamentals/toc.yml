@@ -76,6 +76,8 @@ items:
     href: concept-secure-remote-workers.md
   - name: Integrate your apps with Microsoft Entra ID
     href: five-steps-to-full-application-integration.md
+  - name: Integrate your SAP apps with Microsoft Entra ID
+    href: scenario-azure-first-sap-identity-integration.md
   - name: Security defaults
     href: security-defaults.md
   - name: Manage 'Stay signed in?' prompt
@@ -96,8 +98,8 @@ items:
     href: copilot-security-entra-investigate-incident.md 
   - name: Investigate app risk using Microsoft Security Copilot
     href: copilot-security-entra-investigate-risky-apps.md
-  - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
-    href: copilot-security-entra-responsible-ai-faq.md
+  - name: Responsible AI FAQ for Security Copilot
+    href: /copilot/security/rai-faqs-security-copilot?toc=/fundamentals/toc.json&bc=/fundamentals/breadcrumb/toc.json
 - name: Support and help
   expanded: false
   items:

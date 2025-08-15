@@ -9,7 +9,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/25/2025
 ms.author: addimitu
 

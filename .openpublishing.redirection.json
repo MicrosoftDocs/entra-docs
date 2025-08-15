@@ -181,6 +181,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/copilot-security-entra-responsible-ai-faq.md",
+      "redirect_url": "/copilot/security/rai-faqs-security-copilot",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/agent-optimization-faq.yml",
       "redirect_url": "/entra/identity/conditional-access/agent-optimization",
       "redirect_document_id": false
@@ -338,6 +343,11 @@
     {
       "source_path_from_root": "/docs/fundamentals/how-to-approve-support-access-requests.md",
       "redirect_url": "/entra/fundamentals/how-to-manage-support-access-requests",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/howto-configure-health-alert-emails.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-configure-health-alert-notifications",
       "redirect_document_id": false
     },
     {

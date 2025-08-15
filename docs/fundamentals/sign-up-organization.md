@@ -5,8 +5,8 @@ author: barclayn
 manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
-ms.date: 08/01/2025
+ms.topic: article
+ms.date: 08/15/2025
 ms.author: barclayn
 ms.reviewer: jeffsta
 ---
@@ -26,3 +26,5 @@ Sign up for [Microsoft Entra ID](get-started-premium.md) or a [new Microsoft Azu
 - [How to buy Azure](https://azure.microsoft.com/pricing/purchase-options/)
 - [Sign up for Microsoft Entra ID P1 or P2 editions](./get-started-premium.md)
 - [Learn more about Microsoft Entra ID](./whatis.md)
+- [Use your on-premises identity infrastructure in the cloud](~/identity/hybrid/whatis-hybrid-identity.md)
+- [Visit the Microsoft Azure blog](https://azure.microsoft.com/blog/)

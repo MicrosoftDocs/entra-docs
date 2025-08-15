@@ -127,3 +127,4 @@ To start developing, see [Getting started](~/identity-platform/v2-overview.md#ge
 - Sign up for a [free 30-day Microsoft Entra ID P1 or P2 trial](https://azure.microsoft.com/trial/get-started-active-directory/).
 - Learn the differences between Active Directory and Microsoft Entra ID, see [Compare Active Directory to Microsoft Entra ID](compare.md).
 - Learn how to get started with [Microsoft Entra ID for developers](~/identity-platform/index.yml).
+- Find definitions to related terms [Microsoft identity platform glossary](/entra/identity-platform/developer-glossary#tenant)
