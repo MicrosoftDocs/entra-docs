@@ -169,12 +169,12 @@ To configure Microsoft and Cisco ASA remote access VPN for a unified SASE soluti
 
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco ASA remote access VPN endpoint IP and FQDN.
 
-1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
-2. Under Internet access policies, select **View**.
-3. Expand **Custom Bypass** and select **Add rule**.
-4. Leave destination type as FQDN and enter the FQDN used to connect to your VPN in Destination.
-5. Set destination type as IP and enter the public IP address of your Cisco ASA.
-6. Select **Save**.
+  1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
+  2. Under Internet access policies, select **View**.
+  3. Expand **Custom Bypass** and select **Add rule**.
+  4. Leave destination type as FQDN and enter the FQDN used to connect to your VPN in Destination.
+  5. Set destination type as IP and enter the public IP address of your Cisco ASA.
+  6. Select **Save**.
 
 ## Cisco ASA VPN setup
 
