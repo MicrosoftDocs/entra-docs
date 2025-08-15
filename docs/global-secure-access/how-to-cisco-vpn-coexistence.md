@@ -230,24 +230,24 @@ Configure split-include for Cisco ASA Remote Access VPN:
 
 ### Cisco ASA Remote Access VPN
 
-#### Configuration 1: Internet and Microsoft traffic with Cisco ASA private access
+### 1. Internet and Microsoft traffic with Cisco ASA private access
 
+#### Steps
+
+**Global Secure Access configuration:**
 - Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
 - Install and configure the Global Secure Access client for Windows or macOS.
 - Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass-for-cisco-asa) to exclude Cisco ASA remote access TLS URL and public IP address.
+
+**Cisco configuration:**
 - Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration) or [tunnel all](#tunnel-all-networks-with-dynamic-exclusions) configuration, as described previously.
 - Install Cisco Secure Client or AnyConnect software.
 - Connect to your VPN endpoint.
 
-After both clients are installed and running, verify that Global Secure Access and Cisco clients are enabled.
-
-**Verify configuration:**
-
-- Open the **Global Secure Access client**, right-click, and select **Advanced Diagnostics > Forwarding Profile**. Confirm that only **Internet** and **Microsoft 365** rules are applied.
-- Open **Advanced Diagnostics > Health Check** in the Global Secure Access client and verify that all checks are passing.
-
-**Test traffic flow:**
-
+**Validation:**
+- Ensure both clients are enabled and the Umbrella profile is `Active`.
+- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+- Test traffic flow by accessing various sites and validating traffic logs in both platforms.
 1. Start collecting traffic in Global Secure Access client.
 2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic from these sites.
@@ -257,6 +257,7 @@ After both clients are installed and running, verify that Global Secure Access a
 7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco ASDM logs.
 8. Stop collecting traffic in Global Secure Access client.
 
+---
 ### 2. Internet, Private Access, and Microsoft traffic with Cisco ASA private access
 
 #### Steps
