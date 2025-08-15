@@ -126,16 +126,16 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
-1. Start collecting traffic in Global Secure Access client.
-2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
-3. Verify Global Secure Access client captures traffic from these sites.
-4. Validate traffic in Microsoft Entra admin center traffic logs.
-5. Validate traffic **isn't** captured in Cisco Secure Access portal.
-6. Access private resources via Cisco Secure Client (e.g, RDP session).
-7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco Secure Access logs.
-8. Access private application in Microsoft Entra Private Access (for example, SMB file share).
-9. Validate SMB traffic is captured in Global Secure Access logs and not in Cisco Secure Access logs.
-10. Stop collecting traffic in Global Secure Access client.
+  1. Start collecting traffic in Global Secure Access client.
+  2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
+  3. Verify Global Secure Access client captures traffic from these sites.
+  4. Validate traffic in Microsoft Entra admin center traffic logs.
+  5. Validate traffic **isn't** captured in Cisco Secure Access portal.
+  6. Access private resources via Cisco Secure Client (e.g, RDP session).
+  7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco Secure Access logs.
+  8. Access private application in Microsoft Entra Private Access (for example, SMB file share).
+  9. Validate SMB traffic is captured in Global Secure Access logs and not in Cisco Secure Access logs.
+  10. Stop collecting traffic in Global Secure Access client.
 
 ---
 ## Cisco ASA Remote Access VPN
