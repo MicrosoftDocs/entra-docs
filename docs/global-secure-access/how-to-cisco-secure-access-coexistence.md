@@ -233,7 +233,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 
 #### Steps
 
-#### Global Secure Access configuration
+**Global Secure Access configuration**
 
 - Enable Microsoft Access forwarding profile.
 - Install and configure the Global Secure Access client for Windows.
