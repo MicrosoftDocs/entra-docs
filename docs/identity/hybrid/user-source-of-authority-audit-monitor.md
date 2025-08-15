@@ -112,8 +112,15 @@ GET users?$filter=onPremisesSyncBehavior/isCloudManaged eq true&$select=id,displ
 <!---NL2MSGraph is a new platform that allows customers to use Security Co-Pilot to get answers using MSGraph calls. We can simplify customer experience by adding this filter at "all users" level
 Given SOA feature has no UX, this enables the ability to view bulk SOA changes after it's made.--->
 
-## [Section n heading]
-TODO: add your content
+## How to use Azure Monitor to create workbooks and reports using Log Analytics 
+
+You can integrate Audit Logs with Azure Monitoring and search the following events to get SOA operations:
+
+- Event ID 6956 is logged if an object isn't synced to the cloud because the SOA of the object is cloud-managed.
+
+- When SOA transfer is rolled back to on-premises, user provisioning to AD DS stops syncing changes without deleting the AD DS user. The AD DS user is also removed from the configuration scope. The AD DS user remains intact, and AD DS resumes control in the next sync cycle. You can verify in the **Audit Logs** that sync doesn't happen for this object because it's managed on-premises. 
+
+For more information about how to create custom queries, see [Understand how provisioning integrates with Azure Monitor logs](/entra/identity/app-provisioning/application-provisioning-log-analytics).
 
 <!-- 5. Next step/Related content ------------------------------------------------------------------------ 
 
