@@ -243,19 +243,20 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 - Configure required destinations to bypass Internet Security, including other Microsoft IPs and FQDNs.
 - Deploy and configure Cisco Secure Client with Zero Trust Access and Umbrella modules.
 - Add private resources and access policies.
-- Verify client configurations as in Configuration 2.
 
-#### Test traffic flow
-
-1. Start collecting traffic in Global Secure Access client.
-2. Access `bing.com`, `salesforce.com` in browsers.
-3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
-4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
-5. Access `outlook.office365.com`, `<yourtenantdomain>.sharepoint.com`.
-6. Validate Global Secure Access traffic logs show these sites; Cisco Secure Access doesn't.
-7. Access private resources via Cisco Secure Private Access.
-8. Validate traffic logs in both portals.
-9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
+**Validation**
+  - Ensure both clients are enabled and the Umbrella profile is `Active`.
+  - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+  - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+      1. Start collecting traffic in Global Secure Access client.
+      2. Access `bing.com`, `salesforce.com` in browsers.
+      3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
+      4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
+      5. Access `outlook.office365.com`, `<yourtenantdomain>.sharepoint.com`.
+      6. Validate Global Secure Access traffic logs show these sites; Cisco Secure Access doesn't.
+      7. Access private resources via Cisco Secure Private Access.
+      8. Validate traffic logs in both portals.
+      9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
 
 ### Configuration 4: Internet Access and Microsoft Access with Cisco Secure Private Access
 
