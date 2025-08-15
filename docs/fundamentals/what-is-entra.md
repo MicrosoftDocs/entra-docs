@@ -25,7 +25,7 @@ The Microsoft Entra product family covers four maturity stages of secure end-to-
 
 #### Microsoft Entra ID
 
-[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It is a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory includes an initial domain name, like `contoso.onmicrosoft.com`. You can also add your organization's domain names.
+[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It's a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory includes an initial domain name, like `contoso.onmicrosoft.com`. You can also add your organization's domain names.
 
 **Microsoft 365, Azure, or Dynamics CRM Online subscribers** already use Microsoft Entra ID as every Microsoft 365, Office 365, Azure, and Dynamics CRM Online tenant is automatically a Microsoft Entra tenant. You can immediately start managing access to your integrated cloud apps.
 
@@ -125,6 +125,6 @@ To start developing, see [Getting started](~/identity-platform/v2-overview.md#ge
 ## Related content
 
 - Sign up for a [free 30-day Microsoft Entra ID P1 or P2 trial](https://azure.microsoft.com/trial/get-started-active-directory/).
-- Learn the differences between Active Directory and Microsoft Entra ID, see [Compare Active Directory to Microsoft Entra ID](compare.md).
+- [Learn the differences between Active Directory and Microsoft Entra ID](compare.md).
 - Learn how to get started with [Microsoft Entra ID for developers](~/identity-platform/index.yml).
 - Find definitions to related terms [Microsoft identity platform glossary](/entra/identity-platform/developer-glossary#tenant)
