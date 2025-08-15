@@ -20,7 +20,7 @@ In today's digital landscape, organizations need robust, unified solutions for s
 
 This guide outlines how to configure and deploy Global Secure Access solutions alongside Cisco Secure Access SSE offerings. By using both platforms, you can optimize your organization's security posture while maintaining high-performance connectivity for private applications, Microsoft 365 traffic, and internet access.
 
-## Coexistence configurations
+## Scenarios
 
 ### Configuration 1: Microsoft Entra Private Access with Cisco Secure Internet Access
 
