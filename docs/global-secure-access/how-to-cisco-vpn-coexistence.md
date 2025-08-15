@@ -95,14 +95,14 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
-1. In the system tray, right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Traffic** tab > **Start collecting**.
-2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
-3. Verify Global Secure Access client captures traffic from these sites.
-4. In Microsoft Entra admin center, go to **Global Secure Access > Monitor > Traffic logs**. Validate traffic is logged.
-5. In Cisco Secure Access portal, go to **Monitor > Activity Search**. Validate traffic to these websites **isn't** captured.
-6. Access private resources via Cisco Secure Client (for example, RDP session).
-7. Validate RDP traffic is missing from Global Secure Access traffic logs and present in Cisco Secure Access logs.
-8. Stop collecting traffic in Global Secure Access client and validate no private application traffic was captured.
+  1. In the system tray, right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Traffic** tab > **Start collecting**.
+  2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
+  3. Verify Global Secure Access client captures traffic from these sites.
+  4. In Microsoft Entra admin center, go to **Global Secure Access > Monitor > Traffic logs**. Validate traffic is logged.
+  5. In Cisco Secure Access portal, go to **Monitor > Activity Search**. Validate traffic to these websites **isn't** captured.
+  6. Access private resources via Cisco Secure Client (for example, RDP session).
+  7. Validate RDP traffic is missing from Global Secure Access traffic logs and present in Cisco Secure Access logs.
+  8. Stop collecting traffic in Global Secure Access client and validate no private application traffic was captured.
 
 ---
 
