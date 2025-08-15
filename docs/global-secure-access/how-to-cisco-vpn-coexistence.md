@@ -176,7 +176,7 @@ To configure Microsoft and Cisco ASA remote access VPN for a unified SASE soluti
 5. Set destination type as IP and enter the public IP address of your Cisco ASA.
 6. Select **Save**.
 
-### Setting up Cisco ASA VPN
+## Cisco ASA VPN setup
 
 #### Split-Include configuration
 
