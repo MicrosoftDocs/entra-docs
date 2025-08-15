@@ -142,8 +142,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 ## Scenarios
 
-#### Scenario 1: Internet and Microsoft traffic with Cisco ASA Remote Access VPN for private access
-
+1. **[Internet and Microsoft traffic with Cisco ASA Remote Access VPN for private access](#1-internet-and-microsoft-traffic-with-cisco-asa-private-access).**
 Global Secure Access handles internet and Microsoft traffic. Cisco ASA captures only private application traffic.
 
 #### Scenario 2:  Private Access, Internet Access, and Microsoft Access with Cisco ASA Remote Access VPN
