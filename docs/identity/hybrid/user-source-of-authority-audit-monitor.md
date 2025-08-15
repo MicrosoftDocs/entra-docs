@@ -1,6 +1,6 @@
 ---
-title: #Required; Keep the title body to 60-65 chars max including spaces and brand
-description: #Required; Keep the description within 100- and 165-characters including spaces 
+title: How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)
+description: Learn how to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID.
 author: #Required; your GitHub user alias, with correct capitalization
 ms.author: #Required; microsoft alias of author
 ms.service: #Required; use the name-string related to slug in ms.product/ms.service
@@ -47,23 +47,9 @@ One clear sign of a procedural article would be the use of a numbered list. With
 
 -->
 
-# [\<noun phrase\> concept(s)]
-TODO: Add your heading
+# How to audit and monitor User Source of Authority (SOA) in Microsoft Entra ID (Preview)
 
-<!-- 2. Introductory paragraph
-----------------------------------------------------------
-
-Required. Lead with a light intro that describes what the article covers. Answer the fundamental “why would I want to know this?” question. Keep it short.
-
-* Answer the fundamental "Why do I want this knowledge?" question.
-* Don't start the article with a bunch of notes or caveats.
-* Don’t link away from the article in the introduction.
-* For definitive concepts, it's better to lead with a sentence in the form, "X is a (type of) Y that does Z."
-
--->
-
-[Introductory paragraph]
-TODO: Add your introductory paragraph
+Admins can use **Audit Logs** in the Azure portal or the onPremisesSyncBehavior Microsoft Graph API to monitor and report SOA changes in their environment. They can also integrate SOA changes with third-party monitoring systems. For more information, see [onPremisesSyncBehavior](/graph/api/resources/onpremisessyncbehavior).
 
 <!-- 3. Prerequisites --------------------------------------------------------------------
 
@@ -72,8 +58,17 @@ language and use a unordered list format.
 
 -->
 
-## Prerequisites
-TODO: [List the prerequisites if appropriate]
+## How to use Audit Logs to see SOA changes  
+
+You can access Audit Logs in the Azure portal. They retain a record of SOA changes for the last 30 days. 
+
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Reports Reader](/entra/identity/role-based-access-control/permissions-reference#reports-reader). 
+
+1. Select **Manage Microsoft Entra ID** > **Monitoring** > **Audit logs** or search for **audit logs** in the search bar.
+
+1. Select activity as **Change Source of Authority from AD DS to cloud**.
+
+   :::image type="content" source="media/how-to-source-of-authority-auditing-monitoring/audit-logs.png" alt-text="Screenshot of the Azure portal showing the Change Source of Authority from AD DS to cloud activity selection.":::
 
 <!-- 4. H2s (Article body)
 --------------------------------------------------------------------
@@ -90,11 +85,32 @@ Required: In a series of H2 sections, the article body should discuss the ideas 
 
 -->
 
-## [Section 1 heading]
-TODO: add your content
+## How to use Microsoft Graph API to create reports for SOA 
 
-## [Section 2 heading]
-TODO: add your content
+You can use Microsoft Graph to report data such as:
+
+- Report how many objects are SOA converted
+- Filter data for converted users
+- Identify objects that were SOA converted and rolled back
+
+### Filter and count converted objects
+
+The [onPremisesSyncBehavior API](/graph/api/resources/onpremisessyncbehavior) helps you view the *isCloudManaged* property for an user. You can set the *isCloudManaged* property to `true` to convert the user SOA. 
+
+You can also call the onPremisesSyncBehavior API to query how many users converted their SOA to cloud-managed:
+
+```https
+GET users/{ID}/onPremisesSyncBehavior?$select=id,isCloudManaged
+```
+
+You can use $search and $count to view all user objects with converted SOA. Before you can use $filter or $count, you need to set consistencyLevel = eventual in **Request headers** in Microsoft Graph Explorer:
+
+```https
+GET users?$filter=onPremisesSyncBehavior/isCloudManaged eq true&$select=id,displayName,isCloudManaged&$count=true
+```
+
+<!---NL2MSGraph is a new platform that allows customers to use Security Co-Pilot to get answers using MSGraph calls. We can simplify customer experience by adding this filter at "all users" level
+Given SOA feature has no UX, this enables the ability to view bulk SOA changes after it's made.--->
 
 ## [Section n heading]
 TODO: add your content
