@@ -226,7 +226,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 > [!NOTE]
 > When using the Tunnel All Networks configuration, after the client connects, it might take a few seconds before you can access private resources through the Cisco VPN.
 
-## Coexistence configurations
+## Configuration scenarios
 
 ### Cisco ASA Remote Access VPN
 
