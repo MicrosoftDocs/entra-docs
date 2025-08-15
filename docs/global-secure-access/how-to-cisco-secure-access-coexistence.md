@@ -45,7 +45,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 2. Configure Cisco Secure Internet Access and Secure Private Access.
 3. Establish required FQDN and IP bypasses for integration between the platforms.
 
-### Set up Global Secure Access
+## Global Secure Access setup
 
 - Enable and disable different traffic forwarding profiles for your Microsoft Entra tenant. See [Traffic forwarding profiles](concept-traffic-forwarding.md).
 - Install and configure the private network connector. See [Configure connectors](how-to-configure-connectors.md).
