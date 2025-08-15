@@ -199,7 +199,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 
 #### Steps
 
-#### Global Secure Access configuration
+**Global Secure Access configuration**
 
 - Enable Private Access forwarding profile.
 - Install a private network connector.
