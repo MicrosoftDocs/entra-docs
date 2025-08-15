@@ -248,14 +248,14 @@ Configure split-include for Cisco ASA Remote Access VPN:
 - Ensure both clients are enabled and the Umbrella profile is `Active`.
 - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
-1. Start collecting traffic in Global Secure Access client.
-2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
-3. Verify Global Secure Access client captures traffic from these sites.
-4. Validate traffic in Microsoft Entra admin center traffic logs.
-5. In Cisco ASDM, go to **Monitoring > Logging > View**. Validate website traffic **isn't** captured.
-6. Access private resources via Cisco Secure Client (for example, RDP session).
-7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco ASDM logs.
-8. Stop collecting traffic in Global Secure Access client.
+  1. Start collecting traffic in Global Secure Access client.
+  2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
+  3. Verify Global Secure Access client captures traffic from these sites.
+  4. Validate traffic in Microsoft Entra admin center traffic logs.
+  5. In Cisco ASDM, go to **Monitoring > Logging > View**. Validate website traffic **isn't** captured.
+  6. Access private resources via Cisco Secure Client (for example, RDP session).
+  7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco ASDM logs.
+  8. Stop collecting traffic in Global Secure Access client.
 
 ---
 ### 2. Internet, Private Access, and Microsoft traffic with Cisco ASA private access
