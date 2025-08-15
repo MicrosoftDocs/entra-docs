@@ -140,7 +140,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 ---
 ## Cisco ASA Remote Access VPN
 
-### Coexistence scenarios
+## Scenarios
 
 #### Scenario 1: Internet and Microsoft traffic with Cisco ASA Remote Access VPN for private access
 
