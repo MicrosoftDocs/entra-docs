@@ -256,6 +256,8 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
       8. Validate traffic logs in both portals.
       9. Stop collecting traffic and confirm Global Secure Access only captured Microsoft traffic.
 
+---
+
 4: Internet Access and Microsoft Access with Cisco Secure Private Access
 
 
