@@ -77,7 +77,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 ## Configuration scenarios
 
-#### Configuration 1: Internet and Microsoft traffic with Cisco Secure Access VPNaaS for private access
+### 1: Internet and Microsoft traffic with Cisco Secure Access VPNaaS for private access.
 
 - Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
 - Install and configure the Global Secure Access client for Windows or macOS.
