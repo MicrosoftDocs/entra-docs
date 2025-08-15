@@ -79,22 +79,22 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 ### 1: Internet and Microsoft traffic with Cisco Secure Access VPNaaS for private access.
 
+
+#### Steps
+
+**Global Secure Access configuration:**
 - Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
 - Install and configure the Global Secure Access client for Windows or macOS.
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPNaaS service. [Instructions above.](#adding-a-custom-bypass)
+
+**Cisco configuration:**
 - Set up remote access VPN profile as [described previously](#split-include-configuration).
 - Install Cisco Secure Client with VPN.
 
-After both clients are installed and running, verify that Global Secure Access and Cisco clients are enabled.
-
-> [!TIP]
-> Verify the configuration:
->
-> 1. Right-click **Global Secure Access client** and select **Advanced Diagnostics > Forwarding Profile**. Confirm that only **Internet** and **Microsoft 365** rules are applied.
-> 2. In **Advanced Diagnostics > Health Check**, ensure no checks are failing.
-> 3. For troubleshooting, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
-**Test traffic flow:**
-
+**Validation:**
+- Ensure both clients are enabled and the Umbrella profile is `Active`.
+- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+- Test traffic flow by accessing various sites and validating traffic logs in both platforms.
 1. In the system tray, right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Traffic** tab > **Start collecting**.
 2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic from these sites.
@@ -103,6 +103,8 @@ After both clients are installed and running, verify that Global Secure Access a
 6. Access private resources via Cisco Secure Client (for example, RDP session).
 7. Validate RDP traffic is missing from Global Secure Access traffic logs and present in Cisco Secure Access logs.
 8. Stop collecting traffic in Global Secure Access client and validate no private application traffic was captured.
+
+---
 
 #### Configuration 2: Internet, Private Access, and Microsoft traffic with Cisco Secure Access VPN for split private access
 
