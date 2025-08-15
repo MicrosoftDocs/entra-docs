@@ -69,7 +69,7 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
 
 - Some apps provide logs or error messages when TLS handshakes fail. Use application-level diagnostics to  look for errors related to unsupported protocols.
 
-- Until August 31, 2025, you can modify the following powershell example to temporarily allow legacy TLS traffic while you update or replace apps:
+- Until August 31, 2025, you can modify the following PowerShell example to temporarily allow legacy TLS traffic while you update or replace apps:
 
   ```powershell
   Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Enabled
