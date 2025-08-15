@@ -91,12 +91,13 @@ In addition to human and device identities, workload identities such as applicat
 
 Before organizations deploy Microsoft Entra, they should configure their infrastructure and processes according to security best practices and standards. The following articles provide architectural, deployment, and operational guidance to integrate Microsoft Entra successfully.
 
-* [Architecture](~/architecture/architecture.md)
-* [Deployment plans](~/architecture/deployment-plans.md)
-* [Operations reference](~/architecture/ops-guide-intro.md)
-* [Operations guide](~/architecture/security-operations-introduction.md)
+- [Architecture](~/architecture/architecture.md)
+- [Deployment plans](~/architecture/deployment-plans.md)
+- [Operations reference](~/architecture/ops-guide-intro.md)
+- [Operations guide](~/architecture/security-operations-introduction.md)
+- [Reccomended security configurations](configure-security.md)
 
-## Licensing Microsoft Entra features
+### Licensing Microsoft Entra features
 
 The features of Microsoft Entra are licensed in multiple ways. These licenses include Microsoft Entra ID Free, Microsoft Entra ID P1, Microsoft Entra ID P2, Microsoft Entra Suite, Microsoft Entra External ID, Microsoft Entra Workload ID, Microsoft Entra ID Governance, and other standalone products. For more information about licensing and available options, see the article [Microsoft Entra licensing](licensing.md) or the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
