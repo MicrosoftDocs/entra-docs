@@ -270,7 +270,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 - Add a custom bypass for Cisco Secure Access: `*.zpc.sse.cisco.com`.
 
 
-#### Cisco Secure Access configuration
+**Cisco Secure Access configuration**
 
 - Deploy and configure Cisco Secure Client with Zero Trust Access module.
 - Add private resources and access policies.
