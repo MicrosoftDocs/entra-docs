@@ -22,6 +22,8 @@ This guide outlines how to configure and deploy Global Secure Access solutions a
 
 ## Scenarios
 
+This guide covers the following coexistence scenarios:
+
 1: Microsoft Entra Private Access with Cisco Secure Internet Access
 
 In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
