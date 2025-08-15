@@ -55,7 +55,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 > [!NOTE]
 > Private Network Connectors are required for Private Access applications.
 
-### Set up Cisco Secure Access
+## Cisco Secure Access setup
 
 - Deploy and configure a resource connector for private applications. See Cisco documentation for [managing resource connectors and connector groups](https://docs.sse.cisco.com/sse-user-guide/docs/manage-resource-connectors-and-connector-groups).
 - Set up users and groups. Integration with Microsoft Entra ID provides the best user experience. See Cisco documentation for [Microsoft Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
