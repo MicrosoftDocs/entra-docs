@@ -22,19 +22,19 @@ This guide outlines how to configure and deploy Global Secure Access solutions a
 
 ## Scenarios
 
-### Configuration 1: Microsoft Entra Private Access with Cisco Secure Internet Access
+1: Microsoft Entra Private Access with Cisco Secure Internet Access
 
 In this scenario, Global Secure Access handles private application traffic. Cisco Secure Client provides DNS protection and SWG capabilities.
 
-### Configuration 2: Private Access with Cisco Secure Internet Access and Cisco Secure Private Access
+2: Private Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
 In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Global Secure Access Private Access, while the Cisco Secure Client - Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Private Access. Web and DNS traffic is protected by Cisco Secure Internet Access.
 
-### ### Configuration 3: Microsoft Access with Cisco Secure Internet Access and Cisco Secure Private Access
+3: Microsoft Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
 Global Secure Access manages all Microsoft 365 traffic. The Cisco Secure Client - Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Private Access. Web and DNS traffic is protected by Cisco Secure Internet Access.
 
-### ### Configuration 4: Internet Access and Microsoft Access with Cisco Secure Private Access
+4: Internet Access and Microsoft Access with Cisco Secure Private Access
 
 Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access handles only Private Access with the Cisco Secure Client - Zero Trust Network Access (ZTNA) module.
 ## Prerequisites
