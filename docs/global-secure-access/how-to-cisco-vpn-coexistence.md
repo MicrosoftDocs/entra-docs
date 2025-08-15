@@ -106,7 +106,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 ---
 
-#### Configuration 2: Internet, Private Access, and Microsoft traffic with Cisco Secure Access VPN for split private access
+### 2. Internet, Private Access, and Microsoft traffic with Cisco Secure Access VPN for split private access
 
 
 #### Steps
