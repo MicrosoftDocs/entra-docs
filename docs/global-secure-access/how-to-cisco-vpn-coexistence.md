@@ -28,13 +28,12 @@ This guide focuses on two Cisco remote access VPN platforms:
 ## Cisco Secure Access VPNaaS
 
 ### Scenarios
-### 1: Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPNaaS for private access
-
+1:  **[Microsoft Entra Internet Access and Microsoft Access with Cisco Secure Access VPNaaS for private access](#1-internet-and-microsoft-traffic-with-cisco-secure-access-vpnaas-for-private-access).**
 Global Secure Access handles internet and Microsoft traffic. Cisco Secure Access VPNaaS captures only private application traffic.
 
-### 2: Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco Secure Access VPNaaS
-
+2:  **[Microsoft Entra Private Access, Internet Access, and Microsoft Access with Cisco Secure Access VPNaaS](#2-internet-private-access-and-microsoft-traffic-with-cisco-secure-access-vpn-for-split-private-access).**
 Both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while private applications hosted through Cisco Secure Access VPNaaS are accessed through Cisco Secure Client VPN. Global Secure Access handles internet and Microsoft traffic.
+
 ## Prerequisites
 
 To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solution:
