@@ -275,18 +275,17 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 - Deploy and configure Cisco Secure Client with Zero Trust Access module.
 - Add private resources and access policies.
 
-> [!NOTE]
-> No Cisco Secure Internet Access in this scenario; Umbrella module should not be installed.
-
-#### Test traffic flow
-
-1. Start collecting traffic in Global Secure Access client.
-2. Access `bing.com`, `salesforce.com`, `outlook.office365.com`.
-3. Verify Global Secure Access client captures traffic for these sites.
-4. In the Cisco Secure Access portal, validate traffic to these sites **isn't** captured.
-5. Access private resources via Cisco Secure Private Access.
-6. Validate traffic logs in both portals.
-7. Stop collecting traffic and confirm Global Secure Access didn't handle private application traffic.
+**Validation**
+  - Ensure both clients are enabled and the Umbrella profile is `Active`.
+  - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+  - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+      1. Start collecting traffic in Global Secure Access client.
+      2. Access `bing.com`, `salesforce.com`, `outlook.office365.com`.
+      3. Verify Global Secure Access client captures traffic for these sites.
+      4. In the Cisco Secure Access portal, validate traffic to these sites **isn't** captured.
+      5. Access private resources via Cisco Secure Private Access.
+      6. Validate traffic logs in both portals.
+      7. Stop collecting traffic and confirm Global Secure Access didn't handle private application traffic.
 
 ## Next steps
 
