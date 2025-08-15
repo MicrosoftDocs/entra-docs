@@ -178,23 +178,21 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 
 1. **Configure required destinations to bypass Internet Security.**
 2. **Deploy and configure Cisco Secure Client** with Umbrella module.
-3. **Verify client configurations:**
-  - Right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Forwarding Profile** to confirm Private Access and Private DNS rules.
-  - Go to **Advanced Diagnostics** > **Health Check** and ensure all checks pass.
-  - In **Cisco Secure Client**, confirm the Umbrella module is active.
 
-> [!NOTE]
-> For troubleshooting, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
+**Validation**
+  - Ensure both clients are enabled and the Umbrella profile is `Active`.
+  - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+  - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
+      1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
+      2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
+      3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
+      4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
+      5. Access private applications via Global Secure Access (for example, SMB file share).
+      6. Validate the SMB file share traffic is captured in Global Secure Access logs and isn't shown in Cisco logs.
+      7. Stop collecting traffic and confirm correct traffic handling.
 
-#### Test traffic flow
+---
 
-1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
-2. Access `bing.com`, `salesforce.com`, `outlook.office365.com` in browsers.
-3. Verify Global Secure Access client **isn't** capturing traffic for these sites.
-4. In the Cisco Secure Access portal, validate traffic to these sites **is** captured.
-5. Access private applications via Global Secure Access (for example, SMB file share).
-6. Validate the SMB file share traffic is captured in Global Secure Access logs and isn't shown in Cisco logs.
-7. Stop collecting traffic and confirm correct traffic handling.
 
 ### Configuration 2: Private Access with Cisco Secure Internet Access and Cisco Secure Private Access
 
