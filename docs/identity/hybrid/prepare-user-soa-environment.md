@@ -104,7 +104,7 @@ The following sections walk you through preparing for user SOA if your Active Di
 
 ### Prepare your MIM setup 
 
-For customers using Microsoft Identity Manager(MIM), you can update the sync rules in MIM to determine which objects will continue to be provisioned into Active Directory, and which ones are provisioned into Microsoft Entra ID.  
+For customers using Microsoft Identity Manager(MIM), you can update the sync rules in MIM to determine which objects continue to be provisioned into Active Directory, and which ones are provisioned into Microsoft Entra ID.  
 
 1.	Select the attributes that will be the unique identifiers for users that are the same in both Active Directory and Microsoft Entra. 
 
