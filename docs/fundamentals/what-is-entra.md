@@ -13,7 +13,7 @@ ms.author: barclayn
 ---
 # What is Microsoft Entra?
 
-Microsoft Entra is a family of identity and network access products. It enables organizations to implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) that verifies identities, validates access conditions, checks permissions, encrypts connection channels, and monitors for compromise.
+Microsoft Entra is a family of identity and network access products. It lets organizations implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) that verifies identities, validates access conditions, checks permissions, encrypts connection channels, and monitors for compromise.
 
 ## Microsoft Entra product family
 
@@ -25,7 +25,7 @@ The Microsoft Entra product family covers four maturity stages of secure end-to-
 
 #### Microsoft Entra ID
 
-[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It is a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory comes with an initial domain name, like `contoso.onmicrosoft.com`. In addition to that initial name, you can also add your organization's domain names.
+[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It is a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory includes an initial domain name, like `contoso.onmicrosoft.com`. You can also add your organization's domain names.
 
 **Microsoft 365, Azure, or Dynamics CRM Online subscribers** already use Microsoft Entra ID as every Microsoft 365, Office 365, Azure, and Dynamics CRM Online tenant is automatically a Microsoft Entra tenant. You can immediately start managing access to your integrated cloud apps.
 
@@ -33,25 +33,25 @@ The Microsoft Entra product family covers four maturity stages of secure end-to-
 
 [Microsoft Entra Domain Services](~/identity/domain-services/overview.md) provides managed domain services such as group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication. It enables organizations to run legacy applications in the cloud that can't use modern authentication methods.
 
-**For example**, organizations with services that require access to Kerberos authentication can create a managed domain where the core service components are deployed and maintained by Microsoft. 
+**For example**, organizations with services that need Kerberos authentication can create a managed domain where Microsoft deploys and maintains the core service components. 
 
 ### Secure access for employees
 
 #### Microsoft Entra Private Access
 
-[Microsoft Entra Private Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-private-access) secures access to all private apps and resources, including corporate networks and multicloud environments. It enables remote users to connect to internal resources from any device and network without a virtual private network (VPN).
+[Microsoft Entra Private Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-private-access) secures access to all private apps and resources, including corporate networks and multicloud environments. It lets remote users connect to internal resources from any device and network without using a virtual private network (VPN).
 
 **For example**, an employee can securely access a corporate network printer while working from home or even a cafe.
 
 #### Microsoft Entra Internet Access
 
-[Microsoft Entra Internet Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-internet-access) secures access to all internet resources including software as a service (SaaS) apps, and Microsoft 365 apps and resources. It enables organizations to continuously monitor and adjust user access in real time if permissions or risk levels change.
+[Microsoft Entra Internet Access](~/global-secure-access/overview-what-is-global-secure-access.md#microsoft-entra-internet-access) secures access to all internet resources including software as a service (SaaS) apps, and Microsoft 365 apps and resources.
 
 **For example**, organizations can enable web content filtering to regulate access to websites based on content categories and domain names.
 
 #### Microsoft Entra ID Governance
 
-[Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) makes identity and permissions easier to manage by automating access requests, assignments, and reviews. Additionally, it helps protect critical assets through identity lifecycle management.
+[Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) makes identity and permissions easier to manage by automating access requests, assignments, and reviews. It also helps protect critical assets through identity lifecycle management.
 
 **For example**, administrators can automatically assign user accounts, groups, and licenses to new employees, and remove those assignments from employees that are no longer with the company.
 
@@ -65,7 +65,7 @@ The Microsoft Entra product family covers four maturity stages of secure end-to-
 
 In addition to identities that are used for authentication, there are decentralized identities (DIDs) used for information verification.
 
-[Microsoft Entra Verified ID](~/verified-id/decentralized-identifier-overview.md) is a credential verification service based on open [DID standards](~/verified-id/verifiable-credentials-standards.md). It enables organizations to issue a verifiable credential (digital signature proving the validity of information) to a user who stores the credential on their personal device. After they receive the verifiable credential, the user can present it to a company or organization that wants to verify something about their identity.
+[Microsoft Entra Verified ID](~/verified-id/decentralized-identifier-overview.md) is a credential verification service based on open [DID standards](~/verified-id/verifiable-credentials-standards.md). It enables organizations to issue a verifiable credential (digital signature proving the validity of information) to a user who stores the credential on their personal device. After receiving the verifiable credential, the user can present it to a company or organization to verify something about their identity.
 
 **For example**, a recent college graduate can ask the university to issue a digital copy of their diploma to their DID. They can then choose to present the diploma to a potential employer who can independently verify the issuer of the diploma, the time of issuance, and its status.
 
@@ -89,7 +89,7 @@ In addition to human and device identities, workload identities such as applicat
 
 ## Getting ready for Microsoft Entra
 
-Before organizations deploy Microsoft Entra, they should configure their infrastructure and processes according to security best practices and standards. The following articles provide the architectural, deployment, and operational guidance to successfully integrate Microsoft Entra.
+Before organizations deploy Microsoft Entra, they should configure their infrastructure and processes according to security best practices and standards. The following articles provide architectural, deployment, and operational guidance to integrate Microsoft Entra successfully.
 
 * [Architecture](~/architecture/architecture.md)
 * [Deployment plans](~/architecture/deployment-plans.md)
