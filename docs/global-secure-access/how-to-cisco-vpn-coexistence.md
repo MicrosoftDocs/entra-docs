@@ -75,7 +75,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 > [!NOTE]
 > Currently **Split-Include** is the only supported Cisco Secure Access VPNaaS configuration. Other coexistence configurations may be added as they are validated.
 
-## Coexistence configurations
+## Configuration scenarios
 
 #### Configuration 1: Internet and Microsoft traffic with Cisco Secure Access VPNaaS for private access
 
