@@ -144,32 +144,41 @@ You can use the following user properties to create a single expression.
 
 | Property | Allowed values | Examples |
 | --- | --- | --- |
-| `otherMails` |Any string value | ```user.otherMails -startsWith "alias@domain"```<br><br>```user.otherMails -endsWith"@contoso.com"``` |
-| `proxyAddresses` |`SMTP: alias@domain`, `smtp: alias@domain` | ```user.proxyAddresses -startsWith "SMTP: alias@domain"```<br><br>```user.proxyAddresses -notEndsWith "@outlook.com"``` |
+| `otherMails` |Any string value | ```user.otherMails -startsWith "alias@domain"```<br><br>```user.otherMails -all (_ -endsWith "@contoso.com")``` checks if all otherMails end with '@contoso.com' |
+| `proxyAddresses` |`SMTP: alias@domain`, `smtp: alias@domain` | ```user.proxyAddresses -startsWith "SMTP: alias@domain"``` checks for the default SMTP address.. <br>```user.proxyAddresses -any (_ -endsWith "@outlook.com")``` iterates over each entry, checks if any end with '@outlook.com' |
 
 For the properties used for device rules, see [Rules for devices](#rules-for-devices).
 
 ### Supported expression operators
 
-The following table lists all the supported operators and their syntax for a single expression. You can use operators with or without the hyphen (`-`) prefix. The `Contains` operator does partial string matches but not matches for items in a collection.
+The following table lists all the supported and listed operators and their syntax. You can use operators with or without the hyphen (`-`) prefix. The `Contains` operator does partial string matches but not matches for items in a collection.
 
 > [!CAUTION]
 > For best results, minimize the use of `Match` or `Contains` as much as possible. The article [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that result in better dynamic group processing times. The [`memberOf`](groups-dynamic-rule-member-of.md) operator is in preview and has some limitations, so use it with caution.
 
-| Operator | Syntax |
-| --- | --- |
-| `Ends With` | `-endsWith` |
-| `Not Ends With` | `-notEndsWith` |
-| `Not Equals` | `-ne` |
-| `Equals` | `-eq` |
-| `Not Starts With` | `-notStartsWith` |
-| `Starts With` | `-startsWith` |
-| `Not Contains` | `-notContains` |
-| `Contains` | `-contains` |
-| `Not Match` | `-notMatch` |
-| `Match` | `-match` |
-| `In` | `-in` |
-| `Not In` | `-notIn` |
+| Operator | Syntax | Usage |
+| --- | --- | --- |
+| `Ends With` | `-endsWith` | Includes if string attribute ends with supplied value |
+| `Not Ends With` | `-notEndsWith` | Includes unless string attribute ends with supplied value |
+| `Not Equals` | `-ne` | If not value, is included |
+| `Equals` | `-eq` | If matches value, is included |
+| `Not Starts With` | `-notStartsWith` | Includes unless string attribute begins with the value |
+| `Starts With` | `-startsWith` | Includes if string attribute begins with supplied value |
+| `Not Contains` | `-notContains` | Not recommended/supported due to performmance issues, removed from rule builder. Still works if input manually. Performs string matching.  |
+| `Contains` | `-contains` | Same as above. As an example, the string 'User 1' -contains '1' and 'use' |
+| `Not Match` | `-notMatch` |  Not recommended/supported & removed from rule builder, but still works. Checks for not matching a string, can use regex. |
+| `Match` | `-match` | Not recommended & removed from rule builder, but still works. Matches a string, can query using Regex |
+| `In` | `-in` | Compares user's value against an array of  values |
+| `Not In` | `-notIn` | Compares user's value against an array of values. Ex: -notIn `['value1', 'value2'`] |
+| `Not` | `-not` | Logical operator, used with complex expressions. | 
+| `Greater than or equal` | `-ge` | Can be used with hireDate attribute. |
+| `Less than or equal` | `-le` | Can we used with hireDate attribute. |
+| `Add` | `-plus` | Not valid operator, do not select. |
+| `All` | `-all` | For complex expressions / [multivalue properties](###Multi--value-properties). EX: (user.ProxyAddresses -all (_ -endsWith "contoso.com")) matches users where all proxyAddresses are at the contoso.com domain. |
+| `And` | `-and` | For complex expressions, like matching name and company |
+| `Any` | `-any` | For [multivalue properties](###Multi--value-properties), checks if any of the user.property's values match a query (contrast to -all). Ex: (user.servicePlans -any (assignedPlan.capabilityStatus -ne null)) checks that no service plan objects has a null value for key 'CapabilityStatus' |
+| `Or` | `-or` | For complex expressions, logical. |
+| `Subtrac`t | `-minus` | Not valid operator. |
 
 #### Using the -in and -notIn operators
 
@@ -196,7 +205,7 @@ user.employeehiredate -le 2020-06-10T18:13:20Z
 
 #### Using the -match operator
 
-You can use the `-match` operator for matching any regular expression.
+You can use the `-match` operator for matching any regular expression, though this is no longer recommended. It is better to use operators like -startsWith and -endsWith, for performance reasons.
 
 For the following example, `Da`, `Dav`, and `David` evaluate to `true`. `aDa` evaluates to `false`.
 
@@ -209,6 +218,8 @@ For the following example, `David` evaluates to `true`. `Da` evaluates to `false
 ```
 user.displayName -match ".*vid"
 ```
+
+The '-contains' operator is similar, but does not accept regex values. It does not iterate over arrays.
 
 ### Supported values
 
@@ -286,12 +297,16 @@ A membership rule can consist of complex expressions where the properties, opera
 
 ### Multi-value properties
 
-Multi-value properties are collections of objects of the same type. You can use them to create membership rules by using the `-any` and `-all` logical operators.
+Most of these attributes take the form of key:value pairs, but some attributes are collections of objects of the same type - a collection of strings (an array) or collection of objects containing key:value pairs (an array of objects). You can use them to create membership rules by using the `-any` and `-all` logical operators and placeholder operators for the current item in the collection.
 
 | Property | Values | Usage |
 | --- | --- | --- |
-| `assignedPlans` | Each object in the collection exposes the following string properties: `capabilityStatus`, `service`, `servicePlanId` | ```user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled")```|
-| `proxyAddresses` | `SMTP: alias@domain`, `smtp: alias@domain` | ```(user.proxyAddresses -any (\_ -startsWith "contoso"))``` |
+| `assignedPlans` | The value is a collection of objects, each with their own key:value pairs. Exposes the following string properties: `capabilityStatus`, `service`, `servicePlanId` | ```user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled")```|
+| `proxyAddresses` | `SMTP: alias@domain`, `smtp: alias@domain` | ```(user.proxyAddresses -any (_ -startsWith "contoso"))``` |
+
+The structure of any given assignedPlan and it's components is user.AssignedPlans.**assignedPlan**.attribute.value, where assignedPlan references the plan currently being evaluated. Rather than checking every single entry with (user.ProxyAddress[1] -or user.ProxyAddress[2])  or (user.AssignedPlans.1.attribute.value -or user.assignedPlans.2.attribute.value), we check -any or -all of them, using `_` or `assignedPlan` as a placeholder for each entry. ProxyAddresses is a simple array, which is it uses the simple _ placeholder.
+
+Sometimes the array placeholder `_` can be ommitted for a simpler query: a query like ```user.ProxyAddresses -any (_ -startsWith 'reception')``` is equivalent to ```user.proxyAddresses -startsWith "reception"``` - the iteration over the array is implicit.
 
 #### Using the -any and -all operators
 
@@ -324,6 +339,14 @@ The following expression selects all users who have no assigned service plan:
 
 ```
 user.assignedPlans -all (assignedPlan.servicePlanId -eq null)
+```
+
+#### Example 4 - current human employees
+
+The following expression selects all users who are Active, have some form of licennsing, and aren't named Printer or Scanner.
+
+```
+(user.accountEnabled -eq true) -and (user.assignedPlans -any (assignedPlan.servicePlanId -ne "" -and assignedPlan.capabilityStatus -eq "Enabled")) -and (user.givenName -notIn ["Printer", "Scanner"])
 ```
 
 #### Using the underscore (\_) syntax
