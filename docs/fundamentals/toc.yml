@@ -6,12 +6,8 @@ items:
   items:
   - name: What is Microsoft Entra?
     href: what-is-entra.md
-  - name: What is Microsoft Entra ID?
-    href: whatis.md
   - name: What is the Microsoft Entra admin center?
     href: entra-admin-center.md
-  - name: Trial user guide for Microsoft Entra Suite
-    href: try-microsoft-entra-suite.md
   - name: Introduction to identity and access management (IAM)
     href: identity-fundamental-concepts.md
 - name: Set up your tenant and directory
@@ -67,6 +63,8 @@ items:
       href: licensing.md
     - name: Sign up for Microsoft Entra ID P1 or P2
       href: get-started-premium.md
+    - name: Trial user guide for Microsoft Entra Suite
+      href: try-microsoft-entra-suite.md
 - name: Fundamental security settings
   expanded: false
   items:

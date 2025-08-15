@@ -14,9 +14,9 @@ ms.collection: M365-identity-device-management
 
 # What is Microsoft Entra ID?
 
-Microsoft Entra ID is a cloud-based identity and access management service that your employees can use to access external resources. Example resources include Microsoft 365, the Azure portal, and thousands of other SaaS applications. 
+Microsoft Entra ID is a cloud-based identity and access management service that employees use to access external resources like Microsoft 365, the Azure portal, and thousands of other SaaS applications. 
 
-Microsoft Entra ID also helps them access internal resources like apps on your corporate intranet, and any cloud apps developed for your own organization. To learn how to create a tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](./create-new-tenant.md).
+Microsoft Entra ID also lets employees access internal resources like apps on the corporate intranet and cloud apps developed for the organization. Learn how to create a tenant in [Quickstart: Create a new tenant in Microsoft Entra ID](./create-new-tenant.md).
 
 To learn the differences between Active Directory and Microsoft Entra ID, see [Compare Active Directory to Microsoft Entra ID](compare.md). You can also refer to [Microsoft Cloud for Enterprise Architects Series](/microsoft-365/solutions/cloud-architecture-models) posters to better understand the core identity services in Azure like Microsoft Entra ID and Microsoft-365.
 
@@ -34,34 +34,9 @@ Microsoft Entra ID provides different benefits to members of your organization b
 
 <a name='what-are-the-azure-ad-licenses'></a>
 
-## What are the Microsoft Entra ID licenses?
+## What licenses are needed
 
-Microsoft Online business services, such as Microsoft 365 or Microsoft Azure, use Microsoft Entra ID for sign-in activities and to help protect your identities. If you subscribe to any Microsoft Online business service, you automatically get access to [Microsoft Entra ID Free](https://www.microsoft.com/security/business/identity-access/azure-active-directory-pricing).
-
-To enhance your Microsoft Entra implementation, you can also add paid features by upgrading to Microsoft Entra ID P1 or P2 licenses, or adding on licenses for products such as Microsoft Entra ID Governance. You can also license Microsoft Entra paid licenses are built on top of your existing free directory. The licenses provide self-service, enhanced monitoring, security reporting, and secure access for your mobile users.
-
->[!Note]
->For the pricing options of these licenses, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
->
->For more information about Microsoft Entra pricing, contact the [Microsoft Entra Forum](https://azure.microsoft.com/support/community/?product=active-directory).
-
-- **Microsoft Entra ID Free.** Provides user and group management, on-premises directory synchronization, basic reports, self-service password change for cloud users, and single sign-on across Azure, Microsoft 365, and many popular SaaS apps.
-
-- **Microsoft Entra ID P1.** In addition to the Free features, P1 also lets your hybrid users access both on-premises and cloud resources. It also supports advanced administration, such as dynamic membership groups, self-service group management, Microsoft Identity Manager, and cloud write-back capabilities, which allow self-service password reset for your on-premises users.
-
-- **Microsoft Entra ID P2.** includes features in addition to the features included in Free and P1. P2 includes [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to help provide risk-based Conditional Access to your apps and critical company data and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md) to help discover, restrict, monitor administrators,  their access to resources and to provide just-in-time access when needed.
-
-In addition to Microsoft Entra ID licenses, you can enable additional identity management capabilities with licenses for other Microsoft Entra products, including:
-
-- **Microsoft Entra ID Governance.** [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) is an advanced set of [identity governance capabilities](~/id-governance/licensing-fundamentals.md) for Microsoft Entra ID P1 and P2 customers.
-
-- **"Pay as you go" feature licenses.** You can also get licenses for features such as Microsoft Entra Domain Services, and Microsoft Entra customer identity and access management solution (CIAM). CIAM can help you provide identity and access management solutions for your customer-facing apps. For more information, see our next-generation solution for external identities, [Microsoft Entra External ID](/entra/external-id/).
-
-[!INCLUDE [active-directory-b2c-end-of-sale-notice.md](~/includes/active-directory-b2c-end-of-sale-notice.md)]
-
-For more information on the Microsoft Entra product family, see [Microsoft Entra](https://www.microsoft.com/security/business/microsoft-entra).
-
-For more information about associating an Azure subscription to Microsoft Entra ID, see [Associate or add an Azure subscription to Microsoft Entra ID](./how-subscriptions-associated-directory.yml). For more information about assigning licenses to your users, see [How to: Assign or remove Microsoft Entra ID licenses](license-users-groups.yml).
+The features of Microsoft Entra are licensed in multiple ways. These licenses include Microsoft Entra ID Free, Microsoft Entra ID P1, Microsoft Entra ID P2, Microsoft Entra Suite, Microsoft Entra External ID, Microsoft Entra Workload ID, Microsoft Entra ID Governance, and other standalone products. For more information about licensing and available options, see the article [Microsoft Entra licensing](licensing.md) or the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 <a name='which-features-work-in-azure-ad'></a>
 

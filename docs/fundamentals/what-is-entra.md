@@ -6,12 +6,11 @@ manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 06/20/2025
+ms.date: 08/15/2025
 ms.author: barclayn
 
 # Customer intent: As a new customer, I want an overview of all Microsoft Entra products including links to get started.
 ---
-
 # What is Microsoft Entra?
 
 Microsoft Entra is a family of identity and network access products. It enables organizations to implement a [Zero Trust](/security/zero-trust/zero-trust-overview) security strategy and create a [trust fabric](https://www.microsoft.com/security/blog/2024/05/08/how-implementing-a-trust-fabric-strengthens-identity-and-network/) that verifies identities, validates access conditions, checks permissions, encrypts connection channels, and monitors for compromise.
@@ -26,13 +25,15 @@ The Microsoft Entra product family covers four maturity stages of secure end-to-
 
 #### Microsoft Entra ID
 
-[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It provides the essential identity, authentication, policy, and protection to secure employees, devices, and enterprise apps and resources.
+[Microsoft Entra ID](./whatis.md) is the foundational product of Microsoft Entra. It is a cloud-based identity and access management service that provides the essential identity, authentication, policy, and protection to secure users, devices, apps, and resources. Every new Microsoft Entra directory comes with an initial domain name, like `contoso.onmicrosoft.com`. In addition to that initial name, you can also add your organization's domain names.
+
+**Microsoft 365, Azure, or Dynamics CRM Online subscribers** already use Microsoft Entra ID as every Microsoft 365, Office 365, Azure, and Dynamics CRM Online tenant is automatically a Microsoft Entra tenant. You can immediately start managing access to your integrated cloud apps.
 
 #### Microsoft Entra Domain Services
 
 [Microsoft Entra Domain Services](~/identity/domain-services/overview.md) provides managed domain services such as group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication. It enables organizations to run legacy applications in the cloud that can't use modern authentication methods.
 
-**For example**, organizations with services that require access to Kerberos authentication can create a managed domain where the core service components are deployed and maintained by Microsoft as a managed domain experience. 
+**For example**, organizations with services that require access to Kerberos authentication can create a managed domain where the core service components are deployed and maintained by Microsoft. 
 
 ### Secure access for employees
 
@@ -52,11 +53,11 @@ The Microsoft Entra product family covers four maturity stages of secure end-to-
 
 [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) makes identity and permissions easier to manage by automating access requests, assignments, and reviews. Additionally, it helps protect critical assets through identity lifecycle management.
 
-**For example**, administrators can automatically assign user accounts and Microsoft 365 licenses to new employees, and remove those assignments from employees that are no longer with the company.
+**For example**, administrators can automatically assign user accounts, groups, and licenses to new employees, and remove those assignments from employees that are no longer with the company.
 
 #### Microsoft Entra ID Protection
 
-[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) detects and reports identity-based risks. It enables administrators to investigate and automatically remediate risks using tools like [Conditional Access](~/identity/conditional-access/overview.md).
+[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) detects and reports identity-based risks. It enables administrators to investigate and automatically remediate risks using tools like [risk-based Conditional Access policies](../id-protection/concept-identity-protection-policies.md).
 
 **For example**, organizations can create risk-based Conditional Access policies that require multifactor authentication when the sign-in risk level is reported as medium or high.
 
@@ -95,6 +96,10 @@ Before organizations deploy Microsoft Entra, they should configure their infrast
 * [Operations reference](~/architecture/ops-guide-intro.md)
 * [Operations guide](~/architecture/security-operations-introduction.md)
 
+## Licensing Microsoft Entra features
+
+The features of Microsoft Entra are licensed in multiple ways. These licenses include Microsoft Entra ID Free, Microsoft Entra ID P1, Microsoft Entra ID P2, Microsoft Entra Suite, Microsoft Entra External ID, Microsoft Entra Workload ID, Microsoft Entra ID Governance, and other standalone products. For more information about licensing and available options, see the article [Microsoft Entra licensing](licensing.md) or the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+
 ## Working with Microsoft Entra
 
 After organizations deploy Microsoft Entra, administrators can use the **Microsoft Entra admin center** and **Microsoft Graph API** to manage the identity and network access resources, and developers can use the **Microsoft identity platform** to build identity and access applications. 
@@ -117,6 +122,8 @@ The [Microsoft identity platform](~/identity-platform/v2-overview.md) enables de
 
 To start developing, see [Getting started](~/identity-platform/v2-overview.md#getting-started).
 
-## Next steps
+## Related content
 
-* [Licensing](./licensing.md)
+- Sign up for a [free 30-day Microsoft Entra ID P1 or P2 trial](https://azure.microsoft.com/trial/get-started-active-directory/).
+- Learn the differences between Active Directory and Microsoft Entra ID, see [Compare Active Directory to Microsoft Entra ID](compare.md).
+- Learn how to get started with [Microsoft Entra ID for developers](~/identity-platform/index.yml).
