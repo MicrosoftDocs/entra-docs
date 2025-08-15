@@ -108,23 +108,24 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 
 #### Configuration 2: Internet, Private Access, and Microsoft traffic with Cisco Secure Access VPN for split private access
 
+
+#### Steps
+
+**Global Secure Access configuration:**
 - Enable Microsoft Entra Internet Access, Private Access, and Microsoft Access forwarding profiles.
 - Install a private network connector for Microsoft Entra Private Access.
 - Configure Quick Access and set up Private DNS.
 - Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass) to exclude Cisco Secure Access VPNaaS endpoint.
 - Install and configure the Global Secure Access client for Windows or macOS.
+
+**Cisco configuration:**
 - Set up remote access VPN profile as [described previously](#split-include-configuration).
 - Install Cisco Secure Client with VPN.
 
-After both clients are installed and running, verify that Global Secure Access and Cisco clients are enabled.
-
-**Verify configuration:**
-
-- Open the **Global Secure Access client**, right-click, and select **Advanced Diagnostics > Forwarding Profile**. Confirm that **Internet**, **Private Access**, and **Microsoft 365** rules are applied.
-- Open **Advanced Diagnostics > Health Check** in the Global Secure Access client and verify that all checks are passing.
-
-**Test traffic flow:**
-
+**Validation:**
+- Ensure both clients are enabled and the Umbrella profile is `Active`.
+- To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
+- Test traffic flow by accessing various sites and validating traffic logs in both platforms.
 1. Start collecting traffic in Global Secure Access client.
 2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
 3. Verify Global Secure Access client captures traffic from these sites.
@@ -136,6 +137,7 @@ After both clients are installed and running, verify that Global Secure Access a
 9. Validate SMB traffic is captured in Global Secure Access logs and not in Cisco Secure Access logs.
 10. Stop collecting traffic in Global Secure Access client.
 
+---
 ## Cisco ASA Remote Access VPN
 
 ### Coexistence scenarios
