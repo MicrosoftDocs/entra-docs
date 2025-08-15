@@ -158,7 +158,13 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 
 ---
 
-### Configuration 1: Microsoft Entra Private Access with Cisco Secure Internet Access
+## Configuration scenarios
+
+### 1: Private Access with Cisco Secure Internet Access
+
+
+#### Steps
+
 
 
 #### Global Secure Access configuration
