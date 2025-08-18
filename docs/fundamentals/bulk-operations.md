@@ -16,7 +16,7 @@ ms.custom: it-pro
 The new bulk operations experience in Microsoft Entra ID provides enhanced capabilities for managing **Groups** and **Devices**. This service enables bulk actions including create, update, and delete operations. The improved service delivers better performance, reduces timeouts, and removes scaling limitations for large tenants.
 
 > [!NOTE] 
-> The new bulk operations service currently only supports **Groups** and **Devices**. Support for additional entities like **Enterprise applications** will be added in a future update.
+> The new bulk operations service currently only supports **Groups**, **Devices**, and **Users** export. Support for additional entities like **Enterprise applications** will be added in a future update.
 
 For information about limitations and to learn more about the previous Bulk Operations experience, see [Bulk operations service limitations](bulk-operations-service-limitations.md).
 
@@ -139,7 +139,32 @@ To delete completed or failed bulk operations:
 
 4. Confirm the deletion. The deleted job is removed from the list.
 
-    :::image type="content" source="Media/bulk-operations/delete-bulk-job-notification.png" alt-text="Screenshot of the bulk operations list with notification of the successful deletion.":::            
+    :::image type="content" source="Media/bulk-operations/delete-bulk-job-notification.png" alt-text="Screenshot of the bulk operations list with notification of the successful deletion.":::     
+
+
+## User Scenario Steps (Devices)
+
+1. Go to the **All devices** blade.
+
+    :::image type="content" source="Media/bulk-operations/all-devices.png" alt-text="Screenshot of the bulk operations list with notification of the successful deletion.":::
+
+2. Select **Download devices**.
+
+    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations.png" alt-text="Screenshot of the all devices export page.":::
+
+3. Enter a filename that matches your naming convention and select **Start download**.
+    :::image type="content" source="Media/bulk-operations/all-devices-success.png" alt-text="Screenshot of the bulk operations list with notification of the successful job completion.":::
+
+4. Verify the notification message and, if the job was submitted successfully, select the **Success!** or **File is ready! Click here to download** link.
+
+    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations-result.png" alt-text="Screenshot of the bulk operations list with notification of the successful job completion.":::
+
+5. Select the filename for the bulk job you created to download the CSV file. Verify the CSV contains all devices with the columns you selected when the bulk job was created.
+
+You can bulk export users following the steps in [Download a list of users in Microsoft Entra admin center](users-bulk-download.md).
+
+[**Download a list of users in the Microsoft Entra admin center - Microsoft Entra ID \| Microsoft Learn**](https://review.learn.microsoft.com/en-us/entra/identity/users/users-bulk-download?branch=pr-en-us-9303)
+       
     
 ## Related content
 
