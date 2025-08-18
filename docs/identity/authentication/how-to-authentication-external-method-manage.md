@@ -118,9 +118,9 @@ If the user has no other methods enabled, they can just choose the EAM. They're 
 ## Authentication method registration for EAMs
 In the EAM Preview, users who are members of groups that are enabled for EAM can use an EAM to satisfy MFA. These users aren't included in reports about authentication method registration.
 
-Rollout of EAM registration in Microsoft Entra ID is in progress. After the rollout is finished, users need to register their EAM with Microsoft Entra ID before they can use it to satisfy MFA. As part of this rollout, EAM users who signed in within the last 28 days with their EAM are automatically marked as registered for the EAM.
+Rollout of EAM registration in Microsoft Entra ID is in progress. After the rollout is finished, users need to register their EAM with Microsoft Entra ID before they can use it to satisfy MFA. As part of this rollout, Microsoft Entra ID will automatically register recent EAM users who have signed in with an EAM within the last 28 days.
 
-Users who didn't sign in within the last 28 days with their EAM need to register it before they can use it again. These users might see a change the next time they sign in, depending on their current authentication setup:
+Users who haven't signed in with their EAM within 28 days of the registration feature rollout must register the EAM before they can use it again. These users might see a change the next time they sign in, depending on their current authentication setup:
 
 - If they're only enabled for EAM, they must complete a just-in-time registration of EAM before proceeding.
 - If they're enabled for EAM and other authentication methods, they might lose access to the EAM for authentication. There are two ways they can regain access:
