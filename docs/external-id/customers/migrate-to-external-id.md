@@ -1,5 +1,5 @@
 ---
-title: Transitioning to Microsoft Entra External ID for CIAM
+title: Transition to Microsoft Entra External ID for CIAM
 description: 'Transition to Microsoft Entra External ID for CIAM: Learn how to migrate your legacy customer identity solutions to enhance security, compliance, and scalability.'
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -18,11 +18,11 @@ ms.custom:
 
 Developers building applications often control authentication and authorization for customers accessing their applications. They use customer identity access management (CIAM) solutions to avoid building and maintaining a full identity and access management (IAM) solution. Microsoft Entra External ID lets developers connect their applications to a customer-focused version of Microsoft Entra ID, a standard IAM solution. This guide gives a migration path and resources for developers and identity teams.
 
-## What is Microsoft Entra External ID
+## What is Microsoft Entra External ID?
 
 For organizations and businesses that want to make their apps available to consumers and business customers, [Microsoft Entra External ID](overview-customers-ciam.md) lets you add CIAM features such as self-service registration, personalized sign-in experiences, and customer account management. Because these CIAM capabilities are built into Microsoft Entra ID, you benefit from platform features like enhanced security, compliance, and scalability.
 
-## Why migrate from other CIAM solutions
+## Why migrate from other CIAM solutions?
 
 Organizations might migrate to Microsoft Entra External ID from another tool based on strategic goals such as:
 
