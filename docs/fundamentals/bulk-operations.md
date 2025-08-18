@@ -74,7 +74,7 @@ To download all members of a specific group:
 
 5. Follow the download process as described in [Bulk download groups](#bulk-download-groups).
 
-## Bulk import group members in Entra ID
+## Bulk import group members in Microsoft Entra ID
 
 To add multiple members to a group:
 
@@ -87,7 +87,7 @@ To add multiple members to a group:
 
     :::image type="content" source="Media/bulk-operations/bulk-operations.png" alt-text="Screenshot of the import members option in bulk operations interface.":::
 
-4. Download the csv template (optional). Rename the id column name to **ObjectId** and delete the remainder of columns. Add Object Ids for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object Ids. 
+4. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
 
     :::image type="content" source="Media/bulk-operations/template-download-object-ids.png" alt-text="Screenshot of the template download interface with object IDs input fields.":::
 
@@ -96,7 +96,7 @@ To add multiple members to a group:
 6. Monitor the notification for job completion. Select the **Success!** link to view the operation status. 
 
 >[!IMPORTANT]
-> If you have added invalid Object Ids in the uploaded csv file, the bulk operation status will be **Failed** with reason **NotAllRowsSuccessfullyProcessed**. You can select on the filename to download a detailed report showing the status of each object ID.
+> If you add invalid Object IDs in the uploaded csv file, the bulk operation status shows **Failed** with reason **NotAllRowsSuccessfullyProcessed**. You can select on the filename to download a detailed report showing the status of each object ID.
 
 
 ## Bulk remove group members 
@@ -109,7 +109,7 @@ To remove multiple members from a group:
 
     :::image type="content" source="Media/bulk-operations/bulk-operations.png" alt-text="Screenshot of the bulk operations menu with remove members option selected.":::
 
-3. Download the csv template (optional). Rename the id column name to **ObjectId** and delete the remainder of columns. Add Object Ids for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object Ids. 
+3. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
 
 
 
@@ -120,8 +120,6 @@ To remove multiple members from a group:
 5. Monitor the notification for job completion. Select the **Success!** link to view the operation status.
 
 6. If the operation shows **Failed** status with reason **NotAllRowsSuccessfullyProcessed**, select the filename to download a detailed report showing the status of each object ID.
-
-    :::image type="content" source="Media/bulk-operations/failed-status-remove-operation.png" alt-text="Screenshot of the failed status for bulk remove operation with error details.":::
 
 7. Verify that the specified members have been removed from the group.
 
@@ -139,8 +137,10 @@ To delete completed or failed bulk operations:
 
     :::image type="content" source="Media/bulk-operations/delete-bulk-job.png" alt-text="Screenshot of the bulk operations list with delete button for removing bulk jobs.":::
 
-4. Confirm the deletion. The selected bulk job will be removed from the list.
+4. Confirm the deletion. The deleted job is removed from the list.
 
+  :::image type="content" source="Media/bulk-operations/delete-bulk-job-notification.png" alt-text="Screenshot of the bulk operations list with notification of the successful deletion.":::
+    
 ## Related content
 
 - [Bulk operations service limitations](bulk-operations-service-limitations.md)
