@@ -86,7 +86,7 @@ For other considerations, and limitations, of the Access Review Agent, see: [Lim
 
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions can cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
-- The agent runs using the identity of the administrator who activated it for the first time to gather insights and save recommendations. Final decisions, as part of the Microsoft Teams conversation, will be written with the reviewer’s identity.
+- The agent runs using the identity of the administrator who activated it for the first time to gather insights and save recommendations. Final decisions, as part of the Microsoft Teams conversation, is written with the reviewer’s identity.
 - We recommend running the agent from the Microsoft Entra admin center.
 
 
@@ -220,7 +220,7 @@ If you no longer wish to use the Access Review Agent, the following sections wal
 
 ### Removing the agent from  an Access Review
 
-When removing the agent from accessing an access review, the existing data such as access review information and justifications for decisions are removed, but decisions made via conversations with the agent remains. You should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
+When you remove the agent from accessing an access review, the existing data such as access review information and justifications for decisions are removed, but decisions made via conversations with the agent remains. You should disable the agent on the access reviews that had the agent enabled on them by doing the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
