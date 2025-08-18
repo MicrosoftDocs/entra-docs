@@ -45,7 +45,7 @@ To learn more about how the app management policy API works, visit the [API docu
 To configure app management policies, you need:
 
 - A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- The [Security Administrator](todo) role, AND the [Cloud App Administrator](todo) or [Application Administrator](todo) role.  OR, just the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+- The [Security Administrator](~/identity/role-based-access-control/permissions-reference#security-administrator) role, AND the [Cloud App Administrator](~/identity/role-based-access-control/permissions-reference#cloud-application-administrator) or [Application Administrator](~/identity/role-based-access-control/permissions-reference#application-administrator) role.  OR, just the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
 
 ## Configure a restriction
 
@@ -182,12 +182,12 @@ To grant an app an exception to the restriction blocking custom identifier URIs 
 
 Sometimes, exceptions need to be granted to the user or service creating or modifying the application.  For example, imagine an automated process in your organization periodically creates applications and sets passwords on them.  You want to block the new passwords in your organization, but you don't want to break this automated process while you're working on updating it.  [Application exceptions](#grant-an-exception-to-an-application) would not work in this case, because the apps being created/updated don't exist yet!  Instead, you can apply an exception to the process itself.  
 
-This type of exception - sometimes labeled an 'actor' or 'caller' exception - is configured using [custom security attributes](todo).  Because of this, you need two additional roles for this scenario, in addition to the role(s) from [prerequisites](#prerequisites).
+This type of exception - sometimes labeled an 'actor' or 'caller' exception - is configured using [custom security attributes](https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview).  Because of this, you need two additional roles for this scenario, in addition to the role(s) from [prerequisites](#prerequisites).
 
 - [Attribute Definition Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#attribute-definition-administrator)
 - [Attribute Assignment Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#attribute-assignment-administrator)
 
-This example will grant a service an exception to the restriction enforcing a max lifetime on new certificates it adds to other applications and service principals.  The service will be represented by its service principal.  Find the service principal for a service by searching for it in [Enterprise applications](todo).
+This example will grant a service an exception to the restriction enforcing a max lifetime on new certificates it adds to other applications and service principals.  The service will be represented by its service principal.  Find the service principal for a service by searching for it in [Enterprise applications](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview).
 
 #### [Entra admin center](#tab/portal)
 
@@ -384,7 +384,7 @@ Sometimes, you aren't ready to apply a restriction to your entire tenant, but st
 
 ### View your custom policies
 
-[Custom policies](todo) are applied to specific applications and service principals.  They are used to override the tenant-wide configuration for a specific app.  You can learn more about that [here](todo).
+[Custom policies](https://learn.microsoft.com/en-us/graph/api/resources/appmanagementpolicy?view=graph-rest-beta) are applied to specific applications and service principals.  They are used to override the tenant-wide configuration for a specific app.  You can learn more about that [here](https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta).
 
 The Entra admin center automatically configures custom policies for you based on your intent.  For example, if you want to grant an exemption to a restriction for a specific app, the Entra admin center will craft the custom policy with that behavior that behind the scenes, and assign it to the application.
 
@@ -406,7 +406,7 @@ GET https://graph.microsoft.com/beta/policies/appManagementPolicies
 
 If you have ever configured your app management policies outside of the Entra admin center, you may have configured them in a way the portal doesn't expect.  If this is the case, when loading a restriction, you'll see an error message like:
 
-Todo
+```The restriction has been modified outside of this interface. To prevent data loss, editing is disabled until restrictions are synchronized.```
 
 In order to get your restrictions back into a state that the Entra admin center expects, you'll need to update them using Microsoft Graph.
 
@@ -459,4 +459,4 @@ This means the state of both restrictions should be set to `enabled` AND both sh
 
 ## Next steps
 
-- Todo
+- [App management policy API overview](https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta)
