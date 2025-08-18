@@ -129,13 +129,13 @@ To delete completed or failed bulk operations:
 
 1. Navigate to the [Bulk Operations (Preview)](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true&enableNewBulkJobsExport=true&enableNewBulkJobsList=true#view/Microsoft_AAD_IAM/BulkJobsList.ReactView) page.
 
-   :::image type="content" source="Media/bulk-operations/bulk-jobs.png" alt-text="Screenshot of the bulk operations list with delete button for removing bulk jobs.":::
+   :::image type="content" source="Media/bulk-operations/bulk-jobs.png" alt-text="Screenshot of the bulk operations result page.":::
 
 2. Select the bulk job you want to delete.
 
 3. Select **Delete**.
 
-    :::image type="content" source="Media/bulk-operations/delete-bulk-job.png" alt-text="Screenshot of the bulk operations list with delete button for removing bulk jobs.":::
+    :::image type="content" source="Media/bulk-operations/delete-bulk-job.png" alt-text="Screenshot of the bulk operations result page with delete button for removing bulk jobs.":::
 
 4. Confirm the deletion. The deleted job is removed from the list.
 
