@@ -186,7 +186,7 @@ With the app published and available, also ensure that all reviewers have at lea
 
 ## Using the Access Review Agent as a reviewer
 
-With the Access Review Agent started, reviewers assigned with proper permissions, and the app published, your reviewers are now ready to complete their reviews with the help of the agent. The Access Review Agent can be accessed directly from the Apps screen within Microsoft Teams, from a [direct link](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47), or from an email notification sent by an access review with the agent enabled when it's time for the review to be completed. The following steps walk you through accessing the agent directly from Microsoft Teams:
+With the Access Review Agent started, reviewers assigned proper permissions, and with the app available to them, your reviewers are now ready to complete their reviews with the help of the agent. The Access Review Agent can be accessed directly from the Apps screen within Microsoft Teams, from a [direct link](https://teams.microsoft.com/l/entity/b99caf01-1dd7-43cf-981a-0de444e783f3/conversations?tenantId=72f988bf-86f1-41af-91ab-2d7cd011db47), or from an email notification sent by an access review with the agent enabled when it's time for the review to be completed. The following steps walk you through accessing the agent directly from Microsoft Teams:
 
 1. Open your Microsoft Teams application signed in as the user assigned as a reviewer.
 
@@ -215,7 +215,7 @@ The agent is configured to run every 24 hours based on when it's initially confi
 
 ## Removing the agent 
 
-If you no longer wish to use the Access Review agent, the following sections walk you through removing the agent from resources.
+If you no longer wish to use the Access Review Agent, the following sections walk you through removing the agent from resources.
 
 
 ### Removing the agent from  an Access Review
