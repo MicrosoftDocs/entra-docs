@@ -65,7 +65,7 @@ The following user attributes are included:
 
 You can see the status of your pending bulk requests in the **Bulk operation results** page.
 
-:::image type="content" source="./media/users-bulk-download/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page." lightbox="./media/users-bulk-download/bulk-center.png":::
+:::image type="content" source="./media/users-bulk-download/bulk-center.png" alt-text="Screenshot showing status in the Bulk Operations Results page." lightbox="./media/users-bulk-download/bulk-center.png":::
 
 If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk download service limits](#bulk-download-service-limits).
 
