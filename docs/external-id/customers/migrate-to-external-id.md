@@ -5,6 +5,8 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 ms.date: 07/30/2025
 ms.topic: conceptual
+ms.service: entra-external-id
+ms.subservice: external
 ms.collection:
   - migration
   - aws-to-azure
