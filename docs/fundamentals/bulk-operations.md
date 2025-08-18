@@ -139,7 +139,7 @@ To delete completed or failed bulk operations:
 
 4. Confirm the deletion. The deleted job is removed from the list.
 
-  :::image type="content" source="Media/bulk-operations/delete-bulk-job-notification.png" alt-text="Screenshot of the bulk operations list with notification of the successful deletion.":::
+    :::image type="content" source="Media/bulk-operations/delete-bulk-job-notification.png" alt-text="Screenshot of the bulk operations list with notification of the successful deletion.":::            
     
 ## Related content
 
