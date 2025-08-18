@@ -9,12 +9,12 @@ ms.date: 12/19/2024
 
 ms.author: cwerner
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.reviewer: brianmel, miepping
 #Customer intent: As a customer, I want to understand how to troubleshoot macOS Platform single sign-on (PSSO) issues, have some frequently asked questions answered, and understand different scenarios to validate.
 ---
 
-# macOS Platform single sign-on known issues and troubleshooting (preview)
+# macOS Platform single sign-on known issues and troubleshooting
 
 This article outlines the current known issues and common questions with macOS Platform single sign-on (PSSO). It provides issue solutions and information on how to report an issue that isn't covered. This article also includes troubleshooting guidance.
 
@@ -142,7 +142,7 @@ Users can reset the local password via Apple ID or an admin recovery key.
 
 There's a known concurrency issue on macOS 15+ (Sequoia) that can cause the PSSO device configuration to become corrupted. The device configuration can be corrupted by simultaneous updates from the system AppSSOAgent and AppSSODaemon processes. The corrupted configuration causes the operating system to trigger its re-registration remediation flow, resulting in unexpected registration prompts for users.
 
-This issue is currently being investigated by Apple..
+This issue is currently being investigated by Apple.
 
 Sysdiagnose logs from affected users contain the following error:
 

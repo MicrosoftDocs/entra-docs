@@ -3,22 +3,30 @@ title: How to manage an external authentication method (EAM) in Microsoft Entra 
 description: Learn how to manage an external authentication method (EAM) for Microsoft Entra multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/04/2025
+ms.topic: how-to
+ms.date: 08/02/2025
 ms.author: justinha
-author: gregkmsft
+author: emakedon23
 manager: dougeby
-ms.reviewer: gkinasewitz, gustavosa
+ms.reviewer: emilymakedon, gustavosa
 ms.custom: sfi-ga-nochange, sfi-image-nochange
-# Customer intent: As an authentication administrator, I want learn how to manage an external authentication method (EAM) for Microsoft Entra ID.
+# Customer intent: As an authentication administrator, I want to learn how to manage an external authentication method (EAM) for Microsoft Entra ID.
 ---
 # Manage an external authentication method in Microsoft Entra ID (Preview)
 
-An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign in to Microsoft Entra ID. An EAM can satisfy MFA requirements from Conditional Access policies, Microsoft Entra ID Protection risk-based Conditional Access policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
+An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign in to Microsoft Entra ID.
 
-EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
+> [!IMPORTANT]
+> External Authentication Provider is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+> With this preview, we're giving you the ability for an external authentication provider to integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy MFA requirements from Conditional Access policies, Microsoft Entra ID Protection risk-based Conditional Access policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA.
+> EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
+
+Here is a diagram of how external authentication method works:
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
+
+>[!IMPORTANT]
+>We’re updating the EAM Preview to support improvements. As part of the improvements, we’ll perform a backend migration that might affect some users who sign in with an EAM. For more information, see [Authentication method registration for EAMs](#authentication-method-registration-for-eams). We're rolling out the improvements over the month of September 2025. 
 
 ## Required metadata to configure an EAM
 To create an EAM, you need the following information from your external authentication provider:
@@ -27,11 +35,10 @@ To create an EAM, you need the following information from your external authenti
 - A **Client ID** is an identifier from your provider used as part of the authentication integration to identify Microsoft Entra ID requesting authentication.  
 - A **Discovery URL** is the OpenID Connect (OIDC) discovery endpoint for the external authentication provider. 
  
-   >[!NOTE]
-   >See [Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id) to set up the App registration.
+  For more information about how to set up the app registration, see [Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id).
    
    >[!IMPORTANT]
-   > Ensure that the kid (Key ID) property is base64-encoded in both the JWT header of the id_token and in the JSON Web Key Set (JWKS) retrieved from the provider’s jwks_uri. This encoding alignment is essential for the seamless validation of token signatures during authentication processes. Misalignment can result in issues with key matching or signature validation.
+   > Ensure that the kid (Key ID) property is base64-encoded in both the JSON Web Token (JWT) header of the id_token and in the JSON Web Key Set (JWKS) retrieved from the provider’s jwks_uri. This encoding alignment is essential for the seamless validation of token signatures during authentication processes. Misalignment can result in issues with key matching or signature validation.
 
 ## Manage an EAM in the Microsoft Entra admin center
 
@@ -54,7 +61,7 @@ Before you create an EAM in the admin center, make sure you have the [metadata t
    - App ID: 11112222-bbbb-3333-cccc-4444dddd5555
 
    >[!IMPORTANT]
-   >The display name is the name that's shown to the user in the method picker. It can't be changed after the method is created. Display names must be unique.
+   >The user sees the display name in the method picker. You can't change the name after you create the method. The display name must be unique.
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/method-properties.png" alt-text="Screenshot of how to add EAM properties.":::
 
@@ -62,7 +69,7 @@ Before you create an EAM in the admin center, make sure you have the [metadata t
 
    After you enter the values from your provider, press the button to request for admin consent to be granted to the application so that it can read the required info from the user to authenticate correctly. You're prompted to sign in with an account with admin permissions and grant the provider’s application with the required permissions.
 
-   After you sign in, click **Accept** to grant admin consent:
+   After you sign in, select **Accept** to grant admin consent:
 
    :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/permissions-requested.png" alt-text="Screenshot of how to grant admin consent.":::
 
@@ -88,7 +95,7 @@ To manage your EAMs in the Microsoft Entra admin center, open the Authentication
 If you no longer want your users to be able to use the EAM, you can either:
 
 - Set **Enable** to **Off** to save the method configuration
-- Click **Delete** to remove the method
+- Select **Delete** to remove the method
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/delete.png" alt-text="Screenshot of how to delete an EAM.":::
 
@@ -104,16 +111,57 @@ If the user has other ways to sign in and [system-preferred MFA](/entra/identity
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an EAM when system-preferred MFA is enabled.":::
 
-
 If the user has no other methods enabled, they can just choose the EAM. They're redirected to the external authentication provider to complete authentication.
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/sign-in.png" alt-text="Screenshot of how to sign in with an EAM.":::
 
 ## Authentication method registration for EAMs
-In the preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA.  Users that are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
+In the EAM Preview, users who are members of groups that are enabled for EAM can use an EAM to satisfy MFA. These users aren't included in reports about authentication method registration.
 
->[!NOTE]
->We're actively working on adding registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use it to satisfy MFA.
+Rollout of EAM registration in Microsoft Entra ID is in progress. After the rollout is finished, users need to register their EAM with Microsoft Entra ID before they can use it to satisfy MFA. As part of this rollout, EAM users who recently signed in with their EAM are automatically marked as registered for the EAM.
+
+Users who didn't recently sign in with their EAM need to register it before they can use it again. These users might see a change the next time they sign in, depending on their current authentication setup:
+
+- If they're only enabled for EAM, they must complete a just-in-time registration of EAM before proceeding.
+- If they're enabled for EAM and other authentication methods, they might lose access to the EAM for authentication. There are two ways they can regain access:
+  - They can register their EAM at [Security info](https://mysignins.microsoft.com/security-info).
+  - An admin can use the Microsoft Entra admin center or Microsoft Graph to register the EAM on their behalf. 
+
+The next sections cover steps for each option. 
+
+### How users register their EAM in Security info
+
+Users can follow these steps to register an EAM in Security info:
+
+1. Sign into [Security info](https://mysignins.microsoft.com/security-info).
+1. Select **+ Add sign-in method**.
+1. When prompted to select a sign-in method from a list of available options, select **External Auth methods**.
+1. Select **Next** at the confirmation screen.
+1. Complete the second factor challenge with the external provider. If successful, users can see the EAM listed in their sign-in methods. 
+
+### How users register their EAM by using the registration wizard
+
+When a user signs in, a registration wizard helps them register the EAMs they're enabled to use. If they are enabled for other authentication methods, they might need to select **I want to set up a different method** > **External Auth methods** to proceed. They need to authenticate with their EAM provider to register the EAM in Microsoft Entra ID. 
+
+If the authentication succeeds, a message confirms registration completed and the EAM is registered. 
+The user is redirected to the resource they wanted to access. 
+
+If the authentication fails, the user is redirected back to the registration wizard, and the registration page shows an error message. The user can try again, or choose another way to sign in if they're enabled for other methods.  
+
+### How admins register an EAM for a user
+
+Admins can register a user for an EAM. If they register a user for an EAM, the user doesn't need to register their EAM in [Security info](https://mysignins.microsoft.com/security-info) or by using the registration wizard. 
+
+Admins can also delete the registration on behalf of a user. They can delete a registration to help users in recovery scenarios because their next sign triggers a new registration. They can delete EAM registration in the [Microsoft Entra admin center](https://entra.microsoft.com/) or with [Microsoft Graph](/graph/api/resources/externalauthenticationmethod). Admins can create a PowerShell script to update the registration state of multiple users at once.
+
+In the Microsoft Entra admin center:
+
+1. Select **Users** > **All users**.
+1. Select the user who needs to be registered for EAM.
+1. In the User menu, select **Authentication Methods**, and select **+ Add Authentication Method**. 
+1. Select **External authentication method**.
+1. Select one or more EAMs, and select **Save**.
+1. A success message appears, and the methods that you previously selected are listed in **Usable authentication methods**. 
 
 ## Using EAM and Conditional Access custom controls in parallel
 

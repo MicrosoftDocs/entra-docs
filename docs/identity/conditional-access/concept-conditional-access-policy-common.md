@@ -3,7 +3,7 @@ title: 'Conditional Access Templates: Simplify Security'
 description: Learn how Conditional Access templates provide preconfigured policies to secure your environment, aligned with Microsoft recommendations.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo

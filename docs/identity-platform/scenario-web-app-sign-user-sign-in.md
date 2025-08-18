@@ -2,7 +2,7 @@
 title: Write a web app that signs in/out users
 description: Learn how to build a web app that signs in/out users
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 03/21/2025

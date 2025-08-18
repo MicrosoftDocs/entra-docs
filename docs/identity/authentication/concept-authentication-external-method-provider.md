@@ -3,7 +3,7 @@ title: Microsoft Entra multifactor authentication external method provider refer
 description: Learn how to configure an external authentication method (EAM) provider for Microsoft Entra multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/17/2025
 ms.author: justinha
 author: gregkmsft
@@ -14,9 +14,13 @@ ms.custom: sfi-ropc-blocked
 ---
 # Microsoft Entra multifactor authentication external method provider reference (Preview)
 
-This topic describes how an external authentication provider connects to Microsoft Entra multifactor authentication (MFA). An external authentication provider can integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy the second factor of an MFA requirement for access to a resource or application. EAMs require at least a Microsoft Entra ID P1 license. 
+This topic describes how an external authentication provider connects to Microsoft Entra multifactor authentication (MFA). 
 
-When a user signs in, that tenant policies are evaluated. The authentication requirements are determined based on the resource that the user tries to access. 
+> [!IMPORTANT]
+> External Authentication Provider is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+> With this preview, we're giving you the ability for an external authentication provider to integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy the second factor of an MFA requirement for access to a resource or application. EAMs require at least a Microsoft Entra ID P1 license.
+
+When a user signs in, the tenant policies are evaluated. The authentication requirements are determined based on the resource that the user tries to access. 
 
 Multiple policies may apply to the sign-in, depending on their parameters. Those parameters include users and groups, applications, platform, sign-in risk level, and more. 
 

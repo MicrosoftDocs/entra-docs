@@ -3,7 +3,7 @@ title: Secure Your Workforce with Microsoft Entra ID
 description: Learn how to protect organizational identities with Microsoft Entra ID. Discover security recommendations, multifactor authentication setup, and Zero Trust implementation strategies.
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: article
 ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
