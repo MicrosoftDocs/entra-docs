@@ -69,9 +69,7 @@ To block new passwords using the Microsoft Entra admin center:
 
 1. Select **Save** to save your settings.
 
-:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Screenshot of the 'User consent settings' pane.":::
-
-Todo^^
+:::image type="content" source="./media/configure-app-mgmt-policies/enable-passwordaddition-restriction.png" alt-text="Screenshot of the 'password addition' restriction.":::
 
 #### [Microsoft Graph](#tab/graph)
 
@@ -140,9 +138,7 @@ To grant an app an exception to the restriction blocking custom identifier URIs 
 
 1. Select **Save** to save your settings.
 
-:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Screenshot of the 'User consent settings' pane.":::
-
-Todo^^
+:::image type="content" source="./media/configure-app-mgmt-policies/identifier-uri-restriction-with-exemption.png" alt-text="Screenshot of the 'custom identifier URI' restriction.":::
 
 #### [Microsoft Graph](#tab/graph)
 
@@ -209,9 +205,7 @@ This example will grant a service an exception to the restriction enforcing a ma
 
 1. Select **Save** to save your settings.
 
-:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Screenshot of the 'User consent settings' pane.":::
-
-Todo^^
+:::image type="content" source="./media/configure-app-mgmt-policies/restrict-certificate-lifetime.png" alt-text="Screenshot of the 'restrict max certificate lifetime' restriction.":::
 
 #### [Microsoft Graph](#tab/graph)
 
@@ -351,9 +345,7 @@ Sometimes, you aren't ready to apply a restriction to your entire tenant, but st
 
 1. Select **Save** to save your settings.
 
-:::image type="content" source="media/configure-user-consent/setting-for-all-users.png" alt-text="Screenshot of the 'User consent settings' pane.":::
-
-Todo^^
+:::image type="content" source="./media/configure-app-mgmt-policies/block-custom-passwords.png" alt-text="Screenshot of the 'block custom passwords' restriction.":::
 
 #### [Microsoft Graph](#tab/graph)
 
