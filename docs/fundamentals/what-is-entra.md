@@ -95,15 +95,15 @@ Before organizations deploy Microsoft Entra, they should configure their infrast
 - [Deployment plans](~/architecture/deployment-plans.md)
 - [Operations reference](~/architecture/ops-guide-intro.md)
 - [Operations guide](~/architecture/security-operations-introduction.md)
-- [Reccomended security configurations](configure-security.md)
+- [Recommended security configurations](configure-security.md)
 
 ### Licensing Microsoft Entra features
 
-The features of Microsoft Entra are licensed in multiple ways. These licenses include Microsoft Entra ID Free, Microsoft Entra ID P1, Microsoft Entra ID P2, Microsoft Entra Suite, Microsoft Entra External ID, Microsoft Entra Workload ID, Microsoft Entra ID Governance, and other standalone products. For more information about licensing and available options, see the article [Microsoft Entra licensing](licensing.md) or the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing).
+The features of Microsoft Entra are licensed in multiple ways. These licenses include Microsoft Entra ID Free, Microsoft Entra ID P1, Microsoft Entra ID P2, Microsoft Entra Suite, Microsoft Entra External ID, Microsoft Entra Workload ID, Microsoft Entra ID Governance, and other standalone products. Microsoft Entra is also part of licenses like [Microsoft 365](https://www.microsoft.com/microsoft-365/enterprise/microsoft365-plans-and-pricing) and [Enterprise Mobility + Security](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing). For more information about licensing and available options, see the article [Microsoft Entra licensing](licensing.md) or the [Microsoft Entra pricing page](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 ## Working with Microsoft Entra
 
-After organizations deploy Microsoft Entra, administrators can use the **Microsoft Entra admin center** and **Microsoft Graph API** to manage the identity and network access resources, and developers can use the **Microsoft identity platform** to build identity and access applications. 
+After organizations deploy Microsoft Entra, administrators can use the [Microsoft Entra admin center](#microsoft-entra-admin-center) and [Microsoft Graph API](#microsoft-graph-api) to manage the identity and network access resources, and developers can use the [Microsoft identity platform](#microsoft-identity-platform) to build identity and access applications. 
 
 ### Microsoft Entra admin center
 
