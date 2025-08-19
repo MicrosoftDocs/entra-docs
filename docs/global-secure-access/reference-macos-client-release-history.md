@@ -3,7 +3,7 @@ title: Global Secure Access Client for macOS Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for macOS.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 08/05/2025
+ms.date: 08/19/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -24,7 +24,7 @@ The current version of the Global Secure Access client is available to download 
 :::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
 
 ## Version 1.1.25070402
-Released for download on August 14, 2025.
+Released for download on August 19, 2025.
 ### Other changes
 - Bug fix: Fixes a compatibility issue with macOS 26.
 > [!IMPORTANT]
@@ -44,7 +44,7 @@ Released for download on July 29, 2025.
 - Enhanced telemetry for better supportability and monitoring.
 - Miscellaneous bug fixes and improvements.
 ### Known issues
-- There's a known compatibility issue with macOS 26 that causes the device to lose connectivity. A new client version compatible with macOS 26 is set to release in August 2025. You need to deploy that version before upgrading to macOS 26. 
+- Client version **1.1.25070401** has a known compatibility issue with macOS 26 that causes the device to lose connectivity. To maintain compatibility with macOS 26, upgrade to and deploy client version **1.1.25070402** before upgrading to macOS 26. 
 
 ## Version 1.1.25060400
 Released for download on June 24, 2025.
