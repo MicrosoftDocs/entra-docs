@@ -24,7 +24,7 @@ For information about limitations and to learn more about the previous Bulk Oper
 
 To download all groups in your organization:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade) and in the left-hand navigation pane, select the **Groups** tab.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/GroupsManagementMenuBlade) and in the left-hand navigation pane, select the **Groups** tab and then **All groups**.
 
     :::image type="content" source="Media/bulk-operations/groups-management-page.png" alt-text="Screenshot of the Microsoft Entra ID Groups management page showing the all groups view.":::
 
@@ -85,7 +85,7 @@ To add multiple members to a group:
 
 3. Select **Bulk operations** > **Import members**.
 
-    :::image type="content" source="Media/bulk-operations/bulk-operations.png" alt-text="Screenshot of the import members option in bulk operations interface.":::
+    :::image type="content" source="Media/bulk-operations/members-bulk-operations-import.png" alt-text="Screenshot of the import members option in bulk operations interface.":::
 
 4. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
 
@@ -107,7 +107,7 @@ To remove multiple members from a group:
 
 2. Select **Bulk operations** > **Remove members**.
 
-    :::image type="content" source="Media/bulk-operations/bulk-operations.png" alt-text="Screenshot of the bulk operations menu with remove members option selected.":::
+    :::image type="content" source="Media/bulk-operations/members-bulk-operations-remove.png" alt-text="Screenshot of the bulk operations menu with remove members option selected.":::
 
 3. Download the csv template (optional). Rename the ID column name to **ObjectId** and delete the remainder of columns. Add Object IDs for the members you want to import. Upload your csv file with only the **ObjectId** column. Note: You can add valid or invalid Object IDs. 
 
@@ -121,7 +121,7 @@ To remove multiple members from a group:
 
 6. If the operation shows **Failed** status with reason **NotAllRowsSuccessfullyProcessed**, select the filename to download a detailed report showing the status of each object ID.
 
-7. Verify that the specified members have been removed from the group.
+7. Verify that the specified members were removed from the group.
 
 ## Delete bulk jobs
 
@@ -142,28 +142,28 @@ To delete completed or failed bulk operations:
     :::image type="content" source="Media/bulk-operations/delete-bulk-job-notification.png" alt-text="Screenshot of the bulk operations list with notification of the successful deletion.":::     
 
 
-## User Scenario Steps (Devices)
+## Devices scenario steps
 
 1. Go to the **All devices** blade.
 
-    :::image type="content" source="Media/bulk-operations/all-devices.png" alt-text="Screen shot of the All devices blade in Microsoft Entra admin center showing the devices list.":::
+    :::image type="content" source="Media/bulk-operations/all-devices.png" alt-text="Screenshot of the all devices blade.":::
 
 2. Select **Download devices**.
 
-    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations.png" alt-text="Screen shot of the All devices Bulk operations page with the Download devices option selected.":::
+    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations.png" alt-text="Screenshot of the all devices export page.":::
 
 3. Enter a filename that matches your naming convention and select **Start download**.
-    :::image type="content" source="Media/bulk-operations/all-devices-success.png" alt-text="Screen shot of the success notification after starting the Download devices job.":::
+    :::image type="content" source="Media/bulk-operations/all-devices-success.png" alt-text="Screenshot of the bulk operations list with notification of the successful job completion.":::
 
 4. Verify the notification message and, if the job was submitted successfully, select the **Success!** or **File is ready! Click here to download** link.
 
-    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations-result.png" alt-text="Screen shot of the Bulk operations page showing a completed Download devices job with a File is ready link to download the CSV.":::
+    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations-result.png" alt-text="Screenshot of the bulk operations result page.":::
 
 5. Select the filename for the bulk job you created to download the CSV file. Verify the CSV contains all devices with the columns you selected when the bulk job was created.
 
 You can bulk export users following the steps in [Download a list of users in Microsoft Entra admin center](../identity/users/users-bulk-download.md).
-       
-    
+
+
 ## Related content
 
 - [Bulk operations service limitations](bulk-operations-service-limitations.md)
