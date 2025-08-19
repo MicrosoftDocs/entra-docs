@@ -433,7 +433,7 @@ The **Block password addition** restriction expects all four of the following re
 - The `symmetricKeyAddition` restriction in the `applicationRestrictions.passwordCredentials` collection
 - The `symmetricKeyAddition` restriction in the `servicePrincipalRestrictions.passwordCredentials` collection
 
-This means the state of all four restrictions should be set to `enabled`.  Or, all four restrictions should be set to `disabled`, `null`, or not be present in the policy.
+This means the properties of all four restrictions should match. Or, all four restrictions should not be present in the policy.
 
 ##### Password lifetime
 
@@ -441,10 +441,10 @@ The **Restrict max password lifetime** restriction expects all four of the follo
 
 - The `passwordLifetime` restriction in the `applicationRestrictions.passwordCredentials` collection
 - The `passwordLifetime` restriction in the `servicePrincipalRestrictions.passwordCredentials` collection
-- The `asymmetricKeyLifetime` restriction in the `applicationRestrictions.passwordCredentials` collection
-- The `asymmetricKeyLifetime` restriction in the `servicePrincipalRestrictions.passwordCredentials` collection
+- The `symmetricKeyLifetime` restriction in the `applicationRestrictions.passwordCredentials` collection
+- The `symmetricKeyLifetime` restriction in the `servicePrincipalRestrictions.passwordCredentials` collection
 
-This means the state of all four restrictions should be set to `enabled` AND all four should have the same value for `maxLifetime`.  Or,  all four restrictions should be set to `disabled`, `null`, or not be present in the policy.
+This means the properties of all four restrictions should match. Or, all four restrictions should not be present in the policy.
 
 ##### Certificate lifetime
 
@@ -453,7 +453,7 @@ The **Restrict max certificate lifetime** restriction expects all both of the fo
 - The `asymmetricKeyLifetime` restriction in the `applicationRestrictions.passwordCredentials` collection
 - The `asymmetricKeyLifetime` restriction in the `servicePrincipalRestrictions.passwordCredentials` collection
 
-This means the state of both restrictions should be set to `enabled` AND both should have the same value for `maxLifetime`.  Or, both restrictions should be set to `disabled`, `null`, or not be present in the policy.
+This means the properties of both restrictions should match. Or, both restrictions should not be present in the policy.
 
 ---
 
