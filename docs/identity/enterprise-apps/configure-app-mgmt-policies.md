@@ -406,7 +406,7 @@ GET https://graph.microsoft.com/beta/policies/appManagementPolicies
 
 If you have ever configured your app management policies outside of the Entra admin center, you may have configured them in a way the portal doesn't expect.  If this is the case, when loading a restriction, you'll see an error message like:
 
-```The restriction has been modified outside of this interface. To prevent data loss, editing is disabled until restrictions are synchronized.```
+```The restriction have been modified outside of this interface. To prevent data loss, editing is disabled until restrictions are synchronized.```
 
 In order to get your restrictions back into a state that the Entra admin center expects, you'll need to update them using Microsoft Graph.
 
