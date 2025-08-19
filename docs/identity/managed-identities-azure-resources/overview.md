@@ -7,7 +7,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: overview
-ms.date: 07/29/2025
+ms.date: 08/19/2025
 ms.author: shermanouko
 ms.reviewer: ryanwi
 
@@ -22,7 +22,7 @@ A common challenge for developers is the management of secrets, credentials, cer
 
 At a high level, there are two types of identities: human and machine/non-human identities. Machine / non-human identities consist of device and workload identities. In Microsoft Entra, workload identities are applications, service principals, and managed identities.
 
-A managed identity is an identity that can be assigned to an Azure compute resource (Virtual Machine (VM), Virtual Machine Scale Set (VMSS), Service Fabric Cluster, Azure Kubernetes cluster) or any App hosting platform supported by Azure. Once a managed identity is assigned on the compute resource, it can be authorized, directly or indirectly, to access downstream dependency resources, such as a storage account, SQL database, CosmosDB, and so on. Managed identity replaces secrets such as access keys or passwords. In addition, managed identities can replace certificates or other forms of authentication for service-to-service dependencies.
+A managed identity is an identity that can be assigned to an Azure compute resource (Azure Virtual Machine, Azure Virtual Machine Scale Set, Service Fabric Cluster, Azure Kubernetes cluster) or any App hosting platform supported by Azure. Once a managed identity is assigned on the compute resource, it can be authorized, directly or indirectly, to access downstream dependency resources, such as a storage account, SQL database, Cosmos DB, and so on. Managed identity replaces secrets such as access keys or passwords. In addition, managed identities can replace certificates or other forms of authentication for service-to-service dependencies.
 
 The following video shows how you can use managed identities:
 

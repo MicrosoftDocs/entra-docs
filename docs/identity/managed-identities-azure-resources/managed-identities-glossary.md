@@ -9,7 +9,7 @@ ms.reviewer: arluca
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: reference
-ms.date: 07/29/2025
+ms.date: 08/19/2025
 ---
 
 # Managed identities glossary
@@ -24,13 +24,8 @@ This glossary defines key terms and concepts related to managed identities for A
 **Azure Instance Metadata Service (IMDS)**
 : A REST endpoint available to all VMs created through Azure Resource Manager. IMDS provides access to managed identity tokens without requiring credentials.
 
-**Azure Resource Manager (ARM)**
+**Azure Resource Manager**
 : The deployment and management service for Azure that provides a management layer for creating, updating, and deleting resources.
-
-## B
-
-**Blast Radius**
-: The scope of impact when a security incident or misconfiguration occurs. Regional isolation helps reduce the blast radius by limiting managed identity usage to a single region.
 
 ## C
 
