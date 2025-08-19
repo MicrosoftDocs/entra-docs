@@ -146,18 +146,18 @@ To delete completed or failed bulk operations:
 
 1. Go to the **All devices** blade.
 
-    :::image type="content" source="Media/bulk-operations/all-devices.png" alt-text="Screenshot of the bulk operations list with notification of the successful deletion.":::
+    :::image type="content" source="Media/bulk-operations/all-devices.png" alt-text="Screen shot of the All devices blade in Microsoft Entra admin center showing the devices list.":::
 
 2. Select **Download devices**.
 
-    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations.png" alt-text="Screenshot of the all devices export page.":::
+    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations.png" alt-text="Screen shot of the All devices Bulk operations page with the Download devices option selected.":::
 
 3. Enter a filename that matches your naming convention and select **Start download**.
-    :::image type="content" source="Media/bulk-operations/all-devices-success.png" alt-text="Screenshot of the bulk operations list with notification of the successful job completion.":::
+    :::image type="content" source="Media/bulk-operations/all-devices-success.png" alt-text="Screen shot of the success notification after starting the Download devices job.":::
 
 4. Verify the notification message and, if the job was submitted successfully, select the **Success!** or **File is ready! Click here to download** link.
 
-    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations-result.png" alt-text="Screenshot of the bulk operations list with notification of the successful job completion.":::
+    :::image type="content" source="Media/bulk-operations/all-devices-bulk-operations-result.png" alt-text="Screen shot of the Bulk operations page showing a completed Download devices job with a File is ready link to download the CSV.":::
 
 5. Select the filename for the bulk job you created to download the CSV file. Verify the CSV contains all devices with the columns you selected when the bulk job was created.
 
