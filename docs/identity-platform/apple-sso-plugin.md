@@ -313,13 +313,14 @@ These parameters specify whether the SSO extension should prevent native and web
 For a consistent SSO experience across all apps on the device, we recommend you enable one of these settings for apps that don't use MSAL. You should only enable this for apps that use MSAL if your users are experiencing unexpected prompts. 
 
 ##### Apps that don't use a Microsoft Authentication Library:
-  
+
 Disable the app prompt and display the account picker:
 
 - **Key**: `disable_explicit_app_prompt`
 - **Type**: `Integer`
 - **Value**: 1 or 0. This value is set to 1 by default and this default setting reduces the prompts.
   
+
 Disable app prompt and select an account from the list of matching SSO accounts automatically:
 - **Key**: `disable_explicit_app_prompt_and_autologin`
 - **Type**: `Integer`
@@ -335,6 +336,7 @@ Disable the app prompt and display the account picker:
 - **Type**: `Integer`
 - **Value**: 1 or 0. This value is set to 0 by default.
   
+
 Disable app prompt and select an account from the list of matching SSO accounts automatically:
 - **Key**: `disable_explicit_native_app_prompt_and_autologin`
 - **Type**: `Integer`
@@ -436,29 +438,22 @@ The end user sees the familiar experience and doesn't have to sign in again in e
 
 In March 2024, Microsoft announced that Microsoft Entra ID will transition from using Apple’s Keychain to Apple’s Secure Enclave for storing device identity keys. Beginning August 2025 as part of the Secure Enclave rollout, certain new device registrations will require Secure Enclave for key storage. Eventually, all new device registrations will require Secure Enclave.
 
-If your applications or MDM solutions depend on accessing Workplace Join keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
+If your applications or MDM solutions depend on accessing Microsoft Entra device registration keys through Keychain, you must update them to use the Microsoft Authentication Library (MSAL) and the Enterprise SSO plug-in to maintain compatibility with the Microsoft identity platform.
 
-### Enable Secure Enclave based storage of device identity keys
+### Using Microsoft Authentication Library (MSAL) to read registration device Information
 
-If you're enabling Secure Enclave based storage of device identity keys before it becomes mandatory for all devices, you can add the following Extension Data attribute to your Apple devices’ MDM configuration profile. 
+You can call this available MSAL API to read detailed device registration:
 
-> [!NOTE]
-> For this flag to take effect, it must be applied to a new registration. It will not impact devices that have already been registered unless they re-register.
-
-- **Key**: `use_most_secure_storage`
-- **Type**: `Integer`
-- **Value**: 1
-
-Alternatively:
-
-- **Key**: `use_most_secure_storage`
-- **Type**: `Boolean`
-- **Value**: True
+> ```objc
+> - (void)getWPJMetaDataDeviceWithParameters:(nullable MSALParameters *)parameters
+>                                forTenantId:(nullable NSString *)tenantId
+>                            completionBlock:
+>                                (nonnull MSALWPJMetaDataCompletionBlock)
+>                                    completionBlock;
+> ```
 
 
-The screenshot below shows the configuration page and settings for enabling Secure Enclave in Microsoft Intune. 
-
-:::image type="content" source="./media/apple-sso-plugin/secure-enclave.png" alt-text="Screenshot of the Microsoft Entra admin center showing the configuration profile page in Intune with the settings for enabling Secure Enclave highlighted." lightbox="./media/apple-sso-plugin/secure-enclave.png":::
+Please find more details about this API documentation [here](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALPublicClientApplication.html#/c:objc(cs)MSALPublicClientApplication(im)getWPJMetaDataDeviceWithParameters:forTenantId:completionBlock:).
 
 ### Recognize app incompatibilities with Secure Enclave based device identity
 
@@ -475,54 +470,41 @@ If you see this error message during testing, first, ensure you have successfull
 #### Troubleshoot Secure Enclave
 
 In cases where you must troubleshoot issues with Secure Enclave, it can be disabled by updating the following key in your Apple device's MDM configuration:
- 
+
 - **Key**: `use_most_secure_storage`
 - **Type**: `Integer`
 - **Value**: 0
 
-Alternatively:
-
-- **Key**: `use_most_secure_storage`
-- **Type**: `Boolean`
-- **Value**: False
- 
 > [!NOTE]
 > Disabling Secure Enclave should only be done during troubleshooting.
- 
+
 #### More details on disabling Secure Enclave
- 
+
 If for any reason Secure Enclave needs to be disabled, follow these recommended steps:
- 
+
 1. **Update the configuration**: Disable `use_most_secure_storage` by setting the flag to `false` for Boolean type or `0` for Integer type in your MDM configuration.
- 
+
 2. **Unregister the device**: Remove the device registration using one of these methods:
-  - **Microsoft Authenticator**: Navigate to the device registration menu and follow the unregistration steps
-  - **Intune Company Portal**: Select your device from the list of device, Press `...` and then Remove your device
- 
+  - **Microsoft Authenticator**: Navigate to the device registration menu and follow the unregistration steps:
+    1. Select the menu `...` from Home screen on the top left
+    2. Press Settings, Device Registration.
+    3. Press registration Company name under your device is currently registered with.
+    4. Press Unregister device.
+  - **Intune Company Portal**: Login to Company Portal and select Devices Tab:
+    1. Select you device from the list of devices.
+    2. Under the name, press `...`, a menu would pop up.
+    3. Select Remove device.
+
 3. **Re-register the device**: After unregistering, register the device again using either:
   - **Intune Company Portal**: Select the device and register it again
   - **Microsoft Authenticator**: Go to the menu, select Device Registration, and register the device again (Note: This method is not available on macOS)
- 
+
 > [!IMPORTANT]
 > The device must be unregistered and re-registered for the storage location change to take effect. Simply updating the configuration flag without re-registration will not change the storage location for existing device registrations.
- 
+
 #### Opting out of Secure Storage
 
 To opt your tenant out of the secure storage rollout, contact Microsoft customer support to request exclusion from the secure storage deployment. Once processed, your tenant is permanently excluded from this rollout. Any devices in your tenant previously registered with secure storage must follow the previous guidance for removing and re-adding the device after the permanent opt-out is completed. To opt in for Secure storage at a future date, you must contact Microsoft customer support.
- 
-#### How to detect if your device is registered with secure storage
-
-Secure storage registration is seamless for the device, however, you can verify that your device is using secure storage by doing the following:
-
-1. Sign into the Microsoft Intune Portal.
-
-1. Navigate to your user account and access sign-in logs.
-
-1. If the latest entry shows that Token Protection - Sign In Session as "*Bound*" then the device is registered with secure storage.
-
-:::image type="content" source="media/apple-sso-plugin/token-protection.png" alt-text="Screenshot showing a section of the Microsoft Intune Portal interface. The primary subject is a status message displaying token protection information for a device.":::
-
-If you experience login issues or notice abnormal behavior, please contact Microsoft customer support.
 
 ### Scenarios impacted
 
@@ -531,8 +513,24 @@ The list below contains some common scenarios that will be impacted by these cha
 > [!NOTE]
 > This isn't an exhaustive list, and we advise both consumers and vendors of applications to test their software for compatibility with this new datastore.
 
-#### Registered/Enrolled Device Conditional Access Policy Support in Chrome
-To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you'll need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
+#### Registered/Enrolled Device Conditional Access Policy Support in Browsers
+
+With Secure Enclave-based storage enabled, browsers require specific configurations to support device Conditional Access policies:
+
+**Safari (iOS and macOS)**
+- Built-in SSO integration - no additional configuration required
+
+**Google Chrome (macOS)**
+- Install the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension, or
+- Update to Chrome 135+ for automatic Enterprise SSO support
+
+**Microsoft Edge (iOS and macOS)**
+- Sign in to your Edge profile for automatic Microsoft SSO integration
+- Learn more: [Microsoft Edge security and identity](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-security-identity#seamless-sso)
+
+**Firefox (macOS)**
+- Configure the MicrosoftEntraSSO policy for browser integration
+- See: [Firefox policy templates](https://mozilla.github.io/policy-templates/#microsoftentrasso) and [Firefox Enterprise 133 release notes](https://support.mozilla.org/en-US/kb/firefox-enterprise-133-release-notes)
 
 ## Important update on macOS 15.3 and iOS 18.1.1 impacting Enterprise SSO
 
