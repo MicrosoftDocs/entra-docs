@@ -129,7 +129,7 @@ If you submit an access request and the request is still in the **pending approv
 
 1. Select **Request history** to confirm the request was canceled.
 
-## View approver information for pending requests
+## View approver information for pending requests (preview)
 
 If the access package is configured to display approver details, you can view who your approver is for any pending requests.
 
