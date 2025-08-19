@@ -130,8 +130,8 @@ To begin, follow these instructions to download the Authentication Agent softwar
 
 1. To download the latest version of the Authentication Agent (version 1.5.193.0 or later), sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with your tenant's Hybrid Identity Administrator credentials.
 2. Select **Microsoft Entra ID**.
-3. Select **Microsoft Entra Connect**, select **Pass-through authentication**, and then select **Download Agent**.
-1. Select the **Accept terms & download** button.
+3. Select **Microsoft Entra Connect**, select **Connect Sync** and then **Pass-through authentication**, and next select **Download**.
+1. Select the **Accept terms and download** button.
 
    [![Screenshot shows Microsoft Entra admin center: Download Authentication Agent button.](./media/how-to-connect-pta-quick-start/download-agent.png)](./media/how-to-connect-pta-quick-start/download-agent.png#lightbox)
    
