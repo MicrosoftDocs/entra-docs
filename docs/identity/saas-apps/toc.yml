@@ -114,8 +114,6 @@
         href: alation-data-catalog-tutorial.md
       - name: Alchemer
         href: alchemer-tutorial.md
-      - name: Alcumus Info Exchange
-        href: alcumus-info-tutorial.md
       - name: AlertEnterprise-Guardian
         href: alert-enterprise-guardian-tutorial.md
       - name: AlertMedia
@@ -886,6 +884,8 @@
         href: ecfreight2-tutorial.md  
       - name: EchoSpan
         href: echospan-tutorial.md
+      - name: EcoOnline Info Exchange
+        href: ecoonline-info-tutorial.md
       - name: eCornell
         href: ecornell-tutorial.md
       - name: E-days
