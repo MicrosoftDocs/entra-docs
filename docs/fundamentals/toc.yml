@@ -80,8 +80,6 @@ items:
     href: concept-secure-remote-workers.md
   - name: Integrate your apps with Microsoft Entra ID
     href: five-steps-to-full-application-integration.md
-  - name: Integrate your SAP apps with Microsoft Entra ID
-    href: scenario-azure-first-sap-identity-integration.md
   - name: Security defaults
     href: security-defaults.md
   - name: Manage 'Stay signed in?' prompt
@@ -133,6 +131,8 @@ items:
     href: reference-company-branding-css-template.md
   - name: Bulk operations
     href: bulk-operations-service-limitations.md
+  - name: Bulk operations in Microsoft Entra ID  (Preview)
+    href: bulk-operations.md
   - name: New name for Azure AD
     href: new-name.md
   - name: Rename Azure AD
