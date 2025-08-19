@@ -126,7 +126,7 @@
           - name: Audit and monitor User SOA
             href: 
           - name: Prep Your environment for User SOA
-            href: 
+            href: prepare-user-soa-environment.md
           - name: Identify supported Applications and authentication types
             href:    
     - name: Provision Microsoft Entra ID to Active Directory
