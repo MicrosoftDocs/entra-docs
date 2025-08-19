@@ -129,6 +129,18 @@ If you submit an access request and the request is still in the **pending approv
 
 1. Select **Request history** to confirm the request was canceled.
 
+## View approver information for pending requests
+
+If the access package is configured to display approver details, you can view who your approver is for any pending requests.
+
+**Prerequisite role:** Requestor
+
+1. In the My Access portal, select **Request history** to see a list of your requests and the status.
+
+1. Select the **View** link for the request that is pending approval. 
+
+1. In the request details pane, select **Details** under pending approval. The approver information will be displayed if the access package policy allows it.   
+
 ## Next steps
 
 - [Approve or deny access requests](entitlement-management-request-approve.md)
