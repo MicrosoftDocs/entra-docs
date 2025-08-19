@@ -161,7 +161,7 @@ To delete completed or failed bulk operations:
 
 5. Select the filename for the bulk job you created to download the CSV file. Verify the CSV contains all devices with the columns you selected when the bulk job was created.
 
-You can bulk export users following the steps in [Download a list of users in Microsoft Entra admin center](users-bulk-download.md).
+You can bulk export users following the steps in [Download a list of users in Microsoft Entra admin center](../identity/users/users-bulk-download.md).
        
     
 ## Related content
