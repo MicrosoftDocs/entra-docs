@@ -231,22 +231,9 @@ foreach ($group in $groups) {
     $groupId = $group.Id
     $groupName = $group.DisplayName
 
-    # Initialize counters for total members and members with license errors
-    $totalCount = 0
-    $licenseErrorCount = 0
-
-    # Get all members of the group that have license errors
-    $members = Get-MgGroupMemberWithLicenseError -GroupId $groupId
-
-    # Process each member
-    foreach ($member in $members) {
-        $totalCount++
-
-        # If the member has a license error (indicated by a non-empty Id), increment the error count
-        if (![string]::IsNullOrEmpty($member.Id)) {
-            $licenseErrorCount++
-        }
-    }
+    # Get count of the group's members and members with license errors
+    $totalCount = (Get-MgGroupMember -GroupId $GroupId -All).count
+    $licenseErrorCount = (Get-MgGroupMemberWithLicenseError -GroupId $groupId).count
 
     # Create a custom object with the group's information and counts
     $groupInfo += [PSCustomObject]@{
