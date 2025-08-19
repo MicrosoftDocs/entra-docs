@@ -214,11 +214,12 @@ You can control whether requestors see approver details for pending access packa
 1.	When creating a new access package or editing a policy for an existing access package, under **Approval** expand **Advanced request settings**.
 
 1.	Set Show approver details on pending access package requests (preview) to one of the following:
-- Yes – All users in scope of this access package will see the approver’s name and email address on their pending requests in My Access.
-- No – Users won’t see any approver information for this access package.
-- Default – Inherit the tenant-level setting.
+    - Yes – All users in scope of this access package will see the approver’s name and email address on their pending requests in My Access.
+    - No – Users won’t see any approver information for this access package.
+    - Default – Inherit the tenant-level setting.
 
-[!IMPORTANT] If the access package setting is set to Yes or No, it overrides the tenant-level setting. If it’s set to Default, it respects the tenant-level setting.
+>[!IMPORTANT]
+>If the access package setting is set to Yes or No, it overrides the tenant-level setting. If it’s set to Default, it respects the tenant-level setting.
 
 ## Next steps
 
