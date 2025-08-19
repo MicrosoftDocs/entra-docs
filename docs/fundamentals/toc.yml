@@ -80,8 +80,6 @@ items:
     href: concept-secure-remote-workers.md
   - name: Integrate your apps with Microsoft Entra ID
     href: five-steps-to-full-application-integration.md
-  - name: Integrate your SAP apps with Microsoft Entra ID
-    href: scenario-azure-first-sap-identity-integration.md
   - name: Security defaults
     href: security-defaults.md
   - name: Manage 'Stay signed in?' prompt
