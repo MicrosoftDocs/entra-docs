@@ -455,7 +455,7 @@ You can call this available MSAL API to read detailed device registration:
 
 Please find more details about this API documentation [here](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALPublicClientApplication.html#/c:objc(cs)MSALPublicClientApplication(im)getWPJMetaDataDeviceWithParameters:forTenantId:completionBlock:).
 
-### Recognize app incompatibilities with Secure Enclave based device identity
+### Troubleshooting Secure Enclave based device identity
 
 After enabling Secure Enclave based storage, you may encounter an error message advising you to set up your device to get access. This error message indicates that the application has failed to recognize the managed state of the device, suggesting an incompatibility with the new key storage location.
 
@@ -475,10 +475,10 @@ In cases where you must troubleshoot issues with Secure Enclave, it can be disab
 - **Type**: `Integer`
 - **Value**: 0
 
-> [!NOTE]
+> [!WARNING]
 > Disabling Secure Enclave should only be done during troubleshooting.
 
-#### More details on disabling Secure Enclave
+#### Troubleshooting: Disable Secure Enclave for Testing
 
 If for any reason Secure Enclave needs to be disabled, follow these recommended steps:
 
@@ -526,7 +526,7 @@ With Secure Enclave-based storage enabled, browsers require specific configurati
 
 **Microsoft Edge (iOS and macOS)**
 - Sign in to your Edge profile for automatic Microsoft SSO integration
-- Learn more: [Microsoft Edge security and identity](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-security-identity#seamless-sso)
+- Learn more: [Microsoft Edge security and identity](/deployedge/microsoft-edge-security-identity#seamless-sso)
 
 **Firefox (macOS)**
 - Configure the MicrosoftEntraSSO policy for browser integration
