@@ -104,14 +104,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     |Attribute|Type|
     |---|---|
-    |userName|String|
-    |externalId|String|
-    |emails[type eq "work"].value|String|
-    |active|Boolean|
-    |name.givenName|String|
-    |name.familyName|String|
-    |name.formatted|String|
-    |displayName|String|
+    |`userName`|String|
+    |`externalId`|String|
+    |`emails[type eq "work"].value`|String|
+    |`active`|Boolean|
+    |`name.givenName`|String|
+    |`name.familyName`|String|
+    |n`ame.formatted`|String|
+    |`displayName`|String|
 
 1. Under the **Mappings** section, select **Provision Microsoft Entra ID Groups**.
 
@@ -119,9 +119,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     |Attribute|Type|
     |---|---|
-    |displayName|String|
-    |externalId|String|
-    |members|Reference|
+    |`displayName`|String|
+    |`externalId`|String|
+    |`members`|Reference|
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

@@ -101,13 +101,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Edit **User Attributes & Claims**.
 
-1. Select **Add new claim** and enter the name as **administrator** in the textbox (the **administrator** value is case-sensitive).
+1. Select **Add new claim** and enter the name as `administrator` in the textbox (the `administrator` value is case-sensitive).
 
 1. Expand **Claim conditions** and select **Members** from **User type**.
 
 1. Select **Select groups** and search for the **Group** you want to include this claim, where its members should be administrators for GHES.
 
-1. Select **Attribute** for **Source** and enter **true** (without quotes) for the **Value**. 
+1. Select **Attribute** for **Source** and enter `true` (without quotes) for the **Value**. 
 
 1. Select **Save**.
 
