@@ -16,7 +16,7 @@ zone_pivot_groups: identity-mi-methods
 
 Managed identities for Azure resources eliminate the need to manage credentials in code. You can use them to get a Microsoft Entra token for your applications. The applications can use the token when accessing resources that support Microsoft Entra authentication. Azure manages the identity so you don't have to.
 
-There are two types of managed identities: system-assigned and user-assigned. System-assigned managed identities have their lifecycle tied to the resource that created them. This identity is restricted to only one resource, and you can grant permissions to the managed identity by using Azure role-based access control (RBAC).  User-assigned managed identities can be used on multiple resources. To learn more about managed identities, see [What are managed identities for Azure resources?](overview.md).
+There are two types of managed identities: system-assigned and user-assigned. System-assigned managed identities have their lifecycle tied to the resource that created them. This identity is restricted to only one resource, and you can grant permissions to the managed identity by using Azure role-based access control (RBAC). User-assigned managed identities can be used on multiple resources.
 
 ::: zone pivot="identity-mi-methods-azp"
 
@@ -28,7 +28,6 @@ In this article, you learn how to create, list, delete, or assign a role to a us
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 
 ## Create a user-assigned managed identity
-
 
 To create a user-assigned managed identity, your account needs the [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 
@@ -110,7 +109,7 @@ In this article, you learn how to create, list, delete, or assign a role to a us
 
 To create a user-assigned managed identity, your account needs the [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 
-Use the [az identity create](/cli/azure/identity#az-identity-create) command to create a user-assigned managed identity. The `-g` parameter specifies the resource group where to create the user-assigned managed identity. The `-n` parameter specifies its name. Replace the `<RESOURCE GROUP>` and `<USER ASSIGNED IDENTITY NAME>` parameter values with your own values.
+Use the `az identity create` command to create a user-assigned managed identity. The `-g` parameter specifies the resource group where to create the user-assigned managed identity. The `-n` parameter specifies its name. Replace the `<RESOURCE GROUP>` and `<USER ASSIGNED IDENTITY NAME>` parameter values with your own values.
 
 [!INCLUDE [ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
@@ -121,7 +120,7 @@ az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
 
 To list or read a user-assigned managed identity, your account needs the [Managed Identity Operator](/azure/role-based-access-control/built-in-roles#managed-identity-operator) or [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 
-To list user-assigned managed identities, use the [az identity list](/cli/azure/identity#az-identity-list) command. Replace the `<RESOURCE GROUP>` value with your own value.
+To list user-assigned managed identities, use the `az identity list` command. Replace the `<RESOURCE GROUP>` value with your own value.
 
 ```azurecli-interactive
 az identity list -g <RESOURCE GROUP>
@@ -135,7 +134,7 @@ In the JSON response, user-assigned managed identities have the `"Microsoft.Mana
 
 To delete a user-assigned managed identity, your account needs the [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 
-To delete a user-assigned managed identity, use the [az identity delete](/cli/azure/identity#az-identity-delete) command. The -n parameter specifies its name. The -g parameter specifies the resource group where the user-assigned managed identity was created. Replace the `<USER ASSIGNED IDENTITY NAME>` and `<RESOURCE GROUP>` parameter values with your own values.
+To delete a user-assigned managed identity, use the `az identity delete` command. The `-n` parameter specifies its name. The `-g` parameter specifies the resource group where the user-assigned managed identity was created. Replace the `<USER ASSIGNED IDENTITY NAME>` and `<RESOURCE GROUP>` parameter values with your own values.
 
 ```azurecli-interactive
 az identity delete -n <USER ASSIGNED IDENTITY NAME> -g <RESOURCE GROUP>
@@ -145,11 +144,8 @@ az identity delete -n <USER ASSIGNED IDENTITY NAME> -g <RESOURCE GROUP>
 
 ## Next steps
 
-For a full list of Azure CLI identity commands, see [az identity](/cli/azure/identity).
-
-For information on how to assign a user-assigned managed identity to an Azure VM, see [Configure managed identities for Azure resources on an Azure VM using Azure CLI](qs-configure-cli-windows-vm.md#user-assigned-managed-identity).
-
-Learn how to use [workload identity federation for managed identities](~/workload-id/workload-identity-federation.md) to access Microsoft Entra protected resources without managing secrets.
+- For a full list of Azure CLI identity commands, see [az identity](/cli/azure/identity).
+- For information on how to assign a user-assigned managed identity to an Azure VM, see [Configure managed identities for Azure resources on an Azure VM using Azure CLI](qs-configure-cli-windows-vm.md#user-assigned-managed-identity).
 
 ::: zone-end
 
@@ -209,7 +205,7 @@ New-AzUserAssignedIdentity -ResourceGroupName <RESOURCEGROUP> -Name <USER ASSIGN
 
 To list or read a user-assigned managed identity, your account needs the [Managed Identity Operator](/azure/role-based-access-control/built-in-roles#managed-identity-operator) or [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 
-To list user-assigned managed identities, use the [Get-AzUserAssigned] command. The `-ResourceGroupName` parameter specifies the resource group where the user-assigned managed identity was created. Replace the `<RESOURCE GROUP>` value with your own value.
+To list user-assigned managed identities, use the `Get-AzUserAssignedIdentity` command. The `-ResourceGroupName` parameter specifies the resource group where the user-assigned managed identity was created. Replace the `<RESOURCE GROUP>` value with your own value.
 
 ```azurepowershell-interactive
 Get-AzUserAssignedIdentity -ResourceGroupName <RESOURCE GROUP>
@@ -229,14 +225,12 @@ To delete a user-assigned managed identity, use the `Remove-AzUserAssignedIdenti
 Remove-AzUserAssignedIdentity -ResourceGroupName <RESOURCE GROUP> -Name <USER ASSIGNED IDENTITY NAME>
 ```
 
-> [!NOTE]
-> Deleting a user-assigned managed identity won't remove the reference from any resource it was assigned to. Identity assignments must be removed separately.
+Deleting a user-assigned managed identity won't remove the reference from any resource it was assigned to. Identity assignments must be removed separately.
 
 ## Next steps
 
 For a full list and more details of the Azure PowerShell managed identities for Azure resources commands, see [Az.ManagedServiceIdentity](/powershell/module/az.managedserviceidentity/#managed_service_identity).
 
-Learn how to use [workload identity federation for managed identities](~/workload-id/workload-identity-federation.md) to access Microsoft Entra protected resources without managing secrets.
 ::: zone-end
 
 
@@ -249,10 +243,8 @@ In this article, you create a user-assigned managed identity by using Azure Reso
 - If you're unfamiliar with managed identities for Azure resources, check out the [overview section](overview.md). *Be sure to review the [difference between a system-assigned and user-assigned managed identity](overview.md#managed-identity-types)*.
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 
-You can't list and delete a user-assigned managed identity by using a Resource Manager template. See the following articles to create and list a user-assigned managed identity:
+You can't list and delete a user-assigned managed identity by using a Resource Manager template. Use the other methods in this article to list or delete a user-assigned managed identity.
 
-- [List user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli#list-user-assigned-managed-identities)
-- [Delete user-assigned managed identity](./how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli#delete-a-user-assigned-managed-identity)
 ## Template creation and editing
 
 Resource Manager templates help you deploy new or modified resources defined by an Azure resource group. Several options are available for template editing and deployment, both local and portal-based. You can:
@@ -302,7 +294,6 @@ To create a user-assigned managed identity, use the following template. Replace 
 
 To assign a user-assigned managed identity to an Azure VM using a Resource Manager template, see [Configure managed identities for Azure resources on an Azure VM using a template](qs-configure-template-windows-vm.md).
 
-Learn how to use [workload identity federation for managed identities](~/workload-id/workload-identity-federation.md) to access Microsoft Entra protected resources without managing secrets.
 ::: zone-end
 
 
@@ -409,5 +400,4 @@ For information on how to assign a user-assigned managed identity to an Azure VM
 - [Configure managed identities for Azure resources on an Azure VM using REST API calls](qs-configure-rest-vm.md#user-assigned-managed-identity)
 - [Configure managed identities for Azure resources on a virtual machine scale set using REST API calls](qs-configure-rest-vmss.md#user-assigned-managed-identity)
 
-Learn how to use [workload identity federation for managed identities](~/workload-id/workload-identity-federation.md) to access Microsoft Entra protected resources without managing secrets.
 ::: zone-end

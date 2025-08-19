@@ -6,7 +6,7 @@ author: barclayn
 manager: femila
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 04/30/2025
+ms.date: 08/17/2025
 ms.custom: sfi-ga-nochange, sfi-image-nochange
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 ---
@@ -23,6 +23,10 @@ Specifically, you learn how to:
 > [!div class="checklist"]
 > - Configure your the Verified ID service using the quick setup.
 > - Controlling how issuances of Verified Workplace Credentials in MyAccount
+
+Watch this video to quickly set up your Microsoft Entra tenant use the verifiable credentials service.
+
+> [!VIDEO https://www.youtube.com/embed/0LfYrRd7Qzs?si=IlSzjKQ2ltfKOAgT]
 
 ## Prerequisites
 
