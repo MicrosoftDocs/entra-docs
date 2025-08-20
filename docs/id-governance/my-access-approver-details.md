@@ -35,3 +35,8 @@ Use this setting to define the default behavior for all access packages in your 
 
 
 
+## Next step
+
+> [!div class="nextstepaction"]
+> [What are access reviews? - Microsoft Entra](access-reviews-overview.md)
+> [What is the My Access portal?](my-access-portal-overview.md)
