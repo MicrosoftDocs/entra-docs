@@ -3,7 +3,7 @@ title: Embrace cloud-first posture and convert Group Source of Authority (SOA) t
 description: Learn about Source of Authority (SOA), including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
 author: Justinha
 ms.topic: conceptual
-ms.date: 08/01/2025
+ms.date: 08/19/2025
 ms.author: justinha
 ms.reviewer: justinha
 ---
@@ -16,6 +16,12 @@ To minimize your on-premises infrastructure size and complexity, adopt a cloud-f
 One AD DS minimization approach is to convert the Group Source of Authority (SOA) to Microsoft Entra ID. This approach lets you directly manage those groups in the cloud. You can delete AD DS groups that you no longer need on-premises. If you need to keep a group on-premises, you can configure security group provisioning from Microsoft Entra ID to AD DS. Then you can make changes to the group in Microsoft Entra ID and have those changes reflected in the on-premises group.
 
 This article describes how Group SOA can help IT administrators transition group management from AD DS to the cloud. You can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
+
+## Video:
+
+Check out our video for an introduction to SOA and how it can help your organization shift to the cloud. 
+
+> [!VIDEO https://www.youtube.com/embed/VpRDtulXcUw]
 
 ## Streamline AD DS group migration to the cloud by converting Group SOA 
 
