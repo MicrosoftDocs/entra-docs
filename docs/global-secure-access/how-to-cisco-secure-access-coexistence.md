@@ -105,7 +105,6 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
   ```
 
 4. Add the Quick Access FQDN. `<quickaccessapplicationid>.globalsecureaccess.local`
-  ```
 
   > [!NOTE]
   > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
