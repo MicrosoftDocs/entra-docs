@@ -32,3 +32,6 @@ Use this setting to define the default behavior for all access packages in your 
 > [!NOTE]
 > - The tenant setting applies to all access packages by default but can be overridden on a per-package basis via Advanced request settings.
 > - To show approver details to guests and connected organization users, set the access package-level setting to Yes.
+
+
+
