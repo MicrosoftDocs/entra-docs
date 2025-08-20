@@ -20,7 +20,7 @@ This article describes how Group SOA can help IT administrators transition group
 
 ## Video: Microsoft Entra Group Source of Authority 
 
-Check out our video for an introduction to SOA and how it can help your organization shift to the cloud. 
+Check out our video for an introduction to SOA and how it can help you shift to the cloud. 
 
 > [!VIDEO https://www.youtube.com/embed/VpRDtulXcUw]
 
