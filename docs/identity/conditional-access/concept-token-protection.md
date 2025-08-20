@@ -260,13 +260,13 @@ AADNonInteractiveUserSignInLogs
 
 ### End user experience
 
-A user that registered or enrolled their device doesn't experience any differences in the sign in experience on a token protection supported application when the token protection requirement is enabled.
+A user that registered or enrolled their supported device doesn't experience any differences in the sign in experience on a token protection supported application when the token protection requirement is enabled.
 
-A user who hasn't registered or enrolled their device or is using an unsupported application when the token protection requirement is enabled sees the following screenshot after authenticating.
+A user who hasn't registered or enrolled their device and if the token protection policy is enabled sees the following screenshot after authenticating.
 
 :::image type="content" source="media/concept-token-protection/token-protection-register-or-enroll-device.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
 
-A user that isn't using a supported application when the token protection requirement is enabled will see the following screenshot after authenticating.
+A user that isn't using a supported application when the token protection policy is enabled will see the following screenshot after authenticating.
 
 :::image type="content" source="media/concept-token-protection/token-protection-required-error-message.png" alt-text="Screenshot of the error message when a token protection policy blocks access.":::
 
