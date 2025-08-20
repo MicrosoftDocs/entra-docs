@@ -1,47 +1,46 @@
 ---
-title: Microsoft Entra Conditional Access token protection explained
-description: Learn how to secure your environment with token protection in Microsoft Entra Conditional Access policies.
+title: How Token Protection Enhances Conditional Access Policies
+description: Protect your resources with token protection in Conditional Access policies. Understand requirements, limitations, and deployment best practices.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 05/27/2025
+ms.date: 08/20/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: sgrandhi
-ms.custom: sfi-image-nochange
+ms.custom:
+  - sfi-image-nochange
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:08/20/2025
+  - ai-gen-description
 ---
-# Microsoft Entra Conditional Access: Token protection (Preview)
+# Token Protection in Microsoft Entra Conditional Access
 
-Token protection (sometimes referred to as token binding in the industry) attempts to reduce attacks using token theft by ensuring a token is usable only from the intended device. When an attacker is able to steal a token, by hijacking or replay, they can impersonate their victim until the token expires or is revoked. Token theft is thought to be a relatively rare event, but the damage from it can be significant. 
+Token Protection is a Conditional Access session control that attempts to reduce token replay attacks by ensuring only device bound sign-in session tokens, like Primary Refresh Tokens (PRTs), are accepted by Entra ID when applications request access to protected resources.  
 
-Token protection creates a cryptographically secure tie between the token and the device (client secret) it's issued to. Without the client secret, the bound token is useless. When a user registers a Windows 10 or newer device in Microsoft Entra ID, their primary identity is [bound to the device](~/identity/devices/concept-primary-refresh-token.md#how-is-the-prt-protected). What this means: A policy can ensure that only bound sign-in session (or refresh) tokens, otherwise known as Primary Refresh Tokens (PRTs) are used by applications when requesting access to a resource.
+When a user registers a Windows 10 or later device with Microsoft Entra, a PRT is issued and cryptographically bound to that device. This binding ensures that even if a threat actor steals a token, it can't be used from another device. With Token Protection enforced, Microsoft Entra validates that only these bound sign-in session tokens are used by supported applications. 
 
-> [!IMPORTANT]
-> Token protection is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all). With this preview, we're giving you the ability to create a Conditional Access policy to require token protection for sign-in tokens (refresh tokens) for specific services. We support token protection for sign-in tokens in Conditional Access for desktop applications accessing Exchange Online and SharePoint Online on Windows devices.
+You can enforce Token Protection policy on Exchange Online, SharePoint Online, and Teams resources. It is supported by many Microsoft 365 native applications. For a comprehensive list of supported applications and resources, please refer to the “Requirements” section. 
 
-> [!IMPORTANT]
-> The following changes have been made to Token Protection since the initial public preview release:
->
-> * **Sign In logs output:** The value of the string used in **enforcedSessionControls** and **sessionControlsNotSatisfied** changed from **Binding** to **SignInTokenProtection** in late June 2023. Queries on Sign In Log data should be updated to reflect this change.
-> * Devices that are joined to Microsoft Entra using certain methods are no longer supported. See the [known limitations section](#known-limitations) for a complete list.  
-> * Error code change: The Token protection Conditional Access policy error code is changing from 53003 to 530084 to better identify errors related to token protection.
-> * Token protection now supports the Windows App, extending protection to Windows 365 and Azure Virtual Desktop.
+> [!NOTE]
+> Use this policy as part of a broader strategy against token theft, as described in [Protecting tokens in Microsoft Entra](/entra/identity/devices/protecting-tokens-microsoft-entra-id). 
 
-:::image type="content" source="media/concept-token-protection/complete-policy-components-session.png" alt-text="Screenshot of a Conditional Access policy requiring token protection as the session control.":::
+:::image type="content" source="media/concept-token-protection/complete-policy-components-session.png" alt-text="Screenshot of a Conditional Access policy that requires token protection as the session control.":::
 
 ## Requirements
 
 [!INCLUDE [Microsoft Entra ID P1 license](~/includes/entra-p1-license.md)]
 
-The following devices and applications support accessing resources on which a token protection Conditional Access policy is applied:
+The following devices and applications support accessing resources where a token protection Conditional Access policy is applied:
 
-### Supported devices: 
+### Supported devices
 
 - Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the [known limitations section](#known-limitations) for unsupported device types.  
 - Windows Server 2019 or newer that are hybrid Microsoft Entra joined.
 
-### Supported applications: 
+### Supported applications
 
 - OneDrive sync client version 22.217 or newer 
 - Teams native client version 1.6.00.1331 or newer 
@@ -50,6 +49,14 @@ The following devices and applications support accessing resources on which a to
 - Microsoft Graph PowerShell version 2.0.0 or newer with [EnableLoginByWAM option](/powershell/module/microsoft.graph.authentication/set-mggraphoption#example-1-set-web-account-manager-support)
 - Visual Studio 2022 or newer when using the 'Windows authentication broker' Sign-in option 
 - Windows App version 2.0.379.0 or newer
+
+The following resources support Token Protection: 
+
+- Office 365 Exchange Online 
+- Office 365 SharePoint Online 
+- Microsoft Teams Services 
+- Azure Virtual Desktop 
+- Windows 365 
 
 ### Known limitations
 
@@ -69,11 +76,10 @@ The following devices and applications support accessing resources on which a to
    - Power Automate hosted machine groups that are [Microsoft Entra joined](/power-automate/desktop-flows/hosted-machine-groups#general-network-requirements). 
    - Windows Autopilot devices deployed using [self-deploying mode](/autopilot/self-deploying). 
    - Windows virtual machines deployed in Azure using the virtual machine (VM) extension that are enabled for [Microsoft Entra ID authentication](/entra/identity/devices/howto-vm-sign-in-azure-ad-windows).
-- New [Microsoft Entra registered devices](../devices/concept-device-registration.md) on Windows versions before 24H2 might be blocked if users don't perform a fresh sign-in during registration. If blocked, users must re-register the device.
 
-To identify the impacted devices due to unsupported registration types listed previously, inspect `tokenProtectionStatusDetails` attribute in the Sign-in logs. Token requests that are blocked due to an unsupported device registration type, can be identified with a `signInSessionStatusCode` value of 1003. 
+To identify the impacted devices due to unsupported registration types listed previously, inspect the `tokenProtectionStatusDetails` attribute in the sign-in logs. Token requests that are blocked due to an unsupported device registration type, can be identified with a `signInSessionStatusCode` value of 1003. 
 
-To prevent any disruption for new onboarding, you can modify the token protection Conditional Access policy by adding a device filter condition that excludes any devices that fall in the previously described deployment category. For example, to exclude:
+To prevent disruption during onboarding, modify the token protection Conditional Access policy by adding a device filter condition that excludes devices in the previously described deployment category. For example, to exclude:
 
 - Cloud PCs that are Microsoft Entra joined, you can use `systemLabels -eq "CloudPC" and trustType -eq "AzureAD"`. 
 - Azure Virtual Desktops that are Microsoft Entra joined, you can use `systemLabels -eq "AzureVirtualDesktop" and trustType -eq "AzureAD"`. 
@@ -85,21 +91,21 @@ To prevent any disruption for new onboarding, you can modify the token protectio
 
 For users, the deployment of a Conditional Access policy to enforce token protection should be invisible when using compatible client platforms on registered devices and compatible applications.
 
-To minimize the likelihood of user disruption due to app or device incompatibility, we highly recommend: 
+To minimize the likelihood of user disruption due to app or device incompatibility, follow these recommendations: 
 
-- Start with a pilot group of users, and expand over time. 
-- Create a Conditional Access policy in [report-only mode](concept-conditional-access-report-only.md) before moving to enforcement of token protection. 
-- Capture both Interactive and Non-interactive sign in logs. 
-- Analyze these logs for long enough to cover normal application use.
-- Add known good users to an enforcement policy. 
+- Start with a pilot group of users and expand over time. 
+- Create a Conditional Access policy in [report-only mode](concept-conditional-access-report-only.md) before enforcing token protection. 
+- Capture both interactive and non-interactive sign-in logs. 
+- Analyze these logs long enough to cover normal application use.
+- Add known, reliable users to an enforcement policy. 
 
-This process helps to assess your users’ client and app compatibility for token protection enforcement. 
+This process helps assess your users’ client and app compatibility for token protection enforcement. 
 
 ### Create a Conditional Access policy
 
 Users who perform specialized roles like those described in [Privileged access security levels](/security/privileged-access-workstations/privileged-access-security-levels#specialized) are possible targets for this functionality. We recommend piloting with a small subset to begin. 
 
-The steps that follow help create a Conditional Access policy to require token protection for Exchange Online and SharePoint Online on Windows devices.
+The following steps help you create a Conditional Access policy to require token protection for Exchange Online and SharePoint Online on Windows devices.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access** > **Policies**.
@@ -109,9 +115,10 @@ The steps that follow help create a Conditional Access policy to require token p
    1. Under **Include**, select the users or groups who are testing this policy.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**
-   1. Under **Select**, select the following applications supported by the preview:
+   1. Under **Select**, select the following applications:
        1. Office 365 Exchange Online
        1. Office 365 SharePoint Online
+       1. Microsoft Teams Services
        1. If you deployed Windows App in your environment, include:       
           1. Azure Virtual Desktop
           1. Windows 365
@@ -150,7 +157,7 @@ The steps that follow help create a Conditional Access policy to require token p
 
 ### Capture logs and analyze
 
-Monitor Conditional Access enforcement of token protection before and after enforcement using features like [Policy impact (Preview)](concept-conditional-access-report-only.md#policy-impact-preview), [Sign-in logs](#sign-in-logs), or [Log Analytics](#log-analytics).
+Monitor Conditional Access enforcement of token protection before and after enforcement by using features like [Policy impact](concept-conditional-access-report-only.md#policy-impact), [Sign-in logs](#sign-in-logs), and [Log Analytics](#log-analytics).
 
 #### Sign-in logs 
 
@@ -255,7 +262,7 @@ AADNonInteractiveUserSignInLogs
 
 A user that registered or enrolled their device doesn't experience any differences in the sign in experience on a token protection supported application when the token protection requirement is enabled.
 
-A user that hasn't registered or enrolled their device, or when using an unsupported application when the token protection requirement is enabled will see the following screenshot after authenticating.
+A user who hasn't registered or enrolled their device or is using an unsupported application when the token protection requirement is enabled sees the following screenshot after authenticating.
 
 :::image type="content" source="media/concept-token-protection/token-protection-register-or-enroll-device.png" alt-text="Screenshot of the token protection error message when your device isn't registered or enrolled.":::
 
