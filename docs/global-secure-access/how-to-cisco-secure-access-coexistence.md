@@ -140,7 +140,9 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
   > [!NOTE]
   > `quickaccessapplicationid` is the application ID of the configured Quick Access app.
 
-4. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
+4. Add DNS suffixes defined in your Private DNS or Enterprise App segments. For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
+
+5. In the **External Domains & IPs** section, add these Global Secure Access IPs and FQDN:
 
   *.globalsecureaccess.microsoft.com, 150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
 
