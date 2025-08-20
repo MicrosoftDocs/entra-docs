@@ -131,6 +131,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/whatis.md",
+      "redirect_url": "/entra/fundamentals/what-is-entra",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/quickstart-create-group-add-members.md",
       "redirect_url": "/entra/fundamentals/how-to-manage-groups",
       "redirect_document_id": true
