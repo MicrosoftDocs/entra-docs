@@ -11,7 +11,7 @@ ms.reviewer: owinfrey
 
 # Configure whether requestors can see approver details (preview)
 
-Admins can control whether requestors see approver details for pending access package requests in the [**My Access**](https://myaccess.microsoft.com) portal. You can set this at the access package level or at the tenant level (default for all packages). The access package setting overrides the tenant setting when explicitly set to Yes or No.
+Admins can control whether requestors see approver details for pending access package requests in the [**My Access**](https://myaccess.microsoft.com) portal. You can set this option at the access package level, or at the tenant level (default for all packages). The access package setting overrides the tenant setting when explicitly set to Yes or No.
 
 ## Tenant-level setting (applies to all access packages by default)
 
