@@ -45,10 +45,10 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ## Global Secure Access setup
 
-- Enable and disable different traffic forwarding profiles for your Microsoft Entra tenant. See [Traffic forwarding profiles](concept-traffic-forwarding.md).
-- Install and configure the private network connector. See [Configure connectors](how-to-configure-connectors.md).
-- Configure Quick Access to private resources and set up private DNS and DNS suffixes. See [Configure Quick Access](how-to-configure-quick-access.md).
-- Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
+- **Enable and disable different traffic forwarding profiles** for your Microsoft Entra tenant. See [Traffic forwarding profiles](concept-traffic-forwarding.md).
+- **Install and configure the private network connector** for Private Access applications. See [Configure connectors](how-to-configure-connectors.md).
+- **Configure Quick Access** to private resources and set up private DNS and DNS suffixes. See [Configure Quick Access](how-to-configure-quick-access.md).
+- **Install and configure the Global Secure Access client** on end-user devices. See [Global Secure Access clients](concept-clients.md).
 
 > [!NOTE]
 > Private Network Connectors are required for Private Access applications.
