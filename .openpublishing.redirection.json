@@ -133,7 +133,7 @@
     {
       "source_path_from_root": "/docs/fundamentals/scenario-azure-first-sap-identity-integration.md",
       "redirect_url": "/azure/sap/workloads/scenario-azure-first-sap-identity-integration",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/fundamentals/how-to-manage-support-access-requests.md",
