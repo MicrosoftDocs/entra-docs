@@ -117,7 +117,7 @@
             href: user-source-of-authority-overview.md
           - name: How User SOA works
             href: 
-          - name: Device Authentication
+          - name: Identify supported Applications and authentication types
             href: user-source-of-authority-authentication.md 
         - name: How to guides
           items:  
@@ -125,7 +125,7 @@
             href: how-to-user-source-of-authority-configure.md
           - name: Audit and monitor User SOA
             href: 
-          - name: Prep Your environment for User SOA
+          - name: Prepare Your environment for User SOA
             href: prepare-user-soa-environment.md
           - name: Identify supported Applications and authentication types
             href:    

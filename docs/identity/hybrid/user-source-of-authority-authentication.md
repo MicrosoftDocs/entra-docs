@@ -115,8 +115,8 @@ Not Supported.
 
 
 ## Related content
-TODO: Add your next step link(s)
-- [Write concepts](article-concept.md)
+
+- [Prepare Your environment for User SOA](prepare-user-soa-environment.md)
 
 <!--
 Remove all the comments in this template before you sign-off or merge to the 
