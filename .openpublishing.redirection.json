@@ -162,7 +162,7 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/groups-view-azure-portal.md",
-      "redirect_url": "/entra/fundamentals/quickstart-create-group-add-members",
+      "redirect_url": "/entra/fundamentals/how-to-manage-groups",
       "redirect_document_id": false
     },
     {
@@ -183,11 +183,6 @@
     {
       "source_path_from_root": "/docs/fundamentals/introduction-identity-access-management.md",
       "redirect_url": "/entra/fundamentals/identity-fundamental-concepts",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/fundamentals/quickstart-create-group-add-members.md",
-      "redirect_url": "/entra/fundamentals/how-to-manage-groups",
       "redirect_document_id": false
     },
     {
