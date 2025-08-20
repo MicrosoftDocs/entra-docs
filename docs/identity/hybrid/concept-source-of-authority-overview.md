@@ -1,11 +1,12 @@
 ---
 title: Embrace cloud-first posture and convert Group Source of Authority (SOA) to the cloud (Preview)
 description: Learn about Source of Authority (SOA), including prerequisites, supported scenarios, and step-by-step guidance for IT Architects and Administrators.
-author: Justinha
-ms.topic: conceptual
+author: justinha
 ms.date: 08/19/2025
 ms.author: justinha
-ms.reviewer: justinha
+ms.reviewer: dhanyahk
+ms.service: entra-id
+ms.topic: article
 ---
 # Embrace cloud-first posture: Convert Group Source of Authority to the cloud (Preview)
 
@@ -17,7 +18,7 @@ One AD DS minimization approach is to convert the Group Source of Authority (SOA
 
 This article describes how Group SOA can help IT administrators transition group management from AD DS to the cloud. You can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
 
-## Video:
+## Video: Microsoft Entra Group Source of Authority 
 
 Check out our video for an introduction to SOA and how it can help your organization shift to the cloud. 
 
