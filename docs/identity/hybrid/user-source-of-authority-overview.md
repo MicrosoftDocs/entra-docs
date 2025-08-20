@@ -74,7 +74,7 @@ The next sections explain more details about the scenario that User SOA supports
 
 ## Consideration for User SOA
 
-Before you begin converting the SOA for users in your organization, there are certain conditions within your environment that you must consider. The following sections provide more details into what you must consider before implementing user SOA.
+Before you begin converting the SOA for users in your organization, there are certain conditions within your environment that you must consider. The following sections provide more details into what you must consider before implementing User SOA.
 
 ### HR-driven Inbound Provisioning
 
