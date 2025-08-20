@@ -55,11 +55,10 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 ## Cisco Secure Access setup
 
-- Deploy and configure a resource connector for private applications. See Cisco documentation for [managing resource connectors and connector groups](https://docs.sse.cisco.com/sse-user-guide/docs/manage-resource-connectors-and-connector-groups).
-- Set up users and groups. Integration with Microsoft Entra ID provides the best user experience. See Cisco documentation for [Microsoft Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
-- Add private resources and create access policies. See Cisco documentation for [managing private access rules](https://docs.sse.cisco.com/sse-user-guide/docs/manage-private-access-rules).
-- Set up and configure internet security. See Cisco documentation for [managing internet security](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
-- Set up and configure destinations to bypass Secure Access Internet Security and allow coexistence with Global Secure Access.
+- **Set up a resource connector** for private applications. See Cisco documentation for [managing resource connectors and connector groups](https://docs.sse.cisco.com/sse-user-guide/docs/manage-resource-connectors-and-connector-groups).
+- **Provision users and groups**. Integration with Microsoft Entra ID provides the best user experience. See Cisco documentation for [Microsoft Entra ID SAML configuration](https://docs.sse.cisco.com/sse-user-guide/docs/configure-azure-for-saml).
+- **Add private resources and create access policies**. See Cisco documentation for [managing private access rules](https://docs.sse.cisco.com/sse-user-guide/docs/manage-private-access-rules).
+- **Set up internet security and configure bypasses** for coexistence. See Cisco documentation for [managing internet security](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
 - Deploy and install the Cisco Secure Client. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-security).
 
 > [!IMPORTANT]
