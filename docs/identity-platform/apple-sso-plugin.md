@@ -482,7 +482,7 @@ In cases where you must troubleshoot issues with Secure Enclave, it can be disab
 
 If for any reason Secure Enclave needs to be disabled, follow these recommended steps:
 
-1. **Update the configuration**: Disable `use_most_secure_storage` by setting the flag to `false` for Boolean type or `0` for Integer type in your MDM configuration.
+1. **Update the configuration**: Disable `use_most_secure_storage` by setting the flag to `0` for Integer type in your MDM configuration.
 
 2. **Unregister the device**: Remove the device registration using one of these methods:
   - **Microsoft Authenticator**: Navigate to the device registration menu and follow the unregistration steps:
