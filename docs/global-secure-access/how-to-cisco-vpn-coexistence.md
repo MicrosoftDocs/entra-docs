@@ -221,9 +221,6 @@ Configure split-include for Cisco ASA Remote Access VPN:
 10. Navigate to **Advanced > expand Secure Client > Custom Attributes > Add > for Attribute type** click **Manage** > Select **“dynamic-split-exclude-domains”** > **OK**
 11. Choose **Select Value > GSAfqdns > OK > Apply**
 > [!NOTE]
-  > There's a known issue with this configuration preventing coexistence with Global Secure Access on macOS. 
-
-> [!NOTE]
 > When using the Tunnel All Networks configuration, after the client connects, it might take a few seconds before you can access private resources through the Cisco VPN.
 
 ## Configuration scenarios
