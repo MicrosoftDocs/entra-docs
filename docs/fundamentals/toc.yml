@@ -100,8 +100,8 @@ items:
     href: copilot-security-entra-investigate-incident.md 
   - name: Investigate app risk using Microsoft Security Copilot
     href: copilot-security-entra-investigate-risky-apps.md
-  - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
-    href: copilot-security-entra-responsible-ai-faq.md
+  - name: Responsible AI FAQ for Security Copilot
+    href: /copilot/security/rai-faqs-security-copilot?toc=/fundamentals/toc.json&bc=/fundamentals/breadcrumb/toc.json
 - name: Support and help
   expanded: false
   items:
@@ -131,6 +131,8 @@ items:
     href: reference-company-branding-css-template.md
   - name: Bulk operations
     href: bulk-operations-service-limitations.md
+  - name: Bulk operations in Microsoft Entra ID  (Preview)
+    href: bulk-operations.md
   - name: New name for Azure AD
     href: new-name.md
   - name: Rename Azure AD

@@ -1,6 +1,4 @@
 ---
-# required metadata
-
 title: Investigate identity risk in Microsoft Security Copilot
 description: Use Microsoft Security Copilot and Microsoft Entra skills to quickly investigate identity-based security incident.
 keywords:
@@ -8,10 +6,11 @@ author: cilwerner
 ms.author: cwerner
 manager: pmwongera
 ms.date: 11/7/2024
-ms.topic: article
+ms.update-cycle: 180-days
+ms.topic: how-to
 ms.service: entra
-ms.custom: microsoft-copilot, ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 # Customer intent: As a SOC analyst or IT admin, I want to learn how to use the Microsoft Entra skills in Microsoft Security Copilot so that I can quickly respond to a potential identity-based security incident.
 ---
 

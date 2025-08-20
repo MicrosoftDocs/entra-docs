@@ -57,6 +57,12 @@ Every tenant comes with a set of app consent policies that are the same across a
 > [!WARNING]
 > Microsoft-user-default-recommended is a Microsoft managed policy. The conditions included in the policy are automatically updated based on Microsoft's latest security recommendations for end-user consent.
 
+## Microsoft recommended current settings
+
+The setting labelled "Let Microsoft manage your consent settings," the Microsoft managed policy, will update with Microsoft's latest recommended default consent settings. This is also the default for a new tenant. The setting's rules are currently: End users can consent for any user consentable delegated permissions EXCEPT: Files.Read.All, Files.ReadWrite.All, Sites.Read.All, Sites.ReadWrite.All.
+
+Updates to this consent policy will have at least 30 days of given notice.
+
 ## Multiple policies
 
 A user can have more than one policy that allows them to give consent. Each policy is evaluated separately (as in, an exclusion from one policy does not affect inclusions of another policy) and the user only needs one policy to approve to be allowed to consent for a specific event. For example, an application admin can consent to everything a regular user can (thanks to the default policy applied to all users), and they also have broader permissions through the microsoft-application-admin policy, which lets them approve requests for any API permission—except Microsoft Graph app roles.
