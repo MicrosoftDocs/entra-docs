@@ -51,15 +51,11 @@ One clear sign of a procedural article would be the use of a numbered list. With
 
 # Device Authentication for Users Converted Using Source of Authority (SOA) 
 
-Device authentication is a critical component for organizations managing hybrid or cloud environments. This article provides an overview of supported authentication methods for users converted using Source of Authority (SOA) in Microsoft Entra joined and hybrid joined devices. It outlines the compatibility of password-based and passwordless sign-in methods, such as Windows Hello for Business and FIDO2 keys, across various trust configurations. Use this guide to understand the authentication options available for SOA-converted users and ensure seamless access to on-premises and cloud resources.
-
-
-
-If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, or password hashes) or go passwordless. This article lists authentication methods, and whether or not they're supported with SOA converted users.
+Device authentication is a critical component for organizations managing hybrid or cloud environments. This article provides an overview of supported authentication methods for users converted using Source of Authority (SOA) in Microsoft Entra joined and hybrid joined devices. It outlines the compatibility of password-based and passwordless sign-in methods, such as Windows Hello for Business and FIDO2 keys, across various trust configurations. If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, or password hashes) or go passwordless. 
 
 ## Hybrid Joined Devices
 
-The sections contain information that show the currently supported authentication methods for SOA converted users for Users using [Hybrid Joined Devices](/identity/devices/concept-hybrid-join).
+The following sections contain information that shows the currently supported authentication methods for SOA converted users for Users using [Hybrid Joined Devices](/identity/devices/concept-hybrid-join).
 
 ### Hybrid Joined Password based sign-in
 
