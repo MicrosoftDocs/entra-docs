@@ -207,6 +207,20 @@ In order to make sure users are getting access to the right access packages, you
 
 After you configure requestor information in your access package's policy, can view the requestor's responses to the questions. For guidance on seeing requestor information, see [View requestor's answers to questions](entitlement-management-request-approve.md#view-requestors-answers-to-questions).
 
+## Configure whether requestors can see approver details (preview)
+
+You can control whether requestors see approver details for pending access package requests in the My Access portal. You can set this at the access package level or at the tenant level (default for all packages). The access package setting overrides the tenant setting when explicitly set to Yes or No.
+
+1.	When creating a new access package or editing a policy for an existing access package, under **Approval** expand **Advanced request settings**.
+
+1.	Set Show approver details on pending access package requests (preview) to one of the following:
+    - Yes – All users in scope of this access package will see the approver’s name and email address on their pending requests in My Access.
+    - No – Users won’t see any approver information for this access package.
+    - Default – Inherit the tenant-level setting.
+
+>[!IMPORTANT]
+>If the access package setting is set to Yes or No, it overrides the tenant-level setting. If it’s set to Default, it respects the tenant-level setting.
+
 ## Next steps
 
 - [Change lifecycle settings for an access package](entitlement-management-access-package-lifecycle-policy.md)
