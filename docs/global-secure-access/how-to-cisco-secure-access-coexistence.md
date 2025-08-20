@@ -172,8 +172,8 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 
 **Cisco Secure Access configuration**
 
-1. **Configure required destinations to bypass Internet Security.**
-2. **Deploy and configure Cisco Secure Client** with Umbrella module.
+1. Configure required destinations to bypass Internet Security.
+2. Deploy and configure Cisco Secure Client with Umbrella module.
 
 **Validation**
   - Ensure both clients are enabled and the Umbrella profile is `Active`.
