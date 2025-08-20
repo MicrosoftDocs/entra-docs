@@ -41,7 +41,7 @@ To configure the integration of Lexmark Cloud Services (SAML) into Microsoft Ent
 
 [!INCLUDE [sso-wizard.md](~/identity/saas-apps/includes/sso-wizard.md)]
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Certificates** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Certificates** section, select the copy button to copy **App Federation Metadata Url** and save it on your computer.
 
    ![The Certificate download link](common/copy-metadataurl.png)
 [!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
