@@ -124,7 +124,7 @@
           - name: Configure User SOA
             href: how-to-user-source-of-authority-configure.md
           - name: Audit and monitor User SOA
-            href: 
+            href: user-source-of-authority-audit-monitor.md
           - name: Prepare Your environment for User SOA
             href: prepare-user-soa-environment.md
           - name: Identify supported Applications and authentication types
