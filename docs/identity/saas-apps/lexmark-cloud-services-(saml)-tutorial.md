@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Integrate Lexmark Cloud Services (SAML) for SSO with Microsoft Entra ID
 
-In this article, you learn how to integrate Lexmark Cloud Services (SAML) with Microsoft Entra ID. When you integrate Lexmark Cloud Services (SAML) with Microsoft Entra ID, you can:
+In this article you learn how to integrate Lexmark Cloud Services (SAML) with Microsoft Entra ID. When you integrate Lexmark Cloud Services (SAML) with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to Lexmark Cloud Services (SAML).
 - Enable your users to be automatically signed-in to Lexmark Cloud Services (SAML) with their Microsoft Entra accounts.
