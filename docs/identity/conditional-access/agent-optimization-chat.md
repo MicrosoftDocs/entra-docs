@@ -33,11 +33,31 @@ The Conditional Access optimization agent features a conversational interface th
 - **Policy editing scope**: Only included and excluded users and roles can be modified using chat. Application assignments and other fields aren't currently supported.
 - **Supported scenarios**: Only the scenarios listed in [What you can do with chat](#what-you-can-do-with-chat) are currently available.
 
+## How to use chat
+
+You can access the chat from the main Conditional Access Optimization Agent page or from any policy suggestion details page.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+
+1. Browse to **Conditional Access Optimization Agent**.
+    - Select **Chat with agent** from the agent page to chat with the agent about all policy suggestions.
+    
+    :::image type="content" source="media/agent-optimization-chat/agent-chat-button.png" alt-text="Screenshot of the Conditional Access optimization agent with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-button.png":::
+    
+    - Or select **Review suggestion** for any policy suggestion then select **Chat with agent** to chat with the agent about that specific policy suggestion.
+
+    :::image type="content" source="media/agent-optimization-chat/agent-chat-policy-suggestions.png" alt-text="Screenshot of a policy suggestion details page with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-policy-suggestion.png":::
+
+1. Enter a prompt in the chat window using natural language.
+1. Review the response and apply the recommended changes.
+
+    :::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-cancel.png" alt-text="Screenshot of the Conditional Access optimization agent chat with the options to confirm or cancel changes." lightbox="media/agent-optimization-chat/agent-chat-confirm-cancel.png":::
+
 ## What you can do with chat
 
-With the Conditional Access optimization agent chat interface, you can use natural language to get more information on a policy suggestion or have the agent present the suggestions in a different order.
+With the Conditional Access optimization agent chat interface, you can use natural language to get more information on a policy suggestion or have the agent present the suggestions in a different order. 
 
-### Prioritized suggestions
+### Prioritize suggestions
 
 With the chat capability you can ask the agent to help you prioritize the suggestions. The agent compares the potential impact of the policy changes and provides a ranked list of suggestions so you don't have to review the full list and make that decision yourself.
 
@@ -49,13 +69,13 @@ If you ask the agent to prioritize the list of suggestions then ask it for more 
 
 ### Request more detail
 
-Instead of digging through the details of each suggestion, you can ask the agent for more information. 
+Instead of digging through the details of each suggestion, you can ask the agent for more information. After asking the agent to prioritize the full list of suggestions, you can ask it to provide more details on a specific policy suggestion. You can also ask for more details on a policy suggestion by accessing the chat from the policy details.
 
 Sample prompts:
 - *Tell me more about the first suggestion.*
 - *Explain the suggestion 'Turn on Risky Users policy'.*
 
-If you didn't ask the agent to prioritize the order of the suggestions and you ask for more details on the first suggestion, the agent tells you about the first recommendation in the chat.
+If you didn't ask the agent to prioritize the order of the suggestions and you ask for more details on the first suggestion, the agent tells you about the first item in the **Recent suggestions** list.
 
 ### Understand agent decisions
 
@@ -79,14 +99,7 @@ Sample prompts:
 >
 > At this time, editing included or excluded applications is not supported.
 
-## How to use chat
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-
-1. Browse to **Conditional Access Optimization Agent** and select **Chat with agent**.
-1. Enter a prompt in the chat window using natural language.
-1. Review the response and any simulated actions.
-1. Apply the recommended changes.
 
 ## Related content
 
