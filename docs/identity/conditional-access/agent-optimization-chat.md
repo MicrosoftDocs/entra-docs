@@ -46,7 +46,7 @@ You can access the chat from the main Conditional Access Optimization Agent page
     
     - Or select **Review suggestion** for any policy suggestion then select **Chat with agent** to chat with the agent about that specific policy suggestion.
 
-    :::image type="content" source="media/agent-optimization-chat/agent-chat-policy-suggestions.png" alt-text="Screenshot of a policy suggestion details page with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-policy-suggestion.png":::
+    :::image type="content" source="media/agent-optimization-chat/agent-chat-policy-suggestions.png" alt-text="Screenshot of a policy suggestion details page with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-policy-suggestions.png":::
 
 1. Enter a prompt in the chat window using natural language from the supported scenarios in the [What you can do with chat](#what-you-can-do-with-chat) section.
 1. Review the response and apply the recommended changes.
