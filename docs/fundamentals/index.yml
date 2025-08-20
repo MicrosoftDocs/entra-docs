@@ -38,7 +38,7 @@ landingContent:
           - text: Access the portal and create a tenant
             url: ./create-new-tenant.md
           - text: Create a group and add members 
-            url: ./groups-view-azure-portal.md
+            url: ./how-to-manage-groups.md
           - text: Add company branding 
             url: how-to-customize-branding.md
   # Card

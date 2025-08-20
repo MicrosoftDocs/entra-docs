@@ -72,7 +72,7 @@ Use a naming convention that clarifies policy purpose. External access examples 
 
 There are scenarios when it's necessary to allow access for a small, specific group.
 
-Before you begin, we recommend you create a security group, which contains external users who access resources. See, [Quickstart: Create a group with members and view all groups and members in Microsoft Entra ID](~/fundamentals/groups-view-azure-portal.md).
+Before you begin, we recommend you create a security group, which contains external users who access resources. See, [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Entra ID** > **Conditional Access**.

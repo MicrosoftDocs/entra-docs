@@ -488,6 +488,6 @@ You can use the following device attributes.
 
 ## Related content
 
-- [Create a group with members and view all groups and members](~/fundamentals/groups-view-azure-portal.md)
+
 - [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 - [Create or update a dynamic membership group in Microsoft Entra ID](groups-create-rule.md)
