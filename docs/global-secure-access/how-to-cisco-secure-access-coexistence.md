@@ -39,9 +39,9 @@ Global Secure Access manages internet and Microsoft traffic. Cisco Secure Access
 
 To configure Global Secure Access and Cisco Secure Access for a unified SASE solution:
 
-1. Set up Global Secure Access Internet Access and Private Access.
-2. Configure Cisco Secure Internet Access and Secure Private Access.
-3. Establish required FQDN and IP bypasses for integration between the platforms.
+- Set up Global Secure Access Internet Access and Private Access.
+- Configure Cisco Secure Internet Access and Secure Private Access.
+- Establish required FQDN and IP bypasses for integration between the platforms.
 
 ## Global Secure Access setup
 
