@@ -111,7 +111,7 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 
  5. Add DNS suffixes defined in your Private DNS or Enterprise App segments. For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 
-4. In the Traffic Steering section, select **Add Destination > Bypass web proxy only**, add these IPs, and save:
+6. In the Traffic Steering section, select **Add Destination > Bypass web proxy only**, add these IPs, and save:
 
   ```
   150.171.19.0/24, 150.171.20.0/24, 13.107.232.0/24, 13.107.233.0/24, 150.171.15.0/24, 150.171.18.0/24, 151.206.0.0/16, 6.6.0.0/16
