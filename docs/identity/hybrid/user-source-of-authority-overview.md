@@ -57,6 +57,21 @@ Using User SOA, you can migrate on-premises users to the cloud, and manage them 
 
 This article describes how User SOA can help IT administrators transition user management from AD DS to the cloud. Once in the cloud, you can also enable advanced scenarios like access governance with Microsoft Entra ID Governance.
 
+
+
+## User SOA Scenario
+
+The next sections explain more details about the scenario that User SOA supports.
+
+### Govern user lifecycle with Microsoft Entra ID Governance
+
+**Scenario**: You modernized some or all your applications and removed the need to use AD DS users for access. For example, these applications now use user [claims with Security Assertion Markup Language (SAML)](/identity-platform/saml-claims-customization) or [OpenID Connect](/identity-platform/v2-protocols-oidc) from Microsoft Entra ID instead of federation systems such as AD FS. However, these apps still rely on the existing synched user to manage access. Using Group SOA, you can make the user editable in the cloud, remove the AD DS user completely, and govern the user through Microsoft Entra ID Governance capabilities.
+
+:::image type="content" source="media/user-source-of-authority-overview/user-soa-minimization.jpg" alt-text="Screenshot of minimization of active directory using user soa.":::
+
+**Solution**: You can use User SOA to make users cloud managed, and remove them from AD DS. At this point new users can be created, and managed, directly in the cloud. For more information, see: [How to create, invite, and delete users](/fundamentals/how-to-create-delete-users).
+
+
 ## Consideration for User SOA
 
 Before you begin converting the SOA for users in your organization, there are certain conditions within your environment that you must consider. The following sections provide more details into what you must consider before implementing user SOA.
@@ -71,7 +86,7 @@ If your organization is using AD management tools such as Active Directory Users
 
 ### Microsoft Identity Manager with the AD MA
 
-If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to an SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are first sent to Microsoft Entra, and then to Active Directory where needed. For more information, see: [LINK TO HOW-TO DOC].
+If your organization is using Microsoft Identity Manager with the AD MA to manage AD users and groups, then prior to an SOA change, the organization must configure their sync logic to no longer export changes to those objects from MIM via AD MA. Instead of using the AD MA, you can have MIM update the objects in Microsoft Entra using the [MIM connector for Microsoft Graph](/microsoft-identity-manager/microsoft-identity-manager-2016-connector-graph) so that the changes made by MIM are first sent to Microsoft Entra, and then to Active Directory where needed. For more information, see: [Prepare your MIM setup](prepare-user-soa-environment.md#prepare-your-mim-setup).
 
 ### Applications
 
