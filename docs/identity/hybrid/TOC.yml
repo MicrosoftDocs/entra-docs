@@ -117,8 +117,8 @@
             href: user-source-of-authority-overview.md
           - name: How User SOA works
             href: 
-          - name: Guidance for using User SOA
-            href: 
+          - name: Device Authentication
+            href: user-source-of-authority-authentication.md 
         - name: How to guides
           items:  
           - name: Configure User SOA

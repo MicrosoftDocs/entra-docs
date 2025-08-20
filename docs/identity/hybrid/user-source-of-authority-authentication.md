@@ -47,20 +47,9 @@ One clear sign of a procedural article would be the use of a numbered list. With
 
 -->
 
-# Supported Device Authentication Methods with User Source of Authority (SOA)
+# Supported Device Authentication for Users Converted Using Source of Authority (SOA) 
 
-If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, password hashes etc) or go passwordless. This article lists what authentication methods are supported with SOA converted users
-
-
-[Introductory paragraph]
-TODO: Add your introductory paragraph
-
-<!-- 3. Prerequisites --------------------------------------------------------------------
-
-Optional: Make **Prerequisites** your first H2 in the article. Use clear and unambiguous
-language and use a unordered list format. 
-
--->
+If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, or password hashes) or go passwordless. This article lists what authentication methods are supported with SOA converted users.
 
 ## Hybrid Joined Devices
 
@@ -85,68 +74,41 @@ Not Supported.
 - **Apps with App Proxy**: Not Supported.
 - **Apps with Entra Private Access**: Not Supported.
 
-##### Hybrid Joined Entra Kerberos
+##### Hybrid Joined Microsoft Entra Kerberos
 
 - **Azure Files**: Supported
-- **On-premises SSO**: Supported as long as authentication user attributes are synced between Entra ID and Active Directory
+- **On-premises SSO**: Supported as long as authentication user attributes are synced between Microsoft Entra ID and Active Directory
 - **Apps with App Proxy**: Not Supported.
 - **Apps with Entra Private Access**: Not Supported.
 
-## Entra Joined Devices
+## Microsoft Entra Joined Devices
 
-### Entra Joined Devices Password based sign-in
+### Microsoft Entra Joined Devices Password based sign-in
 
-Using Entra Joined Devices, no password-based sign-ins are supported for converted SOA users.
+Using Microsoft Entra Joined Devices, no password-based sign-ins are supported for converted SOA users.
 
-### Entra Joined Devices WHFB and FIDO2 Sign-in
+### Microsoft Entra Joined Devices WHFB and FIDO2 Sign-in
 
-Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Entra Joined Devices are as follows:
+Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Microsoft Entra Joined Devices are as follows:
 
-#### Entra Joined Devices Certificate or Key Trust
+#### Microsoft Entra Joined Devices Certificate or Key Trust
 
 Not Supported.
 
-#### Entra Joined Devices Cloud Trust or no Trust Type
+#### Microsoft Entra Joined Devices Cloud Trust or no Trust Type
 
-##### Entra Joined Devices Legacy Kerberos
+##### Microsoft Entra Joined Devices Legacy Kerberos
 
-- **Apps with App Proxy**: Supported.
-- **Apps with Entra Private Access**: Supported.
+- **Apps with App Proxy**: Supported as long as authentication user attributes are synced between Microsoft Entra ID and Active Directory
+- **Apps with Entra Private Access**: Supported as long as authentication user attributes are synced between Microsoft Entra ID and Active Directory
 
-##### Entra Joined Devices Entra Kerberos
+##### Microsoft Entra Joined Devices Microsoft Entra Kerberos
 
 - **Azure Files**: Supported
-- **On-premises SSO**: Supported as long as authentication user attributes are synced between Entra ID and Active Directory
+- **On-premises SSO**: Supported as long as authentication user attributes are synced between Microsoft Entra ID and Active Directory
 - **Apps with App Proxy**: Not Supported.
 - **Apps with Entra Private Access**: Not Supported.
 
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
-
-
-<!-- 6. Next step/Related content ------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related
-content. You don't have to use either, but don't use both. For Next step, provide one link to the
-next step in a sequence. Use the blue box format For Related content provide 1-3 links. Include some
-context so the customer can determine why they would click the link. Add a context sentence for the
-following links.
-
--->
-
-## Next step
-TODO: Add your next step link(s)
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
 
 ## Related content
 TODO: Add your next step link(s)
