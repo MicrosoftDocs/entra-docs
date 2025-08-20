@@ -3,6 +3,8 @@ title: Embrace cloud-first posture and convert User Source of Authority (SOA) to
 description: Learn about Source of Authority (SOA) for users, including prerequisites and supported scenarios.
 author: owinfreyATL
 ms.topic: conceptual
+ms.service: entra-id
+ms.subservice: hybrid
 ms.date: 08/13/2025
 ms.author: owinfrey
 ms.reviewer: dhanyak

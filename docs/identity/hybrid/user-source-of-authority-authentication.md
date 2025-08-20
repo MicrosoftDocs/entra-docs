@@ -1,11 +1,13 @@
 ---
-title: #Required; Keep the title body to 60-65 chars max including spaces and brand
-description: #Required; Keep the description within 100- and 165-characters including spaces 
-author: #Required; your GitHub user alias, with correct capitalization
-ms.author: #Required; microsoft alias of author
-ms.service: #Required; use the name-string related to slug in ms.product/ms.service
+title: Supported Device Authentication for Users Converted Using Source of Authority (SOA) 
+description: This article lists authentication methods  for users using Microsoft Entra joined-devices, and information on if it supports users converted using Source of Authority.
+author: owinfreyATL
+ms.author: owinfrey
+ms.service: entra-id
+ms.subservice: hybrid
 ms.topic: concept-article #Required; leave this attribute/value as-is.
-ms.date: #Required; mm/dd/yyyy format.
+ms.date: 08/19/2025
+ms.reviewer: dhanyak
 
 #CustomerIntent: As a <type of user>, I want <what?> so that <why?>.
 ---
@@ -47,19 +49,19 @@ One clear sign of a procedural article would be the use of a numbered list. With
 
 -->
 
-# Supported Device Authentication for Users Converted Using Source of Authority (SOA) 
+# Device Authentication for Users Converted Using Source of Authority (SOA) 
 
-If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, or password hashes) or go passwordless. This article lists what authentication methods are supported with SOA converted users.
+If you have requirements to access on-premises resources tied to Active Directory, we recommend that you switch to cloud authentication first (PTA, PHS, native cloud authentication like certificates, passkeys, or password hashes) or go passwordless. This article lists authentication methods, and whether or not they're supported with SOA converted users.
 
 ## Hybrid Joined Devices
 
 The sections contain tables that show the currently supported authentication methods for SOA converted users for Users using [Hybrid Joined Devices](/identity/devices/concept-hybrid-join).
 
-### Password based sign-in
+### Hybrid Joined Password based sign-in
 
 Using Hybrid Joined Devices, no password-based sign-ins are supported for converted SOA users.
 
-### Hybrid Joined WHFB and FIDO2 Sign-in
+### Hybrid Joined Windows Hello for Business and FIDO2 Sign-in
 
 Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Hybrid Joined Devices are as follows:
 
@@ -87,7 +89,7 @@ Not Supported.
 
 Using Microsoft Entra Joined Devices, no password-based sign-ins are supported for converted SOA users.
 
-### Microsoft Entra Joined Devices WHFB and FIDO2 Sign-in
+### Microsoft Entra Joined Devices Windows Hello for Business and FIDO2 Sign-in
 
 Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Microsoft Entra Joined Devices are as follows:
 
