@@ -70,37 +70,37 @@ The sections contain tables that show the currently supported authentication met
 
 Using Hybrid Joined Devices, no password-based sign-ins are supported for converted SOA users.
 
-### WHFB + Fido2 Sign-in
+### Hybrid Joined WHFB and FIDO2 Sign-in
 
 Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Hybrid Joined Devices are as follows:
 
-#### Certificate or Key Trust
+#### Hybrid Joined Certificate or Key Trust
 
 Not Supported.
 
-#### Cloud Trust or no Trust Type
+#### Hybrid Joined Cloud Trust or no Trust Type
 
-##### Legacy Kerberos
+##### Hybrid Joined Legacy Kerberos
 
-- Apps with App Proxy:
-- Apps with Entra Private Access:
+- **Apps with App Proxy**: Not Supported.
+- **Apps with Entra Private Access**: Not Supported.
 
-##### Entra Kerberos
+##### Hybrid Joined Entra Kerberos
 
-- Azure Files:
-- On-premises SSO:
-- Apps with App Proxy:
-- Apps with Entra Private Access:
+- **Azure Files**: Supported
+- **On-premises SSO**: Supported as long as authentication user attributes are synced between Entra ID and Active Directory
+- **Apps with App Proxy**: Not Supported.
+- **Apps with Entra Private Access**: Not Supported.
 
 ## Entra Joined Devices
 
 ### Entra Joined Devices Password based sign-in
 
-Using Hybrid Joined Devices, no password-based sign-ins are supported for converted SOA users.
+Using Entra Joined Devices, no password-based sign-ins are supported for converted SOA users.
 
-### Entra Joined Devices WHFB + Fido2 Sign-in
+### Entra Joined Devices WHFB and FIDO2 Sign-in
 
-Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Hybrid Joined Devices are as follows:
+Support for passwordless authentication methods like Windows Hello for Business, or FIDO2 keys, using Entra Joined Devices are as follows:
 
 #### Entra Joined Devices Certificate or Key Trust
 
@@ -110,15 +110,15 @@ Not Supported.
 
 ##### Entra Joined Devices Legacy Kerberos
 
-- Apps with App Proxy:
-- Apps with Entra Private Access:
+- **Apps with App Proxy**: Supported.
+- **Apps with Entra Private Access**: Supported.
 
 ##### Entra Joined Devices Entra Kerberos
 
-- Azure Files:
-- On-premises SSO:
-- Apps with App Proxy:
-- Apps with Entra Private Access:
+- **Azure Files**: Supported
+- **On-premises SSO**: Supported as long as authentication user attributes are synced between Entra ID and Active Directory
+- **Apps with App Proxy**: Not Supported.
+- **Apps with Entra Private Access**: Not Supported.
 
 ## Related content
 
