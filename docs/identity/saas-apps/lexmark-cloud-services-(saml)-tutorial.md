@@ -30,13 +30,6 @@ In this article you learn how to integrate Lexmark Cloud Services (SAML) with Mi
 ## Scenario description
 
 In this article, you configure and test Microsoft Entra SSO in a test environment.
-
-
-
-
-
-
-
 ## Add Lexmark Cloud Services (SAML) from the gallery
 
 To configure the integration of Lexmark Cloud Services (SAML) into Microsoft Entra ID, you need to add Lexmark Cloud Services (SAML) from the gallery to your list of managed SaaS apps.
