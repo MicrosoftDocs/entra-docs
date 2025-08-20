@@ -287,6 +287,8 @@ To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Stee
 
 
 ---
+> [!NOTE]
+> For troubleshooting health check failures, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 
 ## Next steps
 
