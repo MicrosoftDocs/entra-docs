@@ -6,16 +6,10 @@ items:
   items:
   - name: What is Microsoft Entra?
     href: what-is-entra.md
-  - name: What is Microsoft Entra ID?
-    href: whatis.md
   - name: What is the Microsoft Entra admin center?
     href: entra-admin-center.md
-  - name: Trial user guide for Microsoft Entra Suite
-    href: try-microsoft-entra-suite.md
-  - name: Identity fundamentals
-    href: identity-fundamental-concepts.md
   - name: Introduction to identity and access management (IAM)
-    href: introduction-identity-access-management.md
+    href: identity-fundamental-concepts.md
 - name: Set up your tenant and directory
   expanded: true
   items:
@@ -54,8 +48,6 @@ items:
       href: concept-learn-about-groups.md
     - name: Manage groups
       href: how-to-manage-groups.yml
-    - name: Quickstart - Create a group and add members
-      href: groups-view-azure-portal.md
   - name: Licenses
     expanded: false
     items: 
@@ -69,13 +61,15 @@ items:
       href: licensing.md
     - name: Sign up for Microsoft Entra ID P1 or P2
       href: get-started-premium.md
+    - name: Trial user guide for Microsoft Entra Suite
+      href: try-microsoft-entra-suite.md
 - name: Fundamental security settings
   expanded: false
   items:
   - name: Configure security recommendations
     href: configure-security.md
   - name: Identity secure score
-    href: ~/identity/monitoring-health/concept-identity-secure-score.md
+    href: ~/identity/monitoring-health/concept-identity-secure-score.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Improve your security posture
     href: concept-secure-remote-workers.md
   - name: Integrate your apps with Microsoft Entra ID
@@ -147,7 +141,7 @@ items:
     - name: Data protection considerations
       href: data-protection-considerations.md
     - name: Customer data storage and processing for Europe
-      href: ./data-storage-eu.md
+      href: data-storage-eu.md
     - name: Identity data storage for Australia and New Zealand
       href: data-storage-australia.md
     - name: Customer data storage for Australia and New Zealand
