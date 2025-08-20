@@ -48,8 +48,6 @@ items:
       href: concept-learn-about-groups.md
     - name: Manage groups
       href: how-to-manage-groups.yml
-    - name: Quickstart - Create a group and add members
-      href: groups-view-azure-portal.md
   - name: Licenses
     expanded: false
     items: 
