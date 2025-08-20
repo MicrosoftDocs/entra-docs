@@ -288,7 +288,8 @@ Configure split-include for Cisco ASA Remote Access VPN:
   10. Stop collecting traffic in Global Secure Access client.
 
 ---
-
+> [!NOTE]
+> For troubleshooting health check failures, see [Troubleshoot the Global Secure Access client: Health check](troubleshoot-global-secure-access-client-diagnostics-health-check.md).
 ## Next steps
 
 - [What is Global Secure Access?](overview-what-is-global-secure-access.md)
