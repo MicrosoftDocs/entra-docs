@@ -75,7 +75,7 @@
   - name: Organization (tenant)
     items:
     - name: Microsoft Entra tenant organizations    
-      href: ~/fundamentals/whatis.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/what-is-entra.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Delete a tenant    
       href: directory-delete-howto.md
     - name: Multiple tenants    
