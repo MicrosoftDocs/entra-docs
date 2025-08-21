@@ -8,7 +8,7 @@ ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 08/21/2025
 
-#CustomerIntent: As an IT admin, I want learn, deploy, and test Microsoft Entra ID Protection so that I can detect, investigate, and remediate identity-based risks.
+#CustomerIntent: As an IT admin, I want to learn, deploy, and test Microsoft Entra ID Protection so that I can detect, investigate, and remediate identity-based risks.
 ---
 # Introduction to Microsoft Entra ID Protection proof-of-concept guidance
 
@@ -95,13 +95,7 @@ For all scenarios, plan to include the following steps:
 1. Make recommendations for full-scale implementation based on PoC findings.
 1. Outline a timeline and resource plan for deployment.
 
-## Related content
-
-### Service Partner training
-
-Explore the [Partner Technical Training Deck](https://microsoft-my.sharepoint.com/:p:/p/harisha/EbtlT4FSBCdErycY3tSOengBKl6vIEBRso8F-PZ4SvpWsg?e=aE4nWy) for recorded training sessions and materials from the Microsoft product group. You need a Microsoft Partner One ID and Microsoft Partner Network (MPN) access.
-
-### Microsoft Entra ID Protection licensing
+## Microsoft Entra ID Protection licensing
 
 Review the following table for licensing requirements for Microsoft Entra ID Protection key capabilities. The [Microsoft Entra plans and pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing) page provides additional information to help you select the best option for your identity needs.
 

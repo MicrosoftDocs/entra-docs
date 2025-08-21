@@ -8,7 +8,7 @@ ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 08/21/2025
 
-#CustomerIntent: As an IT administrator, I want use Microsoft Entra ID Protection to identify and remediate identity risks so that I can protect users that access enterprise-managed resources.
+#CustomerIntent: As an IT administrator, I want to use Microsoft Entra ID Protection to identify and remediate identity risks so that I can protect users that access enterprise-managed resources.
 ---
 # Microsoft Entra ID Protection scenario: user identity risk self-remediation for enterprise-managed resources
 

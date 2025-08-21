@@ -8,9 +8,9 @@ ms.service: entra-id-protection
 ms.topic: concept-article
 ms.date: 08/21/2025
 
-#CustomerIntent: As an identity administrator, I want use real-time risk detection features in Microsoft Entra ID Protection so that I can grant user access to protected resources.
+#CustomerIntent: As an identity administrator, I want to use real-time risk detection features in Microsoft Entra ID Protection so that I can grant user access to protected resources.
 ---
-# Microsoft Entra ID Protection scenario: real-time risk detection for protected resources
+# Microsoft Entra ID Protection scenario: Real-time risk detection for protected resources
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks.
 
