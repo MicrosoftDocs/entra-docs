@@ -198,7 +198,7 @@
         - name: Configure certificate authorities
           href: how-to-configure-certificate-authorities.md
         - name: Certificate revocation list 
-          href: concept-certificate-based-authentication-certificaterevocationlist.md
+          href: concept-certificate-based-authentication-certificate-revocation-list.md
         - name: Windows smart card sign-in
           href: concept-certificate-based-authentication-smartcard.md
         - name: Apple devices
