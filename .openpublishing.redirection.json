@@ -1821,6 +1821,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/msal-net-xamarin-android-considerations.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-android-prepare-app?pivots=workforce&tab=node-workforce",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/quickstart-daemon-app-python-acquire-token.md",
       "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=python-workforce",
       "redirect_document_id": false
