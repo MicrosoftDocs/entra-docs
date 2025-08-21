@@ -49,11 +49,11 @@ One clear sign of a procedural article would be the use of a numbered list. With
 
 -->
 
-# Embrace cloud-first posture: Convert User Source of Authority to the cloud (Preview)
+# Embrace cloud-first posture: Convert User Source of Authority (SOA) to the cloud (Preview)
 
 Organizations are increasingly adopting a cloud-first approach to modernize their Identity and Access Management (IAM) solutions. For the road to the cloud initiative, Microsoft has [modeled five states of transformation](/entra/architecture/road-to-the-cloud-posture#five-states-of-transformation) to align with customer business goals. Transitioning the Source of Authority (SOA) for users from on-premises Active Directory Domain Services (AD DS) to the cloud is a key step in this journey. This process, known as AD DS minimization, reduces the complexity of on-premises infrastructure by managing users directly in the cloud.
 
-This article introduces the concept of User SOA, its benefits, and the scenarios it supports. It also outlines key considerations and prerequisites for IT administrators planning to shift user management to the cloud using Microsoft Entra ID. By using User SOA, organizations can streamline user lifecycle management, enable advanced governance capabilities, and fully embrace a cloud-first posture.
+This article introduces the concept of User SOA, its benefits, and the scenario it supports. It also outlines key considerations and prerequisites for IT administrators planning to shift user management to the cloud using Microsoft Entra ID. By using User SOA, organizations can streamline user lifecycle management, enable advanced governance capabilities, and fully embrace a cloud-first posture.
 
 
 ## User SOA Scenario
@@ -62,7 +62,7 @@ The next sections explain more details about the scenario that User SOA supports
 
 ### Govern user lifecycle with Microsoft Entra ID Governance
 
-**Scenario**: You modernized some or all your applications and removed the need to use AD DS users for access. For example, these applications now use user [claims with Security Assertion Markup Language (SAML)](/identity-platform/saml-claims-customization) or [OpenID Connect](/identity-platform/v2-protocols-oidc) from Microsoft Entra ID instead of federation systems such as AD FS. However, these apps still rely on the existing synched user to manage access. Using Group SOA, you can make the user editable in the cloud, remove the AD DS user completely, and govern the user through Microsoft Entra ID Governance capabilities.
+**Scenario**: You modernized some or all your applications and removed the need to use AD DS users for access. For example, these applications now use user [claims with Security Assertion Markup Language (SAML)](/identity-platform/saml-claims-customization) or [OpenID Connect](/identity-platform/v2-protocols-oidc) from Microsoft Entra ID instead of federation systems such as AD FS. However, these apps still rely on the existing synched user to manage access. By implementing User SOA, you can make the user editable in the cloud, remove the AD DS user completely, and govern the user through Microsoft Entra ID Governance capabilities.
 
 :::image type="content" source="media/user-source-of-authority-overview/user-soa-minimization.jpg" alt-text="Screenshot of minimization of active directory using user SOA.":::
 
