@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: best-practice
-ms.date: 08/18/2025
+ms.date: 08/20/2025
 manager: dougeby
 ms.reviewer: abhijeetsinha
 
@@ -40,7 +40,15 @@ You can use the CPE's management console to assign weights to these IPsec tunnel
 Use Border Gateway Protocol (BGP) for dynamic route learning. If BGP isn't supported on your device, configure static routes with appropriate metrics. 
 
 ## Set up CPE according to your desired security posture
-[Describe a best practice.]
+Configure CPE based on what's important for your business.  
+
+### Prioritize security over productivity
+If you don't want your users' traffic to go to the destination without going through Global Secure Access, then statically route that traffic to go over IPsec tunnel with Global Secure Access without setting up the default route.
+
+### Prioritize productivity over security
+If your priority is to maintain productivity, then set up a default route for traffic. If a Global Secure Access VPN gateway or back-end service goes down, your traffic continues directly through the default route.
+
+Configure an IP SLA Layer 7 health probe to monitor the endpoint https://substrate.svc.cloud.microsoft/apc/trans.gif and use the results to guide path selection logic in the CPE management console. If the endpoint becomes unreachable, traffic falls back to the default route to maintain productivity.
 
 ## Configure monitoring and observability
 Monitor traffic logs and remote network health events by exporting them to the Log Analytics workspace and create Azure Monitor alerts on top of it. For more information, see [What are remote network health logs?](how-to-remote-network-health-logs.md).
