@@ -20,7 +20,6 @@ Use this scenario to help determine the need for Microsoft Entra ID Governance t
 The following products and services appear in this guide: 
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Microsoft Entra](../fundamentals/what-is-entra.md)
 * [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md)
 * [PIM for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md)

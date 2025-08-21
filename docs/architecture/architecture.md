@@ -14,9 +14,9 @@ ms.reviewer: jeffsta
 
 # What is the Microsoft Entra architecture?
 
-Microsoft Entra enables you to securely manage user access to services and resources. Included with Microsoft Entra is a family of identity management and network access capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra?](~/fundamentals/whatis.md)
+Microsoft Entra enables you to securely manage user access to services and resources. Included with Microsoft Entra is a family of identity management and network access capabilities. For information about Microsoft Entra features, see [What is Microsoft Entra?](~/fundamentals/what-is-entra.md)
 
-With Microsoft Entra, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see the [fundamentals of identity management](~/fundamentals/whatis.md).
+With Microsoft Entra, you can create and manage users and groups, and enable permissions to allow and deny access to enterprise resources. For information about identity management, see the [fundamentals of identity management](~/fundamentals/identity-fundamental-concepts.md).
 
 <a name='azure-ad-architecture'></a>
 
