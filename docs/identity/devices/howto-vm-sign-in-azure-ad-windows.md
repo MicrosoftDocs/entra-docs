@@ -480,4 +480,4 @@ Windows Server device compliance configuration in Conditional Access policy isn'
 
 ## Next steps
 
-For more information about Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/whatis.md).
+For more information about Microsoft Entra ID, see [What is Microsoft Entra ID?](~/fundamentals/what-is-entra.md).
