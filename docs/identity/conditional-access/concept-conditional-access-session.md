@@ -5,12 +5,12 @@ description: What are session controls in a Microsoft Entra Conditional Access p
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 08/13/2024
+ms.date: 08/20/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
-ms.reviewer: calebb, vmahtani, ripull
+ms.reviewer: 
 ---
 # Conditional Access: Session
 
@@ -81,11 +81,9 @@ During an outage, Microsoft Entra ID extends access to existing sessions while e
 
 If resilience defaults are disabled, access is denied once existing sessions expire. For more information, see the article [Conditional Access: Resilience defaults](resilience-defaults.md).
 
-## Require token protection for sign-in sessions (preview)
+## Require token protection for sign-in sessions
 
-Token protection (sometimes referred to as token binding in the industry) attempts to reduce attacks using token theft by ensuring a token is usable only from the intended device. When an attacker is able to steal a token, by hijacking or replay, they can impersonate their victim until the token expires or is revoked. Token theft is thought to be a relatively rare event, but the damage from it can be significant.
-
-The preview works for specific scenarios only. For more information, see the article [Conditional Access: Token protection (preview)](concept-token-protection.md).
+Token protection (sometimes referred to as token binding in the industry) attempts to reduce attacks using token theft by ensuring a token is usable only from the intended device. When an attacker is able to steal a token, by hijacking or replay, they can impersonate their victim until the token expires or is revoked. Token theft is thought to be a relatively rare event, but the damage from it can be significant. For more information, see the article [Conditional Access: Token protection](concept-token-protection.md).
 
 ## Use Global Secure Access security profile
 
