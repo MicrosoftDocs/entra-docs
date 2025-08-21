@@ -14,9 +14,9 @@ ms.date: 08/21/2025
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks. Detailed guidance for specific scenarios continues in these articles:
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-poc-detect.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-poc-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-poc-remediate.md)
+- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
 This guide assumes you're running a PoC in a production environment. Running a PoC in a test environment might give you more flexibility. Follow the guidance in these articles to ensure a successful Microsoft Entra ID Protection PoC launch.
 
@@ -76,7 +76,7 @@ While you design your PoC, identify relevant use cases and plan for appropriate 
 
 For all scenarios, plan to include the following steps:
 
-1. Review the [Microsoft Entra ID Protection reports](../id-protection/howto-identity-protection-investigate-risk). Before you deploy risk-based Conditional Access policies, investigate existing suspicious behavior. Determine criteria to dismiss risks or confirm users as safe.
+1. Review the [Microsoft Entra ID Protection reports](../id-protection/howto-identity-protection-investigate-risk.md). Before you deploy risk-based Conditional Access policies, investigate existing suspicious behavior. Determine criteria to dismiss risks or confirm users as safe.
 
 - [Investigate risk detections](../id-protection/howto-identity-protection-investigate-risk.md)
 - [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md)
@@ -128,13 +128,13 @@ Microsoft 365 E5 covers these signals:
   - Activity from anonymous IP address
   - Impossible travel
   - Mass access to sensitive files
-  - New country
+  - New country/region
 
 - Microsoft Defender for Office 365 (suspicious inbox rules)
 - Microsoft Defender for Endpoint (possible attempt to access primary refresh token)
 
 ## Next steps
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-poc-detect.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-poc-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-poc-remediate.md)
+- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)

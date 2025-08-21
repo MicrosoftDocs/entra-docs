@@ -14,14 +14,14 @@ ms.date: 08/21/2025
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks.
 
-An overview of the guidance begins with [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-poc-guide-intro.md).
+An overview of the guidance begins with [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md).
 
 Detailed guidance continues with these scenarios:
 
-- [Bring identity risk-related telemetry into security investigations](id-protection-poc-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-poc-remediate.md)
+- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)
 
-This article helps identity administrators use real-time risk detection features in Microsoft Entra ID Protection to grant user access to protected resources. To set up your PoC for this scenario, begin with [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-poc-guide-intro.md). Then follow the detailed guidance in this article.
+This article helps identity administrators use real-time risk detection features in Microsoft Entra ID Protection to grant user access to protected resources. To set up your PoC for this scenario, begin with [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md). Then follow the detailed guidance in this article.
 
 Perform the following steps for real-time risk detection with Microsoft Entra ID Protection:
 
@@ -70,6 +70,6 @@ Monitor the impact of policies using these features:
 
 ## Next steps
 
-- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-poc-guide-intro.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-poc-investigate.md)
-- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-poc-remediate.md)
+- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
+- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
+- [Allow users to self-remediate identity risk for enterprise-managed resources](id-protection-guide-remediate.md)

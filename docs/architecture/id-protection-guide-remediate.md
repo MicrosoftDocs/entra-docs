@@ -14,12 +14,12 @@ ms.date: 08/21/2025
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Entra ID Protection to detect, investigate, and remediate identity-based risks.
 
-An overview of the guidance begins with [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-poc-guide-intro.md).
+An overview of the guidance begins with [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md).
 
 Detailed guidance continues with these scenarios:
 
-- [Use real-time risk detection to grant access to protected resources](id-protection-poc-detect.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-poc-investigate.md)
+- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 
 This article helps administrators to identify and remediate identity risks for users accessing enterprise-managed resources, including Microsoft 361. Use real-time and offline risk detections to evaluate sign-ins and user behavior. Apply automated responses such as multifactor authentication (MFA), password resets, or block access based on risk levels. Risk-based conditional access policies that scale across large environments enforce these protections.
 
@@ -61,6 +61,6 @@ Configure user alerts and notifications for the following scenarios:
 
 ## Next steps
 
-- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-poc-guide-intro.md)
-- [Use real-time risk detection to grant access to protected resources](id-protection-poc-detect.md)
-- [Bring identity risk-related telemetry into security investigations](id-protection-poc-investigate.md)
+- [Introduction to Microsoft Entra ID Protection proof-of-concept guidance](id-protection-guide-introduction.md)
+- [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
+- [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
