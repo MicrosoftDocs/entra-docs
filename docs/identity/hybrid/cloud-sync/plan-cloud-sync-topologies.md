@@ -5,7 +5,7 @@ description: Learn about various on-premises and Microsoft Entra topologies that
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: article
 ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi

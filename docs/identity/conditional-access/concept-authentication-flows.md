@@ -3,7 +3,7 @@ title: Authentication flows as a condition in Conditional Access policy
 description: Learn how authentication flows provide a seamless experience across all application and device types
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/05/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo

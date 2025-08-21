@@ -4,7 +4,7 @@ description: Learn about how to enable QR code authentication method in Microsof
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/24/2025
 
 ms.author: justinha

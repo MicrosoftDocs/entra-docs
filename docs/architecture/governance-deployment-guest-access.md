@@ -18,7 +18,6 @@ Deployment scenarios are guidance on how to combine and test Microsoft Security 
 The following products and services appear in this guide:
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Microsoft Entra](../fundamentals/what-is-entra.md)
 * [Entitlement management](../id-governance/entitlement-management-overview.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)

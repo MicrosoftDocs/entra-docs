@@ -6,7 +6,7 @@ author: omondiatieno
 ms.author: jomondi
 ms.date: 04/09/2025
 manager: mwongerapk
-ms.topic: article
+ms.topic: how-to
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ---
@@ -207,6 +207,6 @@ Consider each authentication method. Does the effort to deploy the solution, and
 
 In today's world, threats are present 24 hours a day and come from everywhere. Implement the correct authentication method, and it will mitigate your security risks and protect your identities.
 
-[Get started](~/fundamentals/whatis.md) with Microsoft Entra ID and deploy the right authentication solution for your organization.
+[Get started](~/fundamentals/what-is-entra.md) with Microsoft Entra ID and deploy the right authentication solution for your organization.
 
 If you're thinking about migrating from federated to cloud authentication, learn more about [changing the sign-in method](plan-connect-user-signin.md). To help you plan and implement the migration, use [these project deployment plans](~/architecture/deployment-plans.md), or consider using the new [Staged Rollout](how-to-connect-staged-rollout.md) feature to migrate federated users to using cloud authentication in a staged approach.

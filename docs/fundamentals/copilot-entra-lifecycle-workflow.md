@@ -8,9 +8,11 @@ author: cilwerner
 ms.author: cwerner
 manager: pmwongera
 ms.date: 02/19/2025
-ms.topic: conceptual
+ms.update-cycle: 180-days
+ms.topic: how-to
 ms.service: entra
-ms.custom: microsoft-copilot
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
 ---
 # Manage employee lifecycle using Microsoft Security Copilot
 

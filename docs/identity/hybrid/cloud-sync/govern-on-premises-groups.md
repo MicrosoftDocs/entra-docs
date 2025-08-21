@@ -4,8 +4,7 @@ description: This article provides an overview of how to use cloud sync to gover
 author: omondiatieno
 manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
-ms.date: 07/30/2025
+ms.topic: article
 ms.subservice: hybrid-cloud-sync
 ms.author: jomondi
 ---

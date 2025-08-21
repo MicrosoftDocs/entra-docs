@@ -8,7 +8,7 @@ ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 08/15/2025
 ms.author: justinha
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -34,6 +34,9 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
    This change may take about 10 minutes to complete as domain security updates are enforced.
 
    :::image type="content" border="true" source="media/reference-domain-services-tls-enforcement/enable.png" alt-text="Screenshot that shows how to enable TLS 1.2 Only Mode for Domain Services.":::
+
+>[!Note] 
+>Until August 31, 2025, you can select **Disable** to temporarily allow legacy TLS traffic while you update or replace apps that might fail. Select **Enable** again to remain compliant. 
 
 ## [**PowerShell**](#tab/powershell)
 
@@ -64,9 +67,15 @@ Before you enable **TLS 1.2 Only Mode**, it's important to identify applications
 
 ## Troubleshooting
 
-- **Use application-level diagnostics**: Some apps provide logs or error messages when TLS handshakes fail. Look for errors related to unsupported protocols.
+- Some apps provide logs or error messages when TLS handshakes fail. Use application-level diagnostics to  look for errors related to unsupported protocols.
 
-- If the steps to enable **TLS 1.2 Only Mode** fail, or if your want to **temporarily disable TLS 1.2 Only Mode** open an [Azure support request](/entra/fundamentals/how-to-get-support) for more troubleshooting help. 
+- Until August 31, 2025, you can modify the following PowerShell example to temporarily allow legacy TLS traffic while you update or replace apps:
+
+  ```powershell
+  Update-AzADDomainService -Name $domainService.Name -ResourceGroupName $domainService.ResourceGroupName -DomainSecuritySettingTlsV1 Enabled
+  ```
+
+- For more troubleshooting help, you can [create an Azure support request](/entra/fundamentals/how-to-get-support). 
 
 ## Related content
 

@@ -3,8 +3,8 @@ title: How to manage an external authentication method (EAM) in Microsoft Entra 
 description: Learn how to manage an external authentication method (EAM) for Microsoft Entra multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 08/02/2025
+ms.topic: how-to
+ms.date: 08/17/2025
 ms.author: justinha
 author: emakedon23
 manager: dougeby
@@ -14,9 +14,14 @@ ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Manage an external authentication method in Microsoft Entra ID (Preview)
 
-An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign in to Microsoft Entra ID. An EAM can satisfy MFA requirements from Conditional Access policies, Microsoft Entra ID Protection risk-based Conditional Access policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA. 
+An external authentication method (EAM) lets users choose an external provider to meet multifactor authentication (MFA) requirements when they sign in to Microsoft Entra ID.
 
-EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
+> [!IMPORTANT]
+> External Authentication Provider is currently in public preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
+> With this preview, we're giving you the ability for an external authentication provider to integrate with Microsoft Entra ID tenants as an external authentication method (EAM). An EAM can satisfy MFA requirements from Conditional Access policies, Microsoft Entra ID Protection risk-based Conditional Access policies, Privileged Identity Management (PIM) activation, and when the application itself requires MFA.
+> EAMs differ from federation in that the user identity is originated and managed in Microsoft Entra ID. With federation, the identity is managed in the external identity provider. EAMs require at least a Microsoft Entra ID P1 license.
+
+Here is a diagram of how external authentication method works:
 
 :::image type="content" source="./media/concept-authentication-external-method-provider/how-external-method-authentication-works.png" alt-text="Diagram of how external method authentication works.":::
 
@@ -113,9 +118,9 @@ If the user has no other methods enabled, they can just choose the EAM. They're 
 ## Authentication method registration for EAMs
 In the EAM Preview, users who are members of groups that are enabled for EAM can use an EAM to satisfy MFA. These users aren't included in reports about authentication method registration.
 
-Rollout of EAM registration in Microsoft Entra ID is in progress. After the rollout is finished, users need to register their EAM with Microsoft Entra ID before they can use it to satisfy MFA. As part of this rollout, EAM users who recently signed in with their EAM are automatically marked as registered for the EAM.
+Rollout of EAM registration in Microsoft Entra ID is in progress. After the rollout is finished, users need to register their EAM with Microsoft Entra ID before they can use it to satisfy MFA. As part of this rollout, Microsoft Entra ID will automatically register recent EAM users who have signed in with an EAM within the last 28 days.
 
-Users who didn't recently sign in with their EAM need to register it before they can use it again. These users might see a change the next time they sign in, depending on their current authentication setup:
+Users who haven't signed in with their EAM within 28 days of the registration feature rollout must register the EAM before they can use it again. These users might see a change the next time they sign in, depending on their current authentication setup:
 
 - If they're only enabled for EAM, they must complete a just-in-time registration of EAM before proceeding.
 - If they're enabled for EAM and other authentication methods, they might lose access to the EAM for authentication. There are two ways they can regain access:
