@@ -112,11 +112,7 @@ In the chat, the agent was asked to exclude any breakglass accounts and it ident
 
 :::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-closeup.png" alt-text="Screenshot of the Conditional Access optimization agent chat focused on the suggested changes." lightbox="media/agent-optimization-chat/agent-chat-confirm-closeup.png":::
 
-When you select **Confirm**, the agent makes changes *directly to the policy*.
-
-The original suggestion, however, was to add 21 users to the policy. Because we excluded 5 users from the policy update, this suggestion will continue to appear in the recent suggestions lists. Any future agent runs will likely identify the users that we excluded.
-
-If you don't want to make any changes to the policy, select **Cancel**.
+When you select **Confirm**, the agent makes changes *directly to the policy*. The original suggestion, however, was to add 21 users to the policy. Because we excluded 5 users from the policy update, this suggestion will continue to appear in the recent suggestions lists. Any future agent runs will likely identify the users that we excluded. If you don't want to make any changes to the policy, select **Cancel**.
 
 ### Create a new policy
 
