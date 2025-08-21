@@ -39,11 +39,11 @@ With the Conditional Access optimization agent chat interface, you can use natur
 
 ### Prioritize suggestions
 
-With the chat capability you can ask the agent to help you prioritize the suggestions. The agent compares the potential impact of the policy changes and provides a ranked list of suggestions so you don't have to review the full list and make that decision yourself.
+With the chat capability you can ask the agent to help you prioritize the suggestions. The agent compares the potential impact of the policy changes and provides a ranked list of suggestions based on [Zero Trust principles](/security/zero-trust/zero-trust-overview), so you don't have to review the full list and make that decision yourself.
 
 Sample prompts:
 - *Which suggestion should I implement first?*
-- *Prioritize suggestions.*
+- *Prioritize the suggestions.*
 
 If you ask the agent to prioritize the list of suggestions then ask it for more details on a specific suggestion, the agent uses the order of the prioritized list.
 

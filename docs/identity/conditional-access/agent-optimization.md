@@ -19,6 +19,10 @@ The Conditional Access optimization agent helps you ensure all users and applica
 
 The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
+> [!IMPORTANT]
+> The chat capability in the Conditional Access Optimization agent is currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 ## Prerequisites
 
 - You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
