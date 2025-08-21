@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
 manager: pmwongera
-ms.date: 08/12/2025
+ms.date: 08/21/2025
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -33,26 +33,6 @@ The Conditional Access optimization agent features a conversational interface th
 - **Policy editing scope**: Only included and excluded users and roles can be modified using chat. Application assignments and other fields aren't currently supported.
 - **Supported scenarios**: Only the scenarios listed in [What you can do with chat](#what-you-can-do-with-chat) are currently available.
 
-## How to use chat
-
-You can access the chat from the main Conditional Access Optimization Agent page or from any policy suggestion details page.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
-
-1. Browse to **Conditional Access Optimization Agent**.
-    - Select **Chat with agent** from the agent page to chat with the agent about all policy suggestions.
-    
-    :::image type="content" source="media/agent-optimization-chat/agent-chat-button.png" alt-text="Screenshot of the Conditional Access optimization agent with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-button.png":::
-    
-    - Or select **Review suggestion** for any policy suggestion then select **Chat with agent** to chat with the agent about that specific policy suggestion.
-
-    :::image type="content" source="media/agent-optimization-chat/agent-chat-policy-suggestions.png" alt-text="Screenshot of a policy suggestion details page with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-policy-suggestions.png":::
-
-1. Enter a prompt in the chat window using natural language from the supported scenarios in the [What you can do with chat](#what-you-can-do-with-chat) section.
-1. Review the response and apply the recommended changes.
-
-    :::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-cancel.png" alt-text="Screenshot of the Conditional Access optimization agent chat with the options to confirm or cancel changes." lightbox="media/agent-optimization-chat/agent-chat-confirm-cancel.png":::
-
 ## What you can do with chat
 
 With the Conditional Access optimization agent chat interface, you can use natural language to get more information on a policy suggestion or have the agent present the suggestions in a different order. 
@@ -63,7 +43,7 @@ With the chat capability you can ask the agent to help you prioritize the sugges
 
 Sample prompts:
 - *Which suggestion should I implement first?*
-- *Prioritize suggestions*
+- *Prioritize suggestions.*
 
 If you ask the agent to prioritize the list of suggestions then ask it for more details on a specific suggestion, the agent uses the order of the prioritized list.
 
@@ -99,7 +79,50 @@ Sample prompts:
 >
 > At this time, editing included or excluded applications is not supported.
 
+## How to use chat
 
+You can access the chat from the main Conditional Access Optimization Agent page or from any policy suggestion details page.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
+
+1. Browse to **Conditional Access Optimization Agent**.
+    - Select **Chat with agent** from the agent page to chat with the agent about all policy suggestions.
+    
+    :::image type="content" source="media/agent-optimization-chat/agent-chat-button.png" alt-text="Screenshot of the Conditional Access optimization agent with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-button.png":::
+    
+    - Or select **Review suggestion** for any policy suggestion then select **Chat with agent** to chat with the agent about that specific policy suggestion.
+
+    :::image type="content" source="media/agent-optimization-chat/agent-chat-policy-suggestions.png" alt-text="Screenshot of a policy suggestion details page with the Chat with agent button highlighted." lightbox="media/agent-optimization-chat/agent-chat-policy-suggestions.png":::
+
+1. Enter a prompt in the chat window using natural language from the supported scenarios in the [What you can do with chat](#what-you-can-do-with-chat) section.
+
+1. Review the response and apply the recommended changes. For more information, see the [Confirm changes in chat](#confirm-changes-in-chat) section.
+
+    :::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-cancel.png" alt-text="Screenshot of the Conditional Access optimization agent chat with the options to confirm or cancel changes." lightbox="media/agent-optimization-chat/agent-chat-confirm-cancel.png":::
+
+## Confirm changes in chat
+
+After getting more details and any necessary clarifications on the policy suggestion, you can have the agent make adjustments to the policy directly from the chat. Because the suggestion could be to update an existing policy or create a new policy in report-only mode, it's important to know what happens when you confirm any suggested changes.
+
+### Update an existing policy
+
+To illustrate what happens when you confirm a change to an existing policy, let's take a closer look at the suggestion to add 21 users to an existing users.
+
+In the chat, the agent was asked to exclude any breakglass accounts and it identified five accounts that match.
+
+:::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-closeup.png" alt-text="Screenshot of the Conditional Access optimization agent chat focused on the suggested changes." lightbox="media/agent-optimization-chat/agent-chat-confirm-closeup.png":::
+
+When you select **Confirm**, the agent makes changes *directly to the policy*.
+
+The original suggestion, however, was to add 21 users to the policy. Because we excluded 5 users from the policy update, this suggestion will continue to appear in the recent suggestions lists. Any future agent runs will likely identify the users that we excluded.
+
+If you don't want to make any changes to the policy, select **Cancel**.
+
+### Create a new policy
+
+When the agent creates a new policy *in report-only mode* you can use the chat make adjustments to the policy and even turn on the policy.
+
+When you're using chat for new policies, the first **Confirm** button updates the policy in report-only mode. You're prompted a second time to turn on the policy. For new policies, select **Cancel** to save the report-only changes without turning on the policy. 
 
 ## Related content
 
