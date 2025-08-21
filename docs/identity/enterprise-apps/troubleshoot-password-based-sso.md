@@ -75,11 +75,17 @@ In addition to this, **if you are in contact with this application’s vendor,**
 
 ## Capture sign-in fields for an app
 
-Sign-in field capture is supported only for HTML-enabled sign-in pages. It's not supported for nonstandard sign-in pages, like those that use Adobe Flash or other non-HTML-enabled technologies.
+Sign-in field capture is supported only for HTML-enabled sign-in pages. It's not supported for non-standard sign-in pages, like those that use Adobe Flash or other non-HTML-enabled technologies. You can capture sign-in fields for your custom apps using the manual sign-in field capture feature.
 
-To capture sign-in fields, you must have the My Apps browser extension installed. Also, your browser can't be running in *inPrivate*, *incognito*, or *private* mode.
+### Automatically capture sign-in fields for an app
 
-To configure password-based SSO for an app by using sign-in field capture, follow these steps:
+To configure password-based SSO by using automatic sign-in field capture, follow these steps:
+
+### Manually capture sign-in fields for an app
+
+To manually capture sign-in fields, you must have the My Apps browser extension installed. Also, your browser can't be running in *inPrivate*, *incognito*, or *private* mode.
+
+To configure password-based SSO for an app by using manual sign-in field capture, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
@@ -101,22 +107,22 @@ Rarely, updating the SSO configuration fails. To resolve this problem, try savin
 
 If you keep getting the error, open a support case. Include the information that's described in the [View portal notification details](#view-portal-notification-details) and [Send notification details to a support engineer to get help](#send-notification-details-to-a-support-engineer-to-get-help) sections of this article.
 
-### I can't detect sign-in fields for my app
+### I can't manually detect sign-in fields for my app
 
-You might observe the following behaviors when sign-in field detection isn't working:
+You might observe the following behaviors when manual detection isn't working:
 
-- The capture process appeared to work, but the captured fields aren't correct.
+- The manual capture process appeared to work, but the captured fields aren't correct.
 - The correct fields don’t get highlighted when the capture process runs.
 - The capture process takes you to the app’s sign-in page as expected, but nothing happens.
-- The capture process appears to work, but SSO doesn’t happen when users navigate to the app from My Apps.
+- Manual capture appears to work, but SSO doesn’t happen when users navigate to the app from My Apps.
 
 If you experience any of these problems, do the following things:
 
 - Make sure that you have the latest version of the My Apps browser extension *installed and enabled*.
 - Make sure that your browser isn't in *incognito*, *inPrivate*, or *Private* mode during the capture process. The My Apps extension isn't supported in these modes.
 - Make sure that your users aren't trying to sign in to the app from My Apps while in *incognito*, *inPrivate*, or *Private mode*.
-- Try the capture process again. Make sure that the red markers are over the correct fields.
-- If the capture process seems to stop responding or the sign-in page doesn’t respond, try the capture process again. But this time, after completing the process, press the F12 key to open your browser’s developer console. Select the **console** tab. Type **window.location="*&lt;the sign-in URL that you specified when configuring the app&gt;*"**, and then press Enter. This forces a page redirect that ends the capture process and stores the fields that were captured.
+- Try the manual capture process again. Make sure that the red markers are over the correct fields.
+- If the manual capture process seems to stop responding or the sign-in page doesn’t respond, try the manual capture process again. But this time, after completing the process, press the F12 key to open your browser’s developer console. Select the **console** tab. Type **window.location="*&lt;the sign-in URL that you specified when configuring the app&gt;*"**, and then press Enter. This forces a page redirect that ends the capture process and stores the fields that were captured.
 
 ### I can't add another user to my password-based SSO app
 
