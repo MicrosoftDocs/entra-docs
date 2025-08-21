@@ -75,11 +75,7 @@ In addition to this, **if you are in contact with this application’s vendor,**
 
 ## Capture sign-in fields for an app
 
-Sign-in field capture is supported only for HTML-enabled sign-in pages. It's not supported for non-standard sign-in pages, like those that use Adobe Flash or other non-HTML-enabled technologies. You can capture sign-in fields for your custom apps using the manual sign-in field capture feature.
-
-### Automatically capture sign-in fields for an app
-
-To configure password-based SSO by using automatic sign-in field capture, follow these steps:
+Sign-in field capture is supported only for HTML-enabled sign-in pages. It's not supported for non-standard sign-in pages, like those that use Adobe Flash or other non-HTML-enabled technologies. The following section shows how to capture sign-in fields for your custom apps manually.
 
 ### Manually capture sign-in fields for an app
 
