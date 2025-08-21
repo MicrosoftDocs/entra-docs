@@ -27,7 +27,10 @@ For practical guidance, see [examples of how to configure token lifetimes](confi
 > To manage the lifetime of web browser sessions for SharePoint Online and OneDrive for Business, use the [Conditional Access session lifetime](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) feature. Refer to the [SharePoint Online blog](https://techcommunity.microsoft.com/t5/SharePoint-Blog/Introducing-Idle-Session-Timeout-in-SharePoint-and-OneDrive/ba-p/119208) to learn more about configuring idle session time-outs.
 
 > [!NOTE]
-> You might want to increase the token lifetime so that a script runs for more than an hour. Many Microsoft libraries, such as Microsoft Graph PowerShell SDK, extend the token lifetime as needed and you don't need to makes changes to the access token policy. 
+> You might want to increase the token lifetime so that a script runs for more than an hour. Many Microsoft libraries, such as Microsoft Graph PowerShell SDK, extend the token lifetime as needed and you don't need to makes changes to the access token policy.
+
+> [!NOTE]
+> Configurable token lifetime policy is not supported for applications developed for personal Microsoft account (signInAudience is equal AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount).
 
 ## License requirements
 
