@@ -5,7 +5,9 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: dougeby
 ms.reviewer: lhuangnorth
-ms.date: 08/21/2025
+
+ms.date: 08/12/2025
+
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -147,18 +149,25 @@ There are several key points to consider regarding the identity and permissions 
 
 ### Custom instructions
 
-You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to include or exclude specific users, groups, and roles. This field can also be used to add exceptions, such as to only apply the exception to specific types of policies, such as policies that require MFA.
+You can tailor the policy to your needs using the optional **Custom Instructions** field. This setting allows you to provide a prompt to the agent as part of its execution. These instructions can be used to include or exclude specific users, groups, and roles. Custom instructions can be used to exclude objects from being considered by the agent altogether or added to the Conditional Access policy itself. Exceptions can be applied to specific policies, such as excluding a specific group from a policy, such as requiring MFA or mobile application management policies. 
 
-You can also use the object ID for the users or groups you want to include in the custom instructions. Any specific object IDs included in the custom instructions are validated. Example custom instructions:
+You can enter either the name or the object ID in the custom instructions. Both values are validated. If you add the name of the group, the object ID for that group is automatically added on your behalf. Example custom instructions:
 
 - "Exclude users in the "Break Glass" group from any policy that requires multifactor authentication."
 - "Exclude user with Object ID dddddddd-3333-4444-5555-eeeeeeeeeeee from all policies"
+
+A common scenario to consider is if your organization has lots of guest users that you don't want the agent to suggest adding to your standard Conditional Access policies. If the agent runs and sees new guest users that aren't covered by recommended policies, SCUs are consumed to suggest covering those guest users by policies that aren't necessary. To prevent guest users from being considered by the agent:
+
+1. Create a dynamic group called "Guests" where `(user.userType -eq "guest")`.
+1. Add a custom instruction, based on your needs.
+    - "Exclude the "Guests" group from agent consideration."
+    - "Exclude the "Guests" group from any mobile application management policies."
 
 For more information about how to use custom instructions, check out the following video. 
 
 > [!VIDEO 5879a0f7-3644-4e34-a8ce-b186b8e5f128]
 
-Please note that some of the content in the video is subject to change as the agent is updated frequently.
+Please note that some of the content in the video, such as the user interface elements, is subject to change as the agent is updated frequently.
 
 ## Remove agent
 

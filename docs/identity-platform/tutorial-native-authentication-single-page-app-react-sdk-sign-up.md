@@ -72,7 +72,7 @@ spasample/
 To use the native authentication JavaScript SDK in your app, use your terminal to install it by using the following command:
 
 ```console
-npm intall @azure/msal-browser
+npm install @azure/msal-browser
 ```
 
 The native authentication capabilities are part of the `azure-msal-browser` library. To use native authentication features, you import from `@azure/msal-browser/custom-auth`. For example:

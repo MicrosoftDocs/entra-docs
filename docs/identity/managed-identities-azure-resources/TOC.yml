@@ -80,6 +80,8 @@
   items:
   - name: Client libraries
     href: reference-managed-identity-libraries.md
+  - name: Glossary
+    href: managed-identities-glossary.md
 - name: Resources
   items:
   - name: Frequently asked questions
