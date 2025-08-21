@@ -5,7 +5,7 @@ description: Learn how to improve your security posture with Microsoft Entra.
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 07/21/2025
+ms.date: 08/21/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -26,7 +26,7 @@ The security recommendations in this document are designed to help you improve y
 > [!TIP]
 > Some organizations might take these recommendations exactly as written, while others might choose to make modifications based on their own business needs. In our initial release of this guidance, we focus on traditional [workforce tenants](/entra/external-id/tenant-configurations#workforce-tenants). These workforce tenants are for your employees, internal business apps, and other organizational resources. 
 
-We recommend that all of the following controls be implemented where licenses are available. This helps to provide a foundation for other resources built on top of this solution. More controls will be added to this document over time.
+We recommend that all of the following controls be implemented where licenses are available. These patterns and practices help to provide a foundation for other resources built on top of this solution. More controls will be added to this document over time.
 
 ## Protect identities and secrets
 
@@ -56,6 +56,9 @@ We recommend that all of the following controls be implemented where licenses ar
 
 ### Privileged accounts have phishing-resistant methods registered
 [!INCLUDE [21782](../includes/secure-recommendations/21782.md)]
+
+### Privileged users have short-lived sign-in sessions
+[!INCLUDE [21825](../includes/secure-recommendations/21825.md)]
 
 ### Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods
 [!INCLUDE [21783](../includes/secure-recommendations/21783.md)]
@@ -96,8 +99,14 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Authenticator app shows sign-in context
 [!INCLUDE [21802](../includes/secure-recommendations/21802.md)]
 
+### Enable self-service password reset
+[!INCLUDE [21870](../includes/secure-recommendations/21870.md)]
+
 ### Password expiration is disabled
 [!INCLUDE [21811](../includes/secure-recommendations/21811.md)]
+
+### Password protection for on-premises is enabled
+[!INCLUDE [21847](../includes/secure-recommendations/21847.md)]
 
 ### Require multifactor authentication for device join and device registration using user action
 [!INCLUDE [21872](../includes/secure-recommendations/21872.md)]
@@ -146,6 +155,9 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Inactive guest identities are disabled or removed from the tenant
 [!INCLUDE [21858](../includes/secure-recommendations/21858.md)]
 
+### Conditional Access policies for workload identities based on known networks are configured
+[!INCLUDE [21884](../includes/secure-recommendations/21884.md)]
+
 ## Protect networks
 
 ### Named locations are configured
@@ -162,8 +174,14 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Global Administrators don't have standing access to Azure subscriptions
 [!INCLUDE [21788](../includes/secure-recommendations/21788.md)]
 
+### Maximum number of Global Administrators doesn't exceed eight users
+[!INCLUDE [21812](../includes/secure-recommendations/21812.md)]
+
 ### Creating new applications and service principals is restricted to privileged users
 [!INCLUDE [21807](../includes/secure-recommendations/21807.md)]
+
+### Enterprise applications with high privilege Microsoft Graph API permissions have owners
+[!INCLUDE [21867](../includes/secure-recommendations/21867.md)]
 
 ### Inactive applications don't have highly privileged Microsoft Graph API permissions
 [!INCLUDE [21770](../includes/secure-recommendations/21770.md)]
@@ -223,6 +241,9 @@ We recommend that all of the following controls be implemented where licenses ar
 
 ### All Microsoft Entra recommendations are addressed
 [!INCLUDE [21866](../includes/secure-recommendations/21866.md)]
+
+### All risky workload identity sign-ins are triaged
+[!INCLUDE [22659](../includes/secure-recommendations/22659.md)]
 
 ## Accelerate response and remediation
 
