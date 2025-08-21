@@ -33,7 +33,7 @@ Configure the following features for user self-remediation of identity risk for 
 
 ## Configure risky sign-in self-remediation
 
-Prompt Microsoft 365 users that you enroll in Microsoft Entra ID Protection to complete multifactor authentication (MFA) upon [risky sign-in detection](../id-protection/howto-identity-protection-remediate-unblock.md#risk-based-policy).
+Prompt Microsoft 365 users that you enroll in Microsoft Entra ID Protection to complete multifactor authentication (MFA) upon [risky sign-in detection](../id-protection/howto-identity-protection-remediate-unblock.md).
 
 ## Configure password reset protection and self-service
 
@@ -48,7 +48,7 @@ Configure password protection features, especially in large Microsoft 365 enviro
 Configure Conditional Access policies for users with dynamic enforcement based on:
 
 1. [Sign-in risk](../id-protection/concept-identity-protection-risks.md) (such as from an unfamiliar location or device)
-1. [User risk](../id-protection/concept-identity-protection-risks.md#premium-user-risk-detections) (such as leaked credentials or suspicious behavior)
+1. [User risk](../id-protection/concept-identity-protection-risks.md#user-risk-detections) (such as leaked credentials or suspicious behavior)
 
 Require users to verify their identity or restrict access to sensitive apps until after risk mitigation.
 
