@@ -159,7 +159,7 @@ Once the risk is contained, more investigation might be required to mark the ris
 
 #### Microsoft Entra threat intelligence
 
-To investigate a Microsoft Entra Threat Intelligence risk detection, follow these steps based on the information provided in the "additional info" field of the Risk Detection Details pane:
+To investigate a Microsoft Entra threat intelligence risk detection, follow these steps based on the information provided in the "additional info" field of the Risk Detection Details pane:
 
 1. Sign-in was from a suspicious IP Address:
    1. Confirm if the IP address shows suspicious behavior in your environment.

@@ -6,7 +6,7 @@ author: shlipsey3
 manager: pmwongera
 
 ms.reviewer: lhuangnorth
-ms.date: 07/29/2025
+ms.date: 08/12/2025
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -42,7 +42,7 @@ When the Conditional Access optimization agent creates a new policy in report-on
 
 ### Agent creates a report-only policy with a phased rollout
 
-The agent creates a report-only policy and builds a phased rollout plan. Rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
+The agent creates a report-only policy and builds a separate phased rollout plan. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png":::
 
@@ -72,13 +72,17 @@ To adjust the groups included in a phase:
 
 To adjust the time between phases:
 
-1. From the Conditional Access Optimization Agent page, select the **Settings** tab. For more information, review the [Phased rollout settings](agent-optimization.md#phased-rollout-preview).
+1. From the Conditional Access Optimization Agent page, select the **Settings** tab. 
 1. Adjust the days between phases in the **Phased rollout** section.
 1. Select the **Save** button to apply the changes.
 
+For more information, review the [Phased rollout settings](agent-optimization.md#phased-rollout-preview).
+
 ### Agent executes the approved rollout plan
 
-The agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure the policy does what's expected. While the policy is being rolled out, the policy remains in report-only mode for the remaining phases. 
+The agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. The original report-only policy remains intact so you can continue to collect data on the policy.
+
+The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure the policy does what's expected. While the policy is being rolled out, the policy remains in report-only mode for the remaining phases. 
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png" alt-text="Screenshot of a phased rollout that's in progress." lightbox="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png":::
 
@@ -87,6 +91,16 @@ After every phase is complete, the agent will recommend deleting the report-only
 ## Built-in safeguards
 
 Once the phased rollout begins, you can't update the policy's grant controls. If changes are made to the grant controls, the phased rollout is canceled. If more than 10% of sign-ins are blocked by the new policy during any phase, the rollout is immediately paused. The administrator is notified so the details can be reviewed and potentially modified.
+
+## Frequently asked questions
+
+### How does the phased rollout capability work?
+
+After selecting the groups that each phase will apply to, the agent creates a duplicate Conditional Access policy that only includes the group of the first phase. The original Conditional Access policy persists in report-only mode and targets all users, so you can continue to collect data. When the deployment advances to the next phase, the batch of groups is added to the enabled Conditional Access policy. The agent monitors how each stage affects the sign-ins associated with this policy. If the success rate drops below 90%, the phased rollout stops and the enabled policy is placed back into report-only mode. You can then review the logs to determine why sign-ins were failing before attempting the phased rollout again.
+
+### Do I have to turn on phased rollout?
+
+The phased rollout capability is turned on by default. To turn it off, go to the **Settings** tab on the Conditional Access Optimization Agent page. Under **Phased rollout**, switch the toggle to **Off**.
 
 ## Related content
 

@@ -40,7 +40,7 @@ In a location of choice in your computer, run the following commands to create a
   npx create-react-app reactspa --template typescript
   cd reactspa
   npm install ajv
-  npm installreact-router-dom
+  npm install react-router-dom
   npm install
   ```
 

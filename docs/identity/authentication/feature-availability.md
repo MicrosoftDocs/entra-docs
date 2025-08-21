@@ -69,8 +69,6 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 || Entitlement management | &#x2705; |
 || Privileged Identity Management (PIM) |  &#x2705; |
 || Lifecycle workflows, in Microsoft Entra ID Governance |  &#x2705; |
-|| Cross-tenant user synchronization (same cloud) |  &#x2705; |
-|| Cross-cloud synchronization |  &#x2705; |
 |**Event logging and reporting**|Basic security and usage reports | &#x2705; |
 || Advanced security and usage reports | &#x2705; |
 || ID Protection: vulnerabilities and risky accounts | &#x2705; |

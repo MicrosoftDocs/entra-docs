@@ -162,7 +162,7 @@ If there's a firewall between your servers and Microsoft Entra ID, configure the
  |-----|-----|
  |`*.msappproxy.us`</br>`*.servicebus.usgovcloudapi.net`|The agent uses these URLs to communicate with the Microsoft Entra cloud service. |
  |`mscrl.microsoft.us:80` </br>`crl.microsoft.us:80` </br>`ocsp.msocsp.us:80` </br>`www.microsoft.us:80`| The agent uses these URLs to verify certificates.|
- |`login.windows.us` </br>`secure.aadcdn.microsoftonline-p.com` </br>`*.microsoftonline.us` </br>`*.microsoftonline-p.us` </br>`*.msauth.net` </br>`*.msauthimages.net` </br>`*.msecnd.net`</br>`*.msftauth.net` </br>`*.msftauthimages.net`</br>`*.phonefactor.net` </br>`enterpriseregistration.windows.net`</br>`management.azure.com` </br>`policykeyservice.dc.ad.msft.net`</br>`ctldl.windowsupdate.us:80` </br>`aadcdn.msftauthimages.us` </br>`*.microsoft.us` </br>`msauthimages.us` </br>`mfstauthimages.us`| The agent uses these URLs during the registration process.
+ |`login.windows.us` </br>`secure.aadcdn.microsoftonline-p.com` </br>`*.microsoftonline.us` </br>`*.microsoftonline-p.us` </br>`*.msauth.net` </br>`*.msauthimages.net` </br>`*.msecnd.net`</br>`*.msftauth.net` </br>`*.msftauthimages.net`</br>`*.phonefactor.net` </br>`enterpriseregistration.windows.net`</br>`management.azure.com` </br>`policykeyservice.dc.ad.msft.net`</br>`ctldl.windowsupdate.us:80` </br>`aadcdn.msftauthimages.us` </br>`*.microsoft.us` </br>`msauthimages.us` </br>`msftauthimages.us`| The agent uses these URLs during the registration process.
 
 
 

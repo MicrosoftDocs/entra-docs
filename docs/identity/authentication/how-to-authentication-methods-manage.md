@@ -4,10 +4,10 @@ description: Learn about how to centrally manage multifactor authentication and 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: upgrade-and-migration-article
-ms.date: 03/04/2025
+ms.date: 08/13/2025
 ms.author: justinha
 author: justinha
-ms.reviewer: jpettere
+ms.reviewer: jpettere, tilarso
 manager: dougeby
 ms.custom: sfi-image-nochange
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
@@ -87,7 +87,7 @@ To get the authentication methods available in the legacy SSPR policy, go to **E
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/legacy-sspr-policy.png" alt-text="Screenshot that shows the legacy Microsoft Entra SSPR policy." lightbox="media/how-to-authentication-methods-manage/legacy-sspr-policy.png":::
 
-Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. While security questions aren't yet available to manage in the Authentication methods policy, make sure you record them for later when they are. You can find this information by going to **Entra ID** > **Users** > **Password reset** > **Properties**.
+Record which users are in scope for SSPR (either all users, one specific group, or no users) and the authentication methods they can use. Security questions aren't yet available to manage in the Authentication methods policy, and will remain manageable in the legacy SSPR Authentication Methods settings. You can review current security question information by going to **Entra ID** > **Users** > **Password reset** > **Properties**.
 
 | SSPR authentication methods | Authentication method policy |
 |-----------------------------|------------------------------|
@@ -177,7 +177,7 @@ The Authentication methods policy has granular control with separate controls fo
 
 ### Security questions
 
-A control for **Security questions** is coming soon. If you use security questions, and don't want to disable them, make sure to keep them enabled in the legacy SSPR policy until the new control is available. You *can* finish migration as described in the next section with security questions enabled.
+Controlling **Security questions** will remain in SSPR. If you use security questions, and don't want to disable them as part of this migration, make sure to keep them enabled in the legacy SSPR policy. You *can* finish migration as described in the next section with security questions enabled.
 
 ## Finish the migration 
 

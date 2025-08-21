@@ -20,7 +20,7 @@ productDirectory:
     - title: What is Microsoft Entra ID?
       imageSrc: ./media/index/entra-id.svg
       summary: "Manage user identities and control access to your apps, data, and resources."
-      url: ../fundamentals/whatis.md
+      url: ../fundamentals/what-is-entra.md
     - title: Authentication
       imageSrc: ./media/index/authentication.svg
       summary: "Configure sign-in methods and security features like self-service password reset and multifactor authentication."

@@ -22,7 +22,7 @@ landingContent:
       - linkListType: architecture
         links:
           - text: What is Microsoft Entra ID?
-            url: ~/fundamentals/whatis.md
+            url: ~/fundamentals/what-is-entra.md
           - text: Microsoft Entra architecture
             url: architecture.md
 
