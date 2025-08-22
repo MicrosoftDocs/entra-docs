@@ -46,6 +46,9 @@ To configure Global Secure Access:
 4. **Install and configure the Global Secure Access client** on end-user devices.  
     See [Global Secure Access clients](concept-clients.md).
 
+> [!NOTE]
+> Private Network Connectors are required for Private Access applications.
+
 ## Cisco Umbrella setup
 
 To configure Cisco Umbrella:
