@@ -34,57 +34,51 @@ A problem arises when you add more than one top-level domain. For example, let's
 When you attempt to convert the bmfabrikam.com domain to be federated, an error occurs. The reason is, Microsoft Entra ID has a constraint that doesn't allow the IssuerUri property to have the same value for more than one domain. 
 
 ### SupportMultipleDomain Parameter
-To work around this constraint, you need to add a different IssuerUri, which can be done by using the `-SupportMultipleDomain` parameter. This parameter is used with the following cmdlets:
 
-* `New-MgDomainFederationConfiguration`
-* `Update-MgDomainFederationConfiguration`
+> [!NOTE]
+> SupportMultipleDomain paramer is no longer available and does not work with the following modules:
+> * `Microsoft.Graph`
+>* `Microsoft.Entra`
+>
 
-This parameter makes Microsoft Entra ID configure the IssuerUri so that it's based on the name of the domain. The IssuerUri will be unique across directories in Microsoft Entra ID. Using the parameter allows the PowerShell command to complete successfully.
-
-`-SupportMultipleDomain` doesn't change the other endpoints, which are still configured to point to the federation service on adfs.bmcontoso.com.
-
-`-SupportMultipleDomain` also ensures that the AD FS system includes the proper Issuer value in tokens issued for Microsoft Entra ID. This value is set by taking the domain portion of the user's UPN and using it as the domain in the IssuerUri, that is, `https://{upn suffix}/adfs/services/trust`.
-
-Thus during authentication to Microsoft Entra ID or Microsoft 365, the IssuerUri element in the user’s token is used to locate the domain in Microsoft Entra ID. If a match can't be found, the authentication fails.
-
-For example, if a user’s UPN is bsimon@bmcontoso.com, the IssuerUri element in the token, AD FS issuer, is set to `http://bmcontoso.com/adfs/services/trust`. This element matches the Microsoft Entra configuration, and authentication succeeds.
-
-The following customized claim rule implements this logic:
-
-```
-c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)", "http://${domain}/adfs/services/trust/"));
-```
 
 
 > [!IMPORTANT]
-> In order to use the -SupportMultipleDomain switch when attempting to add new or convert already existing domains, your federated trust needs to have already been set up to support them.
+> In order to federate multiple domains you may have to go one by one and start making the changes since the -SupportMultipleDomain is no longer available.
 >
 >
 
 <a name='how-to-update-the-trust-between-ad-fs-and-azure-ad'></a>
 
 ## How to update the trust between AD FS and Microsoft Entra ID
-If you didn't set up the federated trust between AD FS and your instance of Microsoft Entra ID, you may need to re-create this trust. The reason is, when it's originally set up without the `-SupportMultipleDomain` parameter, the IssuerUri is set with the default value. In the screenshot below, you can see the IssuerUri is set to `https://adfs.bmcontoso.com/adfs/services/trust`.
 
-If you have successfully added a new domain in the [Microsoft Entra admin center](https://entra.microsoft.com) and then attempt to convert it using `New-MgDomainFederationConfiguration -DomainName <your domain>`, you'll get an error.
+If you have successfully added a new domain in the [Microsoft Entra admin center](https://entra.microsoft.com) and changed the Token Signing Certificate you are just one step away from updating your federation information against EntraID. 
 
-Use the steps below to add an additional top-level domain. If you have already added a domain, and didn't use the `-SupportMultipleDomain` parameter, start with the steps for removing and updating your original domain. If you haven't added a top-level domain yet, you can start with the steps for adding a domain using PowerShell of Microsoft Entra Connect.
+Use the steps below to update your federation information on EntraID:
 
-Use the following steps to remove the Microsoft Online trust and update your original domain.
+1. Open a new PowerShell session and run the below commands to install the Entra module:
+   >**Note:** "-allowclobber" will override warning messages about installation conflicts and overwrite existing commands that have the same name as commands being installed by a module. Use this value if you already have installed Microsoft.Graph module:
+  
+3. * `Install-Module -Name Microsoft.Entra -allowClobber`
+   * `Import-Module -Name Microsoft.Entra.DirectoryManagement`
+   * `Connect-Entra -Scopes 'Domain.Read.All'`
+   * `Get-EntraFederationProperty -domainname domain.com`
 
-1. On your AD FS federation server, open **AD FS Management**.
-1. On the left, expand **Trust Relationships** and **Relying Party Trusts**.
-1. On the right, delete the **Microsoft Office 365 Identity Platform** entry.
-  ![Remove Microsoft Online](./media/how-to-connect-install-multiple-domains/trust4.png)
-1. In PowerShell, enter `Connect-Entra -Scopes 'Domain.ReadWrite.All'`.
-1. In PowerShell, enter `Update-MgDomainFederationConfiguration -DomainName <Federated Domain Name> -SupportMultipleDomain`. This update is for the original domain. So using the above domains it would be: `Update-MgDomainFederationConfiguration -DomainName bmcontoso.com -SupportMultipleDomain`
+<img width="1774" height="165" alt="Get-EntraFedProperty" src="https://github.com/user-attachments/assets/4c74f81a-a438-4ad1-a6a2-9ccc365288bc" />
+
+
+Once you have copied the ID displayed in the second column from the output, run:
+* `Update-MgDomainFederationConfiguration -DomainID domain.com -InternalDomainFederationId 0f6ftrte-xxxx-xxxx-xxxx-19xxxxxxxx23'`
 
 Use the following steps to add the new top-level domain using PowerShell
 
 1. On a machine that has [Azure AD PowerShell module](/previous-versions/azure/jj151815(v=azure.100)) installed on it run the following PowerShell: `$cred=Get-Credential`.
 2. Enter the username and password of a Hybrid Identity Administrator for the Microsoft Entra domain you're federating with
 3. In PowerShell, enter `Connect-Entra -Scopes 'Domain.ReadWrite.All'`
-4. In PowerShell, enter `New-MgDomainFederationConfiguration –SupportMultipleDomain –DomainName`
+4. Enter all the values as the below example to add a new domain:
+
+>  New-MgDomainFederationConfiguration -DomainId "contoso.com" -ActiveSigninUri " https://sts.contoso.com/adfs/services/trust/2005/usernamemixed" -DisplayName "Contoso" -IssuerUri " http://contoso.com/adfs/services/trust" -MetadataExchangeUri " https://sts.contoso.com/adfs/services/trust/mex" -PassiveSigninUri " https://sts.contoso.com/adfs/ls/" -SignOutUri " https://sts.contoso.com/adfs/ls/" -SigningCertificate <*Base64 Encoded Format cert*> -FederatedIdpMfaBehavior "acceptIfMfaDoneByFederatedIdp" -PreferredAuthenticationProtocol "wsFed
+
 
 Use the following steps to add the new top-level domain using Microsoft Entra Connect.
 
