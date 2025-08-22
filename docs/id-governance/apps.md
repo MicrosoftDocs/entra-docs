@@ -336,11 +336,10 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Genesys Cloud for Azure](../identity/saas-apps/purecloud-by-genesys-provisioning-tutorial.md) | ● | ● |
 | [getAbstract](../identity/saas-apps/getabstract-provisioning-tutorial.md) | ● | ● |
 | [Getty Images](../identity/saas-apps/getty-images-tutorial.md) |  | ● |
-| [GitHub AE](../identity/saas-apps/github-ae-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Cloud - Enterprise Account](../identity/saas-apps/github-enterprise-cloud-enterprise-account-tutorial.md) |  | ● |
 | [GitHub Enterprise Managed User (OIDC)](../identity/saas-apps/github-enterprise-managed-user-oidc-provisioning-tutorial.md) | ● | ● |
 | [GitHub Enterprise Managed User](../identity/saas-apps/github-enterprise-managed-user-provisioning-tutorial.md) | ● | ● |
-| [GitHub Enterprise Server](../identity/saas-apps/github-ae-tutorial.md) |  | ● |
+| [GitHub Enterprise Server](../identity/saas-apps/github-server-tutorial.md) |  | ● |
 | [GitHub](../identity/saas-apps/github-provisioning-tutorial.md) | ● | ● |
 | [Global Relay Identity Sync](../identity/saas-apps/global-relay-identity-sync-provisioning-tutorial.md) | ● |  |
 | [GlobalOne](../identity/saas-apps/globalone-tutorial.md) |  | ● |
