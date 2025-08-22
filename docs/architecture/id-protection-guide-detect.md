@@ -31,11 +31,11 @@ Perform the following steps for real-time risk detection with Microsoft Entra ID
 
 ## Configure risk policies
 
-To [configure and enable risk policies](../id-protection/howto-identity-protection-configure-risk-policies.md), factor both types of [risk policies](../id-protection/concept-identity-protection-policies.md) in Microsoft Entra Conditional Access. If you enabled legacy risk policies in Microsoft Entra ID Protection, plan to [migrate them to Conditional Access](../id-protection/howto-identity-protection-configure-risk-policies.md#migrate-to-conditional-access).
+To [configure and enable risk policies](../id-protection/howto-identity-protection-configure-risk-policies.md), factor Sign-in risk and User [risk policies](../id-protection/concept-identity-protection-policies.md) in Microsoft Entra Conditional Access. If you enabled legacy risk policies in Microsoft Entra ID Protection, plan to [migrate them to Conditional Access](../id-protection/howto-identity-protection-configure-risk-policies.md#migrate-to-conditional-access).
 
 1. Set up the following key foundational policies.
 
-   - [User risk policy](../id-protection/howto-identity-protection-configure-risk-policies.md): Trigger actions (such as require a secure password change for high-risk users).
+   - [User risk policy](../id-protection/howto-identity-protection-configure-risk-policies.md): Trigger actions such as require a secure password change for high-risk users.
    - [Sign-in risk policy](../id-protection/howto-identity-protection-configure-risk-policies.md#sign-in-risk-policy-in-conditional-access): Evaluate each sign-in attempt and enforce controls such as multifactor authentication (MFA) or block access.
    - [MFA registration policy](../id-protection/howto-identity-protection-configure-mfa-policy.md): Ensure user enrollment in MFA before they become risky.
   
@@ -57,7 +57,7 @@ To [investigate and remediate risks](../id-protection/howto-identity-protection-
 1. Make decisions based on the [investigation and risk remediation framework](../id-protection/howto-identity-protection-investigate-risk.md#investigation-and-risk-remediation-framework).
 1. Use [Microsoft Graph PowerShell](../id-protection/howto-identity-protection-graph-api.md) or APIs for bulk actions.
 
-For deeper analysis, [export risk data](../id-protection/howto-export-risk-data.md) to security information and event management (SIEM) tools (such as Microsoft Sentinel) or [Log Analytics](../id-protection/howto-export-risk-data.md#log-analytics).
+For deeper analysis, [export risk data](../id-protection/howto-export-risk-data.md) to security information and event management (SIEM) tools such as Microsoft Sentinel or [Log Analytics](../id-protection/howto-export-risk-data.md#log-analytics).
 
 ## Monitor and tune policies
 
@@ -66,7 +66,7 @@ Monitor the impact of policies using these features:
 1. Use the [Impact analysis of risk-based access policies workbook](../id-protection/workbook-risk-based-policy-impact.md) for trend analysis.
 1. To simulate policy effects, enable [report-only mode in Conditional Access](../identity/conditional-access/concept-conditional-access-report-only.md).
 1. To manage user risk and risk detections, configure automated [Microsoft Entra ID Protection notifications](../id-protection/howto-identity-protection-configure-notifications.md), such as the users at risk detected email or weekly digest email.
-1. To reduce false positives and improve the accuracy of Microsoft Entra ID Protection risk calculations for a specific tenant, configure named locations (such as VPN IP ranges).
+1. To reduce false positives and improve the accuracy of Microsoft Entra ID Protection risk calculations for a specific tenant, configure named locations such as VPN IP ranges.
 
 ## Next steps
 

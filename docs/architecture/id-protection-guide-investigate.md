@@ -35,9 +35,9 @@ Configure the following features for identity risk-related telemetry with Micros
 
 Detect and investigate identity threats in the Microsoft Entra admin center or with Microsoft Graph APIs:
 
-1. [Risky sign-ins](../id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins-report) (such as [impossible travel](../id-protection/howto-identity-protection-investigate-risk.md#investigating-atypical-travel-detections), [anonymous IPs, and malware-linked IPs](../id-protection/howto-identity-protection-investigate-risk.md#investigating-malicious-ip-address-detections))
-1. [Risky users](../id-protection/howto-identity-protection-investigate-risk.md#risky-users-report) (such as accounts with [leaked credentials](../id-protection/howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections) and [suspicious behavior](../id-protection/howto-identity-protection-investigate-risk.md#investigating-password-spray-detections))
-1. [Risk detections](../id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report) (such as [token replay](../id-protection/howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections) and unfamiliar sign-in properties)
+1. [Risky sign-ins](../id-protection/howto-identity-protection-investigate-risk.md#risky-sign-ins-report) such as [impossible travel](../id-protection/howto-identity-protection-investigate-risk.md#investigating-atypical-travel-detections), [anonymous IPs, and malware-linked IPs](../id-protection/howto-identity-protection-investigate-risk.md#investigating-malicious-ip-address-detections).
+1. [Risky users](../id-protection/howto-identity-protection-investigate-risk.md#risky-users-report) such as accounts with [leaked credentials](../id-protection/howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections) and [suspicious behavior](../id-protection/howto-identity-protection-investigate-risk.md#investigating-password-spray-detections).
+1. [Risk detections](../id-protection/howto-identity-protection-investigate-risk.md#risk-detections-report) such as [token replay](../id-protection/howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections) and unfamiliar sign-in properties.
 
 ## Investigate with Microsoft Security Copilot in Microsoft Entra
 
@@ -66,7 +66,7 @@ Log and audit all SOC actions in Microsoft Entra to perform the following steps:
 
 1. Review logs in the Microsoft Entra admin center.
 1. For correlation and storage, export logs to [Azure Monitor Log Analytics](../identity/monitoring-health/howto-analyze-activity-logs-log-analytics.md), [Microsoft Sentinel](/azure/sentinel/overview?tabs=defender-portal), or your dedicated SIEM.
-1. Generate alerts for specific actions (such as policy changes, user unblocks).
+1. Generate alerts for specific actions such as policy changes, user unblocks.
 
 ## Configure access in multitenant environments
 

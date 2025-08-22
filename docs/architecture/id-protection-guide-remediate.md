@@ -21,7 +21,7 @@ Detailed guidance continues with these scenarios:
 - [Use real-time risk detection to grant access to protected resources](id-protection-guide-detect.md)
 - [Bring identity risk-related telemetry into security investigations](id-protection-guide-investigate.md)
 
-This article helps administrators to identify and remediate identity risks for users accessing enterprise-managed resources, including Microsoft 361. Use real-time and offline risk detections to evaluate sign-ins and user behavior. Apply automated responses such as multifactor authentication (MFA), password resets, or block access based on risk levels. Risk-based conditional access policies that scale across large environments enforce these protections.
+This article helps administrators to identify and remediate identity risks for users accessing enterprise-managed resources, including Microsoft 365. Use real-time and offline risk detections to evaluate sign-ins and user behavior. Apply automated responses such as multifactor authentication (MFA), password resets, or block access based on risk levels. Risk-based conditional access policies that scale across large environments enforce these protections.
 
 Configure the following features for user self-remediation of identity risk for enterprise-managed resources with Microsoft Entra ID Protection:
 
@@ -47,8 +47,8 @@ Configure password protection features, especially in large Microsoft 365 enviro
 
 Configure Conditional Access policies for users with dynamic enforcement based on:
 
-1. [Sign-in risk](../id-protection/concept-identity-protection-risks.md) (such as from an unfamiliar location or device)
-1. [User risk](../id-protection/concept-identity-protection-risks.md#user-risk-detections) (such as leaked credentials or suspicious behavior)
+1. [Sign-in risk](../id-protection/concept-identity-protection-risks.md) such as from an unfamiliar location or device.
+1. [User risk](../id-protection/concept-identity-protection-risks.md#user-risk-detections) such as leaked credentials or suspicious behavior.
 
 Require users to verify their identity or restrict access to sensitive apps until after risk mitigation.
 
@@ -56,8 +56,8 @@ Require users to verify their identity or restrict access to sensitive apps unti
 
 Configure user alerts and notifications for the following scenarios:
 
-1. Suspicious activity on their account
-1. Required actions to maintain access (such as reauthentication or device compliance)
+1. Suspicious activity on their account.
+1. Required actions to maintain access such as reauthentication or device compliance.
 
 ## Next steps
 
