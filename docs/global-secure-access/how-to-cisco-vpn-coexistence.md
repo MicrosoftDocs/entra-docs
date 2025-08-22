@@ -95,7 +95,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 - Ensure both clients are enabled.
 - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
-  1. In the system tray, right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Traffic** tab > **Start collecting**.
+  1. In the system tray, right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Traffic tab** > **Start collecting**.
   2. Access websites: `bing.com`, `salesforce.com`, `outlook.office365.com`.
   3. Verify Global Secure Access client captures traffic from these sites.
   4. In Microsoft Entra admin center, go to **Global Secure Access > Monitor > Traffic logs**. Validate traffic is logged.
