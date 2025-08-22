@@ -85,7 +85,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 ### Bypass Global Secure Access IPs and FQDNs in Cisco Secure Access/Umbrella
 
 #### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
-
+<a id="tab-cisco-secure-access-portal></a>
 
 1. In the Cisco Secure Access portal, go to **Connect > End User Connectivity > Internet Security**.
 2. In the **Traffic Steering** section, select **Add Destination > Bypass Secure Access**, add the following FQDNs, and save:
