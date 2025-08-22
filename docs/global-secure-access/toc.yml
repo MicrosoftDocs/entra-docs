@@ -76,6 +76,8 @@ items:
     items:
       - name: Understand remote network connectivity
         href: concept-remote-network-connectivity.md
+      - name: Enhance remote network resilience
+        href: remote-network-resilience.md  
       - name: Create a remote network
         href: how-to-create-remote-networks.md
       - name: Create remote network with custom Internet Key Exchange (IKE) policy
