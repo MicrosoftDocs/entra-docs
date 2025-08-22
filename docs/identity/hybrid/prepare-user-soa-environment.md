@@ -41,7 +41,7 @@ Before changing the SOA on users, retrieve the objects from your Active Director
 - Confirm that all attributes you have, or plan to modify, on those users are being synched to Microsoft Entra and are visible as *directory schema extensions*: `/graph/api/resources/extensionproperty` in Microsoft Graph. 
 - Confirm there are no reference-valued attributes populated on those objects in Active Directory other than the user’s manager.  
 - Confirm that the value of the manager and member attributes, if set, must be references to users in the same Active Directory domain and that they're synchronized to Microsoft Entra. They can’t refer to other object types, or to objects that aren’t synchronized from this domain to Microsoft Entra. 
-- Confirm that there are no attributes on the objects that are updated by another Microsoft on-premises technology, other than Active Directory Domain Services itself. For example, don’t change the SOA of a user whose `userCertificate` attribute is maintained by [Active Directory Certificate Services](/windows-server/identity/ad-cs/active-directory-certificate-services-overview). 
+- Confirm that there are no attributes on the objects that are updated by another Microsoft on-premises technology, other than Active Directory Domain Services (AD DS) itself. For example, don’t change the SOA of a user whose `userCertificate` attribute is maintained by [Active Directory Certificate Services](/windows-server/identity/ad-cs/active-directory-certificate-services-overview). 
 
 ## Update Active Directory
 
@@ -63,7 +63,7 @@ When shifting your HR integration to the cloud from Active Directory, you should
 
 1.	In your HR Provisioning configuration, manually Migrate/transfer attribute mappings to ensure the mappings/transformation happens from HR to Microsoft Entra ID. This requires you setting up a new provisioning configuration with the target as Microsoft Entra ID, and setting up the mappings in that configuration.  
 
-1.	If you have switched Active Directory group management to the cloud, ensure these users are provisioned into that group moving forward.
+1.	If you switched Active Directory group management to the cloud, ensure these users are provisioned into that group moving forward.
 
 
 ## Prep Your Sync Client
@@ -86,7 +86,7 @@ To prepare your MIM setup to use user SOA, do the following steps:
 
 1.	Perform a full import from Microsoft Entra using the Microsoft Graph connector.  
 
-1.	Confirm that all the users planned for the SOA conversion have been joined between the metaverse and the Microsoft Graph connector.  
+1.	Confirm that all the users planned for the SOA conversion are joined between the metaverse and the Microsoft Graph connector.  
 
 1.	Update the management system for those users (for example, MIM Portal and Service) to add a label to user objects for which the SOA is changing to Microsoft Entra ID. 
 
@@ -109,11 +109,11 @@ Once these steps are completed, your MIM-synced hybrid environment should follow
 
 In case you have Exchange Hybrid setup with Microsoft 365 Exchange Online, prepare your Exchange Server and Exchange Online as per the following guidance before switching the SOA of your user accounts.  
 
-If you're running an Exchange hybrid configuration, ensure all your mailboxes have migrated to Exchange Online before you switch the SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365, and you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
+If you're running an Exchange hybrid configuration, ensure all your mailboxes are migrated to Exchange Online before you switch the SOA for any users to the cloud. After mailbox migration of all users, these users can be managed in Microsoft 365, and you can safely switch SOA of users to cloud. With SOA switched, you disable Exchange Hybrid by completing following steps:
 
 1.	Point the MX and Autodiscover DNS records to Exchange Online instead of Exchange Server.  
 
-1.	Remove the Service Connection Point (SCP) values on Exchange servers. This step ensures that no SCPs are returned, and the Outlook clients will instead use the DNS method for Autodiscover. 
+1.	Remove the Service Connection Point (SCP) values on Exchange servers. This step ensures that no SCPs are returned, and the Outlook clients use the DNS method for Autodiscover. 
 
 1.	(Optional) To secure your environment, remove the inbound and outbound connectors created by the Hybrid Configuration Wizard used for mail flow between Exchange Server and Exchange online. 
 
