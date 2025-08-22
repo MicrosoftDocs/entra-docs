@@ -98,7 +98,7 @@
           - name: How Group SOA works
             href: concept-group-source-of-authority-how-it-works.md
           - name: Guidance for using Group SOA
-            href: concept-group-source-of-authority-guidance.md
+            href: concept-group-source-of-authority-guidance.md 
         - name: How to guides
           items:
           - name: Configure Group SOA
@@ -109,7 +109,7 @@
             href: how-to-active-directory-group-cleanup.md
           - name: Set up self-service group management
             href: how-to-source-of-authority-self-service-group-management.md
-      - name: User Source of Authority (SOA)
+      - name: User Source of Authority
         items:
         - name: Concepts
           items:
