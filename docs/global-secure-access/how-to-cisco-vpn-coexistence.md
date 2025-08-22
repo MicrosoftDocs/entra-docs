@@ -195,7 +195,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 7. Save and apply your changes.
 
 > [!NOTE]
-> This configuration is known as split-include. At this time, split-exclude isn't a supported coexistence configuration.
+> At this time, split-exclude isn't a supported coexistence configuration.
 
 #### Tunnel All Networks with dynamic exclusions
 > [!IMPORTANT]
