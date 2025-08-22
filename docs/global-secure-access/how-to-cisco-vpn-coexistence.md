@@ -92,7 +92,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 - Install Cisco Secure Client with VPN.
 
 **Validation:**
-- Ensure both clients are enabled and the Umbrella profile is `Active`.
+- Ensure both clients are enabled.
 - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
   1. In the system tray, right-click **Global Secure Access Client** > **Advanced Diagnostics** > **Traffic** tab > **Start collecting**.
