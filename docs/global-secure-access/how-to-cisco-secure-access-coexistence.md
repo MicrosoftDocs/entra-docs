@@ -128,6 +128,8 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
 <a id="tab-cisco-umbrella-portal"></a>
+
+
 1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list:
 
   *.globalsecureaccess.microsoft.com 
