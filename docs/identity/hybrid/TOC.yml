@@ -115,8 +115,6 @@
           items:
           - name: User SOA overview
             href: user-source-of-authority-overview.md
-          - name: How User SOA works
-            href: 
           - name: Identify supported Applications and authentication types
             href: user-source-of-authority-authentication.md 
         - name: How to guides
@@ -126,9 +124,7 @@
           - name: Audit and monitor User SOA
             href: user-source-of-authority-audit-monitor.md
           - name: Prepare Your environment for User SOA
-            href: prepare-user-soa-environment.md
-          - name: Identify supported Applications and authentication types
-            href:    
+            href: prepare-user-soa-environment.md  
     - name: Provision Microsoft Entra ID to Active Directory
       items:
         - name: Provision groups to Active Directory
