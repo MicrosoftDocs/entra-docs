@@ -124,7 +124,7 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
   
   5. Add DNS suffixes defined in your Private DNS or Enterprise App segments. For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 
-8. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
+5. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 ---
 
