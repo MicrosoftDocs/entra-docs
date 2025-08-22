@@ -198,7 +198,7 @@ To configure Cisco Umbrella:
   1. In the system tray, right-click Global Secure Access Client > Advanced Diagnostics > Traffic tab > Start collecting.
   2. Access `bing.com`, `salesforce.com`, `yelp.com` in browsers.
   3. Verify Global Secure Access client **is** capturing traffic for these sites. We **don't** expect to see destination FQDN information for these sites in the traffic tab.
-  4. In the Cisco Secure Access portal, validate DNS traffic to these sites **is** captured.
+  4. In the Umbrella or Cisco Secure Access portal, validate DNS traffic to these sites **is** captured.
   5. Access `outlook.office365.com`, `<yourmicrosoftdomain>.sharepoint.com` in browsers.
   6. Verify Global Secure Access client **is** capturing traffic for these sites. We **do** expect to see destination FQDN information for these sites. 
   7. Access a site blocked by Cisco and validate that the Cisco block page is displayed.
