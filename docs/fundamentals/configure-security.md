@@ -189,6 +189,9 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Inactive applications don't have highly privileged built-in roles
 [!INCLUDE [21771](../includes/secure-recommendations/21771.md)]
 
+### Applications are configured for automatic user provisioning
+[!INCLUDE [21886](../includes/secure-recommendations/21886.md)]
+
 ### App registrations use safe redirect URIs
 [!INCLUDE [21885](../includes/secure-recommendations/21885.md)]
 
