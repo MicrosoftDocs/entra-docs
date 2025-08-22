@@ -15,14 +15,14 @@ ms.topic: how-to
 ms.custom: security-copilot
 ms.collection: msec-ai-copilot
 ---
-# Microsoft Entra Conditional Access optimization agent with Microsoft Security Copilot
+# Microsoft Entra Conditional Access optimization agent
 
 The Conditional Access optimization agent helps you ensure all users and applications are protected by Conditional Access policies. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
 
 The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
 > [!IMPORTANT]
-> The chat capability in the Conditional Access Optimization agent is currently in PREVIEW.
+> The chat capability in the Conditional Access optimization agent is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -30,20 +30,21 @@ The Conditional Access optimization agent evaluates policies such as requiring m
 - You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
    - On average, each agent run consumes less than one SCU.
-- To activate the agent the first time, you need the [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator).
-- You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
-   - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
-- [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can view the agent and any suggestions, but can't take any actions.
-- [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can view the agent and take action on the suggestions.
+- You must have the appropriate Microsoft Entra role.
+   - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) role is required to *activate the agent the first time*.
+   - [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
+   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can *view the agent and take action on the suggestions*.
+   - You can assign [Conditional Access Administrators](../role-based-access-control/permissions-reference.md#conditional-access-administrator) with Security Copilot access, which gives your Conditional Access Administrators the ability to use the agent as well.
+   - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
-- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
+- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
+   
 ### Limitations
 
 - Avoid using an account to set up the agent that requires role activation with Privileged Identity Management (PIM). Using an account that doesn't have standing permissions might cause authentication failures for the agent.
 - Once agents are started, they can't be stopped or paused. It might take a few minutes to run.
 - For policy consolidation, each agent run only looks at four similar policy pairs.
-- The agent currently runs as the user who enables it.
 - We recommend running the agent from the Microsoft Entra admin center.
 - Scanning is limited to a 24 hour period.
 - Suggestions from the agent can't be customized or overridden.
