@@ -277,6 +277,8 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 - Deploy and configure Cisco Secure Client with Zero Trust Access module.
 - Add private resources and access policies.
 
+> [!NOTE]
+> For this scenario, Cisco Secure Access only handles private traffic. The Umbrella module is not installed.
 **Validation**
   - Ensure both clients are enabled and the Umbrella profile is `Active`.
   - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
