@@ -243,7 +243,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 - Connect to your VPN endpoint.
 
 **Validation:**
-- Ensure both clients are enabled and the Umbrella profile is `Active`.
+- Ensure both clients are enabled.
 - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
 - Test traffic flow by accessing various sites and validating traffic logs in both platforms.
   1. Start collecting traffic in Global Secure Access client.
