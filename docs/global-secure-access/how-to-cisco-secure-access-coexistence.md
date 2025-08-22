@@ -240,7 +240,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 **Cisco Secure Access configuration**
 
-- Configure required destinations to bypass Internet Security, including other Microsoft IPs and FQDNs.
+- Configure required destinations to bypass Internet Security, including other Microsoft IPs and FQDNs.  See instructions for [Cisco Secure Access portal](#tab-cisco-secure-access-portal) or [Umbrella portal](#tab-cisco-umbrella-portal)
 - Deploy and configure Cisco Secure Client with Zero Trust Access and Umbrella modules.
 - Add private resources and access policies.
 
