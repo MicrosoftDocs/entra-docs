@@ -102,7 +102,7 @@ To prepare your MIM setup to use user SOA, do the following steps:
 
 
 Once these steps are completed, your MIM-synced hybrid environment should follow this diagram:
-:::image type="content" source="media/prepare-user-soa-environment/mim-ready-for-soa.png" alt-text="Screenshot of a diagram of an environment that is ready to use user soa.":::
+:::image type="content" source="media/prepare-user-soa-environment/mim-ready-for-soa.png" alt-text="Screenshot of a diagram of an environment that is ready to use user SOA.":::
 
 
 ## Prepare your Microsoft Exchange Setup 
