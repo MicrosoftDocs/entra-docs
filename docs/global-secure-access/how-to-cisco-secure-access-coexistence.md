@@ -210,6 +210,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 1. Configure required destinations to bypass Internet Security.
 2. Deploy and configure Cisco Secure Client with Zero Trust Access and Umbrella modules.
 3. Add private resources and create access policies.
+
 **Validation**
   - Ensure both clients are enabled and the Umbrella profile is `Active`.
   - To verify rules are applied and health checks pass, use Advanced Diagnostics in the Global Secure Access client.
