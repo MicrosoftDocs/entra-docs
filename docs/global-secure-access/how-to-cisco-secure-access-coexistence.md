@@ -236,7 +236,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 **Global Secure Access configuration**
 
 - Enable Microsoft Access forwarding profile.
-- Install and configure the Global Secure Access client for Windows.
+- Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco Secure Access configuration**
 
