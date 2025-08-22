@@ -78,14 +78,14 @@ For all scenarios, plan to include the following steps:
 
 1. Review the [Microsoft Entra ID Protection reports](../id-protection/howto-identity-protection-investigate-risk.md). Before you deploy risk-based Conditional Access policies, investigate existing suspicious behavior. Determine criteria to dismiss risks or confirm users as safe.
 
-  - [Investigate risk detections](../id-protection/howto-identity-protection-investigate-risk.md)
-  - [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md)
-  - [Make bulk changes using Microsoft Graph PowerShell](../id-protection/howto-identity-protection-graph-api.md)
+   - [Investigate risk detections](../id-protection/howto-identity-protection-investigate-risk.md)
+   - [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md)
+   - [Make bulk changes using Microsoft Graph PowerShell](../id-protection/howto-identity-protection-graph-api.md)
 
 1. Plan for Conditional Access risk policies. Microsoft Entra ID Protection sends risk signals to Conditional Access to make decisions and enforce organizational policies. These policies might require users to perform [multifactor authentication](../identity/authentication/howto-mfa-getstarted.md) (MFA) or secure password change.
 
-  - Exclude [Emergency Access/Break-Glass](../identity/role-based-access-control/security-emergency-access.md) and [Service accounts/Service principals](../identity/managed-identities-azure-resources/overview.md) (such as Microsoft Entra Connect Sync) accounts from your policies.
-  - Deploy MFA so users can self-remediate risk. Users need to be able to perform MFA to self-remediate.
+   - Exclude [Emergency Access/Break-Glass](../identity/role-based-access-control/security-emergency-access.md) and [Service accounts/Service principals](../identity/managed-identities-azure-resources/overview.md) (such as Microsoft Entra Connect Sync) accounts from your policies.
+   - Deploy MFA so users can self-remediate risk. Users need to be able to perform MFA to self-remediate.
 
 1. Configure [named locations in Conditional Access](../identity/conditional-access/concept-assignment-network.md#how-are-these-locations-defined).
 1. Add your VPN ranges to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/ip-tags#create-an-ip-address-range).
