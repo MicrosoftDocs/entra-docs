@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 06/24/2025
+ms.date: 08/22/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -21,6 +21,20 @@ The current version of the Global Secure Access client is available to download 
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the client download screen with the Download Client button highlighted.":::
+
+## Version 2.22.82
+Released for download on August 26, 2025.
+### Functional changes
+- A new Windows service, **Global Secure Access Forwarding Profile Service**, replaces the previous **Global Secure Access Policy Retriever Service**.
+- Support for interactive sign-in to get the forwarding profile, for example, if MFA or Terms of Use are required.
+- The **Get policy** button lets you poll the Global Secure Access cloud service for the latest forwarding profile.
+- Bug fix: the client uses Private DNS only when the Private Access channel is active.
+- Bug fix: the client supports DNS records resolved to an IP address in the subnet of 127.0.0.0/8.
+- Support for guest users: this feature is gradually deployed to customer tenants.
+- Support for Intelligent Local Access: this feature is gradually deployed to customer tenants.
+### Other changes
+- New telemetries are now available.
+- Miscellaneous bug fixes and improvements.
 
 ## Version 2.20.56
 Released for download on June 24, 2025.
