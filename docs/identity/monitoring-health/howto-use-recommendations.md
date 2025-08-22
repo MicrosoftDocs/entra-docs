@@ -6,7 +6,7 @@ manager: pmwongera
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 06/12/2025
+ms.date: 08/22/2025
 ms.author: sarahlipsey
 ms.reviewer: jadedsouza
 ms.custom: sfi-image-nochange
@@ -37,7 +37,7 @@ Most recommendations follow the same pattern. You're provided information about 
 
     ![Screenshot of the list of recommendations.](media/howto-use-recommendations/recommendations-list.png)
 
-Each recommendation provides the same set of details that explain what the recommendation is, why it's important, and how to fix it. The recommendation service runs every 24-48 hours, depending on the recommendation.
+Each recommendation provides the same set of details that explain what the recommendation is, why it's important, and how to fix it. Recommendation data refreshes every 24 hours with a one-day lag. In rare instances, updates may take up to 72 hours to appear.
 
 ![Screenshot of a recommendation's status, priority, and impacted resource type.](media/howto-use-recommendations/recommendation-status-risk.png)
 
