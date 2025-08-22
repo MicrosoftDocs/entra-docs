@@ -112,7 +112,6 @@ To configure Cisco Umbrella:
 
 #### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
 
- To bypass Cisco Secure Access, add Microsoft Entra service FQDNs in Traffic Steering to the destination list.
 1. Go to **Connect > End User Connectivity > Internet Security**.
 2. In **Traffic Steering**, select **Add Destination > Bypass Secure Access**, add these FQDNs, and save:
   ```
