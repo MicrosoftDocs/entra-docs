@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/21/2025
+ms.date: 08/22/2025
 
 #CustomerIntent: As an IT admin, I want to learn, deploy, and test Microsoft Entra ID Protection so that I can detect, investigate, and remediate identity-based risks.
 ---
@@ -22,25 +22,25 @@ This guide assumes you're running a PoC in a production environment. Running a P
 
 ## Understand the products
 
-Understanding the products and their core concepts is the first step toward running a successful PoC. Start with the resources in this section:
+Understanding the products and their core concepts is the first step toward running a successful PoC. Start with learning about the product features in this section:
 
-- [What is Microsoft Entra ID Protection?](../id-protection/overview-identity-protection.md) explains how you can feed identity-based risks into tools like Conditional Access (CA) to make access decisions. You can also send them to a security information and event management (SIEM) tool for investigation and correlation.
+- Learn how [Microsoft Entra ID Protection](../id-protection/overview-identity-protection.md) helps you feed identity-based risks into tools like Conditional Access (CA) to make access decisions. You can send risks to a security information and event management (SIEM) tool for investigation and correlation.
 
-  - Tables in the [What are risk detections](../id-protection/concept-identity-protection-risks.md) article summarize sign-in and user risk detections, their license requirements, and whether the detection occurs in real-time or offline.
-  - [How to investigate risks](../id-protection/howto-identity-protection-investigate-risk.md) describes how to use Microsoft Entra ID Protection reports to investigate identity risks in your environment.
-  - [Risk policies](../id-protection/howto-identity-protection-configure-risk-policies.md) explains how to use the sign-in risk policy and user risk policy to allow users to self-remediate detected risks.
-  - [Microsoft Graph PowerShell SDK and Microsoft Entra ID Protection](../id-protection/howto-identity-protection-graph-api.md) shows you how to use Microsoft Graph data to manage risky users.
-  - [How to export risk data](../id-protection/howto-export-risk-data.md) describes methods to export risk data from Microsoft Entra ID Protection for long-term storage and analysis.
+  - Learn about [sign-in and user risk detections](../id-protection/concept-identity-protection-risks.md) license requirements and whether detections occur in real-time or offline.
+  - Learn how Microsoft Entra ID Protection reports help you to [investigate risks](../id-protection/howto-identity-protection-investigate-risk.md) in your environment.
+  - Learn how to allow users to self-remediate detected risks with [sign-in risk and user risk policies](../id-protection/howto-identity-protection-configure-risk-policies.md).
+  - Learn how to manage risky users with [Microsoft Graph data](../id-protection/howto-identity-protection-graph-api.md).
+  - Learn how to [export risk data](../id-protection/howto-export-risk-data.md) from Microsoft Entra ID Protection for long-term storage and analysis.
 
-- [Plan a Microsoft Entra ID Protection deployment](../id-protection/how-to-deploy-identity-protection.md) provides step-by-step guidance that extends concepts in the [Conditional Access deployment plan](../identity/conditional-access/plan-conditional-access.md). Follow detailed instructions for these steps:
+- Follow the [step-by-step guidance](../id-protection/how-to-deploy-identity-protection.md) to plan a Microsoft Entra ID Protection deployment along with the [Conditional Access deployment plan](../identity/conditional-access/plan-conditional-access.md). Follow detailed instructions for these steps:
 
-  - Configure [Microsoft Entra ID Protection notifications](../id-protection/howto-identity-protection-configure-notifications.md).
+  - [Configure Microsoft Entra ID Protection notifications](../id-protection/howto-identity-protection-configure-notifications.md).
   - [Configure the MFA registration policy](../id-protection/howto-identity-protection-configure-mfa-policy.md).
-  - Configure and enable [risk policies](../id-protection/howto-identity-protection-configure-risk-policies.md).
+  - [Configure and enable risk policies](../id-protection/howto-identity-protection-configure-risk-policies.md).
   - [Simulate risk detections](../id-protection/howto-identity-protection-simulate-risk.md).
   - [Provide risk feedback](../id-protection/howto-identity-protection-risk-feedback.md).
 
-- The [Impact analysis of risk-based access policies workbook](../id-protection/workbook-risk-based-policy-impact.md) shows you how to immediately view risk impact from sign-in logs.
+- Learn how to immediately view risk impact from sign-in logs with the [Impact analysis of risk-based access policies workbook](../id-protection/workbook-risk-based-policy-impact.md).
 - Review the [Microsoft Entra ID Protection Power Platform connector reference guide](/connectors/azureadip/) for these services: Copilot Studio, Logic Apps, Power Apps, and Power Automate.
 
 ## Meet prerequisites
@@ -78,14 +78,14 @@ For all scenarios, plan to include the following steps:
 
 1. Review the [Microsoft Entra ID Protection reports](../id-protection/howto-identity-protection-investigate-risk.md). Before you deploy risk-based Conditional Access policies, investigate existing suspicious behavior. Determine criteria to dismiss risks or confirm users as safe.
 
-- [Investigate risk detections](../id-protection/howto-identity-protection-investigate-risk.md)
-- [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md)
-- [Make bulk changes using Microsoft Graph PowerShell](../id-protection/howto-identity-protection-graph-api.md)
+  - [Investigate risk detections](../id-protection/howto-identity-protection-investigate-risk.md)
+  - [Remediate risks and unblock users](../id-protection/howto-identity-protection-remediate-unblock.md)
+  - [Make bulk changes using Microsoft Graph PowerShell](../id-protection/howto-identity-protection-graph-api.md)
 
 1. Plan for Conditional Access risk policies. Microsoft Entra ID Protection sends risk signals to Conditional Access to make decisions and enforce organizational policies. These policies might require users to perform [multifactor authentication](../identity/authentication/howto-mfa-getstarted.md) (MFA) or secure password change.
 
-- Exclude [Emergency Access/Break-Glass](../identity/role-based-access-control/security-emergency-access.md) and [Service accounts/Service principals](../identity/managed-identities-azure-resources/overview.md) (such as Microsoft Entra Connect Sync) accounts from your policies.
-- Deploy MFA so users can self-remediate risk. Users need to be able to perform MFA to self-remediate.
+  - Exclude [Emergency Access/Break-Glass](../identity/role-based-access-control/security-emergency-access.md) and [Service accounts/Service principals](../identity/managed-identities-azure-resources/overview.md) (such as Microsoft Entra Connect Sync) accounts from your policies.
+  - Deploy MFA so users can self-remediate risk. Users need to be able to perform MFA to self-remediate.
 
 1. Configure [named locations in Conditional Access](../identity/conditional-access/concept-assignment-network.md#how-are-these-locations-defined).
 1. Add your VPN ranges to [Microsoft Defender for Cloud Apps](/defender-cloud-apps/ip-tags#create-an-ip-address-range).

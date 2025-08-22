@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/21/2025
+ms.date: 08/22/2025
 
 #CustomerIntent: As an IT administrator, I want to use Microsoft Entra ID Protection to identify and remediate identity risks so that I can protect users that access enterprise-managed resources.
 ---

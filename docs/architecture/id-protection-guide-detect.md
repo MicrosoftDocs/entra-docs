@@ -6,7 +6,7 @@ manager: martinco
 ms.author: gasinh
 ms.service: entra-id-protection
 ms.topic: concept-article
-ms.date: 08/21/2025
+ms.date: 08/22/2025
 
 #CustomerIntent: As an identity administrator, I want to use real-time risk detection features in Microsoft Entra ID Protection so that I can grant user access to protected resources.
 ---
