@@ -289,7 +289,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
       4. In the Cisco Secure Access portal, validate traffic to these sites **isn't** captured.
       5. Access private resources via Cisco Secure Private Access.
       6. Validate traffic logs in both portals.
-      7. Stop collecting traffic and confirm Global Secure Access didn't handle private application traffic.
+      7. Stop collecting traffic and confirm Global Secure Access **didn't** handle private application traffic.
 
 
 ---
