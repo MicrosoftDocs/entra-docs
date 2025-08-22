@@ -54,7 +54,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 - Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
 - Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
 
-- Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPNaaS service FQDN.
+- Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco Secure Access VPNaaS service FQDN.<a id="adding-a-custom-bypass"></a>
   1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
   2. Under Internet access policies, select **View**.
   3. Expand **Custom Bypass** and select **Add rule**.
