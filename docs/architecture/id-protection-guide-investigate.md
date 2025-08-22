@@ -49,7 +49,7 @@ Use natural language prompts in [Microsoft Security Copilot](../fundamentals/cop
 - Retrieve sign-in logs, audit trails, and group memberships.
 - Get remediation recommendations and links to documentation.
 
-To learn more about Microsoft Security Copilot scenarios in Microsoft Entra, please read [this document](../fundamentals/copilot-entra-security-scenarios.md).
+Learn more about [Microsoft Security Copilot scenarios](../fundamentals/copilot-entra-security-scenarios.md) in Microsoft Entra.
 
 ## Remediate and respond
 
