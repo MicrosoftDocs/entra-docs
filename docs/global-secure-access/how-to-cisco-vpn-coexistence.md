@@ -235,7 +235,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 **Global Secure Access configuration:**
 - Enable Microsoft Entra Internet Access and Microsoft Access forwarding profiles.
 - Install and configure the Global Secure Access client for Windows or macOS.
-- Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass-for-cisco-asa) to exclude Cisco ASA remote access TLS URL and public IP address.
+- Add an Internet Access traffic forwarding profile [custom bypass](#adding-a-custom-bypass-for-cisco-asa) to exclude Cisco ASA remote access URL and public IP address.
 
 **Cisco configuration:**
 - Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration) or [tunnel all](#tunnel-all-networks-with-dynamic-exclusions) configuration, as described previously.
