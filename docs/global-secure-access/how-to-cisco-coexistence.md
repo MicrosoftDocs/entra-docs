@@ -95,7 +95,7 @@ To configure Cisco Umbrella:
   3. Add the Quick Access FQDN. `<quickaccessapplicationid>.globalsecureaccess.local`
    
   > [!NOTE]
-  > `quickaccessapplicationid` is the application ID of the configured Quick Access app.
+  > Replace `<quickaccessapplicationid>` with the application ID of your Quick Access app.
 
   4. Add DNS suffixes defined in your Private DNS or Enterprise App segments. For example, if your Private DNS suffix is `contoso.local` and you have a private app at `contoso.com`, add both suffixes.
 
