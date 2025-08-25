@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 08/22/2025
+ms.date: 08/25/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -127,7 +127,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
 
-<a id="tab-cisco-umbrella-portal"></a>
+<a id="tab-cisco-umbrella-portal-anchor"></a>
 
 
 1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list:
@@ -180,7 +180,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 **Cisco Secure Access configuration**
 
-1. Configure required destinations to bypass Internet Security. See instructions for [Cisco Secure Access portal](#tab-cisco-secure-access-portal) or [Umbrella portal](#tab-cisco-umbrella-portal)
+1. Configure required destinations to bypass Internet Security. See instructions for [Cisco Secure Access portal](#tab-cisco-secure-access-portal) or [Umbrella portal](#tab-cisco-umbrella-portal-anchor)
 2. Deploy and configure Cisco Secure Client with Umbrella module.
 
 **Validation**
