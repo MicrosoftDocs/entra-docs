@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
 manager: pmwongera
-ms.date: 07/24/2025
+ms.date: 08/25/2025
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -16,9 +16,9 @@ ms.collection: msec-ai-copilot
 
 # How to review and apply suggestions from the Conditional Access optimization agent
 
-The Microsoft Entra Conditional Access optimization agent provides suggestions for your Conditional Access policies. The suggestions vary based on what the agent finds. As the administrator, you need to review the suggestions and decide what to do.
+The Microsoft Entra Conditional Access optimization agent provides suggestions to create or update Conditional Access policies and creates reports for activity related to those policies. The suggestions vary based on what the agent finds. As the administrator, you need to review the suggestions and decide what to do.
 
-This article provides an overview of the logic behind the suggestions and how to review the details of the suggestions.
+This article provides an overview of the logic behind the suggestions and reports and how to review and act on those suggestions.
 
 ## Prerequisites
 
@@ -49,6 +49,7 @@ The agent might run and:
 - Create a new Conditional Access policy *in report-only mode*
 - Suggest modifying an existing policy
 - Suggest consolidating overlapping policies
+- Identify a spike or dip in activity related to an existing policy
 
 We want to provide as much information as possible about the logic used to identify the suggestions because Conditional Access policies can be complex. With each suggestion, the agent provides detailed reasoning, policy impact summaries, and details of the policy. As a best practice, review the information provided before applying a suggestion or changing a report-only policy to an active policy.
 
@@ -124,3 +125,22 @@ When the agent suggests a new policy, it creates the policy in report-only mode.
 
 > [!WARNING]
 > Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
+
+## Review policy reports (Preview)
+
+The Conditional Access optimization agent also detects spikes and dips in activity related to existing policies. These anomalies often indicate a misconfiguration of a policy that needs to be investigated. If the agent identifies a significant change in activity, a report appears in the list of suggestions. In the **Actions taken by agent** column, you'll see **Suggested policy review** as the value.
+
+> [!IMPORTANT]
+> The policy reports in the Conditional Access Optimization agent are currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+To view a policy review report:
+
+1. Select **Review suggestion** to view the details of the suggested policy review.
+1. On the policy details page, select **Review report**. A detailed report with a visualization of the activity related to the policy appears.
+
+    :::image type="content" source="media/agent-optimization-review-suggestions/agent-policy-report-button.png" alt-text="Screenshot of the policy details for a report with the Review report button highlighted." lightbox="media/agent-optimization-review-suggestions/agent-policy-report-button.png":::
+
+1. Review the report and investigate the policy as needed.
+
+1. From the policy details page, select **Mark suggestion as reviewed** or **Snooze for 14 days**. Optionally, you can add notes about what you learned and any changes you made to the related policy.
