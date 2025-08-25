@@ -1,17 +1,17 @@
 ---
-title: Respond to identity threats using Copilot
-description: Use Copilot in Microsoft Entra to investigate identity risks and troubleshoot identity tasks quickly.
+title: Security Copilot in Microsoft Entra
+description: Overview of Security Copilot in Microsoft Entra and how to get started with embedded experiences and agents.
 keywords:
 author: cilwerner
 ms.author: cwerner
 manager: pmwongera
-ms.date: 08/08/2025
+ms.date: 08/25/2025
 ms.update-cycle: 180-days
-ms.topic: how-to
+ms.topic: overview
 ms.service: entra
 ms.custom: security-copilot
 ms.collection: msec-ai-copilot
-#Customer intent: As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
+#Customer intent: As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integrations, including agents and embedded experiences.
 ---
 
 # Security Copilot in Microsoft Entra

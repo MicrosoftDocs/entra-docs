@@ -182,12 +182,17 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/how-to-navigate.md",
-      "redirect_url": "/entra/fundamentals/what-is-entra",
+      "redirect_url": "cwhat-is-entra",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/fundamentals/introduction-identity-access-management.md",
       "redirect_url": "/entra/fundamentals/identity-fundamental-concepts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/agents.md",
+      "redirect_url": "/entra/fundamentals/copilot-entra-agents",
       "redirect_document_id": false
     },
     {
