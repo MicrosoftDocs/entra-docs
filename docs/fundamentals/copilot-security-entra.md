@@ -43,6 +43,8 @@ In the Security Copilot platform, Microsoft Entra is a plugin that provides acce
     - Take a moment to [understand authentication in Microsoft Security Copilot](/security-copilot/authentication).
 1. In the Security Copilot standalone experience, select the **Sources** icon from the prompt bar and turn on the Microsoft Entra plugin for Security Copilot, if it's not already on.
 
+    :::image type="content" source="./media/copilot-security-entra/security-copilot-sources.png" alt-text="Screenshot of the Copilot chat window sources icon.":::
+
 Once you're all set up in Security Copilot, you can start using [natural language prompts](/security-copilot/prompting-security-copilot) to help remediate identity-based incidents. You can always check the **Promptbook library** in the standalone [Security Copilot](https://securitycopilot.microsoft.com/) experience for more examples.
 
 - *Give me all user details for karita@woodgrovebank.com and extract the user Object ID.*
@@ -61,10 +63,12 @@ All key features have an option for providing feedback, but the exact steps vary
 
 ## Privacy and data security in Security Copilot
 
-To understand how Security Copilot handles your prompts and the data that’s retrieved from the service(prompt output), see [Privacy and data security in Microsoft Security Copilot](/security-copilot/privacy-data-security).
+To understand how Security Copilot handles your prompts and the data that’s retrieved from the service (prompt output), see [Privacy and data security in Microsoft Security Copilot](/security-copilot/privacy-data-security).
+
+Learn more about [Responsible AI](/security-copilot/responsible-ai-overview-security-copilot) for Security Copilot and Security Copilot agents.
 
 ## Related content
 
-- [Responsible AI FAQs](/security-copilot/responsible-ai-overview-security-copilot)
+- [Security Copilot agents in Microsoft Entra](copilot-entra-agents.md)
 - [Investigate security incidents](copilot-security-entra-investigate-incident.md) using the Microsoft Entra skills in Microsoft Security Copilot.
 - [Investigate risky apps](copilot-security-entra-investigate-risky-apps.md) using the Microsoft Entra skills in Microsoft Security Copilot.

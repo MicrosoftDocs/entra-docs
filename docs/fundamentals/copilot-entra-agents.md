@@ -22,7 +22,7 @@ Microsoft Entra agents analyze your identity environment, apply best practices, 
 
 ## What are Microsoft Entra agents?
 
-Microsoft Entra agents can:
+Microsoft Entra agents are AI-powered tools that operate in your organization's identity environment to automate and optimize identity and access management tasks. The agents are grounded in the concepts and tasks for a specific product area, like Conditional Access. These agents can:
 
 - **Automate routine tasks** - Handle time-consuming, repetitive identity and access management operations
 - **Provide suggestions** - Analyze your environment and suggest improvements based on Microsoft best practices and Zero Trust principles
@@ -30,9 +30,9 @@ Microsoft Entra agents can:
 - **Integrate seamlessly** - Work within your organization's existing Microsoft Entra workflows
 - **Learn and adapt** - Improve suggestions over time, based on your environment and feedback
 
-## How Microsoft Entra agents work
-
 Each agent works a little differently, but at their core, they first analyze your current environment within the boundaries of the agent's capabilities. If the agent identifies a gap, opportunity, or potential issue, it can take action on your behalf. Each agent provides the context, reasoning, and activity history for how it came up with the suggestion.
+
+Administrators can configure the agent to run automatically or trigger the agent to run manually. 
 
 ## Available Microsoft Entra agents
 
@@ -74,7 +74,7 @@ The [Conditional Access optimization agent](../identity/conditional-access/agent
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Agents** and select **View details** for the agent you want to configure.
 
-## Agents in the broader Microsoft ecosystem
+## Agents in the Microsoft ecosystem
 
 While this article focuses on Microsoft Entra agents, similar agents are available across other Microsoft security products. For more information, see [Microsoft Intune](/intune/intune-service/copilot/security-copilot-agents-intune), [Microsoft Defender](/defender-xdr/security-copilot-agents-defender), and [Microsoft Purview](/purview/copilot-in-purview-agents). 
 

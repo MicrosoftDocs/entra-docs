@@ -80,9 +80,9 @@ items:
     href: how-to-manage-stay-signed-in-prompt.yml
 - name: Microsoft Security Copilot + Microsoft Entra
   items:
-  - name: Security Copilot in Microsoft Entra overview
+  - name: Security Copilot in Microsoft Entra
     href: copilot-security-entra.md
-  - name: Security Copilot scenarios in Microsoft Entra
+  - name: Scenarios
     href: copilot-entra-security-scenarios.md
   - name: Agents
     href: copilot-entra-agents.md

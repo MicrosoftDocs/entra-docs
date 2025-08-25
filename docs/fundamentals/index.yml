@@ -27,8 +27,10 @@ landingContent:
             url: whats-new.md
       - linkListType: concept
         links:
+          - text: Identity and access management
+            url: identity-fundamental-concepts.md
           - text: Microsoft Entra architecture
-            url: /architecture/architecture.md
+            url: ../architecture/architecture.md
 
   # Card 
   - title: Security best practices for Microsoft Entra
