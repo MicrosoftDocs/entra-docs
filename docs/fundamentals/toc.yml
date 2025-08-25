@@ -82,11 +82,11 @@ items:
   items:
   - name: Security Copilot in Microsoft Entra
     href: copilot-security-entra.md
-  - name: Scenarios
+  - name: Copilot scenarios in Microsoft Entra
     href: copilot-entra-security-scenarios.md
   - name: Agents
     href: copilot-entra-agents.md
-  - name: Respond to identity threats using risky user summarization
+  - name: Respond to identity threats
     href: copilot-entra-risky-user-summarization.md  
   - name: Manage lifecycle workflows
     href: copilot-entra-lifecycle-workflow.md
