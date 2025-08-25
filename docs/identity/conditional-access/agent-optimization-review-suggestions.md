@@ -24,11 +24,13 @@ This article provides an overview of the logic behind the suggestions and report
 
 - You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
-  - On average, each agent run consumes less than one SCU.
-- [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
-- [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) roles can view the agent and take action on the suggestions.
-  - For more information on roles for the Conditional Access optimization agent, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access)
-- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
+   - On average, each agent run consumes less than one SCU.
+- You must have the appropriate Microsoft Entra role.
+   - [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) and [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) roles can *view the agent and any suggestions, but can't take any actions*.
+   - [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) roles can *view the agent and take action on the suggestions*.
+   - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
+- Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
+- Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
 
 ### Limitations
 
@@ -110,7 +112,7 @@ The agent could suggest modifying an existing policy or consolidating overlappin
 
 ### Turn on a new policy
 
-When the agent suggests a new policy, it creates the policy in report-only mode. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
+When the agent suggests a new policy, it creates the policy in report-only mode. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from the Conditional Access policies list.
 
 - Select **Turn on policy** to have the agent apply the changes to the policy *in report-only mode*.
 
