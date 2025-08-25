@@ -79,7 +79,7 @@ CRL Number ensures monotonic versioning, preventing replay attacks where an olde
 
 10. If the user's certificate is listed as revoked on the CRL, user authentication will fail.
    
-     :::image type="content" border="true" source="./media/concept-certificate-based-authentication-crl/user-cert.png" alt-text="Screenshot of the revoked user certificate in the CRL." ::: 
+     :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/user-cert.png" alt-text="Screenshot of the revoked user certificate in the CRL." ::: 
 
 >[!IMPORTANT]
 >Due to the nature of CRL caching and publishing cycles, it's highly recommended that, if there's a certificate revocation, to also revoke all sessions of the affected user in Microsoft Entra ID.
@@ -105,19 +105,19 @@ To strengthen security and avoid misconfigurations, an Authentication Policy Adm
 
 1. To enable CRL validation, select **Require CRL validation (recommended)**. 
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-crl/require-validation.png" alt-text="Screenshot of how to require CRL validation." :::  
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/require-validation.png" alt-text="Screenshot of how to require CRL validation." :::  
 
 Once enabled, any CBA fail is because the end user certificate was issued by a CA with no CRL configured.
 
 2. An Authentication Policy Administrator can exempt a CA if its CRL has issues that should be fixed. Select **Add Exemption** and select any CAs that should be exempted.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-crl/exempt-validation.png" alt-text="Screenshot of how to exempt CAs from CRL validation." :::  
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/exempt-validation.png" alt-text="Screenshot of how to exempt CAs from CRL validation." :::  
 
 3. The CAs in the exempted list aren't required to have CRL configured and the end-user certificates that they issue don't fail authentication.
 
 Select CAs and select **Add**. The **Search** text box can be used to filter the CA lists to select specific CAs.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-crl/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." ::: 
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." ::: 
 
 
 ## Guidance for Setting Up CRLs (Base and Delta CRL) for Microsoft Entra ID
