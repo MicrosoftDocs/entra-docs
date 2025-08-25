@@ -118,11 +118,11 @@ When you select **Confirm**, the agent makes changes *directly to the policy*. T
 
 When the agent creates a new policy *in report-only mode* you can use the chat make adjustments to the policy and even turn on the policy. In the following example to create a new policy, the agent was asked to include a specific user. When you're using chat for new policies, the first **Confirm** button updates the policy in report-only mode.
 
-:::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-new-policy1.png" alt-text="Screenshot of the chat with the confirm changes button highlighted." lightbox="media/agent-optimization-chat/agent-chat-confirm-new-policy1.png":::
+:::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-buttons.png" alt-text="Screenshot of the chat with the confirm changes button highlighted." lightbox="media/agent-optimization-chat/agent-chat-confirm-buttons.png":::
 
 You're prompted a second time to turn on the policy. If you select **Confirm** at this step, the policy is turned on. Select **Cancel** to save the report-only changes without turning on the policy. 
 
-:::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-new-policy2.png" alt-text="Screenshot of the chat with the second set of confirm changes buttons highlighted." lightbox="media/agent-optimization-chat/agent-chat-confirm-new-policy2.png":::
+:::image type="content" source="media/agent-optimization-chat/agent-chat-confirm-buttons-second-set.png" alt-text="Screenshot of the chat with the second set of confirm changes buttons highlighted." lightbox="media/agent-optimization-chat/agent-chat-confirm-buttons-second-set.png":::
 
 ## Related content
 
