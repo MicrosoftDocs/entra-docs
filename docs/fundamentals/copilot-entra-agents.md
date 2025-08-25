@@ -62,16 +62,16 @@ The [Conditional Access optimization agent](../identity/conditional-access/agent
 
 ### Prerequisites
 
-- You must have at least the [Microsoft Entra ID P1](overview.md#license-requirements) license.
+- You must have at least the [Microsoft Entra ID P1](licensing.md) license.
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
     - In order to purchase security compute units, you need to have an Azure subscription. [Create your free Azure account](https://azure.microsoft.com/free).
-- [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator) automatically have the required permissions to configure agents.
+- [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) or [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) automatically have the required permissions to configure agents.
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security)
 
 ### Setup process
 
 1. Enable Security Copilot using the [Security Copilot setup guide](/copilot/security/get-started-security-copilot).
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Agents** and select **View details** for the agent you want to configure.
 
 ## Agents in the broader Microsoft ecosystem

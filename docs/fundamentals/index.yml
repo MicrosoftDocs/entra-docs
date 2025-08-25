@@ -28,7 +28,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: Microsoft Entra architecture
-            url: /entra/architecture/architecture.md
+            url: /architecture/architecture.md
 
   # Card 
   - title: Security best practices for Microsoft Entra
