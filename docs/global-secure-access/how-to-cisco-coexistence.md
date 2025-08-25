@@ -54,7 +54,7 @@ To configure Global Secure Access:
 To configure Cisco Umbrella:
 
 1. **Provision users and groups.**  
-    Integration with Microsoft Entra ID is recommended. See Microsoft Entra ID SAML configuration guide for [Umbrella](https://learn.microsoft.com/en-us/entra/identity/saas-apps/cisco-umbrella-tutorial) or [Cisco Secure Access](https://docs.sse.cisco.com/sse-user-guide/docs/manage-users-and-groups).
+    Integration with Microsoft Entra ID is recommended. See Microsoft Entra ID SAML configuration guide for [Umbrella](/entra/identity/saas-apps/cisco-umbrella-tutorial) or [Cisco Secure Access](https://docs.sse.cisco.com/sse-user-guide/docs/manage-users-and-groups).
 2. **Create an policy to block a destination or content for testing.**
       For detailed information, see [Umbrella policies](https://docs.umbrella.com/deployment-umbrella/docs/create-and-apply-policies) or [Cisco Secure Access Internet Access Rules documentation](https://docs.sse.cisco.com/sse-user-guide/docs/manage-internet-access-rules).
 3. **Deploy and install the Cisco Secure Client.**  
@@ -140,7 +140,7 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
 - Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-- Configure the required destinations bypasses. See instructions for [Umbrella portal](#tab-cisco-umbrella-portal) or [Cisco Secure Access portal](#tab-cisco-secure-access-portal).
+- Configure the required destinations bypasses. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access](#bypass-global-secure-access-ips-and-fqdns-in-umbrellacisco-secure-access) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
 - Disable the SWG for [Umbrella devices](https://docs.umbrella.com/umbrella-user-guide/docs/selective-enablement#disable-the-swg-module) or [Cisco Secure Access devices](https://docs.sse.cisco.com/sse-user-guide/docs/edit-roaming-devices-internet-security-settings#disable-the-internet-security-settings).
 
 - Install and configure Cisco Secure Client software with the Umbrella module.
@@ -172,7 +172,7 @@ auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.c
 - Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-- Configure the required destinations bypasses. See instructions for [Umbrella portal](#tab/cisco-umbrella-portal) or [Cisco Secure Access portal](#tab/cisco-secure-access-portal).
+- Configure the required destinations bypasses. For instructions, see [Bypass Global Secure Access IPs and FQDNs in Umbrella/Cisco Secure Access](#bypass-global-secure-access-ips-and-fqdns-in-umbrellacisco-secure-access) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
 - Disable the SWG for [Umbrella devices](https://docs.umbrella.com/umbrella-user-guide/docs/selective-enablement#disable-the-swg-module) or [Cisco Secure Access devices](https://docs.sse.cisco.com/sse-user-guide/docs/edit-roaming-devices-internet-security-settings#disable-the-internet-security-settings).
 - Install and configure Cisco Secure Client software with the Umbrella module.
 
