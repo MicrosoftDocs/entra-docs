@@ -16,14 +16,15 @@ metadata:
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
 landingContent:
+
   # Card 
-  - title: About Microsoft Entra ID
+  - title: About Microsoft Entra
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Microsoft Entra ID?
+          - text: What is Microsoft Entra?
             url: what-is-entra.md
-          - text: What's new in Microsoft Entra ID
+          - text: What's new in Microsoft Entra
             url: whats-new.md
       - linkListType: concept
         links:
@@ -31,40 +32,6 @@ landingContent:
             url: identity-fundamental-concepts.md
           - text: Microsoft Entra architecture
             url: ../architecture/architecture.md
-
-  # Card 
-  - title: Security best practices for Microsoft Entra
-    linkLists:
-      - linkListType: reference
-        links:
-          - text: Configure security recommendations
-            url: configure-security.md
-      - linkListType: concept
-        links:
-          - text: Improve your security posture
-            url: concept-secure-remote-workers.md
-          - text: Securing identity with Zero Trust
-            url: /security/zero-trust/deploy/identity
-          - text: Security defaults
-            url: security-defaults.md
-
-  # Card
-  - title: Microsoft Security Copilot + Microsoft Entra
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Security Copilot in Microsoft Entra
-            url: copilot-security-entra.md
-          - text: Agents in Microsoft Entra
-            url: copilot-entra-agents.md
-      - linkListType: how-to-guide
-        links:
-          - text: Respond to identity threats
-            url: copilot-entra-risky-user-summarization.md
-          - text: Investigate incidents
-            url: copilot-security-entra-investigate-incident.md
-          - text: Investigate app risk
-            url: copilot-security-entra-investigate-risky-apps.md
 
   # Card
   - title: Get started
@@ -103,3 +70,40 @@ landingContent:
             url: get-started-premium.md
           - text: Assign licenses to users
             url: licensing.md
+            
+  # Card 
+  - title: Security best practices for Microsoft Entra
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Configure security recommendations
+            url: configure-security.md
+      - linkListType: concept
+        links:
+          - text: Improve your security posture
+            url: concept-secure-remote-workers.md
+          - text: Securing identity with Zero Trust
+            url: /security/zero-trust/deploy/identity
+          - text: Security defaults
+            url: security-defaults.md
+
+  # Card
+  - title: Microsoft Security Copilot + Microsoft Entra
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Security Copilot in Microsoft Entra
+            url: copilot-security-entra.md
+          - text: Agents in Microsoft Entra
+            url: copilot-entra-agents.md
+      - linkListType: how-to-guide
+        links:
+          - text: Respond to identity threats
+            url: copilot-entra-risky-user-summarization.md
+          - text: Investigate incidents
+            url: copilot-security-entra-investigate-incident.md
+          - text: Investigate app risk
+            url: copilot-security-entra-investigate-risky-apps.md
+
+
+

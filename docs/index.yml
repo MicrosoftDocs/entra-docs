@@ -73,8 +73,8 @@ conceptualContent:
     ## CARD 1 ######################
     - title: Fundamentals
       links:
-        - text: Microsoft Entra licensing
-          url: /entra/fundamentals/licensing
+        - text: New name for Azure AD
+          url: /entra/fundamentals/new-name
           itemType: concept
         - text: Create a new tenant
           url: /entra/fundamentals/create-new-tenant
