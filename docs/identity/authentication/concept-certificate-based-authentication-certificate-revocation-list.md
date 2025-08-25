@@ -221,7 +221,7 @@ Select CAs and select **Add**. The **Search** text box can be used to filter the
 
 5. **After a CRL endpoint is configured, end users aren't able to sign in and they see the following diagnostic message: AADSTS500173: Unable to download CRL. Invalid status code Forbidden from CRL distribution point.** 
 
-    This is commonly seen when a firewall rule setting blocks access to the CRL endpoint. 
+    When CRL download issues occur, with Entra being unable to access the CRL the cause is often firewall restrictions. In most cases, the issue is resolved by updating firewall rules to allow the required IP addresses so Entra can successfully download the CRL. See [List of Microsoft  IPAddress](/microsoft-365/enterprise/urls-and-ip-address-ranges.md?view=o365-worldwide#microsoft-365-unified-domains)
 
 ## Next steps
 
