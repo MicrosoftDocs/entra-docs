@@ -86,6 +86,9 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 #### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
 
+<a id="tab-cisco-secure-access-portal"></a>
+
+
 1. In the Cisco Secure Access portal, go to **Connect > End User Connectivity > Internet Security**.
 2. In the **Traffic Steering** section, select **Add Destination > Bypass Secure Access**, add the following FQDNs, and save:
 
@@ -124,6 +127,9 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 8. Restart Cisco Umbrella client services or restart the machine where the clients are installed.
 
 #### [Cisco Umbrella Portal](#tab/cisco-umbrella-portal)
+
+<a id="tab-cisco-umbrella-portal-anchor"></a>
+
 
 1. Add domain suffixes and Microsoft Entra service FQDNs to the **Internal domains** list:
 
@@ -175,8 +181,8 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 
 **Cisco Secure Access configuration**
 
-1. Configure required destinations to bypass Internet Security. For instructions, see [Bypass Global Secure Access IP's and FQDN's in Cisco Secure Access / Umbrella](#bypass-cisco-secure-accessumbrella-required-ips-in-global-secure-access) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
-1. Deploy and configure Cisco Secure Client with Umbrella module.
+1. Configure required destinations to bypass Internet Security. See instructions for [Cisco Secure Access portal](#tab-cisco-secure-access-portal) or [Umbrella portal](&tabs=cisco-umbrella-portal#tab-cisco-umbrella-portal-anchor)
+2. Deploy and configure Cisco Secure Client with Umbrella module.
 
 **Validation**
   - Ensure both clients are enabled and the Umbrella profile is `Active`.
