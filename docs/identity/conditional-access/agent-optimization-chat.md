@@ -106,7 +106,7 @@ After getting more details and any necessary clarifications on the policy sugges
 
 ### Update an existing policy
 
-To illustrate what happens when you confirm a change to an existing policy, let's take a closer look at the suggestion to add 21 users to an existing users.
+To illustrate what happens when you confirm a change to an existing policy, let's take a closer look at the suggestion to add 21 users to an existing policy.
 
 In the chat, the agent was asked to exclude any breakglass accounts and it identified five accounts that match.
 
