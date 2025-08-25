@@ -235,6 +235,16 @@ items:
         href: deployment-external-operations.md
       - name: Authentication and access control architecture
         href: deployment-external-authentication-access-control.md
+    - name: Microsoft Entra ID Protection proof-of-concept guidance
+      items:
+      - name: Introduction
+        href: id-protection-guide-introduction.md
+      - name: Scenario - Detect protected resource risk
+        href: id-protection-guide-detect.md
+      - name: Scenario - Investigate identity risk-related telemetry
+        href: id-protection-guide-investigate.md
+      - name: Scenario - Self-remediate resource risk
+        href: id-protection-guide-remediate.md
   - name: Migration best practices
     items:
     - name: Migration best practices

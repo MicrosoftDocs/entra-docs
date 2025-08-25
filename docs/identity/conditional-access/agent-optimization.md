@@ -17,7 +17,7 @@ ms.collection: msec-ai-copilot
 ---
 # Microsoft Entra Conditional Access optimization agent
 
-The Conditional Access optimization agent helps you ensure all users and applications are protected by Conditional Access policies. It recommends policies and changes based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. 
+The Conditional Access optimization agent helps you ensure all users and applications are protected by Conditional Access policies. The agent can recommend new policies and update existing policies, based on best practices aligned with [Zero Trust](/security/zero-trust/deploy/identity) and Microsoft's learnings. The agent also creates policy review reports (Preview), which provide insights into spikes or dips that might indicate a policy misconfiguration.
 
 The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
