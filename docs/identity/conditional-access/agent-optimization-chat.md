@@ -5,7 +5,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.reviewer: lhuangnorth
 manager: pmwongera
-ms.date: 08/25/2025
+ms.date: 08/21/2025
 ms.update-cycle: 180-days
 ms.service: entra-id
 ms.subservice: conditional-access
