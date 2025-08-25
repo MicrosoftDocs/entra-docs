@@ -61,7 +61,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
   4. Leave destination type as FQDN and enter `*.vpn.sse.cisco.com` in Destination.
   5. Select **Save**.
 
-## Cisco Secure Access VPNaaS setup
+## Cisco Secure Access VPNaaS - setup
 
 #### Split-Include configuration
 
@@ -75,7 +75,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 > [!NOTE]
 > Currently **Split-Include** is the only supported Cisco Secure Access VPNaaS configuration. Other coexistence configurations may be added as they are validated.
 
-## Configuration scenarios
+## Cisco Secure Access VPNaaS - Configuration scenarios
 
 ### 1. Internet and Microsoft traffic with Cisco Secure Access VPNaaS for private access.
 
@@ -166,7 +166,7 @@ To configure Microsoft and Cisco ASA remote access VPN for a unified SASE soluti
    
 - Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
 - Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
-
+<a id="adding-a-custom-bypass-for-cisco-asa"></a>
 - Add an Internet Access traffic forwarding profile custom bypass to exclude Cisco ASA remote access VPN endpoint IP and FQDN.
 
   1. Sign in to Microsoft Entra admin center and browse to **Global Secure Access > Connect > Traffic forwarding > Internet access profile**.
@@ -224,7 +224,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 > - There's a known issue with this configuration preventing coexistence with Global Secure Access on macOS.
 > - When using the Tunnel All Networks configuration, after the client connects, it might take a few seconds before you can access private resources through the Cisco VPN.
 
-## Configuration scenarios
+## Cisco ASA Remote Access VPN - Configuration scenarios
 
 ### Cisco ASA Remote Access VPN
 
