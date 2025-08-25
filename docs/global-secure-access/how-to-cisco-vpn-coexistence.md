@@ -48,8 +48,8 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
 - Enable and disable different traffic forwarding profiles for your Microsoft Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 - Install and configure the Microsoft Entra private network connector. See [How to configure connectors](how-to-configure-connectors.md).
 
-> [!NOTE] 
-   > Private network connectors are required for Microsoft Entra Private Access applications.
+    > [!NOTE] 
+    > Private network connectors are required for Microsoft Entra Private Access applications.
    
 - Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
 - Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
@@ -161,8 +161,8 @@ To configure Microsoft and Cisco ASA remote access VPN for a unified SASE soluti
 - Enable and disable different traffic forwarding profiles for your Microsoft Entra tenant. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 - Install and configure the Microsoft Entra private network connector. See [How to configure connectors](how-to-configure-connectors.md).
 
-> [!NOTE] 
-   > Private network connectors are required for Microsoft Entra Private Access applications.
+    > [!NOTE] 
+    > Private network connectors are required for Microsoft Entra Private Access applications.
    
 - Configure Quick Access to private resources and set up private Domain Name System (DNS) and DNS suffixes. See [How to configure Quick Access](how-to-configure-quick-access.md).
 - Install and configure the Global Secure Access client on end-user devices. See [Global Secure Access clients](concept-clients.md).
