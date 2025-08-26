@@ -28,7 +28,7 @@ This guide covers the following coexistence scenarios:
 In this scenario, Global Secure Access handles private application traffic. Cisco Secure Internet Access provides DNS security and SWG capabilities.
 
 2.  **[Private Access with Cisco Secure Internet Access and Cisco Secure Private Access](#2-private-access-with-cisco-secure-internet-access-and-cisco-secure-private-access).**
-In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Global Secure Access Private Access, while the Cisco Secure Client - Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Private Access. Web and DNS traffic is protected by Cisco Secure Internet Access.
+In this scenario, both clients handle traffic for separate private applications. Global Secure Access handles private applications in Microsoft Entra Private Access, while the Cisco Secure Client - Zero Trust Access module handles private applications in Cisco Secure Private Access. Web and DNS traffic is protected by Cisco Secure Internet Access.
 
 3.  **[Microsoft Access with Cisco Secure Internet Access and Cisco Secure Private Access](#3-microsoft-access-with-cisco-secure-internet-access-and-cisco-secure-private-access).**
 Global Secure Access manages all Microsoft 365 traffic. The Cisco Secure Client - Zero Trust Network Access (ZTNA) module handles private applications in Cisco Secure Private Access. Web and DNS traffic is protected by Cisco Secure Internet Access.
