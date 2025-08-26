@@ -174,7 +174,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 **Cisco Secure Access configuration**
 
 - Configure required destinations to bypass Internet Security. For instructions, see [Bypass Global Secure Access IP's and FQDN's in Cisco Secure Access / Umbrella](#bypass-global-secure-access-ips-and-fqdns-in-cisco-secure-accessumbrella) and select the tab for **Cisco Secure Access portal** or **Umbrella portal**.
-2. Deploy and configure Cisco Secure Client with Umbrella module.
+- Deploy and configure Cisco Secure Client with Umbrella module.
 
 **Validation**
   - Ensure both clients are enabled and the Umbrella profile is `Active`.
