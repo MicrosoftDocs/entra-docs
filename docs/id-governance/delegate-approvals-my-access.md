@@ -10,7 +10,7 @@ ms.date: 08/26/2025
 #CustomerIntent: As an access package approver, I want to delegate approvals so that designated individuals can approve when I am not available to.
 ---
 
-# Delegate Approvals in My Access (Preview)
+# Delegate approvals in My Access (Preview)
 
 Approval delegation in My Access allows approvers to assign another individual to respond to access package approval requests on their behalf. This feature helps maintain productivity when approvers are unavailable due to leave, travel, or other commitments.
 
