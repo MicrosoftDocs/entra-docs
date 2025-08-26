@@ -6,92 +6,71 @@
     href: overview.md
   - name: Secretless authentication to Azure resources
     href: secretless-authentication.md
-- name: Quickstart guide
-  items:
-  - name: Use a VM managed identity to access Azure Resource Manager
-    href: tutorial-windows-vm-access.md
-- name: Tutorials
-  items:
-  - name: Use a Windows VM/VMSS to access Azure resources
-    href: tutorial-windows-managed-identities-vm-access.md
-  - name: Use a Linux VM/VMSS to access Azure resources
-    href: tutorial-linux-managed-identities-vm-access.md
-  - name: Access Azure Container Registry
-    href: /azure/container-registry/container-registry-authentication-managed-identity?context=/entra/identity/managed-identities-azure-resources/context/msi-context.json
-  - name: Access Azure Cosmos DB
-    href: tutorial-vm-managed-identities-cosmos.md
-  - name: Azure Service Bus
-    href: /azure/service-bus-messaging/service-bus-managed-service-identity?context=/entra/identity/managed-identities-azure-resources/context/msi-context.json
-  - name: Azure App Service and Functions
-    href: /azure/app-service/overview-managed-identity?context=/entra/identity/managed-identities-azure-resources/context/msi-context.json
-  - name: Azure Event Hubs
-    href: /azure/event-hubs/authenticate-managed-identity?context=/entra/identity/managed-identities-azure-resources/context/msi-context.json
-  - name: Azure Container Instances
-    href: /azure/container-instances/container-instances-managed-identity?context=/entra/identity/managed-identities-azure-resources/context/msi-context.json
 - name: Concepts
   items:
     - name: Developer introduction and guidelines
-      href: overview-for-developers.md  
-    - name: Managed identities and Azure VMs
-      href: how-managed-identities-work-vm.md
+      href: overview-for-developers.md 
     - name: Best practice recommendations
       href: managed-identity-best-practice-recommendations.md
     - name: Isolation scope for user-assigned managed identities
       href: managed-identities-isolation-scope.md
 - name: How-to guides
   items:
-  - name: Configure managed identities
-    items:
+    - name: Manage user-assigned managed identities
+      href: how-manage-user-assigned-managed-identities.md
+    - name: Acquire an access token
+      href: how-to-use-vm-token.md
+    - name: Grant a managed identity access to Azure resources
+      href: how-to-assign-access-azure-resource.md
+    - name: Configure an Entra app to trust a managed identity
+      href: /entra/workload-id/workload-identity-federation-config-app-trust-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
+    - name: Use Azure Resources Extension for VS Code
+      href: azure-resources-extension-managed-identities.md
+    - name: Assign an app role to a managed identity
+      href: how-to-assign-app-role-managed-identity.md
+    - name: View associated resources for a managed identity
+      href: how-to-view-associated-resources-for-an-identity.md
+    - name: View managed identity activity
+      href: how-to-view-managed-identity-activity.md
+    - name: Configure isolation scope
+      href: configure-managed-identities-isolation-scope.md
+    - name: Assign managed identities using Azure Policy (preview)
+      href: how-to-assign-managed-identity-via-azure-policy.md
+    - name: Relocate a managed identity to another region
+      href: /azure/operational-excellence/relocation-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
+- name: Azure Virtual Machines (Azure VMs)
+  items:
+    - name: Managed identities and Azure VMs
+      href: how-managed-identities-work-vm.md
+    - name: Use a VM managed identity to access Azure Resource Manager
+      href: tutorial-windows-vm-access.md
     - name: Configure managed identities on Azure VMs
       href: how-to-configure-managed-identities.md
     - name: Configure managed identities on VM scale sets
       href: how-to-configure-managed-identities-scale-sets.md
-    - name: Assign managed identities using Azure Policy (preview)
-      href: how-to-assign-managed-identity-via-azure-policy.md
-    - name: Configure isolation scope
-      href: configure-managed-identities-isolation-scope.md
-    - name: Configure an application to trust a managed identity (preview)
-      href: /entra/workload-id/workload-identity-federation-config-app-trust-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
-  - name: Maintain managed identities
-    items:
-    - name: Acquire an access token
-      href: how-to-use-vm-token.md
+    - name: Use a Windows VM/VMSS to access Azure resources
+      href: tutorial-windows-managed-identities-vm-access.md
+    - name: Use a Linux VM/VMSS to access Azure resources
+      href: tutorial-linux-managed-identities-vm-access.md
+    - name: Access Azure Cosmos DB
+      href: tutorial-vm-managed-identities-cosmos.md
     - name: Sign to PowerShell and CLI using managed identity
       href: how-to-use-vm-sign-in.md
     - name: Sign in using managed identities for Azure resources
       href: how-to-use-vm-sdk.md
-    - name: Assign a managed identity access to Azure resources
-      href: how-to-assign-access-azure-resource.md
-    - name: Assign a managed identity to an app role
-      href: how-to-assign-app-role-managed-identity.md
-    - name: Manage user-assigned managed identities
-      href: how-manage-user-assigned-managed-identities.md
-    - name: View associated resources for a managed identity
-      href: how-to-view-associated-resources-for-an-identity.md
-    - name: View managed identity service principals
-      href: how-to-view-managed-identity-service-principal.md
-    - name: View managed identity activity
-      href: how-to-view-managed-identity-activity.md
-    - name: Relocate a managed identity to another region
-      href: /azure/operational-excellence/relocation-managed-identity?toc=/entra/identity/managed-identities-azure-resources/toc.json
-  - name: Use Azure Resources Extension for VS Code
-    href: azure-resources-extension-managed-identities.md
 - name: Reference
   items:
-  - name: Client libraries
-    href: reference-managed-identity-libraries.md
-  - name: Glossary
-    href: managed-identities-glossary.md
-- name: Resources
-  items:
-  - name: Frequently asked questions
-    href: managed-identities-faq.md
-  - name: Known issues
-    href: known-issues.md
-  - name: Azure services that support managed identities for Azure resources
-    href: managed-identities-status.md  
-  - name: Stack Overflow
-    href: https://stackoverflow.com/questions/tagged/azure-managed-identity
-  - name: Microsoft Entra Developers forum
-    href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?c=3abf25c9-ad25-ec11-b6e6-000d3a4f0789#
-    
+    - name: Client libraries
+      href: reference-managed-identity-libraries.md
+    - name: Glossary
+      href: managed-identities-glossary.md
+    - name: Frequently asked questions
+      href: managed-identities-faq.md
+    - name: Known issues
+      href: known-issues.md
+    - name: Azure services that support managed identities for Azure resources
+      href: managed-identities-status.md
+    - name: Stack Overflow
+      href: https://stackoverflow.com/questions/tagged/azure-managed-identity
+    - name: Microsoft Entra Developers forum
+      href: https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789?c=3abf25c9-ad25-ec11-b6e6-000d3a4f0789#
