@@ -60,7 +60,7 @@ To configure Cisco Umbrella:
 3. **Deploy and install the Cisco Secure Client.**  
     
   > [!IMPORTANT]
-  > Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation, or re-installation, of CSC version 5.1.10.x (or later).
+  > Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation, or re-installation (not required to run again when upgrading), of CSC version 5.1.10.x (or later). 
   > 1. Install Cisco Secure Client version 5.1.10.x.
   > 1. Open CMD prompt as an administrator and run these commands:
   > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
