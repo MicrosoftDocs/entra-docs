@@ -39,6 +39,16 @@ Today we’re announcing that Platform SSO for macOS is Generally Available with
 
 ---
 
+### General Availability - Enabling native authentication JavaScript SDK for sign-in, sign-up and sign-out experiences in Entra External ID.
+
+**Type:** New feature  
+**Service category:** B2C - Consumer Identity Management  
+**Product capability:** Developer Experience  
+
+Build sign-in, sign-up, and sign-out experiences for single page applications in Microsoft Entra External ID with new native authentication [JavaScript SDK](../identity-platform/quickstart-native-authentication-single-page-app-sdk-sign-in.md).
+
+---
+
 ### General Availability - QR + PIN Simple Auth method for FLW
 
 **Type:** New feature  
