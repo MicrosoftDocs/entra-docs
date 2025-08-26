@@ -137,7 +137,7 @@ For the OIDC document with the values for Provider Metadata, see [Provider Metad
 
 | Metadata value        | Value  | Comments |
 |-----------------------|--------|----------|
-| Issuer                |        | This URL should match both the host URL used for discovery and the iss claim in the tokens issued by the provider’s service. |
+| Issuer                |        | This URL must match both the host URL used for discovery and the iss claim in the tokens issued by the provider’s service. |
 | authorization_endpoint |        | The endpoint that Microsoft Entra ID communicates with for authorization. This endpoint must be present as one of the reply URLs for the allowed applications. |
 | jwks_uri               |        | Where Microsoft Entra ID can find the public keys needed to verify the signatures issued by the provider. <br>[!NOTE]<br>The JSON Web Key (JWK) **x5c** parameter must be present to provide X.509 representations of keys provided. |
 | scopes_supported       | openid | Other values may also be included but aren't required. |
