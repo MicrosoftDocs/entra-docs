@@ -268,7 +268,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 - Install and configure the Global Secure Access client for Windows or macOS.
 
 **Cisco configuration:**
-- Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration) or [tunnel all](#tunnel-all-networks-with-dynamic-exclusions) configuration, as described previously.
+- Configure Cisco ASA remote access VPN connection profile for [split-include](#split-include-configuration-asa) or [tunnel all](#tunnel-all-networks-with-dynamic-exclusions) configuration, as described previously.
 - Install Cisco Secure Client software.
 - Connect to your VPN endpoint.
 
