@@ -309,6 +309,8 @@
       items:
       - name: Approve requests
         href: entitlement-management-request-approve.md
+      - name: Delegate approvers (Preview)
+        href: delegate-approvals-my-access.md
     - name: Requestors
       items:
       - name: Request access
