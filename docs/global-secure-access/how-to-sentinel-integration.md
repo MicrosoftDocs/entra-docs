@@ -29,24 +29,27 @@ To integrate Global Secure Access with Microsoft Sentinel, you must have:
 
 ## Configure Microsoft Entra diagnostic settings
 
-To configure Microsoft Entra diagnostic settings so Global Secure Access can stream data in your Log analytics workspace:
+To configure Microsoft Entra diagnostic settings so Global Secure Access can stream data to your Log analytics workspace:
 
-1. Navigate to Identity → Monitoring & Health → Diagnostic Settings. 
-1. Click Add Diagnostic Setting. 
-1. Select Log Categories: 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Browse to **Entra ID** > **Monitoring & health** > **Diagnostic settings**. The General settings appear by default.
+1. Select **Add diagnostic setting** to create a new setting.
+1. Enter a **Diagnostic setting name**.
+1. In the **Logs** section, select the following **Categories**: 
    - NetworkAccessTrafficLogs 
-   - NetworkAccessConnectionEvents 
-   - NetworkAccessAlerts 
-   - RemoteNetworkHealthLogs 
-1. Destination: Send to Log Analytics workspace (select your Sentinel workspace) 
-1. Save.
+   - RemoteNetworkHealthLogs
+   - NetworkAccessAlerts
+   - NetworkAccessConnectionEvents  
+1. In the **Destination details** section, select **Send to Log Analytics workspace**.
+1. From the **Log Analytics workspace** menu, select your Sentinel workspace. 
+1. Select **Save**.
+:::image type="content" source="media/how-to-sentinel-integration/diagnostic-settings.png" alt-text="Screenshot of the Diagnostic setting screen showing the selected log categories and destination details.":::
 
 ## Install the Global Secure Access solution from the Sentinel Content hub
 
 1. In the Microsoft Sentinel portal, go to the Content hub.
 1. Search for the Global Secure Access solution.
-1. Click Install to add the solution to your workspace.
-1. 
+1. Click Install to add the solution to your workspace. 
 
 ## Validate the data flow
 
@@ -68,4 +71,5 @@ Note: tables are created when data is ingested into the Log Analytics workspace.
 ## Related content
 
 - [What is Microsoft Sentinel?](/azure/sentinel/overview)
+- [Configure Microsoft Entra diagnostic settings for activity logs](../identity/monitoring-health/howto-configure-diagnostic-settings.md)
 - Related article title
