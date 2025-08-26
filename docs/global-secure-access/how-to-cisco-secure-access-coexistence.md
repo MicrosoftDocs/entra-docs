@@ -12,7 +12,7 @@ ms.reviewer: shkhalid
 ai-usage: ai-assisted
 ---
 
-# Security Service Edge (SSE) coexistence with Global Secure Access and Cisco Secure Access
+# Security Service Edge (SSE) coexistence with Microsoft and Cisco Secure Access
 
 Learn how to configure Security Service Edge (SSE) coexistence using Global Secure Access and Cisco Secure Access.
 
