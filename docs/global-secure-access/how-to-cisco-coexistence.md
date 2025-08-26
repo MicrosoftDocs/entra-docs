@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: conceptual
-ms.date: 08/25/2025
+ms.date: 08/26/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -91,9 +91,9 @@ To configure Cisco Umbrella:
   > Cisco Umbrella supports implied wildcards, so you can use `globalsecureaccess.microsoft.com`.
 
 2. Add these Microsoft FQDNs (only required if Microsoft traffic forwarding profile is enabled):
-    ```
+```
     auth.microsoft.com, msftidentity.com, msidentity.com, onmicrosoft.com, outlook.com, protection.outlook.com, sharepoint.com, sharepointonline.com, svc.ms, wns.windows.com, account.activedirectory.windowsazure.com, accounts.accesscontrol.windows.net, admin.onedrive.com, adminwebservice.microsoftonline.com, api.passwordreset.microsoftonline.com, autologon.microsoftazuread-sso.com, becws.microsoftonline.com, ccs.login.microsoftonline.com, clientconfig.microsoftonline-p.net, companymanager.microsoftonline.com, device.login.microsoftonline.com, g.live.com, graph.microsoft.com, graph.windows.net, login-us.microsoftonline.com, login.microsoft.com, login.microsoftonline-p.com, login.microsoftonline.com, login.windows.net, logincert.microsoftonline.com, loginex.microsoftonline.com, nexus.microsoftonline-p.com, officeclient.microsoft.com, oneclient.sfx.ms, outlook.cloud.microsoft, outlook.office.com, outlook.office365.com, passwordreset.microsoftonline.com, provisioningapi.microsoftonline.com, spoprod-a.akamaihd.net
-    ```
+```
   3. Add the Quick Access FQDN. `<quickaccessapplicationid>.globalsecureaccess.local`
    
   > [!NOTE]
