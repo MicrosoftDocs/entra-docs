@@ -197,7 +197,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 > [!NOTE]
 > At this time, split-**exclude** isn't a supported coexistence configuration (ASA)
 
-#### Tunnel All Networks with dynamic exclusions
+#### Tunnel All Networks with dynamic exclusions configuration
 > [!IMPORTANT]
 > **Known limitation:** If the Secure Client Profile Host Address is configured as a fully qualified domain name (FQDN) and the Global Secure Access (GSA) client connects first, the Cisco Secure Client will lose connection shortly after authenticating.  
 >  
