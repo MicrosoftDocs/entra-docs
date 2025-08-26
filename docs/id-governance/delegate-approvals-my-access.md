@@ -5,7 +5,7 @@ author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 08/11/2025
+ms.date: 08/26/2025
 
 #CustomerIntent: As an access package approver, I want to delegate approvals so that designated individuals can approve when I am not available to.
 ---
