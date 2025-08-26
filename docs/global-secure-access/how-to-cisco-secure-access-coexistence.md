@@ -62,7 +62,7 @@ To configure Global Secure Access and Cisco Secure Access for a unified SASE sol
 - **Install and configure the Cisco Secure Client**. See Cisco documentation for [downloading and installing the client for Windows and macOS](https://docs.sse.cisco.com/sse-user-guide/docs/manual-installation-of-cisco-secure-client-windows-and-macos).
 
 > [!IMPORTANT]
-  > Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation, or re-installation, of CSC version 5.1.10.x (or later).
+  > Cisco released a Cisco Secure Client (CSC) feature to improve coexistence with Global Secure Access. These steps need to be performed after the initial installation, or re-installation (not required to run again when upgrading), of CSC version 5.1.10.x (or later).
   > 1. Install Cisco Secure Client version 5.1.10.x.
   > 1. Open CMD prompt as an administrator and run these commands:
   > 1. `"%ProgramFiles(x86)%\Cisco\Cisco Secure Client\acsocktool.exe" -slwm 10`
