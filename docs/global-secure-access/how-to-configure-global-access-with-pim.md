@@ -33,7 +33,7 @@ Customers should consider configuring PIM using Global Secure Access to enable:
 
 ## Prerequisites 
 
-- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/whatis.md)
+- [Microsoft Entra ID license that includes Privileged Identity Management (PIM)](~/fundamentals/licensing.md)
 - [Microsoft Entra Private Access](concept-private-access.md)
 
 ## Secure private access 

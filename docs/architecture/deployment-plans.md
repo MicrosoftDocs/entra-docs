@@ -12,7 +12,7 @@ ms.author: gasinh
 
 # Microsoft Entra deployment plans
 
-Azure Active Directory is now [Microsoft Entra ID](~/fundamentals/whatis.md), which can safeguard your organization with cloud identity and access management. The solution connects employees, customers, and partners to their apps, devices, and data.
+Azure Active Directory is now [Microsoft Entra ID](~/fundamentals/what-is-entra.md), which can safeguard your organization with cloud identity and access management. The solution connects employees, customers, and partners to their apps, devices, and data.
 
 Use this article's guidance to help build your plan to deploy Microsoft Entra ID. Learn about plan-building basics and then use the following sections for authentication deployment, apps and devices, hybrid scenarios, user identity, and more.
 
