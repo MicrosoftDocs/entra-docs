@@ -203,7 +203,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
 >  
 > To avoid this issue, verify the Host Address setting in Cisco ASDM:
 > 1. Go to **Remote Access VPN > Network (Client) Access > Secure Client Profile > “ProfileName” > Server List**.
-> 2. Ensure the **Host Address** is set to an IP address, not an FQDN.
+> 2. Ensure the **Host Address** is set to an **IP address**, not an FQDN.
 
 1. Sign in to Cisco ASA through ASDM software.
 2. Go to **Configuration > Remote Access VPN > Network (Client) Access > Advanced > Secure Client Custom Attributes > Add**.
