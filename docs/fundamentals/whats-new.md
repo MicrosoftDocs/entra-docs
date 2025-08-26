@@ -24,7 +24,7 @@ This article provides information about the latest releases and change announcem
 
 ## August 2025
 
-### General Availability - Platform SSO for macOS with Entra ID
+### General Availability - Platform SSO for macOS with Microsoft Entra ID
 
 **Type:** New feature  
 **Service category:** Authentications (Logins)  
@@ -39,7 +39,7 @@ Today we’re announcing that Platform SSO for macOS is Generally Available with
 
 ---
 
-### General Availability - Enabling native authentication JavaScript SDK for sign-in, sign-up and sign-out experiences in Entra External ID.
+### General Availability - Enabling native authentication JavaScript SDK for sign-in, sign-up and sign-out experiences in Microsoft Entra External ID.
 
 **Type:** New feature  
 **Service category:** B2C - Consumer Identity Management  
