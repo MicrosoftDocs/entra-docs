@@ -70,7 +70,7 @@ To configure Microsoft and Cisco Secure Access VPNaaS for a unified SASE solutio
   2. Select your VPN Profile, then **Traffic Steering**.
   3. In Tunnel Mode, select **Bypass Secure Access** and add exceptions for your private application subnets and the synthetic IP range, `6.6.0.0/16`.
   4. In DNS Mode, select **Split DNS** and add the domain suffix of your private applications.
-- Install the Cisco Secure Client software. See [Cisco Secure Client Download and Installation guide](https://docs.cisco.com/secure-client-download).
+- Install the Cisco Secure Client software.
 
 > [!NOTE]
 > Currently **Split-Include** is the only supported Cisco Secure Access VPNaaS configuration. Other coexistence configurations may be added as they are validated.
