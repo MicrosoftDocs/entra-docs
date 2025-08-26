@@ -2,13 +2,13 @@
 title: 'What is the Microsoft Entra Connect Administration Agent - Microsoft Entra Connect'
 description: Describes the tools that are used to synchronize and monitor your on-premises environment with Microsoft Entra ID.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: overview
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

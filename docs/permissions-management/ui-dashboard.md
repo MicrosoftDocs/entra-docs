@@ -2,18 +2,21 @@
 title: View key statistics and data about your authorization system in Permissions Management
 description: How to view statistics and data about your authorization system in the Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 02/23/2022
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 
 # View key statistics and data about your authorization system
 
-Permissions Management provides a summary of key statistics and data about your authorization system regularly. This information is available for Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
+
+Permissions Management provides a summary of key statistics and data about your authorization system. This information is available for Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
 
 :::image type="content" source="media/ui-dashboard/ui-dashboard.png" alt-text="An example of the Permissions Management dashboard, highlighting key statistics to investigate." lightbox="media/ui-dashboard/ui-dashboard.png":::
 

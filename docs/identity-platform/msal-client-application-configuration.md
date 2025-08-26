@@ -2,14 +2,13 @@
 title: Client application configuration (MSAL)
 description: Learn about configuration options for public client and confidential client applications using the Microsoft Authentication Library (MSAL).
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: has-adal-ref
-ms.date: 08/11/2023
-ms.reviewer: saeeda
+ms.date: 05/14/2025
+ms.reviewer: 
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-image-nochange
 #Customer intent: As an application developer, I want to learn about the types of client applications so I can decide if this platform meets my app development needs.
 ---
 
@@ -22,6 +21,8 @@ To authenticate and acquire tokens, you initialize a new public or confidential 
   - [Client ID](#client-id)
   - [Redirect URI](#redirect-uri)
   - [Client secret](#client-secret) (for confidential client applications)
+  - [Certificate](#certificate) (for confidential client applications)
+  - [Federated identity credentials](#federated-identity-credentials) (for confidential client applications)
 - [Logging options](#logging), including log level, control of personal data, and the name of the component using the library
 
 ## Authority
@@ -30,12 +31,12 @@ The authority is a URL that indicates a directory that MSAL can request tokens f
 
 Common authorities are:
 
-| Common authority URLs                              | When to use                                                                                                                                                               |
-| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Common authority URLs | When to use |
+| ------------------ | ------------------ |
 | `https://login.microsoftonline.com/<tenant>/`      | Sign in users of a specific organization only. The `<tenant>` in the URL is the tenant ID of the Microsoft Entra tenant (a GUID), or its tenant domain. |
-| `https://login.microsoftonline.com/common/`        | Sign in users with work and school accounts or personal Microsoft accounts.                                                                                               |
-| `https://login.microsoftonline.com/organizations/` | Sign in users with work and school accounts.                                                                                                                              |
-| `https://login.microsoftonline.com/consumers/`     | Sign in users with personal Microsoft accounts (MSA) only.                                                                                                                |
+| `https://login.microsoftonline.com/common/`        | Sign in users with work and school accounts or personal Microsoft accounts. |
+| `https://login.microsoftonline.com/organizations/` | Sign in users with work and school accounts. |
+| `https://login.microsoftonline.com/consumers/`     | Sign in users with personal Microsoft accounts (MSA) only. |
 
 The authority you specify in your code needs to be consistent with the **Supported account types** you specified for the app in **App registrations** in the Azure portal.
 
@@ -47,8 +48,8 @@ The authority can be:
 
 Microsoft Entra cloud authorities have two parts:
 
-- The identity provider _instance_
-- The sign-in _audience_ for the app
+- The identity provider *instance*
+- The sign-in *audience* for the app
 
 The instance and audience can be concatenated and provided as the authority URL. This diagram shows how the authority URL is composed:
 
@@ -56,17 +57,17 @@ The instance and audience can be concatenated and provided as the authority URL.
 
 ## Cloud instance
 
-The _instance_ is used to specify if your app is signing users from the Azure public cloud or from national clouds. Using MSAL in your code, you can set the Azure cloud instance by using an enumeration or by passing the URL to the [national cloud instance](authentication-national-cloud.md#azure-ad-authentication-endpoints) as the `Instance` member.
+The *instance* is used to specify if your app is signing users from the Azure public cloud or from national clouds. Using MSAL in your code, you can set the Azure cloud instance by using an enumeration or by passing the URL to the [national cloud instance](authentication-national-cloud.md#azure-ad-authentication-endpoints) as the `Instance` member.
 
-MSAL.NET will throw an explicit exception if both `Instance` and `AzureCloudInstance` are specified.
+MSAL.NET throws an explicit exception if both `Instance` and `AzureCloudInstance` are specified.
 
-If you don't specify an instance, your app will target the Azure public cloud instance (the instance of URL `https://login.onmicrosoftonline.com`).
+If you don't specify an instance, your app targets the Azure public cloud instance (the instance of URL `https://login.onmicrosoftonline.com`).
 
 ## Application audience
 
 The sign-in audience depends on the business needs for your app:
 
-- If you're a line of business (LOB) developer, you'll probably produce a single-tenant application that will be used only in your organization. In that case, specify the organization by its tenant ID (the ID of your Microsoft Entra instance) or by a domain name associated with the Microsoft Entra instance.
+- If you're a line of business (LOB) developer, you'll probably produce a single-tenant application that is used only in your organization. In that case, specify the organization by its tenant ID (the ID of your Microsoft Entra instance) or by a domain name associated with the Microsoft Entra instance.
 - If you're an ISV, you might want to sign in users with their work and school accounts in any organization or in some organizations (multitenant app). But you might also want to have users sign in with their personal Microsoft accounts.
 
 ### How to specify the audience in your code/configuration
@@ -82,9 +83,9 @@ Using MSAL in your code, you specify the audience by using one of the following 
   - `consumers` to sign in users only with their personal accounts
   - `common` to sign in users with their work and school accounts or their personal Microsoft accounts
 
-MSAL will throw a meaningful exception if you specify both the Microsoft Entra authority audience and the tenant ID.
+MSAL throws a meaningful exception if you specify both the Microsoft Entra authority audience and the tenant ID.
 
-It is recommended to specify an audience, as many tenants, and the applications deployed in them will have guest users. If your application will have external users, the endpoints of `common` and `organization` are best avoided. If you don't specify an audience, your app will target Microsoft Entra ID and personal Microsoft accounts as an audience and will behave as though `common` were specified.
+It's recommended to specify an audience, because many tenants, and applications deployed in them will have guest users. If your application is intended for external users, avoid the `common` and `organization` endpoints. If you don't specify an audience, your app targets Microsoft Entra ID and personal Microsoft accounts as an audience and will behave as though `common` were specified.
 
 ### Effective audience
 
@@ -97,37 +98,39 @@ Currently, the only way to get an app to sign in users with only personal Micros
 
 ## Client ID
 
-The client ID is the unique **Application (client) ID** assigned to your app by Microsoft Entra ID when the app was registered. You can find the **Application (Client) ID** on the Overview page for the application in **Identity** > **Applications** > **Enterprise applications**.
+The client ID is the unique **Application (client) ID** assigned to your app by Microsoft Entra ID when the app was registered. You can find the **Application (Client) ID** on the Overview page for the application in **Entra ID** > **Enterprise apps**.
 
 ## Redirect URI
 
-The redirect URI is the URI the identity provider will send the security tokens back to.
+The redirect URI is the URI the identity provider sends the security tokens back to.
 
 ### Redirect URI for public client apps
 
 If you're a public client app developer who's using MSAL:
 
-- You'd want to use `.WithDefaultRedirectUri()` in desktop or Universal Windows Platform (UWP) applications (MSAL.NET 4.1+). The `.WithDefaultRedirectUri()` method will set the public client application's redirect URI property to the default recommended redirect URI for public client applications.
+- You'd want to use `.WithDefaultRedirectUri()` in desktop applications (MSAL.NET 4.1+). The `.WithDefaultRedirectUri()` method sets the public client application's redirect URI property to the default recommended redirect URI for public client applications.
 
-  | Platform              | Redirect URI                                                                                                                                                                                                                                           |
-  | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-  | Desktop app (.NET Framework) | `https://login.microsoftonline.com/common/oauth2/nativeclient`                                                                                                                                                                                         |
-  | UWP                   | value of `WebAuthenticationBroker.GetCurrentApplicationCallbackUri()`. This enables single sign-on (SSO) with the browser by setting the value to the result of WebAuthenticationBroker.GetCurrentApplicationCallbackUri(), which you need to register |
-  | .NET             | `https://localhost` enables the user to use the system browser for interactive authentication since .NET doesn't have a UI for the embedded web view at the moment.                                                                               |
-
-- You don't need to add a redirect URI if you're building a Xamarin Android and iOS application that doesn't support the broker redirect URI. It's automatically set to `msal{ClientId}://auth` for Xamarin Android and iOS.
-
-- Configure the redirect URI in [App registrations](https://aka.ms/appregistrations):
-
-  ![Redirect URI in App registrations](media/msal-client-application-configuration/redirect-uri.png)
+  | Platform | Redirect URI |
+  | ---------------- | ---------------- |
+  | Desktop app (.NET Framework) | `https://login.microsoftonline.com/common/oauth2/nativeclient` |
+  | UWP | value of `WebAuthenticationBroker.GetCurrentApplicationCallbackUri()`. This enables single sign-on (SSO) with the browser by setting the value to the result of WebAuthenticationBroker.GetCurrentApplicationCallbackUri(), which you need to register |
+  | .NET | `https://localhost` enables the user to use the system browser for interactive authentication since .NET doesn't have a UI for the embedded web view at the moment. |
 
 You can override the redirect URI by using the `RedirectUri` property (for example, if you use brokers). Here are some examples of redirect URIs for that scenario:
 
-- `RedirectUriOnAndroid` = "msauth-5a434691-ccb2-4fd1-b97b-b64bcfbc03fc://com.microsoft.identity.client.sample";
-- `RedirectUriOnIos` = $"msauth.{Bundle.ID}://auth";
+- `RedirectUriOnAndroid` = `"msauth-00001111-aaaa-2222-bbbb-3333cccc4444://com.microsoft.identity.client.sample";`
+- `RedirectUriOnIos` = `$"msauth.{Bundle.ID}://auth";`
 
-For more iOS details, see [Migrate iOS applications that use Microsoft Authenticator from ADAL.NET to MSAL.NET](msal-net-migration-ios-broker.md) and [Leveraging the broker on iOS](msal-net-use-brokers-with-xamarin-apps.md).
 For more Android details, see [Brokered auth in Android](msal-android-single-sign-on.md).
+
+- When building an app using MSAL Android, you can configure the `redirect_uri` during the initial [App registration](https://aka.ms/appregistrations) step or add it afterward. 
+  - The format of the redirect URI is: `msauth://<yourpackagename>/<base64urlencodedsignature>`
+  - Example: `redirect_uri` = `msauth://com.azuresamples.myapp/6/aB1cD2eF3gH4iJ5kL6-mN7oP8qR=`
+- To find more details on the MSAL Android app configuration, refer to [MSAL Android configuration](msal-configuration.md). 
+
+- Configure the redirect URI in [App registrations](https://aka.ms/appregistrations):
+
+    :::image type="content" source="media/msal-client-application-configuration/redirect-uri.png" alt-text="Screenshot showing the Redirect URI pane and options on the App registrations page.":::
 
 ### Redirect URI for confidential client apps
 
@@ -135,7 +138,19 @@ For web apps, the redirect URI (or reply URL) is the URI that Microsoft Entra ID
 
 For daemon apps, you don't need to specify a redirect URI.
 
-## Client secret
+## Application credentials
+
+For confidential client applications, managing credentials effectively is essential. The credentials can be federated credentials (recommended), a certificate, or a client secret. 
+
+### Federated identity credentials
+
+Federated identity credentials are a type of credential that allows workloads, such as GitHub Actions, workloads running on Kubernetes, or workloads running in compute platforms outside of Azure access Microsoft Entra protected resources without needing to manage secrets using [workload identity federation](~/workload-id/workload-identity-federation.md).
+
+### Certificate
+
+This option specifies the certificate for the confidential client app. Sometimes called a *public key*, a certificate is the recommended credential type because they're considered more secure than client secrets. 
+
+### Client secret
 
 This option specifies the client secret for the confidential client app. The client secret (app password) is provided by the application registration portal or provided to Microsoft Entra ID during app registration with PowerShell Microsoft Entra ID, PowerShell AzureRM, or Azure CLI.
 
@@ -150,7 +165,7 @@ To help in debugging and authentication failure troubleshooting scenarios, the M
         - [Logging in MSAL.js](msal-logging-js.md)
     :::column-end:::
     :::column:::
-        - [Logging in MSAL for iOS/macOS](msal-logging-ios.md)
+        - [Logging in MSAL for iOS/macOS](/entra/msal/objc/logging-ios)
         - [Logging in MSAL for Java](/entra/msal/java/advanced/msal-logging-java)
         - [Logging in MSAL for Python](/entra/msal/python/advanced/msal-logging-python)
     :::column-end:::

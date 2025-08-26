@@ -2,15 +2,18 @@
 title: View existing roles/policies and requests for permission in the Remediation dashboard in Permissions Management
 description: How to view existing roles/policies and requests for permission in the Remediation dashboard in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # View roles/policies and requests for permission in the Remediation dashboard
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 The **Remediation** dashboard in Permissions Management provides an overview of roles/policies, permissions, a list of existing requests for permissions, and requests for permissions you have made.
 
@@ -79,7 +82,7 @@ The **Permissions** subtab provides the following settings that you can use to a
 - **Authorization System**: Displays a list of authorization systems accounts you can access.
 - **Search For**: A dropdown from which you can select **Group**, **User**, or **Role**.
 - **User Status**: A dropdown from which you can select **Any**, **Active**, or **Inactive**.
-- **Privilege Creep Index** (PCI): A dropdown from which you can select a PCI rating of **Any**, **High**, **Medium**, or **Low**.
+- **Privilege Creep Index (PCI)**: A dropdown from which you can select a PCI rating of **Any**, **High**, **Medium**, or **Low**.
 - **Task Usage**: A dropdown from which you can select **Any**, **Granted**, **Used**, or **Unused**.
 - **Enter a Username**: A dropdown from which you can select a username.
 - **Enter a Group Name**: A dropdown from which you can select a group name.

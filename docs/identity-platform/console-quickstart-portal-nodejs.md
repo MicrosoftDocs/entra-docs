@@ -5,8 +5,8 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: mode-api, devx-track-js
-ms.date: 08/22/2022
+ms.custom: mode-api
+ms.date: 09/24/2024
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -55,7 +55,6 @@ ms.topic: concept-article
 > 
 > #### Step 3: Admin consent
 > 
-> If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires **admin consent**: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
 > 
 > ##### Global tenant administrator
 > 
@@ -93,7 +92,7 @@ ms.topic: concept-article
 > 
 > ### MSAL Node
 > 
-> [MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by application permissions (using the application's own identity) instead of delegated permissions. The authentication flow used in this case is known as [OAuth 2.0 client credentials flow](v2-oauth2-client-creds-grant-flow.md). For more information on how to use MSAL Node with daemon apps, see [Scenario: Daemon application](scenario-daemon-overview.md).
+> [MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) is the library used to sign in users and request tokens used to access an API protected by Microsoft identity platform. As described, this quickstart requests tokens by application permissions (using the application's own identity) instead of delegated permissions. The authentication flow used in this case is known as [OAuth 2.0 client credentials flow](v2-oauth2-client-creds-grant-flow.md). For more information on how to use MSAL Node with daemon apps, see [Scenario: Daemon application](scenario-daemon-app-registration.md).
 > 
 >  You can install MSAL Node by running the following npm command.
 > 

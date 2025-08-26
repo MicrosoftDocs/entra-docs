@@ -1,20 +1,20 @@
 ---
 title: What is group-based licensing
-description: Learn about Microsoft Entra group-based licensing, including how it works, key features, and best practices.
-keywords: Azure AD licensing
+description: Learn about Microsoft Entra group-based licensing, including how it works,
+  key features, and best practices.
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
-ms.date: 09/28/2023
+ms.topic: concept-article
+ms.date: 01/31/2025
 ms.author: barclayn
 ms.reviewer: krbain
-# Customer intent: As an IT admin, I want to understand group-based licensing, so I can effectively assign licenses to users in my organization.
 ---
 
 # What is group-based licensing in Microsoft Entra ID?
+
+[!INCLUDE [licensing updates](~/includes/licensing-change.md)]
 
 Microsoft paid cloud services, such as Microsoft 365, Enterprise Mobility + Security, Dynamics 365, and other similar products, require licenses. These licenses are assigned to each user who needs access to these services. To manage licenses, administrators use one of the management portals (Office or Azure) and PowerShell cmdlets. Microsoft Entra ID is the underlying infrastructure that supports identity management for all Microsoft Cloud services. Microsoft Entra ID stores information about license assignment states for users.
 
@@ -24,9 +24,9 @@ Microsoft Entra ID includes group-based licensing, which allows you to assign on
 
 You must have one of the following licenses **for every user who benefits from** group-based licensing:
 
-- Paid or trial subscription for Microsoft Entra ID P1 and above
+- Paid or trial subscription for Microsoft Entra ID P1 and higher.
 
-- Paid or trial edition of Microsoft 365 Business Premium or Office 365 Enterprise E3 or Office 365 A3 or Office 365 GCC G3 or Office 365 E3 for GCCH or Office 365 E3 for DOD and above
+- Paid or trial edition of Microsoft 365 Business Premium or Office 365 Enterprise E3 or Office 365 A3 or Office 365 GCC G3 or Office 365 E3 for GCCH or Office 365 E3 for DOD and higher.
 
 ### Required number of licenses
 
@@ -38,7 +38,7 @@ Here are the main features of group-based licensing:
 
 - Licenses can be assigned to any security group in Microsoft Entra ID. Security groups can be synced from on-premises, by using [Microsoft Entra Connect](~/identity/hybrid/connect/whatis-azure-ad-connect.md). You can also create security groups directly in Microsoft Entra ID (also called cloud-only groups), or automatically via the [Microsoft Entra dynamic group feature](~/identity/users/groups-create-rule.md).
 
-- When a product license is assigned to a group, the administrator can disable one or more service plans in the product. Typically, this assignment is done when the organization is not yet ready to start using a service included in a product. For example, the administrator might assign Microsoft 365 to a department, but temporarily disable the Yammer service.
+- When a product license is assigned to a group, the administrator can disable one or more service plans in the product. Typically, this assignment is done when the organization isn't yet ready to start using a service included in a product. For example, the administrator might assign Microsoft 365 to a department, but temporarily disable the Yammer service.
 
 - All Microsoft Cloud services that require user-level licensing are supported. This support includes all Microsoft 365 products, Enterprise Mobility + Security, and Dynamics 365.
 
@@ -46,7 +46,7 @@ Here are the main features of group-based licensing:
 
 - Microsoft Entra ID automatically manages license modifications that result from group membership changes. Typically, license modifications are effective within minutes of a membership change.
 
-- A user can be a member of multiple groups with license policies specified. A user can also have some licenses that were directly assigned, outside of any groups. The resulting user state is a combination of all assigned product and service licenses. If a user is assigned same license from multiple sources, the license will be consumed only once.
+- A user can be a member of multiple groups with license policies specified. A user can also have some licenses that were directly assigned, outside of any groups. The resulting user state is a combination of all assigned product and service licenses. If a user is assigned the same license from multiple sources, the license is consumed only once.
 
 - In some cases, licenses can't be assigned to a user. For example, there might not be enough available licenses in the tenant, or conflicting services might have been assigned at the same time. Administrators have access to information about users for whom Microsoft Entra ID couldn't fully process group licenses. They can then take corrective action based on that information.
 
@@ -63,4 +63,4 @@ To learn more about other scenarios for license management through group-based l
 - [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-migrate-users.md)
 - [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](~/identity/users/licensing-groups-change-licenses.md)
 - [Microsoft Entra group-based licensing additional scenarios](~/identity/users/licensing-group-advanced.md)
-- [PowerShell examples for group-based licensing in Microsoft Entra ID](~/identity/users/licensing-ps-examples.md)
+- [Licensing PowerShell examples](~/identity/users/licensing-powershell-graph-examples.md)

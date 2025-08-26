@@ -1,15 +1,13 @@
 ---
-title: Self-service sign-up for External ID
-description: Learn how to allow external users to sign up for your applications themselves by enabling self-service sign-up. Create a personalized sign-up experience by customizing the self-service sign-up user flow. 
+title: Self-service sign-up
+description: Learn how to enable self-service sign-up for Microsoft Entra External ID. Allow external users to sign up for your applications themselves, customize the sign-up experience, and manage user flows.
 
- 
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 01/23/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.date: 10/21/2024
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 
 ms.collection: M365-identity-device-management
 #customer intent: As a developer building an application for external users, I want to enable self-service sign-up functionality, so that users can easily sign up and access my app without intervention.
@@ -17,9 +15,11 @@ ms.collection: M365-identity-device-management
 
 # Self-service sign-up
 
+[!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
+
 Self-service sign-up is an essential feature for your External ID workforce and customer scenarios. It gives your partners, consumers, and other external users a frictionless way to sign up and get access to your apps without any intervention on your part.
 
-- In a B2B collaboration scenario, you might not always know in advance who will need access to an application you want to share. As an alternative to sending invitations directly to individuals, you can allow external users to sign up for specific applications themselves. Learn how to [create a self-service sign-up user flow for B2B collaboration](self-service-sign-up-user-flow.md).
+- In a B2B collaboration scenario, you might not always know in advance who will need access to an application you want to share. As an alternative to sending invitations directly to individuals, you can allow external users to sign up for specific applications themselves. Learn how to [create a self-service sign-up user flow for B2B collaboration](self-service-sign-up-user-flow.yml).
 - In a customer identity and access management (CIAM) scenario, it's important to add a self-service sign-up experience to the apps you build for consumers. You can do so by configuring self-service sign-up user flows. Learn more about [planning the customer experience](customers/concept-planning-your-solution.md) or [creating a sign-up and sign-in user flow for customers](customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 In either scenario, you can create a personalized sign-up experience by customizing the look and feel, providing sign-in with social identity providers, and collecting information about the user during the sign-up process.
@@ -60,7 +60,7 @@ The user enters the information, continues the sign-up flow, and gets access to 
 
 User flows for B2B collaboration:
 
-- [Create a self-service sign-up user flow for B2B collaboration](self-service-sign-up-user-flow.md)
+- [Create a self-service sign-up user flow for B2B collaboration](self-service-sign-up-user-flow.yml)
 
 User flows for customer identity and access management (CIAM):
 

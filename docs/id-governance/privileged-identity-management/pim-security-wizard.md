@@ -1,18 +1,15 @@
 ---
 title: Microsoft Entra roles Discovery and insights (preview) in Privileged Identity Management former Security Wizard
 description: Discovery and insights (formerly Security Wizard) help you convert permanent Microsoft Entra role assignments to just-in-time assignments with Privileged Identity Management.
-
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim ; H1Hack27Feb2017
-
+ms.custom: pim, H1Hack27Feb2017, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Discovery and Insights (preview) for Microsoft Entra roles (formerly Security Wizard)
@@ -23,23 +20,23 @@ If you're starting out using Privileged Identity Management (PIM) in Microsoft E
 
 Before your organization starts using Privileged Identity Management, all role assignments are permanent. Users are always in their assigned roles even when they don't need their privileges. Discovery and insights (preview), which replaces the former Security Wizard, shows you a list of privileged roles and how many users are currently in those roles. You can list out assignments for a role to learn more about the assigned users if one or more of them are unfamiliar.
 
-:heavy_check_mark: **Microsoft recommends** that you keep two break glass accounts that are permanently assigned to the global administrator role. Make sure that these accounts don't require the same multi-factor authentication mechanism as your normal administrative accounts to sign in, as described in [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+:heavy_check_mark: [!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
-Also, keep role assignments permanent if a user has a Microsoft account (in other words, an account they use to sign in to Microsoft services like Skype, or Outlook.com). If you require multi-factor authentication for a user with a Microsoft account to activate a role assignment, the user will be locked out.
+Also, keep role assignments permanent if a user has a Microsoft account (in other words, an account they use to sign in to Microsoft services like Skype, or Outlook.com). If you require multifactor authentication for a user with a Microsoft account to activate a role assignment, the user is locked out.
 
 ## Open Discovery and insights (preview)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** >**Discovery and insights (Preview)**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles** >**Discovery and insights (Preview)**.
 
 1. Opening the page begins the discovery process to find relevant role assignments.
 
     :::image type="content" source="./media/pim-security-wizard/new-preview-link.png" alt-text="Screenshot showing Microsoft Entra roles Discovery and insights page.":::
 
-1. Select **Reduce global administrators**.
+1. Select **Reduce Global Administrators**.
 
-    :::image type="content" source="./media/pim-security-wizard/new-preview-page.png" alt-text="Screenshot that shows the Discovery and insights (Preview) with the Reduce global administrators action selected.":::
+    :::image type="content" source="./media/pim-security-wizard/new-preview-page.png" alt-text="Screenshot that shows the Discovery and insights (Preview) with the Reduce Global Administrators action selected.":::
 
 1. Review the list of Global Administrator role assignments.
 
@@ -49,9 +46,9 @@ Also, keep role assignments permanent if a user has a Microsoft account (in othe
 
     :::image type="content" source="./media/pim-security-wizard/new-global-administrator-buttons.png" alt-text="Screenshot showing how to convert members to eligible page with options to select members you want to make eligible for roles.":::
 
-1. You can also require all global administrators to review their own access.
+1. You can also require all Global Administrators to review their own access.
 
-    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-access-review.png" alt-text="Screenshot showing the Global administrators page showing the access reviews section.":::
+    :::image type="content" source="./media/pim-security-wizard/new-global-administrator-access-review.png" alt-text="Screenshot showing the Global Administrators page showing the access reviews section.":::
 
 1. After you select any of these changes, you'll see an Azure notification.
 

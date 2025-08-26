@@ -1,16 +1,15 @@
 ---
 title: 'Microsoft Entra Cloud Governed Management for On-Premises Workloads - Azure'
 description: This topic describes cloud governed management for on-premises workloads.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.topic: conceptual
-ms.date: 11/06/2023
+ms.topic: article
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # How Microsoft Entra ID Delivers Cloud Governed Management for On-Premises Workloads
@@ -56,7 +55,7 @@ Microsoft Entra ID improves the management for an organization's on-premises Act
 
 For many organizations, the first step in managing access from the cloud for on-premises AD-integrated web and remote desktop-based applications is to deploy the [application proxy](/entra/identity/app-proxy) in front of those applications to provide secure remote access.
 
-After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy  provides remote access and single sign-on to Remote Desktop, SharePoint, as well as apps such as Tableau and Qlik, and line of business (LOB) applications. Furthermore, Conditional Access policies can include displaying the [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to them](~/identity/conditional-access/require-tou.md) before being able to access an application.
+After a single sign-on to Microsoft Entra ID, users can access both cloud and on-premises applications through an external URL or an internal application portal. For example, Application Proxy  provides remote access and single sign-on to Remote Desktop, SharePoint, as well as apps such as Tableau and Qlik, and line of business (LOB) applications. Furthermore, Conditional Access policies can include displaying the [terms of use](~/identity/conditional-access/terms-of-use.md) and [ensuring the user has agreed to them](~/identity/conditional-access/policy-all-users-require-terms-of-use.md) before being able to access an application.
 
 ![Application proxy architecture](media/cloud-governed-management-for-on-premises/image2.png)
 
@@ -104,7 +103,7 @@ Organizations need a process to manage access that is scalable. Users continue t
 
 Typically, IT delegates access approval decisions to business decision makers. Furthermore, IT can involve the users themselves. For example, users that access confidential customer data in a company's marketing application in Europe need to know the company's policies. Guest users also may be unaware of the handling requirements for data in an organization to which they've been invited.
 
-Organizations can automate the access lifecycle process through technologies such as [dynamic groups](~/identity/users/groups-dynamic-membership.md), coupled with user provisioning to [SaaS applications](~/identity/saas-apps/tutorial-list.md), or [applications integrated using the System for Cross-Domain Identity Management (SCIM)](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)) standard. Organizations also can control which [guest users have access to on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md). These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
+Organizations can automate the access lifecycle process through technologies such as [dynamic membership groups](~/identity/users/groups-dynamic-membership.md), coupled with user provisioning to [SaaS applications](~/identity/saas-apps/tutorial-list.md), or [applications integrated using the System for Cross-Domain Identity Management (SCIM)](~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md)) standard. Organizations also can control which [guest users have access to on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md). These access rights can then be regularly reviewed using recurring [Microsoft Entra access reviews](~/id-governance/access-reviews-overview.md).
 
 ## Future directions
 

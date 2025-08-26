@@ -1,22 +1,19 @@
 ---
 title: Configure Cloudflare with Microsoft Entra ID for secure hybrid access
-description: In this tutorial, learn how to integrate Cloudflare with Microsoft Entra ID for secure hybrid access 
-
+description: In this tutorial, learn how to integrate Cloudflare with Microsoft Entra ID for secure hybrid access
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 05/02/2023
+ms.date: 05/21/2025
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent:As an administrator configuring access policies in Cloudflare Access, I want to learn how to integrate Cloudflare with Microsoft Entra ID, so that I can enforce organizational policies and provide secure access to self-hosted, SaaS, or nonweb applications.
 ---
 
-# Tutorial: Configure Cloudflare with Microsoft Entra ID for secure hybrid access
+# Configure Cloudflare with Microsoft Entra ID for secure hybrid access
 
 In this tutorial, learn to integrate Microsoft Entra ID with Cloudflare Zero Trust. Build rules based on user identity and group membership. Users authenticate with Microsoft Entra credentials and connect to Zero Trust protected applications.
 
@@ -28,7 +25,7 @@ In this tutorial, learn to integrate Microsoft Entra ID with Cloudflare Zero Tru
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 * A Cloudflare Zero Trust account
   * If you don't have one, go to [Get started with Cloudflare's Zero Trust platform](https://dash.cloudflare.com/sign-up/teams)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+* One of the following roles: Cloud Application Administrator, or Application Administrator.
 
 
 ## Integrate organization identity providers with Cloudflare Access
@@ -55,26 +52,19 @@ Integrate Cloudflare Zero Trust account with an instance of Microsoft Entra ID.
    ![Screenshot of the Login methods option on Authentication.](./media/cloudflare-integration/login-methods.png)
 
 5. Under **Select an identity provider**, select **Microsoft Entra ID**.
-
-   ![Screenshot of the Microsoft Entra option under Select an identity provider.](./media/cloudflare-integration/idp.png)
-
 6. The **Add Azure ID** dialog appears. 
 7. Enter Microsoft Entra instance credentials and make needed selections.
-
-   ![Screenshot of options and selections for Add Microsoft Entra ID.](./media/cloudflare-integration/add-idp.png)
-
 8. Select **Save**.
 
 <a name='register-cloudflare-with-azure-ad'></a>
 
 ## Register Cloudflare with Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the instructions in the following three sections to register Cloudflare with Microsoft Entra ID.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **App registrations**.
+2. Navigate to **Entra ID** > **App registrations**.
 3. Select **New registration**.
 4. Enter an application **Name**.
 5. Enter a team name with **callback** at the end of the path. For example, `https://<your-team-name>.cloudflareaccess.com/cdn-cgi/access/callback`
@@ -82,20 +72,19 @@ Use the instructions in the following three sections to register Cloudflare with
 
 See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#team-domain) definition in the Cloudflare Glossary.
 
-   ![Screenshot of options and selections for Register an application.](./media/cloudflare-integration/register-application.png)
+   :::image type="content" source="./media/cloudflare-integration/register-application.png" alt-text="Screenshot of options and selections for Register an application.":::
 
 ### Certificates & secrets
 
 1. On the **Cloudflare Access** screen, under **Essentials**, copy and save the Application (Client) ID and the Directory (Tenant) ID.
 
-   [![Screenshot of the Cloudflare Access screen.](./media/cloudflare-integration/cloudflare-access.png)](./media/cloudflare-integration/cloudflare-access.png#lightbox)
-
+   :::image type="content" source="./media/cloudflare-integration/cloudflare-access.png" alt-text="Screenshot of the Cloudflare Access screen." lightbox="./media/cloudflare-integration/cloudflare-access.png":::
 
 
 
 2. In the left menu, under **Manage**, select **Certificates & secrets**.
 
-   ![Screenshot of the certificates and secrets screen.](./media/cloudflare-integration/add-client-secret.png)
+   :::image type="content" source="./media/cloudflare-integration/add-client-secret.png" alt-text="Screenshot of the certificates and secrets screen.":::
 
 3. Under **Client secrets**, select **+ New client secret**.
 4. In **Description**, enter the Client Secret.
@@ -103,15 +92,13 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 6. Select **Add**.
 7. Under **Client secrets**, from the **Value** field, copy the value. Consider the value an application password. The example value appears, Azure values appear in the Cloudflare Access configuration.
 
-   ![Screenshot of Client secrets input.](./media/cloudflare-integration/cloudflare-access-configuration.png)
-
 ### Permissions
 
 1. In the left menu, select **API permissions**.
 2. Select **+ Add a permission**.
 3. Under **Select an API**, select **Microsoft Graph**.
 
-   ![Screenshot of the Microsoft Graph option under Request API permissions.](./media/cloudflare-integration/microsoft-graph.png)
+   :::image type="content" source="./media/cloudflare-integration/microsoft-graph.png" alt-text="Screenshot of the Microsoft Graph option under Request API permissions.":::
 
 4. Select **Delegated permissions** for the following permissions:
 
@@ -126,13 +113,12 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 
 5. Under **Manage**, select **+ Add permissions**.
 
-   [![Screenshot options and selections for Request API permissions.](./media/cloudflare-integration/request-api-permissions.png)](./media/cloudflare-integration/request-api-permissions.png#lightbox)
-
+   :::image type="content" source="./media/cloudflare-integration/request-api-permissions.png" alt-text="Screenshot options and selections for Request API permissions." lightbox="./media/cloudflare-integration/request-api-permissions.png":::
 
 
 6. Select **Grant Admin Consent for ...**.
 
-   [![Screenshot of configured permissions under API permissions.](./media/cloudflare-integration/grant-admin-consent.png)](./media/cloudflare-integration/grant-admin-consent.png#lightbox)
+   :::image type="content" source="./media/cloudflare-integration/grant-admin-consent.png" alt-text="Screenshot of configured permissions under API permissions." lightbox="./media/cloudflare-integration/grant-admin-consent.png":::
 
 
 
@@ -149,17 +135,13 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 
 1. On the Cloudflare Zero Trust dashboard, navigate to **Settings** > **Authentication**.
 2. Under **Login methods**, for Microsoft Entra ID select **Test**.
-
-   ![Screenshot of login methods.](./media/cloudflare-integration/login-methods-test.png)
-
 3. Enter Microsoft Entra credentials.
 4. The **Your connection works** message appears.
 
    ![Screenshot of the Your connection works message.](./media/cloudflare-integration/connection-success-screen.png)
 
 
-## Next steps
+## Related content
 
-- Go to developer.cloudflare.com for [Integrate SSO](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/)
+- Go to developer.cloudflare.com for [Integrate Single sign-on](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/)
 - [Tutorial: Configure Conditional Access policies for Cloudflare Access](cloudflare-conditional-access-policies.md)
-- [Tutorial: Configure Cloudflare Web Application Firewall with Azure AD B2C](/azure/active-directory-b2c/partner-cloudflare)

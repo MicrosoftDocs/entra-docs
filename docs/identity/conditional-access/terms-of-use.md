@@ -1,20 +1,24 @@
 ---
-title: Terms of use in Microsoft Entra
-description: Get started using Microsoft Entra terms of use to present information to employees or guests before getting access.
-
+title: Set Up Microsoft Entra Terms of Use with Conditional Access
+description: Set up Microsoft Entra terms of use with Conditional Access to require policy acceptance before resource access. Complete guide with prerequisites, step-by-step configuration, and troubleshooting tips.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 03/11/2024
-
+ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: dougeby
 ms.reviewer: siz
+ms.custom:
+  - sfi-image-nochange
+  - ai-gen-docs-bap
+  - ai-gen-title
+  - ai-seo-date:07/21/2025
+  - ai-gen-description
 ---
-# Microsoft Entra terms of use
+# Set up Microsoft Entra terms of use with Conditional Access
 
-Microsoft Entra terms of use policies provide a simple method to present information to end users. Organizations can use terms of use along with Conditional Access policies to require employees or guests to accept your terms of use policy before getting access. These terms of use statements can be generalized or specific to groups or users and provided in multiple languages. Administrators can determine who has or hasn't accepted terms of use with the provided logs or APIs.
+Microsoft Entra terms of use policies provide a simple method to present information to end users before granting access to resources. This guide shows you how to set up Microsoft Entra terms of use with Conditional Access policies to require acceptance of your terms of use policy before accessing applications and data. These terms of use statements can be generalized or specific to groups or users and provided in multiple languages. Administrators can determine who has or hasn't accepted terms of use with the provided logs or APIs.
 
 [!INCLUDE [GDPR-related guidance](~/includes/azure-docs-pr/gdpr-intro-sentence.md)]
 
@@ -24,7 +28,7 @@ To use and configure Microsoft Entra terms of use policies, you must have:
 
 * Microsoft Entra ID P1 licenses.
 * Administrators who need to read terms of use configuration and Conditional Access policies need at least the [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) role assigned.
-* Administrators who need to Create or modify terms of use and Conditional Access policies need at least the  [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned.
+* Administrators who need to Create or modify terms of use and Conditional Access policies need at least the [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned.
 * A terms of use document in PDF format. The PDF file can be any content you decide to display. To support users on mobile devices, the recommended font size in the PDF is 24 point.
 
 ### Service limits
@@ -35,15 +39,15 @@ You can add no more than 40 terms per tenant.
 
 Once you complete your terms of use policy document, use the following procedure to add it.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 1. Select, **New terms**.
 
    ![A screenshot showing the new terms of use pane to specify your terms of use settings.](./media/terms-of-use/new-terms-of-use.png)
 
 1. In the **Name** box, enter a name for the terms of use policy.
 1. For **Terms of use document**, browse to your finalized terms of use policy PDF and select it.
-1. Select the language for your terms of use policy document. The language option allows you to upload multiple terms of use policies, each with a different language. The version of the terms of use policy that an end user sees is based on their browser preferences.
+1. Select the language for your terms of use policy document. The language option allows you to upload multiple terms of use documents, each with a different language. The version of the terms of use policy that an end user sees is based on their browser preferences.
 1. In the **Display name** box, enter a title that users see when they sign in.
 1. To require end users to view the terms of use policy before accepting them, set **Require users to expand the terms of use** to **On**.
 1. To require end users to accept your terms of use policy on every device they're accessing from, set **Require users to consent on every device** to **On**. Users might be required to install other applications if this option is enabled. For more information, see [Per-device terms of use](#per-device-terms-of-use).
@@ -72,7 +76,7 @@ Once you complete your terms of use policy document, use the following procedure
       It's possible to use the **Expire consents** and **Duration before re-acceptance required (days)** settings together, but typically you use one or the other.
 
       > [!IMPORTANT]
-      > Users whose consent has expired regardless of the setting used, **Expire consents** or **Duration before re-acceptance required (days)** are prompted to re-accept the terms only if their session has expired.
+      > Users whose consent expires, regardless of the setting used, **Expire consents** or **Duration before re-acceptance required (days)** are prompted to reaccept the terms only if their session expired.
 
 1. Under **Conditional Access**, use the **Enforce with Conditional Access policy template** list to select the template to enforce the terms of use policy.
 
@@ -82,9 +86,9 @@ Once you complete your terms of use policy document, use the following procedure
    | **Create Conditional Access policy later** | This terms of use policy appears in the grant control list when creating a Conditional Access policy. |
 
    > [!IMPORTANT]
-   > Conditional Access policy controls (including terms of use policies) do not support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
+   > Conditional Access policy controls (including terms of use policies) don't support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
 
-    Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](require-tou.md).
+    Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](policy-all-users-require-terms-of-use.md).
 
 1. Select **Create**.
 
@@ -104,7 +108,7 @@ Per-device terms of use have the following constraints:
 Conditional Access policies take effect immediately. When this enforcement happens, the administrator might see errors in the Microsoft Entra admin center. The administrator must sign out and sign in to satisfy the new policy.
 
 > [!IMPORTANT]
-> Users in scope will need to sign-out and sign-in in order to satisfy a new policy if:
+> Users in scope need to sign out and sign in in order to satisfy a new policy if:
 >
 > * a Conditional Access policy is enabled on a terms of use policy
 > * or a second terms of use policy is created
@@ -113,8 +117,8 @@ Conditional Access policies take effect immediately. When this enforcement happe
 
 You can edit some details of terms of use policies, but you can't modify an existing document. The following procedure describes how to edit the details.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to edit.
 1. Select **Edit terms**.
 1. In the Edit terms of use pane, you can change the following options:
@@ -131,8 +135,8 @@ If there are other settings you would like to change, you must create a new term
 
 ### Update the version or PDF of an existing terms of use
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to edit.
 1. Select **Edit terms**.
 1. For the language that you would like to update a new version, select **Update** under the action column
@@ -151,8 +155,8 @@ If there are other settings you would like to change, you must create a new term
 
 The following procedure describes how to add a language to your terms of use.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to edit.
 1. Select **Edit Terms**.
 1. Select **Add language** at the bottom of the page.
@@ -166,8 +170,8 @@ The following procedure describes how to add a language to your terms of use.
 
 #### View previous versions of a terms of use
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
+1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy for which you want to view a version history.
 1. Select **Languages and version history**.
 1. Select **See previous versions**.
@@ -177,8 +181,8 @@ The following procedure describes how to add a language to your terms of use.
 
 The **Terms of use** blade shows a count of the users who accepted and declined. These counts and who accepted/declined are stored for the life of the terms of use policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
+1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 
     ![A screenshot showing the terms of use blade listing the number of user show have accepted and declined.](./media/terms-of-use/view-tou.png)
 
@@ -203,8 +207,8 @@ If you want to view more activity, Microsoft Entra terms of use policies include
 
 To get started with Microsoft Entra audit logs, use the following procedure:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 1. Select a terms of use policy.
 1. Select **View audit logs**.
 1. On the Microsoft Entra audit logs screen, you can filter the information using the provided lists to target specific audit log information.
@@ -238,22 +242,44 @@ Users can review and see the terms of use policies that they've accepted by usin
 
 You can delete old terms of use policies using the following procedure.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Browse to **Entra ID** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy you want to remove.
 1. Select **Delete terms**.
 1. In the message that appears asking if you want to continue, select **Yes**.
    1. You should no longer see your terms of use policy.
+
+## Platform and browser support
+
+Microsoft Entra terms of use is designed to function optimally on the following platforms and browsers.
+
+Supported desktop and mobile operating systems (latest stable versions):  
+* Windows
+* macOS
+* Linux
+* Android
+* iOS
+   
+Supported modern web browsers (latest stable versions):  
+* Microsoft Edge 
+* Mozilla Firefox 
+* Google Chrome 
+* Safari
+
+### Functionality on other configurations
+Users on operating systems or browsers not listed above, or those using older versions of supported operating systems or browsers, may still be able to accept terms of use during the sign-in process. Some features, visual rendering, or performance might be degraded on unsupported configurations. We don't actively test or provide support for operating systems and browsers not explicitly listed as supported. This includes, but isn't limited to, browsers based on legacy engines such as EdgeHTML  and Trident/MSHTML. 
+
+### Desktop and mobile applications with web views
+Applications that utilize web views based on the latest stable versions of modern HTML5 compliant browser engines (such as Blink, Gecko, or WebKit) should generally allow users to accept terms of use during sign-in. Nevertheless, some features, visual rendering, or performance degradation may occur. We don't actively test or offer support for all specific web view implementations.
+
+### Experiencing Issues? 
+If you encounter issues accepting terms of use on a specific operating system, browser, browser engine, or web view implementation within an application, open a support case. We evaluate supportability on a case-by-case basis. 
 
 ## B2B guests
 
 Using Conditional Access and terms of use policies, you can enforce a policy directly towards B2B guest users. During the invitation redemption flow, the user is presented with the terms of use policy.
 
 Terms of use policies are only displayed when the user has a guest account in Microsoft Entra ID. SharePoint Online currently has an [external sharing recipient experience](/sharepoint/what-s-new-in-sharing-in-targeted-release) to share a document or a folder that doesn't require the user to have a guest account. In this case, a terms of use policy isn't displayed.
-
-## Support for cloud apps
-
-Terms of use policies can be used for different cloud apps, such as Azure Information Protection and Microsoft Intune. This support is currently in preview.
 
 ### Azure Information Protection
 
@@ -264,7 +290,7 @@ You can configure a Conditional Access policy for the Azure Information Protecti
 You can configure a Conditional Access policy for the Microsoft Intune Enrollment app and require a terms of use policy before enrollment of a device in Intune. For more information, see the Read [Choosing the right Terms solution for your organization blog post](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
 
 > [!NOTE]
-> The Intune Enrollment app is not supported for [Per-device terms of use](#per-device-terms-of-use).
+> The Intune Enrollment app isn't supported for [Per-device terms of use](#per-device-terms-of-use).
 >
 > For iOS/iPadOS Automated device enrollment, adding a custom URL to the Microsoft Entra Terms of Use policy doesn't allow for users to open the policy from the URL in Setup Assistant to read it. The policy can be read by the user after Setup Assistant is completed from the Company Portal website, or in the Company Portal app.
 
@@ -277,7 +303,7 @@ A: Administrators might see two sign-ins when users haven't yet accepted a terms
 
 One sign-in is interrupted since the user can't provide proof of acceptance of the terms of use policy in their token. The **additional details** field in the sign-in log includes the following message:
 
-> The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone does not indicate a failure on your users part to sign in. The sign in logs may indicate that this challenge was succesfully passed or failed.
+> The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone does not indicate a failure on your users part to sign in. The sign in logs may indicate that this challenge was successfully passed or failed.
 
 If the user accepts the terms of use policy, the other sign-in is successful. 
 
@@ -300,7 +326,7 @@ A: The terms of use details overview reflect aggregated acceptances of the curre
 A: Yes, end users are able to select hyperlinks to other pages but links to sections within the document aren't supported. Also, hyperlinks in terms of use policy PDFs don't work when accessed from the Microsoft Entra My Apps/MyAccount portal.
 
 **Q: Can a terms of use policy support multiple languages?**<br />
-A: Yes. An administrator can upload multiple PDF documents and tag those documents with a corresponding language. When end users sign in, we look at their browser language preference and display the matching document. If there's no match, we display the default document, which is the first document that is uploaded.
+A: Yes. An administrator can upload multiple PDF documents and tag those documents with a corresponding language. When end users sign in, we look at their browser language preference and display the matching document. If there's no match, we display the default document, which is the first document that is uploaded. Windows desktop applications using [Web Account Manager](/windows/uwp/security/web-account-manager), such as Microsoft Teams, will use the operating system language for the terms, not application-specific language settings.
 
 **Q: When is the terms of use policy triggered?**<br />
 A: A terms of use policy triggers during the sign-in experience.
@@ -325,4 +351,4 @@ A: Terms of use utilize the following endpoints for authentication: https://toke
 
 ## Related content
 
-* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](require-tou.md)
+* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](policy-all-users-require-terms-of-use.md)

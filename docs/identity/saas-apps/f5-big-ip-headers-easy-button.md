@@ -1,23 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with F5’s BIG-IP Easy Button for header-based SSO'
+title: Configure F5’s BIG-IP Easy Button for header-based SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for header-based SSO so that I can control who has access to F5 BIG-IP Easy Button for header-based SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO
+# Configure F5’s BIG-IP Easy Button for header-based SSO for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to F5.
 * Enable your users to be automatically signed-in to F5 with their Microsoft Entra accounts.
@@ -30,7 +28,7 @@ In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When
 
 This scenario looks at the classic legacy application using **HTTP authorization headers** to manage access to protected content.
 
-Being legacy, the application lacks modern protocols to support a direct integration with Microsoft Entra ID. The application can be modernized, but it is costly, requires careful planning, and introduces risk of potential downtime. Instead, an F5 BIG-IP Application Delivery Controller (ADC) is used to bridge the gap between the legacy application and the modern ID control plane, through protocol transitioning. 
+Being legacy, the application lacks modern protocols to support a direct integration with Microsoft Entra ID. The application can be modernized, but it's costly, requires careful planning, and introduces risk of potential downtime. Instead, an F5 BIG-IP Application Delivery Controller (ADC) is used to bridge the gap between the legacy application and the modern ID control plane, through protocol transitioning. 
 
 Having a BIG-IP in front of the application enables us to overlay the service with Microsoft Entra pre-authentication and headers-based SSO, significantly improving the overall security posture of the application.
 
@@ -80,7 +78,7 @@ Prior BIG-IP experience isn’t necessary, but you’ll need:
 
 * User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID.
 
-* An account with Microsoft Entra application admin [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator).
+* An account with Microsoft Entra Application Administrator [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator).
 
 * An [SSL Web certificate](~/identity/enterprise-apps/f5-bigip-deployment-guide.md#ssl-profile) for publishing services over HTTPS, or use default BIG-IP certs while testing.
 
@@ -88,7 +86,7 @@ Prior BIG-IP experience isn’t necessary, but you’ll need:
 
 ## BIG-IP configuration methods
 
-There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This tutorial covers the latest Guided Configuration 16.1 offering an Easy button template. With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM’s Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
+There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This article covers the latest Guided Configuration 16.1 offering an Easy button template. With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM’s Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
 
 > [!NOTE] 
 > All example strings or values referenced throughout this guide should be replaced with those for your actual environment.
@@ -97,7 +95,7 @@ There are many methods to configure BIG-IP for this scenario, including two temp
 
 Before a client or service can access Microsoft Graph, it must be trusted by the [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md)
 
-This first step creates a tenant app registration that will be used to authorize the **Easy Button** access to Graph. Through these permissions, the BIG-IP will be allowed to push the configurations required to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
+This first step creates a tenant app registration that's used to authorize the **Easy Button** access to Graph. Through these permissions, the BIG-IP is allowed to push the configurations required to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) using an account with Application Administrative rights.
 
@@ -134,16 +132,9 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template.](./media/f5-big-ip-headers-easy-button/easy-button-template.png)
+2. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-2. Review the list of configuration steps and select **Next**.
-
-   ![Screenshot for Configure Easy Button - List configuration steps.](./media/f5-big-ip-headers-easy-button/configuration-steps.png)
-
-3. Follow the sequence of steps required to publish your application.
-
-   ![Screenshot of Configuration steps flow.](./media/f5-big-ip-headers-easy-button/configuration-steps-flow.png#lightbox)
-
+3. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
 ### Configuration Properties
 
@@ -193,17 +184,17 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 ### Microsoft Entra ID
 
-This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. For this scenario, select **F5 BIG-IP APM Azure AD Integration > Add**.
+This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP and generic SHA template for any other apps.
 
-   ![Screenshot for Azure configuration add BIG-IP application.](./media/f5-big-ip-headers-easy-button/azure-configuration-add-app.png)
+For this scenario, in the **Azure Configuration** page, select **F5 BIG-IP APM Azure AD Integration** > **Add**.
 
 #### Azure Configuration
 
-1. Enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users will see on [MyApps portal](https://myapplications.microsoft.com/).
+In the **Azure Configuration** page, follow these steps:
 
-2. Do not enter anything in the **Sign On URL (optional)** to enable IdP initiated sign-on.
-   
-   ![Screenshot for Azure configuration add display info.](./media/f5-big-ip-headers-easy-button/azure-configuration-properties.png)
+1. Under **Configuration Properties**, enter **Display Name** of app that the BIG-IP creates in your Microsoft Entra tenant, and the icon that the users will see on [MyApps portal](https://myapplications.microsoft.com/).
+
+2. don't enter anything in the **Sign On URL (optional)** to enable IdP initiated sign-on.
 
 3. Select the refresh icon next to the **Signing Key** and **Signing Certificate** to locate the certificate you imported earlier.
  
@@ -213,7 +204,7 @@ This section defines all properties that you would normally use to manually conf
    
    ![Screenshot for Azure configuration - Add signing certificates info.](./media/f5-big-ip-headers-easy-button/azure-configuration-sign-certificates.png)
 
-7. **User and User Groups** are dynamically queried from your Microsoft Entra tenant and used to authorize access to the application. Add a user or group that you can use later for testing, otherwise all access will be denied.
+7. **User and User Groups** are dynamically queried from your Microsoft Entra tenant and used to authorize access to the application. Add a user or group that you can use later for testing, otherwise all access is denied.
    
    ![Screenshot for Azure configuration - Add users and groups.](./media/f5-big-ip-headers-easy-button/azure-configuration-add-user-groups.png)
 
@@ -231,9 +222,7 @@ For this example, you can include one more attribute:
 
 #### Additional User Attributes
 
-In the **Additional User Attributes tab**, you can enable session augmentation required by a variety of distributed systems such as Oracle, SAP, and other JAVA based implementations requiring attributes stored in other directories. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, etc. 
-
-   ![Screenshot for additional user attributes.](./media/f5-big-ip-headers-easy-button/additional-user-attributes.png)
+In the **Additional User Attributes tab**, you can enable session augmentation required by a variety of distributed systems such as Oracle, SAP, and other JAVA based implementations requiring attributes stored in other directories. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, and so on. 
 
 >[!NOTE] 
 >This feature has no correlation to Microsoft Entra ID but is another source of attributes. 
@@ -242,16 +231,16 @@ In the **Additional User Attributes tab**, you can enable session augmentation r
 
 Conditional Access policies are enforced post Microsoft Entra pre-authentication, to control access based on device, application, location, and risk signals.
 
-The **Available Policies** view, by default, will list all Conditional Access policies that do not include user based actions.
+The **Available Policies** view, by default, will list all Conditional Access policies that don't include user based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All cloud apps. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies can't be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 
 1.	Select the desired policy in the **Available Policies** list.
 2.	Select the right arrow and move it to the **Selected Policies** list.
 
-Selected policies should either have an **Include** or **Exclude** option checked. If both options are checked, the selected policy is not enforced.
+Selected policies should either have an **Include** or **Exclude** option checked. If both options are checked, the selected policy isn't enforced.
 
    ![Screenshot for Conditional Access policies.](./media/f5-big-ip-headers-easy-button/conditional-access-policy.png)
 
@@ -321,13 +310,9 @@ This last step provides a breakdown of your configurations. Select **Deploy** to
 
 Your application should now be published and accessible via SHA, either directly via its URL or through Microsoft’s application portals. 
 
-## Next steps
+## Related content
 
 From a browser, **connect** to the application’s external URL or select the **application’s icon** in the [Microsoft MyApps portal](https://myapplications.microsoft.com/). After authenticating against Microsoft Entra ID, you’ll be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
-
-This shows the output of the injected headers displayed by our headers-based application.
-
-   ![Screenshot for App views.](./media/f5-big-ip-headers-easy-button/app-view.png)
 
 For increased security, organizations using this pattern could also consider blocking all direct access to the application, thereby forcing a strict path through the BIG-IP.
 
@@ -341,7 +326,7 @@ You can navigate to **Access > Guided Configuration** and select the **small pad
 
    ![Screenshot for Configure Easy Button - Strict Management.](./media/f5-big-ip-headers-easy-button/strict-mode-padlock.png)
 
-At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application will be unlocked for direct management.
+At that point, changes via the wizard UI are no longer possible, but all BIG-IP objects associated with the published instance of the application is unlocked for direct management.
 
 > [!NOTE] 
 > Re-enabling strict mode and deploying a configuration will overwrite any settings performed outside of the Guided Configuration UI, therefore we recommend the advanced configuration method for production services.
@@ -370,4 +355,4 @@ If you don’t see a BIG-IP error page, then the issue is probably more related 
 
 2. The **View Variables** link in this location may also help root cause SSO issues, particularly if the BIG-IP APM fails to obtain the right attributes from Microsoft Entra ID or another source.
 
-For more information, visit this F5 knowledge article [Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072). There’s also a great BIG-IP reference table to help diagnose LDAP-related issues in this F5 knowledge article on [LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/5.html).
+For more information, visit this F5 knowledge article [Configuring LDAP remote authentication for Active Directory](https://support.f5.com/csp/article/K11072). There’s also a great BIG-IP reference table to help diagnose LDAP-related issues in this F5 knowledge article on [LDAP Query](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/5.html).

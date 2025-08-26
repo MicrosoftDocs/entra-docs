@@ -2,13 +2,13 @@
 title: 'What is identity provisioning with Microsoft Entra ID?'
 description: Describes overview of identity provisioning.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: overview
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -30,12 +30,12 @@ With regard to Microsoft Entra ID, provisioning can be broken down in to the fol
 
 ![Diagram that shows HR-driven provisioning with Cloud HR, On-premises HR, and Microsoft Entra ID.](media/what-is-provisioning/cloud-2.png)
 
-Provisioning from HR to the cloud involves the creation of objects (users, roles, groups, etc.) based on the information that is in your HR system.  
+Provisioning from HR to the cloud involves the creation of objects (users, roles, groups, and so on) based on the information that is in your HR system.  
 
 The most common scenario would be, when a new employee joins your company, they're entered into the HR system. Once that occurs, they're provisioned to the cloud. In this case, Microsoft Entra ID. Provisioning from HR can cover the following scenarios. 
 
 - **Hiring new employees** - When a new employee is added to cloud HR, a user account is automatically created in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and other SaaS applications supported by Microsoft Entra ID, with write-back of the email address to Cloud HR.
-- **Employee attribute and profile updates** - When an employee record is updated in cloud HR (such as their name, title, or manager), their user account will be automatically updated in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and other SaaS applications supported by Microsoft Entra ID.
+- **Employee attribute and profile updates** - When an employee record is updated in cloud HR (such as their name, title, or manager), their user account automatically updates in Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and other SaaS applications supported by Microsoft Entra ID.
 - **Employee terminations** - When an employee is terminated in cloud HR, their user account is automatically disabled in Active Directory, Microsoft Entra ID, and optionally Office 365 and other SaaS applications supported by Microsoft Entra ID.
 - **Employee rehires** - When an employee is rehired in cloud HR, their old account can be automatically reactivated or re-provisioned (depending on your preference) to Active Directory, Microsoft Entra ID, and optionally Microsoft 365 and other SaaS applications supported by Microsoft Entra ID.
 

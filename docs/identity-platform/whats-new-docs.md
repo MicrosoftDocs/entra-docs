@@ -4,8 +4,7 @@ description: "New and updated articles in the Microsoft identity platform docume
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: has-adal-ref
-ms.date: 04/02/2024
+ms.date: 05/02/2025
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -16,37 +15,39 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## March 2024
+## July 2025
+
+### Updated articles
+
+- [What is the Microsoft identity platform?](v2-overview.md) - The update improved content clarity.
+
+## June 2025
 
 ### New articles
 
-- [Create a REST API with a token issuance start event for Azure Functions (preview)](custom-extension-tokenissuancestart-setup.md) - Custom authentication extensions NuGet libraries
-- [Microsoft account (MSA) Server Side API Reference](reference-msa-server-side-api.md) - API reference for EU regulation
-- [Microsoft Entra ID Windows Account Manager (WAM) API Reference](reference-entra-id-wam-api.md) - API reference for EU regulation
+- [Restrictions on identifier URIs of Microsoft Entra applications](identifier-uri-restrictions.md)
 
 ### Updated articles
 
-- [Configure a custom claim provider for a token issuance event (preview)](custom-extension-tokenissuancestart-configuration.md) - Custom authentication extensions NuGet libraries
-- [Custom claims provider (preview)](custom-claims-provider-overview.md) - Custom authentication extensions NuGet libraries
-- [Troubleshoot your custom claims provider API (preview)](custom-extension-troubleshoot.md) - Custom authentication extensions NuGet libraries
+- [Retrieve and return data from an OnAttributeCollectionStart event](custom-extension-onattributecollectionstart-retrieve-return-data.md) - Update request payload and response
+- [Retrieve and return data from an OnAttributeCollectionSubmit event](custom-extension-onattributecollectionsubmit-retrieve-return-data.md) - Update request payload and response
+- [Security best practices for application properties in Microsoft Entra ID](security-best-practices-for-app-registration.md) - Update security best practices
+- [Run automated integration tests](test-automate-integration-testing.md) - The update improved content clarity.
 
-## February 2024
-
-### Updated articles
-
-- [Custom authentication extensions for attribute collection start and submit events (preview)](custom-extension-attribute-collection.md) - Adding custom authentication extensions: Split issuer
-- [Configure a custom claim provider token issuance event (preview)](custom-extension-get-started.md) - Adding custom authentication extensions: Split issuer
-- [Microsoft identity platform app types and authentication flows](authentication-flows-app-scenarios.md) - Update to enhance the article's technical accuracy
-- [Overview of the Microsoft Authentication Library (MSAL)](msal-overview.md) - Update to enhance the article's technical accuracy
-- [Use Microsoft Authenticator or Intune Company Portal on Xamarin applications](msal-net-use-brokers-with-xamarin-apps.md) - Removing the android signature digest for the latest android version
-
-## January 2024
+## May 2025
 
 ### New articles
 
-- [Customize claims emitted in tokens for a specific app in a tenant using PowerShell](claims-customization-powershell.md) - Adding claims customization using PowerShell page
+- [Email OTP send event reference](custom-extension-email-otp-send-data.md)
 
 ### Updated articles
 
-- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md) - Adding clarity to the article
-- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](quickstart-web-api-aspnet-core-protect-api.md) - Updated the article with the new code sample.
+- [Custom claims provider reference](custom-claims-provider-reference.md) - The update improved content clarity.
+- [Application configuration options](msal-client-application-configuration.md) - The update improved content clarity.
+- [Custom authentication extensions overview](custom-extension-overview.md) - The update improved content clarity.
+- [Single-page application: Acquire a token to call an API](scenario-spa-acquire-token.md) - The update improved content clarity.
+- [Single-page application: Code configuration](scenario-spa-app-configuration.md) - The update improved content clarity.
+- [Single-page application: Add sign-in and sign-out code](scenario-spa-sign-in.md) - The update improved content clarity.
+- [Microsoft Entra authentication and authorization error codes](reference-error-codes.md) - Partially update error code.
+
+

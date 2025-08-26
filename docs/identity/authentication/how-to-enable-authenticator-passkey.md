@@ -1,93 +1,103 @@
 ---
-title: How to enable Microsoft Authenticator passkey sign in for Microsoft Entra ID (preview)
-description: Learn about how to enable Microsoft Authenticator passkey sign in for Microsoft Entra ID.
-
+title: Enable passkeys in Authenticator for Microsoft Entra ID
+description: Learn about how to enable passkeys in Microsoft Authenticator for Microsoft Entra ID.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/10/2024
-
+ms.date: 06/24/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
-ms.reviewer: calui
-
-# Customer intent: As a Microsoft Entra Administrator, I want to learn how to enable and enforce Microsoft Authenticator passkey sign in for end users.
+manager: dougeby
+ms.reviewer: mjsantani
+ms.custom: sfi-ga-nochange, sfi-image-nochange
+# Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.
 ---
-# Enable Microsoft Authenticator passkey sign in (preview)
+# Enable passkeys in Authenticator
 
-This article lists steps to enable and enforce Microsoft Authenticator passkey sign-in for Microsoft Entra ID. First, you update the Authentication methods policy to allow end users to sign in with Authenticator passkey. Then you create a custom authentication strength to enforce passkey sign-in when users access a sensitive resource.
+This article lists steps to enable and enforce use of passkeys in Authenticator for Microsoft Entra ID. First, you update the Authentication methods policy to allow users to register and sign in with passkeys in Authenticator. Then you can use Conditional Access authentication strengths policies to enforce passkey sign-in when users access a sensitive resource.
 
 ## Requirements
 
-- [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md)
-- Android 14 and later or iOS 17 and later
-- Latest version of Microsoft Authenticator
+- [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md).
+- Android 14 and later or iOS 17 and later.
+- For cross-device registration and authentication:
+  - Both devices must have Bluetooth enabled.
+  - Internet connectivity to these two endpoints must be allowed in your organization:
+    - `https://cable.ua5v.com`
+    - `https://cable.auth.com`
+
+  > [!NOTE]
+  > Users can't use cross-device registration if you enable attestation. 
+
+To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
 > [!NOTE]
-> Users need to install the latest version of Authenticator for Android or iOS to use a passkey. 
+> If you grant the **Require device to be marked as compliant** control as part of a Conditional Access policy, it doesn't block Microsoft Authenticator app access to the UserAuthenticationMethod.Read scope. Authenticator needs access to the UserAuthenticationMethod.Read scope during Authenticator registration to determine which credentials a user can configure. Authenticator needs access to UserAuthenticationMethod.ReadWrite to register credentials, which doesn't bypass the **Require device to be marked as compliant** check.
 
-[!INCLUDE [Passkey roll out](~/includes/entra-authentication-passkey.md)]
-
-To use any passkeys (FIDO2) for sign in to web apps and services, you need to use a browser that supports the WC3 WebAuthn standard. 
-Supported browsers include Microsoft Edge, Chrome, Firefox, and Safari. For more information, see [Browser support of FIDO2 passwordless authentication](fido2-compatibility.md).
-
-## Enable Authenticator passkey in the admin center
-
-To enable Authenticator passkey, you edit the **FIDO2 security key** method policy, the same way you enable another passkey provider. The **Microsoft Authenticator** policy doesn't give you the option to enable a passkey. 
+## Enable passkeys in Authenticator in the admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
-1. Under the method **FIDO2 security key**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
-1. On the **Configure** tab, set **Enforce key restrictions** to **Yes**, set **Restrict specific keys** to **Allow**. Select **Microsoft Authenticator (preview)** if the checkbox is displayed in the admin center. Otherwise, add the following AAGUIDs to enable the Authenticator passkey preview for iOS and Android:
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication method policy**.
+1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
+1. On the **Configure** tab:
+   - Set **Allow self-service set up** to **Yes**. If it's set to **No**, users can't register a passkey by using [Security info](https://mysignins.microsoft.com/security-info), even if passkeys (FIDO2) are enabled by the Authentication methods policy.
+   - Set **Enforce attestation** to **Yes** or **No**. Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows don't support registration of attested passkeys.
 
-   - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
-   - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
+     When attestation is enabled in the passkey (FIDO2) policy, Microsoft Entra ID tries to verify the legitimacy of the passkey being created. When the user is registering a passkey in the Authenticator, attestation verifies that the legitimate Authenticator app created the passkey by using Apple and Google services. Here are more details:
 
-   :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot showing Microsoft Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
+     - **iOS**: Authenticator attestation uses the [iOS App Attest service](https://developer.apple.com/documentation/devicecheck/preparing-to-use-the-app-attest-service) to ensure the legitimacy of the Authenticator app before registering the passkey.
+            
+     - **Android**:
+       - For Play Integrity attestation, Authenticator attestation uses the [Play Integrity API](https://developer.android.com/google/play/integrity/overview) to ensure the legitimacy of the Authenticator app before registering the passkey.
+       - For Key attestation, Authenticator attestation uses [key attestation by Android](https://developer.android.com/privacy-and-security/security-key-attestation) to verify that the passkey being registered is hardware-backed.
 
-The following list describes other optional settings:
+     > [!NOTE]
+     > For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
+    
 
-**General**
 
-- **Allow self-service set up** should remain set to **Yes**. If set to no, your users aren't able to register a passkey through MySecurityInfo, even if enabled by Authentication Methods policy.  
-- **Enforce attestation** Should be set to **No** for preview. Attestation support is planned for General Availability.
+   - **Key restrictions** set the usability of specific passkeys for both registration and authentication. You can set **Enforce key restrictions** to **No** to allow users to register any supported passkey, including passkey registration directly in the Authenticator app. If you set **Enforce key restrictions** to **Yes** and already have active passkey usage, you should collect and add the AAGUIDs of the passkeys being used today. 
 
-**Key Restriction Policy**
 
-- **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain passkeys, which are identified by their Authenticator Attestation GUID (AAGUID). If you want to manually add the Authenticator app AAGUIDs, or specifically restrict only Android or iOS devices, you can manually enter their AAGUID:
+     If you set **Restrict specific keys** to **Allow**, select **Microsoft Authenticator** to automatically add the Authenticator app AAGUIDs to the key restrictions list. You can also manually add the following AAGUIDs to allow users to register passkeys in Authenticator by signing in to the Authenticator app or by going through a guided flow on **Security info**:
 
-  - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
-  - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
+     - **Authenticator for Android**: `de1e552d-db1d-4423-a619-566b625cdc84`
+     - **Authenticator for iOS**: `90a3ccdf-635c-4729-a248-9b709135078f`
+            
+     If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.
 
-  >[!WARNING]
-  >Key restrictions set the usability of specific passkeys for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in. 
+     > [!NOTE]
+     > If you turn off key restrictions, make sure you clear the **Microsoft Authenticator** checkbox so that users aren't prompted to set up a passkey in the Authenticator app on [Security info](https://mysignins.microsoft.com/security-info).
 
-After you finish the configuration, select **Save**.
+   :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot that shows Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
-## Enable Authenticator passkey using Graph Explorer
+1. After you finish the configuration, select **Save**.
 
-In addition to using the Microsoft Entra admin center, you can also enable Authenticator passkey by using Graph Explorer. **Global Administrators** and **Authentication Policy Administrators** can update the Authentication methods policy to allow the AAGUIDs for Authenticator. 
+   If you see an error when you try to save, replace multiple groups with a single group in one operation, and then select **Save** again.
+
+## Enable passkeys in Authenticator by using Graph Explorer
+
+In addition to using the Microsoft Entra admin center, you can also enable passkeys in Authenticator by using Graph Explorer. If you're assigned at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role, you can update the Authentication methods policy to allow the AAGUIDs for Authenticator.
 
 To configure the policy by using Graph Explorer:
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge) and consent to the **Policy.Read.All** and **Policy.ReadWrite.AuthenticationMethod** permissions.
 
-1. Retrieve the Authentication methods policy: 
+1. Retrieve the Authentication methods policy:
 
    ```json
-   GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
-1. To disable attestation enforcement and enforce key restrictions to only allow AAGUIDs for Microsoft Authenticator, perform a PATCH operation using the following request body:
+1. To disable attestation enforcement and enforce key restrictions to allow only AAGUIDs for Authenticator, perform a `PATCH` operation by using the following request body:
 
    ```json
-   PATCH https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   PATCH https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    
    Request Body:
    {
        "@odata.type": "#microsoft.graph.fido2AuthenticationMethodConfiguration",
-       "isAttestationEnforced": false,
+       "isAttestationEnforced": true,
        "keyRestrictions": {
            "isEnforced": true,
            "enforcementType": "allow",
@@ -104,45 +114,40 @@ To configure the policy by using Graph Explorer:
 1. Make sure that the passkey (FIDO2) policy is updated properly.
 
    ```json
-   GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
 
-## Delete a passkey 
+## Restrict Bluetooth usage to passkeys in Authenticator
 
-To remove a passkey associated with a user account, delete the key from the user’s authentication methods.
+Some organizations restrict Bluetooth usage, which includes the use of passkeys. In such cases, organizations can allow passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) and search for the user whose passkey needs to be removed.
-1. Select **Authentication methods** > right-click **FIDO2 security key** and select **Delete**. 
+## Delete a passkey
 
-    ![Screenshot of View Authentication Method details.](media/howto-authentication-passwordless-deployment/security-key-view-details.png)
+If a user deletes a passkey in Authenticator, the passkey is also removed from the user's sign-in methods. An Authentication Policy Administrator can also follow these steps to delete a passkey from the user's authentication methods, but it won't remove the passkey from Authenticator.
 
-> [!NOTE]
-> Users also need to remove the passkey in Authenticator on their device.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), and search for the user whose passkey must be removed.
+1. Select **Authentication methods**, right-click **Passkey**, and select **Delete**.
 
-## Enforce Authenticator passkey sign-in 
+   Unless the user initiated the passkey deletion themselves in Authenticator, they need to also remove the passkey in Authenticator on their device.
 
-To make users sign in with a passkey when they access a sensitive resource, you must do one of the following: 
+## Enforce sign-in with passkeys in Authenticator
 
-- Use the built-in phishing-resistant authentication strength, or
-- Create a custom authentication strength
-
-The following steps explain how to create a Conditional Access policy with a custom authentication strength.
+To make users sign in with a passkey when they access a sensitive resource, use the built-in phishing-resistant authentication strength, or create a custom authentication strength by following these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
-1. Provide a descriptive **Name** for your new authentication strength.
-1. Optionally provide a **Description**.
-1. Select **Passkeys (FIDO2)** and then select **Advanced options**.
-1. Add AAGUIDs for Authenticator passkey:
+1. Provide a descriptive name for your new authentication strength.
+1. Optionally, provide a description.
+1. Select **Passkeys (FIDO2)**, and then select **Advanced options**.
+1. Select **Phishing-resistant MFA strength** or add AAGUIDs for passkeys in Authenticator:
 
-   - Authenticator for Android: de1e552d-db1d-4423-a619-566b625cdc84
-   - Authenticator for iOS: 90a3ccdf-635c-4729-a248-9b709135078f
+   - **Authenticator for Android**: `de1e552d-db1d-4423-a619-566b625cdc84`
+   - **Authenticator for iOS**: `90a3ccdf-635c-4729-a248-9b709135078f`
 
-1. Choose **Next** and review the policy configuration.
+1. Select **Next**, and review the policy configuration.
 
-## Next steps
+## Related content
 
-[Support for passkey in Windows](/windows/security/identity-protection/passkeys)
-
+- [Support for passkey in Windows](/windows/security/identity-protection/passkeys)

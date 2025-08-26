@@ -2,12 +2,12 @@
 title: Management concepts for Microsoft Entra Domain Services | Microsoft Docs
 description: Learn about how to administer a Microsoft Entra Domain Services managed domain and the behavior of user accounts and passwords
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
-ms.date: 03/23/2023
+ms.topic: concept-article
+ms.date: 01/21/2025
 ms.author: justinha
 ---
 
@@ -64,7 +64,13 @@ In Domain Services, the forest only contains one domain. On-premises AD DS fores
 
 By default, a managed domain synchronizes all objects from Microsoft Entra ID, including any user accounts created in an on-premises AD DS environment. User accounts can directly authenticate against the managed domain, such as to sign in to a domain-joined VM. This approach works when the password hashes can be synchronized and users aren't using exclusive sign-in methods like smart card authentication.
 
-In a Domain Services, you can also create a one-way forest *trust* to let users sign in from their on-premises AD DS. With this approach, the user objects and password hashes aren't synchronized to Domain Services. The user objects and credentials only exist in the on-premises AD DS. This approach lets enterprises host resources and application platforms in Azure that depend on classic authentication such LDAPS, Kerberos, or NTLM, but any authentication issues or concerns are removed.
+In Domain Services, you can also create a forest *trust* with another domain to allow users to access resources. Depending on your access requirements, you can create the forest trust in different directions. 
+
+| Trust direction | User access |
+|-----------------|-------------|
+| Two-way | Allows users in both the managed domain and the on-premises domain to access resources in either domain. |
+| One-way outgoing | Allows users in the on-premises domain to access resources in the managed domain, but not vice versa. |
+| One-way incoming | Allows users in the managed domain to access resources in the on-premises domain. |
 
 <a name='azure-ad-ds-skus'></a>
 
@@ -93,6 +99,17 @@ If your business or application demands change and you need additional compute p
 The backup frequency determines how often a snapshot of the managed domain is taken. Backups are an automated process managed by the Azure platform. In the event of an issue with your managed domain, Azure support can assist you in restoring from backup. As synchronization only occurs one way *from* Microsoft Entra ID, any issues in a managed domain won't impact Microsoft Entra ID or on-premises AD DS environments and functionality.
 
 As the SKU level increases, the frequency of those backup snapshots increases. Review your business requirements and recovery point objective (RPO) to determine the required backup frequency for your managed domain. If your business or application requirements change and you need more frequent backups, you can switch to a different SKU.
+
+Domain Services provides the following guidance for recovery timespans for different types of issues:
+
+- Recovery point objective (RPO) is the maximum timespan in which there is a potential data or transaction loss from an incident.
+- Recovery time object (RTO) is the targeted timespan that occurs before service levels return to operational after an incident.   
+
+| Issues | RPO | RTO |
+|--------|-----|-----|
+| Issues caused by data loss or corruption to Domain Services domain controllers, dependent services, an exploit that compromised the domain, or other incident that requires restoring a domain controller.  | Five days before the occurrence of the event | Two hours to four days, depending on tenant size |
+| Issues identified by our domain diagnostics. | Zero (0 minutes) | Two hours to four days, depending on tenant size |
+
 
 ## Next steps
 

@@ -1,16 +1,14 @@
 ---
 title: 'Tutorial:  Set up password hash sync as backup for AD FS in Microsoft Entra Connect'
 description: Learn how to turn on password hash sync as a backup for Azure Directory Federation Services (AD FS) in Microsoft Entra Connect.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Tutorial:  Set up password hash sync as backup for Azure Directory Federation Services
@@ -112,7 +110,7 @@ The final task is to reset the trust between AD FS and Azure:
 1. Select **Reset Microsoft Entra ID trust**, and then select **Next**.
 
    :::image type="content" source="media/tutorial-phs-backup/backup6.png" alt-text="Screenshot that shows the Manage federation pane, with Reset Microsoft Entra ID selected.":::
-1. In **Connect to Microsoft Entra ID**, enter the username and password for your Global Administrator account or your Hybrid Identity Administrator account.
+1. In **Connect to Microsoft Entra ID**, enter the username and password for your Hybrid Identity Administrator account.
 1. In **Connect to AD FS**, enter the contoso\Administrator username and password, and then select **Next.**
 1. In **Certificates**, select **Next**.
 1. Repeat the steps in [Sign in with a user account to test sync](#sign-in-with-a-user-account-to-test-sync).

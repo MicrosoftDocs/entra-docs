@@ -1,20 +1,20 @@
 ---
-title: Configure B2B direct connect cross-tenant access
-description: Use cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations. Learn how to configure  outbound access to external organizations and inbound access from external Microsoft Entra organizations for B2B direct connect.
- 
+title: B2B Direct Connect Setup
+description: Learn how to configure B2B direct connect with other Microsoft Entra organizations, using cross-tenant access settings to manage outbound and inbound access.
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/23/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: "it-pro"
+ms.date: 07/07/2025
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #customer intent: As an IT admin managing cross-tenant collaboration with external organizations, I want to configure cross-tenant access settings for B2B direct connect, so that I can lets users from other Microsoft Entra tenants seamlessly sign in to my shared resources via Teams shared channels.
 ---
 
-# Configure cross-tenant access settings for B2B direct connect
+# Set up B2B direct connect with an external organization
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 Use cross-tenant access settings to manage how you collaborate with other Microsoft Entra organizations through [B2B direct connect](b2b-direct-connect-overview.md). These settings let you determine the level of outbound access your users have to external organizations. They also let you control the level of inbound access that users in external Microsoft Entra organizations have to your internal resources.
 
@@ -28,7 +28,7 @@ Use cross-tenant access settings to manage how you collaborate with other Micros
 Learn more about using cross-tenant access settings to [manage B2B direct connect](b2b-direct-connect-overview.md#managing-cross-tenant-access-for-b2b-direct-connect).
 
 > [!IMPORTANT]
-> Microsoft is beginning to move customers using cross-tenant access settings to a new storage model on August 30, 2023. You may notice an entry in your audit logs informing you that your cross-tenant access settings were updated as our automated task migrates your settings. For a brief window while the migration processes, you will be unable to make changes to your settings. If you are unable to make a change, you should wait a few moments and try the change again. Once the migration completes, [you will no longer be capped with 25kb of storage space](./faq.yml#how-many-organizations-can-i-add-in-cross-tenant-access-settings-) and there will be no more limits on the number of partners you can add.
+> Microsoft is beginning to move customers using cross-tenant access settings to a new storage model on August 30, 2023. You may notice an entry in your audit logs informing you that your cross-tenant access settings were updated as our automated task migrates your settings. For a brief window while the migration processes, you will be unable to make changes to your settings. If you're unable to make a change, you should wait a few moments and try the change again. Once the migration completes, [you'll no longer be capped with 25kb of storage space,](./faq.yml#how-many-organizations-can-i-add-in-cross-tenant-access-settings-) and there will be no more limits on the number of partners you can add.
 
 ## Before you begin
 
@@ -37,16 +37,15 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 - Identify any Microsoft Entra organizations that need customized settings.
 - Contact organizations with which you want to set up B2B direct connect. Because B2B direct connect is established through mutual trust, both you and the other organization need to enable B2B direct connect with each other in your cross-tenant access settings.
 - Obtain any required information from external organizations. If you want to apply access settings to specific users, groups, or applications within an external organization, you need to obtain these IDs from the organization before you can configure access settings.
-- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with a Global Administrator or Security Administrator role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
+- To configure cross-tenant access settings in the Microsoft Entra admin center, you need an account with at least the [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator) role. Teams administrators can read cross-tenant access settings, but they can't update these settings.
 
 ## Configure default settings
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
- Default cross-tenant access settings apply to all external tenants for which you haven't created organization-specific customized settings. If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
+Default cross-tenant access settings apply to all external organizations for which you haven't created organization-specific customized settings. If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 1. Select the **Default settings** tab and review the summary page.
 
    ![Screenshot showing the Cross-tenant access settings Default settings tab](media/cross-tenant-access-settings-b2b-direct-connect/cross-tenant-defaults.png)
@@ -66,7 +65,7 @@ Learn more about using cross-tenant access settings to [manage B2B direct connec
 Follow these steps to configure customized settings for specific organizations.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 3. Select **Organizational settings**.
 4. Select **Add organization**.
 5. On the **Add organization** pane, type the full domain name (or tenant ID) for the organization.
@@ -90,7 +89,7 @@ With inbound settings, you select which external users and groups can access the
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. Navigate to the settings you want to modify:
    - To modify default inbound settings, select the **Default settings** tab, and then under **Inbound access settings**, select **Edit inbound defaults**.
@@ -135,7 +134,7 @@ With inbound settings, you select which external users and groups can access the
    - Select **Add**.
 
    > [!NOTE]
-   > You cannot target users or groups in inbound default settings.
+   > You can't target users or groups in inbound default settings.
 
    ![Screenshot showing adding external users for inbound b2b direct connect](media/cross-tenant-access-settings-b2b-direct-connect/b2b-direct-connect-inbound-external-users-groups-add.png)
 
@@ -196,7 +195,7 @@ With inbound settings, you select which external users and groups can access the
 1. Select **Save**.
 
 > [!NOTE]
-> When configuring settings for an organization, you'll notice a **Cross-tenant sync** tab. This tab doesn't apply to your B2B direct connect configuration. Instead, this feature is used by multi-tenant organizations to enable B2B collaboration across their tenants. For more information, see the [multi-tenant organization documentation](~/identity/multi-tenant-organizations/index.yml).
+> When configuring settings for an organization, you'll notice a **Cross-tenant sync** tab. This tab doesn't apply to your B2B direct connect configuration. Instead, this feature is used by multitenant organizations to enable B2B collaboration across their tenants. For more information, see the [multitenant organization documentation](~/identity/multi-tenant-organizations/index.yml).
 
 ## Modify outbound access settings
 
@@ -204,7 +203,7 @@ With outbound settings, you select which of your users and groups are able to ac
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. Navigate to the settings you want to modify:
 
@@ -297,7 +296,7 @@ When you remove an organization from your Organizational settings, the default c
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. Select the **Organizational settings** tab.
 
@@ -305,4 +304,4 @@ When you remove an organization from your Organizational settings, the default c
 
 ## Next steps
 
-[Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md)
+[Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml)

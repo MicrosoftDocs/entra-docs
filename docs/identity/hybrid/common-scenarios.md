@@ -2,14 +2,14 @@
 title: 'Common hybrid scenarios with Microsoft Entra ID'
 description: This article describes the common scenarios for using Microsoft Entra Cloud Sync and Microsoft Entra Connect.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -35,7 +35,14 @@ The following table outlines the most common and supported sync scenarios.
 |Synchronize from cloud to on-premises LDAP|N/A|N/A|●|●|
 |Synchronize from cloud to on-premises SQL|N/A|N/A|●|●|
 
-For additional information, see [Supported topologies for cloud sync](cloud-sync/plan-cloud-sync-topologies.md) and [Supported topologies for connect sync](connect/plan-connect-topologies.md)
+## Supported provisioning scenarios
+The following table outlines the common and supported provisioning scenarios.
+
+|Scenario|Supported with cloud sync|Supported with connect sync|Supported with MIM and the Graph Connector|Supported with ECMA Host connector|
+|-----|-----|-----|-----|-----|
+|Group provisioning to Active Directory|●|N/A|●|N/A|
+
+For more information, see [Supported topologies for cloud sync](cloud-sync/plan-cloud-sync-topologies.md) and [Supported topologies for connect sync](connect/plan-connect-topologies.md).
 
 
 ## Additional information
@@ -47,7 +54,7 @@ For additional information, see [Supported topologies for cloud sync](cloud-sync
 
 
 ## Cloud sync and connect sync in parallel
-You can run cloud sync and Microsoft Entra Connect in the same forest.  You can use cloud sync to manage your users and groups and use Microsoft Entra Connect for devices, for example.  You may decide to do allow cloud sync to handle 80% and use Microsoft Entra Connect for some of your more obscure, 20% scenarios.  The tutorial, [Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest](cloud-sync/tutorial-pilot-aadc-aadccp.md) shows an example of how you would run each.
+You can run cloud sync and Microsoft Entra Connect in the same forest. You may decide to do allow cloud sync to handle 80% and use Microsoft Entra Connect for some of your more obscure, 20% scenarios.  The tutorial, [Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest](cloud-sync/tutorial-pilot-aadc-aadccp.md) shows an example of how you would run each.
 
 ## Common authentication methods and scenarios
 
@@ -68,8 +75,8 @@ For additional information, see [Choose the right authentication method for your
 |Enable my users to sign in and access cloud services using their on-premises password.|●| ● |●| 
 |Implement single sign-on using corporate credentials.|●| ● |●|  
 |Ensure no password hashes are stored in the cloud.| |●|●| 
-|Enable cloud-based multi-factor authentication solutions.|●|●|●| 
-|Enable on-premises multi-factor authentication solutions.| | |●| 
+|Enable cloud-based multifactor authentication solutions.|●|●|●| 
+|Enable on-premises multifactor authentication solutions.| | |●| 
 |Support smartcard authentication for my users.| | |●| 
 
 ## Next steps

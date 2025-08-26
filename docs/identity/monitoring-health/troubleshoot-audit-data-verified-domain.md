@@ -3,11 +3,11 @@ title: Bulk changes to usernames during verified domain changes
 description: Learn how Microsoft Entra audit logs display UserManagement updates from Core Directory during verified domain changes.
 
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.topic: troubleshooting
 ms.subservice: monitoring-health
-ms.date: 03/04/2024
+ms.date: 02/25/2025
 ms.author: sarahlipsey
 
 ---
@@ -116,13 +116,13 @@ For synchronized users, the UserPrincipalName is set to a verified domain suffix
 
 For cloud-only users, consistency means that the `proxyAddresses` match a verified domain suffix. When an inconsistent proxyAddresses is processed, the backend operation converts it to the default `*.onmicrosoft.com` domain suffix, for example: `SMTP:username@Contoso.onmicrosoft.com`.
 
-For synchronized users, consistency means that the proxyAddresses match the on-premises proxyAddresses value (i.e ShadowProxyAddresses). The proxyAddresses are expected to be in sync with ShadowProxyAddresses. If the synchronized user has an Exchange license assigned, then the cloud and on-premises values must match. These values must also match a verified domain suffix.
+For synchronized users, consistency means that the proxyAddresses match the on-premises proxyAddresses value (that is, ShadowProxyAddresses). The proxyAddresses are expected to be in sync with ShadowProxyAddresses. If the synchronized user has an Exchange license assigned, then the cloud and on-premises values must match. These values must also match a verified domain suffix.
 
 In this scenario, the backend operation sanitizes the inconsistent proxyAddresses with an unverified domain suffix and is removed from the object in Microsoft Entra ID. If that unverified domain is verified later, the backend operation recomputes and adds the proxyAddresses from ShadowProxyAddresses back to the object in Microsoft Entra ID.  
 
 > [!NOTE]
 > For synchronized objects, to avoid the backend operation logic from calculating unexpected results, it's best to set proxyAddresses to a Microsoft Entra verified domain on the on-premises object.  
 
-## Next Steps
+## Related content
 
 [Microsoft Entra Connect Sync service shadow attributes](../hybrid/connect/how-to-connect-syncservice-shadow-attributes.md)

@@ -1,18 +1,15 @@
 ---
-title: Create a trust relationship between a user-assigned managed identity and an external identity provider
-description: Set up a trust relationship between a user-assigned managed identity in Microsoft Entra ID and an external identity provider.  This allows a software workload outside of Azure to access Microsoft Entra protected resources without using secrets or certificates.
-
-author: rwike77
+title: Create Trust Between User-Assigned Managed Identity and External Identity Provider
+description: Set up trust between a user-assigned managed identity and an external identity provider to access Microsoft Entra resources without secrets or certificates.
+author: SHERMANOUKO
 manager: CelesteDG
-
 ms.service: entra-workload-id
-
 ms.topic: how-to
-ms.date: 09/15/2023
-ms.author: ryanwi
-ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell
-ms.reviewer: shkhalide, udayh, vakarand
+ms.date: 05/12/2025
+ms.author: shermanouko
+ms.reviewer: hosamsh
 zone_pivot_groups: identity-wif-mi-methods
+ms.custom: aaddev, devx-track-azurecli, devx-track-azurepowershell, sfi-image-nochange
 #Customer intent: As an application developer, I want to configure a federated credential on a user-assigned managed identity so I can create a trust relationship with an external identity provider and use workload identity federation to access Microsoft Entra protected resources without managing secrets.
 ---
 
@@ -38,12 +35,12 @@ To learn more about supported regions, time to propagate federated credential up
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 - Get the information for your external IdP and software workload, which you need in the following steps.
 - To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment.
-- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity)
+- [Create a user-assigned managed identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azp#create-a-user-assigned-managed-identity)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 ## Configure a federated identity credential on a user-assigned managed identity
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com), navigate to the user-assigned managed identity you created.  Under **Settings** in the left nav bar, select **Federated credentials** and then **Add Credential**.
+In the [Microsoft Azure portal](https://portal.azure.com), navigate to the user-assigned managed identity you created.  Under **Settings** in the left nav bar, select **Federated credentials** and then **Add Credential**.
 
 In the **Federated credential scenario** dropdown box, select your scenario.
 
@@ -157,13 +154,13 @@ Select **Add** to configure the federated credential.
 
 ## List federated identity credentials on a user-assigned managed identity
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com), navigate to the user-assigned managed identity you created.  Under **Settings** in the left nav bar and select **Federated credentials**.
+In the [Microsoft Azure portal](https://portal.azure.com), navigate to the user-assigned managed identity you created.  Under **Settings** in the left nav bar and select **Federated credentials**.
 
 The federated identity credentials configured on that user-assigned managed identity are listed.
 
 ## Delete a federated identity credential from a user-assigned managed identity
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com), navigate to the user-assigned managed identity you created.  Under **Settings** in the left nav bar and select **Federated credentials**.
+In the [Microsoft Azure portal](https://portal.azure.com), navigate to the user-assigned managed identity you created.  Under **Settings** in the left nav bar and select **Federated credentials**.
 
 The federated identity credentials configured on that user-assigned managed identity are listed.
 
@@ -179,7 +176,7 @@ To delete a specific federated identity credential, select the **Delete** icon f
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 - Get the information for your external IdP and software workload, which you need in the following steps.
 - To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment.
-- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli#create-a-user-assigned-managed-identity-1)
+- [Create a user-assigned managed identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-azcli#create-a-user-assigned-managed-identity-1)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](~/../docs/reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md)]
@@ -280,7 +277,7 @@ az identity federated-credential delete --name $ficId --identity-name $uaId --re
 - To run the example scripts, you have two options:
   - Use [Azure Cloud Shell](/azure/cloud-shell/overview), which you can open by using the **Try It** button in the upper-right corner of code blocks.
   - Run scripts locally with Azure PowerShell, as described in the next section.
-- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell#list-user-assigned-managed-identities-2)
+- [Create a user-assigned managed identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-powershell#list-user-assigned-managed-identities-2)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 ### Configure Azure PowerShell locally
@@ -311,7 +308,7 @@ To use Azure PowerShell locally for this article instead of using Cloud Shell:
 
 ## Configure a federated identity credential on a user-assigned managed identity
 
-Run the [New-AzFederatedIdentityCredentials](/powershell/module/az.managedserviceidentity/new-azfederatedidentitycredentials) command to create a new federated identity credential on your user-assigned managed identity (specified by the name).  Specify the *name*, *issuer*, *subject*, and other parameters.
+Run the [New-AzFederatedIdentityCredentials](/powershell/module/az.managedserviceidentity/new-azfederatedidentitycredential) command to create a new federated identity credential on your user-assigned managed identity (specified by the name).  Specify the *name*, *issuer*, *subject*, and other parameters.
 
 ```azurepowershell
 New-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -IdentityName uai-pwsh01 `
@@ -320,7 +317,7 @@ New-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -IdentityNam
 
 ## List federated identity credentials on a user-assigned managed identity
 
-Run the [Get-AzFederatedIdentityCredentials](/powershell/module/az.managedserviceidentity/get-azfederatedidentitycredentials) command to read all the federated identity credentials configured on a user-assigned managed identity:
+Run the [Get-AzFederatedIdentityCredentials](/powershell/module/az.managedserviceidentity/get-azfederatedidentitycredential) command to read all the federated identity credentials configured on a user-assigned managed identity:
 
 ```azurepowershell
 Get-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -IdentityName uai-pwsh01
@@ -328,7 +325,7 @@ Get-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -IdentityNam
 
 ## Get a federated identity credential on a user-assigned managed identity
 
-Run the [Get-AzFederatedIdentityCredentials](/powershell/module/az.managedserviceidentity/get-azfederatedidentitycredentials) command to show a federated identity credential (by name):
+Run the [Get-AzFederatedIdentityCredentials](/powershell/module/az.managedserviceidentity/get-azfederatedidentitycredential) command to show a federated identity credential (by name):
 
 ```azurepowershell
 Get-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -IdentityName uai-pwsh01 -Name fic-pwsh01
@@ -336,7 +333,7 @@ Get-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -IdentityNam
 
 ## Delete a federated identity credential from a user-assigned managed identity
 
-Run the [Remove-AzFederatedIdentityCredentials](/powershell/module/az.managedserviceidentity/remove-azfederatedidentitycredentials) command to delete a federated identity credential under an existing user assigned identity.
+Run the [Remove-AzFederatedIdentityCredentials](/powershell/module/az.managedserviceidentity/remove-azfederatedidentitycredential) command to delete a federated identity credential under an existing user assigned identity.
 
 ```azurepowershell
 Remove-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -IdentityName uai-pwsh01 -Name fic-pwsh01
@@ -351,7 +348,7 @@ Remove-AzFederatedIdentityCredentials -ResourceGroupName azure-rg-test -Identity
 - If you don't already have an Azure account, [sign up for a free account](https://azure.microsoft.com/free/) before you continue.
 - Get the information for your external IdP and software workload, which you need in the following steps.
 - To create a user-assigned managed identity and configure a federated identity credential, your account needs the [Contributor](/azure/role-based-access-control/built-in-roles#contributor) or [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment.
-- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm#create-a-user-assigned-managed-identity-3)
+- [Create a user-assigned managed identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-arm#create-a-user-assigned-managed-identity-3)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 ## Template creation and editing
@@ -471,7 +468,7 @@ Make sure that any kind of automation creates federated identity credentials und
 - You can run all the commands in this article either in the cloud or locally:
   - To run in the cloud, use [Azure Cloud Shell](/azure/cloud-shell/overview).
   - To run locally, install [curl](https://curl.se/download.html) and the [Azure CLI](/cli/azure/install-azure-cli).
-- [Create a user-assigned manged identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity-4)
+- [Create a user-assigned managed identity](~/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities.md?pivots=identity-mi-methods-rest#create-a-user-assigned-managed-identity-4)
 - Find the name of the user-assigned managed identity, which you need in the following steps.
 
 ## Obtain a bearer access token

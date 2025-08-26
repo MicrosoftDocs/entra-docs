@@ -1,22 +1,18 @@
 ---
-title: Users and groups in Conditional Access policy
-description: Who are users and groups in a Microsoft Entra Conditional Access policy
-
+title: Configure Users, Groups, and Workload Identities in Conditional Access
+description: Configure Conditional Access user assignments in Microsoft Entra ID. Target specific users, groups, directory roles, and workload identities while avoiding administrator lockout with proper exclusions.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 01/23/2024
-
+ms.topic: article
+ms.date: 07/21/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
-ms.reviewer: calebb
+manager: dougeby
+ms.reviewer: lhuangnorth
 ---
 # Conditional Access: Users, groups, and workload identities
 
 A Conditional Access policy must include a user, group, or workload identity assignment as one of the signals in the decision process. These identities can be included or excluded from Conditional Access policies. Microsoft Entra ID evaluates all policies and ensures that all requirements are met before granting access. 
-
-> [!VIDEO https://www.youtube.com/embed/5DsW1hB3Jqs]
 
 ## Include users
 
@@ -37,23 +33,23 @@ The following options are available to include when creating a Conditional Acces
          - Local guest users, for example any user belonging to the home tenant with the user type attribute set to guest
          - Service provider users, for example a Cloud Solution Provider (CSP)
          - Other external users, or users not represented by the other user type selections
-      - One or more tenants can be specified for the selected user type(s), or you can specify all tenants. 
+      - One or more tenants can be specified for the selected user types, or you can specify all tenants. 
    - Directory roles
-      - Allows administrators to select specific [built-in Microsoft Entra directory roles](~/identity/role-based-access-control/permissions-reference.md) used to determine policy assignment. For example, organizations might create a more restrictive policy on users actively assigned the Global Administrator role. Other role types aren't supported, including administrative unit-scoped roles and custom roles.
+      - Allows administrators to select specific [built-in directory roles](../role-based-access-control/permissions-reference.md) used to determine policy assignment. For example, organizations might create a more restrictive policy on users actively assigned a privileged role. Other role types aren't supported, including administrative unit-scoped roles and custom roles.
          - Conditional Access allows administrators to select some [roles that are listed as deprecated](../role-based-access-control/permissions-reference.md#deprecated-roles). These roles still appear in the underlying API and we allow administrators to apply policy to them.
    - Users and groups
       - Allows targeting of specific sets of users. For example, organizations can select a group that contains all members of the HR department when an HR app is selected as the cloud app. A group can be any type of user group in Microsoft Entra ID, including dynamic or assigned security and distribution groups. Policy is applied to nested users and groups.
 
 > [!IMPORTANT]
-> When selecting which users and groups are included in a Conditional Access Policy, there is a limit to the number of individual users that can be added directly to a Conditional Access policy. If there are a large amount of individual users that are needed to be added to directly to a Conditional Access policy, we recommend placing the users in a group, and assigning the group to the Conditional Access policy instead.
+> When selecting which users and groups are included in a Conditional Access Policy, there's a limit to the number of individual users that can be added directly to a Conditional Access policy. If there are a large number of individual users that need to be added directly to a Conditional Access policy, we recommend placing the users in a group, and assigning the group to the Conditional Access policy instead.
 > 
-> If users or groups are a member of over 2048 groups their access may be blocked. This limit applies to both direct and nested group membership.
+> If users or groups are a member of over 2048 groups their access might be blocked. This limit applies to both direct and nested group membership.
 
 > [!WARNING]
-> Conditional Access policies do not support users assigned a directory role [scoped to an administrative unit](~/identity/role-based-access-control/admin-units-assign-roles.md) or directory roles scoped directly to an object, like through [custom roles](~/identity/role-based-access-control/custom-create.md).
+> Conditional Access policies don't support users assigned a directory role [scoped to an administrative unit](../role-based-access-control/manage-roles-portal.md) or directory roles scoped directly to an object, like through [custom roles](../role-based-access-control/custom-create.md).
 
 > [!NOTE]
-> When targeting policies to B2B direct connect external users, these policies will also be applied to B2B collaboration users accessing Teams or SharePoint Online who are also eligible for B2B direct connect. The same applies for policies targeted to B2B collaboration external users, meaning users accessing Teams shared channels will have B2B collaboration policies apply if they also have a guest user presence in the tenant.
+> When targeting policies to B2B direct connect external users, these policies are applied to B2B collaboration users accessing Teams or SharePoint Online who are also eligible for B2B direct connect. The same applies for policies targeted to B2B collaboration external users, meaning users accessing Teams shared channels have B2B collaboration policies apply if they also have a guest user presence in the tenant.
 
 ## Exclude users
 
@@ -72,9 +68,9 @@ The following options are available to exclude when creating a Conditional Acces
        - Local guest users, for example any user belonging to the home tenant with the user type attribute set to guest
        - Service provider users, for example a Cloud Solution Provider (CSP)
        - Other external users, or users not represented by the other user type selections
-    - One or more tenants can be specified for the selected user type(s), or you can specify all tenants.
+    - One or more tenants can be specified for the selected user types, or you can specify all tenants.
 - Directory roles
-   - Allows administrators to select specific Microsoft Entra directory roles used to determine assignment. For example, organizations might create a more restrictive policy on users assigned the Global Administrator role.
+   - Allows administrators to select specific [Microsoft Entra directory roles](../role-based-access-control/permissions-reference.md) used to determine assignment.
 - Users and groups
    - Allows targeting of specific sets of users. For example, organizations can select a group that contains all members of the HR department when an HR app is selected as the cloud app. A group can be any type of group in Microsoft Entra ID, including dynamic or assigned security and distribution groups. Policy is applied to nested users and groups.
 
@@ -96,7 +92,7 @@ Conditional Access policies that target external users might interfere with serv
 
 ## Workload identities 
 
-A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user. Conditional Access policies can be applied to single tenant service principals registered in your tenant. Third party SaaS and multi-tenanted apps are out of scope. Managed identities aren't covered by policy.
+A workload identity is an identity that allows an application or service principal access to resources, sometimes in the context of a user. Conditional Access policies can be applied to single tenant service principals registered in your tenant. Non-Microsoft SaaS and multi-tenanted apps are out of scope. Managed identities aren't covered by policy.
 
 Organizations can target specific workload identities to be included or excluded from policy.
 

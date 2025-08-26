@@ -1,30 +1,32 @@
 ---
 title: 'Microsoft Entra Cloud Sync accidental deletes'
 description: This topic describes how to use the accidental delete feature to prevent deletions.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
-ms.date: 11/06/2023
+ms.topic: article
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Accidental delete prevention
 
-The following document describes the accidental deletion feature for Microsoft Entra Cloud Sync.  The accidental delete feature is designed to protect you from accidental configuration changes and changes to your on-premises directory that would affect many users and groups.  This feature allows you to:
+The following document describes the accidental deletion feature for Microsoft Entra Cloud Sync. The accidental delete feature is designed to protect you from accidental configuration changes and changes to your on-premises directory that would affect many users and groups. This feature allows you to:
 
-- configure the ability to prevent accidental deletes automatically. 
-- Set the # of objects (threshold) beyond which the configuration takes effect 
-- set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario 
+- Configure the ability to prevent accidental deletes automatically. 
+- Set the # of objects (threshold) beyond which the configuration takes effect.
+- Set up a notification email address so they can get an email notification once the sync job in question is put in quarantine for this scenario.
 
-To use this feature, you set the threshold for the number of objects that, if deleted, synchronization should stop.  So if this number is reached, the synchronization stops and a notification is sent to the email that is specified.  This notification allows you to investigate what is going on.
+>[!NOTE]
+>If you have specified accidental delete prevention four group provisioning to Microsoft Entra ID, be aware this only prevents the group from being deleted. This does not prevent members from being deleted. To prevent members from being deleted, you should configure accidental delete prevention on synchronized users.
+
+To use this feature, you set the threshold for the number of objects that, if deleted, synchronization should stop. So if this number is reached, the synchronization stops and a notification is sent to the email that is specified. This notification allows you to investigate what is going on.
 
 For more information and an example, see the following video.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWK5mV]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=2af05990-497c-46b5-ae3e-d20c8909bbe8]
 
 
 ## Configure accidental delete prevention
@@ -42,11 +44,11 @@ To use the new feature, follow the steps below.
 
 
 ## Recovering from an accidental delete instance
-If you encounter an accidental delete you see this message on the status of your provisioning agent configuration.  It says **Delete threshold exceeded**.
+If you encounter an accidental delete you see this message on the status of your provisioning agent configuration. It says **Delete threshold exceeded**.
  
 ![Accidental delete status](media/how-to-accidental-deletes/delete-1.png)
 
-By clicking on **Delete threshold exceeded**, you'll see the sync status info.  This action will provide more details. 
+By clicking on **Delete threshold exceeded**, you'll see the sync status info. This action will provide more details. 
  
  ![Sync status](media/how-to-accidental-deletes/delete-2.png)
 
@@ -63,7 +65,7 @@ Using **View provisioning log**, you can see the **StagedDelete** entries and re
 
 ### Allowing deletes
 
-The **Allow deletes** action, deletes the objects that triggered the accidental delete threshold.  Use the following procedure to accept these deletes.  
+The **Allow deletes** action, deletes the objects that triggered the accidental delete threshold. Use the following procedure to accept these deletes. 
 
 1. Right-click on the ellipses and select **Allow deletes**.
 2. Click **Yes** on the confirmation to allow the deletions.
@@ -77,9 +79,9 @@ The **Allow deletes** action, deletes the objects that triggered the accidental 
 ### Rejecting deletions
 
 If you don't want to allow the deletions, you need to do the following actions:
-- investigate the source of the deletions
-- fix the issue (example, OU was moved out of scope accidentally and you've now readded it back to the scope)
-- Run **Restart sync** on the agent configuration
+- Investigate the source of the deletions.
+- Fix the issue (example, OU was moved out of scope accidentally and you've now readded it back to the scope).
+- Run **Restart sync** on the agent configuration.
 
 ## Next steps 
 

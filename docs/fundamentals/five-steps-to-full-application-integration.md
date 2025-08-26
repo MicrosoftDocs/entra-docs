@@ -5,7 +5,7 @@ author: jricketts
 ms.author: jricketts
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/01/2023
 # Customer intent: As an IT admin responsible for application integration, I want to learn how to integrate my company's applications with Microsoft Entra ID, so that I can improve security, reduce costs, increase productivity, and enable compliance through centralized Identity and Access Management.
 ---
@@ -93,8 +93,8 @@ During discovery, there might be applications not tracked by the IT team, which 
 - Lower administrative overhead with streamlined Identity and Access Management process
 - Enable single sign-on (SSO) access to applications in the My Apps portal
   - See: [Create collections on the My Apps portal](~/identity/enterprise-apps/access-panel-collections.md)
-- Use Identity Protection and Conditional Access to increase data from app usage, and extend benefits to recently added apps
-  - [What is Identity Protection?](~/id-protection/overview-identity-protection.md)
+- Use Microsoft Entra ID Protection and Conditional Access to increase signals from app usage, and extend benefits to recently added apps
+  - [What is ID Protection?](~/id-protection/overview-identity-protection.md)
   - [What is Conditional Access?](~/identity/conditional-access/overview.md)
 
 ### App owner awareness

@@ -2,13 +2,12 @@
 title: Join a SLE VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a SUSE Linux Enterprise virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
-
+manager: dougeby
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: devx-track-linux
+ms.custom: devx-track-linux, linux-related-content, sfi-image-nochange
 ms.topic: how-to
-ms.date: 09/23/2023
+ms.date: 03/18/2025
 ms.author: justinha
 ---
 # Join a SUSE Linux Enterprise virtual machine to a Microsoft Entra Domain Services managed domain
@@ -84,7 +83,7 @@ To join the managed domain using **SSSD** and the *User Logon Management* module
 
     In YaST, select **System > Network Settings**.
 
-1. Select the *Hostname/DNS* tab, then enter the IP address(es) of the managed domain into the text box *Name Server 1*. These IP addresses are shown on the *Properties* window in the Microsoft Entra admin center for your managed domain, such as *10.0.2.4* and *10.0.2.5*.
+1. Select the *Hostname/DNS* tab, then enter one or more IP addresses of the managed domain into the text box *Name Server 1*. These IP addresses are shown on the *Properties* window in the Microsoft Entra admin center for your managed domain, such as *10.0.2.4* and *10.0.2.5*.
 
     Add your own managed domain IP addresses, then select **OK**.
 
@@ -110,7 +109,7 @@ To join the VM to the managed domain, complete the following steps:
 
 1. The VM installs additional software as needed, then checks to see if the managed domain is available.
 
-    If everything is correct, the following example dialog is shown to indicate the VM has discovered the managed domain but that you're *Not yet enrolled*.
+    If everything is correct, the following example dialog is shown to indicate the VM discovered the managed domain but that you're *Not yet enrolled*.
 
     ![Example screenshot of the Active Directory enrollment window in YaST](./media/join-suse-linux-vm/enroll-window.png)
 
@@ -120,7 +119,7 @@ To join the VM to the managed domain, complete the following steps:
 
 1. To enroll, select **OK**.
 
-1. A message is shown to confirm that you are successfully enrolled. To finish, select **OK**.
+1. A message is shown to confirm that you're successfully enrolled. To finish, select **OK**.
 
 After the VM is enrolled in the managed domain, configure the client using *Manage Domain User Logon*, as shown in the following example screenshot:
 
@@ -134,7 +133,7 @@ After the VM is enrolled in the managed domain, configure the client using *Mana
 
 1. From the side bar, select **Service Options › Name switch**, then *Extended Options*. From that window, select either *fallback_homedir* or *override_homedir*, then select **Add**.
 
-1. Specify a value for the home directory location. To have home directories follow the format of */home/USER_NAME*, use */home/%u*. For more information about possible variables, see the sssd.conf man page (`man 5 sssd.conf`), section *override_homedir*.
+1. Specify a value for the home directory location. To have home directories, follow the format of */home/USER_NAME*, use */home/%u*. For more information about possible variables, see the sssd.conf man page (`man 5 sssd.conf`), section *override_homedir*.
 
 1. Select **OK**.
 
@@ -172,13 +171,11 @@ After you have joined the managed domain, you can sign in to it from your workst
 
 ## Join VM to the managed domain using Winbind from the YaST command line interface
 
-To join the managed domain using **winbind** and the *YaST command line interface*:
+To join the managed domain using **winbind** and the *YaST command line interface*, add `user` and `password` values for an administrator, and update other parameters for your organization:
 
-* Join the domain:
-
-  ```bash
-  sudo yast samba-client joindomain domain=aaddscontoso.com user=<admin> password=<admin password> machine=<(optional) machine account>
-  ```
+```bash
+sudo yast samba-client joindomain domain=aaddscontoso.com machine=<(optional) machine account>
+```
 
 ## Join VM to the managed domain using Winbind from the terminal
 
@@ -192,7 +189,7 @@ To join the managed domain using **winbind** and the *`samba net` command*:
 
 2. Edit the configuration files:
 
-   * /etc/samba/smb.conf
+   * `/etc/samba/smb.conf`
    
      ```config
      [global]
@@ -211,7 +208,7 @@ To join the managed domain using **winbind** and the *`samba net` command*:
          winbind refresh tickets = yes
      ```
 
-   * /etc/krb5.conf
+   * `/etc/krb5.conf`
    
      ```config
      [libdefaults]
@@ -336,7 +333,7 @@ To grant members of the *AAD DC Administrators* group administrative privileges 
 
 ## Sign in to the VM using a domain account
 
-To verify that the VM has been successfully joined to the managed domain, start a new SSH connection using a domain user account. Confirm that a home directory has been created, and that group membership from the domain is applied.
+To verify that the VM successfully joined to the managed domain, start a new SSH connection using a domain user account. Confirm that a home directory is created, and that group membership from the domain is applied.
 
 1. Create a new SSH connection from your console. Use a domain account that belongs to the managed domain using the `ssh -l` command, such as `contosoadmin@aaddscontoso.com` and then enter the address of your VM, such as *linux-q2gr.aaddscontoso.com*. If you use the Azure Cloud Shell, use the public IP address of the VM rather than the internal DNS name.
 

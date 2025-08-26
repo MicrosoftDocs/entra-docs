@@ -5,12 +5,12 @@ description: Learn how admins can use Microsoft Entra Conditional Access to dist
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/25/2024
+ms.topic: concept-article
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckms
-manager: amycolannino
+manager: dougeby
 ms.reviewer: inbarc
 ---
 # Conditional Access authentication strength 
@@ -43,7 +43,7 @@ Built-in authentication strengths are combinations of authentication methods tha
 
 For an example, the built-in **Phishing-resistant MFA strength** allows the following combinations:
 
-- Windows Hello for Business
+- Windows Hello for Business / Platform Credential
 
   Or
 
@@ -53,7 +53,9 @@ For an example, the built-in **Phishing-resistant MFA strength** allows the foll
 
 - Microsoft Entra certificate-based authentication (Multifactor)
 
-:::image type="content" border="true" source="./media/concept-authentication-strengths/authentication-strength-definitions.png" alt-text="Screenshot showing the phishing-resistant MFA strength definition.":::
+:::image type="content" border="true" source="./media/concept-authentication-strengths/authentication-strength-definitions.png" alt-text="Screenshot showing the phishing-resistant MFA strength definition." lightbox="./media/concept-authentication-strengths/authentication-strength-definitions.png":::
+
+
 
 The combinations of authentication methods for each built-in authentication strength are listed in the following table. These combinations include methods that need to be registered by users and enabled in the Authentication methods policy or the legacy MFA settings policy.
 
@@ -64,7 +66,7 @@ The combinations of authentication methods for each built-in authentication stre
 |Authentication method combination |MFA strength | Passwordless MFA strength| Phishing-resistant MFA strength|
 |----------------------------------|-------------|-------------------------------------|-------------------------------------------|
 |FIDO2 security key| &#x2705; | &#x2705; | &#x2705; |
-|Windows Hello for Business| &#x2705; | &#x2705; | &#x2705; |
+|Windows Hello for Business / Platform Credential| &#x2705; | &#x2705; | &#x2705; |
 |Certificate-based authentication (Multi-Factor) | &#x2705; | &#x2705; | &#x2705; |
 |Microsoft Authenticator (Phone Sign-in)| &#x2705; | &#x2705; | | 
 |Temporary Access Pass (One-time use AND Multi-use)| &#x2705; | | | 
@@ -100,9 +102,13 @@ Conditional Access Administrators can also create custom authentication strength
 
 - **Windows Hello for Business** – If the user signed in with Windows Hello for Business as their primary authentication method, it can be used to satisfy an authentication strength requirement that includes Windows Hello for Business. However, if the user signed in with another method like password as their primary authentication method, and the authentication strength requires Windows Hello for Business, they aren't prompted to sign in with Windows Hello for Business. The user needs to restart the session, choose **Sign-in options**, and select a method required by the authentication strength.
 
-## Known issue
+## Known issues
 
-- **FIDO2 security key Advanced options** - Advanced options aren't supported for external users with a home tenant that is located in a different Microsoft cloud than the resource tenant.
+- **Authentication strength and sign-in frequency** - When a resource requires an authentication strength and a sign-in frequency, users can satisfy both requirements at two different times. 
+
+  For example, let's say a resource requires passkey (FIDO2) for the authentication strength, and a 1-hour sign-in frequency. 24 hours ago, a user signed in with passkey (FIDO2) to access the resource. 
+  
+  When the user unlocks their Windows device using Windows Hello for Business, they can access the resource again. Yesterday's sign-in satisfies the authentication strength requirement, and today's device unlock satisfies the sign-in frequency requirement.
 
 ## FAQ
 
@@ -118,7 +124,6 @@ As a result, users in Contoso can access most of the resources in the tenant usi
 ## Prerequisites
 
 - **Microsoft Entra ID P1** - Your tenant needs to have Microsoft Entra ID P1 license to use Conditional Access. If needed, you can enable a [free trial](https://www.microsoft.com/security/business/get-started/start-free-trial).
-- **Enable combined registration** - Authentication strengths are supported when using [combined MFA and SSPR registration](howto-registration-mfa-sspr-combined.md). Using the legacy registration will result in poor user experience as the user may register methods that aren't required by the Authentication methods policy.
 
 ## Next steps
 

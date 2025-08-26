@@ -16,8 +16,6 @@
       items:
         - name: Identity fundamentals
           href: ~/fundamentals/identity-fundamental-concepts.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-        - name: Introduction to identity and access management
-          href: ~/fundamentals/introduction-identity-access-management.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Authentication vs. authorization
           href: authentication-vs-authorization.md
         - name: OAuth 2.0 and OpenID Connect
@@ -25,6 +23,10 @@
         - name: App types and authentication flows
           displayName: Auth flows
           href: authentication-flows-app-scenarios.md
+        - name: App sign-in flow
+          href: app-sign-in-flow.md
+        - name: Sign-in audience
+          href: v2-supported-account-types.md
         - name: Security tokens
           href: security-tokens.md
         - name: Microsoft Authentication Library (MSAL)
@@ -81,20 +83,34 @@
           href: app-objects-and-service-principals.md
         - name: How and why apps are added
           href: how-applications-are-added.md
-        - name: Single-tenant and multi-tenant apps
+        - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
-    - name: Custom Authentication Extensions
-      displayName: Custom Authentication Extensions
+    - name: Customization and extensibility
       items:
-        - name: Overview
-          href: custom-extension-overview.md
-        - name: Custom claims provider
-          href: custom-claims-provider-overview.md
+      - name: Custom Authentication Extensions
+        displayName: Custom Authentication Extensions
+        items:
+          - name: Overview
+            href: custom-extension-overview.md
+          - name: Custom claims provider
+            href: custom-claims-provider-overview.md
+      - name: Native authentication
+        items:
+          - name: Native authentication
+            href: concept-native-authentication.md
+          - name: Native authentication challenge types
+            href: concept-native-authentication-challenge-types.md
+          - name: Native authentication web fallback
+            href: concept-native-authentication-web-fallback.md
+          - name: Native authentication user attribute builder
+            href: concept-native-authentication-user-attribute-builder.md
     - name: Security
       displayName: least privilege, secure app configuration, Conditional Access
       items:
         - name: Application security
           href: security-best-practices-for-app-registration.md
+        - name: Identifier URI restrictions
+          href: identifier-uri-restrictions.md
         - name: Least privileged access
           href: secure-least-privileged-access.md
         - name: Secure access control using groups
@@ -117,6 +133,8 @@
               href: claims-validation.md
         - name: Zero Trust
           href: zero-trust-for-developers.md
+        - name: Best practices to protect frontline workers
+          href: security-best-practices-for-frontline-workers.md
     - name: Identity platform best practices
       href: identity-platform-integration-checklist.md
 - name: Single-page app (SPA)
@@ -125,91 +143,146 @@
       href: index-spa.yml
     - name: Quickstart
       items: 
-        - name: React
-          href: quickstart-single-page-app-react-sign-in.md
-        - name: Angular
-          href: quickstart-single-page-app-angular-sign-in.md
-        - name: JavaScript
-          href: quickstart-single-page-app-javascript-sign-in.md
-        - name: Blazor WebAssembly
-          href: quickstart-single-page-app-blazor-wasm-sign-in.md
+          - name: Browser-delegated authentication
+            items:
+            - name: Sign in users
+              href: quickstart-single-page-app-sign-in.md?pivots=workforce
+          - name: Native authentication
+            items:
+              - name: Use API
+                items:
+                  - name: Sign in users in a React SPA
+                    href: quickstart-native-authentication-single-page-app-react-sign-in.md
+              - name: Use SDK
+                items:
+                - name: Sign in users in SPA
+                  href: quickstart-native-authentication-single-page-app-sdk-sign-in.md
     - name: Tutorials
       items:
+        - name: JavaScript
+          items:
+            - name: Prepare your app
+              href: tutorial-single-page-app-javascript-prepare-app.md
+            - name: Add sign in and sign out
+              href: tutorial-single-page-app-javascript-configure-authentication.md
+            - name: Sign in users
+              href: tutorial-single-page-app-javascript-sign-in-sign-out.md
         - name: React
           items:
-          - name: Register your app
-            href: tutorial-single-page-app-react-register-app.md
-          - name: Prepare your app
-            href: tutorial-single-page-app-react-prepare-spa.md
-          - name: Sign in users
-            href: tutorial-single-page-app-react-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-single-page-app-react-call-api.md
+            - name: Browser-delegated authentication
+              items:
+              - name: Prepare your app
+                href: tutorial-single-page-app-react-prepare-app.md
+              - name: Add sign in and sign out
+                href: tutorial-single-page-app-react-configure-authentication.md
+              - name: Sign in users
+                href: tutorial-single-page-app-react-sign-in-sign-out.md
+            - name: Native authentication
+              items:
+                - name: Use API
+                  items:
+                  - name: Sign up
+                    href: tutorial-native-authentication-single-page-app-react-sign-up.md
+                  - name: Set up local CORS
+                    href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
+                  - name: Sign in
+                    href: tutorial-native-authentication-single-page-app-react-sign-in.md
+                  - name: Reset password
+                    href: tutorial-native-authentication-single-page-app-react-reset-password.md
+                - name: Use SDK
+                  items:
+                  - name: Sign up
+                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-up.md
+                  - name: Sign in
+                    href: tutorial-native-authentication-single-page-app-react-sdk-sign-in.md
+                  - name: Reset password
+                    href: tutorial-native-authentication-single-page-app-react-sdk-reset-password.md
+                  - name: Support web fallback
+                    href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md
         - name: Angular
-          href: tutorial-v2-angular-auth-code.md
-        - name: JavaScript
-          href: tutorial-v2-javascript-auth-code.md
+          items:
+            - name: Browser-delegated authentication
+              items:
+              - name: Prepare your app
+                href: tutorial-single-page-apps-angular-prepare-app.md
+              - name: Sign in users
+                href: tutorial-single-page-apps-angular-sign-in-users-app.md
+              - name: Extract user data and test app
+                href: tutorial-single-page-apps-angular-extract-user-data.md
+            - name: Native authentication
+              items:
+              - name: Sign up
+                href: tutorial-native-authentication-single-page-app-angular-sign-up.md
+              - name: Sign in
+                href: tutorial-native-authentication-single-page-app-angular-sign-in.md
+              - name: Reset password
+                href: tutorial-native-authentication-single-page-app-angular-reset-password.md
+              - name: Support web fallback
+                href: tutorial-native-authentication-single-page-app-javascript-sdk-web-fallback.md 
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
     - name: How-to
       items:
-        - name: SPA that signs in users and calls web API
+        - name: Browser-delegated authentication
           items:
-            - name: App registration
-              href: scenario-spa-app-registration.md
-            - name: Code configuration
-              href: scenario-spa-app-configuration.md
-            - name: Sign in and sign out
-              href: scenario-spa-sign-in.md
-            - name: Acquire token for an API
-              href: scenario-spa-acquire-token.md
-            - name: Call a web API
-              href: scenario-spa-call-api.md
+            - name: SPA that signs in users and calls web API
+              items:
+                - name: Code configuration
+                  href: scenario-spa-app-configuration.md
+                - name: Sign in and sign out
+                  href: scenario-spa-sign-in.md
+                - name: Acquire token for an API
+                  href: scenario-spa-acquire-token.md
+                - name: Call a web API
+                  href: scenario-spa-call-api.md
+        - name: Native authentication
+          items:
+            - name: Set up local CORS
+              href: how-to-native-authentication-single-page-app-javascript-sdk-set-up-local-cors.md
+            - name: Set up CORS in test environment
+              href: how-to-native-authentication-cors-solution-test-environment.md
+            - name: Set up CORS in production
+              href: how-to-native-authentication-cors-solution-production-environment.md
 - name: Web app
   items:
     - name: Web app authentication
       href: index-web-app.yml
-    - name: Quickstart
-      items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
-        - name: ASP.NET Core
-          href: quickstart-web-app-dotnet-core-sign-in.md
-        - name: Node.js - MSAL
-          href: quickstart-web-app-nodejs-msal-sign-in.md
-        - name: Java
-          href: quickstart-web-app-java-sign-in.md
-        - name: Python
-          items:
-            - name: Flask
-              href: quickstart-web-app-python-flask.md
+    - name: Quickstarts
+      items:
+        - name: Sign in users
+          href: quickstart-web-app-sign-in.md?pivots=workforce
+          displayName: Node, ASP.NET,  ASP.NET Core, Python
+        - name: Call an API
+          href: quickstart-web-app-node-sign-in-call-api.md
+          displayName: Node.js, Nodejs, Nodejs web app
+        - name: Edit profile
+          href: quickstart-web-app-node-sign-in-edit-profile.md
+          displayName: Node.js, Nodejs, Nodejs web app
     - name: Tutorials
       items:
         - name: ASP.NET Core
           items:
-          - name: Register your app
-            href: tutorial-web-app-dotnet-register-app.md
           - name: Prepare your app
-            href: tutorial-web-app-dotnet-prepare-app.md
-          - name: Sign in users
-            href: tutorial-web-app-dotnet-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-web-app-dotnet-call-api.md
+            href: tutorial-web-app-dotnet-prepare-app.md?tabs=workforce-tenant
+          - name: Add authentication elements
+            href: tutorial-web-app-dotnet-sign-in-users.md?tabs=workforce-tenant
+          - name: Test your app
+            href: tutorial-web-app-dotnet-call-api.md?tabs=workforce-tenant
         - name: Python Flask
           items:
-          - name: Register your app
-            href: tutorial-web-app-python-register-app.md
-          - name: Prepare your app
-            href: tutorial-web-app-python-prepare-app.md
-          - name: Sign in users
-            href: tutorial-web-app-python-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-web-app-python-call-api.md
-        - name: Node.js
-          href: tutorial-v2-nodejs-webapp-msal.md
-        - name: Spring
-          href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
+          - name: Add sign-in and sign-out
+            href: tutorial-web-app-python-flask-sign-in-out.md
+          - name: Call Microsoft Graph API
+            href: tutorial-web-app-python-flask-call-microsoft-graph-api.md
+        - name: Node/Express.js
+          items:
+            - name: Set up Nodejs app
+              href: tutorial-web-app-node-sign-in-prepare-app.md?pivots=workforce
+            - name: Add sign in and sign out
+              href: tutorial-web-app-node-sign-in-sign-out.md?pivots=workforce
+            - name: Call Microsoft Graph API
+              href: tutorial-web-app-node-call-microsoft-graph-api.md?tabs=workforce-tenant
         - name: Secure web app accesses storage and Microsoft Graph
           items:
             - name: Overview
@@ -230,6 +303,7 @@
     - name: How-to
       items:
         - name: Web app that signs in users
+          expanded: false
           items:
             - name: App registration
               href: scenario-web-app-sign-user-app-registration.md
@@ -238,6 +312,7 @@
             - name: Sign-in and sign-out
               href: scenario-web-app-sign-user-sign-in.md
         - name: Web app that calls an API
+          expanded: false
           items:
             - name: App registration
               href: scenario-web-app-call-api-app-registration.md
@@ -249,7 +324,32 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-        - name: Deploy and setup App Service auth in a pipeline
+            - name: Node app that calls an API
+              expanded: false
+              items:
+              - name: Prepare tenant 
+                href: how-to-web-app-node-sign-in-call-api-prepare-tenant.md
+              - name: Create Node.js client web app 
+                href: how-to-web-app-node-sign-in-call-api-prepare-app.md
+              - name: Acquire access token
+                href: how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md
+              - name: Call API 
+                href: how-to-web-app-node-sign-in-call-api-call-api.md
+        - name: Edit profile with MFA
+          expanded: false
+          items:
+            - name: Set up app 
+              href: how-to-web-app-node-edit-profile-prepare-app.md
+              displayName: Conditional Access, CA 
+            - name: Update profile
+              href: how-to-web-app-node-edit-profile-update-profile.md
+              displayName: protect, multifactor authentication, MFA   
+        - name: Use client certificate
+          href: how-to-web-app-node-use-certificate.md
+        - name: Use role-based access control
+          href: how-to-web-app-role-based-access-control.md
+          displayName: rbac, roles, roles claim, groups claim
+        - name: Deploy and set up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
   items:
@@ -257,20 +357,16 @@
       href: index-web-api.yml
     - name: Quickstart
       items:
-        - name: ASP.NET
-          href: quickstart-web-api-aspnet-protect-api.md
-        - name: ASP.NET Core
-          href: quickstart-web-api-aspnet-core-protect-api.md
+        - name: Call a protected web API
+          href: quickstart-web-api-dotnet-protect-app.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
           items: 
-          - name: Register the API
-            href: tutorial-web-api-dotnet-register-app.md
-          - name: Create and configure project 
-            href: tutorial-web-api-dotnet-prepare-app.md
-          - name: Protect API endpoint
-            href: tutorial-web-api-dotnet-protect-endpoint.md
+          - name: Create a web API and protect its endpoints
+            href: tutorial-web-api-dotnet-core-build-app.md
+          - name: Call a protected web API
+            href: tutorial-web-api-dotnet-core-call-protected-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
@@ -278,6 +374,8 @@
       items:
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
+        - name: Call a web API with Insomnia
+          href: howto-call-a-web-api-with-rest-client.md
         - name: Protected web API
           items:
             - name: App registration
@@ -300,23 +398,30 @@
   items:
     - name: Desktop app authentication
       href: index-desktop.yml
-    - name: Quickstart
-      items:
-        - name: Node.js Electron
-          href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Universal Windows Platform
-          href: quickstart-desktop-app-uwp-sign-in.md
-        - name: Windows Presentation Foundation
-          href: quickstart-desktop-app-wpf-sign-in.md
+    - name: Quickstarts
+      href: quickstart-desktop-app-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: Universal Windows Platform (UWP)
-          href: tutorial-v2-windows-uwp.md
-        - name: Windows Presentation Foundation (WPF)
-          href: tutorial-v2-windows-desktop.md
-        - name: Electron
-          displayName: Node.js
+        - name: Node.js Electron
           href: tutorial-v2-nodejs-desktop.md
+        - name: Windows Presentation Foundation (WPF)
+          items: 
+            - name: .NET Framework
+              items:
+              - name: Sign in and call Microsoft Graph
+                href: tutorial-v2-windows-desktop.md
+            - name: ASP.NET Core
+              items:
+              - name: Create WPF app
+                href: tutorial-desktop-wpf-dotnet-sign-in-build-app.md
+        - name: .NET MAUI
+          items:
+            - name: Create .NET MAUI app
+              href: tutorial-desktop-app-maui-sign-in-prepare-app.md
+            - name: Sign in and sign out
+              href: tutorial-desktop-app-maui-sign-in-sign-out.md
+            - name: Use role-based access control
+              href: tutorial-desktop-maui-role-based-access-control.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#desktop
@@ -324,16 +429,12 @@
       items:
         - name: Desktop app that calls an API
           items:
-            - name: Overview
-              href: scenario-desktop-overview.md
             - name: App registration
               href: scenario-desktop-app-registration.md
             - name: Code configuration
               href: scenario-desktop-app-configuration.md
             - name: Acquire token
               items:
-                - name: Overview
-                  href: scenario-desktop-acquire-token.md
                 - name: Interactively
                   href: scenario-desktop-acquire-token-interactive.md
                 - name: Interactive with WAM
@@ -346,26 +447,107 @@
                   href: scenario-desktop-acquire-token-device-code-flow.md
             - name: Call a web API
               href: scenario-desktop-call-api.md
-            - name: Move to production
-              href: scenario-desktop-production.md
 - name: Mobile
   items:
     - name: Mobile app authentication
       href: index-mobile.yml
     - name: Quickstart
       items: 
-        - name: Android
-          href: quickstart-mobile-app-android-sign-in.md
-        - name: iOS and macOS
-          href: quickstart-mobile-app-ios-sign-in.md
+        - name: Browser-delegated authentication
+          items: 
+            - name: Sign in users
+              href: quickstart-mobile-app-sign-in.md?pivots=workforce
+            - name: Call a web API
+              href: quickstart-mobile-app-call-api.md
+        - name: Native authentication
+          items:
+            - name: Android (Kotlin)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-android-sign-in.md
+                - name: Sign in users and call an API
+                  href: quickstart-native-authentication-android-call-api.md
+            - name: macOS (Swift)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-macos-sign-in.md
+            - name: iOS (Swift)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-ios-sign-in.md
+                - name: Sign in users and call an API
+                  href: quickstart-native-authentication-ios-call-api.md
     - name: Tutorials
       items:
+        - name: .NET MAUI
+          items:
+            - name: Browser-delegated authentication
+              items:
+                - name: Prepare your app
+                  href: tutorial-mobile-app-maui-sign-in-prepare-app.md
+                - name: Add sign in and sign out
+                  href: tutorial-mobile-app-maui-sign-in-sign-out.md
+                - name: Use role-based access control
+                  href: tutorial-mobile-maui-role-based-access-control.md
         - name: Android
-          href: tutorial-v2-android.md
-        - name: Android - Shared-device mode
-          href: tutorial-v2-shared-device-mode.md
+          items:
+            - name: Browser-delegated authentication
+              items:
+                - name: Prepare your app
+                  href: tutorial-mobile-app-android-prepare-app.md?tabs=workforce-tenant
+                - name: Add sign in and sign out
+                  href: tutorial-mobile-app-android-sign-in-sign-out.md?tabs=workforce-tenant
+                - name: Call web API
+                  href: tutorial-mobile-app-android-call-web-api.md?tabs=workforce-tenant
+            - name: Native authentication
+              items:
+                - name: Prepare Android app
+                  href: tutorial-native-authentication-prepare-android-app.md
+                - name: Sign up
+                  href: tutorial-native-authentication-android-sign-up.md
+                  displayName: email OTP, email one-time passcode, email and password
+                - name: Sign in and sign out
+                  href: tutorial-native-authentication-android-sign-in-sign-out.md
+                  displayName: email OTP, email one-time passcode, email and password
+                - name: Auto-sign in after sign-up
+                  href: tutorial-native-authentication-android-sign-in-after-sign-up.md
+                - name: Self-service password reset
+                  href: tutorial-native-authentication-android-self-service-password-reset.md
+                - name: Support web fallback
+                  href: tutorial-native-authentication-android-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-android-sign-in-call-api.md
+                  displayName: multiple access token
+            - name: Enable Shared Device Mode in your app using MSAL
+              href: tutorial-v2-shared-device-mode.md
+            - name: Set up an Android device in Shared Device Mode
+              href: tutorial-mobile-android-device-shared-mode.md
         - name: iOS and macOS
-          href: tutorial-v2-ios.md
+          items:
+            - name: Browser-delegated authentication
+              items:
+                - name: Prepare app
+                  href: tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce-tenant
+                - name: Sign in users
+                  href: tutorial-mobile-app-ios-swift-sign-in.md?pivots=workforce-tenant
+                - name: Call an API
+                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md?pivots=workforce-tenant
+            - name: Native authentication
+              items:
+                - name: Prepare iOS/macOS app
+                  href: tutorial-native-authentication-prepare-ios-macos-app.md
+                - name: Sign up
+                  href: tutorial-native-authentication-ios-macos-sign-up.md
+                - name: Sign in and sign out
+                  href: tutorial-native-authentication-ios-macos-sign-in-sign-out.md
+                - name: Auto-sign in after sign-up
+                  href: tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md
+                - name: Self-service password reset
+                  href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
+                - name: Support web fallback
+                  href: tutorial-native-authentication-ios-macos-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-ios-sign-in-call-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#mobile
@@ -373,8 +555,6 @@
       items:
         - name: Mobile app that calls an API
           items:
-            - name: Overview
-              href: scenario-mobile-overview.md
             - name: App registration
               href: scenario-mobile-app-registration.md
             - name: Code configuration
@@ -385,59 +565,49 @@
                   items:
                     - name: System browser on Android
                       href: msal-net-system-browser-android-considerations.md
-                    - name: Xamarin Android
-                      href: msal-net-xamarin-android-considerations.md
                     - name: Shared device mode for Android devices
-                      href: msal-android-shared-devices.md
+                      href: /entra/msal/android/shared-devices
+                    - name: QR code authentication
+                      href: android-qr-code-pin-authentication.md
                 - name: iOS
                   items:
                     - name: Microsoft Enterprise SSO plug-in for Apple devices
                       href: apple-sso-plugin.md
-                    - name: Xamarin iOS
-                      href: msal-net-xamarin-ios-considerations.md
                     - name: Shared device mode for iOS devices
                       href: msal-ios-shared-devices.md
+                    - name: QR code authentication
+                      href: ios-qr-code-pin-authentication.md
             - name: Acquire token
               href: scenario-mobile-acquire-token.md
             - name: Acquire token with broker
               displayName: Microsoft Authenticator Microsoft Intune, Authenticator
-              href: msal-net-use-brokers-with-xamarin-apps.md
+              href: /entra/msal/objc/single-sign-on-macos-ios
             - name: Calling a web API
               href: scenario-mobile-call-api.md
-            - name: Move to production
-              href: scenario-mobile-production.md
-        - name: Migrate broker-enabled Xamarin Android app MSAL.NET
-          href: msal-net-migration-android-broker.md
-        - name: Migrate broker-enabled Xamarin iOS app MSAL.NET
-          href: msal-net-migration-ios-broker.md
 - name: Service, daemon, script
   items:
     - name: Service/daemon authentication
       href: index-service.yml
-    - name: Quickstart
-      items:
-        - name: .NET
-          href: quickstart-daemon-dotnet-acquire-token.md
-        - name: Java
-          href: quickstart-daemon-app-java-acquire-token.md
-        - name: Node.js
-          href: quickstart-console-app-nodejs-acquire-token.md
-        - name: Python
-          href: quickstart-daemon-app-python-acquire-token.md
+    - name: Quickstarts
+      href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
         - name: .NET
-          href: tutorial-v2-aspnet-daemon-web-app.md
+          items: 
+            - name: Acquire token and call API
+              href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
-          href: tutorial-v2-nodejs-console.md
+          items:
+            - name: Acquire token and call API
+              href: tutorial-daemon-node-call-api-build-app.md
+            - name: Call Microsoft Graph API
+              href: tutorial-v2-nodejs-console.md
     - name: Samples
       href: sample-v2-code.md#service--daemon
     - name: How-to
       items:
         - name: Non-interactive app that calls a web API
           items:
-            - name: Overview
-              href: scenario-daemon-overview.md
             - name: App registration
               href: scenario-daemon-app-registration.md
             - name: Code configuration
@@ -446,9 +616,17 @@
               href: scenario-daemon-acquire-token.md
             - name: Call a web API
               href: scenario-daemon-call-api.md
-            - name: Move to production
-              href: scenario-daemon-production.md
-- name: Scenarios
+- name: Command-line interface (CLI) app
+  items:
+    - name: Quickstarts 
+      href: quickstart-cli-app-node-sign-in-users.md?pivots=workforce
+    - name: Tutorials
+      items:
+        - name: Create Node.js CLI app
+          href: tutorial-cli-app-node-sign-in-prepare-app.md
+        - name: Sign in users
+          href: tutorial-cli-app-node-sign-in-sign-out.md
+- name: How-to
   items:
     - name: Build
       items:
@@ -461,6 +639,10 @@
               href: quickstart-create-new-tenant.md
             - name: Register app or web API
               href: quickstart-register-app.md
+            - name: Add a redirect URI to an app
+              href: how-to-add-redirect-uri.md
+            - name: Add credentials to an app
+              href: how-to-add-credentials.md
             - name: Expose scopes in web API registration
               href: quickstart-configure-app-expose-web-apis.md
             - name: Grant scoped permission to web API
@@ -468,14 +650,6 @@
               href: quickstart-configure-app-access-web-apis.md
             - name: Create a self-signed certificate to authenticate your app
               href: howto-create-self-signed-certificate.md
-        - name: Sign in users
-          items:
-            - name: Sign-in audience
-              href: v2-supported-account-types.md
-            - name: App sign-in flow
-              href: app-sign-in-flow.md
-            - name: Support passwordless authentication
-              href: support-fido2-authentication.md
         - name: Protect and access APIs
           items:
             - name: Restrict your app to a set of users
@@ -498,32 +672,40 @@
               href: jwt-claims-customization.md
             - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
-            - name: Customize claims using PowerShell
+            - name: Customize claims using Claims Mapping Policy
               href: claims-customization-powershell.md
+            - name: Customize claims using Custom Claims Policy
+              href: claims-customization-custom-claims-policy.md
             - name: Set an access token lifetime policy
-              href: configure-token-lifetimes.md    
+              href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
               href: configure-app-multi-instancing.md
-        - name: Custom claims provider
+        - name: Custom authentication extensions
           items:
             - name: Token issuance start event
               items:
-                - name: Create a token issuance start event in a REST API
+                - name: Create REST API for token issuance event
                   href: custom-extension-tokenissuancestart-setup.md
                 - name: Configure a custom claims provider token issuance event
                   href: custom-extension-tokenissuancestart-configuration.md
-                - name: Configure a SAML app to call a custom claims provider
-                  href: custom-extension-configure-saml-app.md
-                - name: Troubleshoot your custom claims provider API
-                  href: custom-extension-troubleshoot.md
-        - name: Attribute collection custom extensions
-          items:
-            - name: Create attribute collection start and submit events
-              href: custom-extension-attribute-collection.md
-            - name: OnAttributeCollectionStart event reference
-              href: custom-extension-OnAttributeCollectionStart-reference.md
-            - name: OnAttributeCollectionSubmit event reference
-              href: custom-extension-OnAttributeCollectionSubmit-reference.md
+                - name: Custom claims provider reference
+                  href: custom-claims-provider-reference.md
+            - name: Attribute collection
+              items: 
+                - name: Create attribute collection start and submit events
+                  href: custom-extension-attribute-collection.md
+                - name: Retrieve data from attribute collection start event
+                  href: custom-extension-OnAttributeCollectionStart-retrieve-return-data.md
+                - name: Retrieve data from attribute collection submit event
+                  href: custom-extension-OnAttributeCollectionSubmit-retrieve-return-data.md
+            - name: Custom email provider
+              items: 
+                - name: Configure a custom email provider for one time code send events
+                  href: custom-extension-email-otp-get-started.md
+                - name: On email OTP send event reference
+                  href: custom-extension-email-otp-send-data.md
+            - name: Troubleshoot your custom authentication extension
+              href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
           items:
             - name: How to handle third-party cookie blocking in browsers
@@ -547,16 +729,6 @@
               href: ~/identity/app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
     - name: Secure
       items:
-        - name: Build for resilience
-          items:
-            - name: Development Overview
-              href: ~/architecture/resilience-app-development-overview.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: Client applications
-              href: ~/architecture/resilience-client-app.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: Daemon applications
-              href: ~/architecture/resilience-daemon-app.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
-            - name: OpenID Connect metadata refresh
-              href: howto-build-services-resilient-to-metadata-refresh.md
         - name: Use Continuous Access Evaluation APIs
           displayName: cae
           href: app-resilience-continuous-access-evaluation.md
@@ -576,9 +748,9 @@
           href: howto-authenticate-service-principal-powershell.md
     - name: Publish
       items:
-        - name: Prepare app for multi-tenant access
+        - name: Prepare app for multitenant access
           items:
-            - name: Enable multi-tenant log-ins
+            - name: Enable multitenant log-ins
               href: howto-convert-app-to-be-multi-tenant.md
             - name: Modify accounts supported by an app
               href: ./howto-modify-supported-accounts.md
@@ -602,8 +774,6 @@
               href: howto-add-terms-of-service-privacy-statement.md
         - name: Publish app to a marketplace
           items:
-            - name: Publish to App Source
-              href: v2-howto-get-appsource-certified.md
             - name: Publish to Microsoft Entra App Gallery
               href: ~/identity/enterprise-apps/v2-howto-app-gallery-listing.md?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
             - name: Publish to Microsoft 365 App Stores
@@ -615,14 +785,16 @@
           href: msal-migration.md
         - name: List all apps using ADAL
           href: howto-get-list-of-all-auth-library-apps.md
-        - name: Migrate off email-based authorization
-          href: migrate-off-email-claim-authorization.md
+        - name: Azure Active Directory Graph app manifest deprecation
+          href: azure-active-directory-graph-app-manifest-deprecation.md
     - name: Deprecate
       items:
         - name: Remove an app registration
           href: ./howto-remove-app.md
         - name: Restore or remove a deleted app registration
           href: ./howto-restore-app.md
+        - name: Retire SP-less authentication
+          href: ./retire-service-principal-less-authentication.md
 - name: Reference
   items:
     - name: Token claims reference
@@ -630,7 +802,7 @@
         - name: Access token
           href: access-token-claims-reference.md
         - name: Claims mapping policy type
-          href: reference-claims-mapping-policy-type.md
+          href: reference-claims-customization.md
         - name: ID token
           href: id-token-claims-reference.md 
         - name: Optional claims
@@ -652,65 +824,31 @@
             - name: Library initialization
               items:
                 - name: Android MSAL configuration file
-                  href: msal-configuration.md
+                  href: /entra/msal/android/msal-configuration
                 - name: Shared device mode
                   displayName: firstline worker, frontline worker, flw
                   href: msal-android-shared-devices.md
                 - name: Integrate with Azure AD B2C
-                  href: msal-android-b2c.md
+                  href: /azure/active-directory-b2c/configure-authentication-sample-android-app
             - name: Authentication and single sign-on (SSO)
               items:
                 - name: SSO with MSAL Android
-                  href: msal-android-single-sign-on.md
+                  href: /entra/msal/android/single-sign-on
                 - name: Accounts and tenant profiles
                   href: accounts-overview.md
                 - name: Single- and multi-account public client apps
-                  href: single-multi-account.md
+                  href: /entra/msal/android/single-multi-account
             - name: Logging and error handling
               items:
                 - name: Logging in MSAL for Android
-                  href: msal-logging-android.md
+                  href: /entra/msal/android/logging
                 - name: Handle errors and exceptions in MSAL for Android
                   displayName: android, mobile, handling, catch
-                  href: msal-android-handling-exceptions.md
+                  href: /entra/msal/android/handling-exceptions
             - name: Migrate from ADAL to MSAL Android
-              href: migrate-android-adal-msal.md
+              href: /entra/msal/android/migrate-android-adal-msal
         - name: MSAL iOS and macOS
-          items:
-            - name: Library initialization
-              items:
-                - name: MSAL for iOS and macOS differences
-                  href: msal-differences-ios-macos.md
-                - name: Redirect URI configuration
-                  href: redirect-uris-ios.md
-                - name: Customize browsers and WebViews
-                  href: customize-webviews.md
-                - name: Shared device mode for iOS devices
-                  displayName: firstline worker, frontline worker, flw
-                  href: msal-ios-shared-devices.md
-                - name: Integrate with Azure AD B2C
-                  href: config-authority.md#b2c
-            - name: Authentication and single sign-on (SSO)
-              items:
-                - name: Configure keychain
-                  href: howto-v2-keychain-objc.md
-                - name: SSO between MSAL apps
-                  href: single-sign-on-macos-ios.md
-                - name: SSO between ADAL and MSAL apps
-                  href: sso-between-adal-msal-apps-macos-ios.md
-                - name: Request custom claims
-                  href: request-custom-claims.md
-            - name: Logging and error handling
-              items:
-                - name: Logging in MSAL for iOS/macOS
-                  href: msal-logging-ios.md
-                - name: Handle errors and exceptions in MSAL for iOS/macOS
-                  displayName: handling, catch
-                  href: msal-error-handling-ios.md
-                - name: Troubleshoot SSL issues (MSAL iOS/macOS)
-                  href: ssl-issues.md
-            - name: Migrate to MSAL.iOS / macOS
-              href: migrate-objc-adal-msal.md
+          href: /entra/msal/objc/
         - name: MSAL Java
           href: /entra/msal/java/
         - name: MSAL.js
@@ -720,7 +858,7 @@
               items:
                 - name: Init MSAL.js 2.x and 1.x clients
                   href: msal-js-initializing-client-applications.md
-                - name: Running and debugging in IE
+                - name: Running and debugging in Internet Explorer
                   href: msal-js-use-ie-browser.md
                 - name: Integrate with Azure AD B2C
                   href: msal-b2c-overview.md
@@ -751,13 +889,11 @@
                 - name: Known issues - IE and Microsoft Edge
                   href: msal-js-known-issues-ie-edge-browsers.md
         - name: MSAL.NET
-          displayName: ASP.NET Core, Xamarin
+          displayName: ASP.NET Core
           href: /entra/msal/dotnet
         - name: Microsoft.Identity.Web (MSAL wrapper)
           displayName: auth, library, .NET, msal
           href: /entra/msal/dotnet/microsoft-identity-web/
-        - name: Application configuration
-          href: msal-client-application-configuration.md
         - name: MSAL Node
           displayName: Node.js
           items:
@@ -770,6 +906,9 @@
           href: /entra/msal/python/
     - name: Protocol reference (OAuth, OIDC, SAML)
       items:
+        - name: OAuth 2.0 application types
+          displayName: App types, OAuth
+          href: v2-app-types.md
         - name: OAuth 2.0 and OpenID Connect (OIDC)
           items:
             - name: Token grant flows
@@ -790,9 +929,6 @@
                   href: v2-oauth-ropc.md
                 - name: OpenID Connect
                   href: v2-protocols-oidc.md
-            - name: OAuth 2.0 application types
-              displayName: App types, OAuth
-              href: v2-app-types.md
             - name: Certificate credentials
               href: certificate-credentials.md
             - name: Signing key rollover
@@ -816,39 +952,40 @@
             href: federation-metadata.md
     - name: App registration reference
       items:
-        - name: Application manifest
+        - name: App manifest (Azure AD Graph format)
           displayName: app manifest
           href: reference-app-manifest.md
-        - name: Redirect URI/reply URL restrictions and limitations
+        - name: App manifest (Microsoft Graph format)
+          displayName: Microsoft Graph app manifest
+          href: reference-microsoft-graph-app-manifest.md
+        - name: Redirect URI (reply URL) best practices and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
-    - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
-    - name: Configured permissions limits troubleshooting
-      href: troubleshoot-required-resource-access-limits.md
+    - name: Native authentication API reference
+      href: reference-native-authentication-api.md
+    - name: Endpoint reference
+      items: 
+        - name: Admin consent URI
+          href: v2-admin-consent.md
+        - name: National and public cloud URIs
+          displayName: china, germany, gov, 21vianet
+          href: authentication-national-cloud.md
+    - name: API reference
+      items:
+        - name: Microsoft Graph API reference (identity operations)
+          href: /graph/api/resources/azure-ad-overview
+        - name: MSA Server side API reference 
+          href: reference-msa-server-side-api.md
+        - name: Microsoft Entra ID WAM API reference
+          href: reference-entra-id-wam-api.md
     - name: Microsoft auth libraries by app type
       displayName: MSAL, auth client library, SDK, token validation
       href: reference-v2-libraries.md
     - name: AADSTS error code reference
       href: reference-error-codes.md
-    - name: "Endpoint reference: Admin consent URI"
-      href: v2-admin-consent.md
-    - name: "Endpoint reference: National and public cloud URIs"
-      displayName: china, germany, gov, 21vianet
-      href: authentication-national-cloud.md
-    - name: Microsoft Graph API reference (identity operations)
-      href: /graph/api/resources/azure-ad-overview
-    - name: Custom claims provider reference
-      href: custom-claims-provider-reference.md
-    - name: MSA Server side API reference 
-      href: reference-msa-server-side-api.md
-    - name: Microsoft Entra ID WAM API reference
-      href: reference-entra-id-wam-api.md
-    - name: Attribute collection start custom extension reference
-      href: custom-extension-OnAttributeCollectionStart-reference.md
-    - name: Attribute collection submit custom extension reference
-      href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Configured permissions limits troubleshooting
+      href: troubleshoot-required-resource-access-limits.md
 - name: Resources
   items:
     - name: Help and support options

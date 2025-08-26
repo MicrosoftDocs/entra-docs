@@ -1,15 +1,14 @@
 ---
 title: 'Move the Microsoft Entra Connect database from SQL Server Express to remote SQL Server'
 description: Learn how to move the Microsoft Entra Connect database from the default local SQL Server Express server to a computer running remote SQL Server.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Move Microsoft Entra Connect database from SQL Server Express to remote SQL Server

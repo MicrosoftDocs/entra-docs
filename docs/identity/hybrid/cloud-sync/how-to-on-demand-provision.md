@@ -2,26 +2,28 @@
 title: 'On-demand provisioning in Microsoft Entra Cloud Sync'
 description: This article describes how to use the cloud sync feature of Microsoft Entra Connect to test configuration changes.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
-# On-demand provisioning in Microsoft Entra Cloud Sync
+# On-demand provisioning - Active Directory to Microsoft Entra ID
 
 You can use the cloud sync feature of Microsoft Entra Connect to test configuration changes by applying these changes to a single user. This on-demand provisioning helps you validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.  
+
+The following document guides you through on-demand provisioning with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory.  If you are looking for information on provisioning from Microsoft Entra ID to AD, see [ On-demand provisioning - Microsoft Entra ID to Active Directory](how-to-on-demand-provision-entra-to-active-directory.md).
 
 > [!IMPORTANT] 
 > When you use on-demand provisioning, the scoping filters are not applied to the user that you selected. You can use on-demand provisioning on users who are outside the organization units that you specified.
 
 For additional information and an example see the following video.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWK5mW]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=abcf1d11-c101-49a6-ab56-cdc45cc34817]
 
 ## Validate a user
 To use on-demand provisioning, follow these steps:
@@ -67,7 +69,7 @@ The matching details show a message with one of the three following operations:
 - **Update**: A user is updated based on a change made in the configuration.
 - **Delete**: A user is removed from Microsoft Entra ID.
 
-Depending on the type of operation that you've performed, the message will vary.
+Depending on the type of operation that you've performed, the message varies.
 
 ### Perform action
 The **Perform action** section provides information on the user who was provisioned or exported into Microsoft Entra ID after the configuration was applied. This is what the user looks like after provisioning into Microsoft Entra ID. Select the **View details** link to display this information.

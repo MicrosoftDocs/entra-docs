@@ -5,31 +5,36 @@ description: Query Microsoft Graph risk detections and associated information fr
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 01/16/2024
+ms.date: 05/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: pwongera
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection and the Microsoft Graph PowerShell 
 
-Microsoft Graph is the Microsoft unified API endpoint and the home of [Microsoft Entra ID Protection](./overview-identity-protection.md) APIs. This article shows you how to use the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started) to manage risky users using PowerShell. Organizations that want to query the Microsoft Graph APIs directly can use the article, [Tutorial: Identify and remediate risks using Microsoft Graph APIs](/graph/tutorial-riskdetection-api) to begin that journey.
+Microsoft Graph is the Microsoft unified API endpoint and the home of [Microsoft Entra ID Protection](./overview-identity-protection.md) APIs. This article shows you how to use the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started) to manage risky users with PowerShell. Organizations that want to query the Microsoft Graph APIs directly can use the article, [Tutorial: Identify and remediate risks using Microsoft Graph APIs](/graph/tutorial-riskdetection-api) to begin that journey.
 
-To successfully complete this tutorial, make sure you have the required prerequisites:
+## Prerequisites
 
-- Microsoft Graph PowerShell SDK is installed. For more information, see the article [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
-- Microsoft Graph PowerShell using a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role. The IdentityRiskEvent.Read.All, IdentityRiskyUser.ReadWrite.All Or IdentityRiskyUser.ReadWrite.All delegated permissions are required. To set the permissions to IdentityRiskEvent.Read.All and IdentityRiskyUser.ReadWrite.All, run:
+To use the PowerShell commands in this article, you need the following prerequisites:
+
+- Microsoft Graph PowerShell SDK is installed.
+    - For more information, see the article [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation?view=graph-powershell-1.0&preserve-view=true).
+- [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role.
+- `IdentityRiskEvent.Read.All`, `IdentityRiskyUser.ReadWrite.All` Or `IdentityRiskyUser.ReadWrite.All` delegated permissions are required.
+    - To set the permissions to `IdentityRiskEvent.Read.All` and `IdentityRiskyUser.ReadWrite.All`, run:
 
    ```powershell
    Connect-MgGraph -Scopes "IdentityRiskEvent.Read.All","IdentityRiskyUser.ReadWrite.All"
    ```
+- If you use app-only authentication, see [Use app-only authentication with the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/app-only?view=graph-powershell-1.0&tabs=azure-portal&preserve-view=true).
+    - To register an application with the required application permissions, prepare a certificate and run:
 
-If you use app-only authentication, see the article [Use app-only authentication with the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/app-only?view=graph-powershell-1.0&tabs=azure-portal&preserve-view=true). To register an application with the required application permissions, prepare a certificate and run:
-
-```powershell
-Connect-MgGraph -ClientID YOUR_APP_ID -TenantId YOUR_TENANT_ID -CertificateName YOUR_CERT_SUBJECT ## Or -CertificateThumbprint instead of -CertificateName
-```
+    ```powershell
+    Connect-MgGraph -ClientID YOUR_APP_ID -TenantId YOUR_TENANT_ID -CertificateName YOUR_CERT_SUBJECT ## Or -CertificateThumbprint instead of -CertificateName
+    ```
 
 ## List risky detections using PowerShell
 
@@ -40,7 +45,7 @@ You can retrieve the risk detections by the properties of a risk detection in ID
 Get-MgRiskDetection -Filter "RiskType eq 'anonymizedIPAddress'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 # List all high risk detections for the user 'User01'
-Get-MgRiskDetection -Filter "UserDisplayName eq 'User01' and Risklevel eq 'high'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
+Get-MgRiskDetection -Filter "UserDisplayName eq 'User01' and RiskLevel eq 'high'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 ```
 
@@ -53,7 +58,7 @@ You can retrieve the risky users and their risky histories in ID Protection.
 Get-MgRiskyUser -Filter "RiskLevel eq 'high'" | Format-Table UserDisplayName, RiskDetail, RiskLevel, RiskLastUpdatedDateTime
 
 #  List history of a specific user with detailed risk detection
-Get-MgRiskyUserHistory -RiskyUserId 375844b0-2026-4265-b9f1-ee1708491e05| Format-Table RiskDetail, RiskLastUpdatedDateTime, @{N="RiskDetection";E={($_). Activity.RiskEventTypes}}, RiskState, UserDisplayName
+Get-MgRiskyUserHistory -RiskyUserId 00aa00aa-bb11-cc22-dd33-44ee44ee44ee | Format-Table RiskDetail, RiskLastUpdatedDateTime, @{N="RiskDetection";E={($_). Activity.RiskEventTypes}}, RiskState, UserDisplayName
 
 ```
 
@@ -63,7 +68,7 @@ You can confirm users compromised and flag them as high risky users in ID Protec
 
 ```powershell
 # Confirm Compromised on two users
-Confirm-MgRiskyUserCompromised -UserIds "577e09c1-5f26-4870-81ab-6d18194cbb51","bf8ba085-af24-418a-b5b2-3fc71f969bf3"
+Confirm-MgRiskyUserCompromised -UserIds "11bb11bb-cc22-dd33-ee44-55ff55ff55ff","22cc22cc-dd33-ee44-ff55-66aa66aa66aa"
 ```
 
 ## Dismiss risky users using PowerShell

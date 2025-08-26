@@ -2,12 +2,12 @@
 title: Request an access package - entitlement management
 description: Learn how to use the My Access portal to request access to an access package in Microsoft Entra entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 10/23/2023
+ms.date: 09/11/2024
 ms.author: owinfrey
 ms.reviewer: mamkumar
 #Customer intent: As a requestor, I want simple steps for how to request resources I need so that I can start using the resources to perform my job.
@@ -24,11 +24,11 @@ The first step is to sign in to the My Access portal where you can request acces
 
 **Prerequisite role:** Requestor
 
-1. Look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID.  (For US Government, the domain might be `https://myaccess.microsoft.us` instead.)
+1. Look for an email or a message from the project or business manager you're working with. The email should include a link to the access package you need access to. The link starts with `myaccess`, includes a directory hint, and ends with an access package ID. For US Government, the domain might be `https://myaccess.microsoft.us` instead.
  
     `https://myaccess.microsoft.com/@<directory_hint>#/access-packages/<access_package_id>`
     > [!NOTE]
-    > When signing into My Access via your directory hint link, you will be required to reauthenticate with your login credentials.
+    > When signing into My Access via your directory hint link, you're required to reauthenticate with your sign-in credentials.
 
 1. Open the link.
 
@@ -38,7 +38,7 @@ The first step is to sign in to the My Access portal where you can request acces
 
 ## Request an access package
 
-Once you have found the access package in the My Access portal, you can submit a request.
+Once you find the access package in the My Access portal, you can submit a request for either yourself, or a direct employee.
 
 **Prerequisite role:** Requestor
 
@@ -46,6 +46,8 @@ Once you have found the access package in the My Access portal, you can submit a
  
 1. To request access, you can either select the row or select **Request**.
 
+1. On the Request details pane, select whether or not you're requesting the access package for yourself, or a direct employee.
+    :::image type="content" source="media/entitlement-management-request-behalf/manager-request-package.png" alt-text="Screenshot of manager requesting package.":::
 1. Review the details of the access package, then select **Continue**.
 
 1. You might have to answer questions and provide business justification for your request. If there are questions that you need to answer, type in your responses in the fields.
@@ -74,9 +76,15 @@ If you request access to an access package that has multiple policies that apply
 
 ### Fill out requestor information
 
-You can request access to an access package that requires business justification and additional requestor information before granting you access to the access package. Fill out all the requestor information required to access the access package.
+You can request access to an access package that requires business justification and extra requestor information before granting you access to the access package. Fill out all the requestor information required to access the access package.
 
-![My Access portal - Request access - Fill out requestor information](./media/entitlement-management-request-access/my-access-requestor-information.png)
+![My Access portal - Request access](./media/entitlement-management-shared/my-access-request-access.png)
+
+If you're a manager requesting access on behalf of an employee, keep in mind that you're filling out the requestor information section on behalf of the employee, as well:
+
+:::image type="content" source="media/entitlement-management-request-behalf/manager-request-questions.png" alt-text="Screenshot of manager requesting question.":::
+
+For more information on this process, see: [Request access packages on-behalf-of other users  (Preview)](entitlement-management-request-behalf.md)
 
 > [!NOTE]
 > You might notice that some of the additional requestor information has pre-populated values. This generally occurs if your account already has attribute information set, either from a previous request or other process. These values can be editable or not depending on the settings of the policy selected.
@@ -120,6 +128,18 @@ If you submit an access request and the request is still in the **pending approv
     ![My Access portal - Cancel request](./media/entitlement-management-request-access/my-access-cancel-request.png)
 
 1. Select **Request history** to confirm the request was canceled.
+
+## View approver information for pending requests (preview)
+
+If the access package is configured to display approver details, you can view who your approver is for any pending requests.
+
+**Prerequisite role:** Requestor
+
+1. In the My Access portal, select **Request history** to see a list of your requests and the status.
+
+1. Select the **View** link for the request that is pending approval. 
+
+1. In the request details pane, select **Details** under pending approval. The approver information will be displayed if the access package policy allows it.   
 
 ## Next steps
 

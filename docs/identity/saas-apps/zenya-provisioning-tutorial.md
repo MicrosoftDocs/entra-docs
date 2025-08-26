@@ -1,43 +1,40 @@
 ---
-title: 'Tutorial: Configure Zenya for automatic user provisioning with Microsoft Entra ID'
+title: Configure Zenya for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zenya.
-
-author: twimmers
-writer: twimmers
-manager: CelesteDG
+author: adimitui
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
-
+ms.topic: how-to
+ms.date: 05/20/2025
+ms.author: addimitu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zenya so that I can streamline the user management process and ensure that users have the appropriate access to Zenya.
 ---
 
-# Tutorial: Configure Zenya for automatic user provisioning
+# Configure Zenya for automatic user provisioning with Microsoft Entra ID
 
-The objective of this tutorial is to demonstrate the steps to be performed in Zenya and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users and/or groups to [Zenya](https://www.infoland.nl/). For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). Before you attempt to use this tutorial, be sure that you know and meet all requirements. If you have questions, contact Infoland.
+The objective of this article is to demonstrate the steps to be performed in Zenya and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users and/or groups to [Zenya](https://www.infoland.nl/). For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). Before you attempt to use this article,  be sure that you know and meet all requirements. If you have questions, contact Infoland.
 
 ## Capabilities supported
 > * Create users in Zenya
-> * Remove/disable users in Zenya when they do not require access anymore
+> * Remove/disable users in Zenya when they don't require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and Zenya
 > * Provision groups and group memberships in Zenya
 > * [Single sign-on](./zenya-tutorial.md) to Zenya (recommended)
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * [A Zenya tenant](https://www.infoland.nl/).
 * A user account in Zenya with admin permissions.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-2. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+2. Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 3. Determine what data to [map between Microsoft Entra ID and Zenya](~/identity/app-provisioning/customize-application-attributes.md). 
 
 <a name='step-2-configure-zenya-to-support-provisioning-with-azure-ad'></a>
@@ -58,7 +55,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 	![Screenshot showing the Zenya add provider page.](media/zenya-provisioning-tutorial/add-provider.png)
 
-4.	Select the **Permanent token** button. Copy the **Permanent token** and save it. You won't be able to view it later. This value will be entered in the Secret Token field in the Provisioning tab of your Zenya application.
+4.	Select the **Permanent token** button. Copy the **Permanent token** and save it. You won't be able to view it later. This value is entered in the Secret Token field in the Provisioning tab of your Zenya application.
 
 	![Screenshot showing the Zenya User provisioning page for creating a Token.](media/zenya-provisioning-tutorial/token.png)
 
@@ -68,32 +65,28 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 Add Zenya from the Microsoft Entra application gallery to start managing provisioning to Zenya. If you have previously setup Zenya for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 4: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user / group. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users and groups to the application. If you choose to scope who will be provisioned based solely on attributes of the user or group, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
-
-* Start small. Test with a small set of users and groups before rolling out to everyone. When scope for provisioning is set to assigned users and groups, maintain control by assigning one or two users or groups to the app. When scope is set to all users and groups, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need additional roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
 ## Step 5: Configure automatic user provisioning to Zenya 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Zenya based on user and/or group assignments in Microsoft Entra ID.
 
-For more information (in dutch) also read: [`Implementatie SCIM koppeling`](https://webshare.iprova.nl/8my7yg8c1ofsmdj9/Document.aspx)
+For more information (in Dutch) also read: [`Implementatie SCIM koppeling`](https://webshare.iprova.nl/8my7yg8c1ofsmdj9/Document.aspx)
 
 <a name='to-configure-automatic-user-provisioning-for-zenya-in-azure-ad'></a>
 
 ### To configure automatic user provisioning for Zenya in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot showing the Enterprise applications blade.](common/enterprise-applications.png)
 
 1. In the applications list, select **Zenya**.
 
-	![Screenshot showing Zenya link in the Applications list.](media/zenya-provisioning-tutorial/browse-application.png)
+	![Screenshot to select the application from the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -141,13 +134,13 @@ For more information (in dutch) also read: [`Implementatie SCIM koppeling`](http
       |members|Reference|
       |externalID|String|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Zenya, change the **Provisioning Status** to **On** in the **Settings** section.
 
 	![Screenshot showing the provisioning status toggled on.](common/provisioning-toggle-on.png)
 
-1. Define the users and/or groups that you would like to provision to Zenya by choosing the desired values in **Scope** in the **Settings** section. You'll need a P1 or P2 license in order to allow provisioning assigned users and groups. 
+1. Define the users and/or groups that you would like to provision to Zenya by choosing the desired values in **Scope** in the **Settings** section. You need a P1 or P2 license in order to allow provisioning assigned users and groups. 
 
 	![Screenshot showing where to select the provisioning scope.](common/provisioning-scope.png)
 
@@ -158,23 +151,20 @@ For more information (in dutch) also read: [`Implementatie SCIM koppeling`](http
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
 ## Step 6: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
 
-1. Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-2. Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-3. If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).  
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## Change log
 
 * 06/17/2020 - Removed support for enterprise extension attribute **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
 * 10/11/2023 - Added support for core attribute **title** and added support for enterprise extension attributes **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department** and **urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager**.
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [`Implementatie SCIM koppeling`](https://webshare.iprova.nl/8my7yg8c1ofsmdj9/Document.aspx)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

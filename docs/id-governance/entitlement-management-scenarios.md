@@ -2,12 +2,12 @@
 title: Common scenarios in entitlement management
 description: Learn the high-level steps you should follow for common scenarios in Microsoft Entra entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want the high-level steps that I should follow so that I can quickly start using entitlement management.
@@ -20,7 +20,7 @@ There are several ways that you can configure entitlement management for your or
 
 ### Administrator: Delegate management of resources
 
-1. [Watch video: Delegation from IT to department manager](https://www.microsoft.com/videoplayer/embed/RE3Lq00)
+1. [Watch video: Delegation from IT to department manager](https://learn-video.azurefd.net/vod/player?id=0915072b-63ec-4c78-b2ca-aa5f54a54219)
 1. [Delegate users to catalog creator role](entitlement-management-delegate-catalog.md)
 
 ### Catalog creator: Delegate management of resources
@@ -34,7 +34,7 @@ There are several ways that you can configure entitlement management for your or
 
 ### Catalog owner: Delegate management of access packages
 
-1. [Watch video: Delegation from catalog owner to access package manager](https://www.microsoft.com/videoplayer/embed/RE3Lq08)
+1. [Watch video: Delegation from catalog owner to access package manager](https://learn-video.azurefd.net/vod/player?id=b999927c-7cfd-4029-8b3a-a59efa9f5e8c)
 1. [Delegate users to access package manager role](entitlement-management-delegate-managers.md)
 
 ## Govern access for users in your organization
@@ -117,26 +117,26 @@ There are several ways that you can configure entitlement management for your or
 
 ### Access package manager: Update the resources for a project
 
-1. [Watch video: Day-to-day management: Things have changed](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. Open the access package
 1. [Add or remove groups, Teams, applications, or SharePoint sites](entitlement-management-access-package-resources.md#add-resource-roles)
 
 ### Access package manager: Update the duration for a project
 
-1. [Watch video: Day-to-day management: Things have changed](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. Open the access package
 1. [Open the lifecycle settings](entitlement-management-access-package-lifecycle-policy.md#open-lifecycle-settings)
 1. [Update the expiration settings](entitlement-management-access-package-lifecycle-policy.md#specify-a-lifecycle) 
 
 ### Access package manager: Update how access is approved for a project
 
-1. [Watch video: Day-to-day management: Things have changed](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. [Open an existing policy's request settings](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings)
 1. [Update the approval settings](entitlement-management-access-package-approval-policy.md#change-approval-settings-of-an-existing-access-package-assignment-policy)
 
 ### Access package manager: Update the people for a project
 
-1. [Watch video: Day-to-day management: Things have changed](https://www.microsoft.com/videoplayer/embed/RE3LD4Z)
+1. [Watch video: Day-to-day management: Things have changed](https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9)
 1. [Remove users that no longer need access](entitlement-management-access-package-assignments.md)
 1. [Open an existing policy's request settings](entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings)
 1. [Add users that need access](entitlement-management-access-package-request-policy.md#for-users-in-your-directory)
@@ -161,7 +161,7 @@ There are several ways that you can configure entitlement management for your or
 
 ## Programmatic administration
 
-You can also manage access packages, catalogs, policies, requests and assignments using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the [entitlement management API](/graph/api/resources/entitlementmanagement-overview?view=graph-rest-1.0). For more information, see the [Tutorial: manage access to resources - Microsoft Graph](/graph/tutorial-access-package-api?toc=/azure/active-directory/governance/toc.json&bc=/azure/active-directory/governance/breadcrumb/toc.json).  An application with the `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` application permissions can also use many of those API functions, with the exception of managing resources in catalogs and access packages. And an application that only needs to operate within specific catalogs can be added to the **Catalog owner** or **Catalog reader** roles of a catalog to be authorized to update or read within that catalog.
+You can also manage access packages, catalogs, policies, requests, and assignments using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the [entitlement management API](/graph/api/resources/entitlementmanagement-overview?view=graph-rest-1.0). For more information, see the [Tutorial: manage access to resources - Microsoft Graph](/graph/tutorial-access-package-api?toc=/azure/active-directory/governance/toc.json&bc=/azure/active-directory/governance/breadcrumb/toc.json). An application with the `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` application permissions can also use many of those API functions, except for managing resources in catalogs and access packages. An application that only needs to operate within specific catalogs can be added to the **Catalog owner** or **Catalog reader** roles of a catalog to be authorized to update or read within that catalog.
 
 ## Next steps
 

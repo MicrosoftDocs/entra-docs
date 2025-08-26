@@ -3,17 +3,17 @@ title: Application Management certificates frequently asked questions
 description: Learn answers to frequently asked questions (FAQ) about managing certificates for apps using Microsoft Entra ID as an Identity Provider (IdP).  
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: faq
-ms.date: 03/03/2023
+ms.date: 05/21/2025
 ms.author: jomondi
 ms.reviewer: sureshja, saumadan
 ms.custom: enterprise-apps
 
-#customer intent: As an application administrator managing certificates for apps using Microsoft Entra ID as an Identity Provider, I want to generate a list of expiring SAML signing certificates, so that I can proactively renew them before they expire.
+#customer intent: As an Application Administrator managing certificates for apps using Microsoft Entra ID as an Identity Provider, I want to generate a list of expiring SAML signing certificates, so that I can proactively renew them before they expire.
 ---
 
 # Application Management certificates frequently asked questions
@@ -22,7 +22,7 @@ This page answers frequently asked questions about managing the certificates for
 
 ## Is there a way to generate a list of expiring SAML signing certificates?
 
-You can export all app registrations with expiring secrets, certificates and their owners for the specified apps from your directory in a CSV file through [PowerShell scripts](app-management-powershell-samples.md).
+You can export all app registrations with expiring secrets, certificates, and their owners for the specified apps from your directory in a CSV file through [PowerShell scripts](app-management-powershell-samples.md).
 
 ## Where can I find the information about soon to expire certificates renewal steps?
 
@@ -32,25 +32,25 @@ You can find the steps [here](./tutorial-manage-certificates-for-federated-singl
 
 ## How can I customize the expiration date for the certificates issued by Microsoft Entra ID?
 
-By default, Microsoft Entra ID configures a certificate to expire after three years when it is created automatically during SAML single sign-on configuration. Because you can't change the date of a certificate after you save it, you need to create a new certificate. For steps on how to do so, please refer [Customize the expiration date for your federation certificate and roll it over to a new certificate](./tutorial-manage-certificates-for-federated-single-sign-on.md#customize-the-expiration-date-for-your-federation-certificate-and-roll-it-over-to-a-new-certificate).
+By default, Microsoft Entra ID configures a certificate to expire after three years after being created automatically during SAML single sign-on configuration. Because you can't change the date of a certificate after you save it, you need to create a new certificate. For steps on how to do so, refer [Customize the expiration date for your federation certificate and roll it over to a new certificate](./tutorial-manage-certificates-for-federated-single-sign-on.md#customize-the-expiration-date-for-your-federation-certificate-and-roll-it-over-to-a-new-certificate).
 
 > [!NOTE]
-> The recommended way to create SAML applications is through the Microsoft Entra Application Gallery, which will automatically create a three-year valid X509 certificate for you. 
+> The recommended way to create SAML applications is through the Microsoft Entra Application Gallery, which automatically creates a three-year valid X509 certificate for you. 
 
 ## How can I automate the certificates expiration notifications?
 
-Microsoft Entra ID will send an email notification 60, 30, and 7 days before the SAML certificate expires. You may add more than one email address to receive notifications.
+Microsoft Entra ID sends an email notification 60, 30, and 7 days before the SAML certificate expires. You might add more than one email address to receive notifications.
 
 > [!NOTE]
-> You can add up to 5 email addresses to the Notification list (including the email address of the admin who added the application). If you need more people to be notified, use the distribution list emails.
+> You can add up to five email addresses to the Notification list (including the email address of the admin who added the application). If you need more people to be notified, use the distribution list emails.
 
 To specify the emails you want the notifications to be sent to, see [Add email notification addresses for certificate expiration](./tutorial-manage-certificates-for-federated-single-sign-on.md#add-email-notification-addresses-for-certificate-expiration).
 
-There is no option to edit or customize these email notifications received from `aadnotification@microsoft.com`. However, you can export app registrations with expiring secrets and certificates through [PowerShell scripts](app-management-powershell-samples.md).
+The option to edit or customize these email notifications received from `aadnotification@microsoft.com` doesn't exist. However, you can export app registrations with expiring secrets and certificates through [PowerShell scripts](app-management-powershell-samples.md).
 
 ## Who can update the certificates?
 
-The owner of the application or Global Administrator or Application Administrator can update the certificates through Microsoft Entra admin center UI, PowerShell or Microsoft Graph.
+The owner of the application or Application Administrator can update the certificates through Microsoft Entra admin center UI, PowerShell, or Microsoft Graph.
 
 ## I need more details about certificate signing options
 
@@ -59,9 +59,9 @@ In Microsoft Entra ID, you can set up certificate signing options and the certif
 ## What type of certificate can I use for configuring the SAML Certificate for single sign-on?
 
 The recommendation for the SAML single sign-on certificate depends on your organization's security requirements and policies. 
-If your organization has an internal certificate authority (PKI), using a certificate from the internal PKI can provide a higher level of security and trust. This is because the internal PKI is under the control of your organization and can be managed and monitored to ensure the security of the certificate.
+If your organization has an internal certificate authority (PKI), using a certificate from the internal PKI can provide a higher level of security and trust. If you have an internal PKI, its certificates offer better security and trust because you control and monitor them.
 
-On the other hand, if your organization doesn't have an internal certificate authority, using a certificate from an external certificate authority such as DigiCert can provide a higher level of trust and security. This is because external certificate authorities are trusted by many organizations and are subject to strict security and validation requirements.
+If your organization doesn’t run its own certificate authority, get a certificate from a public certificate authority like DigiCert. Organizations trust these certificate authorities, and they follow strict security and validation rules to keep your apps secure.
 
 <a name='i-need-to-replace-the-certificate-for-azure-ad-application-proxy-applications-and-need-more-instructions'></a>
 
@@ -77,7 +77,7 @@ To configure an on-premises app to use a custom domain, you need a verified Micr
 
 ## I need to update the token signing certificate on the application side. Where can I get it on Microsoft Entra ID side?
 
-You can renew a SAML X.509 Certificate, see [SAML Signing certificate](~/identity-platform/single-sign-on-saml-protocol.md).
+You can renew a SAML X.509 Certificate [SAML Signing certificate](~/identity-platform/single-sign-on-saml-protocol.md).
 
 <a name='what-is-azure-ad-signing-key-rollover'></a>
 
@@ -101,4 +101,4 @@ To update Microsoft Entra ID after changing your federation certificates, see [R
 
 ## Can I use the same SAML certificate across different apps?
 
-When it's the first time configuring SSO on an enterprise app, we do provide a default SAML certificate that is used across Microsoft Entra ID. However, if you need to use the same certificate across multiple apps that aren't the default Microsoft Entra one, then you need to use an external Certificate Authority and upload the PFX file. The reason is that Microsoft Entra ID doesn't provide access to private keys from internally issued certificates.
+When it's the first time configuring SSO on an enterprise app, we do provide a default SAML certificate that is used across Microsoft Entra ID. However, if you need to use the same certificate across multiple apps that aren't the default Microsoft Entra ones, use an external Certificate Authority and upload the PFX file. The reason is that Microsoft Entra ID doesn't provide access to private keys from internally issued certificates.

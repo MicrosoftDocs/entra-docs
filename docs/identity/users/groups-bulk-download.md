@@ -1,16 +1,14 @@
 ---
-
 title: Download a list of groups in the Azure portal
 description: Download group properties in bulk in the Azure admin center in Microsoft Entra ID.
-
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
-ms.date: 12/13/2023
+manager: pmwongera
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
 
@@ -20,11 +18,10 @@ You can download a list of all the groups in your organization to a comma-separa
 
 ## Download a list of groups
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The columns downloaded are predefined.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups** > **Download groups**.
 
@@ -34,6 +31,8 @@ The columns downloaded are predefined.
 
    :::image type="content" source="./media/groups-bulk-download/bulk-download.png" alt-text="Screenshot that shows the Download groups command is on the All groups page.":::
 
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk download service limits](#bulk-download-service-limits).
+
 ## Check download status
 
 You can see the status of all your pending bulk requests on the **Bulk operation results** page.
@@ -42,7 +41,7 @@ You can see the status of all your pending bulk requests on the **Bulk operation
 
 ## Bulk download service limits
 
-Each bulk activity to download a group list can run for up to one hour. This time frame enables you to download a list of at least 300,000 groups.
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

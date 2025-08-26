@@ -2,22 +2,22 @@
 title: 'What is federation with Microsoft Entra ID?'
 description: Describes federation with Microsoft Entra ID.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: overview
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
 # What is federation with Microsoft Entra ID?
 
-Federation is a collection of domains that have established trust. The level of trust may vary, but typically includes authentication and almost always includes authorization. A typical federation might include a number of organizations that have established trust for shared access to a set of resources.
+Federation is a collection of domains that have established trust. The level of trust may vary, but typically includes authentication and almost always includes authorization. A typical federation might include several organizations with established trust for shared access to a set of resources.
 
-You can federate your on-premises environment with Microsoft Entra ID and use this federation for authentication and authorization.  This sign-in method ensures that all user authentication occurs on-premises.  This method allows administrators to implement more rigorous levels of access control. Federation with AD FS and PingFederate is available.
+You can federate your on-premises environment with Microsoft Entra ID and use this federation for authentication and authorization. This sign-in method ensures that all user authentication occurs on-premises. This method allows administrators to implement more rigorous levels of access control. Federation with AD FS and PingFederate is available.
 
 ![Federated identity](~/identity/hybrid/media/whatis-hybrid-identity/federated-identity.png)
 

@@ -2,13 +2,13 @@
 title: Monitor changes to federation configuration in Microsoft Entra ID
 description: This article explains how to monitor changes to your federation configuration with Microsoft Entra ID.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ---
 
 
@@ -27,7 +27,7 @@ To monitor the trust relationship, we recommend you set up alerts to be notified
 
 Follow these steps to set up alerts to monitor the trust relationship:
 
-1. [Configure Microsoft Entra audit logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) to flow to an Azure Log Analytics Workspace. 
+1. [Configure Microsoft Entra audit logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) to flow to an Azure Log Analytics Workspace. 
 2. [Create an alert rule](/azure/azure-monitor/alerts/alerts-create-new-alert-rule) that triggers based on Microsoft Entra ID log query. 
 3. [Add an action group](/azure/azure-monitor/alerts/action-groups) to the alert rule that gets notified when the alert condition is met.  
 
@@ -54,7 +54,7 @@ After the environment is configured, the data flows as follows:
 
 ## Next steps
 
-- [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Create, view, and manage log alerts using Azure Monitor](/azure/azure-monitor/alerts/alerts-create-new-alert-rule)
 - [Manage AD FS trust with Microsoft Entra ID using Microsoft Entra Connect](how-to-connect-azure-ad-trust.md)
 - [Best practices for securing Active Directory Federation Services](/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs)

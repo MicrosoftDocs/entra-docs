@@ -1,24 +1,24 @@
 ---
-title: Microsoft Entra SSO integration with ChartDesk SSO
+title: Configure ChartDesk SSO for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and ChartDesk SSO.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 12/08/2022
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ChartDesk SSO so that I can control who has access to ChartDesk SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with ChartDesk SSO
+# Configure ChartDesk SSO for Single sign-on with Microsoft Entra ID
 
-In this article, you'll learn how to integrate ChartDesk SSO with Microsoft Entra ID. ChartDesk SSO allows your users to sign in to ChartDesk using Microsoft Entra credentials. When you integrate ChartDesk SSO with Microsoft Entra ID, you can:
+In this article, you learn how to integrate ChartDesk SSO with Microsoft Entra ID. ChartDesk SSO allows your users to sign in to ChartDesk using Microsoft Entra credentials. When you integrate ChartDesk SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ChartDesk SSO.
 * Enable your users to be automatically signed-in to ChartDesk SSO with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ You'll configure and test Microsoft Entra single sign-on for ChartDesk SSO in a 
 To integrate Microsoft Entra ID with ChartDesk SSO, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * ChartDesk SSO single sign-on (SSO) enabled subscription.
 
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ChartDesk SSO** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **ChartDesk SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -85,9 +85,9 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     | `https://<externaltenantid>.prod-api.chartdesk.de/saml/consume` |
 
     > [!Note]
-    > These values are not the real. Update these values with the actual Identifier and Reply URL. Contact [ChartDesk SSO Client support team](mailto:support@chartdesk.pro) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't the real. Update these values with the actual Identifier and Reply URL. Contact [ChartDesk SSO Client support team](mailto:support@chartdesk.pro) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
     
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
     ![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
@@ -103,15 +103,15 @@ In this section, you create a user called Britta Simon in ChartDesk SSO. Work wi
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
 
-* Click on **Test this application**, and you should be automatically signed in to the ChartDesk SSO for which you set up the SSO.
+* Select **Test this application**, and you should be automatically signed in to the ChartDesk SSO for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the ChartDesk SSO tile in the My Apps, you should be automatically signed in to the ChartDesk SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the ChartDesk SSO tile in the My Apps, you should be automatically signed in to the ChartDesk SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure ChartDesk SSO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

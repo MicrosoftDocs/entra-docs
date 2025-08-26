@@ -3,9 +3,9 @@ title: "Quickstart: Sign in users and call Microsoft Graph in a Universal Window
 description: In this quickstart, learn how a Universal Windows Platform (UWP) application can get an access token and call an API protected by Microsoft identity platform.
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.custom: scenarios:getting-started, "languages:UWP", mode-api
+ms.custom:
 ms.date: 08/18/2022
 ms.service: identity-platform
 
@@ -35,6 +35,9 @@ ms.topic: concept-article
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 > 
 > #### Step 1: Configure the application
+> > [!NOTE]
+> > MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your UWP applications to modern frameworks like WINUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
+
 > For the code sample in this quickstart to work, add a **Redirect URI** of `https://login.microsoftonline.com/common/oauth2/nativeclient`.
 >
 > <button id="makechanges" class="nextstepaction configure-app-button"> Make these changes for me </button

@@ -4,11 +4,10 @@ titleSuffix: Microsoft Entra Verified ID
 description: Reference of error codes for Microsoft Entra Verified ID APIs
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
-ms.date: 07/29/2022
+ms.date: 01/30/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
@@ -33,10 +32,9 @@ During public preview, the Request Service API returned errors in the following 
     "message": "The request contains `includeQRCode`, but it is not boolean."
   }
 }
-
 ```
 
-This format is now changed into the following to enable both simpler error handling and better support for troubleshooting. In the new format, the outer [error](#error-type) code and message fields have standardized values while the [```innererror```](#inner-error-type) object provide details on what caused the error.
+This format is now changed into the following to enable both simpler error handling and better support for troubleshooting. In the new format, the outer [error](#error-type) code and message fields have standardized values while the [`innererror`](#inner-error-type) object provide details on what caused the error.
 
 ```json
 {
@@ -94,7 +92,7 @@ The following are the possible top level `code` values that maps to the differen
 | 414 | uriTooLong |The URI is too long.|
 | 415 | unsupportedMediaType |The specified media type is unsupported.|
 | 416 | rangeNotSatisfiable |The requested range of data requested can't be satisfied.|
-| 417 | expectationFailed |The Expect header couldn't be satisfied.|
+| 417 | expectationFailed |The Expected header couldn't be satisfied.|
 | 421 | misdirectedRequest |Unable to produce a response for this request.|
 | 422 | unprocessableEntity |The request contains semantic errors.|
 | 423 | locked |The source or destination resource is locked.|
@@ -140,8 +138,8 @@ The inner error object contains error specific details useful to the developer t
 |Code|Description|
 |-|-|
 |`badOrMissingField`|returned when validation issues on the request occur. The `target` field contains the field in the request that is causing the issue.|
-|`notFound`|returned when a resource the client is requesting isn't found. The `target` field contains the resource name/id that isn't found.|
-|`tokenError`|returned for any validation issues on tokens like JWT and the likes. The `target` field contains the token name causing the issue, when applicable.|
+|`notFound`|returned when a resource the client is requesting isn't found. The `target` field contains the resource name/ID that isn't found.|
+|`tokenError`|returned for any validation issues on tokens like JSON Web Token (JWT) and the likes. The `target` field contains the token name causing the issue, when applicable.|
 |`transientError`|returned for all the cases where the client might be able to get a successful response if they retry the request at a later stage. A common example of when this code is returned is when an HTTP 429 code is returned back|
 
 ## Next steps

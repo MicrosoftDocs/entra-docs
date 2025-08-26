@@ -1,26 +1,26 @@
 ---
-title: Road to the cloud - Implement a cloud-first approach when moving identity and access management from Active Directory to Microsoft Entra ID
-description: Implement a cloud-first approach as part of planning your migration of IAM from Active Directory to Microsoft Entra ID.
+title: Road to the cloud - Implement a cloud-first approach when moving identity and access management from Active Directory Domain Services (AD DS) to Microsoft Entra ID
+description: Implement a cloud-first approach as part of planning your migration of IAM from Active Directory Domain Services (AD DS) to Microsoft Entra ID.
 documentationCenter: ''
 author: janicericketts
 manager: martinco
 ms.service: entra
 ms.topic: how-to
 ms.subservice: architecture
-ms.date: 07/27/2023
+ms.date: 07/30/2025
 ms.author: jricketts
 ms.custom: references_regions
 ---
 # Implement a cloud-first approach
 
-It's mainly a process and policy-driven phase to stop, or limit as much as possible, adding new dependencies to Active Directory and implement a cloud-first approach for new demand of IT solutions.
+It's mainly a process and policy-driven phase to stop, or limit as much as possible, adding new dependencies to Active Directory Domain Services (AD DS) and implement a cloud-first approach for new demand of IT solutions.
 
-It's key at this point to identify the internal processes that would lead to adding new dependencies on Active Directory. For example, most organizations would have a change management process that has to be followed before the implementation of new scenarios, features, and solutions. We strongly recommend making sure that these change approval processes are updated to:
+It's key at this point to identify the internal processes that would lead to adding new dependencies on AD DS. For example, most organizations would have a change management process that has to be followed before the implementation of new scenarios, features, and solutions. We strongly recommend making sure that these change approval processes are updated to:
 
-- Include a step to evaluate whether the proposed change would add new dependencies on Active Directory.
-- Request the evaluation of Microsoft Entra alternatives when possible.
+- Include a step to evaluate whether the proposed change would add new dependencies on AD DS.
+- Evaluate Microsoft Entra alternatives when possible.
 
-## Users and groups
+## Attributes
 
 You can enrich user attributes in Microsoft Entra ID to make more user attributes available for inclusion. Examples of common scenarios that require rich user attributes include:
 
@@ -28,7 +28,7 @@ You can enrich user attributes in Microsoft Entra ID to make more user attribute
 
 * Application authorization: A token that Microsoft Entra ID issues can include claims generated from user attributes so that applications can make authorization decisions based on the claims in the token. It can also contain attributes coming from external data sources through a [custom claims provider](~/identity-platform/custom-claims-provider-overview.md).
 
-* Group membership population and maintenance: Dynamic groups enable dynamic population of group membership based on user attributes, such as department information.
+* Group membership population and maintenance: Dynamic membership groups enable dynamic population of groups based on user attributes, such as department information.
 
 These two links provide guidance on making schema changes:
 
@@ -46,6 +46,11 @@ These links provide more information on this topic but aren't specific to changi
 
 * [Provide optional claims to Microsoft Entra apps - Microsoft identity platform](~/identity-platform/optional-claims.md)
 
+- [Attribute-based application provisioning with scoping filters](/entra/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts) or [What is Microsoft Entra entitlement management](/entra/id-governance/entitlement-management-overview) (for application access)
+
+## Groups
+A cloud-first approach for groups involves creating new groups in the cloud. If you need them on-premises, [provision groups to Active Directory Domain Services (AD DS) by using Microsoft Entra Cloud Sync](/entra/identity/hybrid/cloud-sync/tutorial-group-provisioning). Convert the Group Source of Authority (SOA) of existing on-premises groups to manage them from Microsoft Entra. 
+
 These links provide more information about groups:
 
 * [Create or edit a dynamic group and get status in Microsoft Entra ID](~/identity/users/groups-create-rule.md)
@@ -57,6 +62,8 @@ These links provide more information about groups:
 * [Compare groups](/microsoft-365/admin/create-groups/compare-groups)
 
 * [Restrict guest access permissions in Microsoft Entra ID](~/identity/users/users-restrict-guest-permissions.md)
+
+## Users
 
 You and your team might feel compelled to change your current employee provisioning to use cloud-only accounts at this stage. The effort is nontrivial but doesn't provide enough business value. We recommend that you plan this transition at a different phase of your transformation.
 
@@ -70,7 +77,7 @@ Client workstations are traditionally joined to Active Directory and managed via
 
 [Windows Autopilot](/autopilot/windows-autopilot) can help you establish a streamlined onboarding and device provisioning, which can enforce these directives.
 
-[Windows Local Administrator Password Solution](~/identity/devices/howto-manage-local-admin-passwords.md) (LAPS) enables a cloud-first solution to manage the passwords of local administrator accounts.
+[Windows Local Administrator Password Solution (LAPS)](~/identity/devices/howto-manage-local-admin-passwords.md) enables a cloud-first solution to manage the passwords of local administrator accounts.
 
 For more information, see [Learn more about cloud-native endpoints](/mem/solutions/cloud-native-endpoints/cloud-native-endpoints-overview).
 
@@ -85,7 +92,7 @@ The organization has a process to evaluate Microsoft Entra alternatives when it'
   > [!IMPORTANT]
   > Depending on the anticipated demands of applications that require legacy protocols, you can choose to deploy [Microsoft Entra Domain Services](/entra/identity/domain-services/overview) when more current alternatives won't work.
 
-* Provide a recommendation to create a policy to prioritize use of cloud-native alternatives. The policy should limit deployment of new application servers to the domain. Common cloud-native scenarios to replace Active Directory-joined servers include:
+* Provide a recommendation to create a policy to prioritize use of cloud-native alternatives. The policy should limit deployment of new application servers to the domain. Common cloud-native scenarios to replace domain member servers include:
 
    * File servers:
 

@@ -1,23 +1,23 @@
 ---
 title: Troubleshoot manager update issues with HR provisioning
-description: Learn how to troubleshoot manager update issues with HR provisioning
+description: This article provides potential issues and resolutions that show you how to troubleshoot manager update issues with HR provisioning
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
-ms.date: 02/27/2024
+ms.date: 03/04/2025
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# Troubleshoot HR manager update issues
+# Troubleshoot HR manager update issues with HR user provisioning
 
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
-* Workday to Microsoft Entra ID user provisioning
+* Workday to Microsoft Entra user provisioning
 * SAP SuccessFactors to on-premises Active Directory user provisioning
-* SAP SuccessFactors to Microsoft Entra ID user provisioning
+* SAP SuccessFactors to Microsoft Entra user provisioning
 
 ## Understanding how manager reference resolution works
 The Microsoft Entra provisioning service automatically updates manager information so that the user-manager relationship in Microsoft Entra ID is always in sync with your HR data. It uses a process called *manager reference resolution* to accurately update the *manager* attribute. Before going into the process details, it's important to understand how manager information is stored in Microsoft Entra ID and on-premises Active Directory. 
@@ -47,7 +47,12 @@ In order for *manager reference resolution* to work successfully, the following 
 * The manager record must also be in scope of the provisioning job. 
 * The provisioning app should process the manager record prior to processing the user record. 
 
+> [!NOTE]
+> The *manager* attribute mapping must be a direct mapping and can't include more than one source attribute. Using expression mappings to perform conditional assignment of manager attribute is not supported. For example, implementing logic such as “if user is active then assign manager1, else assign manager2” isn't supported. 
+
+
 ## Provision-on-demand doesn't update manager attribute
+
 | Troubleshooting | Details |
 |--|--|
 | **Issue** | You successfully configured the inbound provisioning app. You're testing sync with provision-on-demand. It doesn't update the manager attribute and you get an error message *"Invalid value"*.  |
@@ -55,6 +60,7 @@ In order for *manager reference resolution* to work successfully, the following 
 | **Resolution** | *  If you changed the default manager attribute mapping, restore the default mapping. <br> * Ensure that the manager record is in scope and the manager API expression resolves to a valid value. <br> * Run provision-on-demand for the manager's record first and then run provision-on-demand for the user's record.  |
 
 ## Full sync doesn't update manager attribute
+
 | Troubleshooting | Details |
 |--|--|
 | **Issue** | You successfully configured the inbound provisioning app. You're using a scoping filter to process only certain HR records. You observe that the manager resolution isn't happening for some users.  |

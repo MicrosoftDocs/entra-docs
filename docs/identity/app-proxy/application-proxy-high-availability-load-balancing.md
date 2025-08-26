@@ -2,13 +2,14 @@
 title: High availability and load balancing in Microsoft Entra application proxy
 description: How traffic distribution works with your application proxy deployment. Includes tips for how to optimize connector performance and use load balancing for back-end servers.
 author: kenwith
-manager: amycolannino
+manager: dougeby 
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.topic: conceptual
-ms.date: 02/27/2024
+ms.topic: article
+ms.date: 05/01/2025
 ms.author: kenwith
 ms.reviewer: ashishj
+ai-usage: ai-assisted
 ---
 
 # High availability and load balancing of your private network connectors and applications
@@ -57,7 +58,7 @@ Another key area where high availability is a factor is the connection between c
 ![Diagram of user connecting to an application via application proxy](media/application-proxy-high-availability-load-balancing/application-proxy-three-hops.png)
 
 ### X-Forwarded-For header field considerations
-In some situations (like auditing, load balancing etc.), sharing the originating IP address of the external client with the on-premises environment is a requirement. To address the requirement, Microsoft Entra private network connector adds the X-Forwarded-For header field with the originating client IP address (public) to the HTTP request. The appropriate network device (load balancer, firewall) or the web server or back-end application can then read and use the information.
+In some situations (like auditing, load balancing, and so on), sharing the originating IP address of the external client with the on-premises environment is a requirement. To address the requirement, Microsoft Entra private network connector adds the X-Forwarded-For header field with the originating client IP address (public) to the HTTP request. The appropriate network device (load balancer, firewall) or the web server or back-end application can then read and use the information.
 
 ## Best practices for load balancing among multiple application servers
 Load balancing is important when the connector group assigned to the application proxy application has two or more connectors. Load balancing is also important when you’re running the back-end web application on multiple servers.
@@ -65,7 +66,7 @@ Load balancing is important when the connector group assigned to the application
 ### Scenario 1: Back-end application doesn't require session persistence
 The simplest scenario is where the back-end web application doesn’t require session stickiness (session persistence). A back-end application instance handles user requests in the server farm. You can use a layer 4 load balancer and configure it with no affinity. Some options include  Microsoft Network Load Balancing and Azure Load Balancer or a load balancer from another vendor. Alternatively, configure a round-robin Domain Name System (DNS) strategy.
 ### Scenario 2: Back-end application requires session persistence
-In this scenario, the back-end web application requires session stickiness (session persistence) during the authenticated session. The back-end application instance handles user requests. Thee requests run on the same server in the server farm.
+In this scenario, the back-end web application requires session stickiness (session persistence) during the authenticated session. The back-end application instance handles user requests. The requests run on the same server in the server farm.
 This scenario can be more complicated because the client usually establishes multiple connections to the application proxy service. Requests over different connections might arrive at different connectors and servers in the farm. Because each connector uses its own IP address for this communication, the load balancer can't ensure session stickiness based on the IP address of the connectors. Source IP Affinity can't be used either.
 Here are some options for scenario 2:
 

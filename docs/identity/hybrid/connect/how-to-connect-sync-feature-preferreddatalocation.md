@@ -1,24 +1,23 @@
 ---
 title: 'Microsoft Entra Connect: Configure preferred data location for Microsoft 365 resources'
 description: Describes how to put your Microsoft 365 user resources close to the user with Microsoft Entra Connect Sync.
-author: billmath
+author: omondiatieno
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-manager: amycolannino
+ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
+manager: mwongerapk
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.author: jomondi
 ---
 # Microsoft Entra Connect Sync: Configure preferred data location for Microsoft 365 resources
-The purpose of this topic is to walk you through how to configure the attribute for preferred data location in Microsoft Entra Connect Sync. When someone uses Multi-Geo capabilities in Microsoft 365, you use this attribute to designate the geo-location of the user’s Microsoft 365 data. (The terms *region* and *geo* are used interchangeably.)
+The purpose of this article is to walk you through how to configure the attribute for preferred data location in Microsoft Entra Connect Sync. When someone uses Multi-Geo capabilities in Microsoft 365, you use this attribute to designate the geo-location of the user’s Microsoft 365 data. (The terms *region* and *geo* are used interchangeably.)
 
 ## Supported Multi-Geo locations
-For a list of all geos supported by Microsoft Entra Connect see [Microsoft 365 Multi-Geo availability](/microsoft-365/enterprise/microsoft-365-multi-geo#microsoft-365-multi-geo-availability)
+For a list of all geos supported by Microsoft Entra Connect, see [Microsoft 365 Multi-Geo availability](/microsoft-365/enterprise/microsoft-365-multi-geo#microsoft-365-multi-geo-availability)
 
 ## Enable synchronization of preferred data location
-By default, Microsoft 365 resources for your users are located in the same geo as your Microsoft Entra tenant. For example, if the _Tenant_ is located in North America, then the users' Exchange mailboxes are also located in North America. For a multinational organization, this might not be optimal.
+By default, Microsoft 365 resources for your users are located in the same geo as your Microsoft Entra tenant. For example, if the *Tenant* is located in North America, then the users' Exchange mailboxes are also located in North America. For a multinational organization, this might not be optimal.
 
 By setting the attribute **preferredDataLocation**, you can define a user's geo. You can have the user's Microsoft 365 resources, such as the mailbox and OneDrive, in the same geo as the user, and still have one tenant for your entire organization.
 
@@ -41,18 +40,18 @@ Microsoft Entra Connect supports synchronization of the **preferredDataLocation*
 * The schema of the object type **User** in the Microsoft Entra Connector is extended to include the **preferredDataLocation** attribute. The attribute is of the type, single-valued string.
 * The schema of the object type **Person** in the metaverse is extended to include the **preferredDataLocation** attribute. The attribute is of the type, single-valued string.
 
-By default, **preferredDataLocation** is not enabled for synchronization. This feature is intended for larger organizations. The Active Directory schema in Windows Server 2019 has an attribute **msDS-preferredDataLocation** you should use for this purpose. If you have not updated the Active Directory schema and cannot do so, then you must identify an attribute to hold the Microsoft 365 geo for your users. This is going to be different for each organization.
+By default, **preferredDataLocation** isn't enabled for synchronization. This feature is intended for larger organizations. The Active Directory schema in Windows Server 2019 has an attribute **msDS-preferredDataLocation** you should use for this purpose. If you haven't updated the Active Directory schema and cannot do so, then you must identify an attribute to hold the Microsoft 365 geo for your users. This is going to be different for each organization.
 
 > [!IMPORTANT]
 > Microsoft Entra ID allows the **preferredDataLocation** attribute on **cloud User objects** to be directly configured by using [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview). To configure this attribute on **synchronized User objects**, you must use Microsoft Entra Connect.
 
 Before enabling synchronization:
 
-* If you have not upgraded the Active Directory schema to 2019, then decide which on-premises Active Directory attribute to be used as the source attribute. It should be of the type, **single-valued string**.
-* If you have previously configured the **preferredDataLocation** attribute on existing **synchronized User objects** in Microsoft Entra ID by using Microsoft Graph PowerShell, you must backport the attribute values to the corresponding **User** objects in on-premises Active Directory.
+* If you haven't upgraded the Active Directory schema to 2019, then decide which on-premises Active Directory attribute to be used as the source attribute. It should be of the type, **single-valued string**.
+* If you previously configured the **preferredDataLocation** attribute on existing **synchronized User objects** in Microsoft Entra ID by using Microsoft Graph PowerShell, you must backport the attribute values to the corresponding **User** objects in on-premises Active Directory.
 
     > [!IMPORTANT]
-    > If you do not backport these values, Microsoft Entra Connect removes the existing attribute values in Microsoft Entra ID when synchronization for the **preferredDataLocation** attribute is enabled.
+    > If you don't backport these values, Microsoft Entra Connect removes the existing attribute values in Microsoft Entra ID when synchronization for the **preferredDataLocation** attribute is enabled.
 
 * Configure the source attribute on at least a couple of on-premises Active Directory User objects now. You can use this for verification later.
 
@@ -67,29 +66,29 @@ To avoid unintended changes being exported to Microsoft Entra ID, ensure that no
 1. Start a PowerShell session on the Microsoft Entra Connect server.
 2. Disable scheduled synchronization by running this cmdlet: `Set-ADSyncScheduler -SyncCycleEnabled $false`.
 3. Start the **Synchronization Service Manager** by going to **START** > **Synchronization Service**.
-4. Select the **Operations** tab, and confirm there is no operation with the status *in progress*.
+4. Select the **Operations** tab, and confirm there's no operation with the status *in progress*.
 
 ![Screenshot of Synchronization Service Manager](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-step1.png)
 
 ## Step 2: Refresh the schema for Active Directory
-If you have updated the Active Directory schema to 2019 and Connect was installed before the schema extension, then the Connect schema cache does not have the updated schema. You must then refresh the schema from the wizard for it to appear in the UI.
+If you updated the Active Directory schema to 2019 and Connect was installed before the schema extension, then the Connect schema cache doesn't have the updated schema. You must then refresh the schema from the wizard for it to appear in the UI.
 
 1. Start the Microsoft Entra Connect wizard from the desktop.
-2. Select the option **Refresh directory schema** and click **Next**.
-3. Enter your Microsoft Entra credentials and click **Next**.
-4. On the **Refresh Directory Schema** page, make sure all forests are selected and click **Next**.
+2. Select the option **Refresh directory schema** and select **Next**.
+3. Enter your Microsoft Entra credentials and select **Next**.
+4. On the **Refresh Directory Schema** page, make sure all forests are selected, and select **Next**.
 5. When completed, close the wizard.
 
 ![Screenshot of Refresh Directory Schema in the Connect wizard](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-refreshschema.png)
 
 ## Step 3: Add the source attribute to the on-premises Active Directory Connector schema
 **This step is only needed if you run Connect version 1.3.21 or older. If you are on 1.4.18 or newer, then skip to step 5.**  
-Not all Microsoft Entra attributes are imported into the on-premises Active Directory connector space. If you have selected to use an attribute that is not synchronized by default, then you need to import it. To add the source attribute to the list of the imported attributes:
+Not all Microsoft Entra attributes are imported into the on-premises Active Directory connector space. If you selected to use an attribute that isn't synchronized by default, then you need to import it. To add the source attribute to the list of the imported attributes:
 
 1. Select the **Connectors** tab in the Synchronization Service Manager.
-2. Right-click the on-premises Active Directory Connector, and select **Properties**.
+2. Right-select the on-premises Active Directory Connector, and select **Properties**.
 3. In the pop-up dialog box, go to the **Select Attributes** tab.
-4. Make sure the source attribute you selected to use is checked in the attribute list. If you do not see your attribute, select the **Show All** check box.
+4. Make sure the source attribute you selected to use is checked in the attribute list. If you don't see your attribute, select the **Show All** check box.
 5. To save, select **OK**.
 
 ![Screenshot that shows the Synchronization Service Manager and Properties dialog box with the "Attributes" list highlighted.](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-step2.png)
@@ -98,10 +97,10 @@ Not all Microsoft Entra attributes are imported into the on-premises Active Dire
 
 ## Step 4: Add **preferredDataLocation** to the Microsoft Entra Connector schema
 **This step is only needed if you run Connect version 1.3.21 or older. If you are on 1.4.18 or newer, then skip to step 5.**  
-By default, the **preferredDataLocation** attribute is not imported into the Microsoft Entra Connector space. To add it to the list of imported attributes:
+By default, the **preferredDataLocation** attribute isn't imported into the Microsoft Entra Connector space. To add it to the list of imported attributes:
 
 1. Select the **Connectors** tab in the Synchronization Service Manager.
-2. Right-click the Microsoft Entra connector, and select **Properties**.
+2. Right-select the Microsoft Entra connector, and select **Properties**.
 3. In the pop-up dialog box, go to the **Select Attributes** tab.
 4. Select the **preferredDataLocation** attribute in the list.
 5. To save, select **OK**.
@@ -175,12 +174,12 @@ The outbound synchronization rule permits the attribute value to flow from the m
 ![Screenshot of Create outbound synchronization rule](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-step5.png)
 
 ## Step 7: Run full synchronization cycle
-In general, full synchronization cycle is required. This is because you have added new attributes to both the Active Directory and Microsoft Entra Connector schema, and introduced custom synchronization rules. Verify the changes before exporting them to Microsoft Entra ID. You can use the following steps to verify the changes, while manually running the steps that make up a full synchronization cycle.
+In general, full synchronization cycle is required. This is because you added new attributes to both the Active Directory and Microsoft Entra Connector schema, and introduced custom synchronization rules. Verify the changes before exporting them to Microsoft Entra ID. You can use the following steps to verify the changes, while manually running the steps that make up a full synchronization cycle.
 
 1. Run **Full import** on the on-premises Active Directory Connector:
 
    1. Go to the **Connectors** tab in the Synchronization Service Manager.
-   2. Right-click the **on-premises Active Directory Connector**, and select **Run**.
+   2. Right-select the **on-premises Active Directory Connector**, and select **Run**.
    3. In the dialog box, select **Full Import**, and select **OK**.
    4. Wait for the operation to complete.
 
@@ -189,38 +188,38 @@ In general, full synchronization cycle is required. This is because you have add
 
 2. Run **Full import** on the Microsoft Entra Connector:
 
-   1. Right-click the **Microsoft Entra Connector**, and select **Run**.
+   1. Right-select the **Microsoft Entra Connector**, and select **Run**.
    2. In the dialog box, select **Full Import**, and select **OK**.
    3. Wait for the operation to complete.
 
 3. Verify the synchronization rule changes on an existing **User** object.
 
-   The source attribute from on-premises Active Directory, and **preferredDataLocation** from Microsoft Entra ID, have been imported into each respective connector space. Before proceeding with the full synchronization step, do a preview on an existing **User** object in the on-premises Active Directory Connector space. The object you picked should have the source attribute populated. A successful preview with **preferredDataLocation** populated in the metaverse is a good indicator that you have configured the synchronization rules correctly. For information about how to do a preview, see [Verify the change](how-to-connect-sync-change-the-configuration.md#verify-the-change).
+   The source attribute from on-premises Active Directory, and **preferredDataLocation** from Microsoft Entra ID, is imported into each respective connector space. Before proceeding with the full synchronization step, do a preview on an existing **User** object in the on-premises Active Directory Connector space. The object you picked should have the source attribute populated. A successful preview with **preferredDataLocation** populated in the metaverse is a good indicator that you configured the synchronization rules correctly. For information about how to do a preview, see [Verify the change](how-to-connect-sync-change-the-configuration.md#verify-the-change).
 
 4. Run **Full Synchronization** on the on-premises Active Directory Connector:
 
-   1. Right-click the **on-premises Active Directory Connector**, and select **Run**.
+   1. Right-select the **on-premises Active Directory Connector**, and select **Run**.
    2. In the dialog box, select **Full Synchronization**, and select **OK**.
    3. Wait for the operation to complete.
 
 5. Verify **Pending Exports** to Microsoft Entra ID:
 
-   1. Right-click the **Microsoft Entra Connector**, and select **Search Connector Space**.
+   1. Right-select the **Microsoft Entra Connector**, and select **Search Connector Space**.
    2. In the **Search Connector Space** dialog box:
 
         a. Set **Scope** to **Pending Export**.<br>
         b. Select all three check boxes, including **Add, Modify, and Delete**.<br>
-        c. To view the list of objects with changes to be exported, select **Search**. To        examine the changes for a given object, double-click the object.<br>
+        c. To view the list of objects with changes to be exported, select **Search**. To        examine the changes for a given object, double-select the object.<br>
         d. Verify that the changes are expected.
 
 6. Run **Export** on the **Microsoft Entra Connector**
 
-   1. Right-click the **Microsoft Entra Connector**, and select **Run**.
+   1. Right-select the **Microsoft Entra Connector**, and select **Run**.
    2. In the **Run Connector** dialog box, select **Export**, and select **OK**.
    3. Wait for the operation to complete.
 
 > [!NOTE]
-> You might notice that the steps do not include the full synchronization step on the Microsoft Entra Connector, or the export step on the Active Directory Connector. The steps are not required, because the attribute values are flowing from on-premises Active Directory to Microsoft Entra-only.
+> You might notice that the steps don't include the full synchronization step on the Microsoft Entra Connector, or the export step on the Active Directory Connector. The steps are not required, because the attribute values are flowing from on-premises Active Directory to Microsoft Entra-only.
 
 ## Step 8: Re-enable sync scheduler
 Re-enable the built-in sync scheduler:
@@ -229,14 +228,14 @@ Re-enable the built-in sync scheduler:
 2. Re-enable scheduled synchronization by running this cmdlet: `Set-ADSyncScheduler -SyncCycleEnabled $true`
 
 ## Step 9: Verify the result
-It is now time to verify the configuration and enable it for your users.
+It's now time to verify the configuration and enable it for your users.
 
 1. Add the geo to the selected attribute on a user. The list of available geos can be [found in this table](/microsoft-365/enterprise/microsoft-365-multi-geo).  
 ![Screenshot of AD attribute added to a user](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-adattribute.png)
 2. Wait for the attribute to be synchronized to Microsoft Entra ID.
-3. Using Exchange Online PowerShell, verify that the mailbox region has been set correctly.  
+3. Using Exchange Online PowerShell, verify that the mailbox region is set correctly.  
 ![Screenshot of Exchange Online PowerShell](./media/how-to-connect-sync-feature-preferreddatalocation/preferreddatalocation-mailboxregion.png)  
-Assuming your tenant has been marked to be able to use this feature, the mailbox is moved to the correct geo. This can be verified by looking at the server name where the mailbox is located.
+Assuming your tenant is marked to use this feature, the mailbox is moved to the correct geo. This can be verified by looking at the server name where the mailbox is located.
 
 ## Next steps
 

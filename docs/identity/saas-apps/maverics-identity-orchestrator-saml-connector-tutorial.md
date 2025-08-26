@@ -1,149 +1,52 @@
 ---
-title: 'Tutorial: Integrate Microsoft Entra single sign-on (SSO) with Maverics Identity Orchestrator SAML Connector'
+title: Configure Maverics Identity Orchestrator SAML Connector for Single sign-on
 description: Learn how to configure single sign-on between Microsoft Entra ID and Maverics Identity Orchestrator SAML Connector.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 06/05/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Maverics Identity Orchestrator SAML Connector so that I can control who has access to Maverics Identity Orchestrator SAML Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Integrate Microsoft Entra single sign-on with Maverics Identity Orchestrator SAML Connector
+# Configure Maverics Identity Orchestrator SAML Connector for Single sign-on
 
-> [!CAUTION]
-> This article references CentOS, a Linux distribution that is nearing End Of Life (EOL) status. Please consider your use and plan accordingly. For more information, see the [CentOS End Of Life guidance](/azure/virtual-machines/workloads/centos/centos-end-of-life).
+Strata's Maverics Orchestrator provides a simple way to integrate on-premises applications with Microsoft Entra ID for authentication and access control. The Maverics Orchestrator is capable of modernizing authentication and authorization for apps that currently rely on headers, cookies, and other proprietary authentication methods. Maverics Orchestrator instances can be deployed on-premises or in the cloud.
 
-Strata's Maverics Identity Orchestrator provides a simple way to integrate on-premises applications with Microsoft Entra ID for authentication and access control. The Maverics Orchestrator is capable of modernizing authentication and authorization for apps that currently rely on headers, cookies, and other proprietary authentication methods. Maverics Orchestrator instances can be deployed on-premises or in the cloud. 
+This hybrid access article demonstrates how to migrate an on-premises web application that's currently protected by a legacy web access management product to use Microsoft Entra ID for authentication and access control. Here are the basic steps:
 
-This hybrid access tutorial demonstrates how to migrate an on-premises web application that's currently protected by a legacy web access management product to use Microsoft Entra ID for authentication and access control. Here are the basic steps:
-
-1. Set up the Maverics Orchestrator
-1. Proxy an application
-1. Register an enterprise application in Microsoft Entra ID
-1. Authenticate via Azure and authorize access to the application
-1. Add headers for seamless application access
-1. Work with multiple applications
+1. Setting up the Maverics Orchestrator
+2. Proxying an application
+3. Registering an enterprise application in Microsoft Entra ID
+4. Authenticating via Microsoft Entra ID and authorizing access to the application
+5. Adding headers for seamless application access
+6. Working with multiple applications
 
 ## Prerequisites
 
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* A Maverics Identity Orchestrator SAML Connector SSO-enabled subscription. To get the Maverics software, contact [Strata sales](mailto:sales@strata.io).
-* At least one application that uses header-based authentication. The examples work against an application called Connectulum, hosted at `https://app.connectulum.com`.
-* A Linux machine to host the Maverics Orchestrator
-  * OS: RHEL 7.7 or higher, CentOS 7+
-  * Disk: >= 10 GB
-  * Memory: >= 4 GB
-  * Ports: 22 (SSH/SCP), 443, 7474
-  * Root access for install/administrative tasks
-  * Network egress from the server hosting the Maverics Identity Orchestrator to your protected application
+* A Microsoft Entra ID subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+* A Maverics Identity Orchestrator Platform account. Sign up at [maverics.strata.io](https://maverics.strata.io).
+* At least one application that uses header based authentication. In our examples, we work against an application called Sonar that's reachable at `https://localhost:8443`.
+## Step 1: Setting up the Maverics Orchestrator
 
-## Step 1: Set up the Maverics Orchestrator
+After signing up for a Maverics account at [maverics.strata.io](https://maverics.strata.io), use our Learning Center article titled [**Getting Started: Evaluation Environment**](https://maverics.strata.io/learn/redirect?context=environments-create-evaluation). This article takes you through the step-by-step process of creating an evaluation environment, downloading an orchestrator, and installing the orchestrator on your machine. 
 
-### Install Maverics
+## Step 2: Extending Microsoft Entra ID to an app with a recipe
 
-1. Get the latest Maverics RPM. Copy the package to the system on which you want to install the Maverics software.
+Next, use the Learning Center article,  [**Extend Microsoft Entra ID to a Legacy, Non-Standard App**](https://maverics.strata.io/learn/redirect?context=microsoft-entra-id-recipe). This article provides you with a .json recipe that automatically configures an identity fabric, header-based application, and partially complete user flow.
 
-1. Install the Maverics package, substituting your file name in place of `maverics.rpm`.
+## Step 3: Registering an enterprise application in Microsoft Entra ID
 
-   `sudo rpm -Uvf maverics.rpm`
+We'll now create a new enterprise application in Microsoft Entra ID that's used for authenticating end-users.
 
-   After you install Maverics, it will run as a service under `systemd`. To verify that the service is running, execute the following command:
+>[!Note]
+> When leveraging Microsoft Entra ID features such as Conditional Access it's important to create an enterprise application per on-premises application. This permits per-app Conditional Access, per-app risk evaluation, per-app assigned permissions, etc. Generally, an enterprise application in Microsoft Entra  ID maps to an Azure connector in Maverics.
 
-   `sudo systemctl status maverics`
-
-1. To restart the Orchestrator and follow the logs, you can run the following command:
-
-   `sudo service maverics restart; sudo journalctl --identifier=maverics -f`
-
-After you install Maverics, the default `maverics.yaml` file is created in the `/etc/maverics` directory. Before you edit your configuration to include `appgateways` and `connectors`, your configuration file will look like this z:
-
-```yaml
-# © Strata Identity Inc. 2020. All Rights Reserved. Patents Pending.
-
-version: 0.1
-listenAddress: ":7474"
-```
-
-### Configure DNS
-
-DNS will be helpful so that you don't have to remember the Orchestrator server's IP.
-
-Edit the browser machine's (your laptop's) hosts file, using a hypothetical Orchestrator IP of 12.34.56.78. On Linux-based operating systems, this file is located in `/etc/hosts`. On Windows, it's located at `C:\windows\system32\drivers\etc`.
-
-```
-12.34.56.78 sonar.maverics.com
-12.34.56.78 connectulum.maverics.com
-```
-
-To confirm that DNS is configured as expected, you can make a request to the Orchestrator's status endpoint. From your browser, request `http://sonar.maverics.com:7474/status`.
-
-### Configure TLS
-
-Communicating over secure channels to talk to your Orchestrator is critical to maintain security. You can add a certificate/key pair in your `tls` section to achieve this.
-
-To generate a self-signed certificate and key for the Orchestrator server, run the following command from within the `/etc/maverics` directory:
-
-`openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out maverics.crt -keyout maverics.key`
-
-> [!NOTE]
-> For production environments, you'll likely want to use a certificate signed by a known CA to avoid warnings in the browser. [Let's Encrypt](https://letsencrypt.org/) is a good and free option if you're looking for a trusted CA.
-
-Now, use the newly generated certificate and key for the Orchestrator. Your config file should now contain this code:
-
-```yaml
-version: 0.1
-listenAddress: ":443"
-
-tls:
-  maverics:
-    certFile: /etc/maverics/maverics.crt
-    keyFile: /etc/maverics/maverics.key
-```
-
-To confirm that TLS is configured as expected, restart the Maverics service, and make a request to the status endpoint.
-
-## Step 2: Proxy an application
-
-Next, configure basic proxying in the Orchestrator by using `appgateways`. This step helps you validate that the Orchestrator has the necessary connectivity to the protected application.
-
-Your config file should now contain this code:
-
-```yaml
-version: 0.1
-listenAddress: ":443"
-
-tls:
-  maverics:
-    certFile: /etc/maverics/maverics.crt
-    keyFile: /etc/maverics/maverics.key
-
-appgateways:
-  - name: sonar
-    location: /
-    # Replace https://app.sonarsystems.com with the address of your protected application
-    upstream: https://app.sonarsystems.com
-```
-
-To confirm that proxying is working as expected, restart the Maverics service, and make a request to the application through the Maverics proxy. You can optionally make a request to specific application resources.
-
-<a name='step-3-register-an-enterprise-application-in-azure-ad'></a>
-
-## Step 3: Register an enterprise application in Microsoft Entra ID
-
-Now, create a new enterprise application in Microsoft Entra ID that will be used for authenticating end users.
-
-> [!NOTE]
-> When you use Microsoft Entra features like Conditional Access, it's important to create an enterprise application per on-premises application. This permits per-app Conditional Access, per-app risk evaluation, per-app assigned permissions, and so on. Generally, an enterprise application in Microsoft Entra ID maps to an Azure connector in Maverics.
-
-To register an enterprise application in Microsoft Entra ID:
-
-1. In your Microsoft Entra tenant, go to **Enterprise applications**, and then select **New Application**. In the Microsoft Entra gallery, search for **Maverics Identity Orchestrator SAML Connector**, and then select it.
+1. In your Microsoft Entra ID tenant, go to **Enterprise applications**, select **New Application** and search for **Maverics Identity Orchestrator SAML Connector** in the Microsoft Entra ID gallery, and then select it.
 
 1. On the Maverics Identity Orchestrator SAML Connector **Properties** pane, set **User assignment required?** to **No** to enable the application to work for all users in your directory.
 
@@ -153,196 +56,35 @@ To register an enterprise application in Microsoft Entra ID:
 
    ![Screenshot of the "Basic SAML Configuration" Edit button.](common/edit-urls.png)
 
-1. Enter an **Entity ID** of `https://sonar.maverics.com`. The entity ID must be unique across the apps in the tenant, and it can be an arbitrary value. You'll use this value when you define the `samlEntityID` field for your Azure connector in the next section.
+1. Enter an **Entity ID** of: `https://sonar.maverics.com`. The Entity ID must be unique across the apps in the tenant, and can be an arbitrary value. We use this value when defining the `samlEntityID` field for our Azure connector in the next section.
 
-1. Enter a **Reply URL** of `https://sonar.maverics.com/acs`. You'll use this value when you define the `samlConsumerServiceURL` field for your Azure connector in the next section.
+1. Enter a **Reply URL** of: `https://sonar.maverics.com/acs`. We use this value when defining the `samlConsumerServiceURL` field for our Azure connector in the next section.
 
-1. Enter a **Sign on URL** of `https://sonar.maverics.com/`. This field won't be used by Maverics, but it is required in Microsoft Entra ID to enable users to get access to the application through the Microsoft Entra My Apps portal.
+1. Enter a **Sign on URL** of: `https://sonar.maverics.com/`. This field won't be used by Maverics, but it's required in Microsoft Entra ID to enable users to get access to the application through the Microsoft Entra ID My Apps portal.
 
 1. Select **Save**.
 
-1. In the **SAML Signing Certificate** section, select the **Copy** button to copy the **App Federation Metadata URL** value, and then save it to your computer.
+1. In the **SAML Signing Certificate** section, select the **Copy** button to copy the **App Federation Metadata URL**, and then save it to your computer.
 
    ![Screenshot of the "SAML Signing Certificate" Copy button.](common/copy-metadataurl.png)
 
-## Step 4: Authenticate via Azure and authorize access to the application
+## Step 4: Authenticating via Microsoft Entra ID and authorizing access to the application
 
-Next, put the enterprise application you just created to use by configuring the Azure connector in Maverics. This `connectors` configuration paired with the `idps` block allows the Orchestrator to authenticate users.
+Continue on with step 4 of the Learning Center topic, **Extend Microsoft Entra ID to a Legacy, Non-Standard App** to edit your user flow in Maverics. These steps walk you through the process of adding headers to the upstream application and deploying the user flow.
 
-Your config file should now contain the following code. Be sure to replace `METADATA_URL` with the App Federation Metadata URL value from the preceding step.
+Once you've deployed the user flow, to confirm authentication is working as expected, make a request to an application resource through the Maverics proxy. The protected application should now be receiving headers on the request.
 
-```yaml
-version: 0.1
-listenAddress: ":443"
+Feel free to edit the header keys if your application expects different headers. All claims that come back from Microsoft Entra ID as part of the SAML flow are available to use in headers. For example, we could include another header of `secondary_email: azureSonarApp.email`, where `azureSonarApp` is the connector name and `email` is a claim returned from Microsoft Entra ID.
 
-tls:
-  maverics:
-    certFile: /etc/maverics/maverics.crt
-    keyFile: /etc/maverics/maverics.key
+## Advanced Scenarios
 
-idps:
-  - name: azureSonarApp
+### Identity Migration
+Can't stand your end-of-life'd web access management tool, but don't have a way to migrate your users without mass password resets? The Maverics Orchestrator supports identity migration by using `migrationgateways`.
 
-appgateways:
-  - name: sonar
-    location: /
-    # Replace https://app.sonarsystems.com with the address of your protected application
-    upstream: https://app.sonarsystems.com
+### Web Server Modules 
+Don't want to rework your network and proxy traffic through the Maverics Orchestrator? Not a problem, the Maverics Orchestrator can be paired with web server modules to offer the same solutions without proxying.
 
-    policies:
-      - resource: /
-        allowIf:
-          - equal: ["{{azureSonarApp.authenticated}}", "true"]
+## Wrapping Up
 
-connectors:
-  - name: azureSonarApp
-    type: azure
-    authType: saml
-    # Replace METADATA_URL with the App Federation Metadata URL
-    samlMetadataURL: METADATA_URL
-    samlConsumerServiceURL: https://sonar.maverics.com/acs
-    samlEntityID: https://sonar.maverics.com
-```
+At this point, we have installed the Maverics Orchestrator, created and configured an enterprise application in Microsoft Entra ID, and configured the Orchestrator to proxy to a protected application while requiring authentication and enforcing policy. To learn more about how the Maverics Orchestrator can be used for distributed identity management use cases please [contact Strata](mailto:sales@strata.io).
 
-To confirm that authentication is working as expected, restart the Maverics service, and make a request to an application resource through the Maverics proxy. You should be redirected to Azure for authentication before accessing the resource.
-
-## Step 5: Add headers for seamless application access
-
-You aren't sending headers to the upstream application yet. Let's add `headers` to the request as it passes through the Maverics proxy to enable the upstream application to identify the user.
-
-Your config file should now contain this code:
-
-```yaml
-version: 0.1
-listenAddress: ":443"
-
-tls:
-  maverics:
-    certFile: /etc/maverics/maverics.crt
-    keyFile: /etc/maverics/maverics.key
-
-idps:
-  - name: azureSonarApp
-
-appgateways:
-  - name: sonar
-    location: /
-    # Replace https://app.sonarsystems.com with the address of your protected application
-    upstream: https://app.sonarsystems.com
-
-    policies:
-      - resource: /
-        allowIf:
-          - equal: ["{{azureSonarApp.authenticated}}", "true"]
-
-    headers:
-      email: azureSonarApp.name
-      firstname: azureSonarApp.givenname
-      lastname: azureSonarApp.surname
-
-connectors:
-  - name: azureSonarApp
-    type: azure
-    authType: saml
-    # Replace METADATA_URL with the App Federation Metadata URL
-    samlMetadataURL: METADATA_URL
-    samlConsumerServiceURL: https://sonar.maverics.com/acs
-    samlEntityID: https://sonar.maverics.com
-```
-
-To confirm that authentication is working as expected, make a request to an application resource through the Maverics proxy. The protected application should now be receiving headers on the request. 
-
-Feel free to edit the header keys if your application expects different headers. All claims that come back from Microsoft Entra ID as part of the SAML flow are available to use in headers. For example, you can include another header of `secondary_email: azureSonarApp.email`, where `azureSonarApp` is the connector name and `email` is a claim returned from Microsoft Entra ID. 
-
-## Step 6: Work with multiple applications
-
-Let's now take a look at what's required to proxy to multiple applications that are on different hosts. To achieve this step, configure another App Gateway, another enterprise application in Microsoft Entra ID, and another connector.
-
-Your config file should now contain this code:
-
-```yaml
-version: 0.1
-listenAddress: ":443"
-
-tls:
-  maverics:
-    certFile: /etc/maverics/maverics.crt
-    keyFile: /etc/maverics/maverics.key
-
-idps:
-  - name: azureSonarApp
-  - name: azureConnectulumApp
-
-appgateways:
-  - name: sonar
-    host: sonar.maverics.com
-    location: /
-    # Replace https://app.sonarsystems.com with the address of your protected application
-    upstream: https://app.sonarsystems.com
-
-    policies:
-      - resource: /
-        allowIf:
-          - equal: ["{{azureSonarApp.authenticated}}", "true"]
-
-    headers:
-      email: azureSonarApp.name
-      firstname: azureSonarApp.givenname
-      lastname: azureSonarApp.surname
-
-  - name: connectulum
-    host: connectulum.maverics.com
-    location: /
-    # Replace https://app.connectulum.com with the address of your protected application
-    upstream: https://app.connectulum.com
-
-    policies:
-      - resource: /
-        allowIf:
-          - equal: ["{{azureConnectulumApp.authenticated}}", "true"]
-
-    headers:
-      email: azureConnectulumApp.name
-      firstname: azureConnectulumApp.givenname
-      lastname: azureConnectulumApp.surname
-
-connectors:
-  - name: azureSonarApp
-    type: azure
-    authType: saml
-    # Replace METADATA_URL with the App Federation Metadata URL
-    samlMetadataURL: METADATA_URL
-    samlConsumerServiceURL: https://sonar.maverics.com/acs
-    samlEntityID: https://sonar.maverics.com
-
-  - name: azureConnectulumApp
-    type: azure
-    authType: saml
-    # Replace METADATA_URL with the App Federation Metadata URL
-    samlMetadataURL: METADATA_URL
-    samlConsumerServiceURL: https://connectulum.maverics.com/acs
-    samlEntityID: https://connectulum.maverics.com
-```
-
-You might have noticed that the code adds a `host` field to your App Gateway definitions. The `host` field enables the Maverics Orchestrator to distinguish which upstream host to proxy traffic to.
-
-To confirm that the newly added App Gateway is working as expected, make a request to `https://connectulum.maverics.com`.
-
-## Advanced scenarios
-
-### Identity migration
-
-Can't stand your end-of-life'd web access management tool, but you don't have a way to migrate your users without mass password resets? The Maverics Orchestrator supports identity migration by using `migrationgateways`.
-
-### Web server gateways
-
-Don't want to rework your network and proxy traffic through the Maverics Orchestrator? Not a problem. The Maverics Orchestrator can be paired with web server gateways (modules) to offer the same solutions without proxying.
-
-## Wrap-up
-
-At this point, you've installed the Maverics Orchestrator, created and configured an enterprise application in Microsoft Entra ID, and configured the Orchestrator to proxy to a protected application while requiring authentication and enforcing policy. To learn more about how the Maverics Orchestrator can be used for distributed identity management use cases, [contact Strata](mailto:sales@strata.io).
-
-## Next steps
-
-- [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
-- [What is Conditional Access in Microsoft Entra ID?](~/identity/conditional-access/overview.md)

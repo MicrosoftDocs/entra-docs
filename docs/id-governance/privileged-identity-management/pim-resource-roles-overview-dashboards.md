@@ -1,18 +1,17 @@
 ---
 title: Resource dashboards for access reviews in PIM
-description: Describes how to use a resource dashboard to perform an access review in Microsoft Entra Privileged Identity Management (PIM).
-
+description: Describes how to use a resource dashboard to perform an access review
+  in Microsoft Entra Privileged Identity Management (PIM).
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/17/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-
 ---
 
 # Use a resource dashboard to perform an access review in Privileged Identity Management
@@ -27,7 +26,7 @@ You can use a resource dashboard to perform an access review in Privileged Ident
 
 :::image type="content" source="media/pim-resource-roles-overview-dashboards/role-settings.png" alt-text="Screenshot of the Admin View dashboard, showing data lists.":::
 
-The graphical representation of resource role activations covers the past seven days. This data is scoped to the selected resource, and displays activations for the most common roles (owner, contributor, user access administrator), and for all roles combined.
+The graphical representation of resource role activations covers the past seven days. This data is scoped to the selected resource, and displays activations for the most common roles (Owner, Contributor, User Access Administrator), and for all roles combined.
 
 On one side of the activations graph, two charts display the distribution of role assignments by assignment type, for both users and groups. You can change the value to a percentage (or vice versa), by selecting a slice of the chart.
 

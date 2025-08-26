@@ -1,15 +1,15 @@
 ---
 title: Microsoft Entra authentication & authorization error codes
 description: Learn about the AADSTS error codes that are returned from the Microsoft Entra security token service (STS).
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom: 
-ms.date: 04/10/2024
+ms.date: 02/03/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: error-reference
 #Customer intent: As a developer troubleshooting authentication errors, I want to understand the meaning and possible resolutions for the AADSTS error codes returned by the Microsoft Entra security token service, so that I can effectively debug and fix authentication issues in my application.
 ---
 
@@ -36,12 +36,12 @@ Here's a sample error response:
 ```json
 {
   "error": "invalid_scope",
-  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' isn't valid. The scope https://example.contoso.com/activity.read isn't valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd33-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
+  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' isn't valid. The scope https://example.contoso.com/activity.read isn't valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
   "error_codes": [
     70011
   ],
   "timestamp": "2016-01-09 02:02:12Z",
-  "trace_id": "0000aaaa-11bb-cccc-dd33-eeeeee333333",
+  "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
   "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd", 
   "error_uri":"https://login.microsoftonline.com/error?code=70011"
 }
@@ -55,19 +55,19 @@ Here's a sample error response:
 | `timestamp`   | This returns the time at which the error occurred. |
 | `trace_id`    | A unique identifier for the request that can help in diagnostics. |
 | `correlation_id` | A unique identifier for the request that can help in diagnostics across components. |
-| `error_uri` |  A link to the error lookup page with additional information about the error.  This is for developer usage only, don't present it to users.  Only present when the error lookup system has additional information about the error - not all error have additional information provided.|
+| `error_uri` |  A link to the error lookup page with additional information about the error. This is for developer usage only, don't present it to users. Only present when the error lookup system has additional information about the error - not all error have additional information provided.|
 
-The `error` field has several possible values - review the protocol documentation links and OAuth 2.0 specs to learn more about specific errors (for example, `authorization_pending` in the [device code flow](v2-oauth2-device-code.md)) and how to react to them.  Some common ones are listed here:
+The `error` field has several possible values - review the protocol documentation links and OAuth 2.0 specs to learn more about specific errors (for example, `authorization_pending` in the [device code flow](v2-oauth2-device-code.md)) and how to react to them. Some common ones are listed here:
 
 | Error Code         | Description        | Client Action    |
 |--------------------|--------------------|------------------|
 | `invalid_request`  | Protocol error, such as a missing required parameter. | Fix and resubmit the request.|
-| `invalid_grant`    | Some of the authentication material (auth code, refresh token, access token, PKCE challenge) was invalid, unparseable, missing, or otherwise unusable | Try a new request to the `/authorize` endpoint to get a new authorization code.  Consider reviewing and validating that app's use of the protocols. |
+| `invalid_grant`    | Some of the authentication material (auth code, refresh token, access token, PKCE challenge) was invalid, unparseable, missing, or otherwise unusable | Try a new request to the `/authorize` endpoint to get a new authorization code. Consider reviewing and validating that app's use of the protocols. |
 | `unauthorized_client` | The authenticated client isn't authorized to use this authorization grant type. | This usually occurs when the client application isn't registered in Microsoft Entra ID or isn't added to the user's Microsoft Entra tenant. The application can prompt the user with instruction for installing the application and adding it to Microsoft Entra ID. |
 | `invalid_client` | Client authentication failed.  | The client credentials aren't valid. To fix, the Application Administrator updates the credentials.   |
 | `unsupported_grant_type` | The authorization server doesn't support the authorization grant type. | Change the grant type in the request. This type of error should occur only during development and be detected during initial testing. |
-| `invalid_resource` | The target resource is invalid because it doesn't exist, Microsoft Entra ID can't find it, or it's not correctly configured. | This indicates the resource, if it exists, hasn't been configured in the tenant. The application can prompt the user with instruction for installing the application and adding it to Microsoft Entra ID.  During development, this usually indicates an incorrectly set up test tenant or a typo in the name of the scope being requested. |
-| `interaction_required` | The request requires user interaction. For example, an another authentication step is required. | Retry the request with the same resource, interactively, so that the user can complete any challenges required.  |
+| `invalid_resource` | The target resource is invalid because it doesn't exist, Microsoft Entra ID can't find it, or it's not correctly configured. | This indicates the resource, if it exists, hasn't been configured in the tenant. The application can prompt the user with instruction for installing the application and adding it to Microsoft Entra ID. During development, this usually indicates an incorrectly set up test tenant or a typo in the name of the scope being requested. |
+| `interaction_required` | The request requires user interaction. For example, another authentication step is required. | Retry the request with the same resource, interactively, so that the user can complete any challenges required.  |
 | `temporarily_unavailable` | The server is temporarily too busy to handle the request. | Retry the request. The client application might explain to the user that its response is delayed because of a temporary condition. |
 
 ## AADSTS error codes
@@ -86,6 +86,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS230109 | CachedCredentialNonGWAuthNRequestsNotSupported - Backup Auth Service only allows AuthN requests from Microsoft Entra Gateway. This error is returned when traffic targets the backup auth service directly instead of going through the reverse proxy.  |
 | AADSTS28002 | Provided value for the input parameter scope '{scope}' isn't valid when requesting an access token. Specify a valid scope. |
 | AADSTS28003 | Provided value for the input parameter scope can't be empty when requesting an access token using the provided authorization code. Specify a valid scope.|
+| AADSTS399284 | InboundIdTokenIssuerInvalid - The inbound ID token received in the federation has an invalid issuer. Either it is empty, or it does not match the realm identifier. |
 | AADSTS40008 | OAuth2IdPUnretryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40009 | OAuth2IdPRefreshTokenRedemptionUserError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40010 | OAuth2IdPRetryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
@@ -94,6 +95,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50001 | InvalidResource - The resource is disabled or doesn't exist. Check your app's code to ensure that you have specified the exact resource URL for the resource you're trying to access.  |
 | AADSTS50002 | NotAllowedTenant - Sign-in failed because of a restricted proxy access on the tenant. If it's your own tenant policy, you can change your restricted tenant settings to fix this issue. |
 | AADSTS500011 | InvalidResourceServicePrincipalNotFound - The resource principal named {name} wasn't found in the tenant named {tenant}. This can happen if the application hasn't been installed by the administrator of the tenant or consented to by any user in the tenant. You might have sent your authentication request to the wrong tenant. If you expect the app to be installed, you might need to provide administrator permissions to add it. Check with the developers of the resource and application to understand what the right setup for your tenant is. |
+| AADSTS500014 | InvalidResourceServicePrincipalDisabled - The service principal for resource '{identifier}' is disabled. This indicates that a subscription within the tenant has lapsed, or that an administrator for this tenant has disabled the application's service principal, preventing tokens from being issued for it. For more information, see [Disable user sign-in for application](~/identity/enterprise-apps/disable-user-sign-in-portal.md).|
 | AADSTS500021 | Access to '{tenant}' tenant is denied. AADSTS500021 indicates that the tenant restriction feature is configured and that the user is trying to access a tenant that isn't in the list of allowed tenants specified in the header `Restrict-Access-To-Tenant`. For more information, see [Use tenant restrictions to manage access to SaaS cloud applications](~/identity/enterprise-apps/tenant-restrictions.md).|
 | AADSTS500022 | Access to '{tenant}' tenant is denied. AADSTS500022 indicates that the tenant restriction feature is configured and that the user is trying to access a tenant that isn't in the list of allowed tenants specified in the header `Restrict-Access-To-Tenant`. For more information, see [Use tenant restrictions to manage access to SaaS cloud applications](~/identity/enterprise-apps/tenant-restrictions.md).|
 | AADSTS50003 | MissingSigningKey - Sign-in failed because of a missing signing key or certificate. This might be because there was no signing key configured in the app. To learn more, see the troubleshooting article for error [AADSTS50003](/troubleshoot/azure/active-directory/error-code-aadsts50003-cert-or-key-not-configured). If you still see issues, contact the app owner or an app admin. |
@@ -101,31 +103,35 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50006 | InvalidSignature - Signature verification failed because of an invalid signature. |
 | AADSTS50007 | PartnerEncryptionCertificateMissing - The partner encryption certificate wasn't found for this app. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Microsoft to get this fixed. |
 | AADSTS50008 | InvalidSamlToken - SAML assertion is missing or misconfigured in the token. Contact your federation provider. |
+| AADSTS5000224 | NotAllowedTenantBlockedTenantFraud - We are sorry, this resource is not available. If you are seeing this message by mistake, please contact Microsoft support. |
 | AADSTS5000819 | InvalidSamlTokenEmailMissingOrInvalid - SAML Assertion is invalid. Email address claim is missing or doesn't match domain from an external realm. |
 | AADSTS50010 | AudienceUriValidationFailed - Audience URI validation for the app failed since no token audiences were configured. |
-| AADSTS50011 | InvalidReplyTo - The reply address is missing, misconfigured, or doesn't match reply addresses configured for the app.  As a resolution ensures to add this missing reply address to the Microsoft Entra application or have someone with the permissions to manage your application in Microsoft Entra IF do this for you. To learn more, see the troubleshooting article for error [AADSTS50011](/troubleshoot/azure/active-directory/error-code-aadsts50011-reply-url-mismatch).|
+| AADSTS50011 | InvalidReplyTo - The reply address is missing, misconfigured, or doesn't match reply addresses configured for the app. As a resolution ensures to add this missing reply address to the Microsoft Entra application or have someone with the permissions to manage your application in Microsoft Entra IF do this for you. To learn more, see the troubleshooting article for error [AADSTS50011](/troubleshoot/azure/active-directory/error-code-aadsts50011-reply-url-mismatch).|
 | AADSTS50012 | AuthenticationFailed - Authentication failed for one of the following reasons:<ul><li>The subject name of the signing certificate isn't authorized</li><li>A matching trusted authority policy wasn't found for the authorized subject name</li><li>The certificate chain isn't valid</li><li>The signing certificate isn't valid</li><li>Policy isn't configured on the tenant</li><li>Thumbprint of the signing certificate isn't authorized</li><li>Client assertion contains an invalid signature</li></ul> |
 | AADSTS50013 | InvalidAssertion - Assertion is invalid because of various reasons - The token issuer doesn't match the API version within its valid time range -expired -malformed - Refresh token in the assertion isn't a primary refresh token. Contact the app developer. |
 | AADSTS500133 | Assertion isn't within its valid time range. Ensure that the access token isn't expired before using it for user assertion, or request a new token. Current time: {curTime}, expiry time of assertion {expTime}. Assertion is invalid because of various reasons:<ul><li>The token issuer doesn't match the API version within its valid time range</li><li>Expired</li><li>Malformed</li><li>Refresh token in the assertion isn't a primary refresh token</li></ul>|
 | AADSTS50014 | GuestUserInPendingState - The user account doesn’t exist in the directory. An application likely chose the wrong tenant to sign into, and the currently logged in user was prevented from doing so since they didn't exist in your tenant. If this user should be able to sign in, add them as a guest. For further information, please visit [add B2B users](/azure/active-directory/b2b/add-users-administrator). |
 | AADSTS50015 | ViralUserLegalAgeConsentRequiredState - The user requires legal age group consent. |
 | AADSTS50017 | CertificateValidationFailed - Certification validation failed, reasons for the following reasons:<ul><li>Cannot find issuing certificate in trusted certificates list</li><li>Unable to find expected CrlSegment</li><li>Cannot find issuing certificate in trusted certificates list</li><li>Delta CRL distribution point is configured without a corresponding CRL distribution point</li><li>Unable to retrieve valid CRL segments because of a timeout issue</li><li>Unable to download CRL</li></ul>Contact the tenant admin. |
-| AADSTS50020 | UserUnauthorized - Users are unauthorized to call this endpoint. User account '{email}' from identity provider '{idp}' does not exist in tenant '{tenant}' and cannot access the application '{appid}'({appName}) in that tenant. This account needs to be added as an external user in the tenant first. Sign out and sign in again with a different Microsoft Entra user account. If this user should be a member of the tenant, they should be invited via the [B2B system](~/external-id/add-users-administrator.md). For additional information, visit [AADSTS50020](/troubleshoot/azure/active-directory/error-code-aadsts50020-user-account-identity-provider-does-not-exist). |
-| AADSTS500208 | The domain is not a valid login domain for the account type - This situation occurs when the user's account does not match the expected account type for the given tenant. For instance, if the tenant is configured to allow only work or school accounts, and the user tries to sign in with a personal Microsoft account, they'll receive this error.
+| AADSTS500141 | The user's redemption is complete but the request was not initiated by the target application. |
+| AADSTS5001256 | Failed to complete authentication with external provider due to invalid id_token. Failure details: {details} |
+| AADSTS50020 | UserUnauthorized - Users are unauthorized to call this endpoint. User account '{email}' from identity provider '{idp}' does not exist in tenant '{tenant}' and cannot access the application '{appid}'({appName}) in that tenant. This account needs to be added as an external user in the tenant first. Sign out and sign in again with a different Microsoft Entra user account. If this user should be a member of the tenant, they should be invited via the [B2B system](~/external-id/add-users-administrator.yml). For additional information, visit [AADSTS50020](/troubleshoot/azure/active-directory/error-code-aadsts50020-user-account-identity-provider-does-not-exist). |
+| AADSTS500207 | The account type can't be used for the resource you're trying to access. |
+| AADSTS500208 | The domain is not a valid login domain for the account type - This situation occurs when the user's account does not match the expected account type for the given tenant. For instance, if the tenant is configured to allow only work or school accounts, and the user tries to sign in with a personal Microsoft account, they will receive this error. |
 | AADSTS500212 | NotAllowedByOutboundPolicyTenant - The user's administrator has set an outbound access policy that doesn't allow access to the resource tenant. |
 | AADSTS500213 | NotAllowedByInboundPolicyTenant - The resource tenant's cross-tenant access policy doesn't allow this user to access this tenant. |
 | AADSTS50027 | InvalidJwtToken - Invalid JWT token because of the following reasons:<ul><li>doesn't contain nonce claim, sub claim</li><li>subject identifier mismatch</li><li>duplicate claim in idToken claims</li><li>unexpected issuer</li><li>unexpected audience</li><li>not within its valid time range </li><li>token format isn't proper</li><li>External ID token from issuer failed signature verification.</li></ul> |
 | AADSTS50029 | Invalid URI - domain name contains invalid characters. Contact the tenant admin. |
 | AADSTS50032 | WeakRsaKey - Indicates the erroneous user attempt to use a weak RSA key. |
 | AADSTS50033 | RetryableError - Indicates a transient error not related to the database operations. |
-| AADSTS50034 | UserAccountNotFound - To sign into this application, the account must be added to the directory. This error can occur because the user mis-typed their username, or isn't in the tenant. An application might have chosen the wrong tenant to sign into, and the currently logged in user was prevented from doing so since they didn't exist in your tenant. If this user should be able to sign in, add them as a guest. See docs here: [Add B2B users](~/external-id/add-users-administrator.md). |
+| AADSTS50034 | UserAccountNotFound - To sign into this application, the account must be added to the directory. This error can occur because the user mis-typed their username, or isn't in the tenant. An application might have chosen the wrong tenant to sign into, and the currently logged in user was prevented from doing so since they did not exist in your tenant. If this user should be able to log in, add them as a guest. See docs here: [Add B2B users](~/external-id/add-users-administrator.yml). |
 | AADSTS50042 | UnableToGeneratePairwiseIdentifierWithMissingSalt - The salt required to generate a pairwise identifier is missing in principle. Contact the tenant admin. |
 | AADSTS50043 | UnableToGeneratePairwiseIdentifierWithMultipleSalts |
 | AADSTS50048 | SubjectMismatchesIssuer - Subject mismatches Issuer claim in the client assertion. Contact the tenant admin. |
 | AADSTS50049 | NoSuchInstanceForDiscovery - Unknown or invalid instance. |
 | AADSTS50050 | MalformedDiscoveryRequest - The request is malformed. |
-| AADSTS50053 | This error can result from two different reasons: <br><ul><li>The account (ID) is locked because the user tried to sign in too many times with an incorrect user ID or password. The user is blocked due to repeated sign-in attempts. See [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md).</li><li>The sign-in was blocked because it came from an IP address with malicious activity.</li></ul> <br>To determine which failure reason caused this error, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). Navigate to your Microsoft Entra tenant and then **Monitoring & health** -> **Sign-in logs**. Find the failed user sign-in with **Sign-in error code** 50053 and check the **Failure reason**.|
-| AADSTS50055 | InvalidPasswordExpiredPassword - The password is expired. The user's password is expired, and therefore their session was ended. They'll be offered the opportunity to reset it, or can ask an admin to reset it via [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.md). |
+| AADSTS50053 | This error can result from two different reasons: <br><ul><li>IdsLocked - The account is locked because the user tried to sign in too many times with an incorrect user ID or password. The user is blocked due to repeated sign-in attempts. See [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md).</li><li>Or, sign-in was blocked because it came from an IP address with malicious activity.</li></ul> <br>To determine which failure reason caused this error, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).  Navigate to your Microsoft Entra tenant and then **Monitoring & health** > **Sign-in logs**.  Find the failed user sign-in with **Sign-in error code** 50053 and check the **Failure reason**.|
+| AADSTS50055 | InvalidPasswordExpiredPassword - The password is expired. The user's password is expired, and therefore their login or session was ended. They will be offered the opportunity to reset it, or can ask an admin to reset it via [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.yml). |
 | AADSTS50056 | Invalid or null password: password doesn't exist in the directory for this user. The user should be asked to enter their password again. |
 | AADSTS50057 | UserDisabled - The user account is disabled. The user object in Active Directory backing this account has been disabled. An admin can re-enable this account [through PowerShell](/powershell/module/activedirectory/enable-adaccount) |
 | AADSTS50058 | UserInformationNotProvided - Session information isn't sufficient for single-sign-on. This means that a user isn't signed in. This is a common error that's expected when a user is unauthenticated and hasn't yet signed in. </br>If this error is encountered in an SSO context where the user has previously signed in, this means that the SSO session was either not found or invalid. </br>This error might be returned to the application if prompt=none is specified. |
@@ -146,40 +152,71 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50088 | Limit on telecom MFA calls reached. Please try again in a few minutes. |
 | AADSTS50089 | Authentication failed due to flow token expired. Expected - auth codes, refresh tokens, and sessions expire over time or are revoked by the user or an admin. The app will request a new login from the user. |
 | AADSTS50097 | DeviceAuthenticationRequired - Device authentication is required. |
+| AADSTS50098 | JWT body must contain '{field}'. |
 | AADSTS50099 | PKeyAuthInvalidJwtUnauthorized - The JWT signature is invalid. |
-| AADSTS50105 | EntitlementGrantsNotFound - The signed in user isn't assigned to a role for the signed in app. Assign the user  to the app. To learn more, see the troubleshooting article for error [AADSTS50105](/troubleshoot/azure/active-directory/error-code-aadsts50105-user-not-assigned-role). |
-| AADSTS50107 | InvalidRealmUri - The requested federation realm object doesn't exist. Contact the tenant admin. |
-| AADSTS50120 | ThresholdJwtInvalidJwtFormat - Issue with JWT header. Contact the tenant admin. |
-| AADSTS50124 | ClaimsTransformationInvalidInputParameter - Claims Transformation contains invalid input parameter. Contact the tenant admin to update the policy. |
-| AADSTS501241 | Mandatory Input '{paramName}' missing from transformation ID '{transformId}'. This error is returned while Microsoft Entra ID is trying to build a SAML response to the application. NameID claim or NameIdentifier is mandatory in SAML response and if Microsoft Entra ID failed to get source attribute for NameID claim, it returns this error. As a resolution, ensure that you add claim rules. To add claim rules, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), and then browse to **Identity** > **Applications** > **Enterprise applications**. Select your application, select **Single Sign-On** and then in **User Attributes & Claims** enter the Unique User Identifier (Name ID). |
+| AADSTS50100 | There was an error transforming the claims for the token. |
+| AADSTS50101 | Unknown claims transformer '{name}' was specified for principal '{principalId}'. |
+| AADSTS50102 | Unable to load CustomClaimsTransformer '{type}' was specified for principal '{principalId}'. |
+| AADSTS50103 | There was an error transforming the claims for the token: {errorMessage} |
+| AADSTS50105 | EntitlementGrantsNotFound - The signed in user isn't assigned to a role for the signed in app. Assign the user to the app. To learn more, see the troubleshooting article for error [AADSTS50105](/troubleshoot/azure/active-directory/error-code-aadsts50105-user-not-assigned-role). |
+| AADSTS50107 |The requested federation realm object '{name}' doesn't exist. Application error - the login request was malformed and couldn't be matched with an existing authentication endpoint or instance. |
+| AADSTS50108 | Claims transformation configuration could not be retrieved. |
+| AADSTS50109 | Claim transformation is unknown from configuration. |
+| AADSTS50111 | Unknown claim transformation was asked to be applied. |
+| AADSTS50117 | Failed to deserialize policy specified in the request's claim parameter. |
+| AADSTS50120 | Unknown credential type, issue with the JWT header. Contact the tenant admin. |
+| AADSTS50123 | Unknown claims transformation method '{method}' was specified for principal '{principalId}'. |
+| AADSTS50124 | Invalid regular expression configured for claims transformation for this application. Contact your tenant admin to fix the claims mapping configuration. See [Customize SAML token claims](/identity/saml-claims-customization) |
+| AADSTS501241 | Mandatory Input '{paramName}' missing from transformation ID '{transformId}'. This error is returned while Microsoft Entra ID is trying to build a SAML response to the application. NameID claim or NameIdentifier is mandatory in SAML response and if Microsoft Entra ID failed to get source attribute for NameID claim, it returns this error. As a resolution, ensure that you add claim rules. To add claim rules, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), and then browse to **Entra ID** > **Enterprise apps**. Select your application, select **Single Sign-On** and then in **User Attributes & Claims** enter the Unique User Identifier (Name ID). |
 | AADSTS50125 | PasswordResetRegistrationRequiredInterrupt - Sign-in was interrupted because of a password reset or password registration entry. |
 | AADSTS50126 | InvalidUserNameOrPassword - Error validating credentials due to invalid username or password. The user didn't enter the right credentials. Expect to see some number of these errors in your logs due to users making mistakes. |
 | AADSTS50127 | BrokerAppNotInstalled - User needs to install a broker app to gain access to this content. |
 | AADSTS50128 | Invalid domain name - No tenant-identifying information found in either the request or implied by any provided credentials. |
 | AADSTS50129 | DeviceIsNotWorkplaceJoined - Workplace join is required to register the device. |
+| AADSTS50130 | The claim value(s) '{value}' cannot be interpreted as known auth method(s). |
 | AADSTS50131 | ConditionalAccessFailed - Indicates various Conditional Access errors such as bad Windows device state, request blocked due to suspicious activity, access policy, or security policy decisions. |
 | AADSTS50132 | SsoArtifactInvalidOrExpired - The session isn't valid due to password expiration or recent password change. |
 | AADSTS50133 | SsoArtifactRevoked - The session isn't valid due to password expiration or recent password change. |
 | AADSTS50134 | DeviceFlowAuthorizeWrongDatacenter - Wrong data center. To authorize a request that was initiated by an app in the OAuth 2.0 device flow, the authorizing party must be in the same data center where the original request resides. |
 | AADSTS50135 | PasswordChangeCompromisedPassword - Password change is required due to account risk. |
 | AADSTS50136 | RedirectMsaSessionToApp - Single MSA session detected. |
+| AADSTS50137 | Password needs to be changed due to security policy rule. |
+| AADSTS50138 | Invalid encryption key environment. |
 | AADSTS50139 | SessionMissingMsaOAuth2RefreshToken - The session is invalid due to a missing external refresh token. |
 | AADSTS50140 | KmsiInterrupt - This error occurred due to "Keep me signed in" interrupt when the user was signing-in. This is an expected part of the sign in flow, where a user is asked if they want to remain signed into their current browser to make further logins easier. For more information, see [The new Microsoft Entra sign-in and “Keep me signed in” experiences rolling out now!](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/the-new-azure-ad-sign-in-and-keep-me-signed-in-experiences/m-p/128267). You can [open a support ticket](~/fundamentals/how-to-get-support.md) with Correlation ID, Request ID, and Error code to get more details.|
+| AADSTS50141 | Protected key isn't intended for the authenticated user. |
+| AADSTS50142 | Password change is required due to a Conditional Access policy. |
 | AADSTS50143 | Session mismatch - Session is invalid because user tenant doesn't match the domain hint due to different resource. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Correlation ID, Request ID, and Error code to get more details. |
 | AADSTS50144 | InvalidPasswordExpiredOnPremPassword - User's Active Directory password has expired. Generate a new password for the user or have the user use the self-service reset tool to reset their password. |
+| AADSTS50147 | Invalid size of the code challenge parameter. Contact the application owner to correct their use of the PKCE parameters. |
+| AADSTS50148 | The code_verifier doesn't match the code_challenge supplied in the authorization request for PKCE. Contact the application owner to correct their use of the PKCE parameters. |
 | AADSTS50146 | MissingCustomSigningKey - This app is required to be configured with an app-specific signing key. It's either not configured with one, or the key has expired or isn't yet valid. Please contact the owner of the application. |
 | AADSTS501461 | AcceptMappedClaims is only supported for a token audience matching the application GUID or an audience within the tenant's verified domains. Either change the resource identifier, or use an application-specific signing key. |
 | AADSTS50147 | MissingCodeChallenge - The size of the code challenge parameter isn't valid. |
 | AADSTS501481 | The Code_Verifier doesn't match the code_challenge supplied in the authorization request.|
+| AADSTS50149 | Invalid Code_Challenge_method parameter. |
 | AADSTS501491 |  InvalidCodeChallengeMethodInvalidSize - Invalid size of Code_Challenge parameter.|
+| AADSTS50150 | The provided credentials does not have a valid user consent approval information. |
 | AADSTS50155 | DeviceAuthenticationFailed - Device authentication failed for this user. |
-| AADSTS50158 | ExternalSecurityChallenge - External security challenge was not satisfied. |
-| AADSTS50161 | InvalidExternalSecurityChallengeConfiguration - Claims sent by external provider isn't enough or Missing claim requested to external provider. |
-| AADSTS50166 | ExternalClaimsProviderThrottled - Failed to send the request to the claims provider. |
-| AADSTS50168 | ChromeBrowserSsoInterruptRequired - The client is capable of obtaining an SSO token through the Windows 10 Accounts extension, but the token was not found in the request or the supplied token was expired. |
+| AADSTS50156 | Device tokens are not supported for V2 resource. |
+| AADSTS50157 | User redirection required for routing. |
+| AADSTS50158 | External security challenge not satisfied. User will be redirected to another page or authentication provider to satisfy additional authentication challenges. The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone doesn't indicate a failure on your users' part to sign in. The sign in logs may indicate that this challenge was successfully passed or failed. |
+| AADSTS50159 | Claims sent by external provider are not enough. |
+| AADSTS50160 | Different target tenant is preferred. |
+| AADSTS50161 | Failed to validate authorization url of external claims provider. |
+| AADSTS50162 | Claims transformation has timed out. This indicates too many or too complex transformations may have been configured for this application. A retry of the request may succeed. Otherwise, please contact your admin to fix the configuration. |
+| AADSTS50163 | Regular expression replacement for claims transformation has resulted in a claim which exceeds the size limit. Please contact your admin to fix the configuration.|
+| AADSTS50164 | The supplied access token was not issued for the purpose for which it is being used. Expected a token with purpose '{name}'. |
+| AADSTS50165 | The token encrypting algorithm '{algorithm}' requested by the application isn't supported for this type of token. This indicates the application is misconfigured. |
+| AADSTS50166 | Request to External OIDC endpoint failed. |
+| AADSTS50167 | Invalid pop_jwk key. |
+| AADSTS50168 | The client is capable of utilizing the Windows 10 Accounts extension to perform SSO but no SSO token was found in the request or the token was expired. Request has been interrupted to attempt to pull an SSO token. |
 | AADSTS50169 | InvalidRequestBadRealm - The realm isn't a configured realm of the current service namespace. |
 | AADSTS50170 | MissingExternalClaimsProviderMapping - The external controls mapping is missing. |
-| AADSTS50173 | FreshTokenNeeded - The provided grant has expired due to it being revoked, and a fresh auth token is needed. Either an admin or a user revoked the tokens for this user, causing subsequent token refreshes to fail and require reauthentication. Have the user sign in again. |
+| AADSTS50171 | The given audience can only be used in Mutual-TLS token calls. |
+| AADSTS50172 | External claims provider {provider} isn't approved. |
+| AADSTS50173 | The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password. The grant was issued on '{authTime}' and the TokensValidFrom date (before which tokens are not valid) for this user is '{validDate}'. To learn more, see the troubleshooting article for error [AADSTS50173](/troubleshoot/entra/app-integration/error-code-aadsts50173-grant-expired-revoked). |
+| AADSTS50176 | Missing definition of external control: {controlId}. |
 | AADSTS50177 | ExternalChallengeNotSupportedForPassthroughUsers - External challenge isn't supported for passthrough users. |
 | AADSTS50178 | SessionControlNotSupportedForPassthroughUsers - Session control isn't supported for passthrough users. |
 | AADSTS50180 | WindowsIntegratedAuthMissing - Integrated Windows authentication is needed. Enable the tenant for Seamless SSO. |
@@ -192,9 +229,9 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS51000 | RequiredFeatureNotEnabled - The feature is disabled. |
 | AADSTS51001 | DomainHintMustbePresent - Domain hint must be present with on-premises security identifier or on-premises UPN. |
 | AADSTS1000104| XCB2BResourceCloudNotAllowedOnIdentityTenant - Resource cloud {resourceCloud} isn't allowed on identity tenant {identityTenant}. {resourceCloud} - cloud instance which owns the resource. {identityTenant} - is the tenant where signing-in identity is originated from. |
-| AADSTS51004 | UserAccountNotInDirectory - The user account doesn’t exist in the directory. An application likely chose the wrong tenant to sign into, and the currently logged in user was prevented from doing so since they did not exist in your tenant. If this user should be able to sign in, add them as a guest. For further information, visit [add B2B users](~/external-id/add-users-administrator.md). |
+| AADSTS51004 | UserAccountNotInDirectory - The user account doesn’t exist in the directory. An application likely chose the wrong tenant to sign into, and the currently logged in user was prevented from doing so since they did not exist in your tenant. If this user should be able to log in, add them as a guest. For further information, please visit [add B2B users](~/external-id/add-users-administrator.yml). |
 | AADSTS51005 | TemporaryRedirect - Equivalent to HTTP status 307, which indicates that the requested information is located at the URI specified in the location header. When you receive this status, follow the location header associated with the response. When the original request method was POST, the redirected request will also use the POST method. |
-| AADSTS51006 | ForceReauthDueToInsufficientAuth - Integrated Windows authentication is needed. User logged in using a session token that is missing the integrated Windows authentication claim. Request the  user to log in again. |
+| AADSTS51006 | ForceReauthDueToInsufficientAuth - Integrated Windows authentication is needed. User logged in using a session token that is missing the integrated Windows authentication claim. Request the user to log in again. |
 | AADSTS52004 | DelegationDoesNotExistForLinkedIn - The user has not provided consent for access to LinkedIn resources. |
 | AADSTS53000 | DeviceNotCompliant - Conditional Access policy requires a compliant device, and the device isn't compliant. The user must enroll their device with an approved MDM provider like Intune. For additional information, please visit [Conditional Access device remediation](~/identity/conditional-access/troubleshoot-conditional-access.md). |
 | AADSTS53001 | DeviceNotDomainJoined - Conditional Access policy requires a domain joined device, and the device isn't domain joined. Have the user use a domain joined device. |
@@ -208,7 +245,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS54000 | MinorUserBlockedLegalAgeGroupRule |
 | AADSTS54005 | OAuth2 Authorization code was already redeemed, please retry with a new valid code or use an existing refresh token. |
 | AADSTS65001 | DelegationDoesNotExist - The user or administrator hasn't consented to use the application with ID X. Send an interactive authorization request for this user and resource. |
-| AADSTS65002 | Consent between first party application '{applicationId}' and first party resource '{resourceId}' must be configured via preauthorization - applications owned and operated by Microsoft must get approval from the API owner before requesting tokens for that API.  A developer in your tenant might be attempting to reuse an App ID owned by Microsoft. This error prevents them from impersonating a Microsoft application to call other APIs. They must move to another app ID they register.|
+| AADSTS65002 | Consent between first party application '{applicationId}' and first party resource '{resourceId}' must be configured via preauthorization - applications owned and operated by Microsoft must get approval from the API owner before requesting tokens for that API. A developer in your tenant might be attempting to reuse an App ID owned by Microsoft. This error prevents them from impersonating a Microsoft application to call other APIs. They must move to another app ID they register.|
 | AADSTS65004 | UserDeclinedConsent - User declined to consent to access the app. Have the user retry the sign-in and consent to the app|
 | AADSTS65005 | MisconfiguredApplication - The app required resource access list doesn't contain apps discoverable by the resource, or the client app has requested access to resource, which wasn't specified in its required resource access list or Graph service returned bad request or resource not found. If the app supports SAML, you might have configured the app with the wrong Identifier (Entity). To learn more, see the troubleshooting article for error [AADSTS650056](/troubleshoot/azure/active-directory/error-code-aadsts650056-misconfigured-app). |
 | AADSTS650052 | The app needs access to a service `(\"{name}\")` that your organization `\"{organization}\"` hasn't subscribed to or enabled. Contact your IT Admin to review the configuration of your service subscriptions. |
@@ -226,7 +263,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS700030 | Invalid certificate - subject name in certificate isn't authorized. SubjectNames/SubjectAlternativeNames (up to 10) in token certificate are: {certificateSubjects}. |
 | AADSTS70004 | InvalidRedirectUri - The app returned an invalid redirect URI. The redirect address specified by the client does not match any configured addresses or any addresses on the OIDC approve list. |
 | AADSTS70005 | UnsupportedResponseType - The app returned an unsupported response type due to the following reasons:<ul><li>response type 'token' isn't enabled for the app</li><li>response type 'id_token' requires the 'OpenID' scope -contains an unsupported OAuth parameter value in the encoded wctx</li></ul> |
-| AADSTS700054 | Response_type 'id_token' isn't enabled for the application. The application requested an ID token from the authorization endpoint, but did not have ID token implicit grant enabled. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and then browse to **Identity** > **Applications** > **App registrations**. Select your application and then select **Authentication**. Under **Implicit grant and hybrid flows**, make sure **ID tokens'** is selected.|
+| AADSTS700054 | Response_type 'id_token' isn't enabled for the application. The application requested an ID token from the authorization endpoint, but did not have ID token implicit grant enabled. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and then browse to **Entra ID** > **App registrations**. Select your application and then select **Authentication**. Under **Implicit grant and hybrid flows**, make sure **ID tokens'** is selected.|
 | AADSTS70007 | UnsupportedResponseMode - The app returned an unsupported value of `response_mode` when requesting a token.  |
 | AADSTS70008 | ExpiredOrRevokedGrant - The refresh token has expired due to inactivity. The token was issued on XXX and was inactive for a certain amount of time. |
 | AADSTS700082 | ExpiredOrRevokedGrantInactiveToken - The refresh token has expired due to inactivity. The token was issued on {issueDate} and was inactive for {time}. Expected part of the token lifecycle - the user went an extended period of time without using the application, so the token was expired when the app attempted to refresh it. |
@@ -282,7 +319,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS90020 | The SAML 1.1 Assertion is missing ImmutableID of the user. Developer error - the app is attempting to sign in without the necessary or correct authentication parameters.|
 | AADSTS90022 | AuthenticatedInvalidPrincipalNameFormat - The principal name format isn't valid, or doesn't meet the expected `name[/host][@realm]` format. The principal name is required, host, and realm are optional and can be set to null. |
 | AADSTS90023 | InvalidRequest - The authentication service request isn't valid. |
-| AADSTS900236| InvalidRequestSamlPropertyUnsupported- The SAML authentication request property '{propertyName}' isn't supported and must not be set.
+| AADSTS900236| InvalidRequestSamlPropertyUnsupported- The SAML authentication request property '{propertyName}' isn't supported and must not be set. |
 | AADSTS9002313 | InvalidRequest - Request is malformed or invalid. - The issue arises because there was something wrong with the request to a certain endpoint. The suggestion to this issue is to get a fiddler trace of the error occurring and looking to see if the request is properly formatted or not. |
 | AADSTS9002332 | Application '{principalId}'({principalName}) is configured for use by Microsoft Entra users only. Please do not use the /consumers endpoint to serve this request. |
 | AADSTS90024 | RequestBudgetExceededError - A transient error has occurred. Try again. |
@@ -318,6 +355,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS90101 | InvalidEmailAddress - The supplied data isn't a valid email address. The email address must be in the format `someone@example.com`. |
 | AADSTS90102 | InvalidUriParameter - The value must be a valid absolute URI. |
 | AADSTS90107 | InvalidXml - The request isn't valid. Make sure your data doesn't have invalid characters.|
+| AADSTS90112 | Application identifier is expected to be a GUID. |
 | AADSTS90114 | InvalidExpiryDate - The bulk token expiration timestamp will cause an expired token to be issued. |
 | AADSTS90117 | InvalidRequestInput |
 | AADSTS90119 | InvalidUserCode - The user code is null or empty.|
@@ -368,7 +406,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS7000215 | Invalid client secret is provided. Developer error - the app is attempting to sign in without the necessary or correct authentication parameters.|
 | AADSTS7000218 | The request body must contain the following parameter: 'client_assertion' or 'client_secret'. |
 | AADSTS7000222 | InvalidClientSecretExpiredKeysProvided - The provided client secret keys are expired. Create new keys for your app, or consider using certificate credentials for added security: [https://aka.ms/certCreds](./certificate-credentials.md) |
-| AADSTS700229 | ForbiddenTokenType- Only app-only tokens can be used as Federated Identity Credentials for Microsoft Entra issuer.  Use an app-only access token (generated during a client credentials flow) instead of a user-delegated access token (representing a request coming from a user context).  |
+| AADSTS700229 | ForbiddenTokenType- Only app-only tokens can be used as Federated Identity Credentials for Microsoft Entra issuer. Use an app-only access token (generated during a client credentials flow) instead of a user-delegated access token (representing a request coming from a user context).  |
 | AADSTS700005 | InvalidGrantRedeemAgainstWrongTenant - Provided Authorization Code is intended to use against other tenant, thus rejected. OAuth2 Authorization Code must be redeemed against same tenant it was acquired for (/common or /{tenant-ID} as appropriate) |
 | AADSTS1000000 | UserNotBoundError - The Bind API requires the Microsoft Entra user to also authenticate with an external IDP, which hasn't happened yet. |
 | AADSTS1000002 | BindCompleteInterruptError - The bind completed successfully, but the user must be informed. |
@@ -377,6 +415,11 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS7000112 | UnauthorizedClientApplicationDisabled - The application is disabled. |
 | AADSTS7000114| Application 'appIdentifier' isn't allowed to make application on-behalf-of calls.|
 | AADSTS7500529 | The value ‘SAMLId-Guid’ isn't a valid SAML ID - Microsoft Entra ID uses this attribute to populate the InResponseTo attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, id6c1c178c166d486687be4aaf5e482730 is a valid ID. |
+| AADSTS9002341 | V2Error: `invalid_grant` - The user is required to permit single sign-On (SSO). This error occurs when the user has not granted the necessary permissions for the application to perform SSO. The user should be redirected to the consent screen to grant the necessary permissions. Refer to [this announcement](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/upcoming-changes-to-windows-single-sign-on/ba-p/4008151) for more information."|
+| AADSTS901011 | NoEmailAddressCollectedFromExternalOidcIDP - No email address was obtained from the external OpenID Connect (OIDC) identity provider. This usually happens when the user selects **Hide my email** upon signing up. |
+| AADSTS901012 | EmailAddressCollectedFromExternalOidcIDPNotVerified - No verified email address was obtained from the identity provider. The email address is not verified in the ID token from the external OIDC identity provider.  |
+| AADSTS901014 | NoExternalIdentifierCollectedFromExternalOidcIDP - The external identifier does not exist in the ID token from the external OIDC identity provider. |
+| AADSTS650059 | The application is not configured for use in the tenant. The value `AzureADMyOrg` set for application property `signInAudience` is limiting its use in the tenant. |
 
 ## Next steps
 

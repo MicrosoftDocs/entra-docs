@@ -2,13 +2,14 @@
 title: Manage mappings and users in applications that did not match to users in Microsoft Entra ID | Microsoft Docs
 description: The Microsoft Entra provisioning service matches users in Microsoft Entra ID with users already in an application. In some cases, an application may have users that do not match with any in Microsoft Entra ID.
 author: markwahl-msft
-manager: amycolannino
+manager: pmwongera
 editor: markwahl-msft
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/02/2024
+ms.date: 03/04/2025
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 # Manage mappings and users in applications that did not match to users in Microsoft Entra ID
@@ -21,7 +22,7 @@ If the application does not already have any users, then this process populates 
 
 These inconsistencies between Microsoft Entra ID and an existing application's data store can happen for many reasons, including:
 
-* the application administrator creates users in the application directly, such as for contractors or vendors, who are not represented in a system of record HR source but did require application access,
+* the Application Administrator creates users in the application directly, such as for contractors or vendors, who are not represented in a system of record HR source but did require application access,
 * identity and attribute changes, such as a person changing their name, were not being sent to either Microsoft Entra ID or the application, and so the representations are out of date in one or the other system, or
 * the organization was using an identity management product which independently provisioned Windows Server AD and the application with different communities. For example, store employees needed application access but did not require Exchange mailboxes, so store employees were not represented in Windows Server AD or Microsoft Entra ID.
 
@@ -69,7 +70,7 @@ There may be test users in the application left over from its initial deployment
 
 ### Delete users from the applications for people who are no longer part of the organization
 
-The user might no longer be affiliated with the organization, and no longer needs access to the application, but is still a user in the application's data source. This can happen if the application administrator omitted to remove the user, or was not informed that the change was required. If the user is no longer needed, then it can be deleted from the application.
+The user might no longer be affiliated with the organization, and no longer needs access to the application, but is still a user in the application's data source. This can happen if the Application Administrator omitted to remove the user, or was not informed that the change was required. If the user is no longer needed, then it can be deleted from the application.
 
 ### Delete users from the application and have them be re-created from Microsoft Entra ID
 
@@ -81,7 +82,7 @@ A user may exist in an application and in Microsoft Entra ID, but the user in th
 
 For example, when a SAP administrator creates a user in SAP Cloud Identity Services using its admin console, the user may not have a `userName` property. However, that property may be the one used for matching with users in Microsoft Entra ID. If the `userName` property is the one intended for matching, then you would need the SAP administrator to update those existing SAP Cloud Identity Services users to have a value of the `userName` property.
 
-For another example, the application administrator has set the user's email address as a property `mail` of the user in the application, when the user was first added to the application. However, later the person's email address and `userPrincipalName` is changed in Microsoft Entra ID. However, if the application did not require the email address, or the email provider had a redirect that allowed the old email address to keep forwarding, then the application administrator might have missed that there was a need for `mail` property being updated in the application's data source. This inconsistency can be resolved by either the application administrator changing the `mail` property on the application's users to have a current value, or by changing the matching rule, as described in the following sections.
+For another example, the Application Administrator has set the user's email address as a property `mail` of the user in the application, when the user was first added to the application. However, later the person's email address and `userPrincipalName` is changed in Microsoft Entra ID. However, if the application did not require the email address, or the email provider had a redirect that allowed the old email address to keep forwarding, then the Application Administrator might have missed that there was a need for `mail` property being updated in the application's data source. This inconsistency can be resolved by either the Application Administrator changing the `mail` property on the application's users to have a current value, or by changing the matching rule, as described in the following sections.
 
 ### Update users in the application with a new property
 

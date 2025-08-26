@@ -1,15 +1,15 @@
 ---
 title: Extend API-driven provisioning to sync custom attributes
 description: Learn how to extend API-driven inbound provisioning to sync custom attributes.
-
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Extend API-driven provisioning to sync custom attributes
@@ -17,7 +17,7 @@ ms.reviewer: cmmdesai
 By default, API-driven provisioning apps support processing attributes that are part of the standard SCIM Core User and Enterprise User schema. Your system of record may have custom attributes that you may want to include as part of API-driven provisioning. This advanced tutorial describes how to extend your API-driven provisioning app to process additional custom attributes. 
 
 > [!NOTE]
-> Before trying this advanced scenario, we recommend verifying that your out-of-the-box provisioning app configuration works as expected using one of the following API clients [Graph Explorer](inbound-provisioning-api-graph-explorer.md), [cURL](inbound-provisioning-api-curl-tutorial.md) or [Postman](inbound-provisioning-api-postman.md).
+> Before trying this advanced scenario, we recommend verifying that your out-of-the-box provisioning app configuration works as expected using one of the following API clients [Graph Explorer](inbound-provisioning-api-graph-explorer.md), [cURL](inbound-provisioning-api-curl-tutorial.md).
 
 ## Example scenario
 
@@ -28,7 +28,7 @@ You have configured API-driven provisioning app. You're provisioning app is succ
 In this step, we'll add the two attributes "HireDate" and "JobCode" that are not part of the standard SCIM schema to the provisioning app and use them in the provisioning data flow.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 1. Open your API-driven provisioning app. 
 1. Open the **Provisioning** blade. 
 1. Click on the **Edit Provisioning** button. 
@@ -66,7 +66,7 @@ Let's now add these extensions to the provisioning app attribute mapping.
 
 ## Step 3 - Upload bulk request with custom attributes
 
-1. Open your API client (Graph Explorer / Postman / cURL). 
+1. Open your API client (Graph Explorer / cURL). 
 1. Copy-paste the [bulk request with custom attributes](#bulk-request-with-custom-attributes). 
 1. Send the bulk request to your provisioning API endpoint URL. <br>
     :::image type="content" border="true" source="./media/inbound-provisioning-api-custom-attributes/upload-bulk-request.png" alt-text="Screenshot of bulk upload request." lightbox="./media/inbound-provisioning-api-custom-attributes/upload-bulk-request.png":::

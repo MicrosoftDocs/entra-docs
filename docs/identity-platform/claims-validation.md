@@ -2,10 +2,10 @@
 title: Secure applications and APIs by validating claims
 description: Learn about securing the business logic of your applications and APIs by validating claims in tokens.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 04/21/2023
+ms.date: 03/21/2025
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -26,7 +26,7 @@ To make sure that your authorization logic is secure, you must validate the foll
 * The actor (client app) is authorized.
 
 > [!NOTE]
-> Access tokens are only validated in the web APIs for which they were acquired by a client. The client should not validate access tokens.
+> Access tokens are only validated in the web APIs for which they were acquired by a client. The client shouldn't validate access tokens.
 
 For more information about the claims mentioned in this article, see [Microsoft identity platform access tokens](access-tokens.md).
 
@@ -38,13 +38,13 @@ The `aud` claim identifies the intended audience of the token. Before validating
 * For v1.0 tokens, the audience is one of the appID URIs declared in the web API that validates the token. For example,
 `api://{ApplicationID}`, or a unique name starting with a domain name (if the domain name is associated with a tenant).
 
-For more information about the appID URI of an application, see [Application ID URI](security-best-practices-for-app-registration.md#application-id-uri).
+For more information about the appID URI of an application, see [Application ID URI](security-best-practices-for-app-registration.md#application-id-uri-also-known-as-identifier-uri).
 
 ## Validate the tenant
 
 Always check that the `tid` in a token matches the tenant ID used to store data with the application. When information is stored for an application in the context of a tenant, it should only be accessed again later in the same tenant. Never allow data in one tenant to be accessed from another tenant.
 
-Validation of the tenant is only the first step, and the checks on subject and actor described in this article are still required. If your intention is to authorize all users in a tenant, it's strongly recommended to explicitly add these users into a group and authorize based on the group. For example, by only checking the tenant ID and the presence of an `oid` claim, your API could inadvertently authorize all service principals in that tenant in addition to users.
+Validation of the tenant is the first step, but the checks on subject and actor described in this article are still necessary. If you intend to authorize all users in a tenant, it's strongly recommended to explicitly add these users into a group and authorize based on the group. For example, by only checking the tenant ID and the presence of an `oid` claim, your API could inadvertently authorize all service principals in that tenant in addition to users.
 
 ## Validate the subject
 
@@ -54,12 +54,12 @@ You can either check for specific `sub` or `oid` claims.
 
 Or,
 
-You can check that the subject belongs to an appropriate role or group with the `roles`, `groups`, `wids` claims. For example, use the immutable claim values `tid` and `oid` as a combined key for application data and determining whether a user should be granted access.
+You can check that the subject belongs to an appropriate role or group with the `roles`, `scp`, `groups`, `wids` claims. For example, use the immutable claim values `tid` and `oid` as a combined key for application data and determining whether a user should be granted access.
 
-The `roles`, `groups` or `wids` claims can also be used to determine if the subject has authorization to perform an operation. For example, an administrator may have permission to write to an API, but not a normal user, or the user may be in a group allowed to do some action. The `wid` claim represents the tenant-wide roles assigned to the user from the roles present in the Microsoft Entra built-in roles. For more information, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md).
+The `roles`, `groups` or `wids` claims can also be used to determine if the subject has authorization to perform an operation, although they aren't an exhaustive list of all of the ways a subject can be granted permissions. For example, an administrator may have permission to write to an API, but not a normal user, or the user may be in a group allowed to do some action. The `wid` claim represents the tenant-wide roles assigned to the user from the roles present in the Microsoft Entra built-in roles. For more information, see [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md). 
 
 > [!WARNING]
-> Never use claims like `email`, `preferred_username` or `unique_name` to store or determine whether the user in an access token should have access to data. These claims are not unique and can be controllable by tenant administrators or sometimes users, which makes them unsuitable for authorization decisions. They are only usable for display purposes. Also don't use the `upn` claim for authorization. While the UPN is unique, it often changes over the lifetime of a user principal, which makes it unreliable for authorization.
+> Never use claims like `email`, `preferred_username` or `unique_name` to store or determine whether the user in an access token should have access to data. These claims aren't unique and can be controllable by tenant administrators or sometimes users, which make them unsuitable for authorization decisions. They're only usable for display purposes. Also don't use the `upn` claim for authorization. While the UPN is unique, it often changes over the lifetime of a user principal, which makes it unreliable for authorization.
 
 ## Validate the actor
 

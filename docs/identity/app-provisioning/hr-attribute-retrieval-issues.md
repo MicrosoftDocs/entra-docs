@@ -2,12 +2,12 @@
 title: Troubleshoot attribute retrieval issues with HR provisioning
 description: Learn how to troubleshoot attribute retrieval issues with HR provisioning
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 02/27/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -19,7 +19,7 @@ ms.reviewer: chmutali
 
 | **Applies to** |
 |--|
-| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra ID user provisioning |
+| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra user provisioning |
 | **Issue Description** | 
 | You configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You ran a test sync and you observed that the provisioning app isn't retrieving certain attributes from Workday. Only some attributes are read and provisioned to the target. |
 | **Probable Cause** | 
@@ -31,11 +31,11 @@ ms.reviewer: chmutali
 
 | **Applies to** |
 |--|
-| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra ID user provisioning |
+| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra user provisioning |
 | **Issue Description** | 
 | You configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You have an integration system configured in Workday and you have configured XPATHs that point to attributes in the Workday Integration System. However, the Microsoft Entra provisioning app isn't fetching values associated with these integration system attributes or calculated fields. |
 | **Cause** | 
-| This is a known limitation. The Workday provisioning app currently doesn't support fetching calculated fields/integration system attributes using the *Field_And_Parameter_Criteria_Data* Get_Workers request filter.  |
+| This is a known limitation. The Workday provisioning app currently doesn't support fetching calculated fields/integration system attributes using the *Field_And_Parameter_Criteria_Data* Get_Workers request filter. This capability is also known as an Integration Field Override. |
 | **Resolution Options** | 
 | Consider a workaround of either using Workday Provisioning groups or the Workday Custom ID field. |
 

@@ -1,16 +1,15 @@
 ---
 title: Microsoft Entra Connect Health instructions data retrieval
 description: This page describes how to retrieve data from Microsoft Entra Connect Health.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.author: billmath
-
+ms.date: 04/09/2025
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 
@@ -27,13 +26,13 @@ To retrieve the email addresses for all of your users that are configured in Mic
 1. Start at the Microsoft Entra Connect Health blade and select **Sync Services** from the left-hand navigation bar.
  ![Sync Services](./media/how-to-connect-health-data-retrieval/retrieve1.png)
 
-2. Click on the **Alerts** tile.</br>
+2. Select on the **Alerts** tile.</br>
  ![Alert](./media/how-to-connect-health-data-retrieval/retrieve3.png)
 
-3. Click on **Notification Settings**.
+3. Select on **Notification Settings**.
  ![Notification](./media/how-to-connect-health-data-retrieval/retrieve4.png)
 
-4. On the **Notification Setting** blade, you will find the list of email addresses that have been enabled as recipients for health Alert notifications.
+4. On the **Notification Setting** blade, find the list of email addresses that are enabled as recipients for health Alert notifications.
  ![Emails](./media/how-to-connect-health-data-retrieval/retrieve5a.png)
  
 ## Retrieve all sync errors
@@ -43,7 +42,7 @@ To retrieve a list of all sync errors, use the following steps.
 1. Starting on the Microsoft Entra Health blade, select **Sync Errors**.
  ![Sync errors](./media/how-to-connect-health-data-retrieval/retrieve6.png)
 
-2. In the **Sync Errors** blade, click on **Export**. This will export a list of the recorded sync errors.
+2. In the **Sync Errors** blade, select on **Export**. This exports a list of the recorded sync errors.
  ![Export](./media/how-to-connect-health-data-retrieval/retrieve7.png)
 
 ## Next Steps

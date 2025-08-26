@@ -2,23 +2,26 @@
 title: Configure Verified ID settings for an access package in entitlement management
 description: Learn how to configure verified ID settings for an access package in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 editor: HANKI
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 10/17/2024
 ms.author: owinfrey
 ms.reviewer: hanki
+ms.custom: sfi-ga-nochange
 ---
 
 # Configure Verified ID settings for an access package in entitlement management
 
 When setting up an access package policy, admins can specify whether it’s for users in the directory, connected organizations, or any external user. Entitlement Management determines if the person requesting the access package is within the scope of the policy. 
 
-Sometimes you might want users to present additional identity proofs during the request process such as a training certification, work authorization, or citizenship status. As an access package manager, you can require that requestors present a verified ID containing those credentials from a trusted issuer. Approvers can then quickly view if a user’s verifiable credentials were validated at the time that the user presented their credentials and submitted the access package request. 
+Sometimes you might want users to present extra identity proofs during the request process such as a training certification, work authorization, or citizenship status. As an access package manager, you can require that requestors present a verified ID containing those credentials from a trusted issuer. Approvers can then quickly view if a user’s verifiable credentials were validated at the time that the user presented their credentials and submitted the access package request. 
 
 As an access package manager, you can include verified ID requirements for an access package at any time by editing an existing policy or adding a new policy for requesting access. 
+
+>[!VIDEO https://www.youtube.com/embed/gH9z6amIlv8]
 
 This article describes how to configure the verified ID requirement settings for an access package.
 
@@ -33,34 +36,36 @@ Before you begin, you must set up your tenant to use the [Microsoft Entra Verifi
 
 ## Create an access package with verified ID requirements
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To add a verified ID requirement to an access package, you must start from the access package’s requests tab. Follow these steps to add a verified ID requirement to a new access package.
 
 
-**Prerequisite role**: Global administrator
+**Prerequisite role**: Global Administrator
 
 > [!NOTE]
-> Identity Governance administrator, User administrator, Catalog owner, or Access package manager will be able to add verified ID requirements to access packages soon.
+> Identity Governance Administrator, User Administrator, Catalog owner, or Access package manager will be able to add verified ID requirements to access packages soon.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
-1. On the **Access packages** page select **+ New access package**.
+1. On the Access packages page, select **+ New access package**.
 
 1. On the **Requests** tab, scroll to the **Required Verified Ids** section.
 
 1. Select **+ Add issuer** and choose an issuer from the Microsoft Entra Verified ID network. If you want to issue your own credentials to users, see: [Issue Microsoft Entra Verified ID credentials from an application](~/verified-id/verifiable-credentials-configure-issuer.md).
-    :::image type="content" source="media/entitlement-management-verified-id-settings/select-issuer.png" alt-text="Select issuer for Microsoft Entra Verified I D.":::
+    :::image type="content" source="media/entitlement-management-verified-id-settings/select-issuer.png" alt-text="Select issuer for Microsoft Entra Verified ID.":::
 
 1. Select the **credential type(s)** you want users to present during the request process.
-    :::image type="content" source="media/entitlement-management-verified-id-settings/issuer-credentials.png" alt-text="Screenshot of credential types for Microsoft Entra Verified I D.":::
+    :::image type="content" source="media/entitlement-management-verified-id-settings/issuer-credentials.png" alt-text="Screenshot of credential types for Microsoft Entra Verified ID.":::
     > [!NOTE]
     > If you select multiple credential types from one issuer, users will be required to present credentials of all selected types. Similarly, if you include multiple issuers, users will be required to present credentials from each of the issuers you include in the policy. To give users the option of presenting different credentials from various issuers, configure separate policies for each issuer/credential type you’ll accept.
-1. Select **Add** to add the verified ID requirement to the access package policy. 
+1. Select **Add** to add the verified ID requirement to the access package policy.
+1. If you want users to complete a Face Check, select **Require Face Check**. This will ask users requesting the access package to perform a real-time, privacy compliant selfie check against the photo that is stored on their Verified ID. Once you select the checkbox, it will ask you to select the claim name that maps to the photo on the ID. For more information on Face Check, see [Use Face Check with Microsoft Entra Verified ID](~/verified-id/using-facecheck.md).
 
-1. Once you have finished configuring the rest of the settings, you can review your selections on the **Review + create** tab. You can see all verified ID requirements for this access package policy in the **Verified IDs** section.
+    :::image type="content" source="media/entitlement-management-verified-id-settings/require-face-check.png" alt-text="Screenshot of the require face check option.":::
+   
+1. Once you finish configuring the rest of the settings, you can review your selections on the **Review + create** tab. You can see all verified ID requirements for this access package policy in the **Verified IDs** section.
     :::image type="content" source="media/entitlement-management-verified-id-settings/verified-ids-list.png" alt-text="Screenshot of a list of verified IDs.":::
 
 
@@ -76,8 +81,11 @@ The requestor steps are as follows:
 
 1. If the access package requires you to present a verified ID, you should see a grey information banner as shown here:
     :::image type="content" source="media/entitlement-management-verified-id-settings/present-verified-id-access-package.png" alt-text="Screenshot of the present verified ID for access package option.":::
-1. Select **Request Access**. You should now see a QR code. Use your phone to scan the QR code. This launches Microsoft Authenticator, where you'll be prompted to share your credentials.
+1. Select **Request Access**. You should now see a QR code. Use your phone to scan the QR code. This launches Microsoft Authenticator, where you're prompted to share your credentials.
     :::image type="content" source="media/entitlement-management-verified-id-settings/verified-id-qr-code.png" alt-text="Screenshot of use QR code for verified IDs.":::
+
+1. If Face Check is required for the access package, the requesting user will need to perform a real-time selfie check against the photo stored on their Verified ID. Face Check protects user privacy by sharing only the match results and not any sensitive identity data.
+
 1. After you share your credentials, My Access will automatically take you to the next step of the request process.
 
 

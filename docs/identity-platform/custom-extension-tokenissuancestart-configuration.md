@@ -2,25 +2,28 @@
 title: "Custom claims provider: Configure a token issuance event"
 description: Learn how to configure a custom claims provider for a token issuance start event in Microsoft Entra ID. You can add custom claims to a token before it's issued.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: 
-ms.date: 04/10/2024
+ms.date: 05/04/2025
 ms.reviewer: stsoneff
 ms.service: identity-platform
 ms.topic: how-to
-
+ms.custom: sfi-image-nochange
 #Customer intent: As a developer, I want to configure a custom claims provider token issuance event in the Azure portal, so that I can add custom claims to a token before it is issued.
 ---
 
-# Configure a custom claim provider for a token issuance event (preview)
+# Configure a custom claim provider for a token issuance event
 
 This article describes how to configure a custom claims provider for a [token issuance start event](custom-claims-provider-overview.md#token-issuance-start-event-listener). Using an existing Azure Functions REST API, you'll register a custom authentication extension and add attributes that you expect it to parse from your REST API. To test the custom authentication extension, you'll register a sample OpenID Connect application to get a token and view the claims.
+
+This video outlines the procedure of mapping claims from external systems into security tokens using Microsoft Entra custom claims provider.
+
+> [!VIDEO https://www.youtube.com/embed/_CD3shvqpx4?si=cYvAO8CyXuI9YPiS]
 
 ## Prerequisites
 
 - An Azure subscription with the ability to create Azure Functions. If you don't have an existing Azure account, sign up for a [free trial](https://azure.microsoft.com/free/dotnet/) or use your [Visual Studio Subscription](https://visualstudio.microsoft.com/subscriptions/) benefits when you [create an account](https://account.windowsazure.com/Home/Index).
-- An Azure Function app with an HTTP trigger function configured for a token issuance start event. If you don't have one, follow the steps in [create a token issuance start event HTTP trigger function](./custom-extension-tokenissuancestart-setup.md).
+- An HTTP trigger function configured for a token issuance event deployed to Azure Functions. If you don't have one, follow the steps in [create a REST API for a token issuance start event in Azure Functions](./custom-extension-tokenissuancestart-setup.md).
 - A basic understanding of the concepts covered in [Custom authentication extensions overview](custom-extension-overview.md).
 - A Microsoft Entra ID tenant. You can use either a customer or workforce tenant for this how-to guide.
     - For external tenants, use a [sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
@@ -28,6 +31,10 @@ This article describes how to configure a custom claims provider for a [token is
 ## Step 1: Register a custom authentication extension
 
 You'll now configure a custom authentication extension, which will be used by Microsoft Entra ID to call your Azure function. The custom authentication extension contains information about your REST API endpoint, the claims that it parses from your REST API, and how to authenticate to your REST API. Follow these steps to register a custom authentication extension to your Azure Function app. 
+
+> [!NOTE]
+>
+> You can have a maximum of 100 custom extension policies.
 
 # [Azure portal](#tab/azure-portal)
 
@@ -39,19 +46,19 @@ You'll now configure a custom authentication extension, which will be used by Mi
 1. In **Basics**, select the **TokenIssuanceStart** event type and select **Next**.
 1. In **Endpoint Configuration**, fill in the following properties:
     - **Name** - A name for your custom authentication extension. For example, *Token issuance event*.
-    - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the URL.
+    - **Target Url** - The `{Function_Url}` of your Azure Function URL. Navigate to the **Overview** page of your Azure Function app, then select the function you created. In the function **Overview** page, select **Get Function Url** and use the copy icon to copy the **customauthenticationextension_extension (System key)** URL.
     - **Description** - A description for your custom authentication extensions.
 1. Select **Next**.
 1. In **API Authentication**, select the **Create new app registration** option to create an app registration that represents your *function app*.  
 1. Give the app a name, for example **Azure Functions authentication events API**.
 1. Select **Next**.
 1. In **Claims**, enter the attributes that you expect your custom authentication extension to parse from your REST API and will be merged into the token. Add the following claims:
-    - dateOfBirth
-    - customRoles
-    - apiVersion
-    - correlationId
+    - DateOfBirth
+    - CustomRoles
+    - ApiVersion
+    - CorrelationId
 1. Select **Next**, then **Create**, which registers the custom authentication extension and the associated application registration.
-1. Note the **App ID** under **API Authentication**, which is needed for [setting environment variables](./custom-extension-tokenissuancestart-setup.md#set-up-environment-variables-for-your-azure-function-optional) in your Azure Function app.
+1. Note the **App ID** under **API Authentication**, which is needed to [configure authentication for your Azure Function](./custom-extension-tokenissuancestart-setup.md#configure-authentication-for-your-azure-function) in your Azure Function app.
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
@@ -195,6 +202,9 @@ Follow these steps to register the **jwt.ms** web application:
 
 The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration:
 
+> [!IMPORTANT]
+> Microsoft recommends using the most secure authentication flow available. The authentication flow used for testing in this procedure requires a very high degree of trust in the application, and carries risks that are not present in other flows. This approach shouldn't be used for authenticating users to your production apps ([learn more](v2-oauth2-implicit-grant-flow.md)).
+
 1. Under **Manage**, select **Authentication**.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
 1. Select **Save**.
@@ -205,7 +215,7 @@ A claims mapping policy is used to select which attributes returned from the cus
 
 1. In your *My Test application* registration, under **Manage**, select **Manifest**.
 1. In the manifest, locate the `acceptMappedClaims` attribute, and set the value to `true`.
-1. Set the `accessTokenAcceptedVersion` to `2`.
+1. Set the `requestedAccessTokenVersion` to `2`.
 1. Select **Save** to save the changes.
 
 The following JSON snippet demonstrates how to configure these properties.
@@ -214,13 +224,13 @@ The following JSON snippet demonstrates how to configure these properties.
 {
 	"id": "22222222-0000-0000-0000-000000000000",
 	"acceptMappedClaims": true,
-	"accessTokenAcceptedVersion": 2,  
+	"requestedAccessTokenVersion": 2,  
     ...
 }
 ```
 
 > [!WARNING]
-> Do not set `acceptMappedClaims` property to `true` for multi-tenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
+> Do not set `acceptMappedClaims` property to `true` for multitenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
 
 # [Workforce tenant](#tab/workforce-tenant)
 
@@ -236,6 +246,10 @@ For external tenants, you need to associate your app with a user flow. A user fl
 ## Step 3: Assign a custom claims provider to your app
 
 For tokens to be issued with claims incoming from the custom authentication extension, you must assign a custom claims provider to your application. This is based on the token audience, so the provider must be assigned to the client application to receive claims in an ID token, and to the resource application to receive claims in an access token. The custom claims provider relies on the custom authentication extension configured with the **token issuance start** event listener. You can choose whether all, or a subset of claims, from the custom claims provider are mapped into the token.
+
+> [!NOTE]
+>
+> You can only create 250 unique assignments between applications and custom extensions. If you wish to apply the same custom extension call to multiple apps, we recommend using [authenticationEventListeners](/graph/api/identitycontainer-post-authenticationeventlisteners) Microsoft Graph API to create listeners for multiple applications. This is not supported in the Azure portal.
 
 Follow these steps to connect the *My Test application* with your custom authentication extension:
 
@@ -257,8 +271,8 @@ To assign the custom authentication extension as a custom claims provider source
 
 Next, assign the attributes from the custom claims provider, which should be issued into the token as claims:
 
-1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example *dateOfBirth*.
-1. Under **Source**, select **Attribute**, and choose *customClaimsProvider.dateOfBirth* from the **Source attribute** drop-down box.
+1. Select **Add new claim** to add a new claim. Provide a name to the claim you want to be issued, for example *DateOfBirth*.
+1. Under **Source**, select **Attribute**, and choose *customClaimsProvider.DateOfBirth* from the **Source attribute** drop-down box.
 
     :::image type="content" border="false"  source="media/custom-extension-tokenissuancestart-configuration/manage-claim.png" alt-text="Screenshot that shows how to add a claim mapping to your app." lightbox="media/custom-extension-tokenissuancestart-configuration/manage-claim.png":::
 
@@ -267,7 +281,7 @@ Next, assign the attributes from the custom claims provider, which should be iss
 
 # [Microsoft Graph](#tab/microsoft-graph)
 
-First create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event.
+First create an event listener to trigger a custom authentication extension for the *My Test application* using the token issuance start event. 
 
 1. Sign in to [Graph Explorer](https://aka.ms/ge) using an account whose home tenant is the tenant you wish to manage your custom authentication extension in.
 1. Run the following request. Replace `{App_to_enrich_ID}` with the app ID of *My Test application* recorded earlier. Replace `{customExtensionObjectId}` with the custom authentication extension ID recorded earlier.
@@ -365,6 +379,8 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Select **Workforce** as the tenant type.
 1. Under **App registration** select **Pick an existing app registration in this directory** for the **App registration type**, and pick the *Azure Functions authentication events API* app registration you [previously created](#step-1-register-a-custom-authentication-extension) when registering the custom claims provider.
 1. Enter the following issuer URL, `https://login.microsoftonline.com/{tenantId}/v2.0`, where `{tenantId}` is the tenant ID of your workforce tenant.
+1. Under **Client application requirement**, select **Allow requests from specific client applications** and enter `99045fe1-7639-4a75-9d4a-577b6ca3810f`.
+1. Under **Tenant requirement**, select **Allow requests from specific tenants** and enter your workforce tenant ID.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
@@ -377,16 +393,18 @@ Use the following steps to add Microsoft Entra as an identity provider to your A
 1. Under **Settings**, select **Authentication**.
 1. Select **Add Identity provider**.  
 1. Select **Microsoft** as the identity provider.
-1. Select **Customer** as the tenant type.
-1. Under **App registration**, enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-1-register-a-custom-authentication-extension) when registering the custom claims provider.
+1. Select **External configuration** as the tenant type.
+1. Under **App registration**, select **Provide the details of an existing app registration** for the **App registration type**, and enter the `client_id` of the *Azure Functions authentication events API* app registration you [previously created](#step-1-register-a-custom-authentication-extension) when registering the custom claims provider.
 1. For the **Issuer URL**, enter the following URL `https://{domainName}.ciamlogin.com/{tenant_id}/v2.0`, where
     - `{domainName}` is the domain name of your external tenant, in the form `{domainName}.contoso.com`.
     - `{tenantId}` is the tenant ID of your external tenant.
+1. Under **Client application requirement**, select **Allow requests from specific client applications** and enter `99045fe1-7639-4a75-9d4a-577b6ca3810f`.
+1. Under **Tenant requirement**, select **Allow requests from specific tenants** and enter your external tenant ID.
 1. Under **Unauthenticated requests**, select **HTTP 401 Unauthorized** as the identity provider.
 1. Unselect the **Token store** option.
 1. Select **Add** to add authentication to your Azure Function.
 
-    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in a external tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
+    :::image type="content" border="true"  source="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png" alt-text="Screenshot that shows how to add authentication to your function app while in an external tenant." lightbox="media/custom-extension-tokenissuancestart-configuration/add-identity-provider-auth-function-app-customer.png":::
 
 ---
 
@@ -435,7 +453,7 @@ To test your custom claims provider, follow these steps:
 
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID.  
-1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
+1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `DateOfBirth`.
 
 # [External tenant](#tab/external-tenant)
 
@@ -448,12 +466,11 @@ To test your custom claims provider, follow these steps:
 1. Replace `{tenantId}` with your tenant ID, tenant name, or one of your verified domain names. For example, `contoso.onmicrosoft.com`.
 1. Replace `{App_to_enrich_ID}` with the *My Test application* client ID. 
 1. Go through the sign in user flow that you've configured, and accept the requested permissions.
-1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `dateOfBirth`.
+1. After logging in, you'll be presented with your decoded token at `https://jwt.ms`. Validate that the claims from the Azure Function are presented in the decoded token, for example, `DateOfBirth`.
 
 ---
 
 ## See also
 
-- [Configure a SAML app to receive tokens with claims from an external store](custom-extension-configure-saml-app.md)
 - [Custom claims provider reference](custom-claims-provider-reference.md)
 - [Troubleshoot your custom authentication extensions API](custom-extension-troubleshoot.md)

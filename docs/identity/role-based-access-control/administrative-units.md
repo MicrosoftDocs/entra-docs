@@ -2,13 +2,13 @@
 title: Administrative units in Microsoft Entra ID
 description: Use administrative units for more granular delegation of permissions in Microsoft Entra ID.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.topic: overview
 ms.subservice: role-based-access-control
-ms.date: 03/07/2023
-ms.author: rolyon
+ms.date: 10/29/2024
+ms.author: barclayn
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ---
@@ -17,7 +17,7 @@ ms.custom: oldportal;it-pro;
 
 This article describes administrative units in Microsoft Entra ID. An administrative unit is a Microsoft Entra resource that can be a container for other Microsoft Entra resources. An administrative unit can contain only users, groups, or devices.
 
-Administrative units restrict permissions in a role to any portion of your organization that you define. You could, for example, use administrative units to delegate the [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) role to regional support specialists, so they can manage users only in the region that they support.
+Administrative units restrict permissions in a role to any portion of your organization that you define. You could, for example, use administrative units to delegate the [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) role to regional support specialists, so they can manage users only in the region that they support. Note that if you assign a role to a user that is not a member of an administrative unit, the scope of the role is the entire tenant.
 
 Users can be members of multiple administrative units. For example, you might add users to administrative units by geography and division; Megan Bowen might be in the "Seattle" and "Marketing" administrative units.
 
@@ -32,7 +32,7 @@ A central administrator could:
 - Create a role with administrative permissions over only Microsoft Entra users in the School of Business administrative unit.
 - Add the business school IT team to the role, along with its scope.
 
-![Screenshot of Devices and Administrative units page with Remove from administrative unit option.](./media/administrative-units/admin-unit-overview.png)
+:::image type="content" source="./media/administrative-units/admin-unit-overview.png" alt-text="Diagram of multiple example administrative units with role assignments that are scoped to an administrative unit." lightbox="./media/administrative-units/admin-unit-overview.png":::
 
 ## Constraints
 
@@ -59,7 +59,7 @@ In order for the [User Administrator](permissions-reference.md#user-administrato
 
 ## License requirements
 
-Using administrative units requires a Microsoft Entra ID P1 license for each administrative unit administrator who is assigned directory roles over the scope of the administrative unit, and a Microsoft Entra ID Free license for each administrative unit member. Creating administrative units is available with a Microsoft Entra ID Free license. If you are using dynamic membership rules for administrative units, each administrative unit member requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+Using administrative units requires a Microsoft Entra ID P1 license for each administrative unit administrator who is assigned directory roles over the scope of the administrative unit, and a Microsoft Entra ID Free license for each administrative unit member. Creating administrative units is available with a Microsoft Entra ID Free license. If you are using rules for dynamic membership groups for administrative units, each administrative unit member requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ## Manage administrative units
 
@@ -67,8 +67,8 @@ You can manage administrative units by using the Microsoft Entra admin center, P
 
 - [Create or delete administrative units](admin-units-manage.md)
 - [Add users, groups, or devices to an administrative unit](admin-units-members-add.md)
-- [Manage users or devices for an administrative unit with dynamic membership rules (Preview)](admin-units-members-dynamic.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Manage users or devices for an administrative unit with rules for dynamic membership groups](admin-units-members-dynamic.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)
 - [Work with administrative units](/powershell/azure/active-directory/working-with-administrative-units): Covers how to work with administrative units by using PowerShell.
 - [Administrative unit Graph support](/graph/api/resources/administrativeunit): Provides detailed documentation on Microsoft Graph for administrative units.
 
@@ -86,11 +86,11 @@ You can expect the creation of administrative units in the organization to go th
 
 ## Currently supported scenarios
 
-As a Global Administrator or a Privileged Role Administrator, you can use the Microsoft Entra admin center to:
+As a Privileged Role Administrator, you can use the Microsoft Entra admin center to:
 
 - Create administrative units
 - Add users, groups, or devices as members of administrative units
-- Manage users or devices for an administrative unit with dynamic membership rules (Preview)
+- Manage users or devices for an administrative unit with rules for dynamic membership groups
 - Assign IT staff to administrative unit-scoped administrator roles.
 
 Administrative unit-scoped admins can use the Microsoft 365 admin center for basic management of users in their administrative units. A group administrator with administrative unit scope can manage groups by using PowerShell, Microsoft Graph, and the Microsoft 365 admin centers.
@@ -109,7 +109,7 @@ The following sections describe current support for administrative unit scenario
 | Create or delete administrative units | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Add or remove members | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Assign administrative unit-scoped administrators | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Add or remove users or devices dynamically based on rules (Preview) | :white_check_mark: | :white_check_mark: | :x: |
+| Add or remove users or devices dynamically based on rules | :white_check_mark: | :white_check_mark: | :x: |
 | Add or remove groups dynamically based on rules | :x: | :x: | :x: |
 
 ### User management

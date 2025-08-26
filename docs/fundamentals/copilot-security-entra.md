@@ -1,77 +1,70 @@
 ---
-# required metadata
-
-title: Respond to identity threats quickly using Copilot in Microsoft Entra
-description: Use Microsoft Copilot in Microsoft Entra to investigate identity risks and troubleshoot identity tasks quickly.
+title: Respond to identity threats using Copilot
+description: Use Copilot in Microsoft Entra to investigate identity risks and troubleshoot identity tasks quickly.
 keywords:
-author: rwike77
-ms.author: ryanwi
-manager: celestedg
-ms.date: 03/26/2024
-ms.topic: conceptual
+author: cilwerner
+ms.author: cwerner
+manager: pmwongera
+ms.date: 08/08/2025
+ms.update-cycle: 180-days
+ms.topic: how-to
 ms.service: entra
-ms.custom: microsoft-copilot
-
-#Customer intent: As a SOC analyst or IT admin using Microsoft Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
+ms.custom: security-copilot
+ms.collection: msec-ai-copilot
+#Customer intent: As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
 ---
 
-# Microsoft Copilot in Microsoft Entra
+# Security Copilot in Microsoft Entra
 
-**Applies to:**
+**Applies to:** Microsoft Entra ![Green circle with a white check mark symbol.](../media/common/applies-to-yes.png)
 
-- Microsoft Entra
+[Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) is a platform that brings together the power of AI and human expertise to help administrators and security teams respond to attacks faster and more effectively. Microsoft Entra is one of the Microsoft plugins that enable the Security Copilot platform to generate accurate and relevant information. Through this plugin, Security Copilot can help you investigate and resolve identity risks, assess identities and access with AI-driven intelligence, and complete complex tasks quickly. Security Copilot gets insights from your Microsoft Entra users, groups, sign-in logs, audit logs, and more. 
 
-[Microsoft Copilot for Security](/security-copilot/microsoft-security-copilot) is a platform that brings together the power of AI and human expertise to help administrators and security teams respond to attacks faster and more effectively. Copilot for Security is embedded in Microsoft Entra so you can investigate and resolve identity risks, assess identities and access with AI-driven intelligence, and complete complex tasks quickly.  Microsoft Copilot in Microsoft Entra gets insights from your Microsoft Entra users, groups, sign-in logs, audit logs, and more. 
+You can explore sign-ins and risky users, get contextualized insights on how to resolve incidents, learn how to protect accounts using natural language. Built on top of real-time machine learning, Security Copilot can help you find gaps in access policies, generate identity workflows, and troubleshoot faster. Security Copilot can assist with scenarios across different products in the Microsoft Entra admin center, such as an incident investigation that includes the Microsoft Entra ID Protection risky user reports and Microsoft Entra sign-in logs.
 
-You can explore sign-ins and risky users and get contextualized insights on how to resolve incidents and what to do to protect the accounts in natural language.  Built on top of real-time machine learning, Copilot in Microsoft Entra can help you find gaps in access policies, generate identity workflows, and troubleshoot faster. You can also unlock new skills that allow admins at all levels to complete complex tasks such as incident investigation, sign-in log analysis, and more, to gain savings in time and resources.
+This article introduces you to Security Copilot in Microsoft Entra.
 
-This article introduces you to Copilot in Microsoft Entra.
+## Security Copilot experiences
 
-## Key features
+Security Copilot in Microsoft Entra includes the standalone Security Copilot experience, embedded experiences in the Microsoft Entra admin center, specialized agents that can perform tasks, and natural language prompts that can be used in several end-to-end scenarios.
 
-Microsoft Entra brings the capabilities of Copilot for Security to the Microsoft Entra admin center, enabling administrators and security teams to respond to identity threats quickly. Bringing AI to Microsoft Entra allows teams to understand risks immediately and determine remediation steps in a timely manner.
+For more information, see:
 
-### Summarize a user's risk level
+- [Microsoft Security Copilot experiences](/security-copilot/experiences-security-copilot)
+- [Microsoft Security Copilot agents](/security-copilot/agents-overview)
+- [Microsoft Security Copilot scenarios](copilot-entra-security-scenarios.md)
 
-Microsoft Entra ID Protection applies the capabilities of Copilot for Security to [summarize a user's risk level](copilot-entra-risky-user-summarization.md), provide insights relevant to the incident at hand, and provide recommendations for rapid mitigation. Identity risk investigation is a crucial step to defend an organization. Copilot for Microsoft Entra helps reduce the time to resolution by providing IT admins and security operations center (SOC) analysts the right context to investigate and remediate identity risk and identity-based incidents. Risky user summarization provides admins and responders quick access to the most critical information in context to aid their investigation.
+## Get started
 
-:::image type="content" source="./media/copilot-entra-risky-user-summarization/risky-user-details.png" alt-text="Screenshot that shows the Identity Protection risky user summarization details.":::
+In the Security Copilot platform, Microsoft Entra is a plugin that provides access to your organization's identity data and insights. To use Security Copilot in Microsoft Entra, you need to onboard to Security Copilot and turn on the Microsoft Entra plugin. 
 
-## Providing feedback
+1. Onboard to Security Copilot by following the [Get started with Microsoft Security Copilot](/security-copilot/get-started-security-copilot) guide.
+    - This guide contains guidance around subscription requirements, billing, and capacity.
+    - Take a moment to [understand authentication in Microsoft Security Copilot](/security-copilot/authentication).
+1. In the Security Copilot standalone experience, select the **Sources** icon from the prompt bar and turn on the Microsoft Entra plugin for Security Copilot, if it's not already on.
 
-Copilot in Microsoft Entra uses AI and machine learning to process data and generate responses for each of the key features. However, AI might misinterpret some data, which sometimes cause a mismatch in responses. Providing your feedback about the generated responses enable both Copilot in Microsoft Entra and Microsoft Entra to continuously improve delivery of more accurate responses in the future.
+Once you're all set up in Security Copilot, you can start using [natural language prompts](/security-copilot/prompting-security-copilot) to help remediate identity-based incidents. You can always check the **Promptbook library** in the standalone [Security Copilot](https://securitycopilot.microsoft.com/) experience for more examples.
 
-All key features have an option for providing feedback. To provide feedback, perform the following steps:
+- *Give me all user details for karita@woodgrovebank.com and extract the user Object ID.*
+- *Does karita@woodgrovebank.com have any registered devices in Microsoft Entra?*
+- *List the recent risky sign-ins for karita@woodgrovebank.com.*
+- *Can you give me sign-in logs for karita@woodgrovebank.com for the past 48 hours? Put this information in a table format.*
+- *Get Microsoft Entra audit logs for karita@woodgrovebank.com for the past 72 hours. Put information in table format.*
 
-1. Select the thumb up icon located at the bottom of any response card in the Copilot in Microsoft Entra pane.
-1. Answer the question **What did you like?**
-1. Select **Yes, share** samples or **No, don't share** samples.
-1. Select **Submit**.
+## Provide feedback
 
-Or
+Copilot in Microsoft Entra uses AI and machine learning to process data and generate responses for each of the key features. However, AI-generated content might be incorrect. Your feedback on the generated responses helps improve the accuracy of Copilot and Microsoft Entra over time.
 
-1. Select the thumb up icon located at the bottom of any response card in the Copilot in Microsoft Entra pane.
-1. Select **Inaccurate** if any detail is incorrect or incomplete based on your assessment. Select **Offensive or inappropriate** if it contains potentially harmful, questionable, or ambiguous information.  Select **Other** for some other reason.
-1. Whenever possible, write a few words explaining what can be done to improve the outcome in the **What went wrong?** text box.
-1. Select **Yes, share** samples or **No, don't share** samples.
-1. Select **Submit**.
+All key features have an option for providing feedback, but the exact steps vary based on the feature. Look for the thumbs up and thumbs down icons to let us know if the response was helpful or not.
 
+:::image type="content" source="./media/copilot-security-entra/thumbs-up-thumbs-down.png" alt-text="Screenshot of the Copilot thumbs up and thumbs down icons for providing feedback.":::
 
-## Microsoft Entra plugin in Copilot for Security
+## Privacy and data security in Security Copilot
 
-Microsoft Entra is one of the Microsoft plugins that enable the Copilot for Security platform to generate accurate and relevant information. Through the Microsoft Entra plugin, the Copilot for Security portal can provide more context to incidents and generate more accurate results. The key features mentioned in this article are capabilities that are also available in the Copilot for Security portal.
+To understand how Security Copilot handles your prompts and the data that’s retrieved from the service(prompt output), see [Privacy and data security in Microsoft Security Copilot](/security-copilot/privacy-data-security).
 
-You can learn more about plugins implemented in the Copilot for Security portal in [Manage plugins in Copilot for Security](/security-copilot/manage-plugins). Additionally, you can learn more about the embedded experiences in other Microsoft security products in [Copilot for Security experiences](/security-copilot/experiences-security-copilot).
+## Related content
 
-## Next steps
-
-- Learn more about [risky user summarization](copilot-entra-risky-user-summarization.md).
-- [Investigate security incidents](copilot-security-entra-investigate-incident.md) using the Microsoft Entra skills in Microsoft Copilot for Security.
-
-## See also
-
-- [Get started with Microsoft Copilot for Security](/security-copilot/get-started-security-copilot)
-- [What is Copilot for Security?](/security-copilot/microsoft-security-copilot)
-- [Privacy and data security in Copilot for Security](/security-copilot/privacy-data-security)
 - [Responsible AI FAQs](/security-copilot/responsible-ai-overview-security-copilot)
-
+- [Investigate security incidents](copilot-security-entra-investigate-incident.md) using the Microsoft Entra skills in Microsoft Security Copilot.
+- [Investigate risky apps](copilot-security-entra-investigate-risky-apps.md) using the Microsoft Entra skills in Microsoft Security Copilot.

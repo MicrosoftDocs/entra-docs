@@ -1,17 +1,16 @@
 ---
 title: API concepts in Privileged Identity management
-description: Information for understanding the APIs in Microsoft Entra Privileged Identity Management (PIM).
-
+description: Information for understanding the APIs in Microsoft Entra Privileged
+  Identity Management (PIM).
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 04/30/2025
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
-
 ---
 # Privileged Identity Management APIs
 
@@ -21,7 +20,7 @@ Privileged Identity Management (PIM), part of Microsoft Entra, includes three pr
  - PIM for Azure resources 
  - PIM for Groups 
 
-You can manage assignments in PIM for Microsoft Entra roles and PIM for Groups using Microsoft Graph API. You can manage assignments in PIM for Azure Resources using Azure Resource Manager (ARM) API. This article describes important concepts for using the APIs for Privileged Identity Management. 
+You can manage assignments in PIM for Microsoft Entra roles and PIM for Groups using Microsoft Graph. You can manage assignments in PIM for Azure Resources using Azure Resource Manager APIs. This article describes important concepts for using the APIs for Privileged Identity Management. 
 
 Find more details about APIs that allow to manage assignments in the documentation: 
 
@@ -34,39 +33,42 @@ Find more details about APIs that allow to manage assignments in the documentati
 
 ## PIM API history
 
-There have been several iterations of the PIM API over the past few years. You'll find some overlaps in functionality, but they don't represent a linear progression of versions.
+There have been several iterations of the PIM APIs over the past few years. There are some overlaps in functionality, but they don't represent a linear progression of versions.
 
 ### Iteration 1 – Deprecated
 
-Under the /beta/privilegedRoles endpoint, Microsoft had a classic version of the PIM API, which only supported Microsoft Entra roles and is no longer supported. Access to this API was deprecated in June 2021.
+Under the `/beta/privilegedRoles` endpoint, Microsoft had a classic version of the PIM API, which only supported Microsoft Entra roles and is no longer supported. Access to this API was deprecated in June 2021.
 
 <a name='iteration-2--supports-azure-ad-roles-and-azure-resource-roles'></a>
 
 ### Iteration 2 – Supports Microsoft Entra roles and Azure resource roles
 
-Under the `/beta/privilegedAccess` endpoint, Microsoft supported both `/aadRoles` and `/azureResources`. This endpoint is still available in your tenant but Microsoft recommends against starting any new development with this API. This beta API will never be released to general availability and will be eventually deprecated.
+Under the `/beta/privilegedAccess` endpoint, Microsoft supported both `/aadRoles` and `/azureResources`. This endpoint is still available in your tenant but Microsoft recommends against starting any new development with this API. This API will never be released to general availability and will eventually be deprecated.
 
 <a name='iteration-3-current--pim-for-azure-ad-roles-groups-in-microsoft-graph-api-and-for-azure-resources-in-arm-api-'></a>
 
-### Iteration 3 (Current) – PIM for Microsoft Entra roles, groups in Microsoft Graph API, and for Azure resources in ARM API 
+### Iteration 3 (Current) – PIM for Microsoft Entra roles, groups in Microsoft Graph API, and for Azure resources in Azure Resource Manager API 
 
 This is the final iteration of the PIM API. It includes:
   - PIM for Microsoft Entra roles in Microsoft Graph API - Generally available. 
-  - PIM for Azure resources in ARM API - Generally available. 
-  - PIM for groups in Microsoft Graph API - Preview. 
-  - PIM Alerts for Microsoft Entra roles in Microsoft Graph API - Preview.
-  - PIM Alerts for Azure Resources in ARM API - Preview.
+  - PIM for Azure resources in Azure Resource Manager API - Generally available. 
+  - PIM for groups in Microsoft Graph API - Generally available. 
+  - PIM alerts for Microsoft Entra roles in Microsoft Graph API - Preview.
+  - PIM alerts for Azure Resources in ARM API - Preview.
+
+> [!NOTE]
+> The roleAssignmentApprovals APIs are only available in /beta.
 
 Having PIM for Microsoft Entra roles in Microsoft Graph API and PIM for Azure Resources in ARM API provide a few benefits including:
-  - Alignment of the PIM API for regular role assignment API for both Microsoft Entra roles and Azure Resource roles. 
-  - Reducing the need to call additional PIM API to onboard a resource, get a resource, or get role definition. 
+  - Alignment of the PIM APIs for regular role assignment for both Microsoft Entra roles and Azure Resource roles. 
+  - Reducing the need to call other PIM APIs to onboard a resource, get a resource, or get role definition. 
   - Supporting app-only permissions. 
   - New features such as approval and email notification configuration. 
 
 
 ### Overview of PIM API iteration 3 
 
-PIM APIs across providers (both Microsoft Graph APIs and ARM APIs) follow the same principles. 
+PIM APIs across providers (both Microsoft Graph APIs and Azure Resource Manager APIs) follow the same principles. 
 
 #### Assignments management 
 To create assignment (active or eligible), renew, extend, of update assignment (active or eligible), activate eligible assignment, deactivate eligible assignment, use resources **\*AssignmentScheduleRequest** and **\*EligibilityScheduleRequest**: 
@@ -80,7 +82,7 @@ Creation of **\*AssignmentScheduleRequest** or **\*EligibilityScheduleRequest** 
   - **\*AssignmentSchedule** and **\*EligibilitySchedule** objects show current assignments and requests for assignments to be created in the future. 
   - **\*AssignmentScheduleInstance** and **\*EligibilityScheduleInstance** objects show current assignments only. 
 
-When an eligible assignment is activated (**Create** **\*AssignmentScheduleRequest** was called), the **\*EligibilityScheduleInstance** continues to exist, new **\*AssignmentSchedule** and a **\*AssignmentScheduleInstance** objects will be created for that activated duration. 
+When an eligible assignment is activated (**Create** **\*AssignmentScheduleRequest** was called), the **\*EligibilityScheduleInstance** continues to exist, new **\*AssignmentSchedule** and a **\*AssignmentScheduleInstance** objects are created for that activated duration. 
 
 For more information about assignment and activation APIs, see [PIM API for managing role assignments and eligibilities](/graph/api/resources/privilegedidentitymanagementv3-overview#pim-api-for-managing-role-assignment). 
 
@@ -92,7 +94,7 @@ To manage the PIM policies, use **\*roleManagementPolicy** and **\*roleManagemen
   - For PIM for Microsoft Entra roles, PIM for Groups: [unifiedroleManagementPolicy](/graph/api/resources/unifiedrolemanagementpolicy), [unifiedroleManagementPolicyAssignment](/graph/api/resources/unifiedrolemanagementpolicyassignment) 
   - For PIM for Azure resources: [Role Management Policies](/rest/api/authorization/role-management-policies), [Role Management Policy Assignments](/rest/api/authorization/role-management-policy-assignments) 
 
-The **\*roleManagementPolicy** resource includes rules that constitute PIM policy: approval requirements, maximum activation duration, notification settings, etc. 
+The **\*roleManagementPolicy** resource includes rules that constitute PIM policy: approval requirements, maximum activation duration, notification settings, and so on. 
 
 The **\*roleManagementPolicyAssignment** object attaches the policy to a specific role. 
 
@@ -104,22 +106,19 @@ For more information about the policy settings APIs, see [role settings and PI
 
 ### PIM for Microsoft Entra roles 
 
-For Graph API permissions required for PIM for Microsoft Entra roles, see [Role management permissions](/graph/permissions-reference#role-management-permissions). 
+For Microsoft Graph permissions required for PIM for Microsoft Entra roles, see the corresponding REST API reference pages.
 
 ### PIM for Azure resources 
 
-The PIM API for Azure resource roles is developed on top of the Azure Resource Manager framework. You will need to give consent to Azure Resource Management but won’t need any Microsoft Graph API permission. You will also need to make sure the user or the service principal calling the API has at least the Owner or User Access Administrator role on the resource you are trying to administer. 
+The PIM APIs for Azure resource roles is developed on top of the Azure Resource Manager framework. You need to consent to Azure Resource Management but don’t need any Microsoft Graph permissions. You also need to make sure the user or the service principal calling the API has at least the Owner or User Access Administrator role on the resource you're trying to administer. 
 
 ### PIM for Groups 
 
-For Graph API permissions required for PIM for Groups, see [PIM for Groups – Permissions and privileges](/graph/api/resources/privilegedidentitymanagement-for-groups-api-overview#permissions-and-privileges). 
-
-
-
+For Microsoft Graph permissions required for PIM for Groups, see the corresponding REST API reference pages.
 
 ## Relationship between PIM entities and role assignment entities
 
-The only link between the PIM entity and the role assignment entity for persistent (active) assignment for either Microsoft Entra roles or Azure roles is the **\*AssignmentScheduleInstance**. There is a one-to-one mapping between the two entities. That mapping means roleAssignment and **\*AssignmentScheduleInstance** would both include:  
+The only link between the PIM entity and the role assignment entity for persistent (active) assignment for either Microsoft Entra roles or Azure roles is the **\*AssignmentScheduleInstance**. There's a one-to-one mapping between the two entities. That mapping means roleAssignment and **\*AssignmentScheduleInstance** would both include:  
 
 - Persistent (active) assignments made outside of PIM
 - Persistent (active) assignments with a schedule made inside PIM

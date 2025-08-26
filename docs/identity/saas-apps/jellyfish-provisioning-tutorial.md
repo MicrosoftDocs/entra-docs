@@ -1,60 +1,66 @@
 ---
-title: 'Tutorial: Configure Jellyfish for automatic user provisioning with Microsoft Entra ID'
+title: Configure Jellyfish for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jellyfish.
 
-author: twimmers
-writer: twimmers
+author: adimitui
 manager: jeedes
-ms.assetid: 9978eb16-7ec2-4906-8608-e24906402dea
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 02/26/2024
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 04/15/2024
+ms.author: addimitu
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jellyfish so that I can streamline the user management process and ensure that users have the appropriate access to Jellyfish.
 ---
 
-# Tutorial: Configure Jellyfish for automatic user provisioning
+# Configure Jellyfish for automatic user provisioning with Microsoft Entra ID
 
-This tutorial describes the steps you need to perform in both Jellyfish and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Jellyfish](https://cogitogroup.net/jellyfish/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Jellyfish and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Jellyfish](https://cogitogroup.net/jellyfish/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
 > [!div class="checklist"]
 > * Create users in Jellyfish.
-> * Remove users in Jellyfish when they do not require access anymore.
+> * Remove users in Jellyfish when they don't require access anymore.
 > * Keep user attributes synchronized between Microsoft Entra ID and Jellyfish.
 > * [Single sign-on](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md) to Jellyfish (recommended).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A user account in Jellyfish with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
-* Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+* Determine who's in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 * Determine what data to [map between Microsoft Entra ID and Jellyfish](~/identity/app-provisioning/customize-application-attributes.md).
 
-## Step 2: Add Jellyfish from the Microsoft Entra application gallery
+## Step 2: Generate Credential for provisioning
+
+1. Login to the **Jellyfish** portal and navigate to **Key Management > API Keys**.
+2. Select **Generate New**
+
+   ![Screenshot of API Key management page.](./media/jellyfish-provisioning-tutorial/api-key-page.png)
+
+3. Search for the admin account created as part of the prerequisites and select **Create**. (Optionally) set an expiry, noting that the credential *must* be updated once expired.
+
+   ![Screenshot of Creating New API Key.](./media/jellyfish-provisioning-tutorial/create-new-api-key.png)
+
+4. The API key is downloaded, ensure that this key is kept safe as this will grant access to the user account it was generated for. It's recommended to delete the downloaded API key once user provisioning is configured.
+
+## Step 3: Add Jellyfish from the Microsoft Entra application gallery
 
 Add Jellyfish from the Microsoft Entra application gallery to start managing provisioning to Jellyfish. If you have previously setup Jellyfish for SSO, you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
-## Step 3: Define who will be in scope for provisioning 
+## Step 4: Define who is in scope for provisioning 
 
-The Microsoft Entra provisioning service allows you to scope who will be provisioned based on assignment to the application and or based on attributes of the user. If you choose to scope who will be provisioned to your app based on assignment, you can use the following [steps](~/identity/enterprise-apps/assign-user-or-group-access-portal.md) to assign users to the application. If you choose to scope who will be provisioned based solely on attributes of the user, you can use a scoping filter as described [here](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md). 
+[!INCLUDE [create-assign-users-provisioning.md](~/identity/saas-apps/includes/create-assign-users-provisioning.md)]
 
-* Start small. Test with a small set of users before rolling out to everyone. When scope for provisioning is set to assigned users, you can control this by assigning one or two users to the app. When scope is set to all users, you can specify an [attribute based scoping filter](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-
-* If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
-
-
-## Step 4: Configure automatic user provisioning to Jellyfish 
+## Step 5: Configure automatic user provisioning to Jellyfish 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Jellyfish based on user assignments in Microsoft Entra ID.
 
@@ -63,7 +69,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 ### To configure automatic user provisioning for Jellyfish in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**
+1. Browse to **Entra ID** > **Enterprise apps**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
@@ -79,7 +85,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. In the **Admin Credentials** section, enter the **Tenant Url** and then click on Authorize, make sure that you enter your Jellyfish account's Admin credentials. Click **Test Connection** to ensure Microsoft Entra ID can connect to Jellyfish. If the connection fails, ensure your Jellyfish account has Admin permissions and try again.
+1. In the **Admin Credentials** section, enter the **Tenant Url** which is in the form of **https://\<organisation\>.securesme.com**. This is the same address used to log in to the Jellyfish portal. For the *Secret Token* input the API key generated earlier in step 2. Then select Authorize, make sure that you enter your Jellyfish account's Admin credentials. Select **Test Connection** to ensure Microsoft Entra ID can connect to Jellyfish. If the connection fails, ensure your Jellyfish account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -95,14 +101,14 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
       |Attribute|Type|Supported for filtering|Required by Jellyfish|
       |---|---|---|---|
-      |userName|String|&check;|&check;
-      |active|Boolean||&check;
-      |title|String||
-      |emails[type eq "work"].value|String||
-      |name.givenName|String||
-      |name.familyName|String||
+      |userName|String|&check;|&check;|
+      |active|Boolean||&check;|
+      |title|String|||
+      |emails[type eq "work"].value|String|||
+      |name.givenName|String|||
+      |name.familyName|String|||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Jellyfish, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -112,24 +118,21 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 
-1. When you're ready to provision, click **Save**.
+1. When you're ready to provision, select **Save**.
 
 	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization cycle of all users defined in **Scope** in the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. 
 
-## Step 5: Monitor your deployment
-Once you've configured provisioning, use the following resources to monitor your deployment:
+## Step 6: Monitor your deployment
 
-* Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
-* Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it's to completion
-* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+[!INCLUDE [monitor-deployment.md](~/identity/saas-apps/includes/monitor-deployment.md)]
 
 ## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

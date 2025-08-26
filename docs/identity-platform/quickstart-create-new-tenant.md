@@ -1,19 +1,19 @@
 ---
-title: "Quickstart: Create a Microsoft Entra tenant"
+title: "Create a Microsoft Entra tenant"
 description: In this quickstart, you learn how to create a Microsoft Entra tenant for use in developing applications that use the Microsoft identity platform for authentication and authorization.
 author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
-ms.custom: fasttrack-edit, mode-other
-ms.date: 01/10/2024
+ms.author: owenrichards
+ms.custom:
+ms.date: 04/16/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: quickstart
+ms.topic: how-to
 #Customer intent: As an application developer, I need to create a Microsoft identity environment so I can use it to register applications.
 ---
 
-# Quickstart: Set up a tenant
+# Set up a new Microsoft Entra tenant
 
 To build apps that use the Microsoft identity platform for identity and access management, you need access to a Microsoft Entra *tenant*. It's in the Microsoft Entra tenant that you register and manage your apps, configure their access to data in Microsoft 365 and other web APIs, and enable features like Conditional Access.
 
@@ -41,7 +41,6 @@ To build an environment for either work and school accounts or personal Microsof
 
 ### Use an existing Microsoft Entra tenant
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Many developers already have tenants through services or subscriptions that are tied to Microsoft Entra tenants, such as Microsoft 365 or Azure subscriptions.
 
@@ -55,7 +54,7 @@ To check the tenant:
 > [!TIP]
 > To find the tenant ID, you can:
 > * Hover over your account name to get the directory or tenant ID.
-> * Select **Identity** > **Overview** and look for **Tenant ID**.
+> * Browse to **Entra ID** > **Overview** > **Properties** and look for **Tenant ID**.
 
 If you don't have a tenant associated with your account, you'll see a GUID under your account name. You won't be able to do actions like registering apps until you create a Microsoft Entra tenant.
 
@@ -77,7 +76,7 @@ You'll provide the following information to create your new tenant:
 
 ## Social and local accounts
 
-To begin building external facing applications that sign in social and local accounts, create a tenant with customer configurations. To begin, see [Create a tenant with customer configuration (preview)](../external-id/customers/quickstart-tenant-setup.md).
+To begin building external facing applications that sign in social and local accounts, create a tenant with external configurations. To begin, see [Create a tenant with external configuration](../external-id/customers/quickstart-tenant-setup.md).
 
 ## Next steps
 

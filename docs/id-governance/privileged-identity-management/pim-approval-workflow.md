@@ -1,37 +1,34 @@
 ---
 title: Approve or deny requests for Microsoft Entra roles in PIM
 description: Learn how to approve or deny requests for Microsoft Entra roles in Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 04/30/2025
 ms.author: barclayn
-ms.custom: pim
-
+ms.custom: pim, sfi-ga-nochange
 ---
 
 # Approve or deny requests for Microsoft Entra roles in Privileged Identity Management
 
-With Privileged Identity Management (PIM) in Microsoft Entra ID you can configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, then the eligible user must re-submit a new request. The 24 hour approval time window isn't configurable.
+Privileged Identity Management (PIM) in Microsoft Entra ID allows you to configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, then the eligible user must re-submit a new request. The 24 hour approval time window isn't configurable.
 
 
 
 ## View pending requests
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As a delegated approver, you receive an email notification when a Microsoft Entra role request is pending your approval. You can view these pending requests in Privileged Identity Management.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Approve requests**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Approve requests**.
 
-    :::image type="content" source="./media/azure-ad-pim-approval-workflow/resources-approve-pane.png" alt-text="Screenshot showing the approve requests page showing request to review Microsoft Entra roles.":::
+    :::image type="content" source="./media/azure-ad-pim-approval-workflow/resources-approve-pane.png" alt-text="Screenshot showing the **Approve requests** page showing request to review Microsoft Entra roles.":::
 
-    In the **Requests for role activations** section, you'll see a list of requests pending your approval.
+    In the **Requests for role activations** section, you can see a list of requests pending your approval.
 
 ## View pending requests using Microsoft Graph API
 
@@ -49,19 +46,19 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
     "value": [ 
         { 
             "@odata.type": "#microsoft.graph.unifiedRoleAssignmentScheduleRequest", 
-            "id": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "status": "PendingApproval", 
             "createdDateTime": "2021-07-15T19:57:17.76Z", 
             "completedDateTime": "2021-07-15T19:57:17.537Z", 
-            "approvalId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "approvalId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "customData": null, 
             "action": "SelfActivate", 
-            "principalId": "d96ea738-3b95-4ae7-9e19-78a083066d5b", 
+            "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222", 
             "roleDefinitionId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b", 
             "directoryScopeId": "/", 
             "appScopeId": null, 
             "isValidationOnly": false, 
-            "targetScheduleId": "9f2b5ddb-a50e-44a1-a6f4-f616322262ea", 
+            "targetScheduleId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee", 
             "justification": "test", 
             "createdBy": { 
                 "application": null, 
@@ -92,11 +89,11 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
 ## Approve requests
 
 >[!NOTE]
->Approvers are not able to approve their own role activation requests.
+>Approvers aren't able to approve their own role activation requests. Additionally, service principals aren't allowed to approve requests.
 
  1. Find and select the request that you want to approve. An approve or deny page appears.
  2. In the **Justification** box, enter the business justification.
- 3. Select **Submit**. You will receive an Azure notification of your approval.
+ 3. Select **Submit**. At this point, the system sends an Azure notification of your approval.
 
 ## Approve pending requests using Microsoft Graph API
 
@@ -164,11 +161,11 @@ Here's some information about workflow notifications:
 
 - Approvers are notified by email when a request for a role is pending their review. Email notifications include a direct link to the request, where the approver can approve or deny.
 - Requests are resolved by the first approver who approves or denies.
-- When an approver responds to the request, all approvers are notified of the action.
-- Global admins and Privileged role admins are notified when an approved user becomes active in their role.
+- All approvers are notified when an approver responds to an approval request.
+- Global Administrators and Privileged Role Administrators are notified when an approved user becomes active in their role.
 
 >[!NOTE]
->A Global Administrator or Privileged role admin who believes that an approved user should not be active can remove the active role assignment in Privileged Identity Management. Although administrators are not notified of pending requests unless they are an approver, they can view and cancel any pending requests for all users by viewing pending requests in Privileged Identity Management.
+>A Global Administrator or Privileged Role Admin who believes that an approved user shouldn't be active can remove the active role assignment in Privileged Identity Management. Although administrators aren't notified of pending requests unless they are an approver, they can view and cancel any pending requests for all users by viewing pending requests in Privileged Identity Management.
 
 ## Next steps
 

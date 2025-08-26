@@ -2,7 +2,7 @@
 title: Troubleshoot password-based single sign-on
 description: Troubleshoot issues with a Microsoft Entra app that's configured for password-based single sign-on.
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
@@ -85,14 +85,13 @@ There are two ways to capture sign-in fields for your custom apps:
 
 In general, if automatic sign-in field capture doesn't work, try the manual option.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### Automatically capture sign-in fields for an app
 
 To configure password-based SSO by using automatic sign-in field capture, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the app that you want to configure for SSO.
 1. After the app loads, select **Single sign-on** in the navigation pane on the left side.
 1. Select **Password-based Sign-on** mode.
@@ -107,7 +106,7 @@ To manually capture sign-in fields, you must have the My Apps browser extension 
 To configure password-based SSO for an app by using manual sign-in field capture, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Select the app that you want to configure for SSO.
 1. After the app loads, select **Single sign-on** in the navigation pane on the left side.
 1. Select **Password-based Sign-on** mode.
@@ -204,7 +203,7 @@ The following information explains what each notification item means and provide
 
 - **Client Request ID**: the specific request ID that your browser made.
 
-    Example: *302fd775-3329-4670-a9f3-bea37004f0bc*
+    Example: *0000aaaa-11bb-cccc-dd22-eeeeee333333*
 
 - **Time Stamp UTC**: the timestamp of when the notification occurred, in UTC.
 
@@ -220,11 +219,11 @@ The following information explains what each notification item means and provide
 
 - **Tenant ID**: the unique ID of the tenant that the user who ran the operation is a member of.
 
-    Example: *7918d4b5-0442-4a97-be2d-36f9f9962ece*
+    Example: *aaaabbbb-0000-cccc-1111-dddd2222eeee*
 
 - **User object ID**: The unique ID of the user who ran the operation.
 
-    Example: *17f84be4-51f8-483a-b533-383791227a99*
+    Example: *aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb*
 
 #### Detailed notification items
 
@@ -238,7 +237,7 @@ The following information explains what each notification item means and provide
 
 - **Object ID**: (can be empty) the object ID against which the operation was run.
 
-   Example: *8e08161d-f2fd-40ad-a34a-a9632d6bb599*
+   Example: *aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb*
 
 - **Details**: the detailed description of what occurred as a result of the operation.
 
@@ -248,7 +247,7 @@ The following information explains what each notification item means and provide
 
     Example:
     
-    `{"errorCode":"InternalUrl\_Duplicate","localizedErrorDetails":{"errorDetail":"Internal url 'https://google.com/' is invalid since it is already in use"},"operationResults":\[{"objectId":null,"displayName":null,"status":0,"details":"Internal url 'https://bing.com/' is invalid since it is already in use"}\],"timeStampUtc":"2017-03-23T19:50:26.465743Z","clientRequestId":"302fd775-3329-4670-a9f3-bea37004f0bb","internalTransactionId":"ea5b5475-03b9-4f08-8e95-bbb11289ab65","upn":"tperkins@f128.info","tenantId":"7918d4b5-0442-4a97-be2d-36f9f9962ece","userObjectId":"17f84be4-51f8-483a-b533-383791227a99"}`
+    `{"errorCode":"InternalUrl\_Duplicate","localizedErrorDetails":{"errorDetail":"Internal url 'https://google.com/' is invalid since it is already in use"},"operationResults":\[{"objectId":null,"displayName":null,"status":0,"details":"Internal url 'https://bing.com/' is invalid since it is already in use"}\],"timeStampUtc":"2017-03-23T19:50:26.465743Z","clientRequestId":"00aa00aa-bb11-cc22-dd33-44ee44ee44ee","internalTransactionId":"aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb","upn":"tperkins@f128.info","tenantId":"aaaabbbb-0000-cccc-1111-dddd2222eeee","userObjectId":"aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"}`
 
 ## Next steps
 

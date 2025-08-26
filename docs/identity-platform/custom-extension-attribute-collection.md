@@ -1,20 +1,20 @@
 ---
-title: Create attribute collection events (preview)
-description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.  
+title: Create a custom authentication extension for attribute collection start and submit events (preview)
+description: Learn how to develop and register a Microsoft Entra custom authentication extensions REST API. The custom authentication extension allows you to add logic to attribute collection.
 author: msmimart
 manager: CelesteDG
 ms.author: mimart
-ms.date: 01/23/2024
+ms.date: 04/28/2025
 ms.service: identity-platform
-
 ms.topic: how-to
 titleSuffix: Microsoft identity platform
+ms.custom: sfi-image-nochange
 #customer intent: As a Microsoft Entra External ID customer, I want to extend the user sign-up experience by adding custom actions before and after attribute collection, so that I can customize the attribute collection process and validate user entries.
 ---
 
-# Custom authentication extensions for attribute collection start and submit events (preview)
+# Create a custom authentication extension for attribute collection start and submit events
 
-**Applies to:** Microsoft Entra External ID customer configurations
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This article describes how to extend the user sign-up experience in Microsoft Entra External ID for customers. In customer sign-up user flows, event listeners can be used to extend the attribute collection process before attribute collection and at the time of attribute submission:
 
@@ -41,7 +41,6 @@ In addition to creating a custom authentication extension for the attribute coll
 
 ## Step 1: Create a custom authentication extensions REST API (Azure Function app)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In this step, you create an HTTP trigger function API using Azure Functions. The function API is the source of the business logic for your user flows. After creating your trigger function, you can configure it for either of the following events:
 
@@ -600,7 +599,7 @@ In this step, you register a custom authentication extension that is used by Mic
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an  [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
-1. Browse to **Identity** > **External Identities** > **Custom authentication extensions**.
+1. Browse to **Entra ID** > **External Identities** > **Custom authentication extensions**.
 1. Select **Create a custom extension**.
 1. In **Basics**, select the **AttributeCollectionStart** event or the **AttributeCollectionSubmit** event, and then select **Next**. Be sure that this matches the configuration in the [previous step](#11-create-http-trigger-functions).
 1. In **Endpoint Configuration**, fill in the following properties:
@@ -619,7 +618,7 @@ In this step, you register a custom authentication extension that is used by Mic
 
 After your custom authentication extension is created, grant application consent to the registered app, which allows the custom authentication extension to authenticate to your API.
 
-1. Browse to **Identity** > **External Identities** > **Custom authentication extensions (Preview)**.
+1. Browse to **Entra ID** > **External Identities** > **Custom authentication extensions**.
 1. Select your custom authentication extension from the list.
 1. On the **Overview** tab, select the **Grant permission** button to give admin consent to the registered app. The custom authentication extension uses `client_credentials` to authenticate to the Azure Function App using the `Receive custom authentication extension HTTP requests` permission. Select **Accept**. 
 
@@ -634,7 +633,7 @@ Now you can associate the custom authentication extension with one or more of yo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer) and [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator)
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/custom-extension-attribute-collection/settings-icon.png" border="false"::: in the top menu to switch to your external tenant.
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 1. Select the user flow from the list.
 1. Select **Custom authentication extensions**.
 1. On the **Custom authentication extensions** page, you can associate your custom authentication extension with two different steps in your user flow:
@@ -654,7 +653,7 @@ Follow these steps to register the **jwt.ms** web application:
 ### 4.1 Register the jwt.ms web application
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-1. Browse to **Identity** > **Applications** > **Application registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for the application. For example, **My Test application**.
 1. Under **Supported account types**, select **Accounts in this organizational directory only**.
@@ -667,7 +666,10 @@ In your app registration, under **Overview**, copy the **Application (client) ID
 
 ### 4.3 Enable implicit flow
 
-The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration:
+The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration with the following steps.
+
+> [!IMPORTANT]
+> Microsoft recommends using the most secure authentication flow available. The authentication flow used for testing in this procedure requires a very high degree of trust in the application, and carries risks that are not present in other flows. This approach shouldn't be used for authenticating users to your production apps ([learn more](v2-oauth2-implicit-grant-flow.md)).
 
 1. Under **Manage**, select **Authentication**.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
@@ -745,5 +747,5 @@ To test your custom authentication extension, follow these steps:
 
 ## Next steps
 
-- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-reference.md)
-- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-reference.md)
+- [OnAttributeCollectionStart reference](custom-extension-onattributecollectionstart-retrieve-return-data.md)
+- [OnAttributeCollectionSubmit reference](custom-extension-onattributecollectionsubmit-retrieve-return-data.md)

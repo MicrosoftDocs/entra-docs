@@ -4,12 +4,12 @@ description: Learn about the difference Microsoft Entra self-service password re
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 01/29/2023
+ms.topic: concept-article
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: tilarso
 ---
 # Licensing requirements for Microsoft Entra self-service password reset
@@ -21,7 +21,7 @@ This article details the different ways that self-service password reset can be 
 Although some unlicensed users may technically be able to access SSPR, a license is required for any user that you intend to benefit from the service.
 
 > [!NOTE] 
-> Some tenant services are not currently capable of limiting benefits to specific users. Efforts should be taken to limit the service benefits to licensed users. This will help avoid potential service disruption to your organization once targeting capabilities are available.
+> Some tenant services are not currently capable of limiting benefits to specific users. Efforts should be taken to limit the service benefits to licensed users. This helps avoid potential service disruption to your organization once targeting capabilities are available.
 
 ## Compare editions and features
 
@@ -30,8 +30,8 @@ The following table outlines the different SSPR scenarios for password change, r
 | Feature | Microsoft Entra ID Free | Microsoft 365 Business Standard | Microsoft 365 Business Premium | Microsoft Entra ID P1 or P2 |
 | --- |:---:|:---:|:---:|:---:|
 | **Cloud-only user password change**<br />When a user in Microsoft Entra ID knows their password and wants to change it to something new. | ● | ● | ● | ● |
-| **Cloud-only user password reset**<br />When a user in Microsoft Entra ID has forgotten their password and needs to reset it. | | ● | ● | ● |
-| **Hybrid user password change or reset with on-prem writeback**<br />When a user in Microsoft Entra that's synchronized from an on-premises directory using Microsoft Entra Connect wants to change or reset their password and also write the new password back to on-prem. | | | ● | ● |
+| **Cloud-only user password reset**<br />When a user in Microsoft Entra ID forgets their password and needs to reset it. | | ● | ● | ● |
+| **Hybrid user password change or reset with on-prem writeback**<br />When a user in Microsoft Entra synchronized from an on-premises directory using Microsoft Entra Connect wants to change or reset their password and also write the new password back to on-premises. | | | ● | ● |
 
 > [!WARNING]
 > Standalone Microsoft 365 Basic and Standard licensing plans don't support SSPR with on-premises writeback. The on-premises writeback feature requires Microsoft Entra ID P1, Premium P2, or Microsoft 365 Business Premium. 

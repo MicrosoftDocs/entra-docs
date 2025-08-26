@@ -2,12 +2,11 @@
 title: Microsoft identity platform accounts & tenant profiles on Android
 description: An overview of the Microsoft identity platform accounts for Android
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: devx-track-java, has-adal-ref
-ms.date: 09/14/2019
+ms.date: 05/14/2025
 ms.devlang: java
-ms.reviewer: shoatman
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -38,7 +37,7 @@ An account in the Microsoft identity platform consists of:
   - To record that an account from one system of record (Microsoft Entra tenant A) has access to a resource in another system of record (Microsoft Entra tenant B), the account must be represented in the tenant where the resource is defined. This is done by creating a local record of the account from system A in system B.
   - This local record, that is the representation of the account, is bound to the original account.
   - MSAL exposes this local record as a `Tenant Profile`.
-  - Tenant Profile can have different attributes that are appropriate to the local context, such as Job Title, Office Location, Contact Information, etc.
+  - Tenant Profile can have different attributes that are appropriate to the local context, such as Job Title, Office Location, Contact Information, and so on.
 - Because an account may be present in one or more tenants, an account may have more than one profile.
 
 > [!NOTE]
@@ -63,7 +62,7 @@ In the above diagram:
   - A tenant profile for `tom@live.com` exists in each of these tenants.
 - Information about Tom and Bob in other tenants may differ from that in the system of record. They may differ by attributes such as Job title, Office Location, and so on. They may be members of groups and/or roles within each organization (Microsoft Entra tenant). We refer to this information as bob@contoso.com tenant profile.
 
-In the diagram, bob@contoso.com and tom@live.com have access to resources in different Microsoft Entra tenants. For more information, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.md).
+In the diagram, bob@contoso.com and tom@live.com have access to resources in different Microsoft Entra tenants. For more information, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.yml).
 
 ## Accounts and single sign-on (SSO)
 
@@ -76,7 +75,7 @@ The MSAL token cache stores a *single refresh token* per account. That refresh t
 
 The MSAL account ID isn't an account object ID. It isn't meant to be parsed and/or relied upon to convey anything other than uniqueness within the Microsoft identity platform.
 
-For compatibility with the Azure AD Authentication Library (ADAL), and to ease Migration from ADAL to MSAL, MSAL can look up accounts using any valid identifier for the account available in the MSAL cache.  For example, the following will always retrieve the same account object for tom@live.com because each of the identifiers is valid:
+MSAL can look up accounts using any valid identifier for the account available in the MSAL cache.  For example, the following will always retrieve the same account object for tom@live.com because each of the identifiers is valid:
 
 ```java
 // The following would always retrieve the same account object for tom@live.com because each identifier is valid

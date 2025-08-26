@@ -1,15 +1,16 @@
 ---
 title: Tutorial - Test your SCIM endpoint for compatibility with the Microsoft Entra provisioning service.
 description: This tutorial describes how to use the Microsoft Entra SCIM Validator to validate that your provisioning server is compatible with the Azure SCIM client.
-author: kenwith
-ms.author: kenwith
-manager: amycolannino
+author: jenniferf-skc
+ms.author: jfields
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 09/15/2023
-ms.custom: template-tutorial
+ms.date: 03/04/2025
+ms.custom: template-tutorial, sfi-image-nochange
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 
@@ -94,46 +95,6 @@ The table below lists the available expressions
    |generateAlphaNumericWithSpecialCharacters {Count of Characters}|Generate a random string with a mix of alphabets, numbers, and a special character, based on the specified count of characters|{%generateAlphaNumericWithSpecialCharacters 8%}TEST|D385N05’TEST|
 
 You can add values before or after the expressions to achieve the desired outcome for example, when you add **{% generateRandomString 6 %}@contoso.com** into a value field of the userName attribute, it will generate a new userName value with every test while retaining the contoso.com domain. 
-   
-## Use Postman to test endpoints (optional)
-
-In addition to using the SCIM Validator tool, you can also use Postman to validate an endpoint. This example provides a set of tests in Postman. The example validates create, read, update, and delete (CRUD) operations. The operations are validated on users and groups, filtering, updates to group membership, and disabling users.
-
-The endpoints are in the `{host}/scim/` directory, and you can use standard HTTP requests to interact with them. To modify the `/scim/` route, see *ControllerConstant.cs* in **AzureADProvisioningSCIMreference** > **ScimReferenceApi** > **Controllers**.
-
-> [!NOTE]
-> You can only use HTTP endpoints for local tests. The Microsoft Entra provisioning service requires that your endpoint support HTTPS.
-
-1. Download [Postman](https://www.postman.com/downloads/) and start the application.
-1. Copy and paste this link into Postman to import the test collection: `https://aka.ms/ProvisioningPostman`.
-
-    ![Screenshot that shows importing the test collection in Postman.](media/scim-validator-tutorial/postman-collection.png)
-
-1. Create a test environment that has these variables:
-
-   |Environment|Variable|Value|
-   |-|-|-|
-   |Run the project locally by using IIS Express|||
-   ||**Server**|`localhost`|
-   ||**Port**|`:44359` *(don't forget the **`:`**)*|
-   ||**Api**|`scim`|
-   |Run the project locally by using Kestrel|||
-   ||**Server**|`localhost`|
-   ||**Port**|`:5001` *(don't forget the **`:`**)*|
-   ||**Api**|`scim`|
-   |Host the endpoint in Azure|||
-   ||**Server**|*(input your SCIM URL)*|
-   ||**Port**|*(leave blank)*|
-   ||**Api**|`scim`|
-
-1. Use **Get Key** from the Postman collection to send a **GET** request to the token endpoint and retrieve a security token to be stored in the **token** variable for subsequent requests.
-
-   ![Screenshot that shows the Postman Get Key folder.](media/scim-validator-tutorial/postman-get-key.png)
-
-   > [!NOTE]
-   > To make a SCIM endpoint secure, you need a security token before you connect. The tutorial uses the `{host}/scim/token` endpoint to generate a self-signed token.
-
-That's it! You can now run the **Postman** collection to test the SCIM endpoint functionality.
 
 ## Clean up resources
 

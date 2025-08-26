@@ -1,22 +1,22 @@
 ---
-title: Microsoft Entra SSO integration with Hawkeye Platform
+title: Configure Hawkeye Platform for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hawkeye Platform.
 
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/08/2023
-ms.author: jeedes
+ms.date: 03/25/2025
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hawkeye Platform so that I can control who has access to Hawkeye Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Hawkeye Platform
+# Configure Hawkeye Platform for Single sign-on with Microsoft Entra ID
 
 In this article, you learn how to integrate Hawkeye Platform with Microsoft Entra ID. Hawkeye Platform was developed by Redbridge Debt & Treasury Advisory to help Clients manage their bank fees. When you integrate Hawkeye Platform with Microsoft Entra ID, you can:
 
@@ -31,7 +31,7 @@ You'll configure and test Microsoft Entra single sign-on for Hawkeye Platform in
 To integrate Microsoft Entra ID with Hawkeye Platform, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Hawkeye Platform single sign-on (SSO) enabled subscription.
 
@@ -60,7 +60,7 @@ Alternatively, you can also use the [Enterprise App Configuration Wizard](https:
 Complete the following steps to enable Microsoft Entra single sign-on.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Hawkeye Platform** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Hawkeye Platform** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
@@ -80,7 +80,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://hawkeye.redbridgeanalytics.com/sso/saml/login/<uniqueSlugPerCustomer>`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Hawkeye Platform Client support team](mailto:casemanagement@redbridgedta.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Hawkeye Platform Client support team](mailto:casemanagement@redbridgedta.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -104,21 +104,21 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-1. Click on **Test this application**, this will redirect to Hawkeye Platform Sign-on URL where you can initiate the login flow.  
+1. Select **Test this application**, this option redirects to Hawkeye Platform Sign-on URL where you can initiate the login flow.  
 
 1. Go to Hawkeye Platform Sign-on URL directly and initiate the login flow from there.
 
 #### IDP initiated:
 
-1. Click on **Test this application**, and you should be automatically signed in to the Hawkeye Platform for which you set up the SSO. 
+1. Select **Test this application**, and you should be automatically signed in to the Hawkeye Platform for which you set up the SSO. 
 
-1. You can also use Microsoft My Apps to test the application in any mode. When you click the Hawkeye Platform tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Hawkeye Platform for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+1. You can also use Microsoft My Apps to test the application in any mode. When you select the Hawkeye Platform tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Hawkeye Platform for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Additional resources
 
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Hawkeye Platform you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

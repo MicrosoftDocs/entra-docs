@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 06/22/2023
+ms.date: 12/10/2024
 ms.custom: template-how-to
 ---
 
@@ -223,14 +223,15 @@ If the security token type is **Proof of Possession (POP)** for your custom task
 
 1. Create an authorization policy based on the following table:
 
-    Policy name: `POP-Policy` 
+    Policy name: `AzureADLifecycleWorkflowsAuthPOPAuthPolicy` 
 
     Policy type: `AADPOP`
     
     |Claim  |Value  |
     |---------|---------|
     |Issuer     |  https://sts.windows.net/(Tenant ID)/       |
-    |appid     |  ce79fdc4-cd1d-4ea5-8139-e74d7dbe0bb7   |
+    |Audience     |  https://management.azure.com       |
+    |appid     |  00001111-aaaa-2222-bbbb-3333cccc4444   |
     |m     |  POST   |
     |u     |  management.azure.com   |
     |p     |  /subscriptions/(subscriptionId)/resourceGroups/(resourceGroupName)/providers/Microsoft.Logic/workflows/(LogicApp name)   |
@@ -242,6 +243,9 @@ If the security token type is **Proof of Possession (POP)** for your custom task
 
 -	For `Issuer`, ensure you included the slash after your Tenant ID
 -	For `appid`, ensure the custom claim is `appid` in all lowercase. The `appid` value represents Lifecycle Workflows and is always the same.
+
+> [!NOTE]
+> This document has been updated to include the audience claim in the authorization policy configuration. Previously created configurations that do not include the audience claim remain secure. These configurations already use the u (resource URI) claim, and Logic Apps validates the token is for the correct service by verifying the domain of this URI.
 
 ## Configure authorization policy for custom task extension with normal security token type
 
@@ -261,7 +265,7 @@ If the security token type is **Normal** for your custom task extension, you'd s
     |---------|---------|
     |Issuer     |  https://sts.windows.net/(Tenant ID)/       |
     |Audience     | Application ID of your Logic Apps Managed Identity       |
-    |appid     |  ce79fdc4-cd1d-4ea5-8139-e74d7dbe0bb7   |
+    |appid     |  00001111-aaaa-2222-bbbb-3333cccc4444   |
 
     Policy name: `AzureADLifecycleWorkflowsAuthPolicyV2App`
 

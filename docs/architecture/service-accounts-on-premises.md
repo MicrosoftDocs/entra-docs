@@ -5,10 +5,10 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/26/2022
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 # Securing on-premises service accounts
 
@@ -60,7 +60,7 @@ A local user account (name format: *.\UserName*) exists only in the Security Acc
 | App runs on Windows Server 2008 R2| No| Yes| Yes. Use an MSA if possible.| Yes. Use an MSA if possible. |
 | App runs on Windows Server 2012| Yes| Yes. Use a gMSA if possible.| Yes. Use an MSA if possible.| Yes. Use an MSA if possible. |
 | Requirement to restrict service account to single server| No| Yes| Yes. Use an sMSA if possible.| No |
-| | |
+
 
 ### Use server logs and PowerShell to investigate
 
@@ -104,7 +104,7 @@ After you've found the service accounts in your on-premises environment, documen
 
 * **Anticipated lifetime and periodic attestation**: How long you anticipate that this account will be live, and how often the owner should review and attest to its ongoing need.
 
-* **Password security**: For user and local computer accounts, where the password is stored. Ensure that passwords are kept secure, and document who has access. Consider using [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) to secure stored passwords. 
+* **Password security**: For user and local computer accounts, where the password is stored. Ensure that passwords are kept secure, and document who has access. Consider using [Windows LAPS](/windows-server/identity/laps/laps-scenarios-azure-active-directory) to secure accounts on local computer accounts. 
 
 ## Next steps
 

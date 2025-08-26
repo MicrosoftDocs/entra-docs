@@ -1,21 +1,20 @@
 ---
 title: Add custom approvals to self-service sign-up flows
 description: Add API connectors for custom approval workflows in External ID self-service sign-up
- 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 02/05/2024
-
-ms.author: mimart
-author: msmimart
-manager: celestedg
-ms.custom: "it-pro"
+ms.date: 05/20/2025
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.collection: M365-identity-device-management
-
+ms.custom: it-pro, sfi-image-nochange
 #customer intent: As an IT admin managing guest user accounts in my Microsoft Entra tenant, I want to add a custom approval workflow to the self-service sign-up process, so that I can control which guest user accounts are created and manage the approval process.
 ---
 
 # Add a custom approval workflow to self-service sign-up
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 With [API connectors](api-connectors-overview.md), you can integrate with your own custom approval workflows with self-service sign-up so you can manage which guest user accounts are created in your tenant.
 
@@ -24,20 +23,13 @@ This article gives an example of how to integrate with an approval system. In th
 - Automatically approve the user and allow Microsoft Entra ID to create the user account.
 - Trigger a manual review. If the request is approved, the approval system uses Microsoft Graph to provision the user account. The approval system can also notify the user that their account has been created.
 
-> [!IMPORTANT]
->
-> - **Starting July 12, 2021**,  if Microsoft Entra B2B customers set up new Google integrations for use with self-service sign-up for their custom or line-of-business applications, authentication with Google identities won’t work until authentications are moved to system web-views. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-> - **Starting September 30, 2021**, Google is [deprecating embedded web-view sign-in support](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html). If your apps authenticate users with an embedded web-view and you're using Google federation with [Azure AD B2C](/azure/active-directory-b2c/identity-provider-google) or Microsoft Entra B2B for [external user invitations](google-federation.md) or [self-service sign-up](identity-providers.md), Google Gmail users won't be able to authenticate. [Learn more](google-federation.md#deprecation-of-web-view-sign-in-support).
-
 ## Register an application for your approval system
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You need to register your approval system as an application in your Microsoft Entra tenant so it can authenticate with Microsoft Entra ID and have permission to create users. Learn more about [authentication and authorization basics for Microsoft Graph](/graph/auth/auth-concepts).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Applications** > **App registrations**, and then select **New registration**.
-1. Enter a **Name** for the application, for example, _Sign-up Approvals_.
+1. Browse to **Entra ID** > **App registrations**, and then select **New registration**.
+1. Enter a **Name** for the application, for example, *Sign-up Approvals*.
 1. Select **Register**. You can leave other fields at their defaults.
 
 :::image type="content" source="media/self-service-sign-up-add-approvals/register-approvals-app.png" alt-text="Screenshot that highlights the Register button.":::
@@ -50,7 +42,7 @@ You need to register your approval system as an application in your Microsoft En
 
 9. On the **API permissions** page, select **Grant admin consent for (your tenant name)**, and then select **Yes**.
 10. Under **Manage** in the left menu, select **Certificates & secrets**, and then select **New client secret**.
-11. Enter a **Description** for the secret, for example _Approvals client secret_, and select the duration for when the client secret **Expires**. Then select **Add**.
+11. Enter a **Description** for the secret, for example *Approvals client secret*, and select the duration for when the client secret **Expires**. Then select **Add**.
 12. Copy the value of the client secret. Client secret values can be viewed only immediately after creation. Make sure to save the secret when created, before leaving the page.
 
 :::image type="content" source="media/self-service-sign-up-add-approvals/client-secret-value-copy.png" alt-text="Screenshot of copying the client secret. ":::
@@ -76,11 +68,11 @@ To create these connectors, follow the steps in [create an API connector](self-s
 Now you'll add the API connectors to a self-service sign-up user flow with these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **External identities** > **User flows**, and then select the user flow you want to enable the API connector for.
+1. Browse to **Entra ID** > **External Identities** > **User flows**, and then select the user flow you want to enable the API connector for.
 1. Select **API connectors**, and then select the API endpoints you want to invoke at the following steps in the user flow:
 
-   - **After federating with an identity provider during sign-up**: Select your approval status API connector, for example _Check approval status_.
-   - **Before creating the user**: Select your approval request API connector, for example _Request approval_.
+   - **After federating with an identity provider during sign-up**: Select your approval status API connector, for example *Check approval status*.
+   - **Before creating the user**: Select your approval request API connector, for example *Request approval*.
 
 :::image type="content" source="media/self-service-sign-up-add-approvals/api-connectors-user-flow-api.png" alt-text="Screenshot of API connector in a user flow.":::
 
@@ -385,7 +377,7 @@ Content-type: application/json
 
 ## Next steps
 
-- [Add a self-service sign-up user flow](self-service-sign-up-user-flow.md)
+- [Add a self-service sign-up user flow](self-service-sign-up-user-flow.yml)
 - [Add an API connector](self-service-sign-up-add-api-connector.md)
 - [Secure your API connector](self-service-sign-up-secure-api-connector.md)
 - [self-service sign-up for guest users with manual approval sample](code-samples-self-service-sign-up.md#custom-approval-workflows).

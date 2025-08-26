@@ -4,12 +4,11 @@ description: This article describes how to use HTTP messages to implement servic
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom:
-ms.date: 01/10/2024
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.reviewer: jmprieur, ludwignick
+ms.topic: reference
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 #Customer intent: As a developer building a web API, I want to understand how to implement the OAuth 2.0 On-Behalf-Of flow, so that I can securely pass a user's identity and permissions to another web API.
 ---
 
@@ -82,7 +81,7 @@ Host: login.microsoftonline.com/<tenant>
 Content-Type: application/x-www-form-urlencoded
     
 grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+&client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &client_secret=sampleCredentia1s
 &assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiIyO{a lot of characters here}
 &scope=https://graph.microsoft.com/user.read+offline_access
@@ -117,7 +116,7 @@ Host: login.microsoftonline.com/<tenant>
 Content-Type: application/x-www-form-urlencoded
     
 grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
-&client_id=625391af-c675-43e5-8e44-edd3e30ceb15
+&client_id=11112222-bbbb-3333-cccc-4444dddd5555
 &client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}
 &assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiO{a lot of characters here}
@@ -165,12 +164,12 @@ To [surface this error back](https://datatracker.ietf.org/doc/html/rfc6750#secti
 ```JSON
 {
     "error":"interaction_required",
-    "error_description":"AADSTS50079: Due to a configuration change made by your administrator, or because you moved to a new location, you must enroll in multifactor authentication to access 'bf8d80f9-9098-4972-b203-500f535113b1'.\r\nTrace ID: b72a68c3-0926-4b8e-bc35-3150069c2800\r\nCorrelation ID: 73d656cf-54b1-4eb2-b429-26d8165a52d7\r\nTimestamp: 2017-05-01 22:43:20Z",
+    "error_description":"AADSTS50079: Due to a configuration change made by your administrator, or because you moved to a new location, you must enroll in multifactor authentication to access 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb'.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2017-05-01 22:43:20Z",
     "error_codes":[50079],
     "timestamp":"2017-05-01 22:43:20Z",
-    "trace_id":"b72a68c3-0926-4b8e-bc35-3150069c2800",
-    "correlation_id":"73d656cf-54b1-4eb2-b429-26d8165a52d7",
-    "claims":"{\"access_token\":{\"polids\":{\"essential\":true,\"values\":[\"9ab03e19-ed42-4168-b6b7-7001fb3e933a\"]}}}"
+    "trace_id":"0000aaaa-11bb-cccc-dd22-eeeeee333333",
+    "correlation_id":"aaaa0000-bb11-2222-33cc-444444dddddd",
+    "claims":"{\"access_token\":{\"polids\":{\"essential\":true,\"values\":[\"00aa00aa-bb11-cc22-dd33-44ee44ee44ee\"]}}}"
 }
 ```
 
@@ -203,7 +202,7 @@ A service-to-service request for a SAML assertion contains the following paramet
 | --- | --- | --- |
 | grant_type |required | The type of the token request. For a request that uses a JWT, the value must be `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
 | assertion |required | The value of the access token used in the request.|
-| client_id |required | The app ID assigned to the calling service during registration with Microsoft Entra ID. To find the app ID in the Microsoft Entra admin center, browse to **Identity** > **Applications** > **App registrations** and then select the application name. |
+| client_id |required | The app ID assigned to the calling service during registration with Microsoft Entra ID. To find the app ID in the Microsoft Entra admin center, browse to **Entra ID** > **App registrations** and then select the application name. |
 | client_secret |required | The key registered for the calling service in Microsoft Entra ID. This value should be noted at the time of registration.  The Basic auth pattern of instead providing credentials in the Authorization header, per [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1) is also supported. |
 | scope |required | A space-separated list of scopes for the token request. For more information, see [scopes](./permissions-consent-overview.md). SAML itself doesn't have a concept of scopes, but is used to identify the target SAML application for which you want to receive a token. For this OBO flow, the scope value must always be the SAML Entity ID with `/.default` appended. For example, in case the SAML application's Entity ID is `https://testapp.contoso.com`, then the requested scope should be `https://testapp.contoso.com/.default`. In case the Entity ID doesn't start with a URI scheme such as `https:`, Microsoft Entra prefixes the Entity ID with `spn:`. In that case you must request the scope `spn:<EntityID>/.default`, for example `spn:testapp/.default` in case the Entity ID is `testapp`. The scope value you request here determines the resulting `Audience` element in the SAML token, which could be important to the SAML application receiving the token. |
 | requested_token_use |required | Specifies how the request should be processed. In the On-Behalf-Of flow, the value must be `on_behalf_of`. |
@@ -251,6 +250,12 @@ When triggering a consent screen using known client applications and `.default`,
 The resource service (API) identified in the request should be the API for which the client application is requesting an access token as a result of the user's sign-in. For example, `scope=openid https://middle-tier-api.example.com/.default` (to request an access token for the middle tier API), or `scope=openid offline_access .default` (when a resource isn't identified, it defaults to Microsoft Graph).
 
 Regardless of which API is identified in the authorization request, the consent prompt is combined with all required permissions configured for the client app. All required permissions configured for each middle tier API listed in the client's required permissions list, which identified the client as a known client application, are also included. 
+
+> [!IMPORTANT]
+> While it's valid to use `scope=openid https://resource/.default` in combined consent flows involving [known client applications](reference-app-manifest.md#knownclientapplications-attribute), you must **not** combine `.default` with other delegated scopes like `User.Read`, `Mail.Read`, `profile`, or `User.ReadWrite.All` in the same request. This will result in `AADSTS70011` errors because `.default` represents pre-consented static permissions, while the others require dynamic user consent at runtime.
+>
+> `offline_access` is sometimes accepted with `.default` to enable refresh tokens, but should not be combined with any additional delegated scopes. When in doubt, split the token requests to avoid scope-type conflicts.
+
 
 ### Preauthorized applications
 

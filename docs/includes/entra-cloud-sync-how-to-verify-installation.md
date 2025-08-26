@@ -1,6 +1,6 @@
 ---
-title: include file
-description: include file
+title: Include file
+description: Include file
 
 author: billmath
 ms.service: entra-id
@@ -10,31 +10,34 @@ ms.author: billmath
 ms.custom: include file
 ---
 
-Agent verification occurs in the Azure portal and on the local server that's running the agent.
+Agent verification occurs in the Azure portal and on the local server that runs the agent.
 
-### Azure portal agent verification
+### Verify the agent in the Azure portal
 
-To verify that the agent is being registered by Microsoft Entra ID, follow these steps:
+To verify that Microsoft Entra ID registers the agent, follow these steps:
 
- 1. Sign in to the [Azure portal](https://portal.azure.com).
- 2. Select **Microsoft Entra ID**.
- 3. Select **Microsoft Entra Connect**, and then select **Cloud sync**.
-     :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot of new UX screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-1.png":::
- 4. On the **cloud sync** page, you'll see the agents you've installed.  Verify that the agent is displayed and the status is **healthy**.
+1. Sign in to the [Azure portal](https://portal.azure.com).
+1. Select **Microsoft Entra ID**.
+1. Select **Microsoft Entra Connect**, and then select **Cloud Sync**.
 
-### On the local server
+    :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot that shows the Get started screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-1.png":::
+
+1. On the **Cloud Sync** page, you see the agents that you installed. Verify that the agent appears and that the status is **healthy**.
+
+### Verify the agent on the local server
 
 To verify that the agent is running, follow these steps:
 
- 1. Sign in to the server with an administrator account.
- 2. Open **Services** either by navigating to it or by going to *Start/Run/Services.msc*.
- 3. Under **Services**, make sure that **Microsoft Entra Connect Agent Updater** and **Microsoft Entra Connect Provisioning Agent** are present and the status is **Running**.
-     [![Screenshot that shows the Windows services.](./media/entra-cloud-sync-how-to-verify-installation/windows-services.png)](./media/entra-cloud-sync-how-to-verify-installation/windows-services.png#lightbox)
+1. Sign in to the server with an administrator account.
+1. Go to **Services**. You can also use *Start/Run/Services.msc* to get to it.
+1. Under **Services**, make sure that **Microsoft Entra Connect Agent Updater** and **Microsoft Entra Connect Provisioning Agent** are present and that the status is **Running**.
+
+    [![Screenshot that shows the Windows services.](./media/entra-cloud-sync-how-to-verify-installation/windows-services.png)](./media/entra-cloud-sync-how-to-verify-installation/windows-services.png#lightbox)
 
 ### Verify the provisioning agent version
 
-To verify that the version of the agent running, follow these steps:
+To verify the version of the agent that's running, follow these steps:
 
-1.  Navigate to 'C:\Program Files\Microsoft Azure AD Connect Provisioning Agent'
-2.  Right-click on 'AADConnectProvisioningAgent.exe' and select properties.
-3.  Click the details tab and the version number will be displayed next to Product version.
+1. Go to *C:\Program Files\Microsoft Azure AD Connect Provisioning Agent*.
+1. Right-click *AADConnectProvisioningAgent.exe* and select **Properties**.
+1. Select the **Details** tab. The version number appears next to the product version.

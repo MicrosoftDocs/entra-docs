@@ -3,9 +3,9 @@ title: "Quickstart: ASP.NET web app that signs in users"
 description: Download and run a code sample that shows how an ASP.NET web app can sign in Microsoft Entra users.
 ROBOTS: NOINDEX
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:ASP.NET", mode-other
+ms.custom:
 ms.date: 08/16/2022
 ms.service: identity-platform
 
@@ -18,7 +18,7 @@ ms.topic: quickstart
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add sign-in with Microsoft to an ASP.NET web app](quickstart-web-app-aspnet-sign-in.md)
+> > [Quickstart: Add sign-in with Microsoft to an ASP.NET web app](quickstart-web-app-dotnet-core-sign-in.md)
 >
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -159,4 +159,4 @@ ms.topic: quickstart
 > For a complete step-by-step guide on building applications and new features, including a full explanation of this quickstart, try out the ASP.NET tutorial.
 > 
 > > [!div class="nextstepaction"]
-> > [Add sign-in to an ASP.NET web app](tutorial-web-app-dotnet-register-app.md)
+> > [Add sign-in to an ASP.NET web app](tutorial-web-app-dotnet-prepare-app.md)

@@ -2,18 +2,19 @@
 title: How to configure daemon apps that call web APIs
 description: Learn how to configure the code for your daemon application that calls web APIs (app configuration)
 author: Dickson-Mwendia
-manager: CelesteDG
+manager: dougeby
 ms.author: dmwendia
-ms.custom: 
-ms.date: 02/01/2024
+ms.date: 03/25/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
 # How to configure daemon apps that call web APIs
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 Learn how to configure the code for your daemon application that calls web APIs.
 
@@ -27,13 +28,13 @@ The following Microsoft libraries support daemon apps:
 
 Daemon applications use application permissions rather than delegated permissions. So their supported account type can't be an account in any organizational directory or any personal Microsoft account (for example, Skype, Xbox, Outlook.com). There's no tenant admin to grant consent to a daemon application for a Microsoft personal account. You need to choose *accounts in my organization* or *accounts in any organization*.
 
-The authority specified in the application configuration should be tenanted (specifying a tenant ID or a domain name associated with your organization).
+The authority specified in the application configuration should include ypur tenant ID or a domain name associated with your organization.
 
 Even if you want to provide a multitenant tool, you should use a tenant ID or domain name, and **not** `common` or `organizations` with this flow, because the service can't reliably infer which tenant should be used.
 
 ## Configure and instantiate the application
 
-In MSAL libraries, the client credentials (secret or certificate) are passed as a parameter of the confidential client application construction.
+In Microsoft Authentication Libraries (MSAL), the client credentials (secret or certificate) are passed as a parameter of the confidential client application construction.
 
 > [!IMPORTANT]
 > Even if your application is a console application that runs as a service, if it's a daemon application, it needs to be a confidential client application.
@@ -324,7 +325,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
            .Build();
 ```
 
-The `Authority` is a concatenation of the cloud instance and the tenant ID, for example `https://login.microsoftonline.com/contoso.onmicrosoft.com` or `https://login.microsoftonline.com/eb1ed152-0000-0000-0000-32401f3f9abd`. In the *appsettings.json* file shown in the [Configuration file](#configuration-file) section, instance and tenant are represented by the `Instance` and `Tenant` values, respectively.
+The `Authority` is a concatenation of the cloud instance and the tenant ID, for example `https://login.microsoftonline.com/contoso.onmicrosoft.com` or `https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee`. In the *appsettings.json* file shown in the [Configuration file](#configuration-file) section, instance and tenant are represented by the `Instance` and `Tenant` values, respectively.
 
 In the code sample the previous snippet was taken from, `Authority` is a property on the  [AuthenticationConfig](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/ffc4a9f5d9bdba5303e98a1af34232b434075ac7/1-Call-MSGraph/daemon-console/AuthenticationConfig.cs#L61-L70) class, and is defined as such:
 

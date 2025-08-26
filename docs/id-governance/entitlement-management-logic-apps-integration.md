@@ -2,12 +2,13 @@
 title: Trigger Logic Apps with custom extensions in entitlement management
 description: Learn how to configure and use custom logic app workflows in entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can configure and add custom logic apps to my catalogs and access packages in entitlement management.
 ---
 # Trigger Logic Apps with custom extensions in entitlement management
@@ -41,13 +42,11 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 ## Create and add a Logic App workflow to a catalog for use in entitlement management 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
-**Prerequisite roles:** Global administrator, Identity Governance administrator, Catalog owner or Resource Group Owner 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
-1. Browse to **Identity governance** > **Catalogs**.
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Resource group owner.
+1. Browse to **ID Governance** > **Catalogs**.
 
 1. Select the catalog for which you want to add a custom extension and then in the left menu, select **Custom Extensions**. 
 
@@ -57,13 +56,13 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
     ![Pane to create a custom extension](./media/entitlement-management-logic-apps/create-custom-extension.png)
 
-1. The **Extension Type** tab defines what type of access package policies you can use the custom extension with. The “**Request workflow**” type supports policy stages: access package requested is created, when the request is approved, when assignment is granted, and when assignment is removed. This type also supports the  [Launch and wait](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes).  capabilities. 
+1. The **Extension Type** tab defines what type of access package policies you can use the custom extension with. The “**Request workflow**” type supports policy stages: access package requested is created, when the request is approved, when assignment is granted, and when assignment is removed. This type also supports the  [Launch and wait](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes) capabilities. 
 
 1. The pre-expiration workflow supports the policy stages: 14 days until access package assignment expiry, and 1 day until access package assignment expiration. This extension type doesn't support Launch and Wait. 
 
     :::image type="content" source="media/entitlement-management-logic-apps/extension-configuration-launch-wait.png" alt-text="Screenshot of launch and wait configuration options.":::
 
-1. The **Extension Configuration** tab allows you to decide if your extension has “launch and continue” or “launch and wait” behavior. With “Launch and continue” the linked policy action on the access package, such as a request, triggers the Logic App attached to the custom extension. After the Logic App is triggered, the entitlement management process associated with the access package will continue. For “Launch and wait”, we'll pause the associated access package action until after the Logic App linked to the extension completes its task, and a resume action is sent by the admin to continue the process. If no response is sent back in the wait time period defined, this process would be considered a failure. This process is further described below in its own section [Configuring custom extensions that pause entitlement management processes](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes). 
+1. The **Extension Configuration** tab allows you to decide if your extension has “launch and continue” or “launch and wait” behavior. With “Launch and continue” the linked policy action on the access package, such as a request, triggers the Logic App attached to the custom extension. After the Logic App is triggered, the entitlement management process associated with the access package will continue. For “Launch and wait”, we'll pause the associated access package action until after the Logic App linked to the extension completes its task, and a resume action is sent by the admin to continue the process. If no response is sent back in the wait time period defined, this process would be considered a failure. This process is further described in its own section [Configuring custom extensions that pause entitlement management processes](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes). 
 
 
 1. In the **Details** tab, choose whether you’d like to use an existing consumption plan Logic App. Selecting Yes in the field “Create new logic app” (default) creates a new blank consumption plan Logic App that is already linked to this custom extension. Regardless, you need to provide: 
@@ -81,14 +80,13 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App callout are correct. Then select **Create**.
 
-1. This custom extension to the linked Logic App now appears in your Custom Extensions tab under Catalogs. You're able to call on this in access package policies.
+1. This custom extension to the linked Logic App now appears in your Custom Extensions tab under Catalogs. You're able to call on this custom extension in access package policies.
 
 ## View and Edit Existing Custom Extensions for a Catalog
 
-**Prerequisite roles:** Global administrator, Identity Governance administrator, or Catalog owner 
-
-1. Navigate to the Custom Extensions tab within a Catalog as mentioned earlier.
-
+1. Navigate to the Custom Extensions tab within a Catalog as mentioned earlier as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner.
 1. Here, you can view all the custom extensions you've created, along with the associated Logic App and information about the custom extension type.
     :::image type="content" source="media/entitlement-management-logic-apps/custom-extension-list.png" alt-text="Screenshot of a list of custom extensions." lightbox="media/entitlement-management-logic-apps/custom-extension-list.png":::
 1. Along with the Logic App name, the column Type dictates whether the custom extension was created in the new V2 auth model (after March 17, 2023), or the original model. If a custom extension was created in the new model, the Type column matches the selected type from the configuration modal that is either “*assignment request*” or “*pre-expiration*”. For older custom extensions, the type shows “*custom access package*”.    
@@ -110,11 +108,10 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 ## Add custom extension to a policy in an access package
 
-**Prerequisite roles:** Global administrator, Identity Governance administrator, Catalog owner, or Access package manager 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. Select the access package you want to add a custom extension (logic app) to from the list of access packages that have already been created.  
 
@@ -136,17 +133,16 @@ These triggers to Logic Apps are controlled in a tab within access package polic
 
 ## Edit a linked Logic App's workflow definition 
 
-**Prerequisite roles:** Global administrator, Identity Governance administrator, or Catalog owner 
+For newly created Logic Apps linked to custom extensions, these Logic Apps begin blank. To create the workflows in the Logic Apps that will be triggered by the extension when the linked access package policy condition is triggered, you need to edit the definition of the Logic App workflow in Logic App designer. To accomplish this, you'd follow these steps:
 
-For newly created Logic Apps linked to custom extensions, these Logic Apps begin blank. To create the workflows in the Logic Apps that will be triggered by the extension when the linked access package policy condition is triggered, you need to edit the definition of the Logic App workflow in Logic App designer.  To accomplish this, you'd follow these steps:
-
-1. Navigate to the Custom Extensions tab within a Catalog as mentioned in the above section. 
-
+1. Navigate to the Custom Extensions tab within a Catalog as mentioned before as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator). 
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner.
 1. Select the custom extension for whom you want to edit the Logic App. 
 
 1. Select the Logic App under the Logic app column for the associated custom extension row. This allows you to edit or create the workflow in Logic App designer.  
 
-For more information on creating logic app workflows, see [Quickstart: Create an example Consumption workflow in multi-tenant Azure Logic Apps](/azure/logic-apps/quickstart-create-example-consumption-workflow).
+For more information on creating logic app workflows, see [Quickstart: Create an example Consumption workflow in multitenant Azure Logic Apps](/azure/logic-apps/quickstart-create-example-consumption-workflow).
 
 
 ## Configuring custom extensions that pause entitlement management processes
@@ -155,18 +151,18 @@ A new update to the custom extensions feature is the ability to pause the access
 
 This pause process allows admins to have control of workflows they’d like to run before continuing with access lifecycle tasks in entitlement management. The only exception to this is if a timeout occurs. Launch and wait processes require a timeout of up to 14 days noted in minutes, hours, or days. If a resume response isn't sent back to entitlement management by the time the “timeout” period elapses, the entitlement management request workflow process pauses. 
 
-The admin is responsible for configuring an automated process that is able to send the API **resume request** payload back to entitlement management, once the Logic App workflow has completed. To send back the resume request payload, follow the instructions here in the graph API documents. See information here on the [resume request](/graph/api/accesspackageassignmentrequest-resume).
+The admin is responsible for configuring an automated process that is able to send the API **resume request** payload back to entitlement management, once the Logic App workflow completes. To send back the resume request payload, follow the instructions here in the graph API documents. See information here on the [resume request](/graph/api/accesspackageassignmentrequest-resume).
 
-Specifically, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It's performed on an [accessPackageAssignmentRequest](/graph/api/resources/accesspackageassignmentrequest) object whose **requestStatus** is in a **WaitingForCallback** state. 
+Specifically, when an access package policy is enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It's performed on an [accessPackageAssignmentRequest](/graph/api/resources/accesspackageassignmentrequest) object whose **requestStatus** is in a **WaitingForCallback** state. 
 
 The resume request can be sent back for the following stages:  
 
-``
-microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestCreated 
-microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestApproved 
-microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestGranted 
+```
+microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestCreated
+microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestApproved
+microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestGranted
 microsoft.graph.accessPackageCustomExtensionStage.assignmentRequestRemoved
-``
+```
 
 The following flow diagram shows the entitlement management callout to Logic Apps workflow:
 :::image type="content" source="media/entitlement-management-logic-apps/extensibility-diagram-flow.png" alt-text="A diagram of the entitlement management call to the logic apps workflow." lightbox="media/entitlement-management-logic-apps/extensibility-diagram-flow.png":::
@@ -187,7 +183,7 @@ The diagram flow diagram shows:
 An example of a resume request payload is:
 
 ``` http
-POST https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/0e60f18c-b2a0-4887-9da8-da2e30a39d99/resume
+POST https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/resume
 ```
 
 ``` http
@@ -210,7 +206,10 @@ With Launch and wait, admins also have the ability to deny a request if the exte
 As mentioned, custom extensions created with the request workflow type, which includes four associated policy stages, can be enabled with “*Launch and wait*” if desired. 
 
 
-The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can't be denied at the **assignmentRequestCreated** stage of the callout.
+The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can only be denied at the **assignmentRequestCreated**  or **assignmentRequestApproved** stages of the callout.
+
+> [!TIP]
+> If you resume the access package assignment request via Azure Logic Apps, disable the [asynchronous pattern](/azure/connectors/connectors-native-http?tabs=standard#asynchronous-request-response-behavior).
 
 ``` http
 POST https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/9e60f18c-b2a0-4887-9da8-da2e30a39d99/resume

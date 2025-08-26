@@ -3,15 +3,15 @@ title: 'Microsoft Entra Connect: Pass-through Authentication'
 description: This article describes Microsoft Entra pass-through authentication and how it allows Microsoft Entra sign-ins by validating users' passwords against on-premises Active Directory.
 
 keywords: what is Azure AD Connect Pass-through Authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 ---
 

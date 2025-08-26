@@ -1,12 +1,12 @@
 ---
 title: "What's new in Azure Active Directory application provisioning"
 description: "New and updated documentation for the Azure Active Directory application provisioning."
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: whats-new
-ms.author: kenwith
-author: kenwith
+ms.author: jfields
+author: jenniferf-skc
 ---
 
 # Azure Active Directory application provisioning: What's new
@@ -144,7 +144,7 @@ Welcome to what's new in Azure Active Directory application provisioning documen
 - [Skip deletion of user accounts that go out of scope in Azure Active Directory](skip-out-of-scope-deletions.md)
 - [No users are being provisioned](application-provisioning-config-problem-no-users-provisioned.md)
 - [Known issues and resolutions with SCIM 2.0 protocol compliance of the Azure AD User Provisioning service](application-provisioning-config-problem-scim-compatibility.md)
-- [Problem configuring user provisioning to an Azure AD Gallery application](application-provisioning-config-problem.md)
+- [Problem configuring user provisioning to an Azure AD Gallery application](troubleshoot.md)
 - [Understand how provisioning integrates with Azure Monitor logs](application-provisioning-log-analytics.md)
 - [Application provisioning in quarantine status](application-provisioning-quarantine-status.md)
 - [Check the status of user provisioning](application-provisioning-when-will-provisioning-finish-specific-user.md)

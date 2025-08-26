@@ -1,18 +1,19 @@
 ---
 title: Continuous access evaluation in Microsoft Entra
-description: Responding to changes in user state faster with continuous access evaluation in Microsoft Entra
-
+description: Learn how continuous access evaluation in Microsoft Entra enhances security by responding to user state changes in near real time.
 ms.service: entra-id
 ms.subservice: conditional-access
-ms.topic: conceptual
-ms.date: 03/14/2024
-
+ms.topic: article
+ms.date: 07/22/2025
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vmahtani
-ms.custom: has-adal-ref
-
+ms.custom:
+  - has-adal-ref
+  - ai-gen-docs-bap
+  - ai-gen-description
+  - ai-seo-date:07/22/2025
 ---
 # Continuous access evaluation
 
@@ -58,7 +59,7 @@ Exchange Online, SharePoint Online, Teams, and MS Graph can synchronize key Cond
 This process enables the scenario where users lose access to files, email, calendar, or tasks from Microsoft 365 client apps or SharePoint Online immediately after network location changes.
 
 > [!NOTE]
-> Not all client app and resource provider combinations are supported. See the following tables. The first column of this table refers to web applications launched via web browser (i.e. PowerPoint launched in web browser) while the remaining four columns refer to native applications running on each platform described. Additionally, references to "Office" encompass Word, Excel, and PowerPoint.
+> Not all client app and resource provider combinations are supported. See the following tables. The first column of this table refers to web applications launched via web browser (that is, PowerPoint launched in web browser). The remaining four columns refer to native applications running on each platform described. Additionally, references to "Office" encompass Word, Excel, and PowerPoint.
 
 | | Outlook Web | Outlook Win32 | Outlook iOS | Outlook Android | Outlook Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |
@@ -83,7 +84,7 @@ This process enables the scenario where users lose access to files, email, calen
 > \* Token lifetimes for Office web apps are reduced to 1 hour when a Conditional Access policy is set.
 
 > [!NOTE]
-> Teams is made up of multiple services and among these the calls and chat services don't adhere to IP-based Conditional Access policies.
+> Teams is made up of multiple services, the calls and chat services don't adhere to IP-based Conditional Access policies.
 
 Continuous access evaluation is also available in Azure Government tenants (GCC High and DOD) for Exchange Online.
 
@@ -91,7 +92,7 @@ Continuous access evaluation is also available in Azure Government tenants (GCC 
 
 ### Client-side claim challenge
 
-Before continuous access evaluation, clients would replay the access token from its cache as long as it wasn't expired. With CAE, we introduce a new case where a resource provider can reject a token when it isn't expired. To inform clients to bypass their cache even though the cached tokens haven't expired, we introduce a mechanism called **claim challenge** to indicate that the token was rejected and a new access token need to be issued by Microsoft Entra. CAE requires a client update to understand claim challenge. The latest versions of the following applications support claim challenge:
+Before continuous access evaluation, clients would replay the access token from its cache as long as it wasn't expired. With CAE, we introduce a new case where a resource provider can reject a token when it isn't expired. To inform clients to bypass their cache even though the cached tokens aren't expired, we introduce a mechanism called **claim challenge** to indicate that the token was rejected and a new access token needs to be issued by Microsoft Entra. CAE requires a client update to understand claim challenge. The latest versions of the following applications support claim challenge:
 
 | | Web | Win32 | iOS | Android | Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |
@@ -167,7 +168,7 @@ More information about continuous access evaluation as a session control can be 
 
 ### Group membership and Policy update effective time
 
-Changes made to Conditional Access policies and group membership made by administrators could take up to one day to be effective. The delay is from replication between Microsoft Entra and resource providers like Exchange Online and SharePoint Online. Some optimization has been done for policy updates, which reduce the delay to two hours. However, it doesn't cover all the scenarios yet.  
+Changes made to Conditional Access policies and group membership made by administrators could take up to one day to be effective. The delay is from replication between Microsoft Entra and resource providers like Exchange Online and SharePoint Online. Some optimization is done for policy updates, which reduce the delay to two hours. However, it doesn't cover all the scenarios yet.  
 
 When Conditional Access policy or group membership changes need to be applied to certain users immediately, you have two options. 
 
@@ -206,10 +207,10 @@ Networks and network services used by clients connecting to identity and resourc
 
 ### Supported location policies
 
-CAE only has insight into [IP-based named locations](~/identity/conditional-access/location-condition.md#ipv4-and-ipv6-address-ranges). CAE doesn't have insight into other location conditions like [MFA trusted IPs](~/identity/authentication/howto-mfa-mfasettings.md#trusted-ips) or country/region-based locations. When a user comes from an MFA trusted IP, trusted location that includes MFA Trusted IPs, or country/region location, CAE won't be enforced after that user moves to a different location. In those cases, Microsoft Entra issues a one-hour access token without instant IP enforcement check. 
+CAE only has insight into [IP-based named locations](concept-assignment-network.md#ipv4-and-ipv6-address-ranges). CAE doesn't have insight into other location conditions like [MFA trusted IPs](concept-assignment-network.md#multifactor-authentication-trusted-ips) or country/region-based locations. When a user comes from an MFA trusted IP, trusted location that includes MFA Trusted IPs, or country/region location, CAE won't be enforced after that user moves to a different location. In those cases, Microsoft Entra issues a one-hour access token without instant IP enforcement check. 
 
 > [!IMPORTANT]
-> If you want your location policies to be enforced in real time by continuous access evaluation, use only the [IP based Conditional Access location condition](~/identity/conditional-access/location-condition.md) and configure all IP addresses, **including both IPv4 and IPv6**, that can be seen by your identity provider and resources provider. Do not use country/region location conditions or the trusted ips feature that is available in Microsoft Entra multifactor authentication's service settings page.
+> If you want your location policies to be enforced in real time by continuous access evaluation, use only the [IP based Conditional Access location condition](concept-assignment-network.md#ipv4-and-ipv6-address-ranges) and configure all IP addresses, **including both IPv4 and IPv6**, that can be seen by your identity provider and resources provider. Don't use country/region location conditions or the trusted ips feature that is available in Microsoft Entra multifactor authentication's service settings page.
 
 ### Named location limitations
 

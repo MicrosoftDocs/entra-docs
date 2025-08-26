@@ -2,15 +2,18 @@
 title: Manage users and groups with the User management dashboard in Permissions Management
 description: How to manage users and groups in the User management dashboard in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Manage users and groups with the User management dashboard
+
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
 This article describes how to use the Permissions Management **User management** dashboard to view and manage users and groups.
 

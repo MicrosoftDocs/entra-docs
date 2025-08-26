@@ -1,13 +1,14 @@
 ---
 title: Microsoft Entra Cloud Sync troubleshooting
 description: This article describes how to troubleshoot problems that might arise with the cloud provisioning agent.
-author: billmath
-ms.author: billmath
-manager: amycolannino
-ms.date: 11/06/2023
+author: omondiatieno
+ms.author: jomondi
+manager: mwongerapk
+ms.date: 04/09/2025
 ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Cloud sync troubleshooting
@@ -27,7 +28,6 @@ You can verify these items in the portal and on the local server that's running 
 
 ### Microsoft Entra admin center agent verification
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To verify that Azure detects the agent, and that the agent is healthy, follow these steps:
 
@@ -183,7 +183,7 @@ This error isn't related to the [accidental deletions prevention feature](/azure
 If you don't have a Microsoft Entra Connect server installed from which you could toggle the feature, you can use the ["AADCloudSyncTools"](/azure/active-directory/cloud-sync/reference-powershell) PowerShell module installed with the Microsoft Entra Connect cloud sync agent to disable the setting on the tenant and allow the blocked deletions to export after confirming they are expected and should be allowed. Use the following command:
 
 ```PowerShell
-Disable-AADCloudSyncToolsDirSyncAccidentalDeletionPrevention -tenantId "340ab039-c6b1-48a5-9ba7-28fe88f83980"
+Disable-AADCloudSyncToolsDirSyncAccidentalDeletionPrevention -tenantId "aaaabbbb-0000-cccc-1111-dddd2222eeee"
 ```
 
 During the next provisioning cycle, the objects that were marked for deletion should be deleted from the Microsoft Entra directory successfully.

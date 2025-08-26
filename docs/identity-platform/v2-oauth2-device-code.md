@@ -5,11 +5,11 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 01/10/2024
-ms.reviewer: ludwignick
+ms.date: 01/04/2025
 ms.service: identity-platform
+ms.reviewer: jmprieur, ludwignick
 
-ms.topic: concept-article
+ms.topic: reference
 #Customer intent: As a developer integrating OAuth 2.0 into my application, I want to understand how to implement the device authorization grant flow, so that users can sign in to input-constrained devices and obtain access tokens and refresh tokens for accessing secured web APIs.
 ---
 
@@ -37,7 +37,7 @@ From the moment the request is sent, the user has 15 minutes to sign in. This is
 POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/devicecode
 Content-Type: application/x-www-form-urlencoded
 
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=user.read%20openid%20profile
 
 ```
@@ -76,7 +76,7 @@ While the user is authenticating at the `verification_uri`, the client should be
 POST https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token
 Content-Type: application/x-www-form-urlencoded
 
-grant_type=urn:ietf:params:oauth:grant-type:device_code&client_id=535fb089-9ff3-47b6-9bfb-4f1264799865&device_code=GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8...
+grant_type=urn:ietf:params:oauth:grant-type:device_code&client_id=00001111-aaaa-2222-bbbb-3333cccc4444&device_code=GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8...
 ```
 
 | Parameter | Required | Description|

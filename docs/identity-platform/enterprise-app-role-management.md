@@ -2,16 +2,16 @@
 title: Configure the role claim
 description: Learn how to configure the role claim issued in the SAML token for enterprise applications in Microsoft Entra ID.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 06/09/2023
-ms.reviewer: jeedes
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to
 
-#Customer intent: As a cloud Application Administrator, I want to customize the role claim in the access token for an enterprise application, so that I can define custom roles and assign them to user accounts.
+#Customer intent: As a Cloud Application Administrator, I want to customize the role claim in the access token for an enterprise application, so that I can define custom roles and assign them to user accounts.
 ---
 
 # Configure the role claim
@@ -30,12 +30,11 @@ You can customize the role claim in the access token that is received after an a
 
 ## Locate the enterprise application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to locate the enterprise application:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+1. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. After the application is selected, copy the object ID from the overview pane.
 
@@ -46,7 +45,7 @@ Use the Microsoft Graph Explorer to add roles to an enterprise application.
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) in another window and sign in using the administrator credentials for your tenant.
 
     > [!NOTE]
-    > The Cloud App Administrator and App Administrator role won't work in this scenario. The Global Admin permissions are needed for directory read and write.
+    > The Cloud Application Administrator and Application Administrator role won't work in this scenario, use the Privileged Role Administrator.
 
 1. Select **modify permissions**, select **Consent** for the `Application.ReadWrite.All` and the `Directory.ReadWrite.All` permissions in the list.
 1. Replace `<objectID>` in the following request with the object ID that was previously recorded and then run the query:
@@ -134,7 +133,7 @@ After the service principal is patched with more roles, you can assign users to 
 To update an existing role, perform the following steps:
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Sign in to the Graph Explorer site by using the global admin or coadmin credentials for your tenant.
+1. Sign in to the Graph Explorer site as a Privileged Role Administrator.
 1. Using the object ID for the application from the overview pane, replace `<objectID>` in the following request with it and then run the query:
 
     `https://graph.microsoft.com/v1.0/servicePrincipals/<objectID>`
@@ -148,7 +147,7 @@ To update an existing role, perform the following steps:
 To delete an existing role, perform the following steps:
 
 1. Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Sign in to the Graph Explorer site by using the global admin or coadmin credentials for your tenant.
+1. Sign in to the Graph Explorer site as a Privileged Role Administrator.
 1. Using the object ID for the application from the overview pane in the Azure portal, replace `<objectID>` in the following request with it and then run the query:
 
     `https://graph.microsoft.com/v1.0/servicePrincipals/<objectID>`

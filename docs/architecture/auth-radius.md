@@ -6,10 +6,10 @@ manager: martinco
 
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 01/10/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # RADIUS authentication with Microsoft Entra ID
@@ -32,7 +32,7 @@ You need to add multifactor authentication to applications like
 - Any others that depend on the RADIUS protocol to authenticate users into the service.
 
 > [!NOTE]
-> Rather than relying on RADIUS and the Microsoft Entra multifactor authentication NPS extension to apply Microsoft Entra multifactor authentication to VPN workloads, we recommend that you upgrade your VPN's to Security Assertion Markup Language (SAML) and directly federate your VPN with Microsoft Entra ID. This gives your VPN the full breadth of Microsoft Entra ID Protection, including Conditional Access, multifactor authentication, device compliance, and Identity Protection.
+> Rather than relying on RADIUS and the Microsoft Entra multifactor authentication NPS extension to apply Microsoft Entra multifactor authentication to VPN workloads, we recommend that you upgrade your VPN's to Security Assertion Markup Language (SAML) and directly federate your VPN with Microsoft Entra ID. This gives your VPN the full breadth of Microsoft Entra ID Protection, including Conditional Access, multifactor authentication, device compliance, and Microsoft Entra ID Protection.
 
 ![architectural diagram](./media/authentication-patterns/radius-auth.png)
 

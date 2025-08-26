@@ -4,17 +4,19 @@ description: Use Microsoft Entra API connectors to customize and extend your sel
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 01/23/2024
+ms.date: 04/14/2025
 
-ms.author: mimart
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.custom: "it-pro"                 
 ms.collection: M365-identity-device-management
 #customer intent: As a developer or IT administrator, I want to use API connectors to customize and extend the self-service sign-up user flows, so that I can integrate with web APIs, customize the sign-up experience, and integrate with external systems for tasks such as approval workflows, identity verification, data validation, attribute manipulation, and running custom business logic.
 ---
 
 # Use API connectors to customize and extend self-service sign-up 
+
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 ## Overview 
 As a developer or IT administrator, you can use [API connectors](self-service-sign-up-add-api-connector.md#create-an-api-connector) to integrate your [self-service sign-up user flows](self-service-sign-up-overview.md) with web APIs to customize the sign-up experience and integrate with external systems. For example, with API connectors, you can:
@@ -39,7 +41,7 @@ There are two places in a user flow where you can enable an API connector:
 
 ### After federating with an identity provider during sign-up
 
-An API connector at this step in the sign-up process is invoked immediately after the user authenticates with an identity provider (like Google, Facebook, & Microsoft Entra ID). This step precedes the [***attribute collection page***](self-service-sign-up-user-flow.md#select-the-layout-of-the-attribute-collection-form), which is the form presented to the user to collect user attributes. This step isn't invoked if a user is registering with a local account. The following are examples of API connector scenarios you might enable at this step:
+An API connector at this step in the sign-up process is invoked immediately after the user authenticates with an identity provider (like Google, Facebook, & Microsoft Entra ID). This step precedes the [***attribute collection page***](self-service-sign-up-user-flow.yml#select-the-layout-of-the-attribute-collection-form), which is the form presented to the user to collect user attributes. This step isn't invoked if a user is registering with a local account. The following are examples of API connector scenarios you might enable at this step:
 
 - Use the email or federated identity that the user provided to look up claims in an existing system. Return these claims from the existing system, prefill the attribute collection page, and make them available to return in the token.
 - Implement an allow or blocklist based on social identity.

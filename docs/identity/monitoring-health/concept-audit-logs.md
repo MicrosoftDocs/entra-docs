@@ -2,32 +2,28 @@
 title: Learn about the audit logs in Microsoft Entra ID
 description: Learn about the types of activities and events that are captured in Microsoft Entra audit logs and how you can use the logs for troubleshooting.
 author: shlipsey3
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ms.subservice: monitoring-health
-ms.date: 03/08/2024
+ms.date: 06/30/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
-
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT admin, I need to know what information is included in the Microsoft Entra audit logs so I know what to look for when I need to troubleshoot an issue.
-
 ---
 
 # What are Microsoft Entra audit logs?
 
 Microsoft Entra activity logs include audit logs, which is a comprehensive report on every logged event in Microsoft Entra ID. Changes to applications, groups, users, and licenses are all captured in the Microsoft Entra audit logs.
 
-Two other activity logs are also available to help monitor the health of your tenant:
+Three other activity logs are also available to help monitor the health of your tenant:
 
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
+- **[Sign-ups (preview)](concept-sign-ups.md)** - For [external tenants](../../external-id/tenant-configurations.md) only, information about all self-service sign-up attempts, including successful sign-ups and failed attempts.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by the provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
 
-This article gives you an overview of the audit logs, including what's required to access them and what information they provide.
-
-## License and role requirements
-
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
+This article gives you an overview of the audit logs, such as the information they provide and what kinds of questions they can answer.
 
 ## What can you do with audit logs?
 
@@ -62,7 +58,7 @@ Audit logs in Microsoft Entra ID provide access to system activity records, ofte
 
 ## What do the logs show?
 
-Audit logs default to the **Directory** tab, which displays the following information:
+Audit logs display several valuable details on the activities in your tenant. For a full list of the available audit activities, see [Audit activity reference](reference-audit-activities.md). The Microsoft Entra admin center defaults to the **Directory** tab, which displays the following information:
 
 - Date and time of the occurrence
 - Service that logged the occurrence
@@ -79,4 +75,10 @@ You can view Microsoft 365 activity logs from the [Microsoft 365 admin center](/
 
 You can also access the Microsoft 365 activity logs programmatically by using the [Office 365 Management APIs](/office/office-365-management-api/office-365-management-apis-overview).
 
-Most standalone or bundled Microsoft 365 subscriptions have back-end dependencies on some subsystems within the Microsoft 365 datacenter boundary. The dependencies require some information write-back to keep directories in sync and essentially to help enable hassle-free onboarding in a subscription opt-in for Exchange Online. For these write-backs, audit log entries show actions taken by “Microsoft Substrate Management”. These audit log entries refer to create/update/delete operations executed by Exchange Online to Microsoft Entra ID. The entries are informational and don't require any action.
+Most standalone or bundled Microsoft 365 subscriptions have back-end dependencies on some subsystems within the Microsoft 365 datacenter boundary. The dependencies require some information write-back to keep directories in sync and essentially to help enable hassle-free onboarding in a subscription opt-in for Exchange Online. For these write-backs, audit log entries show actions taken by "Microsoft Substrate Management." These audit log entries refer to create/update/delete operations executed by Exchange Online to Microsoft Entra ID. The entries are informational and don't require any action.
+
+## Related content
+
+- [Audit activity reference](reference-audit-activities.md)
+- [Access activity logs](howto-access-activity-logs.md)
+- [Customize and filter activity logs](howto-customize-filter-logs.md)

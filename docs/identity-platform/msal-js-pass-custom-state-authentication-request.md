@@ -4,9 +4,9 @@ description: Learn how to pass a custom state parameter value in authentication 
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js
+ms.custom:
 ms.date: 01/16/2020
-ms.reviewer: saeeda
+ms.reviewer: 
 ms.service: identity-platform
 
 ms.topic: how-to
@@ -38,4 +38,4 @@ The passed in state is appended to the unique GUID set by MSAL.js when sending t
 
 ## Next steps
 
-Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).

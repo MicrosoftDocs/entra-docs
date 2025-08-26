@@ -4,12 +4,12 @@ description: Learn about initializing client applications using the Microsoft Au
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-js, 
-ms.date: 02/27/2024
-ms.reviewer: saeeda
+ms.custom:
+ms.date: 05/12/2025
+ms.reviewer: 
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to learn about initializing a client application in MSAL.js to enable support for authentication and authorization in a JavaScript single-page application (SPA).
 ---
 
@@ -23,15 +23,15 @@ To learn more about the client application types and application configuration o
 
 ## Prerequisites
 
-Before initializing an application, you first need to [register it in the Microsoft Entra admin center](scenario-spa-app-registration.md), establishing a trust relationship between your application and the Microsoft identity platform.
+Before initializing an application, you first need to [register it in the Microsoft Entra admin center](scenario-spa-app-configuration.md), establishing a trust relationship between your application and the Microsoft identity platform.
 
 After registering your app, you'll need some or all of the following values that can be found in the Microsoft Entra admin center.
 
-| Value                   | Required | Description                                                                                                                                                                |
-| :---------------------- | :------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Value | Required | Description |
+| :---- | :------: | :---- |
 | Application (client) ID | Required | A GUID that uniquely identifies your application within the Microsoft identity platform.                                                                                   |
-| Authority               | Optional | The identity provider URL (the _instance_) and the _sign-in audience_ for your application. The instance and sign-in audience, when concatenated, make up the _authority_. |
-| Directory (tenant) ID   | Optional | Specify Directory (tenant) ID if you're building a line-of-business application solely for your organization, often referred to as a _single-tenant application_.          |
+| Authority               | Optional | The identity provider URL (the *instance*) and the *sign-in audience* for your application. The instance and sign-in audience, when concatenated, make up the *authority*. |
+| Directory (tenant) ID   | Optional | Specify Directory (tenant) ID if you're building a line-of-business application solely for your organization, often referred to as a *single-tenant application*.          |
 | Redirect URI            | Optional | If you're building a web app, the `redirectUri` specifies where the identity provider (the Microsoft identity platform) should return the security tokens it has issued.   |
 
 ## Initialize MSAL.js 2.x apps
@@ -115,7 +115,7 @@ Three outcomes are possible from the promise:
 
 Initialize the MSAL 1.x authentication context by instantiating a UserAgentApplication with a configuration object. The minimum required configuration property is the `clientID` of your application, shown as **Application (client) ID** on the **Overview** page of the app registration in the Microsoft Entra admin center.
 
-For authentication methods with redirect flows (loginRedirect and acquireTokenRedirect) in MSAL.js 1.2.x or earlier, you must explicitly register a callback for success or error through the `handleRedirectCallback()` method. Explicitly registering the callback is required in MSAL.js 1.2.x and earlier because redirect flows don't return promises like the methods with a pop-up experience do. Registering the callback is _optional_ in MSAL.js version 1.3.x and later.
+For authentication methods with redirect flows (loginRedirect and acquireTokenRedirect) in MSAL.js 1.2.x or earlier, you must explicitly register a callback for success or error through the `handleRedirectCallback()` method. Explicitly registering the callback is required in MSAL.js 1.2.x and earlier because redirect flows don't return promises like the methods with a pop-up experience do. Registering the callback is *optional* in MSAL.js version 1.3.x and later.
 
 ```javascript
 // Configuration object constructed
@@ -144,14 +144,6 @@ Both MSAL.js 1.x and 2.x are designed to have a single instance and configuratio
 
 Multiple instances of `UserAgentApplication` or `PublicClientApplication` aren't recommended as they can cause conflicting cache entries and behavior in the browser.
 
-## Next steps
+## Next step
 
-The MSAL.js 2.x code sample on GitHub demonstrates instantiation of a [PublicClientApplication][msal-js-publicclientapplication] with a [Configuration][msal-js-configuration] object:
-
-<!-- LINKS - External -->
-
-[msal-browser]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-browser/
-[msal-core]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/msal-core/
-[msal-js-configuration]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_browser.PublicClientApplication.html#constructor
-[msal-js-handleredirectpromise]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.PublicClientApplication.html#handleredirectpromise 
-[msal-js-publicclientapplication]: https://azuread.github.io/microsoft-authentication-library-for-js/ref/classes/_azure_msal_node.PublicClientApplication.html
+The MSAL.js 2.x code sample on GitHub demonstrates instantiation of a [PublicClientApplication][/javascript/api/@azure/msal-browser/publicclientapplication] with a configuration object

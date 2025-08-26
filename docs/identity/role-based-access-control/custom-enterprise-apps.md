@@ -1,17 +1,15 @@
 ---
 title: Create custom roles to manage enterprise apps in Microsoft Entra ID
 description: Create and assign custom Microsoft Entra roles for enterprise apps access in Microsoft Entra ID
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
-ms.date: 02/04/2022
-ms.author: rolyon
+ms.date: 01/03/2025
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-image-nochange
 ---
 
 # Create custom roles to manage enterprise apps in Microsoft Entra ID
@@ -21,8 +19,8 @@ This article explains how to create a custom role with permissions to manage ent
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
-- Microsoft Graph PowerShell SDK installed when using PowerShell
+- Privileged Role Administrator
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -41,48 +39,49 @@ Granting the update permission is done in two steps:
 1. Create a custom role with permission `microsoft.directory/servicePrincipals/appRoleAssignedTo/update`
 1. Grant users or groups permissions to manage user and group assignments to enterprise apps. This is when you can set the scope to the organization-wide level or to a single application.
 
-## Microsoft Entra admin center
+# [Admin center](#tab/admin-center)
 
 ### Create a new custom role
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+
+In the Microsoft Entra Admin Center, you can create and manage custom roles to control access and permissions for enterprise apps.
 
 >[!NOTE]
 > Custom roles are created and managed at an organization-wide level and are available only from the organization's Overview page.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select **New custom role**.
 
-    ![Add a new custom role from the roles list in Microsoft Entra ID](./media/custom-enterprise-apps/new-custom-role.png)
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
-1. On the **Basics** tab, provide "Manage user and group assignments" for the name of the role and "Grant permissions to manage user and group assignments" for the role description, and then select **Next**.
+1. On the **Basics** tab, provide "Manage user and group assignments" for the name of the role and "Grant permissions to manage user and group assignments" for the role description, then select **Next**.
 
-    ![Provide a name and description for the custom role](./media/custom-enterprise-apps/role-name-and-description.png)
+    :::image type="content" source="./media/custom-enterprise-apps/role-name-and-description.png" alt-text="Screenshot of Basics tab to provide a name and description for the custom role." lightbox="./media/custom-enterprise-apps/role-name-and-description.png":::
 
-1. On the **Permissions** tab, enter "microsoft.directory/servicePrincipals/appRoleAssignedTo/update" in the search box, and then select the checkboxes next to the desired permissions, and then select **Next**.
+1. On the **Permissions** tab, enter "microsoft.directory/servicePrincipals/appRoleAssignedTo/update" in the search box, select the checkboxes next to the desired permissions, then select **Next**.
 
-    ![Add the permissions to the custom role](./media/custom-enterprise-apps/role-custom-permissions.png)
+    :::image type="content" source="./media/custom-enterprise-apps/role-custom-permissions.png" alt-text="Screenshot of Permissions tab to add the permissions to the custom role." lightbox="./media/custom-enterprise-apps/role-custom-permissions.png":::
 
 1. On the **Review + create** tab, review the permissions and select **Create**.
 
-    ![Now you can create the custom role](./media/custom-enterprise-apps/role-custom-create.png)
+    :::image type="content" source="./media/custom-enterprise-apps/role-custom-create.png" alt-text="Screenshot of Review + create tab to create the custom role." lightbox="./media/custom-enterprise-apps/role-custom-create.png":::
 
 ### Assign the role to a user using the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Browse to **Entra ID** > **Roles & admins**.
 
 1. Select the **Manage user and group assignments** role.
 
-    ![Open Roles and Administrators and search for the custom role](./media/custom-enterprise-apps/select-custom-role.png)
+    :::image type="content" source="./media/custom-enterprise-apps/select-custom-role.png" alt-text="Screenshot of Roles and administrators page to search for the custom role." lightbox="./media/custom-enterprise-apps/select-custom-role.png":::
 
 1. Select **Add assignment**, select the desired user, and then click **Select** to add role assignment to the user.
 
-    ![Add an assignment for the custom role to the user](./media/custom-enterprise-apps/assign-user-to-role.png)
+    :::image type="content" source="./media/custom-enterprise-apps/assign-user-to-role.png" alt-text="Screenshot of Add assignment page to assign the custom role to a user." lightbox="./media/custom-enterprise-apps/assign-user-to-role.png":::
 
 #### Assignment tips
 
@@ -90,11 +89,11 @@ Granting the update permission is done in two steps:
 * To grant permissions to assignees to manage users and group access for a specific enterprise app, go to that app in Microsoft Entra ID and open in the **Roles and Administrators** list for that app. Select the new custom role and complete the user or group assignment. The assignees can manage users and group access only for the specific app.
 * To test your custom role assignment, sign in as the assignee and open an application’s **Users and groups** page to verify that the **Add user** option is enabled.
 
-    ![Verify the user permissions](./media/custom-enterprise-apps/verify-user-permissions.png)
+    :::image type="content" source="./media/custom-enterprise-apps/verify-user-permissions.png" alt-text="Screenshot of Users and groups page to verify the user permissions." lightbox="./media/custom-enterprise-apps/verify-user-permissions.png":::
 
-## PowerShell
+# [PowerShell](#tab/ms-powershell)
 
-For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
+For more detail, see [Create a custom role in Microsoft Entra ID](custom-create.md) and [Assign Microsoft Entra roles](manage-roles-portal.md).
 
 ### Create a custom role
 
@@ -134,9 +133,9 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
    -PrincipalId $user.Id -RoleDefinitionId $roleDefinition.Id
 ```
 
-## Microsoft Graph API
+# [Graph API](#tab/ms-graph)
 
-Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
+Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create a custom role in Microsoft Entra ID](custom-create.md) and [Assign Microsoft Entra roles](manage-roles-portal.md).
 
 ```http
 POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions
@@ -173,6 +172,8 @@ POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments
     "directoryScopeId": "/"
 }
 ```
+
+---
 
 ## Next steps
 

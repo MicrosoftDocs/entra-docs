@@ -5,13 +5,13 @@ customer-intent: As an independent software developer, I want to learn how to bu
 author: jricketts
 manager: martinco
 ms.service: entra
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/14/2024
 ms.author: jricketts
 ---
 # Microsoft Entra ID Guide for independent software developers
 
-[Microsoft Entra ID](~/fundamentals/whatis.md) is a cloud-based identity and access management service that enables employees to access resources. Industry analysts consistently recognize Microsoft Entra ID as a leader. It's a seven-time Leader in the [Gartner Magic Quadrant for Access Management](https://go.microsoft.com/fwlink/p/?linkid=2215126). [KuppingerCole rates Microsoft Entra ID](https://www.kuppingercole.com/reprints/62c08b4d46f70b1c19245b8f09011f5e) as positive across all dimensions in access management. Frost & Sullivan named Microsoft the [2022 Company of the Year](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE58dFV) for the Global Identity and Access Management industry. [Read stories](https://customers.microsoft.com/search?sq=%22Entra%20ID%22&ff=language%26%3EEnglish&p=6&so=story_publish_date%20desc) about some of more than 300,000 organizations that use Microsoft Entra ID.
+[Microsoft Entra ID](~/fundamentals/what-is-entra.md) is a cloud-based identity and access management service that enables employees to access resources. Industry analysts consistently recognize Microsoft Entra ID as a leader. It's a seven-time Leader in the [Gartner Magic Quadrant for Access Management](https://go.microsoft.com/fwlink/p/?linkid=2215126). [KuppingerCole rates Microsoft Entra ID](https://www.kuppingercole.com/reprints/62c08b4d46f70b1c19245b8f09011f5e) as positive across all dimensions in access management. Frost & Sullivan named Microsoft the [2022 Company of the Year](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE58dFV) for the Global Identity and Access Management industry. [Read stories](https://customers.microsoft.com/search?sq=%22Entra%20ID%22&ff=language%26%3EEnglish&p=6&so=story_publish_date%20desc) about some of more than 300,000 organizations that use Microsoft Entra ID.
 
 This article is the first in a series on how independent software developers (ISVs) can build and optimize applications for Microsoft Entra ID. In this series, you can learn more about these topics:
 
@@ -22,7 +22,7 @@ This article is the first in a series on how independent software developers (IS
 
 ## Develop with the Microsoft identity platform
 
-Applications are core to Microsoft Entra ID. When a user accesses a resource, they access that resource with an application. The [Microsoft identity platform](~/identity-platform/v2-overview.md) comprises the tools and services that enable developers to build on Microsoft Entra ID. The Microsoft identity platform starts with Microsoft Entra ID, the cloud service that provides operations like sign in, sign out, and application registration that an application requires. The Microsoft identity platform incorporates open-source [Microsoft Authentication Libraries](~/identity-platform/msal-overview.md) (MSAL) in various languages and frameworks and Microsoft Graph that provides APIs to access data and operations in Microsoft Entra ID.
+Applications are core to Microsoft Entra ID. When a user accesses a resource, they access that resource with an application. The [Microsoft identity platform](~/identity-platform/v2-overview.md) comprises the tools and services that enable developers to build on Microsoft Entra ID. The Microsoft identity platform starts with Microsoft Entra ID, the cloud service that provides operations like sign in, sign out, and application registration that an application requires. The Microsoft identity platform incorporates open-source [Microsoft Authentication Libraries (MSAL)](~/identity-platform/msal-overview.md) in various languages and frameworks and Microsoft Graph that provides APIs to access data and operations in Microsoft Entra ID.
 
 For developers, the Microsoft identity platform includes the following features.
 
@@ -32,7 +32,7 @@ For developers, the Microsoft identity platform includes the following features.
 - Ensure that applications follow best practices for security in compliance with industry standards and protocols such as OAuth 2.0.
 - Unify authentication stories across applications and experiences with single sign-on (SSO) support.
 - Streamline social identity integration with Microsoft External ID.
-- Secure data and assets with minimal plumbing code and native support for Microsoft Entra ID capabilities such as [Conditional Access](~/identity/conditional-access/overview.md) (CA), [Continuous Access Evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md) (CAE), [Identity Protection](~/id-protection/overview-identity-protection.md), and [device management](~/identity/devices/overview.md).
+- Secure data and assets with minimal plumbing code and native support for Microsoft Entra ID capabilities such as [Conditional Access](~/identity/conditional-access/overview.md) (CA), [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md), [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), and [device management](~/identity/devices/overview.md).
 - Build applications that securely protect authentication tokens while ensuring device and policy compliance enforcement. Rely on support for authentication with modern brokers such as Microsoft Authenticator or built-in operating system components such as Web Account Manager (WAM) on Windows.
 
 ## Integrate applications with Microsoft Entra ID
@@ -41,14 +41,14 @@ Applications that integrate with Microsoft Entra ID user, service, or group iden
 
 An application makes requests to a tenant endpoint to get tokens that identify users or that resource APIs can use to authorize resource access. Application identities within Microsoft Entra ID allow applications to request tokens from a Microsoft Entra ID tenant while providing users the right level of context about who is trying to authenticate them.
 
-While most enterprises require only one Microsoft Entra ID tenant, scenarios may require organizations to have multiple tenants to meet their business goals. A large enterprise may include multiple independent business units that could require coordination and collaboration across the whole enterprise. Cities in a region or schools in a district may have similar requirements. In these scenarios, each unit could have its own tenant with its own configuration and policies. Because Microsoft Entra ID cloud hosts tenants, organizations can set up [cross-tenant collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md) with minimal friction.
+While most enterprises require only one Microsoft Entra ID tenant, scenarios may require organizations to have multiple tenants to meet their business goals. A large enterprise may include multiple independent business units that could require coordination and collaboration across the whole enterprise. Cities in a region or schools in a district may have similar requirements. In these scenarios, each unit could have its own tenant with its own configuration and policies. Because Microsoft Entra ID cloud hosts tenants, organizations can set up [cross-tenant collaboration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) with minimal friction.
 
 Microsoft Entra ID supports the following among a [wide range of protocols](auth-sync-overview.md).
 
 - [OAuth 2.0](auth-oauth2.md) is the industry standard for authorization. Applications request an access token with the OAuth 2.0 protocol to get authorization for an application to access a protected resource.
-- [OpenID Connect](auth-oidc.md) (OIDC) is an interoperable authentication standard built on top of OAuth 2.0. Applications request an ID token with the OIDC protocol to authenticate the current user.
-- [Security Assertion Markup Language](auth-saml.md) (SAML 2.0) is an authentication standard. Applications request a SAML assertion, also referred to as a SAML token, from Microsoft Entra ID to exchange authentication and authorization data between an app and Microsoft Entra ID. Applications use SAML to authenticate the current user.
-- [System for Cross-Domain Identity Management](sync-scim.md) (SCIM) isn't for authentication and authorization. SCIM is a provisioning protocol that automates user and group information synchronization between Microsoft Entra ID and connecting applications. The synchronization provisions users and groups to an application.
+- [OpenID Connect (OIDC)](auth-oidc.md) is an interoperable authentication standard built on top of OAuth 2.0. Applications request an ID token with the OIDC protocol to authenticate the current user.
+- [Security Assertion Markup Language (SAML)](auth-saml.md) 2.0 is an authentication standard. Applications request a SAML assertion, also referred to as a SAML token, from Microsoft Entra ID to exchange authentication and authorization data between an app and Microsoft Entra ID. Applications use SAML to authenticate the current user.
+- [System for Cross-Domain Identity Management (SCIM)](sync-scim.md) isn't for authentication and authorization. SCIM is a provisioning protocol that automates user and group information synchronization between Microsoft Entra ID and connecting applications. The synchronization provisions users and groups to an application.
 
 The core operations that applications perform with Microsoft Entra ID are requesting and processing tokens. In the past, having the user identify themselves with a username and a password were often sufficient for an identity provider like Microsoft Entra ID to issue a token to an app. This token answered the question, "Who is the user and what can the app access?" Today, a more secure approach to verify identity accounts for more signals is:
 
@@ -62,7 +62,7 @@ Microsoft Entra ID customers can use features such as [Conditional Access](~/ide
 
 Developers who build applications that require user identity handling don't need to write code to account for this complexity in issuing tokens. Built-in MSAL capabilities enable authentication request processing. With Conditional Access enabled, when an application requests a token, Microsoft Entra ID ensures policy enforcement. It verifies requests against policies such as the user location (for example, whether they reside within the corporate network) or evaluating risk signals for the user. User risk evaluation may require more user interaction like multifactor authentication (MFA). After Microsoft Entra ID verifies compliance with policy constraints, it issues a token. When it can't verify compliance, Microsoft Entra ID doesn't issue a token to the app and provides the user with context as to why they can't access a resource.
 
-As Conditional Access policies are now  more sophisticated. There's a broad set of signals that determines whether a user or service should receive a token. For example, it might be important to determine if a mobile device uses [Mobile Application Management](/mem/intune/apps/app-management#mobile-application-management-mam-basics) (MAM), whether [Intune manages](/mem/intune/apps/app-protection-policy) a Windows PC from within a desktop app. Or, you might need to protect tokens by binding them to a request's originating device. This diligence helps to ensure compliance and security with minimal friction to the developer. Microsoft libraries offer the necessary scaffolding while maintaining flexibility in responding to specific policy requirements.
+As Conditional Access policies are now  more sophisticated. There's a broad set of signals that determines whether a user or service should receive a token. For example, it might be important to determine if a mobile device uses [Mobile Application Management (MAM)](/mem/intune/apps/app-management#mobile-application-management-mam-basics), whether [Intune manages](/mem/intune/apps/app-protection-policy) a Windows PC from within a desktop app. Or, you might need to protect tokens by binding them to a request's originating device. This diligence helps to ensure compliance and security with minimal friction to the developer. Microsoft libraries offer the necessary scaffolding while maintaining flexibility in responding to specific policy requirements.
 
 ## Authenticate and authorize with Microsoft Entra ID
 
@@ -94,7 +94,7 @@ You can build applications that delegate identity and access management to Micro
 |[MSAL Go](https://github.com/AzureAD/microsoft-authentication-library-for-go)|Windows, macOS, Linux|
 |[MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java)|Windows, macOS, Linux|
 |[MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)|JavaScript/TypeScript frameworks such as Vue.js, Ember.js, or Durandal.js|
-|[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)|.NET, .NET Framework, Xamarin Android, Xamarin iOS|
+|[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)|.NET, .NET Framework, .NET for Android, .NET for tvOS|
 |[MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node)|Web apps with Express, desktop apps with Electron, Cross-platform console apps|
 |[MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)|Windows, macOS, Linux|
 |[MSAL React](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react)|Single-page apps with React and React-based libraries (Next.js, Gatsby.js)|
@@ -107,9 +107,9 @@ Across all available platforms, the unified MSAL authentication framework seamle
 
 ## Access other resources
 
-Applications often need more than authentication and authorization (such as access to the tenant's directory data). Access may include getting attributes of the user, groups, group members, applications, governance, and identity protection.
+Applications often need more than authentication and authorization (such as access to the tenant's directory data). Access may include getting attributes of the user, groups, group members, applications, and governance.
 
-[Microsoft Graph](https://developer.microsoft.com/graph) provides access to the tenant's [identity and access](/graph/api/resources/azure-ad-overview?view=graph-rest-1.0&preserve-view=true), [users](/graph/api/resources/users?view=graph-rest-1.0&preserve-view=true), [groups](/graph/api/resources/groups-overview?view=graph-rest-1.0&tabs=http&preserve-view=true), and [applications](/graph/api/resources/application?view=graph-rest-1.0&preserve-view=true). Microsoft Graph is the gateway to data and intelligence in Microsoft 365. You can use its unified programmability model to access the tremendous amount of data in Microsoft 365, Windows, and Enterprise Mobility + Security (EMS).
+[Microsoft Graph](https://developer.microsoft.com/graph) provides access to the tenant's [identity and access](/graph/api/resources/identity-network-access-overview?view=graph-rest-1.0), [users](/graph/api/resources/users?view=graph-rest-1.0&preserve-view=true), [groups](/graph/api/resources/groups-overview?view=graph-rest-1.0&tabs=http&preserve-view=true), and [applications](/graph/api/resources/application?view=graph-rest-1.0&preserve-view=true). Microsoft Graph is the gateway to data and intelligence in Microsoft 365. You can use its unified programmability model to access the tremendous amount of data in Microsoft 365, Windows, and Enterprise Mobility + Security (EMS).
 
 ## Next steps
 

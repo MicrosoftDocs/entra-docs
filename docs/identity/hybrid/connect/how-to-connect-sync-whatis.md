@@ -2,16 +2,16 @@
 title: 'Microsoft Entra Connect Sync: Understand and customize synchronization'
 description: Explains how Microsoft Entra Connect Sync works and how to customize.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 
 ms.assetid: ee4bf802-045b-4da0-986e-90aba2de58d6
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---
@@ -27,7 +27,7 @@ The sync service consists of two components, the on-premises **Microsoft Entra C
 >
 > To find out if you are already eligible for cloud sync, please verify your requirements in [this wizard](https://admin.microsoft.com/adminportal/home?Q=setupguidance#/modernonboarding/identitywizard).
 >
-> To learn more about cloud sync, please read [this article](/azure/active-directory/cloud-sync/what-is-cloud-sync), or watch this [short video](https://www.microsoft.com/videoplayer/embed/RWJ8l5).
+> To learn more about cloud sync, please read [this article](/azure/active-directory/cloud-sync/what-is-cloud-sync), or watch this [short video](https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d).
 >
 
 

@@ -1,15 +1,14 @@
 ---
 title: Bulk remove group members by uploading a CSV file
 description: Remove group members in bulk operations by using a comma-separated values (CSV) file.
-
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
-ms.date: 11/10/2023
+manager: pmwongera
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro
+ms.custom: it-pro, sfi-image-nochange
 ms.reviewer: jeffsta
 ---
 
@@ -40,11 +39,9 @@ The rows in a downloaded CSV template are:
 
 ## Bulk remove group members
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select **Microsoft Entra ID**.
-1. Select **Groups** > **All groups**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 1. Open the group from which you're removing members and then select **Members**.
 1. On the **Members** page, select **Remove members**.
 1. On the **Bulk remove group members** page, select **Download** to get the CSV file template with required group member properties.
@@ -60,6 +57,8 @@ The rows in a downloaded CSV template are:
 1. When your file passes validation, select **Submit** to start the bulk operation that removes the group members from the group.
 1. When the removal operation finishes, a notification states that the bulk operation succeeded.
 
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk removal service limits](#bulk-removal-service-limits).
+
 ## Check removal status
 
 You can see the status of all your pending bulk requests on the **Bulk operation results** page.
@@ -70,7 +69,7 @@ For details about each line item within the bulk operation, select the values un
 
 ## Bulk removal service limits
 
-Each bulk activity to remove a list of group members from can run for up to one hour. This time frame enables removal of a list of at least 40,000 members.
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

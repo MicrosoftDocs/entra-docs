@@ -2,14 +2,14 @@
 title: Join a RHEL VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a Red Hat Enterprise Linux virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
 ms.service: entra-id
 ms.subservice: domain-services
-ms.custom: devx-track-linux
+ms.custom: devx-track-linux, linux-related-content
 ms.topic: how-to
-ms.date: 09/23/2023
+ms.date: 02/13/2025
 ms.author: justinha
 ---
 # Join a Red Hat Enterprise Linux virtual machine to a Microsoft Entra Domain Services managed domain
@@ -75,7 +75,7 @@ When done, save and exit the *hosts* file using the `:wq` command of the editor.
 
 > [!IMPORTANT]
 > Keep in consideration Red Hat Enterprise Linux 6.X and  Oracle Linux 6.x is already EOL. 
-> RHEL 6.10 has available [ELS support](https://www.redhat.com/en/resources/els-datasheet), which [will end on 06/2024]( https://access.redhat.com/product-life-cycles/?product=Red%20Hat%20Enterprise%20Linux,OpenShift%20Container%20Platform%204).
+> RHEL 6.10 has available [ELS support](https://www.redhat.com/en/resources/els-datasheet), which [ended on 06/2024]( https://access.redhat.com/product-life-cycles/?product=Red%20Hat%20Enterprise%20Linux,OpenShift%20Container%20Platform%204).
 
 ## Install required packages
 
@@ -88,7 +88,7 @@ sudo yum install adcli sssd authconfig krb5-workstation
 
 Now that the required packages are installed on the VM, join the VM to the managed domain.
 
-1. Use the `adcli info` command to discover the managed domain. The following example discovers the realm *ADDDSCONTOSO.COM*. Specify your own managed domain name in ALL UPPERCASE:
+1. Use the `adcli info` command to discover the managed domain. The following example discovers the realm *AADDSCONTOSO.COM*. Specify your own managed domain name in ALL UPPERCASE:
 
     ```bash
     sudo adcli info aaddscontoso.com
@@ -97,9 +97,9 @@ Now that the required packages are installed on the VM, join the VM to the manag
 
     * Make sure that the domain is reachable from the VM. Try `ping aaddscontoso.com` to see if a positive reply is returned.
     * Check that the VM is deployed to the same, or a peered, virtual network in which the managed domain is available.
-    * Confirm that the DNS server settings for the virtual network have been updated to point to the domain controllers of the managed domain.
+    * Confirm that the DNS server settings for the virtual network are updated to point to the domain controllers of the managed domain.
 
-1. First, join the domain using the `adcli join` command, this command also creates the keytab to authenticate the machine. Use a user account that's a part of the managed domain.
+1. First, join the domain using the `adcli join` command. This command also creates the keytab to authenticate the machine. Use a user account that's a part of the managed domain.
 
     ```bash
     sudo adcli join aaddscontoso.com -U contosoadmin
@@ -213,7 +213,7 @@ By default, users can only sign in to a VM using SSH public key-based authentica
     ```
 
 
-# [RHEL 7](#tab/rhel7) 
+# [RHEL 7/ RHEL 8/ RHEL 9](#tab/rhel7) 
 
 ## Install required packages
 
@@ -236,7 +236,7 @@ Now that the required packages are installed on the VM, join the VM to the manag
 
     * Make sure that the domain is reachable from the VM. Try `ping aaddscontoso.com` to see if a positive reply is returned.
     * Check that the VM is deployed to the same, or a peered, virtual network in which the managed domain is available.
-    * Confirm that the DNS server settings for the virtual network have been updated to point to the domain controllers of the managed domain.
+    * Confirm that the DNS server settings for the virtual network are updated to point to the domain controllers of the managed domain.
 
 1. Now initialize Kerberos using the `kinit` command. Specify a user that's a part of the managed domain. If needed, [add a user account to a group in Microsoft Entra ID](/azure/active-directory/fundamentals/how-to-manage-groups).
 
@@ -252,7 +252,7 @@ Now that the required packages are installed on the VM, join the VM to the manag
     sudo realm join --verbose AADDSCONTOSO.COM -U 'contosoadmin@AADDSCONTOSO.COM'
     ```
 
-It takes a few moments to join the VM to the managed domain. The following example output shows the VM has successfully joined to the managed domain:
+It takes a few moments to join the VM to the managed domain. The following example output shows the VM successfully joined to the managed domain:
 
 ```output
 Successfully enrolled machine in realm
@@ -304,7 +304,7 @@ To grant members of the *AAD DC Administrators* group administrative privileges 
 
 ## Sign in to the VM using a domain account
 
-To verify that the VM has been successfully joined to the managed domain, start a new SSH connection using a domain user account. Confirm that a home directory has been created, and that group membership from the domain is applied.
+To verify that the VM successfully joined to the managed domain, start a new SSH connection using a domain user account. Confirm that a home directory is created, and that group membership from the domain is applied.
 
 1. Create a new SSH connection from your console. Use a domain account that belongs to the managed domain using the `ssh -l` command, such as `contosoadmin@aaddscontoso.com` and then enter the address of your VM, such as *rhel.aaddscontoso.com*. If you use the Azure Cloud Shell, use the public IP address of the VM rather than the internal DNS name.
 

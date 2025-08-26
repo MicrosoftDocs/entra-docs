@@ -5,8 +5,8 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-api, devx-track-dotnet
-ms.date: 08/22/2022
+ms.custom:
+ms.date: 09/24/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -56,16 +56,7 @@ ms.topic: concept-article
 > > [!div class="sxs-lookup"]
 > > > [!NOTE]
 > > > `Enter_the_Supported_Account_Info_Here`
-> 
-> #### Step 3: Admin consent
-> 
-> If you try to run the application at this point, you'll receive an *HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation." This error happens because any app-only permission requires a Global Administrator of your directory to give consent to your application. Select one of the following options, depending on your role.
-> 
-> ##### Global tenant administrator
-> 
-> If you're a Global Administrator, go to the **API Permissions** page and select **Grant admin consent for Enter_the_Tenant_Name_Here**.
-> > [!div id="apipermissionspage"]
-> > [Go to the API Permissions page]()
+>
 > 
 > ##### Standard user
 > 
@@ -79,11 +70,8 @@ ms.topic: concept-article
 > 
 > #### Step 4: Run the application
 > 
-> If you're using Visual Studio or Visual Studio for Mac, press **F5** to run the application. Otherwise, run the application via command prompt, console, or terminal:
+> If you're using Visual Studio, press **F5** to run the application. Otherwise, run the application via command prompt, console, or terminal:
 >
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
-> 
 > ```dotnetcli
 > cd {ProjectFolder}\1-Call-MSGraph\daemon-console
 > dotnet run
@@ -160,4 +148,4 @@ ms.topic: concept-article
 > To learn more about daemon applications, see the scenario overview:
 > 
 > > [!div class="nextstepaction"]
-> > [Daemon application that calls web APIs](scenario-daemon-overview.md)
+> > [Daemon application that calls web APIs](scenario-daemon-app-registration.md)

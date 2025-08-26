@@ -1,22 +1,22 @@
 ---
-title: PowerShell sample - Export apps with secrets and certificates expiring beyond the required date in Microsoft Entra tenant.
+title: 'PowerShell sample: Export apps with secrets and certificates expiring beyond the required date'
 description: PowerShell example that exports all apps with secrets and certificates expiring beyond the required date for the specified apps in your Microsoft Entra tenant.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: sample
-ms.date: 01/15/2024
+ms.date: 01/23/2025
 ms.author: jomondi
 ms.reviewer: mifarca
 ---
 
-# Export apps with secrets and certificates expiring beyond the required date
+# PowerShell sample: Export apps with secrets and certificates expiring beyond the required date
 
-This PowerShell script example exports all app registrations secrets and certificates expiring beyond a required period for the specified apps from your directory in a CSV file non-interactively.
+This PowerShell script example exports all app registrations' secrets and certificates expiring beyond a required period. It performs this task for the specified apps from your directory. The script runs non-interactively. The output is saved in a CSV file.
 
 [!INCLUDE [quickstarts-free-trial-note](~/includes/azure-docs-pr/quickstarts-free-trial-note.md)]
 
@@ -184,9 +184,9 @@ $Logs | Export-Csv $Path -NoTypeInformation -Encoding UTF8
 
 ## Script explanation
 
-This script is working non-interactively. The admin using it will need to change the values in the "#PARAMETERS TO CHANGE" section with their own App ID, Application Secret, Tenant Name, the period for the apps credentials expiration and the Path where the CSV will be exported.
-This script uses the [Client_Credential Oauth Flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md)
-The function "RefreshToken" will build the access token based on the values of the parameters modified by the admin.
+This script is working non-interactively. The admin using it needs to change the values in the "#PARAMETERS TO CHANGE" section. They need to enter their own App ID, Application Secret, and Tenant Name. They also need to specify the period for the apps' credentials expiration. Finally, they need to set the path where the CSV is exported.
+
+This script uses the [Client_Credential Oauth Flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) The function "RefreshToken" builds the access token based on the values of the parameters modified by the admin.
 
 The "Add-Member" command is responsible for creating the columns in the CSV file.
 
@@ -196,6 +196,6 @@ The "Add-Member" command is responsible for creating the columns in the CSV file
 
 ## Next steps
 
-For more information on the Azure AD PowerShell module, see [Azure AD PowerShell module overview](/powershell/azure/active-directory/overview).
+For more information on the Microsoft Graph PowerShell module, see [Microsoft Graph PowerShell overview](/powershell/microsoftgraph/overview).
 
-For other PowerShell examples for Application Management, see [Azure AD PowerShell examples for Application Management](../app-management-powershell-samples.md).
+For other PowerShell examples for Application Management, see [Microsoft Graph PowerShell examples for Application Management](../app-management-powershell-samples.md).

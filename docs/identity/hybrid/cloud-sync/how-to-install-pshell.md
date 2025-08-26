@@ -2,13 +2,13 @@
 title: 'Install the Microsoft Entra Connect cloud provisioning agent using a command-line interface (CLI) and PowerShell'
 description: Learn how to install the Microsoft Entra Connect cloud provisioning agent by using PowerShell cmdlets.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -30,12 +30,11 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 
 ## Install the Microsoft Entra provisioning agent by using PowerShell cmdlets 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Select **Manage**.
- 4. Click **Download provisioning agent**
- 5. On the right, click **Accept terms and download**.
+ 4. Select **Download provisioning agent**
+ 5. On the right, select **Accept terms and download**.
  6. For the purposes of these instructions, the agent was downloaded to the C:\temp folder.
  7. Install ProvisioningAgent in quiet mode.
        ```
@@ -49,7 +48,7 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
        ```
  9. Connect to Microsoft Entra ID by using an account with the hybrid identity role. You can customize this section to fetch a password from a secure store. 
        ```
-       $hybridAdminPassword = ConvertTo-SecureString -String "Hybrid identity admin password" -AsPlainText -Force 
+       $hybridAdminPassword = ConvertTo-SecureString -String "Hybrid Identity Administrator password" -AsPlainText -Force 
     
        $hybridAdminCreds = New-Object System.Management.Automation.PSCredential -ArgumentList ("HybridIDAdmin@contoso.onmicrosoft.com", $hybridAdminPassword) 
        
@@ -81,18 +80,18 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
     
        Add-AADCloudSyncADDomain -DomainName contoso.com -Credential $contosoDomainAdminCreds -PreferredDomainControllers $preferredDCs 
        ```
- 14. Repeat the previous step to add more domains. Provide the account names and domain names of the respective domains.
+ 14. To add more domains, repeat the previous step. Provide the account names and domain names of the respective domains.
  15. Restart the service.
        ```
        Restart-Service -Name AADConnectProvisioningAgent  
        ```
- 16. Go to the Microsoft Entra admin center to create the cloud sync configuration.
+ 16. To create the cloud sync configuration, go to the Microsoft Entra admin center.
 
 ## Provisioning agent gMSA PowerShell cmdlets
-Now that you've installed the agent, you can apply more granular permissions to the gMSA. For information and step-by-step instructions on how to configure the permissions, see [Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md).
+After you install the agent, you can apply more granular permissions to the gMSA. For information and step-by-step instructions on how to configure the permissions, see [Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets](how-to-gmsa-cmdlets.md).
 
 ## Installing against US government cloud
-By default, the Microsoft Entra provisioning agent installs against the default Azure cloud environment.  If you are installing the agent for use in the US government cloud do the following:
+By default, the Microsoft Entra provisioning agent installs against the default Azure cloud environment. If you're installing the agent for use in the US government cloud, do the following:
 
 - In step #8, add **ENVIRONMENTNAME=AzureUSGovernment** to the command line like the example.
     ```

@@ -2,13 +2,14 @@
 title: Troubleshoot custom security attributes in Microsoft Entra ID
 description: Learn how to troubleshoot custom security attributes in Microsoft Entra ID.
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: troubleshooting
-ms.date: 11/15/2023
+ms.date: 11/27/2024
 ms.collection: M365-identity-device-management
+ms.custom: sfi-image-nochange
 ---
 
 # Troubleshoot custom security attributes in Microsoft Entra ID
@@ -21,7 +22,9 @@ When signed in to the [Microsoft Entra admin center](https://entra.microsoft.com
 
 **Cause**
 
-You don't have permissions to add an attribute set. To add an attribute set and custom security attributes, you must be assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) role. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+You don't have permissions to add an attribute set. To add an attribute set and custom security attributes, you must be assigned the [Attribute Definition Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-definition-administrator) role. 
+
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 **Solution**
 
@@ -38,17 +41,21 @@ This account does not have the necessary admin privileges to change custom secur
 
 **Cause**
 
-You don't have permissions to assign custom security attributes. To assign custom security attributes, you must be assigned the [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+You don't have permissions to assign custom security attributes. To assign custom security attributes, you must be assigned the [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role.
+
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 **Solution**
 
 Make sure that you're assigned the [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role at either the tenant scope or attribute set scope. For more information, see [Manage access to custom security attributes in Microsoft Entra ID](custom-security-attributes-manage.md).
 
-## Symptom - Cannot filter custom security attributes for users or applications
+## Symptom - Can't filter custom security attributes for users or applications
 
 **Cause 1**
 
-You don't have permissions to filter custom security attributes. To read and filter custom security attributes for users or enterprise applications, you must be assigned the [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+You don't have permissions to filter custom security attributes. To read and filter custom security attributes for users or enterprise applications, you must be assigned the [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) or [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) role. 
+
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 **Solution 1**
 
@@ -73,7 +80,7 @@ There are no custom security attributes defined and assigned yet for your tenant
 
 Add and assign custom security attributes to users or enterprise applications. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](custom-security-attributes-add.md), [Assign, update, list, or remove custom security attributes for a user](~/identity/users/users-custom-security-attributes.md), or [Assign, update, list, or remove custom security attributes for an application](~/identity/enterprise-apps/custom-security-attributes-apps.md).
 
-## Symptom - Custom security attributes cannot be deleted
+## Symptom - Custom security attributes can't be deleted
 
 **Cause**
 
@@ -83,9 +90,9 @@ You can only activate and deactivate custom security attribute definitions. Dele
 
 Deactivate the custom security attributes you no longer need. For more information, see [Add or deactivate custom security attribute definitions in Microsoft Entra ID](custom-security-attributes-add.md).
 
-## Symptom - Cannot add a role assignment at an attribute set scope using PIM
+## Symptom - Can't add a role assignment at an attribute set scope using PIM
 
-When you try to add an eligible Microsoft Entra role assignment using [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), you cannot set the scope to an attribute set.
+When you try to add an eligible Microsoft Entra role assignment using [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md), you can't set the scope to an attribute set.
 
 **Cause**
 
@@ -113,7 +120,7 @@ ErrorCode: Authorization_RequestDenied
 
 **Cause 1**
 
-You are using Graph Explorer and you haven't consented to the required custom security attribute permissions to make the API call.
+You're using Graph Explorer and you haven't consented to the required custom security attribute permissions to make the API call.
 
 **Solution 1**
 
@@ -123,7 +130,9 @@ Open the Permissions panel, select the appropriate custom security attribute per
 
 **Cause 2**
 
-You aren't assigned the required custom security attribute role to make the API call. By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+You aren't assigned the required custom security attribute role to make the API call. 
+
+[!INCLUDE [security-attributes-roles](../includes/security-attributes-roles.md)]
 
 **Solution 2**
 
@@ -131,7 +140,7 @@ Make sure that you're assigned the required custom security attribute role. For 
 
 **Cause 3**
 
-You are trying to remove a single-valued custom security attribute assignment by setting it to `null` using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) or [Update-MgServicePrincipal](/powershell/module/microsoft.graph.applications/update-mgserviceprincipal) command.
+You're trying to remove a single-valued custom security attribute assignment by setting it to `null` using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) or [Update-MgServicePrincipal](/powershell/module/microsoft.graph.applications/update-mgserviceprincipal) command.
 
 **Solution 3**
 

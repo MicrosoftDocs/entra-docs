@@ -3,10 +3,11 @@ title: Event enrichment in Microsoft 365 enriched logs
 description: Global Secure Access includes Microsoft Entra Private Access and Microsoft Entra Internet Access. This article references event enrichment in Microsoft 365 enriched logs.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: reference
-ms.date: 03/04/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 ---
 
 # Event enrichment in Microsoft 365 enriched logs
@@ -15,7 +16,7 @@ Event enrichment uses Microsoft 365 enriched logs to bring events across differe
 
 In the future, our coverage of events is set to broaden, increasing the scope of the security narrative.
 
-## SharePoint Online (Preview)
+## SharePoint Online (preview)
 
 | #   | Workload   | Operation |
 |----------|-----------|------------|
@@ -33,7 +34,7 @@ In the future, our coverage of events is set to broaden, increasing the scope of
 | 12 | SharePoint | `ListItemRecycled` |
 
 
-## Teams (Preview)
+## Teams (limited preview)
 
 | #   | Workload   | Operation |
 |----------|-----------|------------|
@@ -46,7 +47,7 @@ In the future, our coverage of events is set to broaden, increasing the scope of
 | 7 | Teams | `TeamsAdminAction` |
 
 
-## Exchange (Limited Preview)
+## Exchange (limited preview)
 
 | #   | Workload   | Operation |
 |----------|-----------|------------|

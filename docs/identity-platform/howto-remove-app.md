@@ -2,7 +2,7 @@
 title: "How to: Remove a registered app from the Microsoft identity platform"
 description: Learn how to remove an application registered with the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
 ms.date: 06/21/2023
@@ -28,7 +28,6 @@ In the following sections, you learn how to:
 
 ## Remove an application authored by you or your organization
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Applications that you or your organization have registered are represented by both an application object and service principal object in your tenant. For more information, see [Application objects and service principal objects](./app-objects-and-service-principals.md).
 
@@ -37,7 +36,7 @@ Applications that you or your organization have registered are represented by bo
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
-1. Browse to **Identity** > **Applications** > **App registrations** and then select the application that you want to configure. Once you've selected the app, you see the application's **Overview** page.
+1. Browse to **Entra ID** > **App registrations** and then select the application that you want to configure. Once you've selected the app, you see the application's **Overview** page.
 1. From the **Overview** page, select **Delete**.
 1. Read the deletion consequences.  Check the box if one appears at the bottom of the pane.
 1. Select **Delete** to confirm that you want to delete the app.
@@ -46,7 +45,7 @@ Applications that you or your organization have registered are represented by bo
 
 If you're viewing **App registrations** in the context of a tenant, a subset of the applications that appear under the **All apps** tab are from another tenant and were registered into your tenant during the consent process. More specifically, they're represented by only a service principal object in your tenant, with no corresponding application object. For more information on the differences between application and service principal objects, see [Application and service principal objects in Microsoft Entra ID](./app-objects-and-service-principals.md).
 
-In order to remove an application’s access to your directory (after having granted consent), the company administrator must remove its service principal. The administrator must have Global Administrator access. To learn how to delete a service principal, see [Delete an enterprise application](~/identity/enterprise-apps/delete-application-portal.md).
+In order to remove an application’s access to your directory (after having granted consent), the company administrator must remove its service principal. The administrator must have at least the [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) access. To learn how to delete a service principal, see [Delete an enterprise application](~/identity/enterprise-apps/delete-application-portal.md).
 
 ## Next steps
 

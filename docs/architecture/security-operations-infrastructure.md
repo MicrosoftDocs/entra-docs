@@ -5,7 +5,7 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 09/06/2022
 ms.author: jricketts
 ---
@@ -24,7 +24,7 @@ Infrastructure has many components where vulnerabilities can occur if not proper
 
 Monitoring and alerting the components of your authentication infrastructure is critical. Any compromise can lead to a full compromise of the whole environment. Many enterprises that use Microsoft Entra ID operate in a hybrid authentication environment. Cloud and on-premises components should be included in your monitoring and alerting strategy. Having a hybrid authentication environment also introduces another attack vector to your environment.
 
-We recommend all the components be considered Control Plane / Tier 0 assets, and the accounts used to manage them. Refer to [Securing privileged assets](/security/compass/overview) (SPA) for guidance on designing and implementing your environment. This guidance includes recommendations for each of the hybrid authentication components that could potentially be used for a Microsoft Entra tenant.
+We recommend all the components be considered Control Plane / Tier 0 assets, and the accounts used to manage them. Refer to [Securing privileged assets (SPA)](/security/compass/overview) for guidance on designing and implementing your environment. This guidance includes recommendations for each of the hybrid authentication components that could potentially be used for a Microsoft Entra tenant.
 
 A first step in being able to detect unexpected events and potential attacks is to establish a baseline. For all on-premises components listed in this article, see [Privileged access deployment](/security/compass/privileged-access-deployment), which is part of the Securing privileged assets (SPA) guide.
 
@@ -52,7 +52,7 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Microsoft Defender for Cloud Apps](/cloud-app-security/what-is-cloud-app-security)** – Enables you to discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 The remainder of this article describes what to monitor and alert on. It is organized by the type of threat. Where there are pre-built solutions, you'll find links to them, after the table. Otherwise, you can build alerts using the preceding tools.
 
@@ -203,7 +203,7 @@ For information on what and how to monitor configuration information refer to:
 | What to monitor | Resources |
 | - | - |
 | Hash synchronization validation|See [Troubleshoot password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/tshoot-connect-password-hash-synchronization.md) |
- Modifications to the connector spaces|see [Troubleshoot Microsoft Entra Connect objects and attributes](/troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes) |
+| Modifications to the connector spaces|see [Troubleshoot Microsoft Entra Connect objects and attributes](/troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes) |
 | Modifications to rules you configured| Monitor changes to: filtering, domain and OU, attribute, and group-based changes |
 | SQL and MSDE changes | Changes to logging parameters and addition of custom functions |
 
@@ -281,8 +281,8 @@ Monitor changes to Conditional Access policies using the following information:
 | New Conditional Access Policy created by non-approved actors|Medium | Microsoft Entra audit logs|Activity: Add Conditional Access policy<br><br>Category: Policy<br><br>Initiated by (actor): User Principal Name | Monitor and alert on Conditional Access changes. Is Initiated by (actor): approved to make changes to Conditional Access?<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ConditionalAccessPolicyModifiedbyNewUser.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
 |Conditional Access Policy removed by non-approved actors|Medium|Microsoft Entra audit logs|Activity: Delete Conditional Access policy<br><br>Category: Policy<br><br>Initiated by (actor): User Principal Name|Monitor and alert on Conditional Access changes. Is Initiated by (actor): approved to make changes to Conditional Access?<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ConditionalAccessPolicyModifiedbyNewUser.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
 |Conditional Access Policy updated by non-approved actors|Medium|Microsoft Entra audit logs|Activity: Update Conditional Access policy<br><br>Category: Policy<br><br>Initiated by (actor): User Principal Name|Monitor and alert on Conditional Access changes. Is Initiated by (actor): approved to make changes to Conditional Access?<br><br>Review Modified Properties and compare “old” vs “new” value<br>[Microsoft Sentinel template](https://github.com/Azure/Azure-Sentinel/blob/master/Detections/AuditLogs/ConditionalAccessPolicyModifiedbyNewUser.yaml)<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure) |
-|Removal of a user from a group used to scope critical Conditional Access policies|Medium|Microsoft Entra audit logs|Activity: Remove member from group<br><br>Category: GroupManagement<br><br>Target: User Principal Name|Montior and Alert for groups used to scope critical Conditional Access Policies.<br><br>"Target" is the user that has been removed.<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
-|Addition of a user to a group used to scope critical Conditional Access policies|Low|Microsoft Entra audit logs|Activity: Add member to group<br><br>Category: GroupManagement<br><br>Target: User Principal Name|Montior and Alert for groups used to scope critical Conditional Access Policies.<br><br>"Target" is the user that has been added.<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+|Removal of a user from a group used to scope critical Conditional Access policies|Medium|Microsoft Entra audit logs|Activity: Remove member from group<br><br>Category: GroupManagement<br><br>Target: User Principal Name|Monitor and Alert for groups used to scope critical Conditional Access Policies.<br><br>"Target" is the user that has been removed.<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
+|Addition of a user to a group used to scope critical Conditional Access policies|Low|Microsoft Entra audit logs|Activity: Add member to group<br><br>Category: GroupManagement<br><br>Target: User Principal Name|Monitor and Alert for groups used to scope critical Conditional Access Policies.<br><br>"Target" is the user that has been added.<br><br>[Sigma rules](https://github.com/SigmaHQ/sigma/tree/master/rules/cloud/azure)|
 
 ## Next steps
 

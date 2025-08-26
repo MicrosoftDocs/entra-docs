@@ -1,15 +1,15 @@
 ---
 title: Configure group claims for applications by using Microsoft Entra ID
 description: Get information on how to configure group claims for use with Microsoft Entra ID.
-
 ms.reviewer: paulgarn
-manager: amycolannino
+manager: mwongerapk
 ms.subservice: hybrid-connect
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.author: billmath
-author: billmath
+ms.date: 04/09/2025
+ms.author: jomondi
+author: omondiatieno
+ms.custom: sfi-ropc-nochange, sfi-image-nochange
 ---
 
 # Configure group claims for applications by using Microsoft Entra ID
@@ -21,12 +21,12 @@ Microsoft Entra ID can provide a user's group membership information in tokens f
 - Groups identified by their Display Name attribute for cloud-only groups
 
 > [!IMPORTANT]
-> The number of groups emitted in a token is limited to 150 for SAML assertions and 200 for JWT, including nested groups. In larger organizations, the number of groups where a user is a member might exceed the limit that Microsoft Entra ID will add to a token. Exceeding a limit can lead to unpredictable results. For workarounds to these limits, read more in [Important caveats for this functionality](#important-caveats-for-this-functionality).
+> The number of groups emitted in a token is limited to 150 for SAML assertions and 200 for JWT, including nested groups. In larger organizations, the number of groups where a user is a member might exceed the limit that Microsoft Entra ID applies before emitting groups claims in a token. Exceeding this limit will cause Microsoft Entra ID completely omit sending group claims in the token. For workarounds to these limits, read more in [Important caveats for this functionality](#important-caveats-for-this-functionality).
 
 ## Important caveats for this functionality
 
 - Support for use of `sAMAccountName` and security identifier (SID) attributes synced from on-premises is designed to enable moving existing applications from Active Directory Federation Services (AD FS) and other identity providers. Groups managed in Microsoft Entra ID don't contain the attributes necessary to emit these claims.
-- In order to avoid the number of groups limit if your users have large numbers of group memberships, you can restrict the groups emitted in claims to the relevant groups for the application. Read more about emitting groups assigned to the application for [JWT tokens](~/identity-platform/optional-claims.md#configure-groups-optional-claims) and [SAML tokens](#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration). If assigning groups to your applications is not possible, you can also configure a [group filter](#group-filtering) to reduce the number of groups emitted in the claim. Group filtering applies to tokens emitted for apps where group claims and filtering were configured in the **Enterprise apps** blade in the portal.
+- In order to avoid the number of groups limit if your users have large numbers of group memberships, you can restrict the groups emitted in claims to the relevant groups for the application. Read more about emitting groups assigned to the application for [JWT tokens](~/identity-platform/optional-claims.md#configure-groups-optional-claims) and [SAML tokens](#add-group-claims-to-tokens-for-saml-applications-using-sso-configuration). If assigning groups to your applications is not possible, you can also configure a [group filter](#group-filtering) to reduce the number of groups emitted in the claim. Group filtering applies to tokens emitted for apps where group claims and filtering were configured in the **Enterprise apps** blade in the portal. Keep in mind that in larger organizations, the number of groups where a user is a member might exceed the limit that Microsoft Entra ID applies before emitting groups claims in a token. Exceeding this limit will cause Microsoft Entra ID to completely omit sending group claims in the token.
 - Group claims have a five-group limit if the token is issued through the implicit flow. Tokens requested via the implicit flow will have a `"hasgroups":true` claim only if the user is in more than five groups.
 - We recommend basing in-app authorization on application roles rather than groups when:
 
@@ -97,7 +97,7 @@ To configure group claims for a gallery or non-gallery SAML application via sing
    | Selection | Description |
    |----------|-------------|
    | **All groups** | Emits security groups and distribution lists and roles. |
-   | **Security groups** | Emits security groups that the user is a member of in the groups claim. |
+   | **Security groups** | Emits security groups that the user is a member of in the groups claim. If the user is assigned directory roles, they're emitted as object ID. |
    | **Directory roles** | If the user is assigned directory roles, they're emitted as a `wids` claim. (The group's claim won't be emitted.) |
    | **Groups assigned to the application** | Emits only the groups that are explicitly assigned to the application and that the user is a member of. Recommended for large organizations due to the group number limit in token. |
 
@@ -133,11 +133,11 @@ You can configure group claim to include the group display name for the cloud-on
 
 4. To emit group display name just for cloud groups, in the **Source attribute** dropdown select the **Cloud-only group display names**:
 
-   ![Screenshot that shows the Group Claims source attribute dropdown, with the option for configuring cloud only group names selected.](media/how-to-connect-fed-group-claims/group-claims-ui-8.png)
+ :::image type="content" source="media/how-to-connect-fed-group-claims/group-claims-ui-8-new.png" alt-text="Screenshot that shows the Group Claims source attribute dropdown, with the option for configuring cloud only group names selected." lightbox="media/how-to-connect-fed-group-claims/group-claims-ui-8-new.png":::
 
 5. For a hybrid setup, to emit on-premises group attribute for synced groups and display name for cloud groups, you can select the desired on-premises sources attribute and check the checkbox **Emit group name for cloud-only groups**:
 
-   ![Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups.](media/how-to-connect-fed-group-claims/group-claims-ui-9.png)
+ :::image type="content" source="media/how-to-connect-fed-group-claims/group-claims-ui-9-new.png" alt-text="Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups." lightbox="media/how-to-connect-fed-group-claims/group-claims-ui-9-new.png":::
 
 > [!Note]
 > You can only add cloud-group names of assigned groups to an application. The restriction to `groups assigned to the application` is because a group name is not unique, and display names can only be emitted for groups explicitly assigned to the application to reduce the security risks. Otherwise, any user could create a group with duplicate name and gain access in the application side.
@@ -202,7 +202,7 @@ After you add a group claim configuration to the **User Attributes & Claims** co
 
 You can also configure group claims in the [optional claims](~/identity-platform/optional-claims.md) section of the [application manifest](~/identity-platform/reference-app-manifest.md).
 
-1. In the portal, select **Identity** > **Applications** > **App registrations** > **Select Application** > **Manifest**.
+1. In the portal, select **Entra ID** > **App registrations** > **Select Application** > **Manifest**.
 
 2. Enable group membership claims by changing `groupMembershipClaims`.
 

@@ -1,19 +1,19 @@
 ---
 title: Using role-based access control for apps
-description: Learn how to define application roles for your customer-facing application and assign those roles to users and groups in external tenants.
- 
-author: msmimart
-manager: celestedg
+description: Learn how to define application roles for your consumer and business customer applications and assign those roles to users and groups in external tenants.
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 01/07/2024
-ms.author: mimart
-ms.custom: it-pro
+ms.date: 04/14/2025
+ms.custom: it-pro, sfi-ga-nochange
 ---
 
 # Using role-based access control for applications
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Role-based access control (RBAC) is a popular mechanism to enforce authorization in applications. When an organization uses RBAC, an application developer defines roles for the application. An administrator can then assign roles to different users and groups to control who has access to content and functionality in the application.
 

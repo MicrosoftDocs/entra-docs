@@ -1,29 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra ID integration with Oracle Human Capital Management (HCM)'
+title: Configure Oracle Human Capital Management (HCM) for automatic user provisioning
 description: Integrating Oracle Human Capital Management (HCM) with Microsoft Entra ID and on-premises Active Directory using the Inbound Provisioning API.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.reviewer: rahuln3223
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/20/2024
+ms.topic: how-to
+ms.date: 09/13/2024
 ms.author: jfields
 ---
 
-# Tutorial: Microsoft Entra ID integration with Oracle HCM
+# Configure Oracle Human Capital Management (HCM) for automatic user provisioning
 
-The Inbound Provisioning API is a capability that allows you to create,
-update, and delete users in Microsoft Entra ID and on-premises Active
-Directory from an external source, such as Oracle Human Capital Management (HCM). This capability enables organizations to improve productivity, strengthen security and more
-easily meet compliance and regulatory requirements.
+The Inbound Provisioning API is a capability that allows you to create, update, and delete users in Microsoft Entra ID and on-premises Active Directory from an external source, such as Oracle Human Capital Management (HCM). This capability enables organizations to improve productivity, strengthen security and more easily meet compliance and regulatory requirements.
 
 You can use [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) to automatically ensure that the right people have the right access to the right resources. This access includes identity and access process automation, delegation to business groups, and increased visibility.
 
-In this tutorial, we guide you through the steps and best practices
-for integrating Oracle HCM with Microsoft Entra ID via API-driven
-provisioning. You'll learn how to:
+In this article,  we guide you through the steps and best practices for integrating Oracle HCM with Microsoft Entra ID via API-driven provisioning, You'll learn how to:
 
 - Prepare your environment and configure the API settings
 - Export your worker data from Oracle HCM in CSV format and transform it to the system for cross-domain identity management (SCIM) format using Microsoft scripts
@@ -33,7 +28,7 @@ provisioning. You'll learn how to:
 
 ## Terminology
 
-- [Oracle HCM Fusion Cloud (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this tutorial.
+- [Oracle HCM Fusion Cloud (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this article.
 
 - Licensing:
 
@@ -47,18 +42,17 @@ provisioning. You'll learn how to:
 
 Before you start integrating Oracle HCM with Microsoft Entra ID using the Inbound Provisioning API, you need to ensure that you have the following prerequisites:
 
-- An [Oracle HCM (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/oawpm/Human_Capital_Management_Integration_Specialist_job_roles.html#Human_Capital_Management_Integration_Specialist_job_roles) account with privileges to:
+- An Oracle HCM (oracle.com) account with privileges to:
 
   - View and export HCM data.
-  - Access the Oracle HCM REST APIs. For this tutorial, we
-        referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
+  - Access the Oracle HCM REST APIs. For this article,  we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
         and [Applications Common 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/rest-endpoints.html).
 
 - A Microsoft Entra ID tenant with a minimum P1 license (or EMS E3 / Microsoft 365 E3):
 
-  - To install the provisioning agent (hybrid users only), you'll need access to the Microsoft Windows server connected to your AD Domain.
+  - To install the provisioning agent (hybrid users only), you need access to the Microsoft Windows server connected to your AD Domain.
 
-  - To create a gallery app and provisioning job, you'll need Microsoft Entra with [Application Admin](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Hybrid Identity Admin](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) roles.
+  - To create a gallery app and provisioning job, you need Microsoft Entra with [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) roles.
 
 ## Integration overview
 
@@ -66,8 +60,7 @@ There are three main sync scenarios that you can use to set up an HR integration
 
 - **Initial / full sync** is the process of synchronizing all worker data between two systems, in this case: Oracle HCM and Microsoft Entra ID directly or to on-premises Active Directory (on-premises AD). This process includes all worker identities and attributes such as personal information, contact information, employment information, and more. A full sync is typically performed during the initial integration setup to ensure that all worker data is consistent and up to date across both systems.
 
-- **Delta sync** is the process of synchronizing only the changes or updates that occurred since the last sync with Oracle HCM. Delta syncs are typically performed after the initial full sync to keep worker data up to date with any changes that occur in the
-source system. This process includes new employees, updated employee data, or deleted employees. Delta syncs are incremental updates and are faster and more efficient than performing a full sync every time any worker data changes.
+- **Delta sync** is the process of synchronizing only the changes or updates that occurred since the last sync with Oracle HCM. Delta syncs are typically performed after the initial full sync to keep worker data up to date with any changes that occur in the source system. This process includes new employees, updated employee data, or deleted employees. Delta syncs are incremental updates and are faster and more efficient than performing a full sync every time any worker data changes.
 
 - **Writeback** is the optional process of sending user attribute changes that occur in Microsoft Entra ID (such as username, email, and phone numbers) back to Oracle HCM.
 
@@ -78,11 +71,12 @@ source system. This process includes new employees, updated employee data, or de
 | **#** | **Step** | **What to do** | **Who to engage** |
 | ----------- | ----------- | ----------- | ----------- |
 | 1. | Determine which set of attributes you want to provision from HCM | &#x2022; [Reference this list of HCM attributes and determine which attributes you wish to export to Microsoft Entra ID](#worksheet-1-oracle-hcm-attributes) <br> &#x2022; [Map Oracle HCM attributes to SCIM attributes](#worksheet-2-oracle-hcm-to-scim-attribute-mapping) <br> &#x2022; [Define unique ID generation and transformation rules](#worksheet-3-define-unique-id-generation-and-transformation-rules)  | Oracle HCM Admin & IT Admin |
-| 2.  | Determine your provisioning target: Are you provisioning cloud-only identities to Microsoft Entra ID or hybrid identities to on-premises AD?  | If your target is Microsoft Entra ID (cloud-only identity provisioning): <br> &#x2022; [Configure gallery app](#configure-gallery-application) <br> &#x2022; [Map SCIM to Microsoft Entra attributes](#worksheet-6-scim-attribute-to-microsoft-entra-attributes-mapping) <br> If your target is on-premises AD (hybrid identity provisioning): <br> &#x2022; [Download and configure provisioning agent](#for-hybrid-users) <br> &#x2022; [Configure gallery app](#configure-gallery-application) <br> &#x2022; [Map SCIM attributes to on-premises Active Directory](#worksheet-4-scim-attributes-on-premises-ad-attributes-mapping) <br> &#x2022; [Update your Microsoft Entra Connect Sync and cloud sync mappings to flow new HR attributes to Entra ID](#worksheet-5-on-premises-ad-to-microsoft-entra-id-mapping) | For provisioning agent installation, involve Windows admin <br> <br> For gallery app configuration, engage admin with Application Admin privileges |
-| 3.  | Perform initial sync to send full scope of data to provisioning endpoint  | &#x2022; [Prepare for initial sync](#prepare-for-initial-sync) <br> &#x2022; [Perform CSV export and send data to API](#csv-export-for-initial-sync) <br> &#x2022; Validate that the right workers have been matched and are present in Microsoft Entra / AD | IT Admin |
-| 4.  | Perform delta syncs to keep data in Microsoft Entra ID up to date | Use one of these methods: <br> &#x2022; [Use CSV extracts](#option-2-use-csv-extracts) <br> &#x2022; [Use Atom Feed APIs](#option-1-use-the-oracle-atom-feed-apis) | IT Admin |
-| 5.  | Writeback data to Oracle HCM | &#x2022; [Configure and run writeback provisioning job](#writeback-from-microsoft-entra-id-to-oracle-hcm) | IT Admin |
-| 6.  | *Recommended*: Configure Microsoft Entra lifecycle workflows | &#x2022; [Automate your Joiner, Mover, Leaver processes using Microsoft Entra](~/id-governance/what-are-lifecycle-workflows.md) <br>     &#x2022; [Governance license required](~/id-governance/identity-governance-overview.md)  |  IT Admin |
+| 2.  | Grant permissions to the inbound provisioning API | [Create an application to represent your API client and grant it permissions to send data to the inbound provisioning endpoint](../app-provisioning/inbound-provisioning-api-grant-access.md) | IT Admin - Privileged Role Administrator
+| 3.  | Determine your provisioning target: Are you provisioning cloud-only identities to Microsoft Entra ID or hybrid identities to on-premises AD?  | If your target is Microsoft Entra ID (cloud-only identity provisioning): <br> &#x2022; [Configure gallery app](#configure-gallery-application) <br> &#x2022; [Map SCIM to Microsoft Entra attributes](#worksheet-6-scim-attribute-to-microsoft-entra-attributes-mapping) <br> If your target is on-premises AD (hybrid identity provisioning): <br> &#x2022; [Download and configure provisioning agent](#for-hybrid-users) <br> &#x2022; [Configure gallery app](#configure-gallery-application) <br> &#x2022; [Map SCIM attributes to on-premises Active Directory](#worksheet-4-scim-attributes-on-premises-ad-attributes-mapping) <br> &#x2022; [Update your Microsoft Entra Connect Sync and cloud sync mappings to flow new HR attributes to Entra ID](#worksheet-5-on-premises-ad-to-microsoft-entra-id-mapping) | For provisioning agent installation, involve Windows admin <br> <br> For gallery app configuration, engage admin with Application Administrator privileges |
+| 4.  | Perform initial sync to send full scope of data to provisioning endpoint  | &#x2022; [Prepare for initial sync](#prepare-for-initial-sync) <br> &#x2022; [Perform CSV export and send data to API](#csv-export-for-initial-sync) <br> &#x2022; Validate that the right workers have been matched and are present in Microsoft Entra / AD | IT Admin |
+| 5.  | Perform delta syncs to keep data in Microsoft Entra ID up to date | Use one of these methods: <br> &#x2022; [Use CSV extracts](#option-2-use-csv-extracts) <br> &#x2022; [Use Atom Feed APIs](#option-1-use-the-oracle-atom-feed-apis) | IT Admin |
+| 6.  | Writeback data to Oracle HCM | &#x2022; [Configure and run writeback provisioning job](#writeback-from-microsoft-entra-id-to-oracle-hcm) | IT Admin |
+| 7.  | *Recommended*: Configure Microsoft Entra lifecycle workflows | &#x2022; [Automate your Joiner, Mover, Leaver processes using Microsoft Entra](~/id-governance/what-are-lifecycle-workflows.md) <br>     &#x2022; [Governance license required](~/id-governance/identity-governance-overview.md)  |  IT Admin |
 
 ## Configure gallery application
 
@@ -116,70 +110,33 @@ Work with your Windows admin to install the provisioning agent on a domain-joine
 
 Before sending your initial sync payload, you need to make sure your data is prepared to properly sync with Microsoft Entra. The following steps help ensure a smooth integration.
 
-1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems)
-    presence and uniqueness: The provisioning service uses a matching
-    attribute to uniquely identify and link worker records in your
-    Oracle system with corresponding user accounts in AD / Microsoft Entra ID. The
-    default matching attribute pair is Person Number in Oracle HCM
-    mapped to employee ID attribute in Microsoft Entra ID / on-premises AD. Ensure
-    that the value of employee ID is populated in Microsoft Entra ID (for
-    cloud-only users) and on-premises AD (for hybrid users) before
-    initiating full sync, as it uniquely identifies users.
+1. [Matching identifier](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems) presence and uniqueness: The provisioning service uses a matching attribute to uniquely identify and link worker records in your Oracle system with corresponding user accounts in AD / Microsoft Entra ID. The default matching attribute pair is Person Number in Oracle HCM mapped to employee ID attribute in Microsoft Entra ID / on-premises AD. Ensure that the value of employee ID is populated in Microsoft Entra ID (for cloud-only users) and on-premises AD (for hybrid users) before initiating full sync, as it uniquely identifies users.
 
-1. Use [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md#)
-    to skip HR records that are no longer relevant: HR systems have
-    several years of employment data probably going all the way back to
-    1970s. On the other hand, your IT team may only be interested in the
-    list currently active employees and termination records that will
-    come through after go-live. To filter out HR records that are no
-    longer relevant from your IT team perspective, identify scoping
-    filters rules that you can configure in Microsoft Entra.
+1. Use [scoping filters](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md#) to skip HR records that are no longer relevant: HR systems have several years of employment data probably going all the way back to the 1970s. On the other hand, your IT team may only be interested in the list currently active employees and termination records that will come through after go-live. To filter out HR records that are no longer relevant from your IT team perspective, identify scoping filters rules that you can configure in Microsoft Entra.
 
 ## CSV export for initial sync
 
-In this step, you'll export your worker data from Oracle HCM in CSV
-format and transform it to SCIM format using the Microsoft CSV to SCIM
-scripts. This step allows you to send your worker data to the Inbound
-Provisioning API in a standards-based payload that it can understand and
-process.
+In this step, you export your worker data from Oracle HCM in CSV format and transform it to SCIM format using the Microsoft CSV to SCIM scripts. This step allows you to send your worker data to the Inbound Provisioning API in a standards-based payload that it can understand and process.
 
-Share the list of Oracle HCM worker attributes you wish to export with
-your Oracle HCM administrator. To export your worker data from Oracle
-HCM in CSV format, Oracle provides multiple options.
+Share the list of Oracle HCM worker attributes you wish to export with your Oracle HCM administrator. To export your worker data from Oracle HCM in CSV format, Oracle provides multiple options.
 
-- **HCM Extract tool**: The main way to retrieve data in bulk from
-    Oracle HCM Cloud is by using HCM Extracts, a tool for generating
-    data files and reports. HCM Extracts has a dedicated interface for
-    specifying the records and attributes to be extracted. With this
-    tool, you can:
+- **HCM Extract tool**: The main way to retrieve data in bulk from Oracle HCM Cloud is by using HCM Extracts, a tool for generating data files and reports. HCM Extracts has a dedicated interface for specifying the records and attributes to be extracted. With this tool, you can:
 
   - Identify records for extraction using complex selection criteria
   - Define data elements in an HCM extract using fast formula database items and rules
 
 > [!NOTE]
-> To get started with creating HCM Extracts, refer to [Define Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/23c/fahex/define-extracts.html).
+> To get started with creating HCM Extracts, refer to [Define Extracts (oracle.com)](https://www.oracle.com/webfolder/technetwork/tutorials/obe/hcm_extract/extract_obe_ptrtrn/extract_index.html).
 
-- **Oracle BI Publisher**: Supports both scheduled and
-    unplanned reporting, based on either predefined Oracle Transactional
-    Business Intelligence analysis structures or your own data models.
-    You can generate reports in various formats. To use Oracle BI
-    Publisher for outbound integrations, you generate reports in a
-    format suitable for automatic downstream processing, such as XML or
-    CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
+- **Oracle BI Publisher**: Supports both scheduled and unplanned reporting, based on either predefined Oracle Transactional Business Intelligence analysis structures or your own data models.
+    You can generate reports in various formats. To use Oracle BI Publisher for outbound integrations, you generate reports in a format suitable for automatic downstream processing, such as XML or CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
 
-- **Oracle Integration Cloud (OIC) Service**: If you have a subscription to
-    OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
-    to extract the required data from Oracle HCM. Oracle provides a [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE)
-    that you can use to get started.
+- **Oracle Integration Cloud (OIC) Service**: If you have a subscription to OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8) to extract the required data from Oracle HCM. Oracle provides a [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE) that you can use to get started.
 
 > [!NOTE]
 > Work with your Oracle HCM administrator to export your required attributes into a CSV file.
 
-After you've exported your worker data to a CSV file, you need to
-transform the CSV to SCIM format so that the payload is in a format that
-we can accept. We provide documentation and sample code for how to
-transform your CSV into a SCIM payload via two methods: PowerShell and Azure
-Logic Apps.
+After you've exported your worker data to a CSV file, you need to transform the CSV to SCIM format so that the payload is in a format that we can accept. We provide documentation and sample code for how to transform your CSV into a SCIM payload via two methods: PowerShell and Azure Logic Apps.
 
 Here are links for performing this transformation with each method:
 
@@ -187,50 +144,32 @@ Here are links for performing this transformation with each method:
 
 - **Azure Logic Apps**: [API-driven inbound provisioning with Azure Logic Apps](~/identity/app-provisioning/inbound-provisioning-api-logic-apps.md)
 
-The inbound provisioning process includes sending the provisioning
-payload. Before you send the payload, make sure to select **Start provisioning** in the Microsoft Entra admin center to ensure that the provisioning job is listening to new requests. Before sending the full file for processing, send 5-10 records to validate the correct matching of workers and attributes. After the payload is sent, the users will show up briefly in your Microsoft Entra tenant /on-premises AD.
+The inbound provisioning process includes sending the provisioning payload. Before you send the payload, make sure to select **Start provisioning** in the Microsoft Entra admin center to ensure that the provisioning job is listening to new requests. Before sending the full file for processing, send 5-10 records to validate the correct matching of workers and attributes. After the payload is sent, the users will show up briefly in your Microsoft Entra tenant /on-premises AD.
 
 ## Delta syncs
 
-After you've sent your worker data to the Inbound Provisioning API for
-the initial sync, you need to perform delta syncs to keep your worker
-data up to date. Delta syncs are incremental updates that only send the
-changes that occurred since the last sync, such as new workers,
-updated workers, or deleted workers.
+After you've sent your worker data to the Inbound Provisioning API for the initial sync, you need to perform delta syncs to keep your worker data up to date. Delta syncs are incremental updates that only send the changes that occurred since the last sync, such as new workers, updated workers, or deleted workers.
 
 To perform delta syncs, you have three options:
 
-[**Option 1**](#option-1-use-the-oracle-atom-feed-apis): Use the Oracle ATOM feed APIs to get real-time notifications of worker changes in Oracle HCM and send them to the
-Inbound Provisioning API.
+[**Option 1**](#option-1-use-the-oracle-atom-feed-apis): Use the Oracle ATOM feed APIs to get real-time notifications of worker changes in Oracle HCM and send them to the Inbound Provisioning API.
 
-[**Option 2**](#option-2-use-csv-extracts): Use CSV Extracts to generate periodic reports of worker changes in Oracle HCM and send the extracts to the Inbound Provisioning
-API using your own automation tool or Logic Apps.
+[**Option 2**](#option-2-use-csv-extracts): Use CSV Extracts to generate periodic reports of worker changes in Oracle HCM and send the extracts to the Inbound Provisioning API using your own automation tool or Logic Apps.
 
-**Option 3**: Use the [Oracle Integration Cloud Service (oracle.com)](https://docs.oracle.com/en/cloud/paas/application-integration/). If you have a subscription to OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8) to extract the required data from Oracle HCM. Oracle provides a [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE)
-that you can use to get started.
+**Option 3**: Use the [Oracle Integration Cloud Service (oracle.com)](https://docs.oracle.com/en/cloud/paas/application-integration/). If you have a subscription to OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8) to extract the required data from Oracle HCM. Oracle provides a [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE) that you can use to get started.
 
 ### Option 1: Use the Oracle ATOM feed APIs
 
-The Oracle ATOM feed APIs provide real-time notifications of worker
-changes in Oracle HCM. You can subscribe to the ATOM feed APIs and
-receive a JSON representation of attributes that contain the worker data
-that changed. You can then transform the JSON to SCIM format and
-send them to the Inbound Provisioning API using our sample PowerShell
-script or Logic Apps integration.
+The Oracle ATOM feed APIs provide real-time notifications of worker changes in Oracle HCM. You can subscribe to the ATOM feed APIs and receive a JSON representation of attributes that contain the worker data that changed. You can then transform the JSON to SCIM format and send them to the Inbound Provisioning API using our sample PowerShell script or Logic Apps integration.
 
-If you intend to use the ATOM feeds integration, make sure to turn on
-ATOM feeds immediately after your initial sync. A delay in this step can
-lead to loss of changes.
+If you intend to use the ATOM feeds integration, make sure to turn on ATOM feeds immediately after your initial sync. A delay in this step can lead to loss of changes.
 
 To get started with Oracle's ATOM feeds, reference the
-[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Working_with_Atom.html) and [tutorial (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment,
-empupdate, termination, cancelworkrelship, and workrelshipupdate. 
+[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Working_with_Atom.html) and [article (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment, empupdate, termination, cancelworkrelship, and workrelshipupdate. 
 
-Once you've configured ATOM feeds in your HCM tenant, you'll need to
-create a custom module that reads the output of the ATOM feed API and sends the data to Microsoft Entra ID in a SCIM payload format using the Inbound Provisioning API.
+Once you've configured ATOM feeds in your HCM tenant, you need to create a custom module that reads the output of the ATOM feed API and sends the data to Microsoft Entra ID in a SCIM payload format using the Inbound Provisioning API.
 
-The logic in the custom module is responsible for handling the following
-scenarios:
+The logic in the custom module is responsible for handling the following scenarios:
 
 - Data validation
 - Unique ID generation
@@ -238,10 +177,7 @@ scenarios:
 - Conversion of ATOM feeds to SCIM payloads
 - Error handling
 
-We recommend using an Oracle HCM partner or a Microsoft System
-Integrator to build this custom module. You can host this custom module
-either in an Oracle middleware like Oracle Integration Cloud, or in
-Azure cloud as an Azure function, Azure Logic Apps, or Azure Data Factory pipeline.
+We recommend using an Oracle HCM partner or a Microsoft System Integrator to build this custom module. You can host this custom module either in an Oracle middleware like Oracle Integration Cloud, or in Azure cloud as an Azure function, Azure Logic Apps, or Azure Data Factory pipeline.
 
 **Implement Joiner Scenario**
 
@@ -345,28 +281,18 @@ Here is a generic example of how the Oracle HCM attributes could map to attribut
 
 Once you format the [SCIM bulk request](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md#bulk-request-with-scim-enterprise-user-schema), you can then send the data to the [bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API endpoint via API-driven provisioning.
 
-Before enabling the integration, run manual tests and verifications to validate the SCIM
-bulk request payload structure. You may use tools, such as [Postman](~/identity/app-provisioning/inbound-provisioning-api-postman.md) or [Graph Explorer](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md) to confirm that the bulk request payloads are processed as expected.
+Before enabling the integration, run manual tests and verifications to validate the SCIM bulk request payload structure. You may use tools, such as [cURL](https://go.microsoft.com/fwlink/?linkid=2281068) or [Graph Explorer](~/identity/app-provisioning/inbound-provisioning-api-graph-explorer.md) to confirm that the bulk request payloads are processed as expected.
 
 > [!NOTE]
 > If you don't want to engage a partner or build your own custom module, we recommend using the **HCM Extract tool** described in the next section.
 
 ### Option 2: Use CSV extracts
 
-Similar to the method used in the initial sync, you can also use CSV extracts to
-handle your delta syncs. You can configure your extract to only run new
-changes from the previous sync. Or, you can send the full scope of your
-worker data and the Microsoft Entra ID Provisioning Service manages and update
-any changes such as new hires, attributes changes, and terminations.
+Similar to the method used in the initial sync, you can also use CSV extracts to handle your delta syncs. You can configure your extract to only run new changes from the previous sync. Or, you can send the full scope of your worker data and the Microsoft Entra ID Provisioning Service manages and update any changes such as new hires, attributes changes, and terminations.
 
-Similar to initial sync, you can also use multiple options to obtain the CSV
-extract:
+Similar to initial sync, you can also use multiple options to obtain the CSV extract:
 
-- **HCM Extract tool**: The main way to retrieve data in bulk from
-    Oracle HCM Cloud is by using HCM Extracts, a tool for generating
-    data files and reports. HCM Extracts has a dedicated interface for
-    specifying the records and attributes to be extracted. With this
-    tool, you can:
+- **HCM Extract tool**: The main way to retrieve data in bulk from Oracle HCM Cloud is by using HCM Extracts, a tool for generating data files and reports. HCM Extracts has a dedicated interface for specifying the records and attributes to be extracted. With this tool, you can:
 
   - Identify records for extraction using complex selection criteria.
   - Define data elements in an HCM extract using fast formula database items and rules.
@@ -374,18 +300,10 @@ extract:
     > [!NOTE]
     > To get started with creating your HCM Extracts, refer to [Define Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-extracts.html#s20034537).
 
-- **Oracle BI Publisher**: Oracle BI Publisher supports both scheduled and
-    unplanned reporting, based on either predefined Oracle Transactional
-    Business Intelligence analysis structures or your own data models.
-    You can generate reports in various formats. To use Oracle BI
-    Publisher for outbound integrations, you generate reports in a
-    format suitable for automatic downstream processing, such as XML or
-    CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
+- **Oracle BI Publisher**: Oracle BI Publisher supports both scheduled and unplanned reporting, based on either predefined Oracle Transactional Business Intelligence analysis structures or your own data models.
+    You can generate reports in various formats. To use Oracle BI Publisher for outbound integrations, you generate reports in a format suitable for automatic downstream processing, such as XML or CSV. To get started with creating your BI Publisher report, refer to [Define the BI Publisher Template in HCM Extracts (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/fahex/define-the-bi-publisher-template-in-hcm-extracts.html#s20043805).
 
-- **Oracle Integration Cloud (OIC) service**: If you have a subscription to
-    OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8)
-    to extract the required data from Oracle HCM. Oracle provides a
-    [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE) that you can use to get started.
+- **Oracle Integration Cloud (OIC) service**: If you have a subscription to OIC, you can configure the integration with the [Oracle HCM Adapter (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/hcm-adapter/understand-oracle-hcm-cloud-adapter.html#GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8) to extract the required data from Oracle HCM. Oracle provides a [guide (oracle.com)](https://docs.oracle.com/en/cloud/paas/integration-cloud/int-get-started/export-employee-data-oracle-hcm-cloud-identity-management-system.html#GUID-DE0A58BC-25F1-4013-A87C-E4A0123A94EE) that you can use to get started.
 
     Once you have your worker data in CSV format, use either of the following two methods to convert that into a SCIM payload and send the data to our provisioning service.
 
@@ -395,68 +313,41 @@ extract:
 
 ## Writeback from Microsoft Entra ID to Oracle HCM
 
-After you've synchronized your worker data from Oracle HCM using the
-Inbound Provisioning API, you may want to configure writeback from the
-Microsoft Entra Provisioning Service to Oracle HCM. Writeback is the
-process of sending user changes that occur in Microsoft Entra ID back to Oracle
-HCM, such as username, email, and phone numbers. This process ensures that your
-data is consistent and accurate across both systems.
+After you've synchronized your user data from Oracle HCM to Microsoft Entra ID / on premises Active Directory using the Inbound Provisioning API, you may want to configure writeback from the Microsoft Entra Provisioning Service to Oracle HCM. Writeback is the process of sending user changes that occur in Entra ID back to Oracle HCM, such as username, email, and password. This ensures that your user data is consistent and accurate across both systems.
 
-To configure writeback, you'll need to use the [Oracle HCM SCIM APIs (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html). These APIs are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Microsoft Entra. You can use the Microsoft Entra Provisioning Service to connect Microsoft Entra to the Oracle HCM SCIM APIs and map the user attributes that you want to writeback.
+To configure writeback, you need to use the Oracle HCM SCIM APIs. The [Oracle HCM SCIM APIs (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html) are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Entra. You can use the existing Oracle Fusion ERP provisioning connector in the Microsoft Entra App Gallery to connect to the Oracle HCM SCIM APIs and map the user attributes that you want to write back.
 
-To set up writeback, you'll need to configure an outbound provisioning
-job to your Oracle HCM tenant. To configure writeback, you'll need the
-following info:
+To set up writeback, you need to configure an outbound provisioning job to your Oracle HCM tenant. To configure writeback, you need the following info: 
 
-- **REST server URL**, which is normally the URL of your Oracle Cloud
-    Service. It should look something like this:
-    [https://servername.fa.us2.oraclecloud.com](https://servername.fa.us2.oraclecloud.com/hcmRestApi/scim).
+- **Admin username and password:** You need the details of the admin account that has access to Oracle HCM and can invoke the HCM [User update API](https://docs.oracle.com/en/cloud/saas/applications-common/25a/farca/index.html).
 
-- **Secret token** from HCM environment that provides your HCM
-    tenant with access to other systems, such as Microsoft Entra.
 
-    - Create an OAUTH token in HCM and save it for use in the steps
-        here. You can create an OAUTH token by going to step four in the
-        following [guide (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html).
+Follow these steps to configure the writeback job to Oracle HCM using the Oracle Fusion ERP connector: 
 
-Once you have your REST server URL and your secret token, follow the
-steps here to configure the writeback job in Microsoft Entra:
+1.  In the Microsoft Entra Enterprise App Gallery, search for the app Oracle Fusion ERP.
 
-1.  Create a new Enterprise application.
+1.  Refer to [Oracle Fusion ERP](https://go.microsoft.com/fwlink/?linkid=2286440) to configure writeback using the Oracle Fusion ERP app.
 
-1.  Select the **Provisioning** option and switch the mode to **Automatic**.
+1.  When you're prompted to enter a URL and admin username and password, use the URL specified in the instructions and enter the admin username and password of the account that has access to Oracle HCM and can invoke HCM [User update API](https://docs.oracle.com/en/cloud/saas/applications-common/25a/farca/index.html).
 
-1.  Enter the endpoint URL of your Oracle HCM tenant and the
-    authentication token in the **REST server URL** and **Secret token** fields.
+1.  Follow the guidance in the Oracle Fusion ERP article to edit attribute mappings and provision specific users back to Oracle HCM.
 
-1.  Test the connection, then save the settings.
+1.  In the edit Attribute Mapping section, select only the **Update** operation under **target object actions**.  
 
-1.  Go back to the **Provisioning overview** page for this application and
-    select **Edit provisioning**. Click the arrow under mappings, then select
-    the link of the mapping schema.
+1.  You'll see that HCM attributes are automatically populated in the attribute mappings section. Remove attributes that you don't want to write back.
 
-1.  In the edit **Attribute Mapping** section, select only the **Update**
-    operation under **Target object actions**.
+1.  Save the settings and enable the provisioning status.
 
-1.  You'll notice that HCM attributes are automatically populated
-    in the **Attribute mappings** section. Only remove attributes that you
-    don't want to writeback data.
+1.  Use Entra’s Provision on Demand capability to test and validate the writeback integration.
 
-1.  Save the settings, then enable the provisioning status.
-
-1.  Use Microsoft Entra's [Provision on Demand](~/identity/app-provisioning/provision-on-demand.md) capability to test and validate the writeback integration.
-
-1. Once you've validated the workflow, start the job and keep it
-    running for Microsoft Entra to continuously sync data back to Oracle HCM.
+1.  Once you have validated the workflow, start the job and keep it running for Entra to continuously sync data back to Oracle HCM. 
 
 ## Appendix
 
 ### Worksheet 1: Oracle HCM attributes
 
 The table in this section represents attributes that you can export from Oracle HCM.
-The names of these attributes may differ in your HCM system, but this list
-represents a common list of attributes in an HR integration. Determine
-which attributes you wish to export for your integration.
+The names of these attributes may differ in your HCM system, but this list represents a common list of attributes in an HR integration. Determine which attributes you wish to export for your integration.
 
 
 | Oracle HCM attribute (from CSV file) | Required or mandatory|
@@ -494,8 +385,7 @@ other attributes not in this list for inclusion in your provisioning job.
 
 ### Worksheet 2: Oracle HCM to SCIM attribute mapping 
 
-The table in this section displays a sample mapping from the Oracle HCM attributes to
-the generic SCIM attributes supported by the API.
+The table in this section displays a sample mapping from the Oracle HCM attributes to the generic SCIM attributes supported by the API.
 
 | Oracle HCM attribute (from CSV file) | SCIM attribute |
 | ----------- | ----------- | 
@@ -524,8 +414,7 @@ the generic SCIM attributes supported by the API.
 
 ### Worksheet 3: Define unique ID generation and transformation rules
 
-The table in this section describes certain attributes that require unique generation or specific transformation rules. These include three commonly used attributes that have
-additional rules to set their value. Reference the links to populate these attributes properly.
+The table in this section describes certain attributes that require unique generation or specific transformation rules. These include three commonly used attributes that have additional rules to set their value. Reference the links to populate these attributes properly.
 
 | Attribute | How to set attribute value |
 | ----------- | ----------- |
@@ -535,9 +424,7 @@ additional rules to set their value. Reference the links to populate these attri
 
 ### Worksheet 4: SCIM attributes on-premises AD attributes mapping
 
-The table in this section represents the set of on-premises attributes that Active
-Directory supports. Map your SCIM attributes to the attributes in this
-table if your provisioning target is Active Directory.
+The table in this section represents the set of on-premises attributes that Active Directory supports. Map your SCIM attributes to the attributes in this table if your provisioning target is Active Directory.
 
 | SCIM attribute | On-premises AD attribute |
 | ----------- | ----------- | 
@@ -569,9 +456,7 @@ table if your provisioning target is Active Directory.
 
 ### Worksheet 5: On-premises AD to Microsoft Entra ID mapping
 
-Once you have your identities synced to on-premises AD, you can send them to
-Microsoft Entra ID via cloud sync or Microsoft Entra ID connect. Reference the linked
-documentation on how to use these tools. 
+Once you have your identities synced to on-premises AD, you can send them to Microsoft Entra ID via cloud sync or Microsoft Entra ID connect. Reference the linked documentation on how to use these tools. 
 
 The table in this section is an example attribute mapping from the AD attributes included in Worksheet 4 to Microsoft Entra attributes.
 
@@ -603,9 +488,7 @@ The table in this section is an example attribute mapping from the AD attributes
 
 ### Worksheet 6: SCIM attribute to Microsoft Entra attributes mapping
 
-The table in this section represents the set of attributes that Microsoft Entra ID supports. Map your SCIM attributes to the attributes in this table if your
-provisioning target is Microsoft Entra ID. To add custom SCIM attributes to your
-gallery application, refer to [Extend API-driven provisioning to sync custom attributes](~/identity/app-provisioning/inbound-provisioning-api-custom-attributes.md).
+The table in this section represents the set of attributes that Microsoft Entra ID supports. Map your SCIM attributes to the attributes in this table if your provisioning target is Microsoft Entra ID. To add custom SCIM attributes to your gallery application, refer to [Extend API-driven provisioning to sync custom attributes](~/identity/app-provisioning/inbound-provisioning-api-custom-attributes.md).
 
 | SCIM attribute | Microsoft Entra attribute |
 | ----------- | ----------- | 
@@ -634,7 +517,7 @@ gallery application, refer to [Extend API-driven provisioning to sync custom att
 
 ## Acknowledgements
 
-We thank the following partners for their help reviewing and contributing to this tutorial:
+We thank the following partners for their help reviewing and contributing to this article:
 
 - Michael Starkweather, Director at PwC
 - Rob Allen, Director of Architecture and Technology at ActiveIdM
@@ -644,6 +527,9 @@ We thank the following partners for their help reviewing and contributing to thi
 - Nick Herbert, Vice President of Sales at Oxford Computer Group
 - Steve Brugger, CEO at Oxford Computer Group
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
+
+
+[inboundProvisioningCurl article]: ~identity/app-provisioning/inbound-provisioning-api-curl-tutorial

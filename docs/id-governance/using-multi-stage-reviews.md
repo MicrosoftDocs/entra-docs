@@ -2,12 +2,12 @@
 title: Using multi-stage reviews to meet your attestation and certification needs - Microsoft Entra
 description: Learn how to use multi-stage reviews to design more efficient reviews with Microsoft Entra.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: florianf
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/09/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: florianf
 ---
@@ -50,7 +50,7 @@ The configuration for this scenario would look like this:
 
 For scenarios that you need decisions recorded and need to make sure that access is preserved for the right people, multi-stage reviews let you progress a subset of reviewees to the next stage, that potentially needs a second reviewer audience for double-checking or decision making. Use this pattern to ensure that there are fewer unreviewed users or users marked as **Don’t know**, by progressing these reviewees to another stage, and having another group of reviewers take decisions.
 
-An example would be a review that contains two stages that determines access to an application. In the review settings, the review administrator chooses to **Show previous stage(s) decisions to later stage reviewers**. For **Reviewees going to the next stage**, the decisions that need confirmation would be added: to ensure all reviewees have a decision, select **reviewees marked as ‘Don’t know’** and **Not reviewed reviewees**, so that later-stage reviewers only see the undecided or unsure reviewees to retain the right access.
+An example would be a review that contains two stages that determine access to an application. In the review settings, the review administrator chooses to **Show previous stage(s) decisions to later stage reviewers**. For **Reviewees going to the next stage**, the decisions that need confirmation would be added: to ensure all reviewees have a decision, select **reviewees marked as ‘Don’t know’** and **Not reviewed reviewees**, so that later-stage reviewers only see the undecided or unsure reviewees to retain the right access.
 
  | Attribute | Configuration |
  |:--- |:---:|
@@ -124,7 +124,7 @@ Microsoft Entra access reviews can apply decisions about access to a resource by
 
 Decisions are collected by reviewers for every stage. The setting **Reviewees going to the next stage** defines, which reviewees later stage reviewers will see and asked to record decisions for. Only at the end of the overall review, decisions are applied to the resource.
 
-For all decisions, the last decision recorded for a reviewee is applied at the end of the review. Decisions that were made for Jane in the first stage of the review, can in stage two and stage three be overwritten by later-stage reviewers.
+For all decisions, the last decision recorded for a reviewee is applied at the end of the review. Decisions that were made for Jane in the first stage of the review, can in stage two and stage three, be overwritten by later-stage reviewers.
 
 If the **Reviewees going to the next stage** setting is set such that only a subset of reviewees progress to later stages, it can be that decisions made in the first stage are applied at the end of the review. If the review administrator configured a three-stage review, and wants only **Denied** and **Not reviewed** reviewees to progress to the next stages, if Jane was approved in the first stage, she won't progress to the later stages and her **Approve** decision is recorded and at the end of the review, applied.
 

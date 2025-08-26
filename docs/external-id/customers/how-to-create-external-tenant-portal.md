@@ -1,23 +1,22 @@
 ---
-title: Create an external tenant
-description: Learn how to create an external tenant in the  Microsoft Entra admin center. 
- 
+title: Create an External Tenant
+description: Create an external tenant to get started with Microsoft Entra External ID as your customer identity and access management (CIAM) service.
 author: csmulligan
-manager: celestedg
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 02/02/2024
+ms.date: 05/21/2025
 ms.author: cmulligan
-ms.custom: it-pro
-
+ms.custom: it-pro, seo-july-2024, sfi-image-nochange
 #Customer intent: As an it admin, I want to learn how to create an external tenant in the  Microsoft Entra admin center. 
 ---
 
-# Create a customer identity and access management (CIAM) tenant (preview)
+# Create an external tenant
 
-Microsoft Entra ID offers a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services. With these built-in CIAM features, Microsoft Entra ID can serve as the identity provider and access management service for your customer scenarios. You'll need to create an external tenant in the Microsoft Entra admin center to get started. Once the external tenant is created, you can access it in both the Microsoft Entra admin center and the Azure portal.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+Microsoft Entra External ID offers a customer identity access management (CIAM) solution that lets you create secure, customized sign-in experiences for your apps and services. With these built-in CIAM features, Microsoft Entra External ID can serve as the identity provider and access management service for your customer scenarios. You'll need to create an external tenant in the Microsoft Entra admin center to get started. Once the external tenant is created, you can access it in both the Microsoft Entra admin center and the Azure portal.
 
 In this article, you learn how to:
 
@@ -30,17 +29,17 @@ In this article, you learn how to:
 - An Azure subscription. If you don't have one, create a <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">free account</a> before you begin.
 - An Azure account that's been assigned at least the [Tenant Creator](/entra/identity/role-based-access-control/permissions-reference#tenant-creator) role scoped to the subscription or to a resource group within the subscription.
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
+
 
 ## Create a new external tenant  
 
 1. Sign in to your organization's [Microsoft Entra admin center](https://entra.microsoft.com/) as at least a [Tenant Creator](/entra/identity/role-based-access-control/permissions-reference#tenant-creator). 
-1. Browse to **Identity** > **Overview** > **Manage tenants**.
+1. Browse to **Entra ID** > **Overview** > **Manage tenants**.
 1. Select **Create**.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/create-tenant.png" alt-text="Screenshot of the create tenant option.":::
 
-1. Select **Customer**, and then **Continue**. 
+1. Select **External**, and then **Continue**. 
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/select-tenant-type.png" alt-text="Screenshot of the select tenant type screen.":::
 
@@ -72,6 +71,9 @@ In this article, you learn how to:
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/tenant-successfully-created.png" alt-text="Screenshot that shows the link to the new external tenant.":::
 
+> [!NOTE]
+> You can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to set up a trial or paid external tenant directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
+
 ## Get the external tenant details
 
 If you're not sure which directory contains your external tenant, you can find the tenant name and ID both in the Microsoft Entra admin center and in the Azure portal.
@@ -80,13 +82,15 @@ If you're not sure which directory contains your external tenant, you can find t
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/directories-subscription.png" alt-text="Screenshot of the Directories + subscriptions icon.":::
 
-1. On the **Portal settings | Directories + subscriptions** page, find your external tenant in the **Directory name** list, and then select **Switch**. This step will bring you to the tenant's home page.
-1. Select the **Overview** tab at the top of the page. You can find the tenant **Name**, **Tenant ID** and **Primary domain** under **Basic information**.
+1. On the **Portal settings | Directories + subscriptions** page, find your external tenant in the **Directory name** list, and then select **Switch**. This step brings you to the tenant's home page.
+1. Select **Tenant overview** under **Quick navigation**. You can find the tenant **Name**, **Tenant ID** and **Primary domain** under the **Overview** tab.
 
     :::image type="content" source="media/how-to-create-external-tenant-portal/tenant-overview.png" alt-text="Screenshot of the tenant details.":::
 
-You can find the same details if you go to **Microsoft Entra ID** either in the Microsoft Entra admin center or in the Azure portal. On the **Microsoft Entra ID** page, you can find the tenant **Name**, **Tenant ID** and **Primary domain** under **Overview** > **Basic information**.
+You can find the same details if you go to **Microsoft Entra ID** in the Azure portal. On the **Microsoft Entra ID** page, you can find the tenant **Name**, **Tenant ID** and **Primary domain** under **Overview** > **Basic information**.
 
-## Next steps
-- [Register an app](how-to-register-ciam-app.md)
+## Related content
+
+- [Register an app](/entra/identity-platform/quickstart-register-app)
 - [Create user flows](how-to-user-flow-sign-up-sign-in-customers.md)
+- [Delete an external tenant](how-to-delete-external-tenant-portal.md)

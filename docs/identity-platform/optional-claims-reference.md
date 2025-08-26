@@ -2,7 +2,7 @@
 title: Optional claims reference
 description: Claims reference with details on the optional claims that can be included in tokens in the Microsoft identity platform.
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: curation-claims
 ms.date: 04/10/2024
@@ -48,7 +48,6 @@ The following table lists the v1.0 and v2.0 optional claim set.
 | `groups` | Optional formatting for group claims | JWT, SAML | | The `groups` claim is used with the GroupMembershipClaims setting in the [application manifest](reference-app-manifest.md), which must be set as well. |
 | `idtyp` | Token type | JWT access tokens | Special: only in app-only access tokens | The value is `app` when the token is an app-only token. This claim is the most accurate way for an API to determine if a token is an app token or an app+user token. |
 | `login_hint` | Login hint | JWT | MSA, Microsoft Entra ID | An opaque, reliable login hint claim that's base 64 encoded. Don't modify this value. This claim is the best value to use for the `login_hint` OAuth parameter in all flows to get SSO. It can be passed between applications to help them silently SSO as well - application A can sign in a user, read the `login_hint` claim, and then send the claim and the current tenant context to application B in the query string or fragment when the user selects on a link that takes them to application B. To avoid race conditions and reliability issues, the `login_hint` claim *doesn't* include the current tenant for the user, and defaults to the user's home tenant when used. In a guest scenario where the user is from another tenant, a tenant identifier must be provided in the sign-in request. and pass the same to apps you partner with. This claim is intended for use with your SDK's existing `login_hint` functionality, however that it exposed. |
-| `sid` | Session ID, used for per-session user sign out | JWT | Personal and Microsoft Entra accounts. | |
 | `tenant_ctry` | Resource tenant's country/region | JWT | | Same as `ctry` except set at a tenant level by an admin. Must also be a standard two-letter value. |
 | `tenant_region_scope` | Region of the resource tenant | JWT | | |
 | `upn` | UserPrincipalName | JWT, SAML | | An identifier for the user that can be used with the `username_hint` parameter. Not a durable identifier for the user and shouldn't be used for authorization or to uniquely identity user information (for example, as a database key). Instead, use the user object ID (`oid`) as a database key. For more information, see [Secure applications and APIs by validating claims](claims-validation.md). Users signing in with an [alternate login ID](~/identity/authentication/howto-authentication-use-email-signin.md) shouldn't be shown their User Principal Name (UPN). Instead, use the following ID token claims for displaying sign-in state to the user: `preferred_username` or `unique_name` for v1 tokens and `preferred_username` for v2 tokens. Although this claim is automatically included, you can specify it as an optional claim to attach other properties to modify its behavior in the guest user case. You should use the `login_hint` claim for `login_hint` use - human-readable identifiers like UPN are unreliable. |

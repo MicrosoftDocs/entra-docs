@@ -5,9 +5,10 @@ customer-intent: As an independent software developer, I want to learn how to bu
 author: jricketts
 manager: martinco
 ms.service: entra
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/14/2024
 ms.author: jricketts
+ms.custom: sfi-ropc-nochange
 ---
 # Customize tokens
 
@@ -20,7 +21,7 @@ This article helps you to build security into applications with ID tokens, acces
 
 The primary operation for applications connecting to Microsoft Entra ID is requesting and processing tokens. As a developer, you can customize the token that Microsoft Entra ID sends to your delegated permission app or API. You can't customize workload tokens.
 
-If your application implements [OpenID Connect](auth-oidc.md) (OIDC) and requests ID tokens, you can customize the ID token for your app. If you implement an API, you can customize the access tokens that apps calling your API receive. It isn't possible for an application to customize the access tokens it receives that authorize an app to access an API.
+If your application implements [OpenID Connect (OIDC)](auth-oidc.md) and requests ID tokens, you can customize the ID token for your app. If you implement an API, you can customize the access tokens that apps calling your API receive. It isn't possible for an application to customize the access tokens it receives that authorize an app to access an API.
 
 The primary token customization method for ISVs is to add [optional claims](~/identity-platform/optional-claims.md) to tokens in the app registration. The [optional claims reference](~/identity-platform/optional-claims-reference.md) lists available optional claims.
 

@@ -2,13 +2,13 @@
 title: Customer data storage and processing for European customers in Microsoft Entra ID
 description: Learn about where Microsoft Entra ID stores identity-related data for its European customers.
 author: csmulligan
-manager: CelesteDG
+manager: dougeby
 ms.author: cmulligan
 
 ms.service: entra
 ms.subservice: fundamentals
-ms.topic: conceptual
-ms.date: 02/16/2024
+ms.topic: article
+ms.date: 01/07/2025
 ms.custom: it-pro, references-regions
 ms.collection: M365-identity-device-management
 
@@ -19,8 +19,8 @@ ms.collection: M365-identity-device-management
 
 Microsoft Entra ID stores customer data in a geographic location based on how a tenant was created and provisioned. The following list provides information about how the location is defined:
 
-- **Microsoft Entra admin center or Microsoft Entra API** - A customer selects a location from the pre-defined list.
-- **Dynamics 365 and Power Platform** - A customer provisions their tenant in a pre-defined location.
+- **Microsoft Entra admin center or Microsoft Entra API** - A customer selects a location from the predefined list.
+- **Dynamics 365 and Power Platform** - A customer provisions their tenant in a predefined location.
 - **EU Data Residency** - For customers who provided a location in Europe, Microsoft Entra ID stores most of the customer data in Europe, except where noted later in this article.
 - **EU Data Boundary** - For customers who provided a location that is within the [EU Data Boundary](/privacy/eudb/eu-data-boundary-learn#eu-data-boundary-countries-and-datacenter-locations) (members of the EU and EFTA), Microsoft Entra ID stores and processes most of the customer data in the EU Data Boundary, except where noted later in this article.
 - **Microsoft 365** - The location is based on a customer provided billing address.
@@ -35,8 +35,8 @@ For some components of a service, work is in progress to be included in the EU D
 
 - **Reason for customer data egress** - A few of the tenants are stored outside of the EU location due one of the following reasons:
 
-   - The tenants were initially created with a country code that is NOT in Europe and later the tenant country code was changed to the one in Europe. The Microsoft Entra directory data location is decided during the tenant creation time and not changed when the country code for the tenant is updated. Starting March 2019 Microsoft has blocked updating the country code on a tenant to avoid such confusion.
-   - There are 13 country codes (Countries include: Azerbaijan, Bahrain, Israel, Jordan, Kazakhstan, Kuwait, Lebanon, Oman, Pakistan, Qatar, Saudi Arabia, Turkey, UAE) that were mapped to Asia region until 2013 and later mapped to Europe. Tenants that were created before July 2013 from this country code are provisioned in Asia instead of Europe.
+   - The tenants were initially created with a country code that is NOT in Europe and later the tenant country code was changed to the one in Europe. The Microsoft Entra directory data location is decided during the tenant creation time and not changed when the country code for the tenant is updated. Starting March 2019, Microsoft has blocked updating the country code on a tenant to avoid such confusion.
+   - There are 13 country codes (Countries include: Azerbaijan, Bahrain, Israel, Jordan, Kazakhstan, Kuwait, Lebanon, Oman, Pakistan, Qatar, Saudi Arabia, Türkiye, UAE) that were mapped to Asia region until 2013 and later mapped to Europe. Tenants that were created before July 2013 from this country code are provisioned in Asia instead of Europe.
    - There are seven country codes (Countries include: Armenia, Georgia, Iraq, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan) that were mapped to Asia region until 2017 and later mapped to Europe. Tenants that were created before February 2017 from this country code are provisioned in Asia instead of Europe.
 - **Types of customer data being egressed** - User and device account data, and service configuration (application, policy, and group).
 - **Customer data location at rest** - US and Asia/Pacific.
@@ -53,7 +53,7 @@ Some components of a service will continue to transfer a limited amount of custo
 
 **EU Data Residency:**
 
-[Microsoft Entra ID](./whatis.md): When an IP Address or phone number is determined to be used in fraudulent activities, they are published globally to block access from any workloads using them.
+[Microsoft Entra ID](./whatis.md): When an IP Address or phone number is determined to be used in fraudulent activities, they're published globally to block access from any workloads using them.
 
 **EU Data Boundary:**
 
@@ -65,9 +65,9 @@ See more information on Microsoft Entra permanent partial customer data transfer
 
 **EU Data Residency:**
 
-Some services include capabilities that are optional (in some cases requiring a customer subscription), and where customer administrators can choose to enable or disable these capabilities for their service tenancies. If made available and used by a customer's users, these capabilities will result in data transfers out of Europe as described in the following sections in this article.
+Some services offer optional features. In some cases, you need a subscription to use them. As a customer administrator, you can choose to turn these features on or off for your service accounts. If made available and used by a customer's users, these capabilities will result in data transfers out of Europe as described in the following sections in this article.
 
-- [Multitenant administration](~/identity/multi-tenant-organizations/overview.md): An organization might choose to create a multitenant organization within Microsoft Entra ID. For example, a customer can invite users to their tenant in a B2B context. A customer can create a multitenant software as a service (SaaS) application that allows other third-party tenants to provision the application in the third-party tenant. A customer can make two or more tenants affiliated with one another and act as a single tenant in certain scenarios, such as multitenant organization (MTO) formation, tenant to tenant sync, and shared e-mail domain sharing. Administrator configuration and use of multitenant collaboration might occur with tenants outside of the EU Data Residency and EU Data Boundary resulting in some customer data, such as user and device account data, usage data, and service configuration (application, policy, and group) being stored and processed in the location of the collaborating tenant.
+- [Multitenant administration](~/identity/multi-tenant-organizations/overview.md): An organization might choose to create a multitenant organization within Microsoft Entra ID. For example, a customer can invite users to their tenant in a B2B context. A customer can create a multitenant software as a service (SaaS) application that allows other third-party tenants to provision the application in the third-party tenant. A customer can link two or more tenants to work together as one in certain situations. These include forming a multitenant organization (MTO), syncing tenants, and sharing an email domain. Administrator configuration and use of multitenant collaboration might occur with tenants outside of the EU Data Residency and EU Data Boundary resulting in some customer data, such as user and device account data, usage data, and service configuration (application, policy, and group) being stored and processed in the location of the collaborating tenant.
 - [Application Proxy](/entra/identity/app-proxy): Application proxy allows customers to access both cloud and on-premises applications through an external URL or an internal application portal. Customers might choose advanced routing configurations that would cause Customer Data to egress outside of the EU Data Residency and EU Data Boundary, including user account data, usage data, and application configuration data.
 
 **EU Data Boundary:**

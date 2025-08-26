@@ -1,22 +1,18 @@
 ---
-title: Configure multitenant organization templates using Microsoft Graph API (Preview)
-description: Learn how to configure multitenant organization templates in Microsoft Entra ID using the Microsoft Graph API.
-author: rolyon
-manager: amycolannino
+title: Configure multitenant organization policy templates using Microsoft Graph API
+description: Learn how to configure multitenant organization policy templates in Microsoft Entra ID using the Microsoft Graph API.
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 09/22/2023
-ms.author: rolyon
+ms.date: 05/27/2025
+ms.author: kenwith
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Configure multitenant organization templates using the Microsoft Graph API (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Configure multitenant organization policy templates using the Microsoft Graph API
 
 This article describes how to configure a policy template for your multitenant organization.
 
@@ -24,11 +20,11 @@ This article describes how to configure a policy template for your multitenant o
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multitenant organization.
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to consent to required permissions.
 
 ## Cross-tenant access policy partner template
 
-The [cross-tenant access partner configuration](~/external-id/cross-tenant-access-settings-b2b-collaboration.md) handles trust settings and automatic user consent settings between partner tenants. For example, you can use these settings to trust multi-factor authentication claims for inbound users from the target partner tenant. With the template in an unconfigured state, partner configurations for partner tenants in the multitenant organization won't be amended, with all trust settings passed through from default settings. However, if you configure the template, then partner configurations will be amended corresponding to the policy template. 
+The [cross-tenant access partner configuration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) handles trust settings and automatic user consent settings between partner tenants. For example, you can use these settings to trust multifactor authentication claims for inbound users from the target partner tenant. With the template in an unconfigured state, partner configurations for partner tenants in the multitenant organization won't be amended, with all trust settings passed through from default settings. However, if you configure the template, then partner configurations will be amended corresponding to the policy template.
 
 ### Configure inbound and outbound automatic redemption
 
@@ -37,7 +33,7 @@ To specify which trust settings and automatic user consent settings to apply to 
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
 
 {
     "inboundTrust": {
@@ -60,7 +56,7 @@ To apply this template only to new multitenant organization members and exclude 
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
 
 {
     "inboundTrust": {
@@ -83,7 +79,7 @@ To disable the template completely, set the `templateApplicationLevel` parameter
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration
 
 {
     "inboundTrust": {
@@ -104,7 +100,7 @@ PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/template
 To reset the template to its default state (decline all trust and automatic user consent), use the [multiTenantOrganizationPartnerConfigurationTemplate: resetToDefaultSettings](/graph/api/multitenantorganizationpartnerconfigurationtemplate-resettodefaultsettings) API.
 
 ```http
-POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration/resetToDefaultSettings
+POST https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationPartnerConfiguration/resetToDefaultSettings
 ```
 
 ## Cross-tenant synchronization template
@@ -118,7 +114,7 @@ To allow inbound user synchronization in the policy template, use the [Update mu
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
 
 {
     "userSyncInbound": {
@@ -135,7 +131,7 @@ To apply this template only to new multitenant organization members and exclude 
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
 
 {
     "userSyncInbound": {
@@ -152,7 +148,7 @@ To disable the template completely, set the `templateApplicationLevel` parameter
 **Request**
 
 ```http
-PATCH https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
+PATCH https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization
 
 {
     "userSyncInbound": {
@@ -169,9 +165,9 @@ To reset the template to its default state (decline inbound synchronization), us
 **Request**
 
 ```http
-POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings
+POST https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings
 ```
-    
+
 ## Next steps
 
 - [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md)

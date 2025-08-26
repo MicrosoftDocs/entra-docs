@@ -2,12 +2,13 @@
 title: Govern an application's existing users in Microsoft Entra ID with Microsoft PowerShell
 description: Planning for a successful access reviews campaign for a particular application includes identifying if any users in that application have access that doesn't derive from Microsoft Entra ID.
 author: markwahl-msft
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 06/20/2023
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-blocked, sfi-ropc-nochange
 #Customer intent: As an IT admin, I want to ensure that access to specific applications is governed by setting up access reviews for those applications. For this, I need to have the existing users of that application assigned to the application in Microsoft Entra ID.
 ---
 
@@ -52,7 +53,7 @@ If the user is updated in Microsoft Entra ID, no changes will be sent to the app
 
 ### Application does not use Microsoft Entra ID as its identity provider nor does it support provisioning
 
-For some legacy applications it might not be feasible to remove other identity providers or local credential authentication from the application, or enable support for provisioning protocols for those applications.
+For some legacy applications, it might not be feasible to remove other identity providers or local credential authentication from the application, or enable support for provisioning protocols for those applications.
 
 That scenario of an application which does not support provisioning protocols, is covered in a separate article, [Govern the existing users of an application that does not support provisioning](identity-governance-applications-not-provisioned-users.md).
 
@@ -187,7 +188,7 @@ This section applies to applications that use another SQL database as the underl
 
 This section applies to SAP applications that use SAP Cloud Identity Services as the underlying service for user provisioning.
 
-1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial.
+1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin`, or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial.
 1. Navigate to **Users & Authorizations > Export Users**.
 1. Select all attributes required for matching Microsoft Entra users with those in SAP. This includes the `SCIM ID`, `userName`, `emails`, and other attributes you may be using in your SAP Systems.
 1. Select **Export** and wait for the browser to download the CSV file.
@@ -382,7 +383,7 @@ If the application has multiple application roles, is represented by multiple se
 
 Now that the existing users have assignments to an application role, you can configure Microsoft Entra ID to [start a review](access-reviews-application-preparation.md#create-the-reviews) of those assignments.
 
-1. For this step, you'll need to be in the `Global administrator` or `Identity Governance administrator` role.
+1. For this step, you'll need to be in the Global Administrator or Identity Governance Administrator role.
 1. Follow the instructions in the [guide for creating an access review of groups or applications](create-access-review.md), to create the review of the application's role assignments. Configure the review to apply results when it completes. You can create the access review in PowerShell with the `New-MgIdentityGovernanceAccessReviewDefinition` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module. For more information, see the [examples](/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0&tabs=powershell#examples&preserve-view=true).
 
    > [!NOTE]
@@ -407,14 +408,14 @@ In other situations, such as wanting to have different reviewers for each applic
 
 In this section, you'll configure Microsoft Entra entitlement management for a review of access package assignments that contain the app role assignments, and also configure additional policies so users can request access to your application's roles.
 
-1. For this step, you'll need to be in the `Global administrator` or `Identity Governance administrator` role,  or be [delegated as a catalog creator](entitlement-management-delegate-catalog.md) and the owner of the application.
-1. If you don't already have a catalog for your application governance scenario, [create a catalog](~/id-governance/entitlement-management-catalog-create.md) in Microsoft Entra entitlement management. You can use a PowerShell script to [create each catalog](entitlement-management-catalog-create.md#create-a-catalog-with-powershell).
-1. Populate the catalog with necessary resources, by adding the application, and any Microsoft Entra groups that the application relies upon, [as resources in that catalog](~/id-governance/entitlement-management-catalog-create.md#add-resources-to-a-catalog). You can use a PowerShell script to [add each resource to a catalog](entitlement-management-catalog-create.md#add-a-resource-to-a-catalog-with-powershell).
-1. For each of the applications, and for each of their application roles or groups, [create an access package](~/id-governance/entitlement-management-access-package-create.md) that includes that role or group as its resource. At this stage of configuring these access packages, configure the first access package assignment policy in each access package to be  [a policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), so that only administrators can create assignmentsn that policy, set the access review requirements for existing users, if any, so that they don't keep access indefinitely. If you have many access packages, you can use a PowerShell script to [create each access package in a catalog](entitlement-management-access-package-create.md#create-an-access-package-by-using-microsoft-powershell).
-1. For each access package, assign existing users of the application in that corresponding role, or members of that group, to the access package and its direct assignment policy. You can [directly assign a user](entitlement-management-access-package-assignments.md) to an access package using the Microsoft Entra admin center, or in bulk via Graph or [PowerShell](entitlement-management-access-package-assignments.md#assign-a-user-to-an-access-package-with-powershell).
+1. For this step, you'll need to be in the Global Administrator or Identity Governance Administrator role,  or be [delegated as a catalog creator](entitlement-management-delegate-catalog.md) and the owner of the application.
+1. If you don't already have a catalog for your application governance scenario, [create a catalog](~/id-governance/entitlement-management-catalog-create.md) in Microsoft Entra entitlement management. You can use a PowerShell script to [create each catalog](entitlement-management-catalog-create.md#create-a-catalog-with-powershell), as shown in [create a catalog using PowerShell](entitlement-management-access-package-create-app.md#create-a-catalog-in-microsoft-entra-entitlement-management).
+1. Populate the catalog with necessary resources, by adding the application, and any Microsoft Entra groups that the application relies upon, [as resources in that catalog](~/id-governance/entitlement-management-catalog-create.md#add-resources-to-a-catalog). You can use a PowerShell script to [add each resource to a catalog](entitlement-management-catalog-create.md#add-a-resource-to-a-catalog-with-powershell), as shown in [add the application as a resource to the catalog](entitlement-management-access-package-create-app.md#add-the-application-as-a-resource-to-the-catalog).
+1. For each of the applications, and for each of their application roles or groups, [create an access package](~/id-governance/entitlement-management-access-package-create.md) that includes that role or group as its resource. At this stage of configuring these access packages, configure the first access package assignment policy in each access package to be  [a policy for direct assignment](entitlement-management-access-package-request-policy.md#none-administrator-direct-assignments-only), so that only administrators can create assignments in that policy, set the access review requirements for existing users, if any, so that they don't keep access indefinitely. If you have many access packages, you can use a PowerShell script to [create each access package in a catalog](entitlement-management-access-package-create.md#create-an-access-package-by-using-microsoft-powershell), as shown in [create an access package for an application with a single role](entitlement-management-access-package-create-app.md#create-an-access-package-in-entitlement-management-for-an-application-with-a-single-role-using-powershell).
+1. For each access package, assign existing users of the application in that corresponding role, or members of that group, to the access package and its direct assignment policy. You can [directly assign a user](entitlement-management-access-package-assignments.md) to an access package using the Microsoft Entra admin center, or in bulk via Graph or [PowerShell](entitlement-management-access-package-assignments.md#assign-a-user-to-an-access-package-with-powershell) as shown in [add assignments of existing users](entitlement-management-access-package-create-app.md#add-assignments-of-existing-users-who-already-have-access-to-the-application).
 1. If you have configured access reviews in the access package assignment policies, then when the access review starts, ask the reviewers to give input. By default, they each receive an email from Microsoft Entra ID with a link to the access panel, where they will review the access package assignments. Once the review completes, you should expect to see denied users, if any, having their application role assignments being removed in a few minutes. Subsequently, Microsoft Entra ID will begin deprovisioning denied users from the application. Based on the guidance for [how long will it take to provision users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users), wait for Microsoft Entra provisioning to start deprovisioning the denied users. Monitor the [provisioning status](~/identity/app-provisioning/check-status-user-account-provisioning.md) through the Portal or [Graph APIs](~/identity/app-provisioning/application-provisioning-configuration-api.md#monitor-the-provisioning-job-status) to ensure that all denied users were removed successfully.
 1. If you have [separation of duties](entitlement-management-access-package-incompatible.md) requirements, then configure the incompatible access packages or existing groups for your access package. If your scenario requires the ability to override a separation of duties check, then you can also [set up additional access packages for those override scenarios](entitlement-management-access-package-incompatible.md#configuring-multiple-access-packages-for-override-scenarios).
-1. If you wish to allow users who don't already have access to request access, then in each access package, [create additional access package assignment policies](~/id-governance/entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings) for users to request access.Configure the approval and recurring access review requirements in that policy.
+1. If you wish to allow users who don't already have access to request access, then in each access package, [create additional access package assignment policies](~/id-governance/entitlement-management-access-package-request-policy.md#open-an-existing-access-package-and-add-a-new-policy-with-different-request-settings) for users to request access. Configure the approval and recurring access review requirements in that policy.
 
 
 ## Next steps

@@ -1,14 +1,14 @@
 ---
 title: Grant consent on behalf of a single user
-description: Learn how to grant consent on behalf of a single user when user consent is disabled or restricted.
+description: Learn how to grant consent on behalf of a single user when the user consent is disabled or restricted.
 
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 12/20/2023
+ms.date: 12/12/2024
 ms.author: jomondi
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-ms-graph-ms-powershell
@@ -33,7 +33,7 @@ When a user grants consent for themselves, the following events occur more often
 
 To grant consent to an application on behalf of one user, you need:
 
-- A user account with Global Administrator, Application Administrator, or Cloud Application Administrator
+- A user account with a Privileged Role Administrator, Application Administrator, or Cloud Application Administrator
 
 ## Grant consent on behalf of a single user
 
@@ -50,8 +50,7 @@ For this example, we use [Microsoft Graph PowerShell](/powershell/microsoftgraph
 To grant consent to an application on behalf of one user using Microsoft Graph PowerShell, you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
-# The app for which consent is being granted. In this example, we're granting access
-# to Microsoft Graph Explorer, an application published by Microsoft.
+# The app for which consent is being granted.
 $clientAppId = "de8bc8b5-d9f9-48b1-a8ad-b748da725064" # Microsoft Graph Explorer
 
 # The API to which access will be granted. Microsoft Graph Explorer makes API 
@@ -102,7 +101,7 @@ if ($clientSp.AppRoles | ? { $_.AllowedMemberTypes -contains "User" }) {
     Write-Warning ("A default app role assignment cannot be created because the " `
                  + "client application exposes user-assignable app roles. You must " `
                  + "assign the user a specific app role for the app to be listed " `
-                 + "in the user's My Apps access panel.")
+                 + "in the user's My Apps portal.")
 } else {
     # The app role ID 00000000-0000-0000-0000-000000000000 is the default app role
     # indicating that the app is assigned to the user, but not for any specific 
@@ -127,7 +126,7 @@ You need to consent to the following permissions:
 
 In the following example, you grant delegated permissions defined by a resource API to a client enterprise application on behalf of a single user.
 
-In the example, the resource enterprise application is Microsoft Graph of object ID `7ea9e944-71ce-443d-811c-71e8047b557a`. The Microsoft Graph defines the delegated permissions, `User.Read.All` and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `b0d9b9e3-0ecf-4bfd-8dab-9273dd055a941`. The principalId of the user is `3fbd929d-8c56-4462-851e-0eb9a7b3a2a5`.
+In the example, the resource enterprise application is Microsoft Graph of object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The Microsoft Graph defines the delegated permissions, `User.Read.All`, and `Group.Read.All`. The consentType is `Principal`, indicating that you're consenting on behalf of a single user in the tenant. The object ID of the client enterprise application is `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. The principalId of the user is `aaaaaaaa-bbbb-cccc-1111-222222222222`.
 
 > [!CAUTION]
 > Be careful! Permissions granted programmatically are not subject to review or confirmation. They take effect immediately.
@@ -145,18 +144,18 @@ In the example, the resource enterprise application is Microsoft Graph of object
    
    Request body
    {
-      "clientId": "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94",
+      "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
       "consentType": "Principal",
-      "resourceId": "7ea9e944-71ce-443d-811c-71e8047b557a",
-      "principalId": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5",
+      "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+      "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
       "scope": "User.Read.All Group.Read.All"
    }
    ```
 
-1. Confirm that you've granted consent to the user by running the following request.
+1. Confirm that you granted consent to the user by running the following request.
 
    ```http
-   GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq 'b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94' and consentType eq 'Principal'
+   GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants?$filter=clientId eq '00001111-aaaa-2222-bbbb-3333cccc4444' and consentType eq 'Principal'
    ```
 
 1. Assign the app to the user. This assignment ensures that the user can sign in if assignment is required, and ensures that app is available through the user's My Apps portal. In the following example, `resourceId`represents the client app to which the user is being assigned. The user is assigned the default app role that is `00000000-0000-0000-0000-000000000000`.
@@ -165,8 +164,8 @@ In the example, the resource enterprise application is Microsoft Graph of object
         POST /servicePrincipals/resource-servicePrincipal-id/appRoleAssignedTo
 
         {
-        "principalId": "3fbd929d-8c56-4462-851e-0eb9a7b3a2a5",
-        "resourceId": "b0d9b9e3-0ecf-4bfd-8dab-9273dd055a94",
+        "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+        "resourceId": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
         "appRoleId": "00000000-0000-0000-0000-000000000000"
         }
     ```

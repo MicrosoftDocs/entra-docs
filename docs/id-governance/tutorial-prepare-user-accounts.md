@@ -2,14 +2,14 @@
 title: 'Tutorial: Preparing user accounts for Lifecycle workflows'
 description: Tutorial for preparing user accounts for Lifecycle workflows.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 04/08/2024
+ms.date: 08/13/2024
 ms.author: owinfrey
 ms.reviewer: krbain
-ms.custom: template-tutorial, has-azure-ad-ps-ref
+ms.custom: template-tutorial, no-azure-ad-ps-ref, sfi-ga-nochange, sfi-image-nochange
 ---
 # Preparing user accounts for Lifecycle workflows tutorials
 
@@ -25,7 +25,7 @@ The off-boarding tutorials only require one account that has group and Teams mem
 
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 - A Microsoft Entra tenant
-- A global administrator account for the Microsoft Entra tenant.  This account is used to create our users and workflows.
+- An administrator account with appropriate permissions for the Microsoft Entra tenant.  This account is used to create our users and workflows.
 
 ## Before you begin
 
@@ -35,7 +35,6 @@ In most cases, users are going to be provisioned to Microsoft Entra ID either fr
 
 ## Create users in Microsoft Entra ID
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 We use Graph Explorer to quickly create two users needed to execute the Lifecycle Workflows in the tutorials.  One user represents our new employee and the second represents the new employee's manager.
 
@@ -47,7 +46,7 @@ You need to edit the POST and replace the &lt;your tenant name here&gt; portion 
 First we create our employee, Melva Prince.
 
  1. Now navigate to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
- 2. Sign-in to Graph Explorer with the global administrator account for your tenant.
+ 2. Sign-in to Graph Explorer with the User Administrator account for your tenant.
  3. At the top, change **GET** to **POST** and add `https://graph.microsoft.com/v1.0/users/` to the box. 
  4. Copy the following code in to the **Request body** 
  5. Replace `<your tenant here>` in the following code with the value of your Microsoft Entra tenant.
@@ -65,7 +64,7 @@ First we create our employee, Melva Prince.
      "userPrincipalName": "mprince@<your tenant name here>",
      "passwordProfile" : {
        "forceChangePasswordNextSignIn": true,
-       "password": "xWwvJ]6NMw+bWH-d"
+       "password": "<Generated Password>"
      }
    }
    ```
@@ -90,7 +89,7 @@ Next, we create Britta Simon.  This account is used as our manager.
       "userPrincipalName": "bsimon@<your tenant name here>",
       "passwordProfile" : {
         "forceChangePasswordNextSignIn": true,
-        "password": "xWwvJ]6NMw+bWH-d"
+        "password": "<Generated Password>"
       }
     }
     ```
@@ -114,7 +113,7 @@ After editing the script, save it and follow these steps:
 1.  Open a Windows PowerShell command prompt, with Administrative privileges, from a machine that has access to the Microsoft Entra admin center.
 1. Navigate to the saved PowerShell script location and run it.
 1. If prompted select **Yes to all** when installing the PowerShell module.
-1. When prompted, sign in to the Microsoft Entra admin center with a global administrator for your tenant.
+1. When prompted, sign in to the Microsoft Entra admin center with a Global Administrator for your tenant.
 
 ```powershell
 #
@@ -143,20 +142,27 @@ $Password_manager = "Pass1w0rd"
 $Department = "Sales"
 $UPN_manager = "bsimon@<your tenant name here>"
 
-Install-Module -Name AzureAD
+Install-Module -Name Microsoft.Graph
 Connect-MgGraph -Confirm
 
-$PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
-$PasswordProfile.Password = "<Password>"
-New-MgUser -DisplayName $Displayname_manager  -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_manager -AccountEnabled $true -MailNickName $Name_manager -Department $Department
-New-MgUser -DisplayName $Displayname_employee  -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_employee -AccountEnabled $true -MailNickName $Name_employee -Department $Department
+$PasswordProfile = @{
+  Password = "$Password_manager"
+  }
+
+New-MgUser -DisplayName $Displayname_manager -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_manager -AccountEnabled $true -MailNickName $Name_manager -Department $Department
+
+$PasswordProfile = @{
+  Password = "$Password_employee"
+  }
+
+New-MgUser -DisplayName $Displayname_employee -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_employee -AccountEnabled $true -MailNickName $Name_employee -Department $Department
 ```
 
 Once your user or users are successfully created in Microsoft Entra ID, you can proceed to follow the Lifecycle workflow tutorials for your workflow creation.  
 
 ## Other steps for prehire scenario
 
-There are some other steps that you should be aware of when testing either the [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra Admin Center](tutorial-onboard-custom-workflow-portal.md) tutorial or the [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow) tutorial.
+There are some other steps that you should be aware of when testing either the [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md) tutorial or the [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow) tutorial.
 
 ### Edit the users attributes using the Microsoft Entra admin center
 
@@ -172,7 +178,7 @@ Some of the attributes required for the prehire onboarding tutorial are exposed 
 For the tutorial, the **mail** attribute only needs to be set on the manager account and the **manager** attribute set on the employee account.  Use the following steps:
 
  1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
- 1. Browse to > **Identity** > **Users** > **All Users**.
+ 1. Browse to > **Entra ID** > **Users**.
  1. Select **Melva Prince**.
  1. At the top, select **Edit**.
  1. Under manager, select **Change** and Select **Britta Simon**.
@@ -192,11 +198,11 @@ The employeeHireDate attribute is new to Microsoft Entra ID. It isn't exposed th
 In order to do this, we must get the object ID for our user Melva Prince.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to > **Identity** > **Users** > **All Users**.
+1. Browse to > **Entra ID** > **Users**.
 1. Select **Melva Prince**.
 1. Select the copy sign next to the **Object ID**.
 1. Now navigate to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
-1. Sign-in to Graph Explorer with the global administrator account for your tenant.
+1. Sign-in to Graph Explorer with the Global Administrator account for your tenant.
 1. At the top, change **GET** to **PATCH** and add `https://graph.microsoft.com/v1.0/users/<id>` to the box. Replace `<id>` with the value we copied before.
 1. Copy the following in to the **Request body** and select **Run query**
     ```Example
@@ -231,7 +237,7 @@ The manager attribute is used for email notification tasks. It emails the manage
 
     :::image type="content" source="media/tutorial-lifecycle-workflows/graph-get-manager.png" alt-text="Screenshot of getting a manager in Graph explorer." lightbox="media/tutorial-lifecycle-workflows/graph-get-manager.png":::
 
-For more information about updating manager information for a user in Graph API, see [assign manager](/graph/api/user-post-manager?view=graph-rest-1.0&tabs=http&preserve-view=true) documentation. You can also set this attribute in the Azure Admin center. For more information, see [add or change profile information](../fundamentals/how-to-manage-user-profile-info.md?context=azure/active-directory/users-groups-roles/context/ugr-context).
+For more information about updating manager information for a user in Graph API, see [assign manager](/graph/api/user-post-manager?view=graph-rest-1.0&tabs=http&preserve-view=true) documentation. You can also set this attribute in the Azure Admin center. For more information, see [add or change profile information](~/fundamentals/how-to-manage-user-profile-info.yml?context=azure/active-directory/users-groups-roles/context/ugr-context).
 
 ### Enabling the Temporary Access Pass (TAP)
 
@@ -241,8 +247,8 @@ In this scenario, we use this feature of Microsoft Entra ID to generate a tempor
 
 To use this feature, it must be enabled on our Microsoft Entra tenant. To enable this feature, use the following steps.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
-1. Browse to **Protection** > **Authentication methods** > **Temporary Access Pass**
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Authentication Policy Administrator](../identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator). 
+1. Browse to **Entra ID** > **Authentication methods** > **Temporary Access Pass**
 1. Select **Yes** to enable the policy and add Britta Simon and select which users have the policy applied, and any **General** settings.
 
 ## Consideration for leaver scenario
@@ -257,5 +263,5 @@ A user with groups and Teams memberships is required before you begin the tutori
 ## Next steps
 - [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md)
 - [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow)
-- [Tutorial: Off-boarding users from your organization using Lifecycle workflows with The Microsoft Entra Admin Center](tutorial-offboard-custom-workflow-portal.md)
+- [Tutorial: Off-boarding users from your organization using Lifecycle workflows with The Microsoft Entra admin center](tutorial-offboard-custom-workflow-portal.md)
 - [Tutorial: Off-boarding users from your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-offboard-custom-workflow)

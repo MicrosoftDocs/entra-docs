@@ -3,11 +3,11 @@ title: Does my Microsoft Entra sign-in page accept Microsoft accounts
 description: How on-screen messaging reflects username lookup during sign-in
 
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
-ms.topic: conceptual
-ms.date: 11/21/2023
+ms.topic: article
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: kexia
 ms.custom: it-pro
@@ -29,4 +29,4 @@ You can tell if the sign-in page your organization uses supports Microsoft accou
 
 ## Next steps
 
-[Customize your sign-in branding](~/fundamentals/add-custom-domain.md)
+[Customize your sign-in branding](~/fundamentals/add-custom-domain.yml)

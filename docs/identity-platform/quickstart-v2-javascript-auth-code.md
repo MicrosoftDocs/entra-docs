@@ -5,7 +5,7 @@ ROBOTS: NOINDEX
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js, mode-other
+ms.custom:
 ms.date: 02/27/2024
 ms.service: identity-platform
 
@@ -18,7 +18,7 @@ ms.topic: quickstart
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Sign in users in single-page apps (SPA) via the authorization code flow with Proof Key for Code Exchange (PKCE) using JavaScript](quickstart-single-page-app-javascript-sign-in.md)
+> > [Quickstart: Sign in users in single-page apps (SPA) via the authorization code flow with Proof Key for Code Exchange (PKCE) using JavaScript](quickstart-single-page-app-sign-in.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 
@@ -95,7 +95,7 @@ ms.topic: quickstart
 > 
 > ## Next steps
 > 
-> For a more detailed step-by-step guide on building the application used in this quickstart, see the following tutorial:
+> For a detailed step-by-step guide on building the auth code flow application using React, see the following  tutorial:
 > 
 > > [!div class="nextstepaction"]
-> > [Tutorial to sign in and call MS Graph](./tutorial-v2-javascript-auth-code.md)
+> > [Tutorial: React single-page app (SPA) sign in users](./tutorial-single-page-app-react-prepare-app.md)

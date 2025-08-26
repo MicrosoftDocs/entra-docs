@@ -2,13 +2,13 @@
 title: Microsoft Entra Cloud Sync expressions and function reference
 description: reference
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: reference
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -300,7 +300,7 @@ Returns the position where the substring was found or 0 if not found.
 
 **Example:**  
 `InStr("The quick brown fox","quick")`  
-Evalues to 5
+Evaluates to 5
 
 `InStr("repEated","e",3,vbBinaryCompare)`  
 Evaluates to 7

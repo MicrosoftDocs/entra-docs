@@ -1,22 +1,20 @@
 ---
 title: Configure Microsoft Entra role settings in PIM
 description: Learn how to configure Microsoft Entra role settings in Privileged Identity Management (PIM).
-
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 03/15/2024
+ms.date: 08/08/2025
 ms.author: barclayn
-ms.custom: pim
-
+ms.custom: pim, sfi-ga-nochange
 ---
 # Configure Microsoft Entra role settings in Privileged Identity Management
 
 In Privileged Identity Management (PIM) in Microsoft Entra ID, which is part of Microsoft Entra, role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. This article shows you how to configure role settings and set up the approval workflow to specify who can approve or deny requests to elevate privilege.
 
-You must have the Global Administrator or Privileged Role Administrator role to manage PIM role settings for a Microsoft Entra role. Role settings are defined per role. All assignments for the same role follow the same role settings. Role settings of one role are independent from role settings of another role.
+You must have at least the Privileged Role Administrator role to manage PIM role settings for a Microsoft Entra role. Role settings are defined per role. All assignments for the same role follow the same role settings. Role settings of one role are independent from role settings of another role.
 
 PIM role settings are also known as PIM policies.
 
@@ -26,9 +24,9 @@ To open the settings for a Microsoft Entra role:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
-1. Browse to **Identity governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Roles**.
+1. Browse to **ID Governance** > **Privileged Identity Management** > **Microsoft Entra roles** > **Roles**.
 
-1. On this page you see a list of Microsoft Entra roles available in the tenant, including built-in and custom roles.
+1. On this page, you see a list of Microsoft Entra roles available in the tenant, including built-in and custom roles.
         :::image type="content" source="media/pim-how-to-change-default-settings/role-settings.png" alt-text="Screenshot that shows the list of Microsoft Entra roles available in the tenant, including built-in and custom roles." lightbox="media/pim-how-to-change-default-settings/role-settings.png":::
 
 1. Select the role whose settings you want to configure.
@@ -82,7 +80,7 @@ To enforce this requirement, you create the Conditional Access authentication co
 
 If PIM settings have **On activation, require Microsoft Entra Conditional Access authentication context** configured, the Conditional Access policies define conditions a user must meet to satisfy the access requirements.
 
-This means that security principals with permissions to manage Conditional Access policies, such as Conditional Access administrators or security administrators, can change requirements, remove them, or block eligible users from activating the role. Security principals that can manage the Conditional Access policies should be considered highly privileged and protected accordingly.
+This means that security principals with permissions to manage Conditional Access policies, such as Conditional Access Administrators or Security Administrators, can change requirements, remove them, or block eligible users from activating the role. Security principals that can manage the Conditional Access policies should be considered highly privileged and protected accordingly.
 
 We recommend that you create and enable a Conditional Access policy for the authentication context before the authentication context is configured in PIM settings. As a backup protection mechanism, if there are no Conditional Access policies in the tenant that target authentication context configured in PIM settings, during PIM role activation, the multifactor authentication feature in Microsoft Entra ID is required as the [On activation, require multifactor authentication](pim-how-to-change-default-settings.md#on-activation-require-multifactor-authentication) setting would be set.
 
@@ -112,7 +110,14 @@ You can require users to enter a support ticket number when they activate the el
 
 ### Require approval to activate
 
-You can require approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, you must select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, privileged role administrator/global administrators will become the default approvers.
+We recommend requiring approval for activation of an eligible assignment. The approver doesn't have to have any roles. When you use this option, select at least one approver. We recommend that you select at least two approvers. If no specific approvers are selected, active Privileged Role Administrators/Global Administrators become the default approvers.
+
+> [!IMPORTANT]
+> You will be locked out of your tenant if all of the following conditions are true:
+> - All Privileged Role Administrators/Global Administrators have eligible assignments, but none are active.
+> - Approval is required for activation.
+> - No approvers are configured.
+> <br><strong>Avoid this situation</strong> by configuring [emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md) and configuring specific approvers.
 
 To learn more about approvals, see [Approve or deny requests for Microsoft Entra roles in Privileged Identity Management](./pim-approval-workflow.md).
 
@@ -134,7 +139,7 @@ You can also choose one of these active assignment duration options.
 | Allow permanent active assignment | Resource administrators can assign permanent active assignments. |
 | Expire active assignment after | Resource administrators can require that all active assignments have a specified start and end date. |
 
-All assignments that have a specified end date can be renewed by Global admins and Privileged Role admins. Also, users can initiate self-service requests to [extend or renew role assignments](pim-resource-roles-renew-extend.md).
+Global Administrators and Privileged Role Administrators can renew all assignments that have a specified end date. Also, users can initiate self-service requests to [extend or renew role assignments](pim-resource-roles-renew-extend.md).
 
 ### Require multifactor authentication on active assignment
 

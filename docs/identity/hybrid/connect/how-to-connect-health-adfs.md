@@ -1,19 +1,17 @@
 ---
 title: Microsoft Entra Connect Health agents for AD FS
 description: This is the Microsoft Entra Connect Health page how to monitor your on-premises AD FS infrastructure.
-
 ms.reviewer: zhiweiwangmsft
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: dc0e53d8-403e-462a-9543-164eaa7dd8b3
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.author: billmath
-ms.custom: H1Hack27Feb2017
-
+ms.date: 04/09/2025
+ms.author: jomondi
+ms.custom: H1Hack27Feb2017, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Microsoft Entra Connect Health agents for AD FS
@@ -32,7 +30,7 @@ The following table lists requirements for using Microsoft Entra Connect Health:
 | Requirement | Description |
 | --- | --- |
 | You have a Microsoft Entra ID P1 or P2 subscription. |Microsoft Entra Connect Health is a feature of Microsoft Entra ID P1 or P2. For more information, see [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md). <br /><br />To start a free 30-day trial, see [Start a trial](https://azure.microsoft.com/trial/get-started-active-directory/). |
-| You're a global administrator in Microsoft Entra ID. |Currently, only Global Administrator accounts can install and configure health agents. For more information, see [Administering your Microsoft Entra directory](~/fundamentals/whatis.md). <br /><br /> By using Azure role-based access control (Azure RBAC), you can allow other users in your organization to access Microsoft Entra Connect Health. For more information, see [Azure RBAC for Microsoft Entra Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac). <br /><br />**Important**: Use a work or school account to install the agents. You can't use a Microsoft account to install the agents. For more information, see [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md). |
+| You're a Global Administrator in Microsoft Entra ID. |Currently, only Global Administrator accounts can install and configure health agents. <br /><br /> By using Azure role-based access control (Azure RBAC), you can allow other users in your organization to access Microsoft Entra Connect Health. For more information, see [Azure RBAC for Microsoft Entra Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac). <br /><br />**Important**: Use a work or school account to install the agents. You can't use a Microsoft account to install the agents. For more information, see [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md). |
 | The Microsoft Entra Connect Health agent is installed on each targeted server. | Health agents must be installed and configured on targeted servers so that they can receive data and provide monitoring and analytics capabilities. <br /><br />For example, to get data from your Active Directory Federation Services (AD FS) infrastructure, you must install the agent on the AD FS server and on the Web Application Proxy server. Similarly, to get data from your on-premises AD Domain Services infrastructure, you must install the agent on the domain controllers. |
 | The Azure service endpoints have outbound connectivity. | During installation and runtime, the agent requires connectivity to Microsoft Entra Connect Health service endpoints. If firewalls block outbound connectivity, add the [outbound connectivity endpoints](how-to-connect-health-agent-install.md#outbound-connectivity-to-azure-service-endpoints) to an allowlist. |
 |Outbound connectivity is based on IP addresses. | For information about firewall filtering based on IP addresses, see [Azure IP ranges](https://www.microsoft.com/download/details.aspx?id=56519).|
@@ -134,54 +132,55 @@ The Usage Analytics feature needs to gather and analyze data, so the Microsoft E
     > [!IMPORTANT]
     > The remaining steps are required only for primary AD FS servers.
 
- #### Enable audit properties on the AD FS server
- 1. Open the **AD FS Management** snap-in. (In **Server Manager**, select **Tools** > **AD FS Management**.)
- 2. In the **Actions** pane, select **Edit Federation Service Properties**.
- 3. In the **Federation Service Properties** dialog, select the **Events** tab.
- 4. Select the **Success audits** and **Failure audits** checkboxes, and then select **OK**. Success audits and failure audits should be enabled by default.
+#### Enable audit properties on the AD FS server
+1. Open the **AD FS Management** snap-in. (In **Server Manager**, select **Tools** > **AD FS Management**.)
+2. In the **Actions** pane, select **Edit Federation Service Properties**.
+3. In the **Federation Service Properties** dialog, select the **Events** tab.
+4. Select the **Success audits** and **Failure audits** checkboxes, and then select **OK**. Success audits and failure audits should be enabled by default.
 
- #### Enable audit properties on AD FS server
+#### Enable audit properties on AD FS server
  
- >[!IMPORTANT]
- >This step is required only for primary AD FS servers.
+>[!IMPORTANT]
+>This step is required only for primary AD FS servers.
 
- 1. Open a PowerShell window and run the following command:
+1. Open a PowerShell window and run the following command:
 
-    `Set-AdfsProperties -AuditLevel Verbose`
+   `Set-AdfsProperties -AuditLevel Verbose`
 
 The "basic" audit level is enabled by default. For more information, see [AD FS audit enhancement in Windows Server 2016](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server).
 
- #### Verify verbose logging
- To verify verbose logging is enabled do the following.
+#### Verify verbose logging
 
- 1. Open a PowerShell window and run the following command:
+To verify verbose logging is enabled do the following.
 
-    `Get-AdfsProperties`
+1. Open a PowerShell window and run the following command:
+
+   `Get-AdfsProperties`
  
- 2. Verify that the Auditlevel is set to verbose
+2. Verify that the Auditlevel is set to verbose
 
 #### Verify AD FS service account audit settings
+
 1. Go to the *Security Settings\Local Policies\User Rights Assignment* folder. Double-click **Generate security audits**.
 2. On the **Local Security Setting** tab, verify that the **AD FS service account** is listed. If it's not listed, select Add User or Group, and add the AD FS service account to the list. Then select **OK**.
 3. Close **Local Security Policy**.
 
 #### Review the AD FS audit logs
+
 After enabling AD FS audit logs, you should be able to check the AD FS audit logs using Event viewer.
 
+1. Open **Event Viewer**.
+2. Go to **Windows Logs**, and then select **Security**.
+3. In the right pane, select **Filter Current Logs**.
+4. For **Event sources**, select **AD FS Auditing**.
 
- 1. Open **Event Viewer**.
- 2. Go to **Windows Logs**, and then select **Security**.
- 3. In the right pane, select **Filter Current Logs**.
- 4. For **Event sources**, select **AD FS Auditing**.
- 5. You can get a complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
 
-    For more information about audit logs, see [Operations questions](./reference-connect-health-faq.yml).
+For more information about audit logs, see [Operations questions](./reference-connect-health-faq.yml).
 
-    :::image type="content" source="media/how-to-connect-health-agent-install/adfsaudit.png" alt-text="Screenshot that shows the Filter Current Log window, with AD FS auditing selected.":::
+  :::image type="content" source="media/how-to-connect-health-agent-install/adfsaudit.png" alt-text="Screenshot that shows the Filter Current Log window, with AD FS auditing selected.":::
 
 > [!WARNING]
 > A group policy can disable AD FS auditing. If AD FS auditing is disabled, usage analytics about login activities are unavailable. Ensure that you have no group policy that disables AD FS auditing.
->
 
 The following tables provide a list of common events that correspond to audit level events
 
@@ -194,7 +193,7 @@ The following tables provide a list of common events that correspond to audit le
 |1202|FreshCredentialSuccessAudit|The Federation Service validated a new credential.|
 |1203|FreshCredentialFailureAudit|The Federation Service failed to validate a new credential.|
 
-For more information see the  complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
+
 
 ##### Verbose audit level events
 
@@ -208,7 +207,6 @@ For more information see the  complete list of AD FS events [here](https://adfsh
 |500|IssuedIdentityClaims|More information for the event entry with Instance ID %1. There may be more events with the same Instance ID with more information.|
 |501|CallerIdentityClaims|More information for the event entry with Instance ID %1. There may be more events with the same Instance ID with more information.|
 
-For more information see the  complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
 
 ## Test connectivity to the Microsoft Entra Connect Health service
 

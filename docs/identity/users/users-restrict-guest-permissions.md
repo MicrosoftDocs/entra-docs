@@ -1,15 +1,14 @@
 ---
 title: Restrict guest user access permissions
 description: Restrict guest user access permissions using the Azure portal, PowerShell, or Microsoft Graph in Microsoft Entra ID
-
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
-ms.date: 11/18/2023
+manager: pmwongera
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
 ms.reviewer: krbain
 ---
 
@@ -25,19 +24,11 @@ Limited access (default)     | Guests can see membership of all non-hidden group
 
 When guest access is restricted, guests can view only their own user profile. Permission to view other users isn't allowed even if the guest is searching by User Principal Name or objectId. Restricted access also restricts guest users from seeing the membership of groups they're in. For more information about the overall default user permissions, including guest user permissions, see [What are the default user permissions in Microsoft Entra ID?](~/fundamentals/users-default-permissions.md).
 
-## Permissions and licenses
+## Update in the Microsoft Entra admin center
 
-You must be in the Global Administrator role to configure guest user access. There are no additional licensing requirements to restrict guest access.
-
-## Update in the Azure portal
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
-We’ve made changes to the existing Azure portal controls for guest user permissions.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-1. Select Microsoft Entra ID  > **Users** > **All users**.
-1. Under **External users**, select **Manage external collaboration settings**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Select **Entra ID** > **External Identities**.
+1. Select **External collaboration settings**.
 1. On the **External collaboration settings** page, select **Guest user access is restricted to properties and memberships of their own directory objects** option.
 
    :::image type="content" source="./media/users-restrict-guest-permissions/external-collaboration-settings.png" alt-text="Screenshot of Microsoft Entra external collaboration settings page.":::
@@ -46,7 +37,7 @@ We’ve made changes to the existing Azure portal controls for guest user permis
 
 ## Update with the Microsoft Graph API
 
-We’ve added a new Microsoft Graph API to configure guest permissions in your Microsoft Entra organization. The following API calls can be made to assign any permission level. The value for guestUserRoleId used here is to illustrate the most restricted guest user setting. For more information about using the Microsoft Graph to set guest permissions, see [`authorizationPolicy` resource type](/graph/api/resources/authorizationpolicy).
+There is a new Microsoft Graph API to configure guest permissions in your Microsoft Entra organization. The following API calls can be made to assign any permission level. The value for guestUserRoleId used here is to illustrate the most restricted guest user setting. For more information about using the Microsoft Graph to set guest permissions, see [`authorizationPolicy` resource type](/graph/api/resources/authorizationpolicy).
 
 ### Configuring for the first time
 
@@ -61,7 +52,7 @@ POST https://graph.microsoft.com/beta/policies/authorizationPolicy/authorization
 Response should be Success 204.
 
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ### Updating the existing value
 
@@ -161,11 +152,11 @@ Service without current support might have compatibility issues with the new gue
 
 Question | Answer
 -------- | ------
-Where do these permissions apply? | These directory level permissions are enforced across Microsoft Entra services including the Microsoft Graph, PowerShell v2, the Azure portal, and My Apps portal. Microsoft 365 services leveraging Microsoft 365 groups for collaboration scenarios are also affected, specifically Outlook, Microsoft Teams, and SharePoint.
+Where do these permissions apply? | These directory level permissions are enforced across Microsoft Entra services including the Microsoft Graph, PowerShell v2, the Azure portal, and My Apps portal. Microsoft 365 services using Microsoft 365 groups for collaboration scenarios are also affected, specifically Outlook, Microsoft Teams, and SharePoint.
 How do restricted permissions affect which groups guests can see? | Regardless of default or restricted guest permissions, guests can't enumerate the list of groups or users. Guests can see groups they're members of in both the Azure portal and the My Apps portal depending on permissions:<ul><li>**Default permissions**: To find the groups they're members of in the Azure portal, the guest must search for their object ID in the **All users** list, and then select **Groups**. Here they can see the list of groups that they're members of, including all the group details, including name, email, and so on. In the My Apps portal, they can see a list of groups they own and groups they're in.</li><li>**Restricted guest permissions**: In the Azure portal, they can find the list of groups they're in by searching for their object ID in the **All users** list, and then selecting **Groups**. They can see only limited details about the group, notably the object ID. By design, the Name and Email columns are blank and Group Type is Unrecognized. In the My Apps portal, they're not able to access the list of groups they own or groups they're a member of.</li></ul><br>For more detailed comparison of the directory permissions that come from the Graph API, see [Default user permissions](~/fundamentals/users-default-permissions.md#member-and-guest-users).
-Which parts of the My Apps portal will this feature affect? | The groups functionality in the My Apps portal will honor these new permissions. This functionality includes all paths to view the groups list and group memberships in My Apps. No changes were made to the group tile availability. The group tile availability is still controlled by the existing group setting in the Azure portal.
+Which parts of the My Apps portal will this feature affect? | The groups functionality in the My Apps portal honors these new permissions. This functionality includes all paths to view the groups list and group memberships in My Apps. No changes were made to the group tile availability. The group tile availability is still controlled by the existing group setting in the Azure portal.
 Do these permissions override SharePoint or Microsoft Teams guest settings? | No. Those existing settings still control the experience and access in those applications. For example, if you see issues in SharePoint, double check your external sharing settings. Guests added by team owners at the team level have access to channel meeting chat only for standard channels, excluding any private and shared channels.
-What are the known compatibility issues in  Yammer? | With permissions set to ‘restricted’, guests signed into Yammer won't be able to leave the group.
+What are the known compatibility issues in  Yammer? | With permissions set to "restricted", guests signed into Yammer aren't able to leave the group.
 Will my existing guest permissions be changed in my tenant? | No changes were made to your current settings. We maintain backward compatibility with your existing settings. You decide when you want to make changes.
 Will these permissions be set by default? | No. The existing default permissions remain unchanged. You can optionally set the permissions to be more restrictive.
 Are there any license requirements for this feature? | No, there are no new licensing requirements with this feature.

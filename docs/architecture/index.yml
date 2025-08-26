@@ -22,7 +22,7 @@ landingContent:
       - linkListType: architecture
         links:
           - text: What is Microsoft Entra ID?
-            url: ~/fundamentals/whatis.md
+            url: ~/fundamentals/what-is-entra.md
           - text: Microsoft Entra architecture
             url: architecture.md
 
@@ -33,8 +33,8 @@ landingContent:
         links:
           - text: Deploy Microsoft Entra ID
             url: deployment-plans.md
-          - text: Deploy Azure AD B2C 
-            url: b2c-deployment-plans.md
+          - text: Deploy Microsoft Entra External ID 
+            url: external-identity-deployment-architectures.md
   # Card
   - title: Operational references
     linkLists:
@@ -54,3 +54,15 @@ landingContent:
             url: security-operations-introduction.md
           - text: Protecting cloud resources from on-premises attacks
             url: protect-m365-from-on-premises-attacks.md
+
+  # Card
+  - title: Secure for AI
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Copilot in Microsoft Entra
+            url: ~/fundamentals/copilot-security-entra.md
+          - text: Secure Gen AI
+            url: secure-generative-ai.md
+
+          

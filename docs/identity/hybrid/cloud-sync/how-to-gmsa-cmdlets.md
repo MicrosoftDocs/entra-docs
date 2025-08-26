@@ -2,13 +2,13 @@
 title: 'Microsoft Entra provisioning Agent gMSA PowerShell cmdlets'
 description: Learn how to use the Microsoft Entra provisioning agent gMSA PowerShell cmdlets.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
@@ -16,7 +16,7 @@ ms.author: billmath
 
 The purpose of this document is to describe the Microsoft Entra Connect cloud provisioning agent gMSA PowerShell cmdlets. These cmdlets allow you to have more granularity on the permissions that are applied on the service account (gMSA). By default, Microsoft Entra Cloud Sync applies all permissions similar to Microsoft Entra Connect on the default gMSA or a custom gMSA, during cloud provisioning agent install.
 
-This document will cover the following cmdlets:
+This document covers the following cmdlets:
 
 `Set-AADCloudSyncPermissions`
 
@@ -34,17 +34,17 @@ The following prerequisites are required to use these cmdlets.
    Import-Module "C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\Microsoft.CloudSync.Powershell.dll"
    ```
 
-3. These cmdlets require a parameter called `Credential` which can be passed, or will prompt the user if not provided in the command line. Depending on the cmdlet syntax used, these credentials must be an enterprise admin account or, at a minimum, a domain administrator of the target domain where you're setting the permissions. 
+3. These cmdlets require a parameter called `Credential` which can be passed, or prompts the user if not provided in the command line. Depending on the cmdlet syntax used, these credentials must be an enterprise admin account or, at a minimum, a domain administrator of the target domain where you're setting the permissions. 
 
 4. To create a variable for credentials, use:
 
    `$credential = Get-Credential`
    
-5. To set Active Directory permissions for cloud provisioning agent, you can use the following cmdlet. This will grant permissions in the root of the domain allowing the service account to manage on-premises Active Directory objects. See [Using Set-AADCloudSyncPermissions](#using-set-aadcloudsyncpermissions) below for examples on setting the permissions.
+5. To set Active Directory permissions for cloud provisioning agent, you can use the following cmdlet. This grants permissions in the root of the domain allowing the service account to manage on-premises Active Directory objects. See [Using Set-AADCloudSyncPermissions](#using-set-aadcloudsyncpermissions) below for examples on setting the permissions.
 
    `Set-AADCloudSyncPermissions -EACredential $credential`
 
-6. To restrict Active Directory permissions set by default on the cloud provisioning agent account, you can use the following cmdlet. This will increase the security of the service account by disabling permission inheritance and removing all existing permissions, except SELF and Full Control for administrators. See [Using Set-AADCloudSyncRestrictedPermission](#using-set-aadcloudsyncrestrictedpermissions) below for examples on restricting the permissions.
+6. To restrict Active Directory permissions set by default on the cloud provisioning agent account, you can use the following cmdlet. This increases service account security by disabling permission inheritance and removing all existing permissions, except SELF and Full Control for administrators. See [Using Set-AADCloudSyncRestrictedPermission](#using-set-aadcloudsyncrestrictedpermissions) below for examples on restricting the permissions.
 
    `Set-AADCloudSyncRestrictedPermission -Credential $credential`
 
@@ -68,7 +68,7 @@ You can use AADCloudSyncPermissions in one of two ways:
 
 ## Grant permissions to all configured domains
 
-Granting certain permissions to all configured domains will require the use of an enterprise admin account.
+Granting certain permissions to all configured domains requires the use of an enterprise admin account.
 
 ```powershell
 $credential = Get-Credential
@@ -77,7 +77,7 @@ Set-AADCloudSyncPermissions -PermissionType "Any mentioned above" -EACredential 
 
 ## Grant permissions to a specific domain
 
-Granting certain permissions to a specific domain will require the use of a TargetDomainCredential that is enterprise admin or, domain admin of the target domain. The TargetDomain has to be already configured through wizard.
+Granting certain permissions to a specific domain requires the use of a TargetDomainCredential that is enterprise admin or, domain admin of the target domain. The TargetDomain has to be already configured through wizard.
 
 ```powershell
 $credential = Get-Credential
@@ -85,7 +85,7 @@ Set-AADCloudSyncPermissions -PermissionType "Any mentioned above" -TargetDomain 
 ```
 
 ## Using Set-AADCloudSyncRestrictedPermissions
-For increased security, `Set-AADCloudSyncRestrictedPermissions` will tighten the permissions set on the cloud provisioning agent account itself. Hardening permissions on the cloud provisioning agent account involves the following changes: 
+For increased security, `Set-AADCloudSyncRestrictedPermissions` refines the permissions set on the cloud provisioning agent account itself. Hardening permissions on the cloud provisioning agent account involves the following changes: 
 
 - Disable inheritance
 - Remove all default permissions, except ACEs specific to SELF.
@@ -100,3 +100,8 @@ For Example:
 $credential = Get-Credential 
 Set-AADCloudSyncRestrictedPermissions -Credential $credential  
 ```
+
+## Next Steps
+
+- [Understand group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
+- [Understand gMSA accounts with cloud sync](gmsa-cloud-sync.md)

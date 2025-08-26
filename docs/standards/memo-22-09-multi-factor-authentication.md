@@ -8,13 +8,13 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
-ms.date: 04/28/2023
+ms.date: 02/10/2025
 ms.custom: it-pro
 ---
 
 # Meet multifactor authentication requirements of memorandum 22-09
 
-Learn about using Microsoft Entra ID as the centralized identity management system when implementing Zero Trust principles. See, US Office of Management and Budget (OMB) [M 22-09 Memorandum for the Heads of Executive Departments and Agencies](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf).
+Learn about using Microsoft Entra ID as the centralized identity management system when implementing Zero Trust principles. See, US Office of Management and Budget (OMB) [M 22-09 Memorandum for the Heads of Executive Departments and Agencies](https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/01/M-22-09.pdf). 
 
 The memo requirements are that employees use enterprise-managed identities to access applications, and that multifactor authentication protects employees from sophisticated online attacks, such as phishing. This attack method attempts to obtain and compromise credentials, with links to inauthentic sites.
 
@@ -22,11 +22,11 @@ Multifactor authentication prevents unauthorized access to accounts and data. Th
 
 ## Phishing-resistant methods
 
-Some federal agencies have deployed modern credentials such as FIDO2 security keys or Windows Hello for Business. Many are evaluating Microsoft Entra authentication with certificates. 
+Some federal agencies deployed modern credentials such as FIDO2 security keys or Windows Hello for Business. Many are evaluating Microsoft Entra authentication with certificates. 
 
 Learn more:
 
-* [FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers)
+* [FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md)
 * [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Overview of Microsoft Entra certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication.md)
 
@@ -37,7 +37,7 @@ Some agencies are modernizing their authentication credentials. There are multip
 ### Modern approaches
 
 * **FIDO2 security keys** are, according to the Cybersecurity & Infrastructure Security Agency (CISA) the gold standard of multifactor authentication
-  * See, [Passwordless authentication options for Microsoft Entra ID, FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers)
+  * See, [Passwordless authentication options for Microsoft Entra ID, FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md)
   * Go to cisa.gov for [More than a Password](https://www.cisa.gov/mfa)
 * **Microsoft Entra certificate authentication** without dependency on a federated identity provider. 
   * This solution includes smart card implementations: Common Access Card (CAC), Personal Identity Verification (PIV), and derived PIV credentials for mobile devices or security keys
@@ -59,7 +59,7 @@ Learn more:
 
 * [Plan your Microsoft Entra hybrid join implementation](~/identity/devices/hybrid-join-plan.md), or 
 * [How to: Plan your Microsoft Entra join implementation](~/identity/devices/device-join-plan.md)
-* See also, [Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)
+* See also, [Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 
 >[!NOTE]
 > Microsoft Authenticator isn't phishing-resistant. Configure Conditional Access policy to require that managed devices get protection from external phishing threats.
@@ -79,7 +79,7 @@ Learn more:
 Your current device capabilities, user personas, and other requirements might dictate multi-factor methods. For example, FIDO2 security keys with USB-C support require devices with USB-C ports. Consider the following information when evaluating phishing-resistant multifactor authentication:
 
 * **Device types and capabilities you can support**: kiosks, laptops, mobile phones, biometric readers, USB, Bluetooth, and near-field communication devices
-* **Organizational user personas**: front-line workers, remote workers with and without company-owned hardware, administrators with privileged access workstations, and business-to-business guest users
+* **Organizational user personas**: frontline workers, remote workers with and without company-owned hardware, administrators with privileged access workstations, and business-to-business guest users
 * **Logistics**: distribute, configure, and register multifactor authentication methods such as FIDO2 security keys, smart cards, government-furnished equipment, or Windows devices with TPM chips
 * **Federal Information Processing Standards (FIPS) 140 validation at an authenticator assurance level**: some FIDO security keys are FIPS 140 validated at levels for AAL3 set by NIST SP 800-63B 
   * See, [Authenticator assurance levels](nist-about-authenticator-assurance-levels.md)

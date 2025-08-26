@@ -8,13 +8,13 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
-ms.date: 05/23/2023
+ms.date: 02/10/2025
 ms.custom: it-pro
 ---
 
-# Other areas of Zero Trust addressed in memorandum 22-09 
+# Other areas of Zero Trust addressed in Memo 22-09
 
-The other articles in this guidance address the identity pillar of Zero Trust principles, as described in the US Office of Management and Budget (OMB) [M 22-09 Memorandum for the Heads of Executive Departments and Agencies](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf). This article covers Zero Trust maturity model areas beyond the identity pillar, and it addresses the following themes:
+The other articles in this guidance address the identity pillar of Zero Trust principles, as described in the US Office of Management and Budget (OMB) [Memo 22-09, Memorandum for the Heads of Executive Departments and Agencies](https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/01/M-22-09.pdf). This article covers Zero Trust maturity model areas beyond the identity pillar, and it addresses the following themes:
 
 * Visibility
 * Analytics
@@ -23,7 +23,7 @@ The other articles in this guidance address the identity pillar of Zero Trust pr
 
 ## Visibility
 
-It's important to monitor your Microsoft Entra tenant. Assume a breach mindset and meet compliance standards in memorandum 22-09 and [Memorandum 21-31](https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf). Three primary log types are used for security analysis and ingestion:
+It's important to monitor your Microsoft Entra tenant. Assume a breach mindset and meet compliance standards in memorandum 22-09 and 21-31, Improving the Federal Governments Investigative and Remediation Capabilities Related to Cybersecurity Incidents. Three primary log types are used for security analysis and ingestion:
 
 * **Azure audit logs** to monitor operational activities of the directory, such as creating, deleting, updating objects like users or groups
   * Use also to make changes to Microsoft Entra configurations, like modifications to a Conditional Access policy
@@ -61,9 +61,9 @@ Learn more:
 You can use analytics in the following tools to aggregate information from Microsoft Entra ID and show trends in your security posture in comparison to your baseline. You can also use analytics to assess and look for patterns or threats across Microsoft Entra ID. 
 
 * **Microsoft Entra ID Protection** analyzes sign-ins and other telemetry sources for risky behavior
-  * Identity Protection assigns a risk score to sign-in events
+  * ID Protection assigns a risk score to sign-in events
   * Prevent sign-ins, or force a step-up authentication, to access a resource or application based on risk score
-  * See, [What is Identity Protection?](~/id-protection/overview-identity-protection.md)
+  * See, [What is ID Protection?](~/id-protection/overview-identity-protection.md)
 * **Microsoft Entra usage and insights reports** have information similar to Azure Sentinel workbooks, including applications with highest usage or sign-in trends. 
   * Use reports to understand aggregate trends that might indicate an attack or other events
   * See, [Usage and insights in Microsoft Entra ID](~/identity/monitoring-health/concept-usage-insights-report.md)

@@ -2,34 +2,36 @@
 title: View privileged role assignments in Microsoft Entra Insights
 description: How to view current privileged role assignments in the Microsoft Entra Insights tab.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
-
 ms.topic: how-to
-ms.date: 05/22/2023
+ms.date: 04/01/2025
 ms.author: jfields
+ms.custom: sfi-ga-nochange
 ---
 
 # View privileged role assignments in your organization
 
-The **Microsoft Entra Insights** tab shows you who is assigned to privileged roles in your organization. You can review a list of identities assigned to a privileged role and learn more about each identity.
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
 
-> [!NOTE] 
-> Microsoft recommends that you keep two break glass accounts permanently assigned to the global administrator role. Make sure that these accounts don't require the same multi-factor authentication mechanism to sign in as other administrative accounts. This is described further in [Manage emergency access accounts in Microsoft Entra](~/identity/role-based-access-control/security-emergency-access.md). 
+The **Microsoft Entra Insights** tab shows you who is assigned to [privileged roles](/entra/identity/role-based-access-control/permissions-reference) in your organization. You can review a list of identities assigned to a privileged role and learn more about each identity.
 
 > [!NOTE] 
 > Keep role assignments permanent if a user has an additional Microsoft account (for example, an account they use to sign in to Microsoft services like Skype or Outlook.com). If you require multi-factor authentication to activate a role assignment, a user with an additional Microsoft account will be locked out.  
 
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
+
 ## Prerequisite
-To view information on the Microsoft Entra Insights tab, you must have Permissions Management Administrator role permissions.
+To view information on the Microsoft Entra Insights tab, you must have [Permissions Management Administrator](/entra/identity/role-based-access-control/permissions-reference#permissions-management-administrator) role permissions.
 
 <a name='view-information-in-the-azure-ad-insights-tab'></a>
 
 ## View information in the Microsoft Entra Insights tab
 
 1. From the Permissions Management home page, select the **Microsoft Entra Insights** tab.
-2. Select **Review global administrators** to review the list of Global administrator role assignments.
-3. Select **Review highly privileged roles** or **Review service principals** to review information on principal role assignments for the following roles: *Application administrator*, *Cloud Application administrator*, *Exchange administrator*, *Intune administrator*, *Privileged role administrator*, *SharePoint administrator*, *Security administrator*, *User administrator*. 
+2. Select **Review Global Administrators** to review the list of Global Administrator role assignments.
+3. Select **Review highly privileged roles** or **Review service principals** to review information on principal role assignments for the following roles: *Application Administrator*, *Cloud Application Administrator*, *Exchange Administrator*, *Intune Administrator*, *Privileged Role Administrator*, *SharePoint Administrator*, *Security Administrator*, *User Administrator*. 
 
 
 ## Next steps

@@ -2,11 +2,11 @@
 title: Define organizational policies for governing access to applications in your environment
 description: Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility. You can define policies for how users should obtain access to your business critical applications integrated with Microsoft Entra ID Governance.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
-ms.topic: conceptual
-ms.date: 06/28/2023
+ms.topic: how-to
+ms.date: 12/10/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ---
@@ -15,7 +15,7 @@ ms.reviewer: markwahl-msft
 
 Once you've identified one or more applications that you want to use Microsoft Entra ID to [govern access](identity-governance-applications-prepare.md), write down the organization's policies for determining which users should have access, and any other constraints that the system should provide.
 
-## Identifies applications and their roles in scope
+## Select applications and their roles in scope
 
 Organizations with compliance requirements or risk management plans have sensitive or business-critical applications. If this application is an existing application in your environment, you may already have documented the access policies for who 'should have access' to this application. If not, you may need to consult with various stakeholders, such as compliance and risk management teams, to ensure that the policies being used to automate access decisions are appropriate for your scenario.
 
@@ -48,7 +48,7 @@ If you already have an organization role definition, then see [how to migrate an
 
 1. **Inquire if there are separation of duties constraints.** For example, you may have an application with two app roles, *Western Sales* and *Eastern Sales*, and you want to ensure that a user can only have one sales territory at a time.  Include a list of any pairs of app roles that are incompatible for your application, so that if a user has one role, they aren't allowed to request the second role.
 
-1. **Select the appropriate Conditional Access policy for access to the application.** We recommend that you analyze your applications and group them into applications that have the same resource requirements for the same users. If this is the first federated SSO application you're integrating with Microsoft Entra ID Governance for identity governance, you may need to create a new Conditional Access policy to express constraints, such as requirements for Multifactor authentication (MFA) or location-based access.  You can configure users to be required to agree to [a terms of use](~/identity/conditional-access/require-tou.md). See [plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md) for more considerations on how to define a Conditional Access policy.
+1. **Select the appropriate Conditional Access policy for access to the application.** We recommend that you analyze your applications and group them into applications that have the same resource requirements for the same users. If this is the first federated SSO application you're integrating with Microsoft Entra ID Governance for identity governance, you may need to create a new Conditional Access policy to express constraints, such as requirements for Multifactor authentication (MFA) or location-based access.  You can configure users to be required to agree to [a terms of use](~/identity/conditional-access/policy-all-users-require-terms-of-use.md). See [plan a Conditional Access deployment](~/identity/conditional-access/plan-conditional-access.md) for more considerations on how to define a Conditional Access policy.
 
 1. **Determine how exceptions to your criteria should be handled.**  For example, an application may typically only be available for designated employees, but an auditor or vendor may need temporary access for a specific project. Or, an employee who is traveling may require access from a location that is normally blocked as your organization has no presence in that location.   In these situations, you may choose to also have an entitlement management policy for approval that may have different stages, or a different time limit, or a different approver.  A vendor who is signed in as a guest user in your Microsoft Entra tenant may not have a manager, so instead their access requests could be approved by a sponsor for their organization, or by a resource owner, or a security officer.
 

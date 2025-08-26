@@ -1,11 +1,11 @@
 ---
 title: Microsoft Entra federation metadata
 description: This article describes the federation metadata document that Microsoft Entra ID publishes for services that accept Microsoft Entra tokens.
-author: rwike77
+author: OwenRichards1
 manager: CelesteDG
-ms.author: ryanwi
+ms.author: owenrichards
 ms.custom:
-ms.date: 09/07/2023
+ms.date: 10/01/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 ms.topic: concept-article
@@ -22,7 +22,7 @@ Microsoft Entra ID publishes tenant-specific and tenant-independent endpoints.
 
 Tenant-specific endpoints are designed for a particular tenant. The tenant-specific federation metadata includes information about the tenant, including tenant-specific issuer and endpoint information. Applications that restrict access to a single tenant use tenant-specific endpoints.
 
-Tenant-independent endpoints provide information that is common to all Microsoft Entra tenants. This information applies to tenants hosted at *login.microsoftonline.com* and is shared across tenants. Tenant-independent endpoints are recommended for multi-tenant applications, since they are not associated with any particular tenant.
+Tenant-independent endpoints provide information that is common to all Microsoft Entra tenants. This information applies to tenants hosted at *login.microsoftonline.com* and is shared across tenants. Tenant-independent endpoints are recommended for multitenant applications, since they are not associated with any particular tenant.
 
 ## Federation metadata endpoints
 
@@ -51,17 +51,17 @@ The following metadata shows a sample tenant-specific `EntityDescriptor` element
 <EntityDescriptor
 xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
 ID="_00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
-entityID="https://sts.windows.net/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/">
+entityID="https://sts.windows.net/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/">
 ```
 
-You can replace the tenant ID in the tenant-independent endpoint with your tenant ID to create a tenant-specific `EntityID` value. The resulting value will be the same as the token issuer. The strategy allows a multi-tenant application to validate the issuer for a given tenant.
+You can replace the tenant ID in the tenant-independent endpoint with your tenant ID to create a tenant-specific `EntityID` value. The resulting value will be the same as the token issuer. The strategy allows a multitenant application to validate the issuer for a given tenant.
 
 The following metadata shows a sample tenant-independent `EntityID` element. Please note, that the `{tenant}` is a literal, not a placeholder.
 
 ```xml
 <EntityDescriptor
 xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
-ID="="_11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
+ID="="_aaaabbbb-0000-cccc-1111-dddd2222eeee"
 entityID="https://sts.windows.net/{tenant}/">
 ```
 
@@ -78,7 +78,7 @@ The following metadata shows a sample `KeyDescriptor` element with a signing key
 <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
 <X509Data>
 <X509Certificate>
-MIIDPjCCAiqgAwIBAgIQVWmXY/+9RqFA/OG9kFulHDAJBgUrDgMCHQUAMC0xKzApBgNVBAMTImFjY291bnRzLmFjY2Vzc2NvbnRyb2wud2luZG93cy5uZXQwHhcNMTIwNjA3MDcwMDAwWhcNMTQwNjA3MDcwMDAwWjAtMSswKQYDVQQDEyJhY2NvdW50cy5hY2Nlc3Njb250cm9sLndpbmRvd3MubmV0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArCz8Sn3GGXmikH2MdTeGY1D711EORX/lVXpr+ecGgqfUWF8MPB07XkYuJ54DAuYT318+2XrzMjOtqkT94VkXmxv6dFGhG8YZ8vNMPd4tdj9c0lpvWQdqXtL1TlFRpD/P6UMEigfN0c9oWDg9U7Ilymgei0UXtf1gtcQbc5sSQU0S4vr9YJp2gLFIGK11Iqg4XSGdcI0QWLLkkC6cBukhVnd6BCYbLjTYy3fNs4DzNdemJlxGl8sLexFytBF6YApvSdus3nFXaMCtBGx16HzkK9ne3lobAwL2o79bP4imEGqg+ibvyNmbrwFGnQrBc1jTF9LyQX9q+louxVfHs6ZiVwIDAQABo2IwYDBeBgNVHQEEVzBVgBCxDDsLd8xkfOLKm4Q/SzjtoS8wLTErMCkGA1UEAxMiYWNjb3VudHMuYWNjZXNzY29udHJvbC53aW5kb3dzLm5ldIIQVWmXY/+9RqFA/OG9kFulHDAJBgUrDgMCHQUAA4IBAQAkJtxxm/ErgySlNk69+1odTMP8Oy6L0H17z7XGG3w4TqvTUSWaxD4hSFJ0e7mHLQLQD7oV/erACXwSZn2pMoZ89MBDjOMQA+e6QzGB7jmSzPTNmQgMLA8fWCfqPrz6zgH+1F1gNp8hJY57kfeVPBiyjuBmlTEBsBlzolY9dd/55qqfQk6cgSeCbHCy/RU/iep0+UsRMlSgPNNmqhj5gmN2AFVCN96zF694LwuPae5CeR2ZcVknexOWHYjFM0MgUSw0ubnGl0h9AJgGyhvNGcjQqu9vd1xkupFgaN+f7P3p3EVN5csBg5H94jEcQZT7EKeTiZ6bTrpDAnrr8tDCy8ng
+aB1cD2eF-3gH4i...J5kL6-mN7oP8qR=
 </X509Certificate>
 </X509Data>
 </KeyInfo>
@@ -144,7 +144,7 @@ The following metadata shows a sample `PassiveResistorEndpoint` for a tenant-spe
 <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
 …
     <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/contoso.onmicrosoft.com/saml2" />
-    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/contoso.onmicrosoft.com /saml2" />
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://login.microsoftonline.com/contoso.onmicrosoft.com/saml2" />
   </IDPSSODescriptor>
 ```
 

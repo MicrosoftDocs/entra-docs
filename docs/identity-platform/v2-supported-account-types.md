@@ -1,21 +1,20 @@
 ---
 title: Supported account types
-description: Conceptual documentation about audiences and supported account types in applications
+description: Conceptual documentation about audiences and supported account types in in the Microsoft identity platform
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom:
-ms.date: 02/06/2023
-ms.reviewer: saeeda, jmprieur
+ms.date: 04/24/2024
+ms.reviewer: jmprieur
 ms.service: identity-platform
-
 ms.topic: concept-article
+ms.custom: sfi-ropc-nochange
 #Customer intent: As a developer building a multi-tenant web application, I want to understand the supported account types in the Microsoft identity platform, so that I can ensure my application can sign in users from any organization and with their work, school, or personal Microsoft accounts.
 ---
 
 # Supported account types
 
-This article explains what account types (sometimes called _audiences_) are supported in the Microsoft identity platform applications.
+This article explains what account types (sometimes called *audiences*) are supported in the Microsoft identity platform applications.
 
 <!-- This section can be in an include for many of the scenarios (SPA, web app signing-in users, protecting a web API, Desktop (depending on the flows), Mobile -->
 
@@ -23,14 +22,15 @@ This article explains what account types (sometimes called _audiences_) are supp
 
 In the Microsoft Azure public cloud, most types of apps can sign in users with any audience:
 
-- If you're writing a line-of-business (LOB) application, you can sign in users in your own organization. Such an application is sometimes called _single-tenant_.
+- If you're writing a line-of-business (LOB) application, you can sign in users in your own organization. Such an application is sometimes called *single-tenant*.
 - If you're an independent software vendor (ISV), you can write an application that signs in users:
 
-  - In any organization. Such an application is called a _multitenant_ web application. You'll sometimes read that it signs in users with their work or school accounts.
+  - In any organization. Such an application is called a *multitenant* web application. You'll sometimes read that it signs in users with their work or school accounts.
   - With their work or school or personal Microsoft accounts.
   - With only personal Microsoft accounts.
 
-- If you're writing a business-to-consumer application, you can also sign in users with their social identities, by using Azure Active Directory B2C (Azure AD B2C).
+- If you're writing a business-to-consumer application, you can also sign in users with their social identities, by using Azure Active Directory B2C (Azure AD B2C). 
+Effective May 1, 2025, Azure AD B2C will no longer be available to purchase for new customers. To learn more, please see [Is Azure AD B2C still available to purchase?](/azure/active-directory-b2c/faq?tabs=app-reg-ga#azure-ad-b2c-end-of-sale) in our FAQ.
 
 ## Account type support in authentication flows
 

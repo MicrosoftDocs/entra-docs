@@ -1,18 +1,17 @@
 ---
 title: Troubleshoot Conditional Access policy changes
 description: Diagnose changes to Conditional Access policy with the Microsoft Entra audit logs.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 01/03/2024
-
+ms.date: 08/13/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: dougeby
 ms.reviewer: calebb, martinco
+ms.custom: sfi-image-nochange
 ---
-# Troubleshooting Conditional Access policy changes
+# Use audit logs to troubleshoot Conditional Access policy changes
 
 The Microsoft Entra audit log is a valuable source of information when troubleshooting why and how Conditional Access policy changes happened in your environment.
 
@@ -23,18 +22,18 @@ Audit log data is only kept for 30 days by default, which might not be long enou
 - Stream data to Event Hubs
 - Send data to a partner solution
 
-Find these options under **Identity** > **Monitoring & health** > **Diagnostic settings** > **Edit setting**. If you don't have a diagnostic setting, follow the instructions in the article [Create diagnostic settings to send platform logs and metrics to different destinations](/azure/azure-monitor/essentials/diagnostic-settings) to create one.
+Find these options under **Entra ID** > **Monitoring & health** > **Diagnostic settings** > **Edit setting**. If you don't have a diagnostic setting, follow the instructions in the article [Create diagnostic settings to send platform logs and metrics to different destinations](/azure/azure-monitor/essentials/diagnostic-settings) to create one.
 
 ## Use the audit log
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Entra ID** > **Monitoring & health** > **Audit logs**.
 1. Select the **Date** range you want to query.
 1. From the **Service** filter, select **Conditional Access** and select the **Apply** button.
 
    The audit logs display all activities, by default. Open the **Activity** filter to narrow down the activities. For a full list of the audit log activities for Conditional Access, see the [Audit log activities](~/identity/monitoring-health/reference-audit-activities.md#conditional-access).
 
-1. Select a row to view the details. The **Modified Properties** tab lists the modified JSON values for the selected audit activity.
+1. To view the details, select a row. The **Modified Properties** tab lists the modified JSON values for the selected audit activity.
 
 :::image type="content" source="media/troubleshoot-policy-changes-audit-log/old-and-new-policy-properties.png" alt-text="Audit log entry showing old and new JSON values for Conditional Access policy" lightbox="media/troubleshoot-policy-changes-audit-log/old-and-new-policy-properties.png":::
 
@@ -44,7 +43,7 @@ Log Analytics allows organizations to query data using built in queries or custo
 
 :::image type="content" source="media/troubleshoot-policy-changes-audit-log/log-analytics-new-old-value.png" alt-text="Log Analytics query for updates to Conditional Access policies showing new and old value location" lightbox="media/troubleshoot-policy-changes-audit-log/log-analytics-new-old-value.png":::
 
-Once enabled find access to Log Analytics in the **Identity** > **Monitoring & health** > **Log Analytics**. The table of most interest to Conditional Access administrators is **AuditLogs**.
+Once enabled find access to Log Analytics in the **Entra ID** > **Monitoring & health** > **Log Analytics**. The table of most interest to Conditional Access Administrators is **AuditLogs**.
 
 ```kusto
 AuditLogs 
@@ -184,7 +183,7 @@ Updated policy example:
 
 In the previous example, the updated policy doesn't include terms of use in grant controls.
 
-## Next steps
+## Related content
 
 - [What is Microsoft Entra monitoring?](~/identity/monitoring-health/overview-monitoring-health.md)
 - [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)

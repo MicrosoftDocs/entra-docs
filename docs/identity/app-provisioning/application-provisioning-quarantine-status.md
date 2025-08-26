@@ -2,14 +2,15 @@
 title: Quarantine status in Microsoft Entra Application Provisioning
 description: When you've configured an application for automatic user provisioning, learn what a provisioning status of Quarantine means and how to clear it.
 
-author: kenwith
-manager: amycolannino
+author: jenniferf-skc
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 09/15/2023
-ms.author: kenwith
+ms.date: 03/04/2025
+ms.author: jfields
 ms.reviewer: arvinh
+ai-usage: ai-assisted
 ---
 
 # Application provisioning in quarantine status
@@ -25,11 +26,11 @@ While in quarantine:
 
 There are three ways to check whether an application is in quarantine:
 
-- In the Microsoft Entra admin center, navigate to **Identity** > **Applications** > **Enterprise applications** > &lt;*application name*&gt; > **Provisioning** and review the progress bar for a quarantine message.   
+- In the Microsoft Entra admin center, navigate to **Entra ID** > **Enterprise apps** > &lt;*application name*&gt; > **Provisioning** and review the progress bar for a quarantine message.   
 
   ![Provisioning status bar showing quarantine status](./media/application-provisioning-quarantine-status/progress-bar-quarantined.png)
 
-- In the Microsoft Entra admin center, navigate to **Identity** > **Monitoring & health** > **Audit Logs** > filter on **Activity: Quarantine** and review the quarantine history. The view in the progress bar as described above shows whether provisioning is currently in quarantine. The audit logs show the quarantine history for an application. 
+- In the Microsoft Entra admin center, navigate to **Entra ID** > **Monitoring & health** > **Audit Logs** > filter on **Activity: Quarantine** and review the quarantine history. The view in the progress bar as described above shows whether provisioning is currently in quarantine. The audit logs show the quarantine history for an application. 
 
 - Use the Microsoft Graph request [Get synchronizationJob](/graph/api/synchronization-synchronizationjob-get?tabs=http&view=graph-rest-beta&preserve-view=true) to programmatically get the status of the provisioning job:
 
@@ -87,7 +88,7 @@ First, resolve the issue that caused the application to be placed in quarantine.
 
 - Check the application's provisioning settings to make sure you've [entered valid Admin Credentials](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md#configuring-automatic-user-account-provisioning). Microsoft Entra ID must establish a trust with the target application. Ensure that you have entered valid credentials and your account has the necessary permissions.
 
-- Review the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to further investigate what errors are causing quarantine and address the error. Go to **Microsoft Entra ID** &gt; **Enterprise Apps** &gt; **Provisioning logs (preview)** in the **Activity** section.
+- Review the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to further investigate what errors are causing quarantine and address the error. Go to **Microsoft Entra ID** &gt; **Enterprise Apps** &gt; **Provisioning logs** in the **Activity** section.
 
 After you've resolved the issue, restart the provisioning job. Certain changes to the application's provisioning settings, such as attribute mappings or scoping filters, will automatically restart provisioning for you. The progress bar on the application's **Provisioning** page indicates when provisioning last started. If you need to restart the provisioning job manually, use one of the following methods:  
 

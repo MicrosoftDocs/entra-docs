@@ -1,12 +1,12 @@
 ---
 title: 'Microsoft Entra Connect: ADSyncConfig PowerShell Reference'
 description: This document provides reference information for the ADSyncConfig.psm1 PowerShell module.
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.topic: reference
 
 ---
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 #### -ObjectClass
-The class of the objects to search that can be '*' (for any object class), 'user', 'group', 'container', etc.
+The class of the objects to search that can be '*' (for any object class), 'user', 'group', 'container', and so on.
 By default, this function will search for 'organizationalUnit' object class.
 
 ```yaml
@@ -302,8 +302,7 @@ Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN 
 ```
 
 ### DESCRIPTION
-The Set-ADSyncExchangeHybridPermissions Function will give required permissions to the 
-AD synchronization account, which include the following:
+The Set-ADSyncExchangeHybridPermissions Function will give required permissions to the AD synchronization account, which include the following:
 1.
 Read/Write Property access on all attributes for all descendant user objects
 2.
@@ -1064,8 +1063,7 @@ For more information, see about_CommonParameters (https://go.microsoft.com/fwlin
 ### SYNOPSIS
 Tighten permissions on an AD object that is not otherwise included in any AD protected security group.
 A typical example is the AD Connect account (MSOL) created by Microsoft Entra Connect automatically.
-This account
-has replicate permissions on all domains, however can be easily compromised as it is not protected.
+This account has replicate permissions on all domains, however can be easily compromised as it is not protected.
 
 ### SYNTAX
 
@@ -1075,13 +1073,11 @@ Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <
 ```
 
 ### DESCRIPTION
-The Set-ADSyncRestrictedPermissions Function will tighten permissions oo the 
-account provided.
+The Set-ADSyncRestrictedPermissions Function will tighten permissions oo the account provided.
 Tightening permissions involves the following steps:
 1. Disable inheritance on the specified object
 2. Remove all ACEs on the specific object, except ACEs specific to SELF.
-We want to keep
-   the default permissions intact when it comes to SELF.
+We want to keep the default permissions intact when it comes to SELF.
 3. Assign these specific permissions:
 
    | Type | Name | Access | Applies To |
@@ -1104,8 +1100,7 @@ Set-ADSyncRestrictedPermissions -ADConnectorAccountDN "CN=TestAccount1,CN=Users,
 
 #### -ADConnectorAccountDN
 DistinguishedName of the Active Directory account whose permissions need to be tightened.
-This is typically the MSOL_nnnnnnnnnn 
-account or a custom domain account that is configured in your AD Connector.
+This is typically the MSOL_nnnnnnnnnn account or a custom domain account that is configured in your AD Connector.
 
 ```yaml
 Type: String
@@ -1138,8 +1133,7 @@ Accept wildcard characters: False
 ```
 
 #### -DisableCredentialValidation
-When DisableCredentialValidation is used, the function will not check if the credentials provided in -Credential are valid in AD 
-and if the account provided has the necessary privileges to restrict the permissions on the ADConnectorAccountDN account.
+When DisableCredentialValidation is used, the function will not check if the credentials provided in -Credential are valid in AD and if the account provided has the necessary privileges to restrict the permissions on the ADConnectorAccountDN account.
 
 ```yaml
 Type: SwitchParameter

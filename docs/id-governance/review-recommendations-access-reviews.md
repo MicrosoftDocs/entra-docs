@@ -2,12 +2,12 @@
 title: Review recommendations for Access reviews
 description: Learn how to review access of group members with review recommendations in Microsoft Entra access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/09/2024
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -18,7 +18,7 @@ Decision makers who review users' access and perform access reviews can use syst
 
 ## Prerequisites
  
-Creating a review on [inactive user](#inactive-user-recommendations) and with [user-to-group affiliation](#user-to-group-affiliation) recommendations require a Microsoft Entra ID Governance license.
+Creating a review with [user-to-group affiliation](#user-to-group-affiliation) recommendation require a Microsoft Entra ID Governance license.
  
 For more information, see [License requirements](access-reviews-overview.md#license-requirements).
 
@@ -39,11 +39,11 @@ If the creator of the access review enables the decision helper, reviewers can r
 > [!NOTE]
 > This feature is only available for users in your directory. A user should have a manager attribute and should be a part of an organizational hierarchy for the User-to-group Affiliation to work.
 >
->Groups with more than 600 users are not supported.
+>Groups with more than 600 users aren't supported.
 
 The following image has an example of an organization's reporting structure in a cosmetics company: 
 
-![Screenshot that shows a fictitious hierarchial organization chart for a cosmetics company.](./media/review-recommendations-group-access-reviews/org-chart-example.png)
+:::image type="content" source="media/review-recommendations-group-access-reviews/org-chart-example.png" alt-text="Screenshot of an org example chart for access reviews." lightbox="media/review-recommendations-group-access-reviews/org-chart-example.png":::
 
 Based on the reporting structure in the example image, users who are statistically significant amount of distance away from other users within the group, would get a "*Deny*" recommendation by the system if the User-to-Group Affiliation recommendation was selected by the reviewer for group access reviews. 
 

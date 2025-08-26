@@ -2,12 +2,12 @@
 title: Manage users excluded from Conditional Access policies
 description: Learn how to use access reviews to manage users that have been excluded from Conditional Access policies
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
-ms.topic: conceptual
-ms.date: 04/09/2024
+ms.topic: how-to
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -17,19 +17,17 @@ ms.reviewer: mwahl
 In an ideal world, all users follow the access policies to secure access to your organization's resources. However, sometimes there are business cases that require you to make exceptions. This article goes over some examples of situations where exclusions could be necessary. You, as the IT administrator, can manage this task, avoid oversight of policy exceptions, and provide auditors with proof that these exceptions are reviewed regularly using Microsoft Entra access reviews.
 
 >[!NOTE]
-> A valid Microsoft Entra ID P2 or Microsoft Entra ID Governance, Enterprise Mobility + Security E5 paid, or trial license is required to use Microsoft Entra access reviews. For more information, see [Microsoft Entra editions](../fundamentals/whatis.md).
+> A valid Microsoft Entra ID P2 or Microsoft Entra ID Governance, Enterprise Mobility + Security E5 paid, or trial license is required to use Microsoft Entra access reviews. For more information, see [Microsoft Entra editions](../fundamentals/licensing.md).
 
 ## Why would you exclude users from policies?
 
 Let's say that as the administrator, you decide to use [Microsoft Entra Conditional Access](../identity/conditional-access/concept-conditional-access-policy-common.md) to require multifactor authentication (MFA) and limit authentication requests to specific networks or devices. During deployment planning, you realize that not all users can meet these requirements. For example, you could have users who work from remote offices, not part of your internal network. You could also have to accommodate users connecting using unsupported devices while waiting for those devices to be replaced. In short, the business needs these users to sign in and do their job so you exclude them from Conditional Access policies.
 
-As another example, you could be using [named locations](../identity/conditional-access/location-condition.md) in Conditional Access to specify a set of countries and regions from which you don't want to allow users to access their tenant.
-
-![Named locations in Conditional Access](./media/conditional-access-exclusion/named-locations.png)
+As another example, you might be using [named locations](../identity/conditional-access/concept-assignment-network.md#countries) in Conditional Access to specify a set of countries and regions from which you don't want to allow users to access their tenant.
 
 Unfortunately, some users might still have a valid reason to sign in from these blocked countries/regions. For example, users could be traveling for work and need to access corporate resources. In this case, the Conditional Access policy to block these countries/regions could use a cloud security group for the excluded users from the policy. Users who need access while traveling, can add themselves to the group using [Microsoft Entra self-service Group management](../identity/users/groups-self-service-management.md).
 
-Another example might be that you have a Conditional Access policy [which blocks legacy authentication for most of your users](https://cloudblogs.microsoft.com/enterprisemobility/2018/06/07/azure-ad-conditional-access-support-for-blocking-legacy-auth-is-in-public-preview/). However, if you have some users that need to use legacy authentication methods to access your resources via Office 2010 or IMAP/SMTP/POP based clients, then you can exclude these users from the policy that blocks legacy authentication methods.
+Another example might be that you have a Conditional Access policy [blocking legacy authentication for most of your users](../identity/conditional-access/policy-block-legacy-authentication.md). However, if you have some users that need to use legacy authentication methods to access specific resources, then you can exclude these users from the policy that blocks legacy authentication methods.
 
 >[!NOTE]
 >Microsoft strongly recommends that you block the use of legacy protocols in your tenant to improve your security posture.
@@ -54,7 +52,7 @@ Follow these steps to create a new Microsoft Entra group and a Conditional Acces
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
 
-1. Browse to **Identity** > **Groups** > **All groups**.
+1. Browse to **Entra ID** > **Groups** > **All groups**.
 
 1. Select **New group**.
 
@@ -72,7 +70,7 @@ Now you can create a Conditional Access policy that uses this exclusion group.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 
-1. Browse to **Protection** > **Conditional Access**.
+1. Browse to **Entra ID** > **Conditional Access**.
 
 1. Select **Create new policy**.
 
@@ -95,22 +93,20 @@ Let's cover two examples where you can use access reviews to manage exclusions i
 
 ## Example 1: Access review for users accessing from blocked countries/regions
 
-Let's say you have a Conditional Access policy that blocks access from certain countries/regions. It includes a group that is excluded from the policy. Here's
-a recommended access review where members of the group are reviewed.
+Let's say you have a Conditional Access policy that blocks access from certain countries/regions. It includes a group that is excluded from the policy. Here's a recommended access review where members of the group are reviewed.
 
 ![Create an access review pane for example 1](./media/conditional-access-exclusion/create-access-review-1.png)
 
 > [!NOTE] 
-> A Global administrator or User administrator role is required to create access reviews. For a step by step guide on creating an access review, see: [Create an access review of groups and applications](create-access-review.md).
+> At least the Identity Governance Administrator, or User Administrator role, is required to create access reviews. For a step by step guide on creating an access review, see: [Create an access review of groups and applications](create-access-review.md).
 
 1. The review happens every week.
 
-1. The review never end in order to make sure you're keeping this exclusion group most up to date.
+1. The review never ends in order to make sure you're keeping this exclusion group most up to date.
 
 1. All members of this group are in scope for the review.
 
-1. Each user needs to self-attest that they still need access from these blocked countries/regions, therefore they still need to be a member of the
-    group.
+1. Each user needs to self-attest that they still need access from these blocked countries/regions, therefore they still need to be a member of the group.
 
 1. If the user doesn't respond to the review request, they're automatically removed from the group, and no longer has access to the tenant while traveling to these countries/regions.
 
@@ -119,8 +115,7 @@ a recommended access review where members of the group are reviewed.
 
 ## Example 2: Access review for users accessing with legacy authentication
 
-Let's say you have a Conditional Access policy that blocks access for users using legacy authentication and older client versions and it includes a group
-that is excluded from the policy. Here's a recommended access review where members of the group are reviewed.
+Let's say you have a Conditional Access policy that blocks access for users using legacy authentication and older client versions and it includes a group that is excluded from the policy. Here's a recommended access review where members of the group are reviewed.
 
 ![Create an access review pane for example 2](./media/conditional-access-exclusion/create-access-review-2.png)
 
@@ -145,7 +140,7 @@ Now that you have everything in place, group, Conditional Access policy, and acc
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Access reviews**.
+1. Browse to **ID Governance** > **Access reviews**.
 
 1. Select the Access review you're using with the group you created an exclusion policy for.
 
@@ -154,8 +149,6 @@ Now that you have everything in place, group, Conditional Access policy, and acc
     ![Access reviews results show who was approved](./media/conditional-access-exclusion/access-reviews-results.png)
 
 1. Select **Audit logs** to see the actions that were taken during this review.
-
-    ![Access reviews audit logs listing actions](./media/conditional-access-exclusion/access-reviews-audit-logs.png)
 
 As an IT administrator, you know that managing exclusion groups to your policies is sometimes inevitable. However, maintaining these groups, reviewing them regularly by the business owner or the users themselves, and auditing these changes can be made easier with access reviews.
 

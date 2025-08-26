@@ -1,15 +1,15 @@
 ---
 title: Configure API-driven inbound provisioning app
 description: Learn how to configure API-driven inbound provisioning app.
-
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Configure API-driven inbound provisioning app
@@ -33,12 +33,12 @@ If you're configuring inbound user provisioning to on-premises Active Directory,
 ## Create your API-driven provisioning app
 
 1. Log in to the [Microsoft Entra admin center](<https://entra.microsoft.com>) as at least an [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823).
-2. Browse to **Identity** > **Applications** > **Enterprise applications**.
+2. Browse to **Entra ID** > **Enterprise apps**.
 3. Click on **New application** to create a new provisioning application. 
-     [![Screenshot of Microsoft Entra Admin Center.](media/inbound-provisioning-api-configure-app/provisioning-entra-admin-center.png)](media/inbound-provisioning-api-configure-app/provisioning-entra-admin-center.png#lightbox)
+     [![Screenshot of Microsoft Entra admin center.](media/inbound-provisioning-api-configure-app/provisioning-entra-admin-center.png)](media/inbound-provisioning-api-configure-app/provisioning-entra-admin-center.png#lightbox)
 4. Enter **API-driven** in the search field, then select the application for your setup:
-     * **API-driven Inbound User Provisioning to On-Premises AD**: Select this app if you're provisioning hybrid identities (identities that need both on-premises AD and Microsoft Entra account) from your system of record. Once these accounts are provisioned in on-premises AD, they are automatically synchronized to your Microsoft Entra tenant using Microsoft Entra Connect Sync or Microsoft Entra Connect cloud sync.
-     * **API-driven Inbound User Provisioning to Microsoft Entra ID**: Select this app if you're provisioning cloud-only identities (identities that don't require on-premises AD accounts and only need Microsoft Entra account) from your system of record.
+     * **API-driven provisioning to on-premises Active Directory**: Select this app if you're provisioning hybrid identities (identities that need both on-premises AD and Microsoft Entra account) from your system of record. Once these accounts are provisioned in on-premises AD, they are automatically synchronized to your Microsoft Entra tenant using Microsoft Entra Connect Sync or Microsoft Entra Connect cloud sync.
+     * **API-driven provisioning to Microsoft Entra ID**: Select this app if you're provisioning cloud-only identities (identities that don't require on-premises AD accounts and only need Microsoft Entra account) from your system of record.
      
      [![Screenshot of API-driven provisioning apps.](media/inbound-provisioning-api-configure-app/api-driven-inbound-provisioning-apps.png)](media/inbound-provisioning-api-configure-app/api-driven-inbound-provisioning-apps.png#lightbox)
 
@@ -47,7 +47,7 @@ If you're configuring inbound user provisioning to on-premises Active Directory,
      [![Screenshot of create app.](media/inbound-provisioning-api-configure-app/provisioning-create-inbound-provisioning-app.png)](media/inbound-provisioning-api-configure-app/provisioning-create-inbound-provisioning-app.png#lightbox)
 
      > [!NOTE]
-     > If you plan to ingest data from multiple sources, each with their own sync rules, you can create multiple apps and give each app a descriptive name; for example, Provision-Employees-From-CSV-to-AD or Provision-Contractors-From-SQL-to-AD.
+     > If you plan to ingest data from multiple sources, each with their own sync rules, you can create multiple apps and give each app a descriptive name, such as `Provision-Employees-From-CSV-to-AD` or `Provision-Contractors-From-SQL-to-AD`.
 6. Once the application creation is successful, go to the Provisioning blade and click on **Get started**.
      [![Screenshot of Get started button.](media/inbound-provisioning-api-configure-app/provisioning-overview-get-started.png)](media/inbound-provisioning-api-configure-app/provisioning-overview-get-started.png#lightbox)
 7. Switch the Provisioning Mode from Manual to **Automatic**.

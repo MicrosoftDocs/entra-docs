@@ -1,18 +1,15 @@
 ---
 title: Self-service sign up for email-verified users
 description: Use self-service sign-up in a Microsoft Entra organization
-
 author: barclayn
-manager: amycolannino
-
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
 ms.topic: overview
-ms.date: 11/08/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: elkuzmen
-ms.custom: it-pro, has-azure-ad-ps-ref
-
+ms.custom: sfi-ga-nochange
 ---
 # What is self-service sign-up for Microsoft Entra ID?
 
@@ -27,9 +24,10 @@ This article explains how to use self-service sign-up to populate an organizatio
 
 ## Terms and definitions
 
-* **Self-service sign-up**: This is the method by which a user signs up for a cloud service and has an identity automatically created for them in Microsoft Entra ID based on their email domain.
-* **Unmanaged Microsoft Entra tenant**: This is the tenant where that identity is created. An unmanaged tenant is a tenant that has no global administrator.
-* **Email-verified user**: This is a type of user account in Microsoft Entra ID. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a tenant tagged with creationmethod=EmailVerified.
+* **Self-service sign-up** is the method by which a user signs up for a cloud service and has an identity automatically created for them in Microsoft Entra ID based on their email domain.
+* An **unmanaged Microsoft Entra tenant** is the tenant where that identity is created. An unmanaged tenant is a tenant that has no Global Administrator.
+* An **email-verified user** is a type of user account in Microsoft Entra ID. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a tenant tagged with creationmethod=EmailVerified.
+
 
 ## How do I control self-service settings?
 
@@ -40,16 +38,16 @@ Admins have two self-service controls today. They can control whether:
 
 ### How can I control these capabilities?
 
-An admin can configure these capabilities using the following Microsoft Entra cmdlet Set-MsolCompanySettings parameters:
+An admin can configure these capabilities using the following Microsoft Entra cmdlet Update-MgPolicyAuthorizationPolicy parameters:
 
-* **AllowEmailVerifiedUsers** controls whether users can join the tenant by email validation. To join, the user must have an email address in a domain that matches one of the verified domains in the tenant. This setting is applied company-wide for all domains in the tenant. If you set that parameter to $false, no email-verified user can join the tenant.
-* **AllowAdHocSubscriptions** controls the ability for users to perform self-service sign-up. If you set that parameter to $false, no user can perform self-service sign-up.
+* **allowEmailVerifiedUsersToJoinOrganization** controls whether users can join the tenant by email validation. To join, the user must have an email address in a domain that matches one of the verified domains in the tenant. This setting is applied company-wide for all domains in the tenant. If you set that parameter to $false, no email-verified user can join the tenant.
+* **allowedToSignUpEmailBasedSubscriptions** controls the ability for users to perform self-service sign-up. If you set that parameter to $false, no user can perform self-service sign-up.
   
-AllowEmailVerifiedUsers and AllowAdHocSubscriptions are tenant-wide settings that can be applied to a managed or unmanaged tenant. Here's an example where:
+allowEmailVerifiedUsersToJoinOrganization and allowedToSignUpEmailBasedSubscriptions are tenant-wide settings that can be applied to a managed or unmanaged tenant. Here's an example where:
 
 * You administer a tenant with a verified domain such as contoso.com
 * You use B2B collaboration from a different tenant to invite a user that doesn't already exist (userdoesnotexist@contoso.com) in the home tenant of contoso.com
-* The home tenant has the AllowEmailVerifiedUsers turned on
+* The home tenant has the allowedToSignUpEmailBasedSubscriptions turned on
 
 If the preceding conditions are true, then a member user is created in the home tenant, and a B2B guest user is created in the inviting tenant.
 
@@ -76,9 +74,10 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter $param
 
 The following flowchart explains the different combinations for these parameters and the resulting conditions for the tenant and self-service sign-up.
 
-:::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign-up controls.":::
 
-This setting's details may be retrieved using the PowerShell cmdlet Get-MsolCompanyInformation. For more information on this, see [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation).
+:::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign up controls.":::
+
+You can retrieve this setting's details using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
 
 ```powershell
 Get-MgPolicyAuthorizationPolicy | Select-Object AllowedToSignUpEmailBasedSubscriptions, AllowEmailVerifiedUsersToJoinOrganization
@@ -88,9 +87,9 @@ For more information and examples of how to use these parameters, see [Update-Mg
 
 ## Next steps
 
-* [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md)
+* [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml)
 * [How to install and configure Azure PowerShell](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Azure Cmdlet Reference](/powershell/azure/get-started-azureps)
-* [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings)
+* [Update-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/Update-mgpolicyauthorizationpolicy)
 * [Close your work or school account in an unmanaged tenant](users-close-account.md)

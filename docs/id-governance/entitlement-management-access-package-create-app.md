@@ -2,20 +2,21 @@
 title: Create a Microsoft Entra entitlement management access package for an application with a single role with PowerShell| Microsoft Docs
 description: You can use Microsoft Entra entitlement management to enforce the policies for who can get assigned access to an application.
 author: markwahl-msft
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 04/05/2024
+ms.date: 08/25/2024
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 ---
 
 # Create an access package in entitlement management for an application with a single role using PowerShell
 
 In Microsoft Entra entitlement management, an access package encompasses the policies for how users can obtain assignments for one or more resource roles. The resources can include groups, applications, and SharePoint Online sites.
 
-This article describes how to create an access package for a single application with a single role, using Microsoft Graph PowerShell. This scenario is primarily applicable to environments that are using entitlement management for automating ongoing access for a specific business or middleware application. An organization that has multiple resources or resources with multiple roles can also model their access policies with access packages:
+This article describes how to create an access package for a single application with a single role, using Microsoft Graph PowerShell. This scenario is primarily applicable to environments that are using entitlement management for automating ongoing access for a specific business or middleware application.  You can build upon the guidance in this and other articles for more complex scenarios, such as access across multiple applications, or access across applications and other kinds of resources. An organization that has multiple resources or resources with multiple roles can also model their access policies with access packages:
 
 * If the organization already has an existing organizational role model for their business roles, they can migrate that model to Microsoft Entra ID Governance, and [govern access with an organizational role model](identity-governance-organizational-roles.md).
 * If the organization has applications with multiple roles, then they can [deploy organizational policies for governing access to applications integrated with Microsoft Entra ID](identity-governance-applications-deploy.md)
@@ -34,6 +35,7 @@ To create the access package and its associated policies and assignments, you'll
 |--|--|--|
 | All| Name of the application in your Microsoft Entra ID tenant|`$servicePrincipalName`|
 | All| Name of the application's role|`$servicePrincipalRoleName`|
+| Apps which rely upon a security group | ID of the Microsoft Entra security group used by the application, if any|`$groupId`|
 | All| Name of the catalog containing the access package|`$catalogName`|
 | All| Name to give the access package|`$accessPackageName`|
 | All | Description to give the access package|`$accessPackageDescription`|
@@ -70,7 +72,7 @@ The first time your organization uses these cmdlets for this scenario, you need 
    $msg = Connect-MgGraph -ContextScope Process -Scopes "User.ReadWrite.All,Application.ReadWrite.All,AppRoleAssignment.ReadWrite.All,EntitlementManagement.ReadWrite.All"
    ```
 
-1. If this is the first time you use this command, you might need to consent to allow the Microsoft Graph Command Line tools to have these permissions.
+1. If this is the first time you have used this command, you may need to consent to allow the Microsoft Graph Command Line tools to have these permissions.
 
 ## Create a catalog in Microsoft Entra entitlement management
 
@@ -171,7 +173,62 @@ Once the catalog is created, add the application [as a resource in that catalog]
    if ($resourceRole -eq $null) { throw "role $servicePrincipalRoleName not located" }
    ```
 
+## Add the group as a resource to the catalog
+
+If the application relies upon a security group, then add that group to the catalog so it can be included as a resource. If the application doesn't rely upon a security group, then continue at the next section.
+
+1. Specify the ID of the group. Use the ID of your group as the value of `servicePrincipalName`.
+
+   ```powershell
+   $groupId = "7c2b967b-68c2-418a-a1c6-a3c7efb895a7"
+   ```
+
+1. Check if the group is already present in the catalog as a resource. If it's already present, continue at step 4 of this section.
+
+   ```powershell
+   $groupResourceId = $null
+   foreach ($r in $catalog.Resources) { if ($r.OriginId -eq $groupId) { $groupResourceId = $r.id; break } }
+   if ($groupResourceId -ne $null) { write-output "resource for group already in catalog" } else {write-output "resource for group not yet in catalog"}
+   ```
+
+1. Add the group as a resource to the catalog.
+
+   ```powershell
+   $groupResourceAddParams = @{
+     requestType = "adminAdd"
+     resource = @{
+       originId = $groupId
+       originSystem = "AadGroup"
+     }
+     catalog = @{ id = $catalogId }
+   }
+
+   $groupResourceAdd = New-MgEntitlementManagementResourceRequest -BodyParameter $groupResourceAddParams
+   if ($groupResourceAdd -eq $null) { throw "group resource could not be added" }
+   sleep 5
+   ```
+1. Retrieve the ID and the scope of the group resource in that catalog.
+
+   ```powershell
+   $groupResource = $null
+   $groupResourceId = $null
+   $groupResourceScope = $null
+   $catalogResources = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $CatalogId -ExpandProperty "scopes" -all
+
+   foreach ($r in $catalogResources) { if ($r.OriginId -eq $groupId) { $groupResource = $r; $groupResourceId = $r.id; $groupResourceScope = $r.Scopes[0]; break } }
+   if ($groupResourceId -eq $null) { throw "resource was not added" }
+   ```
+
+1. Retrieve the `member` role of the group resource in that catalog.
+
+   ```powershell
+   $grFilter = "(originSystem eq 'AadGroup' and resource/id eq '" + $groupResourceId + "')"
+   $grrs = Get-MgEntitlementManagementCatalogResourceRole -AccessPackageCatalogId $CatalogId -Filter $grFilter -ExpandProperty "resource"
+   $grMember = $grrs | where DisplayName -eq "Member"
+   ```
+
 ## Create the access package for the application
+
 
 Next you'll use PowerShell to [create an access package in a catalog](entitlement-management-access-package-create.md#create-an-access-package-by-using-microsoft-powershell)  that includes the application's role.
 
@@ -184,6 +241,7 @@ Next you'll use PowerShell to [create an access package in a catalog](entitlemen
    ```
 
 1. Check that the access package doesn't already exist.
+
 
    ```powershell
    foreach ($a in $catalog.AccessPackages) { if ($a.DisplayName -eq $accessPackageName) { throw "access package $accessPackageName already exists" } }
@@ -206,7 +264,7 @@ Next you'll use PowerShell to [create an access package in a catalog](entitlemen
 
 ## Add the application role to the access package
 
-Once you've created an access package, then you link the role of the resource in the catalog to the access package.
+Once you've created an access package, then you link the role of the resource for the application in the catalog to the access package.
 
    ```powershell
    $rrsParams = @{
@@ -230,6 +288,33 @@ Once you've created an access package, then you link the role of the resource in
    }
 
    $roleAddRes = New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $accessPackageId -BodyParameter $rrsParams
+   ```
+
+## Add the group to the access package
+
+If the application relies upon a group, then you link the group membership of the group to the access package.  If the application doesn't rely upon a group, then continue at the next section.
+
+  ```powershell
+   $grrsParams = @{
+    role = @{
+        displayName =  "Member"
+        description =  ""
+        originSystem =  $grMember.OriginSystem
+        originId =  $grMember.OriginId
+        resource = @{
+            id = $groupResource.Id
+            originId = $groupResource.OriginId
+            originSystem = $groupResource.OriginSystem
+        }
+    }
+    scope = @{
+        id = $groupResourceScope.Id
+        originId = $groupResourceScope.OriginId
+        originSystem = $groupResourceScope.OriginSystem
+    }
+   }
+
+   $groupRrsAddRes = New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $accessPackageId -BodyParameter $grrsParams
    ```
 
 ## Create access package assignment policies for direct assignment
@@ -363,9 +448,9 @@ Add assignments of existing users, who already have access to the application, t
    }
    ```
 
-## Add any additional users who should have access to the application
+## Add assignments for any additional users who should have access to the application
 
-This script illustrates using the Microsoft Graph PowerShell cmdlets to add additional users to the application. If you don't have any users that need access, and wouldn't receive it automatically, then continue in the next section.
+This script illustrates using the Microsoft Graph PowerShell cmdlets to add assignments for additional users so they will have access to the application. If you don't have any users that need access, and wouldn't receive it automatically, then continue in the next section.
 
 This script assumes you have an input CSV file containing one column, `UserPrincipalName`, to assign those users to the access package via its direct assignment policy.
 
@@ -420,7 +505,7 @@ This script assumes you have an input CSV file containing one column, `UserPrinc
 
 If your organization's policy for who can be assigned access to an application includes a rule based on user's attributes to assign and remove access automatically based on those attributes, you can represent this using an [automatic assignment policy](entitlement-management-access-package-auto-assignment-policy.md). An access package can have at most one automatic assignment policy. If you don't have a requirement for an automatic assignment, then continue at the next section.
 
-1. Specify the automatic assignment filter expression for users to receive an assignment. Change the value of `autoAssignmentPolicyFilter` to be a filter for the users in your Microsoft Entra ID that are in scope. The syntax and allowable attributes are provided in [dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
+1. Specify the automatic assignment filter expression for users to receive an assignment. Change the value of `autoAssignmentPolicyFilter` to be a filter for the users in your Microsoft Entra ID that are in scope. The syntax and allowable attributes are provided in [rules for dynamic membership groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md).
 
    ```powershell
    $autoAssignmentPolicyFilter = '(user.city -eq "Redmond")'
@@ -463,7 +548,7 @@ For more examples, see [Create an assignment policy through PowerShell](entitlem
    ```powershell
    $policy3Name = "example policy"
    $policy3Description = "example of a policy for users to request assignment"
-   $policy3ApproverSingleUserId = "69971aca-3aed-4ab1-aaec-d617b7dbb27b"
+   $policy3ApproverSingleUserId = "1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5"
    ```
 
 1. Create the policy.
@@ -540,7 +625,7 @@ This example illustrates how to make a change to the join and leave event workfl
 
 Once the access packages, policies, and initial assignments have been created, then users are assigned access to the application's role.
 
-Later, you can monitor for changes to the assignments, or programatically add or remove assignments.
+Later, you can monitor for changes to the assignments, or programmatically add or remove assignments.
 
 ### Retrieve existing assignments
 
@@ -558,7 +643,7 @@ This script illustrates using a filter to retrieve the assignments to the access
 You can remove a user's assignment with the `New-MgEntitlementManagementAssignmentRequest` cmdlet.
 
 ```powershell
-$userId = "040a792f-4c5f-4395-902f-f0d9d192ab2c"
+$userId = "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 $filter = "accessPackage/Id eq '" + $accessPackageId + "' and state eq 'Delivered' and target/objectId eq '" + $userId + "'"
 $assignment = Get-MgEntitlementManagementAssignment -Filter $filter -ExpandProperty target -all -ErrorAction stop
 if ($assignment -ne $null) {

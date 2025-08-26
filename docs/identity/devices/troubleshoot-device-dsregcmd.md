@@ -5,16 +5,16 @@ description: This article covers how to use the output from the dsregcmd command
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 01/09/2024
+ms.date: 06/27/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.author: owinfrey
+author: owinfreyATL
+manager: dougeby
 ms.reviewer: jploegert
 ---
 # Troubleshoot devices by using the dsregcmd command
 
-This article covers how to use the output from the `dsregcmd` command to understand the state of devices in Microsoft Entra ID. The `dsregcmd /status` utility must be run as a domain user account.
+This article explains how to use the output from the `dsregcmd` command to understand the state of devices in Microsoft Entra ID. Run the `dsregcmd /status` utility as a domain user account.
 
 ## Device state
 
@@ -31,7 +31,8 @@ This section lists the device join state parameters. The criteria that are requi
 > The Workplace Joined (Microsoft Entra registered) state is displayed in the ["User state"](#user-state) section.
 
 - **AzureAdJoined**: Set the state to *YES* if the device is joined to Microsoft Entra ID. Otherwise, set the state to *NO*.
-- **EnterpriseJoined**: Set the state to *YES* if the device is joined to an on-premises data replication service (DRS). A device can't be both EnterpriseJoined and AzureAdJoined.
+- **EnterpriseJoined**: Set the state to YES if the device is joined to an on-premises Active Directory (AD). A device can't be both EnterpriseJoined and AzureAdJoined.
+
 - **DomainJoined**: Set the state to *YES* if the device is joined to a domain (Active Directory).
 - **DomainName**: Set the state to the name of the domain if the device is joined to a domain.
 
@@ -50,7 +51,7 @@ This section lists the device join state parameters. The criteria that are requi
 
 ## Device details
 
-The state is displayed only when the device is Microsoft Entra joined or Microsoft Entra hybrid joined (not Microsoft Entra registered). This section lists device-identifying details that are stored in Microsoft Entra ID.
+The state is displayed only when the device is Microsoft Entra joined or Microsoft Entra hybrid joined, not Microsoft Entra registered. This section lists device-identifying details that are stored in Microsoft Entra ID.
 
 - **DeviceId**: The unique ID of the device in the Microsoft Entra tenant.
 - **Thumbprint**: The thumbprint of the device certificate.
@@ -64,7 +65,7 @@ The state is displayed only when the device is Microsoft Entra joined or Microso
    - *FAILED. ERROR* if the test was unable to run. This test requires network connectivity to Microsoft Entra ID under the system context.
    > [!NOTE]
    > The **DeviceAuthStatus** field was added in the Windows 10 May 2021 update (version 21H1).  
-- **Virtual Desktop**: There are three cases where this appears.
+- **Virtual Desktop**: There are three cases where this line appears.
    - NOT SET - VDI device metadata isn't present on the device.
    - YES - VDI device metadata is present and dsregcmd outputs associated metadata including:
       - Provider: Name of the VDI vendor.
@@ -80,10 +81,10 @@ The state is displayed only when the device is Microsoft Entra joined or Microso
 | Device Details                                                       |
 +----------------------------------------------------------------------+
 
-                  DeviceId : e92325d0-xxxx-xxxx-xxxx-94ae875dxxxx
-                Thumbprint : D293213EF327483560EED8410CAE36BB67208179
+                  DeviceId : 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+                Thumbprint : AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
  DeviceCertificateValidity : [ 2019-01-11 21:02:50.000 UTC -- 2029-01-11 21:32:50.000 UTC ]
-            KeyContainerId : 13e68a58-xxxx-xxxx-xxxx-a20a2411xxxx
+            KeyContainerId : 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
                KeyProvider : Microsoft Software Key Storage Provider
               TpmProtected : NO
           DeviceAuthStatus : SUCCESS
@@ -95,9 +96,9 @@ The state is displayed only when the device is Microsoft Entra joined or Microso
 The tenant details are displayed only when the device is Microsoft Entra joined or Microsoft Entra hybrid joined, not Microsoft Entra registered. This section lists the common tenant details that are displayed when a device is joined to Microsoft Entra ID.
 
 > [!NOTE]
-> If the mobile device management (MDM) URL fields in this section are empty, it indicates either that the MDM was not configured or that the current user isn't in scope of MDM enrollment. Check the Mobility settings in Microsoft Entra ID to review your MDM configuration.
+> If the mobile device management (MDM) URL fields in this section are empty, it indicates either that the MDM wasn't configured or that the current user isn't in scope of MDM enrollment. Check the Mobility settings in Microsoft Entra ID to review your MDM configuration.
 >
-> Even if you see MDM URLs, this does not mean that the device is managed by an MDM. The information is displayed if the tenant has MDM configuration for auto-enrollment even if the device itself isn't managed.
+> The presence of MDM URLs doesn't guarantee that the device is managed by an MDM. The information is displayed if the tenant has MDM configuration for automatic enrollment even if the device itself isn't managed.
 
 ### Sample tenant details output
 
@@ -107,14 +108,14 @@ The tenant details are displayed only when the device is Microsoft Entra joined 
 +----------------------------------------------------------------------+
 
                 TenantName : HybridADFS
-                  TenantId : 96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+                  TenantId : aaaabbbb-0000-cccc-1111-dddd2222eeee
                        Idp : login.windows.net
-               AuthCodeUrl : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/authorize
-            AccessTokenUrl : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/token
+               AuthCodeUrl : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/authorize
+            AccessTokenUrl : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token
                     MdmUrl : https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc
                  MdmTouUrl : https://portal.manage-beta.microsoft.com/TermsOfUse.aspx
           MdmComplianceUrl : https://portal.manage-beta.microsoft.com/?portalAction=Compliance
-               SettingsUrl : eyJVxxxxIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyxxxx==
+               SettingsUrl : eyJVx{lots of characters}xxxx==
             JoinSrvVersion : 1.0
                 JoinSrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/device/
                  JoinSrvId : urn:ms-drs:enterpriseregistration.windows.net
@@ -122,10 +123,10 @@ The tenant details are displayed only when the device is Microsoft Entra joined 
                  KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
                   KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
         WebAuthNSrvVersion : 1.0
-            WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/
+            WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/aaaabbbb-0000-cccc-1111-dddd2222eeee/
              WebAuthNSrvId : urn:ms-drs:enterpriseregistration.windows.net
     DeviceManagementSrvVer : 1.0
-    DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/
+    DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/aaaabbbb-0000-cccc-1111-dddd2222eeee/
      DeviceManagementSrvId : urn:ms-drs:enterpriseregistration.windows.net
 +----------------------------------------------------------------------+
 ```
@@ -155,7 +156,7 @@ This section lists the statuses of various attributes for users who are currentl
 +----------------------------------------------------------------------+
 
                     NgcSet : YES
-                  NgcKeyId : {FA0DB076-A5D7-4844-82D8-50A2FB42EC7B}
+                  NgcKeyId : {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
                   CanReset : DestructiveAndNonDestructive
            WorkplaceJoined : NO
              WamDefaultSet : YES
@@ -177,13 +178,12 @@ You can ignore this section for Microsoft Entra registered devices.
 - **AzureAdPrtUpdateTime**: Set the state to the time, in Coordinated Universal Time (UTC), when the [PRT was last updated](concept-primary-refresh-token.md#how-is-a-prt-renewed).
 - **AzureAdPrtExpiryTime**: Set the state to the time, in UTC, when the PRT is going to expire if it isn't renewed.
 - **AzureAdPrtAuthority**: The Microsoft Entra authority URL
-- **EnterprisePrt**: Set the state to *YES* if the device has a PRT from on-premises 
-Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined devices, the device could have a PRT from both Microsoft Entra ID and on-premises Active Directory simultaneously. On-premises joined devices have only an Enterprise PRT.
+- **EnterprisePrt**: Set the state to *YES* if the device has a PRT from on-premises Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined devices, the device could have a PRT from both Microsoft Entra ID and on-premises Active Directory simultaneously. On-premises joined devices have only an Enterprise PRT.
 - **EnterprisePrtUpdateTime**: Set the state to the time, in UTC, when the Enterprise PRT was last updated.
 - **EnterprisePrtExpiryTime**: Set the state to the time, in UTC, when the PRT is going to expire if it isn't renewed.
 - **EnterprisePrtAuthority**: The AD FS authority URL
 
->[!NOTE]
+> [!NOTE]
 > The following PRT diagnostics fields were added in the Windows 10 May 2021 update (version 21H1).
 >
 > - The diagnostics information that's displayed in the **AzureAdPrt** field is for Microsoft Entra PRT acquisition or refresh, and the diagnostics information that's displayed in the **EnterprisePrt** field is for Enterprise PRT acquisition or refresh.
@@ -207,7 +207,7 @@ Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined 
    - This field is skipped if no diagnostics information is available.
    - The diagnostics information fields are same as **AcquirePrtDiagnostics**.
 
->[!NOTE]
+> [!NOTE]
 > The following Cloud Kerberos diagnostics fields were added in the original release of Windows 11 (version 21H2).
 
 - **OnPremTgt**: Set the state to *YES* if a Cloud Kerberos ticket to access on-premises resources is present on the device for the logged-in user.
@@ -222,14 +222,14 @@ Active Directory Federation Services (AD FS). For Microsoft Entra hybrid joined 
 +----------------------------------------------------------------------+
 
                 AzureAdPrt : NO
-       AzureAdPrtAuthority : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee
      AcquirePrtDiagnostics : PRESENT
       Previous Prt Attempt : 2020-07-18 20:10:33.789 UTC
             Attempt Status : 0xc000006d
              User Identity : john@contoso.com
            Credential Type : Password
-            Correlation ID : 63648321-fc5c-46eb-996e-ed1f3ba7740f
-              Endpoint URI : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/token/
+            Correlation ID : aaaa0000-bb11-2222-33cc-444444dddddd
+              Endpoint URI : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token/
                HTTP Method : POST
                 HTTP Error : 0x0
                HTTP status : 400
@@ -332,7 +332,7 @@ The following example shows that diagnostics tests are passing but the registrat
                Error Phase : join
           Client ErrorCode : 0x801c03f2
           Server ErrorCode : DirectoryError
-            Server Message : The device object by the given id (e92325d0-7ac4-4714-88a1-94ae875d5245) isn't found.
+            Server Message : The device object by the given id (aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb) isn't found.
               Https Status : 400
                 Request Id : 6bff0bd9-820b-484b-ab20-2a4f7b76c58e
 
@@ -341,7 +341,7 @@ The following example shows that diagnostics tests are passing but the registrat
 
 ### Post-join diagnostics
 
-This diagnostics section displays the output of sanity checks performed on a device joined to the cloud.
+This diagnostics section displays the output of checks performed on a device joined to the cloud.
 
 - **AadRecoveryEnabled**: If the value is *YES*, the keys stored in the device aren't usable, and the device is marked for recovery. The next sign-in will trigger the recovery flow and re-register the device.
 - **KeySignTest**: If the value is *PASSED*, the device keys are in good health. If KeySignTest fails, the device is usually marked for recovery. The next sign-in will trigger the recovery flow and re-register the device. For Microsoft Entra hybrid joined devices, the recovery is silent. While the devices are Microsoft Entra joined or Microsoft Entra registered, they prompt for user authentication to recover and re-register the device, if necessary.
@@ -365,7 +365,7 @@ This diagnostics section displays the output of sanity checks performed on a dev
 This diagnostics section performs the prerequisites check for setting up Windows Hello for Business (WHFB).
 
 > [!NOTE]
-> You might not see NGC prerequisites check details in `dsregcmd /status` if the user has already configured WHFB successfully.
+> You might not see NGC prerequisites check details in `dsregcmd /status` if the user configured WHFB successfully.
 
 - **IsDeviceJoined**: Set the state to *YES* if the device is joined to Microsoft Entra ID.
 - **IsUserAzureAD**: Set the state to *YES* if the logged-in user is present in Microsoft Entra ID.
@@ -379,10 +379,10 @@ This diagnostics section performs the prerequisites check for setting up Windows
 - **LogonCertTemplateReady**: This setting is specific to WHFB Certificate Trust deployment and present only if the CertEnrollment state is *enrollment authority*. Set the state to *YES* if the state of the login certificate template is valid and helps troubleshoot the AD FS Registration Authority (RA).
 - **PreReqResult**: Provides the result of all WHFB prerequisites evaluation. Set the state to *Will Provision* if WHFB enrollment would be launched as a post-login task when the user signs in next time.
 
->[!NOTE]
+> [!NOTE]
 > The following Cloud Kerberos diagnostics fields were added in the Windows 10 May 2021 update (version 21H1).
 >
-> Prior to Windows 11 version 23H2, the setting **OnPremTGT** was named **CloudTGT**.
+> Before Windows 11 version 23H2, the setting **OnPremTGT** was named **CloudTGT**.
 
 - **OnPremTGT**: This setting is specific to Cloud Kerberos trust deployment and present only if the CertEnrollment state is *none*. Set the state to *YES* if the device has a Cloud Kerberos ticket to access on-premises resources. Prior to Windows 11 version 23H2, this setting was named **CloudTGT**.
 

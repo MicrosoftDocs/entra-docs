@@ -1,16 +1,15 @@
 ---
 title: Monitor and troubleshoot sign-ins with continuous access evaluation in Microsoft Entra ID
 description: Troubleshoot and respond to changes in user state faster with continuous access evaluation in Microsoft Entra ID.
-
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 04/03/2023
-
+ms.date: 06/27/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: dougeby
 ms.reviewer: vmahtani
+ms.custom: sfi-image-nochange
 ---
 # Monitor and troubleshoot continuous access evaluation
 
@@ -21,10 +20,10 @@ Administrators can monitor and troubleshoot sign in events where [continuous acc
 Administrators can monitor user sign-ins where continuous access evaluation (CAE) is applied. This information is found in the Microsoft Entra sign-in logs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**. 
+1. Browse to **Entra ID** > **Monitoring & health** > **Sign-in logs**. 
 1. Apply the **Is CAE Token** filter. 
 
-[ ![Screenshot showing how to add a filter to the sign-in log to see where CAE is being applied or not.](./media/howto-continuous-access-evaluation-troubleshoot/sign-ins-log-apply-filter.png) ](./media/howto-continuous-access-evaluation-troubleshoot/sign-ins-log-apply-filter.png#lightbox)
+[![Screenshot showing how to add a filter to the sign-in log to see where CAE is being applied or not.](./media/howto-continuous-access-evaluation-troubleshoot/sign-ins-log-apply-filter.png)](./media/howto-continuous-access-evaluation-troubleshoot/sign-ins-log-apply-filter.png#lightbox)
 
 From here, admins are presented with information about their user’s sign-in events. Select any sign-in to see details about the session, like which Conditional Access policies applied and if CAE enabled. 
 
@@ -40,10 +39,10 @@ The continuous access evaluation insights workbook allows administrators to view
 
 ### Accessing the CAE workbook template
 
-Log Analytics integration must be completed before workbooks are displayed. For more information about how to stream Microsoft Entra sign-in logs to a Log Analytics workspace, see the article [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+Log Analytics integration must be completed before workbooks are displayed. For more information about how to stream Microsoft Entra sign-in logs to a Log Analytics workspace, see the article [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader). 
-1. Browse to **Identity** > **Monitoring & health** > **Workbooks**.
+1. Browse to **Entra ID** > **Monitoring & health** > **Workbooks**.
 1. Under **Public Templates**, search for **Continuous access evaluation insights**.
 
 The **Continuous access evaluation insights** workbook contains the following table:
@@ -76,16 +75,16 @@ Admins can view records filtered by time range and application. Admins can compa
 
 To unblock users, administrators can add specific IP addresses to a trusted named location.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
-1. Browse to **Protection** > **Conditional Access** > **Named locations**. Here you can create or update trusted IP locations.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator). 
+1. Browse to **Entra ID** > **Conditional Access** > **Named locations**. Here you can create or update trusted IP locations.
 
 > [!NOTE]
 > Before adding an IP address as a trusted named location, confirm that the IP address does in fact belong to the intended organization.
 
-For more information about named locations, see the article [Using the location condition](location-condition.md#named-locations).
+For more information about named locations, see the article [Using the location condition](concept-assignment-network.md).
  
 ## Related content
 
-- [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md)
+- [Integrate Microsoft Entra logs with Azure Monitor logs](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml)
 - [Using the location condition](location-condition.md#named-locations)
 - [Continuous access evaluation](concept-continuous-access-evaluation.md)

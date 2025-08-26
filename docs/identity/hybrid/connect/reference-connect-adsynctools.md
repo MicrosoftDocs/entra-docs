@@ -1,16 +1,14 @@
 ---
 title: 'Microsoft Entra Connect: ADSyncTools PowerShell Reference'
 description: This document provides reference information for the ADSyncTools.psm1 PowerShell module.
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.topic: reference
-
-
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ---
 
 # Microsoft Entra Connect:  ADSyncTools PowerShell Reference
@@ -23,14 +21,13 @@ To install the ADSyncTools PowerShell module do the following:
 1.  Open Windows PowerShell with administrative privileges
 2.  Type or copy and paste the following: 
     ``` powershell
-        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-        Import-module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools"
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Install-Module -Name ADSyncTools
     ```
 3.  Hit enter.
 4.  To verify the module was installed, enter or copy and paste the following"
     ```powershell
-    Get-module AdSyncTools
+    Get-module ADSyncTools
     ```
 5.  You should now see information about the module.
 
@@ -131,8 +128,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 #### -Port
-SQL Server Port (e.g.
-49823)
+SQL Server Port (for example, `49823`)
 ```yaml
 Type: String
 Parameter Sets: (All)
@@ -178,8 +174,7 @@ ConvertFrom-ADSyncToolsAadDistinguishedName [-DistinguishedName] <String> [<Comm
 ```
 ### DESCRIPTION
 Takes a Microsoft Entra Connector DistinguishedName like CN={514635484D4B376E38307176645973555049486139513D3D}
-and converts to the respective base64 ImmutableID value, e.g.
-QF5HMK7n80qvdYsUPIHa9Q==
+and converts to the respective base64 ImmutableID value, such as `QF5HMK7n80qvdYsUPIHa9Q==`
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -208,8 +203,7 @@ Convert Base64 ImmutableId (SourceAnchor) to GUID value
 ConvertFrom-ADSyncToolsImmutableID [-Value] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
-Converts value of the ImmutableID from Base64 string and returns a GUID value
-In case Base64 string cannot be converted to GUID, returns a Byte Array.
+Converts value of the ImmutableID from Base64 string and returns a GUID value In case Base64 string can't be converted to GUID, returns a Byte Array.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -242,9 +236,7 @@ Convert ImmutableId to Microsoft Entra Connector DistinguishedName
 ConvertTo-ADSyncToolsAadDistinguishedName [-ImmutableId] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
-Takes an ImmutableId (SourceAnchor) like QF5HMK7n80qvdYsUPIHa9Q== and converts to the respective
-Microsoft Entra Connector DistinguishedName value, e.g.
-CN={514635484D4B376E38307176645973555049486139513D3D}
+Takes an ImmutableId (SourceAnchor) like QF5HMK7n80qvdYsUPIHa9Q== and converts to the respective Microsoft Entra Connector DistinguishedName value, such as `CN={514635484D4B376E38307176645973555049486139513D3D}`
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -274,8 +266,8 @@ ConvertTo-ADSyncToolsCloudAnchor [-Anchor] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
 Takes a Base64 Anchor like VAAAAFUAcwBlAHIAXwBjADcAMgA5ADAAMwBlAGQALQA3ADgAMQA2AC0ANAAxAGMAZAAtADkAMAA2ADYALQBlAGEAYwAzADMAZAAxADcAMQBkADcANwAAAA==
-and converts to the respective CloudAnchor value, e.g.
-User_abc12345-1234-abcd-9876-ab0123456789
+and converts to the respective CloudAnchor value, such as `User_00aa00aa-bb11-cc22-dd33-44ee44ee44ee`
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -312,11 +304,11 @@ Converts a value in GUID, GUID string or byte array format to a Base64 string
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-ConvertTo-ADSyncToolsImmutableID '88888888-0101-3333-cccc-1234567890cd'
+ConvertTo-ADSyncToolsImmutableID '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 #### EXAMPLE 2
 ```
-'88888888-0101-3333-cccc-1234567890cd' | ConvertTo-ADSyncToolsImmutableID
+'00aa00aa-bb11-cc22-dd33-44ee44ee44ee' | ConvertTo-ADSyncToolsImmutableID
 ```
 ### PARAMETERS
 #### -Value
@@ -342,8 +334,7 @@ Export Microsoft Entra Disconnector objects
 Export-ADSyncToolsAadDisconnectors [[-SyncObjectType] <Object>] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Executes CSExport tool to export all Disconnectors to XML and then takes this XML output and converts it to a CSV file
-with: UserPrincipalName, Mail, SourceAnchor, DistinguishedName, CsObjectId, ObjectType, ConnectorId, CloudAnchor
+Executes CSExport tool to export all Disconnectors to XML and then takes this XML output and converts it to a CSV file with: UserPrincipalName, Mail, SourceAnchor, DistinguishedName, CsObjectId, ObjectType, ConnectorId, CloudAnchor
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -386,8 +377,8 @@ Export-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-Path] <Object>
 ### DESCRIPTION
 This function exports to a CSV file all the synchronized Mail-Enabled Public Folders (MEPF) present in Microsoft Entra ID.
 It can be used in conjunction with Remove-ADSyncToolsAadPublicFolders to identify and remove orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA is not supported.
-NOTE: If DirSync has been disabled on the tenant, you will need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
+NOTE: If DirSync has been disabled on the tenant, you'll need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -395,7 +386,7 @@ Export-ADSyncToolsAadPublicFolders -Credential $(Get-Credential) -Path <file_nam
 ```
 ### PARAMETERS
 #### -Credential
-Microsoft Entra Global Admin Credential
+Microsoft Entra Global Administrator Credential
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
@@ -427,8 +418,7 @@ This cmdlet creates the `<filename>` containing all synced Mail-Enabled PublicFo
     
 ## Export-ADSyncToolsHybridAadJoinReport
 ### SYNOPSIS
-Generates a report of certificates stored in Active Directory Computer objects, specifically, 
-certificates issued by the Microsoft Entra hybrid join feature.
+Generates a report of certificates stored in Active Directory Computer objects, specifically, certificates issued by the Microsoft Entra hybrid join feature.
 ### SYNTAX
 #### SingleObject
 ```
@@ -439,14 +429,8 @@ Export-ADSyncToolsHybridAadJoinReport [-DN] <String> [[-Filename] <String>] [<Co
 Export-ADSyncToolsHybridAadJoinReport [-OU] <String> [[-Filename] <String>] [<CommonParameters>]
 ```
 ### DESCRIPTION
-This tool checks for all certificates present in UserCertificate property of a Computer object in AD and, for each 
-non-expired certificate present, validates if the certificate was issued for the Microsoft Entra hybrid join feature 
-(that is, Subject Name is CN={ObjectGUID}).
-Before version 1.4, Microsoft Entra Connect would synchronize to Microsoft Entra any Computer that contained at least one certificate but 
-in Microsoft Entra Connect version 1.4 and later, ADSync engine can identify Microsoft Entra hybrid join certificates and will "cloudfilter" 
-(exclude) the computer object from synchronizing to Microsoft Entra ID unless there's a valid Microsoft Entra hybrid join certificate present.
-Microsoft Entra Device objects that were already synchronized to AD but do not have a valid Microsoft Entra hybrid join certificate will be 
-deleted from Microsoft Entra ID (CloudFiltered=TRUE) by Microsoft Entra Connect.
+This tool checks for all certificates present in UserCertificate property of a Computer object in AD and, for each non-expired certificate present, validates if the certificate was issued for the Microsoft Entra hybrid join feature (that is, Subject Name is CN={ObjectGUID}). Before version 1.4, Microsoft Entra Connect would synchronize to Microsoft Entra any Computer that contained at least one certificate but in Microsoft Entra Connect version 1.4 and later, ADSync engine can identify Microsoft Entra hybrid join certificates and will "cloudfilter" (exclude) the computer object from synchronizing to Microsoft Entra ID unless there's a valid Microsoft Entra hybrid join certificate present. Microsoft Entra Device objects that were already synchronized to AD but don't have a valid Microsoft Entra hybrid join certificate will be deleted from Microsoft Entra ID (CloudFiltered=TRUE) by Microsoft Entra Connect.
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -517,11 +501,11 @@ Exports internal ADSync objects from Metaverse and associated connected objects 
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-Export-ADSyncToolsObjects -ObjectId '9D220D58-0700-E911-80C8-000D3A3614C0' -Source Metaverse
+Export-ADSyncToolsObjects -ObjectId 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb' -Source Metaverse
 ```
 #### EXAMPLE 2
 ```
-Export-ADSyncToolsObjects -ObjectId '9e220d58-0700-e911-80c8-000d3a3614c0' -Source ConnectorSpace
+Export-ADSyncToolsObjects -ObjectId 'bbbbbbbb-1111-2222-3333-cccccccccccc' -Source ConnectorSpace
 ```
 #### EXAMPLE 3
 ```
@@ -877,8 +861,7 @@ Helper function to get which Azure environment the user belongs.
 Get-ADSyncToolsTenantAzureEnvironment [-Credential] <PSCredential> [<CommonParameters>]
 ```
 ### DESCRIPTION
-This function will call Oauth discovery endpoint to get CloudInstance and 
-tenant_region_scope to determine the Azure environment.
+This function will call Oauth discovery endpoint to get CloudInstance and tenant_region_scope to determine the Azure environment.
 https://login.microsoftonline.com/{tenant}/.well-known/openid-configuration
 
 ### EXAMPLES
@@ -1007,8 +990,7 @@ Import ImmutableID from Microsoft Entra ID
 Import-ADSyncToolsSourceAnchor [-Output] <String> [-IncludeSyncUsersFromRecycleBin] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Generates a file with all Microsoft Entra ID synchronized users containing the ImmutableID value in GUID format
-Requirements: MSOnline PowerShell Module
+Generates a file with all Microsoft Entra ID synchronized users containing the ImmutableID value in GUID format 
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1107,8 +1089,7 @@ Remove-ADSyncToolsAadObject [-Credential] <PSCredential> [-SourceAnchor] <Object
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjecType in batches of 10 objects
-The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
+Deletes from Microsoft Entra ID a synced object(s) based on SourceAnchor and ObjectType in batches of 10 objects The CSV file can be generated using Export-ADSyncToolsAadDisconnectors
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1169,7 +1150,7 @@ Accept wildcard characters: False
 ```
 #### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+The cmdlet isn't run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -1197,14 +1178,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### INPUTS
 InputCsvFilename must point to a CSV file with at least 2 columns: SourceAnchor, SyncObjectType
 ### OUTPUTS
-Shows results from ExportDeletions operation
-DISCLAIMER: Other than User objects that have a Recycle Bin, any other object types DELETED with this function cannot be RECOVERED!
+Shows results from ExportDeletions operation DISCLAIMER: Other than User objects that have a Recycle Bin, any other object types DELETED with this function can't be RECOVERED!
 
 ## Remove-ADSyncToolsAadPublicFolders
 ### SYNOPSIS
 Removes synchronized Mail-Enabled Public Folders (MEPF) present from Microsoft Entra ID.
 You can specify one SourceAnchor/ImmutableID for the target MEPF object to delete, or provide a CSV list with a batch of objects to delete when used in conjunction with Export-ADSyncToolsAadPublicFolders.
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA is not supported.
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
 NOTE: If DirSync has been disabled on the tenant, you'll need to temporary re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### SYNTAX
 ```
@@ -1213,8 +1193,8 @@ Export-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-Path] <Object>
 ### DESCRIPTION
 This function exports to a CSV file all the synchronized Mail-Enabled Public Folders (MEPF) present in Microsoft Entra ID.
 It can be used in conjunction with Remove-ADSyncToolsAadPublicFolders to identify and remove orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA is not supported.
-NOTE: If DirSync has been disabled on the tenant, you will need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
+NOTE: If DirSync has been disabled on the tenant, you'll need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1226,7 +1206,7 @@ Remove-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-SourceAnchor] 
 ```
 ### PARAMETERS
 #### -Credential
-Microsoft Entra Global Admin Credential
+Microsoft Entra Global Administrator Credential
 ```yaml
 Type: PSCredential
 Parameter Sets: (All)
@@ -1278,12 +1258,8 @@ Remove-ADSyncToolsExpiredCertificates [-TargetOU] <String> [[-BackupOnly] <Boole
  [<CommonParameters>]
 ```
 ### DESCRIPTION
-This script takes all the objects from a target Organizational Unit in your Active Directory domain - filtered by Object Class (User/Computer) 
-and deletes all expired certificates present in the UserCertificate attribute.
-By default (BackupOnly mode) it will only backup expired certificates to a file and not do any changes in AD.
-If you use -BackupOnly $false then any Expired Certificate present in UserCertificate attribute for these objects will be removed from Active Directory after being copied to file.
-Each certificate will be backed up to a separated filename: ObjectClass_ObjectGUID_CertThumprint.cer
-The script will also create a log file in CSV format showing all the users with certificates that either are valid or expired including the actual action taken (Skipped/Exported/Deleted).
+This script takes all the objects from a target Organizational Unit in your Active Directory domain - filtered by Object Class (User/Computer) and deletes all expired certificates present in the UserCertificate attribute. By default (BackupOnly mode) it will only backup expired certificates to a file and not do any changes in AD. If you use `-BackupOnly $false` then any Expired Certificate present in UserCertificate attribute for these objects will be removed from Active Directory after being copied to file. Each certificate will be backed up to a separated filename: `ObjectClass_ObjectGUID_CertThumprint.cer`. The script will also create a log file in CSV format showing all the users with certificates that either are valid or expired including the actual action taken (Skipped/Exported/Deleted).
+
 ### EXAMPLES
 #### EXAMPLE 1
 Check all users in target OU - Expired Certificates will be copied to separated files and no certificates will be removed
@@ -1309,7 +1285,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 #### -BackupOnly
-BackupOnly will not delete any certificates from AD
+BackupOnly won't delete any certificates from AD
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
@@ -1342,8 +1318,7 @@ Repair Microsoft Entra Connect AutoUpgrade State
 Repair-ADSyncToolsAutoUpgradeState
 ```
 ### DESCRIPTION
-Fixes an issue with AutoUpgrade introduced in build 1.1.524 (May 2017) which disables the online checking 
-of new versions while AutoUpgrade is enabled.
+Fixes an issue with AutoUpgrade introduced in build 1.1.524 (May 2017) which disables the online checking of new versions while AutoUpgrade is enabled.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1428,7 +1403,7 @@ Supports Active Directory objects in multi-domain forests.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
-Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com' -Value '88666888-0101-1111-bbbb-1234567890ab'
+Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com' -Value '00aa00aa-bb11-cc22-dd33-44ee44ee44ee'
 ```
 #### EXAMPLE 2
 ```
@@ -1436,7 +1411,7 @@ Set-ADSyncToolsMsDsConsistencyGuid -Identity 'CN=User1,OU=Sync,DC=Contoso,DC=com
 ```
 #### EXAMPLE 3
 ```
-Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' '8d6c6818-018c-4f11-9bb8-1b04e2caa1b6'
+Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' '11bb11bb-cc22-dd33-ee44-55ff55ff55ff'
 ```
 #### EXAMPLE 4
 ```
@@ -1444,7 +1419,7 @@ Set-ADSyncToolsMsDsConsistencyGuid 'User1@Contoso.com' 'GGhsjYwBEU+buBsE4sqhtg==
 ```
 #### EXAMPLE 5
 ```
-'88666888-0101-1111-bbbb-1234567890ab' | Set-ADSyncToolsMsDsConsistencyGuid -Identity User1
+'00aa00aa-bb11-cc22-dd33-44ee44ee44ee' | Set-ADSyncToolsMsDsConsistencyGuid -Identity User1
 ```
 #### EXAMPLE 6
 ```
@@ -1677,8 +1652,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 #### -ADwatermark
-Manual input of watermark, instead of XML file e.g.
-$ADwatermark = "TVNEUwMAAAAXyK9ir1zSAQAAAAAAAAAA(...)"
+Manual input of watermark, instead of XML file, for example `$ADwatermark = "TVNEUwMAAAAXyK9ir1zSAQAAAAAAAAAA(...)"`
 ```yaml
 Type: String
 Parameter Sets: ADwatermarkInput
@@ -1778,9 +1752,10 @@ Update-ADSyncToolsSourceAnchor [[-DistinguishedName] <String>] [-ImmutableIdGUID
  [-Output] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 ### DESCRIPTION
-Updates users with the new ConsistencyGuid (ImmutableId) value taken from the ConsistencyGuid Report 
-This function supports the WhatIf switch
-Note: ConsistencyGuid Report must be imported with Tab delimiter
+Updates users with the new ConsistencyGuid (ImmutableId) value taken from the ConsistencyGuid Report. This function supports the `-WhatIf` switch.
+
+Note: ConsistencyGuid Report must be imported with Tab delimiter.
+
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1841,7 +1816,7 @@ Accept wildcard characters: False
 ```
 #### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+The cmdlet isn't run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -1908,7 +1883,7 @@ et-ADSyncToolsDuplicateUsersSourceAnchor [-DuplicateUserSourceAnchorInfo] <Dupli
 ```
 ### DESCRIPTION
 This cmdlet takes in the list of objects from Get-ADSyncToolsDuplicateUsersSourceAnchor as pipeline input. It then fixes the sync errors by updating the msDS-ConsistencyGuid attribute with the sourceAnchor/immutableID of the original object. 
-The cmdlet has an optional parameter - "Override prompt", which is False by default. If it is set to True, then the user will not be prompted when updating the msDS-ConsistencyGuid attribute.
+The cmdlet has an optional parameter - "Override prompt", which is False by default. If it is set to True, then the user won't be prompted when updating the msDS-ConsistencyGuid attribute.
 
 ### EXAMPLES
 #### EXAMPLE 1

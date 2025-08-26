@@ -49,8 +49,6 @@ items:
         href: inbound-provisioning-api-custom-attributes.md
       - name: Quickstart using cURL
         href: inbound-provisioning-api-curl-tutorial.md
-      - name: Quickstart with Postman
-        href: inbound-provisioning-api-postman.md
       - name: Quickstart with Graph Explorer
         href: inbound-provisioning-api-graph-explorer.md
       - name: Quickstart with PowerShell
@@ -95,8 +93,12 @@ items:
         href: skip-out-of-scope-deletions.md
       - name: Manage application unmatched users
         href: application-provisioning-application-unmatched-users.md
-    - name: Provision on-demand
-      href: provision-on-demand.md
+    - name: Provisioning in Microsoft Entra ID
+      items:
+      - name: On-demand provisioning
+        href: provision-on-demand.md
+      - name: Provision custom security attributes
+        href: provision-custom-security-attributes.md
     - name: Monitor and report on provisioning
       items:
       - name: Monitor provisioning status and performance
@@ -109,6 +111,12 @@ items:
         href: ~/identity/monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/app-provisioning/toc.json&bc=/entra/identity/app-provisioning/breadcrumb/TOC.json
       - name: Provisioning insights workbook
         href: provisioning-workbook.md  
+    - name: SAP provisioning scenarios
+      items:
+      - name: Identity lifecycle with SAP source and targets
+        href: plan-sap-user-source-and-target.md
+      - name: Migrate from SAP IDM
+        href: migrate-from-sap-idm.md
     - name: Workday provisioning scenarios
       items:
       - name: Retrieve pronoun information
@@ -141,6 +149,8 @@ items:
         href: hr-manager-update-issues.md
       - name: HR writeback issues
         href: hr-writeback-issues.md
+      - name: Index the employeeID attribute 
+        href: index-employeeid-attribute-entra-id-to-active-directory.md
       - name: Insufficient access rights error
         href: insufficient-access-rights-error-troubleshooting.md
     - name: Troubleshoot API-driven inbound provisioning
@@ -153,6 +163,8 @@ items:
       href: application-provisioning-configuration-api.md
   - name: Reference
     items:
+    - name: Provision a user with Expression Builder
+      href: provision-user-with-expression-builder.md
     - name: Function reference for writing expressions for attribute mappings
       href: functions-for-customizing-application-data.md
     - name: SCIM 2.0 protocol compliance
@@ -161,6 +173,10 @@ items:
       href: scim-graph-scenarios.md
     - name: Cloud HR provisioning
       items:
+      - name: Workday expression mapping guide
+        href: workday-expression-mapping-functions-guide.md
+      - name: SuccessFactors expression mapping guide
+        href: successfactors-expression-mapping-functions-guide.md
       - name: SuccessFactors attribute reference
         href: sap-successfactors-attribute-reference.md
       - name: Workday attribute reference

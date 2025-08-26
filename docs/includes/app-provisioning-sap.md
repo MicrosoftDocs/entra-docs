@@ -55,18 +55,18 @@ If you have already downloaded the provisioning agent and configured it for anot
  9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider. If you are using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
- 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
+ 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
  
 ## 2. Expose the necessary SAP APIs
 
-Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) file named `Deploying SAP NetWeaver AS ABAP 7.pdf` walks through how you can expose the necessary APIs.
+Expose the necessary APIs in SAP ECC NetWeaver 7.51 to create, update, and delete users. The [Deploy SAP NetWeaver AS ABAP 7.51](~/id-governance/scenarios/deploy-sap-netweaver.md) document walks through how you can expose the necessary APIs.
 
 ## 3. Create a web services connector template
 
 If you are not migrating from an existing Web Services Connector in MIM, then you will need to create a web services connector template for the ECMA host. If you already have a web services connector template from MIM, then continue at the next section.
 
-You can use the [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) guide `Authoring SAP ECC 7 Template for ECMA2Host.pdf` as a reference to build your template. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) also provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the **ServiceName**, **EndpointName**, and the **OperationName** are correct.
+You can use the [Authoring the SAP ECC 7.51 Web Service connector template for the ECMA2Host](~/id-governance/scenarios/sap-template.md) document as a reference to build your template. The [Connectors for Microsoft Identity Manager 2016](https://www.microsoft.com/download/details.aspx?id=51495) also provides a template `sapecc.wsconfig` as a reference. Before deploying in production, you will need to customize the template to meet the needs of your specific environment. Make sure that the **ServiceName**, **EndpointName**, and the **OperationName** are correct.
 
 ## 4. Configure the On-premises ECMA app
 
@@ -290,7 +290,7 @@ You'll use the Microsoft Entra admin center to configure the mapping between the
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section. The Hybrid Identity Administrator role does not have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
 
 
 If there are existing users in the SAP ECC, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).

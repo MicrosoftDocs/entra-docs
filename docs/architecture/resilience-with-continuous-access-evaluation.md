@@ -4,13 +4,13 @@ description: A guide for architects and IT administrators on using CAE
 author: janicericketts
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: article
 ms.date: 11/16/2022
 ms.author: jricketts
 ---
 # Build resilience by using Continuous Access Evaluation
 
-[Continuous Access Evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md) (CAE) allows Microsoft Entra applications to subscribe to critical events that can then be evaluated and enforced. CAE includes evaluation of the following events:
+[Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md) allows Microsoft Entra applications to subscribe to critical events that can then be evaluated and enforced. CAE includes evaluation of the following events:
 
 * User account deleted or disabled
 * Password for user changed

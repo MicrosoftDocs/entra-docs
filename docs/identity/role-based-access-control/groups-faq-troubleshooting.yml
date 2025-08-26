@@ -2,19 +2,19 @@
 metadata:
   title: Troubleshoot Microsoft Entra roles assigned to groups
   description: Learn some common questions and troubleshooting tips for assigning roles to groups in Microsoft Entra ID.  
-  author: rolyon
-  manager: amycolannino
+  author: barclayn
+  manager: pmwongera
   ms.service: entra-id
   ms.subservice: role-based-access-control
   ms.topic: faq
-  ms.date: 11/05/2020
-  ms.author: rolyon
+  ms.date: 03/30/2025
+  ms.author: barclayn
   ms.reviewer: vincesm
-  ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+  ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, sfi-ga-nochange
   
   
 title: Troubleshoot Microsoft Entra roles assigned to groups
-summary: Here are some common questions and troubleshooting tips for assigning Microsoft Entra roles to Microsoft Entra groups.
+summary: What follows are some common questions and troubleshooting tips for assigning Microsoft Entra roles to Microsoft Entra groups.
 
 sections:
   - name: Ignored
@@ -22,22 +22,22 @@ sections:
       - question: |
           I'm a Groups Administrator but I can't see the 'Microsoft Entra roles can be assigned to the group' switch.
         answer: |
-          Only Privileged Role Administrators or Global Administrators can create a group that's eligible for role assignment. Only users in those roles see this control.
+          Privileged Role Administrators can create a group that's eligible for role assignment. Users with this role can see this switch.
 
       - question: |
           Who can modify the membership of groups that are assigned to Microsoft Entra roles?
         answer: |
-          By default, only Privileged Role Administrator and Global Administrator manage the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
+          By default, Privileged Role Administrator manages the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
 
       - question: |
           I am a Helpdesk Administrator in my organization but I can't update password of a user who is a Directory Readers. Why does that happen?
         answer: |
-          The user might have gotten Directory Readers by way of a role-assignable group. All members and owners of role-assignable groups are protected. Only users in the Privileged Authentication Administrator or Global Administrator roles can reset credentials for a protected user.
+          The user might have accessed Directory Readers by way of a role-assignable group. All members and owners of role-assignable groups are protected. Users with the Privileged Authentication Administrator role can reset credentials for a protected user.
 
       - question: |
           I can't update password of a user. They don't have any higher privileged role assigned. Why is it happening?
         answer: |
-          The user could be an owner of a role-assignable group. We protect owners of role-assignable groups to avoid elevation of privilege. An example might be if a group Contoso_Security_Admins is assigned to Security Administrator role, where Bob is the group owner and Alice is Password Administrator in the organization. If this protection weren't present, Alice could reset Bob's credentials and take over his identity. After that, Alice could add herself or anyone to the group Contoso_Security_Admins group to become a Security Administrator in the organization. To find out if a user is a group owner, get the list of owned objects of that user and see if any of the groups have isAssignableToRole set to true. If yes, then that user is protected and the behavior is by design. Refer to these documentations for getting owned objects:
+          The user could be an owner of a role-assignable group. We protect owners of role-assignable groups to avoid elevation of privilege. An example might be if a group Contoso_Security_Admins is assigned to Security Administrator role, where Bob is the group owner and Alice is the Password Administrator within the organization. Without this protection, Alice could reset Bob's credentials and take over his identity. Alice could then add herself or anyone to the group Contoso_Security_Admins group to become a Security Administrator in the organization. To find out if a user is a group owner, access the list of owned objects for that user and see if any of the groups have isAssignableToRole set to true. If yes, then that user is protected and the behavior is by design. Refer to the following documentation for accessing owned objects:
           
           - [Get-MgUserOwnedObject](/powershell/module/microsoft.graph.users/get-mguserownedobject)
           - [List ownedObjects](/graph/api/user-list-ownedobjects?tabs=http)
@@ -45,12 +45,12 @@ sections:
       - question: |
           Can I create an access review on groups that can be assigned to Microsoft Entra roles (specifically, groups with isAssignableToRole property set to true)?  
         answer: |
-          Yes, you can. Global Administrators and Privileged Role Administrators can create access reviews on role-assignable groups.
+          Yes, you can. Privileged Role Administrators can create access reviews on role-assignable groups.
           
       - question: |
           Can I create an access package and put groups that can be assigned to Microsoft Entra roles in it?
         answer: |
-          Yes, you can. Global Administrator and User Administrator have the power to put any group in an access package. Nothing changes for Global Administrator, but there's a slight change in User Administrator role permissions. To put a role-assignable group into an access package, you must be a User Administrator and also owner of the role-assignable group. Here's the full table showing who can create access package in Enterprise License Management:
+          Yes, you can. User Administrator has the permissions to put any group in an access package. Nothing changes for Global Administrator, but there's a slight change in User Administrator role permissions. To put a role-assignable group into an access package, you must be a User Administrator and also owner of the role-assignable group. Here's the full table showing who can create access package in Enterprise License Management:
           
           Microsoft Entra directory role | Entitlement management role | Can add security group\* | Can add Microsoft 365 group\* | Can add app | Can add SharePoint Online site
           ----------------------- | --------------------------- | ----------------------- | ------------------------- | ----------- |  -----------------------------
@@ -72,7 +72,7 @@ sections:
           This answer is applicable only to Microsoft Entra ID P1 organizations.
           
           1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
-          1. Browse to **Identity** > **Users** > **All users**.
+          1. Browse to **Entra ID** > **Users**.
           1. Select a user.
           1. Select **Assigned roles**.
           1. Select a role assignment you want to remove.
@@ -86,7 +86,7 @@ sections:
           Follow these steps:
           
           1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-          1. Browse to **Identity** > **Groups** > **All groups**.
+          1. Browse to **Entra ID** > **Groups** > **All groups**.
           1. Select **Add filters**.
           1. Filter to **Role assignable**.
           
@@ -96,7 +96,7 @@ sections:
           Follow these steps:
           
           1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-          1. Browse to **Identity** > **Users** > **All users**.
+          1. Browse to **Entra ID** > **Users**.
           1. Select a user.
           1. Select **Assigned roles**.
           1. If you have a Microsoft Entra ID P1 license, view the **Assignment Path** column.
@@ -105,7 +105,7 @@ sections:
       - question: |
           Why do we enforce creating a new group for assigning it to role?  
         answer: |
-          If you assign an existing group to a role, the existing group owner could add other members to this group without the new members realizing that they'll have the role. Because role-assignable groups are powerful, we're putting lots of restrictions to protect them. You don't want changes to the group that would be surprising to the person managing the group.
+          If you assign an existing group to a role, the existing group owner could add other members to this group without the new members realizing that they'll have the role. Because role-assignable groups are powerful, we've established restrictions to protect them. You don't want changes to the group that would be surprising to the person managing the group.
           
 
 additionalContent: |

@@ -2,16 +2,17 @@
 metadata:
   title: Microsoft Entra Connect Health FAQ - Azure
   description: This FAQ answers questions about Microsoft Entra Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support.  
-  author: billmath
-  manager: amycolannino
+  author: omondiatieno
+  manager: mwongerapk
   ms.assetid: f1b851aa-54d7-4cb4-8f5c-60680e2ce866
   ms.service: entra-id
   ms.subservice: hybrid-connect
   ms.tgt_pltfrm: na
-  ms.custom: has-azure-ad-ps-ref
+  ms.custom: no-azure-ad-ps-ref
+    - sfi-ga-nochange
   ms.topic: faq
-  ms.date: 02/08/2023
-  ms.author: billmath
+  ms.date: 12/27/2024
+  ms.author: jomondi
   
 title: Microsoft Entra Connect Health frequently asked questions
 summary: This article includes answers to frequently asked questions (FAQs) about Microsoft Entra Connect Health. These FAQs cover questions about how to use the service, which includes the billing model, capabilities, limitations, and support.
@@ -46,7 +47,7 @@ sections:
           * The first Connect Health Agent requires at least one Microsoft Entra P1 or P2 license.
           * Each additional registered agent requires 25 more Microsoft Entra P1 or P2 licenses.
           * Agent count is equivalent to the total number of agents that are registered across all monitored roles (AD FS, Microsoft Entra Connect, and/or AD DS).
-          * Microsoft Entra Connect Health licensing doesn't require you to assign the license to specific users. You only need to have the requisite number of valid licenses.
+          * Microsoft Entra Connect Health licensing doesn't require you to assign the license to specific users. You only need the requisite number of valid licenses.
           
           Licensing information is also found on the [Microsoft Entra pricing page](https://aka.ms/aadpricing).
           
@@ -65,7 +66,7 @@ sections:
       - question: |
           Does my agent installation get updated automatically when there's a new version of the agent?
         answer: | 
-           Yes, all agents will get updated automatically when there's a new version of the agent.
+           Yes, all agents are updated automatically when there's a new version of the agent.
            
       - question: |
            Can I opt out or disable automatic upgrade of the agent?
@@ -75,7 +76,7 @@ sections:
       - question: |
           What is the impact of installing the Microsoft Entra Connect Health Agent on individual servers?
         answer: |
-          The impact of installing the Microsoft Entra Connect Health Agent, AD FS, web application proxy servers, Microsoft Entra Connect (sync) servers, domain controllers is minimal with respect to the CPU, memory consumption, network bandwidth, and storage.
+          The impact of installing the Microsoft Entra Connect Health Agent, AD FS, web application proxy servers, Microsoft Entra Connect (sync) servers, and domain controllers is minimal with respect to the CPU, memory consumption, network bandwidth, and storage.
           
           The following numbers are an approximation:
           
@@ -83,17 +84,17 @@ sections:
           * Memory consumption: Up to 10 % of the total system memory.
           
           > [!NOTE]
-          > If the agent cannot communicate with Azure, the agent stores the data locally for a defined maximum limit. The agent overwrites the “cached” data on a “least recently serviced” basis.
+          > If the agent can't communicate with Azure, the agent stores the data locally for a defined maximum limit. The agent overwrites the “cached” data on a “least recently serviced” basis.
           >
           >
           
           * Local buffer storage for Microsoft Entra Connect Health Agents: ~20 MB.
-          * For AD FS servers, we recommend that you provision a disk space of 1,024 MB (1 GB) for the AD FS audit channel for Microsoft Entra Connect Health Agents to process all the audit data before it is overwritten.
+          * For AD FS servers, we recommend that you provision a disk space of 1,024 MB (1 GB) for the AD FS audit channel for Microsoft Entra Connect Health Agents to process all the audit data before it's overwritten.
           
       - question: |
           Will I have to reboot my servers during the installation of the Microsoft Entra Connect Health Agents?
         answer: |
-          No. The installation of the agents will not require you to reboot the server. However, installation of some prerequisite steps might require a reboot of the server.
+          No. The installation of the agents won't require you to reboot the server. However, installation of some prerequisite steps might require a reboot of the server.
           
           For example, installation of .NET 4.6.2 Framework may require a server reboot.
           
@@ -124,7 +125,7 @@ sections:
         answer: |
           When you remove an agent from a server, the server isn't automatically removed from the Microsoft Entra Connect Health portal. If you manually remove an agent from a server or remove the server itself, you need to manually delete the server entry from the Microsoft Entra Connect Health portal. To delete monitored servers from Microsoft Entra Connect Health, you must have either Microsoft Entra Global Administrator account permissions or the Contributor role in Azure role-based access control.
           
-          You might reimage a server or create a new server with the same details (such as machine name). If you did not remove the already registered server from the Microsoft Entra Connect Health portal, and you installed the agent on the new server, you might see two entries with the same name.
+          You might reimage a server or create a new server with the same details (such as machine name). If you didn't remove the already registered server from the Microsoft Entra Connect Health portal, and you installed the agent on the new server, you might see two entries with the same name.
           
           In this case, manually delete the entry that belongs to the older server. The data for this server should be out of date.
           
@@ -132,6 +133,10 @@ sections:
           Can I install the Microsoft Entra Connect Health agent on Windows Server Core?
         answer: |
           No.  Installation on Server Core isn't supported.
+      - question: |
+          After installing Microsoft Entra Connect Sync, with an account that has the Hybrid Administrator role, why is the Connect Health for Sync Agent disabled in services?
+        answer: |
+          In order to install the Connect Health for Sync Agent, you need to be a Global Administrator.  To activate the agent, you need to reinstall the agent using a Global Administrator account.
 
   - name: Health Agent registration and data freshness
     questions:
@@ -140,12 +145,12 @@ sections:
         answer: |
           The health agent can fail to register due to the following possible reasons:
           
-          * The agent cannot communicate with the required endpoints because a firewall is blocking traffic. This issue is common on web application proxy servers. Make sure that you have allowed outbound communication to the required endpoints and ports. See the [requirements section](how-to-connect-health-agent-install.md#requirements) for details.
+          * The agent can't communicate with the required endpoints because a firewall is blocking traffic. This issue is common on web application proxy servers. Make sure that you allowed outbound communication to the required endpoints and ports. See the [requirements section](how-to-connect-health-agent-install.md#requirements) for details.
           * Outbound communication is subjected to a TLS inspection by the network layer. This causes the certificate that the agent uses to be replaced by the inspection server/entity, and the steps to complete the agent registration fail.
-          * The user doesn't have access to perform the registration of the agent. Global admins have access by default. You can use [Azure role-based access control (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-azure-rbac) to delegate access to other users.
+          * The user can't perform the registration of the agent. Global Administrators can by default. You can use [Azure role-based access control (Azure RBAC)](how-to-connect-health-operations.md#manage-access-with-azure-rbac) to delegate access to other users.
           
       - question: |
-          I am getting alerted that "Health Service data isn't up to date." How do I troubleshoot the issue?
+          I'm getting alerted that "Health Service data isn't up to date." How do I troubleshoot the issue?
         answer: |
           Microsoft Entra Connect Health generates the alert when it doesn't receive all the data points from the server in the last two hours. [Read more](how-to-connect-health-data-freshness.md).
           
@@ -162,16 +167,16 @@ sections:
           Microsoft Entra Connect Health alerts get resolved on a success condition. Microsoft Entra Connect Health Agents detect and report the success conditions to the service periodically. For a few alerts, the suppression is time-based. In other words, if the same error condition isn't observed within 72 hours from alert generation, the alert is automatically resolved.
 
       - question: |
-          I am getting alerted that "Test Authentication Request (Synthetic Transaction) failed to obtain a token." How do I troubleshoot the issue?
+          I'm getting alerted that "Test Authentication Request (Synthetic Transaction) failed to obtain a token." How do I troubleshoot the issue?
         answer: |
           Microsoft Entra Connect Health for AD FS generates this alert when the Health Agent installed on an AD FS server fails to obtain a token as part of a synthetic transaction initiated by the Health Agent. The Health agent uses the local system context and attempts to get a token for a self relying party. This behavior is a catch-all test to ensure that AD FS is in a state of issuing tokens.
           
-          Most often this test fails because the Health Agent is unable to resolve the AD FS farm name. This state can happen if the AD FS servers are behind a network load balancers and the request gets initiated from a node that's behind the load balancer (as opposed to a regular client that is in front of the load balancer). This issue can be fixed by updating the "hosts" file located under "C:\Windows\System32\drivers\etc" to include the IP address of the AD FS server or a loopback IP address (127.0.0.1) for the AD FS farm name (such as sts.contoso.com). Adding the host file will short-circuit the network call, thus allowing the Health Agent to get the token.
+          Most often this test fails because the Health Agent is unable to resolve the AD FS farm name. This state can happen if the AD FS servers are behind a network load balancers and the request gets initiated from a node that's behind the load balancer (as opposed to a regular client that is in front of the load balancer). This issue can be fixed by updating the "hosts" file located under `C:\Windows\System32\drivers\etc` to include the IP address of the AD FS server or a loopback IP address (`127.0.0.1`) for the AD FS farm name (such as `sts.contoso.com`). Adding the host file short-circuits the network call, thus allowing the Health Agent to get the token.
           
       - question: |
           I got an email indicating my machines are NOT patched for the recent ransomware attacks. Why did I receive this email?
         answer: |
-          Microsoft Entra Connect Health service scanned all the machines it monitors to ensure the required patches were installed. The email was sent to the tenant administrators if at least one machine did not have the critical patches. The following logic was used to make this determination.
+          Microsoft Entra Connect Health service scanned all the machines it monitors to ensure the required patches were installed. The email was sent to the tenant administrators if at least one machine didn't have the critical patches. The following logic was used to make this determination.
           1. Find all the hotfixes installed on the machine.
           2. Check if at least one of the HotFixes from the defined list is present.
           3. If Yes, the machine is protected. If Not, the machine is at risk for the attack.
@@ -200,19 +205,14 @@ sections:
           ```
           
       - question: |
-          Why does the PowerShell cmdlet 'Get-MsolDirSyncProvisioningError' show fewer sync errors in the result?
-        answer: |
-          <i>Get-MsolDirSyncProvisioningError</i> will only return DirSync provisioning errors. The Connect Health portal also shows other sync error types such as export errors. Read more about [Microsoft Entra Connect Sync errors](./tshoot-connect-sync-errors.md).
-          
-      - question: |
           Why are my AD FS audits not being generated?
         answer: |
-          Please use the PowerShell cmdlet <i>Get-AdfsProperties -AuditLevel</i> to ensure audit logs aren't in disabled state. Read more about [AD FS audit logs](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server#auditing-levels-in-ad-fs-for-windows-server-2016). Notice if there are advanced audit settings pushed to the AD FS server, any changes with auditpol.exe will be overwritten (event if Application Generated isn't configured). In this case, set the local security policy to log Application Generated failures and success.
+          Please use the PowerShell cmdlet <i>Get-AdfsProperties -AuditLevel</i> to ensure audit logs aren't in disabled state. Read more about [AD FS audit logs](/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server#auditing-levels-in-ad-fs-for-windows-server-2016). Notice if there are audit settings pushed to the AD FS server, any changes with auditpol.exe are overwritten (event if Application Generated isn't configured). In this case, set the local security policy to log Application Generated failures and success.
           
       - question: |
           When will the agent certificate be automatically renewed before expiration?
         answer: |
-          The agent certification will be automatically renewed **6 months** before its expiration date. If it isn't renewed, ensure the network connection of the agent is stable. Restart the agent services or update to the latest version may also solve the issue.
+          The agent certification is automatically renewed **six months** before its expiration date. If it isn't renewed, ensure the network connection of the agent is stable. Restart the agent services or update to the latest version may also solve the issue.
           
 additionalContent: |
 

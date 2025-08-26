@@ -1,14 +1,14 @@
 ---
 title: Secure group managed service accounts
 description: A guide to securing group managed service accounts (gMSAs)
-author: jricketts
+author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/09/2023
 ms.author: jricketts
-ms.reviewer: ajburnle
+
 ---
 
 # Secure group managed service accounts
@@ -42,30 +42,16 @@ gMSAs are more secure than standard user accounts, which require ongoing passwor
 
 | Security issue| Mitigation |
 | - | - |
-| gMSA is a member of privileged groups | - Review your group memberships. Create a PowerShell script to enumerate group memberships. Filter the resultant CSV file by gMSA file names</br> - Remove the gMSA from privileged groups</br> - Grant the gMSA rights and permissions it requires to run its service. See your service vendor. 
+| gMSA is a member of privileged groups | - Review your group memberships. Create a PowerShell script to enumerate group memberships. Filter the resultant CSV file by gMSA file names</br> - Remove the gMSA from privileged groups</br> - Grant the gMSA rights and permissions it requires to run its service. See your service vendor. |
 | gMSA has read/write access to sensitive resources | - Audit access to sensitive resources</br> - Archive audit logs to a SIEM, such as Azure Log Analytics or Microsoft Sentinel</br> - Remove unnecessary resource permissions if there's an unnecessary access level |
 
 
 ## Find gMSAs
 
-Your organization might have gMSAs. To retrieve these accounts, run the following PowerShell cmdlets:
-
-```powershell
-Get-ADServiceAccount 
-Install-ADServiceAccount 
-New-ADServiceAccount 
-Remove-ADServiceAccount 
-Set-ADServiceAccount 
-Test-ADServiceAccount 
-Uninstall-ADServiceAccount
-```
-
 ### Managed Service Accounts container
   
-To work effectively, gMSAs must be in the Managed Service Accounts container.
+To work effectively, gMSAs must be in the Managed Service Accounts container in Active Directory Users and Computers.
   
-![Screenshot of a gMSA in the Managed Service Accounts container.](./media/govern-service-accounts/secure-gmsa-image-1.png)
-
 To find service MSAs not in the list, run the following commands:
 
 ```powershell

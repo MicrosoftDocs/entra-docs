@@ -1,17 +1,15 @@
 ---
 title: Install the Microsoft Entra Connect Health agents in Microsoft Entra ID
 description: Learn how to install the Microsoft Entra Connect Health agents for Active Directory Federation Services (AD FS) and for sync.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.topic: how-to
-ms.author: billmath
-
-ms.custom:
+ms.author: jomondi
+ms.custom: sfi-ga-nochange
 ---
 # Install the Microsoft Entra Connect Health agents
 
@@ -29,7 +27,7 @@ The following table lists requirements for using Microsoft Entra Connect Health:
 | Requirement | Description |
 | --- | --- |
 | You have a Microsoft Entra ID P1 or P2 subscription. |Microsoft Entra Connect Health is a feature of Microsoft Entra ID P1 or P2. For more information, see [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md). <br /><br />To start a free 30-day trial, see [Start a trial](https://azure.microsoft.com/trial/get-started-active-directory/). |
-| You're a global administrator in Microsoft Entra ID. |Currently, only Global Administrator accounts can install and configure health agents. For more information, see [Administering your Microsoft Entra directory](~/fundamentals/whatis.md). <br /><br /> By using Azure role-based access control (Azure RBAC), you can allow other users in your organization to access Microsoft Entra Connect Health. For more information, see [Azure RBAC for Microsoft Entra Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac). <br /><br />**Important**: Use a work or school account to install the agents. You can't use a Microsoft account to install the agents. For more information, see [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md). |
+| You're a Global Administrator in Microsoft Entra ID. |Currently, only Global Administrator accounts can install and configure health agents. . <br /><br /> By using Azure role-based access control (Azure RBAC), you can allow other users in your organization to access Microsoft Entra Connect Health. For more information, see [Azure RBAC for Microsoft Entra Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac). <br /><br />**Important**: Use a work or school account to install the agents. You can't use a Microsoft account to install the agents. For more information, see [Sign up for Azure as an organization](~/fundamentals/sign-up-organization.md). |
 | The Microsoft Entra Connect Health agent is installed on each targeted server. | Health agents must be installed and configured on targeted servers so that they can receive data and provide monitoring and analytics capabilities. <br /><br />For example, to get data from your Active Directory Federation Services (AD FS) infrastructure, you must install the agent on the AD FS server and on the Web Application Proxy server. Similarly, to get data from your on-premises AD Domain Services infrastructure, you must install the agent on the domain controllers. |
 | The Azure service endpoints have outbound connectivity. | During installation and runtime, the agent requires connectivity to Microsoft Entra Connect Health service endpoints. If firewalls block outbound connectivity, add the [outbound connectivity endpoints](how-to-connect-health-agent-install.md#outbound-connectivity-to-azure-service-endpoints) to an allowlist. |
 |Outbound connectivity is based on IP addresses. | For information about firewall filtering based on IP addresses, see [Azure IP ranges](https://www.microsoft.com/download/details.aspx?id=56519).|
@@ -43,6 +41,9 @@ The following table lists requirements for using Microsoft Entra Connect Health:
 
 > [!NOTE]
 > If you have a highly locked-down and restricted environment, you need to add more URLs than the URLs the table lists for Internet Explorer enhanced security. Also add URLs that are listed in the table in the next section.
+
+>[!IMPORTANT]
+>Microsoft Entra Connect Health now supports installation using the Hybrid Identity Administrator role. If you installed Microsoft Entra Connect Sync using an account with the role, the Entra Connect Health agent will automatically be in active state and you will not need to do a re-install using a Global Administrator account.
 
 ### New versions of the agent and auto upgrade
 
@@ -60,8 +61,8 @@ These URLs allow communication with Microsoft Entra Connect Health service endpo
 
 | Domain environment | Required Azure service endpoints |
 | --- | --- |
-| General public | - `*.blob.core.windows.net` <br />- `*.aadconnecthealth.azure.com` <br />- `**.servicebus.windows.net` - Port: 5671 (If 5671 is blocked, the agent falls back to 443, but we recommend that you use port 5671. This endpoint isn't required in the latest version of the agent.)<br />- `*.adhybridhealth.azure.com/`<br />- `https://management.azure.com` <br />- `https://policykeyservice.dc.ad.msft.net/` <br />- `https://login.windows.net` <br />- `https://login.microsoftonline.com` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.net` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
-| Azure Government | - `*.blob.core.usgovcloudapi.net` <br />- `*.servicebus.usgovcloudapi.net` <br />- `*.aadconnecthealth.microsoftazure.us` <br />- `https://management.usgovcloudapi.net` <br />- `https://policykeyservice.aadcdi.azure.us` <br />- `https://login.microsoftonline.us` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.us` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
+| General public | - `*.blob.core.windows.net` <br />- `*.aadconnecthealth.azure.com` <br />- `**.servicebus.windows.net` - Port: 5671 (If 5671 is blocked, the agent falls back to 443, but we recommend that you use port 5671. This endpoint isn't required in the latest version of the agent.)<br />- `*.adhybridhealth.azure.com/`<br />- `https://management.azure.com` <br />- `https://login.windows.net` <br />- `https://login.microsoftonline.com` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.net` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
+| Azure Government | - `*.blob.core.usgovcloudapi.net` <br />- `*.servicebus.usgovcloudapi.net` <br />- `*.aadconnecthealth.microsoftazure.us` <br />- `https://management.usgovcloudapi.net` <br />- `https://login.microsoftonline.us` <br />- `https://secure.aadcdn.microsoftonline-p.com` <br />- `https://www.office.com` (This endpoint is used only for discovery purposes during registration.)<br />- `https://aadcdn.msftauth.net` <br />- `https://aadcdn.msauth.net` <br />- `https://autoupdate.msappproxy.us` <br />- `http://www.microsoft.com` <br />- `https://www.microsoft.com` |
 
 ## Download the agents
 
@@ -69,12 +70,12 @@ To download and install the Microsoft Entra Connect Health agent:
 
 - Make sure that you satisfy the [requirements](how-to-connect-health-agent-install.md#requirements) to install Microsoft Entra Connect Health.
 - Get started using Microsoft Entra Connect Health for AD FS:
-  - [Download the Microsoft Entra Connect Health agent for AD FS](https://go.microsoft.com/fwlink/?LinkID=518973).
+  - [Download the Microsoft Entra Connect Health agent for AD FS](https://download.microsoft.com/download/07e33770-970b-424b-95a2-e99dfe5f5e8d/MicrosoftEntraConnectHealthAgentSetup.exe).
   - See the [installation instructions](#install-the-agent-for-ad-fs).
 - Get started using Microsoft Entra Connect Health for sync:
   - [Download and install the latest version of Microsoft Entra Connect](https://go.microsoft.com/fwlink/?linkid=615771). The health agent for sync is installed as part of the Microsoft Entra Connect installation (version 1.0.9125.0 or later).
 - Get started using Microsoft Entra Connect Health for AD Domain Services:
-  - [Download the Microsoft Entra Connect Health agent for AD Domain Services](https://go.microsoft.com/fwlink/?LinkID=820540).
+  - [Download the Microsoft Entra Connect Health agent for AD Domain Services](https://download.microsoft.com/download/07e33770-970b-424b-95a2-e99dfe5f5e8d/MicrosoftEntraConnectHealthAgentSetup.exe).
   - See the [installation instructions](#install-the-agent-for-azure-ad-ds).
 
 ## Install the agent for AD FS
@@ -105,12 +106,12 @@ If the Microsoft Entra Connect Health for sync agent registration fails after yo
 
 Manually register the Microsoft Entra Connect Health agent for sync by using the following PowerShell command. The Microsoft Entra Connect Health services will start after the agent has been successfully registered.
 
-`Register-MicrosoftEntraConnectHealthAgent -AttributeFiltering $true -StagingMode $false`
+`Register-MicrosoftEntraConnectHealthAgent -AttributeFiltering $true -StagingMode (Get-ADSyncScheduler).StagingModeEnabled`
 
 The command takes following parameters:
 
 - `AttributeFiltering`: `$true` (default) if Microsoft Entra Connect isn't syncing the default attribute set and has been customized to use a filtered attribute set. Otherwise, use `$false`.
-- `StagingMode`: `$false` (default) if the Microsoft Entra Connect server is *not* in staging mode. If the server is configured to be in staging mode, use `$true`.
+- `StagingMode`: `$false` (default) if the Microsoft Entra Connect server is *not* in staging mode. If the server is configured to be in staging mode, use `$true`. You can determine if the server is in staging mode with `(Get-ADSyncScheduler).StagingModeEnabled`.
 
 When you're prompted for authentication, use the same Global Administrator account (such as `admin@domain.onmicrosoft.com`) that you used to configure Microsoft Entra Connect.
 
@@ -149,12 +150,12 @@ To verify that the agent was installed, look for the following services on the s
 1. Run the following script. Replace the parameters with your new user account and its password.
 
     ```powershell
-    AdHealthAddsAgentSetup.exe /quiet
+    AdHealthAddsAgentSetup.exe /quiet AddsMonitoringEnabled=1 SkipRegistration=1
     Start-Sleep 30
     $userName = "NEWUSER@DOMAIN"
     $secpasswd = ConvertTo-SecureString "PASSWORD" -AsPlainText -Force
     $myCreds = New-Object System.Management.Automation.PSCredential ($userName, $secpasswd)
-    import-module "C:\Program Files\Azure Ad Connect Health Adds Agent\PowerShell\AdHealthAdds"
+    Import-Module "C:\Program Files\Microsoft Azure AD Connect Health Agent\Modules\AdHealthConfiguration"
      
     Register-MicrosoftEntraConnectHealthAgent -Credential $myCreds
     ```
@@ -185,7 +186,7 @@ These commands accept `Credential` as a parameter to complete the registration n
 
 - You can capture `Credential` in a PowerShell variable that's passed as a parameter.
 - You can provide any Microsoft Entra identity that has permissions to register the agents, and which does *not* have multifactor authentication enabled.
-- By default, global admins have permissions to register the agents. You can also allow less-privileged identities to do this step. For more information, see [Azure RBAC](how-to-connect-health-operations.md#manage-access-with-azure-rbac).
+- By default, Global Administrators have permissions to register the agents. You can also allow less-privileged identities to do this step. For more information, see [Azure RBAC](how-to-connect-health-operations.md#manage-access-with-azure-rbac).
 
 ```powershell
     $cred = Get-Credential
@@ -242,7 +243,7 @@ Set-MicrosoftEntraConnectHealthProxySettings -HttpsProxyAddress address:port
 
 Here's an example:
 
-`Set-MicrosoftEntraConnectHealthProxySettings -HttpsProxyAddress myproxyserver: 443`
+`Set-MicrosoftEntraConnectHealthProxySettings -HttpsProxyAddress myproxyserver:443`
 
 In this example:
 

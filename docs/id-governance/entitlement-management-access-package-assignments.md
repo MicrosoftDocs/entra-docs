@@ -2,17 +2,18 @@
 title: View, add, and remove assignments for an access package in entitlement management - Microsoft Entra
 description: Learn how to view, add, and remove assignments for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 06/27/2023
+ms.date: 06/26/2025
 ms.author: owinfrey
+ms.custom: sfi-image-nochange
 #Customer intent: As an administrator, I want detailed information about how I can edit an access package so that requestors have the resources they need to perform their job.
 ---
 # View, add, and remove assignments for an access package in entitlement management
 
-In entitlement management, you can see who has been assigned to access packages, their policy, status, and user lifecycle (preview). If an access package has an appropriate policy, you can also directly assign user to an access package. This article describes how to view, add, and remove assignments for access packages.
+In entitlement management, you can see who is assigned to access packages, their policy, status, and user lifecycle (preview). If an access package has an appropriate policy, you can also directly assign user to an access package. This article describes how to view, add, and remove assignments for access packages.
 
 ## Prerequisites
 
@@ -25,13 +26,11 @@ To use entitlement management and assign users to access packages, you must have
 
 ## View who has an assignment
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
-
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, Access package manager, or Access package assignment manager
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, Access Package manager, and the Access Package assignment manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open an access package.
 
@@ -43,7 +42,7 @@ To use entitlement management and assign users to access packages, you must have
 
 1. To see a list of assignments that didn't have all resource roles properly provisioned, select the filter status and select **Delivering**.
 
-    You can see additional details on delivery errors by locating the user's corresponding request on the **Requests** page.
+    You can see more details on delivery errors by locating the user's corresponding request on the **Requests** page.
 
 1. To see expired assignments, select the filter status and select **Expired**.
 
@@ -51,15 +50,15 @@ To use entitlement management and assign users to access packages, you must have
 
 ## View assignments programmatically
 ### View assignments with Microsoft Graph
-You can also retrieve assignments in an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list accessPackageAssignments](/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0&preserve-view=true).  An application that has the application permission `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can also use this API to retrieve assignments across all catalogs.
+You can also retrieve assignments in an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can call the API to [list accessPackageAssignments](/graph/api/entitlementmanagement-list-assignments?view=graph-rest-1.0&preserve-view=true). An application that has the application permission `EntitlementManagement.Read.All` or `EntitlementManagement.ReadWrite.All` permission can also use this API to retrieve assignments across all catalogs.
 
-Microsoft Graph will return the results in pages, and will continue to return a reference to the next page of results in the `@odata.nextLink` property with each response, until all pages of the results have been read. To read all results, you must continue to call Microsoft Graph with the `@odata.nextLink` property returned in each response until the `@odata.nextLink` property is no longer returned, as described in [paging Microsoft Graph data in your app](/graph/paging).
+Microsoft Graph will return the results in pages, and will continue to return a reference to the next page of results in the `@odata.nextLink` property with each response, until all pages of the results are read. To read all results, you must continue to call Microsoft Graph with the `@odata.nextLink` property returned in each response until the `@odata.nextLink` property is no longer returned, as described in [paging Microsoft Graph data in your app](/graph/paging).
 
-While an identity governance administrator can retrieve access packages from multiple catalogs, if user or application service principal is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: `$filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'`.
+While an Identity Governance Administrator can retrieve access packages from multiple catalogs, if user or application service principal is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: `$filter=accessPackage/id eq '00001111-aaaa-2222-bbbb-3333cccc4444'`.
 
 ### View assignments with PowerShell
 
-You can also retrieve assignments to an access package in PowerShell with the `Get-MgEntitlementManagementAssignment` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.1.x or later module version.  This script illustrates using the Microsoft Graph PowerShell cmdlets module version 2.4.0 to retrieve all assignments to a particular access package. This cmdlet takes as a parameter the access package ID, which is included in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet.  Be sure when using the `Get-MgEntitlementManagementAccessPackage` cmdlet to include the `-All` flag to cause all pages of assignments to be returned.
+You can also retrieve assignments to an access package in PowerShell with the `Get-MgEntitlementManagementAssignment` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.1.x or later module version. This script illustrates using the Microsoft Graph PowerShell cmdlets module version 2.4.0 to retrieve all assignments to a particular access package. This cmdlet takes as a parameter the access package ID, which is included in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet. Be sure when using the `Get-MgEntitlementManagementAccessPackage` cmdlet to include the `-All` flag to cause all pages of assignments to be returned.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.Read.All"
@@ -69,7 +68,7 @@ $assignments = @(Get-MgEntitlementManagementAssignment -AccessPackageId $accessp
 $assignments | ft Id,state,{$_.Target.id},{$_.Target.displayName}
 ```
 
-The preceding query returns expired and delivering assignments as well as delivered assignments.  If you wish to exclude expired or delivering assignments, you can use a filter that includes the access package ID as well as the state of the assignments.  This script illustrates using a filter to retrieve only the assignments in state `Delivered` for a particular access package. The script will then generate a CSV file `assignments.csv`, with one row per assignment.
+The preceding query returns expired and delivering assignments along with delivered assignments. If you wish to exclude expired or delivering assignments, you can use a filter that includes the access package ID and the state of the assignments. This script illustrates using a filter to retrieve only the assignments in state `Delivered` for a particular access package. The script will then generate a CSV file `assignments.csv`, with one row per assignment.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.Read.All"
@@ -87,13 +86,15 @@ $sp | Export-Csv -Encoding UTF8 -NoTypeInformation -Path ".\assignments.csv"
 
 In some cases, you might want to directly assign specific users to an access package so that users don't have to go through the process of requesting the access package. To directly assign users, the access package must have a policy that allows administrator direct assignments.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, Access package manager or Access package assignment manager
+> [!NOTE]
+> When assigning users to an access package, administrators will need to verify that the users are eligible for that access package based on the existing policy requirements. Otherwise, the users won't successfully be assigned to the access package.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, Access Package manager, and the Access Package assignment manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
-
-1. On the **Access packages** page open an access package.
+1. On the Access packages page, open an access package.
 
 1. In the left menu, select **Assignments**.
 
@@ -103,12 +104,12 @@ In some cases, you might want to directly assign specific users to an access pac
 
 1. In the **Select policy** list, select a policy that the users' future requests and lifecycle will be governed and tracked by. If you want the selected users to have different policy settings, you can select **Create new policy** to add a new policy.
 
-1. Once you select a policy, you’ll be able to Add users to select the users you want to assign this access package to, under the chosen policy.
+1. Once you select a policy, you are able to add users to select the users you want to assign this access package to, under the chosen policy.
 
     > [!NOTE]
     > If you select a policy with questions, you can only assign one user at a time.
 
-1. Set the date and time you want the selected users' assignment to start and end. If an end date isn't provided, the policy's lifecycle settings will be used.
+1. Set the date and time you want the selected users' assignment to start and end. If an end date isn't provided, the policy's lifecycle settings are used.
 
 1. Optionally provide a justification for your direct assignment for record keeping.
 
@@ -123,17 +124,16 @@ In some cases, you might want to directly assign specific users to an access pac
     After a few moments, select **Refresh** to see the users in the Assignments list.
     
 > [!NOTE]
-> When assigning users to an access package, administrators will need to verify that the users are eligible for that access package based on the existing policy requirements. Otherwise, the users won't successfully be assigned to the access package. If the access package contains a policy that requires user requests to be approved, users can't be directly assigned to the package without necessary approval(s) from the designated approver(s).
+> Access package assignment managers will no longer be able to bypass approval settings if the policy requires approval. This means users can't be directly assigned to the package without necessary approval(s) from the designated approver(s). In the case that you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.
 
 ## Directly assign any user (Preview)
 
 Entitlement management also allows you to directly assign external users to an access package to make collaborating with partners easier. To do this, the access package must have a policy that allows users not yet in your directory to request access.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, Access package manager or Access package assignment manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, Access Package manager, and the Access Package assignment manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open an access package.
 
@@ -143,7 +143,7 @@ Entitlement management also allows you to directly assign external users to an a
 
 1. In the **Select policy** list, select a policy that allows that is set to **For users not in your directory**
 
-1. Select **Any user**. You are able to specify which users you want to assign to this access package.
+1. Select **Any user**. You're able to specify which users you want to assign to this access package.
     ![Assignments - Add any user to access package](./media/entitlement-management-access-package-assignments/assignments-add-any-user.png)
 
 1. Enter the user’s **Name** (optional) and the user’s **Email address** (required).
@@ -159,18 +159,18 @@ Entitlement management also allows you to directly assign external users to an a
 
 ## Directly assigning users programmatically
 ### Assign a user to an access package with Microsoft Graph
-You can also directly assign a user to an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminAdd`, and the `assignment` property is a structure that contains the `targetId` of the user being assigned.
+You can also directly assign a user to an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminAdd`, and the `assignment` property is a structure that contains the `targetId` of the user being assigned.
 
 ### Assign a user to an access package with PowerShell
 
-You can assign a user to an access package in PowerShell with the `New-MgEntitlementManagementAssignmentRequest` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.1.x or later module version.  This script illustrates using the Microsoft Graph PowerShell cmdlets module version 2.4.0.
+You can assign a user to an access package in PowerShell with the `New-MgEntitlementManagementAssignmentRequest` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.1.x or later module version. This script illustrates using the Microsoft Graph PowerShell cmdlets module version 2.4.0.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 $accesspackage = Get-MgEntitlementManagementAccessPackage -Filter "displayname eq 'Marketing Campaign'" -ExpandProperty "assignmentpolicies"
 if ($null -eq $accesspackage) { throw "no access package"}
 $policy = $accesspackage.AssignmentPolicies[0]
-$userid = "cdbdf152-82ce-479c-b5b8-df90f561d5c7"
+$userid = "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
 $params = @{
    requestType = "adminAdd"
    assignment = @{
@@ -182,12 +182,14 @@ $params = @{
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 
+You can also populate assignments for existing collections of users in your directory, including those assigned to an application, or listed in a text file. For more information, see [Add assignments of existing users who already have access to the application](entitlement-management-access-package-create-app.md#add-assignments-of-existing-users-who-already-have-access-to-the-application) and [Add assignments for any additional users who should have access to the application](entitlement-management-access-package-create-app.md#add-assignments-for-any-additional-users-who-should-have-access-to-the-application).
+
 You can also assign multiple users that are in your directory to an access package using PowerShell with the `New-MgBetaEntitlementManagementAccessPackageAssignment` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.4.0 or later. This cmdlet takes as parameters
 * the access package ID, which is included in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet,
 * the access package assignment policy ID, which is included in the policy in the `assignmentpolicies` field in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet,
 * the object IDs of the target users, either as an array of strings, or as a list of user members returned from the `Get-MgGroupMember` cmdlet.
 
-For example, if you want to ensure all the users who are currently members of a group also have assignments to an access package, you can use this cmdlet to create requests for those users who don't currently have assignments.  Note that this cmdlet will only create assignments; it doesn't remove assignments for users who are no longer members of a group.
+For example, if you want to ensure all the users who are currently members of a group also have assignments to an access package, you can use this cmdlet to create requests for those users who don't currently have assignments. This cmdlet will only create assignments; it doesn't remove assignments for users who are no longer members of a group. If you wish to have the assignments of an access package track the membership of a group and add and remove assignments over time, use an [automatic assignment policy](entitlement-management-access-package-auto-assignment-policy.md) instead.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All,Directory.Read.All"
@@ -199,7 +201,7 @@ $policy = $accesspackage.AssignmentPolicies[0]
 $req = New-MgBetaEntitlementManagementAccessPackageAssignment -AccessPackageId $accesspackage.Id -AssignmentPolicyId $policy.Id -RequiredGroupMember $members
 ```
 
-If you wish to add an assignment for a user who isn't yet in your directory, you can use the `New-MgBetaEntitlementManagementAccessPackageAssignmentRequest` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) beta module version 2.1.x or later beta module version.  This script illustrates using the Graph `beta` profile and Microsoft Graph PowerShell cmdlets module version 2.4.0. This cmdlet takes as parameters
+If you wish to add an assignment for a user who isn't yet in your directory, you can use the `New-MgBetaEntitlementManagementAccessPackageAssignmentRequest` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) beta module version 2.1.x or later beta module version. This script illustrates using the Microsoft Graph `beta` profile and Microsoft Graph PowerShell cmdlets module version 2.4.0. This cmdlet takes as parameters
 * the access package ID, which is included in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet,
 * the access package assignment policy ID, which is included in policy in the `assignmentpolicies` field in the response from the `Get-MgEntitlementManagementAccessPackage` cmdlet,
 * the email address of the target user.
@@ -214,11 +216,11 @@ $req = New-MgBetaEntitlementManagementAccessPackageAssignmentRequest -AccessPack
 
 ## Configure access assignment as part of a lifecycle workflow
 
-In the Microsoft Entra Lifecycle Workflows feature, you can add a [Request user access package assignment](lifecycle-workflow-tasks.md#request-user-access-package-assignment) task to an onboarding workflow. The task can specify an access package which users should have. When the workflow runs for a user, then an access package assignment request will be created automatically.
+In the Microsoft Entra Lifecycle Workflows feature, you can add a [Request user access package assignment](lifecycle-workflow-tasks.md#request-user-access-package-assignment) task to an onboarding workflow. The task can specify an access package which users should have. When the workflow runs for a user, then an access package assignment request is created automatically.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a global administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) roles.
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. Select an employee onboarding or move workflow.
 
@@ -238,11 +240,9 @@ In the Microsoft Entra Lifecycle Workflows feature, you can add a [Request user 
 
 You can remove an assignment that a user or an administrator had previously requested.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, Access package manager or Access package assignment manager
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open an access package.
 
@@ -258,16 +258,16 @@ You can remove an assignment that a user or an administrator had previously requ
 
 ## Remove an assignment programmatically
 ### Remove an assignment with Microsoft Graph
-You can also remove an assignment of a user to an access package using Microsoft Graph.  A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true).  In this request, the value of the `requestType` property should be `adminRemove`, and the `assignment` property is a structure that contains the `id` property identifying the `accessPackageAssignment` being removed.
+You can also remove an assignment of a user to an access package using Microsoft Graph. A user in an appropriate role with an application that has the delegated `EntitlementManagement.ReadWrite.All` permission, or an application with the `EntitlementManagement.ReadWrite.All` application permission, can call the API to [create an accessPackageAssignmentRequest](/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0&preserve-view=true). In this request, the value of the `requestType` property should be `adminRemove`, and the `assignment` property is a structure that contains the `id` property identifying the `accessPackageAssignment` being removed.
 
 ### Remove an assignment with PowerShell
 
-You can remove a user's assignment in PowerShell with the `New-MgEntitlementManagementAssignmentRequest` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.1.x or later module version.  This script illustrates using the Microsoft Graph PowerShell cmdlets module version 2.4.0.
+You can remove a user's assignment in PowerShell with the `New-MgEntitlementManagementAssignmentRequest` cmdlet from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/) module version 2.1.x or later module version. This script illustrates using the Microsoft Graph PowerShell cmdlets module version 2.4.0.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
 $accessPackageId = "9f573551-f8e2-48f4-bf48-06efbb37c7b8"
-$userId = "040a792f-4c5f-4395-902f-f0d9d192ab2c"
+$userId = "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
 $filter = "accessPackage/Id eq '" + $accessPackageId + "' and state eq 'Delivered' and target/objectId eq '" + $userId + "'"
 $assignment = Get-MgEntitlementManagementAssignment -Filter $filter -ExpandProperty target -all -ErrorAction stop
 if ($assignment -ne $null) {
@@ -281,11 +281,11 @@ if ($assignment -ne $null) {
 
 ## Configure assignment removal as part of a lifecycle workflow
 
-In the Microsoft Entra Lifecycle Workflows feature, you can add a [Remove access package assignment for user](lifecycle-workflow-tasks.md#remove-access-package-assignment-for-user) task to an offboarding workflow. That task can specify an access package the user might be assigned to. When the workflow runs for a user, then their access package assignment will be removed automatically.
+In the Microsoft Entra Lifecycle Workflows feature, you can add a [Remove access package assignment for user](lifecycle-workflow-tasks.md#remove-access-package-assignment-for-user) task to an offboarding workflow. That task can specify an access package the user might be assigned to. When the workflow runs for a user, then their access package assignment is removed automatically.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a global administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with at least both the [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Lifecycle Workflows Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) roles.
 
-1. Browse to **Identity governance** > **Lifecycle workflows** > **Workflows**.
+1. Browse to **ID Governance** > **Lifecycle workflows** > **Workflows**.
 
 1. Select an employee offboarding workflow.
 

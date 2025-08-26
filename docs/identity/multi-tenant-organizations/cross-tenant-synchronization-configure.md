@@ -1,22 +1,53 @@
 ---
 title: Configure cross-tenant synchronization
 description: Learn how to configure cross-tenant synchronization in Microsoft Entra ID using the Microsoft Entra admin center.
-author: rolyon
-manager: amycolannino
+author: kenwith
+manager: dougeby
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 03/11/2024
-ms.author: rolyon
-ms.custom: it-pro
+ms.date: 06/20/2025
+ms.author: kenwith
+ms.custom: it-pro, sfi-image-nochange
+zone_pivot_groups: same-cloud-cross-cloud-synchronization
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
 # Configure cross-tenant synchronization
 
-This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
+::: zone pivot="same-cloud-synchronization"
+This article describes the steps to configure cross-tenant synchronization using the Microsoft Entra admin center. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant.
+
+For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md).
 
 :::image type="content" source="./media/common/configure-diagram.png" alt-text="Diagram that shows cross-tenant synchronization between source tenant and target tenant." lightbox="./media/common/configure-diagram.png":::
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
+> [!IMPORTANT]
+> Cross-cloud synchronization is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
+This article describes the steps to configure cross-tenant synchronization between Microsoft clouds. When configured, Microsoft Entra ID automatically provisions and de-provisions B2B users in your target tenant. While this tutorial focuses on synchronizing identities from the commercial cloud --> US Government, the same steps apply for Government --> Commercial and Commercial --> China.
+
+For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](../app-provisioning/user-provisioning.md). For differences between cross-tenant synchronization and cross-cloud synchronization, see [Cross-cloud synchronization in Frequently asked questions](./cross-tenant-synchronization-overview.md#clouds).
+
+:::image type="content" source="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png" alt-text="Diagram that shows cross-cloud synchronization between source tenant and target tenant." lightbox="./media/cross-tenant-synchronization-configure/configure-cross-cloud-diagram.png":::
+::: zone-end
+
+## Supported cloud pairs
+
+::: zone pivot="same-cloud-synchronization"
+Cross-tenant synchronization supports these cloud pairs:
+
+[!INCLUDE [cross-tenant-synchronization-cloud-pairs-include](../../includes/cross-tenant-synchronization-cloud-pairs-include.md)]
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
+Cross-cloud synchronization supports these cloud pairs:
+
+[!INCLUDE [cross-cloud-synchronization-pairs-include](../../includes/cross-cloud-synchronization-pairs-include.md)]
+::: zone-end
 
 ## Learning objectives
 
@@ -30,15 +61,31 @@ By the end of this article, you'll be able to:
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
+::: zone pivot="same-cloud-synchronization"
 - Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
 - [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role to configure cross-tenant synchronization.
 - [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
+- Microsoft Entra ID Governance or Microsoft Entra Suite license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
+- [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role to configure cross-tenant synchronization.
+- [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role to assign users to a configuration and to delete a configuration.
+::: zone-end
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
-- Microsoft Entra ID P1 or P2 license. For more information, see [License requirements](cross-tenant-synchronization-overview.md#license-requirements).
+::: zone pivot="same-cloud-synchronization"
 - [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
+- [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings.
+::: zone-end
+
+::: zone pivot="same-cloud-synchronization"
 
 ## Step 1: Plan your provisioning deployment
 
@@ -46,19 +93,58 @@ By the end of this article, you'll be able to:
 
 1. Learn about [how the provisioning service works](../app-provisioning/how-provisioning-works.md).
 
-1. Determine who will be in [scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
+1. Determine who will be in [Scope for provisioning](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
 1. Determine what data to [map between tenants](../app-provisioning/customize-application-attributes.md).
 
-## Step 2: Enable user synchronization in the target tenant
+::: zone-end
 
-[!INCLUDE [portal updates](../../includes/portal-update.md)]
+::: zone pivot="cross-cloud-synchronization"
+
+## Step 1: Enable cross-cloud settings in both tenants
+
+![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
+
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
+
+1. On the **Microsoft cloud settings** tab, select the check box of the cloud you want to collaborate with, such as **Microsoft Azure Government**.
+
+    The list of clouds will vary based on the cloud you are in. For more information, see [Microsoft cloud settings](../../external-id/cross-tenant-access-overview.md#microsoft-cloud-settings).
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-cloud-settings.png" alt-text="Screenshot of Microsoft cloud settings that shows check boxes for different Microsoft clouds to collaborate with." lightbox="./media/cross-tenant-synchronization-configure/access-settings-cloud-settings.png":::
+
+1. Select **Save**.
+
+![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target**
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the target tenant.
+
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
+
+1. On the **Microsoft cloud settings** tab, select the cross-cloud synchronization check box for the source tenant, such as **Microsoft Azure Commercial**.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/access-settings-cross-cloud-sync.png" alt-text="Screenshot of Microsoft cloud settings that shows check box to enable cross-cloud synchronization." lightbox="./media/cross-tenant-synchronization-configure/access-settings-cross-cloud-sync.png":::
+
+    When you select this check box, it creates a service principal with the following permissions:
+
+    - User.ReadWrite.CrossCloud
+    - User.Invite.All
+    - Organization.Read.All
+    - Policy.Read.All
+
+1. Select **Save**.
+
+::: zone-end
+
+## Step 2: Enable user synchronization in the target tenant
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the target tenant.
- 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Organization settings** tab, select **Add organization**.
 
@@ -70,9 +156,9 @@ By the end of this article, you'll be able to:
 
 1. Select  the **Cross-tenant sync** tab.
 
-1. Check the **Allow users sync into this tenant** check box.
+1. Select the **Allow users sync into this tenant** checkbox.
 
-    :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow users sync into this tenant check box." lightbox="../../media/external-identities/access-settings-users-sync.png":::
+    :::image type="content" source="../../media/external-identities/access-settings-users-sync.png" alt-text="Screenshot that shows the  Cross-tenant sync tab with the Allow users sync into this tenant checkbox." lightbox="../../media/external-identities/access-settings-users-sync.png":::
 
 1. Select **Save**.
 
@@ -90,13 +176,13 @@ In this step, you automatically redeem invitations so users from the source tena
 
 1. In the target tenant, on the same **Inbound access settings** page, select the **Trust settings** tab.
 
-1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; check box. 
+1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; checkbox.
 
     This box might already be checked if you previously selected **Yes** in the **Enable cross-tenant sync and auto-redemption** dialog box.
 
-    :::image type="content" source="../../media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption check box." lightbox="../../media/external-identities/inbound-consent-prompt-setting.png":::
+    :::image type="content" source="../../media/external-identities/inbound-consent-prompt-setting.png" alt-text="Screenshot that shows the inbound Automatic redemption checkbox." lightbox="../../media/external-identities/inbound-consent-prompt-setting.png":::
 
-1. Select **Save**. 
+1. Select **Save**.
 
 ## Step 4: Automatically redeem invitations in the source tenant
 
@@ -106,7 +192,7 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the source tenant.
 
-1. Browse to **Identity** > **External Identities** > **Cross-tenant access settings**.
+1. Browse to **Entra ID** > **External Identities** > **Cross-tenant access settings**.
 
 1. On the **Organization settings** tab, select **Add organization**.
 
@@ -118,31 +204,61 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Select  the **Trust settings** tab.
 
-1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; check box.
+1. Check the **Automatically redeem invitations with the tenant** &lt;tenant&gt; checkbox.
 
-    :::image type="content" source="../../media/external-identities/outbound-consent-prompt-setting.png" alt-text="Screenshot that shows the outbound Automatic redemption check box." lightbox="../../media/external-identities/outbound-consent-prompt-setting.png":::
+    :::image type="content" source="../../media/external-identities/outbound-consent-prompt-setting.png" alt-text="Screenshot that shows the outbound Automatic redemption checkbox." lightbox="../../media/external-identities/outbound-consent-prompt-setting.png":::
 
-1. Select **Save**. 
+1. Select **Save**.
 
 ## Step 5: Create a configuration in the source tenant
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
-1. Select **Configurations**.
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png" alt-text="Screenshot that shows the Cross-tenant synchronization navigation in the Microsoft Entra admin center." lightbox="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png":::
 
-1. At the top of the page, select **New configuration**.
+    If you are using the Azure portal, browse to **Microsoft Entra ID** > **Manage** > **Cross-tenant synchronization**.
 
-1. Provide a name for the configuration and select **Create**.
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-azure.png" alt-text="Screenshot that shows the Cross-tenant synchronization navigation in the Azure portal." lightbox="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-azure.png":::
+
+2. Select **Configurations**.
+
+3. At the top of the page, select **New configuration**.
+
+::: zone pivot="same-cloud-synchronization"
+
+4. Provide a name for the configuration. 
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name.png" alt-text="Screenshot of a new configuration that shows the name." lightbox="./media/cross-tenant-synchronization-configure/configuration-name.png":::
+
+5. Select **Create**.
 
     It can take up to 15 seconds for the configuration that you just created to appear in the list.
+
+::: zone-end
+
+::: zone pivot="cross-cloud-synchronization"
+
+4. Provide a name for the configuration. 
+
+5. Select the **Setup cross-tenant synchronization across Microsoft clouds** check box.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png" alt-text="Screenshot of a new configuration that shows the name and cross-cloud synchronization check box." lightbox="./media/cross-tenant-synchronization-configure/configuration-name-cross-cloud-sync.png":::
+
+6. Select **Create**.
+
+    It can take up to 15 seconds for the configuration that you just created to appear in the list.
+
+    On the Configurations page for cross-cloud synchronization, the **Tenant Name** and **Tenant ID** columns will be empty.
+
+::: zone-end
 
 ## Step 6: Test the connection to the target tenant
 
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
-1. In the source tenant, you should see your new configuration. If not, in the configuration list, select your configuration. 
+1. In the source tenant, you should see your new configuration. If not, in the configuration list, select your configuration.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/configuration-select.png" alt-text="Screenshot that shows the Cross-tenant synchronization Configurations page and a new configuration." lightbox="./media/cross-tenant-synchronization-configure/configuration-select.png":::
 
@@ -152,13 +268,13 @@ In this step, you automatically redeem invitations in the source tenant.
 
 1. Under the **Admin Credentials** section, change the **Authentication Method** to **Cross Tenant Synchronization Policy**.
 
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-policy.png" alt-text="Screenshot that shows the Provisioning page with the Cross Tenant Synchronization Policy selected." lightbox="./media/cross-tenant-synchronization-configure/provisioning-policy.png":::
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-policy.png" alt-text="Screenshot that shows the Provisioning page with the Cross-tenant Synchronization Policy selected." lightbox="./media/cross-tenant-synchronization-configure/provisioning-policy.png":::
 
 1. In the **Tenant Id** box, enter the tenant ID of the target tenant.
 
 1. Select **Test Connection** to test the connection.
 
-    You should see a message that the supplied credentials are authorized to enable provisioning. If the test connection fails, see [Troubleshooting tips](#troubleshooting-tips) later in this article.
+    You should see a message that the supplied credentials are authorized to enable provisioning. If the test connection fails, see [Common scenarios and solutions](#common-scenarios-and-solutions) later in this article.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-success.png" alt-text="Screenshot that shows a testing connection notification." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-success.png":::
 
@@ -227,7 +343,7 @@ Regardless of the value you selected for **Scope** in the previous step, you can
 
 1. On the **Source Object Scope** page, select **Add scoping filter**.
 
-1. Add any scoping filters to define which users are in scope for provisioning. 
+1. Add any scoping filters to define which users are in scope for provisioning.
 
     To configure scoping filters, refer to the instructions provided in [Scoping users or groups to be provisioned with scoping filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md?toc=/entra/identity/multi-tenant-organizations/toc.json&pivots=cross-tenant-synchronization).
 
@@ -251,7 +367,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 1. On the **Attribute Mapping** page, scroll down to review the user attributes that are synchronized between tenants in the **Attribute Mappings** section.
 
-    The first attribute, alternativeSecurityIdentifier, is an internal attribute used to uniquely identify the user across tenants, match users in the source tenant with existing users in the target tenant, and ensure that each user only has one account. The matching attribute cannot be changed. Attempting to change the matching attribute or adding additional matching attributes will result in a `schemaInvalid` error. 
+    The first attribute, alternativeSecurityIdentifier, is an internal attribute used to uniquely identify the user across tenants, match users in the source tenant with existing users in the target tenant, and ensure that each user only has one account. The matching attribute can't be changed. Attempting to change the matching attribute or adding additional matching attributes will result in a `schemaInvalid` error.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping.png" alt-text="Screenshot of the Attribute Mapping page that shows the list of Microsoft Entra attributes." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping.png":::
 
@@ -267,10 +383,10 @@ Attribute mappings allow you to define how data should flow between the source t
     | **Guest** | Users will be created as external guests (B2B collaboration users) in the target tenant. |
 
     > [!NOTE]
-    > If the B2B user already exists in the target tenant then **Member (userType)** will not changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
-    
+    > If the B2B user already exists in the target tenant, then **Member (userType)** won't be changed to **Member**, unless the **Apply this mapping** setting is set to **Always**.
+
     The user type you choose has the following limitations for apps or services (but aren't limited to):
-    
+
     [!INCLUDE [user-type-workload-limitations-include](../../includes/user-type-workload-limitations-include.md)]
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png" alt-text="Screenshot of the Edit Attribute page that shows the Member attribute." lightbox="./media/cross-tenant-synchronization-configure/provisioning-attribute-mapping-member.png":::
@@ -299,7 +415,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-settings-edit.png" alt-text="Screenshot of the Provisioning page that shows the Settings section with the Scope and Provisioning Status options." lightbox="./media/cross-tenant-synchronization-configure/provisioning-settings-edit.png":::
 
-1. Check the **Send an email notification when a failure occurs** check box.
+1. Select the **Send an email notification when a failure occurs** checkbox.
 
 1. In the **Notification Email** box, enter the email address of a person or group who should receive provisioning error notifications.
 
@@ -317,7 +433,7 @@ Attribute mappings allow you to define how data should flow between the source t
 
 Now that you have a configuration, you can test on-demand provisioning with one of your users.
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -355,7 +471,7 @@ Now that you have a configuration, you can test on-demand provisioning with one 
 
 The provisioning job starts the initial synchronization cycle of all users defined in **Scope** of the **Settings** section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running.
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+1. In the source tenant, browse to **Entra ID** > **External Identities** > **Cross-tenant synchronization**.
 
 1. Select **Configurations** and then select your configuration.
 
@@ -387,7 +503,7 @@ Once you've started a provisioning job, you can monitor the status.
 
     You can also view audit logs in the target tenant.
 
-1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.
+1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross-tenant synchronization in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png" alt-text="Screenshot of the Audit logs page in the target tenant that lists the log entries for user management." lightbox="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png":::
 
@@ -397,51 +513,86 @@ Once you've started a provisioning job, you can monitor the status.
 
 Even though users are being provisioned in the target tenant, they still might be able to remove themselves. If users remove themselves and they are in scope, they'll be provisioned again during the next provisioning cycle. If you want to disallow the ability for users to remove themselves from your organization, you must configure the **External user leave settings**.
 
-1. In the target tenant, browse to **Identity** > **External Identities** > **External collaboration settings**.
+1. In the target tenant, browse to **Entra ID** > **External Identities** > **External collaboration settings**.
 
 1. Under **External user leave settings**, choose whether to allow external users to leave your organization themselves.
 
 This setting also applies to B2B collaboration and B2B direct connect, so if you set **External user leave settings** to **No**, B2B collaboration users and B2B direct connect users can't leave your organization themselves. For more information, see [Leave an organization as an external user](../../external-id/leave-the-organization.md#more-information-for-administrators).
 
-## Troubleshooting tips
+## Common scenarios and solutions
 
-#### Delete a configuration
+#### Symptom - Test connection fails with AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
 
-Follows these steps to delete a configuration on the **Configurations** page.
+When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with one of the following error messages:
 
-1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
-
-1. On the **Configurations** page, add a check mark next to the configuration you want to delete.
-
-1. Select **Delete** and then **OK** to delete the configuration.
-
-    :::image type="content" source="./media/cross-tenant-synchronization-configure/configurations-delete.png" alt-text="Screenshot of the Configurations page showing how to delete a configuration." lightbox="./media/cross-tenant-synchronization-configure/configurations-delete.png":::
-
-#### Symptom - Test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure
-
-When configuring cross-tenant synchronization in the source tenant and you test the connection, it fails with the following error message:
-
+*Automatic redemption is not setup in the source tenant* 
 ```
 You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
-Error code: AzureDirectoryB2BManagementPolicyCheckFailure
-Details: Policy permitting auto-redemption of invitations not configured.
+Error code: AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
+Details: The source tenant has not enabled automatic user consent with the target tenant. Please enable the outbound cross-tenant access policy for automatic user consent in the source tenant. aka.ms/TroubleshootingCrossTenantSyncPolicyCheck
 ```
-
-:::image type="content" source="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png" alt-text="Screenshot that shows the error when test connection fails with AzureDirectoryB2BManagementPolicyCheckFailure." lightbox="./media/cross-tenant-synchronization-configure/provisioning-test-connection-error.png":::
+*Automatic redemption is not setup in the target tenant* 
+```
+You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
+Error code: AzureActiveDirectoryCrossTenantSyncPolicyCheckFailure
+Details: The target tenant has not enabled inbound synchronization with this tenant. Please request the target tenant admin to enable the inbound synchronization on their cross-tenant access policy. Learn more: aka.ms/TroubleshootingCrossTenantSyncPolicyCheck
+```
 
 **Cause**
 
-This error indicates the policy to automatically redeem invitations in both the source and target tenants wasn't set up.
+This error indicates the policy to automatically redeem invitations in the source and / or target tenants wasn't set up.
 
 **Solution**
 
-Follow the steps in [Step 3: Automatically redeem invitations in the target tenant](#step-3-automatically-redeem-invitations-in-the-target-tenant) and [Step 4: Automatically redeem invitations in the source tenant](#step-4-automatically-redeem-invitations-in-the-source-tenant). 
+Follow the steps in [Step 3: Automatically redeem invitations in the target tenant](#step-3-automatically-redeem-invitations-in-the-target-tenant) and [Step 4: Automatically redeem invitations in the source tenant](#step-4-automatically-redeem-invitations-in-the-source-tenant).
 
-#### Symptom - Automatic redemption check box is disabled
+::: zone pivot="cross-cloud-synchronization"
 
-When configuring cross-tenant synchronization, the **Automatic redemption** check box is disabled.
+#### Symptom - Test connection fails with ExternalTenantNotFound
 
-:::image type="content" source="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png" alt-text="Screenshot that shows the Automatic redemption check box as disabled." lightbox="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png":::
+When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
+
+```
+You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
+Error code: ExternalTenantNotFound
+Details: This tenant was not found by the authentication authority of the current cloud: <targetTenantId>. The authentication authority is https://login.microsoftonline.com/<targetTenantId>.
+```
+
+**Cause**
+
+This error indicates the **Setup cross-tenant synchronization across Microsoft clouds** check box is not checked. 
+
+**Solution**
+
+1. In the source tenant, delete the configuration you created that fails to connect.
+
+1. In the target tenant, create a new configuration and be sure to check the **Setup cross-tenant synchronization across Microsoft clouds** check box as described in [Step 5: Create a configuration in the source tenant](#step-5-create-a-configuration-in-the-source-tenant).
+
+#### Symptom - Test connection fails with AzureActiveDirectoryTokenExpired
+
+When configuring cross-cloud synchronization in the source tenant and you test the connection, it fails with the following error message:
+
+```
+You appear to have entered invalid credentials. Please confirm you are using the correct information for an administrative account.
+Error code: AzureActiveDirectoryTokenExpired
+Details: The identity of the calling application could not be established.
+```
+
+**Cause**
+
+This error indicates the cross-cloud setting for synchronization has not been enabled. 
+
+**Solution**
+
+In the target tenant, on the **Microsoft cloud settings** tab, select the cross-cloud synchronization check box for the source tenant. Follow the steps in [Step 1: Enable cross-cloud settings in both tenants](#step-1-enable-cross-cloud-settings-in-both-tenants).
+
+::: zone-end
+
+#### Symptom - Automatic redemption checkbox is disabled
+
+When configuring cross-tenant synchronization, the **Automatic redemption** checkbox is disabled.
+
+:::image type="content" source="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png" alt-text="Screenshot that shows the Automatic redemption checkbox as disabled." lightbox="./media/cross-tenant-synchronization-configure/consent-prompt-setting-disabled.png":::
 
 **Cause**
 
@@ -461,9 +612,10 @@ Restoring a previously soft-deleted user in the target tenant isn't supported.
 
 **Solution**
 
-Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.md).
+Manually restore the soft-deleted user in the target tenant. For more information, see [Restore or remove a recently deleted user using Microsoft Entra ID](../../fundamentals/users-restore.yml).
 
 #### Symptom - Users are skipped because SMS sign-in is enabled on the user
+
 Users are skipped from synchronization. The scoping step includes the following filter with status false: "Filter external users.alternativeSecurityIds EQUALS 'None'"
 
 **Cause**
@@ -472,7 +624,7 @@ If SMS sign-in is enabled for a user, they will be skipped by the provisioning s
 
 **Solution**
 
-Disable SMS Sign-in for the users. The script below shows how you can disable SMS Sign-in using PowerShell. 
+Disable SMS Sign-in for the users. The script below shows how you can disable SMS Sign-in using PowerShell.
 
 ```powershell
 ##### Disable SMS Sign-in options for the users
@@ -490,16 +642,16 @@ $phoneAuthenticationMethodId = "3179e48a-750b-4051-897c-87b9720928f7"
 
 #### Get the User Details
 
-$userId = "objectid_of_the_user_in_Azure_AD"
+$userId = "objectid_of_the_user_in_Entra_ID"
 
 #### validate the value for SmsSignInState
 
 $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 
-{
+
     if($smssignin.SmsSignInState -eq "ready"){   
       #### Disable Sms Sign-In for the user is set to ready
-       
+
       Disable-MgUserAuthenticationPhoneMethodSmsSignIn -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId
       Write-Host "SMS sign-in disabled for the user" -ForegroundColor Green
     }
@@ -507,18 +659,16 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
     Write-Host "SMS sign-in status not set or found for the user " -ForegroundColor Yellow
     }
 
-}
+
 
 ##### End the script
 ```
 
-#### Symptom - Users fail to provision with error "AzureActiveDirectoryForbidden"
+#### Symptom - Users fail to provision with error AzureActiveDirectoryForbidden
 
 Users in scope fail to provision. The provisioning logs details include the following error message:
 
-```
-Guest invitations not allowed for your company. Contact your company administrator for more details.
-```
+`Guest invitations not allowed for your company. Contact your company administrator for more details.`
 
 **Cause**
 
@@ -527,6 +677,33 @@ This error indicates the Guest invite settings in the target tenant are configur
 **Solution**
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
+
+#### Symptom - UserPrincipalName does not update for existing B2B users in pending acceptance state
+
+When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UserPrincipalName (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case, the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
+
+The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (using the example above the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
+
+**Cause**
+
+This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user doesn't have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and won't update the UPN value. The UserPrincipalName isn't updated in the following scenarios:
+
+1. The UPN and mail are different for a user when was manually invited.
+1. The user was invited prior to enabling cross-tenant sync.
+1. The user never accepted the invitation, so they are in "pending acceptance state".
+1. The user is brought into scope for cross-tenant sync.
+
+**Solution**
+
+To resolve the issue, run on-demand provisioning for the affected users to update the UPN. You can also restart provisioning to update the UPN for all affected users. Note that this triggers an initial cycle, which can take a long time for large tenants. To get a list of manual invited users in pending acceptance state, you can use a script, see the following sample.
+
+```powershell
+Connect-MgGraph -Scopes "User.Read.All"
+$users = Get-MgUser -Filter "userType eq 'Guest' and externalUserState eq 'PendingAcceptance'" 
+$users | Select-Object DisplayName, UserPrincipalName | Export-Csv "C:\Temp\GuestUsersPending.csv"
+```
+
+Then you can use [provisionOnDemand with PowerShell](/graph/api/synchronization-synchronizationjob-provisionondemand?tabs=powershell#request) for each user. The rate limit for this API is 5 requests per 10 seconds. For more information, see [Known limitations for on-demand provisioning](/entra/identity/app-provisioning/provision-on-demand?pivots=cross-tenant-synchronization#known-limitations).
 
 ## Next steps
 

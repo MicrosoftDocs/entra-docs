@@ -1,50 +1,49 @@
 ---
 title: Microsoft Entra ID Protection overview
-description: Learn how the Microsoft Entra ID Protection overview provides a view into security posture.
-
+description: Learn how the Microsoft Entra ID Protection overview dashboard provides a view into security posture.
 ms.service: entra-id-protection
-
 ms.topic: how-to
-ms.date: 03/19/2024
-
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+ms.date: 06/05/2025
+author: shlipsey3
+ms.author: sarahlipsey
+manager: pmwongera
 ms.reviewer: chuqiaoshi
+ms.custom: sfi-image-nochange
 ---
 # Microsoft Entra ID Protection dashboard
 
-Microsoft Entra ID Protection prevents identity compromises by detecting identity attacks and reporting risks. It enables customers to protect their organizations by monitoring risks, investigating them, and configuring risk-based access policies to guard sensitive access and auto remediate risks. 
+Microsoft Entra ID Protection prevents identity compromises by detecting identity attacks and reporting risks. It lets customers protect their organizations by monitoring risks, investigating them, and configuring risk-based access policies to guard sensitive access and automatically remediate risks. 
 
 Our dashboard helps customers better analyze their security posture, understand how well they're protected, identify vulnerabilities, and perform recommended actions. 
 
 [![Screenshot showing the Microsoft Entra ID Protection overview dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard.png)
 
-This dashboard is designed to empower organizations with rich insights and actionable recommendations tailored to your tenant. This information provides a better view into your organization’s security posture and allows you to enable effective protections accordingly. You have access to key metrics, attack graphics, a map highlighting risky locations, top recommendations to enhance security posture, and recent activities.
+This dashboard empowers organizations with rich insights and actionable recommendations tailored to your tenant. This information provides a better view into your organization’s security posture and lets you enable effective protections accordingly. You have access to key metrics, attack graphics, a map highlighting risky locations, top recommendations to enhance security posture, and recent activities.
 
 ## Prerequisites
 
-To access this dashboard, you need: 
+To access this dashboard, you need:
 
-- Microsoft Entra ID Free, or Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
-- To view a comprehensive list of recommendations and select the recommended action links, you need Microsoft Entra ID P2 licenses.
+- Microsoft Entra ID Free, Microsoft Entra ID P1, or Microsoft Entra ID P2 licenses for your users.
+- Microsoft Entra ID P2 licenses to view a comprehensive list of recommendations and select the recommended action links.
+- Microsoft 365 E5 or Microsoft Enterprise Mobility + Security E5 licenses for some risk detections. For more information, see [What is Microsoft Entra ID Protection?](overview-identity-protection.md#microsoft-defender).
 
 ## Access the dashboard
 
 You can access the dashboard by:
 
 1. Sign in to the **[Microsoft Entra admin center](https://entra.microsoft.com)** as at least a [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader).
-1. Browse to **Protection** > **Identity Protection** > **Dashboard**.
+1. Browse to **ID Protection** > **Dashboard**.
 
 ### Metric cards
  
-As you implement more security measures such as risk-based policies, your tenant protection strengthens. So, we're now providing four key metrics to help you understand the effectiveness of the security measures you have in place. 
+As you implement more security measures such as risk-based policies, your tenant protection strengthens. We provide four key metrics to help you understand the effectiveness of the security measures you have in place. 
 
 [![Screenshot showing the metric graphs in the dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-metrics.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-metrics.png)
 
 | Metric | Metric definition | Refresh frequency | Where to view detail |
 | --- | --- | --- | --- |
-| Number of attacks blocked | Number of attacks blocked for this tenant on each day. <br><br> An attack is considered blocked if the risky sign-in is interrupted by any access policy. The access control required by the policy should block the attacker from signing in, therefore blocking the attack in real-time. | Every 24 hours. | View the risk detections that determined the attacks in the **Risk detections report**, filter "Risk state" by: <br><br>- **Remediated** <br>- **Dismissed** <br>-** Confirmed safe** |
+| Number of attacks blocked | Number of attacks blocked for this tenant on each day. <br><br> An attack is considered blocked if the risky sign-in is interrupted by any access policy. The access control required by the policy should block the attacker from signing in, therefore blocking the attack in real-time. | Every 24 hours. | View the risk detections that determined the attacks in the **Risk detections report**, filter "Risk state" by: <br><br>- **Remediated** <br>- **Dismissed** <br>- **Confirmed safe** |
 | Number of users protected | Number of users in this tenant whose risk state changed from **At risk** to **Remediated** or **Dismissed** on each day. <br><br> A **Remediated** risk state indicates that the user self-remediated their user risk by completing MFA or secure password change, and their account is therefore protected. <br><br> A **Dismissed** risk state indicates that an admin dismissed the user’s risk because they identified the user’s account to be safe. | Every 24 hours. | View users protected in the **Risky users report**, filter "Risk state" by: <br><br>- **Remediated** <br>- **Dismissed** |
 | Mean time your users take to self-remediate their risks | Average time for the Risk state of risky users in your tenant to change from **At risk** to **Remediated**. <br><br> A user’s risk state changes to **Remediated** when they self-remediated their user risk through MFA or secure password change. <br><br> To reduce the self-remediation time in your tenant, deploy risk-based Conditional Access policies. | Every 24 hours. | View remediated users in the Risky users report, filter "Risk state" by: <br><br>- Remediated |
 | Number of new high-risk users detected | Number of new risky users with risk level **High** detected on each day. | Every 24 hours. | View high-risk users in the Risky users report, filter risk level by <br><br>- "High" |
@@ -59,15 +58,15 @@ The graphs provide a rolling 12 month window of data.
 
 ### Attack graphic
 
-To help you better understand your risk exposure, we're introducing an innovative Attack Graphic that displays common identity-based attack patterns detected for your tenant. The attack patterns are represented by MITRE ATT&CK techniques and are determined by our advanced risk detections. For more information, see the section [Risk detection type to MITRE attack type mapping](#risk-detection-type-to-mitre-attack-type-mapping).
+To help you better understand your risk exposure, our attack graphic displays common identity-based attack patterns detected for your tenant. The attack patterns are represented by MITRE ATT&CK techniques and are determined by our advanced risk detections. For more information, see the section [Risk detection type to MITRE attack type mapping](#risk-detection-type-to-mitre-attack-type-mapping).
 
 [![Screenshot showing the attack graphic in the dashboard.](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-attack-graphic.png)](./media/id-protection-dashboard/microsoft-entra-id-protection-dashboard-attack-graphic.png)
 
 #### What is considered an attack in Microsoft Entra ID Protection?
 
-An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-identity-protection-risks.md#what-are-risk-detections) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
+An attack is an event where we detect a bad actor attempting to sign-in to your environment. This event triggers a real-time sign-in [risk detection](concept-risk-detection-types.md) mapped to a corresponding MITRE ATT&CK technique. Refer to the following table for the mapping between Microsoft Entra ID Protection’s real-time sign-in risk detections and attacks as categorized by MITRE ATT&CK techniques. 
 
-Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#user-risk-detections) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
+Since the attack graph is only illustrating real-time sign-in risk activity, [risky user activity](concept-identity-protection-risks.md#user-risk-detections-mapped-to-riskeventtype) isn't included. To visualize risky user activity in your environment, you can go to the [risky users report](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/~/RiskyUsers/fromNav/).
 
 #### How to interpret the attack graphic?
 
@@ -146,4 +145,4 @@ Depending on the configuration of your tenant, there might not be recommendation
 
 - [Plan a deployment](how-to-deploy-identity-protection.md)
 - [What are risks?](concept-identity-protection-risks.md)
-- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy)
+- [How can users self-remediate their risks through risk-based access policies?](howto-identity-protection-remediate-unblock.md#end-user-self-remediation)

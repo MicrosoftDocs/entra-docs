@@ -2,16 +2,16 @@
 title: Microsoft Entra Connect Sync service features and configuration
 description: Describes service side features for Microsoft Entra Connect Sync service.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---
@@ -57,30 +57,29 @@ UserWritebackEnabled                             : True
 AdditionalProperties                             : {}
 ```
 
-After you have enabled a feature, it can't be disabled again.
-
 > [!NOTE]
-> From August 24, 2016 the feature *Duplicate attribute resiliency* is enabled by default for new Microsoft Entra directories. This feature will also be rolled out and enabled on directories created before this date. You will receive an email notification when your directory is about to get this feature enabled.
+> From August 24, 2016 the feature *Duplicate attribute resiliency* is enabled by default for new Microsoft Entra directories. This feature was rolled out and enabled on directories created before this date. You'll receive an email notification when your directory is about to get this feature enabled.
 > 
 > 
 
-The following settings are configured by Microsoft Entra Connect:
+The following settings are configured in Microsoft Entra Connect:
 
 | DirSyncFeature | Comment |
 | --- | --- |
 | SoftMatchOnUpn |Allows objects to join on userPrincipalName in addition to primary SMTP address. |
-| SynchronizeUpnForManagedUsers |Allows the sync engine to update the userPrincipalName attribute for managed/licensed (non-federated) users. |
+| SynchronizeUpnForManagedUsers |Allows the sync engine to update the userPrincipalName attribute for managed/licensed (nonfederated) users. |
 | DeviceWriteback |[Microsoft Entra Connect: Enabling device writeback](how-to-connect-device-writeback.md) |
 | DirectoryExtensions |[Microsoft Entra Connect Sync: Directory extensions](how-to-connect-sync-feature-directory-extensions.md) |
 | [DuplicateProxyAddressResiliency<br/>DuplicateUPNResiliency](#duplicate-attribute-resiliency) |Allows an attribute to be quarantined when it's a duplicate of another object rather than failing the entire object during export. |
 | Password Hash Sync |[Implementing password hash synchronization with Microsoft Entra Connect Sync](how-to-connect-password-hash-synchronization.md) |
-|Pass-through Authentication|[User sign-in with Microsoft Entra pass-through authentication](how-to-connect-pta.md)|
+| Password Writeback | Not supported. This service feature is discontinued. To configure Password Writeback see [Enable password writeback in Microsoft Entra Connect](~/identity/authentication/tutorial-enable-sspr-writeback.md#enable-password-writeback-in-microsoft-entra-connect) |
+| Pass-through Authentication |[User sign-in with Microsoft Entra pass-through authentication](how-to-connect-pta.md)|
 | UnifiedGroupWriteback |Group writeback|
 | UserWriteback |Not currently supported. |
 
 ## Duplicate attribute resiliency
 
-Instead of failing to provision objects with duplicate UPNs / proxyAddresses, the duplicated attribute is “quarantined” and a temporary value is assigned. When the conflict is resolved, the temporary UPN is changed to the proper value automatically. For more details, see [Identity synchronization and duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md).
+Instead of failing to provision objects with duplicate UPNs / proxyAddresses, the duplicated attribute is "quarantined" and a temporary value is assigned. When the conflict is resolved, the temporary UPN is changed to the proper value automatically. For more information, see [Identity synchronization and duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md).
 
 ## UserPrincipalName soft match
 
@@ -111,7 +110,7 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SoftMatchOnUpn `
 
 When this feature is enabled, it blocks the Soft Match feature. Customers are encouraged to enable this feature and keep it at enabled until Soft Matching is required again for their tenancy. This flag should be enabled again after any soft matching has completed and is no longer needed.
 
-Example - to block soft matching in your tenant, run this cmdlet:
+Example - Blocking soft matching in your tenant:
 
 ```powershell
 Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
@@ -121,12 +120,16 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SoftBlock `
    -OnPremisesDirectorySynchronizationId $DirectorySync.Id
 ```
 
+> [!NOTE]
+> When BlockSoftMatch is enabled, new hybrid-joined devices will encounter an InvalidSoftMatch error during a Soft Match attempt. This occurs when the computer object synchronized from on-premises Active Directory (AD) to Entra is merged with the new device registered in the cloud. To resolve this issue, administrators should temporarily disable BlockSoftMatch to allow the hybrid join to proceed.
+> 
+
 ## Synchronize userPrincipalName updates
 
-Historically, updates to the UserPrincipalName attribute using the sync service from on-premises has been blocked, unless both of these conditions were true:
+Historically, updates to the UserPrincipalName attribute using the sync service from on-premises was blocked, unless both of these conditions were true:
 
-* The user is managed (non-federated).
-* The user hasn't been assigned a license.
+* The user managed (nonfederated).
+* The user doesn't have a license assigned.
 
 > [!NOTE]
 > From March 2019, synchronizing UPN changes for federated user accounts is allowed.
@@ -153,7 +156,45 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SyncUpnManagedUsers `
    -OnPremisesDirectorySynchronizationId $DirectorySync.Id
 ```
 
-After enabling this feature, existing userPrincipalName values will remain as-is. On next change of the userPrincipalName attribute on-premises, the normal delta sync on users will update the UPN.  
+After enabling this feature, existing userPrincipalName values remain as-is. On next change of the userPrincipalName attribute on-premises, the normal delta sync on users updates the UPN. Once this feature is enabled, it's not possible to disable it.
+
+## Password Hash Sync
+
+This feature allows the sync engine to use password hash synchronization and is automatically enabled by the sync client.
+
+You can see if this feature is enabled for you by running:  
+
+```powershell
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.Read.All"
+
+
+# Retrieve DirSync service features
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.PasswordSyncEnabled
+```
+
+
+If password hash sync is no longer needed, for example, after decommissioning synchronization from on-premises Active Directory, you can disable it using:
+
+```powershell
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "OnPremDirectorySynchronization.ReadWrite.All"
+
+# Disable Password Hash Sync
+$DirectorySync = Get-MgDirectoryOnPremiseSynchronization
+$DirectorySync.Features.PasswordSyncEnabled = $false
+Update-MgDirectoryOnPremiseSynchronization -Features $DirectorySync.Features -OnPremisesDirectorySynchronizationId $DirectorySync.Id
+
+```
+
+## Password Writeback
+
+This property indicates whether password writeback from Microsoft Entra ID to on-premises Active Directory is enabled.
+
+> [!IMPORTANT] 
+> This property is no longer in use, and updating it is not supported.
+
 
 ## See also
 

@@ -1,16 +1,16 @@
 ### YamlMime:Landing
 
 title: Microsoft Entra Permissions Management
-summary: Microsoft Entra Permissions Management is a cloud infrastructure entitlement management (CIEM) solution that provides comprehensive visibility into permissions assigned to all identities (users and workloads),  actions, and resources across cloud infrastructures. It detects, right-sizes, and monitors unused and excessive permissions and enables Zero Trust security through least privilege access in Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
+summary: Microsoft Entra Permissions Management is a cloud infrastructure entitlement management (CIEM) solution that provides comprehensive visibility into permissions assigned to all identities (users and workloads),  actions, and resources across cloud infrastructures. It detects, right-sizes, and monitors unused and excessive permissions and enables Zero Trust security through least privilege access in Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP). 
 
 metadata:
   title: Microsoft Entra Permissions Management
   description: Strengthen your cloud environment with the key features and best practices of Permissions Management
   author: jenniferf-skc
-  manager: amycolannino
+  manager: pmwongera
   ms.service: entra-permissions-management
   ms.topic: landing-page
-  ms.date: 03/14/2024
+  ms.date: 04/07/2025
   ms.author: jfields
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new
 
@@ -26,15 +26,8 @@ landingContent:
             url: overview.md
           - text: What's new
             url: whats-new-in-permissions-management.md
-  # Card
-  - title: Learn
-    linkLists:
-      - linkListType: tutorial
-        links:
-          - text: Intro to Microsoft Entra Permissions Management
-            url: https://go.microsoft.com/fwlink/?linkid=2245157
-          - text: Explore the features of Permissions Management
-            url: https://go.microsoft.com/fwlink/?linkid=2252361
+          - text: Customer case study - Infosys
+            url: https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Entra-Permissions-Management-Infosys-Case-Study.pdf?culture=en-us&country=us
   # Card
   - title: Get started
     linkLists:
@@ -99,8 +92,8 @@ landingContent:
             url: faqs.md
           - text: Glossary  
             url: multi-cloud-glossary.md
-          - text: Operations reference  
-            url: ../architecture/permissions-manage-ops-guide-intro.md
+          - text: 2024 State of Multicloud Security Report
+            url: https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/2024-State-of-Multicloud-Security-Risk-Report.pdf
 # Card
   - title: Troubleshoot
     linkLists:

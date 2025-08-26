@@ -4,152 +4,164 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/31/2024
+ms.topic: article
+ms.date: 06/09/2025
 
 author: justinha
 ms.author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: calui
 ---
-# Support for FIDO2 authentication with Microsoft Entra ID
+# Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 
-Microsoft Entra ID allows passkeys to be used for passwordless authentication. This article covers which native apps, web browsers, and operating systems support passwordless authentication using passkeys with Microsoft Entra ID.
+This article provides a comprehensive overview of passkey (FIDO2) authentication support in Microsoft Entra ID. It outlines compatibility across web browsers, native apps, and operating systems, enabling passwordless multifactor authentication. You'll also find platform-specific considerations, known issues, and guidance for third-party app and identity provider (IdP) support. Use this information to ensure seamless integration and optimal user experiences with passkeys in your environment.
+
+For more information about how to sign in with FIDO2 security keys on a Windows device, see [Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID](howto-authentication-passwordless-security-key-windows.md).
 
 > [!NOTE]
-> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
+> Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys or in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys, and plans to support synced passkeys for Microsoft Entra ID.
 
-## Microsoft app support (preview)
+## [**Web browsers**](#tab/web)
 
-Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. The following tables lists which authentication brokers are supported for different operating systems.
+The following section covers support for passkey (FIDO2) authentication in web browsers with Microsoft Entra ID.
 
-| Operating system | Authentication broker           | Supports FIDO2 |
-|------------------|---------------------------------|----------------|
-| iOS              | Microsoft Authenticator         | &#x2705;       |
-| macOS            | Microsoft Intune Company Portal <sup>1</sup> | &#x2705;       |
-| Android<sup>2</sup> | Authenticator or Company Portal | &#10060;    |
-
-<sup>1</sup>On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management. For FIDO2 authentication, make sure that you run the latest version of native applications. 
-
-<sup>2</sup>Native app support for FIDO2 on Android is in development.
-
-If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
-
-If the user has yet to install an authentication broker, they can still sign in with a security key when they access MSAL-enabled applications that meet the requirements as listed in [Support for FIDO2 authentication](~/identity-platform/support-fido2-authentication.md).
-
-## Web browser support
-
-This table shows browser support for authenticating Microsoft Entra ID and Microsoft accounts by using FIDO2. Consumers create Microsoft accounts for services such as Xbox, Skype, or Outlook.com. 
-
-| OS  | Chrome | Edge | Firefox | Safari |
+| OS  | Chrome | Edge | Firefox | Safari | 
 |:---:|:------:|:----:|:-------:|:------:|
-| **Windows**  | &#x2705; | &#x2705; | &#x2705; | N/A |
-| **macOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-| **ChromeOS**  | &#x2705; | N/A | N/A | N/A |
-| **Linux**  | &#x2705; | &#10060; | &#10060; | N/A |
-| **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
-| **Android**  | &#x2705; | &#x2705; | &#10060; | N/A |
+| **Windows**  | &#x2705; | &#x2705; | &#x2705; | N/A | 
+| **macOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | 
+| **ChromeOS**  | &#x2705; | N/A | N/A | N/A | 
+| **Linux**  | &#x2705; | &#x2705; | &#x2705; | N/A | 
+| **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | 
+| **Android**  | &#x2705; | &#x2705; | &#10060; | N/A | 
 
-[!INCLUDE [Need APIs to support browsers](~/includes/passkeys-with-chrome-browser.md)]
-
-## Web browser support for each platform
-
-The following tables show which transports are supported for each platform. Supported device types include **USB**, near-field communication (**NFC**), and bluetooth low energy (**BLE**).
+## Considerations for each platform
 
 ### Windows
-
-| Browser | USB  | NFC | BLE |
-|---------|------|-----|-----|
-| Edge    | &#x2705; | &#x2705; | &#x2705; |
-| Chrome   | &#x2705; | &#x2705; | &#x2705; |
-| Firefox   | &#x2705; | &#x2705; | &#x2705; |
-
-#### Minimum browser version
-
-The following are the minimum browser version requirements on Windows. 
-
-| Browser | Minimum version |
-| ---- | ---- |
-| Chrome | 76 |
-| Edge | Windows 10 version 1903<sup>1</sup> |
-| Firefox | 66 |
-
-<sup>1</sup>All versions of the new Chromium-based Microsoft Edge support FIDO2. Support on Microsoft Edge legacy was added in 1903.
+- Sign-in with security key requires one of the following items:
+  - Windows 10 version 1903 or later
+  - Chromium-based Microsoft Edge
+  - Chrome 76 or later
+  - Firefox 66 or later
 
 ### macOS
-
-| Browser | USB  | NFC<sup>1</sup> | BLE<sup>1</sup> |
-|---------|------|-----|-----|
-| Edge    | &#x2705; | N/A | N/A |
-| Chrome   | &#x2705; | N/A | N/A |
-| Firefox<sup>2</sup>   | &#x2705; | N/A | N/A |
-| Safari<sup>2</sup>   | &#x2705; | N/A | N/A |
-
-<sup>1</sup>NFC and BLE security keys aren't supported on macOS by Apple.
-
-<sup>2</sup>New security key registration doesn't work on these macOS browsers because they don't prompt to set up biometrics or PIN.
+- Sign-in with passkey requires macOS Catalina 11.1 or later with Safari 14 or later because Microsoft Entra ID requires user verification for multifactor authentication.
+- Near-field communication (NFC) and Bluetooth Low Energy (BLE) security keys aren't supported on macOS by Apple.
+- New security key registration doesn't work on these macOS browsers because they don't prompt to set up biometrics or PIN.
+- See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered) for Safari on macOS.
 
 ### ChromeOS
-
-| Browser<sup>1</sup> | USB  | NFC | BLE |
-|---------|------|-----|-----|
-| Chrome  | &#x2705; | &#10060; | &#10060; |
-
-<sup>1</sup>Security key registration isn't supported on ChromeOS or Chrome browser.
+- NFC and BLE security keys aren't supported on ChromeOS by Google.
+- Security key registration isn't supported on ChromeOS or Chrome browser.
 
 ### Linux
-
-| Browser | USB  | NFC | BLE |
-|---------|------|-----|-----|
-| Edge    | &#10060; | &#10060; | &#10060; |
-| Chrome  | &#x2705; | &#10060; | &#10060; |
-| Firefox | &#10060; | &#10060; | &#10060; |
-
+- Sign-in with passkey in Microsoft Authenticator isn't supported in Firefox on Linux.
 
 ### iOS
-
-| Browser<sup>1</sup> | Lightning  | NFC | BLE<sup>2</sup> |
-|---------|------------|-----|-----|
-| Edge    |  &#x2705;  | &#x2705; | N/A | 
-| Chrome  |  &#x2705;  | &#x2705; | N/A |
-| Firefox |  &#x2705;  | &#x2705; | N/A |
-| Safari  |  &#x2705;  | &#x2705; | N/A |
-
-<sup>1</sup>New security key registration doesn't work on iOS browsers because they don't prompt to set up biometrics or PIN.
-
-<sup>2</sup>BLE security keys aren't supported on iOS by Apple.
+- Sign-in with passkey requires iOS 14.3 or later because Microsoft Entra ID requires user verification for multifactor authentication.
+- BLE security keys aren't supported on iOS by Apple.
+- NFC with FIPS 140-3 certified security keys isn't supported on iOS by Apple.
+- New security key registration doesn't work on iOS browsers because they don't prompt to set up biometrics or PIN.
+- See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
 ### Android
-
-| Browser<sup>1</sup> | USB  | NFC | BLE<sup>2</sup> |
-|---------------------|------|-----|-----------------|
-| Edge    | &#x2705;  | &#10060; | &#10060; |
-| Chrome  | &#x2705;  | &#10060; | &#10060; |
-| Firefox | &#10060;  | &#10060; | &#10060; |
-
-<sup>1</sup>Security key registration with Microsoft Entra ID isn't yet supported on Android.
-
-<sup>2</sup>BLE security keys aren't supported on Android by Google.
+- Sign-in with passkey requires Google Play Services 21 or later because Microsoft Entra ID requires user verification for multifactor authentication.
+- BLE security keys aren't supported on Android by Google.
+- Security key registration with Microsoft Entra ID isn't yet supported on Android.
+- Sign-in with passkey isn't supported in Firefox on Android.
 
 ## Known issues
 
-### Mobile device might be prioritized over security key
+### Sign in when more than three passkeys are registered
 
-If you're using Chrome or Edge, the browser may prioritize using a passkey stored on a mobile device over a passkey stored on a security key. 
+If you registered more than three passkeys, sign in with a passkey might not work on iOS or Safari on macOS. If you have more than three passkeys, as a workaround, click **Sign-in options** and sign in without entering a username.
 
-- Beginning with Windows 11 version 23H2, the operating system shows the following prompt during sign-in. Below **More choices**, choose **Security key** and select **Next**.
+:::image type="content" border="true" source="media/fido2-compatibility/sign-in-options.png" alt-text="Screenshot of sign-in options.":::
 
-  :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/security-key.png" alt-text="Screenshot of option to choose security key on Windows 11."::: 
+## [**Native apps**](#tab/native)
 
-- On earlier versions of Windows, the browser may show the QR pairing screen to continue with using a passkey stored on a mobile device. To use a passkey stored on a security key instead, insert your security key and touch it to continue. 
+The next sections cover support for passkey (FIDO2) authentication in Microsoft Entra ID for:
 
-  :::image type="content" border="true" source="./media/howto-authentication-passwordless-security-key/insert-device-bound-passkey.png" alt-text="Screenshot of option to insert a device-bound passkey on Windows 10."::: 
+- [Microsoft app support with authentication broker](#microsoft-app-support-with-authentication-broker)
+- [Microsoft app support without authentication broker](#microsoft-app-support-without-authentication-broker)
+- [Third-party app support without authentication broker](#third-party-app-support-without-authentication-broker)
+- [Third-party Identity Provider (IdP) support](#third-party-idp-support)
 
-### PowerShell support
+### Microsoft app support with authentication broker
 
-[Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports FIDO2. Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of performing FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2. 
+Microsoft apps provide native support for passkey authentication for all users who have an authentication broker installed for their operating system. Passkey authentication is also supported for third-party apps using the authentication broker.
 
-As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
+If a user installed an authentication broker, they can choose to sign in with a passkey when they access an app such as Outlook. They're redirected to sign in with passkey, and redirected back to Outlook as a signed in user after successful authentication.
+
+The following tables lists which authentication brokers are supported for different operating systems.
+
+| OS | Authentication broker           |
+|----|---------------------------------|
+| **iOS** | Microsoft Authenticator         |
+| **macOS** | Microsoft Intune Company Portal |
+| **Android** | Authenticator, Company Portal, or Link to Windows app |
+
+### Microsoft app support without authentication broker 
+
+The following table lists Microsoft app support for passkey (FIDO2) without an authentication broker. Update your apps to the latest version to make sure they work with passkeys.
+
+| app    | macOS    | iOS      | Android  |
+|----------------|----------|----------|----------|
+| [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#x2705; |
+| [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#x2705; |
+| Microsoft 365 Copilot (Office) | N/A | &#x2705; | &#10060; |
+| Word | &#x2705; | &#x2705; | &#10060; |
+| PowerPoint | &#x2705; | &#x2705; | &#10060; |
+| Excel | &#x2705; | &#x2705; | &#10060; |
+| OneNote | &#x2705; | &#x2705; | &#10060; |
+| Loop | N/A | &#x2705; | &#10060; |
+| OneDrive | &#x2705; | &#x2705; | &#10060; |
+| Outlook | &#x2705; | &#x2705; | &#10060; |
+| Teams | &#x2705; | &#x2705; | &#10060; |
+| Edge | &#x2705; | &#x2705; | &#10060; |
+
+### Third-party app support without authentication broker
+
+If the user has yet to install an authentication broker, they can still sign in with a passkey when they access MSAL-enabled apps. For more information about requirements for MSAL-enabled apps, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+
+### Third-party IdP support 
+
+> [!NOTE]
+> Passkey authentication with a third-party IdP isn't supported in third-party apps using authentication broker, or Microsoft apps on Android, iOS, or macOS at this time.
+
+Microsoft Entra ID doesn't support passkey authentication with a third-party IdP on iOS/macOS. 
+As a workaround, third-party IdPs can implement their own single sign-on (SSO) extension on iOS/macOS devices if they're managed by Mobile Device Management (MDM).
+
+Apple's extensible SSO framework on MDM-managed devices enables identity providers to intercept network requests directed to their URLs. 
+When the SSO extension of the identity provider intercepts a network request, they can implement a custom authentication handshake. 
+This allows them to use a system browser or native Apple APIs for passkey authentication without needing changes in Microsoft applications.
+
+For more information, see the following Apple documentation:
+
+- [ExtensibleSingleSignOn Device Management Profile](https://developer.apple.com/documentation/devicemanagement/extensiblesinglesignon)
+- [Enterprise single sign-on (SSO) API collection](https://developer.apple.com/documentation/authenticationservices/enterprise-single-sign-on-sso?language=objc)
+
+## Considerations for each platform
+
+### Windows
+- Sign-in with FIDO2 security key to native apps requires Windows 10 version 1903 or later.
+- Sign-in with passkey in Microsoft Authenticator to native apps requires Windows 11 version 22H2 or later.
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports passkey (FIDO2). Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of performing FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2.
+  - As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
+
+#### iOS
+- Sign-in with passkey in native apps without [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) requires iOS 16.0 or later.
+- Sign-in with passkey in native apps with the SSO plug-in requires iOS 17.1 or later.
+
+#### macOS
+- On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management.
+- Sign-in with passkey in native apps with the SSO plug-in requires macOS 14.0 or later.
+
+#### Android
+- Sign-in with FIDO2 security key to native apps requires Android 13 or later.
+- Sign-in with passkey in Microsoft Authenticator to native apps requires Android 14 or later.
+- Sign-in with Yubico-manufactured FIDO2 security keys with YubiOTP enabled might not work on Samsung Galaxy devices. As a workaround, users can disable YubiOTP and attempt to sign in again. For more information, see [FIDO issues on Samsung devices](https://support.yubico.com/hc/articles/18801283920156-FIDO-issues-on-Samsung-devices).
+
+---
 
 ## Next steps
 [Enable passwordless security key sign-in](./howto-authentication-passwordless-security-key.md)

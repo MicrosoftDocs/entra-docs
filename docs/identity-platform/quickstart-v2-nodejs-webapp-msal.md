@@ -3,9 +3,9 @@ title: "Quickstart: Add authentication to a Node.js web app with MSAL Node"
 description: In this quickstart, you learn how to implement authentication with a Node.js web app and the Microsoft Authentication Library (MSAL) for Node.js.
 ROBOTS: NOINDEX
 author: cilwerner
-manager: celested
+manager: pmwongera
 ms.author: cwerner
-ms.custom: scenarios:getting-started, "languages:js", devx-track-js, mode-api
+ms.custom:
 ms.date: 11/22/2021
 ms.service: identity-platform
 
@@ -19,7 +19,7 @@ ms.topic: quickstart
 > [!div renderon="docs"]
 > Welcome! This probably isn't the page you were expecting. While we work on a fix, this link should take you to the right article:
 >
-> > [Quickstart: Add authentication to a Node.js web app with MSAL Node](quickstart-web-app-nodejs-msal-sign-in.md)
+> > [Quickstart: Add authentication to a Node.js web app with MSAL Node](quickstart-web-app-nodejs-sign-in.md)
 > 
 > We apologize for the inconvenience and appreciate your patience while we work to get this resolved.
 

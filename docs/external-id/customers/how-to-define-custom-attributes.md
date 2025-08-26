@@ -1,23 +1,25 @@
 ---
 title: Define custom attributes
 description: Learn how to create and define new custom attributes to be collected from users during sign-up and sign-in.
- 
-author: msmimart
-manager: celestedg
+ms.author: cmulligan
+author: csmulligan
+manager: dougeby
 ms.service: entra-external-id
- 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 03/08/2024
-ms.author: mimart
-ms.custom: it-pro
-
+ms.date: 04/28/2025
+ms.custom: it-pro, sfi-image-nochange
 #Customer intent: As a developer, devops, IT admin, I want to create custom attributes in my tenant and add them to my sign-up user flow so that I can collect then during sign-up.
 ---
 
-# Collect custom user attributes during sign-up  
+# Collect custom user attributes during sign-up
 
-If your customer-facing app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+> [!TIP]
+> This article applies to user flows in external tenants. For information about workforce tenants, see [Define custom attributes for user flows](../user-flow-add-custom-attributes.md).
+
+If your app requires more information than the built-in user attributes provide, you can add your own attributes. We refer to these attributes as *custom user attributes*.
 
 To define a custom user attribute, you first create the attribute at the tenant level so it can be used in any user flow in the tenant. Then you assign the attribute to your sign-up user flow and configure how you want it to appear on the sign-up page.
 
@@ -29,7 +31,7 @@ Learn more about custom user attributes in [User profile attributes](concept-use
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Identity** > **External Identities** > **Overview**.
+1. Browse to **Entra ID** > **External Identities** > **Overview**.
 
 1. Select **Custom user attributes**. The list contains all user attributes available in the tenant, including any custom user attributes that have been created. The **Attribute type** column indicates whether an attribute is built-in or custom.
 
@@ -51,7 +53,7 @@ Follow these steps to add custom user attributes to a user flow you've already c
 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. Select the user flow from the list.
 
@@ -67,7 +69,7 @@ On the **Page layout** page, you can indicate which attributes are required and 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **External Identities** > **User flows**.
+1. Browse to **Entra ID** > **External Identities** > **User flows**.
 
 1. From the list, select your user flow.
 
@@ -165,7 +167,23 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 
 1. On the **Page layouts** page, select **Save**.
 
-### Find the application ID for the extensions app
+## Configure attribute visibility and editability with Microsoft Graph
+
+You can control which attributes are shown or collected from users during sign-up by configuring the hidden and editable flags for each attribute. These settings aren't currently available in the admin center UI, but you can configure them using Microsoft Graph.
+
+Each attribute supports the following flags:
+
+- `hidden`: This flag is `false` by default so the attribute displays on the sign-up page, but you can set it to `true` to hide the attribute.
+- `editable`: This flag is `true` by default to allow users to edit the attribute, but you can set it to `false` to make the attribute read-only.
+
+Examples:
+
+- To show the attribute on the page but prevent users from editing it, set `hidden` to `false` and `editable` to `false` .
+- To hide the attribute from the page while still allowing it to be set programmatically, set `hidden` to `true` and `editable` to `true`. For example, you can assign a value to the attribute by [creating a custom authentication extension for an attribute collection submit event](~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
+
+To set the hidden and editable flags using Microsoft Graph, use the [authenticationAttributeCollectionInputConfiguration](/graph/api/resources/authenticationattributecollectioninputconfiguration) resource type. For reference, see the example on [updating the page layout of a self-service sign up user flow](/graph/api/authenticationeventsflow-update#example-2-update-the-page-layout-of-a-self-service-sign-up-user-flow).
+
+## Find the application ID for the extensions app
 
 [Custom user attributes](concept-user-attributes.md#custom-user-attributes) are [stored in an app named *b2c-extensions-app*](concept-user-attributes.md#where-custom-user-attributes-are-stored). After a user enters a value for the custom attribute during sign-up, it's added to the user object and can be called via the Microsoft Graph API using the naming convention `extension_{appId-without-hyphens}_{custom-attribute-name}` where:
 
@@ -175,7 +193,7 @@ An attribute with a String data type can be configured as a RadioSingleSelect us
 Use these steps to find the application ID for the extensions app:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **App registrations** > **All applications**.
+1. Browse to **Entra ID** > **App registrations** > **All applications**.
 1. Select the application **b2c-extensions-app. Do not modify. Used by AADB2C for storing user data.**
 1. On the **Overview** page, use the **Application (client) ID** value, for example: `12345678-abcd-1234-1234-ab123456789`, but remove the hyphens.
 

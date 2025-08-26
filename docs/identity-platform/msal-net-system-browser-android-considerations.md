@@ -4,9 +4,9 @@ description: Learn about considerations for using system browsers on Xamarin And
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: devx-track-csharp,  devx-track-dotnet
-ms.date: 10/30/2019
-ms.reviewer: saeeda, dmwendia, negoe
+ms.custom:
+ms.date: 06/05/2024
+ms.reviewer: negoe
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -16,6 +16,9 @@ ms.topic: concept-article
 #  Xamarin Android system browser considerations for using MSAL.NET
 
 This article discusses what you should consider when you use the system browser on Xamarin Android with the Microsoft Authentication Library for .NET (MSAL.NET).
+
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your Xamarin applications to modern frameworks like MAUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
 
 Starting with MSAL.NET 2.4.0 Preview, MSAL.NET supports browsers other than Chrome. It no longer requires Chrome be installed on the Android device for authentication.
 
@@ -33,6 +36,7 @@ We recommend that you use browsers that support custom tabs. Here are some examp
 In addition to identifying browsers that offer custom tabs support, our testing indicates that a few browsers that don't support custom tabs also work for authentication. These browsers include Opera, Opera Mini, InBrowser, and Maxthon.
 
 ## Tested devices and browsers
+
 The following table lists the devices and browsers that have been tested for authentication compatibility.
 
 | Device | Browser     |  Result  |
@@ -65,4 +69,5 @@ If authentication fails (for example, if authentication launches with DuckDuckGo
   - **Mitigation**: Ask the user to enable a browser on their device. Recommend a browser that supports custom tabs.
 
 ## Next steps
+
 For more information and code examples, see [Choosing between an embedded web browser and a system browser on Xamarin Android](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid) and [Embedded versus system web UI](/entra/msal/dotnet/acquiring-tokens/using-web-browsers#embedded-vs-system-web-ui).

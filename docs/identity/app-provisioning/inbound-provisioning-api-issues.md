@@ -1,12 +1,12 @@
 ---
-title: Troubleshoot inbound provisioning API
-description: Learn how to troubleshoot issues with the inbound provisioning API.
+title: Troubleshoot issues with inbound provisioning API
+description: This article provides potential issues and resolutions that guide you in how to troubleshoot issues with the inbound provisioning API.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 02/28/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -22,7 +22,7 @@ This document covers commonly encountered errors and issues with inbound provisi
 ### Invalid data format 
 
 **Issue description**
-* You're getting the error message 'Invalid Data Format" with HTTP 400 (Bad Request) response code.
+* You're getting the error message ```Invalid Data Format``` with HTTP 400 (Bad Request) response code.
 
 **Probable causes**
 1. You're sending a valid bulk request as per the provisioning [/bulkUpload](/graph/api/synchronization-synchronizationjob-post-bulkupload) API specs, but you have not set the HTTP Request Header 'Content-Type' to `application/scim+json`. 
@@ -40,13 +40,13 @@ This document covers commonly encountered errors and issues with inbound provisi
 **Probable causes**
 1. Your API-driven provisioning app is paused. 
 1. The provisioning service is yet to update the provisioning logs with the bulk request processing details.
-2. Your On-premises provisioning agent status is inactive (If you are running the [/API-driven inbound user provisioning to on-premises Active Directory](https://go.microsoft.com/fwlink/?linkid=2245182)).
+2. Your On-premises provisioning agent status is inactive (If you're running the [/API-driven inbound user provisioning to on-premises Active Directory](https://go.microsoft.com/fwlink/?linkid=2245182)).
 
 
 **Resolution:**
 1. Verify that your provisioning app is running. If it isn't running, select the menu option **Start provisioning** to process the data.
 2. Turn your On-premises provisioning agent status to active by restarting the On-premises agent.
-1. Expect 5 to 10-minute delay between processing the request and writing to the provisioning logs. If your API client is sending data to the provisioning /bulkUpload API endpoint, then introduce a time delay between the request invocation and provisioning logs query. 
+1. Expect a 5-minute to 10-minute delay between processing the request and writing to the provisioning logs. If your API client is sending data to the provisioning /bulkUpload API endpoint, then introduce a time delay between the request invocation and provisioning logs query. 
 
 ### Forbidden 403 response code 
 
@@ -54,10 +54,19 @@ This document covers commonly encountered errors and issues with inbound provisi
 * You sent a request to the provisioning /bulkUpload API endpoint and you got HTTP 403 (Forbidden) response code. 
 
 **Probable causes**
-* The Graph permission `SynchronizationData-User.Upload` is not assigned to your API client. 
+* The Graph permission `SynchronizationData-User.Upload` isn't assigned to your API client. 
 
 **Resolution:**
 * Assign your API client the Graph permission `SynchronizationData-User.Upload` and retry the operation. 
+
+### Too many requests 429 response code
+
+The bulkUpload API endpoint enforces the following throttling limits and returns a 429 response code if these limits are breached. 
+
+- 40 API calls per 5 seconds – if the number of calls go beyond this limit in a 5-second range, then the client gets a 429 response. One way to avoid this is by *pacing* the request submission using delays in the client request submission logic. 
+
+- 6,000 API calls over a 24-hour period – if the number of calls go beyond this limit, then the client gets a 429 response. One way to prevent this is to make sure that your SCIM bulk payload is optimized to use the max 50 records per API call. With this approach, you can send 300K records every 24 hours. 
+
 
 ### Unauthorized 401 response code
 
@@ -79,7 +88,7 @@ This document covers commonly encountered errors and issues with inbound provisi
 * You have not set the notification email prior to starting the job. 
 
 **Resolution:**
-Go to the **Edit Provisioning** menu item. Under **Settings** there's a checkbox next to **Send an email notification when a failure occurs** and a field to input your **Notification Email**. Make sure to check the box, provide an email, and save the change. Click on **Restart provisioning** to get the job out of quarantine. 
+Go to the **Edit Provisioning** menu item. Under **Settings** there's a checkbox next to **Send an email notification when a failure occurs** and a field to input your **Notification Email**. Make sure to check the box, provide an email, and save the change. Click **Restart provisioning** to get the job out of quarantine. 
 
 ### User creation - Invalid UPN
 

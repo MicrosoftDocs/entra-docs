@@ -1,26 +1,23 @@
 ---
 title: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication
-description: Learn how to implement Secure Hybrid Access (SHA) with single sign-on (SSO) to Kerberos applications by using F5's BIG-IP advanced configuration.
-
+description: Learn how to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications by using F5 BIG-IP advanced configuration.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 12/13/2022
+ms.date: 04/18/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
-#customer intent: As a IT administrator, I want to configure F5 BIG-IP Access Policy Manager for Kerberos authentication, so that I can implement secure hybrid access with single sign-on to Kerberos applications and improve governance and security for my organization.
+ms.custom: not-enterprise-apps, sfi-image-nochange
+#customer intent: I'm a IT administrator, and I want to configure F5 BIG-IP Access Policy Manager for Kerberos authentication. My goal is to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications. I want to improve governance and security for my organization.
 ---
 
 # Tutorial: Configure F5 BIG-IP Access Policy Manager for Kerberos authentication
 
 In this tutorial, you'll learn to implement secure hybrid access (SHA) with single sign-on (SSO) to Kerberos applications by using the F5 BIG-IP advanced configuration. Enabling BIG-IP published services for Microsoft Entra SSO provides many benefits, including:
 
-* Improved [Zero Trust](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) governance through Microsoft Entra pre-authentication, and use of the Conditional Access security policy enforcement solution. 
+* Improved [Zero Trust](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/) governance through Microsoft Entra preauthentication, and use of the Conditional Access security policy enforcement solution. 
   * See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * Full SSO between Microsoft Entra ID and BIG-IP published services
 * Identity management and access from a single control plane, the [Microsoft Entra admin center](https://entra.microsoft.com)
@@ -35,7 +32,7 @@ To integrate the application with Microsoft Entra ID requires support from a fed
 
 While you're using Kerberos Constrained Delegation (KCD) for SSO, you can use [Microsoft Entra application proxy](/entra/identity/app-proxy) to access the application remotely. You can achieve the protocol transition to bridge the legacy application to the modern, identity control plane. 
 
-Another approach is to use an F5 BIG-IP Application Delivery Controller. This approach enables overlay of the application with Microsoft Entra pre-authentication and KCD SSO. It improves the overall Zero Trust posture of the application.
+Another approach is to use an F5 BIG-IP Application Delivery Controller. This approach enables overlay of the application with Microsoft Entra preauthentication and KCD SSO. It improves the overall Zero Trust posture of the application.
 
 ## Scenario architecture
 
@@ -57,7 +54,7 @@ The following image illustrates the SAML SP-initiated flow for this scenario, bu
 
 1. User connects to the application endpoint (BIG-IP)
 2. BIG-IP access policy redirects the user to Microsoft Entra ID (SAML IdP)
-3. Microsoft Entra ID pre-authenticates the user and applies enforced Conditional Access policies
+3. Microsoft Entra ID preauthenticates the user and applies enforced Conditional Access policies
 4. User is redirected to BIG-IP (SAML SP), and SSO is performed via the issued SAML token
 5. BIG-IP authenticates the user and requests a Kerberos ticket from KDC
 6. BIG-IP sends the request to the back-end application with the Kerberos ticket for SSO
@@ -75,7 +72,7 @@ Prior BIG-IP experience isn't necessary. You need:
   * F5 BIG-IP APM add-on license on a BIG-IP Local Traffic Manager (LTM)
   * 90-day BIG-IP [Free Trial](https://www.f5.com/trial/big-ip-trial.php) license
 * User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory.
-* One of the following roles in Microsoft Entra tenant: Global Administrator, Cloud Application Administrator, or Application Administrator.
+* One of the following roles in Microsoft Entra tenant: Cloud Application Administrator, or Application Administrator.
 * A web server [certificate](~/identity/enterprise-apps/f5-bigip-deployment-guide.md) for publishing services over HTTPS, or use default BIG-IP certificates while testing.
 * A Kerberos application, or go to active-directory-wp.com to learn to configure [SSO with IIS on Windows](https://active-directory-wp.com/docs/Networking/Single_Sign_On/SSO_with_IIS_on_Windows.html).
 
@@ -90,14 +87,13 @@ This article covers the advanced configuration, a flexible SHA implementing that
 
 ## Register F5 BIG-IP in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Before BIG-IP can hand off pre-authentication to Microsoft Entra ID, register it in your tenant. This process initiates SSO between both entities. The app you create from the F5 BIG-IP gallery template is the relying party that represents the SAML SP for the BIG-IP published application.
+Before BIG-IP can hand off preauthentication to Microsoft Entra ID, register it in your tenant. This process initiates SSO between both entities. The app you create from the F5 BIG-IP gallery template is the relying party that represents the SAML SP for the BIG-IP published application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**, then select **New application**.
 3. The **Browse Microsoft Entra Gallery** pane appears with tiles for cloud platforms, on-premises applications, and featured applications. Applications in the **Featured applications** section have icons that indicate whether they support federated SSO and provisioning. 
-4. In the Azure gallery, search for **F5**, and select **F5 BIG-IP APM Azure AD integration**.
+4. In the Azure gallery, search for **F5**, and select **F5 BIG-IP APM Microsoft Entra ID integration**.
 
 5. Enter a name for the new application to recognize the application instance. 
 6. Select **Add/Create** to add it to your tenant.
@@ -128,9 +124,7 @@ Configure the BIG-IP registration to fulfill SAML tokens that the BIG-IP APM req
 10. Note the properties of the **User Attributes & Claims** section. Microsoft Entra ID issues properties to users for BIG-IP APM authentication and for SSO to the back-end application.
 11. To save the Federation Metadata XML file to your computer, on the **SAML Signing Certificate** pane, select **Download**.
 
-    ![Screenshot of the Federation Metadata XML Download option.](./media/f5-big-ip-kerberos-advanced/edit-saml-signing-certificate.png)
-
-> [!NOTE]
+   > [!NOTE]
 > SAML signing certificates that Microsoft Entra ID creates have a lifespan of three years. For more information, see [Managed certificates for federated single sign-on](./tutorial-manage-certificates-for-federated-single-sign-on.md).
 
 ## Grant access to users and groups
@@ -152,11 +146,11 @@ For this scenario, the application is hosted on server APP-VM-01 and runs in the
 
 ### Create a BIG-IP APM delegation account 
 
-The BIG-IP does not support group Managed Service Accounts (gMSA), therefore create a standard user account for the APM service account.
+The BIG-IP doesn't support group Managed Service Accounts (gMSA), therefore create a standard user account for the APM service account.
 
-1. Enter the following PowerShell command. Replace the **UserPrincipalName** and **SamAccountName** values with your environment values. For better security, use a dedicated SPN that matches the host header of the application.
+1. Enter the following PowerShell command. Replace the **UserPrincipalName** and **SamAccountName** values with your environment values. For better security, use a dedicated service principal name (SPN) that matches the host header of the application.
 
-    ```New-ADUser -Name "F5 BIG-IP Delegation Account" UserPrincipalName $HOST_SPN SamAccountName "f5-big-ip" -PasswordNeverExpires $true Enabled $true -AccountPassword (Read-Host -AsSecureString "Account Password") ```
+    ```New-ADUser -Name "F5 BIG-IP Delegation Account" UserPrincipalName $HOST_SPN SamAccountName "f5-big-ip" -PasswordNeverExpires $true Enabled $true -AccountPassword (Read-Host -AsSecureString "Account Password")```
 
     HOST_SPN = host/f5-big-ip.contoso.com@contoso.com
 
@@ -165,7 +159,7 @@ The BIG-IP does not support group Managed Service Accounts (gMSA), therefore cre
 
 2. Create a **Service Principal Name (SPN)** for the APM service account to use during delegation to the web application service account:
 
-    ```Set-AdUser -Identity f5-big-ip -ServicePrincipalNames @Add="host/f5-big-ip.contoso.com"} ```
+    ```Set-AdUser -Identity f5-big-ip -ServicePrincipalNames @Add="host/f5-big-ip.contoso.com"}```
 
     >[!NOTE]
      >It is mandatory to include the host/ part in the format of UserPrincipleName (host/name.domain@domain) or ServicePrincipleName (host/name.domain).
@@ -175,21 +169,21 @@ The BIG-IP does not support group Managed Service Accounts (gMSA), therefore cre
     * Confirm your web application is running in the computer context or a dedicated service account.
     * For the Computer context, use the following command to query the account object in the Active Directory to see its defined SPNs. Replace <name_of_account> with the account for your environment.
 
-        ```Get-ADComputer -identity <name_of_account> -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames ```
+        ```Get-ADComputer -identity <name_of_account> -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames```
 
         For example:
         Get-ADUser -identity f5-big-ip -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames
     
     * For the dedicated service account, use the following command to query the account object in Active Directory to see its defined SPNs. Replace <name_of_account> with the account for your environment.
       
-        ```Get-ADUser -identity <name_of_account> -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames ```
+        ```Get-ADUser -identity <name_of_account> -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames```
 
         For example:
         Get-ADComputer -identity f5-big-ip -properties ServicePrincipalNames | Select-Object -ExpandProperty ServicePrincipalNames
 
  4. If the application ran in the machine context, add the SPN to the object of the computer account in Active Directory:
 
-    ```Set-ADComputer -Identity APP-VM-01 -ServicePrincipalNames @{Add="http/myexpenses.contoso.com"} ```
+    ```Set-ADComputer -Identity APP-VM-01 -ServicePrincipalNames @{Add="http/myexpenses.contoso.com"}```
 
 With SPNs defined, establish trust for the APM service account delegate to that service. The configuration varies depending on the topology of your BIG-IP instance and application server.
 
@@ -197,11 +191,11 @@ With SPNs defined, establish trust for the APM service account delegate to that 
 
 1. Set trust for the APM service account to delegate authentication:
 
-    ```Get-ADUser -Identity f5-big-ip | Set-ADAccountControl -TrustedToAuthForDelegation $true ```
+    ```Get-ADUser -Identity f5-big-ip | Set-ADAccountControl -TrustedToAuthForDelegation $true```
 
-2. The APM service account needs to know the target SPN it's trusted to delegate to. Set the target SPN to the service account running your web application:
+2. The APM service account needs to know the target SPN that it's trusted to delegate to. Set the target SPN to the service account running your web application:
 
-    ```Set-ADUser -Identity f5-big-ip -Add @{'msDS-AllowedToDelegateTo'=@('HTTP/myexpenses.contoso.com')} ```
+    ```Set-ADUser -Identity f5-big-ip -Add @{'msDS-AllowedToDelegateTo'=@('HTTP/myexpenses.contoso.com')}```
 
     >[!NOTE]
     >You can complete these tasks with the Active Directory Users and Computers, Microsoft Management Console (MMC) snap-in, on a domain controller.
@@ -214,21 +208,21 @@ You can use the PrincipalsAllowedToDelegateToAccount property of the application
 
 Use an SPN defined against a web application service account. For better security, use a dedicated SPN that matches the host header of the application. For example, because the web application host header in this example is myexpenses.contoso.com, add HTTP/myexpenses.contoso.com to the application service account object in Active Directory (AD):
 
-```Set-AdUser -Identity web_svc_account -ServicePrincipalNames @{Add="http/myexpenses.contoso.com"} ```
+```Set-AdUser -Identity web_svc_account -ServicePrincipalNames @{Add="http/myexpenses.contoso.com"}```
 
 For the following commands, note the context. 
 
 If the web_svc_account service runs in the context of a user account, use these commands:
 
-```$big-ip= Get-ADComputer -Identity f5-big-ip -server dc.contoso.com ```
-```Set-ADUser -Identity web_svc_account -PrincipalsAllowedToDelegateToAccount ```
-```$big-ip Get-ADUser web_svc_account -Properties PrincipalsAllowedToDelegateToAccount ```
+```$big-ip= Get-ADComputer -Identity f5-big-ip -server dc.contoso.com```
+```Set-ADUser -Identity web_svc_account -PrincipalsAllowedToDelegateToAccount```
+```$big-ip Get-ADUser web_svc_account -Properties PrincipalsAllowedToDelegateToAccount```
 
 If the web_svc_account service runs in the context of a computer account, use these commands:
 
-```$big-ip= Get-ADComputer -Identity f5-big-ip -server dc.contoso.com ```
-```Set-ADComputer -Identity web_svc_account -PrincipalsAllowedToDelegateToAccount ```
-```$big-ip Get-ADComputer web_svc_account -Properties PrincipalsAllowedToDelegateToAccount ```
+```$big-ip= Get-ADComputer -Identity f5-big-ip -server dc.contoso.com```
+```Set-ADComputer -Identity web_svc_account -PrincipalsAllowedToDelegateToAccount```
+```$big-ip Get-ADComputer web_svc_account -Properties PrincipalsAllowedToDelegateToAccount```
 
 For more information, see [Kerberos Constrained Delegation across domains](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831477(v=ws.11)).
 
@@ -238,7 +232,7 @@ Use the following section to continue setting up the BIG-IP configurations.
 
 ### Configure SAML service provider settings
 
-SAML service provider settings define the SAML SP properties that APM uses for overlaying the legacy application with SAML pre-authentication. To configure them:
+SAML service provider settings define the SAML SP properties that APM uses for overlaying the legacy application with SAML preauthentication. To configure them:
 
 1. From a browser, sign in to the F5 BIG-IP management console.
 2. Select **Access** > **Federation** > **SAML Service Provider** > **Local SP Services** > **Create**.
@@ -281,7 +275,7 @@ Create an APM SSO object for KCD SSO to back-end applications. Use the APM deleg
 
 * **Name**: After you create it, other published applications can use the Kerberos SSO APM object. For example, use Contoso_KCD_sso for multiple published applications for the Contoso domain. Use MyExpenses_KCD_sso for a single application.
 * **Username Source**: Specify the user ID source. Use an APM session variable as the source. Use of **session.saml.last.identity** is advised because it contains the logged-in user ID from the Microsoft Entra claim.
-* **User Realm Source**: Required when the user domain differs from the Kerberos realm for KCD. If users are in a separate trusted domain, you make the APM aware by specifying the APM session variable with the logged-in user domain. An example is session.saml.last.attr.name.domain. You do this action in scenarios when the user UPN is based on an alternative suffix.
+* **User Realm Source**: Required when the user domain differs from the Kerberos realm for KCD. If users are in a separate trusted domain, you make the APM aware by specifying the APM session variable with the logged-in user domain. An example is session.saml.last.attr.name.domain. You do this action in scenarios when the user principal name (UPN) is based on an alternative suffix.
 * **Kerberos Realm**: User domain suffix in uppercase
 * **KDC**: Domain controller IP address. Or enter a fully qualified domain name if DNS is configured and efficient.
 * **UPN Support**: Select this checkbox if the source for username is in UPN format, for instance the session.saml.last.identity variable.
@@ -291,9 +285,9 @@ Create an APM SSO object for KCD SSO to back-end applications. Use the APM deleg
 
     ![Screenshot of Name, Username Source, and SSO Method Configuration entries on General Properties.](./media/f5-big-ip-kerberos-advanced/configure-kerberos-sso.png)
 
-You can leave KDC undefined if the user realm is different from the back-end server realm. This rule applies to multiple-domain realm scenarios. If you leave KDC undefined, BIG-IP will try to discover a Kerberos realm through a DNS lookup of SRV records for the back-end server domain. It expects the domain name to be the same as the realm name. If the domain name differs, specify it in the [/etc/krb5.conf](https://support.f5.com/csp/article/K17976428) file.
+You can leave KDC undefined if the user realm is different from the back-end server realm. This rule applies to multiple-domain realm scenarios. If you leave KDC undefined, BIG-IP tries to discover a Kerberos realm through a DNS lookup of SRV records for the back-end server domain. It expects the domain name to be the same as the realm name. If the domain name differs, specify it in the [/etc/krb5.conf](https://support.f5.com/csp/article/K17976428) file.
 
-Kerberos SSO processing is faster when a KDC is specified by IP address. Kerberos SSO processing is slower if a KDC is specified by host name. Because of more DNS queries, processing is slower when a KDC is undefined. Ensure your DNS is performing optimally before moving a proof-of-concept into production. 
+Kerberos SSO processing is faster when an IP address specifies a KDC. Kerberos SSO processing is slower if a host name specifies a KDC. Because of more DNS queries, processing is slower when a KDC is undefined. Ensure your DNS is performing optimally before moving a proof-of-concept into production. 
 
 
 > [!NOTE]
@@ -321,7 +315,7 @@ An access profile binds APM elements that manage access to BIG-IP virtual server
 
 2. For the per-session profile you created, select **Edit**. 
 
-    ![Screenshot of Edit option under Per Session Polcy.](./media/f5-big-ip-kerberos-advanced/edit-per-session-profile.png)
+    ![Screenshot of Edit option under Per Session Policy.](./media/f5-big-ip-kerberos-advanced/edit-per-session-profile.png)
 
 3. The visual policy editor opens. Select the **plus sign** next to the fallback.
 
@@ -408,7 +402,7 @@ To configure a virtual server:
 
     ![Screenshot of the Source Address Translation entry.](./media/f5-big-ip-kerberos-advanced/change-auto-map.png)
 
-8. Under **Access Policy**, set **Access Profile** based on the profile you created. This selection binds the Microsoft Entra SAML pre-authentication profile and KCD SSO policy to the virtual server.
+8. Under **Access Policy**, set **Access Profile** based on the profile you created. This selection binds the Microsoft Entra SAML preauthentication profile and KCD SSO policy to the virtual server.
 
     ![Screenshot of the Access Profile entry under Access Policy.](./media/f5-big-ip-kerberos-advanced/set-access-profile-for-access-policy.png)
 
@@ -464,7 +458,7 @@ While troubleshooting, consider the following points:
 * Ensure there are no duplicate SPNs in your environment. Run the following query at the command line: `setspn -q HTTP/my_target_SPN`.
 
 > [!NOTE]
-> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](/entra/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-15-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
+> To validate an IIS application is configured for KCD, see [Troubleshoot Kerberos constrained delegation configurations for Application Proxy](/entra/identity/app-proxy/application-proxy-back-end-kerberos-constrained-delegation-how-to). See also the AskF5 article, [Kerberos Single Sign-On Method](https://techdocs.f5.com/en-us/bigip-17-1-0/big-ip-access-policy-manager-single-sign-on-concepts-configuration/kerberos-single-sign-on-method.html).
 
 **Increase log verbosity**
 
@@ -480,7 +474,7 @@ Reproduce your problem before you look at the logs. Then revert this feature, wh
 
 **BIG-IP error**
 
-If a BIG-IP error appears after Microsoft Entra pre-authentication, the problem might relate to SSO, from Microsoft Entra ID to BIG-IP.
+If a BIG-IP error appears after Microsoft Entra preauthentication, the problem might relate to SSO, from Microsoft Entra ID to BIG-IP.
 
 1. Go to **Access** > **Overview** > **Access reports**.
 2. To see if logs have any clues, run the report for the last hour. 
@@ -494,11 +488,12 @@ If no BIG-IP error appears, the issue is probably related to the back-end reques
 2. Select the link for your active session. 
 3. Use the **View Variables** link to determine root-cause KCD problems, particularly if the BIG-IP APM fails to get the right user and domain identifiers.
 
-For help diagnosing KCD-related problems, see the F5 BIG-IP deployment guide [Configuring Kerberos Constrained Delegation](https://www.f5.com/pdf/deployment-guides/kerberos-constrained-delegation-dg.pdf), which has been archived.
+For help with diagnosing KCD-related problems, see archived the F5 BIG-IP deployment guide [Configuring Kerberos Constrained Delegation](https://www.f5.com/pdf/deployment-guides/kerberos-constrained-delegation-dg.pdf).
 
 ## Resources
 
-* MyF5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+* My F5 article, [Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
+
 * [Forget passwords, go passwordless](https://www.microsoft.com/security/business/identity/passwordless)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)

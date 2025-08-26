@@ -2,23 +2,32 @@
 title: Configure a web API that calls web APIs
 description: Learn how to build a web API that calls web APIs (app's code configuration)
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
 ms.custom: 
-ms.date: 05/08/2023
+ms.date: 07/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
 ---
 
 # A web API that calls web APIs: Code configuration
 
-Once registration for a Web API is complete, the application code can be configured. Configuring a web API to call a downstream web API builds on the code that's used in protecting a web API. For more information, see [Protected web API: App configuration](scenario-protected-web-api-app-configuration.md).
-## Microsoft.Identity.Web
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
+This article describes how to configure code for a Web API app using the [OAuth 2.0 authorization code flow](v2-oauth2-auth-code-flow.md).
 
 Microsoft recommends that you use the [Microsoft.Identity.Web](https://www.nuget.org/packages/Microsoft.Identity.Web) NuGet package when developing an ASP.NET Core protected API calling downstream web APIs. See [Protected web API: Code configuration | Microsoft.Identity.Web](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) for a quick presentation of that library in the context of a web API.
+
+## Prerequisites
+
+- [Register a web API that calls web APIs](scenario-web-api-call-api-app-registration.md)
+
+## Configure the app
+
+Choose a language for your web API.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
@@ -199,7 +208,7 @@ If you want to call an API other than Microsoft Graph, *Microsoft.Identity.Web* 
 
 1. Add the [Microsoft.Identity.Web.DownstreamApi](https://www.nuget.org/packages/Microsoft.Identity.Web.DownstreamApi) NuGet package to your project.
 1. Add `.AddDownstreamApi()` after `.EnableTokenAcquisitionToCallDownstreamApi()` in the *Startup.cs* file. `.AddDownstreamApi()` has two arguments:
-   - The name of a service (api): you use this name in your controller actions to reference the corresponding configuration
+   - The name of a service (API): you use this name in your controller actions to reference the corresponding configuration
    - a configuration section representing the parameters used to call the downstream web API.
 
 Here's the code:
@@ -243,11 +252,13 @@ Here's the code:
 
 # [Java](#tab/java)
 
-The On-behalf-of (OBO) flow is used to obtain a token to call the downstream web API. In this flow, your web API receives a bearer token with user delegated permissions from the client application and then exchanges this token for another access token to call the downstream web API.
+## Using on-behalf-of (OBO) flow
+
+The on-behalf-of (OBO) flow is used to obtain a token to call the downstream web API. In this flow, your web API receives a bearer token with user delegated permissions from the client application and then exchanges this token for another access token to call the downstream web API.
 
 The code below uses Spring Security framework's `SecurityContextHolder` in the web API to get the validated bearer token. It then uses the MSAL Java library to obtain a token for downstream API using the `acquireToken` call with `OnBehalfOfParameters`. MSAL caches the token so that subsequent calls to the API can use `acquireTokenSilently` to get the cached token.
 
-```Java
+```java
 @Component
 class MsalAuthHelper {
 
@@ -312,7 +323,9 @@ class MsalAuthHelper {
 
 # [Python](#tab/python)
 
-The On-behalf-of (OBO) flow is used to obtain a token to call the downstream web API. In this flow, your web API receives a bearer token with user delegated permissions from the client application and then exchanges this token for another access token to call the downstream web API.
+## Using on-behalf-of (OBO) flow
+
+The on-behalf-of (OBO) flow is used to obtain a token to call the downstream web API. In this flow, your web API receives a bearer token with user delegated permissions from the client application and then exchanges this token for another access token to call the downstream web API.
 
 A Python web API needs to use some middleware to validate the bearer token received from the client. The web API can then obtain the access token for downstream API using MSAL Python library by calling the [`acquire_token_on_behalf_of`](https://msal-python.readthedocs.io/en/latest/?badge=latest#msal.ConfidentialClientApplication.acquire_token_on_behalf_of) method. For an example of using this API, see the [test code for the microsoft-authentication-library-for-python on GitHub](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/1.2.0/tests/test_e2e.py#L429-L472). Also see the discussion of [issue 53](https://github.com/AzureAD/microsoft-authentication-library-for-python/issues/53) in that same repository for an approach that bypasses the need for a middle-tier application.
 
@@ -326,7 +339,7 @@ You can also see an example of OBO flow implementation in [Node.js and Azure Fun
 
 For more information about the OBO protocol, see the [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](./v2-oauth2-on-behalf-of-flow.md).
 
-## Next steps
+## Next step
 
-Move on to the next article in this scenario,
-[Acquire a token for the app](scenario-web-api-call-api-acquire-token.md).
+> [!div class="nextstepaction"]
+> [Acquire a token for the app](scenario-web-api-call-api-acquire-token.md).

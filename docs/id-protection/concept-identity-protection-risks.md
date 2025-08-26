@@ -1,317 +1,295 @@
 ---
-title: What are risks in Microsoft Entra ID Protection
-description: Explaining risk in Microsoft Entra ID Protection
+title: What are risk detections?
+description: Explore the full list of risk detections and their corresponding risk event types, along with a description of each risk event type.
 
 ms.service: entra-id-protection
 
-ms.topic: conceptual
-ms.date: 02/05/2024
+ms.topic: article
+ms.date: 08/06/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
-ms.reviewer: chuqiaoshi, emilymakedon
+author: shlipsey3
+ms.author: sarahlipsey
+manager: pmwongera 
+ms.reviewer: cokoopma
 ---
+
 # What are risk detections?
 
-Risk detections in Microsoft Entra ID Protection include any identified suspicious actions related to user accounts in the directory. Risk detections (both user and sign-in linked) contribute to the overall user risk score that is found in the Risky Users report.
+Microsoft Entra ID Protection can provide a broad range of risk detections that can be used to identify suspicious activity in your organization. The tables included in this article summarize the list of sign-in and user risk detections, including the license requirements or if the detection happens in real-time or offline. Further details about each risk detection can be found following the tables.
 
-ID Protection provides organizations access to powerful resources to see and respond quickly to these suspicious actions.
-
-![Security overview showing risky users and sign-ins](./media/concept-identity-protection-risks/identity-protection-security-overview.png)
-
-> [!NOTE]
-> ID Protection generates risk detections only when the correct credentials are used. If incorrect credentials are used on a sign-in, it does not represent risk of credential compromise.
-
-## Risk types and detection
-
-Risk can be detected at the **User** and **Sign-in** level and two types of detection or calculation **Real-time** and **Offline**. Some risks are considered premium available to Microsoft Entra ID P2 customers only, while others are available to Free and Microsoft Entra ID P1 customers.
-
-A sign-in risk represents the probability that a given authentication request isn't the authorized identity owner. Risky activity can be detected for a user that isn't linked to a specific malicious sign-in but to the user itself.
-
-Real-time detections might not show up in reporting for 5 to 10 minutes. Offline detections might not show up in reporting for 48 hours.
+- Full details on most risk detections require Microsoft Entra ID P2.
+    - Customers without Microsoft Entra ID P2 licenses receive detections titled **Additional risk detected** without risk detection details.
+    - For more information, see the [license requirements](overview-identity-protection.md#license-requirements). 
+- For information on workload identity risk detections, see [Securing workload identities](/entra/id-protection/concept-workload-identity-risk).
 
 > [!NOTE]
-> Our system might detect that the risk event that contributed to the risk user risk score was either:
->
-> - A false positive
-> - The [user risk was remediated](howto-identity-protection-remediate-unblock.md) by policy by either:
->    - Completing multifactor authentication
->    - Secure password change.
->
-> Our system will dismiss the risk state and a risk detail of “AI confirmed sign-in safe” will show and no longer contribute to the user’s overall risk.
+> For details on real-time vs offline detections and risk levels, see [**Risk detection types and levels**](concept-risk-detection-types.md).
 
-### Sign-in risk detections
+## Sign-in risk detections mapped to riskEventType 
 
-| Risk detection | Detection type | Type |
-| --- | --- | --- |
-| [Atypical travel](#atypical-travel) | Offline | Premium |
-| [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium |
-| [Suspicious browser](#suspicious-browser) | Offline | Premium |
-| [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) | Real-time | Premium |
-| [Malicious IP address](#malicious-ip-address) | Offline | Premium |
-| [Suspicious inbox manipulation rules](#suspicious-inbox-manipulation-rules) | Offline | Premium |
-| [Password spray](#password-spray) | Offline | Premium |
-| [Impossible travel](#impossible-travel) | Offline | Premium |
-| [New country](#new-country) | Offline | Premium |
-| [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium |
-| [Suspicious inbox forwarding](#suspicious-inbox-forwarding) | Offline | Premium |
-| [Mass Access to Sensitive Files](#mass-access-to-sensitive-files) | Offline | Premium |
-| [Verified threat actor IP](#verified-threat-actor-ip) | Real-time | Premium |
-| [Additional risk detected](#additional-risk-detected-sign-in) | Real-time or Offline | Nonpremium |
-| [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium |
-| [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium |
-| [Microsoft Entra threat intelligence](#microsoft-entra-threat-intelligence-sign-in) | Real-time or Offline | Nonpremium |
+Select a risk detection from the list to view the description of the risk detection, how it works, and the license requirements. In the table, *Premium* indicates the detection requires at least a Microsoft Entra ID P2 license. *Nonpremium* indicates the detection is available with Microsoft Entra ID Free. The `riskEventType` column indicates the value that appears in Microsoft Graph API queries.
 
-### User risk detections
+| Sign-in risk detection | Detection type | Type | riskEventType |
+| --- | --- | --- | --- |
+| [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium | riskyIPAddress |
+| [Additional risk detected (sign-in)](#additional-risk-detected-sign-in) | Real-time or Offline | Nonpremium | generic ^ |
+| [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
+| [Anomalous Token (sign-in)](#anomalous-token-sign-in) | Real-time or Offline | Premium | anomalousToken | 
+| [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
+| [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
+| [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
+| [Malicious IP address](#malicious-ip-address) | Offline | Premium | maliciousIPAddress |
+| [Mass Access to Sensitive Files](#mass-access-to-sensitive-files) | Offline | Premium | mcasFinSuspiciousFileAccess |
+| [Microsoft Entra threat intelligence (sign-in)](#microsoft-entra-threat-intelligence-sign-in) | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
+| [New country](#new-country) | Offline | Premium | newCountry |
+| [Password spray](#password-spray) | Real-time or Offline | Premium | passwordSpray |
+| [Suspicious browser](#suspicious-browser) | Offline | Premium | suspiciousBrowser |
+| [Suspicious inbox forwarding](#suspicious-inbox-forwarding) | Offline | Premium | suspiciousInboxForwarding |
+| [Suspicious inbox manipulation rules](#suspicious-inbox-manipulation-rules) | Offline | Premium | mcasSuspiciousInboxManipulationRules |
+| [Token issuer anomaly](#token-issuer-anomaly) | Offline | Premium | tokenIssuerAnomaly |
+| [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) | Real-time | Premium | unfamiliarFeatures |
+| [Verified threat actor IP](#verified-threat-actor-ip) | Real-time | Premium | nationStateIP |
 
-| Risk detection |  Detection type | Type |
-| --- | --- | --- |
-| [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium |
-| [Anomalous user activity](#anomalous-user-activity) | Offline | Premium |
-| [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium |
-| [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium |
-| [Suspicious sending patterns](#suspicious-sending-patterns)| Offline| Premium|
-| [Additional risk detected](#additional-risk-detected-user) | Real-time or Offline | Nonpremium |
-| [Leaked credentials](#leaked-credentials) | Offline | Nonpremium |
-| [Microsoft Entra threat intelligence](#microsoft-entra-threat-intelligence-user) | Offline | Nonpremium |
+^ The riskEventType for **Additional risk detected** detection is *generic* for tenants with Microsoft Entra ID Free or Microsoft Entra ID P1. We detected something risky, but the details aren't available without a Microsoft Entra ID P2 license.
 
-## Premium detections
+## User risk detections mapped to riskEventType 
 
-The following premium detections are visible only to Microsoft Entra ID P2 customers.
+Select a risk detection from the list to view the description of the risk detection, how it works, and the license requirements.
 
-### Premium sign-in risk detections
+| User risk detection | Detection type | Type | riskEventType |
+| --- | --- | --- | --- |
+| [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic ^ |
+| [Anomalous Token (user)](#anomalous-token-user) | Real-time or Offline | Premium | anomalousToken | 
+| [Anomalous user activity](#anomalous-user-activity) | Offline | Premium | anomalousUserActivity |
+| [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
+| [Leaked credentials](#leaked-credentials) | Offline | Nonpremium | leakedCredentials |
+| [Microsoft Entra threat intelligence (user)](#microsoft-entra-threat-intelligence-user) | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
+| [Possible attempt to access Primary Refresh Token (PRT)](#possible-attempt-to-access-primary-refresh-token-prt) | Offline | Premium | attemptedPrtAccess |
+| [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium | suspiciousAPITraffic |
+| [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
+| [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
 
-#### Atypical travel
+^ The riskEventType for **Additional risk detected** detection is *generic* for tenants with Microsoft Entra ID Free or Microsoft Entra ID P1. We detected something risky, but the details aren't available without a Microsoft Entra ID P2 license.
 
-**Calculated offline**. This risk detection type identifies two sign-ins originating from geographically distant locations, where at least one of the locations might also be atypical for the user, given past behavior. The algorithm takes into account multiple factors including the time between the two sign-ins and the time it would take for the user to travel from the first location to the second. This risk might indicate that a different user is using the same credentials.
+## Sign-in risk detections 
 
-The algorithm ignores obvious "false positives" contributing to the impossible travel conditions, such as VPNs and locations regularly used by other users in the organization. The system has an initial learning period of the earliest of 14 days or 10 logins, during which it learns a new user's sign-in behavior.
+### Activity from anonymous IP address 
 
-##### Investigating atypical travel detections
+This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address identified as an anonymous proxy IP address. 
 
-1. If you're able to confirm the activity wasn't performed by a legitimate user:
-   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block user if attacker has access to reset password or perform MFA and reset password.
-1. If a user is known to use the IP address in the scope of their duties:
-   1. **Recommended action**: Dismiss the alert
-1. If you're able to confirm that the user recently traveled to the destination mentioned detailed in the alert:
-   1. **Recommended action**: Dismiss the alert.
-1. If you're able to confirm that the IP address range is from a sanctioned VPN.
-   1. **Recommended action**: Mark sign-in as safe and add the VPN IP address range to named locations in Microsoft Entra ID and Microsoft Defender for Cloud Apps.
+- Calculated offline
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
-#### Anomalous token
+### Additional risk detected (sign-in) 
 
-**Calculated in real-time or offline**. This detection indicates that there are abnormal characteristics in the token such as an unusual token lifetime or a token that is played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens.
+This detection indicates that one of the premium detections was triggered. Since premium detections are only visible to Microsoft Entra ID P2 customers, they are labeled as **Additional risk detected** for users without Microsoft Entra ID P2 licenses. 
 
-> [!NOTE]
-> Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. Because this is a high noise detection, there's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the tenant admin should consider this risk as an indicator of potential token replay.
+- Calculated in real-time or offline
+- License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
 
-##### Investigating anomalous token detections
+### Admin confirmed user compromised 
 
-1. If you're able to confirm that the activity wasn't performed by a legitimate user using a combination of risk alert, location, application, IP address, User Agent, or other characteristics that are unexpected for the user:
-   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
-1. If you're able to confirm location, application, IP address, User Agent, or other characteristics are expected for the user and there aren't other indications of compromise:
-   1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
+This detection indicates an administrator selected **Confirm user compromised** in the risky users UI or using riskyUsers API. To see which administrator confirmed this user compromised, check the user's risk history (via UI or API). 
 
-For further investigation of token based detections, see the article [Token tactics: How to prevent, detect, and respond to cloud token theft](https://www.microsoft.com/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/) and the [Token theft investigation playbook](/security/operations/token-theft-playbook).
+- Calculated offline
+- License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
 
-#### Token issuer anomaly
+### Anomalous token (sign-in)
+<a name='anomalous-token'></a>
 
-**Calculated offline**. This risk detection indicates the SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns.
+This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens." If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
 
-##### Investigating token issuer anomaly detections
+Anomalous token was historically tuned to incur more noise than other detections. Recent improvements to the detection have reduced the noise; however, there's still a higher than normal chance that some of the sessions flagged by this detection are false positives at low and medium risk levels. 
 
-1. If you're able to confirm that the activity wasn't performed by a legitimate user:
-   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
-1. If the user confirmed this action was performed by them, and there are no other indicators of compromise:
-   1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
+- Calculated in real-time or offline
+- License requirement: Microsoft Entra ID P2
+- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
 
-For further investigation of token based detections, see the article [Token tactics: How to prevent, detect, and respond to cloud token theft](https://www.microsoft.com/security/blog/2022/11/16/token-tactics-how-to-prevent-detect-and-respond-to-cloud-token-theft/).
+### Anonymous IP address 
 
-#### Suspicious browser
+This risk detection type indicates sign-ins from an anonymous IP address (for example, Tor browser or anonymous VPN). These IP addresses are typically used by actors who want to hide their sign-in information (IP address, location, device, and so on) for potentially malicious intent. 
 
-**Calculated offline**. Suspicious browser detection indicates anomalous behavior based on suspicious sign-in activity across multiple tenants from different countries in the same browser.
+- Calculated in real-time
+- License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
 
-##### Investigating suspicious browser detections
+### Atypical travel 
 
-- Browser isn't commonly used by the user or activity within the browser doesn't match the users normally behavior.
-   - **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
+This risk detection type identifies two sign-ins originating from geographically distant locations, where at least one of the locations might also be atypical for the user, given past behavior. The algorithm takes into account multiple factors including the time between the two sign-ins and the time it would take for the user to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
-#### Unfamiliar sign-in properties
+The algorithm ignores obvious "false positives" contributing to the impossible travel conditions, such as VPNs and locations regularly used by other users in the organization. The system has an initial learning period of the earliest of 14 days or 10 logins, during which it learns a new user's sign-in behavior. 
 
-**Calculated in real-time**. This risk detection type considers past sign-in history to look for anomalous sign-ins. The system stores information about previous sign-ins, and triggers a risk detection when a sign-in occurs with properties that are unfamiliar to the user. These properties can include IP, ASN, location, device, browser, and tenant IP subnet. Newly created users are in "learning mode" period where the unfamiliar sign-in properties risk detection is turned off while our algorithms learn the user's behavior. The learning mode duration is dynamic and depends on how much time it takes the algorithm to gather enough information about the user's sign-in patterns. The minimum duration is five days. A user can go back into learning mode after a long period of inactivity.
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
+- [Tips for investigating atypical travel detections.](howto-identity-protection-investigate-risk.md#investigating-atypical-travel-detections)
 
-We also run this detection for basic authentication (or legacy protocols). Because these protocols don't have modern properties such as client ID, there's limited data to reduce false positives. We recommend our customers to move to modern authentication.
+### Impossible travel 
 
-Unfamiliar sign-in properties can be detected on both interactive and non-interactive sign-ins. When this detection is detected on non-interactive sign-ins, it deserves increased scrutiny due to the risk of token replay attacks.
+This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (in a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
-Selecting an unfamiliar sign-in properties risk allows you to see **Additional Info** showing you more detail about why this risk triggered. The following screenshot shows an example of these details.
+- Calculated offline
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
-:::image type="content" source="media/concept-identity-protection-risks/unfamiliar-sign-in-properties-example.png" alt-text="Screenshot showing an example of unfamiliar sign-in properties risk detection." lightbox="media/concept-identity-protection-risks/unfamiliar-sign-in-properties-example.png":::
+### Malicious IP address 
 
-#### Malicious IP address
+This detection indicates sign-in from a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. In some instances, this detection triggers on previous malicious activity.
 
-**Calculated offline**. This detection indicates sign-in from a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources.
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
+- [Tips for investigating malicious IP address detections.](howto-identity-protection-investigate-risk.md#investigating-malicious-ip-address-detections)
 
-##### Investigating malicious IP address detections
+### Mass access to sensitive files 
 
-1. If you're able to confirm that the activity wasn't performed by a legitimate user:
-   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
-1. If a user is known to use the IP address in the scope of their duties:
-   1. **Recommended action**: Dismiss the alert
+This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-anomaly-alerts#unusual-file-access-by-user). This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint Online or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information. 
 
-#### Suspicious inbox manipulation rules
+- Calculated offline
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
-**Calculated offline**. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-manipulation-rules). This detection looks at your environment and triggers alerts when suspicious rules that delete or move messages or folders are set on a user's inbox. This detection might indicate: a user's account is compromised, messages are being intentionally hidden, and the mailbox is being used to distribute spam or malware in your organization.
+### Microsoft Entra threat intelligence (sign-in) 
 
-#### Password spray
+Microsoft Entra threat intelligence indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. These detections show up as "Microsoft Entra threat intelligence" in logs and ID Protection reports.
 
-**Calculated offline**. A password spray attack is where multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. This risk detection is triggered when a password spray attack has been successfully performed. For example, the attacker is successfully authenticated, in the detected instance.
+- Calculated in real-time or offline
+- License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
+- [Tips for investigating Microsoft Entra threat intelligence detections.](howto-identity-protection-investigate-risk.md#microsoft-entra-threat-intelligence)
 
-##### Investigating password spray detections
+### New country 
 
-1. If you're able to confirm that the activity wasn't performed by a legitimate user: 
-   1. **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
-1. If a user is known to use the IP address in the scope of their duties:
-   1. **Recommended action**: Dismiss the alert
-1. If you're able to confirm that the account hasn't been compromised and can see no brute force or password spray indicators against the account.
-   1. **Recommended action**: Allow the user to self-remediate with a Conditional Access risk policy or have an admin confirm sign-in as safe.
+This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-infrequent-country). This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization. 
 
-For further investigation of password spray risk detections, see the article [Guidance for identifying and investigating password spray attacks](/security/operations/incident-response-playbook-password-spray).
+- Calculated offline
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
-#### Impossible travel
+### Password spray 
 
-**Calculated offline**. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (is a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials.
+A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password was correctly identified through a password spray attack, not that the attacker was able to access any resources.
 
-#### New country
+- Calculated in real-time or offline
+- License requirement: Microsoft Entra ID P2
+- [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
 
-**Calculated offline**. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-infrequent-country). This detection considers past activity locations to determine new and infrequent locations. The anomaly detection engine stores information about previous locations used by users in the organization.
+### Suspicious browser	 
 
-#### Activity from anonymous IP address
+Suspicious browser detection indicates anomalous behavior based on suspicious sign-in activity across multiple tenants from different countries/regions in the same browser. 
 
-**Calculated offline**. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address that has been identified as an anonymous proxy IP address.
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
+- [Tips for investigating suspicious browser detections.](howto-identity-protection-investigate-risk.md#investigating-suspicious-browser-detections)
 
-#### Suspicious inbox forwarding
+### Suspicious inbox forwarding 
 
-**Calculated offline**. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-forwarding). This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address.
+This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-forwarding). This detection looks for suspicious email forwarding rules, for example, if a user created an inbox rule that forwards a copy of all emails to an external address. 
 
-#### Mass access to sensitive files
+- Calculated offline
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
-**Calculated offline**. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/investigate-anomaly-alerts#unusual-file-access-by-user). This detection looks at your environment and triggers alerts when users access multiple files from Microsoft SharePoint or Microsoft OneDrive. An alert is triggered only if the number of accessed files is uncommon for the user and the files might contain sensitive information
+### Suspicious inbox manipulation rules 
 
-#### Verified threat actor IP
+This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#suspicious-inbox-manipulation-rules). This detection looks at your environment and triggers alerts when suspicious rules that delete or move messages or folders are set on a user's inbox. This detection might indicate: a user's account is compromised, messages are being intentionally hidden, and the mailbox is being used to distribute spam or malware in your organization. 
 
-**Calculated in real-time**. This risk detection type indicates sign-in activity that is consistent with known IP addresses associated with nation state actors or cyber crime groups, based on Microsoft Threat Intelligence Center (MSTIC).
+- Calculated offline
+- License requirement: Microsoft Entra ID P2 *and* Microsoft 365 E5, Enterprise Mobility + Security E5, or standalone license for Microsoft Defender for Cloud Apps.
 
-### Premium user risk detections
+### Token issuer anomaly 
 
-#### Possible attempt to access Primary Refresh Token (PRT)
+This risk detection indicates the SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. 
 
-**Calculated offline**. This risk detection type is discovered using information provided by Microsoft Defender for Endpoint (MDE). A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication on Windows 10, Windows Server 2016, and later versions, iOS, and Android devices. A PRT is a JSON Web Token (JWT) that's specially issued to Microsoft first-party token brokers to enable single sign-on (SSO) across the applications used on those devices. Attackers can attempt to access this resource to move laterally into an organization or perform credential theft. This detection moves users to high risk and only fires in organizations that have deployed MDE. This detection is low-volume and is seen infrequently in most organizations. When this detection appears it's high risk, and users should be remediated.
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
+- [Tips for investigating token issuer anomaly detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
 
-#### Anomalous user activity
+### Unfamiliar sign-in properties 
 
-**Calculated offline**. This risk detection baselines normal administrative user behavior in Microsoft Entra ID, and spots anomalous patterns of behavior like suspicious changes to the directory. The detection is triggered against the administrator making the change or the object that was changed.
+This risk detection type considers past sign-in history to look for anomalous sign-ins. The system stores information about previous sign-ins, and triggers a risk detection when a sign-in occurs with properties that are unfamiliar to the user. These properties can include IP, ASN, location, device, browser, and tenant IP subnet. Newly created users are in a "learning mode" period where the unfamiliar sign-in properties risk detection is turned off while our algorithms learn the user's behavior. The learning mode duration is dynamic and depends on how much time it takes the algorithm to gather enough information about the user's sign-in patterns. The minimum duration is five days. A user can go back into learning mode after a long period of inactivity. 
 
-#### User reported suspicious activity
+We also run this detection for basic authentication (or legacy protocols). Because these protocols don't have modern properties such as client ID, there's limited data to reduce false positives. We recommend our customers to move to modern authentication. 
 
-**Calculated offline**. This risk detection is reported when a user denies a multifactor authentication (MFA) prompt and [reports it as suspicious activity](~/identity/authentication/howto-mfa-mfasettings.md#report-suspicious-activity). An MFA prompt not initiated by a user might mean their credentials are compromised.
+Unfamiliar sign-in properties can be detected on both interactive and non-interactive sign-ins. When this detection is detected on non-interactive sign-ins, it deserves increased scrutiny due to the risk of token replay attacks. 
 
-#### Suspicious API traffic
+Selecting an unfamiliar sign-in properties risk allows you to see more info showing more detail about why this risk triggered.
 
-**Calculated offline**. This risk detection is reported when abnormal Graph traffic or directory enumeration is observed by a user. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in their environment.
+- Calculated in real-time
+- License requirement: Microsoft Entra ID P2
 
-#### Suspicious sending patterns
+### Verified threat actor IP 
 
-**Calculated offline**. This risk detection type is discovered using information provided by [Microsoft Defender for Office](/microsoft-365/security/office-365-security/air-about) (MDO). This alert is generated when someone in your organization has sent suspicious email and is either at risk of being restricted from sending email or has already been restricted from sending email. This detection moves users to medium risk and only fires in organizations that have deployed MDO. This detection is low-volume and is seen infrequently in most organizations. 
+Calculated in real-time. This risk detection type indicates sign-in activity that is consistent with known IP addresses associated with nation state actors or cyber crime groups, based on data from the Microsoft Threat Intelligence Center (MSTIC). 
 
-## Nonpremium detections
+- Calculated in real-time
+- License requirement: Microsoft Entra ID P2
 
-Customers without Microsoft Entra ID P2 licenses receive detections titled "additional risk detected" without the detailed information regarding the detection that customers with P2 licenses do.
+## User risk detections 
 
-### Nonpremium sign-in risk detections
+### Additional risk detected (user) 
 
-#### Additional risk detected (sign-in)
+This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled **Additional risk detected** for customers without Microsoft Entra ID P2 licenses. 
 
-**Calculated in real-time or offline**. This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled "additional risk detected" for customers without Microsoft Entra ID P2 licenses.
+- Calculated in real-time or offline
+- License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
 
-#### Anonymous IP address
+### Anomalous token (user)
 
-**Calculated in real-time**. This risk detection type indicates sign-ins from an anonymous IP address (for example, Tor browser or anonymous VPN). These IP addresses are typically used by actors who want to hide their sign-in information (IP address, location, device, and so on) for potentially malicious intent.
+This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers "Session Tokens" and "Refresh Tokens." If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
 
-#### Admin confirmed user compromised
+Anomalous token was historically tuned to incur more noise than other detections. Recent improvements to the detection have reduced the noise; however, there's still a higher than normal chance that some of the sessions flagged by this detection are false positives at low and medium risk levels.
 
-**Calculated offline**. This detection indicates an admin has selected 'Confirm user compromised' in the Risky users UI or using riskyUsers API. To see which admin has confirmed this user compromised, check the user's risk history (via UI or API).
+- Calculated in real-time or offline
+- License requirement: Microsoft Entra ID P2
+- [Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
 
-#### Microsoft Entra threat intelligence (sign-in)
+### Anomalous user activity 
 
-**Calculated in real-time or offline**. This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources.
+This risk detection baselines normal administrative user behavior in Microsoft Entra ID, and spots anomalous patterns of behavior like suspicious changes to the directory. The detection is triggered against the administrator making the change or the object that was changed. 
 
-### Nonpremium user risk detections
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
 
-#### Additional risk detected (user)
+### Attacker in the Middle 
 
-**Calculated in real-time or offline**. This detection indicates that one of the premium detections was detected. Since the premium detections are visible only to Microsoft Entra ID P2 customers, they're titled "additional risk detected" for customers without Microsoft Entra ID P2 licenses.
+Also referred to as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft 365 Defender for Office to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
 
-#### Leaked credentials
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
 
-**Calculated offline**. This risk detection type indicates that the user's valid credentials have been leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [Common questions](#common-questions).
+### Leaked credentials 
 
-##### Investigating leaked credentials detections
+This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [FAQs](id-protection-faq.yml). 
 
-- If this detection signal has alerted for a leaked credential for a user:
-   - **Recommended action**: Mark the sign-in as compromised, and invoke a password reset if not already performed by self-remediation. Block the user if an attacker has access to reset password or perform MFA and reset password and revoke all tokens.
+- Calculated offline
+- License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
+- [Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections)
 
-#### Microsoft Entra threat intelligence (user)
+### Microsoft Entra threat intelligence (user) 
 
-**Calculated offline**. This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources.
+This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. 
 
-## Common questions
+- Calculated offline
+- License requirement: Microsoft Entra ID Free or Microsoft Entra ID P1
+- [Tips for investigating Microsoft Entra threat intelligence detections.](howto-identity-protection-investigate-risk.md#microsoft-entra-threat-intelligence)
 
-### Risk levels
+### Possible attempt to access Primary Refresh Token (PRT) 
 
-ID Protection categorizes risk into three tiers: low, medium, and high. When configuring [ID Protection policies](./concept-identity-protection-policies.md), you can also configure it to trigger upon **No risk** level. No Risk means there's no active indication that the user's identity has been compromised.
+This risk detection type is discovered using information provided by Microsoft Defender for Endpoint (MDE). A Primary Refresh Token (PRT) is a key artifact of Microsoft Entra authentication on Windows 10, Windows Server 2016, and later versions, iOS, and Android devices. A PRT is a JSON Web Token (JWT) issued to Microsoft first-party token brokers to enable single sign-on (SSO) across the applications used on those devices. Attackers can attempt to access this resource to move laterally into an organization or perform credential theft. This detection moves users to high risk and only fires in organizations that deploy MDE. This detection is high risk and we recommend prompt remediation of these users. It appears infrequently in most organizations due to its low volume.  
 
-Microsoft doesn't provide specific details about how risk is calculated. Each level of risk brings higher confidence that the user or sign-in is compromised. For example, something like one instance of unfamiliar sign-in properties for a user might not be as threatening as leaked credentials for another user.
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
 
-### Password hash synchronization
+### Suspicious API traffic 
 
-Risk detections like leaked credentials require the presence of password hashes for detection to occur. For more information about password hash synchronization, see the article, [Implement password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md).
+This risk detection is reported when abnormal GraphAPI traffic or directory enumeration is observed. Suspicious API traffic might suggest that a user is compromised and conducting reconnaissance in the environment. 
 
-### Why are there risk detections generated for disabled user accounts?
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
 
-Disabled user accounts can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against disabled user accounts to alert customers about potential account compromise. If an account is no longer in use and wont be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts.
+### Suspicious sending patterns 
 
-### Where does Microsoft find leaked credentials?
+This risk detection type is discovered using information provided by [Microsoft Defender for Office 365 (MDO)](/defender-office-365/air-about). This alert is generated when someone in your organization sent suspicious email and is either at risk of being or is restricted from sending email. This detection moves users to medium risk and only fires in organizations that deploy MDO. This detection is low-volume and is seen infrequently in most organizations. 
 
-Microsoft finds leaked credentials in various places, including:
+- Calculated offline
+- License requirement: Microsoft Entra ID P2
 
-- Public paste sites such as pastebin.com and paste.ca where bad actors typically post such material. This location is most bad actors' first stop on their hunt to find stolen credentials.
-- Law enforcement agencies.
-- Other groups at Microsoft doing dark web research.
+### User reported suspicious activity 
 
-### Why am I not seeing any leaked credentials?
+This risk detection is reported when a user denies a multifactor authentication (MFA) prompt and reports it as suspicious activity. An MFA prompt not initiated by a user might mean their credentials are compromised. 
 
-Leaked credentials are processed anytime Microsoft finds a new, publicly available batch. Because of the sensitive nature, the leaked credentials are deleted shortly after processing. Only new leaked credentials found after you enable password hash synchronization (PHS) are processed against your tenant. Verifying against previously found credential pairs isn't done.
-
-### I haven't seen any leaked credential risk events for quite some time
-
-If you haven't seen any leaked credential risk events, it is because of the following reasons:
-
-- You don't have PHS enabled for your tenant.
-- Microsoft has not found any leaked credential pairs that match your users.
-
-### How often does Microsoft process new credentials?
-
-Credentials are processed immediately after they have been found, normally in multiple batches per day.
-
-### Locations
-
-Location in risk detections is determined using IP address lookup.
-
-## Next steps
-
-- [Policies available to mitigate risks](concept-identity-protection-policies.md)
-- [Investigate risk](howto-identity-protection-investigate-risk.md)
-- [Remediate and unblock users](howto-identity-protection-remediate-unblock.md)
-- [Microsoft Entra ID Protection dashboard](id-protection-dashboard.md)
+- Calculated offline
+- License requirement: Microsoft Entra ID P2

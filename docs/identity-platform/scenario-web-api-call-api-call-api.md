@@ -1,19 +1,20 @@
 ---
 title: Web API that calls web APIs
-description: Learn how to build a web API that calls web APIs.
+description: 'Build a web API that calls other APIs using the Microsoft identity platform. Learn how to acquire tokens and make secure API calls.  '
 author: cilwerner
-manager: CelesteDG
+manager: pmwongera
 ms.author: cwerner
-ms.custom: 
-ms.date: 09/26/2020
+ms.custom:
+ms.date: 03/21/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
-
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web API that calls web APIs by using the Microsoft identity platform.
 ---
 
 # A web API that calls web APIs: Call an API
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 After you have a token, you can call a protected web API. You usually call the downstream APIs from the controller or pages of your web API.
 
@@ -114,7 +115,7 @@ The `CallApiForUserAsync` method also has strongly typed generic overrides that 
 
 If you've decided to get an authorization header using the `IAuthorizationHeaderProvider` interface, the following code continues the example code shown in [A web API that calls web APIs: Acquire a token for the app](scenario-web-api-call-api-acquire-token.md). The code is called in the actions of the API controllers. It calls a downstream API named *todolist*.
 
- After you've acquired the token, use it as a bearer token to call the downstream API.
+After acquiring the token, use it as a bearer token to call the downstream API.
 
 ```csharp
 private async Task CallTodoListService(string accessToken)
@@ -140,7 +141,7 @@ When you use *Microsoft.Identity.Web*, you have three usage options for calling 
 
 #### Option 1: Call Microsoft Graph with the SDK from OWIN app
 
-You want to call Microsoft Graph. In this scenario, you've added `AddMicrosoftGraph` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph), and you can get the `GraphServiceClient` in your controller or page constructor for use in the actions by using the `GetGraphServiceClient()` extension method on the controller. The following example displays the photo of the signed-in user.
+You call Microsoft Graph by adding `AddMicrosoftGraph` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph). Use the `GetGraphServiceClient()` extension method on the controller to get the `GraphServiceClient` in your controller or page constructor for use in the actions. The following example displays the photo of the signed-in user.
 
 ```csharp
 [Authorize]
@@ -170,7 +171,7 @@ public class HomeController : Controller
 
 #### Option 2: Call a downstream web API with the helper class from OWIN app
 
-You want to call a web API other than Microsoft Graph. In that case, you've added `AddDownstreamApi` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph), and you can get `IDownstreamApi` service in your controller by calling the `GetDownstreamApi` extension method on the controller:
+You want to call a web API other than Microsoft Graph. In that case, add `AddDownstreamApi` in *Startup.cs* as specified in [Code configuration](scenario-web-app-call-api-app-configuration.md#option-2-call-a-downstream-web-api-other-than-microsoft-graph). Use the `GetDownstreamApi` extension method on the controller to get the `IDownstreamApi` service:
 
 ```csharp
 [Authorize]
@@ -270,6 +271,6 @@ A sample demonstrating this flow with MSAL Python is available at [ms-identity-p
 
 ## Next steps
 
-- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-prepare-app.md)
 
 - Explore Microsoft identity platform [web API samples](sample-v2-code.md#web-api) 

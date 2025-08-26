@@ -2,20 +2,23 @@
 title:  Onboard a Google Cloud Platform (GCP) project in Permissions Management
 description: How to onboard a Google Cloud Platform (GCP) project on Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 12/20/2023
+ms.date: 04/01/2025
 ms.author: jfields
 ---
 
 # Onboard a Google Cloud Platform (GCP) project
 
+> [!NOTE]
+> Effective April 1, 2025, Microsoft Entra Permissions Management will no longer be available for purchase, and on October 1, 2025, we'll retire and discontinue support of this product. More information can be found [here](https://aka.ms/MEPMretire).
+
 This article describes how to onboard a Google Cloud Platform (GCP) project in Microsoft Entra Permissions Management.
 
 > [!NOTE]
-> You must have the Global Administrator role assignment to perform the tasks in this article.
+> You must be a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) to perform the tasks in this article.
 
 ## Explanation
 
@@ -45,7 +48,7 @@ There are several moving parts across GCP and Azure, which should be configured 
 
 1. On the **Permissions Management Onboarding - Microsoft Entra OIDC App Creation** page, enter the **OIDC Azure App Name**.
 
-    This app is used to set up an OpenID Connect (OIDC) connection to your GCP project. OIDC is an interoperable authentication protocol based on the OAuth 2.0 family of specifications. The scripts generated creates the app of this specified name in your Microsoft Entra tenant with the right configuration.
+    This app is used to set up an OpenID Connect (OIDC) connection to your GCP project. OIDC is an interoperable authentication protocol based on the OAuth 2.0 family of specifications. The scripts generated create the app of this specified name in your Microsoft Entra tenant with the right configuration.
 
 1. To create the app registration, copy the script and run it in your command-line app.
 

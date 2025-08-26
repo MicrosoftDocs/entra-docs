@@ -2,13 +2,13 @@
 title: Group management permissions for Microsoft Entra custom roles
 description: Group management permissions for Microsoft Entra custom roles in the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
 
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 05/24/2022
-ms.author: rolyon
+ms.date: 08/25/2024
+ms.author: barclayn
 ms.custom: it-pro
 ---
 
@@ -22,7 +22,7 @@ Group management permissions can be used in custom role definitions in Microsoft
 - Read audit logs
 - Manage a specific type of group
 
-This article lists the permissions you can use in your custom roles for different group management scenarios. For information about how to create custom roles, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md).
+This article lists the permissions you can use in your custom roles for different group management scenarios. For information about how to create custom roles, see [Create a custom role in Microsoft Entra ID](custom-create.md).
 
 ## License requirements
 
@@ -105,9 +105,9 @@ The following permissions are available to update properties and members of grou
 > | microsoft.directory/groups.unified.assignedMembership/classification/update | Update the classification property on Microsoft 365 groups of assigned membership type, excluding role-assignable groups |
 > | microsoft.directory/groups.security/classification/update | Update the classification property on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security.assignedMembership/classification/update | Update the classification property on Security groups of assigned membership type, excluding role-assignable groups |
-> | microsoft.directory/groups/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/dynamicMembershipRule/update | Update the dynamic membership rule on Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups, excluding role-assignable groups |
+> | microsoft.directory/groups/dynamicMembershipRule/update | Update the rule for dynamic membership groups on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/dynamicMembershipRule/update | Update the rule for dynamic membership groups on Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the rule for dynamic membership groups on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified.assignedMembership/members/update | Update members of Microsoft 365 groups of assigned membership type, excluding role-assignable groups |
@@ -142,5 +142,5 @@ The following permissions are available to delete groups.
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.md)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
 - [List Microsoft Entra role assignments](view-assignments.md)

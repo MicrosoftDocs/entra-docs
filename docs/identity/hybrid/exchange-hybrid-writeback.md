@@ -1,16 +1,15 @@
 ---
 title: 'Exchange hybrid writeback with sync'
 description: This article describes the Exchange hybrid writeback feature with sync clients.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
-ms.topic: conceptual
+ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Exchange hybrid writeback 

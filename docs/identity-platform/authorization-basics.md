@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: template-concept
-ms.date: 01/06/2023
+ms.date: 08/25/2024
 ms.reviewer:
 ms.service: identity-platform
 
@@ -48,7 +48,7 @@ Attribute-based access control (ABAC) is a more fine-grained access control mech
 
 One advantage of ABAC is that more granular and dynamic access control can be achieved through rule and condition evaluations without the need to create large numbers of specific roles and RBAC assignments.
 
-One method for achieving ABAC with Microsoft Entra ID is using [dynamic groups](~/identity/users/groups-create-rule.md). Dynamic groups allow administrators to dynamically assign users to groups based on specific user attributes with desired values.  For example, an Authors group could be created where all users with the job title Author are dynamically assigned to the Authors group. Dynamic groups can be used in combination with RBAC for authorization where you map roles to groups and dynamically assign users to groups.
+One method for achieving ABAC with Microsoft Entra ID is using [dynamic membership groups](~/identity/users/groups-create-rule.md). Dynamic groups allow administrators to dynamically assign users to groups based on specific user attributes with desired values.  For example, an Authors group could be created where all users with the job title Author are dynamically assigned to the Authors group. Dynamic groups can be used in combination with RBAC for authorization where you map roles to groups and dynamically assign users to groups.
 
 [Azure ABAC](/azure/role-based-access-control/conditions-overview) is an example of an ABAC solution that is available today. Azure ABAC builds on Azure RBAC by adding role assignment conditions based on attributes in the context of specific actions.
 
@@ -56,7 +56,7 @@ One method for achieving ABAC with Microsoft Entra ID is using [dynamic groups](
 
 Authorization logic is often implemented within the applications or solutions where access control is required. In many cases, application development platforms offer middleware or other API solutions that simplify the implementation of authorization. Examples include use of the [AuthorizeAttribute](/aspnet/core/security/authorization/simple?view=aspnetcore-5.0&preserve-view=true) in ASP.NET or [Route Guards](./scenario-spa-sign-in.md?tabs=angular2#sign-in-with-a-pop-up-window) in Angular.
 
-For authorization approaches that rely on information about the authenticated entity, an application evaluates information exchanged during authentication. For example, by using the information that was provided within a [security token](./security-tokens.md). If you are planning on using information from tokens for authorization, we recommend following [this guidance on properly securing apps through claims validation](./claims-validation.md). in For information not contained in a security token, an application might make extra calls to external resources.
+For authorization approaches that rely on information about the authenticated entity, an application evaluates information exchanged during authentication. For example, by using the information that was provided within a [security token](./security-tokens.md). If you are planning on using information from tokens for authorization, we recommend following [this guidance on properly securing apps through claims validation](./claims-validation.md). For information not contained in a security token, an application might make extra calls to external resources.
 
 It's not strictly necessary for developers to embed authorization logic entirely within their applications. Instead, dedicated authorization services can be used to centralize authorization implementation and management.
 

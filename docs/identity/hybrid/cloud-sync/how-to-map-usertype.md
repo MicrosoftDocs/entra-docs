@@ -1,15 +1,14 @@
 ---
 title: 'Use map UserType with Microsoft Entra Cloud Sync'
 description: This article describes how to map the UserType attribute with cloud sync.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-cloud-sync
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Map UserType with cloud sync

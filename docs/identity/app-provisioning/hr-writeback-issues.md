@@ -1,18 +1,18 @@
 ---
 title: Troubleshoot writeback issues with HR provisioning
-description: Learn how to troubleshoot writeback issues with HR provisioning.
+description: This article provides potential issues and resolutions so you can troubleshoot writeback issues with HR provisioning.
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.workload: identity
-ms.date: 02/27/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# Troubleshoot HR writeback issues
+# Troubleshoot HR writeback issues with HR user provisioning
 
 ## Null and empty values not processed as expected
 **Applies to:**

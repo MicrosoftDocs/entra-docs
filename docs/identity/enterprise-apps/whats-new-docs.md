@@ -1,37 +1,39 @@
 ---
-title: "What's new in Microsoft Entra application management"
-description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 04/04/2024
+title: What's new in Microsoft Entra application management
+description: This article shows the new and updated documentation for the Microsoft Entra application management.
+ms.date: 08/06/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
-
 ms.author: jomondi
 author: omondiatieno
-manager: CelesteDG
+manager: mwongerapk
 
 #customer intent: As an IT admin responsible for managing applications in Microsoft Entra ID, I want to stay updated on new documentation and significant updates, so that I can effectively manage and troubleshoot application-related issues in the platform.
 ---
 
 # Microsoft Entra application management: What's new
 
-Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## March 2024
-
-No new or updated articles.
-
-## February 2024
+## July 2025
 
 ### Updated articles
 
-- [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
-- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-based-sso.md) - Update to enhance the article's technical accuracy
+- [Configure OIDC SSO for gallery and custom applications](add-application-portal-setup-oidc-sso.md) - Updates to add guidance for configuring OIDC SSO for a custom application
 
-## January 2024
+
+## June 2025
 
 ### Updated articles
 
-- [Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access](datawiza-sso-mfa-to-owa.md) - Update to enhance the article's technical accuracy
-- [Enable self-service application assignment](manage-self-service-access.md) - Update to enhance the article's technical accuracy
-- [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Add updated domain confirmation information
+- [AD FS application migration to move AD FS apps to Microsoft Entra ID](migrate-ad-fs-application-howto.md) - Revised for clarity and conciseness
+- [Configure how users consent to applications](configure-user-consent.md) - Added clarity on authorization policies and app consent policies
+
+
+## May 2025
+
+### Updated articles
+
+No updates this month.
+

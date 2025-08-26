@@ -1,21 +1,26 @@
 ---
 title: 'Microsoft Entra Connect Sync: Configure filtering'
 description: Explains how to configure filtering in Microsoft Entra Connect Sync.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 880facf6-1192-40e9-8181-544c0759d506
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
+ms.author: jomondi
+ms.custom: sfi-image-nochange
 ---
 
 # Microsoft Entra Connect Sync: Configure filtering
-By using filtering, you can control which objects appear in Microsoft Entra ID from your on-premises directory. The default configuration takes all objects in all domains in the configured forests. In general, this is the recommended configuration. Users using Microsoft 365 workloads, such as Exchange Online and Skype for Business, benefit from a complete Global Address List so they can send email and call everyone. With the default configuration, they would have the same experience that they would have with an on-premises implementation of Exchange or Lync.
+By using filtering, you can control which objects appear in Microsoft Entra ID from your on-premises directory. The default configuration takes most objects in all domains in the configured forests. In general, this is the recommended configuration. Users using Microsoft 365 workloads, such as Exchange Online and Skype for Business, benefit from a complete Global Address List so they can send email and call everyone. With the default configuration, they would have the same experience that they would have with an on-premises implementation of Exchange or Lync.
+
+>[!NOTE]
+> Microsoft Entra Cloud Sync and Microsoft Entra Connect Sync filter out any Active Directory objects where the **isCriticalSystemObject** attribute is set to **True**.  This will filter out built-in AD high privilege objects such as Administrator, DomainAdmins, EnterpriseAdmins.  This filtering means that the last two groups **DON'T** sync to Entra ID by default.
+>
+>  However, other objects that are added to these high privilege group (DomainAdmins, EnterpriseAdmins) are not filtered out from syncing to cloud. For example, if you add a local AD User to the EnterpriseAdmins group, that user will still get synced to Microsoft Entra ID.
+
 
 In some cases however, you're required to make some changes to the default configuration. Here are some examples:
 
@@ -31,7 +36,7 @@ This article covers how to configure the different filtering methods.
 ## Basics and important notes
 In Microsoft Entra Connect Sync, you can enable filtering at any time. If you start with a default configuration of directory synchronization and then configure filtering, the objects that are filtered out are no longer synchronized to Microsoft Entra ID. Because of this change, any objects in Microsoft Entra ID that were previously synchronized but were then filtered are deleted in Microsoft Entra ID.
 
-Before you start making changes to filtering, make sure that you [disable the built-in scheduler](#disable-the-synchronization-scheduler) so you don't accidentally export changes that you haven't yet verified to be correct.
+Before you start making changes to filtering, make sure that you [disable the built-in scheduler](#disable-the-synchronization-scheduler) or [switch the server to staging mode](/entra/identity/hybrid/connect/how-to-connect-sync-staging-server#change-currently-active-sync-server-to-staging-mode), so you don't accidentally export changes that you haven't yet verified to be correct.
 
 Because filtering can remove many objects at the same time, you want to make sure that your new filters are correct before you start exporting any changes to Microsoft Entra ID. After you've completed the configuration steps, we strongly recommend that you follow the [verification steps](#apply-and-verify-changes) before you export and make changes to Microsoft Entra ID.
 
@@ -41,23 +46,25 @@ If you use a build before November 2015 ([1.0.9125](reference-connect-version-hi
 
 If **user** objects were inadvertently deleted in Microsoft Entra ID because of a filtering error, you can recreate the user objects in Microsoft Entra ID by removing your filtering configurations. Then you can synchronize your directories again. This action restores the users from the recycle bin in Microsoft Entra ID. However, you can't undelete other object types. For example, if you accidentally delete a security group and it was used to ACL a resource, the group and its ACLs can't be recovered.
 
-Microsoft Entra Connect only deletes objects that it has once considered to be in scope. If there are objects in Microsoft Entra ID that were created by another sync engine and these objects aren't in scope, adding filtering doesn't remove them. For example, if you start with a DirSync server that created a complete copy of your entire directory in Microsoft Entra ID, and you install a new Microsoft Entra Connect Sync server in parallel with filtering enabled from the beginning, Microsoft Entra Connect doesn't remove the extra objects that are created by DirSync.
+Microsoft Entra Connect only deletes objects that it has once considered to be in scope. If there are objects in Microsoft Entra ID that were created by another sync engine and these objects aren't in scope, adding filtering doesn't remove them. For example, if you start with a Microsoft Entra cloud sync server that created a complete copy of your entire directory in Microsoft Entra ID, and you install a new Microsoft Entra Connect Sync server in parallel with filtering enabled from the beginning, Microsoft Entra Connect doesn't remove the extra objects that are created by cloud sync.
 
 The filtering configuration is retained when you install or upgrade to a newer version of Microsoft Entra Connect. It's always a best practice to verify that the configuration wasn't inadvertently changed after an upgrade to a newer version before running the first synchronization cycle.
 
 If you have more than one forest, then you must apply the filtering configurations that are described in this topic to every forest (assuming that you want the same configuration for all of them).
 
 ### Disable the synchronization scheduler
+
 To disable the built-in scheduler that triggers a synchronization cycle every 30 minutes, follow these steps:
 
-1. Open Windows Powershell, import the ADSync module and disable the scheduler using the following commands
+1. Open Windows Powershell, import the ADSync module and disable the scheduler using the following commands.
 
 ```Powershell
-import-module ADSync
+Import-Module ADSync
 Set-ADSyncScheduler -SyncCycleEnabled $False
 ```
 
-2. Make the changes that are documented in this article. Then re-enable the scheduler again with the following command
+2. Make the scoping filter changes and verify the results as documented in this article.
+1. When you're ready, re-enable the sync scheduler with the following command.
 
 ```Powershell
 Set-ADSyncScheduler -SyncCycleEnabled $True
@@ -84,7 +91,7 @@ To change domain-based filtering, run the installation wizard: [domain and OU fi
 To change OU-based filtering, run the installation wizard: [domain and OU filtering](how-to-connect-install-custom.md#domain-and-ou-filtering). The installation wizard automates all the tasks that are documented in this topic.
 
 > [!IMPORTANT]
-> If you explicitly select an OU for synchronization, Microsoft Entra Connect will add the DistinguishedName of that OU in the inclusion list for the domain's sync scope. However, if you later rename that OU in Active Directory, the DistinguishedName of the OU is changed, and consequently, Microsoft Entra Connect will no longer consider that OU in sync scope. This will not cause an immediate issue, but upon a full import step, Microsoft Entra Connect will reevaluate the sync scope and delete (i.e. obsolete) any objects out of sync scope, which can potentially cause an unexpected mass deletion of objects in Microsoft Entra ID. To prevent this issue, after renaming a OU, run Microsoft Entra Connect Wizard and re-select the OU to be again included in sync scope.
+> If you explicitly select an OU for synchronization, Microsoft Entra Connect will add the DistinguishedName of that OU in the inclusion list for the domain's sync scope. However, if you later rename that OU in Active Directory, the DistinguishedName of the OU is changed, and consequently, Microsoft Entra Connect will no longer consider that OU in sync scope. This will not cause an immediate issue, but upon a full import step, Microsoft Entra Connect will reevaluate the sync scope and delete (that is, obsolete) any objects out of sync scope, which can potentially cause an unexpected mass deletion of objects in Microsoft Entra ID. To prevent this issue, after renaming a OU, run Microsoft Entra Connect Wizard and re-select the OU to be again included in sync scope.
 
 ## Attribute-based filtering
 Make sure that you're using the November 2015 ([1.0.9125](reference-connect-version-history.md)) or later build for these steps to work.
@@ -117,39 +124,39 @@ In the following example, you filter out (not synchronize) all users where **ext
 1. Sign in to the server that is running Microsoft Entra Connect Sync by using an account that is a member of the **ADSyncAdmins** security group.
 2. Start **Synchronization Rules Editor** from the **Start** menu.
 3. Make sure **Inbound** is selected, and click **Add New Rule**.
-4. Give the rule a descriptive name, such as "*In from AD – User DoNotSyncFilter*". Select the correct forest, select **User** as the **CS object type**, and select **Person** as the **MV object type**. In **Link Type**, select **Join**. In **Precedence**, type a value that isn't currently used by another synchronization rule (for example 50), and then click **Next**.  
+1. Give the rule a descriptive name, such as "*In from AD – User DoNotSyncFilter*". Select the correct forest, select **User** as the **CS object type**, and select **Person** as the **MV object type**. In **Link Type**, select **Join**. In **Precedence**, type a value that isn't currently used by another synchronization rule (for example 50), and then click **Next**.  
    ![Inbound 1 description](./media/how-to-connect-sync-configure-filtering/inbound1.png)  
-5. In **Scoping filter**, click **Add Group**, and click **Add Clause**. In **Attribute**, select **ExtensionAttribute15**. Make sure that **Operator** is set to **EQUAL**, and type the value **NoSync** in the **Value** box. Click **Next**.  
+1. In **Scoping filter**, click **Add Group**, and click **Add Clause**. In **Attribute**, select **ExtensionAttribute15**. Make sure that **Operator** is set to **EQUAL**, and type the value **NoSync** in the **Value** box. Click **Next**.  
    ![Inbound 2 scope](./media/how-to-connect-sync-configure-filtering/inbound2.png)  
 6. Leave the **Join** rules empty, and then click **Next**.
-7. Click **Add Transformation**, select the **FlowType** as **Constant**, and select **cloudFiltered** as the **Target Attribute**. In the **Source** text box, type **True**. Click **Add** to save the rule.  
+1. Click **Add Transformation**, select the **FlowType** as **Constant**, and select **cloudFiltered** as the **Target Attribute**. In the **Source** text box, type **True**. Click **Add** to save the rule.  
    ![Inbound 3 transformation](./media/how-to-connect-sync-configure-filtering/inbound3.png)
 8. To complete the configuration, you need to run a **Full sync**. Continue reading the section [Apply and verify changes](#apply-and-verify-changes).
 
 #### Positive filtering: "only sync these"
 Expressing positive filtering can be more challenging because you also have to consider objects that aren't obvious to be synchronized, such as conference rooms. You are also going to override the default filter in the out-of-box rule **In from AD - User Join**. When you create your custom filter, make sure to not include critical system objects, replication conflict objects, special mailboxes, and the service accounts for Microsoft Entra Connect.
 
-The positive filtering option requires two sync rules. You need one rule (or several) with the correct scope of objects to synchronize. You also need a second catch-all sync rule that filters out all objects that haven't yet been identified as an object that should be synchronized.
+The positive filtering option requires two sync rules: one sync rule (or more) with the correct scope of objects to synchronize, and a catch-all sync rule that filters out any remaining objects that should not be synchronized.
 
 In the following example, you only synchronize user objects where the department attribute has the value **Sales**.
 
 1. Sign in to the server that is running Microsoft Entra Connect Sync by using an account that is a member of the **ADSyncAdmins** security group.
 2. Start **Synchronization Rules Editor** from the **Start** menu.
 3. Make sure **Inbound** is selected, and click **Add New Rule**.
-4. Give the rule a descriptive name, such as "*In from AD – User Sales sync*". Select the correct forest, select **User** as the **CS object type**, and select **Person** as the **MV object type**. In **Link Type**, select **Join**. In **Precedence**, type a value that isn't currently used by another synchronization rule (for example 51), and then click **Next**.  
+1. Give the rule a descriptive name, such as "*In from AD – User Sales sync*". Select the correct forest, select **User** as the **CS object type**, and select **Person** as the **MV object type**. In **Link Type**, select **Join**. In **Precedence**, type a value that isn't currently used by another synchronization rule (for example 51), and then click **Next**.  
    ![Inbound 4 description](./media/how-to-connect-sync-configure-filtering/inbound4.png)  
-5. In **Scoping filter**, click **Add Group**, and click **Add Clause**. In **Attribute**, select **department**. Make sure that Operator is set to **EQUAL**, and type the value **Sales** in the **Value** box. Click **Next**.  
+1. In **Scoping filter**, click **Add Group**, and click **Add Clause**. In **Attribute**, select **department**. Make sure that Operator is set to **EQUAL**, and type the value **Sales** in the **Value** box. Click **Next**.  
    ![Inbound 5 scope](./media/how-to-connect-sync-configure-filtering/inbound5.png)  
 6. Leave the **Join** rules empty, and then click **Next**.
-7. Click **Add Transformation**, select **Constant** as the **FlowType**, and select the **cloudFiltered** as the **Target Attribute**. In the **Source** box, type **False**. Click **Add** to save the rule.  
+1. Click **Add Transformation**, select **Constant** as the **FlowType**, and select the **cloudFiltered** as the **Target Attribute**. In the **Source** box, type **False**. Click **Add** to save the rule.  
    ![Inbound 6 transformation](./media/how-to-connect-sync-configure-filtering/inbound6.png)  
-   This is a special case where you explicitly set cloudFiltered to **False**.
-8. We now have to create the catch-all sync rule. Give the rule a descriptive name, such as "*In from AD – User Catch-all filter*". Select the correct forest, select **User** as the **CS object type**, and select **Person** as the **MV object type**. In **Link Type**, select **Join**. In **Precedence**, type a value that isn't currently used by another Synchronization Rule (for example 99). You've selected a precedence value that is higher (lower precedence) than the previous sync rule. But you've also left some room so that you can add more filtering sync rules later when you want to start synchronizing additional departments. Click **Next**.  
+      This is a special case where you explicitly set cloudFiltered to **False**.
+1. We now have to create the catch-all sync rule. Give the rule a descriptive name, such as "*In from AD – User Catch-all filter*". Select the correct forest, select **User** as the **CS object type**, and select **Person** as the **MV object type**. In **Link Type**, select **Join**. In **Precedence**, type a value that isn't currently used by another Synchronization Rule (for example 99). You've selected a precedence value that is higher (lower precedence) than the previous sync rule. But you've also left some room so that you can add more filtering sync rules later when you want to start synchronizing additional departments. Click **Next**.  
    ![Inbound 7 description](./media/how-to-connect-sync-configure-filtering/inbound7.png)  
 9. Leave **Scoping filter** empty, and click **Next**. An empty filter indicates that the rule is to be applied to all objects.
 10. Leave the **Join** rules empty, and then click **Next**.
-11. Click **Add Transformation**, select **Constant** as the **FlowType**, and select **cloudFiltered** as the **Target Attribute**. In the **Source** box, type **True**. Click **Add** to save the rule.  
-    ![Inbound 3 transformation](./media/how-to-connect-sync-configure-filtering/inbound3.png)  
+1. Click **Add Transformation**, select **Constant** as the **FlowType**, and select **cloudFiltered** as the **Target Attribute**. In the **Source** box, type **True**. Click **Add** to save the rule.  
+   ![Inbound 3 transformation](./media/how-to-connect-sync-configure-filtering/inbound3.png)  
 12. To complete the configuration, you need to run a **Full sync**. Continue reading the section [Apply and verify changes](#apply-and-verify-changes).
 
 If you need to, you can create more rules of the first type where you include more objects in the synchronization.
@@ -172,14 +179,16 @@ In this example, you change the filtering so that only users that have both thei
 ## Apply and verify changes
 After you've made your configuration changes, you must apply them to the objects that are already present in the system. It might also be that the objects that aren't currently in the sync engine should be processed (and the sync engine needs to read the source system again to verify its content).
 
-If you changed the configuration by using **domain** or **organizational-unit** filtering, then you need to do a **Full import**, followed by **Delta synchronization**.
+If you changed the configuration by using **domain** or **organizational-unit** filtering, then you need to do a **Full Import**, followed by **Delta Synchronization**.
 
-If you changed the configuration by using **attribute** filtering, then you need to do a **Full synchronization**.
+If you changed the configuration by using **attribute** filtering, then you need to do a **Full Synchronization**.
 
-Do the following steps:
+As a best practice, make sure your server is in [Staging mode ](/entra/identity/hybrid/connect/how-to-connect-sync-staging-server#change-currently-active-sync-server-to-staging-mode)and start an **Initial** sync cycle which will run a full import and full synchronization on all connectors using the PowerShell command `Start-ADSyncSyncCycle -PolicyType Initial`.
+
+To manually start a run profile, do the following steps:
 
 1. Start **Synchronization Service** from the **Start** menu.
-2. Select **Connectors**. In the **Connectors** list, select the Connector where you made a configuration change earlier. In **Actions**, select **Run**.  
+1. Select **Connectors**. In the **Connectors** list, select the Connector where you made a configuration change earlier. In **Actions**, select **Run**.  
    ![Connector run](./media/how-to-connect-sync-configure-filtering/connectorrun.png)  
 3. In **Run profiles**, select the operation that was mentioned in the previous section. If you need to run two actions, run the second after the first one has finished. (The **State** column is **Idle** for the selected connector.)
 
@@ -198,10 +207,7 @@ When you're satisfied, export the changes to Microsoft Entra ID.
 2. In **Run profiles**, select **Export**.
 3. If your configuration changes delete many objects, then you see an error in the export when the number is more than the configured threshold (by default 500). If you see this error, then you need to temporarily disable the "[prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-deletes.md)" feature.
 
-Now it's time to enable the scheduler again.
-
-1. Start **Task Scheduler** from the **Start** menu.
-2. Directly under **Task Scheduler Library**, find the task named **Azure AD Sync Scheduler**, right-click, and select **Enable**.
+Now it's time to [re-enable the sync scheduler](#disable-the-synchronization-scheduler).
 
 ## Group-based filtering
 You can configure group-based filtering the first time that you install Microsoft Entra Connect by using [custom installation](how-to-connect-install-custom.md#sync-filtering-based-on-groups). It's intended for a pilot deployment where you want only a small set of objects to be synchronized. When you disable group-based filtering, it can't be enabled again. It's *not supported* to use group-based filtering in a custom configuration. It's only supported to configure this feature by using the installation wizard. When you've completed your pilot, then use one of the other filtering options in this topic. When using OU-based filtering in conjunction with group-based filtering, the OU(s) where the group and its members are located must be included.
@@ -210,7 +216,7 @@ When synchronizing multiple AD forests, you can configure group-based filtering 
 
 * You have a user in one forest that has a corresponding FSP (Foreign Security Principal) object in another forest. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 
-* You have a user in one forest that has a corresponding resource account (e.g., linked mailbox) in another forest. Further, you have configured Microsoft Entra Connect to link the user with the resource account. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
+* You have a user in one forest that has a corresponding resource account (such as linked mailbox) in another forest. Further, you have configured Microsoft Entra Connect to link the user with the resource account. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 
 * You have a user in one forest that has a corresponding mail contact in another forest. Further, you have configured Microsoft Entra Connect to link the user with the mail contact. Both objects must be within group-based filtering scope. Otherwise, the user will not be synchronized to Microsoft Entra ID.
 

@@ -1,15 +1,15 @@
 ---
 title: Grant access to inbound provisioning API
 description: Learn how to grant access to the inbound provisioning API.
-
 author: jenniferf-skc
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 07/24/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
+ms.custom: sfi-image-nochange
 ---
 
 # Grant access to the inbound provisioning API
@@ -20,14 +20,14 @@ After you've configured [API-driven inbound provisioning app](inbound-provisioni
 
 Depending on how your API client authenticates with Microsoft Entra ID, you can select between two configuration options: 
 
-* [Configure a service principal](#configure-a-service-principal): Follow these instructions if your API client plans to use a service principal of an [Microsoft Entra registered app](~/identity-platform/howto-create-service-principal-portal.md) and authenticate using OAuth client credentials grant flow. 
+* [Configure a service principal](#configure-a-service-principal): Follow these instructions if your API client plans to use a service principal of a [Microsoft Entra registered app](~/identity-platform/howto-create-service-principal-portal.md) and authenticate using OAuth client credentials grant flow. 
 * [Configure a managed identity](#configure-a-managed-identity): Follow these instructions if your API client plans to use a Microsoft Entra [managed identity](~/identity/managed-identities-azure-resources/overview.md).
 
 ## Configure a service principal 
 This configuration registers an app in Microsoft Entra ID that represents the external API client and grants it permission to invoke the inbound provisioning API. The service principal client ID and client secret can be used in the OAuth client credentials grant flow. 
 
 1. Log in to Microsoft Entra admin center (https://entra.microsoft.com) with at least [Application Administrator](https://go.microsoft.com/fwlink/?linkid=2247823) login credentials. 
-1. Browse to **Microsoft Entra ID** -> **Applications** -> **App registrations**.
+1. Browse to **Entra ID** > **App registrations**.
 1. Click on the option **New registration**.
 1. Provide an app name, select the default options, and click on **Register**.
       [![Screenshot of app registration.](media/inbound-provisioning-api-grant-access/register-app.png)](media/inbound-provisioning-api-grant-access/register-app.png#lightbox)
@@ -39,7 +39,9 @@ This configuration registers an app in Microsoft Entra ID that represents the ex
 1. From the context menu **API permissions**, select the option **Add a permission**. 
 1. Under **Request API permissions**, select **Microsoft Graph**. 
 1. Select **Application permissions**.
-1. Search and select permission **AuditLog.Read.All** and **SynchronizationData-User.Upload**.
+1. Search and select permissions **ProvisioningLog.Read.All** and **SynchronizationData-User.Upload**.
+    > [!NOTE] 
+    > If you're configuring the service principal for use by an HR ISV that will instantiate the API-driven provisioning app in your tenant, consider granting the `Application.ReadWrite.OwnedBy` and `SynchronizationData-User.Upload.OwnedBy` application permissions. This ensures that the ISV can only upload data to the `/bulkUpload` API endpoint associated with the app it creates.
 1. Click on **Grant admin consent** on the next screen to complete the permission assignment. Click Yes on the confirmation dialog. Your app should have the following permission sets.
       [![Screenshot of app permissions.](media/inbound-provisioning-api-grant-access/api-client-permissions.png)](media/inbound-provisioning-api-grant-access/api-client-permissions.png#lightbox)  
 1. You're now ready to use the service principal with your API client.
@@ -60,7 +62,6 @@ This section describes how you can assign the necessary permissions to a managed
       Install-Module Microsoft.Graph -Scope CurrentUser
 
       Connect-MgGraph -Scopes "Application.Read.All","AppRoleAssignment.ReadWrite.All,RoleManagement.ReadWrite.Directory"
-      Select-MgProfile Beta
       $graphApp = Get-MgServicePrincipal -Filter "AppId eq '00000003-0000-0000-c000-000000000000'"
   
       $PermissionName = "SynchronizationData-User.Upload"
@@ -69,7 +70,7 @@ This section describes how you can assign the necessary permissions to a managed
       $managedID = Get-MgServicePrincipal -Filter "DisplayName eq 'CSV2SCIMBulkUpload'"
       New-MgServicePrincipalAppRoleAssignment -PrincipalId $managedID.Id -ServicePrincipalId $managedID.Id -ResourceId $graphApp.Id -AppRoleId $AppRole.Id
 
-      $PermissionName = "AuditLog.Read.All"
+      $PermissionName = "ProvisioningLog.Read.All"
       $AppRole = $graphApp.AppRoles | `
       Where-Object {$_.Value -eq $PermissionName -and $_.AllowedMemberTypes -contains "Application"}
       $managedID = Get-MgServicePrincipal -Filter "DisplayName eq 'CSV2SCIMBulkUpload'"
@@ -84,6 +85,5 @@ This section describes how you can assign the necessary permissions to a managed
 
 ## Next steps
 - [Quick start using cURL](inbound-provisioning-api-curl-tutorial.md)
-- [Quick start using Postman](inbound-provisioning-api-postman.md)
 - [Quick start using Graph Explorer](inbound-provisioning-api-graph-explorer.md)
 - [Frequently asked questions about API-driven inbound provisioning](inbound-provisioning-api-faqs.md)

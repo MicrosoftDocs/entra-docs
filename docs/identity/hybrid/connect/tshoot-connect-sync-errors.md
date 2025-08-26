@@ -2,15 +2,15 @@
 title: 'Microsoft Entra Connect: Troubleshoot errors during synchronization'
 description: This article explains how to troubleshoot errors that occur during synchronization with Microsoft Entra Connect.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 2209d5ce-0a64-447b-be3a-6f06d47995f8
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 01/16/2024
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Understanding errors during Microsoft Entra synchronization
@@ -65,7 +65,7 @@ An InvalidHardMatch error occurs during synchronization when there’s an attemp
 
 We advise customers to enable *BlockCloudObjectTakeoverThroughHardMatchEnabled* unless they need it to take over existent accounts in Microsoft Entra ID.
 
-If you need to clear an **InvalidHardtMatch** error and match the account successfully, you can enable hard match again as descripted in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
+If you need to clear an **InvalidHardMatch** error and match the account successfully, you can enable hard match again as described in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
 
 ### InvalidSoftMatch
 
@@ -83,7 +83,7 @@ Microsoft Entra schema doesn't allow two or more objects to have the same value 
 * objectId
 * immutableId
 
-Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
+[Microsoft Entra attribute duplicate attribute resiliency](how-to-connect-syncservice-duplicate-attribute-resiliency.md) is also being rolled out as the default behavior of Microsoft Entra ID. This feature reduces the number of synchronization errors seen by Microsoft Entra Connect and other sync clients. It makes Microsoft Entra more resilient in the way it handles duplicated **proxyAddresses** and **userPrincipalName** attributes present in on-premises Active Directory environments. 
 
 This feature doesn't fix the duplication errors, so the data still needs to be fixed. But it allows provisioning of new objects that are otherwise blocked from being provisioned because of duplicated values in Microsoft Entra ID. This capability also reduces the number of synchronization errors returned to the synchronization client.
 
@@ -257,8 +257,7 @@ Microsoft Entra ID protects cloud-only objects from being updated through Micros
 
 This section discusses potential causes and solutions to resolving the error DeletingCloudOnlyObjectNotAllowed (Error Type 114).
 
-> [!WARNING]
-> Microsoft recommends that customers set up a break glass account before logging in to Microsoft Entra Connect. For more info, see [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../../../includes/definitions/emergency-access-accounts.md)]
 
 #### Description
 
@@ -292,7 +291,7 @@ ErrorType 114
 ErrorCode 0x8023134a
 ErrorLiteral This synchronization operation, Delete, is not valid. Contact Technical Support. Tracking Id: 09fb1e9b-3ff7-4163-9731-581785e347e5
 ServerErrorDetail N/A
-CsObjectIdentifier {2819A5C8-BE27-EC11-A970-000D3A1B4EEE}
+CsObjectIdentifier {aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}
 Dn CN={783456306961654236304B58786A66746377643748773D3D}
 ```
 

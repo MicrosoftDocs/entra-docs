@@ -1,17 +1,15 @@
 ---
 title: Best practices for Microsoft Entra roles
 description: Best practices for using Microsoft Entra roles.
-
-author: rolyon
-manager: amycolannino
+author: barclayn
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.topic: conceptual
-ms.date: 09/14/2023
-ms.author: rolyon
+ms.topic: best-practice
+ms.date: 03/30/2025
+ms.author: barclayn
 ms.reviewer: vincesm
-ms.custom: it-pro
-
+ms.custom: it-pro, sfi-ga-nochange, sfi-image-nochange
 ---
 
 # Best practices for Microsoft Entra roles
@@ -28,7 +26,7 @@ Follow these steps to help you find the right role.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
-1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
+1. Navigate to **Entra ID** > **Roles & admins** > **All roles**.
 
 1. Use the **Service** filter to narrow down the list of roles.
 
@@ -42,13 +40,13 @@ Follow these steps to help you find the right role.
 
 One of the principles of least privilege is that access should be granted only when required. [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) lets you grant just-in-time access to your administrators. Microsoft recommends that you use PIM in Microsoft Entra ID. Using PIM, a user can be made eligible for a Microsoft Entra role where they can then activate the role for a limited time when needed. Privileged access is automatically removed when the timeframe expires. You can also configure PIM settings to require approval, receive notification emails when someone activates their role assignment, or other role settings. Notifications provide an alert when new users are added to highly privileged roles. For more information, see [Configure Microsoft Entra role settings in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md).
 
-## 3. Turn on multi-factor authentication for all your administrator accounts
+## 3. Turn on multifactor authentication for all your administrator accounts
 
-[Based on our studies](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/your-pa-word-doesn-t-matter/ba-p/731984), your account is 99.9% less likely to be compromised if you use multi-factor authentication (MFA). 
+[Based on our studies](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/your-pa-word-doesn-t-matter/ba-p/731984), your account is 99.9% less likely to be compromised if you use multifactor authentication (MFA). 
  
 You can enable MFA on Microsoft Entra roles using two methods:
 - [Role settings](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md) in Privileged Identity Management
-- [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md)
+- [Conditional Access](~/identity/conditional-access/policy-old-require-mfa-admin.md)
 
 ## 4. Configure recurring access reviews to revoke unneeded permissions over time
 
@@ -62,7 +60,7 @@ For information about access reviews for roles, see [Create an access review of 
 
 ## 5. Limit the number of Global Administrators to less than 5
 
-As a best practice, Microsoft recommends that you assign the Global Administrator role to **fewer than five** people in your organization. Global Administrators essentially have unrestricted access, and it is in your best interest to keep the attack surface low. As stated previously, all of these accounts should be protected with multi-factor authentication.
+As a best practice, Microsoft recommends that you assign the Global Administrator role to **fewer than five** people in your organization. Global Administrators essentially have unrestricted access, and it is in your best interest to keep the attack surface low. As stated previously, all of these accounts should be protected with multifactor authentication.
 
 If you have 5 or more privileged Global Administrator role assignments, a **Global Administrators** alert card is displayed on the Microsoft Entra Overview page to help you monitor Global Administrator role assignments.
 
@@ -70,7 +68,7 @@ If you have 5 or more privileged Global Administrator role assignments, a **Glob
 
 By default, when a user signs up for a Microsoft cloud service, a Microsoft Entra tenant is created and the user is assigned the Global Administrators role. Users who are assigned the Global Administrator role can read and modify almost every administrative setting in your Microsoft Entra organization. With a few exceptions, Global Administrators can also read and modify all configuration settings in your Microsoft 365 organization. Global Administrators also have the ability to elevate their access to read data.
 
-Microsoft recommends that you keep two break glass accounts that are permanently assigned to the Global Administrator role. Make sure that these accounts don't require the same multi-factor authentication mechanism as your normal administrative accounts to sign in, as described in [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md). 
+[!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
 ## 6. Limit the number of privileged role assignments to less than 10
 
@@ -86,11 +84,11 @@ Some roles include privileged permissions, such as the ability to update credent
 
 If you have an external governance system that takes advantage of groups, then you should consider assigning roles to Microsoft Entra groups, instead of individual users. You can also manage role-assignable groups in PIM to ensure that there are no standing owners or members in these privileged groups. For more information, see [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
 
-You can assign an owner to role-assignable groups. That owner decides who is added to or removed from the group, so indirectly, decides who gets the role assignment. In this way, a Global Administrator or Privileged Role Administrator can delegate role management on a per-role basis by using groups. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
+You can assign an owner to role-assignable groups. That owner decides who is added to or removed from the group, so indirectly, decides who gets the role assignment. In this way, a Privileged Role Administrator can delegate role management on a per-role basis by using groups. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
 
 ## 8. Activate multiple roles at once using PIM for Groups
 
-It may be the case that an individual has five or six eligible assignments to Microsoft Entra roles through PIM. They'll have to activate each role individually, which can reduce productivity. Worse still, they can also have tens or hundreds of Azure resources assigned to them, which aggravates the problem.
+It might be the case that an individual has five or six eligible assignments to Microsoft Entra roles through PIM. They'll have to activate each role individually, which can reduce productivity. Worse still, they can also have tens or hundreds of Azure resources assigned to them, which aggravates the problem.
  
 In this case, you should use [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). Create a PIM for Groups and grant it permanent access to multiple roles (Microsoft Entra ID and/or Azure). Make that user an eligible member or owner of this group. With just one activation, they'll have access to all the linked resources.
 

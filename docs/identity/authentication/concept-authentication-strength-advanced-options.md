@@ -1,24 +1,22 @@
 ---
 title: Overview of custom authentication strengths and advanced options for FIDO2 security keys and certificate-based authentication in Microsoft Entra ID
 description: Learn how admins can create custom authentication strengths with advanced options for FIDO2 security keys and certificate-based authentication.
-
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 03/25/2024
-
+ms.topic: article
+ms.date: 03/04/2025
 ms.author: justinha
 author: inbarckms
-manager: amycolannino
+manager: dougeby
 ms.reviewer: inbarc
+ms.custom: sfi-image-nochange
 ---
 # Custom Conditional Access authentication strengths
 
 Administrators can also create up to 15 of their own custom authentication strengths to exactly suit their requirements. A custom authentication strength can contain any of the supported combinations in the preceding table. 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
@@ -45,7 +43,7 @@ Next to **Allowed FIDO2 Keys** click **+**, copy the AAGUID value, and click **S
 
 ## Certificate-based authentication advanced options
 
-In the [Authentication methods policy](how-to-certificate-based-authentication.md#step-3-configure-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
+In the [Authentication methods policy](how-to-certificate-based-authentication.md#step-3-configure-an-authentication-binding-policy), you can configure whether certificates are bound in the system to single-factor or multifactor authentication protection levels, based on the certificate issuer or policy OID. You can also require single-factor or multifactor authentication certificates for specific resources, based on Conditional Access authentication strength policy.
 
 By using authentication strength advanced options, you can require a specific certificate issuer or policy OID to further restrict sign-ins to an application. 
 
@@ -56,7 +54,7 @@ The next sections show how to configure advanced options for CBA by using the Mi
 ### Microsoft Entra admin center
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Administrator.
-1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
+1. Browse to **Entra ID** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive **Name** for your new authentication strength.
 1. Optionally provide a **Description**.
@@ -64,16 +62,18 @@ The next sections show how to configure advanced options for CBA by using the Mi
 
    :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/certificate-advanced-options.png" alt-text="Screenshot showing Advanced options for certificate-based authentication.":::
     
-1. You can select certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor.
+1. You can select certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs. The drop-down menu lists all certificate authorities from the tenant irrespective of whether they're single-factor or multifactor. Certificate issuers can be configured either by using the drop down **Certificate issuers from the certificate authorities in your tenant** or by using **Other certificate issuer by SubjectkeyIdentifier** for scenarios where the certificate you would like to use is not uploaded to the Certificate authorities in your tenant. One such example is external user scenarios, where the user could be authenticating in their home tenant and auth strength is being enforced on the resource tenant.
 
    :::image type="content" border="true" source="./media/concept-authentication-strength-advanced-options/or-other-issuer.png" alt-text="Screenshot showing the configuration options - certificate issuers from the drop-down menu, type the certificate issuers and type the allowed policy OIDs .":::
 
-   - If both **Allowed certificate issuer** AND **Allowed Policy OID** are configured, there's a AND relationship. The user has to use a certificate that satisfies both conditions.  
-   - Between the **Allowed certificate issuer** list and the **Allowed Policy OID** list, there's an OR relationship. The user has to use a certificate that satisfied one of the issuers or policy OIDs.
-   - Use **Other certificate issuer by SubjectkeyIdentifier** if the certificate you would like to use is not uploaded to the **Certificate authorities** in your tenant. This setting can be used for external user scenarios, if the user is authenticating in their home tenant.
+   - If both attributes Certificate issuers AND  Policy OIDs are configured, there's a AND relationship and the user has to use a certificate that has atleast one of the issuers AND one of the policy OID from the list to satisfy the authentication strength.
+   - If only Certificate issuers attribute is configured then the user has to use a certificate that has atleast one of the issuers to satisfy the authentication strength .
+   - If only Policy OIDs attribute is configured then the user has to use a certificate that has atleast one of the policy OIDs to satisfy the authentication strength.
+
+  >[!NOTE]
+  > We allow a max of 5 issuers and 5 OIDs to be configured in authentication strengths configuration.
 
 1. Click **Next** to review the configuration, then click **Create**.
-
 
 ### Microsoft Graph
 

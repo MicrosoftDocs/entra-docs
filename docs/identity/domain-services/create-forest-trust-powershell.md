@@ -1,22 +1,24 @@
 ---
-title: Create a Microsoft Entra Domain Services forest trust using Azure PowerShell | Microsoft Docs
+title: Create a Microsoft Entra Domain Services forest trust using Azure PowerShell | Microsoft Learn
 description: In this article, learn how to create and configure a Microsoft Entra Domain Services forest trust to an on-premises Active Directory Domain Services environment using Azure PowerShell.
 author: justinha
-manager: amycolannino
+manager: dougeby
 
 ms.service: entra-id
 ms.subservice: domain-services
-ms.topic: conceptual
-ms.date: 03/11/2024
+ms.topic: how-to
+ms.date: 06/30/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services forest and one-way outbound trust from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest using Azure PowerShell to provide authentication and resource access between forests.
 ---
 
-# Create a Microsoft Entra Domain Services forest trust to an on-premises domain using Azure PowerShell
+# Create a Microsoft Entra Domain Services forest trust to an on-premises domain using Azure PowerShell 
 
-In environments where you can't synchronize password hashes, or you have users that exclusively sign in using smart cards so they don't know their password, you can create a one-way outbound trust from Microsoft Entra Domain Services to one or more on-premises AD DS environments. This trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. In this case, on-premises password hashes are never synchronized.
+Organizations often create a trust to improve user collaboration when they might manage identities in a hybrid environment, or they plan for a merger or acquisition. Microsoft Entra Domain Services always supported one-way, outbound trusts from a managed domain to another domain. Currently in preview, you can also create one-way inbound trusts or two-way trusts. 
+
+For example, in environments where you can't synchronize password hashes, or you have users that exclusively sign in using smart cards so they don't know their password, you can create a one-way outbound trust from Microsoft Entra Domain Services to one or more on-premises AD DS environments. This trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. In this case, on-premises password hashes are never synchronized.
 
 ![Diagram of forest trust from Domain Services to on-premises AD DS](./media/create-forest-powershell/forest-trust-relationship.png)
 
@@ -85,7 +87,7 @@ New-MgServicePrincipal
 
 ## Create a managed domain 
 
-To create a managed domain, you use the `New-AaddsResourceForest` script. This script is part of a wider set of commands that support managed domains, including create the one-way bound forest in a following section. These scripts are available from the [PowerShell Gallery](https://www.powershellgallery.com/) and are digitally signed by the Microsoft Entra engineering team.
+To create a managed domain, you use the `New-AaddsResourceForest` script. This script is part of a wider set of commands that support managed domains. They're available from the [PowerShell Gallery](https://www.powershellgallery.com/). They're digitally signed by the Microsoft Entra engineering team.
 
 1. First, create a resource group using the [New-AzResourceGroup][New-AzResourceGroup] cmdlet. In the following example, the resource group is named *myResourceGroup* and is created in the *westus* region. Use your own name and desired region:
 
@@ -125,7 +127,7 @@ To create a managed domain, you use the `New-AaddsResourceForest` script. This s
 1. Now create a managed domain forest using the `New-AaddsResourceForest` script. The following example creates a forest named *addscontoso.com* and creates a workload subnet. Provide your own parameter names and IP address ranges or existing virtual networks.
 
     ```powershell
-    New-AzureAaddsForest `
+    New-AaddsResourceForest `
         -azureSubscriptionId <subscriptionId> `
         -aaddsResourceGroupName "myResourceGroup" `
         -aaddsLocation "WestUS" `
@@ -429,7 +431,7 @@ For more conceptual information about forest types in Domain Services, see [How 
 
 [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
 
-[Get-AzureRMSubscription]: /powershell/module/azurerm.profile/get-azurermsubscription
+[Get-AzureRMSubscription]: /powershell/module/az.accounts/get-azsubscription
 
 [Install-Script]: /powershell/module/powershellget/install-script
 

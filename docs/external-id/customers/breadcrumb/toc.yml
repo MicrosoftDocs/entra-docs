@@ -7,12 +7,12 @@ items:
     tocHref: /entra/external-id/
     topicHref: /entra/external-id/index
     items:
-    - name: External ID for external apps
+    - name: External ID in external tenants
       tocHref: /entra/external-id/customers/
-      topicHref: /entra/external-id/customers/index
-    - name: External ID for external apps
+      topicHref: /entra/external-id/index
+    - name: External ID in external tenants
       tocHref: /entra/identity-platform/
-      topicHref: /entra/external-id/customers/index
-    - name: External ID for external apps
+      topicHref: /entra/external-id/index
+    - name: External ID in external tenants
       tocHref: /entra/fundamentals/
-      topicHref: /entra/external-id/customers/index
+      topicHref: /entra/external-id/index

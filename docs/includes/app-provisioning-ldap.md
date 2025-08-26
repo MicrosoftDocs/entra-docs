@@ -138,7 +138,7 @@ If you have already downloaded the provisioning agent and configured it for anot
  9. Wait for the Microsoft Entra provisioning agent configuration wizard and then select **Next**.
  10. In the **Select Extension** step, select **On-premises application provisioning** and then select **Next**.   
  11. The provisioning agent will use the operating system's web browser to display a popup window for you to authenticate to Microsoft Entra ID, and potentially also your organization's identity provider. If you're using Internet Explorer as the browser on Windows Server, then you may need to add Microsoft web sites to your browser's trusted site list to allow JavaScript to run correctly.
- 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have the Hybrid Identity Administrator or Global Administrator role.
+ 12. Provide credentials for a Microsoft Entra administrator when you're prompted to authorize. The user is required to have at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role.
  13. Select **Confirm** to confirm the setting. Once installation is successful, you can select **Exit**, and also close the Provisioning Agent Package installer.
  
 ## Configure the On-premises ECMA app
@@ -180,6 +180,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |Autosync timer (minutes)|120|
      |Secret Token|Enter your secret token here. It should be 12 characters minimum.|
      |Extension DLL|For the generic LDAP connector, select **Microsoft.IAM.Connector.GenericLdap.dll**.|
+
 4. On the **Connectivity** page, you'll configure how the ECMA Connector Host will communicate with the directory server, and set some of the configuration options. Fill in the boxes with the values specified in the table that follows the image and select **Next**. When you select **Next**, the connector will query the directory server for its configuration.
      [![Screenshot that shows the Connectivity page.](.\media\app-provisioning-ldap\create-2.png)](.\media\app-provisioning-ldap\create-2.png#lightbox)</br>
      
@@ -222,6 +223,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |Export|Run profile that will export data to the LDAP directory server. This run profile is required.|
      |Full import|Run profile that will import all data from LDAP sources specified earlier. This run profile is required.|
      |Delta import|Run profile that will import only changes from LDAP since the last full or delta import. Only enable this run profile if you have confirmed that the directory server meets the necessary requirements. For more information, see the [Generic LDAP Connector reference](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap). |
+
  12. On the **Export** page, leave the defaults unchanged and click **Next**. 
  13. On the **Full Import** page,  leave the defaults unchanged and click **Next**. 
  1. On the **DeltaImport** page, if present, leave the defaults unchanged and click **Next**.
@@ -465,7 +467,7 @@ Many LDAP directories, such as Active Directory, include a command that outputs 
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning. 
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the Application Administrator, Cloud Application Administrator or Global Administrator role, for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
 
 If there are existing users in the LDAP directory, then you should create application role assignments for those existing users in Microsoft Entra ID. To learn more about how to create application role assignments in bulk using `New-MgServicePrincipalAppRoleAssignedTo`, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
 

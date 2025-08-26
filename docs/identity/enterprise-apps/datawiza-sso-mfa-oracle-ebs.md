@@ -9,8 +9,7 @@ ms.topic: how-to
 ms.date: 01/31/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
+ms.custom: not-enterprise-apps, sfi-image-nochange
 #customer intent: I'm an IT administrator responsible for securing access to Oracle EBS. I want to configure Microsoft Entra multifactor authentication (MFA) and single sign-on (SSO) with Datawiza. My goal is to provide secure and seamless access for device users and to apps from any location.
 ---
 
@@ -25,7 +24,7 @@ Here are some benefits of integrating applications with Microsoft Entra ID via D
 * [Multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) prompts users during sign-in for forms of identification, such as a code on their device or a fingerprint scan.
 * [Conditional Access](~/identity/conditional-access/overview.md) provides policies as if/then statements. If a user wants to access a resource, then they must complete an action.
 * [Datawiza](https://www.microsoft.com/security/blog/2022/05/17/easy-authentication-and-authorization-in-azure-active-directory-with-no-code-datawiza/) provides authentication and authorization in Microsoft Entra ID with no code. Use web applications such as Oracle JDE, Oracle EBS, Oracle Siebel, and home-grown apps.
-* Use the [Datawiza Cloud Management Console](https://console.datawiza.com) (DCMC) to manage access to applications in public clouds and on-premises.
+* Use the [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com) to manage access to applications in public clouds and on-premises.
 
 This article focuses on modern identity providers (IdPs) integrating with the legacy Oracle EBS application. The application requires a set of Oracle EBS service account credentials and an Oracle EBS database container (DBC) file.
 
@@ -44,7 +43,7 @@ To complete the steps in this article, you need:
 
 * An Azure subscription. If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/).
 * A Microsoft Entra tenant linked to the Azure subscription.
-* A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role.
+* A [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) role.
 * Docker and Docker Compose, to run DAP. For more information, see [Get Docker](https://docs.docker.com/get-docker/) and [Docker Compose Overview](https://docs.docker.com/compose/install/).
 * User identities synchronized from an on-premises directory to Microsoft Entra ID, or created in Microsoft Entra ID and flowed back to your on-premises directory. For more information, see [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md).
 * An Oracle EBS environment.
@@ -108,8 +107,6 @@ In the Oracle EBS Linux environment, generate a new DBC file for DAP. You need t
 1. For **EBS DBC Content**, use the content that you copied.
 1. Select **Next**.
 
-   [![Screenshot of entries and selections for adding an application.](./media/datawiza-sso-mfa-oracle-ebs/add-application.png)](./media/datawiza-sso-mfa-oracle-ebs/add-application.png#lightbox)
-
 ### IdP configuration
 
 Use the DCMC one-click integration to help you complete Microsoft Entra configuration. With this feature, you can reduce management costs and the likelihood of configuration errors.
@@ -119,8 +116,6 @@ Use the DCMC one-click integration to help you complete Microsoft Entra configur
 ### Docker Compose file
 
 Configuration on the management console is complete. You're prompted to deploy DAP with your application. Make a note of the deployment Docker Compose file. The file includes the DAP image, `PROVISIONING_KEY`, and `PROVISIONING_SECRET`. DAP uses this information to pull the latest configuration and policies from DCMC.
-
-   ![Screenshot of Docker information.](./media/datawiza-sso-mfa-oracle-ebs/docker-information.png)
 
 ### SSL configuration
 
@@ -147,12 +142,11 @@ Configuration on the management console is complete. You're prompted to deploy D
 
 ### Optional: Enable multifactor authentication on Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enable multifactor authentication in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-2. Browse to **Identity** > **Overview** > **Properties** tab.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+2. Browse to **Entra ID** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.
 5. Select **Save**.
@@ -161,5 +155,4 @@ To provide more security for sign-ins, you can enable multifactor authentication
 
 - [Video: Enable SSO and MFA for Oracle JD Edwards with Microsoft Entra ID via Datawiza](https://www.youtube.com/watch?v=_gUGWHT5m90)
 - [Tutorial: Configure Secure Hybrid Access with Microsoft Entra ID and Datawiza](./datawiza-configure-sha.md)
-- [Tutorial: Configure Azure AD B2C with Datawiza to provide secure hybrid access](/azure/active-directory-b2c/partner-datawiza)
 - [Datawiza user guides](https://docs.datawiza.com/)

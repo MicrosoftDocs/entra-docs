@@ -1,26 +1,25 @@
 ---
-title: Find and address gaps in strong authentication coverage for your administrators in Microsoft Entra ID 
+title: Find and address gaps in strong authentication coverage for your administrators in Microsoft Entra ID
 description: Learn how to find and address gaps in strong authentication coverage for your administrators in Microsoft Entra ID
-
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 02/22/2022
-
+ms.topic: article
+ms.date: 03/04/2025
 ms.author: justinha
-author: inbarckMS 
-manager: amycolannino
+author: inbarckMS
+manager: dougeby
 ms.reviewer: inbarc
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 ---
 # Find and address gaps in strong authentication coverage for your administrators
 
-Requiring multifactor authentication (MFA) for the administrators in your tenant is one of the first steps you can take to increase the security of your tenant. In this article, we'll cover how to make sure all of your administrators are covered by multifactor authentication.
+Requiring multifactor authentication (MFA) for the administrators in your tenant is one of the first steps you can take to increase the security of your tenant. In this article, we'll cover how to ensure all of your administrators are covered by multifactor authentication.
 
 <a name='detect-current-usage-for-azure-ad-built-in-administrator-roles'></a>
 
 ## Detect current usage for Microsoft Entra Built-in administrator roles
 
-The [Microsoft Entra ID Secure Score](~/identity/monitoring-health/concept-identity-secure-score.md) provides a score for **Require MFA for administrative roles** in your tenant. This improvement action tracks the MFA usage of Global administrator, Security administrator, Exchange administrator, and SharePoint administrator. 
+The [Microsoft Entra ID Secure Score](~/identity/monitoring-health/concept-identity-secure-score.md) provides a score for **Require MFA for administrative roles** in your tenant. This improvement action tracks the MFA usage of those with [administrator roles](../role-based-access-control/permissions-reference.md). 
 
 There are different ways to check if your admins are covered by an MFA policy. 
 
@@ -50,10 +49,10 @@ If you find administrators who aren't protected by multifactor authentication, y
 
 ## Use Passwordless and phishing resistant authentication methods for your administrators
 
-After your admins are enforced for multifactor authentication and have been using it for a while, it is time to raise the bar on strong authentication and use Passwordless and phishing resistant authentication method: 
+After your admins are enforced for multifactor authentication and have been using it for a while, it's time to increase authentication strength and use Passwordless and phishing resistant authentication methods: 
 
 - [Phone Sign-in (with Microsoft Authenticator)](concept-authentication-authenticator-app.md)
-- [FIDO2](concept-authentication-passwordless.md#fido2-security-key-providers)
+- [FIDO2](concept-authentication-passwordless.md)
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
 
 You can read more about these authentication methods and their security considerations in [Microsoft Entra authentication methods](concept-authentication-methods.md).

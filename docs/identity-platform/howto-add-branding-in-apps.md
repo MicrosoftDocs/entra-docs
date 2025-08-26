@@ -1,15 +1,15 @@
 ---
-title: Sign in with Microsoft branding guidelines | Microsoft Entra ID
+title: Sign in with Microsoft branding guidelines
 description: Learn about application branding guidelines for Microsoft identity platform.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
 ms.custom: signin_art
 ms.date: 12/15/2023
-ms.reviewer: arielgo
+ms.reviewer: 
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As a developer integrating with Microsoft Entra ID, I want to understand the branding guidelines for applications, so that I can correctly use the appropriate Microsoft logo and images in my app.
 ---
 
@@ -113,4 +113,4 @@ Microsoft UI string translations can be used to ensure that translations in the 
 
 ## Navigation Do’s and Don’ts
 
-**DO** provide a way for users to sign out and switch to another user account. While most people have a single personal account from Microsoft/Facebook/Google/Twitter, people are often associated with more than one organization. Support for multiple signed-in users is coming soon.
+**DO** provide a way for users to sign out and switch to another user account. While most people have a single personal account from Microsoft/Facebook/Google/X, people are often associated with more than one organization. Support for multiple signed-in users is coming soon.

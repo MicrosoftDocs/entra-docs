@@ -1,24 +1,21 @@
 ---
 title: 'Microsoft Entra Connect Sync: Make a change to the default configuration'
 description: Walks you through how to make a change to the configuration in Microsoft Entra Connect Sync.
-
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 7b9df836-e8a5-4228-97da-2faec9238b31
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref
+ms.custom: has-azure-ad-ps-ref, sfi-image-nochange
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
-
-
+ms.author: jomondi
 ---
 # Microsoft Entra Connect Sync: Make a change to the default configuration
 The purpose of this article is to walk you through how to make changes to the default configuration in Microsoft Entra Connect Sync. It provides steps for some common scenarios. With this knowledge, you should be able to make simple changes to your own configuration based on your own business rules.
 
 > [!WARNING]
-> If you make changes to the default out-of-box sync rules then these changes will be overwritten the next time Microsoft Entra Connect is updated, resulting in unexpected and likely unwanted synchronization results.
+> If you make changes to the default out-of-box sync rules then these changes are overwritten the next time Microsoft Entra Connect is updated, resulting in unexpected and likely unwanted synchronization results.
 >
 > The default out-of-box sync rules have a thumbprint. If you make a change to these rules, the thumbprint is no longer matching. You might have problems in the future when you try to apply a new release of Microsoft Entra Connect. Only make changes the way it is described in this article.
 

@@ -1,46 +1,51 @@
 ---
-title: Create simpler and faster rules for dynamic groups
-description: How to optimize your membership rules to automatically populate groups.
+title: Create Simpler and Faster Rules for Dynamic Membership Groups
+description: Learn how to optimize your membership rules to automatically populate groups.
 
 author: barclayn
-manager: amycolannino
+manager: pmwongera
 ms.service: entra-id
 ms.subservice: users
-ms.topic: conceptual
-ms.date: 11/07/2023
+ms.topic: article
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: jordandahl
 ms.custom: it-pro
 ---
 
 
-# Create simpler, more efficient rules for dynamic groups in Microsoft Entra ID
+# Create simpler, more efficient rules for dynamic membership groups in Microsoft Entra ID
 
-The team for Microsoft Entra ID, part of Microsoft Entra, receives reports of incidents related to dynamic groups and the processing time for their membership rules. This article uses that reported information to present the most common methods by which our engineering team helps customers to simplify their membership rules. Simpler and more efficient rules result in better dynamic group processing times. When writing membership rules for dynamic groups, follow these steps to ensure that your rules are as efficient as possible.
+This article discusses the most common methods that you can use to simplify your rules for dynamic membership groups. Rules that are simpler and more efficient result in better processing times for dynamic groups.
 
+When you're writing membership rules for dynamic membership groups, follow the tips in this article to ensure that you create these rules as efficiently as possible.
 
-## Minimize use of MATCH
+## Minimize use of the -match operator
 
-Minimize the usage of the `match` operator in rules as much as possible. Instead, explore if it's possible to use the `startswith` or `-eq` operators. Considering using other properties that allow you to write rules to select the users you want to be in the group without using the `-match` operator. For example, if you want a rule for the group for all users whose city is Lagos, then instead of using rules like:
+Minimize your use of the `-match` operator in rules as much as possible. Instead, explore if it's possible to use the `-startswith` or `-eq` operator. Consider using other properties that allow you to write rules to select the users for a group without using the `-match` operator.
+
+For example, if you want a rule for the group that contains all users whose city is Lagos, don't use a rule like these:
 
 - `user.city -match "ago"`
 - `user.city -match ".*?ago.*"`
 
-It's better to use rules like:
+It's better to use a rule like this example:
 
-- `user.city -startswith "Lag"` 
+- `user.city -startswith "Lag"`
 
 Or, best of all:
 
 - `user.city -eq "Lagos"`
 
-## Minimize use of CONTAINS
+## Minimize use of the -contains operator
 
-Similar to the use of MATCH. Minimize the usage of the `contains` operator in rules as much as possible. Instead, explore if it's possible to use the `startswith` or `-eq` operators. Utilizing CONTAINS can increase processing times, especially for tenants with many dynamic groups.
+As with `-match`, minimize your use of the `-contains` operator in rules as much as possible. Instead, explore if it's possible to use the `-startswith` or `-eq` operator. Using `-contains` can increase processing times, especially for tenants that have many dynamic membership groups.
 
-## Use fewer OR operators
+## Use fewer -or operators
 
-In your rule, identify when it uses various values for the same property linked together with `-or` operators. Instead, use the `-in` operator to group them into a single criterion to make the rule easier to evaluate. For example, instead of having a rule like this:
+Identify when your rule uses various values for the same property, linked together with `-or` operators. Instead, use the `-in` operator to group them into a single criterion. A single criterion makes the rule easier to evaluate.
+
+For example, don't use a rule like this one:
 
 ```
 (user.department -eq "Accounts" -and user.city -eq "Lagos") -or 
@@ -50,30 +55,30 @@ In your rule, identify when it uses various values for the same property linked 
 (user.department -eq "Accounts" -and user.city -eq "Port Harcourt")
 ```
 
-It's better to have a rule like this:
+It's better to use a rule like this example:
 
 - `user.department -eq "Accounts" -and user.city -in ["Lagos", "Ibadan", "Kaduna", "Abuja", "Port Harcourt"]`
 
+Conversely, identify similar subcriteria with the same property not equal to various values that are linked with `-and` operators. Then use the `-notin` operator to group them into a single criterion to make the rule easier to understand and evaluate.
 
-Conversely, identify similar sub criteria with the same property not equal to various values, that are linked with `-and` operators. Then use the `-notin` operator to group them into a single criterion to make the rule easier to understand and evaluate. For example, instead of using a rule like this:
+For example, don't use a rule like this one:
 
 - `(user.city -ne "Lagos") -and (user.city -ne "Ibadan") -and (user.city -ne "Kaduna") -and (user.city -ne "Abuja") -and (user.city -ne "Port Harcourt")`
 
-It's better to use a rule like this:
+It's better to use a rule like this example:
 
 - `user.city -notin ["Lagos", "Ibadan", "Kaduna", "Abuja", "Port Harcourt"]`
 
 ## Avoid redundant criteria
 
-Ensure that you aren't using redundant criteria in your rule. For example, instead of using a rule like this:
+Ensure that you aren't using redundant criteria in your rule. For example, don't use a rule like this one:
 
 - `user.city -eq "Lagos" or user.city -startswith "Lag"`
 
-It's better to use a rule like this:
+It's better to use a rule like this example:
 
 - `user.city -startswith "Lag"`
 
+## Related content
 
-## Next steps
-
-- [Create a dynamic group](groups-dynamic-membership.md)
+- [Manage rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-membership.md)

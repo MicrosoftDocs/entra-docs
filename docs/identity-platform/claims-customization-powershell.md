@@ -1,19 +1,20 @@
 ---
-title: Claims customization using PowerShell
+title: Claims customization using PowerShell and Claims Mapping Policy
 description: This article describes how to customize claims in Microsoft Entra ID using PowerShell
-services: active-directory
 documentationcenter: .net
-author: rahul-nagraj
+author: cilwerner
+manager: pmwongera
 ms.service: identity-platform
 
 ms.topic: how-to
 ms.date: 11/02/2023
-ms.author: rahulnagraj
-ms.reviewer: jeedes
+ms.author: cwerner
+ms.reviewer: 
 ms.custom: aaddev
+#Customer intent: As a developer, I want to customize the claims emitted in tokens for a specific app in my tenant using PowerShell.
 ---
 
-# Customize claims emitted in tokens for a specific app in a tenant using PowerShell
+# Claims customization using PowerShell and Claims Mapping Policy
 
 A claim is information that an identity provider states about a user inside the token they issue for that user. Claims customization is used by tenant admins to customize the claims emitted in tokens for a specific application in their tenant. You can use claims-mapping policies to:
 
@@ -24,20 +25,20 @@ A claim is information that an identity provider states about a user inside the 
 Claims customization supports configuring claim-mapping policies for the SAML, OAuth, and OpenID Connect protocols.
 
 > [!NOTE]
-> This feature replaces and supersedes the [claims customization](saml-claims-customization.md) offered through the Microsoft Entra admin center. Customizing claims for an application using the Microsoft Graph/PowerShell method detailed in this document means that tokens issued for that application will ignore the configuration in the Microsoft Entra admin center.
-In this how-to guide, we'll cover a few common scenarios that can help you understand how to use the [claims-mapping policy type](reference-claims-mapping-policy-type.md).
+> Claims Mapping Policy supersedes both Custom Claims policy and the [claims customization](saml-claims-customization.md) offered through the Microsoft Entra admin center. Customizing claims for an application using the Claims Mapping Policy means that tokens issued for that application will ignore the configuration in Custom Claims Policy or the configuration in [claims customization](saml-claims-customization.md) blade in the Microsoft Entra admin center. 
 
 ## Prerequisites
 
-1. Learn about [how to get a Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md).
-1. Download the latest [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
+- Learn about [how to get a Microsoft Entra tenant](~/external-id/customers/quickstart-tenant-setup.md).
+- Download the latest [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 ## Get started
 
 In the following examples, you create, update, link, and delete policies for service principals. Claims-mapping policies can only be assigned to service principal objects.
+
 When creating a claims-mapping policy, you can also emit a claim from a directory extension attribute in tokens. Use `ExtensionID` for the extension attribute instead of ID in the `ClaimsSchema` element. For more info on extension attributes, see [Using directory extension attributes](~/identity-platform/schema-extensions.md).
 
-> [!Note]
+> [!NOTE]
 > The [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) is required to configure claims-mapping policies.
 
 Open a terminal and run the following command to sign in to your Microsoft Entra admin account. Run this command each time you start a new session.
@@ -45,7 +46,7 @@ Open a terminal and run the following command to sign in to your Microsoft Entra
 ```PowerShell
 Import-Module Microsoft.Graph.Identity.SignIns
 
-Connect-MgGraph -Scopes "Policy.ReadWrite.ApplicationConfiguration"
+Connect-MgGraph -Scopes "Policy.ReadWrite.ApplicationConfiguration", "Policy.Read.All"
 ```
 
 Now you can create a claims mapping policy and assign it to a service principal. Refer to the following examples for common scenarios:
@@ -58,7 +59,7 @@ After creating a claims mapping policy, configure your application to acknowledg
 
 ### Omit the basic claims from tokens
 
-In this example, you create a policy that removes the [basic claim set](reference-claims-mapping-policy-type.md#claim-sets) from tokens issued to linked service principals.
+In this example, you create a policy that removes the [basic claim set](reference-claims-customization.md#claim-sets) from tokens issued to linked service principals.
 
 1. Create a claims-mapping policy. This policy, linked to specific service principals, removes the basic claim set from tokens.
 
@@ -129,6 +130,7 @@ To assign the policy to the service principal you will need the `ObjectId` of yo
     New-MgServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId <servicePrincipalId> -BodyParameter @{"@odata.id" = "https://graph.microsoft.com/v1.0/policies/claimsMappingPolicies/<claimsMappingPolicyId>"}
     ```
 
-## See also
+## Related content
 
+- [How to: Customize claims with the claims mapping policy in Microsoft Graph](/graph/how-to-claims-customization)
 - [Microsoft Graph identity SignIns](/powershell/module/microsoft.graph.identity.signins)

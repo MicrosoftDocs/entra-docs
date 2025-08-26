@@ -1,18 +1,15 @@
 ---
-title: 'Configure an OpenID Connect OAuth application from Microsoft Entra app gallery'
+title: Configure an OpenID Connect OAuth application from Microsoft Entra app gallery
 description: Steps to Configure an OpenID Connect OAuth application from Microsoft Entra app gallery.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
-ms.custom: 
-
+ms.topic: how-to
+ms.date: 03/25/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenID Connect OAuth so that I can control who has access to OpenID Connect OAuth, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 # Configure an OpenID Connect OAuth application from Microsoft Entra app gallery
@@ -20,7 +17,7 @@ ms.custom:
 ## Process of adding an OpenID application from the gallery
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+1. Browse to **Entra ID** > **Enterprise apps**.
 
     ![The Enterprise applications blade](common/enterprise-applications.png)
 
@@ -33,7 +30,7 @@ ms.custom:
     ![Openid in the results list](common/search-new-app.png)
 
 
-1. In the Application name page, click on **Sign up** button.
+1. In the Application name page, select **Sign up** button.
 
     ![Add button](./media/openidoauth-tutorial/addbutton.png)
 
@@ -45,10 +42,10 @@ ms.custom:
 6. After successful authentication, you accept the consent from the consent page. After that, the application home page appears.
 
     > [!NOTE]
-    > You can add only one instance of the application. If you have already added one and tried to provide the consent again, it will not be added again in the tenant. So logically, you can use only one app instance in the tenant.
+    > You can add only one instance of the application. If you have already added one and tried to provide the consent again, it isn't added again in the tenant. So logically, you can use only one app instance in the tenant.
 
 1. Follow the below video to add an OpenID application from the gallery.
-    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4HoNI]
+    >[!VIDEO https://learn-video.azurefd.net/vod/player?id=4454201b-3a5a-4176-a259-dfd32e8ac2b7]
 
 ## Authentication flow using OpenID Connect
 
@@ -96,21 +93,19 @@ The following steps show you how the consent experience works for the applicatio
 
 1. Assume you have a web client application that needs to request specific permissions to access a resource or API. The Azure portal is used to declare permission requests at configuration time. Like other configuration settings, they become part of the application's Microsoft Entra registrations. For the Permission request path you need the follow the below steps:
 
-    a. Click on the **App registrations** from the left side of menu and open your application by typing the application name in search box.
+    a. Select the **App registrations** from the left side of menu and open your application by typing the application name in search box.
 
     ![Screenshot that shows "App registrations" selected from the left-side menu and the "Application I D" search box highlighted.](./media/openidoauth-tutorial/application.png)
 
-    b. Click **View API Permissions**.
+    b. Select **View API Permissions**.
 
     ![Screenshot that shows the "Call A P I" page with the "View A P I Permissions" button selected.](./media/openidoauth-tutorial/api-permission.png)
 
-    c. Click on **Add a permission**.
+    c. Select **Add a permission**.
 
     ![Screenshot that shows the "A P I permissions" section with the "Add a permission" button selected.](./media/openidoauth-tutorial/add-permission.png)
 
-    d. Click On **Microsoft Graph**.
-
-    ![Screenshot that shows the "Request A P I permissions" page with the "Microsoft A P I" tab and "Microsoft Graph" tile selected.](./media/openidoauth-tutorial/microsoft-graph.png)
+    d. Select **Microsoft Graph**.
 
     e. Select required options from **Delegated permissions** and **Application Permissions**.
 
@@ -118,7 +113,7 @@ The following steps show you how the consent experience works for the applicatio
 
 2. Consider that your application's permissions have been updated. The application is running, and a user is about to use it for the first time. First the application needs to get an authorization code from the Microsoft Entra ID /authorize endpoint. The authorization code can then be used to acquire a new access and refresh token.
 
-3. If the user is not already authenticated, the Microsoft Entra ID /authorize endpoint prompts for sign-in.
+3. If the user isn't already authenticated, the Microsoft Entra ID /authorize endpoint prompts for sign-in.
 
     ![A Screenshot of the sign-in prompt for the account](./media/openidoauth-tutorial/authentication.png)
 
@@ -132,9 +127,7 @@ A regular user can consent to some permissions. Other permissions require a tena
 
 ## Difference between admin consent and user consent
 
-As an administrator, you can also consent to an application's delegated permissions on behalf of all the users in your tenant. Administrative consent prevents the consent dialog box from appearing for every user in the tenant. Users who have the administrator role can provide consent. From the **Settings** page for your application, select **Required Permissions** > **Grant admin consent**.
-
-![Grant Permissions button](./media/openidoauth-tutorial/grantpermission.png)
+As an administrator, you can also consent to an application's delegated permissions on behalf of all the users in your tenant. Administrative consent prevents the consent dialog box from appearing for every user in the tenant. Users who have the administrator role can provide consent. Select **Manage** > **API permissions**. Under **Grant consent**, select **Grant admin consent for**.
 
 > [!NOTE]
 > Granting explicit consent by using the **Grant admin consent** button is now required for single-page applications (SPAs) that use MSAL.js. Otherwise, the application fails when the access token is requested.
@@ -151,6 +144,6 @@ The *prompt=admin_consent* parameter can also be used by applications that reque
 
 Imagine that an application requires admin consent, and an admin signs in without the *prompt=admin_consent* parameter being sent. When the admin successfully consents to the application, it applies only for their user account. Regular users will still be unable to sign in or consent to the application. This feature is useful if you want to give the tenant administrator the ability to explore your application before allowing other users' access.
 
-## Next steps
+## Related content
 
 [Set up OIDC-based single sign-on (SSO) for an application in your Microsoft Entra tenant](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md)

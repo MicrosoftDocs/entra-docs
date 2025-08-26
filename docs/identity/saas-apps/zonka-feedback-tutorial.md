@@ -1,39 +1,35 @@
 ---
-title: Microsoft Entra SSO integration with Zonka Feedback
+title: Configure Zonka Feedback for Single sign-on with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zonka Feedback.
-
-author: jeevansd
-manager: CelesteDG
+author: nguhiu
+manager: mwongerapk
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: how-to
-ms.date: 10/25/2023
-ms.author: jeedes
-
-
+ms.date: 05/20/2025
+ms.author: gideonkiratu
+ms.custom: sfi-image-nochange
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zonka Feedback so that I can control who has access to Zonka Feedback, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Microsoft Entra SSO integration with Zonka Feedback
+# Configure Zonka Feedback for Single sign-on with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Zonka Feedback with Microsoft Entra ID. When you integrate Zonka Feedback with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Zonka Feedback with Microsoft Entra ID. When you integrate Zonka Feedback with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zonka Feedback.
 * Enable your users to be automatically signed-in to Zonka Feedback with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
-To integrate Microsoft Entra ID with Zonka Feedback, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Zonka Feedback single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Zonka Feedback supports **SP** initiated SSO.
 
@@ -45,7 +41,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 To configure the integration of Zonka Feedback into Microsoft Entra ID, you need to add Zonka Feedback from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
+1. Browse to **Entra ID** > **Enterprise apps** > **New application**.
 1. In the **Add from the gallery** section, type **Zonka Feedback** in the search box.
 1. Select **Zonka Feedback** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
@@ -58,10 +54,10 @@ Configure and test Microsoft Entra SSO with Zonka Feedback using a test user cal
 To configure and test Microsoft Entra SSO with Zonka Feedback, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Zonka Feedback SSO](#configure-zonka-feedback-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Zonka Feedback test user](#create-zonka-feedback-test-user)** - to have a counterpart of B.Simon in Zonka Feedback that is linked to the Microsoft Entra representation of user.
+    1. **[Create Zonka Feedback test user](#create-zonka-feedback-test-user)** - to have a counterpart of B.Simon in Zonka Feedback that's linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 ## Configure Microsoft Entra SSO
@@ -69,9 +65,9 @@ To configure and test Microsoft Entra SSO with Zonka Feedback, perform the follo
 Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zonka Feedback** > **Single sign-on**.
+1. Browse to **Entra ID** > **Enterprise apps** > **Zonka Feedback** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -104,39 +100,13 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 <a name='create-a-microsoft-entra-id-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-microsoft-entra-id-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to Zonka Feedback.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Zonka Feedback**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Zonka Feedback SSO
 
 1. Log in to Zonka Feedback company site as an administrator.
 
-1. Go to **Settings (gear icon)** > **Account** > and click **SSO**.
+1. Go to **Settings (gear icon)** > **Account** > and select **SSO**.
 
 1. In the **Single Sign On** page, perform the following steps.
 
@@ -150,13 +120,13 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **Public Certificate** textbox.
 
-    1. Click **Save**.
+    1. Select **Save**.
 
 ### Create Zonka Feedback test user
 
 1. In a different web browser window, sign into Zonka Feedback website as an administrator.
 
-1. Navigate to **Settings** > **Users** > **All Users** and click **Add User**.
+1. Navigate to **Settings** > **Users** > **All Users** and select **Add User**.
 
     ![Screenshot shows how to create users in application.](./media/zonka-feedback-tutorial/create.png "Users")
 
@@ -166,18 +136,18 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. Enter a valid email address in the textbox.
 
-    1. Click **Invite**.
+    1. Select **Invite**.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Zonka Feedback Sign-on URL where you can initiate the login flow.
+* Select **Test this application** in Microsoft Entra admin center. this option redirects to Zonka Feedback Sign-on URL where you can initiate the login flow.
  
 * Go to Zonka Feedback Sign-on URL directly and initiate the login flow from there.
  
-* You can use Microsoft My Apps. When you click the Zonka Feedback tile in the My Apps, this will redirect to Zonka Feedback Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Zonka Feedback tile in the My Apps, this option redirects to Zonka Feedback Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Zonka Feedback you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

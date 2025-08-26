@@ -4,11 +4,10 @@ description: How to update your existing JavaScript application to use the Micro
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.custom: has-adal-ref, devx-track-js
 ms.date: 07/06/2021
 ms.service: identity-platform
-
 ms.topic: how-to
+ms.custom: has-adal-ref, sfi-ropc-nochange
 #Customer intent: As an application developer, I want to learn how to change the code in my JavaScript application from using ADAL.js as its authentication library to MSAL.js.
 ---
 
@@ -60,7 +59,7 @@ For alternative CDN links and best practices when using CDN, see: [CDN Usage](ht
 
 ## Initialize MSAL
 
-In ADAL.js, you instantiate the [AuthenticationContext](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Config-authentication-context#authenticationcontext) class, which then exposes the methods you can use to achieve authentication (`login`, `acquireTokenPopup` etc.). This object serves as the representation of your application's connection to the authorization server or identity provider. When initializing, the only mandatory parameter is the **clientId**:
+In ADAL.js, you instantiate the [AuthenticationContext](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Config-authentication-context#authenticationcontext) class, which then exposes the methods you can use to achieve authentication (`login`, `acquireTokenPopup` , and so on). This object serves as the representation of your application's connection to the authorization server or identity provider. When initializing, the only mandatory parameter is the **clientId**:
 
 ```javascript
 window.config = {
@@ -240,7 +239,7 @@ With the auth code flow with PKCE support, apps using MSAL.js 2.x obtain refresh
 
 When using MSAL.js, the most common type of error you might face is the `interaction_in_progress` error. This error is thrown when an interactive API (`loginPopup`, `loginRedirect`, `acquireTokenPopup`, `acquireTokenRedirect`) is invoked while another interactive API is still in progress. The `login*` and `acquireToken*` APIs are *async* so you'll need to ensure that the resulting promises have resolved before invoking another one.
 
-Another common error is `interaction_required`. This error is often resolved by initiating an interactive token acquisition prompt. For instance, the web API you're trying to access might have a [Conditional Access](~/identity/conditional-access/overview.md) policy in place, requiring the user to perform [multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md) (MFA). In that case, handling `interaction_required` error by triggering `acquireTokenPopup` or `acquireTokenRedirect` will prompt the user for MFA, allowing them to fullfil it.
+Another common error is `interaction_required`. This error is often resolved by initiating an interactive token acquisition prompt. For instance, the web API you're trying to access might have a [Conditional Access](~/identity/conditional-access/overview.md) policy in place, requiring the user to perform [multifactor authentication (MFA)](~/identity/authentication/concept-mfa-howitworks.md). In that case, handling `interaction_required` error by triggering `acquireTokenPopup` or `acquireTokenRedirect` will prompt the user for MFA, allowing them to fullfil it.
 
 Yet another common error you might face is `consent_required`, which occurs when permissions required for obtaining an access token for a protected resource aren't consented by the user. As in `interaction_required`, the solution for `consent_required` error is often initiating an interactive token acquisition prompt, using either `acquireTokenPopup` or `acquireTokenRedirect`.
 

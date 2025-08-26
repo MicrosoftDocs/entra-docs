@@ -1,17 +1,15 @@
 ---
 title: Configure F5 BIG-IP Access Policy Manager for form-based SSO
-description: Learn how to configure F5's BIG-IP Access Policy Manager and Microsoft Entra ID for secure hybrid access to form-based applications.
+description: Learn how to configure F5 BIG-IP Access Policy Manager and Microsoft Entra ID for secure hybrid access (SHA) to form-based applications.
 author: gargi-sinha
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 03/27/2023
+ms.date: 06/28/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.custom: not-enterprise-apps
-
-#customer intent: As an IT admin responsible for securing hybrid access to form-based applications, I want to learn how to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure access, so that I can improve Zero Trust governance and implement SSO between Microsoft Entra ID and BIG-IP published services.
+ms.custom: not-enterprise-apps, sfi-image-nochange
+#customer intent: I'm an IT admin responsible for securing hybrid access to form-based applications. I need to learn how to configure F5 BIG-IP Access Policy Manager (APM) and Microsoft Entra ID for secure access. My goal is to improve Zero Trust governance and implement SSO between Microsoft Entra ID and BIG-IP published services.
 ---
 
 # Configure F5 BIG-IP Access Policy Manager for form-based SSO
@@ -41,8 +39,8 @@ With a BIG-IP in front of the application, you can overlay the service with Micr
 The SHA solution has the following components:
 
 * **Application** - BIG-IP published service protected by SHA. 
-  * The application validates user credentials against Active Directory
-  * Use any directory, including Active Directory Lightweight Directory Services, open source, and so on
+  * The application validates user credentials
+  * Use any directory, open source, and so on
 * **Microsoft Entra ID** - Security Assertion Markup Language (SAML) identity provider (IdP) that verifies user credentials, Conditional Access, and SSO to the BIG-IP. 
   * With SSO, Microsoft Entra ID provides attributes to the BIG-IP, including user identifiers
 * **BIG-IP** - reverse-proxy and SAML service provider (SP) to the application. 
@@ -58,7 +56,7 @@ SHA supports SP- and IdP-initiated flows. The following diagram illustrates the 
 3. Microsoft Entra preauthenticates user and applies enforced Conditional Access policies.
 4. User is redirected to BIG-IP (SAML SP) and SSO occurs using issued SAML token. 
 5. BIG-IP prompts the user for an application password and stores it in the cache.
-6. BIG-IP sends a request to the application and receives a sign on form.
+6. BIG-IP sends a request to the application and receives a sign-on form.
 7. The APM scripting fills in the username and password, then submits the form.
 8. The web server serves application payload and sends it to the client. 
 
@@ -68,10 +66,10 @@ You need the following components:
 
 * An Azure subscription
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator
+* One of the following roles: Cloud Application Administrator, or Application Administrator
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
-  * See [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
-* Any of the following F5 BIG-IP license SKUs:
+  * See [Deploy F5 BIG-IP Virtual Edition Virtual Machine in Azure](./f5-bigip-deployment-guide.md)
+* Any of the following F5 BIG-IP licenses:
   * F5 BIG-IP® Best bundle
   * F5 BIG-IP Access Policy Manager™ (APM) standalone license
   * F5 BIG-IP Access Policy Manager™ (APM) add-on license on a BIG-IP F5 BIG-IP® Local Traffic Manager™ (LTM)
@@ -80,7 +78,7 @@ You need the following components:
   * See [Microsoft Entra Connect Sync: Understand and customize synchronization](~/identity/hybrid/connect/how-to-connect-sync-whatis.md)
 * An SSL certificate to publish services over HTTPS, or use default certificates while testing
   * See [SSL profile](./f5-bigip-deployment-guide.md#ssl-profile)
-* A form-based authentication application, or set up an IIS FBA app for testing
+* A form-based authentication application, or set up an Internet Information Services (IIS) form-based authentication (FBA) app for testing
   * See [Forms-based authentication](/troubleshoot/developer/webapps/aspnet/development/forms-based-authentication)
 
 ## BIG-IP configuration
@@ -94,17 +92,16 @@ The configuration in this article is a flexible SHA implementation: manual creat
 
 ## Register F5 BIG-IP in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 BIG-IP registration is the first step for SSO between entities. The app you create from the F5 BIG-IP gallery template is the relying party, representing the SAML SP for the BIG-IP published application.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
+2. Browse to **Entra ID** > **Enterprise apps** > **All applications**.
 3. In the **All applications** pane, select **New application**.
 4. The **Browse Microsoft Entra Gallery** pane opens.
 5. Tiles appear for cloud platforms, on-premises applications, and featured applications. **Featured applications** icons indicate support of federated SSO and provisioning. 
 6. In the Azure gallery, search for **F5**.
-7. Select **F5 BIG-IP APM Azure AD integration**.
+7. Select **F5 BIG-IP APM Microsoft Entra ID integration**.
 8. Enter a **Name** the new application uses to recognize the application instance. 
 9. Select **Add**.
 10. Select **Create**.
@@ -117,25 +114,24 @@ Configure the BIG-IP registration to fulfill SAML tokens that BIG-IP APM request
 2. The **Single sign-on** pane appears.
 3. On the **Select a single sign-on method** page, select **SAML**.
 4. Select **No, I'll save later**.
-5. On the **Set up single sign-on with SAML** pane, select the **pen** icon. 
+5. On the **Set up single sign-on with SAML** pane, select the **pen** icon.
 6. For **Identifier**, replace the value with the BIG-IP published application URL.
-7. For **Reply URL**, replace the value, but retain the path for the application SAML SP endpoint. With this configuration, SAML flow operates in IdP-initiated mode. Microsoft Entra ID issues a SAML assertion, then the user is redirected to the BIG-IP endpoint. 
+7. For **Reply URL**, replace the value, but retain the path for the application SAML SP endpoint. With this configuration, SAML flow operates in IdP-initiated mode.
+8. Microsoft Entra ID issues a SAML assertion, then the user is redirected to the BIG-IP endpoint.
 9. For SP-initiated mode, for **Sign on URL**, enter the application URL.
-10. For **Logout Url**, enter the BIG-IP APM single logout (SLO) endpoint prepended by the service host header. Then, BIG-IP APM user sessions end when they sign out of Microsoft Entra ID. 
-
-   ![Screenshot of URLs in the SAML configuration.](./media/f5-big-ip-forms-advanced/basic-saml-configuration.png)
+10. For **Logout Url**, enter the BIG-IP APM single logout (SLO) endpoint prepended by the service host header.
+11. Then, BIG-IP APM user sessions end when users sign out of Microsoft Entra ID.
+12. Select **Save**.
+13. Close the SAML configuration pane.
+14. Skip the SSO test prompt.
+15. Make a note of the **User Attributes & Claims** section properties. Microsoft Entra ID issues the properties for BIG-IP APM authentication, and SSO to the back-end application.
+16. On the **SAML Signing Certificate** pane, select **Download**.
+17. The **Federation Metadata XML** file is saved to your computer.
 
    > [!NOTE]
    > From Traffic Management Operating System (TMOS) v16 onward, the SAML SLO endpoint is `/saml/sp/profile/redirect/slo`.
 
-11. Select **Save**.
-12. Close the SAML configuration pane.
-13. Skip the SSO test prompt.
-14. Make a note of the **User Attributes & Claims** section properties. Microsoft Entra ID issues the properties for BIG-IP APM authentication, and SSO to the back-end application.
-15. On the **SAML Signing Certificate** pane, select **Download**.
-16. The **Federation Metadata XML** file is saved to your computer.
-
-   ![Screenshot a Download option under SAML Signing Certificate.](./media/f5-big-ip-forms-advanced/saml-certificate.png)
+   ![Screenshot of URLs in the SAML configuration.](./media/f5-big-ip-forms-advanced/basic-saml-configuration.png)
 
    > [!NOTE]
    > Microsoft Entra SAML signing certificates have a lifespan of three years. 
@@ -165,7 +161,7 @@ SAML SP settings define the SAML SP properties that the APM uses to overlay the 
 
    ![Screenshot of the Create option on the SAML Service Provider tab.](./media/f5-big-ip-forms-advanced/f5-forms-configuration.png)
 
-4. On the **Create New SAML SP Service** pane, for **Name** and **Entity ID**, enter the defined name and entity ID.
+4. On **Create New SAML SP Service**, for **Name** and **Entity ID**, enter the defined name and entity ID.
 
    ![Screenshot of the Name and Entity ID fields under Create New SAML SP Service.](./media/f5-big-ip-forms-advanced/saml-sp-service.png)
 
@@ -190,7 +186,7 @@ To configure the connector:
    ![Screenshot of the From Metadata option in the Create New IdP Connector dropdown list.](./media/f5-big-ip-forms-advanced/from-metadata.png)
   
 4. On the **Create New SAML IdP Connector** pane, browse for the Federation Metadata XML file you downloaded.
-5. Enter an **Identity Provider Name** for the APM object that represents the external SAML IdP. For example, MyVacation\_AzureAD.
+5. Enter an **Identity Provider Name** for the APM object that represents the external SAML IdP. For example, MyVacation_EntraID.
 
    ![Screenshot of Select File and Identity Provider name fields on Create New SAML IdP Connector.](./media/f5-big-ip-forms-advanced/new-idp-saml-connector.png)
 
@@ -208,15 +204,15 @@ To configure the connector:
 
 Create an APM SSO object for FBA SSO to back-end applications. 
 
-Perform FBA SSO in client-initiated mode or BIG-IP-initiated mode. Both methods emulate a user sign-on by injecting credentials into the username and password tags. The form is then autosubmitted. Users provide password to access an FBA application. The password is cached and reused for other FBA applications.
+Perform FBA SSO in client-initiated mode or BIG-IP-initiated mode. Both methods emulate a user sign-on by injecting credentials into the username and password tags. The form is submitted. Users provide password to access an FBA application. The password is cached and reused for other FBA applications.
 
 1. Select **Access** > **Single Sign-on**.
 2. Select **Forms Based**.
 3. Select **Create**.
 4. For **Name**, enter a descriptive name. For example, Contoso\FBA\sso.
 5. For **Use SSO Template**, select **None**.
-6. For **Username Source**, enter the username source to prefill the password collection form. The default `session.sso.token.last.username` works well, because it has the signed-in user Microsoft Entra UPN.
-7. For **Password Source**, keep the default `session.sso.token.last.password`, the APM variable BIG-IP uses to cache user passwords. 
+6. For **Username Source**, enter the username source to prefill the password collection form. The default `session.sso.token.last.username` works well, because it has the signed-in user Microsoft Entra User Principal Name (UPN).
+7. For **Password Source**, keep the default `session.sso.token.last.password` the APM variable BIG-IP uses to cache user passwords. 
 
    ![Screenshot of Name and Use SSO Template options under New SSO Configuration.](./media/f5-big-ip-forms-advanced/new-sso-configuration.png)
 
@@ -272,7 +268,7 @@ An access profile binds the APM elements that manage access to BIG-IP virtual se
 
    ![Screenshot of the Logon Page option on the Logon tab.](./media/f5-big-ip-forms-advanced/logon-page.png)
 
-20. For **usesrname**, in the **Read Only** column, select **Yes**.
+20. For **username**, in the **Read Only** column, select **Yes**.
 
    ![Screenshot of the Yes option in the username row on the Properties tab.](./media/f5-big-ip-forms-advanced/set-read-only-as-yes.png)
 
@@ -404,32 +400,27 @@ For increased security, block direct access to the application, enforcing a path
 
 ## Test
 
-1. With a browser, connect to the application external URL, or in My Apps, select the application icon. 
-2. Authenticate to Microsoft Entra ID.
-3. You’re redirected to the BIG-IP endpoint for the application.
+1. The user connects to the application external URL, or in My Apps, and selects the application icon. 
+2. The user authenticates to Microsoft Entra ID.
+3. The user is redirected to the BIG-IP endpoint for the application.
 4. The password prompt appears. 
 5. The APM fills the username with the UPN from Microsoft Entra ID. The username is read-only for session consistency. Hide this field, if needed.
-
-   ![Screenshot of the sign in page.](./media/f5-big-ip-forms-advanced/secured-sso.png)
-
 6. The information is submitted.
-7. You're signed in to the application.
-
-   ![Screenshot of Welcome page.](./media/f5-big-ip-forms-advanced/welcome-message.png)
+7. The user is signed in to the application.
 
 ## Troubleshoot
 
-When troubleshooting, consider the following information
+When troubleshooting, consider the following information:
 
 * BIG-IP performs FBA SSO as it parses the sign in form at the URI
   * BIG-IP seeks the username and password element tags from your configuration
-* Ensure element tags are consistent, or SSO fails
+* Confirm element tags are consistent, or SSO fails
 * Complex forms generated dynamically might require dev tool analysis to understand the sign in form
-* Client-initiated is better for sign in pages with multiple forms
-  * You can specify form name and customize the JavaScript form handler logic
-* Both FBA SSO methods optimize user experience and security by hiding form interactions:
+* Client initiation is better for sign in pages with multiple forms
+  * You can select the form name and customize the JavaScript form handler logic
+* FBA SSO methods hide form interactions to optimize user experience and security:
   * You can validate if the credentials are injected 
-  * In client-initiated mode, disable form autosubmission in your SSO profile
+  * In client-initiated mode, disable form auto submission in your SSO profile
   * Use dev tools to disable the two style properties that prevent the sign in page from appearing
 
   ![Screenshot of the Properties page.](./media/f5-big-ip-forms-advanced/properties.png)
@@ -472,11 +463,11 @@ If no BIG-IP error message appears, the issue might relate to the back-end reque
 
 Use the **View Variables** link in this location to help determine root cause, particularly if the APM fails to obtain correct user identifier and password.
 
-To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html).
+To learn more, go to techdocs.f5.com for [Manual Chapter: Session Variables](https://techdocs.f5.com/en-us/bigip-16-1-0/big-ip-access-policy-manager-visual-policy-editor/session-variables.html).
 
 ## Resources
 
-* Go to techdocs.f5.com for [Manual Chapter: Active Directory Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
+* Go to techdocs.f5.com for [Manual Chapter: Authentication](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-12-1-0/2.html)
 * [Passwordless authentication](https://www.microsoft.com/security/business/identity/passwordless)
 * [What is Conditional Access?](~/identity/conditional-access/overview.md)
 * [Zero Trust framework to enable remote work](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)

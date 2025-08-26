@@ -5,7 +5,7 @@ author: janicericketts
 manager: martinco
 ms.service: entra
 ms.subservice: architecture
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 04/01/2023
 ms.author: jricketts
 ---
@@ -32,7 +32,7 @@ Many universities are also adopting the Microsoft 365 suite of productivity and 
 
 - Single sign-on across multiple applications.
 
-- Modern security controls, including passwordless authentication, multifactor authentication, adaptive Conditional Access, and identity protection.
+- Modern security controls, including passwordless authentication, multifactor authentication, and risk-based Conditional Access policies.
 
 - Enhanced reporting and monitoring.
 

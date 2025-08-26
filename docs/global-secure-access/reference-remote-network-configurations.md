@@ -3,15 +3,16 @@ title: Global Secure Access remote network configurations
 description: Valid Global Secure Access configurations for custom remote network device links settings, including IKE, ASN, IPSec, and DH group.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: dougeby
 ms.topic: reference
-ms.date: 03/22/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
+ai-usage: ai-assisted
 ---
 
 # Valid remote network configurations for custom and default configurations
 
-Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access (preview). There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE).
+Device links are the physical routers that connect your remote networks, such as branch locations, to Global Secure Access. There's a specific set of combinations you must use if you choose the **Custom** option when adding device links. If you choose the **Default** option, you must enter a specific combination of properties on the customer premises equipment (CPE).
 
 ## Custom and default details
 
@@ -79,11 +80,11 @@ When you select **Default** as your IPsec/IKE policy when configuring remote net
 
 ### IKE Phase 1 combinations
 
-| Properties | Combination 1 | Combination 2 | Combination 3 | Combination 4 | Combination 5 |
-| --- | --- | --- | --- | --- | --- |
-| IKE encryption | GCMAES256 | GCMAES128 | AES256 | AES128 | AES256 |
-| IKE integrity | SHA384 | SHA256 | SHA384 | SHA256 | SHA256 |
-| DH group | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup2 |
+| Properties | Combination 1 | Combination 2 | Combination 3 | Combination 4 |
+| --- | --- | --- | --- | --- |
+| IKE encryption | GCMAES256 | GCMAES128 | AES256 | AES128 |
+| IKE integrity | SHA384 | SHA256 | SHA384 | SHA256 |
+| DH group | DHGroup24 | DHGroup24 | DHGroup24 | DHGroup24 |
 
 ### IKE Phase 2 combinations
 
@@ -180,4 +181,4 @@ The following values can be used for the IKE, IPSec, DH group, and PFS group pro
 | PFS24 | 7 |
 | PFS14 | 8 |
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+

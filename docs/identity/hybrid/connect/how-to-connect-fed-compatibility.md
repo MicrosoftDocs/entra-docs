@@ -2,15 +2,15 @@
 title: Microsoft Entra federation compatibility list
 description: This page has non-Microsoft identity providers that can be used to implement single sign-on.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.assetid: 22c8693e-8915-446d-b383-27e9587988ec
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid-connect
-ms.author: billmath
+ms.author: jomondi
 
 
 ---
@@ -18,10 +18,10 @@ ms.author: billmath
 Microsoft Entra ID provides single-sign on and enhanced application access security for Microsoft 365 and other Microsoft Online services for hybrid and cloud-only implementations without requiring any third-party solution. Microsoft 365, like most of Microsoft’s Online services, is integrated with Microsoft Entra ID for directory services, authentication, and authorization. Microsoft Entra ID also provides single sign-on to thousands of SaaS applications and on-premises web applications. See the Microsoft Entra ID [application gallery](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps) for supported SaaS applications. 
 
 ## IDP Validation
-If your organization uses a third-party federation solution, you can configure single sign-on for your on-premises Active Directory users with Microsoft Online services, such as Microsoft 365, provided the third-party federation solution is compatible with Microsoft Entra ID.  For questions regarding compatibility, please contact your identity provider.  If you would like to see a list of identity providers who have previously been tested for compatibility with Microsoft Entra ID, by Microsoft, see [Microsoft Entra identity provider compatibility docs](https://www.microsoft.com/download/details.aspx?id=56843). 
+If your organization uses a third-party federation solution, you can configure single sign-on for your on-premises Active Directory users with Microsoft Online services, such as Microsoft 365, provided the third-party federation solution is compatible with Microsoft Entra ID. For questions regarding compatibility, contact your identity provider.  If you want to see a list of identity providers who have previously been tested for compatibility with Microsoft Entra ID, by Microsoft, see [Microsoft Entra identity provider compatibility docs](https://www.microsoft.com/download/details.aspx?id=56843). 
 
 >[!NOTE]
->Microsoft no longer provides validation testing to independent identity providers for compatibility with Microsoft Entra ID. If you would like to test your product for interoperability please refer to these [guidelines](https://www.microsoft.com/download/details.aspx?id=56843). 
+>Microsoft no longer provides validation testing to independent identity providers for compatibility with Microsoft Entra ID. If you want to test your product for interoperability please refer to these [guidelines](https://www.microsoft.com/download/details.aspx?id=56843). 
 
 ## Next Steps
 

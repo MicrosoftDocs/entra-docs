@@ -2,12 +2,13 @@
 title: Govern the existing users of an application that does not support provisioning in Microsoft Entra ID with Microsoft PowerShell
 description: Planning for a successful access reviews campaign for a particular application includes identifying if any users in that application have access that doesn't derive from Microsoft Entra ID.  If the application does not support provisioning, then you will need to create application role assignments for the application, and supply the list of changes when a review completes.
 author: markwahl-msft
-manager: amycolannino
+manager: dougeby
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 12/20/2022
 ms.author: mwahl
 ms.reviewer: mwahl
+ms.custom: sfi-ga-nochange
 #Customer intent: As an IT admin, I want to ensure that access to specific applications is governed by setting up access reviews for those applications. For this, I need to have the existing users of that application assigned to the application in Microsoft Entra ID.
 ---
 
@@ -75,9 +76,9 @@ Now that you have a list of all the users obtained from the application, you'll 
 If the application is already registered in Microsoft Entra ID, then continue to the next step.
 
 The account you're using must have permission to manage applications in Microsoft Entra ID. Any of the following Microsoft Entra roles include the required permissions:
-  - [Application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
-  - [Application developer](~/identity/role-based-access-control/permissions-reference.md#application-developer)
-  - [Cloud application administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
+  - [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator)
+  - [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer)
+  - [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator)
 
 1. Create the application and service principal.
 

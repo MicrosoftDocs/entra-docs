@@ -2,14 +2,15 @@
 title: Tutorial - Manage access to resources in entitlement management
 description: Step-by-step tutorial for how to create your first access package using the Microsoft Entra admin center in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 03/11/2024
+ms.date: 06/26/2025
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
+ms.custom: sfi-ga-nochange, sfi-image-nochange
 #Customer intent: As a IT admin, I want step-by-step instructions of the entire workflow for how to use entitlement management so that I can start to use in my organization.
 ---
 # Tutorial: Manage access to resources in entitlement management
@@ -44,41 +45,37 @@ For more information, see [License requirements](entitlement-management-overview
 
 ## Step 1: Set up users and group
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 A resource directory has one or more resources to share. In this step, you create a group named **Marketing resources** in the Woodgrove Bank directory that is the target resource for entitlement management. You also set up an internal requestor.
-
-**Prerequisite role:** Global administrator or Identity Governance Administrator
 
 ![Diagram that shows the users and groups for this tutorial.](./media/entitlement-management-access-package-first/elm-users-groups.png)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. [Create two users](../fundamentals/add-users.md). Use the following names or different names.
 
     | Name | Directory role |
     | --- | --- |
-    | **Admin1** | Global administrator, or Identity Governance Administrator. This user can be the user you're currently signed in. |
+    | **Admin1** | At least an Identity Governance Administrator. This user can be the user you're currently signed in. |
     | **Requestor1** | User |
 
-4. [Create a Microsoft Entra security group](../fundamentals/how-to-manage-groups.md) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
+4. [Create a Microsoft Entra security group](/entra/fundamentals/how-to-manage-groups) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
 
 
 ## Step 2: Create an access package
 
 An *access package* is a bundle of resources that a team or project needs and is governed with policies. Access packages are defined in containers called *catalogs*. In this step, you create a **Marketing Campaign** access package in the **General** catalog.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 ![Diagram that describes the relationship between the access package elements.](./media/entitlement-management-access-package-first/elm-access-package.png)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access package**.
 
-1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
-
-1. On the **Access packages** page open an access package.
+1. On the Access packages page, open an access package.
 
 1. When opening the access package if you see **Access denied**, ensure that a Microsoft Entra ID P2 or Microsoft Entra ID Governance license is present in your directory.
 
@@ -110,17 +107,17 @@ An *access package* is a bundle of resources that a team or project needs and is
     :::image type="content" source="./media/entitlement-management-access-package-first/resource-roles.png" alt-text="Screenshot the shows how to select the member role." lightbox="./media/entitlement-management-access-package-first/resource-roles.png":::
 
     >[!IMPORTANT]
-    >The [role-assignable groups](../identity/role-based-access-control/groups-concept.md) added to an access package will be indicated using the Sub Type **Assignable to roles**. For more information, check out the [Create a role-assignable group](../identity/role-based-access-control/groups-create-eligible.md) article. Keep in mind that once a role-assignable group is present in an access package catalog, administrative users who are able to manage in entitlement management, including users in the Global Administrator role, users in the Identity Governance Administrator role, and catalog owners of the catalog, will be able to control the access packages in the catalog, allowing them to choose who can be added to those groups. If you don't see a role-assignable group that you want to add or you are unable to add it, make sure you have the required Microsoft Entra role and entitlement management role to perform this operation. You might need to ask someone with the required roles add the resource to your catalog. For more information, see [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
+    >The [role-assignable groups](../identity/role-based-access-control/groups-concept.md) added to an access package will be indicated using the Sub Type **Assignable to roles**. For more information, check out the [Create a role-assignable group](../identity/role-based-access-control/groups-create-eligible.md) article. Keep in mind that once a role-assignable group is present in an access package catalog, administrative users who are able to manage in entitlement management, including users in the Global Administrator role, users in the Identity Governance Administrator role, and catalog owners of the catalog, will be able to control the access packages in the catalog, allowing them to choose who can be added to those groups. If you don't see a role-assignable group that you want to add or you're unable to add it, make sure you have the required Microsoft Entra role and entitlement management role to perform this operation. You might need to ask someone with the required roles add the resource to your catalog. For more information, see [Required roles to add resources to a catalog](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog).
 
     >[!NOTE]
-    > When using [dynamic groups](../identity/users/groups-create-rule.md) you will not see any other roles available besides owner. This is by design.
+    > When using [dynamic membership groups](../identity/users/groups-create-rule.md) you won't see any other roles available besides owner. This is by design.
     > ![Screenshots that shows a dynamic group available roles.](./media/entitlement-management-access-package-first/dynamic-group-warning.png)
     
 
 
 1. Select **Next** to open the **Requests** tab. On the Requests tab, you create a request policy. A *policy* defines the rules or guardrails to access an access package. You create a policy that allows a specific user in the resource directory to request this access package.
 
-1. In the **Users who can request access** section, select **For users in your directory** and then select **Specific users and groups**.
+1. In the **Users who can request access** section, select **For users in your directory**, and then select **Specific users and groups**.
 
     :::image type="content" source="./media/entitlement-management-access-package-first/new-access-package-requests.png" alt-text="Screenshot of the access package requests tab." lightbox="./media/entitlement-management-access-package-first/new-access-package-requests.png":::
 
@@ -138,7 +135,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
 1. For **Enable requests**, select **Yes** to enable this access package to be requested as soon as it's created.
 
-1. If your organization is set up to receive verified IDs, there's an option to configure an access package to require requestors to provide a verified ID.  To learn more, see: [Configure verified ID settings for an access package in entitlement management (Preview)](entitlement-management-verified-id-settings.md)
+1. If your organization is set up to receive verified IDs, there's an option to configure an access package to require requestors to provide a verified ID. To learn more, see: [Configure verified ID settings for an access package in entitlement management (Preview)](entitlement-management-verified-id-settings.md)
 
     :::image type="content" source="media/entitlement-management-access-package-first/verified-id-picker.png" alt-text="Screenshot of the Verified ID picker selection.":::
 
@@ -147,7 +144,7 @@ An *access package* is a bundle of resources that a team or project needs and is
 
     ![Screenshots of the requests tab approval and enable requests settings.](./media/entitlement-management-access-package-first/requests-approval-enable.png)
 
-1. On the **Requestor information** tab, you can ask questions to collect more information from the requestor. The questions are shown on the request form and can be either required or optional. In this scenario, you haven't been asked to include requestor information for the access package, so you can leave these boxes empty. Select **Next** to open the **Lifecycle** tab.
+1. On the **Requestor information** tab, you can ask questions to collect more information from the requestor. The questions are shown on the request form and can be either required or optional. You're also able to specify whether or not an employee's manager can request on their behalf, and if approval is required if they do so. If the policy allows managers to request on an employee's behalf, the manager would be answering questions on behalf of the employee, and not themselves. For more information on this option, see: [Request access package on-behalf-of other users(Preview)](entitlement-management-request-behalf.md). In this scenario, you haven't been asked to include requestor information for the access package, so you can leave these boxes empty. Select **Next** to open the **Lifecycle** tab.
 
 1. On the **Lifecycle** tab, you specify when a user's assignment to the access package expires. You can also specify whether users can extend their assignments. In the **Expiration** section:
     1. Set the **Access package assignments expire** to **Number of days**.
@@ -199,13 +196,12 @@ In this step, you perform the steps as the **internal requestor** and request ac
 
 In this step, you confirm that the **internal requestor** was assigned the access package and that they're now a member of the **Marketing resources** group.
 
-**Prerequisite role:** Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
 1. Sign out of the My Access portal.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as **Admin1**.
-
-1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as **Admin1**, which is at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner and Access package manager.
+1. Browse to **ID Governance** > **Entitlement management** > **Access packages**.
 
 1. Find and select **Marketing Campaign** access package.
 
@@ -217,7 +213,7 @@ In this step, you confirm that the **internal requestor** was assigned the acces
 
     :::image type="content" source="./media/entitlement-management-access-package-first/request-details.png" alt-text="Screenshot of the access package request details." lightbox="./media/entitlement-management-access-package-first/request-details.png":::
 
-1. In the left navigation, select **Identity**.
+1. In the left navigation, select **Entra ID**.
 
 1. Select **Groups** and open the **Marketing resources** group.
 
@@ -231,9 +227,7 @@ In this step, you confirm that the **internal requestor** was assigned the acces
 
 In this step, you remove the changes you made and delete the **Marketing Campaign** access package.
 
-**Prerequisite role:**  Global Administrator or Identity Governance Administrator
-
-1. In the Microsoft Entra admin center **Identity Governance**.
+1. In the Microsoft Entra admin center as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) select **ID Governance**.
 
 1. Open the **Marketing Campaign** access package.
 
@@ -258,5 +252,8 @@ In this step, you remove the changes you made and delete the **Marketing Campaig
 ## Next steps
 
 Advance to the next article to learn about common scenario steps in entitlement management.
+
 > [!div class="nextstepaction"]
 > [Common scenarios](entitlement-management-scenarios.md)
+
+

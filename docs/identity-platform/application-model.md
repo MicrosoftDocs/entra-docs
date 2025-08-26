@@ -1,12 +1,12 @@
 ---
 title: Application model
 description: Learn about the process of registering your application so it can integrate with the Microsoft identity platform.
-author: rwike77
-manager: CelesteDG
-ms.author: ryanwi
-ms.custom: scenarios:getting-started
-ms.date: 08/17/2023
-ms.reviewer: jmprieur, saeeda, sureshja, ludwignick
+author: cilwerner
+manager: pmwongera
+ms.author: cwerner
+ms.custom:
+ms.date: 04/26/2024
+ms.reviewer: jmprieur, sureshja, ludwignick
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -22,7 +22,7 @@ Applications can sign in users themselves or delegate sign-in to an identity pro
 For an identity provider to know that a user has access to a particular app, both the user and the application must be registered with the identity provider. When you register your application with Microsoft Entra ID, you're providing an identity configuration for your application that allows it to integrate with the Microsoft identity platform. Registering the app also allows you to:
 
 * Customize the branding of your application in the sign-in dialog box. This branding is important because signing in is the first experience a user will have with your app.
-* Decide if you want to allow users to sign in only if they belong to your organization. This architecture is known as a single-tenant application. Or, you can allow users to sign in by using any work or school account, which is known as a multi-tenant application. You can also allow personal Microsoft accounts or a social account from LinkedIn, Google, and so on.
+* Decide if you want to allow users to sign in only if they belong to your organization. This architecture is known as a single-tenant application. Or, you can allow users to sign in by using any work or school account, which is known as a multitenant application. You can also allow personal Microsoft accounts or a social account from LinkedIn, Google, and so on.
 * Request scope permissions. For example, you can request the "user.read" scope, which grants permission to read the profile of the signed-in user.
 * Define scopes that define access to your web API. Typically, when an app wants to access your API, it will need to request permissions to the scopes you define.
 * Share a secret with the Microsoft identity platform that proves the app's identity. Using a secret is relevant in the case where the app is a confidential client application. A confidential [client application](developer-glossary.md#client-application) is an application that can hold credentials securely, like a [web client](developer-glossary.md#web-client). A trusted back-end server is required to store the credentials.
@@ -46,7 +46,11 @@ The Microsoft identity platform:
 * Users and administrators to dynamically grant or deny consent for the app to access resources on their behalf.
 * Administrators to ultimately decide what apps are allowed to do and which users can use specific apps, and how the directory resources are accessed.
 
-## Multi-tenant apps
+## Multitenant apps
+
+> [!IMPORTANT]
+>
+> Multitenant applications (MTAs) don't function across cloud boundaries due to the segregation of service principal authorities within each cloud. For instance, if the application object is hosted in the commercial cloud, the associated service principal is created locally during customer onboarding. This process fails when crossing cloud boundaries because the authority URLs differ (e.g., `.com` vs. `.us`), causing an incompatibility.
 
 In the Microsoft identity platform, an [application object](developer-glossary.md#application-object) describes an application. At deployment time, the Microsoft identity platform uses the application object as a blueprint to create a [service principal](developer-glossary.md#service-principal-object), which represents a concrete instance of an application within a directory or tenant. The service principal defines what the app can actually do in a specific target directory, who can use it, what resources it has access to, and so on. The Microsoft identity platform creates a service principal from an application object through consent.
 
@@ -79,5 +83,5 @@ For more information about authentication and authorization in the Microsoft ide
 For more information about the application model, see the following articles:
 
 * For more information on application objects and service principals in the Microsoft identity platform, see [How and why applications are added to Microsoft Entra ID](how-applications-are-added.md).
-* For more information on single-tenant apps and multi-tenant apps, see [Tenancy in Microsoft Entra ID](single-and-multi-tenant-apps.md).
+* For more information on single-tenant apps and multitenant apps, see [Tenancy in Microsoft Entra ID](single-and-multi-tenant-apps.md).
 * For more information on how Microsoft Entra ID also provides Azure Active Directory B2C so that organizations can sign in users, typically customers, by using social identities like a Google account, see [Azure Active Directory B2C documentation](/azure/active-directory-b2c/).

@@ -2,21 +2,21 @@
 title: 'What is inter-directory provisioning with Microsoft Entra ID?'
 description: Describes overview of identity inter-directory provisioning.
 
-author: billmath
-manager: amycolannino
+author: omondiatieno
+manager: mwongerapk
 ms.service: entra-id
 ms.topic: overview
-ms.date: 11/06/2023
+ms.date: 04/09/2025
 ms.subservice: hybrid
-ms.author: billmath
+ms.author: jomondi
 
 ---
 
 # What is inter-directory provisioning?
 
-A directory is a shared information infrastructure, that is used for locating, managing, administering, and organizing items and network resources.  Examples of applications that use directory services are Microsoft Active Directory and Microsoft Entra ID.  Identities help directory systems make determinations such as who has access to what, and who is allowed to use specific resources.
+A directory is a shared information infrastructure and is used for locating, managing, administering, and organizing items and network resources. Examples of applications that use directory services are Microsoft Active Directory and Microsoft Entra ID. Identities help directory systems make determinations such as who has access to what, and who is allowed to use specific resources.
 
-Inter-directory provisioning is provisioning an identity between two different directory services systems.   The most common scenario for inter-directory provisioning is when a user already in Active Directory is provisioned into Microsoft Entra ID. This provisioning can be accomplished by agents such as Microsoft Entra Connect Sync or Microsoft Entra Connect cloud provisioning.
+Inter-directory provisioning is provisioning an identity between two different directory services systems. The most common scenario for inter-directory provisioning is when a user already in Active Directory is provisioned into Microsoft Entra ID. This provisioning can be accomplished by agents such as Microsoft Entra Connect Sync or Microsoft Entra Connect cloud provisioning.
 
 Inter-directory provisioning allows us to create [hybrid identity](whatis-hybrid-identity.md) environments.
 
@@ -26,7 +26,7 @@ Inter-directory provisioning allows us to create [hybrid identity](whatis-hybrid
 
 Microsoft Entra ID currently supports three methods for accomplishing inter-directory provisioning. These methods are:
 
-- [Microsoft Entra Cloud Sync](./cloud-sync/what-is-cloud-sync.md) -a new Microsoft agent designed to meet and accomplish your hybrid identity goals.  It is provides a light-weight inter -directory provisioning experience between Active Directory and Microsoft Entra ID and is configured via the portal.
+- [Microsoft Entra Cloud Sync](./cloud-sync/what-is-cloud-sync.md) -a new Microsoft agent designed to meet and accomplish your hybrid identity goals. It provides a light-weight inter -directory provisioning experience between Active Directory and Microsoft Entra ID and is configured via the portal.
 
 - [Microsoft Entra Connect](./connect/whatis-azure-ad-connect.md) - the Microsoft tool designed to meet and accomplish your hybrid identity, including inter-directory provisioning from Active Directory to Microsoft Entra ID.
 
@@ -38,12 +38,16 @@ This capability of inter-directory provisioning offers the following significant
 
 - [Password hash synchronization](./connect/whatis-phs.md) - A sign-in method that synchronizes a hash of a users on-premises AD password with Microsoft Entra ID.
 - [Pass-through authentication](./connect/how-to-connect-pta.md) - A sign-in method that allows users to use the same password on-premises and in the cloud, but doesn't require the additional infrastructure of a federated environment.
-- [Federation integration](./connect/how-to-connect-fed-whatis.md) - can be used to configure a hybrid environment using an on-premises AD FS infrastructure. It also provides AD FS management capabilities such as certificate renewal and additional AD FS server deployments.
-- [Synchronization](./connect/how-to-connect-sync-whatis.md) - Responsible for creating users, groups, and other objects.  As well as, making sure identity information for your on-premises users and groups is matching the cloud.  This synchronization also includes password hashes.
+- [Federation integration](./connect/how-to-connect-fed-whatis.md) - can be used to configure a hybrid environment using an on-premises AD FS infrastructure. It also provides AD FS management capabilities such as certificate renewal and more AD FS server deployments.
+- [Synchronization](./connect/how-to-connect-sync-whatis.md) - Responsible for creating users, groups, and other objects. Also for making sure identity information for your on-premises users and groups is matching the cloud. This synchronization also includes password hashes.
 - [Health Monitoring](./connect/whatis-azure-ad-connect.md) - can provide robust monitoring and provide a central location in the [Microsoft Entra admin center](https://entra.microsoft.com) to view this activity. 
 
+
+### Common scenarios
+For a list of common hybrid synchronization scenarios, see [Common scenarios](#common-scenarios).
+
 ## Next steps 
-- [What is identity lifecycle management](~/id-governance/what-is-identity-lifecycle-management.md)
+- [What is identity lifecycle management](~/id-governance/scenarios/govern-the-employee-lifecycle.md)
 - [What is provisioning?](what-is-provisioning.md)
 - [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
 - [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)

@@ -2,12 +2,12 @@
 title: Manage guest access with access reviews
 description: Manage guest users as members of a group or assigned to an application with Microsoft Entra access reviews.
 author: owinfreyATL
-manager: amycolannino
+manager: dougeby
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
-ms.topic: conceptual
-ms.date: 06/28/2023
+ms.topic: how-to
+ms.date: 06/18/2025
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -15,12 +15,12 @@ ms.reviewer: mwahl
 # Manage guest access with access reviews
 
 
-With access reviews, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.md) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
+With access reviews, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.yml) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
 
 You also can easily ensure that guest users have appropriate access. You can ask the guests themselves or a decision maker to participate in an access review and re-certify (or attest) to the guests' access. The reviewers can give their input on each user's need for continued access, based on suggestions from Microsoft Entra ID. When an access review is finished, you can then make changes and remove access for guests who no longer need it.
 
 > [!NOTE]
-> This document focuses on reviewing guest users' access. If you want to review all users' access, not just guests, see [Manage user access with access reviews](manage-user-access-with-access-reviews.md). If you want to review users' membership in administrative roles, such as global administrator, see [Start an access review in Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
+> This document focuses on reviewing guest users' access. If you want to review all users' access, not just guests, see [Manage user access with access reviews](manage-user-access-with-access-reviews.md). If you want to review users' membership in administrative roles, such as Global Administrator, see [Start an access review in Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md).
 
 ## Prerequisites
 
@@ -30,10 +30,10 @@ For more information, [License requirements](access-reviews-overview.md#license-
 
 ## Create and perform an access review for guests
 
-First, you must be assigned one of the following roles:
-- global administrator
-- User administrator
+First, you must be assigned as at least one of the following roles:
+- User Administrator
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed
+
 
 Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews is ready for your organization.
 
@@ -106,11 +106,11 @@ In some organizations, guests might not be aware of their group memberships.
 > [!NOTE]
 > Earlier versions of the portal didn't permit administrative access by users with the UserType of Guest. In some cases, an administrator in your directory might have changed a guest's UserType value to Member by using PowerShell. If this change previously occurred in your directory, the previous query might not include all guest users who historically had administrative access rights. In this case, you need to either change the guest's UserType or manually include the guest in the group membership.
 
-1. Create a security group in Microsoft Entra ID with the guests as members, if a suitable group doesn't already exist. For example, you can create a group with a manually maintained membership of guests. Or, you can create a dynamic group with a name such as "Guests of Contoso" for users in the Contoso tenant who have the UserType attribute value of Guest.  For efficiency, ensure the group is predominately guests - don't select a group that has member users, as member users don't need to be reviewed.  Also, keep in mind that a guest user who is a member of the group can see the other members of the group.
+1. Create a security group in Microsoft Entra ID with the guests as members, if a suitable group doesn't already exist. For example, you can create a group with a manually maintained membership of guests. Or, you can create a dynamic group with a name such as "Guests of Contoso" for users in the Contoso tenant who have the UserType attribute value of Guest. For efficiency, ensure the group is predominately guests - don't select a group that has member users, as member users don't need to be reviewed. Also, keep in mind that a guest user who is a member of the group can see the other members of the group.
 
 2. To create an access review for that group, select the reviewers to be the members themselves. For more information, see [Create an access review of groups or applications](create-access-review.md).
 
-3. Ask each guest to review their own membership. By default, each guest who accepted an invitation receives an email from Microsoft Entra ID with a link to the access review in your organization's access panel. Microsoft Entra ID has instructions for guests on how to [review access to groups or applications](perform-access-review.md).  Those guests who didn't accept their invite appears in the review results as "Not Notified".
+3. Ask each guest to review their own membership. By default, each guest who accepted an invitation receives an email from Microsoft Entra ID with a link to the access review in your organization's access panel. Microsoft Entra ID has instructions for guests on how to [review access to groups or applications](perform-access-review.md). Those guests who didn't accept their invite appears in the review results as "Not Notified".
 
 4. After the reviewers give input, stop the access review. For more information, see [Complete an access review of groups or applications](complete-access-review.md).
 

@@ -3,11 +3,11 @@ title: On-premises password writeback with self-service password reset
 description: Learn how password change or reset events in Microsoft Entra ID can be written back to an on-premises directory environment
 ms.service: entra-id
 ms.subservice: authentication
-ms.topic: conceptual
-ms.date: 09/14/2023
+ms.topic: article
+ms.date: 07/21/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: dougeby
 ms.reviewer: tilarso
 ---
 # How does self-service password reset writeback work in Microsoft Entra ID?
@@ -25,6 +25,9 @@ Password writeback is supported in environments that use the following hybrid id
 * [Pass-through authentication](~/identity/hybrid/connect/how-to-connect-pta.md)
 * [Active Directory Federation Services](~/identity/hybrid/connect/how-to-connect-fed-management.md)
 
+> [!NOTE]
+> SSPR with writeback to an on-premises domain isn't supported when staged rollout is enabled for a security group. 
+
 Password writeback provides the following features:
 
 * **Enforcement of on-premises Active Directory Domain Services (AD DS) password policies**: When a user resets their password, it's checked to ensure it meets your on-premises AD DS policy before committing it to that directory. This review includes checking the history, complexity, age, password filters, and any other password restrictions that you define in AD DS.
@@ -40,7 +43,7 @@ Password writeback provides the following features:
 To get started with SSPR writeback, complete either one or both of the following tutorials:
 
 - [Tutorial: Enable self-service password reset (SSPR) writeback](tutorial-enable-sspr-writeback.md)
-- [Tutorial: Enable Microsoft Entra Connect cloud sync self-service password reset writeback to an on-premises environment (Preview)](tutorial-enable-cloud-sync-sspr-writeback.md)
+- [Tutorial: Enable Microsoft Entra Connect cloud sync self-service password reset writeback to an on-premises environment](tutorial-enable-cloud-sync-sspr-writeback.md)
 
 <a name='azure-ad-connect-and-cloud-sync-side-by-side-deployment'></a>
 
@@ -116,11 +119,11 @@ Password writeback is a low-bandwidth service that only sends requests back to t
 * One message is sent once every five minutes as a service heartbeat for as long as the service is running.
 * Two messages are sent each time a new password is submitted:
    * The first message is a request to perform the operation.
-   * The second message contains the result of the operation, and is sent in the following circumstances:
+  * The second message contains the result of the operation, and is sent in the following circumstances:
       * Each time a new password is submitted during a user self-service password reset.
       * Each time a new password is submitted during a user password change operation.
-      * Each time a new password is submitted during an admin-initiated user password reset (only from the Azure admin portals).
-
+    * Each time a new password is submitted during an admin-initiated user password reset (only from Entra admin portals).
+        
 #### Message size and bandwidth considerations
 
 The size of each of the message described previously is typically under 1 KB. Even under extreme loads, the password writeback service itself is consuming a few kilobits per second of bandwidth. Because each message is sent in real time, only when required by a password update operation, and because the message size is so small, the bandwidth usage of the writeback capability is too small to have a measurable impact.
@@ -148,12 +151,10 @@ Passwords aren't written back in any of the following situations:
 * **Unsupported end-user operations**
    * Any end user resetting their own password by using PowerShell version 1, version 2, or the Microsoft Graph API.
 * **Unsupported administrator operations**
-   * Any administrator-initiated end-user password reset from PowerShell version 1, or version 2.
-   * Any administrator-initiated end-user password reset from the [Microsoft 365 admin center](https://admin.microsoft.com).
-   * Any administrator cannot use password reset tool to reset their own password for password writeback.
 
-> [!WARNING]
-> Use of the checkbox "User must change password at next logon" in on-premises AD DS administrative tools like Active Directory Users and Computers or the Active Directory Administrative Center is supported as a preview feature of Microsoft Entra Connect. For more information, see [Implement password hash synchronization with Microsoft Entra Connect Sync](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md).
+   * Any administrator-initiated end-user password reset from PowerShell version 1, or version 2.
+  * Any administrator-initiated end-user password reset from the [Microsoft 365 admin center](https://admin.microsoft.com).
+   * Any administrator cannot use password reset tool to reset their own password for password writeback.
 
 > [!NOTE]
 > If a user has the option "Password never expires" set in Active Directory (AD), the force password change flag will not be set in Active Directory (AD), so the user will not be prompted to change the password during the next sign-in even if the option to force the user to change their password on next logon option is selected during an administrator-initiated end-user password reset.
