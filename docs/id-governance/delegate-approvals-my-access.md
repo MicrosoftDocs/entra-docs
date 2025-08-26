@@ -15,7 +15,7 @@ ms.date: 08/11/2025
 Approval delegation in My Access allows approvers to assign another individual to respond to access package approval requests on their behalf. This feature helps maintain productivity when approvers are unavailable due to leave, travel, or other commitments.
 
 > [!NOTE]
-> This feature applies only to approvals. Access review delegation isn't supported.
+> This feature currently applies only to access package approvals and will be expanded to support access reviews in November 2025.
 
 ## License requirements
 
@@ -27,7 +27,7 @@ When an approver sets a delegate, the following happens:
 
 - All approvals assigned after the delegation are routed to the delegate.
 - The original approver can still respond to approvals during the delegation period.
-- Delegation can be time-bound or indefinite.
+- Delegations, prior to November 1 2025, are time-bound. After November 1, 2025, they can be time-bound or indefinite.
 - Delegates are notified when they're assigned.
 - Requestors are notified when their request is approved by a delegate.
 - Delegation is always bulk; approvers can't delegate specific types of approvals.
@@ -61,11 +61,11 @@ To enable approvers to delegate in My Access, you'd do the following steps:
 
 1. Browse to **ID Governance** > **Entitlement Management** > **Preview Features**.
 
-1. Select **“Enable approvers to delegate in MyAccess”**.
+1. Select **“Allow users to delegate approvals and access reviews in My Access”**.
 
 ### Set up a delegate
 
-With the delegate approvers option enabled, you can set up a delegate to approve access on your behalf. To set up a delegate, you'd do the following steps:
+With the delegate option enabled, you can set up a delegate to approve access on your behalf. To set up a delegate, you'd do the following steps:
 
 1.	Sign in to the [My Access portal](https://myaccess.microsoft.com).
 
@@ -75,7 +75,7 @@ With the delegate approvers option enabled, you can set up a delegate to approve
 
 1.	In the modal:
     1.	Enter the name, or email, of the delegate.
-    1.	Set the start and end time (or select No end date) for delegate approval.
+    1.	Set the start and end time for delegate approval.
 
 1.	Select **Delegate**.
 
