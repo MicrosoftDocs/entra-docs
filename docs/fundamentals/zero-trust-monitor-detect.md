@@ -15,7 +15,9 @@ ms.reviewer: ramical
 
 # Configure Microsoft Entra for Zero Trust: Monitor and detect cyberthreats
 
-Having robust health monitoring and threat detection capabilities is one of the six pillars of the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars). These guidelines are designed to help you set up a comprehensive logging system that provides standardized and accessible logs. We include recommendations related to the triage of risky sign-ins, risky users, and authentication methods.
+Having robust health monitoring and threat detection capabilities is one of the six pillars of the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars). These guidelines are designed to help you set up a comprehensive logging system for archival and analysis. We include recommendations related to the triage of risky sign-ins, risky users, and authentication methods.
+
+The first step to aligning with this pillar is to configure diagnostic settings for all Microsoft Entra logs so all changes made in your tenant are stored and accessible for analysis. Other recommendations in this pillar focus on the timely triage of risk alerts and Microsoft Entra recommendations. The key takeaway is to know what logs, reports, and health monitoring tools are available and to monitor them regularly.
 
 ## Security guidance
 
@@ -63,6 +65,3 @@ Having robust health monitoring and threat detection capabilities is one of the 
 [!INCLUDE [applies-to-zero-trust-assessment](../includes/secure-recommendations/applies-to-zero-trust-assessment.md)]
 
 [!INCLUDE [21866](../includes/secure-recommendations/21866.md)]
-
-## Related guidelines
-

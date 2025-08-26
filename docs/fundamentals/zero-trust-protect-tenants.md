@@ -14,7 +14,9 @@ ms.reviewer: ramical
 ---
 # Configure Microsoft Entra for Zero Trust: Protect tenants and isolate production systems
 
-The patterns and practices associated with the "Protect tenants and isolate production systems" tenant from the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars) focuses on establishing strong tenant boundaries and implementing isolation controls that safeguard your organization's identity infrastructure. This critical security domain addresses the need to limit tenant creation privileges, control external collaboration through guest access policies, and ensure proper segregation between production and non-production environments. By implementing these recommendations, organizations can prevent unauthorized tenant sprawl, minimize the risk of data exposure through misconfigured external partnerships, and maintain clear boundaries that protect sensitive resources from both internal and external threats. The following security recommendations help establish a robust foundation for tenant protection and system isolation within your Microsoft Entra environment.
+Protecting your tenant and isolating production systems is about setting tenant boundaries and keeping your production systems isolated from test and pre-production environments. Lateral movement was a critical concert from the [Secure Future Initiative](https://www.microsoft.com/trust-center/security/secure-future-initiative?msockid=2bad2df65a416adb0e5838355b3e6b95#SFI-pillars). 
+
+Even smaller organizations can protect their environments by implementing stricter guest access policies and limiting who can create tenants. Larger organizations that manage several environments should take action to prevent unauthorized tenant sprawl and lateral movement.
 
 ## Zero Trust security recommendations
 
