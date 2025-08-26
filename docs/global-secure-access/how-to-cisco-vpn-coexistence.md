@@ -282,7 +282,7 @@ Configure split-include for Cisco ASA Remote Access VPN:
   4. Validate traffic in Microsoft Entra admin center traffic logs.
   5. Validate website traffic **isn't** captured by your Cisco ASA.
   6. Access private resources via Cisco Secure Client (for example, RDP session).
-  7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco ASDM logs.
+  7. Validate RDP traffic is missing from Global Secure Access logs and present in Cisco logs.
   8. Access private application in Microsoft Entra Private Access (for example, SMB file share).
   9. Validate SMB traffic is captured in Global Secure Access logs and not in Cisco ASDM logs.
   10. Stop collecting traffic in Global Secure Access client.
