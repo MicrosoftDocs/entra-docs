@@ -30,7 +30,7 @@ Use **Resource audit** blade to view all activity associated with your Microsoft
 
 1. Filter the history using a predefined date or custom range.
 
-    :::image type="content" source="media/azure-pim-resource-rbac/rbac-resource-audit.png" alt-text="Screenshot showing the Microsoft Entra role audit list with filters.":::
+    :::image type="content" source="media/pim-how-use-audit-log/rbac-resource-audit.png" alt-text="Screenshot showing the Microsoft Entra role audit list with filters.":::
 
 ## View my audit
 
@@ -44,7 +44,7 @@ Use **My audit** blade to view your role activity for Microsoft Entra role assig
 
 1. Filter the history using a predefined date or custom range.
 
-    :::image type="content" source="media/azure-pim-resource-rbac/my-audit-time.png" alt-text="Screenshot showing the Audit list page for the current user.":::
+    :::image type="content" source="media/pim-how-use-audit-log/my-audit.png" alt-text="Screenshot showing the Audit list page for the current user.":::
 
 ## Next steps
 
