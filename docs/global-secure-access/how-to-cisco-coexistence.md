@@ -106,7 +106,7 @@ To configure Cisco Umbrella:
 #### [Cisco Secure Access Portal](#tab/cisco-secure-access-portal)
 
 1. Go to **Connect > End User Connectivity > Internet Security**.
-2. In **Traffic Steering**, select **Add Destination > Bypass Secure Access**, add these FQDNs, and save:
+2. In **Traffic Steering**, select **Add Destination > Bypass Secure Access**, add this FQDN, and save:
   ```
   *.globalsecureaccess.microsoft.com
   ```
