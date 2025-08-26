@@ -178,7 +178,7 @@ To configure Microsoft and Cisco ASA remote access VPN for a unified SASE soluti
 
 ## Cisco ASA VPN setup
 
-#### Split-Include configuration
+#### Split-Include configuration (ASA)
 
 Configure split-include for Cisco ASA Remote Access VPN:
 
