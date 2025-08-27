@@ -73,7 +73,7 @@ Required: Make Prerequisites the first H2 after the H1.
 | Requirement | Description |
 |-------------|-------------|
 | **Roles** | [Hybrid Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-administrator) is required to call the Microsoft Graph APIs to read and update SOA of users.<br>[Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) is required to grant user consent to the required permissions to Microsoft Graph Explorer or the app used to call the Microsoft Graph APIs. |
-| **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `Group-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
+| **Permissions** | For apps calling into the `onPremisesSyncBehavior` Microsoft Graph API, the `User-OnPremisesSyncBehavior.ReadWrite.All` permission scope needs to be granted. For more information, see [how to grant this permission](#grant-permission-to-apps) to Graph Explorer or an existing app in your tenant. |
 | **License needed** | Microsoft Entra Free license. |
 | **Connect Sync client** | Minimum version is [2.5.76.0](/entra/identity/hybrid/connect/reference-connect-version-history#25760) |
 | **Cloud Sync client** | Minimum version is [1.1.1370.0](/entra/identity/hybrid/cloud-sync/reference-version-history#1113700)|
@@ -163,7 +163,7 @@ Follow these steps to convert the SOA for a test user:
 
 1. Verify that the user appears in the Microsoft Entra admin center as a synced user.
 1. Use Microsoft Graph API to convert the SOA of the user object (*isCloudManaged*=true). Open [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) and sign in with an appropriate user role, such as user admin.
-1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your group. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
+1. Let's check the existing SOA status. We didn’t update the SOA yet, so the *isCloudManaged* attribute value should be false. Replace the *{ID}* in the following examples with the object ID of your user. For more information about this API, see [Get onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-get).
 /graph/api/onpremisessyncbehavior-update
 
    ```https
@@ -188,11 +188,9 @@ Follow these steps to convert the SOA for a test user:
  
 1. Search the Microsoft Entra admin center for the user. Verify that all user fields are greyed out, and that source is Windows Server AD DS:  
 
-   :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/basic.png" alt-text="Screenshot of basic group properties.":::
+   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced user properties.":::
 
-   :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/properties.png" alt-text="Screenshot of advanced group properties.":::
-
-1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the group object you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
+1. Now you can update the SOA of the user to be cloud-managed. Run the following operation in Microsoft Graph Explorer for the user object you want to convert to the cloud. For more information about this API, see [Update onPremisesSyncBehavior](/graph/api/onpremisessyncbehavior-update).
 
    ```https
    PATCH https://graph.microsoft.com/beta/users/{ID}/onPremisesSyncBehavior
@@ -220,13 +218,13 @@ Follow these steps to convert the SOA for a test user:
    ```https
    PATCH https://graph.microsoft.com/v1.0/users/{ID}/
       {
-        "DisplayName": "Group1 Name Updated"
+        "DisplayName": "Update User Name"
       }   
    ```
 
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/retry-update.png" alt-text="Screenshot of a retry to change user properties.":::
 
-1. Open Microsoft Entra admin center and confirm that the group **Source** property is **Cloud**.
+1. Open Microsoft Entra admin center and confirm that the user **Source** property is **Cloud**.
 
    :::image type="content" border="true" source="media/how-to-group-source-of-authority-configure/source-cloud.png" alt-text="Screenshot of how to confirm user source property.":::
 
@@ -272,7 +270,7 @@ Follow these steps to convert the SOA for a test user:
    :::image type="content" border="true" source="media/how-to-user-source-of-authority-configure/event-6956.png" alt-text="Screenshot of event ID 6956.":::
 
 
-## Bulk updates for Group SOA
+## Bulk updates for User SOA
 
 You can use the following PowerShell script to automate User SOA updates by using app-based authentication.
 
@@ -291,7 +289,7 @@ Connect-MgGraph -ClientId $clientId -TenantId $tenantId -CertificateThumbprint $
 # Define the user name you want to query
 $userName = "Ken Roy"
 
-# Retrieve the group using group name
+# Retrieve the user using user name
 $user = Get-MgBetaUser -Filter "displayName eq '$userName'"
 
 # Ensure user is found
