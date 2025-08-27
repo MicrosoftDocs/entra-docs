@@ -3,7 +3,7 @@ title: The Global Secure Access Client for Android
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Android client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/13/2025
+ms.date: 08/27/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: dougeby
@@ -19,14 +19,14 @@ This article explains how to deploy the Global Secure Access client onto Android
 
 ## Prerequisites
 
-- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- You must enable at least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md).
+- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
+- Enable at least one Global Secure Access [traffic forwarding profile](concept-traffic-forwarding.md).
 - You need device installation permissions to install the client.
 - Android devices need to run Android 10.0 or later.
 - Android devices need to be Microsoft Entra registered devices.
   - Devices not managed by your organization need to have the Microsoft Authenticator app installed.
   - Devices not managed through Intune need to have the Company Portal app installed.
-  - Device enrollment is required for Intune device compliance policies to be enforced.
+  - Device enrollment is required to enforce Intune device compliance policies.
 
 ### Known limitations
 
@@ -34,35 +34,33 @@ This article explains how to deploy the Global Secure Access client onto Android
 
 ## Supported scenarios
 
-The Global Secure Access client for Android supports deployment for the following Android Enterprise scenarios:
+The Global Secure Access client for Android supports deployment in these Android Enterprise scenarios:
 
-- Corporate-owned, fully managed user devices.
-- Corporate-owned devices with a work profile.
-- Personal devices with a work profile.
+- Corporate-owned, fully managed user devices
+- Corporate-owned devices with a work profile
+- Personal devices with a work profile
 
 ### Non-Microsoft mobile device management
 
-The Global Secure Access client also supports non-Microsoft mobile device management (MDM) scenarios. In these scenarios, known as *Global Secure Access only mode*, you only need to enable a traffic forwarding profile and configure the app according to the vendor documentation.
+The Global Secure Access client also supports non-Microsoft mobile device management (MDM) scenarios. These scenarios, known as *Global Secure Access only mode*, require enabling a traffic forwarding profile and configuring the app based on the vendor documentation.
 
-## Deploy Microsoft Defender for Endpoint Android
+## Deploy Microsoft Defender for Endpoint on Android
 
-You can use the Global Secure Access client for Android in different deployment modes and scenarios.
-
-### Create an MDM profile and configure Global Secure Access for Microsoft Defender for Endpoint 
+To deploy Microsoft Defender for Endpoint on Android, create an MDM profile and configure Global Secure Access. 
 
 1. In the [Microsoft Intune admin center](https://intune.microsoft.com/#home), go to **Apps** > **Android** > **Manage Apps** > **Configuration**. 
-1. Select the **+ Create** and then select **Managed devices**. The **Create app configuration policy** form opens.
+1. Select **+ Create**, and then select **Managed devices**. The **Create app configuration policy** form opens.
 1. On the **Basics** tab:
     1. Enter a **Name**.
     1. Set the **Platform** to **Android Enterprise**.
-    1. Set the **Profile type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
+1. Set the **Profile type** to **Fully Managed, Dedicated, and Corporate-Owned Work Profile Only**.
     1. Set the **Targeted app** to **Microsoft Defender**. 
 1. Select **Next**.
 :::image type="content" source="media/how-to-install-android-client/create-policy-basics.png" alt-text="Screenshot of the Create app configuration policy on the Basics tab.":::   
 
 1. On the **Settings** tab:
     1. Set **Configuration settings format** to **Use configuration designer**.
-    1. Use the JSON editor to configure the disabled configuration keys. Select the **+Add** button.
+1. Use the JSON editor to configure the disabled configuration keys, and then select the **+ Add** button.
     1. In the search field, type `global` and select these configuration keys:
         - **Global Secure Access** (this key is required to enable Global Secure Access). 
         - **GlobalSecureAccessPrivateChannel** (this optional key enables Global Secure Access Private channel). 
@@ -82,7 +80,7 @@ You can use the Global Secure Access client for Android in different deployment 
 |                                  | 3        | The Private Access toggle is visible but grayed out, and defaults to the enabled state. The user **can't** disable Private Access. |
 
 > [!NOTE]
-> The **GlobalSecureAccessPA** configuration key is deprecated.   
+> The **GlobalSecureAccessPA** configuration key is no longer supported.   
 
 6. Select **Next**. 
 :::image type="content" source="media/how-to-install-android-client/create-policy-settings.png" alt-text="Screenshot of the Create app configuration policy on the Settings tab.":::   
@@ -92,12 +90,12 @@ You can use the Global Secure Access client for Android in different deployment 
 :::image type="content" source="media/how-to-install-android-client/create-policy-assignments.png" alt-text="Screenshot of the Create app configuration policy on the Assignments tab.":::   
 
 > [!TIP]
-> To enable the policy for all but a few specific users, select **Add all devices** in the **Included groups** section, and then add the users or groups to exclude in the **Excluded groups** section.
+> To enable the policy for all but a few specific users, select **Add all devices** in the **Included groups** section. Then, add the users or groups to exclude in the **Excluded groups** section.
 
 9. Select **Next**.
 1. Review the configuration summary and select **Create**. 
 
-## Confirm Global Secure Access appears in Defender app
+## Confirm Global Secure Access appears in the Defender app
 
 Because the Android client is integrated with Defender for Endpoint, it's helpful to understand the end user experience. The client appears in the Defender dashboard after onboarding to Global Secure Access. Onboarding happens by enabling a traffic forwarding profile.
 
@@ -107,19 +105,19 @@ Because the Android client is integrated with Defender for Endpoint, it's helpfu
 
 ![Screenshot of the disabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-disabled.png)
 
-To view the details of the client, tap on the tile on the dashboard. When enabled and working properly, the client displays an "Enabled" message. The date and time for when the client connected to Global Secure Access also appears.
+To view client details, tap the tile on the dashboard. When enabled and working properly, the client shows an "Enabled" message. It also shows the date and time when the client connected to Global Secure Access.
 
 ![Screenshot of the enabled Global Secure Access client.](media/how-to-install-android-client/defender-global-secure-access-enabled.png)
 
-If the client is unable to connect, a toggle appears to disable the service. Users can come back later to try enabling the client.
+If the client can't connect, a toggle appears to disable the service. Users can return later to enable the client.
 
 ![Screenshot of the Global Secure Access client that is unable to connect.](media/how-to-install-android-client/defender-global-secure-access-unable.png)
 
 ## Troubleshooting
 
-If the Global Secure Access tile doesn't appear after onboarding the tenant to the service, try restarting the Defender app.
+If the Global Secure Access tile doesn't appear after onboarding the tenant to the service, restart the Defender app.
 
-When attempting to access a Private Access application, the connection might time out after a successful interactive sign-in. Try reloading the application by refreshing the web browser.
+When you try to access a Private Access application, the connection might time out after a successful interactive sign-in. Reload the application by refreshing the web browser.
 
 ## Related content
 - [About Microsoft Defender for Endpoint on Android](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-android)
