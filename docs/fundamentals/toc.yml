@@ -16,7 +16,7 @@ items:
   - name: Create a tenant
     href: create-new-tenant.md
   - name: Add a custom domain name
-    href: add-custom-domain.yml
+    href: add-custom-domain.md
   - name: Associate an Azure subscription
     href: how-subscriptions-associated-directory.yml
   - name: Add your privacy info

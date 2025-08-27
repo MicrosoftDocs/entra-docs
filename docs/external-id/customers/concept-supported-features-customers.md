@@ -51,7 +51,7 @@ The following table compares the features available for look and feel customizat
 |---------|---------|---------|
 | **Company branding** | You can add [company branding](~/fundamentals/how-to-customize-branding.md) that applies to all these experiences to create a consistent sign-in experience for your users. | Same as workforce. [Learn more](how-to-customize-branding-customers.md) |
 | **Language customization** | [Customize the sign-in experience by browser language](~/fundamentals/how-to-customize-branding.md). | Same as workforce. [Learn more](how-to-customize-languages-customers.md) |
-| **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.yml) for administrative accounts only. | The [custom URL domain](concept-custom-url-domain.md) feature for external tenants lets you brand app sign-in endpoints with your own domain name.|
+| **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.md) for administrative accounts only. | The [custom URL domain](concept-custom-url-domain.md) feature for external tenants lets you brand app sign-in endpoints with your own domain name.|
 | **Native authentication** for mobile apps| Not available |Microsoft Entra’s [native authentication](concept-native-authentication.md) allows you to have full control over the design of your mobile application sign-in experiences.|
 
 

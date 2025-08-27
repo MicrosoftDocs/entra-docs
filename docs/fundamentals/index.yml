@@ -49,7 +49,7 @@ landingContent:
           - text: Sign up for Microsoft Entra ID as an organization
             url: sign-up-organization.md
           - text: Add your custom domain name 
-            url: add-custom-domain.yml
+            url: add-custom-domain.md
 
   # Card
   - title: Manage groups in Microsoft Entra ID
