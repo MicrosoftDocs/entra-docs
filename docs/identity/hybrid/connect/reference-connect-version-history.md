@@ -101,7 +101,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Added Features 
 
-- Improved the setup process for Application-Based Authentication to handle TPM-backed certificates (certificates protected by a Trusted Platform Module, a hardware security chip—see [What is a TPM?](https://learn.microsoft.com/windows/security/information-protection/tpm/trusted-platform-module-overview)). The system now tests a certificate’s signing capability upfront and automatically falls back to software-based certificates if TPM signature fails. 
+- Improved the setup process for Application-Based Authentication to handle TPM-backed certificates (certificates protected by a Trusted Platform Module, see [What is a TPM?](/windows/security/information-protection/tpm/trusted-platform-module-overview)). The system now tests a certificate’s signing capability upfront and automatically falls back to software-based certificates if TPM signature fails. 
 
 - Implemented automatic removal of certificates if an Application-Based Authentication configuration fails after a certificate is created. This prevents unused certificates from lingering on the server in failure scenarios, improving security by avoiding accumulation of orphaned certificates. 
 
