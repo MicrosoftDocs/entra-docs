@@ -225,6 +225,22 @@ The default specific parameters for the **Employee job profile change** template
 
 For a tutorial on setting up a workflow that uses the **Employer job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
 
+The **Pre-Offboard inactive users** template is designed to configure tasks that must be completed before offboarding inactive users.
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Leaver       |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change         |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Days from event     | 7        | ✔️        |
+|Event timing     | Before        |  ❌       |
+|Event User attribute     | LastSignInDateTime        |   ❌      |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Disable user account**     |  ✔️       |
+
+
+
+
 ## Next steps
 
 - [`workflowTemplate` resource type](/graph/api/resources/identitygovernance-workflowtemplate?view=graph-rest-beta&preserve-view=true)
