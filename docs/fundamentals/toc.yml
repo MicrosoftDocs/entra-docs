@@ -100,7 +100,7 @@ items:
   expanded: false
   items:
   - name: Find your tenant ID
-    href: how-to-find-tenant.yml
+    href: how-to-find-tenant.md
   - name: Get support for Microsoft Entra ID
     href: how-to-get-support.md
   - name: Quarantine unsanctioned tenants 
