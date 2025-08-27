@@ -38,7 +38,7 @@ items:
     - name: Manage user profile info
       href: how-to-manage-user-profile-info.md
     - name: Reset a user's password
-      href: users-reset-password-azure-portal.yml
+      href: users-reset-password-azure-portal.md
     - name: Restore a deleted user
       href: users-restore.md
   - name: Groups

@@ -141,7 +141,7 @@ sections:
 
           For Microsoft Entra accounts, admins can reset passwords by using one of the following:
           
-          - [Reset a user's password using Microsoft Entra ID](./users-reset-password-azure-portal.yml)
+          - [Reset a user's password using Microsoft Entra ID](./users-reset-password-azure-portal.md)
           - [Reset a password using PowerShell](/powershell/module/microsoft.graph.identity.signins/reset-mguserauthenticationmethodpassword)
 
   - name: Help with security
