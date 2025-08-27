@@ -102,7 +102,6 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Added Features 
 
 - Improved the setup process for Application-Based Authentication to handle TPM-backed certificates (certificates protected by a Trusted Platform Module, see [What is a TPM?](/windows/security/information-protection/tpm/trusted-platform-module-overview)). The system now tests a certificate’s signing capability upfront and automatically falls back to software-based certificates if TPM signature fails. 
-
 - Implemented automatic removal of certificates if an Application-Based Authentication configuration fails after a certificate is created. This prevents unused certificates from lingering on the server in failure scenarios, improving security by avoiding accumulation of orphaned certificates. 
 
 ### Bug fixes
@@ -110,9 +109,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - Resolved an issue on FIPS-enabled servers that was causing setup failures. Application-Based Authentication now works correctly on servers with FIPS mode enabled by using FIPS-compliant cryptographic algorithms. 
   > [!TIP]
   > FIPS (Federal Information Processing Standards) mode is a Windows security setting that enforces the use of cryptographic algorithms for sensitive data. When FIPS mode is enabled, only FIPS-compliant algorithms can be used, which is why this fix ensures compatibility for environments requiring strict security standards.
-
 - Fixed an issue where certificate auto-rotation was incorrectly reported as active when the scheduler was suspended. The auto-rotation logic now checks the scheduler’s state before indicating status, ensuring the *View or export current configuration wizard* accurately reflects whether auto-rotation is enabled. 
-
 - Removed an inappropriate admin audit event that was being logged for automatic certificate operations. These background certificate actions no longer generate administrative audit log entries, resulting in a cleaner audit trail (only actual administrator-initiated changes will appear in the Entra Connect Sync audit logs). 
 
 ## 2.5.76.0
