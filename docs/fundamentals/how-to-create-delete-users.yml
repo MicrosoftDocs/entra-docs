@@ -88,7 +88,7 @@ procedureSection:
 
         ### Basics
 
-        The **Basics** tab contains the core fields required to create a new user. Before you begin, [review the guidance on user name properties](how-to-manage-user-profile-info.yml#guidance-on-user-name-properties).
+        The **Basics** tab contains the core fields required to create a new user. Before you begin, [review the guidance on user name properties](how-to-manage-user-profile-info.md#guidance-on-user-name-properties).
 
         - **User principal name**: Enter a unique username and select a domain from the menu after the @ symbol. Select **Domain not listed** if you need to create a new domain. For more information, see [Add your custom domain name](add-custom-domain.md).
         - **Mail nickname**: If you need to enter an email nickname that is different from the user principal name you entered, uncheck the **Derive from user principal name** option, then enter the mail nickname.

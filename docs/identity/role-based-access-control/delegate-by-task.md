@@ -476,7 +476,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | ---- | --------------------- | ---------------- |
 > | Create Microsoft Entra ID or Azure AD B2C Tenant | [Tenant Creator](permissions-reference.md#tenant-creator) |  |
 > | Update Microsoft Entra tenant properties | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
-> | [Manage privacy statement and contact](../../fundamentals/properties-area.yml) | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
+> | [Manage privacy statement and contact](../../fundamentals/properties-area.md) | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
 ## Users least privileged roles
 
