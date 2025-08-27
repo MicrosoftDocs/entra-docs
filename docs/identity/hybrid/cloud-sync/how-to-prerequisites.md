@@ -201,6 +201,9 @@ When using OU scoping filter
 
 - Nested OUs are supported (that is, you **can** sync an OU that has 130 nested OUs, but you **can't** sync 60 separate OUs in the same configuration).
 
+>[!NOTE]
+>At this time, it is not possible to check the scoping configuration size to determine if it is near to, reached or exceeded the 4 MB character limit which includes metadata. 
+
 ### Password Hash Sync
 
 - Using password hash sync with InetOrgPerson isn't supported.
