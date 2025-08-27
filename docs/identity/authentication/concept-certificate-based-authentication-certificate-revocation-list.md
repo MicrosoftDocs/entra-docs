@@ -105,7 +105,7 @@ To strengthen security and avoid misconfigurations, an Authentication Policy Adm
 
 1. Select **Require CRL validation (recommended)** to enable CRL validation. 
 
-   :::image type="content" border="true" source="./media/   concept-certificate-based-authentication-certificate-revocation-list/require-validation.png"    alt-text="Screenshot of how to require CRL validation." :::  
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/require-validation.png" alt-text="Screenshot of how to require CRL validation." :::  
    
    When you enable this setting, CBA fails if the end user certificate comes from a CA that doesn't configure a CRL.
 
