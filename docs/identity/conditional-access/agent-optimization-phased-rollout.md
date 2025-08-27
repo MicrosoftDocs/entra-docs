@@ -35,10 +35,13 @@ This article explains how the phased rollout process works, outlines prerequisit
 - You must have available [security compute units (SCU)](/copilot/security/manage-usage).
 - [Global Reader](../../identity/role-based-access-control/permissions-reference.md#global-reader) and [Security Reader](../../identity/role-based-access-control/permissions-reference.md#security-reader) roles can view the agent and any suggestions, but can't take any actions.
 - [Global Administrator](../../identity/role-based-access-control/permissions-reference.md#global-administrator), [Security Administrator](../../identity/role-based-access-control/permissions-reference.md#security-administrator), and [Conditional Access Administrator](../../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) roles can view the agent and take action on the suggestions.
+- Tenants must have at least five defined groups that are currently used in Conditional Access policies for the agent to generate a phased rollout plan.
 
 ## How it works
 
-When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan. There are three main steps in the phased rollout process.
+When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan. Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. 
+
+There are three main steps in the phased rollout process.
 
 ### Agent creates a report-only policy with a phased rollout
 
@@ -46,7 +49,7 @@ The agent creates a report-only policy and builds a separate phased rollout plan
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png":::
 
-### Administrator reviews and accepts the rollout plan
+### Administrator reviews the rollout plan
 
 Administrators review the details of the plan and can accept it or modify the group assignments or the time between phases.
 
@@ -68,8 +71,6 @@ To adjust the groups included in a phase:
 
     :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-group-edit.png" alt-text="Screenshot of the phase group edit options." lightbox="media/agent-optimization-phased-rollout/phased-rollout-group-edit.png":::
 
-1. Select **Apply suggestion** to save the changes to the groups and accept the rollout plan.
-
 To adjust the time between phases:
 
 1. From the Conditional Access Optimization Agent page, select the **Settings** tab. 
@@ -78,15 +79,24 @@ To adjust the time between phases:
 
 For more information, review the [Phased rollout settings](agent-optimization.md#phased-rollout-preview).
 
+### Administrator selects an execution mode
+
+After reviewing the phased rollout plan, you can choose to:
+
+- Have the agent automatically execute the rollout plan, based on timing and impact signals.
+- Manually advance through each phase of the rollout.
+
+If you choose to have the agent automatically execute the rollout plan, you can intervene at any time. You can also change execution modes at any time during rollout.
+
 ### Agent executes the approved rollout plan
 
-The agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. The original report-only policy remains intact so you can continue to collect data on the policy.
+If you selected automatic rollout, the agent automatically executes the plan by creating a new, enabled policy that applies to all groups in the first phase. Once the rollout starts, several controls appear to manage the rollout.
 
-The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure the policy does what's expected. While the policy is being rolled out, the policy remains in report-only mode for the remaining phases. 
+The agent deploys the policy to the groups in the next phases based on the defined schedule. You can continue to monitor between each phase of the rollout to ensure the policy does what's expected. While the policy is being rolled out, the original report-only policy remains in report-only mode for the remaining phases. 
 
 :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png" alt-text="Screenshot of a phased rollout that's in progress." lightbox="media/agent-optimization-phased-rollout/phased-rollout-in-progress.png":::
 
-After every phase is complete, the agent will recommend deleting the report-only policy the next time it runs, so you can maintain a clean policy list.
+After every phase is complete, the agent recommends deleting the report-only policy the next time it runs, so you can maintain a clean policy list.
 
 ## Built-in safeguards
 
