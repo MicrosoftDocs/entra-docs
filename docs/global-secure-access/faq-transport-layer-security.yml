@@ -27,6 +27,9 @@ sections:
           - Create a Conditional Access policy and associate it with the Global Secure Access security profile that's linked to the TLS policy.
           - Make sure the root certificate authority or intermediate certificate authority is installed on all client devices to establish trust for TLS inspection.
 
+      - question: What are the cryptographic algorithms used in TLS inspection? 
+        answer: Global Secure Access currently supports SHA-256,SHA-384 and SHA-512 for signing certificates
+
       - question: What is certificate pinning, and how does it affect TLS inspection? 
         answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection.   
 
