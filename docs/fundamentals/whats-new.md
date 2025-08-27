@@ -24,6 +24,26 @@ This article provides information about the latest releases and change announcem
 
 ## August 2025
 
+### Plan for change - New end user homepage in My Account
+
+**Type:** New feature      
+**Service category:** My Profile/Account     
+**Product capability:** End User Experiences  
+
+By the end of September 2025, the homepage at https://myaccount.microsoft.com will be updated to provide a more task-focused experience. Users will see pending actions like renewing expiring groups, approving access package requests, and setting up MFA directly on the homepage. Quick links to apps, groups, access packages, and sign-in details will be easier to find and use. This change is designed to streamline account management and help users stay on top of access and security tasks.
+
+---
+
+### Plan for change  - Requestors can view who their access package approvers are in My Access
+
+**Type:** New feature  
+**Service category:** Entitlement Management     
+**Product capability:** Entitlement Management  
+
+By the end of September 2025, requestors will be able to see the name and email address of approvers for their pending access package requests directly in the My Access portal. This feature improves transparency and helps streamline communication between requestors and approvers. At the tenant level, approver visibility is enabled by default for all members (non-guests) and can be controlled through the Entitlement Management settings in the Microsoft Entra Admin Center. At the access package level, admins and access package owners can configure the approver visibility and choose to override the tenant level setting under the advanced request settings in the access package policy.
+
+---
+
 ### Public Preview - Externally determine the approval requirements for an access package using custom extensions
 
 **Type:** New feature  
