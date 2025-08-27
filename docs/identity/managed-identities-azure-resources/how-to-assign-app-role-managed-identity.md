@@ -17,7 +17,7 @@ appliesto:
 zone_pivot_groups: identity-mi-app-role
 ---
 
-# Assign a managed identity access to an application role
+# Assign an application role to a managed identity
 
 Managed identities for Azure resources provide Azure services with an identity in Microsoft Entra ID. They work without needing credentials in your code. Azure services use this identity to authenticate to services that support Microsoft Entra authentication. Application roles provide a form of role-based access control, and allow a service to implement authorization rules.
 
