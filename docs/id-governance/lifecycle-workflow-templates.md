@@ -33,6 +33,8 @@ The list of templates are as follows:
 - [Post-Offboarding of an employee](lifecycle-workflow-templates.md#post-offboarding-of-an-employee)
 - [Employee group membership changes](lifecycle-workflow-templates.md#employee-group-membership-changes)
 - [Employee job profile change](lifecycle-workflow-templates.md#employee-job-profile-change)
+- [Pre-Offboard inactive users](lifecycle-workflow-templates.md#pre-offboard-inactive-users)
+- [Offboard inactive users](lifecycle-workflow-templates.md#offboard-inactive-users)
 
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
 
