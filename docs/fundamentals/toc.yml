@@ -40,7 +40,7 @@ items:
     - name: Reset a user's password
       href: users-reset-password-azure-portal.yml
     - name: Restore a deleted user
-      href: users-restore.yml
+      href: users-restore.md
   - name: Groups
     expanded: false
     items:

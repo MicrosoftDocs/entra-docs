@@ -249,7 +249,7 @@ procedureSection:
 
           :::image type="content" source="media/how-to-create-delete-users/delete-existing-user.png" alt-text="Screenshot of the All users page with a user selected and the Delete button highlighted.":::
 
-        The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user using Microsoft Entra ID](./users-restore.yml).
+        The user is deleted and no longer appears on the **All users** page. The user can be seen on the **Deleted users** page for the next 30 days and can be restored during that time. For more information about restoring a user, see [Restore or remove a recently deleted user using Microsoft Entra ID](./users-restore.md).
 
         When a user is deleted, any licenses consumed by the user are made available for other users.
 
