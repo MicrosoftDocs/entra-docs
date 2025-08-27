@@ -12,7 +12,7 @@ ms.reviewer: owinfrey
 # Configure whether requestors can see approver details (Preview)
 
 > [!NOTE]
-> This feature will be available beginning in September 2025.
+> This feature will be widely available beginning in September 2025.
 
 Admins can control whether requestors see approver details for pending access package requests in the [My Access](https://myaccess.microsoft.com) portal. You can set this option at the access package level, or at the tenant level (default for all packages). The access package setting overrides the tenant setting when explicitly set to Yes or No.
 
