@@ -24,6 +24,28 @@ This article provides information about the latest releases and change announcem
 
 ## August 2025
 
+### Public Preview - Externally determine the approval requirements for an access package using custom extensions
+
+**Type:** New feature  
+**Service category:** Entitlement Management 
+**Product capability:** Entitlement Management  
+
+In Entitlement Management, approvers for access package assignment requests can either be directly assigned, or determined dynamically. Entitlement management natively supports dynamically determining approvers such as the requestors manager, their second-level manager, or a sponsor from a connected organization. With the introduction of this feature you can now use custom extensions for callouts to Azure Logic Apps and dynamically determine approval requirements for each access package assignment request based on your organizations specific business logic. The access package assignment request process will pause until your business logic hosted in Azure Logic Apps returns an approval stage which will then be leveraged in the subsequent approval process via the My Access portal. 
+
+For more information, see: [Externally determine the approval requirements for an access package using custom extensions (Preview)](../id-governance/entitlement-management-dynamic-approval.md).
+
+---
+
+### Public Preview - Support for eligible group memberships and ownerships in Entitlement Management access packages
+
+**Type:** New feature  
+**Service category:** Entitlement Management 
+**Product capability:** Entitlement Management  
+
+This integration between Entitlement Management and Privileged Identity Management (PIM) for Groups adds support for assigning eligible group memberships and ownerships via access packages. You will now be able to govern these just-in-time protected access assignments at scale by offering a self-service access request & extension process and can integrate them into your organization's role model. For more information, see: [Assign eligible group membership and ownership in access packages via Privileged Identity Management for Groups (Preview)](../id-governance/entitlement-management-access-package-eligible.md)
+
+---
+
 ### General Availability - Platform SSO for macOS with Microsoft Entra ID
 
 **Type:** New feature  
