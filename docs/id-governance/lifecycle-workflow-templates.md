@@ -227,6 +227,9 @@ For a tutorial on setting up a workflow that uses the **Employer job profile cha
 
 The **Pre-Offboard inactive users** template is designed to configure tasks that must be completed before offboarding inactive users.
 
+
+The default specific parameters for the **Pre-Offboard inactive users** template are as follows:
+
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
@@ -238,7 +241,22 @@ The **Pre-Offboard inactive users** template is designed to configure tasks that
 |Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
 |Tasks     | **Disable user account**     |  ✔️       |
 
+### Offboard inactive users
 
+The **Offboard inactive users** template is designed to configure tasks that must be completed to offboard inactive users.
+
+The default specific parameters for the **Offboard inactive users** template are as follows:
+
+|Parameter  |Description  |Customizable  |
+|---------|---------|---------|
+|Category     |  Leaver       |  ❌       |
+|Trigger Type     | Time based attribute, Attribute changes, Group Membership change         |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Days from event     | 0        | ✔️        |
+|Event timing     | On        |  ❌       |
+|Event User attribute     | LastSignInDateTime        |   ❌      |
+|Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
+|Tasks     | **Delete user account**     |  ✔️       |
 
 
 ## Next steps
