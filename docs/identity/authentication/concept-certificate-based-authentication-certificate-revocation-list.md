@@ -1,10 +1,10 @@
 ---
-title: Microsoft Entra certificate-based authentication Certificate revocation list
+title: Understand Microsoft Entra certificate-based authentication Certificate revocation list
 description: Learn how certificate revocation list works with Microsoft Entra certificate-based authentication
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 08/26/2025
 ms.author: justinha
 author: vimrang
 manager: dougeby
@@ -15,19 +15,17 @@ ms.localizationpriority: high
 
 # Microsoft Entra certificate-based authentication Certificate Revocation List (CRL)
 
-## Overview
-Certificate Revocation List (CRL) is a list of certificates that have been revoked by the issuing Certificate Authority (CA) before their scheduled expiration date. CRLs are essential for maintaining authentication integrity. When a certificate is revoked, it’s marked as untrusted even if not expired. Incorporating CRLs in certificate-based authentication ensures only valid, non-revoked certificates are accepted, and Microsoft Entra ID blocks any attempt using a revoked certificate.
+A Certificate Revocation List (CRL) is a list of certificates that have been revoked by the issuing Certificate Authority (CA) before their scheduled expiration date. CRLs are essential for maintaining authentication integrity. When a certificate is revoked, it’s marked as untrusted even if not expired. Incorporating CRLs in certificate-based authentication ensures only valid, non-revoked certificates are accepted, and Microsoft Entra ID blocks any attempt using a revoked certificate.
 
 CRLs are digitally signed by the CA and published to publicly accessible locations, allowing them to be downloaded over the internet to verify the revocation status of certificates. When a client presents a certificate for authentication, the system checks the CRL to determine if the certificate has been revoked. 
 
-If the certificate is found in the CRL, the authentication attempt is rejected. CRLs are usually updated periodically, and organizations should ensure they have the latest version of the CRL to make accurate decisions about 
-certificate validity. 
+If the certificate is found in the CRL, the authentication attempt is rejected. CRLs are usually updated periodically, and organizations should ensure they have the latest version of the CRL to make accurate decisions about certificate validity. 
 
 In Microsoft Entra certificate-based authentication (CBA), when CRLs are configured, the system must retrieve and validate the CRL during authentication. If Microsoft Entra ID cannot access the CRL endpoint, authentication fails because the CRL is required to confirm certificate validity.
 
-## How CRL works in certificate-based authentication
+## How a CRL works in certificate-based authentication
 
-CRL works by providing a mechanism to check the validity of certificates used for authentication. The process involves several key steps:
+A CRL works by providing a mechanism to check the validity of certificates used for authentication. The process involves several key steps:
 
 - **Certificate Issuance:** When a certificate is issued by a CA, it is valid until its expiration date unless it is revoked earlier. Each certificate contains a public key and is signed by the CA.
 - **Revocation:** If a certificate needs to be revoked (for example, if  the private key is compromised or the certificate is no longer needed), the CA adds it to the CRL.
@@ -50,34 +48,30 @@ Microsoft Entra ID supports only one CRL endpoint and supports only HTTP or HTTP
 
 1. When a user performs an interactive sign-in with a certificate, Microsoft Entra ID downloads and caches the customer's certificate revocation list (CRL) from their certificate authority to check if certificates are revoked during the authentication of the user. Microsoft Entra uses the SubjectKeyIdentifier attribute instead of SubjectName to build the certificate chain. When CRLs are enabled, PKI configurations must include SubjectKeyIdentifier and Authority Key Identifier values to ensure proper revocation checking.
 
-SubjectKeyIdentifier provides a unique, immutable identifier for the certificate’s public key, making it more reliable than SubjectName, which can change or be duplicated across certificates. This attribute ensures accurate chain building and consistent CRL validation in complex PKI environments.
+   SubjectKeyIdentifier provides a unique, immutable identifier for the certificate’s public key, making it more reliable than SubjectName, which can change or be duplicated across certificates. This attribute ensures accurate chain building and consistent CRL validation in complex PKI environments.
 
 
->[!IMPORTANT]
->If an Authentication Policy Administrator skips the configuration of the CRL, Microsoft Entra ID doesn't perform any CRL checks during the certificate-based authentication of the user. This behavior can be helpful for initial troubleshooting, but shouldn't be considered for production use.
+   >[!IMPORTANT]
+   >If an Authentication Policy Administrator skips the configuration of the CRL, Microsoft Entra ID doesn't perform any CRL checks during the certificate-based authentication of the user. This behavior can be helpful for initial troubleshooting, but shouldn't be considered for production use.
 
-1. Base CRL Only: If only the base CRL is configured, Microsoft Entra ID downloads and caches it until the Next Update timestamp. Authentication fails if the CRL has expired and can't be refreshed due to connectivity issues or if the CRL endpoint doesn't provide an updated version. Microsoft Entra strictly enforces CRL versioning: when a new CRL is published, its CRL Number must be higher than the previous version.
+   - Base CRL only: If only the base CRL is configured, Microsoft Entra ID downloads and caches it until the Next Update timestamp. Authentication fails if the CRL has expired and can't be refreshed due to connectivity issues or if the CRL endpoint doesn't provide an updated version. Microsoft Entra strictly enforces CRL versioning: when a new CRL is published, its CRL Number must be higher than the previous version.
 
+     CRL Number ensures monotonic versioning, preventing replay attacks where an older CRL could be reintroduced to bypass revocation checks. By requiring each new CRL to have a higher version number, Microsoft Entra ID guarantees that the most recent revocation data is always used.
 
-CRL Number ensures monotonic versioning, preventing replay attacks where an older CRL could be reintroduced to bypass revocation checks. By requiring each new CRL to have a higher version number, Microsoft Entra ID guarantees that the most recent revocation data is always used.
-
-
-1. Base + Delta CRL: When both are configured, both must be valid and accessible. If either is missing or expired, certificate validation fails per RFC 5280 standards.
-
+   - Base + Delta CRL: When both are configured, both must be valid and accessible. If either is missing or expired, certificate validation fails per RFC 5280 standards.
 
 1. The user certificate-based authentication fails if a CRL is configured for the trusted issuer and Microsoft Entra ID can't download the CRL, due to availability, size, or latency constraints. This limitation makes the CRL endpoint a critical single point of failure, reducing the resiliency of Microsoft Entra ID’s certificate-based authentication. To mitigate this risk, we recommend using highly available solutions that ensure continuous uptime for CRL endpoints.
 
-
 1. If the CRL exceeds the interactive limit for a cloud, the user's initial sign-in fails with the following error:
 
-    "The Certificate Revocation List (CRL) downloaded from {uri} has exceeded the maximum allowed size ({size} bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators."
+   `The Certificate Revocation List (CRL) downloaded from {uri} has exceeded the maximum allowed size ({size} bytes) for CRLs in Microsoft Entra ID. Try again in few minutes. If the issue persists, contact your tenant administrators.`
 
-1. Microsoft Entra ID attempts to download the CRL subject to the service-side limits (45 MB in public Microsoft Entra ID and 150 MB in Azure US Government clouds).
+1. Microsoft Entra ID attempts to download the CRL subject to the service-side limits (45 MB in public Microsoft Entra ID and 150 MB in Azure for US Government).
 
 1. Users can retry the authentication after a few minutes. If the user's certificate is revoked and appears in the CRL, the authentication fails.
 
->[!IMPORTANT]
->Token revocation for a revoked certificate isn't immediate because of CRL caching. If a CRL is already cached, newly revoked certificates aren't detected until the cache refreshes with an updated CRL. Delta CRLs typically include these updates, so revocation takes effect once the delta CRL is loaded. If delta CRLs aren't used, revocation depends on the base CRL’s validity period. Administrators should manually revoke tokens only when immediate revocation is critical, such as in high-security scenarios. For more information, see [Configure revocation](./certificate-based-authentication-federation-get-started.md#step-3-configure-revocation).
+   >[!IMPORTANT]
+   >Token revocation for a revoked certificate isn't immediate because of CRL caching. If a CRL is already cached, newly revoked certificates aren't detected until the cache refreshes with an updated CRL. Delta CRLs typically include these updates, so revocation takes effect once the delta CRL is loaded. If delta CRLs aren't used, revocation depends on the base CRL’s validity period. Administrators should manually revoke tokens only when immediate revocation is critical, such as in high-security scenarios. For more information, see [Configure revocation](./certificate-based-authentication-federation-get-started.md#step-3-configure-revocation).
 
 1. We don't support Online Certificate Status Protocol (OCSP) because of performance and reliability reasons. Instead of downloading the CRL at every connection by the client browser for OCSP, Microsoft Entra ID downloads it once at the first sign-in and caches it. This action improves the performance and reliability of CRL verification. We also index the cache so the search is much faster every time. 
 
@@ -86,18 +80,16 @@ CRL Number ensures monotonic versioning, preventing replay attacks where an olde
 
 1. If the user's certificate is listed as revoked on the CRL, user authentication fails.
    
-     :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/user-cert.png" alt-text="Screenshot of the revoked user certificate in the CRL." ::: 
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/user-cert.png" alt-text="Screenshot of the revoked user certificate in the CRL." ::: 
 
->[!IMPORTANT]
->Due to the nature of CRL caching and publishing cycles, it's highly recommended that, if there's a certificate revocation, you also revoke all sessions of the affected user in Microsoft Entra ID.
+   >[!IMPORTANT]
+   >Due to the nature of CRL caching and publishing cycles, it's highly recommended that, if there's a certificate revocation, you also revoke all sessions of the affected user in Microsoft Entra ID.
 
 1. Microsoft Entra ID attempts to pre-fetch a new CRL from the distribution point if the cached CRL document is expired. If CRL has a "Next Publish Date" Microsoft Entra does a CRL pre-fetch even if the CRL in cache is not expired. As of now, there's no way to manually force or retrigger the download of the CRL.
 
->[!NOTE]
->Microsoft Entra ID checks the CRL of the issuing CA and other CAs in the PKI trust chain up to the root CA. We have a limit of up to 10 CAs from the leaf client certificate for CRL validation in the PKI chain. The limitation is to make sure a bad actor doesn't bring down the service by uploading a PKI chain with a huge number of CAs with a bigger CRL size.
->If the tenant's PKI chain has more than 10 CAs, and if there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration. For more information, see [CRL Pre-fetching](/windows/win32/seccrypto/certificate-revocation-list-semantics#crl-pre-fetching).
-
-  
+   >[!NOTE]
+   >Microsoft Entra ID checks the CRL of the issuing CA and other CAs in the PKI trust chain up to the root CA.    We have a limit of up to 10 CAs from the leaf client certificate for CRL validation in the PKI chain. The    limitation is to make sure a bad actor doesn't bring down the service by uploading a PKI chain with a huge    number of CAs with a bigger CRL size.
+   >If the tenant's PKI chain has more than 10 CAs, and if there's a CA compromise, Authentication Policy Administrators should remove the compromised trusted issuer from the Microsoft Entra tenant configuration. For more information, see [CRL Pre-fetching](/windows/win32/seccrypto/certificate-revocation-list-semantics#crl-pre-fetching).
 
 ### How to configure revocation
 
@@ -113,25 +105,25 @@ To strengthen security and avoid misconfigurations, an Authentication Policy Adm
 
 1. Select **Require CRL validation (recommended)** to enable CRL validation. 
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/require-validation.png" alt-text="Screenshot of how to require CRL validation." :::  
-
-When you enable this setting, CBA fails if the end user certificate comes from a CA that doesn't configure a CRL.
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/require-validation.png" alt-text="Screenshot of how to require CRL validation." :::  
+   
+   When you enable this setting, CBA fails if the end user certificate comes from a CA that doesn't configure a CRL.
 
 1. An Authentication Policy Administrator can exempt a CA if its CRL has issues that need to be fixed. Select **Add Exemption** and choose any CAs to exempt.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/exempt-validation.png" alt-text="Screenshot of how to exempt CAs from CRL validation." :::  
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/exempt-validation.png" alt-text="Screenshot of how to exempt CAs from CRL validation." :::  
 
 1. CAs in the exempted list don't need to configure a CRL, and the end-user certificates they issue don't fail authentication.
 
-Select CAs and select **Add**. Use the **Search** text box to filter the CA lists and select specific CAs.
+   Select CAs and select **Add**. Use the **Search** text box to filter the CA lists and select specific CAs.
 
-:::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." ::: 
+   :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificate-revocation-list/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." ::: 
 
 
 ## Guidance for setting up CRLs (base and delta CRL) for Microsoft Entra ID
 
 1. Publish accessible CRLs: 
-   - Ensure your CA publishes both the base CRL and delta CRLs (if applicable) to    internet-facing URLs accessible via HTTP. 
+   - Ensure your CA publishes both the base CRL and delta CRLs (if applicable) to internet-facing URLs accessible via HTTP. 
    - Microsoft Entra ID can't validate certificates if CRLs are hosted on internal-only servers. The URLs should be highly available, performant, and resilient to prevent authentication failures due to unavailability. 
    - Validate CRL accessibility by testing the CRL URL in a browser and using certutil -url for distribution checks.
 
@@ -192,6 +184,8 @@ Select CAs and select **Add**. Use the **Search** text box to filter the CA list
 
 
 ## Frequently asked questions
+
+This next sections cover common questions and answers related to Certificate Revocation Lists. 
 
 ### Is there a limit for CRL size?
         
