@@ -225,6 +225,8 @@ The default specific parameters for the **Employee job profile change** template
 
 For a tutorial on setting up a workflow that uses the **Employer job profile change** template, see: [Automate employee mover tasks when they change jobs using the Microsoft Entra admin center](tutorial-mover-custom-workflow-portal.md).
 
+### Pre-Offboard inactive users
+
 The **Pre-Offboard inactive users** template is designed to configure tasks that must be completed before offboarding inactive users.
 
 
