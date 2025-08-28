@@ -230,7 +230,7 @@ For a tutorial on setting up a workflow that uses the **Employer job profile cha
 The **Pre-Offboard inactive users** template is designed to configure tasks that must be completed before offboarding inactive users.
 
 
-:::image type="content" source="media/lifecycle-workflow-templates/pre-offboard-inactive-users-template.png" alt-text="Screenshot of the pre-offboard inaxctive users template.":::
+:::image type="content" source="media/lifecycle-workflow-templates/pre-off-board-inactive-users-template.png" alt-text="Screenshot of the pre-offboard inaxctive users template.":::
 
 The default specific parameters for the **Pre-Offboard inactive users** template are as follows:
 
@@ -249,7 +249,7 @@ The default specific parameters for the **Pre-Offboard inactive users** template
 
 The **Offboard inactive users** template is designed to configure tasks that must be completed to offboard inactive users.
 
-:::image type="content" source="media/lifecycle-workflow-templates/offboard-inactive-users-template.png" alt-text="Screenshot of the offboard inactive users template.":::
+:::image type="content" source="media/lifecycle-workflow-templates/off-board-inactive-users-template.png" alt-text="Screenshot of the offboard inactive users template.":::
 
 The default specific parameters for the **Offboard inactive users** template are as follows:
 
