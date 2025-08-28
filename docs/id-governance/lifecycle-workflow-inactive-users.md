@@ -1,65 +1,25 @@
 ---
-title: #Required; "<verb> * <noun>"
-description: #Required; Keep the description within 100- and 165-characters including spaces.
-author: #Required; your GitHub user alias, with correct capitalization
-ms.author: #Required; microsoft alias of author
-ms.service: #Required; use the name-string related to slug in ms.product/ms.service
+title: Manage inactive users using Lifecycle Workflows (Preview)
+description: This articles walks you through managing inactive users with Lifecycle Workflows.
+author: owinfreyATL
+ms.author: owinfrey
+manager: dougeby
+ms.service: entra-id-governance
+ms.subservice: lifecycle-workflows
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: #Required; mm/dd/yyyy format
+ms.date: 08/28/2025
 
-#CustomerIntent: As a < type of user >, I want < what? > so that < why? >.
+#CustomerIntent: As an IT administrator, I want to automate managing users with Lifecycle Workflows so that management and security is streamlined.
 ---
 
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
-
-This template provides the basic structure of a How-to article pattern. See the
-[instructions - How-to](../level4/article-how-to-guide.md) in the pattern library.
-
-You can provide feedback about this template at: https://aka.ms/patterns-feedback
-
-How-to is a procedure-based article pattern that show the user how to complete a task in their own environment. A task is a work activity that has a definite beginning and ending, is observable, consist of two or more definite steps, and leads to a product, service, or decision.
-
--->
-
-<!-- 1. H1 -----------------------------------------------------------------------------
-
-Required: Use a "<verb> * <noun>" format for your H1. Pick an H1 that clearly conveys the task the user will complete.
-
-For example: "Migrate data from regular tables to ledger tables" or "Create a new Azure SQL Database".
-
-* Include only a single H1 in the article.
-* Don't start with a gerund.
-* Don't include "Tutorial" in the H1.
-
--->
-
-# Manage inactive users using Lifecycle Workflows
+# Manage inactive users using Lifecycle Workflows (Preview)
 
 
 
 ## Prerequisites
 
-TODO: List the prerequisites
+[!INCLUDE [Microsoft Entra ID Governance license](~/includes/entra-entra-governance-license.md)]
 
-<!-- 4. Task H2s ------------------------------------------------------------------------------
-
-Required: Multiple procedures should be organized in H2 level sections. A section contains a major grouping of steps that help users complete a task. Each section is represented as an H2 in the article.
-
-For portal-based procedures, minimize bullets and numbering.
-
-* Each H2 should be a major step in the task.
-* Phrase each H2 title as "<verb> * <noun>" to describe what they'll do in the step.
-* Don't start with a gerund.
-* Don't number the H2s.
-* Begin each H2 with a brief explanation for context.
-* Provide a ordered list of procedural steps.
-* Provide a code block, diagram, or screenshot if appropriate
-* An image, code block, or other graphical element comes after numbered step it illustrates.
-* If necessary, optional groups of steps can be added into a section.
-* If necessary, alternative groups of steps can be added into a section.
-
--->
 
 ## "\<verb\> * \<noun\>"
 TODO: Add introduction sentence(s)
