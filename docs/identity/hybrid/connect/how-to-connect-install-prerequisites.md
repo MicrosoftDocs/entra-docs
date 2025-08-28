@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: no-azure-ad-ps-ref, sfi-ga-nochange
 ms.topic: how-to
-ms.date: 04/09/2025
+ms.date: 08/28/2025
 ms.subservice: hybrid-connect
 ms.author: jomondi
 ---
@@ -226,9 +226,9 @@ When you use Microsoft Entra Connect to deploy AD FS or the Web Application Prox
 Microsoft Entra Connect installs the following components on the server where Microsoft Entra Connect is installed. This list is for a basic Express installation. If you choose to use a different SQL Server on the **Install synchronization services** page, SQL Express LocalDB isn't installed locally.
 
 * Microsoft Entra Connect Health
-* Microsoft SQL Server 2022 Command Line Utilities
-* Microsoft SQL Server 2022 Express LocalDB
-* Microsoft SQL Server 2022 Native Client
+* Microsoft SQL Server 2019 Command Line Utilities
+* Microsoft SQL Server 2019 Express LocalDB
+* Microsoft SQL Server 2019 Native Client
 * Microsoft Visual C++ 14 Redistribution Package
 
 <a name='hardware-requirements-for-azure-ad-connect'></a>
