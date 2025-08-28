@@ -38,7 +38,6 @@ The Conditional Access optimization agent evaluates policies such as requiring m
    - For more information, see [Assign Security Copilot access](/copilot/security/authentication#assign-security-copilot-access).
 - Device-based controls require [Microsoft Intune licenses](/intune/intune-service/fundamentals/licenses).
 - Review [Privacy and data security in Microsoft Security Copilot](/copilot/security/privacy-data-security).
-
    
 ### Limitations
 
@@ -150,7 +149,7 @@ There are several key points to consider regarding the identity and permissions 
 - The user who approves a suggestion to add users to a policy becomes an owner of a new group that adds the users to a policy. 
 - The audit logs for actions taken by the agent are associated with the user who enabled the agent. You can find the name of the account that started the agent in the **Identity and permissions** section of the settings.
 
-    :::image type="content" source="media/agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/identity-permissions.png":::
+   :::image type="content" source="media/agent-optimization/identity-permissions.png" alt-text="Screenshot of the identity and permissions section in the Conditional Access Optimization agent settings." lightbox="media/agent-optimization/identity-permissions.png":::
 
 ### Custom instructions
 
@@ -173,6 +172,14 @@ For more information about how to use custom instructions, check out the followi
 > [!VIDEO 5879a0f7-3644-4e34-a8ce-b186b8e5f128]
 
 Please note that some of the content in the video, such as the user interface elements, is subject to change as the agent is updated frequently.
+
+## Intune integration
+
+The Conditional Access Optimization Agent integrates with Microsoft Intune to monitor application protection policies configured in Intune and identify potential gaps in Conditional Access enforcement. This proactive and automated approach ensures that Conditional Access policies remain aligned with organizational security goals and compliance requirements. The agent suggestions are the same as the other policy suggestions, except that Intune provides part of the signal to the agent.
+
+Agent suggestions for Intune scenarios cover specific user groups and platforms (iOS or Android). For example, the agent identifies an active Intune app protection policy that targets the "Finance" group, but determines there isn't a sufficient Conditional Access policy that enforces app protection. The agent creates a report-only policy that requires users to access resources only through compliant applications on iOS devices.
+
+The agent must be running as a Security Administrator or Global Administrator to identify Intune app protection policies. The Conditional Access Administrator role does not have sufficient privileges in Intune.
 
 ## Remove agent
 
