@@ -16,34 +16,7 @@ sections:
   - name: Single section - ignored
     questions:
       - question: What is Transport Layer Security (TLS) inspection? 
-<<<<<<< HEAD
         answer: TLS inspection decrypts and analyzes encrypted network traffic to detect threats, enforce security policies, and prevent data exfiltration. Since most internet traffic is encrypted, inspecting network traffic is crucial for comprehensive security.
-          
-      - question: How does TLS inspection work? 
-        answer: |
-         TLS inspection intercepts encrypted network traffic, decrypts it for security analysis, and re-encrypts it before sending it to its destination. To implement TLS inspection successfully, follow these best practices:
-          - Before you enable TLS inspection in a live environment, work with your organization's legal and privacy teams to draft a Terms of Use (ToU) policy for users.
-          - Select a root certificate authority or intermediate certificate authority to sign the Certificate Signing Request (CSR) for Global Secure Access.
-          - Set up a TLS policy that fits your organization's needs.
-          - Create a Conditional Access policy and associate it with the Global Secure Access security profile that's linked to the TLS policy.
-          - Make sure the root certificate authority or intermediate certificate authority is installed on all client devices to establish trust for TLS inspection.
-
-      - question: What are the cryptographic algorithms used in TLS inspection? 
-        answer: Global Secure Access currently supports SHA-256,SHA-384 and SHA-512 for signing certificates
-
-      - question: What is certificate pinning, and how does it affect TLS inspection? 
-        answer: Certificate pinning restricts an application's TLS connections to specific certificates. This restriction prevents interception, but it also blocks security solutions that rely on TLS inspection.   
-
-      - question: Why do I receive the error "SSL certificate problem unable to get local issuer certificate" when using Git?
-        answer: | 
-          This error occurs because certain developer tools (such as Git) do not use the operating system's certificate store by default; instead, they maintain their own certificate store. One way to resolve this is to append the certificate to Git’s Certificate Authority bundle.
-          The following sample PowerShell script demonstrates how to do this on a Windows system.
-=======
-        answer: |
-          TLS inspection decrypts and analyzes encrypted network traffic to help organizations detect threats, enforce security policies, and prevent data exfiltration. With the majority of internet traffic now encrypted, 
-          TLS inspection provides visibility into data flows that would otherwise be opaque to security tools. TLS inspection enables enterprises to apply advanced protections such as content filtering without compromising 
-          the confidentiality of legitimate communications.  
-
       - question: How does TLS inspection work? 
         answer: |
           TLS inspection enables organizations to analyze encrypted network traffic by decrypting it for security inspection and re-encrypting it before forwarding it to its destination.
@@ -54,6 +27,9 @@ sections:
           - Configure Conditional Access: Create a Conditional Access policy and associate it with the Global Secure Access security profile linked to the TLS policy.
           - Distribute the trusted certificate: Ensure the selected certificate authority is installed on all client devices to establish trust and enable seamless TLS inspection.
         
+      - question: What are the cryptographic algorithms used in TLS inspection? 
+        answer: Global Secure Access currently supports SHA-256,SHA-384 and SHA-512 for signing certificates
+
       - question: How do I Sign CSR Using the Active Directory Certificate Services (AD CS)
         answer: |
           TLS inspection requires an intermediate certificate authority, ensure you are using the Subordinate CA template. To sign CSR generated from TLS settings,
@@ -72,7 +48,6 @@ sections:
           or to append the certificate to Git's Certificate Authority bundle.
           The following PowerShell script demonstrates how to add the certificate to Git's CA bundle on a Windows system.
           ```powershell
->>>>>>> upstream/live
           # Define the path to your custom root Certificate Authorities
             $certPath = "./myTLSInspectionRootCA.crt"
           # Verify the certificate file exists
