@@ -25,7 +25,7 @@ Follow these steps:
 
 2. Browse to **Entra ID** > **Overview** > **Properties**.
 
-:::image type="content" source="media/how-to-find-tenant/identity-overview-properties.png" alt-text="Microsoft Entra ID - Identity Properties overview":::
+:::image type="content" source="media/how-to-find-tenant/identity-overview-properties.png" alt-text="Screenshot of Microsoft Entra ID - Identity Properties overview.":::
 
 3. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
 
@@ -41,7 +41,7 @@ Follow these steps:
 
 3. Scroll down to the **Tenant ID** section and you can find your tenant ID in the box.
 
-:::image type="content" source="media/how-to-find-tenant/portal-tenant-id.png" alt-text="Microsoft Entra ID - Properties - Tenant ID - Tenant ID field":::
+:::image type="content" source="media/how-to-find-tenant/portal-tenant-id.png" alt-text="Screenshot of Microsoft Entra ID - Properties - Tenant ID - Tenant ID field.":::
 <!-- docutune:enable -->
 
 ## Find tenant ID with PowerShell
