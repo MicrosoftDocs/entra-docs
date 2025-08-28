@@ -384,7 +384,9 @@
         - name: Check the status of a workflow
           href: check-status-workflow.md
         - name: Download workflow history reports
-          href: download-workflow-history.md  
+          href: download-workflow-history.md
+        - name: Manage inactive users (Preview)
+          href: lifecycle-workflow-inactive-users.md      
         - name: Check execution user scope
           href: check-workflow-execution-scope.md  
         - name: Customize the schedule of workflows
