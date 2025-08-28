@@ -22,7 +22,7 @@ The Conditional Access optimization agent helps you ensure all users and applica
 The Conditional Access optimization agent evaluates policies such as requiring multifactor authentication (MFA), enforcing device based controls (device compliance, app protection policies, and domain-joined devices), and blocking legacy authentication and device code flow. The agent also evaluates all existing enabled policies to propose potential consolidation of similar policies. When the agent identifies a suggestion, you can have the agent update the associated policy with one click-remediation.
 
 > [!IMPORTANT]
-> The chat capability in the Conditional Access optimization agent is currently in PREVIEW.
+> The chat capability and policy reports in the Conditional Access optimization agent are currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
@@ -132,7 +132,7 @@ Use the checkboxes under **Microsoft Entra objects to monitor** to specify what 
 
 By default, the Conditional Access optimization agent can create new policies in report-only mode. You can change this setting so that an administrator must approve the new policy before it's created. The policy is still created in report-only mode, but only after admin approval. After reviewing the policy impact, you can turn on the policy directly from the agent experience or from Conditional Access.
 
-### Phased rollout (preview)
+### Phased rollout
 
 When the agent creates a new policy in report-only mode, the policy is rolled out in phases, so you can control and monitor the effect of the new policy. Phased rollout is on by default.
 
