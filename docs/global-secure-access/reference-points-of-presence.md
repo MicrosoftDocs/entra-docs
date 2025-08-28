@@ -64,7 +64,7 @@ The table lists the deployment status for the EMEA region.
 ### Latin America (LATAM)
 The table lists the deployment status for the LATAM region.
 
-|Physical Location            | Azure Region         | Global Secure Access service deployed | Remote network connectivity gateways | 
+|Azure Region            | Physical Location         | Global Secure Access service deployed | Remote network connectivity gateways | 
 | ---                 | ---                         | --- | --- | 
 | Brazil South        | Campinas, Brazil             | ✅ |   | 
 | Brazil Southeast    | Rio de Janeiro, Brazil       | ✅ |   | 
