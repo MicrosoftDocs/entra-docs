@@ -39,7 +39,7 @@ This article explains how the phased rollout process works, outlines prerequisit
 
 ## How it works
 
-When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan. Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. 
+When the Conditional Access optimization agent creates a new policy in report-only mode, it can suggest turning on the policy with a phased rollout. The agent analyzes sign-in data and existing policies to define a phased rollout plan. Policies that are intended to apply to *all users* and need to be turned on are eligible for a phased rollout. Because there are five distinct phases to a rollout plan, you must have at least five groups for the rollout plan to apply.
 
 There are three main steps in the phased rollout process.
 
@@ -47,9 +47,7 @@ There are three main steps in the phased rollout process.
 
 The agent creates a report-only policy and builds a separate phased rollout plan. The rollout plans include five phases, starting with small, low-risk groups and progressing to larger, high-risk groups.
 
-:::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-policy-details.png":::
-
-### Administrator reviews the rollout plan
+### Administrator reviews and edits the rollout plan
 
 Administrators review the details of the plan and can accept it or modify the group assignments or the time between phases.
 
@@ -63,13 +61,19 @@ To adjust the groups included in a phase:
 
 1. From the policy details page, select **Review phases**.
 
-1. Select the pencil icon to edit the groups included in the phase.
+    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-policy-details-apply.png" alt-text="Screenshot of a phased rollout policy suggestion." lightbox="media/agent-optimization-phased-rollout/phased-rollout-policy-details-apply.png":::
 
-    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png" alt-text="Screenshot of the phases that can be edited." lightbox="media/agent-optimization-phased-rollout/phased-rollout-review-phases.png":::
+1. Select **Edit Groups** to edit the groups included in the phase.
 
-1. Edit the groups by either adding or removing them from the phase. Select the **Select** button to save the changes.
+    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-edit-groups-button.png" alt-text="Screenshot of the phases that can be edited with the edit groups button highlighted." lightbox="media/agent-optimization-phased-rollout/phased-rollout-edit-groups-button.png":::
 
-    :::image type="content" source="media/agent-optimization-phased-rollout/phased-rollout-group-edit.png" alt-text="Screenshot of the phase group edit options." lightbox="media/agent-optimization-phased-rollout/phased-rollout-group-edit.png":::
+1. Select the down arrow on the **Automatically roll out phases** button to select an execution mode.
+    - **Automatically**: Agent automatically rolls out each phase, based on timing and impact signals.
+    - **Manually**: Administrator manually advances each phase of the rollout.
+
+> [!TIP]
+> If you choose to have the agent automatically execute the rollout plan, you can intervene at any time. You can also change execution modes at any time during rollout.
+
 
 To adjust the time between phases:
 
@@ -79,14 +83,6 @@ To adjust the time between phases:
 
 For more information, review the [Phased rollout settings](agent-optimization.md#phased-rollout-preview).
 
-### Administrator selects an execution mode
-
-After reviewing the phased rollout plan, you can choose to:
-
-- Have the agent automatically execute the rollout plan, based on timing and impact signals.
-- Manually advance through each phase of the rollout.
-
-If you choose to have the agent automatically execute the rollout plan, you can intervene at any time. You can also change execution modes at any time during rollout.
 
 ### Agent executes the approved rollout plan
 
