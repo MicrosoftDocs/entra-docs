@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: dougeby
 ms.topic: reference
-ms.date: 02/21/2025
+ms.date: 08/28/2025
 ms.service: global-secure-access
 ms.custom: references_regions
 ai-usage: ai-assisted
@@ -41,24 +41,24 @@ The table lists the deployment status for the APAC region.
 ### Europe Middle East Africa (EMEA)
 The table lists the deployment status for the EMEA region.
 
-| Azure Region           | Physical Location            | Global Secure Access service deployed | Remote network connectivity gateways | 
-| ---                    | ---                         | --- | --- |
-| westeurope             | Amsterdam, Netherlands       | ✅ | ✅ |
-| germanynorth           | Berlin, Germany              | ✅ |    |
-| southafricanorth       | Cape Town, South Africa      | ✅ | ✅ | 
-| uaenorth               | Dubai, UAE                   | ✅ | ✅ |
-| northeurope            | Dublin, Ireland              | ✅ | ✅ |
-| germanywestcentral     | Frankfurt, Germany           | ✅ | ✅ |
-| swedencentral          | Gavle, Sweden                | ✅ | ✅ | 
-| southafricawest        | Johannesburg, South Africa   | ✅ | ✅ | 
-| uksouth                | London, UK                   | ✅ | ✅ |
-| westeurope             | Madrid, Spain                | ✅ |    | 
-| italynorth             | Milan, Italy                 | ✅ | ✅ |
-| francecentral          | Marseille, France            | ✅ | ✅ |
-| francecentral          | Paris, France                | ✅ | ✅ |
-| israelcentral          | Tel Aviv, Israel             | ✅ | ✅ |
-| polandcentral          | Warsaw, Poland               | ✅ | ✅ |
-| switzerlandnorth       | Zurich, Switzerland          | ✅ | ✅ |
+| Azure Region            | Physical Location            | Global Secure Access service deployed | Remote network connectivity gateways | 
+| ---                     | ---                         | --- | --- |
+| West Europe             | Amsterdam, Netherlands       | ✅ | ✅ |
+| Germany North           | Berlin, Germany              | ✅ |    |
+| South Africa West       | Cape Town, South Africa      | ✅ | ✅ | 
+| UAE North               | Dubai, UAE                   | ✅ | ✅ |
+| North Europe            | Dublin, Ireland              | ✅ | ✅ |
+| Germany West Central    | Frankfurt, Germany           | ✅ | ✅ |
+| Sweden Central          | Gavle, Sweden                | ✅ | ✅ | 
+| South Africa North      | Johannesburg, South Africa   | ✅ | ✅ | 
+| UK South                | London, UK                   | ✅ | ✅ |
+| Spain Central           | Madrid, Spain                | ✅ |    | 
+| Italy North             | Milan, Italy                 | ✅ | ✅ |
+| France South            | Marseille, France            | ✅ | ✅ |
+| France Central          | Paris, France                | ✅ | ✅ |
+| Israel Central          | Tel Aviv, Israel             | ✅ | ✅ |
+| Poland Central          | Warsaw, Poland               | ✅ | ✅ |
+| Switzerland North       | Zurich, Switzerland          | ✅ | ✅ |
 
 
 ### Latin America (LATAM)
@@ -66,8 +66,8 @@ The table lists the deployment status for the LATAM region.
 
 |Physical Location            | Azure Region         | Global Secure Access service deployed | Remote network connectivity gateways | 
 | ---                 | ---                         | --- | --- | 
-| brazilsouth         | Campinas, Brazil             | ✅ |   | 
-| brazilse            | Rio de Janeiro, Brazil       | ✅ |   | 
+| Brazil South        | Campinas, Brazil             | ✅ |   | 
+| Brazil Southeast    | Rio de Janeiro, Brazil       | ✅ |   | 
 
 
 ### North America (NA)
@@ -75,18 +75,18 @@ The table lists the deployment status for the NA region.
 
 | Azure Region             | Physical Location            | Global Secure Access service deployed | Remote network connectivity gateways | 
 | ---                      | ---                         | --- | --- |
-| eastus                   | Boydton, Virginia, USA       | ✅ | ✅ | 
-| westcentralus            | Cheyenne, Wyoming, USA       | ✅ | ✅ | 
-| northcentralus           | Chicago, Illinois, USA       | ✅ | ✅ | 
-| centralus                | Des Moines, Iowa, USA        | ✅ | ✅ |
-| usgovvirginia            | Manassas, Virginia, USA      | ✅ | ✅ | 
-| canadacentral            | Montreal, Quebec, Canada     | ✅ | ✅ | 
-| westus2                  | Phoenix, Arizona, USA        | ✅ | ✅ | 
-| mexico-central           | Queretaro, Mexico            | ✅ |    | 
-| westus                   | Quincy, Washington, USA      | ✅ | ✅ | 
-| southcentralus           | San Antonio, Texas, USA      | ✅ | ✅ | 
-| westus3                  | San Jose, California, USA    | ✅ | ✅ | 
-| canadaeast               | Toronto, Ontario, Canada     | ✅ | ✅ | 
+| East US                  | Boydton, Virginia, USA       | ✅ | ✅ | 
+| West Central US          | Cheyenne, Wyoming, USA       | ✅ | ✅ | 
+| North Central US         | Chicago, Illinois, USA       | ✅ | ✅ | 
+| Central US               | Des Moines, Iowa, USA        | ✅ | ✅ |
+| East US 2                | Manassas, Virginia, USA      | ✅ | ✅ | 
+| Canada East              | Montreal, Quebec, Canada     | ✅ | ✅ | 
+| West US 3                | Phoenix, Arizona, USA        | ✅ | ✅ | 
+| Mexico Central           | Queretaro, Mexico            | ✅ |    | 
+| West US 2                | Quincy, Washington, USA      | ✅ | ✅ | 
+| South Central US         | San Antonio, Texas, USA      | ✅ | ✅ | 
+| West US                  | San Jose, California, USA    | ✅ | ✅ | 
+| Canada Central           | Toronto, Ontario, Canada     | ✅ | ✅ | 
 
 
 ## IP addresses and Fully Qualified Domain Names (FQDNs) for Global Secure Access service
