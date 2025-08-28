@@ -30,50 +30,21 @@ As part of supporting users no matter where they fall in the Joiner-Mover-Leaver
 1. On the workflow screen, select the specific workflow you want to add the inactive user task to, or create a new workflow based on a template.
     > [!NOTE]
     > To use any of the leaver tasks, you must select a leaver workflow template.
+1. On the **Basics** tab, after entering a unique display name and description for the workflow,  select the **Sign-in inactivity** trigger.
+
 1. Once you have selected your desired workflow template enter in basic details, and then select the **Sign-in inactivity** trigger.
 
-1.  
+1.  Under the **Days of inactivity**, enter the number of days you want the trigger to run for if exceeded, and then select **Next**.
+    :::image type="content" source="media/lifecycle-workflow-inactive-users/inactivity-trigger.png" alt-text="Screenshot of days of inactivity.":::
+1. On the **Scope** page, enter the scope you want for the trigger, and then select **Next**.
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
+1. On the **Review Tasks** page, select the task you want to run for the users who you consider to be inactive and select **Review + Create**.
+    > [!NOTE]
+    > Lifecycle Workflows comes with a built-in task, [Send inactivity notification email (Preview)](lifecycle-workflow-tasks.md#send-inactivity-notification-email-preview), that is directly related to helping manage inactive users.
 
-## "\<verb\> * \<noun\>"
-TODO: Add introduction sentence(s)
-[Include a sentence or two to explain only what is needed to complete the procedure.]
-TODO: Add ordered list of procedure steps
-1. Step 1
-1. Step 2
-1. Step 3
-
-<!-- 5. Next step/Related content------------------------------------------------------------------------
-
-Optional: You have two options for manually curated links in this pattern: Next step and Related content. You don't have to use either, but don't use both.
-  - For Next step, provide one link to the next step in a sequence. Use the blue box format
-  - For Related content provide 1-3 links. Include some context so the customer can determine why they would click the link. Add a context sentence for the following links.
-
--->
 
 ## Next step
 
-TODO: Add your next step link(s)
-
-> [!div class="nextstepaction"]
-> [Write concepts](article-concept.md)
-
-<!-- OR -->
-
-## Related content
-
-TODO: Add your next step link(s)
-
-- [Write concepts](article-concept.md)
-
-<!--
-Remove all the comments in this template before you sign-off or merge to the main branch.
--->
+- [Manage workflow versions](manage-workflow-tasks.md)
+> [Manage workflow properties](manage-workflow-properties.md)
 
