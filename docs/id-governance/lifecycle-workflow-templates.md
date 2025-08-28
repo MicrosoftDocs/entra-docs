@@ -230,29 +230,33 @@ For a tutorial on setting up a workflow that uses the **Employer job profile cha
 The **Pre-Offboard inactive users** template is designed to configure tasks that must be completed before offboarding inactive users.
 
 
+:::image type="content" source="media/lifecycle-workflow-templates/pre-offboard-inactive-users-template.png" alt-text="Screenshot of the pre-offboard inaxctive users template.":::
+
 The default specific parameters for the **Pre-Offboard inactive users** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Time based attribute, Attribute changes, Group Membership change         |  ✔️       |
+|Trigger Type     | Attribute changes, Group Membership change, Sign-in Activity        |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
-|Days from event     | 7        | ✔️        |
+|Days of inactivity     | 90       | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | LastSignInDateTime        |   ❌      |
 |Scope     | Depends on trigger. <br> **Rule based**: Time based attribute, Attribute changes.<br> **Group membership change**: Group based.         | ✔️        |
-|Tasks     | **Disable user account**     |  ✔️       |
+|Tasks     | **Disable user account**, **Send inactivity notification email**     |  ✔️       |
 
 ### Offboard inactive users
 
 The **Offboard inactive users** template is designed to configure tasks that must be completed to offboard inactive users.
+
+:::image type="content" source="media/lifecycle-workflow-templates/offboard-inactive-users-template.png" alt-text="Screenshot of the offboard inactive users template.":::
 
 The default specific parameters for the **Offboard inactive users** template are as follows:
 
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Time based attribute, Attribute changes, Group Membership change         |  ✔️       |
+|Trigger Type     | Attribute changes, Group Membership change, Sign-in Activity         |  ✔️       |
 |Trigger details     | Depends on trigger type selection. <br> • **Time based**:  Days from event, Event timing, Event user attribute<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Days from event     | 0        | ✔️        |
 |Event timing     | On        |  ❌       |
