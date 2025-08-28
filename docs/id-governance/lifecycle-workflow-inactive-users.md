@@ -1,6 +1,6 @@
 ---
 title: Manage inactive users using Lifecycle Workflows (Preview)
-description: This articles walks you through managing inactive users with Lifecycle Workflows.
+description: This article walks you through managing inactive users with Lifecycle Workflows.
 author: owinfreyATL
 ms.author: owinfrey
 manager: dougeby
@@ -14,7 +14,7 @@ ms.date: 08/28/2025
 
 # Manage inactive users using Lifecycle Workflows (Preview)
 
-As part of supporting users no matter where they fall in the Joiner-Mover-Leaver (JML)  model of their lifecycle within your organization, Lifecycle Workflows support automating the disabling and deleting of users once they have been inactive for a set period of time. This [sign-in inactivity](lifecycle-workflow-execution-conditions.md#sign-in-inactivity-trigger) allows you to set a workflow to run when a user has been inactive for a set number of days. This feature allows you to seamlessly maintain a secure environment by automating the removal of inactive based on criteria you set for your organization.
+As part of supporting users no matter where they fall in the Joiner-Mover-Leaver (JML)  model of their lifecycle within your organization, Lifecycle Workflows support automating the disabling and deleting of users once they are inactive for a set period of time. This [sign-in inactivity](lifecycle-workflow-execution-conditions.md#sign-in-inactivity-trigger) allows you to set a workflow to run when a user is inactive for a set number of days. This feature allows you to seamlessly maintain a secure environment by automating the removal of inactive based on criteria you set for your organization.
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ As part of supporting users no matter where they fall in the Joiner-Mover-Leaver
     > To use any of the leaver tasks, you must select a leaver workflow template.
 1. On the **Basics** tab, after entering a unique display name and description for the workflow,  select the **Sign-in inactivity** trigger.
 
-1. Once you have selected your desired workflow template enter in basic details, and then select the **Sign-in inactivity** trigger.
+1. Once you select your desired workflow template enter in basic details, and then select the **Sign-in inactivity** trigger.
 
 1.  Under the **Days of inactivity**, enter the number of days you want the trigger to run for if exceeded, and then select **Next**.
     :::image type="content" source="media/lifecycle-workflow-inactive-users/inactivity-trigger.png" alt-text="Screenshot of days of inactivity.":::
