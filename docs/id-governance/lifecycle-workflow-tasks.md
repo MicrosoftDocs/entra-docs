@@ -1113,6 +1113,58 @@ Example of usage within the workflow:
 }
 ```
 
+### Send inactivity notification email (Preview)
+
+Allows an email containing information about an inactive user to be sent to the user's manager after a specified number of days as their last sign-in. You're able to customize the task name and description for this task in the Microsoft Entra admin center.
+:::image type="content" source="media/lifecycle-workflow-task/offboard-email-manager.png" alt-text="Screenshot of Workflows task: send off-boarding email to user's manager after their last day.":::
+
+The Microsoft Entra prerequisites to run the **Send inactivity notification email (Preview)** task are:
+
+- A populated manager attribute for the user.
+- A populated manager's mail attribute for the user.
+
+
+For Microsoft Graph, the parameters for the **Send inactivity notification email (Preview)** task are as follows:
+
+|Parameter |Definition  |
+|---------|---------|
+|category    |  leaver      |
+|displayName     | Send inactivity notification email (Preview)     |
+|description     |  Send inactivity email to user’s manager after they've been inactive for a set number of days (Customizable by user)        |
+|taskDefinitionId     |   92f74cb4-f1b6-4ec0-b766-96210f56edc2      |
+|arguments     |  The optional common email task parameters can be specified; if they aren't included, the default behavior takes effect.    |
+
+Example of usage within the workflow:
+
+```json
+{
+    "category": "leaver",
+    "continueOnError": false,
+    "description": " Send inactivity email to user’s manager after they've been inactive for a set number of days",
+    "displayName": "Send inactivity notification email (Preview)",
+    "isEnabled": true,
+    "taskDefinitionId": "92f74cb4-f1b6-4ec0-b766-96210f56edc2",
+    "arguments": [
+        {
+            "name": "cc",
+            "value": "1bda0458-cb4b-473d-baf5-61125c86a6d3,7f552c25-e0f6-40b6-b4e0-36bb40ba7fb6"
+        },
+        {
+            "name": "customSubject",
+            "value": "[UserDisplayName]’s account has been inactive for [NumberofDays] days."
+        },
+        {
+            "name": "customBody",
+            "value": "We’re notifying you that a recent sign-in for [UserDisplayName]’s user account has not been detected, and the account is considered inactive. The last sign in was [LastSigninDate]. To maintain a secure environment, your organization may have already started the process to disable or delete this user account.\n\nPlease check your organization’s policies and take appropriate action if this user account is still needed.\n\nRegards\nYour IT department"
+        },
+        {
+            "name": "locale",
+            "value": "en-us"
+        }
+    ]
+}
+```
+
 ## Next steps
 
 - [Manage lifecycle workflows properties](manage-workflow-properties.md)
