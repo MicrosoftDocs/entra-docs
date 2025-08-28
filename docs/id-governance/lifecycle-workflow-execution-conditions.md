@@ -30,6 +30,7 @@ The trigger you choose depends on what type of workflow you want to run for user
 - **Time based attribute**: The workflow is triggered on schedule when a time value is met.
 - **Attribute changes**: The workflow is triggered on schedule when a change to an attribute happens.
 - **Group membership change**: The workflow is triggered on schedule when a group membership change is met.
+- **Sign-in activity**: The workflow is triggered on schedule when a minimum number of days since the user last signed in is met.
 - **On-demand only**: The workflow is only triggered manually.
 
 > [!NOTE]

@@ -237,8 +237,8 @@ The default specific parameters for the **Pre-Offboard inactive users** template
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Attribute changes, Group Membership change, Sign-in Activity        |  ✔️       |
-|Trigger details     | Depends on trigger type selection. <br> • **Sign-in Activity**:  Days of inactivity<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Trigger Type     | Attribute changes, Group Membership change, Sign-in inactivity        |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity<br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Days of inactivity     | 90       | ✔️        |
 |Event timing     | Before        |  ❌       |
 |Event User attribute     | LastSignInDateTime        |   ❌      |
@@ -256,8 +256,8 @@ The default specific parameters for the **Offboard inactive users** template are
 |Parameter  |Description  |Customizable  |
 |---------|---------|---------|
 |Category     |  Leaver       |  ❌       |
-|Trigger Type     | Attribute changes, Group Membership change, Sign-in Activity         |  ✔️       |
-|Trigger details     | Depends on trigger type selection. <br> • **Sign-in Activity**:  Days of inactivity <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
+|Trigger Type     | Attribute changes, Group Membership change, Sign-in inactivity         |  ✔️       |
+|Trigger details     | Depends on trigger type selection. <br> • **Sign-in inactivity**:  Days of inactivity <br> • **Attribute changes**: Trigger attribute <br>• **Group membership changes**: Added to group/Remove from group    |   ✔️      |
 |Days from event     | 120        | ✔️        |
 |Event timing     | After        |  ❌       |
 |Event User attribute     | LastSignInDateTime        |   ❌      |
