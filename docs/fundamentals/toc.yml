@@ -80,19 +80,19 @@ items:
     href: how-to-manage-stay-signed-in-prompt.yml
 - name: Microsoft Security Copilot + Microsoft Entra
   items:
-  - name: Overview
+  - name: Security Copilot in Microsoft Entra
     href: copilot-security-entra.md
-  - name: Microsoft Security Copilot scenarios in Microsoft Entra
+  - name: Copilot scenarios in Microsoft Entra
     href: copilot-entra-security-scenarios.md
-  - name: Security Copilot agents in Microsoft Entra
-    href: agents.md
-  - name: Respond to identity threats using risky user summarization
+  - name: Agents
+    href: copilot-entra-agents.md
+  - name: Respond to identity threats
     href: copilot-entra-risky-user-summarization.md  
-  - name: Manage lifecycle workflows using Microsoft Security Copilot
+  - name: Manage lifecycle workflows
     href: copilot-entra-lifecycle-workflow.md
-  - name: Investigate incidents using Microsoft Security Copilot
+  - name: Investigate incidents
     href: copilot-security-entra-investigate-incident.md 
-  - name: Investigate app risk using Microsoft Security Copilot
+  - name: Investigate app risk
     href: copilot-security-entra-investigate-risky-apps.md
   - name: Responsible AI FAQ for Security Copilot
     href: /copilot/security/rai-faqs-security-copilot?toc=/fundamentals/toc.json&bc=/fundamentals/breadcrumb/toc.json

@@ -191,6 +191,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/agents.md",
+      "redirect_url": "/entra/fundamentals/copilot-entra-agents",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/copilot-security-entra-responsible-ai-faq.md",
       "redirect_url": "/copilot/security/rai-faqs-security-copilot",
       "redirect_document_id": false
