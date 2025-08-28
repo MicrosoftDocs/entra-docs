@@ -156,7 +156,7 @@ We recommend that all of the following controls be implemented where licenses ar
 
 ## Protect engineering systems
 
-### Cloud-only emergency access accounts exist
+### Emergency access accounts are configured appropriately
 [!INCLUDE [21835](../includes/secure-recommendations/21835.md)]
 
 ### Global Administrator role activation triggers an approval workflow
