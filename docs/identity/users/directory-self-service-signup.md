@@ -87,7 +87,7 @@ For more information and examples of how to use these parameters, see [Update-Mg
 
 ## Next steps
 
-* [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml)
+* [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md)
 * [How to install and configure Azure PowerShell](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Azure Cmdlet Reference](/powershell/azure/get-started-azureps)
