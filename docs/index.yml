@@ -8,9 +8,9 @@ metadata:
   description: Learn more about the Microsoft Entra family of multicloud identity and network access solutions. Find content to help solve secure access needs across your multifaceted digital landscape, protect access to any app or resource for any user, verify and secure every identity and every access request, discover permissions and govern access, and simplify user experience with intelligent real-time access controls.
   ms.service: entra
   ms.topic: hub-page
-  author: CelesteDG
-  ms.author: celested
-  ms.date: 05/07/2025
+  author: shlipsey3
+  ms.author: sarahlipsey
+  ms.date: 08/25/2025
 
 ## BAND 1 - HIGHLIGHTED CONTENT ##############################################
 highlightedContent:
@@ -18,12 +18,12 @@ highlightedContent:
     - title: What is Microsoft Entra?
       itemType: overview
       url: /entra/fundamentals/what-is-entra
-    - title: What is Microsoft Entra ID?
-      itemType: overview
-      url: /entra/fundamentals/whatis
-    - title: Identity fundamentals
+    - title: Identity and access fundamentals
       url: /entra/fundamentals/identity-fundamental-concepts
       itemType: concept
+    - title: Microsoft Security Copilot + Microsoft Entra
+      url: /entra/fundamentals/copilot-security-entra
+      itemType: overview
     - title: Secure Generative AI with Microsoft Entra
       url: /entra/architecture/secure-generative-ai
       itemType: concept
@@ -79,10 +79,10 @@ conceptualContent:
         - text: Create a new tenant
           url: /entra/fundamentals/create-new-tenant
           itemType: quickstart
-        - text: Access the admin center and create a tenant
-          url: /entra/fundamentals/create-new-tenant
-          itemType: quickstart
-        - text: Copilot in Microsoft Entra 
+        - text: Configure security recommendations
+          url: /entra/fundamentals/configure-security
+          itemType: reference
+        - text: Security Copilot in Microsoft Entra
           url: /entra/fundamentals/copilot-security-entra
           itemType: concept
     ## CARD 2 ######################
@@ -138,12 +138,12 @@ additionalContent:
         - title: "Microsoft Entra"
           summary: "Learn more about Microsoft Entra and how the Microsoft Entra family of products can help your business."
           url: https://aka.ms/MicrosoftEntra
-        - title: "New name for Azure Active Directory"
-          summary: "Learn more about the new name, what the change means, and how it affects you."
-          url: https://aka.ms/AzureADNewName
         - title: "Introducing Microsoft Entra Suite"
           summary: "Learn how the Microsoft Entra Suite simplifies your Zero Trust security model with a complete cloud-based solution for workforce access."
           url: https://aka.ms/EntraSuiteTechCommunity
         - title: "Microsoft Security documentation"
           summary: "Technical guidance to help security professionals build and implement cybersecurity strategy, architecture, and prioritized roadmaps."
           url: /security/
+        - title: "Security Copilot documentation"
+          summary: "Learn how to use Security Copilot to enhance your security posture and streamline your workflows."
+          url: /copilot/security/
