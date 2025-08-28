@@ -1,7 +1,8 @@
 ---
 title: Check web content filtering categories
 description: Use the web category checker to find which web content category a URL belongs to via Microsoft Graph.
-ms.author: fgomulka
+author: fgomulka
+ms.author: frankgomulka
 ms.topic: how-to
 ms.service: global-secure-access
 ms.date: 08/28/2025
@@ -17,10 +18,10 @@ This short how-to shows how to use the web category checker tool to determine wh
 
 1. Sign in to Graph Explorer at https://aka.ms/ge as a Global Secure Access Administrator.
 2. Set the HTTP method to **GET** and the API version to **beta**.
-3. Use the following request format, replacing <URL> with the host/path you want to check (for example, `msn.com/en-us/sports`):
+3. Use the following request format, replacing example.com with the host/path you want to check (for example, `msn.com/en-us/sports`):
 
 ```http
-GET https://graph.microsoft.com/beta/networkaccess/connectivity/microsoft.graph.networkaccess.getWebCategoryByUrl(url='@url')?@url=<URL>
+GET https://graph.microsoft.com/beta/networkaccess/connectivity/microsoft.graph.networkaccess.getWebCategoryByUrl(url='@url')?@url=example.com
 ```
 
 Example:
