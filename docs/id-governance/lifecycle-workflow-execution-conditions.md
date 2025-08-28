@@ -117,10 +117,32 @@ The group membership change scope allows you to define for who the workflow runs
 
 When setting the scope of the group membership change trigger, the following details are defined:
 
-|Scope detail  |Description  |
+|Trigger detail  |Description  |
 |---------|---------|
 |Scope type     |  Group based.       |
 |Selected group     |  Defines the group for which the trigger action is based on.       |
+
+## Sign-in inactivity trigger
+
+The **Sign-in inactivity** trigger allows you to set a trigger based on when a certain number of days has passed since the user last signed in.
+
+:::image type="content" source="media/lifecycle-workflow-execution-conditions/sign-in-inactivity-trigger.png" alt-text="Screenshot of the sign-in inactivity trigger.":::
+
+When setting the scope of the sign-in inactivity trigger, the following details are defined:
+
+
+|Scope detail  |Description  |
+|---------|---------|
+|Days of inactivity     |   The number of days since the user last signed in.      |
+
+### Sign-in inactivity scope
+
+The sign-in inactivity scope allows you to define for who the workflow runs when the sign-in inactivity trigger is met.
+
+|Scope detail  |Description  |
+|---------|---------|
+|Scope type     |  Rule based.       |
+|Rule     |  Defines the rule for who meets the scope of the attribute changes trigger.       |
 
 ## On-demand only trigger
 
