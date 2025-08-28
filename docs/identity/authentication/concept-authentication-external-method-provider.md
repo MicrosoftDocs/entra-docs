@@ -148,7 +148,7 @@ For the OIDC document with the values for Provider Metadata, see [Provider Metad
 
 
 ```json
-http://customcaserver.azurewebsites.net/v2.0/.well-known/openid-configuration
+https://customcaserver.azurewebsites.net/v2.0/.well-known/openid-configuration
 {
   "authorization_endpoint": "https://customcaserver.azurewebsites.net/api/Authorize",
   "claims_supported": [
@@ -160,7 +160,7 @@ http://customcaserver.azurewebsites.net/v2.0/.well-known/openid-configuration
   "id_token_signing_alg_values_supported": [
     "RS256"
   ],
-  "issuer": "https://customcaserver.azurewebsites.net",
+  "issuer": "https://customcaserver.azurewebsites.net/v2.0",
   "jwks_uri": "http://customcaserver.azurewebsites.net/.well-known/jwks",
   "response_modes_supported": [
     "form_post"
